@@ -28,6 +28,55 @@ include(ECMAddQch)
 include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
+
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
+add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
+
+add_definitions(-DTRANSLATION_DOMAIN=\"ktextaddons\")
+
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.95
+)
+
+ki18n_install(po)
+add_subdirectory(src)
+
+# create a Config.cmake and a ConfigVersion.cmake file and install them
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextAddons")
+
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5TextAddons_QCH
+        FILE KF5TextWidgetsQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextAddonsQchTargets.cmake\")")
+endif()
+
+configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5TextAddonsConfig.cmake.in"
+	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
+                              INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+                             )
+
+install(EXPORT KF5TextAddonssTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAddonsTargets.cmake NAMESPACE KF5:: )
+
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
+	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfigVersion.cmake"
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+       )
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ktextaddons_version.h
+	DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAddons COMPONENT Devel
+       )
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+                 
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
