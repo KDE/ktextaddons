@@ -25,10 +25,23 @@ include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
 include(ECMAddQch)
+include(ECMAddTests)
 include(ECMDeprecationSettings)
 include(CMakeDependentOption)
+include(ECMQtDeclareLoggingCategory)
+include(ECMGeneratePriFile)
 
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core)
+
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+    I18n
+    ConfigWidgets
+)
+
+if(BUILD_TESTING)
+    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
+    add_definitions(-DBUILD_TESTING)
+endif(BUILD_TESTING)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -37,12 +50,12 @@ add_definitions(-DTRANSLATION_DOMAIN=\"ktextaddons\")
 
 ecm_set_disabled_deprecation_versions(
     QT 5.15.2
-    KF 5.95
+    KF 5.101
 )
 
-ki18n_install(po)
-add_subdirectory(src)
+add_subdirectory(autocorrection)
 
+ki18n_install(po)
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextAddons")
 
@@ -56,10 +69,10 @@ if (BUILD_QCH)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextAddonsQchTargets.cmake\")")
 endif()
 
-configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5TextAddonsConfig.cmake.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
-                              INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-                             )
+#configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5TextAddonsConfig.cmake.in"
+#	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
+#                              INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+#                             )
 
 install(EXPORT KF5TextAddonssTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAddonsTargets.cmake NAMESPACE KF5:: )
 
@@ -73,10 +86,6 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ktextaddons_version.h
 	DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAddons COMPONENT Devel
        )
 
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
-kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
-                 
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
