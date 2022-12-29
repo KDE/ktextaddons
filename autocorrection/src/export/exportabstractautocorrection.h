@@ -10,10 +10,10 @@
 #include <QSet>
 #include <QString>
 
-#include "pimcommonautocorrection_private_export.h"
+#include "textautocorrection_private_export.h"
 namespace PimCommonAutoCorrection
 {
-class PIMCOMMONAUTOCORRECTION_TESTS_EXPORT ExportAbstractAutocorrection
+class TEXTAUTOCORRECTION_TESTS_EXPORT ExportAbstractAutocorrection
 {
 public:
     ExportAbstractAutocorrection();

@@ -7,10 +7,10 @@
 #pragma once
 
 #include "importabstractautocorrection.h"
-#include "pimcommonautocorrection_private_export.h"
+#include "textautocorrection_private_export.h"
 namespace PimCommonAutoCorrection
 {
-class PIMCOMMONAUTOCORRECTION_TESTS_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
+class TEXTAUTOCORRECTION_TESTS_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
 {
 public:
     ImportKMailAutocorrection();

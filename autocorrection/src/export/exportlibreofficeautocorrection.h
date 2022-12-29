@@ -7,11 +7,11 @@
 #pragma once
 
 #include "exportabstractautocorrection.h"
-#include "pimcommonautocorrection_private_export.h"
+#include "textautocorrection_private_export.h"
 class KZip;
 namespace PimCommonAutoCorrection
 {
-class PIMCOMMONAUTOCORRECTION_TESTS_EXPORT ExportLibreOfficeAutocorrection : public ExportAbstractAutocorrection
+class TEXTAUTOCORRECTION_TESTS_EXPORT ExportLibreOfficeAutocorrection : public ExportAbstractAutocorrection
 {
 public:
     ExportLibreOfficeAutocorrection();

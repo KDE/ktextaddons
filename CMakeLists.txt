@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(KF_VERSION "5.102.0") # handled by release scripts
 set(KF_DEP_VERSION "5.101.0") # handled by release scripts
-project(KTEXTADDONS VERSION ${KF_VERSION})
+project(KTextAddons VERSION ${KF_VERSION})
 
 include(FeatureSummary)
 find_package(ECM 5.101.0  NO_MODULE)

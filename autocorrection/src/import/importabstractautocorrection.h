@@ -12,10 +12,10 @@
 
 #include "autocorrection/autocorrectionutils.h"
 
-#include "pimcommonautocorrection_private_export.h"
+#include "textautocorrection_private_export.h"
 namespace PimCommonAutoCorrection
 {
-class PIMCOMMONAUTOCORRECTION_TESTS_EXPORT ImportAbstractAutocorrection
+class TEXTAUTOCORRECTION_TESTS_EXPORT ImportAbstractAutocorrection
 {
     Q_GADGET
 public:
