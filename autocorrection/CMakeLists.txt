@@ -104,9 +104,7 @@ target_link_libraries(KF5PimCommonAutoCorrection
     KF5::ConfigWidgets
     PRIVATE
     KF5::I18n
-    KF5::Libkdepim
     KF5::Archive
-    KF5::KIOWidgets
     )
 
 target_include_directories(KF5PimCommonAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection/>")
@@ -162,7 +160,7 @@ ecm_generate_headers(PimCommon_Camelcasesettings_HEADERS
 
 ecm_generate_pri_file(BASE_NAME PimCommonAutoCorrection
     LIB_NAME KF5PimCommonAutoCorrection
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection
+    DEPS "KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection
     )
 
 

@@ -36,6 +36,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widget
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     ConfigWidgets
+    Archive
 )
 
 if(BUILD_TESTING)
@@ -74,7 +75,7 @@ endif()
 #                              INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 #                             )
 
-install(EXPORT KF5TextAddonssTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAddonsTargets.cmake NAMESPACE KF5:: )
+#install(EXPORT KF5TextAddonsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAddonsTargets.cmake NAMESPACE KF5:: )
 
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
 	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfigVersion.cmake"
