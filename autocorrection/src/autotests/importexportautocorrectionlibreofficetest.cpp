@@ -24,15 +24,15 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
     const QString originalFile = QLatin1String(AUTOCORRECTION_DATA_DIR) + QLatin1Char('/') + filename;
 
     // First step
-    PimCommonAutoCorrection::ImportLibreOfficeAutocorrection import;
+    TextAutoCorrection::ImportLibreOfficeAutocorrection import;
     QString messageError;
-    if (import.import(originalFile, messageError, PimCommonAutoCorrection::ImportAbstractAutocorrection::All)) {
+    if (import.import(originalFile, messageError, TextAutoCorrection::ImportAbstractAutocorrection::All)) {
         const auto mUpperCaseExceptions = import.upperCaseExceptions();
         const auto mTwoUpperLetterExceptions = import.twoUpperLetterExceptions();
         const auto mAutocorrectEntries = import.autocorrectEntries();
 
         // Test export
-        PimCommonAutoCorrection::ExportLibreOfficeAutocorrection correct;
+        TextAutoCorrection::ExportLibreOfficeAutocorrection correct;
         correct.setAutocorrectEntries(mAutocorrectEntries);
         correct.setUpperCaseExceptions(mUpperCaseExceptions);
         correct.setTwoUpperLetterExceptions(mTwoUpperLetterExceptions);
@@ -49,8 +49,8 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
         temporaryShareFile.close();
 
         // Reimport
-        PimCommonAutoCorrection::ImportLibreOfficeAutocorrection importTwoStep;
-        if (import.import(temporaryShareFile.fileName(), messageError, PimCommonAutoCorrection::ImportAbstractAutocorrection::All)) {
+        TextAutoCorrection::ImportLibreOfficeAutocorrection importTwoStep;
+        if (import.import(temporaryShareFile.fileName(), messageError, TextAutoCorrection::ImportAbstractAutocorrection::All)) {
             const auto mUpperCaseExceptionsStep2 = import.upperCaseExceptions();
             const auto mTwoUpperLetterExceptionsStep2 = import.twoUpperLetterExceptions();
             const auto mAutocorrectEntriesStep2 = import.autocorrectEntries();
