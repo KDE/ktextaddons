@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommonautocorrection/autocorrection.h"
+#include "autocorrection.h"
 #include "textautocorrection_export.h"
 #include <QWidget>
 
