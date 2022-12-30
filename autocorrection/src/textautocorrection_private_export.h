@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "pimcommonautocorrection_export.h"
+#include "textautocorrection_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
 #ifndef TEXTAUTOCORRECTION_TESTS_EXPORT
-#define TEXTAUTOCORRECTION_TESTS_EXPORT PIMCOMMONAUTOCORRECTION_EXPORT
+#define TEXTAUTOCORRECTION_TESTS_EXPORT TEXTAUTOCORRECTION_EXPORT
 #endif
 #else /* not compiling tests */
 #define TEXTAUTOCORRECTION_TESTS_EXPORT
