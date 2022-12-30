@@ -63,6 +63,8 @@ target_sources(KF5TextAutoCorrection PRIVATE
     widgets/autocorrectiontextedit.h
     widgets/autocorrectionlineedit.cpp
     widgets/autocorrectionlineedit.h
+    widgets/lineeditcatchreturnkey.h
+    widgets/lineeditcatchreturnkey.cpp
     settings/textautocorrectionsettings.h
     settings/textautocorrectionsettings.cpp
 

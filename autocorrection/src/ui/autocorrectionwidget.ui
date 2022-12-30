@@ -166,7 +166,7 @@
         </layout>
        </item>
        <item row="2" column="0">
-        <widget class="PimCommonAutoCorrection::AutoCorrectionTreeWidget" name="treeWidget">
+        <widget class="TextAutoCorrection::AutoCorrectionTreeWidget" name="treeWidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -252,7 +252,7 @@
           </layout>
          </item>
          <item row="2" column="0">
-          <widget class="PimCommonAutoCorrection::AutoCorrectionListWidget" name="abbreviationList">
+          <widget class="TextAutoCorrection::AutoCorrectionListWidget" name="abbreviationList">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
              <horstretch>0</horstretch>
@@ -320,7 +320,7 @@
           </layout>
          </item>
          <item row="2" column="0">
-          <widget class="PimCommonAutoCorrection::AutoCorrectionListWidget" name="twoUpperLetterList">
+          <widget class="TextAutoCorrection::AutoCorrectionListWidget" name="twoUpperLetterList">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
              <horstretch>0</horstretch>
@@ -830,7 +830,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PimCommonAutoCorrection::AutoCorrectionListWidget</class>
+   <class>TextAutoCorrection::AutoCorrectionListWidget</class>
    <extends>QListWidget</extends>
    <header>widgets/autocorrectionlistwidget.h</header>
   </customwidget>

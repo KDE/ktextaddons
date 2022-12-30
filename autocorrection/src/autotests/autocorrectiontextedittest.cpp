@@ -5,10 +5,10 @@
 */
 
 #include "autocorrectiontextedittest.h"
+#include "autocorrection.h"
+#include "autocorrectionsettings.h"
 #include <QTest>
 #include <TextAutoCorrection/AutoCorrectionTextEdit>
-#include <autocorrection/autocorrection.h>
-#include <autocorrection/autocorrectionsettings.h>
 #include <qtestkeyboard.h>
 
 AutoCorrectionTextEditTest::AutoCorrectionTextEditTest() = default;
