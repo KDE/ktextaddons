@@ -832,7 +832,7 @@
   <customwidget>
    <class>PimCommonAutoCorrection::AutoCorrectionListWidget</class>
    <extends>QListWidget</extends>
-   <header>autocorrection/widgets/autocorrectionlistwidget.h</header>
+   <header>widgets/autocorrectionlistwidget.h</header>
   </customwidget>
   <customwidget>
    <class>TextAutoCorrection::AutoCorrectionTreeWidget</class>
