@@ -71,7 +71,7 @@ target_sources(KF5TextAutoCorrection PRIVATE
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5TextAutoCorrection PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF5TextAutoCorrection BASE_NAME pimcommonautocorrection)
+generate_export_header(KF5TextAutoCorrection BASE_NAME textautocorrection)
 
 
 target_link_libraries(KF5TextAutoCorrection
@@ -84,14 +84,12 @@ target_link_libraries(KF5TextAutoCorrection
     KF5::Archive
     )
 
-target_include_directories(KF5TextAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection/>")
-
-target_include_directories(KF5TextAutoCorrection PUBLIC "$<BUILD_INTERFACE:${pimcommon_SOURCE_DIR}/src;${pimcommon_BINARY_DIR}/src>")
+target_include_directories(KF5TextAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/>")
 
 set_target_properties(KF5TextAutoCorrection PROPERTIES
     VERSION ${PIMCOMMON_VERSION}
     SOVERSION ${PIMCOMMON_SOVERSION}
-    EXPORT_NAME PimCommonAutoCorrection
+    EXPORT_NAME TextAutoCorrection
     )
 
 install(TARGETS
@@ -136,7 +134,7 @@ ecm_generate_headers(PimCommon_Camelcasesettings_HEADERS
 
 ecm_generate_pri_file(BASE_NAME PimCommonAutoCorrection
     LIB_NAME KF5TextAutoCorrection
-    DEPS "KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection
+    DEPS "KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection
     )
 
 
@@ -144,7 +142,7 @@ install(FILES
     ${PimCommon_Camelcaseautocorrection_HEADERS}
     ${PimCommon_Camelcaseautocorrectionwidgets_HEADERS}
     ${PimCommon_Camelcasesettings_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection/PimCommonAutoCorrection
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/KTextAutoCorrection
     COMPONENT Devel
     )
 
@@ -156,7 +154,7 @@ install(FILES
     ${PimCommon_autocorrectionwidgets_HEADERS}
     ${PimCommon_settings_HEADERS}
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/PimCommonAutoCorrection/pimcommonautocorrection
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/ktextautocorrection
     COMPONENT Devel
     )
 
