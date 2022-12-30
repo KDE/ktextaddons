@@ -6,18 +6,18 @@
 
 #pragma once
 
-#include "pimcommonautocorrection_export.h"
 #include "pimcommonautocorrectionsetting_base.h"
+#include "textautocorrection_export.h"
 
 class QTimer;
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 /**
  * @brief The PimCommonAutoCorrectionSettings class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONAUTOCORRECTION_EXPORT PimCommonAutoCorrectionSettings : public PimCommonAutoCorrection::PimCommonAutoCorrectionSettingsBase
+class TEXTAUTOCORRECTION_EXPORT PimCommonAutoCorrectionSettings : public PimCommonAutoCorrection::PimCommonAutoCorrectionSettingsBase
 {
     Q_OBJECT
 public:

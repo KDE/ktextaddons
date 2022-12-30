@@ -5,8 +5,8 @@
 */
 
 #include "importexportautocorrectionlibreofficetest.h"
-#include "autocorrection/export/exportlibreofficeautocorrection.h"
-#include "autocorrection/import/importlibreofficeautocorrection.h"
+#include "export/exportlibreofficeautocorrection.h"
+#include "import/importlibreofficeautocorrection.h"
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QTest>

@@ -9,7 +9,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStandardPaths>
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 AutoCorrectionUtils::TypographicQuotes AutoCorrectionUtils::typographicDefaultSingleQuotes()
 {
     TypographicQuotes quote;
@@ -34,7 +34,7 @@ AutoCorrectionUtils::TypographicQuotes AutoCorrectionUtils::typographicDefaultFr
     return quote;
 }
 
-QDebug operator<<(QDebug d, PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes t)
+QDebug operator<<(QDebug d, TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes t)
 {
     d << "TypographicQuotes.begin " << t.begin;
     d << "TypographicQuotes.end " << t.end;

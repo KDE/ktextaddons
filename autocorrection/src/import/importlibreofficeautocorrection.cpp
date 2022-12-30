@@ -5,14 +5,14 @@
 */
 
 #include "importlibreofficeautocorrection.h"
-#include "pimcommonautocorrection_debug.h"
+#include "textautocorrection_debug.h"
 #include <KLocalizedString>
 #include <KZip>
 #include <QDomDocument>
 #include <QFile>
 #include <QTemporaryDir>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 ImportLibreOfficeAutocorrection::ImportLibreOfficeAutocorrection() = default;
 
@@ -48,7 +48,7 @@ bool ImportLibreOfficeAutocorrection::import(const QString &fileName, QString &e
         importAutoCorrectionFile();
         return true;
     } else {
-        qCWarning(PIMCOMMONAUTOCORRECTION_LOG) << "Impossible to open archive file";
+        qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open archive file";
         errorMessage = i18n("Archive cannot be opened in read mode.");
         return false;
     }
@@ -60,19 +60,19 @@ void ImportLibreOfficeAutocorrection::importAutoCorrectionFile()
     const KArchiveDirectory *archiveDirectory = mArchive->directory();
     // Replace word
     if (!importFile(DOCUMENT, archiveDirectory)) {
-        qCWarning(PIMCOMMONAUTOCORRECTION_LOG) << " Impossible to import DOCUMENT";
+        qCWarning(TEXTAUTOCORRECTION_LOG) << " Impossible to import DOCUMENT";
         return;
     }
 
     // No tread as end of line
     if (!importFile(SENTENCE, archiveDirectory)) {
-        qCWarning(PIMCOMMONAUTOCORRECTION_LOG) << " Impossible to import SENTENCE";
+        qCWarning(TEXTAUTOCORRECTION_LOG) << " Impossible to import SENTENCE";
         return;
     }
 
     // Two upper letter
     if (!importFile(WORD, archiveDirectory)) {
-        qCWarning(PIMCOMMONAUTOCORRECTION_LOG) << " Impossible to import WORD";
+        qCWarning(TEXTAUTOCORRECTION_LOG) << " Impossible to import WORD";
         return;
     }
 }
@@ -101,13 +101,13 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
         archiveFile->copyTo(mTempDir->path());
         QFile file(mTempDir->path() + QLatin1Char('/') + archiveFileName);
         if (!file.open(QIODevice::ReadOnly)) {
-            qCWarning(PIMCOMMONAUTOCORRECTION_LOG) << "Impossible to open " << file.fileName();
+            qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << file.fileName();
         }
         QDomDocument doc;
         if (loadDomElement(doc, &file)) {
             QDomElement list = doc.documentElement();
             if (list.isNull()) {
-                qCDebug(PIMCOMMONAUTOCORRECTION_LOG) << "No list defined in " << type;
+                qCDebug(TEXTAUTOCORRECTION_LOG) << "No list defined in " << type;
             } else {
                 for (QDomElement e = list.firstChildElement(); !e.isNull(); e = e.nextSiblingElement()) {
                     const QString tag = e.tagName();
@@ -136,7 +136,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
                             break;
                         }
                     } else {
-                        qCDebug(PIMCOMMONAUTOCORRECTION_LOG) << " unknown tag " << tag;
+                        qCDebug(TEXTAUTOCORRECTION_LOG) << " unknown tag " << tag;
                     }
                 }
             }
@@ -153,7 +153,7 @@ bool ImportLibreOfficeAutocorrection::loadDomElement(QDomDocument &doc, QFile *f
     int errorRow;
     int errorCol;
     if (!doc.setContent(file, &errorMsg, &errorRow, &errorCol)) {
-        qCDebug(PIMCOMMONAUTOCORRECTION_LOG) << "Unable to load document.Parse error in line " << errorRow << ", col " << errorCol << ": " << errorMsg;
+        qCDebug(TEXTAUTOCORRECTION_LOG) << "Unable to load document.Parse error in line " << errorRow << ", col " << errorCol << ": " << errorMsg;
         return false;
     }
     return true;

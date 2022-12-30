@@ -8,7 +8,7 @@
 
 #include <QKeyEvent>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 AutoCorrectionTreeWidget::AutoCorrectionTreeWidget(QWidget *parent)
     : QTreeWidget(parent)

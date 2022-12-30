@@ -7,7 +7,7 @@
 #include "pimcommonautocorrectionsettings.h"
 #include <QTimer>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 PimCommonAutoCorrectionSettings *PimCommonAutoCorrectionSettings::mSelf = nullptr;
 

@@ -10,7 +10,7 @@
 #include <QDialog>
 #include <QWidget>
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrection;
 class AutoCorrectionWidget;

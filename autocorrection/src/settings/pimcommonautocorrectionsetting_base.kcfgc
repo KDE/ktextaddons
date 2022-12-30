@@ -3,9 +3,9 @@
 File=pimcommonautocorrection.kcfg
 ClassName=PimCommonAutoCorrectionSettingsBase
 NameSpace=PimCommonAutoCorrection
-Visibility=PIMCOMMONAUTOCORRECTION_EXPORT
+Visibility=TEXTAUTOCORRECTION_EXPORT
 Mutators=true
 Singleton=true
 ItemAccessors=true
-IncludeFiles=qapplication.h,pimcommonautocorrection/pimcommonautocorrection_export.h
+IncludeFiles=qapplication.h,pimcommonautocorrection/TEXTAUTOCORRECTION_EXPORT.h
 

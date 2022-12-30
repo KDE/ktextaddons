@@ -9,12 +9,12 @@
 #include <QKeyEvent>
 #include <QTextCursor>
 
-using namespace PimCommonAutoCorrection;
-class PimCommonAutoCorrection::AutoCorrectionLineEditPrivate
+using namespace TextAutoCorrection;
+class TextAutoCorrection::AutoCorrectionLineEditPrivate
 {
 public:
     AutoCorrectionLineEditPrivate()
-        : mAutoCorrection(new PimCommonAutoCorrection::AutoCorrection())
+        : mAutoCorrection(new TextAutoCorrection::AutoCorrection())
     {
     }
 
@@ -25,13 +25,13 @@ public:
         }
     }
 
-    PimCommonAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
     bool mNeedToDeleteAutoCorrection = true;
 };
 
 AutoCorrectionLineEdit::AutoCorrectionLineEdit(QWidget *parent)
     : QPlainTextEdit(parent)
-    , d(new PimCommonAutoCorrection::AutoCorrectionLineEditPrivate)
+    , d(new TextAutoCorrection::AutoCorrectionLineEditPrivate)
 {
     setTabChangesFocus(true);
     // widget may not be resized vertically
@@ -45,12 +45,12 @@ AutoCorrectionLineEdit::AutoCorrectionLineEdit(QWidget *parent)
 
 AutoCorrectionLineEdit::~AutoCorrectionLineEdit() = default;
 
-PimCommonAutoCorrection::AutoCorrection *AutoCorrectionLineEdit::autocorrection() const
+TextAutoCorrection::AutoCorrection *AutoCorrectionLineEdit::autocorrection() const
 {
     return d->mAutoCorrection;
 }
 
-void AutoCorrectionLineEdit::setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect)
+void AutoCorrectionLineEdit::setAutocorrection(AutoCorrection *autocorrect)
 {
     d->mNeedToDeleteAutoCorrection = false;
     delete d->mAutoCorrection;
@@ -59,7 +59,7 @@ void AutoCorrectionLineEdit::setAutocorrection(PimCommonAutoCorrection::AutoCorr
 
 void AutoCorrectionLineEdit::setAutocorrectionLanguage(const QString &language)
 {
-    PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(language);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
 }

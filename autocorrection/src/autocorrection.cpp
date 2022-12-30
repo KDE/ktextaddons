@@ -7,8 +7,8 @@
 
 #include "autocorrection.h"
 
-#include "autocorrection/autocorrectionutils.h"
-#include "pimcommonautocorrectionautocorrect_debug.h"
+#include "autocorrectionutils.h"
+#include "textautocorrectionautocorrect_debug.h"
 #include <KColorScheme>
 #include <QFile>
 #include <QLocale>
@@ -16,9 +16,9 @@
 #include <QTextBlock>
 #include <QTextDocument>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrectionPrivate
 {
@@ -174,7 +174,7 @@ bool AutoCorrection::autocorrect(bool htmlMode, QTextDocument &document, int &po
             d->mWord = d->mCursor.selectedText();
             if (!d->mWord.isEmpty()) {
                 const QStringList lst = AutoCorrectionUtils::wordsFromSentence(d->mWord);
-                qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " lst " << lst;
+                qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " lst " << lst;
                 for (const auto &string : lst) {
                     const int diffSize = d->mWord.length() - string.length();
                     d->mWord = string;
@@ -705,7 +705,7 @@ int AutoCorrection::advancedAutocorrect()
         return -1;
     }
     const int startPos = d->mCursor.selectionStart();
-    qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << "d->mCursor  " << d->mCursor.selectedText() << " startPos " << startPos;
+    qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << "d->mCursor  " << d->mCursor.selectedText() << " startPos " << startPos;
     const int length = d->mWord.length();
     // If the last char is punctuation, drop it for now
     bool hasPunctuation = false;
@@ -735,16 +735,16 @@ int AutoCorrection::advancedAutocorrect()
                 continue;
             }
         }
-        qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " i.key() " << key << "actual" << actualWord;
+        qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " i.key() " << key << "actual" << actualWord;
         if (actualWord.endsWith(key) || actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {
             int pos = d->mWord.lastIndexOf(key);
-            qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 1 " << pos << " d->mWord " << d->mWord;
+            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 1 " << pos << " d->mWord " << d->mWord;
             if (pos == -1) {
                 pos = actualWord.toLower().lastIndexOf(key);
-                qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 2 " << pos;
+                qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 2 " << pos;
                 if (pos == -1) {
                     pos = actualWordWithFirstUpperCase.lastIndexOf(key);
-                    qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 3 " << pos;
+                    qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 3 " << pos;
                     if (pos == -1) {
                         continue;
                     }
@@ -756,7 +756,7 @@ int AutoCorrection::advancedAutocorrect()
             // <<actualWordWithFirstUpperCase; qDebug() << " d->mWord " << d->mWord << " i.key() " << i.key() << "replacement " << replacement; Keep capitalized
             // words capitalized. (Necessary to make sure the first letters match???)
             const QChar actualWordFirstChar = d->mWord.at(pos);
-            qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " actualWordFirstChar " << actualWordFirstChar;
+            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " actualWordFirstChar " << actualWordFirstChar;
 
             const QChar replacementFirstChar = replacement[0];
             if (actualWordFirstChar.isUpper() && replacementFirstChar.isLower()) {
@@ -777,7 +777,7 @@ int AutoCorrection::advancedAutocorrect()
             d->mCursor.setPosition(startPos);
             d->mCursor.setPosition(startPos + length, QTextCursor::KeepAnchor);
             d->mCursor.insertText(d->mWord);
-            qCDebug(PIMCOMMONAUTOCORRECTION_AUTOCORRECT_LOG) << " insert text " << d->mWord << " startPos " << startPos;
+            qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " insert text " << d->mWord << " startPos " << startPos;
             d->mCursor.setPosition(startPos); // also restore the selection
             const int newPosition = startPos + d->mWord.length();
             d->mCursor.setPosition(newPosition, QTextCursor::KeepAnchor);

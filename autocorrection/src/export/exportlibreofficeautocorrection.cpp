@@ -5,14 +5,14 @@
 */
 
 #include "exportlibreofficeautocorrection.h"
-#include "autocorrection/autocorrectionutils.h"
-#include "pimcommonautocorrection_debug.h"
+#include "autocorrectionutils.h"
+#include "textautocorrection_debug.h"
 #include <KZip>
 #include <QDir>
 #include <QTemporaryFile>
 #include <QXmlStreamWriter>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 ExportLibreOfficeAutocorrection::ExportLibreOfficeAutocorrection() = default;
 
@@ -33,7 +33,7 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language, const 
     mZip = new KZip(fname);
     const bool result = mZip->open(QIODevice::WriteOnly);
     if (!result) {
-        qCWarning(PIMCOMMONAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
+        qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
         return false;
     }
     if (!exportDocumentList()) {

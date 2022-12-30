@@ -6,7 +6,7 @@
 
 #include "importabstractautocorrection.h"
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 ImportAbstractAutocorrection::ImportAbstractAutocorrection() = default;
 

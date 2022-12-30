@@ -5,7 +5,7 @@
 */
 
 #include "autocorrectionutilstest.h"
-#include "autocorrection/autocorrectionutils.h"
+#include "autocorrectionutils.h"
 #include <QTest>
 QTEST_MAIN(AutoCorrectionUtilsTest)
 AutoCorrectionUtilsTest::AutoCorrectionUtilsTest(QObject *parent)

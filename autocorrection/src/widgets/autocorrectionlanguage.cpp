@@ -8,7 +8,7 @@
 #include <QLocale>
 #include <QSet>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 static bool stripCountryCode(QString *languageCode)
 {

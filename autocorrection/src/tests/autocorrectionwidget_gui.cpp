@@ -5,10 +5,10 @@
 */
 
 #include "autocorrectionwidget_gui.h"
-#include "autocorrection/widgets/autocorrectionlineedit.h"
-#include "autocorrection/widgets/autocorrectiontextedit.h"
-#include "autocorrection/widgets/autocorrectionwidget.h"
 #include "settings/pimcommonautocorrectionsettings.h"
+#include "widgets/autocorrectionlineedit.h"
+#include "widgets/autocorrectiontextedit.h"
+#include "widgets/autocorrectionwidget.h"
 #include <PimCommonAutoCorrection/AutoCorrection>
 
 #include <QAction>

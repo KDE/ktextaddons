@@ -5,7 +5,7 @@
 */
 
 #include "autocorrectionsettingstest.h"
-#include "autocorrection/autocorrectionsettings.h"
+#include "autocorrectionsettings.h"
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(AutoCorrectionSettingsTest)

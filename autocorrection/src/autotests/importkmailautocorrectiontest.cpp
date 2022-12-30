@@ -5,7 +5,7 @@
 */
 
 #include "importkmailautocorrectiontest.h"
-#include "autocorrection/import/importkmailautocorrection.h"
+#include "import/importkmailautocorrection.h"
 #include <QTest>
 QTEST_MAIN(ImportKMailAutocorrectionTest)
 

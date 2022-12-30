@@ -7,7 +7,7 @@
 #pragma once
 
 #include "pimcommonautocorrection/autocorrection.h"
-#include "pimcommonautocorrection_export.h"
+#include "textautocorrection_export.h"
 #include <QWidget>
 
 class QTreeWidgetItem;
@@ -17,14 +17,14 @@ namespace Ui
 class AutoCorrectionWidget;
 }
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrectionWidgetPrivate;
 /**
  * @brief The AutoCorrectionWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONAUTOCORRECTION_EXPORT AutoCorrectionWidget : public QWidget
+class TEXTAUTOCORRECTION_EXPORT AutoCorrectionWidget : public QWidget
 {
     Q_OBJECT
 

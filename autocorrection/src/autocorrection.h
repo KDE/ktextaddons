@@ -7,17 +7,17 @@
 #pragma once
 
 #include "autocorrectionsettings.h"
-#include "pimcommonautocorrection_export.h"
+#include "textautocorrection_export.h"
 #include <QTextCursor>
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrectionPrivate;
 /**
  * @brief The AutoCorrection class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONAUTOCORRECTION_EXPORT AutoCorrection
+class TEXTAUTOCORRECTION_EXPORT AutoCorrection
 {
 public:
     AutoCorrection();

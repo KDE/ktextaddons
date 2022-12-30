@@ -8,7 +8,7 @@
 
 #include <QListWidget>
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrectionListWidget : public QListWidget
 {

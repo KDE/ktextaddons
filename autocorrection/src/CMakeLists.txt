@@ -147,7 +147,7 @@ install(FILES
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommonautocorrection_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/TEXTAUTOCORRECTION_EXPORT.h
     ${CMAKE_CURRENT_BINARY_DIR}/pimcommonautocorrectionsetting_base.h
     ${PimCommon_HEADERS}
     ${PimCommon_autocorrection_HEADERS}
@@ -180,7 +180,7 @@ if (BUILD_QCH)
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            PIMCOMMONAUTOCORRECTION_EXPORT
+            TEXTAUTOCORRECTION_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel

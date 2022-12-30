@@ -6,13 +6,13 @@
 
 #pragma once
 #include "autocorrectionutils.h"
-#include "pimcommonautocorrection_export.h"
+#include "textautocorrection_export.h"
 #include <QDebug>
 #include <QSet>
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrectionSettingsPrivate;
-class PIMCOMMONAUTOCORRECTION_EXPORT AutoCorrectionSettings
+class TEXTAUTOCORRECTION_EXPORT AutoCorrectionSettings
 {
 public:
     AutoCorrectionSettings();
@@ -34,10 +34,10 @@ public:
     Q_REQUIRED_RESULT bool isAddNonBreakingSpace() const;
     Q_REQUIRED_RESULT bool isReplaceDoubleQuotesByFrenchQuotes() const;
 
-    Q_REQUIRED_RESULT PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
-    Q_REQUIRED_RESULT PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
-    void setTypographicSingleQuotes(PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes singleQuote);
-    void setTypographicDoubleQuotes(PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes doubleQuote);
+    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
+    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
+    void setTypographicSingleQuotes(TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes singleQuote);
+    void setTypographicDoubleQuotes(TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes doubleQuote);
 
     void setAutoFormatUrl(bool b);
     void setAutoBoldUnderline(bool b);
@@ -108,4 +108,4 @@ private:
     std::unique_ptr<AutoCorrectionSettingsPrivate> const d;
 };
 }
-PIMCOMMONAUTOCORRECTION_EXPORT QDebug operator<<(QDebug d, const PimCommonAutoCorrection::AutoCorrectionSettings &t);
+TEXTAUTOCORRECTION_EXPORT QDebug operator<<(QDebug d, const TextAutoCorrection::AutoCorrectionSettings &t);

@@ -11,7 +11,7 @@
 #include <QString>
 
 #include "textautocorrection_private_export.h"
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class TEXTAUTOCORRECTION_TESTS_EXPORT ExportAbstractAutocorrection
 {

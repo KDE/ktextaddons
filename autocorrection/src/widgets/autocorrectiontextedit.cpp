@@ -5,17 +5,17 @@
 */
 
 #include "autocorrectiontextedit.h"
-#include <PimCommonAutoCorrection/AutoCorrection>
+#include <TextAutoCorrection/AutoCorrection>
 
 #include <QKeyEvent>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
-class PimCommonAutoCorrection::AutoCorrectionTextEditPrivate
+class TextAutoCorrection::AutoCorrectionTextEditPrivate
 {
 public:
     AutoCorrectionTextEditPrivate()
-        : mAutoCorrection(new PimCommonAutoCorrection::AutoCorrection())
+        : mAutoCorrection(new TextAutoCorrection::AutoCorrection())
     {
     }
 
@@ -26,33 +26,33 @@ public:
         }
     }
 
-    PimCommonAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
     bool mNeedToDelete = true;
 };
 
 AutoCorrectionTextEdit::AutoCorrectionTextEdit(QWidget *parent)
     : QTextEdit(parent)
-    , d(new PimCommonAutoCorrection::AutoCorrectionTextEditPrivate)
+    , d(new TextAutoCorrection::AutoCorrectionTextEditPrivate)
 {
 }
 
 AutoCorrectionTextEdit::~AutoCorrectionTextEdit() = default;
 
-void AutoCorrectionTextEdit::setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect)
+void AutoCorrectionTextEdit::setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect)
 {
     d->mNeedToDelete = false;
     delete d->mAutoCorrection;
     d->mAutoCorrection = autocorrect;
 }
 
-PimCommonAutoCorrection::AutoCorrection *AutoCorrectionTextEdit::autocorrection() const
+TextAutoCorrection::AutoCorrection *AutoCorrectionTextEdit::autocorrection() const
 {
     return d->mAutoCorrection;
 }
 
 void AutoCorrectionTextEdit::setAutocorrectionLanguage(const QString &language)
 {
-    PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(language);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
 }

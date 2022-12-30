@@ -5,18 +5,18 @@
 */
 
 #include "autocorrectionsettings.h"
-#include "autocorrection/export/exportlibreofficeautocorrection.h"
-#include "autocorrection/import/importlibreofficeautocorrection.h"
+#include "export/exportlibreofficeautocorrection.h"
+#include "import/importlibreofficeautocorrection.h"
 
-#include "pimcommonautocorrection_debug.h"
 #include "settings/pimcommonautocorrectionsettings.h"
+#include "textautocorrection_debug.h"
 
 #include <QFile>
 #include <QRegularExpression>
 #include <QStandardPaths>
 
-using namespace PimCommonAutoCorrection;
-namespace PimCommonAutoCorrection
+using namespace TextAutoCorrection;
+namespace TextAutoCorrection
 {
 class AutoCorrectionSettingsPrivate
 {
@@ -62,7 +62,7 @@ public:
 }
 
 AutoCorrectionSettings::AutoCorrectionSettings()
-    : d(new PimCommonAutoCorrection::AutoCorrectionSettingsPrivate)
+    : d(new TextAutoCorrection::AutoCorrectionSettingsPrivate)
 {
     // default double quote open 0x201c
     // default double quote close 0x201d
@@ -197,52 +197,52 @@ void AutoCorrectionSettings::setReplaceDoubleQuotesByFrenchQuotes(bool b)
     d->mReplaceDoubleQuotesByFrenchQuotes = b;
 }
 
-PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicSingleQuotes() const
+TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicSingleQuotes() const
 {
     return d->mTypographicSingleQuotes;
 }
 
-PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicDoubleQuotes() const
+TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicDoubleQuotes() const
 {
     return d->mTypographicDoubleQuotes;
 }
 
-void AutoCorrectionSettings::setTypographicSingleQuotes(PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes singleQuote)
+void AutoCorrectionSettings::setTypographicSingleQuotes(TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes singleQuote)
 {
     d->mTypographicSingleQuotes = singleQuote;
 }
 
-void AutoCorrectionSettings::setTypographicDoubleQuotes(PimCommonAutoCorrection::AutoCorrectionUtils::TypographicQuotes doubleQuote)
+void AutoCorrectionSettings::setTypographicDoubleQuotes(AutoCorrectionUtils::TypographicQuotes doubleQuote)
 {
     d->mTypographicDoubleQuotes = doubleQuote;
 }
 
 void AutoCorrectionSettings::readConfig()
 {
-    d->mAutoBoldUnderline = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->autoBoldUnderline();
-    d->mAutoFormatUrl = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->autoFormatUrl();
-    d->mUppercaseFirstCharOfSentence = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->uppercaseFirstCharOfSentence();
-    d->mFixTwoUppercaseChars = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->fixTwoUppercaseChars();
-    d->mSingleSpaces = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->singleSpaces();
-    d->mAutoFractions = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->autoFractions();
-    d->mCapitalizeWeekDays = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->capitalizeWeekDays();
-    d->mAdvancedAutocorrect = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->advancedAutocorrect();
-    d->mReplaceDoubleQuotes = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->replaceDoubleQuotes();
-    d->mReplaceSingleQuotes = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->replaceSingleQuotes();
-    d->mEnabled = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->enabled();
-    d->mSuperScriptAppendix = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->superScript();
-    d->mAddNonBreakingSpace = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->addNonBreakingSpaceInFrench();
-    d->mReplaceDoubleQuotesByFrenchQuotes = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->replaceDoubleQuotesByFrenchQuotes();
-    d->mCustomSystemPath = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->customSystemPath();
-    d->mCustomWritablePath = PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->customWritablePath();
+    d->mAutoBoldUnderline = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->autoBoldUnderline();
+    d->mAutoFormatUrl = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->autoFormatUrl();
+    d->mUppercaseFirstCharOfSentence = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->uppercaseFirstCharOfSentence();
+    d->mFixTwoUppercaseChars = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->fixTwoUppercaseChars();
+    d->mSingleSpaces = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->singleSpaces();
+    d->mAutoFractions = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->autoFractions();
+    d->mCapitalizeWeekDays = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->capitalizeWeekDays();
+    d->mAdvancedAutocorrect = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->advancedAutocorrect();
+    d->mReplaceDoubleQuotes = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->replaceDoubleQuotes();
+    d->mReplaceSingleQuotes = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->replaceSingleQuotes();
+    d->mEnabled = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->enabled();
+    d->mSuperScriptAppendix = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->superScript();
+    d->mAddNonBreakingSpace = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->addNonBreakingSpaceInFrench();
+    d->mReplaceDoubleQuotesByFrenchQuotes = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->replaceDoubleQuotesByFrenchQuotes();
+    d->mCustomSystemPath = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->customSystemPath();
+    d->mCustomWritablePath = TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->customWritablePath();
 
     d->mTypographicSingleQuotes =
-        AutoCorrectionUtils::TypographicQuotes::fromString(PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->typographicSingleQuotes());
+        AutoCorrectionUtils::TypographicQuotes::fromString(TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->typographicSingleQuotes());
     if (d->mTypographicSingleQuotes.isEmpty()) {
         d->mTypographicSingleQuotes = AutoCorrectionUtils::typographicDefaultSingleQuotes();
     }
     d->mTypographicDoubleQuotes =
-        AutoCorrectionUtils::TypographicQuotes::fromString(PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->typographicDoubleQuotes());
+        AutoCorrectionUtils::TypographicQuotes::fromString(TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->typographicDoubleQuotes());
     if (d->mTypographicDoubleQuotes.isEmpty()) {
         d->mTypographicDoubleQuotes = AutoCorrectionUtils::typographicDefaultDoubleQuotes();
     }
@@ -251,25 +251,25 @@ void AutoCorrectionSettings::readConfig()
 
 void AutoCorrectionSettings::writeConfig()
 {
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAutoBoldUnderline(d->mAutoBoldUnderline);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAutoFormatUrl(d->mAutoFormatUrl);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setUppercaseFirstCharOfSentence(d->mUppercaseFirstCharOfSentence);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setFixTwoUppercaseChars(d->mFixTwoUppercaseChars);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setSingleSpaces(d->mSingleSpaces);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAutoFractions(d->mAutoFractions);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setCapitalizeWeekDays(d->mCapitalizeWeekDays);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAdvancedAutocorrect(d->mAdvancedAutocorrect);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setReplaceDoubleQuotes(d->mReplaceDoubleQuotes);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setReplaceSingleQuotes(d->mReplaceSingleQuotes);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setEnabled(d->mEnabled);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setSuperScript(d->mSuperScriptAppendix);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAddNonBreakingSpaceInFrench(d->mAddNonBreakingSpace);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setTypographicSingleQuotes(d->mTypographicSingleQuotes.toString());
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setTypographicDoubleQuotes(d->mTypographicDoubleQuotes.toString());
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setReplaceDoubleQuotesByFrenchQuotes(d->mReplaceDoubleQuotesByFrenchQuotes);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setCustomWritablePath(d->mCustomWritablePath);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setCustomSystemPath(d->mCustomSystemPath);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->requestSync();
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAutoBoldUnderline(d->mAutoBoldUnderline);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAutoFormatUrl(d->mAutoFormatUrl);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setUppercaseFirstCharOfSentence(d->mUppercaseFirstCharOfSentence);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setFixTwoUppercaseChars(d->mFixTwoUppercaseChars);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setSingleSpaces(d->mSingleSpaces);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAutoFractions(d->mAutoFractions);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setCapitalizeWeekDays(d->mCapitalizeWeekDays);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAdvancedAutocorrect(d->mAdvancedAutocorrect);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setReplaceDoubleQuotes(d->mReplaceDoubleQuotes);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setReplaceSingleQuotes(d->mReplaceSingleQuotes);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setEnabled(d->mEnabled);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setSuperScript(d->mSuperScriptAppendix);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setAddNonBreakingSpaceInFrench(d->mAddNonBreakingSpace);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setTypographicSingleQuotes(d->mTypographicSingleQuotes.toString());
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setTypographicDoubleQuotes(d->mTypographicDoubleQuotes.toString());
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setReplaceDoubleQuotesByFrenchQuotes(d->mReplaceDoubleQuotesByFrenchQuotes);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setCustomWritablePath(d->mCustomWritablePath);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setCustomSystemPath(d->mCustomSystemPath);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->requestSync();
     writeAutoCorrectionFile();
 }
 
@@ -390,7 +390,7 @@ void AutoCorrectionSettings::writeAutoCorrectionFile(const QString &filename)
     correct.setTwoUpperLetterExceptions(d->mTwoUpperLetterExceptions);
     QString message;
     if (!correct.exportData(d->mAutoCorrectLang, filename, message, d->mCustomWritablePath)) {
-        qCDebug(PIMCOMMONAUTOCORRECTION_LOG) << "We can't save in file :" << filename;
+        qCDebug(TEXTAUTOCORRECTION_LOG) << "We can't save in file :" << filename;
     }
 }
 
@@ -608,7 +608,7 @@ void AutoCorrectionSettings::setCustomSystemPath(const QString &path)
     d->mCustomSystemPath = path;
 }
 
-QDebug operator<<(QDebug d, const PimCommonAutoCorrection::AutoCorrectionSettings &t)
+QDebug operator<<(QDebug d, const TextAutoCorrection::AutoCorrectionSettings &t)
 {
     d << "mAddNonBreakingSpace " << t.nonBreakingSpace();
     d << "mSuperScriptAppendix " << t.isSuperScript();

@@ -8,7 +8,7 @@
 
 #include <QTreeWidget>
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrectionTreeWidget : public QTreeWidget
 {

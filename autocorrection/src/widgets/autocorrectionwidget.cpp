@@ -5,14 +5,14 @@
 */
 
 #include "autocorrectionwidget.h"
-#include "autocorrection/autocorrection.h"
-#include "autocorrection/autocorrectionutils.h"
-#include "autocorrection/import/importabstractautocorrection.h"
-#include "autocorrection/import/importkmailautocorrection.h"
-#include "autocorrection/import/importlibreofficeautocorrection.h"
+#include "autocorrection.h"
+#include "autocorrectionutils.h"
+#include "import/importabstractautocorrection.h"
+#include "import/importkmailautocorrection.h"
+#include "import/importlibreofficeautocorrection.h"
 #include "ui_autocorrectionwidget.h"
 
-#include "autocorrection/widgets/selectspecialchardialog.h"
+#include "widgets/selectspecialchardialog.h"
 #include <Libkdepim/LineEditCatchReturnKey>
 
 #include <KLocalizedString>
@@ -23,7 +23,7 @@
 #include <QPointer>
 #include <QTreeWidgetItem>
 
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 Q_DECLARE_METATYPE(AutoCorrectionWidget::ImportFileType)
 class PimCommonAutoCorrection::AutoCorrectionWidgetPrivate

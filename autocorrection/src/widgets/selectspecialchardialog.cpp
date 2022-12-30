@@ -19,7 +19,7 @@ namespace
 static const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";
 }
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class SelectSpecialCharDialogPrivate
 {

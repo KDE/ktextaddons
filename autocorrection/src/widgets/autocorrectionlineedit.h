@@ -6,10 +6,10 @@
 
 #pragma once
 
-#include "pimcommonautocorrection_export.h"
+#include "textautocorrection_export.h"
 
 #include <QPlainTextEdit>
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 class AutoCorrection;
 class AutoCorrectionLineEditPrivate;
@@ -17,16 +17,16 @@ class AutoCorrectionLineEditPrivate;
  * @brief The AutoCorrectionLineEdit class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONAUTOCORRECTION_EXPORT AutoCorrectionLineEdit : public QPlainTextEdit
+class TEXTAUTOCORRECTION_EXPORT AutoCorrectionLineEdit : public QPlainTextEdit
 {
     Q_OBJECT
 public:
     explicit AutoCorrectionLineEdit(QWidget *parent = nullptr);
     ~AutoCorrectionLineEdit() override;
 
-    Q_REQUIRED_RESULT PimCommonAutoCorrection::AutoCorrection *autocorrection() const;
+    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrection *autocorrection() const;
 
-    void setAutocorrection(PimCommonAutoCorrection::AutoCorrection *autocorrect);
+    void setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect);
     void setAutocorrectionLanguage(const QString &language);
 
 protected:

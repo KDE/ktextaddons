@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include "pimcommonautocorrection_export.h"
+#include "textautocorrection_export.h"
 #include <QComboBox>
 
-namespace PimCommonAutoCorrection
+namespace TextAutoCorrection
 {
 /**
  * @brief The AutoCorrectionLanguage class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONAUTOCORRECTION_EXPORT AutoCorrectionLanguage : public QComboBox
+class TEXTAUTOCORRECTION_EXPORT AutoCorrectionLanguage : public QComboBox
 {
 public:
     explicit AutoCorrectionLanguage(QWidget *parent);

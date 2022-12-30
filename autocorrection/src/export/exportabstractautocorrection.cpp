@@ -5,7 +5,7 @@
 */
 
 #include "exportabstractautocorrection.h"
-using namespace PimCommonAutoCorrection;
+using namespace TextAutoCorrection;
 
 ExportAbstractAutocorrection::ExportAbstractAutocorrection() = default;
 
