@@ -11,7 +11,7 @@
 
 #include <QHBoxLayout>
 #include <QToolButton>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 GrammarResultWidget::GrammarResultWidget(QWidget *parent)
     : QWidget(parent)
     , mResult(new GrammarResultTextEdit(this))

@@ -9,7 +9,7 @@
 
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 LanguageToolGetListOfLanguageJob::LanguageToolGetListOfLanguageJob(QObject *parent)
     : QObject(parent)
 {

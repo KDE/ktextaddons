@@ -9,7 +9,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarAction
 {
@@ -43,5 +43,5 @@ private:
     int mBlockId = -1;
 };
 }
-Q_DECLARE_METATYPE(PimCommonTextGrammarCheck::GrammarAction)
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const PimCommonTextGrammarCheck::GrammarAction &t);
+Q_DECLARE_METATYPE(TextGrammarCheck::GrammarAction)
+PIMCOMMONTEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarAction &t);

@@ -38,9 +38,9 @@ LanguageToolWidget::LanguageToolWidget(QWidget *parent)
     mInput = new QTextEdit(this);
     mainLayout->addWidget(mInput);
 
-    mResultWidget = new PimCommonTextGrammarCheck::LanguageToolResultWidget(this);
+    mResultWidget = new TextGrammarCheck::LanguageToolResultWidget(this);
     mainLayout->addWidget(mResultWidget);
-    connect(mResultWidget, &PimCommonTextGrammarCheck::LanguageToolResultWidget::replaceText, this, &LanguageToolWidget::slotReplaceText);
+    connect(mResultWidget, &TextGrammarCheck::LanguageToolResultWidget::replaceText, this, &LanguageToolWidget::slotReplaceText);
 
     connect(button, &QPushButton::clicked, this, &LanguageToolWidget::slotCheckGrammar);
     connect(languageButton, &QPushButton::clicked, this, &LanguageToolWidget::slotGetListOfLanguages);
@@ -48,7 +48,7 @@ LanguageToolWidget::LanguageToolWidget(QWidget *parent)
 
 LanguageToolWidget::~LanguageToolWidget() = default;
 
-void LanguageToolWidget::slotReplaceText(const PimCommonTextGrammarCheck::GrammarAction &act)
+void LanguageToolWidget::slotReplaceText(const TextGrammarCheck::GrammarAction &act)
 {
     QTextBlock block = mInput->document()->findBlockByNumber(act.blockId() - 1);
     if (block.isValid()) {
@@ -62,23 +62,23 @@ void LanguageToolWidget::slotReplaceText(const PimCommonTextGrammarCheck::Gramma
 
 void LanguageToolWidget::slotCheckGrammar()
 {
-    auto job = new PimCommonTextGrammarCheck::LanguageToolResultJob(this);
+    auto job = new TextGrammarCheck::LanguageToolResultJob(this);
     job->setUrl(QStringLiteral("https://api.languagetoolplus.com/v2/check"));
     job->setNetworkAccessManager(mNetworkAccessManager);
     job->setText(mInput->toPlainText());
     job->setLanguage(QStringLiteral("fr"));
-    connect(job, &PimCommonTextGrammarCheck::LanguageToolResultJob::finished, this, &LanguageToolWidget::slotResultFinished);
-    connect(job, &PimCommonTextGrammarCheck::LanguageToolResultJob::error, this, &LanguageToolWidget::slotError);
+    connect(job, &TextGrammarCheck::LanguageToolResultJob::finished, this, &LanguageToolWidget::slotResultFinished);
+    connect(job, &TextGrammarCheck::LanguageToolResultJob::error, this, &LanguageToolWidget::slotError);
     job->start();
 }
 
 void LanguageToolWidget::slotGetListOfLanguages()
 {
-    auto job = new PimCommonTextGrammarCheck::LanguageToolGetListOfLanguageJob(this);
+    auto job = new TextGrammarCheck::LanguageToolGetListOfLanguageJob(this);
     job->setUrl(QStringLiteral("https://api.languagetoolplus.com/v2/languages"));
     job->setNetworkAccessManager(mNetworkAccessManager);
-    connect(job, &PimCommonTextGrammarCheck::LanguageToolGetListOfLanguageJob::finished, this, &LanguageToolWidget::slotGetLanguagesFinished);
-    connect(job, &PimCommonTextGrammarCheck::LanguageToolGetListOfLanguageJob::error, this, &LanguageToolWidget::slotGetLanguagesError);
+    connect(job, &TextGrammarCheck::LanguageToolGetListOfLanguageJob::finished, this, &LanguageToolWidget::slotGetLanguagesFinished);
+    connect(job, &TextGrammarCheck::LanguageToolGetListOfLanguageJob::error, this, &LanguageToolWidget::slotGetLanguagesError);
     job->start();
 }
 
@@ -104,7 +104,7 @@ void LanguageToolWidget::slotResultFinished(const QString &result)
 {
     qDebug() << " result" << result;
     mResultWidget->setText(mInput->toPlainText());
-    PimCommonTextGrammarCheck::LanguageToolParser parser;
+    TextGrammarCheck::LanguageToolParser parser;
     const QJsonDocument doc = QJsonDocument::fromJson(result.toUtf8());
     const QJsonObject fields = doc.object();
     mResultWidget->applyGrammarResult(parser.parseResult(fields));

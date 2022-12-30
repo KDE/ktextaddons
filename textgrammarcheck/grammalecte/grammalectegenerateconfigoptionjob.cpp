@@ -8,7 +8,7 @@
 #include "pimcommontextgrammarcheck_debug.h"
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 GrammalecteGenerateConfigOptionJob::GrammalecteGenerateConfigOptionJob(QObject *parent)
     : QObject(parent)
 {

@@ -16,7 +16,7 @@ LanguageToolUpdateComboBoxTest::LanguageToolUpdateComboBoxTest(QObject *parent)
 
 void LanguageToolUpdateComboBoxTest::shouldHaveDefaultValues()
 {
-    PimCommonTextGrammarCheck::LanguageToolUpdateComboBox w;
+    TextGrammarCheck::LanguageToolUpdateComboBox w;
     QVERIFY(!w.languageToolCombobox());
     QVERIFY(!w.parentWidget());
 }

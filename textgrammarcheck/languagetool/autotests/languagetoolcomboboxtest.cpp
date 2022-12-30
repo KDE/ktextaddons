@@ -15,6 +15,6 @@ LanguageToolComboBoxTest::LanguageToolComboBoxTest(QObject *parent)
 
 void LanguageToolComboBoxTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::LanguageToolComboBox w;
+    TextGrammarCheck::LanguageToolComboBox w;
     QCOMPARE(w.count(), 30);
 }

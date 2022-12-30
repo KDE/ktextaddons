@@ -7,7 +7,7 @@
 #include "languagetoolcombobox.h"
 #include "languageinfo.h"
 #include <KLocalizedString>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 LanguageToolComboBox::LanguageToolComboBox(QWidget *parent)
     : QComboBox(parent)
 {

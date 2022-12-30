@@ -18,8 +18,8 @@ void LanguageToolGrammarErrorTest::shouldParseJson_data()
 {
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("nbBlock");
-    QTest::addColumn<PimCommonTextGrammarCheck::LanguageToolGrammarError>("error");
-    PimCommonTextGrammarCheck::LanguageToolGrammarError err;
+    QTest::addColumn<TextGrammarCheck::LanguageToolGrammarError>("error");
+    TextGrammarCheck::LanguageToolGrammarError err;
     err.setBlockId(1);
     err.setStart(3);
     err.setLength(8);
@@ -36,7 +36,7 @@ void LanguageToolGrammarErrorTest::shouldParseJson()
 {
     QFETCH(QString, fileName);
     QFETCH(int, nbBlock);
-    QFETCH(PimCommonTextGrammarCheck::LanguageToolGrammarError, error);
+    QFETCH(TextGrammarCheck::LanguageToolGrammarError, error);
     const QString originalJsonFile = QLatin1String(LANGUAGETOOL_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
@@ -44,7 +44,7 @@ void LanguageToolGrammarErrorTest::shouldParseJson()
     f.close();
     const QJsonDocument doc = QJsonDocument::fromJson(content);
     const QJsonObject fields = doc.object();
-    PimCommonTextGrammarCheck::LanguageToolGrammarError parser;
+    TextGrammarCheck::LanguageToolGrammarError parser;
     parser.setTesting(true);
     parser.parse(fields, nbBlock);
     const bool compare = (parser == error);

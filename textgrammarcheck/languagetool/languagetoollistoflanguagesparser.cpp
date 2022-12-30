@@ -8,7 +8,7 @@
 
 #include <QJsonArray>
 #include <QJsonObject>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 LanguageToolListOfLanguagesParser::LanguageToolListOfLanguagesParser() = default;
 
 LanguageToolListOfLanguagesParser::~LanguageToolListOfLanguagesParser() = default;

@@ -11,7 +11,7 @@
 #include <QLineEdit>
 #include <QToolButton>
 
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 GrammalecteUrlRequesterWidget::GrammalecteUrlRequesterWidget(QWidget *parent)
     : QWidget{parent}
     , mLineEdit(new QLineEdit(this))

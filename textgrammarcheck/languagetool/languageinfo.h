@@ -8,7 +8,7 @@
 #include "pimcommontextgrammarcheckprivate_export.h"
 
 #include <QObject>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageInfo
 {
@@ -37,5 +37,5 @@ private:
     QString mCode;
 };
 }
-Q_DECLARE_METATYPE(PimCommonTextGrammarCheck::LanguageInfo)
-Q_DECLARE_TYPEINFO(PimCommonTextGrammarCheck::LanguageInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_METATYPE(TextGrammarCheck::LanguageInfo)
+Q_DECLARE_TYPEINFO(TextGrammarCheck::LanguageInfo, Q_MOVABLE_TYPE);

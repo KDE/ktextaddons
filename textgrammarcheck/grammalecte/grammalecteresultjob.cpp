@@ -9,7 +9,7 @@
 
 #include <QFileInfo>
 #include <QTemporaryFile>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 GrammalecteResultJob::GrammalecteResultJob(QObject *parent)
     : QObject(parent)
 {

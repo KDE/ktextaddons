@@ -18,6 +18,7 @@
 
 GrammalecteWidget::GrammalecteWidget(QWidget *parent)
     : QWidget(parent)
+    , mResultWidget(new TextGrammarCheck::GrammalecteResultWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
 
@@ -30,9 +31,8 @@ GrammalecteWidget::GrammalecteWidget(QWidget *parent)
     mInput = new QTextEdit(this);
     mainLayout->addWidget(mInput);
 
-    mResultWidget = new PimCommonTextGrammarCheck::GrammalecteResultWidget(this);
     mainLayout->addWidget(mResultWidget);
-    connect(mResultWidget, &PimCommonTextGrammarCheck::GrammalecteResultWidget::replaceText, this, &GrammalecteWidget::slotReplaceText);
+    connect(mResultWidget, &TextGrammarCheck::GrammalecteResultWidget::replaceText, this, &GrammalecteWidget::slotReplaceText);
 
     connect(button, &QPushButton::clicked, this, &GrammalecteWidget::slotCheckGrammar);
     connect(checkSettingsButton, &QPushButton::clicked, this, &GrammalecteWidget::slotGetSettings);
@@ -40,7 +40,7 @@ GrammalecteWidget::GrammalecteWidget(QWidget *parent)
 
 GrammalecteWidget::~GrammalecteWidget() = default;
 
-void GrammalecteWidget::slotReplaceText(const PimCommonTextGrammarCheck::GrammarAction &act)
+void GrammalecteWidget::slotReplaceText(const TextGrammarCheck::GrammarAction &act)
 {
     QTextBlock block = mInput->document()->findBlockByNumber(act.blockId() - 1);
     if (block.isValid()) {
@@ -54,24 +54,24 @@ void GrammalecteWidget::slotReplaceText(const PimCommonTextGrammarCheck::Grammar
 
 void GrammalecteWidget::slotGetSettings()
 {
-    auto job = new PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob(this);
+    auto job = new TextGrammarCheck::GrammalecteGenerateConfigOptionJob(this);
     job->setPythonPath(QStringLiteral("/usr/bin/python3"));
     job->setGrammarlecteCliPath(QStringLiteral("/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py"));
-    connect(job, &PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob::finished, this, &GrammalecteWidget::slotGetSettingsFinished);
+    connect(job, &TextGrammarCheck::GrammalecteGenerateConfigOptionJob::finished, this, &GrammalecteWidget::slotGetSettingsFinished);
     job->start();
 }
 
-void GrammalecteWidget::slotGetSettingsFinished(const QVector<PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result)
+void GrammalecteWidget::slotGetSettingsFinished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result)
 {
 }
 
 void GrammalecteWidget::slotCheckGrammar()
 {
-    auto job = new PimCommonTextGrammarCheck::GrammalecteResultJob(this);
+    auto job = new TextGrammarCheck::GrammalecteResultJob(this);
     job->setPythonPath(QStringLiteral("/usr/bin/python3"));
     job->setGrammarlecteCliPath(QStringLiteral("/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py"));
     job->setText(mInput->toPlainText());
-    connect(job, &PimCommonTextGrammarCheck::GrammalecteResultJob::finished, this, &GrammalecteWidget::slotResultFinished);
+    connect(job, &TextGrammarCheck::GrammalecteResultJob::finished, this, &GrammalecteWidget::slotResultFinished);
     job->start();
 }
 
@@ -79,7 +79,7 @@ void GrammalecteWidget::slotResultFinished(const QString &result)
 {
     qDebug() << " result" << result;
     mResultWidget->setText(mInput->toPlainText());
-    PimCommonTextGrammarCheck::GrammalecteParser parser;
+    TextGrammarCheck::GrammalecteParser parser;
     const QJsonDocument doc = QJsonDocument::fromJson(result.toUtf8());
     const QJsonObject fields = doc.object();
     mResultWidget->applyGrammarResult(parser.parseResult(fields));

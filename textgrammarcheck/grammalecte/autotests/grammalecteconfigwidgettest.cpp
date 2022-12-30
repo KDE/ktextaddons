@@ -25,7 +25,7 @@ GrammalecteConfigWidgetTest::GrammalecteConfigWidgetTest(QObject *parent)
 
 void GrammalecteConfigWidgetTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::GrammalecteConfigWidget w(nullptr, true);
+    TextGrammarCheck::GrammalecteConfigWidget w(nullptr, true);
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins());
@@ -38,11 +38,11 @@ void GrammalecteConfigWidgetTest::shouldHaveDefaultValue()
     auto lay = generalWidget->findChild<QFormLayout *>(QStringLiteral("generallayout"));
     QVERIFY(lay);
 
-    auto mPythonPath = generalWidget->findChild<PimCommonTextGrammarCheck::GrammalecteUrlRequesterWidget *>(QStringLiteral("pythonpath"));
+    auto mPythonPath = generalWidget->findChild<TextGrammarCheck::GrammalecteUrlRequesterWidget *>(QStringLiteral("pythonpath"));
     QVERIFY(mPythonPath);
     QVERIFY(!mPythonPath->path().isEmpty());
 
-    auto mGrammalectePath = generalWidget->findChild<PimCommonTextGrammarCheck::GrammalecteUrlRequesterWidget *>(QStringLiteral("grammalectepath"));
+    auto mGrammalectePath = generalWidget->findChild<TextGrammarCheck::GrammalecteUrlRequesterWidget *>(QStringLiteral("grammalectepath"));
     QVERIFY(mGrammalectePath);
     QVERIFY(mGrammalectePath->path().isEmpty());
 

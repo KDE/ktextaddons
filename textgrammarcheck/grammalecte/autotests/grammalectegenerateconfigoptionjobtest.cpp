@@ -18,10 +18,10 @@ GrammalecteGenerateConfigOptionJobTest::GrammalecteGenerateConfigOptionJobTest(Q
 
 void GrammalecteGenerateConfigOptionJobTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob job;
+    TextGrammarCheck::GrammalecteGenerateConfigOptionJob job;
     QVERIFY(!job.canStart());
 
-    PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option opt;
+    TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option opt;
     QVERIFY(opt.optionName.isEmpty());
     QVERIFY(opt.description.isEmpty());
     QVERIFY(!opt.defaultValue);
@@ -29,7 +29,7 @@ void GrammalecteGenerateConfigOptionJobTest::shouldHaveDefaultValue()
 
 void GrammalecteGenerateConfigOptionJobTest::shouldBeAbleToStart()
 {
-    PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob job;
+    TextGrammarCheck::GrammalecteGenerateConfigOptionJob job;
     QVERIFY(!job.canStart());
     job.setPythonPath(QStringLiteral("ff"));
     QVERIFY(!job.canStart());

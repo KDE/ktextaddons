@@ -9,7 +9,7 @@
 #include "common/grammaraction.h"
 #include "grammalecte/grammalectegenerateconfigoptionjob.h"
 #include <QWidget>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class GrammalecteResultWidget;
 }
@@ -22,11 +22,11 @@ public:
     ~GrammalecteWidget() override;
 
 private:
-    void slotReplaceText(const PimCommonTextGrammarCheck::GrammarAction &act);
+    void slotReplaceText(const TextGrammarCheck::GrammarAction &act);
     void slotCheckGrammar();
     void slotGetSettings();
-    void slotGetSettingsFinished(const QVector<PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
+    void slotGetSettingsFinished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
     void slotResultFinished(const QString &result);
     QTextEdit *mInput = nullptr;
-    PimCommonTextGrammarCheck::GrammalecteResultWidget *mResultWidget = nullptr;
+    TextGrammarCheck::GrammalecteResultWidget *const mResultWidget;
 };

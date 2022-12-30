@@ -11,7 +11,7 @@
 #include <QObject>
 class QNetworkAccessManager;
 class QNetworkReply;
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT LanguageToolGetListOfLanguageJob : public QObject
 {

@@ -11,7 +11,7 @@
 class QCheckBox;
 class QLineEdit;
 class QLabel;
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;

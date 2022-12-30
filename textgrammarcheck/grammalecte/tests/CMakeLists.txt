@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 add_executable(grammalecte_gui)
-target_sources(grammalecte_gui PRIVATE main.cpp grammalectewidget.cpp)
+target_sources(grammalecte_gui PRIVATE main.cpp grammalectewidget.cpp grammalectewidget.h)
 target_link_libraries(grammalecte_gui
-    KF5::I18n KF5::PimCommonTextGrammarCheck
+    KF5::I18n KF5::TextGrammarCheck
 )
 

@@ -8,7 +8,7 @@
 
 #include "pimcommontextgrammarcheck_export.h"
 #include <QObject>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteManager : public QObject
 {

@@ -10,7 +10,7 @@
 #include "pimcommontextgrammarcheck_export.h"
 #include <QWidget>
 class QHBoxLayout;
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class GrammarAction;
 class GrammarResultTextEdit;
@@ -22,9 +22,9 @@ public:
     ~GrammarResultWidget() override;
     void setText(const QString &str);
     virtual void checkGrammar() = 0;
-    void applyGrammarResult(const QVector<PimCommonTextGrammarCheck::GrammarError> &infos);
+    void applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos);
 Q_SIGNALS:
-    void replaceText(const PimCommonTextGrammarCheck::GrammarAction &act);
+    void replaceText(const TextGrammarCheck::GrammarAction &act);
     void checkAgain();
     void closeChecker();
     void configure();

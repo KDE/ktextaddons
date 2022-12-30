@@ -8,8 +8,8 @@
 
 #include "grammalecteresultjob.h"
 #include "pimcommontextgrammarcheck_export.h"
-#include <PimCommonTextGrammarCheck/GrammarResultWidget>
-namespace PimCommonTextGrammarCheck
+#include <TextGrammarCheck/GrammarResultWidget>
+namespace TextGrammarCheck
 {
 class GrammalecteResultJob;
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidget

@@ -15,7 +15,7 @@ LanguageToolGetListOfLanguageJobTest::LanguageToolGetListOfLanguageJobTest(QObje
 
 void LanguageToolGetListOfLanguageJobTest::shouldHaveDefaultValues()
 {
-    PimCommonTextGrammarCheck::LanguageToolGetListOfLanguageJob w;
+    TextGrammarCheck::LanguageToolGetListOfLanguageJob w;
     QVERIFY(!w.canStart());
     QVERIFY(w.listOfLanguagePath().isEmpty());
     QVERIFY(w.url().isEmpty());
@@ -23,7 +23,7 @@ void LanguageToolGetListOfLanguageJobTest::shouldHaveDefaultValues()
 
 void LanguageToolGetListOfLanguageJobTest::shouldBeAbleToStart()
 {
-    PimCommonTextGrammarCheck::LanguageToolGetListOfLanguageJob job;
+    TextGrammarCheck::LanguageToolGetListOfLanguageJob job;
     QVERIFY(!job.canStart());
     job.setUrl(QStringLiteral("foo"));
     QVERIFY(!job.canStart());

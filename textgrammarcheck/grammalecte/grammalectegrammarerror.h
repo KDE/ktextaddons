@@ -7,8 +7,8 @@
 #pragma once
 
 #include "pimcommontextgrammarcheckprivate_export.h"
-#include <PimCommonTextGrammarCheck/GrammarError>
-namespace PimCommonTextGrammarCheck
+#include <TextGrammarCheck/GrammarError>
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteGrammarError : public GrammarError
 {
@@ -22,5 +22,5 @@ private:
     Q_REQUIRED_RESULT static QColor parseColor(const QJsonObject &obj);
 };
 }
-Q_DECLARE_METATYPE(PimCommonTextGrammarCheck::GrammalecteGrammarError)
-Q_DECLARE_TYPEINFO(PimCommonTextGrammarCheck::GrammalecteGrammarError, Q_MOVABLE_TYPE);
+Q_DECLARE_METATYPE(TextGrammarCheck::GrammalecteGrammarError)
+Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammalecteGrammarError, Q_MOVABLE_TYPE);

@@ -19,7 +19,7 @@ GrammalecteGrammarErrorTest::GrammalecteGrammarErrorTest(QObject *parent)
 
 void GrammalecteGrammarErrorTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::GrammalecteGrammarError info;
+    TextGrammarCheck::GrammalecteGrammarError info;
     QCOMPARE(info.length(), -1);
     QCOMPARE(info.start(), -1);
     QCOMPARE(info.blockId(), -1);
@@ -33,9 +33,9 @@ void GrammalecteGrammarErrorTest::shouldParseJson_data()
 {
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("nbBlock");
-    QTest::addColumn<PimCommonTextGrammarCheck::GrammalecteGrammarError>("error");
-    QTest::newRow("empty-error") << QStringLiteral("empty-error") << 1 << PimCommonTextGrammarCheck::GrammalecteGrammarError();
-    PimCommonTextGrammarCheck::GrammalecteGrammarError err;
+    QTest::addColumn<TextGrammarCheck::GrammalecteGrammarError>("error");
+    QTest::newRow("empty-error") << QStringLiteral("empty-error") << 1 << TextGrammarCheck::GrammalecteGrammarError();
+    TextGrammarCheck::GrammalecteGrammarError err;
     err.setBlockId(1);
     err.setStart(15);
     err.setLength(5);
@@ -53,7 +53,7 @@ void GrammalecteGrammarErrorTest::shouldParseJson()
 {
     QFETCH(QString, fileName);
     QFETCH(int, nbBlock);
-    QFETCH(PimCommonTextGrammarCheck::GrammalecteGrammarError, error);
+    QFETCH(TextGrammarCheck::GrammalecteGrammarError, error);
     const QString originalJsonFile = QLatin1String(GRAMMALECTE_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
@@ -61,7 +61,7 @@ void GrammalecteGrammarErrorTest::shouldParseJson()
     f.close();
     const QJsonDocument doc = QJsonDocument::fromJson(content);
     const QJsonObject fields = doc.object();
-    PimCommonTextGrammarCheck::GrammalecteGrammarError parser;
+    TextGrammarCheck::GrammalecteGrammarError parser;
     parser.parse(fields, nbBlock);
     const bool compare = (parser == error);
     if (!compare) {

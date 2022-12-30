@@ -20,13 +20,13 @@ LanguageToolConfigDialogTest::LanguageToolConfigDialogTest(QObject *parent)
 
 void LanguageToolConfigDialogTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::LanguageToolConfigDialog w(nullptr);
+    TextGrammarCheck::LanguageToolConfigDialog w(nullptr);
     QVERIFY(!w.windowTitle().isEmpty());
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
 
-    auto mConfigWidget = w.findChild<PimCommonTextGrammarCheck::LanguageToolConfigWidget *>(QStringLiteral("configwidget"));
+    auto mConfigWidget = w.findChild<TextGrammarCheck::LanguageToolConfigWidget *>(QStringLiteral("configwidget"));
     QVERIFY(mConfigWidget);
 
     auto box = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));

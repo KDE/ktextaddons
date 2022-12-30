@@ -9,7 +9,7 @@
 #include "languageinfo.h"
 #include "pimcommontextgrammarcheckprivate_export.h"
 #include <QVector>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser
 {

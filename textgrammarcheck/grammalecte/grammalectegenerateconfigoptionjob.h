@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QProcess>
 #include <QVector>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteGenerateConfigOptionJob : public QObject
 {
@@ -52,4 +52,4 @@ private:
     QProcess *mProcess = nullptr;
 };
 }
-Q_DECLARE_TYPEINFO(PimCommonTextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option, Q_MOVABLE_TYPE);

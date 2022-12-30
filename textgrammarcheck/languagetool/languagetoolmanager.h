@@ -11,7 +11,7 @@
 #include <QObject>
 class QColor;
 class QNetworkAccessManager;
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT LanguageToolManager : public QObject
 {

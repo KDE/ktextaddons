@@ -8,7 +8,7 @@
 
 #include <QJsonObject>
 
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 
 LanguageInfo::LanguageInfo() = default;
 

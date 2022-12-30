@@ -7,10 +7,10 @@
 #pragma once
 
 #include "pimcommontextgrammarcheckprivate_export.h"
-#include <PimCommonTextGrammarCheck/GrammarError>
 #include <QJsonObject>
 #include <QVector>
-namespace PimCommonTextGrammarCheck
+#include <TextGrammarCheck/GrammarError>
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteParser
 {

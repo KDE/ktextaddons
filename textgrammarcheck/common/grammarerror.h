@@ -11,7 +11,7 @@
 #include <QDebug>
 #include <QJsonObject>
 #include <QString>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarError
 {
@@ -63,6 +63,6 @@ protected:
     int mLength = -1;
 };
 }
-Q_DECLARE_METATYPE(PimCommonTextGrammarCheck::GrammarError)
-Q_DECLARE_TYPEINFO(PimCommonTextGrammarCheck::GrammarError, Q_MOVABLE_TYPE);
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const PimCommonTextGrammarCheck::GrammarError &t);
+Q_DECLARE_METATYPE(TextGrammarCheck::GrammarError)
+Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammarError, Q_MOVABLE_TYPE);
+PIMCOMMONTEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarError &t);

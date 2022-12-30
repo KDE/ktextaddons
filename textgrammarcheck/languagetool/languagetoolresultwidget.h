@@ -7,8 +7,8 @@
 #pragma once
 
 #include "pimcommontextgrammarcheck_export.h"
-#include <PimCommonTextGrammarCheck/GrammarResultWidget>
-namespace PimCommonTextGrammarCheck
+#include <TextGrammarCheck/GrammarResultWidget>
+namespace TextGrammarCheck
 {
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;

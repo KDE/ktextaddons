@@ -19,7 +19,7 @@
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QPainter>
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 GrammarResultTextEdit::GrammarResultTextEdit(QWidget *parent)
     : QTextEdit(parent)
 {
@@ -86,7 +86,7 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
     if (popup) {
         QTextCursor cursor = cursorForPosition(event->pos());
         if (cursor.charFormat().hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
-            const auto act = cursor.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<PimCommonTextGrammarCheck::GrammarAction>();
+            const auto act = cursor.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<TextGrammarCheck::GrammarAction>();
             const QStringList sugg = act.suggestions();
             if (!sugg.isEmpty()) {
                 popup->addSeparator();
@@ -131,9 +131,9 @@ void GrammarResultTextEdit::slotOpenGrammarUrlInfo(const QString &url)
     QDesktopServices::openUrl(QUrl(url));
 }
 
-void GrammarResultTextEdit::slotReplaceWord(const PimCommonTextGrammarCheck::GrammarAction &act, const QString &replacementWord)
+void GrammarResultTextEdit::slotReplaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord)
 {
-    PimCommonTextGrammarCheck::GrammarAction actWithReplacement = act;
+    TextGrammarCheck::GrammarAction actWithReplacement = act;
     actWithReplacement.setReplacement(replacementWord);
     GrammarResultUtil::replaceWord(actWithReplacement, replacementWord, document());
     Q_EMIT replaceText(actWithReplacement);

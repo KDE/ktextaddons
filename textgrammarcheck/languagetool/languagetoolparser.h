@@ -9,13 +9,13 @@
 #include "pimcommontextgrammarcheckprivate_export.h"
 
 #include "common/grammarerror.h"
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolParser
 {
 public:
     LanguageToolParser();
     ~LanguageToolParser();
-    Q_REQUIRED_RESULT QVector<PimCommonTextGrammarCheck::GrammarError> parseResult(const QJsonObject &obj) const;
+    Q_REQUIRED_RESULT QVector<TextGrammarCheck::GrammarError> parseResult(const QJsonObject &obj) const;
 };
 }

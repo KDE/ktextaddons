@@ -16,7 +16,7 @@ LanguageInfoTest::LanguageInfoTest(QObject *parent)
 
 void LanguageInfoTest::shouldHaveDefaultValues()
 {
-    PimCommonTextGrammarCheck::LanguageInfo w;
+    TextGrammarCheck::LanguageInfo w;
     QVERIFY(w.name().isEmpty());
     QVERIFY(w.code().isEmpty());
     QVERIFY(w.longCode().isEmpty());

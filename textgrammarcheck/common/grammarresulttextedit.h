@@ -9,7 +9,7 @@
 #include "grammarerror.h"
 #include "pimcommontextgrammarcheck_export.h"
 #include <QTextEdit>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class GrammarAction;
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit
@@ -28,14 +28,14 @@ protected:
 
     bool event(QEvent *ev) override;
 Q_SIGNALS:
-    void replaceText(const PimCommonTextGrammarCheck::GrammarAction &act);
+    void replaceText(const TextGrammarCheck::GrammarAction &act);
     void checkAgain();
     void closeChecker();
     void configure();
 
 private:
     Q_DISABLE_COPY(GrammarResultTextEdit)
-    void slotReplaceWord(const PimCommonTextGrammarCheck::GrammarAction &act, const QString &replacementWord);
+    void slotReplaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord);
     void slotOpenGrammarUrlInfo(const QString &url);
     void generalPaletteChanged();
     QColor mTextColor;

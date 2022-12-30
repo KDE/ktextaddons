@@ -17,11 +17,11 @@ LanguageToolResultWidgetTest::LanguageToolResultWidgetTest(QObject *parent)
 
 void LanguageToolResultWidgetTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::LanguageToolResultWidget w;
+    TextGrammarCheck::LanguageToolResultWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins());
 
-    auto mResult = w.findChild<PimCommonTextGrammarCheck::GrammarResultTextEdit *>(QStringLiteral("grammarResult"));
+    auto mResult = w.findChild<TextGrammarCheck::GrammarResultTextEdit *>(QStringLiteral("grammarResult"));
     QVERIFY(mResult);
 }

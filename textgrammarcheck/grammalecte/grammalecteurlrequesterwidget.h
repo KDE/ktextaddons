@@ -9,7 +9,7 @@
 #include "pimcommontextgrammarcheckprivate_export.h"
 #include <QWidget>
 class QLineEdit;
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteUrlRequesterWidget : public QWidget
 {

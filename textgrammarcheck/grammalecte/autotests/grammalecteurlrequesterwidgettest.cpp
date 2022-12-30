@@ -19,7 +19,7 @@ GrammalecteUrlRequesterWidgetTest::GrammalecteUrlRequesterWidgetTest(QObject *pa
 
 void GrammalecteUrlRequesterWidgetTest::shouldHaveDefaultValues()
 {
-    PimCommonTextGrammarCheck::GrammalecteUrlRequesterWidget w;
+    TextGrammarCheck::GrammalecteUrlRequesterWidget w;
 
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);

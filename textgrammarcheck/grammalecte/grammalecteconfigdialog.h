@@ -7,7 +7,7 @@
 #pragma once
 #include "pimcommontextgrammarcheck_export.h"
 #include <QDialog>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class GrammalecteConfigWidget;
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteConfigDialog : public QDialog

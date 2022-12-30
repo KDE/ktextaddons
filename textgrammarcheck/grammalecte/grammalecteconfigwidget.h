@@ -7,13 +7,13 @@
 #pragma once
 
 #include "pimcommontextgrammarcheck_export.h"
-#include <PimCommonTextGrammarCheck/GrammalecteGenerateConfigOptionJob>
 #include <QWidget>
+#include <TextGrammarCheck/GrammalecteGenerateConfigOptionJob>
 class QCheckBox;
 class KUrlRequester;
 class QStackedWidget;
 class QScrollArea;
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class GrammalecteUrlRequesterWidget;
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget

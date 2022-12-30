@@ -20,13 +20,13 @@ GrammalecteConfigDialogTest::GrammalecteConfigDialogTest(QObject *parent)
 
 void GrammalecteConfigDialogTest::shouldHaveDefaultValue()
 {
-    PimCommonTextGrammarCheck::GrammalecteConfigDialog w(nullptr, true);
+    TextGrammarCheck::GrammalecteConfigDialog w(nullptr, true);
     QVERIFY(!w.windowTitle().isEmpty());
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
 
-    auto mConfigWidget = w.findChild<PimCommonTextGrammarCheck::GrammalecteConfigWidget *>(QStringLiteral("configwidget"));
+    auto mConfigWidget = w.findChild<TextGrammarCheck::GrammalecteConfigWidget *>(QStringLiteral("configwidget"));
     QVERIFY(mConfigWidget);
 
     auto box = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));

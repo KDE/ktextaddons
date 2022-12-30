@@ -9,7 +9,7 @@
 #include "pimcommontextgrammarcheck_export.h"
 #include <QObject>
 #include <QProcess>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteResultJob : public QObject
 {

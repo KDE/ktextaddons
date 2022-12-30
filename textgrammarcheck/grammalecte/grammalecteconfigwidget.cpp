@@ -20,7 +20,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 GrammalecteConfigWidget::GrammalecteConfigWidget(QWidget *parent, bool disableMessageBox)
     : QWidget(parent)
     , mDisableDialogBox(disableMessageBox)
@@ -130,11 +130,11 @@ QWidget *GrammalecteConfigWidget::addGeneralTab()
     auto lay = new QFormLayout(w);
     lay->setObjectName(QStringLiteral("generallayout"));
 
-    mPythonPath = new PimCommonTextGrammarCheck::GrammalecteUrlRequesterWidget(this);
+    mPythonPath = new TextGrammarCheck::GrammalecteUrlRequesterWidget(this);
     mPythonPath->setObjectName(QStringLiteral("pythonpath"));
     lay->addRow(i18n("Python Path:"), mPythonPath);
 
-    mGrammalectePath = new PimCommonTextGrammarCheck::GrammalecteUrlRequesterWidget(this);
+    mGrammalectePath = new TextGrammarCheck::GrammalecteUrlRequesterWidget(this);
     mGrammalectePath->setObjectName(QStringLiteral("grammalectepath"));
     mGrammalectePath->setPlaceholderText(i18n("Add full 'grammalecte-cli.py' path"));
     lay->addRow(i18n("Grammalecte Path:"), mGrammalectePath);

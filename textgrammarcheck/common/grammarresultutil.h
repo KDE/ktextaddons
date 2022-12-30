@@ -10,7 +10,7 @@
 #include "pimcommontextgrammarcheck_export.h"
 
 #include <QTextFormat>
-namespace PimCommonTextGrammarCheck
+namespace TextGrammarCheck
 {
 namespace GrammarResultUtil
 {
@@ -18,7 +18,7 @@ enum TextInfo {
     ReplaceFormatInfo = QTextFormat::UserProperty + 1,
 };
 PIMCOMMONTEXTGRAMMARCHECK_EXPORT void
-applyGrammarResult(const QVector<PimCommonTextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT void replaceWord(const PimCommonTextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document);
+applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
+PIMCOMMONTEXTGRAMMARCHECK_EXPORT void replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document);
 }
 }

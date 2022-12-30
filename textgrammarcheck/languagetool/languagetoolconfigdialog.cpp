@@ -18,7 +18,7 @@ namespace
 {
 static const char myConfigGroupName[] = "LanguageToolConfigDialog";
 }
-using namespace PimCommonTextGrammarCheck;
+using namespace TextGrammarCheck;
 LanguageToolConfigDialog::LanguageToolConfigDialog(QWidget *parent)
     : QDialog(parent)
     , mConfigWidget(new LanguageToolConfigWidget(this))
