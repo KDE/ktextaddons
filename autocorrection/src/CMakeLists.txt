@@ -106,7 +106,7 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
     AutoCorrectionLanguage
     SelectSpecialCharDialog
     AutoCorrectionTextEdit
-    REQUIRED_HEADERS PimCommon_autocorrectionwidgets_HEADERS
+    REQUIRED_HEADERS TextAutoCorrection_autocorrectionwidgets_HEADERS
     PREFIX TextAutoCorrection
     RELATIVE widgets/
     )
