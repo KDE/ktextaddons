@@ -5,8 +5,8 @@
 */
 
 #include "autocorrectiontextedittest.h"
-#include <PimCommonAutoCorrection/AutoCorrectionTextEdit>
 #include <QTest>
+#include <TextAutoCorrection/AutoCorrectionTextEdit>
 #include <autocorrection/autocorrection.h>
 #include <autocorrection/autocorrectionsettings.h>
 #include <qtestkeyboard.h>
@@ -15,12 +15,12 @@ AutoCorrectionTextEditTest::AutoCorrectionTextEditTest() = default;
 
 void AutoCorrectionTextEditTest::shouldNotAutocorrectWhenDisabled()
 {
-    PimCommonAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
     QHash<QString, QString> entries;
     const QString originalWord = QStringLiteral("FOOFOO");
     const QString replaceWord = QStringLiteral("BLABLA");
     entries.insert(originalWord, replaceWord);
-    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
+    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
     settings->setAutocorrectEntries(entries);
     richtext.autocorrection()->setAutoCorrectionSettings(settings);
     richtext.show();
@@ -32,12 +32,12 @@ void AutoCorrectionTextEditTest::shouldNotAutocorrectWhenDisabled()
 
 void AutoCorrectionTextEditTest::shouldReplaceWordWhenExactText()
 {
-    PimCommonAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
     const QString originalWord = QStringLiteral("FOOFOO");
     const QString replaceWord = QStringLiteral("BLABLA");
     QHash<QString, QString> entries;
     entries.insert(originalWord, replaceWord);
-    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
+    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
@@ -51,12 +51,12 @@ void AutoCorrectionTextEditTest::shouldReplaceWordWhenExactText()
 
 void AutoCorrectionTextEditTest::shouldNotReplaceWordWhenInexactText()
 {
-    PimCommonAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
     const QString originalWord = QStringLiteral("FOOFOO");
     const QString replaceWord = QStringLiteral("BLABLA");
     QHash<QString, QString> entries;
     entries.insert(originalWord, replaceWord);
-    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
+    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
@@ -72,13 +72,13 @@ void AutoCorrectionTextEditTest::shouldNotReplaceWordWhenInexactText()
 
 void AutoCorrectionTextEditTest::shouldReplaceWhenPressEnter()
 {
-    PimCommonAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
     const QString originalWord = QStringLiteral("FOOFOO");
     const QString replaceWord = QStringLiteral("BLABLA");
     QHash<QString, QString> entries;
     entries.insert(originalWord, replaceWord);
 
-    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
+    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
@@ -93,12 +93,12 @@ void AutoCorrectionTextEditTest::shouldReplaceWhenPressEnter()
 
 void AutoCorrectionTextEditTest::shouldReplaceWhenPressReturn()
 {
-    PimCommonAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
+    TextAutoCorrection::AutoCorrectionTextEdit richtext(nullptr);
     const QString originalWord = QStringLiteral("FOOFOO");
     const QString replaceWord = QStringLiteral("BLABLA");
     QHash<QString, QString> entries;
     entries.insert(originalWord, replaceWord);
-    auto settings = new PimCommonAutoCorrection::AutoCorrectionSettings;
+    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
     settings->setAutocorrectEntries(entries);
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);

@@ -5,9 +5,9 @@
 */
 
 #include "autocorrectionlineedit.h"
-#include <PimCommonAutoCorrection/AutoCorrection>
 #include <QKeyEvent>
 #include <QTextCursor>
+#include <TextAutoCorrection/AutoCorrection>
 
 using namespace TextAutoCorrection;
 class TextAutoCorrection::AutoCorrectionLineEditPrivate

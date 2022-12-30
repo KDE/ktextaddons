@@ -9,7 +9,7 @@
 #include "widgets/autocorrectionlineedit.h"
 #include "widgets/autocorrectiontextedit.h"
 #include "widgets/autocorrectionwidget.h"
-#include <PimCommonAutoCorrection/AutoCorrection>
+#include <TextAutoCorrection/AutoCorrection>
 
 #include <QAction>
 #include <QApplication>
@@ -20,7 +20,7 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 
-ConfigureTestDialog::ConfigureTestDialog(PimCommonAutoCorrection::AutoCorrection *autoCorrection, QWidget *parent)
+ConfigureTestDialog::ConfigureTestDialog(TextAutoCorrection::AutoCorrection *autoCorrection, QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(QStringLiteral("Configure Autocorrection"));
@@ -34,7 +34,7 @@ ConfigureTestDialog::ConfigureTestDialog(PimCommonAutoCorrection::AutoCorrection
 
     buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    mWidget = new PimCommonAutoCorrection::AutoCorrectionWidget(this);
+    mWidget = new TextAutoCorrection::AutoCorrectionWidget(this);
     mainLayout->addWidget(mWidget);
     mainLayout->addWidget(buttonBox);
 
@@ -54,10 +54,10 @@ AutocorrectionTestWidget::AutocorrectionTestWidget(QWidget *parent)
     : QWidget(parent)
     , mConfig(KSharedConfig::openConfig(QStringLiteral("autocorrectionguirc")))
 {
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->setSharedConfig(mConfig);
-    PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->load();
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->setSharedConfig(mConfig);
+    TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->load();
 
-    mAutoCorrection = new PimCommonAutoCorrection::AutoCorrection;
+    mAutoCorrection = new TextAutoCorrection::AutoCorrection;
     auto lay = new QVBoxLayout(this);
     auto bar = new QToolBar;
     lay->addWidget(bar);
@@ -67,11 +67,11 @@ AutocorrectionTestWidget::AutocorrectionTestWidget(QWidget *parent)
     connect(richText, &QAction::toggled, this, &AutocorrectionTestWidget::slotChangeMode);
     bar->addAction(richText);
 
-    mSubject = new PimCommonAutoCorrection::AutoCorrectionLineEdit(this);
+    mSubject = new TextAutoCorrection::AutoCorrectionLineEdit(this);
     mSubject->setAutocorrection(mAutoCorrection);
     lay->addWidget(mSubject);
 
-    mEdit = new PimCommonAutoCorrection::AutoCorrectionTextEdit(this);
+    mEdit = new TextAutoCorrection::AutoCorrectionTextEdit(this);
     mEdit->setAutocorrection(mAutoCorrection);
     lay->addWidget(mEdit);
 }
@@ -91,7 +91,7 @@ void AutocorrectionTestWidget::slotConfigure()
 {
     QPointer<ConfigureTestDialog> dlg = new ConfigureTestDialog(mAutoCorrection, this);
     if (dlg->exec()) {
-        PimCommonAutoCorrection::PimCommonAutoCorrectionSettings::self()->save();
+        TextAutoCorrection::PimCommonAutoCorrectionSettings::self()->save();
     }
     delete dlg;
 }

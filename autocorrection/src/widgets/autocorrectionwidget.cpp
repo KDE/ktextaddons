@@ -26,7 +26,7 @@
 using namespace TextAutoCorrection;
 
 Q_DECLARE_METATYPE(AutoCorrectionWidget::ImportFileType)
-class PimCommonAutoCorrection::AutoCorrectionWidgetPrivate
+class TextAutoCorrection::AutoCorrectionWidgetPrivate
 {
 public:
     AutoCorrectionWidgetPrivate()
@@ -49,7 +49,7 @@ public:
 
 AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new PimCommonAutoCorrection::AutoCorrectionWidgetPrivate)
+    , d(new TextAutoCorrection::AutoCorrectionWidgetPrivate)
 {
     d->ui->setupUi(this);
 
@@ -84,9 +84,9 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->advancedAutocorrection, &QCheckBox::clicked, this, &AutoCorrectionWidget::enableAdvAutocorrection);
     connect(d->ui->addButton, &QPushButton::clicked, this, &AutoCorrectionWidget::addAutocorrectEntry);
     connect(d->ui->removeButton, &QPushButton::clicked, this, &AutoCorrectionWidget::removeAutocorrectEntry);
-    connect(d->ui->treeWidget, &PimCommonAutoCorrection::AutoCorrectionTreeWidget::itemClicked, this, &AutoCorrectionWidget::setFindReplaceText);
-    connect(d->ui->treeWidget, &PimCommonAutoCorrection::AutoCorrectionTreeWidget::deleteSelectedItems, this, &AutoCorrectionWidget::removeAutocorrectEntry);
-    connect(d->ui->treeWidget, &PimCommonAutoCorrection::AutoCorrectionTreeWidget::itemSelectionChanged, this, &AutoCorrectionWidget::updateAddRemoveButton);
+    connect(d->ui->treeWidget, &TextAutoCorrection::AutoCorrectionTreeWidget::itemClicked, this, &AutoCorrectionWidget::setFindReplaceText);
+    connect(d->ui->treeWidget, &TextAutoCorrection::AutoCorrectionTreeWidget::deleteSelectedItems, this, &AutoCorrectionWidget::removeAutocorrectEntry);
+    connect(d->ui->treeWidget, &TextAutoCorrection::AutoCorrectionTreeWidget::itemSelectionChanged, this, &AutoCorrectionWidget::updateAddRemoveButton);
     connect(d->ui->find, &QLineEdit::textChanged, this, &AutoCorrectionWidget::enableAddRemoveButton);
     connect(d->ui->replace, &QLineEdit::textChanged, this, &AutoCorrectionWidget::enableAddRemoveButton);
     connect(d->ui->abbreviation, &QLineEdit::textChanged, this, &AutoCorrectionWidget::abbreviationChanged);
@@ -98,22 +98,19 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->typographicDoubleQuotes, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->typographicSingleQuotes, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->abbreviationList,
-            &PimCommonAutoCorrection::AutoCorrectionListWidget::itemSelectionChanged,
+            &TextAutoCorrection::AutoCorrectionListWidget::itemSelectionChanged,
             this,
             &AutoCorrectionWidget::slotEnableDisableAbreviationList);
-    connect(d->ui->abbreviationList,
-            &PimCommonAutoCorrection::AutoCorrectionListWidget::deleteSelectedItems,
-            this,
-            &AutoCorrectionWidget::removeAbbreviationEntry);
+    connect(d->ui->abbreviationList, &TextAutoCorrection::AutoCorrectionListWidget::deleteSelectedItems, this, &AutoCorrectionWidget::removeAbbreviationEntry);
     connect(d->ui->twoUpperLetterList,
-            &PimCommonAutoCorrection::AutoCorrectionListWidget::itemSelectionChanged,
+            &TextAutoCorrection::AutoCorrectionListWidget::itemSelectionChanged,
             this,
             &AutoCorrectionWidget::slotEnableDisableTwoUpperEntry);
     connect(d->ui->twoUpperLetterList,
-            &PimCommonAutoCorrection::AutoCorrectionListWidget::deleteSelectedItems,
+            &TextAutoCorrection::AutoCorrectionListWidget::deleteSelectedItems,
             this,
             &AutoCorrectionWidget::removeTwoUpperLetterEntry);
-    connect(d->ui->autocorrectionLanguage, &PimCommonAutoCorrection::AutoCorrectionLanguage::activated, this, &AutoCorrectionWidget::changeLanguage);
+    connect(d->ui->autocorrectionLanguage, &TextAutoCorrection::AutoCorrectionLanguage::activated, this, &AutoCorrectionWidget::changeLanguage);
     connect(d->ui->addNonBreakingSpaceInFrench, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->twoUpperLetter, &QLineEdit::returnPressed, this, &AutoCorrectionWidget::addTwoUpperLetterEntry);
     connect(d->ui->abbreviation, &QLineEdit::returnPressed, this, &AutoCorrectionWidget::addAbbreviationEntry);
@@ -152,8 +149,8 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->tabWidget, &QTabWidget::tabBarClicked, this, &AutoCorrectionWidget::slotChangeComboboxState);
     slotChangeComboboxState(d->ui->tabWidget->currentIndex());
 
-    d->ui->systemPath->setText(PimCommonAutoCorrection::AutoCorrectionUtils::libreOfficeSystemPath());
-    d->ui->writablePath->setText(PimCommonAutoCorrection::AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath());
+    d->ui->systemPath->setText(TextAutoCorrection::AutoCorrectionUtils::libreOfficeSystemPath());
+    d->ui->writablePath->setText(TextAutoCorrection::AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath());
 }
 
 AutoCorrectionWidget::~AutoCorrectionWidget() = default;
@@ -329,7 +326,7 @@ void AutoCorrectionWidget::enableDoubleQuotes(bool state)
 
 void AutoCorrectionWidget::selectSingleQuoteCharOpen()
 {
-    QPointer<PimCommonAutoCorrection::SelectSpecialCharDialog> dlg = new PimCommonAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
     dlg->setCurrentChar(d->m_singleQuotes.begin);
     dlg->showSelectButton(false);
     dlg->autoInsertChar();
@@ -343,7 +340,7 @@ void AutoCorrectionWidget::selectSingleQuoteCharOpen()
 
 void AutoCorrectionWidget::selectSingleQuoteCharClose()
 {
-    QPointer<PimCommonAutoCorrection::SelectSpecialCharDialog> dlg = new PimCommonAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_singleQuotes.end);
     dlg->autoInsertChar();
@@ -365,7 +362,7 @@ void AutoCorrectionWidget::setDefaultSingleQuotes()
 
 void AutoCorrectionWidget::selectDoubleQuoteCharOpen()
 {
-    QPointer<PimCommonAutoCorrection::SelectSpecialCharDialog> dlg = new PimCommonAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_doubleQuotes.begin);
     dlg->autoInsertChar();
@@ -379,7 +376,7 @@ void AutoCorrectionWidget::selectDoubleQuoteCharOpen()
 
 void AutoCorrectionWidget::selectDoubleQuoteCharClose()
 {
-    QPointer<PimCommonAutoCorrection::SelectSpecialCharDialog> dlg = new PimCommonAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_doubleQuotes.end);
     dlg->autoInsertChar();
@@ -620,13 +617,13 @@ void AutoCorrectionWidget::slotImportAutoCorrection(QAction *act)
         }
         const QString fileName = QFileDialog::getOpenFileName(this, title, QString(), filter);
         if (!fileName.isEmpty()) {
-            PimCommonAutoCorrection::ImportAbstractAutocorrection *importAutoCorrection = nullptr;
+            TextAutoCorrection::ImportAbstractAutocorrection *importAutoCorrection = nullptr;
             switch (type) {
             case AutoCorrectionWidget::LibreOffice:
-                importAutoCorrection = new PimCommonAutoCorrection::ImportLibreOfficeAutocorrection;
+                importAutoCorrection = new TextAutoCorrection::ImportLibreOfficeAutocorrection;
                 break;
             case AutoCorrectionWidget::KMail:
-                importAutoCorrection = new PimCommonAutoCorrection::ImportKMailAutocorrection;
+                importAutoCorrection = new TextAutoCorrection::ImportKMailAutocorrection;
                 break;
             default:
                 return;
@@ -656,7 +653,7 @@ void AutoCorrectionWidget::slotImportAutoCorrection(QAction *act)
 
 void AutoCorrectionWidget::setLanguage(const QString &lang)
 {
-    PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
     loadAutoCorrectionAndException();
@@ -679,7 +676,7 @@ void AutoCorrectionWidget::changeLanguage(int index)
         }
     }
     const QString lang = d->ui->autocorrectionLanguage->itemData(index).toString();
-    PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
     loadAutoCorrectionAndException();
@@ -695,7 +692,7 @@ void AutoCorrectionWidget::emitChanged()
 void AutoCorrectionWidget::loadGlobalAutoCorrectionAndException()
 {
     const QString lang = d->ui->autocorrectionLanguage->itemData(d->ui->autocorrectionLanguage->currentIndex()).toString();
-    PimCommonAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang, true);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
     loadAutoCorrectionAndException();

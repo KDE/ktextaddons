@@ -15,14 +15,14 @@ AutoCorrectionUtilsTest::AutoCorrectionUtilsTest(QObject *parent)
 
 void AutoCorrectionUtilsTest::shouldConvertToLibreOfficeFilename()
 {
-    QCOMPARE(PimCommonAutoCorrection::AutoCorrectionUtils::libreofficeFile(QStringLiteral("Fr_fr")), QStringLiteral("acor_Fr_fr.dat"));
+    QCOMPARE(TextAutoCorrection::AutoCorrectionUtils::libreofficeFile(QStringLiteral("Fr_fr")), QStringLiteral("acor_Fr_fr.dat"));
 }
 
 void AutoCorrectionUtilsTest::shouldSplitString()
 {
     QFETCH(QString, words);
     QFETCH(QStringList, result);
-    const QStringList resultLst{PimCommonAutoCorrection::AutoCorrectionUtils::wordsFromSentence(words)};
+    const QStringList resultLst{TextAutoCorrection::AutoCorrectionUtils::wordsFromSentence(words)};
     const bool equal = (resultLst == result);
     if (!equal) {
         qDebug() << "resultLst" << resultLst;

@@ -17,7 +17,7 @@ namespace TextAutoCorrection
  * @brief The PimCommonAutoCorrectionSettings class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTION_EXPORT PimCommonAutoCorrectionSettings : public PimCommonAutoCorrection::PimCommonAutoCorrectionSettingsBase
+class TEXTAUTOCORRECTION_EXPORT PimCommonAutoCorrectionSettings : public TextAutoCorrection::PimCommonAutoCorrectionSettingsBase
 {
     Q_OBJECT
 public:
