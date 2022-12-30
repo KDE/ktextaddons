@@ -32,7 +32,7 @@
       </widget>
      </item>
      <item>
-      <widget class="PimCommonAutoCorrection::AutoCorrectionLanguage" name="autocorrectionLanguage"/>
+      <widget class="TextAutoCorrection::AutoCorrectionLanguage" name="autocorrectionLanguage"/>
      </item>
     </layout>
    </item>
@@ -835,14 +835,14 @@
    <header>autocorrection/widgets/autocorrectionlistwidget.h</header>
   </customwidget>
   <customwidget>
-   <class>PimCommonAutoCorrection::AutoCorrectionTreeWidget</class>
+   <class>TextAutoCorrection::AutoCorrectionTreeWidget</class>
    <extends>QTreeWidget</extends>
-   <header>autocorrection/widgets/autocorrectiontreewidget.h</header>
+   <header>widgets/autocorrectiontreewidget.h</header>
   </customwidget>
   <customwidget>
-   <class>PimCommonAutoCorrection::AutoCorrectionLanguage</class>
+   <class>TextAutoCorrection::AutoCorrectionLanguage</class>
    <extends>QComboBox</extends>
-   <header>autocorrection/widgets/autocorrectionlanguage.h</header>
+   <header>widgets/autocorrectionlanguage.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
