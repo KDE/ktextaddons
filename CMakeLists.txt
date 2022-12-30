@@ -31,12 +31,13 @@ include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 include(ECMGeneratePriFile)
 
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network)
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     ConfigWidgets
     Archive
+    XmlGui
 )
 
 if(BUILD_TESTING)
@@ -55,6 +56,7 @@ ecm_set_disabled_deprecation_versions(
 )
 
 add_subdirectory(autocorrection)
+add_subdirectory(textgrammarcheck)
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextAddons")
