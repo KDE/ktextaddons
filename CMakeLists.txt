@@ -69,24 +69,6 @@ if (BUILD_QCH)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextAddonsQchTargets.cmake\")")
 endif()
 
-#configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5TextAddonsConfig.cmake.in"
-#	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
-#                              INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-#                             )
-
-#install(EXPORT KF5TextAddonsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAddonsTargets.cmake NAMESPACE KF5:: )
-
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfig.cmake"
-	"${CMAKE_CURRENT_BINARY_DIR}/KF5TextAddonsConfigVersion.cmake"
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-       )
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ktextaddons_version.h
-	DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAddons COMPONENT Devel
-       )
-
-
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

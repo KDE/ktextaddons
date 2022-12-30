@@ -55,3 +55,8 @@ if (BUILD_QCH)
     )
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextAutoCorrectionQchTargets.cmake\")")
 endif()
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/ COMPONENT Devel
+    )

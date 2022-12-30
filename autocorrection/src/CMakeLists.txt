@@ -2,11 +2,6 @@
 # SPDX-FileCopyrightText: none
 install(EXPORT KF5TextAutoCorrectionTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAutoCorrectionTargets.cmake NAMESPACE KF5::)
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/ COMPONENT Devel
-    )
-
 kconfig_add_kcfg_files(textautocorrection_settings_SRCS
     settings/textautocorrectionsetting_base.kcfgc
     )
