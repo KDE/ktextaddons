@@ -8,7 +8,7 @@
 #include "common/grammarresulttextedit.h"
 #include "grammalectemanager.h"
 #include "grammalecteparser.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QJsonDocument>
@@ -47,25 +47,25 @@ void GrammalecteResultWidget::slotError(GrammalecteResultJob::ErrorType error)
     case GrammalecteResultJob::ErrorType::NoError:
         break;
     case GrammalecteResultJob::ErrorType::TextIsEmpty:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "An error found during executing GrammalecteResultJob: text is empty";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: text is empty";
         break;
     case GrammalecteResultJob::ErrorType::PythonPathMissing:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "An error found during executing GrammalecteResultJob: missing python path";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: missing python path";
         str = i18n("Python path is missing.");
         break;
     case GrammalecteResultJob::ErrorType::GrammalecteMissing:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "An error found during executing GrammalecteResultJob: missing grammalectepath";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: missing grammalectepath";
         str = i18n("Grammalecte path not found.");
         break;
     case GrammalecteResultJob::ErrorType::Unknown:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "An error found during executing GrammalecteResultJob: unknown error";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: unknown error";
         break;
     case GrammalecteResultJob::ErrorType::PythonPathNotExist:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "An error found during executing GrammalecteResultJob: python exec doesn't exist";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: python exec doesn't exist";
         str = i18n("Grammalecte program file not found.");
         break;
     case GrammalecteResultJob::ErrorType::GrammarlectCliNotExist:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "An error found during executing GrammalecteResultJob: grammalecte cli not found.";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: grammalecte cli not found.";
         str = i18n("Grammalecte cli file not found.");
         break;
     }

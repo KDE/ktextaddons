@@ -5,7 +5,7 @@
 */
 
 #include "languagetoolresultjob.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -58,7 +58,7 @@ void LanguageToolResultJob::start()
     case LanguageToolResultJob::JobError::UrlNotDefined:
     case LanguageToolResultJob::JobError::NetworkManagerNotDefined:
     case LanguageToolResultJob::JobError::LanguageNotDefined:
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Impossible to start language tool";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to start language tool";
         return;
     case LanguageToolResultJob::JobError::NotError:
         break;
@@ -74,7 +74,7 @@ void LanguageToolResultJob::start()
 void LanguageToolResultJob::slotFinish(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError) {
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << " Error reply - " << reply->errorString();
+        qCWarning(TEXTGRAMMARCHECK_LOG) << " Error reply - " << reply->errorString();
         Q_EMIT error(reply->errorString());
     }
 }

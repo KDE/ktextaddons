@@ -5,7 +5,7 @@
 */
 
 #include "grammalecteresultjob.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 
 #include <QFileInfo>
 #include <QTemporaryFile>
@@ -44,7 +44,7 @@ void GrammalecteResultJob::start()
 
         mProcess->start();
         if (!mProcess->waitForStarted()) {
-            qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Impossible to start grammarresultjob";
+            qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to start grammarresultjob";
             Q_EMIT error(ErrorType::Unknown);
             deleteLater();
         }
@@ -74,7 +74,7 @@ void GrammalecteResultJob::receivedStdErr()
 void GrammalecteResultJob::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     if (exitStatus != 0 || exitCode != 0) {
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Error during running GrammarResultJob: " << mLastError;
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "Error during running GrammarResultJob: " << mLastError;
     } else {
         Q_EMIT finished(mResult);
     }

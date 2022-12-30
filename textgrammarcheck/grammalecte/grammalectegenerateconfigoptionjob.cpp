@@ -5,7 +5,7 @@
 */
 
 #include "grammalectegenerateconfigoptionjob.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 using namespace TextGrammarCheck;
@@ -29,12 +29,12 @@ void GrammalecteGenerateConfigOptionJob::start()
         connect(mProcess, &QProcess::readyReadStandardOutput, this, &GrammalecteGenerateConfigOptionJob::receivedStandardOutput);
         mProcess->start();
         if (!mProcess->waitForStarted()) {
-            qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Impossible to start GrammalecteGenerateConfigOptionJob";
+            qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to start GrammalecteGenerateConfigOptionJob";
             Q_EMIT error();
             deleteLater();
         }
     } else {
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Impossible to start GrammalecteGenerateConfigOptionJob";
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to start GrammalecteGenerateConfigOptionJob";
         Q_EMIT error();
         deleteLater();
     }
@@ -86,7 +86,7 @@ void GrammalecteGenerateConfigOptionJob::receivedStandardOutput()
 void GrammalecteGenerateConfigOptionJob::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     if (exitStatus != 0 || exitCode != 0) {
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "GrammalecteGenerateConfigOptionJob ERROR: " << mLastError;
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "GrammalecteGenerateConfigOptionJob ERROR: " << mLastError;
         Q_EMIT error();
     } else {
         Q_EMIT finished(parseResult());

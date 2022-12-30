@@ -8,7 +8,7 @@
 #include "languagetoolcombobox.h"
 #include "languagetoolmanager.h"
 #include "languagetoolupdatecombobox.h"
-// #include "pimcommontextgrammarcheck_debug.h"
+// #include "textgrammarcheck_debug.h"
 #include <KLocalizedString>
 
 #include <QCheckBox>

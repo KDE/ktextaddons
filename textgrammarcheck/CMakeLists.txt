@@ -10,7 +10,7 @@ configure_package_config_file(
 
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX PIMCOMMON
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/pimcommontextgrammarcheck_version.h"
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfigVersion.cmake"
     SOVERSION 5
     )
@@ -25,16 +25,16 @@ install(FILES
 install(EXPORT KF5TextGrammarCheckTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextGrammarCheckTargets.cmake NAMESPACE KF5::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommontextgrammarcheck_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/ COMPONENT Devel
     )
 
 add_library(KF5TextGrammarCheck )
 add_library(KF5::TextGrammarCheck ALIAS KF5TextGrammarCheck)
-ecm_qt_declare_logging_category(KF5TextGrammarCheck HEADER pimcommontextgrammarcheck_debug.h
-    IDENTIFIER PIMCOMMONTEXTGRAMMAR_LOG CATEGORY_NAME org.kde.pim.pimcommontextgrammarcheck
-        DESCRIPTION "kdepim (pimcommon Text Grammar Check)"
-        EXPORT PIMCOMMON
+ecm_qt_declare_logging_category(KF5TextGrammarCheck HEADER textgrammarcheck_debug.h
+    IDENTIFIER TEXTGRAMMARCHECK_LOG CATEGORY_NAME org.kde.kf5.textgrammarcheck
+        DESCRIPTION "kf5 (Text Grammar Check)"
+        EXPORT KTEXTADDONS
     )
 
 target_sources(KF5TextGrammarCheck PRIVATE
@@ -129,18 +129,18 @@ install(TARGETS
     EXPORT KF5TextGrammarCheckTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
-ecm_generate_headers(PimCommonTextGrammar_Camelcasecommon_HEADERS
+ecm_generate_headers(TextGrammarCheck_Camelcasecommon_HEADERS
     HEADER_NAMES
     GrammarAction
     GrammarError
     GrammarResultTextEdit
     GrammarResultWidget
-    REQUIRED_HEADERS PimCommonTextGrammar_common_HEADERS
+    REQUIRED_HEADERS TextGrammarCheck_common_HEADERS
     PREFIX TextGrammarCheck
     RELATIVE common/
     )
 
-ecm_generate_headers(PimCommonTextGrammar_Camelcasegrammalecte_HEADERS
+ecm_generate_headers(TextGrammarCheck_Camelcasegrammalecte_HEADERS
     HEADER_NAMES
     GrammalecteConfigDialog
     GrammalecteConfigWidget
@@ -148,12 +148,12 @@ ecm_generate_headers(PimCommonTextGrammar_Camelcasegrammalecte_HEADERS
     GrammalecteResultWidget
     GrammalecteGenerateConfigOptionJob
     GrammalecteResultJob
-    REQUIRED_HEADERS PimCommonTextGrammar_grammalecte_HEADERS
+    REQUIRED_HEADERS TextGrammarCheck_grammalecte_HEADERS
     PREFIX TextGrammarCheck
     RELATIVE grammalecte/
     )
 
-ecm_generate_headers(PimCommonTextGrammar_Camelcaselanguagetool_HEADERS
+ecm_generate_headers(TextGrammarCheck_Camelcaselanguagetool_HEADERS
     HEADER_NAMES
     LanguageToolComboBox
     LanguageToolConfigDialog
@@ -161,7 +161,7 @@ ecm_generate_headers(PimCommonTextGrammar_Camelcaselanguagetool_HEADERS
     LanguageToolGetListOfLanguageJob
     LanguageToolManager
     LanguageToolResultWidget
-    REQUIRED_HEADERS PimCommonTextGrammar_languagetool_HEADERS
+    REQUIRED_HEADERS TextGrammarCheck_languagetool_HEADERS
     PREFIX TextGrammarCheck
     RELATIVE languagetool/
     )
@@ -173,19 +173,19 @@ ecm_generate_pri_file(BASE_NAME TextGrammarCheck
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommontextgrammarcheck_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/ COMPONENT Devel
     )
 
 install(FILES
-    ${PimCommonTextGrammar_common_HEADERS}
-    ${PimCommonTextGrammar_Camelcasecommon_HEADERS}
+    ${TextGrammarCheck_common_HEADERS}
+    ${TextGrammarCheck_Camelcasecommon_HEADERS}
 
-    ${PimCommonTextGrammar_grammalecte_HEADERS}
-    ${PimCommonTextGrammar_Camelcasegrammalecte_HEADERS}
+    ${TextGrammarCheck_grammalecte_HEADERS}
+    ${TextGrammarCheck_Camelcasegrammalecte_HEADERS}
 
-    ${PimCommonTextGrammar_languagetool_HEADERS}
-    ${PimCommonTextGrammar_Camelcaselanguagetool_HEADERS}
+    ${TextGrammarCheck_languagetool_HEADERS}
+    ${TextGrammarCheck_Camelcaselanguagetool_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/TextGrammarCheck
     COMPONENT Devel
@@ -193,10 +193,10 @@ install(FILES
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/pimcommontextgrammarcheck_export.h
-    ${PimCommonTextGrammar_common_HEADERS}
-    ${PimCommonTextGrammar_grammalecte_HEADERS}
-    ${PimCommonTextGrammar_languagetool_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/pimcommontextgrammarcheck
+    ${TextGrammarCheck_common_HEADERS}
+    ${TextGrammarCheck_grammalecte_HEADERS}
+    ${TextGrammarCheck_languagetool_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/textgrammarcheck
     COMPONENT Devel
     )
 
@@ -213,9 +213,9 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${PimCommonTextGrammar_common_HEADERS}
-        ${PimCommonTextGrammar_grammalecte_HEADERS}
-        ${PimCommonTextGrammar_languagetool_HEADERS}
+        ${TextGrammarCheck_common_HEADERS}
+        ${TextGrammarCheck_grammalecte_HEADERS}
+        ${TextGrammarCheck_languagetool_HEADERS}
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH

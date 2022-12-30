@@ -5,7 +5,7 @@
 */
 
 #include "grammalectegrammarerror.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 
 #include <QJsonArray>
 
@@ -42,7 +42,7 @@ QColor GrammalecteGrammarError::parseColor(const QJsonObject &obj)
         //        }
         col = QColor(array.at(0).toInt(), array.at(1).toInt(), array.at(2).toInt());
     } else {
-        qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Parsing color: Array is not correct:" << array;
+        qCWarning(TEXTGRAMMARCHECK_LOG) << "Parsing color: Array is not correct:" << array;
     }
     return col;
 }

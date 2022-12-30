@@ -5,7 +5,7 @@
 */
 
 #include "grammarresultutil.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 
 #include <KLocalizedString>
 #include <QTextBlock>
@@ -63,7 +63,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
             cur.setPosition(position + info.length(), QTextCursor::KeepAnchor);
             cur.mergeCharFormat(format);
         } else {
-            qCWarning(PIMCOMMONTEXTGRAMMAR_LOG) << "Unable to find block Id" << (info.blockId() - 1);
+            qCWarning(TEXTGRAMMARCHECK_LOG) << "Unable to find block Id" << (info.blockId() - 1);
         }
     }
 }
@@ -74,35 +74,34 @@ void GrammarResultUtil::replaceWord(const TextGrammarCheck::GrammarAction &act, 
     if (block.isValid()) {
         QTextCursor cur(block);
         const int initialCurrentPosition = cur.position();
-        qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << " cur.position()" << cur.position();
+        qCDebug(TEXTGRAMMARCHECK_LOG) << " cur.position()" << cur.position();
         const int position = cur.position() + act.start();
         cur.setPosition(position);
         cur.setPosition(position + act.length(), QTextCursor::KeepAnchor);
         QTextCharFormat format;
         cur.insertText(replacementWord, format);
         const int diff = replacementWord.length() - act.length();
-        qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << " diff " << diff;
+        qCDebug(TEXTGRAMMARCHECK_LOG) << " diff " << diff;
         if (diff != 0) {
             const int blockLength = block.length();
-            qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << "current blockLength " << blockLength << " position " << position << "";
+            qCDebug(TEXTGRAMMARCHECK_LOG) << "current blockLength " << blockLength << " position " << position << "";
             for (int i = position + replacementWord.length() + 1; i < blockLength + initialCurrentPosition; ++i) {
                 cur.setPosition(i);
-                qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << " Position  " << i;
+                qCDebug(TEXTGRAMMARCHECK_LOG) << " Position  " << i;
                 QTextCharFormat currentCharFormat = cur.charFormat();
                 if (currentCharFormat.hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
                     auto act = cur.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<TextGrammarCheck::GrammarAction>();
-                    qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << act;
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << act;
                     act.setStart(act.start() + diff);
-                    qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << act.start();
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << act.start();
                     currentCharFormat.setProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo, QVariant::fromValue(act));
 
                     const int newPosition = i - 1;
-                    qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << " newPosition " << newPosition;
-                    qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition " << newPosition;
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << " newPosition " << newPosition;
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition " << newPosition;
                     cur.setPosition(newPosition);
                     cur.setPosition(newPosition + act.length(), QTextCursor::KeepAnchor);
-                    qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition "
-                                                      << newPosition + act.length();
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition " << newPosition + act.length();
                     cur.setCharFormat(currentCharFormat);
 
                     i += act.length();

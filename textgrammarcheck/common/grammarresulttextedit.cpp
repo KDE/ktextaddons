@@ -6,7 +6,7 @@
 
 #include "grammarresulttextedit.h"
 #include "grammarresultutil.h"
-#include "pimcommontextgrammarcheck_debug.h"
+#include "textgrammarcheck_debug.h"
 #include <KStatefulBrush>
 
 #include <KLocalizedString>
@@ -108,7 +108,7 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
                     }
                 }
             } else {
-                qCDebug(PIMCOMMONTEXTGRAMMAR_LOG) << " no suggestion " << act;
+                qCDebug(TEXTGRAMMARCHECK_LOG) << " no suggestion " << act;
             }
         }
         popup->addSeparator();
