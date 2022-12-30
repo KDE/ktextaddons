@@ -6,22 +6,22 @@
 
 #pragma once
 
-#include "pimcommonautocorrectionsetting_base.h"
 #include "textautocorrection_export.h"
+#include "textautocorrectionsetting_base.h"
 
 class QTimer;
 
 namespace TextAutoCorrection
 {
 /**
- * @brief The PimCommonAutoCorrectionSettings class
+ * @brief The TextAutoCorrectionSettings class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTION_EXPORT PimCommonAutoCorrectionSettings : public TextAutoCorrection::PimCommonAutoCorrectionSettingsBase
+class TEXTAUTOCORRECTION_EXPORT TextAutoCorrectionSettings : public TextAutoCorrection::TextAutoCorrectionSettingsBase
 {
     Q_OBJECT
 public:
-    static PimCommonAutoCorrectionSettings *self();
+    static TextAutoCorrectionSettings *self();
 
     /** Call this slot instead of directly @ref KConfig::sync() to
       minimize the overall config writes. Calling this slot will
@@ -34,9 +34,9 @@ private Q_SLOTS:
     void slotSyncNow();
 
 private:
-    PimCommonAutoCorrectionSettings();
-    ~PimCommonAutoCorrectionSettings() override;
-    static PimCommonAutoCorrectionSettings *mSelf;
+    TextAutoCorrectionSettings();
+    ~TextAutoCorrectionSettings() override;
+    static TextAutoCorrectionSettings *mSelf;
 
     QTimer *mConfigSyncTimer = nullptr;
 };

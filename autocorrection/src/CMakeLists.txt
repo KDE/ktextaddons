@@ -7,8 +7,8 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/ COMPONENT Devel
     )
 
-kconfig_add_kcfg_files(pimcommonautocorrection_settings_SRCS
-    settings/pimcommonautocorrectionsetting_base.kcfgc
+kconfig_add_kcfg_files(textautocorrection_settings_SRCS
+    settings/textautocorrectionsetting_base.kcfgc
     )
 
 add_library(KF5TextAutoCorrection )
@@ -29,7 +29,7 @@ ecm_qt_declare_logging_category(KF5TextAutoCorrection HEADER textautocorrectiona
     )
 
 target_sources(KF5TextAutoCorrection PRIVATE
-    ${pimcommonautocorrection_settings_SRCS}
+    ${textautocorrection_settings_SRCS}
     autocorrection.cpp
     autocorrection.h
     autocorrectionutils.h
@@ -63,8 +63,8 @@ target_sources(KF5TextAutoCorrection PRIVATE
     widgets/autocorrectiontextedit.h
     widgets/autocorrectionlineedit.cpp
     widgets/autocorrectionlineedit.h
-    settings/pimcommonautocorrectionsettings.h
-    settings/pimcommonautocorrectionsettings.cpp
+    settings/textautocorrectionsettings.h
+    settings/textautocorrectionsettings.cpp
 
     )
 
@@ -103,56 +103,55 @@ if (BUILD_TESTING)
 endif()
 
 
-ecm_generate_headers(PimCommon_Camelcaseautocorrectionwidgets_HEADERS
+ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
     HEADER_NAMES
     AutoCorrectionWidget
     AutoCorrectionLanguage
     SelectSpecialCharDialog
     AutoCorrectionTextEdit
     REQUIRED_HEADERS PimCommon_autocorrectionwidgets_HEADERS
-    PREFIX PimCommonAutoCorrection
+    PREFIX TextAutoCorrection
     RELATIVE widgets/
     )
 
-ecm_generate_headers(PimCommon_Camelcaseautocorrection_HEADERS
+ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrection_HEADERS
     HEADER_NAMES
     AutoCorrection
     AutoCorrectionSettings
     AutoCorrectionUtils
 
-    REQUIRED_HEADERS PimCommon_autocorrection_HEADERS
-    PREFIX PimCommonAutoCorrection
+    REQUIRED_HEADERS TextAutoCorrection_autocorrection_HEADERS
+    PREFIX TextAutoCorrection
     )
 
-ecm_generate_headers(PimCommon_Camelcasesettings_HEADERS
+ecm_generate_headers(TextAutoCorrection_Camelcasesettings_HEADERS
     HEADER_NAMES
-    PimCommonAutoCorrectionSettings
-    REQUIRED_HEADERS PimCommon_settings_HEADERS
-    PREFIX PimCommonAutoCorrection
+    TextAutoCorrectionSettings
+    REQUIRED_HEADERS TextAutoCorrection_settings_HEADERS
+    PREFIX TextAutoCorrection
     RELATIVE settings
     )
 
-ecm_generate_pri_file(BASE_NAME PimCommonAutoCorrection
+ecm_generate_pri_file(BASE_NAME TextAutoCorrection
     LIB_NAME KF5TextAutoCorrection
     DEPS "KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection
     )
 
 
 install(FILES
-    ${PimCommon_Camelcaseautocorrection_HEADERS}
-    ${PimCommon_Camelcaseautocorrectionwidgets_HEADERS}
-    ${PimCommon_Camelcasesettings_HEADERS}
+    ${TextAutoCorrection_Camelcaseautocorrection_HEADERS}
+    ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
+    ${TextAutoCorrection_Camelcasesettings_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/KTextAutoCorrection
     COMPONENT Devel
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/TEXTAUTOCORRECTION_EXPORT.h
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommonautocorrectionsetting_base.h
-    ${PimCommon_HEADERS}
-    ${PimCommon_autocorrection_HEADERS}
-    ${PimCommon_autocorrectionwidgets_HEADERS}
-    ${PimCommon_settings_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionsetting_base.h
+    ${TextAutoCorrection_autocorrection_HEADERS}
+    ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
+    ${TextAutoCorrection_settings_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/ktextautocorrection
     COMPONENT Devel
@@ -171,8 +170,8 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${PimCommon_autocorrection_HEADERS}
-        ${PimCommon_autocorrectionwidgets_HEADERS}
+        ${TextAutoCorrection_autocorrection_HEADERS}
+        ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH
