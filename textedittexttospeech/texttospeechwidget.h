@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedittexttospeech_export.h"
+#include "textedittexttospeech_export.h"
 #include "texttospeech.h"
 #include <QWidget>
 namespace KPIMTextEditTextToSpeech
@@ -17,7 +17,7 @@ class TextToSpeechWidgetPrivate;
  * @brief The TextToSpeechWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechWidget : public QWidget
+class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechWidget : public QWidget
 {
     Q_OBJECT
 public:

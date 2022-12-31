@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedittexttospeech_export.h"
+#include "textedittexttospeech_export.h"
 #include <QLocale>
 #include <QObject>
 #include <QVector>
@@ -16,7 +16,7 @@ namespace KPIMTextEditTextToSpeech
  * @brief The AbstractTextToSpeechConfigInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDITTEXTTOSPEECH_EXPORT AbstractTextToSpeechConfigInterface : public QObject
+class TEXTEDITTEXTTOSPEECH_EXPORT AbstractTextToSpeechConfigInterface : public QObject
 {
     Q_OBJECT
 public:

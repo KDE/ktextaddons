@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedittexttospeech_export.h"
+#include "textedittexttospeech_export.h"
 #include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #include <QObject>
 class QAction;
@@ -17,7 +17,7 @@ class TextToSpeechActionsPrivate;
  * @brief The TextToSpeechActions class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechActions : public QObject
+class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechActions : public QObject
 {
     Q_OBJECT
 public:

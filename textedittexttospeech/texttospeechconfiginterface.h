@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "kpimtextedittexttospeech_export.h"
+#include "textedittexttospeech_export.h"
 #include <KPIMTextEditTextToSpeech/AbstractTextToSpeechConfigInterface>
 
 class QTextToSpeech;
@@ -15,7 +15,7 @@ namespace KPIMTextEditTextToSpeech
  * @brief The TextToSpeechConfigInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
+class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
 {
     Q_OBJECT
 public:
