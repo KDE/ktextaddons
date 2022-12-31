@@ -10,7 +10,7 @@ configure_package_config_file(
     )
 
 
-ecm_setup_version(PROJECT VARIABLE_PREFIX PIMCOMMON
+ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOCORRECTION
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextAutoCorrectionConfigVersion.cmake"
     SOVERSION 5

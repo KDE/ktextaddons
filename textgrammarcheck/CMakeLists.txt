@@ -9,7 +9,7 @@ configure_package_config_file(
     )
 
 
-ecm_setup_version(PROJECT VARIABLE_PREFIX PIMCOMMON
+ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTGRAMMARCHECK
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfigVersion.cmake"
     SOVERSION 5
@@ -119,8 +119,8 @@ target_link_libraries(KF5TextGrammarCheck
 target_include_directories(KF5TextGrammarCheck INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/>")
 
 set_target_properties(KF5TextGrammarCheck PROPERTIES
-    VERSION ${PIMCOMMON_VERSION}
-    SOVERSION ${PIMCOMMON_SOVERSION}
+    VERSION ${TEXTGRAMMARCHECK_VERSION}
+    SOVERSION ${TEXTGRAMMARCHECK_SOVERSION}
     EXPORT_NAME TextGrammarCheck
     )
 

@@ -84,8 +84,8 @@ target_link_libraries(KF5TextAutoCorrection
 target_include_directories(KF5TextAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/>")
 
 set_target_properties(KF5TextAutoCorrection PROPERTIES
-    VERSION ${PIMCOMMON_VERSION}
-    SOVERSION ${PIMCOMMON_SOVERSION}
+    VERSION ${TEXTAUTOCORRECTION_VERSION}
+    SOVERSION ${TEXTAUTOCORRECTION_SOVERSION}
     EXPORT_NAME TextAutoCorrection
     )
 
