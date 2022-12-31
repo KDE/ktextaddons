@@ -58,6 +58,18 @@ ecm_set_disabled_deprecation_versions(
 add_subdirectory(autocorrection)
 add_subdirectory(textgrammarcheck)
 
+find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
+set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
+    "Add support for text to speech"
+    TYPE OPTIONAL
+)
+if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
+    add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
+    set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
+    add_subdirectory(textedittexttospeech)
+endif()
+
+
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextAddons")
 
