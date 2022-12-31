@@ -5,13 +5,13 @@
 */
 
 #pragma once
-#include "kpimtextedittexttospeech_private_export.h"
+#include "textedittexttospeech_private_export.h"
 #include <QWidget>
 class QLabel;
 class QSlider;
 namespace KPIMTextEditTextToSpeech
 {
-class KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSliderWidget : public QWidget
+class TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSliderWidget : public QWidget
 {
     Q_OBJECT
 public:

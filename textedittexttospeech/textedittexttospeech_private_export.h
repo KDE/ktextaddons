@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "kpimtextedittexttospeech_export.h"
+#include "textedittexttospeech_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-#ifndef KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT
-#define KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT KPIMTEXTEDITTEXTTOSPEECH_EXPORT
+#ifndef TEXTEDITTEXTTOSPEECH_TESTS_EXPORT
+#define TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TEXTEDITTEXTTOSPEECH_EXPORT
 #endif
 #else /* not compiling tests */
-#define KPIMTEXTEDITTEXTTOSPEECH_TESTS_EXPORT
+#define TEXTEDITTEXTTOSPEECH_TESTS_EXPORT
 #endif
