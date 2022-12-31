@@ -7,12 +7,12 @@
 #pragma once
 
 #include "grammarerror.h"
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QTextEdit>
 namespace TextGrammarCheck
 {
 class GrammarAction;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit
+class TEXTGRAMMARCHECK_EXPORT GrammarResultTextEdit : public QTextEdit
 {
     Q_OBJECT
 public:

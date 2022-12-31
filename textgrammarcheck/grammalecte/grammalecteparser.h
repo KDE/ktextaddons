@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheckprivate_export.h"
+#include "textgrammarcheckprivate_export.h"
 #include <QJsonObject>
 #include <QVector>
 #include <TextGrammarCheck/GrammarError>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteParser
+class TEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteParser
 {
 public:
     GrammalecteParser();

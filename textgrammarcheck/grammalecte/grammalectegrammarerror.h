@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheckprivate_export.h"
+#include "textgrammarcheckprivate_export.h"
 #include <TextGrammarCheck/GrammarError>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteGrammarError : public GrammarError
+class TEXTGRAMMARCHECK_TESTS_EXPORT GrammalecteGrammarError : public GrammarError
 {
 public:
     GrammalecteGrammarError();

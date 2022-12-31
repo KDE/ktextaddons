@@ -6,14 +6,14 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QColor>
 #include <QDebug>
 #include <QJsonObject>
 #include <QString>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarError
+class TEXTGRAMMARCHECK_EXPORT GrammarError
 {
 public:
     GrammarError();
@@ -65,4 +65,4 @@ protected:
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::GrammarError)
 Q_DECLARE_TYPEINFO(TextGrammarCheck::GrammarError, Q_MOVABLE_TYPE);
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarError &t);
+TEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarError &t);

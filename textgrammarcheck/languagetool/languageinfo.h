@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include "pimcommontextgrammarcheckprivate_export.h"
+#include "textgrammarcheckprivate_export.h"
 
 #include <QObject>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageInfo
+class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageInfo
 {
 public:
     LanguageInfo();

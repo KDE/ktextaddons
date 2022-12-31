@@ -7,14 +7,14 @@
 #pragma once
 
 #include "grammarerror.h"
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QWidget>
 class QHBoxLayout;
 namespace TextGrammarCheck
 {
 class GrammarAction;
 class GrammarResultTextEdit;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarResultWidget : public QWidget
+class TEXTGRAMMARCHECK_EXPORT GrammarResultWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -103,7 +103,7 @@ endif()
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5TextGrammarCheck PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF5TextGrammarCheck BASE_NAME pimcommontextgrammarcheck)
+generate_export_header(KF5TextGrammarCheck BASE_NAME textgrammarcheck)
 
 
 target_link_libraries(KF5TextGrammarCheck
@@ -192,7 +192,7 @@ install(FILES
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommontextgrammarcheck_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_export.h
     ${TextGrammarCheck_common_HEADERS}
     ${TextGrammarCheck_grammalecte_HEADERS}
     ${TextGrammarCheck_languagetool_HEADERS}
@@ -223,7 +223,7 @@ if (BUILD_QCH)
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            PIMCOMMONTEXTGRAMMARCHECK_EXPORT
+            TEXTGRAMMARCHECK_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel

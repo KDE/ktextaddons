@@ -7,11 +7,11 @@
 #pragma once
 
 #include "languageinfo.h"
-#include "pimcommontextgrammarcheckprivate_export.h"
+#include "textgrammarcheckprivate_export.h"
 #include <QVector>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser
+class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser
 {
 public:
     LanguageToolListOfLanguagesParser();

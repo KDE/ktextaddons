@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QWidget>
 class QCheckBox;
 class QLineEdit;
@@ -15,7 +15,7 @@ namespace TextGrammarCheck
 {
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT LanguageToolConfigWidget : public QWidget
+class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigWidget : public QWidget
 {
     Q_OBJECT
 public:

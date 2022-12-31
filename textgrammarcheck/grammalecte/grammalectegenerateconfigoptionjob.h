@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QObject>
 #include <QProcess>
 #include <QVector>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteGenerateConfigOptionJob : public QObject
+class TEXTGRAMMARCHECK_EXPORT GrammalecteGenerateConfigOptionJob : public QObject
 {
     Q_OBJECT
 public:

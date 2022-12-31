@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: pimcommon
+Upstream-Name: ktextaddons
 Upstream-Contact: Montel Laurent <montel@kde.org>
-Source: https://invent.kde.org/pim/pimcommon
+Source: https://invent.kde.org/pim/ktextaddons
 
 Files: autocorrection/src/autotests/data/* textgrammarcheck/grammalecte/autotests/data/*.json textgrammarcheck/languagetool/autotests/data/*.json 
 Copyright: none

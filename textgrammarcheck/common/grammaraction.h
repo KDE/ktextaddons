@@ -4,14 +4,14 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QDebug>
 #include <QString>
 #include <QStringList>
 
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammarAction
+class TEXTGRAMMARCHECK_EXPORT GrammarAction
 {
 public:
     GrammarAction();
@@ -44,4 +44,4 @@ private:
 };
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::GrammarAction)
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarAction &t);
+TEXTGRAMMARCHECK_EXPORT QDebug operator<<(QDebug d, const TextGrammarCheck::GrammarAction &t);

@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-#ifndef PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT
-#define PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT PIMCOMMONTEXTGRAMMARCHECK_EXPORT
+#ifndef TEXTGRAMMARCHECK_TESTS_EXPORT
+#define TEXTGRAMMARCHECK_TESTS_EXPORT TEXTGRAMMARCHECK_EXPORT
 #endif
 #else /* not compiling tests */
-#define PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT
+#define TEXTGRAMMARCHECK_TESTS_EXPORT
 #endif

@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheckprivate_export.h"
+#include "textgrammarcheckprivate_export.h"
 
 #include "common/grammarerror.h"
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolParser
+class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolParser
 {
 public:
     LanguageToolParser();

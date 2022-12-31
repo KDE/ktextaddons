@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QDialog>
 namespace TextGrammarCheck
 {
 class LanguageToolConfigWidget;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT LanguageToolConfigDialog : public QDialog
+class TEXTGRAMMARCHECK_EXPORT LanguageToolConfigDialog : public QDialog
 {
     Q_OBJECT
 public:

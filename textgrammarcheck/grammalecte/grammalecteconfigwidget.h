@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QWidget>
 #include <TextGrammarCheck/GrammalecteGenerateConfigOptionJob>
 class QCheckBox;
@@ -16,7 +16,7 @@ class QScrollArea;
 namespace TextGrammarCheck
 {
 class GrammalecteUrlRequesterWidget;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget
+class TEXTGRAMMARCHECK_EXPORT GrammalecteConfigWidget : public QWidget
 {
     Q_OBJECT
 public:

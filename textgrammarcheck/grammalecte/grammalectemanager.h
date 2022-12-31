@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <QObject>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteManager : public QObject
+class TEXTGRAMMARCHECK_EXPORT GrammalecteManager : public QObject
 {
     Q_OBJECT
 public:

@@ -7,11 +7,11 @@
 #pragma once
 
 #include "common/grammarerror.h"
-#include "pimcommontextgrammarcheckprivate_export.h"
+#include "textgrammarcheckprivate_export.h"
 #include <QStringList>
 namespace TextGrammarCheck
 {
-class PIMCOMMONTEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolGrammarError : public GrammarError
+class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolGrammarError : public GrammarError
 {
 public:
     LanguageToolGrammarError();

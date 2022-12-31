@@ -7,7 +7,7 @@
 #pragma once
 #include "grammaraction.h"
 #include "grammarerror.h"
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 
 #include <QTextFormat>
 namespace TextGrammarCheck
@@ -17,8 +17,7 @@ namespace GrammarResultUtil
 enum TextInfo {
     ReplaceFormatInfo = QTextFormat::UserProperty + 1,
 };
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT void
-applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
-PIMCOMMONTEXTGRAMMARCHECK_EXPORT void replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document);
+TEXTGRAMMARCHECK_EXPORT void applyGrammarResult(const QVector<TextGrammarCheck::GrammarError> &infos, QTextDocument *document, const QColor &negativeTextColor);
+TEXTGRAMMARCHECK_EXPORT void replaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord, QTextDocument *document);
 }
 }

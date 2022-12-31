@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <TextGrammarCheck/GrammarResultWidget>
 namespace TextGrammarCheck
 {
 class LanguageToolComboBox;
 class LanguageToolUpdateComboBox;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT LanguageToolResultWidget : public GrammarResultWidget
+class TEXTGRAMMARCHECK_EXPORT LanguageToolResultWidget : public GrammarResultWidget
 {
     Q_OBJECT
 public:

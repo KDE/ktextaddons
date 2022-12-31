@@ -7,12 +7,12 @@
 #pragma once
 
 #include "grammalecteresultjob.h"
-#include "pimcommontextgrammarcheck_export.h"
+#include "textgrammarcheck_export.h"
 #include <TextGrammarCheck/GrammarResultWidget>
 namespace TextGrammarCheck
 {
 class GrammalecteResultJob;
-class PIMCOMMONTEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidget
+class TEXTGRAMMARCHECK_EXPORT GrammalecteResultWidget : public GrammarResultWidget
 {
     Q_OBJECT
 public:
