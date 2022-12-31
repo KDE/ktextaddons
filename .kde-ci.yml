@@ -9,4 +9,5 @@ Dependencies:
     'frameworks/kconfig': '@latest'
     'frameworks/kconfigwidgets': '@latest'
     'frameworks/karchive': '@latest'
+    'frameworks/kxmlgui': '@stable'
 
