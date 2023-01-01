@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2022 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2022-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(KF_VERSION "5.102.0") # handled by release scripts
