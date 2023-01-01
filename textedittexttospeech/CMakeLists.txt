@@ -52,8 +52,8 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
         )
 endif()
 
-ecm_qt_declare_logging_category(KF5TextEditTextToSpeech HEADER kpimtextedittexttospeech_debug.h
-    IDENTIFIER KPIMTEXTEDITTEXTTOSPEECH_LOG CATEGORY_NAME org.kde.pim.kpimtextedit.texttospeech
+ecm_qt_declare_logging_category(KF5TextEditTextToSpeech HEADER TextEditTextToSpeech_debug.h
+    IDENTIFIER TextEditTextToSpeech_LOG CATEGORY_NAME org.kde.kf5.textedittexttospeech
         DESCRIPTION "kf5 (textedit text to speech)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -61,7 +61,7 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(KF5TextEditTextToSpeech BASE_NAME textedittexttospeech)
 
-target_include_directories(KF5TextEditTextToSpeech INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KPIMTextEditTextToSpeech;>")
+target_include_directories(KF5TextEditTextToSpeech INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech;>")
 
 
 target_link_libraries(KF5TextEditTextToSpeech
@@ -70,8 +70,8 @@ target_link_libraries(KF5TextEditTextToSpeech
     )
 
 set_target_properties(KF5TextEditTextToSpeech PROPERTIES
-    VERSION ${KPIMTEXTEDITTEXTTOSPEECH_VERSION}
-    SOVERSION ${KPIMTEXTEDITTEXTTOSPEECH_SOVERSION}
+    VERSION ${TextEditTextToSpeech_VERSION}
+    SOVERSION ${TextEditTextToSpeech_SOVERSION}
     EXPORT_NAME TextEditTextToSpeech
     )
 
@@ -96,7 +96,7 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
         AbstractTextToSpeechInterface
         AbstractTextToSpeechConfigInterface
         REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
-        PREFIX KPIMTextEditTextToSpeech
+        PREFIX TextEditTextToSpeech
     )
 endif()
 
@@ -147,7 +147,7 @@ install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 if (BUILD_QCH)
     ecm_add_qch(
         KF5TextEditTextToSpeech_QCH
-        NAME KPimTextEditTextToSpeech
+        NAME TextEditTextToSpeech
         BASE_NAME KF5TextEditTextToSpeech
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
