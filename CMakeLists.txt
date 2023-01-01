@@ -66,23 +66,10 @@ set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
 )
 if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
     add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
-    set(KPIMTEXTEDIT_TEXT_TO_SPEECH TRUE)
+    set(TEXTEDIT_TEXT_TO_SPEECH TRUE)
     add_subdirectory(textedittexttospeech)
 endif()
 
-
-# create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextAddons")
-
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF5TextAddons_QCH
-        FILE KF5TextWidgetsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextAddonsQchTargets.cmake\")")
-endif()
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)

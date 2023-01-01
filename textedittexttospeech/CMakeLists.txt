@@ -12,7 +12,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
 add_library(KF5TextEditTextToSpeech)
 add_library(KF5::PimTextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
 
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+if (TEXTEDIT_TEXT_TO_SPEECH)
     target_sources(KF5TextEditTextToSpeech PRIVATE
         texttospeech.cpp
         texttospeechwidget.cpp
@@ -41,7 +41,7 @@ if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     )
 endif()
 
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+if (TEXTEDIT_TEXT_TO_SPEECH)
     target_link_libraries(KF5TextEditTextToSpeech
         PRIVATE
         KF5::WidgetsAddons
@@ -77,14 +77,14 @@ set_target_properties(KF5TextEditTextToSpeech PROPERTIES
 
 install(TARGETS KF5TextEditTextToSpeech EXPORT KF5TextEditTextToSpeechTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+if (TEXTEDIT_TEXT_TO_SPEECH)
     if(BUILD_TESTING)
         add_subdirectory(autotests)
         add_subdirectory(tests)
     endif()
 endif()
 
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+if (TEXTEDIT_TEXT_TO_SPEECH)
     ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
         HEADER_NAMES
         TextToSpeech
@@ -100,7 +100,7 @@ if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
     )
 endif()
 
-if (KPIMTEXTEDIT_TEXT_TO_SPEECH)
+if (TEXTEDIT_TEXT_TO_SPEECH)
     install(FILES
         ${KPimTextEdit_texttospeechs_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
