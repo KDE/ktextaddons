@@ -422,7 +422,7 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
     QString word = _word;
     /* this method is ported from lib/kotext/KoAutoFormat.cpp KoAutoFormat::doAutoDetectUrl
      * from Calligra 1.x branch */
-    // qCDebug(PIMCOMMON_LOG) << "link:" << word;
+    // qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << "link:" << word;
 
     // we start by iterating through a list of schemes, and if no match is found,
     // we proceed to 3 special cases
