@@ -7,8 +7,8 @@
 #pragma once
 
 #include "textedittexttospeech_export.h"
-#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #include <QObject>
+#include <TextEditTextToSpeech/TextToSpeechWidget>
 class QAction;
 namespace KPIMTextEditTextToSpeech
 {
