@@ -85,7 +85,7 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
 endif()
 
 if (TEXTEDIT_TEXT_TO_SPEECH)
-    ecm_generate_headers(KPimTextEdit_CamelCasetexttospeechs_HEADERS
+    ecm_generate_headers(TextEdit_CamelCasetexttospeechs_HEADERS
         HEADER_NAMES
         TextToSpeech
         TextToSpeechActions
@@ -95,20 +95,20 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
         TextToSpeechConfigDialog
         AbstractTextToSpeechInterface
         AbstractTextToSpeechConfigInterface
-        REQUIRED_HEADERS KPimTextEdit_texttospeechs_HEADERS
+        REQUIRED_HEADERS TextEdit_texttospeechs_HEADERS
         PREFIX TextEditTextToSpeech
     )
 endif()
 
 if (TEXTEDIT_TEXT_TO_SPEECH)
     install(FILES
-        ${KPimTextEdit_texttospeechs_HEADERS}
+        ${TextEdit_texttospeechs_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
         DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
         COMPONENT Devel
         )
     install(FILES
-        ${KPimTextEdit_CamelCasetexttospeechs_HEADERS}
+        ${TextEdit_CamelCasetexttospeechs_HEADERS}
         DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
         COMPONENT Devel
         )
@@ -152,7 +152,7 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-            ${KPimTextEdit_texttospeechs_HEADERS}
+            ${TextEdit_texttospeechs_HEADERS}
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH
