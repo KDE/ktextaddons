@@ -49,8 +49,6 @@ endif(BUILD_TESTING)
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
-add_definitions(-DTRANSLATION_DOMAIN=\"ktextaddons\")
-
 ecm_set_disabled_deprecation_versions(
     QT 5.15.2
     KF 5.102

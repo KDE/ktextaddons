@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
+add_definitions(-DTRANSLATION_DOMAIN=\"libtextedittexttospeech\")
+
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextEditTextToSpeech")
 
@@ -70,8 +72,8 @@ target_link_libraries(KF5TextEditTextToSpeech
     )
 
 set_target_properties(KF5TextEditTextToSpeech PROPERTIES
-    VERSION ${TextEditTextToSpeech_VERSION}
-    SOVERSION ${TextEditTextToSpeech_SOVERSION}
+    VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
+    SOVERSION ${TEXTEDITTEXTTOSPEECH_SOVERSION}
     EXPORT_NAME TextEditTextToSpeech
     )
 

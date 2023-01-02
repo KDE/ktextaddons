@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
+add_definitions(-DTRANSLATION_DOMAIN=\"libtextautocorrection\")
+
 install(EXPORT KF5TextAutoCorrectionTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextAutoCorrectionTargets.cmake NAMESPACE KF5::)
 
 kconfig_add_kcfg_files(textautocorrection_settings_SRCS
