@@ -166,7 +166,7 @@ if (BUILD_QCH)
         KF5TextAutoCorrection_QCH
         NAME KF5TextAutoCorrection
         BASE_NAME KF5TextAutoCorrection
-        VERSION ${PIM_VERSION}
+        VERSION ${TEXTAUTOCORRECTION_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextAutoCorrection_autocorrection_HEADERS}

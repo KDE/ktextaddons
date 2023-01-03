@@ -151,7 +151,7 @@ if (BUILD_QCH)
         KF5TextEditTextToSpeech_QCH
         NAME TextEditTextToSpeech
         BASE_NAME KF5TextEditTextToSpeech
-        VERSION ${PIM_VERSION}
+        VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
             ${TextEdit_texttospeechs_HEADERS}

@@ -4,4 +4,4 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 
-include("${CMAKE_CURRENT_LIST_DIR}/KF5PimTextEditTextToSpeechTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/KF5TextEditTextToSpeechTargets.cmake")

@@ -213,7 +213,7 @@ if (BUILD_QCH)
         KF5TextGrammarCheck_QCH
         NAME KF5TextGrammarCheck
         BASE_NAME KF5TextGrammarCheck
-        VERSION ${PIM_VERSION}
+        VERSION ${TEXTGRAMMARCHECK_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextGrammarCheck_common_HEADERS}

@@ -14,9 +14,9 @@ target_sources(grammarcommon PRIVATE
     grammarresultutil.cpp
     )
 
-ecm_qt_declare_logging_category(grammarcommon HEADER grammarcommon_debug.h IDENTIFIER LIBGRAMMARCOMMON_LOG CATEGORY_NAME org.kde.pim.libgrammarcommon
-    DESCRIPTION "kdepim-addons (libgramalecte common)"
-    EXPORT KDEPIMADDONS
+ecm_qt_declare_logging_category(grammarcommon HEADER grammarcommon_debug.h IDENTIFIER LIBGRAMMARCOMMON_LOG CATEGORY_NAME org.kde.kf5.libgrammarcommon
+    DESCRIPTION "kf5 (libgramalecte common)"
+    EXPORT KTEXTADDONS
     )
 
 
