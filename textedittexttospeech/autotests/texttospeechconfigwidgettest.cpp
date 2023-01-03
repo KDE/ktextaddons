@@ -24,23 +24,23 @@ TextToSpeechConfigWidgetTest::TextToSpeechConfigWidgetTest(QObject *parent)
 
 TextToSpeechConfigWidgetTest::~TextToSpeechConfigWidgetTest() = default;
 
-void TextToSpeechConfigWidgetTest::addInterface(KPIMTextEditTextToSpeech::TextToSpeechConfigWidget *widget)
+void TextToSpeechConfigWidgetTest::addInterface(TextEditTextToSpeech::TextToSpeechConfigWidget *widget)
 {
-    auto interface = new KPIMTextEditTextToSpeech::AbstractTextToSpeechConfigInterface(this);
+    auto interface = new TextEditTextToSpeech::AbstractTextToSpeechConfigInterface(this);
     widget->setTextToSpeechConfigInterface(interface);
 }
 
 void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechConfigWidget textToSpeechConfigWidget;
+    TextEditTextToSpeech::TextToSpeechConfigWidget textToSpeechConfigWidget;
     addInterface(&textToSpeechConfigWidget);
-    auto volume = textToSpeechConfigWidget.findChild<KPIMTextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("volume"));
+    auto volume = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("volume"));
     QVERIFY(volume);
 
-    auto rate = textToSpeechConfigWidget.findChild<KPIMTextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("rate"));
+    auto rate = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("rate"));
     QVERIFY(rate);
 
-    auto pitch = textToSpeechConfigWidget.findChild<KPIMTextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("pitch"));
+    auto pitch = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("pitch"));
     QVERIFY(pitch);
 
     auto language = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("language"));
@@ -60,18 +60,18 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
 
 void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechConfigWidget textToSpeechConfigWidget;
+    TextEditTextToSpeech::TextToSpeechConfigWidget textToSpeechConfigWidget;
     addInterface(&textToSpeechConfigWidget);
-    QSignalSpy spy(&textToSpeechConfigWidget, &KPIMTextEditTextToSpeech::TextToSpeechConfigWidget::configChanged);
-    auto volume = textToSpeechConfigWidget.findChild<KPIMTextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("volume"));
+    QSignalSpy spy(&textToSpeechConfigWidget, &TextEditTextToSpeech::TextToSpeechConfigWidget::configChanged);
+    auto volume = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("volume"));
     volume->setValue(5);
     QCOMPARE(spy.count(), 1);
 
-    auto rate = textToSpeechConfigWidget.findChild<KPIMTextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("rate"));
+    auto rate = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("rate"));
     rate->setValue(5);
     QCOMPARE(spy.count(), 2);
 
-    auto pitch = textToSpeechConfigWidget.findChild<KPIMTextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("pitch"));
+    auto pitch = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("pitch"));
     pitch->setValue(5);
     QCOMPARE(spy.count(), 3);
 

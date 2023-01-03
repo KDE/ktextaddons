@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QObject>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechConfigWidget;
 }
@@ -23,5 +23,5 @@ private Q_SLOTS:
     void shouldEmitConfigChangedWhenChangeConfigValue();
 
 private:
-    void addInterface(KPIMTextEditTextToSpeech::TextToSpeechConfigWidget *widget);
+    void addInterface(TextEditTextToSpeech::TextToSpeechConfigWidget *widget);
 };

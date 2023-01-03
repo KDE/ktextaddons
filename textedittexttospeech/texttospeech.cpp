@@ -14,17 +14,17 @@
 #include <QTextToSpeech>
 #include <QVector>
 
-class KPIMTextEditTextToSpeech::TextToSpeechPrivate
+class TextEditTextToSpeech::TextToSpeechPrivate
 {
 public:
     QString mDefaultEngine;
     QTextToSpeech *mTextToSpeech = nullptr;
 };
 
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
-    , d(new KPIMTextEditTextToSpeech::TextToSpeechPrivate)
+    , d(new TextEditTextToSpeech::TextToSpeechPrivate)
 {
     reloadSettings();
 }
@@ -33,8 +33,8 @@ TextToSpeech::~TextToSpeech() = default;
 
 void TextToSpeech::reloadSettings()
 {
-    KConfig config(KPIMTextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
-    const KConfigGroup grp = config.group(KPIMTextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
+    KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
+    const KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
     const QString engineName = grp.readEntry("engine");
     if (d->mDefaultEngine != engineName) {
         if (d->mTextToSpeech) {

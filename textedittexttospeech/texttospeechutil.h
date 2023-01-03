@@ -7,7 +7,7 @@
 #pragma once
 #include "textedittexttospeech_private_export.h"
 #include <QObject>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 namespace TextToSpeechUtil
 {

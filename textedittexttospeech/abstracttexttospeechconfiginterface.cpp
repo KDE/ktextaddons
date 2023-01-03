@@ -6,7 +6,7 @@
 
 #include "abstracttexttospeechconfiginterface.h"
 
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
 AbstractTextToSpeechConfigInterface::AbstractTextToSpeechConfigInterface(QObject *parent)
     : QObject(parent)

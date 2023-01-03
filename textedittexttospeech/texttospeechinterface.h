@@ -10,7 +10,7 @@
 #include <QObject>
 #include <TextEditTextToSpeech/AbstractTextToSpeechInterface>
 #include <TextEditTextToSpeech/TextToSpeechWidget>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechWidget;
 class TextToSpeechInterfacePrivate;
@@ -32,7 +32,7 @@ public:
     void reloadSettings() override;
 
 private:
-    void stateChanged(KPIMTextEditTextToSpeech::TextToSpeechWidget::State state);
+    void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
     std::unique_ptr<TextToSpeechInterfacePrivate> const d;
 };
 }

@@ -19,7 +19,7 @@ namespace
 {
 static const char myTextToSpeechConfigDialogConfigGroupName[] = "TextToSpeechConfigDialog";
 }
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
 TextToSpeechConfigDialog::TextToSpeechConfigDialog(QWidget *parent)
     : QDialog(parent)

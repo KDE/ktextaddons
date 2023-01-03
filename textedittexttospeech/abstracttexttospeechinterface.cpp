@@ -5,7 +5,7 @@
 */
 
 #include "abstracttexttospeechinterface.h"
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 AbstractTextToSpeechInterface::AbstractTextToSpeechInterface(QObject *parent)
     : QObject(parent)
 {

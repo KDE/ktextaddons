@@ -8,7 +8,7 @@
 
 #include "textedittexttospeech_export.h"
 #include <QDialog>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechConfigWidget;
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigDialog : public QDialog
@@ -23,6 +23,6 @@ private:
     void slotRestoreDefaults();
     void readConfig();
     void writeConfig();
-    KPIMTextEditTextToSpeech::TextToSpeechConfigWidget *const mTextToSpeechConfigWidget;
+    TextEditTextToSpeech::TextToSpeechConfigWidget *const mTextToSpeechConfigWidget;
 };
 }

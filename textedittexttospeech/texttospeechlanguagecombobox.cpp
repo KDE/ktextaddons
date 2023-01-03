@@ -5,7 +5,7 @@
 */
 
 #include "texttospeechlanguagecombobox.h"
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
 TextToSpeechLanguageComboBox::TextToSpeechLanguageComboBox(QWidget *parent)
     : QComboBox(parent)

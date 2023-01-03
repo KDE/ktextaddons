@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new KPIMTextEditTextToSpeech::TextToSpeechConfigDialog;
+    auto w = new TextEditTextToSpeech::TextToSpeechConfigDialog;
 
     w->show();
     app.exec();

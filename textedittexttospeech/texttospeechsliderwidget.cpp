@@ -10,7 +10,7 @@
 #include <QLabel>
 #include <QSlider>
 
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 TextToSpeechSliderWidget::TextToSpeechSliderWidget(const QString &labelInfo, QWidget *parent)
     : QWidget{parent}
     , mLabelInfo(labelInfo)

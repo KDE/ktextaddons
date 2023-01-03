@@ -28,7 +28,7 @@ TextToSpeechGui::TextToSpeechGui(QWidget *parent)
     auto act = new QAction(i18n("Speech text"), this);
     connect(act, &QAction::triggered, this, &TextToSpeechGui::slotTextToSpeech);
     editMenu->addAction(act);
-    qDebug() << " isReady ? " << KPIMTextEditTextToSpeech::TextToSpeech::self()->isReady();
+    qDebug() << " isReady ? " << TextEditTextToSpeech::TextToSpeech::self()->isReady();
 }
 
 TextToSpeechGui::~TextToSpeechGui() = default;
@@ -42,7 +42,7 @@ void TextToSpeechGui::slotTextToSpeech()
         text = mEdit->toPlainText();
     }
     if (!text.isEmpty()) {
-        KPIMTextEditTextToSpeech::TextToSpeech::self()->say(text);
+        TextEditTextToSpeech::TextToSpeech::self()->say(text);
     }
 }
 

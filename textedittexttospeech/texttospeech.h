@@ -12,7 +12,7 @@
 
 class QTextToSpeech;
 
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechPrivate;
 /**

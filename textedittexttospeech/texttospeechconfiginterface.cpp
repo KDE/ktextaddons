@@ -8,7 +8,7 @@
 #include <KLocalizedString>
 #include <QDebug>
 #include <QTextToSpeech>
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
 TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
     : AbstractTextToSpeechConfigInterface(parent)

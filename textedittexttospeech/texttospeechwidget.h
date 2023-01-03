@@ -9,7 +9,7 @@
 #include "textedittexttospeech_export.h"
 #include "texttospeech.h"
 #include <QWidget>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class AbstractTextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
@@ -28,7 +28,7 @@ public:
     Q_ENUM(State)
 
     Q_REQUIRED_RESULT State state() const;
-    void setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::State state);
+    void setState(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
     void setTextToSpeechInterface(AbstractTextToSpeechInterface *interface);
 
@@ -37,10 +37,10 @@ public:
 public Q_SLOTS:
     void say(const QString &text);
 
-    void slotStateChanged(KPIMTextEditTextToSpeech::TextToSpeech::State state);
+    void slotStateChanged(TextEditTextToSpeech::TextToSpeech::State state);
 
 Q_SIGNALS:
-    void stateChanged(KPIMTextEditTextToSpeech::TextToSpeechWidget::State state);
+    void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
 private:
     void slotVolumeChanged(int value);

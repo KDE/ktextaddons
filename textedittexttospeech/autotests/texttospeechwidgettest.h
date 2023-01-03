@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QObject>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechWidget;
 }
@@ -18,7 +18,7 @@ public:
     explicit TextToSpeechWidgetTest(QObject *parent = nullptr);
 
 private:
-    void addInterface(KPIMTextEditTextToSpeech::TextToSpeechWidget *widget);
+    void addInterface(TextEditTextToSpeech::TextToSpeechWidget *widget);
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

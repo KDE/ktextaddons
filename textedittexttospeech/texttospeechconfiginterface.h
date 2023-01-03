@@ -9,7 +9,7 @@
 #include <TextEditTextToSpeech/AbstractTextToSpeechConfigInterface>
 
 class QTextToSpeech;
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 /**
  * @brief The TextToSpeechConfigInterface class

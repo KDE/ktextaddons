@@ -8,9 +8,9 @@
 #include "texttospeech.h"
 #include <QDebug>
 
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
-class Q_DECL_HIDDEN KPIMTextEditTextToSpeech::TextToSpeechInterfacePrivate
+class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechInterfacePrivate
 {
 public:
     TextToSpeechInterfacePrivate(TextToSpeechWidget *textToSpeechWidget)
@@ -23,56 +23,56 @@ public:
 
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)
     : AbstractTextToSpeechInterface(parent)
-    , d(new KPIMTextEditTextToSpeech::TextToSpeechInterfacePrivate(textToSpeechWidget))
+    , d(new TextEditTextToSpeech::TextToSpeechInterfacePrivate(textToSpeechWidget))
 {
-    KPIMTextEditTextToSpeech::TextToSpeech::self(); // init
-    connect(d->mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechWidget::stateChanged, this, &TextToSpeechInterface::stateChanged);
-    connect(KPIMTextEditTextToSpeech::TextToSpeech::self(),
-            &KPIMTextEditTextToSpeech::TextToSpeech::stateChanged,
+    TextEditTextToSpeech::TextToSpeech::self(); // init
+    connect(d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechWidget::stateChanged, this, &TextToSpeechInterface::stateChanged);
+    connect(TextEditTextToSpeech::TextToSpeech::self(),
+            &TextEditTextToSpeech::TextToSpeech::stateChanged,
             d->mTextToSpeechWidget,
-            &KPIMTextEditTextToSpeech::TextToSpeechWidget::slotStateChanged);
+            &TextEditTextToSpeech::TextToSpeechWidget::slotStateChanged);
 }
 
 TextToSpeechInterface::~TextToSpeechInterface() = default;
 
 bool TextToSpeechInterface::isReady() const
 {
-    return KPIMTextEditTextToSpeech::TextToSpeech::self()->isReady();
+    return TextEditTextToSpeech::TextToSpeech::self()->isReady();
 }
 
 void TextToSpeechInterface::say(const QString &text)
 {
-    d->mTextToSpeechWidget->setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    d->mTextToSpeechWidget->setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
     d->mTextToSpeechWidget->show();
-    KPIMTextEditTextToSpeech::TextToSpeech::self()->say(text);
+    TextEditTextToSpeech::TextToSpeech::self()->say(text);
 }
 
 double TextToSpeechInterface::volume() const
 {
-    return KPIMTextEditTextToSpeech::TextToSpeech::self()->volume();
+    return TextEditTextToSpeech::TextToSpeech::self()->volume();
 }
 
 void TextToSpeechInterface::setVolume(double value)
 {
-    KPIMTextEditTextToSpeech::TextToSpeech::self()->setVolume(value);
+    TextEditTextToSpeech::TextToSpeech::self()->setVolume(value);
 }
 
 void TextToSpeechInterface::reloadSettings()
 {
-    KPIMTextEditTextToSpeech::TextToSpeech::self()->reloadSettings();
+    TextEditTextToSpeech::TextToSpeech::self()->reloadSettings();
 }
 
 void TextToSpeechInterface::stateChanged(TextToSpeechWidget::State state)
 {
     switch (state) {
     case TextToSpeechWidget::Stop:
-        KPIMTextEditTextToSpeech::TextToSpeech::self()->stop();
+        TextEditTextToSpeech::TextToSpeech::self()->stop();
         break;
     case TextToSpeechWidget::Play:
-        KPIMTextEditTextToSpeech::TextToSpeech::self()->resume();
+        TextEditTextToSpeech::TextToSpeech::self()->resume();
         break;
     case TextToSpeechWidget::Pause:
-        KPIMTextEditTextToSpeech::TextToSpeech::self()->pause();
+        TextEditTextToSpeech::TextToSpeech::self()->pause();
         break;
     }
 }

@@ -10,7 +10,7 @@
 class QSlider;
 class QComboBox;
 class QPushButton;
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechLanguageComboBox;
 class AbstractTextToSpeechConfigInterface;

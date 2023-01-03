@@ -20,14 +20,14 @@
 using namespace std::chrono_literals;
 #include <chrono>
 
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
-class Q_DECL_HIDDEN KPIMTextEditTextToSpeech::TextToSpeechWidgetPrivate
+class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechWidgetPrivate
 {
 public:
     TextToSpeechWidgetPrivate() = default;
 
-    QPointer<KPIMTextEditTextToSpeech::TextToSpeechConfigDialog> mConfigDialog;
+    QPointer<TextEditTextToSpeech::TextToSpeechConfigDialog> mConfigDialog;
     QToolButton *mStopButton = nullptr;
     QToolButton *mPlayPauseButton = nullptr;
     QToolButton *mConfigureButton = nullptr;
@@ -39,7 +39,7 @@ public:
 
 TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEditTextToSpeech::TextToSpeechWidgetPrivate)
+    , d(new TextEditTextToSpeech::TextToSpeechWidgetPrivate)
 {
     auto hbox = new QHBoxLayout(this);
     hbox->setObjectName(QStringLiteral("hbox"));
@@ -135,11 +135,11 @@ TextToSpeechWidget::State TextToSpeechWidget::state() const
     return d->mTextToSpeechActions->state();
 }
 
-void TextToSpeechWidget::slotStateChanged(KPIMTextEditTextToSpeech::TextToSpeech::State state)
+void TextToSpeechWidget::slotStateChanged(TextEditTextToSpeech::TextToSpeech::State state)
 {
     switch (state) {
-    case KPIMTextEditTextToSpeech::TextToSpeech::Ready:
-        if (state == KPIMTextEditTextToSpeech::TextToSpeech::Ready) {
+    case TextEditTextToSpeech::TextToSpeech::Ready:
+        if (state == TextEditTextToSpeech::TextToSpeech::Ready) {
             d->mTextToSpeechActions->setState(TextToSpeechWidget::Stop);
             if (d->mConfigDialog) {
                 d->mNeedToHide = true;

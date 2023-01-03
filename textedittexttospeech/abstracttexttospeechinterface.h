@@ -7,7 +7,7 @@
 #pragma once
 #include "textedittexttospeech_export.h"
 #include <QObject>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 /**
  * @brief The AbstractTextToSpeechInterface class

@@ -10,7 +10,7 @@
 #include <QLocale>
 #include <QObject>
 #include <QVector>
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 /**
  * @brief The AbstractTextToSpeechConfigInterface class

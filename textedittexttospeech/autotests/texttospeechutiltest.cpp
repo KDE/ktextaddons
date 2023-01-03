@@ -15,6 +15,6 @@ TextToSpeechUtilTest::TextToSpeechUtilTest(QObject *parent)
 
 void TextToSpeechUtilTest::shouldHaveDefaultValues()
 {
-    QCOMPARE(KPIMTextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName(), QStringLiteral("texttospeechrc"));
-    QCOMPARE(KPIMTextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName(), QStringLiteral("Settings"));
+    QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName(), QStringLiteral("texttospeechrc"));
+    QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName(), QStringLiteral("Settings"));
 }

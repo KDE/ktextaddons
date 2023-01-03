@@ -6,12 +6,12 @@
 
 #include "texttospeechutil.h"
 
-QString KPIMTextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName()
+QString TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName()
 {
     return QStringLiteral("texttospeechrc");
 }
 
-QString KPIMTextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName()
+QString TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName()
 {
     return QStringLiteral("Settings");
 }

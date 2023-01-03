@@ -10,12 +10,12 @@
 #include <QSignalSpy>
 #include <QTest>
 
-Q_DECLARE_METATYPE(KPIMTextEditTextToSpeech::TextToSpeechWidget::State)
+Q_DECLARE_METATYPE(TextEditTextToSpeech::TextToSpeechWidget::State)
 QTEST_MAIN(TextToSpeechActionsTest)
 TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
     : QObject(parent)
 {
-    qRegisterMetaType<KPIMTextEditTextToSpeech::TextToSpeechWidget::State>();
+    qRegisterMetaType<TextEditTextToSpeech::TextToSpeechWidget::State>();
     QIcon::setThemeName(QStringLiteral("breeze"));
 }
 
@@ -23,10 +23,10 @@ TextToSpeechActionsTest::~TextToSpeechActionsTest() = default;
 
 void TextToSpeechActionsTest::shouldHaveDefaultValue()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechActions act;
+    TextEditTextToSpeech::TextToSpeechActions act;
     QVERIFY(act.stopAction());
     QVERIFY(act.playPauseAction());
-    QCOMPARE(act.state(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop);
+    QCOMPARE(act.state(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
 
     QVERIFY(act.stopAction()->isEnabled());
     QVERIFY(!act.stopAction()->icon().isNull());
@@ -37,17 +37,17 @@ void TextToSpeechActionsTest::shouldHaveDefaultValue()
 
 void TextToSpeechActionsTest::shouldChangeButtonEnableStateWhenChangeState()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechActions act;
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    TextEditTextToSpeech::TextToSpeechActions act;
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
 
     QVERIFY(act.stopAction()->isEnabled());
     QVERIFY(act.playPauseAction()->isEnabled());
 
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Pause);
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Pause);
     QVERIFY(act.stopAction()->isEnabled());
     QVERIFY(act.playPauseAction()->isEnabled());
 
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop);
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Stop);
 
     QVERIFY(act.stopAction()->isEnabled());
     QVERIFY(!act.playPauseAction()->isEnabled());
@@ -55,44 +55,44 @@ void TextToSpeechActionsTest::shouldChangeButtonEnableStateWhenChangeState()
 
 void TextToSpeechActionsTest::shouldChangeStateWhenClickOnPlayPause()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechActions act;
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
-    QCOMPARE(act.state(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    TextEditTextToSpeech::TextToSpeechActions act;
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
+    QCOMPARE(act.state(), TextEditTextToSpeech::TextToSpeechWidget::Play);
 
     act.playPauseAction()->trigger();
-    QCOMPARE(act.state(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Pause);
+    QCOMPARE(act.state(), TextEditTextToSpeech::TextToSpeechWidget::Pause);
 
     act.playPauseAction()->trigger();
-    QCOMPARE(act.state(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    QCOMPARE(act.state(), TextEditTextToSpeech::TextToSpeechWidget::Play);
 }
 
 void TextToSpeechActionsTest::shouldChangeStateWhenClickOnStop()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechActions act;
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    TextEditTextToSpeech::TextToSpeechActions act;
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
 
     act.stopAction()->trigger();
-    QCOMPARE(act.state(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop);
+    QCOMPARE(act.state(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
 }
 
 void TextToSpeechActionsTest::shouldEmitStateChanged()
 {
-    KPIMTextEditTextToSpeech::TextToSpeechActions act;
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
-    QSignalSpy spy(&act, &KPIMTextEditTextToSpeech::TextToSpeechActions::stateChanged);
-    act.setState(KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    TextEditTextToSpeech::TextToSpeechActions act;
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
+    QSignalSpy spy(&act, &TextEditTextToSpeech::TextToSpeechActions::stateChanged);
+    act.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
     QCOMPARE(spy.count(), 0);
 
     act.playPauseAction()->trigger();
     QCOMPARE(spy.count(), 1);
-    QCOMPARE(spy.at(0).at(0).value<KPIMTextEditTextToSpeech::TextToSpeechWidget::State>(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Pause);
+    QCOMPARE(spy.at(0).at(0).value<TextEditTextToSpeech::TextToSpeechWidget::State>(), TextEditTextToSpeech::TextToSpeechWidget::Pause);
     act.playPauseAction()->trigger();
     QCOMPARE(spy.count(), 2);
-    QCOMPARE(spy.at(1).at(0).value<KPIMTextEditTextToSpeech::TextToSpeechWidget::State>(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Play);
+    QCOMPARE(spy.at(1).at(0).value<TextEditTextToSpeech::TextToSpeechWidget::State>(), TextEditTextToSpeech::TextToSpeechWidget::Play);
     act.playPauseAction()->trigger();
     QCOMPARE(spy.count(), 3);
-    QCOMPARE(spy.at(2).at(0).value<KPIMTextEditTextToSpeech::TextToSpeechWidget::State>(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Pause);
+    QCOMPARE(spy.at(2).at(0).value<TextEditTextToSpeech::TextToSpeechWidget::State>(), TextEditTextToSpeech::TextToSpeechWidget::Pause);
     act.stopAction()->trigger();
     QCOMPARE(spy.count(), 4);
-    QCOMPARE(spy.at(3).at(0).value<KPIMTextEditTextToSpeech::TextToSpeechWidget::State>(), KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop);
+    QCOMPARE(spy.at(3).at(0).value<TextEditTextToSpeech::TextToSpeechWidget::State>(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
 }

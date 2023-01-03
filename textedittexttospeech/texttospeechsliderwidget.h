@@ -9,7 +9,7 @@
 #include <QWidget>
 class QLabel;
 class QSlider;
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSliderWidget : public QWidget
 {

@@ -10,7 +10,7 @@
 #include <QObject>
 #include <TextEditTextToSpeech/TextToSpeechWidget>
 class QAction;
-namespace KPIMTextEditTextToSpeech
+namespace TextEditTextToSpeech
 {
 class TextToSpeechActionsPrivate;
 /**
@@ -35,7 +35,7 @@ public Q_SLOTS:
     void slotStop();
 
 Q_SIGNALS:
-    void stateChanged(KPIMTextEditTextToSpeech::TextToSpeechWidget::State state);
+    void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
 private:
     void slotPlayPause();

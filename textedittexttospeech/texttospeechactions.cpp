@@ -8,9 +8,9 @@
 #include <KLocalizedString>
 #include <QAction>
 
-using namespace KPIMTextEditTextToSpeech;
+using namespace TextEditTextToSpeech;
 
-class Q_DECL_HIDDEN KPIMTextEditTextToSpeech::TextToSpeechActionsPrivate
+class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechActionsPrivate
 {
 public:
     TextToSpeechActionsPrivate() = default;
@@ -23,7 +23,7 @@ public:
 
 TextToSpeechActions::TextToSpeechActions(QObject *parent)
     : QObject(parent)
-    , d(new KPIMTextEditTextToSpeech::TextToSpeechActionsPrivate)
+    , d(new TextEditTextToSpeech::TextToSpeechActionsPrivate)
 {
     d->mStopAction = new QAction(i18n("Stop"), this);
     d->mStopAction->setObjectName(QStringLiteral("stopbutton"));
@@ -76,12 +76,12 @@ void TextToSpeechActionsPrivate::updateButtonState()
 
 void TextToSpeechActions::slotPlayPause()
 {
-    if (d->mState == KPIMTextEditTextToSpeech::TextToSpeechWidget::Pause) {
-        d->mState = KPIMTextEditTextToSpeech::TextToSpeechWidget::Play;
-    } else if (d->mState == KPIMTextEditTextToSpeech::TextToSpeechWidget::Play) {
-        d->mState = KPIMTextEditTextToSpeech::TextToSpeechWidget::Pause;
-    } else if (d->mState == KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop) {
-        d->mState = KPIMTextEditTextToSpeech::TextToSpeechWidget::Play;
+    if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Pause) {
+        d->mState = TextEditTextToSpeech::TextToSpeechWidget::Play;
+    } else if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Play) {
+        d->mState = TextEditTextToSpeech::TextToSpeechWidget::Pause;
+    } else if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Stop) {
+        d->mState = TextEditTextToSpeech::TextToSpeechWidget::Play;
     } else {
         return;
     }
@@ -91,8 +91,8 @@ void TextToSpeechActions::slotPlayPause()
 
 void TextToSpeechActions::slotStop()
 {
-    if (d->mState != KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop) {
-        d->mState = KPIMTextEditTextToSpeech::TextToSpeechWidget::Stop;
+    if (d->mState != TextEditTextToSpeech::TextToSpeechWidget::Stop) {
+        d->mState = TextEditTextToSpeech::TextToSpeechWidget::Stop;
         d->updateButtonState();
         Q_EMIT stateChanged(d->mState);
     }
