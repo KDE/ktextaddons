@@ -12,7 +12,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
 )
 
 add_library(KF5TextEditTextToSpeech)
-add_library(KF5::PimTextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
+add_library(KF5::TextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
 
 if (TEXTEDIT_TEXT_TO_SPEECH)
     target_sources(KF5TextEditTextToSpeech PRIVATE
