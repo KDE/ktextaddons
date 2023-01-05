@@ -20,7 +20,7 @@
 QString YandexEnginePlugin::sYandexKey;
 
 YandexEnginePlugin::YandexEnginePlugin(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEnginePlugin(parent)
+    : TextTranslator::TranslatorEnginePlugin(parent)
 {
 }
 
@@ -31,7 +31,7 @@ void YandexEnginePlugin::translate()
     if (sYandexKey.isEmpty()) {
         const QUrl url(QStringLiteral("https://translate.yandex.com"));
 
-        QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
+        QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
         connect(reply, &QNetworkReply::finished, this, [this, reply]() {
             parseCredentials(reply);
         });
@@ -115,7 +115,7 @@ void YandexEnginePlugin::translateText()
     request.setUrl(url);
 
     // Make reply
-    QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, QByteArray());
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, QByteArray());
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         slotError(error);
         reply->deleteLater();

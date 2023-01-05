@@ -9,7 +9,7 @@
 
 #include "pimcommontexttranslator_export.h"
 #include <QPlainTextEdit>
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TranslatorResultTextEdit : public QPlainTextEdit
 {

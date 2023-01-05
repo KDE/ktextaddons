@@ -8,20 +8,20 @@
 
 #include <PimCommonTextTranslator/TranslatorEngineClient>
 
-class YandexEngineClient : public PimCommonTextTranslator::TranslatorEngineClient
+class YandexEngineClient : public TextTranslator::TranslatorEngineClient
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.Translator.yandex")
-    Q_INTERFACES(PimCommonTextTranslator::TranslatorEngineClient)
+    Q_INTERFACES(TextTranslator::TranslatorEngineClient)
 public:
     explicit YandexEngineClient(QObject *parent = nullptr);
     ~YandexEngineClient() override;
 
     Q_REQUIRED_RESULT QString name() const override;
     Q_REQUIRED_RESULT QString translatedName() const override;
-    Q_REQUIRED_RESULT PimCommonTextTranslator::TranslatorEnginePlugin *createTranslator() override;
-    Q_REQUIRED_RESULT QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> supportedLanguages() override;
+    Q_REQUIRED_RESULT TextTranslator::TranslatorEnginePlugin *createTranslator() override;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedLanguages() override;
 
 protected:
-    Q_REQUIRED_RESULT bool isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const override;
+    Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
 };

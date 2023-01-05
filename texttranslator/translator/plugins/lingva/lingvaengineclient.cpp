@@ -15,7 +15,7 @@
 #include <QPointer>
 
 LingvaEngineClient::LingvaEngineClient(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEngineClient{parent}
+    : TextTranslator::TranslatorEngineClient{parent}
 {
 }
 
@@ -31,14 +31,14 @@ QString LingvaEngineClient::translatedName() const
     return i18n("Lingva");
 }
 
-PimCommonTextTranslator::TranslatorEnginePlugin *LingvaEngineClient::createTranslator()
+TextTranslator::TranslatorEnginePlugin *LingvaEngineClient::createTranslator()
 {
     auto enginePlugin = new LingvaEnginePlugin();
     connect(this, &LingvaEngineClient::configureChanged, enginePlugin, &LingvaEnginePlugin::slotConfigureChanged);
     return enginePlugin;
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> LingvaEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> LingvaEngineClient::supportedLanguages()
 {
     if (mLanguages.isEmpty()) {
         mLanguages = fillLanguages();
@@ -69,11 +69,11 @@ void LingvaEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
-bool LingvaEngineClient::isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const
+bool LingvaEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {
-    case PimCommonTextTranslator::TranslatorUtil::ka:
-    case PimCommonTextTranslator::TranslatorUtil::tl:
+    case TextTranslator::TranslatorUtil::ka:
+    case TextTranslator::TranslatorUtil::tl:
         return false;
     default:
         break;

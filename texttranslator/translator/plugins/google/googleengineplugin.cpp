@@ -16,9 +16,9 @@
 #include <QUrlQuery>
 
 GoogleEnginePlugin::GoogleEnginePlugin(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEnginePlugin(parent)
+    : TextTranslator::TranslatorEnginePlugin(parent)
 {
-    connect(PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager(),
+    connect(TextTranslator::TranslatorEngineAccessManager::self()->networkManager(),
             &QNetworkAccessManager::finished,
             this,
             &GoogleEnginePlugin::slotTranslateFinished);
@@ -48,7 +48,7 @@ void GoogleEnginePlugin::translate()
     url.setPath(QStringLiteral("/translate_a/single"));
     const QNetworkRequest request(url);
 
-    QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         slotError(error);
         reply->deleteLater();

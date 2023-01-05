@@ -23,7 +23,7 @@ namespace
 {
 const char myTranslatorDebugDialogConfigGroupName[] = "TranslatorDebugDialog";
 }
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 TranslatorDebugDialog::TranslatorDebugDialog(QWidget *parent)
     : QDialog(parent)
     , mEdit(new QPlainTextEdit(this))

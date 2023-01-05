@@ -13,7 +13,7 @@
 #include <QHBoxLayout>
 #include <QToolButton>
 
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 TranslatorConfigureComboWidget::TranslatorConfigureComboWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineComboBox(new QComboBox(this))
@@ -41,14 +41,14 @@ TranslatorConfigureComboWidget::~TranslatorConfigureComboWidget() = default;
 void TranslatorConfigureComboWidget::slotConfigureEngine()
 {
     const QString engine = mEngineComboBox->currentData().toString();
-    if (PimCommonTextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine)) {
-        PimCommonTextTranslator::TranslatorEngineLoader::self()->showConfigureDialog(engine, this);
+    if (TextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine)) {
+        TextTranslator::TranslatorEngineLoader::self()->showConfigureDialog(engine, this);
     }
 }
 
 void TranslatorConfigureComboWidget::fillEngine()
 {
-    const QMap<QString, QString> map = PimCommonTextTranslator::TranslatorEngineLoader::self()->translatorEngineInfos();
+    const QMap<QString, QString> map = TextTranslator::TranslatorEngineLoader::self()->translatorEngineInfos();
     QMapIterator<QString, QString> iMap(map);
     while (iMap.hasNext()) {
         iMap.next();
@@ -59,7 +59,7 @@ void TranslatorConfigureComboWidget::fillEngine()
 void TranslatorConfigureComboWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngineComboBox->itemData(index).toString();
-    mConfigureEngine->setEnabled(PimCommonTextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine));
+    mConfigureEngine->setEnabled(TextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine));
     Q_EMIT engineChanged(engine);
 }
 

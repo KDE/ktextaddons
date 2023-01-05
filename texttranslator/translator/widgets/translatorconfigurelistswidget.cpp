@@ -15,8 +15,8 @@
 #include <KSharedConfig>
 #include <QLabel>
 #include <QVBoxLayout>
-using namespace PimCommonTextTranslator;
-class Q_DECL_HIDDEN PimCommonTextTranslator::TranslatorConfigureListsWidget::TranslatorConfigureListsWidgetPrivate
+using namespace TextTranslator;
+class Q_DECL_HIDDEN TextTranslator::TranslatorConfigureListsWidget::TranslatorConfigureListsWidgetPrivate
 {
 public:
     TranslatorConfigureListsWidgetPrivate(TranslatorConfigureListsWidget *parent)
@@ -27,8 +27,8 @@ public:
     }
     bool mLanguageListLoaded = false;
     TranslatorConfigureComboWidget *const mEngineConfigureComboWidget;
-    PimCommonTextTranslator::TranslatorConfigureLanguageListWidget *const mFromLanguageWidget;
-    PimCommonTextTranslator::TranslatorConfigureLanguageListWidget *const mToLanguageWidget;
+    TextTranslator::TranslatorConfigureLanguageListWidget *const mFromLanguageWidget;
+    TextTranslator::TranslatorConfigureLanguageListWidget *const mToLanguageWidget;
 };
 
 TranslatorConfigureListsWidget::TranslatorConfigureListsWidget(QWidget *parent)
@@ -87,7 +87,7 @@ void TranslatorConfigureListsWidget::loadLanguagesList()
     d->mToLanguageWidget->setSelectedLanguages(toLanguages);
 }
 
-void TranslatorConfigureListsWidget::fillLanguages(const QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> &listLanguage)
+void TranslatorConfigureListsWidget::fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage)
 {
     QMapIterator<TranslatorUtil::Language, QString> i(listLanguage);
     TranslatorUtil translatorUtil;
@@ -103,8 +103,7 @@ void TranslatorConfigureListsWidget::fillLanguages(const QMap<PimCommonTextTrans
 
 void TranslatorConfigureListsWidget::slotEngineChanged(const QString &engine)
 {
-    const QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> listLanguage =
-        PimCommonTextTranslator::TranslatorEngineLoader::self()->supportedLanguages(engine);
+    const QMap<TextTranslator::TranslatorUtil::Language, QString> listLanguage = TextTranslator::TranslatorEngineLoader::self()->supportedLanguages(engine);
 
     if (!d->mLanguageListLoaded) {
         fillLanguages(listLanguage);

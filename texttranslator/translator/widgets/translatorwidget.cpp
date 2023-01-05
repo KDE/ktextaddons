@@ -35,7 +35,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 namespace
 {
 static const char myTranslatorWidgetConfigGroupName[] = "TranslatorWidget";
@@ -62,8 +62,8 @@ public:
     QPushButton *translate = nullptr;
     QPushButton *clear = nullptr;
     QLabel *engineNameLabel = nullptr;
-    PimCommonTextTranslator::TranslatorEngineClient *translatorClient = nullptr;
-    PimCommonTextTranslator::TranslatorEnginePlugin *translatorPlugin = nullptr;
+    TextTranslator::TranslatorEngineClient *translatorClient = nullptr;
+    TextTranslator::TranslatorEnginePlugin *translatorPlugin = nullptr;
     KBusyIndicatorWidget *progressIndicator = nullptr;
     QPushButton *invert = nullptr;
     QSplitter *splitter = nullptr;
@@ -356,17 +356,17 @@ void TranslatorWidget::switchEngine()
         delete d->translatorPlugin;
         d->translatorPlugin = nullptr;
     }
-    d->translatorClient = PimCommonTextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(d->engineName);
+    d->translatorClient = TextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(d->engineName);
     if (!d->translatorClient) {
-        const QString fallBackEngineName = PimCommonTextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine();
+        const QString fallBackEngineName = TextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
-            d->translatorClient = PimCommonTextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(fallBackEngineName);
+            d->translatorClient = TextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(fallBackEngineName);
         }
     }
     if (d->translatorClient) {
         d->translatorPlugin = d->translatorClient->createTranslator();
-        connect(d->translatorPlugin, &PimCommonTextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
-        connect(d->translatorPlugin, &PimCommonTextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
+        connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
+        connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
         d->initLanguage();
         d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
     }
@@ -412,7 +412,7 @@ void TranslatorWidget::slotTranslate()
         qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << " Translator plugin invalid";
         return;
     }
-    if (!PimCommonTextTranslator::NetworkManager::self()->isOnline()) {
+    if (!TextTranslator::NetworkManager::self()->isOnline()) {
         KMessageBox::information(this, i18n("No network connection detected, we cannot translate text."), i18n("No network"));
         return;
     }

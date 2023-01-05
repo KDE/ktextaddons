@@ -7,7 +7,7 @@
 
 #include <QNetworkAccessManager>
 
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 TranslatorEngineAccessManager::TranslatorEngineAccessManager(QObject *parent)
     : QObject(parent)
     , mNetworkAccessManager(new QNetworkAccessManager(this))

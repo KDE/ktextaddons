@@ -10,7 +10,7 @@
 #include <PimCommonTextTranslator/TranslatorUtil>
 #include <QObject>
 #include <memory>
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TranslatorEngineLoaderPrivate;
 class TranslatorEngineClient;
@@ -23,12 +23,12 @@ public:
     explicit TranslatorEngineLoader(QObject *parent = nullptr);
     ~TranslatorEngineLoader() override;
 
-    Q_REQUIRED_RESULT PimCommonTextTranslator::TranslatorEngineClient *createTranslatorClient(const QString &clientName);
+    Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient *createTranslatorClient(const QString &clientName);
 
     // engine name, i18n
     Q_REQUIRED_RESULT QMap<QString, QString> translatorEngineInfos() const;
 
-    Q_REQUIRED_RESULT QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> supportedLanguages(const QString &clientName) const;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedLanguages(const QString &clientName) const;
 
     Q_REQUIRED_RESULT bool hasConfigurationDialog(const QString &clientName) const;
 

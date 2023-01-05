@@ -10,7 +10,7 @@
 #include <KLocalizedString>
 
 GoogleEngineClient::GoogleEngineClient(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEngineClient{parent}
+    : TextTranslator::TranslatorEngineClient{parent}
 {
 }
 
@@ -26,12 +26,12 @@ QString GoogleEngineClient::translatedName() const
     return i18n("Google");
 }
 
-PimCommonTextTranslator::TranslatorEnginePlugin *GoogleEngineClient::createTranslator()
+TextTranslator::TranslatorEnginePlugin *GoogleEngineClient::createTranslator()
 {
     return new GoogleEnginePlugin();
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> GoogleEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> GoogleEngineClient::supportedLanguages()
 {
     if (mLanguages.isEmpty()) {
         mLanguages = fillLanguages();
@@ -39,11 +39,11 @@ QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> GoogleEngineCli
     return mLanguages;
 }
 
-bool GoogleEngineClient::isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const
+bool GoogleEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {
-    case PimCommonTextTranslator::TranslatorUtil::ka:
-    case PimCommonTextTranslator::TranslatorUtil::tl:
+    case TextTranslator::TranslatorUtil::ka:
+    case TextTranslator::TranslatorUtil::tl:
         return false;
     default:
         break;

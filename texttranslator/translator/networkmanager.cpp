@@ -11,7 +11,7 @@
 #else
 #include <QNetworkConfigurationManager>
 #endif
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 
 Q_GLOBAL_STATIC(NetworkManager, s_pNetworkManagerSelf)
 

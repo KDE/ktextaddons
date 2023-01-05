@@ -19,7 +19,7 @@ TranslatorConfigureLanguageListWidgetTest::TranslatorConfigureLanguageListWidget
 
 void TranslatorConfigureLanguageListWidgetTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorConfigureLanguageListWidget w({});
+    TextTranslator::TranslatorConfigureLanguageListWidget w({});
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -40,7 +40,7 @@ void TranslatorConfigureLanguageListWidgetTest::shouldHaveDefaultValues()
 void TranslatorConfigureLanguageListWidgetTest::shouldAssignLabel()
 {
     const QString label{QStringLiteral("FOO")};
-    PimCommonTextTranslator::TranslatorConfigureLanguageListWidget w(label);
+    TextTranslator::TranslatorConfigureLanguageListWidget w(label);
     auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
     QVERIFY(mLabel);
     QCOMPARE(mLabel->text(), label);

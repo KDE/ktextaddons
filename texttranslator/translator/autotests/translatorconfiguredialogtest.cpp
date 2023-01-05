@@ -20,12 +20,12 @@ TranslatorConfigureDialogTest::TranslatorConfigureDialogTest(QObject *parent)
 
 void TranslatorConfigureDialogTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorConfigureDialog w;
+    TextTranslator::TranslatorConfigureDialog w;
     QVERIFY(!w.windowTitle().isEmpty());
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    auto mTranslatorConfigureWidget = w.findChild<PimCommonTextTranslator::TranslatorConfigureWidget *>(QStringLiteral("mTranslatorConfigureWidget"));
+    auto mTranslatorConfigureWidget = w.findChild<TextTranslator::TranslatorConfigureWidget *>(QStringLiteral("mTranslatorConfigureWidget"));
     QVERIFY(mTranslatorConfigureWidget);
 
     auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));

@@ -11,7 +11,7 @@
 #include <QPersistentModelIndex>
 class QMenu;
 
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorMenu : public QObject
 {

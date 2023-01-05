@@ -20,7 +20,7 @@ TranslatorConfigureLanguageListWidget_gui::TranslatorConfigureLanguageListWidget
 {
     auto mainLayout = new QVBoxLayout(this);
 
-    auto w = new PimCommonTextTranslator::TranslatorConfigureLanguageListWidget(QStringLiteral("from"), this);
+    auto w = new TextTranslator::TranslatorConfigureLanguageListWidget(QStringLiteral("from"), this);
     mainLayout->addWidget(w);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
@@ -29,13 +29,13 @@ TranslatorConfigureLanguageListWidget_gui::TranslatorConfigureLanguageListWidget
         qDebug() << " select " << w->selectedLanguages();
     });
     connect(buttonBox, &QDialogButtonBox::accepted, this, &TranslatorConfigureLanguageListWidget_gui::accept);
-    const QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> languages; // = PimCommonTextTranslator::TranslatorUtil::translatedLanguages();
+    const QMap<TextTranslator::TranslatorUtil::Language, QString> languages; // = TextTranslator::TranslatorUtil::translatedLanguages();
 
-    QMapIterator<PimCommonTextTranslator::TranslatorUtil::Language, QString> i(languages);
-    PimCommonTextTranslator::TranslatorUtil translatorUtil;
+    QMapIterator<TextTranslator::TranslatorUtil::Language, QString> i(languages);
+    TextTranslator::TranslatorUtil translatorUtil;
     while (i.hasNext()) {
         i.next();
-        const QString languageCode = PimCommonTextTranslator::TranslatorUtil::languageCode(i.key());
+        const QString languageCode = TextTranslator::TranslatorUtil::languageCode(i.key());
         w->addItem(i.value(), languageCode);
     }
 }

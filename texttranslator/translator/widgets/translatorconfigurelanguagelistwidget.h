@@ -12,7 +12,7 @@ class QListView;
 class QLineEdit;
 class QLabel;
 class QStandardItemModel;
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 /**
  * @brief The TranslatorConfigureLanguageListWidget class

@@ -12,7 +12,7 @@
 #include <QSortFilterProxyModel>
 #include <QStandardItemModel>
 #include <QVBoxLayout>
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 
 TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(const QString &labelText, QWidget *parent)
     : QWidget{parent}

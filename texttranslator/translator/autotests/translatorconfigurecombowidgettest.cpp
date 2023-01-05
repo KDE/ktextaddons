@@ -20,7 +20,7 @@ TranslatorConfigureComboWidgetTest::TranslatorConfigureComboWidgetTest(QObject *
 
 void TranslatorConfigureComboWidgetTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorConfigureComboWidget d;
+    TextTranslator::TranslatorConfigureComboWidget d;
     auto mEngineComboBox = d.findChild<QComboBox *>(QStringLiteral("mEngineComboBox"));
     QVERIFY(mEngineComboBox);
     auto mConfigureEngine = d.findChild<QToolButton *>(QStringLiteral("mConfigureEngine"));

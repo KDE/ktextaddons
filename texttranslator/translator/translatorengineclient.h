@@ -11,7 +11,7 @@
 #include "pimcommontexttranslator_export.h"
 #include <PimCommonTextTranslator/TranslatorUtil>
 #include <QMap>
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TranslatorEnginePlugin;
 class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
@@ -40,9 +40,9 @@ Q_SIGNALS:
     void configureChanged();
 
 protected:
-    Q_REQUIRED_RESULT QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> fillLanguages();
-    Q_REQUIRED_RESULT virtual bool isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const = 0;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> fillLanguages();
+    Q_REQUIRED_RESULT virtual bool isSupported(TextTranslator::TranslatorUtil::Language lang) const = 0;
     QMap<TranslatorUtil::Language, QString> mLanguages;
 };
 }
-Q_DECLARE_INTERFACE(PimCommonTextTranslator::TranslatorEngineClient, "org.kde.translator.Client")
+Q_DECLARE_INTERFACE(TextTranslator::TranslatorEngineClient, "org.kde.translator.Client")

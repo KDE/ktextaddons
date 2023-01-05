@@ -6,9 +6,9 @@
 
 #include "translatorengineplugin.h"
 #include <KLocalizedString>
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 
-class PimCommonTextTranslator::TranslatorEnginePluginPrivate
+class TextTranslator::TranslatorEnginePluginPrivate
 {
 public:
     QString mText;
@@ -21,7 +21,7 @@ public:
 
 TranslatorEnginePlugin::TranslatorEnginePlugin(QObject *parent)
     : QObject(parent)
-    , d(new PimCommonTextTranslator::TranslatorEnginePluginPrivate)
+    , d(new TextTranslator::TranslatorEnginePluginPrivate)
 {
     d->mHasDebug = !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
 }

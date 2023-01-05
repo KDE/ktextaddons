@@ -19,7 +19,7 @@
 #include <QJsonObject>
 
 LingvaEnginePlugin::LingvaEnginePlugin(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEnginePlugin(parent)
+    : TextTranslator::TranslatorEnginePlugin(parent)
 {
     loadSettings();
 }
@@ -44,7 +44,7 @@ void LingvaEnginePlugin::translateText()
     qCDebug(TRANSLATOR_LINGVA_LOG) << " url " << url;
     const QNetworkRequest request(url);
 
-    QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         slotError(error);
         reply->deleteLater();

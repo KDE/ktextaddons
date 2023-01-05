@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new PimCommonTextTranslator::TranslatorWidget();
+    auto w = new TextTranslator::TranslatorWidget();
     w->show();
     app.exec();
     delete w;

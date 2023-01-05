@@ -8,7 +8,7 @@
 
 #include <PimCommonTextTranslator/TranslatorEnginePlugin>
 
-class LibreTranslateEnginePlugin : public PimCommonTextTranslator::TranslatorEnginePlugin
+class LibreTranslateEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {
     Q_OBJECT
 public:

@@ -10,9 +10,9 @@
 #include <KSharedConfig>
 #include <QLabel>
 #include <QVBoxLayout>
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 
-class Q_DECL_HIDDEN PimCommonTextTranslator::TranslatorConfigureWidget::TranslatorConfigureWidgetPrivate
+class Q_DECL_HIDDEN TextTranslator::TranslatorConfigureWidget::TranslatorConfigureWidgetPrivate
 {
 public:
     TranslatorConfigureWidgetPrivate(TranslatorConfigureWidget *parent)

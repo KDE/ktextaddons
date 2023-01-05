@@ -26,7 +26,7 @@ QString BingEnginePlugin::sBingIg;
 QString BingEnginePlugin::sBingIid;
 
 BingEnginePlugin::BingEnginePlugin(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEnginePlugin(parent)
+    : TextTranslator::TranslatorEnginePlugin(parent)
 {
 }
 
@@ -36,7 +36,7 @@ void BingEnginePlugin::translate()
 {
     if (sBingKey.isEmpty() || sBingToken.isEmpty()) {
         const QUrl url(QStringLiteral("https://www.bing.com/translator"));
-        QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
+        QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
         connect(reply, &QNetworkReply::finished, this, [this, reply]() {
             parseCredentials(reply);
         });
@@ -122,7 +122,7 @@ void BingEnginePlugin::translateText()
     request.setHeader(QNetworkRequest::UserAgentHeader,
                       QStringLiteral("%1/%2").arg(QCoreApplication::applicationName(), QCoreApplication::applicationVersion()));
 
-    QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, postData);
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, postData);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         slotError(error);
         reply->deleteLater();

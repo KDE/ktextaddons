@@ -8,7 +8,7 @@
 #include "pimcommontexttranslator_export.h"
 #include <QObject>
 class QNetworkAccessManager;
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorEngineAccessManager : public QObject
 {

@@ -15,7 +15,7 @@
 #include <QPointer>
 
 LibreTranslateEngineClient::LibreTranslateEngineClient(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEngineClient{parent}
+    : TextTranslator::TranslatorEngineClient{parent}
 {
 }
 
@@ -31,14 +31,14 @@ QString LibreTranslateEngineClient::translatedName() const
     return i18n("Libre Translate");
 }
 
-PimCommonTextTranslator::TranslatorEnginePlugin *LibreTranslateEngineClient::createTranslator()
+TextTranslator::TranslatorEnginePlugin *LibreTranslateEngineClient::createTranslator()
 {
     auto enginePlugin = new LibreTranslateEnginePlugin();
     connect(this, &LibreTranslateEngineClient::configureChanged, enginePlugin, &LibreTranslateEnginePlugin::slotConfigureChanged);
     return enginePlugin;
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedLanguages()
 {
     if (mLanguages.isEmpty()) {
         mLanguages = fillLanguages();
@@ -76,48 +76,48 @@ void LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
-bool LibreTranslateEngineClient::isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const
+bool LibreTranslateEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {
-    case PimCommonTextTranslator::TranslatorUtil::sq:
-    case PimCommonTextTranslator::TranslatorUtil::af:
-    case PimCommonTextTranslator::TranslatorUtil::hy:
-    case PimCommonTextTranslator::TranslatorUtil::az:
-    case PimCommonTextTranslator::TranslatorUtil::eu:
-    case PimCommonTextTranslator::TranslatorUtil::be:
-    case PimCommonTextTranslator::TranslatorUtil::bs:
-    case PimCommonTextTranslator::TranslatorUtil::bg:
-    case PimCommonTextTranslator::TranslatorUtil::ca:
-    case PimCommonTextTranslator::TranslatorUtil::hr:
-    case PimCommonTextTranslator::TranslatorUtil::cs:
-    case PimCommonTextTranslator::TranslatorUtil::da:
-    case PimCommonTextTranslator::TranslatorUtil::nl:
-    case PimCommonTextTranslator::TranslatorUtil::et:
-    case PimCommonTextTranslator::TranslatorUtil::tl:
-    case PimCommonTextTranslator::TranslatorUtil::fi:
-    case PimCommonTextTranslator::TranslatorUtil::gl:
-    case PimCommonTextTranslator::TranslatorUtil::ka:
-    case PimCommonTextTranslator::TranslatorUtil::el:
-    case PimCommonTextTranslator::TranslatorUtil::iw:
-    case PimCommonTextTranslator::TranslatorUtil::hmong:
-    case PimCommonTextTranslator::TranslatorUtil::hu:
-    case PimCommonTextTranslator::TranslatorUtil::is:
-    case PimCommonTextTranslator::TranslatorUtil::lt:
-    case PimCommonTextTranslator::TranslatorUtil::mk:
-    case PimCommonTextTranslator::TranslatorUtil::ms:
-    case PimCommonTextTranslator::TranslatorUtil::mt:
-    case PimCommonTextTranslator::TranslatorUtil::no:
-    case PimCommonTextTranslator::TranslatorUtil::fa:
-    case PimCommonTextTranslator::TranslatorUtil::ro:
-    case PimCommonTextTranslator::TranslatorUtil::sk:
-    case PimCommonTextTranslator::TranslatorUtil::sl:
-    case PimCommonTextTranslator::TranslatorUtil::sw:
-    case PimCommonTextTranslator::TranslatorUtil::sv:
-    case PimCommonTextTranslator::TranslatorUtil::th:
-    case PimCommonTextTranslator::TranslatorUtil::uk:
-    case PimCommonTextTranslator::TranslatorUtil::ur:
-    case PimCommonTextTranslator::TranslatorUtil::cy:
-    case PimCommonTextTranslator::TranslatorUtil::yi:
+    case TextTranslator::TranslatorUtil::sq:
+    case TextTranslator::TranslatorUtil::af:
+    case TextTranslator::TranslatorUtil::hy:
+    case TextTranslator::TranslatorUtil::az:
+    case TextTranslator::TranslatorUtil::eu:
+    case TextTranslator::TranslatorUtil::be:
+    case TextTranslator::TranslatorUtil::bs:
+    case TextTranslator::TranslatorUtil::bg:
+    case TextTranslator::TranslatorUtil::ca:
+    case TextTranslator::TranslatorUtil::hr:
+    case TextTranslator::TranslatorUtil::cs:
+    case TextTranslator::TranslatorUtil::da:
+    case TextTranslator::TranslatorUtil::nl:
+    case TextTranslator::TranslatorUtil::et:
+    case TextTranslator::TranslatorUtil::tl:
+    case TextTranslator::TranslatorUtil::fi:
+    case TextTranslator::TranslatorUtil::gl:
+    case TextTranslator::TranslatorUtil::ka:
+    case TextTranslator::TranslatorUtil::el:
+    case TextTranslator::TranslatorUtil::iw:
+    case TextTranslator::TranslatorUtil::hmong:
+    case TextTranslator::TranslatorUtil::hu:
+    case TextTranslator::TranslatorUtil::is:
+    case TextTranslator::TranslatorUtil::lt:
+    case TextTranslator::TranslatorUtil::mk:
+    case TextTranslator::TranslatorUtil::ms:
+    case TextTranslator::TranslatorUtil::mt:
+    case TextTranslator::TranslatorUtil::no:
+    case TextTranslator::TranslatorUtil::fa:
+    case TextTranslator::TranslatorUtil::ro:
+    case TextTranslator::TranslatorUtil::sk:
+    case TextTranslator::TranslatorUtil::sl:
+    case TextTranslator::TranslatorUtil::sw:
+    case TextTranslator::TranslatorUtil::sv:
+    case TextTranslator::TranslatorUtil::th:
+    case TextTranslator::TranslatorUtil::uk:
+    case TextTranslator::TranslatorUtil::ur:
+    case TextTranslator::TranslatorUtil::cy:
+    case TextTranslator::TranslatorUtil::yi:
         return false;
     default:
         break;

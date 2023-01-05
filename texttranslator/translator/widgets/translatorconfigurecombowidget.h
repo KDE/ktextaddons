@@ -10,7 +10,7 @@
 #include <QWidget>
 class QComboBox;
 class QToolButton;
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TEXTTRANSLATOR_TESTS_EXPORT TranslatorConfigureComboWidget : public QWidget
 {

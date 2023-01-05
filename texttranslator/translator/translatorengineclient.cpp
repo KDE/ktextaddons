@@ -6,7 +6,7 @@
 
 #include "translatorengineclient.h"
 
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 
 TranslatorEngineClient::TranslatorEngineClient(QObject *parent)
     : QObject{parent}
@@ -27,13 +27,13 @@ void TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
     // Nothing by default
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::fillLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::fillLanguages()
 {
-    QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> map;
-    for (int i = PimCommonTextTranslator::TranslatorUtil::Language::automatic; i < PimCommonTextTranslator::TranslatorUtil::Language::lastLanguage; ++i) {
-        if (isSupported(static_cast<PimCommonTextTranslator::TranslatorUtil::Language>(i))) {
-            map.insert(static_cast<PimCommonTextTranslator::TranslatorUtil::Language>(i),
-                       PimCommonTextTranslator::TranslatorUtil::translatedLanguage(static_cast<PimCommonTextTranslator::TranslatorUtil::Language>(i)));
+    QMap<TextTranslator::TranslatorUtil::Language, QString> map;
+    for (int i = TextTranslator::TranslatorUtil::Language::automatic; i < TextTranslator::TranslatorUtil::Language::lastLanguage; ++i) {
+        if (isSupported(static_cast<TextTranslator::TranslatorUtil::Language>(i))) {
+            map.insert(static_cast<TextTranslator::TranslatorUtil::Language>(i),
+                       TextTranslator::TranslatorUtil::translatedLanguage(static_cast<TextTranslator::TranslatorUtil::Language>(i)));
         }
     }
     return map;

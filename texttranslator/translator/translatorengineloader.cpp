@@ -10,8 +10,8 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QPluginLoader>
-using namespace PimCommonTextTranslator;
-class PimCommonTextTranslator::TranslatorEngineLoaderPrivate
+using namespace TextTranslator;
+class TextTranslator::TranslatorEngineLoaderPrivate
 {
 public:
     QSet<QString> loadedPlugins;
@@ -26,7 +26,7 @@ TranslatorEngineLoader *TranslatorEngineLoader::self()
 
 TranslatorEngineLoader::TranslatorEngineLoader(QObject *parent)
     : QObject{parent}
-    , d(new PimCommonTextTranslator::TranslatorEngineLoaderPrivate)
+    , d(new TextTranslator::TranslatorEngineLoaderPrivate)
 {
     loadPlugins();
 }
@@ -99,7 +99,7 @@ QMap<QString, QString> TranslatorEngineLoader::translatorEngineInfos() const
     return map;
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::supportedLanguages(const QString &clientName) const
+QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::supportedLanguages(const QString &clientName) const
 {
     QMap<TranslatorUtil::Language, QString> supportedLanguages;
     auto clientsItr = d->translatorClients.constFind(clientName);

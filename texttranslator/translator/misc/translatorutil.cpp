@@ -9,7 +9,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QComboBox>
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 
 TranslatorUtil::TranslatorUtil() = default;
 

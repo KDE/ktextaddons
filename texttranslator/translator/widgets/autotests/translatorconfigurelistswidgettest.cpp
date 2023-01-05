@@ -21,16 +21,16 @@ TranslatorConfigureListsWidgetTest::TranslatorConfigureListsWidgetTest(QObject *
 
 void TranslatorConfigureListsWidgetTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorConfigureListsWidget w;
+    TextTranslator::TranslatorConfigureListsWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    auto mEngineConfigureComboWidget = w.findChild<PimCommonTextTranslator::TranslatorConfigureComboWidget *>(QStringLiteral("mEngineConfigureComboWidget"));
+    auto mEngineConfigureComboWidget = w.findChild<TextTranslator::TranslatorConfigureComboWidget *>(QStringLiteral("mEngineConfigureComboWidget"));
     QVERIFY(mEngineConfigureComboWidget);
 
-    auto mFromLanguageWidget = w.findChild<PimCommonTextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mFromLanguageWidget"));
+    auto mFromLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mFromLanguageWidget"));
     QVERIFY(mFromLanguageWidget);
 
-    auto mToLanguageWidget = w.findChild<PimCommonTextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mToLanguageWidget"));
+    auto mToLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mToLanguageWidget"));
     QVERIFY(mToLanguageWidget);
 }

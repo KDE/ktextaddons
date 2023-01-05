@@ -15,6 +15,6 @@ TranslatorEngineLoaderTest::TranslatorEngineLoaderTest(QObject *parent)
 
 void TranslatorEngineLoaderTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorEngineLoader w;
+    TextTranslator::TranslatorEngineLoader w;
     QVERIFY(!w.translatorEngineInfos().isEmpty());
 }

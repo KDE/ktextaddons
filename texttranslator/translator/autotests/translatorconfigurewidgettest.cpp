@@ -18,9 +18,9 @@ TranslatorConfigureWidgetTest::TranslatorConfigureWidgetTest(QObject *parent)
 
 void TranslatorConfigureWidgetTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorConfigureWidget w;
+    TextTranslator::TranslatorConfigureWidget w;
 
-    auto mEngineConfigureComboWidget = w.findChild<PimCommonTextTranslator::TranslatorConfigureComboWidget *>(QStringLiteral("mEngineConfigureComboWidget"));
+    auto mEngineConfigureComboWidget = w.findChild<TextTranslator::TranslatorConfigureComboWidget *>(QStringLiteral("mEngineConfigureComboWidget"));
     QVERIFY(mEngineConfigureComboWidget);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));

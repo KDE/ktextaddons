@@ -10,7 +10,7 @@
 #include <KLocalizedString>
 
 YandexEngineClient::YandexEngineClient(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEngineClient{parent}
+    : TextTranslator::TranslatorEngineClient{parent}
 {
 }
 
@@ -26,12 +26,12 @@ QString YandexEngineClient::translatedName() const
     return i18n("Yandex");
 }
 
-PimCommonTextTranslator::TranslatorEnginePlugin *YandexEngineClient::createTranslator()
+TextTranslator::TranslatorEnginePlugin *YandexEngineClient::createTranslator()
 {
     return new YandexEnginePlugin();
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> YandexEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> YandexEngineClient::supportedLanguages()
 {
     if (mLanguages.isEmpty()) {
         mLanguages = fillLanguages();
@@ -39,10 +39,10 @@ QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> YandexEngineCli
     return mLanguages;
 }
 
-bool YandexEngineClient::isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const
+bool YandexEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {
-    case PimCommonTextTranslator::TranslatorUtil::tl:
+    case TextTranslator::TranslatorUtil::tl:
         return false;
     default:
         break;

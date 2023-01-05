@@ -20,7 +20,7 @@
 #include <QUrlQuery>
 
 DeeplEnginePlugin::DeeplEnginePlugin(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEnginePlugin(parent)
+    : TextTranslator::TranslatorEnginePlugin(parent)
 {
     loadSettings();
 }
@@ -54,7 +54,7 @@ void DeeplEnginePlugin::translateText()
     request.setRawHeader(QByteArrayLiteral("Authorization"), "DeepL-Auth-Key " + mApiKey.toLocal8Bit());
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
 
-    QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, QByteArray());
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, QByteArray());
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         slotError(error);
         reply->deleteLater();

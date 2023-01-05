@@ -19,7 +19,7 @@
 #include <QJsonObject>
 
 LibreTranslateEnginePlugin::LibreTranslateEnginePlugin(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEnginePlugin(parent)
+    : TextTranslator::TranslatorEnginePlugin(parent)
 {
     loadSettings();
 }
@@ -62,7 +62,7 @@ void LibreTranslateEnginePlugin::translateText()
 
     qCDebug(TRANSLATOR_LIBRETRANSLATE_LOG) << " url " << url;
 
-    QNetworkReply *reply = PimCommonTextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, postData);
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, postData);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         slotError(error);
         reply->deleteLater();

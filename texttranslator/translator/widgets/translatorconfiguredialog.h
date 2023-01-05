@@ -6,7 +6,7 @@
 #pragma once
 #include "pimcommontexttranslator_export.h"
 #include <QDialog>
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TranslatorConfigureWidget;
 /**

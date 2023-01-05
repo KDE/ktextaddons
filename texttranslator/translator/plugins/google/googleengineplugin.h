@@ -9,7 +9,7 @@
 #include <PimCommonTextTranslator/TranslatorEnginePlugin>
 #include <PimCommonTextTranslator/TranslatorUtil>
 class QNetworkReply;
-class GoogleEnginePlugin : public PimCommonTextTranslator::TranslatorEnginePlugin
+class GoogleEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {
 public:
     explicit GoogleEnginePlugin(QObject *parent = nullptr);

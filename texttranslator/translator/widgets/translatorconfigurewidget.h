@@ -8,7 +8,7 @@
 
 #include "pimcommontexttranslator_export.h"
 #include <QWidget>
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
 {

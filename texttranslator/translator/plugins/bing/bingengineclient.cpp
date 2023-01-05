@@ -10,7 +10,7 @@
 #include <KLocalizedString>
 
 BingEngineClient::BingEngineClient(QObject *parent)
-    : PimCommonTextTranslator::TranslatorEngineClient{parent}
+    : TextTranslator::TranslatorEngineClient{parent}
 {
 }
 
@@ -26,12 +26,12 @@ QString BingEngineClient::translatedName() const
     return i18n("Bing");
 }
 
-PimCommonTextTranslator::TranslatorEnginePlugin *BingEngineClient::createTranslator()
+TextTranslator::TranslatorEnginePlugin *BingEngineClient::createTranslator()
 {
     return new BingEnginePlugin();
 }
 
-QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> BingEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> BingEngineClient::supportedLanguages()
 {
     if (mLanguages.isEmpty()) {
         mLanguages = fillLanguages();
@@ -39,19 +39,19 @@ QMap<PimCommonTextTranslator::TranslatorUtil::Language, QString> BingEngineClien
     return mLanguages;
 }
 
-bool BingEngineClient::isSupported(PimCommonTextTranslator::TranslatorUtil::Language lang) const
+bool BingEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {
-    case PimCommonTextTranslator::TranslatorUtil::sq:
-    case PimCommonTextTranslator::TranslatorUtil::hy:
-    case PimCommonTextTranslator::TranslatorUtil::az:
-    case PimCommonTextTranslator::TranslatorUtil::eu:
-    case PimCommonTextTranslator::TranslatorUtil::be:
-    case PimCommonTextTranslator::TranslatorUtil::gl:
-    case PimCommonTextTranslator::TranslatorUtil::ka:
-    case PimCommonTextTranslator::TranslatorUtil::ga:
-    case PimCommonTextTranslator::TranslatorUtil::mk:
-    case PimCommonTextTranslator::TranslatorUtil::yi:
+    case TextTranslator::TranslatorUtil::sq:
+    case TextTranslator::TranslatorUtil::hy:
+    case TextTranslator::TranslatorUtil::az:
+    case TextTranslator::TranslatorUtil::eu:
+    case TextTranslator::TranslatorUtil::be:
+    case TextTranslator::TranslatorUtil::gl:
+    case TextTranslator::TranslatorUtil::ka:
+    case TextTranslator::TranslatorUtil::ga:
+    case TextTranslator::TranslatorUtil::mk:
+    case TextTranslator::TranslatorUtil::yi:
         return false;
     default:
         break;

@@ -10,7 +10,7 @@
 #include <QUrl>
 
 class QPlainTextEdit;
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TranslatorDebugDialog : public QDialog
 {

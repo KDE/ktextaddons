@@ -13,7 +13,7 @@
 #include <KSharedConfig>
 #include <QMenu>
 
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 TranslatorMenu::TranslatorMenu(QObject *parent)
     : QObject(parent)
     , mMenu(new QMenu)
@@ -41,7 +41,7 @@ void TranslatorMenu::updateMenu()
     const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
     const auto fromList = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
     const auto toList = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
-    const QMap<TranslatorUtil::Language, QString> languagesList = PimCommonTextTranslator::TranslatorEngineLoader::self()->supportedLanguages(engine);
+    const QMap<TranslatorUtil::Language, QString> languagesList = TextTranslator::TranslatorEngineLoader::self()->supportedLanguages(engine);
     for (const auto &fromLang : fromList) {
         const QString fromLangI18n = TranslatorUtil::searchI18nFromLanguage(fromLang);
         if (fromLangI18n.isEmpty()) {

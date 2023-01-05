@@ -10,7 +10,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-using namespace PimCommonTextTranslator;
+using namespace TextTranslator;
 TranslatorConfigureDialog::TranslatorConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mTranslatorConfigureWidget(new TranslatorConfigureWidget(this))

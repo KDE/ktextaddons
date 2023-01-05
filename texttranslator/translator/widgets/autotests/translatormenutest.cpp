@@ -19,7 +19,7 @@ TranslatorMenuTest::TranslatorMenuTest(QObject *parent)
 
 void TranslatorMenuTest::shouldHaveDefaultValues()
 {
-    PimCommonTextTranslator::TranslatorMenu w;
+    TextTranslator::TranslatorMenu w;
     QVERIFY(w.menu());
     QVERIFY(w.isEmpty());
     QVERIFY(!w.menu()->title().isEmpty());

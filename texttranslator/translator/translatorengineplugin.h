@@ -13,7 +13,7 @@
 #include <QString>
 #include <memory>
 
-namespace PimCommonTextTranslator
+namespace TextTranslator
 {
 class TranslatorEnginePluginPrivate;
 class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorEnginePlugin : public QObject
