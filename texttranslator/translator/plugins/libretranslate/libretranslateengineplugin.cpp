@@ -14,9 +14,9 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <PimCommonTextTranslator/TranslatorEngineAccessManager>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <TextTranslator/TranslatorEngineAccessManager>
 
 LibreTranslateEnginePlugin::LibreTranslateEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)

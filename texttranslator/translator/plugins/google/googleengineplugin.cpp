@@ -7,13 +7,13 @@
 #include "googleengineplugin.h"
 #include "googletranslator_debug.h"
 #include <KLocalizedString>
-#include <PimCommonTextTranslator/TranslatorEngineAccessManager>
 #include <QJsonDocument>
 #include <QJsonParseError>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QUrlQuery>
+#include <TextTranslator/TranslatorEngineAccessManager>
 
 GoogleEnginePlugin::GoogleEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <PimCommonTextTranslator/TranslatorEngineClient>
+#include <TextTranslator/TranslatorEngineClient>
 
 class DeeplEngineClient : public TextTranslator::TranslatorEngineClient
 {

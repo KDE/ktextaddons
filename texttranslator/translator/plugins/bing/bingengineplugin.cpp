@@ -9,7 +9,6 @@
 #include "bingengineplugin.h"
 #include "translator/plugins/bing/bingtranslator_debug.h"
 #include <KLocalizedString>
-#include <PimCommonTextTranslator/TranslatorEngineAccessManager>
 #include <QCoreApplication>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -19,6 +18,7 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QUrlQuery>
+#include <TextTranslator/TranslatorEngineAccessManager>
 
 QByteArray BingEnginePlugin::sBingKey;
 QByteArray BingEnginePlugin::sBingToken;

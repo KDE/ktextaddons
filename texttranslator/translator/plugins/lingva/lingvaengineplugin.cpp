@@ -10,7 +10,7 @@
 #include "lingvaengineplugin.h"
 #include "lingvaengineutil.h"
 #include "lingvatranslator_debug.h"
-#include <PimCommonTextTranslator/TranslatorEngineAccessManager>
+#include <TextTranslator/TranslatorEngineAccessManager>
 
 #include <KConfigGroup>
 #include <KSharedConfig>

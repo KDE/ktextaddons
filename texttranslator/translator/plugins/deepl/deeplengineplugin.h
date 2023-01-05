@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <PimCommonTextTranslator/TranslatorEnginePlugin>
+#include <TextTranslator/TranslatorEnginePlugin>
 
 class DeeplEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {

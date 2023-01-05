@@ -9,8 +9,8 @@
 #include <QObject>
 
 #include "pimcommontexttranslator_export.h"
-#include <PimCommonTextTranslator/TranslatorUtil>
 #include <QMap>
+#include <TextTranslator/TranslatorUtil>
 namespace TextTranslator
 {
 class TranslatorEnginePlugin;

@@ -8,7 +8,7 @@
 
 #include "yandexengineplugin.h"
 
-#include <PimCommonTextTranslator/TranslatorEngineAccessManager>
+#include <TextTranslator/TranslatorEngineAccessManager>
 
 #include <KLocalizedString>
 

@@ -6,7 +6,7 @@
 
 #include "networkmanager.h"
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include "pimcommontexttranslator_debug.h"
+#include "texttranslator_debug.h"
 #include <QNetworkInformation>
 #else
 #include <QNetworkConfigurationManager>

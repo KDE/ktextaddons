@@ -5,10 +5,10 @@
 */
 
 #include "translatormenutest.h"
-#include <PimCommonTextTranslator/TranslatorMenu>
 #include <QMenu>
 #include <QStandardPaths>
 #include <QTest>
+#include <TextTranslator/TranslatorMenu>
 
 QTEST_MAIN(TranslatorMenuTest)
 TranslatorMenuTest::TranslatorMenuTest(QObject *parent)

@@ -12,7 +12,7 @@ configure_package_config_file(
 
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX PIMCOMMON
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/pimcommontexttranslator_version.h"
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextTranslatorConfigVersion.cmake"
     SOVERSION 5
     )
@@ -27,7 +27,7 @@ install(FILES
 install(EXPORT KF5TextTranslatorTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextTranslatorTargets.cmake NAMESPACE KF5::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommontexttranslator_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/ COMPONENT Devel
     )
 
@@ -37,10 +37,10 @@ endif()
 
 add_library(KF5TextTranslator )
 add_library(KF5::TextTranslator ALIAS KF5TextTranslator)
-ecm_qt_declare_logging_category(KF5TextTranslator HEADER pimcommontexttranslator_debug.h
-    IDENTIFIER PIMCOMMONTEXTTRANSLATOR_LOG CATEGORY_NAME org.kde.pim.pimcommontexttranslator
-        DESCRIPTION "kdepim (pimcommon TextTranslator)"
-        EXPORT PIMCOMMON
+ecm_qt_declare_logging_category(KF5TextTranslator HEADER texttranslator_debug.h
+    IDENTIFIER PIMCOMMONTEXTTRANSLATOR_LOG CATEGORY_NAME org.kde.kf5.texttranslator
+        DESCRIPTION "kf5 (TextTranslator)"
+        EXPORT KTEXTADDONS
     )
 
 target_sources(KF5TextTranslator PRIVATE
@@ -156,7 +156,7 @@ ecm_generate_pri_file(BASE_NAME TextTranslator
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommontexttranslator_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/ COMPONENT Devel
     )
 

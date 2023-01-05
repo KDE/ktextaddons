@@ -7,10 +7,10 @@
 #pragma once
 
 #include "pimcommontexttranslator_export.h"
-#include <PimCommonTextTranslator/TranslatorUtil>
 #include <QNetworkReply>
 #include <QObject>
 #include <QString>
+#include <TextTranslator/TranslatorUtil>
 #include <memory>
 
 namespace TextTranslator

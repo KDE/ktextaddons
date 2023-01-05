@@ -5,7 +5,7 @@
 */
 
 #include "translatormenu.h"
-#include "pimcommontexttranslator_debug.h"
+#include "texttranslator_debug.h"
 #include "translator/translatorengineloader.h"
 
 #include <KConfigGroup>

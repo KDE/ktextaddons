@@ -5,7 +5,7 @@
 */
 
 #include "translatorengineloader.h"
-#include "pimcommontexttranslator_debug.h"
+#include "texttranslator_debug.h"
 #include "translatorengineclient.h"
 #include <QCoreApplication>
 #include <QDir>

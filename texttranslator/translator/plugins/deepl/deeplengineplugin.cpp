@@ -13,11 +13,11 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <PimCommonTextTranslator/TranslatorEngineAccessManager>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QUrlQuery>
+#include <TextTranslator/TranslatorEngineAccessManager>
 
 DeeplEnginePlugin::DeeplEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)

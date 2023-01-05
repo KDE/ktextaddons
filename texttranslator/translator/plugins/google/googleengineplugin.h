@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <PimCommonTextTranslator/TranslatorEnginePlugin>
-#include <PimCommonTextTranslator/TranslatorUtil>
+#include <TextTranslator/TranslatorEnginePlugin>
+#include <TextTranslator/TranslatorUtil>
 class QNetworkReply;
 class GoogleEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {

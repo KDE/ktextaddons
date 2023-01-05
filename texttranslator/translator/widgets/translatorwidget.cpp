@@ -6,7 +6,7 @@
 */
 
 #include "translatorwidget.h"
-#include "pimcommontexttranslator_debug.h"
+#include "texttranslator_debug.h"
 #include "translator/misc/translatorutil.h"
 #include "translator/networkmanager.h"
 #include "translator/translatorengineclient.h"

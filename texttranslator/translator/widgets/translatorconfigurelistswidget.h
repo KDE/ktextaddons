@@ -7,8 +7,8 @@
 #pragma once
 
 #include "pimcommontexttranslator_export.h"
-#include <PimCommonTextTranslator/TranslatorUtil>
 #include <QWidget>
+#include <TextTranslator/TranslatorUtil>
 namespace TextTranslator
 {
 /**
