@@ -7,7 +7,7 @@ macro(add_pimcommon_translator_unittest _source)
         NAME_PREFIX "pimcommon-translator-"
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
-        KF5::PimCommonTextTranslator
+        KF5::TextTranslator
     )
 endmacro()
 add_pimcommon_translator_unittest(translatorwidgettest.cpp)

@@ -12,7 +12,7 @@ class QComboBox;
 class QToolButton;
 namespace PimCommonTextTranslator
 {
-class PIMCOMMONTEXTTRANSLATOR_TESTS_EXPORT TranslatorConfigureComboWidget : public QWidget
+class TEXTTRANSLATOR_TESTS_EXPORT TranslatorConfigureComboWidget : public QWidget
 {
     Q_OBJECT
 public:

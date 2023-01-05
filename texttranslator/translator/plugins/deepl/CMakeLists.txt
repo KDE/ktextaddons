@@ -23,7 +23,7 @@ target_sources(translator_deepl PRIVATE
     deeplengineutil.cpp
 )
 
-target_link_libraries(translator_deepl PRIVATE KF5::PimCommonTextTranslator KF5::I18n KF5::ConfigCore)
+target_link_libraries(translator_deepl PRIVATE KF5::TextTranslator KF5::I18n KF5::ConfigCore)
 
 install(TARGETS translator_deepl  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
 if (BUILD_TESTING)
