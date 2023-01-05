@@ -4,7 +4,7 @@ ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h
     ../libretranslateengineconfiguredialog.cpp ../libretranslateengineconfigurewidget.cpp ../libretranslateengineutil.h ../libretranslateengineutil.cpp
     ${translator_libretranslate_debug_SRCS}
     TEST_NAME libretranslateengineclienttest
-    NAME_PREFIX pimcommon-
+    
     LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF5::I18n KF5::ConfigCore
 )
 
@@ -12,7 +12,7 @@ ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h
 ecm_add_test(libretranslateengineconfigurewidgettest.cpp libretranslateengineconfigurewidgettest.h
     ../libretranslateengineconfigurewidget.cpp
     TEST_NAME libretranslateengineconfigurewidgettest
-    NAME_PREFIX pimcommon-
+    
     LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF5::I18n
 )
 
@@ -20,7 +20,7 @@ ecm_add_test(libretranslateengineconfigurewidgettest.cpp libretranslateenginecon
 ecm_add_test(libretranslateengineconfiguredialogtest.cpp libretranslateengineconfiguredialogtest.h
     ../libretranslateengineconfiguredialog.cpp ../libretranslateengineconfigurewidget.cpp
     TEST_NAME libretranslateengineconfiguredialogtest
-    NAME_PREFIX pimcommon-
+    
     LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF5::I18n
 )
 
@@ -28,6 +28,6 @@ ecm_add_test(libretranslateengineconfiguredialogtest.cpp libretranslateenginecon
 ecm_add_test(libretranslateengineutiltest.cpp libretranslateengineutiltest.h
     ../libretranslateengineutil.cpp
     TEST_NAME libretranslateengineutiltest
-    NAME_PREFIX pimcommon-
+    
     LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF5::I18n
 )
