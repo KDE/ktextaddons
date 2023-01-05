@@ -45,12 +45,12 @@ void TranslatorMenu::updateMenu()
     for (const auto &fromLang : fromList) {
         const QString fromLangI18n = TranslatorUtil::searchI18nFromLanguage(fromLang);
         if (fromLangI18n.isEmpty()) {
-            qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Impossible to find \"from\" language " << fromLangI18n;
+            qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"from\" language " << fromLangI18n;
         } else {
             for (const auto &toLang : toList) {
                 const QString toLangI18n = TranslatorUtil::searchI18nFromLanguage(toLang);
                 if (toLangI18n.isEmpty()) {
-                    qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Impossible to find \"to\" language " << fromLangI18n;
+                    qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"to\" language " << fromLangI18n;
                 } else {
                     if (fromLangI18n != toLangI18n) {
                         auto action = new QAction(mMenu);

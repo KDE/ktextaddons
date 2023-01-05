@@ -5,9 +5,9 @@ add_library(translator_deepl MODULE)
 ecm_qt_declare_logging_category(translator_debug_deepl_SRCS
     HEADER deepltranslator_debug.h
     IDENTIFIER TRANSLATOR_DEEPL_LOG
-    CATEGORY_NAME org.kde.pim.pimcommontexttranslator.deepl
+    CATEGORY_NAME org.kde.kf5.texttranslator.deepl
     DESCRIPTION "PimCommon deepl translator"
-    EXPORT PIMCOMMON
+    EXPORT KTEXTADDONS
 )
 target_sources(translator_deepl PRIVATE
     ${translator_debug_deepl_SRCS}

@@ -47,7 +47,7 @@ void TranslatorEngineLoader::loadPlugins()
         }
     }
     if (d->loadedPlugins.isEmpty()) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "No translator plugins available!";
+        qCWarning(TEXTTRANSLATOR_LOG) << "No translator plugins available!";
     }
 }
 
@@ -57,20 +57,20 @@ void TranslatorEngineLoader::loadPlugin(const QString &pluginPath)
     const QString pluginIID = plugin.metaData()[QStringLiteral("IID")].toString();
     if (!pluginIID.isEmpty()) {
         if (d->loadedPlugins.contains(pluginIID)) {
-            qCDebug(PIMCOMMONTEXTTRANSLATOR_LOG) << "Skipping already loaded" << pluginPath;
+            qCDebug(TEXTTRANSLATOR_LOG) << "Skipping already loaded" << pluginPath;
             return;
         }
         d->loadedPlugins.insert(pluginIID);
     }
 
     if (!plugin.load()) { // We do this separately for better error handling
-        qCDebug(PIMCOMMONTEXTTRANSLATOR_LOG) << "Unable to load plugin" << pluginPath << "Error:" << plugin.errorString();
+        qCDebug(TEXTTRANSLATOR_LOG) << "Unable to load plugin" << pluginPath << "Error:" << plugin.errorString();
         d->loadedPlugins.remove(pluginIID);
         return;
     }
     TranslatorEngineClient *client = qobject_cast<TranslatorEngineClient *>(plugin.instance());
     if (!client) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Invalid plugin loaded" << pluginPath;
+        qCWarning(TEXTTRANSLATOR_LOG) << "Invalid plugin loaded" << pluginPath;
         plugin.unload(); // don't leave it in memory
         return;
     }
@@ -81,7 +81,7 @@ TranslatorEngineClient *TranslatorEngineLoader::createTranslatorClient(const QSt
 {
     auto clientsItr = d->translatorClients.constFind(clientName);
     if (clientsItr == d->translatorClients.constEnd()) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         Q_EMIT loadingTranslatorFailed();
         return nullptr;
     }
@@ -104,7 +104,7 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::
     QMap<TranslatorUtil::Language, QString> supportedLanguages;
     auto clientsItr = d->translatorClients.constFind(clientName);
     if (clientsItr == d->translatorClients.constEnd()) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         return supportedLanguages;
     }
     supportedLanguages = (*clientsItr)->supportedLanguages();
@@ -115,7 +115,7 @@ bool TranslatorEngineLoader::hasConfigurationDialog(const QString &clientName) c
 {
     auto clientsItr = d->translatorClients.constFind(clientName);
     if (clientsItr == d->translatorClients.constEnd()) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         return false;
     }
     return (*clientsItr)->hasConfigurationDialog();
@@ -125,7 +125,7 @@ void TranslatorEngineLoader::showConfigureDialog(const QString &clientName, QWid
 {
     auto clientsItr = d->translatorClients.constFind(clientName);
     if (clientsItr == d->translatorClients.constEnd()) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         return;
     }
     return (*clientsItr)->showConfigureDialog(parentWidget);
@@ -136,6 +136,6 @@ QString TranslatorEngineLoader::fallbackFirstEngine() const
     if (!d->translatorClients.isEmpty()) {
         return *d->translatorClients.keyBegin();
     }
-    qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "No plugin found ! ";
+    qCWarning(TEXTTRANSLATOR_LOG) << "No plugin found ! ";
     return QString();
 }

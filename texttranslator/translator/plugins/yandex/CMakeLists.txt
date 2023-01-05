@@ -11,9 +11,9 @@ target_sources(translator_yandex PRIVATE
 ecm_qt_declare_logging_category(translator_yandex
     HEADER yandextranslator_debug.h
     IDENTIFIER TRANSLATOR_YANDEX_LOG
-    CATEGORY_NAME org.kde.pim.pimcommontexttranslator.yandex
-    DESCRIPTION "PimCommon yandex translator"
-    EXPORT PIMCOMMON
+    CATEGORY_NAME org.kde.kf5.texttranslator.yandex
+    DESCRIPTION "yandex translator"
+    EXPORT KTEXTADDONS
 )
 
 target_link_libraries(translator_yandex PRIVATE KF5::TextTranslator KF5::I18n)

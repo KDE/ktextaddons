@@ -409,7 +409,7 @@ void TranslatorWidget::setTextToTranslate(const QString &text)
 void TranslatorWidget::slotTranslate()
 {
     if (!d->translatorPlugin) {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << " Translator plugin invalid";
+        qCWarning(TEXTTRANSLATOR_LOG) << " Translator plugin invalid";
         return;
     }
     if (!TextTranslator::NetworkManager::self()->isOnline()) {
@@ -529,6 +529,6 @@ void TranslatorWidget::slotDebug()
         dlg.setDebug(d->translatorPlugin->jsonDebug());
         dlg.exec();
     } else {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << " Translator plugin invalid";
+        qCWarning(TEXTTRANSLATOR_LOG) << " Translator plugin invalid";
     }
 }

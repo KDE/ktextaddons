@@ -53,7 +53,7 @@ bool NetworkManager::isOnline() const
     if (QNetworkInformation::load(QNetworkInformation::Feature::Reachability)) {
         return QNetworkInformation::instance()->reachability() == QNetworkInformation::Reachability::Online;
     } else {
-        qCWarning(PIMCOMMONTEXTTRANSLATOR_LOG) << "Couldn't find a working backend for QNetworkInformation";
+        qCWarning(TEXTTRANSLATOR_LOG) << "Couldn't find a working backend for QNetworkInformation";
         return false;
     }
 #else

@@ -7,9 +7,9 @@ add_library(translator_libretranslate MODULE)
 ecm_qt_declare_logging_category(translator_libretranslate_debug_SRCS
     HEADER libretranslatetranslator_debug.h
     IDENTIFIER TRANSLATOR_LIBRETRANSLATE_LOG
-    CATEGORY_NAME org.kde.pim.pimcommontexttranslator.libretranslate
+    CATEGORY_NAME org.kde.kf5.texttranslator.libretranslate
     DESCRIPTION "PimCommon libretranslate translator"
-    EXPORT PIMCOMMON
+    EXPORT KTEXTADDONS
 )
 
 target_sources(translator_libretranslate PRIVATE
