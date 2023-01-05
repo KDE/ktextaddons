@@ -6,7 +6,7 @@ ecm_qt_declare_logging_category(translator_debug_google_SRCS
     HEADER googletranslator_debug.h
     IDENTIFIER TRANSLATOR_GOOGLE_LOG
     CATEGORY_NAME org.kde.kf5.texttranslator.google
-    DESCRIPTION "PimCommon google translator"
+    DESCRIPTION "google translator"
     EXPORT KTEXTADDONS
 )
 target_sources(translator_google PRIVATE

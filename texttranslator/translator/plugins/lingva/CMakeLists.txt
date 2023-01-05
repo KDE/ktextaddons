@@ -7,7 +7,7 @@ ecm_qt_declare_logging_category(translator_lingva_debug_SRCS
     HEADER lingvatranslator_debug.h
     IDENTIFIER TRANSLATOR_LINGVA_LOG
     CATEGORY_NAME org.kde.kf5.texttranslator.lingva
-    DESCRIPTION "PimCommon lingva translator"
+    DESCRIPTION "lingva translator"
     EXPORT KTEXTADDONS
 )
 

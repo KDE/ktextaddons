@@ -8,7 +8,7 @@ ecm_qt_declare_logging_category(translator_libretranslate_debug_SRCS
     HEADER libretranslatetranslator_debug.h
     IDENTIFIER TRANSLATOR_LIBRETRANSLATE_LOG
     CATEGORY_NAME org.kde.kf5.texttranslator.libretranslate
-    DESCRIPTION "PimCommon libretranslate translator"
+    DESCRIPTION "libretranslate translator"
     EXPORT KTEXTADDONS
 )
 
