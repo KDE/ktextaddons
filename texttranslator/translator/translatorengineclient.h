@@ -8,13 +8,13 @@
 
 #include <QObject>
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QMap>
 #include <TextTranslator/TranslatorUtil>
 namespace TextTranslator
 {
 class TranslatorEnginePlugin;
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
+class TEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
 {
     Q_OBJECT
 public:

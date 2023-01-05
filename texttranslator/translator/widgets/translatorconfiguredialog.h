@@ -4,7 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QDialog>
 namespace TextTranslator
 {
@@ -13,7 +13,7 @@ class TranslatorConfigureWidget;
  * @brief The TranslatorConfigureDialog class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog
+class TEXTTRANSLATOR_EXPORT TranslatorConfigureDialog : public QDialog
 {
 public:
     explicit TranslatorConfigureDialog(QWidget *parent = nullptr);

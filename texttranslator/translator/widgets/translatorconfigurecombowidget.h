@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_private_export.h"
+#include "texttranslator_private_export.h"
 #include <QWidget>
 class QComboBox;
 class QToolButton;

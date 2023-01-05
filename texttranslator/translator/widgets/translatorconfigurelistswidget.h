@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QWidget>
 #include <TextTranslator/TranslatorUtil>
 namespace TextTranslator
@@ -15,7 +15,7 @@ namespace TextTranslator
  * @brief The TranslatorConfigureListsWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorConfigureListsWidget : public QWidget
+class TEXTTRANSLATOR_EXPORT TranslatorConfigureListsWidget : public QWidget
 {
     Q_OBJECT
 public:

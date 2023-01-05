@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QPair>
 #include <QString>
 
@@ -14,7 +14,7 @@ class QComboBox;
 
 namespace TextTranslator
 {
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorUtil
+class TEXTTRANSLATOR_EXPORT TranslatorUtil
 {
 public:
     TranslatorUtil();

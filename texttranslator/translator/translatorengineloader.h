@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QObject>
 #include <TextTranslator/TranslatorUtil>
 #include <memory>
@@ -14,7 +14,7 @@ namespace TextTranslator
 {
 class TranslatorEngineLoaderPrivate;
 class TranslatorEngineClient;
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorEngineLoader : public QObject
+class TEXTTRANSLATOR_EXPORT TranslatorEngineLoader : public QObject
 {
     Q_OBJECT
 public:

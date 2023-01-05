@@ -11,7 +11,7 @@ configure_package_config_file(
     )
 
 
-ecm_setup_version(PROJECT VARIABLE_PREFIX PIMCOMMON
+ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTTRANSLATE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextTranslatorConfigVersion.cmake"
     SOVERSION 5
@@ -92,7 +92,7 @@ add_subdirectory(translator/plugins)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5TextTranslator PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF5TextTranslator BASE_NAME pimcommontexttranslator)
+generate_export_header(KF5TextTranslator BASE_NAME texttranslator)
 
 
 target_link_libraries(KF5TextTranslator
@@ -109,8 +109,8 @@ target_link_libraries(KF5TextTranslator
 target_include_directories(KF5TextTranslator INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/>")
 
 set_target_properties(KF5TextTranslator PROPERTIES
-    VERSION ${PIMCOMMON_VERSION}
-    SOVERSION ${PIMCOMMON_SOVERSION}
+    VERSION ${TEXTTRANSLATE_VERSION}
+    SOVERSION ${TEXTTRANSLATE_SOVERSION}
     EXPORT_NAME TextTranslator
     )
 
@@ -174,7 +174,7 @@ install(FILES
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/pimcommontexttranslator_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_export.h
     ${TextTranslator_translator_HEADERS}
     ${TextTranslator_translatorwidgets_HEADERS}
     ${TextTranslator_translatormisc_HEADERS}
@@ -203,7 +203,7 @@ if (BUILD_QCH)
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            PIMCOMMON_EXPORT
+            TEXTTRANSLATE_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel

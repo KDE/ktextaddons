@@ -6,14 +6,14 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QObject>
 #include <QPersistentModelIndex>
 class QMenu;
 
 namespace TextTranslator
 {
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorMenu : public QObject
+class TEXTTRANSLATOR_EXPORT TranslatorMenu : public QObject
 {
     Q_OBJECT
 public:

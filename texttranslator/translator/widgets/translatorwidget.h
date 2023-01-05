@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QPlainTextEdit>
 namespace TextTranslator
 {
@@ -30,7 +30,7 @@ private:
  * @brief The TranslatorTextEdit class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorTextEdit : public QPlainTextEdit
+class TEXTTRANSLATOR_EXPORT TranslatorTextEdit : public QPlainTextEdit
 {
     Q_OBJECT
 public:
@@ -47,7 +47,7 @@ protected:
  * @brief The TranslatorWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorWidget : public QWidget
+class TEXTTRANSLATOR_EXPORT TranslatorWidget : public QWidget
 {
     Q_OBJECT
 public:

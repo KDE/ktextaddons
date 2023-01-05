@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QWidget>
 namespace TextTranslator
 {
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
+class TEXTTRANSLATOR_EXPORT TranslatorConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:

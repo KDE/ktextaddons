@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QWidget>
 class QListView;
 class QLineEdit;
@@ -18,7 +18,7 @@ namespace TextTranslator
  * @brief The TranslatorConfigureLanguageListWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorConfigureLanguageListWidget : public QWidget
+class TEXTTRANSLATOR_EXPORT TranslatorConfigureLanguageListWidget : public QWidget
 {
     Q_OBJECT
 public:

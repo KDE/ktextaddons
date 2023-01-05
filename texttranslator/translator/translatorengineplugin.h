@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 #include <QNetworkReply>
 #include <QObject>
 #include <QString>
@@ -16,7 +16,7 @@
 namespace TextTranslator
 {
 class TranslatorEnginePluginPrivate;
-class PIMCOMMONTEXTTRANSLATOR_EXPORT TranslatorEnginePlugin : public QObject
+class TEXTTRANSLATOR_EXPORT TranslatorEnginePlugin : public QObject
 {
     Q_OBJECT
 public:

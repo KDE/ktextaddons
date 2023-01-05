@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "pimcommontexttranslator_export.h"
+#include "texttranslator_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
 #ifndef TEXTTRANSLATOR_TESTS_EXPORT
-#define TEXTTRANSLATOR_TESTS_EXPORT PIMCOMMONTEXTTRANSLATOR_EXPORT
+#define TEXTTRANSLATOR_TESTS_EXPORT TEXTTRANSLATOR_EXPORT
 #endif
 #else /* not compiling tests */
 #define TEXTTRANSLATOR_TESTS_EXPORT
