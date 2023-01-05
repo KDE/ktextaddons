@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2022-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-macro(add_pimcommontranslatorwidget_test _source)
+macro(add_translatorwidget_test _source)
     set( _sources ${_source} ${ARGN} )
     get_filename_component( _name ${_source} NAME_WE )
     add_executable( ${_name} ${_sources} ${_name}.h)
@@ -10,6 +10,6 @@ macro(add_pimcommontranslatorwidget_test _source)
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
 
-add_pimcommontranslatorwidget_test(translatorconfigurelistswidgettest.cpp)
-add_pimcommontranslatorwidget_test(translatorconfigurelanguagelistwidgettest.cpp)
-add_pimcommontranslatorwidget_test(translatormenutest.cpp)
+add_translatorwidget_test(translatorconfigurelistswidgettest.cpp)
+add_translatorwidget_test(translatorconfigurelanguagelistwidgettest.cpp)
+add_translatorwidget_test(translatormenutest.cpp)

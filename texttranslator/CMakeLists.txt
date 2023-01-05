@@ -178,7 +178,7 @@ install(FILES
     ${TextTranslator_translator_HEADERS}
     ${TextTranslator_translatorwidgets_HEADERS}
     ${TextTranslator_translatormisc_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/pimcommontexttranslator
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/texttranslator
     COMPONENT Devel
     )
 
