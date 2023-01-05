@@ -56,6 +56,7 @@ ecm_set_disabled_deprecation_versions(
 
 add_subdirectory(autocorrection)
 add_subdirectory(textgrammarcheck)
+add_subdirectory(texttranslator)
 
 find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
