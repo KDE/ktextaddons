@@ -1,20 +1,20 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 include(ECMAddQtDesignerPlugin)
-ecm_qtdesignerplugin_widget(PimCommonTextTranslator::TranslatorWidget
-    INCLUDE_FILE "PimCommonTextTranslator/TranslatorWidget"
-    TOOLTIP "A widget to make translate string (KDE-PIM)"
+ecm_qtdesignerplugin_widget(TextTranslator::TranslatorWidget
+    INCLUDE_FILE "TextTranslator/TranslatorWidget"
+    TOOLTIP "A widget to make translate string"
     WHATSTHIS "A widget to make translate string."
-    GROUP "Input (KDE-PIM)"
+    GROUP "Input (kf5)"
     )
 
-ecm_add_qtdesignerplugin(pimcommonitexttranslatorwidgets
-	NAME PimCommonTextTranslatorWidgets
-    OUTPUT_NAME pimcommontexttranslatorwidgets
+ecm_add_qtdesignerplugin(texttranslatorwidgets
+	NAME TextTranslatorWidgets
+    OUTPUT_NAME texttranslatorwidgets
     WIDGETS
-    PimCommonTextTranslator::TranslatorWidget
+    TextTranslator::TranslatorWidget
     LINK_LIBRARIES
-    KF5::PimCommonTextTranslator
+    KF5::TextTranslator
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel
     )
