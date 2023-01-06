@@ -193,7 +193,7 @@ if (BUILD_QCH)
         KF5TextTranslator_QCH
         NAME KF5TextTranslator
         BASE_NAME KF5TextTranslator
-        VERSION ${PIM_VERSION}
+        VERSION ${TEXTTRANSLATE_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextTranslator_translator_HEADERS}

@@ -23,7 +23,7 @@ TranslatorEnginePlugin::TranslatorEnginePlugin(QObject *parent)
     : QObject(parent)
     , d(new TextTranslator::TranslatorEnginePluginPrivate)
 {
-    d->mHasDebug = !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
+    d->mHasDebug = !qEnvironmentVariableIsEmpty("TRANSLATING_DEBUGGING");
 }
 
 QString TranslatorEnginePlugin::resultTranslate() const
