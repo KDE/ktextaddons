@@ -1,5 +1,5 @@
 maintainer: mlaurent
-description: Text addons (autocorrection)
+description: Text addons (autocorrection, text to speak, grammar checking, text translator)
 tier: 3
 type: functional
 platforms:
@@ -7,14 +7,19 @@ platforms:
     - name: FreeBSD
     - name: Windows
     - name: macOS
-    - name: Android
 portingAid: false
 deprecated: false
-release: true
+release: false
 libraries:
- - qmake: KTextWidgets
-   cmake: "KF5::TextWidgets"
-cmakename: KF5TextWidgets
+ - qmake: TextGrammarCheck
+   cmake: "KF5::TextGrammarCheck"
+ - qmake: TextTranslator
+   cmake: "KF5::TextTranslator"
+ - qmake: TextAutoCorrection
+   cmake: "KF5::TextAutoCorrection"
+ - qmake: TextEditTextToSpeech
+   cmake: "KF5::TextEditTextToSpeech"
+cmakename: KF5TextEditTextToSpeech
 
 public_lib: true
 group: Frameworks
