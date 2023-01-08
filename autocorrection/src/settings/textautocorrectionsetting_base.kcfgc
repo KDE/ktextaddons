@@ -7,5 +7,5 @@ Visibility=TEXTAUTOCORRECTION_EXPORT
 Mutators=true
 Singleton=true
 ItemAccessors=true
-IncludeFiles=qapplication.h,textautocorrection_export.h
+IncludeFiles=qapplication.h,\"textautocorrection_export.h\"
 
