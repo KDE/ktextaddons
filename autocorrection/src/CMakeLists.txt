@@ -83,7 +83,7 @@ target_link_libraries(KF5TextAutoCorrection
     KF5::Archive
     )
 
-target_include_directories(KF5TextAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/>")
+target_include_directories(KF5TextAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/>")
 
 set_target_properties(KF5TextAutoCorrection PROPERTIES
     VERSION ${TEXTAUTOCORRECTION_VERSION}
@@ -133,7 +133,7 @@ ecm_generate_headers(TextAutoCorrection_Camelcasesettings_HEADERS
 
 ecm_generate_pri_file(BASE_NAME TextAutoCorrection
     LIB_NAME KF5TextAutoCorrection
-    DEPS "KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection
+    DEPS "KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection
     )
 
 
@@ -141,7 +141,7 @@ install(FILES
     ${TextAutoCorrection_Camelcaseautocorrection_HEADERS}
     ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
     ${TextAutoCorrection_Camelcasesettings_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/KTextAutoCorrection
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/TextAutoCorrection
     COMPONENT Devel
     )
 
@@ -152,7 +152,7 @@ install(FILES
     ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
     ${TextAutoCorrection_settings_HEADERS}
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KTextAutoCorrection/ktextautocorrection
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/textautocorrection
     COMPONENT Devel
     )
 
