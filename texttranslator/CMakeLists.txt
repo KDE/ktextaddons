@@ -197,6 +197,8 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextTranslator_translator_HEADERS}
+        ${TextTranslator_translatorwidgets_HEADERS}
+        ${TextTranslator_translatormisc_HEADERS}
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH

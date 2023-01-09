@@ -171,6 +171,7 @@ if (BUILD_QCH)
         SOURCES # using only public headers, to cover only public API
         ${TextAutoCorrection_autocorrection_HEADERS}
         ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
+        ${TextAutoCorrection_settings_HEADERS}
         LINK_QCHS
             Qt5Core_QCH
             Qt5Gui_QCH
