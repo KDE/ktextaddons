@@ -46,6 +46,13 @@ if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
+option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
+
+set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
+if (USE_UNITY_CMAKE_SUPPORT)
+    set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
+endif()
+
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
