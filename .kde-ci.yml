@@ -10,4 +10,5 @@ Dependencies:
     'frameworks/kconfigwidgets': '@latest'
     'frameworks/karchive': '@latest'
     'frameworks/kxmlgui': '@stable'
-    'frameworks/kcoreaddons': '@stable'      
+    'frameworks/kcoreaddons': '@stable'
+    'third-party/qtkeychain': '@latest'
