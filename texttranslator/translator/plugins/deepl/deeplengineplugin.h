@@ -7,7 +7,10 @@
 #pragma once
 
 #include <TextTranslator/TranslatorEnginePlugin>
-
+namespace QKeychain
+{
+class Job;
+}
 class DeeplEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {
     Q_OBJECT
@@ -26,6 +29,7 @@ private:
     void loadSettings();
     void translateText();
     void parseTranslation(QNetworkReply *reply);
+    void slotApiKeyRead(QKeychain::Job *baseJob);
     QString mServerUrl;
     QString mResult;
     // TODO load it ? kwallet ?

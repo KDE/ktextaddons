@@ -100,8 +100,21 @@ void DeeplEnginePlugin::loadSettings()
     KConfigGroup myGroup(KSharedConfig::openConfig(), DeeplEngineUtil::groupName());
     mUseFreeLicense = myGroup.readEntry(DeeplEngineUtil::freeLicenseKey(), false);
     mServerUrl = mUseFreeLicense ? QStringLiteral("https://api-free.deepl.com/v2/translate") : QStringLiteral("https://api.deepl.com/v2/translate");
-    // TODO stored in kwallet ?
-    mApiKey = myGroup.readEntry(DeeplEngineUtil::apiGroupName(), QString());
+    auto readJob = new QKeychain::ReadPasswordJob(DeeplEngineUtil::translatorGroupName(), this);
+    connect(readJob, &QKeychain::Job::finished, this, &DeeplEnginePlugin::slotApiKeyRead);
+    readJob->setKey(DeeplEngineUtil::apiGroupName());
+    readJob->start();
+}
+
+void DeeplEnginePlugin::slotApiKeyRead(QKeychain::Job *baseJob)
+{
+    auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+    Q_ASSERT(job);
+    if (!job->error()) {
+        mApiKey = job->textData();
+    } else {
+        qCWarning(TRANSLATOR_DEEPL_LOG) << "We have an error during reading password " << job->errorString();
+    }
 }
 
 void DeeplEnginePlugin::slotConfigureChanged()

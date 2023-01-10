@@ -7,7 +7,10 @@
 #pragma once
 
 #include <TextTranslator/TranslatorEngineClient>
-
+namespace QKeychain
+{
+class Job;
+}
 class DeeplEngineClient : public TextTranslator::TranslatorEngineClient
 {
     Q_OBJECT
@@ -26,4 +29,7 @@ public:
 
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
+
+private:
+    void slotPasswordWritten(QKeychain::Job *baseJob);
 };

@@ -20,3 +20,8 @@ QString DeeplEngineUtil::apiGroupName()
 {
     return QStringLiteral("apiKey");
 }
+
+QString DeeplEngineUtil::translatorGroupName()
+{
+    return QStringLiteral("DeepL");
+}

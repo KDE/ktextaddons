@@ -13,4 +13,5 @@ namespace DeeplEngineUtil
 Q_REQUIRED_RESULT QString groupName();
 Q_REQUIRED_RESULT QString freeLicenseKey();
 Q_REQUIRED_RESULT QString apiGroupName();
+Q_REQUIRED_RESULT QString translatorGroupName();
 };

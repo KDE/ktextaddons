@@ -8,11 +8,17 @@
 #include "deeplengineconfiguredialog.h"
 #include "deeplengineplugin.h"
 #include "deeplengineutil.h"
+#include "deepltranslator_debug.h"
 #include "translator/misc/translatorutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QPointer>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <qt5keychain/keychain.h>
+#else
+#include <qt6keychain/keychain.h>
+#endif
 
 DeeplEngineClient::DeeplEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
@@ -94,12 +100,36 @@ void DeeplEngineClient::showConfigureDialog(QWidget *parentWidget)
     QPointer<DeeplEngineConfigureDialog> dlg = new DeeplEngineConfigureDialog(parentWidget);
     KConfigGroup myGroup(KSharedConfig::openConfig(), DeeplEngineUtil::groupName());
     dlg->setUseFreeLicenceKey(myGroup.readEntry(DeeplEngineUtil::freeLicenseKey(), false));
-    dlg->setApiKey(myGroup.readEntry(DeeplEngineUtil::apiGroupName(), QString()));
+
+    auto readJob = new QKeychain::ReadPasswordJob(DeeplEngineUtil::translatorGroupName(), this);
+    connect(readJob, &QKeychain::Job::finished, this, [dlg](QKeychain::Job *baseJob) {
+        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+        Q_ASSERT(job);
+        if (!job->error()) {
+            dlg->setApiKey(job->textData());
+        } else {
+            qCWarning(TRANSLATOR_DEEPL_LOG) << "We have an error during reading password " << job->errorString();
+        }
+    });
+    readJob->setKey(DeeplEngineUtil::apiGroupName());
+    readJob->start();
     if (dlg->exec()) {
         myGroup.writeEntry(DeeplEngineUtil::freeLicenseKey(), dlg->useFreeLicenceKey());
-        myGroup.writeEntry(DeeplEngineUtil::apiGroupName(), dlg->apiKey());
         myGroup.sync();
+
+        auto writeJob = new QKeychain::WritePasswordJob(DeeplEngineUtil::translatorGroupName(), this);
+        connect(writeJob, &QKeychain::Job::finished, this, &DeeplEngineClient::slotPasswordWritten);
+        writeJob->setKey(DeeplEngineUtil::apiGroupName());
+        writeJob->setTextData(dlg->apiKey());
+        writeJob->start();
         Q_EMIT configureChanged();
     }
     delete dlg;
+}
+
+void DeeplEngineClient::slotPasswordWritten(QKeychain::Job *baseJob)
+{
+    if (baseJob->error()) {
+        qCWarning(TRANSLATOR_DEEPL_LOG) << "Error writing password using QKeychain:" << baseJob->errorString();
+    }
 }
