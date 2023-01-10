@@ -1,11 +1,16 @@
 # SPDX-FileCopyrightText: 2022-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
+if (QT_MAJOR_VERSION STREQUAL "6")
+    set(translator_libretranslate_LIB qt6keychain)
+else()
+    set(translator_libretranslate_LIB qt5keychain)
+endif()
 ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h ../libretranslateengineclient.cpp ../libretranslateengineplugin.cpp
     ../libretranslateengineconfiguredialog.cpp ../libretranslateengineconfigurewidget.cpp ../libretranslateengineutil.h ../libretranslateengineutil.cpp
     ${translator_libretranslate_debug_SRCS}
     TEST_NAME libretranslateengineclienttest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF5::I18n KF5::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF5::I18n KF5::ConfigCore ${translator_libretranslate_LIB}
 )
 
 ######

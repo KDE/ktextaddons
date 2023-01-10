@@ -27,7 +27,11 @@ target_sources(translator_libretranslate PRIVATE
 )
 
 target_link_libraries(translator_libretranslate PRIVATE KF5::TextTranslator KF5::I18n KF5::ConfigCore)
-
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(translator_libretranslate PRIVATE qt6keychain)
+else()
+    target_link_libraries(translator_libretranslate PRIVATE qt5keychain)
+endif()
 install(TARGETS translator_libretranslate  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
 
 if (BUILD_TESTING)
