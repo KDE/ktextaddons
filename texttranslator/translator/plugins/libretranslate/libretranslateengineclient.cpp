@@ -8,6 +8,7 @@
 #include "libretranslateengineconfiguredialog.h"
 #include "libretranslateengineplugin.h"
 #include "libretranslateengineutil.h"
+#include "libretranslatetranslator_debug.h"
 #include "translator/misc/translatorutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -67,18 +68,37 @@ void LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
     serverUrl = LibreTranslateEngineUtil::adaptUrl(serverUrl);
     dlg->setServerUrl(serverUrl);
     dlg->setServerRequiredApiKey(myGroup.readEntry(LibreTranslateEngineUtil::serverRequiredApiKey(), false));
-    dlg->setApiKey(myGroup.readEntry(LibreTranslateEngineUtil::apiGroupName(), QString()));
+    auto readJob = new QKeychain::ReadPasswordJob(LibreTranslateEngineUtil::translatorGroupName(), this);
+    connect(readJob, &QKeychain::Job::finished, this, [dlg](QKeychain::Job *baseJob) {
+        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+        Q_ASSERT(job);
+        if (!job->error()) {
+            dlg->setApiKey(job->textData());
+        } else {
+            qCWarning(TRANSLATOR_LIBRETRANSLATE_LOG) << "We have an error during reading password " << job->errorString();
+        }
+    });
     if (dlg->exec()) {
         const QString serverUrl = dlg->serverUrl();
         const bool requiredApiKey = dlg->serverRequiredApiKey();
         myGroup.writeEntry(LibreTranslateEngineUtil::serverUrlKey(), serverUrl);
         myGroup.writeEntry(LibreTranslateEngineUtil::serverRequiredApiKey(), requiredApiKey);
-        // TODO get api key // Store in api?
-        myGroup.writeEntry(LibreTranslateEngineUtil::apiGroupName(), dlg->apiKey());
+        auto writeJob = new QKeychain::WritePasswordJob(LibreTranslateEngineUtil::translatorGroupName(), this);
+        connect(writeJob, &QKeychain::Job::finished, this, &LibreTranslateEngineClient::slotPasswordWritten);
+        writeJob->setKey(LibreTranslateEngineUtil::apiGroupName());
+        writeJob->setTextData(dlg->apiKey());
+        writeJob->start();
         myGroup.sync();
         Q_EMIT configureChanged();
     }
     delete dlg;
+}
+
+void LibreTranslateEngineClient::slotPasswordWritten(QKeychain::Job *baseJob)
+{
+    if (baseJob->error()) {
+        qCWarning(TRANSLATOR_LIBRETRANSLATE_LOG) << "Error writing password using QKeychain:" << baseJob->errorString();
+    }
 }
 
 bool LibreTranslateEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const

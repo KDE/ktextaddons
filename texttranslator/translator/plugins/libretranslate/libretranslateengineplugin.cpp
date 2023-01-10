@@ -107,5 +107,20 @@ void LibreTranslateEnginePlugin::loadSettings()
     }
     mServerUrl = LibreTranslateEngineUtil::adaptUrl(mServerUrl);
     mRequiredApiKey = myGroup.readEntry(LibreTranslateEngineUtil::serverRequiredApiKey(), false);
-    mApiKey = myGroup.readEntry(LibreTranslateEngineUtil::apiGroupName(), QString());
+
+    auto readJob = new QKeychain::ReadPasswordJob(LibreTranslateEngineUtil::translatorGroupName(), this);
+    connect(readJob, &QKeychain::Job::finished, this, &LibreTranslateEnginePlugin::slotApiKeyRead);
+    readJob->setKey(LibreTranslateEngineUtil::apiGroupName());
+    readJob->start();
+}
+
+void LibreTranslateEnginePlugin::slotApiKeyRead(QKeychain::Job *baseJob)
+{
+    auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+    Q_ASSERT(job);
+    if (!job->error()) {
+        mApiKey = job->textData();
+    } else {
+        qCWarning(TRANSLATOR_LIBRETRANSLATE_LOG) << "We have an error during reading password " << job->errorString();
+    }
 }

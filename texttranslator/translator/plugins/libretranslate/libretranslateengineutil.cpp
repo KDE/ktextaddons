@@ -16,6 +16,11 @@ QString LibreTranslateEngineUtil::serverUrlKey()
     return QStringLiteral("ServerUrl");
 }
 
+QString LibreTranslateEngineUtil::translatorGroupName()
+{
+    return QStringLiteral("LibreTranslate");
+}
+
 QString LibreTranslateEngineUtil::serverRequiredApiKey()
 {
     return QStringLiteral("RequiredApiKey");

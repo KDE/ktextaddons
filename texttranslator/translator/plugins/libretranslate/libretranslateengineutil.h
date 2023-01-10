@@ -15,4 +15,5 @@ Q_REQUIRED_RESULT QString defaultServerUrl();
 Q_REQUIRED_RESULT QString serverRequiredApiKey();
 Q_REQUIRED_RESULT QString adaptUrl(QString serverUrl);
 Q_REQUIRED_RESULT QString apiGroupName();
+Q_REQUIRED_RESULT QString translatorGroupName();
 };
