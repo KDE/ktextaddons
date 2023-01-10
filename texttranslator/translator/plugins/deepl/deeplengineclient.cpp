@@ -105,10 +105,10 @@ void DeeplEngineClient::showConfigureDialog(QWidget *parentWidget)
     connect(readJob, &QKeychain::Job::finished, this, [dlg](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
         Q_ASSERT(job);
-        if (!job->error()) {
-            dlg->setApiKey(job->textData());
-        } else {
+        if (job->error()) {
             qCWarning(TRANSLATOR_DEEPL_LOG) << "We have an error during reading password " << job->errorString();
+        } else {
+            dlg->setApiKey(job->textData());
         }
     });
     readJob->setKey(DeeplEngineUtil::apiGroupName());
