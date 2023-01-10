@@ -5,7 +5,6 @@
 */
 
 #include "autocorrectionwidget.h"
-#include "autocorrection.h"
 #include "autocorrectionutils.h"
 #include "import/importabstractautocorrection.h"
 #include "import/importkmailautocorrection.h"
