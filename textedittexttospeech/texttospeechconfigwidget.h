@@ -7,7 +7,6 @@
 #pragma once
 #include "textedittexttospeech_export.h"
 #include <QWidget>
-class QSlider;
 class QComboBox;
 class QPushButton;
 namespace TextEditTextToSpeech

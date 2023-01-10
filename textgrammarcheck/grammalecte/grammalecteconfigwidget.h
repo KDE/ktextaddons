@@ -10,7 +10,6 @@
 #include <QWidget>
 #include <TextGrammarCheck/GrammalecteGenerateConfigOptionJob>
 class QCheckBox;
-class KUrlRequester;
 class QStackedWidget;
 class QScrollArea;
 namespace TextGrammarCheck

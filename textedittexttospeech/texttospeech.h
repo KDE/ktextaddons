@@ -10,8 +10,6 @@
 #include <QObject>
 #include <memory>
 
-class QTextToSpeech;
-
 namespace TextEditTextToSpeech
 {
 class TextToSpeechPrivate;
