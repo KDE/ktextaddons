@@ -65,15 +65,18 @@ void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue(
     QSignalSpy spy(&textToSpeechConfigWidget, &TextEditTextToSpeech::TextToSpeechConfigWidget::configChanged);
     auto volume = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("volume"));
     volume->setValue(5);
-    QCOMPARE(spy.count(), 1);
+    // It updates slider too! => 2 emit signal.
+    QCOMPARE(spy.count(), 2);
 
+    spy.clear();
     auto rate = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("rate"));
     rate->setValue(5);
     QCOMPARE(spy.count(), 2);
 
+    spy.clear();
     auto pitch = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("pitch"));
     pitch->setValue(5);
-    QCOMPARE(spy.count(), 3);
+    QCOMPARE(spy.count(), 2);
 
     auto language = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("language"));
     language->blockSignals(true);
@@ -85,5 +88,5 @@ void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue(
     language->addItems(lst);
     language->blockSignals(false);
     language->setCurrentIndex(3);
-    QCOMPARE(spy.count(), 4);
+    QCOMPARE(spy.count(), 3);
 }
