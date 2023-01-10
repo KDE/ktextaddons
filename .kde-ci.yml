@@ -12,3 +12,6 @@ Dependencies:
     'frameworks/kxmlgui': '@stable'
     'frameworks/kcoreaddons': '@stable'
     'third-party/qtkeychain': '@latest'
+
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]
