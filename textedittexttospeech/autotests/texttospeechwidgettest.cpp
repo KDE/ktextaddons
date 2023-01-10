@@ -10,7 +10,6 @@
 #include "texttospeechwidget.h"
 #include <QHBoxLayout>
 #include <QSignalSpy>
-#include <QSlider>
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>

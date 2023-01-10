@@ -10,7 +10,6 @@
 #include "autocorrectionutils.h"
 #include "textautocorrectionautocorrect_debug.h"
 #include <KColorScheme>
-#include <QFile>
 #include <QLocale>
 #include <QStandardPaths>
 #include <QTextBlock>

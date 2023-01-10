@@ -11,7 +11,6 @@
 #include "settings/textautocorrectionsettings.h"
 #include "textautocorrection_debug.h"
 
-#include <QFile>
 #include <QRegularExpression>
 #include <QStandardPaths>
 

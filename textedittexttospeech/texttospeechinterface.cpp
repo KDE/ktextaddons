@@ -6,7 +6,6 @@
 
 #include "texttospeechinterface.h"
 #include "texttospeech.h"
-#include <QDebug>
 
 using namespace TextEditTextToSpeech;
 

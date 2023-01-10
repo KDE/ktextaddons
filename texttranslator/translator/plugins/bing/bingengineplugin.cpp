@@ -13,11 +13,8 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJsonParseError>
-#include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-#include <QUrlQuery>
 #include <TextTranslator/TranslatorEngineAccessManager>
 
 QByteArray BingEnginePlugin::sBingKey;

@@ -9,7 +9,6 @@
 
 #include <KConfig>
 #include <KConfigGroup>
-#include <QDebug>
 #include <QLocale>
 #include <QTextToSpeech>
 #include <QVector>

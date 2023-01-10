@@ -8,7 +8,6 @@
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <QVBoxLayout>
 
 LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     : QWidget{parent}

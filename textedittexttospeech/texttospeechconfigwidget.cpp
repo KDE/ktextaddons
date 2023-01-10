@@ -15,10 +15,8 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <QComboBox>
-#include <QDebug>
 #include <QFormLayout>
 #include <QPushButton>
-#include <QSlider>
 #include <QTimer>
 
 using namespace TextEditTextToSpeech;

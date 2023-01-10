@@ -9,7 +9,6 @@
 #include <QCheckBox>
 #include <QCompleter>
 #include <QFormLayout>
-#include <QLabel>
 #include <QLineEdit>
 
 LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget *parent)

@@ -12,7 +12,6 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QSignalSpy>
-#include <QSlider>
 #include <QTest>
 
 QTEST_MAIN(TextToSpeechConfigWidgetTest)

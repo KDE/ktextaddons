@@ -13,7 +13,6 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPointer>
-#include <QSlider>
 #include <QTimer>
 #include <QToolButton>
 

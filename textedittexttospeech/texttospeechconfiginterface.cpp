@@ -6,7 +6,6 @@
 
 #include "texttospeechconfiginterface.h"
 #include <KLocalizedString>
-#include <QDebug>
 #include <QTextToSpeech>
 using namespace TextEditTextToSpeech;
 
