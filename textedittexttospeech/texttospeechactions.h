@@ -24,9 +24,9 @@ public:
     explicit TextToSpeechActions(QObject *parent = nullptr);
     ~TextToSpeechActions() override;
 
-    QAction *stopAction() const;
+    Q_REQUIRED_RESULT QAction *stopAction() const;
 
-    QAction *playPauseAction() const;
+    Q_REQUIRED_RESULT QAction *playPauseAction() const;
 
     Q_REQUIRED_RESULT TextToSpeechWidget::State state() const;
 
