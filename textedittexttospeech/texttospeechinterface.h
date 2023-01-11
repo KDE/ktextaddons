@@ -12,7 +12,6 @@
 #include <TextEditTextToSpeech/TextToSpeechWidget>
 namespace TextEditTextToSpeech
 {
-class TextToSpeechWidget;
 class TextToSpeechInterfacePrivate;
 /**
  * @brief The TextToSpeechInterface class
