@@ -24,7 +24,11 @@ public:
     explicit TextToSpeechWidget(QWidget *parent = nullptr);
     ~TextToSpeechWidget() override;
 
-    enum State { Stop = 0, Play, Pause };
+    enum State {
+        Stop = 0,
+        Play,
+        Pause,
+    };
     Q_ENUM(State)
 
     Q_REQUIRED_RESULT State state() const;
