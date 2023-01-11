@@ -15,7 +15,7 @@ configure_package_config_file(
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTGRAMMARCHECK
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfigVersion.cmake"
-    SOVERSION 5
+    SOVERSION 1
     )
 
 install(FILES
