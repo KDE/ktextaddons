@@ -7,11 +7,15 @@
 #include "autocorrectiontextedittest.h"
 #include "autocorrection.h"
 #include "autocorrectionsettings.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <TextAutoCorrection/AutoCorrectionTextEdit>
 #include <qtestkeyboard.h>
 
-AutoCorrectionTextEditTest::AutoCorrectionTextEditTest() = default;
+AutoCorrectionTextEditTest::AutoCorrectionTextEditTest()
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void AutoCorrectionTextEditTest::shouldNotAutocorrectWhenDisabled()
 {
