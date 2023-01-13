@@ -1,0 +1,91 @@
+# Spanish translations for libtextedittexttospeech.po package.
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the ruqola package.
+#
+# Automatically generated, 2023.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: libtextedittexttospeech\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"PO-Revision-Date: 2023-01-13 01:35+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.1\n"
+
+#: texttospeechactions.cpp:28 texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "Detener"
+
+#: texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "Pausar"
+
+#: texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "Reproducir"
+
+#: texttospeechconfigdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "Configurar texto a voz"
+
+#: texttospeechconfiginterface.cpp:70
+#, kde-format
+msgid "Morning, this is the test for testing settings."
+msgstr "Buenos días. Esta es la prueba para para probar la configuración."
+
+#: texttospeechconfigwidget.cpp:32
+#, kde-format
+msgid "Test"
+msgstr "Probar"
+
+#: texttospeechconfigwidget.cpp:39 texttospeechwidget.cpp:58
+#, kde-format
+msgid "Volume:"
+msgstr "Volumen:"
+
+#: texttospeechconfigwidget.cpp:43
+#, kde-format
+msgid "Rate:"
+msgstr "Tasa de bits:"
+
+#: texttospeechconfigwidget.cpp:49
+#, kde-format
+msgid "Pitch:"
+msgstr "Tono:"
+
+#: texttospeechconfigwidget.cpp:52
+#, kde-format
+msgid "Engine:"
+msgstr "Motor:"
+
+#: texttospeechconfigwidget.cpp:56
+#, kde-format
+msgid "Language:"
+msgstr "Idioma:"
+
+#: texttospeechconfigwidget.cpp:60
+#, kde-format
+msgid "Voice:"
+msgstr "Voz:"
+
+#: texttospeechwidget.cpp:53
+#, kde-format
+msgid "Close"
+msgstr "Cerrar"
+
+#: texttospeechwidget.cpp:79
+#, kde-format
+msgid "Configure..."
+msgstr "Configurar..."
