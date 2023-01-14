@@ -1,357 +1,358 @@
-# German translations for ktextaddons package.
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Automatically generated, 2023.
 #
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-01-13 10:41+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: de\n"
+"PO-Revision-Date: 2023-01-14 13:00+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: translator/misc/translatorutil.cpp:30
 #, kde-format
 msgid "Detect language"
-msgstr ""
+msgstr "تعرف اللغة"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
 msgid "Hmong"
-msgstr ""
+msgstr "الهمونغية"
 
 #: translator/misc/translatorutil.cpp:36
 #, kde-format
 msgid "Bosnian"
-msgstr ""
+msgstr "البوسنية"
 
 #: translator/misc/translatorutil.cpp:39
 #, kde-format
 msgid "English"
-msgstr ""
+msgstr "الإنجليزية"
 
 #: translator/misc/translatorutil.cpp:42
 #, kde-format
 msgid "Chinese (Simplified)"
-msgstr ""
+msgstr "الصينية (المبسطة)"
 
 #: translator/misc/translatorutil.cpp:45
 #, kde-format
 msgid "Chinese (Traditional)"
-msgstr ""
+msgstr "الصينية (التقليدية)"
 
 #: translator/misc/translatorutil.cpp:48
 #, kde-format
 msgid "Dutch"
-msgstr ""
+msgstr "الهولندية"
 
 #: translator/misc/translatorutil.cpp:51
 #, kde-format
 msgid "French"
-msgstr ""
+msgstr "الفرنسيّة"
 
 #: translator/misc/translatorutil.cpp:54
 #, kde-format
 msgid "German"
-msgstr ""
+msgstr "الألمانية"
 
 #: translator/misc/translatorutil.cpp:57
 #, kde-format
 msgid "Greek"
-msgstr ""
+msgstr "اليونانية"
 
 #: translator/misc/translatorutil.cpp:60
 #, kde-format
 msgid "Italian"
-msgstr ""
+msgstr "الإيطالية"
 
 #: translator/misc/translatorutil.cpp:63
 #, kde-format
 msgid "Japanese"
-msgstr ""
+msgstr "اليابانية"
 
 #: translator/misc/translatorutil.cpp:66
 #, kde-format
 msgid "Korean"
-msgstr ""
+msgstr "الكورية"
 
 #: translator/misc/translatorutil.cpp:69
 #, kde-format
 msgid "Portuguese"
-msgstr ""
+msgstr "البرتغالية"
 
 #: translator/misc/translatorutil.cpp:72
 #, kde-format
 msgid "Russian"
-msgstr ""
+msgstr "الروسية"
 
 #: translator/misc/translatorutil.cpp:75
 #, kde-format
 msgid "Spanish"
-msgstr ""
+msgstr "الإسبانيّة"
 
 #: translator/misc/translatorutil.cpp:78
 #, kde-format
 msgid "Afrikaans"
-msgstr ""
+msgstr "الأفريكانيّة"
 
 #: translator/misc/translatorutil.cpp:81
 #, kde-format
 msgid "Albanian"
-msgstr ""
+msgstr "الألبانية"
 
 #: translator/misc/translatorutil.cpp:84
 #, kde-format
 msgid "Arabic"
-msgstr ""
+msgstr "العربية"
 
 #: translator/misc/translatorutil.cpp:87
 #, kde-format
 msgid "Armenian"
-msgstr ""
+msgstr "الأرمينية"
 
 #: translator/misc/translatorutil.cpp:90
 #, kde-format
 msgid "Azerbaijani"
-msgstr ""
+msgstr "الأذربيجانية"
 
 #: translator/misc/translatorutil.cpp:93
 #, kde-format
 msgid "Basque"
-msgstr ""
+msgstr "الباسكيّة"
 
 #: translator/misc/translatorutil.cpp:96
 #, kde-format
 msgid "Belarusian"
-msgstr ""
+msgstr "البيلاروسيّة"
 
 #: translator/misc/translatorutil.cpp:99
 #, kde-format
 msgid "Bulgarian"
-msgstr ""
+msgstr "البلغارية"
 
 #: translator/misc/translatorutil.cpp:102
 #, kde-format
 msgid "Catalan"
-msgstr ""
+msgstr "الكاتالانيّة"
 
 #: translator/misc/translatorutil.cpp:105
 #, kde-format
 msgid "Croatian"
-msgstr ""
+msgstr "الكرواتية"
 
 #: translator/misc/translatorutil.cpp:108
 #, kde-format
 msgid "Czech"
-msgstr ""
+msgstr "التشيكية"
 
 #: translator/misc/translatorutil.cpp:111
 #, kde-format
 msgid "Danish"
-msgstr ""
+msgstr "الدنماركية"
 
 #: translator/misc/translatorutil.cpp:114
 #, kde-format
 msgid "Estonian"
-msgstr ""
+msgstr "الإستونية"
 
 #: translator/misc/translatorutil.cpp:117
 #, kde-format
 msgid "Filipino"
-msgstr ""
+msgstr "الفلبينيّة"
 
 #: translator/misc/translatorutil.cpp:120
 #, kde-format
 msgid "Finnish"
-msgstr ""
+msgstr "الفنلنديّة"
 
 #: translator/misc/translatorutil.cpp:123
 #, kde-format
 msgid "Galician"
-msgstr ""
+msgstr "الجليقيّة"
 
 #: translator/misc/translatorutil.cpp:126
 #, kde-format
 msgid "Georgian"
-msgstr ""
+msgstr "الجورجية"
 
 #: translator/misc/translatorutil.cpp:129
 #, kde-format
 msgid "Haitian Creole"
-msgstr ""
+msgstr "الكريول الهايتي"
 
 #: translator/misc/translatorutil.cpp:132
 #, kde-format
 msgid "Hebrew"
-msgstr ""
+msgstr "العبرية"
 
 #: translator/misc/translatorutil.cpp:135
 #, kde-format
 msgid "Hindi"
-msgstr ""
+msgstr "الهندية"
 
 #: translator/misc/translatorutil.cpp:138
 #, kde-format
 msgid "Hungarian"
-msgstr ""
+msgstr "الهنغارية"
 
 #: translator/misc/translatorutil.cpp:141
 #, kde-format
 msgid "Icelandic"
-msgstr ""
+msgstr "الإيسلنديّة"
 
 #: translator/misc/translatorutil.cpp:144
 #, kde-format
 msgid "Indonesian"
-msgstr ""
+msgstr "الإندونيسيّة"
 
 #: translator/misc/translatorutil.cpp:147
 #, kde-format
 msgid "Irish"
-msgstr ""
+msgstr "الإيرلنديّة"
 
 #: translator/misc/translatorutil.cpp:150
 #, kde-format
 msgid "Latvian"
-msgstr ""
+msgstr "اللاتفية"
 
 #: translator/misc/translatorutil.cpp:153
 #, kde-format
 msgid "Lithuanian"
-msgstr ""
+msgstr "الليتوانيّة"
 
 #: translator/misc/translatorutil.cpp:156
 #, kde-format
 msgid "Macedonian"
-msgstr ""
+msgstr "المقدونية"
 
 #: translator/misc/translatorutil.cpp:159
 #, kde-format
 msgid "Malay"
-msgstr ""
+msgstr "الماليزيّة"
 
 #: translator/misc/translatorutil.cpp:162
 #, kde-format
 msgid "Maltese"
-msgstr ""
+msgstr "المالطية"
 
 #: translator/misc/translatorutil.cpp:165
 #, kde-format
 msgid "Norwegian"
-msgstr ""
+msgstr "النرويجية"
 
 #: translator/misc/translatorutil.cpp:168
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "الفارسية"
 
 #: translator/misc/translatorutil.cpp:171
 #, kde-format
 msgid "Polish"
-msgstr ""
+msgstr "البولنديّة"
 
 #: translator/misc/translatorutil.cpp:174
 #, kde-format
 msgid "Romanian"
-msgstr ""
+msgstr "الرومانية"
 
 #: translator/misc/translatorutil.cpp:177
 #, kde-format
 msgid "Serbian"
-msgstr ""
+msgstr "الصّربيّة"
 
 #: translator/misc/translatorutil.cpp:180
 #, kde-format
 msgid "Slovak"
-msgstr ""
+msgstr "السلوفاكية"
 
 #: translator/misc/translatorutil.cpp:183
 #, kde-format
 msgid "Slovenian"
-msgstr ""
+msgstr "السلوفينية"
 
 #: translator/misc/translatorutil.cpp:186
 #, kde-format
 msgid "Swahili"
-msgstr ""
+msgstr "السواحلية"
 
 #: translator/misc/translatorutil.cpp:189
 #, kde-format
 msgid "Swedish"
-msgstr ""
+msgstr "السويدية"
 
 #: translator/misc/translatorutil.cpp:192
 #, kde-format
 msgid "Thai"
-msgstr ""
+msgstr "التايلاندية"
 
 #: translator/misc/translatorutil.cpp:195
 #, kde-format
 msgid "Turkish"
-msgstr ""
+msgstr "التركية"
 
 #: translator/misc/translatorutil.cpp:198
 #, kde-format
 msgid "Ukrainian"
-msgstr ""
+msgstr "الأوكرانية"
 
 #: translator/misc/translatorutil.cpp:201
 #, kde-format
 msgid "Urdu"
-msgstr ""
+msgstr "الأورديّة"
 
 #: translator/misc/translatorutil.cpp:204
 #, kde-format
 msgid "Vietnamese"
-msgstr ""
+msgstr "الفيتنامية"
 
 #: translator/misc/translatorutil.cpp:207
 #, kde-format
 msgid "Welsh"
-msgstr ""
+msgstr "الغاليّة"
 
 #: translator/misc/translatorutil.cpp:210
 #, kde-format
 msgid "Yiddish"
-msgstr ""
+msgstr "اليديشية"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
 msgid "Bing"
-msgstr ""
+msgstr "محرك بنغ"
 
 #: translator/plugins/bing/bingengineplugin.cpp:57
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "خطأ: غير قادر على العثور على بيانات استيثاق Bing في إصدار الويب."
 
 #: translator/plugins/bing/bingengineplugin.cpp:65
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "خطأ: غير قادر على استخراج مفتاح Bing من إصدار الويب."
 
 #: translator/plugins/bing/bingengineplugin.cpp:74
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "خطأ: غير قادر على استخراج رمز Bing من إصدار الويب."
 
 #: translator/plugins/bing/bingengineplugin.cpp:83
 #: translator/plugins/bing/bingengineplugin.cpp:92
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
-msgstr ""
+msgstr "خطأ: غير قادر على استخراج معلومات إضافية عن Bing من إصدار الويب."
 
 #: translator/plugins/deepl/deeplengineclient.cpp:37
 #, kde-format
 msgid "DeepL"
-msgstr ""
+msgstr "ترجمة موقع DeepL"
 
 #: translator/plugins/deepl/deeplengineconfiguredialog.cpp:17
 #: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:17
@@ -359,60 +360,60 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr ""
+msgstr "اضبط المحرك"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:15
 #, kde-format
 msgid "Use Free License Key"
-msgstr ""
+msgstr "استخدم مفتاح الترخيص المجاني"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:27
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:33
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "مفتاح و‌ب‌ت API:"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:41
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
 #, kde-format
 msgid "Server needs Api Key."
-msgstr ""
+msgstr "الخادوم يحتاج إلى مفتاح API"
 
 #: translator/plugins/google/googleengineclient.cpp:26
 #, kde-format
 msgid "Google"
-msgstr ""
+msgstr "غوغل"
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
 msgid "Libre Translate"
-msgstr ""
+msgstr "مترجم لايبر"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "الخادوم يطلب مفتاح API"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:26
 #: translator/plugins/lingva/lingvaenginewidget.cpp:22
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "عنوان الخادوم:"
 
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server url is not defined."
-msgstr ""
+msgstr "عنوان الخادوم غير معرف."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
 msgid "Lingva"
-msgstr ""
+msgstr "Lingva"
 
 #: translator/plugins/yandex/yandexengineclient.cpp:26
 #, kde-format
 msgid "Yandex"
-msgstr ""
+msgstr "ياندكس"
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:100
@@ -421,59 +422,61 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"خطأ: اكتشفت أنظمة المحرك حركة مرور مشبوهة من شبكة الحاسوب الخاصة بك. الرجاء "
+"تجربة طلبك مرة أخرى لاحقًا."
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:63
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "خطأ: غير قادر على العثور على بيانات استيثاق Yandex SID في إصدار الويب."
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:71
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "خطأ: غير قادر على استخراج مفتاح Yandex SID من إصدار الويب."
 
 #: translator/translatorengineplugin.cpp:108
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
-msgstr ""
+msgstr "استخدمت نفس اللغة للغتي ”من“ و”إلى“."
 
 #: translator/widgets/translatorconfiguredialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr ""
+msgstr "اضبط المترجم"
 
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:35
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "ابحث..."
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "من:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
 msgid "To:"
-msgstr ""
+msgstr "إلى:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:47
 #: translator/widgets/translatorconfigurewidget.cpp:39
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "المحرّك:"
 
 #: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
-msgstr ""
+msgstr "منقّح المترجم"
 
 #: translator/widgets/translatordebugdialog.cpp:39
 #, kde-format
 msgid "Save As..."
-msgstr ""
+msgstr "احفظ كَ‍..."
 
 #: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
@@ -481,91 +484,93 @@ msgid ""
 "Could not write the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
+"تعذّرت كتابة الملفّ %1:\n"
+"وصف الخطأ المفصّل هو ”%2“."
 
 #: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgid "Save File Error"
-msgstr ""
+msgstr "خطأ في حفظ الملفّ"
 
 #: translator/widgets/translatordebugdialog.cpp:115
 #, kde-format
 msgid "All Files (*)"
-msgstr ""
+msgstr "كلّ الملفّات (*)"
 
 #: translator/widgets/translatormenu.cpp:22
 #, kde-format
 msgid "Translate..."
-msgstr ""
+msgstr "ترجم..."
 
 #: translator/widgets/translatorwidget.cpp:133
 #, kde-format
 msgid "Problem when connecting to the translator web site."
-msgstr ""
+msgstr "مشكلة في الاتّصال بموقع المترجم."
 
 #: translator/widgets/translatorwidget.cpp:236
 #: translator/widgets/translatorwidget.cpp:239
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "أغلق"
 
 #: translator/widgets/translatorwidget.cpp:245
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
-msgstr ""
+msgstr "من:"
 
 #: translator/widgets/translatorwidget.cpp:252
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
-msgstr ""
+msgstr "إلى:"
 
 #: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
-msgstr ""
+msgstr "اعكس"
 
 #: translator/widgets/translatorwidget.cpp:269
 #: translator/widgets/translatorwidget.cpp:272
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "امسح"
 
 #: translator/widgets/translatorwidget.cpp:277
 #: translator/widgets/translatorwidget.cpp:280
 #, kde-format
 msgid "Translate"
-msgstr ""
+msgstr "ترجم"
 
 #: translator/widgets/translatorwidget.cpp:287
 #, kde-format
 msgid "Debug"
-msgstr ""
+msgstr "نقّح"
 
 #: translator/widgets/translatorwidget.cpp:305
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "اضبط"
 
 #: translator/widgets/translatorwidget.cpp:320
 #, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "Google Server)."
-msgstr ""
+msgstr "اسحب النّصّ الذي تريد ترجمته هنا. (انتبه سيرسل النص إلى خادم غوغل)"
 
 #: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
-msgstr ""
+msgstr "لم يُكتشف اتّصال بالشّبكة، لا يمكن ترجمة النّصّ."
 
 #: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network"
-msgstr ""
+msgstr "لا شبكة"
 
 #: translator/widgets/translatorwidget.cpp:455
 #, kde-format
 msgid "Translate error"
-msgstr ""
+msgstr "خطأ في التّرجمة"

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2022-09-24 16:40+0400\n"
+"PO-Revision-Date: 2023-01-14 12:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -132,10 +132,9 @@ msgid "Grammalecte error"
 msgstr "خطأ Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "مسار Grammalecte:"
+msgstr "اختيار المسار"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
