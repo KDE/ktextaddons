@@ -1,0 +1,378 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kdepim-addons package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdepim-addons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"PO-Revision-Date: 2022-09-23 09:15+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#: common/grammarresulttextedit.cpp:39
+#, kde-format
+msgid "Any text to check."
+msgstr "Dowolny tekst do sprawdzenia."
+
+#: common/grammarresulttextedit.cpp:93
+#, kde-format
+msgid "Replacement"
+msgstr "Zastąpienie"
+
+#: common/grammarresulttextedit.cpp:102
+#, kde-format
+msgid "Online Grammar Information"
+msgstr "Dane o gramatyce z sieci"
+
+#: common/grammarresulttextedit.cpp:115
+#, kde-format
+msgid "Check Again"
+msgstr "Sprawdź ponownie"
+
+#: common/grammarresulttextedit.cpp:118
+#, kde-format
+msgid "Configure..."
+msgstr "Ustawienia..."
+
+#: common/grammarresultutil.cpp:49
+#, kde-format
+msgid "See on: %1"
+msgstr "Zobacz na: %1"
+
+#: common/grammarresultwidget.cpp:32
+#, kde-format
+msgid "Close"
+msgstr "Zamknij"
+
+#: grammalecte/grammalecteconfigdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Grammalecte"
+msgstr "Ustawienia Grammalecte"
+
+#: grammalecte/grammalecteconfigwidget.cpp:35
+#, kde-format
+msgid "General"
+msgstr "Ogólne"
+
+#: grammalecte/grammalecteconfigwidget.cpp:36
+#, kde-format
+msgid "Grammar Settings"
+msgstr "Ustawienia gramatyki"
+
+#: grammalecte/grammalecteconfigwidget.cpp:61
+#, kde-format
+msgid ""
+"Impossible to get options. Please verify that you have grammalected "
+"installed."
+msgstr "Nie można uzyskać opcji. Sprawdź czy wgrano grammalected."
+
+#: grammalecte/grammalecteconfigwidget.cpp:62
+#, kde-format
+msgid "Error during Extracting Options"
+msgstr "Błąd przy wydobywaniu opcji"
+
+#: grammalecte/grammalecteconfigwidget.cpp:111
+#, kde-format
+msgid "Press Button for Reloading Settings"
+msgstr "Naciśnij przycisk, aby wczytaj ustawienia ponownie"
+
+#: grammalecte/grammalecteconfigwidget.cpp:118
+#, kde-format
+msgid "Reload Settings"
+msgstr "Wczytaj ustawienia ponownie"
+
+#: grammalecte/grammalecteconfigwidget.cpp:135
+#, kde-format
+msgid "Python Path:"
+msgstr "Ścieżka Pythona:"
+
+#: grammalecte/grammalecteconfigwidget.cpp:139
+#, kde-format
+msgid "Add full 'grammalecte-cli.py' path"
+msgstr "Dodaj ścieżkę pełnego 'grammalecte-cli.py'"
+
+#: grammalecte/grammalecteconfigwidget.cpp:140
+#, kde-format
+msgid "Grammalecte Path:"
+msgstr "Ścieżka Grammalecte:"
+
+#: grammalecte/grammalecteresultwidget.cpp:54
+#, kde-format
+msgid "Python path is missing."
+msgstr "Brakuje ścieżki do Pythona."
+
+#: grammalecte/grammalecteresultwidget.cpp:58
+#, kde-format
+msgid "Grammalecte path not found."
+msgstr "Nie znaleziono ścieżki do Grammalecte."
+
+#: grammalecte/grammalecteresultwidget.cpp:65
+#, kde-format
+msgid "Grammalecte program file not found."
+msgstr "Nie znaleziono pliku programu Grammalecte."
+
+#: grammalecte/grammalecteresultwidget.cpp:69
+#, kde-format
+msgid "Grammalecte cli file not found."
+msgstr "Nie znaleziono pliku cli Grammalecte."
+
+#: grammalecte/grammalecteresultwidget.cpp:73
+#, kde-format
+msgid "Grammalecte error"
+msgstr "Błąd Grammalecte"
+
+#: grammalecte/grammalecteurlrequesterwidget.cpp:32
+#, fuzzy, kde-format
+#| msgid "Grammalecte Path:"
+msgid "Select Path"
+msgstr "Ścieżka Grammalecte:"
+
+#: languagetool/languagetoolcombobox.cpp:31
+#, kde-format
+msgid "English"
+msgstr "Angielski"
+
+#: languagetool/languagetoolcombobox.cpp:32
+#, kde-format
+msgid "Asturian"
+msgstr "Asturyjski"
+
+#: languagetool/languagetoolcombobox.cpp:33
+#, kde-format
+msgid "Belarusian"
+msgstr "Białoruski"
+
+#: languagetool/languagetoolcombobox.cpp:34
+#, kde-format
+msgid "Breton"
+msgstr "Bretoński"
+
+#: languagetool/languagetoolcombobox.cpp:35
+#, kde-format
+msgid "Catalan"
+msgstr "Kataloński"
+
+#: languagetool/languagetoolcombobox.cpp:36
+#, kde-format
+msgid "Chinese"
+msgstr "Chiński"
+
+#: languagetool/languagetoolcombobox.cpp:37
+#, kde-format
+msgid "Danish"
+msgstr "Duński"
+
+#: languagetool/languagetoolcombobox.cpp:38
+#, kde-format
+msgid "Dutch"
+msgstr "Holenderski"
+
+#: languagetool/languagetoolcombobox.cpp:39
+#, kde-format
+msgid "English (Australian)"
+msgstr "Angielski (australijski)"
+
+#: languagetool/languagetoolcombobox.cpp:40
+#, kde-format
+msgid "English (Canadian)"
+msgstr "Angielski (kanadyjski)"
+
+#: languagetool/languagetoolcombobox.cpp:41
+#, kde-format
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: languagetool/languagetoolcombobox.cpp:42
+#, kde-format
+msgid "French"
+msgstr "Francuski"
+
+#: languagetool/languagetoolcombobox.cpp:43
+#, kde-format
+msgid "Galician"
+msgstr "Galicyjski"
+
+#: languagetool/languagetoolcombobox.cpp:44
+#, kde-format
+msgid "German"
+msgstr "Niemiecki"
+
+#: languagetool/languagetoolcombobox.cpp:45
+#, kde-format
+msgid "Greek"
+msgstr "Grecki"
+
+#: languagetool/languagetoolcombobox.cpp:46
+#, kde-format
+msgid "Italian"
+msgstr "Włoski"
+
+#: languagetool/languagetoolcombobox.cpp:47
+#, kde-format
+msgid "Japanese"
+msgstr "Japoński"
+
+#: languagetool/languagetoolcombobox.cpp:48
+#, kde-format
+msgid "Khmer"
+msgstr "Khmerski"
+
+#: languagetool/languagetoolcombobox.cpp:49
+#, kde-format
+msgid "Persian"
+msgstr "Perski"
+
+#: languagetool/languagetoolcombobox.cpp:50
+#, kde-format
+msgid "Polish"
+msgstr "Polski"
+
+#: languagetool/languagetoolcombobox.cpp:51
+#, kde-format
+msgid "Portuguese"
+msgstr "Portugalski"
+
+#: languagetool/languagetoolcombobox.cpp:52
+#, kde-format
+msgid "Romanian"
+msgstr "Rumuński"
+
+#: languagetool/languagetoolcombobox.cpp:53
+#, kde-format
+msgid "Russian"
+msgstr "Rosyjski"
+
+#: languagetool/languagetoolcombobox.cpp:54
+#, kde-format
+msgid "Slovak"
+msgstr "Słowacki"
+
+#: languagetool/languagetoolcombobox.cpp:55
+#, kde-format
+msgid "Slovenian"
+msgstr "Słoweński"
+
+#: languagetool/languagetoolcombobox.cpp:56
+#, kde-format
+msgid "Spanish"
+msgstr "Hiszpański"
+
+#: languagetool/languagetoolcombobox.cpp:57
+#, kde-format
+msgid "Swedish"
+msgstr "Szwedzki"
+
+#: languagetool/languagetoolcombobox.cpp:58
+#, kde-format
+msgid "Tagalog"
+msgstr "Tagalski"
+
+#: languagetool/languagetoolcombobox.cpp:59
+#, kde-format
+msgid "Tamil"
+msgstr "Tamilski"
+
+#: languagetool/languagetoolcombobox.cpp:60
+#, kde-format
+msgid "Ukrainian"
+msgstr "Ukraiński"
+
+#: languagetool/languagetoolconfigdialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure LanguageTool"
+msgstr "Ustawienia LanguageTool"
+
+#: languagetool/languagetoolconfigwidget.cpp:22
+#, kde-format
+msgid "Use Local Instance"
+msgstr "Użyj lokalnego wystąpienia"
+
+#: languagetool/languagetoolconfigwidget.cpp:24
+#, kde-format
+msgid "Instance Path:"
+msgstr "Ścieżka wystąpienia:"
+
+#: languagetool/languagetoolconfigwidget.cpp:52
+#, kde-format
+msgid "Language:"
+msgstr "Język:"
+
+#: languagetool/languagetoolconfigwidget.cpp:64
+#, kde-format
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: languagetool/languagetoolresultwidget.cpp:60
+#, kde-format
+msgid "An error was reported: %1"
+msgstr "Zgłoszono błąd: %1"
+
+#: languagetool/languagetoolresultwidget.cpp:60
+#, kde-format
+msgid "Failed to check grammar."
+msgstr "Nie udało się sprawdzić gramatyki."
+
+#: languagetool/languagetoolresultwidget.cpp:76
+#, kde-format
+msgid "Check"
+msgstr "Sprawdź"
+
+#: languagetool/languagetoolupdatecombobox.cpp:75
+#, kde-format
+msgid ""
+"An error occurred attempting to load the list of available languages:\n"
+"%1"
+msgstr ""
+"Wystąpił błąd przy próbie wczytania wykazu dostępnych języków:\n"
+"%1"
+
+#: languagetool/languagetoolupdatecombobox.cpp:75
+#, kde-format
+msgid "List of Languages"
+msgstr "Wykaz języków"
+
+#~ msgid "&Check Grammar (Grammalecte)"
+#~ msgstr "Sprawdź gramatykę (Grammale&cte)"
+
+#~ msgid "Grammalecte Plugin"
+#~ msgstr "Wtyczka Grammalecte"
+
+#~ msgid "&Check Grammar (LanguageTool)"
+#~ msgstr "&Sprawdź gramatykę (LanguageTool)"
+
+#~ msgid ""
+#~ "You do not use local instance.\n"
+#~ "Your text will send on a external web site (https://languagetool.org/).\n"
+#~ "Do you want to continue?"
+#~ msgstr ""
+#~ "Nie używasz lokalnego wystąpienia.\n"
+#~ "Twój tekst zostanie wysłany na zewnętrzną stronę sieciową (https://"
+#~ "languagetool.org/).\n"
+#~ "Czy kontynuować?"
+
+#~ msgid "Check Grammar with LanguageTool"
+#~ msgstr "Sprawdź gramatykę z LanguageTool"
+
+#~ msgid "LanguageTool Plugin"
+#~ msgstr "Wtyczka LanguageTool"
+
+#~ msgid "Grammar Web Site Info"
+#~ msgstr "Dane o stronie w sieci o gramatyce"
+
+#~ msgid ""
+#~ "An error was found during got languages:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Wystąpił błąd podczas pobierania języków:\n"
+#~ "%1"

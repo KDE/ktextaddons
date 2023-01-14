@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-01-14 00:55+0000\n"
 "PO-Revision-Date: 2023-01-10 22:44+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Test"
 msgstr "Essaya"
 
-#: texttospeechconfigwidget.cpp:39 texttospeechwidget.cpp:58
+#: texttospeechconfigwidget.cpp:39 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
 msgstr "Tomo:"
@@ -78,12 +78,24 @@ msgstr "Linguage:"
 msgid "Voice:"
 msgstr "Voce:"
 
-#: texttospeechwidget.cpp:53
+#: texttospeechwidget.cpp:54
 #, kde-format
 msgid "Close"
 msgstr "Claude"
 
-#: texttospeechwidget.cpp:79
+#: texttospeechwidget.cpp:80
 #, kde-format
 msgid "Configure..."
 msgstr "Configura..."
+
+#: texttospeechwidget.cpp:131
+#, kde-format
+msgid "Engine has a problem."
+msgstr ""
+
+#: texttospeechwidget.cpp:131
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Text-To-Speech"
+msgid "Text To Speech"
+msgstr "Configura Texto-a-Discurso (TextToSpeech)"

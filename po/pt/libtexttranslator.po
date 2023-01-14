@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-09 00:55+0000\n"
+"POT-Creation-Date: 2023-01-13 00:54+0000\n"
 "PO-Revision-Date: 2023-01-09 18:52+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -329,30 +329,30 @@ msgstr "Yiddish"
 msgid "Bing"
 msgstr "Bing"
 
-#: translator/plugins/bing/bingengineplugin.cpp:60
+#: translator/plugins/bing/bingengineplugin.cpp:57
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
 msgstr "Erro: não foi possível encontrar as credenciais do Bing na versão Web."
 
-#: translator/plugins/bing/bingengineplugin.cpp:68
+#: translator/plugins/bing/bingengineplugin.cpp:65
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
 msgstr "Erro: Não foi possível extrair a chave do Bing na versão Web."
 
-#: translator/plugins/bing/bingengineplugin.cpp:77
+#: translator/plugins/bing/bingengineplugin.cpp:74
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
 msgstr "Erro: Não foi possível extrair o código do Bing na versão Web."
 
-#: translator/plugins/bing/bingengineplugin.cpp:86
-#: translator/plugins/bing/bingengineplugin.cpp:95
+#: translator/plugins/bing/bingengineplugin.cpp:83
+#: translator/plugins/bing/bingengineplugin.cpp:92
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
 "Erro: Não foi possível extrair as informações adicionais do Bing na versão "
 "Web."
 
-#: translator/plugins/deepl/deeplengineclient.cpp:31
+#: translator/plugins/deepl/deeplengineclient.cpp:37
 #, kde-format
 msgid "DeepL"
 msgstr "DeepL"
@@ -371,13 +371,13 @@ msgid "Use Free License Key"
 msgstr "Usar uma Chave de Licença Gratuita"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:27
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:33
 #, kde-format
 msgid "Api Key:"
 msgstr "Chave da API:"
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:36
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:39
+#: translator/plugins/deepl/deeplengineplugin.cpp:41
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "O servidor necessita de uma chave da API."
@@ -387,23 +387,23 @@ msgstr "O servidor necessita de uma chave da API."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:31
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Server required Api Key"
 msgstr "O servidor necessita de uma Chave da API"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
-#: translator/plugins/lingva/lingvaenginewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:26
+#: translator/plugins/lingva/lingvaenginewidget.cpp:22
 #, kde-format
 msgid "Server Url:"
 msgstr "URL do Servidor:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:35
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server url is not defined."
 msgstr "O URL do servidor não está definido."

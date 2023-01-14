@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-01-14 00:55+0000\n"
 "PO-Revision-Date: 2023-01-09 09:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -49,7 +49,7 @@ msgstr "Вітаємо, це перевірка тестових парамет�
 msgid "Test"
 msgstr "Тест"
 
-#: texttospeechconfigwidget.cpp:39 texttospeechwidget.cpp:58
+#: texttospeechconfigwidget.cpp:39 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
 msgstr "Гучність:"
@@ -79,12 +79,24 @@ msgstr "Мова:"
 msgid "Voice:"
 msgstr "Голос:"
 
-#: texttospeechwidget.cpp:53
+#: texttospeechwidget.cpp:54
 #, kde-format
 msgid "Close"
 msgstr "Закрити"
 
-#: texttospeechwidget.cpp:79
+#: texttospeechwidget.cpp:80
 #, kde-format
 msgid "Configure..."
 msgstr "Налаштувати…"
+
+#: texttospeechwidget.cpp:131
+#, kde-format
+msgid "Engine has a problem."
+msgstr ""
+
+#: texttospeechwidget.cpp:131
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Text-To-Speech"
+msgid "Text To Speech"
+msgstr "Налаштовування синтезу мовлення"
