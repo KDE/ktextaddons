@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextedittexttospeech\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:55+0000\n"
-"PO-Revision-Date: 2023-01-13 01:35+0100\n"
+"PO-Revision-Date: 2023-01-15 00:23+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -93,11 +93,9 @@ msgstr "Configurar..."
 #: texttospeechwidget.cpp:131
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "El motor tiene un problema."
 
 #: texttospeechwidget.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "Configurar texto a voz"
+msgstr "Texto a voz"

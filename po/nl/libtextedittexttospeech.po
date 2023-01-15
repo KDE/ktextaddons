@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:55+0000\n"
-"PO-Revision-Date: 2023-01-09 11:50+0100\n"
+"PO-Revision-Date: 2023-01-14 16:27+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: texttospeechactions.cpp:28 texttospeechactions.cpp:31
 #, kde-format
@@ -91,11 +91,9 @@ msgstr "Configureren..."
 #: texttospeechwidget.cpp:131
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "Engine heeft een probleem."
 
 #: texttospeechwidget.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Text-To-Speech"
+#, kde-format
 msgid "Text To Speech"
-msgstr "Tekst-naar-spraak configureren"
+msgstr "Tekst-naar-spraak"
