@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2019, 2021, 2022.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2019, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2022-09-20 00:25+0200\n"
+"PO-Revision-Date: 2023-01-14 15:56+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -132,10 +132,9 @@ msgid "Grammalecte error"
 msgstr "Errore di Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Percorso di Grammalecte:"
+msgstr "Seleziona percorso"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
