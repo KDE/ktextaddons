@@ -7,6 +7,7 @@
 #pragma once
 
 #include "textedittexttospeech_export.h"
+#include <QDebug>
 #include <QLocale>
 #include <QObject>
 #include <QVector>
@@ -39,3 +40,4 @@ public:
     virtual void testEngine(const EngineSettings &engineSettings);
 };
 }
+TEXTEDITTEXTTOSPEECH_EXPORT QDebug operator<<(QDebug d, const TextEditTextToSpeech::AbstractTextToSpeechConfigInterface::EngineSettings &t);

@@ -56,8 +56,8 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
         )
 endif()
 
-ecm_qt_declare_logging_category(KF5TextEditTextToSpeech HEADER TextEditTextToSpeech_debug.h
-    IDENTIFIER TextEditTextToSpeech_LOG CATEGORY_NAME org.kde.kf5.textedittexttospeech
+ecm_qt_declare_logging_category(KF5TextEditTextToSpeech HEADER textedittexttospeech_debug.h
+    IDENTIFIER TEXTEDITTEXTTOSPEECH_LOG CATEGORY_NAME org.kde.kf5.textedittexttospeech
         DESCRIPTION "kf5 (textedit text to speech)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
