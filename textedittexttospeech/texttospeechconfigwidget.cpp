@@ -6,6 +6,7 @@
 
 #include "texttospeechconfigwidget.h"
 #include "abstracttexttospeechconfiginterface.h"
+#include "textedittexttospeech_debug.h"
 #include "texttospeechconfiginterface.h"
 #include "texttospeechlanguagecombobox.h"
 #include "texttospeechsliderwidget.h"
@@ -151,6 +152,7 @@ void TextToSpeechConfigWidget::slotTestTextToSpeech()
     settings.volume = mVolume->value();
     settings.localeName = mLanguage->currentData().toLocale().name();
     settings.voice = mVoice->currentData().toString();
+    qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << " settings " << settings;
     mAbstractTextToSpeechConfigInterface->testEngine(settings);
 }
 
