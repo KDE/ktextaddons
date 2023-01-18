@@ -49,3 +49,13 @@ void AbstractTextToSpeechConfigInterface::testEngine(const EngineSettings &engin
 {
     Q_UNUSED(engineSettings)
 }
+
+QDebug operator<<(QDebug d, const TextEditTextToSpeech::AbstractTextToSpeechConfigInterface::EngineSettings &t)
+{
+    d << " Rate " << t.rate;
+    d << " pitch " << t.pitch;
+    d << " volume " << t.volume;
+    d << " voice " << t.voice;
+    d << " localeName " << t.localeName;
+    return d;
+}
