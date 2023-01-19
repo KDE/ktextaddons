@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:55+0000\n"
+"POT-Creation-Date: 2023-01-19 00:56+0000\n"
 "PO-Revision-Date: 2023-01-14 12:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -45,37 +45,37 @@ msgstr "Configuració del text a veu"
 msgid "Morning, this is the test for testing settings."
 msgstr "Hola, aquesta és la prova per a provar la configuració."
 
-#: texttospeechconfigwidget.cpp:32
+#: texttospeechconfigwidget.cpp:33
 #, kde-format
 msgid "Test"
 msgstr "Prova"
 
-#: texttospeechconfigwidget.cpp:39 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
 msgstr "Volum:"
 
-#: texttospeechconfigwidget.cpp:43
+#: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
 msgstr "Velocitat:"
 
-#: texttospeechconfigwidget.cpp:49
+#: texttospeechconfigwidget.cpp:50
 #, kde-format
 msgid "Pitch:"
 msgstr "To:"
 
-#: texttospeechconfigwidget.cpp:52
+#: texttospeechconfigwidget.cpp:53
 #, kde-format
 msgid "Engine:"
 msgstr "Motor:"
 
-#: texttospeechconfigwidget.cpp:56
+#: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Language:"
 msgstr "Idioma:"
 
-#: texttospeechconfigwidget.cpp:60
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Voice:"
 msgstr "Veu:"
