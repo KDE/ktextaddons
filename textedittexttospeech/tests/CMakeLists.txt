@@ -6,13 +6,13 @@ target_link_libraries(texttospeechwidget_gui
     )
 
 #####
-add_executable(texttospeechgui texttospeechgui.cpp)
+add_executable(texttospeechgui texttospeechgui.cpp texttospeechgui.h)
 target_link_libraries(texttospeechgui
     KF5::TextEditTextToSpeech KF5::CoreAddons Qt::Widgets KF5::I18n
     )
 
 #####
-add_executable(texttospeechconfiggui texttospeechconfiggui.cpp)
+add_executable(texttospeechconfiggui texttospeechconfiggui.cpp texttospeechconfiggui.h)
 target_link_libraries(texttospeechconfiggui
     KF5::TextEditTextToSpeech KF5::CoreAddons Qt::Widgets KF5::I18n
     )
