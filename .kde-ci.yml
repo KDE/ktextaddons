@@ -4,6 +4,21 @@
 Dependencies:
 - 'on': ['@all']
   'require':
+    'third-party/qtkeychain': '@latest'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+  'require':
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/ki18n': '@latest-kf6'
+    'frameworks/kconfig': '@latest-kf6'
+    'frameworks/kconfigwidgets': '@latest-kf6'
+    'frameworks/karchive': '@latest-kf6'
+    'frameworks/kxmlgui': '@stable-kf6'
+    'frameworks/kcoreaddons': '@stable-kf6'
+
+
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
+  'require':
     'frameworks/extra-cmake-modules': '@latest'
     'frameworks/ki18n': '@latest'
     'frameworks/kconfig': '@latest'
@@ -11,4 +26,4 @@ Dependencies:
     'frameworks/karchive': '@latest'
     'frameworks/kxmlgui': '@stable'
     'frameworks/kcoreaddons': '@stable'
-    'third-party/qtkeychain': '@latest'
+      
