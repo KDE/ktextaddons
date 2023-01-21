@@ -33,9 +33,11 @@ include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 include(ECMGeneratePriFile)
 
+set(KF_MIN_VERSION "5.100.0")
+
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network)
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     ConfigWidgets
     Archive
