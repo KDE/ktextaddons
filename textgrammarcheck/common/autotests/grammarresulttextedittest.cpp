@@ -5,7 +5,7 @@
 */
 
 #include "grammarresulttextedittest.h"
-#include "grammarresulttextedit.h"
+#include "common/grammarresulttextedit.h"
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(GrammarResultTextEditTest)
@@ -18,7 +18,7 @@ GrammarResultTextEditTest::GrammarResultTextEditTest(QObject *parent)
 
 void GrammarResultTextEditTest::shouldHaveDefaultValue()
 {
-    GrammarResultTextEdit w;
+    TextGrammarCheck::GrammarResultTextEdit w;
     QVERIFY(w.isReadOnly());
     QVERIFY(!w.acceptRichText());
 }

@@ -101,6 +101,7 @@ if (BUILD_TESTING)
     add_subdirectory(grammalecte/tests)
     add_subdirectory(languagetool/autotests)
     add_subdirectory(languagetool/tests)
+    add_subdirectory(common/autotests/)
 endif()
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

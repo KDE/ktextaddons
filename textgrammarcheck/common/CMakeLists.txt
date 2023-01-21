@@ -27,7 +27,6 @@ endif()
 
 target_link_libraries(grammarcommon
     KF5::I18n
-    KF5::MessageComposer
     )
 
 set_target_properties(grammarcommon
