@@ -5,7 +5,7 @@
 */
 
 #include "grammarresultutiltest.h"
-#include "grammarresultutil.h"
+#include "common/grammarresultutil.h"
 #include <QTest>
 #include <QTextDocument>
 QTEST_MAIN(GrammarResultUtilTest)
@@ -16,8 +16,8 @@ GrammarResultUtilTest::GrammarResultUtilTest(QObject *parent)
 
 void GrammarResultUtilTest::shouldReplaceWord()
 {
-    typedef QVector<MessageComposer::PluginGrammarAction> ListGrammarActions;
-    typedef QVector<GrammarError> ErrorInfosList;
+    typedef QVector<TextGrammarCheck::GrammarAction> ListGrammarActions;
+    typedef QVector<TextGrammarCheck::GrammarError> ErrorInfosList;
     QFETCH(QString, initialText);
     QFETCH(QStringList, replacementWord);
     QFETCH(ErrorInfosList, grammarErrors);
@@ -26,10 +26,10 @@ void GrammarResultUtilTest::shouldReplaceWord()
 
     QTextDocument doc;
     doc.setPlainText(initialText);
-    GrammarResultUtil::applyGrammarResult(grammarErrors, &doc, Qt::red);
+    TextGrammarCheck::GrammarResultUtil::applyGrammarResult(grammarErrors, &doc, Qt::red);
     int i = 0;
     for (const auto &action : listGrammarActions) {
-        GrammarResultUtil::replaceWord(action, replacementWord.at(i), &doc);
+        TextGrammarCheck::GrammarResultUtil::replaceWord(action, replacementWord.at(i), &doc);
         ++i;
     }
     QCOMPARE(doc.toPlainText(), resultText);
@@ -39,33 +39,33 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
 {
     QTest::addColumn<QString>("initialText");
     QTest::addColumn<QStringList>("replacementWord");
-    QTest::addColumn<QVector<GrammarError>>("grammarErrors");
-    QTest::addColumn<QVector<MessageComposer::PluginGrammarAction>>("listGrammarActions");
+    QTest::addColumn<QVector<TextGrammarCheck::GrammarError>>("grammarErrors");
+    QTest::addColumn<QVector<TextGrammarCheck::GrammarAction>>("listGrammarActions");
     QTest::addColumn<QString>("resultText");
     {
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         QTest::newRow("noerror") << QString() << QStringList() << grammarErrorLists << lstGrammarActions << QString();
     }
     {
         const QString text = QStringLiteral("Boo foo, ah car");
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         QTest::newRow("noerror2") << text << QStringList() << grammarErrorLists << lstGrammarActions << text;
     }
     {
         const QString text = QStringLiteral("Boo foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
@@ -77,17 +77,17 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     }
     {
         const QString text = QStringLiteral("Boo foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
@@ -99,17 +99,17 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     }
     {
         const QString text = QStringLiteral("Boo foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
@@ -123,31 +123,31 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     // Two errors
     {
         const QString text = QStringLiteral("Boo foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(4);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
             lstGrammarActions.append(act);
         }
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(4);
             act.setLength(3);
@@ -160,31 +160,31 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     // Bug 459113
     {
         const QString text = QStringLiteral("Boo foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(4);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
             lstGrammarActions.append(act);
         }
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(6);
             act.setLength(3);
@@ -196,31 +196,31 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
     }
     {
         const QString text = QStringLiteral("Boo\n foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(5);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
             lstGrammarActions.append(act);
         }
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(2);
             act.setStart(1);
             act.setLength(3);
@@ -233,31 +233,31 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
 
     {
         const QString text = QStringLiteral("Boo\n foo, ah car");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(0);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(5);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(0);
             act.setLength(3);
             lstGrammarActions.append(act);
         }
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(2);
             act.setStart(1);
             act.setLength(3);
@@ -270,45 +270,45 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
 
     {
         const QString text = QStringLiteral("Je suis  la qui empeche\nil est la.\n tout passage dans l'herbe");
-        QVector<GrammarError> grammarErrorLists;
+        QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(7);
             err.setLength(2);
             grammarErrorLists.append(err);
         }
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(1);
             err.setStart(14);
             err.setLength(7);
             grammarErrorLists.append(err);
         }
         {
-            GrammarError err;
+            TextGrammarCheck::GrammarError err;
             err.setBlockId(2);
             err.setStart(3);
             err.setLength(3);
             grammarErrorLists.append(err);
         }
-        QVector<MessageComposer::PluginGrammarAction> lstGrammarActions;
+        QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(7);
             act.setLength(2);
             lstGrammarActions.append(act);
         }
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(1);
             act.setStart(15);
             act.setLength(7);
             lstGrammarActions.append(act);
         }
         {
-            MessageComposer::PluginGrammarAction act;
+            TextGrammarCheck::GrammarAction act;
             act.setBlockId(2);
             act.setStart(3);
             act.setLength(3);
