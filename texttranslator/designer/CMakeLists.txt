@@ -14,7 +14,7 @@ ecm_add_qtdesignerplugin(texttranslatorwidgets
     WIDGETS
     TextTranslator::TranslatorWidget
     LINK_LIBRARIES
-    KF5::TextTranslator
+    KF${KF_MAJOR_VERSION}::TextTranslator
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel
     )

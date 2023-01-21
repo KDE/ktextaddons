@@ -37,7 +37,7 @@ if(BUILD_DESIGNERPLUGIN)
 endif()
 
 add_library(KF5TextTranslator )
-add_library(KF5::TextTranslator ALIAS KF5TextTranslator)
+add_library(KF${KF_MAJOR_VERSION}::TextTranslator ALIAS KF5TextTranslator)
 ecm_qt_declare_logging_category(KF5TextTranslator HEADER texttranslator_debug.h
     IDENTIFIER TEXTTRANSLATOR_LOG CATEGORY_NAME org.kde.kf5.texttranslator
         DESCRIPTION "kf5 (TextTranslator)"
@@ -102,9 +102,9 @@ target_link_libraries(KF5TextTranslator
     Qt::Widgets
     Qt::Network
     PRIVATE
-    KF5::I18n
-    KF5::WidgetsAddons
-    KF5::ConfigGui
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::ConfigGui
     )
 
 target_include_directories(KF5TextTranslator INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/>")

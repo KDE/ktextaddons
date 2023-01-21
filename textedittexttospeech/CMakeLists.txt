@@ -12,7 +12,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
 )
 
 add_library(KF5TextEditTextToSpeech)
-add_library(KF5::TextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
+add_library(KF${KF_MAJOR_VERSION}::TextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
 
 if (TEXTEDIT_TEXT_TO_SPEECH)
     target_sources(KF5TextEditTextToSpeech PRIVATE
@@ -48,10 +48,10 @@ endif()
 if (TEXTEDIT_TEXT_TO_SPEECH)
     target_link_libraries(KF5TextEditTextToSpeech
         PRIVATE
-        KF5::WidgetsAddons
-        KF5::ConfigWidgets
-        KF5::XmlGui
-        KF5::I18n
+        KF${KF_MAJOR_VERSION}::WidgetsAddons
+        KF${KF_MAJOR_VERSION}::ConfigWidgets
+        KF${KF_MAJOR_VERSION}::XmlGui
+        KF${KF_MAJOR_VERSION}::I18n
         Qt::TextToSpeech
         )
 endif()
@@ -70,7 +70,7 @@ target_include_directories(KF5TextEditTextToSpeech INTERFACE "$<INSTALL_INTERFAC
 
 target_link_libraries(KF5TextEditTextToSpeech
     PRIVATE
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 set_target_properties(KF5TextEditTextToSpeech PROPERTIES
@@ -135,7 +135,7 @@ install(FILES
 install(EXPORT KF5TextEditTextToSpeechTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE KF5TextEditTextToSpeechTargets.cmake
-    NAMESPACE KF5::
+    NAMESPACE KF${KF_MAJOR_VERSION}::
     )
 
 install(FILES
