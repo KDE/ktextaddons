@@ -13,8 +13,8 @@ Dependencies:
     'frameworks/kconfig': '@latest-kf6'
     'frameworks/kconfigwidgets': '@latest-kf6'
     'frameworks/karchive': '@latest-kf6'
-    'frameworks/kxmlgui': '@stable-kf6'
-    'frameworks/kcoreaddons': '@stable-kf6'
+    'frameworks/kxmlgui': '@latest-kf6'
+    'frameworks/kcoreaddons': '@latest-kf6'
 
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
