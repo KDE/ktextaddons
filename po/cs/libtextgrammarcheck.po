@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
 "PO-Revision-Date: 2021-03-30 15:32+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: common/grammarresulttextedit.cpp:93
 #, kde-format
 msgid "Replacement"
-msgstr ""
+msgstr "Nahrazení"
 
 #: common/grammarresulttextedit.cpp:102
 #, kde-format
@@ -35,12 +35,12 @@ msgstr ""
 #: common/grammarresulttextedit.cpp:115
 #, kde-format
 msgid "Check Again"
-msgstr ""
+msgstr "Znovu zkontrolovat"
 
 #: common/grammarresulttextedit.cpp:118
 #, kde-format
 msgid "Configure..."
-msgstr ""
+msgstr "Nastavit..."
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
@@ -50,23 +50,23 @@ msgstr ""
 #: common/grammarresultwidget.cpp:32
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: grammalecte/grammalecteconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr ""
+msgstr "Nastavit Grammalecte"
 
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #: grammalecte/grammalecteconfigwidget.cpp:36
 #, kde-format
 msgid "Grammar Settings"
-msgstr ""
+msgstr "Nastavení mluvnice"
 
 #: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
@@ -88,7 +88,7 @@ msgstr ""
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, kde-format
 msgid "Reload Settings"
-msgstr ""
+msgstr "Obnovit nastavení"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
@@ -101,38 +101,35 @@ msgid "Add full 'grammalecte-cli.py' path"
 msgstr ""
 
 #: grammalecte/grammalecteconfigwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte Path:"
-msgstr "Modul Grammalecte"
+msgstr "Cesta k Grammalecte:"
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "Cesta k Pythonu chybí."
 
 #: grammalecte/grammalecteresultwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte path not found."
-msgstr "Modul Grammalecte"
+msgstr "Cesta ke Grammalecte nenalezena."
 
 #: grammalecte/grammalecteresultwidget.cpp:65
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr ""
+msgstr "Soubor programu Grammalecte nenalezen."
 
 #: grammalecte/grammalecteresultwidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Modul Grammalecte"
+msgstr ""
 
+# error box title
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte error"
-msgstr "Modul Grammalecte"
+msgstr "Chyba Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
 #, kde-format
@@ -142,42 +139,42 @@ msgstr ""
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
 msgid "English"
-msgstr ""
+msgstr "Anglický"
 
 #: languagetool/languagetoolcombobox.cpp:32
 #, kde-format
 msgid "Asturian"
-msgstr ""
+msgstr "Asturian"
 
 #: languagetool/languagetoolcombobox.cpp:33
 #, kde-format
 msgid "Belarusian"
-msgstr ""
+msgstr "Běloruský"
 
 #: languagetool/languagetoolcombobox.cpp:34
 #, kde-format
 msgid "Breton"
-msgstr ""
+msgstr "Bretonština"
 
 #: languagetool/languagetoolcombobox.cpp:35
 #, kde-format
 msgid "Catalan"
-msgstr ""
+msgstr "Katalánský"
 
 #: languagetool/languagetoolcombobox.cpp:36
 #, kde-format
 msgid "Chinese"
-msgstr ""
+msgstr "Čínština"
 
 #: languagetool/languagetoolcombobox.cpp:37
 #, kde-format
 msgid "Danish"
-msgstr ""
+msgstr "Dánský"
 
 #: languagetool/languagetoolcombobox.cpp:38
 #, kde-format
 msgid "Dutch"
-msgstr ""
+msgstr "Nizozemský"
 
 #: languagetool/languagetoolcombobox.cpp:39
 #, kde-format
@@ -192,108 +189,108 @@ msgstr ""
 #: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
 msgid "Esperanto"
-msgstr ""
+msgstr "Esperanto"
 
 #: languagetool/languagetoolcombobox.cpp:42
 #, kde-format
 msgid "French"
-msgstr ""
+msgstr "Francouzština"
 
 #: languagetool/languagetoolcombobox.cpp:43
 #, kde-format
 msgid "Galician"
-msgstr ""
+msgstr "Galicijský"
 
 #: languagetool/languagetoolcombobox.cpp:44
 #, kde-format
 msgid "German"
-msgstr ""
+msgstr "Němčina"
 
 #: languagetool/languagetoolcombobox.cpp:45
 #, kde-format
 msgid "Greek"
-msgstr ""
+msgstr "Řecký"
 
 #: languagetool/languagetoolcombobox.cpp:46
 #, kde-format
 msgid "Italian"
-msgstr ""
+msgstr "Italština"
 
 #: languagetool/languagetoolcombobox.cpp:47
 #, kde-format
 msgid "Japanese"
-msgstr ""
+msgstr "Japonština"
 
 #: languagetool/languagetoolcombobox.cpp:48
 #, kde-format
 msgid "Khmer"
-msgstr ""
+msgstr "Khmérské"
 
 #: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "Perský"
 
 #: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
 msgid "Polish"
-msgstr ""
+msgstr "Polský"
 
 #: languagetool/languagetoolcombobox.cpp:51
 #, kde-format
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugalština"
 
 #: languagetool/languagetoolcombobox.cpp:52
 #, kde-format
 msgid "Romanian"
-msgstr ""
+msgstr "Rumunský"
 
 #: languagetool/languagetoolcombobox.cpp:53
 #, kde-format
 msgid "Russian"
-msgstr ""
+msgstr "Ruština"
 
 #: languagetool/languagetoolcombobox.cpp:54
 #, kde-format
 msgid "Slovak"
-msgstr ""
+msgstr "Slovenský"
 
 #: languagetool/languagetoolcombobox.cpp:55
 #, kde-format
 msgid "Slovenian"
-msgstr ""
+msgstr "Slovinský"
 
 #: languagetool/languagetoolcombobox.cpp:56
 #, kde-format
 msgid "Spanish"
-msgstr ""
+msgstr "Španělština"
 
 #: languagetool/languagetoolcombobox.cpp:57
 #, kde-format
 msgid "Swedish"
-msgstr ""
+msgstr "Švédský"
 
 #: languagetool/languagetoolcombobox.cpp:58
 #, kde-format
 msgid "Tagalog"
-msgstr ""
+msgstr "Tagalog"
 
 #: languagetool/languagetoolcombobox.cpp:59
 #, kde-format
 msgid "Tamil"
-msgstr ""
+msgstr "Tamilština"
 
 #: languagetool/languagetoolcombobox.cpp:60
 #, kde-format
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrajinský"
 
 #: languagetool/languagetoolconfigdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr ""
+msgstr "Nastavit Jazykový nástroj"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
@@ -308,12 +305,12 @@ msgstr ""
 #: languagetool/languagetoolconfigwidget.cpp:52
 #, kde-format
 msgid "Language:"
-msgstr ""
+msgstr "Jazyk:"
 
 #: languagetool/languagetoolconfigwidget.cpp:64
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "Obnovit"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
@@ -328,7 +325,7 @@ msgstr ""
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
 msgid "Check"
-msgstr ""
+msgstr "Zkontrolovat"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
