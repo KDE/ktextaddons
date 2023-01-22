@@ -186,7 +186,7 @@ QString AutoCorrectionUtils::containsAutoCorrectionFile(const QString &lang, con
     if (!libreOfficeAutocorrectPaths.isEmpty()) {
         QString fixLangExtension = lang;
         fixLangExtension.replace(QLatin1Char('_'), QLatin1Char('-'));
-        for (const auto &path : libreOfficeAutocorrectPaths) {
+        for (const auto &path : std::as_const(libreOfficeAutocorrectPaths)) {
             const QString filename = path + AutoCorrectionUtils::libreofficeFile(fixLangExtension);
             // qDebug() << " filename " << filename;
             if (QFileInfo::exists(filename)) {
