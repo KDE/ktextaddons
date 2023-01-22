@@ -78,7 +78,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
+    QT 6.4.0
     KF 5.102
 )
 
