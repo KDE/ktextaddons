@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the kdepim-addons package.
 #
 # Automatically generated, 2022.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2022-09-20 12:06+0200\n"
+"PO-Revision-Date: 2023-01-21 20:21+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,58 +17,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
 msgid "Any text to check."
-msgstr ""
+msgstr "Всякакъв текст за проверка"
 
 #: common/grammarresulttextedit.cpp:93
 #, kde-format
 msgid "Replacement"
-msgstr ""
+msgstr "Заместване"
 
 #: common/grammarresulttextedit.cpp:102
 #, kde-format
 msgid "Online Grammar Information"
-msgstr ""
+msgstr "Онлайн информация за граматика"
 
 #: common/grammarresulttextedit.cpp:115
 #, kde-format
 msgid "Check Again"
-msgstr ""
+msgstr "Повторна проверка"
 
 #: common/grammarresulttextedit.cpp:118
 #, kde-format
 msgid "Configure..."
-msgstr ""
+msgstr "Конфигуриране..."
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
 msgid "See on: %1"
-msgstr ""
+msgstr "Виж на: %1"
 
 #: common/grammarresultwidget.cpp:32
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Затваряне"
 
 #: grammalecte/grammalecteconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr ""
+msgstr "Конфигуриране на Grammalecte"
 
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Общи"
 
 #: grammalecte/grammalecteconfigwidget.cpp:36
 #, kde-format
 msgid "Grammar Settings"
-msgstr ""
+msgstr "Граматически настройки"
 
 #: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
@@ -76,261 +76,259 @@ msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
 msgstr ""
+"Невъзможно е да се получат опции. Моля, проверете дали сте инсталирали "
+"grammalected."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, kde-format
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "Грешка при екстрахиране на опциите"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
 #, kde-format
 msgid "Press Button for Reloading Settings"
-msgstr ""
+msgstr "Натиснете бутона за презареждане на настройките"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, kde-format
 msgid "Reload Settings"
-msgstr ""
+msgstr "Презареждане на настройките"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
 msgid "Python Path:"
-msgstr ""
+msgstr "Път до Python:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "Добавяне на пълния път до  'grammalecte-cli.py'"
 
 #: grammalecte/grammalecteconfigwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte Path:"
-msgstr "Grammalecte приставка"
+msgstr "Път до Grammalecte:"
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "Пътят до Python липсва."
 
 #: grammalecte/grammalecteresultwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte path not found."
-msgstr "Grammalecte приставка"
+msgstr "Пътят до Grammalecte не е намерен."
 
 #: grammalecte/grammalecteresultwidget.cpp:65
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr ""
+msgstr "Пътят до програмните файлове на  Grammalecte не е намерен."
 
 #: grammalecte/grammalecteresultwidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Grammalecte приставка"
+msgstr "Файлът на командния ред  на  Grammalecte не е намерен."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte error"
-msgstr "Grammalecte приставка"
+msgstr "Грешка в Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
 #, kde-format
 msgid "Select Path"
-msgstr ""
+msgstr "Изберете път"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
 msgid "English"
-msgstr ""
+msgstr "Английски"
 
 #: languagetool/languagetoolcombobox.cpp:32
 #, kde-format
 msgid "Asturian"
-msgstr ""
+msgstr "Астурийски"
 
 #: languagetool/languagetoolcombobox.cpp:33
 #, kde-format
 msgid "Belarusian"
-msgstr ""
+msgstr "Белоруски"
 
 #: languagetool/languagetoolcombobox.cpp:34
 #, kde-format
 msgid "Breton"
-msgstr ""
+msgstr "Бретонски"
 
 #: languagetool/languagetoolcombobox.cpp:35
 #, kde-format
 msgid "Catalan"
-msgstr ""
+msgstr "Каталонски"
 
 #: languagetool/languagetoolcombobox.cpp:36
 #, kde-format
 msgid "Chinese"
-msgstr ""
+msgstr "Китайски"
 
 #: languagetool/languagetoolcombobox.cpp:37
 #, kde-format
 msgid "Danish"
-msgstr ""
+msgstr "Датски"
 
 #: languagetool/languagetoolcombobox.cpp:38
 #, kde-format
 msgid "Dutch"
-msgstr ""
+msgstr "Холандски"
 
 #: languagetool/languagetoolcombobox.cpp:39
 #, kde-format
 msgid "English (Australian)"
-msgstr ""
+msgstr "Английски(Австралийски)"
 
 #: languagetool/languagetoolcombobox.cpp:40
 #, kde-format
 msgid "English (Canadian)"
-msgstr ""
+msgstr "Английски(Канадски)"
 
 #: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
 msgid "Esperanto"
-msgstr ""
+msgstr "Есперанто"
 
 #: languagetool/languagetoolcombobox.cpp:42
 #, kde-format
 msgid "French"
-msgstr ""
+msgstr "Френски"
 
 #: languagetool/languagetoolcombobox.cpp:43
 #, kde-format
 msgid "Galician"
-msgstr ""
+msgstr "Галисийски"
 
 #: languagetool/languagetoolcombobox.cpp:44
 #, kde-format
 msgid "German"
-msgstr ""
+msgstr "Немски"
 
 #: languagetool/languagetoolcombobox.cpp:45
 #, kde-format
 msgid "Greek"
-msgstr ""
+msgstr "Гръцки"
 
 #: languagetool/languagetoolcombobox.cpp:46
 #, kde-format
 msgid "Italian"
-msgstr ""
+msgstr "Италиански"
 
 #: languagetool/languagetoolcombobox.cpp:47
 #, kde-format
 msgid "Japanese"
-msgstr ""
+msgstr "Японски"
 
 #: languagetool/languagetoolcombobox.cpp:48
 #, kde-format
 msgid "Khmer"
-msgstr ""
+msgstr "Кхмерски"
 
 #: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "Персийски"
 
 #: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
 msgid "Polish"
-msgstr ""
+msgstr "Полски"
 
 #: languagetool/languagetoolcombobox.cpp:51
 #, kde-format
 msgid "Portuguese"
-msgstr ""
+msgstr "Португалски"
 
 #: languagetool/languagetoolcombobox.cpp:52
 #, kde-format
 msgid "Romanian"
-msgstr ""
+msgstr "Румънски"
 
 #: languagetool/languagetoolcombobox.cpp:53
 #, kde-format
 msgid "Russian"
-msgstr ""
+msgstr "Руски"
 
 #: languagetool/languagetoolcombobox.cpp:54
 #, kde-format
 msgid "Slovak"
-msgstr ""
+msgstr "Словашки"
 
 #: languagetool/languagetoolcombobox.cpp:55
 #, kde-format
 msgid "Slovenian"
-msgstr ""
+msgstr "Словенски"
 
 #: languagetool/languagetoolcombobox.cpp:56
 #, kde-format
 msgid "Spanish"
-msgstr ""
+msgstr "Испански"
 
 #: languagetool/languagetoolcombobox.cpp:57
 #, kde-format
 msgid "Swedish"
-msgstr ""
+msgstr "Шведски"
 
 #: languagetool/languagetoolcombobox.cpp:58
 #, kde-format
 msgid "Tagalog"
-msgstr ""
+msgstr "Тагалог"
 
 #: languagetool/languagetoolcombobox.cpp:59
 #, kde-format
 msgid "Tamil"
-msgstr ""
+msgstr "Тамилски"
 
 #: languagetool/languagetoolcombobox.cpp:60
 #, kde-format
 msgid "Ukrainian"
-msgstr ""
+msgstr "Украински"
 
 #: languagetool/languagetoolconfigdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr ""
+msgstr "Конфигуриране на Езикови инструменти"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgid "Use Local Instance"
-msgstr ""
+msgstr "Използване на локална инстанция"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgid "Instance Path:"
-msgstr ""
+msgstr "Път на инсталация:"
 
 #: languagetool/languagetoolconfigwidget.cpp:52
 #, kde-format
 msgid "Language:"
-msgstr ""
+msgstr "Език:"
 
 #: languagetool/languagetoolconfigwidget.cpp:64
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "Обновяване"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "An error was reported: %1"
-msgstr ""
+msgstr "Съобщение за грешка:%1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "Проверка на граматиката неуспешна."
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
 msgid "Check"
-msgstr ""
+msgstr "Проверка"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
@@ -338,11 +336,13 @@ msgid ""
 "An error occurred attempting to load the list of available languages:\n"
 "%1"
 msgstr ""
+"Възникна грешка при опит за зареждане на списъка с наличните езици:\n"
+"%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
 msgid "List of Languages"
-msgstr ""
+msgstr "Списък на езици"
 
 #~ msgid "&Check Grammar (Grammalecte)"
 #~ msgstr "&Граматическа проверка (Grammalecte)"
