@@ -10,7 +10,7 @@ ecm_qtdesignerplugin_widget(TextTranslator::TranslatorWidget
 
 ecm_add_qtdesignerplugin(texttranslatorwidgets
 	NAME TextTranslatorWidgets
-    OUTPUT_NAME texttranslatorwidgets
+    OUTPUT_NAME texttranslatorwidgets${QT_MAJOR_VERSION}
     WIDGETS
     TextTranslator::TranslatorWidget
     LINK_LIBRARIES
