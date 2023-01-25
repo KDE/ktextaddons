@@ -37,7 +37,7 @@ if(BUILD_DESIGNERPLUGIN)
 endif()
 
 add_library(KF5TextTranslator )
-add_library(KF${KF_MAJOR_VERSION}::TextTranslator ALIAS KF5TextTranslator)
+add_library(KF5::TextTranslator ALIAS KF5TextTranslator)
 ecm_qt_declare_logging_category(KF5TextTranslator HEADER texttranslator_debug.h
     IDENTIFIER TEXTTRANSLATOR_LOG CATEGORY_NAME org.kde.kf5.texttranslator
         DESCRIPTION "kf5 (TextTranslator)"

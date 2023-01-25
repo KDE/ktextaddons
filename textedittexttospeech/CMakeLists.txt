@@ -12,7 +12,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
 )
 
 add_library(KF5TextEditTextToSpeech)
-add_library(KF${KF_MAJOR_VERSION}::TextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
+add_library(KF5::TextEditTextToSpeech ALIAS KF5TextEditTextToSpeech)
 
 if (TEXTEDIT_TEXT_TO_SPEECH)
     target_sources(KF5TextEditTextToSpeech PRIVATE
@@ -135,7 +135,7 @@ install(FILES
 install(EXPORT KF5TextEditTextToSpeechTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE KF5TextEditTextToSpeechTargets.cmake
-    NAMESPACE KF${KF_MAJOR_VERSION}::
+    NAMESPACE KF5::
     )
 
 install(FILES

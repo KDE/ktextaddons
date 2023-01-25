@@ -4,26 +4,26 @@ ecm_add_test(lingvaengineclienttest.cpp lingvaengineclienttest.h ../lingvaengine
     ../lingvaenginedialog.cpp ../lingvaenginewidget.cpp ${translator_lingva_debug_SRCS}
     TEST_NAME lingvaengineclienttest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
 #######
 ecm_add_test(lingvaenginewidgettest.cpp lingvaenginewidgettest.h ../lingvaenginewidget.cpp
     TEST_NAME lingvaenginewidgettest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
 #######
 ecm_add_test(lingvaenginedialogtest.cpp lingvaenginedialogtest.h ../lingvaenginedialog.cpp ../lingvaenginewidget.cpp
     TEST_NAME lingvaenginedialogtest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
 #######
 ecm_add_test(lingvaengineutiltest.h lingvaengineutiltest.cpp ../lingvaengineutil.cpp
     TEST_NAME lingvaengineutiltest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
 )

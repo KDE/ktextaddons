@@ -10,7 +10,7 @@ ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h
     ${translator_libretranslate_debug_SRCS}
     TEST_NAME libretranslateengineclienttest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore ${translator_libretranslate_LIB}
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore ${translator_libretranslate_LIB}
 )
 
 ######
@@ -18,7 +18,7 @@ ecm_add_test(libretranslateengineconfigurewidgettest.cpp libretranslateenginecon
     ../libretranslateengineconfigurewidget.cpp
     TEST_NAME libretranslateengineconfigurewidgettest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n
 )
 
 ######
@@ -26,7 +26,7 @@ ecm_add_test(libretranslateengineconfiguredialogtest.cpp libretranslateenginecon
     ../libretranslateengineconfiguredialog.cpp ../libretranslateengineconfigurewidget.cpp
     TEST_NAME libretranslateengineconfiguredialogtest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n
 )
 
 ######
@@ -34,5 +34,5 @@ ecm_add_test(libretranslateengineutiltest.cpp libretranslateengineutiltest.h
     ../libretranslateengineutil.cpp
     TEST_NAME libretranslateengineutiltest
     
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n
 )

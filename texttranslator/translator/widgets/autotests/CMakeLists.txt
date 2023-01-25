@@ -6,7 +6,7 @@ macro(add_translatorwidget_test _source)
     add_executable( ${_name} ${_sources} ${_name}.h)
     add_test(NAME ${_name} COMMAND ${_name} )
     ecm_mark_as_test(${_name})
-    target_link_libraries( ${_name} Qt::Test KF${KF_MAJOR_VERSION}::TextTranslator)
+    target_link_libraries( ${_name} Qt::Test KF5::TextTranslator)
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
 

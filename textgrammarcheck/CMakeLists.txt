@@ -33,7 +33,7 @@ install(FILES
     )
 
 add_library(KF5TextGrammarCheck )
-add_library(KF${KF_MAJOR_VERSION}::TextGrammarCheck ALIAS KF5TextGrammarCheck)
+add_library(KF5::TextGrammarCheck ALIAS KF5TextGrammarCheck)
 ecm_qt_declare_logging_category(KF5TextGrammarCheck HEADER textgrammarcheck_debug.h
     IDENTIFIER TEXTGRAMMARCHECK_LOG CATEGORY_NAME org.kde.kf5.textgrammarcheck
         DESCRIPTION "kf5 (Text Grammar Check)"

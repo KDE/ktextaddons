@@ -9,7 +9,7 @@ kconfig_add_kcfg_files(textautocorrection_settings_SRCS
     )
 
 add_library(KF5TextAutoCorrection )
-add_library(KF${KF_MAJOR_VERSION}::TextAutoCorrection ALIAS KF5TextAutoCorrection)
+add_library(KF5::TextAutoCorrection ALIAS KF5TextAutoCorrection)
 ki18n_wrap_ui(KF5TextAutoCorrection
     ui/autocorrectionwidget.ui
     )

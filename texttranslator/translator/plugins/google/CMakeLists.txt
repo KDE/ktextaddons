@@ -17,7 +17,7 @@ target_sources(translator_google PRIVATE
     googleengineplugin.cpp
 )
 
-target_link_libraries(translator_google PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(translator_google PRIVATE KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n)
 
 install(TARGETS translator_google  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
 

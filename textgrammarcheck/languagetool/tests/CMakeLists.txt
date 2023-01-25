@@ -4,6 +4,6 @@
 add_executable(languagetool_gui)
 target_sources(languagetool_gui PRIVATE main.cpp languagetoolwidget.cpp languagetoolwidget.h)
 target_link_libraries(languagetool_gui
-    KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::TextGrammarCheck Qt::Network
+    KF${KF_MAJOR_VERSION}::I18n KF5::TextGrammarCheck Qt::Network
 )
 
