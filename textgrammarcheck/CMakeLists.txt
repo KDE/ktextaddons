@@ -221,9 +221,9 @@ if (BUILD_QCH)
         ${TextGrammarCheck_grammalecte_HEADERS}
         ${TextGrammarCheck_languagetool_HEADERS}
         LINK_QCHS
-            Qt5Core_QCH
-            Qt5Gui_QCH
-            Qt5Widgets_QCH
+            Qt${QT_MAJOR_VERSION}Core_QCH
+            Qt${QT_MAJOR_VERSION}Gui_QCH
+            Qt${QT_MAJOR_VERSION}Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
