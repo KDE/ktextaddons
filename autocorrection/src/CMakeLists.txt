@@ -81,6 +81,7 @@ target_link_libraries(KF5TextAutoCorrection
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::Archive
+    Qt::Xml
     )
 
 target_include_directories(KF5TextAutoCorrection INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/>")
