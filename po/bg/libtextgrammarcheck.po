@@ -343,25 +343,3 @@ msgstr ""
 #, kde-format
 msgid "List of Languages"
 msgstr "Списък на езици"
-
-#~ msgid "&Check Grammar (Grammalecte)"
-#~ msgstr "&Граматическа проверка (Grammalecte)"
-
-#~ msgid "&Check Grammar (LanguageTool)"
-#~ msgstr "&Граматическа проверка  (Езикови инструменти)"
-
-#~ msgid ""
-#~ "You do not use local instance.\n"
-#~ "Your text will send on a external web site (https://languagetool.org/).\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "Не използвате локална инсталация.\n"
-#~ "Вашият текст ще бъде изпратен до външна уебстраница  (https://"
-#~ "languagetool.org/).\n"
-#~ "Искате ли да продължите?"
-
-#~ msgid "Check Grammar with LanguageTool"
-#~ msgstr "Проверка на граматиката с Езикови инструменти"
-
-#~ msgid "LanguageTool Plugin"
-#~ msgstr "Приставка за езикови инструменти"
