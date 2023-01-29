@@ -3,44 +3,44 @@
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextgrammarcheck\")
 
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextGrammarCheck")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextGrammarCheck")
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KF5TextGrammarCheckConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextGrammarCheckConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTGRAMMARCHECK
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckConfigVersion.cmake"
     SOVERSION 1
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5TextGrammarCheckConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT KF5TextGrammarCheckTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextGrammarCheckTargets.cmake NAMESPACE KF5::)
+install(EXPORT KF${KF_MAJOR_VERSION}TextGrammarCheckTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF${KF_MAJOR_VERSION}TextGrammarCheckTargets.cmake NAMESPACE KF${KF_MAJOR_VERSION}::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/ COMPONENT Devel
     )
 
-add_library(KF5TextGrammarCheck )
-add_library(KF5::TextGrammarCheck ALIAS KF5TextGrammarCheck)
-ecm_qt_declare_logging_category(KF5TextGrammarCheck HEADER textgrammarcheck_debug.h
-    IDENTIFIER TEXTGRAMMARCHECK_LOG CATEGORY_NAME org.kde.kf5.textgrammarcheck
-        DESCRIPTION "kf5 (Text Grammar Check)"
+add_library(KF${KF_MAJOR_VERSION}TextGrammarCheck )
+add_library(KF${KF_MAJOR_VERSION}::TextGrammarCheck ALIAS KF${KF_MAJOR_VERSION}TextGrammarCheck)
+ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextGrammarCheck HEADER textgrammarcheck_debug.h
+    IDENTIFIER TEXTGRAMMARCHECK_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textgrammarcheck
+        DESCRIPTION "KF${KF_MAJOR_VERSION} (Text Grammar Check)"
         EXPORT KTEXTADDONS
     )
 
-target_sources(KF5TextGrammarCheck PRIVATE
+target_sources(KF${KF_MAJOR_VERSION}TextGrammarCheck PRIVATE
     common/grammarerror.cpp
     common/grammarerror.h
     common/grammaraction.h
@@ -105,12 +105,12 @@ if (BUILD_TESTING)
 endif()
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5TextGrammarCheck PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF${KF_MAJOR_VERSION}TextGrammarCheck PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF5TextGrammarCheck BASE_NAME textgrammarcheck)
+generate_export_header(KF${KF_MAJOR_VERSION}TextGrammarCheck BASE_NAME textgrammarcheck)
 
 
-target_link_libraries(KF5TextGrammarCheck
+target_link_libraries(KF${KF_MAJOR_VERSION}TextGrammarCheck
     PUBLIC
     Qt::Gui
     Qt::Widgets
@@ -120,17 +120,17 @@ target_link_libraries(KF5TextGrammarCheck
     KF${KF_MAJOR_VERSION}::ConfigWidgets
     )
 
-target_include_directories(KF5TextGrammarCheck INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/>")
+target_include_directories(KF${KF_MAJOR_VERSION}TextGrammarCheck INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/>")
 
-set_target_properties(KF5TextGrammarCheck PROPERTIES
+set_target_properties(KF${KF_MAJOR_VERSION}TextGrammarCheck PROPERTIES
     VERSION ${TEXTGRAMMARCHECK_VERSION}
     SOVERSION ${TEXTGRAMMARCHECK_SOVERSION}
     EXPORT_NAME TextGrammarCheck
     )
 
 install(TARGETS
-    KF5TextGrammarCheck
-    EXPORT KF5TextGrammarCheckTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KF${KF_MAJOR_VERSION}TextGrammarCheck
+    EXPORT KF${KF_MAJOR_VERSION}TextGrammarCheckTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(TextGrammarCheck_Camelcasecommon_HEADERS
@@ -172,7 +172,7 @@ ecm_generate_headers(TextGrammarCheck_Camelcaselanguagetool_HEADERS
 
 
 ecm_generate_pri_file(BASE_NAME TextGrammarCheck
-    LIB_NAME KF5TextGrammarCheck
+    LIB_NAME KF${KF_MAJOR_VERSION}TextGrammarCheck
     DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck
     )
 
@@ -211,9 +211,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5TextGrammarCheck_QCH
-        NAME KF5TextGrammarCheck
-        BASE_NAME KF5TextGrammarCheck
+        KF${KF_MAJOR_VERSION}TextGrammarCheck_QCH
+        NAME KF${KF_MAJOR_VERSION}TextGrammarCheck
+        BASE_NAME KF${KF_MAJOR_VERSION}TextGrammarCheck
         VERSION ${TEXTGRAMMARCHECK_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -233,10 +233,10 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
     ecm_install_qch_export(
-        TARGETS KF5TextGrammarCheck_QCH
-        FILE KF5TextGrammarCheckQchTargets.cmake
+        TARGETS KF${KF_MAJOR_VERSION}TextGrammarCheck_QCH
+        FILE KF${KF_MAJOR_VERSION}TextGrammarCheckQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextGrammarCheckQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckQchTargets.cmake\")")
 endif()

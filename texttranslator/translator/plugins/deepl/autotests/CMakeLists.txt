@@ -10,19 +10,19 @@ ecm_add_test(deeplengineclienttest.cpp deeplengineclienttest.h ../deeplenginecli
     ../deeplengineconfigurewidget.cpp
     TEST_NAME deeplengineclienttest
 
-    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore ${translator_deepl_LIB}
+    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore ${translator_deepl_LIB}
 )
 
 #####
 ecm_add_test(deeplengineconfiguredialogtest.cpp deeplengineconfiguredialogtest.h ../deeplengineconfiguredialog.cpp ../deeplengineconfigurewidget.cpp ${translator_debug_deepl_SRCS}
     TEST_NAME deeplengineconfiguredialogtest
 
-    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
 #####
 ecm_add_test(deeplengineconfigurewidgettest.cpp deeplengineconfigurewidgettest.h ../deeplengineconfigurewidget.cpp
     TEST_NAME deeplengineconfigurewidgettest
 
-    LINK_LIBRARIES Qt::Test Qt::Gui KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
 )

@@ -5,7 +5,7 @@ add_library(translator_deepl MODULE)
 ecm_qt_declare_logging_category(translator_debug_deepl_SRCS
     HEADER deepltranslator_debug.h
     IDENTIFIER TRANSLATOR_DEEPL_LOG
-    CATEGORY_NAME org.kde.kf5.texttranslator.deepl
+    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.deepl
     DESCRIPTION "deepl translator"
     EXPORT KTEXTADDONS
 )
@@ -23,7 +23,7 @@ target_sources(translator_deepl PRIVATE
     deeplengineutil.cpp
 )
 
-target_link_libraries(translator_deepl PRIVATE KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore)
+target_link_libraries(translator_deepl PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore)
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(translator_deepl PRIVATE qt6keychain)
 else()

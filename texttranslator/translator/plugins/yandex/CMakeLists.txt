@@ -11,12 +11,12 @@ target_sources(translator_yandex PRIVATE
 ecm_qt_declare_logging_category(translator_yandex
     HEADER yandextranslator_debug.h
     IDENTIFIER TRANSLATOR_YANDEX_LOG
-    CATEGORY_NAME org.kde.kf5.texttranslator.yandex
+    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.yandex
     DESCRIPTION "yandex translator"
     EXPORT KTEXTADDONS
 )
 
-target_link_libraries(translator_yandex PRIVATE KF5::TextTranslator KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(translator_yandex PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n)
 
 install(TARGETS translator_yandex  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
 if (BUILD_TESTING)

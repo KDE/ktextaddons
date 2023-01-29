@@ -14,8 +14,8 @@ target_sources(grammarcommon PRIVATE
     grammarresultutil.cpp
     )
 
-ecm_qt_declare_logging_category(grammarcommon HEADER grammarcommon_debug.h IDENTIFIER LIBGRAMMARCOMMON_LOG CATEGORY_NAME org.kde.kf5.libgrammarcommon
-    DESCRIPTION "kf5 (libgramalecte common)"
+ecm_qt_declare_logging_category(grammarcommon HEADER grammarcommon_debug.h IDENTIFIER LIBGRAMMARCOMMON_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.libgrammarcommon
+    DESCRIPTION "KF${KF_MAJOR_VERSION} (libgramalecte common)"
     EXPORT KTEXTADDONS
     )
 

@@ -1,31 +1,31 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 add_definitions(-DTRANSLATION_DOMAIN=\"libtexttranslator\")
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5TextTranslator")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextTranslator")
 
 
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KF5TextTranslatorConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5TextTranslatorConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextTranslatorConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTTRANSLATE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5TextTranslatorConfigVersion.cmake"
-    SOVERSION 5
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfigVersion.cmake"
+    SOVERSION 1
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5TextTranslatorConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5TextTranslatorConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT KF5TextTranslatorTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5TextTranslatorTargets.cmake NAMESPACE KF5::)
+install(EXPORT KF${KF_MAJOR_VERSION}TextTranslatorTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF${KF_MAJOR_VERSION}TextTranslatorTargets.cmake NAMESPACE KF${KF_MAJOR_VERSION}::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
@@ -36,15 +36,15 @@ if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
 endif()
 
-add_library(KF5TextTranslator )
-add_library(KF5::TextTranslator ALIAS KF5TextTranslator)
-ecm_qt_declare_logging_category(KF5TextTranslator HEADER texttranslator_debug.h
-    IDENTIFIER TEXTTRANSLATOR_LOG CATEGORY_NAME org.kde.kf5.texttranslator
-        DESCRIPTION "kf5 (TextTranslator)"
+add_library(KF${KF_MAJOR_VERSION}TextTranslator )
+add_library(KF${KF_MAJOR_VERSION}::TextTranslator ALIAS KF${KF_MAJOR_VERSION}TextTranslator)
+ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextTranslator HEADER texttranslator_debug.h
+    IDENTIFIER TEXTTRANSLATOR_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator
+        DESCRIPTION "KF${KF_MAJOR_VERSION} (TextTranslator)"
         EXPORT KTEXTADDONS
     )
 
-target_sources(KF5TextTranslator PRIVATE
+target_sources(KF${KF_MAJOR_VERSION}TextTranslator PRIVATE
     translator/misc/translatorutil.cpp
     translator/misc/translatorutil.h
 
@@ -91,12 +91,12 @@ add_subdirectory(translator/plugins)
 
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5TextTranslator PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF${KF_MAJOR_VERSION}TextTranslator PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF5TextTranslator BASE_NAME texttranslator)
+generate_export_header(KF${KF_MAJOR_VERSION}TextTranslator BASE_NAME texttranslator)
 
 
-target_link_libraries(KF5TextTranslator
+target_link_libraries(KF${KF_MAJOR_VERSION}TextTranslator
     PUBLIC
     Qt::Gui
     Qt::Widgets
@@ -107,17 +107,17 @@ target_link_libraries(KF5TextTranslator
     KF${KF_MAJOR_VERSION}::ConfigGui
     )
 
-target_include_directories(KF5TextTranslator INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/>")
+target_include_directories(KF${KF_MAJOR_VERSION}TextTranslator INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/>")
 
-set_target_properties(KF5TextTranslator PROPERTIES
+set_target_properties(KF${KF_MAJOR_VERSION}TextTranslator PROPERTIES
     VERSION ${TEXTTRANSLATE_VERSION}
     SOVERSION ${TEXTTRANSLATE_SOVERSION}
     EXPORT_NAME TextTranslator
     )
 
 install(TARGETS
-    KF5TextTranslator
-    EXPORT KF5TextTranslatorTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    KF${KF_MAJOR_VERSION}TextTranslator
+    EXPORT KF${KF_MAJOR_VERSION}TextTranslatorTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(TextTranslator_Camelcasetranslatorwidgets_HEADERS
@@ -152,7 +152,7 @@ ecm_generate_headers(TextTranslator_Camelcasetranslatormisc_HEADERS
     )
 
 ecm_generate_pri_file(BASE_NAME TextTranslator
-    LIB_NAME KF5TextTranslator
+    LIB_NAME KF${KF_MAJOR_VERSION}TextTranslator
     DEPS "network" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator
     )
 
@@ -190,9 +190,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF5TextTranslator_QCH
-        NAME KF5TextTranslator
-        BASE_NAME KF5TextTranslator
+        KF${KF_MAJOR_VERSION}TextTranslator_QCH
+        NAME KF${KF_MAJOR_VERSION}TextTranslator
+        BASE_NAME KF${KF_MAJOR_VERSION}TextTranslator
         VERSION ${TEXTTRANSLATE_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -212,10 +212,10 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
     ecm_install_qch_export(
-        TARGETS KF5TextTranslator_QCH
-        FILE KF5TextTranslatorQchTargets.cmake
+        TARGETS KF${KF_MAJOR_VERSION}TextTranslator_QCH
+        FILE KF${KF_MAJOR_VERSION}TextTranslatorQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5TextTranslatorQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorQchTargets.cmake\")")
 endif()
