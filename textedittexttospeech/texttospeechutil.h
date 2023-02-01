@@ -11,7 +11,7 @@ namespace TextEditTextToSpeech
 {
 namespace TextToSpeechUtil
 {
-TEXTEDITTEXTTOSPEECH_TESTS_EXPORT Q_REQUIRED_RESULT QString textToSpeechConfigFileName();
-TEXTEDITTEXTTOSPEECH_TESTS_EXPORT Q_REQUIRED_RESULT QString textToSpeechConfigGroupName();
+Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigFileName();
+Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigGroupName();
 };
 }
