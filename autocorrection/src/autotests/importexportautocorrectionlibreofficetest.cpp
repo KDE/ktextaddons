@@ -15,6 +15,7 @@ QTEST_MAIN(ImportExportAutocorrectionLibreOfficeTest)
 ImportExportAutocorrectionLibreOfficeTest::ImportExportAutocorrectionLibreOfficeTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
