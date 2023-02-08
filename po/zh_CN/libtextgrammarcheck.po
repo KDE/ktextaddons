@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-01-12 10:30\n"
+"PO-Revision-Date: 2023-02-07 11:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,9 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/kdepim-addons/"
-"kmail_editorgrammar_plugins.pot\n"
-"X-Crowdin-File-ID: 9614\n"
+"X-Crowdin-File: /kf5-trunk/messages/ktextaddons/libtextgrammarcheck.pot\n"
+"X-Crowdin-File-ID: 41587\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -102,10 +101,9 @@ msgid "Add full 'grammalecte-cli.py' path"
 msgstr ""
 
 #: grammalecte/grammalecteconfigwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte Path:"
-msgstr "Grammalecte 插件"
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
@@ -113,10 +111,9 @@ msgid "Python path is missing."
 msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte path not found."
-msgstr "Grammalecte 插件"
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:65
 #, kde-format
@@ -124,16 +121,14 @@ msgid "Grammalecte program file not found."
 msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Grammalecte 插件"
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte error"
-msgstr "Grammalecte 插件"
+msgstr ""
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
 #, kde-format
@@ -342,24 +337,3 @@ msgstr ""
 #, kde-format
 msgid "List of Languages"
 msgstr ""
-
-#~ msgid "&Check Grammar (Grammalecte)"
-#~ msgstr "检查语法 (Grammalecte, &C)"
-
-#~ msgid "&Check Grammar (LanguageTool)"
-#~ msgstr "检查语法 (LanguageTool, &C)"
-
-#~ msgid ""
-#~ "You do not use local instance.\n"
-#~ "Your text will send on a external web site (https://languagetool.org/).\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "您没有使用本地实例。\n"
-#~ "您的文本将发送到外部网站 (https://languagetool.org/)。\n"
-#~ "您想要继续吗？"
-
-#~ msgid "Check Grammar with LanguageTool"
-#~ msgstr "使用 LanguageTool 检查语法"
-
-#~ msgid "LanguageTool Plugin"
-#~ msgstr "LanguageTool 插件"
