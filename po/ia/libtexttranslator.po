@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-01-10 22:48+0100\n"
+"PO-Revision-Date: 2023-02-08 22:44+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: translator/misc/translatorutil.cpp:30
 #, kde-format
@@ -360,12 +360,12 @@ msgstr "DeepL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr ""
+msgstr "Configura  motor"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:15
 #, kde-format
 msgid "Use Free License Key"
-msgstr ""
+msgstr "Una clave de licentia libere"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:27
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:33
@@ -377,7 +377,7 @@ msgstr "Clave API:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
 #, kde-format
 msgid "Server needs Api Key."
-msgstr ""
+msgstr "Server necessita Clave de Api"
 
 #: translator/plugins/google/googleengineclient.cpp:26
 #, kde-format
@@ -392,7 +392,7 @@ msgstr "Traduce Libre"
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "Server requiriva Clave de Api"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:26
 #: translator/plugins/lingva/lingvaenginewidget.cpp:22
@@ -403,7 +403,7 @@ msgstr "URL de servitor:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server url is not defined."
-msgstr ""
+msgstr "Url de Servitor non definite."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
