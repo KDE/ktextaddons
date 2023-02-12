@@ -1,19 +1,20 @@
 # translation of kmail_editorgrammar_plugins.po to Slovak
 # Roman Paholík <wizzardsk@gmail.com>, 2019.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019.
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail_editorgrammar_plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2019-11-05 19:56+0100\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-02-11 18:35+0100\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.08.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: common/grammarresulttextedit.cpp:39
@@ -39,7 +40,7 @@ msgstr "Znovu skontrolovať"
 #: common/grammarresulttextedit.cpp:118
 #, kde-format
 msgid "Configure..."
-msgstr ""
+msgstr "Konfigurovať..."
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
@@ -52,8 +53,7 @@ msgid "Close"
 msgstr "Zatvoriť"
 
 #: grammalecte/grammalecteconfigdialog.cpp:25
-#, fuzzy, kde-format
-#| msgid "Configure Grammalecte"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
 msgstr "Nastaviť Grammalecte"
@@ -100,7 +100,7 @@ msgstr "Cesta k Python-u:"
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "Pridať úplnú cestu 'grammalecte-cli.py'"
 
 #: grammalecte/grammalecteconfigwidget.cpp:140
 #, kde-format
@@ -110,37 +110,32 @@ msgstr "Cesta k Grammalecte:"
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "Chýba cesta pre Python."
 
 #: grammalecte/grammalecteresultwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Grammalecte path not found."
-msgstr "Cesta k Grammalecte:"
+msgstr "Nenašla sa cesta ku Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte program file not found."
-msgstr "Doplnok Grammalecte"
+msgstr "Súbor programu Grammalecte nebol nájdený."
 
 #: grammalecte/grammalecteresultwidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Doplnok Grammalecte"
+msgstr "Súbor Grammalecte cli nebol nájdený."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Grammalecte error"
-msgstr "Cesta k Grammalecte:"
+msgstr "Chyba Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Cesta k Grammalecte:"
+msgstr "Vyberte cestu"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
@@ -293,8 +288,7 @@ msgid "Ukrainian"
 msgstr "Ukrajinčina"
 
 #: languagetool/languagetoolconfigdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Configure LanguageTool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Nastaviť LanguageTool"
@@ -330,10 +324,9 @@ msgid "Failed to check grammar."
 msgstr "Nepodarilo sa skontrolovať pravopis."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check Again"
+#, kde-format
 msgid "Check"
-msgstr "Znovu skontrolovať"
+msgstr "Skontrolovať"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
