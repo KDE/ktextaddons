@@ -38,7 +38,7 @@ if (QT_MAJOR_VERSION STREQUAL "6")
     set(KF_MIN_VERSION "5.240.0")
     set(KF_MAJOR_VERSION "6")
 else()
-    set(KF_MIN_VERSION "5.100.0")
+    set(KF_MIN_VERSION "5.103.0")
     set(KF_MAJOR_VERSION "5")
 endif()
 
@@ -79,7 +79,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 ecm_set_disabled_deprecation_versions(
     QT 6.4.0
-    KF 5.102
+    KF 5.103
 )
 
 add_subdirectory(autocorrection)
