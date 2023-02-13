@@ -23,8 +23,8 @@ void GrammalecteGenerateConfigOptionJob::start()
         mProcess = new QProcess(this);
         mProcess->setProgram(mPythonPath);
         mProcess->setArguments(QStringList() << mGrammarlecteCliPath << QStringLiteral("-lo"));
-        connect(mProcess, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, &GrammalecteGenerateConfigOptionJob::slotFinished);
-        connect(mProcess, qOverload<QProcess::ProcessError>(&QProcess::errorOccurred), this, &GrammalecteGenerateConfigOptionJob::receivedError);
+        connect(mProcess, &QProcess::finished, this, &GrammalecteGenerateConfigOptionJob::slotFinished);
+        connect(mProcess, &QProcess::errorOccurred, this, &GrammalecteGenerateConfigOptionJob::receivedError);
         connect(mProcess, &QProcess::readyReadStandardError, this, &GrammalecteGenerateConfigOptionJob::receivedStdErr);
         connect(mProcess, &QProcess::readyReadStandardOutput, this, &GrammalecteGenerateConfigOptionJob::receivedStandardOutput);
         mProcess->start();
