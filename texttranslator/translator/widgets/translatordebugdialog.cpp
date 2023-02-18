@@ -19,6 +19,8 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWindow>
+
+#include <cerrno>
 namespace
 {
 const char myTranslatorDebugDialogConfigGroupName[] = "TranslatorDebugDialog";
