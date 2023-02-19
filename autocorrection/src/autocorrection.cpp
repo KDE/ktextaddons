@@ -293,8 +293,8 @@ void AutoCorrection::addNonBreakingSpace()
                 if (lastChar == QLatin1Char('C') && previousChar == QChar(0x000B0)) {
                     const int pos = d->mCursor.position() - 3 - block.position();
                     if (pos >= 0) {
-                        const QChar previousChar = text.at(pos);
-                        if (previousChar.isSpace()) {
+                        const QChar previousCharFromDegrees = text.at(pos);
+                        if (previousCharFromDegrees.isSpace()) {
                             QTextCursor cursor(d->mCursor);
                             cursor.setPosition(pos);
                             cursor.setPosition(pos + 1, QTextCursor::KeepAnchor);

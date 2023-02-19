@@ -61,12 +61,12 @@ void LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
     QPointer<LibreTranslateEngineConfigureDialog> dlg = new LibreTranslateEngineConfigureDialog(parentWidget);
     KConfigGroup myGroup(KSharedConfig::openConfig(), LibreTranslateEngineUtil::groupName());
-    QString serverUrl = myGroup.readEntry(LibreTranslateEngineUtil::serverUrlKey(), LibreTranslateEngineUtil::defaultServerUrl());
-    if (serverUrl.isEmpty()) {
-        serverUrl = LibreTranslateEngineUtil::defaultServerUrl();
+    QString serverUrlFromConfig = myGroup.readEntry(LibreTranslateEngineUtil::serverUrlKey(), LibreTranslateEngineUtil::defaultServerUrl());
+    if (serverUrlFromConfig.isEmpty()) {
+        serverUrlFromConfig = LibreTranslateEngineUtil::defaultServerUrl();
     }
-    serverUrl = LibreTranslateEngineUtil::adaptUrl(serverUrl);
-    dlg->setServerUrl(serverUrl);
+    serverUrlFromConfig = LibreTranslateEngineUtil::adaptUrl(serverUrlFromConfig);
+    dlg->setServerUrl(serverUrlFromConfig);
     dlg->setServerRequiredApiKey(myGroup.readEntry(LibreTranslateEngineUtil::serverRequiredApiKey(), false));
     auto readJob = new QKeychain::ReadPasswordJob(LibreTranslateEngineUtil::translatorGroupName(), this);
     connect(readJob, &QKeychain::Job::finished, this, [dlg](QKeychain::Job *baseJob) {
