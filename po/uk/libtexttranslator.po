@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-02-19 00:56+0000\n"
 "PO-Revision-Date: 2023-01-09 09:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -467,18 +467,18 @@ msgstr "Переклад:"
 msgid "Engine:"
 msgstr "Рушій:"
 
-#: translator/widgets/translatordebugdialog.cpp:32
+#: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Діагностика перекладача"
 
-#: translator/widgets/translatordebugdialog.cpp:39
+#: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As..."
 msgstr "Зберегти як…"
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -487,12 +487,12 @@ msgstr ""
 "Не вдалося виконати запис до файла %1.\n"
 "Докладний опис помилки: «%2»."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:94
 #, kde-format
 msgid "Save File Error"
 msgstr "Помилка під час збереження файла"
 
-#: translator/widgets/translatordebugdialog.cpp:115
+#: translator/widgets/translatordebugdialog.cpp:117
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"

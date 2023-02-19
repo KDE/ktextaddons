@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-02-19 00:56+0000\n"
 "PO-Revision-Date: 2023-01-09 13:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -470,18 +470,18 @@ msgstr "A:"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: translator/widgets/translatordebugdialog.cpp:32
+#: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Depuració del traductor"
 
-#: translator/widgets/translatordebugdialog.cpp:39
+#: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As..."
 msgstr "Desa com a..."
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -490,12 +490,12 @@ msgstr ""
 "No s'ha pogut escriure el fitxer %1:\n"
 "«%2» és la descripció detallada de l'error."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:94
 #, kde-format
 msgid "Save File Error"
 msgstr "Error en desar el fitxer"
 
-#: translator/widgets/translatordebugdialog.cpp:115
+#: translator/widgets/translatordebugdialog.cpp:117
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"

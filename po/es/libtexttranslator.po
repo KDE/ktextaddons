@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-02-19 00:56+0000\n"
 "PO-Revision-Date: 2023-01-13 01:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -473,18 +473,18 @@ msgstr "Al:"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: translator/widgets/translatordebugdialog.cpp:32
+#: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Depuración del traductor"
 
-#: translator/widgets/translatordebugdialog.cpp:39
+#: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As..."
 msgstr "Guardar como..."
 
-#: translator/widgets/translatordebugdialog.cpp:88
+#: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -493,12 +493,12 @@ msgstr ""
 "No se ha podido escribir en el archivo %1:\n"
 "«%2» es la descripción detallada del error."
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:94
 #, kde-format
 msgid "Save File Error"
 msgstr "Error al guardar el archivo"
 
-#: translator/widgets/translatordebugdialog.cpp:115
+#: translator/widgets/translatordebugdialog.cpp:117
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos los archivos (*)"
