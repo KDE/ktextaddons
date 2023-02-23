@@ -125,10 +125,12 @@ bool TextToSpeechWidget::isReady() const
 
 void TextToSpeechWidget::say(const QString &text)
 {
-    if (d->mTextToSpeechInterface->isReady()) {
-        d->mTextToSpeechInterface->say(text);
-    } else {
-        KMessageBox::error(this, i18n("Engine has a problem."), i18n("Text To Speech"));
+    if (!text.isEmpty()) {
+        if (d->mTextToSpeechInterface->isReady()) {
+            d->mTextToSpeechInterface->say(text);
+        } else {
+            KMessageBox::error(this, i18n("Engine has a problem."), i18n("Text To Speech"));
+        }
     }
 }
 
