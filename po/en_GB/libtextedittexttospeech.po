@@ -1,101 +1,99 @@
-# Translation of libtextedittexttospeech.po to Catalan (Valencian)
-# Copyright (C) 2023 This_file_is_part_of_KDE
-# This file is distributed under the license LGPL version 2.1 or
-# version 3 or later versions approved by the membership of KDE e.V.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2023.
+# Steve Allewell <steve.allewell@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:57+0000\n"
-"PO-Revision-Date: 2023-01-14 12:17+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
-"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Language: ca@valencia\n"
+"PO-Revision-Date: 2023-02-27 22:02+0000\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: texttospeechactions.cpp:28 texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
-msgstr "Para"
+msgstr "Stop"
 
 #: texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
-msgstr "Pausa"
+msgstr "Pause"
 
 #: texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
-msgstr "Reproduïx"
+msgstr "Play"
 
 #: texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr "Configureu el text a veu"
+msgstr "Configure Text-To-Speech"
 
 #: texttospeechconfiginterface.cpp:70
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr "Hola, esta és la prova per a provar la configuració."
+msgstr "Morning, this is the test for testing settings."
 
 #: texttospeechconfigwidget.cpp:33
 #, kde-format
 msgid "Test"
-msgstr "Prova"
+msgstr "Test"
 
 #: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
-msgstr "Volum:"
+msgstr "Volume:"
 
 #: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
-msgstr "Velocitat:"
+msgstr "Rate:"
 
 #: texttospeechconfigwidget.cpp:50
 #, kde-format
 msgid "Pitch:"
-msgstr "To:"
+msgstr "Pitch:"
 
 #: texttospeechconfigwidget.cpp:53
 #, kde-format
 msgid "Engine:"
-msgstr "Motor:"
+msgstr "Engine:"
 
 #: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Language:"
-msgstr "Idioma:"
+msgstr "Language:"
 
 #: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Voice:"
-msgstr "Veu:"
+msgstr "Voice:"
 
 #: texttospeechwidget.cpp:54
 #, kde-format
 msgid "Close"
-msgstr "Tanca"
+msgstr "Close"
 
 #: texttospeechwidget.cpp:80
 #, kde-format
 msgid "Configure..."
-msgstr "Configura..."
+msgstr "Configure..."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr "El motor té un problema."
+msgstr "Engine has a problem."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Text To Speech"
-msgstr "Text a veu"
+msgstr "Text To Speech"

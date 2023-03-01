@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:56+0000\n"
+"POT-Creation-Date: 2023-02-24 00:57+0000\n"
 "PO-Revision-Date: 2023-01-24 15:46+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -88,12 +88,12 @@ msgstr "Zavřít"
 msgid "Configure..."
 msgstr "Nastavit..."
 
-#: texttospeechwidget.cpp:131
+#: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
 msgstr "Nástroj má problém."
 
-#: texttospeechwidget.cpp:131
+#: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Text To Speech"
 msgstr "Hlasová syntéza"

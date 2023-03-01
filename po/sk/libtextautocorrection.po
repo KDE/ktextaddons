@@ -1,56 +1,56 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-02-24 12:44\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-02-11 17:54+0100\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/ktextaddons/libtextautocorrection.pot\n"
-"X-Crowdin-File-ID: 41593\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: import/importlibreofficeautocorrection.cpp:52
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr ""
+msgstr "Archív nie je možné otvoriť v režime čítania."
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr ""
+msgstr "Povoliť automatické opravy"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
-msgstr ""
+msgstr "Náhrady a výnimky pre jazyk:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export..."
-msgstr ""
+msgstr "Exportovať..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import..."
-msgstr ""
+msgstr "Importovať..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: ui/autocorrectionwidget.ui:77
 #, kde-format
 msgid "Ad&vanced Autocorrection"
-msgstr ""
+msgstr "&Pokročilé automatické opravy"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
@@ -58,80 +58,80 @@ msgstr ""
 #: widgets/autocorrectionwidget.cpp:501
 #, kde-format
 msgid "&Add"
-msgstr ""
+msgstr "&Pridať"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #. i18n: ectx: property (text), widget (QPushButton, remove2)
 #: ui/autocorrectionwidget.ui:98 ui/autocorrectionwidget.ui:303
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Odstrániť"
 
 #. i18n: ectx: property (text), widget (QCheckBox, advancedAutocorrection)
 #: ui/autocorrectionwidget.ui:120
 #, kde-format
 msgid "&Enable word replacement"
-msgstr ""
+msgstr "Povoliť nahradzovanie slov"
 
 #. i18n: ectx: property (text), widget (QLabel, findLabel)
 #: ui/autocorrectionwidget.ui:129
 #, kde-format
 msgid "&Find"
-msgstr ""
+msgstr "&Nájsť"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: ui/autocorrectionwidget.ui:149
 #, kde-format
 msgid "Re&place"
-msgstr ""
+msgstr "\t&Nahradiť"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
 #: ui/autocorrectionwidget.ui:187
 #, kde-format
 msgid "Find"
-msgstr ""
+msgstr "Nájsť"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
 #: ui/autocorrectionwidget.ui:192
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Nahradiť"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: ui/autocorrectionwidget.ui:201
 #, kde-format
 msgid "E&xceptions"
-msgstr ""
+msgstr "Vý&nimky"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/autocorrectionwidget.ui:209
 #, kde-format
 msgid "Do not treat as the end of a sentence:"
-msgstr ""
+msgstr "Nepovažovať za koniec vety:"
 
 #. i18n: ectx: property (text), widget (QPushButton, remove1)
 #: ui/autocorrectionwidget.ui:235
 #, kde-format
 msgid "R&emove"
-msgstr ""
+msgstr "&Odstrániť"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ui/autocorrectionwidget.ui:277
 #, kde-format
 msgid "Accept two uppercase letters in:"
-msgstr ""
+msgstr "Povoliť dve veľké písmená v:"
 
 #. i18n: ectx: property (text), widget (QPushButton, add2)
 #: ui/autocorrectionwidget.ui:296
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "Pridať"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
 #: ui/autocorrectionwidget.ui:344
 #, kde-format
 msgid "Si&mple Autocorrection"
-msgstr ""
+msgstr "Jednoduché automatické opravy"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
 #: ui/autocorrectionwidget.ui:350
@@ -140,6 +140,8 @@ msgid ""
 "Detect when a new sentence is started and always ensure that the first "
 "character is an uppercase character"
 msgstr ""
+"Rozpoznať začiatok novej vety a vždy zabezpečiť, aby prvý znak bol veľké "
+"písmeno"
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperCase)
 #: ui/autocorrectionwidget.ui:354
@@ -148,6 +150,8 @@ msgid ""
 "Convert &first letter of a sentence automatically to uppercase\n"
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
+"Konvertovať prvé písmeno vety automaticky na veľké písmená\n"
+"(napr. \"môj dom. v tomto meste\" na \"môj dom. V tomto meste\")"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: ui/autocorrectionwidget.ui:364
@@ -157,6 +161,9 @@ msgid ""
 "bit too long. If some words must have two uppercase characters, then those "
 "exceptions should be added in the 'Exceptions' tab."
 msgstr ""
+"Pri všetkých slovách sa kontroluje, či nedošlo k bežnej chybe, keď sa kláves "
+"shift drží stlačený príliš dlho. Ak niektoré slová musia mať dve veľké "
+"písmená, mali by sa tieto výnimky pridať na kartu 'Výnimky'."
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: ui/autocorrectionwidget.ui:368
@@ -166,6 +173,8 @@ msgid ""
 "character\n"
 " (e.g. PErfect to Perfect)"
 msgstr ""
+"Konvertovať dve veľké písmená na jedno veľké a jedno malé písmeno\n"
+" (napr. SUper na Super)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
 #: ui/autocorrectionwidget.ui:375
@@ -174,30 +183,32 @@ msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
 "mistake which is quite hard to find in formatted text."
 msgstr ""
+"Uistite sa, že nie je možné napísať viac ako jednu medzeru, pretože ide o "
+"častú chybu, ktorá sa vo formátovanom texte dosť ťažko hľadá."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
 #: ui/autocorrectionwidget.ui:378
 #, kde-format
 msgid "&Suppress double spaces"
-msgstr ""
+msgstr "Potlačiť dvojité medzery"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
 #: ui/autocorrectionwidget.ui:385
 #, kde-format
 msgid "Most standard fraction notations will be converted when available"
-msgstr ""
+msgstr "Väčšina štandardných zápisov zlomkov sa skonvertuje, ak je to možné"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2... with ½..."
-msgstr ""
+msgstr "&Nahradiť 1/2... s ½..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: ui/autocorrectionwidget.ui:395
 #, kde-format
 msgid "Capitalize name of days"
-msgstr ""
+msgstr "Veľké začiatočné písmeno v názve dní"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
 #: ui/autocorrectionwidget.ui:402
@@ -206,12 +217,14 @@ msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
 "that matches the way an Internet browser would show a URL."
 msgstr ""
+"Rozpoznať zadanie URL (Uniform Resource Locator) a poskytnúť formátovanie, "
+"ktoré zodpovedá spôsobu zobrazenia adresy URL v internetovom prehliadači."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
 #: ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
-msgstr ""
+msgstr "Automatické formátovanie adries &URL (režim HTML)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
 #: ui/autocorrectionwidget.ui:412
@@ -220,42 +233,48 @@ msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
 "asterisks will be converted to underlined or bold text."
 msgstr ""
+"Ak použijete _podčiarknutie_ alebo *tučné*, text medzi podčiarkovníkmi alebo "
+"hviezdičkami sa zmení na podčiarknutý alebo tučný."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
 #: ui/autocorrectionwidget.ui:415
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
 msgstr ""
+"Automaticky vykonať formátovanie tučného písma, prečiarknutia a "
+"podčiarknutia (režim HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st... with 1^st... (HTML mode)"
-msgstr ""
+msgstr "Nahradiť 1st... za 1^st... (režim HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
 msgstr ""
+"Pridať nezalomiteľnú medzeru pred špecifické interpunkčné znamienka vo "
+"francúzskom texte"
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
 #: ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr ""
+msgstr "Nahradiť dvojité úvodzovky francúzskymi úvodzovkami"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: ui/autocorrectionwidget.ui:457
 #, kde-format
 msgid "Custom &Quotes"
-msgstr ""
+msgstr "Vlastné úvodzovky"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
 #: ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
-msgstr ""
+msgstr "Nahradiť &dvojité úvodzovky typografickými úvodzovkami"
 
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
@@ -265,190 +284,191 @@ msgstr ""
 #: ui/autocorrectionwidget.ui:641 ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr ""
+msgstr "V predvolenom nastavení"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
 #: ui/autocorrectionwidget.ui:487 ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
-msgstr ""
+msgstr "\""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr ""
+msgstr "Ukončovacia úvodzovka"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: ui/autocorrectionwidget.ui:534 ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr ""
+msgstr "Začiatočná úvodzovka"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
 #: ui/autocorrectionwidget.ui:548 ui/autocorrectionwidget.ui:669
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Predvolené"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
 #: ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
-msgstr ""
+msgstr "Nahradiť jednoduché úvodzovky typografickými úvodzovkami"
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
 #: ui/autocorrectionwidget.ui:608 ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr ""
+msgstr "Ukončovacie úvodzovky"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: ui/autocorrectionwidget.ui:707
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr ""
+msgstr "Systémová cesta:"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
 #: ui/autocorrectionwidget.ui:720 ui/autocorrectionwidget.ui:750
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "TextLabel"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr ""
+msgstr "Zapisovateľná cesta:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr ""
+msgstr "Vlastná systémová cesta:"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
 #: ui/autocorrectionwidget.ui:785 ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr ""
+msgstr "Vlastná zapisovateľná cesta:"
 
 #: widgets/autocorrectionwidget.cpp:122
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr ""
+msgstr "Vybrať vlastnú zapisovateľnú cestu"
 
 #: widgets/autocorrectionwidget.cpp:127
 #, kde-format
 msgid "Select Custom System Path"
-msgstr ""
+msgstr "Vybrať vlastnú systémovú cestu"
 
 #: widgets/autocorrectionwidget.cpp:137
 #, kde-format
 msgid "LibreOffice Autocorrection"
-msgstr ""
+msgstr "Automatické opravy LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
-msgstr ""
+msgstr "Automatické opravy KMail/Calligra"
 
 #: widgets/autocorrectionwidget.cpp:419
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr ""
+msgstr "Reťazec \"Nahradiť\" je rovnaký ako reťazec \"Nájsť\"."
 
 #: widgets/autocorrectionwidget.cpp:419
 #, kde-format
 msgid "Add Autocorrection Entry"
-msgstr ""
+msgstr "Pridať položku automatických opráv"
 
 #: widgets/autocorrectionwidget.cpp:498
 #, kde-format
 msgid "&Modify"
-msgstr ""
+msgstr "Z&meniť"
 
 #: widgets/autocorrectionwidget.cpp:609
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
-msgstr ""
+msgstr "Importovať automatické opravy LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:610
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
-msgstr ""
+msgstr "Súbor automatických opráv LibreOffice (*.dat)"
 
 #: widgets/autocorrectionwidget.cpp:613
 #, kde-format
 msgid "Import KMail Autocorrection"
-msgstr ""
+msgstr "Importovať automatické opravy KMail"
 
 #: widgets/autocorrectionwidget.cpp:614
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
-msgstr ""
+msgstr "Súbor automatických opráv KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:646
 #, kde-format
 msgid "Import Autocorrection File"
-msgstr ""
+msgstr "Importovať súbor automatických opráv"
 
 #: widgets/autocorrectionwidget.cpp:669
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
+"Jazyk bol zmenený, chcete uložiť konfiguráciu pre predchádzajúci jazyk?"
 
 #: widgets/autocorrectionwidget.cpp:670
 #, kde-format
 msgid "Save config"
-msgstr ""
+msgstr "Uložiť konfiguráciu"
 
 #: widgets/autocorrectionwidget.cpp:705
 #, kde-format
 msgid "Please save changes before exporting settings."
-msgstr ""
+msgstr "Prosím, uložte zmeny pred exportom nastavení."
 
 #: widgets/autocorrectionwidget.cpp:705 widgets/autocorrectionwidget.cpp:708
 #, kde-format
 msgid "Export Autocorrection File"
-msgstr ""
+msgstr "Exportovať súbor automatických opráv"
 
 #: widgets/selectspecialchardialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr ""
+msgstr "Výber špeciálnych znakov"
 
 #: widgets/selectspecialchardialog.cpp:40
 #, kde-format
 msgid "Insert"
-msgstr ""
+msgstr "Vložiť"
 
 #: widgets/selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "Vybrať"

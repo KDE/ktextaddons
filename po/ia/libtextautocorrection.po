@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-01-10 22:31+0100\n"
+"PO-Revision-Date: 2023-02-08 22:43+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: import/importlibreofficeautocorrection.cpp:52
 #, kde-format
@@ -324,7 +324,7 @@ msgstr "Reimplacia &singule virgulettas con virgulettas typographic"
 #: ui/autocorrectionwidget.ui:608 ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ui/autocorrectionwidget.ui:648
@@ -342,7 +342,7 @@ msgstr "Percurso"
 #: ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr ""
+msgstr "Percurso de systema:"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
@@ -355,13 +355,13 @@ msgstr "Etiquetta de Texto (TextLabel)"
 #: ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr ""
+msgstr "Percurso scribibile:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr ""
+msgstr "Percurso de Systema personalisate:"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
@@ -374,17 +374,17 @@ msgstr "..."
 #: ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr ""
+msgstr "Percurso de scriptura personalisate:"
 
 #: widgets/autocorrectionwidget.cpp:122
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr ""
+msgstr "Selige Percurso Scribibile personalisate"
 
 #: widgets/autocorrectionwidget.cpp:127
 #, kde-format
 msgid "Select Custom System Path"
-msgstr ""
+msgstr "Selige Percurso de systema personalisate"
 
 #: widgets/autocorrectionwidget.cpp:137
 #, kde-format
