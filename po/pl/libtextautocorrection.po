@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-02-11 08:25+0100\n"
+"PO-Revision-Date: 2023-03-04 09:12+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -78,7 +78,7 @@ msgstr "Włącz zastępowani&e słów"
 #: ui/autocorrectionwidget.ui:129
 #, kde-format
 msgid "&Find"
-msgstr "&Znajdź"
+msgstr "Po&szukaj"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: ui/autocorrectionwidget.ui:149
@@ -90,7 +90,7 @@ msgstr "Zastą&p"
 #: ui/autocorrectionwidget.ui:187
 #, kde-format
 msgid "Find"
-msgstr "Znajdź"
+msgstr "Poszukaj"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
 #: ui/autocorrectionwidget.ui:192
