@@ -8,14 +8,14 @@ Various text handling addons
 
 Qt:
 
-- Qt5Core
-- Qt5Keychain
-- Qt5UiPlugin
+- Qt{5,6}Core
+- Qt{5,6}Keychain
+- Qt{5,6}UiPlugin
 
-KF5:
+KF{5,6}:
 
-- KF5Archive
-- KF5ConfigWidgets
-- KF5CoreAddons
-- KF5I18n
-- KF5XmlGui
+- KF{5,6}Archive
+- KF{5,6}ConfigWidgets
+- KF{5,6}CoreAddons
+- KF{5,6}I18n
+- KF{5,6}XmlGui
