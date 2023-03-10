@@ -365,7 +365,7 @@ msgstr ""
 #: ui/autocorrectionwidget.ui:785 ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: ui/autocorrectionwidget.ui:794
