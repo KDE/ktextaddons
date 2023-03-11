@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# Tommi Nieminen <translator@legisign.org>, 2019, 2020, 2021.
+# Tommi Nieminen <translator@legisign.org>, 2019, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2021-10-11 14:32+0300\n"
+"PO-Revision-Date: 2023-02-23 19:53+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -131,10 +131,9 @@ msgid "Grammalecte error"
 msgstr "Grammalecten virhe:"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Grammalecten sijainti:"
+msgstr "Valitse sijainti"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
@@ -324,10 +323,9 @@ msgid "Failed to check grammar."
 msgstr "Kieliopin tarkistus epäonnistui"
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check Again"
+#, kde-format
 msgid "Check"
-msgstr "Tarkista uudelleen"
+msgstr "Tarkista"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
