@@ -1,42 +1,44 @@
 # German translations for ktextaddons package.
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Automatically generated, 2023.
+# Frederik Schwarzer <schwarzer@kde.org>, 2023.
 #
+# Automatically generated, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:57+0000\n"
-"PO-Revision-Date: 2023-01-13 10:41+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-03-12 16:25+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #: texttospeechactions.cpp:28 texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
-msgstr ""
+msgstr "Anhalten"
 
 #: texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
-msgstr ""
+msgstr "Wiedergabe"
 
 #: texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr ""
+msgstr "Sprachausgabe einrichten"
 
 #: texttospeechconfiginterface.cpp:70
 #, kde-format
@@ -51,7 +53,7 @@ msgstr ""
 #: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
-msgstr ""
+msgstr "Lautstärke:"
 
 #: texttospeechconfigwidget.cpp:44
 #, kde-format
@@ -71,22 +73,22 @@ msgstr ""
 #: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Language:"
-msgstr ""
+msgstr "Sprache:"
 
 #: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Voice:"
-msgstr ""
+msgstr "Stimme:"
 
 #: texttospeechwidget.cpp:54
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Schließen"
 
 #: texttospeechwidget.cpp:80
 #, kde-format
 msgid "Configure..."
-msgstr ""
+msgstr "Einrichten ..."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
@@ -96,4 +98,4 @@ msgstr ""
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Text To Speech"
-msgstr ""
+msgstr "Sprachausgabe"

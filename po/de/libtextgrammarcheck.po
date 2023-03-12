@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2019, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2019, 2022, 2023.
 # Burkhard Lück <lueck@hube-lueck.de>, 2019, 2020, 2021.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2022-04-15 04:26+0200\n"
+"PO-Revision-Date: 2023-03-12 16:25+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -134,10 +134,9 @@ msgid "Grammalecte error"
 msgstr "Grammalecte-Fehler"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Grammalecte-Pfad:"
+msgstr "Pfad auswählen"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
@@ -326,10 +325,9 @@ msgid "Failed to check grammar."
 msgstr "Die Grammatikprüfung ist fehlgeschlagen."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check Again"
+#, kde-format
 msgid "Check"
-msgstr "Erneut prüfen"
+msgstr "Prüfen"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
