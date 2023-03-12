@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-02-24 12:44\n"
+"PO-Revision-Date: 2023-03-11 04:55\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,43 +14,43 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/ktextaddons/libtextautocorrection.pot\n"
-"X-Crowdin-File-ID: 41593\n"
+"X-Crowdin-File: /kf5-stable/messages/ktextaddons/libtextautocorrection.pot\n"
+"X-Crowdin-File-ID: 41831\n"
 
 #: import/importlibreofficeautocorrection.cpp:52
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr ""
+msgstr "归档无法在读取模式打开。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr ""
+msgstr "启用自动更正"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
-msgstr ""
+msgstr "语言的替换和例外："
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export..."
-msgstr ""
+msgstr "导出..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import..."
-msgstr ""
+msgstr "导入..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: ui/autocorrectionwidget.ui:77
 #, kde-format
 msgid "Ad&vanced Autocorrection"
-msgstr ""
+msgstr "高级自动更正(&V)"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
@@ -58,80 +58,80 @@ msgstr ""
 #: widgets/autocorrectionwidget.cpp:501
 #, kde-format
 msgid "&Add"
-msgstr ""
+msgstr "添加(&A)"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #. i18n: ectx: property (text), widget (QPushButton, remove2)
 #: ui/autocorrectionwidget.ui:98 ui/autocorrectionwidget.ui:303
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #. i18n: ectx: property (text), widget (QCheckBox, advancedAutocorrection)
 #: ui/autocorrectionwidget.ui:120
 #, kde-format
 msgid "&Enable word replacement"
-msgstr ""
+msgstr "启用单词替换(&E)"
 
 #. i18n: ectx: property (text), widget (QLabel, findLabel)
 #: ui/autocorrectionwidget.ui:129
 #, kde-format
 msgid "&Find"
-msgstr ""
+msgstr "查找(&F)"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: ui/autocorrectionwidget.ui:149
 #, kde-format
 msgid "Re&place"
-msgstr ""
+msgstr "替换(&P)"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
 #: ui/autocorrectionwidget.ui:187
 #, kde-format
 msgid "Find"
-msgstr ""
+msgstr "查找"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
 #: ui/autocorrectionwidget.ui:192
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "替换"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: ui/autocorrectionwidget.ui:201
 #, kde-format
 msgid "E&xceptions"
-msgstr ""
+msgstr "例外(&X)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/autocorrectionwidget.ui:209
 #, kde-format
 msgid "Do not treat as the end of a sentence:"
-msgstr ""
+msgstr "不要作为句子的末尾处理："
 
 #. i18n: ectx: property (text), widget (QPushButton, remove1)
 #: ui/autocorrectionwidget.ui:235
 #, kde-format
 msgid "R&emove"
-msgstr ""
+msgstr "移除(&E)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: ui/autocorrectionwidget.ui:277
 #, kde-format
 msgid "Accept two uppercase letters in:"
-msgstr ""
+msgstr "接受两个大写字母："
 
 #. i18n: ectx: property (text), widget (QPushButton, add2)
 #: ui/autocorrectionwidget.ui:296
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "添加"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
 #: ui/autocorrectionwidget.ui:344
 #, kde-format
 msgid "Si&mple Autocorrection"
-msgstr ""
+msgstr "简单自动更正(&M)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
 #: ui/autocorrectionwidget.ui:350
@@ -139,7 +139,7 @@ msgstr ""
 msgid ""
 "Detect when a new sentence is started and always ensure that the first "
 "character is an uppercase character"
-msgstr ""
+msgstr "检测新句子的句首，并且总是确保句首第一个字符是大写字母"
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperCase)
 #: ui/autocorrectionwidget.ui:354
@@ -148,6 +148,8 @@ msgid ""
 "Convert &first letter of a sentence automatically to uppercase\n"
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
+"将句首的第一个字母转换为大写 (例如将“my house. in this town”转换为“my house. "
+"In this town”)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: ui/autocorrectionwidget.ui:364
@@ -157,6 +159,8 @@ msgid ""
 "bit too long. If some words must have two uppercase characters, then those "
 "exceptions should be added in the 'Exceptions' tab."
 msgstr ""
+"检查全部单词是否存在 Shift 键按下的时间太长的情况。如果某些单词必须有两个大写"
+"字母，则应该将这些例外添加到“例外”标签页中。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: ui/autocorrectionwidget.ui:368
@@ -165,7 +169,7 @@ msgid ""
 "Convert &two uppercase characters to one uppercase and one lowercase "
 "character\n"
 " (e.g. PErfect to Perfect)"
-msgstr ""
+msgstr "将两个连续的大写字母更改为一个大写一个小写 (如 PErfect 转换为 Perfect)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
 #: ui/autocorrectionwidget.ui:375
@@ -174,30 +178,32 @@ msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
 "mistake which is quite hard to find in formatted text."
 msgstr ""
+"确保无法输入多个空格，因为这种输入错误比较常见，而且很难在带有格式的大段文字"
+"中被检查出来。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
 #: ui/autocorrectionwidget.ui:378
 #, kde-format
 msgid "&Suppress double spaces"
-msgstr ""
+msgstr "禁止重复空格(&S)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
 #: ui/autocorrectionwidget.ui:385
 #, kde-format
 msgid "Most standard fraction notations will be converted when available"
-msgstr ""
+msgstr "大多数格式标准的分数都会在可用时被自动转换"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2... with ½..."
-msgstr ""
+msgstr "将 1/2 替换为 ½(&P)..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: ui/autocorrectionwidget.ui:395
 #, kde-format
 msgid "Capitalize name of days"
-msgstr ""
+msgstr "将天数名称大写"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
 #: ui/autocorrectionwidget.ui:402
@@ -205,13 +211,13 @@ msgstr ""
 msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
 "that matches the way an Internet browser would show a URL."
-msgstr ""
+msgstr "检测输入的 URL(统一资源定位符)，将其格式更改为网页浏览器使用的格式。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
 #: ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
-msgstr ""
+msgstr "对 &URL 进行自动格式化 (HTML 模式)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
 #: ui/autocorrectionwidget.ui:412
@@ -220,42 +226,44 @@ msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
 "asterisks will be converted to underlined or bold text."
 msgstr ""
+"当您使用 _下划线_ 或者 *粗体* 时，下划线和星号之间的文字将会分别被转换为带下"
+"划线、加粗格式的文字。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
 #: ui/autocorrectionwidget.ui:415
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
-msgstr ""
+msgstr "将加粗、删除线、下划线符号自动转换为实际格式 (HTML 模式)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st... with 1^st... (HTML mode)"
-msgstr ""
+msgstr "将 1st... 替换为 1^st... (HTML 模式)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
-msgstr ""
+msgstr "在法语的某些特定标点之前添加不换行空格"
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
 #: ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr ""
+msgstr "将双引号替换为法语引号"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: ui/autocorrectionwidget.ui:457
 #, kde-format
 msgid "Custom &Quotes"
-msgstr ""
+msgstr "自定义引号(&Q)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
 #: ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
-msgstr ""
+msgstr "将双引号替换为弯引号(&D)"
 
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
@@ -265,190 +273,190 @@ msgstr ""
 #: ui/autocorrectionwidget.ui:641 ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr ""
+msgstr "默认"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
 #: ui/autocorrectionwidget.ui:487 ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
-msgstr ""
+msgstr "\""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr ""
+msgstr "结尾引号："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: ui/autocorrectionwidget.ui:534 ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr ""
+msgstr "开头引号："
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
 #: ui/autocorrectionwidget.ui:548 ui/autocorrectionwidget.ui:669
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
 #: ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
-msgstr ""
+msgstr "将单引号替换为弯引号(&S)"
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
 #: ui/autocorrectionwidget.ui:608 ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr ""
+msgstr "结尾引号："
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: ui/autocorrectionwidget.ui:707
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "路径"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr ""
+msgstr "系统路径："
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
 #: ui/autocorrectionwidget.ui:720 ui/autocorrectionwidget.ui:750
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "文本标签"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr ""
+msgstr "可写入路径："
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr ""
+msgstr "自定义系统路径："
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
 #: ui/autocorrectionwidget.ui:785 ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr ""
+msgstr "自定义可写入路径："
 
 #: widgets/autocorrectionwidget.cpp:122
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr ""
+msgstr "选择自定义可写入路径"
 
 #: widgets/autocorrectionwidget.cpp:127
 #, kde-format
 msgid "Select Custom System Path"
-msgstr ""
+msgstr "选择自定义系统路径"
 
 #: widgets/autocorrectionwidget.cpp:137
 #, kde-format
 msgid "LibreOffice Autocorrection"
-msgstr ""
+msgstr "LibreOffice 自动更正"
 
 #: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
-msgstr ""
+msgstr "KMail/Calligra 自动更正"
 
 #: widgets/autocorrectionwidget.cpp:419
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr ""
+msgstr "“替换”字符串与“查找”字符串相同。"
 
 #: widgets/autocorrectionwidget.cpp:419
 #, kde-format
 msgid "Add Autocorrection Entry"
-msgstr ""
+msgstr "添加自动更正项目"
 
 #: widgets/autocorrectionwidget.cpp:498
 #, kde-format
 msgid "&Modify"
-msgstr ""
+msgstr "修改(&M)"
 
 #: widgets/autocorrectionwidget.cpp:609
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
-msgstr ""
+msgstr "导入 LibreOffice 自动更正"
 
 #: widgets/autocorrectionwidget.cpp:610
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
-msgstr ""
+msgstr "LibreOffice 自动更正文件 (*.dat)"
 
 #: widgets/autocorrectionwidget.cpp:613
 #, kde-format
 msgid "Import KMail Autocorrection"
-msgstr ""
+msgstr "导入 KMail 自动更正"
 
 #: widgets/autocorrectionwidget.cpp:614
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
-msgstr ""
+msgstr "KMail 自动更正文件 (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:646
 #, kde-format
 msgid "Import Autocorrection File"
-msgstr ""
+msgstr "导入自动更正文件"
 
 #: widgets/autocorrectionwidget.cpp:669
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
-msgstr ""
+msgstr "语言已经更改，您想要保存之前语言的配置吗？"
 
 #: widgets/autocorrectionwidget.cpp:670
 #, kde-format
 msgid "Save config"
-msgstr ""
+msgstr "保存配置"
 
 #: widgets/autocorrectionwidget.cpp:705
 #, kde-format
 msgid "Please save changes before exporting settings."
-msgstr ""
+msgstr "请在导出设置之前保存更改。"
 
 #: widgets/autocorrectionwidget.cpp:705 widgets/autocorrectionwidget.cpp:708
 #, kde-format
 msgid "Export Autocorrection File"
-msgstr ""
+msgstr "导出自动更正文件"
 
 #: widgets/selectspecialchardialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr ""
+msgstr "选择特殊字符"
 
 #: widgets/selectspecialchardialog.cpp:40
 #, kde-format
 msgid "Insert"
-msgstr ""
+msgstr "插入"
 
 #: widgets/selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "选择"
