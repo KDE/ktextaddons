@@ -5,6 +5,8 @@
 */
 
 #include "deeplengineconfigurewidget.h"
+#include "translator/misc/lineeditcatchreturnkey.h"
+
 #include <KLocalizedString>
 #include <QCheckBox>
 #include <QFormLayout>
@@ -18,7 +20,7 @@ DeeplEngineConfigureWidget::DeeplEngineConfigureWidget(QWidget *parent)
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
-
+    new TextTranslator::LineEditCatchReturnKey(mApiKey, this);
     mUseFreeLicense->setObjectName(QStringLiteral("mUseFreeLicense"));
     mainLayout->addWidget(mUseFreeLicense);
 

@@ -47,6 +47,8 @@ ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextTranslator HEADER textt
 target_sources(KF${KF_MAJOR_VERSION}TextTranslator PRIVATE
     translator/misc/translatorutil.cpp
     translator/misc/translatorutil.h
+    translator/misc/lineeditcatchreturnkey.cpp
+    translator/misc/lineeditcatchreturnkey.h
 
     translator/widgets/translatorwidget.cpp
     translator/widgets/translatorwidget.h
