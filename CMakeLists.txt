@@ -8,7 +8,8 @@ set(KTEXTADDONS_CURRENT_VERSION "1.1.41")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 include(FeatureSummary)
-find_package(ECM 5.102.0  NO_MODULE)
+set(KF_MIN_VERSION "5.103.0")
+find_package(ECM ${KF_MIN_VERSION}  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://invent.kde.org/frameworks/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
@@ -38,7 +39,6 @@ if (QT_MAJOR_VERSION STREQUAL "6")
     set(KF_MIN_VERSION "5.240.0")
     set(KF_MAJOR_VERSION "6")
 else()
-    set(KF_MIN_VERSION "5.103.0")
     set(KF_MAJOR_VERSION "5")
 endif()
 
