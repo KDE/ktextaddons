@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: none
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 add_library(translator_lingva MODULE)
