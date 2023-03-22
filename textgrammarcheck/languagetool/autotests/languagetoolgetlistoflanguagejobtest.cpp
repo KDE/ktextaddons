@@ -19,6 +19,7 @@ void LanguageToolGetListOfLanguageJobTest::shouldHaveDefaultValues()
     QVERIFY(!w.canStart());
     QVERIFY(w.listOfLanguagePath().isEmpty());
     QVERIFY(w.url().isEmpty());
+    QVERIFY(!w.networkAccessManager());
 }
 
 void LanguageToolGetListOfLanguageJobTest::shouldBeAbleToStart()
