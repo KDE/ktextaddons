@@ -4,3 +4,4 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 include("${CMAKE_CURRENT_LIST_DIR}/KF@KF_MAJOR_VERSION@TextGrammarCheckTargets.cmake")
+@PACKAGE_INCLUDE_QCHTARGETS@

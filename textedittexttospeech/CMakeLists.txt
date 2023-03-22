@@ -117,6 +117,15 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
         COMPONENT Devel
         )
 endif()
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF${KF_MAJOR_VERSION}TextEditTextToSpeech_QCH
+        FILE KF${KF_MAJOR_VERSION}TextEditTextToSpeechQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechQchTargets.cmake\")")
+endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEditTextToSpeechConfig.cmake.in"
@@ -169,11 +178,4 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
-    ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextEditTextToSpeech_QCH
-        FILE KF${KF_MAJOR_VERSION}TextEditTextToSpeechQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechQchTargets.cmake\")")
 endif()

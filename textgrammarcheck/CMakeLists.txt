@@ -4,7 +4,15 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextgrammarcheck\")
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextGrammarCheck")
-
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF${KF_MAJOR_VERSION}TextGrammarCheck_QCH
+        FILE KF${KF_MAJOR_VERSION}TextGrammarCheckQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckQchTargets.cmake\")")
+endif()
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextGrammarCheckConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckConfig.cmake"
@@ -232,11 +240,4 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
-    ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextGrammarCheck_QCH
-        FILE KF${KF_MAJOR_VERSION}TextGrammarCheckQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextGrammarCheckQchTargets.cmake\")")
 endif()

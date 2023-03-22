@@ -185,11 +185,4 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
-    ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextAutoCorrection_QCH
-        FILE KF${KF_MAJOR_VERSION}TextAutoCorrectionQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionQchTargets.cmake\")")
 endif()

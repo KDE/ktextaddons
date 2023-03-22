@@ -5,12 +5,6 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION
 
 
 
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextTranslatorConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfig.cmake"
-    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-    )
-
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTTRANSLATE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h"
@@ -213,6 +207,8 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
+endif()
+if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF${KF_MAJOR_VERSION}TextTranslator_QCH
         FILE KF${KF_MAJOR_VERSION}TextTranslatorQchTargets.cmake
@@ -221,3 +217,9 @@ if (BUILD_QCH)
     )
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorQchTargets.cmake\")")
 endif()
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextTranslatorConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    )
