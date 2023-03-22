@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: none
 add_executable(autocorrectiontextedit_gui autocorrectiontextedit_gui.cpp)
 target_link_libraries(autocorrectiontextedit_gui

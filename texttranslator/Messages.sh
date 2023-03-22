@@ -1,4 +1,4 @@
 #! /bin/sh
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: none
 $XGETTEXT `find . -name '*.cpp' -o -name '*.h' | grep -v '/tests/' | grep -v '/autotests/'` -o $podir/libtexttranslator.pot

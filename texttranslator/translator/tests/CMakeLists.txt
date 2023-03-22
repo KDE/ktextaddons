@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: none
 add_executable(translator_gui translator_gui.cpp)
 target_link_libraries(translator_gui
