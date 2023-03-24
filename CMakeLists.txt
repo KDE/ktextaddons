@@ -82,6 +82,7 @@ ecm_set_disabled_deprecation_versions(
     KF 5.103
 )
 
+add_subdirectory(textaddonswidgets)
 add_subdirectory(autocorrection)
 add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
