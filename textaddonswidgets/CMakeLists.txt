@@ -25,7 +25,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
-    IDENTIFIER TextAddonsWidgets_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.TextAddonsWidgets
+    IDENTIFIER TEXTADDONSWIDGETS_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textaddonswidgets
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons widgets)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -42,8 +42,8 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
 )
 
 set_target_properties(KF${KF_MAJOR_VERSION}TextAddonsWidgets PROPERTIES
-    VERSION ${TextAddonsWidgets_VERSION}
-    SOVERSION ${TextAddonsWidgets_SOVERSION}
+    VERSION ${TEXTADDONSWIDGETS_VERSION}
+    SOVERSION ${TEXTADDONSWIDGETS_SOVERSION}
     EXPORT_NAME TextAddonsWidgets
 )
 
@@ -108,7 +108,7 @@ install(FILES
 )
 
 
-ecm_generate_pri_file(BASE_NAME TextAddonsWidgets LIB_NAME TextAddonsWidgets DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR
+ecm_generate_pri_file(BASE_NAME textaddonswidgets LIB_NAME TextAddonsWidgets DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR
     ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 

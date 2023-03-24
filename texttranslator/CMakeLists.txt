@@ -41,8 +41,6 @@ ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextTranslator HEADER textt
 target_sources(KF${KF_MAJOR_VERSION}TextTranslator PRIVATE
     translator/misc/translatorutil.cpp
     translator/misc/translatorutil.h
-    translator/misc/lineeditcatchreturnkey.cpp
-    translator/misc/lineeditcatchreturnkey.h
 
     translator/widgets/translatorwidget.cpp
     translator/widgets/translatorwidget.h
@@ -101,6 +99,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextTranslator
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::ConfigGui
+    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
     )
 
 target_include_directories(KF${KF_MAJOR_VERSION}TextTranslator INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/>")

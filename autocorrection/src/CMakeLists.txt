@@ -60,8 +60,6 @@ target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrection PRIVATE
     widgets/autocorrectiontextedit.h
     widgets/autocorrectionlineedit.cpp
     widgets/autocorrectionlineedit.h
-    widgets/lineeditcatchreturnkey.h
-    widgets/lineeditcatchreturnkey.cpp
     settings/textautocorrectionsettings.h
     settings/textautocorrectionsettings.cpp
 
@@ -81,6 +79,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextAutoCorrection
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
     Qt::Xml
     )
 

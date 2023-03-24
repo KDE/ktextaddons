@@ -5,12 +5,12 @@
 */
 
 #include "libretranslateengineconfigurewidget.h"
-#include "translator/misc/lineeditcatchreturnkey.h"
 #include <KLocalizedString>
 #include <QCheckBox>
 #include <QCompleter>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <TextAddonsWidgets/LineEditCatchReturnKey>
 
 LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget *parent)
     : QWidget{parent}
@@ -44,8 +44,8 @@ LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget
         QStringLiteral("https://lt.vern.cc"),
     };
 
-    new TextTranslator::LineEditCatchReturnKey(mApiKey, this);
-    new TextTranslator::LineEditCatchReturnKey(mServerUrl, this);
+    new TextAddonsWidgets::LineEditCatchReturnKey(mApiKey, this);
+    new TextAddonsWidgets::LineEditCatchReturnKey(mServerUrl, this);
 
     auto completer = new QCompleter(listServer, this);
     completer->setCaseSensitivity(Qt::CaseInsensitive);

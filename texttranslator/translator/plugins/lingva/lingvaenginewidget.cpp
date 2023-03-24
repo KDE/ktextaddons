@@ -5,10 +5,10 @@
 */
 
 #include "lingvaenginewidget.h"
-#include "translator/misc/lineeditcatchreturnkey.h"
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <TextAddonsWidgets/LineEditCatchReturnKey>
 
 LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     : QWidget{parent}
@@ -21,7 +21,7 @@ LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
     mServerUrl->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
-    new TextTranslator::LineEditCatchReturnKey(mServerUrl, this);
+    new TextAddonsWidgets::LineEditCatchReturnKey(mServerUrl, this);
 }
 
 LingvaEngineWidget::~LingvaEngineWidget() = default;

@@ -25,7 +25,10 @@ target_sources(translator_lingva PRIVATE
     lingvaengineutil.cpp
 )
 
-target_link_libraries(translator_lingva PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore)
+target_link_libraries(translator_lingva PRIVATE
+    KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
+)
 
 install(TARGETS translator_lingva  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
 if (BUILD_TESTING)

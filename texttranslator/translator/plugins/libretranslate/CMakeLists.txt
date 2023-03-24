@@ -26,7 +26,10 @@ target_sources(translator_libretranslate PRIVATE
     libretranslateengineutil.cpp
 )
 
-target_link_libraries(translator_libretranslate PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore)
+target_link_libraries(translator_libretranslate PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator
+    KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
+)
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(translator_libretranslate PRIVATE qt6keychain)
 else()

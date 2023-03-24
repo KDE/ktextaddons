@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurelanguagelistwidget.h"
-#include "translator/misc/lineeditcatchreturnkey.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QLineEdit>
@@ -13,6 +12,7 @@
 #include <QSortFilterProxyModel>
 #include <QStandardItemModel>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/LineEditCatchReturnKey>
 using namespace TextTranslator;
 
 TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(const QString &labelText, QWidget *parent)
@@ -44,7 +44,7 @@ TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(con
     mLanguageListWidget->setObjectName(QStringLiteral("mLanguageListWidget"));
     mainLayout->addWidget(mLanguageListWidget);
     mLanguageListWidget->setModel(filterProxyModel);
-    new TextTranslator::LineEditCatchReturnKey(mListSearchLine, this);
+    new TextAddonsWidgets::LineEditCatchReturnKey(mListSearchLine, this);
 }
 
 TranslatorConfigureLanguageListWidget::~TranslatorConfigureLanguageListWidget() = default;

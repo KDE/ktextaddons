@@ -11,8 +11,8 @@
 #include "import/importlibreofficeautocorrection.h"
 #include "ui_autocorrectionwidget.h"
 
-#include "widgets/lineeditcatchreturnkey.h"
 #include "widgets/selectspecialchardialog.h"
+#include <TextAddonsWidgets/LineEditCatchReturnKey>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -58,10 +58,10 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     d->ui->add1->setEnabled(false);
     d->ui->add2->setEnabled(false);
 
-    TextAutoCorrection::LineEditCatchReturnKey(d->ui->find, this);
-    TextAutoCorrection::LineEditCatchReturnKey(d->ui->replace, this);
-    TextAutoCorrection::LineEditCatchReturnKey(d->ui->abbreviation, this);
-    TextAutoCorrection::LineEditCatchReturnKey(d->ui->twoUpperLetter, this);
+    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->find, this);
+    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->replace, this);
+    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->abbreviation, this);
+    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->twoUpperLetter, this);
     connect(d->ui->autoChangeFormat, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->autoFormatUrl, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->upperCase, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
