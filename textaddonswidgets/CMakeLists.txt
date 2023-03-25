@@ -68,7 +68,7 @@ install(FILES
     COMPONENT Devel
 )
 install(FILES
-    ${TextEdit_CamelCasetexttospeechs_HEADERS}
+    ${TextAddonsWidgets_CamelCasetexttospeechs_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
