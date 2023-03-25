@@ -57,12 +57,12 @@ install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSI
 ecm_generate_headers(TextAddonsWidgets_CamelCasetexttospeechs_HEADERS
     HEADER_NAMES
     LineEditCatchReturnKey
-    REQUIRED_HEADERS TextAddonsWidgets_texttospeechs_HEADERS
+    REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )
 
 install(FILES
-    ${TextEdit_texttospeechs_HEADERS}
+    ${TextAddonsWidgets_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -112,25 +112,26 @@ ecm_generate_pri_file(BASE_NAME textaddonswidgets LIB_NAME TextAddonsWidgets DEP
     ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-#if (BUILD_QCH)
-#    ecm_add_qch(
-#        KF${KF_MAJOR_VERSION}TextAddonsWidgets_QCH
-#        NAME TextAddonsWidgets
-#        BASE_NAME KF${KF_MAJOR_VERSION}TextAddonsWidgets
-#        VERSION ${TextAddonsWidgets_VERSION}
-#        ORG_DOMAIN org.kde
-#        SOURCES # using only public headers, to cover only public API
-#        ${TextEdit_texttospeechs_HEADERS}
-#        LINK_QCHS
-#        Qt${QT_MAJOR_VERSION}Core_QCH
-#        Qt${QT_MAJOR_VERSION}Gui_QCH
-#        Qt${QT_MAJOR_VERSION}Widgets_QCH
-#        INCLUDE_DIRS
-#        ${CMAKE_CURRENT_BINARY_DIR}
-#        BLANK_MACROS
-#        TextAddonsWidgets_EXPORT
-#        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-#        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-#        COMPONENT Devel
-#    )
-#endif()
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF${KF_MAJOR_VERSION}TextAddonsWidgets_QCH
+        NAME KF${KF_MAJOR_VERSION}TextAddonsWidgets
+        BASE_NAME KF${KF_MAJOR_VERSION}TextAddonsWidgets
+        VERSION ${TEXTADDONSWIDGETS_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${TextAddonsWidgets_HEADERS}
+        LINK_QCHS
+        Qt${QT_MAJOR_VERSION}Core_QCH
+        Qt${QT_MAJOR_VERSION}Gui_QCH
+        Qt${QT_MAJOR_VERSION}Widgets_QCH
+        INCLUDE_DIRS
+        ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+        TEXTADDONSWIDGETS_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
+
