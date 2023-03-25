@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 00:45+0000\n"
+"POT-Creation-Date: 2023-03-25 00:45+0000\n"
 "PO-Revision-Date: 2023-02-27 22:09+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -361,12 +361,12 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Configure Engine"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:17
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Use Free Licence Key"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:29
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
