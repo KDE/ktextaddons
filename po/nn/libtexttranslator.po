@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 00:46+0000\n"
+"POT-Creation-Date: 2023-03-25 00:45+0000\n"
 "PO-Revision-Date: 2023-02-26 19:01+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -363,12 +363,12 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Set opp motor"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:17
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Bruk gratis lisensnøkkel"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:29
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
@@ -447,7 +447,7 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Set opp omsetjar"
 
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:35
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgid "Search..."
 msgstr "Søk …"
