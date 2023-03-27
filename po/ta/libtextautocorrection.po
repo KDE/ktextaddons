@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-03-13 21:47+0530\n"
+"PO-Revision-Date: 2023-03-26 14:11+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.80\n"
 
 #: import/importlibreofficeautocorrection.cpp:52
 #, kde-format
@@ -32,7 +32,7 @@ msgstr "தானியக்க திருத்தத்தை இயக்�
 #: ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
-msgstr ""
+msgstr "இம்மொழிகளுக்கான மாற்றங்களும் விதிவிலக்குகளும்:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: ui/autocorrectionwidget.ui:44
@@ -148,6 +148,9 @@ msgid ""
 "Convert &first letter of a sentence automatically to uppercase\n"
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
+"வா&க்கியத்தின் முதல் எழுத்தை தானாக பெரிய எழுத்தாக்கு\n"
+"(எ.கா. \"my house. in this town\" என்பதை \"my house. In this town\" என்று "
+"திருத்தும்)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: ui/autocorrectionwidget.ui:364
@@ -157,6 +160,9 @@ msgid ""
 "bit too long. If some words must have two uppercase characters, then those "
 "exceptions should be added in the 'Exceptions' tab."
 msgstr ""
+"Shift விசையை தவறுதலாக அதிகப்படி நேரத்திற்கு அழுத்தியிருந்தால் அதைத் திருத்தும். சில "
+"சொற்களின் முதல் இரண்டு எழுத்துகள் பெரிதாக இருக்க வேண்டுமெனில், அவற்றை 'விதிவிலக்குகள்' "
+"கீற்றில் உள்ளிட வேண்டும்."
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: ui/autocorrectionwidget.ui:368
@@ -166,6 +172,8 @@ msgid ""
 "character\n"
 " (e.g. PErfect to Perfect)"
 msgstr ""
+"இரண்டு பெரிய எழுத்துகள் இருந்தால் இரண்டாவதை சிறிதாக்கு\n"
+" (எ.கா. PErfect என்பதை Perfect என்று திருத்தும்)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
 #: ui/autocorrectionwidget.ui:375
@@ -174,30 +182,34 @@ msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
 "mistake which is quite hard to find in formatted text."
 msgstr ""
+"தொடர்ச்சியாக இரண்டு இடைவெளிகை தட்டச்சிட விடாது. இப்படிப்பட்ட பிழை நேர்ந்தால், அதைக் "
+"கண்டுபிடிப்பது சிறம‍ம்."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
 #: ui/autocorrectionwidget.ui:378
 #, kde-format
 msgid "&Suppress double spaces"
-msgstr ""
+msgstr "இரட்டை இடைவெளியை &தடு"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
 #: ui/autocorrectionwidget.ui:385
 #, kde-format
 msgid "Most standard fraction notations will be converted when available"
 msgstr ""
+"அடிக்கடி பயன்படுத்தப்படும் பின்னங்களை (fraction-களை) உள்ளிட்டால், அவற்றிற்கான குறிகளை "
+"மாறாக இடும்"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2... with ½..."
-msgstr ""
+msgstr "1/2... போன்றவற்றை ½... என மாற்று"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: ui/autocorrectionwidget.ui:395
 #, kde-format
 msgid "Capitalize name of days"
-msgstr ""
+msgstr "நாள்பெயர்களின் முதல் எழுத்துகளை பெரிதாக்கு"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
 #: ui/autocorrectionwidget.ui:402
@@ -206,12 +218,14 @@ msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
 "that matches the way an Internet browser would show a URL."
 msgstr ""
+"இணைய முகவரிகள் (URL-கள்) தட்டச்சிடப்படும்போது கண்டறிந்து, இணைய உலாவியில் "
+"காட்டப்படுவதுபோல் அவற்றை வடிவமைக்கும்."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
 #: ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
-msgstr ""
+msgstr "&முகவரிகளை தானாக வடிவமை (HTML பயன்முறையில்)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
 #: ui/autocorrectionwidget.ui:412
@@ -220,42 +234,45 @@ msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
 "asterisks will be converted to underlined or bold text."
 msgstr ""
+"_அடிக்கோடு_ அல்லது *தடியெழுத்து* என்று உரிய குறிகளுக்கிடையே உரையை தட்டச்சிட்டால், "
+"அவ்வுரைக்கு உரிய வடிவம் (அடிக்கோடு அல்லது தடியெழுத்து) அமைக்கப்படும்."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
 #: ui/autocorrectionwidget.ui:415
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
 msgstr ""
+"&தடித்த, குறுக்கடித்த, மற்றும் அடிக்கோடிட்ட வடிவமைப்பை தானாக இடு (HTML பயன்முறையில்)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st... with 1^st... (HTML mode)"
-msgstr ""
+msgstr "1st... போன்றவற்றை 1^st... என மாற்று(HTML பயன்முறையில்)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
-msgstr ""
+msgstr "ஃபிரெஞ்சு உரையில் சில நிறுத்தற்குறிகளுக்கு முன் உடைபடா இடைவெளியை இடு"
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
 #: ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr ""
+msgstr "இரட்டை மேற்கோள் சின்னத்தை ஃபிரெஞ்சு மேற்கோளாக மாற்று"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: ui/autocorrectionwidget.ui:457
 #, kde-format
 msgid "Custom &Quotes"
-msgstr ""
+msgstr "வி&ருப்ப மேற்கோள்கள்"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
 #: ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
-msgstr ""
+msgstr "இர&ட்டை மேற்கோள் குறிக்கு பதிலாக உரிய மேற்கோள் குறியை இடு"
 
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
@@ -265,65 +282,65 @@ msgstr ""
 #: ui/autocorrectionwidget.ui:641 ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr ""
+msgstr "தானாக"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
 #: ui/autocorrectionwidget.ui:487 ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
-msgstr ""
+msgstr "\""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr ""
+msgstr "மேற்கோள் முடிவுக்குறி:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: ui/autocorrectionwidget.ui:534 ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr ""
+msgstr "மேற்கோள் துவக்கக்குறி:"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
 #: ui/autocorrectionwidget.ui:548 ui/autocorrectionwidget.ui:669
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "இயல்பிருப்பு"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
 #: ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
-msgstr ""
+msgstr "&ஒற்றை மேற்கோள் குறிக்கு பதிலாக உரிய மேற்கோள் குறியை இடு"
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
 #: ui/autocorrectionwidget.ui:608 ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr ""
+msgstr "மேற்கோள் முடிவுக்குறிகள்:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: ui/autocorrectionwidget.ui:707
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "பாதை"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: ui/autocorrectionwidget.ui:713
-#, kde-format
+#, fuzzy, kde-format
 msgid "System Path:"
-msgstr ""
+msgstr "பாதை:"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
@@ -380,17 +397,17 @@ msgstr ""
 #: widgets/autocorrectionwidget.cpp:419
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr ""
+msgstr "மாற்று சரமும் தேடிய சரமும் ஒன்றாயுள்ளன."
 
 #: widgets/autocorrectionwidget.cpp:419
 #, kde-format
 msgid "Add Autocorrection Entry"
-msgstr ""
+msgstr "தானியக்க திருத்த பதிவை சேர்"
 
 #: widgets/autocorrectionwidget.cpp:498
 #, kde-format
 msgid "&Modify"
-msgstr ""
+msgstr "&திருத்து"
 
 #: widgets/autocorrectionwidget.cpp:609
 #, kde-format
@@ -420,35 +437,35 @@ msgstr ""
 #: widgets/autocorrectionwidget.cpp:669
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
-msgstr ""
+msgstr "மொழி மாற்றப்பட்டுள்ளது. முந்தைய மொழிக்கான அமைப்புகளை சேமிக்க வேண்டுமா?"
 
 #: widgets/autocorrectionwidget.cpp:670
 #, kde-format
 msgid "Save config"
-msgstr ""
+msgstr "அமைப்புகளை சேமி"
 
 #: widgets/autocorrectionwidget.cpp:705
 #, kde-format
 msgid "Please save changes before exporting settings."
-msgstr ""
+msgstr "அமைப்புகளை ஏற்றுமதி செய்யுமுன் அவற்றை சேமியுங்கள்."
 
 #: widgets/autocorrectionwidget.cpp:705 widgets/autocorrectionwidget.cpp:708
 #, kde-format
 msgid "Export Autocorrection File"
-msgstr ""
+msgstr "தான்திருத்த கோப்பை ஏற்றுமதி செய்"
 
 #: widgets/selectspecialchardialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr ""
+msgstr "மேம்பட்ட எழுத்துகளைத் தேர்ந்தெடுப்பது"
 
 #: widgets/selectspecialchardialog.cpp:40
 #, kde-format
 msgid "Insert"
-msgstr ""
+msgstr "நுழை"
 
 #: widgets/selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "தேர்ந்தெடு"

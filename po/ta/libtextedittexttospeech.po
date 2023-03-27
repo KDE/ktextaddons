@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-24 00:57+0000\n"
-"PO-Revision-Date: 2023-03-12 18:52+0530\n"
+"PO-Revision-Date: 2023-03-26 14:15+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.80\n"
 
 #: texttospeechactions.cpp:28 texttospeechactions.cpp:31
 #, kde-format
@@ -36,12 +36,14 @@ msgstr "இயக்கு"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr ""
+msgstr "உரையை பேச்சாக்குவதை அமைப்பது"
 
 #: texttospeechconfiginterface.cpp:70
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr ""
+"Morning, this is the test for testing settings. வணக்கம், அமைப்புகளை சோதிக்க "
+"பயன்படுத்தக்கூடயி சரம் இது."
 
 #: texttospeechconfigwidget.cpp:33
 #, kde-format
@@ -51,49 +53,49 @@ msgstr "சோதி"
 #: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
-msgstr ""
+msgstr "ஒலியளவு:"
 
 #: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
-msgstr ""
+msgstr "வேகம்:"
 
 #: texttospeechconfigwidget.cpp:50
 #, kde-format
 msgid "Pitch:"
-msgstr ""
+msgstr "அதிர்வெண்:"
 
 #: texttospeechconfigwidget.cpp:53
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "நிரல்:"
 
 #: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Language:"
-msgstr ""
+msgstr "மொழி:"
 
 #: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Voice:"
-msgstr ""
+msgstr "குரல்:"
 
 #: texttospeechwidget.cpp:54
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "மூடு"
 
 #: texttospeechwidget.cpp:80
 #, kde-format
 msgid "Configure..."
-msgstr ""
+msgstr "அமை..."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr ""
+msgstr "நிரலில் சிக்கல்."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Text To Speech"
-msgstr ""
+msgstr "உரையை பேச்சாக்குவது"
