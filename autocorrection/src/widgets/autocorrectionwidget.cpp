@@ -117,6 +117,8 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
 
     connect(d->ui->customWritablePath, &QLineEdit::textChanged, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->customSystemPath, &QLineEdit::textChanged, this, &AutoCorrectionWidget::emitChanged);
+    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->customWritablePath, parent);
+    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->customSystemPath, parent);
 
     connect(d->ui->customWritablePathToolButton, &QToolButton::clicked, this, [this]() {
         const QString path = QFileDialog::getExistingDirectory(this, i18n("Select Custom Writable Path"));
