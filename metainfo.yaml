@@ -19,6 +19,8 @@ libraries:
    cmake: "KF5::TextAutoCorrection"
  - qmake: TextEditTextToSpeech
    cmake: "KF5::TextEditTextToSpeech"
+ - qmake: TextAddonsWidgets
+   cmake: "KF5::TextAddonsWidgets"     
 cmakename: KF5TextEditTextToSpeech
 
 public_lib: true
