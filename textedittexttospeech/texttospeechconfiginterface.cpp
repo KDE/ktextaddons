@@ -5,6 +5,7 @@
 */
 
 #include "texttospeechconfiginterface.h"
+#include "textedittexttospeech_debug.h"
 #include <KLocalizedString>
 #include <QTextToSpeech>
 using namespace TextEditTextToSpeech;
@@ -19,33 +20,49 @@ TextToSpeechConfigInterface::~TextToSpeechConfigInterface() = default;
 QStringList TextToSpeechConfigInterface::availableVoices() const
 {
     QStringList lst;
-    const QVector<QVoice> voices = mTextToSpeech->availableVoices();
-    lst.reserve(voices.count());
-    for (const QVoice &voice : voices) {
-        lst << voice.name();
+    if (mTextToSpeech) {
+        const QVector<QVoice> voices = mTextToSpeech->availableVoices();
+        lst.reserve(voices.count());
+        for (const QVoice &voice : voices) {
+            lst << voice.name();
+        }
+    } else {
+        qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "Text To Speech is not created. ";
     }
     return lst;
 }
 
 QStringList TextToSpeechConfigInterface::availableEngines() const
 {
-    return mTextToSpeech->availableEngines();
+    if (mTextToSpeech) {
+        return mTextToSpeech->availableEngines();
+    }
+    qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "Text To Speech is not created. ";
+    return {};
 }
 
 QVector<QLocale> TextToSpeechConfigInterface::availableLocales() const
 {
-    return mTextToSpeech->availableLocales();
+    if (mTextToSpeech) {
+        return mTextToSpeech->availableLocales();
+    }
+    qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "Text To Speech is not created. ";
+    return {};
 }
 
 QLocale TextToSpeechConfigInterface::locale() const
 {
-    return mTextToSpeech->locale();
+    if (mTextToSpeech) {
+        return mTextToSpeech->locale();
+    }
+    qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "Text To Speech is not created. ";
+    return {};
 }
 
 void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    if (mTextToSpeech && (mTextToSpeech->engine() != engineName))
+    if (!mTextToSpeech || (mTextToSpeech && (mTextToSpeech->engine() != engineName)))
 #endif
     {
         delete mTextToSpeech;
@@ -55,6 +72,10 @@ void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 
 void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSettings)
 {
+    if (!mTextToSpeech) {
+        qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "Text To Speech is not created. ";
+        return;
+    }
     const int rate = engineSettings.rate;
     const double rateDouble = rate / 100.0;
     mTextToSpeech->setRate(rateDouble);
