@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-03-28 00:46+0000\n"
 "PO-Revision-Date: 2023-01-14 12:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -56,7 +56,7 @@ msgstr "تصحيح تلقائي متق&دم"
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
 #: ui/autocorrectionwidget.ui:88 ui/autocorrectionwidget.ui:228
-#: widgets/autocorrectionwidget.cpp:501
+#: widgets/autocorrectionwidget.cpp:503
 #, kde-format
 msgid "&Add"
 msgstr "أ&ضف"
@@ -371,82 +371,82 @@ msgstr "..."
 msgid "Custom Writable Path:"
 msgstr "مسار النظام قابل للكتابة:"
 
-#: widgets/autocorrectionwidget.cpp:122
+#: widgets/autocorrectionwidget.cpp:124
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "اختر مسار قابل للكتابة"
 
-#: widgets/autocorrectionwidget.cpp:127
+#: widgets/autocorrectionwidget.cpp:129
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "اختر مسار النظام مخصص"
 
-#: widgets/autocorrectionwidget.cpp:137
+#: widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "تصحيح «ليبر أوفيس» الآليّ"
 
-#: widgets/autocorrectionwidget.cpp:141
+#: widgets/autocorrectionwidget.cpp:143
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "تصحيح «بريدك/كاليغرا» الآليّ"
 
-#: widgets/autocorrectionwidget.cpp:419
+#: widgets/autocorrectionwidget.cpp:421
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "نص الاستبدال هو ذاته نصّ البحث."
 
-#: widgets/autocorrectionwidget.cpp:419
+#: widgets/autocorrectionwidget.cpp:421
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "أضف مدخلة تصحيح آليّ"
 
-#: widgets/autocorrectionwidget.cpp:498
+#: widgets/autocorrectionwidget.cpp:500
 #, kde-format
 msgid "&Modify"
 msgstr "&عدّل"
 
-#: widgets/autocorrectionwidget.cpp:609
+#: widgets/autocorrectionwidget.cpp:611
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "استورد تصحيح «ليبر أوفيس» الآليّ"
 
-#: widgets/autocorrectionwidget.cpp:610
+#: widgets/autocorrectionwidget.cpp:612
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "ملفّ تصحيح «ليبر أوفيس» الآليّ (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:613
+#: widgets/autocorrectionwidget.cpp:615
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "استورد تصحيح «بريدك» الآليّ"
 
-#: widgets/autocorrectionwidget.cpp:614
+#: widgets/autocorrectionwidget.cpp:616
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "ملفّ تصحيح «بريدك» الآليّ (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:646
+#: widgets/autocorrectionwidget.cpp:648
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "استورد ملفّ التّصحيح الآليّ"
 
-#: widgets/autocorrectionwidget.cpp:669
+#: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "تغيّرت اللغة، أتريد حفظ الضّبط للغة السّابقة؟"
 
-#: widgets/autocorrectionwidget.cpp:670
+#: widgets/autocorrectionwidget.cpp:672
 #, kde-format
 msgid "Save config"
 msgstr "احفظ الضّبط"
 
-#: widgets/autocorrectionwidget.cpp:705
+#: widgets/autocorrectionwidget.cpp:707
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "رجاءً احفظ التّغييرات قبل تصدير الإعدادات."
 
-#: widgets/autocorrectionwidget.cpp:705 widgets/autocorrectionwidget.cpp:708
+#: widgets/autocorrectionwidget.cpp:707 widgets/autocorrectionwidget.cpp:710
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "تصدير ملفّ التّصحيح الآليّ"

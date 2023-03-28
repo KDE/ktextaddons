@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2023-03-26 02:19\n"
+"POT-Creation-Date: 2023-03-28 00:46+0000\n"
+"PO-Revision-Date: 2023-03-27 12:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -55,7 +55,7 @@ msgstr "高级自动更正(&V)"
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
 #: ui/autocorrectionwidget.ui:88 ui/autocorrectionwidget.ui:228
-#: widgets/autocorrectionwidget.cpp:501
+#: widgets/autocorrectionwidget.cpp:503
 #, kde-format
 msgid "&Add"
 msgstr "添加(&A)"
@@ -365,82 +365,82 @@ msgstr "..."
 msgid "Custom Writable Path:"
 msgstr "自定义可写入路径："
 
-#: widgets/autocorrectionwidget.cpp:122
+#: widgets/autocorrectionwidget.cpp:124
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "选择自定义可写入路径"
 
-#: widgets/autocorrectionwidget.cpp:127
+#: widgets/autocorrectionwidget.cpp:129
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "选择自定义系统路径"
 
-#: widgets/autocorrectionwidget.cpp:137
+#: widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice 自动更正"
 
-#: widgets/autocorrectionwidget.cpp:141
+#: widgets/autocorrectionwidget.cpp:143
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail/Calligra 自动更正"
 
-#: widgets/autocorrectionwidget.cpp:419
+#: widgets/autocorrectionwidget.cpp:421
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "“替换”字符串与“查找”字符串相同。"
 
-#: widgets/autocorrectionwidget.cpp:419
+#: widgets/autocorrectionwidget.cpp:421
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "添加自动更正项目"
 
-#: widgets/autocorrectionwidget.cpp:498
+#: widgets/autocorrectionwidget.cpp:500
 #, kde-format
 msgid "&Modify"
 msgstr "修改(&M)"
 
-#: widgets/autocorrectionwidget.cpp:609
+#: widgets/autocorrectionwidget.cpp:611
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "导入 LibreOffice 自动更正"
 
-#: widgets/autocorrectionwidget.cpp:610
+#: widgets/autocorrectionwidget.cpp:612
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice 自动更正文件 (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:613
+#: widgets/autocorrectionwidget.cpp:615
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "导入 KMail 自动更正"
 
-#: widgets/autocorrectionwidget.cpp:614
+#: widgets/autocorrectionwidget.cpp:616
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail 自动更正文件 (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:646
+#: widgets/autocorrectionwidget.cpp:648
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "导入自动更正文件"
 
-#: widgets/autocorrectionwidget.cpp:669
+#: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "语言已经更改，您想要保存之前语言的配置吗？"
 
-#: widgets/autocorrectionwidget.cpp:670
+#: widgets/autocorrectionwidget.cpp:672
 #, kde-format
 msgid "Save config"
 msgstr "保存配置"
 
-#: widgets/autocorrectionwidget.cpp:705
+#: widgets/autocorrectionwidget.cpp:707
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "请在导出设置之前保存更改。"
 
-#: widgets/autocorrectionwidget.cpp:705 widgets/autocorrectionwidget.cpp:708
+#: widgets/autocorrectionwidget.cpp:707 widgets/autocorrectionwidget.cpp:710
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "导出自动更正文件"
