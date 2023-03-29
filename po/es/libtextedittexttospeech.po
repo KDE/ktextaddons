@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextedittexttospeech\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:57+0000\n"
+"POT-Creation-Date: 2023-03-29 00:46+0000\n"
 "PO-Revision-Date: 2023-01-15 00:23+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -40,7 +40,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Configurar texto a voz"
 
-#: texttospeechconfiginterface.cpp:70
+#: texttospeechconfiginterface.cpp:91
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "Buenos días. Esta es la prueba para para probar la configuración."
