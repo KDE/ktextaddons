@@ -50,10 +50,10 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(GrammalecteResultJob)
-    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
-    void receivedStdErr();
-    void receivedError();
-    void receivedStandardOutput();
+    TEXTGRAMMARCHECK_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    TEXTGRAMMARCHECK_NO_EXPORT void receivedStdErr();
+    TEXTGRAMMARCHECK_NO_EXPORT void receivedError();
+    TEXTGRAMMARCHECK_NO_EXPORT void receivedStandardOutput();
     QStringList mArguments;
     QString mResult;
     QString mText;

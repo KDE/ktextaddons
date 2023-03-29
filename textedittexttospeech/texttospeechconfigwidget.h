@@ -31,19 +31,19 @@ Q_SIGNALS:
     void configChanged(bool state);
 
 private:
-    void slotTestTextToSpeech();
-    void valueChanged();
-    void slotLocalesAndVoices();
-    void slotUpdateSettings();
-    void slotEngineChanged();
-    void slotLanguageChanged();
-    void updateVoice();
-    void updateLocale();
-    void updateEngine();
-    void updateAvailableLocales();
-    void updateAvailableEngine();
-    void updateAvailableVoices();
-    void slotAvailableEngineChanged();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotTestTextToSpeech();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void valueChanged();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotLocalesAndVoices();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotUpdateSettings();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotEngineChanged();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotLanguageChanged();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateVoice();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateLocale();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateEngine();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateAvailableLocales();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateAvailableEngine();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateAvailableVoices();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotAvailableEngineChanged();
     TextToSpeechSliderWidget *const mVolume;
     TextToSpeechSliderWidget *const mRate;
     TextToSpeechSliderWidget *const mPitch;

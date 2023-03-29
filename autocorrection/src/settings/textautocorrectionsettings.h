@@ -31,10 +31,10 @@ public:
     void requestSync();
 
 private Q_SLOTS:
-    void slotSyncNow();
+    TEXTAUTOCORRECTION_NO_EXPORT void slotSyncNow();
 
 private:
-    TextAutoCorrectionSettings();
+    TEXTAUTOCORRECTION_NO_EXPORT TextAutoCorrectionSettings();
     ~TextAutoCorrectionSettings() override;
     static TextAutoCorrectionSettings *mSelf;
 

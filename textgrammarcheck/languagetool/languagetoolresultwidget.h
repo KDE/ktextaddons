@@ -25,8 +25,8 @@ protected:
 
 private:
     Q_DISABLE_COPY(LanguageToolResultWidget)
-    void slotCheckGrammarFinished(const QString &result);
-    void slotError(const QString &str);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotCheckGrammarFinished(const QString &result);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotError(const QString &str);
     LanguageToolComboBox *mLanguageToolComboBox = nullptr;
     LanguageToolUpdateComboBox *const mLanguageToolUpdateCombobox;
 };

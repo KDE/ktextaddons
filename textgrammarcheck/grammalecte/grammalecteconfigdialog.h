@@ -19,8 +19,8 @@ public:
 
 private:
     Q_DISABLE_COPY(GrammalecteConfigDialog)
-    void writeConfig();
-    void readConfig();
+    TEXTGRAMMARCHECK_NO_EXPORT void writeConfig();
+    TEXTGRAMMARCHECK_NO_EXPORT void readConfig();
     GrammalecteConfigWidget *const mConfigWidget;
 };
 }

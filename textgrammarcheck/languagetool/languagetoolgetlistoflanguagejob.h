@@ -38,9 +38,9 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(LanguageToolGetListOfLanguageJob)
-    void addRequestAttribute(QNetworkRequest &request) const;
-    void slotCheckListOfLanguagesFinished();
-    void slotFinish(QNetworkReply *reply);
+    TEXTGRAMMARCHECK_NO_EXPORT void addRequestAttribute(QNetworkRequest &request) const;
+    TEXTGRAMMARCHECK_NO_EXPORT void slotCheckListOfLanguagesFinished();
+    TEXTGRAMMARCHECK_NO_EXPORT void slotFinish(QNetworkReply *reply);
 
     QString mListOfLanguagePath;
     QNetworkAccessManager *mNetworkAccessManager = nullptr;

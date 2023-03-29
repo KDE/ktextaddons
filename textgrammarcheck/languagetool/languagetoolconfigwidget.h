@@ -29,8 +29,8 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(LanguageToolConfigWidget)
-    void updateWidgets(bool enabled);
-    void slotResetValue();
+    TEXTGRAMMARCHECK_NO_EXPORT void updateWidgets(bool enabled);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotResetValue();
     QCheckBox *const mUseLocalInstance;
     QLineEdit *const mInstancePath;
     QLabel *const mInstancePathLabel;

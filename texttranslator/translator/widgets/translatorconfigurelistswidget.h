@@ -26,9 +26,9 @@ public:
     void load();
 
 private:
-    void loadLanguagesList();
-    void fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage);
-    void slotEngineChanged(const QString &engine);
+    TEXTTRANSLATOR_NO_EXPORT void loadLanguagesList();
+    TEXTTRANSLATOR_NO_EXPORT void fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage);
+    TEXTTRANSLATOR_NO_EXPORT void slotEngineChanged(const QString &engine);
     class TranslatorConfigureListsWidgetPrivate;
     std::unique_ptr<TranslatorConfigureListsWidgetPrivate> const d;
 };

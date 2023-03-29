@@ -19,8 +19,8 @@ public:
 
 private:
     Q_DISABLE_COPY(LanguageToolConfigDialog)
-    void writeConfig();
-    void readConfig();
+    TEXTGRAMMARCHECK_NO_EXPORT void writeConfig();
+    TEXTGRAMMARCHECK_NO_EXPORT void readConfig();
     LanguageToolConfigWidget *const mConfigWidget;
 };
 }

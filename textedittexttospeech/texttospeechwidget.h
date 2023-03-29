@@ -50,11 +50,11 @@ Q_SIGNALS:
     void changeVisibility(bool state);
 
 private:
-    void slotVolumeChanged(int value);
-    void slotCloseTextToSpeechWidget();
-    void slotConfigure();
-    void applyVolume();
-    void hideWidget();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotVolumeChanged(int value);
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotCloseTextToSpeechWidget();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotConfigure();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void applyVolume();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void hideWidget();
     std::unique_ptr<TextToSpeechWidgetPrivate> const d;
 };
 }

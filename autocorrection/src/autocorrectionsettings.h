@@ -100,9 +100,9 @@ public:
     void setCustomSystemPath(const QString &path);
 
 private:
-    void migrateKMailXmlFile();
-    void readAutoCorrectionFile(bool forceGlobal = false);
-    Q_REQUIRED_RESULT QString containsAutoCorrectionFile(const QString &fileName);
+    TEXTAUTOCORRECTION_NO_EXPORT void migrateKMailXmlFile();
+    TEXTAUTOCORRECTION_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
 
     friend class AutoCorrectionSettingsPrivate;
     std::unique_ptr<AutoCorrectionSettingsPrivate> const d;

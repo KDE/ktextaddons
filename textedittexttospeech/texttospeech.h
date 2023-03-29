@@ -57,8 +57,8 @@ Q_SIGNALS:
     void stateChanged(TextToSpeech::State);
 
 private:
-    void slotStateChanged();
-    explicit TextToSpeech(QObject *parent = nullptr);
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotStateChanged();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT explicit TextToSpeech(QObject *parent = nullptr);
 
     std::unique_ptr<TextToSpeechPrivate> const d;
 };

@@ -47,48 +47,48 @@ Q_SIGNALS:
 
 private:
     /* tab 2 */
-    void enableSingleQuotes(bool state);
-    void enableDoubleQuotes(bool state);
-    void selectSingleQuoteCharOpen();
-    void selectSingleQuoteCharClose();
-    void setDefaultSingleQuotes();
-    void selectDoubleQuoteCharOpen();
-    void selectDoubleQuoteCharClose();
-    void setDefaultDoubleQuotes();
+    TEXTAUTOCORRECTION_NO_EXPORT void enableSingleQuotes(bool state);
+    TEXTAUTOCORRECTION_NO_EXPORT void enableDoubleQuotes(bool state);
+    TEXTAUTOCORRECTION_NO_EXPORT void selectSingleQuoteCharOpen();
+    TEXTAUTOCORRECTION_NO_EXPORT void selectSingleQuoteCharClose();
+    TEXTAUTOCORRECTION_NO_EXPORT void setDefaultSingleQuotes();
+    TEXTAUTOCORRECTION_NO_EXPORT void selectDoubleQuoteCharOpen();
+    TEXTAUTOCORRECTION_NO_EXPORT void selectDoubleQuoteCharClose();
+    TEXTAUTOCORRECTION_NO_EXPORT void setDefaultDoubleQuotes();
 
     /* tab 3 */
-    void enableAdvAutocorrection(bool state);
-    void addAutocorrectEntry();
-    void removeAutocorrectEntry();
-    void setFindReplaceText(QTreeWidgetItem *, int);
-    void enableAddRemoveButton();
+    TEXTAUTOCORRECTION_NO_EXPORT void enableAdvAutocorrection(bool state);
+    TEXTAUTOCORRECTION_NO_EXPORT void addAutocorrectEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void removeAutocorrectEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void setFindReplaceText(QTreeWidgetItem *, int);
+    TEXTAUTOCORRECTION_NO_EXPORT void enableAddRemoveButton();
 
     /* tab 4 */
-    void abbreviationChanged(const QString &text);
-    void twoUpperLetterChanged(const QString &text);
-    void addAbbreviationEntry();
-    void removeAbbreviationEntry();
-    void addTwoUpperLetterEntry();
-    void removeTwoUpperLetterEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void abbreviationChanged(const QString &text);
+    TEXTAUTOCORRECTION_NO_EXPORT void twoUpperLetterChanged(const QString &text);
+    TEXTAUTOCORRECTION_NO_EXPORT void addAbbreviationEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void removeAbbreviationEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void addTwoUpperLetterEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void removeTwoUpperLetterEntry();
 
-    void slotEnableDisableAbreviationList();
-    void slotEnableDisableTwoUpperEntry();
+    TEXTAUTOCORRECTION_NO_EXPORT void slotEnableDisableAbreviationList();
+    TEXTAUTOCORRECTION_NO_EXPORT void slotEnableDisableTwoUpperEntry();
 
-    void slotImportAutoCorrection(QAction *act);
+    TEXTAUTOCORRECTION_NO_EXPORT void slotImportAutoCorrection(QAction *act);
 
-    void changeLanguage(int);
-    void updateAddRemoveButton();
+    TEXTAUTOCORRECTION_NO_EXPORT void changeLanguage(int);
+    TEXTAUTOCORRECTION_NO_EXPORT void updateAddRemoveButton();
 
-    void slotExportAutoCorrection();
+    TEXTAUTOCORRECTION_NO_EXPORT void slotExportAutoCorrection();
 
 private:
-    void slotChangeComboboxState(int index);
-    void emitChanged();
-    void addAutoCorrectEntries();
-    void loadAutoCorrectionAndException();
-    void loadGlobalAutoCorrectionAndException();
-    void setLanguage(const QString &lang);
-    void updateHtmlSupport();
+    TEXTAUTOCORRECTION_NO_EXPORT void slotChangeComboboxState(int index);
+    TEXTAUTOCORRECTION_NO_EXPORT void emitChanged();
+    TEXTAUTOCORRECTION_NO_EXPORT void addAutoCorrectEntries();
+    TEXTAUTOCORRECTION_NO_EXPORT void loadAutoCorrectionAndException();
+    TEXTAUTOCORRECTION_NO_EXPORT void loadGlobalAutoCorrectionAndException();
+    TEXTAUTOCORRECTION_NO_EXPORT void setLanguage(const QString &lang);
+    TEXTAUTOCORRECTION_NO_EXPORT void updateHtmlSupport();
 
     std::unique_ptr<AutoCorrectionWidgetPrivate> const d;
 };

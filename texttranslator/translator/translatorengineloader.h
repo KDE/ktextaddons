@@ -40,8 +40,8 @@ Q_SIGNALS:
     void loadingTranslatorFailed();
 
 private:
-    void loadPlugins();
-    void loadPlugin(const QString &pluginPath);
+    TEXTTRANSLATOR_NO_EXPORT void loadPlugins();
+    TEXTTRANSLATOR_NO_EXPORT void loadPlugin(const QString &pluginPath);
     std::unique_ptr<TranslatorEngineLoaderPrivate> const d;
 };
 }

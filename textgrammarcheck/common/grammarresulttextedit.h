@@ -35,9 +35,9 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(GrammarResultTextEdit)
-    void slotReplaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord);
-    void slotOpenGrammarUrlInfo(const QString &url);
-    void generalPaletteChanged();
+    TEXTGRAMMARCHECK_NO_EXPORT void slotReplaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotOpenGrammarUrlInfo(const QString &url);
+    TEXTGRAMMARCHECK_NO_EXPORT void generalPaletteChanged();
     QColor mTextColor;
     QColor mNegativeTextColor;
 };

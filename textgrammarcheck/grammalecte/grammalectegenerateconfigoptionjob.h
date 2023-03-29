@@ -40,11 +40,11 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(GrammalecteGenerateConfigOptionJob)
-    void receivedStandardOutput();
-    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
-    void receivedError();
-    void receivedStdErr();
-    QVector<GrammalecteGenerateConfigOptionJob::Option> parseResult() const;
+    TEXTGRAMMARCHECK_NO_EXPORT void receivedStandardOutput();
+    TEXTGRAMMARCHECK_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    TEXTGRAMMARCHECK_NO_EXPORT void receivedError();
+    TEXTGRAMMARCHECK_NO_EXPORT void receivedStdErr();
+    TEXTGRAMMARCHECK_NO_EXPORT QVector<GrammalecteGenerateConfigOptionJob::Option> parseResult() const;
     QString mResult;
     QString mPythonPath;
     QString mGrammarlecteCliPath;

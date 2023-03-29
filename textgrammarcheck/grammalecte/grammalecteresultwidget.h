@@ -21,7 +21,7 @@ public:
     void checkGrammar() override;
 
 private:
-    void slotCheckGrammarFinished(const QString &result);
-    void slotError(GrammalecteResultJob::ErrorType error);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotCheckGrammarFinished(const QString &result);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotError(GrammalecteResultJob::ErrorType error);
 };
 }

@@ -20,7 +20,7 @@ public:
     ~TranslatorConfigureDialog() override;
 
 private:
-    void slotAccept();
+    TEXTTRANSLATOR_NO_EXPORT void slotAccept();
     TranslatorConfigureWidget *const mTranslatorConfigureWidget;
 };
 }

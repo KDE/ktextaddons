@@ -65,14 +65,14 @@ public Q_SLOTS:
     void slotCloseWidget();
 
 private:
-    void slotFromLanguageChanged(int, bool initialize = false);
-    void slotTextChanged();
-    void slotInvertLanguage();
-    void slotClear();
-    void slotTranslateDone();
-    void slotTranslateFailed(bool result, const QString &message);
-    void slotDebug();
-    void slotConfigChanged();
+    TEXTTRANSLATOR_NO_EXPORT void slotFromLanguageChanged(int, bool initialize = false);
+    TEXTTRANSLATOR_NO_EXPORT void slotTextChanged();
+    TEXTTRANSLATOR_NO_EXPORT void slotInvertLanguage();
+    TEXTTRANSLATOR_NO_EXPORT void slotClear();
+    TEXTTRANSLATOR_NO_EXPORT void slotTranslateDone();
+    TEXTTRANSLATOR_NO_EXPORT void slotTranslateFailed(bool result, const QString &message);
+    TEXTTRANSLATOR_NO_EXPORT void slotDebug();
+    TEXTTRANSLATOR_NO_EXPORT void slotConfigChanged();
 
 protected:
     bool event(QEvent *e) override;
@@ -81,10 +81,10 @@ Q_SIGNALS:
     void toolsWasClosed();
 
 private:
-    void init();
-    void initLanguage();
-    void switchEngine();
-    void loadEngineSettings();
+    TEXTTRANSLATOR_NO_EXPORT void init();
+    TEXTTRANSLATOR_NO_EXPORT void initLanguage();
+    TEXTTRANSLATOR_NO_EXPORT void switchEngine();
+    TEXTTRANSLATOR_NO_EXPORT void loadEngineSettings();
     class TranslatorWidgetPrivate;
     std::unique_ptr<TranslatorWidgetPrivate> const d;
 };

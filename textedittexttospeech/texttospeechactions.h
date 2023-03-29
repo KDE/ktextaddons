@@ -38,7 +38,7 @@ Q_SIGNALS:
     void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
 private:
-    void slotPlayPause();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotPlayPause();
     std::unique_ptr<TextToSpeechActionsPrivate> const d;
 };
 }

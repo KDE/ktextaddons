@@ -31,7 +31,7 @@ public:
     void reloadSettings() override;
 
 private:
-    void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
     std::unique_ptr<TextToSpeechInterfacePrivate> const d;
 };
 }

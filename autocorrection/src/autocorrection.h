@@ -36,25 +36,25 @@ public:
     void writeAutoCorrectionXmlFile(const QString &filename);
 
 private:
-    void fixTwoUppercaseChars();
-    Q_REQUIRED_RESULT bool singleSpaces() const;
-    void capitalizeWeekDays();
-    Q_REQUIRED_RESULT bool autoFractions() const;
-    void uppercaseFirstCharOfSentence();
-    Q_REQUIRED_RESULT int advancedAutocorrect();
-    void replaceTypographicQuotes();
-    void superscriptAppendix();
-    void addNonBreakingSpace();
+    TEXTAUTOCORRECTION_NO_EXPORT void fixTwoUppercaseChars();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool singleSpaces() const;
+    TEXTAUTOCORRECTION_NO_EXPORT void capitalizeWeekDays();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool autoFractions() const;
+    TEXTAUTOCORRECTION_NO_EXPORT void uppercaseFirstCharOfSentence();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT int advancedAutocorrect();
+    TEXTAUTOCORRECTION_NO_EXPORT void replaceTypographicQuotes();
+    TEXTAUTOCORRECTION_NO_EXPORT void superscriptAppendix();
+    TEXTAUTOCORRECTION_NO_EXPORT void addNonBreakingSpace();
 
-    void selectPreviousWord(QTextCursor &cursor, int cursorPosition);
-    void selectStringOnMaximumSearchString(QTextCursor &cursor, int cursorPosition);
+    TEXTAUTOCORRECTION_NO_EXPORT void selectPreviousWord(QTextCursor &cursor, int cursorPosition);
+    TEXTAUTOCORRECTION_NO_EXPORT void selectStringOnMaximumSearchString(QTextCursor &cursor, int cursorPosition);
 
-    Q_REQUIRED_RESULT bool autoFormatURLs();
-    Q_REQUIRED_RESULT bool autoBoldUnderline();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool autoFormatURLs();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool autoBoldUnderline();
 
-    Q_REQUIRED_RESULT QString autoDetectURL(const QString &_word) const;
-    Q_REQUIRED_RESULT bool excludeToUppercase(const QString &word) const;
-    Q_REQUIRED_RESULT QColor linkColor();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT QString autoDetectURL(const QString &_word) const;
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool excludeToUppercase(const QString &word) const;
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT QColor linkColor();
     friend class AutoCorrectionPrivate;
     std::unique_ptr<AutoCorrectionPrivate> const d;
 };

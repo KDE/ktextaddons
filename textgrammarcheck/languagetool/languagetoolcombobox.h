@@ -24,7 +24,7 @@ public:
     void fillComboBox(const QVector<LanguageInfo> &info);
 
 private:
-    void fillComboBox();
+    TEXTGRAMMARCHECK_NO_EXPORT void fillComboBox();
     Q_DISABLE_COPY(LanguageToolComboBox)
 };
 }
