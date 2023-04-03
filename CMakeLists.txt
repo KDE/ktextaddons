@@ -79,7 +79,7 @@ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Des
 
 ecm_set_disabled_deprecation_versions(
     QT 6.4.0
-    KF 5.103
+    KF 5.105
 )
 
 add_subdirectory(textaddonswidgets)
