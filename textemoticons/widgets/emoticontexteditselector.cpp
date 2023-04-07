@@ -20,6 +20,15 @@
 
 using namespace TextEmoticonsWidgets;
 
+QString emojiFontName()
+{
+#ifdef Q_OS_WIN
+    return QStringLiteral("Segoe UI Emoji");
+#else
+    return QStringLiteral("NotoColorEmoji");
+#endif
+}
+
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
     , mCategoryButtons(new EmoticonCategoryButtons(this))
@@ -27,6 +36,13 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     , mEmoticonListView(new EmoticonListView(this))
     , mEmoticonProxyModel(new EmoticonUnicodeProxyModel(this))
 {
+    QFont f;
+    f.setPointSize(22);
+    // TODO fix me
+    // f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
+    f.setFamily(emojiFontName());
+    mEmoticonListView->setFont(f);
+    mCategoryButtons->setFont(f);
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setSpacing(0);
