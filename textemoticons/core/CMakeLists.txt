@@ -56,10 +56,9 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextEmoticonsCore PROPERTIES
 
 install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsCore EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-#if(BUILD_TESTING)
-#    add_subdirectory(autotests)
-#    add_subdirectory(tests)
-#endif()
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
 
 ecm_generate_headers(TextEmoticonsCore_CamelCase_HEADERS
     HEADER_NAMES
