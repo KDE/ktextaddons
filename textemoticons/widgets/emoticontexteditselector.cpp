@@ -1,0 +1,76 @@
+/*
+  SPDX-FileCopyrightText: 2012-2023 Laurent Montel <montel@kde.org>
+  based on code from kopete
+
+  SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "emoticontexteditselector.h"
+#include "emoticoncategorybuttons.h"
+#include "emoticonlistview.h"
+#include "emoticonunicodeproxymodel.h"
+
+#include <KLocalizedString>
+
+#include <QLineEdit>
+#include <QVBoxLayout>
+
+using namespace TextEmoticonsWidgets;
+
+EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
+    : QWidget(parent)
+    , mCategoryButtons(new EmoticonCategoryButtons(this))
+    , mSearchUnicodeLineEdit(new QLineEdit(this))
+    , mEmoticonListView(new EmoticonListView(this))
+    , mEmoticonProxyModel(new EmoticonUnicodeProxyModel(this))
+{
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setSpacing(0);
+    mainLayout->setContentsMargins({});
+    mSearchUnicodeLineEdit->setObjectName(QStringLiteral("mSearchUnicodeLineEdit"));
+    mSearchUnicodeLineEdit->setClearButtonEnabled(true);
+    mSearchUnicodeLineEdit->setPlaceholderText(i18n("Search Emoticon..."));
+    mainLayout->addWidget(mSearchUnicodeLineEdit);
+
+    mainLayout->addWidget(mCategoryButtons);
+    mEmoticonListView->setObjectName(QStringLiteral("mEmoticonListView"));
+    mainLayout->addWidget(mEmoticonListView);
+
+    mEmoticonProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
+    mEmoticonListView->setModel(mEmoticonProxyModel);
+    connect(mEmoticonListView, &EmoticonListView::emojiItemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
+    connect(mCategoryButtons, &EmoticonCategoryButtons::categorySelected, this, &EmoticonTextEditSelector::slotCategorySelected);
+    connect(mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, &EmoticonTextEditSelector::slotSearchUnicode);
+    setMinimumSize(400, 200);
+}
+
+EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
+
+void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QString &identifier)
+{
+    // TODO use identifier
+    Q_EMIT itemSelected(str);
+    if (isVisible() && parentWidget() && parentWidget()->inherits("QMenu")) {
+        parentWidget()->close();
+    }
+}
+
+void EmoticonTextEditSelector::loadEmoticons()
+{
+    /*
+    if (mUnicodeTab->count() == 0) {
+        mUnicodeTab->loadEmoticons();
+    }
+    */
+}
+
+void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)
+{
+    // mUnicodeTab->searchUnicode(str);
+}
+
+void EmoticonTextEditSelector::slotCategorySelected(const QString &category)
+{
+    mEmoticonProxyModel->setCategory(category);
+}

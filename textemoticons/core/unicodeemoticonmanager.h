@@ -13,6 +13,10 @@
 namespace TextEmoticonsCore
 {
 class UnicodeEmoticonManagerPrivate;
+/**
+ * @brief The UnicodeEmoticonManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
 {
     Q_OBJECT
