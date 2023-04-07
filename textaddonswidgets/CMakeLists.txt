@@ -54,7 +54,7 @@ install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSI
 #    add_subdirectory(tests)
 #endif()
 
-ecm_generate_headers(TextAddonsWidgets_CamelCasetexttospeechs_HEADERS
+ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     LineEditCatchReturnKey
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
@@ -68,7 +68,7 @@ install(FILES
     COMPONENT Devel
 )
 install(FILES
-    ${TextAddonsWidgets_CamelCasetexttospeechs_HEADERS}
+    ${TextAddonsWidgets_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )

@@ -86,6 +86,7 @@ add_subdirectory(textaddonswidgets)
 add_subdirectory(autocorrection)
 add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
+add_subdirectory(textemoticons)
 
 find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
