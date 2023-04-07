@@ -3,6 +3,6 @@ Upstream-Name: ktextaddons
 Upstream-Contact: Montel Laurent <montel@kde.org>
 Source: https://invent.kde.org/ktextaddons
 
-Files: autocorrection/src/autotests/data/* textgrammarcheck/grammalecte/autotests/data/*.json textgrammarcheck/languagetool/autotests/data/*.json 
+Files: autocorrection/src/autotests/data/* textgrammarcheck/grammalecte/autotests/data/*.json textgrammarcheck/languagetool/autotests/data/*.json .gitattributes
 Copyright: none
 License: CC0-1.0
