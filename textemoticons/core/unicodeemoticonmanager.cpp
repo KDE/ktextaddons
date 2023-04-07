@@ -13,21 +13,15 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 using namespace TextEmoticonsCore;
-UnicodeEmoticonManager::UnicodeEmoticonManager(QObject *parent)
-    : QObject(parent)
+class TextEmoticonsCore::UnicodeEmoticonManagerPrivate
 {
-    loadUnicodeEmoji();
-}
+public:
+    void loadUnicodeEmoji();
+    Q_REQUIRED_RESULT QString i18nUnicodeCategory(const QString &name) const;
+    QVector<UnicodeEmoticon> mUnicodeEmojiList;
+};
 
-UnicodeEmoticonManager::~UnicodeEmoticonManager() = default;
-
-UnicodeEmoticonManager *UnicodeEmoticonManager::self()
-{
-    static UnicodeEmoticonManager s_self;
-    return &s_self;
-}
-
-void UnicodeEmoticonManager::loadUnicodeEmoji()
+void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
 {
     UnicodeEmoticonParser unicodeParser;
     QFile file(QStringLiteral(":/emoji.json"));
@@ -41,17 +35,7 @@ void UnicodeEmoticonManager::loadUnicodeEmoji()
     mUnicodeEmojiList = unicodeParser.parse(obj);
 }
 
-QVector<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
-{
-    return mUnicodeEmojiList;
-}
-
-int UnicodeEmoticonManager::count() const
-{
-    return mUnicodeEmojiList.count();
-}
-
-QString UnicodeEmoticonManager::i18nUnicodeCategory(const QString &name) const
+QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) const
 {
     // Name "🚗"Category "travel", Name "🇿"Category "regional", Name "🏳️"Category "flags")
     if (name == QLatin1String("symbols")) {
@@ -78,11 +62,36 @@ QString UnicodeEmoticonManager::i18nUnicodeCategory(const QString &name) const
     return {};
 }
 
+UnicodeEmoticonManager::UnicodeEmoticonManager(QObject *parent)
+    : QObject(parent)
+    , d(new TextEmoticonsCore::UnicodeEmoticonManagerPrivate)
+{
+    d->loadUnicodeEmoji();
+}
+
+UnicodeEmoticonManager::~UnicodeEmoticonManager() = default;
+
+UnicodeEmoticonManager *UnicodeEmoticonManager::self()
+{
+    static UnicodeEmoticonManager s_self;
+    return &s_self;
+}
+
+QVector<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
+{
+    return d->mUnicodeEmojiList;
+}
+
+int UnicodeEmoticonManager::count() const
+{
+    return d->mUnicodeEmojiList.count();
+}
+
 QVector<EmoticonCategory> UnicodeEmoticonManager::categories() const
 {
     QVector<EmoticonCategory> categories;
     QSet<QString> seen;
-    for (const UnicodeEmoticon &emo : std::as_const(mUnicodeEmojiList)) {
+    for (const UnicodeEmoticon &emo : std::as_const(d->mUnicodeEmojiList)) {
         // Pick the first icon in each category
         const QString category = emo.category();
         if (!seen.contains(category)) {
@@ -93,7 +102,7 @@ QVector<EmoticonCategory> UnicodeEmoticonManager::categories() const
             EmoticonCategory cat;
             cat.setCategory(category);
             cat.setName(emo.unicode());
-            cat.setI18nName(i18nUnicodeCategory(category));
+            cat.setI18nName(d->i18nUnicodeCategory(category));
             cat.setOrder(UnicodeEmoticonParser::changeOrder(category));
             categories.append(std::move(cat));
         }
@@ -109,13 +118,13 @@ QVector<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString
     auto hasRequestedCategory = [category](const UnicodeEmoticon &emo) {
         return emo.category() == category;
     };
-    std::copy_if(mUnicodeEmojiList.begin(), mUnicodeEmojiList.end(), std::back_inserter(result), hasRequestedCategory);
+    std::copy_if(d->mUnicodeEmojiList.begin(), d->mUnicodeEmojiList.end(), std::back_inserter(result), hasRequestedCategory);
     return result;
 }
 
 UnicodeEmoticon UnicodeEmoticonManager::unicodeEmoticonForEmoji(const QString &emojiIdentifier) const
 {
-    for (const UnicodeEmoticon &emo : mUnicodeEmojiList) {
+    for (const UnicodeEmoticon &emo : d->mUnicodeEmojiList) {
         if (emo.hasEmoji(emojiIdentifier)) {
             return emo;
         }

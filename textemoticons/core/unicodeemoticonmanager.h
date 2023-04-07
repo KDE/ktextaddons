@@ -12,6 +12,7 @@
 #include <QObject>
 namespace TextEmoticonsCore
 {
+class UnicodeEmoticonManagerPrivate;
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
 {
     Q_OBJECT
@@ -29,8 +30,6 @@ public:
     Q_REQUIRED_RESULT int count() const;
 
 private:
-    Q_REQUIRED_RESULT TEXTEMOTICONSCORE_NO_EXPORT QString i18nUnicodeCategory(const QString &name) const;
-    void loadUnicodeEmoji();
-    QVector<UnicodeEmoticon> mUnicodeEmojiList;
+    std::unique_ptr<UnicodeEmoticonManagerPrivate> const d;
 };
 }
