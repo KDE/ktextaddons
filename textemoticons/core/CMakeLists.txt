@@ -3,7 +3,7 @@
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCore")
 
-ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSCore
+ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSCORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textemoticonscore_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCoreConfigVersion.cmake"
     SOVERSION 1
@@ -13,6 +13,17 @@ add_library(KF${KF_MAJOR_VERSION}TextEmoticonsCore)
 add_library(KF${KF_MAJOR_VERSION}::TextEmoticonsCore ALIAS KF${KF_MAJOR_VERSION}TextEmoticonsCore)
 
 target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsCore PRIVATE
+    emoji.qrc
+    emoticoncategory.cpp
+    emoticoncategory.h
+    emoticonunicodeutils.cpp
+    emoticonunicodeutils.h
+    unicodeemoticon.cpp
+    unicodeemoticon.h
+    unicodeemoticonmanager.cpp
+    unicodeemoticonmanager.h
+    unicodeemoticonparser.cpp
+    unicodeemoticonparser.h
 )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
@@ -20,8 +31,8 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
     Qt::Widgets
 )
 
-ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsCore HEADER TextEmoticonsCore_debug.h
-    IDENTIFIER TEXTEMOTICONSCore_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textemoticonscore
+ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsCore HEADER textemoticonscore_debug.h
+    IDENTIFIER TEXTEMOTICONSCORE_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textemoticonscore
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons widgets)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -38,8 +49,8 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
 )
 
 set_target_properties(KF${KF_MAJOR_VERSION}TextEmoticonsCore PROPERTIES
-    VERSION ${TEXTEMOTICONSCore_VERSION}
-    SOVERSION ${TEXTEMOTICONSCore_SOVERSION}
+    VERSION ${TEXTEMOTICONSCORE_VERSION}
+    SOVERSION ${TEXTEMOTICONSCORE_SOVERSION}
     EXPORT_NAME TextEmoticonsCore
 )
 
@@ -50,12 +61,14 @@ install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsCore EXPORT KF${KF_MAJOR_VERSI
 #    add_subdirectory(tests)
 #endif()
 
-#ecm_generate_headers(TextEmoticonsCore_CamelCase_HEADERS
-#    HEADER_NAMES
-#    #LineEditCatchReturnKey
-#    REQUIRED_HEADERS TextEmoticonsCore_HEADERS
-#    PREFIX TextEmoticonsCore
-#)
+ecm_generate_headers(TextEmoticonsCore_CamelCase_HEADERS
+    HEADER_NAMES
+    UnicodeEmoticonManager
+    UnicodeEmoticon
+    EmoticonCategory
+    REQUIRED_HEADERS TextEmoticonsCore_HEADERS
+    PREFIX TextEmoticonsCore
+)
 
 install(FILES
     ${TextEmoticonsCore_HEADERS}
@@ -108,14 +121,12 @@ ecm_generate_pri_file(BASE_NAME textemoticonscore LIB_NAME TextEmoticonsCore DEP
     ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsCore/)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-# Reactivate when we have headers
-if (0)
 if (BUILD_QCH)
     ecm_add_qch(
         KF${KF_MAJOR_VERSION}TextEmoticonsCore_QCH
         NAME KF${KF_MAJOR_VERSION}TextEmoticonsCore
         BASE_NAME KF${KF_MAJOR_VERSION}TextEmoticonsCore
-        VERSION ${TEXTEMOTICONSCore_VERSION}
+        VERSION ${TEXTEMOTICONSCORE_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextEmoticonsCore_HEADERS}
@@ -131,5 +142,4 @@ if (BUILD_QCH)
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
-endif()
 endif()
