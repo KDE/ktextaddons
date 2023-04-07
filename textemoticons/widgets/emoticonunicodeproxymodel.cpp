@@ -35,5 +35,8 @@ QString EmoticonUnicodeProxyModel::category() const
 
 void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
 {
-    mCategory = newCategorie;
+    if (mCategory != newCategorie) {
+        mCategory = newCategorie;
+        invalidateFilter();
+    }
 }

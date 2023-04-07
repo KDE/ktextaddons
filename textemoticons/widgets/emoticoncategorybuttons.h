@@ -8,6 +8,11 @@
 
 #include <QWidget>
 class QHBoxLayout;
+class QButtonGroup;
+namespace TextEmoticonsCore
+{
+class EmoticonCategory;
+}
 namespace TextEmoticonsWidgets
 {
 class EmoticonCategoryButtons : public QWidget
@@ -17,11 +22,13 @@ public:
     explicit EmoticonCategoryButtons(QWidget *parent = nullptr);
     ~EmoticonCategoryButtons() override;
 
+    void setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories);
+
 Q_SIGNALS:
     void categorySelected(const QString &category);
 
 private:
-    void setCategories(const QStringList &categories);
     QHBoxLayout *mMainLayout = nullptr;
+    QButtonGroup *const mButtonGroup;
 };
 }

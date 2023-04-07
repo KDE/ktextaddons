@@ -8,9 +8,12 @@
 #include "emoticontexteditselector.h"
 #include "emoticoncategorybuttons.h"
 #include "emoticonlistview.h"
+#include "emoticonunicodemodel.h"
+#include "emoticonunicodemodelmanager.h"
 #include "emoticonunicodeproxymodel.h"
 
 #include <KLocalizedString>
+#include <TextEmoticonsCore/UnicodeEmoticonManager>
 
 #include <QLineEdit>
 #include <QVBoxLayout>
@@ -43,6 +46,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     connect(mCategoryButtons, &EmoticonCategoryButtons::categorySelected, this, &EmoticonTextEditSelector::slotCategorySelected);
     connect(mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, &EmoticonTextEditSelector::slotSearchUnicode);
     setMinimumSize(400, 200);
+    loadEmoticons();
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
@@ -58,6 +62,10 @@ void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QStrin
 
 void EmoticonTextEditSelector::loadEmoticons()
 {
+    TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
+    mEmoticonProxyModel->setSourceModel(TextEmoticonsWidgets::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
+    const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
+    mCategoryButtons->setCategories(categories);
     /*
     if (mUnicodeTab->count() == 0) {
         mUnicodeTab->loadEmoticons();

@@ -18,7 +18,7 @@ class TextEmoticonsCore::UnicodeEmoticonManagerPrivate
 public:
     void loadUnicodeEmoji();
     Q_REQUIRED_RESULT QString i18nUnicodeCategory(const QString &name) const;
-    QVector<UnicodeEmoticon> mUnicodeEmojiList;
+    QList<UnicodeEmoticon> mUnicodeEmojiList;
 };
 
 void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
@@ -77,7 +77,7 @@ UnicodeEmoticonManager *UnicodeEmoticonManager::self()
     return &s_self;
 }
 
-QVector<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
+QList<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
 {
     return d->mUnicodeEmojiList;
 }
@@ -87,9 +87,9 @@ int UnicodeEmoticonManager::count() const
     return d->mUnicodeEmojiList.count();
 }
 
-QVector<EmoticonCategory> UnicodeEmoticonManager::categories() const
+QList<EmoticonCategory> UnicodeEmoticonManager::categories() const
 {
-    QVector<EmoticonCategory> categories;
+    QList<EmoticonCategory> categories;
     QSet<QString> seen;
     for (const UnicodeEmoticon &emo : std::as_const(d->mUnicodeEmojiList)) {
         // Pick the first icon in each category
@@ -111,9 +111,9 @@ QVector<EmoticonCategory> UnicodeEmoticonManager::categories() const
     return categories;
 }
 
-QVector<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &category) const
+QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &category) const
 {
-    QVector<UnicodeEmoticon> result;
+    QList<UnicodeEmoticon> result;
 
     auto hasRequestedCategory = [category](const UnicodeEmoticon &emo) {
         return emo.category() == category;
