@@ -26,11 +26,14 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PRIVATE
     emoticonunicodeproxymodel.h
     emoticonunicodemodelmanager.cpp
     emoticonunicodemodelmanager.h
+    emoticontexteditaction.h
+    emoticontexteditaction.cpp
     )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets
     PUBLIC
     KF${KF_MAJOR_VERSION}::TextEmoticonsCore
+    KF${KF_MAJOR_VERSION}::XmlGui
     PRIVATE
     Qt::Widgets
     KF${KF_MAJOR_VERSION}::ConfigCore
@@ -69,6 +72,7 @@ endif()
 ecm_generate_headers(TextEmoticonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     EmoticonTextEditSelector
+    EmoticonTextEditAction
     REQUIRED_HEADERS TextEmoticonsWidgets_HEADERS
     PREFIX TextEmoticonsWidgets
 )
