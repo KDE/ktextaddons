@@ -9,3 +9,4 @@ endmacro()
 
 add_textemoticonwidgets_unittest( emoticontexteditselectortest.cpp )
 add_textemoticonwidgets_unittest(emoticonlistviewtest.cpp)
+add_textemoticonwidgets_unittest(emoticoncategorybuttonstest.cpp)
