@@ -44,4 +44,7 @@ void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::Emoti
     for (const auto &cat : categories) {
         addButton(cat.name(), cat.category());
     }
+    auto button = mButtonGroup->buttons().constFirst();
+    button->setChecked(true);
+    Q_EMIT categorySelected(TextEmoticonsWidgets::EmoticonUtils::recentIdentifier());
 }
