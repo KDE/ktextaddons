@@ -11,6 +11,10 @@
 #include <KActionMenu>
 namespace TextEmoticonsWidgets
 {
+/**
+ * @brief The EmoticonTextEditAction class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditAction : public KActionMenu
 {
     Q_OBJECT

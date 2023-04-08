@@ -15,6 +15,10 @@ namespace TextEmoticonsWidgets
 class EmoticonCategoryButtons;
 class EmoticonListView;
 class EmoticonUnicodeProxyModel;
+/**
+ * @brief The EmoticonTextEditSelector class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditSelector : public QWidget
 {
     Q_OBJECT
