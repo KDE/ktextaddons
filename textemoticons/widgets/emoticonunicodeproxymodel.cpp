@@ -57,7 +57,6 @@ QString EmoticonUnicodeProxyModel::searchIdentifier() const
 
 void EmoticonUnicodeProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
 {
-    qDebug() << " void EmoticonUnicodeProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)" << newSearchIdentifier;
     if (mSearchIdentifier != newSearchIdentifier) {
         mSearchIdentifier = newSearchIdentifier;
         invalidateFilter();
@@ -88,6 +87,10 @@ void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
 {
     if (mCategory != newCategorie) {
         mCategory = newCategorie;
-        invalidateFilter();
+        if (!mSearchIdentifier.isEmpty()) {
+            clearSearch();
+        } else {
+            invalidateFilter();
+        }
     }
 }

@@ -91,5 +91,6 @@ void EmoticonTextEditSelector::slotUsedIdentifierChanged(const QStringList &lst)
 
 void EmoticonTextEditSelector::slotCategorySelected(const QString &category)
 {
+    mSearchUnicodeLineEdit->setText({});
     mEmoticonProxyModel->setCategory(category);
 }
