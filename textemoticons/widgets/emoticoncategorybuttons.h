@@ -29,6 +29,7 @@ Q_SIGNALS:
     void categorySelected(const QString &category);
 
 private:
+    void addButton(const QString &name, const QString &category);
     QHBoxLayout *mMainLayout = nullptr;
     QButtonGroup *const mButtonGroup;
 };

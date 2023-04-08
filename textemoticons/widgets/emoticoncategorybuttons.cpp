@@ -22,20 +22,25 @@ EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
 
 EmoticonCategoryButtons::~EmoticonCategoryButtons() = default;
 
+void EmoticonCategoryButtons::addButton(const QString &name, const QString &category)
+{
+    auto button = new QToolButton(this);
+    button->setText(name);
+    mMainLayout->addWidget(button);
+    mButtonGroup->addButton(button);
+    button->setCheckable(true);
+    button->setAutoRaise(true);
+    connect(button, &QToolButton::clicked, this, [this, category](bool clicked) {
+        if (clicked) {
+            Q_EMIT categorySelected(category);
+        }
+    });
+}
+
 void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
 {
     // TODO add recent
     for (const auto &cat : categories) {
-        auto button = new QToolButton(this);
-        button->setText(cat.name());
-        mMainLayout->addWidget(button);
-        mButtonGroup->addButton(button);
-        button->setCheckable(true);
-        button->setAutoRaise(true);
-        connect(button, &QToolButton::clicked, this, [this, cat](bool clicked) {
-            if (clicked) {
-                Q_EMIT categorySelected(cat.category());
-            }
-        });
+        addButton(cat.name(), cat.category());
     }
 }
