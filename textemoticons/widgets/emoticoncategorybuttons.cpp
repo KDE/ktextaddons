@@ -17,12 +17,14 @@ EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
     mMainLayout = new QHBoxLayout(this);
     mMainLayout->setObjectName(QStringLiteral("mMainLayout"));
     mMainLayout->setContentsMargins({});
+    mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
 }
 
 EmoticonCategoryButtons::~EmoticonCategoryButtons() = default;
 
 void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
 {
+    // TODO add recent
     for (const auto &cat : categories) {
         auto button = new QToolButton(this);
         button->setText(cat.name());
