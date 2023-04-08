@@ -5,12 +5,12 @@
 */
 
 #pragma once
-
+#include "textemoticonscore_export.h"
 #include <QString>
 namespace TextEmoticonsCore
 {
 namespace EmoticonUnicodeUtils
 {
-Q_REQUIRED_RESULT QString emojiFontName();
+Q_REQUIRED_RESULT TEXTEMOTICONSCORE_EXPORT QString emojiFontName();
 }
 }

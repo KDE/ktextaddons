@@ -13,21 +13,12 @@
 #include "emoticonunicodeproxymodel.h"
 
 #include <KLocalizedString>
-#include <TextEmoticonsCore/UnicodeEmoticonManager>
-
 #include <QLineEdit>
 #include <QVBoxLayout>
+#include <TextEmoticonsCore/EmoticonUnicodeUtils>
+#include <TextEmoticonsCore/UnicodeEmoticonManager>
 
 using namespace TextEmoticonsWidgets;
-
-QString emojiFontName()
-{
-#ifdef Q_OS_WIN
-    return QStringLiteral("Segoe UI Emoji");
-#else
-    return QStringLiteral("NotoColorEmoji");
-#endif
-}
 
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
@@ -38,9 +29,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 {
     QFont f;
     f.setPointSize(22);
-    // TODO fix me
-    // f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
-    f.setFamily(emojiFontName());
+    f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     mEmoticonListView->setFont(f);
     mCategoryButtons->setFont(f);
     auto mainLayout = new QVBoxLayout(this);
