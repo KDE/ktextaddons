@@ -31,7 +31,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     QFont f;
     f.setPointSize(22);
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
-    mEmoticonListView->setFont(f);
+    mEmoticonListView->setFontSize(22);
     mCategoryButtons->setFont(f);
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
