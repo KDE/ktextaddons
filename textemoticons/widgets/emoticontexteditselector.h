@@ -36,6 +36,7 @@ private:
     TEXTEMOTICONSWIDGETS_NO_EXPORT void slotItemSelected(const QString &str, const QString &identifier);
     TEXTEMOTICONSWIDGETS_NO_EXPORT void slotSearchUnicode(const QString &str);
     TEXTEMOTICONSWIDGETS_NO_EXPORT void slotCategorySelected(const QString &category);
+    TEXTEMOTICONSWIDGETS_NO_EXPORT void slotUsedIdentifierChanged(const QStringList &lst);
     EmoticonCategoryButtons *const mCategoryButtons;
     QLineEdit *const mSearchUnicodeLineEdit;
     EmoticonListView *const mEmoticonListView;

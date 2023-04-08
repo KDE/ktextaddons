@@ -28,6 +28,8 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PRIVATE
     emoticonunicodemodelmanager.h
     emoticontexteditaction.h
     emoticontexteditaction.cpp
+    emoticonutils.h
+    emoticonutils.cpp
     )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets

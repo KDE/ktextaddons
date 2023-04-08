@@ -18,10 +18,14 @@ public:
     Q_REQUIRED_RESULT QString category() const;
     void setCategory(const QString &newCategories);
 
+    QStringList recentEmoticons() const;
+    void setRecentEmoticons(const QStringList &newRecentEmoticons);
+
 protected:
     Q_REQUIRED_RESULT bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:
     QString mCategory;
+    QStringList mRecentEmoticons;
 };
 }

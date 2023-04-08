@@ -62,6 +62,10 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     connect(mEmoticonListView, &EmoticonListView::emojiItemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
     connect(mCategoryButtons, &EmoticonCategoryButtons::categorySelected, this, &EmoticonTextEditSelector::slotCategorySelected);
     connect(mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, &EmoticonTextEditSelector::slotSearchUnicode);
+    connect(EmoticonUnicodeModelManager::self(),
+            &EmoticonUnicodeModelManager::usedIdentifierChanged,
+            this,
+            &EmoticonTextEditSelector::slotUsedIdentifierChanged);
     setMinimumSize(400, 200);
     loadEmoticons();
 }
@@ -70,7 +74,7 @@ EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
 
 void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QString &identifier)
 {
-    // TODO use identifier
+    EmoticonUnicodeModelManager::self()->addIdentifier(identifier);
     Q_EMIT itemSelected(str);
     if (isVisible() && parentWidget() && parentWidget()->inherits("QMenu")) {
         parentWidget()->close();
@@ -83,11 +87,17 @@ void EmoticonTextEditSelector::loadEmoticons()
     mEmoticonProxyModel->setSourceModel(TextEmoticonsWidgets::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
     const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
     mCategoryButtons->setCategories(categories);
+    mEmoticonProxyModel->setRecentEmoticons(EmoticonUnicodeModelManager::self()->recentIdentifier());
 }
 
 void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)
 {
     // mUnicodeTab->searchUnicode(str);
+}
+
+void EmoticonTextEditSelector::slotUsedIdentifierChanged(const QStringList &lst)
+{
+    mEmoticonProxyModel->setRecentEmoticons(lst);
 }
 
 void EmoticonTextEditSelector::slotCategorySelected(const QString &category)

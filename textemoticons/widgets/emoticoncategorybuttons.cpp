@@ -5,6 +5,7 @@
 */
 
 #include "emoticoncategorybuttons.h"
+#include "emoticonutils.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QToolButton>
@@ -39,7 +40,7 @@ void EmoticonCategoryButtons::addButton(const QString &name, const QString &cate
 
 void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
 {
-    // TODO add recent
+    addButton(QStringLiteral("⌛️"), TextEmoticonsWidgets::EmoticonUtils::recentIdentifier());
     for (const auto &cat : categories) {
         addButton(cat.name(), cat.category());
     }
