@@ -81,7 +81,7 @@ void EmoticonTextEditSelector::loadEmoticons()
 
 void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)
 {
-    // mUnicodeTab->searchUnicode(str);
+    mEmoticonProxyModel->setSearchIdentifier(str);
 }
 
 void EmoticonTextEditSelector::slotUsedIdentifierChanged(const QStringList &lst)

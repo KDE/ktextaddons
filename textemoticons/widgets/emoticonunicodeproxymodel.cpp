@@ -16,10 +16,23 @@ EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
 
 EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel() = default;
 
+void EmoticonUnicodeProxyModel::clearSearch()
+{
+    setSearchIdentifier(QString());
+}
+
 bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     if (mCategory.isEmpty()) {
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
+    }
+    if (!mSearchIdentifier.isEmpty()) {
+        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+        const QString identifier = sourceIndex.data(EmoticonUnicodeModel::Identifier).toString();
+        if (identifier.contains(mSearchIdentifier)) {
+            return true;
+        }
+        return false;
     }
     if (mCategory == TextEmoticonsWidgets::EmoticonUtils::recentIdentifier()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
@@ -35,6 +48,20 @@ bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelInd
         }
     }
     return false;
+}
+
+QString EmoticonUnicodeProxyModel::searchIdentifier() const
+{
+    return mSearchIdentifier;
+}
+
+void EmoticonUnicodeProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
+{
+    qDebug() << " void EmoticonUnicodeProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)" << newSearchIdentifier;
+    if (mSearchIdentifier != newSearchIdentifier) {
+        mSearchIdentifier = newSearchIdentifier;
+        invalidateFilter();
+    }
 }
 
 QStringList EmoticonUnicodeProxyModel::recentEmoticons() const
