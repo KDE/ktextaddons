@@ -10,7 +10,9 @@ using namespace TextEmoticonsWidgets;
 EmoticonListView::EmoticonListView(QWidget *parent)
     : QListView(parent)
 {
+    setUniformItemSizes(true);
     setViewMode(QListView::IconMode);
+    setDragEnabled(false);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     connect(this, &QListView::activated, this, [this](const QModelIndex &index) {
         const QString emojiIdentifier = index.data(EmoticonUnicodeModel::Identifier).toString();
