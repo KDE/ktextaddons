@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-28 00:46+0000\n"
-"PO-Revision-Date: 2023-03-12 16:24+0100\n"
+"PO-Revision-Date: 2023-04-03 16:37+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.07.70\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: import/importlibreofficeautocorrection.cpp:52
 #, kde-format
@@ -365,13 +365,13 @@ msgstr "Textfeld"
 #: ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr ""
+msgstr "Beschreibbarer Pfad:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr ""
+msgstr "Eigener Systempfad:"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
@@ -384,17 +384,17 @@ msgstr "..."
 #: ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr ""
+msgstr "Eigener beschreibbarer Pfad:"
 
 #: widgets/autocorrectionwidget.cpp:124
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr ""
+msgstr "Eigenen beschreibbaren Pfad auswählen"
 
 #: widgets/autocorrectionwidget.cpp:129
 #, kde-format
 msgid "Select Custom System Path"
-msgstr ""
+msgstr "Eigenen Systempfad auswählen"
 
 #: widgets/autocorrectionwidget.cpp:139
 #, kde-format
