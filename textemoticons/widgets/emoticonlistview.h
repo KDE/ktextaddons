@@ -15,7 +15,20 @@ class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonListView : public QListView
 public:
     explicit EmoticonListView(QWidget *parent = nullptr);
     ~EmoticonListView() override;
+
+    void setFontSize(int newFontSize);
+
 Q_SIGNALS:
     void emojiItemSelected(const QString &str, const QString &identifier);
+    void fontSizeChanged(int size);
+
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+    void wheelEvent(QWheelEvent *e) override;
+
+private:
+    void applyFontSize();
+    int mFontSize = 18;
+    int mRowSize = 0;
 };
 }

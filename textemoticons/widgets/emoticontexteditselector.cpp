@@ -48,6 +48,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 
     mEmoticonProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
     mEmoticonListView->setModel(mEmoticonProxyModel);
+    connect(mEmoticonListView, &EmoticonListView::fontSizeChanged, mEmoticonListView, &EmoticonListView::setFontSize);
     connect(mEmoticonListView, &EmoticonListView::emojiItemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
     connect(mCategoryButtons, &EmoticonCategoryButtons::categorySelected, this, &EmoticonTextEditSelector::slotCategorySelected);
     connect(mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, &EmoticonTextEditSelector::slotSearchUnicode);
