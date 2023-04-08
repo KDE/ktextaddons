@@ -82,11 +82,6 @@ void EmoticonTextEditSelector::loadEmoticons()
     mEmoticonProxyModel->setSourceModel(TextEmoticonsWidgets::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
     const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
     mCategoryButtons->setCategories(categories);
-    /*
-    if (mUnicodeTab->count() == 0) {
-        mUnicodeTab->loadEmoticons();
-    }
-    */
 }
 
 void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)

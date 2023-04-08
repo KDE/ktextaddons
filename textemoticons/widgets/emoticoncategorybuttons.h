@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "textemoticonswidgets_private_export.h"
 #include <QWidget>
 class QHBoxLayout;
 class QButtonGroup;
@@ -15,7 +16,7 @@ class EmoticonCategory;
 }
 namespace TextEmoticonsWidgets
 {
-class EmoticonCategoryButtons : public QWidget
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonCategoryButtons : public QWidget
 {
     Q_OBJECT
 public:

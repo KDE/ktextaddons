@@ -5,6 +5,8 @@
 */
 
 #include "emoticontexteditselectortest.h"
+#include "emoticoncategorybuttons.h"
+#include "emoticonlistview.h"
 #include "emoticontexteditselector.h"
 #include <QLineEdit>
 #include <QTest>
@@ -23,8 +25,11 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    //    auto mUnicodeTab = w.findChild<KPIMTextEdit::EmoticonUnicodeTab *>(QStringLiteral("mUnicodeTab"));
-    //    QVERIFY(mUnicodeTab);
+    auto mCategoryButtons = w.findChild<TextEmoticonsWidgets::EmoticonCategoryButtons *>(QStringLiteral("mCategoryButtons"));
+    QVERIFY(mCategoryButtons);
+
+    auto mEmoticonListView = w.findChild<TextEmoticonsWidgets::EmoticonListView *>(QStringLiteral("mEmoticonListView"));
+    QVERIFY(mEmoticonListView);
 
     auto mSearchUnicodeLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchUnicodeLineEdit"));
     QVERIFY(mSearchUnicodeLineEdit);
