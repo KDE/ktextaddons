@@ -5,11 +5,11 @@
 */
 
 #include "emoticonunicodemodelmanager.h"
-#include "emoticonunicodemodel.h"
-#include "unicodeemoticonmanager.h"
 
+#include "unicodeemoticonmanager.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <TextEmoticonsCore/EmoticonUnicodeModel>
 using namespace TextEmoticonsWidgets;
 namespace
 {
@@ -17,7 +17,7 @@ static const char myEmoticonRecentUsedGroupName[] = "EmoticonRecentUsed";
 }
 EmoticonUnicodeModelManager::EmoticonUnicodeModelManager(QObject *parent)
     : QObject(parent)
-    , mEmoticonUnicodeModel(new EmoticonUnicodeModel(this))
+    , mEmoticonUnicodeModel(new TextEmoticonsCore::EmoticonUnicodeModel(this))
 {
     mEmoticonUnicodeModel->setEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());
     loadRecentUsed();
@@ -34,7 +34,7 @@ EmoticonUnicodeModelManager *EmoticonUnicodeModelManager::self()
     return &s_self;
 }
 
-EmoticonUnicodeModel *EmoticonUnicodeModelManager::emoticonUnicodeModel() const
+TextEmoticonsCore::EmoticonUnicodeModel *EmoticonUnicodeModelManager::emoticonUnicodeModel() const
 {
     return mEmoticonUnicodeModel;
 }

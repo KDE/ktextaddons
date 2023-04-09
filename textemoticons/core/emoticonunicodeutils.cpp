@@ -14,3 +14,8 @@ QString EmoticonUnicodeUtils::emojiFontName()
     return QStringLiteral("NotoColorEmoji");
 #endif
 }
+
+QString EmoticonUnicodeUtils::recentIdentifier()
+{
+    return QStringLiteral("recents");
+}

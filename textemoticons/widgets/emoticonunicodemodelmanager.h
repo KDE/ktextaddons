@@ -6,9 +6,12 @@
 #pragma once
 
 #include <QObject>
-namespace TextEmoticonsWidgets
+namespace TextEmoticonsCore
 {
 class EmoticonUnicodeModel;
+}
+namespace TextEmoticonsWidgets
+{
 class EmoticonUnicodeModelManager : public QObject
 {
     Q_OBJECT
@@ -17,7 +20,7 @@ public:
     ~EmoticonUnicodeModelManager() override;
 
     static EmoticonUnicodeModelManager *self();
-    Q_REQUIRED_RESULT EmoticonUnicodeModel *emoticonUnicodeModel() const;
+    Q_REQUIRED_RESULT TextEmoticonsCore::EmoticonUnicodeModel *emoticonUnicodeModel() const;
 
     Q_REQUIRED_RESULT const QStringList &recentIdentifier() const;
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
@@ -27,7 +30,7 @@ Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
 
 private:
-    EmoticonUnicodeModel *const mEmoticonUnicodeModel;
+    TextEmoticonsCore::EmoticonUnicodeModel *const mEmoticonUnicodeModel;
     QStringList mRecentIdentifier;
     void loadRecentUsed();
     void writeRecentUsed();

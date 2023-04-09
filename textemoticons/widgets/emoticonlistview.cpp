@@ -7,7 +7,9 @@
 #include "emoticonlistview.h"
 #include "emoticonunicodemodel.h"
 #include <QKeyEvent>
+#include <TextEmoticonsCore/EmoticonUnicodeModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
+
 using namespace TextEmoticonsWidgets;
 EmoticonListView::EmoticonListView(QWidget *parent)
     : QListView(parent)
@@ -18,7 +20,7 @@ EmoticonListView::EmoticonListView(QWidget *parent)
     setMouseTracking(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     connect(this, &QListView::activated, this, [this](const QModelIndex &index) {
-        const QString emojiIdentifier = index.data(EmoticonUnicodeModel::Identifier).toString();
+        const QString emojiIdentifier = index.data(TextEmoticonsCore::EmoticonUnicodeModel::Identifier).toString();
         const QString emojiStr = index.data().toString();
         Q_EMIT emojiItemSelected(emojiStr, emojiIdentifier);
     });

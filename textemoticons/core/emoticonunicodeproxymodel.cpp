@@ -5,8 +5,9 @@
 */
 #include "emoticonunicodeproxymodel.h"
 #include "emoticonunicodemodel.h"
-#include "emoticonutils.h"
-using namespace TextEmoticonsWidgets;
+#include "emoticonunicodeutils.h"
+
+using namespace TextEmoticonsCore;
 EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
@@ -34,7 +35,7 @@ bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelInd
         }
         return false;
     }
-    if (mCategory == TextEmoticonsWidgets::EmoticonUtils::recentIdentifier()) {
+    if (mCategory == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         const QString identifier = sourceIndex.data(EmoticonUnicodeModel::Identifier).toString();
         if (mRecentEmoticons.contains(identifier)) {
@@ -72,7 +73,7 @@ void EmoticonUnicodeProxyModel::setRecentEmoticons(const QStringList &newRecentE
 {
     if (mRecentEmoticons != newRecentEmoticons) {
         mRecentEmoticons = newRecentEmoticons;
-        if (TextEmoticonsWidgets::EmoticonUtils::recentIdentifier() == mCategory) {
+        if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == mCategory) {
             invalidate();
         }
     }

@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "textemoticonswidgets_private_export.h"
+#include "textemoticonscore_export.h"
 #include <QAbstractListModel>
 #include <TextEmoticonsCore/UnicodeEmoticon>
-namespace TextEmoticonsWidgets
+namespace TextEmoticonsCore
 {
-class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonUnicodeModel : public QAbstractListModel
+class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

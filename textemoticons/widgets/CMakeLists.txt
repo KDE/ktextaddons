@@ -20,16 +20,10 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PRIVATE
     emoticonlistview.cpp
     emoticonlistview.h
     textemoticonswidgets_private_export.h
-    emoticonunicodemodel.cpp
-    emoticonunicodemodel.h
-    emoticonunicodeproxymodel.cpp
-    emoticonunicodeproxymodel.h
     emoticonunicodemodelmanager.cpp
     emoticonunicodemodelmanager.h
     emoticontexteditaction.h
     emoticontexteditaction.cpp
-    emoticonutils.h
-    emoticonutils.cpp
     )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets

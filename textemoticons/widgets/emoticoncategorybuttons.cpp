@@ -5,11 +5,13 @@
 */
 
 #include "emoticoncategorybuttons.h"
-#include "emoticonutils.h"
+#include "emoticonunicodeutils.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <TextEmoticonsCore/EmoticonCategory>
+#include <TextEmoticonsCore/EmoticonUnicodeUtils>
+
 using namespace TextEmoticonsWidgets;
 EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
     : QWidget{parent}
@@ -40,11 +42,11 @@ void EmoticonCategoryButtons::addButton(const QString &name, const QString &cate
 
 void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
 {
-    addButton(QStringLiteral("⌛️"), TextEmoticonsWidgets::EmoticonUtils::recentIdentifier());
+    addButton(QStringLiteral("⌛️"), TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
     for (const auto &cat : categories) {
         addButton(cat.name(), cat.category());
     }
     auto button = mButtonGroup->buttons().constFirst();
     button->setChecked(true);
-    Q_EMIT categorySelected(TextEmoticonsWidgets::EmoticonUtils::recentIdentifier());
+    Q_EMIT categorySelected(TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
 }

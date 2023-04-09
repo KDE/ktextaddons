@@ -5,7 +5,7 @@
 */
 
 #include "emoticonunicodemodel.h"
-using namespace TextEmoticonsWidgets;
+using namespace TextEmoticonsCore;
 EmoticonUnicodeModel::EmoticonUnicodeModel(QObject *parent)
     : QAbstractListModel(parent)
 {

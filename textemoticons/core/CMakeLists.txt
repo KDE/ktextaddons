@@ -24,6 +24,11 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsCore PRIVATE
     unicodeemoticonmanager.h
     unicodeemoticonparser.cpp
     unicodeemoticonparser.h
+    emoticonunicodemodel.cpp
+    emoticonunicodemodel.h
+    emoticonunicodeproxymodel.cpp
+    emoticonunicodeproxymodel.h
+
 )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
@@ -66,6 +71,8 @@ ecm_generate_headers(TextEmoticonsCore_CamelCase_HEADERS
     UnicodeEmoticon
     EmoticonCategory
     EmoticonUnicodeUtils
+    EmoticonUnicodeModel
+    EmoticonUnicodeProxyModel
     REQUIRED_HEADERS TextEmoticonsCore_HEADERS
     PREFIX TextEmoticonsCore
 )

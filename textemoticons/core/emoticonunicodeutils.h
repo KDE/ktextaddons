@@ -12,5 +12,6 @@ namespace TextEmoticonsCore
 namespace EmoticonUnicodeUtils
 {
 Q_REQUIRED_RESULT TEXTEMOTICONSCORE_EXPORT QString emojiFontName();
+Q_REQUIRED_RESULT TEXTEMOTICONSCORE_EXPORT QString recentIdentifier();
 }
 }

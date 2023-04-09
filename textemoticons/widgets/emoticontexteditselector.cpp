@@ -8,14 +8,14 @@
 #include "emoticontexteditselector.h"
 #include "emoticoncategorybuttons.h"
 #include "emoticonlistview.h"
-#include "emoticonunicodemodel.h"
 #include "emoticonunicodemodelmanager.h"
-#include "emoticonunicodeproxymodel.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 #include <QScreen>
 #include <QVBoxLayout>
+#include <TextEmoticonsCore/EmoticonUnicodeModel>
+#include <TextEmoticonsCore/EmoticonUnicodeProxyModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
@@ -26,12 +26,13 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     , mCategoryButtons(new EmoticonCategoryButtons(this))
     , mSearchUnicodeLineEdit(new QLineEdit(this))
     , mEmoticonListView(new EmoticonListView(this))
-    , mEmoticonProxyModel(new EmoticonUnicodeProxyModel(this))
+    , mEmoticonProxyModel(new TextEmoticonsCore::EmoticonUnicodeProxyModel(this))
 {
+    const int defaultFontSize{22};
     QFont f;
-    f.setPointSize(22);
+    f.setPointSize(defaultFontSize);
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
-    mEmoticonListView->setFontSize(22);
+    mEmoticonListView->setFontSize(defaultFontSize);
     mCategoryButtons->setFont(f);
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));

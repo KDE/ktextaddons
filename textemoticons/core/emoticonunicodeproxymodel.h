@@ -5,11 +5,11 @@
 */
 #pragma once
 
-#include "textemoticonswidgets_private_export.h"
+#include "textemoticonscore_export.h"
 #include <QSortFilterProxyModel>
-namespace TextEmoticonsWidgets
+namespace TextEmoticonsCore
 {
-class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonUnicodeProxyModel : public QSortFilterProxyModel
+class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
