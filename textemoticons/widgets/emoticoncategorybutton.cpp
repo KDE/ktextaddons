@@ -5,7 +5,7 @@
 */
 
 #include "emoticoncategorybutton.h"
-
+using namespace TextEmoticonsWidgets;
 EmoticonCategoryButton::EmoticonCategoryButton(QWidget *parent)
     : QToolButton(parent)
 {
