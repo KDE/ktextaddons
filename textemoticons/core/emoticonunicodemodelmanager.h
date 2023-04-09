@@ -5,14 +5,12 @@
 */
 #pragma once
 
+#include "textemoticonscore_export.h"
 #include <QObject>
 namespace TextEmoticonsCore
 {
 class EmoticonUnicodeModel;
-}
-namespace TextEmoticonsWidgets
-{
-class EmoticonUnicodeModelManager : public QObject
+class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeModelManager : public QObject
 {
     Q_OBJECT
 public:

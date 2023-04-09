@@ -28,12 +28,15 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsCore PRIVATE
     emoticonunicodemodel.h
     emoticonunicodeproxymodel.cpp
     emoticonunicodeproxymodel.h
+    emoticonunicodemodelmanager.cpp
+    emoticonunicodemodelmanager.h
 
 )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
     PRIVATE
     Qt::Widgets
+    KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsCore HEADER textemoticonscore_debug.h
@@ -72,6 +75,7 @@ ecm_generate_headers(TextEmoticonsCore_CamelCase_HEADERS
     EmoticonCategory
     EmoticonUnicodeUtils
     EmoticonUnicodeModel
+    EmoticonUnicodeModelManager
     EmoticonUnicodeProxyModel
     REQUIRED_HEADERS TextEmoticonsCore_HEADERS
     PREFIX TextEmoticonsCore

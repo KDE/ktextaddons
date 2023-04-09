@@ -10,7 +10,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <TextEmoticonsCore/EmoticonUnicodeModel>
-using namespace TextEmoticonsWidgets;
+using namespace TextEmoticonsCore;
 namespace
 {
 static const char myEmoticonRecentUsedGroupName[] = "EmoticonRecentUsed";

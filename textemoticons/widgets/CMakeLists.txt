@@ -20,8 +20,6 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PRIVATE
     emoticonlistview.cpp
     emoticonlistview.h
     textemoticonswidgets_private_export.h
-    emoticonunicodemodelmanager.cpp
-    emoticonunicodemodelmanager.h
     emoticontexteditaction.h
     emoticontexteditaction.cpp
     emoticoncategorybutton.h
@@ -34,7 +32,6 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets
     KF${KF_MAJOR_VERSION}::XmlGui
     PRIVATE
     Qt::Widgets
-    KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets HEADER textemoticonswidgets_debug.h
