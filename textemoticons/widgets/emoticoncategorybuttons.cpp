@@ -5,6 +5,7 @@
 */
 
 #include "emoticoncategorybuttons.h"
+#include "emoticoncategorybutton.h"
 #include "emoticonunicodeutils.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
@@ -25,14 +26,18 @@ EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
 
 EmoticonCategoryButtons::~EmoticonCategoryButtons() = default;
 
+void EmoticonCategoryButtons::wheelEvent(QWheelEvent *e)
+{
+    // TODO allow to change categories
+    QWidget::wheelEvent(e);
+}
+
 void EmoticonCategoryButtons::addButton(const QString &name, const QString &category)
 {
-    auto button = new QToolButton(this);
+    auto button = new EmoticonCategoryButton(this);
     button->setText(name);
     mMainLayout->addWidget(button);
     mButtonGroup->addButton(button);
-    button->setCheckable(true);
-    button->setAutoRaise(true);
     connect(button, &QToolButton::clicked, this, [this, category](bool clicked) {
         if (clicked) {
             Q_EMIT categorySelected(category);

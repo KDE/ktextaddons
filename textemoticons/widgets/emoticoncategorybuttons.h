@@ -28,6 +28,9 @@ public:
 Q_SIGNALS:
     void categorySelected(const QString &category);
 
+protected:
+    void wheelEvent(QWheelEvent *e) override;
+
 private:
     void addButton(const QString &name, const QString &category);
     QHBoxLayout *mMainLayout = nullptr;
