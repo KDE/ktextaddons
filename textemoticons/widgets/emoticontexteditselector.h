@@ -35,6 +35,9 @@ public Q_SLOTS:
 Q_SIGNALS:
     void itemSelected(const QString &);
 
+protected:
+    void wheelEvent(QWheelEvent *e) override;
+
 private:
     TEXTEMOTICONSWIDGETS_NO_EXPORT void slotItemSelected(const QString &str, const QString &identifier);
     TEXTEMOTICONSWIDGETS_NO_EXPORT void slotSearchUnicode(const QString &str);

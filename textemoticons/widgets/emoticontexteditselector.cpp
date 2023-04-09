@@ -83,6 +83,12 @@ void EmoticonTextEditSelector::loadEmoticons()
     mEmoticonProxyModel->setRecentEmoticons(EmoticonUnicodeModelManager::self()->recentIdentifier());
 }
 
+void EmoticonTextEditSelector::wheelEvent(QWheelEvent *e)
+{
+    // TODO allow to change categories
+    QWidget::wheelEvent(e);
+}
+
 void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)
 {
     mEmoticonProxyModel->setSearchIdentifier(str);
