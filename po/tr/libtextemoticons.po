@@ -1,0 +1,73 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# Emir SARI <emir_sari@icloud.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-04-09 00:46+0000\n"
+"PO-Revision-Date: 2023-04-08 13:00+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: core/unicodeemoticonmanager.cpp:42
+#, kde-format
+msgid "Symbols"
+msgstr "Semboller"
+
+#: core/unicodeemoticonmanager.cpp:44
+#, kde-format
+msgid "Activity"
+msgstr "Etkinlik"
+
+#: core/unicodeemoticonmanager.cpp:46
+#, kde-format
+msgid "Objects"
+msgstr "Nesneler"
+
+#: core/unicodeemoticonmanager.cpp:48
+#, kde-format
+msgid "Nature"
+msgstr "Doğa"
+
+#: core/unicodeemoticonmanager.cpp:50
+#, kde-format
+msgid "Food"
+msgstr "Yiyecek"
+
+#: core/unicodeemoticonmanager.cpp:52
+#, kde-format
+msgid "People"
+msgstr "Kişiler"
+
+#: core/unicodeemoticonmanager.cpp:54
+#, kde-format
+msgid "Travel"
+msgstr "Yolculuk"
+
+#: core/unicodeemoticonmanager.cpp:56
+#, kde-format
+msgid "Regional"
+msgstr "Bölgesel"
+
+#: core/unicodeemoticonmanager.cpp:58
+#, kde-format
+msgid "Flags"
+msgstr "Bayraklar"
+
+#: widgets/emoticontexteditaction.cpp:41
+#, kde-format
+msgid "Add Smiley"
+msgstr ""
+
+#: widgets/emoticontexteditselector.cpp:42
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "İfade Ara..."
