@@ -10,6 +10,7 @@
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QToolButton>
+#include <QWheelEvent>
 #include <TextEmoticonsCore/EmoticonCategory>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
 
@@ -26,10 +27,34 @@ EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
 
 EmoticonCategoryButtons::~EmoticonCategoryButtons() = default;
 
-void EmoticonCategoryButtons::wheelEvent(QWheelEvent *e)
+void EmoticonCategoryButtons::wheelEvent(QWheelEvent *event)
 {
-    // TODO allow to change categories
-    QWidget::wheelEvent(e);
+    auto button = mButtonGroup->checkedButton();
+    if (button) {
+        const int index = mButtonGroup->buttons().indexOf(button);
+        if (index != -1) {
+            QAbstractButton *nextButton = nullptr;
+            if (event->angleDelta().y() > 0) {
+                if (index > 0) {
+                    nextButton = mButtonGroup->buttons().at(index - 1);
+                } else {
+                    nextButton = mButtonGroup->buttons().constLast();
+                }
+            } else if (event->angleDelta().y() < 0) {
+                if (index == (mButtonGroup->buttons().count() - 1)) {
+                    nextButton = mButtonGroup->buttons().constFirst();
+                } else {
+                    nextButton = mButtonGroup->buttons().at(index + 1);
+                }
+            }
+            if (nextButton) {
+                nextButton->setChecked(true);
+                nextButton->clicked(true);
+            }
+        }
+    }
+
+    QWidget::wheelEvent(event);
 }
 
 void EmoticonCategoryButtons::addButton(const QString &name, const QString &category)
