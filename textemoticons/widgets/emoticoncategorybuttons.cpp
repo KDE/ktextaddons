@@ -16,9 +16,9 @@
 using namespace TextEmoticonsWidgets;
 EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
     : QWidget{parent}
+    , mMainLayout(new QHBoxLayout(this))
     , mButtonGroup(new QButtonGroup(this))
 {
-    mMainLayout = new QHBoxLayout(this);
     mMainLayout->setObjectName(QStringLiteral("mMainLayout"));
     mMainLayout->setContentsMargins({});
     mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));

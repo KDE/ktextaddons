@@ -33,7 +33,7 @@ protected:
 
 private:
     void addButton(const QString &name, const QString &category);
-    QHBoxLayout *mMainLayout = nullptr;
+    QHBoxLayout *const mMainLayout;
     QButtonGroup *const mButtonGroup;
 };
 }
