@@ -102,4 +102,5 @@ void EmoticonTextEditSelector::slotCategorySelected(const QString &category)
 {
     mSearchUnicodeLineEdit->setText({});
     mEmoticonProxyModel->setCategory(category);
+    mEmoticonListView->setIsRecentView(category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
 }
