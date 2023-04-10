@@ -104,9 +104,15 @@ bool EmoticonUnicodeProxyModel::lessThan(const QModelIndex &left, const QModelIn
         const QString rightIdentifier = sourceModel()->data(right, EmoticonUnicodeModel::Identifier).toString();
         const int positionIdentifierLeft = mRecentEmoticons.indexOf(leftIdentifier);
         const int positionIdentifierRight = mRecentEmoticons.indexOf(rightIdentifier);
-        qDebug() << " leftIdentifier " << leftIdentifier << " rightIdentifier " << rightIdentifier << " positionIdentifierLeft " << positionIdentifierLeft
-                 << " positionIdentifierRight " << positionIdentifierRight;
+        //        qDebug() << " leftIdentifier " << leftIdentifier << " rightIdentifier " << rightIdentifier << " positionIdentifierLeft " <<
+        //        positionIdentifierLeft
+        //                 << " positionIdentifierRight " << positionIdentifierRight;
+        //        qDebug() << "mRecentEmoticons  " << mRecentEmoticons;
         return positionIdentifierLeft < positionIdentifierRight;
+    } else {
+        const int leftOrder = sourceModel()->data(left, EmoticonUnicodeModel::Order).toInt();
+        const int rightOrder = sourceModel()->data(right, EmoticonUnicodeModel::Order).toInt();
+
+        return leftOrder < rightOrder;
     }
-    return QSortFilterProxyModel::lessThan(left, right);
 }

@@ -19,6 +19,7 @@ public:
         UnicodeEmoji = Qt::UserRole + 1,
         Identifier,
         Category,
+        Order,
     };
     Q_ENUM(EmoticonsRoles)
 

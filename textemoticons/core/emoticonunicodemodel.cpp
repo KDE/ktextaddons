@@ -34,6 +34,8 @@ QVariant EmoticonUnicodeModel::data(const QModelIndex &index, int role) const
         return unicodeEmoti.unicode();
     case Category:
         return unicodeEmoti.category();
+    case Order:
+        return unicodeEmoti.order();
     case Identifier:
     case Qt::ToolTipRole:
         return unicodeEmoti.identifier();
