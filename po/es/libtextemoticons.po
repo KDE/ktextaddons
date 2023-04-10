@@ -1,73 +1,75 @@
-# Copyright (C) YEAR This file is copyright:
+# Spanish translations for libtextemoticons.po package.
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# Automatically generated, 2023.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: ktextaddons\n"
+"Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-10 00:45+0000\n"
-"PO-Revision-Date: 2023-04-09 11:57+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2023-04-09 11:14+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.03.90\n"
 
 #: core/unicodeemoticonmanager.cpp:42
 #, kde-format
 msgid "Symbols"
-msgstr "Semboller"
+msgstr "Símbolos"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
 msgid "Activity"
-msgstr "Etkinlik"
+msgstr "Actividad"
 
 #: core/unicodeemoticonmanager.cpp:46
 #, kde-format
 msgid "Objects"
-msgstr "Nesneler"
+msgstr "Objetos"
 
 #: core/unicodeemoticonmanager.cpp:48
 #, kde-format
 msgid "Nature"
-msgstr "Doğa"
+msgstr "Naturaleza"
 
 #: core/unicodeemoticonmanager.cpp:50
 #, kde-format
 msgid "Food"
-msgstr "Yiyecek"
+msgstr "Comida"
 
 #: core/unicodeemoticonmanager.cpp:52
 #, kde-format
 msgid "People"
-msgstr "Kişiler"
+msgstr "Personas"
 
 #: core/unicodeemoticonmanager.cpp:54
 #, kde-format
 msgid "Travel"
-msgstr "Yolculuk"
+msgstr "Viaje"
 
 #: core/unicodeemoticonmanager.cpp:56
 #, kde-format
 msgid "Regional"
-msgstr "Bölgesel"
+msgstr "Regional"
 
 #: core/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Flags"
-msgstr "Bayraklar"
+msgstr "Banderas"
 
 #: widgets/emoticontexteditaction.cpp:41
 #, kde-format
 msgid "Add Smiley"
-msgstr "İfade Ekle"
+msgstr ""
 
 #: widgets/emoticontexteditselector.cpp:43
 #, kde-format
 msgid "Search Emoticon..."
-msgstr "İfade Ara..."
+msgstr "Buscar emoticono..."
