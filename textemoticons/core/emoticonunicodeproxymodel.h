@@ -26,6 +26,7 @@ public:
 
 protected:
     Q_REQUIRED_RESULT bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+    Q_REQUIRED_RESULT bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
     void clearSearch();

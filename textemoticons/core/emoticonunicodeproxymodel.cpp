@@ -13,6 +13,7 @@ EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setFilterRole(EmoticonUnicodeModel::Identifier);
+    sort(0);
 }
 
 EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel() = default;
@@ -94,4 +95,18 @@ void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
             invalidateFilter();
         }
     }
+}
+
+bool EmoticonUnicodeProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == mCategory) {
+        const QString leftIdentifier = sourceModel()->data(left, EmoticonUnicodeModel::Identifier).toString();
+        const QString rightIdentifier = sourceModel()->data(right, EmoticonUnicodeModel::Identifier).toString();
+        const int positionIdentifierLeft = mRecentEmoticons.indexOf(leftIdentifier);
+        const int positionIdentifierRight = mRecentEmoticons.indexOf(rightIdentifier);
+        qDebug() << " leftIdentifier " << leftIdentifier << " rightIdentifier " << rightIdentifier << " positionIdentifierLeft " << positionIdentifierLeft
+                 << " positionIdentifierRight " << positionIdentifierRight;
+        return positionIdentifierLeft < positionIdentifierRight;
+    }
+    return QSortFilterProxyModel::lessThan(left, right);
 }
