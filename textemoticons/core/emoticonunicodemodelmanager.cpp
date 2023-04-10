@@ -47,6 +47,7 @@ const QStringList &EmoticonUnicodeModelManager::recentIdentifier() const
 void EmoticonUnicodeModelManager::setRecentIdentifier(const QStringList &newRecentIdentifier)
 {
     mRecentIdentifier = newRecentIdentifier;
+    writeRecentUsed();
     Q_EMIT usedIdentifierChanged(mRecentIdentifier);
 }
 
