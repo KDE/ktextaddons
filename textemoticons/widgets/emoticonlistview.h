@@ -18,17 +18,23 @@ public:
 
     void setFontSize(int newFontSize);
 
+    Q_REQUIRED_RESULT bool isRecentView() const;
+    void setIsRecentView(bool newIsRecentView);
+
 Q_SIGNALS:
     void emojiItemSelected(const QString &str, const QString &identifier);
     void fontSizeChanged(int size);
+    void clearRecents();
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void wheelEvent(QWheelEvent *e) override;
+    void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
     void applyFontSize();
     int mFontSize = 18;
     int mRowSize = 0;
+    bool mIsRecentView = false;
 };
 }

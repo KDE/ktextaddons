@@ -58,6 +58,11 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
             &TextEmoticonsCore::EmoticonUnicodeModelManager::usedIdentifierChanged,
             this,
             &EmoticonTextEditSelector::slotUsedIdentifierChanged);
+
+    connect(mEmoticonListView, &EmoticonListView::clearRecents, this, [this]() {
+        mEmoticonProxyModel->setRecentEmoticons(QStringList());
+    });
+
     const QSize popupMenuSize = QSize(400, 250) * screen()->devicePixelRatio();
     setMinimumSize(popupMenuSize);
     loadEmoticons();

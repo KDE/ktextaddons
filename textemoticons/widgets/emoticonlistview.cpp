@@ -6,9 +6,14 @@
 
 #include "emoticonlistview.h"
 #include "emoticonunicodemodel.h"
-#include <QKeyEvent>
+
 #include <TextEmoticonsCore/EmoticonUnicodeModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
+
+#include <KLocalizedString>
+
+#include <QKeyEvent>
+#include <QMenu>
 
 using namespace TextEmoticonsWidgets;
 EmoticonListView::EmoticonListView(QWidget *parent)
@@ -19,6 +24,7 @@ EmoticonListView::EmoticonListView(QWidget *parent)
     setDragEnabled(false);
     setMouseTracking(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setContextMenuPolicy(Qt::DefaultContextMenu);
     connect(this, &QListView::activated, this, [this](const QModelIndex &index) {
         const QString emojiIdentifier = index.data(TextEmoticonsCore::EmoticonUnicodeModel::Identifier).toString();
         const QString emojiStr = index.data().toString();
@@ -77,4 +83,27 @@ void EmoticonListView::applyFontSize()
 
     mRowSize = QFontMetrics(f).height();
     setFont(f);
+}
+
+bool EmoticonListView::isRecentView() const
+{
+    return mIsRecentView;
+}
+
+void EmoticonListView::setIsRecentView(bool newIsRecentView)
+{
+    mIsRecentView = newIsRecentView;
+}
+
+void EmoticonListView::contextMenuEvent(QContextMenuEvent *event)
+{
+    if (mIsRecentView) {
+        if (model()->rowCount() > 0) {
+            QMenu menu(this);
+            auto clearRecent = new QAction(i18n("Clear Recents"), &menu);
+            connect(clearRecent, &QAction::triggered, this, &EmoticonListView::clearRecents);
+            menu.addAction(clearRecent);
+            menu.exec(event->globalPos());
+        }
+    }
 }
