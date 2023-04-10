@@ -20,6 +20,8 @@ public:
     {
         auto mainLayout = new QVBoxLayout(this);
         auto w = new TextEmoticonsWidgets::EmoticonTextEditSelector(this);
+        w->loadEmoticons();
+
         mainLayout->addWidget(w);
     }
 };

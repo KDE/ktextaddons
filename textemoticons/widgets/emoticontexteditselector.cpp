@@ -65,7 +65,6 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 
     const QSize popupMenuSize = QSize(400, 250) * screen()->devicePixelRatio();
     setMinimumSize(popupMenuSize);
-    loadEmoticons();
 }
 
 EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
