@@ -80,11 +80,13 @@ void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QStrin
 
 void EmoticonTextEditSelector::loadEmoticons()
 {
-    TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
-    mEmoticonProxyModel->setSourceModel(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
-    const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
-    mCategoryButtons->setCategories(categories);
-    mEmoticonProxyModel->setRecentEmoticons(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->recentIdentifier());
+    if (!mCategoryButtons->wasLoaded()) {
+        TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
+        mEmoticonProxyModel->setSourceModel(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
+        const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
+        mCategoryButtons->setCategories(categories);
+        mEmoticonProxyModel->setRecentEmoticons(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->recentIdentifier());
+    }
 }
 
 void EmoticonTextEditSelector::slotSearchUnicode(const QString &str)

@@ -25,6 +25,8 @@ public:
 
     void setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories);
 
+    Q_REQUIRED_RESULT bool wasLoaded() const;
+
 Q_SIGNALS:
     void categorySelected(const QString &category);
 
@@ -35,5 +37,6 @@ private:
     void addButton(const QString &name, const QString &category);
     QHBoxLayout *const mMainLayout;
     QButtonGroup *const mButtonGroup;
+    bool mWasLoaded = false;
 };
 }

@@ -45,6 +45,11 @@ void EmoticonCategoryButtons::addButton(const QString &name, const QString &cate
     });
 }
 
+bool EmoticonCategoryButtons::wasLoaded() const
+{
+    return mWasLoaded;
+}
+
 void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
 {
     addButton(QStringLiteral("⌛️"), TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
@@ -55,4 +60,5 @@ void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::Emoti
     auto button = mButtonGroup->buttons().constFirst();
     button->setChecked(true);
     Q_EMIT categorySelected(TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
+    mWasLoaded = true;
 }
