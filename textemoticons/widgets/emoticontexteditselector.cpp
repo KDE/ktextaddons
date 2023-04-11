@@ -81,6 +81,11 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     setMinimumSize(popupMenuSize);
 }
 
+void EmoticonTextEditSelector::forceLineEditFocus()
+{
+    d->mSearchUnicodeLineEdit->setFocus();
+}
+
 EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
 
 void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QString &identifier)
