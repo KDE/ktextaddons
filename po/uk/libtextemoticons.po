@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:45+0000\n"
+"POT-Creation-Date: 2023-04-11 00:46+0000\n"
 "PO-Revision-Date: 2023-04-09 08:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -62,6 +62,11 @@ msgstr "Регіональні"
 #, kde-format
 msgid "Flags"
 msgstr "Прапорці"
+
+#: widgets/emoticonlistview.cpp:103
+#, kde-format
+msgid "Clear Recents"
+msgstr ""
 
 #: widgets/emoticontexteditaction.cpp:41
 #, kde-format
