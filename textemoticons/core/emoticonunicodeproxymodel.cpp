@@ -94,6 +94,10 @@ void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
         } else {
             invalidateFilter();
         }
+        if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == mCategory) {
+            // Make sure that we reorder recent category
+            invalidate();
+        }
     }
 }
 
