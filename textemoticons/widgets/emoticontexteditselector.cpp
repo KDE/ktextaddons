@@ -92,6 +92,7 @@ void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QStrin
 {
     TextEmoticonsCore::EmoticonUnicodeModelManager::self()->addIdentifier(identifier);
     Q_EMIT insertEmoji(str);
+    Q_EMIT insertEmojiIdentifier(identifier);
     if (isVisible() && parentWidget() && parentWidget()->inherits("QMenu")) {
         parentWidget()->close();
     }
