@@ -34,7 +34,7 @@ protected:
     void wheelEvent(QWheelEvent *e) override;
 
 private:
-    void addButton(const QString &name, const QString &category);
+    void addButton(const QString &name, const QString &category, const QString &toolTip);
     QHBoxLayout *const mMainLayout;
     QButtonGroup *const mButtonGroup;
     bool mWasLoaded = false;

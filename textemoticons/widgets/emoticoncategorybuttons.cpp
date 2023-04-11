@@ -7,6 +7,7 @@
 #include "emoticoncategorybuttons.h"
 #include "emoticoncategorybutton.h"
 #include "emoticonunicodeutils.h"
+#include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QToolButton>
@@ -57,10 +58,11 @@ void EmoticonCategoryButtons::wheelEvent(QWheelEvent *event)
     QWidget::wheelEvent(event);
 }
 
-void EmoticonCategoryButtons::addButton(const QString &name, const QString &category)
+void EmoticonCategoryButtons::addButton(const QString &name, const QString &category, const QString &toolTip)
 {
     auto button = new EmoticonCategoryButton(this);
     button->setText(name);
+    button->setToolTip(toolTip);
     mMainLayout->addWidget(button);
     mButtonGroup->addButton(button);
     connect(button, &QToolButton::clicked, this, [this, category](bool clicked) {
@@ -77,9 +79,9 @@ bool EmoticonCategoryButtons::wasLoaded() const
 
 void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
 {
-    addButton(QStringLiteral("⌛️"), TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
+    addButton(QStringLiteral("⌛️"), TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier(), i18n("History"));
     for (const auto &cat : categories) {
-        addButton(cat.name(), cat.category());
+        addButton(cat.name(), cat.category(), cat.i18nName());
     }
     // Initialize first button.
     auto button = mButtonGroup->buttons().constFirst();
