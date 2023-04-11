@@ -24,7 +24,7 @@ public:
 Q_SIGNALS:
     void emojiItemSelected(const QString &str, const QString &identifier);
     void fontSizeChanged(int size);
-    void clearRecents();
+    void clearHistory();
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;

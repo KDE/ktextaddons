@@ -59,7 +59,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
             this,
             &EmoticonTextEditSelector::slotUsedIdentifierChanged);
 
-    connect(mEmoticonListView, &EmoticonListView::clearRecents, this, []() {
+    connect(mEmoticonListView, &EmoticonListView::clearHistory, this, []() {
         TextEmoticonsCore::EmoticonUnicodeModelManager::self()->setRecentIdentifier(QStringList());
     });
 
