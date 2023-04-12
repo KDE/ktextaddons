@@ -83,7 +83,7 @@ ecm_set_disabled_deprecation_versions(
 )
 
 add_subdirectory(textaddonswidgets)
-add_subdirectory(autocorrection)
+add_subdirectory(textautocorrection)
 add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
 add_subdirectory(textemoticons)
