@@ -20,7 +20,7 @@ ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrection HEADER t
     )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrection HEADER textautocorrectionautocorrect_debug.h
-	IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG CATEGORY_NAME org.kde.KF${KF_MAJOR_VERSION}.textautocorrection.autocorrect
+        IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection.autocorrect
 	DESCRIPTION "KF${KF_MAJOR_VERSION} (AutoCorrection autocorrect text)"
 	EXPORT KTEXTADDONS
     )
