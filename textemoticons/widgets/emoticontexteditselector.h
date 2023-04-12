@@ -27,6 +27,9 @@ public:
 
     void forceLineEditFocus();
 
+    void setCustomEmojiSupport(bool b);
+    Q_REQUIRED_RESULT bool customEmojiSupport() const;
+
 public Q_SLOTS:
     void loadEmoticons();
 

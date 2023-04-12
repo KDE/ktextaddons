@@ -51,6 +51,7 @@ public:
     QLineEdit *const mSearchUnicodeLineEdit;
     EmoticonListView *const mEmoticonListView;
     TextEmoticonsCore::EmoticonUnicodeProxyModel *const mEmoticonProxyModel;
+    bool mCustomEmojiSupport = false;
 };
 
 EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
@@ -125,7 +126,17 @@ void EmoticonTextEditSelector::loadEmoticons()
         TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
         d->mEmoticonProxyModel->setSourceModel(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
         const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
-        d->mCategoryButtons->setCategories(categories);
+        d->mCategoryButtons->setCategories(categories, d->mCustomEmojiSupport);
         d->mEmoticonProxyModel->setRecentEmoticons(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->recentIdentifier());
     }
+}
+
+void EmoticonTextEditSelector::setCustomEmojiSupport(bool b)
+{
+    d->mCustomEmojiSupport = b;
+}
+
+bool EmoticonTextEditSelector::customEmojiSupport() const
+{
+    return d->mCustomEmojiSupport;
 }

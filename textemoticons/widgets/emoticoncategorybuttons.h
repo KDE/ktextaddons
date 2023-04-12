@@ -23,7 +23,7 @@ public:
     explicit EmoticonCategoryButtons(QWidget *parent = nullptr);
     ~EmoticonCategoryButtons() override;
 
-    void setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories);
+    void setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories, bool hasCustomSupport);
 
     Q_REQUIRED_RESULT bool wasLoaded() const;
 

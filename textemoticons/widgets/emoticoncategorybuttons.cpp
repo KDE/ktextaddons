@@ -77,9 +77,12 @@ bool EmoticonCategoryButtons::wasLoaded() const
     return mWasLoaded;
 }
 
-void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories)
+void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories, bool hasCustomSupport)
 {
-    addButton(QStringLiteral("⌛️"), TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier(), i18n("History"));
+    addButton(QStringLiteral("⌛️"), TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier(), i18nc("Previously used emojis", "History"));
+    if (hasCustomSupport) {
+        addButton(QStringLiteral("🖼️"), TextEmoticonsCore::EmoticonUnicodeUtils::customIdentifier(), i18nc("'Custom' is a category of emoji", "Custom"));
+    }
     for (const auto &cat : categories) {
         addButton(cat.name(), cat.category(), cat.i18nName());
     }
