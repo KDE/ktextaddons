@@ -9,15 +9,11 @@
 
 #include "textemoticonswidgets_export.h"
 #include <QWidget>
-class QLineEdit;
 namespace TextEmoticonsCore
 {
-class EmoticonUnicodeProxyModel;
 }
 namespace TextEmoticonsWidgets
 {
-class EmoticonCategoryButtons;
-class EmoticonListView;
 /**
  * @brief The EmoticonTextEditSelector class
  * @author Laurent Montel <montel@kde.org>
