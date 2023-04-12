@@ -6,6 +6,7 @@
 
 #include "customemojitest.h"
 #include "customemoji.h"
+#include "emoticonunicodeutils.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(CustomEmojiTest)
 
@@ -18,5 +19,6 @@ void CustomEmojiTest::shouldHaveDefaultValues()
 {
     TextEmoticonsCore::CustomEmoji w;
     QVERIFY(!w.category().isEmpty());
-    QVERIFY(!w.identifier().isEmpty());
+    QVERIFY(w.identifier().isEmpty());
+    QCOMPARE(w.category(), TextEmoticonsCore::EmoticonUnicodeUtils::customIdentifier());
 }
