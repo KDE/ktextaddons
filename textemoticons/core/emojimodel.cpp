@@ -5,6 +5,7 @@
 */
 
 #include "emojimodel.h"
+#include "textemoticonscore_debug.h"
 #include <TextEmoticonsCore/CustomEmojiIconManager>
 using namespace TextEmoticonsCore;
 EmojiModel::EmojiModel(QObject *parent)
@@ -48,6 +49,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             if (mCustomEmojiIconManager) {
                 const QIcon icon = mCustomEmojiIconManager->generateIcon(customEmoji.identifier());
                 return icon;
+            } else {
+                qCWarning(TEXTEMOTICONSCORE_LOG) << "mCustomEmojiIconManager is null. It's a bug";
             }
             return {};
         }
