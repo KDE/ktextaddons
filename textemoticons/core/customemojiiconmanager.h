@@ -19,8 +19,6 @@ class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager
 public:
     CustomEmojiIconManager();
     virtual ~CustomEmojiIconManager();
-
-protected:
     virtual QIcon generateIcon(const QString &customIdentifier);
 };
 }
