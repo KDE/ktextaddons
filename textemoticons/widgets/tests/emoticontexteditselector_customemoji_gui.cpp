@@ -27,6 +27,19 @@ public:
         auto customEmojiIconManager = new CustomEmojiIconManagerGuiTest(this);
         w->setCustomEmojiSupport(true);
         TextEmoticonsCore::EmojiModelManager::self()->emojiModel()->setCustomEmojiIconManager(customEmojiIconManager);
+
+        QList<TextEmoticonsCore::CustomEmoji> customEmoji;
+        {
+            TextEmoticonsCore::CustomEmoji custom;
+            custom.setIdentifier(QStringLiteral(":custom1:"));
+            customEmoji.append(custom);
+        }
+        {
+            TextEmoticonsCore::CustomEmoji custom;
+            custom.setIdentifier(QStringLiteral(":custom2:"));
+            customEmoji.append(custom);
+        }
+        TextEmoticonsCore::EmojiModelManager::self()->emojiModel()->setCustomEmojiList(customEmoji);
         w->loadEmoticons();
 
         mainLayout->addWidget(w);

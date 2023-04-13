@@ -41,5 +41,6 @@ QDebug operator<<(QDebug d, const CustomEmoji &t)
 {
     d << "Identifier " << t.identifier();
     d << "Is animated " << t.isAnimatedEmoji();
+    d << "category " << t.category();
     return d;
 }

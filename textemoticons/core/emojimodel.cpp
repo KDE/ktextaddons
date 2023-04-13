@@ -44,7 +44,7 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
     } else {
         const auto &customEmoji = mCustomEmojiList.at(index.row() - mEmoticonList.count());
         switch (role) {
-        case Qt::DecorationPropertyRole: {
+        case Qt::DecorationRole: {
             if (mCustomEmojiIconManager) {
                 return mCustomEmojiIconManager->generateIcon(customEmoji.identifier());
             }
@@ -56,6 +56,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             return -1;
         case Identifier:
         case Qt::ToolTipRole:
+            return customEmoji.identifier();
+        case UnicodeEmoji:
             return customEmoji.identifier();
         }
     }
