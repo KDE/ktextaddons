@@ -63,6 +63,12 @@ target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrection PRIVATE
     export/exportlibreofficeautocorrection.h
     export/exportlibreofficeautocorrection.cpp
 
+    settings/textautocorrectionsettings.h
+    settings/textautocorrectionsettings.cpp
+
+    )
+
+target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrection PRIVATE
     widgets/autocorrectionwidget.cpp
     widgets/autocorrectionlistwidget.cpp
     widgets/autocorrectiontreewidget.cpp
@@ -77,10 +83,7 @@ target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrection PRIVATE
     widgets/autocorrectiontextedit.h
     widgets/autocorrectionlineedit.cpp
     widgets/autocorrectionlineedit.h
-    settings/textautocorrectionsettings.h
-    settings/textautocorrectionsettings.cpp
-
-    )
+)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF${KF_MAJOR_VERSION}TextAutoCorrection PROPERTIES UNITY_BUILD ON)
