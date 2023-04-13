@@ -2,4 +2,4 @@
 # SPDX-FileCopyrightText: none
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextautocorrection\")
 
-add_subdirectory(src)
+add_subdirectory(core)
