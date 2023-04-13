@@ -26,8 +26,12 @@ public:
 
     Q_REQUIRED_RESULT QString category() const;
 
+    Q_REQUIRED_RESULT bool isAnimatedEmoji() const;
+    void setIsAnimatedEmoji(bool newIsAnimatedEmoji);
+
 private:
     QString mIdentifier;
+    bool mIsAnimatedEmoji = false;
 };
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::CustomEmoji)

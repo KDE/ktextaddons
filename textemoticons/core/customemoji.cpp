@@ -27,8 +27,19 @@ QString CustomEmoji::category() const
     return EmoticonUnicodeUtils::customIdentifier();
 }
 
+bool CustomEmoji::isAnimatedEmoji() const
+{
+    return mIsAnimatedEmoji;
+}
+
+void CustomEmoji::setIsAnimatedEmoji(bool newIsAnimatedEmoji)
+{
+    mIsAnimatedEmoji = newIsAnimatedEmoji;
+}
+
 QDebug operator<<(QDebug d, const CustomEmoji &t)
 {
     d << "Identifier " << t.identifier();
+    d << "Is animated " << t.isAnimatedEmoji();
     return d;
 }
