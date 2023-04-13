@@ -9,6 +9,10 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
+#include <TextEmoticonsCore/EmojiModel>
+#include <TextEmoticonsCore/EmojiModelManager>
+
+#include "customemojiiconmanagerguitest.h"
 #include "emoticontexteditselector.h"
 
 class Window : public QWidget
@@ -20,6 +24,9 @@ public:
     {
         auto mainLayout = new QVBoxLayout(this);
         auto w = new TextEmoticonsWidgets::EmoticonTextEditSelector(this);
+        auto customEmojiIconManager = new CustomEmojiIconManagerGuiTest(this);
+        w->setCustomEmojiSupport(true);
+        TextEmoticonsCore::EmojiModelManager::self()->emojiModel()->setCustomEmojiIconManager(customEmojiIconManager);
         w->loadEmoticons();
 
         mainLayout->addWidget(w);

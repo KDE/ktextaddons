@@ -7,7 +7,8 @@
 #include "customemojiiconmanager.h"
 
 using namespace TextEmoticonsCore;
-CustomEmojiIconManager::CustomEmojiIconManager()
+CustomEmojiIconManager::CustomEmojiIconManager(QObject *parent)
+    : QObject(parent)
 {
 }
 

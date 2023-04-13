@@ -13,11 +13,11 @@ namespace TextEmoticonsCore
  * @brief The CustomEmojiIconManager class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager
+class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager : public QObject
 {
     Q_GADGET
 public:
-    CustomEmojiIconManager();
+    explicit CustomEmojiIconManager(QObject *parent = nullptr);
     virtual ~CustomEmojiIconManager();
     virtual QIcon generateIcon(const QString &customIdentifier);
 };
