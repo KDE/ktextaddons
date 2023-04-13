@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class EmoticonUnicodeProxyModelTest : public QObject
+class EmojiProxyModelTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit EmoticonUnicodeProxyModelTest(QObject *parent = nullptr);
-    ~EmoticonUnicodeProxyModelTest() override = default;
+    explicit EmojiProxyModelTest(QObject *parent = nullptr);
+    ~EmojiProxyModelTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

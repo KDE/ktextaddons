@@ -14,8 +14,8 @@
 #include <QScreen>
 #include <QVBoxLayout>
 #include <TextEmoticonsCore/EmojiModel>
+#include <TextEmoticonsCore/EmojiProxyModel>
 #include <TextEmoticonsCore/EmoticonUnicodeModelManager>
-#include <TextEmoticonsCore/EmoticonUnicodeProxyModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
@@ -28,7 +28,7 @@ public:
         : mCategoryButtons(new EmoticonCategoryButtons(q))
         , mSearchUnicodeLineEdit(new QLineEdit(q))
         , mEmoticonListView(new EmoticonListView(q))
-        , mEmoticonProxyModel(new TextEmoticonsCore::EmoticonUnicodeProxyModel(q))
+        , mEmoticonProxyModel(new TextEmoticonsCore::EmojiProxyModel(q))
     {
     }
     void slotUsedIdentifierChanged(const QStringList &lst)
@@ -50,7 +50,7 @@ public:
     EmoticonCategoryButtons *const mCategoryButtons;
     QLineEdit *const mSearchUnicodeLineEdit;
     EmoticonListView *const mEmoticonListView;
-    TextEmoticonsCore::EmoticonUnicodeProxyModel *const mEmoticonProxyModel;
+    TextEmoticonsCore::EmojiProxyModel *const mEmoticonProxyModel;
     bool mCustomEmojiSupport = false;
 };
 

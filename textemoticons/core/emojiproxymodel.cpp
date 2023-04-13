@@ -3,16 +3,16 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#include "emoticonunicodeproxymodel.h"
+#include "emojiproxymodel.h"
 #include "emojimodel.h"
 #include "emoticonunicodeutils.h"
 
 using namespace TextEmoticonsCore;
 
-class EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModelPrivate
+class EmojiProxyModel::EmojiProxyModelPrivate
 {
 public:
-    EmoticonUnicodeProxyModelPrivate(EmoticonUnicodeProxyModel *qq)
+    EmojiProxyModelPrivate(EmojiProxyModel *qq)
         : q(qq)
     {
     }
@@ -23,21 +23,21 @@ public:
     QString mCategory;
     QStringList mRecentEmoticons;
     QString mSearchIdentifier;
-    EmoticonUnicodeProxyModel *const q;
+    EmojiProxyModel *const q;
 };
 
-EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
+EmojiProxyModel::EmojiProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
-    , d(new EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModelPrivate(this))
+    , d(new EmojiProxyModel::EmojiProxyModelPrivate(this))
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setFilterRole(EmojiModel::Identifier);
     sort(0);
 }
 
-EmoticonUnicodeProxyModel::~EmoticonUnicodeProxyModel() = default;
+EmojiProxyModel::~EmojiProxyModel() = default;
 
-bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+bool EmojiProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     if (d->mCategory.isEmpty()) {
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
@@ -66,12 +66,12 @@ bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelInd
     return false;
 }
 
-QString EmoticonUnicodeProxyModel::searchIdentifier() const
+QString EmojiProxyModel::searchIdentifier() const
 {
     return d->mSearchIdentifier;
 }
 
-void EmoticonUnicodeProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
+void EmojiProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
 {
     if (d->mSearchIdentifier != newSearchIdentifier) {
         d->mSearchIdentifier = newSearchIdentifier;
@@ -79,12 +79,12 @@ void EmoticonUnicodeProxyModel::setSearchIdentifier(const QString &newSearchIden
     }
 }
 
-QStringList EmoticonUnicodeProxyModel::recentEmoticons() const
+QStringList EmojiProxyModel::recentEmoticons() const
 {
     return d->mRecentEmoticons;
 }
 
-void EmoticonUnicodeProxyModel::setRecentEmoticons(const QStringList &newRecentEmoticons)
+void EmojiProxyModel::setRecentEmoticons(const QStringList &newRecentEmoticons)
 {
     if (d->mRecentEmoticons != newRecentEmoticons) {
         d->mRecentEmoticons = newRecentEmoticons;
@@ -94,12 +94,12 @@ void EmoticonUnicodeProxyModel::setRecentEmoticons(const QStringList &newRecentE
     }
 }
 
-QString EmoticonUnicodeProxyModel::category() const
+QString EmojiProxyModel::category() const
 {
     return d->mCategory;
 }
 
-void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
+void EmojiProxyModel::setCategory(const QString &newCategorie)
 {
     if (d->mCategory != newCategorie) {
         d->mCategory = newCategorie;
@@ -115,7 +115,7 @@ void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
     }
 }
 
-bool EmoticonUnicodeProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+bool EmojiProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->mCategory) {
         const QString leftIdentifier = sourceModel()->data(left, EmojiModel::Identifier).toString();
