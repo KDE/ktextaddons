@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class EmoticonUnicodeModelTest : public QObject
+class EmojiModelTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit EmoticonUnicodeModelTest(QObject *parent = nullptr);
-    ~EmoticonUnicodeModelTest() override = default;
+    explicit EmojiModelTest(QObject *parent = nullptr);
+    ~EmojiModelTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

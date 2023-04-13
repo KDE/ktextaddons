@@ -13,7 +13,7 @@
 namespace TextEmoticonsCore
 {
 class CustomEmojiIconManager;
-class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeModel : public QAbstractListModel
+class TEXTEMOTICONSCORE_EXPORT EmojiModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -25,8 +25,8 @@ public:
     };
     Q_ENUM(EmoticonsRoles)
 
-    explicit EmoticonUnicodeModel(QObject *parent = nullptr);
-    ~EmoticonUnicodeModel() override;
+    explicit EmojiModel(QObject *parent = nullptr);
+    ~EmojiModel() override;
 
     Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
@@ -41,7 +41,7 @@ public:
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
 private:
-    Q_DISABLE_COPY(EmoticonUnicodeModel)
+    Q_DISABLE_COPY(EmojiModel)
     QList<TextEmoticonsCore::UnicodeEmoticon> mEmoticonList;
     QList<TextEmoticonsCore::CustomEmoji> mCustomEmojiList;
     TextEmoticonsCore::CustomEmojiIconManager *mCustomEmojiIconManager = nullptr;

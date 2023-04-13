@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticonunicodemodel.h"
+#include "emojimodel.h"
 using namespace TextEmoticonsCore;
-EmoticonUnicodeModel::EmoticonUnicodeModel(QObject *parent)
+EmojiModel::EmojiModel(QObject *parent)
     : QAbstractListModel(parent)
 {
 }
 
-EmoticonUnicodeModel::~EmoticonUnicodeModel() = default;
+EmojiModel::~EmojiModel() = default;
 
-int EmoticonUnicodeModel::rowCount(const QModelIndex &parent) const
+int EmojiModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0; // flat model
@@ -21,7 +21,7 @@ int EmoticonUnicodeModel::rowCount(const QModelIndex &parent) const
     return mEmoticonList.count();
 }
 
-QVariant EmoticonUnicodeModel::data(const QModelIndex &index, int role) const
+QVariant EmojiModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() < 0 || index.row() >= mEmoticonList.count()) {
         return {};
@@ -43,34 +43,34 @@ QVariant EmoticonUnicodeModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-const QList<TextEmoticonsCore::UnicodeEmoticon> &EmoticonUnicodeModel::emoticonList() const
+const QList<TextEmoticonsCore::UnicodeEmoticon> &EmojiModel::emoticonList() const
 {
     return mEmoticonList;
 }
 
-void EmoticonUnicodeModel::setEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList)
+void EmojiModel::setEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList)
 {
     beginResetModel();
     mEmoticonList = newEmoticonList;
     endResetModel();
 }
 
-QList<TextEmoticonsCore::CustomEmoji> EmoticonUnicodeModel::customEmojiList() const
+QList<TextEmoticonsCore::CustomEmoji> EmojiModel::customEmojiList() const
 {
     return mCustomEmojiList;
 }
 
-void EmoticonUnicodeModel::setCustomEmojiList(const QList<TextEmoticonsCore::CustomEmoji> &newCustomEmojiList)
+void EmojiModel::setCustomEmojiList(const QList<TextEmoticonsCore::CustomEmoji> &newCustomEmojiList)
 {
     mCustomEmojiList = newCustomEmojiList;
 }
 
-TextEmoticonsCore::CustomEmojiIconManager *EmoticonUnicodeModel::customEmojiIconManager() const
+TextEmoticonsCore::CustomEmojiIconManager *EmojiModel::customEmojiIconManager() const
 {
     return mCustomEmojiIconManager;
 }
 
-void EmoticonUnicodeModel::setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager)
+void EmojiModel::setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager)
 {
     mCustomEmojiIconManager = newCustomEmojiIconManager;
 }

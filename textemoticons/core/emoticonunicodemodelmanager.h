@@ -9,7 +9,7 @@
 #include <QObject>
 namespace TextEmoticonsCore
 {
-class EmoticonUnicodeModel;
+class EmojiModel;
 class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeModelManager : public QObject
 {
     Q_OBJECT
@@ -18,7 +18,7 @@ public:
     ~EmoticonUnicodeModelManager() override;
 
     static EmoticonUnicodeModelManager *self();
-    Q_REQUIRED_RESULT TextEmoticonsCore::EmoticonUnicodeModel *emoticonUnicodeModel() const;
+    Q_REQUIRED_RESULT TextEmoticonsCore::EmojiModel *emoticonUnicodeModel() const;
 
     Q_REQUIRED_RESULT const QStringList &recentIdentifier() const;
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
@@ -28,7 +28,7 @@ Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
 
 private:
-    TextEmoticonsCore::EmoticonUnicodeModel *const mEmoticonUnicodeModel;
+    TextEmoticonsCore::EmojiModel *const mEmoticonUnicodeModel;
     QStringList mRecentIdentifier;
     void loadRecentUsed();
     void writeRecentUsed();

@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emoticonunicodeproxymodel.h"
-#include "emoticonunicodemodel.h"
+#include "emojimodel.h"
 #include "emoticonunicodeutils.h"
 
 using namespace TextEmoticonsCore;
@@ -31,7 +31,7 @@ EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModel(QObject *parent)
     , d(new EmoticonUnicodeProxyModel::EmoticonUnicodeProxyModelPrivate(this))
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
-    setFilterRole(EmoticonUnicodeModel::Identifier);
+    setFilterRole(EmojiModel::Identifier);
     sort(0);
 }
 
@@ -44,7 +44,7 @@ bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelInd
     }
     if (!d->mSearchIdentifier.isEmpty()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const QString identifier = sourceIndex.data(EmoticonUnicodeModel::Identifier).toString();
+        const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
         if (identifier.contains(d->mSearchIdentifier)) {
             return true;
         }
@@ -52,13 +52,13 @@ bool EmoticonUnicodeProxyModel::filterAcceptsRow(int source_row, const QModelInd
     }
     if (d->mCategory == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const QString identifier = sourceIndex.data(EmoticonUnicodeModel::Identifier).toString();
+        const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
         if (d->mRecentEmoticons.contains(identifier)) {
             return true;
         }
     } else {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const auto category = sourceIndex.data(EmoticonUnicodeModel::Category).toString();
+        const auto category = sourceIndex.data(EmojiModel::Category).toString();
         if (d->mCategory == category) {
             return true;
         }
@@ -118,8 +118,8 @@ void EmoticonUnicodeProxyModel::setCategory(const QString &newCategorie)
 bool EmoticonUnicodeProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->mCategory) {
-        const QString leftIdentifier = sourceModel()->data(left, EmoticonUnicodeModel::Identifier).toString();
-        const QString rightIdentifier = sourceModel()->data(right, EmoticonUnicodeModel::Identifier).toString();
+        const QString leftIdentifier = sourceModel()->data(left, EmojiModel::Identifier).toString();
+        const QString rightIdentifier = sourceModel()->data(right, EmojiModel::Identifier).toString();
         const int positionIdentifierLeft = d->mRecentEmoticons.indexOf(leftIdentifier);
         const int positionIdentifierRight = d->mRecentEmoticons.indexOf(rightIdentifier);
         //        qDebug() << " leftIdentifier " << leftIdentifier << " rightIdentifier " << rightIdentifier << " positionIdentifierLeft " <<
@@ -128,8 +128,8 @@ bool EmoticonUnicodeProxyModel::lessThan(const QModelIndex &left, const QModelIn
         //        qDebug() << "mRecentEmoticons  " << mRecentEmoticons;
         return positionIdentifierLeft < positionIdentifierRight;
     } else {
-        const int leftOrder = sourceModel()->data(left, EmoticonUnicodeModel::Order).toInt();
-        const int rightOrder = sourceModel()->data(right, EmoticonUnicodeModel::Order).toInt();
+        const int leftOrder = sourceModel()->data(left, EmojiModel::Order).toInt();
+        const int rightOrder = sourceModel()->data(right, EmojiModel::Order).toInt();
 
         return leftOrder < rightOrder;
     }

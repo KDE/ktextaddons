@@ -13,7 +13,7 @@
 #include <QLineEdit>
 #include <QScreen>
 #include <QVBoxLayout>
-#include <TextEmoticonsCore/EmoticonUnicodeModel>
+#include <TextEmoticonsCore/EmojiModel>
 #include <TextEmoticonsCore/EmoticonUnicodeModelManager>
 #include <TextEmoticonsCore/EmoticonUnicodeProxyModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
