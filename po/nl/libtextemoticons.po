@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:48+0000\n"
-"PO-Revision-Date: 2023-04-11 12:18+0200\n"
+"POT-Creation-Date: 2023-04-13 00:47+0000\n"
+"PO-Revision-Date: 2023-04-12 11:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -63,8 +63,16 @@ msgid "Flags"
 msgstr "Vlaggen"
 
 #: widgets/emoticoncategorybuttons.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "History"
+msgctxt "Previously used emojis"
 msgid "History"
+msgstr "Geschiedenis"
+
+#: widgets/emoticoncategorybuttons.cpp:84
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
 msgstr ""
 
 #: widgets/emoticonlistview.cpp:103
@@ -72,12 +80,12 @@ msgstr ""
 msgid "Clear Recents"
 msgstr "Recent wissen"
 
-#: widgets/emoticontexteditaction.cpp:41
+#: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
 msgstr "Smiley toevoegen"
 
-#: widgets/emoticontexteditselector.cpp:72
+#: widgets/emoticontexteditselector.cpp:73
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Emoticon zoeken..."

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:48+0000\n"
-"PO-Revision-Date: 2023-04-12 01:15+0200\n"
+"POT-Creation-Date: 2023-04-13 00:47+0000\n"
+"PO-Revision-Date: 2023-04-12 22:05+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -65,8 +65,16 @@ msgid "Flags"
 msgstr "Banderas"
 
 #: widgets/emoticoncategorybuttons.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "History"
+msgctxt "Previously used emojis"
 msgid "History"
+msgstr "Historial"
+
+#: widgets/emoticoncategorybuttons.cpp:84
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
 msgstr ""
 
 #: widgets/emoticonlistview.cpp:103
@@ -74,12 +82,12 @@ msgstr ""
 msgid "Clear Recents"
 msgstr "Borrar recientes"
 
-#: widgets/emoticontexteditaction.cpp:41
+#: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
 msgstr "Añadir smiley"
 
-#: widgets/emoticontexteditselector.cpp:72
+#: widgets/emoticontexteditselector.cpp:73
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "Buscar emoticono..."
