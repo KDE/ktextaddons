@@ -46,9 +46,10 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         switch (role) {
         case Qt::DecorationRole: {
             if (mCustomEmojiIconManager) {
-                return mCustomEmojiIconManager->generateIcon(customEmoji.identifier());
+                const QIcon icon = mCustomEmojiIconManager->generateIcon(customEmoji.identifier());
+                return icon;
             }
-            return customEmoji.identifier();
+            return {};
         }
         case Category:
             return customEmoji.category();
