@@ -11,15 +11,14 @@ namespace TextEmoticonsCore
 {
 class EmojiModel;
 class CustomEmojiIconManager;
-// TODO rename as EmojiModelManager
-class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeModelManager : public QObject
+class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit EmoticonUnicodeModelManager(QObject *parent = nullptr);
-    ~EmoticonUnicodeModelManager() override;
+    explicit EmojiModelManager(QObject *parent = nullptr);
+    ~EmojiModelManager() override;
 
-    static EmoticonUnicodeModelManager *self();
+    static EmojiModelManager *self();
     Q_REQUIRED_RESULT TextEmoticonsCore::EmojiModel *emojiModel() const;
 
     Q_REQUIRED_RESULT const QStringList &recentIdentifier() const;

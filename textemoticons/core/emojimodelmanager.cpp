@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticonunicodemodelmanager.h"
+#include "emojimodelmanager.h"
 
 #include "unicodeemoticonmanager.h"
 #include <KConfigGroup>
@@ -15,7 +15,7 @@ namespace
 {
 static const char myEmoticonRecentUsedGroupName[] = "EmoticonRecentUsed";
 }
-EmoticonUnicodeModelManager::EmoticonUnicodeModelManager(QObject *parent)
+EmojiModelManager::EmojiModelManager(QObject *parent)
     : QObject(parent)
     , mEmojiModel(new TextEmoticonsCore::EmojiModel(this))
 {
@@ -23,35 +23,35 @@ EmoticonUnicodeModelManager::EmoticonUnicodeModelManager(QObject *parent)
     loadRecentUsed();
 }
 
-EmoticonUnicodeModelManager::~EmoticonUnicodeModelManager()
+EmojiModelManager::~EmojiModelManager()
 {
     writeRecentUsed();
 }
 
-EmoticonUnicodeModelManager *EmoticonUnicodeModelManager::self()
+EmojiModelManager *EmojiModelManager::self()
 {
-    static EmoticonUnicodeModelManager s_self;
+    static EmojiModelManager s_self;
     return &s_self;
 }
 
-TextEmoticonsCore::EmojiModel *EmoticonUnicodeModelManager::emojiModel() const
+TextEmoticonsCore::EmojiModel *EmojiModelManager::emojiModel() const
 {
     return mEmojiModel;
 }
 
-const QStringList &EmoticonUnicodeModelManager::recentIdentifier() const
+const QStringList &EmojiModelManager::recentIdentifier() const
 {
     return mRecentIdentifier;
 }
 
-void EmoticonUnicodeModelManager::setRecentIdentifier(const QStringList &newRecentIdentifier)
+void EmojiModelManager::setRecentIdentifier(const QStringList &newRecentIdentifier)
 {
     mRecentIdentifier = newRecentIdentifier;
     writeRecentUsed();
     Q_EMIT usedIdentifierChanged(mRecentIdentifier);
 }
 
-void EmoticonUnicodeModelManager::addIdentifier(const QString &identifier)
+void EmojiModelManager::addIdentifier(const QString &identifier)
 {
     if (int i = mRecentIdentifier.indexOf(identifier)) {
         // Remove it for adding in top of list
@@ -64,23 +64,23 @@ void EmoticonUnicodeModelManager::addIdentifier(const QString &identifier)
     Q_EMIT usedIdentifierChanged(mRecentIdentifier);
 }
 
-CustomEmojiIconManager *EmoticonUnicodeModelManager::customEmojiIconManager() const
+CustomEmojiIconManager *EmojiModelManager::customEmojiIconManager() const
 {
     return mEmojiModel->customEmojiIconManager();
 }
 
-void EmoticonUnicodeModelManager::setCustomEmojiIconManager(CustomEmojiIconManager *newCustomEmojiIconManager)
+void EmojiModelManager::setCustomEmojiIconManager(CustomEmojiIconManager *newCustomEmojiIconManager)
 {
     mEmojiModel->setCustomEmojiIconManager(newCustomEmojiIconManager);
 }
 
-void EmoticonUnicodeModelManager::loadRecentUsed()
+void EmojiModelManager::loadRecentUsed()
 {
     KConfigGroup group(KSharedConfig::openConfig(), myEmoticonRecentUsedGroupName);
     mRecentIdentifier = group.readEntry("Recents", QStringList());
 }
 
-void EmoticonUnicodeModelManager::writeRecentUsed()
+void EmojiModelManager::writeRecentUsed()
 {
     KConfigGroup group(KSharedConfig::openConfig(), myEmoticonRecentUsedGroupName);
     group.writeEntry("Recents", mRecentIdentifier);

@@ -14,8 +14,8 @@
 #include <QScreen>
 #include <QVBoxLayout>
 #include <TextEmoticonsCore/EmojiModel>
+#include <TextEmoticonsCore/EmojiModelManager>
 #include <TextEmoticonsCore/EmojiProxyModel>
-#include <TextEmoticonsCore/EmoticonUnicodeModelManager>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
@@ -88,15 +88,12 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     connect(d->mSearchUnicodeLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
         d->slotSearchUnicode(str);
     });
-    connect(TextEmoticonsCore::EmoticonUnicodeModelManager::self(),
-            &TextEmoticonsCore::EmoticonUnicodeModelManager::usedIdentifierChanged,
-            this,
-            [this](const QStringList &lst) {
-                d->slotUsedIdentifierChanged(lst);
-            });
+    connect(TextEmoticonsCore::EmojiModelManager::self(), &TextEmoticonsCore::EmojiModelManager::usedIdentifierChanged, this, [this](const QStringList &lst) {
+        d->slotUsedIdentifierChanged(lst);
+    });
 
     connect(d->mEmoticonListView, &EmoticonListView::clearHistory, this, []() {
-        TextEmoticonsCore::EmoticonUnicodeModelManager::self()->setRecentIdentifier(QStringList());
+        TextEmoticonsCore::EmojiModelManager::self()->setRecentIdentifier(QStringList());
     });
 
     const QSize popupMenuSize = QSize(400, 250) * screen()->devicePixelRatio();
@@ -112,7 +109,7 @@ EmoticonTextEditSelector::~EmoticonTextEditSelector() = default;
 
 void EmoticonTextEditSelector::slotItemSelected(const QString &str, const QString &identifier)
 {
-    TextEmoticonsCore::EmoticonUnicodeModelManager::self()->addIdentifier(identifier);
+    TextEmoticonsCore::EmojiModelManager::self()->addIdentifier(identifier);
     Q_EMIT insertEmoji(str);
     Q_EMIT insertEmojiIdentifier(identifier);
     if (isVisible() && parentWidget() && parentWidget()->inherits("QMenu")) {
@@ -124,10 +121,10 @@ void EmoticonTextEditSelector::loadEmoticons()
 {
     if (!d->mCategoryButtons->wasLoaded()) {
         TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
-        d->mEmojiProxyModel->setSourceModel(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->emojiModel());
+        d->mEmojiProxyModel->setSourceModel(TextEmoticonsCore::EmojiModelManager::self()->emojiModel());
         const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
         d->mCategoryButtons->setCategories(categories, d->mCustomEmojiSupport);
-        d->mEmojiProxyModel->setRecentEmoticons(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->recentIdentifier());
+        d->mEmojiProxyModel->setRecentEmoticons(TextEmoticonsCore::EmojiModelManager::self()->recentIdentifier());
     }
 }
 
