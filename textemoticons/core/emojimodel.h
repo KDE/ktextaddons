@@ -32,7 +32,7 @@ public:
     Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
 
     Q_REQUIRED_RESULT const QList<TextEmoticonsCore::UnicodeEmoticon> &emoticonList() const;
-    void setEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList);
+    void setUnicodeEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList);
 
     Q_REQUIRED_RESULT QList<TextEmoticonsCore::CustomEmoji> customEmojiList() const;
     void setCustomEmojiList(const QList<TextEmoticonsCore::CustomEmoji> &newCustomEmojiList);

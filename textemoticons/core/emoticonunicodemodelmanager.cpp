@@ -17,9 +17,9 @@ static const char myEmoticonRecentUsedGroupName[] = "EmoticonRecentUsed";
 }
 EmoticonUnicodeModelManager::EmoticonUnicodeModelManager(QObject *parent)
     : QObject(parent)
-    , mEmoticonUnicodeModel(new TextEmoticonsCore::EmojiModel(this))
+    , mEmojiModel(new TextEmoticonsCore::EmojiModel(this))
 {
-    mEmoticonUnicodeModel->setEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());
+    mEmojiModel->setUnicodeEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());
     loadRecentUsed();
 }
 
@@ -34,9 +34,9 @@ EmoticonUnicodeModelManager *EmoticonUnicodeModelManager::self()
     return &s_self;
 }
 
-TextEmoticonsCore::EmojiModel *EmoticonUnicodeModelManager::emoticonUnicodeModel() const
+TextEmoticonsCore::EmojiModel *EmoticonUnicodeModelManager::emojiModel() const
 {
-    return mEmoticonUnicodeModel;
+    return mEmojiModel;
 }
 
 const QStringList &EmoticonUnicodeModelManager::recentIdentifier() const
@@ -62,6 +62,16 @@ void EmoticonUnicodeModelManager::addIdentifier(const QString &identifier)
     mRecentIdentifier.prepend(identifier);
     writeRecentUsed();
     Q_EMIT usedIdentifierChanged(mRecentIdentifier);
+}
+
+CustomEmojiIconManager *EmoticonUnicodeModelManager::customEmojiIconManager() const
+{
+    return mEmojiModel->customEmojiIconManager();
+}
+
+void EmoticonUnicodeModelManager::setCustomEmojiIconManager(CustomEmojiIconManager *newCustomEmojiIconManager)
+{
+    mEmojiModel->setCustomEmojiIconManager(newCustomEmojiIconManager);
 }
 
 void EmoticonUnicodeModelManager::loadRecentUsed()

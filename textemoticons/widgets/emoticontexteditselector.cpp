@@ -28,29 +28,29 @@ public:
         : mCategoryButtons(new EmoticonCategoryButtons(q))
         , mSearchUnicodeLineEdit(new QLineEdit(q))
         , mEmoticonListView(new EmoticonListView(q))
-        , mEmoticonProxyModel(new TextEmoticonsCore::EmojiProxyModel(q))
+        , mEmojiProxyModel(new TextEmoticonsCore::EmojiProxyModel(q))
     {
     }
     void slotUsedIdentifierChanged(const QStringList &lst)
     {
-        mEmoticonProxyModel->setRecentEmoticons(lst);
+        mEmojiProxyModel->setRecentEmoticons(lst);
     }
     void slotCategorySelected(const QString &category)
     {
         mSearchUnicodeLineEdit->setText({});
-        mEmoticonProxyModel->setCategory(category);
+        mEmojiProxyModel->setCategory(category);
         mEmoticonListView->setIsRecentView(category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
     }
 
     void slotSearchUnicode(const QString &str)
     {
-        mEmoticonProxyModel->setSearchIdentifier(str);
+        mEmojiProxyModel->setSearchIdentifier(str);
     }
 
     EmoticonCategoryButtons *const mCategoryButtons;
     QLineEdit *const mSearchUnicodeLineEdit;
     EmoticonListView *const mEmoticonListView;
-    TextEmoticonsCore::EmojiProxyModel *const mEmoticonProxyModel;
+    TextEmoticonsCore::EmojiProxyModel *const mEmojiProxyModel;
     bool mCustomEmojiSupport = false;
 };
 
@@ -78,8 +78,8 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     d->mEmoticonListView->setObjectName(QStringLiteral("mEmoticonListView"));
     mainLayout->addWidget(d->mEmoticonListView);
 
-    d->mEmoticonProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
-    d->mEmoticonListView->setModel(d->mEmoticonProxyModel);
+    d->mEmojiProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
+    d->mEmoticonListView->setModel(d->mEmojiProxyModel);
     connect(d->mEmoticonListView, &EmoticonListView::fontSizeChanged, d->mEmoticonListView, &EmoticonListView::setFontSize);
     connect(d->mEmoticonListView, &EmoticonListView::emojiItemSelected, this, &EmoticonTextEditSelector::slotItemSelected);
     connect(d->mCategoryButtons, &EmoticonCategoryButtons::categorySelected, this, [this](const QString &category) {
@@ -124,10 +124,10 @@ void EmoticonTextEditSelector::loadEmoticons()
 {
     if (!d->mCategoryButtons->wasLoaded()) {
         TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
-        d->mEmoticonProxyModel->setSourceModel(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->emoticonUnicodeModel());
+        d->mEmojiProxyModel->setSourceModel(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->emojiModel());
         const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
         d->mCategoryButtons->setCategories(categories, d->mCustomEmojiSupport);
-        d->mEmoticonProxyModel->setRecentEmoticons(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->recentIdentifier());
+        d->mEmojiProxyModel->setRecentEmoticons(TextEmoticonsCore::EmoticonUnicodeModelManager::self()->recentIdentifier());
     }
 }
 

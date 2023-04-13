@@ -48,7 +48,7 @@ const QList<TextEmoticonsCore::UnicodeEmoticon> &EmojiModel::emoticonList() cons
     return mEmoticonList;
 }
 
-void EmojiModel::setEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList)
+void EmojiModel::setUnicodeEmoticonList(const QList<TextEmoticonsCore::UnicodeEmoticon> &newEmoticonList)
 {
     beginResetModel();
     mEmoticonList = newEmoticonList;
