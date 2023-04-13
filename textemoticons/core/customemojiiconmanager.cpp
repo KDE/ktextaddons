@@ -10,3 +10,13 @@ using namespace TextEmoticonsCore;
 CustomEmojiIconManager::CustomEmojiIconManager()
 {
 }
+
+CustomEmojiIconManager::~CustomEmojiIconManager()
+{
+}
+
+QIcon CustomEmojiIconManager::generateIcon(const QString &customIdentifier)
+{
+    Q_UNUSED(customIdentifier)
+    return {};
+}

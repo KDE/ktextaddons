@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textemoticonscore_export.h"
+#include <QIcon>
 namespace TextEmoticonsCore
 {
 /**
@@ -14,7 +15,12 @@ namespace TextEmoticonsCore
  */
 class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager
 {
+    Q_GADGET
 public:
     CustomEmojiIconManager();
+    virtual ~CustomEmojiIconManager();
+
+protected:
+    virtual QIcon generateIcon(const QString &customIdentifier);
 };
 }
