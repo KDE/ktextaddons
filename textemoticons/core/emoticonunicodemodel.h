@@ -12,6 +12,7 @@
 #include <TextEmoticonsCore/UnicodeEmoticon>
 namespace TextEmoticonsCore
 {
+class CustomEmojiIconManager;
 class TEXTEMOTICONSCORE_EXPORT EmoticonUnicodeModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -36,9 +37,13 @@ public:
     Q_REQUIRED_RESULT QList<TextEmoticonsCore::CustomEmoji> customEmojiList() const;
     void setCustomEmojiList(const QList<TextEmoticonsCore::CustomEmoji> &newCustomEmojiList);
 
+    Q_REQUIRED_RESULT TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
+    void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
+
 private:
     Q_DISABLE_COPY(EmoticonUnicodeModel)
     QList<TextEmoticonsCore::UnicodeEmoticon> mEmoticonList;
     QList<TextEmoticonsCore::CustomEmoji> mCustomEmojiList;
+    TextEmoticonsCore::CustomEmojiIconManager *mCustomEmojiIconManager = nullptr;
 };
 }

@@ -64,3 +64,13 @@ void EmoticonUnicodeModel::setCustomEmojiList(const QList<TextEmoticonsCore::Cus
 {
     mCustomEmojiList = newCustomEmojiList;
 }
+
+TextEmoticonsCore::CustomEmojiIconManager *EmoticonUnicodeModel::customEmojiIconManager() const
+{
+    return mCustomEmojiIconManager;
+}
+
+void EmoticonUnicodeModel::setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager)
+{
+    mCustomEmojiIconManager = newCustomEmojiIconManager;
+}

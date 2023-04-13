@@ -18,4 +18,5 @@ void EmoticonUnicodeModelTest::shouldHaveDefaultValues()
 {
     TextEmoticonsCore::EmoticonUnicodeModel w;
     QVERIFY(w.emoticonList().isEmpty());
+    QVERIFY(!w.customEmojiIconManager());
 }
