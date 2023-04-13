@@ -367,10 +367,9 @@ bool AutoCorrection::autoBoldUnderline()
 
 QColor AutoCorrection::linkColor()
 {
-    if (d->mLinkColor.isValid()) {
-        return d->mLinkColor;
+    if (!d->mLinkColor.isValid()) {
+        d->mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
     }
-    d->mLinkColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::LinkText).color();
     return d->mLinkColor;
 }
 
