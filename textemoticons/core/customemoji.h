@@ -12,7 +12,7 @@
 namespace TextEmoticonsCore
 {
 /**
- * @brief The UnicodeEmoticon class
+ * @brief The CustomEmoji class
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSCORE_EXPORT CustomEmoji
