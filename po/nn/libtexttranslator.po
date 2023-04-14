@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 00:45+0000\n"
+"POT-Creation-Date: 2023-03-01 00:49+0000\n"
 "PO-Revision-Date: 2023-02-26 19:01+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -363,13 +363,13 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Set opp motor"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:15
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Bruk gratis lisensnøkkel"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:27
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:33
 #, kde-format
 msgid "Api Key:"
 msgstr "API-nøkke:"
@@ -390,13 +390,13 @@ msgstr "Google"
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Server required Api Key"
 msgstr "Tenaren krev ein API-nøkkel"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
-#: translator/plugins/lingva/lingvaenginewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:26
+#: translator/plugins/lingva/lingvaenginewidget.cpp:22
 #, kde-format
 msgid "Server Url:"
 msgstr "Tenaradresse:"
@@ -447,7 +447,7 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Set opp omsetjar"
 
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:35
 #, kde-format
 msgid "Search..."
 msgstr "Søk …"
@@ -468,18 +468,18 @@ msgstr "Til:"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: translator/widgets/translatordebugdialog.cpp:34
+#: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Feilsøking for omsetjar"
 
-#: translator/widgets/translatordebugdialog.cpp:41
+#: translator/widgets/translatordebugdialog.cpp:39
 #, kde-format
 msgid "Save As..."
 msgstr "Lagra som …"
 
-#: translator/widgets/translatordebugdialog.cpp:90
+#: translator/widgets/translatordebugdialog.cpp:88
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -488,12 +488,12 @@ msgstr ""
 "Klarte ikkje lagra fila %1:\n"
 "Detaljert feilmelding: «%2»."
 
-#: translator/widgets/translatordebugdialog.cpp:94
+#: translator/widgets/translatordebugdialog.cpp:92
 #, kde-format
 msgid "Save File Error"
 msgstr "Feil ved lagring"
 
-#: translator/widgets/translatordebugdialog.cpp:117
+#: translator/widgets/translatordebugdialog.cpp:115
 #, kde-format
 msgid "All Files (*)"
 msgstr "Alle filer (*)"
