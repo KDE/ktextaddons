@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-13 00:47+0000\n"
-"PO-Revision-Date: 2023-04-10 10:31+0200\n"
+"PO-Revision-Date: 2023-04-12 18:21+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -74,7 +74,7 @@ msgstr ""
 #: widgets/emoticonlistview.cpp:103
 #, kde-format
 msgid "Clear Recents"
-msgstr ""
+msgstr "Effacer les éléments récents"
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format

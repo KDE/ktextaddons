@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:47+0000\n"
+"POT-Creation-Date: 2023-04-14 00:45+0000\n"
 "PO-Revision-Date: 2023-01-13 00:54+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,124 +18,124 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 
-#: src/import/importlibreofficeautocorrection.cpp:52
+#: core/import/importlibreofficeautocorrection.cpp:52
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
-#: src/ui/autocorrectionwidget.ui:21
+#: core/ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/ui/autocorrectionwidget.ui:30
+#: core/ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
-#: src/ui/autocorrectionwidget.ui:44
+#: core/ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export..."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
-#: src/ui/autocorrectionwidget.ui:51
+#: core/ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import..."
 msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
-#: src/ui/autocorrectionwidget.ui:77
+#: core/ui/autocorrectionwidget.ui:77
 #, kde-format
 msgid "Ad&vanced Autocorrection"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: src/ui/autocorrectionwidget.ui:88 src/ui/autocorrectionwidget.ui:228
-#: src/widgets/autocorrectionwidget.cpp:503
+#: core/ui/autocorrectionwidget.ui:88 core/ui/autocorrectionwidget.ui:228
+#: core/widgets/autocorrectionwidget.cpp:503
 #, kde-format
 msgid "&Add"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #. i18n: ectx: property (text), widget (QPushButton, remove2)
-#: src/ui/autocorrectionwidget.ui:98 src/ui/autocorrectionwidget.ui:303
+#: core/ui/autocorrectionwidget.ui:98 core/ui/autocorrectionwidget.ui:303
 #, kde-format
 msgid "Remove"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, advancedAutocorrection)
-#: src/ui/autocorrectionwidget.ui:120
+#: core/ui/autocorrectionwidget.ui:120
 #, kde-format
 msgid "&Enable word replacement"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, findLabel)
-#: src/ui/autocorrectionwidget.ui:129
+#: core/ui/autocorrectionwidget.ui:129
 #, kde-format
 msgid "&Find"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
-#: src/ui/autocorrectionwidget.ui:149
+#: core/ui/autocorrectionwidget.ui:149
 #, kde-format
 msgid "Re&place"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
-#: src/ui/autocorrectionwidget.ui:187
+#: core/ui/autocorrectionwidget.ui:187
 #, kde-format
 msgid "Find"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
-#: src/ui/autocorrectionwidget.ui:192
+#: core/ui/autocorrectionwidget.ui:192
 #, kde-format
 msgid "Replace"
 msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
-#: src/ui/autocorrectionwidget.ui:201
+#: core/ui/autocorrectionwidget.ui:201
 #, kde-format
 msgid "E&xceptions"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: src/ui/autocorrectionwidget.ui:209
+#: core/ui/autocorrectionwidget.ui:209
 #, kde-format
 msgid "Do not treat as the end of a sentence:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, remove1)
-#: src/ui/autocorrectionwidget.ui:235
+#: core/ui/autocorrectionwidget.ui:235
 #, kde-format
 msgid "R&emove"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: src/ui/autocorrectionwidget.ui:277
+#: core/ui/autocorrectionwidget.ui:277
 #, kde-format
 msgid "Accept two uppercase letters in:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, add2)
-#: src/ui/autocorrectionwidget.ui:296
+#: core/ui/autocorrectionwidget.ui:296
 #, kde-format
 msgid "Add"
 msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
-#: src/ui/autocorrectionwidget.ui:344
+#: core/ui/autocorrectionwidget.ui:344
 #, kde-format
 msgid "Si&mple Autocorrection"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
-#: src/ui/autocorrectionwidget.ui:350
+#: core/ui/autocorrectionwidget.ui:350
 #, kde-format
 msgid ""
 "Detect when a new sentence is started and always ensure that the first "
@@ -143,7 +143,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperCase)
-#: src/ui/autocorrectionwidget.ui:354
+#: core/ui/autocorrectionwidget.ui:354
 #, kde-format
 msgid ""
 "Convert &first letter of a sentence automatically to uppercase\n"
@@ -151,7 +151,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
-#: src/ui/autocorrectionwidget.ui:364
+#: core/ui/autocorrectionwidget.ui:364
 #, kde-format
 msgid ""
 "All words are checked for the common mistake of holding the shift key down a "
@@ -160,7 +160,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
-#: src/ui/autocorrectionwidget.ui:368
+#: core/ui/autocorrectionwidget.ui:368
 #, kde-format
 msgid ""
 "Convert &two uppercase characters to one uppercase and one lowercase "
@@ -169,7 +169,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
-#: src/ui/autocorrectionwidget.ui:375
+#: core/ui/autocorrectionwidget.ui:375
 #, kde-format
 msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
@@ -177,31 +177,31 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
-#: src/ui/autocorrectionwidget.ui:378
+#: core/ui/autocorrectionwidget.ui:378
 #, kde-format
 msgid "&Suppress double spaces"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
-#: src/ui/autocorrectionwidget.ui:385
+#: core/ui/autocorrectionwidget.ui:385
 #, kde-format
 msgid "Most standard fraction notations will be converted when available"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
-#: src/ui/autocorrectionwidget.ui:388
+#: core/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2... with ½..."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
-#: src/ui/autocorrectionwidget.ui:395
+#: core/ui/autocorrectionwidget.ui:395
 #, kde-format
 msgid "Capitalize name of days"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
-#: src/ui/autocorrectionwidget.ui:402
+#: core/ui/autocorrectionwidget.ui:402
 #, kde-format
 msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
@@ -209,13 +209,13 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
-#: src/ui/autocorrectionwidget.ui:405
+#: core/ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
-#: src/ui/autocorrectionwidget.ui:412
+#: core/ui/autocorrectionwidget.ui:412
 #, kde-format
 msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
@@ -223,37 +223,37 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
-#: src/ui/autocorrectionwidget.ui:415
+#: core/ui/autocorrectionwidget.ui:415
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
-#: src/ui/autocorrectionwidget.ui:422
+#: core/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st... with 1^st... (HTML mode)"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
-#: src/ui/autocorrectionwidget.ui:429
+#: core/ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
-#: src/ui/autocorrectionwidget.ui:436
+#: core/ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
 msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
-#: src/ui/autocorrectionwidget.ui:457
+#: core/ui/autocorrectionwidget.ui:457
 #, kde-format
 msgid "Custom &Quotes"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
-#: src/ui/autocorrectionwidget.ui:463
+#: core/ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
 msgstr ""
@@ -262,195 +262,195 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
 #. i18n: ectx: property (text), widget (QLabel, simpleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, simpleQuoteEndReplace)
-#: src/ui/autocorrectionwidget.ui:474 src/ui/autocorrectionwidget.ui:514
-#: src/ui/autocorrectionwidget.ui:641 src/ui/autocorrectionwidget.ui:655
+#: core/ui/autocorrectionwidget.ui:474 core/ui/autocorrectionwidget.ui:514
+#: core/ui/autocorrectionwidget.ui:641 core/ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
-#: src/ui/autocorrectionwidget.ui:487 src/ui/autocorrectionwidget.ui:500
+#: core/ui/autocorrectionwidget.ui:487 core/ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: src/ui/autocorrectionwidget.ui:507
+#: core/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: src/ui/autocorrectionwidget.ui:534 src/ui/autocorrectionwidget.ui:634
+#: core/ui/autocorrectionwidget.ui:534 core/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
-#: src/ui/autocorrectionwidget.ui:548 src/ui/autocorrectionwidget.ui:669
+#: core/ui/autocorrectionwidget.ui:548 core/ui/autocorrectionwidget.ui:669
 #, kde-format
 msgid "Default"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
-#: src/ui/autocorrectionwidget.ui:572
+#: core/ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
-#: src/ui/autocorrectionwidget.ui:608 src/ui/autocorrectionwidget.ui:627
+#: core/ui/autocorrectionwidget.ui:608 core/ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
-#: src/ui/autocorrectionwidget.ui:648
+#: core/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
 msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: src/ui/autocorrectionwidget.ui:707
+#: core/ui/autocorrectionwidget.ui:707
 #, kde-format
 msgid "Path"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: src/ui/autocorrectionwidget.ui:713
+#: core/ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
-#: src/ui/autocorrectionwidget.ui:720 src/ui/autocorrectionwidget.ui:750
+#: core/ui/autocorrectionwidget.ui:720 core/ui/autocorrectionwidget.ui:750
 #, kde-format
 msgid "TextLabel"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: src/ui/autocorrectionwidget.ui:743
+#: core/ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
-#: src/ui/autocorrectionwidget.ui:773
+#: core/ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
-#: src/ui/autocorrectionwidget.ui:785 src/ui/autocorrectionwidget.ui:806
+#: core/ui/autocorrectionwidget.ui:785 core/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "..."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
-#: src/ui/autocorrectionwidget.ui:794
+#: core/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:124
+#: core/widgets/autocorrectionwidget.cpp:124
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:129
+#: core/widgets/autocorrectionwidget.cpp:129
 #, kde-format
 msgid "Select Custom System Path"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:139
+#: core/widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:143
+#: core/widgets/autocorrectionwidget.cpp:143
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:421
+#: core/widgets/autocorrectionwidget.cpp:421
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:421
+#: core/widgets/autocorrectionwidget.cpp:421
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:500
+#: core/widgets/autocorrectionwidget.cpp:500
 #, kde-format
 msgid "&Modify"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:611
+#: core/widgets/autocorrectionwidget.cpp:611
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:612
+#: core/widgets/autocorrectionwidget.cpp:612
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:615
+#: core/widgets/autocorrectionwidget.cpp:615
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:616
+#: core/widgets/autocorrectionwidget.cpp:616
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:648
+#: core/widgets/autocorrectionwidget.cpp:648
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:671
+#: core/widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:672
+#: core/widgets/autocorrectionwidget.cpp:672
 #, kde-format
 msgid "Save config"
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:707
+#: core/widgets/autocorrectionwidget.cpp:707
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr ""
 
-#: src/widgets/autocorrectionwidget.cpp:707
-#: src/widgets/autocorrectionwidget.cpp:710
+#: core/widgets/autocorrectionwidget.cpp:707
+#: core/widgets/autocorrectionwidget.cpp:710
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr ""
 
-#: src/widgets/selectspecialchardialog.cpp:32
+#: core/widgets/selectspecialchardialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr ""
 
-#: src/widgets/selectspecialchardialog.cpp:40
+#: core/widgets/selectspecialchardialog.cpp:40
 #, kde-format
 msgid "Insert"
 msgstr ""
 
-#: src/widgets/selectspecialchardialog.cpp:53
+#: core/widgets/selectspecialchardialog.cpp:53
 #, kde-format
 msgid "Select"
 msgstr ""
