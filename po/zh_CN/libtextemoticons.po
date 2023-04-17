@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-13 00:47+0000\n"
-"PO-Revision-Date: 2023-04-10 14:11\n"
+"PO-Revision-Date: 2023-04-16 12:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -66,18 +66,18 @@ msgstr "旗帜"
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr ""
+msgstr "历史记录"
 
 #: widgets/emoticoncategorybuttons.cpp:84
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
 #: widgets/emoticonlistview.cpp:103
 #, kde-format
 msgid "Clear Recents"
-msgstr ""
+msgstr "清除最近表情符号"
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
