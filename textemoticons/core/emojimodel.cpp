@@ -50,7 +50,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
                 if (customEmoji.isAnimatedEmoji()) {
                     const QString filename = mCustomEmojiIconManager->fileName(customEmoji.identifier());
                     if (!filename.isEmpty()) {
-                        // TODO
+                        const QIcon icon(filename);
+                        return icon;
                     }
                 }
                 const QIcon icon = mCustomEmojiIconManager->generateIcon(customEmoji.identifier());
