@@ -40,8 +40,8 @@ Q_SIGNALS:
     void charSelected(QChar);
 
 private:
-    TEXTAUTOCORRECTION_NO_EXPORT void readConfig();
-    TEXTAUTOCORRECTION_NO_EXPORT void writeConfig();
+    TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void readConfig();
+    TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void writeConfig();
     friend class SelectSpecialCharDialogPrivate;
     std::unique_ptr<SelectSpecialCharDialogPrivate> const d;
 };

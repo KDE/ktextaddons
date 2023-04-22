@@ -11,7 +11,7 @@
 #include "import/importlibreofficeautocorrection.h"
 #include "ui_autocorrectionwidget.h"
 
-#include "widgets/selectspecialchardialog.h"
+#include "selectspecialchardialog.h"
 #include <TextAddonsWidgets/LineEditCatchReturnKey>
 
 #include <KLocalizedString>

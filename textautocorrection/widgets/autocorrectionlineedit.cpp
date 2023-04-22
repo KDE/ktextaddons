@@ -32,7 +32,7 @@ public:
 
 AutoCorrectionLineEdit::AutoCorrectionLineEdit(QWidget *parent)
     : QPlainTextEdit(parent)
-    , d(new TextAutoCorrection::AutoCorrectionLineEditPrivate)
+    , d(new TextAutoCorrectionWidgets::AutoCorrectionLineEditPrivate)
 {
     setTabChangesFocus(true);
     // widget may not be resized vertically

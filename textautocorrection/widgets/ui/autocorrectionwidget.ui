@@ -832,17 +832,17 @@
   <customwidget>
    <class>TextAutoCorrection::AutoCorrectionListWidget</class>
    <extends>QListWidget</extends>
-   <header>widgets/autocorrectionlistwidget.h</header>
+   <header>autocorrectionlistwidget.h</header>
   </customwidget>
   <customwidget>
    <class>TextAutoCorrection::AutoCorrectionTreeWidget</class>
    <extends>QTreeWidget</extends>
-   <header>widgets/autocorrectiontreewidget.h</header>
+   <header>autocorrectiontreewidget.h</header>
   </customwidget>
   <customwidget>
    <class>TextAutoCorrection::AutoCorrectionLanguage</class>
    <extends>QComboBox</extends>
-   <header>widgets/autocorrectionlanguage.h</header>
+   <header>autocorrectionlanguage.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

@@ -13,7 +13,6 @@ macro(add_autocorrect_unittest _source)
 endmacro()
 
 add_autocorrect_unittest(autocorrectiontest.cpp)
-add_autocorrect_unittest(autocorrectiontextedittest.cpp)
 add_autocorrect_unittest(importkmailautocorrectiontest.cpp)
 add_autocorrect_unittest(autocorrectionsettingstest.cpp)
 add_autocorrect_unittest(autocorrectionutilstest.cpp)
