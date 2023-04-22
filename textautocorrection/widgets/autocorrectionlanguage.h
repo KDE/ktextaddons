@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include "textautocorrection_export.h"
+#include "textautocorrectionwidgets_export.h"
 #include <QComboBox>
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionWidgets
 {
 /**
  * @brief The AutoCorrectionLanguage class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTION_EXPORT AutoCorrectionLanguage : public QComboBox
+class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLanguage : public QComboBox
 {
 public:
     explicit AutoCorrectionLanguage(QWidget *parent);

@@ -22,10 +22,11 @@
 #include <QPointer>
 #include <QTreeWidgetItem>
 
+using namespace TextAutoCorrectionWidgets;
 using namespace TextAutoCorrection;
 
 Q_DECLARE_METATYPE(AutoCorrectionWidget::ImportFileType)
-class TextAutoCorrection::AutoCorrectionWidgetPrivate
+class TextAutoCorrectionWidgets::AutoCorrectionWidgetPrivate
 {
 public:
     AutoCorrectionWidgetPrivate()
@@ -35,20 +36,20 @@ public:
 
     ~AutoCorrectionWidgetPrivate() = default;
 
-    AutoCorrectionUtils::TypographicQuotes m_singleQuotes;
-    AutoCorrectionUtils::TypographicQuotes m_doubleQuotes;
+    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes m_singleQuotes;
+    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes m_doubleQuotes;
     QSet<QString> m_upperCaseExceptions;
     QSet<QString> m_twoUpperLetterExceptions;
     QHash<QString, QString> m_autocorrectEntries;
     std::unique_ptr<Ui::AutoCorrectionWidget> const ui;
-    AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
     bool mWasChanged = false;
     bool mHasHtmlSupport = true;
 };
 
 AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new TextAutoCorrection::AutoCorrectionWidgetPrivate)
+    , d(new TextAutoCorrectionWidgets::AutoCorrectionWidgetPrivate)
 {
     d->ui->setupUi(this);
 
@@ -161,7 +162,7 @@ void AutoCorrectionWidget::slotChangeComboboxState(int index)
     d->ui->autocorrectionLanguage->setEnabled(index < 2);
 }
 
-void AutoCorrectionWidget::setAutoCorrection(AutoCorrection *autoCorrect)
+void AutoCorrectionWidget::setAutoCorrection(TextAutoCorrection::AutoCorrection *autoCorrect)
 {
     d->mAutoCorrection = autoCorrect;
     setLanguage(d->ui->autocorrectionLanguage->language());

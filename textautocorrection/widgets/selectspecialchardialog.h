@@ -6,18 +6,18 @@
 
 #pragma once
 
-#include "textautocorrection_export.h"
+#include "textautocorrectionwidgets_export.h"
 
 #include <QDialog>
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionWidgets
 {
 class SelectSpecialCharDialogPrivate;
 /**
  * @brief The SelectSpecialCharDialog class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTION_EXPORT SelectSpecialCharDialog : public QDialog
+class TEXTAUTOCORRECTIONWIDGETS_EXPORT SelectSpecialCharDialog : public QDialog
 {
     Q_OBJECT
 public:

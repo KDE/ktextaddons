@@ -9,9 +9,9 @@
 
 #include <QKeyEvent>
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionWidgets;
 
-class TextAutoCorrection::AutoCorrectionTextEditPrivate
+class TextAutoCorrectionWidgets::AutoCorrectionTextEditPrivate
 {
 public:
     AutoCorrectionTextEditPrivate()
@@ -32,7 +32,7 @@ public:
 
 AutoCorrectionTextEdit::AutoCorrectionTextEdit(QWidget *parent)
     : QTextEdit(parent)
-    , d(new TextAutoCorrection::AutoCorrectionTextEditPrivate)
+    , d(new TextAutoCorrectionWidgets::AutoCorrectionTextEditPrivate)
 {
 }
 

@@ -6,33 +6,36 @@
 
 #pragma once
 
-#include "textautocorrection_export.h"
-#include <QTextEdit>
+#include "textautocorrectionwidgets_export.h"
+
+#include <QPlainTextEdit>
 namespace TextAutoCorrection
 {
 class AutoCorrection;
-class AutoCorrectionTextEditPrivate;
+}
+namespace TextAutoCorrectionWidgets
+{
+class AutoCorrectionLineEditPrivate;
 /**
- * @brief The AutoCorrectionTextEdit class
+ * @brief The AutoCorrectionLineEdit class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTION_EXPORT AutoCorrectionTextEdit : public QTextEdit
+class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLineEdit : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-    explicit AutoCorrectionTextEdit(QWidget *parent = nullptr);
-    ~AutoCorrectionTextEdit() override;
+    explicit AutoCorrectionLineEdit(QWidget *parent = nullptr);
+    ~AutoCorrectionLineEdit() override;
 
     Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrection *autocorrection() const;
 
     void setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect);
-
     void setAutocorrectionLanguage(const QString &language);
 
 protected:
     void keyPressEvent(QKeyEvent *e) override;
 
 private:
-    std::unique_ptr<AutoCorrectionTextEditPrivate> const d;
+    std::unique_ptr<AutoCorrectionLineEditPrivate> const d;
 };
 }

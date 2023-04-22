@@ -27,9 +27,6 @@ kconfig_add_kcfg_files(textautocorrection_settings_SRCS
 
 add_library(KF${KF_MAJOR_VERSION}TextAutoCorrection )
 add_library(KF${KF_MAJOR_VERSION}::TextAutoCorrection ALIAS KF${KF_MAJOR_VERSION}TextAutoCorrection)
-ki18n_wrap_ui(KF${KF_MAJOR_VERSION}TextAutoCorrection
-    widgets/ui/autocorrectionwidget.ui
-    )
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrection HEADER textautocorrection_debug.h
         IDENTIFIER TEXTAUTOCORRECTION_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection
 	DESCRIPTION "KF${KF_MAJOR_VERSION} (text AutoCorrection)"
@@ -68,23 +65,6 @@ target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrection PRIVATE
 
     )
 
-target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrection PRIVATE
-    widgets/autocorrectionwidget.cpp
-    widgets/autocorrectionlistwidget.cpp
-    widgets/autocorrectiontreewidget.cpp
-    widgets/autocorrectionlanguage.cpp
-    widgets/autocorrectionlistwidget.h
-    widgets/autocorrectionlanguage.h
-    widgets/autocorrectionwidget.h
-    widgets/autocorrectiontreewidget.h
-    widgets/selectspecialchardialog.h
-    widgets/selectspecialchardialog.cpp
-    widgets/autocorrectiontextedit.cpp
-    widgets/autocorrectiontextedit.h
-    widgets/autocorrectionlineedit.cpp
-    widgets/autocorrectionlineedit.h
-)
-
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF${KF_MAJOR_VERSION}TextAutoCorrection PROPERTIES UNITY_BUILD ON)
 endif()
@@ -118,20 +98,8 @@ install(TARGETS
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)
-    add_subdirectory(widgets/tests)
 endif()
 
-
-ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
-    HEADER_NAMES
-    AutoCorrectionWidget
-    AutoCorrectionLanguage
-    SelectSpecialCharDialog
-    AutoCorrectionTextEdit
-    REQUIRED_HEADERS TextAutoCorrection_autocorrectionwidgets_HEADERS
-    PREFIX TextAutoCorrection
-    RELATIVE widgets/
-    )
 
 ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrection_HEADERS
     HEADER_NAMES
@@ -159,7 +127,6 @@ ecm_generate_pri_file(BASE_NAME TextAutoCorrection
 
 install(FILES
     ${TextAutoCorrection_Camelcaseautocorrection_HEADERS}
-    ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
     ${TextAutoCorrection_Camelcasesettings_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/TextAutoCorrection
     COMPONENT Devel
@@ -169,7 +136,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionsetting_base.h
     ${TextAutoCorrection_autocorrection_HEADERS}
-    ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
     ${TextAutoCorrection_settings_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/textautocorrection
@@ -190,7 +156,6 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextAutoCorrection_autocorrection_HEADERS}
-        ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
         ${TextAutoCorrection_settings_HEADERS}
         LINK_QCHS
             Qt${QT_MAJOR_VERSION}Core_QCH

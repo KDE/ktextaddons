@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include <QListWidget>
+#include <QTreeWidget>
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionWidgets
 {
-class AutoCorrectionListWidget : public QListWidget
+class AutoCorrectionTreeWidget : public QTreeWidget
 {
     Q_OBJECT
 public:
-    explicit AutoCorrectionListWidget(QWidget *parent = nullptr);
-    ~AutoCorrectionListWidget() override;
+    explicit AutoCorrectionTreeWidget(QWidget *parent = nullptr);
+    ~AutoCorrectionTreeWidget() override;
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;

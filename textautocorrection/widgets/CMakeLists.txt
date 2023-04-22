@@ -1,10 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
-
+# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets")
-
-
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOCORRECTIONWIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_version.h"
@@ -21,14 +18,10 @@ install(FILES
 
 install(EXPORT KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgetsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgetsTargets.cmake NAMESPACE KF${KF_MAJOR_VERSION}::)
 
-kconfig_add_kcfg_files(textautocorrection_settings_SRCS
-    settings/textautocorrectionsetting_base.kcfgc
-    )
-
 add_library(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets )
-add_library(KF${KF_MAJOR_VERSION}::TextAutoCorrectionWigdgets ALIAS KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets)
+add_library(KF${KF_MAJOR_VERSION}::TextAutoCorrectionWidgets ALIAS KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets)
 ki18n_wrap_ui(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
-    widgets/ui/autocorrectionwidget.ui
+    ui/autocorrectionwidget.ui
     )
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets HEADER textautocorrectionautocorrectwidgets_debug.h
         IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection.autocorrectwidgets
@@ -64,6 +57,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
     Qt::Gui
     Qt::Widgets
     KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
@@ -111,7 +105,7 @@ install(FILES
     )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_export.h
     ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/textautocorrectionwidgets
@@ -125,10 +119,10 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF${KF_MAJOR_VERSION}TextAutoCorrection_QCH
-        NAME KF${KF_MAJOR_VERSION}TextAutoCorrection
-        BASE_NAME KF${KF_MAJOR_VERSION}TextAutoCorrection
-        VERSION ${TEXTAUTOCORRECTION_VERSION}
+        KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets_QCH
+        NAME KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
+        BASE_NAME KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
+        VERSION ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextAutoCorrection_autocorrection_HEADERS}
@@ -150,17 +144,17 @@ endif()
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextAutoCorrection_QCH
-        FILE KF${KF_MAJOR_VERSION}TextAutoCorrectionQchTargets.cmake
+        TARGETS KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets_QCH
+        FILE KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgetsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgetsQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoCorrectionConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoCorrectionWidgetsConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionWidegtsConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 

@@ -8,7 +8,7 @@
 
 #include <QKeyEvent>
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionWidgets;
 
 AutoCorrectionListWidget::AutoCorrectionListWidget(QWidget *parent)
     : QListWidget(parent)

@@ -9,8 +9,9 @@
 #include <QTextCursor>
 #include <TextAutoCorrection/AutoCorrection>
 
+using namespace TextAutoCorrectionWidgets;
 using namespace TextAutoCorrection;
-class TextAutoCorrection::AutoCorrectionLineEditPrivate
+class TextAutoCorrectionWidgets::AutoCorrectionLineEditPrivate
 {
 public:
     AutoCorrectionLineEditPrivate()
