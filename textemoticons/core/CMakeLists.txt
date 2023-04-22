@@ -42,7 +42,6 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
     PUBLIC
     Qt::Gui
     PRIVATE
-    Qt::Widgets
     KF${KF_MAJOR_VERSION}::ConfigCore
 )
 
@@ -154,7 +153,6 @@ if (BUILD_QCH)
         LINK_QCHS
         Qt${QT_MAJOR_VERSION}Core_QCH
         Qt${QT_MAJOR_VERSION}Gui_QCH
-        Qt${QT_MAJOR_VERSION}Widgets_QCH
         INCLUDE_DIRS
         ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
