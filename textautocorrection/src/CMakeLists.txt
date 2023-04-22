@@ -110,7 +110,7 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextAutoCorrection PROPERTIES
 
 install(TARGETS
     KF${KF_MAJOR_VERSION}TextAutoCorrection
-    EXPORT KF${KF_MAJOR_VERSION}TextAutoCorrectionTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF${KF_MAJOR_VERSION}TextAutoCorrectionTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 if (BUILD_TESTING)

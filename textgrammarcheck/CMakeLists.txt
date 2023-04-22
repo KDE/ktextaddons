@@ -138,7 +138,7 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextGrammarCheck PROPERTIES
 
 install(TARGETS
     KF${KF_MAJOR_VERSION}TextGrammarCheck
-    EXPORT KF${KF_MAJOR_VERSION}TextGrammarCheckTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF${KF_MAJOR_VERSION}TextGrammarCheckTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(TextGrammarCheck_Camelcasecommon_HEADERS

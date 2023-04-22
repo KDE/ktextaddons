@@ -47,7 +47,7 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextAddonsWidgets PROPERTIES
     EXPORT_NAME TextAddonsWidgets
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSION}TextAddonsWidgetsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSION}TextAddonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 #if(BUILD_TESTING)
 #    add_subdirectory(autotests)

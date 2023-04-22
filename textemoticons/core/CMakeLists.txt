@@ -68,7 +68,7 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextEmoticonsCore PROPERTIES
     EXPORT_NAME TextEmoticonsCore
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsCore EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsCoreTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsCore EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
