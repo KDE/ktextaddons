@@ -74,12 +74,10 @@ generate_export_header(KF${KF_MAJOR_VERSION}TextAutoCorrection BASE_NAME textaut
 target_link_libraries(KF${KF_MAJOR_VERSION}TextAutoCorrection
     PUBLIC
     Qt::Gui
-    Qt::Widgets
     KF${KF_MAJOR_VERSION}::ConfigWidgets
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::Archive
-    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
     Qt::Xml
     )
 

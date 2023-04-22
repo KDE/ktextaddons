@@ -54,9 +54,6 @@ generate_export_header(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets BASE_NAME 
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
     PUBLIC
-    Qt::Gui
-    Qt::Widgets
-    KF${KF_MAJOR_VERSION}::ConfigWidgets
     KF${KF_MAJOR_VERSION}::TextAutoCorrection
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
