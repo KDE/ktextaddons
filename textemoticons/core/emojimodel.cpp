@@ -47,6 +47,9 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         switch (role) {
         case Qt::DecorationRole: {
             if (mCustomEmojiIconManager) {
+                if (customEmoji.isAnimatedEmoji()) {
+                    // TODO
+                }
                 const QIcon icon = mCustomEmojiIconManager->generateIcon(customEmoji.identifier());
                 return icon;
             } else {
