@@ -32,7 +32,7 @@
       </widget>
      </item>
      <item>
-      <widget class="TextAutoCorrection::AutoCorrectionLanguage" name="autocorrectionLanguage"/>
+      <widget class="TextAutoCorrectionWidgets::AutoCorrectionLanguage" name="autocorrectionLanguage"/>
      </item>
     </layout>
    </item>
@@ -166,7 +166,7 @@
         </layout>
        </item>
        <item row="2" column="0">
-        <widget class="TextAutoCorrection::AutoCorrectionTreeWidget" name="treeWidget">
+        <widget class="TextAutoCorrectionWidgets::AutoCorrectionTreeWidget" name="treeWidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -252,7 +252,7 @@
           </layout>
          </item>
          <item row="2" column="0">
-          <widget class="TextAutoCorrection::AutoCorrectionListWidget" name="abbreviationList">
+          <widget class="TextAutoCorrectionWidgets::AutoCorrectionListWidget" name="abbreviationList">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
              <horstretch>0</horstretch>
@@ -320,7 +320,7 @@
           </layout>
          </item>
          <item row="2" column="0">
-          <widget class="TextAutoCorrection::AutoCorrectionListWidget" name="twoUpperLetterList">
+          <widget class="TextAutoCorrectionWidgets::AutoCorrectionListWidget" name="twoUpperLetterList">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
              <horstretch>0</horstretch>
@@ -830,17 +830,17 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>TextAutoCorrection::AutoCorrectionListWidget</class>
+   <class>TextAutoCorrectionWidgets::AutoCorrectionListWidget</class>
    <extends>QListWidget</extends>
    <header>autocorrectionlistwidget.h</header>
   </customwidget>
   <customwidget>
-   <class>TextAutoCorrection::AutoCorrectionTreeWidget</class>
+   <class>TextAutoCorrectionWidgets::AutoCorrectionTreeWidget</class>
    <extends>QTreeWidget</extends>
    <header>autocorrectiontreewidget.h</header>
   </customwidget>
   <customwidget>
-   <class>TextAutoCorrection::AutoCorrectionLanguage</class>
+   <class>TextAutoCorrectionWidgets::AutoCorrectionLanguage</class>
    <extends>QComboBox</extends>
    <header>autocorrectionlanguage.h</header>
   </customwidget>
