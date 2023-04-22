@@ -57,7 +57,7 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PROPERTIES
     EXPORT_NAME TextEmoticonsWidgets
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsWidgets EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsWidgets EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

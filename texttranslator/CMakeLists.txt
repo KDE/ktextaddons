@@ -112,7 +112,7 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextTranslator PROPERTIES
 
 install(TARGETS
     KF${KF_MAJOR_VERSION}TextTranslator
-    EXPORT KF${KF_MAJOR_VERSION}TextTranslatorTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KF${KF_MAJOR_VERSION}TextTranslatorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(TextTranslator_Camelcasetranslatorwidgets_HEADERS
