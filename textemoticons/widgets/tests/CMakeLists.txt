@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-add_executable(emoticontexteditselector_gui emoticontexteditselector_gui.cpp )
+add_executable(emoticontexteditselector_gui emoticontexteditselector_gui.cpp test.qrc)
 
 target_link_libraries(emoticontexteditselector_gui KF${KF_MAJOR_VERSION}TextEmoticonsWidgets Qt::Gui Qt::Widgets)
 
