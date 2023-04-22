@@ -117,7 +117,7 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionimport_HEADERS
     ImportKMailAutocorrection
     ImportAbstractAutocorrection
 
-    REQUIRED_HEADERS TextAutoCorrection_autocorrection_HEADERS
+    REQUIRED_HEADERS TextAutoCorrection_autocorrectionimport_HEADERS
     PREFIX TextAutoCorrection
     RELATIVE import
     )
@@ -138,6 +138,7 @@ ecm_generate_pri_file(BASE_NAME TextAutoCorrection
 
 install(FILES
     ${TextAutoCorrection_Camelcaseautocorrection_HEADERS}
+    ${TextAutoCorrection_Camelcaseautocorrectionimport_HEADERS}
     ${TextAutoCorrection_Camelcasesettings_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/TextAutoCorrection
     COMPONENT Devel
@@ -148,6 +149,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionsetting_base.h
     ${TextAutoCorrection_autocorrection_HEADERS}
     ${TextAutoCorrection_settings_HEADERS}
+    ${TextAutoCorrection_autocorrectionimport_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrection/textautocorrection
     COMPONENT Devel
