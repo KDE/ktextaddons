@@ -84,9 +84,9 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->advancedAutocorrection, &QCheckBox::clicked, this, &AutoCorrectionWidget::enableAdvAutocorrection);
     connect(d->ui->addButton, &QPushButton::clicked, this, &AutoCorrectionWidget::addAutocorrectEntry);
     connect(d->ui->removeButton, &QPushButton::clicked, this, &AutoCorrectionWidget::removeAutocorrectEntry);
-    connect(d->ui->treeWidget, &TextAutoCorrection::AutoCorrectionTreeWidget::itemClicked, this, &AutoCorrectionWidget::setFindReplaceText);
-    connect(d->ui->treeWidget, &TextAutoCorrection::AutoCorrectionTreeWidget::deleteSelectedItems, this, &AutoCorrectionWidget::removeAutocorrectEntry);
-    connect(d->ui->treeWidget, &TextAutoCorrection::AutoCorrectionTreeWidget::itemSelectionChanged, this, &AutoCorrectionWidget::updateAddRemoveButton);
+    connect(d->ui->treeWidget, &TextAutoCorrectionWidgets::AutoCorrectionTreeWidget::itemClicked, this, &AutoCorrectionWidget::setFindReplaceText);
+    connect(d->ui->treeWidget, &TextAutoCorrectionWidgets::AutoCorrectionTreeWidget::deleteSelectedItems, this, &AutoCorrectionWidget::removeAutocorrectEntry);
+    connect(d->ui->treeWidget, &TextAutoCorrectionWidgets::AutoCorrectionTreeWidget::itemSelectionChanged, this, &AutoCorrectionWidget::updateAddRemoveButton);
     connect(d->ui->find, &QLineEdit::textChanged, this, &AutoCorrectionWidget::enableAddRemoveButton);
     connect(d->ui->replace, &QLineEdit::textChanged, this, &AutoCorrectionWidget::enableAddRemoveButton);
     connect(d->ui->abbreviation, &QLineEdit::textChanged, this, &AutoCorrectionWidget::abbreviationChanged);
@@ -98,19 +98,22 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->typographicDoubleQuotes, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->typographicSingleQuotes, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->abbreviationList,
-            &TextAutoCorrection::AutoCorrectionListWidget::itemSelectionChanged,
+            &TextAutoCorrectionWidgets::AutoCorrectionListWidget::itemSelectionChanged,
             this,
             &AutoCorrectionWidget::slotEnableDisableAbreviationList);
-    connect(d->ui->abbreviationList, &TextAutoCorrection::AutoCorrectionListWidget::deleteSelectedItems, this, &AutoCorrectionWidget::removeAbbreviationEntry);
+    connect(d->ui->abbreviationList,
+            &TextAutoCorrectionWidgets::AutoCorrectionListWidget::deleteSelectedItems,
+            this,
+            &AutoCorrectionWidget::removeAbbreviationEntry);
     connect(d->ui->twoUpperLetterList,
-            &TextAutoCorrection::AutoCorrectionListWidget::itemSelectionChanged,
+            &TextAutoCorrectionWidgets::AutoCorrectionListWidget::itemSelectionChanged,
             this,
             &AutoCorrectionWidget::slotEnableDisableTwoUpperEntry);
     connect(d->ui->twoUpperLetterList,
-            &TextAutoCorrection::AutoCorrectionListWidget::deleteSelectedItems,
+            &TextAutoCorrectionWidgets::AutoCorrectionListWidget::deleteSelectedItems,
             this,
             &AutoCorrectionWidget::removeTwoUpperLetterEntry);
-    connect(d->ui->autocorrectionLanguage, &TextAutoCorrection::AutoCorrectionLanguage::activated, this, &AutoCorrectionWidget::changeLanguage);
+    connect(d->ui->autocorrectionLanguage, &TextAutoCorrectionWidgets::AutoCorrectionLanguage::activated, this, &AutoCorrectionWidget::changeLanguage);
     connect(d->ui->addNonBreakingSpaceInFrench, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->twoUpperLetter, &QLineEdit::returnPressed, this, &AutoCorrectionWidget::addTwoUpperLetterEntry);
     connect(d->ui->abbreviation, &QLineEdit::returnPressed, this, &AutoCorrectionWidget::addAbbreviationEntry);
@@ -328,7 +331,7 @@ void AutoCorrectionWidget::enableDoubleQuotes(bool state)
 
 void AutoCorrectionWidget::selectSingleQuoteCharOpen()
 {
-    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
     dlg->setCurrentChar(d->m_singleQuotes.begin);
     dlg->showSelectButton(false);
     dlg->autoInsertChar();
@@ -342,7 +345,7 @@ void AutoCorrectionWidget::selectSingleQuoteCharOpen()
 
 void AutoCorrectionWidget::selectSingleQuoteCharClose()
 {
-    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_singleQuotes.end);
     dlg->autoInsertChar();
@@ -356,7 +359,7 @@ void AutoCorrectionWidget::selectSingleQuoteCharClose()
 
 void AutoCorrectionWidget::setDefaultSingleQuotes()
 {
-    d->m_singleQuotes = AutoCorrectionUtils::typographicDefaultSingleQuotes();
+    d->m_singleQuotes = TextAutoCorrection::AutoCorrectionUtils::typographicDefaultSingleQuotes();
     d->ui->simpleQuoteBeginReplace->setText(d->m_singleQuotes.begin);
     d->ui->simpleQuoteEndReplace->setText(d->m_singleQuotes.end);
     emitChanged();
@@ -364,7 +367,7 @@ void AutoCorrectionWidget::setDefaultSingleQuotes()
 
 void AutoCorrectionWidget::selectDoubleQuoteCharOpen()
 {
-    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_doubleQuotes.begin);
     dlg->autoInsertChar();
@@ -378,7 +381,7 @@ void AutoCorrectionWidget::selectDoubleQuoteCharOpen()
 
 void AutoCorrectionWidget::selectDoubleQuoteCharClose()
 {
-    QPointer<TextAutoCorrection::SelectSpecialCharDialog> dlg = new TextAutoCorrection::SelectSpecialCharDialog(this);
+    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_doubleQuotes.end);
     dlg->autoInsertChar();

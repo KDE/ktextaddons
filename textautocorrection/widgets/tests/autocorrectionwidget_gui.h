@@ -13,6 +13,9 @@
 namespace TextAutoCorrection
 {
 class AutoCorrection;
+}
+namespace TextAutoCorrectionWidgets
+{
 class AutoCorrectionWidget;
 class AutoCorrectionTextEdit;
 class AutoCorrectionLineEdit;
@@ -28,7 +31,7 @@ private Q_SLOTS:
     void slotSaveSettings();
 
 private:
-    TextAutoCorrection::AutoCorrectionWidget *mWidget = nullptr;
+    TextAutoCorrectionWidgets::AutoCorrectionWidget *mWidget = nullptr;
 };
 
 class AutocorrectionTestWidget : public QWidget
@@ -43,8 +46,8 @@ private Q_SLOTS:
     void slotChangeMode(bool);
 
 private:
-    TextAutoCorrection::AutoCorrectionTextEdit *mEdit = nullptr;
-    TextAutoCorrection::AutoCorrectionLineEdit *mSubject = nullptr;
+    TextAutoCorrectionWidgets::AutoCorrectionTextEdit *mEdit = nullptr;
+    TextAutoCorrectionWidgets::AutoCorrectionLineEdit *mSubject = nullptr;
     TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
     KSharedConfig::Ptr mConfig;
 };

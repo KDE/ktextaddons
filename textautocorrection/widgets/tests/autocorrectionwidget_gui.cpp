@@ -5,10 +5,10 @@
 */
 
 #include "autocorrectionwidget_gui.h"
+#include "autocorrectionlineedit.h"
+#include "autocorrectiontextedit.h"
+#include "autocorrectionwidget.h"
 #include "settings/textautocorrectionsettings.h"
-#include "widgets/autocorrectionlineedit.h"
-#include "widgets/autocorrectiontextedit.h"
-#include "widgets/autocorrectionwidget.h"
 #include <TextAutoCorrection/AutoCorrection>
 
 #include <QAction>
@@ -34,7 +34,7 @@ ConfigureTestDialog::ConfigureTestDialog(TextAutoCorrection::AutoCorrection *aut
 
     buttonBox->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    mWidget = new TextAutoCorrection::AutoCorrectionWidget(this);
+    mWidget = new TextAutoCorrectionWidgets::AutoCorrectionWidget(this);
     mainLayout->addWidget(mWidget);
     mainLayout->addWidget(buttonBox);
 
@@ -67,11 +67,11 @@ AutocorrectionTestWidget::AutocorrectionTestWidget(QWidget *parent)
     connect(richText, &QAction::toggled, this, &AutocorrectionTestWidget::slotChangeMode);
     bar->addAction(richText);
 
-    mSubject = new TextAutoCorrection::AutoCorrectionLineEdit(this);
+    mSubject = new TextAutoCorrectionWidgets::AutoCorrectionLineEdit(this);
     mSubject->setAutocorrection(mAutoCorrection);
     lay->addWidget(mSubject);
 
-    mEdit = new TextAutoCorrection::AutoCorrectionTextEdit(this);
+    mEdit = new TextAutoCorrectionWidgets::AutoCorrectionTextEdit(this);
     mEdit->setAutocorrection(mAutoCorrection);
     lay->addWidget(mEdit);
 }
