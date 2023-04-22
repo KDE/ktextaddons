@@ -12,10 +12,10 @@
 
 #include "autocorrectionutils.h"
 
-#include "textautocorrection_private_export.h"
+#include "textautocorrection_export.h"
 namespace TextAutoCorrection
 {
-class TEXTAUTOCORRECTION_TESTS_EXPORT ImportAbstractAutocorrection
+class TEXTAUTOCORRECTION_EXPORT ImportAbstractAutocorrection
 {
     Q_GADGET
 public:

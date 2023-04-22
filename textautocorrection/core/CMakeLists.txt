@@ -111,6 +111,17 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrection_HEADERS
     PREFIX TextAutoCorrection
     )
 
+ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionimport_HEADERS
+    HEADER_NAMES
+    ImportLibreOfficeAutocorrection
+    ImportKMailAutocorrection
+    ImportAbstractAutocorrection
+
+    REQUIRED_HEADERS TextAutoCorrection_autocorrection_HEADERS
+    PREFIX TextAutoCorrection
+    RELATIVE import
+    )
+
 ecm_generate_headers(TextAutoCorrection_Camelcasesettings_HEADERS
     HEADER_NAMES
     TextAutoCorrectionSettings

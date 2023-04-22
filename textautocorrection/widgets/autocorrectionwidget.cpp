@@ -6,10 +6,10 @@
 
 #include "autocorrectionwidget.h"
 #include "autocorrectionutils.h"
-#include "import/importabstractautocorrection.h"
-#include "import/importkmailautocorrection.h"
-#include "import/importlibreofficeautocorrection.h"
 #include "ui_autocorrectionwidget.h"
+#include <TextAutoCorrection/ImportAbstractAutocorrection>
+#include <TextAutoCorrection/ImportKMailAutocorrection>
+#include <TextAutoCorrection/ImportLibreOfficeAutocorrection>
 
 #include "selectspecialchardialog.h"
 #include <TextAddonsWidgets/LineEditCatchReturnKey>
