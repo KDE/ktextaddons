@@ -28,7 +28,7 @@ kconfig_add_kcfg_files(textautocorrection_settings_SRCS
 add_library(KF${KF_MAJOR_VERSION}TextAutoCorrection )
 add_library(KF${KF_MAJOR_VERSION}::TextAutoCorrection ALIAS KF${KF_MAJOR_VERSION}TextAutoCorrection)
 ki18n_wrap_ui(KF${KF_MAJOR_VERSION}TextAutoCorrection
-    ui/autocorrectionwidget.ui
+    widgets/ui/autocorrectionwidget.ui
     )
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrection HEADER textautocorrection_debug.h
         IDENTIFIER TEXTAUTOCORRECTION_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection
@@ -118,7 +118,7 @@ install(TARGETS
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)
-    add_subdirectory(tests)
+    add_subdirectory(widgets/tests)
 endif()
 
 
