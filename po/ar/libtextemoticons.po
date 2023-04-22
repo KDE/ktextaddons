@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:47+0000\n"
+"POT-Creation-Date: 2023-04-22 00:49+0000\n"
 "PO-Revision-Date: 2023-04-13 09:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -85,7 +85,7 @@ msgstr "امسح الحديثة"
 msgid "Add Smiley"
 msgstr "أضف وجهًا تعبيريًّا"
 
-#: widgets/emoticontexteditselector.cpp:73
+#: widgets/emoticontexteditselector.cpp:72
 #, kde-format
 msgid "Search Emoticon..."
 msgstr "ابحث عن مشاعر"
