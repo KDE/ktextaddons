@@ -22,6 +22,7 @@ public:
         Identifier,
         Category,
         Order,
+        Animated,
     };
     Q_ENUM(EmoticonsRoles)
 
