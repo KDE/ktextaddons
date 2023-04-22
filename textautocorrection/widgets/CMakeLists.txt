@@ -154,12 +154,12 @@ endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoCorrectionWidgetsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionWidegtsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgetsConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/ COMPONENT Devel
     )
