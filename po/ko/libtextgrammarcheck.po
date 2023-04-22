@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# Shinjo Park <kde@peremen.name>, 2019, 2020, 2021.
+# Shinjo Park <kde@peremen.name>, 2019, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2021-11-14 19:25+0100\n"
+"PO-Revision-Date: 2023-03-01 01:50+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -131,10 +131,9 @@ msgid "Grammalecte error"
 msgstr "Grammalecte 오류"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Grammalecte 경로:"
+msgstr "경로 선택"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
@@ -323,10 +322,9 @@ msgid "Failed to check grammar."
 msgstr "문법 검사를 실행할 수 없습니다."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check Again"
+#, kde-format
 msgid "Check"
-msgstr "다시 확인"
+msgstr "검사"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
