@@ -65,9 +65,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             return customEmoji.category();
         case Order:
             return -1;
-        case Identifier:
         case Qt::ToolTipRole:
-            return customEmoji.identifier();
+        case Identifier:
         case UnicodeEmoji:
             return customEmoji.identifier();
         }
