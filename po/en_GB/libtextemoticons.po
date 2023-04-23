@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-22 00:49+0000\n"
-"PO-Revision-Date: 2023-04-08 11:12+0100\n"
+"PO-Revision-Date: 2023-04-22 10:58+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -66,23 +66,23 @@ msgstr "Flags"
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr ""
+msgstr "History"
 
 #: widgets/emoticoncategorybuttons.cpp:84
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr ""
+msgstr "Custom"
 
 #: widgets/emoticonlistview.cpp:103
 #, kde-format
 msgid "Clear Recents"
-msgstr ""
+msgstr "Clear Recent"
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
-msgstr ""
+msgstr "Add Smiley"
 
 #: widgets/emoticontexteditselector.cpp:72
 #, kde-format

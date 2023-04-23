@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:45+0000\n"
+"POT-Creation-Date: 2023-04-23 00:47+0000\n"
 "PO-Revision-Date: 2023-01-24 15:45+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -21,357 +21,6 @@ msgstr ""
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Archiv nelze otevřít v režimu čtení."
-
-#. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
-#: core/ui/autocorrectionwidget.ui:21
-#, kde-format
-msgid "Enable autocorrection"
-msgstr "Povolit automatickou opravu"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/ui/autocorrectionwidget.ui:30
-#, kde-format
-msgid "Replacement and exception for language:"
-msgstr "Náhrada a výjimka pro jazyk:"
-
-#. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
-#: core/ui/autocorrectionwidget.ui:44
-#, kde-format
-msgid "Export..."
-msgstr "Exportovat..."
-
-#. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
-#: core/ui/autocorrectionwidget.ui:51
-#, kde-format
-msgid "Import..."
-msgstr "Importovat..."
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
-#: core/ui/autocorrectionwidget.ui:77
-#, kde-format
-msgid "Ad&vanced Autocorrection"
-msgstr "Pokročilá automatická opra&va"
-
-#. i18n: ectx: property (text), widget (QPushButton, addButton)
-#. i18n: ectx: property (text), widget (QPushButton, add1)
-#: core/ui/autocorrectionwidget.ui:88 core/ui/autocorrectionwidget.ui:228
-#: core/widgets/autocorrectionwidget.cpp:503
-#, kde-format
-msgid "&Add"
-msgstr "Přid&at"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeButton)
-#. i18n: ectx: property (text), widget (QPushButton, remove2)
-#: core/ui/autocorrectionwidget.ui:98 core/ui/autocorrectionwidget.ui:303
-#, kde-format
-msgid "Remove"
-msgstr "Odstranit"
-
-#. i18n: ectx: property (text), widget (QCheckBox, advancedAutocorrection)
-#: core/ui/autocorrectionwidget.ui:120
-#, kde-format
-msgid "&Enable word replacement"
-msgstr "Povolit nahrazování s&lov"
-
-#. i18n: ectx: property (text), widget (QLabel, findLabel)
-#: core/ui/autocorrectionwidget.ui:129
-#, kde-format
-msgid "&Find"
-msgstr "Na&jít"
-
-#. i18n: ectx: property (text), widget (QLabel, replaceLabel)
-#: core/ui/autocorrectionwidget.ui:149
-#, kde-format
-msgid "Re&place"
-msgstr "Na&hradit"
-
-#. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
-#: core/ui/autocorrectionwidget.ui:187
-#, kde-format
-msgid "Find"
-msgstr "Najít"
-
-#. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
-#: core/ui/autocorrectionwidget.ui:192
-#, kde-format
-msgid "Replace"
-msgstr "Nahradit"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
-#: core/ui/autocorrectionwidget.ui:201
-#, kde-format
-msgid "E&xceptions"
-msgstr "Vý&jimky"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: core/ui/autocorrectionwidget.ui:209
-#, kde-format
-msgid "Do not treat as the end of a sentence:"
-msgstr "Nepovažovat za konec věty:"
-
-#. i18n: ectx: property (text), widget (QPushButton, remove1)
-#: core/ui/autocorrectionwidget.ui:235
-#, kde-format
-msgid "R&emove"
-msgstr "O&dstranit"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: core/ui/autocorrectionwidget.ui:277
-#, kde-format
-msgid "Accept two uppercase letters in:"
-msgstr "Přijímat dvě velká písmena v:"
-
-#. i18n: ectx: property (text), widget (QPushButton, add2)
-#: core/ui/autocorrectionwidget.ui:296
-#, kde-format
-msgid "Add"
-msgstr "Přidat"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
-#: core/ui/autocorrectionwidget.ui:344
-#, kde-format
-msgid "Si&mple Autocorrection"
-msgstr "Jednoduchá auto&matická oprava"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
-#: core/ui/autocorrectionwidget.ui:350
-#, kde-format
-msgid ""
-"Detect when a new sentence is started and always ensure that the first "
-"character is an uppercase character"
-msgstr ""
-"Detekovat začátek nové věty a vždy se stará o to aby první písmeno bylo velké"
-
-#. i18n: ectx: property (text), widget (QCheckBox, upperCase)
-#: core/ui/autocorrectionwidget.ui:354
-#, kde-format
-msgid ""
-"Convert &first letter of a sentence automatically to uppercase\n"
-"(e.g. \"my house. in this town\" to \"my house. In this town\")"
-msgstr ""
-"Převést &první písmeno věty automaticky na velké\n"
-"(např. \"můj dům. v tomto městě\" na \"můj dům. V tomto městě\")"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
-#: core/ui/autocorrectionwidget.ui:364
-#, kde-format
-msgid ""
-"All words are checked for the common mistake of holding the shift key down a "
-"bit too long. If some words must have two uppercase characters, then those "
-"exceptions should be added in the 'Exceptions' tab."
-msgstr ""
-"Všechna slova jsou zkontrolována pro běžně dlouhé chybné držení klávesy "
-"Shift. Pokud nějaké slovo musí mít dva velké znaky, tak by měly být přidány "
-"v kartě 'Výjimky'."
-
-#. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
-#: core/ui/autocorrectionwidget.ui:368
-#, kde-format
-msgid ""
-"Convert &two uppercase characters to one uppercase and one lowercase "
-"character\n"
-" (e.g. PErfect to Perfect)"
-msgstr ""
-"Převést &dvě velká písmena na jeden velký a jeden malý znak\n"
-" (např. PErfect to Perfect)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
-#: core/ui/autocorrectionwidget.ui:375
-#, kde-format
-msgid ""
-"Make sure that more than one space cannot be typed, as this is a common "
-"mistake which is quite hard to find in formatted text."
-msgstr ""
-"Zajišťuje, že nelze zapsat více jak jednu mezeru, protože je to velice běžná "
-"chyba, kterou není snadné odhalit v naformátovaném textu."
-
-#. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
-#: core/ui/autocorrectionwidget.ui:378
-#, kde-format
-msgid "&Suppress double spaces"
-msgstr "&Potlačit dvojité mezery"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
-#: core/ui/autocorrectionwidget.ui:385
-#, kde-format
-msgid "Most standard fraction notations will be converted when available"
-msgstr "Většina standardních zápisů zlomků bude převedena, budou-li dostupné"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
-#: core/ui/autocorrectionwidget.ui:388
-#, kde-format
-msgid "Re&place 1/2... with ½..."
-msgstr "Na&hradit 1/2 za ½..."
-
-#. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
-#: core/ui/autocorrectionwidget.ui:395
-#, kde-format
-msgid "Capitalize name of days"
-msgstr "Velká písmena u názvů dnů"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
-#: core/ui/autocorrectionwidget.ui:402
-#, kde-format
-msgid ""
-"Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
-"that matches the way an Internet browser would show a URL."
-msgstr ""
-"Detekovat zda je zapsán URL (Jednotný vyhledávač zdrojů) a poskytuje "
-"formátování, které je shodné se zobrazením URL pomocí internetového "
-"prohlížeče."
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
-#: core/ui/autocorrectionwidget.ui:405
-#, kde-format
-msgid "Autoformat &URLs (HTML mode)"
-msgstr "Automaticky formátovat &URL (režim HTML)"
-
-#. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
-#: core/ui/autocorrectionwidget.ui:412
-#, kde-format
-msgid ""
-"When you use _underline_ or *bold*, the text between the underscores or "
-"asterisks will be converted to underlined or bold text."
-msgstr ""
-"Pokud použijete _podtržené_ či *tučné*, tak bude text mezi podtržítky "
-"(hvězdičkami) převeden na podtržený (tučný) text."
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
-#: core/ui/autocorrectionwidget.ui:415
-#, kde-format
-msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
-msgstr ""
-"Automaticky provádět formátování &tučně, přeškrtnuté a podtržené (režim HTML)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
-#: core/ui/autocorrectionwidget.ui:422
-#, kde-format
-msgid "Replace 1st... with 1^st... (HTML mode)"
-msgstr "Nahradit 1st za 1^st... (režim HTML)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
-#: core/ui/autocorrectionwidget.ui:429
-#, kde-format
-msgid "Add non breaking space before specific punctuation marks in French text"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
-#: core/ui/autocorrectionwidget.ui:436
-#, kde-format
-msgid "Replace double quotes by french quotes"
-msgstr "Nahradit dvojité uvozovky francouzskými"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
-#: core/ui/autocorrectionwidget.ui:457
-#, kde-format
-msgid "Custom &Quotes"
-msgstr "Vlastní &uvozovky"
-
-#. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
-#: core/ui/autocorrectionwidget.ui:463
-#, kde-format
-msgid "Replace &double quotes with typographical quotes"
-msgstr "Nahradit &dvojité uvozovky typografickými"
-
-#. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
-#. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
-#. i18n: ectx: property (text), widget (QLabel, simpleQuoteBeginReplace)
-#. i18n: ectx: property (text), widget (QLabel, simpleQuoteEndReplace)
-#: core/ui/autocorrectionwidget.ui:474 core/ui/autocorrectionwidget.ui:514
-#: core/ui/autocorrectionwidget.ui:641 core/ui/autocorrectionwidget.ui:655
-#, kde-format
-msgid "By Default"
-msgstr "Výchozí"
-
-#. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
-#. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
-#: core/ui/autocorrectionwidget.ui:487 core/ui/autocorrectionwidget.ui:500
-#, kde-format
-msgid "\""
-msgstr "\""
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: core/ui/autocorrectionwidget.ui:507
-#, kde-format
-msgid "Ending Quote:"
-msgstr "Ukončující uvozovka:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: core/ui/autocorrectionwidget.ui:534 core/ui/autocorrectionwidget.ui:634
-#, kde-format
-msgid "Opening Quote:"
-msgstr "Začínající uvozovka:"
-
-#. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
-#. i18n: ectx: property (text), widget (QPushButton, singleDefault)
-#: core/ui/autocorrectionwidget.ui:548 core/ui/autocorrectionwidget.ui:669
-#, kde-format
-msgid "Default"
-msgstr "Výchozí"
-
-#. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
-#: core/ui/autocorrectionwidget.ui:572
-#, kde-format
-msgid "Replace &single quotes with typographical quotes"
-msgstr "Nahradit &jednoduché uvozovky typografickými"
-
-#. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
-#. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
-#: core/ui/autocorrectionwidget.ui:608 core/ui/autocorrectionwidget.ui:627
-#, kde-format
-msgid "'"
-msgstr "'"
-
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: core/ui/autocorrectionwidget.ui:648
-#, kde-format
-msgid "Ending Quotes:"
-msgstr "Ukončující uvozovky:"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: core/ui/autocorrectionwidget.ui:707
-#, kde-format
-msgid "Path"
-msgstr "Cesta"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: core/ui/autocorrectionwidget.ui:713
-#, kde-format
-msgid "System Path:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, systemPath)
-#. i18n: ectx: property (text), widget (QLabel, writablePath)
-#: core/ui/autocorrectionwidget.ui:720 core/ui/autocorrectionwidget.ui:750
-#, kde-format
-msgid "TextLabel"
-msgstr "Textový štítek"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: core/ui/autocorrectionwidget.ui:743
-#, kde-format
-msgid "Writable Path:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#: core/ui/autocorrectionwidget.ui:773
-#, kde-format
-msgid "Custom System Path:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
-#. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
-#: core/ui/autocorrectionwidget.ui:785 core/ui/autocorrectionwidget.ui:806
-#, kde-format
-msgid "..."
-msgstr "..."
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#: core/ui/autocorrectionwidget.ui:794
-#, kde-format
-msgid "Custom Writable Path:"
-msgstr ""
 
 #: core/widgets/autocorrectionwidget.cpp:124
 #, kde-format
@@ -407,6 +56,15 @@ msgstr "Přidat záznam pro automatickou opravu"
 #, kde-format
 msgid "&Modify"
 msgstr "Z&měnit"
+
+#. i18n: ectx: property (text), widget (QPushButton, addButton)
+#. i18n: ectx: property (text), widget (QPushButton, add1)
+#: core/widgets/autocorrectionwidget.cpp:503
+#: core/widgets/ui/autocorrectionwidget.ui:88
+#: core/widgets/ui/autocorrectionwidget.ui:228
+#, kde-format
+msgid "&Add"
+msgstr "Přid&at"
 
 #: core/widgets/autocorrectionwidget.cpp:611
 #, kde-format
@@ -469,3 +127,355 @@ msgstr "Vložit"
 #, kde-format
 msgid "Select"
 msgstr "Vybrat"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
+#: core/widgets/ui/autocorrectionwidget.ui:21
+#, kde-format
+msgid "Enable autocorrection"
+msgstr "Povolit automatickou opravu"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/widgets/ui/autocorrectionwidget.ui:30
+#, kde-format
+msgid "Replacement and exception for language:"
+msgstr "Náhrada a výjimka pro jazyk:"
+
+#. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
+#: core/widgets/ui/autocorrectionwidget.ui:44
+#, kde-format
+msgid "Export..."
+msgstr "Exportovat..."
+
+#. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
+#: core/widgets/ui/autocorrectionwidget.ui:51
+#, kde-format
+msgid "Import..."
+msgstr "Importovat..."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: core/widgets/ui/autocorrectionwidget.ui:77
+#, kde-format
+msgid "Ad&vanced Autocorrection"
+msgstr "Pokročilá automatická opra&va"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeButton)
+#. i18n: ectx: property (text), widget (QPushButton, remove2)
+#: core/widgets/ui/autocorrectionwidget.ui:98
+#: core/widgets/ui/autocorrectionwidget.ui:303
+#, kde-format
+msgid "Remove"
+msgstr "Odstranit"
+
+#. i18n: ectx: property (text), widget (QCheckBox, advancedAutocorrection)
+#: core/widgets/ui/autocorrectionwidget.ui:120
+#, kde-format
+msgid "&Enable word replacement"
+msgstr "Povolit nahrazování s&lov"
+
+#. i18n: ectx: property (text), widget (QLabel, findLabel)
+#: core/widgets/ui/autocorrectionwidget.ui:129
+#, kde-format
+msgid "&Find"
+msgstr "Na&jít"
+
+#. i18n: ectx: property (text), widget (QLabel, replaceLabel)
+#: core/widgets/ui/autocorrectionwidget.ui:149
+#, kde-format
+msgid "Re&place"
+msgstr "Na&hradit"
+
+#. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
+#: core/widgets/ui/autocorrectionwidget.ui:187
+#, kde-format
+msgid "Find"
+msgstr "Najít"
+
+#. i18n: ectx: property (text), widget (TextAutoCorrection::AutoCorrectionTreeWidget, treeWidget)
+#: core/widgets/ui/autocorrectionwidget.ui:192
+#, kde-format
+msgid "Replace"
+msgstr "Nahradit"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: core/widgets/ui/autocorrectionwidget.ui:201
+#, kde-format
+msgid "E&xceptions"
+msgstr "Vý&jimky"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/widgets/ui/autocorrectionwidget.ui:209
+#, kde-format
+msgid "Do not treat as the end of a sentence:"
+msgstr "Nepovažovat za konec věty:"
+
+#. i18n: ectx: property (text), widget (QPushButton, remove1)
+#: core/widgets/ui/autocorrectionwidget.ui:235
+#, kde-format
+msgid "R&emove"
+msgstr "O&dstranit"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: core/widgets/ui/autocorrectionwidget.ui:277
+#, kde-format
+msgid "Accept two uppercase letters in:"
+msgstr "Přijímat dvě velká písmena v:"
+
+#. i18n: ectx: property (text), widget (QPushButton, add2)
+#: core/widgets/ui/autocorrectionwidget.ui:296
+#, kde-format
+msgid "Add"
+msgstr "Přidat"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: core/widgets/ui/autocorrectionwidget.ui:344
+#, kde-format
+msgid "Si&mple Autocorrection"
+msgstr "Jednoduchá auto&matická oprava"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
+#: core/widgets/ui/autocorrectionwidget.ui:350
+#, kde-format
+msgid ""
+"Detect when a new sentence is started and always ensure that the first "
+"character is an uppercase character"
+msgstr ""
+"Detekovat začátek nové věty a vždy se stará o to aby první písmeno bylo velké"
+
+#. i18n: ectx: property (text), widget (QCheckBox, upperCase)
+#: core/widgets/ui/autocorrectionwidget.ui:354
+#, kde-format
+msgid ""
+"Convert &first letter of a sentence automatically to uppercase\n"
+"(e.g. \"my house. in this town\" to \"my house. In this town\")"
+msgstr ""
+"Převést &první písmeno věty automaticky na velké\n"
+"(např. \"můj dům. v tomto městě\" na \"můj dům. V tomto městě\")"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
+#: core/widgets/ui/autocorrectionwidget.ui:364
+#, kde-format
+msgid ""
+"All words are checked for the common mistake of holding the shift key down a "
+"bit too long. If some words must have two uppercase characters, then those "
+"exceptions should be added in the 'Exceptions' tab."
+msgstr ""
+"Všechna slova jsou zkontrolována pro běžně dlouhé chybné držení klávesy "
+"Shift. Pokud nějaké slovo musí mít dva velké znaky, tak by měly být přidány "
+"v kartě 'Výjimky'."
+
+#. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
+#: core/widgets/ui/autocorrectionwidget.ui:368
+#, kde-format
+msgid ""
+"Convert &two uppercase characters to one uppercase and one lowercase "
+"character\n"
+" (e.g. PErfect to Perfect)"
+msgstr ""
+"Převést &dvě velká písmena na jeden velký a jeden malý znak\n"
+" (např. PErfect to Perfect)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
+#: core/widgets/ui/autocorrectionwidget.ui:375
+#, kde-format
+msgid ""
+"Make sure that more than one space cannot be typed, as this is a common "
+"mistake which is quite hard to find in formatted text."
+msgstr ""
+"Zajišťuje, že nelze zapsat více jak jednu mezeru, protože je to velice běžná "
+"chyba, kterou není snadné odhalit v naformátovaném textu."
+
+#. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
+#: core/widgets/ui/autocorrectionwidget.ui:378
+#, kde-format
+msgid "&Suppress double spaces"
+msgstr "&Potlačit dvojité mezery"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
+#: core/widgets/ui/autocorrectionwidget.ui:385
+#, kde-format
+msgid "Most standard fraction notations will be converted when available"
+msgstr "Většina standardních zápisů zlomků bude převedena, budou-li dostupné"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
+#: core/widgets/ui/autocorrectionwidget.ui:388
+#, kde-format
+msgid "Re&place 1/2... with ½..."
+msgstr "Na&hradit 1/2 za ½..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
+#: core/widgets/ui/autocorrectionwidget.ui:395
+#, kde-format
+msgid "Capitalize name of days"
+msgstr "Velká písmena u názvů dnů"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
+#: core/widgets/ui/autocorrectionwidget.ui:402
+#, kde-format
+msgid ""
+"Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
+"that matches the way an Internet browser would show a URL."
+msgstr ""
+"Detekovat zda je zapsán URL (Jednotný vyhledávač zdrojů) a poskytuje "
+"formátování, které je shodné se zobrazením URL pomocí internetového "
+"prohlížeče."
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
+#: core/widgets/ui/autocorrectionwidget.ui:405
+#, kde-format
+msgid "Autoformat &URLs (HTML mode)"
+msgstr "Automaticky formátovat &URL (režim HTML)"
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
+#: core/widgets/ui/autocorrectionwidget.ui:412
+#, kde-format
+msgid ""
+"When you use _underline_ or *bold*, the text between the underscores or "
+"asterisks will be converted to underlined or bold text."
+msgstr ""
+"Pokud použijete _podtržené_ či *tučné*, tak bude text mezi podtržítky "
+"(hvězdičkami) převeden na podtržený (tučný) text."
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
+#: core/widgets/ui/autocorrectionwidget.ui:415
+#, kde-format
+msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
+msgstr ""
+"Automaticky provádět formátování &tučně, přeškrtnuté a podtržené (režim HTML)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
+#: core/widgets/ui/autocorrectionwidget.ui:422
+#, kde-format
+msgid "Replace 1st... with 1^st... (HTML mode)"
+msgstr "Nahradit 1st za 1^st... (režim HTML)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
+#: core/widgets/ui/autocorrectionwidget.ui:429
+#, kde-format
+msgid "Add non breaking space before specific punctuation marks in French text"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
+#: core/widgets/ui/autocorrectionwidget.ui:436
+#, kde-format
+msgid "Replace double quotes by french quotes"
+msgstr "Nahradit dvojité uvozovky francouzskými"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: core/widgets/ui/autocorrectionwidget.ui:457
+#, kde-format
+msgid "Custom &Quotes"
+msgstr "Vlastní &uvozovky"
+
+#. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
+#: core/widgets/ui/autocorrectionwidget.ui:463
+#, kde-format
+msgid "Replace &double quotes with typographical quotes"
+msgstr "Nahradit &dvojité uvozovky typografickými"
+
+#. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
+#. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
+#. i18n: ectx: property (text), widget (QLabel, simpleQuoteBeginReplace)
+#. i18n: ectx: property (text), widget (QLabel, simpleQuoteEndReplace)
+#: core/widgets/ui/autocorrectionwidget.ui:474
+#: core/widgets/ui/autocorrectionwidget.ui:514
+#: core/widgets/ui/autocorrectionwidget.ui:641
+#: core/widgets/ui/autocorrectionwidget.ui:655
+#, kde-format
+msgid "By Default"
+msgstr "Výchozí"
+
+#. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
+#. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
+#: core/widgets/ui/autocorrectionwidget.ui:487
+#: core/widgets/ui/autocorrectionwidget.ui:500
+#, kde-format
+msgid "\""
+msgstr "\""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: core/widgets/ui/autocorrectionwidget.ui:507
+#, kde-format
+msgid "Ending Quote:"
+msgstr "Ukončující uvozovka:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: core/widgets/ui/autocorrectionwidget.ui:534
+#: core/widgets/ui/autocorrectionwidget.ui:634
+#, kde-format
+msgid "Opening Quote:"
+msgstr "Začínající uvozovka:"
+
+#. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
+#. i18n: ectx: property (text), widget (QPushButton, singleDefault)
+#: core/widgets/ui/autocorrectionwidget.ui:548
+#: core/widgets/ui/autocorrectionwidget.ui:669
+#, kde-format
+msgid "Default"
+msgstr "Výchozí"
+
+#. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
+#: core/widgets/ui/autocorrectionwidget.ui:572
+#, kde-format
+msgid "Replace &single quotes with typographical quotes"
+msgstr "Nahradit &jednoduché uvozovky typografickými"
+
+#. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
+#. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
+#: core/widgets/ui/autocorrectionwidget.ui:608
+#: core/widgets/ui/autocorrectionwidget.ui:627
+#, kde-format
+msgid "'"
+msgstr "'"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: core/widgets/ui/autocorrectionwidget.ui:648
+#, kde-format
+msgid "Ending Quotes:"
+msgstr "Ukončující uvozovky:"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: core/widgets/ui/autocorrectionwidget.ui:707
+#, kde-format
+msgid "Path"
+msgstr "Cesta"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: core/widgets/ui/autocorrectionwidget.ui:713
+#, kde-format
+msgid "System Path:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, systemPath)
+#. i18n: ectx: property (text), widget (QLabel, writablePath)
+#: core/widgets/ui/autocorrectionwidget.ui:720
+#: core/widgets/ui/autocorrectionwidget.ui:750
+#, kde-format
+msgid "TextLabel"
+msgstr "Textový štítek"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: core/widgets/ui/autocorrectionwidget.ui:743
+#, kde-format
+msgid "Writable Path:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: core/widgets/ui/autocorrectionwidget.ui:773
+#, kde-format
+msgid "Custom System Path:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
+#. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
+#: core/widgets/ui/autocorrectionwidget.ui:785
+#: core/widgets/ui/autocorrectionwidget.ui:806
+#, kde-format
+msgid "..."
+msgstr "..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: core/widgets/ui/autocorrectionwidget.ui:794
+#, kde-format
+msgid "Custom Writable Path:"
+msgstr ""
