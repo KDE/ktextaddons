@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "textautocorrection_export.h"
+#include "textautocorrectioncore_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-#ifndef TEXTAUTOCORRECTION_TESTS_EXPORT
-#define TEXTAUTOCORRECTION_TESTS_EXPORT TEXTAUTOCORRECTION_EXPORT
+#ifndef TEXTAUTOCORRECTIONCORE_TESTS_EXPORT
+#define TEXTAUTOCORRECTIONCORE_TESTS_EXPORT TEXTAUTOCORRECTIONCORE_EXPORT
 #endif
 #else /* not compiling tests */
-#define TEXTAUTOCORRECTION_TESTS_EXPORT
+#define TEXTAUTOCORRECTIONCORE_TESTS_EXPORT
 #endif

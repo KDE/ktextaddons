@@ -7,7 +7,7 @@
 #pragma once
 
 #include "importabstractautocorrection.h"
-#include "textautocorrection_export.h"
+#include "textautocorrectioncore_export.h"
 class QTemporaryDir;
 class KZip;
 class QDomDocument;
@@ -16,7 +16,7 @@ class KArchiveDirectory;
 
 namespace TextAutoCorrection
 {
-class TEXTAUTOCORRECTION_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
+class TEXTAUTOCORRECTIONCORE_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
 {
 public:
     ImportLibreOfficeAutocorrection();
@@ -31,10 +31,10 @@ private:
         WORD,
     };
 
-    TEXTAUTOCORRECTION_NO_EXPORT void importAutoCorrectionFile();
-    TEXTAUTOCORRECTION_NO_EXPORT void closeArchive();
-    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool loadDomElement(QDomDocument &doc, QFile *file);
-    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT bool importFile(Type type, const KArchiveDirectory *archiveDirectory);
+    TEXTAUTOCORRECTIONCORE_NO_EXPORT void importAutoCorrectionFile();
+    TEXTAUTOCORRECTIONCORE_NO_EXPORT void closeArchive();
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_NO_EXPORT bool loadDomElement(QDomDocument &doc, QFile *file);
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_NO_EXPORT bool importFile(Type type, const KArchiveDirectory *archiveDirectory);
     KZip *mArchive = nullptr;
     QTemporaryDir *mTempDir = nullptr;
 };

@@ -5,7 +5,7 @@
 */
 
 #include "autocorrectiontextedit.h"
-#include <TextAutoCorrection/AutoCorrection>
+#include <TextAutoCorrectionCore/AutoCorrection>
 
 #include <QKeyEvent>
 

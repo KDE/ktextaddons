@@ -9,7 +9,7 @@
 #include "autocorrectiontextedit.h"
 #include "autocorrectionwidget.h"
 #include "settings/textautocorrectionsettings.h"
-#include <TextAutoCorrection/AutoCorrection>
+#include <TextAutoCorrectionCore/AutoCorrection>
 
 #include <QAction>
 #include <QApplication>

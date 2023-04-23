@@ -7,10 +7,10 @@
 #pragma once
 
 #include "importabstractautocorrection.h"
-#include "textautocorrection_export.h"
+#include "textautocorrectioncore_export.h"
 namespace TextAutoCorrection
 {
-class TEXTAUTOCORRECTION_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
+class TEXTAUTOCORRECTIONCORE_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
 {
 public:
     ImportKMailAutocorrection();

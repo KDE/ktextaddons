@@ -54,7 +54,7 @@ generate_export_header(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets BASE_NAME 
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
     PUBLIC
-    KF${KF_MAJOR_VERSION}::TextAutoCorrection
+    KF${KF_MAJOR_VERSION}::TextAutoCorrectionCore
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
@@ -122,9 +122,7 @@ if (BUILD_QCH)
         VERSION ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextAutoCorrection_autocorrection_HEADERS}
         ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
-        ${TextAutoCorrection_settings_HEADERS}
         LINK_QCHS
             Qt${QT_MAJOR_VERSION}Core_QCH
             Qt${QT_MAJOR_VERSION}Gui_QCH
@@ -132,7 +130,7 @@ if (BUILD_QCH)
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            TEXTAUTOCORRECTION_EXPORT
+            TEXTAUTOCORRECTIONCORE_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel

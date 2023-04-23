@@ -7,7 +7,7 @@
 #include "autocorrectionlineedit.h"
 #include <QKeyEvent>
 #include <QTextCursor>
-#include <TextAutoCorrection/AutoCorrection>
+#include <TextAutoCorrectionCore/AutoCorrection>
 
 using namespace TextAutoCorrectionWidgets;
 using namespace TextAutoCorrection;

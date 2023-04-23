@@ -10,10 +10,10 @@
 #include <QSet>
 #include <QString>
 
-#include "textautocorrection_private_export.h"
+#include "textautocorrectioncore_private_export.h"
 namespace TextAutoCorrection
 {
-class TEXTAUTOCORRECTION_TESTS_EXPORT ExportAbstractAutocorrection
+class TEXTAUTOCORRECTIONCORE_TESTS_EXPORT ExportAbstractAutocorrection
 {
 public:
     ExportAbstractAutocorrection();

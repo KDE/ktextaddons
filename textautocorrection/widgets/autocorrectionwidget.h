@@ -8,7 +8,7 @@
 
 #include "textautocorrectionwidgets_export.h"
 #include <QWidget>
-#include <TextAutoCorrection/AutoCorrection>
+#include <TextAutoCorrectionCore/AutoCorrection>
 
 class QTreeWidgetItem;
 

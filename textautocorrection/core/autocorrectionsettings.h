@@ -6,13 +6,13 @@
 
 #pragma once
 #include "autocorrectionutils.h"
-#include "textautocorrection_export.h"
+#include "textautocorrectioncore_export.h"
 #include <QDebug>
 #include <QSet>
 namespace TextAutoCorrection
 {
 class AutoCorrectionSettingsPrivate;
-class TEXTAUTOCORRECTION_EXPORT AutoCorrectionSettings
+class TEXTAUTOCORRECTIONCORE_EXPORT AutoCorrectionSettings
 {
 public:
     AutoCorrectionSettings();
@@ -100,12 +100,12 @@ public:
     void setCustomSystemPath(const QString &path);
 
 private:
-    TEXTAUTOCORRECTION_NO_EXPORT void migrateKMailXmlFile();
-    TEXTAUTOCORRECTION_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);
-    Q_REQUIRED_RESULT TEXTAUTOCORRECTION_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
+    TEXTAUTOCORRECTIONCORE_NO_EXPORT void migrateKMailXmlFile();
+    TEXTAUTOCORRECTIONCORE_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);
+    Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
 
     friend class AutoCorrectionSettingsPrivate;
     std::unique_ptr<AutoCorrectionSettingsPrivate> const d;
 };
 }
-TEXTAUTOCORRECTION_EXPORT QDebug operator<<(QDebug d, const TextAutoCorrection::AutoCorrectionSettings &t);
+TEXTAUTOCORRECTIONCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoCorrection::AutoCorrectionSettings &t);

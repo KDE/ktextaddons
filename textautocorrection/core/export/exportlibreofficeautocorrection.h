@@ -7,11 +7,11 @@
 #pragma once
 
 #include "exportabstractautocorrection.h"
-#include "textautocorrection_private_export.h"
+#include "textautocorrectioncore_private_export.h"
 class KZip;
 namespace TextAutoCorrection
 {
-class TEXTAUTOCORRECTION_TESTS_EXPORT ExportLibreOfficeAutocorrection : public ExportAbstractAutocorrection
+class TEXTAUTOCORRECTIONCORE_TESTS_EXPORT ExportLibreOfficeAutocorrection : public ExportAbstractAutocorrection
 {
 public:
     ExportLibreOfficeAutocorrection();

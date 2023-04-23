@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautocorrection_export.h"
+#include "textautocorrectioncore_export.h"
 #include "textautocorrectionsetting_base.h"
 
 class QTimer;
@@ -17,7 +17,7 @@ namespace TextAutoCorrection
  * @brief The TextAutoCorrectionSettings class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTION_EXPORT TextAutoCorrectionSettings : public TextAutoCorrection::TextAutoCorrectionSettingsBase
+class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAutoCorrection::TextAutoCorrectionSettingsBase
 {
     Q_OBJECT
 public:
@@ -31,10 +31,10 @@ public:
     void requestSync();
 
 private Q_SLOTS:
-    TEXTAUTOCORRECTION_NO_EXPORT void slotSyncNow();
+    TEXTAUTOCORRECTIONCORE_NO_EXPORT void slotSyncNow();
 
 private:
-    TEXTAUTOCORRECTION_NO_EXPORT TextAutoCorrectionSettings();
+    TEXTAUTOCORRECTIONCORE_NO_EXPORT TextAutoCorrectionSettings();
     ~TextAutoCorrectionSettings() override;
     static TextAutoCorrectionSettings *mSelf;
 
