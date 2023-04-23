@@ -8,7 +8,7 @@
 #include "textautocorrectioncore_export.h"
 #include <QChar>
 #include <QDebug>
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 namespace AutoCorrectionUtils
 {
@@ -36,4 +36,4 @@ Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeLocalPath();
 Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QStringList wordsFromSentence(const QString &string);
 };
 }
-TEXTAUTOCORRECTIONCORE_EXPORT QDebug operator<<(QDebug d, TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes t);
+TEXTAUTOCORRECTIONCORE_EXPORT QDebug operator<<(QDebug d, TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes t);

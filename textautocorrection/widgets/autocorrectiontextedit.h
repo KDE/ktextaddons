@@ -8,7 +8,7 @@
 
 #include "textautocorrectionwidgets_export.h"
 #include <QTextEdit>
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class AutoCorrection;
 }
@@ -26,9 +26,9 @@ public:
     explicit AutoCorrectionTextEdit(QWidget *parent = nullptr);
     ~AutoCorrectionTextEdit() override;
 
-    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrection *autocorrection() const;
+    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
 
-    void setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect);
+    void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
 
     void setAutocorrectionLanguage(const QString &language);
 

@@ -10,12 +10,12 @@
 #include <TextAutoCorrectionCore/AutoCorrection>
 
 using namespace TextAutoCorrectionWidgets;
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 class TextAutoCorrectionWidgets::AutoCorrectionLineEditPrivate
 {
 public:
     AutoCorrectionLineEditPrivate()
-        : mAutoCorrection(new TextAutoCorrection::AutoCorrection())
+        : mAutoCorrection(new TextAutoCorrectionCore::AutoCorrection())
     {
     }
 
@@ -26,7 +26,7 @@ public:
         }
     }
 
-    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrectionCore::AutoCorrection *mAutoCorrection = nullptr;
     bool mNeedToDeleteAutoCorrection = true;
 };
 
@@ -46,7 +46,7 @@ AutoCorrectionLineEdit::AutoCorrectionLineEdit(QWidget *parent)
 
 AutoCorrectionLineEdit::~AutoCorrectionLineEdit() = default;
 
-TextAutoCorrection::AutoCorrection *AutoCorrectionLineEdit::autocorrection() const
+TextAutoCorrectionCore::AutoCorrection *AutoCorrectionLineEdit::autocorrection() const
 {
     return d->mAutoCorrection;
 }
@@ -60,7 +60,7 @@ void AutoCorrectionLineEdit::setAutocorrection(AutoCorrection *autocorrect)
 
 void AutoCorrectionLineEdit::setAutocorrectionLanguage(const QString &language)
 {
-    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(language);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
 }

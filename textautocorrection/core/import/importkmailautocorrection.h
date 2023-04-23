@@ -8,7 +8,7 @@
 
 #include "importabstractautocorrection.h"
 #include "textautocorrectioncore_export.h"
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportKMailAutocorrection : public ImportAbstractAutocorrection
 {

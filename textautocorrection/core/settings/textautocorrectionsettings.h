@@ -11,13 +11,13 @@
 
 class QTimer;
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 /**
  * @brief The TextAutoCorrectionSettings class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAutoCorrection::TextAutoCorrectionSettingsBase
+class TEXTAUTOCORRECTIONCORE_EXPORT TextAutoCorrectionSettings : public TextAutoCorrectionCore::TextAutoCorrectionSettingsBase
 {
     Q_OBJECT
 public:

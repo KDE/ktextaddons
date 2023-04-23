@@ -12,7 +12,7 @@
 #include <QTemporaryFile>
 #include <QXmlStreamWriter>
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 ExportLibreOfficeAutocorrection::ExportLibreOfficeAutocorrection() = default;
 

@@ -23,7 +23,7 @@
 #include <QTreeWidgetItem>
 
 using namespace TextAutoCorrectionWidgets;
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 Q_DECLARE_METATYPE(AutoCorrectionWidget::ImportFileType)
 class TextAutoCorrectionWidgets::AutoCorrectionWidgetPrivate
@@ -36,13 +36,13 @@ public:
 
     ~AutoCorrectionWidgetPrivate() = default;
 
-    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes m_singleQuotes;
-    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes m_doubleQuotes;
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes m_singleQuotes;
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes m_doubleQuotes;
     QSet<QString> m_upperCaseExceptions;
     QSet<QString> m_twoUpperLetterExceptions;
     QHash<QString, QString> m_autocorrectEntries;
     std::unique_ptr<Ui::AutoCorrectionWidget> const ui;
-    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrectionCore::AutoCorrection *mAutoCorrection = nullptr;
     bool mWasChanged = false;
     bool mHasHtmlSupport = true;
 };
@@ -154,8 +154,8 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->tabWidget, &QTabWidget::tabBarClicked, this, &AutoCorrectionWidget::slotChangeComboboxState);
     slotChangeComboboxState(d->ui->tabWidget->currentIndex());
 
-    d->ui->systemPath->setText(TextAutoCorrection::AutoCorrectionUtils::libreOfficeSystemPath());
-    d->ui->writablePath->setText(TextAutoCorrection::AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath());
+    d->ui->systemPath->setText(TextAutoCorrectionCore::AutoCorrectionUtils::libreOfficeSystemPath());
+    d->ui->writablePath->setText(TextAutoCorrectionCore::AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath());
 }
 
 AutoCorrectionWidget::~AutoCorrectionWidget() = default;
@@ -165,7 +165,7 @@ void AutoCorrectionWidget::slotChangeComboboxState(int index)
     d->ui->autocorrectionLanguage->setEnabled(index < 2);
 }
 
-void AutoCorrectionWidget::setAutoCorrection(TextAutoCorrection::AutoCorrection *autoCorrect)
+void AutoCorrectionWidget::setAutoCorrection(TextAutoCorrectionCore::AutoCorrection *autoCorrect)
 {
     d->mAutoCorrection = autoCorrect;
     setLanguage(d->ui->autocorrectionLanguage->language());
@@ -359,7 +359,7 @@ void AutoCorrectionWidget::selectSingleQuoteCharClose()
 
 void AutoCorrectionWidget::setDefaultSingleQuotes()
 {
-    d->m_singleQuotes = TextAutoCorrection::AutoCorrectionUtils::typographicDefaultSingleQuotes();
+    d->m_singleQuotes = TextAutoCorrectionCore::AutoCorrectionUtils::typographicDefaultSingleQuotes();
     d->ui->simpleQuoteBeginReplace->setText(d->m_singleQuotes.begin);
     d->ui->simpleQuoteEndReplace->setText(d->m_singleQuotes.end);
     emitChanged();
@@ -622,13 +622,13 @@ void AutoCorrectionWidget::slotImportAutoCorrection(QAction *act)
         }
         const QString fileName = QFileDialog::getOpenFileName(this, title, QString(), filter);
         if (!fileName.isEmpty()) {
-            TextAutoCorrection::ImportAbstractAutocorrection *importAutoCorrection = nullptr;
+            TextAutoCorrectionCore::ImportAbstractAutocorrection *importAutoCorrection = nullptr;
             switch (type) {
             case AutoCorrectionWidget::LibreOffice:
-                importAutoCorrection = new TextAutoCorrection::ImportLibreOfficeAutocorrection;
+                importAutoCorrection = new TextAutoCorrectionCore::ImportLibreOfficeAutocorrection;
                 break;
             case AutoCorrectionWidget::KMail:
-                importAutoCorrection = new TextAutoCorrection::ImportKMailAutocorrection;
+                importAutoCorrection = new TextAutoCorrectionCore::ImportKMailAutocorrection;
                 break;
             default:
                 return;
@@ -658,7 +658,7 @@ void AutoCorrectionWidget::slotImportAutoCorrection(QAction *act)
 
 void AutoCorrectionWidget::setLanguage(const QString &lang)
 {
-    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
     loadAutoCorrectionAndException();
@@ -681,7 +681,7 @@ void AutoCorrectionWidget::changeLanguage(int index)
         }
     }
     const QString lang = d->ui->autocorrectionLanguage->itemData(index).toString();
-    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
     loadAutoCorrectionAndException();
@@ -697,7 +697,7 @@ void AutoCorrectionWidget::emitChanged()
 void AutoCorrectionWidget::loadGlobalAutoCorrectionAndException()
 {
     const QString lang = d->ui->autocorrectionLanguage->itemData(d->ui->autocorrectionLanguage->currentIndex()).toString();
-    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang, true);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
     loadAutoCorrectionAndException();

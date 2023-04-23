@@ -20,7 +20,7 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 
-ConfigureTestDialog::ConfigureTestDialog(TextAutoCorrection::AutoCorrection *autoCorrection, QWidget *parent)
+ConfigureTestDialog::ConfigureTestDialog(TextAutoCorrectionCore::AutoCorrection *autoCorrection, QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(QStringLiteral("Configure Autocorrection"));
@@ -54,10 +54,10 @@ AutocorrectionTestWidget::AutocorrectionTestWidget(QWidget *parent)
     : QWidget(parent)
     , mConfig(KSharedConfig::openConfig(QStringLiteral("autocorrectionguirc")))
 {
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setSharedConfig(mConfig);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->load();
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setSharedConfig(mConfig);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->load();
 
-    mAutoCorrection = new TextAutoCorrection::AutoCorrection;
+    mAutoCorrection = new TextAutoCorrectionCore::AutoCorrection;
     auto lay = new QVBoxLayout(this);
     auto bar = new QToolBar;
     lay->addWidget(bar);
@@ -91,7 +91,7 @@ void AutocorrectionTestWidget::slotConfigure()
 {
     QPointer<ConfigureTestDialog> dlg = new ConfigureTestDialog(mAutoCorrection, this);
     if (dlg->exec()) {
-        TextAutoCorrection::TextAutoCorrectionSettings::self()->save();
+        TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->save();
     }
     delete dlg;
 }

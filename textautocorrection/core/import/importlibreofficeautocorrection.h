@@ -14,7 +14,7 @@ class QDomDocument;
 class QFile;
 class KArchiveDirectory;
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class TEXTAUTOCORRECTIONCORE_EXPORT ImportLibreOfficeAutocorrection : public ImportAbstractAutocorrection
 {

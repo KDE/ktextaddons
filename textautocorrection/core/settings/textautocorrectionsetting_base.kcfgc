@@ -2,7 +2,7 @@
 #SPDX-FileCopyrightText: none
 File=textautocorrection.kcfg
 ClassName=TextAutoCorrectionSettingsBase
-NameSpace=TextAutoCorrection
+NameSpace=TextAutoCorrectionCore
 Visibility=TEXTAUTOCORRECTIONCORE_EXPORT
 Mutators=true
 Singleton=true

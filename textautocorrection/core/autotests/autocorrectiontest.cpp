@@ -25,15 +25,15 @@ AutoCorrectionTest::AutoCorrectionTest()
 {
     QStandardPaths::setTestModeEnabled(true);
     mConfig = KSharedConfig::openConfig(QStringLiteral("autocorrectiontestrc"));
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setSharedConfig(mConfig);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->load();
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setSharedConfig(mConfig);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->load();
 }
 
 AutoCorrectionTest::~AutoCorrectionTest() = default;
 
 void AutoCorrectionTest::shouldHaveDefaultValue()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
     QVERIFY(!autocorrection.autoCorrectionSettings()->isEnabledAutoCorrection());
     QVERIFY(!autocorrection.autoCorrectionSettings()->isUppercaseFirstCharOfSentence());
     QVERIFY(!autocorrection.autoCorrectionSettings()->isFixTwoUppercaseChars());
@@ -52,14 +52,14 @@ void AutoCorrectionTest::shouldHaveDefaultValue()
 
 void AutoCorrectionTest::shouldRestoreValue()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
     // TODO
 }
 
 void AutoCorrectionTest::shouldUpperCaseFirstCharOfSentence()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setUppercaseFirstCharOfSentence(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -97,8 +97,8 @@ void AutoCorrectionTest::shouldUpperCaseFirstCharOfSentence()
 
 void AutoCorrectionTest::shouldFixTwoUpperCaseChars()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setFixTwoUppercaseChars(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -151,13 +151,13 @@ void AutoCorrectionTest::shouldFixTwoUpperCaseChars()
 
 void AutoCorrectionTest::shouldReplaceSingleQuote()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setReplaceSingleQuotes(true);
     autocorrection.setAutoCorrectionSettings(settings);
 
-    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes simpleQuote;
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes simpleQuote;
     simpleQuote.begin = QLatin1Char('A');
     simpleQuote.end = QLatin1Char('B');
 
@@ -186,11 +186,11 @@ void AutoCorrectionTest::shouldReplaceSingleQuote()
 
 void AutoCorrectionTest::shouldReplaceDoubleQuote()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setReplaceDoubleQuotes(true);
-    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes doubleQuote;
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes doubleQuote;
     doubleQuote.begin = QLatin1Char('A');
     doubleQuote.end = QLatin1Char('B');
 
@@ -220,8 +220,8 @@ void AutoCorrectionTest::shouldReplaceDoubleQuote()
 
 void AutoCorrectionTest::shouldNotReplaceUppercaseLetter()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setFixTwoUppercaseChars(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -240,8 +240,8 @@ void AutoCorrectionTest::shouldNotReplaceUppercaseLetter()
 
 void AutoCorrectionTest::shouldReplaceToTextFormat()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setAutoBoldUnderline(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -316,8 +316,8 @@ void AutoCorrectionTest::shouldReplaceToTextFormat()
 
 void AutoCorrectionTest::shouldReplaceAutoFraction()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setAutoFractions(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -342,8 +342,8 @@ void AutoCorrectionTest::shouldReplaceAutoFraction()
 
 void AutoCorrectionTest::shouldNotAddSpaceWhenWeAlreadyHaveASpace()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setSingleSpaces(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -373,8 +373,8 @@ void AutoCorrectionTest::shouldNotAddSpaceWhenWeAlreadyHaveASpace()
 
 void AutoCorrectionTest::shouldAutocorrectWord()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -414,8 +414,8 @@ void AutoCorrectionTest::shouldAutocorrectWord()
 
 void AutoCorrectionTest::shouldNotUpperCaseFirstCharOfSentence()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setUppercaseFirstCharOfSentence(true);
     autocorrection.setAutoCorrectionSettings(settings);
@@ -540,8 +540,8 @@ void AutoCorrectionTest::shouldAutocorrectMultiWord()
     QFETCH(QString, convertedString);
     QFETCH(mapAutoCorrect, convertStringHash);
 
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setAdvancedAutocorrect(true);
     settings->setAutocorrectEntries(convertStringHash);
@@ -581,8 +581,8 @@ void AutoCorrectionTest::shouldAddNonBreakingSpace()
     QFETCH(QString, language);
     QFETCH(bool, enableAddNonBreakingSpace);
 
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setAddNonBreakingSpace(enableAddNonBreakingSpace);
 
@@ -655,8 +655,8 @@ void AutoCorrectionTest::shouldReplaceWithMultiOption()
     QFETCH(bool, fixtwouppercase);
     QFETCH(int, position);
 
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(enable);
     settings->setAdvancedAutocorrect(advancedAutocorrect);
     settings->setAutocorrectEntries(convertStringHash);
@@ -673,8 +673,8 @@ void AutoCorrectionTest::shouldReplaceWithMultiOption()
 
 void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setEnabledAutoCorrection(true);
     settings->setReplaceDoubleQuotes(true);
     settings->setReplaceSingleQuotes(true);
@@ -685,12 +685,12 @@ void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
     settings->setNonBreakingSpace(nbsp);
     autocorrection.setAutoCorrectionSettings(settings);
 
-    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes doubleQuote;
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes doubleQuote;
     doubleQuote.begin = QLatin1Char('A');
     doubleQuote.end = QLatin1Char('B');
     settings->setTypographicDoubleQuotes(doubleQuote);
 
-    TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes simpleQuote;
+    TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes simpleQuote;
     simpleQuote.begin = QLatin1Char('A');
     simpleQuote.end = QLatin1Char('B');
 
@@ -741,8 +741,8 @@ void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
 
 void AutoCorrectionTest::shouldAutoFormatURLs()
 {
-    TextAutoCorrection::AutoCorrection autocorrection;
-    auto settings = new TextAutoCorrection::AutoCorrectionSettings;
+    TextAutoCorrectionCore::AutoCorrection autocorrection;
+    auto settings = new TextAutoCorrectionCore::AutoCorrectionSettings;
     settings->setAutoFormatUrl(true);
     autocorrection.setAutoCorrectionSettings(settings);
     // autocorrection.autocorrect(true, doc, position);

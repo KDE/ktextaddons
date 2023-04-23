@@ -9,7 +9,7 @@
 #include "exportabstractautocorrection.h"
 #include "textautocorrectioncore_private_export.h"
 class KZip;
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class TEXTAUTOCORRECTIONCORE_TESTS_EXPORT ExportLibreOfficeAutocorrection : public ExportAbstractAutocorrection
 {

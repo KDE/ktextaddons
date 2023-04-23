@@ -15,7 +15,7 @@ class TextAutoCorrectionWidgets::AutoCorrectionTextEditPrivate
 {
 public:
     AutoCorrectionTextEditPrivate()
-        : mAutoCorrection(new TextAutoCorrection::AutoCorrection())
+        : mAutoCorrection(new TextAutoCorrectionCore::AutoCorrection())
     {
     }
 
@@ -26,7 +26,7 @@ public:
         }
     }
 
-    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrectionCore::AutoCorrection *mAutoCorrection = nullptr;
     bool mNeedToDelete = true;
 };
 
@@ -38,21 +38,21 @@ AutoCorrectionTextEdit::AutoCorrectionTextEdit(QWidget *parent)
 
 AutoCorrectionTextEdit::~AutoCorrectionTextEdit() = default;
 
-void AutoCorrectionTextEdit::setAutocorrection(TextAutoCorrection::AutoCorrection *autocorrect)
+void AutoCorrectionTextEdit::setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect)
 {
     d->mNeedToDelete = false;
     delete d->mAutoCorrection;
     d->mAutoCorrection = autocorrect;
 }
 
-TextAutoCorrection::AutoCorrection *AutoCorrectionTextEdit::autocorrection() const
+TextAutoCorrectionCore::AutoCorrection *AutoCorrectionTextEdit::autocorrection() const
 {
     return d->mAutoCorrection;
 }
 
 void AutoCorrectionTextEdit::setAutocorrectionLanguage(const QString &language)
 {
-    TextAutoCorrection::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
+    TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(language);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
 }

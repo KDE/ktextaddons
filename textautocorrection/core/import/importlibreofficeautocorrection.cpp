@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QTemporaryDir>
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 ImportLibreOfficeAutocorrection::ImportLibreOfficeAutocorrection() = default;
 

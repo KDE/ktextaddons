@@ -15,9 +15,9 @@
 #include <QTextBlock>
 #include <QTextDocument>
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class AutoCorrectionPrivate
 {

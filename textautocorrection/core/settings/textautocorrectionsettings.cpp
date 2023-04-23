@@ -7,7 +7,7 @@
 #include "textautocorrectionsettings.h"
 #include <QTimer>
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 TextAutoCorrectionSettings *TextAutoCorrectionSettings::mSelf = nullptr;
 

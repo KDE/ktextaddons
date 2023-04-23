@@ -11,7 +11,7 @@
 #include <QString>
 
 #include "textautocorrectioncore_private_export.h"
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class TEXTAUTOCORRECTIONCORE_TESTS_EXPORT ExportAbstractAutocorrection
 {

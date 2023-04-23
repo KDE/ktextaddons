@@ -8,7 +8,7 @@
 
 #include <QFile>
 #include <QXmlStreamReader>
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 ImportKMailAutocorrection::ImportKMailAutocorrection() = default;
 

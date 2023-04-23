@@ -10,7 +10,7 @@
 #include "textautocorrectioncore_export.h"
 #include <QTextCursor>
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class AutoCorrectionPrivate;
 /**

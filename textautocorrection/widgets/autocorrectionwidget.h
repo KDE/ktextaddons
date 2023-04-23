@@ -36,7 +36,7 @@ public:
 
     explicit AutoCorrectionWidget(QWidget *parent = nullptr);
     ~AutoCorrectionWidget() override;
-    void setAutoCorrection(TextAutoCorrection::AutoCorrection *autoCorrect);
+    void setAutoCorrection(TextAutoCorrectionCore::AutoCorrection *autoCorrect);
     void setHasHtmlSupport(bool b);
     void loadConfig();
     void writeConfig();

@@ -5,7 +5,7 @@
 */
 
 #include "exportabstractautocorrection.h"
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 ExportAbstractAutocorrection::ExportAbstractAutocorrection() = default;
 

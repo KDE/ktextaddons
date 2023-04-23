@@ -9,7 +9,7 @@
 #include "textautocorrectioncore_export.h"
 #include <QDebug>
 #include <QSet>
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class AutoCorrectionSettingsPrivate;
 class TEXTAUTOCORRECTIONCORE_EXPORT AutoCorrectionSettings
@@ -34,10 +34,10 @@ public:
     Q_REQUIRED_RESULT bool isAddNonBreakingSpace() const;
     Q_REQUIRED_RESULT bool isReplaceDoubleQuotesByFrenchQuotes() const;
 
-    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
-    Q_REQUIRED_RESULT TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
-    void setTypographicSingleQuotes(TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes singleQuote);
-    void setTypographicDoubleQuotes(TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes doubleQuote);
+    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
+    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
+    void setTypographicSingleQuotes(TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes singleQuote);
+    void setTypographicDoubleQuotes(TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes doubleQuote);
 
     void setAutoFormatUrl(bool b);
     void setAutoBoldUnderline(bool b);
@@ -108,4 +108,4 @@ private:
     std::unique_ptr<AutoCorrectionSettingsPrivate> const d;
 };
 }
-TEXTAUTOCORRECTIONCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoCorrection::AutoCorrectionSettings &t);
+TEXTAUTOCORRECTIONCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoCorrectionCore::AutoCorrectionSettings &t);

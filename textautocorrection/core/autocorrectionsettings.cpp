@@ -14,8 +14,8 @@
 #include <QRegularExpression>
 #include <QStandardPaths>
 
-using namespace TextAutoCorrection;
-namespace TextAutoCorrection
+using namespace TextAutoCorrectionCore;
+namespace TextAutoCorrectionCore
 {
 class AutoCorrectionSettingsPrivate
 {
@@ -61,7 +61,7 @@ public:
 }
 
 AutoCorrectionSettings::AutoCorrectionSettings()
-    : d(new TextAutoCorrection::AutoCorrectionSettingsPrivate)
+    : d(new TextAutoCorrectionCore::AutoCorrectionSettingsPrivate)
 {
     // default double quote open 0x201c
     // default double quote close 0x201d
@@ -196,17 +196,17 @@ void AutoCorrectionSettings::setReplaceDoubleQuotesByFrenchQuotes(bool b)
     d->mReplaceDoubleQuotesByFrenchQuotes = b;
 }
 
-TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicSingleQuotes() const
+TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicSingleQuotes() const
 {
     return d->mTypographicSingleQuotes;
 }
 
-TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicDoubleQuotes() const
+TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes AutoCorrectionSettings::typographicDoubleQuotes() const
 {
     return d->mTypographicDoubleQuotes;
 }
 
-void AutoCorrectionSettings::setTypographicSingleQuotes(TextAutoCorrection::AutoCorrectionUtils::TypographicQuotes singleQuote)
+void AutoCorrectionSettings::setTypographicSingleQuotes(TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes singleQuote)
 {
     d->mTypographicSingleQuotes = singleQuote;
 }
@@ -218,30 +218,30 @@ void AutoCorrectionSettings::setTypographicDoubleQuotes(AutoCorrectionUtils::Typ
 
 void AutoCorrectionSettings::readConfig()
 {
-    d->mAutoBoldUnderline = TextAutoCorrection::TextAutoCorrectionSettings::self()->autoBoldUnderline();
-    d->mAutoFormatUrl = TextAutoCorrection::TextAutoCorrectionSettings::self()->autoFormatUrl();
-    d->mUppercaseFirstCharOfSentence = TextAutoCorrection::TextAutoCorrectionSettings::self()->uppercaseFirstCharOfSentence();
-    d->mFixTwoUppercaseChars = TextAutoCorrection::TextAutoCorrectionSettings::self()->fixTwoUppercaseChars();
-    d->mSingleSpaces = TextAutoCorrection::TextAutoCorrectionSettings::self()->singleSpaces();
-    d->mAutoFractions = TextAutoCorrection::TextAutoCorrectionSettings::self()->autoFractions();
-    d->mCapitalizeWeekDays = TextAutoCorrection::TextAutoCorrectionSettings::self()->capitalizeWeekDays();
-    d->mAdvancedAutocorrect = TextAutoCorrection::TextAutoCorrectionSettings::self()->advancedAutocorrect();
-    d->mReplaceDoubleQuotes = TextAutoCorrection::TextAutoCorrectionSettings::self()->replaceDoubleQuotes();
-    d->mReplaceSingleQuotes = TextAutoCorrection::TextAutoCorrectionSettings::self()->replaceSingleQuotes();
-    d->mEnabled = TextAutoCorrection::TextAutoCorrectionSettings::self()->enabled();
-    d->mSuperScriptAppendix = TextAutoCorrection::TextAutoCorrectionSettings::self()->superScript();
-    d->mAddNonBreakingSpace = TextAutoCorrection::TextAutoCorrectionSettings::self()->addNonBreakingSpaceInFrench();
-    d->mReplaceDoubleQuotesByFrenchQuotes = TextAutoCorrection::TextAutoCorrectionSettings::self()->replaceDoubleQuotesByFrenchQuotes();
-    d->mCustomSystemPath = TextAutoCorrection::TextAutoCorrectionSettings::self()->customSystemPath();
-    d->mCustomWritablePath = TextAutoCorrection::TextAutoCorrectionSettings::self()->customWritablePath();
+    d->mAutoBoldUnderline = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->autoBoldUnderline();
+    d->mAutoFormatUrl = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->autoFormatUrl();
+    d->mUppercaseFirstCharOfSentence = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->uppercaseFirstCharOfSentence();
+    d->mFixTwoUppercaseChars = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->fixTwoUppercaseChars();
+    d->mSingleSpaces = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->singleSpaces();
+    d->mAutoFractions = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->autoFractions();
+    d->mCapitalizeWeekDays = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->capitalizeWeekDays();
+    d->mAdvancedAutocorrect = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->advancedAutocorrect();
+    d->mReplaceDoubleQuotes = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->replaceDoubleQuotes();
+    d->mReplaceSingleQuotes = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->replaceSingleQuotes();
+    d->mEnabled = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->enabled();
+    d->mSuperScriptAppendix = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->superScript();
+    d->mAddNonBreakingSpace = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->addNonBreakingSpaceInFrench();
+    d->mReplaceDoubleQuotesByFrenchQuotes = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->replaceDoubleQuotesByFrenchQuotes();
+    d->mCustomSystemPath = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->customSystemPath();
+    d->mCustomWritablePath = TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->customWritablePath();
 
     d->mTypographicSingleQuotes =
-        AutoCorrectionUtils::TypographicQuotes::fromString(TextAutoCorrection::TextAutoCorrectionSettings::self()->typographicSingleQuotes());
+        AutoCorrectionUtils::TypographicQuotes::fromString(TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->typographicSingleQuotes());
     if (d->mTypographicSingleQuotes.isEmpty()) {
         d->mTypographicSingleQuotes = AutoCorrectionUtils::typographicDefaultSingleQuotes();
     }
     d->mTypographicDoubleQuotes =
-        AutoCorrectionUtils::TypographicQuotes::fromString(TextAutoCorrection::TextAutoCorrectionSettings::self()->typographicDoubleQuotes());
+        AutoCorrectionUtils::TypographicQuotes::fromString(TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->typographicDoubleQuotes());
     if (d->mTypographicDoubleQuotes.isEmpty()) {
         d->mTypographicDoubleQuotes = AutoCorrectionUtils::typographicDefaultDoubleQuotes();
     }
@@ -250,25 +250,25 @@ void AutoCorrectionSettings::readConfig()
 
 void AutoCorrectionSettings::writeConfig()
 {
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setAutoBoldUnderline(d->mAutoBoldUnderline);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setAutoFormatUrl(d->mAutoFormatUrl);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setUppercaseFirstCharOfSentence(d->mUppercaseFirstCharOfSentence);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setFixTwoUppercaseChars(d->mFixTwoUppercaseChars);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setSingleSpaces(d->mSingleSpaces);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setAutoFractions(d->mAutoFractions);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setCapitalizeWeekDays(d->mCapitalizeWeekDays);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setAdvancedAutocorrect(d->mAdvancedAutocorrect);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setReplaceDoubleQuotes(d->mReplaceDoubleQuotes);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setReplaceSingleQuotes(d->mReplaceSingleQuotes);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setEnabled(d->mEnabled);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setSuperScript(d->mSuperScriptAppendix);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setAddNonBreakingSpaceInFrench(d->mAddNonBreakingSpace);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setTypographicSingleQuotes(d->mTypographicSingleQuotes.toString());
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setTypographicDoubleQuotes(d->mTypographicDoubleQuotes.toString());
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setReplaceDoubleQuotesByFrenchQuotes(d->mReplaceDoubleQuotesByFrenchQuotes);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setCustomWritablePath(d->mCustomWritablePath);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->setCustomSystemPath(d->mCustomSystemPath);
-    TextAutoCorrection::TextAutoCorrectionSettings::self()->requestSync();
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setAutoBoldUnderline(d->mAutoBoldUnderline);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setAutoFormatUrl(d->mAutoFormatUrl);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setUppercaseFirstCharOfSentence(d->mUppercaseFirstCharOfSentence);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setFixTwoUppercaseChars(d->mFixTwoUppercaseChars);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setSingleSpaces(d->mSingleSpaces);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setAutoFractions(d->mAutoFractions);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setCapitalizeWeekDays(d->mCapitalizeWeekDays);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setAdvancedAutocorrect(d->mAdvancedAutocorrect);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setReplaceDoubleQuotes(d->mReplaceDoubleQuotes);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setReplaceSingleQuotes(d->mReplaceSingleQuotes);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setEnabled(d->mEnabled);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setSuperScript(d->mSuperScriptAppendix);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setAddNonBreakingSpaceInFrench(d->mAddNonBreakingSpace);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setTypographicSingleQuotes(d->mTypographicSingleQuotes.toString());
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setTypographicDoubleQuotes(d->mTypographicDoubleQuotes.toString());
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setReplaceDoubleQuotesByFrenchQuotes(d->mReplaceDoubleQuotesByFrenchQuotes);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setCustomWritablePath(d->mCustomWritablePath);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setCustomSystemPath(d->mCustomSystemPath);
+    TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->requestSync();
     writeAutoCorrectionFile();
 }
 
@@ -607,7 +607,7 @@ void AutoCorrectionSettings::setCustomSystemPath(const QString &path)
     d->mCustomSystemPath = path;
 }
 
-QDebug operator<<(QDebug d, const TextAutoCorrection::AutoCorrectionSettings &t)
+QDebug operator<<(QDebug d, const TextAutoCorrectionCore::AutoCorrectionSettings &t)
 {
     d << "mAddNonBreakingSpace " << t.nonBreakingSpace();
     d << "mSuperScriptAppendix " << t.isSuperScript();

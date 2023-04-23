@@ -10,7 +10,7 @@
 #include <QDialog>
 #include <QWidget>
 
-namespace TextAutoCorrection
+namespace TextAutoCorrectionCore
 {
 class AutoCorrection;
 }
@@ -24,7 +24,7 @@ class ConfigureTestDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit ConfigureTestDialog(TextAutoCorrection::AutoCorrection *autoCorrection, QWidget *parent = nullptr);
+    explicit ConfigureTestDialog(TextAutoCorrectionCore::AutoCorrection *autoCorrection, QWidget *parent = nullptr);
     ~ConfigureTestDialog() override;
 
 private Q_SLOTS:
@@ -48,6 +48,6 @@ private Q_SLOTS:
 private:
     TextAutoCorrectionWidgets::AutoCorrectionTextEdit *mEdit = nullptr;
     TextAutoCorrectionWidgets::AutoCorrectionLineEdit *mSubject = nullptr;
-    TextAutoCorrection::AutoCorrection *mAutoCorrection = nullptr;
+    TextAutoCorrectionCore::AutoCorrection *mAutoCorrection = nullptr;
     KSharedConfig::Ptr mConfig;
 };

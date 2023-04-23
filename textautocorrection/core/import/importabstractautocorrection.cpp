@@ -6,7 +6,7 @@
 
 #include "importabstractautocorrection.h"
 
-using namespace TextAutoCorrection;
+using namespace TextAutoCorrectionCore;
 
 ImportAbstractAutocorrection::ImportAbstractAutocorrection() = default;
 
