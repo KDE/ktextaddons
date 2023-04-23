@@ -381,7 +381,7 @@ msgstr "Clé d'API :"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
 #, kde-format
 msgid "Server needs Api Key."
-msgstr "Le serveur a besoin d'une clé  d'API."
+msgstr "Le serveur a besoin d'une clé d'API."
 
 #: translator/plugins/google/googleengineclient.cpp:26
 #, kde-format
