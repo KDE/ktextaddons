@@ -149,7 +149,7 @@ install(FILES
     ${TextAutoCorrectionCore_settings_HEADERS}
     ${TextAutoCorrectionCore_autocorrectionimport_HEADERS}
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/textautocorrection
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/textautocorrectioncore
     COMPONENT Devel
     )
 
@@ -200,6 +200,6 @@ configure_package_config_file(
 
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrection_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectioncore_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/ COMPONENT Devel
     )
