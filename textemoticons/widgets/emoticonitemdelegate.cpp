@@ -5,6 +5,7 @@
 */
 
 #include "emoticonitemdelegate.h"
+#include <textemoticonscore/emojimodel.h>
 using namespace TextEmoticonsWidgets;
 EmoticonItemDelegate::EmoticonItemDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
@@ -12,3 +13,14 @@ EmoticonItemDelegate::EmoticonItemDelegate(QObject *parent)
 }
 
 EmoticonItemDelegate::~EmoticonItemDelegate() = default;
+
+void TextEmoticonsWidgets::EmoticonItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    const bool imageAnimated = index.data(TextEmoticonsCore::EmojiModel::Animated).toBool();
+    if (imageAnimated) {
+        // TODO implement it.
+        QStyledItemDelegate::paint(painter, option, index);
+    } else {
+        QStyledItemDelegate::paint(painter, option, index);
+    }
+}
