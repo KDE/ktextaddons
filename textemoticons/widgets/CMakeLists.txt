@@ -9,8 +9,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSWIDGETS
     SOVERSION 1
 )
 
-add_library(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets
-    emoticonitemdelegate.h emoticonitemdelegate.cpp)
+add_library(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets)
 add_library(KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets ALIAS KF${KF_MAJOR_VERSION}TextEmoticonsWidgets)
 
 target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PRIVATE
