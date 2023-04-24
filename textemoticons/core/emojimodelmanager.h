@@ -36,9 +36,9 @@ Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
 
 private:
+    TEXTEMOTICONSCORE_NO_EXPORT void loadRecentUsed();
+    TEXTEMOTICONSCORE_NO_EXPORT void writeRecentUsed();
     TextEmoticonsCore::EmojiModel *const mEmojiModel;
     QStringList mRecentIdentifier;
-    void loadRecentUsed();
-    void writeRecentUsed();
 };
 }
