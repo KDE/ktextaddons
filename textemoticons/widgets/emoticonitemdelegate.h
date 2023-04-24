@@ -5,11 +5,11 @@
 */
 
 #pragma once
-
+#include "textemoticonswidgets_private_export.h"
 #include <QStyledItemDelegate>
 namespace TextEmoticonsWidgets
 {
-class EmoticonItemDelegate : public QStyledItemDelegate
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonItemDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
