@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 03:05+0000\n"
+"POT-Creation-Date: 2023-04-25 02:58+0000\n"
 "PO-Revision-Date: 2023-04-14 09:46+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -74,7 +74,7 @@ msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Aangepast"
 
-#: widgets/emoticonlistview.cpp:103
+#: widgets/emoticonlistview.cpp:107
 #, kde-format
 msgid "Clear Recents"
 msgstr "Recent wissen"
