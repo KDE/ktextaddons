@@ -15,12 +15,12 @@ libraries:
    cmake: "KF5::TextGrammarCheck"
  - qmake: TextTranslator
    cmake: "KF5::TextTranslator"
- - qmake: TextAutoCorrection
-   cmake: "KF5::TextAutoCorrection"
+ - qmake: TextAutoCorrectionCore
+   cmake: "KF5::TextAutoCorrectionCore"
+ - qmake: TextAutoCorrectionWidgets
+   cmake: "KF5::TextAutoCorrectionWidgets"     
  - qmake: TextEditTextToSpeech
    cmake: "KF5::TextEditTextToSpeech"
- - qmake: TextAddonsWidgets
-   cmake: "KF5::TextAddonsWidgets"
  - qmake: TextAddonsWidgets
    cmake: "KF5::TextAddonsWidgets"
  - qmake: TextEmoticonsCore
