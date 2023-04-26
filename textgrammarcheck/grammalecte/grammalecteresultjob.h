@@ -49,7 +49,6 @@ Q_SIGNALS:
     void error(GrammalecteResultJob::ErrorType type);
 
 private:
-    Q_DISABLE_COPY(GrammalecteResultJob)
     TEXTGRAMMARCHECK_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
     TEXTGRAMMARCHECK_NO_EXPORT void receivedStdErr();
     TEXTGRAMMARCHECK_NO_EXPORT void receivedError();
