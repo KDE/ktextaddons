@@ -85,21 +85,8 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets/TextEmoticonsWidgets/
     COMPONENT Devel
 )
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsWidgets_QCH
-        FILE KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsQchTargets.cmake\")")
-endif()
 
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEmoticonsWidgetsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-)
+
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsConfig.cmake"
@@ -141,9 +128,25 @@ if (BUILD_QCH)
         INCLUDE_DIRS
         ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-        TEXTEMOTICONSWidgets_EXPORT
+        TEXTEMOTICONSWIDGETS_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
 endif()
+
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsWidgets_QCH
+        FILE KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsQchTargets.cmake\")")
+endif()
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEmoticonsWidgetsConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsWidgetsConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+)
