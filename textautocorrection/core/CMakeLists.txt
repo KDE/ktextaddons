@@ -163,7 +163,7 @@ if (BUILD_QCH)
         KF${KF_MAJOR_VERSION}TextAutoCorrectionCore_QCH
         NAME KF${KF_MAJOR_VERSION}TextAutoCorrectionCore
         BASE_NAME KF${KF_MAJOR_VERSION}TextAutoCorrectionCore
-        VERSION ${TEXTAUTOCORRECTION_VERSION}
+	VERSION ${TEXTAUTOCORRECTIONCORE_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextAutoCorrectionCore_autocorrection_HEADERS}
