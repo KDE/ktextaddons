@@ -53,11 +53,6 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextAddonsWidgets PROPERTIES
 
 install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSION}TextAddonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-#if(BUILD_TESTING)
-#    add_subdirectory(autotests)
-#    add_subdirectory(tests)
-#endif()
-
 ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     LineEditCatchReturnKey
