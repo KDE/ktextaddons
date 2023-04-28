@@ -1,91 +1,91 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-26 02:47+0000\n"
-"PO-Revision-Date: 2023-04-19 05:57+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
-"Language: ka\n"
+"POT-Creation-Date: 2023-04-25 00:49+0000\n"
+"PO-Revision-Date: 2023-04-13 09:48+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: core/unicodeemoticonmanager.cpp:42
 #, kde-format
 msgid "Symbols"
-msgstr "სიმბოლოები"
+msgstr "رموز"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
 msgid "Activity"
-msgstr "აქტივობა"
+msgstr "نشاط"
 
 #: core/unicodeemoticonmanager.cpp:46
 #, kde-format
 msgid "Objects"
-msgstr "ობიექტები"
+msgstr "أشياء"
 
 #: core/unicodeemoticonmanager.cpp:48
 #, kde-format
 msgid "Nature"
-msgstr "ბუნება"
+msgstr "طبيعة"
 
 #: core/unicodeemoticonmanager.cpp:50
 #, kde-format
 msgid "Food"
-msgstr "საჭმელი"
+msgstr "طعام"
 
 #: core/unicodeemoticonmanager.cpp:52
 #, kde-format
 msgid "People"
-msgstr "ხალხი"
+msgstr "ناس"
 
 #: core/unicodeemoticonmanager.cpp:54
 #, kde-format
 msgid "Travel"
-msgstr "მოგზაურობა"
+msgstr "سفر"
 
 #: core/unicodeemoticonmanager.cpp:56
 #, kde-format
 msgid "Regional"
-msgstr "რეგიონალური"
+msgstr "منطقة"
 
 #: core/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Flags"
-msgstr "დროშები"
+msgstr "أعلام"
 
 #: widgets/emoticoncategorybuttons.cpp:82
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr "ისტორია"
+msgstr "مستخدمة"
 
 #: widgets/emoticoncategorybuttons.cpp:84
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr "ხელით მითითება"
+msgstr "مخصصة"
 
 #: widgets/emoticonlistview.cpp:107
 #, kde-format
 msgid "Clear Recents"
-msgstr "უახლესების გასუფთავება"
+msgstr "امسح الحديثة"
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
-msgstr "სიცილაკის დამატება"
+msgstr "أضف وجهًا تعبيريًّا"
 
 #: widgets/emoticontexteditselector.cpp:83
 #, kde-format
 msgid "Search Emoticon..."
-msgstr "ემოციის მოძებნა..."
+msgstr "ابحث عن مشاعر"

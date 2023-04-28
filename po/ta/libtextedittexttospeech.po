@@ -1,99 +1,101 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the ruqola package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the ktextaddons package.
 #
+# Kishore G <kishore96@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: ruqola\n"
+"Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-29 00:46+0000\n"
-"PO-Revision-Date: 2023-01-18 13:34+0000\n"
-"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
-"Language: pt\n"
+"PO-Revision-Date: 2023-03-26 14:15+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.03.80\n"
 
 #: texttospeechactions.cpp:28 texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
-msgstr "Parar"
+msgstr "நிறுத்து"
 
 #: texttospeechactions.cpp:72
 #, kde-format
 msgid "Pause"
-msgstr "Pausa"
+msgstr "இடைநிறுத்து"
 
 #: texttospeechactions.cpp:72
 #, kde-format
 msgid "Play"
-msgstr "Tocar"
+msgstr "இயக்கு"
 
 #: texttospeechconfigdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr "Configurar o Texto-para-Fala"
+msgstr "உரையை பேச்சாக்குவதை அமைப்பது"
 
 #: texttospeechconfiginterface.cpp:91
 #, kde-format
 msgid "Morning, this is the test for testing settings."
-msgstr "Bom dia, este é o teste das definições de testes."
+msgstr ""
+"Morning, this is the test for testing settings. வணக்கம், அமைப்புகளை சோதிக்க "
+"பயன்படுத்தக்கூடயி சரம் இது."
 
 #: texttospeechconfigwidget.cpp:33
 #, kde-format
 msgid "Test"
-msgstr "Testar"
+msgstr "சோதி"
 
 #: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
-msgstr "Volume:"
+msgstr "ஒலியளவு:"
 
 #: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Rate:"
-msgstr "Taxa:"
+msgstr "வேகம்:"
 
 #: texttospeechconfigwidget.cpp:50
 #, kde-format
 msgid "Pitch:"
-msgstr "Timbre:"
+msgstr "அதிர்வெண்:"
 
 #: texttospeechconfigwidget.cpp:53
 #, kde-format
 msgid "Engine:"
-msgstr "Motor:"
+msgstr "நிரல்:"
 
 #: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Language:"
-msgstr "Língua:"
+msgstr "மொழி:"
 
 #: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Voice:"
-msgstr "Voz:"
+msgstr "குரல்:"
 
 #: texttospeechwidget.cpp:54
 #, kde-format
 msgid "Close"
-msgstr "Fechar"
+msgstr "மூடு"
 
 #: texttospeechwidget.cpp:80
 #, kde-format
 msgid "Configure..."
-msgstr "Configurar..."
+msgstr "அமை..."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Engine has a problem."
-msgstr "O motor está com problemas."
+msgstr "நிரலில் சிக்கல்."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
 msgid "Text To Speech"
-msgstr "Texto-para-Fala"
+msgstr "உரையை பேச்சாக்குவது"
