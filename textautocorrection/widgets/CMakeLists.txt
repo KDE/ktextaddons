@@ -38,8 +38,6 @@ target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets PRIVATE
     autocorrectionlanguage.h
     autocorrectionwidget.h
     autocorrectiontreewidget.h
-    selectspecialchardialog.h
-    selectspecialchardialog.cpp
     autocorrectiontextedit.cpp
     autocorrectiontextedit.h
     autocorrectionlineedit.cpp
@@ -83,7 +81,6 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
     HEADER_NAMES
     AutoCorrectionWidget
     AutoCorrectionLanguage
-    SelectSpecialCharDialog
     AutoCorrectionTextEdit
     REQUIRED_HEADERS TextAutoCorrection_autocorrectionwidgets_HEADERS
     PREFIX TextAutoCorrectionWidgets

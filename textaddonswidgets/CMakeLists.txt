@@ -17,11 +17,15 @@ add_library(KF${KF_MAJOR_VERSION}::TextAddonsWidgets ALIAS KF${KF_MAJOR_VERSION}
 target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
     lineeditcatchreturnkey.h
     lineeditcatchreturnkey.cpp
+    selectspecialchardialog.h
+    selectspecialchardialog.cpp
 )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
     PRIVATE
     Qt::Widgets
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::ConfigGui
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
@@ -57,6 +61,7 @@ install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSI
 ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     LineEditCatchReturnKey
+    SelectSpecialCharDialog
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )

@@ -6,13 +6,14 @@
 
 #include "autocorrectionwidget.h"
 #include "autocorrectionutils.h"
+
 #include "ui_autocorrectionwidget.h"
 #include <TextAutoCorrectionCore/ImportAbstractAutocorrection>
 #include <TextAutoCorrectionCore/ImportKMailAutocorrection>
 #include <TextAutoCorrectionCore/ImportLibreOfficeAutocorrection>
 
-#include "selectspecialchardialog.h"
 #include <TextAddonsWidgets/LineEditCatchReturnKey>
+#include <TextAddonsWidgets/SelectSpecialCharDialog>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -331,7 +332,7 @@ void AutoCorrectionWidget::enableDoubleQuotes(bool state)
 
 void AutoCorrectionWidget::selectSingleQuoteCharOpen()
 {
-    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
+    QPointer<TextAddonsWidgets::SelectSpecialCharDialog> dlg = new TextAddonsWidgets::SelectSpecialCharDialog(this);
     dlg->setCurrentChar(d->m_singleQuotes.begin);
     dlg->showSelectButton(false);
     dlg->autoInsertChar();
@@ -345,7 +346,7 @@ void AutoCorrectionWidget::selectSingleQuoteCharOpen()
 
 void AutoCorrectionWidget::selectSingleQuoteCharClose()
 {
-    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
+    QPointer<TextAddonsWidgets::SelectSpecialCharDialog> dlg = new TextAddonsWidgets::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_singleQuotes.end);
     dlg->autoInsertChar();
@@ -367,7 +368,7 @@ void AutoCorrectionWidget::setDefaultSingleQuotes()
 
 void AutoCorrectionWidget::selectDoubleQuoteCharOpen()
 {
-    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
+    QPointer<TextAddonsWidgets::SelectSpecialCharDialog> dlg = new TextAddonsWidgets::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_doubleQuotes.begin);
     dlg->autoInsertChar();
@@ -381,7 +382,7 @@ void AutoCorrectionWidget::selectDoubleQuoteCharOpen()
 
 void AutoCorrectionWidget::selectDoubleQuoteCharClose()
 {
-    QPointer<TextAutoCorrectionWidgets::SelectSpecialCharDialog> dlg = new TextAutoCorrectionWidgets::SelectSpecialCharDialog(this);
+    QPointer<TextAddonsWidgets::SelectSpecialCharDialog> dlg = new TextAddonsWidgets::SelectSpecialCharDialog(this);
     dlg->showSelectButton(false);
     dlg->setCurrentChar(d->m_doubleQuotes.end);
     dlg->autoInsertChar();

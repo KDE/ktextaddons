@@ -6,18 +6,18 @@
 
 #pragma once
 
-#include "textautocorrectionwidgets_export.h"
+#include "textaddonswidgets_export.h"
 
 #include <QDialog>
 
-namespace TextAutoCorrectionWidgets
+namespace TextAddonsWidgets
 {
 class SelectSpecialCharDialogPrivate;
 /**
  * @brief The SelectSpecialCharDialog class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOCORRECTIONWIDGETS_EXPORT SelectSpecialCharDialog : public QDialog
+class TEXTADDONSWIDGETS_EXPORT SelectSpecialCharDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -40,8 +40,8 @@ Q_SIGNALS:
     void charSelected(QChar);
 
 private:
-    TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void readConfig();
-    TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void writeConfig();
+    TEXTADDONSWIDGETS_NO_EXPORT void readConfig();
+    TEXTADDONSWIDGETS_NO_EXPORT void writeConfig();
     friend class SelectSpecialCharDialogPrivate;
     std::unique_ptr<SelectSpecialCharDialogPrivate> const d;
 };

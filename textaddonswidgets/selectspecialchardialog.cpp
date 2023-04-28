@@ -19,7 +19,7 @@ namespace
 static const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";
 }
 
-namespace TextAutoCorrectionWidgets
+namespace TextAddonsWidgets
 {
 class SelectSpecialCharDialogPrivate
 {
