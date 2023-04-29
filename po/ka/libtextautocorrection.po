@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:46+0000\n"
+"POT-Creation-Date: 2023-04-29 00:48+0000\n"
 "PO-Revision-Date: 2023-01-14 12:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -23,109 +23,93 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "შეცდომა არქივის მხოლოდ-წაკითხვის რეჟიმში გახსნისას."
 
-#: widgets/autocorrectionwidget.cpp:128
+#: widgets/autocorrectionwidget.cpp:129
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "ხელით მითითებული ჩაწერადი ბილიკი"
 
-#: widgets/autocorrectionwidget.cpp:133
+#: widgets/autocorrectionwidget.cpp:134
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "ხელით მითითებული სისტემის ბილიკი"
 
-#: widgets/autocorrectionwidget.cpp:143
+#: widgets/autocorrectionwidget.cpp:144
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice-ის ავტოკორექცია"
 
-#: widgets/autocorrectionwidget.cpp:147
+#: widgets/autocorrectionwidget.cpp:148
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail/Calligra -ის ავტოკორექცია"
 
-#: widgets/autocorrectionwidget.cpp:425
+#: widgets/autocorrectionwidget.cpp:426
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"ჩანასაცვლებელი\" სტრიქონი \"მოსაძებნი\" სტრიქონის ტოლია."
 
-#: widgets/autocorrectionwidget.cpp:425
+#: widgets/autocorrectionwidget.cpp:426
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "ავტოკორექციის ჩანაწერის დამატება"
 
-#: widgets/autocorrectionwidget.cpp:504
+#: widgets/autocorrectionwidget.cpp:505
 #, kde-format
 msgid "&Modify"
 msgstr "&შეცვლა"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:507 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:508 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&დამატება"
 
-#: widgets/autocorrectionwidget.cpp:615
+#: widgets/autocorrectionwidget.cpp:616
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice-ის ავტოკორექციის შემოტანა"
 
-#: widgets/autocorrectionwidget.cpp:616
+#: widgets/autocorrectionwidget.cpp:617
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice-ის ავტოკორექციის ფაილი (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:619
+#: widgets/autocorrectionwidget.cpp:620
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "KMail-ის ავტოკორექციის შემოტანა"
 
-#: widgets/autocorrectionwidget.cpp:620
+#: widgets/autocorrectionwidget.cpp:621
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail -ის ავტოკორექციის ფაილი (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:652
+#: widgets/autocorrectionwidget.cpp:653
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "ავტოკორექციის ფაილის შემოტანა"
 
-#: widgets/autocorrectionwidget.cpp:675
+#: widgets/autocorrectionwidget.cpp:676
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "ენა შეიცვალა. გნებავთ კონფიგურაცია წინა ენაში შეინახოთ?"
 
-#: widgets/autocorrectionwidget.cpp:676
+#: widgets/autocorrectionwidget.cpp:677
 #, kde-format
 msgid "Save config"
 msgstr "კონფიგურაციის შენახვა"
 
-#: widgets/autocorrectionwidget.cpp:711
+#: widgets/autocorrectionwidget.cpp:712
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "პარამეტრების გატანამდე, გთხოვთ, შეინახეთ ცვლილებები."
 
-#: widgets/autocorrectionwidget.cpp:711 widgets/autocorrectionwidget.cpp:714
+#: widgets/autocorrectionwidget.cpp:712 widgets/autocorrectionwidget.cpp:715
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "ავტოკორექციის ფაილის გატანა"
-
-#: widgets/selectspecialchardialog.cpp:32
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Special Characters"
-msgstr "აირჩიეთ სპეციალური სიმბოლოები"
-
-#: widgets/selectspecialchardialog.cpp:40
-#, kde-format
-msgid "Insert"
-msgstr "ჩასმა"
-
-#: widgets/selectspecialchardialog.cpp:53
-#, kde-format
-msgid "Select"
-msgstr "აირჩიეთ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
@@ -480,3 +464,13 @@ msgstr "..."
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "ხელით მითითებული ჩაწერადი ბილიკი:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Special Characters"
+#~ msgstr "აირჩიეთ სპეციალური სიმბოლოები"
+
+#~ msgid "Insert"
+#~ msgstr "ჩასმა"
+
+#~ msgid "Select"
+#~ msgstr "აირჩიეთ"

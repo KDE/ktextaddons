@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:46+0000\n"
+"POT-Creation-Date: 2023-04-29 00:48+0000\n"
 "PO-Revision-Date: 2023-02-11 17:54+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -22,110 +22,94 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "Archív nie je možné otvoriť v režime čítania."
 
-#: widgets/autocorrectionwidget.cpp:128
+#: widgets/autocorrectionwidget.cpp:129
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "Vybrať vlastnú zapisovateľnú cestu"
 
-#: widgets/autocorrectionwidget.cpp:133
+#: widgets/autocorrectionwidget.cpp:134
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "Vybrať vlastnú systémovú cestu"
 
-#: widgets/autocorrectionwidget.cpp:143
+#: widgets/autocorrectionwidget.cpp:144
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "Automatické opravy LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:147
+#: widgets/autocorrectionwidget.cpp:148
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "Automatické opravy KMail/Calligra"
 
-#: widgets/autocorrectionwidget.cpp:425
+#: widgets/autocorrectionwidget.cpp:426
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Reťazec \"Nahradiť\" je rovnaký ako reťazec \"Nájsť\"."
 
-#: widgets/autocorrectionwidget.cpp:425
+#: widgets/autocorrectionwidget.cpp:426
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "Pridať položku automatických opráv"
 
-#: widgets/autocorrectionwidget.cpp:504
+#: widgets/autocorrectionwidget.cpp:505
 #, kde-format
 msgid "&Modify"
 msgstr "Z&meniť"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:507 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:508 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&Pridať"
 
-#: widgets/autocorrectionwidget.cpp:615
+#: widgets/autocorrectionwidget.cpp:616
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Importovať automatické opravy LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:616
+#: widgets/autocorrectionwidget.cpp:617
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "Súbor automatických opráv LibreOffice (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:619
+#: widgets/autocorrectionwidget.cpp:620
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Importovať automatické opravy KMail"
 
-#: widgets/autocorrectionwidget.cpp:620
+#: widgets/autocorrectionwidget.cpp:621
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "Súbor automatických opráv KMail (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:652
+#: widgets/autocorrectionwidget.cpp:653
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "Importovať súbor automatických opráv"
 
-#: widgets/autocorrectionwidget.cpp:675
+#: widgets/autocorrectionwidget.cpp:676
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "Jazyk bol zmenený, chcete uložiť konfiguráciu pre predchádzajúci jazyk?"
 
-#: widgets/autocorrectionwidget.cpp:676
+#: widgets/autocorrectionwidget.cpp:677
 #, kde-format
 msgid "Save config"
 msgstr "Uložiť konfiguráciu"
 
-#: widgets/autocorrectionwidget.cpp:711
+#: widgets/autocorrectionwidget.cpp:712
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Prosím, uložte zmeny pred exportom nastavení."
 
-#: widgets/autocorrectionwidget.cpp:711 widgets/autocorrectionwidget.cpp:714
+#: widgets/autocorrectionwidget.cpp:712 widgets/autocorrectionwidget.cpp:715
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "Exportovať súbor automatických opráv"
-
-#: widgets/selectspecialchardialog.cpp:32
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Special Characters"
-msgstr "Výber špeciálnych znakov"
-
-#: widgets/selectspecialchardialog.cpp:40
-#, kde-format
-msgid "Insert"
-msgstr "Vložiť"
-
-#: widgets/selectspecialchardialog.cpp:53
-#, kde-format
-msgid "Select"
-msgstr "Vybrať"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
@@ -480,3 +464,13 @@ msgstr "..."
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "Vlastná zapisovateľná cesta:"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Special Characters"
+#~ msgstr "Výber špeciálnych znakov"
+
+#~ msgid "Insert"
+#~ msgstr "Vložiť"
+
+#~ msgid "Select"
+#~ msgstr "Vybrať"
