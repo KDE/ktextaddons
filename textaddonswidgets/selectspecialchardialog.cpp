@@ -58,12 +58,29 @@ public:
     }
 
     void _k_slotInsertChar();
+    void readConfig();
+    void writeConfig();
 
     SelectSpecialCharDialog *const q;
     KCharSelect *const mCharSelect;
     QDialogButtonBox *const mButtonBox;
     QPushButton *mSelectButton = nullptr;
 };
+
+void SelectSpecialCharDialogPrivate::readConfig()
+{
+    q->create(); // ensure a window is created
+    q->windowHandle()->resize(QSize(300, 200));
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
+    KWindowConfig::restoreWindowSize(q->windowHandle(), group);
+    q->resize(q->windowHandle()->size()); // workaround for QTBUG-40584
+}
+
+void SelectSpecialCharDialogPrivate::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
+    KWindowConfig::saveWindowSize(q->windowHandle(), group);
+}
 
 void SelectSpecialCharDialogPrivate::_k_slotInsertChar()
 {
@@ -74,12 +91,12 @@ SelectSpecialCharDialog::SelectSpecialCharDialog(QWidget *parent)
     : QDialog(parent)
     , d(new SelectSpecialCharDialogPrivate(this))
 {
-    readConfig();
+    d->readConfig();
 }
 
 SelectSpecialCharDialog::~SelectSpecialCharDialog()
 {
-    writeConfig();
+    d->writeConfig();
 }
 
 void SelectSpecialCharDialog::showSelectButton(bool show)
@@ -109,21 +126,6 @@ void SelectSpecialCharDialog::autoInsertChar()
 void SelectSpecialCharDialog::setOkButtonText(const QString &text)
 {
     d->mButtonBox->button(QDialogButtonBox::Ok)->setText(text);
-}
-
-void SelectSpecialCharDialog::readConfig()
-{
-    create(); // ensure a window is created
-    windowHandle()->resize(QSize(300, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
-}
-
-void SelectSpecialCharDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
-    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 }
 
