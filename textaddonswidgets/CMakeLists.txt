@@ -15,11 +15,15 @@ add_library(KF${KF_MAJOR_VERSION}TextAddonsWidgets)
 add_library(KF${KF_MAJOR_VERSION}::TextAddonsWidgets ALIAS KF${KF_MAJOR_VERSION}TextAddonsWidgets)
 
 target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
-    lineeditcatchreturnkey.h
-    lineeditcatchreturnkey.cpp
     selectspecialchardialog.h
     selectspecialchardialog.cpp
 )
+if (QT_MAJOR_VERSION STREQUAL "5")
+    target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
+        lineeditcatchreturnkey.h
+        lineeditcatchreturnkey.cpp
+    )
+endif()
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
     PRIVATE
@@ -55,20 +59,29 @@ install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSI
 
 ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
-    LineEditCatchReturnKey
     SelectSpecialCharDialog
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )
+if (QT_MAJOR_VERSION STREQUAL "5")
+    ecm_generate_headers(TextAddonsWidgets_lineedit_CamelCase_HEADERS
+        HEADER_NAMES
+        LineEditCatchReturnKey
+        REQUIRED_HEADERS TextAddonsWidgets_lineedit_HEADERS
+        PREFIX TextAddonsWidgets
+    )
+endif()
 
 install(FILES
     ${TextAddonsWidgets_HEADERS}
+    ${TextAddonsWidgets_lineedit_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
 )
 install(FILES
     ${TextAddonsWidgets_CamelCase_HEADERS}
+    ${TextAddonsWidgets_lineedit_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
