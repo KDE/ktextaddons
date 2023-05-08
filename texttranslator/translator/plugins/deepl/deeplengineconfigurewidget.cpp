@@ -6,7 +6,11 @@
 
 #include "deeplengineconfigurewidget.h"
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
 #include <TextAddonsWidgets/LineEditCatchReturnKey>
+#else
+#include <KLineEditEventHandler>
+#endif
 
 #include <KLocalizedString>
 #include <QCheckBox>
@@ -21,7 +25,11 @@ DeeplEngineConfigureWidget::DeeplEngineConfigureWidget(QWidget *parent)
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
     new TextAddonsWidgets::LineEditCatchReturnKey(mApiKey, this);
+#else
+    KLineEditEventHandler::catchReturnKey(mApiKey);
+#endif
     mUseFreeLicense->setObjectName(QStringLiteral("mUseFreeLicense"));
     mainLayout->addWidget(mUseFreeLicense);
 

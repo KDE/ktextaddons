@@ -56,6 +56,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
     PRIVATE
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
     )
 
 target_include_directories(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/>")

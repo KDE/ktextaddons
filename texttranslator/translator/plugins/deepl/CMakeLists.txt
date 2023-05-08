@@ -26,6 +26,7 @@ target_sources(translator_deepl PRIVATE
 target_link_libraries(translator_deepl PRIVATE
     KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
 )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(translator_deepl PRIVATE qt6keychain)

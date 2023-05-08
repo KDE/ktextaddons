@@ -10,7 +10,11 @@
 #include <QCompleter>
 #include <QFormLayout>
 #include <QLineEdit>
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
 #include <TextAddonsWidgets/LineEditCatchReturnKey>
+#else
+#include <KLineEditEventHandler>
+#endif
 
 LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget *parent)
     : QWidget{parent}
@@ -44,8 +48,13 @@ LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget
         QStringLiteral("https://lt.vern.cc"),
     };
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
     new TextAddonsWidgets::LineEditCatchReturnKey(mApiKey, this);
     new TextAddonsWidgets::LineEditCatchReturnKey(mServerUrl, this);
+#else
+    KLineEditEventHandler::catchReturnKey(mApiKey);
+    KLineEditEventHandler::catchReturnKey(mServerUrl);
+#endif
 
     auto completer = new QCompleter(listServer, this);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
