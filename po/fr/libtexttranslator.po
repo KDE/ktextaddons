@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 00:45+0000\n"
+"POT-Creation-Date: 2023-05-09 00:46+0000\n"
 "PO-Revision-Date: 2023-03-05 13:13+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -366,13 +366,13 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Configurer un moteur"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Utiliser une clé de licence libre"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
 #, kde-format
 msgid "Api Key:"
 msgstr "Clé d'API :"
@@ -393,13 +393,13 @@ msgstr "Google"
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
 #, kde-format
 msgid "Server required Api Key"
 msgstr "Clé d'API requise par le serveur."
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
-#: translator/plugins/lingva/lingvaenginewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
+#: translator/plugins/lingva/lingvaenginewidget.cpp:27
 #, kde-format
 msgid "Server Url:"
 msgstr "URL du serveur :"
@@ -453,7 +453,7 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configurer un traducteur"
 
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
 #, kde-format
 msgid "Search..."
 msgstr "Rechercher…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-29 00:48+0000\n"
+"POT-Creation-Date: 2023-05-09 00:46+0000\n"
 "PO-Revision-Date: 2023-02-23 19:56+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -22,90 +22,90 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "Arkistoa ei saatu avattua luettavaksi."
 
-#: widgets/autocorrectionwidget.cpp:129
+#: widgets/autocorrectionwidget.cpp:147
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "Valitse mukautettu kirjoitettavissa oleva sijainti"
 
-#: widgets/autocorrectionwidget.cpp:134
+#: widgets/autocorrectionwidget.cpp:152
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "Valitse mukautettu järjestelmäsijainti"
 
-#: widgets/autocorrectionwidget.cpp:144
+#: widgets/autocorrectionwidget.cpp:162
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOfficen automaattikorjaus"
 
-#: widgets/autocorrectionwidget.cpp:148
+#: widgets/autocorrectionwidget.cpp:166
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMailin/Calligran automaattikorjaus"
 
-#: widgets/autocorrectionwidget.cpp:426
+#: widgets/autocorrectionwidget.cpp:444
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Korvattava merkkijono on sama kuin etsittävä jono."
 
-#: widgets/autocorrectionwidget.cpp:426
+#: widgets/autocorrectionwidget.cpp:444
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "Lisää automaattikorjausmerkintä"
 
-#: widgets/autocorrectionwidget.cpp:505
+#: widgets/autocorrectionwidget.cpp:523
 #, kde-format
 msgid "&Modify"
 msgstr "&Muuta"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:508 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:526 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&Lisää"
 
-#: widgets/autocorrectionwidget.cpp:616
+#: widgets/autocorrectionwidget.cpp:634
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Tuo LibreOfficen automaattikorjaukset"
 
-#: widgets/autocorrectionwidget.cpp:617
+#: widgets/autocorrectionwidget.cpp:635
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOfficen automaattikorjaustiedosto (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:620
+#: widgets/autocorrectionwidget.cpp:638
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Tuo KMailin automaattikorjaukset"
 
-#: widgets/autocorrectionwidget.cpp:621
+#: widgets/autocorrectionwidget.cpp:639
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMailin automaattikorjaustiedosto (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:653
+#: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "Tuo automaattikorjaustiedosto"
 
-#: widgets/autocorrectionwidget.cpp:676
+#: widgets/autocorrectionwidget.cpp:694
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "Kieltä vaihdettiin: haluatko tallentaa edellisen kielen asetukset?"
 
-#: widgets/autocorrectionwidget.cpp:677
+#: widgets/autocorrectionwidget.cpp:695
 #, kde-format
 msgid "Save config"
 msgstr "Tallenna asetukset"
 
-#: widgets/autocorrectionwidget.cpp:712
+#: widgets/autocorrectionwidget.cpp:730
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Tallenna muutokset ennen asetusten vientiä."
 
-#: widgets/autocorrectionwidget.cpp:712 widgets/autocorrectionwidget.cpp:715
+#: widgets/autocorrectionwidget.cpp:730 widgets/autocorrectionwidget.cpp:733
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "Vie automaattikorjaustiedosto"
