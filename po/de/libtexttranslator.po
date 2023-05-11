@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 02:31+0000\n"
-"PO-Revision-Date: 2023-04-03 16:39+0200\n"
+"PO-Revision-Date: 2023-05-10 20:27+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #: translator/misc/translatorutil.cpp:30
 #, kde-format
@@ -333,22 +333,26 @@ msgstr "Bing"
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
 msgstr ""
+"Fehler: Bing-Zugangsdaten können in der Web-Version nicht gefunden werden."
 
 #: translator/plugins/bing/bingengineplugin.cpp:65
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
 msgstr ""
+"Fehler: Bing-Schlüssel kann nicht aus der Web-Version extrahiert werden."
 
 #: translator/plugins/bing/bingengineplugin.cpp:74
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Fehler: Bing-Token kann nicht aus der Web-Version extrahiert werden."
 
 #: translator/plugins/bing/bingengineplugin.cpp:83
 #: translator/plugins/bing/bingengineplugin.cpp:92
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
+"Fehler: Es ist nicht möglich, zusätzliche Bing-Informationen aus der Web-"
+"Version zu extrahieren."
 
 #: translator/plugins/deepl/deeplengineclient.cpp:37
 #, kde-format
@@ -423,6 +427,9 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Fehler: Die Engine-Systeme haben verdächtigen Datenverkehr von Ihrem "
+"Computer Netzwerk festgestellt. Bitte versuchen Sie Ihre Anfrage später "
+"erneut."
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:63
 #, kde-format
