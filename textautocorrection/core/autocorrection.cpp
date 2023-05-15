@@ -717,7 +717,9 @@ int AutoCorrection::advancedAutocorrect()
         actualWord.chop(1);
     }
     QString actualWordWithFirstUpperCase = actualWord;
-    actualWordWithFirstUpperCase[0] = actualWordWithFirstUpperCase[0].toUpper();
+    if (!actualWordWithFirstUpperCase.isEmpty()) {
+        actualWordWithFirstUpperCase[0] = actualWordWithFirstUpperCase[0].toUpper();
+    }
     QHashIterator<QString, QString> i(d->mAutoCorrectionSettings->autocorrectEntries());
     while (i.hasNext()) {
         i.next();
