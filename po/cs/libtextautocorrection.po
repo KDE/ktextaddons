@@ -460,13 +460,3 @@ msgstr "..."
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr ""
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Special Characters"
-#~ msgstr "Vyberte zvláštní znaky"
-
-#~ msgid "Insert"
-#~ msgstr "Vložit"
-
-#~ msgid "Select"
-#~ msgstr "Vybrat"
