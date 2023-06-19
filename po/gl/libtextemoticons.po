@@ -1,0 +1,90 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-04-25 00:49+0000\n"
+"PO-Revision-Date: 2023-06-18 18:08+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
+
+#: core/unicodeemoticonmanager.cpp:42
+#, kde-format
+msgid "Symbols"
+msgstr "Símbolos"
+
+#: core/unicodeemoticonmanager.cpp:44
+#, kde-format
+msgid "Activity"
+msgstr "Actividade"
+
+#: core/unicodeemoticonmanager.cpp:46
+#, kde-format
+msgid "Objects"
+msgstr "Obxectos"
+
+#: core/unicodeemoticonmanager.cpp:48
+#, kde-format
+msgid "Nature"
+msgstr "Natureza"
+
+#: core/unicodeemoticonmanager.cpp:50
+#, kde-format
+msgid "Food"
+msgstr "Comida"
+
+#: core/unicodeemoticonmanager.cpp:52
+#, kde-format
+msgid "People"
+msgstr "Xente"
+
+#: core/unicodeemoticonmanager.cpp:54
+#, kde-format
+msgid "Travel"
+msgstr "Viaxes"
+
+#: core/unicodeemoticonmanager.cpp:56
+#, kde-format
+msgid "Regional"
+msgstr "Rexional"
+
+#: core/unicodeemoticonmanager.cpp:58
+#, kde-format
+msgid "Flags"
+msgstr "Bandeiras"
+
+#: widgets/emoticoncategorybuttons.cpp:82
+#, kde-format
+msgctxt "Previously used emojis"
+msgid "History"
+msgstr "Historia"
+
+#: widgets/emoticoncategorybuttons.cpp:84
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
+msgstr "Costumes"
+
+#: widgets/emoticonlistview.cpp:107
+#, kde-format
+msgid "Clear Recents"
+msgstr "Borrar a lista de recentes"
+
+#: widgets/emoticontexteditaction.cpp:54
+#, kde-format
+msgid "Add Smiley"
+msgstr "Engadir unha emoticona"
+
+#: widgets/emoticontexteditselector.cpp:83
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "Buscar unha emoticona…"
