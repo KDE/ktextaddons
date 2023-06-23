@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2019, 2023.
 #
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2019-09-15 09:29+0200\n"
+"PO-Revision-Date: 2023-06-22 06:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -40,7 +40,7 @@ msgstr "Comprobar de novo"
 #: common/grammarresulttextedit.cpp:118
 #, kde-format
 msgid "Configure..."
-msgstr ""
+msgstr "Configurar…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
@@ -53,8 +53,7 @@ msgid "Close"
 msgstr "Pechar"
 
 #: grammalecte/grammalecteconfigdialog.cpp:25
-#, fuzzy, kde-format
-#| msgid "Configure Grammalecte"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
 msgstr "Configurar Grammalecte"
@@ -100,7 +99,7 @@ msgstr "Ruta de Python:"
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "Engadir a ruta completa de «grammalecte-cli.py»"
 
 #: grammalecte/grammalecteconfigwidget.cpp:140
 #, kde-format
@@ -110,37 +109,32 @@ msgstr "Ruta de Grammalecte:"
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "Falta a ruta de Python"
 
 #: grammalecte/grammalecteresultwidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Grammalecte path not found."
-msgstr "Ruta de Grammalecte:"
+msgstr "Non se atopou a ruta de Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte program file not found."
-msgstr "Complemento de Grammalecte"
+msgstr "Non se atopou o ficheiro de programa de Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Grammalecte Plugin"
+#, kde-format
 msgid "Grammalecte cli file not found."
-msgstr "Complemento de Grammalecte"
+msgstr "Non se atopou o ficheiro de interface da liña de ordes de Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Grammalecte error"
-msgstr "Ruta de Grammalecte:"
+msgstr "Erro de Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Ruta de Grammalecte:"
+msgstr "Seleccione unha ruta"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
@@ -293,8 +287,7 @@ msgid "Ukrainian"
 msgstr "Ucraíno"
 
 #: languagetool/languagetoolconfigdialog.cpp:26
-#, fuzzy, kde-format
-#| msgid "Configure LanguageTool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Configurar LanguageTool"
@@ -330,10 +323,9 @@ msgid "Failed to check grammar."
 msgstr "Non se puido comprobar a gramática."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check Again"
+#, kde-format
 msgid "Check"
-msgstr "Comprobar de novo"
+msgstr "Comprobar"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
