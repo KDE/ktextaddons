@@ -60,3 +60,5 @@ bool NetworkManager::isOnline() const
     return mNetworkConfigureManager->isOnline();
 #endif
 }
+
+#include "moc_networkmanager.cpp"

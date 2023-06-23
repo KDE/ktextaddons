@@ -80,3 +80,5 @@ bool LingvaEngineClient::isSupported(TextTranslator::TranslatorUtil::Language la
     }
     return true;
 }
+
+#include "moc_lingvaengineclient.cpp"

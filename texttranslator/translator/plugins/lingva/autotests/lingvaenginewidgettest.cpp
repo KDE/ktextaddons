@@ -28,3 +28,5 @@ void LingvaEngineWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mServerUrl);
     QVERIFY(mServerUrl->isClearButtonEnabled());
 }
+
+#include "moc_lingvaenginewidgettest.cpp"

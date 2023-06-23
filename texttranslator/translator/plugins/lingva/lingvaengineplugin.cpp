@@ -95,3 +95,5 @@ QString LingvaEnginePlugin::languageCode(const QString &langStr)
     }
     return langStr;
 }
+
+#include "moc_lingvaengineplugin.cpp"

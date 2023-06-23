@@ -736,3 +736,5 @@ void AutoCorrectionWidget::slotExportAutoCorrection()
     }
     d->mAutoCorrection->writeAutoCorrectionXmlFile(saveUrl);
 }
+
+#include "moc_autocorrectionwidget.cpp"

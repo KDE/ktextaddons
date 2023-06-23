@@ -31,3 +31,5 @@ void TranslatorConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(label);
     QVERIFY(!label->text().isEmpty());
 }
+
+#include "moc_translatorconfigurewidgettest.cpp"

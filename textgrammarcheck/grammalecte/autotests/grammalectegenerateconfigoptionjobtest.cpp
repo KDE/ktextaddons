@@ -36,3 +36,5 @@ void GrammalecteGenerateConfigOptionJobTest::shouldBeAbleToStart()
     job.setGrammarlecteCliPath(QStringLiteral("ff"));
     QVERIFY(job.canStart());
 }
+
+#include "moc_grammalectegenerateconfigoptionjobtest.cpp"

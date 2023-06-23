@@ -72,3 +72,5 @@ QString LanguageToolComboBox::language() const
 {
     return currentData().toString();
 }
+
+#include "moc_languagetoolcombobox.cpp"

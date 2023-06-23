@@ -37,3 +37,5 @@ void TextToSpeechLanguageComboBox::updateAvailableLocales(const QVector<QLocale>
     }
     setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
+
+#include "moc_texttospeechlanguagecombobox.cpp"

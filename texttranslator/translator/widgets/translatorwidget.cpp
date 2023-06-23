@@ -532,3 +532,5 @@ void TranslatorWidget::slotDebug()
         qCWarning(TEXTTRANSLATOR_LOG) << " Translator plugin invalid";
     }
 }
+
+#include "moc_translatorwidget.cpp"

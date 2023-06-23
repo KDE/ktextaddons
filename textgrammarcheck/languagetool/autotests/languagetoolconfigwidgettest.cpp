@@ -81,3 +81,5 @@ void LanguageToolConfigWidgetTest::shouldUpdateWidgets()
     QVERIFY(!instancePathLabel->isEnabled());
     QVERIFY(!mInstancePath->isEnabled());
 }
+
+#include "moc_languagetoolconfigwidgettest.cpp"

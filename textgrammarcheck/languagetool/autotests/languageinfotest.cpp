@@ -22,3 +22,5 @@ void LanguageInfoTest::shouldHaveDefaultValues()
     QVERIFY(w.longCode().isEmpty());
     QVERIFY(!w.isValid());
 }
+
+#include "moc_languageinfotest.cpp"

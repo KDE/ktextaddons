@@ -38,3 +38,5 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::
     }
     return map;
 }
+
+#include "moc_translatorengineclient.cpp"

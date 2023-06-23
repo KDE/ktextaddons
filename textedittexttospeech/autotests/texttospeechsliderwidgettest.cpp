@@ -30,3 +30,5 @@ void TextToSpeechSliderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSlider);
     QCOMPARE(mSlider->orientation(), Qt::Horizontal);
 }
+
+#include "moc_texttospeechsliderwidgettest.cpp"

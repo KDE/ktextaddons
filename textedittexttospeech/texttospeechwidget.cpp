@@ -192,3 +192,5 @@ void TextToSpeechWidget::applyVolume()
     // We want display between 0 -> 100
     d->mVolume->setValue(d->mTextToSpeechInterface->volume() * 100);
 }
+
+#include "moc_texttospeechwidget.cpp"

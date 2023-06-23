@@ -40,3 +40,5 @@ void LingvaEngineDialog::setServerUrl(const QString &serverUrl)
 {
     mConfigureWidget->setServerUrl(serverUrl);
 }
+
+#include "moc_lingvaenginedialog.cpp"

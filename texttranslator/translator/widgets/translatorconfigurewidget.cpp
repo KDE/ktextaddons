@@ -53,3 +53,5 @@ void TranslatorConfigureWidget::loadSettings()
 {
     d->mEngineConfigureComboWidget->load();
 }
+
+#include "moc_translatorconfigurewidget.cpp"

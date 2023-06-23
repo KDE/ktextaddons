@@ -51,3 +51,5 @@ QHash<QString, QString> ImportAbstractAutocorrection::superScriptEntries() const
 {
     return mSuperScriptEntries;
 }
+
+#include "moc_importabstractautocorrection.cpp"

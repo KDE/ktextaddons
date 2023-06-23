@@ -70,3 +70,5 @@ void GrammalecteGrammarErrorTest::shouldParseJson()
     }
     QVERIFY(compare);
 }
+
+#include "moc_grammalectegrammarerrortest.cpp"

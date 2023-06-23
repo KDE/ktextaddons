@@ -107,3 +107,5 @@ void TranslatorWidgetTest::shouldEmitTranslatorWasClosedSignalWhenCloseIt()
     QTest::keyClick(&edit, Qt::Key_Escape);
     QCOMPARE(spy.count(), 1);
 }
+
+#include "moc_translatorwidgettest.cpp"

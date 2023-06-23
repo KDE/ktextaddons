@@ -89,3 +89,5 @@ void TextToSpeechConfigWidgetTest::shouldEmitConfigChangedWhenChangeConfigValue(
     language->setCurrentIndex(3);
     QCOMPARE(spy.count(), 3);
 }
+
+#include "moc_texttospeechconfigwidgettest.cpp"

@@ -23,3 +23,5 @@ void BingEngineClientTest::shouldHaveDefaultValues()
     QVERIFY(!client.supportedLanguages().isEmpty());
     QVERIFY(!client.hasConfigurationDialog());
 }
+
+#include "moc_bingengineclienttest.cpp"

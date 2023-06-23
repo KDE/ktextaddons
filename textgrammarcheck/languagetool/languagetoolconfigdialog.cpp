@@ -58,3 +58,5 @@ void LanguageToolConfigDialog::readConfig()
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
+
+#include "moc_languagetoolconfigdialog.cpp"

@@ -41,3 +41,5 @@ void TextAutoCorrectionSettings::slotSyncNow()
 {
     config()->sync();
 }
+
+#include "moc_textautocorrectionsettings.cpp"

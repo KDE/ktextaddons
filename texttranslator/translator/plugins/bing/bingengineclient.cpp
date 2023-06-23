@@ -58,3 +58,5 @@ bool BingEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang
     }
     return true;
 }
+
+#include "moc_bingengineclient.cpp"

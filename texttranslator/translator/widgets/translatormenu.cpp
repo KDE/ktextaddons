@@ -80,3 +80,5 @@ QMenu *TranslatorMenu::menu() const
 {
     return mMenu;
 }
+
+#include "moc_translatormenu.cpp"

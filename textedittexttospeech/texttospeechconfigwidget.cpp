@@ -220,3 +220,5 @@ void TextToSpeechConfigWidget::slotLanguageChanged()
 {
     // QLocale locale = mLanguage->currentData().value<QLocale>();
 }
+
+#include "moc_texttospeechconfigwidget.cpp"

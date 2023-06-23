@@ -39,3 +39,5 @@ void LanguageToolParserTest::shouldParseJson()
     TextGrammarCheck::LanguageToolParser parser;
     QCOMPARE(parser.parseResult(fields).count(), numberOfElement);
 }
+
+#include "moc_languagetoolparsertest.cpp"

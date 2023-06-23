@@ -12,3 +12,5 @@ LanguageToolListOfLanguagesParserTest::LanguageToolListOfLanguagesParserTest(QOb
     : QObject(parent)
 {
 }
+
+#include "moc_languagetoollistoflanguagesparsertest.cpp"

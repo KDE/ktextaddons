@@ -32,3 +32,5 @@ void LanguageToolConfigDialogTest::shouldHaveDefaultValue()
     auto box = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));
     QVERIFY(box);
 }
+
+#include "moc_languagetoolconfigdialogtest.cpp"

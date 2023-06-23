@@ -126,3 +126,5 @@ bool LanguageToolManager::allowToGetListOfLanguages() const
 {
     return mUseLocalInstance;
 }
+
+#include "moc_languagetoolmanager.cpp"

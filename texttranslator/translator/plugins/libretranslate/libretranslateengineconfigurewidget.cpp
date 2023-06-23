@@ -98,3 +98,5 @@ void LibreTranslateEngineConfigureWidget::setServerRequiredApiKey(bool state)
     mRequiredApiKey->setChecked(state);
     updateApiKeyState(state);
 }
+
+#include "moc_libretranslateengineconfigurewidget.cpp"

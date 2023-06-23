@@ -40,3 +40,5 @@ void GrammalecteParserTest::shouldParseJson()
     TextGrammarCheck::GrammalecteParser parser;
     QCOMPARE(parser.parseResult(fields).count(), numberOfElement);
 }
+
+#include "moc_grammalecteparsertest.cpp"

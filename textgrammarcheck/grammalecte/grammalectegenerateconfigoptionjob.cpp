@@ -119,3 +119,5 @@ QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOpt
     }
     return opts;
 }
+
+#include "moc_grammalectegenerateconfigoptionjob.cpp"

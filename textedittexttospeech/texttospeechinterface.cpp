@@ -75,3 +75,5 @@ void TextToSpeechInterface::stateChanged(TextToSpeechWidget::State state)
         break;
     }
 }
+
+#include "moc_texttospeechinterface.cpp"

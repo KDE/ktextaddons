@@ -110,3 +110,5 @@ void LanguageToolConfigWidget::saveSettings()
     LanguageToolManager::self()->setLanguage(mLanguageToolCombobox->language());
     LanguageToolManager::self()->saveSettings();
 }
+
+#include "moc_languagetoolconfigwidget.cpp"

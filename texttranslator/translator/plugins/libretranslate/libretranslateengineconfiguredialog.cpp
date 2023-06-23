@@ -60,3 +60,5 @@ void LibreTranslateEngineConfigureDialog::setServerRequiredApiKey(bool state)
 {
     mConfigureWidget->setServerRequiredApiKey(state);
 }
+
+#include "moc_libretranslateengineconfiguredialog.cpp"

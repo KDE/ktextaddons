@@ -75,3 +75,5 @@ void GrammalecteManager::setGrammalectePath(const QString &grammalectePath)
 {
     mGrammalectePath = grammalectePath;
 }
+
+#include "moc_grammalectemanager.cpp"

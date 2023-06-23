@@ -115,3 +115,5 @@ void AutoCorrectionTextEditTest::shouldReplaceWhenPressReturn()
 }
 
 QTEST_MAIN(AutoCorrectionTextEditTest)
+
+#include "moc_autocorrectiontextedittest.cpp"

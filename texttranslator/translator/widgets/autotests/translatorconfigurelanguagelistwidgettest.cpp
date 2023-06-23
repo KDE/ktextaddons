@@ -45,3 +45,5 @@ void TranslatorConfigureLanguageListWidgetTest::shouldAssignLabel()
     QVERIFY(mLabel);
     QCOMPARE(mLabel->text(), label);
 }
+
+#include "moc_translatorconfigurelanguagelistwidgettest.cpp"

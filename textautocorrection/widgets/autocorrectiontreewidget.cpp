@@ -24,3 +24,5 @@ void AutoCorrectionTreeWidget::keyPressEvent(QKeyEvent *event)
     }
     QTreeWidget::keyPressEvent(event);
 }
+
+#include "moc_autocorrectiontreewidget.cpp"

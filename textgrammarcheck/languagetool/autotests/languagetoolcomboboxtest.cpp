@@ -18,3 +18,5 @@ void LanguageToolComboBoxTest::shouldHaveDefaultValue()
     TextGrammarCheck::LanguageToolComboBox w;
     QCOMPARE(w.count(), 30);
 }
+
+#include "moc_languagetoolcomboboxtest.cpp"

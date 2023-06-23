@@ -157,3 +157,5 @@ QString YandexEnginePlugin::languageCode(const QString &langStr)
     }
     return langStr;
 }
+
+#include "moc_yandexengineplugin.cpp"

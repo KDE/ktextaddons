@@ -50,3 +50,5 @@ void GrammalecteUrlRequesterWidget::setPlaceholderText(const QString &text)
 {
     mLineEdit->setPlaceholderText(text);
 }
+
+#include "moc_grammalecteurlrequesterwidget.cpp"

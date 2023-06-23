@@ -80,3 +80,5 @@ void LanguageToolResultWidget::addExtraWidget()
     mExtraWidgetLayout->addLayout(extraWidgetLayout);
     connect(recheckBtn, &QToolButton::clicked, this, &LanguageToolResultWidget::checkAgain);
 }
+
+#include "moc_languagetoolresultwidget.cpp"

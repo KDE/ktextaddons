@@ -92,3 +92,5 @@ void LanguageToolGetListOfLanguageJob::setUrl(const QString &url)
 {
     mUrl = url;
 }
+
+#include "moc_languagetoolgetlistoflanguagejob.cpp"

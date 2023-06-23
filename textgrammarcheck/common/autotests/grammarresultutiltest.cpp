@@ -319,3 +319,5 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
         QTest::newRow("error3") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
 }
+
+#include "moc_grammarresultutiltest.cpp"

@@ -84,3 +84,5 @@ void GrammalecteWidget::slotResultFinished(const QString &result)
     const QJsonObject fields = doc.object();
     mResultWidget->applyGrammarResult(parser.parseResult(fields));
 }
+
+#include "moc_grammalectewidget.cpp"

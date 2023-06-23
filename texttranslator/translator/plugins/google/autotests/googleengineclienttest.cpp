@@ -23,3 +23,5 @@ void GoogleEngineClientTest::shouldHaveDefaultValues()
     QVERIFY(!client.supportedLanguages().isEmpty());
     QVERIFY(!client.hasConfigurationDialog());
 }
+
+#include "moc_googleengineclienttest.cpp"

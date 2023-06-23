@@ -175,3 +175,5 @@ QLocale TextToSpeech::locale() const
 {
     return d->mTextToSpeech->locale();
 }
+
+#include "moc_texttospeech.cpp"

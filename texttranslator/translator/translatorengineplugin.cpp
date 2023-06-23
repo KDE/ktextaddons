@@ -120,3 +120,5 @@ QString TranslatorEnginePlugin::languageCode(const QString &langStr)
 {
     return langStr;
 }
+
+#include "moc_translatorengineplugin.cpp"

@@ -41,3 +41,5 @@ void LibreTranslateEngineConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mRequiredApiKey);
     QVERIFY(!mRequiredApiKey->isChecked());
 }
+
+#include "moc_libretranslateengineconfigurewidgettest.cpp"

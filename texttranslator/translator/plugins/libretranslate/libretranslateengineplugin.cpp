@@ -124,3 +124,5 @@ void LibreTranslateEnginePlugin::slotApiKeyRead(QKeychain::Job *baseJob)
         qCWarning(TRANSLATOR_LIBRETRANSLATE_LOG) << "We have an error during reading password " << job->errorString();
     }
 }
+
+#include "moc_libretranslateengineplugin.cpp"

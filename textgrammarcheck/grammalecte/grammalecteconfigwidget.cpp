@@ -162,3 +162,5 @@ void GrammalecteConfigWidget::saveSettings()
     GrammalecteManager::self()->setOptions(result);
     GrammalecteManager::self()->saveSettings();
 }
+
+#include "moc_grammalecteconfigwidget.cpp"

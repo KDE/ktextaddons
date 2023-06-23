@@ -117,3 +117,5 @@ void TranslatorDebugDialog::slotSaveAs()
     const QString filter = i18n("All Files (*)");
     saveTextAs(mEdit->toPlainText(), filter, this);
 }
+
+#include "moc_translatordebugdialog.cpp"

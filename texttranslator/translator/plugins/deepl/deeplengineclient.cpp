@@ -133,3 +133,5 @@ void DeeplEngineClient::slotPasswordWritten(QKeychain::Job *baseJob)
         qCWarning(TRANSLATOR_DEEPL_LOG) << "Error writing password using QKeychain:" << baseJob->errorString();
     }
 }
+
+#include "moc_deeplengineclient.cpp"

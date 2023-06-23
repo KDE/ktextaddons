@@ -32,3 +32,5 @@ void LanguageToolGetListOfLanguageJobTest::shouldBeAbleToStart()
     job.setNetworkAccessManager(&network);
     QVERIFY(job.canStart());
 }
+
+#include "moc_languagetoolgetlistoflanguagejobtest.cpp"

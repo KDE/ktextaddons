@@ -73,3 +73,5 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport_data()
     QTest::addColumn<QString>("filename");
     QTest::newRow("disable") << QStringLiteral("acor_fr.dat");
 }
+
+#include "moc_importexportautocorrectionlibreofficetest.cpp"

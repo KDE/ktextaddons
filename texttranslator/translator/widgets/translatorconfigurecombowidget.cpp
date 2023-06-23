@@ -79,3 +79,5 @@ void TranslatorConfigureComboWidget::save()
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
     groupTranslate.writeEntry(TranslatorUtil::engineTranslateName(), engine);
 }
+
+#include "moc_translatorconfigurecombowidget.cpp"

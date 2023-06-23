@@ -22,3 +22,5 @@ void GrammarResultTextEditTest::shouldHaveDefaultValue()
     QVERIFY(w.isReadOnly());
     QVERIFY(!w.acceptRichText());
 }
+
+#include "moc_grammarresulttextedittest.cpp"

@@ -33,3 +33,5 @@ void AutoCorrectionSettingsTest::shouldHaveDefaultValues()
     QVERIFY(!settings.isReplaceDoubleQuotesByFrenchQuotes());
     QVERIFY(!settings.isAddNonBreakingSpace());
 }
+
+#include "moc_autocorrectionsettingstest.cpp"

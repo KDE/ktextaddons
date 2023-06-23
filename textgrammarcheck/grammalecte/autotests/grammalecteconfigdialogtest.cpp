@@ -32,3 +32,5 @@ void GrammalecteConfigDialogTest::shouldHaveDefaultValue()
     auto box = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));
     QVERIFY(box);
 }
+
+#include "moc_grammalecteconfigdialogtest.cpp"

@@ -20,3 +20,5 @@ void LanguageToolUpdateComboBoxTest::shouldHaveDefaultValues()
     QVERIFY(!w.languageToolCombobox());
     QVERIFY(!w.parentWidget());
 }
+
+#include "moc_languagetoolupdatecomboboxtest.cpp"

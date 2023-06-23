@@ -43,3 +43,5 @@ void LingvaEngineWidget::setServerUrl(const QString &serverUrl)
 {
     mServerUrl->setText(serverUrl);
 }
+
+#include "moc_lingvaenginewidget.cpp"

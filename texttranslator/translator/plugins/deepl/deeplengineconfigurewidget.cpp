@@ -59,3 +59,5 @@ void DeeplEngineConfigureWidget::setApiKey(const QString &key)
 {
     mApiKey->setText(key);
 }
+
+#include "moc_deeplengineconfigurewidget.cpp"

@@ -87,3 +87,5 @@ void AutoCorrectionLineEdit::keyPressEvent(QKeyEvent *e)
     }
     QPlainTextEdit::keyPressEvent(e);
 }
+
+#include "moc_autocorrectionlineedit.cpp"

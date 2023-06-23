@@ -38,3 +38,5 @@ void AbstractTextToSpeechInterface::setVolume(double value)
 void AbstractTextToSpeechInterface::reloadSettings()
 {
 }
+
+#include "moc_abstracttexttospeechinterface.cpp"

@@ -90,3 +90,5 @@ void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSetting
     // TODO change text ?
     mTextToSpeech->say(i18n("Morning, this is the test for testing settings."));
 }
+
+#include "moc_texttospeechconfiginterface.cpp"

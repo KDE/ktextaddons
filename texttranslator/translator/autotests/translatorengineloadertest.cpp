@@ -18,3 +18,5 @@ void TranslatorEngineLoaderTest::shouldHaveDefaultValues()
     TextTranslator::TranslatorEngineLoader w;
     QVERIFY(!w.translatorEngineInfos().isEmpty());
 }
+
+#include "moc_translatorengineloadertest.cpp"

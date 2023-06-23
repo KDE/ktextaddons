@@ -122,3 +122,5 @@ void TranslatorConfigureListsWidget::slotEngineChanged(const QString &engine)
         d->mToLanguageWidget->setSelectedLanguages(toLanguages);
     }
 }
+
+#include "moc_translatorconfigurelistswidget.cpp"

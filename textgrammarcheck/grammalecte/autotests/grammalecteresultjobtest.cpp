@@ -39,3 +39,5 @@ void GrammarResultJobTest::shouldBeAbleToStart()
     job.setArguments(QStringList() << QStringLiteral("ff"));
     QVERIFY(job.canStart());
 }
+
+#include "moc_grammalecteresultjobtest.cpp"

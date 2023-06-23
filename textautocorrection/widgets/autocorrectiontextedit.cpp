@@ -92,3 +92,5 @@ void AutoCorrectionTextEdit::keyPressEvent(QKeyEvent *e)
     }
     QTextEdit::keyPressEvent(e);
 }
+
+#include "moc_autocorrectiontextedit.cpp"

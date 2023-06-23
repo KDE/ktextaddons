@@ -50,3 +50,5 @@ bool GoogleEngineClient::isSupported(TextTranslator::TranslatorUtil::Language la
     }
     return true;
 }
+
+#include "moc_googleengineclient.cpp"

@@ -134,3 +134,5 @@ void TextToSpeechWidgetTest::shouldEmitStateChanged()
     QCOMPARE(spy.count(), 4);
     QCOMPARE(spy.at(3).at(0).value<TextEditTextToSpeech::TextToSpeechWidget::State>(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
 }
+
+#include "moc_texttospeechwidgettest.cpp"

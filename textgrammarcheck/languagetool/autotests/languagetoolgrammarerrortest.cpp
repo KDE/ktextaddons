@@ -54,3 +54,5 @@ void LanguageToolGrammarErrorTest::shouldParseJson()
     }
     QVERIFY(compare);
 }
+
+#include "moc_languagetoolgrammarerrortest.cpp"

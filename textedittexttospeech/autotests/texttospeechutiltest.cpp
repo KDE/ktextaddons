@@ -18,3 +18,5 @@ void TextToSpeechUtilTest::shouldHaveDefaultValues()
     QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName(), QStringLiteral("texttospeechrc"));
     QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName(), QStringLiteral("Settings"));
 }
+
+#include "moc_texttospeechutiltest.cpp"

@@ -59,3 +59,5 @@ QDebug operator<<(QDebug d, const TextEditTextToSpeech::AbstractTextToSpeechConf
     d << " localeName " << t.localeName;
     return d;
 }
+
+#include "moc_abstracttexttospeechconfiginterface.cpp"

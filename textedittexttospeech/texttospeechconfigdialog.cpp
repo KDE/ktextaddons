@@ -71,3 +71,5 @@ void TextToSpeechConfigDialog::slotAccepted()
     mTextToSpeechConfigWidget->writeConfig();
     accept();
 }
+
+#include "moc_texttospeechconfigdialog.cpp"

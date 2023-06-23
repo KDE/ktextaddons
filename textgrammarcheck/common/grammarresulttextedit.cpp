@@ -138,3 +138,5 @@ void GrammarResultTextEdit::slotReplaceWord(const TextGrammarCheck::GrammarActio
     GrammarResultUtil::replaceWord(actWithReplacement, replacementWord, document());
     Q_EMIT replaceText(actWithReplacement);
 }
+
+#include "moc_grammarresulttextedit.cpp"

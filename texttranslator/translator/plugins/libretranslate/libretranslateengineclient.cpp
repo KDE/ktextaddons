@@ -149,3 +149,5 @@ bool LibreTranslateEngineClient::isSupported(TextTranslator::TranslatorUtil::Lan
     }
     return true;
 }
+
+#include "moc_libretranslateengineclient.cpp"

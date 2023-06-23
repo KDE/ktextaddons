@@ -41,3 +41,5 @@ void TextToSpeechContainerWidget::say(const QString &text)
     }
     d->textToSpeechWidget->say(text);
 }
+
+#include "moc_texttospeechcontainerwidget.cpp"

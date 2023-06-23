@@ -24,3 +24,5 @@ void AutoCorrectionListWidget::keyPressEvent(QKeyEvent *event)
     }
     QListWidget::keyPressEvent(event);
 }
+
+#include "moc_autocorrectionlistwidget.cpp"

@@ -97,3 +97,5 @@ void TextToSpeechActions::slotStop()
         Q_EMIT stateChanged(d->mState);
     }
 }
+
+#include "moc_texttospeechactions.cpp"

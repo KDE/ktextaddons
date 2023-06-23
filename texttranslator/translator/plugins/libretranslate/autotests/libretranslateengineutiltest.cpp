@@ -17,3 +17,5 @@ void LibreTranslateEngineUtilTest::shouldHaveDefaultValues()
     QCOMPARE(LibreTranslateEngineUtil::groupName(), QStringLiteral("LibreTranslateTranslator"));
     QCOMPARE(LibreTranslateEngineUtil::serverUrlKey(), QStringLiteral("ServerUrl"));
 }
+
+#include "moc_libretranslateengineutiltest.cpp"

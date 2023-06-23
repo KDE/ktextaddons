@@ -155,3 +155,5 @@ void GrammalecteResultJob::setText(const QString &text)
 {
     mText = text;
 }
+
+#include "moc_grammalecteresultjob.cpp"

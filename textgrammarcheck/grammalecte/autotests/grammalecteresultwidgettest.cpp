@@ -32,3 +32,5 @@ void GrammarResultWidgetTest::shouldHaveDefaultValue()
     QVERIFY(!closeBtn->icon().isNull());
     QVERIFY(!closeBtn->toolTip().isEmpty());
 }
+
+#include "moc_grammalecteresultwidgettest.cpp"

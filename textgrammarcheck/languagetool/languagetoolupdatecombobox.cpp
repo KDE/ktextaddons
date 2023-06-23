@@ -84,3 +84,5 @@ void LanguageToolUpdateComboBox::slotGetLanguagesFinished(const QString &result)
     mLanguageToolCombobox->setLanguage(LanguageToolManager::self()->language());
     mBListWasLoaded = true;
 }
+
+#include "moc_languagetoolupdatecombobox.cpp"

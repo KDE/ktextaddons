@@ -29,3 +29,5 @@ QNetworkAccessManager *TranslatorEngineAccessManager::networkManager()
 {
     return mNetworkAccessManager;
 }
+
+#include "moc_translatorengineaccessmanager.cpp"

@@ -42,3 +42,5 @@ void LanguageToolResultJobTest::shouldBeAbleToStart()
     job.setText(QStringLiteral(" DDDD"));
     QVERIFY(job.canStart());
 }
+
+#include "moc_languagetoolresultjobtest.cpp"

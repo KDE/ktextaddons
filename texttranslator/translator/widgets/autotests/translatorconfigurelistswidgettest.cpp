@@ -34,3 +34,5 @@ void TranslatorConfigureListsWidgetTest::shouldHaveDefaultValues()
     auto mToLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mToLanguageWidget"));
     QVERIFY(mToLanguageWidget);
 }
+
+#include "moc_translatorconfigurelistswidgettest.cpp"

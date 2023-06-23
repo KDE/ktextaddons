@@ -33,3 +33,5 @@ void DeeplEngineConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mApiKey);
     QVERIFY(mApiKey->isClearButtonEnabled());
 }
+
+#include "moc_deeplengineconfigurewidgettest.cpp"

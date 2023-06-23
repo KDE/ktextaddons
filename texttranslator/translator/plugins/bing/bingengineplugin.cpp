@@ -176,3 +176,5 @@ QString BingEnginePlugin::languageCode(const QString &langStr)
     }
     return langStr;
 }
+
+#include "moc_bingengineplugin.cpp"

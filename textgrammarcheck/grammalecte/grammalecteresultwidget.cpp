@@ -73,3 +73,5 @@ void GrammalecteResultWidget::slotError(GrammalecteResultJob::ErrorType error)
         KMessageBox::error(this, str, i18n("Grammalecte error"));
     }
 }
+
+#include "moc_grammalecteresultwidget.cpp"

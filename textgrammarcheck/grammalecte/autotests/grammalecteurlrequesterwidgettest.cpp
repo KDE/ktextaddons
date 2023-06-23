@@ -33,3 +33,5 @@ void GrammalecteUrlRequesterWidgetTest::shouldHaveDefaultValues()
     QVERIFY(selectUrlButton);
     QVERIFY(!selectUrlButton->text().isEmpty());
 }
+
+#include "moc_grammalecteurlrequesterwidgettest.cpp"

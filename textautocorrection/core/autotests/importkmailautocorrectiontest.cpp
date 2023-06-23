@@ -51,3 +51,5 @@ void ImportKMailAutocorrectionTest::shouldLoadFile()
     const auto resultAutocorrectEntries = import.autocorrectEntries();
     QCOMPARE(resultAutocorrectEntries.count(), 1221);
 }
+
+#include "moc_importkmailautocorrectiontest.cpp"

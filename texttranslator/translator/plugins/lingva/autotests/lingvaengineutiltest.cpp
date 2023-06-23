@@ -17,3 +17,5 @@ void LingvaEngineUtilTest::shouldHaveDefaultValues()
     QCOMPARE(LingvaEngineUtil::groupName(), QStringLiteral("LingvaTranslator"));
     QCOMPARE(LingvaEngineUtil::serverUrlKey(), QStringLiteral("ServerUrl"));
 }
+
+#include "moc_lingvaengineutiltest.cpp"

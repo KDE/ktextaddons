@@ -23,3 +23,5 @@ void LingvaEngineClientTest::shouldHaveDefaultValues()
     QVERIFY(!client.supportedLanguages().isEmpty());
     QVERIFY(client.hasConfigurationDialog());
 }
+
+#include "moc_lingvaengineclienttest.cpp"

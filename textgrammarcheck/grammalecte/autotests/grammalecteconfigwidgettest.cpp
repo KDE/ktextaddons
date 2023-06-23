@@ -66,3 +66,5 @@ void GrammalecteConfigWidgetTest::shouldHaveDefaultValue()
     QVERIFY(buttonReloadSettings);
     QVERIFY(!buttonReloadSettings->icon().isNull());
 }
+
+#include "moc_grammalecteconfigwidgettest.cpp"

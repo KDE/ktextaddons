@@ -23,3 +23,5 @@ void YandexEngineClientTest::shouldHaveDefaultValues()
     QVERIFY(!client.supportedLanguages().isEmpty());
     QVERIFY(!client.hasConfigurationDialog());
 }
+
+#include "moc_yandexengineclienttest.cpp"

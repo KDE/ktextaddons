@@ -24,3 +24,5 @@ void TranslatorMenuTest::shouldHaveDefaultValues()
     QVERIFY(w.isEmpty());
     QVERIFY(!w.menu()->title().isEmpty());
 }
+
+#include "moc_translatormenutest.cpp"

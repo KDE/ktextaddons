@@ -23,3 +23,5 @@ void DeeplEngineClientTest::shouldHaveDefaultValues()
     QVERIFY(!client.supportedLanguages().isEmpty());
     QVERIFY(client.hasConfigurationDialog());
 }
+
+#include "moc_deeplengineclienttest.cpp"

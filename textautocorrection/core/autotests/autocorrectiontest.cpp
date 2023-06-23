@@ -754,3 +754,5 @@ void AutoCorrectionTest::shouldAutoFormatURLs()
     //    QCOMPARE(charFormat.font().bold(), true);
     //    QCOMPARE(charFormat.font().strikeOut(), false);
 }
+
+#include "moc_autocorrectiontest.cpp"

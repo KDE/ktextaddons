@@ -32,3 +32,5 @@ void TranslatorConfigureComboWidgetTest::shouldHaveDefaultValues()
 
     QVERIFY(!mConfigureEngine->isEnabled());
 }
+
+#include "moc_translatorconfigurecombowidgettest.cpp"

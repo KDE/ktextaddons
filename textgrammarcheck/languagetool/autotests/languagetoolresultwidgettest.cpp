@@ -25,3 +25,5 @@ void LanguageToolResultWidgetTest::shouldHaveDefaultValue()
     auto mResult = w.findChild<TextGrammarCheck::GrammarResultTextEdit *>(QStringLiteral("grammarResult"));
     QVERIFY(mResult);
 }
+
+#include "moc_languagetoolresultwidgettest.cpp"

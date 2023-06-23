@@ -139,3 +139,5 @@ QString TranslatorEngineLoader::fallbackFirstEngine() const
     qCWarning(TEXTTRANSLATOR_LOG) << "No plugin found ! ";
     return QString();
 }
+
+#include "moc_translatorengineloader.cpp"

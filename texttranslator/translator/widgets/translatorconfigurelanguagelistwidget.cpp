@@ -92,3 +92,5 @@ void TranslatorConfigureLanguageListWidget::setSelectedLanguages(const QStringLi
         item->setCheckState(list.contains(item->data(LanguageCode).toString()) ? Qt::Checked : Qt::Unchecked);
     }
 }
+
+#include "moc_translatorconfigurelanguagelistwidget.cpp"

@@ -58,3 +58,5 @@ void GrammarResultWidget::applyGrammarResult(const QVector<GrammarError> &infos)
 {
     mResult->applyGrammarResult(infos);
 }
+
+#include "moc_grammarresultwidget.cpp"

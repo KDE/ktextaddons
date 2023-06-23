@@ -131,3 +131,5 @@ QString DeeplEnginePlugin::languageCode(const QString &langStr)
     }
     return langStr;
 }
+
+#include "moc_deeplengineplugin.cpp"
