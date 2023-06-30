@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-04-25 00:49+0000\n"
+"PO-Revision-Date: 2023-06-29 08:00+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: core/unicodeemoticonmanager.cpp:42
+#, kde-format
+msgid "Symbols"
+msgstr "სიმბოლოები"
+
+#: core/unicodeemoticonmanager.cpp:44
+#, kde-format
+msgid "Activity"
+msgstr "აქტივობა"
+
+#: core/unicodeemoticonmanager.cpp:46
+#, kde-format
+msgid "Objects"
+msgstr "ობიექტები"
+
+#: core/unicodeemoticonmanager.cpp:48
+#, kde-format
+msgid "Nature"
+msgstr "ბუნება"
+
+#: core/unicodeemoticonmanager.cpp:50
+#, kde-format
+msgid "Food"
+msgstr "საჭმელი"
+
+#: core/unicodeemoticonmanager.cpp:52
+#, kde-format
+msgid "People"
+msgstr "ხალხი"
+
+#: core/unicodeemoticonmanager.cpp:54
+#, kde-format
+msgid "Travel"
+msgstr "მოგზაურობა"
+
+#: core/unicodeemoticonmanager.cpp:56
+#, kde-format
+msgid "Regional"
+msgstr "რეგიონალური"
+
+#: core/unicodeemoticonmanager.cpp:58
+#, kde-format
+msgid "Flags"
+msgstr "ალმები"
+
+#: widgets/emoticoncategorybuttons.cpp:82
+#, kde-format
+msgctxt "Previously used emojis"
+msgid "History"
+msgstr "ისტორია"
+
+#: widgets/emoticoncategorybuttons.cpp:84
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
+msgstr "ხელით მითითება"
+
+#: widgets/emoticonlistview.cpp:107
+#, kde-format
+msgid "Clear Recents"
+msgstr "უახლესების გასუფთავება"
+
+#: widgets/emoticontexteditaction.cpp:54
+#, kde-format
+msgid "Add Smiley"
+msgstr "სიცილაკის დამატება"
+
+#: widgets/emoticontexteditselector.cpp:83
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "ემოციის მოძებნა..."
