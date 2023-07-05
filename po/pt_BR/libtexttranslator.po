@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-14 02:31+0000\n"
-"PO-Revision-Date: 2023-06-07 13:58-0300\n"
+"PO-Revision-Date: 2023-07-04 11:14-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -330,23 +330,24 @@ msgstr "Bing"
 #: translator/plugins/bing/bingengineplugin.cpp:57
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "Erro: Não foi possível encontrar as credenciais do Bing na versão web."
 
 #: translator/plugins/bing/bingengineplugin.cpp:65
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "Erro: Não foi possível extrair a chave do Bing da versão web."
 
 #: translator/plugins/bing/bingengineplugin.cpp:74
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Erro: Não foi possível extrair o token do Bing da versão web."
 
 #: translator/plugins/bing/bingengineplugin.cpp:83
 #: translator/plugins/bing/bingengineplugin.cpp:92
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
+"Erro: Não foi possível extrair informações adicionais do Bing da versão web."
 
 #: translator/plugins/deepl/deeplengineclient.cpp:37
 #, kde-format
@@ -359,12 +360,12 @@ msgstr "DeepL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr ""
+msgstr "Configurar mecanismo"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
-msgstr ""
+msgstr "Usar chave de licença gratuita"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
@@ -376,7 +377,7 @@ msgstr "Chave da API:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
 #, kde-format
 msgid "Server needs Api Key."
-msgstr ""
+msgstr "O servidor necessita da chave da API."
 
 #: translator/plugins/google/googleengineclient.cpp:26
 #, kde-format
@@ -386,12 +387,12 @@ msgstr "Google"
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
 msgid "Libre Translate"
-msgstr ""
+msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "O servidor solicitou a chave da API"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
 #: translator/plugins/lingva/lingvaenginewidget.cpp:23
@@ -402,7 +403,7 @@ msgstr "URL do servidor:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server url is not defined."
-msgstr ""
+msgstr "A URL do servidor não está definida."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
@@ -421,27 +422,29 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Erro: Os sistemas do mecanismo detectaram tráfego suspeito da sua rede de "
+"computador. Tente sua solicitação novamente mais tarde."
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:63
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Erro: Não foi possível encontrar o SID Yandex na versão web."
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:71
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Erro: Não foi possível extrair o SID Yandex da versão web."
 
 #: translator/translatorengineplugin.cpp:108
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
-msgstr ""
+msgstr "Você usou o mesmo idioma em 'de' e 'para'."
 
 #: translator/widgets/translatorconfiguredialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr ""
+msgstr "Configurar o tradutor"
 
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
@@ -468,7 +471,7 @@ msgstr "Mecanismo:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
-msgstr ""
+msgstr "Depurar o tradutor"
 
 #: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
@@ -502,7 +505,7 @@ msgstr "Traduzir..."
 #: translator/widgets/translatorwidget.cpp:133
 #, kde-format
 msgid "Problem when connecting to the translator web site."
-msgstr ""
+msgstr "Problema ao conectar ao site do tradutor."
 
 #: translator/widgets/translatorwidget.cpp:236
 #: translator/widgets/translatorwidget.cpp:239
@@ -556,18 +559,20 @@ msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "Google Server)."
 msgstr ""
+"Arraste o texto que deseja traduzir. (Cuidado, o texto será enviado para o "
+"servidor do Google)."
 
 #: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
-msgstr ""
+msgstr "Nenhuma conexão de rede detectada, não podemos traduzir textos."
 
 #: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network"
-msgstr ""
+msgstr "Sem rede"
 
 #: translator/widgets/translatorwidget.cpp:455
 #, kde-format
 msgid "Translate error"
-msgstr ""
+msgstr "Erro de tradução"
