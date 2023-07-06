@@ -1,0 +1,99 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-29 00:46+0000\n"
+"PO-Revision-Date: 2023-07-05 17:58-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: texttospeechactions.cpp:28 texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "Parar"
+
+#: texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "Pausar"
+
+#: texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "Reproduzir"
+
+#: texttospeechconfigdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "Configurar o sintetizador de voz"
+
+#: texttospeechconfiginterface.cpp:91
+#, kde-format
+msgid "Morning, this is the test for testing settings."
+msgstr "Bom dia, este é o teste para testar as configurações."
+
+#: texttospeechconfigwidget.cpp:33
+#, kde-format
+msgid "Test"
+msgstr "Testar"
+
+#: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
+#, kde-format
+msgid "Volume:"
+msgstr "Volume:"
+
+#: texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Rate:"
+msgstr "Taxa:"
+
+#: texttospeechconfigwidget.cpp:50
+#, kde-format
+msgid "Pitch:"
+msgstr "Timbre:"
+
+#: texttospeechconfigwidget.cpp:53
+#, kde-format
+msgid "Engine:"
+msgstr "Mecanismo:"
+
+#: texttospeechconfigwidget.cpp:57
+#, kde-format
+msgid "Language:"
+msgstr "Idioma:"
+
+#: texttospeechconfigwidget.cpp:61
+#, kde-format
+msgid "Voice:"
+msgstr "Voz:"
+
+#: texttospeechwidget.cpp:54
+#, kde-format
+msgid "Close"
+msgstr "Fechar"
+
+#: texttospeechwidget.cpp:80
+#, kde-format
+msgid "Configure..."
+msgstr "Configurar..."
+
+#: texttospeechwidget.cpp:132
+#, kde-format
+msgid "Engine has a problem."
+msgstr "O mecanismo está com problema."
+
+#: texttospeechwidget.cpp:132
+#, kde-format
+msgid "Text To Speech"
+msgstr "Sintetizador de voz"
