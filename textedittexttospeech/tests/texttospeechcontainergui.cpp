@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechcontainergui.h"
-#include "texttospeech.h"
 #include "texttospeechcontainerwidget.h"
 #include <KLocalizedString>
 #include <QAction>
