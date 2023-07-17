@@ -127,24 +127,7 @@ if (BUILD_QCH)
 set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechQchTargets.cmake\")")
 endif()
 
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEditTextToSpeechConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-    )
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechConfigVersion.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-    )
-
-install(EXPORT KF${KF_MAJOR_VERSION}TextEditTextToSpeechTargets
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF${KF_MAJOR_VERSION}TextEditTextToSpeechTargets.cmake
-    NAMESPACE KF${KF_MAJOR_VERSION}::
-    )
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h
@@ -179,3 +162,22 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
 endif()
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEditTextToSpeechConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEditTextToSpeechConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+    )
+
+install(EXPORT KF${KF_MAJOR_VERSION}TextEditTextToSpeechTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF${KF_MAJOR_VERSION}TextEditTextToSpeechTargets.cmake
+    NAMESPACE KF${KF_MAJOR_VERSION}::
+    )
