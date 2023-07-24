@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2019, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2022-09-25 10:04+0200\n"
+"PO-Revision-Date: 2023-07-24 11:48+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -131,10 +131,9 @@ msgid "Grammalecte error"
 msgstr "Fel i Grammalecte"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Grammalecte Path:"
+#, kde-format
 msgid "Select Path"
-msgstr "Sökväg till Grammalecte:"
+msgstr "Välj sökväg"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
