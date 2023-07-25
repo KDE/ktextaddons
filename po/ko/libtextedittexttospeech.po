@@ -1,0 +1,99 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# Shinjo Park <kde@peremen.name>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-04-14 02:31+0000\n"
+"PO-Revision-Date: 2023-07-25 01:02+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: texttospeechactions.cpp:28 texttospeechactions.cpp:31
+#, kde-format
+msgid "Stop"
+msgstr "정지"
+
+#: texttospeechactions.cpp:72
+#, kde-format
+msgid "Pause"
+msgstr "일시 정지"
+
+#: texttospeechactions.cpp:72
+#, kde-format
+msgid "Play"
+msgstr "재생"
+
+#: texttospeechconfigdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Text-To-Speech"
+msgstr "텍스트 말하기 설정"
+
+#: texttospeechconfiginterface.cpp:91
+#, kde-format
+msgid "Morning, this is the test for testing settings."
+msgstr "안녕하세요. 이것은 설정을 시험하는 메시지입니다."
+
+#: texttospeechconfigwidget.cpp:33
+#, kde-format
+msgid "Test"
+msgstr "시험"
+
+#: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
+#, kde-format
+msgid "Volume:"
+msgstr "음량:"
+
+#: texttospeechconfigwidget.cpp:44
+#, kde-format
+msgid "Rate:"
+msgstr "속도:"
+
+#: texttospeechconfigwidget.cpp:50
+#, kde-format
+msgid "Pitch:"
+msgstr "높이:"
+
+#: texttospeechconfigwidget.cpp:53
+#, kde-format
+msgid "Engine:"
+msgstr "엔진:"
+
+#: texttospeechconfigwidget.cpp:57
+#, kde-format
+msgid "Language:"
+msgstr "언어:"
+
+#: texttospeechconfigwidget.cpp:61
+#, kde-format
+msgid "Voice:"
+msgstr "음성:"
+
+#: texttospeechwidget.cpp:54
+#, kde-format
+msgid "Close"
+msgstr "닫기"
+
+#: texttospeechwidget.cpp:80
+#, kde-format
+msgid "Configure..."
+msgstr "설정..."
+
+#: texttospeechwidget.cpp:132
+#, kde-format
+msgid "Engine has a problem."
+msgstr "엔진에 문제가 발생했습니다."
+
+#: texttospeechwidget.cpp:132
+#, kde-format
+msgid "Text To Speech"
+msgstr "텍스트 읽어주기"
