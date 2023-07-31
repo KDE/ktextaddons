@@ -26,7 +26,9 @@ libraries:
  - qmake: TextEmoticonsCore
    cmake: "KF5::TextEmoticonsCore"
  - qmake: TextEmoticonsWidgets
-   cmake: "KF5::TextEmoticonsWidgets"     
+   cmake: "KF5::TextEmoticonsWidgets"
+ - qmake: TextUtils
+   cmake: "KF5::TextUtils"
 cmakename: KF5TextEditTextToSpeech
 
 public_lib: true

@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(KF_VERSION "5.102.0") # handled by release scripts
 set(KF_DEP_VERSION "5.101.0") # handled by release scripts
-set(KTEXTADDONS_CURRENT_VERSION "1.3.41")
+set(KTEXTADDONS_CURRENT_VERSION "1.3.50")
 #project(KTextAddons VERSION ${KF_VERSION})
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
@@ -87,6 +87,7 @@ add_subdirectory(textautocorrection)
 add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
 add_subdirectory(textemoticons)
+add_subdirectory(textutils)
 
 find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
