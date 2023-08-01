@@ -28,4 +28,8 @@ void ConvertTextTest::shouldHaveDefaultValues()
         const QString str(QStringLiteral("téléphone"));
         QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("telephone"));
     }
+    {
+        const QString str(QStringLiteral("noël"));
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("noel"));
+    }
 }
