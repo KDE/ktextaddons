@@ -16,8 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-POFile-SpellExtra: Online Grammalecte grammalected grammalecte cli py\n"
-"X-POFile-SpellExtra: Khmer Tagalog LanguageTool\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
