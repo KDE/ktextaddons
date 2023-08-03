@@ -5,9 +5,11 @@
 */
 
 #include "bergamotengineclient.h"
+#include "begamotenginedialog.h"
 #include "bergamotengineplugin.h"
 #include "translator/misc/translatorutil.h"
 #include <KLocalizedString>
+#include <QPointer>
 
 BergamotEngineClient::BergamotEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
@@ -46,18 +48,16 @@ bool BergamotEngineClient::hasConfigurationDialog() const
 
 void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
-    // TODO
+    QPointer<BegamotEngineDialog> dlg = new BegamotEngineDialog(parentWidget);
+    if (dlg->exec()) {
+        // TODO
+    }
+    delete dlg;
 }
 
 bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
-    switch (lang) {
-    case TextTranslator::TranslatorUtil::ka:
-    case TextTranslator::TranslatorUtil::tl:
-        return false;
-    default:
-        break;
-    }
+    // TODO
     return true;
 }
 
