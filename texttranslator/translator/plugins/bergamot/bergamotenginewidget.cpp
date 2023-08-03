@@ -17,3 +17,5 @@ BergamotEngineWidget::BergamotEngineWidget(QWidget *parent)
 }
 
 BergamotEngineWidget::~BergamotEngineWidget() = default;
+
+#include "moc_bergamotenginewidget.cpp"

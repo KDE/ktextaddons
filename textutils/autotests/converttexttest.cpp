@@ -33,3 +33,5 @@ void ConvertTextTest::shouldHaveDefaultValues()
         QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("noel"));
     }
 }
+
+#include "moc_converttexttest.cpp"

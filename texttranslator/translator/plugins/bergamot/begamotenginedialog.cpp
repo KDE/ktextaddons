@@ -12,3 +12,5 @@ BegamotEngineDialog::BegamotEngineDialog(QWidget *parent)
 }
 
 BegamotEngineDialog::~BegamotEngineDialog() = default;
+
+#include "moc_begamotenginedialog.cpp"

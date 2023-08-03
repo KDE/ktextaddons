@@ -12,3 +12,5 @@ ManagerModelTranslator::ManagerModelTranslator(QObject *parent)
 }
 
 ManagerModelTranslator::~ManagerModelTranslator() = default;
+
+#include "moc_managermodeltranslator.cpp"
