@@ -7,11 +7,14 @@
 
 #include "libbergamot_export.h"
 #include <QDialog>
-
+class BergamotEngineWidget;
 class LIBBERGAMOT_EXPORT BegamotEngineDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit BegamotEngineDialog(QWidget *parent = nullptr);
     ~BegamotEngineDialog() override;
+
+private:
+    BergamotEngineWidget *const mBergamotEngineWidget;
 };
