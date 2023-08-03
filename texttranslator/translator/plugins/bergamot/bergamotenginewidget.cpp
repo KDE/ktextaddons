@@ -11,6 +11,9 @@
 BergamotEngineWidget::BergamotEngineWidget(QWidget *parent)
     : QWidget{parent}
 {
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins({});
 }
 
 BergamotEngineWidget::~BergamotEngineWidget() = default;

@@ -5,9 +5,10 @@
 */
 #pragma once
 
+#include "libbergamot_export.h"
 #include <QDialog>
 
-class BegamotEngineDialog : public QDialog
+class LIBBERGAMOT_EXPORT BegamotEngineDialog : public QDialog
 {
     Q_OBJECT
 public:

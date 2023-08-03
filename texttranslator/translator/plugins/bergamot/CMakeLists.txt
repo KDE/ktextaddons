@@ -10,6 +10,7 @@ target_sources(libbergamot PRIVATE
     bergamotenginewidget.h
     bergamotenginewidget.cpp
 
+    libbergamot_private_export.h
 )
 
 generate_export_header(libbergamot BASE_NAME libbergamot)

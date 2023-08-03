@@ -5,10 +5,10 @@
 */
 
 #pragma once
-
+#include "libbergamot_private_export.h"
 #include <QWidget>
 
-class BergamotEngineWidget : public QWidget
+class LIBBERGAMOT_TESTS_EXPORT BergamotEngineWidget : public QWidget
 {
     Q_OBJECT
 public:
