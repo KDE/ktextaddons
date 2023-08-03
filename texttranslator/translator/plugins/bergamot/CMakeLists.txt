@@ -10,6 +10,9 @@ target_sources(libbergamot PRIVATE
     bergamotenginewidget.h
     bergamotenginewidget.cpp
 
+    managermodeltranslator.h
+    managermodeltranslator.cpp
+
     libbergamot_private_export.h
 )
 
