@@ -2,9 +2,11 @@
 # SPDX-FileCopyrightText: none
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 
-add_library(libbergamot)
+add_library(libbergamot
+    translatormodel.h translatormodel.cpp)
 
 target_sources(libbergamot PRIVATE
+
     begamotenginedialog.h
     begamotenginedialog.cpp
     bergamotenginewidget.h
@@ -12,6 +14,11 @@ target_sources(libbergamot PRIVATE
 
     managermodeltranslator.h
     managermodeltranslator.cpp
+    translator.h
+    translator.cpp
+
+    bergamotutils.h
+    bergamotutils.cpp
 
     libbergamot_private_export.h
 )
@@ -21,8 +28,7 @@ generate_export_header(libbergamot BASE_NAME libbergamot)
 ecm_qt_declare_logging_category(libbergamot HEADER libbergamot_debug.h IDENTIFIER TRANSLATOR_LIBBERGAMOT_LOG
     CATEGORY_NAME org.kde.ruqola DESCRIPTION "lib bergamot translator" EXPORT KTEXTADDONS)
 
-target_link_libraries(libbergamot  Qt::Widgets KF${KF_MAJOR_VERSION}::I18n
-)
+target_link_libraries(libbergamot  Qt::Widgets KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::TextTranslator)
 
 set_target_properties(libbergamot
     PROPERTIES OUTPUT_NAME ruqolacore VERSION ${TEXTTRANSLATE_VERSION} SOVERSION ${TEXTTRANSLATE_SOVERSION}
