@@ -17,8 +17,8 @@ target_sources(libbergamot PRIVATE
     translator.h
     translator.cpp
 
-    bergamotutils.h
-    bergamotutils.cpp
+    bergamotengineutils.h
+    bergamotengineutils.cpp
 
     libbergamot_private_export.h
 )

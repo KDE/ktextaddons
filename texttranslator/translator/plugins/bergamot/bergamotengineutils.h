@@ -7,7 +7,7 @@
 #include "libbergamot_export.h"
 #include <QString>
 
-namespace BergamotUtils
+namespace BergamotEngineUtils
 {
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString defaultBergamotRepository();
 };

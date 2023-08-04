@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class BergamotUtilsTest : public QObject
+class BergamotEngineUtilsTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit BergamotUtilsTest(QObject *parent = nullptr);
-    ~BergamotUtilsTest() override = default;
+    explicit BergamotEngineUtilsTest(QObject *parent = nullptr);
+    ~BergamotEngineUtilsTest() override = default;
 private Q_SLOTS:
     void shouldDefaultBergamotRepository();
 };

@@ -4,9 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "bergamotutils.h"
+#include "bergamotengineutils.h"
 
-QString BergamotUtils::defaultBergamotRepository()
+QString BergamotEngineUtils::defaultBergamotRepository()
 {
     return QStringLiteral("https://translatelocally.com/models.json");
 }

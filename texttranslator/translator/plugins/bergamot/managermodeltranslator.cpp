@@ -5,8 +5,8 @@
 */
 
 #include "managermodeltranslator.h"
-#include "bergamottranslator_debug.h"
-#include "bergamotutils.h"
+#include "bergamotengineutils.h"
+#include "libbergamot_debug.h"
 #include "translator.h"
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -25,7 +25,7 @@ ManagerModelTranslator::~ManagerModelTranslator() = default;
 void ManagerModelTranslator::downloadListModels()
 {
     QNetworkReply *reply =
-        TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(QUrl(BergamotUtils::defaultBergamotRepository())));
+        TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(QUrl(BergamotEngineUtils::defaultBergamotRepository())));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         parseListModel(QJsonDocument::fromJson(reply->readAll()).object());
     });
@@ -45,7 +45,7 @@ void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
             translator.parse(translatorObject);
             // TODO
         } else {
-            qCWarning(TRANSLATOR_BERGAMOT_LOG) << " Problem during parsing";
+            qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing";
         }
     }
 }

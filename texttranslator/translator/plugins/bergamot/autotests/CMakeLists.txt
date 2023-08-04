@@ -11,5 +11,5 @@ macro(add_translator_bergamot_unittest _source)
         libbergamot
     )
 endmacro()
-add_translator_bergamot_unittest(bergamotutilstest.cpp)
+add_translator_bergamot_unittest(bergamotengineutilstest.cpp)
 add_translator_bergamot_unittest(translatortest.cpp)
