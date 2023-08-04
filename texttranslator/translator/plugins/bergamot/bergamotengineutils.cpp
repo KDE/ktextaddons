@@ -10,3 +10,8 @@ QString BergamotEngineUtils::defaultBergamotRepository()
 {
     return QStringLiteral("https://translatelocally.com/models.json");
 }
+
+QString BergamotEngineUtils::groupName()
+{
+    return QStringLiteral("BergamotTranslator");
+}
