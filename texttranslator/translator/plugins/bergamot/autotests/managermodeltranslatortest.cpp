@@ -39,3 +39,5 @@ void ManagerModelTranslatorTest::shouldParseJson()
     w.loadModelList(originalJsonFile);
     QCOMPARE(w.translators().count(), numberOfTranslator);
 }
+
+#include "moc_managermodeltranslatortest.cpp"

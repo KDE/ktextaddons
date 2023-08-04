@@ -19,3 +19,5 @@ bool TranslatorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &s
     // TODO
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
+
+#include "moc_translatorproxymodel.cpp"

@@ -6,8 +6,10 @@
 
 #include "managermodeltranslator.h"
 #include "bergamotengineutils.h"
+#include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
 #include "translator.h"
+#include <KLocalizedString>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -37,8 +39,12 @@ void ManagerModelTranslator::downloadListModels()
         parseListModel(QJsonDocument::fromJson(reply->readAll()).object());
         reply->deleteLater();
     });
-    connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
-        // TODO slotError(error);
+    connect(reply, &QNetworkReply::errorOccurred, this, [reply, this](QNetworkReply::NetworkError error) {
+        if (error == QNetworkReply::ServiceUnavailableError) {
+            Q_EMIT i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.");
+        } else {
+            Q_EMIT errorText(i18n("Impossible to access to url: %1", BergamotEngineUtils::defaultBergamotRepository()));
+        }
         reply->deleteLater();
     });
 }
@@ -82,6 +88,41 @@ QVector<Translator> ManagerModelTranslator::translators() const
 void ManagerModelTranslator::setTranslators(const QVector<Translator> &newTranslators)
 {
     mTranslators = newTranslators;
+}
+
+void ManagerModelTranslator::downloadLanguage(const QString &url)
+{
+    QUrl u(url);
+    QNetworkRequest request(u);
+    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
+    connect(reply, &QNetworkReply::errorOccurred, this, [this, reply, url](QNetworkReply::NetworkError error) {
+        if (error == QNetworkReply::ServiceUnavailableError) {
+            Q_EMIT i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.");
+        } else {
+            Q_EMIT errorText(i18n("Impossible to access to url: %1", url));
+        }
+        reply->deleteLater();
+    });
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        reply->deleteLater();
+        // parseTranslation(reply);
+    });
+}
+
+void ManagerModelTranslator::extractLanguage()
+{
+    auto extraJob = new ExtractLanguageJob(this);
+    // TODO add source/target
+    connect(extraJob, &ExtractLanguageJob::errorText, this, &ManagerModelTranslator::errorText);
+    connect(extraJob, &ExtractLanguageJob::finished, this, &ManagerModelTranslator::slotExtractDone);
+
+    extraJob->start();
+    // TODO
+}
+
+void ManagerModelTranslator::slotExtractDone()
+{
+    // TODO
 }
 
 #include "moc_managermodeltranslator.cpp"

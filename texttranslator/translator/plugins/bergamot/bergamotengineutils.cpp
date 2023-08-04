@@ -8,6 +8,7 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QStandardPaths>
 
 QString BergamotEngineUtils::defaultBergamotRepository()
 {
@@ -27,6 +28,11 @@ QString BergamotEngineUtils::coreNumberKey()
 QString BergamotEngineUtils::memoryByThreadKey()
 {
     return QStringLiteral("MemoryByThread");
+}
+
+QString BergamotEngineUtils::storageLanguagePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/translator-bergamot");
 }
 
 void BergamotEngineUtils::SettingsInfo::loadSettingsInfo()

@@ -13,6 +13,7 @@ Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString defaultBergamotRepository();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString groupName();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString coreNumberKey();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString memoryByThreadKey();
+Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString storageLanguagePath();
 struct LIBBERGAMOT_EXPORT SettingsInfo {
     void loadSettingsInfo();
     void saveSettingsInfo();
@@ -20,4 +21,5 @@ struct LIBBERGAMOT_EXPORT SettingsInfo {
     int numberOfThread = 0;
     int memoryByThread = 64;
 };
+// TODO add convert language to enum methods.
 };

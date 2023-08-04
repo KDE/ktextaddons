@@ -5,12 +5,12 @@
 */
 
 #pragma once
-
 #include "bergamotengineutils.h"
+#include "libbergamot_private_export.h"
 
 #include <QWidget>
 class QComboBox;
-class BergamotEngineSettingsWidget : public QWidget
+class LIBBERGAMOT_TESTS_EXPORT BergamotEngineSettingsWidget : public QWidget
 {
     Q_OBJECT
 public:

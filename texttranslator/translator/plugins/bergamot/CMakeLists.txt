@@ -31,6 +31,12 @@ target_sources(libbergamot PRIVATE
 
     translatorproxymodel.h
     translatorproxymodel.cpp
+
+    bergamotmarianinterface.h
+    bergamotmarianinterface.cpp
+
+    extractlanguagejob.h
+    extractlanguagejob.cpp
 )
 
 generate_export_header(libbergamot BASE_NAME libbergamot)
@@ -44,6 +50,7 @@ target_link_libraries(libbergamot  Qt::Widgets
     KF${KF_MAJOR_VERSION}::ConfigWidgets
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
     KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::Archive
 )
 
 set_target_properties(libbergamot

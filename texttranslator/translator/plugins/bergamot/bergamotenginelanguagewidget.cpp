@@ -9,6 +9,7 @@
 #include "translatormodel.h"
 #include "translatorproxymodel.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTreeView>
@@ -45,6 +46,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 #endif
 
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
+    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &BergamotEngineLanguageWidget::slotError);
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
     auto proxyModel = new TranslatorProxyModel(this);
     proxyModel->setSourceModel(mTranslatorModel);
@@ -80,6 +82,11 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
 
+void BergamotEngineLanguageWidget::slotError(const QString &str)
+{
+    KMessageBox::error(this, i18n("Error: %1", str), i18n("Bergamot"));
+}
+
 void BergamotEngineLanguageWidget::slotTextChanged(const QString &str)
 {
     // TODO
@@ -87,17 +94,26 @@ void BergamotEngineLanguageWidget::slotTextChanged(const QString &str)
 
 void BergamotEngineLanguageWidget::slotDownLoad()
 {
-    // TODO
+    // TODO ManagerModelTranslator::self()->downloadLanguage();
+    updateListModel();
 }
 
 void BergamotEngineLanguageWidget::slotDelete()
 {
     // TODO
+    // ManagerModelTranslator::self()->removeLanguage(...)
+    updateListModel();
 }
 
 void BergamotEngineLanguageWidget::slotUpdateListLanguage()
 {
-    // TODO
+    // ManagerModelTranslator::self()->downloadListModels();
+    updateListModel();
+}
+
+void BergamotEngineLanguageWidget::updateListModel()
+{
+    mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
 }
 
 #include "moc_bergamotenginelanguagewidget.cpp"
