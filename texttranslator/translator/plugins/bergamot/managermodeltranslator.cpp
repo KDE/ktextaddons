@@ -22,6 +22,12 @@ ManagerModelTranslator::ManagerModelTranslator(QObject *parent)
 
 ManagerModelTranslator::~ManagerModelTranslator() = default;
 
+ManagerModelTranslator *ManagerModelTranslator::self()
+{
+    static ManagerModelTranslator s_self;
+    return &s_self;
+}
+
 void ManagerModelTranslator::downloadListModels()
 {
     QNetworkReply *reply =

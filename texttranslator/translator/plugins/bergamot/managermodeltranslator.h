@@ -15,6 +15,8 @@ public:
     explicit ManagerModelTranslator(QObject *parent = nullptr);
     ~ManagerModelTranslator() override;
 
+    static ManagerModelTranslator *self();
+
     void downloadListModels();
 
     Q_REQUIRED_RESULT QVector<Translator> translators() const;
