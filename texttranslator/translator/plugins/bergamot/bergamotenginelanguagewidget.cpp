@@ -7,6 +7,7 @@
 #include "bergamotenginelanguagewidget.h"
 #include "managermodeltranslator.h"
 #include "translatormodel.h"
+#include "translatorproxymodel.h"
 #include <KLocalizedString>
 #include <QLineEdit>
 #include <QPushButton>
@@ -45,8 +46,11 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
-    mTreeView->setModel(mTranslatorModel);
+    auto proxyModel = new TranslatorProxyModel(this);
+    proxyModel->setSourceModel(mTranslatorModel);
+    mTreeView->setModel(proxyModel);
     mTreeView->setRootIsDecorated(false);
+    mTreeView->setSortingEnabled(true);
     vboxLayout->addWidget(mTreeView);
 
     mainLayout->addLayout(vboxLayout);
