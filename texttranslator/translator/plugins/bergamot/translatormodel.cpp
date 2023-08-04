@@ -104,3 +104,5 @@ int TranslatorModel::columnCount(const QModelIndex &parent) const
     Q_UNUSED(parent)
     return static_cast<int>(TranslatorRoles::LastColumn) + 1;
 }
+
+#include "moc_translatormodel.cpp"

@@ -18,3 +18,5 @@ void BergamotEngineWidgetTest::shouldHaveDefaultValues()
     BergamotEngineWidget w;
     // TODO
 }
+
+#include "moc_bergamotenginewidgettest.cpp"

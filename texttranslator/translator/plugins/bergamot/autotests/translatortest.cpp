@@ -27,3 +27,5 @@ void TranslatorTest::shouldHaveDefaultValues()
     QCOMPARE(w.version(), -1);
     QCOMPARE(w.api(), -1);
 }
+
+#include "moc_translatortest.cpp"

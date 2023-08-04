@@ -22,3 +22,5 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
+
+#include "moc_bergamotenginelanguagewidget.cpp"

@@ -18,3 +18,5 @@ void BergamotEngineLanguageWidgetTest::shouldHaveDefaultValues()
 
     // TODO
 }
+
+#include "moc_bergamotenginelanguagewidgettest.cpp"
