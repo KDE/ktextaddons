@@ -8,24 +8,48 @@
 #include "managermodeltranslator.h"
 #include "translatormodel.h"
 #include <KLocalizedString>
+#include <QLineEdit>
 #include <QPushButton>
 #include <QTreeView>
 #include <QVBoxLayout>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
+#include <TextAddonsWidgets/LineEditCatchReturnKey>
+#else
+#include <KLineEditEventHandler>
+#endif
+
 BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}
     , mTreeView(new QTreeView(this))
+    , mSearchLineEdit(new QLineEdit(this))
     , mTranslatorModel(new TranslatorModel(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
+    auto vboxLayout = new QVBoxLayout;
+    vboxLayout->setObjectName(QStringLiteral("vboxLayout"));
+    vboxLayout->setContentsMargins({});
+
+    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    vboxLayout->addWidget(mSearchLineEdit);
+    mSearchLineEdit->setPlaceholderText(i18n("Search..."));
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
+    new TextAddonsWidgets::LineEditCatchReturnKey(mSearchLineEdit, this);
+#else
+    KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
+#endif
+
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
     mTreeView->setModel(mTranslatorModel);
     mTreeView->setRootIsDecorated(false);
-    mainLayout->addWidget(mTreeView);
+    vboxLayout->addWidget(mTreeView);
+
+    mainLayout->addLayout(vboxLayout);
 
     auto buttonLayout = new QVBoxLayout;
     buttonLayout->setObjectName(QStringLiteral("buttonLayout"));
