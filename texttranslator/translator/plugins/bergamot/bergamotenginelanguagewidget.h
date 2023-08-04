@@ -7,7 +7,7 @@
 #include "libbergamot_private_export.h"
 #include <QWidget>
 class QTreeView;
-
+class TranslatorModel;
 class LIBBERGAMOT_TESTS_EXPORT BergamotEngineLanguageWidget : public QWidget
 {
     Q_OBJECT
@@ -17,4 +17,5 @@ public:
 
 private:
     QTreeView *const mTreeView;
+    TranslatorModel *const mTranslatorModel;
 };
