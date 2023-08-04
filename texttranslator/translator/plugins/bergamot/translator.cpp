@@ -124,3 +124,23 @@ void Translator::setType(const QString &newType)
 {
     mType = newType;
 }
+
+bool Translator::isValid() const
+{
+    return !mUrl.isEmpty() && !mTarget.isEmpty() && !mSource.isEmpty();
+}
+
+QDebug operator<<(QDebug d, const Translator &t)
+{
+    d << "mShortName " << t.shortName();
+    d << "mModelName " << t.modelName();
+    d << "mSource " << t.source();
+    d << "mTarget " << t.target();
+    d << "mCheckSum " << t.checkSum();
+    d << "mRepository " << t.repository();
+    d << "mUrl " << t.url();
+    d << "mType " << t.type();
+    d << "mVersion " << t.version();
+    d << "mApi " << t.api();
+    return d;
+}

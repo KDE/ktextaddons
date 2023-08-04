@@ -45,6 +45,8 @@ public:
     Q_REQUIRED_RESULT QString type() const;
     void setType(const QString &newType);
 
+    Q_REQUIRED_RESULT bool isValid() const;
+
 private:
     QString mShortName;
     QString mModelName;
@@ -57,3 +59,4 @@ private:
     int mVersion = -1;
     int mApi = -1;
 };
+LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const Translator &t);
