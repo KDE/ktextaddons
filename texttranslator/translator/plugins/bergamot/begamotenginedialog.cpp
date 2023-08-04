@@ -28,9 +28,11 @@ BegamotEngineDialog::BegamotEngineDialog(QWidget *parent)
     mBergamotEngineWidget->setObjectName(QStringLiteral("mBergamotEngineWidget"));
     mainLayout->addWidget(mBergamotEngineWidget);
 
-    auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    button->setObjectName(QStringLiteral("button"));
-    mainLayout->addWidget(button);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    mainLayout->addWidget(buttonBox);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &BegamotEngineDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &BegamotEngineDialog::reject);
     readConfig();
 }
 
