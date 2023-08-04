@@ -1,0 +1,39 @@
+{
+    "models": [
+        {
+            "modelName": "Czech-English base",
+            "shortName": "cs-en-base",
+            "type": "base",
+            "src": "Czech",
+            "trg": "English",
+            "srcTags": {
+                "cs": "Czech"
+            },
+            "trgTag": "en",
+            "repository": "Bergamot",
+            "version": 1,
+            "API": 1,
+            "checksum": "3714539160d5b4dce3ce0d829939315e3daffeaff53647249cc6336d745c09f2",
+            "url": "https://data.statmt.org/bergamot/models/csen/csen.student.base.tar.gz",
+            "name": "Czech-English base",
+            "code": "cs-en-base"
+        },
+        {
+            "modelName": "English-French tiny",
+            "shortName": "en-fr-tiny",
+            "type": "tiny",
+            "src": "English",
+            "trg": "French",
+            "srcTags": {
+                "en": "English"
+            },
+            "trgTag": "fr",
+            "repository": "Bergamot",
+            "version": 1,
+            "API": 1,
+            "checksum": "28deea86d2a02102a7fedf19391a7628386f01f1f532d430306a9728dc5ec2d6",
+            "name": "English-French tiny",
+            "code": "en-fr-tiny"
+        }
+    ]
+}

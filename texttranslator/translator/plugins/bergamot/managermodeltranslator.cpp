@@ -8,6 +8,7 @@
 #include "bergamotengineutils.h"
 #include "libbergamot_debug.h"
 #include "translator.h"
+#include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -40,6 +41,20 @@ void ManagerModelTranslator::downloadListModels()
         // TODO slotError(error);
         reply->deleteLater();
     });
+}
+
+void ManagerModelTranslator::loadModelList(const QString &fileName)
+{
+    QFile f(fileName);
+    if (f.open(QIODevice::ReadOnly)) {
+        const QByteArray content = f.readAll();
+        f.close();
+        const QJsonDocument doc = QJsonDocument::fromJson(content);
+        const QJsonObject fields = doc.object();
+        parseListModel(fields);
+    } else {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open " << fileName;
+    }
 }
 
 void ManagerModelTranslator::parseListModel(const QJsonObject &obj)

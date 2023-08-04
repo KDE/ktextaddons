@@ -22,6 +22,8 @@ public:
     Q_REQUIRED_RESULT QVector<Translator> translators() const;
     void setTranslators(const QVector<Translator> &newTranslators);
 
+    void loadModelList(const QString &fileName);
+
 private:
     LIBBERGAMOT_NO_EXPORT void parseListModel(const QJsonObject &obj);
     QVector<Translator> mTranslators;
