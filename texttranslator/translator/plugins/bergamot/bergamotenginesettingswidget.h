@@ -7,11 +7,15 @@
 #pragma once
 
 #include <QWidget>
-
+class QComboBox;
 class BergamotEngineSettingsWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit BergamotEngineSettingsWidget(QWidget *parent = nullptr);
     ~BergamotEngineSettingsWidget() override;
+
+private:
+    QComboBox *const mNumberThreads;
+    QComboBox *const mMemoryByThreads;
 };
