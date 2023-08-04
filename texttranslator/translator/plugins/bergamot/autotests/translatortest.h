@@ -16,4 +16,6 @@ public:
     ~TranslatorTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldParseJson();
+    void shouldParseJson_data();
 };
