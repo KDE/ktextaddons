@@ -24,6 +24,9 @@ target_sources(libbergamot PRIVATE
     bergamotenginelanguagewidget.h
     bergamotenginelanguagewidget.cpp
 
+    bergamotenginesettingswidget.h
+    bergamotenginesettingswidget.cpp
+
     libbergamot_private_export.h
 )
 

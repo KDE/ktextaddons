@@ -9,6 +9,7 @@
 #include <QWidget>
 class QTabWidget;
 class BergamotEngineLanguageWidget;
+class BergamotEngineSettingsWidget;
 class LIBBERGAMOT_TESTS_EXPORT BergamotEngineWidget : public QWidget
 {
     Q_OBJECT
@@ -19,4 +20,5 @@ public:
 private:
     QTabWidget *const mTabWidget;
     BergamotEngineLanguageWidget *const mLanguageWidget;
+    BergamotEngineSettingsWidget *const mSettingsWidget;
 };
