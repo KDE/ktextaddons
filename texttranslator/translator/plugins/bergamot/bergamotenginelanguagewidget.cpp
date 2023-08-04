@@ -36,7 +36,8 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 
     auto deleteLanguage = new QPushButton(i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
-    buttonLayout->addWidget(deleteLanguage);
+    buttonLayout->addWidget(deleteLanguage, 1);
+    // TODO enable/disable it.
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
