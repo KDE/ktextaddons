@@ -38,7 +38,6 @@ public:
     Q_REQUIRED_RESULT QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     Q_REQUIRED_RESULT int columnCount(const QModelIndex &parent) const override;
 
-protected:
 private:
     QVector<Translator> mTranslators;
 };

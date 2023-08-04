@@ -7,11 +7,16 @@
 #pragma once
 #include "libbergamot_private_export.h"
 #include <QWidget>
-
+class QTabWidget;
+class BergamotEngineLanguageWidget;
 class LIBBERGAMOT_TESTS_EXPORT BergamotEngineWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit BergamotEngineWidget(QWidget *parent = nullptr);
     ~BergamotEngineWidget() override;
+
+private:
+    QTabWidget *const mTabWidget;
+    BergamotEngineLanguageWidget *const mLanguageWidget;
 };

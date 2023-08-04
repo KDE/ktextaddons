@@ -2,8 +2,7 @@
 # SPDX-FileCopyrightText: none
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 
-add_library(libbergamot
-    translatormodel.h translatormodel.cpp)
+add_library(libbergamot)
 
 target_sources(libbergamot PRIVATE
 
@@ -19,6 +18,11 @@ target_sources(libbergamot PRIVATE
 
     bergamotengineutils.h
     bergamotengineutils.cpp
+
+    translatormodel.h
+    translatormodel.cpp
+    bergamotenginelanguagewidget.h
+    bergamotenginelanguagewidget.cpp
 
     libbergamot_private_export.h
 )
