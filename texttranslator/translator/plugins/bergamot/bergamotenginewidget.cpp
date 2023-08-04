@@ -33,4 +33,14 @@ BergamotEngineWidget::BergamotEngineWidget(QWidget *parent)
 
 BergamotEngineWidget::~BergamotEngineWidget() = default;
 
+void BergamotEngineWidget::setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info)
+{
+    mSettingsWidget->setSettingsInfo(info);
+}
+
+BergamotEngineUtils::SettingsInfo BergamotEngineWidget::settingsInfo() const
+{
+    return mSettingsWidget->settingsInfo();
+}
+
 #include "moc_bergamotenginewidget.cpp"

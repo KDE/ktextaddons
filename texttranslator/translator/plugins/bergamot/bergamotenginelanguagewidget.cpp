@@ -24,6 +24,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
     mTreeView->setModel(mTranslatorModel);
+    mTreeView->setRootIsDecorated(false);
     mainLayout->addWidget(mTreeView);
 
     auto buttonLayout = new QVBoxLayout;
@@ -37,6 +38,10 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     auto deleteLanguage = new QPushButton(i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(deleteLanguage, 1);
+
+    auto updateListLanguage = new QPushButton(i18n("Update"), this);
+    updateListLanguage->setObjectName(QStringLiteral("updateListLanguage"));
+    buttonLayout->addWidget(updateListLanguage, 1);
     // TODO enable/disable it.
 }
 

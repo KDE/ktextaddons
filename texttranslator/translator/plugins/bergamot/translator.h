@@ -47,6 +47,8 @@ public:
 
     Q_REQUIRED_RESULT bool isValid() const;
 
+    Q_REQUIRED_RESULT bool operator==(const Translator &other) const;
+
 private:
     QString mShortName;
     QString mModelName;
@@ -60,4 +62,5 @@ private:
     int mApi = -1;
 };
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const Translator &t);
+Q_DECLARE_METATYPE(Translator)
 Q_DECLARE_TYPEINFO(Translator, Q_MOVABLE_TYPE);

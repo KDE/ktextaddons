@@ -5,17 +5,21 @@
 */
 
 #pragma once
-#include "libbergamot_private_export.h"
+#include "bergamotenginesettingswidget.h"
+#include "bergamotengineutils.h"
+#include "libbergamot_export.h"
 #include <QWidget>
 class QTabWidget;
 class BergamotEngineLanguageWidget;
-class BergamotEngineSettingsWidget;
-class LIBBERGAMOT_TESTS_EXPORT BergamotEngineWidget : public QWidget
+class LIBBERGAMOT_EXPORT BergamotEngineWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit BergamotEngineWidget(QWidget *parent = nullptr);
     ~BergamotEngineWidget() override;
+
+    void setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info);
+    Q_REQUIRED_RESULT BergamotEngineUtils::SettingsInfo settingsInfo() const;
 
 private:
     QTabWidget *const mTabWidget;

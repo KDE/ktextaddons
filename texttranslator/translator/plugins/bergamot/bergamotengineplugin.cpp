@@ -5,12 +5,17 @@
 */
 
 #include "bergamotengineplugin.h"
+#include "bergamotengineutils.h"
 #include "bergamottranslator_debug.h"
+#include "managermodeltranslator.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 
 BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)
 {
+    loadSettings();
 }
 
 BergamotEnginePlugin::~BergamotEnginePlugin() = default;
@@ -21,5 +26,6 @@ void BergamotEnginePlugin::translate()
 
 void BergamotEnginePlugin::loadSettings()
 {
-    // TODO
+    mSettingsInfo.loadSettingsInfo();
+    ManagerModelTranslator::self()->downloadListModels();
 }

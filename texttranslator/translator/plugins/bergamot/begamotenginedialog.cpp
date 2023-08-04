@@ -56,4 +56,14 @@ void BegamotEngineDialog::readConfig()
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
+void BegamotEngineDialog::setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info)
+{
+    mBergamotEngineWidget->setSettingsInfo(info);
+}
+
+BergamotEngineUtils::SettingsInfo BegamotEngineDialog::settingsInfo() const
+{
+    return mBergamotEngineWidget->settingsInfo();
+}
+
 #include "moc_begamotenginedialog.cpp"

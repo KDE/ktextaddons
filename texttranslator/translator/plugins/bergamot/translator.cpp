@@ -21,13 +21,20 @@ void Translator::parse(const QJsonObject &obj)
     mType = obj[QStringLiteral("type")].toString();
     mSource = obj[QStringLiteral("src")].toString();
     mTarget = obj[QStringLiteral("trg")].toString();
-    mVersion = obj[QStringLiteral("version")].toInt();
-    mApi = obj[QStringLiteral("API")].toInt();
+    mVersion = obj[QStringLiteral("version")].toInt(-1);
+    mApi = obj[QStringLiteral("API")].toInt(-1);
 }
 
 QString Translator::shortName() const
 {
     return mShortName;
+}
+
+bool Translator::operator==(const Translator &other) const
+{
+    return mShortName == other.mShortName && mModelName == other.mModelName && mSource == other.mSource && mTarget == other.mTarget
+        && mCheckSum == other.mCheckSum && mRepository == other.mRepository && mUrl == other.mUrl && mType == other.mType && mVersion == other.mVersion
+        && mApi == other.mApi;
 }
 
 void Translator::setShortName(const QString &newShortName)

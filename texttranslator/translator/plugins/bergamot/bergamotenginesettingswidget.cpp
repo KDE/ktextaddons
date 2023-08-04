@@ -9,6 +9,7 @@
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QVBoxLayout>
+#include <thread>
 
 BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     : QWidget{parent}
@@ -31,8 +32,37 @@ BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     resourceBox->setLayout(formLayout);
     formLayout->addRow(i18n("Thread:"), mNumberThreads);
     formLayout->addRow(i18n("Memory by Thread:"), mMemoryByThreads);
+    fillCombobox();
 }
 
 BergamotEngineSettingsWidget::~BergamotEngineSettingsWidget() = default;
+
+void BergamotEngineSettingsWidget::setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info)
+{
+    mNumberThreads->setCurrentIndex(mNumberThreads->findData(info.numberOfThread));
+    mMemoryByThreads->setCurrentIndex(mMemoryByThreads->findData(info.memoryByThread));
+}
+
+BergamotEngineUtils::SettingsInfo BergamotEngineSettingsWidget::settingsInfo() const
+{
+    BergamotEngineUtils::SettingsInfo info;
+    info.memoryByThread = mMemoryByThreads->currentData().toInt();
+    info.numberOfThread = mNumberThreads->currentData().toInt();
+    return info;
+}
+
+void BergamotEngineSettingsWidget::fillCombobox()
+{
+    const auto processorCount = std::thread::hardware_concurrency();
+
+    for (int cores = processorCount; cores > 0; cores -= 2) {
+        mNumberThreads->addItem(QString::number(cores), cores);
+    }
+
+    const QList<int> memorys = {64, 128, 256, 512, 768, 1024, 1280, 1536, 1762, 2048};
+    for (const int memory : memorys) {
+        mMemoryByThreads->addItem(QString::number(memory), memory);
+    }
+}
 
 #include "moc_bergamotenginesettingswidget.cpp"

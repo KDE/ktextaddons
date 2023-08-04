@@ -7,8 +7,11 @@
 #include "bergamotengineclient.h"
 #include "begamotenginedialog.h"
 #include "bergamotengineplugin.h"
+#include "bergamotengineutils.h"
 #include "translator/misc/translatorutil.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QPointer>
 
 BergamotEngineClient::BergamotEngineClient(QObject *parent)
@@ -48,9 +51,15 @@ bool BergamotEngineClient::hasConfigurationDialog() const
 
 void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
+    KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
     QPointer<BegamotEngineDialog> dlg = new BegamotEngineDialog(parentWidget);
+    BergamotEngineUtils::SettingsInfo info;
+    info.loadSettingsInfo();
+    dlg->setSettingsInfo(info);
     if (dlg->exec()) {
-        // TODO
+        info = dlg->settingsInfo();
+        info.saveSettingsInfo();
+        Q_EMIT configureChanged();
     }
     delete dlg;
 }

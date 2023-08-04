@@ -5,6 +5,7 @@
 */
 #pragma once
 
+#include "bergamotengineutils.h"
 #include "libbergamot_export.h"
 #include <QDialog>
 class BergamotEngineWidget;
@@ -14,6 +15,9 @@ class LIBBERGAMOT_EXPORT BegamotEngineDialog : public QDialog
 public:
     explicit BegamotEngineDialog(QWidget *parent = nullptr);
     ~BegamotEngineDialog() override;
+
+    void setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info);
+    Q_REQUIRED_RESULT BergamotEngineUtils::SettingsInfo settingsInfo() const;
 
 private:
     LIBBERGAMOT_NO_EXPORT void writeConfig();

@@ -18,6 +18,8 @@ void BergamotEngineUtilsTest::shouldDefaultBergamotRepository()
 {
     QCOMPARE(BergamotEngineUtils::defaultBergamotRepository(), QStringLiteral("https://translatelocally.com/models.json"));
     QCOMPARE(BergamotEngineUtils::groupName(), QStringLiteral("BergamotTranslator"));
+    QCOMPARE(BergamotEngineUtils::coreNumberKey(), QStringLiteral("CoreNumber"));
+    QCOMPARE(BergamotEngineUtils::memoryByThreadKey(), QStringLiteral("MemoryByThread"));
 }
 
 #include "moc_bergamotengineutilstest.cpp"

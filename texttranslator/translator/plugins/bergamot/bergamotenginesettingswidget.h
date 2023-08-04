@@ -6,16 +6,24 @@
 
 #pragma once
 
+#include "bergamotengineutils.h"
+
 #include <QWidget>
 class QComboBox;
 class BergamotEngineSettingsWidget : public QWidget
 {
     Q_OBJECT
 public:
+    struct SettingsInfo {
+    };
     explicit BergamotEngineSettingsWidget(QWidget *parent = nullptr);
     ~BergamotEngineSettingsWidget() override;
 
+    void setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info);
+    Q_REQUIRED_RESULT BergamotEngineUtils::SettingsInfo settingsInfo() const;
+
 private:
+    void fillCombobox();
     QComboBox *const mNumberThreads;
     QComboBox *const mMemoryByThreads;
 };
