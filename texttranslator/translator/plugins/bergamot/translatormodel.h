@@ -14,7 +14,7 @@ class LIBBERGAMOT_TESTS_EXPORT TranslatorModel : public QAbstractListModel
     Q_OBJECT
 public:
     enum TranslatorRoles {
-        Source = Qt::UserRole + 1,
+        Source,
         Target,
         TypeTranslator,
         Repository,
