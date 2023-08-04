@@ -28,6 +28,27 @@ void TranslatorModel::insertTranslators(const QVector<Translator> &translators)
     }
 }
 
+QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
+        switch (static_cast<TranslatorRoles>(section)) {
+        case TranslatorRoles::Source:
+            return i18n("Source");
+        case TranslatorModel::Target:
+            return i18n("Target");
+        case TranslatorModel::TypeTranslator:
+            return i18n("Type");
+        case TranslatorModel::Repository:
+            return i18n("Repository");
+        case TranslatorModel::Version:
+            return i18n("Version");
+        case TranslatorModel::Available:
+            return i18n("Available");
+        }
+    }
+    return {};
+}
+
 int TranslatorModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
@@ -39,8 +60,14 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     if (index.row() < 0 || index.row() >= mTranslators.count()) {
         return {};
     }
+    if (role != Qt::DisplayRole) {
+        return {};
+    }
+
     const auto translator = mTranslators.at(index.row());
-    switch (role) {
+    const int col = index.column();
+
+    switch (static_cast<TranslatorRoles>(col)) {
     case TranslatorModel::Source: {
         return translator.source();
     }
@@ -50,7 +77,6 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     case TranslatorModel::TypeTranslator: {
         return translator.type();
     }
-    case Qt::DisplayRole:
     case TranslatorModel::Repository: {
         return translator.repository();
     }
@@ -71,4 +97,10 @@ void TranslatorModel::clear()
         mTranslators.clear();
         endResetModel();
     }
+}
+
+int TranslatorModel::columnCount(const QModelIndex &parent) const
+{
+    Q_UNUSED(parent)
+    return static_cast<int>(TranslatorRoles::LastColumn) + 1;
 }
