@@ -9,6 +9,7 @@
 class QTreeView;
 class TranslatorModel;
 class QLineEdit;
+class TranslatorProxyModel;
 class LIBBERGAMOT_TESTS_EXPORT BergamotEngineLanguageWidget : public QWidget
 {
     Q_OBJECT
@@ -26,4 +27,5 @@ private:
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     TranslatorModel *const mTranslatorModel;
+    TranslatorProxyModel *const mTranslatorProxyModel;
 };

@@ -26,6 +26,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     , mTreeView(new QTreeView(this))
     , mSearchLineEdit(new QLineEdit(this))
     , mTranslatorModel(new TranslatorModel(this))
+    , mTranslatorProxyModel(new TranslatorProxyModel(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -48,9 +49,10 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &BergamotEngineLanguageWidget::slotError);
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
-    auto proxyModel = new TranslatorProxyModel(this);
-    proxyModel->setSourceModel(mTranslatorModel);
-    mTreeView->setModel(proxyModel);
+
+    mTranslatorProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    mTranslatorProxyModel->setSourceModel(mTranslatorModel);
+    mTreeView->setModel(mTranslatorProxyModel);
     mTreeView->setRootIsDecorated(false);
     mTreeView->setSortingEnabled(true);
     vboxLayout->addWidget(mTreeView);
@@ -89,7 +91,7 @@ void BergamotEngineLanguageWidget::slotError(const QString &str)
 
 void BergamotEngineLanguageWidget::slotTextChanged(const QString &str)
 {
-    // TODO
+    mTranslatorProxyModel->setFilterFixedString(str);
 }
 
 void BergamotEngineLanguageWidget::slotDownLoad()
