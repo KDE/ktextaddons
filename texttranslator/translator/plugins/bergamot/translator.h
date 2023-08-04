@@ -60,3 +60,4 @@ private:
     int mApi = -1;
 };
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const Translator &t);
+Q_DECLARE_TYPEINFO(Translator, Q_MOVABLE_TYPE);

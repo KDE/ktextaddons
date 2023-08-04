@@ -44,6 +44,9 @@ void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
             Translator translator;
             const QJsonObject translatorObject = current.toObject();
             translator.parse(translatorObject);
+            if (translator.isValid()) {
+                mTranslators.append(std::move(translator));
+            }
             // TODO
         } else {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing";
