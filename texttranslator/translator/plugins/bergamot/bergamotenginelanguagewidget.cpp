@@ -91,7 +91,7 @@ void BergamotEngineLanguageWidget::slotError(const QString &str)
 
 void BergamotEngineLanguageWidget::slotTextChanged(const QString &str)
 {
-    mTranslatorProxyModel->setFilterFixedString(str);
+    mTranslatorProxyModel->setSearchString(str);
 }
 
 void BergamotEngineLanguageWidget::slotDownLoad()

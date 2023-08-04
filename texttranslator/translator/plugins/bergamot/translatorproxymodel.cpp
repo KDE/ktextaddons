@@ -16,8 +16,29 @@ TranslatorProxyModel::~TranslatorProxyModel() = default;
 
 bool TranslatorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    // TODO
+    if (!mSearchString.isEmpty()) {
+        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+        const QString source = sourceIndex.data(TranslatorModel::Source).toString();
+        const QString target = sourceIndex.data(TranslatorModel::Target).toString();
+        if (source.contains(mSearchString, Qt::CaseInsensitive) || target.contains(mSearchString, Qt::CaseInsensitive)) {
+            return true;
+        }
+        return false;
+    }
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
+}
+
+QString TranslatorProxyModel::searchString() const
+{
+    return mSearchString;
+}
+
+void TranslatorProxyModel::setSearchString(const QString &newSearchString)
+{
+    if (mSearchString != newSearchString) {
+        mSearchString = newSearchString;
+        invalidateFilter();
+    }
 }
 
 #include "moc_translatorproxymodel.cpp"
