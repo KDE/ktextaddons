@@ -58,17 +58,42 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     auto downLoadLanguage = new QPushButton(i18n("Download"), this);
     downLoadLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(downLoadLanguage);
+    connect(downLoadLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotDownLoad);
 
     auto deleteLanguage = new QPushButton(i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(deleteLanguage, 1);
+    connect(deleteLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotDelete);
 
     auto updateListLanguage = new QPushButton(i18n("Update"), this);
     updateListLanguage->setObjectName(QStringLiteral("updateListLanguage"));
     buttonLayout->addWidget(updateListLanguage, 1);
+    connect(updateListLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotUpdateListLanguage);
+
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &BergamotEngineLanguageWidget::slotTextChanged);
     // TODO enable/disable it.
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
+
+void BergamotEngineLanguageWidget::slotTextChanged(const QString &str)
+{
+    // TODO
+}
+
+void BergamotEngineLanguageWidget::slotDownLoad()
+{
+    // TODO
+}
+
+void BergamotEngineLanguageWidget::slotDelete()
+{
+    // TODO
+}
+
+void BergamotEngineLanguageWidget::slotUpdateListLanguage()
+{
+    // TODO
+}
 
 #include "moc_bergamotenginelanguagewidget.cpp"

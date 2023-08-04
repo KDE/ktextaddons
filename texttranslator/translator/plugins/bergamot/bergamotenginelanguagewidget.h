@@ -17,6 +17,10 @@ public:
     ~BergamotEngineLanguageWidget() override;
 
 private:
+    void slotTextChanged(const QString &str);
+    void slotDownLoad();
+    void slotDelete();
+    void slotUpdateListLanguage();
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     TranslatorModel *const mTranslatorModel;
