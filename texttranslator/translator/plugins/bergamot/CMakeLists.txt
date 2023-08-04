@@ -28,6 +28,9 @@ target_sources(libbergamot PRIVATE
     bergamotenginesettingswidget.cpp
 
     libbergamot_private_export.h
+
+    translatorproxymodel.h
+    translatorproxymodel.cpp
 )
 
 generate_export_header(libbergamot BASE_NAME libbergamot)
