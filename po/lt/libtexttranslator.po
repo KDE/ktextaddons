@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 00:46+0000\n"
+"POT-Creation-Date: 2023-08-04 00:44+0000\n"
 "PO-Revision-Date: 2023-02-19 00:56+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -321,6 +321,17 @@ msgstr ""
 #: translator/misc/translatorutil.cpp:210
 #, kde-format
 msgid "Yiddish"
+msgstr ""
+
+#: translator/plugins/bergamot/begamotenginedialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Bergamot Plugin Settings"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotengineclient.cpp:28
+#, kde-format
+msgid "Bergamot"
 msgstr ""
 
 #: translator/plugins/bing/bingengineclient.cpp:26
