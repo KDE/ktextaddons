@@ -17,6 +17,8 @@ void Translator::parse(const QJsonObject &obj)
     mModelName = obj[QStringLiteral("modelName")].toString();
     mShortName = obj[QStringLiteral("shortName")].toString();
     mCheckSum = obj[QStringLiteral("checksum")].toString();
+    mRepository = obj[QStringLiteral("repository")].toString();
+    mType = obj[QStringLiteral("type")].toString();
     mSource = obj[QStringLiteral("src")].toString();
     mTarget = obj[QStringLiteral("trg")].toString();
     mVersion = obj[QStringLiteral("version")].toInt();
@@ -101,4 +103,24 @@ QString Translator::url() const
 void Translator::setUrl(const QString &newUrl)
 {
     mUrl = newUrl;
+}
+
+QString Translator::repository() const
+{
+    return mRepository;
+}
+
+void Translator::setRepository(const QString &newRepository)
+{
+    mRepository = newRepository;
+}
+
+QString Translator::type() const
+{
+    return mType;
+}
+
+void Translator::setType(const QString &newType)
+{
+    mType = newType;
 }

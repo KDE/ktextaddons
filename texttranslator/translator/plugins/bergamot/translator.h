@@ -39,13 +39,21 @@ public:
     Q_REQUIRED_RESULT QString url() const;
     void setUrl(const QString &newUrl);
 
+    Q_REQUIRED_RESULT QString repository() const;
+    void setRepository(const QString &newRepository);
+
+    Q_REQUIRED_RESULT QString type() const;
+    void setType(const QString &newType);
+
 private:
     QString mShortName;
     QString mModelName;
     QString mSource;
     QString mTarget;
     QString mCheckSum;
+    QString mRepository;
     QString mUrl;
+    QString mType;
     int mVersion = -1;
     int mApi = -1;
 };

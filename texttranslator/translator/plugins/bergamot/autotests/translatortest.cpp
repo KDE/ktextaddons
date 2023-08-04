@@ -22,6 +22,8 @@ void TranslatorTest::shouldHaveDefaultValues()
     QVERIFY(w.checkSum().isEmpty());
     QVERIFY(w.target().isEmpty());
     QVERIFY(w.url().isEmpty());
+    QVERIFY(w.repository().isEmpty());
+    QVERIFY(w.type().isEmpty());
     QCOMPARE(w.version(), -1);
     QCOMPARE(w.api(), -1);
 }
