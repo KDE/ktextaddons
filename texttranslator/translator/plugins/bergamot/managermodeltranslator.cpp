@@ -28,6 +28,7 @@ void ManagerModelTranslator::downloadListModels()
         TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(QUrl(BergamotEngineUtils::defaultBergamotRepository())));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         parseListModel(QJsonDocument::fromJson(reply->readAll()).object());
+        reply->deleteLater();
     });
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         // TODO slotError(error);
@@ -48,6 +49,16 @@ void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing";
         }
     }
+}
+
+QVector<Translator> ManagerModelTranslator::translators() const
+{
+    return mTranslators;
+}
+
+void ManagerModelTranslator::setTranslators(const QVector<Translator> &newTranslators)
+{
+    mTranslators = newTranslators;
 }
 
 #include "moc_managermodeltranslator.cpp"

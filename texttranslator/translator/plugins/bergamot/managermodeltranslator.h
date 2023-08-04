@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "libbergamot_export.h"
+#include "translator.h"
 #include <QObject>
 
 class LIBBERGAMOT_EXPORT ManagerModelTranslator : public QObject
@@ -16,6 +17,10 @@ public:
 
     void downloadListModels();
 
+    Q_REQUIRED_RESULT QVector<Translator> translators() const;
+    void setTranslators(const QVector<Translator> &newTranslators);
+
 private:
     LIBBERGAMOT_NO_EXPORT void parseListModel(const QJsonObject &obj);
+    QVector<Translator> mTranslators;
 };
