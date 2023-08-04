@@ -15,4 +15,7 @@ public:
     ~BergamotEnginePlugin() override;
 
     void translate() override;
+
+private:
+    void loadSettings();
 };

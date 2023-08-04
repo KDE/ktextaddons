@@ -16,5 +16,7 @@ public:
     ~BegamotEngineDialog() override;
 
 private:
+    LIBBERGAMOT_NO_EXPORT void writeConfig();
+    LIBBERGAMOT_NO_EXPORT void readConfig();
     BergamotEngineWidget *const mBergamotEngineWidget;
 };

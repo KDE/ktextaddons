@@ -18,3 +18,8 @@ BergamotEnginePlugin::~BergamotEnginePlugin() = default;
 void BergamotEnginePlugin::translate()
 {
 }
+
+void BergamotEnginePlugin::loadSettings()
+{
+    // TODO
+}

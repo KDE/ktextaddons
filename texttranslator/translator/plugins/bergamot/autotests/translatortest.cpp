@@ -26,6 +26,7 @@ void TranslatorTest::shouldHaveDefaultValues()
     QVERIFY(w.type().isEmpty());
     QCOMPARE(w.version(), -1);
     QCOMPARE(w.api(), -1);
+    QVERIFY(!w.isValid());
 }
 
 #include "moc_translatortest.cpp"
