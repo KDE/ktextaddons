@@ -47,14 +47,18 @@ void DownloadLanguageJob::start()
 
     connect(reply, &QNetworkReply::downloadProgress, this, &DownloadLanguageJob::downloadProgress);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        mDestination->flush();
+        mDestination->seek(0);
         reply->deleteLater();
-        // parseTranslation(reply);
+        extractLanguage();
     });
     connect(reply, &QIODevice::readyRead, this, [=] {
-        QByteArray buffer = reply->readAll();
-        // TODO
+        const QByteArray buffer = reply->readAll();
+        if (mDestination->write(buffer) == -1) {
+            Q_EMIT errorText(i18n("Error during writing on disk: %1", mDestination->errorString()));
+            reply->abort();
+        }
     });
-    // TODO
 }
 
 bool DownloadLanguageJob::canStart() const
@@ -75,7 +79,8 @@ void DownloadLanguageJob::setUrl(const QUrl &newUrl)
 void DownloadLanguageJob::extractLanguage()
 {
     auto extraJob = new ExtractLanguageJob(this);
-    // TODO add source/target
+    extraJob->setSource(mDestination->fileName());
+    // TODO extraJob->setTarget(mDestination->fileName());
     connect(extraJob, &ExtractLanguageJob::errorText, this, &DownloadLanguageJob::errorText);
     connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::extractDone);
 
