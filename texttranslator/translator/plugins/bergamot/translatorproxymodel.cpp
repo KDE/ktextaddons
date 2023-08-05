@@ -20,6 +20,7 @@ bool TranslatorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &s
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         const QString source = sourceIndex.data(TranslatorModel::Source).toString();
         const QString target = sourceIndex.data(TranslatorModel::Target).toString();
+        qDebug() << " source " << source << " target " << target;
         if (source.contains(mSearchString, Qt::CaseInsensitive) || target.contains(mSearchString, Qt::CaseInsensitive)) {
             return true;
         }

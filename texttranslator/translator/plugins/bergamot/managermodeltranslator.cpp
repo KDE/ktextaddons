@@ -92,7 +92,7 @@ void ManagerModelTranslator::setTranslators(const QVector<Translator> &newTransl
 
 void ManagerModelTranslator::downloadLanguage(const QString &url)
 {
-    QUrl u(url);
+    const QUrl u(url);
     QNetworkRequest request(u);
     QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply, url](QNetworkReply::NetworkError error) {
