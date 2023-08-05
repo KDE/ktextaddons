@@ -39,6 +39,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
     vboxLayout->addWidget(mSearchLineEdit);
     mSearchLineEdit->setPlaceholderText(i18n("Search..."));
+    mSearchLineEdit->setClearButtonEnabled(true);
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
     new TextAddonsWidgets::LineEditCatchReturnKey(mSearchLineEdit, this);
