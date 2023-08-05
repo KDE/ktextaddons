@@ -6,8 +6,8 @@
 
 #include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
-#include <KArchive>
 #include <KLocalizedString>
+#include <KTar>
 
 ExtractLanguageJob::ExtractLanguageJob(QObject *parent)
     : QObject{parent}
