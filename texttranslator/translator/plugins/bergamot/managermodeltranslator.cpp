@@ -103,10 +103,21 @@ void ManagerModelTranslator::downloadLanguage(const QString &url)
         }
         reply->deleteLater();
     });
+
+    connect(reply, &QNetworkReply::downloadProgress, this, &ManagerModelTranslator::slotProgress);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         // parseTranslation(reply);
     });
+    connect(reply, &QIODevice::readyRead, this, [=] {
+        QByteArray buffer = reply->readAll();
+        // TODO
+    });
+}
+
+void ManagerModelTranslator::slotProgress(qint64 bytesReceived, qint64 bytesTotal)
+{
+    // TODO
 }
 
 void ManagerModelTranslator::extractLanguage()
@@ -117,7 +128,6 @@ void ManagerModelTranslator::extractLanguage()
     connect(extraJob, &ExtractLanguageJob::finished, this, &ManagerModelTranslator::slotExtractDone);
 
     extraJob->start();
-    // TODO
 }
 
 void ManagerModelTranslator::slotExtractDone()

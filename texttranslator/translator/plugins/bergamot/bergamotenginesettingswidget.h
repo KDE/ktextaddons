@@ -14,8 +14,6 @@ class LIBBERGAMOT_TESTS_EXPORT BergamotEngineSettingsWidget : public QWidget
 {
     Q_OBJECT
 public:
-    struct SettingsInfo {
-    };
     explicit BergamotEngineSettingsWidget(QWidget *parent = nullptr);
     ~BergamotEngineSettingsWidget() override;
 

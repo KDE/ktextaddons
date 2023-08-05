@@ -19,7 +19,7 @@ void ExtractLanguageJobTest::shouldHaveDefaultValues()
     ExtractLanguageJob w;
     QVERIFY(w.source().isEmpty());
     QVERIFY(w.target().isEmpty());
-    // TODO
+    QVERIFY(!w.canStart());
 }
 
 #include "moc_extractlanguagejobtest.cpp"

@@ -37,6 +37,9 @@ target_sources(libbergamot PRIVATE
 
     extractlanguagejob.h
     extractlanguagejob.cpp
+
+    downloadlanguagejob.h
+    downloadlanguagejob.cpp
 )
 
 generate_export_header(libbergamot BASE_NAME libbergamot)

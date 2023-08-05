@@ -5,6 +5,7 @@
 */
 
 #include "extractlanguagejob.h"
+#include "bergamotengineutils.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
 #include <KTar>
