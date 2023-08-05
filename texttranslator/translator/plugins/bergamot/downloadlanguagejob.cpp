@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QTemporaryFile>
 #include <TextTranslator/TranslatorEngineAccessManager>
 
 DownloadLanguageJob::DownloadLanguageJob(QObject *parent)
@@ -26,11 +27,18 @@ void DownloadLanguageJob::start()
         deleteLater();
         return;
     }
+    mDestination = new QTemporaryFile(this);
+    if (!mDestination->open()) {
+        Q_EMIT errorText(i18n("Cannot open file for downloading."));
+        deleteLater();
+        return;
+    }
+
     QNetworkRequest request(mUrl);
     QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         if (error == QNetworkReply::ServiceUnavailableError) {
-            Q_EMIT i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.");
+            Q_EMIT errorText(i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         } else {
             Q_EMIT errorText(i18n("Impossible to access to url: %1", mUrl.toString()));
         }

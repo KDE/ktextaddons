@@ -8,7 +8,7 @@
 #include "libbergamot_private_export.h"
 #include <QObject>
 #include <QUrl>
-
+class QTemporaryFile;
 class LIBBERGAMOT_TESTS_EXPORT DownloadLanguageJob : public QObject
 {
     Q_OBJECT
@@ -30,4 +30,5 @@ Q_SIGNALS:
 private:
     void extractLanguage();
     QUrl mUrl;
+    QTemporaryFile *mDestination = nullptr;
 };
