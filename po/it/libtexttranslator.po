@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:44+0000\n"
+"POT-Creation-Date: 2023-08-05 00:44+0000\n"
 "PO-Revision-Date: 2023-01-10 10:48+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -322,15 +322,122 @@ msgstr "Gallese"
 msgid "Yiddish"
 msgstr "Yiddish"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:17
+#: translator/plugins/bergamot/begamotenginedialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:28
+#: translator/plugins/bergamot/bergamotengineclient.cpp:31
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:89
 #, kde-format
 msgid "Bergamot"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:41
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#, kde-format
+msgid "Search..."
+msgstr "Cerca..."
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:66
+#, kde-format
+msgid "Download"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:71
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:76
+#, kde-format
+msgid "Update"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:89
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:23
+#, kde-format
+msgid "Resource Usage"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:33
+#, kde-format
+msgid "Thread:"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:34
+#, kde-format
+msgid "Memory by Thread:"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:30
+#, kde-format
+msgid "Languages"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:31
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: translator/plugins/bergamot/extractlanguagejob.cpp:28
+#, fuzzy, kde-format
+#| msgid "Detect language"
+msgid "Impossible to extract language"
+msgstr "Rileva la lingua"
+
+#: translator/plugins/bergamot/managermodeltranslator.cpp:44
+#: translator/plugins/bergamot/managermodeltranslator.cpp:100
+#: translator/plugins/yandex/yandexengineplugin.cpp:54
+#: translator/translatorengineplugin.cpp:100
+#, kde-format
+msgid ""
+"Error: Engine systems have detected suspicious traffic from your computer "
+"network. Please try your request again later."
+msgstr ""
+"Errore: i sistemi del motore hanno rilevato traffico sospetto dalla tua rete "
+"di computer. Ritenta la richiesta più tardi."
+
+#: translator/plugins/bergamot/managermodeltranslator.cpp:46
+#: translator/plugins/bergamot/managermodeltranslator.cpp:102
+#, kde-format
+msgid "Impossible to access to url: %1"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:36
+#, kde-format
+msgid "Source"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:38
+#, kde-format
+msgid "Target"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:40
+#, kde-format
+msgid "Type"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:42
+#, kde-format
+msgid "Repository"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "Persian"
+msgid "Version"
+msgstr "Persiano"
+
+#: translator/plugins/bergamot/translatormodel.cpp:46
+#, kde-format
+msgid "Available"
 msgstr ""
 
 #: translator/plugins/bing/bingengineclient.cpp:26
@@ -427,16 +534,6 @@ msgstr "Lingva"
 msgid "Yandex"
 msgstr "Yandex"
 
-#: translator/plugins/yandex/yandexengineplugin.cpp:54
-#: translator/translatorengineplugin.cpp:100
-#, kde-format
-msgid ""
-"Error: Engine systems have detected suspicious traffic from your computer "
-"network. Please try your request again later."
-msgstr ""
-"Errore: i sistemi del motore hanno rilevato traffico sospetto dalla tua rete "
-"di computer. Ritenta la richiesta più tardi."
-
 #: translator/plugins/yandex/yandexengineplugin.cpp:63
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
@@ -457,11 +554,6 @@ msgstr "Hai usato la stessa lingua per la lingua sorgente e destinazione."
 msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configura traduttore"
-
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
-#, kde-format
-msgid "Search..."
-msgstr "Cerca..."
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
