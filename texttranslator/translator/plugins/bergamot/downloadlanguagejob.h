@@ -7,6 +7,7 @@
 #pragma once
 #include "libbergamot_private_export.h"
 #include <QObject>
+#include <QUrl>
 
 class LIBBERGAMOT_TESTS_EXPORT DownloadLanguageJob : public QObject
 {
@@ -15,5 +16,18 @@ public:
     explicit DownloadLanguageJob(QObject *parent = nullptr);
     ~DownloadLanguageJob() override;
     void start();
+
     Q_REQUIRED_RESULT bool canStart() const;
+
+    Q_REQUIRED_RESULT QUrl url() const;
+    void setUrl(const QUrl &newUrl);
+
+Q_SIGNALS:
+    void errorText(const QString &str);
+    void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+    void extractDone();
+
+private:
+    void extractLanguage();
+    QUrl mUrl;
 };

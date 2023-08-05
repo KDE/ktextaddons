@@ -30,9 +30,7 @@ Q_SIGNALS:
     void errorText(const QString &str);
 
 private:
-    LIBBERGAMOT_NO_EXPORT void extractLanguage();
     LIBBERGAMOT_NO_EXPORT void parseListModel(const QJsonObject &obj);
-    LIBBERGAMOT_NO_EXPORT void slotExtractDone();
     LIBBERGAMOT_NO_EXPORT void slotProgress(qint64 bytesReceived, qint64 bytesTotal);
     QVector<Translator> mTranslators;
 };

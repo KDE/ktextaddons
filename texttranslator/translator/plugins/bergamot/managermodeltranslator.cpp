@@ -6,6 +6,7 @@
 
 #include "managermodeltranslator.h"
 #include "bergamotengineutils.h"
+#include "downloadlanguagejob.h"
 #include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
 #include "translator.h"
@@ -92,45 +93,14 @@ void ManagerModelTranslator::setTranslators(const QVector<Translator> &newTransl
 
 void ManagerModelTranslator::downloadLanguage(const QString &url)
 {
-    const QUrl u(url);
-    QNetworkRequest request(u);
-    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
-    connect(reply, &QNetworkReply::errorOccurred, this, [this, reply, url](QNetworkReply::NetworkError error) {
-        if (error == QNetworkReply::ServiceUnavailableError) {
-            Q_EMIT i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.");
-        } else {
-            Q_EMIT errorText(i18n("Impossible to access to url: %1", url));
-        }
-        reply->deleteLater();
-    });
-
-    connect(reply, &QNetworkReply::downloadProgress, this, &ManagerModelTranslator::slotProgress);
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-        reply->deleteLater();
-        // parseTranslation(reply);
-    });
-    connect(reply, &QIODevice::readyRead, this, [=] {
-        QByteArray buffer = reply->readAll();
-        // TODO
-    });
+    auto downloadJob = new DownloadLanguageJob(this);
+    downloadJob->setUrl(QUrl(url));
+    connect(downloadJob, &DownloadLanguageJob::errorText, this, &ManagerModelTranslator::errorText);
+    connect(downloadJob, &DownloadLanguageJob::downloadProgress, this, &ManagerModelTranslator::slotProgress);
+    downloadJob->start();
 }
 
 void ManagerModelTranslator::slotProgress(qint64 bytesReceived, qint64 bytesTotal)
-{
-    // TODO
-}
-
-void ManagerModelTranslator::extractLanguage()
-{
-    auto extraJob = new ExtractLanguageJob(this);
-    // TODO add source/target
-    connect(extraJob, &ExtractLanguageJob::errorText, this, &ManagerModelTranslator::errorText);
-    connect(extraJob, &ExtractLanguageJob::finished, this, &ManagerModelTranslator::slotExtractDone);
-
-    extraJob->start();
-}
-
-void ManagerModelTranslator::slotExtractDone()
 {
     // TODO
 }
