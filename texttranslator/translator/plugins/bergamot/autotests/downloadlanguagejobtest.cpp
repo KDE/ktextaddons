@@ -19,3 +19,5 @@ void DownloadLanguageJobTest::shouldHaveDefaultValues()
     DownloadLanguageJob w;
     // TODO
 }
+
+#include "moc_downloadlanguagejobtest.cpp"

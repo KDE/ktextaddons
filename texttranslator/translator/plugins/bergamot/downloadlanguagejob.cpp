@@ -23,3 +23,5 @@ bool DownloadLanguageJob::canStart() const
     // TODO
     return false;
 }
+
+#include "moc_downloadlanguagejob.cpp"
