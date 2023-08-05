@@ -6,7 +6,6 @@
 
 #include "bergamotenginewidget.h"
 #include "bergamotenginelanguagewidget.h"
-#include "bergamotenginesettingswidget.h"
 #include <KLocalizedString>
 #include <QTabWidget>
 #include <QVBoxLayout>

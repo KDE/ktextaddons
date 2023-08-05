@@ -7,9 +7,7 @@
 #include "managermodeltranslator.h"
 #include "bergamotengineutils.h"
 #include "downloadlanguagejob.h"
-#include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
-#include "translator.h"
 #include <KLocalizedString>
 #include <QFile>
 #include <QJsonArray>
