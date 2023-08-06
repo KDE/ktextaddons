@@ -100,6 +100,12 @@ if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
     add_subdirectory(textedittexttospeech)
 endif()
 
+ecm_qt_install_logging_categories(
+        EXPORT KTEXTADDONS
+        FILE ktextaddons.categories
+        DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+        )
+
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
