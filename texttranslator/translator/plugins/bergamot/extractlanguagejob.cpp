@@ -28,17 +28,20 @@ void ExtractLanguageJob::start()
     if (!canStart()) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to start ExtractLanguageJob";
         Q_EMIT errorText(i18n("Impossible to extract language"));
+        Q_EMIT finished();
         deleteLater();
         return;
     }
     auto tar = new KTar(mSource);
     if (!tar->open(QIODevice::ReadOnly)) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open temporary file" << mSource;
+        Q_EMIT finished();
         deleteLater();
         return;
     }
     if (!QDir().mkpath(BergamotEngineUtils::storageLanguagePath())) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << BergamotEngineUtils::storageLanguagePath();
+        Q_EMIT finished();
         deleteLater();
         return;
     }
