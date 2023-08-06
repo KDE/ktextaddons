@@ -28,6 +28,7 @@ Q_SIGNALS:
     void extractDone();
 
 private:
+    void slotExtractDone();
     void extractLanguage();
     QUrl mUrl;
     QTemporaryFile *mDestination = nullptr;

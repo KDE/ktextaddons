@@ -43,6 +43,7 @@ void ExtractLanguageJob::start()
     }
     qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx" << mTarget;
     delete tar;
+    Q_EMIT finished();
     // TODO
     deleteLater();
 }

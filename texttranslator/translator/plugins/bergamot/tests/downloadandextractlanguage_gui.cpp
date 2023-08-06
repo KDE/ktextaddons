@@ -24,6 +24,12 @@ int main(int argc, char **argv)
         const QString fileName = parser.positionalArguments().at(0);
         auto download = new DownloadLanguageJob();
         download->setUrl(QUrl(fileName));
+        QObject::connect(download, &DownloadLanguageJob::extractDone, &app, []() {
+            qDebug() << "Extraction Done";
+        });
+        QObject::connect(download, &DownloadLanguageJob::errorText, &app, [](const QString &str) {
+            qDebug() << "Extraction error: " << str;
+        });
         download->start();
         app.exec();
     } else {

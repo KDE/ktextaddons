@@ -93,4 +93,10 @@ void DownloadLanguageJob::extractLanguage()
     extraJob->start();
 }
 
+void DownloadLanguageJob::slotExtractDone()
+{
+    Q_EMIT extractDone();
+    deleteLater();
+}
+
 #include "moc_downloadlanguagejob.cpp"
