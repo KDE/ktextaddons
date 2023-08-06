@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-05 00:44+0000\n"
-"PO-Revision-Date: 2023-08-04 14:25+0200\n"
+"POT-Creation-Date: 2023-08-06 00:44+0000\n"
+"PO-Revision-Date: 2023-08-05 09:08+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Nastavitve vtičnika Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:31
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:89
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -341,59 +341,58 @@ msgstr "Bergamot"
 msgid "Search..."
 msgstr "Išči..."
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:66
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:67
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Prenesi"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:71
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:72
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Zbriši"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:76
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:77
 #, kde-format
 msgid "Update"
-msgstr ""
+msgstr "Posodobi"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:89
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Napaka: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:23
 #, kde-format
 msgid "Resource Usage"
-msgstr ""
+msgstr "Raba vira"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:33
 #, kde-format
 msgid "Thread:"
-msgstr ""
+msgstr "Nit:"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:34
 #, kde-format
 msgid "Memory by Thread:"
-msgstr ""
+msgstr "Pomnilnik po niti:"
+
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:29
+#, kde-format
+msgid "Languages"
+msgstr "Jeziki"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:30
 #, kde-format
-msgid "Languages"
-msgstr ""
-
-#: translator/plugins/bergamot/bergamotenginewidget.cpp:31
-#, kde-format
 msgid "Settings"
+msgstr "Nastavitve"
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:32
+#, kde-format
+msgid "Cannot open file for downloading."
 msgstr ""
 
-#: translator/plugins/bergamot/extractlanguagejob.cpp:28
-#, fuzzy, kde-format
-#| msgid "Detect language"
-msgid "Impossible to extract language"
-msgstr "Zaznaj jezik"
-
-#: translator/plugins/bergamot/managermodeltranslator.cpp:44
-#: translator/plugins/bergamot/managermodeltranslator.cpp:100
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:41
+#: translator/plugins/bergamot/managermodeltranslator.cpp:43
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:100
 #, kde-format
@@ -404,42 +403,51 @@ msgstr ""
 "Napaka: Prevajalni sistemi so iz zaznali sumljivi promet računalniškega "
 "omrežja. Poskusite svojo zahtevo kasneje."
 
-#: translator/plugins/bergamot/managermodeltranslator.cpp:46
-#: translator/plugins/bergamot/managermodeltranslator.cpp:102
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:43
+#: translator/plugins/bergamot/managermodeltranslator.cpp:45
 #, kde-format
 msgid "Impossible to access to url: %1"
+msgstr "Ni mogoče dostopati do url: %1"
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:58
+#, kde-format
+msgid "Error during writing on disk: %1"
 msgstr ""
+
+#: translator/plugins/bergamot/extractlanguagejob.cpp:29
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "Ni mogoče izločiti jezika"
 
 #: translator/plugins/bergamot/translatormodel.cpp:36
 #, kde-format
 msgid "Source"
-msgstr ""
+msgstr "Vir"
 
 #: translator/plugins/bergamot/translatormodel.cpp:38
 #, kde-format
 msgid "Target"
-msgstr ""
+msgstr "Cilj"
 
 #: translator/plugins/bergamot/translatormodel.cpp:40
 #, kde-format
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: translator/plugins/bergamot/translatormodel.cpp:42
 #, kde-format
 msgid "Repository"
-msgstr ""
+msgstr "Repozitorij"
 
 #: translator/plugins/bergamot/translatormodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Persian"
+#, kde-format
 msgid "Version"
-msgstr "perzijsko"
+msgstr "Verzija"
 
 #: translator/plugins/bergamot/translatormodel.cpp:46
 #, kde-format
 msgid "Available"
-msgstr ""
+msgstr "Na voljo"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
