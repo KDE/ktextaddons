@@ -84,9 +84,6 @@ void DownloadLanguageJob::extractLanguage()
     qDebug() << " void DownloadLanguageJob::extractLanguage()" << mDestination->fileName();
     auto extraJob = new ExtractLanguageJob(this);
     extraJob->setSource(mDestination->fileName());
-    const QFileInfo info(mUrl.toString());
-    const QString baseName = info.baseName();
-    extraJob->setTarget(BergamotEngineUtils::storageLanguagePath() + QLatin1Char('/') + baseName);
     connect(extraJob, &ExtractLanguageJob::errorText, this, &DownloadLanguageJob::errorText);
     connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::extractDone);
 

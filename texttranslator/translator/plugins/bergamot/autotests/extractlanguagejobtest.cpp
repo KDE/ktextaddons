@@ -18,7 +18,6 @@ void ExtractLanguageJobTest::shouldHaveDefaultValues()
 {
     ExtractLanguageJob w;
     QVERIFY(w.source().isEmpty());
-    QVERIFY(w.target().isEmpty());
     QVERIFY(!w.canStart());
 }
 

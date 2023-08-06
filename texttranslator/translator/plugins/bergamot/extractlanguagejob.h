@@ -21,14 +21,10 @@ public:
     Q_REQUIRED_RESULT QString source() const;
     void setSource(const QString &newSource);
 
-    Q_REQUIRED_RESULT QString target() const;
-    void setTarget(const QString &newTarget);
-
 Q_SIGNALS:
     void finished();
     void errorText(const QString &str);
 
 private:
-    QString mTarget;
     QString mSource;
 };

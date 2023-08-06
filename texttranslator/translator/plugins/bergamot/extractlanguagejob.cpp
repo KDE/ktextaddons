@@ -20,7 +20,7 @@ ExtractLanguageJob::~ExtractLanguageJob() = default;
 
 bool ExtractLanguageJob::canStart() const
 {
-    return !mSource.isEmpty() && !mTarget.isEmpty();
+    return !mSource.isEmpty();
 }
 
 void ExtractLanguageJob::start()
@@ -37,12 +37,11 @@ void ExtractLanguageJob::start()
         deleteLater();
         return;
     }
-    if (!QDir().mkpath(mTarget)) {
-        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << mTarget;
+    if (!QDir().mkpath(BergamotEngineUtils::storageLanguagePath())) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << BergamotEngineUtils::storageLanguagePath();
         deleteLater();
         return;
     }
-    qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx" << mTarget;
     const KArchiveDirectory *zipDir = tar->directory();
     const QStringList lst = zipDir->entries();
     qDebug() << " list of files " << lst;
@@ -83,16 +82,6 @@ QString ExtractLanguageJob::source() const
 void ExtractLanguageJob::setSource(const QString &newSource)
 {
     mSource = newSource;
-}
-
-QString ExtractLanguageJob::target() const
-{
-    return mTarget;
-}
-
-void ExtractLanguageJob::setTarget(const QString &newTarget)
-{
-    mTarget = newTarget;
 }
 
 #include "moc_extractlanguagejob.cpp"
