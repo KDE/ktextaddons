@@ -5,6 +5,7 @@
 */
 
 #include "extractlanguagejob.h"
+#include "bergamotengineutils.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
 #include <KTar>
@@ -42,9 +43,35 @@ void ExtractLanguageJob::start()
         return;
     }
     qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx" << mTarget;
+    const KArchiveDirectory *zipDir = tar->directory();
+    const QStringList lst = zipDir->entries();
+    qDebug() << " list of files " << lst;
+    for (const QString &name : lst) {
+        const QString storeDirectory{BergamotEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
+        if (!QDir().mkpath(storeDirectory)) {
+            qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create :" << storeDirectory;
+            continue;
+        }
+        const KArchiveEntry *configPathEntry = zipDir->entry(name);
+        if (configPathEntry && configPathEntry->isDirectory()) {
+            const auto configDirectory = static_cast<const KArchiveDirectory *>(configPathEntry);
+            const QStringList entries = configDirectory->entries();
+            qDebug() << " list of files entries " << entries;
+            for (const QString &file : entries) {
+                const KArchiveEntry *filePathEntry = zipDir->entry(name + QStringLiteral("/%1").arg(file));
+                if (filePathEntry && filePathEntry->isFile()) {
+                    const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
+                    if (!filePath->copyTo(storeDirectory)) {
+                        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to copy to " << storeDirectory;
+                    }
+                } else {
+                    qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to import file " << file;
+                }
+            }
+        }
+    }
     delete tar;
     Q_EMIT finished();
-    // TODO
     deleteLater();
 }
 
