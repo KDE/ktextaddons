@@ -4,8 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
+#include "downloadlanguagejob.h"
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDebug>
 #include <QStandardPaths>
 
 int main(int argc, char **argv)
@@ -15,11 +17,16 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.process(app);
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), QStringLiteral("Add specific archive file name")));
 
-    // auto w = new TextTranslator::TranslatorWidget();
-    // w->show();
-    // app.exec();
-    // delete w;
+    parser.process(app);
+    if (!parser.positionalArguments().isEmpty()) {
+        const QString fileName = parser.positionalArguments().at(0);
+        auto download = new DownloadLanguageJob();
+        download->setUrl(QUrl(fileName));
+        download->start();
+    } else {
+        qWarning() << "Missing argument";
+    }
     return 0;
 }
