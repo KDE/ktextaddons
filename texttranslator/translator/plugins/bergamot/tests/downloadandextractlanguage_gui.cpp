@@ -25,9 +25,9 @@ int main(int argc, char **argv)
         auto download = new DownloadLanguageJob();
         download->setUrl(QUrl(fileName));
         download->start();
+        app.exec();
     } else {
         qWarning() << "Missing argument";
     }
-    app.exec();
     return 0;
 }
