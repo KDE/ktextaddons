@@ -5,7 +5,6 @@
 */
 
 #include "downloadlanguagejob.h"
-#include "bergamotengineutils.h"
 #include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
@@ -37,7 +36,7 @@ void DownloadLanguageJob::start()
     }
 
     QNetworkRequest request(mUrl);
-    qDebug() << " mUrl " << mUrl;
+    // qDebug() << " mUrl " << mUrl;
     QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         if (error == QNetworkReply::ServiceUnavailableError) {
@@ -81,7 +80,6 @@ void DownloadLanguageJob::setUrl(const QUrl &newUrl)
 
 void DownloadLanguageJob::extractLanguage()
 {
-    qDebug() << " void DownloadLanguageJob::extractLanguage()" << mDestination->fileName();
     auto extraJob = new ExtractLanguageJob(this);
     extraJob->setSource(mDestination->fileName());
     connect(extraJob, &ExtractLanguageJob::errorText, this, &DownloadLanguageJob::errorText);

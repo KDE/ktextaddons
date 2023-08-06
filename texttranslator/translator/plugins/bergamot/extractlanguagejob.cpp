@@ -44,7 +44,7 @@ void ExtractLanguageJob::start()
     }
     const KArchiveDirectory *zipDir = tar->directory();
     const QStringList lst = zipDir->entries();
-    qDebug() << " list of files " << lst;
+    // qDebug() << " list of files " << lst;
     for (const QString &name : lst) {
         const QString storeDirectory{BergamotEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
         if (!QDir().mkpath(storeDirectory)) {
@@ -55,7 +55,7 @@ void ExtractLanguageJob::start()
         if (configPathEntry && configPathEntry->isDirectory()) {
             const auto configDirectory = static_cast<const KArchiveDirectory *>(configPathEntry);
             const QStringList entries = configDirectory->entries();
-            qDebug() << " list of files entries " << entries;
+            // qDebug() << " list of files entries " << entries;
             for (const QString &file : entries) {
                 const KArchiveEntry *filePathEntry = zipDir->entry(name + QStringLiteral("/%1").arg(file));
                 if (filePathEntry && filePathEntry->isFile()) {
