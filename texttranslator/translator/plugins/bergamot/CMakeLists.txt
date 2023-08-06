@@ -87,4 +87,5 @@ install(TARGETS translator_bergamot  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)
+    add_subdirectory(tests)
 endif()
