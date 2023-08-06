@@ -5,10 +5,10 @@
 */
 
 #include "extractlanguagejob.h"
-#include "bergamotengineutils.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
 #include <KTar>
+#include <QDir>
 
 ExtractLanguageJob::ExtractLanguageJob(QObject *parent)
     : QObject{parent}
@@ -27,6 +27,17 @@ void ExtractLanguageJob::start()
     if (!canStart()) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to start ExtractLanguageJob";
         Q_EMIT errorText(i18n("Impossible to extract language"));
+        deleteLater();
+        return;
+    }
+    auto tar = new KTar(mSource);
+    if (!tar->open(QIODevice::ReadOnly)) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open temporary file" << mSource;
+        deleteLater();
+        return;
+    }
+    if (!QDir().mkpath(mTarget)) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << mTarget;
         deleteLater();
         return;
     }

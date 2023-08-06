@@ -5,9 +5,11 @@
 */
 
 #include "downloadlanguagejob.h"
+#include "bergamotengineutils.h"
 #include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
+#include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QTemporaryFile>
@@ -80,7 +82,9 @@ void DownloadLanguageJob::extractLanguage()
 {
     auto extraJob = new ExtractLanguageJob(this);
     extraJob->setSource(mDestination->fileName());
-    // TODO extraJob->setTarget(mDestination->fileName());
+    const QFileInfo info(mUrl.toString());
+    const QString baseName = info.baseName();
+    extraJob->setTarget(BergamotEngineUtils::storageLanguagePath() + QLatin1Char('/') + baseName);
     connect(extraJob, &ExtractLanguageJob::errorText, this, &DownloadLanguageJob::errorText);
     connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::extractDone);
 
