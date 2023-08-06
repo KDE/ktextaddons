@@ -41,6 +41,7 @@ void ExtractLanguageJob::start()
         deleteLater();
         return;
     }
+    qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx" << mTarget;
     // TODO
     deleteLater();
 }

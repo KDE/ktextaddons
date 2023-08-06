@@ -28,5 +28,6 @@ int main(int argc, char **argv)
     } else {
         qWarning() << "Missing argument";
     }
+    app.exec();
     return 0;
 }
