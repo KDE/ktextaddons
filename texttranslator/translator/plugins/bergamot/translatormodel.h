@@ -20,6 +20,7 @@ public:
         Repository,
         Version,
         Available,
+        CheckSum,
         Url,
         LastColumn = Url,
     };
