@@ -78,8 +78,9 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     downLoadLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(downLoadLanguage);
     connect(downLoadLanguage, &QPushButton::clicked, this, [this]() {
-        QString url;
-        // TODO
+        const auto currentlySelectedIndex = mTreeView->selectionModel()->currentIndex();
+        const QString url = currentlySelectedIndex.data(TranslatorModel::Url).toString();
+        qDebug() << " url " << url << currentlySelectedIndex;
         slotDownLoad(url);
     });
 
