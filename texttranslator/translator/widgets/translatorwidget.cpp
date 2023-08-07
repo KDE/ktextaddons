@@ -53,7 +53,6 @@ public:
     void initLanguage();
     void fillToCombobox(const QString &lang);
 
-    QMap<TranslatorUtil::Language, QString> listLanguage;
     QByteArray data;
     TranslatorTextEdit *inputText = nullptr;
     TranslatorResultTextEdit *translatorResultTextEdit = nullptr;
@@ -77,7 +76,8 @@ void TranslatorWidget::TranslatorWidgetPrivate::fillToCombobox(const QString &la
     toCombobox->clear();
 
     TranslatorUtil translatorUtil;
-    QMapIterator<TranslatorUtil::Language, QString> i(listLanguage);
+    const QMapIterator<TranslatorUtil::Language, QString> listToLanguage = translatorClient->supportedFromLanguages();
+    QMapIterator<TranslatorUtil::Language, QString> i(listToLanguage);
     while (i.hasNext()) {
         i.next();
         const QString languageCode = TranslatorUtil::languageCode(i.key());
@@ -94,9 +94,9 @@ void TranslatorWidget::TranslatorWidgetPrivate::initLanguage()
     }
     toCombobox->clear();
     fromCombobox->clear();
-    listLanguage = translatorClient->supportedFromLanguages();
+    const QMapIterator<TranslatorUtil::Language, QString> listFromLanguage = translatorClient->supportedFromLanguages();
 
-    QMapIterator<TranslatorUtil::Language, QString> i(listLanguage);
+    QMapIterator<TranslatorUtil::Language, QString> i(listFromLanguage);
     TranslatorUtil translatorUtil;
     while (i.hasNext()) {
         i.next();
