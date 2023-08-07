@@ -36,12 +36,14 @@ TextTranslator::TranslatorEnginePlugin *BergamotEngineClient::createTranslator()
     return new BergamotEnginePlugin();
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> BergamotEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> BergamotEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
-    }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> BergamotEngineClient::supportedToLanguages()
+{
+    return mToLanguages;
 }
 
 bool BergamotEngineClient::hasConfigurationDialog() const
@@ -64,14 +66,13 @@ void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
-bool BergamotEngineClient::hasInverteSupport() const
+bool BergamotEngineClient::hasInvertSupport() const
 {
     return false;
 }
 
 bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
-    // TODO
     return true;
 }
 

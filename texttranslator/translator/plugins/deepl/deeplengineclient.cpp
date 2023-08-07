@@ -44,12 +44,17 @@ TextTranslator::TranslatorEnginePlugin *DeeplEngineClient::createTranslator()
     return enginePlugin;
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> DeeplEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> DeeplEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
+    if (mFromLanguages.isEmpty()) {
+        mFromLanguages = fillLanguages();
     }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> DeeplEngineClient::supportedToLanguages()
+{
+    return supportedFromLanguages();
 }
 
 bool DeeplEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const

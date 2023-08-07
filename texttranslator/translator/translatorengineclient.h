@@ -30,13 +30,14 @@ public:
 
     virtual TranslatorEnginePlugin *createTranslator() = 0;
 
-    Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedLanguages() = 0;
+    Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedFromLanguages() = 0;
+    Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedToLanguages() = 0;
 
     Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
 
     virtual void showConfigureDialog(QWidget *parentWidget);
 
-    Q_REQUIRED_RESULT virtual bool hasInverteSupport() const;
+    Q_REQUIRED_RESULT virtual bool hasInvertSupport() const;
 
 Q_SIGNALS:
     void configureChanged();
@@ -44,7 +45,7 @@ Q_SIGNALS:
 protected:
     Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> fillLanguages();
     Q_REQUIRED_RESULT virtual bool isSupported(TextTranslator::TranslatorUtil::Language lang) const = 0;
-    QMap<TranslatorUtil::Language, QString> mLanguages;
+    QMap<TranslatorUtil::Language, QString> mFromLanguages;
 };
 }
 Q_DECLARE_INTERFACE(TextTranslator::TranslatorEngineClient, "org.kde.translator.Client")

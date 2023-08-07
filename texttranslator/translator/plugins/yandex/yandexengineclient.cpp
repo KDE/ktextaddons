@@ -31,12 +31,17 @@ TextTranslator::TranslatorEnginePlugin *YandexEngineClient::createTranslator()
     return new YandexEnginePlugin();
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> YandexEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> YandexEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
+    if (mFromLanguages.isEmpty()) {
+        mFromLanguages = fillLanguages();
     }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> YandexEngineClient::supportedToLanguages()
+{
+    return supportedFromLanguages();
 }
 
 bool YandexEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const

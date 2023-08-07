@@ -22,12 +22,11 @@ public:
 
 private:
     void slotTextChanged(const QString &str);
-    void slotDownLoad(const QString &url);
+    void slotDownLoad(const QString &url, const QString &checkSum);
     void slotDelete();
     void slotUpdateListLanguage();
     void slotError(const QString &str);
     void updateListModel();
-    void slotClicked(const QModelIndex &index);
     void slotProgressInfo(const ManagerModelTranslator::ProgressInfo &info);
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;

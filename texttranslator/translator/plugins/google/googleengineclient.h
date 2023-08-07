@@ -20,7 +20,8 @@ public:
     Q_REQUIRED_RESULT QString name() const override;
     Q_REQUIRED_RESULT QString translatedName() const override;
     Q_REQUIRED_RESULT TextTranslator::TranslatorEnginePlugin *createTranslator() override;
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedLanguages() override;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages() override;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages() override;
 
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;

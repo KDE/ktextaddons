@@ -31,12 +31,17 @@ TextTranslator::TranslatorEnginePlugin *GoogleEngineClient::createTranslator()
     return new GoogleEnginePlugin();
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> GoogleEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> GoogleEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
+    if (mFromLanguages.isEmpty()) {
+        mFromLanguages = fillLanguages();
     }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> GoogleEngineClient::supportedToLanguages()
+{
+    return supportedFromLanguages();
 }
 
 bool GoogleEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const

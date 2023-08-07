@@ -20,7 +20,9 @@ public:
     Q_REQUIRED_RESULT QString name() const override;
     Q_REQUIRED_RESULT QString translatedName() const override;
     Q_REQUIRED_RESULT TextTranslator::TranslatorEnginePlugin *createTranslator() override;
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedLanguages() override;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages() override;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages() override;
+
     Q_REQUIRED_RESULT bool hasConfigurationDialog() const override;
     void showConfigureDialog(QWidget *parentWidget) override;
 

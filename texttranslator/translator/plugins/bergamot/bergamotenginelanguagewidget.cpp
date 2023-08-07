@@ -81,10 +81,12 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(downLoadLanguage, &QPushButton::clicked, this, [this]() {
         const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
         const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Url);
+        const QModelIndex modelIndexCheckSum = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::CheckSum);
 
         const QString url = modelIndex.data().toString();
-        qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " url " << url;
-        slotDownLoad(url);
+        const QString checkSum = modelIndexCheckSum.data().toString();
+        qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " url " << url << " checksum " << checkSum;
+        slotDownLoad(url, checkSum);
     });
 
     auto deleteLanguage = new QPushButton(i18n("Delete"), this);
@@ -98,8 +100,6 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(updateListLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotUpdateListLanguage);
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &BergamotEngineLanguageWidget::slotTextChanged);
-    connect(mTreeView, &QTreeView::clicked, this, &BergamotEngineLanguageWidget::slotClicked);
-    // TODO enable/disable it.
 
     auto progressBarLayout = new QHBoxLayout;
     progressBarLayout->setObjectName(QStringLiteral("progressBarLayout"));
@@ -119,6 +119,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, this, &BergamotEngineLanguageWidget::updateListModel);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
     mTreeView->setColumnHidden(TranslatorModel::Url, true);
+    mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
     connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         downLoadLanguage->setEnabled(hasSelectedItem);
@@ -142,11 +143,6 @@ void BergamotEngineLanguageWidget::slotProgressInfo(const ManagerModelTranslator
     mProgressBar->setValue((info.bytesReceived * 100) / info.bytesTotal);
 }
 
-void BergamotEngineLanguageWidget::slotClicked(const QModelIndex &index)
-{
-    // TODO
-}
-
 void BergamotEngineLanguageWidget::slotError(const QString &str)
 {
     KMessageBox::error(this, i18n("Error: %1", str), i18n("Bergamot"));
@@ -157,9 +153,9 @@ void BergamotEngineLanguageWidget::slotTextChanged(const QString &str)
     mTranslatorProxyModel->setSearchString(str);
 }
 
-void BergamotEngineLanguageWidget::slotDownLoad(const QString &url)
+void BergamotEngineLanguageWidget::slotDownLoad(const QString &url, const QString &checkSum)
 {
-    ManagerModelTranslator::self()->downloadLanguage(url);
+    ManagerModelTranslator::self()->downloadLanguage(url, checkSum);
 }
 
 void BergamotEngineLanguageWidget::slotDelete()
@@ -176,6 +172,7 @@ void BergamotEngineLanguageWidget::slotUpdateListLanguage()
 
 void BergamotEngineLanguageWidget::updateListModel()
 {
+    qDebug() << " void BergamotEngineLanguageWidget::updateListModel()";
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
 }
 

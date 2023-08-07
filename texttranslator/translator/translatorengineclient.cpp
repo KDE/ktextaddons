@@ -27,7 +27,7 @@ void TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
     // Nothing by default
 }
 
-bool TranslatorEngineClient::hasInverteSupport() const
+bool TranslatorEngineClient::hasInvertSupport() const
 {
     // True by default
     return true;

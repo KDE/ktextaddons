@@ -99,7 +99,7 @@ QMap<QString, QString> TranslatorEngineLoader::translatorEngineInfos() const
     return map;
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::supportedLanguages(const QString &clientName) const
+QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::supportedFromLanguages(const QString &clientName) const
 {
     QMap<TranslatorUtil::Language, QString> supportedLanguages;
     auto clientsItr = d->translatorClients.constFind(clientName);
@@ -107,7 +107,19 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::
         qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         return supportedLanguages;
     }
-    supportedLanguages = (*clientsItr)->supportedLanguages();
+    supportedLanguages = (*clientsItr)->supportedFromLanguages();
+    return supportedLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::supportedToLanguages(const QString &clientName) const
+{
+    QMap<TranslatorUtil::Language, QString> supportedLanguages;
+    auto clientsItr = d->translatorClients.constFind(clientName);
+    if (clientsItr == d->translatorClients.constEnd()) {
+        qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
+        return supportedLanguages;
+    }
+    supportedLanguages = (*clientsItr)->supportedToLanguages();
     return supportedLanguages;
 }
 

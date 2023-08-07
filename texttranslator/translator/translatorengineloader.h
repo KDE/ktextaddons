@@ -28,7 +28,8 @@ public:
     // engine name, i18n
     Q_REQUIRED_RESULT QMap<QString, QString> translatorEngineInfos() const;
 
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedLanguages(const QString &clientName) const;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages(const QString &clientName) const;
+    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages(const QString &clientName) const;
 
     Q_REQUIRED_RESULT bool hasConfigurationDialog(const QString &clientName) const;
 

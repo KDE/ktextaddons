@@ -34,8 +34,13 @@ void ManagerModelTranslator::downloadListModels()
 {
     QNetworkReply *reply =
         TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(QUrl(BergamotEngineUtils::defaultBergamotRepository())));
+
+    connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {
+        qDebug() << " ERRROR " << errors;
+    });
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-        parseListModel(QJsonDocument::fromJson(reply->readAll()).object());
+        const auto readAll = reply->readAll();
+        parseListModel(QJsonDocument::fromJson(readAll).object());
         reply->deleteLater();
     });
     connect(reply, &QNetworkReply::errorOccurred, this, [reply, this](QNetworkReply::NetworkError error) {
@@ -64,6 +69,7 @@ void ManagerModelTranslator::loadModelList(const QString &fileName)
 
 void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
 {
+    mTranslators.clear();
     const QJsonArray arrays = obj[QStringLiteral("models")].toArray();
     for (const QJsonValue &current : arrays) {
         if (current.type() == QJsonValue::Object) {
@@ -77,6 +83,7 @@ void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing" << current;
         }
     }
+    qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " mTranslators " << mTranslators.count();
     Q_EMIT downLoadModelListDone();
 }
 

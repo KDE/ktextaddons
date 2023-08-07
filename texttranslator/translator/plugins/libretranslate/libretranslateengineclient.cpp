@@ -44,12 +44,17 @@ TextTranslator::TranslatorEnginePlugin *LibreTranslateEngineClient::createTransl
     return enginePlugin;
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
+    if (mFromLanguages.isEmpty()) {
+        mFromLanguages = fillLanguages();
     }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedToLanguages()
+{
+    return supportedFromLanguages();
 }
 
 bool LibreTranslateEngineClient::hasConfigurationDialog() const

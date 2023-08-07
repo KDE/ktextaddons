@@ -31,12 +31,17 @@ TextTranslator::TranslatorEnginePlugin *BingEngineClient::createTranslator()
     return new BingEnginePlugin();
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> BingEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> BingEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
+    if (mFromLanguages.isEmpty()) {
+        mFromLanguages = fillLanguages();
     }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> BingEngineClient::supportedToLanguages()
+{
+    return supportedFromLanguages();
 }
 
 bool BingEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const

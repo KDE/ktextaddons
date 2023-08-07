@@ -38,12 +38,17 @@ TextTranslator::TranslatorEnginePlugin *LingvaEngineClient::createTranslator()
     return enginePlugin;
 }
 
-QMap<TextTranslator::TranslatorUtil::Language, QString> LingvaEngineClient::supportedLanguages()
+QMap<TextTranslator::TranslatorUtil::Language, QString> LingvaEngineClient::supportedFromLanguages()
 {
-    if (mLanguages.isEmpty()) {
-        mLanguages = fillLanguages();
+    if (mFromLanguages.isEmpty()) {
+        mFromLanguages = fillLanguages();
     }
-    return mLanguages;
+    return mFromLanguages;
+}
+
+QMap<TextTranslator::TranslatorUtil::Language, QString> LingvaEngineClient::supportedToLanguages()
+{
+    return supportedFromLanguages();
 }
 
 bool LingvaEngineClient::hasConfigurationDialog() const

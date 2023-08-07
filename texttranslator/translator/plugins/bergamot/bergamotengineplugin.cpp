@@ -5,7 +5,6 @@
 */
 
 #include "bergamotengineplugin.h"
-#include "bergamottranslator_debug.h"
 #include "managermodeltranslator.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
