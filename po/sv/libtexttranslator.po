@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 00:44+0000\n"
-"PO-Revision-Date: 2023-08-05 07:22+0200\n"
+"POT-Creation-Date: 2023-08-07 00:46+0000\n"
+"PO-Revision-Date: 2023-08-06 06:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -385,12 +385,12 @@ msgstr "Språk"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:32
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:33
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Kan inte öppna fil för nerladdning."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:41
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:43
 #: translator/plugins/bergamot/managermodeltranslator.cpp:43
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:100
@@ -402,18 +402,18 @@ msgstr ""
 "Fel: Gränssnittssystem har detekterad misstänkt trafik från datornätverket. "
 "Försök med din begäran igen senare."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:43
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:45
 #: translator/plugins/bergamot/managermodeltranslator.cpp:45
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Omöjligt att komma åt webbadress: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:58
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:60
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Fel vid skrivning på disk: %1"
 
-#: translator/plugins/bergamot/extractlanguagejob.cpp:29
+#: translator/plugins/bergamot/extractlanguagejob.cpp:30
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Omöjligt att extrahera språk."

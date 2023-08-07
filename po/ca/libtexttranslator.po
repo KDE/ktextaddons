@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 00:44+0000\n"
-"PO-Revision-Date: 2023-08-05 11:27+0200\n"
+"POT-Creation-Date: 2023-08-07 00:46+0000\n"
+"PO-Revision-Date: 2023-08-06 10:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -387,12 +387,12 @@ msgstr "Idiomes"
 msgid "Settings"
 msgstr "Configuració"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:32
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:33
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "No s'ha pogut obrir el fitxer per a la baixada."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:41
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:43
 #: translator/plugins/bergamot/managermodeltranslator.cpp:43
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:100
@@ -404,18 +404,18 @@ msgstr ""
 "Error: Els sistemes del motor han detectat trànsit sospitós des de la xarxa "
 "d'aquest ordinador. Torneu-ho a provar més tard."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:43
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:45
 #: translator/plugins/bergamot/managermodeltranslator.cpp:45
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "És impossible accedir a l'URL: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:58
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:60
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Error durant l'escriptura al disc: %1"
 
-#: translator/plugins/bergamot/extractlanguagejob.cpp:29
+#: translator/plugins/bergamot/extractlanguagejob.cpp:30
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "És impossible extreure l'idioma"
