@@ -76,7 +76,7 @@ void TranslatorWidget::TranslatorWidgetPrivate::fillToCombobox(const QString &la
     toCombobox->clear();
 
     TranslatorUtil translatorUtil;
-    const QMapIterator<TranslatorUtil::Language, QString> listToLanguage = translatorClient->supportedFromLanguages();
+    const QMapIterator<TranslatorUtil::Language, QString> listToLanguage = translatorClient->supportedToLanguages();
     QMapIterator<TranslatorUtil::Language, QString> i(listToLanguage);
     while (i.hasNext()) {
         i.next();
