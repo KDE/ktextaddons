@@ -21,6 +21,7 @@ public:
         Version,
         Available,
         CheckSum,
+        Identifier,
         Url,
         LastColumn = Url,
     };

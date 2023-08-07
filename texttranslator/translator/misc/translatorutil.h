@@ -101,5 +101,6 @@ public:
     Q_REQUIRED_RESULT static QString translatedLanguage(TranslatorUtil::Language lang);
     Q_REQUIRED_RESULT static QString languageCode(TranslatorUtil::Language lang);
     Q_REQUIRED_RESULT static QString searchI18nFromLanguage(const QString &langCode);
+    Q_REQUIRED_RESULT static TranslatorUtil::Language stringToLanguage(const QString &str);
 };
 }

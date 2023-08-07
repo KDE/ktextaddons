@@ -23,7 +23,7 @@ public:
 private:
     void slotTextChanged(const QString &str);
     void slotDownLoad(const QString &url, const QString &checkSum);
-    void slotDelete();
+    void slotDelete(const QString &identifier);
     void slotUpdateListLanguage();
     void slotError(const QString &str);
     void updateListModel();

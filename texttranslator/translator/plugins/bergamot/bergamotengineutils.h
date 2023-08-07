@@ -19,6 +19,7 @@ Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString storageLanguagePath();
 struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString from;
     QString to;
+    QString shortName;
 };
 
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QDir &dir);

@@ -1,6 +1,19 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: none
+include(ExternalProject)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
+
+set(build_dir ${CMAKE_CURRENT_DIR}/3rdparty)
+
+ExternalProject_Add(3rdparty_bergamot
+#        PREFIX ${build_dir}/bergamot-translator
+        GIT_REPOSITORY "https://github.com/browsermt/bergamot-translator.git"
+        GIT_TAG "main"
+        CMAKE_ARGS -DBLA_PREFER_PKGCONFIG:BOOL=ON
+        -DBLA_PKGCONFIG_BLAS:STRING=openblas
+        -Dcblas_cblas_LIBRARY:STRING=cblas
+)
+
 
 add_library(libbergamot)
 

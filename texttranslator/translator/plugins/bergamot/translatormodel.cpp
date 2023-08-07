@@ -44,6 +44,7 @@ QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, i
             return i18n("Version");
         case TranslatorModel::Available:
             return i18n("Available");
+        case TranslatorModel::Identifier:
         case TranslatorModel::CheckSum:
         case TranslatorModel::Url:
             return {};
@@ -89,6 +90,10 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     case TranslatorModel::Available: {
         // TODO return translator.version();
         return {};
+    }
+    case TranslatorModel::Identifier: {
+        // TODO verify it.
+        return translator.modelName();
     }
     case TranslatorModel::Url: {
         return translator.url();

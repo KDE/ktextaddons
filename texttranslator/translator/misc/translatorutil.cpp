@@ -5,6 +5,7 @@
 */
 
 #include "translatorutil.h"
+#include "texttranslator_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -221,6 +222,32 @@ QString TranslatorUtil::searchI18nFromLanguage(const QString &langCode)
         }
     }
     return {};
+}
+
+TranslatorUtil::Language TranslatorUtil::stringToLanguage(const QString &str)
+{
+    if (str == QStringLiteral("en")) {
+        return TranslatorUtil::en;
+    } else if (str == QStringLiteral("fr")) {
+        return TranslatorUtil::fr;
+    } else if (str == QStringLiteral("es")) {
+        return TranslatorUtil::es;
+    } else if (str == QStringLiteral("pl")) {
+        return TranslatorUtil::pl;
+    } else if (str == QStringLiteral("de")) {
+        return TranslatorUtil::de;
+    } else if (str == QStringLiteral("cs")) {
+        return TranslatorUtil::cs;
+    } else if (str == QStringLiteral("bg")) {
+        return TranslatorUtil::bg;
+    } else if (str == QStringLiteral("et")) {
+        return TranslatorUtil::et;
+        //    } else if (str == QStringLiteral("nn")) {
+        //        return TranslatorUtil::nn;
+    } else {
+        qCWarning(TEXTTRANSLATOR_LOG) << " Impossible to find TranslatorUtil::Language for " << str;
+    }
+    return TranslatorUtil::en;
 }
 
 QString TranslatorUtil::languageCode(TranslatorUtil::Language lang)

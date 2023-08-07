@@ -61,13 +61,11 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
     qDebug() << " list " << list;
     for (const auto &name : list) {
         qDebug() << " name " << dir;
-        const QFileInfo modelInfo(name + QStringLiteral("/model_info.json"));
-        if (!modelInfo.exists()) {
+        QFile modelInfoFile(dir.absolutePath() + QLatin1Char('/') + name + QStringLiteral("/model_info.json"));
+        if (!modelInfoFile.exists()) {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "model_info.json not found in " << name;
             return {};
         }
-
-        QFile modelInfoFile(modelInfo.absoluteFilePath());
         if (!modelInfoFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open file " << name;
             return {};
@@ -78,11 +76,16 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
         const QJsonDocument jsonResponse = QJsonDocument::fromJson(data);
         Translator translator;
         translator.parse(jsonResponse.object());
+        // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
+
         qDebug() << " translator " << translator;
-        if (translator.isValid()) {
-            BergamotEngineUtils::LanguageInstalled lang;
-            lang.from = translator.source();
-            lang.to = translator.target();
+        BergamotEngineUtils::LanguageInstalled lang;
+        const QString shortName = translator.shortName();
+        const QStringList langIdentifier = shortName.split(QLatin1Char('-'));
+        if (langIdentifier.count() >= 2) {
+            lang.from = langIdentifier.at(0);
+            lang.to = langIdentifier.at(1);
+            lang.shortName = shortName;
             languages.append(lang);
         }
     }

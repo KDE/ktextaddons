@@ -92,7 +92,12 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     auto deleteLanguage = new QPushButton(i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(deleteLanguage);
-    connect(deleteLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotDelete);
+    connect(deleteLanguage, &QPushButton::clicked, this, [this]() {
+        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
+        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Identifier);
+        const QString identifier = modelIndex.data().toString();
+        slotDelete(identifier);
+    });
 
     auto updateListLanguage = new QPushButton(i18n("Update"), this);
     updateListLanguage->setObjectName(QStringLiteral("updateListLanguage"));
@@ -120,6 +125,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
     mTreeView->setColumnHidden(TranslatorModel::Url, true);
     mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
+    mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
     connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         downLoadLanguage->setEnabled(hasSelectedItem);
@@ -158,7 +164,7 @@ void BergamotEngineLanguageWidget::slotDownLoad(const QString &url, const QStrin
     ManagerModelTranslator::self()->downloadLanguage(url, checkSum);
 }
 
-void BergamotEngineLanguageWidget::slotDelete()
+void BergamotEngineLanguageWidget::slotDelete(const QString &identifier)
 {
     // TODO
     // ManagerModelTranslator::self()->removeLanguage(...)
