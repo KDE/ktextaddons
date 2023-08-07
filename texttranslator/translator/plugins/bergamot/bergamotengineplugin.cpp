@@ -5,6 +5,7 @@
 */
 
 #include "bergamotengineplugin.h"
+#include "bergamotmarianinterface.h"
 #include "managermodeltranslator.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -12,6 +13,7 @@
 
 BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)
+    , mBergamotInterface(new BergamotMarianInterface(this))
 {
     loadSettings();
 }
@@ -20,6 +22,7 @@ BergamotEnginePlugin::~BergamotEnginePlugin() = default;
 
 void BergamotEnginePlugin::translate()
 {
+    mBergamotInterface->translate(inputText());
 }
 
 void BergamotEnginePlugin::loadSettings()

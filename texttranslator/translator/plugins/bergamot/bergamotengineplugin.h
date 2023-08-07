@@ -10,6 +10,7 @@
 
 #include <TextTranslator/TranslatorEnginePlugin>
 #include <TextTranslator/TranslatorUtil>
+class BergamotMarianInterface;
 class BergamotEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {
 public:
@@ -21,4 +22,5 @@ public:
 private:
     void loadSettings();
     BergamotEngineUtils::SettingsInfo mSettingsInfo;
+    BergamotMarianInterface *const mBergamotInterface;
 };
