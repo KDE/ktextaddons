@@ -114,6 +114,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, this, &BergamotEngineLanguageWidget::updateListModel);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
+    mTreeView->setColumnHidden(TranslatorModel::Url, true);
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;

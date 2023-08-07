@@ -20,7 +20,8 @@ public:
         Repository,
         Version,
         Available,
-        LastColumn = Available,
+        Url,
+        LastColumn = Url,
     };
 
     Q_ENUM(TranslatorRoles)
