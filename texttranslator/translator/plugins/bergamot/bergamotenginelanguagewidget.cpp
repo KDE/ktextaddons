@@ -71,7 +71,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 
     auto deleteLanguage = new QPushButton(i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
-    buttonLayout->addWidget(deleteLanguage, 1);
+    buttonLayout->addWidget(deleteLanguage);
     connect(deleteLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotDelete);
 
     auto updateListLanguage = new QPushButton(i18n("Update"), this);
@@ -80,10 +80,16 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(updateListLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotUpdateListLanguage);
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &BergamotEngineLanguageWidget::slotTextChanged);
+    connect(mTreeView, &QTreeView::clicked, this, &BergamotEngineLanguageWidget::slotClicked);
     // TODO enable/disable it.
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
+
+void BergamotEngineLanguageWidget::slotClicked(const QModelIndex &index)
+{
+    // TODO
+}
 
 void BergamotEngineLanguageWidget::slotError(const QString &str)
 {

@@ -24,6 +24,7 @@ private:
     void slotUpdateListLanguage();
     void slotError(const QString &str);
     void updateListModel();
+    void slotClicked(const QModelIndex &index);
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     TranslatorModel *const mTranslatorModel;
