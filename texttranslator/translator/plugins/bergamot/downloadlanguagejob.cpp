@@ -8,6 +8,7 @@
 #include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
+#include <QCryptographicHash>
 #include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
@@ -19,7 +20,10 @@ DownloadLanguageJob::DownloadLanguageJob(QObject *parent)
 {
 }
 
-DownloadLanguageJob::~DownloadLanguageJob() = default;
+DownloadLanguageJob::~DownloadLanguageJob()
+{
+    delete mHash;
+}
 
 void DownloadLanguageJob::start()
 {
@@ -34,6 +38,8 @@ void DownloadLanguageJob::start()
         deleteLater();
         return;
     }
+
+    mHash = new QCryptographicHash(QCryptographicHash::Sha256);
 
     QNetworkRequest request(mUrl);
     // qDebug() << " mUrl " << mUrl;
@@ -52,14 +58,22 @@ void DownloadLanguageJob::start()
         mDestination->flush();
         mDestination->seek(0);
         reply->deleteLater();
-        extractLanguage();
+        if (!mCheckSum.isEmpty() && mHash->result().toHex() != mCheckSum.toLatin1()) {
+            // qDebug() << " mHash->result() " << mHash->result().toHex() << " mCheckSum " << mCheckSum;
+            Q_EMIT errorText(i18n("CheckSum is not correct."));
+            deleteLater();
+            return;
+        } else {
+            extractLanguage();
+        }
     });
-    connect(reply, &QIODevice::readyRead, this, [=] {
+    connect(reply, &QIODevice::readyRead, this, [this, reply] {
         const QByteArray buffer = reply->readAll();
         if (mDestination->write(buffer) == -1) {
             Q_EMIT errorText(i18n("Error during writing on disk: %1", mDestination->errorString()));
             reply->abort();
         }
+        mHash->addData(buffer);
     });
 }
 
@@ -86,6 +100,16 @@ void DownloadLanguageJob::extractLanguage()
     connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::extractDone);
 
     extraJob->start();
+}
+
+QString DownloadLanguageJob::checkSum() const
+{
+    return mCheckSum;
+}
+
+void DownloadLanguageJob::setCheckSum(const QString &newCheckSum)
+{
+    mCheckSum = newCheckSum;
 }
 
 void DownloadLanguageJob::slotExtractDone()
