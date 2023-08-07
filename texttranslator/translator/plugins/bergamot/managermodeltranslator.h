@@ -12,6 +12,11 @@ class LIBBERGAMOT_EXPORT ManagerModelTranslator : public QObject
 {
     Q_OBJECT
 public:
+    struct ProgressInfo {
+        QString languageName;
+        qint64 bytesReceived = -1;
+        qint64 bytesTotal = -1;
+    };
     explicit ManagerModelTranslator(QObject *parent = nullptr);
     ~ManagerModelTranslator() override;
 
@@ -28,9 +33,11 @@ public:
 
 Q_SIGNALS:
     void errorText(const QString &str);
+    void progress(const ManagerModelTranslator::ProgressInfo &info);
+    void extractDone();
+    void downLoadModelListDone();
 
 private:
     LIBBERGAMOT_NO_EXPORT void parseListModel(const QJsonObject &obj);
-    LIBBERGAMOT_NO_EXPORT void slotProgress(qint64 bytesReceived, qint64 bytesTotal);
     QVector<Translator> mTranslators;
 };

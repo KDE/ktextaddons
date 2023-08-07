@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "libbergamot_private_export.h"
+#include "managermodeltranslator.h"
 #include <QWidget>
 class QTreeView;
 class TranslatorModel;
@@ -21,12 +22,13 @@ public:
 
 private:
     void slotTextChanged(const QString &str);
-    void slotDownLoad();
+    void slotDownLoad(const QString &url);
     void slotDelete();
     void slotUpdateListLanguage();
     void slotError(const QString &str);
     void updateListModel();
     void slotClicked(const QModelIndex &index);
+    void slotProgressInfo(const ManagerModelTranslator::ProgressInfo &info);
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     TranslatorModel *const mTranslatorModel;

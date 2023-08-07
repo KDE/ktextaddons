@@ -77,6 +77,7 @@ void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing" << current;
         }
     }
+    Q_EMIT downLoadModelListDone();
 }
 
 QVector<Translator> ManagerModelTranslator::translators() const
@@ -93,14 +94,17 @@ void ManagerModelTranslator::downloadLanguage(const QString &url)
 {
     auto downloadJob = new DownloadLanguageJob(this);
     downloadJob->setUrl(QUrl(url));
+    const QString name = url;
     connect(downloadJob, &DownloadLanguageJob::errorText, this, &ManagerModelTranslator::errorText);
-    connect(downloadJob, &DownloadLanguageJob::downloadProgress, this, &ManagerModelTranslator::slotProgress);
+    connect(downloadJob, &DownloadLanguageJob::extractDone, this, &ManagerModelTranslator::extractDone);
+    connect(downloadJob, &DownloadLanguageJob::downloadProgress, this, [this, url](qint64 bytesReceived, qint64 bytesTotal) {
+        ManagerModelTranslator::ProgressInfo info;
+        info.bytesReceived = bytesReceived;
+        info.bytesTotal = bytesTotal;
+        info.languageName = url;
+        Q_EMIT progress(std::move(info));
+    });
     downloadJob->start();
-}
-
-void ManagerModelTranslator::slotProgress(qint64 bytesReceived, qint64 bytesTotal)
-{
-    // TODO
 }
 
 #include "moc_managermodeltranslator.cpp"
