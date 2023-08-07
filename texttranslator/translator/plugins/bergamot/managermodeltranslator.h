@@ -29,7 +29,7 @@ public:
 
     void loadModelList(const QString &fileName);
 
-    void downloadLanguage(const QString &url);
+    void downloadLanguage(const QString &url, const QString &checkSum);
 
 Q_SIGNALS:
     void errorText(const QString &str);

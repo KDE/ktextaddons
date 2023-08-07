@@ -90,10 +90,11 @@ void ManagerModelTranslator::setTranslators(const QVector<Translator> &newTransl
     mTranslators = newTranslators;
 }
 
-void ManagerModelTranslator::downloadLanguage(const QString &url)
+void ManagerModelTranslator::downloadLanguage(const QString &url, const QString &checkSum)
 {
     auto downloadJob = new DownloadLanguageJob(this);
     downloadJob->setUrl(QUrl(url));
+    downloadJob->setCheckSum(checkSum);
     const QString name = url;
     connect(downloadJob, &DownloadLanguageJob::errorText, this, &ManagerModelTranslator::errorText);
     connect(downloadJob, &DownloadLanguageJob::extractDone, this, &ManagerModelTranslator::extractDone);
