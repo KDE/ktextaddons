@@ -5,6 +5,7 @@
 */
 
 #include "bergamotenginelanguagewidget.h"
+#include "libbergamot_debug.h"
 #include "translatormodel.h"
 #include "translatorproxymodel.h"
 #include <KLocalizedString>
@@ -82,7 +83,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
         const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Url);
 
         const QString url = modelIndex.data().toString();
-        qDebug() << " url " << url << currentlySelectedIndex;
+        qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " url " << url;
         slotDownLoad(url);
     });
 
