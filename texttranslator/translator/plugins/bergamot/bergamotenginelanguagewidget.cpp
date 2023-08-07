@@ -10,7 +10,9 @@
 #include "translatorproxymodel.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QLabel>
 #include <QLineEdit>
+#include <QProgressBar>
 #include <QPushButton>
 #include <QTreeView>
 #include <QVBoxLayout>
@@ -27,10 +29,18 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     , mSearchLineEdit(new QLineEdit(this))
     , mTranslatorModel(new TranslatorModel(this))
     , mTranslatorProxyModel(new TranslatorProxyModel(this))
+    , mProgressBar(new QProgressBar(this))
+    , mProgressBarLabel(new QLabel(this))
+    , mProgressBarWidget(new QWidget(this))
 {
-    auto mainLayout = new QHBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
+
+    auto hboxLayout = new QHBoxLayout;
+    hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
+    hboxLayout->setContentsMargins({});
+    mainLayout->addLayout(hboxLayout);
 
     auto vboxLayout = new QVBoxLayout;
     vboxLayout->setObjectName(QStringLiteral("vboxLayout"));
@@ -58,11 +68,11 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setSortingEnabled(true);
     vboxLayout->addWidget(mTreeView);
 
-    mainLayout->addLayout(vboxLayout);
+    hboxLayout->addLayout(vboxLayout);
 
     auto buttonLayout = new QVBoxLayout;
     buttonLayout->setObjectName(QStringLiteral("buttonLayout"));
-    mainLayout->addLayout(buttonLayout);
+    hboxLayout->addLayout(buttonLayout);
 
     auto downLoadLanguage = new QPushButton(i18n("Download"), this);
     downLoadLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
@@ -82,6 +92,20 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &BergamotEngineLanguageWidget::slotTextChanged);
     connect(mTreeView, &QTreeView::clicked, this, &BergamotEngineLanguageWidget::slotClicked);
     // TODO enable/disable it.
+
+    auto progressBarLayout = new QHBoxLayout;
+    progressBarLayout->setObjectName(QStringLiteral("progressBarLayout"));
+
+    mProgressBarLabel->setObjectName(QStringLiteral("mProgressBarLabel"));
+    progressBarLayout->addWidget(mProgressBarLabel);
+
+    mProgressBar->setObjectName(QStringLiteral("mProgressBar"));
+    progressBarLayout->addWidget(mProgressBar);
+
+    mProgressBarWidget->setObjectName(QStringLiteral("mProgressBarWidget"));
+    mProgressBarWidget->setLayout(progressBarLayout);
+
+    mainLayout->addWidget(mProgressBarWidget);
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
