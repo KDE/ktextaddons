@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "libbergamot_export.h"
+#include <QDir>
 #include <QString>
 
 namespace BergamotEngineUtils
@@ -14,6 +15,13 @@ Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString groupName();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString coreNumberKey();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString memoryByThreadKey();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString storageLanguagePath();
+
+struct LIBBERGAMOT_EXPORT LanguageInstalled {
+    QString from;
+    QString to;
+};
+
+Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QDir &dir);
 struct LIBBERGAMOT_EXPORT SettingsInfo {
     void loadSettingsInfo();
     void saveSettingsInfo();
