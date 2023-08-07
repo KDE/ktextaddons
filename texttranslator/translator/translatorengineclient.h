@@ -36,6 +36,8 @@ public:
 
     virtual void showConfigureDialog(QWidget *parentWidget);
 
+    Q_REQUIRED_RESULT virtual bool hasInverteSupport() const;
+
 Q_SIGNALS:
     void configureChanged();
 

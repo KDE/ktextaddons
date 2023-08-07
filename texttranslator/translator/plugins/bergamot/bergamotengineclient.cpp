@@ -64,6 +64,11 @@ void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
+bool BergamotEngineClient::hasInverteSupport() const
+{
+    return false;
+}
+
 bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     // TODO

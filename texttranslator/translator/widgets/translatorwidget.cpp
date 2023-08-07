@@ -369,6 +369,7 @@ void TranslatorWidget::switchEngine()
         connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
         d->initLanguage();
         d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
+        d->invert->setVisible(d->translatorClient->hasInverteSupport());
     }
 }
 

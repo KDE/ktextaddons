@@ -27,6 +27,12 @@ void TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
     // Nothing by default
 }
 
+bool TranslatorEngineClient::hasInverteSupport() const
+{
+    // True by default
+    return true;
+}
+
 QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::fillLanguages()
 {
     QMap<TextTranslator::TranslatorUtil::Language, QString> map;
