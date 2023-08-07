@@ -22,4 +22,18 @@ void BergamotEngineUtilsTest::shouldDefaultBergamotRepository()
     QCOMPARE(BergamotEngineUtils::memoryByThreadKey(), QStringLiteral("MemoryByThread"));
 }
 
+void BergamotEngineUtilsTest::shouldExtractInfoFromLanguageLocallyStored()
+{
+    {
+        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/test-stored-languages/test1");
+        QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(QDir(originalDir));
+        QCOMPARE(list.count(), 0);
+    }
+    {
+        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/test-stored-languages/test2");
+        QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(QDir(originalDir));
+        QCOMPARE(list.count(), 0);
+    }
+}
+
 #include "moc_bergamotengineutilstest.cpp"

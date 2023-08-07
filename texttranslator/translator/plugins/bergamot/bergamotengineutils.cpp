@@ -57,7 +57,8 @@ void BergamotEngineUtils::SettingsInfo::saveSettingsInfo()
 QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLocallyStored(const QDir &dir)
 {
     QVector<BergamotEngineUtils::LanguageInstalled> languages;
-    const QStringList list = dir.entryList(QDir::Dirs);
+    const QStringList list = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+    qDebug() << " list " << list;
     for (const auto &name : list) {
         qDebug() << " name " << dir;
         const QFileInfo modelInfo(name + QStringLiteral("/model_info.json"));

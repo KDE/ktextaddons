@@ -16,4 +16,5 @@ public:
     ~BergamotEngineUtilsTest() override = default;
 private Q_SLOTS:
     void shouldDefaultBergamotRepository();
+    void shouldExtractInfoFromLanguageLocallyStored();
 };
