@@ -119,6 +119,13 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, this, &BergamotEngineLanguageWidget::updateListModel);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
     mTreeView->setColumnHidden(TranslatorModel::Url, true);
+    connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, downLoadLanguage, deleteLanguage]() {
+        const bool hasSelectedItem = mTreeView->currentIndex().isValid();
+        downLoadLanguage->setEnabled(hasSelectedItem);
+        deleteLanguage->setEnabled(hasSelectedItem);
+    });
+    downLoadLanguage->setEnabled(false);
+    deleteLanguage->setEnabled(false);
 }
 
 BergamotEngineLanguageWidget::~BergamotEngineLanguageWidget() = default;
