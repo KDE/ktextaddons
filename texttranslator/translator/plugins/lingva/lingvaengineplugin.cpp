@@ -58,7 +58,7 @@ void LingvaEnginePlugin::translateText()
 void LingvaEnginePlugin::parseTranslation(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError) {
-        Q_EMIT translateFailed(false, reply->errorString());
+        Q_EMIT translateFailed(reply->errorString());
         reply->deleteLater();
         return;
     }

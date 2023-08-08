@@ -50,9 +50,9 @@ void YandexEnginePlugin::parseCredentials(QNetworkReply *reply)
     const QByteArray webSiteData = reply->readAll();
     reply->deleteLater();
     if (webSiteData.isEmpty() || webSiteData.contains("<title>Oops!</title>") || webSiteData.contains("<title>302 Found</title>")) {
-        Q_EMIT translateFailed(false,
-                               i18n("Error: Engine systems have detected suspicious traffic "
-                                    "from your computer network. Please try your request again later."));
+        Q_EMIT translateFailed(
+            i18n("Error: Engine systems have detected suspicious traffic "
+                 "from your computer network. Please try your request again later."));
         return;
     }
     // qCDebug(TRANSLATOR_YANDEX_LOG) << "webSiteData  " << webSiteData;
@@ -60,7 +60,7 @@ void YandexEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int sidBeginStringPos = webSiteData.indexOf(sidBeginString);
 
     if (sidBeginStringPos == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to find Yandex SID in web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to find Yandex SID in web version."));
         return;
     }
 
@@ -68,7 +68,7 @@ void YandexEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int sidEndPosition = webSiteData.indexOf('\'', sidBeginPosition);
 
     if (sidEndPosition == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to extract Yandex SID from web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to extract Yandex SID from web version."));
         return;
     }
 

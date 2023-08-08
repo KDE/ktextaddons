@@ -77,7 +77,7 @@ void GoogleEnginePlugin::slotTranslateFinished(QNetworkReply *reply)
     QJsonParseError parsingError;
     const QJsonDocument jsonDoc = QJsonDocument::fromJson(mJsonData.toUtf8(), &parsingError);
     if (parsingError.error != QJsonParseError::NoError || jsonDoc.isNull()) {
-        Q_EMIT translateFailed(false);
+        Q_EMIT translateFailed(i18n("Invalid answer."));
         return;
     }
     const QVariantList json = jsonDoc.toVariant().toList();

@@ -38,7 +38,7 @@ void DeeplEnginePlugin::translate()
         return;
     }
     if (mApiKey.isEmpty()) {
-        Q_EMIT translateFailed(false, i18n("Server needs Api Key."));
+        Q_EMIT translateFailed(i18n("Server needs Api Key."));
         return;
     }
     translateText();
@@ -73,7 +73,7 @@ void DeeplEnginePlugin::translateText()
 void DeeplEnginePlugin::parseTranslation(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError) {
-        Q_EMIT translateFailed(false, reply->errorString());
+        Q_EMIT translateFailed(reply->errorString());
         reply->deleteLater();
         return;
     }

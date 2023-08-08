@@ -99,13 +99,13 @@ void TranslatorEnginePlugin::slotError(QNetworkReply::NetworkError error)
     if (error == QNetworkReply::ServiceUnavailableError) {
         messageError = i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.");
     }
-    Q_EMIT translateFailed(false, messageError);
+    Q_EMIT translateFailed(messageError);
 }
 
 bool TranslatorEnginePlugin::verifyFromAndToLanguage()
 {
     if (d->mTo == d->mFrom) {
-        Q_EMIT translateFailed(false, i18n("You used same language for \'from\' and \'to\' language."));
+        Q_EMIT translateFailed(i18n("You used same language for \'from\' and \'to\' language."));
         return true;
     }
     return false;

@@ -54,7 +54,7 @@ void BingEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int credentialsBeginPos = webSiteData.indexOf(credentialsBeginString);
 
     if (credentialsBeginPos == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to find Bing credentials in web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to find Bing credentials in web version."));
         return;
     }
 
@@ -62,7 +62,7 @@ void BingEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int keyEndPos = webSiteData.indexOf(',', keyBeginPos);
 
     if (keyEndPos == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to extract Bing key from web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to extract Bing key from web version."));
         return;
     }
 
@@ -71,7 +71,7 @@ void BingEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int tokenEndPos = webSiteData.indexOf('"', tokenBeginPos);
 
     if (tokenEndPos == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to extract Bing token from web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to extract Bing token from web version."));
         return;
     }
 
@@ -80,7 +80,7 @@ void BingEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int igEndPos = webSiteData.indexOf('"', igBeginPos + 2);
 
     if (igEndPos == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to extract additional Bing information from web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to extract additional Bing information from web version."));
         return;
     }
 
@@ -89,7 +89,7 @@ void BingEnginePlugin::parseCredentials(QNetworkReply *reply)
     const int iidEndPos = webSiteData.indexOf('"', iidBeginPos + 2);
 
     if (iidEndPos == -1) {
-        Q_EMIT translateFailed(false, i18n("Error: Unable to extract additional Bing information from web version."));
+        Q_EMIT translateFailed(i18n("Error: Unable to extract additional Bing information from web version."));
         return;
     }
 

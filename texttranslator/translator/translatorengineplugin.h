@@ -42,7 +42,7 @@ public:
 
 Q_SIGNALS:
     void translateDone();
-    void translateFailed(bool result, const QString &errorMessage = QString());
+    void translateFailed(const QString &errorMessage);
 
 protected:
     void appendResult(const QString &result);

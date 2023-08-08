@@ -37,11 +37,11 @@ void LibreTranslateEnginePlugin::translate()
         return;
     }
     if (mServerUrl.isEmpty()) {
-        Q_EMIT translateFailed(false, i18n("Server url is not defined."));
+        Q_EMIT translateFailed(i18n("Server url is not defined."));
         return;
     }
     if (mRequiredApiKey && mApiKey.isEmpty()) {
-        Q_EMIT translateFailed(false, i18n("Server needs Api Key."));
+        Q_EMIT translateFailed(i18n("Server needs Api Key."));
         return;
     }
     translateText();
@@ -81,7 +81,7 @@ void LibreTranslateEnginePlugin::translateText()
 void LibreTranslateEnginePlugin::parseTranslation(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError) {
-        Q_EMIT translateFailed(false, reply->errorString());
+        Q_EMIT translateFailed(reply->errorString());
         reply->deleteLater();
         return;
     }
