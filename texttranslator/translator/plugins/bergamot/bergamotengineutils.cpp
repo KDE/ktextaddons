@@ -58,9 +58,9 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
 {
     QVector<BergamotEngineUtils::LanguageInstalled> languages;
     const QStringList list = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
-    qDebug() << " list " << list;
+    qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " list " << list;
     for (const auto &name : list) {
-        qDebug() << " name " << dir;
+        qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " name " << dir;
         QFile modelInfoFile(dir.absolutePath() + QLatin1Char('/') + name + QStringLiteral("/model_info.json"));
         if (!modelInfoFile.exists()) {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "model_info.json not found in " << name;
@@ -78,7 +78,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
         translator.parse(jsonResponse.object(), false);
         if (translator.isValid()) {
             // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
-            qDebug() << " translator " << translator;
+            // qDebug() << " translator " << translator;
             BergamotEngineUtils::LanguageInstalled lang;
             const QString shortName = translator.shortName();
             const QStringList langIdentifier = shortName.split(QLatin1Char('-'));
