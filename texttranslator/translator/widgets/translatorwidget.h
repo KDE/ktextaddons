@@ -11,21 +11,6 @@
 #include <QPlainTextEdit>
 namespace TextTranslator
 {
-class TranslatorResultTextEdit : public QPlainTextEdit
-{
-    Q_OBJECT
-public:
-    explicit TranslatorResultTextEdit(QWidget *parent = nullptr);
-
-    void setResultFailed(bool failed);
-
-protected:
-    void paintEvent(QPaintEvent *event) override;
-
-private:
-    bool mResultFailed = false;
-};
-
 /**
  * @brief The TranslatorTextEdit class
  * @author Laurent Montel <montel@kde.org>

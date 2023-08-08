@@ -55,7 +55,7 @@ public:
 
     QByteArray data;
     TranslatorTextEdit *inputText = nullptr;
-    TranslatorResultTextEdit *translatorResultTextEdit = nullptr;
+    QPlainTextEdit *translatorResultTextEdit = nullptr;
     QComboBox *fromCombobox = nullptr;
     QComboBox *toCombobox = nullptr;
     QPushButton *translate = nullptr;
@@ -102,37 +102,6 @@ void TranslatorWidget::TranslatorWidgetPrivate::initLanguage()
         i.next();
         const QString languageCode = TranslatorUtil::languageCode(i.key());
         translatorUtil.addItemToFromComboBox(fromCombobox, languageCode, i.value());
-    }
-}
-
-TranslatorResultTextEdit::TranslatorResultTextEdit(QWidget *parent)
-    : QPlainTextEdit(parent)
-{
-    setReadOnly(true);
-}
-
-void TranslatorResultTextEdit::setResultFailed(bool failed)
-{
-    if (mResultFailed != failed) {
-        mResultFailed = failed;
-        update();
-    }
-}
-
-void TranslatorResultTextEdit::paintEvent(QPaintEvent *event)
-{
-    if (mResultFailed) {
-        QPainter p(viewport());
-
-        QFont font = p.font();
-        font.setItalic(true);
-        p.setFont(font);
-
-        p.setPen(Qt::red);
-
-        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, i18n("Problem when connecting to the translator web site."));
-    } else {
-        QPlainTextEdit::paintEvent(event);
     }
 }
 
@@ -322,7 +291,7 @@ void TranslatorWidget::init()
     connect(d->inputText, &TranslatorTextEdit::translateText, this, &TranslatorWidget::slotTranslate);
 
     d->splitter->addWidget(d->inputText);
-    d->translatorResultTextEdit = new TranslatorResultTextEdit(this);
+    d->translatorResultTextEdit = new QPlainTextEdit(this);
     d->translatorResultTextEdit->setObjectName(QStringLiteral("translatedtext"));
     d->translatorResultTextEdit->setReadOnly(true);
     d->splitter->addWidget(d->translatorResultTextEdit);
@@ -447,15 +416,13 @@ void TranslatorWidget::slotTranslateDone()
 {
     d->translate->setEnabled(true);
     d->progressIndicator->hide();
-    d->translatorResultTextEdit->setResultFailed(false);
     d->translatorResultTextEdit->setPlainText(d->translatorPlugin->resultTranslate());
 }
 
-void TranslatorWidget::slotTranslateFailed(bool signalFailed, const QString &message)
+void TranslatorWidget::slotTranslateFailed(const QString &message)
 {
     d->translate->setEnabled(true);
     d->progressIndicator->hide();
-    d->translatorResultTextEdit->setResultFailed(signalFailed);
     d->translatorResultTextEdit->clear();
     if (!message.isEmpty()) {
         KMessageBox::error(this, message, i18n("Translate error"));
