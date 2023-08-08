@@ -37,6 +37,7 @@ protected:
 private:
     void updateInstalledLanguage();
     void updateFromLanguageList();
+    void updateToLanguageList();
     QMap<TextTranslator::TranslatorUtil::Language, QString> mToLanguages;
     QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };
