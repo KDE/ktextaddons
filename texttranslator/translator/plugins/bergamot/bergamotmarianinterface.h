@@ -13,22 +13,13 @@
 #include <QList>
 #include <QObject>
 #include <QString>
-#include <bergamot-translator/src/translator/parser.h>
-#include <bergamot-translator/src/translator/response.h>
-#include <bergamot-translator/src/translator/service.h>
 #include <condition_variable>
 #include <memory>
 #include <mutex>
 #include <thread>
-struct TranslationInput {
-    std::string text;
-    marian::bergamot::ResponseOptions options;
-};
+struct ModelDescription;
+struct TranslationInput;
 
-struct ModelDescription {
-    std::string config_file;
-    BergamotEngineUtils::SettingsInfo settings;
-};
 class LIBBERGAMOT_EXPORT BergamotMarianInterface : public QObject
 {
     Q_OBJECT
@@ -47,8 +38,8 @@ Q_SIGNALS:
     void errorText(const QString &message);
 
 private:
-    std::unique_ptr<TranslationInput> mPendingInput = nullptr;
-    std::unique_ptr<ModelDescription> mPendingModel = nullptr;
+    std::unique_ptr<TranslationInput> mPendingInput;
+    std::unique_ptr<ModelDescription> mPendingModel;
 
     std::mutex mMutex;
     std::condition_variable mConditionVariable;

@@ -7,7 +7,9 @@
 */
 
 #include "bergamotmarianinterface.h"
-
+#include <bergamot-translator/src/translator/parser.h>
+#include <bergamot-translator/src/translator/response.h>
+#include <bergamot-translator/src/translator/service.h>
 #include <chrono>
 #include <future>
 #include <memory>
@@ -44,8 +46,20 @@ int countWords(std::string input)
 
 } // Anonymous namespace
 
+struct TranslationInput {
+    std::string text;
+    marian::bergamot::ResponseOptions options;
+};
+
+struct ModelDescription {
+    std::string config_file;
+    BergamotEngineUtils::SettingsInfo settings;
+};
+
 BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
     : QObject{parent}
+    , mPendingInput(nullptr)
+    , mPendingModel(nullptr)
 {
     // This worker is the only thread that can interact with Marian. Right now
     // it basically uses marian::bergamot::Service's non-blocking interface
