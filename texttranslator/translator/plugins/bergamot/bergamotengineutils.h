@@ -20,6 +20,7 @@ struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString from;
     QString to;
     QString shortName;
+    QString absoluteLanguageModelPath;
     Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
 

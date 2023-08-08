@@ -61,7 +61,8 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
     // qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " list " << list;
     for (const auto &name : list) {
         // qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " name " << dir;
-        QFile modelInfoFile(dir.absolutePath() + QLatin1Char('/') + name + QStringLiteral("/model_info.json"));
+        const QString modelLanguagePath{dir.absolutePath() + QLatin1Char('/') + name};
+        QFile modelInfoFile(modelLanguagePath + QStringLiteral("/model_info.json"));
         if (!modelInfoFile.exists()) {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "model_info.json not found in " << name;
             return {};
@@ -86,6 +87,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
                 lang.from = langIdentifier.at(0);
                 lang.to = langIdentifier.at(1);
                 lang.shortName = shortName;
+                lang.absoluteLanguageModelPath = modelLanguagePath;
                 languages.append(lang);
             }
         }
@@ -98,10 +100,11 @@ QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t)
     d << "from " << t.from;
     d << "to " << t.to;
     d << "shortName " << t.shortName;
+    d << " absoluteLanguageModelPath " << t.absoluteLanguageModelPath;
     return d;
 }
 
 bool BergamotEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
 {
-    return from == other.from && to == other.to && shortName == other.shortName;
+    return from == other.from && to == other.to && shortName == other.shortName && absoluteLanguageModelPath == other.absoluteLanguageModelPath;
 }

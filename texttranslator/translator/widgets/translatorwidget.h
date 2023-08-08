@@ -55,7 +55,7 @@ private:
     TEXTTRANSLATOR_NO_EXPORT void slotInvertLanguage();
     TEXTTRANSLATOR_NO_EXPORT void slotClear();
     TEXTTRANSLATOR_NO_EXPORT void slotTranslateDone();
-    TEXTTRANSLATOR_NO_EXPORT void slotTranslateFailed(bool result, const QString &message);
+    TEXTTRANSLATOR_NO_EXPORT void slotTranslateFailed(const QString &message);
     TEXTTRANSLATOR_NO_EXPORT void slotDebug();
     TEXTTRANSLATOR_NO_EXPORT void slotConfigChanged();
 

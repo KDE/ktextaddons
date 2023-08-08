@@ -7,6 +7,8 @@
 */
 
 #include "bergamotmarianinterface.h"
+#include "libbergamot_debug.h"
+#include <KLocalizedString>
 #include <bergamot-translator/src/translator/parser.h>
 #include <bergamot-translator/src/translator/response.h>
 #include <bergamot-translator/src/translator/service.h>
@@ -200,8 +202,11 @@ void BergamotMarianInterface::translate(const QString &str)
 {
     // If we don't have a model yet (loaded, or queued to be loaded, doesn't matter)
     // then don't bother trying to translate something.
-    if (mModelString.isEmpty())
+    if (mModelString.isEmpty()) {
+        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " mModelString is not defined!!!";
+        Q_EMIT errorText(i18n("Language model is not defined."));
         return;
+    }
 
     std::unique_lock<std::mutex> lock(mMutex);
     std::unique_ptr<TranslationInput> input(new TranslationInput{str.toStdString(), marian::bergamot::ResponseOptions{}});
