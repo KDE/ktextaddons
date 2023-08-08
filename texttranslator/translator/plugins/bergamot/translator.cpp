@@ -11,7 +11,7 @@ Translator::Translator()
 
 Translator::~Translator() = default;
 
-void Translator::parse(const QJsonObject &obj)
+void Translator::parse(const QJsonObject &obj, bool remote)
 {
     mUrl = obj[QStringLiteral("url")].toString();
     mModelName = obj[QStringLiteral("modelName")].toString();
@@ -23,6 +23,7 @@ void Translator::parse(const QJsonObject &obj)
     mTarget = obj[QStringLiteral("trg")].toString();
     mVersion = obj[QStringLiteral("version")].toInt(-1);
     mApi = obj[QStringLiteral("API")].toInt(-1);
+    mRemote = remote;
 }
 
 QString Translator::shortName() const
@@ -34,7 +35,17 @@ bool Translator::operator==(const Translator &other) const
 {
     return mShortName == other.mShortName && mModelName == other.mModelName && mSource == other.mSource && mTarget == other.mTarget
         && mCheckSum == other.mCheckSum && mRepository == other.mRepository && mUrl == other.mUrl && mType == other.mType && mVersion == other.mVersion
-        && mApi == other.mApi;
+        && mApi == other.mApi && mRemote == other.mRemote;
+}
+
+bool Translator::remote() const
+{
+    return mRemote;
+}
+
+void Translator::setRemote(bool newRemote)
+{
+    mRemote = newRemote;
 }
 
 void Translator::setShortName(const QString &newShortName)
@@ -134,7 +145,11 @@ void Translator::setType(const QString &newType)
 
 bool Translator::isValid() const
 {
-    return !mUrl.isEmpty() && !mTarget.isEmpty() && !mSource.isEmpty();
+    if (mRemote) {
+        return !mUrl.isEmpty() && !mTarget.isEmpty() && !mSource.isEmpty();
+    } else {
+        return !mTarget.isEmpty() && !mSource.isEmpty();
+    }
 }
 
 QDebug operator<<(QDebug d, const Translator &t)
@@ -149,5 +164,6 @@ QDebug operator<<(QDebug d, const Translator &t)
     d << "mType " << t.type();
     d << "mVersion " << t.version();
     d << "mApi " << t.api();
+    d << "mRemote " << t.remote();
     return d;
 }

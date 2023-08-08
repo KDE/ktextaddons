@@ -28,6 +28,7 @@ void TranslatorTest::shouldHaveDefaultValues()
     QCOMPARE(w.version(), -1);
     QCOMPARE(w.api(), -1);
     QVERIFY(!w.isValid());
+    QVERIFY(w.remote());
 }
 
 void TranslatorTest::shouldParseJson_data()

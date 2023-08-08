@@ -13,7 +13,7 @@ public:
     Translator();
     ~Translator();
 
-    void parse(const QJsonObject &obj);
+    void parse(const QJsonObject &obj, bool remote = true);
 
     Q_REQUIRED_RESULT QString shortName() const;
     void setShortName(const QString &newShortName);
@@ -49,6 +49,9 @@ public:
 
     Q_REQUIRED_RESULT bool operator==(const Translator &other) const;
 
+    Q_REQUIRED_RESULT bool remote() const;
+    void setRemote(bool newRemote);
+
 private:
     QString mShortName;
     QString mModelName;
@@ -60,6 +63,7 @@ private:
     QString mType;
     int mVersion = -1;
     int mApi = -1;
+    bool mRemote = true;
 };
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const Translator &t);
 Q_DECLARE_METATYPE(Translator)
