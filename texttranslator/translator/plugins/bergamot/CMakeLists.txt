@@ -3,6 +3,7 @@
 include(ExternalProject)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 
+if(0)
 set(build_dir ${CMAKE_CURRENT_DIR}/3rdparty)
 
 ExternalProject_Add(3rdparty_bergamot
@@ -13,7 +14,7 @@ ExternalProject_Add(3rdparty_bergamot
         -DBLA_PKGCONFIG_BLAS:STRING=openblas
         -Dcblas_cblas_LIBRARY:STRING=cblas
 )
-
+endif()
 
 add_library(libbergamot)
 
