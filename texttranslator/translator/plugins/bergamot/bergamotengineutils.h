@@ -20,6 +20,7 @@ struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString from;
     QString to;
     QString shortName;
+    Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
 
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QDir &dir);
@@ -32,3 +33,6 @@ struct LIBBERGAMOT_EXPORT SettingsInfo {
 };
 // TODO add convert language to enum methods.
 };
+
+LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t);
+Q_DECLARE_TYPEINFO(BergamotEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);

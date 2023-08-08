@@ -5,11 +5,13 @@
 */
 
 #include "translatormodel.h"
+
 #include <KLocalizedString>
 
 TranslatorModel::TranslatorModel(QObject *parent)
     : QAbstractListModel{parent}
 {
+    updateInstalledLanguage();
 }
 
 TranslatorModel::~TranslatorModel() = default;
@@ -26,6 +28,13 @@ void TranslatorModel::insertTranslators(const QVector<Translator> &translators)
         mTranslators = translators;
         endInsertRows();
     }
+    updateInstalledLanguage();
+}
+
+void TranslatorModel::updateInstalledLanguage()
+{
+    mLanguageInstalled = BergamotEngineUtils::languageLocallyStored(QDir(BergamotEngineUtils::storageLanguagePath()));
+    qDebug() << "mLanguageInstalled " << mLanguageInstalled;
 }
 
 QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -88,12 +97,15 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
         return translator.version();
     }
     case TranslatorModel::Available: {
-        // TODO return translator.version();
+        for (const auto &lang : mLanguageInstalled) {
+            if (lang.shortName == translator.shortName()) {
+                return QStringLiteral("Installed");
+            }
+        }
         return {};
     }
     case TranslatorModel::Identifier: {
-        // TODO verify it.
-        return translator.modelName();
+        return translator.shortName();
     }
     case TranslatorModel::Url: {
         return translator.url();
@@ -112,6 +124,7 @@ void TranslatorModel::clear()
         mTranslators.clear();
         endResetModel();
     }
+    updateInstalledLanguage();
 }
 
 int TranslatorModel::columnCount(const QModelIndex &parent) const

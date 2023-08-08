@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "bergamotengineutils.h"
 #include "libbergamot_private_export.h"
 #include "translator.h"
 #include <QAbstractListModel>
@@ -42,5 +43,7 @@ public:
     Q_REQUIRED_RESULT int columnCount(const QModelIndex &parent) const override;
 
 private:
+    void updateInstalledLanguage();
     QVector<Translator> mTranslators;
+    QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };

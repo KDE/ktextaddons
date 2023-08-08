@@ -92,3 +92,16 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
     }
     return languages;
 }
+
+QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t)
+{
+    d << "from " << t.from;
+    d << "to " << t.to;
+    d << "shortName " << t.shortName;
+    return d;
+}
+
+bool BergamotEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
+{
+    return from == other.from && to == other.to && shortName == other.shortName;
+}
