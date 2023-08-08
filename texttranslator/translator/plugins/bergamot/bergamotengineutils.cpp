@@ -36,7 +36,7 @@ QString BergamotEngineUtils::memoryByThreadKey()
 
 QString BergamotEngineUtils::storageLanguagePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/bergamot-translator");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/bergamot-translator");
 }
 
 void BergamotEngineUtils::SettingsInfo::loadSettingsInfo()
