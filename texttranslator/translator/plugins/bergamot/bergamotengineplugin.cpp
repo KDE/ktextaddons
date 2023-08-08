@@ -16,12 +16,21 @@ BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)
     , mBergamotInterface(new BergamotMarianInterface(this))
 {
     loadSettings();
+
+    connect(mBergamotInterface, &BergamotMarianInterface::errorText, this, [this](const QString &message) {
+        Q_EMIT translateFailed(message);
+    });
+    connect(mBergamotInterface, &BergamotMarianInterface::translationReady, this, [&](Translation translation) {
+        appendResult(translation.translation());
+        Q_EMIT translateDone();
+    });
 }
 
 BergamotEnginePlugin::~BergamotEnginePlugin() = default;
 
 void BergamotEnginePlugin::translate()
 {
+    clear();
     mBergamotInterface->translate(inputText());
 }
 
@@ -29,4 +38,11 @@ void BergamotEnginePlugin::loadSettings()
 {
     mSettingsInfo.loadSettingsInfo();
     ManagerModelTranslator::self()->downloadListModels();
+    BergamotEngineUtils::SettingsInfo settingInfo;
+    settingInfo.loadSettingsInfo();
+    const QString filePath{BergamotEngineUtils::storageLanguagePath() + QStringLiteral("/enfr.student.tiny11/")};
+    // TODO from();  to();
+    if (QDir().exists(filePath)) {
+        mBergamotInterface->setModel(filePath, settingInfo);
+    }
 }
