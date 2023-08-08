@@ -5,6 +5,7 @@
 */
 
 #include "translatormodel.h"
+#include "libbergamot_debug.h"
 
 #include <KLocalizedString>
 
@@ -34,7 +35,7 @@ void TranslatorModel::insertTranslators(const QVector<Translator> &translators)
 void TranslatorModel::updateInstalledLanguage()
 {
     mLanguageInstalled = BergamotEngineUtils::languageLocallyStored(QDir(BergamotEngineUtils::storageLanguagePath()));
-    qDebug() << "mLanguageInstalled " << mLanguageInstalled;
+    qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << "mLanguageInstalled " << mLanguageInstalled;
 }
 
 QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, int role) const

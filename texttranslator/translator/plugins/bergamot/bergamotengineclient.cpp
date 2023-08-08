@@ -17,6 +17,7 @@
 BergamotEngineClient::BergamotEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {
+    updateInstalledLanguage();
 }
 
 BergamotEngineClient::~BergamotEngineClient() = default;
@@ -61,9 +62,25 @@ void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
     if (dlg->exec()) {
         info = dlg->settingsInfo();
         info.saveSettingsInfo();
+        updateInstalledLanguage();
         Q_EMIT configureChanged();
     }
     delete dlg;
+}
+
+void BergamotEngineClient::updateInstalledLanguage()
+{
+    mLanguageInstalled = BergamotEngineUtils::languageLocallyStored(QDir(BergamotEngineUtils::storageLanguagePath()));
+    updateFromLanguageList();
+}
+
+void BergamotEngineClient::updateFromLanguageList()
+{
+    mFromLanguages.clear();
+    for (const auto &lang : std::as_const(mLanguageInstalled)) {
+        const TextTranslator::TranslatorUtil::Language langUtil = TextTranslator::TranslatorUtil::stringToLanguage(lang.from);
+        mFromLanguages.insert(langUtil, TextTranslator::TranslatorUtil::translatedLanguage(langUtil));
+    }
 }
 
 bool BergamotEngineClient::hasInvertSupport() const

@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "bergamotengineutils.h"
+
 #include <TextTranslator/TranslatorEngineClient>
 
 class BergamotEngineClient : public TextTranslator::TranslatorEngineClient
@@ -33,5 +35,8 @@ protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
 
 private:
+    void updateInstalledLanguage();
+    void updateFromLanguageList();
     QMap<TextTranslator::TranslatorUtil::Language, QString> mToLanguages;
+    QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };
