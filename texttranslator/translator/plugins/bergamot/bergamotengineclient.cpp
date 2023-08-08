@@ -88,10 +88,10 @@ void BergamotEngineClient::updateToLanguageList()
 {
     mToLanguages.clear();
     for (const auto &lang : std::as_const(mLanguageInstalled)) {
-        qDebug() << " lang.from " << lang.from << " mLanguageCode " << mLanguageCode;
+        // qDebug() << " lang.from " << lang.from << " mLanguageCode " << mLanguageCode;
         if (lang.from == mLanguageCode) {
             const TextTranslator::TranslatorUtil::Language langUtil = TextTranslator::TranslatorUtil::stringToLanguage(lang.to);
-            qDebug() << " lang.to " << lang.to;
+            // qDebug() << " lang.to " << lang.to;
             mToLanguages.insert(langUtil, TextTranslator::TranslatorUtil::translatedLanguage(langUtil));
         }
     }
@@ -105,6 +105,7 @@ bool BergamotEngineClient::hasInvertSupport() const
 void BergamotEngineClient::generateToListFromCurrentToLanguage(const QString &languageCode)
 {
     mLanguageCode = languageCode;
+    updateToLanguageList();
 }
 
 bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
