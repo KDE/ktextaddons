@@ -30,7 +30,8 @@ void TranslatorConfigureComboWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    QVERIFY(!mConfigureEngine->isEnabled());
+    // FIXME it depends against plugin. First is bergamot => enabled. Before google => disable
+    // QVERIFY(!mConfigureEngine->isEnabled());
 }
 
 #include "moc_translatorconfigurecombowidgettest.cpp"
