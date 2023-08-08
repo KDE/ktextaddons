@@ -22,6 +22,7 @@ public:
     Q_REQUIRED_RESULT TextTranslator::TranslatorEnginePlugin *createTranslator() override;
     Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages() override;
     Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages() override;
+    Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
 
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;

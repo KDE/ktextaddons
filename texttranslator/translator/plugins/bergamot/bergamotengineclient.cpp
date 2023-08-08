@@ -108,6 +108,11 @@ void BergamotEngineClient::generateToListFromCurrentToLanguage(const QString &la
     updateToLanguageList();
 }
 
+TextTranslator::TranslatorEngineClient::EngineType BergamotEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Locale;
+}
+
 bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     return true;

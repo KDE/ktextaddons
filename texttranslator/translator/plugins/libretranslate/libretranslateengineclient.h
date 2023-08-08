@@ -28,6 +28,7 @@ public:
 
     Q_REQUIRED_RESULT bool hasConfigurationDialog() const override;
     void showConfigureDialog(QWidget *parentWidget) override;
+    Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
 
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;

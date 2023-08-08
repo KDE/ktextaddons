@@ -18,6 +18,10 @@ class TEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
 {
     Q_OBJECT
 public:
+    enum EngineType {
+        Locale,
+        Network,
+    };
     explicit TranslatorEngineClient(QObject *parent = nullptr);
     ~TranslatorEngineClient() override;
 
@@ -39,6 +43,8 @@ public:
     virtual void generateToListFromCurrentToLanguage(const QString &languageCode);
 
     Q_REQUIRED_RESULT virtual bool hasInvertSupport() const;
+
+    Q_REQUIRED_RESULT virtual TextTranslator::TranslatorEngineClient::EngineType engineType() const = 0;
 
 Q_SIGNALS:
     void configureChanged();

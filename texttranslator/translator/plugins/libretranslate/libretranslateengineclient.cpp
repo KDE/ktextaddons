@@ -99,6 +99,11 @@ void LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
+TextTranslator::TranslatorEngineClient::EngineType LibreTranslateEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Network;
+}
+
 void LibreTranslateEngineClient::slotPasswordWritten(QKeychain::Job *baseJob)
 {
     if (baseJob->error()) {

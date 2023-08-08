@@ -44,6 +44,11 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> YandexEngineClient::supp
     return supportedFromLanguages();
 }
 
+TextTranslator::TranslatorEngineClient::EngineType YandexEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Network;
+}
+
 bool YandexEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {

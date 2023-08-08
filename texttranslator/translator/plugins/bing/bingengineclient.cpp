@@ -44,6 +44,11 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> BingEngineClient::suppor
     return supportedFromLanguages();
 }
 
+TextTranslator::TranslatorEngineClient::EngineType BingEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Network;
+}
+
 bool BingEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {

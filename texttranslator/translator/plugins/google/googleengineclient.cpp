@@ -44,6 +44,11 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> GoogleEngineClient::supp
     return supportedFromLanguages();
 }
 
+TextTranslator::TranslatorEngineClient::EngineType GoogleEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Network;
+}
+
 bool GoogleEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {

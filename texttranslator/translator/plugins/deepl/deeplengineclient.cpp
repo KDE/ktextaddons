@@ -132,6 +132,11 @@ void DeeplEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
+TextTranslator::TranslatorEngineClient::EngineType DeeplEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Network;
+}
+
 void DeeplEngineClient::slotPasswordWritten(QKeychain::Job *baseJob)
 {
     if (baseJob->error()) {

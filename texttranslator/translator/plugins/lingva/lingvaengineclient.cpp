@@ -74,6 +74,11 @@ void LingvaEngineClient::showConfigureDialog(QWidget *parentWidget)
     delete dlg;
 }
 
+TextTranslator::TranslatorEngineClient::EngineType LingvaEngineClient::engineType() const
+{
+    return TextTranslator::TranslatorEngineClient::Network;
+}
+
 bool LingvaEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     switch (lang) {
