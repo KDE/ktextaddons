@@ -389,6 +389,11 @@ void TranslatorWidget::slotFromLanguageChanged(int index, bool initialize)
     const QString lang = d->fromCombobox->itemData(index).toString();
     d->invert->setEnabled(lang != QLatin1String("auto"));
     const QString to = d->toCombobox->itemData(d->toCombobox->currentIndex()).toString();
+
+    // Get "from" language code for generating "to" language list
+    qDebug() << " d->fromCombobox->currentIndex() " << lang;
+    d->translatorClient->generateToListFromCurrentToLanguage(lang);
+
     d->toCombobox->blockSignals(true);
     d->fillToCombobox(lang);
     d->toCombobox->blockSignals(false);

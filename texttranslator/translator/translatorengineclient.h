@@ -36,7 +36,7 @@ public:
     Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
 
     virtual void showConfigureDialog(QWidget *parentWidget);
-    virtual void generateToListFromCurrentToLanguage();
+    virtual void generateToListFromCurrentToLanguage(const QString &languageCode);
 
     Q_REQUIRED_RESULT virtual bool hasInvertSupport() const;
 

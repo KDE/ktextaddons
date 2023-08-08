@@ -27,8 +27,9 @@ void TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
     // Nothing by default
 }
 
-void TranslatorEngineClient::generateToListFromCurrentToLanguage()
+void TranslatorEngineClient::generateToListFromCurrentToLanguage(const QString &languageCode)
 {
+    Q_UNUSED(languageCode);
     // Nothing by default
 }
 

@@ -31,7 +31,7 @@ public:
 
     Q_REQUIRED_RESULT bool hasInvertSupport() const override;
 
-    void generateToListFromCurrentToLanguage() override;
+    void generateToListFromCurrentToLanguage(const QString &languageCode) override;
 
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
@@ -42,4 +42,5 @@ private:
     void updateToLanguageList();
     QMap<TextTranslator::TranslatorUtil::Language, QString> mToLanguages;
     QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
+    QString mLanguageCode;
 };
