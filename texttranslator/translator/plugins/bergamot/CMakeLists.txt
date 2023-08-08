@@ -2,19 +2,24 @@
 # SPDX-FileCopyrightText: none
 include(ExternalProject)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
-
-if(0)
-set(build_dir ${CMAKE_CURRENT_DIR}/3rdparty)
-
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/3rd_party/spdlog/include/)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/3rd_party)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/ssplit-cpp/src/ssplit/)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/src/)
+set(ext_source_dir ${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator)
+kde_enable_exceptions()
 ExternalProject_Add(3rdparty_bergamot
-#        PREFIX ${build_dir}/bergamot-translator
+        #PREFIX ${ext_source_dir}/build
         GIT_REPOSITORY "https://github.com/browsermt/bergamot-translator.git"
         GIT_TAG "main"
+        SOURCE_DIR ${ext_source_dir}
+        BUILD_IN_SOURCE ON
         CMAKE_ARGS -DBLA_PREFER_PKGCONFIG:BOOL=ON
         -DBLA_PKGCONFIG_BLAS:STRING=openblas
         -Dcblas_cblas_LIBRARY:STRING=cblas
 )
-endif()
 
 add_library(libbergamot)
 
@@ -54,6 +59,9 @@ target_sources(libbergamot PRIVATE
 
     downloadlanguagejob.h
     downloadlanguagejob.cpp
+
+    translation.cpp
+    translation.h
 )
 
 generate_export_header(libbergamot BASE_NAME libbergamot)
@@ -68,6 +76,7 @@ target_link_libraries(libbergamot  Qt::Widgets
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::Archive
+    bergamot-translator
 )
 
 set_target_properties(libbergamot
