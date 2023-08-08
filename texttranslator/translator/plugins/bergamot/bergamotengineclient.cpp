@@ -99,6 +99,11 @@ bool BergamotEngineClient::hasInvertSupport() const
     return false;
 }
 
+void BergamotEngineClient::generateToListFromCurrentToLanguage()
+{
+    // TODO
+}
+
 bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language lang) const
 {
     return true;

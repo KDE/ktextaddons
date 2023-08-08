@@ -27,6 +27,11 @@ void TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
     // Nothing by default
 }
 
+void TranslatorEngineClient::generateToListFromCurrentToLanguage()
+{
+    // Nothing by default
+}
+
 bool TranslatorEngineClient::hasInvertSupport() const
 {
     // True by default

@@ -31,6 +31,8 @@ public:
 
     Q_REQUIRED_RESULT bool hasInvertSupport() const override;
 
+    void generateToListFromCurrentToLanguage() override;
+
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
 
