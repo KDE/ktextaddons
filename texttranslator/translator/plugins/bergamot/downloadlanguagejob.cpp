@@ -35,6 +35,7 @@ void DownloadLanguageJob::start()
     mDestination = new QTemporaryFile(this);
     if (!mDestination->open()) {
         Q_EMIT errorText(i18n("Cannot open file for downloading."));
+        delete mDestination;
         deleteLater();
         return;
     }
