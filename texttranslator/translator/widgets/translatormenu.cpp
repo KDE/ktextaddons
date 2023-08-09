@@ -6,7 +6,7 @@
 
 #include "translatormenu.h"
 #include "texttranslator_debug.h"
-#include "translator/translatorengineloader.h"
+#include "translator/misc/translatorutil.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -42,12 +42,12 @@ void TranslatorMenu::updateMenu()
     const auto fromList = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
     const auto toList = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
     for (const auto &fromLang : fromList) {
-        const QString fromLangI18n = TranslatorUtil::searchI18nFromLanguage(fromLang);
+        const QString fromLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(fromLang);
         if (fromLangI18n.isEmpty()) {
             qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"from\" language " << fromLangI18n;
         } else {
             for (const auto &toLang : toList) {
-                const QString toLangI18n = TranslatorUtil::searchI18nFromLanguage(toLang);
+                const QString toLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(toLang);
                 if (toLangI18n.isEmpty()) {
                     qCWarning(TEXTTRANSLATOR_LOG) << "Impossible to find \"to\" language " << fromLangI18n;
                 } else {
