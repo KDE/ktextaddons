@@ -36,6 +36,7 @@ public:
 
     Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedFromLanguages() = 0;
     Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedToLanguages() = 0;
+    virtual void updateListLanguages();
 
     Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
 

@@ -107,6 +107,7 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineLoader::
         qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         return supportedLanguages;
     }
+    (*clientsItr)->updateListLanguages();
     supportedLanguages = (*clientsItr)->supportedFromLanguages();
     return supportedLanguages;
 }

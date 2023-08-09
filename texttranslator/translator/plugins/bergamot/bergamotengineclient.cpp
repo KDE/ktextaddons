@@ -118,4 +118,9 @@ bool BergamotEngineClient::isSupported(TextTranslator::TranslatorUtil::Language 
     return true;
 }
 
+void BergamotEngineClient::updateListLanguages()
+{
+    updateInstalledLanguage();
+}
+
 #include "moc_bergamotengineclient.cpp"

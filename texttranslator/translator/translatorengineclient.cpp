@@ -15,6 +15,11 @@ TranslatorEngineClient::TranslatorEngineClient(QObject *parent)
 
 TranslatorEngineClient::~TranslatorEngineClient() = default;
 
+void TranslatorEngineClient::updateListLanguages()
+{
+    // Nothing by default
+}
+
 bool TranslatorEngineClient::hasConfigurationDialog() const
 {
     // False by default

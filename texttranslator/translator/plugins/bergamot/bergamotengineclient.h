@@ -35,6 +35,8 @@ public:
 
     Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
 
+    void updateListLanguages() override;
+
 protected:
     Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
 
