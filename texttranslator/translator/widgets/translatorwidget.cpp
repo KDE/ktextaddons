@@ -286,7 +286,7 @@ void TranslatorWidget::init()
     d->splitter->setChildrenCollapsible(false);
     d->inputText = new TranslatorTextEdit(this);
     d->inputText->setObjectName(QStringLiteral("inputtext"));
-    d->inputText->setPlaceholderText(i18n("Drag text that you want to translate. (Be careful text will be send to Google Server)."));
+    d->inputText->setPlaceholderText(i18n("Drag text that you want to translate. (Be careful text will be send to external Server)."));
     connect(d->inputText, &TranslatorTextEdit::textChanged, this, &TranslatorWidget::slotTextChanged);
     connect(d->inputText, &TranslatorTextEdit::translateText, this, &TranslatorWidget::slotTranslate);
 
