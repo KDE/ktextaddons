@@ -38,7 +38,7 @@ void TranslatorMenu::updateMenu()
 {
     mMenu->clear();
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), QStringLiteral("Translate"));
-    const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
+    // const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
     const auto fromList = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
     const auto toList = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
     for (const auto &fromLang : fromList) {
