@@ -41,7 +41,6 @@ void TranslatorMenu::updateMenu()
     const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
     const auto fromList = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
     const auto toList = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
-    const QMap<TranslatorUtil::Language, QString> languagesList = TextTranslator::TranslatorEngineLoader::self()->supportedFromLanguages(engine);
     for (const auto &fromLang : fromList) {
         const QString fromLangI18n = TranslatorUtil::searchI18nFromLanguage(fromLang);
         if (fromLangI18n.isEmpty()) {
