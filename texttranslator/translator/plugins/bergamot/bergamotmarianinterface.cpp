@@ -139,19 +139,13 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
 
                         // Measure the time it takes to queue and respond to the
                         // translation request
-                        auto start = std::chrono::steady_clock::now(); // Time the translation
                         service->translate(
                             model,
                             std::move(input->text),
                             [&](auto &&val) {
-                                auto end = std::chrono::steady_clock::now();
                                 // Calculate translation speed in terms of words per second
-                                double words = wordCount.get();
-                                std::chrono::duration<double> elapsedSeconds = end - start;
-                                int translationSpeed = std::ceil(words / elapsedSeconds.count());
-
                                 std::unique_lock<std::mutex> lock(internal_mutex);
-                                translation = Translation(std::move(val), translationSpeed);
+                                translation = Translation(std::move(val));
                                 mConditionVariable.notify_one();
                             },
                             input->options);

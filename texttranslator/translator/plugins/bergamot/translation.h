@@ -30,7 +30,7 @@ class LIBBERGAMOT_EXPORT Translation
 {
 public:
     Translation();
-    Translation(marian::bergamot::Response &&response, int speed);
+    Translation(marian::bergamot::Response &&response);
 
     /**
      * Bool operator to check whether this is an initialised translation or just
@@ -39,11 +39,6 @@ public:
     inline operator bool() const
     {
         return !!mResponse;
-    }
-
-    inline std::size_t wordsPerSecond() const
-    {
-        return mSpeed;
     }
 
     /**
@@ -55,10 +50,6 @@ private:
     // Note: I would have liked unique_ptr, but that does not go well with
     // passing Translation objects through Qt signals/slots.
     std::shared_ptr<marian::bergamot::Response> mResponse;
-
-    // Words per second as measured by runtime/word count in MarianInterface
-    // @TODO this could probably be part of marian::bergamot::Response in the future
-    int mSpeed;
 };
 
 Q_DECLARE_METATYPE(Translation)

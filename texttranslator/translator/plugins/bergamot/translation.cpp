@@ -11,16 +11,12 @@
 
 Translation::Translation()
     : mResponse(nullptr)
-    , mSpeed(-1)
 {
-    //
 }
 
-Translation::Translation(marian::bergamot::Response &&response, int speed)
+Translation::Translation(marian::bergamot::Response &&response)
     : mResponse(std::make_shared<marian::bergamot::Response>(std::move(response)))
-    , mSpeed(speed)
 {
-    //
 }
 
 QString Translation::translation() const
