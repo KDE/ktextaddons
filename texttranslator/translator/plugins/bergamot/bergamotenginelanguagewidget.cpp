@@ -63,6 +63,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, [this]() {
         mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
     });
+    // TODO store list on local.
     if (ManagerModelTranslator::self()->needDownloadModelList()) {
         ManagerModelTranslator::self()->downloadListModels();
     } else {
