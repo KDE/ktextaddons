@@ -109,7 +109,8 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
 
     auto updateListLanguage = new QPushButton(i18n("Update"), this);
     updateListLanguage->setObjectName(QStringLiteral("updateListLanguage"));
-    buttonLayout->addWidget(updateListLanguage, 1);
+    buttonLayout->addWidget(updateListLanguage);
+    buttonLayout->addStretch(1); // spacer
     connect(updateListLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotUpdateListLanguage);
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &BergamotEngineLanguageWidget::slotTextChanged);
