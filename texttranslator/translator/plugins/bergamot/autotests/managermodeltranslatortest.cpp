@@ -18,6 +18,7 @@ void ManagerModelTranslatorTest::shouldHaveDefaultValues()
 {
     ManagerModelTranslator w;
     QVERIFY(w.translators().isEmpty());
+    QVERIFY(w.needDownloadModelList());
 }
 
 void ManagerModelTranslatorTest::shouldParseJson_data()
