@@ -56,6 +56,7 @@ QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, i
             return i18n("Available");
         case TranslatorModel::Identifier:
         case TranslatorModel::CheckSum:
+        case TranslatorModel::Installed:
         case TranslatorModel::Url:
             return {};
         }
@@ -98,12 +99,13 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
         return translator.version();
     }
     case TranslatorModel::Available: {
-        for (const auto &lang : mLanguageInstalled) {
-            if (lang.shortName == translator.shortName()) {
-                return QStringLiteral("Installed");
-            }
+        if (isInstalled(translator.shortName())) {
+            return i18n("Installed");
         }
         return {};
+    }
+    case TranslatorModel::Installed: {
+        return isInstalled(translator.shortName());
     }
     case TranslatorModel::Identifier: {
         return translator.shortName();
@@ -116,6 +118,16 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     }
     }
     return {};
+}
+
+bool TranslatorModel::isInstalled(const QString &shortName) const
+{
+    for (const auto &lang : std::as_const(mLanguageInstalled)) {
+        if (lang.shortName == shortName) {
+            return true;
+        }
+    }
+    return false;
 }
 
 void TranslatorModel::clear()
@@ -132,6 +144,23 @@ int TranslatorModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
     return static_cast<int>(TranslatorRoles::LastColumn) + 1;
+}
+
+void TranslatorModel::removeLanguage(const QString &identifier)
+{
+    auto index = std::find_if(mLanguageInstalled.begin(), mLanguageInstalled.end(), [identifier](const BergamotEngineUtils::LanguageInstalled &installed) {
+        return (identifier == installed.shortName);
+    });
+    if (index != mLanguageInstalled.end()) {
+        const QString absoluteLanguageModelPath = (*index).absoluteLanguageModelPath;
+        if (!QDir(absoluteLanguageModelPath).removeRecursively()) {
+            qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to delete " << absoluteLanguageModelPath;
+            return;
+        }
+        mLanguageInstalled.removeAll(*index);
+        beginResetModel();
+        endResetModel();
+    }
 }
 
 #include "moc_translatormodel.cpp"
