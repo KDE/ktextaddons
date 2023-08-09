@@ -286,7 +286,7 @@ void TranslatorWidget::init()
     d->splitter->setChildrenCollapsible(false);
     d->inputText = new TranslatorTextEdit(this);
     d->inputText->setObjectName(QStringLiteral("inputtext"));
-    d->inputText->setPlaceholderText(i18n("Drag text that you want to translate. (Be careful text will be send to external Server)."));
+
     connect(d->inputText, &TranslatorTextEdit::textChanged, this, &TranslatorWidget::slotTextChanged);
     connect(d->inputText, &TranslatorTextEdit::translateText, this, &TranslatorWidget::slotTranslate);
 
@@ -339,6 +339,16 @@ void TranslatorWidget::switchEngine()
         d->initLanguage();
         d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
         d->invert->setVisible(d->translatorClient->hasInvertSupport());
+        updatePlaceHolder();
+    }
+}
+
+void TranslatorWidget::updatePlaceHolder()
+{
+    if (d->translatorClient->engineType() == TextTranslator::TranslatorEngineClient::Network) {
+        d->inputText->setPlaceholderText(i18n("Drag text that you want to translate. (Be careful text will be send to external Server)."));
+    } else {
+        d->inputText->setPlaceholderText(i18n("Drag text that you want to translate."));
     }
 }
 
