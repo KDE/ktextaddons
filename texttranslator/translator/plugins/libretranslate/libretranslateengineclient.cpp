@@ -62,8 +62,9 @@ bool LibreTranslateEngineClient::hasConfigurationDialog() const
     return true;
 }
 
-void LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
+bool LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
+    bool settingsChanged = false;
     QPointer<LibreTranslateEngineConfigureDialog> dlg = new LibreTranslateEngineConfigureDialog(parentWidget);
     KConfigGroup myGroup(KSharedConfig::openConfig(), LibreTranslateEngineUtil::groupName());
     QString serverUrlFromConfig = myGroup.readEntry(LibreTranslateEngineUtil::serverUrlKey(), LibreTranslateEngineUtil::defaultServerUrl());
@@ -95,8 +96,10 @@ void LibreTranslateEngineClient::showConfigureDialog(QWidget *parentWidget)
         writeJob->start();
         myGroup.sync();
         Q_EMIT configureChanged();
+        settingsChanged = true;
     }
     delete dlg;
+    return settingsChanged;
 }
 
 TextTranslator::TranslatorEngineClient::EngineType LibreTranslateEngineClient::engineType() const

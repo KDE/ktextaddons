@@ -42,7 +42,9 @@ void TranslatorConfigureComboWidget::slotConfigureEngine()
 {
     const QString engine = mEngineComboBox->currentData().toString();
     if (TextTranslator::TranslatorEngineLoader::self()->hasConfigurationDialog(engine)) {
-        TextTranslator::TranslatorEngineLoader::self()->showConfigureDialog(engine, this);
+        if (TextTranslator::TranslatorEngineLoader::self()->showConfigureDialog(engine, this)) {
+            Q_EMIT configureChanged(engine);
+        }
     }
 }
 

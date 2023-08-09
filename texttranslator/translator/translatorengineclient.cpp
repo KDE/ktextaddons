@@ -26,10 +26,11 @@ bool TranslatorEngineClient::hasConfigurationDialog() const
     return false;
 }
 
-void TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
+bool TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget);
     // Nothing by default
+    return false;
 }
 
 void TranslatorEngineClient::generateToListFromCurrentToLanguage(const QString &languageCode)

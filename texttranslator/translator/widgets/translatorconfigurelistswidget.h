@@ -26,6 +26,7 @@ public:
     void load();
 
 private:
+    TEXTTRANSLATOR_NO_EXPORT void slotEngineSettingsChanged(const QString &engineName);
     TEXTTRANSLATOR_NO_EXPORT void loadLanguagesList();
     TEXTTRANSLATOR_NO_EXPORT void fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage);
     TEXTTRANSLATOR_NO_EXPORT void slotEngineChanged(const QString &engine);

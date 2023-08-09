@@ -56,8 +56,9 @@ bool LingvaEngineClient::hasConfigurationDialog() const
     return true;
 }
 
-void LingvaEngineClient::showConfigureDialog(QWidget *parentWidget)
+bool LingvaEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
+    bool settingsChanged = false;
     QPointer<LingvaEngineDialog> dlg = new LingvaEngineDialog(parentWidget);
     KConfigGroup myGroup(KSharedConfig::openConfig(), LingvaEngineUtil::groupName());
     QString lingvaUrl = myGroup.readEntry(LingvaEngineUtil::serverUrlKey(), LingvaEngineUtil::defaultServerUrl());
@@ -70,8 +71,10 @@ void LingvaEngineClient::showConfigureDialog(QWidget *parentWidget)
         myGroup.writeEntry(LingvaEngineUtil::serverUrlKey(), serverUrl);
         myGroup.sync();
         Q_EMIT configureChanged();
+        settingsChanged = true;
     }
     delete dlg;
+    return settingsChanged;
 }
 
 TextTranslator::TranslatorEngineClient::EngineType LingvaEngineClient::engineType() const

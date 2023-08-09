@@ -52,8 +52,9 @@ bool BergamotEngineClient::hasConfigurationDialog() const
     return true;
 }
 
-void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
+bool BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
+    bool settingsChanged = false;
     KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
     QPointer<BegamotEngineDialog> dlg = new BegamotEngineDialog(parentWidget);
     BergamotEngineUtils::SettingsInfo info;
@@ -64,8 +65,10 @@ void BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
         info.saveSettingsInfo();
         updateInstalledLanguage();
         Q_EMIT configureChanged();
+        settingsChanged = true;
     }
     delete dlg;
+    return settingsChanged;
 }
 
 void BergamotEngineClient::updateInstalledLanguage()

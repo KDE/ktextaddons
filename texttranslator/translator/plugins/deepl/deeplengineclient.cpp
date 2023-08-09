@@ -100,8 +100,9 @@ bool DeeplEngineClient::hasConfigurationDialog() const
     return true;
 }
 
-void DeeplEngineClient::showConfigureDialog(QWidget *parentWidget)
+bool DeeplEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
+    bool settingsChanged = false;
     QPointer<DeeplEngineConfigureDialog> dlg = new DeeplEngineConfigureDialog(parentWidget);
     KConfigGroup myGroup(KSharedConfig::openConfig(), DeeplEngineUtil::groupName());
     dlg->setUseFreeLicenceKey(myGroup.readEntry(DeeplEngineUtil::freeLicenseKey(), false));
@@ -128,8 +129,10 @@ void DeeplEngineClient::showConfigureDialog(QWidget *parentWidget)
         writeJob->setTextData(dlg->apiKey());
         writeJob->start();
         Q_EMIT configureChanged();
+        settingsChanged = true;
     }
     delete dlg;
+    return settingsChanged;
 }
 
 TextTranslator::TranslatorEngineClient::EngineType DeeplEngineClient::engineType() const

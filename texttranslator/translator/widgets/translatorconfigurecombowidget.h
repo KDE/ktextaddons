@@ -24,6 +24,7 @@ public:
 
 Q_SIGNALS:
     void engineChanged(const QString &engineName);
+    void configureChanged(const QString &engineName);
 
 private:
     void fillEngine();

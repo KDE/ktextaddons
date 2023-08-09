@@ -27,7 +27,7 @@ public:
     Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages() override;
 
     Q_REQUIRED_RESULT bool hasConfigurationDialog() const override;
-    void showConfigureDialog(QWidget *parentWidget) override;
+    Q_REQUIRED_RESULT bool showConfigureDialog(QWidget *parentWidget) override;
 
     Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
 

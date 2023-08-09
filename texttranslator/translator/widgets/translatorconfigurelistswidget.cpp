@@ -38,6 +38,10 @@ TranslatorConfigureListsWidget::TranslatorConfigureListsWidget(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     d->mEngineConfigureComboWidget->setObjectName(QStringLiteral("mEngineConfigureComboWidget"));
+    connect(d->mEngineConfigureComboWidget,
+            &TranslatorConfigureComboWidget::configureChanged,
+            this,
+            &TranslatorConfigureListsWidget::slotEngineSettingsChanged);
 
     auto hboxLayout = new QHBoxLayout;
     hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
@@ -76,6 +80,11 @@ void TranslatorConfigureListsWidget::save()
 void TranslatorConfigureListsWidget::load()
 {
     d->mEngineConfigureComboWidget->load();
+}
+
+void TranslatorConfigureListsWidget::slotEngineSettingsChanged(const QString &engineName)
+{
+    slotEngineChanged(engineName);
 }
 
 void TranslatorConfigureListsWidget::loadLanguagesList()

@@ -134,14 +134,14 @@ bool TranslatorEngineLoader::hasConfigurationDialog(const QString &clientName) c
     return (*clientsItr)->hasConfigurationDialog();
 }
 
-void TranslatorEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
+bool TranslatorEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
 {
     auto clientsItr = d->translatorClients.constFind(clientName);
     if (clientsItr == d->translatorClients.constEnd()) {
         qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
-        return;
+        return false;
     }
-    (*clientsItr)->showConfigureDialog(parentWidget);
+    return (*clientsItr)->showConfigureDialog(parentWidget);
 }
 
 QString TranslatorEngineLoader::fallbackFirstEngine() const

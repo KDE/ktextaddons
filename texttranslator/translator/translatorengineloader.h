@@ -35,7 +35,7 @@ public:
 
     Q_REQUIRED_RESULT QString fallbackFirstEngine() const;
 
-    void showConfigureDialog(const QString &clientName, QWidget *parentWidget);
+    Q_REQUIRED_RESULT bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
 Q_SIGNALS:
     void loadingTranslatorFailed();
