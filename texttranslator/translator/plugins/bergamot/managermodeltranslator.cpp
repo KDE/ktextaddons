@@ -36,7 +36,7 @@ void ManagerModelTranslator::downloadListModels()
         TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(QUrl(BergamotEngineUtils::defaultBergamotRepository())));
 
     connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {
-        qDebug() << " ERRROR " << errors;
+        qDebug() << "Ssl Error: " << errors;
     });
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         const auto readAll = reply->readAll();
