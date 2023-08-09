@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-08 00:44+0000\n"
-"PO-Revision-Date: 2023-08-06 10:51+0200\n"
+"POT-Creation-Date: 2023-08-09 00:44+0000\n"
+"PO-Revision-Date: 2023-08-08 10:37+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -330,7 +330,7 @@ msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Configureu el connector Bergamot"
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:31
+#: translator/plugins/bergamot/bergamotengineclient.cpp:32
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:154
 #, kde-format
 msgid "Bergamot"
@@ -387,6 +387,12 @@ msgstr "Idiomes"
 msgid "Settings"
 msgstr "Configuració"
 
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:207
+#, fuzzy, kde-format
+#| msgid "Server url is not defined."
+msgid "Language model is not defined."
+msgstr "No s'ha definit l'URL del servidor."
+
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
@@ -413,7 +419,7 @@ msgstr "És impossible accedir a l'URL: %1"
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "La suma de verificació no és correcta."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
@@ -425,32 +431,32 @@ msgstr "Error durant l'escriptura en el disc: %1"
 msgid "Impossible to extract language"
 msgstr "És impossible extraure l'idioma"
 
-#: translator/plugins/bergamot/translatormodel.cpp:36
+#: translator/plugins/bergamot/translatormodel.cpp:46
 #, kde-format
 msgid "Source"
 msgstr "Origen"
 
-#: translator/plugins/bergamot/translatormodel.cpp:38
+#: translator/plugins/bergamot/translatormodel.cpp:48
 #, kde-format
 msgid "Target"
 msgstr "Destinació"
 
-#: translator/plugins/bergamot/translatormodel.cpp:40
+#: translator/plugins/bergamot/translatormodel.cpp:50
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
-#: translator/plugins/bergamot/translatormodel.cpp:42
+#: translator/plugins/bergamot/translatormodel.cpp:52
 #, kde-format
 msgid "Repository"
 msgstr "Repositori"
 
-#: translator/plugins/bergamot/translatormodel.cpp:44
+#: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
 msgid "Version"
 msgstr "Versió"
 
-#: translator/plugins/bergamot/translatormodel.cpp:46
+#: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Available"
 msgstr "Disponible"
@@ -523,6 +529,11 @@ msgstr "El servidor necessita una clau de l'API."
 #, kde-format
 msgid "Google"
 msgstr "Google"
+
+#: translator/plugins/google/googleengineplugin.cpp:80
+#, kde-format
+msgid "Invalid answer."
+msgstr ""
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -630,58 +641,53 @@ msgstr "Tots els fitxers (*)"
 msgid "Translate..."
 msgstr "Traduïx..."
 
-#: translator/widgets/translatorwidget.cpp:133
-#, kde-format
-msgid "Problem when connecting to the translator web site."
-msgstr "Problema en connectar amb el lloc web del traductor."
-
-#: translator/widgets/translatorwidget.cpp:236
-#: translator/widgets/translatorwidget.cpp:239
+#: translator/widgets/translatorwidget.cpp:205
+#: translator/widgets/translatorwidget.cpp:208
 #, kde-format
 msgid "Close"
 msgstr "Tanca"
 
-#: translator/widgets/translatorwidget.cpp:245
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "De:"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:221
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "A:"
 
-#: translator/widgets/translatorwidget.cpp:264
+#: translator/widgets/translatorwidget.cpp:233
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Invertix"
 
-#: translator/widgets/translatorwidget.cpp:269
-#: translator/widgets/translatorwidget.cpp:272
+#: translator/widgets/translatorwidget.cpp:238
+#: translator/widgets/translatorwidget.cpp:241
 #, kde-format
 msgid "Clear"
 msgstr "Neteja"
 
-#: translator/widgets/translatorwidget.cpp:277
-#: translator/widgets/translatorwidget.cpp:280
+#: translator/widgets/translatorwidget.cpp:246
+#: translator/widgets/translatorwidget.cpp:249
 #, kde-format
 msgid "Translate"
 msgstr "Traduïx"
 
-#: translator/widgets/translatorwidget.cpp:287
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Debug"
 msgstr "Depura"
 
-#: translator/widgets/translatorwidget.cpp:305
+#: translator/widgets/translatorwidget.cpp:274
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
 
-#: translator/widgets/translatorwidget.cpp:320
+#: translator/widgets/translatorwidget.cpp:289
 #, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -690,17 +696,20 @@ msgstr ""
 "Deixeu anar el text que voleu traduir. (Aneu amb compte, el text s'enviarà "
 "al servidor de Google)."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:391
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "No s'ha detectat cap connexió de xarxa, no s'ha pogut traduir el text."
 
-#: translator/widgets/translatorwidget.cpp:417
+#: translator/widgets/translatorwidget.cpp:391
 #, kde-format
 msgid "No network"
 msgstr "Sense xarxa"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:428
 #, kde-format
 msgid "Translate error"
 msgstr "S'ha produït un error de traducció"
+
+#~ msgid "Problem when connecting to the translator web site."
+#~ msgstr "Problema en connectar amb el lloc web del traductor."
