@@ -141,7 +141,7 @@ void TranslatorEngineLoader::showConfigureDialog(const QString &clientName, QWid
         qCWarning(TEXTTRANSLATOR_LOG) << "Client name not found: " << clientName;
         return;
     }
-    return (*clientsItr)->showConfigureDialog(parentWidget);
+    (*clientsItr)->showConfigureDialog(parentWidget);
 }
 
 QString TranslatorEngineLoader::fallbackFirstEngine() const
