@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "bergamotengineutils.h"
-
 #include <TextTranslator/TranslatorEnginePlugin>
 #include <TextTranslator/TranslatorUtil>
 class BergamotMarianInterface;
@@ -21,6 +19,5 @@ public:
 
 private:
     void loadSettings();
-    BergamotEngineUtils::SettingsInfo mSettingsInfo;
     BergamotMarianInterface *const mBergamotInterface;
 };

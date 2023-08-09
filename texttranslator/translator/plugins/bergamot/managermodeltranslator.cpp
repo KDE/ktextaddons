@@ -115,4 +115,9 @@ void ManagerModelTranslator::downloadLanguage(const QString &url, const QString 
     downloadJob->start();
 }
 
+bool ManagerModelTranslator::needDownloadModelList() const
+{
+    return mTranslators.isEmpty();
+}
+
 #include "moc_managermodeltranslator.cpp"

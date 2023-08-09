@@ -6,7 +6,6 @@
 
 #include "bergamotengineplugin.h"
 #include "bergamotmarianinterface.h"
-#include "managermodeltranslator.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -36,10 +35,9 @@ void BergamotEnginePlugin::translate()
 
 void BergamotEnginePlugin::loadSettings()
 {
-    mSettingsInfo.loadSettingsInfo();
-    ManagerModelTranslator::self()->downloadListModels();
     BergamotEngineUtils::SettingsInfo settingInfo;
     settingInfo.loadSettingsInfo();
+    // TODO fixme
     const QString filePath{BergamotEngineUtils::storageLanguagePath() + QStringLiteral("/enfr.student.tiny11/")};
     // TODO from();  to();
     if (QDir().exists(filePath)) {

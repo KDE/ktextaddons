@@ -60,7 +60,14 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &BergamotEngineLanguageWidget::slotError);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::progress, this, &BergamotEngineLanguageWidget::slotProgressInfo);
-    mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
+    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, [this]() {
+        mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
+    });
+    if (ManagerModelTranslator::self()->needDownloadModelList()) {
+        ManagerModelTranslator::self()->downloadListModels();
+    } else {
+        mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
+    }
 
     mTranslatorProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
     mTranslatorProxyModel->setSourceModel(mTranslatorModel);
