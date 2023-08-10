@@ -43,6 +43,10 @@ void BergamotEnginePlugin::loadSettings()
 
 void BergamotEnginePlugin::updateBergamotModel()
 {
+    // qDebug() << "mInstalledLanguages  " << mInstalledLanguages << " from " << from() << " to() " << to();
+    if (from().isEmpty() || to().isEmpty()) {
+        return;
+    }
     QString absolutePath;
     for (const auto &installed : std::as_const(mInstalledLanguages)) {
         if (installed.from == from() && installed.to == to()) {
@@ -50,6 +54,10 @@ void BergamotEnginePlugin::updateBergamotModel()
             break;
         }
     }
+    if (absolutePath.isEmpty()) {
+        return;
+    }
+    qDebug() << " absolutePath " << absolutePath;
     if (QDir().exists(absolutePath)) {
         mBergamotInterface->setModel(absolutePath, mSettingInfo);
     }
