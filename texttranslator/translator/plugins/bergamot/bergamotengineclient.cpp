@@ -75,7 +75,7 @@ bool BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
 
 void BergamotEngineClient::updateInstalledLanguage()
 {
-    mLanguageInstalled = BergamotEngineUtils::languageLocallyStored(QDir(BergamotEngineUtils::storageLanguagePath()));
+    mLanguageInstalled = BergamotEngineUtils::languageLocallyStored();
     updateFromLanguageList();
     updateToLanguageList();
 }

@@ -26,12 +26,12 @@ void BergamotEngineUtilsTest::shouldExtractInfoFromLanguageLocallyStored()
 {
     {
         const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/test-stored-languages/test1");
-        const QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(QDir(originalDir));
+        const QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(originalDir);
         QCOMPARE(list.count(), 0);
     }
     {
         const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/test-stored-languages/test2");
-        const QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(QDir(originalDir));
+        const QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(originalDir);
         QCOMPARE(list.count(), 3);
     }
 }

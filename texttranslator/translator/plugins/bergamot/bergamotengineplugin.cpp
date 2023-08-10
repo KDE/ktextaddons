@@ -35,6 +35,7 @@ void BergamotEnginePlugin::translate()
 
 void BergamotEnginePlugin::loadSettings()
 {
+    mInstalledLanguages = BergamotEngineUtils::languageLocallyStored();
     BergamotEngineUtils::SettingsInfo settingInfo;
     settingInfo.loadSettingsInfo();
     // TODO fixme

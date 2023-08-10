@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "bergamotengineutils.h"
+
 #include <TextTranslator/TranslatorEnginePlugin>
 #include <TextTranslator/TranslatorUtil>
 class BergamotMarianInterface;
@@ -23,4 +25,5 @@ public:
 private:
     void loadSettings();
     BergamotMarianInterface *const mBergamotInterface;
+    QVector<BergamotEngineUtils::LanguageInstalled> mInstalledLanguages;
 };

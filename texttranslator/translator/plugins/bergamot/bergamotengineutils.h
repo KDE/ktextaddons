@@ -24,7 +24,7 @@ struct LIBBERGAMOT_EXPORT LanguageInstalled {
     Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
 
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QDir &dir);
+Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 struct LIBBERGAMOT_EXPORT SettingsInfo {
     void loadSettingsInfo();
     void saveSettingsInfo();

@@ -54,8 +54,13 @@ void BergamotEngineUtils::SettingsInfo::saveSettingsInfo()
     myGroup.sync();
 }
 
-QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLocallyStored(const QDir &dir)
+QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLocallyStored(const QString &path)
 {
+    QString newPath = path;
+    if (newPath.isEmpty()) {
+        newPath = BergamotEngineUtils::storageLanguagePath();
+    }
+    QDir dir(newPath);
     QVector<BergamotEngineUtils::LanguageInstalled> languages;
     const QStringList list = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
     // qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " list " << list;
