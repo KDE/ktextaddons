@@ -6,6 +6,7 @@
 #include "bergamotenginelanguagewidgettest.h"
 #include "bergamotenginelanguagewidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(BergamotEngineLanguageWidgetTest)
 BergamotEngineLanguageWidgetTest::BergamotEngineLanguageWidgetTest(QObject *parent)
     : QObject{parent}
@@ -15,6 +16,9 @@ BergamotEngineLanguageWidgetTest::BergamotEngineLanguageWidgetTest(QObject *pare
 void BergamotEngineLanguageWidgetTest::shouldHaveDefaultValues()
 {
     BergamotEngineLanguageWidget w;
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
     // TODO
 }

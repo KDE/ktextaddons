@@ -97,9 +97,9 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
 
 QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t)
 {
-    d << "from " << t.from;
-    d << "to " << t.to;
-    d << "shortName " << t.shortName;
+    d << " from " << t.from;
+    d << " to " << t.to;
+    d << " shortName " << t.shortName;
     d << " absoluteLanguageModelPath " << t.absoluteLanguageModelPath;
     return d;
 }
