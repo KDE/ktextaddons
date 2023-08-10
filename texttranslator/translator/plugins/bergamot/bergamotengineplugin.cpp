@@ -36,13 +36,12 @@ void BergamotEnginePlugin::translate()
 void BergamotEnginePlugin::loadSettings()
 {
     mInstalledLanguages = BergamotEngineUtils::languageLocallyStored();
-    BergamotEngineUtils::SettingsInfo settingInfo;
-    settingInfo.loadSettingsInfo();
+    mSettingInfo.loadSettingsInfo();
     // TODO fixme
     const QString filePath{BergamotEngineUtils::storageLanguagePath() + QStringLiteral("/enfr.student.tiny11/")};
     // TODO from();  to();
     if (QDir().exists(filePath)) {
-        mBergamotInterface->setModel(filePath, settingInfo);
+        mBergamotInterface->setModel(filePath, mSettingInfo);
     }
 }
 

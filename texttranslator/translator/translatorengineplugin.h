@@ -43,6 +43,7 @@ public:
 Q_SIGNALS:
     void translateDone();
     void translateFailed(const QString &errorMessage);
+    void languagesChanged();
 
 protected:
     void appendResult(const QString &result);

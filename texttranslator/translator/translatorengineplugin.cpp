@@ -40,12 +40,18 @@ void TranslatorEnginePlugin::setInputText(const QString &text)
 
 void TranslatorEnginePlugin::setFrom(const QString &language)
 {
-    d->mFrom = language;
+    if (d->mFrom != language) {
+        d->mFrom = language;
+        Q_EMIT languagesChanged();
+    }
 }
 
 void TranslatorEnginePlugin::setTo(const QString &language)
 {
-    d->mTo = language;
+    if (d->mTo != language) {
+        d->mTo = language;
+        Q_EMIT languagesChanged();
+    }
 }
 
 void TranslatorEnginePlugin::setResult(const QString &result)

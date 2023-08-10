@@ -26,4 +26,6 @@ private:
     void loadSettings();
     BergamotMarianInterface *const mBergamotInterface;
     QVector<BergamotEngineUtils::LanguageInstalled> mInstalledLanguages;
+    BergamotEngineUtils::SettingsInfo mSettingInfo;
+    QString mModelLanguageName;
 };
