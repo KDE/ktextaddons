@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-09 00:44+0000\n"
+"POT-Creation-Date: 2023-08-10 00:44+0000\n"
 "PO-Revision-Date: 2023-02-19 00:56+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:154
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
 #, kde-format
 msgid "Bergamot"
 msgstr ""
@@ -341,22 +341,22 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
 msgid "Download"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:92
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgid "Delete"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:102
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Update"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:154
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
 #, kde-format
 msgid "Error: %1"
 msgstr ""
@@ -386,7 +386,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:207
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
 #, kde-format
 msgid "Language model is not defined."
 msgstr ""
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Cannot open file for downloading."
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:100
@@ -406,18 +406,18 @@ msgid ""
 "network. Please try your request again later."
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:52
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr ""
@@ -455,6 +455,11 @@ msgstr ""
 #: translator/plugins/bergamot/translatormodel.cpp:56
 #, kde-format
 msgid "Available"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:103
+#, kde-format
+msgid "Installed"
 msgstr ""
 
 #: translator/plugins/bing/bingengineclient.cpp:26
@@ -585,7 +590,7 @@ msgstr ""
 msgid "To:"
 msgstr ""
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:47
+#: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
 #, kde-format
 msgid "Engine:"
@@ -670,24 +675,29 @@ msgstr ""
 msgid "Configure"
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:289
+#: translator/widgets/translatorwidget.cpp:349
 #, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
-"Google Server)."
+"external Server)."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:391
+#: translator/widgets/translatorwidget.cpp:351
+#, kde-format
+msgid "Drag text that you want to translate."
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:401
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:391
+#: translator/widgets/translatorwidget.cpp:401
 #, kde-format
 msgid "No network"
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:428
+#: translator/widgets/translatorwidget.cpp:438
 #, kde-format
 msgid "Translate error"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-09 00:44+0000\n"
+"POT-Creation-Date: 2023-08-10 00:44+0000\n"
 "PO-Revision-Date: 2023-08-07 00:27+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot 플러그인 설정"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:154
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -340,22 +340,22 @@ msgstr "Bergamot"
 msgid "Search..."
 msgstr "검색..."
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
 msgid "Download"
 msgstr "다운로드"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:92
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:102
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Update"
 msgstr "업데이트"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:154
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"
@@ -385,7 +385,7 @@ msgstr "언어"
 msgid "Settings"
 msgstr "설정"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:207
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
 #, fuzzy, kde-format
 #| msgid "Server url is not defined."
 msgid "Language model is not defined."
@@ -396,7 +396,7 @@ msgstr "서버 URL을 정의하지 않았습니다."
 msgid "Cannot open file for downloading."
 msgstr "다운로드할 파일을 열 수 없습니다."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:100
@@ -408,18 +408,18 @@ msgstr ""
 "오류: 엔진 시스템에서 컴퓨터 네트워크에서 오는 비정상적인 트래픽을 감지했습니"
 "다. 나중에 다시 시도하십시오."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:52
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "URL에 접근할 수 없음: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "디스크에 쓰는 중 오류 발생: %1"
@@ -458,6 +458,11 @@ msgstr "버전"
 #, kde-format
 msgid "Available"
 msgstr "사용 가능"
+
+#: translator/plugins/bergamot/translatormodel.cpp:103
+#, kde-format
+msgid "Installed"
+msgstr ""
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -587,7 +592,7 @@ msgstr "원본:"
 msgid "To:"
 msgstr "대상:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:47
+#: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
 #, kde-format
 msgid "Engine:"
@@ -674,25 +679,37 @@ msgstr "디버그"
 msgid "Configure"
 msgstr "설정"
 
-#: translator/widgets/translatorwidget.cpp:289
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:349
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "Google Server)."
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
-"Google Server)."
+"external Server)."
 msgstr ""
 "번역할 텍스트를 끌어 놓으십시오. (주의: Google 서버로 텍스트를 전송합니다)"
 
-#: translator/widgets/translatorwidget.cpp:391
+#: translator/widgets/translatorwidget.cpp:351
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "Google Server)."
+msgid "Drag text that you want to translate."
+msgstr ""
+"번역할 텍스트를 끌어 놓으십시오. (주의: Google 서버로 텍스트를 전송합니다)"
+
+#: translator/widgets/translatorwidget.cpp:401
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "네트워크에 연결되지 않아서 텍스트를 번역할 수 없습니다."
 
-#: translator/widgets/translatorwidget.cpp:391
+#: translator/widgets/translatorwidget.cpp:401
 #, kde-format
 msgid "No network"
 msgstr "네트워크 사용 불가"
 
-#: translator/widgets/translatorwidget.cpp:428
+#: translator/widgets/translatorwidget.cpp:438
 #, kde-format
 msgid "Translate error"
 msgstr "번역 오류"
