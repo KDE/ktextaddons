@@ -173,11 +173,17 @@ void TranslatorWidget::readConfig()
     if (from.isEmpty()) {
         return;
     }
-    const QString to = myGroup.readEntry(QStringLiteral("ToLanguage"));
     const int indexFrom = d->fromCombobox->findData(from);
     if (indexFrom != -1) {
         d->fromCombobox->setCurrentIndex(indexFrom);
     }
+    d->translatorClient->generateToListFromCurrentToLanguage(from);
+    // Update "to" combobox
+    d->toCombobox->blockSignals(true);
+    d->fillToCombobox(from);
+    d->toCombobox->blockSignals(false);
+
+    const QString to = myGroup.readEntry(QStringLiteral("ToLanguage"));
     const int indexTo = d->toCombobox->findData(to);
     if (indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
@@ -372,7 +378,6 @@ void TranslatorWidget::slotFromLanguageChanged(int index, bool initialize)
     // Get "from" language code for generating "to" language list
     // qDebug() << " d->fromCombobox->currentIndex() " << lang;
     d->translatorClient->generateToListFromCurrentToLanguage(lang);
-
     d->toCombobox->blockSignals(true);
     d->fillToCombobox(lang);
     d->toCombobox->blockSignals(false);
