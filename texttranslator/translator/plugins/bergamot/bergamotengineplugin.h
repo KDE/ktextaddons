@@ -11,11 +11,14 @@
 class BergamotMarianInterface;
 class BergamotEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {
+    Q_OBJECT
 public:
     explicit BergamotEnginePlugin(QObject *parent = nullptr);
     ~BergamotEnginePlugin() override;
 
     void translate() override;
+
+    void slotConfigureChanged();
 
 private:
     void loadSettings();

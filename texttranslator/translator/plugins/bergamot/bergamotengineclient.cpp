@@ -34,7 +34,9 @@ QString BergamotEngineClient::translatedName() const
 
 TextTranslator::TranslatorEnginePlugin *BergamotEngineClient::createTranslator()
 {
-    return new BergamotEnginePlugin();
+    auto enginePlugin = new BergamotEnginePlugin();
+    connect(this, &BergamotEngineClient::configureChanged, enginePlugin, &BergamotEnginePlugin::slotConfigureChanged);
+    return enginePlugin;
 }
 
 QMap<TextTranslator::TranslatorUtil::Language, QString> BergamotEngineClient::supportedFromLanguages()

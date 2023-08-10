@@ -44,3 +44,8 @@ void BergamotEnginePlugin::loadSettings()
         mBergamotInterface->setModel(filePath, settingInfo);
     }
 }
+
+void BergamotEnginePlugin::slotConfigureChanged()
+{
+    loadSettings();
+}
