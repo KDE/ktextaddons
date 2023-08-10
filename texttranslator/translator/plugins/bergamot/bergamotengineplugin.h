@@ -24,6 +24,8 @@ public:
 
 private:
     void loadSettings();
+    void slotLanguagesChanged();
+    void updateBergamotModel();
     BergamotMarianInterface *const mBergamotInterface;
     QVector<BergamotEngineUtils::LanguageInstalled> mInstalledLanguages;
     BergamotEngineUtils::SettingsInfo mSettingInfo;

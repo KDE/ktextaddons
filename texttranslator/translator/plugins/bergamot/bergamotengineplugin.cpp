@@ -23,6 +23,7 @@ BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)
         appendResult(translation.translation());
         Q_EMIT translateDone();
     });
+    connect(this, &BergamotEnginePlugin::languagesChanged, this, &BergamotEnginePlugin::slotLanguagesChanged);
 }
 
 BergamotEnginePlugin::~BergamotEnginePlugin() = default;
@@ -37,15 +38,29 @@ void BergamotEnginePlugin::loadSettings()
 {
     mInstalledLanguages = BergamotEngineUtils::languageLocallyStored();
     mSettingInfo.loadSettingsInfo();
-    // TODO fixme
-    const QString filePath{BergamotEngineUtils::storageLanguagePath() + QStringLiteral("/enfr.student.tiny11/")};
-    // TODO from();  to();
-    if (QDir().exists(filePath)) {
-        mBergamotInterface->setModel(filePath, mSettingInfo);
+    updateBergamotModel();
+}
+
+void BergamotEnginePlugin::updateBergamotModel()
+{
+    QString absolutePath;
+    for (const auto &installed : std::as_const(mInstalledLanguages)) {
+        if (installed.from == from() && installed.to == to()) {
+            absolutePath = installed.absoluteLanguageModelPath;
+            break;
+        }
+    }
+    if (QDir().exists(absolutePath)) {
+        mBergamotInterface->setModel(absolutePath, mSettingInfo);
     }
 }
 
 void BergamotEnginePlugin::slotConfigureChanged()
 {
     loadSettings();
+}
+
+void BergamotEnginePlugin::slotLanguagesChanged()
+{
+    updateBergamotModel();
 }
