@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-10 00:44+0000\n"
+"POT-Creation-Date: 2023-08-11 00:44+0000\n"
 "PO-Revision-Date: 2023-08-06 08:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -400,7 +400,7 @@ msgstr "Ni mogoče odpreti datoteke za prenos."
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
-#: translator/translatorengineplugin.cpp:100
+#: translator/translatorengineplugin.cpp:106
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -573,7 +573,7 @@ msgstr "Napaka: Ni mogoče najti Yandex SID v spletni različici."
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Napaka: Ni mogoče izvleči Yandex SID iz spletne različice."
 
-#: translator/translatorengineplugin.cpp:108
+#: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
 msgstr "Uporabili ste isti izvorni in ciljni jezik."
@@ -635,53 +635,53 @@ msgstr "Vse datoteke (*)"
 msgid "Translate..."
 msgstr "Prevedi..."
 
-#: translator/widgets/translatorwidget.cpp:205
-#: translator/widgets/translatorwidget.cpp:208
+#: translator/widgets/translatorwidget.cpp:211
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Iz:"
 
-#: translator/widgets/translatorwidget.cpp:221
+#: translator/widgets/translatorwidget.cpp:227
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "V:"
 
-#: translator/widgets/translatorwidget.cpp:233
+#: translator/widgets/translatorwidget.cpp:239
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Inverzno"
 
-#: translator/widgets/translatorwidget.cpp:238
-#: translator/widgets/translatorwidget.cpp:241
+#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgid "Clear"
 msgstr "Počisti"
 
-#: translator/widgets/translatorwidget.cpp:246
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Translate"
 msgstr "Prevedi"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:262
 #, kde-format
 msgid "Debug"
 msgstr "Razhrošči"
 
-#: translator/widgets/translatorwidget.cpp:274
+#: translator/widgets/translatorwidget.cpp:280
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: translator/widgets/translatorwidget.cpp:349
+#: translator/widgets/translatorwidget.cpp:355
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -693,7 +693,7 @@ msgstr ""
 "Povlecite besedilo, ki ga želite prevesti. (Bodite previdni pri besedilu, ki "
 "bo poslano na Google Server)."
 
-#: translator/widgets/translatorwidget.cpp:351
+#: translator/widgets/translatorwidget.cpp:357
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -703,17 +703,17 @@ msgstr ""
 "Povlecite besedilo, ki ga želite prevesti. (Bodite previdni pri besedilu, ki "
 "bo poslano na Google Server)."
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Ni zaznati nobene omrežne povezave, besedila ni mogoče prevesti."
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network"
 msgstr "Ni omrežja"
 
-#: translator/widgets/translatorwidget.cpp:438
+#: translator/widgets/translatorwidget.cpp:443
 #, kde-format
 msgid "Translate error"
 msgstr "Napaka prevajanja"

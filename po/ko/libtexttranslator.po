@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-10 00:44+0000\n"
+"POT-Creation-Date: 2023-08-11 00:44+0000\n"
 "PO-Revision-Date: 2023-08-07 00:27+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -399,7 +399,7 @@ msgstr "다운로드할 파일을 열 수 없습니다."
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
-#: translator/translatorengineplugin.cpp:100
+#: translator/translatorengineplugin.cpp:106
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -571,7 +571,7 @@ msgstr "오류: 웹 버전에서 Yandex SID를 찾을 수 없습니다."
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "오류: 웹 버전에서 Yandex SID를 추출할 수 없습니다."
 
-#: translator/translatorengineplugin.cpp:108
+#: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
 msgstr "원본과 대상 언어가 같습니다."
@@ -633,53 +633,53 @@ msgstr "모든 파일 (*)"
 msgid "Translate..."
 msgstr "번역..."
 
-#: translator/widgets/translatorwidget.cpp:205
-#: translator/widgets/translatorwidget.cpp:208
+#: translator/widgets/translatorwidget.cpp:211
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "닫기"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "원본:"
 
-#: translator/widgets/translatorwidget.cpp:221
+#: translator/widgets/translatorwidget.cpp:227
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "대상:"
 
-#: translator/widgets/translatorwidget.cpp:233
+#: translator/widgets/translatorwidget.cpp:239
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "반전"
 
-#: translator/widgets/translatorwidget.cpp:238
-#: translator/widgets/translatorwidget.cpp:241
+#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgid "Clear"
 msgstr "지우기"
 
-#: translator/widgets/translatorwidget.cpp:246
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Translate"
 msgstr "번역"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:262
 #, kde-format
 msgid "Debug"
 msgstr "디버그"
 
-#: translator/widgets/translatorwidget.cpp:274
+#: translator/widgets/translatorwidget.cpp:280
 #, kde-format
 msgid "Configure"
 msgstr "설정"
 
-#: translator/widgets/translatorwidget.cpp:349
+#: translator/widgets/translatorwidget.cpp:355
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -690,7 +690,7 @@ msgid ""
 msgstr ""
 "번역할 텍스트를 끌어 놓으십시오. (주의: Google 서버로 텍스트를 전송합니다)"
 
-#: translator/widgets/translatorwidget.cpp:351
+#: translator/widgets/translatorwidget.cpp:357
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -699,17 +699,17 @@ msgid "Drag text that you want to translate."
 msgstr ""
 "번역할 텍스트를 끌어 놓으십시오. (주의: Google 서버로 텍스트를 전송합니다)"
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "네트워크에 연결되지 않아서 텍스트를 번역할 수 없습니다."
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network"
 msgstr "네트워크 사용 불가"
 
-#: translator/widgets/translatorwidget.cpp:438
+#: translator/widgets/translatorwidget.cpp:443
 #, kde-format
 msgid "Translate error"
 msgstr "번역 오류"

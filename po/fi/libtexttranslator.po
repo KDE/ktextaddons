@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-10 00:44+0000\n"
+"POT-Creation-Date: 2023-08-11 00:44+0000\n"
 "PO-Revision-Date: 2023-02-23 19:58+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -399,7 +399,7 @@ msgstr ""
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
-#: translator/translatorengineplugin.cpp:100
+#: translator/translatorengineplugin.cpp:106
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -573,7 +573,7 @@ msgstr "Virhe: Verkkoversiosta ei löydy Yandexin SIDiä."
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Virhe: Verkkoversiosta ei saatu irrotettua Yandexin SIDiä."
 
-#: translator/translatorengineplugin.cpp:108
+#: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
 msgstr "Lähde- ja kohdekieli ovat samat."
@@ -635,53 +635,53 @@ msgstr "Kaikki tiedostot (*)"
 msgid "Translate..."
 msgstr "Käännä…"
 
-#: translator/widgets/translatorwidget.cpp:205
-#: translator/widgets/translatorwidget.cpp:208
+#: translator/widgets/translatorwidget.cpp:211
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "Sulje"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Mistä:"
 
-#: translator/widgets/translatorwidget.cpp:221
+#: translator/widgets/translatorwidget.cpp:227
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Mihin:"
 
-#: translator/widgets/translatorwidget.cpp:233
+#: translator/widgets/translatorwidget.cpp:239
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Vaihda suuntaa"
 
-#: translator/widgets/translatorwidget.cpp:238
-#: translator/widgets/translatorwidget.cpp:241
+#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: translator/widgets/translatorwidget.cpp:246
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Translate"
 msgstr "Käännä"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:262
 #, kde-format
 msgid "Debug"
 msgstr "Virheenpaikannus"
 
-#: translator/widgets/translatorwidget.cpp:274
+#: translator/widgets/translatorwidget.cpp:280
 #, kde-format
 msgid "Configure"
 msgstr "Asetukset"
 
-#: translator/widgets/translatorwidget.cpp:349
+#: translator/widgets/translatorwidget.cpp:355
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -693,7 +693,7 @@ msgstr ""
 "Vedä käännettävä teksti tähän. (Varoitus: teksti lähetetään Googlen "
 "palvelimeen.)"
 
-#: translator/widgets/translatorwidget.cpp:351
+#: translator/widgets/translatorwidget.cpp:357
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -703,17 +703,17 @@ msgstr ""
 "Vedä käännettävä teksti tähän. (Varoitus: teksti lähetetään Googlen "
 "palvelimeen.)"
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Verkkoyhteyttä ei havaittu: tekstiä ei voi kääntää."
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network"
 msgstr "Ei verkkoyhteyttä"
 
-#: translator/widgets/translatorwidget.cpp:438
+#: translator/widgets/translatorwidget.cpp:443
 #, kde-format
 msgid "Translate error"
 msgstr "Kääntämisvirhe"

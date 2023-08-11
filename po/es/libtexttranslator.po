@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-10 00:44+0000\n"
+"POT-Creation-Date: 2023-08-11 00:44+0000\n"
 "PO-Revision-Date: 2023-01-13 01:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -401,7 +401,7 @@ msgstr ""
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
-#: translator/translatorengineplugin.cpp:100
+#: translator/translatorengineplugin.cpp:106
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -580,7 +580,7 @@ msgstr ""
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Error: No ha sido posible extraer el SID de Yandex de la versión web."
 
-#: translator/translatorengineplugin.cpp:108
+#: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
 msgstr "Ha usado el mismo idioma para «del» y «al»."
@@ -642,53 +642,53 @@ msgstr "Todos los archivos (*)"
 msgid "Translate..."
 msgstr "Traducir..."
 
-#: translator/widgets/translatorwidget.cpp:205
-#: translator/widgets/translatorwidget.cpp:208
+#: translator/widgets/translatorwidget.cpp:211
+#: translator/widgets/translatorwidget.cpp:214
 #, kde-format
 msgid "Close"
 msgstr "Cerrar"
 
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Del:"
 
-#: translator/widgets/translatorwidget.cpp:221
+#: translator/widgets/translatorwidget.cpp:227
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Al:"
 
-#: translator/widgets/translatorwidget.cpp:233
+#: translator/widgets/translatorwidget.cpp:239
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Invertir"
 
-#: translator/widgets/translatorwidget.cpp:238
-#: translator/widgets/translatorwidget.cpp:241
+#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgid "Clear"
 msgstr "Borrar todo"
 
-#: translator/widgets/translatorwidget.cpp:246
-#: translator/widgets/translatorwidget.cpp:249
+#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Translate"
 msgstr "Traducir"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:262
 #, kde-format
 msgid "Debug"
 msgstr "Depurar"
 
-#: translator/widgets/translatorwidget.cpp:274
+#: translator/widgets/translatorwidget.cpp:280
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
 
-#: translator/widgets/translatorwidget.cpp:349
+#: translator/widgets/translatorwidget.cpp:355
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -700,7 +700,7 @@ msgstr ""
 "Arrastre el texto que quiera traducir (tenga cuidado, ya que el texto se "
 "enviará al servidor de Google)."
 
-#: translator/widgets/translatorwidget.cpp:351
+#: translator/widgets/translatorwidget.cpp:357
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -710,17 +710,17 @@ msgstr ""
 "Arrastre el texto que quiera traducir (tenga cuidado, ya que el texto se "
 "enviará al servidor de Google)."
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "No se ha detectado conexión de red. No se puede traducir texto."
 
-#: translator/widgets/translatorwidget.cpp:401
+#: translator/widgets/translatorwidget.cpp:406
 #, kde-format
 msgid "No network"
 msgstr "No hay red"
 
-#: translator/widgets/translatorwidget.cpp:438
+#: translator/widgets/translatorwidget.cpp:443
 #, kde-format
 msgid "Translate error"
 msgstr "Error de traducción"
