@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-11 00:44+0000\n"
-"PO-Revision-Date: 2023-08-06 08:39+0200\n"
+"PO-Revision-Date: 2023-08-13 00:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -387,10 +387,9 @@ msgid "Settings"
 msgstr "Nastavitve"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
-#, fuzzy, kde-format
-#| msgid "Server url is not defined."
+#, kde-format
 msgid "Language model is not defined."
-msgstr "Url strežnika ni določen."
+msgstr "Jezikovni model ni določen."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:37
 #, kde-format
@@ -418,7 +417,7 @@ msgstr "Ni mogoče dostopati do url: %1"
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "Kontrolna vsota ni pravilna."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:74
 #, kde-format
@@ -463,7 +462,7 @@ msgstr "Na voljo"
 #: translator/plugins/bergamot/translatormodel.cpp:103
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Nameščeno"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -530,7 +529,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "Neveljaven odgovor."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -682,26 +681,18 @@ msgid "Configure"
 msgstr "Konfiguriraj"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
 "Povlecite besedilo, ki ga želite prevesti. (Bodite previdni pri besedilu, ki "
-"bo poslano na Google Server)."
+"bo poslano na zunanji strežnik)."
 
 #: translator/widgets/translatorwidget.cpp:357
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid "Drag text that you want to translate."
-msgstr ""
-"Povlecite besedilo, ki ga želite prevesti. (Bodite previdni pri besedilu, ki "
-"bo poslano na Google Server)."
+msgstr "Povlecite besedilo, ki ga želite prevesti."
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
