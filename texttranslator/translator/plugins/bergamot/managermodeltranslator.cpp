@@ -83,7 +83,7 @@ void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing" << current;
         }
     }
-    qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " mTranslators " << mTranslators.count();
+    qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " mTranslators " << mTranslators.count();
     Q_EMIT downLoadModelListDone();
 }
 
