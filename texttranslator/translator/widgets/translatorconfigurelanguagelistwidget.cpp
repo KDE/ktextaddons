@@ -87,7 +87,7 @@ QStringList TranslatorConfigureLanguageListWidget::selectedLanguages() const
 
 void TranslatorConfigureLanguageListWidget::setSelectedLanguages(const QStringList &list)
 {
-    for (int i = 0; i < mModel->rowCount(); ++i) {
+    for (int i = 0, total = mModel->rowCount(); i < total; ++i) {
         const auto item = mModel->item(i);
         item->setCheckState(list.contains(item->data(LanguageCode).toString()) ? Qt::Checked : Qt::Unchecked);
     }
