@@ -72,3 +72,5 @@ void BergamotEnginePlugin::slotLanguagesChanged()
 {
     updateBergamotModel();
 }
+
+#include "moc_bergamotengineplugin.cpp"
