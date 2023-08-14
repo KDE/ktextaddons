@@ -50,13 +50,14 @@ QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, i
             return i18n("Type");
         case TranslatorModel::Repository:
             return i18n("Repository");
-        case TranslatorModel::Version:
-            return i18n("Version");
-        case TranslatorModel::Available:
-            return i18n("Available");
+        case TranslatorModel::InstalledVersion:
+            return i18n("Installed Version");
+        case TranslatorModel::AvailableVersion:
+            return i18n("Available Version");
+        case TranslatorModel::Installed:
+            return i18n("Installed");
         case TranslatorModel::Identifier:
         case TranslatorModel::CheckSum:
-        case TranslatorModel::Installed:
         case TranslatorModel::Url:
             return {};
         }
@@ -95,17 +96,20 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     case TranslatorModel::Repository: {
         return translator.repository();
     }
-    case TranslatorModel::Version: {
+    case TranslatorModel::InstalledVersion: {
+        if (isInstalled(translator.shortName())) {
+            return translator.version();
+        }
+        return {};
+    }
+    case TranslatorModel::AvailableVersion: {
         return translator.version();
     }
-    case TranslatorModel::Available: {
+    case TranslatorModel::Installed: {
         if (isInstalled(translator.shortName())) {
             return i18n("Installed");
         }
         return {};
-    }
-    case TranslatorModel::Installed: {
-        return isInstalled(translator.shortName());
     }
     case TranslatorModel::Identifier: {
         return translator.shortName();

@@ -135,7 +135,6 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setColumnHidden(TranslatorModel::Url, true);
     mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
     mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
-    mTreeView->setColumnHidden(TranslatorModel::Installed, true);
     connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
