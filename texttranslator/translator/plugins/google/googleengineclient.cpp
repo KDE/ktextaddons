@@ -18,7 +18,8 @@ GoogleEngineClient::~GoogleEngineClient() = default;
 
 QString GoogleEngineClient::name() const
 {
-    return QStringLiteral("google");
+    // Make sure that we use unique name.
+    return TextTranslator::TranslatorUtil::defaultEngineName();
 }
 
 QString GoogleEngineClient::translatedName() const
