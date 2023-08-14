@@ -15,6 +15,7 @@ Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString groupName();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString coreNumberKey();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString memoryByThreadKey();
 Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString storageLanguagePath();
+Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString useLocalCacheKey();
 
 struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString from;
@@ -31,8 +32,8 @@ struct LIBBERGAMOT_EXPORT SettingsInfo {
 
     int numberOfThread = 0;
     int memoryByThread = 64;
+    bool useLocalCache = false;
 };
-// TODO add convert language to enum methods.
 };
 
 LIBBERGAMOT_EXPORT QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t);

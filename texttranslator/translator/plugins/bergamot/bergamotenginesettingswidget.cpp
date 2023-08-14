@@ -5,6 +5,7 @@
 */
 #include "bergamotenginesettingswidget.h"
 #include <KLocalizedString>
+#include <QCheckBox>
 #include <QComboBox>
 #include <QFormLayout>
 #include <QGroupBox>
@@ -15,6 +16,7 @@ BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     : QWidget{parent}
     , mNumberThreads(new QComboBox(this))
     , mMemoryByThreads(new QComboBox(this))
+    , mUseLocalCache(new QCheckBox(i18n("Use translation cache"), this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -27,11 +29,14 @@ BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     mNumberThreads->setObjectName(QStringLiteral("mNumberThreads"));
     mMemoryByThreads->setObjectName(QStringLiteral("mMemoryByThreads"));
 
+    mUseLocalCache->setObjectName(QStringLiteral("mUseLocalCache"));
+
     auto formLayout = new QFormLayout;
     formLayout->setObjectName(QStringLiteral("formLayout"));
     resourceBox->setLayout(formLayout);
     formLayout->addRow(i18n("Thread:"), mNumberThreads);
     formLayout->addRow(i18n("Memory by Thread:"), mMemoryByThreads);
+    formLayout->addWidget(mUseLocalCache);
     fillCombobox();
 }
 
@@ -41,6 +46,7 @@ void BergamotEngineSettingsWidget::setSettingsInfo(const BergamotEngineUtils::Se
 {
     mNumberThreads->setCurrentIndex(mNumberThreads->findData(info.numberOfThread));
     mMemoryByThreads->setCurrentIndex(mMemoryByThreads->findData(info.memoryByThread));
+    mUseLocalCache->setChecked(info.useLocalCache);
 }
 
 BergamotEngineUtils::SettingsInfo BergamotEngineSettingsWidget::settingsInfo() const
@@ -48,6 +54,7 @@ BergamotEngineUtils::SettingsInfo BergamotEngineSettingsWidget::settingsInfo() c
     BergamotEngineUtils::SettingsInfo info;
     info.memoryByThread = mMemoryByThreads->currentData().toInt();
     info.numberOfThread = mNumberThreads->currentData().toInt();
+    info.useLocalCache = mUseLocalCache->isChecked();
     return info;
 }
 

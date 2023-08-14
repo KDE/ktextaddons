@@ -34,6 +34,11 @@ QString BergamotEngineUtils::memoryByThreadKey()
     return QStringLiteral("MemoryByThread");
 }
 
+QString BergamotEngineUtils::useLocalCacheKey()
+{
+    return QStringLiteral("UseLocalKey");
+}
+
 QString BergamotEngineUtils::storageLanguagePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/bergamot-translator");
@@ -44,6 +49,7 @@ void BergamotEngineUtils::SettingsInfo::loadSettingsInfo()
     KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
     numberOfThread = myGroup.readEntry(BergamotEngineUtils::coreNumberKey(), 2);
     memoryByThread = myGroup.readEntry(BergamotEngineUtils::memoryByThreadKey(), 64);
+    useLocalCache = myGroup.readEntry(BergamotEngineUtils::useLocalCacheKey(), false);
 }
 
 void BergamotEngineUtils::SettingsInfo::saveSettingsInfo()
@@ -51,6 +57,7 @@ void BergamotEngineUtils::SettingsInfo::saveSettingsInfo()
     KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
     myGroup.writeEntry(BergamotEngineUtils::coreNumberKey(), numberOfThread);
     myGroup.writeEntry(BergamotEngineUtils::memoryByThreadKey(), memoryByThread);
+    myGroup.writeEntry(BergamotEngineUtils::useLocalCacheKey(), useLocalCache);
     myGroup.sync();
 }
 

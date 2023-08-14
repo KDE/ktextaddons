@@ -58,6 +58,8 @@ struct ModelDescription {
     BergamotEngineUtils::SettingsInfo settings;
 };
 
+constexpr const size_t kTranslationCacheSize = 1 << 16;
+
 BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
     : QObject{parent}
     , mPendingInput(nullptr)
@@ -115,7 +117,7 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
                     // @TODO: don't recreate Service if cpu_threads didn't change?
                     marian::bergamot::AsyncService::Config serviceConfig;
                     serviceConfig.numWorkers = modelChange->settings.numberOfThread;
-                    serviceConfig.cacheSize = /*modelChange->settings.translation_cache ? kTranslationCacheSize :*/ 0;
+                    serviceConfig.cacheSize = modelChange->settings.useLocalCache ? kTranslationCacheSize : 0;
 
                     // Free up old service first (see https://github.com/browsermt/bergamot-translator/issues/290)
                     // Calling clear to remove any pending translations so we

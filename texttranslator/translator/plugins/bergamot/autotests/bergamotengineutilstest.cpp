@@ -20,6 +20,7 @@ void BergamotEngineUtilsTest::shouldDefaultBergamotRepository()
     QCOMPARE(BergamotEngineUtils::groupName(), QStringLiteral("BergamotTranslator"));
     QCOMPARE(BergamotEngineUtils::coreNumberKey(), QStringLiteral("CoreNumber"));
     QCOMPARE(BergamotEngineUtils::memoryByThreadKey(), QStringLiteral("MemoryByThread"));
+    QCOMPARE(BergamotEngineUtils::useLocalCacheKey(), QStringLiteral("UseLocalKey"));
 }
 
 void BergamotEngineUtilsTest::shouldExtractInfoFromLanguageLocallyStored()

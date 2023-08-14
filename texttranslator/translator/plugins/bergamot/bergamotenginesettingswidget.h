@@ -10,6 +10,7 @@
 
 #include <QWidget>
 class QComboBox;
+class QCheckBox;
 class LIBBERGAMOT_TESTS_EXPORT BergamotEngineSettingsWidget : public QWidget
 {
     Q_OBJECT
@@ -24,4 +25,5 @@ private:
     void fillCombobox();
     QComboBox *const mNumberThreads;
     QComboBox *const mMemoryByThreads;
+    QCheckBox *const mUseLocalCache;
 };
