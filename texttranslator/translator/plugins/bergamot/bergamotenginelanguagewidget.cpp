@@ -83,7 +83,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     buttonLayout->setObjectName(QStringLiteral("buttonLayout"));
     hboxLayout->addLayout(buttonLayout);
 
-    auto downLoadLanguage = new QPushButton(i18n("Download"), this);
+    auto downLoadLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("download-symbolic")), i18n("Download"), this);
     downLoadLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(downLoadLanguage);
     connect(downLoadLanguage, &QPushButton::clicked, this, [this]() {
@@ -97,7 +97,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
         slotDownLoad(url, checkSum);
     });
 
-    auto deleteLanguage = new QPushButton(i18n("Delete"), this);
+    auto deleteLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(deleteLanguage);
     connect(deleteLanguage, &QPushButton::clicked, this, [this]() {
