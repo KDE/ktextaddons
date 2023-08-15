@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-11 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:43+0000\n"
 "PO-Revision-Date: 2023-08-09 09:21+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Impostazioni dell'estensione Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -355,22 +355,27 @@ msgstr "Elimina"
 msgid "Update"
 msgstr "Aggiorna"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Error: %1"
 msgstr "Errore: %1"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:23
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
+#, kde-format
+msgid "Use translation cache"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
 msgstr "Utilizzo delle risorse"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:33
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
 msgstr "Thread:"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:34
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
 msgstr "Memoria per thread:"
@@ -385,7 +390,7 @@ msgstr "Lingue"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
 #, fuzzy, kde-format
 #| msgid "Server url is not defined."
 msgid "Language model is not defined."
@@ -451,15 +456,17 @@ msgstr "Deposito"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
-msgid "Version"
-msgstr "Versione"
+msgid "Installed Version"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, kde-format
-msgid "Available"
+#, fuzzy, kde-format
+#| msgid "Available"
+msgid "Available Version"
 msgstr "Disponibile"
 
-#: translator/plugins/bergamot/translatormodel.cpp:103
+#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:110
 #, kde-format
 msgid "Installed"
 msgstr ""
@@ -522,7 +529,7 @@ msgstr "Chiave API:"
 msgid "Server needs Api Key."
 msgstr "Il server richiede una chiave API."
 
-#: translator/plugins/google/googleengineclient.cpp:26
+#: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
 msgid "Google"
 msgstr "Google"
@@ -717,6 +724,9 @@ msgstr "Rete non disponibile"
 #, kde-format
 msgid "Translate error"
 msgstr "Errore di traduzione"
+
+#~ msgid "Version"
+#~ msgstr "Versione"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Problema nella connessione al sito di traduzione."

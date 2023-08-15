@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-11 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:43+0000\n"
 "PO-Revision-Date: 2023-08-13 00:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Nastavitve vtičnika Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -356,22 +356,27 @@ msgstr "Zbriši"
 msgid "Update"
 msgstr "Posodobi"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:23
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
+#, kde-format
+msgid "Use translation cache"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
 msgstr "Raba vira"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:33
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
 msgstr "Nit:"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:34
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
 msgstr "Pomnilnik po niti:"
@@ -386,7 +391,7 @@ msgstr "Jeziki"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Jezikovni model ni določen."
@@ -450,16 +455,19 @@ msgid "Repository"
 msgstr "Repozitorij"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
-#, kde-format
-msgid "Version"
-msgstr "Verzija"
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installed Version"
+msgstr "Nameščeno"
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, kde-format
-msgid "Available"
+#, fuzzy, kde-format
+#| msgid "Available"
+msgid "Available Version"
 msgstr "Na voljo"
 
-#: translator/plugins/bergamot/translatormodel.cpp:103
+#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:110
 #, kde-format
 msgid "Installed"
 msgstr "Nameščeno"
@@ -521,7 +529,7 @@ msgstr "Ključ api:"
 msgid "Server needs Api Key."
 msgstr "Strežnik potrebuje ključ api."
 
-#: translator/plugins/google/googleengineclient.cpp:26
+#: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
 msgid "Google"
 msgstr "Google"
@@ -708,6 +716,9 @@ msgstr "Ni omrežja"
 #, kde-format
 msgid "Translate error"
 msgstr "Napaka prevajanja"
+
+#~ msgid "Version"
+#~ msgstr "Verzija"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Težava pri povezovanju s prevajalskim spletnim mestom."

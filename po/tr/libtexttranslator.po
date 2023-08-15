@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-11 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:43+0000\n"
 "PO-Revision-Date: 2023-08-10 21:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot Eklentisi Ayarları"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -355,22 +355,27 @@ msgstr "Sil"
 msgid "Update"
 msgstr "Güncelle"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Error: %1"
 msgstr "Hata: %1"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:23
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
+#, kde-format
+msgid "Use translation cache"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
 msgstr "Özkaynak Kullanımı"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:33
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
 msgstr "İş parçacığı:"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:34
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
 msgstr "İş parçacığı başına bellek:"
@@ -385,7 +390,7 @@ msgstr "Diller"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Dil modeli tanımlanmamış."
@@ -449,16 +454,19 @@ msgid "Repository"
 msgstr "Depo"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
-#, kde-format
-msgid "Version"
-msgstr "Sürüm"
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installed Version"
+msgstr "Kurulu"
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, kde-format
-msgid "Available"
+#, fuzzy, kde-format
+#| msgid "Available"
+msgid "Available Version"
 msgstr "Kullanılabilir"
 
-#: translator/plugins/bergamot/translatormodel.cpp:103
+#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:110
 #, kde-format
 msgid "Installed"
 msgstr "Kurulu"
@@ -519,7 +527,7 @@ msgstr "API Anahtarı:"
 msgid "Server needs Api Key."
 msgstr "Sunucuya API anahtarı gerekiyor."
 
-#: translator/plugins/google/googleengineclient.cpp:26
+#: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
 msgid "Google"
 msgstr "Google"
@@ -706,6 +714,9 @@ msgstr "Ağ yok"
 #, kde-format
 msgid "Translate error"
 msgstr "Çeviri hatası"
+
+#~ msgid "Version"
+#~ msgstr "Sürüm"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Çevirmen web sayfasına bağlanırken bir sorun oluştu."

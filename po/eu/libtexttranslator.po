@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-11 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:43+0000\n"
 "PO-Revision-Date: 2023-08-09 18:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -332,7 +332,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot pluginaren ezarpenak"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -358,22 +358,27 @@ msgstr "Ezabatu"
 msgid "Update"
 msgstr "Eguneratu"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:168
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
 #, kde-format
 msgid "Error: %1"
 msgstr "Errorea: %1"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:23
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
+#, kde-format
+msgid "Use translation cache"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
 msgstr "Baliabide erabilera"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:33
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
 msgstr "Haria:"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:34
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
 msgstr "Memoria hariko:"
@@ -388,7 +393,7 @@ msgstr "Hizkuntzak"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Hizkuntzaren eredua ez dago definituta."
@@ -453,15 +458,17 @@ msgstr "Gordetegia"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
 #, kde-format
-msgid "Version"
-msgstr "Bertsioa"
+msgid "Installed Version"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, kde-format
-msgid "Available"
+#, fuzzy, kde-format
+#| msgid "Available"
+msgid "Available Version"
 msgstr "Erabilgarri"
 
-#: translator/plugins/bergamot/translatormodel.cpp:103
+#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:110
 #, kde-format
 msgid "Installed"
 msgstr ""
@@ -523,7 +530,7 @@ msgstr "APIaren gakoa:"
 msgid "Server needs Api Key."
 msgstr "Zerbitzariak APIaren gakoa behar du."
 
-#: translator/plugins/google/googleengineclient.cpp:26
+#: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
 msgid "Google"
 msgstr "Google"
@@ -718,6 +725,9 @@ msgstr "Sarerik gabe"
 #, kde-format
 msgid "Translate error"
 msgstr "Itzulpen errorea"
+
+#~ msgid "Version"
+#~ msgstr "Bertsioa"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Arazoa itzultzailearen webgunera konektatzean."
