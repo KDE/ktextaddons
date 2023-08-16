@@ -76,11 +76,17 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
     if (index.row() < 0 || index.row() >= mTranslators.count()) {
         return {};
     }
+    const auto translator = mTranslators.at(index.row());
+    //    if (role == Qt::BackgroundRole) {
+    //        if (isInstalled(translator.shortName())) {
+    //            if ()
+    //        }
+    //        return tint(background, QColor(0x0, 0xFF, 0x0));
+    //    }
     if (role != Qt::DisplayRole) {
         return {};
     }
 
-    const auto translator = mTranslators.at(index.row());
     const int col = index.column();
 
     switch (static_cast<TranslatorRoles>(col)) {
@@ -129,6 +135,16 @@ bool TranslatorModel::isInstalled(const QString &shortName) const
     for (const auto &lang : std::as_const(mLanguageInstalled)) {
         if (lang.shortName == shortName) {
             return true;
+        }
+    }
+    return false;
+}
+
+int TranslatorModel::versionInstalled(const QString &shortName) const
+{
+    for (const auto &lang : std::as_const(mLanguageInstalled)) {
+        if (lang.shortName == shortName) {
+            return lang.version;
         }
     }
     return false;

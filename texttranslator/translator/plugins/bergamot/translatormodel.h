@@ -48,6 +48,7 @@ public:
 private:
     void updateInstalledLanguage();
     Q_REQUIRED_RESULT bool isInstalled(const QString &shortName) const;
+    Q_REQUIRED_RESULT int versionInstalled(const QString &shortName) const;
     QVector<Translator> mTranslators;
     QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };
