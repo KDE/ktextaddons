@@ -8,6 +8,7 @@
 #include "libbergamot_debug.h"
 
 #include <KLocalizedString>
+#include <QColor>
 
 TranslatorModel::TranslatorModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -58,6 +59,7 @@ QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, i
             return i18n("Installed");
         case TranslatorModel::Identifier:
         case TranslatorModel::CheckSum:
+        case TranslatorModel::NeedToUpdateLanguage:
         case TranslatorModel::Url:
             return {};
         }
@@ -71,67 +73,74 @@ int TranslatorModel::rowCount(const QModelIndex &parent) const
     return mTranslators.count();
 }
 
+bool TranslatorModel::needToUpdateLanguageModel(const Translator &translator) const
+{
+    const QString shortName{translator.shortName()};
+    if (isInstalled(shortName)) {
+        if (versionInstalled(shortName) < translator.version()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 QVariant TranslatorModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() < 0 || index.row() >= mTranslators.count()) {
         return {};
     }
     const auto translator = mTranslators.at(index.row());
-#if 0
+    const int col = index.column();
     if (role == Qt::BackgroundRole) {
-        const QString shortName{translator.shortName()};
-        if (isInstalled(shortName)) {
-            if (versionInstalled(shortName) < translator.version()) {
-                // TODO
+        if (needToUpdateLanguageModel(translator)) {
+            if (static_cast<TranslatorRoles>(col) == TranslatorModel::InstalledVersion) {
+                return QColor(Qt::red);
             }
         }
-        // return tint(background, QColor(0x0, 0xFF, 0x0));
-    }
-#endif
-    if (role != Qt::DisplayRole) {
         return {};
-    }
-
-    const int col = index.column();
-
-    switch (static_cast<TranslatorRoles>(col)) {
-    case TranslatorModel::Source: {
-        return translator.source();
-    }
-    case TranslatorModel::Target: {
-        return translator.target();
-    }
-    case TranslatorModel::TypeTranslator: {
-        return translator.type();
-    }
-    case TranslatorModel::Repository: {
-        return translator.repository();
-    }
-    case TranslatorModel::InstalledVersion: {
-        const QString shortName{translator.shortName()};
-        if (isInstalled(shortName)) {
-            return versionInstalled(shortName);
+    } else if (role == Qt::DisplayRole) {
+        switch (static_cast<TranslatorRoles>(col)) {
+        case TranslatorModel::Source: {
+            return translator.source();
         }
-        return {};
-    }
-    case TranslatorModel::AvailableVersion: {
-        return translator.version();
-    }
-    case TranslatorModel::Installed: {
-        if (isInstalled(translator.shortName())) {
-            return i18n("Installed");
+        case TranslatorModel::Target: {
+            return translator.target();
         }
-        return {};
-    }
-    case TranslatorModel::Identifier: {
-        return translator.shortName();
-    }
-    case TranslatorModel::Url: {
-        return translator.url();
-    }
-    case TranslatorModel::CheckSum: {
-        return translator.checkSum();
-    }
+        case TranslatorModel::TypeTranslator: {
+            return translator.type();
+        }
+        case TranslatorModel::Repository: {
+            return translator.repository();
+        }
+        case TranslatorModel::InstalledVersion: {
+            const QString shortName{translator.shortName()};
+            if (isInstalled(shortName)) {
+                return versionInstalled(shortName);
+            }
+            return {};
+        }
+        case TranslatorModel::AvailableVersion: {
+            return translator.version();
+        }
+        case TranslatorModel::Installed: {
+            if (isInstalled(translator.shortName())) {
+                return i18n("Installed");
+            }
+            return {};
+        }
+        case TranslatorModel::Identifier: {
+            return translator.shortName();
+        }
+        case TranslatorModel::Url: {
+            return translator.url();
+        }
+        case TranslatorModel::CheckSum: {
+            return translator.checkSum();
+        }
+        case TranslatorModel::NeedToUpdateLanguage: {
+            return needToUpdateLanguageModel(translator);
+        }
+        }
     }
     return {};
 }
@@ -187,6 +196,7 @@ void TranslatorModel::removeLanguage(const QString &identifier)
         beginResetModel();
         endResetModel();
     }
+    updateInstalledLanguage();
 }
 
 #include "moc_translatormodel.cpp"

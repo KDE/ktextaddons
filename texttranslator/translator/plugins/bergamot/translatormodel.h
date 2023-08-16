@@ -24,6 +24,7 @@ public:
         Installed,
         CheckSum,
         Identifier,
+        NeedToUpdateLanguage,
         Url,
         LastColumn = Url,
     };
@@ -45,10 +46,12 @@ public:
 
     void removeLanguage(const QString &identifier);
 
-private:
     void updateInstalledLanguage();
+
+private:
     Q_REQUIRED_RESULT bool isInstalled(const QString &shortName) const;
     Q_REQUIRED_RESULT int versionInstalled(const QString &shortName) const;
+    Q_REQUIRED_RESULT bool needToUpdateLanguageModel(const Translator &translator) const;
     QVector<Translator> mTranslators;
     QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };
