@@ -100,6 +100,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
                 lang.to = langIdentifier.at(1);
                 lang.shortName = shortName;
                 lang.absoluteLanguageModelPath = modelLanguagePath;
+                lang.version = translator.version();
                 languages.append(lang);
             }
         }
@@ -113,10 +114,12 @@ QDebug operator<<(QDebug d, const BergamotEngineUtils::LanguageInstalled &t)
     d << " to " << t.to;
     d << " shortName " << t.shortName;
     d << " absoluteLanguageModelPath " << t.absoluteLanguageModelPath;
+    d << " version " << t.version;
     return d;
 }
 
 bool BergamotEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
 {
-    return from == other.from && to == other.to && shortName == other.shortName && absoluteLanguageModelPath == other.absoluteLanguageModelPath;
+    return from == other.from && to == other.to && shortName == other.shortName && absoluteLanguageModelPath == other.absoluteLanguageModelPath
+        && version == other.version;
 }
