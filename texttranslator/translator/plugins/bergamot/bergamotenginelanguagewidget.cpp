@@ -130,18 +130,25 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mainLayout->addWidget(mProgressBarWidget);
     mProgressBarWidget->setVisible(false);
 
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, this, &BergamotEngineLanguageWidget::updateListModel);
+    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
     mTreeView->setColumnHidden(TranslatorModel::Url, true);
     mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
     mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
+    mTreeView->setColumnHidden(TranslatorModel::NeedToUpdateLanguage, true);
     connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
         const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Installed);
+        const QModelIndex modelIndexNeedToUpdate = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::NeedToUpdateLanguage);
         const bool isInstalled = modelIndex.data().toBool();
+        const bool needToUpdate = modelIndexNeedToUpdate.data().toBool();
 
-        downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
+        if (needToUpdate) {
+            downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
+        } else {
+            downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
+        }
         deleteLanguage->setEnabled(hasSelectedItem && isInstalled);
     });
     downLoadLanguage->setEnabled(false);
@@ -180,7 +187,6 @@ void BergamotEngineLanguageWidget::slotDownLoad(const QString &url, const QStrin
 void BergamotEngineLanguageWidget::slotDelete(const QString &identifier)
 {
     mTranslatorModel->removeLanguage(identifier);
-    updateListModel();
 }
 
 void BergamotEngineLanguageWidget::slotUpdateListLanguage()
