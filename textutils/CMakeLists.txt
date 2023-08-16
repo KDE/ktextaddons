@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
-add_definitions(-DTRANSLATION_DOMAIN=\"libtextaddonswidgets\")
+# add_definitions(-DTRANSLATION_DOMAIN=\"libtextaddonswidgets\")
 
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextUtils")
