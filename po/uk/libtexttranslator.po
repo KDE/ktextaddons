@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:43+0000\n"
-"PO-Revision-Date: 2023-08-10 18:52+0300\n"
+"PO-Revision-Date: 2023-08-15 09:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -364,7 +364,7 @@ msgstr "Помилка: %1"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr ""
+msgstr "Використати кеш перекладів"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -455,16 +455,14 @@ msgid "Repository"
 msgstr "Сховище"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installed Version"
-msgstr "Встановлено"
+msgstr "Встановлена версія"
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Available"
+#, kde-format
 msgid "Available Version"
-msgstr "Доступно"
+msgstr "Доступна версія"
 
 #: translator/plugins/bergamot/translatormodel.cpp:58
 #: translator/plugins/bergamot/translatormodel.cpp:110

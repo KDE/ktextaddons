@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:43+0000\n"
-"PO-Revision-Date: 2023-08-13 00:22+0200\n"
+"PO-Revision-Date: 2023-08-15 09:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -364,7 +364,7 @@ msgstr "Napaka: %1"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr ""
+msgstr "Uporabi medpomnilnik prevodov"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -455,16 +455,14 @@ msgid "Repository"
 msgstr "Repozitorij"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installed Version"
-msgstr "Nameščeno"
+msgstr "Nameščena različica"
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Available"
+#, kde-format
 msgid "Available Version"
-msgstr "Na voljo"
+msgstr "Razpoložljiva različica"
 
 #: translator/plugins/bergamot/translatormodel.cpp:58
 #: translator/plugins/bergamot/translatormodel.cpp:110

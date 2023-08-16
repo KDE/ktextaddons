@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:43+0000\n"
-"PO-Revision-Date: 2023-08-10 21:59+0300\n"
+"PO-Revision-Date: 2023-08-15 05:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -363,7 +363,7 @@ msgstr "Hata: %1"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr ""
+msgstr "Çeviri önbelleğini kullan"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -454,16 +454,14 @@ msgid "Repository"
 msgstr "Depo"
 
 #: translator/plugins/bergamot/translatormodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installed Version"
-msgstr "Kurulu"
+msgstr "Kurulu Sürüm"
 
 #: translator/plugins/bergamot/translatormodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Available"
+#, kde-format
 msgid "Available Version"
-msgstr "Kullanılabilir"
+msgstr "Kullanılabilir Sürüm"
 
 #: translator/plugins/bergamot/translatormodel.cpp:58
 #: translator/plugins/bergamot/translatormodel.cpp:110
