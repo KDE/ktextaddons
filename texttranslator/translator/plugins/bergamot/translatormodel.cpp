@@ -77,12 +77,17 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
         return {};
     }
     const auto translator = mTranslators.at(index.row());
-    //    if (role == Qt::BackgroundRole) {
-    //        if (isInstalled(translator.shortName())) {
-    //            if ()
-    //        }
-    //        return tint(background, QColor(0x0, 0xFF, 0x0));
-    //    }
+#if 0
+    if (role == Qt::BackgroundRole) {
+        const QString shortName{translator.shortName()};
+        if (isInstalled(shortName)) {
+            if (versionInstalled(shortName) < translator.version()) {
+                // TODO
+            }
+        }
+        // return tint(background, QColor(0x0, 0xFF, 0x0));
+    }
+#endif
     if (role != Qt::DisplayRole) {
         return {};
     }
@@ -103,8 +108,9 @@ QVariant TranslatorModel::data(const QModelIndex &index, int role) const
         return translator.repository();
     }
     case TranslatorModel::InstalledVersion: {
-        if (isInstalled(translator.shortName())) {
-            return translator.version();
+        const QString shortName{translator.shortName()};
+        if (isInstalled(shortName)) {
+            return versionInstalled(shortName);
         }
         return {};
     }
