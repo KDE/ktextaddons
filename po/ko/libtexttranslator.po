@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:43+0000\n"
+"POT-Creation-Date: 2023-08-17 00:44+0000\n"
 "PO-Revision-Date: 2023-08-07 00:27+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot 플러그인 설정"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -355,7 +355,7 @@ msgstr "삭제"
 msgid "Update"
 msgstr "업데이트"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Error: %1"
 msgstr "오류: %1"
@@ -434,39 +434,39 @@ msgstr "디스크에 쓰는 중 오류 발생: %1"
 msgid "Impossible to extract language"
 msgstr "언어를 감지할 수 없음"
 
-#: translator/plugins/bergamot/translatormodel.cpp:46
+#: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
 msgstr "원본"
 
-#: translator/plugins/bergamot/translatormodel.cpp:48
+#: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
 msgstr "대상"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
 msgstr "형식"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
 msgstr "저장소"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
 msgstr ""
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:57
 #, fuzzy, kde-format
 #| msgid "Available"
 msgid "Available Version"
 msgstr "사용 가능"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
-#: translator/plugins/bergamot/translatormodel.cpp:110
+#: translator/plugins/bergamot/translatormodel.cpp:59
+#: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
 msgstr ""

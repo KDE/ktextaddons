@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:43+0000\n"
+"POT-Creation-Date: 2023-08-17 00:44+0000\n"
 "PO-Revision-Date: 2023-08-15 05:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Bergamot Eklentisi Ayarları"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -355,7 +355,7 @@ msgstr "Sil"
 msgid "Update"
 msgstr "Güncelle"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:167
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Error: %1"
 msgstr "Hata: %1"
@@ -433,38 +433,38 @@ msgstr "Diske yazma sırasında hata: %1"
 msgid "Impossible to extract language"
 msgstr "Dili çıkarmak olanaksız"
 
-#: translator/plugins/bergamot/translatormodel.cpp:46
+#: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
 msgstr "Kaynak"
 
-#: translator/plugins/bergamot/translatormodel.cpp:48
+#: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
 msgstr "Hedef"
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
 msgstr "Tür"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
 msgstr "Depo"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
 msgstr "Kurulu Sürüm"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
 msgstr "Kullanılabilir Sürüm"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
-#: translator/plugins/bergamot/translatormodel.cpp:110
+#: translator/plugins/bergamot/translatormodel.cpp:59
+#: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
 msgstr "Kurulu"
