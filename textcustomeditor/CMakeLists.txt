@@ -49,10 +49,13 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
     KF${KF_MAJOR_VERSION}::KIOWidgets
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+    KF${KF_MAJOR_VERSION}::TextUtils
+    KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextCustomEditor HEADER textcustomeditor_debug.h
-    IDENTIFIER TEXTADDONSWIDGETS_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textcustomeditor
+    IDENTIFIER TEXTCUSTOMEDITOR_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textcustomeditor
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textcustomeditor)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

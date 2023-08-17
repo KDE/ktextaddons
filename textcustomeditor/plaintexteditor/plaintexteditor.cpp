@@ -250,7 +250,7 @@ void PlainTextEditor::slotSpeakText()
     } else {
         text = toPlainText();
     }
-    // qCDebug(KPIMTEXTEDIT_LOG) << " TextCustomEditor::TextToSpeech::self()->isReady() :" << TextCustomEditor::TextToSpeech::self()->isReady();
+    // qCDebug(TEXTCUSTOMEDITOR_LOG) << " TextCustomEditor::TextToSpeech::self()->isReady() :" << TextCustomEditor::TextToSpeech::self()->isReady();
     Q_EMIT say(text);
 }
 

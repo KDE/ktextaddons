@@ -49,6 +49,7 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Sonnet
     KIO
+    SyntaxHighlighting
 )
 
 find_package(Qt${QT_MAJOR_VERSION}Keychain CONFIG)

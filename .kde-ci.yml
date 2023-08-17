@@ -16,7 +16,8 @@ Dependencies:
     'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/kio': '@latest-kf6'
-    'frameworks/sonnet': '@latest-kf6'      
+    'frameworks/sonnet': '@latest-kf6'
+    'frameworks/syntax-highlighting': '@latest-kf6'
 
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
@@ -29,5 +30,6 @@ Dependencies:
     'frameworks/kxmlgui': '@stable'
     'frameworks/kcoreaddons': '@stable'
     'frameworks/kio': '@stable'
-    'frameworks/sonnet': '@stable'      
+    'frameworks/sonnet': '@stable'
+    'frameworks/syntax-highlighting': '@stable'
       

@@ -509,7 +509,7 @@ void RichTextEditor::checkSpelling(bool force)
             connect(skipButton, &QPushButton::clicked, this, &RichTextEditor::spellCheckingFinished);
         }
     } else {
-        qCWarning(KPIMTEXTEDIT_LOG) << " Impossible to find qdialogbuttonbox";
+        qCWarning(TEXTCUSTOMEDITOR_LOG) << " Impossible to find qdialogbuttonbox";
     }
     backgroundSpellCheck->setParent(spellDialog);
     spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
