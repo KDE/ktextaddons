@@ -47,7 +47,6 @@ class TextBlockUserData : public QTextBlockUserData
 {
 public:
     KSyntaxHighlighting::State state;
-    QTextBlockUserData *spellData = nullptr;
 };
 
 class PlainTextSyntaxSpellCheckingHighlighterPrivate
