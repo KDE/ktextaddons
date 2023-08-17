@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
+#include "textcustomeditor_export.h"
 #include <QWidget>
 
 namespace KPIMTextEdit
@@ -16,7 +16,7 @@ class TextGoToLineWidgetPrivate;
  * @brief The TextGoToLineWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT TextGoToLineWidget : public QWidget
+class TEXTCUSTOMEDITOR_EXPORT TextGoToLineWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -39,8 +39,8 @@ public Q_SLOTS:
     void slotBlockCountChanged(int numberBlockCount);
 
 private:
-    KPIMTEXTEDIT_NO_EXPORT void slotCloseBar();
-    KPIMTEXTEDIT_NO_EXPORT void slotGoToLine();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotCloseBar();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotGoToLine();
     std::unique_ptr<TextGoToLineWidgetPrivate> const d;
 };
 }

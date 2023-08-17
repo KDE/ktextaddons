@@ -5,8 +5,8 @@
 */
 
 #include "plaintextsyntaxspellcheckinghighlighter.h"
-#include "kpimtextedit_debug.h"
 #include "plaintexteditor.h"
+#include "textcustomeditor_debug.h"
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Format>

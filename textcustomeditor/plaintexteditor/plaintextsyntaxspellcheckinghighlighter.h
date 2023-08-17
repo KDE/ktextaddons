@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
+#include "textcustomeditor_export.h"
 
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <Sonnet/Highlighter>
@@ -24,7 +24,7 @@ class PlainTextSyntaxSpellCheckingHighlighterPrivate;
  * @brief The PlainTextSyntaxSpellCheckingHighlighter class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
+class TEXTCUSTOMEDITOR_EXPORT PlainTextSyntaxSpellCheckingHighlighter : public Sonnet::Highlighter, public KSyntaxHighlighting::AbstractHighlighter
 {
 public:
     explicit PlainTextSyntaxSpellCheckingHighlighter(PlainTextEditor *plainText, const QColor &misspelledColor = Qt::red);

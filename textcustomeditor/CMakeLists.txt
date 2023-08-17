@@ -43,12 +43,12 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
     PRIVATE
-    KF6::SonnetUi
-    KF6::SonnetCore
-    KF6::WidgetsAddons
-    KF6::KIOWidgets
-    KF6::XmlGui
-    KF6::I18n
+    KF${KF_MAJOR_VERSION}::SonnetUi
+    KF${KF_MAJOR_VERSION}::SonnetCore
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::KIOWidgets
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::I18n
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextCustomEditor HEADER textcustomeditor_debug.h

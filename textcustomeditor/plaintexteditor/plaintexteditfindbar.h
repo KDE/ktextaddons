@@ -7,7 +7,7 @@
 #pragma once
 
 #include "kpimtextedit/texteditfindbarbase.h"
-#include "kpimtextedit_export.h"
+#include "textcustomeditor_export.h"
 
 class QPlainTextEdit;
 namespace KPIMTextEdit
@@ -17,7 +17,7 @@ class PlainTextEditFindBarPrivate;
  * @brief The PlainTextEditFindBar class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
+class TEXTCUSTOMEDITOR_EXPORT PlainTextEditFindBar : public TextEditFindBarBase
 {
     Q_OBJECT
 

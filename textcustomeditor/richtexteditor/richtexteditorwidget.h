@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
+#include "textcustomeditor_export.h"
 
 #include <QWidget>
 
@@ -18,7 +18,7 @@ class RichTextEditorWidgetPrivate;
  * @brief The RichTextEditorWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT RichTextEditorWidget : public QWidget
+class TEXTCUSTOMEDITOR_EXPORT RichTextEditorWidget : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
@@ -52,8 +52,8 @@ public Q_SLOTS:
     void slotReplace();
 
 private:
-    KPIMTEXTEDIT_NO_EXPORT void slotHideFindBar();
-    KPIMTEXTEDIT_NO_EXPORT void init(RichTextEditor *customEditor = nullptr);
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotHideFindBar();
+    TEXTCUSTOMEDITOR_NO_EXPORT void init(RichTextEditor *customEditor = nullptr);
     std::unique_ptr<RichTextEditorWidgetPrivate> const d;
 };
 }

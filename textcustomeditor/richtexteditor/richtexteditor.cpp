@@ -5,7 +5,7 @@
 */
 
 #include "richtexteditor.h"
-#include "kpimtextedit_debug.h"
+#include "textcustomeditor_debug.h"
 
 #include "texteditor/commonwidget/textmessageindicator.h"
 #include <KConfig>

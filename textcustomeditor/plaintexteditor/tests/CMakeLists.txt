@@ -2,5 +2,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_executable(plaintexteditor_gui plaintexteditor_gui.cpp)
 target_link_libraries(plaintexteditor_gui
-  KPim6::TextEdit KF6::CoreAddons Qt::Widgets KF6::I18n
+  KF${KF_MAJOR_VERSION}::TextCustomEditor KF${KF_MAJOR_VERSION}::CoreAddons Qt::Widgets KF${KF_MAJOR_VERSION}::I18n
 )

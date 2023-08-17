@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
+#include "textcustomeditor_export.h"
 #include <QTextEdit>
 
 class QContextMenuEvent;
@@ -22,7 +22,7 @@ namespace KPIMTextEdit
  * @brief The RichTextEditor class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT RichTextEditor : public QTextEdit
+class TEXTCUSTOMEDITOR_EXPORT RichTextEditor : public QTextEdit
 {
     Q_OBJECT
     Q_PROPERTY(bool searchSupport READ searchSupport WRITE setSearchSupport)
@@ -125,28 +125,28 @@ Q_SIGNALS:
     void spellCheckingCanceled();
 
 private:
-    KPIMTEXTEDIT_NO_EXPORT void slotUndoableClear();
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerMisspelling(const QString &text, int pos);
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCorrected(const QString &, int, const QString &);
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerAutoCorrect(const QString &, const QString &);
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerCanceled();
-    KPIMTEXTEDIT_NO_EXPORT void slotSpellCheckerFinished();
-    KPIMTEXTEDIT_NO_EXPORT void slotToggleAutoSpellCheck();
-    KPIMTEXTEDIT_NO_EXPORT void slotLanguageSelected();
-    KPIMTEXTEDIT_NO_EXPORT void slotAllowTab();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotUndoableClear();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotSpellCheckerMisspelling(const QString &text, int pos);
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotSpellCheckerCorrected(const QString &, int, const QString &);
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotSpellCheckerAutoCorrect(const QString &, const QString &);
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotSpellCheckerCanceled();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotSpellCheckerFinished();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotToggleAutoSpellCheck();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotLanguageSelected();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotAllowTab();
 
-    KPIMTEXTEDIT_NO_EXPORT void addIgnoreWordsToHighLighter();
-    KPIMTEXTEDIT_NO_EXPORT bool handleShortcut(QKeyEvent *event);
-    KPIMTEXTEDIT_NO_EXPORT bool overrideShortcut(QKeyEvent *event);
-    KPIMTEXTEDIT_NO_EXPORT void deleteWordBack();
-    KPIMTEXTEDIT_NO_EXPORT void deleteWordForward();
-    KPIMTEXTEDIT_NO_EXPORT void highlightWord(int length, int pos);
-    KPIMTEXTEDIT_NO_EXPORT void checkSpelling(bool force);
-    KPIMTEXTEDIT_NO_EXPORT void moveLineUpDown(bool moveUp);
-    KPIMTEXTEDIT_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
-    KPIMTEXTEDIT_NO_EXPORT void regenerateColorScheme();
-    KPIMTEXTEDIT_NO_EXPORT void updateReadOnlyColor();
-    KPIMTEXTEDIT_NO_EXPORT void slotInsertEmoticon(const QString &str);
+    TEXTCUSTOMEDITOR_NO_EXPORT void addIgnoreWordsToHighLighter();
+    TEXTCUSTOMEDITOR_NO_EXPORT bool handleShortcut(QKeyEvent *event);
+    TEXTCUSTOMEDITOR_NO_EXPORT bool overrideShortcut(QKeyEvent *event);
+    TEXTCUSTOMEDITOR_NO_EXPORT void deleteWordBack();
+    TEXTCUSTOMEDITOR_NO_EXPORT void deleteWordForward();
+    TEXTCUSTOMEDITOR_NO_EXPORT void highlightWord(int length, int pos);
+    TEXTCUSTOMEDITOR_NO_EXPORT void checkSpelling(bool force);
+    TEXTCUSTOMEDITOR_NO_EXPORT void moveLineUpDown(bool moveUp);
+    TEXTCUSTOMEDITOR_NO_EXPORT void moveCursorBeginUpDown(bool moveUp);
+    TEXTCUSTOMEDITOR_NO_EXPORT void regenerateColorScheme();
+    TEXTCUSTOMEDITOR_NO_EXPORT void updateReadOnlyColor();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotInsertEmoticon(const QString &str);
     class RichTextEditorPrivate;
     std::unique_ptr<RichTextEditorPrivate> const d;
 };

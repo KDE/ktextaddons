@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "kpimtextedit_export.h"
+#include "textcustomeditor_export.h"
 #include <QRegularExpression>
 #include <QWidget>
 namespace KPIMTextEdit
@@ -17,7 +17,7 @@ class TextReplaceWidget;
  * @brief The TextEditFindBarBase class
  * @author Laurent Montel <montel@kde.org>
  */
-class KPIMTEXTEDIT_EXPORT TextEditFindBarBase : public QWidget
+class TEXTCUSTOMEDITOR_EXPORT TextEditFindBarBase : public QWidget
 {
     Q_OBJECT
 
@@ -68,8 +68,8 @@ public Q_SLOTS:
     void closeBar();
 
 private Q_SLOTS:
-    KPIMTEXTEDIT_NO_EXPORT void slotClearSearch();
-    KPIMTEXTEDIT_NO_EXPORT void slotUpdateSearchOptions();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotClearSearch();
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotUpdateSearchOptions();
     virtual void slotReplaceText() = 0;
     virtual void slotReplaceAllText() = 0;
 
