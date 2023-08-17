@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include "kpimtextedit_private_export.h"
+#include "textcustomeditor_private_export.h"
 #include "texteditfindbarbase.h"
 #include <QWidget>
 
 class QAction;
 class QLineEdit;
 class QPushButton;
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
-class KPIMTEXTEDIT_TESTS_EXPORT TextFindWidget : public QWidget
+class TEXTCUSTOMEDITOR_TESTS_EXPORT TextFindWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -54,7 +54,7 @@ private:
     QPushButton *const mFindNextBtn;
 };
 
-class KPIMTEXTEDIT_TESTS_EXPORT TextReplaceWidget : public QWidget
+class TEXTCUSTOMEDITOR_TESTS_EXPORT TextReplaceWidget : public QWidget
 {
     Q_OBJECT
 public:

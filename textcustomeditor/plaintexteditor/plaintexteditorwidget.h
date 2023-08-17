@@ -9,7 +9,7 @@
 #include "textcustomeditor_export.h"
 #include <QWidget>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditor;
 class PlainTextEditorWidgetPrivate;

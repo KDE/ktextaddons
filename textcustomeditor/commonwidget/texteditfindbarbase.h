@@ -9,7 +9,7 @@
 #include "textcustomeditor_export.h"
 #include <QRegularExpression>
 #include <QWidget>
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class TextFindWidget;
 class TextReplaceWidget;

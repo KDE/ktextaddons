@@ -5,7 +5,7 @@
 */
 
 #include "textreplacewidgettest.h"
-#include "texteditor/commonwidget/textfindreplacewidget.h"
+#include "commonwidget/textfindreplacewidget.h"
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTest>
@@ -18,7 +18,7 @@ TextReplaceWidgetTest::TextReplaceWidgetTest(QObject *parent)
 
 void TextReplaceWidgetTest::shouldHaveDefaultValues()
 {
-    KPIMTextEdit::TextReplaceWidget w;
+    TextCustomEditor::TextReplaceWidget w;
     QVERIFY(w.replaceLineEdit());
     auto mReplace = w.findChild<QLineEdit *>(QStringLiteral("mReplace"));
     QVERIFY(mReplace);

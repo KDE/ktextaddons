@@ -17,7 +17,7 @@
 #include <QMenu>
 #include <QRegularExpression>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 
 TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     : QWidget(parent)

@@ -8,7 +8,7 @@
 
 #include <QWidget>
 class QTimer;
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 /**
  * @short A widget that displays messages in the top-left corner.

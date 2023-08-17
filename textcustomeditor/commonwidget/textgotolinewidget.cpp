@@ -16,9 +16,9 @@
 #include <QSpinBox>
 #include <QToolButton>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 
-class Q_DECL_HIDDEN KPIMTextEdit::TextGoToLineWidgetPrivate
+class Q_DECL_HIDDEN TextCustomEditor::TextGoToLineWidgetPrivate
 {
 public:
     TextGoToLineWidgetPrivate() = default;
@@ -29,7 +29,7 @@ public:
 
 TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEdit::TextGoToLineWidgetPrivate)
+    , d(new TextCustomEditor::TextGoToLineWidgetPrivate)
 {
     auto hbox = new QHBoxLayout(this);
     hbox->setContentsMargins(2, 2, 2, 2);

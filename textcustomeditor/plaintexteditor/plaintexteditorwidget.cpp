@@ -14,30 +14,30 @@
 #include <QTextCursor>
 #include <QVBoxLayout>
 
-using namespace KPIMTextEdit;
-class Q_DECL_HIDDEN KPIMTextEdit::PlainTextEditorWidgetPrivate
+using namespace TextCustomEditor;
+class Q_DECL_HIDDEN TextCustomEditor::PlainTextEditorWidgetPrivate
 {
 public:
     PlainTextEditorWidgetPrivate() = default;
 
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
+    TextCustomEditor::PlainTextEditFindBar *mFindBar = nullptr;
     PlainTextEditor *mEditor = nullptr;
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    TextCustomEditor::SlideContainer *mSliderContainer = nullptr;
 };
 
 PlainTextEditorWidget::PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEdit::PlainTextEditorWidgetPrivate)
+    , d(new TextCustomEditor::PlainTextEditorWidgetPrivate)
 {
     init(customEditor);
 }
 
 PlainTextEditorWidget::PlainTextEditorWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEdit::PlainTextEditorWidgetPrivate)
+    , d(new TextCustomEditor::PlainTextEditorWidgetPrivate)
 {
     init();
 }
@@ -91,12 +91,12 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
-    d->mSliderContainer = new KPIMTextEdit::SlideContainer(this);
+    d->mSliderContainer = new TextCustomEditor::SlideContainer(this);
 
-    d->mFindBar = new KPIMTextEdit::PlainTextEditFindBar(d->mEditor, this);
+    d->mFindBar = new TextCustomEditor::PlainTextEditFindBar(d->mEditor, this);
     d->mFindBar->setHideWhenClose(false);
-    connect(d->mFindBar, &KPIMTextEdit::PlainTextEditFindBar::displayMessageIndicator, d->mEditor, &PlainTextEditor::slotDisplayMessageIndicator);
-    connect(d->mFindBar, &KPIMTextEdit::PlainTextEditFindBar::hideFindBar, this, &PlainTextEditorWidget::slotHideFindBar);
+    connect(d->mFindBar, &TextCustomEditor::PlainTextEditFindBar::displayMessageIndicator, d->mEditor, &PlainTextEditor::slotDisplayMessageIndicator);
+    connect(d->mFindBar, &TextCustomEditor::PlainTextEditFindBar::hideFindBar, this, &PlainTextEditorWidget::slotHideFindBar);
     d->mSliderContainer->setContent(d->mFindBar);
 
     lay->addWidget(d->mSliderContainer);

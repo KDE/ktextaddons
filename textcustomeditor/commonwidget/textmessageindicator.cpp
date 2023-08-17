@@ -13,7 +13,7 @@
 #include <QStyle>
 #include <QTimer>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     : QWidget(parent)
 {

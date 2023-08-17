@@ -17,7 +17,7 @@ RichTextEditorTest::~RichTextEditorTest() = default;
 
 void RichTextEditorTest::shouldHaveDefaultValue()
 {
-    KPIMTextEdit::RichTextEditor editor;
+    TextCustomEditor::RichTextEditor editor;
     QCOMPARE(editor.spellCheckingSupport(), true);
     QCOMPARE(editor.textToSpeechSupport(), true);
     QCOMPARE(editor.searchSupport(), true);
@@ -30,7 +30,7 @@ void RichTextEditorTest::shouldHaveDefaultValue()
 
 void RichTextEditorTest::shouldChangeSpellCheckValue()
 {
-    KPIMTextEdit::RichTextEditor editor;
+    TextCustomEditor::RichTextEditor editor;
     editor.setSpellCheckingSupport(false);
     QCOMPARE(editor.spellCheckingSupport(), false);
 

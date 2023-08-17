@@ -15,31 +15,31 @@
 #endif
 #include "slidecontainer.h"
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 
-class Q_DECL_HIDDEN KPIMTextEdit::RichTextEditorWidgetPrivate
+class Q_DECL_HIDDEN TextCustomEditor::RichTextEditorWidgetPrivate
 {
 public:
     RichTextEditorWidgetPrivate() = default;
 
-    KPIMTextEdit::RichTextEditFindBar *mFindBar = nullptr;
+    TextCustomEditor::RichTextEditFindBar *mFindBar = nullptr;
     RichTextEditor *mEditor = nullptr;
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    TextCustomEditor::SlideContainer *mSliderContainer = nullptr;
 };
 
 RichTextEditorWidget::RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEdit::RichTextEditorWidgetPrivate)
+    , d(new TextCustomEditor::RichTextEditorWidgetPrivate)
 {
     init(customEditor);
 }
 
 RichTextEditorWidget::RichTextEditorWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new KPIMTextEdit::RichTextEditorWidgetPrivate)
+    , d(new TextCustomEditor::RichTextEditorWidgetPrivate)
 {
     init();
 }
@@ -114,13 +114,13 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
 #endif
     lay->addWidget(d->mEditor);
 
-    d->mSliderContainer = new KPIMTextEdit::SlideContainer(this);
+    d->mSliderContainer = new TextCustomEditor::SlideContainer(this);
 
-    d->mFindBar = new KPIMTextEdit::RichTextEditFindBar(d->mEditor, this);
+    d->mFindBar = new TextCustomEditor::RichTextEditFindBar(d->mEditor, this);
     d->mFindBar->setHideWhenClose(false);
-    connect(d->mFindBar, &KPIMTextEdit::RichTextEditFindBar::displayMessageIndicator, d->mEditor, &RichTextEditor::slotDisplayMessageIndicator);
+    connect(d->mFindBar, &TextCustomEditor::RichTextEditFindBar::displayMessageIndicator, d->mEditor, &RichTextEditor::slotDisplayMessageIndicator);
 
-    connect(d->mFindBar, &KPIMTextEdit::RichTextEditFindBar::hideFindBar, this, &RichTextEditorWidget::slotHideFindBar);
+    connect(d->mFindBar, &TextCustomEditor::RichTextEditFindBar::hideFindBar, this, &RichTextEditorWidget::slotHideFindBar);
     d->mSliderContainer->setContent(d->mFindBar);
     lay->addWidget(d->mSliderContainer);
 

@@ -5,7 +5,7 @@
 */
 
 #include "textgotolinewidgettest.h"
-#include "texteditor/commonwidget/textgotolinewidget.h"
+#include "commonwidget/textgotolinewidget.h"
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QSpinBox>
@@ -21,7 +21,7 @@ TextGoToLineWidgetTest::TextGoToLineWidgetTest(QObject *parent)
 
 void TextGoToLineWidgetTest::shouldHaveDefaultValuesOnCreation()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
@@ -36,21 +36,21 @@ void TextGoToLineWidgetTest::shouldHaveDefaultValuesOnCreation()
 
 void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenPressOnButton()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     auto gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
-    QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
+    QSignalSpy spy(&edit, &TextCustomEditor::TextGoToLineWidget::moveToLine);
     QTest::mouseClick(gotolinebutton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
 }
 
 void TextGoToLineWidgetTest::shouldEmitGoToLineSignalCorrectValueWhenPressOnButton()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     auto gotolinebutton = edit.findChild<QPushButton *>(QStringLiteral("gotoline"));
     auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     line->setValue(5);
     QCOMPARE(line->value(), 5);
-    QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
+    QSignalSpy spy(&edit, &TextCustomEditor::TextGoToLineWidget::moveToLine);
     QTest::mouseClick(gotolinebutton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy.at(0).at(0).toInt(), 5);
@@ -58,7 +58,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalCorrectValueWhenPressOnButt
 
 void TextGoToLineWidgetTest::shouldHideWidgetWhenClickOnCloseButton()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QVERIFY(edit.isVisible());
@@ -69,7 +69,7 @@ void TextGoToLineWidgetTest::shouldHideWidgetWhenClickOnCloseButton()
 
 void TextGoToLineWidgetTest::shouldHideWidgetWhenPressEscape()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     QTest::keyPress(&edit, Qt::Key_Escape);
@@ -78,14 +78,14 @@ void TextGoToLineWidgetTest::shouldHideWidgetWhenPressEscape()
 
 void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenSpinboxHasFocusAndWePressEnter()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
     line->setFocus();
     QVERIFY(line->hasFocus());
     line->setValue(5);
-    QSignalSpy spy(&edit, &KPIMTextEdit::TextGoToLineWidget::moveToLine);
+    QSignalSpy spy(&edit, &TextCustomEditor::TextGoToLineWidget::moveToLine);
     QTest::keyPress(line, Qt::Key_Enter);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy.at(0).at(0).toInt(), 5);
@@ -93,7 +93,7 @@ void TextGoToLineWidgetTest::shouldEmitGoToLineSignalWhenSpinboxHasFocusAndWePre
 
 void TextGoToLineWidgetTest::shouldHasFocusEachTimeThatItShown()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
@@ -108,7 +108,7 @@ void TextGoToLineWidgetTest::shouldHasFocusEachTimeThatItShown()
 
 void TextGoToLineWidgetTest::shouldSetFocusWhenWeRecallGotToLine()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));
@@ -121,7 +121,7 @@ void TextGoToLineWidgetTest::shouldSetFocusWhenWeRecallGotToLine()
 
 void TextGoToLineWidgetTest::shouldChangeMaximumValue()
 {
-    KPIMTextEdit::TextGoToLineWidget edit;
+    TextCustomEditor::TextGoToLineWidget edit;
     edit.show();
     QVERIFY(QTest::qWaitForWindowExposed(&edit));
     auto line = edit.findChild<QSpinBox *>(QStringLiteral("line"));

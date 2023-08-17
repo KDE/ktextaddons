@@ -7,7 +7,7 @@
 #include "richtexteditor.h"
 #include "textcustomeditor_debug.h"
 
-#include "texteditor/commonwidget/textmessageindicator.h"
+#include "commonwidget/textmessageindicator.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <KCursor>
@@ -43,13 +43,13 @@
 #include <QTextCursor>
 #include <QTextDocumentFragment>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
 {
 public:
     RichTextEditorPrivate(RichTextEditor *qq)
         : q(qq)
-        , textIndicator(new KPIMTextEdit::TextMessageIndicator(q))
+        , textIndicator(new TextCustomEditor::TextMessageIndicator(q))
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
@@ -94,7 +94,7 @@ public:
 
     QStringList ignoreSpellCheckingWords;
     RichTextEditor *const q;
-    KPIMTextEdit::TextMessageIndicator *const textIndicator;
+    TextCustomEditor::TextMessageIndicator *const textIndicator;
     QString spellCheckingConfigFileName;
     QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;

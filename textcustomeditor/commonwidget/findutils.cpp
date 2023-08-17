@@ -14,7 +14,7 @@
 #include <QTextCursor>
 #include <QTextEdit>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 QTextDocument::FindFlags FindUtils::convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags)
 {
     QTextDocument::FindFlags flags;

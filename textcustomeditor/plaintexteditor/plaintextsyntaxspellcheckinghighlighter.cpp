@@ -17,9 +17,9 @@
 
 Q_DECLARE_METATYPE(QTextBlock)
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 struct SpellCheckRange {
     SpellCheckRange(int o, int l)

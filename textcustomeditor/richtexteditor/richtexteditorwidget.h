@@ -10,7 +10,7 @@
 
 #include <QWidget>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class RichTextEditor;
 class RichTextEditorWidgetPrivate;

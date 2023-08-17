@@ -71,48 +71,48 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextCustomEditor PROPERTIES
 
 install(TARGETS KF${KF_MAJOR_VERSION}TextCustomEditor EXPORT KF${KF_MAJOR_VERSION}TextCustomEditorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-ecm_generate_headers(KPimTextEdit_CamelCasetextrichtexteditor_HEADERS
+ecm_generate_headers(TextCustomEditor_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
     RichTextEditorWidget
     RichTextEditor
     RichTextEditFindBar
-    REQUIRED_HEADERS KPimTextEdit_richtexteditor_HEADERS
-    PREFIX KPIMTextEdit
+    REQUIRED_HEADERS TextCustomEditor_richtexteditor_HEADERS
+    PREFIX TextCustomEditor
     RELATIVE richtexteditor
     )
 
-ecm_generate_headers(KPimTextEdit_CamelCaseplaintexteditor_HEADERS
+ecm_generate_headers(TextCustomEditor_CamelCaseplaintexteditor_HEADERS
     HEADER_NAMES
     PlainTextEditor
     PlainTextEditorWidget
     PlainTextEditFindBar
     PlainTextSyntaxSpellCheckingHighlighter
-    REQUIRED_HEADERS KPimTextEdit_plaintexteditor_HEADERS
-    PREFIX KPIMTextEdit
-    RELATIVE /plaintexteditor
+    REQUIRED_HEADERS TextCustomEditor_plaintexteditor_HEADERS
+    PREFIX TextCustomEditor
+    RELATIVE plaintexteditor
     )
 
-ecm_generate_headers(KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS
+ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_commonwidget_HEADERS
     HEADER_NAMES
     TextGotoLineWidget
     TextEditFindBarBase
-    REQUIRED_HEADERS KPimTextEdit_texteditor_commonwidget_HEADERS
-    PREFIX KPIMTextEdit
+    REQUIRED_HEADERS TextCustomEditor_texteditor_commonwidget_HEADERS
+    PREFIX TextCustomEditor
     RELATIVE commonwidget
     )
 
 install(FILES
-    ${KPimTextEdit_richtexteditor_HEADERS}
-    ${KPimTextEdit_texteditor_commonwidget_HEADERS}
-    ${KPimTextEdit_plaintexteditor_HEADERS}
+    ${TextCustomEditor_richtexteditor_HEADERS}
+    ${TextCustomEditor_texteditor_commonwidget_HEADERS}
+    ${TextCustomEditor_plaintexteditor_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/textcustomeditor
     COMPONENT Devel
 )
 install(FILES
-    ${KPimTextEdit_CamelCasetextrichtexteditor_HEADERS}
-    ${KPimTextEdit_CamelCaseplaintexteditor_HEADERS}
-    ${KPimTextEdit_CamelCasetexteditor_commonwidget_HEADERS}
+    ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
+    ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
+    ${TextCustomEditor_CamelCasetexteditor_commonwidget_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/TextCustomEditor/
     COMPONENT Devel
 )
@@ -164,9 +164,9 @@ if (BUILD_QCH)
         VERSION ${TEXTCUSTOMEDITOR_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${KPimTextEdit_richtexteditor_HEADERS}
-        ${KPimTextEdit_texteditor_commonwidget_HEADERS}
-        ${KPimTextEdit_plaintexteditor_HEADERS}
+        ${TextCustomEditor_richtexteditor_HEADERS}
+        ${TextCustomEditor_texteditor_commonwidget_HEADERS}
+        ${TextCustomEditor_plaintexteditor_HEADERS}
         LINK_QCHS
         Qt${QT_MAJOR_VERSION}Core_QCH
         INCLUDE_DIRS

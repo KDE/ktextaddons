@@ -5,8 +5,8 @@
 */
 
 #include "texteditfindbarbase.h"
+#include "commonwidget/textfindreplacewidget.h"
 #include "textcustomeditor_debug.h"
-#include "texteditor/commonwidget/textfindreplacewidget.h"
 #include <KLocalizedString>
 #include <QEvent>
 #include <QHBoxLayout>
@@ -17,7 +17,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     : QWidget(parent)

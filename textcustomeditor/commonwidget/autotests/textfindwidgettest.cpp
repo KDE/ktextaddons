@@ -5,7 +5,7 @@
 */
 
 #include "textfindwidgettest.h"
-#include "texteditor/commonwidget/textfindreplacewidget.h"
+#include "commonwidget/textfindreplacewidget.h"
 #include <QPushButton>
 #include <QTest>
 QTEST_MAIN(TextFindWidgetTest)
@@ -16,7 +16,7 @@ TextFindWidgetTest::TextFindWidgetTest(QObject *parent)
 
 void TextFindWidgetTest::shouldHaveDefaultValues()
 {
-    KPIMTextEdit::TextFindWidget w;
+    TextCustomEditor::TextFindWidget w;
     QVERIFY(w.searchLineEdit());
     QVERIFY(!w.isRegularExpression());
     QVERIFY(w.searchText().isEmpty());

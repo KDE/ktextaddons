@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "kpimtextedit/texteditfindbarbase.h"
 #include "textcustomeditor_export.h"
+#include <TextCustomEditor/TextEditFindBarBase>
 
 class QPlainTextEdit;
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditFindBarPrivate;
 /**

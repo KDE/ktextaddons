@@ -5,8 +5,8 @@
 */
 
 #include "plaintexteditfindbar.h"
-#include "texteditor/commonwidget/findutils.h"
-#include "texteditor/commonwidget/textfindreplacewidget.h"
+#include "commonwidget/findutils.h"
+#include "commonwidget/textfindreplacewidget.h"
 
 #include <KLocalizedString>
 #include <TextUtils/ConvertText>
@@ -15,8 +15,8 @@
 #include <QPlainTextEdit>
 #include <QRegularExpression>
 
-using namespace KPIMTextEdit;
-class KPIMTextEdit::PlainTextEditFindBarPrivate
+using namespace TextCustomEditor;
+class TextCustomEditor::PlainTextEditFindBarPrivate
 {
 public:
     explicit PlainTextEditFindBarPrivate(QPlainTextEdit *view)
@@ -29,7 +29,7 @@ public:
 
 PlainTextEditFindBar::PlainTextEditFindBar(QPlainTextEdit *view, QWidget *parent)
     : TextEditFindBarBase(parent)
-    , d(new KPIMTextEdit::PlainTextEditFindBarPrivate(view))
+    , d(new TextCustomEditor::PlainTextEditFindBarPrivate(view))
 {
 }
 

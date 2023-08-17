@@ -5,7 +5,7 @@
 */
 #include "plaintexteditor.h"
 
-#include "texteditor/commonwidget/textmessageindicator.h"
+#include "commonwidget/textmessageindicator.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <KCursor>
@@ -40,14 +40,14 @@
 
 #include <Sonnet/Highlighter>
 
-using namespace KPIMTextEdit;
+using namespace TextCustomEditor;
 
 class Q_DECL_HIDDEN PlainTextEditor::PlainTextEditorPrivate
 {
 public:
     PlainTextEditorPrivate(PlainTextEditor *qq)
         : q(qq)
-        , mTextIndicator(new KPIMTextEdit::TextMessageIndicator(q))
+        , mTextIndicator(new TextCustomEditor::TextMessageIndicator(q))
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
@@ -67,7 +67,7 @@ public:
 
     QStringList ignoreSpellCheckingWords;
     PlainTextEditor *const q;
-    KPIMTextEdit::TextMessageIndicator *const mTextIndicator;
+    TextCustomEditor::TextMessageIndicator *const mTextIndicator;
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
     Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
     Sonnet::Speller *speller = nullptr;
@@ -250,7 +250,7 @@ void PlainTextEditor::slotSpeakText()
     } else {
         text = toPlainText();
     }
-    // qCDebug(KPIMTEXTEDIT_LOG) << " KPIMTextEdit::TextToSpeech::self()->isReady() :" << KPIMTextEdit::TextToSpeech::self()->isReady();
+    // qCDebug(KPIMTEXTEDIT_LOG) << " TextCustomEditor::TextToSpeech::self()->isReady() :" << TextCustomEditor::TextToSpeech::self()->isReady();
     Q_EMIT say(text);
 }
 

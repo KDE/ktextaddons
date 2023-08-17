@@ -17,7 +17,7 @@ PlainTextEditorTest::~PlainTextEditorTest() = default;
 
 void PlainTextEditorTest::shouldHaveDefaultValue()
 {
-    KPIMTextEdit::PlainTextEditor editor;
+    TextCustomEditor::PlainTextEditor editor;
     QCOMPARE(editor.spellCheckingSupport(), true);
     QCOMPARE(editor.textToSpeechSupport(), true);
     QCOMPARE(editor.searchSupport(), true);
@@ -26,7 +26,7 @@ void PlainTextEditorTest::shouldHaveDefaultValue()
 
 void PlainTextEditorTest::shouldChangeSpellCheckValue()
 {
-    KPIMTextEdit::PlainTextEditor editor;
+    TextCustomEditor::PlainTextEditor editor;
     editor.setSpellCheckingSupport(false);
     QCOMPARE(editor.spellCheckingSupport(), false);
 

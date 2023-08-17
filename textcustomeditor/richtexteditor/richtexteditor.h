@@ -16,7 +16,7 @@ namespace Sonnet
 class Highlighter;
 class SpellCheckDecorator;
 }
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 /**
  * @brief The RichTextEditor class

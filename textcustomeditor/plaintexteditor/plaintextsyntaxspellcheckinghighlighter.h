@@ -16,7 +16,7 @@ namespace KSyntaxHighlighting
 class Format;
 }
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditor;
 class PlainTextSyntaxSpellCheckingHighlighterPrivate;
