@@ -191,14 +191,15 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         }
         if (searchSupport()) {
             popup->addSeparator();
-            QAction *findAct =
-                popup->addAction(KStandardGuiItem::find().icon(), KStandardGuiItem::find().text(), Qt::Key_F | Qt::CTRL, this, &RichTextEditor::findText);
+            QAction *findAction = KStandardAction::find(this, &RichTextEditor::findText, popup);
+            popup->addAction(findAction);
             if (emptyDocument) {
-                findAct->setEnabled(false);
+                findAction->setEnabled(false);
             }
             popup->addSeparator();
             if (!isReadOnly()) {
-                QAction *act = popup->addAction(i18n("Replace..."), Qt::Key_R | Qt::CTRL, this, &RichTextEditor::replaceText);
+                QAction *act = KStandardAction::replace(this, &RichTextEditor::replaceText, popup);
+                popup->addAction(act);
                 if (emptyDocument) {
                     act->setEnabled(false);
                 }
