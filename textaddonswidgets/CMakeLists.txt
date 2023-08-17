@@ -17,6 +17,8 @@ add_library(KF${KF_MAJOR_VERSION}::TextAddonsWidgets ALIAS KF${KF_MAJOR_VERSION}
 target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
     selectspecialchardialog.h
     selectspecialchardialog.cpp
+    slidecontainer.cpp
+    slidecontainer.h
 )
 if (QT_MAJOR_VERSION STREQUAL "5")
     target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
@@ -60,6 +62,7 @@ install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSI
 ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     SelectSpecialCharDialog
+    SlideContainer
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )

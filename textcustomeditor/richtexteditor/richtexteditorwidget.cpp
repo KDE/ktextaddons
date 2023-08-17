@@ -13,7 +13,7 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
-#include "slidecontainer.h"
+#include <TextAddonsWidgets/SlideContainer>
 
 using namespace TextCustomEditor;
 
@@ -27,7 +27,7 @@ public:
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
-    TextCustomEditor::SlideContainer *mSliderContainer = nullptr;
+    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
 };
 
 RichTextEditorWidget::RichTextEditorWidget(RichTextEditor *customEditor, QWidget *parent)
@@ -114,7 +114,7 @@ void RichTextEditorWidget::init(RichTextEditor *customEditor)
 #endif
     lay->addWidget(d->mEditor);
 
-    d->mSliderContainer = new TextCustomEditor::SlideContainer(this);
+    d->mSliderContainer = new TextAddonsWidgets::SlideContainer(this);
 
     d->mFindBar = new TextCustomEditor::RichTextEditFindBar(d->mEditor, this);
     d->mFindBar->setHideWhenClose(false);

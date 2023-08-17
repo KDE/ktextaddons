@@ -52,6 +52,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     KF${KF_MAJOR_VERSION}::TextUtils
     KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets
+    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextCustomEditor HEADER textcustomeditor_debug.h

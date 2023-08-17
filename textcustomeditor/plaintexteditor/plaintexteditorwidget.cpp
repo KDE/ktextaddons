@@ -7,7 +7,7 @@
 #include "plaintexteditorwidget.h"
 #include "plaintexteditfindbar.h"
 #include "plaintexteditor.h"
-#include "slidecontainer.h"
+#include <TextAddonsWidgets/SlideContainer>
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -25,7 +25,7 @@ public:
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
-    TextCustomEditor::SlideContainer *mSliderContainer = nullptr;
+    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
 };
 
 PlainTextEditorWidget::PlainTextEditorWidget(PlainTextEditor *customEditor, QWidget *parent)
@@ -91,7 +91,7 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
-    d->mSliderContainer = new TextCustomEditor::SlideContainer(this);
+    d->mSliderContainer = new TextAddonsWidgets::SlideContainer(this);
 
     d->mFindBar = new TextCustomEditor::PlainTextEditFindBar(d->mEditor, this);
     d->mFindBar->setHideWhenClose(false);

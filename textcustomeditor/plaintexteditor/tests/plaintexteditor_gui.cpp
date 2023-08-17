@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "texteditor/plaintexteditor/plaintexteditorwidget.h"
+#include "plaintexteditor/plaintexteditorwidget.h"
 
 #include <QApplication>
 #include <QCommandLineParser>

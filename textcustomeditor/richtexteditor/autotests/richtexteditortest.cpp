@@ -5,7 +5,7 @@
 */
 
 #include "richtexteditortest.h"
-#include "texteditor/richtexteditor/richtexteditor.h"
+#include "richtexteditor/richtexteditor.h"
 #include <QTest>
 
 RichTextEditorTest::RichTextEditorTest(QObject *parent)

@@ -5,7 +5,7 @@
 */
 
 #include "plaintexteditortest.h"
-#include "texteditor/plaintexteditor/plaintexteditor.h"
+#include "plaintexteditor/plaintexteditor.h"
 #include <QTest>
 
 PlainTextEditorTest::PlainTextEditorTest(QObject *parent)
