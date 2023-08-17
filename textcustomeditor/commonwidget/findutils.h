@@ -16,8 +16,6 @@ class QPlainTextEdit;
 class QTextEdit;
 namespace TextCustomEditor
 {
-class TextFindWidget;
-class TextReplaceWidget;
 
 namespace FindUtils
 {
