@@ -47,6 +47,8 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Archive
     XmlGui
     CoreAddons
+    Sonnet
+    KIO
 )
 
 find_package(Qt${QT_MAJOR_VERSION}Keychain CONFIG)
