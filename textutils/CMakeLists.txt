@@ -25,7 +25,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextUtils
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextUtils HEADER textutils_debug.h
-    IDENTIFIER TEXTADDONSWIDGETS_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textutils
+    IDENTIFIER TEXTUTILS_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textutils
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textutils)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
