@@ -238,6 +238,7 @@ bool PlainTextEditor::emojiSupport() const
 {
     return d->supportFeatures & Emoji;
 }
+
 void PlainTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     Q_UNUSED(menu)
