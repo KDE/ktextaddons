@@ -1,5 +1,5 @@
 maintainer: mlaurent
-description: Text addons (autocorrection, text to speak, grammar checking, text translator, emoticon support)
+description: Text addons (autocorrection, text to speak, grammar checking, text translator, emoticon support, custom editor)
 tier: 3
 type: functional
 platforms:
@@ -29,6 +29,8 @@ libraries:
    cmake: "KF5::TextEmoticonsWidgets"
  - qmake: TextUtils
    cmake: "KF5::TextUtils"
+ - qmake: TextCustomEditor
+   cmake: "KF5::TextCustomEditor"     
 cmakename: KF5TextEditTextToSpeech
 
 public_lib: true
