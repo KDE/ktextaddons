@@ -190,3 +190,8 @@ if (BUILD_TESTING)
     add_subdirectory(plaintexteditor/tests)
     add_subdirectory(richtexteditor/tests)
 endif()
+
+if(BUILD_DESIGNERPLUGIN)
+    add_subdirectory(designer)
+endif()
+

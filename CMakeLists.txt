@@ -52,6 +52,9 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     SyntaxHighlighting
 )
 
+option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
+add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
+
 find_package(Qt${QT_MAJOR_VERSION}Keychain CONFIG)
 set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
                                    DESCRIPTION "Provides support for secure credentials storage"
