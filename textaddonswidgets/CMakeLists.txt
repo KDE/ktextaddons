@@ -88,21 +88,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets_QCH
-        FILE KF${KF_MAJOR_VERSION}TextAddonsWidgetsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsQchTargets.cmake\")")
-endif()
 
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAddonsWidgetsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfig.cmake"
@@ -150,6 +136,22 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
 endif()
+
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets_QCH
+        FILE KF${KF_MAJOR_VERSION}TextAddonsWidgetsQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsQchTargets.cmake\")")
+endif()
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAddonsWidgetsConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+)
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)

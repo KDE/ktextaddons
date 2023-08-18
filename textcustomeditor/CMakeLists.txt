@@ -120,21 +120,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/TextCustomEditor/
     COMPONENT Devel
 )
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextCustomEditor_QCH
-        FILE KF${KF_MAJOR_VERSION}TextCustomEditorQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorQchTargets.cmake\")")
-endif()
 
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextCustomEditorConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfig.cmake"
@@ -182,6 +168,22 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
 endif()
+
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF${KF_MAJOR_VERSION}TextCustomEditor_QCH
+        FILE KF${KF_MAJOR_VERSION}TextCustomEditorQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorQchTargets.cmake\")")
+endif()
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KFTextCustomEditorConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+)
 
 if (BUILD_TESTING)
     add_subdirectory(plaintexteditor/autotests)
