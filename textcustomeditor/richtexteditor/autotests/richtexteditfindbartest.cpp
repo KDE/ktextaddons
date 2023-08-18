@@ -5,8 +5,8 @@
 */
 
 #include "richtexteditfindbartest.h"
-#include "commonwidget/findutils.h"
 #include "richtexteditor/richtexteditfindbar.h"
+#include "widgets/findutils.h"
 #include <QTest>
 #include <QTextEdit>
 

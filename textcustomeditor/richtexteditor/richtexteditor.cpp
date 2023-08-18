@@ -7,7 +7,7 @@
 #include "richtexteditor.h"
 #include "textcustomeditor_debug.h"
 
-#include "commonwidget/textmessageindicator.h"
+#include "widgets/textmessageindicator.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <KCursor>

@@ -5,7 +5,7 @@
 */
 
 #include "textreplacewidgettest.h"
-#include "commonwidget/textfindreplacewidget.h"
+#include "widgets/textfindreplacewidget.h"
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTest>

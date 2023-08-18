@@ -19,11 +19,11 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
     plaintexteditor/plaintexteditor.cpp
     plaintexteditor/plaintexteditorwidget.cpp
     plaintexteditor/plaintextsyntaxspellcheckinghighlighter.cpp
-    commonwidget/findutils.cpp
-    commonwidget/textfindreplacewidget.cpp
-    commonwidget/texteditfindbarbase.cpp
-    commonwidget/textgotolinewidget.cpp
-    commonwidget/textmessageindicator.cpp
+    widgets/findutils.cpp
+    widgets/textfindreplacewidget.cpp
+    widgets/texteditfindbarbase.cpp
+    widgets/textgotolinewidget.cpp
+    widgets/textmessageindicator.cpp
     richtexteditor/richtexteditor.cpp
     richtexteditor/richtexteditfindbar.cpp
     richtexteditor/richtexteditorwidget.cpp
@@ -31,11 +31,11 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
     plaintexteditor/plaintexteditor.h
     plaintexteditor/plaintexteditorwidget.h
     plaintexteditor/plaintextsyntaxspellcheckinghighlighter.h
-    commonwidget/findutils.h
-    commonwidget/textfindreplacewidget.h
-    commonwidget/texteditfindbarbase.h
-    commonwidget/textgotolinewidget.h
-    commonwidget/textmessageindicator.h
+    widgets/findutils.h
+    widgets/textfindreplacewidget.h
+    widgets/texteditfindbarbase.h
+    widgets/textgotolinewidget.h
+    widgets/textmessageindicator.h
     richtexteditor/richtexteditor.h
     richtexteditor/richtexteditfindbar.h
     richtexteditor/richtexteditorwidget.h
@@ -96,18 +96,18 @@ ecm_generate_headers(TextCustomEditor_CamelCaseplaintexteditor_HEADERS
     RELATIVE plaintexteditor
     )
 
-ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_commonwidget_HEADERS
+ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_widgets_HEADERS
     HEADER_NAMES
     TextGotoLineWidget
     TextEditFindBarBase
-    REQUIRED_HEADERS TextCustomEditor_texteditor_commonwidget_HEADERS
+    REQUIRED_HEADERS TextCustomEditor_texteditor_widgets_HEADERS
     PREFIX TextCustomEditor
-    RELATIVE commonwidget
+    RELATIVE widgets
     )
 
 install(FILES
     ${TextCustomEditor_richtexteditor_HEADERS}
-    ${TextCustomEditor_texteditor_commonwidget_HEADERS}
+    ${TextCustomEditor_texteditor_widgets_HEADERS}
     ${TextCustomEditor_plaintexteditor_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/textcustomeditor
@@ -116,7 +116,7 @@ install(FILES
 install(FILES
     ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
     ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
-    ${TextCustomEditor_CamelCasetexteditor_commonwidget_HEADERS}
+    ${TextCustomEditor_CamelCasetexteditor_widgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/TextCustomEditor/
     COMPONENT Devel
 )
@@ -155,7 +155,7 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextCustomEditor_richtexteditor_HEADERS}
-        ${TextCustomEditor_texteditor_commonwidget_HEADERS}
+        ${TextCustomEditor_texteditor_widgets_HEADERS}
         ${TextCustomEditor_plaintexteditor_HEADERS}
         LINK_QCHS
         Qt${QT_MAJOR_VERSION}Core_QCH
@@ -188,7 +188,7 @@ configure_package_config_file(
 if (BUILD_TESTING)
     add_subdirectory(plaintexteditor/autotests)
     add_subdirectory(richtexteditor/autotests)
-    add_subdirectory(commonwidget/autotests)
+    add_subdirectory(widgets/autotests)
     add_subdirectory(plaintexteditor/tests)
     add_subdirectory(richtexteditor/tests)
 endif()

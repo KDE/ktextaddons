@@ -5,8 +5,8 @@
 */
 
 #include "richtexteditfindbar.h"
-#include "commonwidget/findutils.h"
-#include "commonwidget/textfindreplacewidget.h"
+#include "widgets/findutils.h"
+#include "widgets/textfindreplacewidget.h"
 
 #include <KLocalizedString>
 #include <TextUtils/ConvertText>

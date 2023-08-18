@@ -5,7 +5,7 @@
 */
 
 #include "textgotolinewidgettest.h"
-#include "commonwidget/textgotolinewidget.h"
+#include "widgets/textgotolinewidget.h"
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QSpinBox>

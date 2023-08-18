@@ -5,8 +5,8 @@
 */
 
 #include "plaintexteditfindbartest.h"
-#include "commonwidget/findutils.h"
 #include "plaintexteditor/plaintexteditfindbar.h"
+#include "widgets/findutils.h"
 #include <QPlainTextEdit>
 #include <QTest>
 

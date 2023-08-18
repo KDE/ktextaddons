@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
 
-macro(add_commonwidget_unittest _source)
+macro(add_widgets_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         LINK_LIBRARIES Qt::Test KF${KF_MAJOR_VERSION}::TextCustomEditor Qt::Widgets
@@ -9,8 +9,8 @@ macro(add_commonwidget_unittest _source)
 endmacro()
 
 
-add_commonwidget_unittest(textgotolinewidgettest.cpp)
+add_widgets_unittest(textgotolinewidgettest.cpp)
 
-add_commonwidget_unittest(textfindwidgettest.cpp)
+add_widgets_unittest(textfindwidgettest.cpp)
 
-add_commonwidget_unittest(textreplacewidgettest.cpp)
+add_widgets_unittest(textreplacewidgettest.cpp)

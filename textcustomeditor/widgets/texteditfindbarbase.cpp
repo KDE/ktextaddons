@@ -5,8 +5,8 @@
 */
 
 #include "texteditfindbarbase.h"
-#include "commonwidget/textfindreplacewidget.h"
 #include "textcustomeditor_debug.h"
+#include "widgets/textfindreplacewidget.h"
 #include <KLocalizedString>
 #include <QEvent>
 #include <QHBoxLayout>

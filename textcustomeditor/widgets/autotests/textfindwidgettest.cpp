@@ -5,7 +5,7 @@
 */
 
 #include "textfindwidgettest.h"
-#include "commonwidget/textfindreplacewidget.h"
+#include "widgets/textfindreplacewidget.h"
 #include <QPushButton>
 #include <QTest>
 QTEST_MAIN(TextFindWidgetTest)
