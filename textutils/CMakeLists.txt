@@ -37,8 +37,8 @@ target_include_directories(KF${KF_MAJOR_VERSION}TextUtils INTERFACE "$<INSTALL_I
 
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextUtils
-    PRIVATE
-    Qt::Core
+    PUBLIC
+    Qt::Gui
 )
 
 set_target_properties(KF${KF_MAJOR_VERSION}TextUtils PROPERTIES

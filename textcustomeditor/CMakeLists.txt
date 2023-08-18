@@ -39,6 +39,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
     richtexteditor/richtexteditor.h
     richtexteditor/richtexteditfindbar.h
     richtexteditor/richtexteditorwidget.h
+
+    core/texteditorcompleter.h
+    core/texteditorcompleter.cpp
 )
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
@@ -105,7 +108,16 @@ ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_widgets_HEADERS
     RELATIVE widgets
     )
 
+ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_core_HEADERS
+    HEADER_NAMES
+    TextEditorCompleter
+    REQUIRED_HEADERS TextCustomEditor_texteditor_core_HEADERS
+    PREFIX TextCustomEditor
+    RELATIVE core
+    )
+
 install(FILES
+    ${TextCustomEditor_texteditor_core_HEADERS}
     ${TextCustomEditor_richtexteditor_HEADERS}
     ${TextCustomEditor_texteditor_widgets_HEADERS}
     ${TextCustomEditor_plaintexteditor_HEADERS}
@@ -114,6 +126,7 @@ install(FILES
     COMPONENT Devel
 )
 install(FILES
+    ${TextCustomEditor_CamelCasetexteditor_core_HEADERS}
     ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
     ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
     ${TextCustomEditor_CamelCasetexteditor_widgets_HEADERS}

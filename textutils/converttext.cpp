@@ -35,3 +35,61 @@ QString ConvertText::normalize(QStringView str)
     }
     return out;
 }
+
+void ConvertText::upperCase(QTextCursor &cursor)
+{
+    if (cursor.hasSelection()) {
+        const QString newText = cursor.selectedText().toUpper();
+        cursor.insertText(newText);
+    }
+}
+
+void ConvertText::lowerCase(QTextCursor &cursor)
+{
+    if (cursor.hasSelection()) {
+        const QString newText = cursor.selectedText().toLower();
+        cursor.insertText(newText);
+    }
+}
+
+void ConvertText::sentenceCase(QTextCursor &cursor)
+{
+    if (cursor.hasSelection()) {
+        QString newText = cursor.selectedText();
+        const int nbChar(newText.length());
+        for (int i = 0; i < nbChar; ++i) {
+            if (i == 0 && newText.at(0).isLetter()) {
+                newText.replace(0, 1, newText.at(0).toUpper());
+            } else if (newText.at(i) == QChar::ParagraphSeparator || newText.at(i) == QChar::LineSeparator) {
+                ++i;
+                if (i < nbChar) {
+                    if (newText.at(i).isLetter()) {
+                        newText.replace(i, 1, newText.at(i).toUpper());
+                    }
+                }
+            }
+        }
+        cursor.insertText(newText);
+    }
+}
+
+void ConvertText::reverseCase(QTextCursor &cursor)
+{
+    if (cursor.hasSelection()) {
+        const QString newText = cursor.selectedText();
+        QString reverseCaseText;
+        const int nbChar(newText.length());
+        for (int i = 0; i < nbChar; ++i) {
+            QChar charVal = newText.at(i);
+            if (charVal.isLetter()) {
+                if (charVal.isLower()) {
+                    charVal = charVal.toUpper();
+                } else {
+                    charVal = charVal.toLower();
+                }
+            }
+            reverseCaseText += charVal;
+        }
+        cursor.insertText(reverseCaseText);
+    }
+}
