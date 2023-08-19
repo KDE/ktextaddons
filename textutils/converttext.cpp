@@ -5,6 +5,7 @@
 */
 
 #include "converttext.h"
+#include <QChar>
 #include <QString>
 
 using namespace TextUtils;

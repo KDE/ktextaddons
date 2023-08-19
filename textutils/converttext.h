@@ -7,7 +7,6 @@
 #pragma once
 
 #include "textutils_export.h"
-#include <QChar>
 #include <QStringView>
 #include <QTextCursor>
 
