@@ -17,4 +17,12 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void testUpperCase();
+    void testUpperCase_data();
+    void testLowerCase();
+    void testLowerCase_data();
+    void testSentenceCase();
+    void testSentenceCase_data();
+    void testReverseCase();
+    void testReverseCase_data();
 };
