@@ -23,7 +23,7 @@ namespace
 std::shared_ptr<marian::Options> makeOptions(const std::string &path_to_model_dir, const BergamotEngineUtils::SettingsInfo &settings)
 {
     std::shared_ptr<marian::Options> options(marian::bergamot::parseOptionsFromFilePath(path_to_model_dir + "/config.intgemm8bitalpha.yml"));
-    options->set("cpu-threads", settings.memoryByThread, "workspace", /*settings.workspace*/ 128, "mini-batch-words", 1000, "alignment", "soft", "quiet", true);
+    options->set("cpu-threads", settings.numberOfThread, "workspace", settings.memoryByThread, "mini-batch-words", 1000, "alignment", "soft", "quiet", true);
     return options;
 }
 
