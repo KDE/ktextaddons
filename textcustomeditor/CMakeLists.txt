@@ -170,6 +170,7 @@ if (BUILD_QCH)
         ${TextCustomEditor_richtexteditor_HEADERS}
         ${TextCustomEditor_texteditor_widgets_HEADERS}
         ${TextCustomEditor_plaintexteditor_HEADERS}
+        ${TextCustomEditor_texteditor_core_HEADERS}
         LINK_QCHS
         Qt${QT_MAJOR_VERSION}Core_QCH
         INCLUDE_DIRS
