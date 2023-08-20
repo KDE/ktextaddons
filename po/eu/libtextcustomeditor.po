@@ -1,16 +1,19 @@
-# Copyright (C) YEAR This file is copyright:
+# Translation for libtextcustomeditor.po to Euskara/Basque (eu).
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2023.
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-19 00:44+0000\n"
-"PO-Revision-Date: 2023-08-18 07:09+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
-"Language: sv\n"
+"PO-Revision-Date: 2023-08-19 10:25+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,49 +25,49 @@ msgstr ""
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] "%1 ersättning gjordes"
-msgstr[1] "%1 ersättningar gjordes"
+msgstr[0] "Ordezkapen %1 egin da"
+msgstr[1] "%1 ordezkapen egin dira"
 
 #: plaintexteditor/plaintexteditor.cpp:160
 #: richtexteditor/richtexteditor.cpp:218
 #, kde-format
 msgid "Check Spelling..."
-msgstr "Kontrollera stavning..."
+msgstr "Egiaztatu ortografia..."
 
 #: plaintexteditor/plaintexteditor.cpp:165
 #: richtexteditor/richtexteditor.cpp:225
 #, kde-format
 msgid "Auto Spell Check"
-msgstr "Automatisk stavningskontroll"
+msgstr "Ortografia egiaztatze automatikoa"
 
 #: plaintexteditor/plaintexteditor.cpp:171
 #: richtexteditor/richtexteditor.cpp:231
 #, kde-format
 msgid "Spell Checking Language"
-msgstr "Språk för stavningskontroll"
+msgstr "Ortografia-egiaztatzeko hizkuntza"
 
 #: plaintexteditor/plaintexteditor.cpp:199
 #: richtexteditor/richtexteditor.cpp:264
 #, kde-format
 msgid "Speak Text"
-msgstr "Läs upp text"
+msgstr "Esan testua"
 
 #: plaintexteditor/plaintexteditor.cpp:368
 #: richtexteditor/richtexteditor.cpp:472
 #, kde-format
 msgid "Nothing to spell check."
-msgstr "Ingenting att stavningskontrollera."
+msgstr "Ez dago ortografia egiaztatzeko ezer."
 
 #: plaintexteditor/plaintexteditor.cpp:373
 #: richtexteditor/richtexteditor.cpp:490
 #, kde-format
 msgid "No backend available for spell checking."
-msgstr "Inget gränssnitt tillgängligt för stavningskontroll."
+msgstr "Ez dago ortografia-egiaztatzeko bizkarraldekorik."
 
 #: richtexteditor/richtexteditor.cpp:257
 #, kde-format
 msgid "Allow Tabulations"
-msgstr "Tillåt tabulatorer"
+msgstr "Baimendu tabulazioak"
 
 #: richtexteditor/richtexteditor.cpp:482
 #, kde-format
@@ -72,25 +75,25 @@ msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
-"Inget gränssnitt tillgängligt för stavningskontroll. Vill du skicka brevet "
-"ändå?"
+"Ez dago ortografia-egiaztatzeko bizkarraldekorik. Hala ere, e-posta bidali "
+"nahi duzu?"
 
 #: richtexteditor/richtexteditor.cpp:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
-msgstr "Skicka"
+msgstr "Bidali"
 
 #: richtexteditor/richtexteditor.cpp:506
 #, kde-format
 msgid "Skip"
-msgstr "Hoppa över"
+msgstr "Saihestu"
 
 #: widgets/texteditfindbarbase.cpp:34 widgets/texteditfindbarbase.cpp:37
 #: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
-msgstr "Stäng"
+msgstr "Itxi"
 
 #: widgets/texteditfindbarbase.cpp:140
 #, kde-format
@@ -98,94 +101,94 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
-"Brevets slut nåddes.\n"
-"Frasen '%1' kunde inte hittas."
+"Mezuaren bukaerara heldu da.\n"
+"'%1' esamoldea ez da aurkitu."
 
 #: widgets/textfindreplacewidget.cpp:25
 #, kde-format
 msgid "Replace"
-msgstr "Ersätt"
+msgstr "Ordeztu"
 
 #: widgets/textfindreplacewidget.cpp:26
 #, kde-format
 msgid "Replace All"
-msgstr "Ersätt alla"
+msgstr "Ordeztu denak"
 
 #: widgets/textfindreplacewidget.cpp:29
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
-msgstr "Ersätt:"
+msgstr "Ordeztu:"
 
 #: widgets/textfindreplacewidget.cpp:65
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Föregående"
+msgstr "Aurrekoa"
 
 #: widgets/textfindreplacewidget.cpp:66
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Nästa"
+msgstr "Hurrengoa"
 
 #: widgets/textfindreplacewidget.cpp:72
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr "&Sök:"
+msgstr "B&ilatu:"
 
 #: widgets/textfindreplacewidget.cpp:75
 #, kde-format
 msgid "Text to search for"
-msgstr "Text att söka efter"
+msgstr "Bilatu beharreko testua"
 
 #: widgets/textfindreplacewidget.cpp:81
 #, kde-format
 msgid "Jump to next match"
-msgstr "Gå till nästa träff"
+msgstr "Joan hurrengo bat-etortzera"
 
 #: widgets/textfindreplacewidget.cpp:86
 #, kde-format
 msgid "Jump to previous match"
-msgstr "Gå till föregående träff"
+msgstr "Joan aurreko bat-etortzera"
 
 #: widgets/textfindreplacewidget.cpp:92
 #, kde-format
 msgid "Options"
-msgstr "Alternativ"
+msgstr "Aukerak"
 
 #: widgets/textfindreplacewidget.cpp:93
 #, kde-format
 msgid "Modify search behavior"
-msgstr "Ändra sökbeteende"
+msgstr "Aldatu bilaketaren jokabidea"
 
 #: widgets/textfindreplacewidget.cpp:96
 #, kde-format
 msgid "Case sensitive"
-msgstr "Skiftlägeskänslig"
+msgstr "Bereizi maiuskulak"
 
 #: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Whole word"
-msgstr "Hela ord"
+msgstr "Hitz osoa"
 
 #: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Regular Expression"
-msgstr "Reguljärt uttryck"
+msgstr "Adierazpen erregularra"
 
 #: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr "Följ inställningar av &expandera och komprimera citationstecken"
+msgstr "Errespetu diakritikoa eta azentuak"
 
 #: widgets/textgotolinewidget.cpp:49
 #, kde-format
 msgid "Go to Line:"
-msgstr "Gå till rad:"
+msgstr "Joan lerrora:"
 
 #: widgets/textgotolinewidget.cpp:56
 #, kde-format
 msgid "Go"
-msgstr "Gå"
+msgstr "Joan"

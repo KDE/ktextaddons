@@ -1,20 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2023.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-19 00:44+0000\n"
-"PO-Revision-Date: 2023-08-18 07:09+0200\n"
-"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
-"Language: sv\n"
+"PO-Revision-Date: 2023-08-19 07:34+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
@@ -22,49 +23,51 @@ msgstr ""
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] "%1 ersättning gjordes"
-msgstr[1] "%1 ersättningar gjordes"
+msgstr[0] "izvedena %1 sprememba"
+msgstr[1] "izvedeni %1 spremembi"
+msgstr[2] "izvedene %1 spremembe"
+msgstr[3] "izvedeno %1 sprememb"
 
 #: plaintexteditor/plaintexteditor.cpp:160
 #: richtexteditor/richtexteditor.cpp:218
 #, kde-format
 msgid "Check Spelling..."
-msgstr "Kontrollera stavning..."
+msgstr "Preveri črkovanje..."
 
 #: plaintexteditor/plaintexteditor.cpp:165
 #: richtexteditor/richtexteditor.cpp:225
 #, kde-format
 msgid "Auto Spell Check"
-msgstr "Automatisk stavningskontroll"
+msgstr "Samodejno preverjanje črkovanja"
 
 #: plaintexteditor/plaintexteditor.cpp:171
 #: richtexteditor/richtexteditor.cpp:231
 #, kde-format
 msgid "Spell Checking Language"
-msgstr "Språk för stavningskontroll"
+msgstr "Jezik preverjanja črkovanja"
 
 #: plaintexteditor/plaintexteditor.cpp:199
 #: richtexteditor/richtexteditor.cpp:264
 #, kde-format
 msgid "Speak Text"
-msgstr "Läs upp text"
+msgstr "Govori besedilo"
 
 #: plaintexteditor/plaintexteditor.cpp:368
 #: richtexteditor/richtexteditor.cpp:472
 #, kde-format
 msgid "Nothing to spell check."
-msgstr "Ingenting att stavningskontrollera."
+msgstr "Ni kaj preverjati črkovanja."
 
 #: plaintexteditor/plaintexteditor.cpp:373
 #: richtexteditor/richtexteditor.cpp:490
 #, kde-format
 msgid "No backend available for spell checking."
-msgstr "Inget gränssnitt tillgängligt för stavningskontroll."
+msgstr "Ni na voljo zaledja za preverjanje črkovanja."
 
 #: richtexteditor/richtexteditor.cpp:257
 #, kde-format
 msgid "Allow Tabulations"
-msgstr "Tillåt tabulatorer"
+msgstr "Dovoli tabulatorje"
 
 #: richtexteditor/richtexteditor.cpp:482
 #, kde-format
@@ -72,25 +75,25 @@ msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
-"Inget gränssnitt tillgängligt för stavningskontroll. Vill du skicka brevet "
-"ändå?"
+"Ni na voljo zaledja za preverjanje črkovanja. Ali kljub temu želite  poslati "
+"sporočilo?"
 
 #: richtexteditor/richtexteditor.cpp:484
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
-msgstr "Skicka"
+msgstr "Pošlji"
 
 #: richtexteditor/richtexteditor.cpp:506
 #, kde-format
 msgid "Skip"
-msgstr "Hoppa över"
+msgstr "Preskoči"
 
 #: widgets/texteditfindbarbase.cpp:34 widgets/texteditfindbarbase.cpp:37
 #: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
-msgstr "Stäng"
+msgstr "Zapri"
 
 #: widgets/texteditfindbarbase.cpp:140
 #, kde-format
@@ -98,94 +101,94 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
-"Brevets slut nåddes.\n"
-"Frasen '%1' kunde inte hittas."
+"Dosežen konec sporočila.\n"
+"Fraze '%1' ni mogoče najti."
 
 #: widgets/textfindreplacewidget.cpp:25
 #, kde-format
 msgid "Replace"
-msgstr "Ersätt"
+msgstr "Zamenjaj"
 
 #: widgets/textfindreplacewidget.cpp:26
 #, kde-format
 msgid "Replace All"
-msgstr "Ersätt alla"
+msgstr "Zamenjaj vse"
 
 #: widgets/textfindreplacewidget.cpp:29
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
-msgstr "Ersätt:"
+msgstr "Zamenjaj:"
 
 #: widgets/textfindreplacewidget.cpp:65
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Föregående"
+msgstr "Prejšnji"
 
 #: widgets/textfindreplacewidget.cpp:66
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Nästa"
+msgstr "Naslednji"
 
 #: widgets/textfindreplacewidget.cpp:72
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr "&Sök:"
+msgstr "Najdi:"
 
 #: widgets/textfindreplacewidget.cpp:75
 #, kde-format
 msgid "Text to search for"
-msgstr "Text att söka efter"
+msgstr "Iskano besedilo"
 
 #: widgets/textfindreplacewidget.cpp:81
 #, kde-format
 msgid "Jump to next match"
-msgstr "Gå till nästa träff"
+msgstr "Skoči na naslednji zadetek"
 
 #: widgets/textfindreplacewidget.cpp:86
 #, kde-format
 msgid "Jump to previous match"
-msgstr "Gå till föregående träff"
+msgstr "Skoči na prejšnji zadetek"
 
 #: widgets/textfindreplacewidget.cpp:92
 #, kde-format
 msgid "Options"
-msgstr "Alternativ"
+msgstr "Možnosti"
 
 #: widgets/textfindreplacewidget.cpp:93
 #, kde-format
 msgid "Modify search behavior"
-msgstr "Ändra sökbeteende"
+msgstr "Spremeni obnašanje iskanja"
 
 #: widgets/textfindreplacewidget.cpp:96
 #, kde-format
 msgid "Case sensitive"
-msgstr "Skiftlägeskänslig"
+msgstr "Občutljivo na velike/male črke"
 
 #: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Whole word"
-msgstr "Hela ord"
+msgstr "Cela beseda"
 
 #: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Regular Expression"
-msgstr "Reguljärt uttryck"
+msgstr "Regularni izraz"
 
 #: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr "Följ inställningar av &expandera och komprimera citationstecken"
+msgstr "Upoštevaj diakritične znake in naglase"
 
 #: widgets/textgotolinewidget.cpp:49
 #, kde-format
 msgid "Go to Line:"
-msgstr "Gå till rad:"
+msgstr "Pojdi na vrstico:"
 
 #: widgets/textgotolinewidget.cpp:56
 #, kde-format
 msgid "Go"
-msgstr "Gå"
+msgstr "Pojdi"
