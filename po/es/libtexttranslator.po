@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-17 21:10+0200\n"
+"PO-Revision-Date: 2023-08-20 15:41+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -353,15 +353,14 @@ msgid "Delete"
 msgstr "Borrar"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Update List"
-msgstr "Actualizar"
+msgstr "Actualizar lista"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Actualizar la lista de idiomas de la red"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-06 14:34+0530\n"
+"PO-Revision-Date: 2023-08-20 15:25+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -351,15 +351,14 @@ msgid "Delete"
 msgstr "நீக்கு"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Update List"
-msgstr "புதுப்பி"
+msgstr "பட்டியலை புதுப்பி"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "மொழிகளின் பட்டியலை இணையம் மூலமாக புதுப்பிக்கும்."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format
@@ -369,7 +368,7 @@ msgstr "சிக்கல்: %1"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr ""
+msgstr "மொழிபெயர்ப்புகளுக்கான தற்காலிக நினைவிடத்தை பயன்படுத்து"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -428,7 +427,7 @@ msgstr "இந்த முகவரியை அணுக முடியவி
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "சரிகாண்தொகை சரியாக இல்லை."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:74
 #, kde-format
@@ -463,18 +462,18 @@ msgstr "கிடங்கு"
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
-msgstr ""
+msgstr "நிறுவியுள்ள பதிப்பு"
 
 #: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
-msgstr ""
+msgstr "கிடைக்கின்ற பதிப்பு"
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "நிறுவப்பட்டுள்ளது"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -540,7 +539,7 @@ msgstr "கூகுள்"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "செல்லுபடியாகாத பதில்."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -550,7 +549,7 @@ msgstr ""
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "சேவையகம், API சாவியை எதிர்பார்க்கிறது"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
 #: translator/plugins/lingva/lingvaenginewidget.cpp:27
@@ -692,26 +691,18 @@ msgid "Configure"
 msgstr "அமை"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
-"மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும் (கூகுள் சேவையகத்திற்கு அது அனுப்ப‍"
+"மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும் (வெளி சேவையகத்திற்கு அது அனுப்ப‍"
 "ப்படும்)."
 
 #: translator/widgets/translatorwidget.cpp:357
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid "Drag text that you want to translate."
-msgstr ""
-"மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும் (கூகுள் சேவையகத்திற்கு அது அனுப்ப‍"
-"ப்படும்)."
+msgstr "மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும்"
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
