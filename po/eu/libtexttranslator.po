@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-16 19:52+0200\n"
+"PO-Revision-Date: 2023-08-22 21:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -354,15 +354,14 @@ msgid "Delete"
 msgstr "Ezabatu"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Update List"
-msgstr "Eguneratu"
+msgstr "Eguneratu zerrenda"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Eguneratu hizkuntzen zerrendan saretik"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format
