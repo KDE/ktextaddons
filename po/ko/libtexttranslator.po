@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-07 00:27+0200\n"
+"PO-Revision-Date: 2023-08-25 23:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -351,15 +351,14 @@ msgid "Delete"
 msgstr "삭제"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Update List"
-msgstr "업데이트"
+msgstr "목록 업데이트"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "네트워크에서 언어 목록 업데이트"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format
@@ -369,7 +368,7 @@ msgstr "오류: %1"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr ""
+msgstr "번역 캐시 사용"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -397,10 +396,9 @@ msgid "Settings"
 msgstr "설정"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
-#, fuzzy, kde-format
-#| msgid "Server url is not defined."
+#, kde-format
 msgid "Language model is not defined."
-msgstr "서버 URL을 정의하지 않았습니다."
+msgstr "언어 모델이 정의되지 않았습니다."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:37
 #, kde-format
@@ -428,7 +426,7 @@ msgstr "URL에 접근할 수 없음: %1"
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "체크섬이 일치하지 않습니다."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:74
 #, kde-format
@@ -463,19 +461,18 @@ msgstr "저장소"
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
-msgstr ""
+msgstr "설치된 버전"
 
 #: translator/plugins/bergamot/translatormodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "Available"
+#, kde-format
 msgid "Available Version"
-msgstr "사용 가능"
+msgstr "사용 가능한 버전"
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "설치됨"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -541,7 +538,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "잘못된 답변입니다."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -693,24 +690,17 @@ msgid "Configure"
 msgstr "설정"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
-"번역할 텍스트를 끌어 놓으십시오. (주의: Google 서버로 텍스트를 전송합니다)"
+"번역할 텍스트를 끌어 놓으십시오. (주의: 외부 서버로 텍스트를 전송합니다)"
 
 #: translator/widgets/translatorwidget.cpp:357
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid "Drag text that you want to translate."
-msgstr ""
-"번역할 텍스트를 끌어 놓으십시오. (주의: Google 서버로 텍스트를 전송합니다)"
+msgstr "번역할 텍스트를 끌어 놓으십시오."
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
