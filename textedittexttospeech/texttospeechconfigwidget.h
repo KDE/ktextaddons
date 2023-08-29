@@ -21,6 +21,8 @@ public:
     explicit TextToSpeechConfigWidget(QWidget *parent = nullptr);
     ~TextToSpeechConfigWidget() override;
 
+    void initializeSettings();
+
     void writeConfig();
     void readConfig();
 

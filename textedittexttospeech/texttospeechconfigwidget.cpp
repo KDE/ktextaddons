@@ -66,11 +66,17 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
 
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
-    readConfig();
-    slotAvailableEngineChanged();
+    // TODO use when necessary
+    initializeSettings();
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
+
+void TextToSpeechConfigWidget::initializeSettings()
+{
+    readConfig();
+    slotAvailableEngineChanged();
+}
 
 void TextToSpeechConfigWidget::slotAvailableEngineChanged()
 {
