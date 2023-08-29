@@ -141,7 +141,7 @@ void TextToSpeechConfigWidget::restoreDefaults()
     mPitch->setValue(0);
     mVolume->setValue(50);
 
-    // TODO
+    // TODO load default value
 }
 
 void TextToSpeechConfigWidget::slotTestTextToSpeech()
