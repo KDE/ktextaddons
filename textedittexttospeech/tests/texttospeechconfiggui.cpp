@@ -16,6 +16,7 @@ TextToSpeechConfigGui::TextToSpeechConfigGui(QWidget *parent)
 {
     auto hbox = new QHBoxLayout(this);
     auto widget = new TextEditTextToSpeech::TextToSpeechConfigWidget(this);
+    widget->readConfig();
     hbox->addWidget(widget);
 }
 
