@@ -57,7 +57,7 @@ void TextToSpeechConfigDialog::readConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), myTextToSpeechConfigDialogConfigGroupName);
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
-    mTextToSpeechConfigWidget->readConfig();
+    mTextToSpeechConfigWidget->initializeSettings();
 }
 
 void TextToSpeechConfigDialog::writeConfig()
