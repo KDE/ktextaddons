@@ -35,7 +35,9 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
-    IDENTIFIER TEXTADDONSWIDGETS_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textaddonswidgets
+    IDENTIFIER TEXTADDONSWIDGETS_LOG
+    CATEGORY_NAME org.kde.kf.textaddonswidgets
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textaddonswidgets
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons widgets)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

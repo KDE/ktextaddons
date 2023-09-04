@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 include(ExternalProject)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 kde_enable_exceptions()
@@ -102,7 +102,7 @@ add_library(translator_bergamot MODULE)
 ecm_qt_declare_logging_category(translator_debug_bergamot_SRCS
     HEADER bergamottranslator_debug.h
     IDENTIFIER TRANSLATOR_BERGAMOT_LOG
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.bergamot
+    CATEGORY_NAME org.kde.kf.texttranslator.bergamot
     DESCRIPTION "bergamot translator"
     EXPORT KTEXTADDONS
 )

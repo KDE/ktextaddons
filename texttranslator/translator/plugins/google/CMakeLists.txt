@@ -5,7 +5,8 @@ add_library(translator_google MODULE)
 ecm_qt_declare_logging_category(translator_debug_google_SRCS
     HEADER googletranslator_debug.h
     IDENTIFIER TRANSLATOR_GOOGLE_LOG
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.google
+    CATEGORY_NAME org.kde.kf.texttranslator.google
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.google
     DESCRIPTION "google translator"
     EXPORT KTEXTADDONS
 )

@@ -5,7 +5,8 @@ add_library(translator_bing MODULE)
 ecm_qt_declare_logging_category(translator_debug_bing_SRCS
     HEADER bingtranslator_debug.h
     IDENTIFIER TRANSLATOR_BING_LOG
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.bing
+    CATEGORY_NAME org.kde.kf.texttranslator.bing
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.bing
     DESCRIPTION "bing translator"
     EXPORT KTEXTADDONS
 )

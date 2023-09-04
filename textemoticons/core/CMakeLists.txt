@@ -48,7 +48,9 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsCore HEADER textemoticonscore_debug.h
-    IDENTIFIER TEXTEMOTICONSCORE_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textemoticonscore
+    IDENTIFIER TEXTEMOTICONSCORE_LOG
+    CATEGORY_NAME org.kde.kf.textemoticonscore
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textemoticonscore
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons textemotions core)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

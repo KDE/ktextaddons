@@ -24,7 +24,9 @@ ki18n_wrap_ui(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
     ui/autocorrectionwidget.ui
     )
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets HEADER textautocorrectionautocorrectwidgets_debug.h
-        IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection.autocorrectwidgets
+        IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG
+        CATEGORY_NAME org.kde.kf.textautocorrection.autocorrectwidgets
+        OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textautocorrection.autocorrectwidgets
 	DESCRIPTION "KF${KF_MAJOR_VERSION} (AutoCorrection autocorrect text)"
 	EXPORT KTEXTADDONS
     )

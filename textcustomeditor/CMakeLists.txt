@@ -59,7 +59,9 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextCustomEditor HEADER textcustomeditor_debug.h
-    IDENTIFIER TEXTCUSTOMEDITOR_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textcustomeditor
+    IDENTIFIER TEXTCUSTOMEDITOR_LOG
+    CATEGORY_NAME org.kde.kf.textcustomeditor
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textcustomeditor
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textcustomeditor)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

@@ -7,7 +7,8 @@ add_library(translator_libretranslate MODULE)
 ecm_qt_declare_logging_category(translator_libretranslate_debug_SRCS
     HEADER libretranslatetranslator_debug.h
     IDENTIFIER TRANSLATOR_LIBRETRANSLATE_LOG
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.libretranslate
+    CATEGORY_NAME org.kde.kf.texttranslator.libretranslate
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.libretranslate
     DESCRIPTION "libretranslate translator"
     EXPORT KTEXTADDONS
 )

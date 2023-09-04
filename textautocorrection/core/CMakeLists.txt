@@ -28,13 +28,17 @@ kconfig_add_kcfg_files(textautocorrection_settings_SRCS
 add_library(KF${KF_MAJOR_VERSION}TextAutoCorrectionCore )
 add_library(KF${KF_MAJOR_VERSION}::TextAutoCorrectionCore ALIAS KF${KF_MAJOR_VERSION}TextAutoCorrectionCore)
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrectionCore HEADER textautocorrection_debug.h
-        IDENTIFIER TEXTAUTOCORRECTION_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection
+        IDENTIFIER TEXTAUTOCORRECTION_LOG
+        CATEGORY_NAME org.kde.kf.textautocorrection
+        OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textautocorrection
 	DESCRIPTION "KF${KF_MAJOR_VERSION} (text AutoCorrection)"
 	EXPORT KTEXTADDONS
     )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAutoCorrectionCore HEADER textautocorrectionautocorrect_debug.h
-        IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textautocorrection.autocorrect
+        IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG
+        CATEGORY_NAME org.kde.kf.textautocorrection.autocorrect
+        OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textautocorrection.autocorrect
 	DESCRIPTION "KF${KF_MAJOR_VERSION} (AutoCorrection autocorrect text)"
 	EXPORT KTEXTADDONS
     )

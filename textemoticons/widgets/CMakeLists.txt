@@ -37,7 +37,9 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets
 )
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets HEADER textemoticonswidgets_debug.h
-    IDENTIFIER TEXTEMOTICONSWIDGETS_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textemoticonswidgets
+    IDENTIFIER TEXTEMOTICONSWIDGETS_LOG
+    CATEGORY_NAME org.kde.kf.textemoticonswidgets
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textemoticonswidgets
     DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons textemoticons widgets)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)

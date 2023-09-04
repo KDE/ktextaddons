@@ -43,7 +43,9 @@ install(FILES
 add_library(KF${KF_MAJOR_VERSION}TextGrammarCheck )
 add_library(KF${KF_MAJOR_VERSION}::TextGrammarCheck ALIAS KF${KF_MAJOR_VERSION}TextGrammarCheck)
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextGrammarCheck HEADER textgrammarcheck_debug.h
-    IDENTIFIER TEXTGRAMMARCHECK_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textgrammarcheck
+    IDENTIFIER TEXTGRAMMARCHECK_LOG
+    CATEGORY_NAME org.kde.kf.textgrammarcheck
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textgrammarcheck
         DESCRIPTION "KF${KF_MAJOR_VERSION} (Text Grammar Check)"
         EXPORT KTEXTADDONS
     )

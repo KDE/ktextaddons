@@ -11,7 +11,8 @@ target_sources(translator_yandex PRIVATE
 ecm_qt_declare_logging_category(translator_yandex
     HEADER yandextranslator_debug.h
     IDENTIFIER TRANSLATOR_YANDEX_LOG
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.yandex
+    CATEGORY_NAME org.kde.kf.texttranslator.yandex
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.yandex
     DESCRIPTION "yandex translator"
     EXPORT KTEXTADDONS
 )

@@ -5,7 +5,8 @@ add_library(translator_deepl MODULE)
 ecm_qt_declare_logging_category(translator_debug_deepl_SRCS
     HEADER deepltranslator_debug.h
     IDENTIFIER TRANSLATOR_DEEPL_LOG
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator.deepl
+    CATEGORY_NAME org.kde.kf.texttranslator.deepl
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.deepl
     DESCRIPTION "deepl translator"
     EXPORT KTEXTADDONS
 )

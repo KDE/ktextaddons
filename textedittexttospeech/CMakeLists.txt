@@ -56,8 +56,10 @@ if (TEXTEDIT_TEXT_TO_SPEECH)
 endif()
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEditTextToSpeech HEADER textedittexttospeech_debug.h
-    IDENTIFIER TEXTEDITTEXTTOSPEECH_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.textedittexttospeech
-        DESCRIPTION "KF${KF_MAJOR_VERSION} (textedit text to speech)" EXPORT KTEXTADDONS)
+    IDENTIFIER TEXTEDITTEXTTOSPEECH_LOG
+    CATEGORY_NAME org.kde.kf.textedittexttospeech
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textedittexttospeech
+    DESCRIPTION "KF${KF_MAJOR_VERSION} (textedit text to speech)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF${KF_MAJOR_VERSION}TextEditTextToSpeech PROPERTIES UNITY_BUILD ON)
