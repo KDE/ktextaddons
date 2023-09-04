@@ -74,7 +74,7 @@ if (USE_UNITY_CMAKE_SUPPORT)
 endif()
 
 option(BERGAMOT_TRANSLATOR_PLUGIN "Build bergamot translator plugin" OFF)
-add_feature_info(BERGAMOT_TRANSLATOR_PLUGIN ${BERGAMOT_TRANSLATOR_PLUGIN} "Bergamot translator plugin (local translation)")
+add_feature_info(BERGAMOT_TRANSLATOR_PLUGIN ${BERGAMOT_TRANSLATOR_PLUGIN} "Bergamot translator plugin (local translation) (Experimental. Need to download bergamot source code first)")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
