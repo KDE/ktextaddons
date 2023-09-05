@@ -3,9 +3,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtexttranslator\")
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextTranslator")
 
-
-
-
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTTRANSLATE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextTranslatorConfigVersion.cmake"

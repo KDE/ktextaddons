@@ -92,6 +92,7 @@ add_subdirectory(texttranslator)
 add_subdirectory(textemoticons)
 add_subdirectory(textutils)
 add_subdirectory(textcustomeditor)
+add_subdirectory(textspeechtotext)
 
 find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
