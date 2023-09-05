@@ -34,8 +34,8 @@ add_library(KF${KF_MAJOR_VERSION}TextTranslator )
 add_library(KF${KF_MAJOR_VERSION}::TextTranslator ALIAS KF${KF_MAJOR_VERSION}TextTranslator)
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextTranslator HEADER texttranslator_debug.h
     IDENTIFIER TEXTTRANSLATOR_LOG
-    OLD_CATEGORY_NAMES org.kde.kf.texttranslator
-    CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.texttranslator
+    CATEGORY_NAME org.kde.kf.texttranslator
+    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator
     DESCRIPTION "KF${KF_MAJOR_VERSION} (TextTranslator)"
     EXPORT KTEXTADDONS
 )
