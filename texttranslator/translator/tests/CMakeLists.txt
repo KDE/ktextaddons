@@ -10,3 +10,9 @@ add_executable(translatorconfigurelanguagelistwidget_gui translatorconfigurelang
 target_link_libraries(translatorconfigurelanguagelistwidget_gui
   KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
 )
+
+#####
+add_executable(translatorconfigurelistswidget_gui translatorconfigurelistswidget_gui.cpp)
+target_link_libraries(translatorconfigurelistswidget_gui
+  KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+)
