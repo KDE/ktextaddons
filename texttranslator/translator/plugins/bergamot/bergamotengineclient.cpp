@@ -86,6 +86,7 @@ void BergamotEngineClient::updateFromLanguageList()
     for (const auto &lang : std::as_const(mLanguageInstalled)) {
         const TextTranslator::TranslatorUtil::Language langUtil = TextTranslator::TranslatorUtil::stringToLanguage(lang.from);
         mFromLanguages.insert(langUtil, TextTranslator::TranslatorUtil::translatedLanguage(langUtil));
+        // qDebug() << " SSSSSSSSSSSSSSSSSS " << langUtil << " mFromLanguages " << mFromLanguages;
     }
 }
 
@@ -93,10 +94,10 @@ void BergamotEngineClient::updateToLanguageList()
 {
     mToLanguages.clear();
     for (const auto &lang : std::as_const(mLanguageInstalled)) {
-        qDebug() << " lang.to " << lang.to << " mLanguageCode " << mLanguageCode;
+        // qDebug() << " lang.to " << lang.to << " mLanguageCode " << mLanguageCode;
         if (lang.to == mLanguageCode || mLanguageCode.isEmpty()) {
             const TextTranslator::TranslatorUtil::Language langUtil = TextTranslator::TranslatorUtil::stringToLanguage(lang.to);
-            qDebug() << " lang.to " << lang.to;
+            // qDebug() << " lang.to " << lang.to;
             mToLanguages.insert(langUtil, TextTranslator::TranslatorUtil::translatedLanguage(langUtil));
         }
     }

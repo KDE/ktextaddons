@@ -96,6 +96,25 @@ void TranslatorConfigureListsWidget::loadLanguagesList()
     d->mToLanguageWidget->setSelectedLanguages(toLanguages);
 }
 
+void TranslatorConfigureListsWidget::fillFromToLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listFromLanguage,
+                                                         const QMap<TextTranslator::TranslatorUtil::Language, QString> &listToLanguage)
+{
+    QMapIterator<TranslatorUtil::Language, QString> i(listFromLanguage);
+    TranslatorUtil translatorUtil;
+    while (i.hasNext()) {
+        i.next();
+        const QString languageCode = TranslatorUtil::languageCode(i.key());
+        d->mFromLanguageWidget->addItem(i.value(), languageCode);
+    }
+
+    QMapIterator<TranslatorUtil::Language, QString> toLangIt(listToLanguage);
+    while (toLangIt.hasNext()) {
+        toLangIt.next();
+        const QString languageCode = TranslatorUtil::languageCode(toLangIt.key());
+        d->mToLanguageWidget->addItem(toLangIt.value(), languageCode);
+    }
+}
+
 void TranslatorConfigureListsWidget::fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage)
 {
     QMapIterator<TranslatorUtil::Language, QString> i(listLanguage);
@@ -126,7 +145,11 @@ void TranslatorConfigureListsWidget::slotEngineChanged(const QString &engine)
 
         d->mFromLanguageWidget->clear();
         d->mToLanguageWidget->clear();
-        fillLanguages(listToLanguage);
+        if (listFromLanguage != listToLanguage) {
+            fillFromToLanguages(listFromLanguage, listToLanguage);
+        } else {
+            fillLanguages(listFromLanguage);
+        }
 
         // Restore if possible
         d->mFromLanguageWidget->setSelectedLanguages(fromLanguages);
