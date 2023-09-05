@@ -26,3 +26,6 @@ compile_commands.json
 .idea
 /cmake-build*
 .cache
+
+# Git clone from bergamot-translator
+texttranslator/translator/plugins/bergamot/bergamot-translator/
