@@ -112,10 +112,12 @@ void TranslatorConfigureListsWidget::fillLanguages(const QMap<TextTranslator::Tr
 
 void TranslatorConfigureListsWidget::slotEngineChanged(const QString &engine)
 {
-    const QMap<TextTranslator::TranslatorUtil::Language, QString> listLanguage = TextTranslator::TranslatorEngineLoader::self()->supportedFromLanguages(engine);
+    const QMap<TextTranslator::TranslatorUtil::Language, QString> listFromLanguage =
+        TextTranslator::TranslatorEngineLoader::self()->supportedFromLanguages(engine);
+    const QMap<TextTranslator::TranslatorUtil::Language, QString> listToLanguage = TextTranslator::TranslatorEngineLoader::self()->supportedToLanguages(engine);
 
     if (!d->mLanguageListLoaded) {
-        fillLanguages(listLanguage);
+        fillLanguages(listFromLanguage);
         loadLanguagesList();
         d->mLanguageListLoaded = true;
     } else {
@@ -124,7 +126,7 @@ void TranslatorConfigureListsWidget::slotEngineChanged(const QString &engine)
 
         d->mFromLanguageWidget->clear();
         d->mToLanguageWidget->clear();
-        fillLanguages(listLanguage);
+        fillLanguages(listToLanguage);
 
         // Restore if possible
         d->mFromLanguageWidget->setSelectedLanguages(fromLanguages);
