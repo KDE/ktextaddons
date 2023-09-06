@@ -15,7 +15,7 @@ class TextSpeechToText::SpeechToTextEngineLoaderPrivate
 {
 public:
     QSet<QString> loadedPlugins;
-    QHash<QString, SpeechToTextClient *> translatorClients;
+    QHash<QString, SpeechToTextClient *> speechToTextClients;
 };
 
 SpeechToTextEngineLoader *SpeechToTextEngineLoader::self()
@@ -36,7 +36,7 @@ SpeechToTextEngineLoader::~SpeechToTextEngineLoader() = default;
 void SpeechToTextEngineLoader::loadPlugins()
 {
     const QStringList libPaths = QCoreApplication::libraryPaths();
-    const QString pathSuffix(QStringLiteral("/kf" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/translator/"));
+    const QString pathSuffix(QStringLiteral("/kf" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/speechtotext/"));
     for (const QString &libPath : libPaths) {
         QDir dir(libPath + pathSuffix);
         if (!dir.exists()) {
@@ -47,7 +47,7 @@ void SpeechToTextEngineLoader::loadPlugins()
         }
     }
     if (d->loadedPlugins.isEmpty()) {
-        qCWarning(TEXTSPEECHTOTEXT_LOG) << "No translator plugins available!";
+        qCWarning(TEXTSPEECHTOTEXT_LOG) << "No speechtotext plugins available!";
     }
 }
 
@@ -74,13 +74,13 @@ void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
         plugin.unload(); // don't leave it in memory
         return;
     }
-    d->translatorClients.insert(client->name(), client);
+    d->speechToTextClients.insert(client->name(), client);
 }
 
 SpeechToTextClient *SpeechToTextEngineLoader::createTranslatorClient(const QString &clientName)
 {
-    auto clientsItr = d->translatorClients.constFind(clientName);
-    if (clientsItr == d->translatorClients.constEnd()) {
+    auto clientsItr = d->speechToTextClients.constFind(clientName);
+    if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         Q_EMIT loadingTranslatorFailed();
         return nullptr;
@@ -90,8 +90,8 @@ SpeechToTextClient *SpeechToTextEngineLoader::createTranslatorClient(const QStri
 
 bool SpeechToTextEngineLoader::hasConfigurationDialog(const QString &clientName) const
 {
-    auto clientsItr = d->translatorClients.constFind(clientName);
-    if (clientsItr == d->translatorClients.constEnd()) {
+    auto clientsItr = d->speechToTextClients.constFind(clientName);
+    if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         return false;
     }
@@ -100,8 +100,8 @@ bool SpeechToTextEngineLoader::hasConfigurationDialog(const QString &clientName)
 
 bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
 {
-    auto clientsItr = d->translatorClients.constFind(clientName);
-    if (clientsItr == d->translatorClients.constEnd()) {
+    auto clientsItr = d->speechToTextClients.constFind(clientName);
+    if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         return false;
     }
