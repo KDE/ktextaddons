@@ -34,11 +34,11 @@ ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextSpeechToText HEADER tex
 )
 
 target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
-    speechtotextclient.h
-    speechtotextclient.cpp
+    speechtotext/speechtotextclient.h
+    speechtotext/speechtotextclient.cpp
 
-    speechtotextplugin.h
-    speechtotextplugin.cpp
+    speechtotext/speechtotextplugin.h
+    speechtotext/speechtotextplugin.cpp
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -77,6 +77,7 @@ ecm_generate_headers(TextSpeechToText_Camelcasespeechtotext_HEADERS
     SpeechToTextClient
     SpeechToTextPlugin
     PREFIX TextSpeechToText
+    RELATIVE speechtotext
 )
 
 ecm_generate_pri_file(BASE_NAME TextSpeechToText
