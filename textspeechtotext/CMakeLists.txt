@@ -39,6 +39,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
 
     speechtotext/speechtotextplugin.h
     speechtotext/speechtotextplugin.cpp
+
+    speechtotext/speechtotextengineloader.cpp
+    speechtotext/speechtotextengineloader.h
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
