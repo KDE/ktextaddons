@@ -9,6 +9,10 @@
 #include <QObject>
 namespace TextSpeechToText
 {
+/**
+ * @brief The SpeechToTextPlugin class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextPlugin : public QObject
 {
     Q_OBJECT
