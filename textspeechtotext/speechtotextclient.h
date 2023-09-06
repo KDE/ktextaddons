@@ -5,11 +5,11 @@
 */
 
 #pragma once
-
+#include "textspeechtotext_export.h"
 #include <QObject>
 namespace TextSpeechToText
 {
-class SpeechToTextClient : public QObject
+class TEXTSPEECHTOTEXT_EXPORT SpeechToTextClient : public QObject
 {
     Q_OBJECT
 public:
