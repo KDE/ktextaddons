@@ -13,4 +13,9 @@ SpeechToTextClient::SpeechToTextClient(QObject *parent)
 
 SpeechToTextClient::~SpeechToTextClient() = default;
 
+bool SpeechToTextClient::hasConfigurationDialog() const
+{
+    return false;
+}
+
 #include "moc_speechtotextclient.cpp"

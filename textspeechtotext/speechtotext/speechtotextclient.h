@@ -15,5 +15,12 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextClient : public QObject
 public:
     explicit SpeechToTextClient(QObject *parent = nullptr);
     ~SpeechToTextClient() override;
+
+    /**
+     * @returns the name of the implementing class.
+     */
+    virtual QString name() const = 0;
+
+    Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
 };
 }

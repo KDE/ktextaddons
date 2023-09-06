@@ -74,7 +74,7 @@ void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
         plugin.unload(); // don't leave it in memory
         return;
     }
-    // TODO d->translatorClients.insert(client->name(), client);
+    d->translatorClients.insert(client->name(), client);
 }
 
 SpeechToTextClient *SpeechToTextEngineLoader::createTranslatorClient(const QString &clientName)
@@ -95,9 +95,7 @@ bool SpeechToTextEngineLoader::hasConfigurationDialog(const QString &clientName)
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         return false;
     }
-    // TODO
-    return false;
-    //    return (*clientsItr)->hasConfigurationDialog();
+    return (*clientsItr)->hasConfigurationDialog();
 }
 
 bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
