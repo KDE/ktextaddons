@@ -36,14 +36,10 @@ ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextSpeechToText HEADER tex
 target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
     speechtotextclient.h
     speechtotextclient.cpp
-    )
-#if (BUILD_TESTING)
-#    add_subdirectory(translator/autotests)
-#    add_subdirectory(translator/tests)
-#    add_subdirectory(translator/widgets/autotests)
-#endif()
-#add_subdirectory(translator/plugins)
 
+    speechtotextplugin.h
+    speechtotextplugin.cpp
+    )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF${KF_MAJOR_VERSION}TextSpeechToText PROPERTIES UNITY_BUILD ON)
@@ -76,36 +72,12 @@ install(TARGETS
     EXPORT KF${KF_MAJOR_VERSION}TextSpeechToTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
-#ecm_generate_headers(TextSpeechToText_Camelcasetranslatorwidgets_HEADERS
-#    HEADER_NAMES
-#    TranslatorWidget
-#    TranslatorConfigureDialog
-#    TranslatorConfigureLanguageListWidget
-#    TranslatorConfigureListsWidget
-#    TranslatorMenu
-#    REQUIRED_HEADERS TextSpeechToText_translatorwidgets_HEADERS
-#    PREFIX TextSpeechToText
-#    RELATIVE translator/widgets/
-#    )
-
-#ecm_generate_headers(TextSpeechToText_Camelcasetranslator_HEADERS
-#    HEADER_NAMES
-#    TranslatorEnginePlugin
-#    TranslatorEngineClient
-#    TranslatorEngineAccessManager
-#    TranslatorEngineLoader
-#    REQUIRED_HEADERS TextSpeechToText_translator_HEADERS
-#    PREFIX TextSpeechToText
-#    RELATIVE translator
-#    )
-
-#ecm_generate_headers(TextSpeechToText_Camelcasetranslatormisc_HEADERS
-#    HEADER_NAMES
-#    TranslatorUtil
-#    REQUIRED_HEADERS TextSpeechToText_translatormisc_HEADERS
-#    PREFIX TextSpeechToText
-#    RELATIVE translator/misc/
-#    )
+ecm_generate_headers(TextSpeechToText_Camelcasespeechtotext_HEADERS
+    HEADER_NAMES
+    SpeechToTextClient
+    SpeechToTextPlugin
+    PREFIX TextSpeechToText
+)
 
 ecm_generate_pri_file(BASE_NAME TextSpeechToText
     LIB_NAME KF${KF_MAJOR_VERSION}TextSpeechToText
@@ -118,23 +90,14 @@ install(FILES
     )
 
 install(FILES
-#    ${TextSpeechToText_Camelcasetranslatorwidgets_HEADERS}
-#    ${TextSpeechToText_translatorwidgets_HEADERS}
-
-#    ${TextSpeechToText_Camelcasetranslatormisc_HEADERS}
-#    ${TextSpeechToText_translatormisc_HEADERS}
-
-#    ${TextSpeechToText_translator_HEADERS}
-#    ${TextSpeechToText_Camelcasetranslator_HEADERS}
+    ${TextSpeechToText_Camelcasespeechtotext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/TextSpeechToText
     COMPONENT Devel
     )
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_export.h
-#    ${TextSpeechToText_translator_HEADERS}
-#    ${TextSpeechToText_translatorwidgets_HEADERS}
-#    ${TextSpeechToText_translatormisc_HEADERS}
+    ${TextSpeechToText_speechtotext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/textspeechtotext
     COMPONENT Devel
     )
@@ -152,9 +115,7 @@ if (BUILD_QCH)
         VERSION ${TEXTTRANSLATE_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextSpeechToText_translator_HEADERS}
-        ${TextSpeechToText_translatorwidgets_HEADERS}
-        ${TextSpeechToText_translatormisc_HEADERS}
+        ${TextSpeechToText_speechtotext_HEADERS}
         LINK_QCHS
             Qt${QT_MAJOR_VERSION}Core_QCH
             Qt${QT_MAJOR_VERSION}Gui_QCH
