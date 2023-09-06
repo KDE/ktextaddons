@@ -109,3 +109,5 @@ bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QW
     // TODO
     return false;
 }
+
+#include "moc_speechtotextengineloader.cpp"
