@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-09-02 02:57\n"
+"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"PO-Revision-Date: 2023-09-02 02:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/ktextaddons/libtexttranslator.pot\n"
-"X-Crowdin-File-ID: 41589\n"
+"X-Crowdin-File: /kf5-stable/messages/ktextaddons/libtexttranslator.pot\n"
+"X-Crowdin-File-ID: 41827\n"
 
 #: translator/misc/translatorutil.cpp:31
 #, kde-format
@@ -326,13 +326,13 @@ msgstr "意第绪语"
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr "Bergamot 插件设置"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format
 msgid "Bergamot"
-msgstr "Bergamot"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
@@ -343,67 +343,68 @@ msgstr "搜索..."
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
 msgid "Download"
-msgstr "下载"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Update List"
-msgstr "更新列表"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Update list of languages from network"
-msgstr "从网络更新语言列表"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format
 msgid "Error: %1"
-msgstr "错误：%1"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr "使用翻译缓存"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
-msgstr "资源使用情况"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
-msgstr "线程："
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
-msgstr "内存使用 (按线程)："
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
 msgid "Languages"
-msgstr "语言"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:30
 #, kde-format
 msgid "Settings"
-msgstr "设置"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server url is not defined."
 msgid "Language model is not defined."
-msgstr "语言模型没有定义。"
+msgstr "服务器 URL 未定义。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr "无法打开文件进行下载。"
+msgstr ""
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:48
@@ -419,58 +420,59 @@ msgstr "错误：引擎系统从本机连接的网络检测到可疑的流量，
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr "无法访问 URL：%1"
+msgstr ""
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr "校验和不正确。"
+msgstr ""
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:74
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr "写入磁盘时发生错误：%1"
+msgstr ""
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Detect language"
 msgid "Impossible to extract language"
-msgstr "无法提取语言"
+msgstr "检测语言"
 
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
-msgstr "来源"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
-msgstr "目标"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
-msgstr "类型"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
-msgstr "仓库"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
-msgstr "安装的版本"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
-msgstr "可用的版本"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr "已安装"
+msgstr ""
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -536,7 +538,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr "无效的回答。"
+msgstr ""
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -688,16 +690,24 @@ msgid "Configure"
 msgstr "配置"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "Google Server)."
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
-msgstr "拖动选择您想要翻译的文本。(请注意：这些文本将被发送到外部服务器)。"
+msgstr ""
+"拖动选择您想要翻译的文本。(请注意：这些文本将被发送到 Google 的服务器)。"
 
 #: translator/widgets/translatorwidget.cpp:357
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "Google Server)."
 msgid "Drag text that you want to translate."
-msgstr "拖动选择您想要翻译的文本。"
+msgstr ""
+"拖动选择您想要翻译的文本。(请注意：这些文本将被发送到 Google 的服务器)。"
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
@@ -713,3 +723,6 @@ msgstr "没有网络"
 #, kde-format
 msgid "Translate error"
 msgstr "翻译错误"
+
+#~ msgid "Problem when connecting to the translator web site."
+#~ msgstr "连接翻译网站时发生错误。"
