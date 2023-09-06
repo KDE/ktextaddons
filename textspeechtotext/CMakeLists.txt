@@ -148,3 +148,5 @@ configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextSpeechToTextConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
+
+add_subdirectory(speechtotext/plugins)
