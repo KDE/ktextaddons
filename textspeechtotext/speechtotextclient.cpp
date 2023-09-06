@@ -12,3 +12,5 @@ SpeechToTextClient::SpeechToTextClient(QObject *parent)
 }
 
 SpeechToTextClient::~SpeechToTextClient() = default;
+
+#include "moc_speechtotextclient.cpp"

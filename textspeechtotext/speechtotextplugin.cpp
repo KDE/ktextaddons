@@ -13,3 +13,5 @@ SpeechToTextPlugin::SpeechToTextPlugin(QObject *parent)
 }
 
 SpeechToTextPlugin::~SpeechToTextPlugin() = default;
+
+#include "moc_speechtotextplugin.cpp"
