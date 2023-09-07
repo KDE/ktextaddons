@@ -7,6 +7,7 @@
 #include "translatormenu.h"
 #include "texttranslator_debug.h"
 #include "translator/misc/translatorutil.h"
+#include "translator/translatorengineloader.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -38,7 +39,13 @@ void TranslatorMenu::updateMenu()
 {
     mMenu->clear();
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), QStringLiteral("Translate"));
-    // const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
+    const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
+    // qDebug() << " engine " << engine;
+    const QString currentPluginName = TextTranslator::TranslatorEngineLoader::self()->currentPluginName(engine);
+    QString actionText;
+    if (!currentPluginName.isEmpty()) {
+        actionText = QStringLiteral("[%1] ").arg(currentPluginName);
+    }
     const auto fromList = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
     const auto toList = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
     for (const auto &fromLang : fromList) {
@@ -53,7 +60,7 @@ void TranslatorMenu::updateMenu()
                 } else {
                     if (fromLangI18n != toLangI18n) {
                         auto action = new QAction(mMenu);
-                        action->setText(QStringLiteral("%1 -> %2").arg(fromLangI18n, toLangI18n));
+                        action->setText(QStringLiteral("%1%2 -> %3").arg(actionText, fromLangI18n, toLangI18n));
                         connect(action, &QAction::triggered, this, [this, fromLang, toLang]() {
                             Q_EMIT translate(fromLang, toLang, mModelIndex);
                         });
