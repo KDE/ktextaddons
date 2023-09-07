@@ -18,4 +18,11 @@ bool SpeechToTextClient::hasConfigurationDialog() const
     return false;
 }
 
+bool SpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
+{
+    Q_UNUSED(parentWidget);
+    // Nothing by default
+    return false;
+}
+
 #include "moc_speechtotextclient.cpp"

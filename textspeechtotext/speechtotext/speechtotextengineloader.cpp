@@ -105,9 +105,7 @@ bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QW
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
         return false;
     }
-    // return (*clientsItr)->showConfigureDialog(parentWidget);
-    // TODO
-    return false;
+    return (*clientsItr)->showConfigureDialog(parentWidget);
 }
 
 #include "moc_speechtotextengineloader.cpp"
