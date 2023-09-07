@@ -26,5 +26,8 @@ public:
     virtual QString name() const = 0;
 
     Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
+
+Q_SIGNALS:
+    void configureChanged();
 };
 }
