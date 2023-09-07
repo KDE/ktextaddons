@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 add_library(speechtotext_google MODULE)
 
 ecm_qt_declare_logging_category(speechtotext_debug_google_SRCS
