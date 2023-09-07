@@ -100,12 +100,6 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     auto deleteLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete"), this);
     deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(deleteLanguage);
-    connect(deleteLanguage, &QPushButton::clicked, this, [this]() {
-        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Identifier);
-        const QString identifier = modelIndex.data().toString();
-        slotDelete(identifier);
-    });
 
     auto updateListLanguage = new QPushButton(i18n("Update List"), this);
     updateListLanguage->setToolTip(i18n("Update list of languages from network"));
@@ -137,7 +131,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
     mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
     mTreeView->setColumnHidden(TranslatorModel::NeedToUpdateLanguage, true);
-    connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, downLoadLanguage, deleteLanguage]() {
+    auto updateButton = [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
         const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Installed);
@@ -151,6 +145,18 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
             downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
         }
         deleteLanguage->setEnabled(hasSelectedItem && isInstalled);
+    };
+
+    connect(deleteLanguage, &QPushButton::clicked, this, [this, updateButton]() {
+        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
+        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Identifier);
+        const QString identifier = modelIndex.data().toString();
+        slotDelete(identifier);
+        updateButton();
+    });
+
+    connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [updateButton]() {
+        updateButton();
     });
     downLoadLanguage->setEnabled(false);
     deleteLanguage->setEnabled(false);

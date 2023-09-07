@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:44+0000\n"
+"POT-Creation-Date: 2023-09-06 02:21+0000\n"
 "PO-Revision-Date: 2023-08-25 12:24+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -725,11 +725,6 @@ msgstr "Aucun réseau"
 #, kde-format
 msgid "Translate error"
 msgstr "Erreur de traduction"
-
-#, fuzzy
-#~| msgid "Persian"
-#~ msgid "Version"
-#~ msgstr "Persan"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Problème lors de la connexion au site Internet de traduction."

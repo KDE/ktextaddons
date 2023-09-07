@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-20 08:01+0200\n"
+"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"PO-Revision-Date: 2023-09-06 19:08+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -368,7 +368,7 @@ msgstr "Fel: %1"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgid "Use translation cache"
-msgstr "Använd översättningscache"
+msgstr "Använd översättningstext"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -472,7 +472,7 @@ msgstr "Tillgänglig version"
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr "Installerat"
+msgstr "Installerad"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -539,7 +539,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr "Ogiltigt svar"
+msgstr "Ogiltigt svar."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -718,9 +718,6 @@ msgstr "Inget nätverk"
 #, kde-format
 msgid "Translate error"
 msgstr "Översättningsfel"
-
-#~ msgid "Version"
-#~ msgstr "Version"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Problem vid anslutning till översättningswebbplatsen."

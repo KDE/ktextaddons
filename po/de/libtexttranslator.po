@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-14 21:57+0200\n"
+"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"PO-Revision-Date: 2023-05-12 19:40+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -345,18 +345,17 @@ msgstr "Suchen ..."
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
 msgid "Download"
-msgstr "Herunterladen"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgid "Delete"
-msgstr "Löschen"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
-#, fuzzy, kde-format
-#| msgid "Update"
+#, kde-format
 msgid "Update List"
-msgstr "Aktualisieren"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
 #, kde-format
@@ -366,7 +365,7 @@ msgstr ""
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
 #, kde-format
 msgid "Error: %1"
-msgstr "Fehler: %1"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
@@ -391,12 +390,12 @@ msgstr ""
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
 msgid "Languages"
-msgstr "Sprachen"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:30
 #, kde-format
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr ""
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
 #, fuzzy, kde-format
@@ -447,17 +446,17 @@ msgstr "Sprache erkennen"
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
-msgstr "Quelle"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
-msgstr "Ziel"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
-msgstr "Art"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
@@ -465,22 +464,20 @@ msgid "Repository"
 msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:55
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installed Version"
-msgstr "Installiert"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "Available"
+#, kde-format
 msgid "Available Version"
-msgstr "Verfügbar"
+msgstr ""
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr "Installiert"
+msgstr ""
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -550,7 +547,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr "Ungültige antwort."
+msgstr ""
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -702,18 +699,26 @@ msgid "Configure"
 msgstr "Einrichten"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "Google Server)."
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
 "Ziehen Sie Text hierher, den Sie übersetzen möchten. Beachten Sie, dass "
-"dieser Text an externe-Server gesendet wird."
+"dieser Text an Google-Server gesendet wird."
 
 #: translator/widgets/translatorwidget.cpp:357
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "Google Server)."
 msgid "Drag text that you want to translate."
-msgstr "Ziehen Sie Text hierher, den Sie übersetzen möchten."
+msgstr ""
+"Ziehen Sie Text hierher, den Sie übersetzen möchten. Beachten Sie, dass "
+"dieser Text an Google-Server gesendet wird."
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
@@ -731,9 +736,6 @@ msgstr "Keine Netzwerkverbindung"
 #, kde-format
 msgid "Translate error"
 msgstr "Übersetzungsfehler"
-
-#~ msgid "Version"
-#~ msgstr "Version"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr ""

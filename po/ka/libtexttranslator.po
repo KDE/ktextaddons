@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:44+0000\n"
-"PO-Revision-Date: 2023-08-21 06:40+0200\n"
+"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"PO-Revision-Date: 2023-09-07 03:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -447,7 +447,7 @@ msgstr "წყარო"
 #: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
-msgstr "სამიზნე"
+msgstr "სამიზნე წერტილი"
 
 #: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "ტიპი"
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
-msgstr "რეპოზიტორია"
+msgstr "საცავი"
 
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
@@ -697,13 +697,13 @@ msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
-"გადმოათრიეთ ტექსტი, რომელიც გნებავთ, თარგმნოთ. (ფრთხილად, ის გარე სერვერზე "
-"გადაიგზავნება)."
+"გადმოათრიეთ ტექსტი, რომელიც გნებავთ თარგმნოთ. (ფრთხილად, ის გარე სერვერებზე "
+"იქნება გადაგზავნილი)."
 
 #: translator/widgets/translatorwidget.cpp:357
 #, kde-format
 msgid "Drag text that you want to translate."
-msgstr "გადმოათრიეთ ტექსტი, რომელიც გნებავთ, თარგმნოთ."
+msgstr "გადმოათრიეთ ტექსტი, რომელიც გნებავთ თარგმნოთ."
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
@@ -719,9 +719,6 @@ msgstr "ქსელის გარეშე"
 #, kde-format
 msgid "Translate error"
 msgstr "მთარგმნელის შეცდომა"
-
-#~ msgid "Version"
-#~ msgstr "ვერსია"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "მთარგმნელ ვებგვერდთან მიერთების პრობლემა."
