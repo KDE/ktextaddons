@@ -11,7 +11,14 @@
 class GoogleSpeechToTextClient : public TextSpeechToText::SpeechToTextClient
 {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.texttospeech.google")
+    Q_INTERFACES(TextSpeechToText::SpeechToTextClient)
 public:
     explicit GoogleSpeechToTextClient(QObject *parent = nullptr);
     ~GoogleSpeechToTextClient() override;
+
+    Q_REQUIRED_RESULT QString name() const override;
+    Q_REQUIRED_RESULT QString translatedName() const override;
+
+    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
 };

@@ -17,6 +17,10 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextClient : public QObject
 {
     Q_OBJECT
 public:
+    enum EngineType {
+        Locale,
+        Network,
+    };
     explicit SpeechToTextClient(QObject *parent = nullptr);
     ~SpeechToTextClient() override;
 
@@ -25,10 +29,16 @@ public:
      */
     virtual QString name() const = 0;
 
+    virtual QString translatedName() const = 0;
+
     Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
 
     virtual bool showConfigureDialog(QWidget *parentWidget);
+
+    Q_REQUIRED_RESULT virtual TextSpeechToText::SpeechToTextClient::EngineType engineType() const = 0;
+
 Q_SIGNALS:
     void configureChanged();
 };
 }
+Q_DECLARE_INTERFACE(TextSpeechToText::SpeechToTextClient, "org.kde.texttospeech.Client")
