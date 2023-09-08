@@ -18,3 +18,15 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
 }
 
 SpeechToTextConfigureWidget::~SpeechToTextConfigureWidget() = default;
+
+void SpeechToTextConfigureWidget::loadSettings()
+{
+    // TODO
+}
+
+void SpeechToTextConfigureWidget::saveSettings()
+{
+    // TODO
+}
+
+#include "moc_speechtotextconfigurewidget.cpp"

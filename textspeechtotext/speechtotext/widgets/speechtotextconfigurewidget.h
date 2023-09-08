@@ -9,11 +9,17 @@
 #include <QWidget>
 namespace TextSpeechToText
 {
+/**
+ * @brief The SpeechToTextConfigureWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit SpeechToTextConfigureWidget(QWidget *parent = nullptr);
     ~SpeechToTextConfigureWidget() override;
+    void loadSettings();
+    void saveSettings();
 };
 }
