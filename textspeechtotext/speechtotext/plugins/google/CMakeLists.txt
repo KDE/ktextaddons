@@ -3,7 +3,7 @@
 add_library(speechtotext_google MODULE)
 
 ecm_qt_declare_logging_category(speechtotext_debug_google_SRCS
-    HEADER speechtotext_debug.h
+    HEADER speechtotext_google_debug.h
     IDENTIFIER SPEECHTOTEXT_GOOGLE_LOG
     CATEGORY_NAME org.kde.kf.speechtotext.google
     DESCRIPTION "google speechtotext"
