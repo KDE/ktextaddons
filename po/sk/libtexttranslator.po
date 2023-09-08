@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"POT-Creation-Date: 2023-09-08 00:44+0000\n"
 "PO-Revision-Date: 2023-02-10 20:47+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Bergamot"
 msgstr ""
@@ -350,17 +350,17 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:104
 #, kde-format
 msgid "Update List"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:105
 #, kde-format
 msgid "Update list of languages from network"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Error: %1"
 msgstr ""
@@ -640,7 +640,7 @@ msgstr "Chyba ukladania súboru"
 msgid "All Files (*)"
 msgstr "Všetky súbory (*)"
 
-#: translator/widgets/translatormenu.cpp:22
+#: translator/widgets/translatormenu.cpp:23
 #, kde-format
 msgid "Translate..."
 msgstr "Preložiť..."
@@ -727,6 +727,11 @@ msgstr "Žiadna sieť"
 #, kde-format
 msgid "Translate error"
 msgstr "Chyba prekladu"
+
+#, fuzzy
+#~| msgid "Persian"
+#~ msgid "Version"
+#~ msgstr "Perzština"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Problém pri pripájaní na webovú stránku prekladača."

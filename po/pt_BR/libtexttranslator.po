@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 02:21+0000\n"
-"PO-Revision-Date: 2023-07-04 11:14-0300\n"
+"POT-Creation-Date: 2023-09-08 00:44+0000\n"
+"PO-Revision-Date: 2023-07-05 17:57-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Bergamot"
 msgstr ""
@@ -350,17 +350,17 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:104
 #, kde-format
 msgid "Update List"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:105
 #, kde-format
 msgid "Update list of languages from network"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Error: %1"
 msgstr ""
@@ -641,7 +641,7 @@ msgstr "Erro de gravação do arquivo"
 msgid "All Files (*)"
 msgstr "Todos os arquivos (*)"
 
-#: translator/widgets/translatormenu.cpp:22
+#: translator/widgets/translatormenu.cpp:23
 #, kde-format
 msgid "Translate..."
 msgstr "Traduzir..."
@@ -728,6 +728,11 @@ msgstr "Sem rede"
 #, kde-format
 msgid "Translate error"
 msgstr "Erro de tradução"
+
+#, fuzzy
+#~| msgid "Persian"
+#~ msgid "Version"
+#~ msgstr "Persa"
 
 #~ msgid "Problem when connecting to the translator web site."
 #~ msgstr "Problema ao conectar ao site do tradutor."

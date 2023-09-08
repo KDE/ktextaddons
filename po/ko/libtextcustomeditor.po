@@ -1,0 +1,188 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# Shinjo Park <kde@peremen.name>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-19 00:44+0000\n"
+"PO-Revision-Date: 2023-08-25 22:59+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: plaintexteditor/plaintexteditfindbar.cpp:120
+#: richtexteditor/richtexteditfindbar.cpp:120
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "%1개 바뀜"
+
+#: plaintexteditor/plaintexteditor.cpp:160
+#: richtexteditor/richtexteditor.cpp:218
+#, kde-format
+msgid "Check Spelling..."
+msgstr "맞춤법 검사..."
+
+#: plaintexteditor/plaintexteditor.cpp:165
+#: richtexteditor/richtexteditor.cpp:225
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "자동 맞춤법 검사"
+
+#: plaintexteditor/plaintexteditor.cpp:171
+#: richtexteditor/richtexteditor.cpp:231
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "맞춤법 검사 언어"
+
+#: plaintexteditor/plaintexteditor.cpp:199
+#: richtexteditor/richtexteditor.cpp:264
+#, kde-format
+msgid "Speak Text"
+msgstr "텍스트 말하기"
+
+#: plaintexteditor/plaintexteditor.cpp:368
+#: richtexteditor/richtexteditor.cpp:472
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "맞춤법 검사할 것이 없습니다."
+
+#: plaintexteditor/plaintexteditor.cpp:373
+#: richtexteditor/richtexteditor.cpp:490
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "맞춤법 검사 백엔드가 없습니다."
+
+#: richtexteditor/richtexteditor.cpp:257
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "탭 허용"
+
+#: richtexteditor/richtexteditor.cpp:482
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr "맞춤법 검사 백엔드가 없습니다. 그래도 메일을 보내시겠습니까?"
+
+#: richtexteditor/richtexteditor.cpp:484
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "보내기"
+
+#: richtexteditor/richtexteditor.cpp:506
+#, kde-format
+msgid "Skip"
+msgstr "건너뛰기"
+
+#: widgets/texteditfindbarbase.cpp:34 widgets/texteditfindbarbase.cpp:37
+#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "닫기"
+
+#: widgets/texteditfindbarbase.cpp:140
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"메시지 끝에 도달했습니다.\n"
+"'%1'을(를) 찾을 수 없습니다."
+
+#: widgets/textfindreplacewidget.cpp:25
+#, kde-format
+msgid "Replace"
+msgstr "바꾸기"
+
+#: widgets/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace All"
+msgstr "모두 바꾸기"
+
+#: widgets/textfindreplacewidget.cpp:29
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "바꾸기:"
+
+#: widgets/textfindreplacewidget.cpp:65
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "이전"
+
+#: widgets/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "다음"
+
+#: widgets/textfindreplacewidget.cpp:72
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "찾기(&I):"
+
+#: widgets/textfindreplacewidget.cpp:75
+#, kde-format
+msgid "Text to search for"
+msgstr "검색할 문자열"
+
+#: widgets/textfindreplacewidget.cpp:81
+#, kde-format
+msgid "Jump to next match"
+msgstr "다음 일치로 이동"
+
+#: widgets/textfindreplacewidget.cpp:86
+#, kde-format
+msgid "Jump to previous match"
+msgstr "이전 일치로 이동"
+
+#: widgets/textfindreplacewidget.cpp:92
+#, kde-format
+msgid "Options"
+msgstr "옵션"
+
+#: widgets/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Modify search behavior"
+msgstr "검색 방식 변경"
+
+#: widgets/textfindreplacewidget.cpp:96
+#, kde-format
+msgid "Case sensitive"
+msgstr "대소문자 구분"
+
+#: widgets/textfindreplacewidget.cpp:99
+#, kde-format
+msgid "Whole word"
+msgstr "단어 단위로"
+
+#: widgets/textfindreplacewidget.cpp:102
+#, kde-format
+msgid "Regular Expression"
+msgstr "정규 표현식"
+
+#: widgets/textfindreplacewidget.cpp:105
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "분음 기호와 강세 유지"
+
+#: widgets/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "줄로 이동:"
+
+#: widgets/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "이동"

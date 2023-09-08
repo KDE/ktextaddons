@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:35+0000\n"
-"PO-Revision-Date: 2023-06-07 13:58-0300\n"
+"POT-Creation-Date: 2023-05-09 00:46+0000\n"
+"PO-Revision-Date: 2023-07-05 18:01-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -68,27 +68,27 @@ msgstr "&Adicionar"
 #: widgets/autocorrectionwidget.cpp:634
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
-msgstr ""
+msgstr "Importar autocorreção do LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:635
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
-msgstr ""
+msgstr "Arquivo de autocorreção do LibreOffice (*.dat)"
 
 #: widgets/autocorrectionwidget.cpp:638
 #, kde-format
 msgid "Import KMail Autocorrection"
-msgstr ""
+msgstr "Importar autocorreção do KMail"
 
 #: widgets/autocorrectionwidget.cpp:639
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
-msgstr ""
+msgstr "Arquivo de autocorreção do KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:671
 #, kde-format
 msgid "Import Autocorrection File"
-msgstr ""
+msgstr "Importar arquivo de autocorreção"
 
 #: widgets/autocorrectionwidget.cpp:694
 #, kde-format
@@ -108,13 +108,13 @@ msgstr "Salve as alterações antes de exportar as configurações."
 #: widgets/autocorrectionwidget.cpp:730 widgets/autocorrectionwidget.cpp:733
 #, kde-format
 msgid "Export Autocorrection File"
-msgstr ""
+msgstr "Exportar arquivo de autocorreção"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr ""
+msgstr "Habilitar autocorreção"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/autocorrectionwidget.ui:30
@@ -306,7 +306,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
-msgstr ""
+msgstr "Formatar &URLs automaticamente (modo HTML)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
 #: widgets/ui/autocorrectionwidget.ui:412
@@ -372,7 +372,7 @@ msgstr "Por padrão"
 #: widgets/ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
-msgstr "\""
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: widgets/ui/autocorrectionwidget.ui:507
@@ -426,7 +426,7 @@ msgstr "Caminho"
 #: widgets/ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr "Caminho do sistema"
+msgstr "Caminho do sistema:"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
@@ -454,20 +454,10 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr ""
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Special Characters"
-#~ msgstr "Selecionar caracteres especiais"
-
-#~ msgid "Insert"
-#~ msgstr "Inserir"
-
-#~ msgid "Select"
-#~ msgstr "Selecionar"

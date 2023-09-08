@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:35+0000\n"
-"PO-Revision-Date: 2023-01-10 21:43+0300\n"
+"POT-Creation-Date: 2023-05-09 00:46+0000\n"
+"PO-Revision-Date: 2023-06-04 02:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:52
 #, kde-format
@@ -243,9 +243,9 @@ msgid ""
 "bit too long. If some words must have two uppercase characters, then those "
 "exceptions should be added in the 'Exceptions' tab."
 msgstr ""
-"Shift düğmesini biraz fazla uzun süre basılı tutma gibi yaygın bir hataya "
-"karşı tüm sözcükler denetlenir. Bazı sözcüklerin iki BÜYÜK harf içermesi "
-"gerekiyorsa bu istisnalar 'İstisnalar' sekmesine eklenmelidir."
+"Üst Karakter düğmesini biraz fazla uzun süre basılı tutma gibi yaygın bir "
+"hataya karşı tüm sözcükler denetlenir. Bazı sözcüklerin iki BÜYÜK harf "
+"içermesi gerekiyorsa bu istisnalar 'İstisnalar' sekmesine eklenmelidir."
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:368
