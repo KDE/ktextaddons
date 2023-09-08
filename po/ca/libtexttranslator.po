@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"POT-Creation-Date: 2023-09-08 02:24+0000\n"
 "PO-Revision-Date: 2023-09-06 10:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -331,7 +331,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Configuració del connector Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -352,17 +352,17 @@ msgstr "Baixada"
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:110
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:104
 #, kde-format
 msgid "Update List"
 msgstr "Actualitza la llista"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:111
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:105
 #, kde-format
 msgid "Update list of languages from network"
 msgstr "Actualitza la llista d'idiomes des de la xarxa"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:175
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
@@ -642,7 +642,7 @@ msgstr "Error en desar el fitxer"
 msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
-#: translator/widgets/translatormenu.cpp:22
+#: translator/widgets/translatormenu.cpp:23
 #, kde-format
 msgid "Translate..."
 msgstr "Tradueix..."
