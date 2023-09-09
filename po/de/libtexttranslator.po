@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-08 02:24+0000\n"
-"PO-Revision-Date: 2023-05-12 19:40+0200\n"
+"PO-Revision-Date: 2023-08-14 21:57+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -345,12 +345,12 @@ msgstr "Suchen ..."
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Herunterladen"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:104
 #, kde-format
@@ -365,7 +365,7 @@ msgstr ""
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Fehler: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
@@ -390,12 +390,12 @@ msgstr ""
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
 msgid "Languages"
-msgstr ""
+msgstr "Sprachen"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:30
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
 #, fuzzy, kde-format
@@ -446,17 +446,17 @@ msgstr "Sprache erkennen"
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
 #: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
-msgstr ""
+msgstr "Art"
 
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
@@ -477,7 +477,7 @@ msgstr ""
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Installiert"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -547,7 +547,7 @@ msgstr "Google"
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "Ungültige antwort."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
 #, kde-format
@@ -699,26 +699,18 @@ msgid "Configure"
 msgstr "Einrichten"
 
 #: translator/widgets/translatorwidget.cpp:355
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
 "Ziehen Sie Text hierher, den Sie übersetzen möchten. Beachten Sie, dass "
-"dieser Text an Google-Server gesendet wird."
+"dieser Text an externe-Server gesendet wird."
 
 #: translator/widgets/translatorwidget.cpp:357
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "Google Server)."
+#, kde-format
 msgid "Drag text that you want to translate."
-msgstr ""
-"Ziehen Sie Text hierher, den Sie übersetzen möchten. Beachten Sie, dass "
-"dieser Text an Google-Server gesendet wird."
+msgstr "Ziehen Sie Text hierher, den Sie übersetzen möchten."
 
 #: translator/widgets/translatorwidget.cpp:406
 #, kde-format
