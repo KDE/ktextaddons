@@ -137,7 +137,7 @@ void BingEnginePlugin::parseTranslation(QNetworkReply *reply)
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
     qCDebug(TRANSLATOR_BING_LOG) << " jsonResponse " << jsonResponse;
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
-    if (from() == QStringLiteral("auto")) {
+    if (from() == QLatin1String("auto")) {
         const QString langCode = responseObject.value(QStringLiteral("detectedLanguage")).toObject().value(QStringLiteral("language")).toString();
         setFrom(langCode);
         //        if (m_sourceLang == NoLanguage)

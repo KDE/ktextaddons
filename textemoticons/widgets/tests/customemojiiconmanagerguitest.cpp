@@ -18,11 +18,11 @@ CustomEmojiIconManagerGuiTest::~CustomEmojiIconManagerGuiTest()
 
 QIcon CustomEmojiIconManagerGuiTest::generateIcon(const QString &customIdentifier)
 {
-    if (customIdentifier == QStringLiteral(":custom1:")) {
+    if (customIdentifier == QLatin1String(":custom1:")) {
         return QIcon::fromTheme(QStringLiteral("view-refresh"));
-    } else if (customIdentifier == QStringLiteral(":custom2:")) {
+    } else if (customIdentifier == QLatin1String(":custom2:")) {
         return QIcon::fromTheme(QStringLiteral("lock"));
-    } else if (customIdentifier == QStringLiteral(":gif1:")) {
+    } else if (customIdentifier == QLatin1String(":gif1:")) {
         return {};
     }
     return {};
@@ -30,7 +30,7 @@ QIcon CustomEmojiIconManagerGuiTest::generateIcon(const QString &customIdentifie
 
 QString CustomEmojiIconManagerGuiTest::fileName(const QString &customIdentifier)
 {
-    if (customIdentifier == QStringLiteral(":gif1:")) {
+    if (customIdentifier == QLatin1String(":gif1:")) {
         return QStringLiteral(":/gif1");
     }
     return {};

@@ -226,23 +226,23 @@ QString TranslatorUtil::searchI18nFromLanguage(const QString &langCode)
 
 TranslatorUtil::Language TranslatorUtil::stringToLanguage(const QString &str)
 {
-    if (str == QStringLiteral("en")) {
+    if (str == QLatin1String("en")) {
         return TranslatorUtil::en;
-    } else if (str == QStringLiteral("fr")) {
+    } else if (str == QLatin1String("fr")) {
         return TranslatorUtil::fr;
-    } else if (str == QStringLiteral("es")) {
+    } else if (str == QLatin1String("es")) {
         return TranslatorUtil::es;
-    } else if (str == QStringLiteral("pl")) {
+    } else if (str == QLatin1String("pl")) {
         return TranslatorUtil::pl;
-    } else if (str == QStringLiteral("de")) {
+    } else if (str == QLatin1String("de")) {
         return TranslatorUtil::de;
-    } else if (str == QStringLiteral("cs")) {
+    } else if (str == QLatin1String("cs")) {
         return TranslatorUtil::cs;
-    } else if (str == QStringLiteral("bg")) {
+    } else if (str == QLatin1String("bg")) {
         return TranslatorUtil::bg;
-    } else if (str == QStringLiteral("et")) {
+    } else if (str == QLatin1String("et")) {
         return TranslatorUtil::et;
-        //    } else if (str == QStringLiteral("nn")) {
+        //    } else if (str == QLatin1String("nn")) {
         //        return TranslatorUtil::nn;
     } else {
         qCWarning(TEXTTRANSLATOR_LOG) << " Impossible to find TranslatorUtil::Language for " << str;

@@ -94,7 +94,7 @@ void YandexEnginePlugin::translateText()
 
     clear();
     QString lang;
-    if (from() == QStringLiteral("auto")) {
+    if (from() == QLatin1String("auto")) {
         lang = languageCode(to());
     } else {
         lang = languageCode(from()) + QLatin1Char('-') + languageCode(to());
@@ -137,7 +137,7 @@ void YandexEnginePlugin::parseTranslation(QNetworkReply *reply)
     reply->deleteLater();
 
     // Parse language
-    if (from() == QStringLiteral("auto")) {
+    if (from() == QLatin1String("auto")) {
         QString sourceCode = jsonData.value(QStringLiteral("lang")).toString();
         sourceCode = sourceCode.left(sourceCode.indexOf(QLatin1Char('-')));
         qDebug() << " sourceCode " << sourceCode;
