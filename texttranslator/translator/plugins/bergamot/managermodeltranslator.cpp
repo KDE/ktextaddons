@@ -70,7 +70,7 @@ void ManagerModelTranslator::loadModelList(const QString &fileName)
 void ManagerModelTranslator::parseListModel(const QJsonObject &obj)
 {
     mTranslators.clear();
-    const QJsonArray arrays = obj[QStringLiteral("models")].toArray();
+    const QJsonArray arrays = obj[QLatin1String("models")].toArray();
     for (const QJsonValue &current : arrays) {
         if (current.type() == QJsonValue::Object) {
             Translator translator;

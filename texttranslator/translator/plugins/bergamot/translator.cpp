@@ -13,16 +13,16 @@ Translator::~Translator() = default;
 
 void Translator::parse(const QJsonObject &obj, bool remote)
 {
-    mUrl = obj[QStringLiteral("url")].toString();
-    mModelName = obj[QStringLiteral("modelName")].toString();
-    mShortName = obj[QStringLiteral("shortName")].toString();
-    mCheckSum = obj[QStringLiteral("checksum")].toString();
-    mRepository = obj[QStringLiteral("repository")].toString();
-    mType = obj[QStringLiteral("type")].toString();
-    mSource = obj[QStringLiteral("src")].toString();
-    mTarget = obj[QStringLiteral("trg")].toString();
-    mVersion = obj[QStringLiteral("version")].toInt(-1);
-    mApi = obj[QStringLiteral("API")].toInt(-1);
+    mUrl = obj[QLatin1String("url")].toString();
+    mModelName = obj[QLatin1String("modelName")].toString();
+    mShortName = obj[QLatin1String("shortName")].toString();
+    mCheckSum = obj[QLatin1String("checksum")].toString();
+    mRepository = obj[QLatin1String("repository")].toString();
+    mType = obj[QLatin1String("type")].toString();
+    mSource = obj[QLatin1String("src")].toString();
+    mTarget = obj[QLatin1String("trg")].toString();
+    mVersion = obj[QLatin1String("version")].toInt(-1);
+    mApi = obj[QLatin1String("API")].toInt(-1);
     mRemote = remote;
 }
 

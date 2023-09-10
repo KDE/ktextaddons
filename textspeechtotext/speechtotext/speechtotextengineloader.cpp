@@ -54,7 +54,7 @@ void SpeechToTextEngineLoader::loadPlugins()
 void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
 {
     QPluginLoader plugin(pluginPath);
-    const QString pluginIID = plugin.metaData()[QStringLiteral("IID")].toString();
+    const QString pluginIID = plugin.metaData()[QLatin1String("IID")].toString();
     if (!pluginIID.isEmpty()) {
         if (d->loadedPlugins.contains(pluginIID)) {
             qCDebug(TEXTSPEECHTOTEXT_LOG) << "Skipping already loaded" << pluginPath;

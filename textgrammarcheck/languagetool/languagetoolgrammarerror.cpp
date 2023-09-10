@@ -18,14 +18,14 @@ void LanguageToolGrammarError::parse(const QJsonObject &obj, int blockindex)
 {
     // We use block id index based on 1 in API
     mBlockId = blockindex;
-    mError = obj[QStringLiteral("message")].toString();
-    mStart = obj[QStringLiteral("offset")].toInt(-1);
-    mLength = obj[QStringLiteral("length")].toInt(-1);
+    mError = obj[QLatin1String("message")].toString();
+    mStart = obj[QLatin1String("offset")].toInt(-1);
+    mLength = obj[QLatin1String("length")].toInt(-1);
     mSuggestions = parseSuggestion(obj);
-    const QJsonObject rulesObj = obj[QStringLiteral("rule")].toObject();
+    const QJsonObject rulesObj = obj[QLatin1String("rule")].toObject();
     if (!rulesObj.isEmpty()) {
-        mRule = rulesObj[QStringLiteral("id")].toString();
-        const QJsonArray urlArray = rulesObj[QStringLiteral("urls")].toArray();
+        mRule = rulesObj[QLatin1String("id")].toString();
+        const QJsonArray urlArray = rulesObj[QLatin1String("urls")].toArray();
         if (!urlArray.isEmpty()) {
             if (urlArray.count() > 1) {
                 qCWarning(TEXTGRAMMARCHECK_LOG) << "LanguageToolGrammarError::parse : more than 1 url found. Perhaps need to adapt api ";
@@ -49,7 +49,7 @@ void LanguageToolGrammarError::setTesting(bool b)
 QStringList LanguageToolGrammarError::parseSuggestion(const QJsonObject &obj)
 {
     QStringList lst;
-    const QJsonArray array = obj[QStringLiteral("replacements")].toArray();
+    const QJsonArray array = obj[QLatin1String("replacements")].toArray();
     for (const QJsonValue &current : array) {
         if (current.type() == QJsonValue::Object) {
             const QJsonObject suggestionObject = current.toObject();

@@ -37,15 +37,15 @@ QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
         UnicodeEmoticon emoticon;
         const QJsonObject emojiObj = o[key].toObject();
         emoticon.setKey(key);
-        const QString unicodeStr = emojiObj[QStringLiteral("code_points")].toObject()[QStringLiteral("fully_qualified")].toString();
+        const QString unicodeStr = emojiObj[QLatin1String("code_points")].toObject()[QLatin1String("fully_qualified")].toString();
         Q_ASSERT(!unicodeStr.isEmpty());
         emoticon.setUnicode(unicodeStr);
-        const QString category = emojiObj[QStringLiteral("category")].toString();
+        const QString category = emojiObj[QLatin1String("category")].toString();
         emoticon.setCategory(category);
-        emoticon.setIdentifier(emojiObj[QStringLiteral("shortname")].toString());
-        emoticon.setOrder(emojiObj[QStringLiteral("order")].toInt());
-        const auto shortnameAlternates = emojiObj[QStringLiteral("shortname_alternates")].toArray();
-        const auto ascii = emojiObj[QStringLiteral("ascii")].toArray();
+        emoticon.setIdentifier(emojiObj[QLatin1String("shortname")].toString());
+        emoticon.setOrder(emojiObj[QLatin1String("order")].toInt());
+        const auto shortnameAlternates = emojiObj[QLatin1String("shortname_alternates")].toArray();
+        const auto ascii = emojiObj[QLatin1String("ascii")].toArray();
         emoticon.setAliases(aliases(shortnameAlternates, ascii));
         if (emoticon.isValid()) {
             lstEmoticons.append(std::move(emoticon));
