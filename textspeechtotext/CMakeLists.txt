@@ -88,6 +88,7 @@ ecm_generate_headers(TextSpeechToText_Camelcasespeechtotext_HEADERS
     HEADER_NAMES
     SpeechToTextClient
     SpeechToTextPlugin
+    REQUIRED_HEADERS TextSpeechToText_speechtotext_HEADERS
     PREFIX TextSpeechToText
     RELATIVE speechtotext
 )
