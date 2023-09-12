@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textspeechtotext_export.h"
+#include "speechtotext/speechtotext_private_export.h"
 #include <QWidget>
 namespace TextSpeechToText
 {
@@ -14,7 +14,7 @@ class SpeechToTextComboBox;
  * @brief The SpeechToTextConfigureWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTSPEECHTOTEXT_EXPORT SpeechToTextConfigureWidget : public QWidget
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:

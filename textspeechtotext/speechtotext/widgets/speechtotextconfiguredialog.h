@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include "speechtotext/speechtotext_private_export.h"
 #include <QDialog>
 namespace TextSpeechToText
 {
@@ -15,7 +15,7 @@ class SpeechToTextConfigureWidget;
  * @author Laurent Montel <montel@kde.org>
  */
 
-class SpeechToTextConfigureDialog : public QDialog
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
