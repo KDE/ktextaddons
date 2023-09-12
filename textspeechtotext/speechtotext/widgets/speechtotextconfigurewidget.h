@@ -9,6 +9,7 @@
 #include <QWidget>
 namespace TextSpeechToText
 {
+class SpeechToTextComboBox;
 /**
  * @brief The SpeechToTextConfigureWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -21,5 +22,8 @@ public:
     ~SpeechToTextConfigureWidget() override;
     void loadSettings();
     void saveSettings();
+
+private:
+    SpeechToTextComboBox *const mSpeechToTextComboBox;
 };
 }

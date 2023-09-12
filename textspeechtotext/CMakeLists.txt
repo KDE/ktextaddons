@@ -160,3 +160,4 @@ configure_package_config_file(
     )
 
 add_subdirectory(speechtotext/plugins)
+add_subdirectory(speechtotext/widgets/autotests)
