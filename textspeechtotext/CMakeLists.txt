@@ -68,6 +68,7 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextSpeechToText
     Qt::Widgets
     Qt::Network
     PRIVATE
+    Qt::MultimediaWidgets
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::ConfigGui

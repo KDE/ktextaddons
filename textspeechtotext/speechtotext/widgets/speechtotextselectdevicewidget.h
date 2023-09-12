@@ -17,6 +17,11 @@ public:
     explicit SpeechToTextSelectDeviceWidget(QWidget *parent = nullptr);
     ~SpeechToTextSelectDeviceWidget() override;
 
+    void loadSettings();
+    void saveSettings();
+
+    void initializeInput();
+
 private:
     QComboBox *const mDeviceComboBox;
 };
