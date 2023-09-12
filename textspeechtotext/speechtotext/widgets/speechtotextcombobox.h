@@ -5,11 +5,11 @@
 */
 
 #pragma once
-
+#include "speechtotext/speechtotext_private_export.h"
 #include <QComboBox>
 namespace TextSpeechToText
 {
-class SpeechToTextComboBox : public QComboBox
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBox : public QComboBox
 {
     Q_OBJECT
 public:
