@@ -125,8 +125,6 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mainLayout->addWidget(mProgressBarWidget);
     mProgressBarWidget->setVisible(false);
 
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
     mTreeView->setColumnHidden(TranslatorModel::Url, true);
     mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
     mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
@@ -203,7 +201,6 @@ void BergamotEngineLanguageWidget::slotUpdateListLanguage()
 
 void BergamotEngineLanguageWidget::updateListModel()
 {
-    // qDebug() << " void BergamotEngineLanguageWidget::updateListModel()";
     mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
 }
 

@@ -51,7 +51,6 @@ void DownloadLanguageJob::start()
         } else {
             Q_EMIT errorText(i18n("Impossible to access to url: %1", mUrl.toString()));
         }
-        reply->deleteLater();
     });
 
     connect(reply, &QNetworkReply::downloadProgress, this, &DownloadLanguageJob::downloadProgress);
