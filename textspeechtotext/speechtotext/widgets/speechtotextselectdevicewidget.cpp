@@ -39,7 +39,8 @@ void SpeechToTextSelectDeviceWidget::loadSettings()
     KConfigGroup group(KSharedConfig::openConfig(), mySoundGroupName);
     const QByteArray deviceIdentifier = group.readEntry("SoundDevice", QByteArray());
     if (!deviceIdentifier.isEmpty()) {
-        for (int i = 0; i < mDeviceComboBox->count(); ++i) {
+        const int nbDevice{mDeviceComboBox->count()};
+        for (int i = 0; i < nbDevice; ++i) {
             const QAudioDevice audioDevice = mDeviceComboBox->itemData(i).value<QAudioDevice>();
             if (audioDevice.id() == deviceIdentifier) {
                 mDeviceComboBox->setCurrentIndex(i);
