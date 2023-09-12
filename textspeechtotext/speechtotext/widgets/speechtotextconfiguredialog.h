@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "speechtotext/speechtotext_private_export.h"
+#include "speechtotext_private_export.h"
 #include <QDialog>
 namespace TextSpeechToText
 {
