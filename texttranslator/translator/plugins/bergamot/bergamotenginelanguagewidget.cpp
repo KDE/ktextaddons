@@ -60,9 +60,9 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &BergamotEngineLanguageWidget::slotError);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::progress, this, &BergamotEngineLanguageWidget::slotProgressInfo);
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, [this]() {
-        mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
-    });
+    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
+    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &BergamotEngineLanguageWidget::updateListModel);
+
     // TODO store list on local.
     if (ManagerModelTranslator::self()->needDownloadModelList()) {
         ManagerModelTranslator::self()->downloadListModels();
