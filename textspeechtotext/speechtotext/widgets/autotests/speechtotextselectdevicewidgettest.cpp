@@ -19,3 +19,5 @@ void SpeechToTextSelectDeviceWidgetTest::shouldHaveDefaultValues()
     TextSpeechToText::SpeechToTextSelectDeviceWidget w;
     // TODO
 }
+
+#include "moc_speechtotextselectdevicewidgettest.cpp"

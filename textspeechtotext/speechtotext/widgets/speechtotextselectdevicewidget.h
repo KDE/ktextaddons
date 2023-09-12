@@ -7,6 +7,7 @@
 
 #include "speechtotext_private_export.h"
 #include <QWidget>
+class QComboBox;
 namespace TextSpeechToText
 {
 class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextSelectDeviceWidget : public QWidget
@@ -15,5 +16,8 @@ class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextSelectDeviceWidget : public QWid
 public:
     explicit SpeechToTextSelectDeviceWidget(QWidget *parent = nullptr);
     ~SpeechToTextSelectDeviceWidget() override;
+
+private:
+    QComboBox *const mDeviceComboBox;
 };
 }
