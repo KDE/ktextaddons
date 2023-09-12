@@ -29,6 +29,7 @@ SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
 
     mDeviceComboBox->setObjectName(QStringLiteral("mDeviceComboBox"));
     mainLayout->addWidget(mDeviceComboBox);
+    initializeInput();
 }
 
 SpeechToTextSelectDeviceWidget::~SpeechToTextSelectDeviceWidget() = default;
@@ -36,13 +37,26 @@ SpeechToTextSelectDeviceWidget::~SpeechToTextSelectDeviceWidget() = default;
 void SpeechToTextSelectDeviceWidget::loadSettings()
 {
     KConfigGroup group(KSharedConfig::openConfig(), mySoundGroupName);
-    // TODO
+    const QByteArray deviceIdentifier = group.readEntry("SoundDevice", QByteArray());
+    if (!deviceIdentifier.isEmpty()) {
+        for (int i = 0; i < mDeviceComboBox->count(); ++i) {
+            const QAudioDevice audioDevice = mDeviceComboBox->itemData(i).value<QAudioDevice>();
+            if (audioDevice.id() == deviceIdentifier) {
+                mDeviceComboBox->setCurrentIndex(i);
+                break;
+            }
+        }
+    }
 }
 
 void SpeechToTextSelectDeviceWidget::saveSettings()
 {
     KConfigGroup group(KSharedConfig::openConfig(), mySoundGroupName);
-    // TODO
+    const auto device = mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).value<QAudioDevice>();
+    if (!device.isNull()) {
+        const QByteArray deviceIdentifier = device.id();
+        group.writeEntry("SoundDevice", deviceIdentifier);
+    }
 }
 
 void SpeechToTextSelectDeviceWidget::initializeInput()
