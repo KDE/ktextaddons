@@ -6,11 +6,11 @@
 
 #include "speechtotextcombobox.h"
 using namespace TextSpeechToText;
-SpeechToTextCombobox::SpeechToTextCombobox(QWidget *parent)
+SpeechToTextComboBox::SpeechToTextComboBox(QWidget *parent)
     : QComboBox(parent)
 {
 }
 
-SpeechToTextCombobox::~SpeechToTextCombobox() = default;
+SpeechToTextComboBox::~SpeechToTextComboBox() = default;
 
 #include "moc_speechtotextcombobox.cpp"
