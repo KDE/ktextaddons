@@ -13,6 +13,7 @@
 
 #include <QComboBox>
 #include <QHBoxLayout>
+#include <QLabel>
 
 using namespace TextSpeechToText;
 namespace
@@ -26,6 +27,10 @@ SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
+
+    auto label = new QLabel(i18n("Input:"), this);
+    label->setObjectName(QStringLiteral("label"));
+    mainLayout->addWidget(label);
 
     mDeviceComboBox->setObjectName(QStringLiteral("mDeviceComboBox"));
     mainLayout->addWidget(mDeviceComboBox);
