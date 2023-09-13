@@ -54,6 +54,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
 
     speechtotext/widgets/speechtotextselectdevicewidget.h
     speechtotext/widgets/speechtotextselectdevicewidget.cpp
+
+    speechtotext/widgets/speechtotexttoolbuttonwidget.h
+    speechtotext/widgets/speechtotexttoolbuttonwidget.cpp
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
