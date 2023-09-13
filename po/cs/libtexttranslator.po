@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-08 00:44+0000\n"
+"POT-Creation-Date: 2023-09-13 00:44+0000\n"
 "PO-Revision-Date: 2023-08-10 15:43+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Nastavení modulu Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -360,7 +360,7 @@ msgstr ""
 msgid "Update list of languages from network"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -406,7 +406,7 @@ msgid "Cannot open file for downloading."
 msgstr "Nelze otevřít soubor ke stažení."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:48
+#: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -416,17 +416,17 @@ msgid ""
 msgstr ""
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
-#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Kontrolní součet není správný."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Chyba při zápisu na disk: %1"

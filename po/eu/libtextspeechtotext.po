@@ -1,21 +1,24 @@
-# Copyright (C) YEAR This file is copyright:
+# Translation for libtextspeechtotext.po to Euskara/Basque (eu).
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# Translators:
+# SPDX-FileCopyrightText: 2023 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-13 00:44+0000\n"
-"PO-Revision-Date: 2023-09-09 13:03+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2023-09-12 07:29+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:23
 #, kde-format
@@ -31,7 +34,7 @@ msgstr "Whisper"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr "Çevirmeni Yapılandır"
+msgstr "Konfiguratu itzultzailea"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:65
 #, kde-format
