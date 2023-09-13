@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 add_library(speechtotext_google MODULE)
 
-ecm_qt_declare_logging_category(speechtotext_debug_google_SRCS
+ecm_qt_declare_logging_category(speechtotext_google
     HEADER speechtotext_google_debug.h
     IDENTIFIER SPEECHTOTEXT_GOOGLE_LOG
     CATEGORY_NAME org.kde.kf.speechtotext.google
@@ -10,7 +10,6 @@ ecm_qt_declare_logging_category(speechtotext_debug_google_SRCS
     EXPORT KTEXTADDONS
 )
 target_sources(speechtotext_google PRIVATE
-    ${speechtotext_debug_google_SRCS}
     googlespeechtotextclient.h
     googlespeechtotextclient.cpp
 

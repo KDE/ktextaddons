@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 add_library(speechtotext_whisper MODULE)
 
-ecm_qt_declare_logging_category(speechtotext_debug_whisper_SRCS
+ecm_qt_declare_logging_category(speechtotext_whisper
     HEADER speechtotext_whisper_debug.h
     IDENTIFIER SPEECHTOTEXT_WHISPER_LOG
     CATEGORY_NAME org.kde.kf.speechtotext.whisper
@@ -10,7 +10,6 @@ ecm_qt_declare_logging_category(speechtotext_debug_whisper_SRCS
     EXPORT KTEXTADDONS
 )
 target_sources(speechtotext_whisper PRIVATE
-    ${speechtotext_debug_whisper_SRCS}
     whisperspeechtotextclient.h
     whisperspeechtotextclient.cpp
 
