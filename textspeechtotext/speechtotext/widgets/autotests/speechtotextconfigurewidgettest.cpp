@@ -6,6 +6,7 @@
 #include "speechtotextconfigurewidgettest.h"
 #include "speechtotext/widgets/speechtotextcombobox.h"
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
+#include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(SpeechToTextConfigureWidgetTest)
@@ -24,6 +25,9 @@ void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
 
     auto mSpeechToTextComboBox = w.findChild<TextSpeechToText::SpeechToTextComboBox *>(QStringLiteral("mSpeechToTextComboBox"));
     QVERIFY(mSpeechToTextComboBox);
+
+    auto mSpeechToTextDevice = w.findChild<TextSpeechToText::SpeechToTextSelectDeviceWidget *>(QStringLiteral("mSpeechToTextDevice"));
+    QVERIFY(mSpeechToTextDevice);
 }
 
 #include "moc_speechtotextconfigurewidgettest.cpp"

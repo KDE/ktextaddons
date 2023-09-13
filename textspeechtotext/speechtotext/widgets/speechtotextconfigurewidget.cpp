@@ -6,6 +6,7 @@
 
 #include "speechtotextconfigurewidget.h"
 #include "speechtotextcombobox.h"
+#include "speechtotextselectdevicewidget.h"
 #include <KLocalizedString>
 #include <QVBoxLayout>
 
@@ -14,25 +15,30 @@ using namespace TextSpeechToText;
 SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mSpeechToTextComboBox(new SpeechToTextComboBox(this))
+    , mSpeechToTextDevice(new SpeechToTextSelectDeviceWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
+    mSpeechToTextDevice->setObjectName(QStringLiteral("mSpeechToTextDevice"));
+    mainLayout->addWidget(mSpeechToTextDevice);
+
     mSpeechToTextComboBox->setObjectName(QStringLiteral("mSpeechToTextComboBox"));
     mainLayout->addWidget(mSpeechToTextComboBox);
+    mSpeechToTextComboBox->fillEngine();
 }
 
 SpeechToTextConfigureWidget::~SpeechToTextConfigureWidget() = default;
 
 void SpeechToTextConfigureWidget::loadSettings()
 {
-    // TODO
+    // TODO load engine
 }
 
 void SpeechToTextConfigureWidget::saveSettings()
 {
-    // TODO
+    // TODO save engine
 }
 
 #include "moc_speechtotextconfigurewidget.cpp"
