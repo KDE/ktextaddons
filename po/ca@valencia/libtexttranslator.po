@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-08 02:24+0000\n"
+"POT-Creation-Date: 2023-09-13 02:34+0000\n"
 "PO-Revision-Date: 2023-09-06 10:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -331,7 +331,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Configureu el connector Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -362,7 +362,7 @@ msgstr "Actualitza la llista"
 msgid "Update list of languages from network"
 msgstr "Actualitza la llista d'idiomes des de la xarxa"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
@@ -408,7 +408,7 @@ msgid "Cannot open file for downloading."
 msgstr "No s'ha pogut obrir el fitxer per a la baixada."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:48
+#: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -420,17 +420,17 @@ msgstr ""
 "des de la xarxa d'este ordinador. Torneu-ho a provar més tard."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
-#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "És impossible accedir a l'URL: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "La suma de verificació no és correcta."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Error durant l'escriptura en el disc: %1"

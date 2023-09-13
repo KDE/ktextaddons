@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-08 02:24+0000\n"
+"POT-Creation-Date: 2023-09-13 02:34+0000\n"
 "PO-Revision-Date: 2023-08-14 21:57+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -331,7 +331,7 @@ msgid "Bergamot Plugin Settings"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
 msgstr ""
@@ -362,7 +362,7 @@ msgstr ""
 msgid "Update list of languages from network"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Error: %1"
 msgstr "Fehler: %1"
@@ -409,7 +409,7 @@ msgid "Cannot open file for downloading."
 msgstr ""
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:48
+#: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -422,17 +422,17 @@ msgstr ""
 "erneut."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
-#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr ""
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-08 02:24+0000\n"
+"POT-Creation-Date: 2023-09-13 02:34+0000\n"
 "PO-Revision-Date: 2023-09-07 11:29+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -331,7 +331,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Preferencias del complemento Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -362,7 +362,7 @@ msgstr "Actualizar lista"
 msgid "Update list of languages from network"
 msgstr "Actualizar la lista de idiomas de la red"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
@@ -408,7 +408,7 @@ msgid "Cannot open file for downloading."
 msgstr "No se puede abrir el archivo para la descarga."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:48
+#: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -420,17 +420,17 @@ msgstr ""
 "red de equipos. Vuelva a realizar su petición más tarde."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
-#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "No se puede acceder a la URL: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "La suma de verificación no es correcta."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Ha ocurrido un error al escribir en disco: %1"

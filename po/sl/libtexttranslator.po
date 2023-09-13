@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-08 02:24+0000\n"
+"POT-Creation-Date: 2023-09-13 02:34+0000\n"
 "PO-Revision-Date: 2023-09-06 07:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -330,7 +330,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Nastavitve vtičnika Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -361,7 +361,7 @@ msgstr "Posodobi seznam"
 msgid "Update list of languages from network"
 msgstr "Posodobi seznam jezikov iz omrežja"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:181
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"
@@ -407,7 +407,7 @@ msgid "Cannot open file for downloading."
 msgstr "Ni mogoče odpreti datoteke za prenos."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:48
+#: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:54
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -419,17 +419,17 @@ msgstr ""
 "omrežja. Poskusite svojo zahtevo kasneje."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
-#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ni mogoče dostopati do url: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:64
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:74
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Napaka med pisanjem na disk: %1"
