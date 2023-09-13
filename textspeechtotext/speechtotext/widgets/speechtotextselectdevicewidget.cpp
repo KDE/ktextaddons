@@ -17,7 +17,7 @@
 using namespace TextSpeechToText;
 namespace
 {
-const char mySoundGroupName[] = "Message Sound";
+const char mySoundGroupName[] = "Speech To Text";
 }
 SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
     : QWidget{parent}
