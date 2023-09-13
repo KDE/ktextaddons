@@ -108,4 +108,15 @@ bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QW
     return (*clientsItr)->showConfigureDialog(parentWidget);
 }
 
+QMap<QString, QString> SpeechToTextEngineLoader::speechToTextEngineInfos() const
+{
+    QMap<QString, QString> map;
+    QHashIterator<QString, SpeechToTextClient *> i(d->speechToTextClients);
+    while (i.hasNext()) {
+        i.next();
+        map.insert(i.key(), i.value()->translatedName());
+    }
+    return map;
+}
+
 #include "moc_speechtotextengineloader.cpp"

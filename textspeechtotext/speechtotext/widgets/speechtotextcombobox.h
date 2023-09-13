@@ -15,5 +15,6 @@ class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBox : public QComboBox
 public:
     explicit SpeechToTextComboBox(QWidget *parent);
     ~SpeechToTextComboBox() override;
+    void fillEngine();
 };
 }

@@ -32,6 +32,8 @@ public:
 
     Q_REQUIRED_RESULT bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
+    Q_REQUIRED_RESULT QMap<QString, QString> speechToTextEngineInfos() const;
+
 Q_SIGNALS:
     void loadingTranslatorFailed();
 
