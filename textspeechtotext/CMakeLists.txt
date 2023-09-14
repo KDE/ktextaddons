@@ -57,6 +57,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
 
     speechtotext/widgets/speechtotexttoolbuttonwidget.h
     speechtotext/widgets/speechtotexttoolbuttonwidget.cpp
+
+    speechtotext/widgets/speechtotextaction.h
+    speechtotext/widgets/speechtotextaction.cpp
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -101,6 +104,15 @@ ecm_generate_headers(TextSpeechToText_Camelcasespeechtotext_HEADERS
     RELATIVE speechtotext
 )
 
+ecm_generate_headers(TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS
+    HEADER_NAMES
+    SpeechToTextAction
+    SpeechToTextToolButtonWidget
+    REQUIRED_HEADERS TextSpeechToTextWidget_speechtotext_HEADERS
+    PREFIX TextSpeechToText
+    RELATIVE speechtotext/widgets
+)
+
 ecm_generate_pri_file(BASE_NAME TextSpeechToText
     LIB_NAME KF${KF_MAJOR_VERSION}TextSpeechToText
     DEPS "network" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText
@@ -113,6 +125,7 @@ install(FILES
 
 install(FILES
     ${TextSpeechToText_Camelcasespeechtotext_HEADERS}
+    ${TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/TextSpeechToText
     COMPONENT Devel
     )
@@ -120,6 +133,7 @@ install(FILES
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_export.h
     ${TextSpeechToText_speechtotext_HEADERS}
+    ${TextSpeechToTextWidget_speechtotext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/textspeechtotext
     COMPONENT Devel
     )
@@ -138,6 +152,7 @@ if (BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextSpeechToText_speechtotext_HEADERS}
+        ${TextSpeechToTextWidget_speechtotext_HEADERS}
         LINK_QCHS
             Qt${QT_MAJOR_VERSION}Core_QCH
             Qt${QT_MAJOR_VERSION}Gui_QCH
