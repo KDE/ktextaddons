@@ -5,11 +5,11 @@
 */
 
 #pragma once
+#include "textspeechtotext_export.h"
 #include <QWidget>
-
 namespace TextSpeechToText
 {
-class SpeechToTextToolButtonWidget : public QWidget
+class TEXTSPEECHTOTEXT_EXPORT SpeechToTextToolButtonWidget : public QWidget
 {
     Q_OBJECT
 public:
