@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextconfigurewidgettest.h"
-#include "speechtotext/widgets/speechtotextcombobox.h"
+#include "speechtotext/widgets/speechtotextcomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include <QTest>
@@ -23,7 +23,7 @@ void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mSpeechToTextComboBox = w.findChild<TextSpeechToText::SpeechToTextComboBox *>(QStringLiteral("mSpeechToTextComboBox"));
+    auto mSpeechToTextComboBox = w.findChild<TextSpeechToText::SpeechToTextComboBoxWidget *>(QStringLiteral("mSpeechToTextComboBox"));
     QVERIFY(mSpeechToTextComboBox);
 
     auto mSpeechToTextDevice = w.findChild<TextSpeechToText::SpeechToTextSelectDeviceWidget *>(QStringLiteral("mSpeechToTextDevice"));

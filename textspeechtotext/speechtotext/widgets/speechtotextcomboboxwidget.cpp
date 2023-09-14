@@ -4,17 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "speechtotextcombobox.h"
+#include "speechtotextcomboboxwidget.h"
 #include <TextSpeechToText/SpeechToTextEngineLoader>
 using namespace TextSpeechToText;
-SpeechToTextComboBox::SpeechToTextComboBox(QWidget *parent)
+SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
     : QComboBox(parent)
 {
 }
 
-SpeechToTextComboBox::~SpeechToTextComboBox() = default;
+SpeechToTextComboBoxWidget::~SpeechToTextComboBoxWidget() = default;
 
-void SpeechToTextComboBox::fillEngine()
+void SpeechToTextComboBoxWidget::fillEngine()
 {
     const QMap<QString, QString> map = TextSpeechToText::SpeechToTextEngineLoader::self()->speechToTextEngineInfos();
     QMapIterator<QString, QString> iMap(map);
@@ -24,4 +24,4 @@ void SpeechToTextComboBox::fillEngine()
     }
 }
 
-#include "moc_speechtotextcombobox.cpp"
+#include "moc_speechtotextcomboboxwidget.cpp"

@@ -9,12 +9,12 @@
 #include <QComboBox>
 namespace TextSpeechToText
 {
-class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBox : public QComboBox
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBoxWidget : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit SpeechToTextComboBox(QWidget *parent);
-    ~SpeechToTextComboBox() override;
+    explicit SpeechToTextComboBoxWidget(QWidget *parent);
+    ~SpeechToTextComboBoxWidget() override;
     void fillEngine();
 };
 }

@@ -49,8 +49,8 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
     speechtotext/widgets/speechtotextconfiguredialog.h
     speechtotext/widgets/speechtotextconfiguredialog.cpp
 
-    speechtotext/widgets/speechtotextcombobox.h
-    speechtotext/widgets/speechtotextcombobox.cpp
+    speechtotext/widgets/speechtotextcomboboxwidget.h
+    speechtotext/widgets/speechtotextcomboboxwidget.cpp
 
     speechtotext/widgets/speechtotextselectdevicewidget.h
     speechtotext/widgets/speechtotextselectdevicewidget.cpp
