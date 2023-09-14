@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:44+0000\n"
+"POT-Creation-Date: 2023-09-14 00:43+0000\n"
 "PO-Revision-Date: 2023-09-09 10:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -35,7 +35,12 @@ msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configureu el traductor"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:65
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
+#, kde-format
+msgid "Input:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format
 msgid "Default"
 msgstr ""
