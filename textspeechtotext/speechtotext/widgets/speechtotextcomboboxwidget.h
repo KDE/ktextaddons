@@ -6,15 +6,19 @@
 
 #pragma once
 #include "speechtotext_private_export.h"
-#include <QComboBox>
+#include <QWidget>
+class QComboBox;
 namespace TextSpeechToText
 {
-class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBoxWidget : public QComboBox
+class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBoxWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit SpeechToTextComboBoxWidget(QWidget *parent);
     ~SpeechToTextComboBoxWidget() override;
     void fillEngine();
+
+private:
+    QComboBox *const mEngine;
 };
 }

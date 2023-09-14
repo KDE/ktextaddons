@@ -5,10 +5,12 @@
 */
 
 #include "speechtotextcomboboxwidget.h"
+#include <QComboBox>
 #include <TextSpeechToText/SpeechToTextEngineLoader>
 using namespace TextSpeechToText;
 SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
-    : QComboBox(parent)
+    : QWidget(parent)
+    , mEngine(new QComboBox(this))
 {
 }
 
@@ -20,7 +22,7 @@ void SpeechToTextComboBoxWidget::fillEngine()
     QMapIterator<QString, QString> iMap(map);
     while (iMap.hasNext()) {
         iMap.next();
-        addItem(iMap.value(), iMap.key());
+        mEngine->addItem(iMap.value(), iMap.key());
     }
 }
 
