@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:43+0000\n"
-"PO-Revision-Date: 2023-09-13 09:29+0200\n"
+"POT-Creation-Date: 2023-09-15 00:44+0000\n"
+"PO-Revision-Date: 2023-09-14 10:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -27,6 +27,11 @@ msgstr "Google"
 msgid "Whisper"
 msgstr "Whisper"
 
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
+#, kde-format
+msgid "Engine:"
+msgstr ""
+
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
@@ -36,7 +41,7 @@ msgstr "Vertaler configureren"
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
 msgid "Input:"
-msgstr ""
+msgstr "Invoer:"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format
