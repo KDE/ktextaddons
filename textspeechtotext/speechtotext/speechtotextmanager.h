@@ -8,6 +8,10 @@
 #include <QObject>
 namespace TextSpeechToText
 {
+/**
+ * @brief The SpeechToTextManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextManager : public QObject
 {
     Q_OBJECT

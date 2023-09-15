@@ -14,4 +14,6 @@ class WhisperSpeechToTextPlugin : public TextSpeechToText::SpeechToTextPlugin
 public:
     explicit WhisperSpeechToTextPlugin(QObject *parent = nullptr);
     ~WhisperSpeechToTextPlugin() override;
+
+    void speechToText() override;
 };

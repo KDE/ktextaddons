@@ -13,4 +13,9 @@ WhisperSpeechToTextPlugin::WhisperSpeechToTextPlugin(QObject *parent)
 
 WhisperSpeechToTextPlugin::~WhisperSpeechToTextPlugin() = default;
 
+void WhisperSpeechToTextPlugin::speechToText()
+{
+    // TODO
+}
+
 #include "moc_whisperspeechtotextplugin.cpp"

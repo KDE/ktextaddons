@@ -14,4 +14,6 @@ class GoogleSpeechToTextPlugin : public TextSpeechToText::SpeechToTextPlugin
 public:
     explicit GoogleSpeechToTextPlugin(QObject *parent = nullptr);
     ~GoogleSpeechToTextPlugin() override;
+
+    void speechToText() override;
 };

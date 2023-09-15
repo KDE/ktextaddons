@@ -24,6 +24,8 @@ public:
 
     Q_REQUIRED_RESULT QString result() const;
 
+    virtual void speechToText() = 0;
+
 Q_SIGNALS:
     void speechToTextDone();
 
