@@ -187,5 +187,7 @@ configure_package_config_file(
     )
 
 add_subdirectory(speechtotext/plugins)
-add_subdirectory(speechtotext/widgets/autotests)
-add_subdirectory(speechtotext/widgets/tests)
+if(BUILD_TESTING)
+    add_subdirectory(speechtotext/widgets/autotests)
+    add_subdirectory(speechtotext/widgets/tests)
+endif()
