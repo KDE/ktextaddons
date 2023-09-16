@@ -31,6 +31,7 @@ Q_SIGNALS:
     void textToSpeechDone(const QString &result);
 
 private:
-    TextSpeechToText::SpeechToTextPlugin *mSpeechToTextPlugin = nullptr;
+    class SpeechToTextPluginPrivate;
+    std::unique_ptr<SpeechToTextPluginPrivate> const d;
 };
 }
