@@ -27,6 +27,9 @@ public:
 
     void switchEngine(const QString &engineName);
 
+Q_SIGNALS:
+    void textToSpeechDone(const QString &result);
+
 private:
     TextSpeechToText::SpeechToTextPlugin *mSpeechToTextPlugin = nullptr;
 };
