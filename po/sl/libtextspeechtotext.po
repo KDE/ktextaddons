@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:44+0000\n"
-"PO-Revision-Date: 2023-09-13 07:53+0200\n"
+"PO-Revision-Date: 2023-09-15 09:07+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -31,7 +31,7 @@ msgstr "Šepetaj"
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "Stroj:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
@@ -42,7 +42,7 @@ msgstr "Konfiguriraj prevajalnik"
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
 msgid "Input:"
-msgstr ""
+msgstr "Vhod:"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format

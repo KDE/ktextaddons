@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:44+0000\n"
-"PO-Revision-Date: 2023-09-14 09:20+0300\n"
+"PO-Revision-Date: 2023-09-15 15:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -31,7 +31,7 @@ msgstr "Whisper"
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "Рушій:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
