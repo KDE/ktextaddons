@@ -8,6 +8,7 @@
 #include <QObject>
 namespace TextSpeechToText
 {
+class SpeechToTextPlugin;
 /**
  * @brief The SpeechToTextManager class
  * @author Laurent Montel <montel@kde.org>
@@ -23,5 +24,10 @@ public:
     };
     explicit SpeechToTextManager(QObject *parent = nullptr);
     ~SpeechToTextManager() override;
+
+    void switchEngine(const QString &engineName);
+
+private:
+    TextSpeechToText::SpeechToTextPlugin *mSpeechToTextPlugin = nullptr;
 };
 }
