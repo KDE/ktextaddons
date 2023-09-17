@@ -119,4 +119,13 @@ QMap<QString, QString> SpeechToTextEngineLoader::speechToTextEngineInfos() const
     return map;
 }
 
+QString SpeechToTextEngineLoader::fallbackFirstEngine() const
+{
+    if (!d->speechToTextClients.isEmpty()) {
+        return *d->speechToTextClients.keyBegin();
+    }
+    qCWarning(TEXTSPEECHTOTEXT_LOG) << "No plugin found ! ";
+    return QString();
+}
+
 #include "moc_speechtotextengineloader.cpp"

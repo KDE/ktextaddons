@@ -34,6 +34,8 @@ public:
 
     Q_REQUIRED_RESULT QMap<QString, QString> speechToTextEngineInfos() const;
 
+    Q_REQUIRED_RESULT QString fallbackFirstEngine() const;
+
 Q_SIGNALS:
     void loadingTranslatorFailed();
 

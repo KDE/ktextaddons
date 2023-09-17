@@ -13,6 +13,7 @@ using namespace TextSpeechToText;
 class SpeechToTextManager::SpeechToTextPluginPrivate
 {
 public:
+    QString mEngineName;
     TextSpeechToText::SpeechToTextPlugin *mSpeechToTextPlugin = nullptr;
     TextSpeechToText::SpeechToTextClient *mSpeechToTextClient = nullptr;
 };
@@ -27,14 +28,15 @@ SpeechToTextManager::~SpeechToTextManager() = default;
 
 void SpeechToTextManager::switchEngine(const QString &engineName)
 {
+    d->mEngineName = engineName;
     if (d->mSpeechToTextPlugin) {
         disconnect(d->mSpeechToTextPlugin);
         delete d->mSpeechToTextPlugin;
         d->mSpeechToTextPlugin = nullptr;
     }
-    d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(engineName);
+    d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(d->mEngineName);
     if (!d->mSpeechToTextClient) {
-        const QString fallBackEngineName; // TODO = TextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine();
+        const QString fallBackEngineName = TextSpeechToText::SpeechToTextEngineLoader::self()->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
             d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(fallBackEngineName);
         }
