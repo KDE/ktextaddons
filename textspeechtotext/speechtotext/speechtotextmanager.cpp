@@ -4,14 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextmanager.h"
+#include "speechtotextclient.h"
 #include "speechtotextengineloader.h"
 #include "speechtotextplugin.h"
+
 using namespace TextSpeechToText;
 
 class SpeechToTextManager::SpeechToTextPluginPrivate
 {
 public:
     TextSpeechToText::SpeechToTextPlugin *mSpeechToTextPlugin = nullptr;
+    TextSpeechToText::SpeechToTextClient *mSpeechToTextClient = nullptr;
 };
 
 SpeechToTextManager::SpeechToTextManager(QObject *parent)
@@ -29,6 +32,19 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
         delete d->mSpeechToTextPlugin;
         d->mSpeechToTextPlugin = nullptr;
     }
+    d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(engineName);
+    if (!d->mSpeechToTextClient) {
+        const QString fallBackEngineName; // TODO = TextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine();
+        if (!fallBackEngineName.isEmpty()) {
+            d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(fallBackEngineName);
+        }
+    }
+    if (d->mSpeechToTextClient) {
+        d->mSpeechToTextPlugin = d->mSpeechToTextClient->createTextToSpeech();
+        // TODO
+        // connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
+    }
+
     // TODO
 }
 

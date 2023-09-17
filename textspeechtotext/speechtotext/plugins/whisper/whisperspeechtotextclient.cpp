@@ -28,4 +28,10 @@ TextSpeechToText::SpeechToTextClient::EngineType WhisperSpeechToTextClient::engi
     return TextSpeechToText::SpeechToTextClient::Locale;
 }
 
+TextSpeechToText::SpeechToTextPlugin *WhisperSpeechToTextClient::createTextToSpeech()
+{
+    // TODO
+    return {};
+}
+
 #include "moc_whisperspeechtotextclient.cpp"

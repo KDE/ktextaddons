@@ -26,7 +26,7 @@ public:
     explicit SpeechToTextEngineLoader(QObject *parent = nullptr);
     ~SpeechToTextEngineLoader() override;
 
-    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient *createTranslatorClient(const QString &clientName);
+    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient *createSpeechToTextClient(const QString &clientName);
 
     Q_REQUIRED_RESULT bool hasConfigurationDialog(const QString &clientName) const;
 

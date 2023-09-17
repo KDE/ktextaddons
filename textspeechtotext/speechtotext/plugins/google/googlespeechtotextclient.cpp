@@ -28,4 +28,10 @@ TextSpeechToText::SpeechToTextClient::EngineType GoogleSpeechToTextClient::engin
     return TextSpeechToText::SpeechToTextClient::Network;
 }
 
+TextSpeechToText::SpeechToTextPlugin *GoogleSpeechToTextClient::createTextToSpeech()
+{
+    // TODO
+    return {};
+}
+
 #include "moc_googlespeechtotextclient.cpp"

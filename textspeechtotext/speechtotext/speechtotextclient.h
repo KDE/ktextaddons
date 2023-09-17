@@ -9,6 +9,7 @@
 #include <QObject>
 namespace TextSpeechToText
 {
+class SpeechToTextPlugin;
 /**
  * @brief The SpeechToTextClient class
  * @author Laurent Montel <montel@kde.org>
@@ -30,6 +31,8 @@ public:
     virtual QString name() const = 0;
 
     virtual QString translatedName() const = 0;
+
+    virtual SpeechToTextPlugin *createTextToSpeech() = 0;
 
     Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
 

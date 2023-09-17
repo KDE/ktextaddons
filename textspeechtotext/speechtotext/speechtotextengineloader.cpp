@@ -77,7 +77,7 @@ void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
     d->speechToTextClients.insert(client->name(), client);
 }
 
-SpeechToTextClient *SpeechToTextEngineLoader::createTranslatorClient(const QString &clientName)
+SpeechToTextClient *SpeechToTextEngineLoader::createSpeechToTextClient(const QString &clientName)
 {
     auto clientsItr = d->speechToTextClients.constFind(clientName);
     if (clientsItr == d->speechToTextClients.constEnd()) {

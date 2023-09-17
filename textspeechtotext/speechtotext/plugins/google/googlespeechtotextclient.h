@@ -21,4 +21,6 @@ public:
     Q_REQUIRED_RESULT QString translatedName() const override;
 
     Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
+
+    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextPlugin *createTextToSpeech() override;
 };
