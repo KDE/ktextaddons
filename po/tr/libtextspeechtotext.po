@@ -30,7 +30,7 @@ msgstr "Whisper"
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "İşletke:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
