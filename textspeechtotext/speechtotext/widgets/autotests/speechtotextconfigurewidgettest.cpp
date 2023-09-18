@@ -7,12 +7,14 @@
 #include "speechtotext/widgets/speechtotextcomboboxwidget.h"
 #include "speechtotext/widgets/speechtotextconfigurewidget.h"
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(SpeechToTextConfigureWidgetTest)
 SpeechToTextConfigureWidgetTest::SpeechToTextConfigureWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void SpeechToTextConfigureWidgetTest::shouldHaveDefaultValues()

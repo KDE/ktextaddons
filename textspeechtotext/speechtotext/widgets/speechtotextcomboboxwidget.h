@@ -18,6 +18,9 @@ public:
     ~SpeechToTextComboBoxWidget() override;
     void fillEngine();
 
+    Q_REQUIRED_RESULT QString engineName() const;
+    void setEngineName(const QString &engineName);
+
 private:
     QComboBox *const mEngine;
 };

@@ -39,4 +39,15 @@ void SpeechToTextComboBoxWidget::fillEngine()
     }
 }
 
+QString SpeechToTextComboBoxWidget::engineName() const
+{
+    // TODO
+    return {};
+}
+
+void SpeechToTextComboBoxWidget::setEngineName(const QString &engineName)
+{
+    // TODO
+}
+
 #include "moc_speechtotextcomboboxwidget.cpp"
