@@ -219,7 +219,10 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
 
 void TextToSpeechConfigWidget::slotEngineChanged()
 {
-    mAbstractTextToSpeechConfigInterface->setEngine(mAvailableEngine->currentData().toString());
+    const QString newEngineName = mAvailableEngine->currentData().toString();
+    qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << "newEngineName " << newEngineName;
+    mAbstractTextToSpeechConfigInterface->setEngine(newEngineName);
+    updateAvailableLocales();
 }
 
 void TextToSpeechConfigWidget::slotLanguageChanged()
