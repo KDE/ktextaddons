@@ -14,46 +14,41 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
 add_library(KF${KF_MAJOR_VERSION}TextEditTextToSpeech)
 add_library(KF${KF_MAJOR_VERSION}::TextEditTextToSpeech ALIAS KF${KF_MAJOR_VERSION}TextEditTextToSpeech)
 
-if (TEXTEDIT_TEXT_TO_SPEECH)
-    target_sources(KF${KF_MAJOR_VERSION}TextEditTextToSpeech PRIVATE
-        texttospeech.cpp
-        texttospeechwidget.cpp
-        texttospeechconfigwidget.cpp
-        texttospeechinterface.cpp
-        abstracttexttospeechinterface.cpp
-        abstracttexttospeechconfiginterface.cpp
-        texttospeechconfiginterface.cpp
-        texttospeechconfigdialog.cpp
-        texttospeechlanguagecombobox.cpp
-        texttospeechactions.cpp
-        texttospeech.h
-        texttospeechwidget.h
-        texttospeechconfigwidget.h
-        texttospeechinterface.h
-        abstracttexttospeechinterface.h
-        abstracttexttospeechconfiginterface.h
-        texttospeechconfiginterface.h
-        texttospeechconfigdialog.h
-        texttospeechlanguagecombobox.h
-        texttospeechactions.h
-        texttospeechsliderwidget.h
-        texttospeechsliderwidget.cpp
-        texttospeechutil.h
-        texttospeechutil.cpp
-        texttospeechcontainerwidget.h
-        texttospeechcontainerwidget.cpp
-    )
-endif()
+target_sources(KF${KF_MAJOR_VERSION}TextEditTextToSpeech PRIVATE
+    texttospeech.cpp
+    texttospeechwidget.cpp
+    texttospeechconfigwidget.cpp
+    texttospeechinterface.cpp
+    texttospeechconfiginterface.cpp
+    texttospeechconfigdialog.cpp
+    texttospeechlanguagecombobox.cpp
+    texttospeechactions.cpp
+    texttospeech.h
+    texttospeechwidget.h
+    texttospeechconfigwidget.h
+    texttospeechinterface.h
+    texttospeechconfiginterface.h
+    texttospeechconfigdialog.h
+    texttospeechlanguagecombobox.h
+    texttospeechactions.h
+    texttospeechsliderwidget.h
+    texttospeechsliderwidget.cpp
+    texttospeechutil.h
+    texttospeechutil.cpp
+    texttospeechcontainerwidget.h
+    texttospeechcontainerwidget.cpp
 
-if (TEXTEDIT_TEXT_TO_SPEECH)
-    target_link_libraries(KF${KF_MAJOR_VERSION}TextEditTextToSpeech
-        PRIVATE
-        KF${KF_MAJOR_VERSION}::WidgetsAddons
-        KF${KF_MAJOR_VERSION}::XmlGui
-        KF${KF_MAJOR_VERSION}::I18n
-        Qt::TextToSpeech
-        )
-endif()
+    texttospeechvoicecombobox.h
+    texttospeechvoicecombobox.cpp
+)
+
+target_link_libraries(KF${KF_MAJOR_VERSION}TextEditTextToSpeech
+    PRIVATE
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::I18n
+    Qt::TextToSpeech
+)
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEditTextToSpeech HEADER textedittexttospeech_debug.h
     IDENTIFIER TEXTEDITTEXTTOSPEECH_LOG
@@ -82,43 +77,34 @@ set_target_properties(KF${KF_MAJOR_VERSION}TextEditTextToSpeech PROPERTIES
 
 install(TARGETS KF${KF_MAJOR_VERSION}TextEditTextToSpeech EXPORT KF${KF_MAJOR_VERSION}TextEditTextToSpeechTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-if (TEXTEDIT_TEXT_TO_SPEECH)
-    if(BUILD_TESTING)
-        add_subdirectory(autotests)
-        add_subdirectory(tests)
-    endif()
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+    add_subdirectory(tests)
 endif()
 
-if (TEXTEDIT_TEXT_TO_SPEECH)
-    ecm_generate_headers(TextEdit_CamelCasetexttospeechs_HEADERS
-        HEADER_NAMES
-        TextToSpeech
-        TextToSpeechActions
-        TextToSpeechInterface
-        TextToSpeechWidget
-        TextToSpeechConfigWidget
-        TextToSpeechConfigDialog
-        AbstractTextToSpeechInterface
-        AbstractTextToSpeechConfigInterface
-        TextToSpeechContainerWidget
-        REQUIRED_HEADERS TextEdit_texttospeechs_HEADERS
-        PREFIX TextEditTextToSpeech
-    )
-endif()
+ecm_generate_headers(TextEdit_CamelCasetexttospeechs_HEADERS
+    HEADER_NAMES
+    TextToSpeech
+    TextToSpeechActions
+    TextToSpeechInterface
+    TextToSpeechWidget
+    TextToSpeechConfigWidget
+    TextToSpeechConfigDialog
+    REQUIRED_HEADERS TextEdit_texttospeechs_HEADERS
+    PREFIX TextEditTextToSpeech
+)
 
-if (TEXTEDIT_TEXT_TO_SPEECH)
-    install(FILES
-        ${TextEdit_texttospeechs_HEADERS}
-        ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
-        COMPONENT Devel
-        )
-    install(FILES
-        ${TextEdit_CamelCasetexttospeechs_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
-        COMPONENT Devel
-        )
-endif()
+install(FILES
+    ${TextEdit_texttospeechs_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
+    COMPONENT Devel
+)
+install(FILES
+    ${TextEdit_CamelCasetexttospeechs_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
+    COMPONENT Devel
+)
 if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF${KF_MAJOR_VERSION}TextEditTextToSpeech_QCH

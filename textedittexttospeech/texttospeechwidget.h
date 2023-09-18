@@ -11,7 +11,7 @@
 #include <QWidget>
 namespace TextEditTextToSpeech
 {
-class AbstractTextToSpeechInterface;
+class TextToSpeechInterface;
 class TextToSpeechWidgetPrivate;
 /**
  * @brief The TextToSpeechWidget class
@@ -34,7 +34,7 @@ public:
     Q_REQUIRED_RESULT State state() const;
     void setState(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
-    void setTextToSpeechInterface(AbstractTextToSpeechInterface *interface);
+    void setTextToSpeechInterface(TextToSpeechInterface *interface);
 
     Q_REQUIRED_RESULT bool isReady() const;
 

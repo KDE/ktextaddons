@@ -6,7 +6,8 @@
 
 #pragma once
 #include "textedittexttospeech_export.h"
-#include <TextEditTextToSpeech/AbstractTextToSpeechConfigInterface>
+#include <QObject>
+#include <QVoice>
 
 class QTextToSpeech;
 namespace TextEditTextToSpeech
@@ -15,20 +16,28 @@ namespace TextEditTextToSpeech
  * @brief The TextToSpeechConfigInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public AbstractTextToSpeechConfigInterface
+class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public QObject
 {
     Q_OBJECT
 public:
+    struct EngineSettings {
+        int rate = 0;
+        int pitch = 0;
+        int volume = 0;
+        QVoice voice;
+        QString localeName;
+    };
     explicit TextToSpeechConfigInterface(QObject *parent = nullptr);
     ~TextToSpeechConfigInterface() override;
 
-    Q_REQUIRED_RESULT QVector<QLocale> availableLocales() const override;
-    Q_REQUIRED_RESULT QLocale locale() const override;
+    Q_REQUIRED_RESULT QVector<QLocale> availableLocales() const;
+    Q_REQUIRED_RESULT QLocale locale() const;
 
-    Q_REQUIRED_RESULT QStringList availableEngines() const override;
-    Q_REQUIRED_RESULT QStringList availableVoices() const override;
-    void setEngine(const QString &engineName) override;
-    void testEngine(const EngineSettings &engineSettings) override;
+    Q_REQUIRED_RESULT QStringList availableEngines() const;
+    Q_REQUIRED_RESULT QVector<QVoice> availableVoices() const;
+    void setEngine(const QString &engineName);
+    void testEngine(const EngineSettings &engineSettings);
     QTextToSpeech *mTextToSpeech = nullptr;
 };
 }
+TEXTEDITTEXTTOSPEECH_EXPORT QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechConfigInterface::EngineSettings &t);

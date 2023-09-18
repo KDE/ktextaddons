@@ -11,25 +11,21 @@
 using namespace TextEditTextToSpeech;
 
 TextToSpeechConfigInterface::TextToSpeechConfigInterface(QObject *parent)
-    : AbstractTextToSpeechConfigInterface(parent)
+    : QObject(parent)
 {
 }
 
 TextToSpeechConfigInterface::~TextToSpeechConfigInterface() = default;
 
-QStringList TextToSpeechConfigInterface::availableVoices() const
+QVector<QVoice> TextToSpeechConfigInterface::availableVoices() const
 {
-    QStringList lst;
+    QVector<QVoice> voices;
     if (mTextToSpeech) {
-        const QVector<QVoice> voices = mTextToSpeech->availableVoices();
-        lst.reserve(voices.count());
-        for (const QVoice &voice : voices) {
-            lst << voice.name();
-        }
+        voices = mTextToSpeech->availableVoices();
     } else {
         qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "Text To Speech is not created. ";
     }
-    return lst;
+    return voices;
 }
 
 QStringList TextToSpeechConfigInterface::availableEngines() const
@@ -86,10 +82,20 @@ void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSetting
     const double volumeDouble = volume / 100.0;
     mTextToSpeech->setVolume(volumeDouble);
     mTextToSpeech->setLocale(QLocale(engineSettings.localeName));
-    // TODO mTextToSpeech->setVoice()
+    mTextToSpeech->setVoice(engineSettings.voice);
 
     // TODO change text ?
     mTextToSpeech->say(i18n("Morning, this is the test for testing settings."));
+}
+
+QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechConfigInterface::EngineSettings &t)
+{
+    d << " Rate " << t.rate;
+    d << " pitch " << t.pitch;
+    d << " volume " << t.volume;
+    d << " voice " << t.voice;
+    d << " localeName " << t.localeName;
+    return d;
 }
 
 #include "moc_texttospeechconfiginterface.cpp"

@@ -5,7 +5,7 @@
 */
 
 #include "texttospeechwidgettest.h"
-#include "abstracttexttospeechinterface.h"
+#include "texttospeechinterface.h"
 #include "texttospeechsliderwidget.h"
 #include "texttospeechwidget.h"
 #include <QHBoxLayout>
@@ -25,7 +25,7 @@ TextToSpeechWidgetTest::TextToSpeechWidgetTest(QObject *parent)
 
 void TextToSpeechWidgetTest::addInterface(TextEditTextToSpeech::TextToSpeechWidget *widget)
 {
-    auto interface = new TextEditTextToSpeech::AbstractTextToSpeechInterface(this);
+    auto interface = new TextEditTextToSpeech::TextToSpeechInterface(widget, this);
     widget->setTextToSpeechInterface(interface);
 }
 

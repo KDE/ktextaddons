@@ -8,7 +8,6 @@
 
 #include "textedittexttospeech_export.h"
 #include <QObject>
-#include <TextEditTextToSpeech/AbstractTextToSpeechInterface>
 #include <TextEditTextToSpeech/TextToSpeechWidget>
 namespace TextEditTextToSpeech
 {
@@ -17,18 +16,18 @@ class TextToSpeechInterfacePrivate;
  * @brief The TextToSpeechInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechInterface : public AbstractTextToSpeechInterface
+class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechInterface : public QObject
 {
     Q_OBJECT
 public:
     explicit TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent = nullptr);
     ~TextToSpeechInterface() override;
 
-    Q_REQUIRED_RESULT bool isReady() const override;
-    void say(const QString &text) override;
-    Q_REQUIRED_RESULT double volume() const override;
-    void setVolume(double value) override;
-    void reloadSettings() override;
+    Q_REQUIRED_RESULT bool isReady() const;
+    void say(const QString &text);
+    Q_REQUIRED_RESULT double volume() const;
+    void setVolume(double value);
+    void reloadSettings();
 
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);

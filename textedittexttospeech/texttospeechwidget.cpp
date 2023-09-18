@@ -31,7 +31,7 @@ public:
     QToolButton *mStopButton = nullptr;
     QToolButton *mPlayPauseButton = nullptr;
     QToolButton *mConfigureButton = nullptr;
-    AbstractTextToSpeechInterface *mTextToSpeechInterface = nullptr;
+    TextToSpeechInterface *mTextToSpeechInterface = nullptr;
     TextToSpeechActions *mTextToSpeechActions = nullptr;
     TextToSpeechSliderWidget *mVolume = nullptr;
     bool mNeedToHide = false;
@@ -175,7 +175,7 @@ void TextToSpeechWidget::setState(TextToSpeechWidget::State state)
     d->mTextToSpeechActions->setState(state);
 }
 
-void TextToSpeechWidget::setTextToSpeechInterface(AbstractTextToSpeechInterface *interface)
+void TextToSpeechWidget::setTextToSpeechInterface(TextToSpeechInterface *interface)
 {
     delete d->mTextToSpeechInterface;
     d->mTextToSpeechInterface = interface;
