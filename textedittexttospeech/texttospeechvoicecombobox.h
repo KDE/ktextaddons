@@ -20,3 +20,6 @@ public:
     void updateVoices(const QVector<QVoice> &voices);
 };
 }
+#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
+Q_DECLARE_METATYPE(QVoice)
+#endif
