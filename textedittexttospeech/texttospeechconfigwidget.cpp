@@ -26,7 +26,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mVolume(new TextToSpeechSliderWidget(QStringLiteral("%1 %"), this))
     , mRate(new TextToSpeechSliderWidget(QStringLiteral("%1"), this))
     , mPitch(new TextToSpeechSliderWidget(QStringLiteral("%1"), this))
-    , mLanguage(new TextEditTextToSpeech::TextToSpeechLanguageComboBox(this))
+    , mLanguage(new TextToSpeechLanguageComboBox(this))
     , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mAvailableEngine(new QComboBox(this))
     , mVoice(new QComboBox(this))
@@ -225,6 +225,8 @@ void TextToSpeechConfigWidget::slotEngineChanged()
 void TextToSpeechConfigWidget::slotLanguageChanged()
 {
     // QLocale locale = mLanguage->currentData().value<QLocale>();
+    // TODO
+    qCWarning(TEXTEDITTEXTTOSPEECH_LOG) << "slotLanguageChanged: not implemented yet";
 }
 
 #include "moc_texttospeechconfigwidget.cpp"
