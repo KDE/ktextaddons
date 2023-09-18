@@ -223,6 +223,7 @@ void TextToSpeechConfigWidget::slotEngineChanged()
     qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << "newEngineName " << newEngineName;
     mAbstractTextToSpeechConfigInterface->setEngine(newEngineName);
     updateAvailableLocales();
+    slotLocalesAndVoices();
 }
 
 void TextToSpeechConfigWidget::slotLanguageChanged()
