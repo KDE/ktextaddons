@@ -15,15 +15,14 @@ TextToSpeechVoiceComboBox::~TextToSpeechVoiceComboBox() = default;
 
 QVoice TextToSpeechVoiceComboBox::currentVoice() const
 {
-    return {};
+    return currentData().value<QVoice>();
 }
 
 void TextToSpeechVoiceComboBox::updateVoices(const QVector<QVoice> &voices)
 {
     clear();
     for (const QVoice &voice : voices) {
-        // TODO store voice
-        addItem(voice.name(), voice.name());
+        addItem(voice.name(), QVariant::fromValue(voice));
     }
     setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
