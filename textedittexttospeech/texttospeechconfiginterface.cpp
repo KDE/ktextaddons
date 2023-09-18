@@ -93,7 +93,9 @@ QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechConfigInterf
     d << " Rate " << t.rate;
     d << " pitch " << t.pitch;
     d << " volume " << t.volume;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     d << " voice " << t.voice;
+#endif
     d << " localeName " << t.localeName;
     return d;
 }
