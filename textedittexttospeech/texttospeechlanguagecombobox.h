@@ -5,12 +5,12 @@
 */
 
 #pragma once
-
+#include "textedittexttospeech_private_export.h"
 #include <QComboBox>
 #include <QLocale>
 namespace TextEditTextToSpeech
 {
-class TextToSpeechLanguageComboBox : public QComboBox
+class TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechLanguageComboBox : public QComboBox
 {
     Q_OBJECT
 public:

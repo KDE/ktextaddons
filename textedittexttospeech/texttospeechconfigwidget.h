@@ -12,8 +12,9 @@ class QPushButton;
 namespace TextEditTextToSpeech
 {
 class TextToSpeechLanguageComboBox;
-class AbstractTextToSpeechConfigInterface;
+class TextToSpeechConfigInterface;
 class TextToSpeechSliderWidget;
+class TextToSpeechVoiceComboBox;
 class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigWidget : public QWidget
 {
     Q_OBJECT
@@ -26,7 +27,7 @@ public:
     void writeConfig();
     void readConfig();
 
-    void setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface);
+    void setTextToSpeechConfigInterface(TextToSpeechConfigInterface *interface);
     void restoreDefaults();
 
 Q_SIGNALS:
@@ -50,9 +51,9 @@ private:
     TextToSpeechSliderWidget *const mRate;
     TextToSpeechSliderWidget *const mPitch;
     TextToSpeechLanguageComboBox *const mLanguage;
-    AbstractTextToSpeechConfigInterface *mAbstractTextToSpeechConfigInterface = nullptr;
+    TextToSpeechConfigInterface *mTextToSpeechConfigInterface = nullptr;
     QComboBox *const mAvailableEngine;
-    QComboBox *const mVoice;
+    TextToSpeechVoiceComboBox *const mVoice;
     QPushButton *const mTestButton;
 };
 }

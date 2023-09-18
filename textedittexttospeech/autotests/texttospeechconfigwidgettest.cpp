@@ -5,9 +5,11 @@
 */
 
 #include "texttospeechconfigwidgettest.h"
-#include "abstracttexttospeechconfiginterface.h"
+#include "texttospeechconfiginterface.h"
 #include "texttospeechconfigwidget.h"
+#include "texttospeechlanguagecombobox.h"
 #include "texttospeechsliderwidget.h"
+#include "texttospeechvoicecombobox.h"
 
 #include <QComboBox>
 #include <QPushButton>
@@ -25,7 +27,7 @@ TextToSpeechConfigWidgetTest::~TextToSpeechConfigWidgetTest() = default;
 
 void TextToSpeechConfigWidgetTest::addInterface(TextEditTextToSpeech::TextToSpeechConfigWidget *widget)
 {
-    auto interface = new TextEditTextToSpeech::AbstractTextToSpeechConfigInterface(this);
+    auto interface = new TextEditTextToSpeech::TextToSpeechConfigInterface(this);
     widget->setTextToSpeechConfigInterface(interface);
 }
 
@@ -42,7 +44,7 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
     auto pitch = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("pitch"));
     QVERIFY(pitch);
 
-    auto language = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("language"));
+    auto language = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechLanguageComboBox *>(QStringLiteral("language"));
     QVERIFY(language);
     // FIXME
     // QVERIFY(language->count()>0);
@@ -50,7 +52,7 @@ void TextToSpeechConfigWidgetTest::shouldHaveDefaultValue()
     auto availableEngine = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("engine"));
     QVERIFY(availableEngine);
 
-    auto voice = textToSpeechConfigWidget.findChild<QComboBox *>(QStringLiteral("voice"));
+    auto voice = textToSpeechConfigWidget.findChild<TextEditTextToSpeech::TextToSpeechVoiceComboBox *>(QStringLiteral("voice"));
     QVERIFY(voice);
 
     auto mTestButton = textToSpeechConfigWidget.findChild<QPushButton *>(QStringLiteral("mTestButton"));

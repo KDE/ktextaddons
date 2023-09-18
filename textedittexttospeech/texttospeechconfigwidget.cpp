@@ -5,11 +5,12 @@
 */
 
 #include "texttospeechconfigwidget.h"
-#include "abstracttexttospeechconfiginterface.h"
 #include "textedittexttospeech_debug.h"
 #include "texttospeechconfiginterface.h"
 #include "texttospeechlanguagecombobox.h"
 #include "texttospeechsliderwidget.h"
+#include "texttospeechvoicecombobox.h"
+
 #include "texttospeechutil.h"
 #include <KLocalizedString>
 
@@ -27,9 +28,9 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mRate(new TextToSpeechSliderWidget(QStringLiteral("%1"), this))
     , mPitch(new TextToSpeechSliderWidget(QStringLiteral("%1"), this))
     , mLanguage(new TextToSpeechLanguageComboBox(this))
-    , mAbstractTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
+    , mTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mAvailableEngine(new QComboBox(this))
-    , mVoice(new QComboBox(this))
+    , mVoice(new TextToSpeechVoiceComboBox(this))
     , mTestButton(new QPushButton(QIcon::fromTheme(QStringLiteral("player-volume")), i18n("Test"), this))
 {
     auto layout = new QFormLayout(this);
@@ -134,10 +135,10 @@ void TextToSpeechConfigWidget::slotUpdateSettings()
     slotLocalesAndVoices();
 }
 
-void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(AbstractTextToSpeechConfigInterface *interface)
+void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(TextToSpeechConfigInterface *interface)
 {
-    delete mAbstractTextToSpeechConfigInterface;
-    mAbstractTextToSpeechConfigInterface = interface;
+    delete mTextToSpeechConfigInterface;
+    mTextToSpeechConfigInterface = interface;
     slotLocalesAndVoices();
 }
 
@@ -157,15 +158,15 @@ void TextToSpeechConfigWidget::slotTestTextToSpeech()
     settings.pitch = mPitch->value();
     settings.volume = mVolume->value();
     settings.localeName = mLanguage->currentData().toLocale().name();
-    settings.voice = mVoice->currentData().toString();
+    // TODO settings.voice = mVoice->currentVoice();
     qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << " settings " << settings;
-    mAbstractTextToSpeechConfigInterface->testEngine(settings);
+    mTextToSpeechConfigInterface->testEngine(settings);
 }
 
 void TextToSpeechConfigWidget::updateAvailableEngine()
 {
     mAvailableEngine->clear();
-    const QStringList lst = mAbstractTextToSpeechConfigInterface->availableEngines();
+    const QStringList lst = mTextToSpeechConfigInterface->availableEngines();
     for (const QString &engine : lst) {
         mAvailableEngine->addItem(engine, engine);
     }
@@ -175,12 +176,8 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
 
 void TextToSpeechConfigWidget::updateAvailableVoices()
 {
-    mVoice->clear();
-    const QStringList lst = mAbstractTextToSpeechConfigInterface->availableVoices();
-    for (const QString &voice : lst) {
-        mVoice->addItem(voice, voice);
-    }
-    mVoice->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    const QVector<QVoice> voices = mTextToSpeechConfigInterface->availableVoices();
+    mVoice->updateVoices(voices);
     updateVoice();
 }
 
@@ -211,8 +208,8 @@ void TextToSpeechConfigWidget::updateEngine()
 void TextToSpeechConfigWidget::updateAvailableLocales()
 {
     mLanguage->clear();
-    const QVector<QLocale> locales = mAbstractTextToSpeechConfigInterface->availableLocales();
-    const QLocale current = mAbstractTextToSpeechConfigInterface->locale();
+    const QVector<QLocale> locales = mTextToSpeechConfigInterface->availableLocales();
+    const QLocale current = mTextToSpeechConfigInterface->locale();
     mLanguage->updateAvailableLocales(locales, current);
     updateLocale();
 }
@@ -221,7 +218,7 @@ void TextToSpeechConfigWidget::slotEngineChanged()
 {
     const QString newEngineName = mAvailableEngine->currentData().toString();
     qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << "newEngineName " << newEngineName;
-    mAbstractTextToSpeechConfigInterface->setEngine(newEngineName);
+    mTextToSpeechConfigInterface->setEngine(newEngineName);
     updateAvailableLocales();
     slotLocalesAndVoices();
 }

@@ -21,7 +21,7 @@ public:
 };
 
 TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWidget, QObject *parent)
-    : AbstractTextToSpeechInterface(parent)
+    : QObject(parent)
     , d(new TextEditTextToSpeech::TextToSpeechInterfacePrivate(textToSpeechWidget))
 {
     TextEditTextToSpeech::TextToSpeech::self(); // init

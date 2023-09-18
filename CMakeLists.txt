@@ -99,8 +99,6 @@ set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
-    add_definitions(-DHAVE_TEXT_TO_SPEECH_SUPPORT)
-    set(TEXTEDIT_TEXT_TO_SPEECH TRUE)
     add_subdirectory(textedittexttospeech)
 endif()
 
