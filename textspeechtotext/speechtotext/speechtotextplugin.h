@@ -27,7 +27,7 @@ public:
     virtual void speechToText() = 0;
 
 Q_SIGNALS:
-    void speechToTextDone();
+    void speechToTextDone(const QString &result);
 
 private:
     std::unique_ptr<SpeechToTextPluginPrivate> const d;

@@ -43,11 +43,8 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
     }
     if (d->mSpeechToTextClient) {
         d->mSpeechToTextPlugin = d->mSpeechToTextClient->createTextToSpeech();
-        // TODO
-        // connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
+        connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
     }
-
-    // TODO
 }
 
 #include "moc_speechtotextmanager.cpp"
