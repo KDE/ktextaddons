@@ -109,6 +109,7 @@ void TextToSpeechConfigWidget::readConfig()
     const auto pitch = grp.readEntry("pitch", 0);
     mPitch->setValue(pitch);
     mVolume->setValue(grp.readEntry("volume", 50));
+    mLanguage->selectLocaleName(grp.readEntry("localeName", QString()));
 }
 
 void TextToSpeechConfigWidget::writeConfig()
@@ -120,7 +121,9 @@ void TextToSpeechConfigWidget::writeConfig()
     grp.writeEntry("pitch", mPitch->value());
     grp.writeEntry("localeName", mLanguage->currentData().toLocale().name());
     grp.writeEntry("engine", mAvailableEngine->currentData().toString());
+#if 0 // TODO
     grp.writeEntry("voice", mVoice->currentData().toString());
+#endif
 }
 
 void TextToSpeechConfigWidget::slotLocalesAndVoices()
