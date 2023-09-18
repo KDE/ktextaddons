@@ -36,6 +36,8 @@ void TextToSpeechLanguageComboBox::updateAvailableLocales(const QVector<QLocale>
         }
     }
     setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    // Sort it after loading list.
+    model()->sort(0, Qt::AscendingOrder);
 }
 
 #include "moc_texttospeechlanguagecombobox.cpp"
