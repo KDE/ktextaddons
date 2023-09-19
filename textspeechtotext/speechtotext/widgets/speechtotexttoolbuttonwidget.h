@@ -7,6 +7,7 @@
 #pragma once
 #include "textspeechtotext_export.h"
 #include <QWidget>
+class QToolButton;
 namespace TextSpeechToText
 {
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextToolButtonWidget : public QWidget
@@ -15,5 +16,9 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextToolButtonWidget : public QWidget
 public:
     explicit SpeechToTextToolButtonWidget(QWidget *parent = nullptr);
     ~SpeechToTextToolButtonWidget() override;
+
+private:
+    TEXTSPEECHTOTEXT_NO_EXPORT void slotButtonClicked();
+    QToolButton *const mToolButton;
 };
 }
