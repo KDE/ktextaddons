@@ -5,8 +5,10 @@
 */
 
 #include "speechtotexttoolbuttonwidget.h"
+#include "textspeechtotext/speechtotextmanager.h"
 #include <QHBoxLayout>
 #include <QToolButton>
+
 using namespace TextSpeechToText;
 SpeechToTextToolButtonWidget::SpeechToTextToolButtonWidget(QWidget *parent)
     : QWidget{parent}

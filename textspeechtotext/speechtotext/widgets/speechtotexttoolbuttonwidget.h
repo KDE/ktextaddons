@@ -10,6 +10,10 @@
 class QToolButton;
 namespace TextSpeechToText
 {
+/**
+ * @brief The SpeechToTextAction class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextToolButtonWidget : public QWidget
 {
     Q_OBJECT
