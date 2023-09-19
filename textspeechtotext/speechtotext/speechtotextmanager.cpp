@@ -47,4 +47,10 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
     }
 }
 
+SpeechToTextManager *SpeechToTextManager::self()
+{
+    static SpeechToTextManager s_self;
+    return &s_self;
+}
+
 #include "moc_speechtotextmanager.cpp"

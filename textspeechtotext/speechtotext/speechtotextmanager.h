@@ -27,6 +27,8 @@ public:
 
     void switchEngine(const QString &engineName);
 
+    static SpeechToTextManager *self();
+
 Q_SIGNALS:
     void textToSpeechDone(const QString &result);
 
