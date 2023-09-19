@@ -65,13 +65,17 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     mTestButton->setObjectName(QStringLiteral("mTestButton"));
     layout->addWidget(mTestButton);
     connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
-
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
 
 void TextToSpeechConfigWidget::initializeSettings()
+{
+    slotInitializeSettings();
+}
+
+void TextToSpeechConfigWidget::slotInitializeSettings()
 {
     readConfig();
     slotAvailableEngineChanged();
@@ -110,6 +114,14 @@ void TextToSpeechConfigWidget::readConfig()
     mPitch->setValue(pitch);
     mVolume->setValue(grp.readEntry("volume", 50));
     mLanguage->selectLocaleName(grp.readEntry("localeName", QString()));
+    const QString engineName = grp.readEntry("engine", QString());
+    // qDebug() << " engineName " << engineName;
+    const int engineIndex = mAvailableEngine->findData(engineName);
+    // qDebug() << " engineIndex " << engineIndex;
+    if (engineIndex != -1) {
+        mAvailableEngine->setCurrentIndex(engineIndex);
+    }
+    // TODO save voice
 }
 
 void TextToSpeechConfigWidget::writeConfig()
@@ -120,7 +132,9 @@ void TextToSpeechConfigWidget::writeConfig()
     grp.writeEntry("rate", mRate->value());
     grp.writeEntry("pitch", mPitch->value());
     grp.writeEntry("localeName", mLanguage->currentData().toLocale().name());
-    grp.writeEntry("engine", mAvailableEngine->currentData().toString());
+    const QString engineName = mAvailableEngine->currentData().toString();
+    // qDebug() << " engineName " << engineName;
+    grp.writeEntry("engine", engineName);
 #if 0 // TODO
     grp.writeEntry("voice", mVoice->currentData().toString());
 #endif
