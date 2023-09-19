@@ -161,7 +161,7 @@ void TextToSpeechConfigWidget::slotTestTextToSpeech()
     settings.pitch = mPitch->value();
     settings.volume = mVolume->value();
     settings.localeName = mLanguage->currentData().toLocale().name();
-    // TODO settings.voice = mVoice->currentVoice();
+    settings.voice = mVoice->currentVoice();
     qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << " settings " << settings;
     mTextToSpeechConfigInterface->testEngine(settings);
 }
