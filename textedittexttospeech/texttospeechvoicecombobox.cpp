@@ -26,6 +26,8 @@ void TextToSpeechVoiceComboBox::updateVoices(const QVector<QVoice> &voices)
         addItem(voice.name(), QVariant::fromValue(voice));
     }
     setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    // Sort it after loading list.
+    model()->sort(0, Qt::AscendingOrder);
 }
 
 #include "moc_texttospeechvoicecombobox.cpp"
