@@ -47,6 +47,7 @@ private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateAvailableEngine();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void updateAvailableVoices();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotAvailableEngineChanged();
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotInitializeSettings();
     TextToSpeechSliderWidget *const mVolume;
     TextToSpeechSliderWidget *const mRate;
     TextToSpeechSliderWidget *const mPitch;
