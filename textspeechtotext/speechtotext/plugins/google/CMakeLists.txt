@@ -15,6 +15,9 @@ target_sources(speechtotext_google PRIVATE
 
     googlespeechtotextplugin.h
     googlespeechtotextplugin.cpp
+
+    googlespeechtotextpluginjob.h
+    googlespeechtotextpluginjob.cpp
 )
 
 target_link_libraries(speechtotext_google PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n)

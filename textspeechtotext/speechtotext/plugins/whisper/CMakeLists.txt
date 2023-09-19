@@ -15,6 +15,9 @@ target_sources(speechtotext_whisper PRIVATE
 
     whisperspeechtotextplugin.h
     whisperspeechtotextplugin.cpp
+
+    whisperspeechtotextpluginjob.h
+    whisperspeechtotextpluginjob.cpp
 )
 
 target_link_libraries(speechtotext_whisper PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n)
