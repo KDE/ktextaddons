@@ -41,13 +41,18 @@ void SpeechToTextComboBoxWidget::fillEngine()
 
 QString SpeechToTextComboBoxWidget::engineName() const
 {
-    // TODO
-    return {};
+    return mEngine->currentData().toString();
 }
 
 void SpeechToTextComboBoxWidget::setEngineName(const QString &engineName)
 {
-    // TODO
+    const int countItem(mEngine->count());
+    for (int i = 0; i < countItem; ++i) {
+        if (mEngine->itemData(i).toString() == engineName) {
+            mEngine->setCurrentIndex(i);
+            break;
+        }
+    }
 }
 
 #include "moc_speechtotextcomboboxwidget.cpp"
