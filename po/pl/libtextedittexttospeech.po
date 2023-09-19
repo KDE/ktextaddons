@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 00:46+0000\n"
+"POT-Creation-Date: 2023-09-19 00:44+0000\n"
 "PO-Revision-Date: 2023-02-11 08:25+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -39,42 +39,42 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Ustawienia Tekstu-na-mowę"
 
-#: texttospeechconfiginterface.cpp:91
+#: texttospeechconfiginterface.cpp:88
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "Dzień dobry, oto próba ustawień."
 
-#: texttospeechconfigwidget.cpp:33
+#: texttospeechconfigwidget.cpp:34
 #, kde-format
 msgid "Test"
 msgstr "Próba"
 
-#: texttospeechconfigwidget.cpp:40 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:41 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
 msgstr "Głośność:"
 
-#: texttospeechconfigwidget.cpp:44
+#: texttospeechconfigwidget.cpp:45
 #, kde-format
 msgid "Rate:"
 msgstr "Współczynnik:"
 
-#: texttospeechconfigwidget.cpp:50
+#: texttospeechconfigwidget.cpp:51
 #, kde-format
 msgid "Pitch:"
 msgstr "Ton:"
 
-#: texttospeechconfigwidget.cpp:53
+#: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Engine:"
 msgstr "Silnik:"
 
-#: texttospeechconfigwidget.cpp:57
+#: texttospeechconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Język:"
 
-#: texttospeechconfigwidget.cpp:61
+#: texttospeechconfigwidget.cpp:62
 #, kde-format
 msgid "Voice:"
 msgstr "Głos:"
