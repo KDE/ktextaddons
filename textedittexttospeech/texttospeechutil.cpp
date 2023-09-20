@@ -47,3 +47,16 @@ void TextEditTextToSpeech::TextToSpeechUtil::writeConfig(const TextEditTextToSpe
     grp.writeEntry("voice", mVoice->currentData().toString());
 #endif
 }
+
+QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &t)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
+    d << "voice " << t.voice;
+#endif
+    d << "engineName " << t.engineName;
+    d << "localeName " << t.localeName;
+    d << "rate " << t.rate;
+    d << "pitch " << t.pitch;
+    d << "volumeValue " << t.volumeValue;
+    return d;
+}

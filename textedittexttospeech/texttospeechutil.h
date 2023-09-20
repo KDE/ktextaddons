@@ -27,3 +27,4 @@ Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSettings loadSet
 TEXTEDITTEXTTOSPEECH_TESTS_EXPORT void writeConfig(const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &settings);
 };
 }
+TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &t);

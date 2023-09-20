@@ -118,8 +118,7 @@ void TextToSpeechConfigWidget::readConfig()
     if (engineIndex != -1) {
         mAvailableEngine->setCurrentIndex(engineIndex);
     }
-    // mVoice->setCurrentVoice(...)
-    // TODO load voice
+    mVoice->setCurrentVoice(settings.voice);
 }
 
 void TextToSpeechConfigWidget::writeConfig()
@@ -130,9 +129,7 @@ void TextToSpeechConfigWidget::writeConfig()
     settings.pitch = mPitch->value();
     settings.localeName = mLanguage->currentData().toLocale().name();
     settings.engineName = mAvailableEngine->currentData().toString();
-#if 0 // TODO save voice
-    grp.writeEntry("voice", mVoice->currentData().toString());
-#endif
+    settings.voice = mVoice->currentVoice();
     TextEditTextToSpeech::TextToSpeechUtil::writeConfig(std::move(settings));
 }
 
