@@ -31,7 +31,7 @@ TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings TextEditTextToSpeec
     settings.localeName = grp.readEntry("localeName");
     settings.pitch = grp.readEntry("pitch", 0);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    QByteArray ba;
+    QByteArray ba = grp.readEntry("voice", QByteArray());
     QDataStream s(&ba, QIODevice::ReadOnly);
     s.setVersion(QDataStream::Qt_5_15);
     s >> settings.voice;
