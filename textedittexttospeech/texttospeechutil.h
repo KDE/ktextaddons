@@ -11,7 +11,16 @@ namespace TextEditTextToSpeech
 {
 namespace TextToSpeechUtil
 {
+struct TextToSpeechSettings {
+    QString engineName;
+    QString localeName;
+    int rate = -1;
+    int pitch = -1;
+    int volumeValue = -1;
+};
+
 Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigFileName();
 Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigGroupName();
+Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSettings loadSettings();
 };
 }
