@@ -119,6 +119,7 @@ void TextToSpeechConfigWidget::readConfig()
         mAvailableEngine->setCurrentIndex(engineIndex);
     }
     mVoice->setCurrentVoice(settings.voice);
+    // qDebug() << " load settings " << settings;
 }
 
 void TextToSpeechConfigWidget::writeConfig()
@@ -130,6 +131,7 @@ void TextToSpeechConfigWidget::writeConfig()
     settings.localeName = mLanguage->currentData().toLocale().name();
     settings.engineName = mAvailableEngine->currentData().toString();
     settings.voice = mVoice->currentVoice();
+    // qDebug() << " save settings " << settings;
     TextEditTextToSpeech::TextToSpeechUtil::writeConfig(std::move(settings));
 }
 
