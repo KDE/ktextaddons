@@ -19,6 +19,15 @@ QVoice TextToSpeechVoiceComboBox::currentVoice() const
     return currentData().value<QVoice>();
 }
 
+void TextToSpeechVoiceComboBox::setCurrentVoice(const QVoice &voice)
+{
+    // TODO
+    // int index = findData(voice);
+    // if (index != -1) {
+    // setCurrentIndex(index);
+    // }
+}
+
 void TextToSpeechVoiceComboBox::updateVoices(const QVector<QVoice> &voices)
 {
     clear();

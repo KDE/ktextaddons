@@ -7,11 +7,13 @@
 #pragma once
 #include "textedittexttospeech_private_export.h"
 #include <QObject>
+#include <QVoice>
 namespace TextEditTextToSpeech
 {
 namespace TextToSpeechUtil
 {
 struct TextToSpeechSettings {
+    QVoice voice;
     QString engineName;
     QString localeName;
     int rate = -1;
