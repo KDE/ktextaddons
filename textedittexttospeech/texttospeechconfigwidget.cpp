@@ -106,15 +106,12 @@ void TextToSpeechConfigWidget::updateLocale()
 
 void TextToSpeechConfigWidget::readConfig()
 {
-    KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
-    const KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
-    const auto rate = grp.readEntry("rate", 0);
-    mRate->setValue(rate);
-    const auto pitch = grp.readEntry("pitch", 0);
-    mPitch->setValue(pitch);
-    mVolume->setValue(grp.readEntry("volume", 50));
-    mLanguage->selectLocaleName(grp.readEntry("localeName", QString()));
-    const QString engineName = grp.readEntry("engine", QString());
+    const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings settings = TextEditTextToSpeech::TextToSpeechUtil::loadSettings();
+    mRate->setValue(settings.rate);
+    mPitch->setValue(settings.pitch);
+    mVolume->setValue(settings.volumeValue);
+    mLanguage->selectLocaleName(settings.localeName);
+    const QString engineName = settings.engineName;
     // qDebug() << " engineName " << engineName;
     const int engineIndex = mAvailableEngine->findData(engineName);
     // qDebug() << " engineIndex " << engineIndex;

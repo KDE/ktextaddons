@@ -32,9 +32,9 @@ TextToSpeech::~TextToSpeech() = default;
 
 void TextToSpeech::reloadSettings()
 {
-    KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
-    const KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
-    const QString engineName = grp.readEntry("engine");
+    const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings settings = TextEditTextToSpeech::TextToSpeechUtil::loadSettings();
+
+    const QString engineName = settings.engineName;
     if (d->mDefaultEngine != engineName) {
         if (d->mTextToSpeech) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
@@ -52,16 +52,16 @@ void TextToSpeech::reloadSettings()
         connect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
     }
     d->mDefaultEngine = engineName;
-    const int rate = grp.readEntry("rate", 0);
+    const int rate = settings.rate;
     const double rateDouble = rate / 100.0;
     d->mTextToSpeech->setRate(rateDouble);
-    const int pitch = grp.readEntry("pitch", 0);
+    const int pitch = settings.pitch;
     const double pitchDouble = pitch / 100.0;
     d->mTextToSpeech->setPitch(pitchDouble);
-    const int volumeValue = grp.readEntry("volume", 0);
+    const int volumeValue = settings.volumeValue;
     const double volumeDouble = volumeValue / 100.0;
     d->mTextToSpeech->setVolume(volumeDouble);
-    d->mTextToSpeech->setLocale(QLocale(grp.readEntry("localeName")));
+    d->mTextToSpeech->setLocale(QLocale(settings.localeName));
     // It doesn't have api for it d->mTextToSpeech->setVoice(grp.readEntry("voice"));
 }
 
