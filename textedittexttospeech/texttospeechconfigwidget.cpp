@@ -72,12 +72,6 @@ TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
 
 void TextToSpeechConfigWidget::initializeSettings()
 {
-    slotInitializeSettings();
-}
-
-void TextToSpeechConfigWidget::slotInitializeSettings()
-{
-    readConfig();
     slotAvailableEngineChanged();
 }
 
@@ -146,6 +140,7 @@ void TextToSpeechConfigWidget::slotUpdateSettings()
 {
     updateAvailableEngine();
     slotLocalesAndVoices();
+    readConfig();
 }
 
 void TextToSpeechConfigWidget::setTextToSpeechConfigInterface(TextToSpeechConfigInterface *interface)
