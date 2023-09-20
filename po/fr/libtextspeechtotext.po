@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-15 00:44+0000\n"
-"PO-Revision-Date: 2023-09-15 19:51+0200\n"
+"PO-Revision-Date: 2023-09-17 21:59+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -27,7 +27,7 @@ msgstr "Whisper"
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "Moteur :"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
