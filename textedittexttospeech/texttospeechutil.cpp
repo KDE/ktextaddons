@@ -8,6 +8,7 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <QIODevice>
 
 QString TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName()
 {
@@ -29,7 +30,12 @@ TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings TextEditTextToSpeec
     settings.volumeValue = grp.readEntry("volume", 0);
     settings.localeName = grp.readEntry("localeName");
     settings.pitch = grp.readEntry("pitch", 0);
-    // TODO settings.voice
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
+    QByteArray ba;
+    QDataStream s(&ba, QIODevice::ReadOnly);
+    s.setVersion(QDataStream::Qt_5_15);
+    s >> settings.voice;
+#endif
     return settings;
 }
 
@@ -43,8 +49,12 @@ void TextEditTextToSpeech::TextToSpeechUtil::writeConfig(const TextEditTextToSpe
     grp.writeEntry("localeName", settings.localeName);
     // qDebug() << " engineName " << engineName;
     grp.writeEntry("engine", settings.engineName);
-#if 0 // TODO save voice
-    grp.writeEntry("voice", mVoice->currentData().toString());
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
+    QByteArray ba;
+    QDataStream s(&ba, QIODevice::WriteOnly);
+    s.setVersion(QDataStream::Qt_5_15);
+    s << settings.voice;
+    grp.writeEntry("voice", ba);
 #endif
 }
 
