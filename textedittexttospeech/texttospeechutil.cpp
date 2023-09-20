@@ -29,5 +29,6 @@ TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings TextEditTextToSpeec
     settings.volumeValue = grp.readEntry("volume", 0);
     settings.localeName = grp.readEntry("localeName");
     settings.pitch = grp.readEntry("pitch", 0);
+    // TODO settings.voice
     return settings;
 }

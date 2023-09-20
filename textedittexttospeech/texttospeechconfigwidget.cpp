@@ -118,7 +118,8 @@ void TextToSpeechConfigWidget::readConfig()
     if (engineIndex != -1) {
         mAvailableEngine->setCurrentIndex(engineIndex);
     }
-    // TODO save voice
+    // mVoice->set
+    // TODO load voice
 }
 
 void TextToSpeechConfigWidget::writeConfig()
@@ -132,7 +133,7 @@ void TextToSpeechConfigWidget::writeConfig()
     const QString engineName = mAvailableEngine->currentData().toString();
     // qDebug() << " engineName " << engineName;
     grp.writeEntry("engine", engineName);
-#if 0 // TODO
+#if 0 // TODO save voice
     grp.writeEntry("voice", mVoice->currentData().toString());
 #endif
 }

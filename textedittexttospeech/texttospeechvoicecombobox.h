@@ -17,6 +17,7 @@ public:
     ~TextToSpeechVoiceComboBox() override;
 
     Q_REQUIRED_RESULT QVoice currentVoice() const;
+    void setCurrentVoice(const QVoice &voice);
     void updateVoices(const QVector<QVoice> &voices);
 };
 }
