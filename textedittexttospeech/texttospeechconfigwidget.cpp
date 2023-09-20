@@ -118,24 +118,22 @@ void TextToSpeechConfigWidget::readConfig()
     if (engineIndex != -1) {
         mAvailableEngine->setCurrentIndex(engineIndex);
     }
-    // mVoice->set
+    // mVoice->setCurrentVoice(...)
     // TODO load voice
 }
 
 void TextToSpeechConfigWidget::writeConfig()
 {
-    KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
-    KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
-    grp.writeEntry("volume", mVolume->value());
-    grp.writeEntry("rate", mRate->value());
-    grp.writeEntry("pitch", mPitch->value());
-    grp.writeEntry("localeName", mLanguage->currentData().toLocale().name());
-    const QString engineName = mAvailableEngine->currentData().toString();
-    // qDebug() << " engineName " << engineName;
-    grp.writeEntry("engine", engineName);
+    TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings settings;
+    settings.volumeValue = mVolume->value();
+    settings.rate = mRate->value();
+    settings.pitch = mPitch->value();
+    settings.localeName = mLanguage->currentData().toLocale().name();
+    settings.engineName = mAvailableEngine->currentData().toString();
 #if 0 // TODO save voice
     grp.writeEntry("voice", mVoice->currentData().toString());
 #endif
+    TextEditTextToSpeech::TextToSpeechUtil::writeConfig(std::move(settings));
 }
 
 void TextToSpeechConfigWidget::slotLocalesAndVoices()

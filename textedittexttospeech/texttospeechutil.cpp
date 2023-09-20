@@ -32,3 +32,18 @@ TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings TextEditTextToSpeec
     // TODO settings.voice
     return settings;
 }
+
+void TextEditTextToSpeech::TextToSpeechUtil::writeConfig(const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &settings)
+{
+    KConfig config(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName());
+    KConfigGroup grp = config.group(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName());
+    grp.writeEntry("volume", settings.volumeValue);
+    grp.writeEntry("rate", settings.rate);
+    grp.writeEntry("pitch", settings.pitch);
+    grp.writeEntry("localeName", settings.localeName);
+    // qDebug() << " engineName " << engineName;
+    grp.writeEntry("engine", settings.engineName);
+#if 0 // TODO save voice
+    grp.writeEntry("voice", mVoice->currentData().toString());
+#endif
+}
