@@ -22,6 +22,8 @@ QVoice TextToSpeechVoiceComboBox::currentVoice() const
 void TextToSpeechVoiceComboBox::setCurrentVoice(const QVoice &voice)
 {
     const int index = findData(QVariant::fromValue(voice));
+    qDebug() << " count " << count();
+    qDebug() << " index " << index;
     if (index != -1) {
         setCurrentIndex(index);
     }

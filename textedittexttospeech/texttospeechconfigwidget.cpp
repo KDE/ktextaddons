@@ -118,6 +118,7 @@ void TextToSpeechConfigWidget::readConfig()
     if (engineIndex != -1) {
         mAvailableEngine->setCurrentIndex(engineIndex);
     }
+    // FIXME: list of voice is not loading here... need to fix it
     mVoice->setCurrentVoice(settings.voice);
     // qDebug() << " load settings " << settings;
 }
