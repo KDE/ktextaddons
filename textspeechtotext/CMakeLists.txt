@@ -46,6 +46,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
     speechtotext/speechtotextmanager.h
     speechtotext/speechtotextmanager.cpp    
 
+    speechtotext/speechtotextengineaccessmanager.cpp
+    speechtotext/speechtotextengineaccessmanager.h
+
     speechtotext/widgets/speechtotextconfigurewidget.h
     speechtotext/widgets/speechtotextconfigurewidget.cpp
 
