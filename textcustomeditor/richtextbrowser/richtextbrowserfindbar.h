@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2013-2023 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -9,7 +9,7 @@
 #include "textcustomeditor_export.h"
 #include <TextCustomEditor/TextEditFindBarBase>
 
-class QTextEdit;
+class QTextBrowser;
 namespace TextCustomEditor
 {
 class RichTextBrowserFindBarPrivate;
@@ -21,7 +21,7 @@ class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserFindBar : public TextEditFindBarBas
 {
     Q_OBJECT
 public:
-    explicit RichTextBrowserFindBar(QTextEdit *view, QWidget *parent = nullptr);
+    explicit RichTextBrowserFindBar(QTextBrowser *view, QWidget *parent = nullptr);
     ~RichTextBrowserFindBar() override;
 
 protected:

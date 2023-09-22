@@ -46,6 +46,13 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
     richtexteditor/richtexteditfindbar.h
     richtexteditor/richtexteditorwidget.h
 
+    richtextbrowser/richtextbrowser.cpp
+    richtextbrowser/richtextbrowser.h
+    richtextbrowser/richtextbrowserwidget.cpp
+    richtextbrowser/richtextbrowserwidget.h
+    richtextbrowser/richtextbrowserfindbar.cpp
+    richtextbrowser/richtextbrowserfindbar.h
+
     core/texteditorcompleter.h
     core/texteditorcompleter.cpp
 )
@@ -101,6 +108,16 @@ ecm_generate_headers(TextCustomEditor_CamelCasetextrichtexteditor_HEADERS
     RELATIVE richtexteditor
     )
 
+ecm_generate_headers(TextCustomEditor_CamelCaserichtextbrowser_HEADERS
+    HEADER_NAMES
+    RichTextBrowserWidget
+    RichTextBrowser
+    RichTextBrowserFindBar
+    REQUIRED_HEADERS TextCustomEditor_richtextbrowser_HEADERS
+    PREFIX TextCustomEditor
+    RELATIVE richtextbrowser
+    )
+
 ecm_generate_headers(TextCustomEditor_CamelCaseplaintexteditor_HEADERS
     HEADER_NAMES
     PlainTextEditor
@@ -134,6 +151,7 @@ install(FILES
     ${TextCustomEditor_richtexteditor_HEADERS}
     ${TextCustomEditor_texteditor_widgets_HEADERS}
     ${TextCustomEditor_plaintexteditor_HEADERS}
+    ${TextCustomEditor_richtextbrowser_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/textcustomeditor
     COMPONENT Devel
@@ -143,6 +161,7 @@ install(FILES
     ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
     ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
     ${TextCustomEditor_CamelCasetexteditor_widgets_HEADERS}
+    ${TextCustomEditor_CamelCaserichtextbrowser_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/TextCustomEditor/
     COMPONENT Devel
 )
@@ -184,6 +203,7 @@ if (BUILD_QCH)
         ${TextCustomEditor_texteditor_widgets_HEADERS}
         ${TextCustomEditor_plaintexteditor_HEADERS}
         ${TextCustomEditor_texteditor_core_HEADERS}
+        ${TextCustomEditor_richtextbrowser_HEADERS}
         LINK_QCHS
         Qt${QT_MAJOR_VERSION}Core_QCH
         INCLUDE_DIRS
@@ -215,9 +235,11 @@ configure_package_config_file(
 if (BUILD_TESTING)
     add_subdirectory(plaintexteditor/autotests)
     add_subdirectory(richtexteditor/autotests)
+    add_subdirectory(richtextbrowser/autotests)
     add_subdirectory(widgets/autotests)
     add_subdirectory(plaintexteditor/tests)
     add_subdirectory(richtexteditor/tests)
+    add_subdirectory(richtextbrowser/tests)
 endif()
 
 if(BUILD_DESIGNERPLUGIN)

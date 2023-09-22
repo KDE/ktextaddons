@@ -8,16 +8,14 @@
 
 #include <QObject>
 
-class RichTextEditFindBarTest : public QObject
+class RichTextBrowserFindBarTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextEditFindBarTest(QObject *parent = nullptr);
-    ~RichTextEditFindBarTest() override = default;
+    explicit RichTextBrowserFindBarTest(QObject *parent = nullptr);
+    ~RichTextBrowserFindBarTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldSearchText_data();
     void shouldSearchText();
-    void shouldReplaceAllText_data();
-    void shouldReplaceAllText();
 };
