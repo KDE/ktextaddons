@@ -5,6 +5,7 @@
 */
 #include "plaintexteditor.h"
 
+#include "config-textcustomeditor.h"
 #include "widgets/textmessageindicator.h"
 #include <KConfig>
 #include <KConfigGroup>

@@ -19,6 +19,7 @@
 #include <QActionGroup>
 #include <QIcon>
 
+#include "config-textcustomeditor.h"
 #include <KIO/KUriFilterSearchProviderActions>
 #include <Sonnet/Dialog>
 #include <Sonnet/Highlighter>
