@@ -2,6 +2,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextcustomeditor\")
 
+if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
+    set(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT TRUE)
+endif()
+
+configure_file(config-textcustomeditor.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
+
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextCustomEditor")
 
@@ -57,6 +63,11 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
     KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
 )
+
+if (TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
+    target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE KF${KF_MAJOR_VERSION}TextEditTextToSpeech
+    )
+endif()
 
 ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextCustomEditor HEADER textcustomeditor_debug.h
     IDENTIFIER TEXTCUSTOMEDITOR_LOG

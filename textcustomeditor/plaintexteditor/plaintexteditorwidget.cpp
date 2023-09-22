@@ -5,6 +5,7 @@
 */
 
 #include "plaintexteditorwidget.h"
+#include "config-textcustomeditor.h"
 #include "plaintexteditfindbar.h"
 #include "plaintexteditor.h"
 #include <TextAddonsWidgets/SlideContainer>

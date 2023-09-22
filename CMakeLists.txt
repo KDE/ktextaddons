@@ -91,7 +91,6 @@ add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
 add_subdirectory(textemoticons)
 add_subdirectory(textutils)
-add_subdirectory(textcustomeditor)
 if (QT_MAJOR_VERSION STREQUAL "6")
     add_subdirectory(textspeechtotext)
 endif()
@@ -105,6 +104,7 @@ if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
     add_subdirectory(textedittexttospeech)
 endif()
 
+add_subdirectory(textcustomeditor)
 ecm_qt_install_logging_categories(
         EXPORT KTEXTADDONS
         FILE ktextaddons.categories

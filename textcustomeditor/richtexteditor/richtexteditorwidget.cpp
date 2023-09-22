@@ -8,6 +8,7 @@
 #include "richtexteditfindbar.h"
 #include "richtexteditor.h"
 
+#include "config-textcustomeditor.h"
 #include <QTextCursor>
 #include <QVBoxLayout>
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
