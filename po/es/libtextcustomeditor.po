@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextcustomeditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 02:21+0000\n"
+"POT-Creation-Date: 2023-09-23 02:24+0000\n"
 "PO-Revision-Date: 2023-09-07 11:25+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -27,48 +27,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 sustitución realizada"
 msgstr[1] "%1 sustituciones realizadas"
 
-#: plaintexteditor/plaintexteditor.cpp:160
-#: richtexteditor/richtexteditor.cpp:218
+#: plaintexteditor/plaintexteditor.cpp:161
+#: richtexteditor/richtexteditor.cpp:219
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Comprobar ortografía..."
 
-#: plaintexteditor/plaintexteditor.cpp:165
-#: richtexteditor/richtexteditor.cpp:225
+#: plaintexteditor/plaintexteditor.cpp:166
+#: richtexteditor/richtexteditor.cpp:226
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Comprobación ortográfica automática"
 
-#: plaintexteditor/plaintexteditor.cpp:171
-#: richtexteditor/richtexteditor.cpp:231
+#: plaintexteditor/plaintexteditor.cpp:172
+#: richtexteditor/richtexteditor.cpp:232
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Idioma para comprobación ortográfica"
 
-#: plaintexteditor/plaintexteditor.cpp:199
-#: richtexteditor/richtexteditor.cpp:264
+#: plaintexteditor/plaintexteditor.cpp:200
+#: richtextbrowser/richtextbrowser.cpp:158
+#: richtexteditor/richtexteditor.cpp:265
 #, kde-format
 msgid "Speak Text"
 msgstr "Leer texto"
 
-#: plaintexteditor/plaintexteditor.cpp:368
-#: richtexteditor/richtexteditor.cpp:472
+#: plaintexteditor/plaintexteditor.cpp:369
+#: richtexteditor/richtexteditor.cpp:473
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "No hay nada que comprobar."
 
-#: plaintexteditor/plaintexteditor.cpp:373
-#: richtexteditor/richtexteditor.cpp:490
+#: plaintexteditor/plaintexteditor.cpp:374
+#: richtexteditor/richtexteditor.cpp:491
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hay ningún motor de comprobación ortográfica disponible."
 
-#: richtexteditor/richtexteditor.cpp:257
+#: richtexteditor/richtexteditor.cpp:258
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permitir tabulaciones"
 
-#: richtexteditor/richtexteditor.cpp:482
+#: richtexteditor/richtexteditor.cpp:483
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -77,13 +78,13 @@ msgstr ""
 "No hay ningún motor de comprobación ortográfica disponible. ¿Desea enviar el "
 "mensaje de correo de todos modos?"
 
-#: richtexteditor/richtexteditor.cpp:484
+#: richtexteditor/richtexteditor.cpp:485
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Enviar"
 
-#: richtexteditor/richtexteditor.cpp:506
+#: richtexteditor/richtexteditor.cpp:507
 #, kde-format
 msgid "Skip"
 msgstr "Omitir"
