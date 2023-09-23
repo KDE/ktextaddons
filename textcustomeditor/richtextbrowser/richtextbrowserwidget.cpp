@@ -1,12 +1,12 @@
 /*
-   SPDX-FileCopyrightText: 2013-2023 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #include "richtextbrowserwidget.h"
-#include "richtexteditfindbar.h"
-#include "richtexteditor.h"
+#include "richtextbrowser.h"
+#include "richtextbrowserfindbar.h"
 
 #include "config-textcustomeditor.h"
 #include <QTextCursor>
@@ -23,15 +23,15 @@ class Q_DECL_HIDDEN TextCustomEditor::RichTextBrowserWidgetPrivate
 public:
     RichTextBrowserWidgetPrivate() = default;
 
-    TextCustomEditor::RichTextEditFindBar *mFindBar = nullptr;
-    RichTextEditor *mEditor = nullptr;
+    TextCustomEditor::RichTextBrowserFindBar *mFindBar = nullptr;
+    RichTextBrowser *mEditor = nullptr;
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
 };
 
-RichTextBrowserWidget::RichTextBrowserWidget(RichTextEditor *customEditor, QWidget *parent)
+RichTextBrowserWidget::RichTextBrowserWidget(RichTextBrowser *customEditor, QWidget *parent)
     : QWidget(parent)
     , d(new TextCustomEditor::RichTextBrowserWidgetPrivate)
 {
@@ -52,7 +52,7 @@ void RichTextBrowserWidget::clear()
     d->mEditor->clear();
 }
 
-RichTextEditor *RichTextBrowserWidget::editor() const
+RichTextBrowser *RichTextBrowserWidget::editor() const
 {
     return d->mEditor;
 }
@@ -65,11 +65,6 @@ void RichTextBrowserWidget::setAcceptRichText(bool b)
 bool RichTextBrowserWidget::acceptRichText() const
 {
     return d->mEditor->acceptRichText();
-}
-
-void RichTextBrowserWidget::setSpellCheckingConfigFileName(const QString &_fileName)
-{
-    d->mEditor->setSpellCheckingConfigFileName(_fileName);
 }
 
 void RichTextBrowserWidget::setHtml(const QString &html)
@@ -97,7 +92,7 @@ QString RichTextBrowserWidget::toPlainText() const
     return d->mEditor->toPlainText();
 }
 
-void RichTextBrowserWidget::init(RichTextEditor *customEditor)
+void RichTextBrowserWidget::init(RichTextBrowser *customEditor)
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
@@ -108,53 +103,30 @@ void RichTextBrowserWidget::init(RichTextEditor *customEditor)
     if (customEditor) {
         d->mEditor = customEditor;
     } else {
-        d->mEditor = new RichTextEditor;
+        d->mEditor = new RichTextBrowser;
     }
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    connect(d->mEditor, &RichTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
+    connect(d->mEditor, &RichTextBrowser::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     lay->addWidget(d->mEditor);
 
     d->mSliderContainer = new TextAddonsWidgets::SlideContainer(this);
 
-    d->mFindBar = new TextCustomEditor::RichTextEditFindBar(d->mEditor, this);
+    d->mFindBar = new TextCustomEditor::RichTextBrowserFindBar(d->mEditor, this);
     d->mFindBar->setHideWhenClose(false);
-    connect(d->mFindBar, &TextCustomEditor::RichTextEditFindBar::displayMessageIndicator, d->mEditor, &RichTextEditor::slotDisplayMessageIndicator);
+    connect(d->mFindBar, &TextCustomEditor::RichTextBrowserFindBar::displayMessageIndicator, d->mEditor, &RichTextBrowser::slotDisplayMessageIndicator);
 
-    connect(d->mFindBar, &TextCustomEditor::RichTextEditFindBar::hideFindBar, this, &RichTextBrowserWidget::slotHideFindBar);
+    connect(d->mFindBar, &TextCustomEditor::RichTextBrowserFindBar::hideFindBar, this, &RichTextBrowserWidget::slotHideFindBar);
     d->mSliderContainer->setContent(d->mFindBar);
     lay->addWidget(d->mSliderContainer);
 
-    connect(d->mEditor, &RichTextEditor::findText, this, &RichTextBrowserWidget::slotFind);
-    connect(d->mEditor, &RichTextEditor::replaceText, this, &RichTextBrowserWidget::slotReplace);
+    connect(d->mEditor, &RichTextBrowser::findText, this, &RichTextBrowserWidget::slotFind);
 }
 
 void RichTextBrowserWidget::slotHideFindBar()
 {
     d->mSliderContainer->slideOut();
     d->mEditor->setFocus();
-}
-
-bool RichTextBrowserWidget::isReadOnly() const
-{
-    return d->mEditor->isReadOnly();
-}
-
-void RichTextBrowserWidget::setReadOnly(bool readOnly)
-{
-    d->mEditor->setReadOnly(readOnly);
-}
-
-void RichTextBrowserWidget::slotReplace()
-{
-    if (d->mEditor->searchSupport()) {
-        if (d->mEditor->textCursor().hasSelection()) {
-            d->mFindBar->setText(d->mEditor->textCursor().selectedText());
-        }
-        d->mFindBar->showReplace();
-        d->mSliderContainer->slideIn();
-        d->mFindBar->focusAndSetCursor();
-    }
 }
 
 void RichTextBrowserWidget::slotFindNext()
@@ -182,4 +154,4 @@ void RichTextBrowserWidget::slotFind()
     }
 }
 
-#include "moc_richtexteditorwidget.cpp"
+#include "moc_richtextbrowserwidget.cpp"

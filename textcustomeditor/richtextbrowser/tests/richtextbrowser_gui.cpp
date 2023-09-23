@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "richtexteditor/richtexteditorwidget.h"
+#include "richtextbrowser/richtextbrowserwidget.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -19,7 +19,8 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new TextCustomEditor::RichTextEditorWidget();
+    auto w = new TextCustomEditor::RichTextBrowserWidget();
+    w->setPlainText(QStringLiteral("Test RichTextBrowserWidget"));
     w->resize(800, 600);
     w->show();
     app.exec();

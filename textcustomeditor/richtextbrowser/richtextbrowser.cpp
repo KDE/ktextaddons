@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2013-2023 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -8,39 +8,26 @@
 #include "textcustomeditor_debug.h"
 
 #include "widgets/textmessageindicator.h"
-#include <KConfig>
-#include <KConfigGroup>
 #include <KCursor>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KSharedConfig>
 #include <KStandardAction>
 #include <KStandardGuiItem>
-#include <QActionGroup>
 #include <QIcon>
 
 #include "config-textcustomeditor.h"
 #include <KIO/KUriFilterSearchProviderActions>
-#include <Sonnet/Dialog>
-#include <Sonnet/Highlighter>
-#include <sonnet/backgroundchecker.h>
-#include <sonnet/spellcheckdecorator.h>
-#include <sonnet/speller.h>
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
-#include <TextEmoticonsWidgets/EmoticonTextEditAction>
 
 #include <KColorScheme>
 #include <QApplication>
 #include <QClipboard>
 #include <QContextMenuEvent>
-#include <QDBusConnection>
-#include <QDBusConnectionInterface>
-#include <QDialogButtonBox>
 #include <QMenu>
-#include <QPushButton>
 #include <QScrollBar>
+#include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
 
@@ -53,13 +40,8 @@ public:
         , textIndicator(new TextCustomEditor::TextMessageIndicator(q))
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
     {
-        KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
-        KConfigGroup group(&sonnetKConfig, "Spelling");
-        checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         supportFeatures |= RichTextBrowser::Search;
-        supportFeatures |= RichTextBrowser::SpellChecking;
         supportFeatures |= RichTextBrowser::TextToSpeech;
-        supportFeatures |= RichTextBrowser::AllowTab;
         supportFeatures |= RichTextBrowser::AllowWebShortcut;
 
         // Workaround QTextEdit behavior: if the cursor points right after the link
@@ -89,35 +71,24 @@ public:
 
     ~RichTextBrowserPrivate()
     {
-        delete richTextDecorator;
-        delete speller;
     }
 
-    QStringList ignoreSpellCheckingWords;
     RichTextBrowser *const q;
     TextCustomEditor::TextMessageIndicator *const textIndicator;
-    QString spellCheckingConfigFileName;
-    QString spellCheckingLanguage;
     QTextDocumentFragment originalDoc;
-    Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
-    Sonnet::Speller *speller = nullptr;
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
     RichTextBrowser::SupportFeatures supportFeatures;
     QColor mReadOnlyBackgroundColor;
     int mInitialFontSize;
     bool customPalette = false;
-    bool checkSpellingEnabled = false;
-    bool activateLanguageMenu = true;
-    bool showAutoCorrectionButton = false;
 };
 
 RichTextBrowser::RichTextBrowser(QWidget *parent)
-    : QTextEdit(parent)
+    : QTextBrowser(parent)
     , d(new RichTextBrowserPrivate(this))
 {
     setAcceptRichText(true);
     KCursor::setAutoHideCursor(this, true, false);
-    setSpellCheckingConfigFileName(QString());
     d->mInitialFontSize = font().pointSize();
     regenerateColorScheme();
 }
@@ -139,25 +110,6 @@ void RichTextBrowser::setDefaultFontSize(int val)
 void RichTextBrowser::slotDisplayMessageIndicator(const QString &message)
 {
     d->textIndicator->display(message);
-}
-
-Sonnet::Highlighter *RichTextBrowser::highlighter() const
-{
-    if (d->richTextDecorator) {
-        return d->richTextDecorator->highlighter();
-    } else {
-        return nullptr;
-    }
-}
-
-bool RichTextBrowser::activateLanguageMenu() const
-{
-    return d->activateLanguageMenu;
-}
-
-void RichTextBrowser::setActivateLanguageMenu(bool activate)
-{
-    d->activateLanguageMenu = activate;
 }
 
 void RichTextBrowser::contextMenuEvent(QContextMenuEvent *event)
@@ -197,69 +149,10 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
             if (emptyDocument) {
                 findAction->setEnabled(false);
             }
-            popup->addSeparator();
-            if (!isReadOnly()) {
-                QAction *act = KStandardAction::replace(this, &RichTextBrowser::replaceText, popup);
-                popup->addAction(act);
-                if (emptyDocument) {
-                    act->setEnabled(false);
-                }
-                popup->addSeparator();
-            }
         } else {
             popup->addSeparator();
         }
 
-        if (!isReadOnly() && spellCheckingSupport()) {
-            if (!d->speller) {
-                d->speller = new Sonnet::Speller();
-            }
-            if (!d->speller->availableBackends().isEmpty()) {
-                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
-                                                             i18n("Check Spelling..."),
-                                                             this,
-                                                             &RichTextBrowser::slotCheckSpelling);
-                if (emptyDocument) {
-                    spellCheckAction->setEnabled(false);
-                }
-                popup->addSeparator();
-                QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, &RichTextBrowser::slotToggleAutoSpellCheck);
-                autoSpellCheckAction->setCheckable(true);
-                autoSpellCheckAction->setChecked(checkSpellingEnabled());
-                popup->addAction(autoSpellCheckAction);
-
-                if (checkSpellingEnabled() && d->activateLanguageMenu) {
-                    auto languagesMenu = new QMenu(i18n("Spell Checking Language"), popup);
-                    auto languagesGroup = new QActionGroup(languagesMenu);
-                    languagesGroup->setExclusive(true);
-
-                    QString defaultSpellcheckingLanguage = spellCheckingLanguage();
-                    if (defaultSpellcheckingLanguage.isEmpty()) {
-                        defaultSpellcheckingLanguage = d->speller->defaultLanguage();
-                    }
-
-                    QMapIterator<QString, QString> i(d->speller->availableDictionaries());
-                    while (i.hasNext()) {
-                        i.next();
-                        QAction *languageAction = languagesMenu->addAction(i.key());
-                        languageAction->setCheckable(true);
-                        languageAction->setChecked(defaultSpellcheckingLanguage == i.value());
-                        languageAction->setData(i.value());
-                        languageAction->setActionGroup(languagesGroup);
-                        connect(languageAction, &QAction::triggered, this, &RichTextBrowser::slotLanguageSelected);
-                    }
-                    popup->addMenu(languagesMenu);
-                }
-                popup->addSeparator();
-            }
-        }
-
-        if (allowTabSupport() && !isReadOnly()) {
-            QAction *allowTabAction = popup->addAction(i18n("Allow Tabulations"));
-            allowTabAction->setCheckable(true);
-            allowTabAction->setChecked(!tabChangesFocus());
-            connect(allowTabAction, &QAction::triggered, this, &RichTextBrowser::slotAllowTab);
-        }
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         if (!emptyDocument) {
             QAction *speakAction = popup->addAction(i18n("Speak Text"));
@@ -273,21 +166,10 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
-        if (emojiSupport()) {
-            popup->addSeparator();
-            auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
-            popup->addAction(action);
-            connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &RichTextBrowser::slotInsertEmoticon);
-        }
         addExtraMenuEntry(popup, pos);
         return popup;
     }
     return nullptr;
-}
-
-void RichTextBrowser::slotInsertEmoticon(const QString &str)
-{
-    insertPlainText(str);
 }
 
 void RichTextBrowser::slotSpeakText()
@@ -315,32 +197,6 @@ bool RichTextBrowser::webShortcutSupport() const
     return d->supportFeatures & AllowWebShortcut;
 }
 
-void RichTextBrowser::setEmojiSupport(bool b)
-{
-    if (b) {
-        d->supportFeatures |= Emoji;
-    } else {
-        d->supportFeatures = (d->supportFeatures & ~Emoji);
-    }
-}
-
-bool RichTextBrowser::emojiSupport() const
-{
-    return d->supportFeatures & Emoji;
-}
-
-void RichTextBrowser::addIgnoreWords(const QStringList &lst)
-{
-    d->ignoreSpellCheckingWords = lst;
-    addIgnoreWordsToHighLighter();
-}
-
-void RichTextBrowser::forceAutoCorrection(bool selectedText)
-{
-    Q_UNUSED(selectedText)
-    // Nothing here
-}
-
 void RichTextBrowser::setSearchSupport(bool b)
 {
     if (b) {
@@ -355,44 +211,6 @@ bool RichTextBrowser::searchSupport() const
     return d->supportFeatures & Search;
 }
 
-void RichTextBrowser::setAllowTabSupport(bool b)
-{
-    if (b) {
-        d->supportFeatures |= AllowTab;
-    } else {
-        d->supportFeatures = (d->supportFeatures & ~AllowTab);
-    }
-}
-
-bool RichTextBrowser::allowTabSupport() const
-{
-    return d->supportFeatures & AllowTab;
-}
-
-void RichTextBrowser::setShowAutoCorrectButton(bool b)
-{
-    d->showAutoCorrectionButton = b;
-}
-
-bool RichTextBrowser::showAutoCorrectButton() const
-{
-    return d->showAutoCorrectionButton;
-}
-
-bool RichTextBrowser::spellCheckingSupport() const
-{
-    return d->supportFeatures & SpellChecking;
-}
-
-void RichTextBrowser::setSpellCheckingSupport(bool check)
-{
-    if (check) {
-        d->supportFeatures |= SpellChecking;
-    } else {
-        d->supportFeatures = (d->supportFeatures & ~SpellChecking);
-    }
-}
-
 void RichTextBrowser::setTextToSpeechSupport(bool b)
 {
     if (b) {
@@ -405,11 +223,6 @@ void RichTextBrowser::setTextToSpeechSupport(bool b)
 bool RichTextBrowser::textToSpeechSupport() const
 {
     return d->supportFeatures & TextToSpeech;
-}
-
-void RichTextBrowser::slotAllowTab()
-{
-    setTabChangesFocus(!tabChangesFocus());
 }
 
 void RichTextBrowser::addExtraMenuEntry(QMenu *menu, QPoint pos)
@@ -436,300 +249,6 @@ void RichTextBrowser::updateReadOnlyColor()
         p.setColor(QPalette::Window, d->mReadOnlyBackgroundColor);
         setPalette(p);
     }
-}
-
-void RichTextBrowser::setReadOnly(bool readOnly)
-{
-    if (!readOnly && hasFocus() && checkSpellingEnabled() && !d->richTextDecorator) {
-        createHighlighter();
-    }
-
-    if (readOnly == isReadOnly()) {
-        return;
-    }
-
-    if (readOnly) {
-        clearDecorator();
-        d->customPalette = testAttribute(Qt::WA_SetPalette);
-        updateReadOnlyColor();
-    } else {
-        if (d->customPalette && testAttribute(Qt::WA_SetPalette)) {
-            QPalette p = palette();
-            QColor color = p.color(QPalette::Normal, QPalette::Base);
-            p.setColor(QPalette::Base, color);
-            p.setColor(QPalette::Window, color);
-            setPalette(p);
-        } else {
-            setPalette(QPalette());
-        }
-    }
-
-    QTextEdit::setReadOnly(readOnly);
-}
-
-void RichTextBrowser::checkSpelling(bool force)
-{
-    if (document()->isEmpty()) {
-        slotDisplayMessageIndicator(i18n("Nothing to spell check."));
-        if (force) {
-            Q_EMIT spellCheckingFinished();
-        }
-        return;
-    }
-    auto backgroundSpellCheck = new Sonnet::BackgroundChecker;
-    if (backgroundSpellCheck->speller().availableBackends().isEmpty()) {
-        if (force) {
-            const int answer = KMessageBox::questionTwoActions(this,
-                                                               i18n("No backend available for spell checking. Do you want to send the email anyways?"),
-                                                               QString(),
-                                                               KGuiItem(i18nc("@action:button", "Send"), QStringLiteral("mail-send")),
-                                                               KStandardGuiItem::cancel());
-            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-                Q_EMIT spellCheckingFinished();
-            }
-        } else {
-            slotDisplayMessageIndicator(i18n("No backend available for spell checking."));
-        }
-        delete backgroundSpellCheck;
-        return;
-    }
-    if (!d->spellCheckingLanguage.isEmpty()) {
-        backgroundSpellCheck->changeLanguage(d->spellCheckingLanguage);
-    }
-    if (!d->ignoreSpellCheckingWords.isEmpty()) {
-        for (const QString &word : std::as_const(d->ignoreSpellCheckingWords)) {
-            backgroundSpellCheck->speller().addToSession(word);
-        }
-    }
-    auto spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
-    auto buttonBox = spellDialog->findChild<QDialogButtonBox *>();
-    if (buttonBox) {
-        auto skipButton = new QPushButton(i18n("Skip"));
-        buttonBox->addButton(skipButton, QDialogButtonBox::ActionRole);
-        connect(skipButton, &QPushButton::clicked, spellDialog, &Sonnet::Dialog::close);
-        if (force) {
-            connect(skipButton, &QPushButton::clicked, this, &RichTextBrowser::spellCheckingFinished);
-        }
-    } else {
-        qCWarning(TEXTCUSTOMEDITOR_LOG) << " Impossible to find qdialogbuttonbox";
-    }
-    backgroundSpellCheck->setParent(spellDialog);
-    spellDialog->setAttribute(Qt::WA_DeleteOnClose, true);
-    spellDialog->activeAutoCorrect(d->showAutoCorrectionButton);
-    connect(spellDialog, &Sonnet::Dialog::replace, this, &RichTextBrowser::slotSpellCheckerCorrected);
-    connect(spellDialog, &Sonnet::Dialog::misspelling, this, &RichTextBrowser::slotSpellCheckerMisspelling);
-    connect(spellDialog, &Sonnet::Dialog::autoCorrect, this, &RichTextBrowser::slotSpellCheckerAutoCorrect);
-    connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &RichTextBrowser::slotSpellCheckerFinished);
-    connect(spellDialog, &Sonnet::Dialog::cancel, this, &RichTextBrowser::slotSpellCheckerCanceled);
-    connect(spellDialog, &Sonnet::Dialog::spellCheckStatus, this, &RichTextBrowser::spellCheckStatus);
-    connect(spellDialog, &Sonnet::Dialog::languageChanged, this, &RichTextBrowser::languageChanged);
-    if (force) {
-        connect(spellDialog, &Sonnet::Dialog::spellCheckDone, this, &RichTextBrowser::spellCheckingFinished);
-        connect(spellDialog, &Sonnet::Dialog::cancel, this, &RichTextBrowser::spellCheckingCanceled);
-    }
-    d->originalDoc = QTextDocumentFragment(document());
-    spellDialog->setBuffer(toPlainText());
-    spellDialog->show();
-}
-
-void RichTextBrowser::slotCheckSpelling()
-{
-    checkSpelling(false);
-}
-
-void RichTextBrowser::forceSpellChecking()
-{
-    checkSpelling(true);
-}
-
-void RichTextBrowser::slotSpellCheckerCanceled()
-{
-    QTextDocument *doc = document();
-    doc->clear();
-    QTextCursor cursor(doc);
-    cursor.insertFragment(d->originalDoc);
-    slotSpellCheckerFinished();
-}
-
-void RichTextBrowser::slotSpellCheckerAutoCorrect(const QString &currentWord, const QString &autoCorrectWord)
-{
-    Q_EMIT spellCheckerAutoCorrect(currentWord, autoCorrectWord);
-}
-
-void RichTextBrowser::slotSpellCheckerMisspelling(const QString &text, int pos)
-{
-    highlightWord(text.length(), pos);
-}
-
-void RichTextBrowser::slotSpellCheckerCorrected(const QString &oldWord, int pos, const QString &newWord)
-{
-    if (oldWord != newWord) {
-        QTextCursor cursor(document());
-        cursor.setPosition(pos);
-        cursor.setPosition(pos + oldWord.length(), QTextCursor::KeepAnchor);
-        cursor.insertText(newWord);
-    }
-}
-
-void RichTextBrowser::slotSpellCheckerFinished()
-{
-    QTextCursor cursor(document());
-    cursor.clearSelection();
-    setTextCursor(cursor);
-    if (highlighter()) {
-        highlighter()->rehighlight();
-    }
-}
-
-void RichTextBrowser::highlightWord(int length, int pos)
-{
-    QTextCursor cursor(document());
-    cursor.setPosition(pos);
-    cursor.setPosition(pos + length, QTextCursor::KeepAnchor);
-    setTextCursor(cursor);
-    ensureCursorVisible();
-}
-
-void RichTextBrowser::createHighlighter()
-{
-    auto highlighter = new Sonnet::Highlighter(this);
-    highlighter->setCurrentLanguage(spellCheckingLanguage());
-    setHighlighter(highlighter);
-}
-
-Sonnet::SpellCheckDecorator *RichTextBrowser::createSpellCheckDecorator()
-{
-    return new Sonnet::SpellCheckDecorator(this);
-}
-
-void RichTextBrowser::addIgnoreWordsToHighLighter()
-{
-    if (d->ignoreSpellCheckingWords.isEmpty()) {
-        return;
-    }
-    if (d->richTextDecorator) {
-        Sonnet::Highlighter *_highlighter = d->richTextDecorator->highlighter();
-        for (const QString &word : std::as_const(d->ignoreSpellCheckingWords)) {
-            _highlighter->ignoreWord(word);
-        }
-    }
-}
-
-void RichTextBrowser::setHighlighter(Sonnet::Highlighter *_highLighter)
-{
-    Sonnet::SpellCheckDecorator *decorator = createSpellCheckDecorator();
-    delete decorator->highlighter();
-    decorator->setHighlighter(_highLighter);
-
-    d->richTextDecorator = decorator;
-    addIgnoreWordsToHighLighter();
-}
-
-void RichTextBrowser::focusInEvent(QFocusEvent *event)
-{
-    if (d->checkSpellingEnabled && !isReadOnly() && !d->richTextDecorator && spellCheckingSupport()) {
-        createHighlighter();
-    }
-
-    QTextEdit::focusInEvent(event);
-}
-
-void RichTextBrowser::setSpellCheckingConfigFileName(const QString &_fileName)
-{
-    d->spellCheckingConfigFileName = _fileName;
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    if (config->hasGroup("Spelling")) {
-        KConfigGroup group(config, "Spelling");
-        d->checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
-        d->spellCheckingLanguage = group.readEntry("Language", QString());
-    }
-    setCheckSpellingEnabled(checkSpellingEnabled());
-
-    if (!d->spellCheckingLanguage.isEmpty() && highlighter()) {
-        highlighter()->setCurrentLanguage(d->spellCheckingLanguage);
-        highlighter()->rehighlight();
-    }
-}
-
-QString RichTextBrowser::spellCheckingConfigFileName() const
-{
-    return d->spellCheckingConfigFileName;
-}
-
-bool RichTextBrowser::checkSpellingEnabled() const
-{
-    return d->checkSpellingEnabled;
-}
-
-void RichTextBrowser::setCheckSpellingEnabled(bool check)
-{
-    if (check == d->checkSpellingEnabled) {
-        return;
-    }
-    d->checkSpellingEnabled = check;
-    Q_EMIT checkSpellingChanged(check);
-    // From the above statement we know that if we're turning checking
-    // on that we need to create a new highlighter and if we're turning it
-    // off we should remove the old one.
-
-    if (check) {
-        if (hasFocus()) {
-            if (!d->richTextDecorator) {
-                createHighlighter();
-            }
-            if (!d->spellCheckingLanguage.isEmpty()) {
-                setSpellCheckingLanguage(spellCheckingLanguage());
-            }
-        }
-    } else {
-        clearDecorator();
-    }
-    updateHighLighter();
-}
-
-void RichTextBrowser::updateHighLighter()
-{
-}
-
-void RichTextBrowser::clearDecorator()
-{
-    delete d->richTextDecorator;
-    d->richTextDecorator = nullptr;
-}
-
-const QString &RichTextBrowser::spellCheckingLanguage() const
-{
-    return d->spellCheckingLanguage;
-}
-
-void RichTextBrowser::setSpellCheckingLanguage(const QString &_language)
-{
-    if (highlighter()) {
-        highlighter()->setCurrentLanguage(_language);
-    }
-
-    if (_language != d->spellCheckingLanguage) {
-        d->spellCheckingLanguage = _language;
-        KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-        KConfigGroup group(config, "Spelling");
-        group.writeEntry("Language", d->spellCheckingLanguage);
-
-        Q_EMIT languageChanged(_language);
-    }
-}
-
-void RichTextBrowser::slotToggleAutoSpellCheck()
-{
-    setCheckSpellingEnabled(!checkSpellingEnabled());
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    KConfigGroup group(config, "Spelling");
-    group.writeEntry("checkerEnabledByDefault", d->checkSpellingEnabled);
-}
-
-void RichTextBrowser::slotLanguageSelected()
-{
-    auto languageAction = static_cast<QAction *>(QObject::sender());
-    setSpellCheckingLanguage(languageAction->data().toString());
 }
 
 static void deleteWord(QTextCursor cursor, QTextCursor::MoveOperation op)
@@ -880,11 +399,6 @@ bool RichTextBrowser::handleShortcut(QKeyEvent *event)
     } else if (searchSupport() && KStandardShortcut::find().contains(key)) {
         Q_EMIT findText();
         return true;
-    } else if (searchSupport() && KStandardShortcut::replace().contains(key)) {
-        if (!isReadOnly()) {
-            Q_EMIT replaceText();
-        }
-        return true;
     } else if (KStandardShortcut::pasteSelection().contains(key)) {
         QString text = QApplication::clipboard()->text(QClipboard::Selection);
         if (!text.isEmpty()) {
@@ -946,8 +460,6 @@ bool RichTextBrowser::overrideShortcut(QKeyEvent *event)
     } else if (searchSupport() && KStandardShortcut::find().contains(key)) {
         return true;
     } else if (searchSupport() && KStandardShortcut::findNext().contains(key)) {
-        return true;
-    } else if (searchSupport() && KStandardShortcut::replace().contains(key)) {
         return true;
     } else if (event->matches(QKeySequence::SelectAll)) { // currently missing in QTextEdit
         return true;
@@ -1064,4 +576,4 @@ void RichTextBrowser::moveLineUpDown(bool moveUp)
     setTextCursor(move);
 }
 
-#include "moc_richtexteditor.cpp"
+#include "moc_richtextbrowser.cpp"

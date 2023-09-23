@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2013-2023 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -13,21 +13,21 @@
 
 #include <QLineEdit>
 #include <QRegularExpression>
-#include <QTextEdit>
+#include <QTextBrowser>
 
 using namespace TextCustomEditor;
 class Q_DECL_HIDDEN TextCustomEditor::RichTextBrowserFindBarPrivate
 {
 public:
-    RichTextBrowserFindBarPrivate(QTextEdit *view)
+    RichTextBrowserFindBarPrivate(QTextBrowser *view)
         : mView(view)
     {
     }
 
-    QTextEdit *const mView;
+    QTextBrowser *const mView;
 };
 
-RichTextBrowserFindBar::RichTextBrowserFindBar(QTextEdit *view, QWidget *parent)
+RichTextBrowserFindBar::RichTextBrowserFindBar(QTextBrowser *view, QWidget *parent)
     : TextEditFindBarBase(parent)
     , d(new TextCustomEditor::RichTextBrowserFindBarPrivate(view))
 {
@@ -43,7 +43,7 @@ void RichTextBrowserFindBar::slotSearchText(bool backward, bool isAutoSearch)
 
 bool RichTextBrowserFindBar::viewIsReadOnly() const
 {
-    return d->mView->isReadOnly();
+    return true;
 }
 
 bool RichTextBrowserFindBar::documentIsEmpty() const
@@ -79,45 +79,12 @@ void RichTextBrowserFindBar::autoSearchMoveCursor()
 
 void RichTextBrowserFindBar::slotReplaceText()
 {
-    const TextEditFindBarBase::FindFlags searchOptions = mFindWidget->searchOptions();
-    if (d->mView->textCursor().hasSelection()) {
-        if (mFindWidget->isRegularExpression()) {
-            if (d->mView->textCursor().selectedText().contains(mFindWidget->searchRegularExpression())) {
-                d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                // search next after replace text.
-                searchText(false, false);
-            }
-        } else {
-            if (searchOptions & TextEditFindBarBase::FindRespectDiacritics) {
-                if (TextUtils::ConvertText::normalize(d->mView->textCursor().selectedText()) == TextUtils::ConvertText::normalize(mFindWidget->searchText())) {
-                    d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                    // search next after replace text.
-                    searchText(false, false);
-                } else {
-                    if (d->mView->textCursor().selectedText() == mFindWidget->searchText()) {
-                        d->mView->textCursor().insertText(mReplaceWidget->replaceLineEdit()->text());
-                        // search next after replace text.
-                        searchText(false, false);
-                    }
-                }
-            }
-        }
-    } else {
-        searchText(false, false);
-    }
+    // Nothing as readonly
 }
 
 void RichTextBrowserFindBar::slotReplaceAllText()
 {
-    int count = 0;
-    const QString replaceStr{mReplaceWidget->replaceLineEdit()->text()};
-    const TextEditFindBarBase::FindFlags searchOptions{mFindWidget->searchOptions()};
-    if (mFindWidget->isRegularExpression()) {
-        count = FindUtils::replaceAll(d->mView->document(), mFindWidget->searchRegularExpression(), replaceStr, searchOptions);
-    } else {
-        count = FindUtils::replaceAll(d->mView, mFindWidget->searchText(), replaceStr, searchOptions);
-    }
-    Q_EMIT displayMessageIndicator(i18np("%1 replacement made", "%1 replacements made", count));
+    // Nothing as readonly
 }
 
-#include "moc_richtexteditfindbar.cpp"
+#include "moc_richtextbrowserfindbar.cpp"

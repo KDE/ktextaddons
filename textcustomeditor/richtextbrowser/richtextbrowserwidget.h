@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2013-2023 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -12,7 +12,7 @@
 
 namespace TextCustomEditor
 {
-class RichTextEditor;
+class RichTextBrowser;
 class RichTextBrowserWidgetPrivate;
 /**
  * @brief The RichTextBrowserWidget class
@@ -21,18 +21,14 @@ class RichTextBrowserWidgetPrivate;
 class TEXTCUSTOMEDITOR_EXPORT RichTextBrowserWidget : public QWidget
 {
     Q_OBJECT
-    Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 public:
     explicit RichTextBrowserWidget(QWidget *parent = nullptr);
-    explicit RichTextBrowserWidget(RichTextEditor *customEditor, QWidget *parent = nullptr);
+    explicit RichTextBrowserWidget(RichTextBrowser *customEditor, QWidget *parent = nullptr);
     ~RichTextBrowserWidget() override;
 
     void clear();
 
-    Q_REQUIRED_RESULT RichTextEditor *editor() const;
-
-    void setReadOnly(bool readOnly);
-    bool isReadOnly() const;
+    Q_REQUIRED_RESULT RichTextBrowser *editor() const;
 
     void setHtml(const QString &html);
     Q_REQUIRED_RESULT QString toHtml() const;
@@ -43,17 +39,14 @@ public:
     void setAcceptRichText(bool b);
     bool acceptRichText() const;
 
-    void setSpellCheckingConfigFileName(const QString &_fileName);
-
     Q_REQUIRED_RESULT bool isEmpty() const;
 public Q_SLOTS:
     void slotFindNext();
     void slotFind();
-    void slotReplace();
 
 private:
     TEXTCUSTOMEDITOR_NO_EXPORT void slotHideFindBar();
-    TEXTCUSTOMEDITOR_NO_EXPORT void init(RichTextEditor *customEditor = nullptr);
+    TEXTCUSTOMEDITOR_NO_EXPORT void init(RichTextBrowser *customEditor = nullptr);
     std::unique_ptr<RichTextBrowserWidgetPrivate> const d;
 };
 }
