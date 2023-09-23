@@ -17,7 +17,7 @@
 
 #include "config-textcustomeditor.h"
 #include <KIO/KUriFilterSearchProviderActions>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
 
@@ -153,7 +153,7 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
             popup->addSeparator();
         }
 
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         if (!emptyDocument) {
             QAction *speakAction = popup->addAction(i18n("Speak Text"));
             speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));

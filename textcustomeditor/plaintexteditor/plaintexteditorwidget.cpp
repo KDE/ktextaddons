@@ -9,7 +9,7 @@
 #include "plaintexteditfindbar.h"
 #include "plaintexteditor.h"
 #include <TextAddonsWidgets/SlideContainer>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <QTextCursor>
@@ -23,7 +23,7 @@ public:
 
     TextCustomEditor::PlainTextEditFindBar *mFindBar = nullptr;
     PlainTextEditor *mEditor = nullptr;
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
@@ -79,7 +79,7 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     d->mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
 #endif
@@ -89,7 +89,7 @@ void PlainTextEditorWidget::init(PlainTextEditor *customEditor)
         d->mEditor = new PlainTextEditor;
     }
     lay->addWidget(d->mEditor);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &PlainTextEditor::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     d->mSliderContainer = new TextAddonsWidgets::SlideContainer(this);

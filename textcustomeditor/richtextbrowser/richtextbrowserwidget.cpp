@@ -11,7 +11,7 @@
 #include "config-textcustomeditor.h"
 #include <QTextCursor>
 #include <QVBoxLayout>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <TextAddonsWidgets/SlideContainer>
@@ -25,7 +25,7 @@ public:
 
     TextCustomEditor::RichTextBrowserFindBar *mFindBar = nullptr;
     RichTextBrowser *mEditor = nullptr;
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
@@ -96,7 +96,7 @@ void RichTextBrowserWidget::init(RichTextBrowser *customEditor)
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     d->mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     lay->addWidget(d->mTextToSpeechWidget);
 #endif
@@ -105,7 +105,7 @@ void RichTextBrowserWidget::init(RichTextBrowser *customEditor)
     } else {
         d->mEditor = new RichTextBrowser;
     }
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(d->mEditor, &RichTextBrowser::say, d->mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     lay->addWidget(d->mEditor);
