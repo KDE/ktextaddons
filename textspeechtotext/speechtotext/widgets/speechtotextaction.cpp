@@ -17,7 +17,7 @@ SpeechToTextAction::~SpeechToTextAction() = default;
 
 void SpeechToTextAction::slotClicked()
 {
-    // TODO
+    SpeechToTextManager::self()->speechToText();
 }
 
 #include "moc_speechtotextaction.cpp"

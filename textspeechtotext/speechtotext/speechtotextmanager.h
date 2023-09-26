@@ -29,6 +29,8 @@ public:
 
     static SpeechToTextManager *self();
 
+    void speechToText();
+
 Q_SIGNALS:
     void textToSpeechDone(const QString &result);
 

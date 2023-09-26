@@ -27,7 +27,7 @@ SpeechToTextToolButtonWidget::~SpeechToTextToolButtonWidget() = default;
 
 void SpeechToTextToolButtonWidget::slotButtonClicked()
 {
-    // TODO
+    SpeechToTextManager::self()->speechToText();
 }
 
 #include "moc_speechtotexttoolbuttonwidget.cpp"

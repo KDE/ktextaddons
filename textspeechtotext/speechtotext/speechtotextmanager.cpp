@@ -53,4 +53,9 @@ SpeechToTextManager *SpeechToTextManager::self()
     return &s_self;
 }
 
+void SpeechToTextManager::speechToText()
+{
+    // TODO
+}
+
 #include "moc_speechtotextmanager.cpp"
