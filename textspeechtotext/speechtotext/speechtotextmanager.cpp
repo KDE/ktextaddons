@@ -55,7 +55,7 @@ SpeechToTextManager *SpeechToTextManager::self()
 
 void SpeechToTextManager::speechToText()
 {
-    // TODO
+    d->mSpeechToTextPlugin->speechToText();
 }
 
 #include "moc_speechtotextmanager.cpp"
