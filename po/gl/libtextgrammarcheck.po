@@ -74,7 +74,7 @@ msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
 msgstr ""
-"Non se poden obter as opcións. Asegúrese de que ten grammalected instalado."
+"Non é posíbel obter as opcións. Asegúrese de que ten grammalected instalado."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, kde-format
@@ -320,7 +320,7 @@ msgstr "Informouse dun erro: %1"
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "Failed to check grammar."
-msgstr "Non se puido comprobar a gramática."
+msgstr "Non foi posíbel comprobar a gramática."
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
