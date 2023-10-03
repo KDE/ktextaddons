@@ -105,10 +105,6 @@ install(FILES
 )
 
 
-ecm_generate_pri_file(BASE_NAME textutils LIB_NAME TextUtils DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR
-    ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/)
-install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 if (BUILD_QCH)
     ecm_add_qch(
         KF${KF_MAJOR_VERSION}TextUtils_QCH

@@ -128,10 +128,6 @@ install(FILES
 )
 
 
-ecm_generate_pri_file(BASE_NAME textemoticonscore LIB_NAME TextEmoticonsCore DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR
-    ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsCore/)
-install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 if (BUILD_QCH)
     ecm_add_qch(
         KF${KF_MAJOR_VERSION}TextEmoticonsCore_QCH
