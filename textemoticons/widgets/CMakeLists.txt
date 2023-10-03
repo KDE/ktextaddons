@@ -110,10 +110,6 @@ install(FILES
 )
 
 
-ecm_generate_pri_file(BASE_NAME textemoticonswidgets LIB_NAME TextEmoticonsWidgets DEPS "KF${KF_MAJOR_VERSION}::TextEmoticonsCore KF${KF_MAJOR_VERSION}::XmlGui" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR
-    ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets/)
-install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 if (BUILD_QCH)
     ecm_add_qch(
         KF${KF_MAJOR_VERSION}TextEmoticonsWidgets_QCH

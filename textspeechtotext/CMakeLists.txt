@@ -120,11 +120,6 @@ ecm_generate_headers(TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS
     RELATIVE speechtotext/widgets
 )
 
-ecm_generate_pri_file(BASE_NAME TextSpeechToText
-    LIB_NAME KF${KF_MAJOR_VERSION}TextSpeechToText
-    DEPS "network" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText
-    )
-
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/ COMPONENT Devel
@@ -144,10 +139,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/textspeechtotext
     COMPONENT Devel
     )
-
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 
 if (BUILD_QCH)

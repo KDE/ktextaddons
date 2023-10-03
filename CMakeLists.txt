@@ -29,7 +29,6 @@ include(ECMAddTests)
 include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
-include(ECMGeneratePriFile)
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(QT_REQUIRED_VERSION "6.5.0")

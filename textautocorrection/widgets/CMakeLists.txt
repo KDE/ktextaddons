@@ -89,12 +89,6 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
     PREFIX TextAutoCorrectionWidgets
     )
 
-ecm_generate_pri_file(BASE_NAME TextAutoCorrectionWidgets
-	LIB_NAME KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets
-	DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets
-    )
-
-
 install(FILES
     ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/TextAutoCorrectionWidgets
@@ -108,11 +102,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/textautocorrectionwidgets
     COMPONENT Devel
     )
-
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 
 if (BUILD_QCH)
     ecm_add_qch(

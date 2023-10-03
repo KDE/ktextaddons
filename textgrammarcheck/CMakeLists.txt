@@ -181,11 +181,6 @@ ecm_generate_headers(TextGrammarCheck_Camelcaselanguagetool_HEADERS
     )
 
 
-ecm_generate_pri_file(BASE_NAME TextGrammarCheck
-    LIB_NAME KF${KF_MAJOR_VERSION}TextGrammarCheck
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck
-    )
-
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/ COMPONENT Devel
@@ -213,10 +208,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/textgrammarcheck
     COMPONENT Devel
     )
-
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 
 if (BUILD_QCH)
