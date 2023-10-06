@@ -176,7 +176,9 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
     mAvailableEngine->clear();
     const QStringList lst = mTextToSpeechConfigInterface->availableEngines();
     for (const QString &engine : lst) {
-        mAvailableEngine->addItem(engine, engine);
+        if (engine != QLatin1String("mock")) {
+            mAvailableEngine->addItem(engine, engine);
+        }
     }
     mAvailableEngine->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     updateEngine();
