@@ -15,17 +15,17 @@ VoskSpeechToTextClient::~VoskSpeechToTextClient() = default;
 
 QString VoskSpeechToTextClient::name() const
 {
-    return QStringLiteral("google");
+    return QStringLiteral("vosk");
 }
 
 QString VoskSpeechToTextClient::translatedName() const
 {
-    return i18n("Google");
+    return i18n("Vosk");
 }
 
 TextSpeechToText::SpeechToTextClient::EngineType VoskSpeechToTextClient::engineType() const
 {
-    return TextSpeechToText::SpeechToTextClient::Network;
+    return TextSpeechToText::SpeechToTextClient::Locale;
 }
 
 TextSpeechToText::SpeechToTextPlugin *VoskSpeechToTextClient::createTextToSpeech()
