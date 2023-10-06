@@ -1,0 +1,34 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-02 02:35+0000\n"
+"PO-Revision-Date: 2023-09-18 11:39-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: selectspecialchardialog.cpp:32
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Special Characters"
+msgstr "Selecionar caracteres especiais"
+
+#: selectspecialchardialog.cpp:40
+#, kde-format
+msgid "Insert"
+msgstr "Inserir"
+
+#: selectspecialchardialog.cpp:53
+#, kde-format
+msgid "Select"
+msgstr "Selecionar"
