@@ -1,0 +1,16 @@
+/*
+  SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+#include "voskspeechtotextpluginjob.h"
+
+VoskSpeechToTextPluginJob::VoskSpeechToTextPluginJob(QObject *parent)
+    : QObject{parent}
+{
+}
+
+VoskSpeechToTextPluginJob::~VoskSpeechToTextPluginJob() = default;
+
+#include "moc_voskspeechtotextpluginjob.cpp"
