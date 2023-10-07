@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:44+0000\n"
+"POT-Creation-Date: 2023-10-07 00:41+0000\n"
 "PO-Revision-Date: 2023-09-15 09:07+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -22,6 +22,11 @@ msgstr ""
 #, kde-format
 msgid "Google"
 msgstr "Google"
+
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
+#, kde-format
+msgid "Vosk"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:23
 #, kde-format

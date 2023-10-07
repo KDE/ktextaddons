@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-15 00:44+0000\n"
+"POT-Creation-Date: 2023-10-07 00:41+0000\n"
 "PO-Revision-Date: 2023-09-20 12:05+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -21,6 +21,11 @@ msgstr ""
 #, kde-format
 msgid "Google"
 msgstr "Google"
+
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
+#, kde-format
+msgid "Vosk"
+msgstr ""
 
 # *** TARKISTA: Oletan, että kyseessä on AI-pohjainen puheentunnistusjärjestelmä
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:23
