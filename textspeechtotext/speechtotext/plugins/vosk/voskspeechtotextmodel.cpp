@@ -30,4 +30,15 @@ void VoskSpeechToTextModel::clear()
     // TODO
 }
 
+QVector<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfo() const
+{
+    return mSpeechToTextInfo;
+}
+
+void VoskSpeechToTextModel::setSpeechToTextInfo(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo)
+{
+    // FIXME
+    mSpeechToTextInfo = newSpeechToTextInfo;
+}
+
 #include "moc_voskspeechtotextmodel.cpp"

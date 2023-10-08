@@ -26,6 +26,9 @@ public:
 
     void clear();
 
+    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfo() const;
+    void setSpeechToTextInfo(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
+
 private:
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfo;
 };
