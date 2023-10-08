@@ -13,4 +13,21 @@ VoskSpeechToTextModel::VoskSpeechToTextModel(QObject *parent)
 
 VoskSpeechToTextModel::~VoskSpeechToTextModel() = default;
 
+int VoskSpeechToTextModel::rowCount(const QModelIndex &parent) const
+{
+    // TODO
+    return {};
+}
+
+QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
+{
+    // TODO
+    return {};
+}
+
+void VoskSpeechToTextModel::clear()
+{
+    // TODO
+}
+
 #include "moc_voskspeechtotextmodel.cpp"
