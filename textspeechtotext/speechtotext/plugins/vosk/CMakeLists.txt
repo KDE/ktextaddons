@@ -9,7 +9,6 @@ target_sources(libvoskspeechtotext PRIVATE
 
     voskspeechtotextinfo.h
     voskspeechtotextinfo.cpp
-
 )
 
 generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)

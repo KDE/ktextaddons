@@ -5,10 +5,11 @@
 */
 
 #pragma once
+#include "libvoskspeechtotext_export.h"
 #include <QJsonObject>
 #include <QString>
 
-class VoskSpeechToTextInfo
+class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextInfo
 {
 public:
     VoskSpeechToTextInfo();
@@ -35,6 +36,8 @@ public:
     void setObsolete(bool newObsolete);
 
     Q_REQUIRED_RESULT bool operator==(const VoskSpeechToTextInfo &other) const;
+
+    void parse(const QJsonObject &obj);
 
 private:
     QString mLang;

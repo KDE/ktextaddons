@@ -5,10 +5,12 @@
 */
 
 #pragma once
+#include "libvoskspeechtotext_export.h"
+
 #include "voskspeechtotextinfo.h"
 #include <QAbstractListModel>
 
-class VoskSpeechToTextModel : public QAbstractListModel
+class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

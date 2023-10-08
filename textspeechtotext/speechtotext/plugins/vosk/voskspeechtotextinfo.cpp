@@ -86,6 +86,11 @@ bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
     return false;
 }
 
+void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
+{
+    // TODO
+}
+
 QDebug operator<<(QDebug d, const VoskSpeechToTextInfo &t)
 {
     // TODO
