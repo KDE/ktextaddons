@@ -1,5 +1,30 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+
+if (0)
+    add_library(libvoskspeechtotext)
+
+    target_sources(libvoskspeechtotext PRIVATE
+
+    )
+
+    generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)
+
+    ecm_qt_declare_logging_category(libvoskspeechtotext HEADER libvoskspeechtotext_debug.h IDENTIFIER libvoskspeechtotext_LOG
+        CATEGORY_NAME org.kde.ruqola DESCRIPTION "lib speech to text" EXPORT KTEXTADDONS)
+
+    target_link_libraries(libvoskspeechtotext  Qt::Widgets
+    )
+
+#TODO fix version/soversion
+    set_target_properties(libvoskspeechtotext
+        PROPERTIES OUTPUT_NAME libvoskspeechtotext VERSION ${TEXTTRANSLATE_VERSION} SOVERSION ${TEXTTRANSLATE_SOVERSION}
+    )
+
+    install(TARGETS libvoskspeechtotext ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
+endif()
+
+
 add_library(speechtotext_vosk MODULE)
 
 ecm_qt_declare_logging_category(speechtotext_vosk
