@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
-add_library(speechtotext_vosk MODULE)
+add_library(speechtotext_vosk MODULE
+    voskspeechtotextmodel.h voskspeechtotextmodel.cpp
+    voskspeechtotextinfo.h voskspeechtotextinfo.cpp)
 
 ecm_qt_declare_logging_category(speechtotext_vosk
     HEADER speechtotext_vosk_debug.h
