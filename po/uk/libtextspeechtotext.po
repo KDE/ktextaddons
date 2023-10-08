@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-07 00:41+0000\n"
-"PO-Revision-Date: 2023-09-15 15:40+0300\n"
+"PO-Revision-Date: 2023-10-07 09:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -26,7 +26,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
 #, kde-format
 msgid "Vosk"
-msgstr ""
+msgstr "Vosk"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:23
 #, kde-format
