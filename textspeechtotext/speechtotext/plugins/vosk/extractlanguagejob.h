@@ -5,10 +5,10 @@
 */
 
 #pragma once
-#include "libbergamot_private_export.h"
+#include "libvoskspeechtotext_private_export.h"
 #include <QObject>
 
-class LIBBERGAMOT_TESTS_EXPORT ExtractLanguageJob : public QObject
+class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT ExtractLanguageJob : public QObject
 {
     Q_OBJECT
 public:

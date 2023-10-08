@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
-add_library(libvoskspeechtotext)
+add_library(libvoskspeechtotext
+    voskengineutils.h voskengineutils.cpp)
 
 target_sources(libvoskspeechtotext PRIVATE
     voskspeechtotextmodel.h
@@ -9,14 +10,27 @@ target_sources(libvoskspeechtotext PRIVATE
 
     voskspeechtotextinfo.h
     voskspeechtotextinfo.cpp
+
+    downloadlanguagejob.cpp
+    downloadlanguagejob.h
+
+    extractlanguagejob.h
+    extractlanguagejob.cpp
+
+    voskengineutils.cpp
+    voskengineutils.h
 )
 
 generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)
 
-ecm_qt_declare_logging_category(libvoskspeechtotext HEADER libvoskspeechtotext_debug.h IDENTIFIER libvoskspeechtotext_LOG
+ecm_qt_declare_logging_category(libvoskspeechtotext HEADER libvoskspeechtotext_debug.h IDENTIFIER  LIBVOSKSPEECHTOTEXT_LOG
     CATEGORY_NAME org.kde.ruqola DESCRIPTION "lib speech to text" EXPORT KTEXTADDONS)
 
-target_link_libraries(libvoskspeechtotext  Qt::Widgets
+target_link_libraries(libvoskspeechtotext
+    Qt::Widgets
+    KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::TextSpeechToText
 )
 
 #TODO fix version/soversion

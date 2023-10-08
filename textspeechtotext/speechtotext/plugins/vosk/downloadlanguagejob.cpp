@@ -6,14 +6,14 @@
 
 #include "downloadlanguagejob.h"
 #include "extractlanguagejob.h"
-#include "libbergamot_debug.h"
+#include "libvoskspeechtotext_debug.h"
+#include "speechtotext/speechtotextengineaccessmanager.h"
 #include <KLocalizedString>
 #include <QCryptographicHash>
 #include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QTemporaryFile>
-#include <TextTranslator/TranslatorEngineAccessManager>
 
 DownloadLanguageJob::DownloadLanguageJob(QObject *parent)
     : QObject{parent}
@@ -28,7 +28,7 @@ DownloadLanguageJob::~DownloadLanguageJob()
 void DownloadLanguageJob::start()
 {
     if (!canStart()) {
-        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to start DownloadLanguageJob";
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to start DownloadLanguageJob";
         deleteLater();
         return;
     }
@@ -44,7 +44,7 @@ void DownloadLanguageJob::start()
 
     QNetworkRequest request(mUrl);
     // qDebug() << " mUrl " << mUrl;
-    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
+    QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         if (error == QNetworkReply::ServiceUnavailableError) {
             Q_EMIT errorText(i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));

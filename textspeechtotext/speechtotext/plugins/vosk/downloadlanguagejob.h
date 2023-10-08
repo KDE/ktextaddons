@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include "libbergamot_private_export.h"
+#include "libvoskspeechtotext_private_export.h"
 #include <QCryptographicHash>
 #include <QObject>
 #include <QUrl>
 class QTemporaryFile;
-class LIBBERGAMOT_TESTS_EXPORT DownloadLanguageJob : public QObject
+class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT DownloadLanguageJob : public QObject
 {
     Q_OBJECT
 public:

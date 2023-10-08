@@ -5,8 +5,8 @@
 */
 
 #include "extractlanguagejob.h"
-#include "bergamotengineutils.h"
-#include "libbergamot_debug.h"
+#include "libvoskspeechtotext_debug.h"
+#include "voskengineutils.h"
 #include <KLocalizedString>
 #include <KTar>
 #include <QDir>
@@ -26,7 +26,7 @@ bool ExtractLanguageJob::canStart() const
 void ExtractLanguageJob::start()
 {
     if (!canStart()) {
-        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to start ExtractLanguageJob";
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to start ExtractLanguageJob";
         Q_EMIT errorText(i18n("Impossible to extract language"));
         Q_EMIT finished();
         deleteLater();
@@ -34,13 +34,13 @@ void ExtractLanguageJob::start()
     }
     auto tar = new KTar(mSource);
     if (!tar->open(QIODevice::ReadOnly)) {
-        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open temporary file" << mSource;
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open temporary file" << mSource;
         Q_EMIT finished();
         deleteLater();
         return;
     }
-    if (!QDir().mkpath(BergamotEngineUtils::storageLanguagePath())) {
-        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << BergamotEngineUtils::storageLanguagePath();
+    if (!QDir().mkpath(VoskEngineUtils::storageLanguagePath())) {
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create path" << VoskEngineUtils::storageLanguagePath();
         Q_EMIT finished();
         deleteLater();
         return;
@@ -49,9 +49,9 @@ void ExtractLanguageJob::start()
     const QStringList lst = zipDir->entries();
     // qDebug() << " list of files " << lst;
     for (const QString &name : lst) {
-        const QString storeDirectory{BergamotEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
+        const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
         if (!QDir().mkpath(storeDirectory)) {
-            qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create :" << storeDirectory;
+            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;
             continue;
         }
         const KArchiveEntry *configPathEntry = zipDir->entry(name);
@@ -64,10 +64,10 @@ void ExtractLanguageJob::start()
                 if (filePathEntry && filePathEntry->isFile()) {
                     const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
                     if (!filePath->copyTo(storeDirectory)) {
-                        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to copy to " << storeDirectory;
+                        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
                     }
                 } else {
-                    qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to import file " << file;
+                    qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to import file " << file;
                 }
             }
         }
