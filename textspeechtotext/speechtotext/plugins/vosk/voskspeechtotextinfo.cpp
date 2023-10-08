@@ -82,8 +82,8 @@ void VoskSpeechToTextInfo::setObsolete(bool newObsolete)
 
 bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
 {
-    // TODO
-    return false;
+    return mLang == other.lang() && mLangText == other.langText() && mMd5 == other.md5() && mVersion == other.version() && mUrl == other.url()
+        && mSize == other.size() && mObsolete == other.obsolete();
 }
 
 void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
@@ -93,6 +93,12 @@ void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
 
 QDebug operator<<(QDebug d, const VoskSpeechToTextInfo &t)
 {
-    // TODO
+    d << "mLang : " << t.lang();
+    d << "mLangText : " << t.langText();
+    d << "mMd5 : " << t.md5();
+    d << "mVersion : " << t.version();
+    d << "mUrl : " << t.url();
+    d << "mSize : " << t.size();
+    d << "mObsolete : " << t.obsolete();
     return d;
 }
