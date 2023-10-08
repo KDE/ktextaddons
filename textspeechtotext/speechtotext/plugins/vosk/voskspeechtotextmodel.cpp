@@ -15,8 +15,8 @@ VoskSpeechToTextModel::~VoskSpeechToTextModel() = default;
 
 int VoskSpeechToTextModel::rowCount(const QModelIndex &parent) const
 {
-    // TODO
-    return {};
+    Q_UNUSED(parent);
+    return mSpeechToTextInfo.count();
 }
 
 QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
