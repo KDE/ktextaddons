@@ -13,3 +13,5 @@ macro(add_voskspeechtotext_unittest _source)
 endmacro()
 
 add_voskspeechtotext_unittest(voskspeechtotextinfotest.cpp)
+add_voskspeechtotext_unittest(downloadlanguagejobtest.cpp)
+add_voskspeechtotext_unittest(extractlanguagejobtest.cpp)
