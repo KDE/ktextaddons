@@ -24,3 +24,5 @@ void VoskSpeechToTextInfoTest::shouldHaveDefaultValues()
     QCOMPARE(w.size(), 0);
     QVERIFY(!w.obsolete());
 }
+
+#include "moc_voskspeechtotextinfotest.cpp"

@@ -122,3 +122,5 @@ bool ManagerModelVoskSpeechToText::needDownloadModelList() const
 }
 
 #include "moc_managermodeltranslator.cpp"
+
+#include "moc_managermodelvoskspeechtotext.cpp"
