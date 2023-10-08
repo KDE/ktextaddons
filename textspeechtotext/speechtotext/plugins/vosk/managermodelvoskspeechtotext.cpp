@@ -74,7 +74,7 @@ void ManagerModelVoskSpeechToText::parseListModel(const QJsonObject &obj)
     const QJsonArray arrays = obj[QLatin1String("models")].toArray();
     for (const QJsonValue &current : arrays) {
         if (current.type() == QJsonValue::Object) {
-            Translator translator;
+            VoskSpeechToTextInfo translator;
             const QJsonObject translatorObject = current.toObject();
             translator.parse(translatorObject);
             if (translator.isValid()) {
@@ -88,12 +88,12 @@ void ManagerModelVoskSpeechToText::parseListModel(const QJsonObject &obj)
     Q_EMIT downLoadModelListDone();
 }
 
-QVector<Translator> ManagerModelVoskSpeechToText::translators() const
+QVector<VoskSpeechToTextInfo> ManagerModelVoskSpeechToText::translators() const
 {
     return mTranslators;
 }
 
-void ManagerModelVoskSpeechToText::setTranslators(const QVector<Translator> &newTranslators)
+void ManagerModelVoskSpeechToText::setTranslators(const QVector<VoskSpeechToTextInfo> &newTranslators)
 {
     mTranslators = newTranslators;
 }

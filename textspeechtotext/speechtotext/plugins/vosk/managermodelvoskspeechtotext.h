@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "libbergamot_export.h"
-#include "translator.h"
+#include "libvoskspeechtotext_export.h"
+#include "voskspeechtotextinfo.h"
 #include <QObject>
 
-class LIBBERGAMOT_EXPORT ManagerModelVoskSpeechToText : public QObject
+class LIBVOSKSPEECHTOTEXT_EXPORT ManagerModelVoskSpeechToText : public QObject
 {
     Q_OBJECT
 public:
@@ -24,8 +24,8 @@ public:
 
     void downloadListModels();
 
-    Q_REQUIRED_RESULT QVector<Translator> translators() const;
-    void setTranslators(const QVector<Translator> &newTranslators);
+    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> translators() const;
+    void setTranslators(const QVector<VoskSpeechToTextInfo> &newTranslators);
 
     void loadModelList(const QString &fileName);
 
@@ -38,7 +38,7 @@ Q_SIGNALS:
     void downLoadModelListDone();
 
 private:
-    LIBBERGAMOT_NO_EXPORT void parseListModel(const QJsonObject &obj);
-    QVector<Translator> mTranslators;
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseListModel(const QJsonObject &obj);
+    QVector<VoskSpeechToTextInfo> mTranslators;
 };
 Q_DECLARE_TYPEINFO(ManagerModelVoskSpeechToText::ProgressInfo, Q_MOVABLE_TYPE);
