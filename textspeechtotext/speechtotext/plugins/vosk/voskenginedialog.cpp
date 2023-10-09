@@ -23,7 +23,7 @@ VoskEngineDialog::VoskEngineDialog(QWidget *parent)
     : QDialog(parent)
     , mVoskEngineWidget(new VoskEngineLanguageWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Bergamot Plugin Settings"));
+    setWindowTitle(i18nc("@title:window", "Vosk Plugin Settings"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
@@ -57,3 +57,5 @@ void VoskEngineDialog::readConfig()
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
+
+#include "moc_voskenginedialog.cpp"
