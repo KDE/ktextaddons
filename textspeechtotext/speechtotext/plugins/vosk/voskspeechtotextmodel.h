@@ -14,7 +14,13 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextModel : public QAbstractListMod
 {
     Q_OBJECT
 public:
-    enum VoskRoles {};
+    enum VoskRoles {
+        // TODO add more
+        Lang,
+        LangText,
+        Url,
+        LastColumn = Url,
+    };
 
     Q_ENUM(VoskRoles)
 
@@ -29,6 +35,11 @@ public:
     Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfo() const;
     void setSpeechToTextInfo(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
 
+protected:
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    int columnCount(const QModelIndex &parent) const override;
+
 private:
+    void updateInstalledLanguage();
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfo;
 };
