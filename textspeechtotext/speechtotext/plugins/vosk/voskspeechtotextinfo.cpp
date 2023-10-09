@@ -94,7 +94,13 @@ bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
 
 void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
 {
-    // TODO
+    mLangText = obj[QLatin1String("lang_text")].toString();
+    mLang = obj[QLatin1String("lang")].toString();
+    mMd5 = obj[QLatin1String("md5")].toString();
+    mObsolete = obj[QLatin1String("obsolete")].toBool();
+    mVersion = obj[QLatin1String("version")].toString();
+    mSize = obj[QLatin1String("size")].toInteger();
+    mUrl = obj[QLatin1String("url")].toString();
 }
 
 QDebug operator<<(QDebug d, const VoskSpeechToTextInfo &t)
