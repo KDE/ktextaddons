@@ -8,6 +8,7 @@
 #include "speechtotext_private_export.h"
 #include <QWidget>
 class QComboBox;
+class QToolButton;
 namespace TextSpeechToText
 {
 class TEXTSPEECHTOTEXT_TESTS_EXPORT SpeechToTextComboBoxWidget : public QWidget
@@ -22,6 +23,9 @@ public:
     void setEngineName(const QString &engineName);
 
 private:
+    void slotConfigureEngine();
+    void slotEngineChanged(int index);
     QComboBox *const mEngine;
+    QToolButton *const mConfigureEngine;
 };
 }
