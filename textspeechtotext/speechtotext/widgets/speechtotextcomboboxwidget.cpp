@@ -69,9 +69,9 @@ void SpeechToTextComboBoxWidget::slotConfigureEngine()
 {
     const QString engine = mEngine->currentData().toString();
     if (TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine)) {
-        // if (TTextSpeechToText::SpeechToTextEngineLoader::self()->showConfigureDialog(engine, this)) {
-        //     Q_EMIT configureChanged(engine);
-        // }
+        if (TextSpeechToText::SpeechToTextEngineLoader::self()->showConfigureDialog(engine, this)) {
+            //     Q_EMIT configureChanged(engine);
+        }
     }
 }
 
