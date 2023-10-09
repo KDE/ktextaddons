@@ -17,7 +17,7 @@ using namespace TextTranslator;
 TranslatorConfigureComboWidget::TranslatorConfigureComboWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineComboBox(new QComboBox(this))
-    , mConfigureEngine(new QToolButton(parent))
+    , mConfigureEngine(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
