@@ -11,7 +11,7 @@
 class VoskSpeechToTextClient : public TextSpeechToText::SpeechToTextClient
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.kde.texttospeech.google")
+    Q_PLUGIN_METADATA(IID "org.kde.texttospeech.vosk")
     Q_INTERFACES(TextSpeechToText::SpeechToTextClient)
 public:
     explicit VoskSpeechToTextClient(QObject *parent = nullptr);
