@@ -15,4 +15,6 @@ public:
     ~VoskSpeechToTextInfoTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldParseJson_data();
+    void shouldParseJson();
 };
