@@ -9,6 +9,6 @@
 #include <QString>
 namespace VoskEngineUtils
 {
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultBergamotRepository();
+Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultVoskRepository();
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString storageLanguagePath();
 };

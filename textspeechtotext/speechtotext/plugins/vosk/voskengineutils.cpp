@@ -6,7 +6,7 @@
 
 #include "voskengineutils.h"
 
-QString VoskEngineUtils::defaultBergamotRepository()
+QString VoskEngineUtils::defaultVoskRepository()
 {
     // TODO
     return {};
