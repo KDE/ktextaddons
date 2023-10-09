@@ -16,7 +16,7 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextModel : public QAbstractListMod
 public:
     enum VoskRoles {
         // TODO add more
-        Lang,
+        Identifier,
         LangText,
         Obsolete,
         Size,

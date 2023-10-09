@@ -17,8 +17,8 @@ public:
 
     Q_REQUIRED_RESULT bool isValid() const;
 
-    Q_REQUIRED_RESULT QString lang() const;
-    void setLang(const QString &newLang);
+    Q_REQUIRED_RESULT QString identifier() const;
+    void setIdentifier(const QString &newLang);
 
     Q_REQUIRED_RESULT QString langText() const;
     void setLangText(const QString &newLangText);
@@ -43,7 +43,7 @@ public:
     void parse(const QJsonObject &obj);
 
 private:
-    QString mLang;
+    QString mIdentifier;
     QString mLangText;
     QString mMd5;
     QString mVersion;

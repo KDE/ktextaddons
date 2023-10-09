@@ -13,17 +13,17 @@ VoskSpeechToTextInfo::~VoskSpeechToTextInfo() = default;
 bool VoskSpeechToTextInfo::isValid() const
 {
     // TODO ?
-    return !mLang.isEmpty() && !mUrl.isEmpty();
+    return !mIdentifier.isEmpty() && !mUrl.isEmpty();
 }
 
-QString VoskSpeechToTextInfo::lang() const
+QString VoskSpeechToTextInfo::identifier() const
 {
-    return mLang;
+    return mIdentifier;
 }
 
-void VoskSpeechToTextInfo::setLang(const QString &newLang)
+void VoskSpeechToTextInfo::setIdentifier(const QString &newLang)
 {
-    mLang = newLang;
+    mIdentifier = newLang;
 }
 
 QString VoskSpeechToTextInfo::langText() const
@@ -88,14 +88,14 @@ void VoskSpeechToTextInfo::setObsolete(bool newObsolete)
 
 bool VoskSpeechToTextInfo::operator==(const VoskSpeechToTextInfo &other) const
 {
-    return mLang == other.lang() && mLangText == other.langText() && mMd5 == other.md5() && mVersion == other.version() && mUrl == other.url()
+    return mIdentifier == other.identifier() && mLangText == other.langText() && mMd5 == other.md5() && mVersion == other.version() && mUrl == other.url()
         && mSize == other.size() && mObsolete == other.obsolete();
 }
 
 void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
 {
     mLangText = obj[QLatin1String("lang_text")].toString();
-    mLang = obj[QLatin1String("lang")].toString();
+    mIdentifier = obj[QLatin1String("lang")].toString();
     mMd5 = obj[QLatin1String("md5")].toString();
     mObsolete = obj[QLatin1String("obsolete")].toBool();
     mVersion = obj[QLatin1String("version")].toString();
@@ -105,7 +105,7 @@ void VoskSpeechToTextInfo::parse(const QJsonObject &obj)
 
 QDebug operator<<(QDebug d, const VoskSpeechToTextInfo &t)
 {
-    d << "mLang : " << t.lang();
+    d << "mLang : " << t.identifier();
     d << "mLangText : " << t.langText();
     d << "mMd5 : " << t.md5();
     d << "mVersion : " << t.version();

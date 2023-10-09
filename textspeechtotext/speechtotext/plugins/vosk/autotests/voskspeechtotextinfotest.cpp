@@ -17,7 +17,7 @@ VoskSpeechToTextInfoTest::VoskSpeechToTextInfoTest(QObject *parent)
 void VoskSpeechToTextInfoTest::shouldHaveDefaultValues()
 {
     VoskSpeechToTextInfo w;
-    QVERIFY(w.lang().isEmpty());
+    QVERIFY(w.identifier().isEmpty());
     QVERIFY(w.langText().isEmpty());
     QVERIFY(w.md5().isEmpty());
     QVERIFY(w.version().isEmpty());
@@ -34,7 +34,7 @@ void VoskSpeechToTextInfoTest::shouldParseJson_data()
     QTest::newRow("empty") << QStringLiteral("empty") << VoskSpeechToTextInfo() << false;
     VoskSpeechToTextInfo info;
     info.setLangText(QStringLiteral("Ukrainian"));
-    info.setLang(QStringLiteral("ua"));
+    info.setIdentifier(QStringLiteral("ua"));
     info.setMd5(QStringLiteral("138fb6e39f858619527030f064c0a8fc"));
     info.setObsolete(false);
     info.setSize(371048965);

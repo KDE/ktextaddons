@@ -7,6 +7,7 @@
 #include "voskspeechtotextmodel.h"
 #include "libvoskspeechtotext_debug.h"
 #include <KLocalizedString>
+#include <QColor>
 
 VoskSpeechToTextModel::VoskSpeechToTextModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -25,7 +26,7 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
 {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (static_cast<VoskRoles>(section)) {
-        case VoskRoles::Lang:
+        case VoskRoles::Identifier:
         case VoskRoles::Url:
         case VoskRoles::CheckSum:
             return {};
@@ -45,8 +46,58 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
     if (index.row() < 0 || index.row() >= mSpeechToTextInfos.count()) {
         return {};
     }
-
-    // TODO
+    const auto speechToTextInfo = mSpeechToTextInfos.at(index.row());
+    const int col = index.column();
+    if (role == Qt::BackgroundRole) {
+#if 0
+        if (needToUpdateLanguageModel(translator)) {
+            if (static_cast<TranslatorRoles>(col) == TranslatorModel::InstalledVersion) {
+                return QColor(Qt::red);
+            }
+        }
+#endif
+        return {};
+    } else if (role == Qt::DisplayRole) {
+        switch (static_cast<VoskRoles>(col)) {
+            //        case TranslatorModel::InstalledVersion: {
+            //            const QString shortName{translator.shortName()};
+            //            if (isInstalled(shortName)) {
+            //                return versionInstalled(shortName);
+            //            }
+            //            return {};
+            //        }
+            //        case TranslatorModel::AvailableVersion: {
+            //            return translator.version();
+            //        }
+            //        case TranslatorModel::Installed: {
+            //            if (isInstalled(translator.shortName())) {
+            //                return i18n("Installed");
+            //            }
+            //            return {};
+            //        }
+        case VoskRoles::Identifier: {
+            return speechToTextInfo.identifier();
+        }
+        case VoskRoles::Obsolete: {
+            return speechToTextInfo.obsolete();
+        }
+        case VoskRoles::LangText: {
+            return speechToTextInfo.langText();
+        }
+        case VoskRoles::Size: {
+            return speechToTextInfo.size();
+        }
+        case VoskRoles::Url: {
+            return speechToTextInfo.url();
+        }
+        case VoskRoles::CheckSum: {
+            return speechToTextInfo.md5();
+        }
+            //        case TranslatorModel::NeedToUpdateLanguage: {
+            //            return needToUpdateLanguageModel(translator);
+            //        }
+        }
+    }
     return {};
 }
 
