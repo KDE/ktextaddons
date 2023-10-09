@@ -6,6 +6,7 @@
 
 #pragma once
 #include "libvoskspeechtotext_export.h"
+#include "voskengineutils.h"
 
 #include "voskspeechtotextinfo.h"
 #include <QAbstractListModel>
@@ -21,6 +22,9 @@ public:
         Obsolete,
         Size,
         CheckSum,
+        Installed,
+        AvailableVersion,
+        InstalledVersion,
         Url,
         LastColumn = Url,
     };
@@ -45,5 +49,8 @@ protected:
     int columnCount(const QModelIndex &parent) const override;
 
 private:
+    Q_REQUIRED_RESULT bool isInstalled(const QString &shortName) const;
+    Q_REQUIRED_RESULT int versionInstalled(const QString &shortName) const;
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
+    QVector<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
 };

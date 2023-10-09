@@ -50,8 +50,8 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
     const int col = index.column();
     if (role == Qt::BackgroundRole) {
 #if 0
-        if (needToUpdateLanguageModel(translator)) {
-            if (static_cast<TranslatorRoles>(col) == TranslatorModel::InstalledVersion) {
+        if (needToUpdateLanguageModel(speechToTextInfo)) {
+            if (static_cast<VoskRoles>(col) == VoskRoles::InstalledVersion) {
                 return QColor(Qt::red);
             }
         }
@@ -59,22 +59,22 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
         return {};
     } else if (role == Qt::DisplayRole) {
         switch (static_cast<VoskRoles>(col)) {
-            //        case TranslatorModel::InstalledVersion: {
-            //            const QString shortName{translator.shortName()};
-            //            if (isInstalled(shortName)) {
-            //                return versionInstalled(shortName);
-            //            }
-            //            return {};
-            //        }
-            //        case TranslatorModel::AvailableVersion: {
-            //            return translator.version();
-            //        }
-            //        case TranslatorModel::Installed: {
-            //            if (isInstalled(translator.shortName())) {
-            //                return i18n("Installed");
-            //            }
-            //            return {};
-            //        }
+        case VoskRoles::InstalledVersion: {
+            const QString shortName{speechToTextInfo.identifier()};
+            if (isInstalled(shortName)) {
+                // TODO return versionInstalled(shortName);
+            }
+            return {};
+        }
+        case VoskRoles::AvailableVersion: {
+            return speechToTextInfo.version();
+        }
+        case VoskRoles::Installed: {
+            if (isInstalled(speechToTextInfo.identifier())) {
+                return i18n("Installed");
+            }
+            return {};
+        }
         case VoskRoles::Identifier: {
             return speechToTextInfo.identifier();
         }
@@ -93,7 +93,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
         case VoskRoles::CheckSum: {
             return speechToTextInfo.md5();
         }
-            //        case TranslatorModel::NeedToUpdateLanguage: {
+            //        case VoskRoles::NeedToUpdateLanguage: {
             //            return needToUpdateLanguageModel(translator);
             //        }
         }
@@ -113,8 +113,8 @@ void VoskSpeechToTextModel::clear()
 
 void VoskSpeechToTextModel::updateInstalledLanguage()
 {
-    // mLanguageInstalled = BergamotEngineUtils::languageLocallyStored();
-    // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "mLanguageInstalled " << mLanguageInstalled;
+    mLanguageInstalled = VoskEngineUtils::languageLocallyStored();
+    qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "mLanguageInstalled " << mLanguageInstalled;
 }
 
 QVector<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfos() const
@@ -141,6 +141,26 @@ int VoskSpeechToTextModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
     return static_cast<int>(VoskRoles::LastColumn) + 1;
+}
+
+bool VoskSpeechToTextModel::isInstalled(const QString &shortName) const
+{
+    for (const auto &lang : std::as_const(mLanguageInstalled)) {
+        if (lang.shortName == shortName) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int VoskSpeechToTextModel::versionInstalled(const QString &shortName) const
+{
+    for (const auto &lang : std::as_const(mLanguageInstalled)) {
+        if (lang.shortName == shortName) {
+            return lang.version;
+        }
+    }
+    return false;
 }
 
 #include "moc_voskspeechtotextmodel.cpp"

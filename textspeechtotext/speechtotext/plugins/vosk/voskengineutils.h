@@ -6,9 +6,21 @@
 #pragma once
 
 #include "libvoskspeechtotext_export.h"
+#include <QDebug>
 #include <QString>
+
 namespace VoskEngineUtils
 {
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultVoskRepository();
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString storageLanguagePath();
+
+struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
+    QString shortName;
+    QString absoluteLanguageModelPath;
+    int version = -1;
+    Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
+Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
+};
+LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);
+Q_DECLARE_TYPEINFO(VoskEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);
