@@ -5,9 +5,9 @@
 */
 
 #include "voskenginelanguagewidget.h"
-// #include "libbergamot_debug.h"
-// #include "translatorproxymodel.h"
 #include "managermodelvoskspeechtotext.h"
+#include "voskspeechtotextmodel.h"
+#include "voskspeechtotextproxymodel.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLabel>
@@ -27,8 +27,8 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}
     , mTreeView(new QTreeView(this))
     , mSearchLineEdit(new QLineEdit(this))
-    , mTranslatorModel(new TranslatorModel(this))
-    , mTranslatorProxyModel(new TranslatorProxyModel(this))
+    , mVoskSpeechToTextModel(new VoskSpeechToTextModel(this))
+    , mVoskSpeechToTextProxyModel(new VoskSpeechToTextProxyModel(this))
     , mProgressBar(new QProgressBar(this))
     , mProgressBarLabel(new QLabel(this))
     , mProgressBarWidget(new QWidget(this))
@@ -60,19 +60,22 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::errorText, this, &VoskEngineLanguageWidget::slotError);
     connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::progress, this, &VoskEngineLanguageWidget::slotProgressInfo);
-    connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
+    connect(ManagerModelVoskSpeechToText::self(),
+            &ManagerModelVoskSpeechToText::extractDone,
+            mVoskSpeechToTextModel,
+            &VoskSpeechToTextModel::updateInstalledLanguage);
     connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::downLoadModelListDone, this, &VoskEngineLanguageWidget::updateListModel);
 
     // TODO store list on local.
     if (ManagerModelVoskSpeechToText::self()->needDownloadModelList()) {
         ManagerModelVoskSpeechToText::self()->downloadListModels();
     } else {
-        mTranslatorModel->insertTranslators(ManagerModelVoskSpeechToText::self()->translators());
+        mVoskSpeechToTextModel->setSpeechToTextInfos(ManagerModelVoskSpeechToText::self()->speechToTextInfos());
     }
 
-    mTranslatorProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
-    mTranslatorProxyModel->setSourceModel(mTranslatorModel);
-    mTreeView->setModel(mTranslatorProxyModel);
+    mVoskSpeechToTextProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    mVoskSpeechToTextProxyModel->setSourceModel(mVoskSpeechToTextModel);
+    mTreeView->setModel(mVoskSpeechToTextProxyModel);
     mTreeView->setRootIsDecorated(false);
     mTreeView->setSortingEnabled(true);
     vboxLayout->addWidget(mTreeView);
@@ -87,14 +90,14 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     downLoadLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
     buttonLayout->addWidget(downLoadLanguage);
     connect(downLoadLanguage, &QPushButton::clicked, this, [this]() {
-        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Url);
-        const QModelIndex modelIndexCheckSum = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::CheckSum);
+        //        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
+        //        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Url);
+        //        const QModelIndex modelIndexCheckSum = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::CheckSum);
 
-        const QString url = modelIndex.data().toString();
-        const QString checkSum = modelIndexCheckSum.data().toString();
-        qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " url " << url << " checksum " << checkSum;
-        slotDownLoad(url, checkSum);
+        //        const QString url = modelIndex.data().toString();
+        //        const QString checkSum = modelIndexCheckSum.data().toString();
+        //        qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " url " << url << " checksum " << checkSum;
+        //        slotDownLoad(url, checkSum);
     });
 
     auto deleteLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete"), this);
@@ -125,32 +128,32 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mainLayout->addWidget(mProgressBarWidget);
     mProgressBarWidget->setVisible(false);
 
-    mTreeView->setColumnHidden(TranslatorModel::Url, true);
-    mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
-    mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
-    mTreeView->setColumnHidden(TranslatorModel::NeedToUpdateLanguage, true);
+    //    mTreeView->setColumnHidden(TranslatorModel::Url, true);
+    //    mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
+    //    mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
+    //    mTreeView->setColumnHidden(TranslatorModel::NeedToUpdateLanguage, true);
     auto updateButton = [this, downLoadLanguage, deleteLanguage]() {
-        const bool hasSelectedItem = mTreeView->currentIndex().isValid();
-        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Installed);
-        const QModelIndex modelIndexNeedToUpdate = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::NeedToUpdateLanguage);
-        const bool isInstalled = modelIndex.data().toBool();
-        const bool needToUpdate = modelIndexNeedToUpdate.data().toBool();
+        //        const bool hasSelectedItem = mTreeView->currentIndex().isValid();
+        //        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
+        //        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Installed);
+        //        const QModelIndex modelIndexNeedToUpdate = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::NeedToUpdateLanguage);
+        //        const bool isInstalled = modelIndex.data().toBool();
+        //        const bool needToUpdate = modelIndexNeedToUpdate.data().toBool();
 
-        if (needToUpdate) {
-            downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
-        } else {
-            downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
-        }
-        deleteLanguage->setEnabled(hasSelectedItem && isInstalled);
+        //        if (needToUpdate) {
+        //            downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
+        //        } else {
+        //            downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
+        //        }
+        //        deleteLanguage->setEnabled(hasSelectedItem && isInstalled);
     };
 
     connect(deleteLanguage, &QPushButton::clicked, this, [this, updateButton]() {
-        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Identifier);
-        const QString identifier = modelIndex.data().toString();
-        slotDelete(identifier);
-        updateButton();
+        //        const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
+        //        const QModelIndex modelIndex = mTranslatorModel->index(currentlySelectedIndex.row(), TranslatorModel::Identifier);
+        //        const QString identifier = modelIndex.data().toString();
+        //        slotDelete(identifier);
+        //        updateButton();
     });
 
     connect(mTreeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [updateButton]() {
@@ -176,12 +179,12 @@ void VoskEngineLanguageWidget::slotProgressInfo(const ManagerModelVoskSpeechToTe
 
 void VoskEngineLanguageWidget::slotError(const QString &str)
 {
-    KMessageBox::error(this, i18n("Error: %1", str), i18n("Bergamot"));
+    KMessageBox::error(this, i18n("Error: %1", str), i18n("Vosk"));
 }
 
 void VoskEngineLanguageWidget::slotTextChanged(const QString &str)
 {
-    mTranslatorProxyModel->setSearchString(str);
+    mVoskSpeechToTextProxyModel->setSearchString(str);
 }
 
 void VoskEngineLanguageWidget::slotDownLoad(const QString &url, const QString &checkSum)
@@ -191,7 +194,7 @@ void VoskEngineLanguageWidget::slotDownLoad(const QString &url, const QString &c
 
 void VoskEngineLanguageWidget::slotDelete(const QString &identifier)
 {
-    mTranslatorModel->removeLanguage(identifier);
+    // mVoskSpeechToTextModel->removeLanguage(identifier);
 }
 
 void VoskEngineLanguageWidget::slotUpdateListLanguage()
@@ -201,7 +204,7 @@ void VoskEngineLanguageWidget::slotUpdateListLanguage()
 
 void VoskEngineLanguageWidget::updateListModel()
 {
-    mTranslatorModel->insertTranslators(ManagerModelVoskSpeechToText::self()->translators());
+    mVoskSpeechToTextModel->setSpeechToTextInfos(ManagerModelVoskSpeechToText::self()->speechToTextInfos());
 }
 
 #include "moc_voskenginelanguagewidget.cpp"

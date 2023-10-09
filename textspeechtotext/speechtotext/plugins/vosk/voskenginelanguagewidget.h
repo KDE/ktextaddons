@@ -8,9 +8,9 @@
 #include "managermodelvoskspeechtotext.h"
 #include <QWidget>
 class QTreeView;
-class TranslatorModel;
+class VoskSpeechToTextModel;
 class QLineEdit;
-class TranslatorProxyModel;
+class VoskSpeechToTextProxyModel;
 class QProgressBar;
 class QLabel;
 class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskEngineLanguageWidget : public QWidget
@@ -30,8 +30,8 @@ private:
     void slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info);
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
-    TranslatorModel *const mTranslatorModel;
-    TranslatorProxyModel *const mTranslatorProxyModel;
+    VoskSpeechToTextModel *const mVoskSpeechToTextModel;
+    VoskSpeechToTextProxyModel *const mVoskSpeechToTextProxyModel;
     QProgressBar *const mProgressBar;
     QLabel *const mProgressBarLabel;
     QWidget *const mProgressBarWidget;
