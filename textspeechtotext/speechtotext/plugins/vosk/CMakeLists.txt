@@ -8,6 +8,9 @@ target_sources(libvoskspeechtotext PRIVATE
     voskspeechtotextmodel.h
     voskspeechtotextmodel.cpp
 
+    managermodelvoskspeechtotext.h
+    managermodelvoskspeechtotext.cpp
+
     voskspeechtotextinfo.h
     voskspeechtotextinfo.cpp
 
@@ -19,6 +22,9 @@ target_sources(libvoskspeechtotext PRIVATE
 
     voskengineutils.cpp
     voskengineutils.h
+
+    # voskenginelanguagewidget.h
+    # voskenginelanguagewidget.cpp
 )
 
 generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)

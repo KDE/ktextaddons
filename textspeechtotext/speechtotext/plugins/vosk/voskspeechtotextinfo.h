@@ -14,6 +14,9 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextInfo
 public:
     VoskSpeechToTextInfo();
     ~VoskSpeechToTextInfo();
+
+    Q_REQUIRED_RESULT bool isValid() const;
+
     Q_REQUIRED_RESULT QString lang() const;
     void setLang(const QString &newLang);
 

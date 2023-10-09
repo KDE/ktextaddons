@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "libbergamot_private_export.h"
-#include "managermodeltranslator.h"
+#include "libvoskspeechtotext_private_export.h"
+#include "managermodelvoskspeechtotext.h"
 #include <QWidget>
 class QTreeView;
 class TranslatorModel;
@@ -13,7 +13,7 @@ class QLineEdit;
 class TranslatorProxyModel;
 class QProgressBar;
 class QLabel;
-class LIBBERGAMOT_TESTS_EXPORT VoskEngineLanguageWidget : public QWidget
+class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskEngineLanguageWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -27,7 +27,7 @@ private:
     void slotUpdateListLanguage();
     void slotError(const QString &str);
     void updateListModel();
-    void slotProgressInfo(const ManagerModelTranslator::ProgressInfo &info);
+    void slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info);
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     TranslatorModel *const mTranslatorModel;

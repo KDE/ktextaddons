@@ -10,6 +10,12 @@ VoskSpeechToTextInfo::VoskSpeechToTextInfo() = default;
 
 VoskSpeechToTextInfo::~VoskSpeechToTextInfo() = default;
 
+bool VoskSpeechToTextInfo::isValid() const
+{
+    // TODO ?
+    return !mLang.isEmpty() && !mUrl.isEmpty();
+}
+
 QString VoskSpeechToTextInfo::lang() const
 {
     return mLang;

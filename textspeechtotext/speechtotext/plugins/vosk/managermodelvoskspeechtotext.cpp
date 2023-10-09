@@ -5,9 +5,10 @@
 */
 
 #include "managermodelvoskspeechtotext.h"
-#include "bergamotengineutils.h"
 #include "downloadlanguagejob.h"
-#include "libbergamot_debug.h"
+#include "libvoskspeechtotext_debug.h"
+#include "speechtotext/speechtotextengineaccessmanager.h"
+#include "voskengineutils.h"
 #include <KLocalizedString>
 #include <QFile>
 #include <QJsonArray>
@@ -15,7 +16,6 @@
 #include <QJsonObject>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-#include <TextTranslator/TranslatorEngineAccessManager>
 
 ManagerModelVoskSpeechToText::ManagerModelVoskSpeechToText(QObject *parent)
     : QObject{parent}
@@ -32,9 +32,9 @@ ManagerModelVoskSpeechToText *ManagerModelVoskSpeechToText::self()
 
 void ManagerModelVoskSpeechToText::downloadListModels()
 {
-    const QUrl url = QUrl(BergamotEngineUtils::defaultBergamotRepository());
+    const QUrl url = QUrl(VoskEngineUtils::defaultVoskRepository());
     // qDebug() << " url " << url;
-    QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
+    QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
 
     connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {
         qDebug() << "Ssl Error: " << errors;
@@ -49,7 +49,7 @@ void ManagerModelVoskSpeechToText::downloadListModels()
         if (error == QNetworkReply::ServiceUnavailableError) {
             Q_EMIT errorText(i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         } else {
-            Q_EMIT errorText(i18n("Impossible to access to url: %1", BergamotEngineUtils::defaultBergamotRepository()));
+            Q_EMIT errorText(i18n("Impossible to access to url: %1", VoskEngineUtils::defaultVoskRepository()));
         }
     });
 }
@@ -64,38 +64,38 @@ void ManagerModelVoskSpeechToText::loadModelList(const QString &fileName)
         const QJsonObject fields = doc.object();
         parseListModel(fields);
     } else {
-        qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open " << fileName;
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open " << fileName;
     }
 }
 
 void ManagerModelVoskSpeechToText::parseListModel(const QJsonObject &obj)
 {
-    mTranslators.clear();
+    mSpeechToTextInfos.clear();
     const QJsonArray arrays = obj[QLatin1String("models")].toArray();
     for (const QJsonValue &current : arrays) {
         if (current.type() == QJsonValue::Object) {
-            VoskSpeechToTextInfo translator;
+            VoskSpeechToTextInfo speechTextInfo;
             const QJsonObject translatorObject = current.toObject();
-            translator.parse(translatorObject);
-            if (translator.isValid()) {
-                mTranslators.append(std::move(translator));
+            speechTextInfo.parse(translatorObject);
+            if (speechTextInfo.isValid()) {
+                mSpeechToTextInfos.append(std::move(speechTextInfo));
             }
         } else {
-            qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << " Problem during parsing" << current;
+            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << " Problem during parsing" << current;
         }
     }
-    qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " mTranslators " << mTranslators.count();
+    qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " mTranslators " << mSpeechToTextInfos.count();
     Q_EMIT downLoadModelListDone();
 }
 
 QVector<VoskSpeechToTextInfo> ManagerModelVoskSpeechToText::translators() const
 {
-    return mTranslators;
+    return mSpeechToTextInfos;
 }
 
 void ManagerModelVoskSpeechToText::setTranslators(const QVector<VoskSpeechToTextInfo> &newTranslators)
 {
-    mTranslators = newTranslators;
+    mSpeechToTextInfos = newTranslators;
 }
 
 void ManagerModelVoskSpeechToText::downloadLanguage(const QString &url, const QString &checkSum)
@@ -118,9 +118,7 @@ void ManagerModelVoskSpeechToText::downloadLanguage(const QString &url, const QS
 
 bool ManagerModelVoskSpeechToText::needDownloadModelList() const
 {
-    return mTranslators.isEmpty();
+    return mSpeechToTextInfos.isEmpty();
 }
-
-#include "moc_managermodeltranslator.cpp"
 
 #include "moc_managermodelvoskspeechtotext.cpp"

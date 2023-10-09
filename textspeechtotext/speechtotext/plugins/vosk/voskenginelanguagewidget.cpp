@@ -5,9 +5,9 @@
 */
 
 #include "voskenginelanguagewidget.h"
-#include "libbergamot_debug.h"
-#include "translatormodel.h"
-#include "translatorproxymodel.h"
+// #include "libbergamot_debug.h"
+// #include "translatormodel.h"
+// #include "translatorproxymodel.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLabel>
@@ -162,7 +162,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
 
 VoskEngineLanguageWidget::~VoskEngineLanguageWidget() = default;
 
-void VoskEngineLanguageWidget::slotProgressInfo(const ManagerModelTranslator::ProgressInfo &info)
+void VoskEngineLanguageWidget::slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info)
 {
     if (info.bytesReceived != info.bytesTotal) {
         mProgressBarWidget->setVisible(true);
@@ -186,7 +186,7 @@ void VoskEngineLanguageWidget::slotTextChanged(const QString &str)
 
 void VoskEngineLanguageWidget::slotDownLoad(const QString &url, const QString &checkSum)
 {
-    ManagerModelTranslator::self()->downloadLanguage(url, checkSum);
+    ManagerModelVoskSpeechToText::self()->downloadLanguage(url, checkSum);
 }
 
 void VoskEngineLanguageWidget::slotDelete(const QString &identifier)
@@ -196,12 +196,12 @@ void VoskEngineLanguageWidget::slotDelete(const QString &identifier)
 
 void VoskEngineLanguageWidget::slotUpdateListLanguage()
 {
-    ManagerModelTranslator::self()->downloadListModels();
+    ManagerModelVoskSpeechToText::self()->downloadListModels();
 }
 
 void VoskEngineLanguageWidget::updateListModel()
 {
-    mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
+    mTranslatorModel->insertTranslators(ManagerModelVoskSpeechToText::self()->translators());
 }
 
 #include "moc_bergamotenginelanguagewidget.cpp"
