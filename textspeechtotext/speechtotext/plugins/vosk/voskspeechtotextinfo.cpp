@@ -112,5 +112,6 @@ QDebug operator<<(QDebug d, const VoskSpeechToTextInfo &t)
     d << "mUrl : " << t.url();
     d << "mSize : " << t.size();
     d << "mObsolete : " << t.obsolete();
+    // TODO add type ? name ?
     return d;
 }

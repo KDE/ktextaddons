@@ -128,7 +128,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mainLayout->addWidget(mProgressBarWidget);
     mProgressBarWidget->setVisible(false);
 
-    //    mTreeView->setColumnHidden(TranslatorModel::Url, true);
+    //    mTreeView->setColumnHidden(VoskSpeechToTextModel::Url, true);
     //    mTreeView->setColumnHidden(TranslatorModel::CheckSum, true);
     //    mTreeView->setColumnHidden(TranslatorModel::Identifier, true);
     //    mTreeView->setColumnHidden(TranslatorModel::NeedToUpdateLanguage, true);

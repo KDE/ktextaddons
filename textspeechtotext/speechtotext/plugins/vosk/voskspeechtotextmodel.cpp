@@ -27,6 +27,7 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
         switch (static_cast<VoskRoles>(section)) {
         case VoskRoles::Lang:
         case VoskRoles::Url:
+        case VoskRoles::CheckSum:
             return {};
         case VoskRoles::LangText:
             return i18n("Lang");

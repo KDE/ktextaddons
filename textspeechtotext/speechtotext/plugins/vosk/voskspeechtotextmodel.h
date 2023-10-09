@@ -20,6 +20,7 @@ public:
         LangText,
         Obsolete,
         Size,
+        CheckSum,
         Url,
         LastColumn = Url,
     };
