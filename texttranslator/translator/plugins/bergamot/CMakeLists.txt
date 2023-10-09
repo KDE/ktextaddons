@@ -79,7 +79,7 @@ target_sources(libbergamot PRIVATE
 generate_export_header(libbergamot BASE_NAME libbergamot)
 
 ecm_qt_declare_logging_category(libbergamot HEADER libbergamot_debug.h IDENTIFIER TRANSLATOR_LIBBERGAMOT_LOG
-    CATEGORY_NAME org.kde.ruqola DESCRIPTION "lib bergamot translator" EXPORT KTEXTADDONS)
+    CATEGORY_NAME org.kde.libbergamottranslator DESCRIPTION "lib bergamot translator" EXPORT KTEXTADDONS)
 
 target_link_libraries(libbergamot  Qt::Widgets
     KF${KF_MAJOR_VERSION}::I18n
