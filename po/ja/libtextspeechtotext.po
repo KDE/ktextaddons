@@ -1,26 +1,23 @@
-# Copyright (C) 2023 This file is copyright:
-# This file is distributed under the same license as the ktextaddons package.
-#
-# SPDX-FileCopyrightText: 2023 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 00:41+0000\n"
-"PO-Revision-Date: 2023-10-07 12:28+0200\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: \n"
-"Language: nl\n"
+"PO-Revision-Date: 2023-09-09 18:00-0700\n"
+"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:23
 #, kde-format
 msgid "Google"
-msgstr "Google"
+msgstr ""
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
 #, kde-format
@@ -59,30 +56,30 @@ msgstr ""
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
 #, kde-format
 msgid "Vosk"
-msgstr "Vosk"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:23
 #, kde-format
 msgid "Whisper"
-msgstr "Whisper"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
 #, kde-format
 msgid "Engine:"
-msgstr "Engine:"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr "Vertaler configureren"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
 msgid "Input:"
-msgstr "Invoer:"
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format
 msgid "Default"
-msgstr "Standaard"
+msgstr ""

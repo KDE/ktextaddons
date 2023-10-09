@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 00:41+0000\n"
+"POT-Creation-Date: 2023-10-09 00:41+0000\n"
 "PO-Revision-Date: 2023-10-07 09:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -22,6 +22,40 @@ msgstr ""
 #, kde-format
 msgid "Google"
 msgstr "Google"
+
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr ""
+
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:50
+#, kde-format
+msgid ""
+"Error: Engine systems have detected suspicious traffic from your computer "
+"network. Please try your request again later."
+msgstr ""
+
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:52
+#, kde-format
+msgid "Impossible to access to url: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
+#, kde-format
+msgid "CheckSum is not correct."
+msgstr ""
+
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
+#, kde-format
+msgid "Error during writing on disk: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
+#, kde-format
+msgid "Impossible to extract language"
+msgstr ""
 
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
 #, kde-format
