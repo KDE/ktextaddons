@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "googlespeechtotextclient.h"
+#include "googlespeechtotextplugin.h"
 #include <KLocalizedString>
 
 GoogleSpeechToTextClient::GoogleSpeechToTextClient(QObject *parent)
@@ -31,7 +32,7 @@ TextSpeechToText::SpeechToTextClient::EngineType GoogleSpeechToTextClient::engin
 TextSpeechToText::SpeechToTextPlugin *GoogleSpeechToTextClient::createTextToSpeech()
 {
     // TODO
-    return {};
+    return new GoogleSpeechToTextPlugin;
 }
 
 #include "moc_googlespeechtotextclient.cpp"

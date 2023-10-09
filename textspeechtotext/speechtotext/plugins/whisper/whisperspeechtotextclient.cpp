@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "whisperspeechtotextclient.h"
+#include "whisperspeechtotextplugin.h"
 #include <KLocalizedString>
 
 WhisperSpeechToTextClient::WhisperSpeechToTextClient(QObject *parent)
@@ -31,7 +32,7 @@ TextSpeechToText::SpeechToTextClient::EngineType WhisperSpeechToTextClient::engi
 TextSpeechToText::SpeechToTextPlugin *WhisperSpeechToTextClient::createTextToSpeech()
 {
     // TODO
-    return {};
+    return new WhisperSpeechToTextPlugin;
 }
 
 #include "moc_whisperspeechtotextclient.cpp"
