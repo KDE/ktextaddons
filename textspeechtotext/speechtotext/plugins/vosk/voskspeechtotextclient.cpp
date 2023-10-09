@@ -31,8 +31,18 @@ TextSpeechToText::SpeechToTextClient::EngineType VoskSpeechToTextClient::engineT
 
 TextSpeechToText::SpeechToTextPlugin *VoskSpeechToTextClient::createTextToSpeech()
 {
-    // TODO
     return new VoskSpeechToTextPlugin;
+}
+
+bool VoskSpeechToTextClient::hasConfigurationDialog() const
+{
+    return true;
+}
+
+bool VoskSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
+{
+    // TODO
+    return false;
 }
 
 #include "moc_voskspeechtotextclient.cpp"
