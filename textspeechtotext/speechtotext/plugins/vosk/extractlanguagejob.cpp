@@ -8,7 +8,7 @@
 #include "libvoskspeechtotext_debug.h"
 #include "voskengineutils.h"
 #include <KLocalizedString>
-#include <KTar>
+#include <KZip>
 #include <QDir>
 
 ExtractLanguageJob::ExtractLanguageJob(QObject *parent)
@@ -32,8 +32,8 @@ void ExtractLanguageJob::start()
         deleteLater();
         return;
     }
-    auto tar = new KTar(mSource);
-    if (!tar->open(QIODevice::ReadOnly)) {
+    auto zip = new KZip(mSource);
+    if (!zip->open(QIODevice::ReadOnly)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open temporary file" << mSource;
         Q_EMIT finished();
         deleteLater();
@@ -45,11 +45,12 @@ void ExtractLanguageJob::start()
         deleteLater();
         return;
     }
-    const KArchiveDirectory *zipDir = tar->directory();
+    const KArchiveDirectory *zipDir = zip->directory();
     const QStringList lst = zipDir->entries();
-    // qDebug() << " list of files " << lst;
+    qDebug() << " list of files " << lst;
     for (const QString &name : lst) {
         const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
+        qDebug() << " storeDirectory " << storeDirectory;
         if (!QDir().mkpath(storeDirectory)) {
             qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;
             continue;
@@ -58,7 +59,7 @@ void ExtractLanguageJob::start()
         if (configPathEntry && configPathEntry->isDirectory()) {
             const auto configDirectory = static_cast<const KArchiveDirectory *>(configPathEntry);
             const QStringList entries = configDirectory->entries();
-            // qDebug() << " list of files entries " << entries;
+            qDebug() << " list of files entries " << entries;
             for (const QString &file : entries) {
                 const KArchiveEntry *filePathEntry = zipDir->entry(name + QStringLiteral("/%1").arg(file));
                 if (filePathEntry && filePathEntry->isFile()) {
@@ -72,7 +73,7 @@ void ExtractLanguageJob::start()
             }
         }
     }
-    delete tar;
+    delete zip;
     Q_EMIT finished();
     deleteLater();
 }
