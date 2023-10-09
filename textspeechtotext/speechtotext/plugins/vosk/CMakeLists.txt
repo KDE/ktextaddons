@@ -33,9 +33,8 @@ target_link_libraries(libvoskspeechtotext
     KF${KF_MAJOR_VERSION}::TextSpeechToText
 )
 
-#TODO fix version/soversion
 set_target_properties(libvoskspeechtotext
-    PROPERTIES OUTPUT_NAME libvoskspeechtotext VERSION ${TEXTTRANSLATE_VERSION} SOVERSION ${TEXTTRANSLATE_SOVERSION}
+    PROPERTIES OUTPUT_NAME libvoskspeechtotext VERSION ${TEXTSPEECHTOTEXT_VERSION} SOVERSION ${TEXTSPEECHTOTEXT_SOVERSION}
 )
 
 install(TARGETS libvoskspeechtotext ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
