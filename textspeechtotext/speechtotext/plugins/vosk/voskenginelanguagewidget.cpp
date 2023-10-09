@@ -6,8 +6,8 @@
 
 #include "voskenginelanguagewidget.h"
 // #include "libbergamot_debug.h"
-// #include "translatormodel.h"
 // #include "translatorproxymodel.h"
+#include "managermodelvoskspeechtotext.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLabel>
@@ -58,16 +58,16 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
 #endif
 
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &VoskEngineLanguageWidget::slotError);
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::progress, this, &VoskEngineLanguageWidget::slotProgressInfo);
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
-    connect(ManagerModelTranslator::self(), &ManagerModelTranslator::downLoadModelListDone, this, &VoskEngineLanguageWidget::updateListModel);
+    connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::errorText, this, &VoskEngineLanguageWidget::slotError);
+    connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::progress, this, &VoskEngineLanguageWidget::slotProgressInfo);
+    connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
+    connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::downLoadModelListDone, this, &VoskEngineLanguageWidget::updateListModel);
 
     // TODO store list on local.
-    if (ManagerModelTranslator::self()->needDownloadModelList()) {
-        ManagerModelTranslator::self()->downloadListModels();
+    if (ManagerModelVoskSpeechToText::self()->needDownloadModelList()) {
+        ManagerModelVoskSpeechToText::self()->downloadListModels();
     } else {
-        mTranslatorModel->insertTranslators(ManagerModelTranslator::self()->translators());
+        mTranslatorModel->insertTranslators(ManagerModelVoskSpeechToText::self()->translators());
     }
 
     mTranslatorProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
@@ -204,4 +204,4 @@ void VoskEngineLanguageWidget::updateListModel()
     mTranslatorModel->insertTranslators(ManagerModelVoskSpeechToText::self()->translators());
 }
 
-#include "moc_bergamotenginelanguagewidget.cpp"
+#include "moc_voskenginelanguagewidget.cpp"
