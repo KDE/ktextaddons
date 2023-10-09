@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
-add_library(libvoskspeechtotext)
+add_library(libvoskspeechtotext
+    voskenginedialog.h voskenginedialog.cpp)
 
 target_sources(libvoskspeechtotext PRIVATE
     voskspeechtotextmodel.h
@@ -42,6 +43,7 @@ target_link_libraries(libvoskspeechtotext
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::TextSpeechToText
     KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
 )
 
 set_target_properties(libvoskspeechtotext

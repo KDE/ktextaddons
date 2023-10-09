@@ -8,7 +8,7 @@ macro(add_voskspeechtotext_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "speechtotext-"
         LINK_LIBRARIES Qt::Test
-        Qt::Core
+        Qt::Widgets
         libvoskspeechtotext
     )
 endmacro()
@@ -17,3 +17,4 @@ add_voskspeechtotext_unittest(voskspeechtotextinfotest.cpp)
 add_voskspeechtotext_unittest(downloadlanguagejobtest.cpp)
 add_voskspeechtotext_unittest(extractlanguagejobtest.cpp)
 add_voskspeechtotext_unittest(voskenginelanguagewidgettest.cpp)
+add_voskspeechtotext_unittest(voskenginedialogtest.cpp)
