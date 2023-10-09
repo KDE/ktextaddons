@@ -24,7 +24,7 @@ target_sources(libvoskspeechtotext PRIVATE
 generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)
 
 ecm_qt_declare_logging_category(libvoskspeechtotext HEADER libvoskspeechtotext_debug.h IDENTIFIER  LIBVOSKSPEECHTOTEXT_LOG
-    CATEGORY_NAME org.kde.ruqola DESCRIPTION "lib speech to text" EXPORT KTEXTADDONS)
+    CATEGORY_NAME org.kde.libvoskspeechtotext DESCRIPTION "lib speech to text" EXPORT KTEXTADDONS)
 
 target_link_libraries(libvoskspeechtotext
     Qt::Widgets
