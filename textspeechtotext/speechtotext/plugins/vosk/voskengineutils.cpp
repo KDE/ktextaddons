@@ -5,15 +5,14 @@
 */
 
 #include "voskengineutils.h"
+#include <QStandardPaths>
 
 QString VoskEngineUtils::defaultVoskRepository()
 {
-    // TODO
-    return {};
+    return QStringLiteral("https://alphacephei.com/vosk/models/model-list.json");
 }
 
 QString VoskEngineUtils::storageLanguagePath()
 {
-    // TODO
-    return {};
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/vosk-texttospeech");
 }
