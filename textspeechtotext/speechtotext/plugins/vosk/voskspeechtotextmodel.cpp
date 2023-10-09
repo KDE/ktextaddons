@@ -30,6 +30,10 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
             return {};
         case VoskRoles::LangText:
             return i18n("Lang");
+        case VoskRoles::Obsolete:
+            return i18n("Obsolete");
+        case VoskRoles::Size:
+            return i18n("Size");
         }
     }
     return {};

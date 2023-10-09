@@ -18,6 +18,8 @@ public:
         // TODO add more
         Lang,
         LangText,
+        Obsolete,
+        Size,
         Url,
         LastColumn = Url,
     };
@@ -35,11 +37,12 @@ public:
     Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
     void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
 
+    void updateInstalledLanguage();
+
 protected:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     int columnCount(const QModelIndex &parent) const override;
 
 private:
-    void updateInstalledLanguage();
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
 };

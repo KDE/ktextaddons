@@ -24,8 +24,8 @@ public:
 
     void downloadListModels();
 
-    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> translators() const;
-    void setTranslators(const QVector<VoskSpeechToTextInfo> &newTranslators);
+    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
+    void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newTranslators);
 
     void loadModelList(const QString &fileName);
 

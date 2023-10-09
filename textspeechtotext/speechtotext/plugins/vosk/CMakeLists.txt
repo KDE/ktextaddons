@@ -1,12 +1,13 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
-add_library(libvoskspeechtotext
-    voskengineutils.h voskengineutils.cpp)
+add_library(libvoskspeechtotext)
 
 target_sources(libvoskspeechtotext PRIVATE
     voskspeechtotextmodel.h
     voskspeechtotextmodel.cpp
+    voskspeechtotextproxymodel.cpp
+    voskspeechtotextproxymodel.h
 
     managermodelvoskspeechtotext.h
     managermodelvoskspeechtotext.cpp
@@ -23,8 +24,11 @@ target_sources(libvoskspeechtotext PRIVATE
     voskengineutils.cpp
     voskengineutils.h
 
-#    voskenginelanguagewidget.h
-#    voskenginelanguagewidget.cpp
+    voskenginelanguagewidget.h
+    voskenginelanguagewidget.cpp
+
+    voskengineutils.h
+    voskengineutils.cpp
 )
 
 generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)
@@ -37,6 +41,7 @@ target_link_libraries(libvoskspeechtotext
     KF${KF_MAJOR_VERSION}::Archive
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::TextSpeechToText
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
 )
 
 set_target_properties(libvoskspeechtotext
@@ -55,6 +60,7 @@ ecm_qt_declare_logging_category(speechtotext_vosk
     DESCRIPTION "vosk speechtotext"
     EXPORT KTEXTADDONS
 )
+
 target_sources(speechtotext_vosk PRIVATE
     voskspeechtotextclient.h
     voskspeechtotextclient.cpp
@@ -64,7 +70,6 @@ target_sources(speechtotext_vosk PRIVATE
 
     voskspeechtotextpluginjob.h
     voskspeechtotextpluginjob.cpp
-
 )
 
 target_link_libraries(speechtotext_vosk PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n libvoskspeechtotext)
