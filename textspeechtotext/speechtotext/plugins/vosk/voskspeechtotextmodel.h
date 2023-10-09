@@ -32,8 +32,8 @@ public:
 
     void clear();
 
-    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfo() const;
-    void setSpeechToTextInfo(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
+    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
+    void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
 
 protected:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
@@ -41,5 +41,5 @@ protected:
 
 private:
     void updateInstalledLanguage();
-    QVector<VoskSpeechToTextInfo> mSpeechToTextInfo;
+    QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
 };

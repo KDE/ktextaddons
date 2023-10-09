@@ -18,7 +18,7 @@ VoskSpeechToTextModel::~VoskSpeechToTextModel() = default;
 int VoskSpeechToTextModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return mSpeechToTextInfo.count();
+    return mSpeechToTextInfos.count();
 }
 
 QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -37,7 +37,7 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
 
 QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
 {
-    if (index.row() < 0 || index.row() >= mSpeechToTextInfo.count()) {
+    if (index.row() < 0 || index.row() >= mSpeechToTextInfos.count()) {
         return {};
     }
 
@@ -49,7 +49,7 @@ void VoskSpeechToTextModel::clear()
 {
     if (rowCount() != 0) {
         beginResetModel();
-        mSpeechToTextInfo.clear();
+        mSpeechToTextInfos.clear();
         endResetModel();
     }
     updateInstalledLanguage();
@@ -61,21 +61,21 @@ void VoskSpeechToTextModel::updateInstalledLanguage()
     // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "mLanguageInstalled " << mLanguageInstalled;
 }
 
-QVector<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfo() const
+QVector<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfos() const
 {
-    return mSpeechToTextInfo;
+    return mSpeechToTextInfos;
 }
 
-void VoskSpeechToTextModel::setSpeechToTextInfo(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo)
+void VoskSpeechToTextModel::setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo)
 {
     if (rowCount() != 0) {
         beginResetModel();
-        mSpeechToTextInfo.clear();
+        mSpeechToTextInfos.clear();
         endResetModel();
     }
-    if (!mSpeechToTextInfo.isEmpty()) {
+    if (!mSpeechToTextInfos.isEmpty()) {
         beginInsertRows(QModelIndex(), 0, newSpeechToTextInfo.count() - 1);
-        mSpeechToTextInfo = newSpeechToTextInfo;
+        mSpeechToTextInfos = newSpeechToTextInfo;
         endInsertRows();
     }
     updateInstalledLanguage();
