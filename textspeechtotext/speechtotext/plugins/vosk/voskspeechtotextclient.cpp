@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskspeechtotextclient.h"
+#include "voskspeechtotextplugin.h"
 #include <KLocalizedString>
 
 VoskSpeechToTextClient::VoskSpeechToTextClient(QObject *parent)
@@ -31,7 +32,7 @@ TextSpeechToText::SpeechToTextClient::EngineType VoskSpeechToTextClient::engineT
 TextSpeechToText::SpeechToTextPlugin *VoskSpeechToTextClient::createTextToSpeech()
 {
     // TODO
-    return {};
+    return new VoskSpeechToTextPlugin;
 }
 
 #include "moc_voskspeechtotextclient.cpp"
