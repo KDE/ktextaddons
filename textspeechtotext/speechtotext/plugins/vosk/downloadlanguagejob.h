@@ -35,6 +35,7 @@ Q_SIGNALS:
     void extractDone();
 
 private:
+    void generateInstalledLanguageInfo();
     void slotExtractDone();
     void extractLanguage();
     DownloadLanguageInfo mInfo;

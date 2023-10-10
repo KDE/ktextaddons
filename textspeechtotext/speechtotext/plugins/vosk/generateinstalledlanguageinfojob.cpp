@@ -16,12 +16,22 @@ GenerateInstalledLanguageInfoJob::~GenerateInstalledLanguageInfoJob() = default;
 void GenerateInstalledLanguageInfoJob::start()
 {
     // TODO
+    // Generate json file.
 }
 
 bool GenerateInstalledLanguageInfoJob::canStart() const
 {
-    // TODO
-    return {};
+    return mInfo.isValid();
+}
+
+DownloadLanguageJob::DownloadLanguageInfo GenerateInstalledLanguageInfoJob::info() const
+{
+    return mInfo;
+}
+
+void GenerateInstalledLanguageInfoJob::setInfo(const DownloadLanguageJob::DownloadLanguageInfo &newInfo)
+{
+    mInfo = newInfo;
 }
 
 #include "moc_generateinstalledlanguageinfojob.cpp"

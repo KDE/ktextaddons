@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "downloadlanguagejob.h"
+
 #include <QObject>
 
 class GenerateInstalledLanguageInfoJob : public QObject
@@ -17,4 +19,14 @@ public:
 
     void start();
     Q_REQUIRED_RESULT bool canStart() const;
+
+    DownloadLanguageJob::DownloadLanguageInfo info() const;
+    void setInfo(const DownloadLanguageJob::DownloadLanguageInfo &newInfo);
+
+Q_SIGNALS:
+    void generatedDone();
+    void errorText(const QString &str);
+
+private:
+    DownloadLanguageJob::DownloadLanguageInfo mInfo;
 };

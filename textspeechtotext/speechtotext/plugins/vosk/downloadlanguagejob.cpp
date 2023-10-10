@@ -87,9 +87,15 @@ void DownloadLanguageJob::extractLanguage()
     auto extraJob = new ExtractLanguageJob(this);
     extraJob->setSource(mDestination->fileName());
     connect(extraJob, &ExtractLanguageJob::errorText, this, &DownloadLanguageJob::errorText);
-    connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::extractDone);
+    connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::generateInstalledLanguageInfo);
 
     extraJob->start();
+}
+
+void DownloadLanguageJob::generateInstalledLanguageInfo()
+{
+    // TODO
+    Q_EMIT extractDone();
 }
 
 DownloadLanguageJob::DownloadLanguageInfo DownloadLanguageJob::info() const
