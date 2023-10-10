@@ -95,6 +95,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
         const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Url);
         const QModelIndex modelIndexCheckSum = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::CheckSum);
+        const QModelIndex modelIndexName = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Name);
 
         const QString url = modelIndex.data().toString();
         const QString checkSum = modelIndexCheckSum.data().toString();
@@ -102,6 +103,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         DownloadLanguageJob::DownloadLanguageInfo info;
         info.checksum = modelIndexCheckSum.data().toString();
         info.url = QUrl(modelIndex.data().toString());
+        info.name = modelIndexName.data().toString();
         slotDownLoad(info);
     });
 
