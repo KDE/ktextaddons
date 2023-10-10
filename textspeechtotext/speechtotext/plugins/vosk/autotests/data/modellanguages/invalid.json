@@ -1,0 +1,25 @@
+[
+    {
+        "lang": "ar",
+        "lang_text": "Arabic",
+        "md5": "1ff29ab1d313f2c95079b41bf2e95fba",
+        "name": "vosk-model-ar-0.22-linto-1.1.0",
+        "obsolete": "false",
+        "size": 1377395170,
+        "size_text": "1.3GiB",
+        "type": "big",
+        "url": "https://alphacephei.com/vosk/models/vosk-model-ar-0.22-linto-1.1.0.zip",
+        "version": "0.22-linto-1.1.0"
+    },
+    {
+        "lang": "ar",
+        "lang_text": "Arabic",
+        "md5": "d912e25ce46f94fe362b8c98e5efb4fd",
+        "name": "vosk-model-ar-mgb2-0.4",
+        "obsolete": "true",
+        "size": 333241610,
+        "size_text": "317.8MiB",
+        "type": "big",
+        "version": "mbg2-0.4"
+    }
+]
