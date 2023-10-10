@@ -12,8 +12,7 @@ VoskSpeechToTextInfo::~VoskSpeechToTextInfo() = default;
 
 bool VoskSpeechToTextInfo::isValid() const
 {
-    // TODO ?
-    return !mIdentifier.isEmpty() && !mUrl.isEmpty();
+    return !mIdentifier.isEmpty() && !mUrl.isEmpty() && !mObsolete;
 }
 
 QString VoskSpeechToTextInfo::identifier() const
