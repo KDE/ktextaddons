@@ -19,3 +19,5 @@ void GenerateInstalledLanguageInfoJobTest::shouldHaveDefaultValues()
     QVERIFY(!w.canStart());
     QVERIFY(!w.info().isValid());
 }
+
+#include "moc_generateinstalledlanguageinfojobtest.cpp"
