@@ -40,7 +40,7 @@ void DownloadLanguageJob::start()
         return;
     }
 
-    mHash = new QCryptographicHash(QCryptographicHash::Sha256);
+    mHash = new QCryptographicHash(QCryptographicHash::Md5);
 
     QNetworkRequest request(mUrl);
     // qDebug() << " mUrl " << mUrl;
