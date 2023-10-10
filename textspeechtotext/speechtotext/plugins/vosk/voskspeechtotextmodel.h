@@ -25,6 +25,7 @@ public:
         Installed,
         AvailableVersion,
         InstalledVersion,
+        NeedToUpdateLanguage,
         Url,
         LastColumn = Url,
     };
@@ -50,7 +51,8 @@ protected:
 
 private:
     Q_REQUIRED_RESULT bool isInstalled(const QString &shortName) const;
-    Q_REQUIRED_RESULT int versionInstalled(const QString &shortName) const;
+    Q_REQUIRED_RESULT QString versionInstalled(const QString &shortName) const;
+    Q_REQUIRED_RESULT bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
     QVector<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
 };

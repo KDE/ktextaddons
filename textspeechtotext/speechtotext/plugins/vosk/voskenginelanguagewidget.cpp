@@ -136,17 +136,17 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     auto updateButton = [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        //        const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Installed);
-        //        const QModelIndex modelIndexNeedToUpdate = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(),
-        //        VoskSpeechToTextModel::NeedToUpdateLanguage); const bool isInstalled = modelIndex.data().toBool(); const bool needToUpdate =
-        //        modelIndexNeedToUpdate.data().toBool();
+        const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Installed);
+        const QModelIndex modelIndexNeedToUpdate = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::NeedToUpdateLanguage);
+        const bool isInstalled = modelIndex.data().toBool();
+        const bool needToUpdate = modelIndexNeedToUpdate.data().toBool();
 
-        //        if (needToUpdate) {
-        //            downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
-        //        } else {
-        //            downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
-        //        }
-        //        deleteLanguage->setEnabled(hasSelectedItem && isInstalled);
+        if (needToUpdate) {
+            downLoadLanguage->setEnabled(hasSelectedItem && needToUpdate);
+        } else {
+            downLoadLanguage->setEnabled(hasSelectedItem && !isInstalled);
+        }
+        deleteLanguage->setEnabled(hasSelectedItem && isInstalled);
     };
 
     connect(deleteLanguage, &QPushButton::clicked, this, [this, updateButton]() {

@@ -83,7 +83,7 @@ void ManagerModelVoskSpeechToText::parseListModel(const QJsonArray &arrays)
             qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << " Problem during parsing" << current;
         }
     }
-    qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " mTranslators " << mSpeechToTextInfos.count();
+    qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " mSpeechToTextInfos.count() " << mSpeechToTextInfos.count();
     Q_EMIT downLoadModelListDone();
 }
 
