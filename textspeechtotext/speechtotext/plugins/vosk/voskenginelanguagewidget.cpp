@@ -9,6 +9,7 @@
 #include "managermodelvoskspeechtotext.h"
 #include "voskspeechtotextmodel.h"
 #include "voskspeechtotextproxymodel.h"
+
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLabel>
@@ -98,7 +99,10 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         const QString url = modelIndex.data().toString();
         const QString checkSum = modelIndexCheckSum.data().toString();
         qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " url " << url << " checksum " << checkSum;
-        slotDownLoad(url, checkSum);
+        DownloadLanguageJob::DownloadLanguageInfo info;
+        info.checksum = modelIndexCheckSum.data().toString();
+        info.url = QUrl(modelIndex.data().toString());
+        slotDownLoad(info);
     });
 
     auto deleteLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete"), this);
@@ -132,7 +136,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mTreeView->setColumnHidden(VoskSpeechToTextModel::Url, true);
     mTreeView->setColumnHidden(VoskSpeechToTextModel::CheckSum, true);
     mTreeView->setColumnHidden(VoskSpeechToTextModel::Identifier, true);
-    //    mTreeView->setColumnHidden(TranslatorModel::NeedToUpdateLanguage, true);
+    mTreeView->setColumnHidden(VoskSpeechToTextModel::NeedToUpdateLanguage, true);
     auto updateButton = [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
@@ -188,9 +192,9 @@ void VoskEngineLanguageWidget::slotTextChanged(const QString &str)
     mVoskSpeechToTextProxyModel->setSearchString(str);
 }
 
-void VoskEngineLanguageWidget::slotDownLoad(const QString &url, const QString &checkSum)
+void VoskEngineLanguageWidget::slotDownLoad(const DownloadLanguageJob::DownloadLanguageInfo &info)
 {
-    ManagerModelVoskSpeechToText::self()->downloadLanguage(url, checkSum);
+    ManagerModelVoskSpeechToText::self()->downloadLanguage(info);
 }
 
 void VoskEngineLanguageWidget::slotDelete(const QString &identifier)

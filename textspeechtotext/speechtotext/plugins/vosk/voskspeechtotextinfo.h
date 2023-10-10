@@ -45,7 +45,11 @@ public:
     Q_REQUIRED_RESULT QString type() const;
     void setType(const QString &newType);
 
+    QString name() const;
+    void setName(const QString &newName);
+
 private:
+    QString mName;
     QString mType;
     QString mIdentifier;
     QString mLangText;

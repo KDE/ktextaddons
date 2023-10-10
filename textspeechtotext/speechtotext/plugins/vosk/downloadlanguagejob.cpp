@@ -42,14 +42,14 @@ void DownloadLanguageJob::start()
 
     mHash = new QCryptographicHash(QCryptographicHash::Md5);
 
-    QNetworkRequest request(mUrl);
-    // qDebug() << " mUrl " << mUrl;
+    QNetworkRequest request(mInfo.url);
+    // qDebug() << " mInfo.url " << mInfo.url;
     QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(request);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
         if (error == QNetworkReply::ServiceUnavailableError) {
             Q_EMIT errorText(i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         } else {
-            Q_EMIT errorText(i18n("Impossible to access to url: %1", mUrl.toString()));
+            Q_EMIT errorText(i18n("Impossible to access to url: %1", mInfo.url.toString()));
         }
     });
 
@@ -58,7 +58,7 @@ void DownloadLanguageJob::start()
         mDestination->flush();
         mDestination->seek(0);
         reply->deleteLater();
-        if (!mCheckSum.isEmpty() && mHash->result().toHex() != mCheckSum.toLatin1()) {
+        if (!mInfo.checksum.isEmpty() && mHash->result().toHex() != mInfo.checksum.toLatin1()) {
             // qDebug() << " mHash->result() " << mHash->result().toHex() << " mCheckSum " << mCheckSum;
             Q_EMIT errorText(i18n("CheckSum is not correct."));
             deleteLater();
@@ -79,17 +79,7 @@ void DownloadLanguageJob::start()
 
 bool DownloadLanguageJob::canStart() const
 {
-    return !mUrl.isEmpty();
-}
-
-QUrl DownloadLanguageJob::url() const
-{
-    return mUrl;
-}
-
-void DownloadLanguageJob::setUrl(const QUrl &newUrl)
-{
-    mUrl = newUrl;
+    return mInfo.isValid();
 }
 
 void DownloadLanguageJob::extractLanguage()
@@ -102,20 +92,33 @@ void DownloadLanguageJob::extractLanguage()
     extraJob->start();
 }
 
-QString DownloadLanguageJob::checkSum() const
+DownloadLanguageJob::DownloadLanguageInfo DownloadLanguageJob::info() const
 {
-    return mCheckSum;
+    return mInfo;
 }
 
-void DownloadLanguageJob::setCheckSum(const QString &newCheckSum)
+void DownloadLanguageJob::setInfo(const DownloadLanguageInfo &newInfo)
 {
-    mCheckSum = newCheckSum;
+    mInfo = newInfo;
 }
 
 void DownloadLanguageJob::slotExtractDone()
 {
     Q_EMIT extractDone();
     deleteLater();
+}
+
+QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t)
+{
+    d << "url " << t.url;
+    d << "checksum " << t.checksum;
+    d << "name " << t.name;
+    return d;
+}
+
+bool DownloadLanguageJob::DownloadLanguageInfo::isValid() const
+{
+    return !url.isEmpty() && !name.isEmpty();
 }
 
 #include "moc_downloadlanguagejob.cpp"

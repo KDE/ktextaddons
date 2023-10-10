@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "downloadlanguagejob.h"
 #include "libvoskspeechtotext_export.h"
 #include "voskspeechtotextinfo.h"
 #include <QObject>
@@ -29,7 +30,7 @@ public:
 
     void loadModelList(const QString &fileName);
 
-    void downloadLanguage(const QString &url, const QString &checkSum);
+    void downloadLanguage(const DownloadLanguageJob::DownloadLanguageInfo &info);
     Q_REQUIRED_RESULT bool needDownloadModelList() const;
 Q_SIGNALS:
     void errorText(const QString &str);

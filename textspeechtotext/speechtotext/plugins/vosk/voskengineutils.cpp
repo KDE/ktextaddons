@@ -69,7 +69,7 @@ QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStor
 
 QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t)
 {
-    d << " shortName " << t.shortName;
+    d << " shortName " << t.name;
     d << " absoluteLanguageModelPath " << t.absoluteLanguageModelPath;
     d << " version " << t.versionStr;
     return d;
@@ -77,5 +77,5 @@ QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t)
 
 bool VoskEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
 {
-    return shortName == other.shortName && absoluteLanguageModelPath == other.absoluteLanguageModelPath && versionStr == other.versionStr;
+    return name == other.name && absoluteLanguageModelPath == other.absoluteLanguageModelPath && versionStr == other.versionStr;
 }

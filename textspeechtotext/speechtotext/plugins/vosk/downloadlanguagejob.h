@@ -14,17 +14,20 @@ class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT DownloadLanguageJob : public QObject
 {
     Q_OBJECT
 public:
+    struct DownloadLanguageInfo {
+        QUrl url;
+        QString checksum;
+        QString name;
+        Q_REQUIRED_RESULT bool isValid() const;
+    };
     explicit DownloadLanguageJob(QObject *parent = nullptr);
     ~DownloadLanguageJob() override;
     void start();
 
     Q_REQUIRED_RESULT bool canStart() const;
 
-    Q_REQUIRED_RESULT QUrl url() const;
-    void setUrl(const QUrl &newUrl);
-
-    Q_REQUIRED_RESULT QString checkSum() const;
-    void setCheckSum(const QString &newCheckSum);
+    Q_REQUIRED_RESULT DownloadLanguageInfo info() const;
+    void setInfo(const DownloadLanguageInfo &newInfo);
 
 Q_SIGNALS:
     void errorText(const QString &str);
@@ -34,8 +37,9 @@ Q_SIGNALS:
 private:
     void slotExtractDone();
     void extractLanguage();
+    DownloadLanguageInfo mInfo;
     QCryptographicHash *mHash = nullptr;
-    QUrl mUrl;
-    QString mCheckSum;
     QTemporaryFile *mDestination = nullptr;
 };
+Q_DECLARE_TYPEINFO(DownloadLanguageJob::DownloadLanguageInfo, Q_MOVABLE_TYPE);
+LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t);

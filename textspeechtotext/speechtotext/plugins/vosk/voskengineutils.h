@@ -15,11 +15,12 @@ Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultVoskRepository();
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString storageLanguagePath();
 
 struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
-    QString shortName;
+    QString name;
     QString absoluteLanguageModelPath;
     QString versionStr;
     Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
+
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 };
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);

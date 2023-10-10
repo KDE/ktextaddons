@@ -18,8 +18,12 @@ void DownloadLanguageJobTest::shouldHaveDefaultValues()
 {
     DownloadLanguageJob w;
     QVERIFY(!w.canStart());
-    QVERIFY(w.url().isEmpty());
-    QVERIFY(w.checkSum().isEmpty());
+    QVERIFY(!w.info().isValid());
+
+    DownloadLanguageJob::DownloadLanguageInfo info;
+    QVERIFY(info.url.isEmpty());
+    QVERIFY(info.checksum.isEmpty());
+    QVERIFY(info.name.isEmpty());
 }
 
 #include "moc_downloadlanguagejobtest.cpp"

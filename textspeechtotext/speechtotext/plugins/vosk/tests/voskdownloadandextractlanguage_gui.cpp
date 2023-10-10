@@ -23,7 +23,10 @@ int main(int argc, char **argv)
     if (!parser.positionalArguments().isEmpty()) {
         const QString fileName = parser.positionalArguments().at(0);
         auto download = new DownloadLanguageJob();
-        download->setUrl(QUrl(fileName));
+        DownloadLanguageJob::DownloadLanguageInfo info;
+        info.url = QUrl(fileName);
+        info.name = fileName;
+        download->setInfo(std::move(info));
         QObject::connect(download, &DownloadLanguageJob::extractDone, &app, []() {
             qDebug() << "Extraction Done";
         });
