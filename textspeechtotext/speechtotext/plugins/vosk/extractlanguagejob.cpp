@@ -56,6 +56,7 @@ void ExtractLanguageJob::start()
             continue;
         }
         const KArchiveEntry *configPathEntry = zipDir->entry(name);
+        qDebug() << " name " << name;
         if (configPathEntry && configPathEntry->isDirectory()) {
             const auto configDirectory = static_cast<const KArchiveDirectory *>(configPathEntry);
             const QStringList entries = configDirectory->entries();
@@ -65,6 +66,7 @@ void ExtractLanguageJob::start()
                 if (filePathEntry) {
                     if (filePathEntry->isFile()) {
                         const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
+                        qDebug() << " filePathEntry******" << filePathEntry->name();
                         if (!filePath->copyTo(storeDirectory)) {
                             qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
                         }
@@ -80,6 +82,8 @@ void ExtractLanguageJob::start()
                     qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to import file " << file;
                 }
             }
+        } else {
+            qDebug() << "PB: list of files entries " << name;
         }
     }
     delete zip;
