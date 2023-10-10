@@ -29,6 +29,7 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
         switch (static_cast<VoskRoles>(section)) {
         case VoskRoles::Identifier:
         case VoskRoles::Url:
+        case VoskRoles::Name:
         case VoskRoles::NeedToUpdateLanguage:
         case VoskRoles::CheckSum:
             return {};
@@ -66,7 +67,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
         case VoskRoles::InstalledVersion: {
             const QString shortName{speechToTextInfo.identifier()};
             if (isInstalled(shortName)) {
-                // TODO return versionInstalled(shortName);
+                return versionInstalled(shortName);
             }
             return {};
         }
@@ -96,6 +97,9 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
         }
         case VoskRoles::CheckSum: {
             return speechToTextInfo.md5();
+        }
+        case VoskRoles::Name: {
+            return speechToTextInfo.name();
         }
         }
     }
