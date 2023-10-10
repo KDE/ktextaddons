@@ -42,7 +42,11 @@ public:
 
     void parse(const QJsonObject &obj);
 
+    Q_REQUIRED_RESULT QString type() const;
+    void setType(const QString &newType);
+
 private:
+    QString mType;
     QString mIdentifier;
     QString mLangText;
     QString mMd5;
