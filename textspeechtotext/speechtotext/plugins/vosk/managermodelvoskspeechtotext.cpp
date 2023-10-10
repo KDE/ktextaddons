@@ -33,7 +33,7 @@ ManagerModelVoskSpeechToText *ManagerModelVoskSpeechToText::self()
 void ManagerModelVoskSpeechToText::downloadListModels()
 {
     const QUrl url = QUrl(VoskEngineUtils::defaultVoskRepository());
-    qDebug() << " url " << url;
+    // qDebug() << " url " << url;
     QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
 
     connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {

@@ -129,7 +129,7 @@ void VoskSpeechToTextModel::setSpeechToTextInfos(const QVector<VoskSpeechToTextI
         mSpeechToTextInfos.clear();
         endResetModel();
     }
-    if (!mSpeechToTextInfos.isEmpty()) {
+    if (!newSpeechToTextInfo.isEmpty()) {
         beginInsertRows(QModelIndex(), 0, newSpeechToTextInfo.count() - 1);
         mSpeechToTextInfos = newSpeechToTextInfo;
         endInsertRows();
