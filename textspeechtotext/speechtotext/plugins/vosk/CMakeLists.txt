@@ -18,6 +18,9 @@ target_sources(libvoskspeechtotext PRIVATE
     downloadlanguagejob.cpp
     downloadlanguagejob.h
 
+    generateinstalledlanguageinfojob.h
+    generateinstalledlanguageinfojob.cpp
+
     extractlanguagejob.h
     extractlanguagejob.cpp
 
