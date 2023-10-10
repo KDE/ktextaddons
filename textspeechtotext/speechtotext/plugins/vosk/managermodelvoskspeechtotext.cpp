@@ -41,7 +41,7 @@ void ManagerModelVoskSpeechToText::downloadListModels()
     });
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         const auto readAll = reply->readAll();
-        qDebug() << " readAll " << readAll;
+        // qDebug() << " readAll " << readAll;
         parseListModel(QJsonDocument::fromJson(readAll).array());
         reply->deleteLater();
     });
