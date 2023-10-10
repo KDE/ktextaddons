@@ -15,6 +15,10 @@ GenerateInstalledLanguageInfoJob::~GenerateInstalledLanguageInfoJob() = default;
 
 void GenerateInstalledLanguageInfoJob::start()
 {
+    if (canStart()) {
+        // TODO
+        // TODO save file in folder.
+    }
     // TODO
     // Generate json file.
     deleteLater();
