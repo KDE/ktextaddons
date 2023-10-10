@@ -38,7 +38,7 @@ Q_SIGNALS:
     void downLoadModelListDone();
 
 private:
-    LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseListModel(const QJsonObject &obj);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseListModel(const QJsonArray &arrays);
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
 };
 Q_DECLARE_TYPEINFO(ManagerModelVoskSpeechToText::ProgressInfo, Q_MOVABLE_TYPE);

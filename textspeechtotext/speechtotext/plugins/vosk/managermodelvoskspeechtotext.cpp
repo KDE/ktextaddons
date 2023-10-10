@@ -33,7 +33,7 @@ ManagerModelVoskSpeechToText *ManagerModelVoskSpeechToText::self()
 void ManagerModelVoskSpeechToText::downloadListModels()
 {
     const QUrl url = QUrl(VoskEngineUtils::defaultVoskRepository());
-    // qDebug() << " url " << url;
+    qDebug() << " url " << url;
     QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
 
     connect(reply, &QNetworkReply::sslErrors, this, [](const QList<QSslError> &errors) {
@@ -41,8 +41,8 @@ void ManagerModelVoskSpeechToText::downloadListModels()
     });
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         const auto readAll = reply->readAll();
-        // qDebug() << " readAll " << readAll;
-        parseListModel(QJsonDocument::fromJson(readAll).object());
+        qDebug() << " readAll " << readAll;
+        parseListModel(QJsonDocument::fromJson(readAll).array());
         reply->deleteLater();
     });
     connect(reply, &QNetworkReply::errorOccurred, this, [this](QNetworkReply::NetworkError error) {
@@ -61,17 +61,16 @@ void ManagerModelVoskSpeechToText::loadModelList(const QString &fileName)
         const QByteArray content = f.readAll();
         f.close();
         const QJsonDocument doc = QJsonDocument::fromJson(content);
-        const QJsonObject fields = doc.object();
+        const QJsonArray fields = doc.array();
         parseListModel(fields);
     } else {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open " << fileName;
     }
 }
 
-void ManagerModelVoskSpeechToText::parseListModel(const QJsonObject &obj)
+void ManagerModelVoskSpeechToText::parseListModel(const QJsonArray &arrays)
 {
     mSpeechToTextInfos.clear();
-    const QJsonArray arrays = obj[QLatin1String("models")].toArray();
     for (const QJsonValue &current : arrays) {
         if (current.type() == QJsonValue::Object) {
             VoskSpeechToTextInfo speechTextInfo;
