@@ -16,4 +16,6 @@ public:
     ~GoogleSpeechToTextPlugin() override;
 
     void speechToText() override;
+
+    Q_REQUIRED_RESULT int sampleRate() const override;
 };

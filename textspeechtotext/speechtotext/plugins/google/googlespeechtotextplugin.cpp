@@ -18,4 +18,9 @@ void GoogleSpeechToTextPlugin::speechToText()
     // TODO
 }
 
+int GoogleSpeechToTextPlugin::sampleRate() const
+{
+    return 16000;
+}
+
 #include "moc_googlespeechtotextplugin.cpp"

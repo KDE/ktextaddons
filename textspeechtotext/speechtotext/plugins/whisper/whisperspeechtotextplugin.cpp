@@ -18,4 +18,9 @@ void WhisperSpeechToTextPlugin::speechToText()
     // TODO
 }
 
+int WhisperSpeechToTextPlugin::sampleRate() const
+{
+    return 16000;
+}
+
 #include "moc_whisperspeechtotextplugin.cpp"

@@ -7,6 +7,7 @@
 #include "speechtotextclient.h"
 #include "speechtotextengineloader.h"
 #include "speechtotextplugin.h"
+#include <QAudioSource>
 
 using namespace TextSpeechToText;
 
@@ -16,6 +17,7 @@ public:
     QString mEngineName;
     TextSpeechToText::SpeechToTextPlugin *mSpeechToTextPlugin = nullptr;
     TextSpeechToText::SpeechToTextClient *mSpeechToTextClient = nullptr;
+    QAudioSource *mAudioSource = nullptr;
 };
 
 SpeechToTextManager::SpeechToTextManager(QObject *parent)
@@ -56,6 +58,25 @@ SpeechToTextManager *SpeechToTextManager::self()
 void SpeechToTextManager::speechToText()
 {
     d->mSpeechToTextPlugin->speechToText();
+}
+
+void SpeechToTextManager::initializeInput()
+{
+    if (!d->mSpeechToTextPlugin) {
+        return;
+    }
+
+    delete d->mAudioSource;
+
+    QAudioFormat format;
+    format.setSampleRate(d->mSpeechToTextPlugin->sampleRate());
+    format.setChannelCount(1);
+    format.setSampleFormat(QAudioFormat::Int16);
+
+    d->mAudioSource = new QAudioSource(format, this);
+    d->mAudioSource->setBufferSize(8000);
+
+    // TODO add input device
 }
 
 #include "moc_speechtotextmanager.cpp"

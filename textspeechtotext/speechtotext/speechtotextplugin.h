@@ -26,6 +26,8 @@ public:
 
     virtual void speechToText() = 0;
 
+    Q_REQUIRED_RESULT virtual int sampleRate() const = 0;
+
 Q_SIGNALS:
     void speechToTextDone(const QString &result);
 

@@ -18,4 +18,9 @@ void VoskSpeechToTextPlugin::speechToText()
     // TODO
 }
 
+int VoskSpeechToTextPlugin::sampleRate() const
+{
+    return 16000;
+}
+
 #include "moc_voskspeechtotextplugin.cpp"
