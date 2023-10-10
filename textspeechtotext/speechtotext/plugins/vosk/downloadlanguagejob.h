@@ -14,7 +14,7 @@ class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT DownloadLanguageJob : public QObject
 {
     Q_OBJECT
 public:
-    struct DownloadLanguageInfo {
+    struct LIBVOSKSPEECHTOTEXT_TESTS_EXPORT DownloadLanguageInfo {
         QUrl url;
         QString checksum;
         QString name;
