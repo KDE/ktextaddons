@@ -23,6 +23,32 @@ bool ExtractLanguageJob::canStart() const
     return !mSource.isEmpty();
 }
 
+void ExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, const QString &path)
+{
+    // qDebug() << " path " << path;
+    const QStringList lst = dir->entries();
+    // qDebug() << " lst " << lst;
+    for (const QString &it : lst) {
+        const KArchiveEntry *entry = dir->entry(it);
+        if (entry->isDirectory()) {
+            // qDebug() << " directory ********" << it << "sss " << (path + it + QLatin1Char('/'));
+            extractRecursive(static_cast<const KArchiveDirectory *>(entry), path + it + QLatin1Char('/'));
+        } else if (entry->isFile()) {
+            const KArchiveEntry *filePathEntry = dir->entry(it);
+            const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
+            const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + path};
+            // qDebug() << "storeDirectory  " << storeDirectory << " ddd " << it;
+            if (!QDir().mkpath(storeDirectory)) {
+                qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;
+                continue;
+            }
+            if (!filePath->copyTo(storeDirectory)) {
+                qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
+            }
+        }
+    }
+}
+
 void ExtractLanguageJob::start()
 {
     if (!canStart()) {
@@ -46,46 +72,7 @@ void ExtractLanguageJob::start()
         return;
     }
     const KArchiveDirectory *zipDir = zip->directory();
-    const QStringList lst = zipDir->entries();
-    qDebug() << " list of files " << lst;
-    for (const QString &name : lst) {
-        const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
-        qDebug() << " storeDirectory " << storeDirectory;
-        if (!QDir().mkpath(storeDirectory)) {
-            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;
-            continue;
-        }
-        const KArchiveEntry *configPathEntry = zipDir->entry(name);
-        qDebug() << " name " << name;
-        if (configPathEntry && configPathEntry->isDirectory()) {
-            const auto configDirectory = static_cast<const KArchiveDirectory *>(configPathEntry);
-            const QStringList entries = configDirectory->entries();
-            qDebug() << " list of files entries " << entries;
-            for (const QString &file : entries) {
-                const KArchiveEntry *filePathEntry = zipDir->entry(name + QStringLiteral("/%1").arg(file));
-                if (filePathEntry) {
-                    if (filePathEntry->isFile()) {
-                        const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
-                        qDebug() << " filePathEntry******" << filePathEntry->name();
-                        if (!filePath->copyTo(storeDirectory)) {
-                            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
-                        }
-                    } else if (filePathEntry->isDirectory()) {
-                        const auto directoryPath = static_cast<const KArchiveDirectory *>(filePathEntry);
-                        const QString newPath = storeDirectory + QLatin1Char('/') + directoryPath->name();
-                        qDebug() << " newPath " << newPath;
-                        if (!directoryPath->copyTo(newPath)) {
-                            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
-                        }
-                    }
-                } else {
-                    qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to import file " << file;
-                }
-            }
-        } else {
-            qDebug() << "PB: list of files entries " << name;
-        }
-    }
+    extractRecursive(zipDir, QString());
     delete zip;
     Q_EMIT finished();
     deleteLater();

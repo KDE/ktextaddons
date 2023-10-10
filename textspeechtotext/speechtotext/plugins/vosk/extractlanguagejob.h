@@ -7,7 +7,7 @@
 #pragma once
 #include "libvoskspeechtotext_private_export.h"
 #include <QObject>
-
+class KArchiveDirectory;
 class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT ExtractLanguageJob : public QObject
 {
     Q_OBJECT
@@ -27,4 +27,5 @@ Q_SIGNALS:
 
 private:
     QString mSource;
+    void extractRecursive(const KArchiveDirectory *dir, const QString &path);
 };
