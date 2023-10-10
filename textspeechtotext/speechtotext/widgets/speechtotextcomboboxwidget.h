@@ -22,6 +22,10 @@ public:
     Q_REQUIRED_RESULT QString engineName() const;
     void setEngineName(const QString &engineName);
 
+Q_SIGNALS:
+    void configureChanged(const QString &engineName);
+    void engineChanged(const QString &engineName);
+
 private:
     void slotConfigureEngine();
     void slotEngineChanged(int index);

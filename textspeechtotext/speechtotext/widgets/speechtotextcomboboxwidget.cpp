@@ -70,7 +70,7 @@ void SpeechToTextComboBoxWidget::slotConfigureEngine()
     const QString engine = mEngine->currentData().toString();
     if (TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine)) {
         if (TextSpeechToText::SpeechToTextEngineLoader::self()->showConfigureDialog(engine, this)) {
-            //     Q_EMIT configureChanged(engine);
+            Q_EMIT configureChanged(engine);
         }
     }
 }
@@ -79,7 +79,7 @@ void SpeechToTextComboBoxWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngine->itemData(index).toString();
     mConfigureEngine->setEnabled(TextSpeechToText::SpeechToTextEngineLoader::self()->hasConfigurationDialog(engine));
-    // Q_EMIT engineChanged(engine);
+    Q_EMIT engineChanged(engine);
 }
 
 #if 0
