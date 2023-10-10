@@ -1,7 +1,7 @@
 # Translation for libtextspeechtotext.po to Euskara/Basque (eu).
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2023 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 00:41+0000\n"
-"PO-Revision-Date: 2023-10-07 18:52+0200\n"
+"POT-Creation-Date: 2023-10-10 00:41+0000\n"
+"PO-Revision-Date: 2023-10-09 06:37+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: speechtotext/plugins/google/googlespeechtotextclient.cpp:23
+#: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
 msgid "Google"
 msgstr "Google"
@@ -28,7 +28,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Ezin du fitxategia zama-jaisteko ireki."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:50
@@ -37,39 +37,98 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Errorea: Motor sistemek zure ordenagailu saretik trafiko susmagarria "
+"antzeman dute. Mesedez saiatu zure eskaerak beranduago berriz egiten."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "Ezinezkoa URL atzitzea: %1"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "Egiaztapen-batura ez da zuzena."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Errorea diskoan idaztean: %1"
 
 #: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
 #, kde-format
 msgid "Impossible to extract language"
+msgstr "Ezinezkoa hizkuntza erauztea"
+
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Vosk Plugin Settings"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#, kde-format
+msgid "Download"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#, kde-format
+msgid "Update List"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#, kde-format
+msgid "Update list of languages from network"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:24
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:23
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:34
+#, kde-format
+msgid "Lang"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:36
+#, kde-format
+msgid "Obsolete"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:38
+#, kde-format
+msgid "Size"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:74
+#, kde-format
+msgid "Installed"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
 #, kde-format
 msgid "Whisper"
 msgstr "Whisper"
 
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:24
 #, kde-format
 msgid "Engine:"
 msgstr "Motorra:"

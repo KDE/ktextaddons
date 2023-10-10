@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 00:41+0000\n"
-"PO-Revision-Date: 2023-10-07 09:02+0300\n"
+"POT-Creation-Date: 2023-10-10 00:41+0000\n"
+"PO-Revision-Date: 2023-10-09 09:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: speechtotext/plugins/google/googlespeechtotextclient.cpp:23
+#: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
 msgid "Google"
 msgstr "Google"
@@ -26,7 +26,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Не вдалося відкрити файл для отримання."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:50
@@ -35,39 +35,98 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Помилка: системами рушія виявлено підозріливий обмін даними з мережі вашого "
+"комп'ютера. Будь ласка, повторіть спробу запиту пізніше."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "Не вдалося отримати доступ до адреси: %1"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "Контрольна сума є помилковою."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Помилка під час спроби запису на диск: %1"
 
 #: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
 #, kde-format
 msgid "Impossible to extract language"
+msgstr "Не вдалося видобути дані щодо мови"
+
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Vosk Plugin Settings"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:23
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#, kde-format
+msgid "Download"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#, kde-format
+msgid "Update List"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#, kde-format
+msgid "Update list of languages from network"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:24
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:23
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:34
+#, kde-format
+msgid "Lang"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:36
+#, kde-format
+msgid "Obsolete"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:38
+#, kde-format
+msgid "Size"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:74
+#, kde-format
+msgid "Installed"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
 #, kde-format
 msgid "Whisper"
 msgstr "Whisper"
 
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:22
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:24
 #, kde-format
 msgid "Engine:"
 msgstr "Рушій:"
