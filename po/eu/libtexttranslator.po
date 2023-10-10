@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-13 02:34+0000\n"
-"PO-Revision-Date: 2023-09-07 23:07+0200\n"
+"PO-Revision-Date: 2023-10-09 06:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: translator/misc/translatorutil.cpp:31
 #, kde-format
@@ -424,7 +424,7 @@ msgstr ""
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr "Ezinezkoa URLa atzitzea: %1"
+msgstr "Ezinezkoa URL atzitzea: %1"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
@@ -434,7 +434,7 @@ msgstr "Egiaztapen-batura ez da zuzena."
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr "Errorea diskora idaztean: %1"
+msgstr "Errorea diskoan idaztean: %1"
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:30
 #, kde-format
