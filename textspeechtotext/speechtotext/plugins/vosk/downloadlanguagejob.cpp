@@ -96,6 +96,7 @@ void DownloadLanguageJob::generateInstalledLanguageInfo()
 {
     // TODO
     Q_EMIT extractDone();
+    deleteLater();
 }
 
 DownloadLanguageJob::DownloadLanguageInfo DownloadLanguageJob::info() const

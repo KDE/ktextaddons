@@ -17,6 +17,7 @@ void GenerateInstalledLanguageInfoJob::start()
 {
     // TODO
     // Generate json file.
+    deleteLater();
 }
 
 bool GenerateInstalledLanguageInfoJob::canStart() const
