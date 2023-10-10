@@ -5,12 +5,12 @@
 */
 
 #pragma once
-
 #include "downloadlanguagejob.h"
+#include "libvoskspeechtotext_private_export.h"
 
 #include <QObject>
 
-class GenerateInstalledLanguageInfoJob : public QObject
+class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT GenerateInstalledLanguageInfoJob : public QObject
 {
     Q_OBJECT
 public:
