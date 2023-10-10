@@ -62,10 +62,19 @@ void ExtractLanguageJob::start()
             qDebug() << " list of files entries " << entries;
             for (const QString &file : entries) {
                 const KArchiveEntry *filePathEntry = zipDir->entry(name + QStringLiteral("/%1").arg(file));
-                if (filePathEntry && filePathEntry->isFile()) {
-                    const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
-                    if (!filePath->copyTo(storeDirectory)) {
-                        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
+                if (filePathEntry) {
+                    if (filePathEntry->isFile()) {
+                        const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
+                        if (!filePath->copyTo(storeDirectory)) {
+                            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
+                        }
+                    } else if (filePathEntry->isDirectory()) {
+                        const auto directoryPath = static_cast<const KArchiveDirectory *>(filePathEntry);
+                        const QString newPath = storeDirectory + QLatin1Char('/') + directoryPath->name();
+                        qDebug() << " newPath " << newPath;
+                        if (!directoryPath->copyTo(newPath)) {
+                            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;
+                        }
                     }
                 } else {
                     qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to import file " << file;
