@@ -4,8 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskspeechtotextclient.h"
+#include "voskenginedialog.h"
 #include "voskspeechtotextplugin.h"
 #include <KLocalizedString>
+#include <QPointer>
 
 VoskSpeechToTextClient::VoskSpeechToTextClient(QObject *parent)
     : TextSpeechToText::SpeechToTextClient{parent}
@@ -41,8 +43,14 @@ bool VoskSpeechToTextClient::hasConfigurationDialog() const
 
 bool VoskSpeechToTextClient::showConfigureDialog(QWidget *parentWidget)
 {
-    // TODO
-    return false;
+    bool settingsChanged = false;
+    QPointer<VoskEngineDialog> dlg = new VoskEngineDialog(parentWidget);
+    if (dlg->exec()) {
+        Q_EMIT configureChanged();
+        settingsChanged = true;
+    }
+    delete dlg;
+    return settingsChanged;
 }
 
 #include "moc_voskspeechtotextclient.cpp"
