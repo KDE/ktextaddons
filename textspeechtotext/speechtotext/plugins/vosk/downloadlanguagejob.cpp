@@ -45,7 +45,7 @@ void DownloadLanguageJob::start()
     QNetworkRequest request(mInfo.url);
     // qDebug() << " mInfo.url " << mInfo.url;
     QNetworkReply *reply = TextSpeechToText::SpeechToTextEngineAccessManager::self()->networkManager()->get(request);
-    connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
+    connect(reply, &QNetworkReply::errorOccurred, this, [this](QNetworkReply::NetworkError error) {
         if (error == QNetworkReply::ServiceUnavailableError) {
             Q_EMIT errorText(i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         } else {
