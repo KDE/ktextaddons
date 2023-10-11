@@ -6,7 +6,7 @@ if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
     set(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT TRUE)
 endif()
 
-configure_file(config-textcustomeditor.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
+configure_file(config-textcustomeditor.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
 
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextCustomEditor")
