@@ -5,6 +5,7 @@
 */
 
 #include "translatorengineclient.h"
+#include <KLocalizedString>
 
 using namespace TextTranslator;
 
@@ -55,6 +56,18 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::
         }
     }
     return map;
+}
+
+QString TranslatorEngineClient::convertEngineType(TextTranslator::TranslatorEngineClient::EngineType type)
+{
+    switch (type) {
+    case TextTranslator::TranslatorEngineClient::EngineType::Locale:
+        return i18n("Locale");
+    case TextTranslator::TranslatorEngineClient::EngineType::Network:
+        return i18n("Network");
+    }
+    Q_UNREACHABLE();
+    return {};
 }
 
 #include "moc_translatorengineclient.cpp"

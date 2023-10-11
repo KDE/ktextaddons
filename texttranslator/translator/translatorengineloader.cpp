@@ -103,7 +103,7 @@ QMap<QString, QString> TranslatorEngineLoader::translatorEngineInfos() const
     QHashIterator<QString, TranslatorEngineClient *> i(d->translatorClients);
     while (i.hasNext()) {
         i.next();
-        map.insert(i.key(), i.value()->translatedName());
+        map.insert(i.key(), i.value()->translatedName() + QStringLiteral(" (%1)").arg(TranslatorEngineClient::convertEngineType(i.value()->engineType())));
     }
     return map;
 }

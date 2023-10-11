@@ -47,6 +47,8 @@ public:
 
     Q_REQUIRED_RESULT virtual TextTranslator::TranslatorEngineClient::EngineType engineType() const = 0;
 
+    Q_REQUIRED_RESULT static QString convertEngineType(TextTranslator::TranslatorEngineClient::EngineType type);
+
 Q_SIGNALS:
     void configureChanged();
 
