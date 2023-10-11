@@ -49,6 +49,7 @@ target_link_libraries(libvoskspeechtotext
     KF${KF_MAJOR_VERSION}::TextSpeechToText
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::KIOCore
 )
 
 set_target_properties(libvoskspeechtotext

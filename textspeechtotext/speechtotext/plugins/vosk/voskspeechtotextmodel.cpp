@@ -6,6 +6,7 @@
 
 #include "voskspeechtotextmodel.h"
 #include "libvoskspeechtotext_debug.h"
+#include <KIO/Global>
 #include <KLocalizedString>
 #include <QColor>
 
@@ -90,7 +91,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
             return speechToTextInfo.langText();
         }
         case VoskRoles::Size: {
-            return speechToTextInfo.size();
+            return KIO::convertSize(speechToTextInfo.size());
         }
         case VoskRoles::Url: {
             return speechToTextInfo.url();
