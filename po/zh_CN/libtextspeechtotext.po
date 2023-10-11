@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 00:41+0000\n"
-"PO-Revision-Date: 2023-09-16 10:10\n"
+"POT-Creation-Date: 2023-10-11 00:42+0000\n"
+"PO-Revision-Date: 2023-10-10 14:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -25,7 +25,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "无法打开文件以进行下载。"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:50
@@ -33,28 +33,28 @@ msgstr ""
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
-msgstr ""
+msgstr "错误：引擎系统从本机的网络连接上检测到可疑的流量，请稍后重试。"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "无法访问 URL：%1"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "校验和不正确。"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "写入磁盘时发生错误：%1"
 
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
+#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
 #, kde-format
 msgid "Impossible to extract language"
-msgstr ""
+msgstr "无法提取语言"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -62,60 +62,66 @@ msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:53
 #, kde-format
 msgid "Search..."
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
 #, kde-format
 msgid "Download"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Delete"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:114
 #, kde-format
 msgid "Update List"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update list of languages from network"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
 #, kde-format
 msgid "Error: %1"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:24
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
-msgstr ""
+msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:34
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:37
 #, kde-format
 msgid "Lang"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:36
-#, kde-format
-msgid "Obsolete"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:38
-#, kde-format
-msgid "Size"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:74
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:82
 #, kde-format
 msgid "Installed"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#, kde-format
+msgid "Installed Version"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#, kde-format
+msgid "Available Version"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#, kde-format
+msgid "Size"
 msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24

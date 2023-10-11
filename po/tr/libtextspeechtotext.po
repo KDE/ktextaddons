@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 00:41+0000\n"
-"PO-Revision-Date: 2023-10-09 12:08+0300\n"
+"POT-Creation-Date: 2023-10-11 00:42+0000\n"
+"PO-Revision-Date: 2023-10-10 11:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -53,7 +53,7 @@ msgstr "Sağlama toplamı doğru değil."
 msgid "Error during writing on disk: %1"
 msgstr "Diske yazarken hata: %1"
 
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
+#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Dili çıkarma olanaksız"
@@ -62,63 +62,70 @@ msgstr "Dili çıkarma olanaksız"
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Vosk Eklentisi Ayarları"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:53
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Ara..."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "İndir"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:114
 #, kde-format
 msgid "Update List"
-msgstr ""
+msgstr "Listeyi Güncelle"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Ağdan dil listesini güncelle"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Hata: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:24
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:34
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:37
 #, kde-format
 msgid "Lang"
-msgstr ""
+msgstr "Dil"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:36
-#, kde-format
-msgid "Obsolete"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:38
-#, kde-format
-msgid "Size"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:74
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:82
 #, kde-format
 msgid "Installed"
+msgstr "Kurulu"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installed Version"
+msgstr "Kurulu"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#, kde-format
+msgid "Available Version"
 msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#, kde-format
+msgid "Size"
+msgstr "Boyut"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
 #, kde-format
@@ -145,3 +152,6 @@ msgstr "Girdi:"
 #, kde-format
 msgid "Default"
 msgstr "Öntanımlı"
+
+#~ msgid "Obsolete"
+#~ msgstr "Eski"

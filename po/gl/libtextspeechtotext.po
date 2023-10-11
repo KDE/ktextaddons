@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 00:41+0000\n"
-"PO-Revision-Date: 2023-10-07 19:08+0200\n"
+"POT-Creation-Date: 2023-10-11 00:42+0000\n"
+"PO-Revision-Date: 2023-10-10 15:04+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -25,7 +25,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Non é posíbel abrir o ficheiro para descargar."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:50
@@ -34,89 +34,98 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Erro: os sistemas de motores detectaron tráfico sospeitoso desde a súa rede "
+"de computadores. Repita a solicitude máis tarde."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "É imposíbel acceder ao URL: %1"
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "A suma de comprobación non é correcta."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Erro durante a escritura en disco: %1"
 
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
+#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
 #, kde-format
 msgid "Impossible to extract language"
-msgstr ""
+msgstr "É imposíbel extraer o idioma."
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Configuración do complemento de Vosk"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:53
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Buscar…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Descargar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:114
 #, kde-format
 msgid "Update List"
-msgstr ""
+msgstr "Actualizar a lista"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Actualizar a lista de idiomas pola rede."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Erro: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:24
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:34
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:37
 #, kde-format
 msgid "Lang"
-msgstr ""
+msgstr "Idioma"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:36
-#, kde-format
-msgid "Obsolete"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:38
-#, kde-format
-msgid "Size"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:74
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:82
 #, kde-format
 msgid "Installed"
+msgstr "Instalado"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installed Version"
+msgstr "Instalado"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#, kde-format
+msgid "Available Version"
 msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#, kde-format
+msgid "Size"
+msgstr "Tamaño"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
 #, kde-format
@@ -143,3 +152,6 @@ msgstr "Entrada:"
 #, kde-format
 msgid "Default"
 msgstr "Predeterminada"
+
+#~ msgid "Obsolete"
+#~ msgstr "Obsoleto"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 00:41+0000\n"
-"PO-Revision-Date: 2023-10-09 09:11+0300\n"
+"POT-Creation-Date: 2023-10-11 00:42+0000\n"
+"PO-Revision-Date: 2023-10-10 09:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -54,7 +54,7 @@ msgstr "Контрольна сума є помилковою."
 msgid "Error during writing on disk: %1"
 msgstr "Помилка під час спроби запису на диск: %1"
 
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:30
+#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Не вдалося видобути дані щодо мови"
@@ -63,63 +63,70 @@ msgstr "Не вдалося видобути дані щодо мови"
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Параметри додатка Vosk"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:53
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Шукати…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Отримати"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Вилучити"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:114
 #, kde-format
 msgid "Update List"
-msgstr ""
+msgstr "Оновити список"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Оновити список мов з мережі"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Помилка: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:183
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:24
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:34
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:37
 #, kde-format
 msgid "Lang"
-msgstr ""
+msgstr "Мова"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:36
-#, kde-format
-msgid "Obsolete"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:38
-#, kde-format
-msgid "Size"
-msgstr ""
-
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:74
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:82
 #, kde-format
 msgid "Installed"
+msgstr "Встановлено"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#, fuzzy, kde-format
+#| msgid "Installed"
+msgid "Installed Version"
+msgstr "Встановлено"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#, kde-format
+msgid "Available Version"
 msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#, kde-format
+msgid "Size"
+msgstr "Розмір"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
 #, kde-format
@@ -146,3 +153,6 @@ msgstr "Вхідні дані:"
 #, kde-format
 msgid "Default"
 msgstr "Типовий"
+
+#~ msgid "Obsolete"
+#~ msgstr "Застаріло"
