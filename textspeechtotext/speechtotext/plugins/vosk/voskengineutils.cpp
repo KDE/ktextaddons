@@ -8,6 +8,7 @@
 #include "libvoskspeechtotext_debug.h"
 #include <QDir>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QStandardPaths>
 
 QString VoskEngineUtils::defaultVoskRepository()
@@ -20,8 +21,14 @@ QString VoskEngineUtils::storageLanguagePath()
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/vosk-texttospeech");
 }
 
-void VoskEngineUtils::createInstalledLanguageInfo()
+void VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed)
 {
+    QJsonDocument d;
+    QJsonObject o;
+    // o[QLatin1String("absolutePath")] = message.mMessageId;
+    // o[QLatin1String("name")] = message.mMessageId;
+    // o[QLatin1String("url")] = message.mMessageId;
+    // o[QLatin1String("version")] = message.mMessageId;
     // TODO
 }
 
@@ -77,10 +84,11 @@ QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t)
     d << " shortName " << t.name;
     d << " absoluteLanguageModelPath " << t.absoluteLanguageModelPath;
     d << " version " << t.versionStr;
+    d << " url " << t.url;
     return d;
 }
 
 bool VoskEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
 {
-    return name == other.name && absoluteLanguageModelPath == other.absoluteLanguageModelPath && versionStr == other.versionStr;
+    return name == other.name && absoluteLanguageModelPath == other.absoluteLanguageModelPath && versionStr == other.versionStr && url == other.url;
 }

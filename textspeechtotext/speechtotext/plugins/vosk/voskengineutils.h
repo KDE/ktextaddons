@@ -17,11 +17,12 @@ Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString storageLanguagePath();
 struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
     QString name;
     QString absoluteLanguageModelPath;
+    QString url;
     QString versionStr;
     Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
 
-LIBVOSKSPEECHTOTEXT_EXPORT void createInstalledLanguageInfo();
+LIBVOSKSPEECHTOTEXT_EXPORT void createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed);
 
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 };
