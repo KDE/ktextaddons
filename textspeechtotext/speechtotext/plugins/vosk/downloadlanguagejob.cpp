@@ -100,8 +100,11 @@ void DownloadLanguageJob::generateInstalledLanguageInfo()
 
     // FIXME
 
-    info.pathToStore = QStringLiteral("ssss");
-    // info.info = foo
+    info.pathToStore = VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + mInfo.name;
+    info.info.absoluteLanguageModelPath = VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + mInfo.name;
+    info.info.name = mInfo.name;
+    info.info.url = mInfo.url.toString();
+    // TODO info.info.versionStr = ;
     generateInstalledLanguageJob->setInfo(info);
 
     connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::errorText, this, &DownloadLanguageJob::errorText);

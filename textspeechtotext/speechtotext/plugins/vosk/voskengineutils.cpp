@@ -26,7 +26,7 @@ VoskEngineUtils::LanguageInstalled VoskEngineUtils::loadInstalledLanguageInfo(co
     VoskEngineUtils::LanguageInstalled info;
     QFile file(modelInfoPath + QStringLiteral("/model_info.json"));
     if (!file.open(QFile::ReadOnly)) {
-        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open " << modelInfoPath;
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open model_info.json in " << modelInfoPath;
         return info;
     }
     const QByteArray ba = file.readAll();
@@ -43,7 +43,7 @@ bool VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, 
 {
     QFile file(modelInfoPath + QStringLiteral("/model_info.json"));
     if (!file.open(QFile::WriteOnly)) {
-        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open " << modelInfoPath;
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to save model_info.json in :" << modelInfoPath;
         return false;
     }
     QJsonDocument d;
