@@ -66,9 +66,9 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
     } else if (role == Qt::DisplayRole) {
         switch (static_cast<VoskRoles>(col)) {
         case VoskRoles::InstalledVersion: {
-            const QString shortName{speechToTextInfo.identifier()};
-            if (isInstalled(shortName)) {
-                return versionInstalled(shortName);
+            const QString name{speechToTextInfo.name()};
+            if (isInstalled(name)) {
+                return versionInstalled(name);
             }
             return {};
         }
@@ -79,7 +79,7 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
             return needToUpdateLanguageModel(speechToTextInfo);
         }
         case VoskRoles::Installed: {
-            if (isInstalled(speechToTextInfo.identifier())) {
+            if (isInstalled(speechToTextInfo.name())) {
                 return i18n("Installed");
             }
             return {};
@@ -161,10 +161,10 @@ int VoskSpeechToTextModel::columnCount(const QModelIndex &parent) const
     return static_cast<int>(VoskRoles::LastColumn) + 1;
 }
 
-bool VoskSpeechToTextModel::isInstalled(const QString &shortName) const
+bool VoskSpeechToTextModel::isInstalled(const QString &name) const
 {
     for (const auto &lang : std::as_const(mLanguageInstalled)) {
-        if (lang.name == shortName) {
+        if (lang.name == name) {
             return true;
         }
     }
