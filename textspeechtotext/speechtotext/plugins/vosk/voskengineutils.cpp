@@ -21,15 +21,42 @@ QString VoskEngineUtils::storageLanguagePath()
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/vosk-texttospeech");
 }
 
-void VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed)
+VoskEngineUtils::LanguageInstalled VoskEngineUtils::loadInstalledLanguageInfo(const QString &modelInfoPath)
 {
+    VoskEngineUtils::LanguageInstalled info;
+    QFile file(modelInfoPath + QStringLiteral("/model_info.json"));
+    if (!file.open(QFile::ReadOnly)) {
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open " << modelInfoPath;
+        return info;
+    }
+    const QByteArray ba = file.readAll();
+    const QJsonDocument loadDoc(QJsonDocument::fromJson(ba));
+    const QJsonObject o = loadDoc.object();
+    info.absoluteLanguageModelPath = o[QLatin1String("absolutePath")].toString();
+    info.name = o[QLatin1String("name")].toString();
+    info.url = o[QLatin1String("url")].toString();
+    info.versionStr = o[QLatin1String("version")].toString();
+    return info;
+}
+
+bool VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed)
+{
+    QFile file(modelInfoPath + QStringLiteral("/model_info.json"));
+    if (!file.open(QFile::WriteOnly)) {
+        qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open " << modelInfoPath;
+        return false;
+    }
     QJsonDocument d;
     QJsonObject o;
-    // o[QLatin1String("absolutePath")] = message.mMessageId;
-    // o[QLatin1String("name")] = message.mMessageId;
-    // o[QLatin1String("url")] = message.mMessageId;
-    // o[QLatin1String("version")] = message.mMessageId;
-    // TODO
+    o[QLatin1String("absolutePath")] = installed.absoluteLanguageModelPath;
+    o[QLatin1String("name")] = installed.name;
+    o[QLatin1String("url")] = installed.url;
+    o[QLatin1String("version")] = installed.versionStr;
+    d.setObject(o);
+    const QByteArray ba = d.toJson();
+    file.write(d.toJson());
+    file.close();
+    return true;
 }
 
 QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStored(const QString &path)
@@ -45,36 +72,10 @@ QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStor
     for (const auto &name : list) {
         // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " name " << dir;
         const QString modelLanguagePath{dir.absolutePath() + QLatin1Char('/') + name};
-        QFile modelInfoFile(modelLanguagePath + QStringLiteral("/model_info.json"));
-        if (!modelInfoFile.exists()) {
-            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "model_info.json not found in " << name;
-            return {};
+        const VoskEngineUtils::LanguageInstalled info = loadInstalledLanguageInfo(modelLanguagePath);
+        if (info.isValid()) {
+            languages.append(info);
         }
-        if (!modelInfoFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open file " << name;
-            return {};
-        }
-
-        const QByteArray data = modelInfoFile.readAll();
-        modelInfoFile.close();
-        const QJsonDocument jsonResponse = QJsonDocument::fromJson(data);
-#if 0
-        Translator translator;
-        translator.parse(jsonResponse.object(), false);
-        if (translator.isValid()) {
-            // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
-            // qDebug() << " translator " << translator;
-            VoskEngineUtils::LanguageInstalled lang;
-            const QString shortName = translator.shortName();
-            const QStringList langIdentifier = shortName.split(QLatin1Char('-'));
-            if (langIdentifier.count() >= 2) {
-                lang.shortName = shortName;
-                lang.absoluteLanguageModelPath = modelLanguagePath;
-                lang.version = translator.version();
-                languages.append(lang);
-            }
-        }
-#endif
     }
     return languages;
 }
@@ -91,4 +92,9 @@ QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t)
 bool VoskEngineUtils::LanguageInstalled::operator==(const LanguageInstalled &other) const
 {
     return name == other.name && absoluteLanguageModelPath == other.absoluteLanguageModelPath && versionStr == other.versionStr && url == other.url;
+}
+
+bool VoskEngineUtils::LanguageInstalled::isValid() const
+{
+    return !absoluteLanguageModelPath.isEmpty();
 }

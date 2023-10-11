@@ -20,9 +20,12 @@ struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
     QString url;
     QString versionStr;
     Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
+    Q_REQUIRED_RESULT bool isValid() const;
 };
 
-LIBVOSKSPEECHTOTEXT_EXPORT void createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed);
+Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT VoskEngineUtils::LanguageInstalled loadInstalledLanguageInfo(const QString &modelInfoPath);
+
+Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT bool createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed);
 
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 };
