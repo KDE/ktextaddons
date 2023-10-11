@@ -6,7 +6,6 @@
 
 #include "voskenginelanguagewidget.h"
 #include "libvoskspeechtotext_debug.h"
-#include "managermodelvoskspeechtotext.h"
 #include "voskspeechtotextmodel.h"
 #include "voskspeechtotextproxymodel.h"
 

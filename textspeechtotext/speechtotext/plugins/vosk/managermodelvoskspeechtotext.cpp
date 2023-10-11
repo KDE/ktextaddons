@@ -5,7 +5,6 @@
 */
 
 #include "managermodelvoskspeechtotext.h"
-#include "downloadlanguagejob.h"
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
 #include "voskengineutils.h"

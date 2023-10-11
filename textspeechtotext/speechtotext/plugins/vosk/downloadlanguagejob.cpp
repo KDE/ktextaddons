@@ -10,7 +10,6 @@
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
 #include <KLocalizedString>
-#include <QCryptographicHash>
 #include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
