@@ -23,4 +23,10 @@ int WhisperSpeechToTextPlugin::sampleRate() const
     return 16000;
 }
 
+QString WhisperSpeechToTextPlugin::defaultLanguage() const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_whisperspeechtotextplugin.cpp"

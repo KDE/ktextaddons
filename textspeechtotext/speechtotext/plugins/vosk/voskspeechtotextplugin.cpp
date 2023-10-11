@@ -23,4 +23,10 @@ int VoskSpeechToTextPlugin::sampleRate() const
     return 16000;
 }
 
+QString VoskSpeechToTextPlugin::defaultLanguage() const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_voskspeechtotextplugin.cpp"

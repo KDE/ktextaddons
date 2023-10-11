@@ -18,4 +18,5 @@ public:
     void speechToText() override;
 
     Q_REQUIRED_RESULT int sampleRate() const override;
+    Q_REQUIRED_RESULT QString defaultLanguage() const override;
 };
