@@ -48,6 +48,7 @@ void SpeechToTextEngineLoader::loadPlugins()
     }
     if (d->loadedPlugins.isEmpty()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "No speechtotext plugins available!";
+        Q_EMIT noPluginsFound();
     }
 }
 
@@ -82,7 +83,7 @@ SpeechToTextClient *SpeechToTextEngineLoader::createSpeechToTextClient(const QSt
     auto clientsItr = d->speechToTextClients.constFind(clientName);
     if (clientsItr == d->speechToTextClients.constEnd()) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Client name not found: " << clientName;
-        Q_EMIT loadingTranslatorFailed();
+        Q_EMIT loadingSpeechToTextFailed();
         return nullptr;
     }
     return (*clientsItr);

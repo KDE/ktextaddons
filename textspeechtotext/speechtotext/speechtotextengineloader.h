@@ -37,7 +37,8 @@ public:
     Q_REQUIRED_RESULT QString fallbackFirstEngine() const;
 
 Q_SIGNALS:
-    void loadingTranslatorFailed();
+    void loadingSpeechToTextFailed();
+    void noPluginsFound();
 
 private:
     TEXTSPEECHTOTEXT_NO_EXPORT void loadPlugins();
