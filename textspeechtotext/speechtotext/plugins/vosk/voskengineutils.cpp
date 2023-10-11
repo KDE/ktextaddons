@@ -26,7 +26,7 @@ QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStor
     if (newPath.isEmpty()) {
         newPath = VoskEngineUtils::storageLanguagePath();
     }
-    QDir dir(newPath);
+    const QDir dir(newPath);
     QVector<VoskEngineUtils::LanguageInstalled> languages;
     const QStringList list = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
     // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " list " << list;
