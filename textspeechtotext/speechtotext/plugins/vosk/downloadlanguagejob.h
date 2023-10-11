@@ -36,8 +36,8 @@ Q_SIGNALS:
 
 private:
     void generateInstalledLanguageInfo();
-    void slotExtractDone();
     void extractLanguage();
+    void slotGenerateInstalledLanguageInfoDone();
     DownloadLanguageInfo mInfo;
     QCryptographicHash *mHash = nullptr;
     QTemporaryFile *mDestination = nullptr;

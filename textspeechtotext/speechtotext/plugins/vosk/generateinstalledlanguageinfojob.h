@@ -5,28 +5,33 @@
 */
 
 #pragma once
-#include "downloadlanguagejob.h"
 #include "libvoskspeechtotext_private_export.h"
 
+#include "voskengineutils.h"
 #include <QObject>
 
 class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT GenerateInstalledLanguageInfoJob : public QObject
 {
     Q_OBJECT
 public:
+    struct LanguageInfo {
+        VoskEngineUtils::LanguageInstalled info;
+        QString pathToStore;
+        Q_REQUIRED_RESULT bool isValid() const;
+    };
     explicit GenerateInstalledLanguageInfoJob(QObject *parent = nullptr);
     ~GenerateInstalledLanguageInfoJob() override;
 
     void start();
     Q_REQUIRED_RESULT bool canStart() const;
 
-    DownloadLanguageJob::DownloadLanguageInfo info() const;
-    void setInfo(const DownloadLanguageJob::DownloadLanguageInfo &newInfo);
+    Q_REQUIRED_RESULT GenerateInstalledLanguageInfoJob::LanguageInfo info() const;
+    void setInfo(const GenerateInstalledLanguageInfoJob::LanguageInfo &newInfo);
 
 Q_SIGNALS:
     void generatedDone();
     void errorText(const QString &str);
 
 private:
-    DownloadLanguageJob::DownloadLanguageInfo mInfo;
+    GenerateInstalledLanguageInfoJob::LanguageInfo mInfo;
 };

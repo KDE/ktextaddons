@@ -6,6 +6,7 @@
 
 #include "downloadlanguagejob.h"
 #include "extractlanguagejob.h"
+#include "generateinstalledlanguageinfojob.h"
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
 #include <KLocalizedString>
@@ -94,7 +95,22 @@ void DownloadLanguageJob::extractLanguage()
 
 void DownloadLanguageJob::generateInstalledLanguageInfo()
 {
-    // TODO
+    auto generateInstalledLanguageJob = new GenerateInstalledLanguageInfoJob(this);
+    GenerateInstalledLanguageInfoJob::LanguageInfo info;
+
+    // FIXME
+
+    info.pathToStore = QStringLiteral("ssss");
+    // info.info = foo
+    generateInstalledLanguageJob->setInfo(info);
+
+    connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::errorText, this, &DownloadLanguageJob::errorText);
+    connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::generatedDone, this, &DownloadLanguageJob::slotGenerateInstalledLanguageInfoDone);
+    generateInstalledLanguageJob->start();
+}
+
+void DownloadLanguageJob::slotGenerateInstalledLanguageInfoDone()
+{
     Q_EMIT extractDone();
     deleteLater();
 }
@@ -107,12 +123,6 @@ DownloadLanguageJob::DownloadLanguageInfo DownloadLanguageJob::info() const
 void DownloadLanguageJob::setInfo(const DownloadLanguageInfo &newInfo)
 {
     mInfo = newInfo;
-}
-
-void DownloadLanguageJob::slotExtractDone()
-{
-    Q_EMIT extractDone();
-    deleteLater();
 }
 
 QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t)
