@@ -96,14 +96,11 @@ void DownloadLanguageJob::generateInstalledLanguageInfo()
 {
     auto generateInstalledLanguageJob = new GenerateInstalledLanguageInfoJob(this);
     GenerateInstalledLanguageInfoJob::LanguageInfo info;
-
-    // FIXME
-
     info.pathToStore = VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + mInfo.name;
     info.info.absoluteLanguageModelPath = VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + mInfo.name;
     info.info.name = mInfo.name;
     info.info.url = mInfo.url.toString();
-    // TODO info.info.versionStr = ;
+    info.info.versionStr = mInfo.version;
     generateInstalledLanguageJob->setInfo(info);
 
     connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::errorText, this, &DownloadLanguageJob::errorText);
@@ -132,6 +129,7 @@ QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t)
     d << "url " << t.url;
     d << "checksum " << t.checksum;
     d << "name " << t.name;
+    d << "version " << t.version;
     return d;
 }
 

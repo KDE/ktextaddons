@@ -9,6 +9,7 @@
 #include <KIO/Global>
 #include <KLocalizedString>
 #include <QColor>
+#include <QDir>
 
 VoskSpeechToTextModel::VoskSpeechToTextModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -133,6 +134,24 @@ void VoskSpeechToTextModel::updateInstalledLanguage()
 {
     mLanguageInstalled = VoskEngineUtils::languageLocallyStored();
     qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "mLanguageInstalled " << mLanguageInstalled;
+}
+
+void VoskSpeechToTextModel::removeLanguage(const QString &name)
+{
+    auto index = std::find_if(mLanguageInstalled.begin(), mLanguageInstalled.end(), [name](const VoskEngineUtils::LanguageInstalled &installed) {
+        return (name == installed.name);
+    });
+    if (index != mLanguageInstalled.end()) {
+        const QString absoluteLanguageModelPath = (*index).absoluteLanguageModelPath;
+        if (!QDir(absoluteLanguageModelPath).removeRecursively()) {
+            qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to delete " << absoluteLanguageModelPath;
+            return;
+        }
+        mLanguageInstalled.removeAll(*index);
+        beginResetModel();
+        endResetModel();
+    }
+    updateInstalledLanguage();
 }
 
 QVector<VoskSpeechToTextInfo> VoskSpeechToTextModel::speechToTextInfos() const

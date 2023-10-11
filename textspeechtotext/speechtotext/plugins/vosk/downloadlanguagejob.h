@@ -18,6 +18,7 @@ public:
         QUrl url;
         QString checksum;
         QString name;
+        QString version;
         Q_REQUIRED_RESULT bool isValid() const;
     };
     explicit DownloadLanguageJob(QObject *parent = nullptr);

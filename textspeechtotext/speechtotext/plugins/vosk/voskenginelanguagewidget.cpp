@@ -95,6 +95,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Url);
         const QModelIndex modelIndexCheckSum = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::CheckSum);
         const QModelIndex modelIndexName = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Name);
+        const QModelIndex modelIndexVersion = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::AvailableVersion);
 
         const QString url = modelIndex.data().toString();
         const QString checkSum = modelIndexCheckSum.data().toString();
@@ -103,6 +104,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         info.checksum = modelIndexCheckSum.data().toString();
         info.url = QUrl(modelIndex.data().toString());
         info.name = modelIndexName.data().toString();
+        info.version = modelIndexVersion.data().toString();
         slotDownLoad(info);
     });
 
@@ -157,7 +159,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
 
     connect(deleteLanguage, &QPushButton::clicked, this, [this, updateButton]() {
         const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
-        const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Identifier);
+        const QModelIndex modelIndex = mVoskSpeechToTextModel->index(currentlySelectedIndex.row(), VoskSpeechToTextModel::Name);
         const QString identifier = modelIndex.data().toString();
         slotDelete(identifier);
         updateButton();
@@ -199,9 +201,9 @@ void VoskEngineLanguageWidget::slotDownLoad(const DownloadLanguageJob::DownloadL
     ManagerModelVoskSpeechToText::self()->downloadLanguage(info);
 }
 
-void VoskEngineLanguageWidget::slotDelete(const QString &identifier)
+void VoskEngineLanguageWidget::slotDelete(const QString &name)
 {
-    // mVoskSpeechToTextModel->removeLanguage(identifier);
+    mVoskSpeechToTextModel->removeLanguage(name);
 }
 
 void VoskEngineLanguageWidget::slotUpdateListLanguage()
