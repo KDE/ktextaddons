@@ -14,7 +14,7 @@ class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT GenerateInstalledLanguageInfoJob : public
 {
     Q_OBJECT
 public:
-    struct LanguageInfo {
+    struct LIBVOSKSPEECHTOTEXT_TESTS_EXPORT LanguageInfo {
         VoskEngineUtils::LanguageInstalled info;
         QString pathToStore;
         Q_REQUIRED_RESULT bool isValid() const;
