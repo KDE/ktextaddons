@@ -21,6 +21,8 @@ struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
     Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
 };
 
+LIBVOSKSPEECHTOTEXT_EXPORT void createInstalledLanguageInfo();
+
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 };
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);

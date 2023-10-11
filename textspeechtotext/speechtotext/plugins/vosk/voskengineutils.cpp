@@ -20,6 +20,11 @@ QString VoskEngineUtils::storageLanguagePath()
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/vosk-texttospeech");
 }
 
+void VoskEngineUtils::createInstalledLanguageInfo()
+{
+    // TODO
+}
+
 QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStored(const QString &path)
 {
     QString newPath = path;
