@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:44+0000\n"
+"POT-Creation-Date: 2023-10-12 00:41+0000\n"
 "PO-Revision-Date: 2023-02-19 00:56+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -578,6 +578,16 @@ msgstr ""
 #: translator/plugins/yandex/yandexengineplugin.cpp:71
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
+msgstr ""
+
+#: translator/translatorengineclient.cpp:65
+#, kde-format
+msgid "Locale"
+msgstr ""
+
+#: translator/translatorengineclient.cpp:67
+#, kde-format
+msgid "Network"
 msgstr ""
 
 #: translator/translatorengineplugin.cpp:114

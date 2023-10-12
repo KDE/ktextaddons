@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:44+0000\n"
+"POT-Creation-Date: 2023-10-12 00:41+0000\n"
 "PO-Revision-Date: 2023-10-10 14:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -578,6 +578,17 @@ msgstr "错误：无法在网页版本中找到 Yandex SID。"
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "错误：无法从网页版本中提取 Yandex SID。"
+
+#: translator/translatorengineclient.cpp:65
+#, kde-format
+msgid "Locale"
+msgstr ""
+
+#: translator/translatorengineclient.cpp:67
+#, fuzzy, kde-format
+#| msgid "No network"
+msgid "Network"
+msgstr "没有网络"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format

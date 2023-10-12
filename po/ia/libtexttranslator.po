@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:44+0000\n"
+"POT-Creation-Date: 2023-10-12 00:41+0000\n"
 "PO-Revision-Date: 2023-02-08 22:44+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -583,6 +583,17 @@ msgstr "Error: incapace a trovar SID de Yandex in version de web."
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Error: incapace a extraher SID de Yandex ex version de web."
+
+#: translator/translatorengineclient.cpp:65
+#, kde-format
+msgid "Locale"
+msgstr ""
+
+#: translator/translatorengineclient.cpp:67
+#, fuzzy, kde-format
+#| msgid "No network"
+msgid "Network"
+msgstr "Necun rete"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:42+0000\n"
+"POT-Creation-Date: 2023-10-12 00:41+0000\n"
 "PO-Revision-Date: 2023-10-10 10:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgid "Cannot open file for downloading."
 msgstr "No s'ha pogut obrir el fitxer per a la baixada."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
-#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:50
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -40,7 +40,7 @@ msgstr ""
 "des de la xarxa d'este ordinador. Torneu-ho a provar més tard."
 
 #: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
-#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:52
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "És impossible accedir a l'URL: %1"
@@ -60,71 +60,78 @@ msgstr "Error durant l'escriptura en el disc: %1"
 msgid "Impossible to extract language"
 msgstr "És impossible extraure l'idioma"
 
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
+#, fuzzy, kde-format
+#| msgid "Impossible to extract language"
+msgid "Impossible to store language info."
+msgstr "És impossible extraure l'idioma"
+
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr "Configureu el connector Vosk"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:53
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
 #, kde-format
 msgid "Search..."
 msgstr "Busca..."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:114
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update List"
 msgstr "Actualitza la llista"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:116
 #, kde-format
 msgid "Update list of languages from network"
 msgstr "Actualitza la llista d'idiomes des de la xarxa"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
 #, kde-format
 msgid "Error: %1"
 msgstr "S'ha produït un error: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:189
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:37
-#, kde-format
-msgid "Lang"
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
+#, fuzzy, kde-format
+#| msgid "Lang"
+msgid "Language"
 msgstr "Idioma"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:82
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:84
 #, kde-format
 msgid "Installed"
 msgstr "Instal·lat"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
 #, fuzzy, kde-format
 #| msgid "Installed"
 msgid "Installed Version"
 msgstr "Instal·lat"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
 #, kde-format
 msgid "Available Version"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
 #, kde-format
 msgid "Size"
 msgstr "Mida"

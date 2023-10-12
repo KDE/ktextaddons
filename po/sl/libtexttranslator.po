@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:44+0000\n"
+"POT-Creation-Date: 2023-10-12 00:41+0000\n"
 "PO-Revision-Date: 2023-08-20 08:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -582,6 +582,17 @@ msgstr "Napaka: Ni mogoče najti Yandex SID v spletni različici."
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Napaka: Ni mogoče izvleči Yandex SID iz spletne različice."
+
+#: translator/translatorengineclient.cpp:65
+#, kde-format
+msgid "Locale"
+msgstr ""
+
+#: translator/translatorengineclient.cpp:67
+#, fuzzy, kde-format
+#| msgid "No network"
+msgid "Network"
+msgstr "Ni omrežja"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format
