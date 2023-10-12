@@ -116,10 +116,9 @@ bool VoskSpeechToTextModel::needToUpdateLanguageModel(const VoskSpeechToTextInfo
 {
     const QString shortName{language.identifier()};
     if (isInstalled(shortName)) {
-        // TODO
-        // if (versionInstalled(shortName) < language.version()) {
-        //     return true;
-        // }
+        if (versionInstalled(shortName) != language.version()) {
+            return true;
+        }
     }
     return false;
 }
