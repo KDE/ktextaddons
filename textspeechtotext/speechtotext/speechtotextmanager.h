@@ -17,11 +17,6 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextManager : public QObject
 {
     Q_OBJECT
 public:
-    enum State {
-        Record,
-        Stop,
-        // Pause ?
-    };
     explicit SpeechToTextManager(QObject *parent = nullptr);
     ~SpeechToTextManager() override;
 

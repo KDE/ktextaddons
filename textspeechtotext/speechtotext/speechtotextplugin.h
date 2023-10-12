@@ -19,6 +19,16 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextPlugin : public QObject
 {
     Q_OBJECT
 public:
+    enum PluginStatus {
+        Unknown = 0,
+        NoMicrophoneFound,
+        Waiting,
+        Running,
+        Paused,
+        PermissionMissing,
+    };
+    Q_ENUM(PluginStatus)
+
     explicit SpeechToTextPlugin(QObject *parent = nullptr);
     ~SpeechToTextPlugin() override;
 
