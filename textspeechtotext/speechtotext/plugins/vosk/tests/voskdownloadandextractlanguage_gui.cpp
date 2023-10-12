@@ -8,6 +8,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
+#include <QFileInfo>
 #include <QStandardPaths>
 
 int main(int argc, char **argv)
@@ -25,7 +26,11 @@ int main(int argc, char **argv)
         auto download = new DownloadLanguageJob();
         DownloadLanguageJob::DownloadLanguageInfo info;
         info.url = QUrl(fileName);
-        info.name = fileName;
+        const QFileInfo f(fileName);
+        const QString baseName = f.baseName();
+
+        info.name = info.url.path() + QLatin1Char('/') + baseName;
+
         download->setInfo(std::move(info));
         QObject::connect(download, &DownloadLanguageJob::extractDone, &app, []() {
             qDebug() << "Extraction Done";
