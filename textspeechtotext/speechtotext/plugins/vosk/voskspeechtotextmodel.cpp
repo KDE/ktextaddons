@@ -30,6 +30,7 @@ QVariant VoskSpeechToTextModel::headerData(int section, Qt::Orientation orientat
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         switch (static_cast<VoskRoles>(section)) {
         case VoskRoles::Identifier:
+        case VoskRoles::SizeByte:
         case VoskRoles::Url:
         case VoskRoles::Name:
         case VoskRoles::NeedToUpdateLanguage:
@@ -93,6 +94,9 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
         }
         case VoskRoles::Size: {
             return KIO::convertSize(speechToTextInfo.size());
+        }
+        case VoskRoles::SizeByte: {
+            return speechToTextInfo.size();
         }
         case VoskRoles::Url: {
             return speechToTextInfo.url();

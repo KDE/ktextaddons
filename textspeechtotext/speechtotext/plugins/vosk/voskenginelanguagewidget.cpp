@@ -141,6 +141,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mTreeView->setColumnHidden(VoskSpeechToTextModel::Identifier, true);
     mTreeView->setColumnHidden(VoskSpeechToTextModel::NeedToUpdateLanguage, true);
     mTreeView->setColumnHidden(VoskSpeechToTextModel::Name, true);
+    mTreeView->setColumnHidden(VoskSpeechToTextModel::SizeByte, true);
     auto updateButton = [this, downLoadLanguage, deleteLanguage]() {
         const bool hasSelectedItem = mTreeView->currentIndex().isValid();
         const auto currentlySelectedIndex = mVoskSpeechToTextProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());

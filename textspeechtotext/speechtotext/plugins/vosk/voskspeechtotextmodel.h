@@ -19,6 +19,7 @@ public:
         Identifier,
         LangText,
         Size,
+        SizeByte,
         CheckSum,
         Installed,
         AvailableVersion,

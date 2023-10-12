@@ -39,4 +39,14 @@ void VoskSpeechToTextProxyModel::setSearchString(const QString &newSearchString)
     }
 }
 
+bool VoskSpeechToTextProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    if (left.column() == VoskSpeechToTextModel::Size) {
+        const QModelIndex leftOrder = left.sibling(left.row(), VoskSpeechToTextModel::SizeByte);
+        const QModelIndex rightOrder = right.sibling(right.row(), VoskSpeechToTextModel::SizeByte);
+        return leftOrder.data().toLongLong() < rightOrder.data().toLongLong();
+    }
+    return QSortFilterProxyModel::lessThan(left, right);
+}
+
 #include "moc_voskspeechtotextproxymodel.cpp"
