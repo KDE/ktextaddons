@@ -31,7 +31,6 @@ TextSpeechToText::SpeechToTextClient::EngineType WhisperSpeechToTextClient::engi
 
 TextSpeechToText::SpeechToTextPlugin *WhisperSpeechToTextClient::createTextToSpeech()
 {
-    // TODO
     return new WhisperSpeechToTextPlugin;
 }
 

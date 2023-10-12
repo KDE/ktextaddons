@@ -31,7 +31,6 @@ TextSpeechToText::SpeechToTextClient::EngineType GoogleSpeechToTextClient::engin
 
 TextSpeechToText::SpeechToTextPlugin *GoogleSpeechToTextClient::createTextToSpeech()
 {
-    // TODO
     return new GoogleSpeechToTextPlugin;
 }
 
