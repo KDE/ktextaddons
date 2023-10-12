@@ -19,7 +19,7 @@ void GenerateInstalledLanguageInfoJob::start()
 {
     if (canStart()) {
         if (!VoskEngineUtils::createInstalledLanguageInfo(mInfo.pathToStore, mInfo.info)) {
-            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << " Impossible to store installed language info";
+            qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << " Impossible to store installed language info " << mInfo;
             Q_EMIT errorText(i18n("Impossible to store language info."));
         }
     }
@@ -45,6 +45,13 @@ void GenerateInstalledLanguageInfoJob::setInfo(const GenerateInstalledLanguageIn
 bool GenerateInstalledLanguageInfoJob::LanguageInfo::isValid() const
 {
     return !pathToStore.isEmpty() && info.isValid();
+}
+
+QDebug operator<<(QDebug d, const GenerateInstalledLanguageInfoJob::LanguageInfo &t)
+{
+    d << "info " << t.info;
+    d << "pathToStore " << t.pathToStore;
+    return d;
 }
 
 #include "moc_generateinstalledlanguageinfojob.cpp"

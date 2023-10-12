@@ -35,3 +35,4 @@ Q_SIGNALS:
 private:
     GenerateInstalledLanguageInfoJob::LanguageInfo mInfo;
 };
+LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const GenerateInstalledLanguageInfoJob::LanguageInfo &t);
