@@ -10,6 +10,9 @@
 #include "languagetoolupdatecombobox.h"
 // #include "textgrammarcheck_debug.h"
 #include <KLocalizedString>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
+#include <KLineEditEventHandler>
+#endif
 
 #include <QCheckBox>
 #include <QLabel>
@@ -42,6 +45,9 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     mInstancePath->setObjectName(QStringLiteral("instancepath"));
     mInstancePath->setEnabled(false);
     mInstancePath->setClearButtonEnabled(true);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
+    KLineEditEventHandler::catchReturnKey(mInstancePath);
+#endif
     instanceLayout->addWidget(mInstancePath);
     mainLayout->addLayout(instanceLayout);
 
