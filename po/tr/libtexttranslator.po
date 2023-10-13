@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 00:41+0000\n"
-"PO-Revision-Date: 2023-08-20 11:47+0300\n"
+"PO-Revision-Date: 2023-10-12 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -584,13 +584,12 @@ msgstr "Hata: Web sürümünden Yandex SID çıkarılamadı."
 #: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Locale"
-msgstr ""
+msgstr "Yerel"
 
 #: translator/translatorengineclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgid "Network"
-msgstr "Ağ yok"
+msgstr "Ağ"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format

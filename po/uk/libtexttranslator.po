@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 00:41+0000\n"
-"PO-Revision-Date: 2023-08-20 09:55+0300\n"
+"PO-Revision-Date: 2023-10-12 09:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -585,13 +585,12 @@ msgstr "Помилка: не вдалося видобути SID Yandex з ве�
 #: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Locale"
-msgstr ""
+msgstr "Локальний"
 
 #: translator/translatorengineclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgid "Network"
-msgstr "З’єднання недоступне"
+msgstr "Мережевий"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format

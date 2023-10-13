@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 00:41+0000\n"
-"PO-Revision-Date: 2023-10-11 20:21+0100\n"
+"POT-Creation-Date: 2023-10-13 00:41+0000\n"
+"PO-Revision-Date: 2023-10-12 06:15+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -59,10 +59,9 @@ msgid "Impossible to extract language"
 msgstr "Ne eblas eltiri lingvon"
 
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
-#, fuzzy, kde-format
-#| msgid "Impossible to extract language"
+#, kde-format
 msgid "Impossible to store language info."
-msgstr "Ne eblas eltiri lingvon"
+msgstr "Ne eblas konservi lingvo-informon."
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -95,40 +94,39 @@ msgstr "Ĝisdatigi Liston"
 msgid "Update list of languages from network"
 msgstr "Ĝisdatigi liston de lingvoj el reto"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
 #, kde-format
 msgid "Error: %1"
 msgstr "Eraro: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:191
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "Lang"
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
+#, kde-format
 msgid "Language"
-msgstr "Lang"
+msgstr "Lingvo"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:84
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:85
 #, kde-format
 msgid "Installed"
 msgstr "Instalita"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
 #, kde-format
 msgid "Installed Version"
 msgstr "Instalita Versio"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Available Version"
 msgstr "Disponebla Versio"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Size"
 msgstr "Grandeco"
