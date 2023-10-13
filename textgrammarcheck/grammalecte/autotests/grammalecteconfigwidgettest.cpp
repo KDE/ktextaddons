@@ -46,6 +46,12 @@ void GrammalecteConfigWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mGrammalectePath);
     QVERIFY(mGrammalectePath->path().isEmpty());
 
+    auto grammalecteInfoDownload = generalWidget->findChild<QLabel *>(QStringLiteral("grammalecteInfoDownload"));
+    QVERIFY(grammalecteInfoDownload);
+    QVERIFY(!grammalecteInfoDownload->text().isEmpty());
+    QVERIFY(grammalecteInfoDownload->openExternalLinks());
+    QCOMPARE(grammalecteInfoDownload->textFormat(), Qt::RichText);
+
     auto mStackedWidget = mTab->findChild<QStackedWidget *>(QStringLiteral("stackedwidget"));
     QVERIFY(mStackedWidget);
     auto mScrollArea = mStackedWidget->findChild<QScrollArea *>(QStringLiteral("scrollarea"));

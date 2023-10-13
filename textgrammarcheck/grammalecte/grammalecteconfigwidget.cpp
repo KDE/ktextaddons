@@ -137,7 +137,15 @@ QWidget *GrammalecteConfigWidget::addGeneralTab()
     mGrammalectePath = new TextGrammarCheck::GrammalecteUrlRequesterWidget(this);
     mGrammalectePath->setObjectName(QStringLiteral("grammalectepath"));
     mGrammalectePath->setPlaceholderText(i18n("Add full 'grammalecte-cli.py' path"));
+
     lay->addRow(i18n("Grammalecte Path:"), mGrammalectePath);
+
+    auto grammalecteInfoDownload = new QLabel(this);
+    grammalecteInfoDownload->setObjectName(QStringLiteral("grammalecteInfoDownload"));
+    grammalecteInfoDownload->setTextFormat(Qt::RichText);
+    grammalecteInfoDownload->setOpenExternalLinks(true);
+    grammalecteInfoDownload->setText(i18n("Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</a>. Download it and extract it."));
+    lay->addWidget(grammalecteInfoDownload);
 
     return w;
 }
