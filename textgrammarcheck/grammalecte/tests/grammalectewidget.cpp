@@ -13,6 +13,7 @@
 #include "grammalecte/grammalecteresultwidget.h"
 #include <QDebug>
 #include <QJsonDocument>
+#include <QPointer>
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QTextBlock>
