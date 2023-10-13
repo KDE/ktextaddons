@@ -5,6 +5,7 @@
 */
 
 #include "languagetoolwidget.h"
+#include "languagetool/languagetoolconfigdialog.h"
 #include "languagetool/languagetoolgetlistoflanguagejob.h"
 #include "languagetool/languagetoolmanager.h"
 #include "languagetool/languagetoolresultjob.h"
@@ -16,6 +17,7 @@
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QTextBlock>
 #include <QTextEdit>
 #include <QVBoxLayout>
@@ -24,6 +26,7 @@ LanguageToolWidget::LanguageToolWidget(QWidget *parent)
     : QWidget(parent)
     , mNetworkAccessManager(new QNetworkAccessManager(this))
 {
+    QStandardPaths::setTestModeEnabled(true);
     mNetworkAccessManager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
     mNetworkAccessManager->setStrictTransportSecurityEnabled(true);
     mNetworkAccessManager->enableStrictTransportSecurityStore(true);
@@ -41,6 +44,7 @@ LanguageToolWidget::LanguageToolWidget(QWidget *parent)
     mResultWidget = new TextGrammarCheck::LanguageToolResultWidget(this);
     mainLayout->addWidget(mResultWidget);
     connect(mResultWidget, &TextGrammarCheck::LanguageToolResultWidget::replaceText, this, &LanguageToolWidget::slotReplaceText);
+    connect(mResultWidget, &TextGrammarCheck::LanguageToolResultWidget::configure, this, &LanguageToolWidget::slotConfigure);
 
     connect(button, &QPushButton::clicked, this, &LanguageToolWidget::slotCheckGrammar);
     connect(languageButton, &QPushButton::clicked, this, &LanguageToolWidget::slotGetListOfLanguages);
@@ -98,6 +102,14 @@ void LanguageToolWidget::slotGetLanguagesFinished(const QString &result)
     const QJsonDocument doc = QJsonDocument::fromJson(result.toUtf8());
     const QJsonArray fields = doc.array();
     qDebug() << " fields =" << fields;
+}
+
+void LanguageToolWidget::slotConfigure()
+{
+    TextGrammarCheck::LanguageToolConfigDialog dlg(this);
+    if (dlg.exec()) {
+        TextGrammarCheck::LanguageToolManager::self()->loadSettings();
+    }
 }
 
 void LanguageToolWidget::slotResultFinished(const QString &result)

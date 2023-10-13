@@ -30,6 +30,8 @@ private:
     void slotResultFinished(const QString &result);
     void slotGetLanguagesError();
     void slotGetLanguagesFinished(const QString &result);
+    void slotConfigure();
+
     QTextEdit *mInput = nullptr;
     TextGrammarCheck::LanguageToolResultWidget *mResultWidget = nullptr;
     QNetworkAccessManager *mNetworkAccessManager = nullptr;

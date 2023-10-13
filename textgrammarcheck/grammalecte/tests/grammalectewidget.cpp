@@ -5,13 +5,16 @@
 */
 
 #include "grammalectewidget.h"
+#include "grammalecte/grammalecteconfigdialog.h"
 #include "grammalecte/grammalecteresultjob.h"
+#include <TextGrammarCheck/GrammalecteManager>
 
 #include "grammalecte/grammalecteparser.h"
 #include "grammalecte/grammalecteresultwidget.h"
 #include <QDebug>
 #include <QJsonDocument>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QTextBlock>
 #include <QTextEdit>
 #include <QVBoxLayout>
@@ -20,6 +23,7 @@ GrammalecteWidget::GrammalecteWidget(QWidget *parent)
     : QWidget(parent)
     , mResultWidget(new TextGrammarCheck::GrammalecteResultWidget(this))
 {
+    QStandardPaths::setTestModeEnabled(true);
     auto mainLayout = new QVBoxLayout(this);
 
     auto button = new QPushButton(QStringLiteral("Check Grammar"), this);
@@ -33,12 +37,22 @@ GrammalecteWidget::GrammalecteWidget(QWidget *parent)
 
     mainLayout->addWidget(mResultWidget);
     connect(mResultWidget, &TextGrammarCheck::GrammalecteResultWidget::replaceText, this, &GrammalecteWidget::slotReplaceText);
+    connect(mResultWidget, &TextGrammarCheck::GrammalecteResultWidget::configure, this, &GrammalecteWidget::slotConfigure);
 
     connect(button, &QPushButton::clicked, this, &GrammalecteWidget::slotCheckGrammar);
     connect(checkSettingsButton, &QPushButton::clicked, this, &GrammalecteWidget::slotGetSettings);
 }
 
 GrammalecteWidget::~GrammalecteWidget() = default;
+
+void GrammalecteWidget::slotConfigure()
+{
+    QPointer<TextGrammarCheck::GrammalecteConfigDialog> dlg = new TextGrammarCheck::GrammalecteConfigDialog(this);
+    if (dlg->exec()) {
+        TextGrammarCheck::GrammalecteManager::self()->loadSettings();
+    }
+    delete dlg;
+}
 
 void GrammalecteWidget::slotReplaceText(const TextGrammarCheck::GrammarAction &act)
 {
