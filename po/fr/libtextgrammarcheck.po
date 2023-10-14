@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-10-14 00:41+0000\n"
 "PO-Revision-Date: 2023-01-20 19:55+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -104,10 +104,17 @@ msgstr "Emplacement de Python :"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Ajouter l'emplacement complet vers « grammalecte-cli.py »"
 
-#: grammalecte/grammalecteconfigwidget.cpp:140
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Emplacement de Grammalecte :"
+
+#: grammalecte/grammalecteconfigwidget.cpp:147
+#, kde-format
+msgid ""
+"Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
+"a>. Download it and extract it."
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
@@ -134,7 +141,7 @@ msgstr "Impossible de trouver le fichier « Grammalecte cli »."
 msgid "Grammalecte error"
 msgstr "Erreur du programme « Grammalecte »."
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:32
+#: grammalecte/grammalecteurlrequesterwidget.cpp:37
 #, kde-format
 msgid "Select Path"
 msgstr "Sélectionner un emplacement"
@@ -295,22 +302,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Configurer LanguageTool"
 
-#: languagetool/languagetoolconfigwidget.cpp:22
+#: languagetool/languagetoolconfigwidget.cpp:25
 #, kde-format
 msgid "Use Local Instance"
 msgstr "Utiliser l'instance locale"
 
-#: languagetool/languagetoolconfigwidget.cpp:24
+#: languagetool/languagetoolconfigwidget.cpp:27
 #, kde-format
 msgid "Instance Path:"
 msgstr "Emplacement de l'instance :"
 
-#: languagetool/languagetoolconfigwidget.cpp:52
+#: languagetool/languagetoolconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Langue :"
 
-#: languagetool/languagetoolconfigwidget.cpp:64
+#: languagetool/languagetoolconfigwidget.cpp:70
 #, kde-format
 msgid "Refresh"
 msgstr "Rafraîchir"

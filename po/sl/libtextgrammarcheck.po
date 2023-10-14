@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-10-14 00:41+0000\n"
 "PO-Revision-Date: 2023-01-15 09:44+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -102,10 +102,17 @@ msgstr "Pot za Python:"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Dodaj polno pot 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:140
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Pot za Grammalecte:"
+
+#: grammalecte/grammalecteconfigwidget.cpp:147
+#, kde-format
+msgid ""
+"Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
+"a>. Download it and extract it."
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
@@ -132,7 +139,7 @@ msgstr "Datoteke cli za Grammalecte ni mogoče najti."
 msgid "Grammalecte error"
 msgstr "Napaka Grammalecte"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:32
+#: grammalecte/grammalecteurlrequesterwidget.cpp:37
 #, kde-format
 msgid "Select Path"
 msgstr "Izberi pot"
@@ -293,22 +300,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Nastavi LanguageTool"
 
-#: languagetool/languagetoolconfigwidget.cpp:22
+#: languagetool/languagetoolconfigwidget.cpp:25
 #, kde-format
 msgid "Use Local Instance"
 msgstr "Uporabi lokalni pojavek"
 
-#: languagetool/languagetoolconfigwidget.cpp:24
+#: languagetool/languagetoolconfigwidget.cpp:27
 #, kde-format
 msgid "Instance Path:"
 msgstr "Pot do pojavka:"
 
-#: languagetool/languagetoolconfigwidget.cpp:52
+#: languagetool/languagetoolconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Jezik:"
 
-#: languagetool/languagetoolconfigwidget.cpp:64
+#: languagetool/languagetoolconfigwidget.cpp:70
 #, kde-format
 msgid "Refresh"
 msgstr "Osveži"

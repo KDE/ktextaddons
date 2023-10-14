@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-10-14 00:41+0000\n"
 "PO-Revision-Date: 2023-01-13 09:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -104,10 +104,17 @@ msgstr "Localização do Python:"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Adicione a localização completa do 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:140
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Localização do Grammalecte:"
+
+#: grammalecte/grammalecteconfigwidget.cpp:147
+#, kde-format
+msgid ""
+"Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
+"a>. Download it and extract it."
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
@@ -134,7 +141,7 @@ msgstr "O ficheiro da linha de comandos do Grammalecte não foi encontrado."
 msgid "Grammalecte error"
 msgstr "Erro do Grammalecte"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:32
+#: grammalecte/grammalecteurlrequesterwidget.cpp:37
 #, kde-format
 msgid "Select Path"
 msgstr "Seleccionar a Localização"
@@ -295,22 +302,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Configurar o LanguageTool"
 
-#: languagetool/languagetoolconfigwidget.cpp:22
+#: languagetool/languagetoolconfigwidget.cpp:25
 #, kde-format
 msgid "Use Local Instance"
 msgstr "Usar a Instância Local"
 
-#: languagetool/languagetoolconfigwidget.cpp:24
+#: languagetool/languagetoolconfigwidget.cpp:27
 #, kde-format
 msgid "Instance Path:"
 msgstr "Localização da Instância:"
 
-#: languagetool/languagetoolconfigwidget.cpp:52
+#: languagetool/languagetoolconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Língua:"
 
-#: languagetool/languagetoolconfigwidget.cpp:64
+#: languagetool/languagetoolconfigwidget.cpp:70
 #, kde-format
 msgid "Refresh"
 msgstr "Actualizar"

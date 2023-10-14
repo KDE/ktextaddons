@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-10-14 00:41+0000\n"
 "PO-Revision-Date: 2023-01-13 13:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -104,10 +104,17 @@ msgstr "Camí de Python:"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Afegiu tot el camí a «grammalecte-cli.py»"
 
-#: grammalecte/grammalecteconfigwidget.cpp:140
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Camí del Grammalecte:"
+
+#: grammalecte/grammalecteconfigwidget.cpp:147
+#, kde-format
+msgid ""
+"Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
+"a>. Download it and extract it."
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
@@ -134,7 +141,7 @@ msgstr "No s'ha trobat el fitxer cli del Grammalecte."
 msgid "Grammalecte error"
 msgstr "Error del Grammalecte"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:32
+#: grammalecte/grammalecteurlrequesterwidget.cpp:37
 #, kde-format
 msgid "Select Path"
 msgstr "Selecció de camí"
@@ -295,22 +302,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Configuració del LanguageTool"
 
-#: languagetool/languagetoolconfigwidget.cpp:22
+#: languagetool/languagetoolconfigwidget.cpp:25
 #, kde-format
 msgid "Use Local Instance"
 msgstr "Usa una instància local"
 
-#: languagetool/languagetoolconfigwidget.cpp:24
+#: languagetool/languagetoolconfigwidget.cpp:27
 #, kde-format
 msgid "Instance Path:"
 msgstr "Camí de la instància:"
 
-#: languagetool/languagetoolconfigwidget.cpp:52
+#: languagetool/languagetoolconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Idioma:"
 
-#: languagetool/languagetoolconfigwidget.cpp:64
+#: languagetool/languagetoolconfigwidget.cpp:70
 #, kde-format
 msgid "Refresh"
 msgstr "Actualitza"

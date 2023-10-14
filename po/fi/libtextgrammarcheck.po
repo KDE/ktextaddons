@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:54+0000\n"
+"POT-Creation-Date: 2023-10-14 00:41+0000\n"
 "PO-Revision-Date: 2023-02-23 19:53+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -100,10 +100,17 @@ msgstr "Pythonin sijainti:"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Lisää ”grammalecte-cli.py”-tiedoston täysi sijainti"
 
-#: grammalecte/grammalecteconfigwidget.cpp:140
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Grammalecten sijainti:"
+
+#: grammalecte/grammalecteconfigwidget.cpp:147
+#, kde-format
+msgid ""
+"Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
+"a>. Download it and extract it."
+msgstr ""
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
@@ -130,7 +137,7 @@ msgstr "Grammalecten CLI-tiedostoa ei löytynyt."
 msgid "Grammalecte error"
 msgstr "Grammalecten virhe:"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:32
+#: grammalecte/grammalecteurlrequesterwidget.cpp:37
 #, kde-format
 msgid "Select Path"
 msgstr "Valitse sijainti"
@@ -292,22 +299,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "LanguageToolin asetukset"
 
-#: languagetool/languagetoolconfigwidget.cpp:22
+#: languagetool/languagetoolconfigwidget.cpp:25
 #, kde-format
 msgid "Use Local Instance"
 msgstr "Käytä paikallista ohjelmaa"
 
-#: languagetool/languagetoolconfigwidget.cpp:24
+#: languagetool/languagetoolconfigwidget.cpp:27
 #, kde-format
 msgid "Instance Path:"
 msgstr "Ohjelman sijainti:"
 
-#: languagetool/languagetoolconfigwidget.cpp:52
+#: languagetool/languagetoolconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
 msgstr "Kieli:"
 
-#: languagetool/languagetoolconfigwidget.cpp:64
+#: languagetool/languagetoolconfigwidget.cpp:70
 #, kde-format
 msgid "Refresh"
 msgstr "Virkistä"
