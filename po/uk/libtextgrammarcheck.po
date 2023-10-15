@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-14 00:41+0000\n"
-"PO-Revision-Date: 2023-01-13 08:46+0200\n"
+"PO-Revision-Date: 2023-10-14 09:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -114,6 +114,8 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte можна знайти <a href=\"https://grammalecte.net/#download\">тут</"
+"a>. Отримайте пакунок і виконайте видобування даних з нього."
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format

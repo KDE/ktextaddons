@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-14 00:41+0000\n"
-"PO-Revision-Date: 2023-03-16 11:55+0300\n"
+"PO-Revision-Date: 2023-10-14 05:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -111,6 +111,8 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte <a href=\"https://grammalecte.net/#download\">burada</a> "
+"bulunabilir. Onu indirip çıkarın."
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
