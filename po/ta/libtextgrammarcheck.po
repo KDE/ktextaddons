@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Kishore G <kishore96@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-14 00:41+0000\n"
-"PO-Revision-Date: 2023-03-12 18:53+0530\n"
+"PO-Revision-Date: 2023-10-15 14:06+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,22 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
 msgid "Any text to check."
-msgstr ""
+msgstr "சரிபார்க்க வேண்டிய உரை."
 
 #: common/grammarresulttextedit.cpp:93
 #, kde-format
 msgid "Replacement"
-msgstr ""
+msgstr "மாற்றம்"
 
 #: common/grammarresulttextedit.cpp:102
 #, kde-format
 msgid "Online Grammar Information"
-msgstr ""
+msgstr "இணையவழி இலக்கண விவரங்கள்"
 
 #: common/grammarresulttextedit.cpp:115
 #, kde-format
@@ -61,12 +61,12 @@ msgstr ""
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "பொதுவானவை"
 
 #: grammalecte/grammalecteconfigwidget.cpp:36
 #, kde-format
 msgid "Grammar Settings"
-msgstr ""
+msgstr "இலக்கண அமைப்புகள்"
 
 #: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
@@ -88,7 +88,7 @@ msgstr ""
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, kde-format
 msgid "Reload Settings"
-msgstr ""
+msgstr "அமைப்புகளை மீளேற்று"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
@@ -145,152 +145,152 @@ msgstr ""
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
 msgid "English"
-msgstr ""
+msgstr "ஆங்கிலம்"
 
 #: languagetool/languagetoolcombobox.cpp:32
 #, kde-format
 msgid "Asturian"
-msgstr ""
+msgstr "அஸ்டூரியன்"
 
 #: languagetool/languagetoolcombobox.cpp:33
 #, kde-format
 msgid "Belarusian"
-msgstr ""
+msgstr "பெலரசியன்"
 
 #: languagetool/languagetoolcombobox.cpp:34
 #, kde-format
 msgid "Breton"
-msgstr ""
+msgstr "பிரெடான்"
 
 #: languagetool/languagetoolcombobox.cpp:35
 #, kde-format
 msgid "Catalan"
-msgstr ""
+msgstr "கட்டலான்"
 
 #: languagetool/languagetoolcombobox.cpp:36
 #, kde-format
 msgid "Chinese"
-msgstr ""
+msgstr "சீனம்"
 
 #: languagetool/languagetoolcombobox.cpp:37
 #, kde-format
 msgid "Danish"
-msgstr ""
+msgstr "டேனிஷ்"
 
 #: languagetool/languagetoolcombobox.cpp:38
 #, kde-format
 msgid "Dutch"
-msgstr ""
+msgstr "டச்சு"
 
 #: languagetool/languagetoolcombobox.cpp:39
 #, kde-format
 msgid "English (Australian)"
-msgstr ""
+msgstr "ஆங்கிலம் (ஆஸ்திரேலியா)"
 
 #: languagetool/languagetoolcombobox.cpp:40
 #, kde-format
 msgid "English (Canadian)"
-msgstr ""
+msgstr "ஆங்கிலம் (கனடா)"
 
 #: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
 msgid "Esperanto"
-msgstr ""
+msgstr "எஸ்பரான்டோ"
 
 #: languagetool/languagetoolcombobox.cpp:42
 #, kde-format
 msgid "French"
-msgstr ""
+msgstr "ஃபிரெஞ்சு"
 
 #: languagetool/languagetoolcombobox.cpp:43
 #, kde-format
 msgid "Galician"
-msgstr ""
+msgstr "கலீசியன்"
 
 #: languagetool/languagetoolcombobox.cpp:44
 #, kde-format
 msgid "German"
-msgstr ""
+msgstr "ஜெர்மன்"
 
 #: languagetool/languagetoolcombobox.cpp:45
 #, kde-format
 msgid "Greek"
-msgstr ""
+msgstr "கிரேக்கம்"
 
 #: languagetool/languagetoolcombobox.cpp:46
 #, kde-format
 msgid "Italian"
-msgstr ""
+msgstr "இத்தாலியன்"
 
 #: languagetool/languagetoolcombobox.cpp:47
 #, kde-format
 msgid "Japanese"
-msgstr ""
+msgstr "ஜப்பானியம்"
 
 #: languagetool/languagetoolcombobox.cpp:48
 #, kde-format
 msgid "Khmer"
-msgstr ""
+msgstr "க்ஹேமர்"
 
 #: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "பார்சி"
 
 #: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
 msgid "Polish"
-msgstr ""
+msgstr "போலிஷ்"
 
 #: languagetool/languagetoolcombobox.cpp:51
 #, kde-format
 msgid "Portuguese"
-msgstr ""
+msgstr "போர்த்துக்கீசியம்"
 
 #: languagetool/languagetoolcombobox.cpp:52
 #, kde-format
 msgid "Romanian"
-msgstr ""
+msgstr "உருமேனியன்"
 
 #: languagetool/languagetoolcombobox.cpp:53
 #, kde-format
 msgid "Russian"
-msgstr ""
+msgstr "ரஷ்யன்"
 
 #: languagetool/languagetoolcombobox.cpp:54
 #, kde-format
 msgid "Slovak"
-msgstr ""
+msgstr "சுலோவாக்"
 
 #: languagetool/languagetoolcombobox.cpp:55
 #, kde-format
 msgid "Slovenian"
-msgstr ""
+msgstr "சுலோவீனியன்"
 
 #: languagetool/languagetoolcombobox.cpp:56
 #, kde-format
 msgid "Spanish"
-msgstr ""
+msgstr "ஸ்பானிஷ்"
 
 #: languagetool/languagetoolcombobox.cpp:57
 #, kde-format
 msgid "Swedish"
-msgstr ""
+msgstr "சுவீடிஷ்"
 
 #: languagetool/languagetoolcombobox.cpp:58
 #, kde-format
 msgid "Tagalog"
-msgstr ""
+msgstr "டாகாலோகு"
 
 #: languagetool/languagetoolcombobox.cpp:59
 #, kde-format
 msgid "Tamil"
-msgstr ""
+msgstr "தமிழ்"
 
 #: languagetool/languagetoolcombobox.cpp:60
 #, kde-format
 msgid "Ukrainian"
-msgstr ""
+msgstr "உக்ரேனியன்"
 
 #: languagetool/languagetoolconfigdialog.cpp:26
 #, kde-format
@@ -311,27 +311,27 @@ msgstr ""
 #: languagetool/languagetoolconfigwidget.cpp:58
 #, kde-format
 msgid "Language:"
-msgstr ""
+msgstr "மொழி:"
 
 #: languagetool/languagetoolconfigwidget.cpp:70
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "புதுப்பி"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "An error was reported: %1"
-msgstr ""
+msgstr "சிக்கல் தெரிவிக்கப்பட்டது: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "இலக்கணத்தை சரிபார்க்க முடியவில்லை."
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
 msgid "Check"
-msgstr ""
+msgstr "சரிபார்"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
@@ -339,8 +339,10 @@ msgid ""
 "An error occurred attempting to load the list of available languages:\n"
 "%1"
 msgstr ""
+"மொழிகளின் பட்டியலை ஏற்றும்போது சிக்கல் நேர்ந்த‍து:\n"
+"%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
 msgid "List of Languages"
-msgstr ""
+msgstr "மொழிகளின் பட்டியல்"
