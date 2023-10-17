@@ -5,9 +5,12 @@
 */
 
 #include "voskspeechtotextplugin.h"
+#include "voskspeechtotextdevice.h"
+#include <QIODevice>
 
 VoskSpeechToTextPlugin::VoskSpeechToTextPlugin(QObject *parent)
     : TextSpeechToText::SpeechToTextPlugin{parent}
+    , mDevice(new VoskSpeechToTextDevice(this))
 {
 }
 
@@ -27,6 +30,11 @@ QString VoskSpeechToTextPlugin::defaultLanguage() const
 {
     // TODO
     return {};
+}
+
+QIODevice *VoskSpeechToTextPlugin::device() const
+{
+    return mDevice;
 }
 
 #include "moc_voskspeechtotextplugin.cpp"

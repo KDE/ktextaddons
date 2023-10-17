@@ -7,7 +7,7 @@
 #pragma once
 
 #include "speechtotext/speechtotextplugin.h"
-
+class VoskSpeechToTextDevice;
 class VoskSpeechToTextPlugin : public TextSpeechToText::SpeechToTextPlugin
 {
     Q_OBJECT
@@ -19,4 +19,9 @@ public:
 
     Q_REQUIRED_RESULT int sampleRate() const override;
     Q_REQUIRED_RESULT QString defaultLanguage() const override;
+
+    Q_REQUIRED_RESULT QIODevice *device() const;
+
+private:
+    VoskSpeechToTextDevice *const mDevice;
 };

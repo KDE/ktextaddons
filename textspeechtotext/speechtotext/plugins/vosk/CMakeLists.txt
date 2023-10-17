@@ -35,6 +35,11 @@ target_sources(libvoskspeechtotext PRIVATE
 
     voskenginedialog.h
     voskenginedialog.cpp
+
+
+    voskspeechtotextdevice.h
+    voskspeechtotextdevice.cpp
+
 )
 
 generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)
