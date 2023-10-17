@@ -48,8 +48,8 @@ QString UnicodeEmoticon::escapeUnicodeEmoji(const QString &pString)
 {
     QString retString;
 
-    const QStringList parts = pString.split(QLatin1Char('-'));
-    for (const auto &item : parts) {
+    const QList<QStringView> parts = QStringView(pString).split(QLatin1Char('-'));
+    for (const QStringView &item : parts) {
         bool ok;
         const int part = item.toInt(&ok, 16);
         Q_ASSERT(ok);

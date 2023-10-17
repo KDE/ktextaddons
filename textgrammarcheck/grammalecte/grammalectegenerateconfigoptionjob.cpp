@@ -98,8 +98,8 @@ QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOpt
 {
     QVector<GrammalecteGenerateConfigOptionJob::Option> opts;
     static const QRegularExpression reg(QStringLiteral("^([a-zA-Z0-9]+):\\s*(True|False)\\s*(.*)$"));
-    const QStringList lst = mResult.split(QLatin1Char('\n'));
-    for (const QString &str : lst) {
+    const QList<QStringView> lst = QStringView(mResult).split(QLatin1Char('\n'));
+    for (const QStringView &str : lst) {
         const QRegularExpressionMatch match = reg.match(str);
         if (match.hasMatch()) {
             const QString optionName = match.captured(1);
