@@ -18,7 +18,9 @@ void LingvaEngineClientTest::shouldHaveDefaultValues()
 {
     LingvaEngineClient client;
     QCOMPARE(client.name(), QStringLiteral("lingva"));
-    QVERIFY(client.createTranslator());
+    auto plugin = client.createTranslator();
+    QVERIFY(plugin);
+    delete plugin;
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());
     QVERIFY(!client.supportedToLanguages().isEmpty());
