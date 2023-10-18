@@ -19,4 +19,6 @@ public:
 
     Q_REQUIRED_RESULT int sampleRate() const override;
     Q_REQUIRED_RESULT QString defaultLanguage() const override;
+
+    Q_REQUIRED_RESULT QIODevice *audioDevice() const override;
 };

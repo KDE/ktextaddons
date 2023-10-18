@@ -29,4 +29,9 @@ QString GoogleSpeechToTextPlugin::defaultLanguage() const
     return {};
 }
 
+QIODevice *GoogleSpeechToTextPlugin::audioDevice() const
+{
+    return {};
+}
+
 #include "moc_googlespeechtotextplugin.cpp"

@@ -75,6 +75,7 @@ void SpeechToTextManager::initializeInput()
 
     d->mAudioSource = new QAudioSource(format, this);
     d->mAudioSource->setBufferSize(8000);
+    d->mAudioSource->start(d->mSpeechToTextPlugin->audioDevice());
 
     // TODO add input device
 }

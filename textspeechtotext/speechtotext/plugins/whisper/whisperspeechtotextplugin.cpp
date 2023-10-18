@@ -29,4 +29,9 @@ QString WhisperSpeechToTextPlugin::defaultLanguage() const
     return {};
 }
 
+QIODevice *WhisperSpeechToTextPlugin::audioDevice() const
+{
+    return nullptr;
+}
+
 #include "moc_whisperspeechtotextplugin.cpp"

@@ -32,7 +32,7 @@ QString VoskSpeechToTextPlugin::defaultLanguage() const
     return {};
 }
 
-QIODevice *VoskSpeechToTextPlugin::device() const
+QIODevice *VoskSpeechToTextPlugin::audioDevice() const
 {
     return mDevice;
 }
