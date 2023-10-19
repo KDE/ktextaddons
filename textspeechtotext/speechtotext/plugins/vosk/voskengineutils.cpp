@@ -98,3 +98,9 @@ bool VoskEngineUtils::LanguageInstalled::isValid() const
 {
     return !absoluteLanguageModelPath.isEmpty();
 }
+
+QString VoskEngineUtils::defaultLanguage()
+{
+    // TODO
+    return {};
+}
