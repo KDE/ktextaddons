@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(KTEXTADDONS_CURRENT_VERSION "1.5.42")
+set(KTEXTADDONS_CURRENT_VERSION "1.5.43")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 include(FeatureSummary)
