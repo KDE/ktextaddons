@@ -27,7 +27,7 @@ void ExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, const QS
 {
     // qDebug() << " path " << path;
     const QStringList lst = dir->entries();
-    // qDebug() << " lst " << lst;
+    // qDebug() << " list entries : " << lst;
     for (const QString &it : lst) {
         const KArchiveEntry *entry = dir->entry(it);
         if (entry->isDirectory()) {

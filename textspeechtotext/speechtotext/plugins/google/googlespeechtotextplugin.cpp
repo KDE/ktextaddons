@@ -23,15 +23,14 @@ int GoogleSpeechToTextPlugin::sampleRate() const
     return 16000;
 }
 
-QString GoogleSpeechToTextPlugin::defaultLanguage() const
-{
-    // TODO
-    return {};
-}
-
 QIODevice *GoogleSpeechToTextPlugin::audioDevice() const
 {
     return {};
+}
+
+void GoogleSpeechToTextPlugin::loadSettings()
+{
+    // TODO
 }
 
 #include "moc_googlespeechtotextplugin.cpp"

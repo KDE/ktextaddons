@@ -11,6 +11,7 @@ class TextSpeechToText::SpeechToTextPluginPrivate
 {
 public:
     QString mResult;
+    QString mDefaultLanguage;
 };
 
 SpeechToTextPlugin::SpeechToTextPlugin(QObject *parent)
@@ -24,6 +25,16 @@ SpeechToTextPlugin::~SpeechToTextPlugin() = default;
 QString SpeechToTextPlugin::result() const
 {
     return d->mResult;
+}
+
+QString SpeechToTextPlugin::defaultLanguage() const
+{
+    return d->mDefaultLanguage;
+}
+
+void SpeechToTextPlugin::setDefaultLanguage(const QString &language)
+{
+    d->mDefaultLanguage = language;
 }
 
 #include "moc_speechtotextplugin.cpp"

@@ -38,8 +38,12 @@ public:
 
     Q_REQUIRED_RESULT virtual int sampleRate() const = 0;
 
-    Q_REQUIRED_RESULT virtual QString defaultLanguage() const = 0;
+    Q_REQUIRED_RESULT QString defaultLanguage() const;
     Q_REQUIRED_RESULT virtual QIODevice *audioDevice() const = 0;
+
+    void setDefaultLanguage(const QString &language);
+
+    virtual void loadSettings() = 0;
 
 Q_SIGNALS:
     void speechToTextDone(const QString &result);

@@ -23,15 +23,14 @@ int WhisperSpeechToTextPlugin::sampleRate() const
     return 16000;
 }
 
-QString WhisperSpeechToTextPlugin::defaultLanguage() const
-{
-    // TODO
-    return {};
-}
-
 QIODevice *WhisperSpeechToTextPlugin::audioDevice() const
 {
     return nullptr;
+}
+
+void WhisperSpeechToTextPlugin::loadSettings()
+{
+    // TODO
 }
 
 #include "moc_whisperspeechtotextplugin.cpp"

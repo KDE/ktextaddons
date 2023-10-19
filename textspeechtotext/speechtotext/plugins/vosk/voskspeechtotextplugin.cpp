@@ -26,15 +26,14 @@ int VoskSpeechToTextPlugin::sampleRate() const
     return 16000;
 }
 
-QString VoskSpeechToTextPlugin::defaultLanguage() const
-{
-    // TODO
-    return {};
-}
-
 QIODevice *VoskSpeechToTextPlugin::audioDevice() const
 {
     return mDevice;
+}
+
+void VoskSpeechToTextPlugin::loadSettings()
+{
+    // TODO
 }
 
 #include "moc_voskspeechtotextplugin.cpp"
