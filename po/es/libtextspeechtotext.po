@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 00:41+0000\n"
+"POT-Creation-Date: 2023-10-20 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 17:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr "Google"
 msgid "Cannot open file for downloading."
 msgstr "No se puede abrir el archivo para la descarga."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #, kde-format
 msgid ""
@@ -39,18 +39,18 @@ msgstr ""
 "Error: Los sistemas de motores han detectado un tráfico sospechoso desde su "
 "red de equipos. Vuelva a realizar su petición más tarde."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "No se puede acceder a la URL: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "La suma de verificación no es correcta."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Ha ocurrido un error al escribir en disco: %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 00:41+0000\n"
+"POT-Creation-Date: 2023-10-20 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 10:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,7 +27,7 @@ msgstr "Google"
 msgid "Cannot open file for downloading."
 msgstr "Kan bestand voor downloaden niet openen."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #, kde-format
 msgid ""
@@ -37,18 +37,18 @@ msgstr ""
 "Fout: Enginesystemen hebben verdacht verkeer gedetecteerd uit uw "
 "computernetwerk. probeer uw verzoek later nog eens."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Toegang is onmogelijk tot url: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Controlesom is niet juist."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Fout bij schrijven naar schijf: %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 00:41+0000\n"
+"POT-Creation-Date: 2023-10-20 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 06:15+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -27,7 +27,7 @@ msgstr "Google"
 msgid "Cannot open file for downloading."
 msgstr "Ne eblas malfermi dosieron por alŝutado."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #, kde-format
 msgid ""
@@ -37,18 +37,18 @@ msgstr ""
 "Eraro: Motoraj sistemoj detektis suspektindan trafikon de via komputila "
 "reto. Bonvolu provi vian peton denove poste."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ne eblas aliri al url: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Kontrolsumo estas nekorekta."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Eraro dum skribo al disko: %1"

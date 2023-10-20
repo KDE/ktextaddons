@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-13 00:41+0000\n"
+"POT-Creation-Date: 2023-10-20 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 09:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -28,7 +28,7 @@ msgstr "Google"
 msgid "Cannot open file for downloading."
 msgstr "Не вдалося відкрити файл для отримання."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #, kde-format
 msgid ""
@@ -38,18 +38,18 @@ msgstr ""
 "Помилка: системами рушія виявлено підозріливий обмін даними з мережі вашого "
 "комп'ютера. Будь ласка, повторіть спробу запиту пізніше."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Не вдалося отримати доступ до адреси: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Контрольна сума є помилковою."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Помилка під час спроби запису на диск: %1"
