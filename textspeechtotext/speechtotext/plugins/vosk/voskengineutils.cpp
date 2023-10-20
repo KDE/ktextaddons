@@ -99,6 +99,16 @@ bool VoskEngineUtils::LanguageInstalled::isValid() const
     return !absoluteLanguageModelPath.isEmpty();
 }
 
+void VoskEngineUtils::saveSettings()
+{
+    // TODO
+}
+
+void VoskEngineUtils::loadSettings()
+{
+    // TODO
+}
+
 QString VoskEngineUtils::defaultLanguage()
 {
     // TODO

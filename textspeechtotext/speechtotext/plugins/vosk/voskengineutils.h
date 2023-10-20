@@ -30,6 +30,9 @@ Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT bool createInstalledLanguageInfo(co
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 
 Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultLanguage();
+
+LIBVOSKSPEECHTOTEXT_EXPORT void saveSettings();
+LIBVOSKSPEECHTOTEXT_EXPORT void loadSettings();
 };
 LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskEngineUtils::LanguageInstalled &t);
 Q_DECLARE_TYPEINFO(VoskEngineUtils::LanguageInstalled, Q_MOVABLE_TYPE);
