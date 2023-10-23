@@ -67,6 +67,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
     speechtotext/widgets/speechtotextaction.h
     speechtotext/widgets/speechtotextaction.cpp
 
+    speechtotext/widgets/speechtotextmenu.h
+    speechtotext/widgets/speechtotextmenu.cpp
+
     speechtotext/textspeechtotextutil.h
     speechtotext/textspeechtotextutil.cpp
     )
@@ -118,6 +121,7 @@ ecm_generate_headers(TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS
     HEADER_NAMES
     SpeechToTextAction
     SpeechToTextToolButtonWidget
+    SpeechToTextMenu
     REQUIRED_HEADERS TextSpeechToTextWidget_speechtotext_HEADERS
     PREFIX TextSpeechToText
     RELATIVE speechtotext/widgets
