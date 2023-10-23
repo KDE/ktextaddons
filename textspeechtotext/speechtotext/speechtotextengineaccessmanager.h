@@ -19,7 +19,7 @@ public:
 
     static SpeechToTextEngineAccessManager *self();
 
-    QNetworkAccessManager *networkManager();
+    QNetworkAccessManager *networkManager() const;
 
 private:
     QNetworkAccessManager *const mNetworkAccessManager;

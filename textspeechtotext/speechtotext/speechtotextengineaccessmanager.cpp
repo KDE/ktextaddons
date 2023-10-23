@@ -25,7 +25,7 @@ SpeechToTextEngineAccessManager *SpeechToTextEngineAccessManager::self()
     return &s_self;
 }
 
-QNetworkAccessManager *SpeechToTextEngineAccessManager::networkManager()
+QNetworkAccessManager *SpeechToTextEngineAccessManager::networkManager() const
 {
     return mNetworkAccessManager;
 }

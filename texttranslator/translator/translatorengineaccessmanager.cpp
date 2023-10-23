@@ -25,7 +25,7 @@ TranslatorEngineAccessManager *TranslatorEngineAccessManager::self()
     return &s_self;
 }
 
-QNetworkAccessManager *TranslatorEngineAccessManager::networkManager()
+QNetworkAccessManager *TranslatorEngineAccessManager::networkManager() const
 {
     return mNetworkAccessManager;
 }
