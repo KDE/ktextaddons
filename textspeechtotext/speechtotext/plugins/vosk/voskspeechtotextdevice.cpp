@@ -28,3 +28,5 @@ qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
     // TODO
     return -1;
 }
+
+#include "moc_voskspeechtotextdevice.cpp"

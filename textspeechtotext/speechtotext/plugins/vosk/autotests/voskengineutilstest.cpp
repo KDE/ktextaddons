@@ -50,3 +50,5 @@ void VoskEngineUtilsTest::shouldSaveLoadLanguageInstalled()
     const VoskEngineUtils::LanguageInstalled loadInfo = VoskEngineUtils::loadInstalledLanguageInfo(pathTest);
     QCOMPARE(loadInfo, info);
 }
+
+#include "moc_voskengineutilstest.cpp"
