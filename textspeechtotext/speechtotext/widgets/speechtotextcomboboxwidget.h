@@ -27,6 +27,8 @@ Q_SIGNALS:
     void engineChanged(const QString &engineName);
 
 private:
+    void load();
+    void save();
     void slotConfigureEngine();
     void slotEngineChanged(int index);
     QComboBox *const mEngine;

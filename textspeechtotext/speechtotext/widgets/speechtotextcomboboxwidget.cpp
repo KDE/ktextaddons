@@ -5,12 +5,16 @@
 */
 
 #include "speechtotextcomboboxwidget.h"
+#include "speechtotext/textspeechtotextutil.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QComboBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
 #include <TextSpeechToText/SpeechToTextEngineLoader>
+
 using namespace TextSpeechToText;
 SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
     : QWidget(parent)
@@ -82,23 +86,21 @@ void SpeechToTextComboBoxWidget::slotEngineChanged(int index)
     Q_EMIT engineChanged(engine);
 }
 
-#if 0
-void TranslatorConfigureComboWidget::load()
+void SpeechToTextComboBoxWidget::load()
 {
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
-    const QString engine = groupTranslate.readEntry(TranslatorUtil::engineTranslateName(), TranslatorUtil::defaultEngineName()); // Google by default
-    const int index = mEngineComboBox->findData(engine);
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
+    const QString engine = groupTranslate.readEntry(TextSpeechToTextUtil::engineTextToSpeechName(), TextSpeechToTextUtil::defaultEngineName());
+    const int index = mEngine->findData(engine);
     if (index != -1) {
-        mEngineComboBox->setCurrentIndex(index);
+        mEngine->setCurrentIndex(index);
     }
 }
 
-void TranslatorConfigureComboWidget::save()
+void SpeechToTextComboBoxWidget::save()
 {
-    const QString engine = mEngineComboBox->currentData().toString();
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
-    groupTranslate.writeEntry(TranslatorUtil::engineTranslateName(), engine);
+    const QString engine = mEngine->currentData().toString();
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextSpeechToTextUtil::groupTranslateName());
+    groupTranslate.writeEntry(TextSpeechToTextUtil::engineTextToSpeechName(), engine);
 }
-#endif
 
 #include "moc_speechtotextcomboboxwidget.cpp"

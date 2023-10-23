@@ -66,6 +66,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
 
     speechtotext/widgets/speechtotextaction.h
     speechtotext/widgets/speechtotextaction.cpp
+
+    speechtotext/textspeechtotextutil.h
+    speechtotext/textspeechtotextutil.cpp
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
