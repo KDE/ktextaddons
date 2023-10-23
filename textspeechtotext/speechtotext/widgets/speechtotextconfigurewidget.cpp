@@ -36,11 +36,13 @@ SpeechToTextConfigureWidget::~SpeechToTextConfigureWidget() = default;
 void SpeechToTextConfigureWidget::loadSettings()
 {
     mSpeechToTextComboBox->load();
+    mSpeechToTextDevice->loadSettings();
 }
 
 void SpeechToTextConfigureWidget::saveSettings()
 {
     mSpeechToTextComboBox->save();
+    mSpeechToTextDevice->saveSettings();
 }
 
 #include "moc_speechtotextconfigurewidget.cpp"
