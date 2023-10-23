@@ -32,7 +32,7 @@ bool SpeechToTextMenu::isEmpty() const
 void SpeechToTextMenu::updateMenu()
 {
     mMenu->clear();
-    // TODO
+    // TODO update from specific plugins
 }
 
 QMenu *SpeechToTextMenu::menu() const
