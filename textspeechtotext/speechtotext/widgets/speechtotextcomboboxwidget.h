@@ -22,13 +22,14 @@ public:
     Q_REQUIRED_RESULT QString engineName() const;
     void setEngineName(const QString &engineName);
 
+    void load();
+    void save();
+
 Q_SIGNALS:
     void configureChanged(const QString &engineName);
     void engineChanged(const QString &engineName);
 
 private:
-    void load();
-    void save();
     void slotConfigureEngine();
     void slotEngineChanged(int index);
     QComboBox *const mEngine;
