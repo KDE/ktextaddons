@@ -5,9 +5,7 @@
 */
 #include "translator.h"
 
-Translator::Translator()
-{
-}
+Translator::Translator() = default;
 
 Translator::~Translator() = default;
 
