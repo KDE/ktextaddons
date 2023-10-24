@@ -15,14 +15,14 @@ target_sources(libvoskspeechtotext PRIVATE
     voskspeechtotextinfo.h
     voskspeechtotextinfo.cpp
 
-    downloadlanguagejob.cpp
-    downloadlanguagejob.h
+    voskdownloadlanguagejob.cpp
+    voskdownloadlanguagejob.h
 
     generateinstalledlanguageinfojob.h
     generateinstalledlanguageinfojob.cpp
 
-    extractlanguagejob.h
-    extractlanguagejob.cpp
+    voskextractlanguagejob.h
+    voskextractlanguagejob.cpp
 
     voskengineutils.cpp
     voskengineutils.h

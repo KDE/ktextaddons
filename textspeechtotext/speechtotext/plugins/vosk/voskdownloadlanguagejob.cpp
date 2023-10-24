@@ -4,28 +4,28 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "downloadlanguagejob.h"
-#include "extractlanguagejob.h"
+#include "voskdownloadlanguagejob.h"
 #include "generateinstalledlanguageinfojob.h"
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
+#include "voskextractlanguagejob.h"
 #include <KLocalizedString>
 #include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QTemporaryFile>
 
-DownloadLanguageJob::DownloadLanguageJob(QObject *parent)
+VoskDownloadLanguageJob::VoskDownloadLanguageJob(QObject *parent)
     : QObject{parent}
 {
 }
 
-DownloadLanguageJob::~DownloadLanguageJob()
+VoskDownloadLanguageJob::~VoskDownloadLanguageJob()
 {
     delete mHash;
 }
 
-void DownloadLanguageJob::start()
+void VoskDownloadLanguageJob::start()
 {
     if (!canStart()) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to start DownloadLanguageJob";
@@ -52,7 +52,7 @@ void DownloadLanguageJob::start()
         }
     });
 
-    connect(reply, &QNetworkReply::downloadProgress, this, &DownloadLanguageJob::downloadProgress);
+    connect(reply, &QNetworkReply::downloadProgress, this, &VoskDownloadLanguageJob::downloadProgress);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         mDestination->flush();
         mDestination->seek(0);
@@ -76,22 +76,22 @@ void DownloadLanguageJob::start()
     });
 }
 
-bool DownloadLanguageJob::canStart() const
+bool VoskDownloadLanguageJob::canStart() const
 {
     return mInfo.isValid();
 }
 
-void DownloadLanguageJob::extractLanguage()
+void VoskDownloadLanguageJob::extractLanguage()
 {
-    auto extraJob = new ExtractLanguageJob(this);
+    auto extraJob = new VoskExtractLanguageJob(this);
     extraJob->setSource(mDestination->fileName());
-    connect(extraJob, &ExtractLanguageJob::errorText, this, &DownloadLanguageJob::errorText);
-    connect(extraJob, &ExtractLanguageJob::finished, this, &DownloadLanguageJob::generateInstalledLanguageInfo);
+    connect(extraJob, &VoskExtractLanguageJob::errorText, this, &VoskDownloadLanguageJob::errorText);
+    connect(extraJob, &VoskExtractLanguageJob::finished, this, &VoskDownloadLanguageJob::generateInstalledLanguageInfo);
 
     extraJob->start();
 }
 
-void DownloadLanguageJob::generateInstalledLanguageInfo()
+void VoskDownloadLanguageJob::generateInstalledLanguageInfo()
 {
     auto generateInstalledLanguageJob = new GenerateInstalledLanguageInfoJob(this);
     GenerateInstalledLanguageInfoJob::LanguageInfo info;
@@ -102,28 +102,31 @@ void DownloadLanguageJob::generateInstalledLanguageInfo()
     info.info.versionStr = mInfo.version;
     generateInstalledLanguageJob->setInfo(info);
 
-    connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::errorText, this, &DownloadLanguageJob::errorText);
-    connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::generatedDone, this, &DownloadLanguageJob::slotGenerateInstalledLanguageInfoDone);
+    connect(generateInstalledLanguageJob, &GenerateInstalledLanguageInfoJob::errorText, this, &VoskDownloadLanguageJob::errorText);
+    connect(generateInstalledLanguageJob,
+            &GenerateInstalledLanguageInfoJob::generatedDone,
+            this,
+            &VoskDownloadLanguageJob::slotGenerateInstalledLanguageInfoDone);
     generateInstalledLanguageJob->start();
 }
 
-void DownloadLanguageJob::slotGenerateInstalledLanguageInfoDone()
+void VoskDownloadLanguageJob::slotGenerateInstalledLanguageInfoDone()
 {
     Q_EMIT extractDone();
     deleteLater();
 }
 
-DownloadLanguageJob::DownloadLanguageInfo DownloadLanguageJob::info() const
+VoskDownloadLanguageJob::DownloadLanguageInfo VoskDownloadLanguageJob::info() const
 {
     return mInfo;
 }
 
-void DownloadLanguageJob::setInfo(const DownloadLanguageInfo &newInfo)
+void VoskDownloadLanguageJob::setInfo(const DownloadLanguageInfo &newInfo)
 {
     mInfo = newInfo;
 }
 
-QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t)
+QDebug operator<<(QDebug d, const VoskDownloadLanguageJob::DownloadLanguageInfo &t)
 {
     d << "url " << t.url;
     d << "checksum " << t.checksum;
@@ -132,9 +135,9 @@ QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t)
     return d;
 }
 
-bool DownloadLanguageJob::DownloadLanguageInfo::isValid() const
+bool VoskDownloadLanguageJob::DownloadLanguageInfo::isValid() const
 {
     return !url.isEmpty() && !name.isEmpty();
 }
 
-#include "moc_downloadlanguagejob.cpp"
+#include "moc_voskdownloadlanguagejob.cpp"

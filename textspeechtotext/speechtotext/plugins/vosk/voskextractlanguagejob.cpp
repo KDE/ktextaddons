@@ -4,26 +4,26 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "extractlanguagejob.h"
+#include "voskextractlanguagejob.h"
 #include "libvoskspeechtotext_debug.h"
 #include "voskengineutils.h"
 #include <KLocalizedString>
 #include <KZip>
 #include <QDir>
 
-ExtractLanguageJob::ExtractLanguageJob(QObject *parent)
+VoskExtractLanguageJob::VoskExtractLanguageJob(QObject *parent)
     : QObject{parent}
 {
 }
 
-ExtractLanguageJob::~ExtractLanguageJob() = default;
+VoskExtractLanguageJob::~VoskExtractLanguageJob() = default;
 
-bool ExtractLanguageJob::canStart() const
+bool VoskExtractLanguageJob::canStart() const
 {
     return !mSource.isEmpty();
 }
 
-void ExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, const QString &path)
+void VoskExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, const QString &path)
 {
     // qDebug() << " path " << path;
     const QStringList lst = dir->entries();
@@ -49,7 +49,7 @@ void ExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, const QS
     }
 }
 
-void ExtractLanguageJob::start()
+void VoskExtractLanguageJob::start()
 {
     if (!canStart()) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to start ExtractLanguageJob";
@@ -78,14 +78,14 @@ void ExtractLanguageJob::start()
     deleteLater();
 }
 
-QString ExtractLanguageJob::source() const
+QString VoskExtractLanguageJob::source() const
 {
     return mSource;
 }
 
-void ExtractLanguageJob::setSource(const QString &newSource)
+void VoskExtractLanguageJob::setSource(const QString &newSource)
 {
     mSource = newSource;
 }
 
-#include "moc_extractlanguagejob.cpp"
+#include "moc_voskextractlanguagejob.cpp"

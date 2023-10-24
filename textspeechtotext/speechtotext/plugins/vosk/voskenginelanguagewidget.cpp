@@ -100,7 +100,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
         const QString url = modelIndex.data().toString();
         const QString checkSum = modelIndexCheckSum.data().toString();
         qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " url " << url << " checksum " << checkSum;
-        DownloadLanguageJob::DownloadLanguageInfo info;
+        VoskDownloadLanguageJob::DownloadLanguageInfo info;
         info.checksum = modelIndexCheckSum.data().toString();
         info.url = QUrl(modelIndex.data().toString());
         info.name = modelIndexName.data().toString();
@@ -197,7 +197,7 @@ void VoskEngineLanguageWidget::slotTextChanged(const QString &str)
     mVoskSpeechToTextProxyModel->setSearchString(str);
 }
 
-void VoskEngineLanguageWidget::slotDownLoad(const DownloadLanguageJob::DownloadLanguageInfo &info)
+void VoskEngineLanguageWidget::slotDownLoad(const VoskDownloadLanguageJob::DownloadLanguageInfo &info)
 {
     ManagerModelVoskSpeechToText::self()->downloadLanguage(info);
 }

@@ -4,9 +4,9 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "downloadlanguagejob.h"
 #include "libvoskspeechtotext_private_export.h"
 #include "managermodelvoskspeechtotext.h"
+#include "voskdownloadlanguagejob.h"
 #include <QWidget>
 class QTreeView;
 class VoskSpeechToTextModel;
@@ -23,7 +23,7 @@ public:
 
 private:
     void slotTextChanged(const QString &str);
-    void slotDownLoad(const DownloadLanguageJob::DownloadLanguageInfo &info);
+    void slotDownLoad(const VoskDownloadLanguageJob::DownloadLanguageInfo &info);
     void slotDelete(const QString &identifier);
     void slotUpdateListLanguage();
     void slotError(const QString &str);

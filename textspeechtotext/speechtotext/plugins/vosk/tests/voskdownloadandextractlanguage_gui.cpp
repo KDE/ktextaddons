@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "downloadlanguagejob.h"
+#include "voskdownloadlanguagejob.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
@@ -23,8 +23,8 @@ int main(int argc, char **argv)
     parser.process(app);
     if (!parser.positionalArguments().isEmpty()) {
         const QString fileName = parser.positionalArguments().at(0);
-        auto download = new DownloadLanguageJob();
-        DownloadLanguageJob::DownloadLanguageInfo info;
+        auto download = new VoskDownloadLanguageJob();
+        VoskDownloadLanguageJob::DownloadLanguageInfo info;
         info.url = QUrl(fileName);
         const QFileInfo f(fileName);
         const QString baseName = f.baseName();
@@ -32,10 +32,10 @@ int main(int argc, char **argv)
         info.name = info.url.path() + QLatin1Char('/') + baseName;
 
         download->setInfo(std::move(info));
-        QObject::connect(download, &DownloadLanguageJob::extractDone, &app, []() {
+        QObject::connect(download, &VoskDownloadLanguageJob::extractDone, &app, []() {
             qDebug() << "Extraction Done";
         });
-        QObject::connect(download, &DownloadLanguageJob::errorText, &app, [](const QString &str) {
+        QObject::connect(download, &VoskDownloadLanguageJob::errorText, &app, [](const QString &str) {
             qDebug() << "Extraction error: " << str;
         });
         download->start();

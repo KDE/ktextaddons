@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QUrl>
 class QTemporaryFile;
-class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT DownloadLanguageJob : public QObject
+class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskDownloadLanguageJob : public QObject
 {
     Q_OBJECT
 public:
@@ -21,8 +21,8 @@ public:
         QString version;
         Q_REQUIRED_RESULT bool isValid() const;
     };
-    explicit DownloadLanguageJob(QObject *parent = nullptr);
-    ~DownloadLanguageJob() override;
+    explicit VoskDownloadLanguageJob(QObject *parent = nullptr);
+    ~VoskDownloadLanguageJob() override;
     void start();
 
     Q_REQUIRED_RESULT bool canStart() const;
@@ -43,5 +43,5 @@ private:
     QCryptographicHash *mHash = nullptr;
     QTemporaryFile *mDestination = nullptr;
 };
-Q_DECLARE_TYPEINFO(DownloadLanguageJob::DownloadLanguageInfo, Q_MOVABLE_TYPE);
-LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const DownloadLanguageJob::DownloadLanguageInfo &t);
+Q_DECLARE_TYPEINFO(VoskDownloadLanguageJob::DownloadLanguageInfo, Q_MOVABLE_TYPE);
+LIBVOSKSPEECHTOTEXT_EXPORT QDebug operator<<(QDebug d, const VoskDownloadLanguageJob::DownloadLanguageInfo &t);

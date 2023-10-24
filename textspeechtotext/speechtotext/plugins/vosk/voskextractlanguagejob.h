@@ -8,12 +8,12 @@
 #include "libvoskspeechtotext_private_export.h"
 #include <QObject>
 class KArchiveDirectory;
-class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT ExtractLanguageJob : public QObject
+class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskExtractLanguageJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit ExtractLanguageJob(QObject *parent = nullptr);
-    ~ExtractLanguageJob() override;
+    explicit VoskExtractLanguageJob(QObject *parent = nullptr);
+    ~VoskExtractLanguageJob() override;
 
     Q_REQUIRED_RESULT bool canStart() const;
     void start();

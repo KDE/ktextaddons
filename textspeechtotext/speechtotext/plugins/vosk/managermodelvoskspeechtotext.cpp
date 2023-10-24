@@ -96,14 +96,14 @@ void ManagerModelVoskSpeechToText::setSpeechToTextInfos(const QVector<VoskSpeech
     mSpeechToTextInfos = newTranslators;
 }
 
-void ManagerModelVoskSpeechToText::downloadLanguage(const DownloadLanguageJob::DownloadLanguageInfo &info)
+void ManagerModelVoskSpeechToText::downloadLanguage(const VoskDownloadLanguageJob::DownloadLanguageInfo &info)
 {
-    auto downloadJob = new DownloadLanguageJob(this);
+    auto downloadJob = new VoskDownloadLanguageJob(this);
     downloadJob->setInfo(info);
     const QString url = info.url.toString();
-    connect(downloadJob, &DownloadLanguageJob::errorText, this, &ManagerModelVoskSpeechToText::errorText);
-    connect(downloadJob, &DownloadLanguageJob::extractDone, this, &ManagerModelVoskSpeechToText::extractDone);
-    connect(downloadJob, &DownloadLanguageJob::downloadProgress, this, [this, url](qint64 bytesReceived, qint64 bytesTotal) {
+    connect(downloadJob, &VoskDownloadLanguageJob::errorText, this, &ManagerModelVoskSpeechToText::errorText);
+    connect(downloadJob, &VoskDownloadLanguageJob::extractDone, this, &ManagerModelVoskSpeechToText::extractDone);
+    connect(downloadJob, &VoskDownloadLanguageJob::downloadProgress, this, [this, url](qint64 bytesReceived, qint64 bytesTotal) {
         ManagerModelVoskSpeechToText::ProgressInfo info;
         info.bytesReceived = bytesReceived;
         info.bytesTotal = bytesTotal;

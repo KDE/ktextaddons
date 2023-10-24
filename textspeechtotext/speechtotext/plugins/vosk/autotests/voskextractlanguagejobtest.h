@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class ExtractLanguageJobTest : public QObject
+class VoskExtractLanguageJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit ExtractLanguageJobTest(QObject *parent = nullptr);
-    ~ExtractLanguageJobTest() override = default;
+    explicit VoskExtractLanguageJobTest(QObject *parent = nullptr);
+    ~VoskExtractLanguageJobTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };
