@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-14 00:41+0000\n"
-"PO-Revision-Date: 2023-01-14 15:56+0100\n"
+"PO-Revision-Date: 2023-10-15 22:32+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
@@ -112,6 +112,8 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte si trova <a href=\"https://grammalecte.net/#download\">qui</a>. "
+"Scaricalo ed estrailo."
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format

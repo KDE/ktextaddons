@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:41+0000\n"
+"POT-Creation-Date: 2023-10-24 00:41+0000\n"
 "PO-Revision-Date: 2023-10-16 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -137,7 +137,7 @@ msgstr "ზომა"
 msgid "Whisper"
 msgstr "ჩურჩული"
 
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:24
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
 #, kde-format
 msgid "Engine:"
 msgstr "ძრავა:"
@@ -147,6 +147,11 @@ msgstr "ძრავა:"
 msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "თარჯიმნის მორგება"
+
+#: speechtotext/widgets/speechtotextmenu.cpp:17
+#, kde-format
+msgid "Speech to Text..."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

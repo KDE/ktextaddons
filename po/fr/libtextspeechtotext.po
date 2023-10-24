@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:41+0000\n"
+"POT-Creation-Date: 2023-10-24 00:41+0000\n"
 "PO-Revision-Date: 2023-10-14 18:27+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -133,7 +133,7 @@ msgstr "Taille"
 msgid "Whisper"
 msgstr "Whisper"
 
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:24
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
 #, kde-format
 msgid "Engine:"
 msgstr "Moteur :"
@@ -143,6 +143,11 @@ msgstr "Moteur :"
 msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configurer Translator"
+
+#: speechtotext/widgets/speechtotextmenu.cpp:17
+#, kde-format
+msgid "Speech to Text..."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

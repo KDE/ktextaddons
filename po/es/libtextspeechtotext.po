@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:41+0000\n"
+"POT-Creation-Date: 2023-10-24 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 17:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -138,7 +138,7 @@ msgstr "Tamaño"
 msgid "Whisper"
 msgstr "Whisper"
 
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:24
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
 #, kde-format
 msgid "Engine:"
 msgstr "Motor:"
@@ -148,6 +148,11 @@ msgstr "Motor:"
 msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configurar traductor"
+
+#: speechtotext/widgets/speechtotextmenu.cpp:17
+#, kde-format
+msgid "Speech to Text..."
+msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
