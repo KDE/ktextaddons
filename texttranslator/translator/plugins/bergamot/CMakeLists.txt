@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+if (0)
 include(ExternalProject)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 kde_enable_exceptions()
@@ -33,7 +34,9 @@ endif()
 
 add_subdirectory(bergamot-translator EXCLUDE_FROM_ALL)
 
+endif()
 add_library(libbergamot)
+
 
 target_sources(libbergamot PRIVATE
 
@@ -88,7 +91,7 @@ target_link_libraries(libbergamot  Qt::Widgets
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::Archive
-    bergamot-translator
+    slimt::slimt-shared
 )
 
 set_target_properties(libbergamot
