@@ -36,4 +36,9 @@ void VoskSpeechToTextPlugin::loadSettings()
     // TODO
 }
 
+void VoskSpeechToTextPlugin::clear()
+{
+    // TODO
+}
+
 #include "moc_voskspeechtotextplugin.cpp"

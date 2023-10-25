@@ -33,4 +33,9 @@ void WhisperSpeechToTextPlugin::loadSettings()
     // TODO
 }
 
+void WhisperSpeechToTextPlugin::clear()
+{
+    // TODO
+}
+
 #include "moc_whisperspeechtotextplugin.cpp"

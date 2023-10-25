@@ -33,4 +33,9 @@ void GoogleSpeechToTextPlugin::loadSettings()
     // TODO
 }
 
+void GoogleSpeechToTextPlugin::clear()
+{
+    // TODO
+}
+
 #include "moc_googlespeechtotextplugin.cpp"

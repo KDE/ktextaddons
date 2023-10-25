@@ -45,6 +45,8 @@ public:
 
     virtual void loadSettings() = 0;
 
+    virtual void clear() = 0;
+
 Q_SIGNALS:
     void speechToTextDone(const QString &result);
 

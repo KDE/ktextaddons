@@ -22,6 +22,7 @@ public:
     Q_REQUIRED_RESULT QIODevice *audioDevice() const override;
 
     void loadSettings() override;
+    void clear() override;
 
 private:
     VoskSpeechToTextDevice *const mDevice;

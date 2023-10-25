@@ -20,4 +20,5 @@ public:
     Q_REQUIRED_RESULT int sampleRate() const override;
     Q_REQUIRED_RESULT QIODevice *audioDevice() const override;
     void loadSettings() override;
+    void clear() override;
 };
