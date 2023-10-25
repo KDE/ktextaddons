@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:41+0000\n"
-"PO-Revision-Date: 2023-10-12 05:01+0200\n"
+"POT-Creation-Date: 2023-10-25 00:41+0000\n"
+"PO-Revision-Date: 2023-10-24 07:46+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
 msgid "Google"
 msgstr "Google"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
-msgid "Cannot open file for downloading."
-msgstr "Datoteke za prenos ni mogoče odpreti."
+msgid "Impossible to store language info."
+msgstr "Nemogoče shraniti informacije o jeziku."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -38,31 +38,26 @@ msgstr ""
 "Napaka: sistemi račualnika so zaznali sumljiv promet iz vašega "
 "računalniškega omrežja. Poskusite z zahtevkom znova kasneje."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Dostop do url-ja ni mogoč: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr "Datoteke za prenos ni mogoče odpreti."
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Napaka med pisanjem na disk: %1"
-
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
-#, kde-format
-msgid "Impossible to extract language"
-msgstr "Nemogoče izločiti jezik"
-
-#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
-#, kde-format
-msgid "Impossible to store language info."
-msgstr "Nemogoče shraniti informacije o jeziku."
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -105,6 +100,11 @@ msgstr "Napaka: %1"
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "Nemogoče izločiti jezik"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "Konfiguriraj prevajalnik"
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
 msgid "Speech to Text..."
-msgstr ""
+msgstr "Govor v besedilo..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

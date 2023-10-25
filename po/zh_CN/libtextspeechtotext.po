@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:41+0000\n"
+"POT-Creation-Date: 2023-10-25 00:41+0000\n"
 "PO-Revision-Date: 2023-10-21 13:55\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -22,44 +22,39 @@ msgstr ""
 msgid "Google"
 msgstr "Google"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
-msgid "Cannot open file for downloading."
-msgstr "无法打开文件以进行下载。"
+msgid "Impossible to store language info."
+msgstr "无法存储语言信息。"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr "错误：引擎系统从本机的网络连接上检测到可疑的流量，请稍后重试。"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "无法访问 URL：%1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr "无法打开文件以进行下载。"
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "校验和不正确。"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "写入磁盘时发生错误：%1"
-
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
-#, kde-format
-msgid "Impossible to extract language"
-msgstr "无法提取语言"
-
-#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
-#, kde-format
-msgid "Impossible to store language info."
-msgstr "无法存储语言信息。"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -102,6 +97,11 @@ msgstr "错误：%1"
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "无法提取语言"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format

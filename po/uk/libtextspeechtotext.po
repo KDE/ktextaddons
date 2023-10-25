@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:41+0000\n"
-"PO-Revision-Date: 2023-10-12 09:32+0300\n"
+"POT-Creation-Date: 2023-10-25 00:41+0000\n"
+"PO-Revision-Date: 2023-10-24 09:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -23,13 +23,13 @@ msgstr ""
 msgid "Google"
 msgstr "Google"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
-msgid "Cannot open file for downloading."
-msgstr "Не вдалося відкрити файл для отримання."
+msgid "Impossible to store language info."
+msgstr "Не вдалося зберегти дані щодо мови."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -38,31 +38,26 @@ msgstr ""
 "Помилка: системами рушія виявлено підозріливий обмін даними з мережі вашого "
 "комп'ютера. Будь ласка, повторіть спробу запиту пізніше."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Не вдалося отримати доступ до адреси: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr "Не вдалося відкрити файл для отримання."
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Контрольна сума є помилковою."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Помилка під час спроби запису на диск: %1"
-
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
-#, kde-format
-msgid "Impossible to extract language"
-msgstr "Не вдалося видобути дані щодо мови"
-
-#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
-#, kde-format
-msgid "Impossible to store language info."
-msgstr "Не вдалося зберегти дані щодо мови."
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -105,6 +100,11 @@ msgstr "Помилка: %1"
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "Не вдалося видобути дані щодо мови"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "Налаштування перекладача"
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
 msgid "Speech to Text..."
-msgstr ""
+msgstr "Синтез тексту з мовлення…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

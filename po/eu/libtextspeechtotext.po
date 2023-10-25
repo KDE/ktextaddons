@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:41+0000\n"
-"PO-Revision-Date: 2023-10-13 00:51+0200\n"
+"POT-Creation-Date: 2023-10-25 00:41+0000\n"
+"PO-Revision-Date: 2023-10-24 19:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
 msgid "Google"
 msgstr "Google"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
-msgid "Cannot open file for downloading."
-msgstr "Ezin du fitxategia zama-jaisteko ireki."
+msgid "Impossible to store language info."
+msgstr "Ezin da hizkuntzaren informazioa gorde."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -40,31 +40,26 @@ msgstr ""
 "Errorea: Motor sistemek zure ordenagailu saretik trafiko susmagarria "
 "antzeman dute. Mesedez saiatu zure eskaerak beranduago berriz egiten."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ezinezkoa URL atzitzea: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr "Ezin du fitxategia zama-jaisteko ireki."
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Egiaztapen-batura ez da zuzena."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Errorea diskoan idaztean: %1"
-
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
-#, kde-format
-msgid "Impossible to extract language"
-msgstr "Ezinezkoa hizkuntza erauztea"
-
-#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
-#, kde-format
-msgid "Impossible to store language info."
-msgstr "Ezin da hizkuntzaren informazioa gorde."
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -107,6 +102,11 @@ msgstr "Errorea: %1"
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "Ezinezkoa hizkuntza erauztea"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format
@@ -153,7 +153,7 @@ msgstr "Konfiguratu itzultzailea"
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
 msgid "Speech to Text..."
-msgstr ""
+msgstr "Hizketatik testura..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

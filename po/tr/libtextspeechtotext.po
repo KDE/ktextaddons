@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:41+0000\n"
-"PO-Revision-Date: 2023-10-12 17:22+0300\n"
+"POT-Creation-Date: 2023-10-25 00:41+0000\n"
+"PO-Revision-Date: 2023-10-24 12:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,13 +22,13 @@ msgstr ""
 msgid "Google"
 msgstr "Google"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
-msgid "Cannot open file for downloading."
-msgstr "Dosya indirmek için açılamıyor."
+msgid "Impossible to store language info."
+msgstr "Dil bilgisini depolamak olanaksız"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:49
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -37,31 +37,26 @@ msgstr ""
 "Hata: İşletke sistemleri, bilgisayar ağınızdan kuşku uyandırıcı trafik "
 "algıladı. Lütfen, isteğinizi daha sonra yineleyin."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:51
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "URL'ye erişim olanaksız: %1"
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr "Dosya indirmek için açılamıyor."
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Sağlama toplamı doğru değil."
 
-#: speechtotext/plugins/vosk/downloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Diske yazarken hata: %1"
-
-#: speechtotext/plugins/vosk/extractlanguagejob.cpp:56
-#, kde-format
-msgid "Impossible to extract language"
-msgstr "Dili çıkarmak olanaksız"
-
-#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
-#, kde-format
-msgid "Impossible to store language info."
-msgstr "Dil bilgisini depolamak olanaksız"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -104,6 +99,11 @@ msgstr "Hata: %1"
 #, kde-format
 msgid "Vosk"
 msgstr "Vosk"
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "Dili çıkarmak olanaksız"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format
@@ -150,7 +150,7 @@ msgstr "Çevirmeni Yapılandır"
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
 msgid "Speech to Text..."
-msgstr ""
+msgstr "Konuşmadan Metne..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
