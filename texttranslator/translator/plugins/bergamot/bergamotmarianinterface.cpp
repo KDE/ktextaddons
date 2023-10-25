@@ -9,9 +9,7 @@
 #include "bergamotmarianinterface.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
-#include <bergamot-translator/src/translator/parser.h>
-#include <bergamot-translator/src/translator/response.h>
-#include <bergamot-translator/src/translator/service.h>
+#include <Response.hh>
 #include <chrono>
 #include <future>
 #include <memory>

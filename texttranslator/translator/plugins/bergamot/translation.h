@@ -13,12 +13,9 @@
 #include <QVector>
 #include <memory>
 
-namespace marian
-{
-namespace bergamot
+namespace slimt
 {
 class Response;
-}
 }
 
 /**

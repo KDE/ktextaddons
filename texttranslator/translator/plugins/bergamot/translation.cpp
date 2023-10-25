@@ -7,7 +7,7 @@
 */
 
 #include "translation.h"
-#include <bergamot-translator/src/translator/response.h>
+#include <Response.hh>
 
 Translation::Translation()
     : mResponse(nullptr)
