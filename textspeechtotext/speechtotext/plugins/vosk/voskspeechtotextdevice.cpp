@@ -31,6 +31,26 @@ VoskSpeechToTextDevice::~VoskSpeechToTextDevice()
 #endif
 }
 
+bool VoskSpeechToTextDevice::initialize()
+{
+#ifdef VOSK_API
+    mModel = vosk_model_new(QString(modelDir + formattedLang).toUtf8());
+    if (mModel) {
+        mRecognizer = vosk_recognizer_new(mModel, sampleRate());
+    }
+
+    if (!mModel || !mRecognizer) {
+        return false
+    }
+#endif
+    return true;
+}
+
+void VoskSpeechToTextDevice::setSampleRate(int sampleRate)
+{
+    mSampleRate = sampleRate;
+}
+
 void VoskSpeechToTextDevice::clear()
 {
 #ifdef VOSK_API
@@ -85,7 +105,7 @@ void VoskSpeechToTextDevice::parseText(const char *json)
     text = text.mid(text.indexOf(m_wakeWord) + m_wakeWord.size());
     text = text.trimmed();
 
-    Q_EMIT textUpdated(text);
+    Q_EMIT result(text);
     qDebug() << "[debug] Text:" << text;
     Q_EMIT doneListening();
 #endif
@@ -111,8 +131,13 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
     } else if (!m_isAsking)
         return;
 
-    Q_EMIT textUpdated(text);
+    Q_EMIT result(text);
 #endif
+}
+
+int VoskSpeechToTextDevice::sampleRate() const
+{
+    return mSampleRate;
 }
 
 #include "moc_voskspeechtotextdevice.cpp"

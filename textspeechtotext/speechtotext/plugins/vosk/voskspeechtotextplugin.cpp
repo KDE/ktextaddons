@@ -6,6 +6,7 @@
 
 #include "voskspeechtotextplugin.h"
 #include "voskspeechtotextdevice.h"
+#include <QDebug>
 #include <QIODevice>
 
 VoskSpeechToTextPlugin::VoskSpeechToTextPlugin(QObject *parent)
@@ -33,7 +34,12 @@ QIODevice *VoskSpeechToTextPlugin::audioDevice() const
 
 void VoskSpeechToTextPlugin::loadSettings()
 {
-    // TODO
+    // First setSampleRate
+    mDevice->setSampleRate(sampleRate());
+    if (!mDevice->initialize()) {
+        // TODO convert to debug category
+        qWarning() << "Impossible to initialize vosk plugin";
+    }
 }
 
 void VoskSpeechToTextPlugin::clear()

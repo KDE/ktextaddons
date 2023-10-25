@@ -23,16 +23,24 @@ public:
     ~VoskSpeechToTextDevice() override;
 
     void clear();
+    [[nodiscard]] bool initialize();
+
+    void setSampleRate(int sampleRate);
+
+Q_SIGNALS:
+    void result(const QString &str);
 
 protected:
     qint64 readData(char *data, qint64 maxlen) override;
     qint64 writeData(const char *data, qint64 len) override;
 
 private:
+    Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_NO_EXPORT int sampleRate() const;
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseText(const char *json);
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parsePartial(const char *json);
 #ifdef VOSK_API
     VoskModel *mModel = nullptr;
     VoskRecognizer *mRecognizer = nullptr;
 #endif
+    int mSampleRate = 0;
 };
