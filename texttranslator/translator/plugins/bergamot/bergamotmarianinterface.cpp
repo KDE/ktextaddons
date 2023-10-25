@@ -22,7 +22,7 @@ namespace
 
 std::shared_ptr<marian::Options> makeOptions(const std::string &path_to_model_dir, const BergamotEngineUtils::SettingsInfo &settings)
 {
-    std::shared_ptr<marian::Options> options(marian::bergamot::parseOptionsFromFilePath(path_to_model_dir + "/config.intgemm8bitalpha.yml"));
+    std::shared_ptr<marian::Options> options(slimt::parseOptionsFromFilePath(path_to_model_dir + "/config.intgemm8bitalpha.yml"));
     options->set("cpu-threads", settings.numberOfThread, "workspace", settings.memoryByThread, "mini-batch-words", 1000, "alignment", "soft", "quiet", true);
     return options;
 }
@@ -50,7 +50,7 @@ int countWords(std::string input)
 
 struct TranslationInput {
     std::string text;
-    marian::bergamot::ResponseOptions options;
+    slimt::ResponseOptions options;
 };
 
 struct ModelDescription {
@@ -66,7 +66,7 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
     , mPendingModel(nullptr)
 {
     // This worker is the only thread that can interact with Marian. Right now
-    // it basically uses marian::bergamot::Service's non-blocking interface
+    // it basically uses slimt::Service's non-blocking interface
     // in a blocking way to have an easy way to control how what the next
     // task will be, and to not start queueing up already irrelevant
     // translation operations.
@@ -78,8 +78,8 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
     // is pending but both "queues" are empty, we'll treat that as a shutdown
     // request.
     mWorke = std::thread([&]() {
-        std::unique_ptr<marian::bergamot::AsyncService> service;
-        std::shared_ptr<marian::bergamot::TranslationModel> model;
+        std::unique_ptr<slimt::AsyncService> service;
+        std::shared_ptr<slimt::TranslationModel> model;
 
         std::mutex internal_mutex;
 
@@ -115,7 +115,7 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
                 if (modelChange) {
                     // Reconstruct the service because cpu_threads might have changed.
                     // @TODO: don't recreate Service if cpu_threads didn't change?
-                    marian::bergamot::AsyncService::Config serviceConfig;
+                    slimt::AsyncService::Config serviceConfig;
                     serviceConfig.numWorkers = modelChange->settings.numberOfThread;
                     serviceConfig.cacheSize = modelChange->settings.useLocalCache ? kTranslationCacheSize : 0;
 
@@ -124,13 +124,13 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
                     // do not have to wait for those when AsyncService is destroyed.
                     service.reset();
 
-                    service = std::make_unique<marian::bergamot::AsyncService>(serviceConfig);
+                    service = std::make_unique<slimt::AsyncService>(serviceConfig);
 
                     // Initialise a new model. Old model will be released if
                     // service is done with it, which it is since all translation
                     // requests are effectively blocking in this thread.
                     auto modelConfig = makeOptions(modelChange->config_file, modelChange->settings);
-                    model = std::make_shared<marian::bergamot::TranslationModel>(modelConfig, modelChange->settings.numberOfThread);
+                    model = std::make_shared<slimt::TranslationModel>(modelConfig, modelChange->settings.numberOfThread);
                 } else if (input) {
                     if (model) {
                         std::future<int> wordCount = std::async(
@@ -205,7 +205,7 @@ void BergamotMarianInterface::translate(const QString &str)
     }
 
     std::unique_lock<std::mutex> lock(mMutex);
-    std::unique_ptr<TranslationInput> input(new TranslationInput{str.toStdString(), marian::bergamot::ResponseOptions{}});
+    std::unique_ptr<TranslationInput> input(new TranslationInput{str.toStdString(), slimt::ResponseOptions{}});
     input->options.alignment = true;
     input->options.HTML = false;
 

@@ -30,7 +30,7 @@ class LIBBERGAMOT_EXPORT Translation
 {
 public:
     Translation();
-    Translation(marian::bergamot::Response &&response);
+    Translation(slimt::Response &&response);
 
     /**
      * Bool operator to check whether this is an initialised translation or just
@@ -49,7 +49,7 @@ public:
 private:
     // Note: I would have liked unique_ptr, but that does not go well with
     // passing Translation objects through Qt signals/slots.
-    std::shared_ptr<marian::bergamot::Response> mResponse;
+    std::shared_ptr<slimt::Response> mResponse;
 };
 
 Q_DECLARE_METATYPE(Translation)

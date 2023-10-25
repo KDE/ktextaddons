@@ -14,8 +14,8 @@ Translation::Translation()
 {
 }
 
-Translation::Translation(marian::bergamot::Response &&response)
-    : mResponse(std::make_shared<marian::bergamot::Response>(std::move(response)))
+Translation::Translation(slimt::Response &&response)
+    : mResponse(std::make_shared<slimt::Response>(std::move(response)))
 {
 }
 
