@@ -9,6 +9,12 @@
 #include "libvoskspeechtotext_export.h"
 #include <QIODevice>
 
+// #define VOSK_API
+#ifdef VOSK_API
+class VoskModel;
+class VoskRecognizer;
+#endif
+
 class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDevice : public QIODevice
 {
     Q_OBJECT
@@ -19,4 +25,10 @@ public:
 protected:
     qint64 readData(char *data, qint64 maxlen) override;
     qint64 writeData(const char *data, qint64 len) override;
+
+private:
+#ifdef VOSK_API
+    VoskModel *model = nullptr;
+    VoskRecognizer *recognizer = nullptr;
+#endif
 };
