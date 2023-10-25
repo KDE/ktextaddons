@@ -27,6 +27,8 @@ protected:
     qint64 writeData(const char *data, qint64 len) override;
 
 private:
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseText(const char *json);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void parsePartial(const char *json);
 #ifdef VOSK_API
     VoskModel *model = nullptr;
     VoskRecognizer *recognizer = nullptr;
