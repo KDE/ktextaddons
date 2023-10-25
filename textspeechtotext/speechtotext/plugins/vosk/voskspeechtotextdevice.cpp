@@ -26,8 +26,17 @@ VoskSpeechToTextDevice::VoskSpeechToTextDevice(QObject *parent)
 VoskSpeechToTextDevice::~VoskSpeechToTextDevice()
 {
 #ifdef VOSK_API
-    vosk_recognizer_free(recognizer);
-    vosk_model_free(model);
+    vosk_recognizer_free(mRecognizer);
+    vosk_model_free(mModel);
+#endif
+}
+
+void VoskSpeechToTextDevice::clear()
+{
+#ifdef VOSK_API
+    if (mRecognizer) {
+        vosk_recognizer_reset(mRecognizer);
+    }
 #endif
 }
 
@@ -40,10 +49,10 @@ qint64 VoskSpeechToTextDevice::readData(char *data, qint64 maxlen)
 qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
 {
 #ifdef VOSK_API
-    if (vosk_recognizer_accept_waveform(recognizer, data, (int)size)) {
-        parseText(vosk_recognizer_result(recognizer));
+    if (vosk_recognizer_accept_waveform(mRecognizer, data, (int)size)) {
+        parseText(vosk_recognizer_result(mRecognizer));
     } else {
-        parsePartial(vosk_recognizer_partial_result(recognizer));
+        parsePartial(vosk_recognizer_partial_result(mRecognizer));
     }
 #endif
     return len;

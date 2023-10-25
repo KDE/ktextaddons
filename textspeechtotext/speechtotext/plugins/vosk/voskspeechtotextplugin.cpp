@@ -38,7 +38,7 @@ void VoskSpeechToTextPlugin::loadSettings()
 
 void VoskSpeechToTextPlugin::clear()
 {
-    // TODO
+    mDevice->clear();
 }
 
 #include "moc_voskspeechtotextplugin.cpp"
