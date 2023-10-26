@@ -28,8 +28,9 @@ QIODevice *WhisperSpeechToTextPlugin::audioDevice() const
     return nullptr;
 }
 
-void WhisperSpeechToTextPlugin::loadSettings()
+bool WhisperSpeechToTextPlugin::loadSettings()
 {
+    return false;
     // TODO
 }
 

@@ -33,7 +33,7 @@ QIODevice *VoskSpeechToTextPlugin::audioDevice() const
     return mDevice;
 }
 
-void VoskSpeechToTextPlugin::loadSettings()
+bool VoskSpeechToTextPlugin::loadSettings()
 {
     // First setSampleRate
     VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo info;
@@ -41,7 +41,9 @@ void VoskSpeechToTextPlugin::loadSettings()
     if (!mDevice->initialize(std::move(info))) {
         // TODO convert to debug category
         qWarning() << "Impossible to initialize vosk plugin";
+        return false;
     }
+    return true;
 }
 
 void VoskSpeechToTextPlugin::clear()

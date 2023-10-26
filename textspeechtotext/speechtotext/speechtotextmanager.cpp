@@ -7,6 +7,7 @@
 #include "speechtotextclient.h"
 #include "speechtotextengineloader.h"
 #include "speechtotextplugin.h"
+#include "textspeechtotext_debug.h"
 #include <QAudioSource>
 
 using namespace TextSpeechToText;
@@ -28,14 +29,20 @@ SpeechToTextManager::SpeechToTextManager(QObject *parent)
 
 SpeechToTextManager::~SpeechToTextManager() = default;
 
-void SpeechToTextManager::switchEngine(const QString &engineName)
+void SpeechToTextManager::deletePlugin()
 {
-    d->mEngineName = engineName;
     if (d->mSpeechToTextPlugin) {
         disconnect(d->mSpeechToTextPlugin);
         delete d->mSpeechToTextPlugin;
         d->mSpeechToTextPlugin = nullptr;
     }
+    // TODO delete mSpeechToTextClient ?
+}
+
+void SpeechToTextManager::switchEngine(const QString &engineName)
+{
+    d->mEngineName = engineName;
+    deletePlugin();
     d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(d->mEngineName);
     if (!d->mSpeechToTextClient) {
         const QString fallBackEngineName = TextSpeechToText::SpeechToTextEngineLoader::self()->fallbackFirstEngine();
@@ -46,6 +53,10 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
     if (d->mSpeechToTextClient) {
         d->mSpeechToTextPlugin = d->mSpeechToTextClient->createTextToSpeech();
         connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
+        if (!d->mSpeechToTextPlugin->loadSettings()) {
+            qCWarning(TEXTSPEECHTOTEXT_LOG) << "Impossible to initialize text to speech plugin";
+            deletePlugin();
+        }
     }
 }
 

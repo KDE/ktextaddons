@@ -28,9 +28,10 @@ QIODevice *GoogleSpeechToTextPlugin::audioDevice() const
     return {};
 }
 
-void GoogleSpeechToTextPlugin::loadSettings()
+bool GoogleSpeechToTextPlugin::loadSettings()
 {
     // TODO
+    return false;
 }
 
 void GoogleSpeechToTextPlugin::clear()

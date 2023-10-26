@@ -30,6 +30,7 @@ Q_SIGNALS:
     void textToSpeechDone(const QString &result);
 
 private:
+    TEXTSPEECHTOTEXT_NO_EXPORT void deletePlugin();
     TEXTSPEECHTOTEXT_NO_EXPORT void initializeInput();
     class SpeechToTextPluginPrivate;
     std::unique_ptr<SpeechToTextPluginPrivate> const d;

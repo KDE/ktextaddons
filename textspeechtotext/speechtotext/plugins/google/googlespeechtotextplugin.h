@@ -21,6 +21,6 @@ public:
 
     Q_REQUIRED_RESULT QIODevice *audioDevice() const override;
 
-    void loadSettings() override;
+    Q_REQUIRED_RESULT bool loadSettings() override;
     void clear() override;
 };

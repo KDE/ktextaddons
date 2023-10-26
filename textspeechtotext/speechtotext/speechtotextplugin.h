@@ -43,7 +43,7 @@ public:
 
     void setDefaultLanguage(const QString &language);
 
-    virtual void loadSettings() = 0;
+    Q_REQUIRED_RESULT virtual bool loadSettings() = 0;
 
     virtual void clear() = 0;
 
