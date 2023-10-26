@@ -228,7 +228,6 @@ QString BergamotMarianInterface::model() const
 
 void BergamotMarianInterface::setModel(const QString &pathModelDir, const BergamotEngineUtils::SettingsInfo &settings)
 {
-#if 0
     mModelString = pathModelDir;
 
     // Empty model string means just "unload" the model. We don't do that (yet),
@@ -236,6 +235,7 @@ void BergamotMarianInterface::setModel(const QString &pathModelDir, const Bergam
     if (mModelString.isEmpty())
         return;
 
+#if 0
     // move my shared_ptr from stack to heap
     std::unique_lock<std::mutex> lock(mMutex);
     std::unique_ptr<ModelDescription> model(new ModelDescription{mModelString.toStdString(), settings});
