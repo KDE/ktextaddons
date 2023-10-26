@@ -7,7 +7,7 @@
 */
 
 #include "translation.h"
-#include <Response.hh>
+#include <slimt/Response.hh>
 
 Translation::Translation()
     : mResponse(nullptr)

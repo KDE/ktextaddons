@@ -9,11 +9,11 @@
 #include "bergamotmarianinterface.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
-#include <Response.hh>
 #include <chrono>
 #include <future>
 #include <memory>
 #include <mutex>
+#include <slimt/Response.hh>
 #include <thread>
 namespace
 {
