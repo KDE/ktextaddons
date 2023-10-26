@@ -13,6 +13,7 @@ VoskSpeechToTextPlugin::VoskSpeechToTextPlugin(QObject *parent)
     : TextSpeechToText::SpeechToTextPlugin{parent}
     , mDevice(new VoskSpeechToTextDevice(this))
 {
+    connect(mDevice, &VoskSpeechToTextDevice::result, this, &VoskSpeechToTextPlugin::speechToTextDone);
 }
 
 VoskSpeechToTextPlugin::~VoskSpeechToTextPlugin() = default;
