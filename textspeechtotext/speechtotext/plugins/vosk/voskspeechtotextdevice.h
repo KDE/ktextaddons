@@ -19,13 +19,15 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDevice : public QIODevice
 {
     Q_OBJECT
 public:
+    struct LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDeviceInfo {
+        int sampleRate = 0;
+    };
+
     explicit VoskSpeechToTextDevice(QObject *parent = nullptr);
     ~VoskSpeechToTextDevice() override;
 
     void clear();
-    [[nodiscard]] bool initialize();
-
-    void setSampleRate(int sampleRate);
+    [[nodiscard]] bool initialize(VoskSpeechToTextDeviceInfo &&info);
 
 Q_SIGNALS:
     void result(const QString &str);
@@ -35,12 +37,11 @@ protected:
     qint64 writeData(const char *data, qint64 len) override;
 
 private:
-    Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_NO_EXPORT int sampleRate() const;
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseText(const char *json);
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parsePartial(const char *json);
 #ifdef VOSK_API
     VoskModel *mModel = nullptr;
     VoskRecognizer *mRecognizer = nullptr;
 #endif
-    int mSampleRate = 0;
 };
+Q_DECLARE_TYPEINFO(VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo, Q_MOVABLE_TYPE);

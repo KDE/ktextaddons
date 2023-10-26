@@ -36,8 +36,9 @@ QIODevice *VoskSpeechToTextPlugin::audioDevice() const
 void VoskSpeechToTextPlugin::loadSettings()
 {
     // First setSampleRate
-    mDevice->setSampleRate(sampleRate());
-    if (!mDevice->initialize()) {
+    VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo info;
+    info.sampleRate = sampleRate();
+    if (!mDevice->initialize(std::move(info))) {
         // TODO convert to debug category
         qWarning() << "Impossible to initialize vosk plugin";
     }
