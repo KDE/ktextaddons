@@ -90,18 +90,21 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
         Translator translator;
         translator.parse(jsonResponse.object(), false);
         if (translator.isValid()) {
-            // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
-            // qDebug() << " translator " << translator;
-            BergamotEngineUtils::LanguageInstalled lang;
-            const QString shortName = translator.shortName();
-            const QStringList langIdentifier = shortName.split(QLatin1Char('-'));
-            if (langIdentifier.count() >= 2) {
-                lang.from = langIdentifier.at(0);
-                lang.to = langIdentifier.at(1);
-                lang.shortName = shortName;
-                lang.absoluteLanguageModelPath = modelLanguagePath;
-                lang.version = translator.version();
-                languages.append(lang);
+            // With slimt we can use only tiny model
+            if (translator.type() == QLatin1String("tiny")) {
+                // We can't test with isValid() as local info doesn't have url it's logical. // TODO create specific class ???
+                // qDebug() << " translator " << translator;
+                BergamotEngineUtils::LanguageInstalled lang;
+                const QString shortName = translator.shortName();
+                const QStringList langIdentifier = shortName.split(QLatin1Char('-'));
+                if (langIdentifier.count() >= 2) {
+                    lang.from = langIdentifier.at(0);
+                    lang.to = langIdentifier.at(1);
+                    lang.shortName = shortName;
+                    lang.absoluteLanguageModelPath = modelLanguagePath;
+                    lang.version = translator.version();
+                    languages.append(lang);
+                }
             }
         }
     }
