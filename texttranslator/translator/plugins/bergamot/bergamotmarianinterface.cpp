@@ -17,13 +17,14 @@
 #include <thread>
 namespace
 {
-
+#if 0
 std::shared_ptr<marian::Options> makeOptions(const std::string &path_to_model_dir, const BergamotEngineUtils::SettingsInfo &settings)
 {
     std::shared_ptr<marian::Options> options(slimt::parseOptionsFromFilePath(path_to_model_dir + "/config.intgemm8bitalpha.yml"));
     options->set("cpu-threads", settings.numberOfThread, "workspace", settings.memoryByThread, "mini-batch-words", 1000, "alignment", "soft", "quiet", true);
     return options;
 }
+#endif
 
 int countWords(std::string input)
 {
@@ -48,7 +49,9 @@ int countWords(std::string input)
 
 struct TranslationInput {
     std::string text;
+#if 0
     slimt::ResponseOptions options;
+#endif
 };
 
 struct ModelDescription {
@@ -63,6 +66,7 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
     , mPendingInput(nullptr)
     , mPendingModel(nullptr)
 {
+#if 0
     // This worker is the only thread that can interact with Marian. Right now
     // it basically uses slimt::Service's non-blocking interface
     // in a blocking way to have an easy way to control how what the next
@@ -173,10 +177,12 @@ BergamotMarianInterface::BergamotMarianInterface(QObject *parent)
             Q_EMIT pendingChanged(false);
         }
     });
+#endif
 }
 
 BergamotMarianInterface::~BergamotMarianInterface()
 {
+#if 0
     // Remove all pending changes and unlock worker (which will then break.)
     {
         std::unique_lock<std::mutex> lock(mMutex);
@@ -190,10 +196,12 @@ BergamotMarianInterface::~BergamotMarianInterface()
 
     // Wait for worker to join as it depends on resources we still own.
     mWorke.join();
+#endif
 }
 
 void BergamotMarianInterface::translate(const QString &str)
 {
+#if 0
     // If we don't have a model yet (loaded, or queued to be loaded, doesn't matter)
     // then don't bother trying to translate something.
     if (mModelString.isEmpty()) {
@@ -210,6 +218,7 @@ void BergamotMarianInterface::translate(const QString &str)
     std::swap(mPendingInput, input);
 
     mConditionVariable.notify_one();
+#endif
 }
 
 QString BergamotMarianInterface::model() const
@@ -219,6 +228,7 @@ QString BergamotMarianInterface::model() const
 
 void BergamotMarianInterface::setModel(const QString &pathModelDir, const BergamotEngineUtils::SettingsInfo &settings)
 {
+#if 0
     mModelString = pathModelDir;
 
     // Empty model string means just "unload" the model. We don't do that (yet),
@@ -233,6 +243,7 @@ void BergamotMarianInterface::setModel(const QString &pathModelDir, const Bergam
 
     // notify worker if there wasn't already a pending model
     mConditionVariable.notify_one();
+#endif
 }
 
 #include "moc_bergamotmarianinterface.cpp"
