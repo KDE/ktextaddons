@@ -5,6 +5,7 @@
 */
 
 #include "voskspeechtotextplugin.h"
+#include "speechtotext_vosk_debug.h"
 #include "voskspeechtotextdevice.h"
 #include <QDebug>
 #include <QIODevice>
@@ -39,8 +40,7 @@ bool VoskSpeechToTextPlugin::loadSettings()
     VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo info;
     info.sampleRate = sampleRate();
     if (!mDevice->initialize(std::move(info))) {
-        // TODO convert to debug category
-        qWarning() << "Impossible to initialize vosk plugin";
+        qCWarning(SPEECHTOTEXT_VOSK_LOG) << "Impossible to initialize vosk plugin";
         return false;
     }
     return true;
