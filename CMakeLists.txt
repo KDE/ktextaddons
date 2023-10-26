@@ -85,11 +85,13 @@ ecm_set_disabled_deprecation_versions(
     KF 5.240.0
 )
 
-find_package(slimt)
-set_package_properties(slimt PROPERTIES DESCRIPTION
-    "Add local translation based on Bergamot"
-    TYPE OPTIONAL
-)
+if (BERGAMOT_TRANSLATOR_PLUGIN)
+   find_package(slimt)
+   set_package_properties(slimt PROPERTIES DESCRIPTION
+       "Add local translation based on Bergamot"
+       TYPE OPTIONAL
+   )
+endif()
 
 
 add_subdirectory(textaddonswidgets)
