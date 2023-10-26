@@ -64,7 +64,7 @@ qint64 VoskSpeechToTextDevice::readData(char *data, qint64 maxlen)
 qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
 {
 #ifdef VOSK_API
-    if (vosk_recognizer_accept_waveform(mRecognizer, data, (int)size)) {
+    if (vosk_recognizer_accept_waveform(mRecognizer, data, (int)len)) {
         parseText(vosk_recognizer_result(mRecognizer));
     } else {
         parsePartial(vosk_recognizer_partial_result(mRecognizer));
