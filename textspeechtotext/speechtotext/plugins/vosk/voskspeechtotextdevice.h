@@ -20,6 +20,7 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDevice : public QIODevice
     Q_OBJECT
 public:
     struct LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDeviceInfo {
+        // TODO add language and co
         int sampleRate = 0;
     };
 
