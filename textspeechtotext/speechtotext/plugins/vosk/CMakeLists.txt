@@ -81,8 +81,6 @@ target_sources(speechtotext_vosk PRIVATE
     voskspeechtotextplugin.h
     voskspeechtotextplugin.cpp
 
-    voskspeechtotextpluginjob.h
-    voskspeechtotextpluginjob.cpp
 )
 
 target_link_libraries(speechtotext_vosk PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n libvoskspeechtotext)
