@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 00:41+0000\n"
+"POT-Creation-Date: 2023-10-26 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 10:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -395,7 +395,7 @@ msgstr "Talen"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Taalmodel is niet gedefinieerd."

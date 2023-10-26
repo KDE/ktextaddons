@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 00:41+0000\n"
+"POT-Creation-Date: 2023-10-26 00:41+0000\n"
 "PO-Revision-Date: 2023-10-16 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -396,7 +396,7 @@ msgstr "ენები"
 msgid "Settings"
 msgstr "მორგება"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
 #, kde-format
 msgid "Language model is not defined."
 msgstr "ენის მოდელი აღწერილი არაა."

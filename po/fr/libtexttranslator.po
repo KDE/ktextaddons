@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 00:41+0000\n"
-"PO-Revision-Date: 2023-10-14 18:25+0200\n"
+"POT-Creation-Date: 2023-10-26 00:41+0000\n"
+"PO-Revision-Date: 2023-10-24 19:43+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -392,7 +392,7 @@ msgstr "Langues"
 msgid "Settings"
 msgstr "Configuration"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:203
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Le modèle de langue est indéfini."
@@ -411,8 +411,8 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"Erreur : . le système de moteur a détecté un trafic suspect à partir du "
-"réseau de votre ordinateur. Veuillez relancer votre demande plus tard."
+"Erreur : le système de moteur a détecté un trafic suspect à partir du réseau "
+"de votre ordinateur. Veuillez relancer votre demande plus tard."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
