@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:41+0000\n"
+"POT-Creation-Date: 2023-10-27 00:41+0000\n"
 "PO-Revision-Date: 2023-10-21 13:55\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -395,7 +395,7 @@ msgstr "语言"
 msgid "Settings"
 msgstr "设置"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
 #, kde-format
 msgid "Language model is not defined."
 msgstr "语言模型没有定义。"

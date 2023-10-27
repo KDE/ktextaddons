@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:41+0000\n"
+"POT-Creation-Date: 2023-10-27 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 09:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -396,7 +396,7 @@ msgstr "Мови"
 msgid "Settings"
 msgstr "Параметри"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Модель мови не визначено."

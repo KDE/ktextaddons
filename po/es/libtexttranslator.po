@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:41+0000\n"
+"POT-Creation-Date: 2023-10-27 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 17:34+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -397,7 +397,7 @@ msgstr "Idiomas"
 msgid "Settings"
 msgstr "Preferencias"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
 #, kde-format
 msgid "Language model is not defined."
 msgstr "No se ha definido el modelo del idioma."

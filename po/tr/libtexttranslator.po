@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:41+0000\n"
+"POT-Creation-Date: 2023-10-27 00:41+0000\n"
 "PO-Revision-Date: 2023-10-12 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -395,7 +395,7 @@ msgstr "Diller"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:201
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
 #, kde-format
 msgid "Language model is not defined."
 msgstr "Dil modeli tanımlanmamış."
