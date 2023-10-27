@@ -75,12 +75,12 @@ qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
 
 void VoskSpeechToTextDevice::parseText(const char *json)
 {
-#ifdef VOSK_API
-    auto obj = QJsonDocument::fromJson(json);
+    const QJsonDocument obj = QJsonDocument::fromJson(json);
     QString text = obj[QStringLiteral("text")].toString();
 
     if (text.isEmpty())
         return;
+#ifdef VOSK_API
     else if (m_isAsking) {
         Q_EMIT answerReady(text);
         return;
@@ -108,11 +108,11 @@ void VoskSpeechToTextDevice::parseText(const char *json)
 
 void VoskSpeechToTextDevice::parsePartial(const char *json)
 {
-#ifdef VOSK_API
-    auto obj = QJsonDocument::fromJson(json);
+    const QJsonDocument obj = QJsonDocument::fromJson(json);
     QString text = obj[QStringLiteral("partial")].toString();
     if (text.isEmpty())
         return;
+#ifdef VOSK_API
     text.append(u' ');
 
     if (text.contains(m_wakeWord)) {
