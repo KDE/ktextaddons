@@ -48,6 +48,8 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
         const QString fallBackEngineName = TextSpeechToText::SpeechToTextEngineLoader::self()->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
             d->mSpeechToTextClient = TextSpeechToText::SpeechToTextEngineLoader::self()->createSpeechToTextClient(fallBackEngineName);
+        } else {
+            qCWarning(TEXTSPEECHTOTEXT_LOG) << "Fallback engine not found.";
         }
     }
     if (d->mSpeechToTextClient) {
@@ -87,6 +89,7 @@ void SpeechToTextManager::initializeInput()
     d->mAudioSource = new QAudioSource(format, this);
     d->mAudioSource->setBufferSize(8000);
     d->mAudioSource->start(d->mSpeechToTextPlugin->audioDevice());
+    // TODO verify mic status!
 }
 
 #include "moc_speechtotextmanager.cpp"
