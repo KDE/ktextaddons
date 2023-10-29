@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-25 00:41+0000\n"
-"PO-Revision-Date: 2023-10-14 11:07+0200\n"
+"PO-Revision-Date: 2023-10-28 08:09+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -151,7 +151,7 @@ msgstr "Ustawienia tłumacza"
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
 msgid "Speech to Text..."
-msgstr ""
+msgstr "Mowa na tekst..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
