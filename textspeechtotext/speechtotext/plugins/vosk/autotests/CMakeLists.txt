@@ -9,7 +9,7 @@ macro(add_voskspeechtotext_unittest _source)
         NAME_PREFIX "speechtotext-"
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
-        libvoskspeechtotext
+        voskspeechtotext
     )
 endmacro()
 

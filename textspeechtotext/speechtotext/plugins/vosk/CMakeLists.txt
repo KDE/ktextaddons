@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
-add_library(libvoskspeechtotext)
+add_library(voskspeechtotext)
 
-target_sources(libvoskspeechtotext PRIVATE
+target_sources(voskspeechtotext PRIVATE
     voskspeechtotextmodel.h
     voskspeechtotextmodel.cpp
     voskspeechtotextproxymodel.cpp
@@ -42,12 +42,12 @@ target_sources(libvoskspeechtotext PRIVATE
 
 )
 
-generate_export_header(libvoskspeechtotext BASE_NAME libvoskspeechtotext)
+generate_export_header(voskspeechtotext BASE_NAME libvoskspeechtotext)
 
-ecm_qt_declare_logging_category(libvoskspeechtotext HEADER libvoskspeechtotext_debug.h IDENTIFIER  LIBVOSKSPEECHTOTEXT_LOG
-    CATEGORY_NAME org.kde.libvoskspeechtotext DESCRIPTION "lib vosk speech to text" EXPORT KTEXTADDONS)
+ecm_qt_declare_logging_category(voskspeechtotext HEADER libvoskspeechtotext_debug.h IDENTIFIER  LIBVOSKSPEECHTOTEXT_LOG
+    CATEGORY_NAME org.kde.voskspeechtotext DESCRIPTION "lib vosk speech to text" EXPORT KTEXTADDONS)
 
-target_link_libraries(libvoskspeechtotext
+target_link_libraries(voskspeechtotext
     Qt::Widgets
     KF${KF_MAJOR_VERSION}::Archive
     KF${KF_MAJOR_VERSION}::I18n
@@ -57,11 +57,11 @@ target_link_libraries(libvoskspeechtotext
     KF${KF_MAJOR_VERSION}::KIOCore
 )
 
-set_target_properties(libvoskspeechtotext
-    PROPERTIES OUTPUT_NAME libvoskspeechtotext VERSION ${TEXTSPEECHTOTEXT_VERSION} SOVERSION ${TEXTSPEECHTOTEXT_SOVERSION}
+set_target_properties(voskspeechtotext
+    PROPERTIES OUTPUT_NAME voskspeechtotext VERSION ${TEXTSPEECHTOTEXT_VERSION} SOVERSION ${TEXTSPEECHTOTEXT_SOVERSION}
 )
 
-install(TARGETS libvoskspeechtotext ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
+install(TARGETS voskspeechtotext ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 
 add_library(speechtotext_vosk MODULE)
@@ -83,7 +83,7 @@ target_sources(speechtotext_vosk PRIVATE
 
 )
 
-target_link_libraries(speechtotext_vosk PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n libvoskspeechtotext)
+target_link_libraries(speechtotext_vosk PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n voskspeechtotext)
 
 install(TARGETS speechtotext_vosk  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/speechtotext/)
 

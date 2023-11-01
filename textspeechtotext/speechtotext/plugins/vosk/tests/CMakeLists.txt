@@ -2,6 +2,6 @@
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 add_executable(voskdownloadandextractlanguage_gui voskdownloadandextractlanguage_gui.cpp)
 target_link_libraries(voskdownloadandextractlanguage_gui
-  libvoskspeechtotext
+  voskspeechtotext
 )
 
