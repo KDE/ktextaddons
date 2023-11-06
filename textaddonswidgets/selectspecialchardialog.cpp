@@ -71,14 +71,14 @@ void SelectSpecialCharDialogPrivate::readConfig()
 {
     q->create(); // ensure a window is created
     q->windowHandle()->resize(QSize(300, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySelectSpecialCharDialogConfigGroupName));
     KWindowConfig::restoreWindowSize(q->windowHandle(), group);
     q->resize(q->windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SelectSpecialCharDialogPrivate::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectSpecialCharDialogConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySelectSpecialCharDialogConfigGroupName));
     KWindowConfig::saveWindowSize(q->windowHandle(), group);
 }
 
