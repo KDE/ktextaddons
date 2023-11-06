@@ -54,7 +54,7 @@ public:
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
-        KConfigGroup group(&sonnetKConfig, "Spelling");
+        KConfigGroup group(&sonnetKConfig, QLatin1String("Spelling"));
         checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         supportFeatures |= RichTextEditor::Search;
         supportFeatures |= RichTextEditor::SpellChecking;
@@ -638,8 +638,8 @@ void RichTextEditor::setSpellCheckingConfigFileName(const QString &_fileName)
 {
     d->spellCheckingConfigFileName = _fileName;
     KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    if (config->hasGroup("Spelling")) {
-        KConfigGroup group(config, "Spelling");
+    if (config->hasGroup(QLatin1String("Spelling"))) {
+        KConfigGroup group(config, QLatin1String("Spelling"));
         d->checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         d->spellCheckingLanguage = group.readEntry("Language", QString());
     }
@@ -711,7 +711,7 @@ void RichTextEditor::setSpellCheckingLanguage(const QString &_language)
     if (_language != d->spellCheckingLanguage) {
         d->spellCheckingLanguage = _language;
         KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-        KConfigGroup group(config, "Spelling");
+        KConfigGroup group(config, QLatin1String("Spelling"));
         group.writeEntry("Language", d->spellCheckingLanguage);
 
         Q_EMIT languageChanged(_language);
@@ -722,7 +722,7 @@ void RichTextEditor::slotToggleAutoSpellCheck()
 {
     setCheckSpellingEnabled(!checkSpellingEnabled());
     KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    KConfigGroup group(config, "Spelling");
+    KConfigGroup group(config, QLatin1String("Spelling"));
     group.writeEntry("checkerEnabledByDefault", d->checkSpellingEnabled);
 }
 

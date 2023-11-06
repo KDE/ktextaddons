@@ -45,7 +45,7 @@ VoskEngineDialog::~VoskEngineDialog()
 
 void VoskEngineDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
@@ -53,7 +53,7 @@ void VoskEngineDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(500, 300));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myConfigGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }

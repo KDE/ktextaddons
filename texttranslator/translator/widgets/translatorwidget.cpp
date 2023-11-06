@@ -157,14 +157,14 @@ void TranslatorWidget::writeConfig()
         myGroup.writeEntry("ToLanguage", d->toCombobox->itemData(d->toCombobox->currentIndex()).toString());
         myGroup.sync();
     }
-    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), myTranslatorWidgetConfigGroupName);
+    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1String(myTranslatorWidgetConfigGroupName));
     myGroupUi.writeEntry("mainSplitter", d->splitter->sizes());
     myGroupUi.sync();
 }
 
 void TranslatorWidget::readConfig()
 {
-    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), myTranslatorWidgetConfigGroupName);
+    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1String(myTranslatorWidgetConfigGroupName));
     const QList<int> size = {100, 400};
     d->splitter->setSizes(myGroupUi.readEntry("mainSplitter", size));
 
