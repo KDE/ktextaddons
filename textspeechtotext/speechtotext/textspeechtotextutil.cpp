@@ -19,6 +19,5 @@ QString TextSpeechToTextUtil::engineTextToSpeechName()
 
 QString TextSpeechToTextUtil::defaultEngineName()
 {
-    // TODO
     return {};
 }
