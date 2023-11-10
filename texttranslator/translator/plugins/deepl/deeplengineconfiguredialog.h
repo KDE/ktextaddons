@@ -16,9 +16,9 @@ public:
     ~DeeplEngineConfigureDialog() override;
 
     void setUseFreeLicenceKey(bool b);
-    Q_REQUIRED_RESULT bool useFreeLicenceKey() const;
+    [[nodiscard]] bool useFreeLicenceKey() const;
 
-    Q_REQUIRED_RESULT QString apiKey() const;
+    [[nodiscard]] QString apiKey() const;
     void setApiKey(const QString &key);
 
 private:

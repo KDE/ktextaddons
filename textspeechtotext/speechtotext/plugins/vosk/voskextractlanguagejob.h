@@ -15,10 +15,10 @@ public:
     explicit VoskExtractLanguageJob(QObject *parent = nullptr);
     ~VoskExtractLanguageJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
     void start();
 
-    Q_REQUIRED_RESULT QString source() const;
+    [[nodiscard]] QString source() const;
     void setSource(const QString &newSource);
 
 Q_SIGNALS:

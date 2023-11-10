@@ -25,7 +25,7 @@ public:
      * @brief language
      * @return specified language
      */
-    Q_REQUIRED_RESULT QString language() const;
+    [[nodiscard]] QString language() const;
 
     /**
      * @brief setLanguage

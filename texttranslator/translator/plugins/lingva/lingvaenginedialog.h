@@ -15,7 +15,7 @@ public:
     explicit LingvaEngineDialog(QWidget *parent = nullptr);
     ~LingvaEngineDialog() override;
 
-    Q_REQUIRED_RESULT QString serverUrl() const;
+    [[nodiscard]] QString serverUrl() const;
 
     void setServerUrl(const QString &serverUrl);
 

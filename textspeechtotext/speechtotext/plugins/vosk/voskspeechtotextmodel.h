@@ -35,12 +35,12 @@ public:
     explicit VoskSpeechToTextModel(QObject *parent = nullptr);
     ~VoskSpeechToTextModel() override;
 
-    Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     void clear();
 
-    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
+    [[nodiscard]] QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
     void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newSpeechToTextInfo);
 
     void updateInstalledLanguage();
@@ -52,9 +52,9 @@ protected:
     int columnCount(const QModelIndex &parent) const override;
 
 private:
-    Q_REQUIRED_RESULT bool isInstalled(const QString &shortName) const;
-    Q_REQUIRED_RESULT QString versionInstalled(const QString &shortName) const;
-    Q_REQUIRED_RESULT bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
+    [[nodiscard]] bool isInstalled(const QString &shortName) const;
+    [[nodiscard]] QString versionInstalled(const QString &shortName) const;
+    [[nodiscard]] bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
     QVector<VoskSpeechToTextInfo> mSpeechToTextInfos;
     QVector<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
 };

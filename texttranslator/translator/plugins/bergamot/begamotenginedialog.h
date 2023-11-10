@@ -17,7 +17,7 @@ public:
     ~BegamotEngineDialog() override;
 
     void setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info);
-    Q_REQUIRED_RESULT BergamotEngineUtils::SettingsInfo settingsInfo() const;
+    [[nodiscard]] BergamotEngineUtils::SettingsInfo settingsInfo() const;
 
 private:
     LIBBERGAMOT_NO_EXPORT void writeConfig();

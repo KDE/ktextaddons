@@ -17,10 +17,10 @@ public:
     explicit WhisperSpeechToTextClient(QObject *parent = nullptr);
     ~WhisperSpeechToTextClient() override;
 
-    Q_REQUIRED_RESULT QString name() const override;
-    Q_REQUIRED_RESULT QString translatedName() const override;
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] QString translatedName() const override;
 
-    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
+    [[nodiscard]] TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
 
-    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextPlugin *createTextToSpeech() override;
+    [[nodiscard]] TextSpeechToText::SpeechToTextPlugin *createTextToSpeech() override;
 };

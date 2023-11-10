@@ -34,27 +34,27 @@ public:
 
     virtual TranslatorEnginePlugin *createTranslator() = 0;
 
-    Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedFromLanguages() = 0;
-    Q_REQUIRED_RESULT virtual QMap<TranslatorUtil::Language, QString> supportedToLanguages() = 0;
+    [[nodiscard]] virtual QMap<TranslatorUtil::Language, QString> supportedFromLanguages() = 0;
+    [[nodiscard]] virtual QMap<TranslatorUtil::Language, QString> supportedToLanguages() = 0;
     virtual void updateListLanguages();
 
-    Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
+    [[nodiscard]] virtual bool hasConfigurationDialog() const;
 
     virtual bool showConfigureDialog(QWidget *parentWidget);
     virtual void generateToListFromCurrentToLanguage(const QString &languageCode);
 
-    Q_REQUIRED_RESULT virtual bool hasInvertSupport() const;
+    [[nodiscard]] virtual bool hasInvertSupport() const;
 
-    Q_REQUIRED_RESULT virtual TextTranslator::TranslatorEngineClient::EngineType engineType() const = 0;
+    [[nodiscard]] virtual TextTranslator::TranslatorEngineClient::EngineType engineType() const = 0;
 
-    Q_REQUIRED_RESULT static QString convertEngineType(TextTranslator::TranslatorEngineClient::EngineType type);
+    [[nodiscard]] static QString convertEngineType(TextTranslator::TranslatorEngineClient::EngineType type);
 
 Q_SIGNALS:
     void configureChanged();
 
 protected:
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> fillLanguages();
-    Q_REQUIRED_RESULT virtual bool isSupported(TextTranslator::TranslatorUtil::Language lang) const = 0;
+    [[nodiscard]] QMap<TextTranslator::TranslatorUtil::Language, QString> fillLanguages();
+    [[nodiscard]] virtual bool isSupported(TextTranslator::TranslatorUtil::Language lang) const = 0;
     QMap<TranslatorUtil::Language, QString> mFromLanguages;
 };
 }

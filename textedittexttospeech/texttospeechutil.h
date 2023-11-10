@@ -22,9 +22,9 @@ struct TextToSpeechSettings {
     int volumeValue = -1;
 };
 
-Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigFileName();
-Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigGroupName();
-Q_REQUIRED_RESULT TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSettings loadSettings();
+[[nodiscard]] TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigFileName();
+[[nodiscard]] TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QString textToSpeechConfigGroupName();
+[[nodiscard]] TEXTEDITTEXTTOSPEECH_TESTS_EXPORT TextToSpeechSettings loadSettings();
 TEXTEDITTEXTTOSPEECH_TESTS_EXPORT void writeConfig(const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &settings);
 };
 }

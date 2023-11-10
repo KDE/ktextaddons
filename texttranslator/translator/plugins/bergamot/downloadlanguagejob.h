@@ -18,12 +18,12 @@ public:
     ~DownloadLanguageJob() override;
     void start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT QUrl url() const;
+    [[nodiscard]] QUrl url() const;
     void setUrl(const QUrl &newUrl);
 
-    Q_REQUIRED_RESULT QString checkSum() const;
+    [[nodiscard]] QString checkSum() const;
     void setCheckSum(const QString &newCheckSum);
 
 Q_SIGNALS:

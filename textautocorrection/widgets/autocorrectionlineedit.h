@@ -27,7 +27,7 @@ public:
     explicit AutoCorrectionLineEdit(QWidget *parent = nullptr);
     ~AutoCorrectionLineEdit() override;
 
-    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
+    [[nodiscard]] TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
 
     void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
     void setAutocorrectionLanguage(const QString &language);

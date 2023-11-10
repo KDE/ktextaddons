@@ -28,7 +28,7 @@ public:
     ~BergamotMarianInterface() override;
 
     void translate(const QString &str);
-    Q_REQUIRED_RESULT QString model() const;
+    [[nodiscard]] QString model() const;
 
     void setModel(const QString &pathModelDir, const BergamotEngineUtils::SettingsInfo &settings);
 

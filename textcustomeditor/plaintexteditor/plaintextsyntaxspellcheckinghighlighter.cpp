@@ -28,7 +28,7 @@ struct SpellCheckRange {
     {
     }
 
-    Q_REQUIRED_RESULT int end() const
+    [[nodiscard]] int end() const
     {
         return offset + length;
     }

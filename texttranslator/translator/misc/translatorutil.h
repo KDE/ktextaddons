@@ -91,16 +91,16 @@ public:
     void addItemToFromComboBox(QComboBox *combo, const QString &languageCode, const QString &translatedStr);
 
     // Only for test
-    Q_REQUIRED_RESULT static QMap<TranslatorUtil::Language, QString> translatedLanguages();
+    [[nodiscard]] static QMap<TranslatorUtil::Language, QString> translatedLanguages();
 
-    Q_REQUIRED_RESULT static QString loadEngine();
+    [[nodiscard]] static QString loadEngine();
     static void saveEngineSettings(const QString &engineName);
-    Q_REQUIRED_RESULT static QString groupTranslateName();
-    Q_REQUIRED_RESULT static QString engineTranslateName();
-    Q_REQUIRED_RESULT static QString defaultEngineName();
-    Q_REQUIRED_RESULT static QString translatedLanguage(TranslatorUtil::Language lang);
-    Q_REQUIRED_RESULT static QString languageCode(TranslatorUtil::Language lang);
-    Q_REQUIRED_RESULT static QString searchI18nFromLanguage(const QString &langCode);
-    Q_REQUIRED_RESULT static TranslatorUtil::Language stringToLanguage(const QString &str);
+    [[nodiscard]] static QString groupTranslateName();
+    [[nodiscard]] static QString engineTranslateName();
+    [[nodiscard]] static QString defaultEngineName();
+    [[nodiscard]] static QString translatedLanguage(TranslatorUtil::Language lang);
+    [[nodiscard]] static QString languageCode(TranslatorUtil::Language lang);
+    [[nodiscard]] static QString searchI18nFromLanguage(const QString &langCode);
+    [[nodiscard]] static TranslatorUtil::Language stringToLanguage(const QString &str);
 };
 }

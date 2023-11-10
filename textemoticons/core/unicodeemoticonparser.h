@@ -21,7 +21,7 @@ public:
     UnicodeEmoticonParser();
     ~UnicodeEmoticonParser();
 
-    Q_REQUIRED_RESULT QList<UnicodeEmoticon> parse(const QJsonObject &o) const;
-    Q_REQUIRED_RESULT static int changeOrder(const QString &name);
+    [[nodiscard]] QList<UnicodeEmoticon> parse(const QJsonObject &o) const;
+    [[nodiscard]] static int changeOrder(const QString &name);
 };
 }

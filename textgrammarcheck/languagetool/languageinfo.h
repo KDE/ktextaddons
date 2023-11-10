@@ -16,20 +16,20 @@ public:
     LanguageInfo();
     ~LanguageInfo();
 
-    Q_REQUIRED_RESULT QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
 
-    Q_REQUIRED_RESULT QString longCode() const;
+    [[nodiscard]] QString longCode() const;
     void setLongCode(const QString &longCode);
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setCode(const QString &code);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
     void parse(const QJsonObject &obj);
 
-    Q_REQUIRED_RESULT bool operator==(const LanguageInfo &other) const;
+    [[nodiscard]] bool operator==(const LanguageInfo &other) const;
 
 private:
     QString mName;

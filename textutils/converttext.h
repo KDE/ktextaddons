@@ -14,7 +14,7 @@ namespace TextUtils
 {
 namespace ConvertText
 {
-Q_REQUIRED_RESULT TEXTUTILS_EXPORT QString normalize(QStringView str);
+[[nodiscard]] TEXTUTILS_EXPORT QString normalize(QStringView str);
 TEXTUTILS_EXPORT void upperCase(QTextCursor &cursor);
 TEXTUTILS_EXPORT void lowerCase(QTextCursor &cursor);
 TEXTUTILS_EXPORT void sentenceCase(QTextCursor &cursor);

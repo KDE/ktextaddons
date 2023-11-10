@@ -18,37 +18,37 @@ class TEXTGRAMMARCHECK_EXPORT GrammarError
 public:
     GrammarError();
     virtual ~GrammarError();
-    Q_REQUIRED_RESULT QColor color() const;
+    [[nodiscard]] QColor color() const;
     void setColor(const QColor &color);
 
-    Q_REQUIRED_RESULT QString error() const;
+    [[nodiscard]] QString error() const;
     void setError(const QString &error);
 
-    Q_REQUIRED_RESULT int blockId() const;
+    [[nodiscard]] int blockId() const;
     void setBlockId(int blockId);
 
-    Q_REQUIRED_RESULT int start() const;
+    [[nodiscard]] int start() const;
     void setStart(int start);
 
-    Q_REQUIRED_RESULT int length() const;
+    [[nodiscard]] int length() const;
     void setLength(int length);
 
-    Q_REQUIRED_RESULT QStringList suggestions() const;
+    [[nodiscard]] QStringList suggestions() const;
     void setSuggestions(const QStringList &suggestions);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
     virtual void parse(const QJsonObject &obj, int blockindex);
 
-    Q_REQUIRED_RESULT bool operator==(const GrammarError &other) const;
+    [[nodiscard]] bool operator==(const GrammarError &other) const;
 
-    Q_REQUIRED_RESULT QString option() const;
+    [[nodiscard]] QString option() const;
     void setOption(const QString &option);
 
-    Q_REQUIRED_RESULT QString rule() const;
+    [[nodiscard]] QString rule() const;
     void setRule(const QString &rule);
 
-    Q_REQUIRED_RESULT QString url() const;
+    [[nodiscard]] QString url() const;
     void setUrl(const QString &url);
 
 protected:

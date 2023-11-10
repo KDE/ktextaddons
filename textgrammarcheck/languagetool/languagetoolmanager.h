@@ -23,27 +23,27 @@ public:
 
     QNetworkAccessManager *networkAccessManager() const;
 
-    Q_REQUIRED_RESULT QString languageToolPath() const;
+    [[nodiscard]] QString languageToolPath() const;
     void setLanguageToolPath(const QString &path);
 
     void loadSettings();
     void saveSettings();
 
-    Q_REQUIRED_RESULT QString language() const;
+    [[nodiscard]] QString language() const;
     void setLanguage(const QString &language);
 
-    Q_REQUIRED_RESULT bool useLocalInstance() const;
+    [[nodiscard]] bool useLocalInstance() const;
     void setUseLocalInstance(bool useLocalInstance);
 
-    Q_REQUIRED_RESULT QString languageToolCheckPath() const;
+    [[nodiscard]] QString languageToolCheckPath() const;
 
-    Q_REQUIRED_RESULT QString languageToolLanguagesPath() const;
+    [[nodiscard]] QString languageToolLanguagesPath() const;
 
-    Q_REQUIRED_RESULT static QString convertToLanguagePath(const QString &path);
+    [[nodiscard]] static QString convertToLanguagePath(const QString &path);
 
-    Q_REQUIRED_RESULT QColor grammarColorForError(const QString &error);
+    [[nodiscard]] QColor grammarColorForError(const QString &error);
 
-    Q_REQUIRED_RESULT bool allowToGetListOfLanguages() const;
+    [[nodiscard]] bool allowToGetListOfLanguages() const;
 
 private:
     Q_DISABLE_COPY(LanguageToolManager)

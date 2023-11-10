@@ -14,6 +14,6 @@ public:
     explicit CustomEmojiIconManagerGuiTest(QObject *parent = nullptr);
     ~CustomEmojiIconManagerGuiTest() override;
 
-    Q_REQUIRED_RESULT QIcon generateIcon(const QString &customIdentifier) override;
-    Q_REQUIRED_RESULT QString fileName(const QString &customIdentifier) override;
+    [[nodiscard]] QIcon generateIcon(const QString &customIdentifier) override;
+    [[nodiscard]] QString fileName(const QString &customIdentifier) override;
 };

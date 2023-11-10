@@ -29,7 +29,7 @@ public:
 
     void setCompleterStringList(const QStringList &list);
 
-    Q_REQUIRED_RESULT QCompleter *completer() const;
+    [[nodiscard]] QCompleter *completer() const;
 
     void completeText();
 

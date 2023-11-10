@@ -18,7 +18,7 @@ public:
 
     void setFontSize(int newFontSize);
 
-    Q_REQUIRED_RESULT bool isRecentView() const;
+    [[nodiscard]] bool isRecentView() const;
     void setIsRecentView(bool newIsRecentView);
 
 Q_SIGNALS:

@@ -20,16 +20,16 @@ public:
     explicit LanguageToolGetListOfLanguageJob(QObject *parent = nullptr);
     ~LanguageToolGetListOfLanguageJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
     void start();
 
-    Q_REQUIRED_RESULT QString listOfLanguagePath() const;
+    [[nodiscard]] QString listOfLanguagePath() const;
     void setListOfLanguagePath(const QString &listOfLanguagePath);
 
     QNetworkAccessManager *networkAccessManager() const;
     void setNetworkAccessManager(QNetworkAccessManager *networkAccessManager);
 
-    Q_REQUIRED_RESULT QString url() const;
+    [[nodiscard]] QString url() const;
     void setUrl(const QString &url);
 
 Q_SIGNALS:

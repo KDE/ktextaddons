@@ -30,17 +30,17 @@ public:
 
     virtual bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) = 0;
 
-    Q_REQUIRED_RESULT QSet<QString> upperCaseExceptions() const;
-    Q_REQUIRED_RESULT QSet<QString> twoUpperLetterExceptions() const;
-    Q_REQUIRED_RESULT QHash<QString, QString> autocorrectEntries() const;
-    Q_REQUIRED_RESULT QHash<QString, QString> superScriptEntries() const;
+    [[nodiscard]] QSet<QString> upperCaseExceptions() const;
+    [[nodiscard]] QSet<QString> twoUpperLetterExceptions() const;
+    [[nodiscard]] QHash<QString, QString> autocorrectEntries() const;
+    [[nodiscard]] QHash<QString, QString> superScriptEntries() const;
 
-    Q_REQUIRED_RESULT AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
-    Q_REQUIRED_RESULT AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
+    [[nodiscard]] AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
+    [[nodiscard]] AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
 
-    Q_REQUIRED_RESULT int maxFindStringLenght() const;
+    [[nodiscard]] int maxFindStringLenght() const;
 
-    Q_REQUIRED_RESULT int minFindStringLenght() const;
+    [[nodiscard]] int minFindStringLenght() const;
 
 protected:
     int mMaxFindStringLength = 0;

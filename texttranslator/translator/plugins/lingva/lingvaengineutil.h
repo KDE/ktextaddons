@@ -9,7 +9,7 @@
 
 namespace LingvaEngineUtil
 {
-Q_REQUIRED_RESULT QString groupName();
-Q_REQUIRED_RESULT QString serverUrlKey();
-Q_REQUIRED_RESULT QString defaultServerUrl();
+[[nodiscard]] QString groupName();
+[[nodiscard]] QString serverUrlKey();
+[[nodiscard]] QString defaultServerUrl();
 };

@@ -34,24 +34,24 @@ public:
     explicit TranslatorModel(QObject *parent = nullptr);
     ~TranslatorModel() override;
 
-    Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     void clear();
 
     void insertTranslators(const QVector<Translator> &translators);
 
-    Q_REQUIRED_RESULT QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
-    Q_REQUIRED_RESULT int columnCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    [[nodiscard]] int columnCount(const QModelIndex &parent) const override;
 
     void removeLanguage(const QString &identifier);
 
     void updateInstalledLanguage();
 
 private:
-    Q_REQUIRED_RESULT bool isInstalled(const QString &shortName) const;
-    Q_REQUIRED_RESULT int versionInstalled(const QString &shortName) const;
-    Q_REQUIRED_RESULT bool needToUpdateLanguageModel(const Translator &translator) const;
+    [[nodiscard]] bool isInstalled(const QString &shortName) const;
+    [[nodiscard]] int versionInstalled(const QString &shortName) const;
+    [[nodiscard]] bool needToUpdateLanguageModel(const Translator &translator) const;
     QVector<Translator> mTranslators;
     QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };

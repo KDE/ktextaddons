@@ -21,31 +21,31 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticon
 public:
     UnicodeEmoticon();
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &identifier);
 
-    Q_REQUIRED_RESULT QString unicode() const;
-    Q_REQUIRED_RESULT QString unicodeDisplay() const;
+    [[nodiscard]] QString unicode() const;
+    [[nodiscard]] QString unicodeDisplay() const;
     void setUnicode(const QString &unicode);
 
-    Q_REQUIRED_RESULT QString category() const;
+    [[nodiscard]] QString category() const;
     void setCategory(const QString &category);
 
-    Q_REQUIRED_RESULT QStringList aliases() const;
+    [[nodiscard]] QStringList aliases() const;
     void setAliases(const QStringList &aliases);
 
-    Q_REQUIRED_RESULT bool hasEmoji(const QString &identifier) const;
+    [[nodiscard]] bool hasEmoji(const QString &identifier) const;
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT int order() const;
+    [[nodiscard]] int order() const;
     void setOrder(int order);
 
-    Q_REQUIRED_RESULT QString key() const;
+    [[nodiscard]] QString key() const;
     void setKey(const QString &key);
 
 private:
-    Q_REQUIRED_RESULT TEXTEMOTICONSCORE_NO_EXPORT QString escapeUnicodeEmoji(const QString &pString);
+    [[nodiscard]] TEXTEMOTICONSCORE_NO_EXPORT QString escapeUnicodeEmoji(const QString &pString);
     QStringList mAliases;
     QString mIdentifier;
     QString mUnicode;

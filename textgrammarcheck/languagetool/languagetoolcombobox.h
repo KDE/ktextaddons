@@ -19,7 +19,7 @@ public:
     ~LanguageToolComboBox() override;
 
     void setLanguage(const QString &str);
-    Q_REQUIRED_RESULT QString language() const;
+    [[nodiscard]] QString language() const;
 
     void fillComboBox(const QVector<LanguageInfo> &info);
 

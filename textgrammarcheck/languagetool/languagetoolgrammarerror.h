@@ -20,7 +20,7 @@ public:
     void setTesting(bool b);
 
 private:
-    Q_REQUIRED_RESULT static QStringList parseSuggestion(const QJsonObject &obj);
+    [[nodiscard]] static QStringList parseSuggestion(const QJsonObject &obj);
     bool mTesting = false;
 };
 }

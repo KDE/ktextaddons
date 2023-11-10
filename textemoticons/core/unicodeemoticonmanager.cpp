@@ -17,7 +17,7 @@ class TextEmoticonsCore::UnicodeEmoticonManagerPrivate
 {
 public:
     void loadUnicodeEmoji();
-    Q_REQUIRED_RESULT QString i18nUnicodeCategory(const QString &name) const;
+    [[nodiscard]] QString i18nUnicodeCategory(const QString &name) const;
     QList<UnicodeEmoticon> mUnicodeEmojiList;
 };
 

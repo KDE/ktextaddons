@@ -22,16 +22,16 @@ public:
     explicit TextFindWidget(QWidget *parent = nullptr);
     ~TextFindWidget() override;
 
-    Q_REQUIRED_RESULT TextEditFindBarBase::FindFlags searchOptions() const;
+    [[nodiscard]] TextEditFindBarBase::FindFlags searchOptions() const;
 
     QLineEdit *searchLineEdit() const;
 
     void setFoundMatch(bool match);
 
-    Q_REQUIRED_RESULT bool isRegularExpression() const;
-    Q_REQUIRED_RESULT QRegularExpression searchRegularExpression() const;
+    [[nodiscard]] bool isRegularExpression() const;
+    [[nodiscard]] QRegularExpression searchRegularExpression() const;
 
-    Q_REQUIRED_RESULT QString searchText() const;
+    [[nodiscard]] QString searchText() const;
 
 Q_SIGNALS:
     void findNext();

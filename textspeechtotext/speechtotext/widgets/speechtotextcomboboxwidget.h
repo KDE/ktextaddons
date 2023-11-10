@@ -19,7 +19,7 @@ public:
     ~SpeechToTextComboBoxWidget() override;
     void fillEngine();
 
-    Q_REQUIRED_RESULT QString engineName() const;
+    [[nodiscard]] QString engineName() const;
     void setEngineName(const QString &engineName);
 
     void load();

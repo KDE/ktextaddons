@@ -25,7 +25,7 @@ public:
 
     void setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories, bool hasCustomSupport);
 
-    Q_REQUIRED_RESULT bool wasLoaded() const;
+    [[nodiscard]] bool wasLoaded() const;
 
 Q_SIGNALS:
     void categorySelected(const QString &category);

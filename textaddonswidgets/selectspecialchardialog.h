@@ -25,7 +25,7 @@ public:
     ~SelectSpecialCharDialog() override;
 
     void setCurrentChar(QChar c);
-    Q_REQUIRED_RESULT QChar currentChar() const;
+    [[nodiscard]] QChar currentChar() const;
 
     void setOkButtonText(const QString &text);
 

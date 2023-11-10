@@ -20,11 +20,11 @@ public:
     explicit TranslatorMenu(QObject *parent = nullptr);
     ~TranslatorMenu() override;
 
-    Q_REQUIRED_RESULT QMenu *menu() const;
+    [[nodiscard]] QMenu *menu() const;
 
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 
-    Q_REQUIRED_RESULT const QPersistentModelIndex &modelIndex() const;
+    [[nodiscard]] const QPersistentModelIndex &modelIndex() const;
     void setModelIndex(const QPersistentModelIndex &newModelIndex);
 
     void updateMenu();

@@ -34,11 +34,11 @@ public:
 
     virtual SpeechToTextPlugin *createTextToSpeech() = 0;
 
-    Q_REQUIRED_RESULT virtual bool hasConfigurationDialog() const;
+    [[nodiscard]] virtual bool hasConfigurationDialog() const;
 
     virtual bool showConfigureDialog(QWidget *parentWidget);
 
-    Q_REQUIRED_RESULT virtual TextSpeechToText::SpeechToTextClient::EngineType engineType() const = 0;
+    [[nodiscard]] virtual TextSpeechToText::SpeechToTextClient::EngineType engineType() const = 0;
 
 Q_SIGNALS:
     void configureChanged();

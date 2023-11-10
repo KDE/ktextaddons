@@ -25,18 +25,18 @@ public:
 
     virtual void translate() = 0;
 
-    Q_REQUIRED_RESULT QString resultTranslate() const;
+    [[nodiscard]] QString resultTranslate() const;
     void setInputText(const QString &text);
     void setFrom(const QString &language);
     void setTo(const QString &language);
     void setResult(const QString &result);
     void setJsonDebug(const QString &debug);
 
-    Q_REQUIRED_RESULT QString inputText() const;
-    Q_REQUIRED_RESULT QString from() const;
-    Q_REQUIRED_RESULT QString to() const;
-    Q_REQUIRED_RESULT QString result() const;
-    Q_REQUIRED_RESULT QString jsonDebug() const;
+    [[nodiscard]] QString inputText() const;
+    [[nodiscard]] QString from() const;
+    [[nodiscard]] QString to() const;
+    [[nodiscard]] QString result() const;
+    [[nodiscard]] QString jsonDebug() const;
 
     void clear();
 
@@ -48,10 +48,10 @@ Q_SIGNALS:
 protected:
     void appendResult(const QString &result);
     void slotError(QNetworkReply::NetworkError error);
-    Q_REQUIRED_RESULT bool verifyFromAndToLanguage();
-    Q_REQUIRED_RESULT bool hasDebug() const;
+    [[nodiscard]] bool verifyFromAndToLanguage();
+    [[nodiscard]] bool hasDebug() const;
 
-    Q_REQUIRED_RESULT virtual QString languageCode(const QString &langStr);
+    [[nodiscard]] virtual QString languageCode(const QString &langStr);
 
 private:
     std::unique_ptr<TranslatorEnginePluginPrivate> const d;

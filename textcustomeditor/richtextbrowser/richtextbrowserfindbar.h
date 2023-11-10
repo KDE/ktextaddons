@@ -25,10 +25,10 @@ public:
     ~RichTextBrowserFindBar() override;
 
 protected:
-    Q_REQUIRED_RESULT bool viewIsReadOnly() const override;
-    Q_REQUIRED_RESULT bool documentIsEmpty() const override;
-    Q_REQUIRED_RESULT bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) override;
-    Q_REQUIRED_RESULT bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) override;
+    [[nodiscard]] bool viewIsReadOnly() const override;
+    [[nodiscard]] bool documentIsEmpty() const override;
+    [[nodiscard]] bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) override;
+    [[nodiscard]] bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) override;
     void autoSearchMoveCursor() override;
 
 public Q_SLOTS:

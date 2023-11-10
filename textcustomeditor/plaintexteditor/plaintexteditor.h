@@ -44,34 +44,34 @@ public:
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
-    Q_REQUIRED_RESULT bool searchSupport() const;
+    [[nodiscard]] bool searchSupport() const;
 
-    Q_REQUIRED_RESULT bool spellCheckingSupport() const;
+    [[nodiscard]] bool spellCheckingSupport() const;
     void setSpellCheckingSupport(bool check);
 
     virtual void setReadOnly(bool readOnly);
 
     void setTextToSpeechSupport(bool b);
-    Q_REQUIRED_RESULT bool textToSpeechSupport() const;
+    [[nodiscard]] bool textToSpeechSupport() const;
 
     void setWebShortcutSupport(bool b);
-    Q_REQUIRED_RESULT bool webShortcutSupport() const;
+    [[nodiscard]] bool webShortcutSupport() const;
 
     virtual void createHighlighter();
 
     void addIgnoreWords(const QStringList &lst);
-    Q_REQUIRED_RESULT bool activateLanguageMenu() const;
+    [[nodiscard]] bool activateLanguageMenu() const;
     void setActivateLanguageMenu(bool activate);
-    Q_REQUIRED_RESULT Sonnet::Highlighter *highlighter() const;
-    Q_REQUIRED_RESULT bool checkSpellingEnabled() const;
+    [[nodiscard]] Sonnet::Highlighter *highlighter() const;
+    [[nodiscard]] bool checkSpellingEnabled() const;
     void setCheckSpellingEnabled(bool check);
     void setSpellCheckingConfigFileName(const QString &_fileName);
-    Q_REQUIRED_RESULT QString spellCheckingConfigFileName() const;
-    Q_REQUIRED_RESULT const QString &spellCheckingLanguage() const;
+    [[nodiscard]] QString spellCheckingConfigFileName() const;
+    [[nodiscard]] const QString &spellCheckingLanguage() const;
     void setSpellCheckingLanguage(const QString &_language);
 
     void setEmojiSupport(bool b);
-    Q_REQUIRED_RESULT bool emojiSupport() const;
+    [[nodiscard]] bool emojiSupport() const;
 
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);
@@ -82,10 +82,10 @@ public Q_SLOTS:
 protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
     void contextMenuEvent(QContextMenuEvent *event) override;
-    Q_REQUIRED_RESULT bool event(QEvent *ev) override;
+    [[nodiscard]] bool event(QEvent *ev) override;
     void keyPressEvent(QKeyEvent *event) override;
-    Q_REQUIRED_RESULT bool overrideShortcut(QKeyEvent *event);
-    Q_REQUIRED_RESULT bool handleShortcut(QKeyEvent *event);
+    [[nodiscard]] bool overrideShortcut(QKeyEvent *event);
+    [[nodiscard]] bool handleShortcut(QKeyEvent *event);
     void wheelEvent(QWheelEvent *event) override;
 
     virtual Sonnet::SpellCheckDecorator *createSpellCheckDecorator();

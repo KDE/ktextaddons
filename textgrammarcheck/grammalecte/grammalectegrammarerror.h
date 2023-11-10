@@ -18,8 +18,8 @@ public:
     void parse(const QJsonObject &obj, int blockindex) override;
 
 private:
-    Q_REQUIRED_RESULT static QStringList parseSuggestion(const QJsonObject &obj);
-    Q_REQUIRED_RESULT static QColor parseColor(const QJsonObject &obj);
+    [[nodiscard]] static QStringList parseSuggestion(const QJsonObject &obj);
+    [[nodiscard]] static QColor parseColor(const QJsonObject &obj);
 };
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::GrammalecteGrammarError)

@@ -22,7 +22,7 @@ public:
     ImportLibreOfficeAutocorrection();
     ~ImportLibreOfficeAutocorrection() override;
 
-    Q_REQUIRED_RESULT bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
+    [[nodiscard]] bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
 
 private:
     enum Type {
@@ -33,8 +33,8 @@ private:
 
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void importAutoCorrectionFile();
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void closeArchive();
-    Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_NO_EXPORT bool loadDomElement(QDomDocument &doc, QFile *file);
-    Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_NO_EXPORT bool importFile(Type type, const KArchiveDirectory *archiveDirectory);
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool loadDomElement(QDomDocument &doc, QFile *file);
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool importFile(Type type, const KArchiveDirectory *archiveDirectory);
     KZip *mArchive = nullptr;
     QTemporaryDir *mTempDir = nullptr;
 };

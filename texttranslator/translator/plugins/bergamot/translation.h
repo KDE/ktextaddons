@@ -41,7 +41,7 @@ public:
     /**
      * Translation result
      */
-    Q_REQUIRED_RESULT QString translation() const;
+    [[nodiscard]] QString translation() const;
 
 private:
     // Note: I would have liked unique_ptr, but that does not go well with

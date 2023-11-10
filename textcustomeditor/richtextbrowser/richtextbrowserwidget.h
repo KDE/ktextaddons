@@ -28,18 +28,18 @@ public:
 
     void clear();
 
-    Q_REQUIRED_RESULT RichTextBrowser *editor() const;
+    [[nodiscard]] RichTextBrowser *editor() const;
 
     void setHtml(const QString &html);
-    Q_REQUIRED_RESULT QString toHtml() const;
+    [[nodiscard]] QString toHtml() const;
 
     void setPlainText(const QString &text);
-    Q_REQUIRED_RESULT QString toPlainText() const;
+    [[nodiscard]] QString toPlainText() const;
 
     void setAcceptRichText(bool b);
     bool acceptRichText() const;
 
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
 public Q_SLOTS:
     void slotFindNext();
     void slotFind();

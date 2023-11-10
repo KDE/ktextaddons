@@ -17,13 +17,13 @@ public:
     ExportLibreOfficeAutocorrection();
     ~ExportLibreOfficeAutocorrection() override;
 
-    Q_REQUIRED_RESULT bool exportData(const QString &language, const QString &fileName, QString &errorMessage, const QString &writablePath) override;
+    [[nodiscard]] bool exportData(const QString &language, const QString &fileName, QString &errorMessage, const QString &writablePath) override;
 
 private:
-    Q_REQUIRED_RESULT bool exportDocumentList();
-    Q_REQUIRED_RESULT bool exportSentenceExceptList();
-    Q_REQUIRED_RESULT bool exportWordExceptList();
-    Q_REQUIRED_RESULT bool exportManifest();
+    [[nodiscard]] bool exportDocumentList();
+    [[nodiscard]] bool exportSentenceExceptList();
+    [[nodiscard]] bool exportWordExceptList();
+    [[nodiscard]] bool exportManifest();
     KZip *mZip = nullptr;
 };
 }

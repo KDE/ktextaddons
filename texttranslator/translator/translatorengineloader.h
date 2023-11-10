@@ -23,21 +23,21 @@ public:
     explicit TranslatorEngineLoader(QObject *parent = nullptr);
     ~TranslatorEngineLoader() override;
 
-    Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient *createTranslatorClient(const QString &clientName);
+    [[nodiscard]] TextTranslator::TranslatorEngineClient *createTranslatorClient(const QString &clientName);
 
     // engine name, i18n
-    Q_REQUIRED_RESULT QMap<QString, QString> translatorEngineInfos() const;
+    [[nodiscard]] QMap<QString, QString> translatorEngineInfos() const;
 
-    Q_REQUIRED_RESULT QString currentPluginName(const QString &key) const;
+    [[nodiscard]] QString currentPluginName(const QString &key) const;
 
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages(const QString &clientName) const;
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages(const QString &clientName) const;
+    [[nodiscard]] QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages(const QString &clientName) const;
+    [[nodiscard]] QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages(const QString &clientName) const;
 
-    Q_REQUIRED_RESULT bool hasConfigurationDialog(const QString &clientName) const;
+    [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 
-    Q_REQUIRED_RESULT QString fallbackFirstEngine() const;
+    [[nodiscard]] QString fallbackFirstEngine() const;
 
-    Q_REQUIRED_RESULT bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
+    [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
 Q_SIGNALS:
     void loadingTranslatorFailed();

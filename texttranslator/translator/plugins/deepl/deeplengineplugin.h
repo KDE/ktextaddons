@@ -23,7 +23,7 @@ public:
     void slotConfigureChanged();
 
 protected:
-    Q_REQUIRED_RESULT QString languageCode(const QString &langStr) override;
+    [[nodiscard]] QString languageCode(const QString &langStr) override;
 
 private:
     void loadSettings();

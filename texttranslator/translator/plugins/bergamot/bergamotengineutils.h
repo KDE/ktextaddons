@@ -10,12 +10,12 @@
 
 namespace BergamotEngineUtils
 {
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString defaultBergamotRepository();
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString groupName();
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString coreNumberKey();
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString memoryByThreadKey();
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString storageLanguagePath();
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QString useLocalCacheKey();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString defaultBergamotRepository();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString groupName();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString coreNumberKey();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString memoryByThreadKey();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString storageLanguagePath();
+[[nodiscard]] LIBBERGAMOT_EXPORT QString useLocalCacheKey();
 
 struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString from;
@@ -23,10 +23,10 @@ struct LIBBERGAMOT_EXPORT LanguageInstalled {
     QString shortName;
     QString absoluteLanguageModelPath;
     int version = -1;
-    Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
+    [[nodiscard]] bool operator==(const LanguageInstalled &other) const;
 };
 
-Q_REQUIRED_RESULT LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
+[[nodiscard]] LIBBERGAMOT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 struct LIBBERGAMOT_EXPORT SettingsInfo {
     void loadSettingsInfo();
     void saveSettingsInfo();

@@ -24,13 +24,13 @@ public:
 
     void downloadListModels();
 
-    Q_REQUIRED_RESULT QVector<Translator> translators() const;
+    [[nodiscard]] QVector<Translator> translators() const;
     void setTranslators(const QVector<Translator> &newTranslators);
 
     void loadModelList(const QString &fileName);
 
     void downloadLanguage(const QString &url, const QString &checkSum);
-    Q_REQUIRED_RESULT bool needDownloadModelList() const;
+    [[nodiscard]] bool needDownloadModelList() const;
 Q_SIGNALS:
     void errorText(const QString &str);
     void progress(const ManagerModelTranslator::ProgressInfo &info);

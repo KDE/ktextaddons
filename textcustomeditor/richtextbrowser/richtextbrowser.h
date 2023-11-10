@@ -35,16 +35,16 @@ public:
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
-    Q_REQUIRED_RESULT bool searchSupport() const;
+    [[nodiscard]] bool searchSupport() const;
 
-    Q_REQUIRED_RESULT bool textToSpeechSupport() const;
+    [[nodiscard]] bool textToSpeechSupport() const;
     void setTextToSpeechSupport(bool b);
 
     void setWebShortcutSupport(bool b);
-    Q_REQUIRED_RESULT bool webShortcutSupport() const;
+    [[nodiscard]] bool webShortcutSupport() const;
 
     void setDefaultFontSize(int val);
-    Q_REQUIRED_RESULT int zoomFactor() const;
+    [[nodiscard]] int zoomFactor() const;
 
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);

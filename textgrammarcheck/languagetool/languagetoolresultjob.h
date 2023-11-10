@@ -19,21 +19,21 @@ class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolResultJob : public QObject
 public:
     explicit LanguageToolResultJob(QObject *parent = nullptr);
     ~LanguageToolResultJob() override;
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
     void start();
-    Q_REQUIRED_RESULT QStringList arguments() const;
+    [[nodiscard]] QStringList arguments() const;
     void setArguments(const QStringList &arguments);
 
     QNetworkAccessManager *networkAccessManager() const;
     void setNetworkAccessManager(QNetworkAccessManager *networkAccessManager);
 
-    Q_REQUIRED_RESULT QString text() const;
+    [[nodiscard]] QString text() const;
     void setText(const QString &text);
 
-    Q_REQUIRED_RESULT QString url() const;
+    [[nodiscard]] QString url() const;
     void setUrl(const QString &url);
 
-    Q_REQUIRED_RESULT QString language() const;
+    [[nodiscard]] QString language() const;
     void setLanguage(const QString &language);
 
 Q_SIGNALS:
@@ -50,7 +50,7 @@ private:
         LanguageNotDefined,
     };
 
-    Q_REQUIRED_RESULT LanguageToolResultJob::JobError canStartError() const;
+    [[nodiscard]] LanguageToolResultJob::JobError canStartError() const;
     void slotCheckGrammarFinished();
     void addRequestAttribute(QNetworkRequest &request) const;
     void slotFinish(QNetworkReply *reply);

@@ -18,24 +18,24 @@ public:
     AutoCorrectionSettings();
     ~AutoCorrectionSettings();
 
-    Q_REQUIRED_RESULT bool isEnabledAutoCorrection() const;
-    Q_REQUIRED_RESULT bool isUppercaseFirstCharOfSentence() const;
-    Q_REQUIRED_RESULT bool isFixTwoUppercaseChars() const;
-    Q_REQUIRED_RESULT bool isSingleSpaces() const;
-    Q_REQUIRED_RESULT bool isAutoFractions() const;
-    Q_REQUIRED_RESULT bool isCapitalizeWeekDays() const;
-    Q_REQUIRED_RESULT bool isReplaceDoubleQuotes() const;
-    Q_REQUIRED_RESULT bool isReplaceSingleQuotes() const;
-    Q_REQUIRED_RESULT bool isAdvancedAutocorrect() const;
-    Q_REQUIRED_RESULT bool isAutoFormatUrl() const;
-    Q_REQUIRED_RESULT bool isAutoBoldUnderline() const;
-    Q_REQUIRED_RESULT bool isSuperScript() const;
+    [[nodiscard]] bool isEnabledAutoCorrection() const;
+    [[nodiscard]] bool isUppercaseFirstCharOfSentence() const;
+    [[nodiscard]] bool isFixTwoUppercaseChars() const;
+    [[nodiscard]] bool isSingleSpaces() const;
+    [[nodiscard]] bool isAutoFractions() const;
+    [[nodiscard]] bool isCapitalizeWeekDays() const;
+    [[nodiscard]] bool isReplaceDoubleQuotes() const;
+    [[nodiscard]] bool isReplaceSingleQuotes() const;
+    [[nodiscard]] bool isAdvancedAutocorrect() const;
+    [[nodiscard]] bool isAutoFormatUrl() const;
+    [[nodiscard]] bool isAutoBoldUnderline() const;
+    [[nodiscard]] bool isSuperScript() const;
 
-    Q_REQUIRED_RESULT bool isAddNonBreakingSpace() const;
-    Q_REQUIRED_RESULT bool isReplaceDoubleQuotesByFrenchQuotes() const;
+    [[nodiscard]] bool isAddNonBreakingSpace() const;
+    [[nodiscard]] bool isReplaceDoubleQuotesByFrenchQuotes() const;
 
-    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
-    Q_REQUIRED_RESULT TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
+    [[nodiscard]] TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes typographicSingleQuotes() const;
+    [[nodiscard]] TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes typographicDoubleQuotes() const;
     void setTypographicSingleQuotes(TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes singleQuote);
     void setTypographicDoubleQuotes(TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes doubleQuote);
 
@@ -64,45 +64,45 @@ public:
 
     void setUpperCaseExceptions(const QSet<QString> &exceptions);
     void setTwoUpperLetterExceptions(const QSet<QString> &exceptions);
-    Q_REQUIRED_RESULT QSet<QString> upperCaseExceptions() const;
-    Q_REQUIRED_RESULT QSet<QString> twoUpperLetterExceptions() const;
+    [[nodiscard]] QSet<QString> upperCaseExceptions() const;
+    [[nodiscard]] QSet<QString> twoUpperLetterExceptions() const;
 
     void setLanguage(const QString &lang, bool forceGlobal = false);
-    Q_REQUIRED_RESULT QString language() const;
+    [[nodiscard]] QString language() const;
 
-    Q_REQUIRED_RESULT bool isFrenchLanguage() const;
+    [[nodiscard]] bool isFrenchLanguage() const;
     void setAutocorrectEntries(const QHash<QString, QString> &entries);
 
-    Q_REQUIRED_RESULT QHash<QString, QString> autocorrectEntries() const;
-    Q_REQUIRED_RESULT bool addAutoCorrect(const QString &currentWord, const QString &replaceWord);
+    [[nodiscard]] QHash<QString, QString> autocorrectEntries() const;
+    [[nodiscard]] bool addAutoCorrect(const QString &currentWord, const QString &replaceWord);
 
-    Q_REQUIRED_RESULT QChar nonBreakingSpace() const;
+    [[nodiscard]] QChar nonBreakingSpace() const;
     void setNonBreakingSpace(const QChar &newNonBreakingSpace);
 
-    Q_REQUIRED_RESULT QHash<QString, QString> superScriptEntries() const;
+    [[nodiscard]] QHash<QString, QString> superScriptEntries() const;
     void setSuperScriptEntries(const QHash<QString, QString> &newSuperScriptEntries);
 
     void writeAutoCorrectionFile(const QString &filename = QString());
-    Q_REQUIRED_RESULT int maxFindStringLength() const;
+    [[nodiscard]] int maxFindStringLength() const;
 
-    Q_REQUIRED_RESULT int minFindStringLength() const;
+    [[nodiscard]] int minFindStringLength() const;
 
     void loadLocalFileName(const QString &localFileName, const QString &fname);
     void loadGlobalFileName(const QString &fname);
 
-    Q_REQUIRED_RESULT AutoCorrectionUtils::TypographicQuotes doubleFrenchQuotes() const;
+    [[nodiscard]] AutoCorrectionUtils::TypographicQuotes doubleFrenchQuotes() const;
     void setDoubleFrenchQuotes(const AutoCorrectionUtils::TypographicQuotes &newDoubleFrenchQuotes);
 
-    Q_REQUIRED_RESULT QString customWritablePath() const;
+    [[nodiscard]] QString customWritablePath() const;
     void setCustomWritablePath(const QString &path);
 
-    Q_REQUIRED_RESULT QString customSystemPath() const;
+    [[nodiscard]] QString customSystemPath() const;
     void setCustomSystemPath(const QString &path);
 
 private:
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void migrateKMailXmlFile();
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);
-    Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
 
     friend class AutoCorrectionSettingsPrivate;
     std::unique_ptr<AutoCorrectionSettingsPrivate> const d;

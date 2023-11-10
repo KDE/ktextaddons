@@ -11,8 +11,8 @@ namespace TextSpeechToText
 {
 namespace TextSpeechToTextUtil
 {
-Q_REQUIRED_RESULT QString groupTranslateName();
-Q_REQUIRED_RESULT QString engineTextToSpeechName();
-Q_REQUIRED_RESULT QString defaultEngineName();
+[[nodiscard]] QString groupTranslateName();
+[[nodiscard]] QString engineTextToSpeechName();
+[[nodiscard]] QString defaultEngineName();
 };
 }

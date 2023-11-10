@@ -31,12 +31,12 @@ public:
     };
     Q_ENUM(State)
 
-    Q_REQUIRED_RESULT State state() const;
+    [[nodiscard]] State state() const;
     void setState(TextEditTextToSpeech::TextToSpeechWidget::State state);
 
     void setTextToSpeechInterface(TextToSpeechInterface *interface);
 
-    Q_REQUIRED_RESULT bool isReady() const;
+    [[nodiscard]] bool isReady() const;
 
     void showWidget();
 

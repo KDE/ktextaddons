@@ -33,7 +33,7 @@ public:
     explicit TextEditFindBarBase(QWidget *parent = nullptr);
     ~TextEditFindBarBase() override;
 
-    Q_REQUIRED_RESULT QString text() const;
+    [[nodiscard]] QString text() const;
     void setText(const QString &text);
 
     void focusAndSetCursor();
@@ -47,8 +47,8 @@ Q_SIGNALS:
     void hideFindBar();
 
 protected:
-    Q_REQUIRED_RESULT virtual bool viewIsReadOnly() const = 0;
-    Q_REQUIRED_RESULT virtual bool documentIsEmpty() const = 0;
+    [[nodiscard]] virtual bool viewIsReadOnly() const = 0;
+    [[nodiscard]] virtual bool documentIsEmpty() const = 0;
     virtual bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) = 0;
     virtual bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) = 0;
     virtual void autoSearchMoveCursor() = 0;

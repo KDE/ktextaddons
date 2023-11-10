@@ -29,7 +29,7 @@ public:
 
     void addItem(const QString &translatedStr, const QString &languageCode);
 
-    Q_REQUIRED_RESULT QStringList selectedLanguages() const;
+    [[nodiscard]] QStringList selectedLanguages() const;
     void setSelectedLanguages(const QStringList &list);
 
 private:

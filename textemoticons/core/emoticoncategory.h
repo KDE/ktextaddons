@@ -19,19 +19,19 @@ class TEXTEMOTICONSCORE_EXPORT EmoticonCategory
 {
 public:
     EmoticonCategory();
-    Q_REQUIRED_RESULT QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
 
-    Q_REQUIRED_RESULT QString category() const;
+    [[nodiscard]] QString category() const;
     void setCategory(const QString &category);
 
-    Q_REQUIRED_RESULT const QString &i18nName() const;
+    [[nodiscard]] const QString &i18nName() const;
 
     void setI18nName(const QString &newI18nName);
 
-    Q_REQUIRED_RESULT bool operator<(const EmoticonCategory &other) const;
+    [[nodiscard]] bool operator<(const EmoticonCategory &other) const;
 
-    Q_REQUIRED_RESULT int order() const;
+    [[nodiscard]] int order() const;
     void setOrder(int newOrder);
 
 private:

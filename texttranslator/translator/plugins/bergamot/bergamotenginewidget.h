@@ -19,7 +19,7 @@ public:
     ~BergamotEngineWidget() override;
 
     void setSettingsInfo(const BergamotEngineUtils::SettingsInfo &info);
-    Q_REQUIRED_RESULT BergamotEngineUtils::SettingsInfo settingsInfo() const;
+    [[nodiscard]] BergamotEngineUtils::SettingsInfo settingsInfo() const;
 
 private:
     QTabWidget *const mTabWidget;

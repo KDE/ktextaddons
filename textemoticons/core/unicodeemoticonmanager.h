@@ -26,12 +26,12 @@ public:
 
     static UnicodeEmoticonManager *self();
 
-    Q_REQUIRED_RESULT QList<UnicodeEmoticon> unicodeEmojiList() const;
+    [[nodiscard]] QList<UnicodeEmoticon> unicodeEmojiList() const;
 
-    Q_REQUIRED_RESULT QList<UnicodeEmoticon> emojisForCategory(const QString &category) const;
-    Q_REQUIRED_RESULT QList<EmoticonCategory> categories() const;
-    Q_REQUIRED_RESULT UnicodeEmoticon unicodeEmoticonForEmoji(const QString &emojiIdentifier) const;
-    Q_REQUIRED_RESULT int count() const;
+    [[nodiscard]] QList<UnicodeEmoticon> emojisForCategory(const QString &category) const;
+    [[nodiscard]] QList<EmoticonCategory> categories() const;
+    [[nodiscard]] UnicodeEmoticon unicodeEmoticonForEmoji(const QString &emojiIdentifier) const;
+    [[nodiscard]] int count() const;
 
 private:
     std::unique_ptr<UnicodeEmoticonManagerPrivate> const d;

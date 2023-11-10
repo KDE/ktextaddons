@@ -24,13 +24,13 @@ public:
     ~EmojiModelManager() override;
 
     static EmojiModelManager *self();
-    Q_REQUIRED_RESULT TextEmoticonsCore::EmojiModel *emojiModel() const;
+    [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
-    Q_REQUIRED_RESULT const QStringList &recentIdentifier() const;
+    [[nodiscard]] const QStringList &recentIdentifier() const;
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
     void addIdentifier(const QString &identifier);
 
-    Q_REQUIRED_RESULT TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
+    [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
 Q_SIGNALS:

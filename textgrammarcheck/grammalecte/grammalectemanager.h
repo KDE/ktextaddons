@@ -19,12 +19,12 @@ public:
 
     static GrammalecteManager *self();
 
-    Q_REQUIRED_RESULT QString pythonPath() const;
-    Q_REQUIRED_RESULT QString grammalectePath() const;
+    [[nodiscard]] QString pythonPath() const;
+    [[nodiscard]] QString grammalectePath() const;
 
     void setPythonPath(const QString &pythonPath);
     void setGrammalectePath(const QString &grammalectePath);
-    Q_REQUIRED_RESULT QStringList options() const;
+    [[nodiscard]] QStringList options() const;
     void setOptions(const QStringList &saveOptions);
 
     void loadSettings();

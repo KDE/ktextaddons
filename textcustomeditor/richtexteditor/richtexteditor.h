@@ -47,40 +47,40 @@ public:
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
     void setSearchSupport(bool b);
-    Q_REQUIRED_RESULT bool searchSupport() const;
+    [[nodiscard]] bool searchSupport() const;
 
-    Q_REQUIRED_RESULT bool spellCheckingSupport() const;
+    [[nodiscard]] bool spellCheckingSupport() const;
     void setSpellCheckingSupport(bool check);
 
     void setSpellCheckingConfigFileName(const QString &_fileName);
 
-    Q_REQUIRED_RESULT bool checkSpellingEnabled() const;
+    [[nodiscard]] bool checkSpellingEnabled() const;
     void setCheckSpellingEnabled(bool check);
 
     void setSpellCheckingLanguage(const QString &_language);
-    Q_REQUIRED_RESULT const QString &spellCheckingLanguage() const;
+    [[nodiscard]] const QString &spellCheckingLanguage() const;
 
     virtual void setReadOnly(bool readOnly);
     virtual void createHighlighter();
 
-    Q_REQUIRED_RESULT bool textToSpeechSupport() const;
+    [[nodiscard]] bool textToSpeechSupport() const;
     void setTextToSpeechSupport(bool b);
-    Q_REQUIRED_RESULT Sonnet::Highlighter *highlighter() const;
+    [[nodiscard]] Sonnet::Highlighter *highlighter() const;
 
-    Q_REQUIRED_RESULT bool activateLanguageMenu() const;
+    [[nodiscard]] bool activateLanguageMenu() const;
     void setActivateLanguageMenu(bool activate);
 
     void setAllowTabSupport(bool b);
-    Q_REQUIRED_RESULT bool allowTabSupport() const;
+    [[nodiscard]] bool allowTabSupport() const;
 
     void setShowAutoCorrectButton(bool b);
-    Q_REQUIRED_RESULT bool showAutoCorrectButton() const;
+    [[nodiscard]] bool showAutoCorrectButton() const;
 
     void forceSpellChecking();
-    Q_REQUIRED_RESULT QString spellCheckingConfigFileName() const;
+    [[nodiscard]] QString spellCheckingConfigFileName() const;
 
     void setWebShortcutSupport(bool b);
-    Q_REQUIRED_RESULT bool webShortcutSupport() const;
+    [[nodiscard]] bool webShortcutSupport() const;
 
     void addIgnoreWords(const QStringList &lst);
 
@@ -88,9 +88,9 @@ public:
     virtual void forceAutoCorrection(bool selectedText = false);
 
     void setDefaultFontSize(int val);
-    Q_REQUIRED_RESULT int zoomFactor() const;
+    [[nodiscard]] int zoomFactor() const;
     void setEmojiSupport(bool b);
-    Q_REQUIRED_RESULT bool emojiSupport() const;
+    [[nodiscard]] bool emojiSupport() const;
 
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);

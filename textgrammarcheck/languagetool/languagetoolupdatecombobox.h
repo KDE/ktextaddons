@@ -18,14 +18,14 @@ public:
     explicit LanguageToolUpdateComboBox(QObject *parent = nullptr);
     ~LanguageToolUpdateComboBox() override;
 
-    Q_REQUIRED_RESULT LanguageToolComboBox *languageToolCombobox() const;
+    [[nodiscard]] LanguageToolComboBox *languageToolCombobox() const;
     void setLanguageToolCombobox(LanguageToolComboBox *languageToolCombobox);
 
     void checkListOfLanguagesFromSpecificPath(const QString &url);
     void firstRefreshListOfLanguages();
     void refreshListOfLanguages();
 
-    Q_REQUIRED_RESULT QWidget *parentWidget() const;
+    [[nodiscard]] QWidget *parentWidget() const;
     void setParentWidget(QWidget *parentWidget);
 
 private:

@@ -19,15 +19,15 @@ public:
         QString checksum;
         QString name;
         QString version;
-        Q_REQUIRED_RESULT bool isValid() const;
+        [[nodiscard]] bool isValid() const;
     };
     explicit VoskDownloadLanguageJob(QObject *parent = nullptr);
     ~VoskDownloadLanguageJob() override;
     void start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT DownloadLanguageInfo info() const;
+    [[nodiscard]] DownloadLanguageInfo info() const;
     void setInfo(const DownloadLanguageInfo &newInfo);
 
 Q_SIGNALS:

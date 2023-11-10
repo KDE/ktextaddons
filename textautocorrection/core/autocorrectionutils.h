@@ -15,25 +15,25 @@ namespace AutoCorrectionUtils
 struct TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes {
     QChar begin;
     QChar end;
-    Q_REQUIRED_RESULT QString toString() const;
-    Q_REQUIRED_RESULT bool isEmpty() const;
-    Q_REQUIRED_RESULT static TypographicQuotes fromString(const QString &str);
+    [[nodiscard]] QString toString() const;
+    [[nodiscard]] bool isEmpty() const;
+    [[nodiscard]] static TypographicQuotes fromString(const QString &str);
 };
 
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes typographicDefaultSingleQuotes();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes typographicDefaultDoubleQuotes();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes typographicDefaultFrenchQuotes();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QString libreofficeFile(const QString &lang);
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QStringList libreOfficeAutoCorrectionPath();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QStringList searchAutoCorrectLibreOfficeFiles();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QStringList autoCorrectLibreOfficeLanguageToString(const QStringList &langs);
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeWritableLocalAutoCorrectionPath();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QString containsAutoCorrectionFile(const QString &lang,
-                                                                                   const QString &customSystemPath,
-                                                                                   const QString &customWritablePath);
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeSystemPath();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeLocalPath();
-Q_REQUIRED_RESULT TEXTAUTOCORRECTIONCORE_EXPORT QStringList wordsFromSentence(const QString &string);
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes typographicDefaultSingleQuotes();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes typographicDefaultDoubleQuotes();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT TypographicQuotes typographicDefaultFrenchQuotes();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QString libreofficeFile(const QString &lang);
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QStringList libreOfficeAutoCorrectionPath();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QStringList searchAutoCorrectLibreOfficeFiles();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QStringList autoCorrectLibreOfficeLanguageToString(const QStringList &langs);
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeWritableLocalAutoCorrectionPath();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QString containsAutoCorrectionFile(const QString &lang,
+                                                                               const QString &customSystemPath,
+                                                                               const QString &customWritablePath);
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeSystemPath();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QString libreOfficeLocalPath();
+[[nodiscard]] TEXTAUTOCORRECTIONCORE_EXPORT QStringList wordsFromSentence(const QString &string);
 };
 }
 TEXTAUTOCORRECTIONCORE_EXPORT QDebug operator<<(QDebug d, TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes t);

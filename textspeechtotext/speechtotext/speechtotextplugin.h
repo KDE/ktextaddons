@@ -32,18 +32,18 @@ public:
     explicit SpeechToTextPlugin(QObject *parent = nullptr);
     ~SpeechToTextPlugin() override;
 
-    Q_REQUIRED_RESULT QString result() const;
+    [[nodiscard]] QString result() const;
 
     virtual void speechToText() = 0;
 
-    Q_REQUIRED_RESULT virtual int sampleRate() const = 0;
+    [[nodiscard]] virtual int sampleRate() const = 0;
 
-    Q_REQUIRED_RESULT QString defaultLanguage() const;
-    Q_REQUIRED_RESULT virtual QIODevice *audioDevice() const = 0;
+    [[nodiscard]] QString defaultLanguage() const;
+    [[nodiscard]] virtual QIODevice *audioDevice() const = 0;
 
     void setDefaultLanguage(const QString &language);
 
-    Q_REQUIRED_RESULT virtual bool loadSettings() = 0;
+    [[nodiscard]] virtual bool loadSettings() = 0;
 
     virtual void clear() = 0;
 

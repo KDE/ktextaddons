@@ -34,7 +34,7 @@ public:
     }
 
     void setCustomEmojiSupport(bool b);
-    Q_REQUIRED_RESULT bool customEmojiSupport() const;
+    [[nodiscard]] bool customEmojiSupport() const;
 
     QMenu *const emoticonMenu;
     EmoticonTextEditSelector *selector = nullptr;

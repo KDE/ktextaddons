@@ -30,18 +30,18 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT bool canStart();
+    [[nodiscard]] bool canStart();
 
-    Q_REQUIRED_RESULT QString text() const;
+    [[nodiscard]] QString text() const;
     void setText(const QString &text);
 
-    Q_REQUIRED_RESULT QString pythonPath() const;
+    [[nodiscard]] QString pythonPath() const;
     void setPythonPath(const QString &pythonPath);
 
-    Q_REQUIRED_RESULT QString grammarlecteCliPath() const;
+    [[nodiscard]] QString grammarlecteCliPath() const;
     void setGrammarlecteCliPath(const QString &grammarlecteCliPath);
 
-    Q_REQUIRED_RESULT QStringList arguments() const;
+    [[nodiscard]] QStringList arguments() const;
     void setArguments(const QStringList &arguments);
 
 Q_SIGNALS:

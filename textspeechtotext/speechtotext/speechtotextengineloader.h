@@ -26,15 +26,15 @@ public:
     explicit SpeechToTextEngineLoader(QObject *parent = nullptr);
     ~SpeechToTextEngineLoader() override;
 
-    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient *createSpeechToTextClient(const QString &clientName);
+    [[nodiscard]] TextSpeechToText::SpeechToTextClient *createSpeechToTextClient(const QString &clientName);
 
-    Q_REQUIRED_RESULT bool hasConfigurationDialog(const QString &clientName) const;
+    [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 
-    Q_REQUIRED_RESULT bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
+    [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
-    Q_REQUIRED_RESULT QMap<QString, QString> speechToTextEngineInfos() const;
+    [[nodiscard]] QMap<QString, QString> speechToTextEngineInfos() const;
 
-    Q_REQUIRED_RESULT QString fallbackFirstEngine() const;
+    [[nodiscard]] QString fallbackFirstEngine() const;
 
 Q_SIGNALS:
     void loadingSpeechToTextFailed();

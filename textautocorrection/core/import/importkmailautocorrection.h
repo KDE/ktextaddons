@@ -15,6 +15,6 @@ class TEXTAUTOCORRECTIONCORE_EXPORT ImportKMailAutocorrection : public ImportAbs
 public:
     ImportKMailAutocorrection();
     ~ImportKMailAutocorrection() override;
-    Q_REQUIRED_RESULT bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
+    [[nodiscard]] bool import(const QString &fileName, QString &errorMessage, ImportAbstractAutocorrection::LoadAttribute loadAttribute = All) override;
 };
 }

@@ -42,7 +42,7 @@ public:
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
 
-    Q_REQUIRED_RESULT int slideHeight() const;
+    [[nodiscard]] int slideHeight() const;
 
     Q_INVOKABLE void setSlideHeight(int height);
 

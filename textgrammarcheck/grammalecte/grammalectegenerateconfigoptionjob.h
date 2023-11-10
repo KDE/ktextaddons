@@ -26,12 +26,12 @@ public:
     ~GrammalecteGenerateConfigOptionJob() override;
 
     void start();
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT QString pythonPath() const;
+    [[nodiscard]] QString pythonPath() const;
     void setPythonPath(const QString &pythonPath);
 
-    Q_REQUIRED_RESULT QString grammarlecteCliPath() const;
+    [[nodiscard]] QString grammarlecteCliPath() const;
     void setGrammarlecteCliPath(const QString &grammarlecteCliPath);
 
 Q_SIGNALS:

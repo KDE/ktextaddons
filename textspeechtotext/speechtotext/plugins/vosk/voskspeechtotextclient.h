@@ -17,13 +17,13 @@ public:
     explicit VoskSpeechToTextClient(QObject *parent = nullptr);
     ~VoskSpeechToTextClient() override;
 
-    Q_REQUIRED_RESULT QString name() const override;
-    Q_REQUIRED_RESULT QString translatedName() const override;
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] QString translatedName() const override;
 
-    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
+    [[nodiscard]] TextSpeechToText::SpeechToTextClient::EngineType engineType() const override;
 
-    Q_REQUIRED_RESULT TextSpeechToText::SpeechToTextPlugin *createTextToSpeech() override;
+    [[nodiscard]] TextSpeechToText::SpeechToTextPlugin *createTextToSpeech() override;
 
-    Q_REQUIRED_RESULT bool hasConfigurationDialog() const override;
-    Q_REQUIRED_RESULT bool showConfigureDialog(QWidget *parentWidget) override;
+    [[nodiscard]] bool hasConfigurationDialog() const override;
+    [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
 };

@@ -25,14 +25,14 @@ namespace FindUtils
  *
  * @return number of replacements done
  */
-Q_REQUIRED_RESULT TEXTCUSTOMEDITOR_TESTS_EXPORT int
+[[nodiscard]] TEXTCUSTOMEDITOR_TESTS_EXPORT int
 replaceAll(QPlainTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
-Q_REQUIRED_RESULT TEXTCUSTOMEDITOR_TESTS_EXPORT int
+[[nodiscard]] TEXTCUSTOMEDITOR_TESTS_EXPORT int
 replaceAll(QTextEdit *view, const QString &str, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
-Q_REQUIRED_RESULT TEXTCUSTOMEDITOR_TESTS_EXPORT int
+[[nodiscard]] TEXTCUSTOMEDITOR_TESTS_EXPORT int
 replaceAll(QTextDocument *document, const QRegularExpression &regExp, const QString &replaceWidget, TextEditFindBarBase::FindFlags searchOptions);
-Q_REQUIRED_RESULT bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
-Q_REQUIRED_RESULT bool find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
-Q_REQUIRED_RESULT QTextDocument::FindFlags convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags);
+[[nodiscard]] bool find(QPlainTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
+[[nodiscard]] bool find(QTextEdit *view, const QString &searchText, QTextDocument::FindFlags searchOptions);
+[[nodiscard]] QTextDocument::FindFlags convertTextEditFindFlags(TextEditFindBarBase::FindFlags textEditFlags);
 }
 } // namespace TextCustomEditor

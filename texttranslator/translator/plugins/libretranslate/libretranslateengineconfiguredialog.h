@@ -15,13 +15,13 @@ public:
     explicit LibreTranslateEngineConfigureDialog(QWidget *parent = nullptr);
     ~LibreTranslateEngineConfigureDialog() override;
 
-    Q_REQUIRED_RESULT QString serverUrl() const;
+    [[nodiscard]] QString serverUrl() const;
     void setServerUrl(const QString &serverUrl);
 
-    Q_REQUIRED_RESULT QString apiKey() const;
+    [[nodiscard]] QString apiKey() const;
     void setApiKey(const QString &key);
 
-    Q_REQUIRED_RESULT bool serverRequiredApiKey() const;
+    [[nodiscard]] bool serverRequiredApiKey() const;
     void setServerRequiredApiKey(bool state);
 
 private:

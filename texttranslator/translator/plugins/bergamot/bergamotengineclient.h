@@ -19,26 +19,26 @@ public:
     explicit BergamotEngineClient(QObject *parent = nullptr);
     ~BergamotEngineClient() override;
 
-    Q_REQUIRED_RESULT QString name() const override;
-    Q_REQUIRED_RESULT QString translatedName() const override;
-    Q_REQUIRED_RESULT TextTranslator::TranslatorEnginePlugin *createTranslator() override;
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages() override;
-    Q_REQUIRED_RESULT QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages() override;
+    [[nodiscard]] QString name() const override;
+    [[nodiscard]] QString translatedName() const override;
+    [[nodiscard]] TextTranslator::TranslatorEnginePlugin *createTranslator() override;
+    [[nodiscard]] QMap<TextTranslator::TranslatorUtil::Language, QString> supportedFromLanguages() override;
+    [[nodiscard]] QMap<TextTranslator::TranslatorUtil::Language, QString> supportedToLanguages() override;
 
-    Q_REQUIRED_RESULT bool hasConfigurationDialog() const override;
+    [[nodiscard]] bool hasConfigurationDialog() const override;
 
-    Q_REQUIRED_RESULT bool showConfigureDialog(QWidget *parentWidget) override;
+    [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
 
-    Q_REQUIRED_RESULT bool hasInvertSupport() const override;
+    [[nodiscard]] bool hasInvertSupport() const override;
 
     void generateToListFromCurrentToLanguage(const QString &languageCode) override;
 
-    Q_REQUIRED_RESULT TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
+    [[nodiscard]] TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
 
     void updateListLanguages() override;
 
 protected:
-    Q_REQUIRED_RESULT bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
+    [[nodiscard]] bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
 
 private:
     void updateInstalledLanguage();

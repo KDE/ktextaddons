@@ -17,8 +17,8 @@ public:
 
     void speechToText() override;
 
-    Q_REQUIRED_RESULT int sampleRate() const override;
-    Q_REQUIRED_RESULT QIODevice *audioDevice() const override;
-    Q_REQUIRED_RESULT bool loadSettings() override;
+    [[nodiscard]] int sampleRate() const override;
+    [[nodiscard]] QIODevice *audioDevice() const override;
+    [[nodiscard]] bool loadSettings() override;
     void clear() override;
 };

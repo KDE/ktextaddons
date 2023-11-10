@@ -25,13 +25,13 @@ public:
 
     void downloadListModels();
 
-    Q_REQUIRED_RESULT QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
+    [[nodiscard]] QVector<VoskSpeechToTextInfo> speechToTextInfos() const;
     void setSpeechToTextInfos(const QVector<VoskSpeechToTextInfo> &newTranslators);
 
     void loadModelList(const QString &fileName);
 
     void downloadLanguage(const VoskDownloadLanguageJob::DownloadLanguageInfo &info);
-    Q_REQUIRED_RESULT bool needDownloadModelList() const;
+    [[nodiscard]] bool needDownloadModelList() const;
 Q_SIGNALS:
     void errorText(const QString &str);
     void progress(const ManagerModelVoskSpeechToText::ProgressInfo &info);

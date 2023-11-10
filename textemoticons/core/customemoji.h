@@ -21,12 +21,12 @@ class TEXTEMOTICONSCORE_EXPORT CustomEmoji
 public:
     CustomEmoji();
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &newIdentifier);
 
-    Q_REQUIRED_RESULT QString category() const;
+    [[nodiscard]] QString category() const;
 
-    Q_REQUIRED_RESULT bool isAnimatedEmoji() const;
+    [[nodiscard]] bool isAnimatedEmoji() const;
     void setIsAnimatedEmoji(bool newIsAnimatedEmoji);
 
 private:

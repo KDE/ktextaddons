@@ -17,15 +17,15 @@ public:
     struct LIBVOSKSPEECHTOTEXT_TESTS_EXPORT LanguageInfo {
         VoskEngineUtils::LanguageInstalled info;
         QString pathToStore;
-        Q_REQUIRED_RESULT bool isValid() const;
+        [[nodiscard]] bool isValid() const;
     };
     explicit GenerateInstalledLanguageInfoJob(QObject *parent = nullptr);
     ~GenerateInstalledLanguageInfoJob() override;
 
     void start();
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT GenerateInstalledLanguageInfoJob::LanguageInfo info() const;
+    [[nodiscard]] GenerateInstalledLanguageInfoJob::LanguageInfo info() const;
     void setInfo(const GenerateInstalledLanguageInfoJob::LanguageInfo &newInfo);
 
 Q_SIGNALS:

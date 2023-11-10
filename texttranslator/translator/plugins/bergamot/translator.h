@@ -15,41 +15,41 @@ public:
 
     void parse(const QJsonObject &obj, bool remote = true);
 
-    Q_REQUIRED_RESULT QString shortName() const;
+    [[nodiscard]] QString shortName() const;
     void setShortName(const QString &newShortName);
 
-    Q_REQUIRED_RESULT QString modelName() const;
+    [[nodiscard]] QString modelName() const;
     void setModelName(const QString &newModelName);
 
-    Q_REQUIRED_RESULT QString source() const;
+    [[nodiscard]] QString source() const;
     void setSource(const QString &newSource);
 
-    Q_REQUIRED_RESULT QString checkSum() const;
+    [[nodiscard]] QString checkSum() const;
     void setCheckSum(const QString &newCheckSum);
 
-    Q_REQUIRED_RESULT QString target() const;
+    [[nodiscard]] QString target() const;
     void setTarget(const QString &newTarget);
 
-    Q_REQUIRED_RESULT int version() const;
+    [[nodiscard]] int version() const;
     void setVersion(int newVersion);
 
-    Q_REQUIRED_RESULT int api() const;
+    [[nodiscard]] int api() const;
     void setApi(int newApi);
 
-    Q_REQUIRED_RESULT QString url() const;
+    [[nodiscard]] QString url() const;
     void setUrl(const QString &newUrl);
 
-    Q_REQUIRED_RESULT QString repository() const;
+    [[nodiscard]] QString repository() const;
     void setRepository(const QString &newRepository);
 
-    Q_REQUIRED_RESULT QString type() const;
+    [[nodiscard]] QString type() const;
     void setType(const QString &newType);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT bool operator==(const Translator &other) const;
+    [[nodiscard]] bool operator==(const Translator &other) const;
 
-    Q_REQUIRED_RESULT bool remote() const;
+    [[nodiscard]] bool remote() const;
     void setRemote(bool newRemote);
 
 private:

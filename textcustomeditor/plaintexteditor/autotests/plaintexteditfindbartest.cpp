@@ -32,12 +32,12 @@ public:
     {
     }
     ~PlainTextEditFindBarExample() override = default;
-    Q_REQUIRED_RESULT bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) override
+    [[nodiscard]] bool searchInDocument(const QString &text, TextEditFindBarBase::FindFlags searchOptions) override
     {
         return TextCustomEditor::PlainTextEditFindBar::searchInDocument(text, searchOptions);
     }
 
-    Q_REQUIRED_RESULT bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) override
+    [[nodiscard]] bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) override
     {
         return TextCustomEditor::PlainTextEditFindBar::searchInDocument(regExp, searchOptions);
     }

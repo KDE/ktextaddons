@@ -11,25 +11,25 @@
 
 namespace VoskEngineUtils
 {
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultVoskRepository();
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString storageLanguagePath();
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString defaultVoskRepository();
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString storageLanguagePath();
 
 struct LIBVOSKSPEECHTOTEXT_EXPORT LanguageInstalled {
     QString name;
     QString absoluteLanguageModelPath;
     QString url;
     QString versionStr;
-    Q_REQUIRED_RESULT bool operator==(const LanguageInstalled &other) const;
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool operator==(const LanguageInstalled &other) const;
+    [[nodiscard]] bool isValid() const;
 };
 
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT VoskEngineUtils::LanguageInstalled loadInstalledLanguageInfo(const QString &modelInfoPath);
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT VoskEngineUtils::LanguageInstalled loadInstalledLanguageInfo(const QString &modelInfoPath);
 
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT bool createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed);
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT bool createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed);
 
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QVector<LanguageInstalled> languageLocallyStored(const QString &path = {});
 
-Q_REQUIRED_RESULT LIBVOSKSPEECHTOTEXT_EXPORT QString defaultLanguage();
+[[nodiscard]] LIBVOSKSPEECHTOTEXT_EXPORT QString defaultLanguage();
 
 LIBVOSKSPEECHTOTEXT_EXPORT void saveSettings();
 LIBVOSKSPEECHTOTEXT_EXPORT void loadSettings();

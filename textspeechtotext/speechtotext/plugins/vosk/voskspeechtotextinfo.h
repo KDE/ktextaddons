@@ -15,34 +15,34 @@ public:
     VoskSpeechToTextInfo();
     ~VoskSpeechToTextInfo();
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &newLang);
 
-    Q_REQUIRED_RESULT QString langText() const;
+    [[nodiscard]] QString langText() const;
     void setLangText(const QString &newLangText);
 
-    Q_REQUIRED_RESULT QString md5() const;
+    [[nodiscard]] QString md5() const;
     void setMd5(const QString &newMd5);
 
-    Q_REQUIRED_RESULT QString version() const;
+    [[nodiscard]] QString version() const;
     void setVersion(const QString &newVersion);
 
-    Q_REQUIRED_RESULT QString url() const;
+    [[nodiscard]] QString url() const;
     void setUrl(const QString &newUrl);
 
-    Q_REQUIRED_RESULT quint64 size() const;
+    [[nodiscard]] quint64 size() const;
     void setSize(quint64 newSize);
 
-    Q_REQUIRED_RESULT bool obsolete() const;
+    [[nodiscard]] bool obsolete() const;
     void setObsolete(bool newObsolete);
 
-    Q_REQUIRED_RESULT bool operator==(const VoskSpeechToTextInfo &other) const;
+    [[nodiscard]] bool operator==(const VoskSpeechToTextInfo &other) const;
 
     void parse(const QJsonObject &obj);
 
-    Q_REQUIRED_RESULT QString type() const;
+    [[nodiscard]] QString type() const;
     void setType(const QString &newType);
 
     QString name() const;

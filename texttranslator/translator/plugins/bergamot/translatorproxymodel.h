@@ -15,11 +15,11 @@ public:
     explicit TranslatorProxyModel(QObject *parent = nullptr);
     ~TranslatorProxyModel() override;
 
-    Q_REQUIRED_RESULT QString searchString() const;
+    [[nodiscard]] QString searchString() const;
     void setSearchString(const QString &newSearchString);
 
 protected:
-    Q_REQUIRED_RESULT bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+    [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:
     QString mSearchString;

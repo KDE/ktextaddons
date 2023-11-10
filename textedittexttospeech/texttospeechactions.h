@@ -24,11 +24,11 @@ public:
     explicit TextToSpeechActions(QObject *parent = nullptr);
     ~TextToSpeechActions() override;
 
-    Q_REQUIRED_RESULT QAction *stopAction() const;
+    [[nodiscard]] QAction *stopAction() const;
 
-    Q_REQUIRED_RESULT QAction *playPauseAction() const;
+    [[nodiscard]] QAction *playPauseAction() const;
 
-    Q_REQUIRED_RESULT TextToSpeechWidget::State state() const;
+    [[nodiscard]] TextToSpeechWidget::State state() const;
 
 public Q_SLOTS:
     void setState(TextToSpeechWidget::State);
