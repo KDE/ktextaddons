@@ -1,0 +1,191 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2023 Vit Pelcak <vit@pelcak.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-09-23 02:24+0000\n"
+"PO-Revision-Date: 2023-11-06 10:07+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.2\n"
+
+#: plaintexteditor/plaintexteditfindbar.cpp:120
+#: richtexteditor/richtexteditfindbar.cpp:120
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "Provedena %1 náhrada"
+msgstr[1] "Provedeny %1 náhrady"
+msgstr[2] "Provedeno %1 náhrad"
+
+#: plaintexteditor/plaintexteditor.cpp:161
+#: richtexteditor/richtexteditor.cpp:219
+#, kde-format
+msgid "Check Spelling..."
+msgstr "Zkontrolovat pravopis..."
+
+#: plaintexteditor/plaintexteditor.cpp:166
+#: richtexteditor/richtexteditor.cpp:226
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "Automatická kontrola pravopisu"
+
+#: plaintexteditor/plaintexteditor.cpp:172
+#: richtexteditor/richtexteditor.cpp:232
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "Jazyk kontroly pravopisu"
+
+#: plaintexteditor/plaintexteditor.cpp:200
+#: richtextbrowser/richtextbrowser.cpp:158
+#: richtexteditor/richtexteditor.cpp:265
+#, kde-format
+msgid "Speak Text"
+msgstr "Přečíst text"
+
+#: plaintexteditor/plaintexteditor.cpp:369
+#: richtexteditor/richtexteditor.cpp:473
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "Nic ke kontrole pravopisu."
+
+#: plaintexteditor/plaintexteditor.cpp:374
+#: richtexteditor/richtexteditor.cpp:491
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr ""
+
+#: richtexteditor/richtexteditor.cpp:258
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "Povolit tabulátory"
+
+#: richtexteditor/richtexteditor.cpp:483
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr ""
+
+#: richtexteditor/richtexteditor.cpp:485
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "Odeslat"
+
+#: richtexteditor/richtexteditor.cpp:507
+#, kde-format
+msgid "Skip"
+msgstr "Přeskočit"
+
+#: widgets/texteditfindbarbase.cpp:34 widgets/texteditfindbarbase.cpp:37
+#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "Zavřít"
+
+#: widgets/texteditfindbarbase.cpp:140
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"Dosaženo konce zprávy.\n"
+"Fráze '%1' nenalezena."
+
+#: widgets/textfindreplacewidget.cpp:25
+#, kde-format
+msgid "Replace"
+msgstr "Nahradit"
+
+#: widgets/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace All"
+msgstr "Nahradit vše"
+
+#: widgets/textfindreplacewidget.cpp:29
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "Nahradit:"
+
+#: widgets/textfindreplacewidget.cpp:65
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Předchozí"
+
+#: widgets/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Následující"
+
+#: widgets/textfindreplacewidget.cpp:72
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "Na&jít:"
+
+#: widgets/textfindreplacewidget.cpp:75
+#, kde-format
+msgid "Text to search for"
+msgstr "Text k vyhledání"
+
+#: widgets/textfindreplacewidget.cpp:81
+#, kde-format
+msgid "Jump to next match"
+msgstr "Přejít na následující výskyt"
+
+#: widgets/textfindreplacewidget.cpp:86
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Přejít na předchozí výskyt"
+
+#: widgets/textfindreplacewidget.cpp:92
+#, kde-format
+msgid "Options"
+msgstr "Možnosti"
+
+#: widgets/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Změnit chování vyhledávání"
+
+#: widgets/textfindreplacewidget.cpp:96
+#, kde-format
+msgid "Case sensitive"
+msgstr "Rozlišovat VELKÁ/malá"
+
+#: widgets/textfindreplacewidget.cpp:99
+#, kde-format
+msgid "Whole word"
+msgstr "Celé slovo"
+
+#: widgets/textfindreplacewidget.cpp:102
+#, kde-format
+msgid "Regular Expression"
+msgstr "Regulární výraz"
+
+#: widgets/textfindreplacewidget.cpp:105
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr ""
+
+#: widgets/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "Přejít na řádek:"
+
+#: widgets/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "Přejít"
