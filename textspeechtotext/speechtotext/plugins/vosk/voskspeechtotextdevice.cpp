@@ -7,8 +7,8 @@
 
 #include "voskspeechtotextdevice.h"
 #include "libvoskspeechtotext_debug.h"
-#ifdef VOSK_API
-#include "vosk_api.h"
+#if HAVE_VOSK_API_SUPPORT
+#include "HAVE_VOSK_API_SUPPORT.h"
 #endif
 #include <QJsonDocument>
 
@@ -17,7 +17,7 @@ VoskSpeechToTextDevice::VoskSpeechToTextDevice(QObject *parent)
 {
     if (!open(QIODevice::ReadWrite)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open VoskSpeechToTextDevice";
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
         vosk_set_log_level(-1);
 #endif
     }
@@ -25,7 +25,7 @@ VoskSpeechToTextDevice::VoskSpeechToTextDevice(QObject *parent)
 
 VoskSpeechToTextDevice::~VoskSpeechToTextDevice()
 {
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     vosk_recognizer_free(mRecognizer);
     vosk_model_free(mModel);
 #endif
@@ -33,7 +33,7 @@ VoskSpeechToTextDevice::~VoskSpeechToTextDevice()
 
 bool VoskSpeechToTextDevice::initialize(VoskSpeechToTextDeviceInfo &&info)
 {
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     mModel = vosk_model_new(QString(modelDir + formattedLang).toUtf8());
     if (mModel) {
         mRecognizer = vosk_recognizer_new(mModel, info.sampleRate);
@@ -48,7 +48,7 @@ bool VoskSpeechToTextDevice::initialize(VoskSpeechToTextDeviceInfo &&info)
 
 void VoskSpeechToTextDevice::clear()
 {
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     if (mRecognizer) {
         vosk_recognizer_reset(mRecognizer);
     }
@@ -63,7 +63,7 @@ qint64 VoskSpeechToTextDevice::readData(char *data, qint64 maxlen)
 
 qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
 {
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     if (vosk_recognizer_accept_waveform(mRecognizer, data, (int)len)) {
         parseText(vosk_recognizer_result(mRecognizer));
     } else {
@@ -80,7 +80,7 @@ void VoskSpeechToTextDevice::parseText(const char *json)
 
     if (text.isEmpty())
         return;
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     else if (m_isAsking) {
         Q_EMIT answerReady(text);
         return;
@@ -112,7 +112,7 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
     QString text = obj[QStringLiteral("partial")].toString();
     if (text.isEmpty())
         return;
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     text.append(u' ');
 
     if (text.contains(m_wakeWord)) {

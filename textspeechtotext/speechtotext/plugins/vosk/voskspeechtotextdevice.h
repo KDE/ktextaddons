@@ -6,11 +6,11 @@
 
 #pragma once
 
+#include "config-vosk-plugin.h"
 #include "libvoskspeechtotext_export.h"
 #include <QIODevice>
 
-// #define VOSK_API
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
 class VoskModel;
 class VoskRecognizer;
 #endif
@@ -40,7 +40,7 @@ protected:
 private:
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseText(const char *json);
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parsePartial(const char *json);
-#ifdef VOSK_API
+#if HAVE_VOSK_API_SUPPORT
     VoskModel *mModel = nullptr;
     VoskRecognizer *mRecognizer = nullptr;
 #endif

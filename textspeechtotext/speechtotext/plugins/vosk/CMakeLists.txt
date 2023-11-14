@@ -1,6 +1,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 
+find_package(vosk)
+
+configure_file(config-vosk-plugin.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-vosk-plugin.h)
+
 add_library(voskspeechtotext)
 
 target_sources(voskspeechtotext PRIVATE
