@@ -31,6 +31,15 @@ VoskSpeechToTextDevice::~VoskSpeechToTextDevice()
 #endif
 }
 
+bool VoskSpeechToTextDevice::available() const
+{
+#if HAVE_VOSK_API_SUPPORT
+    return true;
+#else
+    return false;
+#endif
+}
+
 bool VoskSpeechToTextDevice::initialize(VoskSpeechToTextDeviceInfo &&info)
 {
 #if HAVE_VOSK_API_SUPPORT

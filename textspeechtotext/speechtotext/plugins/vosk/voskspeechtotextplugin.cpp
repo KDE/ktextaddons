@@ -7,7 +7,6 @@
 #include "voskspeechtotextplugin.h"
 #include "speechtotext_vosk_debug.h"
 #include "voskspeechtotextdevice.h"
-#include <QDebug>
 #include <QIODevice>
 
 VoskSpeechToTextPlugin::VoskSpeechToTextPlugin(QObject *parent)
@@ -21,6 +20,10 @@ VoskSpeechToTextPlugin::~VoskSpeechToTextPlugin() = default;
 
 void VoskSpeechToTextPlugin::speechToText()
 {
+    if (!mDevice->available()) {
+        qCWarning(SPEECHTOTEXT_VOSK_LOG) << "Vosk is not available";
+        return;
+    }
     // TODO
 }
 

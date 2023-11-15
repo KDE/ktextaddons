@@ -30,6 +30,7 @@ public:
     void clear();
     [[nodiscard]] bool initialize(VoskSpeechToTextDeviceInfo &&info);
 
+    [[nodiscard]] bool available() const;
 Q_SIGNALS:
     void result(const QString &str);
 
