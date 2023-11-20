@@ -36,6 +36,8 @@ public:
 
     [[nodiscard]] QString fallbackFirstEngine() const;
 
+    [[nodiscard]] bool hasEngine() const;
+
 Q_SIGNALS:
     void loadingSpeechToTextFailed();
     void noPluginsFound();

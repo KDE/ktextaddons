@@ -26,6 +26,8 @@ public:
 
     void speechToText();
 
+    [[nodiscard]] bool hasEngine() const;
+
 Q_SIGNALS:
     void textToSpeechDone(const QString &result);
 

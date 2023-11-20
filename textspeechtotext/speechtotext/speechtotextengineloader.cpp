@@ -129,4 +129,9 @@ QString SpeechToTextEngineLoader::fallbackFirstEngine() const
     return QString();
 }
 
+bool SpeechToTextEngineLoader::hasEngine() const
+{
+    return !d->speechToTextClients.isEmpty();
+}
+
 #include "moc_speechtotextengineloader.cpp"

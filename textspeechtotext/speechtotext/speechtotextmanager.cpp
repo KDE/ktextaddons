@@ -68,6 +68,11 @@ SpeechToTextManager *SpeechToTextManager::self()
     return &s_self;
 }
 
+bool SpeechToTextManager::hasEngine() const
+{
+    return TextSpeechToText::SpeechToTextEngineLoader::self()->hasEngine();
+}
+
 void SpeechToTextManager::speechToText()
 {
     d->mSpeechToTextPlugin->speechToText();
