@@ -17,7 +17,24 @@
             "installDir": "$env{KF6}",
             "hidden": true
         },	
-        {
+        {   
+            "name": "dev-clang-qt6",
+            "displayName": "dev-clang-qt6",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
+                "BUILD_WITH_QT6": "ON"
+            },  
+            "environment": {
+                "CXX": "clang++",
+                "CCACHE_DISABLE": "ON"
+            },
+            "inherits": [
+                "base-qt6"
+            ]
+        },
+	{
             "name": "dev-mold",
             "displayName": "Build as debug + using mold linker",
             "cacheVariables": {
@@ -238,6 +255,11 @@
         {
             "name": "dev",
             "configurePreset": "dev"
+        },
+
+        {
+            "name": "dev-clang-qt6",
+            "configurePreset": "dev-clang-qt6"
         },
         {
             "name": "dev-mold-qt6",
