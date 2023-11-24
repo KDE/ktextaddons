@@ -107,7 +107,10 @@ QStringList EmojiModelManager::excludeEmoticons() const
 
 void EmojiModelManager::setExcludeEmoticons(const QStringList &emoticons)
 {
-    d->mExcludeEmoticons = emoticons;
+    if (d->mExcludeEmoticons != emoticons) {
+        d->mExcludeEmoticons = emoticons;
+        Q_EMIT excludeEmoticonsChanged();
+    }
 }
 
 #include "moc_emojimodelmanager.cpp"

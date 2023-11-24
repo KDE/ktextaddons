@@ -38,6 +38,7 @@ public:
 
 Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
+    void excludeEmoticonsChanged();
 
 private:
     class EmojiModelManagerPrivate;
