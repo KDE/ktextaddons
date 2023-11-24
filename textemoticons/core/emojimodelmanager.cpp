@@ -39,6 +39,7 @@ public:
 
     TextEmoticonsCore::EmojiModel *const mEmojiModel;
     QStringList mRecentIdentifier;
+    QStringList mExcludeEmoticons;
 };
 
 EmojiModelManager::EmojiModelManager(QObject *parent)
@@ -97,6 +98,16 @@ CustomEmojiIconManager *EmojiModelManager::customEmojiIconManager() const
 void EmojiModelManager::setCustomEmojiIconManager(CustomEmojiIconManager *newCustomEmojiIconManager)
 {
     d->mEmojiModel->setCustomEmojiIconManager(newCustomEmojiIconManager);
+}
+
+QStringList EmojiModelManager::excludeEmoticons() const
+{
+    return d->mExcludeEmoticons;
+}
+
+void EmojiModelManager::setExcludeEmoticons(const QStringList &emoticons)
+{
+    d->mExcludeEmoticons = emoticons;
 }
 
 #include "moc_emojimodelmanager.cpp"
