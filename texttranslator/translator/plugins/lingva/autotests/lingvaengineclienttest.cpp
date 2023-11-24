@@ -6,6 +6,7 @@
 
 #include "lingvaengineclienttest.h"
 #include "../lingvaengineclient.h"
+#include "translator/translatorengineplugin.h"
 #include <QTest>
 QTEST_MAIN(LingvaEngineClientTest)
 
