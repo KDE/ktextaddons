@@ -33,6 +33,9 @@ public:
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
+    [[nodiscard]] QStringList excludeEmoticons() const;
+    void setExcludeEmoticons(const QStringList &emoticons);
+
 Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
 

@@ -29,6 +29,9 @@ public:
     [[nodiscard]] QString searchIdentifier() const;
     void setSearchIdentifier(const QString &newSearchIdentifier);
 
+    [[nodiscard]] QStringList excludeEmoticons() const;
+    void setExcludeEmoticons(const QStringList &emoticons);
+
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
     [[nodiscard]] bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
