@@ -104,6 +104,9 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     connect(TextEmoticonsCore::EmojiModelManager::self(), &TextEmoticonsCore::EmojiModelManager::usedIdentifierChanged, this, [this](const QStringList &lst) {
         d->slotUsedIdentifierChanged(lst);
     });
+    connect(TextEmoticonsCore::EmojiModelManager::self(), &TextEmoticonsCore::EmojiModelManager::excludeEmoticonsChanged, this, [this]() {
+        d->mEmojiProxyModel->setExcludeEmoticons(TextEmoticonsCore::EmojiModelManager::self()->excludeEmoticons());
+    });
 
     connect(d->mEmoticonListView, &EmoticonListView::clearHistory, this, []() {
         TextEmoticonsCore::EmojiModelManager::self()->setRecentIdentifier(QStringList());
