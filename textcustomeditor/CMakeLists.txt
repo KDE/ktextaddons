@@ -59,11 +59,11 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
     PRIVATE
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
     KF${KF_MAJOR_VERSION}::SonnetUi
     KF${KF_MAJOR_VERSION}::SonnetCore
     KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::KIOWidgets
-    KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     KF${KF_MAJOR_VERSION}::TextUtils

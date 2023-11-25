@@ -44,8 +44,9 @@ target_sources(KF${KF_MAJOR_VERSION}TextEditTextToSpeech PRIVATE
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEditTextToSpeech
     PRIVATE
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::ConfigGui
     KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::I18n
     Qt::TextToSpeech
 )
