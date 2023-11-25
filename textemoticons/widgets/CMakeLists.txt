@@ -30,8 +30,8 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets PRIVATE
 
 target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsWidgets
     PUBLIC
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
     KF${KF_MAJOR_VERSION}::TextEmoticonsCore
-    KF${KF_MAJOR_VERSION}::XmlGui
     PRIVATE
     Qt::Widgets
 )
