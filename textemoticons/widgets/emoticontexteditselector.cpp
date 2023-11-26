@@ -90,7 +90,6 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 
     d->mEmojiProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
     d->mEmoticonListView->setModel(d->mEmojiProxyModel);
-    d->mEmojiProxyModel->setExcludeEmoticons(TextEmoticonsCore::EmojiModelManager::self()->excludeEmoticons());
     connect(d->mEmoticonListView, &EmoticonListView::fontSizeChanged, d->mEmoticonListView, &EmoticonListView::setFontSize);
     connect(d->mEmoticonListView, &EmoticonListView::emojiItemSelected, this, [this](const QString &str, const QString &identifier) {
         d->slotItemSelected(str, identifier);
@@ -103,9 +102,6 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     });
     connect(TextEmoticonsCore::EmojiModelManager::self(), &TextEmoticonsCore::EmojiModelManager::usedIdentifierChanged, this, [this](const QStringList &lst) {
         d->slotUsedIdentifierChanged(lst);
-    });
-    connect(TextEmoticonsCore::EmojiModelManager::self(), &TextEmoticonsCore::EmojiModelManager::excludeEmoticonsChanged, this, [this]() {
-        d->mEmojiProxyModel->setExcludeEmoticons(TextEmoticonsCore::EmojiModelManager::self()->excludeEmoticons());
     });
 
     connect(d->mEmoticonListView, &EmoticonListView::clearHistory, this, []() {

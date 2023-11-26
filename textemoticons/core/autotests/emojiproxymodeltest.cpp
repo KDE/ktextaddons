@@ -19,7 +19,6 @@ void EmojiProxyModelTest::shouldHaveDefaultValues()
     QVERIFY(w.category().isEmpty());
     QVERIFY(w.recentEmoticons().isEmpty());
     QVERIFY(w.searchIdentifier().isEmpty());
-    QVERIFY(w.excludeEmoticons().isEmpty());
 }
 
 #include "moc_emojiproxymodeltest.cpp"

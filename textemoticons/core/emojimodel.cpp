@@ -125,4 +125,22 @@ void EmojiModel::setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconMan
     mCustomEmojiIconManager = newCustomEmojiIconManager;
 }
 
+void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
+{
+    bool emoticonsRemoved = false;
+    for (const auto &identifier : emoticons) {
+        auto index = std::find_if(mEmoticonList.begin(), mEmoticonList.end(), [identifier](const TextEmoticonsCore::UnicodeEmoticon &emoji) {
+            return (identifier == emoji.identifier());
+        });
+        if (index != mEmoticonList.end()) {
+            mEmoticonList.removeAll(*index);
+            emoticonsRemoved = true;
+        }
+    }
+    if (emoticonsRemoved) {
+        beginResetModel();
+        endResetModel();
+    }
+}
+
 #include "moc_emojimodel.cpp"
