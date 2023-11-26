@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:28+0000\n"
-"PO-Revision-Date: 2023-11-19 03:42\n"
+"PO-Revision-Date: 2023-11-25 02:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -111,6 +111,8 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte 可以<a href=\"https://grammalecte.net/#download\">在此下载</a>。"
+"请在下载后解压缩。"
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
