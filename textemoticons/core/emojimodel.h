@@ -46,6 +46,8 @@ public:
     Q_REQUIRED_RESULT TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
+    void setExcludeEmoticons(const QStringList &emoticons);
+
 private:
     Q_DISABLE_COPY(EmojiModel)
     QList<TextEmoticonsCore::UnicodeEmoticon> mEmoticonList;

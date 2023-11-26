@@ -74,6 +74,12 @@ void UnicodeEmoticon::setKey(const QString &key)
     mKey = key;
 }
 
+bool UnicodeEmoticon::operator==(const UnicodeEmoticon &other) const
+{
+    return (mAliases == other.aliases()) && (mIdentifier == other.identifier()) && (mUnicode == other.unicode()) && (mCategory == other.category())
+        && (mKey == other.key()) && (mOrder == other.order());
+}
+
 int UnicodeEmoticon::order() const
 {
     return mOrder;

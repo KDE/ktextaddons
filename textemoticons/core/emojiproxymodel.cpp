@@ -20,15 +20,7 @@ public:
     {
         q->setSearchIdentifier(QString());
     }
-    bool emoticonAccepted(const QString &identifier) const
-    {
-        if (mExcludeEmoticons.contains(identifier)) {
-            return false;
-        }
-        return true;
-    }
     QString mCategory;
-    QStringList mExcludeEmoticons;
     QStringList mRecentEmoticons;
     QString mSearchIdentifier;
     EmojiProxyModel *const q;
@@ -48,17 +40,13 @@ EmojiProxyModel::~EmojiProxyModel() = default;
 bool EmojiProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     if (d->mCategory.isEmpty()) {
-        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
-        const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-        if (d->emoticonAccepted(identifier)) {
-            return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
-        }
+        return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
         return false;
     }
     if (!d->mSearchIdentifier.isEmpty()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-        if (d->emoticonAccepted(identifier) && identifier.contains(d->mSearchIdentifier)) {
+        if (identifier.contains(d->mSearchIdentifier)) {
             return true;
         }
         return false;
@@ -66,14 +54,13 @@ bool EmojiProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source
     if (d->mCategory == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier()) {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-        if (d->emoticonAccepted(identifier) && d->mRecentEmoticons.contains(identifier)) {
+        if (d->mRecentEmoticons.contains(identifier)) {
             return true;
         }
     } else {
         const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
         const auto category = sourceIndex.data(EmojiModel::Category).toString();
-        const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-        if (d->emoticonAccepted(identifier) && d->mCategory == category) {
+        if (d->mCategory == category) {
             return true;
         }
     }
@@ -89,19 +76,6 @@ void EmojiProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
 {
     if (d->mSearchIdentifier != newSearchIdentifier) {
         d->mSearchIdentifier = newSearchIdentifier;
-        invalidateFilter();
-    }
-}
-
-QStringList EmojiProxyModel::excludeEmoticons() const
-{
-    return d->mExcludeEmoticons;
-}
-
-void EmojiProxyModel::setExcludeEmoticons(const QStringList &emoticons)
-{
-    if (d->mExcludeEmoticons != emoticons) {
-        d->mExcludeEmoticons = emoticons;
         invalidateFilter();
     }
 }

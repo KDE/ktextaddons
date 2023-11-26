@@ -29,9 +29,6 @@ public:
     Q_REQUIRED_RESULT QString searchIdentifier() const;
     void setSearchIdentifier(const QString &newSearchIdentifier);
 
-    [[nodiscard]] QStringList excludeEmoticons() const;
-    void setExcludeEmoticons(const QStringList &emoticons);
-
 protected:
     Q_REQUIRED_RESULT bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
     Q_REQUIRED_RESULT bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
