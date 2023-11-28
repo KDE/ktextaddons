@@ -38,7 +38,7 @@ void SpeechToTextEngineLoader::loadPlugins()
     const QStringList libPaths = QCoreApplication::libraryPaths();
     const QString pathSuffix(QStringLiteral("/kf" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/speechtotext/"));
     for (const QString &libPath : libPaths) {
-        QDir dir(libPath + pathSuffix);
+        const QDir dir(libPath + pathSuffix);
         if (!dir.exists()) {
             continue;
         }
