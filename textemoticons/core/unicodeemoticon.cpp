@@ -6,7 +6,6 @@
 
 #include "unicodeemoticon.h"
 #include "emoticonunicodeutils.h"
-#include <sstream>
 
 using namespace TextEmoticonsCore;
 UnicodeEmoticon::UnicodeEmoticon() = default;
