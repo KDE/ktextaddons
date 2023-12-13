@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 02:24+0000\n"
-"PO-Revision-Date: 2023-11-10 17:30+0300\n"
+"PO-Revision-Date: 2023-12-12 17:27+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -20,12 +20,13 @@ msgstr ""
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
 msgstr[0] "Сделана %1 замена"
 msgstr[1] "Сделано %1 замены"
 msgstr[2] "Сделано %1 замен"
+msgstr[3] "Сделана %1 замена"
 
 #: plaintexteditor/plaintexteditor.cpp:161
 #: richtexteditor/richtexteditor.cpp:219
