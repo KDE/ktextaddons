@@ -251,7 +251,7 @@ void RichTextBrowser::updateReadOnlyColor()
     }
 }
 
-static void deleteWord(QTextCursor cursor, QTextCursor::MoveOperation op)
+static void richTextDeleteWord(QTextCursor cursor, QTextCursor::MoveOperation op)
 {
     cursor.clearSelection();
     cursor.movePosition(op, QTextCursor::KeepAnchor);
@@ -260,12 +260,12 @@ static void deleteWord(QTextCursor cursor, QTextCursor::MoveOperation op)
 
 void RichTextBrowser::deleteWordBack()
 {
-    deleteWord(textCursor(), QTextCursor::PreviousWord);
+    richTextDeleteWord(textCursor(), QTextCursor::PreviousWord);
 }
 
 void RichTextBrowser::deleteWordForward()
 {
-    deleteWord(textCursor(), QTextCursor::WordRight);
+    richTextDeleteWord(textCursor(), QTextCursor::WordRight);
 }
 
 bool RichTextBrowser::event(QEvent *ev)
