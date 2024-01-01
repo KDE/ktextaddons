@@ -201,9 +201,15 @@ void TranslatorWidget::loadEngineSettings()
 void TranslatorWidget::init()
 {
     auto layout = new QVBoxLayout(this);
+    layout->setSpacing(0);
     layout->setContentsMargins({});
+
     auto hboxLayout = new QHBoxLayout;
-    hboxLayout->setContentsMargins({});
+    hboxLayout->setSpacing(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
+    hboxLayout->setContentsMargins(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                                   style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                   style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                   style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
     auto closeBtn = new QToolButton(this);
     closeBtn->setObjectName(QStringLiteral("close-button"));
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
@@ -287,6 +293,10 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(configureButton);
 
     layout->addLayout(hboxLayout);
+
+    separator = new KSeparator(this);
+    separator->setOrientation(Qt::Horizontal);
+    layout->addWidget(separator);
 
     d->splitter = new QSplitter;
     d->splitter->setChildrenCollapsible(false);
