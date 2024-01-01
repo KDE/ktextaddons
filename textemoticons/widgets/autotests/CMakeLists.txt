@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 # SPDX-License-Identifier: BSD-3-Clause
 macro(add_textemoticonwidgets_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)

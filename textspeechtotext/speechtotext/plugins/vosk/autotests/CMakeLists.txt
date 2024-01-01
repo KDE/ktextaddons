@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 add_definitions( -DVOSK_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
 macro(add_voskspeechtotext_unittest _source)

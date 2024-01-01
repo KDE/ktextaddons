@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets")
 

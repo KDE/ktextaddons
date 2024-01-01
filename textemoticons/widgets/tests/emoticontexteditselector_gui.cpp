@@ -1,7 +1,7 @@
 /*
     This file is part of KDE.
 
-    SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+    SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */

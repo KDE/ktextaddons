@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2022-2023 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2022-2024 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(translator_libretranslate_LIB qt6keychain)
