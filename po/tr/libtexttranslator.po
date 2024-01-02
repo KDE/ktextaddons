@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-01-02 00:40+0000\n"
 "PO-Revision-Date: 2023-10-12 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -653,53 +653,53 @@ msgstr "Tüm Dosyalar (*)"
 msgid "Translate..."
 msgstr "Çevir..."
 
-#: translator/widgets/translatorwidget.cpp:211
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgid "Close"
 msgstr "Kapat"
 
-#: translator/widgets/translatorwidget.cpp:220
+#: translator/widgets/translatorwidget.cpp:226
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Kaynak:"
 
-#: translator/widgets/translatorwidget.cpp:227
+#: translator/widgets/translatorwidget.cpp:233
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Hedef:"
 
-#: translator/widgets/translatorwidget.cpp:239
+#: translator/widgets/translatorwidget.cpp:245
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Ters Çevir"
 
-#: translator/widgets/translatorwidget.cpp:244
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:250
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgid "Clear"
 msgstr "Temizle"
 
-#: translator/widgets/translatorwidget.cpp:252
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:258
+#: translator/widgets/translatorwidget.cpp:261
 #, kde-format
 msgid "Translate"
 msgstr "Çevir"
 
-#: translator/widgets/translatorwidget.cpp:262
+#: translator/widgets/translatorwidget.cpp:268
 #, kde-format
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: translator/widgets/translatorwidget.cpp:280
+#: translator/widgets/translatorwidget.cpp:286
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: translator/widgets/translatorwidget.cpp:355
+#: translator/widgets/translatorwidget.cpp:365
 #, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -708,22 +708,22 @@ msgstr ""
 "Çevirmek istediğiniz metni sürükleyin (Metnin dış sunuculara gönderileceğini "
 "not edin)."
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:367
 #, kde-format
 msgid "Drag text that you want to translate."
 msgstr "Çevirmek istediğiniz metni sürükleyin."
 
-#: translator/widgets/translatorwidget.cpp:406
+#: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Bir ağ bağlantısı algılanmadı, metni çeviremiyoruz."
 
-#: translator/widgets/translatorwidget.cpp:406
+#: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network"
 msgstr "Ağ yok"
 
-#: translator/widgets/translatorwidget.cpp:443
+#: translator/widgets/translatorwidget.cpp:453
 #, kde-format
 msgid "Translate error"
 msgstr "Çeviri hatası"

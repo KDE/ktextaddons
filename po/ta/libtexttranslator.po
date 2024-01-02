@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-01-02 00:40+0000\n"
 "PO-Revision-Date: 2023-10-15 14:07+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -654,53 +654,53 @@ msgstr "அனைத்து கோப்புகள் (*)"
 msgid "Translate..."
 msgstr "மொழிபெயர்..."
 
-#: translator/widgets/translatorwidget.cpp:211
-#: translator/widgets/translatorwidget.cpp:214
+#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgid "Close"
 msgstr "மூடு"
 
-#: translator/widgets/translatorwidget.cpp:220
+#: translator/widgets/translatorwidget.cpp:226
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "மூலம்:"
 
-#: translator/widgets/translatorwidget.cpp:227
+#: translator/widgets/translatorwidget.cpp:233
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "இலக்கு:"
 
-#: translator/widgets/translatorwidget.cpp:239
+#: translator/widgets/translatorwidget.cpp:245
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "புரட்டு"
 
-#: translator/widgets/translatorwidget.cpp:244
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:250
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgid "Clear"
 msgstr "காலியாக்கு"
 
-#: translator/widgets/translatorwidget.cpp:252
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:258
+#: translator/widgets/translatorwidget.cpp:261
 #, kde-format
 msgid "Translate"
 msgstr "மொழிபெயர்"
 
-#: translator/widgets/translatorwidget.cpp:262
+#: translator/widgets/translatorwidget.cpp:268
 #, kde-format
 msgid "Debug"
 msgstr "பிழைநீக்கு"
 
-#: translator/widgets/translatorwidget.cpp:280
+#: translator/widgets/translatorwidget.cpp:286
 #, kde-format
 msgid "Configure"
 msgstr "அமை"
 
-#: translator/widgets/translatorwidget.cpp:355
+#: translator/widgets/translatorwidget.cpp:365
 #, kde-format
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -709,22 +709,22 @@ msgstr ""
 "மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும் (வெளி சேவையகத்திற்கு அது அனுப்ப‍"
 "ப்படும்)."
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:367
 #, kde-format
 msgid "Drag text that you want to translate."
 msgstr "மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும்"
 
-#: translator/widgets/translatorwidget.cpp:406
+#: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "இணைய இணைப்பு இல்லாத‍தால் மொழிபெயர்க்க முடியாது."
 
-#: translator/widgets/translatorwidget.cpp:406
+#: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network"
 msgstr "இணைப்பு இல்லை"
 
-#: translator/widgets/translatorwidget.cpp:443
+#: translator/widgets/translatorwidget.cpp:453
 #, kde-format
 msgid "Translate error"
 msgstr "மொழிபெயர்ப்பு சிக்கல்"
