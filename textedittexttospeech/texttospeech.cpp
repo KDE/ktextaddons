@@ -91,10 +91,10 @@ void TextToSpeech::slotStateChanged()
     case QTextToSpeech::Error:
         state = TextToSpeech::BackendError;
         break;
-#endif
     case QTextToSpeech::Synthesizing:
         state = TextToSpeech::Synthesizing;
         break;
+#endif
     }
     Q_EMIT stateChanged(state);
 }
