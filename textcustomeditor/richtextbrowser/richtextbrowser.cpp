@@ -5,7 +5,6 @@
 */
 
 #include "richtextbrowser.h"
-#include "textcustomeditor_debug.h"
 
 #include "widgets/textmessageindicator.h"
 #include <KCursor>
