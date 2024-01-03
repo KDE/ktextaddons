@@ -32,6 +32,7 @@ public:
         Speaking,
         Paused,
         BackendError,
+        Synthesizing,
     };
 
     [[nodiscard]] double volume() const;
