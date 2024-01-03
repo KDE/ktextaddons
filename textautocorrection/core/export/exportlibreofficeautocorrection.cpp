@@ -23,6 +23,7 @@ ExportLibreOfficeAutocorrection::~ExportLibreOfficeAutocorrection()
 
 bool ExportLibreOfficeAutocorrection::exportData(const QString &language, const QString &fileName, QString &errorMessage, const QString &writablePath)
 {
+    Q_UNUSED(errorMessage);
     const QString libreOfficeWritableLocalAutoCorrectionPath =
         writablePath.isEmpty() ? AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath() : writablePath;
     QDir().mkpath(libreOfficeWritableLocalAutoCorrectionPath);
