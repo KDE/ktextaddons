@@ -54,8 +54,9 @@ void SpeechToTextManager::switchEngine(const QString &engineName)
     }
     if (d->mSpeechToTextClient) {
         d->mSpeechToTextPlugin = d->mSpeechToTextClient->createTextToSpeech();
-        connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
-        if (!d->mSpeechToTextPlugin->loadSettings()) {
+        if (d->mSpeechToTextPlugin->loadSettings()) {
+            connect(d->mSpeechToTextPlugin, &TextSpeechToText::SpeechToTextPlugin::speechToTextDone, this, &SpeechToTextManager::textToSpeechDone);
+        } else {
             qCWarning(TEXTSPEECHTOTEXT_LOG) << "Impossible to initialize text to speech plugin";
             deletePlugin();
         }
