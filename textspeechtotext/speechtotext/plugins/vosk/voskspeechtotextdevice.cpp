@@ -8,7 +8,7 @@
 #include "voskspeechtotextdevice.h"
 #include "libvoskspeechtotext_debug.h"
 #if HAVE_VOSK_API_SUPPORT
-#include "HAVE_VOSK_API_SUPPORT.h"
+#include "vosk_api.h"
 #endif
 #include <QJsonDocument>
 
@@ -49,7 +49,7 @@ bool VoskSpeechToTextDevice::initialize(VoskSpeechToTextDeviceInfo &&info)
     }
 
     if (!mModel || !mRecognizer) {
-        return false
+        return false;
     }
 #endif
     return true;
@@ -78,6 +78,8 @@ qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
     } else {
         parsePartial(vosk_recognizer_partial_result(mRecognizer));
     }
+#else
+    Q_UNUSED(data);
 #endif
     return len;
 }

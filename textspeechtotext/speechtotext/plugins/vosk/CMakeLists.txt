@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 
-find_package(vosk)
-
+# TODO reenable it set(HAVE_VOSK_API_SUPPORT TRUE)
 configure_file(config-vosk-plugin.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-vosk-plugin.h)
 
 add_library(voskspeechtotext)
