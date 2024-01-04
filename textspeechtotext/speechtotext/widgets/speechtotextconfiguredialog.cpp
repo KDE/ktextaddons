@@ -15,7 +15,7 @@ SpeechToTextConfigureDialog::SpeechToTextConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mSpeechToTextConfigureWidget(new SpeechToTextConfigureWidget(this))
 {
-    setWindowTitle(i18nc("@title:window", "Configure Translator"));
+    setWindowTitle(i18nc("@title:window", "Configure Speech To Text"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
