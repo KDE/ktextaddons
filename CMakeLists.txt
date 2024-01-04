@@ -74,6 +74,9 @@ endif()
 option(BERGAMOT_TRANSLATOR_PLUGIN "Build bergamot translator plugin" OFF)
 add_feature_info(BERGAMOT_TRANSLATOR_PLUGIN ${BERGAMOT_TRANSLATOR_PLUGIN} "Bergamot translator plugin (local translation) (Experimental. Need to download bergamot source code first)")
 
+option(SPEAK_TO_TEXT_VOSK_PLUGIN "Build vosk speak to text support" OFF)
+add_feature_info(SPEAK_TO_TEXT_VOSK_PLUGIN ${SPEAK_TO_TEXT_VOSK_PLUGIN} "Vosk speak to text plugin (local text to speak) (Experimental)")
+
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
