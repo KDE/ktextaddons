@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 
-# TODO reenable it set(HAVE_VOSK_API_SUPPORT TRUE)
+# TODO reenable it
+set(HAVE_VOSK_API_SUPPORT TRUE)
 configure_file(config-vosk-plugin.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-vosk-plugin.h)
 
 add_library(voskspeechtotext)
@@ -66,6 +67,9 @@ set_target_properties(voskspeechtotext
 )
 
 install(TARGETS voskspeechtotext ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
+
+# Improve it. We need to fix on windows too.
+install(FILES "${CMAKE_BINARY_DIR}/vosk/libvosk.so" DESTINATION ${KDE_INSTALL_LIBDIR})
 
 
 add_library(speechtotext_vosk MODULE)

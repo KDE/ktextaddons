@@ -40,10 +40,23 @@ bool VoskSpeechToTextDevice::available() const
 #endif
 }
 
+bool VoskSpeechToTextDevice::isAsking() const
+{
+    return mIsAsking;
+}
+
+void VoskSpeechToTextDevice::setAsking(bool asking)
+{
+    if (mIsAsking != asking) {
+        mIsAsking = asking;
+        Q_EMIT askingChanged();
+    }
+}
+
 bool VoskSpeechToTextDevice::initialize(VoskSpeechToTextDeviceInfo &&info)
 {
 #if HAVE_VOSK_API_SUPPORT
-    mModel = vosk_model_new(QString(modelDir + formattedLang).toUtf8());
+    mModel = vosk_model_new(QString(info.modelDir + info.formattedLang).toUtf8().constData());
     if (mModel) {
         mRecognizer = vosk_recognizer_new(mModel, info.sampleRate);
     }
@@ -91,30 +104,28 @@ void VoskSpeechToTextDevice::parseText(const char *json)
 
     if (text.isEmpty())
         return;
-#if HAVE_VOSK_API_SUPPORT
-    else if (m_isAsking) {
-        Q_EMIT answerReady(text);
+    else if (mIsAsking) {
+        Q_EMIT result(text);
         return;
     }
 
     text.append(u' ');
 
-    if (!text.contains(m_wakeWord)) {
-        if (!is_listining_because_of_wakeword)
+    if (!text.contains(mWakeWord)) {
+        if (!mIsListiningBecauseOfWakeWord)
             return;
 
         Q_EMIT falsePositiveWakeWord();
-        is_listining_because_of_wakeword = false;
+        mIsListiningBecauseOfWakeWord = false;
         return;
     }
 
-    text = text.mid(text.indexOf(m_wakeWord) + m_wakeWord.size());
+    text = text.mid(text.indexOf(mWakeWord) + mWakeWord.size());
     text = text.trimmed();
 
     Q_EMIT result(text);
     qDebug() << "[debug] Text:" << text;
     Q_EMIT doneListening();
-#endif
 }
 
 void VoskSpeechToTextDevice::parsePartial(const char *json)
@@ -123,22 +134,20 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
     QString text = obj[QStringLiteral("partial")].toString();
     if (text.isEmpty())
         return;
-#if HAVE_VOSK_API_SUPPORT
     text.append(u' ');
 
-    if (text.contains(m_wakeWord)) {
+    if (text.contains(mWakeWord)) {
         Q_EMIT wakeWordDetected();
-        text = text.mid(text.indexOf(m_wakeWord) + m_wakeWord.size());
-        is_listining_because_of_wakeword = true;
-    } else if (is_listining_because_of_wakeword) {
+        text = text.mid(text.indexOf(mWakeWord) + mWakeWord.size());
+        mIsListiningBecauseOfWakeWord = true;
+    } else if (mIsListiningBecauseOfWakeWord) {
         Q_EMIT falsePositiveWakeWord();
-        is_listining_because_of_wakeword = false;
+        mIsListiningBecauseOfWakeWord = false;
         return;
-    } else if (!m_isAsking)
+    } else if (!mIsAsking)
         return;
 
     Q_EMIT result(text);
-#endif
 }
 
 QDebug operator<<(QDebug d, const VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo &t)

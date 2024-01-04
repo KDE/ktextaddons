@@ -21,6 +21,8 @@ class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDevice : public QIODevice
 public:
     struct LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextDeviceInfo {
         // TODO add language and co
+        QString modelDir;
+        QString formattedLang;
         int sampleRate = 0;
     };
 
@@ -31,8 +33,17 @@ public:
     [[nodiscard]] bool initialize(VoskSpeechToTextDeviceInfo &&info);
 
     [[nodiscard]] bool available() const;
+
+    [[nodiscard]] bool isAsking() const;
+
+    void setAsking(bool asking);
+
 Q_SIGNALS:
     void result(const QString &str);
+    void askingChanged();
+    void doneListening();
+    void falsePositiveWakeWord();
+    void wakeWordDetected();
 
 protected:
     qint64 readData(char *data, qint64 maxlen) override;
@@ -41,6 +52,9 @@ protected:
 private:
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parseText(const char *json);
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void parsePartial(const char *json);
+    QString mWakeWord;
+    bool mIsAsking = false;
+    bool mIsListiningBecauseOfWakeWord = false;
 #if HAVE_VOSK_API_SUPPORT
     VoskModel *mModel = nullptr;
     VoskRecognizer *mRecognizer = nullptr;
