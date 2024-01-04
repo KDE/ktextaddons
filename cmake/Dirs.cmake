@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: BSD-3-Clause
+
 set(VOSK_DIR "${CMAKE_BINARY_DIR}/vosk")
 set(VOSK_ZIP "${CMAKE_BINARY_DIR}/vosk.zip")
 

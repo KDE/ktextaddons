@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: BSD-3-Clause
 if (TARGET Vosk)
     return()
 endif()

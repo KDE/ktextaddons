@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: BSD-3-Clause
 include(Dirs)
 
 function(download_vosk_if_needed)
