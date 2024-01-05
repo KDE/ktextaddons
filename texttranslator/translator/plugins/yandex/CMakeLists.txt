@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 
 add_library(translator_yandex MODULE)
 target_sources(translator_yandex PRIVATE

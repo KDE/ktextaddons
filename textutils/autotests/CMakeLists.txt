@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
 macro(add_textutil_test _source)

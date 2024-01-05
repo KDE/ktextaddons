@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 add_library(translator_bing MODULE)
 ecm_qt_declare_logging_category(translator_debug_bing_SRCS

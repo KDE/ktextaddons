@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 add_executable(autocorrectiontextedit_gui autocorrectiontextedit_gui.cpp)
 target_link_libraries(autocorrectiontextedit_gui
   KF${KF_MAJOR_VERSION}::TextAutoCorrectionWidgets

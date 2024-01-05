@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: none
+# SPDX-FileCopyrightText: 2022-2024 Laurent Montel <montel.org>
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextgrammarcheck\")
 
