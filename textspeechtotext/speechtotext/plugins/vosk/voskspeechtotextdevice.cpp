@@ -152,7 +152,9 @@ void VoskSpeechToTextDevice::parsePartial(const char *json)
 
 QDebug operator<<(QDebug d, const VoskSpeechToTextDevice::VoskSpeechToTextDeviceInfo &t)
 {
-    d << "sampleRate " << t.sampleRate;
+    d.space() << "sampleRate" << t.sampleRate;
+    d.space() << "modelDir" << t.modelDir;
+    d.space() << "formattedLang" << t.formattedLang;
     return d;
 }
 
