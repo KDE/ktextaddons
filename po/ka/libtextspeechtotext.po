@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-01-05 00:40+0000\n"
 "PO-Revision-Date: 2023-10-30 05:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -143,10 +143,11 @@ msgid "Engine:"
 msgstr "ძრავა:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Speech to Text..."
 msgctxt "@title:window"
-msgid "Configure Translator"
-msgstr "თარჯიმნის მორგება"
+msgid "Configure Speech To Text"
+msgstr "ტექსტის წარმოთქმა..."
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
@@ -162,3 +163,7 @@ msgstr "შეყვანა:"
 #, kde-format
 msgid "Default"
 msgstr "ნაგულისხმევი"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Translator"
+#~ msgstr "თარჯიმნის მორგება"

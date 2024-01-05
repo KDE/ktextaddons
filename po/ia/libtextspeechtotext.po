@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-01-05 00:40+0000\n"
 "PO-Revision-Date: 2023-11-13 15:35+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -142,10 +142,11 @@ msgid "Engine:"
 msgstr "Motor:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Speech to Text..."
 msgctxt "@title:window"
-msgid "Configure Translator"
-msgstr "Configura Traductor"
+msgid "Configure Speech To Text"
+msgstr "Pronuncia Texto..."
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
@@ -161,3 +162,7 @@ msgstr "Ingresso:"
 #, kde-format
 msgid "Default"
 msgstr "Predefinite"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Translator"
+#~ msgstr "Configura Traductor"

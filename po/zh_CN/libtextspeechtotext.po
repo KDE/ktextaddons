@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-01-05 00:40+0000\n"
 "PO-Revision-Date: 2023-12-30 13:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -140,10 +140,11 @@ msgid "Engine:"
 msgstr "引擎："
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Speech to Text..."
 msgctxt "@title:window"
-msgid "Configure Translator"
-msgstr "配置翻译服务"
+msgid "Configure Speech To Text"
+msgstr "语音转文字..."
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
@@ -159,3 +160,7 @@ msgstr "输入："
 #, kde-format
 msgid "Default"
 msgstr "默认"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Translator"
+#~ msgstr "配置翻译服务"
