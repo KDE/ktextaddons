@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-05 00:40+0000\n"
-"PO-Revision-Date: 2023-10-24 09:10+0300\n"
+"PO-Revision-Date: 2024-01-05 08:45+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
@@ -143,11 +143,10 @@ msgid "Engine:"
 msgstr "Рушій:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Синтез тексту з мовлення…"
+msgstr "Налаштовування синтезу тексту з мовлення"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
