@@ -1,10 +1,9 @@
 /*
-  SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
+  SPDX-FileCopyrightText: 2024 Laurent Montel <montel.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "speechtotext/widgets/speechtotextconfiguredialog.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
@@ -18,9 +17,9 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new TextSpeechToText::SpeechToTextConfigureDialog();
-    w->show();
+    // auto w = new TextSpeechToText::SpeechToTextConfigureDialog();
+    // w->show();
     app.exec();
-    delete w;
+    // delete w;
     return 0;
 }
