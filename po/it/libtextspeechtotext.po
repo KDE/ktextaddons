@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-05 00:40+0000\n"
-"PO-Revision-Date: 2023-10-25 20:17+0200\n"
+"PO-Revision-Date: 2024-01-05 17:43+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
@@ -142,11 +142,10 @@ msgid "Engine:"
 msgstr "Motore:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Riconoscimento vocale..."
+msgstr "Configura il riconoscimento vocale"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
