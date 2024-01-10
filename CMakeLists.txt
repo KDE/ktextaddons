@@ -84,7 +84,7 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(
     QT 6.6.0
-    KF 5.247.0
+    KF 5.248.0
 )
 
 if (BERGAMOT_TRANSLATOR_PLUGIN)
