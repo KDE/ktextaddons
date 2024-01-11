@@ -32,4 +32,6 @@ Dependencies:
     'frameworks/sonnet': '@stable'
     'frameworks/syntax-highlighting': '@stable'
     'frameworks/breeze-icons': '@stable'
-      
+
+Options:
+  require-passing-tests-on: [ 'Linux/Qt6', 'FreeBSD/Qt6', 'Linux/Qt5', 'FreeBSD/Qt5' ]      
