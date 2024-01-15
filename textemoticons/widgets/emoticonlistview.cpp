@@ -29,7 +29,7 @@ EmoticonListView::EmoticonListView(QWidget *parent)
     auto emoticonDelegate = new EmoticonItemDelegate(this);
     emoticonDelegate->setObjectName(QStringLiteral("emoticonDelegate"));
     setItemDelegate(emoticonDelegate);
-    connect(this, &QListView::activated, this, [this](const QModelIndex &index) {
+    connect(this, &QListView::clicked, this, [this](const QModelIndex &index) {
         const QString emojiIdentifier = index.data(TextEmoticonsCore::EmojiModel::Identifier).toString();
         const QString emojiStr = index.data().toString();
         Q_EMIT emojiItemSelected(emojiStr, emojiIdentifier);
