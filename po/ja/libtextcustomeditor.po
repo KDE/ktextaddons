@@ -20,7 +20,6 @@ msgstr ""
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
 msgstr[0] ""
-msgstr[1] ""
 
 #: plaintexteditor/plaintexteditor.cpp:161
 #: richtexteditor/richtexteditor.cpp:219
