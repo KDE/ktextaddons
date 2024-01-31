@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-05 00:40+0000\n"
-"PO-Revision-Date: 2023-09-20 12:05+0300\n"
+"PO-Revision-Date: 2023-11-30 14:44+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -25,7 +25,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
 msgid "Impossible to store language info."
-msgstr ""
+msgstr "Kielitietoa on mahdotonta tallettaa."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
@@ -34,100 +34,102 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Virhe: Moottorijärjestelmät ovat havainneet tietoverkossa epäilyttävää "
+"liikennettä. Yritä pyyntöä myöhemmin uudelleen."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "Verkko-osoitteen käyttö mahdotonta: %1"
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "Tiedostoa ei voi avata ladattavaksi."
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "Tarkistussumma ei ole oikein."
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "Virhe kirjoitettaessa levylle: %1"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Vosk-liitännäisen asetukset"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Etsi…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Lataa"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Poista"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update List"
-msgstr ""
+msgstr "Päivitä luettelo"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:116
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "Päivitä kieliluettelo verkosta"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "Virhe: %1"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
-msgstr ""
+msgstr "Vosk"
 
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
 #, kde-format
 msgid "Impossible to extract language"
-msgstr ""
+msgstr "Kieltä on mahdotonta purkaa"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format
 msgid "Language"
-msgstr ""
+msgstr "Kieli"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:85
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "Asennettu"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
 #, kde-format
 msgid "Installed Version"
-msgstr ""
+msgstr "Asennettu versio"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
 #, kde-format
 msgid "Available Version"
-msgstr ""
+msgstr "Saatavilla oleva versio"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "Koko"
 
 # *** TARKISTA: Oletan, että kyseessä on AI-pohjainen puheentunnistusjärjestelmä
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
@@ -149,7 +151,7 @@ msgstr ""
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
 msgid "Speech to Text..."
-msgstr ""
+msgstr "Puhesynteesi…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

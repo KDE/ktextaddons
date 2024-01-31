@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-02 00:40+0000\n"
-"PO-Revision-Date: 2023-09-27 18:39+0300\n"
+"PO-Revision-Date: 2023-11-30 14:44+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -584,13 +584,12 @@ msgstr "Virhe: Verkkoversiosta ei saatu irrotettua Yandexin SIDiä."
 #: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Locale"
-msgstr ""
+msgstr "Alue ja kieli"
 
 #: translator/translatorengineclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgid "Network"
-msgstr "Ei verkkoyhteyttä"
+msgstr "Verkko"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format
