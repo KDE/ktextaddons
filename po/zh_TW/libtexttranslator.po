@@ -1,0 +1,723 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-01-02 00:40+0000\n"
+"PO-Revision-Date: 2024-02-07 23:49+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 24.01.95\n"
+
+#: translator/misc/translatorutil.cpp:31
+#, kde-format
+msgid "Detect language"
+msgstr "偵測語言"
+
+#: translator/misc/translatorutil.cpp:34
+#, kde-format
+msgid "Hmong"
+msgstr ""
+
+#: translator/misc/translatorutil.cpp:37
+#, kde-format
+msgid "Bosnian"
+msgstr "波士尼亞語"
+
+#: translator/misc/translatorutil.cpp:40
+#, kde-format
+msgid "English"
+msgstr "英語"
+
+#: translator/misc/translatorutil.cpp:43
+#, kde-format
+msgid "Chinese (Simplified)"
+msgstr "簡體中文"
+
+#: translator/misc/translatorutil.cpp:46
+#, kde-format
+msgid "Chinese (Traditional)"
+msgstr "繁體中文"
+
+#: translator/misc/translatorutil.cpp:49
+#, kde-format
+msgid "Dutch"
+msgstr "荷蘭語"
+
+#: translator/misc/translatorutil.cpp:52
+#, kde-format
+msgid "French"
+msgstr "法語"
+
+#: translator/misc/translatorutil.cpp:55
+#, kde-format
+msgid "German"
+msgstr "德語"
+
+#: translator/misc/translatorutil.cpp:58
+#, kde-format
+msgid "Greek"
+msgstr "希臘語"
+
+#: translator/misc/translatorutil.cpp:61
+#, kde-format
+msgid "Italian"
+msgstr "義大利語"
+
+#: translator/misc/translatorutil.cpp:64
+#, kde-format
+msgid "Japanese"
+msgstr "日語"
+
+#: translator/misc/translatorutil.cpp:67
+#, kde-format
+msgid "Korean"
+msgstr "韓文"
+
+#: translator/misc/translatorutil.cpp:70
+#, kde-format
+msgid "Portuguese"
+msgstr "葡萄牙語"
+
+#: translator/misc/translatorutil.cpp:73
+#, kde-format
+msgid "Russian"
+msgstr "俄語"
+
+#: translator/misc/translatorutil.cpp:76
+#, kde-format
+msgid "Spanish"
+msgstr "西班牙語"
+
+#: translator/misc/translatorutil.cpp:79
+#, kde-format
+msgid "Afrikaans"
+msgstr "南非荷蘭語"
+
+#: translator/misc/translatorutil.cpp:82
+#, kde-format
+msgid "Albanian"
+msgstr "阿爾巴尼亞語"
+
+#: translator/misc/translatorutil.cpp:85
+#, kde-format
+msgid "Arabic"
+msgstr "阿拉伯文"
+
+#: translator/misc/translatorutil.cpp:88
+#, kde-format
+msgid "Armenian"
+msgstr "亞美尼亞語"
+
+#: translator/misc/translatorutil.cpp:91
+#, kde-format
+msgid "Azerbaijani"
+msgstr "亞塞拜然語"
+
+#: translator/misc/translatorutil.cpp:94
+#, kde-format
+msgid "Basque"
+msgstr "巴斯克語"
+
+#: translator/misc/translatorutil.cpp:97
+#, kde-format
+msgid "Belarusian"
+msgstr "白俄羅斯語"
+
+#: translator/misc/translatorutil.cpp:100
+#, kde-format
+msgid "Bulgarian"
+msgstr "保加利亞語"
+
+#: translator/misc/translatorutil.cpp:103
+#, kde-format
+msgid "Catalan"
+msgstr "加泰羅尼亞語"
+
+#: translator/misc/translatorutil.cpp:106
+#, kde-format
+msgid "Croatian"
+msgstr "克羅地亞語"
+
+#: translator/misc/translatorutil.cpp:109
+#, kde-format
+msgid "Czech"
+msgstr "捷克語"
+
+#: translator/misc/translatorutil.cpp:112
+#, kde-format
+msgid "Danish"
+msgstr "丹麥語"
+
+#: translator/misc/translatorutil.cpp:115
+#, kde-format
+msgid "Estonian"
+msgstr "愛沙尼亞語"
+
+#: translator/misc/translatorutil.cpp:118
+#, kde-format
+msgid "Filipino"
+msgstr "菲律賓語"
+
+#: translator/misc/translatorutil.cpp:121
+#, kde-format
+msgid "Finnish"
+msgstr "芬蘭語"
+
+#: translator/misc/translatorutil.cpp:124
+#, kde-format
+msgid "Galician"
+msgstr "加利西亞語"
+
+#: translator/misc/translatorutil.cpp:127
+#, kde-format
+msgid "Georgian"
+msgstr "喬治亞語"
+
+#: translator/misc/translatorutil.cpp:130
+#, kde-format
+msgid "Haitian Creole"
+msgstr ""
+
+#: translator/misc/translatorutil.cpp:133
+#, kde-format
+msgid "Hebrew"
+msgstr "希伯來文"
+
+#: translator/misc/translatorutil.cpp:136
+#, kde-format
+msgid "Hindi"
+msgstr "北印度語"
+
+#: translator/misc/translatorutil.cpp:139
+#, kde-format
+msgid "Hungarian"
+msgstr "匈牙利語"
+
+#: translator/misc/translatorutil.cpp:142
+#, kde-format
+msgid "Icelandic"
+msgstr "冰島語"
+
+#: translator/misc/translatorutil.cpp:145
+#, kde-format
+msgid "Indonesian"
+msgstr "印尼語"
+
+#: translator/misc/translatorutil.cpp:148
+#, kde-format
+msgid "Irish"
+msgstr "愛爾蘭語"
+
+#: translator/misc/translatorutil.cpp:151
+#, kde-format
+msgid "Latvian"
+msgstr "拉脫維亞語"
+
+#: translator/misc/translatorutil.cpp:154
+#, kde-format
+msgid "Lithuanian"
+msgstr "立陶宛語"
+
+#: translator/misc/translatorutil.cpp:157
+#, kde-format
+msgid "Macedonian"
+msgstr "馬其頓語"
+
+#: translator/misc/translatorutil.cpp:160
+#, kde-format
+msgid "Malay"
+msgstr "馬來語"
+
+#: translator/misc/translatorutil.cpp:163
+#, kde-format
+msgid "Maltese"
+msgstr "馬爾他語"
+
+#: translator/misc/translatorutil.cpp:166
+#, kde-format
+msgid "Norwegian"
+msgstr "挪威語"
+
+#: translator/misc/translatorutil.cpp:169
+#, kde-format
+msgid "Persian"
+msgstr "波斯語"
+
+#: translator/misc/translatorutil.cpp:172
+#, kde-format
+msgid "Polish"
+msgstr "波蘭語"
+
+#: translator/misc/translatorutil.cpp:175
+#, kde-format
+msgid "Romanian"
+msgstr "羅馬尼亞語"
+
+#: translator/misc/translatorutil.cpp:178
+#, kde-format
+msgid "Serbian"
+msgstr "塞爾維亞語"
+
+#: translator/misc/translatorutil.cpp:181
+#, kde-format
+msgid "Slovak"
+msgstr "斯洛伐克語"
+
+#: translator/misc/translatorutil.cpp:184
+#, kde-format
+msgid "Slovenian"
+msgstr "斯洛文尼亞語"
+
+#: translator/misc/translatorutil.cpp:187
+#, kde-format
+msgid "Swahili"
+msgstr ""
+
+#: translator/misc/translatorutil.cpp:190
+#, kde-format
+msgid "Swedish"
+msgstr "瑞典語"
+
+#: translator/misc/translatorutil.cpp:193
+#, kde-format
+msgid "Thai"
+msgstr "泰語"
+
+#: translator/misc/translatorutil.cpp:196
+#, kde-format
+msgid "Turkish"
+msgstr "土耳其語"
+
+#: translator/misc/translatorutil.cpp:199
+#, kde-format
+msgid "Ukrainian"
+msgstr "烏克蘭語"
+
+#: translator/misc/translatorutil.cpp:202
+#, kde-format
+msgid "Urdu"
+msgstr ""
+
+#: translator/misc/translatorutil.cpp:205
+#, kde-format
+msgid "Vietnamese"
+msgstr "越南語"
+
+#: translator/misc/translatorutil.cpp:208
+#, kde-format
+msgid "Welsh"
+msgstr "威爾斯語"
+
+#: translator/misc/translatorutil.cpp:211
+#, kde-format
+msgid "Yiddish"
+msgstr ""
+
+#: translator/plugins/bergamot/begamotenginedialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Bergamot Plugin Settings"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotengineclient.cpp:32
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
+#, kde-format
+msgid "Bergamot"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#, kde-format
+msgid "Search..."
+msgstr "搜尋…"
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
+#, kde-format
+msgid "Download"
+msgstr "下載"
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
+#, kde-format
+msgid "Delete"
+msgstr "刪除"
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:104
+#, kde-format
+msgid "Update List"
+msgstr "更新清單"
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:105
+#, kde-format
+msgid "Update list of languages from network"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
+#, kde-format
+msgid "Error: %1"
+msgstr "錯誤：%1"
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
+#, kde-format
+msgid "Use translation cache"
+msgstr "使用翻譯快取"
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
+#, kde-format
+msgid "Resource Usage"
+msgstr "資源使用量"
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
+#, kde-format
+msgid "Thread:"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
+#, kde-format
+msgid "Memory by Thread:"
+msgstr ""
+
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:29
+#, kde-format
+msgid "Languages"
+msgstr "語言"
+
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:30
+#, kde-format
+msgid "Settings"
+msgstr "設定"
+
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
+#, kde-format
+msgid "Language model is not defined."
+msgstr ""
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:37
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr ""
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/yandex/yandexengineplugin.cpp:54
+#: translator/translatorengineplugin.cpp:106
+#, kde-format
+msgid ""
+"Error: Engine systems have detected suspicious traffic from your computer "
+"network. Please try your request again later."
+msgstr ""
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:52
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
+#, kde-format
+msgid "Impossible to access to url: %1"
+msgstr ""
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
+#, kde-format
+msgid "CheckSum is not correct."
+msgstr ""
+
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
+#, kde-format
+msgid "Error during writing on disk: %1"
+msgstr ""
+
+#: translator/plugins/bergamot/extractlanguagejob.cpp:30
+#, kde-format
+msgid "Impossible to extract language"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:47
+#, kde-format
+msgid "Source"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:49
+#, kde-format
+msgid "Target"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:51
+#, kde-format
+msgid "Type"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:53
+#, kde-format
+msgid "Repository"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:55
+#, kde-format
+msgid "Installed Version"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:57
+#, kde-format
+msgid "Available Version"
+msgstr ""
+
+#: translator/plugins/bergamot/translatormodel.cpp:59
+#: translator/plugins/bergamot/translatormodel.cpp:127
+#, kde-format
+msgid "Installed"
+msgstr ""
+
+#: translator/plugins/bing/bingengineclient.cpp:26
+#, kde-format
+msgid "Bing"
+msgstr "Bing"
+
+#: translator/plugins/bing/bingengineplugin.cpp:57
+#, kde-format
+msgid "Error: Unable to find Bing credentials in web version."
+msgstr ""
+
+#: translator/plugins/bing/bingengineplugin.cpp:65
+#, kde-format
+msgid "Error: Unable to extract Bing key from web version."
+msgstr ""
+
+#: translator/plugins/bing/bingengineplugin.cpp:74
+#, kde-format
+msgid "Error: Unable to extract Bing token from web version."
+msgstr ""
+
+#: translator/plugins/bing/bingengineplugin.cpp:83
+#: translator/plugins/bing/bingengineplugin.cpp:92
+#, kde-format
+msgid "Error: Unable to extract additional Bing information from web version."
+msgstr ""
+
+#: translator/plugins/deepl/deeplengineclient.cpp:37
+#, kde-format
+msgid "DeepL"
+msgstr ""
+
+#: translator/plugins/deepl/deeplengineconfiguredialog.cpp:17
+#: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:17
+#: translator/plugins/lingva/lingvaenginedialog.cpp:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Engine"
+msgstr ""
+
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
+#, kde-format
+msgid "Use Free License Key"
+msgstr ""
+
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
+#, kde-format
+msgid "Api Key:"
+msgstr ""
+
+#: translator/plugins/deepl/deeplengineplugin.cpp:41
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
+#, kde-format
+msgid "Server needs Api Key."
+msgstr ""
+
+#: translator/plugins/google/googleengineclient.cpp:27
+#, kde-format
+msgid "Google"
+msgstr ""
+
+#: translator/plugins/google/googleengineplugin.cpp:80
+#, kde-format
+msgid "Invalid answer."
+msgstr ""
+
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
+#, kde-format
+msgid "Libre Translate"
+msgstr ""
+
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
+#, kde-format
+msgid "Server required Api Key"
+msgstr ""
+
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
+#: translator/plugins/lingva/lingvaenginewidget.cpp:27
+#, kde-format
+msgid "Server Url:"
+msgstr ""
+
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
+#, kde-format
+msgid "Server url is not defined."
+msgstr ""
+
+#: translator/plugins/lingva/lingvaengineclient.cpp:31
+#, kde-format
+msgid "Lingva"
+msgstr ""
+
+#: translator/plugins/yandex/yandexengineclient.cpp:26
+#, kde-format
+msgid "Yandex"
+msgstr ""
+
+#: translator/plugins/yandex/yandexengineplugin.cpp:63
+#, kde-format
+msgid "Error: Unable to find Yandex SID in web version."
+msgstr ""
+
+#: translator/plugins/yandex/yandexengineplugin.cpp:71
+#, kde-format
+msgid "Error: Unable to extract Yandex SID from web version."
+msgstr ""
+
+#: translator/translatorengineclient.cpp:65
+#, kde-format
+msgid "Locale"
+msgstr "地域"
+
+#: translator/translatorengineclient.cpp:67
+#, kde-format
+msgid "Network"
+msgstr "網路"
+
+#: translator/translatorengineplugin.cpp:114
+#, kde-format
+msgid "You used same language for 'from' and 'to' language."
+msgstr ""
+
+#: translator/widgets/translatorconfiguredialog.cpp:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Translator"
+msgstr "設定翻譯工具"
+
+#: translator/widgets/translatorconfigurelistswidget.cpp:24
+#, kde-format
+msgid "From:"
+msgstr ""
+
+#: translator/widgets/translatorconfigurelistswidget.cpp:25
+#, kde-format
+msgid "To:"
+msgstr ""
+
+#: translator/widgets/translatorconfigurelistswidget.cpp:51
+#: translator/widgets/translatorconfigurewidget.cpp:39
+#, kde-format
+msgid "Engine:"
+msgstr ""
+
+#: translator/widgets/translatordebugdialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Translator Debug"
+msgstr ""
+
+#: translator/widgets/translatordebugdialog.cpp:41
+#, kde-format
+msgid "Save As..."
+msgstr ""
+
+#: translator/widgets/translatordebugdialog.cpp:90
+#, kde-format
+msgid ""
+"Could not write the file %1:\n"
+"\"%2\" is the detailed error description."
+msgstr ""
+
+#: translator/widgets/translatordebugdialog.cpp:94
+#, kde-format
+msgid "Save File Error"
+msgstr ""
+
+#: translator/widgets/translatordebugdialog.cpp:117
+#, kde-format
+msgid "All Files (*)"
+msgstr "所有檔案 (*)"
+
+#: translator/widgets/translatormenu.cpp:23
+#, kde-format
+msgid "Translate..."
+msgstr "翻譯..."
+
+#: translator/widgets/translatorwidget.cpp:217
+#: translator/widgets/translatorwidget.cpp:220
+#, kde-format
+msgid "Close"
+msgstr "關閉"
+
+#: translator/widgets/translatorwidget.cpp:226
+#, kde-format
+msgctxt "Translate from language"
+msgid "From:"
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:233
+#, kde-format
+msgctxt "Translate to language"
+msgid "To:"
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:245
+#, kde-format
+msgctxt "Invert language choices so that from becomes to and to becomes from"
+msgid "Invert"
+msgstr "反轉"
+
+#: translator/widgets/translatorwidget.cpp:250
+#: translator/widgets/translatorwidget.cpp:253
+#, kde-format
+msgid "Clear"
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:258
+#: translator/widgets/translatorwidget.cpp:261
+#, kde-format
+msgid "Translate"
+msgstr "翻譯"
+
+#: translator/widgets/translatorwidget.cpp:268
+#, kde-format
+msgid "Debug"
+msgstr "除錯"
+
+#: translator/widgets/translatorwidget.cpp:286
+#, kde-format
+msgid "Configure"
+msgstr "設定"
+
+#: translator/widgets/translatorwidget.cpp:365
+#, kde-format
+msgid ""
+"Drag text that you want to translate. (Be careful text will be send to "
+"external Server)."
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:367
+#, kde-format
+msgid "Drag text that you want to translate."
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:416
+#, kde-format
+msgid "No network connection detected, we cannot translate text."
+msgstr ""
+
+#: translator/widgets/translatorwidget.cpp:416
+#, kde-format
+msgid "No network"
+msgstr "沒有網路"
+
+#: translator/widgets/translatorwidget.cpp:453
+#, kde-format
+msgid "Translate error"
+msgstr "翻譯錯誤"
