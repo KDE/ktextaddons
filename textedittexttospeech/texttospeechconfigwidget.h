@@ -50,9 +50,9 @@ private:
     TextToSpeechSliderWidget *const mVolume;
     TextToSpeechSliderWidget *const mRate;
     TextToSpeechSliderWidget *const mPitch;
+    QComboBox *const mAvailableEngine;
     TextToSpeechLanguageComboBox *const mLanguage;
     TextToSpeechConfigInterface *mTextToSpeechConfigInterface = nullptr;
-    QComboBox *const mAvailableEngine;
     TextToSpeechVoiceComboBox *const mVoice;
     QPushButton *const mTestButton;
 };
