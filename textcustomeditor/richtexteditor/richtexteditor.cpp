@@ -35,8 +35,6 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QContextMenuEvent>
-#include <QDBusConnection>
-#include <QDBusConnectionInterface>
 #include <QDialogButtonBox>
 #include <QMenu>
 #include <QPushButton>

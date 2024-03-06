@@ -28,8 +28,6 @@
 #include <KColorScheme>
 #include <QApplication>
 #include <QClipboard>
-#include <QDBusConnection>
-#include <QDBusConnectionInterface>
 #include <QMenu>
 #include <QScrollBar>
 #include <QShortcut>
