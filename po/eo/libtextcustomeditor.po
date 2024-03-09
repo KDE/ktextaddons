@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-07 01:33+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"PO-Revision-Date: 2024-03-08 21:37+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -23,8 +23,8 @@ msgstr ""
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "faris %1 anstataŭigon"
+msgstr[1] "faris %1 anstataŭigojn"
 
 #: plaintexteditor/plaintexteditor.cpp:159
 #: richtexteditor/richtexteditor.cpp:217
@@ -61,7 +61,7 @@ msgstr "Neniu literumenda."
 #: richtexteditor/richtexteditor.cpp:489
 #, kde-format
 msgid "No backend available for spell checking."
-msgstr ""
+msgstr "Neniu backend haveblas por literumkontrolo."
 
 #: richtexteditor/richtexteditor.cpp:256
 #, kde-format
@@ -74,6 +74,8 @@ msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
+"Neniu backend haveblas por literumkontrolo. Ĉu vi tamen volas sendi la "
+"retpoŝton?"
 
 #: richtexteditor/richtexteditor.cpp:483
 #, kde-format
@@ -98,6 +100,8 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
+"Fino me mesaĝo atingita.\n"
+"Frazo '%1' ne troveblis."
 
 #: widgets/textfindreplacewidget.cpp:25
 #, kde-format
@@ -166,7 +170,7 @@ msgstr "Usklecodistinga"
 #: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Whole word"
-msgstr ""
+msgstr "Tuta vorto"
 
 #: widgets/textfindreplacewidget.cpp:102
 #, kde-format
@@ -176,12 +180,12 @@ msgstr "Regula Esprimo"
 #: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr ""
+msgstr "Respekti Diakritojn kaj Kromsignojn"
 
 #: widgets/textgotolinewidget.cpp:49
 #, kde-format
 msgid "Go to Line:"
-msgstr ""
+msgstr "Iri al linio:"
 
 #: widgets/textgotolinewidget.cpp:56
 #, kde-format
