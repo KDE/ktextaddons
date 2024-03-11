@@ -6,7 +6,7 @@ ecm_qt_declare_logging_category(translator_debug_deepl_SRCS
     HEADER deepltranslator_debug.h
     IDENTIFIER TRANSLATOR_DEEPL_LOG
     CATEGORY_NAME org.kde.kf.texttranslator.deepl
-    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.deepl
+    OLD_CATEGORY_NAMES org.kde.kf6.texttranslator.deepl
     DESCRIPTION "deepl translator"
     EXPORT KTEXTADDONS
 )
@@ -25,17 +25,13 @@ target_sources(translator_deepl PRIVATE
 )
 
 target_link_libraries(translator_deepl PRIVATE
-    KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ConfigCore
-    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF6::TextTranslator KF6::I18n KF6::ConfigCore
+    KF6::TextAddonsWidgets
+    KF6::WidgetsAddons
 )
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(translator_deepl PRIVATE qt6keychain)
-else()
-    target_link_libraries(translator_deepl PRIVATE qt5keychain)
-endif()
+target_link_libraries(translator_deepl PRIVATE qt6keychain)
 
-install(TARGETS translator_deepl  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
+install(TARGETS translator_deepl  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

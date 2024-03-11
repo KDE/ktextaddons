@@ -6,7 +6,7 @@ ecm_qt_declare_logging_category(translator_debug_bing_SRCS
     HEADER bingtranslator_debug.h
     IDENTIFIER TRANSLATOR_BING_LOG
     CATEGORY_NAME org.kde.kf.texttranslator.bing
-    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.texttranslator.bing
+    OLD_CATEGORY_NAMES org.kde.kf6.texttranslator.bing
     DESCRIPTION "bing translator"
     EXPORT KTEXTADDONS
 )
@@ -18,9 +18,9 @@ target_sources(translator_bing PRIVATE
     bingengineplugin.h
 )
 
-target_link_libraries(translator_bing PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(translator_bing PRIVATE KF6::TextTranslator KF6::I18n)
 
-install(TARGETS translator_bing  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
+install(TARGETS translator_bing  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

@@ -30,17 +30,13 @@ include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.6.0")
-    set(KF_MIN_VERSION "5.246.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
+set(QT_REQUIRED_VERSION "6.6.0")
+set(KF_MIN_VERSION "5.246.0")
+set(KF_MAJOR_VERSION "6")
 
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
 
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     ConfigWidgets
     Archive
@@ -52,20 +48,20 @@ option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
 add_feature_info(KIO_SUPPORT ${BUILD_KIO_SUPPORT} "Build with KIO support")
 
 if (${BUILD_KIO_SUPPORT})
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 endif()
 
 option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
 add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
 
-find_package(Qt${QT_MAJOR_VERSION}Keychain CONFIG)
-set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
+find_package(Qt6Keychain CONFIG)
+set_package_properties(Qt6Keychain PROPERTIES
                                    DESCRIPTION "Provides support for secure credentials storage"
                                    URL "https://github.com/frankosterfeld/qtkeychain"
                                    TYPE REQUIRED)
 
 if(BUILD_TESTING)
-    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
@@ -108,17 +104,15 @@ add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
 add_subdirectory(textemoticons)
 add_subdirectory(textutils)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
-    add_subdirectory(textspeechtotext)
-endif()
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
+add_subdirectory(textspeechtotext)
 
-find_package(Qt${QT_MAJOR_VERSION}TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
-set_package_properties(Qt${QT_MAJOR_VERSION}TextToSpeech PROPERTIES DESCRIPTION
+find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
+set_package_properties(Qt6TextToSpeech PROPERTIES DESCRIPTION
     "Add support for text to speech"
     TYPE OPTIONAL
 )
-if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
+if(TARGET Qt6::TextToSpeech)
     add_subdirectory(textedittexttospeech)
 endif()
 

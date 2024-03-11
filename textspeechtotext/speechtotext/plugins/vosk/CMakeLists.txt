@@ -53,11 +53,11 @@ ecm_qt_declare_logging_category(voskspeechtotext HEADER libvoskspeechtotext_debu
 
 target_link_libraries(voskspeechtotext
     Qt::Widgets
-    KF${KF_MAJOR_VERSION}::Archive
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::TextSpeechToText
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::ConfigWidgets
+    KF6::Archive
+    KF6::I18n
+    KF6::TextSpeechToText
+    KF6::WidgetsAddons
+    KF6::ConfigWidgets
     Vosk
 )
 
@@ -90,9 +90,9 @@ target_sources(speechtotext_vosk PRIVATE
 
 )
 
-target_link_libraries(speechtotext_vosk PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n voskspeechtotext)
+target_link_libraries(speechtotext_vosk PRIVATE KF6::TextSpeechToText KF6::I18n voskspeechtotext)
 
-install(TARGETS speechtotext_vosk  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/speechtotext/)
+install(TARGETS speechtotext_vosk  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)

@@ -8,7 +8,7 @@ macro(add_speechtotext_widget_unittest _source)
         NAME_PREFIX "speechtotext-"
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
-        KF${KF_MAJOR_VERSION}::TextSpeechToText
+        KF6::TextSpeechToText
     )
 endmacro()
 add_speechtotext_widget_unittest(speechtotextconfigurewidgettest.cpp)

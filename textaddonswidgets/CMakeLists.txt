@@ -3,63 +3,56 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextaddonswidgets\")
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgets")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAddonsWidgets")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTADDONSWIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAddonsWidgetsConfigVersion.cmake"
     SOVERSION 1
 )
 
-add_library(KF${KF_MAJOR_VERSION}TextAddonsWidgets)
-add_library(KF${KF_MAJOR_VERSION}::TextAddonsWidgets ALIAS KF${KF_MAJOR_VERSION}TextAddonsWidgets)
+add_library(KF6TextAddonsWidgets)
+add_library(KF6::TextAddonsWidgets ALIAS KF6TextAddonsWidgets)
 
-target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
+target_sources(KF6TextAddonsWidgets PRIVATE
     selectspecialchardialog.h
     selectspecialchardialog.cpp
     slidecontainer.cpp
     slidecontainer.h
 )
-if (QT_MAJOR_VERSION STREQUAL "5")
-    target_sources(KF${KF_MAJOR_VERSION}TextAddonsWidgets PRIVATE
-        lineeditcatchreturnkey.h
-        lineeditcatchreturnkey.cpp
-    )
-endif()
-
-target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
+target_link_libraries(KF6TextAddonsWidgets
     PRIVATE
     Qt::Widgets
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::ConfigGui
+    KF6::WidgetsAddons
+    KF6::ConfigGui
 )
 
-ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
+ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
     IDENTIFIER TEXTADDONSWIDGETS_LOG
     CATEGORY_NAME org.kde.kf.textaddonswidgets
-    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textaddonswidgets
-    DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons widgets)" EXPORT KTEXTADDONS)
+    OLD_CATEGORY_NAMES org.kde.kf6.textaddonswidgets
+    DESCRIPTION "KF6 (textaddons widgets)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF${KF_MAJOR_VERSION}TextAddonsWidgets PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF6TextAddonsWidgets PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF${KF_MAJOR_VERSION}TextAddonsWidgets BASE_NAME TextAddonsWidgets)
+generate_export_header(KF6TextAddonsWidgets BASE_NAME TextAddonsWidgets)
 
-target_include_directories(KF${KF_MAJOR_VERSION}TextAddonsWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets;>")
+target_include_directories(KF6TextAddonsWidgets INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets;>")
 
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextAddonsWidgets
+target_link_libraries(KF6TextAddonsWidgets
     PRIVATE
-    KF${KF_MAJOR_VERSION}::I18n
+    KF6::I18n
 )
 
-set_target_properties(KF${KF_MAJOR_VERSION}TextAddonsWidgets PROPERTIES
+set_target_properties(KF6TextAddonsWidgets PROPERTIES
     VERSION ${TEXTADDONSWIDGETS_VERSION}
     SOVERSION ${TEXTADDONSWIDGETS_SOVERSION}
     EXPORT_NAME TextAddonsWidgets
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets EXPORT KF${KF_MAJOR_VERSION}TextAddonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6TextAddonsWidgets EXPORT KF6TextAddonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
@@ -68,14 +61,6 @@ ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )
-if (QT_MAJOR_VERSION STREQUAL "5")
-    ecm_generate_headers(TextAddonsWidgets_lineedit_CamelCase_HEADERS
-        HEADER_NAMES
-        LineEditCatchReturnKey
-        REQUIRED_HEADERS TextAddonsWidgets_lineedit_HEADERS
-        PREFIX TextAddonsWidgets
-    )
-endif()
 
 install(FILES
     ${TextAddonsWidgets_HEADERS}
@@ -93,16 +78,16 @@ install(FILES
 
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAddonsWidgetsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAddonsWidgetsConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF${KF_MAJOR_VERSION}TextAddonsWidgetsTargets
+install(EXPORT KF6TextAddonsWidgetsTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF${KF_MAJOR_VERSION}TextAddonsWidgetsTargets.cmake
-    NAMESPACE KF${KF_MAJOR_VERSION}::
+    FILE KF6TextAddonsWidgetsTargets.cmake
+    NAMESPACE KF6::
 )
 
 install(FILES
@@ -114,17 +99,17 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF${KF_MAJOR_VERSION}TextAddonsWidgets_QCH
-        NAME KF${KF_MAJOR_VERSION}TextAddonsWidgets
-        BASE_NAME KF${KF_MAJOR_VERSION}TextAddonsWidgets
+        KF6TextAddonsWidgets_QCH
+        NAME KF6TextAddonsWidgets
+        BASE_NAME KF6TextAddonsWidgets
         VERSION ${TEXTADDONSWIDGETS_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextAddonsWidgets_HEADERS}
         LINK_QCHS
-        Qt${QT_MAJOR_VERSION}Core_QCH
-        Qt${QT_MAJOR_VERSION}Gui_QCH
-        Qt${QT_MAJOR_VERSION}Widgets_QCH
+        Qt6Core_QCH
+        Qt6Gui_QCH
+        Qt6Widgets_QCH
         INCLUDE_DIRS
         ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -137,17 +122,17 @@ endif()
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextAddonsWidgets_QCH
-        FILE KF${KF_MAJOR_VERSION}TextAddonsWidgetsQchTargets.cmake
+        TARGETS KF6TextAddonsWidgets_QCH
+        FILE KF6TextAddonsWidgetsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAddonsWidgetsQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAddonsWidgetsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextAddonsWidgetsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAddonsWidgetsConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 

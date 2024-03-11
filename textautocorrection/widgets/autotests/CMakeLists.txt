@@ -7,7 +7,7 @@ macro(add_autocorrectwidgets_unittest _source)
   add_test(NAME ${_name} COMMAND ${_name} )
   set_tests_properties(${_name} PROPERTIES ENVIRONMENT "QT_HASH_SEED=0")
   ecm_mark_as_test(autocorrectionwidgets-${_name})
-  target_link_libraries(${_name}  Qt::Test KF${KF_MAJOR_VERSION}::TextAutoCorrectionWidgets)
+  target_link_libraries(${_name}  Qt::Test KF6::TextAutoCorrectionWidgets)
 endmacro()
 
 add_autocorrectwidgets_unittest(autocorrectiontextedittest.cpp)

@@ -7,7 +7,7 @@ macro(add_translator_unittest _source)
         NAME_PREFIX "translator-"
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
-        KF${KF_MAJOR_VERSION}::TextTranslator
+        KF6::TextTranslator
     )
 endmacro()
 if (NOT DISABLE_AUTOTEST_BROKEN_CI)

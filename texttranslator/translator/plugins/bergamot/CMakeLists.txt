@@ -85,12 +85,12 @@ ecm_qt_declare_logging_category(libbergamot HEADER libbergamot_debug.h IDENTIFIE
     CATEGORY_NAME org.kde.libbergamottranslator DESCRIPTION "lib bergamot translator" EXPORT KTEXTADDONS)
 
 target_link_libraries(libbergamot  Qt::Widgets
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::TextTranslator
-    KF${KF_MAJOR_VERSION}::ConfigWidgets
-    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::Archive
+    KF6::I18n
+    KF6::TextTranslator
+    KF6::ConfigWidgets
+    KF6::TextAddonsWidgets
+    KF6::WidgetsAddons
+    KF6::Archive
     slimt::slimt-shared
 )
 
@@ -119,9 +119,9 @@ target_sources(translator_bergamot PRIVATE
 
 )
 
-target_link_libraries(translator_bergamot PRIVATE KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n libbergamot)
+target_link_libraries(translator_bergamot PRIVATE KF6::TextTranslator KF6::I18n libbergamot)
 
-install(TARGETS translator_bergamot  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/translator/)
+install(TARGETS translator_bergamot  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)

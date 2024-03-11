@@ -1,39 +1,39 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextspeechtotext\")
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextSpeechToText")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextSpeechToText")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTSPEECHTOTEXT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextSpeechToTextConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextSpeechToTextConfigVersion.cmake"
     SOVERSION 1
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextSpeechToTextConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextSpeechToTextConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextSpeechToTextConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextSpeechToTextConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT KF${KF_MAJOR_VERSION}TextSpeechToTextTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF${KF_MAJOR_VERSION}TextSpeechToTextTargets.cmake NAMESPACE KF${KF_MAJOR_VERSION}::)
+install(EXPORT KF6TextSpeechToTextTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF6TextSpeechToTextTargets.cmake NAMESPACE KF6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/ COMPONENT Devel
     )
 
-add_library(KF${KF_MAJOR_VERSION}TextSpeechToText)
-add_library(KF${KF_MAJOR_VERSION}::TextSpeechToText ALIAS KF${KF_MAJOR_VERSION}TextSpeechToText)
-ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextSpeechToText HEADER textspeechtotext_debug.h
+add_library(KF6TextSpeechToText)
+add_library(KF6::TextSpeechToText ALIAS KF6TextSpeechToText)
+ecm_qt_declare_logging_category(KF6TextSpeechToText HEADER textspeechtotext_debug.h
     IDENTIFIER TEXTSPEECHTOTEXT_LOG
     CATEGORY_NAME org.kde.kf.textspeechtotext
-    DESCRIPTION "KF${KF_MAJOR_VERSION} (TextSpeechToText)"
+    DESCRIPTION "KF6 (TextSpeechToText)"
     EXPORT KTEXTADDONS
 )
 
-target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
+target_sources(KF6TextSpeechToText PRIVATE
     speechtotext/speechtotextclient.h
     speechtotext/speechtotextclient.cpp
 
@@ -75,35 +75,35 @@ target_sources(KF${KF_MAJOR_VERSION}TextSpeechToText PRIVATE
     )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF${KF_MAJOR_VERSION}TextSpeechToText PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF6TextSpeechToText PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF${KF_MAJOR_VERSION}TextSpeechToText BASE_NAME textspeechtotext)
+generate_export_header(KF6TextSpeechToText BASE_NAME textspeechtotext)
 
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextSpeechToText
+target_link_libraries(KF6TextSpeechToText
     PUBLIC
     Qt::Gui
     Qt::Widgets
     Qt::Network
     PRIVATE
     Qt::MultimediaWidgets
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::ConfigGui
-    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
+    KF6::I18n
+    KF6::WidgetsAddons
+    KF6::ConfigGui
+    KF6::TextAddonsWidgets
     )
 
-target_include_directories(KF${KF_MAJOR_VERSION}TextSpeechToText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/>")
+target_include_directories(KF6TextSpeechToText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/>")
 
-set_target_properties(KF${KF_MAJOR_VERSION}TextSpeechToText PROPERTIES
+set_target_properties(KF6TextSpeechToText PROPERTIES
     VERSION ${TEXTSPEECHTOTEXT_VERSION}
     SOVERSION ${TEXTSPEECHTOTEXT_SOVERSION}
     EXPORT_NAME TextSpeechToText
     )
 
 install(TARGETS
-    KF${KF_MAJOR_VERSION}TextSpeechToText
-    EXPORT KF${KF_MAJOR_VERSION}TextSpeechToTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KF6TextSpeechToText
+    EXPORT KF6TextSpeechToTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
 ecm_generate_headers(TextSpeechToText_Camelcasespeechtotext_HEADERS
@@ -150,18 +150,18 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF${KF_MAJOR_VERSION}TextSpeechToText_QCH
-        NAME KF${KF_MAJOR_VERSION}TextSpeechToText
-        BASE_NAME KF${KF_MAJOR_VERSION}TextSpeechToText
+        KF6TextSpeechToText_QCH
+        NAME KF6TextSpeechToText
+        BASE_NAME KF6TextSpeechToText
         VERSION ${TEXTSPEECHTOTEXT_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextSpeechToText_speechtotext_HEADERS}
         ${TextSpeechToTextWidget_speechtotext_HEADERS}
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -173,17 +173,17 @@ if (BUILD_QCH)
 endif()
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextSpeechToText_QCH
-        FILE KF${KF_MAJOR_VERSION}TextSpeechToTextQchTargets.cmake
+        TARGETS KF6TextSpeechToText_QCH
+        FILE KF6TextSpeechToTextQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextSpeechToTextQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextSpeechToTextQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextSpeechToTextConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextSpeechToTextConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextSpeechToTextConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
 

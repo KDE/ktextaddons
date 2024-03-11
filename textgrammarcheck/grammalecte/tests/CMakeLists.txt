@@ -4,6 +4,6 @@
 add_executable(grammalecte_gui)
 target_sources(grammalecte_gui PRIVATE main.cpp grammalectewidget.cpp grammalectewidget.h)
 target_link_libraries(grammalecte_gui
-    KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::TextGrammarCheck
+    KF6::I18n KF6::TextGrammarCheck
 )
 

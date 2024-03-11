@@ -2,17 +2,17 @@
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 add_executable(translator_gui translator_gui.cpp)
 target_link_libraries(translator_gui
-  KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+  KF6::TextTranslator KF6::I18n
 )
 
 ######
 add_executable(translatorconfigurelanguagelistwidget_gui translatorconfigurelanguagelistwidget_gui.cpp translatorconfigurelanguagelistwidget_gui.h)
 target_link_libraries(translatorconfigurelanguagelistwidget_gui
-  KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+  KF6::TextTranslator KF6::I18n
 )
 
 #####
 add_executable(translatorconfigurelistswidget_gui translatorconfigurelistswidget_gui.cpp)
 target_link_libraries(translatorconfigurelistswidget_gui
-  KF${KF_MAJOR_VERSION}::TextTranslator KF${KF_MAJOR_VERSION}::I18n
+  KF6::TextTranslator KF6::I18n
 )

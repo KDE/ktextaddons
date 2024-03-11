@@ -1,18 +1,18 @@
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 # SPDX-License-Identifier: BSD-3-Clause
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCore")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEmoticonsCore")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSCORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textemoticonscore_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCoreConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfigVersion.cmake"
     SOVERSION 1
 )
 
-add_library(KF${KF_MAJOR_VERSION}TextEmoticonsCore)
-add_library(KF${KF_MAJOR_VERSION}::TextEmoticonsCore ALIAS KF${KF_MAJOR_VERSION}TextEmoticonsCore)
+add_library(KF6TextEmoticonsCore)
+add_library(KF6::TextEmoticonsCore ALIAS KF6TextEmoticonsCore)
 
-target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsCore PRIVATE
+target_sources(KF6TextEmoticonsCore PRIVATE
     emoji.qrc
     emoticoncategory.cpp
     emoticoncategory.h
@@ -40,39 +40,39 @@ target_sources(KF${KF_MAJOR_VERSION}TextEmoticonsCore PRIVATE
     runninganimatedimage.cpp
 )
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
+target_link_libraries(KF6TextEmoticonsCore
     PUBLIC
     Qt::Gui
     PRIVATE
-    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF6::ConfigCore
 )
 
-ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextEmoticonsCore HEADER textemoticonscore_debug.h
+ecm_qt_declare_logging_category(KF6TextEmoticonsCore HEADER textemoticonscore_debug.h
     IDENTIFIER TEXTEMOTICONSCORE_LOG
     CATEGORY_NAME org.kde.kf.textemoticonscore
-    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textemoticonscore
-    DESCRIPTION "KF${KF_MAJOR_VERSION} (textaddons textemotions core)" EXPORT KTEXTADDONS)
+    OLD_CATEGORY_NAMES org.kde.kf6.textemoticonscore
+    DESCRIPTION "KF6 (textaddons textemotions core)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF${KF_MAJOR_VERSION}TextEmoticonsCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF6TextEmoticonsCore PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF${KF_MAJOR_VERSION}TextEmoticonsCore BASE_NAME TextEmoticonsCore)
+generate_export_header(KF6TextEmoticonsCore BASE_NAME TextEmoticonsCore)
 
-target_include_directories(KF${KF_MAJOR_VERSION}TextEmoticonsCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsCore;>")
+target_include_directories(KF6TextEmoticonsCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsCore;>")
 
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextEmoticonsCore
+target_link_libraries(KF6TextEmoticonsCore
     PRIVATE
-    KF${KF_MAJOR_VERSION}::I18n
+    KF6::I18n
 )
 
-set_target_properties(KF${KF_MAJOR_VERSION}TextEmoticonsCore PROPERTIES
+set_target_properties(KF6TextEmoticonsCore PROPERTIES
     VERSION ${TEXTEMOTICONSCORE_VERSION}
     SOVERSION ${TEXTEMOTICONSCORE_SOVERSION}
     EXPORT_NAME TextEmoticonsCore
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsCore EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6TextEmoticonsCore EXPORT KF6TextEmoticonsCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
@@ -109,16 +109,16 @@ install(FILES
 
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCoreConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCoreConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF${KF_MAJOR_VERSION}TextEmoticonsCoreTargets
+install(EXPORT KF6TextEmoticonsCoreTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF${KF_MAJOR_VERSION}TextEmoticonsCoreTargets.cmake
-    NAMESPACE KF${KF_MAJOR_VERSION}::
+    FILE KF6TextEmoticonsCoreTargets.cmake
+    NAMESPACE KF6::
 )
 
 install(FILES
@@ -130,16 +130,16 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF${KF_MAJOR_VERSION}TextEmoticonsCore_QCH
-        NAME KF${KF_MAJOR_VERSION}TextEmoticonsCore
-        BASE_NAME KF${KF_MAJOR_VERSION}TextEmoticonsCore
+        KF6TextEmoticonsCore_QCH
+        NAME KF6TextEmoticonsCore
+        BASE_NAME KF6TextEmoticonsCore
         VERSION ${TEXTEMOTICONSCORE_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextEmoticonsCore_HEADERS}
         LINK_QCHS
-        Qt${QT_MAJOR_VERSION}Core_QCH
-        Qt${QT_MAJOR_VERSION}Gui_QCH
+        Qt6Core_QCH
+        Qt6Gui_QCH
         INCLUDE_DIRS
         ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -151,16 +151,16 @@ if (BUILD_QCH)
 endif()
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextEmoticonsCore_QCH
-        FILE KF${KF_MAJOR_VERSION}TextEmoticonsCoreQchTargets.cmake
+        TARGETS KF6TextEmoticonsCore_QCH
+        FILE KF6TextEmoticonsCoreQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCoreQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEmoticonsCoreQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextEmoticonsCoreConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextEmoticonsCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )

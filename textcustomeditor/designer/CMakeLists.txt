@@ -22,7 +22,7 @@ ecm_add_qtdesignerplugin(textcustomeditor
     TextCustomEditor::RichTextEditorWidget
     TextCustomEditor::PlainTextEditorWidget
     LINK_LIBRARIES
-    KF${KF_MAJOR_VERSION}::TextCustomEditor
+    KF6::TextCustomEditor
     Qt::Widgets
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel

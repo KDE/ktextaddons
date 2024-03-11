@@ -14,8 +14,8 @@ target_sources(grammarcommon PRIVATE
     grammarresultutil.cpp
     )
 
-ecm_qt_declare_logging_category(grammarcommon HEADER grammarcommon_debug.h IDENTIFIER LIBGRAMMARCOMMON_LOG CATEGORY_NAME org.kde.kf${KF_MAJOR_VERSION}.libgrammarcommon
-    DESCRIPTION "KF${KF_MAJOR_VERSION} (libgramalecte common)"
+ecm_qt_declare_logging_category(grammarcommon HEADER grammarcommon_debug.h IDENTIFIER LIBGRAMMARCOMMON_LOG CATEGORY_NAME org.kde.kf6.libgrammarcommon
+    DESCRIPTION "KF6 (libgramalecte common)"
     EXPORT KTEXTADDONS
     )
 
@@ -26,7 +26,7 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 
 target_link_libraries(grammarcommon
-    KF${KF_MAJOR_VERSION}::I18n
+    KF6::I18n
     )
 
 set_target_properties(grammarcommon

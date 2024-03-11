@@ -4,5 +4,5 @@ include(ECMAddTests)
 
 ecm_add_test(slidecontainertest.cpp slidecontainertest.h
     TEST_NAME slidecontainertest
-    LINK_LIBRARIES Qt::Test Qt::Gui KF${KF_MAJOR_VERSION}TextAddonsWidgets Qt::Widgets 
+    LINK_LIBRARIES Qt::Test Qt::Gui KF6TextAddonsWidgets Qt::Widgets 
     )

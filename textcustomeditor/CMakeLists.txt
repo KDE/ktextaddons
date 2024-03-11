@@ -2,29 +2,29 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextcustomeditor\")
 
-if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
+if(TARGET Qt6::TextToSpeech)
     set(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT TRUE)
 endif()
 
-if(TARGET KF${KF_MAJOR_VERSION}::KIOWidgets)
+if(TARGET KF6::KIOWidgets)
     set(HAVE_KTEXTADDONS_KIO_SUPPORT TRUE)
 endif()
 
 configure_file(config-textcustomeditor.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextCustomEditor")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextCustomEditor")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTCUSTOMEDITOR
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfigVersion.cmake"
     SOVERSION 1
 )
 
-add_library(KF${KF_MAJOR_VERSION}TextCustomEditor)
-add_library(KF${KF_MAJOR_VERSION}::TextCustomEditor ALIAS KF${KF_MAJOR_VERSION}TextCustomEditor)
+add_library(KF6TextCustomEditor)
+add_library(KF6::TextCustomEditor ALIAS KF6TextCustomEditor)
 
-target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
+target_sources(KF6TextCustomEditor PRIVATE
     plaintexteditor/plaintexteditfindbar.cpp
     plaintexteditor/plaintexteditor.cpp
     plaintexteditor/plaintexteditorwidget.cpp
@@ -61,49 +61,49 @@ target_sources(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE
     core/texteditorcompleter.cpp
 )
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
+target_link_libraries(KF6TextCustomEditor
     PRIVATE
-    KF${KF_MAJOR_VERSION}::ConfigWidgets
-    KF${KF_MAJOR_VERSION}::SonnetUi
-    KF${KF_MAJOR_VERSION}::SonnetCore
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
-    KF${KF_MAJOR_VERSION}::TextUtils
-    KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets
-    KF${KF_MAJOR_VERSION}::TextAddonsWidgets
+    KF6::ConfigWidgets
+    KF6::SonnetUi
+    KF6::SonnetCore
+    KF6::WidgetsAddons
+    KF6::I18n
+    KF6::SyntaxHighlighting
+    KF6::TextUtils
+    KF6::TextEmoticonsWidgets
+    KF6::TextAddonsWidgets
 )
 
-if(TARGET KF${KF_MAJOR_VERSION}::KIOWidgets)
-    target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE KF${KF_MAJOR_VERSION}::KIOWidgets)
+if(TARGET KF6::KIOWidgets)
+    target_link_libraries(KF6TextCustomEditor PRIVATE KF6::KIOWidgets)
 endif()
 
-if (TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
-    target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE KF${KF_MAJOR_VERSION}TextEditTextToSpeech
+if (TARGET Qt6::TextToSpeech)
+    target_link_libraries(KF6TextCustomEditor PRIVATE KF6TextEditTextToSpeech
     )
 endif()
 
-ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextCustomEditor HEADER textcustomeditor_debug.h
+ecm_qt_declare_logging_category(KF6TextCustomEditor HEADER textcustomeditor_debug.h
     IDENTIFIER TEXTCUSTOMEDITOR_LOG
     CATEGORY_NAME org.kde.kf.textcustomeditor
-    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textcustomeditor
-    DESCRIPTION "KF${KF_MAJOR_VERSION} (textcustomeditor)" EXPORT KTEXTADDONS)
+    OLD_CATEGORY_NAMES org.kde.kf6.textcustomeditor
+    DESCRIPTION "KF6 (textcustomeditor)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF${KF_MAJOR_VERSION}TextCustomEditor PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF6TextCustomEditor PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF${KF_MAJOR_VERSION}TextCustomEditor BASE_NAME TextCustomEditor)
+generate_export_header(KF6TextCustomEditor BASE_NAME TextCustomEditor)
 
-target_include_directories(KF${KF_MAJOR_VERSION}TextCustomEditor INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor;>")
+target_include_directories(KF6TextCustomEditor INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor;>")
 
 
-set_target_properties(KF${KF_MAJOR_VERSION}TextCustomEditor PROPERTIES
+set_target_properties(KF6TextCustomEditor PROPERTIES
     VERSION ${TEXTCUSTOMEDITOR_VERSION}
     SOVERSION ${TEXTCUSTOMEDITOR_SOVERSION}
     EXPORT_NAME TextCustomEditor
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextCustomEditor EXPORT KF${KF_MAJOR_VERSION}TextCustomEditorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6TextCustomEditor EXPORT KF6TextCustomEditorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextCustomEditor_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
@@ -175,16 +175,16 @@ install(FILES
 
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF${KF_MAJOR_VERSION}TextCustomEditorTargets
+install(EXPORT KF6TextCustomEditorTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF${KF_MAJOR_VERSION}TextCustomEditorTargets.cmake
-    NAMESPACE KF${KF_MAJOR_VERSION}::
+    FILE KF6TextCustomEditorTargets.cmake
+    NAMESPACE KF6::
 )
 
 install(FILES
@@ -196,9 +196,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF${KF_MAJOR_VERSION}TextCustomEditor_QCH
-        NAME KF${KF_MAJOR_VERSION}TextCustomEditor
-        BASE_NAME KF${KF_MAJOR_VERSION}TextCustomEditor
+        KF6TextCustomEditor_QCH
+        NAME KF6TextCustomEditor
+        BASE_NAME KF6TextCustomEditor
         VERSION ${TEXTCUSTOMEDITOR_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -208,7 +208,7 @@ if (BUILD_QCH)
         ${TextCustomEditor_texteditor_core_HEADERS}
         ${TextCustomEditor_richtextbrowser_HEADERS}
         LINK_QCHS
-        Qt${QT_MAJOR_VERSION}Core_QCH
+        Qt6Core_QCH
         INCLUDE_DIRS
         ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -221,17 +221,17 @@ endif()
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextCustomEditor_QCH
-        FILE KF${KF_MAJOR_VERSION}TextCustomEditorQchTargets.cmake
+        TARGETS KF6TextCustomEditor_QCH
+        FILE KF6TextCustomEditorQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextCustomEditorQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextCustomEditorConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextCustomEditorConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 

@@ -3,53 +3,53 @@
 # add_definitions(-DTRANSLATION_DOMAIN=\"libtextaddonswidgets\")
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${KF_MAJOR_VERSION}TextUtils")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextUtils")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTUTILS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textutils_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextUtilsConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextUtilsConfigVersion.cmake"
     SOVERSION 1
 )
 
-add_library(KF${KF_MAJOR_VERSION}TextUtils)
-add_library(KF${KF_MAJOR_VERSION}::TextUtils ALIAS KF${KF_MAJOR_VERSION}TextUtils)
+add_library(KF6TextUtils)
+add_library(KF6::TextUtils ALIAS KF6TextUtils)
 
-target_sources(KF${KF_MAJOR_VERSION}TextUtils PRIVATE
+target_sources(KF6TextUtils PRIVATE
     converttext.cpp
     converttext.h
 )
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextUtils
+target_link_libraries(KF6TextUtils
     PRIVATE
     Qt::Core
 )
 
-ecm_qt_declare_logging_category(KF${KF_MAJOR_VERSION}TextUtils HEADER textutils_debug.h
+ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
     IDENTIFIER TEXTUTILS_LOG
     CATEGORY_NAME org.kde.kf.textutils
-    OLD_CATEGORY_NAMES org.kde.kf${KF_MAJOR_VERSION}.textutils
-    DESCRIPTION "KF${KF_MAJOR_VERSION} (textutils)" EXPORT KTEXTADDONS)
+    OLD_CATEGORY_NAMES org.kde.kf6.textutils
+    DESCRIPTION "KF6 (textutils)" EXPORT KTEXTADDONS)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF${KF_MAJOR_VERSION}TextUtils PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KF6TextUtils PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF${KF_MAJOR_VERSION}TextUtils BASE_NAME TextUtils)
+generate_export_header(KF6TextUtils BASE_NAME TextUtils)
 
-target_include_directories(KF${KF_MAJOR_VERSION}TextUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils;>")
+target_include_directories(KF6TextUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils;>")
 
 
-target_link_libraries(KF${KF_MAJOR_VERSION}TextUtils
+target_link_libraries(KF6TextUtils
     PUBLIC
     Qt::Gui
 )
 
-set_target_properties(KF${KF_MAJOR_VERSION}TextUtils PROPERTIES
+set_target_properties(KF6TextUtils PROPERTIES
     VERSION ${TEXTUTILS_VERSION}
     SOVERSION ${TEXTUTILS_SOVERSION}
     EXPORT_NAME TextUtils
 )
 
-install(TARGETS KF${KF_MAJOR_VERSION}TextUtils EXPORT KF${KF_MAJOR_VERSION}TextUtilsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6TextUtils EXPORT KF6TextUtilsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextUtils_CamelCase_HEADERS
     HEADER_NAMES
@@ -71,31 +71,31 @@ install(FILES
 )
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KF${KF_MAJOR_VERSION}TextUtils_QCH
-        FILE KF${KF_MAJOR_VERSION}TextUtilsQchTargets.cmake
+        TARGETS KF6TextUtils_QCH
+        FILE KF6TextUtilsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF${KF_MAJOR_VERSION}TextUtilsQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextUtilsQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextUtilsConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextUtilsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextUtilsConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextUtilsConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF${KF_MAJOR_VERSION}TextUtilsConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextUtilsConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextUtilsConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF${KF_MAJOR_VERSION}TextUtilsTargets
+install(EXPORT KF6TextUtilsTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE KF${KF_MAJOR_VERSION}TextUtilsTargets.cmake
-    NAMESPACE KF${KF_MAJOR_VERSION}::
+    FILE KF6TextUtilsTargets.cmake
+    NAMESPACE KF6::
 )
 
 install(FILES
@@ -107,15 +107,15 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KF${KF_MAJOR_VERSION}TextUtils_QCH
-        NAME KF${KF_MAJOR_VERSION}TextUtils
-        BASE_NAME KF${KF_MAJOR_VERSION}TextUtils
+        KF6TextUtils_QCH
+        NAME KF6TextUtils
+        BASE_NAME KF6TextUtils
 	VERSION ${TEXTUTILS_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextUtils_HEADERS}
         LINK_QCHS
-        Qt${QT_MAJOR_VERSION}Core_QCH
+        Qt6Core_QCH
         INCLUDE_DIRS
         ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS

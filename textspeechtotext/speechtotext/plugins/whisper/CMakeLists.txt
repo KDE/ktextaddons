@@ -20,6 +20,6 @@ target_sources(speechtotext_whisper PRIVATE
     whisperspeechtotextpluginjob.cpp
 )
 
-target_link_libraries(speechtotext_whisper PRIVATE KF${KF_MAJOR_VERSION}::TextSpeechToText KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(speechtotext_whisper PRIVATE KF6::TextSpeechToText KF6::I18n)
 
-install(TARGETS speechtotext_whisper  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/speechtotext/)
+install(TARGETS speechtotext_whisper  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
