@@ -25,9 +25,6 @@ GrammarResultTextEdit::GrammarResultTextEdit(QWidget *parent)
 {
     setReadOnly(true);
     setAcceptRichText(false);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    connect(qApp, &QApplication::paletteChanged, this, &GrammarResultTextEdit::generalPaletteChanged);
-#endif
     generalPaletteChanged();
 }
 
@@ -57,11 +54,9 @@ void GrammarResultTextEdit::paintEvent(QPaintEvent *event)
 
 bool GrammarResultTextEdit::event(QEvent *ev)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     if (ev->type() == QEvent::ApplicationPaletteChange) {
         generalPaletteChanged();
     }
-#endif
     return QTextEdit::event(ev);
 }
 

@@ -57,10 +57,7 @@ QLocale TextToSpeechConfigInterface::locale() const
 
 void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    if (!mTextToSpeech || (mTextToSpeech && (mTextToSpeech->engine() != engineName)))
-#endif
-    {
+    if (!mTextToSpeech || (mTextToSpeech && (mTextToSpeech->engine() != engineName))) {
         delete mTextToSpeech;
         mTextToSpeech = new QTextToSpeech(engineName, this);
     }
@@ -93,9 +90,7 @@ QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechConfigInterf
     d << " Rate " << t.rate;
     d << " pitch " << t.pitch;
     d << " volume " << t.volume;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     d << " voice " << t.voice;
-#endif
     d << " localeName " << t.localeName;
     return d;
 }

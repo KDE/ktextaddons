@@ -12,11 +12,7 @@
 #include <TextAutoCorrectionCore/ImportKMailAutocorrection>
 #include <TextAutoCorrectionCore/ImportLibreOfficeAutocorrection>
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-#include <TextAddonsWidgets/LineEditCatchReturnKey>
-#else
 #include <KLineEditEventHandler>
-#endif
 #include <TextAddonsWidgets/SelectSpecialCharDialog>
 
 #include <KLocalizedString>
@@ -64,18 +60,11 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     d->ui->add1->setEnabled(false);
     d->ui->add2->setEnabled(false);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->find, this);
-    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->replace, this);
-    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->abbreviation, this);
-    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->twoUpperLetter, this);
-#else
     KLineEditEventHandler::catchReturnKey(d->ui->find);
     KLineEditEventHandler::catchReturnKey(d->ui->replace);
     KLineEditEventHandler::catchReturnKey(d->ui->abbreviation);
     KLineEditEventHandler::catchReturnKey(d->ui->twoUpperLetter);
 
-#endif
     connect(d->ui->autoChangeFormat, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->autoFormatUrl, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->upperCase, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
@@ -135,13 +124,8 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     connect(d->ui->customWritablePath, &QLineEdit::textChanged, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->customSystemPath, &QLineEdit::textChanged, this, &AutoCorrectionWidget::emitChanged);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->customWritablePath, parent);
-    TextAddonsWidgets::LineEditCatchReturnKey(d->ui->customSystemPath, parent);
-#else
     KLineEditEventHandler::catchReturnKey(d->ui->customWritablePath);
     KLineEditEventHandler::catchReturnKey(d->ui->customSystemPath);
-#endif
 
     connect(d->ui->customWritablePathToolButton, &QToolButton::clicked, this, [this]() {
         const QString path = QFileDialog::getExistingDirectory(this, i18n("Select Custom Writable Path"));

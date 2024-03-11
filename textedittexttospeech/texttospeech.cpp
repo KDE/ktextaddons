@@ -37,10 +37,7 @@ void TextToSpeech::reloadSettings()
     const QString engineName = settings.engineName;
     if (d->mDefaultEngine != engineName) {
         if (d->mTextToSpeech) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-            if (d->mTextToSpeech && (d->mTextToSpeech->engine() != engineName))
-#endif
-            {
+            if (d->mTextToSpeech && (d->mTextToSpeech->engine() != engineName)) {
                 disconnect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
                 delete d->mTextToSpeech;
                 d->mTextToSpeech = nullptr;
@@ -84,28 +81,19 @@ void TextToSpeech::slotStateChanged()
     case QTextToSpeech::Paused:
         state = TextToSpeech::Paused;
         break;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    case QTextToSpeech::BackendError:
-        state = TextToSpeech::BackendError;
-#else
     case QTextToSpeech::Error:
         state = TextToSpeech::BackendError;
         break;
     case QTextToSpeech::Synthesizing:
         state = TextToSpeech::Synthesizing;
         break;
-#endif
     }
     Q_EMIT stateChanged(state);
 }
 
 bool TextToSpeech::isReady() const
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    return d->mTextToSpeech->state() != QTextToSpeech::BackendError;
-#else
     return d->mTextToSpeech->state() != QTextToSpeech::Error;
-#endif
 }
 
 void TextToSpeech::say(const QString &text)

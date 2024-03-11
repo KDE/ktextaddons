@@ -7,9 +7,6 @@
 #pragma once
 
 #include <QObject>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class QNetworkConfigurationManager;
-#endif
 namespace TextTranslator
 {
 /**
@@ -28,10 +25,5 @@ public:
 
 Q_SIGNALS:
     void networkStatusChanged(bool isOnline);
-
-private:
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QNetworkConfigurationManager *const mNetworkConfigureManager;
-#endif
 };
 }

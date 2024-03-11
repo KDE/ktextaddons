@@ -209,12 +209,7 @@ QStringList AutoCorrectionUtils::wordsFromSentence(const QString &string)
                 if (tmpString.at(i).isSpace()) {
                     QString value;
                     const auto pos = tmpString.size() - i - 1;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                    value = tmpString.right(pos);
-                    // qDebug() << " value !!! " << value;
-#else
                     value = tmpString.last(pos);
-#endif
                     if (!value.trimmed().isEmpty()) {
                         lst.append(value);
                     }

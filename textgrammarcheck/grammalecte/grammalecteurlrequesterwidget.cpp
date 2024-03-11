@@ -5,14 +5,12 @@
 */
 
 #include "grammalecteurlrequesterwidget.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QToolButton>
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-#include <KLineEditEventHandler>
-#endif
 
 using namespace TextGrammarCheck;
 GrammalecteUrlRequesterWidget::GrammalecteUrlRequesterWidget(QWidget *parent)
@@ -25,9 +23,7 @@ GrammalecteUrlRequesterWidget::GrammalecteUrlRequesterWidget(QWidget *parent)
 
     mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
     mainLayout->addWidget(mLineEdit);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     KLineEditEventHandler::catchReturnKey(mLineEdit);
-#endif
     auto selectUrlButton = new QToolButton(this);
     selectUrlButton->setText(QStringLiteral("..."));
     selectUrlButton->setObjectName(QStringLiteral("selectUrlButton"));

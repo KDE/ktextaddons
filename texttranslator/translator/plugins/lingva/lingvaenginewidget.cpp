@@ -5,14 +5,10 @@
 */
 
 #include "lingvaenginewidget.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-#include <TextAddonsWidgets/LineEditCatchReturnKey>
-#else
-#include <KLineEditEventHandler>
-#endif
 
 LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     : QWidget{parent}
@@ -25,11 +21,7 @@ LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
     mServerUrl->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-    new TextAddonsWidgets::LineEditCatchReturnKey(mServerUrl, this);
-#else
     KLineEditEventHandler::catchReturnKey(mServerUrl);
-#endif
 }
 
 LingvaEngineWidget::~LingvaEngineWidget() = default;
