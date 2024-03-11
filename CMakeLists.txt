@@ -38,7 +38,7 @@ else()
     set(KF_MAJOR_VERSION "5")
 endif()
 
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
 
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n
@@ -46,9 +46,14 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Archive
     CoreAddons
     Sonnet
-    KIO
     SyntaxHighlighting
 )
+option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
+add_feature_info(KIO_SUPPORT ${BUILD_KIO_SUPPORT} "Build with KIO support")
+
+if (${BUILD_KIO_SUPPORT})
+    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+endif()
 
 option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
 add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")

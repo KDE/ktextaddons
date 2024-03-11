@@ -10,7 +10,9 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KCursor>
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
 #include <KIO/KUriFilterSearchProviderActions>
+#endif
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KStandardAction>
@@ -47,7 +49,9 @@ public:
     PlainTextEditorPrivate(PlainTextEditor *qq)
         : q(qq)
         , mTextIndicator(new TextCustomEditor::TextMessageIndicator(q))
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
+#endif
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
         KConfigGroup group(&sonnetKConfig, QLatin1String("Spelling"));
@@ -55,7 +59,9 @@ public:
         supportFeatures |= PlainTextEditor::Search;
         supportFeatures |= PlainTextEditor::SpellChecking;
         supportFeatures |= PlainTextEditor::TextToSpeech;
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         supportFeatures |= PlainTextEditor::AllowWebShortcut;
+#endif
     }
 
     ~PlainTextEditorPrivate()
@@ -67,7 +73,9 @@ public:
     QStringList ignoreSpellCheckingWords;
     PlainTextEditor *const q;
     TextCustomEditor::TextMessageIndicator *const mTextIndicator;
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
+#endif
     Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
     Sonnet::Speller *speller = nullptr;
 
@@ -201,12 +209,14 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
 #endif
         }
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         if (webShortcutSupport() && textCursor().hasSelection()) {
             popup->addSeparator();
             const QString selectedText = textCursor().selectedText();
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
+#endif
         if (emojiSupport()) {
             popup->addSeparator();
             auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
@@ -310,16 +320,24 @@ void PlainTextEditor::setSpellCheckingSupport(bool check)
 
 void PlainTextEditor::setWebShortcutSupport(bool b)
 {
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     if (b) {
         d->supportFeatures |= AllowWebShortcut;
     } else {
         d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
+#else
+    Q_UNUSED(b);
+#endif
 }
 
 bool PlainTextEditor::webShortcutSupport() const
 {
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     return d->supportFeatures & AllowWebShortcut;
+#else
+    return false;
+#endif
 }
 
 void PlainTextEditor::updateReadOnlyColor()

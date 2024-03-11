@@ -15,7 +15,9 @@
 #include <QIcon>
 
 #include "config-textcustomeditor.h"
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
 #include <KIO/KUriFilterSearchProviderActions>
+#endif
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
@@ -37,11 +39,15 @@ public:
     RichTextBrowserPrivate(RichTextBrowser *qq)
         : q(qq)
         , textIndicator(new TextCustomEditor::TextMessageIndicator(q))
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
+#endif
     {
         supportFeatures |= RichTextBrowser::Search;
         supportFeatures |= RichTextBrowser::TextToSpeech;
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         supportFeatures |= RichTextBrowser::AllowWebShortcut;
+#endif
 
         // Workaround QTextEdit behavior: if the cursor points right after the link
         // and start typing, the char format is kept. If user wants to write normal
@@ -75,7 +81,9 @@ public:
     RichTextBrowser *const q;
     TextCustomEditor::TextMessageIndicator *const textIndicator;
     QTextDocumentFragment originalDoc;
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
+#endif
     RichTextBrowser::SupportFeatures supportFeatures;
     QColor mReadOnlyBackgroundColor;
     int mInitialFontSize;
@@ -159,12 +167,14 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
             connect(speakAction, &QAction::triggered, this, &RichTextBrowser::slotSpeakText);
         }
 #endif
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         if (webShortcutSupport() && textCursor().hasSelection()) {
             popup->addSeparator();
             const QString selectedText = textCursor().selectedText();
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
+#endif
         addExtraMenuEntry(popup, pos);
         return popup;
     }
@@ -184,16 +194,24 @@ void RichTextBrowser::slotSpeakText()
 
 void RichTextBrowser::setWebShortcutSupport(bool b)
 {
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     if (b) {
         d->supportFeatures |= AllowWebShortcut;
     } else {
         d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
+#else
+    Q_UNUSED(b);
+#endif
 }
 
 bool RichTextBrowser::webShortcutSupport() const
 {
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     return d->supportFeatures & AllowWebShortcut;
+#else
+    return false;
+#endif
 }
 
 void RichTextBrowser::setSearchSupport(bool b)

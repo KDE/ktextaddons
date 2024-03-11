@@ -6,7 +6,7 @@
 
 #include "voskspeechtotextmodel.h"
 #include "libvoskspeechtotext_debug.h"
-#include <KIO/Global>
+#include <KFormat>
 #include <KLocalizedString>
 #include <QColor>
 #include <QDir>
@@ -93,7 +93,8 @@ QVariant VoskSpeechToTextModel::data(const QModelIndex &index, int role) const
             return speechToTextInfo.langText();
         }
         case VoskRoles::Size: {
-            return KIO::convertSize(speechToTextInfo.size());
+            KFormat format;
+            return format.formatByteSize(speechToTextInfo.size());
         }
         case VoskRoles::SizeByte: {
             return speechToTextInfo.size();

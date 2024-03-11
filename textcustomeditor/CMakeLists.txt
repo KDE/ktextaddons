@@ -6,6 +6,10 @@ if(TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
     set(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT TRUE)
 endif()
 
+if(TARGET KF${KF_MAJOR_VERSION}::KIOWidgets)
+    set(HAVE_KTEXTADDONS_KIO_SUPPORT TRUE)
+endif()
+
 configure_file(config-textcustomeditor.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
 
 ########### CMake Config Files ###########
@@ -63,13 +67,16 @@ target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor
     KF${KF_MAJOR_VERSION}::SonnetUi
     KF${KF_MAJOR_VERSION}::SonnetCore
     KF${KF_MAJOR_VERSION}::WidgetsAddons
-    KF${KF_MAJOR_VERSION}::KIOWidgets
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     KF${KF_MAJOR_VERSION}::TextUtils
     KF${KF_MAJOR_VERSION}::TextEmoticonsWidgets
     KF${KF_MAJOR_VERSION}::TextAddonsWidgets
 )
+
+if(TARGET KF${KF_MAJOR_VERSION}::KIOWidgets)
+    target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE KF${KF_MAJOR_VERSION}::KIOWidgets)
+endif()
 
 if (TARGET Qt${QT_MAJOR_VERSION}::TextToSpeech)
     target_link_libraries(KF${KF_MAJOR_VERSION}TextCustomEditor PRIVATE KF${KF_MAJOR_VERSION}TextEditTextToSpeech

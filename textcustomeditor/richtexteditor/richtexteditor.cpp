@@ -20,7 +20,9 @@
 #include <QIcon>
 
 #include "config-textcustomeditor.h"
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
 #include <KIO/KUriFilterSearchProviderActions>
+#endif
 #include <Sonnet/Dialog>
 #include <Sonnet/Highlighter>
 #include <sonnet/backgroundchecker.h>
@@ -49,7 +51,9 @@ public:
     RichTextEditorPrivate(RichTextEditor *qq)
         : q(qq)
         , textIndicator(new TextCustomEditor::TextMessageIndicator(q))
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
+#endif
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
         KConfigGroup group(&sonnetKConfig, QLatin1String("Spelling"));
@@ -58,7 +62,9 @@ public:
         supportFeatures |= RichTextEditor::SpellChecking;
         supportFeatures |= RichTextEditor::TextToSpeech;
         supportFeatures |= RichTextEditor::AllowTab;
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         supportFeatures |= RichTextEditor::AllowWebShortcut;
+#endif
 
         // Workaround QTextEdit behavior: if the cursor points right after the link
         // and start typing, the char format is kept. If user wants to write normal
@@ -99,7 +105,9 @@ public:
     QTextDocumentFragment originalDoc;
     Sonnet::SpellCheckDecorator *richTextDecorator = nullptr;
     Sonnet::Speller *speller = nullptr;
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     KIO::KUriFilterSearchProviderActions *const webshortcutMenuManager;
+#endif
     RichTextEditor::SupportFeatures supportFeatures;
     QColor mReadOnlyBackgroundColor;
     int mInitialFontSize;
@@ -265,12 +273,14 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
         }
 #endif
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
         if (webShortcutSupport() && textCursor().hasSelection()) {
             popup->addSeparator();
             const QString selectedText = textCursor().selectedText();
             d->webshortcutMenuManager->setSelectedText(selectedText);
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
+#endif
         if (emojiSupport()) {
             popup->addSeparator();
             auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
@@ -301,16 +311,24 @@ void RichTextEditor::slotSpeakText()
 
 void RichTextEditor::setWebShortcutSupport(bool b)
 {
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     if (b) {
         d->supportFeatures |= AllowWebShortcut;
     } else {
         d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
+#else
+    Q_UNUSED(b);
+#endif
 }
 
 bool RichTextEditor::webShortcutSupport() const
 {
+#if HAVE_KTEXTADDONS_KIO_SUPPORT
     return d->supportFeatures & AllowWebShortcut;
+#else
+    return false;
+#endif
 }
 
 void RichTextEditor::setEmojiSupport(bool b)
