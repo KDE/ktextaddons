@@ -5,15 +5,13 @@ set(KTEXTADDONS_CURRENT_VERSION "1.5.45")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 include(FeatureSummary)
-set(KF_MIN_VERSION "5.115.0")
+set(QT_REQUIRED_VERSION "6.6.0")
+set(KF_MIN_VERSION "5.246.0")
 find_package(ECM ${KF_MIN_VERSION}  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://invent.kde.org/frameworks/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 set(CMAKE_MODULE_PATH  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
-
-set(REQUIRED_QT_VERSION 5.15.2)
-
 
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
@@ -30,11 +28,8 @@ include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 
-set(QT_REQUIRED_VERSION "6.6.0")
-set(KF_MIN_VERSION "5.246.0")
-set(KF_MAJOR_VERSION "6")
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n

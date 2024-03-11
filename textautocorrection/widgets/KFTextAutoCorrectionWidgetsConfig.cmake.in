@@ -3,7 +3,7 @@
 
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
-find_dependency(KF@KF_MAJOR_VERSION@TextAutoCorrectionCore "@KTEXTADDONS_CURRENT_VERSION@")
-find_dependency(KF@KF_MAJOR_VERSION@ConfigWidgets "@KF_MIN_VERSION@")
-include("${CMAKE_CURRENT_LIST_DIR}/KF@KF_MAJOR_VERSION@TextAutoCorrectionWidgetsTargets.cmake")
+find_dependency(KF6TextAutoCorrectionCore "@KTEXTADDONS_CURRENT_VERSION@")
+find_dependency(KF6ConfigWidgets "@KF_MIN_VERSION@")
+include("${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoCorrectionWidgetsTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@

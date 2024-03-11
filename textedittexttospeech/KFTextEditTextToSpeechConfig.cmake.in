@@ -4,5 +4,5 @@
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
 
-include("${CMAKE_CURRENT_LIST_DIR}/KF@KF_MAJOR_VERSION@TextEditTextToSpeechTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@

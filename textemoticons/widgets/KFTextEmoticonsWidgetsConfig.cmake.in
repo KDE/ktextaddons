@@ -3,6 +3,6 @@
 
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
-find_dependency(KF@KF_MAJOR_VERSION@TextEmoticonsCore "@KTEXTADDONS_CURRENT_VERSION@")
-include("${CMAKE_CURRENT_LIST_DIR}/KF@KF_MAJOR_VERSION@TextEmoticonsWidgetsTargets.cmake")
+find_dependency(KF6TextEmoticonsCore "@KTEXTADDONS_CURRENT_VERSION@")
+include("${CMAKE_CURRENT_LIST_DIR}/KF6TextEmoticonsWidgetsTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@

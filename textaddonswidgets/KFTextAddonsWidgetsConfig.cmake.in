@@ -3,5 +3,5 @@
 
 @PACKAGE_INIT@
 include(CMakeFindDependencyMacro)
-include("${CMAKE_CURRENT_LIST_DIR}/KF@KF_MAJOR_VERSION@TextAddonsWidgetsTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/KF6TextAddonsWidgetsTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@
