@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-10-14 10:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,27 +19,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.2\n"
 
-#: common/grammarresulttextedit.cpp:39
+#: common/grammarresulttextedit.cpp:36
 #, kde-format
 msgid "Any text to check."
 msgstr "Qualsevol text a comprovar."
 
-#: common/grammarresulttextedit.cpp:93
+#: common/grammarresulttextedit.cpp:88
 #, kde-format
 msgid "Replacement"
 msgstr "Substitució"
 
-#: common/grammarresulttextedit.cpp:102
+#: common/grammarresulttextedit.cpp:97
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Informació en línia de la gramàtica"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:110
 #, kde-format
 msgid "Check Again"
 msgstr "Comprova una altra vegada"
 
-#: common/grammarresulttextedit.cpp:118
+#: common/grammarresulttextedit.cpp:113
 #, kde-format
 msgid "Configure..."
 msgstr "Configura..."
@@ -143,7 +143,7 @@ msgstr "No s'ha trobat el fitxer cli del Grammalecte."
 msgid "Grammalecte error"
 msgstr "Error del Grammalecte"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:37
+#: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format
 msgid "Select Path"
 msgstr "Selecció de camí"
@@ -304,22 +304,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Configuració del LanguageTool"
 
-#: languagetool/languagetoolconfigwidget.cpp:25
+#: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgid "Use Local Instance"
 msgstr "Usa una instància local"
 
-#: languagetool/languagetoolconfigwidget.cpp:27
+#: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgid "Instance Path:"
 msgstr "Camí de la instància:"
 
-#: languagetool/languagetoolconfigwidget.cpp:58
+#: languagetool/languagetoolconfigwidget.cpp:53
 #, kde-format
 msgid "Language:"
 msgstr "Idioma:"
 
-#: languagetool/languagetoolconfigwidget.cpp:70
+#: languagetool/languagetoolconfigwidget.cpp:65
 #, kde-format
 msgid "Refresh"
 msgstr "Actualitza"

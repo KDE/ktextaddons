@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-01-24 15:34+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 22.12.1\n"
 
-#: common/grammarresulttextedit.cpp:39
+#: common/grammarresulttextedit.cpp:36
 #, kde-format
 msgid "Any text to check."
 msgstr ""
 
-#: common/grammarresulttextedit.cpp:93
+#: common/grammarresulttextedit.cpp:88
 #, kde-format
 msgid "Replacement"
 msgstr "Nahrazení"
 
-#: common/grammarresulttextedit.cpp:102
+#: common/grammarresulttextedit.cpp:97
 #, kde-format
 msgid "Online Grammar Information"
 msgstr ""
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:110
 #, kde-format
 msgid "Check Again"
 msgstr "Znovu zkontrolovat"
 
-#: common/grammarresulttextedit.cpp:118
+#: common/grammarresulttextedit.cpp:113
 #, kde-format
 msgid "Configure..."
 msgstr "Nastavit..."
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Grammalecte error"
 msgstr "Chyba Grammalecte"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:37
+#: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format
 msgid "Select Path"
 msgstr "Vyberte cestu"
@@ -299,22 +299,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "Nastavit Jazykový nástroj"
 
-#: languagetool/languagetoolconfigwidget.cpp:25
+#: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgid "Use Local Instance"
 msgstr ""
 
-#: languagetool/languagetoolconfigwidget.cpp:27
+#: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgid "Instance Path:"
 msgstr ""
 
-#: languagetool/languagetoolconfigwidget.cpp:58
+#: languagetool/languagetoolconfigwidget.cpp:53
 #, kde-format
 msgid "Language:"
 msgstr "Jazyk:"
 
-#: languagetool/languagetoolconfigwidget.cpp:70
+#: languagetool/languagetoolconfigwidget.cpp:65
 #, kde-format
 msgid "Refresh"
 msgstr "Obnovit"

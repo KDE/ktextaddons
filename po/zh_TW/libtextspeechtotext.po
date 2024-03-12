@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-05 00:40+0000\n"
-"PO-Revision-Date: 2024-02-27 06:35+0900\n"
+"PO-Revision-Date: 2024-03-12 01:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -25,7 +25,7 @@ msgstr "Google"
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
 msgid "Impossible to store language info."
-msgstr ""
+msgstr "無法儲存語言資訊。"
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
@@ -39,12 +39,12 @@ msgstr ""
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "無法存取 URL：%1"
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "無法開啟檔案以下載。"
 
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "檢查碼不正確。"
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "寫入磁碟時發生錯誤：%1"
 
 #: speechtotext/plugins/vosk/voskenginedialog.cpp:26
 #, kde-format
@@ -80,12 +80,12 @@ msgstr "刪除"
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
 #, kde-format
 msgid "Update List"
-msgstr ""
+msgstr "更新列表"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:116
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "從網路更新語言列表"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
 #, kde-format

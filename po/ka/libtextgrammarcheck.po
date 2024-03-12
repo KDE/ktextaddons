@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-10-16 06:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4\n"
 
-#: common/grammarresulttextedit.cpp:39
+#: common/grammarresulttextedit.cpp:36
 #, kde-format
 msgid "Any text to check."
 msgstr "შესამოწმებელი ტექსტი."
 
-#: common/grammarresulttextedit.cpp:93
+#: common/grammarresulttextedit.cpp:88
 #, kde-format
 msgid "Replacement"
 msgstr "შემცვლელი"
 
-#: common/grammarresulttextedit.cpp:102
+#: common/grammarresulttextedit.cpp:97
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "გრამატიკის ონლაინ ინფორმაცია"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:110
 #, kde-format
 msgid "Check Again"
 msgstr "თავიდან შემოწმება"
 
-#: common/grammarresulttextedit.cpp:118
+#: common/grammarresulttextedit.cpp:113
 #, kde-format
 msgid "Configure..."
 msgstr "მორგება..."
@@ -141,7 +141,7 @@ msgstr "Grammalecte-ის CLI გამშვები ფაილები �
 msgid "Grammalecte error"
 msgstr "Grammalecte -ის შეცდომა"
 
-#: grammalecte/grammalecteurlrequesterwidget.cpp:37
+#: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format
 msgid "Select Path"
 msgstr "აირჩიეთ ბილიკი"
@@ -302,22 +302,22 @@ msgctxt "@title:window"
 msgid "Configure LanguageTool"
 msgstr "LanguageTool-ის მორგება"
 
-#: languagetool/languagetoolconfigwidget.cpp:25
+#: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgid "Use Local Instance"
 msgstr "ლოკალური გაშვებული ასლის გამოყენება"
 
-#: languagetool/languagetoolconfigwidget.cpp:27
+#: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgid "Instance Path:"
 msgstr "გაშვებული ასლის ბილიკი:"
 
-#: languagetool/languagetoolconfigwidget.cpp:58
+#: languagetool/languagetoolconfigwidget.cpp:53
 #, kde-format
 msgid "Language:"
 msgstr "ენა:"
 
-#: languagetool/languagetoolconfigwidget.cpp:70
+#: languagetool/languagetoolconfigwidget.cpp:65
 #, kde-format
 msgid "Refresh"
 msgstr "განახლება"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:40+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-10-13 00:51+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -338,7 +338,7 @@ msgid "Bergamot"
 msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgid "Search..."
 msgstr "Bilatu..."
@@ -504,7 +504,7 @@ msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
 "Errorea: Ez da «Bing»eren informazio osagarria web bertsiotik ateratzeko gai."
 
-#: translator/plugins/deepl/deeplengineclient.cpp:37
+#: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
 msgid "DeepL"
 msgstr "DeepL"
@@ -517,19 +517,19 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Konfiguratu motorra"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Erabili lizentzia askeko gakoa"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "APIaren gakoa:"
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:41
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
+#: translator/plugins/deepl/deeplengineplugin.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "Zerbitzariak APIaren gakoa behar du."
@@ -544,23 +544,23 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr "Erantzun baliogabea."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
 msgstr "Zerbitzariak APIaren gakoa behar du"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
-#: translator/plugins/lingva/lingvaenginewidget.cpp:27
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
+#: translator/plugins/lingva/lingvaenginewidget.cpp:23
 #, kde-format
 msgid "Server Url:"
 msgstr "Zerbitzariaren URLa:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
 #, kde-format
 msgid "Server url is not defined."
 msgstr "Zerbitzariaren URLa ez dago definituta."
@@ -647,7 +647,7 @@ msgstr ""
 msgid "Save File Error"
 msgstr "Fitxategia gordetzeko errorea"
 
-#: translator/widgets/translatordebugdialog.cpp:117
+#: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
 msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"

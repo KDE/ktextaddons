@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:40+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-01-09 18:52+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -337,7 +337,7 @@ msgid "Bergamot"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgid "Search..."
 msgstr "Procurar..."
@@ -506,7 +506,7 @@ msgstr ""
 "Erro: Não foi possível extrair as informações adicionais do Bing na versão "
 "Web."
 
-#: translator/plugins/deepl/deeplengineclient.cpp:37
+#: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
 msgid "DeepL"
 msgstr "DeepL"
@@ -519,19 +519,19 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Configurar o Motor"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Usar uma Chave de Licença Gratuita"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "Chave da API:"
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:41
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
+#: translator/plugins/deepl/deeplengineplugin.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "O servidor necessita de uma chave da API."
@@ -546,23 +546,23 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr ""
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
 msgstr "O servidor necessita de uma Chave da API"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
-#: translator/plugins/lingva/lingvaenginewidget.cpp:27
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
+#: translator/plugins/lingva/lingvaenginewidget.cpp:23
 #, kde-format
 msgid "Server Url:"
 msgstr "URL do Servidor:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
 #, kde-format
 msgid "Server url is not defined."
 msgstr "O URL do servidor não está definido."
@@ -650,7 +650,7 @@ msgstr ""
 msgid "Save File Error"
 msgstr "Erro de Gravação do Ficheiro"
 
-#: translator/widgets/translatordebugdialog.cpp:117
+#: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos os Ficheiros (*)"

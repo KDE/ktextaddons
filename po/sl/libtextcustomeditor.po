@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 01:33+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-08-19 07:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,49 +28,49 @@ msgstr[1] "izvedeni %1 spremembi"
 msgstr[2] "izvedene %1 spremembe"
 msgstr[3] "izvedeno %1 sprememb"
 
-#: plaintexteditor/plaintexteditor.cpp:159
-#: richtexteditor/richtexteditor.cpp:217
+#: plaintexteditor/plaintexteditor.cpp:167
+#: richtexteditor/richtexteditor.cpp:225
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Preveri črkovanje..."
 
-#: plaintexteditor/plaintexteditor.cpp:164
-#: richtexteditor/richtexteditor.cpp:224
+#: plaintexteditor/plaintexteditor.cpp:172
+#: richtexteditor/richtexteditor.cpp:232
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Samodejno preverjanje črkovanja"
 
-#: plaintexteditor/plaintexteditor.cpp:170
-#: richtexteditor/richtexteditor.cpp:230
+#: plaintexteditor/plaintexteditor.cpp:178
+#: richtexteditor/richtexteditor.cpp:238
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Jezik preverjanja črkovanja"
 
-#: plaintexteditor/plaintexteditor.cpp:198
-#: richtextbrowser/richtextbrowser.cpp:157
-#: richtexteditor/richtexteditor.cpp:263
+#: plaintexteditor/plaintexteditor.cpp:206
+#: richtextbrowser/richtextbrowser.cpp:165
+#: richtexteditor/richtexteditor.cpp:271
 #, kde-format
 msgid "Speak Text"
 msgstr "Govori besedilo"
 
-#: plaintexteditor/plaintexteditor.cpp:367
-#: richtexteditor/richtexteditor.cpp:471
+#: plaintexteditor/plaintexteditor.cpp:385
+#: richtexteditor/richtexteditor.cpp:489
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ni kaj preverjati črkovanja."
 
-#: plaintexteditor/plaintexteditor.cpp:372
-#: richtexteditor/richtexteditor.cpp:489
+#: plaintexteditor/plaintexteditor.cpp:390
+#: richtexteditor/richtexteditor.cpp:507
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ni na voljo zaledja za preverjanje črkovanja."
 
-#: richtexteditor/richtexteditor.cpp:256
+#: richtexteditor/richtexteditor.cpp:264
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Dovoli tabulatorje"
 
-#: richtexteditor/richtexteditor.cpp:481
+#: richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -79,13 +79,13 @@ msgstr ""
 "Ni na voljo zaledja za preverjanje črkovanja. Ali kljub temu želite  poslati "
 "sporočilo?"
 
-#: richtexteditor/richtexteditor.cpp:483
+#: richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Pošlji"
 
-#: richtexteditor/richtexteditor.cpp:505
+#: richtexteditor/richtexteditor.cpp:523
 #, kde-format
 msgid "Skip"
 msgstr "Preskoči"

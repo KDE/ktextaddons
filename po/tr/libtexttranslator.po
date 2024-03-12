@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:40+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-10-12 17:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -335,7 +335,7 @@ msgid "Bergamot"
 msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgid "Search..."
 msgstr "Ara..."
@@ -500,7 +500,7 @@ msgstr "Hata: Web sürümünden Bing jetonu çıkarılamadı."
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr "Hata: Web sürümünden ek Bing bilgisi çıkarılamadı."
 
-#: translator/plugins/deepl/deeplengineclient.cpp:37
+#: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
 msgid "DeepL"
 msgstr "DeepL"
@@ -513,19 +513,19 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "İşletkeyi Yapılandır"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Ücretsiz Lisans Anahtarı Kullan"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "API Anahtarı:"
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:41
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
+#: translator/plugins/deepl/deeplengineplugin.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "Sunucuya API anahtarı gerekiyor."
@@ -540,23 +540,23 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr "Geçersiz yanıt."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
 msgstr "Sunucu, API anahtarı gerektirdi"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
-#: translator/plugins/lingva/lingvaenginewidget.cpp:27
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
+#: translator/plugins/lingva/lingvaenginewidget.cpp:23
 #, kde-format
 msgid "Server Url:"
 msgstr "Sunucu URL'si:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
 #, kde-format
 msgid "Server url is not defined."
 msgstr "Sunucu URL'si tanımlanmamış."
@@ -643,7 +643,7 @@ msgstr ""
 msgid "Save File Error"
 msgstr "Dosya Kaydetme Hatası"
 
-#: translator/widgets/translatordebugdialog.cpp:117
+#: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tüm Dosyalar (*)"

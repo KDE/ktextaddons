@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2023-07-25 01:02+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -38,7 +38,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "텍스트 말하기 설정"
 
-#: texttospeechconfiginterface.cpp:88
+#: texttospeechconfiginterface.cpp:85
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "안녕하세요. 이것은 설정을 시험하는 메시지입니다."

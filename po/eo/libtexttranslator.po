@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:40+0000\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
 "PO-Revision-Date: 2024-01-02 19:50+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -336,7 +336,7 @@ msgid "Bergamot"
 msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgid "Search..."
 msgstr "Serĉi..."
@@ -501,7 +501,7 @@ msgstr "Eraro: Ne eblas ĉerpi Bing-ĵetonon el TTT-versio."
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr "Eraro: Ne eblas ĉerpi pliajn informojn de Bing el TTT-versio."
 
-#: translator/plugins/deepl/deeplengineclient.cpp:37
+#: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
 msgid "DeepL"
 msgstr "ProfundeL"
@@ -514,19 +514,19 @@ msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Agordi Motoron"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
 msgstr "Uzi Senpagan Licenc-Ŝlosilo"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "Api-Ŝlosilo:"
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:41
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
+#: translator/plugins/deepl/deeplengineplugin.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "Servilo bezonas Api-Ŝlosilon."
@@ -541,23 +541,23 @@ msgstr "Guglo"
 msgid "Invalid answer."
 msgstr "Nevalida respondo."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
 msgstr "Servilo postulis Api-ŝlosilon"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
-#: translator/plugins/lingva/lingvaenginewidget.cpp:27
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
+#: translator/plugins/lingva/lingvaenginewidget.cpp:23
 #, kde-format
 msgid "Server Url:"
 msgstr "Servila URL:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
 #, kde-format
 msgid "Server url is not defined."
 msgstr "Servila URL ne estas difinita."
@@ -644,7 +644,7 @@ msgstr ""
 msgid "Save File Error"
 msgstr "Konserv-Dosiera Eraro"
 
-#: translator/widgets/translatordebugdialog.cpp:117
+#: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
 msgid "All Files (*)"
 msgstr "Ĉiuj dosieroj (*)"

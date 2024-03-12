@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-02 00:40+0000\n"
-"PO-Revision-Date: 2024-02-27 06:14+0900\n"
+"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"PO-Revision-Date: 2024-03-12 01:55+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -335,7 +335,7 @@ msgid "Bergamot"
 msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgid "Search..."
 msgstr "搜尋…"
@@ -398,12 +398,12 @@ msgstr "設定"
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
 #, kde-format
 msgid "Language model is not defined."
-msgstr ""
+msgstr "語言模型未定義。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:37
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr ""
+msgstr "無法開啟檔案以下載。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
@@ -419,17 +419,17 @@ msgstr ""
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr ""
+msgstr "無法存取 URL：%1"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr ""
+msgstr "檢查碼不正確。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr ""
+msgstr "寫入磁碟時發生錯誤：%1"
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:30
 #, kde-format
@@ -439,17 +439,17 @@ msgstr ""
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
-msgstr ""
+msgstr "原文"
 
 #: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Target"
-msgstr ""
+msgstr "譯文"
 
 #: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
@@ -459,18 +459,18 @@ msgstr ""
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
-msgstr ""
+msgstr "已安裝版本"
 
 #: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
-msgstr ""
+msgstr "可用版本"
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr ""
+msgstr "已安裝"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -498,10 +498,10 @@ msgstr ""
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
 
-#: translator/plugins/deepl/deeplengineclient.cpp:37
+#: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
 msgid "DeepL"
-msgstr ""
+msgstr "DeepL"
 
 #: translator/plugins/deepl/deeplengineconfiguredialog.cpp:17
 #: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:17
@@ -509,65 +509,65 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr ""
+msgstr "設定引擎"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:22
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
-msgstr ""
+msgstr "使用免費授權金鑰"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:38
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:38
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "API 金鑰："
 
-#: translator/plugins/deepl/deeplengineplugin.cpp:41
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
+#: translator/plugins/deepl/deeplengineplugin.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
-msgstr ""
+msgstr "伺服器需要 API 金鑰。"
 
 #: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: translator/plugins/google/googleengineplugin.cpp:80
 #, kde-format
 msgid "Invalid answer."
-msgstr ""
+msgstr "無效回答。"
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:37
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
 #, kde-format
 msgid "Libre Translate"
-msgstr ""
+msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
 msgstr ""
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
-#: translator/plugins/lingva/lingvaenginewidget.cpp:27
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
+#: translator/plugins/lingva/lingvaenginewidget.cpp:23
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "伺服器網址："
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
 #, kde-format
 msgid "Server url is not defined."
-msgstr ""
+msgstr "伺服器網址未定義。"
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
 msgid "Lingva"
-msgstr ""
+msgstr "Lingva"
 
 #: translator/plugins/yandex/yandexengineclient.cpp:26
 #, kde-format
 msgid "Yandex"
-msgstr ""
+msgstr "Yandex"
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:63
 #, kde-format
@@ -592,7 +592,7 @@ msgstr "網路"
 #: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
-msgstr ""
+msgstr "您指定了同樣的原文語言與譯文語言。"
 
 #: translator/widgets/translatorconfiguredialog.cpp:18
 #, kde-format
@@ -603,29 +603,29 @@ msgstr "設定翻譯工具"
 #: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "原文："
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
 msgid "To:"
-msgstr ""
+msgstr "譯文："
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "引擎："
 
 #: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
-msgstr ""
+msgstr "翻譯程式除錯"
 
 #: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As..."
-msgstr ""
+msgstr "另存為..."
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -633,13 +633,15 @@ msgid ""
 "Could not write the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
+"無法寫入檔案 %1：\n"
+"詳細錯誤描述為「%2」。"
 
 #: translator/widgets/translatordebugdialog.cpp:94
 #, kde-format
 msgid "Save File Error"
-msgstr ""
+msgstr "儲存檔案時出錯"
 
-#: translator/widgets/translatordebugdialog.cpp:117
+#: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有檔案 (*)"
@@ -659,13 +661,13 @@ msgstr "關閉"
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
-msgstr ""
+msgstr "原文："
 
 #: translator/widgets/translatorwidget.cpp:233
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
-msgstr ""
+msgstr "譯文："
 
 #: translator/widgets/translatorwidget.cpp:245
 #, kde-format
@@ -677,7 +679,7 @@ msgstr "反轉"
 #: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: translator/widgets/translatorwidget.cpp:258
 #: translator/widgets/translatorwidget.cpp:261
@@ -700,17 +702,17 @@ msgstr "設定"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
-msgstr ""
+msgstr "將您要翻譯的文字拖曳至此。（請注意，會傳送文字到外部伺服器。）"
 
 #: translator/widgets/translatorwidget.cpp:367
 #, kde-format
 msgid "Drag text that you want to translate."
-msgstr ""
+msgstr "將您要翻譯的文字拖曳至此。"
 
 #: translator/widgets/translatorwidget.cpp:416
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
-msgstr ""
+msgstr "沒有偵測到網路連線，無法翻譯文字。"
 
 #: translator/widgets/translatorwidget.cpp:416
 #, kde-format

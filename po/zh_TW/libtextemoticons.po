@@ -1,0 +1,90 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"PO-Revision-Date: 2024-03-12 01:52+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 24.04.70\n"
+
+#: core/unicodeemoticonmanager.cpp:42
+#, kde-format
+msgid "Symbols"
+msgstr "符號"
+
+#: core/unicodeemoticonmanager.cpp:44
+#, kde-format
+msgid "Activity"
+msgstr "活動"
+
+#: core/unicodeemoticonmanager.cpp:46
+#, kde-format
+msgid "Objects"
+msgstr "物體"
+
+#: core/unicodeemoticonmanager.cpp:48
+#, kde-format
+msgid "Nature"
+msgstr "自然"
+
+#: core/unicodeemoticonmanager.cpp:50
+#, kde-format
+msgid "Food"
+msgstr "食物"
+
+#: core/unicodeemoticonmanager.cpp:52
+#, kde-format
+msgid "People"
+msgstr "人們"
+
+#: core/unicodeemoticonmanager.cpp:54
+#, kde-format
+msgid "Travel"
+msgstr "旅行"
+
+#: core/unicodeemoticonmanager.cpp:56
+#, kde-format
+msgid "Regional"
+msgstr "區域"
+
+#: core/unicodeemoticonmanager.cpp:58
+#, kde-format
+msgid "Flags"
+msgstr "旗幟"
+
+#: widgets/emoticoncategorybuttons.cpp:82
+#, kde-format
+msgctxt "Previously used emojis"
+msgid "History"
+msgstr "歷史"
+
+#: widgets/emoticoncategorybuttons.cpp:84
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
+msgstr "自訂"
+
+#: widgets/emoticonlistview.cpp:107
+#, kde-format
+msgid "Clear Recents"
+msgstr "清除最近使用"
+
+#: widgets/emoticontexteditaction.cpp:54
+#, kde-format
+msgid "Add Smiley"
+msgstr "新增表情符號"
+
+#: widgets/emoticontexteditselector.cpp:83
+#, kde-format
+msgid "Search Emoticon..."
+msgstr "搜尋表情符號..."
