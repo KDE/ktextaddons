@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-12 00:37+0000\n"
-"PO-Revision-Date: 2024-03-12 01:55+0900\n"
+"PO-Revision-Date: 2024-03-20 18:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -358,7 +358,7 @@ msgstr "更新清單"
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:105
 #, kde-format
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "從網路更新語言列表"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
@@ -378,12 +378,12 @@ msgstr "資源使用量"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
-msgstr ""
+msgstr "執行緒："
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
-msgstr ""
+msgstr "各執行緒記憶體："
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
@@ -434,7 +434,7 @@ msgstr "寫入磁碟時發生錯誤：%1"
 #: translator/plugins/bergamot/extractlanguagejob.cpp:30
 #, kde-format
 msgid "Impossible to extract language"
-msgstr ""
+msgstr "無法取出語言"
 
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
@@ -480,23 +480,23 @@ msgstr "Bing"
 #: translator/plugins/bing/bingengineplugin.cpp:57
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "錯誤：無法在網頁版中找到 Bing 認證資訊。"
 
 #: translator/plugins/bing/bingengineplugin.cpp:65
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "錯誤：無法從網頁版提取 Bing 金鑰。"
 
 #: translator/plugins/bing/bingengineplugin.cpp:74
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "錯誤：無法從網頁版提取 Bing 權杖。"
 
 #: translator/plugins/bing/bingengineplugin.cpp:83
 #: translator/plugins/bing/bingengineplugin.cpp:92
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
-msgstr ""
+msgstr "錯誤：無法從網頁版提取額外 Bing 資訊。"
 
 #: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
@@ -546,7 +546,7 @@ msgstr "Libre Translate"
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "伺服器需要 API 金鑰"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
 #: translator/plugins/lingva/lingvaenginewidget.cpp:23
@@ -572,12 +572,12 @@ msgstr "Yandex"
 #: translator/plugins/yandex/yandexengineplugin.cpp:63
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "錯誤：無法在網頁版中找到 Yandex SID。"
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:71
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "錯誤：無法從網頁版提取 Yandex SID。"
 
 #: translator/translatorengineclient.cpp:65
 #, kde-format
