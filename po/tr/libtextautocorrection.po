@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-12 00:37+0000\n"
-"PO-Revision-Date: 2023-06-04 02:02+0300\n"
+"PO-Revision-Date: 2024-03-21 22:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:52
 #, kde-format
@@ -35,22 +35,22 @@ msgstr "Özel Sistem Yolu Seç"
 #: widgets/autocorrectionwidget.cpp:146
 #, kde-format
 msgid "LibreOffice Autocorrection"
-msgstr "LibreOffice Otomatik Düzeltmesi"
+msgstr "LibreOffice Kendiliğinden Düzeltmesi"
 
 #: widgets/autocorrectionwidget.cpp:150
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
-msgstr "K Posta/Calligra Otomatik Düzeltmesi"
+msgstr "K Posta/Calligra Kendiliğinden Düzeltmesi"
 
 #: widgets/autocorrectionwidget.cpp:428
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr "\"Değiştir\" dizisi \"Bul\" dizisiyle aynı"
+msgstr "“Değiştir” dizisi “Bul” dizisiyle aynı"
 
 #: widgets/autocorrectionwidget.cpp:428
 #, kde-format
 msgid "Add Autocorrection Entry"
-msgstr "Otomatik Düzeltme Girdisi Ekle"
+msgstr "Kendiliğinden Düzeltme Girdisi Ekle"
 
 #: widgets/autocorrectionwidget.cpp:507
 #, kde-format
@@ -68,27 +68,27 @@ msgstr "&Ekle"
 #: widgets/autocorrectionwidget.cpp:618
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
-msgstr "LibreOffice Otomatik Düzeltmesi İçe Aktar"
+msgstr "LibreOffice Kendiliğinden Düzeltmesi İçe Aktar"
 
 #: widgets/autocorrectionwidget.cpp:619
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
-msgstr "LibreOffice Otomatik Düzeltme Dosyası (*.dat)"
+msgstr "LibreOffice Kendiliğinden Düzeltme Dosyası (*.dat)"
 
 #: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "Import KMail Autocorrection"
-msgstr "K Posta Otomatik Düzeltmesi İçe Aktar"
+msgstr "K Posta Kendiliğinden Düzeltmesi İçe Aktar"
 
 #: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
-msgstr "K Posta Otomatik Düzeltme Dosyası (*.xml)"
+msgstr "K Posta Kendiliğinden Düzeltme Dosyası (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:655
 #, kde-format
 msgid "Import Autocorrection File"
-msgstr "Otomatik Düzeltme Dosyası İçe Aktar"
+msgstr "Kendiliğinden Düzeltme Dosyası İçe Aktar"
 
 #: widgets/autocorrectionwidget.cpp:678
 #, kde-format
@@ -110,13 +110,13 @@ msgstr "Ayarları dışa aktarmadan önce lütfen değişiklikleri kaydedin."
 #: widgets/autocorrectionwidget.cpp:714 widgets/autocorrectionwidget.cpp:717
 #, kde-format
 msgid "Export Autocorrection File"
-msgstr "Otomatik Düzeltme Dosyası Dışa Aktar"
+msgstr "Kendiliğinden Düzeltme Dosyası Dışa Aktar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr "Otomatik düzeltmeyi etkinleştir"
+msgstr "Kendiliğinden düzeltmeyi etkinleştir"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/autocorrectionwidget.ui:30
@@ -128,19 +128,19 @@ msgstr "Şu dil için değiştirme ve istisnalar:"
 #: widgets/ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export..."
-msgstr "Dışa Aktar..."
+msgstr "Dışa Aktar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import..."
-msgstr "İçe Aktar..."
+msgstr "İçe Aktar…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
 #, kde-format
 msgid "Ad&vanced Autocorrection"
-msgstr "Gelişmiş Otomatik Düzeltme"
+msgstr "Gelişmiş Kendiliğinden Düzeltme"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #. i18n: ectx: property (text), widget (QPushButton, remove2)
@@ -213,7 +213,7 @@ msgstr "Ekle"
 #: widgets/ui/autocorrectionwidget.ui:344
 #, kde-format
 msgid "Si&mple Autocorrection"
-msgstr "&Yalın Otomatik Düzeltme"
+msgstr "&Yalın Kendiliğinden Düzeltme"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
 #: widgets/ui/autocorrectionwidget.ui:350
@@ -233,7 +233,7 @@ msgid ""
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
 "Bir tümcenin ilk har&fini her zaman BÜYÜK harfe dönüştür\n"
-"(örn. \"benim evim. bu kentte\"yi \"benim evim. Bu kentte\" olarak)"
+"(örn. “benim evim. bu kentte”yi \"Benim evim. Bu kentte\" olarak)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:364
@@ -245,7 +245,7 @@ msgid ""
 msgstr ""
 "Üst Karakter düğmesini biraz fazla uzun süre basılı tutma gibi yaygın bir "
 "hataya karşı tüm sözcükler denetlenir. Bazı sözcüklerin iki BÜYÜK harf "
-"içermesi gerekiyorsa bu istisnalar 'İstisnalar' sekmesine eklenmelidir."
+"içermesi gerekiyorsa bu istisnalar ‘İstisnalar’ sekmesine eklenmelidir."
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:368
@@ -256,7 +256,7 @@ msgid ""
 " (e.g. PErfect to Perfect)"
 msgstr ""
 "İki BÜYÜK harfi &tek bir büyük harfe ve bir küçük harfe dönüştür\n"
-"(örn. ANık'ı Anık olarak)"
+"(örn. ANık’ı Anık olarak)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
 #: widgets/ui/autocorrectionwidget.ui:375
@@ -284,7 +284,7 @@ msgstr "Çoğu standart kesir belirtimleri olabildiğince dönüştürülecektir
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2... with ½..."
-msgstr "1/2...'yi ½... ile değ&iştir"
+msgstr "1/2…’yi ½… ile değ&iştir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -299,14 +299,14 @@ msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
 "that matches the way an Internet browser would show a URL."
 msgstr ""
-"Bir URL'nin (Tekdüzen Kaynak Bulucu) yazıldığını algılayın ve bir İnternet "
-"tarayıcısının bir URL'yi göstereceği şekilde eşleşen biçimlendirme sağlayın."
+"Bir URL’nin (Tekdüzen Kaynak Bulucu) yazıldığını algılayın ve bir İnternet "
+"tarayıcısının bir URL’yi göstereceği şekilde eşleşen biçimlendirme sağlayın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
 #: widgets/ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
-msgstr "&URL'leri otomatik biçimlendir (HTML kipi)"
+msgstr "&URL’leri kendiliğinden biçimlendir (HTML kipi)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
 #: widgets/ui/autocorrectionwidget.ui:412
@@ -323,14 +323,14 @@ msgstr ""
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
 msgstr ""
-"Kalın, üzeri çizili ve altı çizili &biçimlendirmeyi otomatik olarak "
+"Kalın, üzeri çizili ve altı çizili &biçimlendirmeyi kendiliğinden "
 "gerçekleştir (HTML kipi)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st... with 1^st... (HTML mode)"
-msgstr "1st...'ü 1^st... ile değiştir (HTML kipi)"
+msgstr "1st…’ü 1^st… ile değiştir (HTML kipi)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -381,7 +381,7 @@ msgstr "\""
 #: widgets/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr "Bitiş Tırnağı:"
+msgstr "Bitiş tırnağı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -389,7 +389,7 @@ msgstr "Bitiş Tırnağı:"
 #: widgets/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr "Açılış Tırnağı:"
+msgstr "Açılış tırnağı:"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
@@ -417,7 +417,7 @@ msgstr "'"
 #: widgets/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr "Bitiş Tırnakları:"
+msgstr "Bitiş tırnakları:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: widgets/ui/autocorrectionwidget.ui:707
@@ -429,7 +429,7 @@ msgstr "Yol"
 #: widgets/ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr "Sistem Yolu:"
+msgstr "Sistem yolu:"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
@@ -443,13 +443,13 @@ msgstr "MetinEtiketi"
 #: widgets/ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr "Yazılabilir Yol:"
+msgstr "Yazılabilir yol:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: widgets/ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr "Özel Sistem Yolu:"
+msgstr "Özel sistem yolu:"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
@@ -457,13 +457,13 @@ msgstr "Özel Sistem Yolu:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr "Özel Yazılabilir Yol:"
+msgstr "Özel yazılabilir yol:"
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Special Characters"
