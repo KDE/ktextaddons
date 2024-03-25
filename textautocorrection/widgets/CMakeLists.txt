@@ -18,7 +18,7 @@ install(FILES
 
 install(EXPORT KF6TextAutoCorrectionWidgetsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6TextAutoCorrectionWidgetsTargets.cmake NAMESPACE KF6::)
 
-add_library(KF6TextAutoCorrectionWidgets )
+add_library(KF6TextAutoCorrectionWidgets)
 add_library(KF6::TextAutoCorrectionWidgets ALIAS KF6TextAutoCorrectionWidgets)
 ki18n_wrap_ui(KF6TextAutoCorrectionWidgets
     ui/autocorrectionwidget.ui
@@ -44,6 +44,8 @@ target_sources(KF6TextAutoCorrectionWidgets PRIVATE
     autocorrectiontextedit.h
     autocorrectionlineedit.cpp
     autocorrectionlineedit.h
+    autocorrectionlanguagemodel.h
+    autocorrectionlanguagemodel.cpp
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
