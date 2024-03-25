@@ -7,7 +7,8 @@
 #pragma once
 
 #include <QAbstractListModel>
-
+namespace TextAutoCorrectionWidgets
+{
 class AutoCorrectionLanguageModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -24,6 +25,8 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
+    [[nodiscard]] QString language(int index) const;
+
 private:
     struct LocaleInfo {
         QString localeTranslated;
@@ -33,3 +36,4 @@ private:
 
     QList<LocaleInfo> mLocalInfos;
 };
+}

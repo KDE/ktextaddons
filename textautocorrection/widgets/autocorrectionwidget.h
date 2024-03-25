@@ -76,7 +76,7 @@ private:
 
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void slotImportAutoCorrection(QAction *act);
 
-    TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void changeLanguage(int);
+    TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void changeLanguage();
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void updateAddRemoveButton();
 
     TEXTAUTOCORRECTIONWIDGETS_NO_EXPORT void slotExportAutoCorrection();
