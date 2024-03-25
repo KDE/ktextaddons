@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-12 00:37+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"PO-Revision-Date: 2024-03-24 06:06+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
 msgid "Any text to check."
-msgstr ""
+msgstr "Ajna teksto por kontroli."
 
 #: common/grammarresulttextedit.cpp:88
 #, kde-format
@@ -31,12 +31,12 @@ msgstr "Anstataŭaĵo"
 #: common/grammarresulttextedit.cpp:97
 #, kde-format
 msgid "Online Grammar Information"
-msgstr ""
+msgstr "Retaj Gramatikaj Informoj"
 
 #: common/grammarresulttextedit.cpp:110
 #, kde-format
 msgid "Check Again"
-msgstr ""
+msgstr "Kontroli Denove"
 
 #: common/grammarresulttextedit.cpp:113
 #, kde-format
@@ -46,7 +46,7 @@ msgstr "Agordi..."
 #: common/grammarresultutil.cpp:49
 #, kde-format
 msgid "See on: %1"
-msgstr ""
+msgstr "Vidi en: %1"
 
 #: common/grammarresultwidget.cpp:32
 #, kde-format
@@ -57,7 +57,7 @@ msgstr "Fermi"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr ""
+msgstr "Agordi Gramalecte"
 
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
@@ -67,7 +67,7 @@ msgstr "Ĝenerala"
 #: grammalecte/grammalecteconfigwidget.cpp:36
 #, kde-format
 msgid "Grammar Settings"
-msgstr ""
+msgstr "Gramatikaj Agordoj"
 
 #: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
@@ -75,36 +75,38 @@ msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
 msgstr ""
+"Ne eblas ekpreni elekteblojn. Bonvolu certigi ke vi havas grammalected "
+"instalite."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, kde-format
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "Eraro dum Ekstraktado de Opcioj"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
 #, kde-format
 msgid "Press Button for Reloading Settings"
-msgstr ""
+msgstr "Premu Butonon por Reŝargi Agordojn"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, kde-format
 msgid "Reload Settings"
-msgstr ""
+msgstr "Reŝargi Agordojn"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
 msgid "Python Path:"
-msgstr ""
+msgstr "Python-Vojo:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "Aldoni plenan vojon 'grammalecte-cli.py'"
 
 #: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
-msgstr ""
+msgstr "Grammalecte-Vojo:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:147
 #, kde-format
@@ -112,36 +114,38 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte troviĝas ĉe <a href=\"https://grammalecte.net/#download\">here</"
+"a>. Elŝutu ĝin kaj malpaku ĝin."
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "Python-vojo mankas."
 
 #: grammalecte/grammalecteresultwidget.cpp:58
 #, kde-format
 msgid "Grammalecte path not found."
-msgstr ""
+msgstr "Gramalecte-vojo ne trovita."
 
 #: grammalecte/grammalecteresultwidget.cpp:65
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr ""
+msgstr "Programdosiero de Grammalecte ne trovita."
 
 #: grammalecte/grammalecteresultwidget.cpp:69
 #, kde-format
 msgid "Grammalecte cli file not found."
-msgstr ""
+msgstr "Grammalecte cli-dosiero ne trovita."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
 #, kde-format
 msgid "Grammalecte error"
-msgstr ""
+msgstr "Grammalecte-eraro"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format
 msgid "Select Path"
-msgstr ""
+msgstr "Elekti Vojon"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
@@ -186,12 +190,12 @@ msgstr "Nederlanda"
 #: languagetool/languagetoolcombobox.cpp:39
 #, kde-format
 msgid "English (Australian)"
-msgstr ""
+msgstr "la angla (aŭstralia)"
 
 #: languagetool/languagetoolcombobox.cpp:40
 #, kde-format
 msgid "English (Canadian)"
-msgstr ""
+msgstr "la angla (kanada)"
 
 #: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
@@ -297,17 +301,17 @@ msgstr "Ukraina"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr ""
+msgstr "Agordi LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgid "Use Local Instance"
-msgstr ""
+msgstr "Uzi Lokan Instancon"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgid "Instance Path:"
-msgstr ""
+msgstr "Instanca Vojo:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
 #, kde-format
@@ -327,7 +331,7 @@ msgstr "Eraro estis raportita: %1"
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "Malsukcesis kontroli la gramatikon."
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
@@ -340,8 +344,10 @@ msgid ""
 "An error occurred attempting to load the list of available languages:\n"
 "%1"
 msgstr ""
+"Eraro okazis provante ŝargi la liston de disponeblaj lingvoj:\n"
+"%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
 msgid "List of Languages"
-msgstr ""
+msgstr "Listo de Lingvoj"
