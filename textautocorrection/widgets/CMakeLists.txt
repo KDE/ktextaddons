@@ -44,6 +44,8 @@ target_sources(KF${KF_MAJOR_VERSION}TextAutoCorrectionWidgets PRIVATE
     autocorrectiontextedit.h
     autocorrectionlineedit.cpp
     autocorrectionlineedit.h
+    autocorrectionlanguagemodel.h
+    autocorrectionlanguagemodel.cpp
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
