@@ -115,7 +115,10 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
             &TextAutoCorrectionWidgets::AutoCorrectionListWidget::deleteSelectedItems,
             this,
             &AutoCorrectionWidget::removeTwoUpperLetterEntry);
-    connect(d->ui->autocorrectionLanguage, &TextAutoCorrectionWidgets::AutoCorrectionLanguage::activated, this, &AutoCorrectionWidget::changeLanguage);
+    connect(d->ui->autocorrectionLanguage,
+            &TextAutoCorrectionWidgets::AutoCorrectionLanguage::currentIndexChanged,
+            this,
+            &AutoCorrectionWidget::changeLanguage);
     connect(d->ui->addNonBreakingSpaceInFrench, &QCheckBox::clicked, this, &AutoCorrectionWidget::emitChanged);
     connect(d->ui->twoUpperLetter, &QLineEdit::returnPressed, this, &AutoCorrectionWidget::addTwoUpperLetterEntry);
     connect(d->ui->abbreviation, &QLineEdit::returnPressed, this, &AutoCorrectionWidget::addAbbreviationEntry);
@@ -668,9 +671,10 @@ void AutoCorrectionWidget::setLanguage(const QString &lang)
     d->mWasChanged = false;
 }
 
-void AutoCorrectionWidget::changeLanguage(int index)
+void AutoCorrectionWidget::changeLanguage()
 {
-    if (index == -1) {
+    const QString lang = d->ui->autocorrectionLanguage->language();
+    if (lang.isEmpty()) {
         return;
     }
     if (d->mWasChanged) {
@@ -683,7 +687,7 @@ void AutoCorrectionWidget::changeLanguage(int index)
             writeConfig();
         }
     }
-    const QString lang = d->ui->autocorrectionLanguage->itemData(index).toString();
+
     TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);
@@ -699,7 +703,7 @@ void AutoCorrectionWidget::emitChanged()
 
 void AutoCorrectionWidget::loadGlobalAutoCorrectionAndException()
 {
-    const QString lang = d->ui->autocorrectionLanguage->itemData(d->ui->autocorrectionLanguage->currentIndex()).toString();
+    const QString lang = d->ui->autocorrectionLanguage->language();
     TextAutoCorrectionCore::AutoCorrectionSettings *settings = d->mAutoCorrection->autoCorrectionSettings();
     settings->setLanguage(lang, true);
     d->mAutoCorrection->setAutoCorrectionSettings(settings);

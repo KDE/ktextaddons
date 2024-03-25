@@ -7,6 +7,7 @@
 #include "autocorrectionlanguagemodel.h"
 #include <QLocale>
 
+using namespace TextAutoCorrectionWidgets;
 AutoCorrectionLanguageModel::AutoCorrectionLanguageModel(QObject *parent)
     : QAbstractListModel{parent}
 {
@@ -19,6 +20,11 @@ int AutoCorrectionLanguageModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
     return mLocalInfos.count();
+}
+
+QString AutoCorrectionLanguageModel::language(int index) const
+{
+    return mLocalInfos.at(index).localeCode;
 }
 
 static bool stripCountryCode(QString *languageCode)

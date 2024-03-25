@@ -11,6 +11,7 @@
 
 namespace TextAutoCorrectionWidgets
 {
+class AutoCorrectionLanguageModel;
 /**
  * @brief The AutoCorrectionLanguage class
  * @author Laurent Montel <montel@kde.org>
@@ -20,6 +21,8 @@ class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionLanguage : public QComboBox
 public:
     explicit AutoCorrectionLanguage(QWidget *parent);
     ~AutoCorrectionLanguage() override;
+
+    [[nodiscard]] QString language(int index) const;
 
     /**
      * @brief language
@@ -32,5 +35,8 @@ public:
      * @param language define specified language
      */
     void setLanguage(const QString &language);
+
+private:
+    AutoCorrectionLanguageModel *const mAutoCorrectionLanguageModel;
 };
 }
