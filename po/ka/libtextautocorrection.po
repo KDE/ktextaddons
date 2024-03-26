@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-03-26 00:37+0000\n"
 "PO-Revision-Date: 2023-01-14 12:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -23,90 +23,90 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "შეცდომა არქივის მხოლოდ-წაკითხვის რეჟიმში გახსნისას."
 
-#: widgets/autocorrectionwidget.cpp:131
+#: widgets/autocorrectionwidget.cpp:134
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "ხელით მითითებული ჩაწერადი ბილიკი"
 
-#: widgets/autocorrectionwidget.cpp:136
+#: widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "ხელით მითითებული სისტემის ბილიკი"
 
-#: widgets/autocorrectionwidget.cpp:146
+#: widgets/autocorrectionwidget.cpp:149
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice-ის ავტოკორექცია"
 
-#: widgets/autocorrectionwidget.cpp:150
+#: widgets/autocorrectionwidget.cpp:153
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail/Calligra -ის ავტოკორექცია"
 
-#: widgets/autocorrectionwidget.cpp:428
+#: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"ჩანასაცვლებელი\" სტრიქონი \"მოსაძებნი\" სტრიქონის ტოლია."
 
-#: widgets/autocorrectionwidget.cpp:428
+#: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "ავტოკორექციის ჩანაწერის დამატება"
 
-#: widgets/autocorrectionwidget.cpp:507
+#: widgets/autocorrectionwidget.cpp:510
 #, kde-format
 msgid "&Modify"
 msgstr "&შეცვლა"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:510 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:513 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&დამატება"
 
-#: widgets/autocorrectionwidget.cpp:618
+#: widgets/autocorrectionwidget.cpp:621
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice-ის ავტოკორექციის შემოტანა"
 
-#: widgets/autocorrectionwidget.cpp:619
+#: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice-ის ავტოკორექციის ფაილი (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:622
+#: widgets/autocorrectionwidget.cpp:625
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "KMail-ის ავტოკორექციის შემოტანა"
 
-#: widgets/autocorrectionwidget.cpp:623
+#: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail -ის ავტოკორექციის ფაილი (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:655
+#: widgets/autocorrectionwidget.cpp:658
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "ავტოკორექციის ფაილის შემოტანა"
 
-#: widgets/autocorrectionwidget.cpp:678
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "ენა შეიცვალა. გნებავთ კონფიგურაცია წინა ენაში შეინახოთ?"
 
-#: widgets/autocorrectionwidget.cpp:679
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Save config"
 msgstr "კონფიგურაციის შენახვა"
 
-#: widgets/autocorrectionwidget.cpp:714
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "პარამეტრების გატანამდე, გთხოვთ, შეინახეთ ცვლილებები."
 
-#: widgets/autocorrectionwidget.cpp:714 widgets/autocorrectionwidget.cpp:717
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "ავტოკორექციის ფაილის გატანა"

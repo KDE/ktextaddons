@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-03-26 00:37+0000\n"
 "PO-Revision-Date: 2024-03-21 22:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -22,92 +22,92 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "Arşiv, saltokunur kipte açılamaz."
 
-#: widgets/autocorrectionwidget.cpp:131
+#: widgets/autocorrectionwidget.cpp:134
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "Özel Yazılabilir Yol Seç"
 
-#: widgets/autocorrectionwidget.cpp:136
+#: widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "Özel Sistem Yolu Seç"
 
-#: widgets/autocorrectionwidget.cpp:146
+#: widgets/autocorrectionwidget.cpp:149
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice Kendiliğinden Düzeltmesi"
 
-#: widgets/autocorrectionwidget.cpp:150
+#: widgets/autocorrectionwidget.cpp:153
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "K Posta/Calligra Kendiliğinden Düzeltmesi"
 
-#: widgets/autocorrectionwidget.cpp:428
+#: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "“Değiştir” dizisi “Bul” dizisiyle aynı"
 
-#: widgets/autocorrectionwidget.cpp:428
+#: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "Kendiliğinden Düzeltme Girdisi Ekle"
 
-#: widgets/autocorrectionwidget.cpp:507
+#: widgets/autocorrectionwidget.cpp:510
 #, kde-format
 msgid "&Modify"
 msgstr "&Değiştir"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:510 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:513 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&Ekle"
 
-#: widgets/autocorrectionwidget.cpp:618
+#: widgets/autocorrectionwidget.cpp:621
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice Kendiliğinden Düzeltmesi İçe Aktar"
 
-#: widgets/autocorrectionwidget.cpp:619
+#: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice Kendiliğinden Düzeltme Dosyası (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:622
+#: widgets/autocorrectionwidget.cpp:625
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "K Posta Kendiliğinden Düzeltmesi İçe Aktar"
 
-#: widgets/autocorrectionwidget.cpp:623
+#: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "K Posta Kendiliğinden Düzeltme Dosyası (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:655
+#: widgets/autocorrectionwidget.cpp:658
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "Kendiliğinden Düzeltme Dosyası İçe Aktar"
 
-#: widgets/autocorrectionwidget.cpp:678
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "Dil değiştirildi; önceki dil için olan yapılandırmayı kaydetmek istiyor "
 "musunuz?"
 
-#: widgets/autocorrectionwidget.cpp:679
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Save config"
 msgstr "Yapılandırmayı Kaydet"
 
-#: widgets/autocorrectionwidget.cpp:714
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Ayarları dışa aktarmadan önce lütfen değişiklikleri kaydedin."
 
-#: widgets/autocorrectionwidget.cpp:714 widgets/autocorrectionwidget.cpp:717
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "Kendiliğinden Düzeltme Dosyası Dışa Aktar"

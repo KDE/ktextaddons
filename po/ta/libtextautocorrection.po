@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-03-26 00:37+0000\n"
 "PO-Revision-Date: 2023-03-26 14:11+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -22,90 +22,90 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "காப்பகத்தை படித்தல்-மட்டும் பயன்முறையில் திறக்க முடியாது."
 
-#: widgets/autocorrectionwidget.cpp:131
+#: widgets/autocorrectionwidget.cpp:134
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:136
+#: widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "Select Custom System Path"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:146
+#: widgets/autocorrectionwidget.cpp:149
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:150
+#: widgets/autocorrectionwidget.cpp:153
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:428
+#: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "மாற்று சரமும் தேடிய சரமும் ஒன்றாயுள்ளன."
 
-#: widgets/autocorrectionwidget.cpp:428
+#: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "தானியக்க திருத்த பதிவை சேர்"
 
-#: widgets/autocorrectionwidget.cpp:507
+#: widgets/autocorrectionwidget.cpp:510
 #, kde-format
 msgid "&Modify"
 msgstr "&திருத்து"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:510 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:513 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&சேர்"
 
-#: widgets/autocorrectionwidget.cpp:618
+#: widgets/autocorrectionwidget.cpp:621
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:619
+#: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:622
+#: widgets/autocorrectionwidget.cpp:625
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:623
+#: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:655
+#: widgets/autocorrectionwidget.cpp:658
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:678
+#: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "மொழி மாற்றப்பட்டுள்ளது. முந்தைய மொழிக்கான அமைப்புகளை சேமிக்க வேண்டுமா?"
 
-#: widgets/autocorrectionwidget.cpp:679
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Save config"
 msgstr "அமைப்புகளை சேமி"
 
-#: widgets/autocorrectionwidget.cpp:714
+#: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "அமைப்புகளை ஏற்றுமதி செய்யுமுன் அவற்றை சேமியுங்கள்."
 
-#: widgets/autocorrectionwidget.cpp:714 widgets/autocorrectionwidget.cpp:717
+#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "தான்திருத்த கோப்பை ஏற்றுமதி செய்"
