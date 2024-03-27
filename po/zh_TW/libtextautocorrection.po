@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:35+0000\n"
+"POT-Creation-Date: 2024-03-27 11:37+0000\n"
 "PO-Revision-Date: 2024-02-27 06:31+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -22,90 +22,90 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "封存無法以讀取模式開啟。"
 
-#: widgets/autocorrectionwidget.cpp:147
+#: widgets/autocorrectionwidget.cpp:150
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "選擇自訂可寫入路徑"
 
-#: widgets/autocorrectionwidget.cpp:152
+#: widgets/autocorrectionwidget.cpp:155
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "選擇自訂系統路徑"
 
-#: widgets/autocorrectionwidget.cpp:162
+#: widgets/autocorrectionwidget.cpp:165
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice 自動修正"
 
-#: widgets/autocorrectionwidget.cpp:166
+#: widgets/autocorrectionwidget.cpp:169
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail/Calligra 自動修正"
 
-#: widgets/autocorrectionwidget.cpp:444
+#: widgets/autocorrectionwidget.cpp:447
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "「取代」字串與「尋找」字串相同。"
 
-#: widgets/autocorrectionwidget.cpp:444
+#: widgets/autocorrectionwidget.cpp:447
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "新增自動修正條目"
 
-#: widgets/autocorrectionwidget.cpp:523
+#: widgets/autocorrectionwidget.cpp:526
 #, kde-format
 msgid "&Modify"
 msgstr "修改(&M)"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:526 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:529 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "新增(&A)"
 
-#: widgets/autocorrectionwidget.cpp:634
+#: widgets/autocorrectionwidget.cpp:637
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "匯入 LibreOffice 自動修正"
 
-#: widgets/autocorrectionwidget.cpp:635
+#: widgets/autocorrectionwidget.cpp:638
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice 自動修正檔案 (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:638
+#: widgets/autocorrectionwidget.cpp:641
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "匯入 KMail 自動修正"
 
-#: widgets/autocorrectionwidget.cpp:639
+#: widgets/autocorrectionwidget.cpp:642
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail 自動修正檔案 (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:671
+#: widgets/autocorrectionwidget.cpp:674
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "匯入自動修正檔案"
 
-#: widgets/autocorrectionwidget.cpp:694
+#: widgets/autocorrectionwidget.cpp:698
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "語言與變更，您要儲存先前語言的設定嗎？"
 
-#: widgets/autocorrectionwidget.cpp:695
+#: widgets/autocorrectionwidget.cpp:699
 #, kde-format
 msgid "Save config"
 msgstr "儲存設定"
 
-#: widgets/autocorrectionwidget.cpp:730
+#: widgets/autocorrectionwidget.cpp:734
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "請在匯出設定前先儲存變更。"
 
-#: widgets/autocorrectionwidget.cpp:730 widgets/autocorrectionwidget.cpp:733
+#: widgets/autocorrectionwidget.cpp:734 widgets/autocorrectionwidget.cpp:737
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "匯出自動修正檔案"

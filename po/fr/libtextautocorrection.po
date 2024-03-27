@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:35+0000\n"
+"POT-Creation-Date: 2024-03-27 11:37+0000\n"
 "PO-Revision-Date: 2023-10-24 19:40+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -19,93 +19,93 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "Il est impossible d'ouvrir l'archive en mode lecture."
 
-#: widgets/autocorrectionwidget.cpp:147
+#: widgets/autocorrectionwidget.cpp:150
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "Sélectionnez un emplacement personnalisé accessible en écriture"
 
-#: widgets/autocorrectionwidget.cpp:152
+#: widgets/autocorrectionwidget.cpp:155
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "Sélectionnez un emplacement personnalisé du système"
 
-#: widgets/autocorrectionwidget.cpp:162
+#: widgets/autocorrectionwidget.cpp:165
 #, kde-format
 msgid "LibreOffice Autocorrection"
 msgstr "Correction automatique pour LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:166
+#: widgets/autocorrectionwidget.cpp:169
 #, kde-format
 msgid "KMail/Calligra Autocorrection"
 msgstr "Correction automatique pour KMail / Calligra "
 
-#: widgets/autocorrectionwidget.cpp:444
+#: widgets/autocorrectionwidget.cpp:447
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "La chaîne de remplacement est la même que celle qui est recherchée."
 
-#: widgets/autocorrectionwidget.cpp:444
+#: widgets/autocorrectionwidget.cpp:447
 #, kde-format
 msgid "Add Autocorrection Entry"
 msgstr "Ajouter une entrée de correction automatique"
 
-#: widgets/autocorrectionwidget.cpp:523
+#: widgets/autocorrectionwidget.cpp:526
 #, kde-format
 msgid "&Modify"
 msgstr "&Modifier"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:526 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:529 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&Ajouter"
 
-#: widgets/autocorrectionwidget.cpp:634
+#: widgets/autocorrectionwidget.cpp:637
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Importer la correction automatique pour LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:635
+#: widgets/autocorrectionwidget.cpp:638
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "Fichier de correction automatique pour LibreOffice (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:638
+#: widgets/autocorrectionwidget.cpp:641
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Importer la correction automatique de KMail"
 
-#: widgets/autocorrectionwidget.cpp:639
+#: widgets/autocorrectionwidget.cpp:642
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "Fichier de correction automatique pour KMail (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:671
+#: widgets/autocorrectionwidget.cpp:674
 #, kde-format
 msgid "Import Autocorrection File"
 msgstr "Importer un fichier de correction automatique"
 
-#: widgets/autocorrectionwidget.cpp:694
+#: widgets/autocorrectionwidget.cpp:698
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "La langue a été modifiée. Voulez-vous enregistrer la configuration de la "
 "précédente langue ?"
 
-#: widgets/autocorrectionwidget.cpp:695
+#: widgets/autocorrectionwidget.cpp:699
 #, kde-format
 msgid "Save config"
 msgstr "Enregistrer une configuration"
 
-#: widgets/autocorrectionwidget.cpp:730
+#: widgets/autocorrectionwidget.cpp:734
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr ""
 "Veuillez enregistrer les modifications avant d'exporter la configuration."
 
-#: widgets/autocorrectionwidget.cpp:730 widgets/autocorrectionwidget.cpp:733
+#: widgets/autocorrectionwidget.cpp:734 widgets/autocorrectionwidget.cpp:737
 #, kde-format
 msgid "Export Autocorrection File"
 msgstr "Exporter un fichier de correction automatique"
