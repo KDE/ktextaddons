@@ -6,6 +6,7 @@
 
 #include "autocorrectionlanguagemodel.h"
 #include <QLocale>
+#include <QSet>
 
 using namespace TextAutoCorrectionWidgets;
 AutoCorrectionLanguageModel::AutoCorrectionLanguageModel(QObject *parent)
