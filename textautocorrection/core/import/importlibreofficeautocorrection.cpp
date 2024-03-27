@@ -96,7 +96,11 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
         return false;
     }
     documentList = archiveDirectory->entry(archiveFileName);
-    if (documentList && documentList->isFile()) {
+    if (!documentList) {
+        qCWarning(TEXTAUTOCORRECTION_LOG) << "Archive doesn't have file: " << archiveFileName;
+        return false;
+    }
+    if (documentList->isFile()) {
         const auto archiveFile = static_cast<const KArchiveFile *>(documentList);
         archiveFile->copyTo(mTempDir->path());
         QFile file(mTempDir->path() + QLatin1Char('/') + archiveFileName);
