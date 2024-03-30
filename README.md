@@ -8,19 +8,19 @@ Various text handling addons
 
 Qt:
 
-- Qt{5,6}Core
-- Qt{5,6}Network
-- Qt{5,6}Widgets
-- Qt{5,6}Keychain
-- Qt{5,6}UiPlugin
+- Qt6Core
+- Qt6Network
+- Qt6Widgets
+- Qt6Keychain
+- Qt6UiPlugin
 
-KF{5,6}:
+KF6:
 
-- KF{5,6}Archive
-- KF{5,6}ConfigWidgets
-- KF{5,6}CoreAddons
-- KF{5,6}I18n
-- KF{5,6}XmlGui
-- KF{5,6}Sonnet
-- KF{5,6}KIO
-- KF{5,6}SyntaxHighlighting
+- KF6Archive
+- KF6ConfigWidgets
+- KF6CoreAddons
+- KF6I18n
+- KF6XmlGui
+- KF6Sonnet
+- KF6KIO
+- KF6SyntaxHighlighting
