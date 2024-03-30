@@ -12,26 +12,26 @@ deprecated: false
 release: false
 libraries:
  - qmake: TextGrammarCheck
-   cmake: "KF5::TextGrammarCheck"
+   cmake: "KF6::TextGrammarCheck"
  - qmake: TextTranslator
-   cmake: "KF5::TextTranslator"
+   cmake: "KF6::TextTranslator"
  - qmake: TextAutoCorrectionCore
-   cmake: "KF5::TextAutoCorrectionCore"
+   cmake: "KF6::TextAutoCorrectionCore"
  - qmake: TextAutoCorrectionWidgets
-   cmake: "KF5::TextAutoCorrectionWidgets"     
+   cmake: "KF6::TextAutoCorrectionWidgets"
  - qmake: TextEditTextToSpeech
-   cmake: "KF5::TextEditTextToSpeech"
+   cmake: "KF6::TextEditTextToSpeech"
  - qmake: TextAddonsWidgets
-   cmake: "KF5::TextAddonsWidgets"
+   cmake: "KF6::TextAddonsWidgets"
  - qmake: TextEmoticonsCore
-   cmake: "KF5::TextEmoticonsCore"
+   cmake: "KF6::TextEmoticonsCore"
  - qmake: TextEmoticonsWidgets
-   cmake: "KF5::TextEmoticonsWidgets"
+   cmake: "KF6::TextEmoticonsWidgets"
  - qmake: TextUtils
-   cmake: "KF5::TextUtils"
+   cmake: "KF6::TextUtils"
  - qmake: TextCustomEditor
-   cmake: "KF5::TextCustomEditor"     
-cmakename: KF5TextEditTextToSpeech
+   cmake: "KF6::TextCustomEditor"
+cmakename: KF6TextEditTextToSpeech
 
 public_lib: true
 group: Frameworks
