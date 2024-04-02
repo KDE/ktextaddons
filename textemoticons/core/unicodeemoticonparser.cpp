@@ -37,15 +37,15 @@ QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
         UnicodeEmoticon emoticon;
         const QJsonObject emojiObj = o[key].toObject();
         emoticon.setKey(key);
-        const QString unicodeStr = emojiObj[QLatin1String("code_points")].toObject()[QLatin1String("fully_qualified")].toString();
+        const QString unicodeStr = emojiObj[QLatin1StringView("code_points")].toObject()[QLatin1StringView("fully_qualified")].toString();
         Q_ASSERT(!unicodeStr.isEmpty());
         emoticon.setUnicode(unicodeStr);
-        const QString category = emojiObj[QLatin1String("category")].toString();
+        const QString category = emojiObj[QLatin1StringView("category")].toString();
         emoticon.setCategory(category);
-        emoticon.setIdentifier(emojiObj[QLatin1String("shortname")].toString());
-        emoticon.setOrder(emojiObj[QLatin1String("order")].toInt());
-        const auto shortnameAlternates = emojiObj[QLatin1String("shortname_alternates")].toArray();
-        const auto ascii = emojiObj[QLatin1String("ascii")].toArray();
+        emoticon.setIdentifier(emojiObj[QLatin1StringView("shortname")].toString());
+        emoticon.setOrder(emojiObj[QLatin1StringView("order")].toInt());
+        const auto shortnameAlternates = emojiObj[QLatin1StringView("shortname_alternates")].toArray();
+        const auto ascii = emojiObj[QLatin1StringView("ascii")].toArray();
         emoticon.setAliases(aliases(shortnameAlternates, ascii));
         if (emoticon.isValid()) {
             lstEmoticons.append(std::move(emoticon));
@@ -61,23 +61,23 @@ QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
 int UnicodeEmoticonParser::changeOrder(const QString &name)
 {
     // ame "🚗"Category "travel", Name "🇿"Category "regional", Name "🏳️"Category "flags")
-    if (name == QLatin1String("people")) {
+    if (name == QLatin1StringView("people")) {
         return 1;
-    } else if (name == QLatin1String("flags")) {
+    } else if (name == QLatin1StringView("flags")) {
         return 2;
-    } else if (name == QLatin1String("travel")) {
+    } else if (name == QLatin1StringView("travel")) {
         return 3;
-    } else if (name == QLatin1String("symbols")) {
+    } else if (name == QLatin1StringView("symbols")) {
         return 4;
-    } else if (name == QLatin1String("activity")) {
+    } else if (name == QLatin1StringView("activity")) {
         return 5;
-    } else if (name == QLatin1String("objects")) {
+    } else if (name == QLatin1StringView("objects")) {
         return 6;
-    } else if (name == QLatin1String("nature")) {
+    } else if (name == QLatin1StringView("nature")) {
         return 7;
-    } else if (name == QLatin1String("food")) {
+    } else if (name == QLatin1StringView("food")) {
         return 8;
-    } else if (name == QLatin1String("regional")) {
+    } else if (name == QLatin1StringView("regional")) {
         return 9;
     } else {
         qCWarning(TEXTEMOTICONSCORE_LOG) << "Missing i18n translate " << name;

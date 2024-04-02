@@ -18,7 +18,7 @@ GrammalecteGrammarError::~GrammalecteGrammarError() = default;
 QStringList GrammalecteGrammarError::parseSuggestion(const QJsonObject &obj)
 {
     QStringList lst;
-    const QJsonArray array = obj[QLatin1String("aSuggestions")].toArray();
+    const QJsonArray array = obj[QLatin1StringView("aSuggestions")].toArray();
     const QVariantList list = array.toVariantList();
     lst.reserve(list.count());
     for (const QVariant &v : list) {
@@ -31,7 +31,7 @@ QStringList GrammalecteGrammarError::parseSuggestion(const QJsonObject &obj)
 QColor GrammalecteGrammarError::parseColor(const QJsonObject &obj)
 {
     QColor col;
-    const QJsonArray array = obj[QLatin1String("aColor")].toArray();
+    const QJsonArray array = obj[QLatin1StringView("aColor")].toArray();
     if (array.isEmpty()) {
         return col;
     }
@@ -49,18 +49,18 @@ QColor GrammalecteGrammarError::parseColor(const QJsonObject &obj)
 
 void GrammalecteGrammarError::parse(const QJsonObject &obj, int blockindex)
 {
-    const int end = obj[QLatin1String("nEnd")].toInt(-1);
-    mStart = obj[QLatin1String("nStart")].toInt(-1);
+    const int end = obj[QLatin1StringView("nEnd")].toInt(-1);
+    mStart = obj[QLatin1StringView("nStart")].toInt(-1);
     if (end != -1) {
         mLength = end - mStart;
     }
-    mError = obj[QLatin1String("sMessage")].toString();
+    mError = obj[QLatin1StringView("sMessage")].toString();
     if (mLength != -1) {
         mBlockId = blockindex;
         mColor = parseColor(obj);
         mSuggestions = parseSuggestion(obj);
     }
-    mRule = obj[QLatin1String("sRuleId")].toString();
-    mOption = obj[QLatin1String("sType")].toString();
-    mUrl = obj[QLatin1String("URL")].toString();
+    mRule = obj[QLatin1StringView("sRuleId")].toString();
+    mOption = obj[QLatin1StringView("sType")].toString();
+    mUrl = obj[QLatin1StringView("URL")].toString();
 }

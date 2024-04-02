@@ -55,7 +55,7 @@ void GrammalecteGenerateConfigOptionJob::receivedError()
 
 void GrammalecteGenerateConfigOptionJob::receivedStdErr()
 {
-    mLastError += QLatin1String(mProcess->readAllStandardError());
+    mLastError += QLatin1StringView(mProcess->readAllStandardError());
 }
 
 QString GrammalecteGenerateConfigOptionJob::pythonPath() const
@@ -112,7 +112,7 @@ QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOpt
                 GrammalecteGenerateConfigOptionJob::Option opt;
                 opt.description = description;
                 opt.optionName = optionName;
-                opt.defaultValue = (value == QLatin1String("True"));
+                opt.defaultValue = (value == QLatin1StringView("True"));
                 opts.append(std::move(opt));
             }
         }

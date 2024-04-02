@@ -88,9 +88,9 @@ void LingvaEnginePlugin::slotConfigureChanged()
 
 QString LingvaEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1String("zh")) {
+    if (langStr == QLatin1StringView("zh")) {
         return QStringLiteral("zh");
-    } else if (langStr == QLatin1String("zt")) {
+    } else if (langStr == QLatin1StringView("zt")) {
         return QStringLiteral("zh_HANT");
     }
     return langStr;

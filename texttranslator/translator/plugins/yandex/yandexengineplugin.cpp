@@ -94,7 +94,7 @@ void YandexEnginePlugin::translateText()
 
     clear();
     QString lang;
-    if (from() == QLatin1String("auto")) {
+    if (from() == QLatin1StringView("auto")) {
         lang = languageCode(to());
     } else {
         lang = languageCode(from()) + QLatin1Char('-') + languageCode(to());
@@ -103,7 +103,7 @@ void YandexEnginePlugin::translateText()
     // Generate API url
     QUrl url(QStringLiteral("https://translate.yandex.net/api/v1/tr.json/translate"));
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("id"), sYandexKey + QLatin1String("-2-0"));
+    query.addQueryItem(QStringLiteral("id"), sYandexKey + QLatin1StringView("-2-0"));
     query.addQueryItem(QStringLiteral("srv"), QStringLiteral("tr-text"));
     query.addQueryItem(QStringLiteral("text"), inputText());
     query.addQueryItem(QStringLiteral("lang"), lang);
@@ -111,7 +111,7 @@ void YandexEnginePlugin::translateText()
 
     // Setup request
     QNetworkRequest request;
-    request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1StringView("application/x-www-form-urlencoded"));
     request.setUrl(url);
 
     // Make reply
@@ -137,7 +137,7 @@ void YandexEnginePlugin::parseTranslation(QNetworkReply *reply)
     reply->deleteLater();
 
     // Parse language
-    if (from() == QLatin1String("auto")) {
+    if (from() == QLatin1StringView("auto")) {
         QString sourceCode = jsonData.value(QStringLiteral("lang")).toString();
         sourceCode = sourceCode.left(sourceCode.indexOf(QLatin1Char('-')));
         qDebug() << " sourceCode " << sourceCode;
@@ -150,9 +150,9 @@ void YandexEnginePlugin::parseTranslation(QNetworkReply *reply)
 
 QString YandexEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1String("zh")) {
+    if (langStr == QLatin1StringView("zh")) {
         return QStringLiteral("zn");
-    } else if (langStr == QLatin1String("ja")) {
+    } else if (langStr == QLatin1StringView("ja")) {
         return QStringLiteral("jv");
     }
     return langStr;

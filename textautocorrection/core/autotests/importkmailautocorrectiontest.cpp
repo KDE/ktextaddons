@@ -33,7 +33,7 @@ void ImportKMailAutocorrectionTest::shouldHaveDefaultValues()
 
 void ImportKMailAutocorrectionTest::shouldLoadFile()
 {
-    const QString originalFile = QLatin1String(AUTOCORRECTION_DATA_DIR) + QStringLiteral("/custom-fr.xml");
+    const QString originalFile = QLatin1StringView(AUTOCORRECTION_DATA_DIR) + QStringLiteral("/custom-fr.xml");
     TextAutoCorrectionCore::ImportKMailAutocorrection import;
     QString messageError;
     QVERIFY(import.import(originalFile, messageError));

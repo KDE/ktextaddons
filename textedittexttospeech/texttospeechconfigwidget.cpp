@@ -176,7 +176,7 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
     mAvailableEngine->clear();
     const QStringList lst = mTextToSpeechConfigInterface->availableEngines();
     for (const QString &engine : lst) {
-        if (engine != QLatin1String("mock")) {
+        if (engine != QLatin1StringView("mock")) {
             mAvailableEngine->addItem(engine, engine);
         }
     }

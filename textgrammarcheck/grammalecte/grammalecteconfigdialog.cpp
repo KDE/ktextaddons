@@ -44,7 +44,7 @@ GrammalecteConfigDialog::~GrammalecteConfigDialog()
 
 void GrammalecteConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myConfigGrammalecteConfigDialog));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGrammalecteConfigDialog));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
@@ -52,7 +52,7 @@ void GrammalecteConfigDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(500, 300));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myConfigGrammalecteConfigDialog));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGrammalecteConfigDialog));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }

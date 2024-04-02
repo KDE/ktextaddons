@@ -185,7 +185,7 @@ QRegularExpression TextFindWidget::searchRegularExpression() const
     }
     QString searchTextString = mSearch->text();
     if (mWholeWordAct->isChecked()) {
-        searchTextString = QLatin1String("\\b") + searchTextString + QLatin1String("\\b");
+        searchTextString = QLatin1StringView("\\b") + searchTextString + QLatin1StringView("\\b");
     }
     reg.setPattern(searchTextString);
     return reg;

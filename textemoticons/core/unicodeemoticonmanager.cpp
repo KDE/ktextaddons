@@ -38,23 +38,23 @@ void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
 QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) const
 {
     // Name "🚗"Category "travel", Name "🇿"Category "regional", Name "🏳️"Category "flags")
-    if (name == QLatin1String("symbols")) {
+    if (name == QLatin1StringView("symbols")) {
         return i18n("Symbols");
-    } else if (name == QLatin1String("activity")) {
+    } else if (name == QLatin1StringView("activity")) {
         return i18n("Activity");
-    } else if (name == QLatin1String("objects")) {
+    } else if (name == QLatin1StringView("objects")) {
         return i18n("Objects");
-    } else if (name == QLatin1String("nature")) {
+    } else if (name == QLatin1StringView("nature")) {
         return i18n("Nature");
-    } else if (name == QLatin1String("food")) {
+    } else if (name == QLatin1StringView("food")) {
         return i18n("Food");
-    } else if (name == QLatin1String("people")) {
+    } else if (name == QLatin1StringView("people")) {
         return i18n("People");
-    } else if (name == QLatin1String("travel")) {
+    } else if (name == QLatin1StringView("travel")) {
         return i18n("Travel");
-    } else if (name == QLatin1String("regional")) {
+    } else if (name == QLatin1StringView("regional")) {
         return i18n("Regional");
-    } else if (name == QLatin1String("flags")) {
+    } else if (name == QLatin1StringView("flags")) {
         return i18n("Flags");
     } else {
         qCWarning(TEXTEMOTICONSCORE_LOG) << "Missing i18n translate " << name;
@@ -96,7 +96,7 @@ QList<EmoticonCategory> UnicodeEmoticonManager::categories() const
         const QString category = emo.category();
         if (!seen.contains(category)) {
             seen.insert(category);
-            if (category == QLatin1String("modifier")) { // pointless icons
+            if (category == QLatin1StringView("modifier")) { // pointless icons
                 continue;
             }
             EmoticonCategory cat;

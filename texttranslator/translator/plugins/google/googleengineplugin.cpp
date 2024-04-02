@@ -57,7 +57,7 @@ void GoogleEnginePlugin::translate()
 
 QString GoogleEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1String("iw")) {
+    if (langStr == QLatin1StringView("iw")) {
         return QStringLiteral("iw");
     }
     return langStr;

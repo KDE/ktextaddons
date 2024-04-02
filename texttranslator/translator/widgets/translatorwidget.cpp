@@ -157,14 +157,14 @@ void TranslatorWidget::writeConfig()
         myGroup.writeEntry("ToLanguage", d->toCombobox->itemData(d->toCombobox->currentIndex()).toString());
         myGroup.sync();
     }
-    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1String(myTranslatorWidgetConfigGroupName));
+    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1StringView(myTranslatorWidgetConfigGroupName));
     myGroupUi.writeEntry("mainSplitter", d->splitter->sizes());
     myGroupUi.sync();
 }
 
 void TranslatorWidget::readConfig()
 {
-    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1String(myTranslatorWidgetConfigGroupName));
+    KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), QLatin1StringView(myTranslatorWidgetConfigGroupName));
     const QList<int> size = {100, 400};
     d->splitter->setSizes(myGroupUi.readEntry("mainSplitter", size));
 
@@ -188,7 +188,7 @@ void TranslatorWidget::readConfig()
     if (indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
     }
-    d->invert->setEnabled(from != QLatin1String("auto"));
+    d->invert->setEnabled(from != QLatin1StringView("auto"));
 }
 
 void TranslatorWidget::loadEngineSettings()
@@ -382,7 +382,7 @@ void TranslatorWidget::slotTextChanged()
 void TranslatorWidget::slotFromLanguageChanged(int index, bool initialize)
 {
     const QString lang = d->fromCombobox->itemData(index).toString();
-    d->invert->setEnabled(lang != QLatin1String("auto"));
+    d->invert->setEnabled(lang != QLatin1StringView("auto"));
     const QString to = d->toCombobox->itemData(d->toCombobox->currentIndex()).toString();
 
     // Get "from" language code for generating "to" language list
@@ -458,7 +458,7 @@ void TranslatorWidget::slotInvertLanguage()
 {
     const QString fromLanguage = d->fromCombobox->itemData(d->fromCombobox->currentIndex()).toString();
     // don't invert when fromLanguage == auto
-    if (fromLanguage == QLatin1String("auto")) {
+    if (fromLanguage == QLatin1StringView("auto")) {
         return;
     }
 

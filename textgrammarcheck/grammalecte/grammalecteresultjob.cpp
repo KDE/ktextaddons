@@ -68,7 +68,7 @@ void GrammalecteResultJob::receivedError()
 
 void GrammalecteResultJob::receivedStdErr()
 {
-    mLastError += QLatin1String(mProcess->readAllStandardError());
+    mLastError += QLatin1StringView(mProcess->readAllStandardError());
 }
 
 void GrammalecteResultJob::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)

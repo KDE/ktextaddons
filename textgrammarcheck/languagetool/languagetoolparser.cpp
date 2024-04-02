@@ -18,7 +18,7 @@ LanguageToolParser::~LanguageToolParser() = default;
 QVector<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) const
 {
     QVector<GrammarError> infos;
-    const QJsonArray array = obj.value(QLatin1String("matches")).toArray();
+    const QJsonArray array = obj.value(QLatin1StringView("matches")).toArray();
     for (const QJsonValue &current : array) {
         // qDebug() << " current " << current;
         if (current.type() == QJsonValue::Object) {

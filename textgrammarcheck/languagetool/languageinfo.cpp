@@ -52,9 +52,9 @@ bool LanguageInfo::isValid() const
 
 void LanguageInfo::parse(const QJsonObject &obj)
 {
-    mName = obj[QLatin1String("name")].toString();
-    mCode = obj[QLatin1String("code")].toString();
-    mLongCode = obj[QLatin1String("longCode")].toString();
+    mName = obj[QLatin1StringView("name")].toString();
+    mCode = obj[QLatin1StringView("code")].toString();
+    mLongCode = obj[QLatin1StringView("longCode")].toString();
 }
 
 bool LanguageInfo::operator==(const LanguageInfo &other) const

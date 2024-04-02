@@ -120,9 +120,9 @@ void DeeplEnginePlugin::slotConfigureChanged()
 
 QString DeeplEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1String("auto")) {
+    if (langStr == QLatin1StringView("auto")) {
         return QStringLiteral("auto-detect");
-    } else if (langStr == QLatin1String("zh-CN")) {
+    } else if (langStr == QLatin1StringView("zh-CN")) {
         return QStringLiteral("zh");
     }
     return langStr;

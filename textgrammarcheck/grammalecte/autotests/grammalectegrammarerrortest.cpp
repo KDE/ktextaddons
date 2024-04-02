@@ -54,7 +54,7 @@ void GrammalecteGrammarErrorTest::shouldParseJson()
     QFETCH(QString, fileName);
     QFETCH(int, nbBlock);
     QFETCH(TextGrammarCheck::GrammalecteGrammarError, error);
-    const QString originalJsonFile = QLatin1String(GRAMMALECTE_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1StringView(GRAMMALECTE_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

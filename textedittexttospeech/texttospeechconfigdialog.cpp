@@ -54,7 +54,7 @@ void TextToSpeechConfigDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(300, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myTextToSpeechConfigDialogConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
     mTextToSpeechConfigWidget->initializeSettings();
@@ -62,7 +62,7 @@ void TextToSpeechConfigDialog::readConfig()
 
 void TextToSpeechConfigDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myTextToSpeechConfigDialogConfigGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextToSpeechConfigDialogConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 

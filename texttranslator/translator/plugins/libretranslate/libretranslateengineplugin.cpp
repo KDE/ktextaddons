@@ -58,7 +58,7 @@ void LibreTranslateEnginePlugin::translateText()
     }
     const auto url = QUrl(QStringLiteral("%1/translate").arg(mServerUrl));
     QNetworkRequest request;
-    request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1StringView("application/x-www-form-urlencoded"));
     request.setUrl(url);
 
     qCDebug(TRANSLATOR_LIBRETRANSLATE_LOG) << " url " << url;

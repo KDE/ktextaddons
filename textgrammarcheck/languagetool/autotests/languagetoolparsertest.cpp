@@ -29,7 +29,7 @@ void LanguageToolParserTest::shouldParseJson()
 {
     QFETCH(QString, fileName);
     QFETCH(int, numberOfElement);
-    const QString originalJsonFile = QLatin1String(LANGUAGETOOL_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1StringView(LANGUAGETOOL_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

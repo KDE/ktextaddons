@@ -26,13 +26,13 @@ public:
     }
     void loadRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openConfig(), QLatin1String(myEmoticonRecentUsedGroupName));
+        KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(myEmoticonRecentUsedGroupName));
         mRecentIdentifier = group.readEntry("Recents", QStringList());
     }
 
     void writeRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openConfig(), QLatin1String(myEmoticonRecentUsedGroupName));
+        KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(myEmoticonRecentUsedGroupName));
         group.writeEntry("Recents", mRecentIdentifier);
         group.sync();
     }

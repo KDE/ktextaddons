@@ -22,7 +22,7 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
 {
     QFETCH(QString, filename);
 
-    const QString originalFile = QLatin1String(AUTOCORRECTION_DATA_DIR) + QLatin1Char('/') + filename;
+    const QString originalFile = QLatin1StringView(AUTOCORRECTION_DATA_DIR) + QLatin1Char('/') + filename;
 
     // First step
     TextAutoCorrectionCore::ImportLibreOfficeAutocorrection import;

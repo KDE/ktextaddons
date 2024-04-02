@@ -328,7 +328,7 @@ void AutoCorrectionSettings::setLanguage(const QString &lang, bool forceGlobal)
 
 bool AutoCorrectionSettings::isFrenchLanguage() const
 {
-    return d->mAutoCorrectLang == QLatin1String("FR_fr") || d->mAutoCorrectLang == QLatin1String("fr");
+    return d->mAutoCorrectLang == QLatin1StringView("FR_fr") || d->mAutoCorrectLang == QLatin1StringView("fr");
 }
 
 bool AutoCorrectionSettings::addAutoCorrect(const QString &currentWord, const QString &replaceWord)
@@ -473,34 +473,34 @@ void AutoCorrectionSettings::migrateKMailXmlFile()
     if (!forceGlobal) {
         if (!mAutoCorrectLang.isEmpty()) {
             localFileName =
-                QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("autocorrect/custom-") + mAutoCorrectLang + QLatin1String(".xml"));
+                QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1StringView("autocorrect/custom-") + mAutoCorrectLang + QLatin1StringView(".xml"));
         } else {
             if (!kdelang.isEmpty()) {
                 localFileName =
-                    QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("autocorrect/custom-") + kdelang + QLatin1String(".xml"));
+                    QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1StringView("autocorrect/custom-") + kdelang + QLatin1StringView(".xml"));
             }
             if (localFileName.isEmpty() && kdelang.contains(QLatin1Char('_'))) {
                 kdelang.remove(regpath);
                 localFileName =
-                    QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("autocorrect/custom-") + kdelang + QLatin1String(".xml"));
+                    QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1StringView("autocorrect/custom-") + kdelang + QLatin1StringView(".xml"));
             }
         }
     }
     QString fname;
     // Load Global directly
     if (!mAutoCorrectLang.isEmpty()) {
-        if (mAutoCorrectLang == QLatin1String("en_US")) {
+        if (mAutoCorrectLang == QLatin1StringView("en_US")) {
             fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("autocorrect/autocorrect.xml"));
         } else {
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("autocorrect/") + mAutoCorrectLang + QLatin1String(".xml"));
+            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1StringView("autocorrect/") + mAutoCorrectLang + QLatin1StringView(".xml"));
         }
     } else {
         if (fname.isEmpty() && !kdelang.isEmpty()) {
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("autocorrect/") + kdelang + QLatin1String(".xml"));
+            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1StringView("autocorrect/") + kdelang + QLatin1StringView(".xml"));
         }
         if (fname.isEmpty() && kdelang.contains(QLatin1Char('_'))) {
             kdelang.remove(regpath);
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("autocorrect/") + kdelang + QLatin1String(".xml"));
+            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1StringView("autocorrect/") + kdelang + QLatin1StringView(".xml"));
         }
     }
     if (fname.isEmpty()) {

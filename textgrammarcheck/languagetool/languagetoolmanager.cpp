@@ -84,9 +84,9 @@ void LanguageToolManager::setLanguageToolPath(const QString &path)
 
 void LanguageToolManager::loadSettings()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String(myLanguageToolManagerGroupName));
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
     mLanguageToolPath = grp.readEntry(QStringLiteral("languagetoolpath"), QStringLiteral("https://api.languagetoolplus.com/v2"));
-    if (mLanguageToolPath == QLatin1String("https://languagetool.org/api/v2")) {
+    if (mLanguageToolPath == QLatin1StringView("https://languagetool.org/api/v2")) {
         mLanguageToolPath = QStringLiteral("https://api.languagetoolplus.com/v2");
     }
     mLanguage = grp.readEntry(QStringLiteral("language"), QStringLiteral("en"));
@@ -96,7 +96,7 @@ void LanguageToolManager::loadSettings()
 
 void LanguageToolManager::saveSettings()
 {
-    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1String(myLanguageToolManagerGroupName));
+    KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
     grp.writeEntry(QStringLiteral("languagetoolpath"), mLanguageToolPath);
     grp.writeEntry(QStringLiteral("language"), mLanguage);
     grp.writeEntry(QStringLiteral("useLocalInstance"), mUseLocalInstance);
