@@ -5,6 +5,8 @@
 */
 
 #include "googleengineplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "googletranslator_debug.h"
 #include <KLocalizedString>
 #include <QJsonDocument>
@@ -57,7 +59,7 @@ void GoogleEnginePlugin::translate()
 
 QString GoogleEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1StringView("iw")) {
+    if (langStr == "iw"_L1) {
         return QStringLiteral("iw");
     }
     return langStr;

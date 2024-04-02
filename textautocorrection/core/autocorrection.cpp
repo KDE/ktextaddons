@@ -16,7 +16,7 @@
 #include <QTextDocument>
 
 using namespace TextAutoCorrectionCore;
-
+using namespace Qt::Literals::StringLiterals;
 namespace TextAutoCorrectionCore
 {
 class AutoCorrectionPrivate
@@ -223,7 +223,7 @@ void AutoCorrection::superscriptAppendix()
             startPos = d->mCursor.selectionStart() + 1;
             endPos = startPos - 1 + trimmedLenght;
             break;
-        } else if (i.key() == QLatin1StringView("othernb")) {
+        } else if (i.key() == "othernb"_L1) {
             const int pos = trimmed.indexOf(i.value());
             if (pos > 0) {
                 QString number = trimmed.left(pos);
@@ -457,14 +457,14 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
     }
 
     if (linkType == UNCLASSIFIED) {
-        pos = word.indexOf(QLatin1StringView("www."), 0, Qt::CaseInsensitive);
+        pos = word.indexOf("www."_L1, 0, Qt::CaseInsensitive);
         if (pos != -1 && word.indexOf(QLatin1Char('.'), pos + 4) != -1) {
             linkType = WWW;
             contentPos = pos + 4;
         }
     }
     if (linkType == UNCLASSIFIED) {
-        pos = word.indexOf(QLatin1StringView("ftp."), 0, Qt::CaseInsensitive);
+        pos = word.indexOf("ftp."_L1, 0, Qt::CaseInsensitive);
         if (pos != -1 && word.indexOf(QLatin1Char('.'), pos + 4) != -1) {
             linkType = FTP;
             contentPos = pos + 4;
@@ -507,13 +507,13 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
         word.remove(0, pos);
         switch (linkType) {
         case MAILTO:
-            word.prepend(QLatin1StringView("mailto:"));
+            word.prepend("mailto:"_L1);
             break;
         case WWW:
-            word.prepend(QLatin1StringView("http://"));
+            word.prepend("http://"_L1);
             break;
         case FTP:
-            word.prepend(QLatin1StringView("ftps://"));
+            word.prepend("ftps://"_L1);
             break;
         case SCHEME:
         case UNCLASSIFIED:
@@ -584,8 +584,8 @@ void AutoCorrection::capitalizeWeekDays()
 
 bool AutoCorrection::excludeToUppercase(const QString &word) const
 {
-    if (word.startsWith(QLatin1StringView("http://")) || word.startsWith(QLatin1StringView("www.")) || word.startsWith(QLatin1StringView("mailto:"))
-        || word.startsWith(QLatin1StringView("ftp://")) || word.startsWith(QLatin1StringView("https://")) || word.startsWith(QLatin1StringView("ftps://"))) {
+    if (word.startsWith(QLatin1StringView("http://")) || word.startsWith("www."_L1) || word.startsWith("mailto:"_L1)
+        || word.startsWith(QLatin1StringView("ftp://")) || word.startsWith("https://"_L1) || word.startsWith("ftps://"_L1)) {
         return true;
     }
     return false;
@@ -668,11 +668,11 @@ bool AutoCorrection::autoFractions() const
         return false;
     }
 
-    if (trimmed.startsWith(QLatin1StringView("1/2"))) {
+    if (trimmed.startsWith("1/2"_L1)) {
         d->mWord.replace(0, 3, QStringLiteral("½"));
-    } else if (trimmed.startsWith(QLatin1StringView("1/4"))) {
+    } else if (trimmed.startsWith("1/4"_L1)) {
         d->mWord.replace(0, 3, QStringLiteral("¼"));
-    } else if (trimmed.startsWith(QLatin1StringView("3/4"))) {
+    } else if (trimmed.startsWith("3/4"_L1)) {
         d->mWord.replace(0, 3, QStringLiteral("¾"));
     } else {
         return false;

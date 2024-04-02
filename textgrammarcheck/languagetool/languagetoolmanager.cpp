@@ -5,6 +5,7 @@
 */
 
 #include "languagetoolmanager.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -86,7 +87,7 @@ void LanguageToolManager::loadSettings()
 {
     KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
     mLanguageToolPath = grp.readEntry(QStringLiteral("languagetoolpath"), QStringLiteral("https://api.languagetoolplus.com/v2"));
-    if (mLanguageToolPath == QLatin1StringView("https://languagetool.org/api/v2")) {
+    if (mLanguageToolPath == "https://languagetool.org/api/v2"_L1) {
         mLanguageToolPath = QStringLiteral("https://api.languagetoolplus.com/v2");
     }
     mLanguage = grp.readEntry(QStringLiteral("language"), QStringLiteral("en"));

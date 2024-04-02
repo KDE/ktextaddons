@@ -7,6 +7,8 @@
 */
 
 #include "deeplengineplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "deeplengineutil.h"
 #include "deepltranslator_debug.h"
 
@@ -120,9 +122,9 @@ void DeeplEnginePlugin::slotConfigureChanged()
 
 QString DeeplEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1StringView("auto")) {
+    if (langStr == "auto"_L1) {
         return QStringLiteral("auto-detect");
-    } else if (langStr == QLatin1StringView("zh-CN")) {
+    } else if (langStr == "zh-CN"_L1) {
         return QStringLiteral("zh");
     }
     return langStr;

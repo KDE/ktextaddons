@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteparser.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalectegrammarerror.h"
 #include "textgrammarcheck_debug.h"
 #include <QJsonArray>
@@ -19,18 +21,18 @@ GrammalecteParser::~GrammalecteParser() = default;
 QVector<GrammarError> GrammalecteParser::parseResult(const QJsonObject &obj) const
 {
     QVector<GrammarError> infos;
-    if (!obj.contains(QLatin1StringView("grammalecte"))) {
+    if (!obj.contains("grammalecte"_L1)) {
         qCWarning(TEXTGRAMMARCHECK_LOG) << "Error in json " << obj;
         return infos;
     }
-    const QJsonArray array = obj.value(QLatin1StringView("data")).toArray();
+    const QJsonArray array = obj.value("data"_L1).toArray();
     for (const QJsonValue &current : array) {
         if (current.type() == QJsonValue::Object) {
             // Check lGrammarErrors
             const QJsonObject grammaObject = current.toObject();
             const int blockId = grammaObject.value(QStringLiteral("iParagraph")).toInt();
             // qDebug() << " blockId " << blockId;
-            const QJsonArray grammarErrorArray = grammaObject.value(QLatin1StringView("lGrammarErrors")).toArray();
+            const QJsonArray grammarErrorArray = grammaObject.value("lGrammarErrors"_L1).toArray();
             for (const QJsonValue &error : grammarErrorArray) {
                 // qDebug() << " grammarErrorArray"<<error;
                 TextGrammarCheck::GrammalecteGrammarError info;

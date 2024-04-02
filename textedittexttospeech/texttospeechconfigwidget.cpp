@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechconfigwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textedittexttospeech_debug.h"
 #include "texttospeechconfiginterface.h"
 #include "texttospeechlanguagecombobox.h"
@@ -176,7 +178,7 @@ void TextToSpeechConfigWidget::updateAvailableEngine()
     mAvailableEngine->clear();
     const QStringList lst = mTextToSpeechConfigInterface->availableEngines();
     for (const QString &engine : lst) {
-        if (engine != QLatin1StringView("mock")) {
+        if (engine != "mock"_L1) {
             mAvailableEngine->addItem(engine, engine);
         }
     }

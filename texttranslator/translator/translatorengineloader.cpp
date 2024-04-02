@@ -5,6 +5,8 @@
 */
 
 #include "translatorengineloader.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttranslator_debug.h"
 #include "translatorengineclient.h"
 #include <QCoreApplication>
@@ -54,7 +56,7 @@ void TranslatorEngineLoader::loadPlugins()
 void TranslatorEngineLoader::loadPlugin(const QString &pluginPath)
 {
     QPluginLoader plugin(pluginPath);
-    const QString pluginIID = plugin.metaData()[QLatin1StringView("IID")].toString();
+    const QString pluginIID = plugin.metaData()["IID"_L1].toString();
     if (!pluginIID.isEmpty()) {
         if (d->loadedPlugins.contains(pluginIID)) {
             qCDebug(TEXTTRANSLATOR_LOG) << "Skipping already loaded" << pluginPath;

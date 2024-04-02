@@ -5,6 +5,8 @@
 */
 
 #include "richtexteditor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textcustomeditor_debug.h"
 
 #include "widgets/textmessageindicator.h"
@@ -56,7 +58,7 @@ public:
 #endif
     {
         KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
-        KConfigGroup group(&sonnetKConfig, QLatin1StringView("Spelling"));
+        KConfigGroup group(&sonnetKConfig, "Spelling"_L1);
         checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         supportFeatures |= RichTextEditor::Search;
         supportFeatures |= RichTextEditor::SpellChecking;
@@ -654,8 +656,8 @@ void RichTextEditor::setSpellCheckingConfigFileName(const QString &_fileName)
 {
     d->spellCheckingConfigFileName = _fileName;
     KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    if (config->hasGroup(QLatin1StringView("Spelling"))) {
-        KConfigGroup group(config, QLatin1StringView("Spelling"));
+    if (config->hasGroup("Spelling"_L1)) {
+        KConfigGroup group(config, "Spelling"_L1);
         d->checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         d->spellCheckingLanguage = group.readEntry("Language", QString());
     }
@@ -727,7 +729,7 @@ void RichTextEditor::setSpellCheckingLanguage(const QString &_language)
     if (_language != d->spellCheckingLanguage) {
         d->spellCheckingLanguage = _language;
         KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-        KConfigGroup group(config, QLatin1StringView("Spelling"));
+        KConfigGroup group(config, "Spelling"_L1);
         group.writeEntry("Language", d->spellCheckingLanguage);
 
         Q_EMIT languageChanged(_language);
@@ -738,7 +740,7 @@ void RichTextEditor::slotToggleAutoSpellCheck()
 {
     setCheckSpellingEnabled(!checkSpellingEnabled());
     KSharedConfig::Ptr config = KSharedConfig::openConfig(d->spellCheckingConfigFileName);
-    KConfigGroup group(config, QLatin1StringView("Spelling"));
+    KConfigGroup group(config, "Spelling"_L1);
     group.writeEntry("checkerEnabledByDefault", d->checkSpellingEnabled);
 }
 

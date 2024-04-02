@@ -5,6 +5,8 @@
 */
 
 #include "grammalectegenerateconfigoptionjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textgrammarcheck_debug.h"
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
@@ -112,7 +114,7 @@ QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOpt
                 GrammalecteGenerateConfigOptionJob::Option opt;
                 opt.description = description;
                 opt.optionName = optionName;
-                opt.defaultValue = (value == QLatin1StringView("True"));
+                opt.defaultValue = (value == "True"_L1);
                 opts.append(std::move(opt));
             }
         }

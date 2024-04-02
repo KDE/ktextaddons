@@ -5,6 +5,8 @@
 */
 
 #include "texteditfindbarbase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textcustomeditor_debug.h"
 #include "widgets/textfindreplacewidget.h"
 #include <KLocalizedString>
@@ -135,7 +137,7 @@ void TextEditFindBarBase::messageInfo(bool backward, bool isAutoSearch, bool fou
         QString str = mLastSearchStr;
         if (str.length() > 39) {
             str.truncate(40);
-            str += QLatin1StringView("...");
+            str += "..."_L1;
         }
         Q_EMIT displayMessageIndicator(i18n("End of message reached.\nPhrase '%1' could not be found.", str));
     }

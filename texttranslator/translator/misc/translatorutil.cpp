@@ -5,6 +5,8 @@
 */
 
 #include "translatorutil.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttranslator_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -226,23 +228,23 @@ QString TranslatorUtil::searchI18nFromLanguage(const QString &langCode)
 
 TranslatorUtil::Language TranslatorUtil::stringToLanguage(const QString &str)
 {
-    if (str == QLatin1StringView("en")) {
+    if (str == "en"_L1) {
         return TranslatorUtil::en;
-    } else if (str == QLatin1StringView("fr")) {
+    } else if (str == "fr"_L1) {
         return TranslatorUtil::fr;
-    } else if (str == QLatin1StringView("es")) {
+    } else if (str == "es"_L1) {
         return TranslatorUtil::es;
-    } else if (str == QLatin1StringView("pl")) {
+    } else if (str == "pl"_L1) {
         return TranslatorUtil::pl;
-    } else if (str == QLatin1StringView("de")) {
+    } else if (str == "de"_L1) {
         return TranslatorUtil::de;
-    } else if (str == QLatin1StringView("cs")) {
+    } else if (str == "cs"_L1) {
         return TranslatorUtil::cs;
-    } else if (str == QLatin1StringView("bg")) {
+    } else if (str == "bg"_L1) {
         return TranslatorUtil::bg;
-    } else if (str == QLatin1StringView("et")) {
+    } else if (str == "et"_L1) {
         return TranslatorUtil::et;
-        //    } else if (str == QLatin1StringView("nn")) {
+        //    } else if (str == "nn"_L1) {
         //        return TranslatorUtil::nn;
     } else {
         qCWarning(TEXTTRANSLATOR_LOG) << " Impossible to find TranslatorUtil::Language for " << str;

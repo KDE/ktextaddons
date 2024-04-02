@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolparser.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetoolgrammarerror.h"
 
 #include <QJsonArray>
@@ -18,7 +20,7 @@ LanguageToolParser::~LanguageToolParser() = default;
 QVector<GrammarError> LanguageToolParser::parseResult(const QJsonObject &obj) const
 {
     QVector<GrammarError> infos;
-    const QJsonArray array = obj.value(QLatin1StringView("matches")).toArray();
+    const QJsonArray array = obj.value("matches"_L1).toArray();
     for (const QJsonValue &current : array) {
         // qDebug() << " current " << current;
         if (current.type() == QJsonValue::Object) {

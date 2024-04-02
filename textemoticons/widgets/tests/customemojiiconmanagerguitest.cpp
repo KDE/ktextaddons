@@ -5,6 +5,8 @@
 */
 
 #include "customemojiiconmanagerguitest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDebug>
 #include <QIcon>
 CustomEmojiIconManagerGuiTest::CustomEmojiIconManagerGuiTest(QObject *parent)
@@ -18,11 +20,11 @@ CustomEmojiIconManagerGuiTest::~CustomEmojiIconManagerGuiTest()
 
 QIcon CustomEmojiIconManagerGuiTest::generateIcon(const QString &customIdentifier)
 {
-    if (customIdentifier == QLatin1StringView(":custom1:")) {
+    if (customIdentifier == ":custom1:"_L1) {
         return QIcon::fromTheme(QStringLiteral("view-refresh"));
-    } else if (customIdentifier == QLatin1StringView(":custom2:")) {
+    } else if (customIdentifier == ":custom2:"_L1) {
         return QIcon::fromTheme(QStringLiteral("lock"));
-    } else if (customIdentifier == QLatin1StringView(":gif1:")) {
+    } else if (customIdentifier == ":gif1:"_L1) {
         return {};
     }
     return {};
@@ -30,7 +32,7 @@ QIcon CustomEmojiIconManagerGuiTest::generateIcon(const QString &customIdentifie
 
 QString CustomEmojiIconManagerGuiTest::fileName(const QString &customIdentifier)
 {
-    if (customIdentifier == QLatin1StringView(":gif1:")) {
+    if (customIdentifier == ":gif1:"_L1) {
         return QStringLiteral(":/gif1");
     }
     return {};

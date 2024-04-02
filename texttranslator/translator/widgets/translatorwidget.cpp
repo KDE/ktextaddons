@@ -6,6 +6,8 @@
 */
 
 #include "translatorwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttranslator_debug.h"
 #include "translator/misc/translatorutil.h"
 #include "translator/networkmanager.h"
@@ -188,7 +190,7 @@ void TranslatorWidget::readConfig()
     if (indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
     }
-    d->invert->setEnabled(from != QLatin1StringView("auto"));
+    d->invert->setEnabled(from != "auto"_L1);
 }
 
 void TranslatorWidget::loadEngineSettings()
@@ -382,7 +384,7 @@ void TranslatorWidget::slotTextChanged()
 void TranslatorWidget::slotFromLanguageChanged(int index, bool initialize)
 {
     const QString lang = d->fromCombobox->itemData(index).toString();
-    d->invert->setEnabled(lang != QLatin1StringView("auto"));
+    d->invert->setEnabled(lang != "auto"_L1);
     const QString to = d->toCombobox->itemData(d->toCombobox->currentIndex()).toString();
 
     // Get "from" language code for generating "to" language list
@@ -458,7 +460,7 @@ void TranslatorWidget::slotInvertLanguage()
 {
     const QString fromLanguage = d->fromCombobox->itemData(d->fromCombobox->currentIndex()).toString();
     // don't invert when fromLanguage == auto
-    if (fromLanguage == QLatin1StringView("auto")) {
+    if (fromLanguage == "auto"_L1) {
         return;
     }
 

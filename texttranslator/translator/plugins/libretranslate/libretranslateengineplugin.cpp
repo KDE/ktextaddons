@@ -8,6 +8,8 @@
 */
 
 #include "libretranslateengineplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libretranslateengineutil.h"
 #include "libretranslatetranslator_debug.h"
 
@@ -58,7 +60,7 @@ void LibreTranslateEnginePlugin::translateText()
     }
     const auto url = QUrl(QStringLiteral("%1/translate").arg(mServerUrl));
     QNetworkRequest request;
-    request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1StringView("application/x-www-form-urlencoded"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"_L1);
     request.setUrl(url);
 
     qCDebug(TRANSLATOR_LIBRETRANSLATE_LOG) << " url " << url;

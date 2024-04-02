@@ -5,6 +5,7 @@
 */
 
 #include "languageinfo.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QJsonObject>
 
@@ -52,9 +53,9 @@ bool LanguageInfo::isValid() const
 
 void LanguageInfo::parse(const QJsonObject &obj)
 {
-    mName = obj[QLatin1StringView("name")].toString();
-    mCode = obj[QLatin1StringView("code")].toString();
-    mLongCode = obj[QLatin1StringView("longCode")].toString();
+    mName = obj["name"_L1].toString();
+    mCode = obj["code"_L1].toString();
+    mLongCode = obj["longCode"_L1].toString();
 }
 
 bool LanguageInfo::operator==(const LanguageInfo &other) const

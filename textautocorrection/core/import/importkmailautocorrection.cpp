@@ -5,6 +5,7 @@
 */
 
 #include "importkmailautocorrection.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 #include <QXmlStreamReader>
@@ -27,11 +28,11 @@ bool ImportKMailAutocorrection::import(const QString &fileName, QString &errorMe
     if (xml.readNextStartElement()) {
         while (xml.readNextStartElement()) {
             const QStringView xmlName = xml.name();
-            if (xmlName == QLatin1StringView("UpperCaseExceptions")) {
+            if (xmlName == "UpperCaseExceptions"_L1) {
                 if (loadAttribute == All) {
                     while (xml.readNextStartElement()) {
                         const QStringView tagname = xml.name();
-                        if (tagname == QLatin1StringView("word")) {
+                        if (tagname == "word"_L1) {
                             if (xml.attributes().hasAttribute(QStringLiteral("exception"))) {
                                 const QString exception = xml.attributes().value(QStringLiteral("exception")).toString();
                                 mUpperCaseExceptions += exception;
@@ -42,11 +43,11 @@ bool ImportKMailAutocorrection::import(const QString &fileName, QString &errorMe
                 } else {
                     xml.skipCurrentElement();
                 }
-            } else if (xmlName == QLatin1StringView("TwoUpperLetterExceptions")) {
+            } else if (xmlName == "TwoUpperLetterExceptions"_L1) {
                 if (loadAttribute == All) {
                     while (xml.readNextStartElement()) {
                         const QStringView tagname = xml.name();
-                        if (tagname == QLatin1StringView("word")) {
+                        if (tagname == "word"_L1) {
                             if (xml.attributes().hasAttribute(QStringLiteral("exception"))) {
                                 const QString exception = xml.attributes().value(QStringLiteral("exception")).toString();
                                 mTwoUpperLetterExceptions += exception;
@@ -59,11 +60,11 @@ bool ImportKMailAutocorrection::import(const QString &fileName, QString &errorMe
                 } else {
                     xml.skipCurrentElement();
                 }
-            } else if (xmlName == QLatin1StringView("DoubleQuote")) {
+            } else if (xmlName == "DoubleQuote"_L1) {
                 if (loadAttribute == All) {
                     if (xml.readNextStartElement()) {
                         const QStringView tagname = xml.name();
-                        if (tagname == QLatin1StringView("doublequote")) {
+                        if (tagname == "doublequote"_L1) {
                             mTypographicDoubleQuotes.begin = xml.attributes().value(QStringLiteral("begin")).toString().at(0);
                             mTypographicDoubleQuotes.end = xml.attributes().value(QStringLiteral("end")).toString().at(0);
                             xml.skipCurrentElement();
@@ -75,11 +76,11 @@ bool ImportKMailAutocorrection::import(const QString &fileName, QString &errorMe
                 } else {
                     xml.skipCurrentElement();
                 }
-            } else if (xmlName == QLatin1StringView("SimpleQuote")) {
+            } else if (xmlName == "SimpleQuote"_L1) {
                 if (loadAttribute == All) {
                     if (xml.readNextStartElement()) {
                         const QStringView tagname = xml.name();
-                        if (tagname == QLatin1StringView("simplequote")) {
+                        if (tagname == "simplequote"_L1) {
                             const QString simpleQuoteBegin = xml.attributes().value(QStringLiteral("begin")).toString();
                             if (!simpleQuoteBegin.isEmpty()) { // crash when we have old data with bug.
                                 mTypographicSingleQuotes.begin = simpleQuoteBegin.at(0);
@@ -97,11 +98,11 @@ bool ImportKMailAutocorrection::import(const QString &fileName, QString &errorMe
                 } else {
                     xml.skipCurrentElement();
                 }
-            } else if (xmlName == QLatin1StringView("SuperScript")) {
+            } else if (xmlName == "SuperScript"_L1) {
                 if (loadAttribute == All || loadAttribute == SuperScript) {
                     while (xml.readNextStartElement()) {
                         const QStringView tagname = xml.name();
-                        if (tagname == QLatin1StringView("item")) {
+                        if (tagname == "item"_L1) {
                             const QString find = xml.attributes().value(QStringLiteral("find")).toString();
                             const QString super = xml.attributes().value(QStringLiteral("super")).toString();
                             mSuperScriptEntries.insert(find, super);
@@ -113,11 +114,11 @@ bool ImportKMailAutocorrection::import(const QString &fileName, QString &errorMe
                 } else {
                     xml.skipCurrentElement();
                 }
-            } else if (xmlName == QLatin1StringView("items")) {
+            } else if (xmlName == "items"_L1) {
                 if (loadAttribute == All) {
                     while (xml.readNextStartElement()) {
                         const QStringView tagname = xml.name();
-                        if (tagname == QLatin1StringView("item")) {
+                        if (tagname == "item"_L1) {
                             const QString find = xml.attributes().value(QStringLiteral("find")).toString();
                             const QString replace = xml.attributes().value(QStringLiteral("replace")).toString();
                             const int findLenght(find.length());

@@ -8,6 +8,8 @@
 */
 
 #include "lingvaengineplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "lingvaengineutil.h"
 #include "lingvatranslator_debug.h"
 #include <TextTranslator/TranslatorEngineAccessManager>
@@ -88,9 +90,9 @@ void LingvaEnginePlugin::slotConfigureChanged()
 
 QString LingvaEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1StringView("zh")) {
+    if (langStr == "zh"_L1) {
         return QStringLiteral("zh");
-    } else if (langStr == QLatin1StringView("zt")) {
+    } else if (langStr == "zt"_L1) {
         return QStringLiteral("zh_HANT");
     }
     return langStr;

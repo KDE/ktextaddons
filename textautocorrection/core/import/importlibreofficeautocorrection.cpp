@@ -5,6 +5,8 @@
 */
 
 #include "importlibreofficeautocorrection.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautocorrection_debug.h"
 #include <KLocalizedString>
 #include <KZip>
@@ -115,7 +117,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
             } else {
                 for (QDomElement e = list.firstChildElement(); !e.isNull(); e = e.nextSiblingElement()) {
                     const QString tag = e.tagName();
-                    if (tag == QLatin1StringView("block-list:block")) {
+                    if (tag == "block-list:block"_L1) {
                         switch (type) {
                         case DOCUMENT:
                             if (e.hasAttribute(QStringLiteral("block-list:abbreviated-name")) && e.hasAttribute(QStringLiteral("block-list:name"))) {

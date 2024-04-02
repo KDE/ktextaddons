@@ -7,6 +7,8 @@
 */
 
 #include "bingengineplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/plugins/bing/bingtranslator_debug.h"
 #include <KLocalizedString>
 #include <QCoreApplication>
@@ -115,7 +117,7 @@ void BingEnginePlugin::translateText()
     qCDebug(TRANSLATOR_BING_LOG) << " url " << url;
 
     QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1StringView("application/x-www-form-urlencoded"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"_L1);
     request.setHeader(QNetworkRequest::UserAgentHeader,
                       QStringLiteral("%1/%2").arg(QCoreApplication::applicationName(), QCoreApplication::applicationVersion()));
 
@@ -137,7 +139,7 @@ void BingEnginePlugin::parseTranslation(QNetworkReply *reply)
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
     qCDebug(TRANSLATOR_BING_LOG) << " jsonResponse " << jsonResponse;
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
-    if (from() == QLatin1StringView("auto")) {
+    if (from() == "auto"_L1) {
         const QString langCode = responseObject.value(QStringLiteral("detectedLanguage")).toObject().value(QStringLiteral("language")).toString();
         setFrom(langCode);
         //        if (m_sourceLang == NoLanguage)
@@ -161,17 +163,17 @@ void BingEnginePlugin::parseTranslation(QNetworkReply *reply)
 
 QString BingEnginePlugin::languageCode(const QString &langStr)
 {
-    if (langStr == QLatin1StringView("auto")) {
+    if (langStr == "auto"_L1) {
         return QStringLiteral("auto-detect");
-    } else if (langStr == QLatin1StringView("sr")) {
+    } else if (langStr == "sr"_L1) {
         return QStringLiteral("sr-Cyrl");
-    } else if (langStr == QLatin1StringView("bs")) {
+    } else if (langStr == "bs"_L1) {
         return QStringLiteral("bs-Latn");
-    } else if (langStr == QLatin1StringView("hmn")) {
+    } else if (langStr == "hmn"_L1) {
         return QStringLiteral("mww");
-    } else if (langStr == QLatin1StringView("zh")) {
+    } else if (langStr == "zh"_L1) {
         return QStringLiteral("zh-Hans");
-    } else if (langStr == QLatin1StringView("zt")) {
+    } else if (langStr == "zt"_L1) {
         return QStringLiteral("zh-Hant");
     }
     return langStr;

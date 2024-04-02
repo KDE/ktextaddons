@@ -17,6 +17,7 @@
 #include <QMenu>
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextCustomEditor;
 
 TextReplaceWidget::TextReplaceWidget(QWidget *parent)
@@ -185,7 +186,7 @@ QRegularExpression TextFindWidget::searchRegularExpression() const
     }
     QString searchTextString = mSearch->text();
     if (mWholeWordAct->isChecked()) {
-        searchTextString = QLatin1StringView("\\b") + searchTextString + QLatin1StringView("\\b");
+        searchTextString = "\\b"_L1 + searchTextString + "\\b"_L1;
     }
     reg.setPattern(searchTextString);
     return reg;

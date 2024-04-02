@@ -5,6 +5,8 @@
 */
 
 #include "unicodeemoticonmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textemoticonscore_debug.h"
 #include "unicodeemoticonparser.h"
 #include <KLocalizedString>
@@ -38,23 +40,23 @@ void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
 QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) const
 {
     // Name "🚗"Category "travel", Name "🇿"Category "regional", Name "🏳️"Category "flags")
-    if (name == QLatin1StringView("symbols")) {
+    if (name == "symbols"_L1) {
         return i18n("Symbols");
-    } else if (name == QLatin1StringView("activity")) {
+    } else if (name == "activity"_L1) {
         return i18n("Activity");
-    } else if (name == QLatin1StringView("objects")) {
+    } else if (name == "objects"_L1) {
         return i18n("Objects");
-    } else if (name == QLatin1StringView("nature")) {
+    } else if (name == "nature"_L1) {
         return i18n("Nature");
-    } else if (name == QLatin1StringView("food")) {
+    } else if (name == "food"_L1) {
         return i18n("Food");
-    } else if (name == QLatin1StringView("people")) {
+    } else if (name == "people"_L1) {
         return i18n("People");
-    } else if (name == QLatin1StringView("travel")) {
+    } else if (name == "travel"_L1) {
         return i18n("Travel");
-    } else if (name == QLatin1StringView("regional")) {
+    } else if (name == "regional"_L1) {
         return i18n("Regional");
-    } else if (name == QLatin1StringView("flags")) {
+    } else if (name == "flags"_L1) {
         return i18n("Flags");
     } else {
         qCWarning(TEXTEMOTICONSCORE_LOG) << "Missing i18n translate " << name;
@@ -96,7 +98,7 @@ QList<EmoticonCategory> UnicodeEmoticonManager::categories() const
         const QString category = emo.category();
         if (!seen.contains(category)) {
             seen.insert(category);
-            if (category == QLatin1StringView("modifier")) { // pointless icons
+            if (category == "modifier"_L1) { // pointless icons
                 continue;
             }
             EmoticonCategory cat;
