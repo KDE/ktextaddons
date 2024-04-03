@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
 "PO-Revision-Date: 2024-03-17 05:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
@@ -44,37 +44,37 @@ msgstr "Agordi Tekston-Al-Parolo"
 msgid "Morning, this is the test for testing settings."
 msgstr "Matenon, jen la testo for testi agordojn."
 
-#: texttospeechconfigwidget.cpp:34
+#: texttospeechconfigwidget.cpp:36
 #, kde-format
 msgid "Test"
 msgstr "Testi"
 
-#: texttospeechconfigwidget.cpp:41 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
 #, kde-format
 msgid "Volume:"
 msgstr "Volumo:"
 
-#: texttospeechconfigwidget.cpp:45
+#: texttospeechconfigwidget.cpp:47
 #, kde-format
 msgid "Rate:"
 msgstr "Prezo:"
 
-#: texttospeechconfigwidget.cpp:51
+#: texttospeechconfigwidget.cpp:53
 #, kde-format
 msgid "Pitch:"
 msgstr "Tonalto:"
 
-#: texttospeechconfigwidget.cpp:54
+#: texttospeechconfigwidget.cpp:56
 #, kde-format
 msgid "Engine:"
 msgstr "Motoro:"
 
-#: texttospeechconfigwidget.cpp:58
+#: texttospeechconfigwidget.cpp:60
 #, kde-format
 msgid "Language:"
 msgstr "Lingvo:"
 
-#: texttospeechconfigwidget.cpp:62
+#: texttospeechconfigwidget.cpp:64
 #, kde-format
 msgid "Voice:"
 msgstr "Voĉo:"

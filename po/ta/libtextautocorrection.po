@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:37+0000\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
 "PO-Revision-Date: 2023-03-26 14:11+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.03.80\n"
 
-#: core/import/importlibreofficeautocorrection.cpp:52
+#: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "காப்பகத்தை படித்தல்-மட்டும் பயன்முறையில் திறக்க முடியாது."

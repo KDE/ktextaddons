@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
 "PO-Revision-Date: 2023-08-18 07:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -25,49 +25,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 ersättning gjordes"
 msgstr[1] "%1 ersättningar gjordes"
 
-#: plaintexteditor/plaintexteditor.cpp:167
-#: richtexteditor/richtexteditor.cpp:225
+#: plaintexteditor/plaintexteditor.cpp:168
+#: richtexteditor/richtexteditor.cpp:227
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Kontrollera stavning..."
 
-#: plaintexteditor/plaintexteditor.cpp:172
-#: richtexteditor/richtexteditor.cpp:232
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:234
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatisk stavningskontroll"
 
-#: plaintexteditor/plaintexteditor.cpp:178
-#: richtexteditor/richtexteditor.cpp:238
+#: plaintexteditor/plaintexteditor.cpp:179
+#: richtexteditor/richtexteditor.cpp:240
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Språk för stavningskontroll"
 
-#: plaintexteditor/plaintexteditor.cpp:206
+#: plaintexteditor/plaintexteditor.cpp:207
 #: richtextbrowser/richtextbrowser.cpp:165
-#: richtexteditor/richtexteditor.cpp:271
+#: richtexteditor/richtexteditor.cpp:273
 #, kde-format
 msgid "Speak Text"
 msgstr "Läs upp text"
 
-#: plaintexteditor/plaintexteditor.cpp:385
-#: richtexteditor/richtexteditor.cpp:489
+#: plaintexteditor/plaintexteditor.cpp:386
+#: richtexteditor/richtexteditor.cpp:491
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ingenting att stavningskontrollera."
 
-#: plaintexteditor/plaintexteditor.cpp:390
-#: richtexteditor/richtexteditor.cpp:507
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Inget gränssnitt tillgängligt för stavningskontroll."
 
-#: richtexteditor/richtexteditor.cpp:264
+#: richtexteditor/richtexteditor.cpp:266
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Tillåt tabulatorer"
 
-#: richtexteditor/richtexteditor.cpp:499
+#: richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,24 +76,24 @@ msgstr ""
 "Inget gränssnitt tillgängligt för stavningskontroll. Vill du skicka brevet "
 "ändå?"
 
-#: richtexteditor/richtexteditor.cpp:501
+#: richtexteditor/richtexteditor.cpp:503
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Skicka"
 
-#: richtexteditor/richtexteditor.cpp:523
+#: richtexteditor/richtexteditor.cpp:525
 #, kde-format
 msgid "Skip"
 msgstr "Hoppa över"
 
-#: widgets/texteditfindbarbase.cpp:34 widgets/texteditfindbarbase.cpp:37
+#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
 #: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Stäng"
 
-#: widgets/texteditfindbarbase.cpp:140
+#: widgets/texteditfindbarbase.cpp:142
 #, kde-format
 msgid ""
 "End of message reached.\n"
@@ -102,81 +102,81 @@ msgstr ""
 "Brevets slut nåddes.\n"
 "Frasen '%1' kunde inte hittas."
 
-#: widgets/textfindreplacewidget.cpp:25
+#: widgets/textfindreplacewidget.cpp:26
 #, kde-format
 msgid "Replace"
 msgstr "Ersätt"
 
-#: widgets/textfindreplacewidget.cpp:26
+#: widgets/textfindreplacewidget.cpp:27
 #, kde-format
 msgid "Replace All"
 msgstr "Ersätt alla"
 
-#: widgets/textfindreplacewidget.cpp:29
+#: widgets/textfindreplacewidget.cpp:30
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
 msgstr "Ersätt:"
 
-#: widgets/textfindreplacewidget.cpp:65
+#: widgets/textfindreplacewidget.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Föregående"
 
-#: widgets/textfindreplacewidget.cpp:66
+#: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Nästa"
 
-#: widgets/textfindreplacewidget.cpp:72
+#: widgets/textfindreplacewidget.cpp:73
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Sök:"
 
-#: widgets/textfindreplacewidget.cpp:75
+#: widgets/textfindreplacewidget.cpp:76
 #, kde-format
 msgid "Text to search for"
 msgstr "Text att söka efter"
 
-#: widgets/textfindreplacewidget.cpp:81
+#: widgets/textfindreplacewidget.cpp:82
 #, kde-format
 msgid "Jump to next match"
 msgstr "Gå till nästa träff"
 
-#: widgets/textfindreplacewidget.cpp:86
+#: widgets/textfindreplacewidget.cpp:87
 #, kde-format
 msgid "Jump to previous match"
 msgstr "Gå till föregående träff"
 
-#: widgets/textfindreplacewidget.cpp:92
+#: widgets/textfindreplacewidget.cpp:93
 #, kde-format
 msgid "Options"
 msgstr "Alternativ"
 
-#: widgets/textfindreplacewidget.cpp:93
+#: widgets/textfindreplacewidget.cpp:94
 #, kde-format
 msgid "Modify search behavior"
 msgstr "Ändra sökbeteende"
 
-#: widgets/textfindreplacewidget.cpp:96
+#: widgets/textfindreplacewidget.cpp:97
 #, kde-format
 msgid "Case sensitive"
 msgstr "Skiftlägeskänslig"
 
-#: widgets/textfindreplacewidget.cpp:99
+#: widgets/textfindreplacewidget.cpp:100
 #, kde-format
 msgid "Whole word"
 msgstr "Hela ord"
 
-#: widgets/textfindreplacewidget.cpp:102
+#: widgets/textfindreplacewidget.cpp:103
 #, kde-format
 msgid "Regular Expression"
 msgstr "Reguljärt uttryck"
 
-#: widgets/textfindreplacewidget.cpp:105
+#: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "Följ inställningar av &expandera och komprimera citationstecken"

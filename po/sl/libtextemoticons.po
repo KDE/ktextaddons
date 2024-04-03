@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
 "PO-Revision-Date: 2023-04-13 09:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: core/unicodeemoticonmanager.cpp:42
+#: core/unicodeemoticonmanager.cpp:44
 #, kde-format
 msgid "Symbols"
 msgstr "Simboli"
 
-#: core/unicodeemoticonmanager.cpp:44
+#: core/unicodeemoticonmanager.cpp:46
 #, kde-format
 msgid "Activity"
 msgstr "Dejavnost"
 
-#: core/unicodeemoticonmanager.cpp:46
+#: core/unicodeemoticonmanager.cpp:48
 #, kde-format
 msgid "Objects"
 msgstr "Objekti"
 
-#: core/unicodeemoticonmanager.cpp:48
+#: core/unicodeemoticonmanager.cpp:50
 #, kde-format
 msgid "Nature"
 msgstr "Narava"
 
-#: core/unicodeemoticonmanager.cpp:50
+#: core/unicodeemoticonmanager.cpp:52
 #, kde-format
 msgid "Food"
 msgstr "Hrana"
 
-#: core/unicodeemoticonmanager.cpp:52
+#: core/unicodeemoticonmanager.cpp:54
 #, kde-format
 msgid "People"
 msgstr "Ljudje"
 
-#: core/unicodeemoticonmanager.cpp:54
+#: core/unicodeemoticonmanager.cpp:56
 #, kde-format
 msgid "Travel"
 msgstr "Potovanja"
 
-#: core/unicodeemoticonmanager.cpp:56
+#: core/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Regional"
 msgstr "Regionalno"
 
-#: core/unicodeemoticonmanager.cpp:58
+#: core/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Flags"
 msgstr "Zastave"

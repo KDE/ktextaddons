@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
 "PO-Revision-Date: 2023-07-25 01:02+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/unicodeemoticonmanager.cpp:42
+#: core/unicodeemoticonmanager.cpp:44
 #, kde-format
 msgid "Symbols"
 msgstr "기호"
 
-#: core/unicodeemoticonmanager.cpp:44
+#: core/unicodeemoticonmanager.cpp:46
 #, kde-format
 msgid "Activity"
 msgstr "활동"
 
-#: core/unicodeemoticonmanager.cpp:46
+#: core/unicodeemoticonmanager.cpp:48
 #, kde-format
 msgid "Objects"
 msgstr "객체"
 
-#: core/unicodeemoticonmanager.cpp:48
+#: core/unicodeemoticonmanager.cpp:50
 #, kde-format
 msgid "Nature"
 msgstr "자연"
 
-#: core/unicodeemoticonmanager.cpp:50
+#: core/unicodeemoticonmanager.cpp:52
 #, kde-format
 msgid "Food"
 msgstr "음식"
 
-#: core/unicodeemoticonmanager.cpp:52
+#: core/unicodeemoticonmanager.cpp:54
 #, kde-format
 msgid "People"
 msgstr "사람"
 
-#: core/unicodeemoticonmanager.cpp:54
+#: core/unicodeemoticonmanager.cpp:56
 #, kde-format
 msgid "Travel"
 msgstr "여행"
 
-#: core/unicodeemoticonmanager.cpp:56
+#: core/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Regional"
 msgstr "지역"
 
-#: core/unicodeemoticonmanager.cpp:58
+#: core/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Flags"
 msgstr "깃발"

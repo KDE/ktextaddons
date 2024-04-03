@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
 "PO-Revision-Date: 2023-08-18 09:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -25,49 +25,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 değiştirme yapıldı"
 msgstr[1] "%1 değiştirme yapıldı"
 
-#: plaintexteditor/plaintexteditor.cpp:167
-#: richtexteditor/richtexteditor.cpp:225
+#: plaintexteditor/plaintexteditor.cpp:168
+#: richtexteditor/richtexteditor.cpp:227
 #, kde-format
 msgid "Check Spelling..."
 msgstr "Yazımı Denetle..."
 
-#: plaintexteditor/plaintexteditor.cpp:172
-#: richtexteditor/richtexteditor.cpp:232
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:234
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Otomatik Yazım Denetimi"
 
-#: plaintexteditor/plaintexteditor.cpp:178
-#: richtexteditor/richtexteditor.cpp:238
+#: plaintexteditor/plaintexteditor.cpp:179
+#: richtexteditor/richtexteditor.cpp:240
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Yazım Denetimi Dili"
 
-#: plaintexteditor/plaintexteditor.cpp:206
+#: plaintexteditor/plaintexteditor.cpp:207
 #: richtextbrowser/richtextbrowser.cpp:165
-#: richtexteditor/richtexteditor.cpp:271
+#: richtexteditor/richtexteditor.cpp:273
 #, kde-format
 msgid "Speak Text"
 msgstr "Metni Konuş"
 
-#: plaintexteditor/plaintexteditor.cpp:385
-#: richtexteditor/richtexteditor.cpp:489
+#: plaintexteditor/plaintexteditor.cpp:386
+#: richtexteditor/richtexteditor.cpp:491
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Denetlenecek bir şey yok."
 
-#: plaintexteditor/plaintexteditor.cpp:390
-#: richtexteditor/richtexteditor.cpp:507
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Yazım denetimi için kullanılabilir arka uç yok."
 
-#: richtexteditor/richtexteditor.cpp:264
+#: richtexteditor/richtexteditor.cpp:266
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Sekmelendirmeye izin ver"
 
-#: richtexteditor/richtexteditor.cpp:499
+#: richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,24 +76,24 @@ msgstr ""
 "Yazım denetimi için kullanılabilir arka uç yok. E-postayı yine de göndermek "
 "istiyor musunuz?"
 
-#: richtexteditor/richtexteditor.cpp:501
+#: richtexteditor/richtexteditor.cpp:503
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Gönder"
 
-#: richtexteditor/richtexteditor.cpp:523
+#: richtexteditor/richtexteditor.cpp:525
 #, kde-format
 msgid "Skip"
 msgstr "Atla"
 
-#: widgets/texteditfindbarbase.cpp:34 widgets/texteditfindbarbase.cpp:37
+#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
 #: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Kapat"
 
-#: widgets/texteditfindbarbase.cpp:140
+#: widgets/texteditfindbarbase.cpp:142
 #, kde-format
 msgid ""
 "End of message reached.\n"
@@ -102,81 +102,81 @@ msgstr ""
 "İletinin sonune erişildi.\n"
 "'%1' ifadesi bulunamadı."
 
-#: widgets/textfindreplacewidget.cpp:25
+#: widgets/textfindreplacewidget.cpp:26
 #, kde-format
 msgid "Replace"
 msgstr "Değiştir"
 
-#: widgets/textfindreplacewidget.cpp:26
+#: widgets/textfindreplacewidget.cpp:27
 #, kde-format
 msgid "Replace All"
 msgstr "Tümünü Değiştir"
 
-#: widgets/textfindreplacewidget.cpp:29
+#: widgets/textfindreplacewidget.cpp:30
 #, kde-format
 msgctxt "Replace text"
 msgid "Replace:"
 msgstr "Değiştir:"
 
-#: widgets/textfindreplacewidget.cpp:65
+#: widgets/textfindreplacewidget.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Önceki"
 
-#: widgets/textfindreplacewidget.cpp:66
+#: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Sonraki"
 
-#: widgets/textfindreplacewidget.cpp:72
+#: widgets/textfindreplacewidget.cpp:73
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Bul:"
 
-#: widgets/textfindreplacewidget.cpp:75
+#: widgets/textfindreplacewidget.cpp:76
 #, kde-format
 msgid "Text to search for"
 msgstr "Aranacak metin"
 
-#: widgets/textfindreplacewidget.cpp:81
+#: widgets/textfindreplacewidget.cpp:82
 #, kde-format
 msgid "Jump to next match"
 msgstr "Sonraki eşleşmeye atla"
 
-#: widgets/textfindreplacewidget.cpp:86
+#: widgets/textfindreplacewidget.cpp:87
 #, kde-format
 msgid "Jump to previous match"
 msgstr "Önceki eşleşmeye atla"
 
-#: widgets/textfindreplacewidget.cpp:92
+#: widgets/textfindreplacewidget.cpp:93
 #, kde-format
 msgid "Options"
 msgstr "Seçenekler"
 
-#: widgets/textfindreplacewidget.cpp:93
+#: widgets/textfindreplacewidget.cpp:94
 #, kde-format
 msgid "Modify search behavior"
 msgstr "Arama davranışını değiştir"
 
-#: widgets/textfindreplacewidget.cpp:96
+#: widgets/textfindreplacewidget.cpp:97
 #, kde-format
 msgid "Case sensitive"
 msgstr "BÜYÜK/küçük harf duyarlı"
 
-#: widgets/textfindreplacewidget.cpp:99
+#: widgets/textfindreplacewidget.cpp:100
 #, kde-format
 msgid "Whole word"
 msgstr "Tam sözcük"
 
-#: widgets/textfindreplacewidget.cpp:102
+#: widgets/textfindreplacewidget.cpp:103
 #, kde-format
 msgid "Regular Expression"
 msgstr "Düzenli ifade"
 
-#: widgets/textfindreplacewidget.cpp:105
+#: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "Aksan ve vurgulara uy"
