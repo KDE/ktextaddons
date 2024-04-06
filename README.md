@@ -20,7 +20,6 @@ KF6:
 - KF6ConfigWidgets
 - KF6CoreAddons
 - KF6I18n
-- KF6XmlGui
 - KF6Sonnet
 - KF6KIO
 - KF6SyntaxHighlighting
