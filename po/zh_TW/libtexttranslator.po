@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:37+0000\n"
-"PO-Revision-Date: 2024-03-20 18:01+0900\n"
+"PO-Revision-Date: 2024-04-06 00:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -25,7 +25,7 @@ msgstr "偵測語言"
 #: translator/misc/translatorutil.cpp:36
 #, kde-format
 msgid "Hmong"
-msgstr ""
+msgstr "苗文"
 
 #: translator/misc/translatorutil.cpp:39
 #, kde-format
@@ -185,7 +185,7 @@ msgstr "喬治亞語"
 #: translator/misc/translatorutil.cpp:132
 #, kde-format
 msgid "Haitian Creole"
-msgstr ""
+msgstr "海地克里奧文"
 
 #: translator/misc/translatorutil.cpp:135
 #, kde-format
@@ -280,7 +280,7 @@ msgstr "斯洛維尼亞語"
 #: translator/misc/translatorutil.cpp:189
 #, kde-format
 msgid "Swahili"
-msgstr ""
+msgstr "斯瓦希里文"
 
 #: translator/misc/translatorutil.cpp:192
 #, kde-format
@@ -305,7 +305,7 @@ msgstr "烏克蘭語"
 #: translator/misc/translatorutil.cpp:204
 #, kde-format
 msgid "Urdu"
-msgstr ""
+msgstr "烏爾都語"
 
 #: translator/misc/translatorutil.cpp:207
 #, kde-format
@@ -320,19 +320,19 @@ msgstr "威爾斯語"
 #: translator/misc/translatorutil.cpp:213
 #, kde-format
 msgid "Yiddish"
-msgstr ""
+msgstr "意第緒語"
 
 #: translator/plugins/bergamot/begamotenginedialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr ""
+msgstr "Bergamot 外掛程式設定"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:32
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:179
 #, kde-format
 msgid "Bergamot"
-msgstr ""
+msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
@@ -413,7 +413,7 @@ msgstr "無法開啟檔案以下載。"
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
-msgstr ""
+msgstr "錯誤：引擎系統認為來自您的電腦網路的存取是可疑的。請稍等一下再試一次。"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:52
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
@@ -454,7 +454,7 @@ msgstr "類型"
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
-msgstr ""
+msgstr "儲存庫"
 
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format

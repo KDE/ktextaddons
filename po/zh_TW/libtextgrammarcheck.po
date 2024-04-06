@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-12 00:37+0000\n"
-"PO-Revision-Date: 2024-03-20 18:02+0900\n"
+"PO-Revision-Date: 2024-04-06 01:19+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -237,7 +237,7 @@ msgstr "高棉語"
 #: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "波斯語"
 
 #: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
