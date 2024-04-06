@@ -16,6 +16,11 @@ namespace TextEmoticonsWidgets
 {
 /**
  * @brief The EmoticonTextEditSelector class
+ *
+ * @short A widget to select emojis.
+ *
+ * @image html emoticontexteditselector.png "EmoticonTextEditSelector"
+ *
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditSelector : public QWidget
@@ -25,17 +30,44 @@ public:
     explicit EmoticonTextEditSelector(QWidget *parent = nullptr);
     ~EmoticonTextEditSelector() override;
 
+    /**
+     * Focus the line edit for search.
+     */
     void forceLineEditFocus();
 
+    /**
+     * Set whether the custom emoji category should be shown.
+     * @see customEmojiSupport()
+     */
     void setCustomEmojiSupport(bool b);
+    /**
+     * Return whether the custom emoji category is enabled.
+     * @see setCustomEmojiSupport()
+     */
     [[nodiscard]] bool customEmojiSupport() const;
 
 public Q_SLOTS:
+    /**
+     * Do all the magic of creating an TextEmoticonsCore::UnicodeEmoticonManager and loading the categories and emojis to the widget.
+     */
     void loadEmoticons();
 
 Q_SIGNALS:
-    void insertEmoji(const QString &);
-    void insertEmojiIdentifier(const QString &);
+    /**
+     * This signal is emitted each time the user selects an emoji.
+     *
+     * @param character The actual emoji character
+     * @see insertEmojiIdentifier
+     */
+    void insertEmoji(const QString &character);
+    /**
+     * This signal is emitted each time the user selects an emoji.
+     *
+     * @brief insertEmojiIdentifier
+     * @param identifier The identifier of the emoji like eg. ":face_with_raised_eyebrow:"
+     * @see insertEmoji
+     */
+    void insertEmojiIdentifier(const QString &identifier);
 
 private:
     class EmoticonTextEditSelectorPrivate;
