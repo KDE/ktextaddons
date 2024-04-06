@@ -12,7 +12,12 @@
 namespace TextEmoticonsWidgets
 {
 /**
- * @brief The EmoticonTextEditAction class
+ * @brief The TextEmoticonsWidgets::EmoticonTextEditAction class
+ *
+ * @short Action to select emojis.
+ *
+ * Opens an EmoticonTextEditSelector to select an emoji.
+ *
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTEMOTICONSWIDGETS_EXPORT EmoticonTextEditAction : public KActionMenu
@@ -22,10 +27,24 @@ public:
     explicit EmoticonTextEditAction(QObject *parent);
     ~EmoticonTextEditAction() override;
 
+    /**
+     * Set whether the custom emoji category should be shown.
+     * @see customEmojiSupport()
+     */
     void setCustomEmojiSupport(bool b);
+    /**
+     * Return whether the custom emoji category is enabled.
+     * @see setCustomEmojiSupport()
+     */
     [[nodiscard]] bool customEmojiSupport() const;
 
 Q_SIGNALS:
+    /**
+     * This signal is emitted each time the user selects an emoji.
+     *
+     * @param character The actual emoji character
+     * @see EmoticonTextEditSelector::insertEmoticon
+     */
     void insertEmoticon(const QString &);
 
 private:
