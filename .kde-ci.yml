@@ -6,7 +6,7 @@ Dependencies:
   'require':
     'third-party/qtkeychain': '@latest'
 
-- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+- 'on': ['Linux', 'FreeBSD', 'Windows']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
@@ -20,19 +20,6 @@ Dependencies:
     'frameworks/breeze-icons': '@latest-kf6'
 
 
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
-  'require':
-    'frameworks/extra-cmake-modules': '@latest'
-    'frameworks/ki18n': '@latest'
-    'frameworks/kconfig': '@latest'
-    'frameworks/kconfigwidgets': '@latest'
-    'frameworks/karchive': '@latest'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/kio': '@stable'
-    'frameworks/sonnet': '@stable'
-    'frameworks/syntax-highlighting': '@stable'
-    'frameworks/breeze-icons': '@stable'
-
 Options:
   cmake-options: "-DDISABLE_AUTOTEST_BROKEN_CI=TRUE"
-  require-passing-tests-on: [ 'Linux/Qt6', 'FreeBSD/Qt6', 'Linux/Qt5', 'FreeBSD/Qt5' ]      
+  require-passing-tests-on: [ 'Linux', 'FreeBSD' ]
