@@ -1,0 +1,90 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"PO-Revision-Date: 2024-05-05 13:56+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#: core/unicodeemoticonmanager.cpp:44
+#, kde-format
+msgid "Symbols"
+msgstr "குறிகள்"
+
+#: core/unicodeemoticonmanager.cpp:46
+#, kde-format
+msgid "Activity"
+msgstr "செயல்கள்"
+
+#: core/unicodeemoticonmanager.cpp:48
+#, kde-format
+msgid "Objects"
+msgstr "பொருள்கள்"
+
+#: core/unicodeemoticonmanager.cpp:50
+#, kde-format
+msgid "Nature"
+msgstr "இயற்கை"
+
+#: core/unicodeemoticonmanager.cpp:52
+#, kde-format
+msgid "Food"
+msgstr "உணவு"
+
+#: core/unicodeemoticonmanager.cpp:54
+#, kde-format
+msgid "People"
+msgstr "ஆட்கள்"
+
+#: core/unicodeemoticonmanager.cpp:56
+#, kde-format
+msgid "Travel"
+msgstr "பயணிப்பது"
+
+#: core/unicodeemoticonmanager.cpp:58
+#, kde-format
+msgid "Regional"
+msgstr ""
+
+#: core/unicodeemoticonmanager.cpp:60
+#, kde-format
+msgid "Flags"
+msgstr "கொடிகள்"
+
+#: widgets/emoticoncategorybuttons.cpp:82
+#, kde-format
+msgctxt "Previously used emojis"
+msgid "History"
+msgstr "வரலாறு"
+
+#: widgets/emoticoncategorybuttons.cpp:84
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
+msgstr "விருப்பமானவை"
+
+#: widgets/emoticonlistview.cpp:107
+#, kde-format
+msgid "Clear Recents"
+msgstr "சமீபமானவற்றை காலியாக்கு"
+
+#: widgets/emoticontexteditaction.cpp:54
+#, kde-format
+msgid "Add Smiley"
+msgstr ""
+
+#: widgets/emoticontexteditselector.cpp:83
+#, kde-format
+msgid "Search Emoticon..."
+msgstr ""

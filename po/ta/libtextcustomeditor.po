@@ -1,0 +1,190 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"PO-Revision-Date: 2024-05-05 13:54+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#: plaintexteditor/plaintexteditfindbar.cpp:120
+#: richtexteditor/richtexteditfindbar.cpp:120
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "%1 மாற்றம் செய்யப்பட்டது"
+msgstr[1] "%1 மாற்றங்கள் செய்யப்பட்டன"
+
+#: plaintexteditor/plaintexteditor.cpp:168
+#: richtexteditor/richtexteditor.cpp:227
+#, kde-format
+msgid "Check Spelling..."
+msgstr "எழுத்தாக்கத்தை சரிபார்..."
+
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:234
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "தானியக்க சொல் திருத்தி"
+
+#: plaintexteditor/plaintexteditor.cpp:179
+#: richtexteditor/richtexteditor.cpp:240
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "சொற்திருத்த மொழி"
+
+#: plaintexteditor/plaintexteditor.cpp:207
+#: richtextbrowser/richtextbrowser.cpp:165
+#: richtexteditor/richtexteditor.cpp:273
+#, kde-format
+msgid "Speak Text"
+msgstr "உரையைப் பேச்சாக்கு"
+
+#: plaintexteditor/plaintexteditor.cpp:386
+#: richtexteditor/richtexteditor.cpp:491
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "சொல்திருத்த எதுவுமில்லை"
+
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:509
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "சொல் திருத்த பின்நிலை எதுவும் இல்லை. "
+
+#: richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "தத்தல்களை அனுமதி"
+
+#: richtexteditor/richtexteditor.cpp:501
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr "சொல் திருத்த பின்நிலை எதுவும் இல்லை. இருப்பினும் அஞ்சலை அனுப்ப வேண்டுமா?"
+
+#: richtexteditor/richtexteditor.cpp:503
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: richtexteditor/richtexteditor.cpp:525
+#, kde-format
+msgid "Skip"
+msgstr "தவிர்"
+
+#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
+#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "மூடு"
+
+#: widgets/texteditfindbarbase.cpp:142
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"அஞ்சலின் முடிவு அடையப்பட்டது.\n"
+"'%1' என்பதைக் கண்டுபிடிக்க முடியவில்லை"
+
+#: widgets/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace"
+msgstr "மாற்று"
+
+#: widgets/textfindreplacewidget.cpp:27
+#, kde-format
+msgid "Replace All"
+msgstr "அனைத்தையும் மாற்று"
+
+#: widgets/textfindreplacewidget.cpp:30
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "மாற்று:"
+
+#: widgets/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "முந்தையது"
+
+#: widgets/textfindreplacewidget.cpp:67
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "அடுத்தது"
+
+#: widgets/textfindreplacewidget.cpp:73
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "&தேடு:"
+
+#: widgets/textfindreplacewidget.cpp:76
+#, kde-format
+msgid "Text to search for"
+msgstr "கண்டுபிடிக்க வேண்டிய சொற்றொடர்"
+
+#: widgets/textfindreplacewidget.cpp:82
+#, kde-format
+msgid "Jump to next match"
+msgstr "அடுத்தப் பொருத்தத்துக்குத் தாவு"
+
+#: widgets/textfindreplacewidget.cpp:87
+#, kde-format
+msgid "Jump to previous match"
+msgstr "முந்தைய பொருத்தத்துக்கு தாவு"
+
+#: widgets/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Options"
+msgstr "விருப்பங்கள்"
+
+#: widgets/textfindreplacewidget.cpp:94
+#, kde-format
+msgid "Modify search behavior"
+msgstr "தேடல் நடத்தையை மாற்று"
+
+#: widgets/textfindreplacewidget.cpp:97
+#, kde-format
+msgid "Case sensitive"
+msgstr "எழுத்து வகையை (பெரிது/சிறிது) பொருட்படுத்து"
+
+#: widgets/textfindreplacewidget.cpp:100
+#, kde-format
+msgid "Whole word"
+msgstr "முழு சொல்"
+
+#: widgets/textfindreplacewidget.cpp:103
+#, kde-format
+msgid "Regular Expression"
+msgstr "சுருங்குறித் தொடர்"
+
+#: widgets/textfindreplacewidget.cpp:106
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr ""
+
+#: widgets/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "வரிக்கு செல்:"
+
+#: widgets/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "செல்"
