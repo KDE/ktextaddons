@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:37+0000\n"
-"PO-Revision-Date: 2024-03-20 17:59+0900\n"
+"PO-Revision-Date: 2024-05-07 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -291,7 +291,7 @@ msgstr "為日子名稱首字大寫"
 msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
 "that matches the way an Internet browser would show a URL."
-msgstr ""
+msgstr "偵測網址 (URL) 的輸入，並提供如同網頁瀏覽器般的對於網址的格式化。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
 #: widgets/ui/autocorrectionwidget.ui:405

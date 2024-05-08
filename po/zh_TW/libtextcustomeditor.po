@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-03 00:37+0000\n"
-"PO-Revision-Date: 2024-02-27 06:33+0900\n"
+"PO-Revision-Date: 2024-05-07 17:00+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -64,7 +64,7 @@ msgstr "沒有拼字檢查可用的後端。"
 #: richtexteditor/richtexteditor.cpp:266
 #, kde-format
 msgid "Allow Tabulations"
-msgstr ""
+msgstr "接受 tab 字元"
 
 #: richtexteditor/richtexteditor.cpp:501
 #, kde-format
@@ -96,7 +96,7 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
-"已抵達信件結尾。\n"
+"已抵達訊息結尾。\n"
 "未找到字串「%1」。"
 
 #: widgets/textfindreplacewidget.cpp:26
@@ -176,7 +176,7 @@ msgstr "正則表達式"
 #: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr ""
+msgstr "遵循變音符號與發音符號"
 
 #: widgets/textgotolinewidget.cpp:49
 #, kde-format

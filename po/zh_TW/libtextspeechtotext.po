@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-05 00:40+0000\n"
-"PO-Revision-Date: 2024-03-12 01:57+0900\n"
+"PO-Revision-Date: 2024-05-07 16:56+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -33,7 +33,7 @@ msgstr "無法儲存語言資訊。"
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
-msgstr ""
+msgstr "錯誤：引擎系統認為來自您的電腦的存取是可疑的。請稍作等候之後再試。"
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
 #: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
@@ -101,7 +101,7 @@ msgstr "Vosk"
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
 #, kde-format
 msgid "Impossible to extract language"
-msgstr ""
+msgstr "無法取出語言"
 
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
 #, kde-format
@@ -132,7 +132,7 @@ msgstr "大小"
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
 #, kde-format
 msgid "Whisper"
-msgstr ""
+msgstr "Whisper"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
 #, kde-format
