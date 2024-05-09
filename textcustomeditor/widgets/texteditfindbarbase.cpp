@@ -137,7 +137,7 @@ void TextEditFindBarBase::messageInfo(bool backward, bool isAutoSearch, bool fou
         QString str = mLastSearchStr;
         if (str.length() > 39) {
             str.truncate(40);
-            str += "..."_L1;
+            str += "…"_L1;
         }
         Q_EMIT displayMessageIndicator(i18n("End of message reached.\nPhrase '%1' could not be found.", str));
     }

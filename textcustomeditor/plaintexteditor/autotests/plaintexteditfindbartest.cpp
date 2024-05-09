@@ -144,8 +144,8 @@ void PlainTextEditFindBarTest::shouldReplaceAllText_data()
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics-4") << QStringLiteral("réunion réunion . Test... réunion") << QStringLiteral("réunion")
-                                                    << QStringLiteral("replace") << flags << 3 << QStringLiteral("replace replace . Test... replace");
+        QTest::newRow("wholewords-no-diacritics-4") << QStringLiteral("réunion réunion . Test… réunion") << QStringLiteral("réunion")
+                                                    << QStringLiteral("replace") << flags << 3 << QStringLiteral("replace replace . Test… replace");
     }
 }
 

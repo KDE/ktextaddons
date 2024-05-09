@@ -38,7 +38,7 @@ TranslatorDebugDialog::TranslatorDebugDialog(QWidget *parent)
     buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &TranslatorDebugDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TranslatorDebugDialog::reject);
-    mUser1Button->setText(i18n("Save As..."));
+    mUser1Button->setText(i18n("Save As…"));
     connect(mUser1Button, &QPushButton::clicked, this, &TranslatorDebugDialog::slotSaveAs);
 
     mEdit->setReadOnly(true);

@@ -41,14 +41,14 @@
      <item>
       <widget class="QPushButton" name="exportAutoCorrection">
        <property name="text">
-        <string>Export...</string>
+        <string>Export…</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="importAutoCorrection">
        <property name="text">
-        <string>Import...</string>
+        <string>Import…</string>
        </property>
       </widget>
      </item>
@@ -385,7 +385,7 @@
           <string>Most standard fraction notations will be converted when available</string>
          </property>
          <property name="text">
-          <string>Re&amp;place 1/2... with ½...</string>
+          <string>Re&amp;place 1/2… with ½...</string>
          </property>
         </widget>
        </item>
@@ -419,7 +419,7 @@
        <item>
         <widget class="QCheckBox" name="autoSuperScript">
          <property name="text">
-          <string>Replace 1st... with 1^st... (HTML mode)</string>
+          <string>Replace 1st… with 1^st... (HTML mode)</string>
          </property>
         </widget>
        </item>
@@ -782,7 +782,7 @@
          <item>
           <widget class="QToolButton" name="customSystemPathToolButton">
            <property name="text">
-            <string>...</string>
+            <string>…</string>
            </property>
           </widget>
          </item>
@@ -803,7 +803,7 @@
          <item>
           <widget class="QToolButton" name="customWritablePathToolButton">
            <property name="text">
-            <string>...</string>
+            <string>…</string>
            </property>
           </widget>
          </item>

@@ -33,7 +33,7 @@ TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(con
 
     mListSearchLine->setObjectName(QStringLiteral("mListSearchLine"));
     mainLayout->addWidget(mListSearchLine);
-    mListSearchLine->setPlaceholderText(i18n("Search..."));
+    mListSearchLine->setPlaceholderText(i18n("Search…"));
     auto filterProxyModel = new QSortFilterProxyModel(this);
     filterProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
     filterProxyModel->setSourceModel(mModel);

@@ -20,7 +20,7 @@ TranslatorMenu::TranslatorMenu(QObject *parent)
     , mMenu(new QMenu)
 {
     mMenu->setObjectName(QStringLiteral("menu"));
-    mMenu->setTitle(i18n("Translate..."));
+    mMenu->setTitle(i18n("Translate…"));
     mMenu->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
     updateMenu();
 }

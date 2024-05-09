@@ -165,7 +165,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             if (!d->speller->availableBackends().isEmpty()) {
                 if (!emptyDocument) {
                     popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
-                                     i18n("Check Spelling..."),
+                                     i18n("Check Spelling…"),
                                      this,
                                      &PlainTextEditor::slotCheckSpelling);
                     popup->addSeparator();

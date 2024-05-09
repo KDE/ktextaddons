@@ -77,7 +77,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
 
     d->mConfigureButton = new QToolButton(this);
     d->mConfigureButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    d->mConfigureButton->setToolTip(i18n("Configure..."));
+    d->mConfigureButton->setToolTip(i18n("Configure…"));
     d->mConfigureButton->setObjectName(QStringLiteral("configurebutton"));
     connect(d->mConfigureButton, &QToolButton::clicked, this, &TextToSpeechWidget::slotConfigure);
     hbox->addWidget(d->mConfigureButton);

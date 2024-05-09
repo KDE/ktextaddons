@@ -224,7 +224,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             }
             if (!d->speller->availableBackends().isEmpty()) {
                 QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
-                                                             i18n("Check Spelling..."),
+                                                             i18n("Check Spelling…"),
                                                              this,
                                                              &RichTextEditor::slotCheckSpelling);
                 if (emptyDocument) {
