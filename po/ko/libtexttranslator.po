@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2024-02-10 00:05+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -336,8 +336,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "검색..."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
@@ -625,8 +626,9 @@ msgid "Translator Debug"
 msgstr "번역기 디버그"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "다른 이름으로 저장..."
 
 #: translator/widgets/translatordebugdialog.cpp:90
@@ -649,9 +651,10 @@ msgid "All Files (*)"
 msgstr "모든 파일 (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, kde-format
-msgid "Translate..."
-msgstr "번역..."
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgid "Translate…"
+msgstr "번역"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -726,6 +729,9 @@ msgstr "네트워크 사용 불가"
 #, kde-format
 msgid "Translate error"
 msgstr "번역 오류"
+
+#~ msgid "Translate..."
+#~ msgstr "번역..."
 
 #~ msgid "Version"
 #~ msgstr "버전"

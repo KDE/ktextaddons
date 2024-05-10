@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2024-05-07 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -124,14 +124,16 @@ msgstr "語言的取代和例外："
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, kde-format
-msgid "Export..."
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export…"
 msgstr "匯出..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "匯入..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
@@ -275,8 +277,9 @@ msgstr "可用時會轉換大部分的標準分數寫法"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, kde-format
-msgid "Re&place 1/2... with ½..."
+#, fuzzy, kde-format
+#| msgid "Re&place 1/2... with ½..."
+msgid "Re&place 1/2… with ½..."
 msgstr "將 1/2 等替換為 ½ 等(&P)..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
@@ -317,8 +320,9 @@ msgstr "自動進行粗體、刪除線與底線格式化（HTML 模式）(&B)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, kde-format
-msgid "Replace 1st... with 1^st... (HTML mode)"
+#, fuzzy, kde-format
+#| msgid "Replace 1st... with 1^st... (HTML mode)"
+msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr "將 1st... 替換為 1^st...（HTML 模式）"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
@@ -444,11 +448,14 @@ msgstr "自訂系統路徑："
 #: widgets/ui/autocorrectionwidget.ui:785
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "自訂可寫入路徑："
+
+#~ msgid "..."
+#~ msgstr "..."

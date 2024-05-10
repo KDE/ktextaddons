@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2024-04-19 22:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -339,8 +339,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Cerca..."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
@@ -630,8 +631,9 @@ msgid "Translator Debug"
 msgstr "Depuració del traductor"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Desa com a..."
 
 #: translator/widgets/translatordebugdialog.cpp:90
@@ -654,9 +656,10 @@ msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, kde-format
-msgid "Translate..."
-msgstr "Tradueix..."
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgid "Translate…"
+msgstr "Tradueix"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -732,3 +735,6 @@ msgstr "Sense xarxa"
 #, kde-format
 msgid "Translate error"
 msgstr "Error de traducció"
+
+#~ msgid "Translate..."
+#~ msgstr "Tradueix..."

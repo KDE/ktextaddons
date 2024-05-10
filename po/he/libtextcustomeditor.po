@@ -1,0 +1,194 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"PO-Revision-Date: 2024-05-09 15:24+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: plaintexteditor/plaintexteditfindbar.cpp:120
+#: richtexteditor/richtexteditfindbar.cpp:120
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "בוצעה החלפה"
+msgstr[1] "בוצעו שתי החלפות"
+msgstr[2] "בוצעו %1 החלפות"
+msgstr[3] "בוצעו %1 החלפות"
+
+#: plaintexteditor/plaintexteditor.cpp:168
+#: richtexteditor/richtexteditor.cpp:227
+#, fuzzy, kde-format
+#| msgid "Check Spelling..."
+msgid "Check Spelling…"
+msgstr "בדיקת איות…"
+
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:234
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "בדיקת איות אוטומטית"
+
+#: plaintexteditor/plaintexteditor.cpp:179
+#: richtexteditor/richtexteditor.cpp:240
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "שפת בדיקת האיות"
+
+#: plaintexteditor/plaintexteditor.cpp:207
+#: richtextbrowser/richtextbrowser.cpp:165
+#: richtexteditor/richtexteditor.cpp:273
+#, kde-format
+msgid "Speak Text"
+msgstr "הקראת טקסט"
+
+#: plaintexteditor/plaintexteditor.cpp:386
+#: richtexteditor/richtexteditor.cpp:491
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "אין תוכן לבדיקת איות."
+
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:509
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "אין מנגנון זמין לבדיקת איות."
+
+#: richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "לאפשר טאבים"
+
+#: richtexteditor/richtexteditor.cpp:501
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr "אין מנגנון זמין לבדיקת איות. לשלוח את ההודעה בכל זאת?"
+
+#: richtexteditor/richtexteditor.cpp:503
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "שליחה"
+
+#: richtexteditor/richtexteditor.cpp:525
+#, kde-format
+msgid "Skip"
+msgstr "דילוג"
+
+#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
+#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "סגירה"
+
+#: widgets/texteditfindbarbase.cpp:142
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"החיפוש הגיע לסוף ההודעה.\n"
+"הביטוי ‚%1’ לא נמצא."
+
+#: widgets/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace"
+msgstr "החלפה"
+
+#: widgets/textfindreplacewidget.cpp:27
+#, kde-format
+msgid "Replace All"
+msgstr "החלפה של הכול"
+
+#: widgets/textfindreplacewidget.cpp:30
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "החלפה:"
+
+#: widgets/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "הקודם"
+
+#: widgets/textfindreplacewidget.cpp:67
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "הבא"
+
+#: widgets/textfindreplacewidget.cpp:73
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "&איתור:"
+
+#: widgets/textfindreplacewidget.cpp:76
+#, kde-format
+msgid "Text to search for"
+msgstr "טקסט לחיפוש"
+
+#: widgets/textfindreplacewidget.cpp:82
+#, kde-format
+msgid "Jump to next match"
+msgstr "דילוג לתוצאה הבאה"
+
+#: widgets/textfindreplacewidget.cpp:87
+#, kde-format
+msgid "Jump to previous match"
+msgstr "דילוג לתוצאה הקודמת"
+
+#: widgets/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Options"
+msgstr "אפשרויות"
+
+#: widgets/textfindreplacewidget.cpp:94
+#, kde-format
+msgid "Modify search behavior"
+msgstr "שינוי התנהגות החיפוש"
+
+#: widgets/textfindreplacewidget.cpp:97
+#, kde-format
+msgid "Case sensitive"
+msgstr "תלוי רישיות"
+
+#: widgets/textfindreplacewidget.cpp:100
+#, kde-format
+msgid "Whole word"
+msgstr "מילים שלמות"
+
+#: widgets/textfindreplacewidget.cpp:103
+#, kde-format
+msgid "Regular Expression"
+msgstr "ביטוי רגולרי"
+
+#: widgets/textfindreplacewidget.cpp:106
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "התחשבות בסימנים דיאקריטיים והגווני אותיות"
+
+#: widgets/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "מעבר לשורה:"
+
+#: widgets/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "מעבר"

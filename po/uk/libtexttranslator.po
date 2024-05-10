@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-10-12 09:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -337,8 +337,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Шукати…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
@@ -626,8 +627,9 @@ msgid "Translator Debug"
 msgstr "Діагностика перекладача"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Зберегти як…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
@@ -650,9 +652,10 @@ msgid "All Files (*)"
 msgstr "усі файли (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, kde-format
-msgid "Translate..."
-msgstr "Перекласти…"
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgid "Translate…"
+msgstr "Перекласти"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -728,6 +731,9 @@ msgstr "З’єднання недоступне"
 #, kde-format
 msgid "Translate error"
 msgstr "Помилка під час перекладу"
+
+#~ msgid "Translate..."
+#~ msgstr "Перекласти…"
 
 #~ msgid "Version"
 #~ msgstr "Версія"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:40+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2024-01-28 11:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -68,8 +68,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Vosk pluginaren ezarpenak"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Bilatu..."
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
@@ -151,8 +152,9 @@ msgid "Configure Speech To Text"
 msgstr "Konfiguratu Hizketatik testura"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, kde-format
-msgid "Speech to Text..."
+#, fuzzy, kde-format
+#| msgid "Speech to Text..."
+msgid "Speech to Text…"
 msgstr "Hizketatik testura..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31

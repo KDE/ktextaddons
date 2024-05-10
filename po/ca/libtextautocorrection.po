@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-01-09 13:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -126,14 +126,16 @@ msgstr "Substitució i excepció per a l'idioma:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, kde-format
-msgid "Export..."
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export…"
 msgstr "Exporta..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Importa..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
@@ -286,8 +288,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, kde-format
-msgid "Re&place 1/2... with ½..."
+#, fuzzy, kde-format
+#| msgid "Re&place 1/2... with ½..."
+msgid "Re&place 1/2… with ½..."
 msgstr "Su&bstitueix 1/2... per ½..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
@@ -331,8 +334,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, kde-format
-msgid "Replace 1st... with 1^st... (HTML mode)"
+#, fuzzy, kde-format
+#| msgid "Replace 1st... with 1^st... (HTML mode)"
+msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr "Substitueix 1st... per 1^st... (mode HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
@@ -461,14 +465,17 @@ msgstr "Camí personalitzat del sistema:"
 #: widgets/ui/autocorrectionwidget.ui:785
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "Camí personalitzat que s'hi pot escriure:"
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Special Characters"

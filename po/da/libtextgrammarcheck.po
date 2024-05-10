@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2020-07-31 19:28+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr "Tjek igen"
 
 #: common/grammarresulttextedit.cpp:113
 #, kde-format
-msgid "Configure..."
+msgid "Configure…"
 msgstr ""
 
 #: common/grammarresultutil.cpp:49

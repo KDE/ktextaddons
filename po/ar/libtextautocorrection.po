@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-01-14 12:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -125,14 +125,16 @@ msgstr "استبدالات واستثناءات اللغة:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, kde-format
-msgid "Export..."
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export…"
 msgstr "صدّر..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "استورد..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
@@ -279,8 +281,9 @@ msgstr "ستُحوّل أغلب أشكال الكسور القياسيّة عن�
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, kde-format
-msgid "Re&place 1/2... with ½..."
+#, fuzzy, kde-format
+#| msgid "Re&place 1/2... with ½..."
+msgid "Re&place 1/2… with ½..."
 msgstr "استبدل بـ 1/2... ½..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
@@ -323,8 +326,9 @@ msgstr "استخدم تنسيقات &ثخين، ومشطوب ومسطّر آلي
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, kde-format
-msgid "Replace 1st... with 1^st... (HTML mode)"
+#, fuzzy, kde-format
+#| msgid "Replace 1st... with 1^st... (HTML mode)"
+msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr "استبدل 1st... بِ‍ ‎1^st... (وضع HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
@@ -450,14 +454,17 @@ msgstr "مسار النظام مخصص:"
 #: widgets/ui/autocorrectionwidget.ui:785
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "مسار النظام قابل للكتابة:"
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Special Characters"

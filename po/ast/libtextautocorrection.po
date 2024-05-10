@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2024-03-27 22:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -125,13 +125,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
 #, kde-format
-msgid "Export..."
+msgid "Export…"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
 #, kde-format
-msgid "Import..."
+msgid "Import…"
 msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
@@ -270,7 +270,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
-msgid "Re&place 1/2... with ½..."
+msgid "Re&place 1/2… with ½..."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
@@ -310,7 +310,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
-msgid "Replace 1st... with 1^st... (HTML mode)"
+msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
@@ -436,7 +436,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:785
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
-msgid "..."
+msgid "…"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)

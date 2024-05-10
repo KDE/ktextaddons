@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-01-14 13:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -337,8 +337,9 @@ msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "ابحث..."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
@@ -629,8 +630,9 @@ msgid "Translator Debug"
 msgstr "منقّح المترجم"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "احفظ كَ‍..."
 
 #: translator/widgets/translatordebugdialog.cpp:90
@@ -653,9 +655,10 @@ msgid "All Files (*)"
 msgstr "كلّ الملفّات (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, kde-format
-msgid "Translate..."
-msgstr "ترجم..."
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgid "Translate…"
+msgstr "ترجم"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -735,6 +738,9 @@ msgstr "لا شبكة"
 #, kde-format
 msgid "Translate error"
 msgstr "خطأ في التّرجمة"
+
+#~ msgid "Translate..."
+#~ msgstr "ترجم..."
 
 #, fuzzy
 #~| msgid "Persian"

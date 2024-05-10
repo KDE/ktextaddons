@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:40+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2024-01-11 01:18+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -67,8 +67,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Preferencias del complemento Vosk"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Buscar..."
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
@@ -150,8 +151,9 @@ msgid "Configure Speech To Text"
 msgstr "Configurar habla a texto"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, kde-format
-msgid "Speech to Text..."
+#, fuzzy, kde-format
+#| msgid "Speech to Text..."
+msgid "Speech to Text…"
 msgstr "Habla a texto..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-10-14 19:53+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -336,8 +336,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Sök..."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
@@ -626,8 +627,9 @@ msgid "Translator Debug"
 msgstr "Felsökning av översättning"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Spara som..."
 
 #: translator/widgets/translatordebugdialog.cpp:90
@@ -650,9 +652,10 @@ msgid "All Files (*)"
 msgstr "Alla filer (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, kde-format
-msgid "Translate..."
-msgstr "Översätt..."
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgid "Translate…"
+msgstr "Översätt"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -728,6 +731,9 @@ msgstr "Inget nätverk"
 #, kde-format
 msgid "Translate error"
 msgstr "Översättningsfel"
+
+#~ msgid "Translate..."
+#~ msgstr "Översätt..."
 
 #~ msgid "Version"
 #~ msgstr "Version"

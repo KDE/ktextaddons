@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-04-14 02:00+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -87,6 +87,7 @@ msgid "Add Smiley"
 msgstr "Añadir smiley"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, kde-format
-msgid "Search Emoticon..."
+#, fuzzy, kde-format
+#| msgid "Search Emoticon..."
+msgid "Search Emoticon…"
 msgstr "Buscar emoticono..."

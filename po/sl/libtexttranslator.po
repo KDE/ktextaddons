@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:37+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-10-12 05:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -337,8 +337,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Išči..."
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
@@ -627,8 +628,9 @@ msgid "Translator Debug"
 msgstr "Razhroščevanje prevajalnika"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Shrani kot..."
 
 #: translator/widgets/translatordebugdialog.cpp:90
@@ -651,9 +653,10 @@ msgid "All Files (*)"
 msgstr "Vse datoteke (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, kde-format
-msgid "Translate..."
-msgstr "Prevedi..."
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgid "Translate…"
+msgstr "Prevedi"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -729,6 +732,9 @@ msgstr "Ni omrežja"
 #, kde-format
 msgid "Translate error"
 msgstr "Napaka prevajanja"
+
+#~ msgid "Translate..."
+#~ msgstr "Prevedi..."
 
 #~ msgid "Version"
 #~ msgstr "Verzija"

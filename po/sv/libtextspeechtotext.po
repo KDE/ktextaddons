@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-05 00:40+0000\n"
+"POT-Creation-Date: 2024-05-10 00:37+0000\n"
 "PO-Revision-Date: 2023-10-25 19:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -65,8 +65,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Inställningar av Vosk-insticksprogram"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, kde-format
-msgid "Search..."
+#, fuzzy, kde-format
+#| msgid "Search..."
+msgid "Search…"
 msgstr "Sök..."
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
@@ -149,8 +150,9 @@ msgid "Configure Speech To Text"
 msgstr "Tal till text..."
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, kde-format
-msgid "Speech to Text..."
+#, fuzzy, kde-format
+#| msgid "Speech to Text..."
+msgid "Speech to Text…"
 msgstr "Tal till text..."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
