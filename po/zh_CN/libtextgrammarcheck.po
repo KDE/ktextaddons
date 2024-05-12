@@ -38,10 +38,9 @@ msgid "Check Again"
 msgstr "重新检查"
 
 #: common/grammarresulttextedit.cpp:113
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "配置..."
+msgstr "配置…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format

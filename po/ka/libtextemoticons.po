@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-06-29 08:00+0200\n"
+"PO-Revision-Date: 2024-05-10 07:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -86,7 +86,6 @@ msgid "Add Smiley"
 msgstr "სიცილაკის დამატება"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon..."
+#, kde-format
 msgid "Search Emoticon…"
-msgstr "ემოციის მოძებნა..."
+msgstr "ემოციის მოძებნა…"

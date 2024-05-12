@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-10-12 17:21+0300\n"
+"PO-Revision-Date: 2024-05-10 13:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,10 +336,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Ara..."
+msgstr "Ara…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
@@ -626,10 +625,9 @@ msgid "Translator Debug"
 msgstr "Çevirmen Hata Ayıklaması"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Farklı Kaydet..."
+msgstr "Farklı Kaydet…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -638,7 +636,7 @@ msgid ""
 "\"%2\" is the detailed error description."
 msgstr ""
 "%1 dosyası yazılamadı:\n"
-"Ayrıntılı hata açıklaması için: \"%2\"."
+"Ayrıntılı hata açıklaması için: “%2”."
 
 #: translator/widgets/translatordebugdialog.cpp:94
 #, kde-format
@@ -651,10 +649,9 @@ msgid "All Files (*)"
 msgstr "Tüm Dosyalar (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "Çevir"
+msgstr "Çevir…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222

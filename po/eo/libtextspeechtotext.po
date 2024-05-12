@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-01-05 17:23+0100\n"
+"PO-Revision-Date: 2024-05-10 09:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -65,10 +65,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Vosk-Kromprogramaj Agordoj"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Serĉi..."
+msgstr "Serĉi…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
@@ -146,13 +145,12 @@ msgstr "Motoro:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Agordi Parolon al Teksto..."
+msgstr "Agordi Parolon al Teksto"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgid "Speech to Text…"
-msgstr "Parolo al Teksto..."
+msgstr "Parolo al Teksto…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

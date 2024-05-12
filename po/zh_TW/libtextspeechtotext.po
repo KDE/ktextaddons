@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-05-07 16:56+0900\n"
+"PO-Revision-Date: 2024-05-10 16:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -63,8 +63,7 @@ msgid "Vosk Plugin Settings"
 msgstr "Vosk 外掛程式設定"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
 msgstr "搜尋…"
 
@@ -147,10 +146,9 @@ msgid "Configure Speech To Text"
 msgstr "設定語音轉文字"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgid "Speech to Text…"
-msgstr "語音轉文字..."
+msgstr "語音轉文字…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

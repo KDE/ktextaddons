@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-01-05 11:06+0100\n"
+"PO-Revision-Date: 2024-05-10 06:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -66,10 +66,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Nastavitve vtičnikov Vosk"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Išči..."
+msgstr "Išči…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
@@ -150,10 +149,9 @@ msgid "Configure Speech To Text"
 msgstr "Konfiguriraj govor v besedilo"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgid "Speech to Text…"
-msgstr "Govor v besedilo..."
+msgstr "Govor v besedilo…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

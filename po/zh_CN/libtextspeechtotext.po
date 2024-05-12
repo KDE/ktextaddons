@@ -63,10 +63,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Vosk 插件设置"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "搜索..."
+msgstr "搜索…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
@@ -147,10 +146,9 @@ msgid "Configure Speech To Text"
 msgstr "配置语音到文本功能"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgid "Speech to Text…"
-msgstr "语音转文字..."
+msgstr "语音转文字…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-01-02 19:50+0100\n"
+"PO-Revision-Date: 2024-05-10 09:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -337,10 +337,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Serĉi..."
+msgstr "Serĉi…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
@@ -518,7 +517,7 @@ msgstr "Agordi Motoron"
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgid "Use Free License Key"
-msgstr "Uzi Senpagan Licenc-Ŝlosilo"
+msgstr "Uzi Senpagan Licenco-Ŝlosilon"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
@@ -627,10 +626,9 @@ msgid "Translator Debug"
 msgstr "Tradukista Sencimigo"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Konservi kiel..."
+msgstr "Konservi Kiel…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -652,10 +650,9 @@ msgid "All Files (*)"
 msgstr "Ĉiuj dosieroj (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "Traduki"
+msgstr "Traduki…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -731,6 +728,3 @@ msgstr "Neniu reto"
 #, kde-format
 msgid "Translate error"
 msgstr "Traduka eraro"
-
-#~ msgid "Translate..."
-#~ msgstr "Traduki..."

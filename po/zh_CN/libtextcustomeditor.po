@@ -26,10 +26,9 @@ msgstr[0] "替换了 %1 处"
 
 #: plaintexteditor/plaintexteditor.cpp:168
 #: richtexteditor/richtexteditor.cpp:227
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "检查拼写..."
+msgstr "拼写检查…"
 
 #: plaintexteditor/plaintexteditor.cpp:173
 #: richtexteditor/richtexteditor.cpp:234
@@ -54,7 +53,7 @@ msgstr "朗读文本"
 #: richtexteditor/richtexteditor.cpp:491
 #, kde-format
 msgid "Nothing to spell check."
-msgstr "没有可供检查拼写的内容。"
+msgstr "没有可供拼写检查的内容。"
 
 #: plaintexteditor/plaintexteditor.cpp:391
 #: richtexteditor/richtexteditor.cpp:509
@@ -97,7 +96,7 @@ msgid ""
 "End of message reached.\n"
 "Phrase '%1' could not be found."
 msgstr ""
-"已到达信件尾。\n"
+"已到达消息末尾。\n"
 "无法找到句段“%1”。"
 
 #: widgets/textfindreplacewidget.cpp:26

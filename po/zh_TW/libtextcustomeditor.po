@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-05-07 17:00+0900\n"
+"PO-Revision-Date: 2024-05-10 16:49+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -26,10 +26,9 @@ msgstr[0] "取代了 %1 個地方"
 
 #: plaintexteditor/plaintexteditor.cpp:168
 #: richtexteditor/richtexteditor.cpp:227
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "檢查拼字..."
+msgstr "檢查拼字…"
 
 #: plaintexteditor/plaintexteditor.cpp:173
 #: richtexteditor/richtexteditor.cpp:234

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-03-21 22:47+0300\n"
+"PO-Revision-Date: 2024-05-10 13:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -126,15 +126,13 @@ msgstr "Şu dil için değiştirme ve istisnalar:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
 msgstr "Dışa Aktar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "İçe Aktar…"
 
@@ -235,7 +233,7 @@ msgid ""
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
 "Bir tümcenin ilk har&fini her zaman BÜYÜK harfe dönüştür\n"
-"(örn. “benim evim. bu kentte”yi \"Benim evim. Bu kentte\" olarak)"
+"(örn. “benim evim. bu kentte”yi “Benim evim. Bu kentte” olarak)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:364
@@ -284,10 +282,9 @@ msgstr "Çoğu standart kesir belirtimleri olabildiğince dönüştürülecektir
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "1/2…’yi ½… ile değ&iştir"
+msgstr "1/2…’yi ½… ile değ&iştir…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -331,8 +328,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr "1st…’ü 1^st… ile değiştir (HTML kipi)"
 
@@ -461,7 +457,7 @@ msgstr "Özel sistem yolu:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

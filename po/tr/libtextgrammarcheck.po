@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-10-14 05:41+0300\n"
+"PO-Revision-Date: 2024-05-10 13:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -38,10 +38,9 @@ msgid "Check Again"
 msgstr "Yeniden Denetle"
 
 #: common/grammarresulttextedit.cpp:113
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "Yapılandır..."
+msgstr "Yapılandır…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
@@ -57,7 +56,7 @@ msgstr "Kapat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr "Grammalecte'yi Yapılandır"
+msgstr "Grammalecte’yi Yapılandır"
 
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
@@ -74,7 +73,7 @@ msgstr "Gramer Ayarları"
 msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
-msgstr "Seçenekler alınamıyor. grammalected'nin kurulu olduğunu denetleyin."
+msgstr "Seçenekler alınamıyor. grammalected’nin kurulu olduğunu denetleyin."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, kde-format
@@ -99,7 +98,7 @@ msgstr "Python Yolu:"
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr "Tam 'grammalecte-cli.py' yolunu ekle"
+msgstr "Tam “grammalecte-cli.py” yolunu ekle"
 
 #: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
@@ -299,7 +298,7 @@ msgstr "Ukraynaca"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr "LanguageTool'u Yapılandır"
+msgstr "LanguageTool’u Yapılandır"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format

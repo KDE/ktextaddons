@@ -336,10 +336,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "搜索..."
+msgstr "搜索…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
@@ -624,10 +623,9 @@ msgid "Translator Debug"
 msgstr "翻译器调试"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "另存为..."
+msgstr "另存为…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -649,10 +647,9 @@ msgid "All Files (*)"
 msgstr "所有文件 (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "翻译"
+msgstr "翻译…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
@@ -726,6 +723,3 @@ msgstr "没有网络"
 #, kde-format
 msgid "Translate error"
 msgstr "翻译错误"
-
-#~ msgid "Translate..."
-#~ msgstr "翻译..."
