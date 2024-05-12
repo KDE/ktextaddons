@@ -31,7 +31,7 @@ msgstr[1] "S'han fet %1 substitucions"
 #: richtexteditor/richtexteditor.cpp:219
 #, kde-format
 msgid "Check Spelling..."
-msgstr "Verifica l'ortografia..."
+msgstr "Verifica l'ortografia…"
 
 #: plaintexteditor/plaintexteditor.cpp:166
 #: richtexteditor/richtexteditor.cpp:226

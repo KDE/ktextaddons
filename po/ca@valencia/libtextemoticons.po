@@ -89,4 +89,4 @@ msgstr "Afig una emoticona"
 #: widgets/emoticontexteditselector.cpp:83
 #, kde-format
 msgid "Search Emoticon..."
-msgstr "Busca una emoticona..."
+msgstr "Busca una emoticona…"

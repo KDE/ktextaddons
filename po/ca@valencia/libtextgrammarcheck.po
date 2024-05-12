@@ -42,7 +42,7 @@ msgstr "Comprova una altra vegada"
 #: common/grammarresulttextedit.cpp:118
 #, kde-format
 msgid "Configure..."
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format

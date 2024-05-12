@@ -340,7 +340,7 @@ msgstr "Bergamot"
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:40
 #, kde-format
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
@@ -630,7 +630,7 @@ msgstr "Depuració del traductor"
 #: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As..."
-msgstr "Anomena i guarda..."
+msgstr "Anomena i guarda…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -654,7 +654,7 @@ msgstr "Tots els fitxers (*)"
 #: translator/widgets/translatormenu.cpp:23
 #, kde-format
 msgid "Translate..."
-msgstr "Traduïx..."
+msgstr "Traduïx…"
 
 #: translator/widgets/translatorwidget.cpp:211
 #: translator/widgets/translatorwidget.cpp:214
