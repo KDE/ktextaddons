@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2023 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-10-15 14:07+0530\n"
+"PO-Revision-Date: 2024-05-12 15:30+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,10 +336,9 @@ msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "தேடு..."
+msgstr "தேடு…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
@@ -627,10 +626,9 @@ msgid "Translator Debug"
 msgstr "மொழிபெயர்ப்பி பிழைநீக்கம்"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "இவ்வாறு சேமி..."
+msgstr "வேறு பெயரில் சேமி…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -652,10 +650,9 @@ msgid "All Files (*)"
 msgstr "அனைத்து கோப்புகள் (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "மொழிபெயர்"
+msgstr "மொழிபெயர்…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222

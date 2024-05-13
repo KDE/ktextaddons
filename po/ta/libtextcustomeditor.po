@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-05-05 13:54+0530\n"
+"PO-Revision-Date: 2024-05-12 15:29+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -27,10 +27,9 @@ msgstr[1] "%1 மாற்றங்கள் செய்யப்பட்ட�
 
 #: plaintexteditor/plaintexteditor.cpp:168
 #: richtexteditor/richtexteditor.cpp:227
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "எழுத்தாக்கத்தை சரிபார்..."
+msgstr "எழுத்தாக்கத்தை சரிபார்…"
 
 #: plaintexteditor/plaintexteditor.cpp:173
 #: richtexteditor/richtexteditor.cpp:234
@@ -178,7 +177,7 @@ msgstr "சுருங்குறித் தொடர்"
 #: widgets/textfindreplacewidget.cpp:106
 #, kde-format
 msgid "Respect Diacritic and Accents"
-msgstr ""
+msgstr "துணைக்குறிகளையும் ஒலிப்புக்குறிகளையும் பொருட்படுத்து"
 
 #: widgets/textgotolinewidget.cpp:49
 #, kde-format

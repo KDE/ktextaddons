@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Kishore G <kishore96@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-03-26 14:11+0530\n"
+"PO-Revision-Date: 2024-05-12 15:36+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.80\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -124,15 +124,13 @@ msgstr "இம்மொழிகளுக்கான மாற்றங்க�
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
 msgstr "ஏற்றுமதி…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "இறக்குமதி…"
 
@@ -283,10 +281,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "1/2... போன்றவற்றை ½... என மாற்று"
+msgstr "1/2… போன்றவற்றை ½… என மாற்று"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -329,10 +326,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "1st... போன்றவற்றை 1^st... என மாற்று(HTML பயன்முறையில்)"
+msgstr "1st… போன்றவற்றை 1^st… என மாற்று (HTML பயன்முறையில்)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -458,7 +454,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-03-04 09:12+0100\n"
+"PO-Revision-Date: 2024-05-12 08:49+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -127,17 +127,15 @@ msgstr "Zastąpienia i wyjątki dla języka:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
-msgstr "Wyeksportuj..."
+msgstr "Wyeksportuj…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Zaimportuj..."
+msgstr "Zaimportuj…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -286,8 +284,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
 msgstr "Zastą&p 1/2 ...½..."
 
@@ -331,10 +328,9 @@ msgstr "Pogru&biaj, przekreślaj i podkreślaj (tryb HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "Zastąp 1st... z 1^st... (tryb HTML)"
+msgstr "Zastąp 1st… wyrażeniem 1^st... (tryb HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -462,7 +458,7 @@ msgstr "Własna ścieżka systemowa:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
