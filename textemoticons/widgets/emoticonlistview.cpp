@@ -104,7 +104,7 @@ void EmoticonListView::contextMenuEvent(QContextMenuEvent *event)
     if (mIsRecentView) {
         if (model()->rowCount() > 0) {
             QMenu menu(this);
-            auto clearRecent = new QAction(i18n("Clear Recents"), &menu);
+            auto clearRecent = new QAction(i18nc("@action", "Clear Recents"), &menu);
             connect(clearRecent, &QAction::triggered, this, &EmoticonListView::clearHistory);
             menu.addAction(clearRecent);
             menu.exec(event->globalPos());

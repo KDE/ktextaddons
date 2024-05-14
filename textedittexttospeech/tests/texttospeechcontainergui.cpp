@@ -32,7 +32,7 @@ TextToSpeechGui::TextToSpeechGui(QWidget *parent)
 
     QMenu *editMenu = menuBar()->addMenu(QStringLiteral("Edit"));
 
-    auto act = new QAction(i18n("Speech text"), this);
+    auto act = new QAction(i18nc("@action", "Speech text"), this);
     connect(act, &QAction::triggered, this, &TextToSpeechGui::slotTextToSpeech);
     editMenu->addAction(act);
     // qDebug() << " isReady ? " << TextEditTextToSpeech::TextToSpeech::self()->isReady();

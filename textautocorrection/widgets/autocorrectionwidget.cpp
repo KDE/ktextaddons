@@ -146,11 +146,11 @@ AutoCorrectionWidget::AutoCorrectionWidget(QWidget *parent)
     auto menu = new QMenu(this);
     d->ui->importAutoCorrection->setMenu(menu);
 
-    auto act = new QAction(i18n("LibreOffice Autocorrection"), this);
+    auto act = new QAction(i18nc("@action", "LibreOffice Autocorrection"), this);
     act->setData(QVariant::fromValue(AutoCorrectionWidget::LibreOffice));
     menu->addAction(act);
 
-    act = new QAction(i18n("KMail/Calligra Autocorrection"), this);
+    act = new QAction(i18nc("@action", "KMail/Calligra Autocorrection"), this);
     act->setData(QVariant::fromValue(AutoCorrectionWidget::KMail));
     menu->addAction(act);
 
