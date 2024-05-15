@@ -17,11 +17,7 @@
 #include <QTreeView>
 #include <QVBoxLayout>
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-#include <TextAddonsWidgets/LineEditCatchReturnKey>
-#else
 #include <KLineEditEventHandler>
-#endif
 
 BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}
@@ -51,11 +47,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     mSearchLineEdit->setPlaceholderText(i18n("Search…"));
     mSearchLineEdit->setClearButtonEnabled(true);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-    new TextAddonsWidgets::LineEditCatchReturnKey(mSearchLineEdit, this);
-#else
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
-#endif
 
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &BergamotEngineLanguageWidget::slotError);

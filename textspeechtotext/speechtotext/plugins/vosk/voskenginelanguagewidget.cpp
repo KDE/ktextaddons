@@ -18,11 +18,7 @@
 #include <QTreeView>
 #include <QVBoxLayout>
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-#include <TextAddonsWidgets/LineEditCatchReturnKey>
-#else
 #include <KLineEditEventHandler>
-#endif
 
 VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     : QWidget{parent}
@@ -52,11 +48,7 @@ VoskEngineLanguageWidget::VoskEngineLanguageWidget(QWidget *parent)
     mSearchLineEdit->setPlaceholderText(i18n("Search…"));
     mSearchLineEdit->setClearButtonEnabled(true);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-    new TextAddonsWidgets::LineEditCatchReturnKey(mSearchLineEdit, this);
-#else
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
-#endif
 
     mTreeView->setObjectName(QStringLiteral("mTreeView"));
     connect(ManagerModelVoskSpeechToText::self(), &ManagerModelVoskSpeechToText::errorText, this, &VoskEngineLanguageWidget::slotError);
