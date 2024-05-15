@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-01-15 13:27+0100\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"PO-Revision-Date: 2024-05-10 16:21+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,9 +15,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
-#: texttospeechactions.cpp:28 texttospeechactions.cpp:31
+#: texttospeechactions.cpp:28
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@action"
+msgid "Stop"
+msgstr "Ferma"
+
+#: texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "Ferma"
@@ -84,10 +91,9 @@ msgid "Close"
 msgstr "Chiudi"
 
 #: texttospeechwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: texttospeechwidget.cpp:132
 #, kde-format

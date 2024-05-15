@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2024-05-12 15:36+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -33,14 +33,18 @@ msgid "Select Custom System Path"
 msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Si&mple Autocorrection"
+msgctxt "@action"
 msgid "LibreOffice Autocorrection"
-msgstr ""
+msgstr "&அடிப்படை தானியக்க திருத்தம்"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Si&mple Autocorrection"
+msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
-msgstr ""
+msgstr "&அடிப்படை தானியக்க திருத்தம்"
 
 #: widgets/autocorrectionwidget.cpp:431
 #, kde-format

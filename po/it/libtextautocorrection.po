@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-01-10 11:58+0100\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"PO-Revision-Date: 2024-05-10 16:21+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -33,12 +33,16 @@ msgid "Select Custom System Path"
 msgstr "Seleziona percorso di sistema personalizzato"
 
 #: widgets/autocorrectionwidget.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "LibreOffice Autocorrection"
+msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Correzione automatica di LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KMail/Calligra Autocorrection"
+msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Correzione automatica di KMail/Calligra"
 
@@ -126,17 +130,15 @@ msgstr "Sostituzioni ed eccezioni per la lingua:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
-msgstr "Esporta..."
+msgstr "Esporta…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Importa..."
+msgstr "Importa…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -285,8 +287,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
 msgstr "Sos&tituisci 1/2... con ½..."
 
@@ -334,8 +335,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr "Sostituisci 1st con 1^st... (modalità HTML)"
 
@@ -465,7 +465,7 @@ msgstr "Percorso di sistema personalizzato:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2024-05-10 06:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,7 +18,14 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: texttospeechactions.cpp:28 texttospeechactions.cpp:31
+#: texttospeechactions.cpp:28
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@action"
+msgid "Stop"
+msgstr "Ustavi"
+
+#: texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "Ustavi"

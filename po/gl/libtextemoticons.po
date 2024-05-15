@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2024-05-10 23:37+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -75,7 +75,9 @@ msgid "Custom"
 msgstr "Costumes"
 
 #: widgets/emoticonlistview.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear Recents"
+msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Borrar a lista de recentes"
 

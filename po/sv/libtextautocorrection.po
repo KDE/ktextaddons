@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2023-08-04 09:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -33,12 +33,16 @@ msgid "Select Custom System Path"
 msgstr "Välj egen systemsökväg"
 
 #: widgets/autocorrectionwidget.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "LibreOffice Autocorrection"
+msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice automatisk korrigering"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KMail/Calligra Autocorrection"
+msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Kmail och Calligra automatisk korrigering"
 

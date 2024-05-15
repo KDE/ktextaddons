@@ -1,18 +1,18 @@
-# SPDX-FileCopyrightText: 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-08-25 12:27+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2024-05-13 09:38+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -24,10 +24,9 @@ msgstr[1] "%1 remplacements effectués"
 
 #: plaintexteditor/plaintexteditor.cpp:168
 #: richtexteditor/richtexteditor.cpp:227
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "Vérifier l'orthographe..."
+msgstr "Vérification orthographique…"
 
 #: plaintexteditor/plaintexteditor.cpp:173
 #: richtexteditor/richtexteditor.cpp:234

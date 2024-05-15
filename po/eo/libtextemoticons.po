@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2024-05-10 09:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
@@ -76,7 +76,9 @@ msgid "Custom"
 msgstr "Propra"
 
 #: widgets/emoticonlistview.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear Recents"
+msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Viŝi Lasttempajn"
 

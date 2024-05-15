@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2023-08-07 20:54+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,7 +20,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: texttospeechactions.cpp:28 texttospeechactions.cpp:31
+#: texttospeechactions.cpp:28
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@action"
+msgid "Stop"
+msgstr "Gelditu"
+
+#: texttospeechactions.cpp:31
 #, kde-format
 msgid "Stop"
 msgstr "Gelditu"

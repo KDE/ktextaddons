@@ -1,18 +1,18 @@
-# SPDX-FileCopyrightText: 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-10-24 19:40+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"PO-Revision-Date: 2024-05-13 09:40+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -30,12 +30,16 @@ msgid "Select Custom System Path"
 msgstr "Sélectionnez un emplacement personnalisé du système"
 
 #: widgets/autocorrectionwidget.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "LibreOffice Autocorrection"
+msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Correction automatique pour LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KMail/Calligra Autocorrection"
+msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Correction automatique pour KMail / Calligra "
 
@@ -124,15 +128,13 @@ msgstr "Remplacement et exception pour la langue : "
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
 msgstr "Exporter..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "Importer..."
 
@@ -288,10 +290,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "Rem&placer 1/2... par ½..."
+msgstr "Rem&placer 1 / 2... par ½..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -337,10 +338,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "Remplacer 1er... par 1^er... (mode « HTML »)"
+msgstr "Remplacer 1er... par 1^er... (Mode « HTML »)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -468,7 +468,7 @@ msgstr "Emplacement personnalisé du système :"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

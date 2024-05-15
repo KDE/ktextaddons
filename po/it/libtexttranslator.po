@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
-# SPDX-FileCopyrightText: 2023 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2023-10-13 09:13+0200\n"
+"PO-Revision-Date: 2024-05-10 16:20+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,10 +336,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:51
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Cerca..."
+msgstr "Cerca…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:86
 #, kde-format
@@ -628,10 +627,9 @@ msgid "Translator Debug"
 msgstr "Debug del traduttore"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Salva come..."
+msgstr "Salva come…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -653,10 +651,9 @@ msgid "All Files (*)"
 msgstr "Tutti i file (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "Traduci"
+msgstr "Traduci…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222

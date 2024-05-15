@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-15 00:38+0000\n"
 "PO-Revision-Date: 2023-12-08 20:11+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -73,7 +73,9 @@ msgid "Custom"
 msgstr "Vlastné"
 
 #: widgets/emoticonlistview.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear Recents"
+msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Vymazať nedávne"
 
