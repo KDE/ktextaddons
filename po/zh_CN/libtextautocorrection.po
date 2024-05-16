@@ -33,15 +33,13 @@ msgid "Select Custom System Path"
 msgstr "选择自定义系统路径"
 
 #: widgets/autocorrectionwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice 自动更正"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail/Calligra 自动更正"

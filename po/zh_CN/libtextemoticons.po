@@ -75,8 +75,7 @@ msgid "Custom"
 msgstr "自定义"
 
 #: widgets/emoticonlistview.cpp:107
-#, fuzzy, kde-format
-#| msgid "Clear Recents"
+#, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "清除最近表情符号"

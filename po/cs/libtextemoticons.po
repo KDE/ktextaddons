@@ -75,11 +75,10 @@ msgid "Custom"
 msgstr "Vlastní"
 
 #: widgets/emoticonlistview.cpp:107
-#, fuzzy, kde-format
-#| msgid "Clear Recents"
+#, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
-msgstr "Vyprázdnit nedávné"
+msgstr ""
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
@@ -87,7 +86,6 @@ msgid "Add Smiley"
 msgstr "Přidat emotikon"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon..."
+#, kde-format
 msgid "Search Emoticon…"
-msgstr "Hledat emotikon..."
+msgstr ""

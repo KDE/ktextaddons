@@ -18,11 +18,10 @@ msgstr ""
 "X-Generator: Lokalize 22.12.1\n"
 
 #: texttospeechactions.cpp:28
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr "Zastavit"
+msgstr "Stop"
 
 #: texttospeechactions.cpp:31
 #, kde-format
@@ -91,10 +90,9 @@ msgid "Close"
 msgstr "Zavřít"
 
 #: texttospeechwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "Nastavit..."
+msgstr "Nastavit…"
 
 #: texttospeechwidget.cpp:132
 #, kde-format

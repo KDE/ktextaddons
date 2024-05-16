@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautocorrection\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:38+0000\n"
-"PO-Revision-Date: 2024-05-11 00:50+0200\n"
+"PO-Revision-Date: 2024-05-16 00:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -35,15 +35,13 @@ msgid "Select Custom System Path"
 msgstr "Seleccione la ruta personalizada del sistema"
 
 #: widgets/autocorrectionwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Corrección automática de LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Corrección automática de KMail/Calligra"

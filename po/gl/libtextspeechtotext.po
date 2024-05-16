@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-16 00:38+0000\n"
 "PO-Revision-Date: 2024-05-10 23:37+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -64,37 +64,37 @@ msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr "Configuración do complemento de Vosk"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
 #, kde-format
 msgid "Search…"
 msgstr "Buscar…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:103
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
 #, kde-format
 msgid "Update List"
 msgstr "Actualizar a lista"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:116
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
 #, kde-format
 msgid "Update list of languages from network"
 msgstr "Actualizar a lista de idiomas pola rede."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"

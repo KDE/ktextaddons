@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-05-16 00:38+0000\n"
 "PO-Revision-Date: 2024-05-12 15:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -64,37 +64,37 @@ msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:52
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
 #, kde-format
 msgid "Search…"
 msgstr "தேடு…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
 #, kde-format
 msgid "Download"
 msgstr "பதிவிறக்கு"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:103
 #, kde-format
 msgid "Delete"
 msgstr "நீக்கு"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:115
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
 #, kde-format
 msgid "Update List"
 msgstr "பட்டியலை புதுப்பி"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:116
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
 #, kde-format
 msgid "Update list of languages from network"
 msgstr "மொழிகளின் பட்டியலை இணையம் மூலமாக புதுப்பிக்கும்."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
 #, kde-format
 msgid "Error: %1"
 msgstr "சிக்கல்: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:192
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"

@@ -18,8 +18,7 @@ msgstr ""
 "X-Crowdin-File-ID: 49532\n"
 
 #: texttospeechactions.cpp:28
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "停止"

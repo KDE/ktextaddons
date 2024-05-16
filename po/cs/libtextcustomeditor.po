@@ -28,10 +28,9 @@ msgstr[2] "Provedeno %1 náhrad"
 
 #: plaintexteditor/plaintexteditor.cpp:168
 #: richtexteditor/richtexteditor.cpp:227
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "Zkontrolovat pravopis..."
+msgstr ""
 
 #: plaintexteditor/plaintexteditor.cpp:173
 #: richtexteditor/richtexteditor.cpp:234
