@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-15 00:38+0000\n"
-"PO-Revision-Date: 2024-05-05 13:56+0530\n"
+"PO-Revision-Date: 2024-05-19 16:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -55,7 +55,7 @@ msgstr "பயணிப்பது"
 #: core/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Regional"
-msgstr ""
+msgstr "வட்டாரம்"
 
 #: core/unicodeemoticonmanager.cpp:60
 #, kde-format
@@ -75,8 +75,7 @@ msgid "Custom"
 msgstr "விருப்பமானவை"
 
 #: widgets/emoticonlistview.cpp:107
-#, fuzzy, kde-format
-#| msgid "Clear Recents"
+#, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "சமீபமானவற்றை காலியாக்கு"
@@ -84,9 +83,9 @@ msgstr "சமீபமானவற்றை காலியாக்கு"
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
-msgstr ""
+msgstr "முகவடியை நுழை"
 
 #: widgets/emoticontexteditselector.cpp:83
 #, kde-format
 msgid "Search Emoticon…"
-msgstr ""
+msgstr "முகவடியைத் தேடலாம்…"
