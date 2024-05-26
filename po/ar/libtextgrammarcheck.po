@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:37+0000\n"
-"PO-Revision-Date: 2024-04-09 12:06+0400\n"
+"PO-Revision-Date: 2024-05-25 16:59+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -39,10 +39,9 @@ msgid "Check Again"
 msgstr "تحقق مجددًا"
 
 #: common/grammarresulttextedit.cpp:113
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "اضبط..."
+msgstr "اضبط…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
