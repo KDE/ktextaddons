@@ -24,8 +24,8 @@ class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
 {
 public:
     EmoticonTextEditSelectorPrivate(EmoticonTextEditSelector *q)
-        : mCategoryButtons(new EmoticonCategoryButtons(q))
-        , mSearchUnicodeLineEdit(new QLineEdit(q))
+        : mSearchUnicodeLineEdit(new QLineEdit(q))
+        , mCategoryButtons(new EmoticonCategoryButtons(q))
         , mEmoticonListView(new EmoticonListView(q))
         , mEmojiProxyModel(new TextEmoticonsCore::EmojiProxyModel(q))
         , qq(q)
@@ -56,8 +56,8 @@ public:
             qq->parentWidget()->close();
         }
     }
-    EmoticonCategoryButtons *const mCategoryButtons;
     QLineEdit *const mSearchUnicodeLineEdit;
+    EmoticonCategoryButtons *const mCategoryButtons;
     EmoticonListView *const mEmoticonListView;
     TextEmoticonsCore::EmojiProxyModel *const mEmojiProxyModel;
     bool mCustomEmojiSupport = false;
