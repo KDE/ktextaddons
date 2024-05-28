@@ -55,7 +55,7 @@
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -102,7 +102,7 @@
          <item>
           <spacer>
            <property name="orientation">
-            <enum>Qt::Vertical</enum>
+            <enum>Qt::Orientation::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -146,7 +146,7 @@
          <item>
           <widget class="QLabel" name="replaceLabel">
            <property name="text">
-            <string>Re&amp;place</string>
+            <string>&amp;Replace</string>
            </property>
            <property name="buddy">
             <cstring>replace</cstring>
@@ -168,16 +168,16 @@
        <item row="2" column="0">
         <widget class="TextAutoCorrectionWidgets::AutoCorrectionTreeWidget" name="treeWidget">
          <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
+          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
          </property>
          <property name="alternatingRowColors">
           <bool>true</bool>
          </property>
          <property name="selectionMode">
-          <enum>QAbstractItemView::ExtendedSelection</enum>
+          <enum>QAbstractItemView::SelectionMode::ExtendedSelection</enum>
          </property>
          <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectRows</enum>
+          <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
          </property>
          <property name="rootIsDecorated">
           <bool>false</bool>
@@ -239,7 +239,7 @@
            <item>
             <spacer>
              <property name="orientation">
-              <enum>Qt::Vertical</enum>
+              <enum>Qt::Orientation::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -260,7 +260,7 @@
             </sizepolicy>
            </property>
            <property name="selectionMode">
-            <enum>QAbstractItemView::ExtendedSelection</enum>
+            <enum>QAbstractItemView::SelectionMode::ExtendedSelection</enum>
            </property>
            <property name="sortingEnabled">
             <bool>true</bool>
@@ -307,7 +307,7 @@
            <item>
             <spacer>
              <property name="orientation">
-              <enum>Qt::Vertical</enum>
+              <enum>Qt::Orientation::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -328,7 +328,7 @@
             </sizepolicy>
            </property>
            <property name="selectionMode">
-            <enum>QAbstractItemView::ExtendedSelection</enum>
+            <enum>QAbstractItemView::SelectionMode::ExtendedSelection</enum>
            </property>
            <property name="sortingEnabled">
             <bool>true</bool>
@@ -440,7 +440,7 @@
        <item>
         <spacer>
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -518,7 +518,7 @@
            <item row="0" column="3" rowspan="2">
             <spacer name="horizontalSpacer_2">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -552,7 +552,7 @@
            <item>
             <spacer name="horizontalSpacer_3">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -580,7 +580,7 @@
            <item row="0" column="3" rowspan="2">
             <spacer name="horizontalSpacer_5">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -673,7 +673,7 @@
            <item>
             <spacer name="horizontalSpacer_4">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -690,7 +690,7 @@
        <item>
         <spacer>
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -720,14 +720,14 @@
           <string>TextLabel</string>
          </property>
          <property name="textInteractionFlags">
-          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
          </property>
         </widget>
        </item>
        <item row="0" column="3">
         <spacer name="horizontalSpacer_6">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -750,14 +750,14 @@
           <string>TextLabel</string>
          </property>
          <property name="textInteractionFlags">
-          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
          </property>
         </widget>
        </item>
        <item row="1" column="3">
         <spacer name="horizontalSpacer_7">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -812,7 +812,7 @@
        <item row="4" column="1">
         <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -849,6 +849,20 @@
   <tabstop>enabledAutocorrection</tabstop>
   <tabstop>autocorrectionLanguage</tabstop>
   <tabstop>tabWidget</tabstop>
+  <tabstop>advancedAutocorrection</tabstop>
+  <tabstop>find</tabstop>
+  <tabstop>replace</tabstop>
+  <tabstop>treeWidget</tabstop>
+  <tabstop>addButton</tabstop>
+  <tabstop>removeButton</tabstop>
+  <tabstop>abbreviation</tabstop>
+  <tabstop>abbreviationList</tabstop>
+  <tabstop>add1</tabstop>
+  <tabstop>remove1</tabstop>
+  <tabstop>twoUpperLetter</tabstop>
+  <tabstop>twoUpperLetterList</tabstop>
+  <tabstop>add2</tabstop>
+  <tabstop>remove2</tabstop>
   <tabstop>upperCase</tabstop>
   <tabstop>upperUpper</tabstop>
   <tabstop>ignoreDoubleSpace</tabstop>
@@ -857,26 +871,20 @@
   <tabstop>autoFormatUrl</tabstop>
   <tabstop>autoChangeFormat</tabstop>
   <tabstop>autoSuperScript</tabstop>
+  <tabstop>addNonBreakingSpaceInFrench</tabstop>
+  <tabstop>replaceDoubleQuotesByFrenchQuotes</tabstop>
   <tabstop>typographicDoubleQuotes</tabstop>
   <tabstop>doubleQuote1</tabstop>
+  <tabstop>doubleQuote2</tabstop>
+  <tabstop>doubleDefault</tabstop>
   <tabstop>typographicSingleQuotes</tabstop>
   <tabstop>singleQuote1</tabstop>
   <tabstop>singleQuote2</tabstop>
   <tabstop>singleDefault</tabstop>
-  <tabstop>advancedAutocorrection</tabstop>
-  <tabstop>find</tabstop>
-  <tabstop>replace</tabstop>
-  <tabstop>addButton</tabstop>
-  <tabstop>removeButton</tabstop>
-  <tabstop>treeWidget</tabstop>
-  <tabstop>abbreviation</tabstop>
-  <tabstop>add1</tabstop>
-  <tabstop>remove1</tabstop>
-  <tabstop>abbreviationList</tabstop>
-  <tabstop>twoUpperLetter</tabstop>
-  <tabstop>add2</tabstop>
-  <tabstop>remove2</tabstop>
-  <tabstop>twoUpperLetterList</tabstop>
+  <tabstop>customSystemPath</tabstop>
+  <tabstop>customSystemPathToolButton</tabstop>
+  <tabstop>customWritablePath</tabstop>
+  <tabstop>customWritablePathToolButton</tabstop>
   <tabstop>exportAutoCorrection</tabstop>
   <tabstop>importAutoCorrection</tabstop>
  </tabstops>
