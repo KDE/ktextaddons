@@ -29,14 +29,17 @@ EmoticonListView::EmoticonListView(QWidget *parent)
     auto emoticonDelegate = new EmoticonItemDelegate(this);
     emoticonDelegate->setObjectName(QStringLiteral("emoticonDelegate"));
     setItemDelegate(emoticonDelegate);
-    connect(this, &QListView::clicked, this, [this](const QModelIndex &index) {
-        const QString emojiIdentifier = index.data(TextEmoticonsCore::EmojiModel::Identifier).toString();
-        const QString emojiStr = index.data().toString();
-        Q_EMIT emojiItemSelected(emojiStr, emojiIdentifier);
-    });
+    connect(this, &QListView::clicked, this, &EmoticonListView::selectEmoji);
 }
 
 EmoticonListView::~EmoticonListView() = default;
+
+void EmoticonListView::selectEmoji(const QModelIndex &index)
+{
+    const QString emojiIdentifier = index.data(TextEmoticonsCore::EmojiModel::Identifier).toString();
+    const QString emojiStr = index.data().toString();
+    Q_EMIT emojiItemSelected(emojiStr, emojiIdentifier);
+}
 
 void EmoticonListView::keyPressEvent(QKeyEvent *event)
 {
@@ -49,6 +52,12 @@ void EmoticonListView::keyPressEvent(QKeyEvent *event)
             Q_EMIT fontSizeChanged(--fontSize);
         }
     } else {
+        if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return) {
+            auto index = currentIndex();
+            if (index.isValid()) {
+                selectEmoji(index);
+            }
+        }
         QListView::keyPressEvent(event);
     }
 }

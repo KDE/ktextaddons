@@ -32,7 +32,8 @@ protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
-    void applyFontSize();
+    TEXTEMOTICONSWIDGETS_NO_EXPORT void applyFontSize();
+    TEXTEMOTICONSWIDGETS_NO_EXPORT void selectEmoji(const QModelIndex &index);
     int mFontSize = 18;
     int mRowSize = 0;
     bool mIsRecentView = false;
