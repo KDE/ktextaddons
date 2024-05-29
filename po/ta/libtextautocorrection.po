@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-05-29 00:38+0000\n"
 "PO-Revision-Date: 2024-05-19 16:52+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -163,9 +163,10 @@ msgstr "&கண்டுபிடி"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, kde-format
-msgid "Re&place"
-msgstr "&மாற்று"
+#, fuzzy, kde-format
+#| msgid "Replace"
+msgid "&Replace"
+msgstr "மாற்று"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -463,6 +464,9 @@ msgstr "…"
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr ""
+
+#~ msgid "Re&place"
+#~ msgstr "&மாற்று"
 
 #~ msgctxt "@title:window"
 #~ msgid "Select Special Characters"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-05-29 00:38+0000\n"
 "PO-Revision-Date: 2024-05-10 16:21+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -167,9 +167,10 @@ msgstr "Tro&va"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, kde-format
-msgid "Re&place"
-msgstr "Sos&tituisci"
+#, fuzzy, kde-format
+#| msgid "Replace"
+msgid "&Replace"
+msgstr "Sostituisci"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -472,6 +473,9 @@ msgstr "…"
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "Percorso scrivibile personalizzato:"
+
+#~ msgid "Re&place"
+#~ msgstr "Sos&tituisci"
 
 #~ msgid "..."
 #~ msgstr "..."

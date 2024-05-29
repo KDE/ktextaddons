@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-05-29 00:38+0000\n"
 "PO-Revision-Date: 2024-05-26 12:05+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -14,9 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
-" || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -35,14 +34,12 @@ msgstr "Wybierz własną ścieżkę systemową"
 
 #: widgets/autocorrectionwidget.cpp:149
 #, kde-format
-#| msgid "LibreOffice Autocorrection"
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Samopoprawianie LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:153
 #, kde-format
-#| msgid "KMail/Calligra Autocorrection"
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Samopoprawianie KMail/Calligra"
@@ -168,9 +165,10 @@ msgstr "Po&szukaj"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, kde-format
-msgid "Re&place"
-msgstr "Zastą&p"
+#, fuzzy, kde-format
+#| msgid "Replace"
+msgid "&Replace"
+msgstr "Zastąp"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -470,6 +468,9 @@ msgstr "…"
 msgid "Custom Writable Path:"
 msgstr "Własna ścieżka do zapisu:"
 
+#~ msgid "Re&place"
+#~ msgstr "Zastą&p"
+
 #~ msgid "..."
 #~ msgstr "..."
 
@@ -482,4 +483,3 @@ msgstr "Własna ścieżka do zapisu:"
 
 #~ msgid "Select"
 #~ msgstr "Wybierz"
-
