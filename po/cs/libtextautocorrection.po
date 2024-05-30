@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-29 00:38+0000\n"
-"PO-Revision-Date: 2023-11-10 16:09+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-05-29 11:35+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -36,13 +36,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
-msgstr ""
+msgstr "Automatické opravu LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
-msgstr ""
+msgstr "Automatické opravy KMail/Calligra"
 
 #: widgets/autocorrectionwidget.cpp:431
 #, kde-format
@@ -134,7 +134,7 @@ msgstr "Exportovat…"
 #: widgets/ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import…"
-msgstr ""
+msgstr "Importovat…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
@@ -163,10 +163,9 @@ msgstr "Na&jít"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgid "&Replace"
-msgstr "Nahradit"
+msgstr "Nah&radit"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -284,7 +283,7 @@ msgstr "Většina standardních zápisů zlomků bude převedena, budou-li dostu
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr ""
+msgstr "Na&hradit 1/2 za ½..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -330,7 +329,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr ""
+msgstr "Nahradit 1st… za 1^st… (režim HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
@@ -463,6 +462,3 @@ msgstr "…"
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr ""
-
-#~ msgid "Re&place"
-#~ msgstr "Na&hradit"
