@@ -165,7 +165,7 @@ msgstr "查找(&F)"
 #: widgets/ui/autocorrectionwidget.ui:149
 #, kde-format
 msgid "&Replace"
-msgstr ""
+msgstr "替换(&R)"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
