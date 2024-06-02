@@ -62,6 +62,7 @@ public:
     QComboBox *toCombobox = nullptr;
     QPushButton *translate = nullptr;
     QPushButton *clear = nullptr;
+    QToolButton *closeBtn = nullptr;
     QLabel *engineNameLabel = nullptr;
     TextTranslator::TranslatorEngineClient *translatorClient = nullptr;
     TextTranslator::TranslatorEnginePlugin *translatorPlugin = nullptr;
@@ -212,18 +213,18 @@ void TranslatorWidget::init()
                                    style()->pixelMetric(QStyle::PM_LayoutTopMargin),
                                    style()->pixelMetric(QStyle::PM_LayoutRightMargin),
                                    style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
-    auto closeBtn = new QToolButton(this);
-    closeBtn->setObjectName(QStringLiteral("close-button"));
-    closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
-    closeBtn->setIconSize(QSize(16, 16));
-    closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
+    d->closeBtn = new QToolButton(this);
+    d->closeBtn->setObjectName(QStringLiteral("close-button"));
+    d->closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
+    d->closeBtn->setIconSize(QSize(16, 16));
+    d->closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
 
 #ifndef QT_NO_ACCESSIBILITY
-    closeBtn->setAccessibleName(i18n("Close"));
+    d->closeBtn->setAccessibleName(i18n("Close"));
 #endif
-    closeBtn->setAutoRaise(true);
-    hboxLayout->addWidget(closeBtn);
-    connect(closeBtn, &QToolButton::clicked, this, &TranslatorWidget::slotCloseWidget);
+    d->closeBtn->setAutoRaise(true);
+    hboxLayout->addWidget(d->closeBtn);
+    connect(d->closeBtn, &QToolButton::clicked, this, &TranslatorWidget::slotCloseWidget);
 
     auto label = new QLabel(i18nc("Translate from language", "From:"), this);
     hboxLayout->addWidget(label);
@@ -480,6 +481,7 @@ void TranslatorWidget::slotInvertLanguage()
 void TranslatorWidget::setStandalone(bool b)
 {
     d->standalone = b;
+    d->closeBtn->setVisible(b);
 }
 
 void TranslatorWidget::slotCloseWidget()
