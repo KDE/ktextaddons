@@ -4,8 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "plaintexteditor.h"
-using namespace Qt::Literals::StringLiterals;
-
 #include "config-textcustomeditor.h"
 #include "widgets/textmessageindicator.h"
 #include <KConfig>
@@ -43,7 +41,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <Sonnet/Highlighter>
 
 using namespace TextCustomEditor;
-
+using namespace Qt::Literals::StringLiterals;
 class Q_DECL_HIDDEN PlainTextEditor::PlainTextEditorPrivate
 {
 public:
