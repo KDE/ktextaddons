@@ -22,8 +22,8 @@ TextAutoCorrectionSettings *TextAutoCorrectionSettings::self()
 }
 
 TextAutoCorrectionSettings::TextAutoCorrectionSettings()
+    : mConfigSyncTimer(new QTimer(this))
 {
-    mConfigSyncTimer = new QTimer(this);
     mConfigSyncTimer->setSingleShot(true);
     connect(mConfigSyncTimer, &QTimer::timeout, this, &TextAutoCorrectionSettings::slotSyncNow);
 }

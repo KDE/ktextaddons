@@ -38,6 +38,6 @@ private:
     ~TextAutoCorrectionSettings() override;
     static TextAutoCorrectionSettings *mSelf;
 
-    QTimer *mConfigSyncTimer = nullptr;
+    QTimer *const mConfigSyncTimer;
 };
 }
