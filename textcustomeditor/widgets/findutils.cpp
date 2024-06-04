@@ -5,7 +5,6 @@
 */
 
 #include "findutils.h"
-#include "textfindreplacewidget.h"
 #include <TextUtils/ConvertText>
 
 #include <QDebug>
