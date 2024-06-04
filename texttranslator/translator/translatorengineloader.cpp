@@ -5,13 +5,13 @@
 */
 
 #include "translatorengineloader.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttranslator_debug.h"
 #include "translatorengineclient.h"
 #include <QCoreApplication>
 #include <QDir>
 #include <QPluginLoader>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 class TextTranslator::TranslatorEngineLoaderPrivate
 {
