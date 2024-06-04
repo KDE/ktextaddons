@@ -22,7 +22,7 @@ TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     QPalette pal = palette();
     pal.setColor(QPalette::Active, QPalette::Window, QApplication::palette().highlight().color());
     setPalette(pal);
-    // if the layout is LtR, we can safely place it in the right position
+    // if the layout is LTR, we can safely place it in the right position
     if (layoutDirection() == Qt::LeftToRight) {
         move(10, parentWidget()->height() - 10);
     }
