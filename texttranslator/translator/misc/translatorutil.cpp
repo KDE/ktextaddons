@@ -5,15 +5,15 @@
 */
 
 #include "translatorutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttranslator_debug.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QComboBox>
-using namespace TextTranslator;
 
+using namespace Qt::Literals::StringLiterals;
+using namespace TextTranslator;
 TranslatorUtil::TranslatorUtil() = default;
 
 QMap<TranslatorUtil::Language, QString> TranslatorUtil::translatedLanguages()
