@@ -37,7 +37,7 @@ public:
         lay->addWidget(mCharSelect);
 
         QPushButton *okButton = mButtonBox->button(QDialogButtonBox::Ok);
-        okButton->setText(i18n("Insert"));
+        okButton->setText(i18nc("@action:button", "Insert"));
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         lay->addWidget(mButtonBox);
         q->connect(mButtonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
