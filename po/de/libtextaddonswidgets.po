@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:28+0000\n"
+"POT-Creation-Date: 2024-06-06 00:38+0000\n"
 "PO-Revision-Date: 2023-04-29 12:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -26,7 +26,9 @@ msgid "Select Special Characters"
 msgstr "Sonderzeichen auswählen"
 
 #: selectspecialchardialog.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert"
+msgctxt "@action:button"
 msgid "Insert"
 msgstr "Einfügen"
 
