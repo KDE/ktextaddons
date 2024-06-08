@@ -1,0 +1,192 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+#
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-06-05 00:38+0000\n"
+"PO-Revision-Date: 2024-06-07 11:02+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.05.0\n"
+
+#: plaintexteditor/plaintexteditfindbar.cpp:120
+#: richtexteditor/richtexteditfindbar.cpp:120
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "%Направена е 1 замяна"
+msgstr[1] "Направени са %1 замени"
+
+#: plaintexteditor/plaintexteditor.cpp:166
+#: richtexteditor/richtexteditor.cpp:227
+#, kde-format
+msgid "Check Spelling…"
+msgstr "Проверка на правописа…"
+
+#: plaintexteditor/plaintexteditor.cpp:171
+#: richtexteditor/richtexteditor.cpp:234
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "Автоматична проверка на правописа"
+
+#: plaintexteditor/plaintexteditor.cpp:177
+#: richtexteditor/richtexteditor.cpp:240
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "Език за проверка на правописа"
+
+#: plaintexteditor/plaintexteditor.cpp:205
+#: richtextbrowser/richtextbrowser.cpp:165
+#: richtexteditor/richtexteditor.cpp:273
+#, kde-format
+msgid "Speak Text"
+msgstr "Изговаряне на текст"
+
+#: plaintexteditor/plaintexteditor.cpp:384
+#: richtexteditor/richtexteditor.cpp:491
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "Няма нищо за проверка."
+
+#: plaintexteditor/plaintexteditor.cpp:389
+#: richtexteditor/richtexteditor.cpp:509
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "Не е намерен бекенд за проверка на правописа."
+
+#: richtexteditor/richtexteditor.cpp:266
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "Разрешаване на табулациите"
+
+#: richtexteditor/richtexteditor.cpp:501
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr ""
+"Не е намерен бекенд за проверка на правописа.Искате ли да изпратите "
+"имейлакакто е непроверен?"
+
+#: richtexteditor/richtexteditor.cpp:503
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "Изпращане"
+
+#: richtexteditor/richtexteditor.cpp:525
+#, kde-format
+msgid "Skip"
+msgstr "Пропускане"
+
+#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
+#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "Затваряне"
+
+#: widgets/texteditfindbarbase.cpp:142
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"Достигнат е краят на съобщението.\n"
+"Фразата '%1' не беше намерена."
+
+#: widgets/textfindreplacewidget.cpp:26
+#, kde-format
+msgid "Replace"
+msgstr "Замяна"
+
+#: widgets/textfindreplacewidget.cpp:27
+#, kde-format
+msgid "Replace All"
+msgstr "Замяна на всички"
+
+#: widgets/textfindreplacewidget.cpp:30
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "Замяна:"
+
+#: widgets/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Предишен"
+
+#: widgets/textfindreplacewidget.cpp:67
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Следващ"
+
+#: widgets/textfindreplacewidget.cpp:73
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "&Търсене:"
+
+#: widgets/textfindreplacewidget.cpp:76
+#, kde-format
+msgid "Text to search for"
+msgstr "Търсен текст"
+
+#: widgets/textfindreplacewidget.cpp:82
+#, kde-format
+msgid "Jump to next match"
+msgstr "Преход към следващо съвпадение"
+
+#: widgets/textfindreplacewidget.cpp:87
+#, kde-format
+msgid "Jump to previous match"
+msgstr "Преход към предишно съвпадение"
+
+#: widgets/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Options"
+msgstr "Опции"
+
+#: widgets/textfindreplacewidget.cpp:94
+#, kde-format
+msgid "Modify search behavior"
+msgstr "Промяна начина на търсене"
+
+#: widgets/textfindreplacewidget.cpp:97
+#, kde-format
+msgid "Case sensitive"
+msgstr "Чувствителен регистър"
+
+#: widgets/textfindreplacewidget.cpp:100
+#, kde-format
+msgid "Whole word"
+msgstr "Цяла дума"
+
+#: widgets/textfindreplacewidget.cpp:103
+#, kde-format
+msgid "Regular Expression"
+msgstr "Регулярен израз"
+
+#: widgets/textfindreplacewidget.cpp:106
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "Спазване на диакритичните знаци и ударенията"
+
+#: widgets/textgotolinewidget.cpp:49
+#, kde-format
+msgid "Go to Line:"
+msgstr "Отиване на ред:"
+
+#: widgets/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "Go"
