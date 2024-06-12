@@ -24,8 +24,7 @@ msgid "Select Special Characters"
 msgstr "Vyberte zvláštní znaky"
 
 #: selectspecialchardialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Vložit"
