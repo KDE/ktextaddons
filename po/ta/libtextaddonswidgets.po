@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-06 00:38+0000\n"
-"PO-Revision-Date: 2024-05-05 13:54+0530\n"
+"PO-Revision-Date: 2024-06-16 17:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: selectspecialchardialog.cpp:32
 #, kde-format
@@ -24,8 +24,7 @@ msgid "Select Special Characters"
 msgstr "மேம்பட்ட எழுத்துகளைத் தேர்ந்தெடுப்பது"
 
 #: selectspecialchardialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Insert"
+#, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "நுழை"
