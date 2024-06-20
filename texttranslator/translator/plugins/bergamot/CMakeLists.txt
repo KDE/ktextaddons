@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
-if (0)
+if(0)
 include(ExternalProject)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
 kde_enable_exceptions()
@@ -12,7 +12,7 @@ SET(USE_WASM_COMPATIBLE_SOURCE OFF CACHE BOOL "Don't build wasm compatible sourc
 add_definitions(-DPHF_NO_LIBCXX=0)
 #add_definitions(-DCUDA_FOUND=0)
 add_definitions(-D__STDC_VERSION__=0)
-if (0)
+if(0)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/3rd_party/spdlog/include/)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/bergamot-translator/3rd_party/marian-dev/src/3rd_party)
@@ -123,7 +123,7 @@ target_link_libraries(translator_bergamot PRIVATE KF6::TextTranslator KF6::I18n 
 
 install(TARGETS translator_bergamot  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()

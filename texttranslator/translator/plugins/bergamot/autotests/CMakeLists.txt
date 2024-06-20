@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
 # SPDX-License-Identifier: BSD-3-Clause
-add_definitions( -DBERGAMOT_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+add_definitions(-DBERGAMOT_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
 macro(add_translator_bergamot_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
@@ -10,7 +10,7 @@ macro(add_translator_bergamot_unittest _source)
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
         libbergamot
-    )
+)
 endmacro()
 add_translator_bergamot_unittest(bergamotengineutilstest.cpp)
 add_translator_bergamot_unittest(translatortest.cpp)

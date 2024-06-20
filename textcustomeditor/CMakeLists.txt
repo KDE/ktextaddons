@@ -78,9 +78,9 @@ if(TARGET KF6::KIOWidgets)
     target_link_libraries(KF6TextCustomEditor PRIVATE KF6::KIOWidgets)
 endif()
 
-if (TARGET Qt6::TextToSpeech)
+if(TARGET Qt6::TextToSpeech)
     target_link_libraries(KF6TextCustomEditor PRIVATE KF6TextEditTextToSpeech
-    )
+)
 endif()
 
 ecm_qt_declare_logging_category(KF6TextCustomEditor HEADER textcustomeditor_debug.h
@@ -89,7 +89,7 @@ ecm_qt_declare_logging_category(KF6TextCustomEditor HEADER textcustomeditor_debu
     OLD_CATEGORY_NAMES org.kde.kf6.textcustomeditor
     DESCRIPTION "KF6 (textcustomeditor)" EXPORT KTEXTADDONS)
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextCustomEditor PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextCustomEditor BASE_NAME TextCustomEditor)
@@ -113,7 +113,7 @@ ecm_generate_headers(TextCustomEditor_CamelCasetextrichtexteditor_HEADERS
     REQUIRED_HEADERS TextCustomEditor_richtexteditor_HEADERS
     PREFIX TextCustomEditor
     RELATIVE richtexteditor
-    )
+)
 
 ecm_generate_headers(TextCustomEditor_CamelCaserichtextbrowser_HEADERS
     HEADER_NAMES
@@ -123,7 +123,7 @@ ecm_generate_headers(TextCustomEditor_CamelCaserichtextbrowser_HEADERS
     REQUIRED_HEADERS TextCustomEditor_richtextbrowser_HEADERS
     PREFIX TextCustomEditor
     RELATIVE richtextbrowser
-    )
+)
 
 ecm_generate_headers(TextCustomEditor_CamelCaseplaintexteditor_HEADERS
     HEADER_NAMES
@@ -134,7 +134,7 @@ ecm_generate_headers(TextCustomEditor_CamelCaseplaintexteditor_HEADERS
     REQUIRED_HEADERS TextCustomEditor_plaintexteditor_HEADERS
     PREFIX TextCustomEditor
     RELATIVE plaintexteditor
-    )
+)
 
 ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_widgets_HEADERS
     HEADER_NAMES
@@ -143,7 +143,7 @@ ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_widgets_HEADERS
     REQUIRED_HEADERS TextCustomEditor_texteditor_widgets_HEADERS
     PREFIX TextCustomEditor
     RELATIVE widgets
-    )
+)
 
 ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_core_HEADERS
     HEADER_NAMES
@@ -151,7 +151,7 @@ ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_core_HEADERS
     REQUIRED_HEADERS TextCustomEditor_texteditor_core_HEADERS
     PREFIX TextCustomEditor
     RELATIVE core
-    )
+)
 
 install(FILES
     ${TextCustomEditor_texteditor_core_HEADERS}
@@ -194,7 +194,7 @@ install(FILES
 )
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KF6TextCustomEditor_QCH
         NAME KF6TextCustomEditor
@@ -216,16 +216,16 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 endif()
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF6TextCustomEditor_QCH
         FILE KF6TextCustomEditorQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
 set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextCustomEditorQchTargets.cmake\")")
 endif()
 
@@ -235,7 +235,7 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(plaintexteditor/autotests)
     add_subdirectory(richtexteditor/autotests)
     add_subdirectory(richtextbrowser/autotests)

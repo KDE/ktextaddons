@@ -10,22 +10,22 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOCORRECTIONCORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautocorrectioncore_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoCorrectionCoreConfigVersion.cmake"
     SOVERSION 1
-    )
+)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoCorrectionCoreConfig.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoCorrectionCoreConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
-    )
+)
 
 install(EXPORT KF6TextAutoCorrectionTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6TextAutoCorrectionCoreTargets.cmake NAMESPACE KF6::)
 
 kconfig_add_kcfg_files(textautocorrection_settings_SRCS
     settings/textautocorrectionsetting_base.kcfgc
-    )
+)
 
-add_library(KF6TextAutoCorrectionCore )
+add_library(KF6TextAutoCorrectionCore)
 add_library(KF6::TextAutoCorrectionCore ALIAS KF6TextAutoCorrectionCore)
 ecm_qt_declare_logging_category(KF6TextAutoCorrectionCore HEADER textautocorrection_debug.h
         IDENTIFIER TEXTAUTOCORRECTION_LOG
@@ -33,7 +33,7 @@ ecm_qt_declare_logging_category(KF6TextAutoCorrectionCore HEADER textautocorrect
         OLD_CATEGORY_NAMES org.kde.kf6.textautocorrection
 	DESCRIPTION "KF6 (text AutoCorrection)"
 	EXPORT KTEXTADDONS
-    )
+)
 
 ecm_qt_declare_logging_category(KF6TextAutoCorrectionCore HEADER textautocorrectionautocorrect_debug.h
         IDENTIFIER TEXTAUTOCORRECTION_AUTOCORRECT_LOG
@@ -41,7 +41,7 @@ ecm_qt_declare_logging_category(KF6TextAutoCorrectionCore HEADER textautocorrect
         OLD_CATEGORY_NAMES org.kde.kf6.textautocorrection.autocorrect
 	DESCRIPTION "KF6 (AutoCorrection autocorrect text)"
 	EXPORT KTEXTADDONS
-    )
+)
 
 target_sources(KF6TextAutoCorrectionCore PRIVATE
     ${textautocorrection_settings_SRCS}
@@ -67,9 +67,9 @@ target_sources(KF6TextAutoCorrectionCore PRIVATE
     settings/textautocorrectionsettings.h
     settings/textautocorrectionsettings.cpp
 
-    )
+)
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextAutoCorrectionCore PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextAutoCorrectionCore BASE_NAME textautocorrectioncore)
@@ -83,7 +83,7 @@ target_link_libraries(KF6TextAutoCorrectionCore
     KF6::I18n
     KF6::Archive
     Qt::Xml
-    )
+)
 
 target_include_directories(KF6TextAutoCorrectionCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/>")
 
@@ -91,14 +91,14 @@ set_target_properties(KF6TextAutoCorrectionCore PROPERTIES
     VERSION ${TEXTAUTOCORRECTIONCORE_VERSION}
     SOVERSION ${TEXTAUTOCORRECTIONCORE_SOVERSION}
     EXPORT_NAME TextAutoCorrectionCore
-    )
+)
 
 install(TARGETS
     KF6TextAutoCorrectionCore
     EXPORT KF6TextAutoCorrectionTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    )
+)
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
@@ -111,7 +111,7 @@ ecm_generate_headers(TextAutoCorrectionCore_Camelcaseautocorrection_HEADERS
 
     REQUIRED_HEADERS TextAutoCorrectionCore_autocorrection_HEADERS
     PREFIX TextAutoCorrectionCore
-    )
+)
 
 ecm_generate_headers(TextAutoCorrectionCore_Camelcaseautocorrectionimport_HEADERS
     HEADER_NAMES
@@ -122,7 +122,7 @@ ecm_generate_headers(TextAutoCorrectionCore_Camelcaseautocorrectionimport_HEADER
     REQUIRED_HEADERS TextAutoCorrectionCore_autocorrectionimport_HEADERS
     PREFIX TextAutoCorrectionCore
     RELATIVE import
-    )
+)
 
 ecm_generate_headers(TextAutoCorrectionCore_Camelcasesettings_HEADERS
     HEADER_NAMES
@@ -130,7 +130,7 @@ ecm_generate_headers(TextAutoCorrectionCore_Camelcasesettings_HEADERS
     REQUIRED_HEADERS TextAutoCorrectionCore_settings_HEADERS
     PREFIX TextAutoCorrectionCore
     RELATIVE settings
-    )
+)
 
 
 install(FILES
@@ -139,7 +139,7 @@ install(FILES
     ${TextAutoCorrectionCore_Camelcasesettings_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/TextAutoCorrectionCore
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectioncore_export.h
@@ -150,9 +150,9 @@ install(FILES
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/textautocorrectioncore
     COMPONENT Devel
-    )
+)
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KF6TextAutoCorrectionCore_QCH
         NAME KF6TextAutoCorrectionCore
@@ -173,16 +173,16 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 endif()
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF6TextAutoCorrectionCore_QCH
         FILE KF6TextAutoCorrectionQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
 set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoCorrectionQchTargets.cmake\")")
 endif()
 
@@ -190,10 +190,10 @@ configure_package_config_file(
 	"${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoCorrectionCoreConfig.cmake.in"
 	"${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoCorrectionCoreConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-    )
+)
 
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectioncore_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/ COMPONENT Devel
-    )
+)

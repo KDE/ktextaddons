@@ -20,6 +20,6 @@ ecm_qt_declare_logging_category(translator_yandex
 target_link_libraries(translator_yandex PRIVATE KF6::TextTranslator KF6::I18n)
 
 install(TARGETS translator_yandex  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

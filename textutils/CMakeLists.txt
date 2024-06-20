@@ -30,7 +30,7 @@ ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
     OLD_CATEGORY_NAMES org.kde.kf6.textutils
     DESCRIPTION "KF6 (textutils)" EXPORT KTEXTADDONS)
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextUtils PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextUtils BASE_NAME TextUtils)
@@ -69,13 +69,13 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF6TextUtils_QCH
         FILE KF6TextUtilsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
 set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextUtilsQchTargets.cmake\")")
 endif()
 
@@ -105,7 +105,7 @@ install(FILES
 )
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KF6TextUtils_QCH
         NAME KF6TextUtils
@@ -123,9 +123,9 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 endif()
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

@@ -6,5 +6,5 @@ target_link_libraries(slidecontainer_gui
     Qt::Gui
     Qt::Widgets
     KF6::TextAddonsWidgets
-    )
+)
 

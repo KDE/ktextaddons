@@ -26,7 +26,7 @@ target_sources(KF6TextEmoticonsWidgets PRIVATE
     emoticoncategorybutton.cpp
     emoticonitemdelegate.cpp
     emoticonitemdelegate.h
-    )
+)
 
 target_link_libraries(KF6TextEmoticonsWidgets
     PUBLIC
@@ -42,7 +42,7 @@ ecm_qt_declare_logging_category(KF6TextEmoticonsWidgets HEADER textemoticonswidg
     OLD_CATEGORY_NAMES org.kde.kf6.textemoticonswidgets
     DESCRIPTION "KF6 (textaddons textemoticons widgets)" EXPORT KTEXTADDONS)
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextEmoticonsWidgets PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextEmoticonsWidgets BASE_NAME TextEmoticonsWidgets)
@@ -110,7 +110,7 @@ install(FILES
 )
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KF6TextEmoticonsWidgets_QCH
         NAME KF6TextEmoticonsWidgets
@@ -130,16 +130,16 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 endif()
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF6TextEmoticonsWidgets_QCH
         FILE KF6TextEmoticonsWidgetsQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
 set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEmoticonsWidgetsQchTargets.cmake\")")
 endif()
 

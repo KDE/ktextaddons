@@ -94,7 +94,7 @@ target_link_libraries(speechtotext_vosk PRIVATE KF6::TextSpeechToText KF6::I18n 
 
 install(TARGETS speechtotext_vosk  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
 
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()

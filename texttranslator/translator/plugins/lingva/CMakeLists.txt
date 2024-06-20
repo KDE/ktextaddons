@@ -33,6 +33,6 @@ target_link_libraries(translator_lingva PRIVATE
 )
 
 install(TARGETS translator_lingva  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

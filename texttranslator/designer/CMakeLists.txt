@@ -6,7 +6,7 @@ ecm_qtdesignerplugin_widget(TextTranslator::TranslatorWidget
     TOOLTIP "A widget to make translate string"
     WHATSTHIS "A widget to make translate string."
     GROUP "Input (KF6)"
-    )
+)
 
 ecm_add_qtdesignerplugin(texttranslatorwidgets
 	NAME TextTranslatorWidgets
@@ -17,5 +17,5 @@ ecm_add_qtdesignerplugin(texttranslatorwidgets
     KF6::TextTranslator
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel
-    )
+)
 

@@ -21,7 +21,7 @@ target_sources(translator_bing PRIVATE
 target_link_libraries(translator_bing PRIVATE KF6::TextTranslator KF6::I18n)
 
 install(TARGETS translator_bing  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
-if (BUILD_TESTING)
+if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 

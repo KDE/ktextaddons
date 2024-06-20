@@ -44,7 +44,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
 add_feature_info(KIO_SUPPORT ${BUILD_KIO_SUPPORT} "Build with KIO support")
 
-if (${BUILD_KIO_SUPPORT})
+if(${BUILD_KIO_SUPPORT})
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 endif()
 
@@ -60,12 +60,12 @@ set_package_properties(Qt6Keychain PROPERTIES
 if(BUILD_TESTING)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
-endif(BUILD_TESTING)
+endif()
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
-if (USE_UNITY_CMAKE_SUPPORT)
+if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 
@@ -86,12 +86,12 @@ ecm_set_disabled_deprecation_versions(
     KF 6.6.0
 )
 
-if (BERGAMOT_TRANSLATOR_PLUGIN)
+if(BERGAMOT_TRANSLATOR_PLUGIN)
    find_package(slimt)
    set_package_properties(slimt PROPERTIES DESCRIPTION
        "Add local translation based on Bergamot"
        TYPE OPTIONAL
-   )
+  )
 endif()
 
 
@@ -118,7 +118,7 @@ ecm_qt_install_logging_categories(
         EXPORT KTEXTADDONS
         FILE ktextaddons.categories
         DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
-        )
+)
 
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)

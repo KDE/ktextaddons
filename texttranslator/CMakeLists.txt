@@ -7,27 +7,27 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTTRANSLATE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextTranslatorConfigVersion.cmake"
     SOVERSION 1
-    )
+)
 
 install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextTranslatorConfig.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextTranslatorConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
-    )
+)
 
 install(EXPORT KF6TextTranslatorTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6TextTranslatorTargets.cmake NAMESPACE KF6::)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/ COMPONENT Devel
-    )
+)
 
 if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
 endif()
 
-add_library(KF6TextTranslator )
+add_library(KF6TextTranslator)
 add_library(KF6::TextTranslator ALIAS KF6TextTranslator)
 ecm_qt_declare_logging_category(KF6TextTranslator HEADER texttranslator_debug.h
     IDENTIFIER TEXTTRANSLATOR_LOG
@@ -74,8 +74,8 @@ target_sources(KF6TextTranslator PRIVATE
 
     translator/translatorengineloader.cpp
     translator/translatorengineloader.h
-    )
-if (BUILD_TESTING)
+)
+if(BUILD_TESTING)
     add_subdirectory(translator/autotests)
     add_subdirectory(translator/tests)
     add_subdirectory(translator/widgets/autotests)
@@ -83,7 +83,7 @@ endif()
 add_subdirectory(translator/plugins)
 
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextTranslator PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextTranslator BASE_NAME texttranslator)
@@ -99,7 +99,7 @@ target_link_libraries(KF6TextTranslator
     KF6::WidgetsAddons
     KF6::ConfigGui
     KF6::TextAddonsWidgets
-    )
+)
 
 target_include_directories(KF6TextTranslator INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/>")
 
@@ -107,12 +107,12 @@ set_target_properties(KF6TextTranslator PROPERTIES
     VERSION ${TEXTTRANSLATE_VERSION}
     SOVERSION ${TEXTTRANSLATE_SOVERSION}
     EXPORT_NAME TextTranslator
-    )
+)
 
 install(TARGETS
     KF6TextTranslator
     EXPORT KF6TextTranslatorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    )
+)
 
 ecm_generate_headers(TextTranslator_Camelcasetranslatorwidgets_HEADERS
     HEADER_NAMES
@@ -124,7 +124,7 @@ ecm_generate_headers(TextTranslator_Camelcasetranslatorwidgets_HEADERS
     REQUIRED_HEADERS TextTranslator_translatorwidgets_HEADERS
     PREFIX TextTranslator
     RELATIVE translator/widgets/
-    )
+)
 
 ecm_generate_headers(TextTranslator_Camelcasetranslator_HEADERS
     HEADER_NAMES
@@ -135,7 +135,7 @@ ecm_generate_headers(TextTranslator_Camelcasetranslator_HEADERS
     REQUIRED_HEADERS TextTranslator_translator_HEADERS
     PREFIX TextTranslator
     RELATIVE translator
-    )
+)
 
 ecm_generate_headers(TextTranslator_Camelcasetranslatormisc_HEADERS
     HEADER_NAMES
@@ -143,12 +143,12 @@ ecm_generate_headers(TextTranslator_Camelcasetranslatormisc_HEADERS
     REQUIRED_HEADERS TextTranslator_translatormisc_HEADERS
     PREFIX TextTranslator
     RELATIVE translator/misc/
-    )
+)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/ COMPONENT Devel
-    )
+)
 
 install(FILES
     ${TextTranslator_Camelcasetranslatorwidgets_HEADERS}
@@ -161,7 +161,7 @@ install(FILES
     ${TextTranslator_Camelcasetranslator_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/TextTranslator
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_export.h
@@ -170,10 +170,10 @@ install(FILES
     ${TextTranslator_translatormisc_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/texttranslator
     COMPONENT Devel
-    )
+)
 
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KF6TextTranslator_QCH
         NAME KF6TextTranslator
@@ -195,15 +195,15 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 endif()
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF6TextTranslator_QCH
         FILE KF6TextTranslatorQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-    )
+)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextTranslatorQchTargets.cmake\")")
 endif()
 
@@ -211,4 +211,4 @@ configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextTranslatorConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextTranslatorConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-    )
+)

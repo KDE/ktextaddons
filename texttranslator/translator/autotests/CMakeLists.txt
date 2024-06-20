@@ -8,9 +8,9 @@ macro(add_translator_unittest _source)
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
         KF6::TextTranslator
-    )
+)
 endmacro()
-if (NOT DISABLE_AUTOTEST_BROKEN_CI)
+if(NOT DISABLE_AUTOTEST_BROKEN_CI)
    add_translator_unittest(translatorwidgettest.cpp)
 endif()
 add_translator_unittest(translatorconfiguredialogtest.cpp)

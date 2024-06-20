@@ -6,14 +6,14 @@ ecm_qtdesignerplugin_widget(TextCustomEditor::RichTextEditorWidget
     TOOLTIP "A RichTextEditor (KDE-PIM)"
     WHATSTHIS "A RichTextEditor."
     GROUP "Input (KDE-PIM)"
-    )
+)
 
 ecm_qtdesignerplugin_widget(TextCustomEditor::PlainTextEditorWidget
     INCLUDE_FILE "TextCustomEditor/PlainTextEditorWidget"
     TOOLTIP "A PlainTextEditor (KDE-PIM)"
     WHATSTHIS "A PlainTextEditor."
     GROUP "Input (KDE-PIM)"
-    )
+)
 
 ecm_add_qtdesignerplugin(textcustomeditor
     NAME TextCustomEditor
@@ -26,4 +26,4 @@ ecm_add_qtdesignerplugin(textcustomeditor
     Qt::Widgets
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel
-    )
+)
