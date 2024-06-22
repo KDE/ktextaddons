@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-16 00:38+0000\n"
-"PO-Revision-Date: 2023-10-25 19:15+0200\n"
+"PO-Revision-Date: 2024-06-21 10:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
@@ -65,10 +65,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Inställningar av Vosk-insticksprogram"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Sök..."
+msgstr "Sök…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
 #, kde-format
@@ -143,17 +142,15 @@ msgid "Engine:"
 msgstr "Gränssnitt:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr "Tal till text..."
+msgstr "Anpassa tal till text"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgid "Speech to Text…"
-msgstr "Tal till text..."
+msgstr "Tal till text…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
 #, kde-format
