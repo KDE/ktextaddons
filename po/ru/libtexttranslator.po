@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-16 00:38+0000\n"
-"PO-Revision-Date: 2023-11-13 14:16+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2024-06-22 11:32+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 21.08.3\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -337,10 +338,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "Найти..."
+msgstr "Поиск…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
 #, kde-format
@@ -589,12 +589,12 @@ msgstr ""
 #: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Locale"
-msgstr ""
+msgstr "Локаль"
 
 #: translator/translatorengineclient.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgid "Network"
-msgstr "Нет сети"
+msgstr "Сеть"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format
@@ -630,8 +630,7 @@ msgid "Translator Debug"
 msgstr "Отладка переводчика"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
 msgstr "Сохранить как…"
 
@@ -655,10 +654,9 @@ msgid "All Files (*)"
 msgstr "Все файлы (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "Перевести"
+msgstr "Перевести…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #: translator/widgets/translatorwidget.cpp:222
