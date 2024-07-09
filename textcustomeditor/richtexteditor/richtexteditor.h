@@ -102,7 +102,7 @@ protected:
     virtual void addExtraMenuEntry(QMenu *menu, QPoint pos);
     void contextMenuEvent(QContextMenuEvent *event) override;
     void focusInEvent(QFocusEvent *event) override;
-    bool event(QEvent *ev) override;
+    [[nodiscard]] bool event(QEvent *ev) override;
     void keyPressEvent(QKeyEvent *event) override;
     void wheelEvent(QWheelEvent *e) override;
 

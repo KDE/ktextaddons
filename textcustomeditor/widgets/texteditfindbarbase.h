@@ -53,7 +53,7 @@ protected:
     virtual bool searchInDocument(const QRegularExpression &regExp, TextEditFindBarBase::FindFlags searchOptions) = 0;
     virtual void autoSearchMoveCursor() = 0;
 
-    bool event(QEvent *e) override;
+    [[nodiscard]] bool event(QEvent *e) override;
     void clearSelections();
     bool searchText(bool backward, bool isAutoSearch);
 
