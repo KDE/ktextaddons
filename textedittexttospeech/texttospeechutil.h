@@ -29,3 +29,5 @@ TEXTEDITTEXTTOSPEECH_TESTS_EXPORT void writeConfig(const TextEditTextToSpeech::T
 };
 }
 TEXTEDITTEXTTOSPEECH_TESTS_EXPORT QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings &t);
+Q_DECLARE_METATYPE(TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings)
+Q_DECLARE_TYPEINFO(TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings, Q_MOVABLE_TYPE);
