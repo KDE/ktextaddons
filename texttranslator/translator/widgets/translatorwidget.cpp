@@ -216,7 +216,7 @@ void TranslatorWidget::init()
     closeBtn->setObjectName(QStringLiteral("close-button"));
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setIconSize(QSize(16, 16));
-    closeBtn->setToolTip(i18n("Close"));
+    closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
 
 #ifndef QT_NO_ACCESSIBILITY
     closeBtn->setAccessibleName(i18n("Close"));
@@ -285,7 +285,7 @@ void TranslatorWidget::init()
     configureButton->setObjectName(QStringLiteral("configure_button"));
     configureButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     configureButton->setIconSize(QSize(16, 16));
-    configureButton->setToolTip(i18n("Configure"));
+    configureButton->setToolTip(i18nc("@info:tooltip", "Configure"));
     connect(configureButton, &QToolButton::clicked, this, [this]() {
         TranslatorConfigureDialog dlg(this);
         if (dlg.exec()) {

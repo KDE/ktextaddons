@@ -51,12 +51,12 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     auto close = new QToolButton(this);
     close->setObjectName(QStringLiteral("close-button"));
     close->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
-    close->setToolTip(i18n("Close"));
+    close->setToolTip(i18nc("@info:tooltip", "Close"));
     connect(close, &QToolButton::clicked, this, &TextToSpeechWidget::slotCloseTextToSpeechWidget);
     hbox->addWidget(close);
     hbox->addStretch(0);
 
-    auto volume = new QLabel(i18n("Volume:"), this);
+    auto volume = new QLabel(i18nc("@label:textbox", "Volume:"), this);
     hbox->addWidget(volume);
     d->mVolume = new TextToSpeechSliderWidget(QStringLiteral("%1 %"), this);
     d->mVolume->setMinimumWidth(100);
@@ -77,7 +77,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
 
     d->mConfigureButton = new QToolButton(this);
     d->mConfigureButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    d->mConfigureButton->setToolTip(i18n("Configure…"));
+    d->mConfigureButton->setToolTip(i18nc("@info:tooltip", "Configure…"));
     d->mConfigureButton->setObjectName(QStringLiteral("configurebutton"));
     connect(d->mConfigureButton, &QToolButton::clicked, this, &TextToSpeechWidget::slotConfigure);
     hbox->addWidget(d->mConfigureButton);

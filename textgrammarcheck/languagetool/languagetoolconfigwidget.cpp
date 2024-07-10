@@ -21,7 +21,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     : QWidget(parent)
     , mUseLocalInstance(new QCheckBox(i18n("Use Local Instance"), this))
     , mInstancePath(new QLineEdit(this))
-    , mInstancePathLabel(new QLabel(i18n("Instance Path:"), this))
+    , mInstancePathLabel(new QLabel(i18nc("@label:textbox", "Instance Path:"), this))
     , mLanguageToolCombobox(new LanguageToolComboBox(this))
     , mLanguageToolUpdateCombobox(new LanguageToolUpdateComboBox(this))
 {
@@ -50,7 +50,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
 
     auto languageLayout = new QHBoxLayout;
     languageLayout->setObjectName(QStringLiteral("languagelayout"));
-    auto languageLabel = new QLabel(i18n("Language:"), this);
+    auto languageLabel = new QLabel(i18nc("@label:textbox", "Language:"), this);
     languageLabel->setObjectName(QStringLiteral("languageLabel"));
     languageLayout->addWidget(languageLabel);
 
@@ -62,7 +62,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     auto refreshButton = new QToolButton(this);
     refreshButton->setObjectName(QStringLiteral("refreshbutton"));
     refreshButton->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
-    refreshButton->setToolTip(i18n("Refresh"));
+    refreshButton->setToolTip(i18nc("@info:tooltip", "Refresh"));
     if (!LanguageToolManager::self()->allowToGetListOfLanguages()) {
         refreshButton->setVisible(false);
     }

@@ -28,7 +28,7 @@ TextToSpeechActions::TextToSpeechActions(QObject *parent)
     d->mStopAction = new QAction(i18nc("@action", "Stop"), this);
     d->mStopAction->setObjectName(QStringLiteral("stopbutton"));
     d->mStopAction->setIcon(QIcon::fromTheme(QStringLiteral("media-playback-stop")));
-    d->mStopAction->setToolTip(i18n("Stop"));
+    d->mStopAction->setToolTip(i18nc("@info:tooltip", "Stop"));
     connect(d->mStopAction, &QAction::triggered, this, &TextToSpeechActions::slotStop);
 
     d->mPlayPauseAction = new QAction(this);

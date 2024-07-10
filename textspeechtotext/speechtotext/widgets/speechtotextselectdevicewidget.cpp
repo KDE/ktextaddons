@@ -28,7 +28,7 @@ SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    auto label = new QLabel(i18n("Input:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Input:"), this);
     label->setObjectName(QStringLiteral("label"));
     mainLayout->addWidget(label);
 

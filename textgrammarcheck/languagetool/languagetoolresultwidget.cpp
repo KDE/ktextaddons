@@ -73,7 +73,7 @@ void LanguageToolResultWidget::addExtraWidget()
     recheckBtn->setObjectName(QStringLiteral("recheck-button"));
     recheckBtn->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     recheckBtn->setIconSize(QSize(16, 16));
-    recheckBtn->setToolTip(i18n("Check"));
+    recheckBtn->setToolTip(i18nc("@info:tooltip", "Check"));
     recheckBtn->setAutoRaise(true);
     extraWidgetLayout->addWidget(recheckBtn);
 

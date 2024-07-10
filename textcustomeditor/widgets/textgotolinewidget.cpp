@@ -36,7 +36,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     auto closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setIconSize(QSize(16, 16));
-    closeBtn->setToolTip(i18n("Close"));
+    closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
     closeBtn->setObjectName(QStringLiteral("closebutton"));
 #ifndef QT_NO_ACCESSIBILITY
     closeBtn->setAccessibleName(i18n("Close"));
@@ -46,7 +46,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     connect(closeBtn, &QToolButton::clicked, this, &TextGoToLineWidget::slotCloseBar);
     hbox->addWidget(closeBtn);
 
-    auto lab = new QLabel(i18n("Go to Line:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Go to Line:"));
     hbox->addWidget(lab);
     d->mSpinbox = new QSpinBox(this);
     d->mSpinbox->setMinimum(1);

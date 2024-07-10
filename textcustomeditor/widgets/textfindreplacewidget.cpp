@@ -73,25 +73,25 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 
-    mSearch->setToolTip(i18n("Text to search for"));
+    mSearch->setToolTip(i18nc("@info:tooltip", "Text to search for"));
     mSearch->setClearButtonEnabled(true);
     mSearch->setObjectName(QStringLiteral("mSearch"));
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
-    mFindNextBtn->setToolTip(i18n("Jump to next match"));
+    mFindNextBtn->setToolTip(i18nc("@info:tooltip", "Jump to next match"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
     mFindNextBtn->setObjectName(QStringLiteral("mFindNextBtn"));
 
-    mFindPrevBtn->setToolTip(i18n("Jump to previous match"));
+    mFindPrevBtn->setToolTip(i18nc("@info:tooltip", "Jump to previous match"));
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
     mFindPrevBtn->setObjectName(QStringLiteral("mFindPrevBtn"));
 
     auto optionsBtn = new QPushButton(this);
     optionsBtn->setText(i18n("Options"));
-    optionsBtn->setToolTip(i18n("Modify search behavior"));
+    optionsBtn->setToolTip(i18nc("@info:tooltip", "Modify search behavior"));
     optionsBtn->setObjectName(QStringLiteral("optionsBtn"));
     auto optionsMenu = new QMenu(optionsBtn);
     mCaseSensitiveAct = optionsMenu->addAction(i18n("Case sensitive"));

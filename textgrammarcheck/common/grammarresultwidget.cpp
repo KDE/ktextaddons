@@ -29,7 +29,7 @@ GrammarResultWidget::GrammarResultWidget(QWidget *parent)
     closeBtn->setObjectName(QStringLiteral("close-button"));
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
     closeBtn->setIconSize(QSize(16, 16));
-    closeBtn->setToolTip(i18n("Close"));
+    closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
     closeBtn->setAutoRaise(true);
     mExtraWidgetLayout->addWidget(closeBtn);
     mExtraWidgetLayout->addStretch(1);

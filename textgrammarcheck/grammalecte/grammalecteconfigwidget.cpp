@@ -108,14 +108,14 @@ QWidget *GrammalecteConfigWidget::addGrammarTab()
     reloadSettingsLayout->setObjectName(QStringLiteral("reloadSettingsLayout"));
     auto horizontallayout = new QHBoxLayout;
     reloadSettingsLayout->addLayout(horizontallayout);
-    auto label = new QLabel(i18n("Press Button for Reloading Settings"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Press Button for Reloading Settings"), this);
     label->setObjectName(QStringLiteral("label"));
     horizontallayout->addWidget(label);
 
     auto buttonReloadSettings = new QToolButton(this);
     buttonReloadSettings->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     buttonReloadSettings->setObjectName(QStringLiteral("buttonReloadSettings"));
-    buttonReloadSettings->setToolTip(i18n("Reload Settings"));
+    buttonReloadSettings->setToolTip(i18nc("@info:tooltip", "Reload Settings"));
     horizontallayout->addWidget(buttonReloadSettings);
     connect(buttonReloadSettings, &QToolButton::clicked, this, &GrammalecteConfigWidget::loadGrammarSettings);
 
