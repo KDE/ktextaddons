@@ -50,7 +50,7 @@ public:
 
     void addSelectButton()
     {
-        mSelectButton = new QPushButton(i18n("Select"));
+        mSelectButton = new QPushButton(i18nc("@action:button", "Select"));
         mButtonBox->addButton(mSelectButton, QDialogButtonBox::ActionRole);
         q->connect(mSelectButton, &QPushButton::clicked, q, [this]() {
             _k_slotInsertChar();

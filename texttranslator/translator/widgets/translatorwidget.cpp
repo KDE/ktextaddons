@@ -249,7 +249,7 @@ void TranslatorWidget::init()
     connect(d->invert, &QPushButton::clicked, this, &TranslatorWidget::slotInvertLanguage);
     hboxLayout->addWidget(d->invert);
 
-    d->clear = new QPushButton(i18n("Clear"), this);
+    d->clear = new QPushButton(i18nc("@action:button", "Clear"), this);
     d->clear->setObjectName(QStringLiteral("clear-button"));
 #ifndef QT_NO_ACCESSIBILITY
     d->clear->setAccessibleName(i18n("Clear"));
@@ -257,7 +257,7 @@ void TranslatorWidget::init()
     connect(d->clear, &QPushButton::clicked, this, &TranslatorWidget::slotClear);
     hboxLayout->addWidget(d->clear);
 
-    d->translate = new QPushButton(i18n("Translate"), this);
+    d->translate = new QPushButton(i18nc("@action:button", "Translate"), this);
     d->translate->setObjectName(QStringLiteral("translate-button"));
 #ifndef QT_NO_ACCESSIBILITY
     d->translate->setAccessibleName(i18n("Translate"));
@@ -267,7 +267,7 @@ void TranslatorWidget::init()
     connect(d->translate, &QPushButton::clicked, this, &TranslatorWidget::slotTranslate);
 
     if (!qEnvironmentVariableIsEmpty("TRANSLATING_DEBUGGING")) {
-        auto debugButton = new QPushButton(i18n("Debug"));
+        auto debugButton = new QPushButton(i18nc("@action:button", "Debug"));
         hboxLayout->addWidget(debugButton);
         connect(debugButton, &QPushButton::clicked, this, &TranslatorWidget::slotDebug);
     }

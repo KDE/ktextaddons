@@ -23,8 +23,8 @@ using namespace TextCustomEditor;
 TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     : QWidget(parent)
     , mReplace(new QLineEdit(this))
-    , mReplaceBtn(new QPushButton(i18n("Replace"), this))
-    , mReplaceAllBtn(new QPushButton(i18n("Replace All"), this))
+    , mReplaceBtn(new QPushButton(i18nc("@action:button", "Replace"), this))
+    , mReplaceAllBtn(new QPushButton(i18nc("@action:button", "Replace All"), this))
 {
     auto lay = new QHBoxLayout(this);
     auto label = new QLabel(i18nc("Replace text", "Replace:"), this);

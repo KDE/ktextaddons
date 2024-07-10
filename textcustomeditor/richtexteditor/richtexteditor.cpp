@@ -522,7 +522,7 @@ void RichTextEditor::checkSpelling(bool force)
     auto spellDialog = new Sonnet::Dialog(backgroundSpellCheck, force ? this : nullptr);
     auto buttonBox = spellDialog->findChild<QDialogButtonBox *>();
     if (buttonBox) {
-        auto skipButton = new QPushButton(i18n("Skip"));
+        auto skipButton = new QPushButton(i18nc("@action:button", "Skip"));
         buttonBox->addButton(skipButton, QDialogButtonBox::ActionRole);
         connect(skipButton, &QPushButton::clicked, spellDialog, &Sonnet::Dialog::close);
         if (force) {
