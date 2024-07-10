@@ -715,10 +715,10 @@ void AutoCorrectionWidget::loadGlobalAutoCorrectionAndException()
 void AutoCorrectionWidget::slotExportAutoCorrection()
 {
     if (d->mWasChanged) {
-        KMessageBox::error(this, i18n("Please save changes before exporting settings."), i18n("Export Autocorrection File"));
+        KMessageBox::error(this, i18n("Please save changes before exporting settings."), i18nc("@title:window", "Export Autocorrection File"));
         return;
     }
-    const QString saveUrl = QFileDialog::getSaveFileName(this, i18n("Export Autocorrection File"), QDir::homePath());
+    const QString saveUrl = QFileDialog::getSaveFileName(this, i18nc("@title:window", "Export Autocorrection File"), QDir::homePath());
     if (saveUrl.isEmpty()) {
         return;
     }

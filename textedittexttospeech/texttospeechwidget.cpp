@@ -129,7 +129,7 @@ void TextToSpeechWidget::say(const QString &text)
         if (d->mTextToSpeechInterface->isReady()) {
             d->mTextToSpeechInterface->say(text);
         } else {
-            KMessageBox::error(this, i18n("Engine has a problem."), i18n("Text To Speech"));
+            KMessageBox::error(this, i18n("Engine has a problem."), i18nc("@title:window", "Text To Speech"));
         }
     }
 }

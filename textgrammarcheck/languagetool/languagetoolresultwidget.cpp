@@ -57,7 +57,7 @@ void LanguageToolResultWidget::slotCheckGrammarFinished(const QString &result)
 
 void LanguageToolResultWidget::slotError(const QString &str)
 {
-    KMessageBox::error(this, i18n("An error was reported: %1", str), i18n("Failed to check grammar."));
+    KMessageBox::error(this, i18n("An error was reported: %1", str), i18nc("@title:window", "Failed to check grammar."));
 }
 
 void LanguageToolResultWidget::addExtraWidget()

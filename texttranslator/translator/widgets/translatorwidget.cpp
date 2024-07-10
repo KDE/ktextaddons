@@ -364,9 +364,10 @@ void TranslatorWidget::switchEngine()
 void TranslatorWidget::updatePlaceHolder()
 {
     if (d->translatorClient->engineType() == TextTranslator::TranslatorEngineClient::Network) {
-        d->inputText->setPlaceholderText(i18n("Drag text that you want to translate. (Be careful text will be send to external Server)."));
+        d->inputText->setPlaceholderText(
+            i18nc("@info:placeholder", "Drag text that you want to translate. (Be careful text will be send to external Server)."));
     } else {
-        d->inputText->setPlaceholderText(i18n("Drag text that you want to translate."));
+        d->inputText->setPlaceholderText(i18nc("@info:placeholder", "Drag text that you want to translate."));
     }
 }
 
@@ -415,7 +416,7 @@ void TranslatorWidget::slotTranslate()
         return;
     }
     if (!TextTranslator::NetworkManager::self()->isOnline()) {
-        KMessageBox::information(this, i18n("No network connection detected, we cannot translate text."), i18n("No network"));
+        KMessageBox::information(this, i18n("No network connection detected, we cannot translate text."), i18nc("@title:window", "No network"));
         return;
     }
     const QString textToTranslate = d->inputText->toPlainText();
@@ -452,7 +453,7 @@ void TranslatorWidget::slotTranslateFailed(const QString &message)
     d->progressIndicator->hide();
     d->translatorResultTextEdit->clear();
     if (!message.isEmpty()) {
-        KMessageBox::error(this, message, i18n("Translate error"));
+        KMessageBox::error(this, message, i18nc("@title:window", "Translate error"));
     }
 }
 

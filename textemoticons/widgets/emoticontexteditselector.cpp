@@ -80,7 +80,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     mainLayout->setContentsMargins({});
     d->mSearchUnicodeLineEdit->setObjectName(QStringLiteral("mSearchUnicodeLineEdit"));
     d->mSearchUnicodeLineEdit->setClearButtonEnabled(true);
-    d->mSearchUnicodeLineEdit->setPlaceholderText(i18n("Search Emoticon…"));
+    d->mSearchUnicodeLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search Emoticon…"));
     mainLayout->addWidget(d->mSearchUnicodeLineEdit);
 
     d->mCategoryButtons->setObjectName(QStringLiteral("mCategoryButtons"));
