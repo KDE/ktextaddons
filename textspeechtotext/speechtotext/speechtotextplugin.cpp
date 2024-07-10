@@ -16,7 +16,7 @@ public:
 
 SpeechToTextPlugin::SpeechToTextPlugin(QObject *parent)
     : QObject{parent}
-    , d(new TextSpeechToText::SpeechToTextPluginPrivate())
+    , d(new TextSpeechToText::SpeechToTextPluginPrivate)
 {
 }
 

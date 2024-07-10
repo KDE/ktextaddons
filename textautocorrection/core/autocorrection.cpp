@@ -45,7 +45,7 @@ public:
 }
 
 AutoCorrection::AutoCorrection()
-    : d(new AutoCorrectionPrivate())
+    : d(new AutoCorrectionPrivate)
 {
 }
 

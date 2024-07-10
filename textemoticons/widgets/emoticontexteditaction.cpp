@@ -52,7 +52,7 @@ bool EmoticonTextEditAction::EmoticonTextEditActionPrivate::customEmojiSupport()
 
 EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
     : KActionMenu(i18n("Add Smiley"), parent)
-    , d(new EmoticonTextEditActionPrivate())
+    , d(new EmoticonTextEditActionPrivate)
 {
     delete menu();
     setMenu(d->emoticonMenu);
