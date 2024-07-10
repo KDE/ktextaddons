@@ -63,6 +63,9 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     refreshButton->setObjectName(QStringLiteral("refreshbutton"));
     refreshButton->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     refreshButton->setToolTip(i18n("Refresh"));
+    if (!LanguageToolManager::self()->allowToGetListOfLanguages()) {
+        refreshButton->setVisible(false);
+    }
     languageLayout->addWidget(refreshButton);
     connect(refreshButton, &QToolButton::clicked, this, [this]() {
         if (LanguageToolManager::self()->allowToGetListOfLanguages()) {
