@@ -22,7 +22,7 @@ public:
     ~SpeechToTextConfigureDialog() override;
 
 private:
-    void slotAccept();
+    TEXTSPEECHTOTEXT_NO_EXPORT void slotAccept();
     SpeechToTextConfigureWidget *const mSpeechToTextConfigureWidget;
 };
 }

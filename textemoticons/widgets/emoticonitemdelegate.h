@@ -21,8 +21,9 @@ public:
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 private:
-    [[nodiscard]] std::vector<TextEmoticonsCore::RunningAnimatedImage>::iterator findRunningAnimatedImage(const QModelIndex &index) const;
-    void removeRunningAnimatedImage(const QModelIndex &index) const;
+    [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT std::vector<TextEmoticonsCore::RunningAnimatedImage>::iterator
+    findRunningAnimatedImage(const QModelIndex &index) const;
+    TEXTEMOTICONSWIDGETS_NO_EXPORT void removeRunningAnimatedImage(const QModelIndex &index) const;
     mutable std::vector<TextEmoticonsCore::RunningAnimatedImage> mRunningAnimatedImages; // not a hash or map, since QPersistentModelIndex changes value
 };
 }
