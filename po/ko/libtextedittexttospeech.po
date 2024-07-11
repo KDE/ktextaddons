@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2023-07-25 01:02+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -25,7 +25,9 @@ msgid "Stop"
 msgstr "정지"
 
 #: texttospeechactions.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "정지"
 
@@ -55,7 +57,7 @@ msgstr "안녕하세요. 이것은 설정을 시험하는 메시지입니다."
 msgid "Test"
 msgstr "시험"
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr "음량:"
@@ -86,13 +88,23 @@ msgid "Voice:"
 msgstr "음성:"
 
 #: texttospeechwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "닫기"
+
+#: texttospeechwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Volume:"
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "음량:"
 
 #: texttospeechwidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Configure..."
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "설정..."
 
@@ -102,6 +114,8 @@ msgid "Engine has a problem."
 msgstr "엔진에 문제가 발생했습니다."
 
 #: texttospeechwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text To Speech"
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "텍스트 읽어주기"

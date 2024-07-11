@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-10 00:37+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2023-03-12 16:25+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -50,7 +50,9 @@ msgid "See on: %1"
 msgstr "Gefunden auf: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Schließen"
 
@@ -80,17 +82,23 @@ msgstr ""
 "installiert ist."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error during Extracting Options"
+msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Fehler beim Extrahieren der Einstellungen"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Press Button for Reloading Settings"
+msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Drücken Sie den Knopf, um die Einstellungen neu zu laden"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Reload Settings"
+msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Einstellungen neu laden"
 
@@ -100,7 +108,9 @@ msgid "Python Path:"
 msgstr "Python-Pfad:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add full 'grammalecte-cli.py' path"
+msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Vollständigen Pfad zu „grammalecte-cli.py“ hinzufügen"
 
@@ -146,6 +156,11 @@ msgstr "Grammalecte-Fehler"
 msgid "Select Path"
 msgstr "Pfad auswählen"
 
+#: languagetool/languagetoolcombobox.cpp:30
+#, kde-format
+msgid "Asturian"
+msgstr "Asturisch"
+
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
 msgid "English"
@@ -153,145 +168,140 @@ msgstr "Englisch"
 
 #: languagetool/languagetoolcombobox.cpp:32
 #, kde-format
-msgid "Asturian"
-msgstr "Asturisch"
-
-#: languagetool/languagetoolcombobox.cpp:33
-#, kde-format
-msgid "Belarusian"
-msgstr "Weißrussisch"
-
-#: languagetool/languagetoolcombobox.cpp:34
-#, kde-format
-msgid "Breton"
-msgstr "Bretonisch"
-
-#: languagetool/languagetoolcombobox.cpp:35
-#, kde-format
-msgid "Catalan"
-msgstr "Katalanisch"
-
-#: languagetool/languagetoolcombobox.cpp:36
-#, kde-format
-msgid "Chinese"
-msgstr "Chinesisch"
-
-#: languagetool/languagetoolcombobox.cpp:37
-#, kde-format
-msgid "Danish"
-msgstr "Dänisch"
-
-#: languagetool/languagetoolcombobox.cpp:38
-#, kde-format
-msgid "Dutch"
-msgstr "Niederländisch"
-
-#: languagetool/languagetoolcombobox.cpp:39
-#, kde-format
 msgid "English (Australian)"
 msgstr "Australisches Englisch"
 
-#: languagetool/languagetoolcombobox.cpp:40
+#: languagetool/languagetoolcombobox.cpp:33
 #, kde-format
 msgid "English (Canadian)"
 msgstr "Kanadisches Englisch"
 
-#: languagetool/languagetoolcombobox.cpp:41
+#: languagetool/languagetoolcombobox.cpp:34
+#, kde-format
+msgid "Belarusian"
+msgstr "Weißrussisch"
+
+#: languagetool/languagetoolcombobox.cpp:35
+#, kde-format
+msgid "Breton"
+msgstr "Bretonisch"
+
+#: languagetool/languagetoolcombobox.cpp:36
+#, kde-format
+msgid "Catalan"
+msgstr "Katalanisch"
+
+#: languagetool/languagetoolcombobox.cpp:37
+#, kde-format
+msgid "Chinese"
+msgstr "Chinesisch"
+
+#: languagetool/languagetoolcombobox.cpp:38
+#, kde-format
+msgid "Danish"
+msgstr "Dänisch"
+
+#: languagetool/languagetoolcombobox.cpp:39
+#, kde-format
+msgid "Dutch"
+msgstr "Niederländisch"
+
+#: languagetool/languagetoolcombobox.cpp:40
 #, kde-format
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: languagetool/languagetoolcombobox.cpp:42
+#: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
 msgid "French"
 msgstr "Französisch"
 
-#: languagetool/languagetoolcombobox.cpp:43
+#: languagetool/languagetoolcombobox.cpp:42
 #, kde-format
 msgid "Galician"
 msgstr "Galizisch"
 
-#: languagetool/languagetoolcombobox.cpp:44
+#: languagetool/languagetoolcombobox.cpp:43
 #, kde-format
 msgid "German"
 msgstr "Deutsch"
 
-#: languagetool/languagetoolcombobox.cpp:45
+#: languagetool/languagetoolcombobox.cpp:44
 #, kde-format
 msgid "Greek"
 msgstr "Griechisch"
 
-#: languagetool/languagetoolcombobox.cpp:46
+#: languagetool/languagetoolcombobox.cpp:45
 #, kde-format
 msgid "Italian"
 msgstr "Italienisch"
 
-#: languagetool/languagetoolcombobox.cpp:47
+#: languagetool/languagetoolcombobox.cpp:46
 #, kde-format
 msgid "Japanese"
 msgstr "Japanisch"
 
-#: languagetool/languagetoolcombobox.cpp:48
+#: languagetool/languagetoolcombobox.cpp:47
 #, kde-format
 msgid "Khmer"
 msgstr "Khmer"
 
-#: languagetool/languagetoolcombobox.cpp:49
+#: languagetool/languagetoolcombobox.cpp:48
 #, kde-format
 msgid "Persian"
 msgstr "Persisch"
 
-#: languagetool/languagetoolcombobox.cpp:50
+#: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Polish"
 msgstr "Polnisch"
 
-#: languagetool/languagetoolcombobox.cpp:51
+#: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: languagetool/languagetoolcombobox.cpp:52
+#: languagetool/languagetoolcombobox.cpp:51
 #, kde-format
 msgid "Romanian"
 msgstr "Rumänisch"
 
-#: languagetool/languagetoolcombobox.cpp:53
+#: languagetool/languagetoolcombobox.cpp:52
 #, kde-format
 msgid "Russian"
 msgstr "Russisch"
 
-#: languagetool/languagetoolcombobox.cpp:54
+#: languagetool/languagetoolcombobox.cpp:53
 #, kde-format
 msgid "Slovak"
 msgstr "Slowakisch"
 
-#: languagetool/languagetoolcombobox.cpp:55
+#: languagetool/languagetoolcombobox.cpp:54
 #, kde-format
 msgid "Slovenian"
 msgstr "Slowenisch"
 
-#: languagetool/languagetoolcombobox.cpp:56
+#: languagetool/languagetoolcombobox.cpp:55
 #, kde-format
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: languagetool/languagetoolcombobox.cpp:57
+#: languagetool/languagetoolcombobox.cpp:56
 #, kde-format
 msgid "Swedish"
 msgstr "Schwedisch"
 
-#: languagetool/languagetoolcombobox.cpp:58
+#: languagetool/languagetoolcombobox.cpp:57
 #, kde-format
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: languagetool/languagetoolcombobox.cpp:59
+#: languagetool/languagetoolcombobox.cpp:58
 #, kde-format
 msgid "Tamil"
 msgstr "Tamil"
 
-#: languagetool/languagetoolcombobox.cpp:60
+#: languagetool/languagetoolcombobox.cpp:59
 #, kde-format
 msgid "Ukrainian"
 msgstr "Ukrainisch"
@@ -308,17 +318,23 @@ msgid "Use Local Instance"
 msgstr "Lokale Instanz verwenden"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Instance Path:"
+msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Pfad zur Instanz:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Language:"
+msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Sprache:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Refresh"
+msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Aktualisieren"
 
@@ -328,16 +344,20 @@ msgid "An error was reported: %1"
 msgstr "Es ist ein Fehler aufgetreten: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to check grammar."
+msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Die Grammatikprüfung ist fehlgeschlagen."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check"
+msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Prüfen"
 
-#: languagetool/languagetoolupdatecombobox.cpp:75
+#: languagetool/languagetoolupdatecombobox.cpp:76
 #, kde-format
 msgid ""
 "An error occurred attempting to load the list of available languages:\n"
@@ -346,8 +366,10 @@ msgstr ""
 "Bei Laden der Liste der verfügbaren Sprachen ist ein Fehler aufgetreten:\n"
 "%1"
 
-#: languagetool/languagetoolupdatecombobox.cpp:75
-#, kde-format
+#: languagetool/languagetoolupdatecombobox.cpp:77
+#, fuzzy, kde-format
+#| msgid "List of Languages"
+msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "Liste der Sprachen"
 

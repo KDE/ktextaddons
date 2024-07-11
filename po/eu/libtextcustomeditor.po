@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2023-09-07 23:11+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -87,12 +87,20 @@ msgid "Send"
 msgstr "Bidali"
 
 #: richtexteditor/richtexteditor.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Skip"
+msgctxt "@action:button"
 msgid "Skip"
 msgstr "Jauzi"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
-#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Itxi"
+
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Itxi"
@@ -107,12 +115,16 @@ msgstr ""
 "'%1' esamoldea ez da aurkitu."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replace"
+msgctxt "@action:button"
 msgid "Replace"
 msgstr "Ordeztu"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replace All"
+msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Ordeztu denak"
 
@@ -141,17 +153,23 @@ msgid "F&ind:"
 msgstr "Aurk&itu:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Bilatu beharreko testua"
 
 #: widgets/textfindreplacewidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Joan hurrengo bat-etortzera"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Joan aurreko bat-etortzera"
 
@@ -161,7 +179,9 @@ msgid "Options"
 msgstr "Aukerak"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Aldatu bilaketaren jokabidea"
 
@@ -186,7 +206,9 @@ msgid "Respect Diacritic and Accents"
 msgstr "Errespetu diakritikoa eta azentuak"
 
 #: widgets/textgotolinewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line:"
+msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Joan lerrora:"
 

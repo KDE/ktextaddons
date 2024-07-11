@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-05-15 10:20+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -24,7 +24,9 @@ msgid "Stop"
 msgstr "Stoppa"
 
 #: texttospeechactions.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Stoppa"
 
@@ -54,7 +56,7 @@ msgstr "Mattino, iste es le test pro essayar preferentias."
 msgid "Test"
 msgstr "Essaya"
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr "Tomo:"
@@ -85,12 +87,23 @@ msgid "Voice:"
 msgstr "Voce:"
 
 #: texttospeechwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Claude"
 
+#: texttospeechwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Volume:"
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "Tomo:"
+
 #: texttospeechwidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configura..."
 
@@ -100,6 +113,8 @@ msgid "Engine has a problem."
 msgstr "Motor (Engine) ha un problema"
 
 #: texttospeechwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text To Speech"
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Texto-a-Discurso (TextToSpeech)"

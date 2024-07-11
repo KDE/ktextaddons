@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-06-09 11:11+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -83,12 +83,20 @@ msgid "Send"
 msgstr "Enviar"
 
 #: richtexteditor/richtexteditor.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Skip"
+msgctxt "@action:button"
 msgid "Skip"
 msgstr "Omitir"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
-#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Pechar"
+
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Pechar"
@@ -103,12 +111,16 @@ msgstr ""
 "Non se puido atopar a frase «%1»."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replace"
+msgctxt "@action:button"
 msgid "Replace"
 msgstr "Substituír"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replace All"
+msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Substituílo todo"
 
@@ -137,17 +149,23 @@ msgid "F&ind:"
 msgstr "&Atopar:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "O texto para buscar."
 
 #: widgets/textfindreplacewidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Salta á seguinte coincidencia"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Saltar á coincidencia anterior"
 
@@ -157,7 +175,9 @@ msgid "Options"
 msgstr "Opcións"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modificar o comportamento da busca."
 
@@ -182,7 +202,9 @@ msgid "Respect Diacritic and Accents"
 msgstr "Respectar os diacríticos e a acentuación"
 
 #: widgets/textgotolinewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line:"
+msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Ir á liña:"
 

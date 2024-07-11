@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2023-12-12 17:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -85,12 +85,20 @@ msgid "Send"
 msgstr "Отправить"
 
 #: richtexteditor/richtexteditor.cpp:525
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Skip"
+msgctxt "@action:button"
 msgid "Skip"
 msgstr "Пропустить"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
-#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Закрыть"
+
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "Закрыть"
@@ -105,12 +113,16 @@ msgstr ""
 "Не удалось найти фразу «%1»."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replace"
+msgctxt "@action:button"
 msgid "Replace"
 msgstr "Заменить"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Replace All"
+msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Заменить все"
 
@@ -139,17 +151,23 @@ msgid "F&ind:"
 msgstr "Н&айти:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Искомый текст"
 
 #: widgets/textfindreplacewidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Перейти к следующему вхождению"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Перейти к предыдущему вхождению"
 
@@ -159,7 +177,9 @@ msgid "Options"
 msgstr "Параметры"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Изменить поведение при поиске"
 
@@ -184,7 +204,9 @@ msgid "Respect Diacritic and Accents"
 msgstr "Учитывать диакритические знаки и ударения"
 
 #: widgets/textgotolinewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line:"
+msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Перейти к строке:"
 

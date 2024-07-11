@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-03-27 22:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -25,6 +25,7 @@ msgstr ""
 
 #: texttospeechactions.cpp:31
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr ""
 
@@ -54,7 +55,7 @@ msgstr ""
 msgid "Test"
 msgstr ""
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr ""
@@ -86,11 +87,19 @@ msgstr ""
 
 #: texttospeechwidget.cpp:54
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Close"
+msgstr ""
+
+#: texttospeechwidget.cpp:59
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Volume:"
 msgstr ""
 
 #: texttospeechwidget.cpp:80
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr ""
 
@@ -101,5 +110,6 @@ msgstr ""
 
 #: texttospeechwidget.cpp:132
 #, kde-format
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr ""

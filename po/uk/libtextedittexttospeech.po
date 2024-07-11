@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-05-15 12:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -25,7 +25,9 @@ msgid "Stop"
 msgstr "Зупинити"
 
 #: texttospeechactions.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Зупинити"
 
@@ -55,7 +57,7 @@ msgstr "Вітаємо, це перевірка тестових парамет�
 msgid "Test"
 msgstr "Тест"
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr "Гучність:"
@@ -86,12 +88,23 @@ msgid "Voice:"
 msgstr "Голос:"
 
 #: texttospeechwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Закрити"
 
+#: texttospeechwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Volume:"
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "Гучність:"
+
 #: texttospeechwidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
 
@@ -101,6 +114,8 @@ msgid "Engine has a problem."
 msgstr "Проблема у рушії."
 
 #: texttospeechwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text To Speech"
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Синтез мовлення з тексту"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2023-12-08 20:10+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -65,6 +65,7 @@ msgstr ""
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
 #, fuzzy, kde-format
 #| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Hľadať..."
 
@@ -80,11 +81,13 @@ msgstr "Vymazať"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
 #, kde-format
+msgctxt "@action:button"
 msgid "Update List"
 msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr ""
 
@@ -136,7 +139,9 @@ msgid "Whisper"
 msgstr ""
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Engine:"
+msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Nástroj:"
 
@@ -152,7 +157,9 @@ msgid "Speech to Text…"
 msgstr ""
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Input:"
+msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Vstup:"
 

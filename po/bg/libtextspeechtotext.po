@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-07-05 15:58+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -65,7 +65,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Настройки на приставка Vosk"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search…"
+msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Търсене…"
 
@@ -80,12 +82,16 @@ msgid "Delete"
 msgstr "Изтриване"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update List"
+msgctxt "@action:button"
 msgid "Update List"
 msgstr "Обновяване на списъка"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update list of languages from network"
+msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Актуализиране на списъка с езици от интернет"
 
@@ -137,7 +143,9 @@ msgid "Whisper"
 msgstr "Шепот"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Engine:"
+msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Основна програма:"
 
@@ -153,7 +161,9 @@ msgid "Speech to Text…"
 msgstr "Преобразуване на говор в текст…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Input:"
+msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Вход:"
 

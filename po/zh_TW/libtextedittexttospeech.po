@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-05-18 16:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -24,7 +24,9 @@ msgid "Stop"
 msgstr "停止"
 
 #: texttospeechactions.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "停止"
 
@@ -54,7 +56,7 @@ msgstr "早安，這是測試設定用的測試。"
 msgid "Test"
 msgstr "測試"
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr "音量："
@@ -85,12 +87,23 @@ msgid "Voice:"
 msgstr "聲音："
 
 #: texttospeechwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "關閉"
 
+#: texttospeechwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Volume:"
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "音量："
+
 #: texttospeechwidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "設定…"
 
@@ -100,6 +113,8 @@ msgid "Engine has a problem."
 msgstr "引擎有問題。"
 
 #: texttospeechwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text To Speech"
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "文字轉語音"

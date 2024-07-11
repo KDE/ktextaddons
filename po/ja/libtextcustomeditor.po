@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-05 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2023-08-20 21:55-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -78,11 +78,17 @@ msgstr ""
 
 #: richtexteditor/richtexteditor.cpp:525
 #, kde-format
+msgctxt "@action:button"
 msgid "Skip"
 msgstr ""
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/texteditfindbarbase.cpp:39
-#: widgets/textgotolinewidget.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr ""
+
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
 #, kde-format
 msgid "Close"
 msgstr ""
@@ -96,11 +102,13 @@ msgstr ""
 
 #: widgets/textfindreplacewidget.cpp:26
 #, kde-format
+msgctxt "@action:button"
 msgid "Replace"
 msgstr ""
 
 #: widgets/textfindreplacewidget.cpp:27
 #, kde-format
+msgctxt "@action:button"
 msgid "Replace All"
 msgstr ""
 
@@ -130,16 +138,19 @@ msgstr ""
 
 #: widgets/textfindreplacewidget.cpp:76
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr ""
 
 #: widgets/textfindreplacewidget.cpp:82
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr ""
 
 #: widgets/textfindreplacewidget.cpp:87
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr ""
 
@@ -150,6 +161,7 @@ msgstr ""
 
 #: widgets/textfindreplacewidget.cpp:94
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr ""
 
@@ -175,6 +187,7 @@ msgstr ""
 
 #: widgets/textgotolinewidget.cpp:49
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr ""
 

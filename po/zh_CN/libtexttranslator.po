@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -336,7 +336,9 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search…"
+msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "搜索…"
 
@@ -351,12 +353,16 @@ msgid "Delete"
 msgstr "删除"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update List"
+msgctxt "@action:button"
 msgid "Update List"
 msgstr "更新列表"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update list of languages from network"
+msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "从网络更新语言列表"
 
@@ -612,7 +618,9 @@ msgstr "目标："
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Engine:"
+msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "引擎："
 
@@ -637,7 +645,9 @@ msgstr ""
 "“%2”为详细错误描述。"
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save File Error"
+msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "保存文件错误"
 
@@ -652,6 +662,12 @@ msgid "Translate…"
 msgstr "翻译…"
 
 #: translator/widgets/translatorwidget.cpp:219
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "关闭"
+
 #: translator/widgets/translatorwidget.cpp:222
 #, kde-format
 msgid "Close"
@@ -676,50 +692,76 @@ msgid "Invert"
 msgstr "对调"
 
 #: translator/widgets/translatorwidget.cpp:252
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action:button"
+msgid "Clear"
+msgstr "清除"
+
 #: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Clear"
 msgstr "清除"
 
 #: translator/widgets/translatorwidget.cpp:260
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgctxt "@action:button"
+msgid "Translate"
+msgstr "翻译"
+
 #: translator/widgets/translatorwidget.cpp:263
 #, kde-format
 msgid "Translate"
 msgstr "翻译"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Debug"
+msgctxt "@action:button"
 msgid "Debug"
 msgstr "调试"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "配置"
 
-#: translator/widgets/translatorwidget.cpp:367
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:368
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "external Server)."
+msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr "拖动选择您想要翻译的文本。(请注意：这些文本将被发送到外部服务器)。"
 
-#: translator/widgets/translatorwidget.cpp:369
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:370
+#, fuzzy, kde-format
+#| msgid "Drag text that you want to translate."
+msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "拖动选择您想要翻译的文本。"
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:419
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "没有检测到网络连接，无法翻译文本。"
 
-#: translator/widgets/translatorwidget.cpp:418
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:419
+#, fuzzy, kde-format
+#| msgid "No network"
+msgctxt "@title:window"
 msgid "No network"
 msgstr "没有网络"
 
-#: translator/widgets/translatorwidget.cpp:455
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:456
+#, fuzzy, kde-format
+#| msgid "Translate error"
+msgctxt "@title:window"
 msgid "Translate error"
 msgstr "翻译错误"

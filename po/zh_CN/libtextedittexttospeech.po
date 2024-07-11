@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -24,7 +24,9 @@ msgid "Stop"
 msgstr "停止"
 
 #: texttospeechactions.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "停止"
 
@@ -54,7 +56,7 @@ msgstr "早上好，这是用于测试设置效果的测试语音。"
 msgid "Test"
 msgstr "测试"
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr "音量："
@@ -85,12 +87,23 @@ msgid "Voice:"
 msgstr "声音："
 
 #: texttospeechwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "关闭"
 
+#: texttospeechwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Volume:"
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "音量："
+
 #: texttospeechwidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "配置…"
 
@@ -100,6 +113,8 @@ msgid "Engine has a problem."
 msgstr "引擎遇到了一个问题。"
 
 #: texttospeechwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text To Speech"
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "文字转语音"

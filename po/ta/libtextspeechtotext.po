@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-05-12 15:41+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -65,7 +65,9 @@ msgid "Vosk Plugin Settings"
 msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search…"
+msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "தேடு…"
 
@@ -80,12 +82,16 @@ msgid "Delete"
 msgstr "நீக்கு"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update List"
+msgctxt "@action:button"
 msgid "Update List"
 msgstr "பட்டியலை புதுப்பி"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update list of languages from network"
+msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "மொழிகளின் பட்டியலை இணையம் மூலமாக புதுப்பிக்கும்."
 
@@ -137,7 +143,9 @@ msgid "Whisper"
 msgstr ""
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Engine:"
+msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "சேவை:"
 
@@ -153,7 +161,9 @@ msgid "Speech to Text…"
 msgstr "உரையை பேச்சாக்கு…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Input:"
+msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "உள்ளீடு:"
 

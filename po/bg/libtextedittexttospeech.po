@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-06-07 11:10+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -24,7 +24,9 @@ msgid "Stop"
 msgstr "Спиране"
 
 #: texttospeechactions.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stop"
+msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Спиране"
 
@@ -54,7 +56,7 @@ msgstr "Добро утро, това е тестът за тестване на
 msgid "Test"
 msgstr "Тестване"
 
-#: texttospeechconfigwidget.cpp:43 texttospeechwidget.cpp:59
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Volume:"
 msgstr "Сила на звука:"
@@ -85,12 +87,23 @@ msgid "Voice:"
 msgstr "Глас:"
 
 #: texttospeechwidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Затваряне"
 
+#: texttospeechwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Volume:"
+msgctxt "@label:textbox"
+msgid "Volume:"
+msgstr "Сила на звука:"
+
 #: texttospeechwidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Настройване…"
 
@@ -100,6 +113,8 @@ msgid "Engine has a problem."
 msgstr "Основната програма срещна проблем."
 
 #: texttospeechwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text To Speech"
+msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Преобразуване на текст в реч"

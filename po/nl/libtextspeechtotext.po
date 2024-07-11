@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-05-10 11:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -65,7 +65,9 @@ msgid "Vosk Plugin Settings"
 msgstr "Plug-in-instellingen van Vosk"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search…"
+msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Zoeken…"
 
@@ -80,12 +82,16 @@ msgid "Delete"
 msgstr "Verwijderen"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update List"
+msgctxt "@action:button"
 msgid "Update List"
 msgstr "Lijst bijwerken"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update list of languages from network"
+msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Lijst met talen uit het netwerk bijwerken"
 
@@ -137,7 +143,9 @@ msgid "Whisper"
 msgstr "Whisper"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Engine:"
+msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Engine:"
 
@@ -153,7 +161,9 @@ msgid "Speech to Text…"
 msgstr "Spraak naar tekst…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Input:"
+msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Invoer:"
 

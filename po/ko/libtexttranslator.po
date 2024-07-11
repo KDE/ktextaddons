@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:38+0000\n"
+"POT-Creation-Date: 2024-07-11 00:38+0000\n"
 "PO-Revision-Date: 2024-02-10 00:05+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -338,6 +338,7 @@ msgstr "Bergamot"
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "Search..."
+msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "검색..."
 
@@ -352,12 +353,16 @@ msgid "Delete"
 msgstr "삭제"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update List"
+msgctxt "@action:button"
 msgid "Update List"
 msgstr "목록 업데이트"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Update list of languages from network"
+msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "네트워크에서 언어 목록 업데이트"
 
@@ -615,7 +620,9 @@ msgstr "대상:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Engine:"
+msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "엔진:"
 
@@ -641,7 +648,9 @@ msgstr ""
 "자세한 오류 설명은 \"%2\"입니다."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save File Error"
+msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "파일 저장 오류"
 
@@ -657,6 +666,12 @@ msgid "Translate…"
 msgstr "번역"
 
 #: translator/widgets/translatorwidget.cpp:219
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "닫기"
+
 #: translator/widgets/translatorwidget.cpp:222
 #, kde-format
 msgid "Close"
@@ -681,52 +696,78 @@ msgid "Invert"
 msgstr "반전"
 
 #: translator/widgets/translatorwidget.cpp:252
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action:button"
+msgid "Clear"
+msgstr "지우기"
+
 #: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Clear"
 msgstr "지우기"
 
 #: translator/widgets/translatorwidget.cpp:260
+#, fuzzy, kde-format
+#| msgid "Translate"
+msgctxt "@action:button"
+msgid "Translate"
+msgstr "번역"
+
 #: translator/widgets/translatorwidget.cpp:263
 #, kde-format
 msgid "Translate"
 msgstr "번역"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Debug"
+msgctxt "@action:button"
 msgid "Debug"
 msgstr "디버그"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "설정"
 
-#: translator/widgets/translatorwidget.cpp:367
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:368
+#, fuzzy, kde-format
+#| msgid ""
+#| "Drag text that you want to translate. (Be careful text will be send to "
+#| "external Server)."
+msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
 "번역할 텍스트를 끌어 놓으십시오. (주의: 외부 서버로 텍스트를 전송합니다)"
 
-#: translator/widgets/translatorwidget.cpp:369
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:370
+#, fuzzy, kde-format
+#| msgid "Drag text that you want to translate."
+msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "번역할 텍스트를 끌어 놓으십시오."
 
-#: translator/widgets/translatorwidget.cpp:418
+#: translator/widgets/translatorwidget.cpp:419
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "네트워크에 연결되지 않아서 텍스트를 번역할 수 없습니다."
 
-#: translator/widgets/translatorwidget.cpp:418
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:419
+#, fuzzy, kde-format
+#| msgid "No network"
+msgctxt "@title:window"
 msgid "No network"
 msgstr "네트워크 사용 불가"
 
-#: translator/widgets/translatorwidget.cpp:455
-#, kde-format
+#: translator/widgets/translatorwidget.cpp:456
+#, fuzzy, kde-format
+#| msgid "Translate error"
+msgctxt "@title:window"
 msgid "Translate error"
 msgstr "번역 오류"
 
