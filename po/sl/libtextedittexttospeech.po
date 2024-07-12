@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-15 10:36+0200\n"
+"PO-Revision-Date: 2024-07-11 05:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,20 +16,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: texttospeechactions.cpp:28
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr "Ustavi"
+msgstr "Zaustavi"
 
 #: texttospeechactions.cpp:31
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr "Ustavi"
+msgstr "Zaustavi"
 
 #: texttospeechactions.cpp:72
 #, kde-format
@@ -88,22 +87,19 @@ msgid "Voice:"
 msgstr "Glas:"
 
 #: texttospeechwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zapri"
 
 #: texttospeechwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Volume:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Glasnost:"
 
 #: texttospeechwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
@@ -114,8 +110,7 @@ msgid "Engine has a problem."
 msgstr "Stroj ima problem."
 
 #: texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Text To Speech"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Besedilo v govor"

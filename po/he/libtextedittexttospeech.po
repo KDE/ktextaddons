@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-15 06:58+0300\n"
+"PO-Revision-Date: 2024-07-11 08:22+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: texttospeechactions.cpp:28
 #, kde-format
@@ -25,8 +25,7 @@ msgid "Stop"
 msgstr "עצירה"
 
 #: texttospeechactions.cpp:31
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "עצירה"
@@ -88,22 +87,19 @@ msgid "Voice:"
 msgstr "קול:"
 
 #: texttospeechwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "סגירה"
 
 #: texttospeechwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Volume:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "עוצמת שמע:"
 
 #: texttospeechwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
@@ -114,8 +110,7 @@ msgid "Engine has a problem."
 msgstr "יש בעיה במנוע."
 
 #: texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Text To Speech"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "הקראה"

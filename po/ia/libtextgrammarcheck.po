@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# giovanni <g.sora@tiscali.it>, 2020, 2021, 2023, 2024.
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 12:44+0200\n"
+"PO-Revision-Date: 2024-07-11 11:42+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -48,8 +48,7 @@ msgid "See on: %1"
 msgstr "Vide sur: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Claude"
@@ -80,22 +79,19 @@ msgstr ""
 "installate."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Error quando on extraheva optiones"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Pressa button pe preferentias de recargar"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Recarga preferentias"
@@ -106,8 +102,7 @@ msgid "Python Path:"
 msgstr "Percurso de Python"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Adde complete percurso de 'grammalecte-cli.py'"
@@ -318,22 +313,19 @@ msgid "Use Local Instance"
 msgstr "Usa instantia local"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Percurso de instantia:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Linguage:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Refresca"
@@ -344,15 +336,13 @@ msgid "An error was reported: %1"
 msgstr "Un error esseva reportate: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Falleva a verificar grmmatica."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Verifica"
@@ -368,8 +358,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "Lista de linguages"

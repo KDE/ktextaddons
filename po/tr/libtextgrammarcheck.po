@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 13:45+0300\n"
+"PO-Revision-Date: 2024-07-11 14:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -30,7 +30,7 @@ msgstr "Değişiklik"
 #: common/grammarresulttextedit.cpp:97
 #, kde-format
 msgid "Online Grammar Information"
-msgstr "Çevrimiçi Gramer Bilgisi"
+msgstr "Çevrimiçi Dilbilgisi"
 
 #: common/grammarresulttextedit.cpp:110
 #, kde-format
@@ -45,11 +45,10 @@ msgstr "Yapılandır…"
 #: common/grammarresultutil.cpp:49
 #, kde-format
 msgid "See on: %1"
-msgstr "Bkz. %1"
+msgstr "Şurada gör: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Kapat"
@@ -68,7 +67,7 @@ msgstr "Genel"
 #: grammalecte/grammalecteconfigwidget.cpp:36
 #, kde-format
 msgid "Grammar Settings"
-msgstr "Gramer Ayarları"
+msgstr "Dilbilgisi Ayarları"
 
 #: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
@@ -78,34 +77,30 @@ msgid ""
 msgstr "Seçenekler alınamıyor. grammalected’nin kurulu olduğunu denetleyin."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr "Çıkarma Seçenekleri sırasında hata"
+msgstr "Çıkarma Seçenekleri Sırasında Hata"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
-msgstr "Ayarları Yeniden Yüklemek için Düğmeye Basın"
+msgstr "Ayarları yeniden yüklemek için düğmeye basın"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
-msgstr "Ayarları Yeniden Yükle"
+msgstr "Ayarları yeniden yükle"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
 msgid "Python Path:"
-msgstr "Python Yolu:"
+msgstr "Python yolu:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Tam “grammalecte-cli.py” yolunu ekle"
@@ -113,7 +108,7 @@ msgstr "Tam “grammalecte-cli.py” yolunu ekle"
 #: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
-msgstr "Grammalecte Yolu:"
+msgstr "Grammalecte yolu:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:147
 #, kde-format
@@ -316,22 +311,19 @@ msgid "Use Local Instance"
 msgstr "Yerel Örnek Kullan"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
-msgstr "Örnek Yolu:"
+msgstr "Örnek yolu:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Dil:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Yenile"
@@ -342,15 +334,13 @@ msgid "An error was reported: %1"
 msgstr "Bir hata bildirildi: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr "Gramer denetlenemedi."
+msgstr "Dilbilgisi denetlenemedi."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Denetle"
@@ -365,11 +355,10 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
-msgstr "Dil Listesi"
+msgstr "Diller Listesi"
 
 #~ msgid "&Check Grammar (Grammalecte)"
 #~ msgstr "Gramer &Denetle (Grammalecte)"

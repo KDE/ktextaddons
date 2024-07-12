@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 11:20+0200\n"
+"PO-Revision-Date: 2024-07-11 09:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,8 +336,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Zoeken…"
@@ -353,15 +352,13 @@ msgid "Delete"
 msgstr "Verwijderen"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Lijst bijwerken"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Lijst met talen uit het netwerk bijwerken"
@@ -620,8 +617,7 @@ msgstr "Tot:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Engine:"
@@ -647,8 +643,7 @@ msgstr ""
 "\"%2\" is de gedetailleerde foutbeschrijving."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Fout met opslaan van bestand"
@@ -664,8 +659,7 @@ msgid "Translate…"
 msgstr "Vertalen…"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sluiten"
@@ -694,8 +688,7 @@ msgid "Invert"
 msgstr "Omkeren"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Wissen"
@@ -706,8 +699,7 @@ msgid "Clear"
 msgstr "Wissen"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Vertalen"
@@ -718,24 +710,19 @@ msgid "Translate"
 msgstr "Vertalen"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Debuggen"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Configureren"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -745,8 +732,7 @@ msgstr ""
 "server worden verzonden)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Tekst verslepen die u wilt vertalen."
@@ -757,15 +743,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "Geen netwerkverbinding gedetecteerd, vertalen van tekst kan niet."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Geen netwerk"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Fout in vertalen"

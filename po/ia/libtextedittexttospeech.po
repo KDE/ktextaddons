@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
-# giovanni <g.sora@tiscali.it>, 2023, 2024.
+# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-15 10:20+0200\n"
+"PO-Revision-Date: 2024-07-11 11:41+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: texttospeechactions.cpp:28
 #, kde-format
@@ -24,8 +24,7 @@ msgid "Stop"
 msgstr "Stoppa"
 
 #: texttospeechactions.cpp:31
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Stoppa"
@@ -87,25 +86,22 @@ msgid "Voice:"
 msgstr "Voce:"
 
 #: texttospeechwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Claude"
 
 #: texttospeechwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Volume:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Tomo:"
 
 #: texttospeechwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: texttospeechwidget.cpp:132
 #, kde-format
@@ -113,8 +109,7 @@ msgid "Engine has a problem."
 msgstr "Motor (Engine) ha un problema"
 
 #: texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Text To Speech"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Texto-a-Discurso (TextToSpeech)"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-29 09:37+0200\n"
+"PO-Revision-Date: 2024-07-11 08:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -111,11 +111,10 @@ msgid "Please save changes before exporting settings."
 msgstr "Guardeu els canvis abans d'exportar la configuració."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
-msgstr "Exporta un fitxer de correcció automàtica"
+msgstr "Exportació de fitxer de correcció automàtica"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-15 05:57+0200\n"
+"PO-Revision-Date: 2024-07-11 05:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -25,11 +25,10 @@ msgid "Stop"
 msgstr "გაჩერება"
 
 #: texttospeechactions.cpp:31
-#, fuzzy, kde-format
-#| msgid "Stop"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr "შეჩერება"
+msgstr "გაჩერება"
 
 #: texttospeechactions.cpp:72
 #, kde-format
@@ -88,22 +87,19 @@ msgid "Voice:"
 msgstr "ხმა:"
 
 #: texttospeechwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "დახურვა"
 
 #: texttospeechwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Volume:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "ხმა:"
 
 #: texttospeechwidget.cpp:80
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "მორგება…"
@@ -114,8 +110,7 @@ msgid "Engine has a problem."
 msgstr "ძრავის პრობლემა."
 
 #: texttospeechwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Text To Speech"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
-msgstr "ტექსტის-ხმამაღლა-წაკითხვა"
+msgstr "ტექსტის-წარმოთქმა"

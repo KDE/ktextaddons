@@ -50,8 +50,7 @@ msgid "See on: %1"
 msgstr "Vegeu a: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Tanca"
@@ -82,22 +81,19 @@ msgstr ""
 "«grammalected»."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Error durant les opcions d'extracció"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Premeu el botó per a tornar a carregar la configuració"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Torna a carregar la configuració"
@@ -108,8 +104,7 @@ msgid "Python Path:"
 msgstr "Camí de Python:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Afegiu tot el camí cap a «grammalecte-cli.py»"
@@ -321,22 +316,19 @@ msgid "Use Local Instance"
 msgstr "Utilitza una instància local"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Camí de la instància:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Idioma:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Actualitza"
@@ -347,15 +339,13 @@ msgid "An error was reported: %1"
 msgstr "S'ha notificat un error: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "No s'ha pogut comprovar la gramàtica."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Comprova"
@@ -371,8 +361,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "Llista d'idiomes"

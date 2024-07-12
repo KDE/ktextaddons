@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 20:16+0300\n"
+"PO-Revision-Date: 2024-07-11 08:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -84,15 +84,13 @@ msgid "Send"
 msgstr "שליחה"
 
 #: richtexteditor/richtexteditor.cpp:525
-#, fuzzy, kde-format
-#| msgid "Skip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "דילוג"
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "סגירה"
@@ -112,15 +110,13 @@ msgstr ""
 "הביטוי ‚%1’ לא נמצא."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "החלפה"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Replace All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "החלפה של הכול"
@@ -150,22 +146,19 @@ msgid "F&ind:"
 msgstr "&איתור:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "טקסט לחיפוש"
 
 #: widgets/textfindreplacewidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "דילוג לתוצאה הבאה"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "דילוג לתוצאה הקודמת"
@@ -176,8 +169,7 @@ msgid "Options"
 msgstr "אפשרויות"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "שינוי התנהגות החיפוש"
@@ -203,8 +195,7 @@ msgid "Respect Diacritic and Accents"
 msgstr "התחשבות בסימנים דיאקריטיים והגווני אותיות"
 
 #: widgets/textgotolinewidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Go to Line:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "מעבר לשורה:"

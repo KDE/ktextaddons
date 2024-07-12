@@ -1,16 +1,16 @@
 # Translation for libtextcustomeditor.po to Euskara/Basque (eu).
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) 2023-2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2023-09-07 23:11+0200\n"
+"PO-Revision-Date: 2024-07-11 17:47+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -30,10 +30,9 @@ msgstr[1] "%1 ordezkapen egin dira"
 
 #: plaintexteditor/plaintexteditor.cpp:166
 #: richtexteditor/richtexteditor.cpp:227
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
-msgstr "Egiaztatu ortografia..."
+msgstr "Ortografia aztertu..."
 
 #: plaintexteditor/plaintexteditor.cpp:171
 #: richtexteditor/richtexteditor.cpp:234
@@ -87,15 +86,13 @@ msgid "Send"
 msgstr "Bidali"
 
 #: richtexteditor/richtexteditor.cpp:525
-#, fuzzy, kde-format
-#| msgid "Skip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Jauzi"
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Itxi"
@@ -115,18 +112,16 @@ msgstr ""
 "'%1' esamoldea ez da aurkitu."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Ordeztu"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Replace All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
-msgstr "Ordeztu denak"
+msgstr "Dena ordeztu"
 
 #: widgets/textfindreplacewidget.cpp:30
 #, kde-format
@@ -153,22 +148,19 @@ msgid "F&ind:"
 msgstr "Aurk&itu:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Bilatu beharreko testua"
 
 #: widgets/textfindreplacewidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Joan hurrengo bat-etortzera"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Joan aurreko bat-etortzera"
@@ -179,8 +171,7 @@ msgid "Options"
 msgstr "Aukerak"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Aldatu bilaketaren jokabidea"
@@ -206,11 +197,10 @@ msgid "Respect Diacritic and Accents"
 msgstr "Errespetu diakritikoa eta azentuak"
 
 #: widgets/textgotolinewidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Go to Line:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
-msgstr "Joan lerrora:"
+msgstr "Lerrora joan:"
 
 #: widgets/textgotolinewidget.cpp:56
 #, kde-format

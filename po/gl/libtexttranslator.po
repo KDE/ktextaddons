@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-06-18 20:06+0200\n"
+"PO-Revision-Date: 2024-07-11 13:54+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,8 +336,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Buscar…"
@@ -353,15 +352,13 @@ msgid "Delete"
 msgstr "Eliminar"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Actualizar a lista"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Actualizar a lista de idiomas pola rede."
@@ -621,8 +618,7 @@ msgstr "A:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motor:"
@@ -648,8 +644,7 @@ msgstr ""
 "«%2» é a descrición detallada do erro."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Erro ao gardar o ficheiro"
@@ -665,8 +660,7 @@ msgid "Translate…"
 msgstr "Traducir…"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Pechar"
@@ -695,8 +689,7 @@ msgid "Invert"
 msgstr "Inverter"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Borrar"
@@ -707,8 +700,7 @@ msgid "Clear"
 msgstr "Borrar"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Traducir"
@@ -719,24 +711,19 @@ msgid "Translate"
 msgstr "Traducir"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Depurar"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Configurar"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -746,8 +733,7 @@ msgstr ""
 "servidor externo)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Arrastre o texto que queira traducir."
@@ -760,15 +746,13 @@ msgstr ""
 "texto."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Non hai rede"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Erro de tradución"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 07:30+0200\n"
+"PO-Revision-Date: 2024-07-11 05:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -337,8 +337,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "ძებნა…"
@@ -354,15 +353,13 @@ msgid "Delete"
 msgstr "წაშლა"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "სიის განახლება"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "ენის სიის ქსელიდან განახლება"
@@ -622,11 +619,10 @@ msgstr "ვის:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr "ძრავი:"
+msgstr "ძრავა:"
 
 #: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
@@ -649,8 +645,7 @@ msgstr ""
 "\"%2\" შეცდომის დეტალურ აღწერას წარმოადგენს."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "ფაილის შენახვის შეცდომა"
@@ -666,8 +661,7 @@ msgid "Translate…"
 msgstr "თარგმნა…"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "დახურვა"
@@ -696,8 +690,7 @@ msgid "Invert"
 msgstr "ინვერსია"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "გაწმენდა"
@@ -708,8 +701,7 @@ msgid "Clear"
 msgstr "გაწმენდა"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "თარგმნა"
@@ -720,24 +712,19 @@ msgid "Translate"
 msgstr "თარგმნა"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
-msgstr "პროგრამის შეცდომის პოვნა"
+msgstr "გამართვა"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "მორგება"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -747,8 +734,7 @@ msgstr ""
 "გადაიგზავნება)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "გადმოათრიეთ ტექსტი, რომელიც გნებავთ, თარგმნოთ."
@@ -759,18 +745,16 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "ქსელთან მიერთება აღმოჩენილი არაა. ტექსტს ვერ ვთარგმნით."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "ქსელის გარეშე"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
-msgstr "მთარგმნელის შეცდომა"
+msgstr "თარგმანის შეცდომა"
 
 #~ msgid "Translate..."
 #~ msgstr "თარგმნა..."

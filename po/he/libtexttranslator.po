@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 20:17+0300\n"
+"PO-Revision-Date: 2024-07-11 08:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -337,8 +337,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "חיפוש…"
@@ -354,15 +353,13 @@ msgid "Delete"
 msgstr "מחיקה"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "עדכון הרשימה"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "עדכון רשימת השפות מהרשת"
@@ -621,8 +618,7 @@ msgstr "אל:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "מנוע:"
@@ -648,8 +644,7 @@ msgstr ""
 "„%2” היא התיאור המפורט של השגיאה."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "שגיאת שמירת קובץ"
@@ -665,8 +660,7 @@ msgid "Translate…"
 msgstr "תרגום"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "סגירה"
@@ -695,11 +689,10 @@ msgid "Invert"
 msgstr "היפוך"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
-msgstr "מחיקה"
+msgstr "פינוי"
 
 #: translator/widgets/translatorwidget.cpp:255
 #, kde-format
@@ -707,8 +700,7 @@ msgid "Clear"
 msgstr "מחיקה"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "תרגום"
@@ -719,24 +711,19 @@ msgid "Translate"
 msgstr "תרגום"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "ניפוי שגיאות"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "הגדרה"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -744,11 +731,10 @@ msgid ""
 msgstr "נא לגרור מה שמיועד לתרגום. (חשוב לזכור כי הטקסט יישלח לשרת חיצוני)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
-msgstr "נא לגרור מה שמיועד לתרגום."
+msgstr "נא לגרור טקסט שמיועד לתרגום."
 
 #: translator/widgets/translatorwidget.cpp:419
 #, kde-format
@@ -756,15 +742,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "לא זוהה חיבור לרשת, אי אפשר לתרגם את הטקסט."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "אין רשת"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "שגיאת תרגום"

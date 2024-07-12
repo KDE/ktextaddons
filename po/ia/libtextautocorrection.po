@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
-# giovanni <g.sora@tiscali.it>, 2023, 2024.
+# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-29 12:42+0200\n"
+"PO-Revision-Date: 2024-07-11 11:42+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -109,8 +109,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Pro favor salveguarda modificationes ante exportar preferentias."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Exporta file de correction automatic"

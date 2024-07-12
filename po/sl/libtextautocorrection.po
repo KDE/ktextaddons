@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-29 07:19+0200\n"
+"PO-Revision-Date: 2024-07-11 06:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -110,8 +110,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Shranite spremembe pred izvozom nastavitev."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Izvozi datoteko samopopravkov"

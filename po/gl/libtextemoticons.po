@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-17 20:58+0200\n"
+"PO-Revision-Date: 2024-07-11 13:48+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -86,8 +86,7 @@ msgid "Add Smiley"
 msgstr "Engadir unha emoticona"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Buscar unha emoticona…"

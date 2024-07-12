@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-15 06:58+0300\n"
+"PO-Revision-Date: 2024-07-11 08:22+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -87,8 +87,7 @@ msgid "Add Smiley"
 msgstr "הוספת חייכן"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "חיפוש סמלון רגש…"

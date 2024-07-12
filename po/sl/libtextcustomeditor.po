@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 06:20+0200\n"
+"PO-Revision-Date: 2024-07-11 05:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -86,15 +86,13 @@ msgid "Send"
 msgstr "Pošlji"
 
 #: richtexteditor/richtexteditor.cpp:525
-#, fuzzy, kde-format
-#| msgid "Skip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Preskoči"
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zapri"
@@ -114,15 +112,13 @@ msgstr ""
 "Fraze '%1' ni mogoče najti."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Zamenjaj"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Replace All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Zamenjaj vse"
@@ -152,22 +148,19 @@ msgid "F&ind:"
 msgstr "Najdi:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Iskano besedilo"
 
 #: widgets/textfindreplacewidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Skoči na naslednji zadetek"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Skoči na prejšnji zadetek"
@@ -178,8 +171,7 @@ msgid "Options"
 msgstr "Možnosti"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Spremeni obnašanje iskanja"
@@ -205,8 +197,7 @@ msgid "Respect Diacritic and Accents"
 msgstr "Upoštevaj diakritične znake in naglase"
 
 #: widgets/textgotolinewidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Go to Line:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Pojdi na vrstico:"

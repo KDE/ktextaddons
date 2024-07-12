@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautocorrection\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-29 21:43+0200\n"
+"PO-Revision-Date: 2024-07-11 15:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -112,8 +112,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Guarde los cambios antes de exportar las preferencias."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Exportar archivo de corrección automática"

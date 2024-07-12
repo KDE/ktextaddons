@@ -1,16 +1,16 @@
 # Translation for libtexttranslator.po to Euskara/Basque (eu).
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) 2023-2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2023-10-13 00:51+0200\n"
+"PO-Revision-Date: 2024-07-11 17:54+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -339,8 +339,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Bilatu..."
@@ -356,18 +355,16 @@ msgid "Delete"
 msgstr "Ezabatu"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Eguneratu zerrenda"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr "Eguneratu hizkuntza zerrendak saretik"
+msgstr "Eguneratu hizkuntzen zerrendan saretik"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
@@ -624,8 +621,7 @@ msgstr "Helburua:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motorra:"
@@ -637,8 +633,7 @@ msgid "Translator Debug"
 msgstr "Itzultzailea araztea"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
 msgstr "Gorde honela..."
 
@@ -652,8 +647,7 @@ msgstr ""
 "«%2» da errorearen deskribapen xehatua."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Fitxategia gordetzeko errorea"
@@ -664,14 +658,12 @@ msgid "All Files (*)"
 msgstr "Fitxategi guztiak (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "Itzuli"
+msgstr "Itzuli..."
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Itxi"
@@ -700,8 +692,7 @@ msgid "Invert"
 msgstr "Alderantziz"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Garbitu"
@@ -712,8 +703,7 @@ msgid "Clear"
 msgstr "Garbitu"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Itzuli"
@@ -724,24 +714,19 @@ msgid "Translate"
 msgstr "Itzuli"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Araztu"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Konfiguratu"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -751,8 +736,7 @@ msgstr ""
 "bidaliko da)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Arrastatu itzuli nahi duzun testua."
@@ -763,15 +747,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "Ez da sareko konexiorik antzeman, testua ezin dugu itzuli."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Sarerik gabe"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Itzulpen errorea"
