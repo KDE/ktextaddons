@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-06-21 10:52+0200\n"
+"PO-Revision-Date: 2024-07-12 20:57+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -65,8 +65,7 @@ msgid "Vosk Plugin Settings"
 msgstr "Inställningar av Vosk-insticksprogram"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Sök…"
@@ -82,15 +81,13 @@ msgid "Delete"
 msgstr "Ta bort"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Uppdatera lista"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Uppdatera lista över språk från nätverket"
@@ -143,8 +140,7 @@ msgid "Whisper"
 msgstr "Viska"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Gränssnitt:"
@@ -161,11 +157,10 @@ msgid "Speech to Text…"
 msgstr "Tal till text…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Input:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
-msgstr "Indata:"
+msgstr "Inmatning:"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format

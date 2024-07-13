@@ -30,8 +30,7 @@ msgid "Insert"
 msgstr "Vložit"
 
 #: selectspecialchardialog.cpp:53
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select"
 msgstr "Vybrat"

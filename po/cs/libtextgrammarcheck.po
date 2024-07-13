@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# Vit Pelcak <vit@pelcak.org>, 2019, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2023-01-24 15:34+0100\n"
+"PO-Revision-Date: 2024-07-12 11:42+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -48,8 +48,7 @@ msgid "See on: %1"
 msgstr ""
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavřít"
@@ -81,18 +80,16 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "Chyba během rozbalování možností"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
-msgstr "Obnovit nastavení"
+msgstr "Stiskněte tlačítko pro obnovení nastavení"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Obnovit nastavení"
@@ -316,18 +313,16 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
-msgstr ""
+msgstr "Cesta k instanci:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Jazyk:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Obnovit"
@@ -341,11 +336,10 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "Gramatiku nelze zkontrolovat."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Zkontrolovat"
@@ -358,8 +352,7 @@ msgid ""
 msgstr ""
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
-msgstr "Jazyk:"
+msgstr "Seznam jazyků"

@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-29 11:35+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-07-12 11:43+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,8 +336,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Hledat…"
@@ -353,15 +352,13 @@ msgid "Delete"
 msgstr "Smazat"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Aktualizovat seznam"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Aktualizovat seznam jazyků ze sítě"
@@ -532,7 +529,7 @@ msgstr "API klíč:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
 #, kde-format
 msgid "Server needs Api Key."
-msgstr ""
+msgstr "Server potřebuje klíč API."
 
 #: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
@@ -552,7 +549,7 @@ msgstr "Libre Translate"
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "Server vyžaduje klíč API"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
 #: translator/plugins/lingva/lingvaenginewidget.cpp:23
@@ -563,7 +560,7 @@ msgstr "URL serveru:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
 #, kde-format
 msgid "Server url is not defined."
-msgstr ""
+msgstr "URL serveru nebylo zadáno."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
@@ -618,8 +615,7 @@ msgstr "Do:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Nástroj:"
@@ -645,8 +641,7 @@ msgstr ""
 "Podrobný popis chyby: %2."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Chyba ukládání souboru"
@@ -662,8 +657,7 @@ msgid "Translate…"
 msgstr "Přeložit…"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavřít"
@@ -692,8 +686,7 @@ msgid "Invert"
 msgstr "Obrátit"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Vyprázdnit"
@@ -704,8 +697,7 @@ msgid "Clear"
 msgstr "Vyprázdnit"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Přeložit"
@@ -716,24 +708,19 @@ msgid "Translate"
 msgstr "Přeložit"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Ladění"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Nastavit"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -743,8 +730,7 @@ msgstr ""
 "externí server)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Přetáhněte text, jenž chcete přeložit."
@@ -755,15 +741,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "Není dostupné internetové připojení. text nelze přeložit."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Není síť"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Přeložit chybu"

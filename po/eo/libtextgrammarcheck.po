@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 09:14+0100\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -49,8 +49,7 @@ msgid "See on: %1"
 msgstr "Vidi en: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Fermi"
@@ -81,22 +80,19 @@ msgstr ""
 "instalite."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Eraro dum Ekstraktado de Opcioj"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Premu Butonon por Reŝargi Agordojn"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Reŝargi Agordojn"
@@ -107,8 +103,7 @@ msgid "Python Path:"
 msgstr "Python-Vojo:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Aldoni plenan vojon 'grammalecte-cli.py'"
@@ -319,22 +314,19 @@ msgid "Use Local Instance"
 msgstr "Uzi Lokan Instancon"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Instanca Vojo:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Lingvo:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Refreŝigi"
@@ -345,15 +337,13 @@ msgid "An error was reported: %1"
 msgstr "Eraro estis raportita: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Malsukcesis kontroli la gramatikon."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Kontroli"
@@ -368,8 +358,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "Listo de Lingvoj"

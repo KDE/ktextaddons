@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-29 11:35+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2024-07-12 11:44+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
@@ -60,11 +60,10 @@ msgstr "Chyba při zápisu na disk: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Nastavení modulu Vosk"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Hledat…"
@@ -80,15 +79,13 @@ msgid "Delete"
 msgstr "Smazat"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Aktualizovat seznam"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Aktualizovat seznam jazyků ze sítě"
@@ -102,7 +99,7 @@ msgstr "Chyba: %1"
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
-msgstr ""
+msgstr "Vosk"
 
 #: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
 #, kde-format
@@ -141,8 +138,7 @@ msgid "Whisper"
 msgstr "Šeptat"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Nástroj:"
@@ -159,8 +155,7 @@ msgid "Speech to Text…"
 msgstr "Mluvené slovo na text…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Input:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Vstup:"

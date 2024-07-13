@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-10 09:14+0100\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -65,8 +65,7 @@ msgid "Vosk Plugin Settings"
 msgstr "Vosk-Kromprogramaj Agordoj"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Serĉi…"
@@ -82,15 +81,13 @@ msgid "Delete"
 msgstr "Forigi"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Ĝisdatigi Liston"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Ĝisdatigi liston de lingvoj el reto"
@@ -143,8 +140,7 @@ msgid "Whisper"
 msgstr "Flustri"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motoro:"
@@ -161,8 +157,7 @@ msgid "Speech to Text…"
 msgstr "Parolo al Teksto…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Input:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "Enigo:"

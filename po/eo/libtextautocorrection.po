@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-30 07:49+0200\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -109,8 +109,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Bonvolu konservi ŝanĝojn antaŭ eksporti agordojn."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Eksporti Aŭtokorektan Dosieron"
