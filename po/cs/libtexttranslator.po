@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-13 02:34+0000\n"
-"PO-Revision-Date: 2023-10-19 14:46+0200\n"
+"PO-Revision-Date: 2024-07-12 11:43+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: translator/misc/translatorutil.cpp:31
 #, kde-format
@@ -526,7 +526,7 @@ msgstr "API klíč:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:44
 #, kde-format
 msgid "Server needs Api Key."
-msgstr ""
+msgstr "Server potřebuje klíč API."
 
 #: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
@@ -546,7 +546,7 @@ msgstr "Libre Translate"
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:23
 #, kde-format
 msgid "Server required Api Key"
-msgstr ""
+msgstr "Server vyžaduje klíč API"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:31
 #: translator/plugins/lingva/lingvaenginewidget.cpp:27
@@ -557,7 +557,7 @@ msgstr "URL serveru:"
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server url is not defined."
-msgstr ""
+msgstr "URL serveru nebylo zadáno."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
