@@ -108,8 +108,7 @@ msgid "Please save changes before exporting settings."
 msgstr "请在导出设置之前保存更改。"
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "导出自动更正文件"

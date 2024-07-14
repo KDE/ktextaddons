@@ -86,8 +86,7 @@ msgid "Add Smiley"
 msgstr "添加表情符号"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "搜索表情符号…"
