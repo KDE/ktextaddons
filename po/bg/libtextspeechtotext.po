@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-07-05 15:58+0200\n"
+"PO-Revision-Date: 2024-07-14 22:10+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
@@ -65,8 +65,7 @@ msgid "Vosk Plugin Settings"
 msgstr "Настройки на приставка Vosk"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Търсене…"
@@ -82,15 +81,13 @@ msgid "Delete"
 msgstr "Изтриване"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Обновяване на списъка"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Актуализиране на списъка с езици от интернет"
@@ -143,8 +140,7 @@ msgid "Whisper"
 msgstr "Шепот"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Основна програма:"
@@ -161,11 +157,10 @@ msgid "Speech to Text…"
 msgstr "Преобразуване на говор в текст…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Input:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
-msgstr "Вход:"
+msgstr "Въвеждане:"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format

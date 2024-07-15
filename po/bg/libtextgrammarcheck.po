@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-05-13 22:48+0200\n"
+"PO-Revision-Date: 2024-07-14 22:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -50,8 +50,7 @@ msgid "See on: %1"
 msgstr "Виж на: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Затваряне"
@@ -82,22 +81,19 @@ msgstr ""
 "grammalected."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Грешка при екстрахиране на опциите"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Натиснете бутона за презареждане на настройките"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Презареждане на настройките"
@@ -108,8 +104,7 @@ msgid "Python Path:"
 msgstr "Път до Python:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Добавяне на пълния път до  'grammalecte-cli.py'"
@@ -320,22 +315,19 @@ msgid "Use Local Instance"
 msgstr "Използване на локална инстанция"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Път на инсталация:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Език:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Обновяване"
@@ -346,15 +338,13 @@ msgid "An error was reported: %1"
 msgstr "Съобщение за грешка:%1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr "Проверка на граматиката неуспешна."
+msgstr "Проверката на граматиката неуспешна."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Проверка"
@@ -369,8 +359,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
-msgstr "Списък на езици"
+msgstr "Списък с езици"
