@@ -114,6 +114,7 @@ void EmojiProxyModel::setCategory(const QString &newCategorie)
             // Make sure that we reorder recent/custom category
             invalidate();
         }
+        Q_EMIT categoryChanged();
     }
 }
 
