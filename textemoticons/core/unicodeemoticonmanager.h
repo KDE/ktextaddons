@@ -20,6 +20,9 @@ class UnicodeEmoticonManagerPrivate;
 class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
 {
     Q_OBJECT
+
+    Q_PROPERTY(QList<EmoticonCategory> categories READ categories CONSTANT)
+
 public:
     explicit UnicodeEmoticonManager(QObject *parent = nullptr);
     ~UnicodeEmoticonManager() override;
