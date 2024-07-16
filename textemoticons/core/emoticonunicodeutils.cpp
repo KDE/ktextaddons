@@ -24,3 +24,13 @@ QString EmoticonUnicodeUtils::customIdentifier()
 {
     return QStringLiteral("customs");
 }
+
+QString EmoticonUnicodeUtils::recentName()
+{
+    return QStringLiteral("⌛️");
+}
+
+QString EmoticonUnicodeUtils::customName()
+{
+    return QStringLiteral("🖼️");
+}
