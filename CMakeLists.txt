@@ -29,6 +29,10 @@ include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 
+option(BUILD_QUICK "Build with QtQuick support" ON)
+if (BUILD_QUICK)
+    include(ECMQmlModule)
+endif ()
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
 
