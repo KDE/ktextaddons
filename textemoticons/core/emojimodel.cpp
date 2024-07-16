@@ -143,4 +143,9 @@ void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
     }
 }
 
+QHash<int, QByteArray> EmojiModel::roleNames() const
+{
+    return {{{UnicodeEmoji, QByteArrayLiteral("unicode")}, {Identifier, QByteArrayLiteral("identifier")}, {Category, QByteArrayLiteral("category")}}};
+}
+
 #include "moc_emojimodel.cpp"
