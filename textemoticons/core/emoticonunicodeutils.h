@@ -14,5 +14,7 @@ namespace EmoticonUnicodeUtils
 [[nodiscard]] TEXTEMOTICONSCORE_EXPORT QString emojiFontName();
 [[nodiscard]] TEXTEMOTICONSCORE_EXPORT QString recentIdentifier();
 [[nodiscard]] TEXTEMOTICONSCORE_EXPORT QString customIdentifier();
+[[nodiscard]] TEXTEMOTICONSCORE_EXPORT QString recentName();
+[[nodiscard]] TEXTEMOTICONSCORE_EXPORT QString customName();
 }
 }
