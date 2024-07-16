@@ -8,6 +8,8 @@
 
 #include <QQmlEngine>
 
+#include <TextEmoticonsCore/EmojiModelManager>
+#include <TextEmoticonsCore/EmojiProxyModel>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
 struct UnicodeEmoticonManagerForeign {
@@ -16,4 +18,19 @@ struct UnicodeEmoticonManagerForeign {
     QML_SINGLETON
     QML_NAMED_ELEMENT(UnicodeEmoticonManager)
     QML_FOREIGN(TextEmoticonsCore::UnicodeEmoticonManager)
+};
+
+struct EmojiProxyModelForeign {
+    Q_GADGET
+    QML_ELEMENT
+    QML_NAMED_ELEMENT(EmojiProxyModel)
+    QML_FOREIGN(TextEmoticonsCore::EmojiProxyModel)
+};
+
+struct EmojiModelManagerForeign {
+    Q_GADGET
+    QML_ELEMENT
+    QML_SINGLETON
+    QML_NAMED_ELEMENT(EmojiModelManager)
+    QML_FOREIGN(TextEmoticonsCore::EmojiModelManager)
 };
