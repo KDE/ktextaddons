@@ -17,6 +17,12 @@ namespace TextEmoticonsCore
  */
 class TEXTEMOTICONSCORE_EXPORT EmoticonCategory
 {
+    Q_GADGET
+
+    Q_PROPERTY(QString name MEMBER mName CONSTANT)
+    Q_PROPERTY(QString category MEMBER mCategory CONSTANT)
+    Q_PROPERTY(QString i18nName MEMBER mI18nName CONSTANT)
+
 public:
     EmoticonCategory();
     [[nodiscard]] QString name() const;
