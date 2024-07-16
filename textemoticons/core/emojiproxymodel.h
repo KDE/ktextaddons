@@ -17,6 +17,9 @@ namespace TextEmoticonsCore
 class TEXTEMOTICONSCORE_EXPORT EmojiProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+
+    Q_PROPERTY(QString category READ category WRITE setCategory NOTIFY categoryChanged)
+
 public:
     explicit EmojiProxyModel(QObject *parent = nullptr);
     ~EmojiProxyModel() override;
@@ -28,6 +31,9 @@ public:
 
     [[nodiscard]] QString searchIdentifier() const;
     void setSearchIdentifier(const QString &newSearchIdentifier);
+
+Q_SIGNALS:
+    void categoryChanged();
 
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
