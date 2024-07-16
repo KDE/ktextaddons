@@ -48,6 +48,8 @@ public:
 
     void setExcludeEmoticons(const QStringList &emoticons);
 
+    QHash<int, QByteArray> roleNames() const override;
+
 private:
     Q_DISABLE_COPY(EmojiModel)
     QList<TextEmoticonsCore::UnicodeEmoticon> mEmoticonList;
