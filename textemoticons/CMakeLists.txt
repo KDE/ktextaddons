@@ -4,3 +4,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libtextemoticons\")
 
 add_subdirectory(core)
 add_subdirectory(widgets)
+if (BUILD_QUICK)
+    add_subdirectory(quick)
+endif ()

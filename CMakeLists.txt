@@ -39,7 +39,7 @@ textspeechtotext/*.cpp
 textspeechtotext/*.h
 textautocorrection/*.cpp
 textautocorrection/*.h
-textemoticons/*.cpp   
+textemoticons/*.cpp
 textemoticons/*.h
 texttranslator/*.cpp
 texttranslator/*.h
@@ -51,6 +51,11 @@ textutils/*.cpp
 textutils/*.h
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
+
+option(BUILD_QUICK "Build with QtQuick support" OFF)
+if (BUILD_QUICK)
+    include(ECMQmlModule)
+endif ()
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
 
