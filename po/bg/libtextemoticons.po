@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-07-14 22:05+0200\n"
+"PO-Revision-Date: 2024-07-27 21:04+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "Изчистване на последно използвани"
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
-msgstr "Добавяне на усмивка"
+msgstr "Добавяне на емотикон"
 
 #: widgets/emoticontexteditselector.cpp:83
 #, kde-format
