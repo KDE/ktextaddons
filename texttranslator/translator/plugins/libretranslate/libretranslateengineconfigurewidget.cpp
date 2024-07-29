@@ -16,7 +16,7 @@ LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget
     : QWidget{parent}
     , mServerUrl(new QLineEdit(this))
     , mApiKey(new QLineEdit(this))
-    , mRequiredApiKey(new QCheckBox(i18n("Server required Api Key"), this))
+    , mRequiredApiKey(new QCheckBox(i18nc("@option:check", "Server required Api Key"), this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setContentsMargins({});

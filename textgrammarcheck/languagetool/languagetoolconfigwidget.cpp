@@ -19,7 +19,7 @@
 using namespace TextGrammarCheck;
 LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     : QWidget(parent)
-    , mUseLocalInstance(new QCheckBox(i18n("Use Local Instance"), this))
+    , mUseLocalInstance(new QCheckBox(i18nc("@option:check", "Use Local Instance"), this))
     , mInstancePath(new QLineEdit(this))
     , mInstancePathLabel(new QLabel(i18nc("@label:textbox", "Instance Path:"), this))
     , mLanguageToolCombobox(new LanguageToolComboBox(this))

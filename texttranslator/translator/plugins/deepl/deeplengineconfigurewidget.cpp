@@ -15,7 +15,7 @@
 
 DeeplEngineConfigureWidget::DeeplEngineConfigureWidget(QWidget *parent)
     : QWidget{parent}
-    , mUseFreeLicense(new QCheckBox(i18n("Use Free License Key"), this))
+    , mUseFreeLicense(new QCheckBox(i18nc("@option:check", "Use Free License Key"), this))
     , mApiKey(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);

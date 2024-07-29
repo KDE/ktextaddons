@@ -16,7 +16,7 @@ BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     : QWidget{parent}
     , mNumberThreads(new QComboBox(this))
     , mMemoryByThreads(new QComboBox(this))
-    , mUseLocalCache(new QCheckBox(i18n("Use translation cache"), this))
+    , mUseLocalCache(new QCheckBox(i18nc("@option:check", "Use translation cache"), this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
