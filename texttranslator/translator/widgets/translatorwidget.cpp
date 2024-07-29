@@ -267,7 +267,7 @@ void TranslatorWidget::init()
     connect(d->translate, &QPushButton::clicked, this, &TranslatorWidget::slotTranslate);
 
     if (!qEnvironmentVariableIsEmpty("TRANSLATING_DEBUGGING")) {
-        auto debugButton = new QPushButton(i18nc("@action:button", "Debug"));
+        auto debugButton = new QPushButton(i18nc("@action:button", "Debug"), this);
         hboxLayout->addWidget(debugButton);
         connect(debugButton, &QPushButton::clicked, this, &TranslatorWidget::slotDebug);
     }
