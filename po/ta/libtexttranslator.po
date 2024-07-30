@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:30+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -372,7 +372,9 @@ msgid "Error: %1"
 msgstr "சிக்கல்: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use translation cache"
+msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "மொழிபெயர்ப்புகளுக்கான தற்காலிக நினைவிடத்தை பயன்படுத்து"
 
@@ -521,7 +523,9 @@ msgid "Configure Engine"
 msgstr "பின்னணி சேவையை அமை"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Free License Key"
+msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "இலவச உரிம சாவியைப் பயன்படுத்து"
 
@@ -553,7 +557,9 @@ msgid "Libre Translate"
 msgstr ""
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server required Api Key"
+msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "சேவையகம், API சாவியை எதிர்பார்க்கிறது"
 

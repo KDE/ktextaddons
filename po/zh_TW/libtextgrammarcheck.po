@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-07-14 17:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -306,7 +306,9 @@ msgid "Configure LanguageTool"
 msgstr "設定 LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Local Instance"
+msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "使用本地實體"
 

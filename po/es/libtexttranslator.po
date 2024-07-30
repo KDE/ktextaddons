@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-07-11 15:25+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -371,7 +371,9 @@ msgid "Error: %1"
 msgstr "Error: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use translation cache"
+msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "Usar caché de traducción"
 
@@ -523,7 +525,9 @@ msgid "Configure Engine"
 msgstr "Configurar el motor"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Free License Key"
+msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Usar clave de licencia libre"
 
@@ -555,7 +559,9 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server required Api Key"
+msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "El servidor solicita clave de API"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -369,7 +369,9 @@ msgid "Error: %1"
 msgstr "错误：%1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use translation cache"
+msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "使用翻译缓存"
 
@@ -515,7 +517,9 @@ msgid "Configure Engine"
 msgstr "配置引擎"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Free License Key"
+msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "使用免费许可证密钥"
 
@@ -547,7 +551,9 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server required Api Key"
+msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "服务器需要 API 密钥"
 

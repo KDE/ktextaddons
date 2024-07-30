@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-07-11 05:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -370,7 +370,9 @@ msgid "Error: %1"
 msgstr "შეცდომა: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use translation cache"
+msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "თარგმანის კეშის გამოყენება"
 
@@ -519,7 +521,9 @@ msgid "Configure Engine"
 msgstr "ძრავის მორგება"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Free License Key"
+msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "უფასო ლიცენზიის გასაღების გამოყენება"
 
@@ -551,7 +555,9 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server required Api Key"
+msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "სერვერისთვის საჭირო API გასაღები"
 

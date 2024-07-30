@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -306,7 +306,9 @@ msgid "Configure LanguageTool"
 msgstr "配置 LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Local Instance"
+msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "使用本地实例"
 

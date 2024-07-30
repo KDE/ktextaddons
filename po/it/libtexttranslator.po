@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2024-07-13 02:22+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -369,7 +369,9 @@ msgid "Error: %1"
 msgstr "Errore: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use translation cache"
+msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "Usa la cache di traduzione"
 
@@ -519,7 +521,9 @@ msgid "Configure Engine"
 msgstr "Configura il motore"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Free License Key"
+msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Usa la chiave di licenza gratuita"
 
@@ -551,7 +555,9 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server required Api Key"
+msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Chiave API richiesta dal server"
 

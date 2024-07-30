@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2019-02-07 23:21-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -302,6 +302,7 @@ msgstr ""
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
+msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-07-30 00:40+0000\n"
 "PO-Revision-Date: 2023-08-14 21:57+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -374,6 +374,7 @@ msgstr "Fehler: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
+msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr ""
 
@@ -531,6 +532,7 @@ msgstr "Basisprogramm einrichten"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr ""
 
@@ -562,7 +564,9 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server required Api Key"
+msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Der Server verlangt einen API-Schlüssel"
 
