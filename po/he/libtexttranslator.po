@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 08:25+0300\n"
+"PO-Revision-Date: 2024-07-30 10:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -370,8 +370,7 @@ msgid "Error: %1"
 msgstr "שגיאה: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "להשתמש במטמון תרגום"
@@ -520,8 +519,7 @@ msgid "Configure Engine"
 msgstr "הגדרת מנוע"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "להשתמש במפתח רישיון חינמי"
@@ -554,8 +552,7 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "השרת דורש מפתח Api"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 14:58+0300\n"
+"PO-Revision-Date: 2024-07-30 18:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -369,11 +369,10 @@ msgid "Error: %1"
 msgstr "Hata: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr "Çeviri önbelleğini kullan"
+msgstr "Çeviri önbelleği kullan"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -519,11 +518,10 @@ msgid "Configure Engine"
 msgstr "İşletkeyi Yapılandır"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
-msgstr "Ücretsiz Lisans Anahtarı Kullan"
+msgstr "Ücretsiz lisans anahtarı kullan"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
@@ -553,8 +551,7 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Sunucu, API anahtarı gerektirdi"

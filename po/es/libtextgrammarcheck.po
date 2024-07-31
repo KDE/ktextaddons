@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextgrammarcheck\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 15:24+0200\n"
+"PO-Revision-Date: 2024-07-30 16:48+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
 msgid "Any text to check."
-msgstr "Un texto a comprobar."
+msgstr "Un texto para comprobar."
 
 #: common/grammarresulttextedit.cpp:88
 #, kde-format
@@ -310,8 +310,7 @@ msgid "Configure LanguageTool"
 msgstr "Configurar LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Use Local Instance"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "Usar instancia local"

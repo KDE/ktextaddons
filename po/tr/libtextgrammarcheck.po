@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 14:54+0300\n"
+"PO-Revision-Date: 2024-07-30 18:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -306,11 +306,10 @@ msgid "Configure LanguageTool"
 msgstr "LanguageTool’u Yapılandır"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Use Local Instance"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
-msgstr "Yerel Örnek Kullan"
+msgstr "Yerel örnek kullan"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
