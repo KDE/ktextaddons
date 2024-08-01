@@ -70,7 +70,7 @@ void GrammalecteResultWidget::slotError(GrammalecteResultJob::ErrorType error)
         break;
     }
     if (!str.isEmpty()) {
-        KMessageBox::error(this, str, i18n("Grammalecte error"));
+        KMessageBox::error(this, str, i18nc("@title:window", "Grammalecte error"));
     }
 }
 

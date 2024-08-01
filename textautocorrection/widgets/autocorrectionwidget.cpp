@@ -428,7 +428,7 @@ void AutoCorrectionWidget::addAutocorrectEntry()
     const QString find = d->ui->find->text();
     const QString replace = d->ui->replace->text();
     if (find == replace) {
-        KMessageBox::error(this, i18n("\"Replace\" string is the same as \"Find\" string."), i18n("Add Autocorrection Entry"));
+        KMessageBox::error(this, i18n("\"Replace\" string is the same as \"Find\" string."), i18nc("@title:window", "Add Autocorrection Entry"));
         return;
     }
 
@@ -655,7 +655,7 @@ void AutoCorrectionWidget::slotImportAutoCorrection(QAction *act)
                 d->ui->abbreviationList->clear();
                 d->ui->abbreviationList->addItems(d->m_upperCaseExceptions.values());
             } else {
-                KMessageBox::error(this, messageError, i18n("Import Autocorrection File"));
+                KMessageBox::error(this, messageError, i18nc("@title:window", "Import Autocorrection File"));
             }
             delete importAutoCorrection;
         }
@@ -680,7 +680,7 @@ void AutoCorrectionWidget::changeLanguage()
     if (d->mWasChanged) {
         const int rc = KMessageBox::warningTwoActions(this,
                                                       i18n("Language was changed, do you want to save config for previous language?"),
-                                                      i18n("Save config"),
+                                                      i18nc("@title:window", "Save config"),
                                                       KStandardGuiItem::save(),
                                                       KStandardGuiItem::discard());
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
