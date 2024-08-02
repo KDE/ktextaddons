@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 05:43+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -51,7 +51,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"ჩანასაცვლებელი\" სტრიქონი \"მოსაძებნი\" სტრიქონის ტოლია."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "ავტოკორექციის ჩანაწერის დამატება"
 
@@ -89,7 +91,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail -ის ავტოკორექციის ფაილი (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "ავტოკორექციის ფაილის შემოტანა"
 
@@ -99,7 +103,9 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr "ენა შეიცვალა. გნებავთ კონფიგურაცია წინა ენაში შეინახოთ?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "კონფიგურაციის შენახვა"
 

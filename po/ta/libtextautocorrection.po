@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-06-16 17:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -50,7 +50,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "மாற்று சரமும் தேடிய சரமும் ஒன்றாயுள்ளன."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "தானியக்க திருத்த பதிவை சேர்"
 
@@ -88,9 +90,11 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
-msgstr ""
+msgstr "தான்திருத்த கோப்பை ஏற்றுமதி செய்"
 
 #: widgets/autocorrectionwidget.cpp:682
 #, kde-format
@@ -98,7 +102,9 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr "மொழி மாற்றப்பட்டுள்ளது. முந்தைய மொழிக்கான அமைப்புகளை சேமிக்க வேண்டுமா?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "அமைப்புகளை சேமி"
 

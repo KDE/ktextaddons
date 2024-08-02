@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 12:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -51,7 +51,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Рядок-замінник збігається з рядком пошуку."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Додати запис автовиправлення"
 
@@ -89,7 +91,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "файл автовиправлення KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Імпортувати файл автовиправлення"
 
@@ -99,7 +103,9 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr "Мову було змінено, хочете зберегти налаштування для попередньої мови?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Збереження налаштувань"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2023-07-05 18:01-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -52,9 +52,11 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ad&vanced Autocorrection"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr ""
+msgstr "Autocorreção a&vançada"
 
 #: widgets/autocorrectionwidget.cpp:510
 #, kde-format
@@ -90,7 +92,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Arquivo de autocorreção do KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importar arquivo de autocorreção"
 
@@ -100,7 +104,9 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Salvar configuração"
 

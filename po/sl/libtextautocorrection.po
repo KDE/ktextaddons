@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 06:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -51,7 +51,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Niz \"Zamenjava\" je enak nizu \"Najdi\"."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Dodaj vnos v samopopravke"
 
@@ -89,7 +91,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Datoteka samopopravkov KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Uvozi datoteko samopopravkov"
 
@@ -100,7 +104,9 @@ msgstr ""
 "Jezik je bil spremenjen, ali želite shraniti konfiguracijo prejšnjega jezika?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Shrani konfiguracijo"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-14 17:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -140,7 +140,9 @@ msgid "Grammalecte cli file not found."
 msgstr "找不到 Grammalecte CLI 檔案。"
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grammalecte error"
+msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "Grammalecte 錯誤"
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2023-02-26 18:46+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -54,7 +54,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Utbytingsteksten er den lik søkjeteksten."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Legg til autokorrektur-oppføring"
 
@@ -92,7 +94,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail-autokorrekturfil (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Impoter autokorrekturfil"
 
@@ -102,7 +106,9 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Lagra oppsett"
 

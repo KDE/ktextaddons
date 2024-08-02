@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2023-02-11 17:54+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -52,7 +52,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Reťazec \"Nahradiť\" je rovnaký ako reťazec \"Nájsť\"."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Pridať položku automatických opráv"
 
@@ -90,7 +92,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Súbor automatických opráv KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importovať súbor automatických opráv"
 
@@ -101,7 +105,9 @@ msgstr ""
 "Jazyk bol zmenený, chcete uložiť konfiguráciu pre predchádzajúci jazyk?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Uložiť konfiguráciu"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 15:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -50,7 +50,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "“Değiştir” dizisi “Bul” dizisiyle aynı"
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Kendiliğinden Düzeltme Girdisi Ekle"
 
@@ -88,7 +90,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "K Posta Kendiliğinden Düzeltme Dosyası (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Kendiliğinden Düzeltme Dosyası İçe Aktar"
 
@@ -100,7 +104,9 @@ msgstr ""
 "musunuz?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Yapılandırmayı Kaydet"
 

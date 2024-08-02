@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2023-01-15 21:24-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -48,6 +48,7 @@ msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:431
 #, kde-format
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr ""
 
@@ -86,6 +87,7 @@ msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:658
 #, kde-format
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr ""
 
@@ -96,6 +98,7 @@ msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:683
 #, kde-format
+msgctxt "@title:window"
 msgid "Save config"
 msgstr ""
 

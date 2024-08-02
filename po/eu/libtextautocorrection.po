@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 17:45+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -53,7 +53,9 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"Ordeztu\" katea \"Aurkitu\" katearen berdina da."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Autocorrection Entry"
+msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Gehitu zuzenketa automatikorako sarrera"
 
@@ -91,7 +93,9 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "«KMail»eko zuzenketa automatikorako fitxategia (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Autocorrection File"
+msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Inportatu zuzenketa automatikorako fitxategia"
 
@@ -102,7 +106,9 @@ msgstr ""
 "Hizkuntza aldatu da, aurreko hizkuntzaren konfigurazioa gorde nahi duzu?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save config"
+msgctxt "@title:window"
 msgid "Save config"
 msgstr "Gorde konfigurazioa"
 

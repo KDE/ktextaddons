@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:40+0000\n"
+"POT-Creation-Date: 2024-08-02 00:39+0000\n"
 "PO-Revision-Date: 2023-01-13 09:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -148,7 +148,9 @@ msgid "Grammalecte cli file not found."
 msgstr "O ficheiro da linha de comandos do Grammalecte não foi encontrado."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Grammalecte error"
+msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "Erro do Grammalecte"
 
