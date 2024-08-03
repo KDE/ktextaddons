@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautocorrection\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 15:22+0200\n"
+"PO-Revision-Date: 2024-08-02 17:41+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -52,8 +52,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "La cadena «Sustituir» es la misma que la de «Buscar»."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Añadir entrada de corrección automática"
@@ -92,8 +91,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Archivo de corrección automática de KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importar archivo de corrección automática"
@@ -106,8 +104,7 @@ msgstr ""
 "anterior?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Guardar configuración"

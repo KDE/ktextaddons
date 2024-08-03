@@ -50,8 +50,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "“替换”字符串与“查找”字符串相同。"
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "添加自动更正项目"
@@ -90,8 +89,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail 自动更正文件 (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "导入自动更正文件"
@@ -102,8 +100,7 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr "语言已经更改，您想要保存之前语言的配置吗？"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "保存配置"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-30 06:43+0200\n"
+"PO-Revision-Date: 2024-08-02 05:57+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -142,11 +142,10 @@ msgid "Grammalecte cli file not found."
 msgstr "Grammalecte-ის CLI გამშვები ფაილები ვერ ვიპოვე."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
-msgstr "Grammalecte -ის შეცდომა"
+msgstr "Grammalecte-ის შეცდომა"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format

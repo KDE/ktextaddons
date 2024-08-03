@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 09:57+0200\n"
+"PO-Revision-Date: 2024-08-02 13:03+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -50,8 +50,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Vervangende tekenreeks is hetzelfde als de te zoeken tekenreeks."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Item voor autocorrectie toevoegen"
@@ -90,8 +89,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail-autocorrectiebestand (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Autocorrectiebestand importeren"
@@ -103,8 +101,7 @@ msgstr ""
 "De taal is gewijzigd, wilt u de configuratie opslaan voor de vorige taal?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Configuratie opslaan"
