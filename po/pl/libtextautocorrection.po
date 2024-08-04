@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-14 12:31+0200\n"
+"PO-Revision-Date: 2024-08-03 11:50+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -51,8 +51,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Ciąg znaków \"Zastąp\" to to samo co ciąg znaków \"Znajdź\"."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Dodaj wpis samopoprawiania"
@@ -91,8 +90,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Plik samopoprawiania KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Zaimportuj plik samopoprawiania"
@@ -105,8 +103,7 @@ msgstr ""
 "języka?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Zapisz ustawienia"

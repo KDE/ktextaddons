@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-14 12:32+0200\n"
+"PO-Revision-Date: 2024-08-03 11:50+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -141,8 +141,7 @@ msgid "Grammalecte cli file not found."
 msgstr "Nie znaleziono pliku cli Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "Błąd Grammalecte"
@@ -309,8 +308,7 @@ msgid "Configure LanguageTool"
 msgstr "Ustawienia LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Use Local Instance"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "Użyj lokalnego wystąpienia"

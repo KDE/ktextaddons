@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 16:15+0100\n"
+"PO-Revision-Date: 2024-08-03 12:54+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -50,11 +50,10 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"Replace\" string is the same as \"Find\" string."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr "Add Auto-correction Entry"
+msgstr "Add Autocorrection Entry"
 
 #: widgets/autocorrectionwidget.cpp:510
 #, kde-format
@@ -90,11 +89,10 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMail Auto-correction File (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
-msgstr "Import Auto-correction File"
+msgstr "Import Autocorrection File"
 
 #: widgets/autocorrectionwidget.cpp:682
 #, kde-format
@@ -104,11 +102,10 @@ msgstr ""
 "language?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
-msgstr "Save configuration"
+msgstr "Save config"
 
 #: widgets/autocorrectionwidget.cpp:718
 #, kde-format
@@ -116,11 +113,10 @@ msgid "Please save changes before exporting settings."
 msgstr "Please save changes before exporting settings."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
-msgstr "Export Auto-correction File"
+msgstr "Export Autocorrection File"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
