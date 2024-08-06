@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:40+0000\n"
-"PO-Revision-Date: 2024-07-11 17:54+0200\n"
+"PO-Revision-Date: 2024-08-05 23:45+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -372,11 +372,10 @@ msgid "Error: %1"
 msgstr "Errorea: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr "Erabili itzulpen cachea"
+msgstr "Erabili itzulpen-cachea"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -523,8 +522,7 @@ msgid "Configure Engine"
 msgstr "Konfiguratu motorra"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Erabili lizentzia askeko gakoa"
@@ -557,11 +555,10 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
-msgstr "Zerbitzariak APIaren gakoa behar du"
+msgstr "Zerbitzariak behar duen API-gakoa"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
 #: translator/plugins/lingva/lingvaenginewidget.cpp:23

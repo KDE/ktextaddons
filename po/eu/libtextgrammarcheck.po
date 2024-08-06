@@ -1,16 +1,16 @@
 # Translation for libtextgrammarcheck.po to Euskara/Basque (eu).
-# Copyright (C) 2022-2023 This file is copyright:
+# Copyright (C) 2022-2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-11 17:51+0200\n"
+"PO-Revision-Date: 2024-08-05 23:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -145,8 +145,7 @@ msgid "Grammalecte cli file not found."
 msgstr "Ez du aurkitu «Grammalecte» «cli» fitxategia."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "«Grammalecte»ren errorea"
@@ -313,8 +312,7 @@ msgid "Configure LanguageTool"
 msgstr "Konfiguratu «LanguageTool»"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Use Local Instance"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "Erabili instantzia lokala"
