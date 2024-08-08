@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-14 22:05+0200\n"
+"PO-Revision-Date: 2024-08-07 11:26+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -50,8 +50,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Низът \"Замяна\" е същият като низа \"Намиране\"."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Добавяне на запис за автокорекция"
@@ -90,8 +89,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Файл за автокорекция на KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Импортиране на файл за автокорекция"
@@ -103,8 +101,7 @@ msgstr ""
 "Езикът беше променен, искате ли да запазите конфигурацията за предишния език?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Запазване на конфигурацията"
