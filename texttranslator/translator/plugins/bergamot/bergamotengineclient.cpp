@@ -7,7 +7,6 @@
 #include "bergamotengineclient.h"
 #include "begamotenginedialog.h"
 #include "bergamotengineplugin.h"
-#include "bergamotengineutils.h"
 #include "translator/misc/translatorutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>

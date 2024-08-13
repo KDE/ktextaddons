@@ -11,10 +11,7 @@
 #include <KLocalizedString>
 #include <chrono>
 #include <future>
-#include <memory>
-#include <mutex>
 #include <slimt/Response.hh>
-#include <thread>
 namespace
 {
 #if 0
