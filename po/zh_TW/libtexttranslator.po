@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:40+0000\n"
+"POT-Creation-Date: 2024-08-14 00:38+0000\n"
 "PO-Revision-Date: 2024-08-03 14:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -328,7 +328,7 @@ msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Bergamot 外掛程式設定"
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:32
+#: translator/plugins/bergamot/bergamotengineclient.cpp:31
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
 msgid "Bergamot"
@@ -399,17 +399,17 @@ msgstr "語言"
 msgid "Settings"
 msgstr "設定"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:206
 #, kde-format
 msgid "Language model is not defined."
 msgstr "語言模型未定義。"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:37
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "無法開啟檔案以下載。"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
@@ -419,18 +419,18 @@ msgid ""
 "network. Please try your request again later."
 msgstr "錯誤：引擎系統認為來自您的電腦網路的存取是可疑的。請稍等一下再試一次。"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:52
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "無法存取 URL：%1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "檢查碼不正確。"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "寫入磁碟時發生錯誤：%1"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:40+0000\n"
+"POT-Creation-Date: 2024-08-14 00:38+0000\n"
 "PO-Revision-Date: 2024-07-30 16:49+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -330,7 +330,7 @@ msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Preferencias del complemento Bergamot"
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:32
+#: translator/plugins/bergamot/bergamotengineclient.cpp:31
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
 msgid "Bergamot"
@@ -401,17 +401,17 @@ msgstr "Idiomas"
 msgid "Settings"
 msgstr "Preferencias"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:206
 #, kde-format
 msgid "Language model is not defined."
 msgstr "No se ha definido el modelo del idioma."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:37
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "No se puede abrir el archivo para la descarga."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
@@ -423,18 +423,18 @@ msgstr ""
 "Error: Los sistemas de motores han detectado un tráfico sospechoso desde su "
 "red de equipos. Vuelva a realizar su petición más tarde."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:52
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "No se puede acceder a la URL: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "La suma de verificación no es correcta."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Ha ocurrido un error al escribir en disco: %1"

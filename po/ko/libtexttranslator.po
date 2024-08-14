@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:40+0000\n"
+"POT-Creation-Date: 2024-08-14 00:38+0000\n"
 "PO-Revision-Date: 2024-02-10 00:05+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -328,7 +328,7 @@ msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Bergamot 플러그인 설정"
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:32
+#: translator/plugins/bergamot/bergamotengineclient.cpp:31
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
 msgid "Bergamot"
@@ -403,17 +403,17 @@ msgstr "언어"
 msgid "Settings"
 msgstr "설정"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:209
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:206
 #, kde-format
 msgid "Language model is not defined."
 msgstr "언어 모델이 정의되지 않았습니다."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:37
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "다운로드할 파일을 열 수 없습니다."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
@@ -425,18 +425,18 @@ msgstr ""
 "오류: 엔진 시스템에서 컴퓨터 네트워크에서 오는 비정상적인 트래픽을 감지했습니"
 "다. 나중에 다시 시도하십시오."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:52
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "URL에 접근할 수 없음: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:63
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "체크섬이 일치하지 않습니다."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:73
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "디스크에 쓰는 중 오류 발생: %1"
