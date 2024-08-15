@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-14 00:38+0000\n"
-"PO-Revision-Date: 2024-07-12 11:43+0200\n"
+"PO-Revision-Date: 2024-08-06 11:26+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -369,8 +369,7 @@ msgid "Error: %1"
 msgstr "Chyba: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "Použít mezipaměť překladu"
@@ -550,8 +549,7 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Server vyžaduje klíč API"
