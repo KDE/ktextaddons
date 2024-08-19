@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-05-12 15:28+0530\n"
+"PO-Revision-Date: 2024-08-18 16:29+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -45,11 +45,10 @@ msgstr "அமை…"
 #: common/grammarresultutil.cpp:49
 #, kde-format
 msgid "See on: %1"
-msgstr ""
+msgstr "%1-இல் காட்டு"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "மூடு"
@@ -58,7 +57,7 @@ msgstr "மூடு"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr ""
+msgstr "Grammalecte-ஐ அமை"
 
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
@@ -76,23 +75,22 @@ msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
 msgstr ""
+"அமைப்புகளைப் பெற முடியவில்லை. grammalected நிறுவப்பட்டுள்ளதா என்பதை சரிபார்க்கவும்."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "அமைப்புகளைப் பெறுவதில் சிக்கல்"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
-msgstr "அமைப்புகளை மீளேற்று"
+msgstr "அமைப்புகளை மீளேற்ற பட்டனை அழுத்தவும்"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "அமைப்புகளை மீளேற்று"
@@ -100,18 +98,18 @@ msgstr "அமைப்புகளை மீளேற்று"
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
 msgid "Python Path:"
-msgstr ""
+msgstr "பைத்தான் பாதை:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "'grammalecte-cli.py' என்பதற்கான முழு பாதையை உள்ளிடவும்"
 
 #: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgid "Grammalecte Path:"
-msgstr ""
+msgstr "Grammalecte பாதை:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:147
 #, kde-format
@@ -119,37 +117,39 @@ msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
 "a>. Download it and extract it."
 msgstr ""
+"Grammalecte தனை <a href=\"https://grammalecte.net/#download\">இந்த "
+"இணைப்பிலிருந்து</a> பதிவிறக்கி பரித்தெடுக்கவும்."
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "பைத்தான் பாதை காணவில்லை."
 
 #: grammalecte/grammalecteresultwidget.cpp:58
 #, kde-format
 msgid "Grammalecte path not found."
-msgstr ""
+msgstr "Grammalecte பாதை கண்டுபிடிக்கப்படவில்லை."
 
 #: grammalecte/grammalecteresultwidget.cpp:65
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr ""
+msgstr "Grammalecte நிரல் கண்டுபிடிக்கப்படவில்லை."
 
 #: grammalecte/grammalecteresultwidget.cpp:69
 #, kde-format
 msgid "Grammalecte cli file not found."
-msgstr ""
+msgstr "Grammalecte cli கோப்பு கண்டுபிடிக்கப்படவில்லை."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
-msgstr ""
+msgstr "Grammalecte சிக்கல்"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format
 msgid "Select Path"
-msgstr ""
+msgstr "பாதையைத் தேர்தெடுக்கவும்"
 
 #: languagetool/languagetoolcombobox.cpp:30
 #, kde-format
@@ -305,30 +305,28 @@ msgstr "உக்ரேனியன்"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr ""
+msgstr "LanguageTool தனை அமை"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
-msgstr ""
+msgstr "உள்ளமை நிரலைப் பயன்படுத்து"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
-msgstr ""
+msgstr "நிரலுக்கான பாதை:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "மொழி:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "புதுப்பி"
@@ -339,15 +337,13 @@ msgid "An error was reported: %1"
 msgstr "சிக்கல் தெரிவிக்கப்பட்டது: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "இலக்கணத்தை சரிபார்க்க முடியவில்லை."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "சரிபார்"
@@ -362,8 +358,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "மொழிகளின் பட்டியல்"
