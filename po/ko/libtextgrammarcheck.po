@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-02-10 00:04+0100\n"
+"PO-Revision-Date: 2024-08-20 00:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -38,10 +38,9 @@ msgid "Check Again"
 msgstr "다시 확인"
 
 #: common/grammarresulttextedit.cpp:113
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "설정..."
+msgstr "설정…"
 
 #: common/grammarresultutil.cpp:49
 #, kde-format
@@ -49,8 +48,7 @@ msgid "See on: %1"
 msgstr "참조: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "닫기"
@@ -79,22 +77,19 @@ msgid ""
 msgstr "옵션을 가져올 수 없습니다. grammalected 설치 상태를 확인하십시오."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "옵션 가져오기 오류"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "설정을 다시 읽으려면 누르십시오"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "설정 다시 읽기"
@@ -105,8 +100,7 @@ msgid "Python Path:"
 msgstr "Python 경로:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "전체 'grammalecte-cli.py' 경로 추가"
@@ -146,8 +140,7 @@ msgid "Grammalecte cli file not found."
 msgstr "Grammalecte 명령행 파일을 찾을 수 없습니다."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "Grammalecte 오류"
@@ -314,29 +307,25 @@ msgid "Configure LanguageTool"
 msgstr "LanguageTool 설정"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Use Local Instance"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "로컬 인스턴스 사용"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "인스턴스 경로:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "언어:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "새로 고침"
@@ -347,15 +336,13 @@ msgid "An error was reported: %1"
 msgstr "오류 발생: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "문법 검사를 실행할 수 없습니다."
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "검사"
@@ -370,8 +357,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "언어 목록"

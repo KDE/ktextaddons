@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-02-10 00:08+0100\n"
+"PO-Revision-Date: 2024-08-20 00:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
 #, kde-format
@@ -65,11 +65,10 @@ msgid "Vosk Plugin Settings"
 msgstr "Vosk 플러그인 설정"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "검색..."
+msgstr "검색…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
 #, kde-format
@@ -82,15 +81,13 @@ msgid "Delete"
 msgstr "삭제"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "목록 업데이트"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "네트워크에서 언어 목록 업데이트"
@@ -143,8 +140,7 @@ msgid "Whisper"
 msgstr "Whisper"
 
 #: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "엔진:"
@@ -156,14 +152,12 @@ msgid "Configure Speech To Text"
 msgstr "받아쓰기 설정"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
-#, fuzzy, kde-format
-#| msgid "Speech to Text..."
+#, kde-format
 msgid "Speech to Text…"
-msgstr "받아쓰기..."
+msgstr "받아쓰기…"
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Input:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "입력:"
