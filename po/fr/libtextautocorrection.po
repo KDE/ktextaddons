@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-07-14 10:34+0200\n"
+"PO-Revision-Date: 2024-08-14 20:14+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -47,8 +47,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "La chaîne de remplacement est la même que celle qui est recherchée."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Ajouter une entrée de correction automatique"
@@ -87,8 +86,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Fichier de correction automatique pour KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importer un fichier de correction automatique"
@@ -101,8 +99,7 @@ msgstr ""
 "précédente langue ?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Enregistrer une configuration"
@@ -359,7 +356,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr "Remplacer les doubles quotes par des quotes en français"
+msgstr "Remplacer les guillemets doubles par des guillemets en français"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: widgets/ui/autocorrectionwidget.ui:457
@@ -371,7 +368,7 @@ msgstr "&Quotes personnalisées"
 #: widgets/ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
-msgstr "Remplacer les doubles quotes par des quotes typographiques"
+msgstr "Remplacer les guillemets doubles par des guillemets typographiques"
 
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
@@ -405,7 +402,7 @@ msgstr "Quote de fin :"
 #: widgets/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr "Quote de début :"
+msgstr "Guillemet de début :"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
@@ -419,7 +416,7 @@ msgstr "Par défaut"
 #: widgets/ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
-msgstr "Remplacer les quotes &simples avec les quotes typographiques"
+msgstr "Remplacer les guillemets &simples avec les guillemets typographiques"
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
