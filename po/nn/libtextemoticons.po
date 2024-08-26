@@ -78,7 +78,6 @@ msgstr "Tilpassa"
 
 #: widgets/emoticonlistview.cpp:116
 #, fuzzy, kde-format
-#| msgid "Clear Recents"
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Tøm nyleg brukte"
@@ -90,7 +89,6 @@ msgstr "Legg til fjesing"
 
 #: widgets/emoticontexteditselector.cpp:83
 #, fuzzy, kde-format
-#| msgid "Search Emoticon..."
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Søk etter emotikon …"

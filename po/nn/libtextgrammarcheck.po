@@ -41,7 +41,6 @@ msgstr "Kontroller på nytt"
 
 #: common/grammarresulttextedit.cpp:113
 #, fuzzy, kde-format
-#| msgid "Configure..."
 msgid "Configure…"
 msgstr "Set opp …"
 
@@ -52,7 +51,6 @@ msgstr "Sjå òg: %1"
 
 #: common/grammarresultwidget.cpp:32
 #, fuzzy, kde-format
-#| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Lukk"
@@ -83,21 +81,18 @@ msgstr ""
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Feil ved henting av alternativ"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
 #, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Trykk på knappen for å lasta innstillingane på nytt"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, fuzzy, kde-format
-#| msgid "Reload Settings"
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Last innstillingar på nytt"
@@ -109,7 +104,6 @@ msgstr "Python-mappe:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Legg til fullstendig «grammalecte-cli.py»-adresse"
@@ -148,7 +142,6 @@ msgstr "Fann ikkje Grammalecte-cli-fila."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
 #, fuzzy, kde-format
-#| msgid "Grammalecte error"
 msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "Grammalecte-feil"
@@ -316,28 +309,24 @@ msgstr "Set opp LanguageTool"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, fuzzy, kde-format
-#| msgid "Use Local Instance"
 msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "Bruk lokal instans"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, fuzzy, kde-format
-#| msgid "Instance Path:"
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Instansadresse:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
 #, fuzzy, kde-format
-#| msgid "Language:"
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Språk:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
 #, fuzzy, kde-format
-#| msgid "Refresh"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Oppdater"
@@ -349,14 +338,12 @@ msgstr "Feil meld: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, fuzzy, kde-format
-#| msgid "Failed to check grammar."
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Klarte ikkje kontrollera grammatikken."
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, fuzzy, kde-format
-#| msgid "Check"
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Kontroller"
@@ -373,7 +360,6 @@ msgstr ""
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
 #, fuzzy, kde-format
-#| msgid "List of Languages"
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "Liste over språk"

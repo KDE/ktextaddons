@@ -21,14 +21,12 @@ msgstr ""
 
 #: texttospeechactions.cpp:28
 #, fuzzy, kde-format
-#| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Stopp"
 
 #: texttospeechactions.cpp:31
 #, fuzzy, kde-format
-#| msgid "Stop"
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Stopp"
@@ -91,21 +89,18 @@ msgstr "Stemme:"
 
 #: texttospeechwidget.cpp:54
 #, fuzzy, kde-format
-#| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Lukk"
 
 #: texttospeechwidget.cpp:59
 #, fuzzy, kde-format
-#| msgid "Volume:"
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Lydstyrke:"
 
 #: texttospeechwidget.cpp:80
 #, fuzzy, kde-format
-#| msgid "Configure..."
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Set opp …"
@@ -117,7 +112,6 @@ msgstr "Talesyntesemotoren har eit problem."
 
 #: texttospeechwidget.cpp:132
 #, fuzzy, kde-format
-#| msgid "Text To Speech"
 msgctxt "@title:window"
 msgid "Text To Speech"
 msgstr "Talesyntese"

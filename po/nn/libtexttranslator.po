@@ -339,7 +339,6 @@ msgstr ""
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, fuzzy, kde-format
-#| msgid "Search..."
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Søk …"
@@ -522,7 +521,6 @@ msgstr "Set opp motor"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, fuzzy, kde-format
-#| msgid "Use Free License Key"
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Bruk gratis lisensnøkkel"
@@ -556,7 +554,6 @@ msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, fuzzy, kde-format
-#| msgid "Server required Api Key"
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Tenaren krev ein API-nøkkel"
@@ -626,7 +623,6 @@ msgstr "Til:"
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
 #, fuzzy, kde-format
-#| msgid "Engine:"
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motor:"
@@ -639,7 +635,6 @@ msgstr "Feilsøking for omsetjar"
 
 #: translator/widgets/translatordebugdialog.cpp:41
 #, fuzzy, kde-format
-#| msgid "Save As..."
 msgid "Save As…"
 msgstr "Lagra som …"
 
@@ -654,7 +649,6 @@ msgstr ""
 
 #: translator/widgets/translatordebugdialog.cpp:94
 #, fuzzy, kde-format
-#| msgid "Save File Error"
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Feil ved lagring"
@@ -666,13 +660,11 @@ msgstr "Alle filer (*)"
 
 #: translator/widgets/translatormenu.cpp:23
 #, fuzzy, kde-format
-#| msgid "Translate"
 msgid "Translate…"
 msgstr "Set om"
 
 #: translator/widgets/translatorwidget.cpp:219
 #, fuzzy, kde-format
-#| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Lukk"
@@ -702,7 +694,6 @@ msgstr "Byt om"
 
 #: translator/widgets/translatorwidget.cpp:252
 #, fuzzy, kde-format
-#| msgid "Clear"
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Tøm"
@@ -714,7 +705,6 @@ msgstr "Tøm"
 
 #: translator/widgets/translatorwidget.cpp:260
 #, fuzzy, kde-format
-#| msgid "Translate"
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Set om"
@@ -726,14 +716,12 @@ msgstr "Set om"
 
 #: translator/widgets/translatorwidget.cpp:270
 #, fuzzy, kde-format
-#| msgid "Debug"
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Feilsøk"
 
 #: translator/widgets/translatorwidget.cpp:288
 #, fuzzy, kde-format
-#| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Set opp"
@@ -759,14 +747,12 @@ msgstr "Manglar nettverkstilkopling. Kan derfor ikkje omsetja teksten."
 
 #: translator/widgets/translatorwidget.cpp:419
 #, fuzzy, kde-format
-#| msgid "No network"
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Manglar nettverkstilkopling"
 
 #: translator/widgets/translatorwidget.cpp:456
 #, fuzzy, kde-format
-#| msgid "Translate error"
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Omsetjingsfeil"

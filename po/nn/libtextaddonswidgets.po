@@ -27,14 +27,12 @@ msgstr "Vel spesialteikn"
 
 #: selectspecialchardialog.cpp:40
 #, fuzzy, kde-format
-#| msgid "Insert"
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Set inn"
 
 #: selectspecialchardialog.cpp:53
 #, fuzzy, kde-format
-#| msgid "Select"
 msgctxt "@action:button"
 msgid "Select"
 msgstr "Vel"

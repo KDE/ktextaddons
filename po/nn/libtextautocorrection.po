@@ -36,14 +36,12 @@ msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:149
 #, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOffice-autokorrektur"
 
 #: widgets/autocorrectionwidget.cpp:153
 #, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMail-/Calligra-autokorrektur"
@@ -55,7 +53,6 @@ msgstr "Utbytingsteksten er den lik søkjeteksten."
 
 #: widgets/autocorrectionwidget.cpp:431
 #, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Legg til autokorrektur-oppføring"
@@ -95,7 +92,6 @@ msgstr "KMail-autokorrekturfil (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
 #, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Impoter autokorrekturfil"
@@ -107,7 +103,6 @@ msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:683
 #, fuzzy, kde-format
-#| msgid "Save config"
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Lagra oppsett"
@@ -119,7 +114,6 @@ msgstr ""
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Eksporter autokorrekturfil"
@@ -139,14 +133,12 @@ msgstr "Erstatningar og unntak for språket:"
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
 #, fuzzy, kde-format
-#| msgid "Export..."
 msgid "Export…"
 msgstr "Eksporter …"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
 #, fuzzy, kde-format
-#| msgid "Import..."
 msgid "Import…"
 msgstr "Importer …"
 
@@ -178,7 +170,6 @@ msgstr "&Finn"
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
 #, fuzzy, kde-format
-#| msgid "Replace"
 msgid "&Replace"
 msgstr "Byt ut"
 
@@ -296,7 +287,6 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
 #, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
 msgid "Re&place 1/2… with ½..."
 msgstr "&Byt ut 1/2 … med ½ …"
 
