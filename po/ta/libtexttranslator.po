@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-14 00:38+0000\n"
-"PO-Revision-Date: 2024-05-12 15:30+0530\n"
+"PO-Revision-Date: 2024-09-08 12:54+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -326,7 +326,7 @@ msgstr "யிட்டிஷ்"
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr ""
+msgstr "Bergamot செருகுநிரல் அமைப்புகள்"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:31
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
@@ -336,8 +336,7 @@ msgstr ""
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "தேடு…"
@@ -353,18 +352,16 @@ msgid "Delete"
 msgstr "நீக்கு"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "பட்டியலை புதுப்பி"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr "மொழிகளின் பட்டியலை இணையம் மூலமாக புதுப்பிக்கும்."
+msgstr "மொழிகளின் பட்டியலை இணையம் மூலமாக புதுப்பிக்கும்"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
@@ -372,8 +369,7 @@ msgid "Error: %1"
 msgstr "சிக்கல்: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "மொழிபெயர்ப்புகளுக்கான தற்காலிக நினைவிடத்தை பயன்படுத்து"
@@ -523,8 +519,7 @@ msgid "Configure Engine"
 msgstr "பின்னணி சேவையை அமை"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "இலவச உரிம சாவியைப் பயன்படுத்து"
@@ -557,8 +552,7 @@ msgid "Libre Translate"
 msgstr ""
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "சேவையகம், API சாவியை எதிர்பார்க்கிறது"
@@ -627,11 +621,10 @@ msgstr "இலக்கு:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr "சேவை"
+msgstr "சேவை:"
 
 #: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
@@ -654,8 +647,7 @@ msgstr ""
 "சிக்கலைக் குறித்த முழு விவரம், \"%2\" என்பதாகும்."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "கோப்பை சேமிப்பதில் சிக்கல்"
@@ -671,8 +663,7 @@ msgid "Translate…"
 msgstr "மொழிபெயர்…"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "மூடு"
@@ -701,8 +692,7 @@ msgid "Invert"
 msgstr "புரட்டு"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "காலியாக்கு"
@@ -713,8 +703,7 @@ msgid "Clear"
 msgstr "காலியாக்கு"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "மொழிபெயர்"
@@ -725,24 +714,19 @@ msgid "Translate"
 msgstr "மொழிபெயர்"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "பிழைநீக்கு"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "அமை"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -752,8 +736,7 @@ msgstr ""
 "ப்படும்)."
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "மொழிபெயர்க்க வேண்டிய உரையை இங்கு இழுத்துப் போடவும்"
@@ -764,15 +747,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "இணைய இணைப்பு இல்லாத‍தால் மொழிபெயர்க்க முடியாது."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "இணைப்பு இல்லை"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "மொழிபெயர்ப்பு சிக்கல்"
