@@ -28,7 +28,29 @@ include(ECMAddTests)
 include(ECMDeprecationSettings)
 include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
+include(ECMCheckOutboundLicense)
 
+file(GLOB_RECURSE ALL_SOURCE_FILES
+textaddonswidgets/*.cpp
+textaddonswidgets/*.h
+textedittexttospeech/*.cpp
+textedittexttospeech/*.h
+textspeechtotext/*.cpp
+textspeechtotext/*.h
+textautocorrection/*.cpp
+textautocorrection/*.h
+textemoticons/*.cpp   
+textemoticons/*.h
+texttranslator/*.cpp
+texttranslator/*.h
+textcustomeditor/*.cpp
+textcustomeditor/*.h
+textgrammarcheck/*.cpp
+textgrammarcheck/*.h
+textutils/*.cpp
+textutils/*.h
+)
+ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
 
