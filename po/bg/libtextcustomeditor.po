@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-07-14 22:15+0200\n"
+"PO-Revision-Date: 2024-10-05 14:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,14 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
 #, kde-format
 msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
-msgstr[0] "%Направена е 1 замяна"
+msgstr[0] "Направена е 1 замяна"
 msgstr[1] "Направени са %1 замени"
 
 #: plaintexteditor/plaintexteditor.cpp:166
