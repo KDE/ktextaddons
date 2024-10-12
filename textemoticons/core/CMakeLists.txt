@@ -13,7 +13,6 @@ add_library(KF6TextEmoticonsCore)
 add_library(KF6::TextEmoticonsCore ALIAS KF6TextEmoticonsCore)
 
 target_sources(KF6TextEmoticonsCore PRIVATE
-    emoji.qrc
     emoticoncategory.cpp
     emoticoncategory.h
     emoticonunicodeutils.cpp
@@ -38,6 +37,9 @@ target_sources(KF6TextEmoticonsCore PRIVATE
     customemojiiconmanager.cpp
     runninganimatedimage.h
     runninganimatedimage.cpp
+
+    emojicategory.cpp
+    emojicategory.h
 )
 
 target_link_libraries(KF6TextEmoticonsCore
@@ -164,3 +166,5 @@ configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
+
+add_subdirectory(data)
