@@ -17,3 +17,9 @@ path = "docs/pics/**.png"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 KDE Community"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "textemoticons/core/data/*.dict"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Unicode, Inc"
+SPDX-License-Identifier = "Unicode-3.0"

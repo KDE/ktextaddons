@@ -21,14 +21,17 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
     Q_OBJECT
 
     Q_PROPERTY(TextEmoticonsCore::EmojiModel *emojiModel READ emojiModel CONSTANT)
+    Q_PROPERTY(QStringList recentIdentifier READ recentIdentifier NOTIFY usedIdentifierChanged)
 
 public:
     static EmojiModelManager *self();
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
+    void setRecentSettingsGroupName(const QString &key);
+
     [[nodiscard]] const QStringList &recentIdentifier() const;
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
-    void addIdentifier(const QString &identifier);
+    Q_INVOKABLE void addIdentifier(const QString &identifier);
 
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);

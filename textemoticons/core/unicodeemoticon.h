@@ -24,6 +24,9 @@ public:
     [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &identifier);
 
+    [[nodiscard]] QString name() const;
+    void setName(const QString &name);
+
     [[nodiscard]] QString unicode() const;
     [[nodiscard]] QString unicodeDisplay() const;
     void setUnicode(const QString &unicode);
@@ -47,12 +50,12 @@ public:
     bool operator==(const UnicodeEmoticon &other) const;
 
 private:
-    [[nodiscard]] TEXTEMOTICONSCORE_NO_EXPORT QString escapeUnicodeEmoji(const QString &pString);
     QStringList mAliases;
     QString mIdentifier;
     QString mUnicode;
     QString mCategory;
     QString mKey;
+    QString mName;
     mutable QString mCachedHtml;
     int mOrder = -1;
 };

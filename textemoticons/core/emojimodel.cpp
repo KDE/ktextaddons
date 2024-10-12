@@ -45,6 +45,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         case Identifier:
         case Qt::ToolTipRole:
             return unicodeEmoti.identifier();
+        case Name:
+            return unicodeEmoti.name();
         case IsCustom:
             return false;
         }
@@ -159,6 +161,7 @@ QHash<int, QByteArray> EmojiModel::roleNames() const
         {UnicodeEmoji, QByteArrayLiteral("unicode")},
         {Identifier, QByteArrayLiteral("identifier")},
         {Category, QByteArrayLiteral("category")},
+        {Name, QByteArrayLiteral("name")},
         {IsCustom, QByteArrayLiteral("isCustom")},
         {FileName, QByteArrayLiteral("fileName")},
     }};
