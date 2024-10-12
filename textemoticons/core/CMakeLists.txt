@@ -12,35 +12,43 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSCORE
 add_library(KF6TextEmoticonsCore)
 add_library(KF6::TextEmoticonsCore ALIAS KF6TextEmoticonsCore)
 
-target_sources(
-    KF6TextEmoticonsCore
-    PRIVATE
-        emoji.qrc
-        emoticoncategory.cpp
-        emoticoncategory.h
-        emoticonunicodeutils.cpp
-        emoticonunicodeutils.h
-        unicodeemoticon.cpp
-        unicodeemoticon.h
-        unicodeemoticonmanager.cpp
-        unicodeemoticonmanager.h
-        unicodeemoticonparser.cpp
-        unicodeemoticonparser.h
-        emojimodel.cpp
-        emojimodel.h
-        emojisortfilterproxymodel.cpp
-        emojisortfilterproxymodel.h
-        emojimodelmanager.cpp
-        emojimodelmanager.h
-        customemoji.h
-        customemoji.cpp
-        customemojiiconmanager.h
-        customemojiiconmanager.cpp
-        runninganimatedimage.h
-        runninganimatedimage.cpp
+target_sources(KF6TextEmoticonsCore PRIVATE
+    emoticoncategory.cpp
+    emoticoncategory.h
+    emoticonunicodeutils.cpp
+    emoticonunicodeutils.h
+    unicodeemoticon.cpp
+    unicodeemoticon.h
+    unicodeemoticonmanager.cpp
+    unicodeemoticonmanager.h
+    unicodeemoticonparser.cpp
+    unicodeemoticonparser.h
+    emojimodel.cpp
+    emojimodel.h
+    emojisortfilterproxymodel.cpp
+    emojisortfilterproxymodel.h
+    emojimodelmanager.cpp
+    emojimodelmanager.h
+
+    customemoji.h
+    customemoji.cpp
+
+    customemojiiconmanager.h
+    customemojiiconmanager.cpp
+    runninganimatedimage.h
+    runninganimatedimage.cpp
+
+    emojicategory.cpp
+    emojicategory.h
 )
 
-target_link_libraries(KF6TextEmoticonsCore PUBLIC Qt::Gui PRIVATE KF6::ConfigCore)
+target_link_libraries(KF6TextEmoticonsCore
+    PUBLIC
+    Qt::Gui
+    PRIVATE
+    KF6::ConfigCore
+    KF6::CoreAddons
+)
 
 ecm_qt_declare_logging_category(KF6TextEmoticonsCore HEADER textemoticonscore_debug.h
     IDENTIFIER TEXTEMOTICONSCORE_LOG
@@ -173,3 +181,5 @@ configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEmoticonsCoreConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
+
+add_subdirectory(data)

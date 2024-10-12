@@ -24,6 +24,9 @@ public:
     [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &identifier);
 
+    [[nodiscard]] QString name() const;
+    void setName(const QString &name);
+
     [[nodiscard]] QString unicode() const;
     [[nodiscard]] QString unicodeDisplay() const;
     void setUnicode(const QString &unicode);
@@ -55,6 +58,7 @@ private:
     QString mUnicode;
     QString mCategory;
     QString mKey;
+    QString mName;
     mutable QString mCachedHtml;
     int mOrder = -1;
     bool mHasDiversityChildren = false;

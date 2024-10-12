@@ -23,3 +23,9 @@ path = ["textautogeneratetext/plugins/ollama/modelsmanager/available_models.json
 precedence = "aggregate"
 SPDX-FileCopyrightText = "jeffser <jeffrysamuer@gmail.com>"
 SPDX-License-Identifier = "GPL-2.0-or-later"
+
+[[annotations]]
+path = "textemoticons/core/data/*.dict"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Unicode, Inc"
+SPDX-License-Identifier = "Unicode-3.0"

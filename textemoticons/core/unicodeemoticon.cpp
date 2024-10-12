@@ -27,6 +27,16 @@ void UnicodeEmoticon::setIdentifier(const QString &name)
     mIdentifier = name;
 }
 
+QString UnicodeEmoticon::name() const
+{
+    return mName;
+}
+
+void UnicodeEmoticon::setName(const QString &name)
+{
+    mName = name;
+}
+
 QString UnicodeEmoticon::unicode() const
 {
     return mUnicode;
@@ -56,8 +66,7 @@ void UnicodeEmoticon::setKey(const QString &key)
 
 bool UnicodeEmoticon::operator==(const UnicodeEmoticon &other) const
 {
-    return (mAliases == other.aliases()) && (mIdentifier == other.identifier()) && (mUnicode == other.unicode()) && (mCategory == other.category())
-        && (mKey == other.key()) && (mOrder == other.order()) && (mHasDiversityChildren == other.diversityChildren());
+    return mUnicode == other.unicode();
 }
 
 void UnicodeEmoticon::setDiversityChildren(bool b)
@@ -82,7 +91,7 @@ void UnicodeEmoticon::setOrder(int order)
 
 void UnicodeEmoticon::setUnicode(const QString &unicode)
 {
-    mUnicode = EmoticonUnicodeUtils::escapeUnicodeEmoji(unicode);
+    mUnicode = unicode;
 }
 
 QString UnicodeEmoticon::category() const
@@ -118,6 +127,7 @@ QDebug operator<<(QDebug d, const UnicodeEmoticon &t)
     d << "Aliases: " << t.aliases();
     d << "Order: " << t.order();
     d << "Key:" << t.key();
+    d << "Name:" << t.name();
     d << "DiversityChildren:" << t.diversityChildren();
     return d;
 }

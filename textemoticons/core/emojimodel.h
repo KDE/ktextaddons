@@ -28,6 +28,7 @@ public:
         Order,
         Animated,
         AnimatedFileName,
+        Name,
         IsCustom,
         FileName,
         DiversityChildren,

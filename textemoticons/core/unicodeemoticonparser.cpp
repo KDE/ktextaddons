@@ -5,84 +5,72 @@
 */
 
 #include "unicodeemoticonparser.h"
+#include "emojicategory.h"
 #include "textemoticonscore_debug.h"
-#include <QJsonArray>
+#include <KStringHandler>
 #include <QJsonObject>
 
-#include <algorithm>
+#include <QFile>
+
 using namespace TextEmoticonsCore;
 using namespace Qt::Literals::StringLiterals;
 UnicodeEmoticonParser::UnicodeEmoticonParser() = default;
 
 UnicodeEmoticonParser::~UnicodeEmoticonParser() = default;
 
-QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
+inline QDataStream &operator>>(QDataStream &stream, UnicodeEmoticon &emoji)
 {
-    auto aliases = [](const QJsonArray &alternates, const QJsonArray &ascii) {
-        QStringList ret;
-        ret.reserve(alternates.size() + ascii.size());
-        auto convert = [&](const QJsonArray &array) {
-            auto toString = [](const QJsonValue &value) {
-                return value.toString();
-            };
-            std::transform(array.begin(), array.end(), std::back_inserter(ret), toString);
-        };
-        convert(alternates);
-        convert(ascii);
-        return ret;
-    };
+    QByteArray buffer;
+    stream >> buffer;
+    emoji.setUnicode(QString::fromUtf8(buffer));
+    stream >> buffer;
 
-    QList<UnicodeEmoticon> lstEmoticons;
-    const QStringList keys = o.keys();
-    for (const QString &key : keys) {
-        UnicodeEmoticon emoticon;
-        const QJsonObject emojiObj = o[key].toObject();
-        emoticon.setKey(key);
-        const QString unicodeStr = emojiObj["code_points"_L1].toObject()["fully_qualified"_L1].toString();
-        Q_ASSERT(!unicodeStr.isEmpty());
-        emoticon.setUnicode(unicodeStr);
-        const QString category = emojiObj["category"_L1].toString();
-        emoticon.setCategory(category);
-        emoticon.setIdentifier(emojiObj["shortname"_L1].toString());
-        emoticon.setOrder(emojiObj["order"_L1].toInt());
-        emoticon.setDiversityChildren(!emojiObj["diversity_children"_L1].toArray().isEmpty());
-        const auto shortnameAlternates = emojiObj["shortname_alternates"_L1].toArray();
-        const auto ascii = emojiObj["ascii"_L1].toArray();
-        emoticon.setAliases(aliases(shortnameAlternates, ascii));
-        if (emoticon.isValid()) {
-            lstEmoticons.append(std::move(emoticon));
-        }
+    // Example: "party popper"
+    const QString name = QString::fromUtf8(buffer);
+
+    // Will turn into "Party Popper"
+    emoji.setName(KStringHandler::capwords(name));
+
+    // Will turn into "party_popper"
+    QString identifier = name;
+    identifier.replace(QLatin1Char(' '), QLatin1Char('_'));
+    emoji.setIdentifier(identifier);
+
+    qint32 categoryIndex = 0;
+    stream >> categoryIndex;
+    if (categoryIndex <= 0 || categoryIndex > getCategoryNames().length()) {
+        emoji.setCategory({});
+    } else {
+        emoji.setCategory(getCategoryNames()[categoryIndex - 1]);
     }
-    auto compareOrder = [](const UnicodeEmoticon &left, const UnicodeEmoticon &right) {
-        return left.order() < right.order();
-    };
-    std::sort(lstEmoticons.begin(), lstEmoticons.end(), compareOrder);
-    return lstEmoticons;
+
+    QList<QByteArray> annotationBuffers;
+    stream >> annotationBuffers;
+
+    QStringList annotations;
+    for (const auto &annotation : annotationBuffers) {
+        annotations << QString::fromUtf8(annotation);
+    }
+    emoji.setAliases(annotations);
+
+    return stream;
 }
 
-int UnicodeEmoticonParser::changeOrder(const QString &name)
+QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QString &path) const
 {
-    // ame "🚗"Category "travel", Name "🇿"Category "regional", Name "🏳️"Category "flags")
-    if (name == "people"_L1) {
-        return 1;
-    } else if (name == "flags"_L1) {
-        return 2;
-    } else if (name == "travel"_L1) {
-        return 3;
-    } else if (name == "symbols"_L1) {
-        return 4;
-    } else if (name == "activity"_L1) {
-        return 5;
-    } else if (name == "objects"_L1) {
-        return 6;
-    } else if (name == "nature"_L1) {
-        return 7;
-    } else if (name == "food"_L1) {
-        return 8;
-    } else if (name == "regional"_L1) {
-        return 9;
-    } else {
-        qCWarning(TEXTEMOTICONSCORE_LOG) << "Missing i18n translate " << name;
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly)) {
+        return {};
     }
-    return 20;
+    auto buffer = file.readAll();
+    buffer = qUncompress(buffer);
+    QDataStream stream(&buffer, QIODevice::ReadOnly);
+    // We use a fixed version to keep it binary compatible.
+    // Also we do not use advanced data type so it does not matter.
+    stream.setVersion(QDataStream::Qt_5_15);
+    // Explicitly set endianess to ensure it's not relevant to architecture.
+    stream.setByteOrder(QDataStream::LittleEndian);
+    QList<UnicodeEmoticon> emojis;
+    stream >> emojis;
+    return emojis;
 }
