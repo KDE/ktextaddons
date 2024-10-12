@@ -45,6 +45,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         case Identifier:
         case Qt::ToolTipRole:
             return unicodeEmoti.identifier();
+        case Name:
+            return unicodeEmoti.name();
         }
     } else {
         const auto &customEmoji = mCustomEmojiList.at(index.row() - mEmoticonList.count());
@@ -145,7 +147,10 @@ void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
 
 QHash<int, QByteArray> EmojiModel::roleNames() const
 {
-    return {{{UnicodeEmoji, QByteArrayLiteral("unicode")}, {Identifier, QByteArrayLiteral("identifier")}, {Category, QByteArrayLiteral("category")}}};
+    return {{{UnicodeEmoji, QByteArrayLiteral("unicode")},
+             {Identifier, QByteArrayLiteral("identifier")},
+             {Category, QByteArrayLiteral("category")},
+             {Name, QByteArrayLiteral("name")}}};
 }
 
 #include "moc_emojimodel.cpp"

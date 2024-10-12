@@ -25,6 +25,16 @@ void UnicodeEmoticon::setIdentifier(const QString &name)
     mIdentifier = name;
 }
 
+QString UnicodeEmoticon::name() const
+{
+    return mName;
+}
+
+void UnicodeEmoticon::setName(const QString &name)
+{
+    mName = name;
+}
+
 QString UnicodeEmoticon::unicode() const
 {
     return mUnicode;
@@ -41,28 +51,6 @@ QString UnicodeEmoticon::unicodeDisplay() const
     return mCachedHtml;
 }
 
-// input: codepoints in hex like 1f9d7-1f3fb-2640
-// output: QString with 3 ucs4 code points for the above, which is in fact 5 QChars.
-QString UnicodeEmoticon::escapeUnicodeEmoji(const QString &pString)
-{
-    QString retString;
-
-    const QList<QStringView> parts = QStringView(pString).split(QLatin1Char('-'));
-    for (const QStringView &item : parts) {
-        bool ok;
-        const int part = item.toInt(&ok, 16);
-        Q_ASSERT(ok);
-        if (QChar::requiresSurrogates(part)) {
-            retString += QChar::highSurrogate(part);
-            retString += QChar::lowSurrogate(part);
-        } else {
-            retString += QChar(part);
-        }
-    }
-
-    return retString;
-}
-
 QString UnicodeEmoticon::key() const
 {
     return mKey;
@@ -75,8 +63,7 @@ void UnicodeEmoticon::setKey(const QString &key)
 
 bool UnicodeEmoticon::operator==(const UnicodeEmoticon &other) const
 {
-    return (mAliases == other.aliases()) && (mIdentifier == other.identifier()) && (mUnicode == other.unicode()) && (mCategory == other.category())
-        && (mKey == other.key()) && (mOrder == other.order());
+    return mUnicode == other.unicode();
 }
 
 int UnicodeEmoticon::order() const
@@ -91,7 +78,7 @@ void UnicodeEmoticon::setOrder(int order)
 
 void UnicodeEmoticon::setUnicode(const QString &unicode)
 {
-    mUnicode = escapeUnicodeEmoji(unicode);
+    mUnicode = unicode;
 }
 
 QString UnicodeEmoticon::category() const
@@ -127,6 +114,7 @@ QDebug operator<<(QDebug d, const UnicodeEmoticon &t)
     d << "Aliases: " << t.aliases();
     d << "Order: " << t.order();
     d << "Key:" << t.key();
+    d << "Name:" << t.name();
     return d;
 }
 
