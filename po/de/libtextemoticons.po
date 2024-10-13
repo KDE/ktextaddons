@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-10-13 00:38+0000\n"
 "PO-Revision-Date: 2023-04-15 01:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -64,13 +64,13 @@ msgstr "Regionales"
 msgid "Flags"
 msgstr "Flaggen"
 
-#: widgets/emoticoncategorybuttons.cpp:82
+#: widgets/emoticoncategorybuttons.cpp:84
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Verlauf"
 
-#: widgets/emoticoncategorybuttons.cpp:84
+#: widgets/emoticoncategorybuttons.cpp:88
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"

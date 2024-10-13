@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-10-13 00:38+0000\n"
 "PO-Revision-Date: 2024-03-27 22:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -62,13 +62,13 @@ msgstr ""
 msgid "Flags"
 msgstr ""
 
-#: widgets/emoticoncategorybuttons.cpp:82
+#: widgets/emoticoncategorybuttons.cpp:84
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr ""
 
-#: widgets/emoticoncategorybuttons.cpp:84
+#: widgets/emoticoncategorybuttons.cpp:88
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
