@@ -6,7 +6,7 @@ project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 include(FeatureSummary)
 set(QT_REQUIRED_VERSION "6.7.0")
-set(KF_MIN_VERSION "6.4.0")
+set(KF_MIN_VERSION "6.6.0")
 set(QT6KEYCHAIN_LIB_VERSION "0.14.2")
 find_package(ECM ${KF_MIN_VERSION}  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://invent.kde.org/frameworks/extra-cmake-modules")
