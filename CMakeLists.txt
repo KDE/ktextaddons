@@ -52,7 +52,7 @@ textutils/*.h
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
-option(BUILD_QUICK "Build with QtQuick support" OFF)
+option(BUILD_QUICK "Build with QtQuick support (experimental)" OFF)
 if (BUILD_QUICK)
     include(ECMQmlModule)
 endif ()
