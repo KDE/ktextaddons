@@ -5,7 +5,7 @@
 */
 
 #include "googlespeechtotextplugin.h"
-
+#include <QDebug>
 GoogleSpeechToTextPlugin::GoogleSpeechToTextPlugin(QObject *parent)
     : TextSpeechToText::SpeechToTextPlugin{parent}
 {
@@ -15,6 +15,7 @@ GoogleSpeechToTextPlugin::~GoogleSpeechToTextPlugin() = default;
 
 void GoogleSpeechToTextPlugin::speechToText()
 {
+    qWarning() << "Not implemented yet";
     // TODO
 }
 
@@ -25,17 +26,20 @@ int GoogleSpeechToTextPlugin::sampleRate() const
 
 QIODevice *GoogleSpeechToTextPlugin::audioDevice() const
 {
+    qWarning() << "Not implemented yet";
     return {};
 }
 
 bool GoogleSpeechToTextPlugin::loadSettings()
 {
+    qWarning() << "Not implemented yet";
     // TODO
     return false;
 }
 
 void GoogleSpeechToTextPlugin::clear()
 {
+    qWarning() << "Not implemented yet";
     // TODO
 }
 

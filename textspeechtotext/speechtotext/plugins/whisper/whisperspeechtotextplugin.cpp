@@ -5,6 +5,7 @@
 */
 
 #include "whisperspeechtotextplugin.h"
+#include <QDebug>
 
 WhisperSpeechToTextPlugin::WhisperSpeechToTextPlugin(QObject *parent)
     : TextSpeechToText::SpeechToTextPlugin{parent}
@@ -15,6 +16,7 @@ WhisperSpeechToTextPlugin::~WhisperSpeechToTextPlugin() = default;
 
 void WhisperSpeechToTextPlugin::speechToText()
 {
+    qWarning() << "Not implemented yet";
     // TODO
 }
 
@@ -25,17 +27,20 @@ int WhisperSpeechToTextPlugin::sampleRate() const
 
 QIODevice *WhisperSpeechToTextPlugin::audioDevice() const
 {
+    qWarning() << "Not implemented yet";
     return nullptr;
 }
 
 bool WhisperSpeechToTextPlugin::loadSettings()
 {
+    qWarning() << "Not implemented yet";
     return false;
     // TODO
 }
 
 void WhisperSpeechToTextPlugin::clear()
 {
+    qWarning() << "Not implemented yet";
     // TODO
 }
 

@@ -13,4 +13,9 @@ GoogleSpeechToTextPluginJob::GoogleSpeechToTextPluginJob(QObject *parent)
 
 GoogleSpeechToTextPluginJob::~GoogleSpeechToTextPluginJob() = default;
 
+void GoogleSpeechToTextPluginJob::start()
+{
+    // TODO
+}
+
 #include "moc_googlespeechtotextpluginjob.cpp"

@@ -14,4 +14,6 @@ class GoogleSpeechToTextPluginJob : public QObject
 public:
     explicit GoogleSpeechToTextPluginJob(QObject *parent = nullptr);
     ~GoogleSpeechToTextPluginJob() override;
+
+    void start();
 };
