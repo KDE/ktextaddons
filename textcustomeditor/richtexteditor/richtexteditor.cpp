@@ -184,7 +184,16 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         const bool emptyDocument = document()->isEmpty();
         if (!isReadOnly()) {
             const QList<QAction *> actionList = popup->actions();
-            enum { UndoAct, RedoAct, CutAct, CopyAct, PasteAct, ClearAct, SelectAllAct, NCountActs };
+            enum {
+                UndoAct,
+                RedoAct,
+                CutAct,
+                CopyAct,
+                PasteAct,
+                ClearAct,
+                SelectAllAct,
+                NCountActs
+            };
             QAction *separatorAction = nullptr;
             const int idx = actionList.indexOf(actionList[SelectAllAct]) + 1;
             if (idx < actionList.count()) {
