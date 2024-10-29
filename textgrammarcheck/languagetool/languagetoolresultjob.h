@@ -42,7 +42,7 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(LanguageToolResultJob)
-    enum class JobError {
+    enum class JobError : uint8_t {
         NotError,
         EmptyText,
         UrlNotDefined,

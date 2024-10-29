@@ -18,7 +18,7 @@ public:
     explicit GrammalecteResultJob(QObject *parent = nullptr);
     ~GrammalecteResultJob() override;
 
-    enum class ErrorType {
+    enum class ErrorType : uint8_t {
         NoError = 0,
         TextIsEmpty = 1,
         PythonPathMissing = 2,
