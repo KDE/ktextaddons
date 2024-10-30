@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-10-30 00:39+0000\n"
 "PO-Revision-Date: 2023-12-12 17:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -28,63 +28,63 @@ msgstr[1] "Сделано %1 замены"
 msgstr[2] "Сделано %1 замен"
 msgstr[3] "Сделана %1 замена"
 
-#: plaintexteditor/plaintexteditor.cpp:166
-#: richtexteditor/richtexteditor.cpp:227
+#: plaintexteditor/plaintexteditor.cpp:175
+#: richtexteditor/richtexteditor.cpp:236
 #, fuzzy, kde-format
 #| msgid "Check Spelling..."
 msgid "Check Spelling…"
 msgstr "Проверить орфографию…"
 
-#: plaintexteditor/plaintexteditor.cpp:171
-#: richtexteditor/richtexteditor.cpp:234
+#: plaintexteditor/plaintexteditor.cpp:180
+#: richtexteditor/richtexteditor.cpp:243
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Автоматическая проверка орфографии"
 
-#: plaintexteditor/plaintexteditor.cpp:177
-#: richtexteditor/richtexteditor.cpp:240
+#: plaintexteditor/plaintexteditor.cpp:186
+#: richtexteditor/richtexteditor.cpp:249
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Язык для проверки орфографии"
 
-#: plaintexteditor/plaintexteditor.cpp:205
-#: richtextbrowser/richtextbrowser.cpp:165
-#: richtexteditor/richtexteditor.cpp:273
+#: plaintexteditor/plaintexteditor.cpp:214
+#: richtextbrowser/richtextbrowser.cpp:174
+#: richtexteditor/richtexteditor.cpp:282
 #, kde-format
 msgid "Speak Text"
 msgstr "Озвучить текст"
 
-#: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:491
+#: plaintexteditor/plaintexteditor.cpp:393
+#: richtexteditor/richtexteditor.cpp:500
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Нет текста для проверки орфографии."
 
-#: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:509
+#: plaintexteditor/plaintexteditor.cpp:398
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Не найден модуль для проверки орфографии."
 
-#: richtexteditor/richtexteditor.cpp:266
+#: richtexteditor/richtexteditor.cpp:275
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Включить табуляцию"
 
-#: richtexteditor/richtexteditor.cpp:501
+#: richtexteditor/richtexteditor.cpp:510
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "Не найден модуль для проверки орфографии. Всё равно отправить письмо?"
 
-#: richtexteditor/richtexteditor.cpp:503
+#: richtexteditor/richtexteditor.cpp:512
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Отправить"
 
-#: richtexteditor/richtexteditor.cpp:525
+#: richtexteditor/richtexteditor.cpp:534
 #, fuzzy, kde-format
 #| msgid "Skip"
 msgctxt "@action:button"

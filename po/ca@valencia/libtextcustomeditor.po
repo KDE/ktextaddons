@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-10-30 00:39+0000\n"
 "PO-Revision-Date: 2024-07-11 08:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -27,49 +27,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "S'ha fet %1 substitució"
 msgstr[1] "S'han fet %1 substitucions"
 
-#: plaintexteditor/plaintexteditor.cpp:166
-#: richtexteditor/richtexteditor.cpp:227
+#: plaintexteditor/plaintexteditor.cpp:175
+#: richtexteditor/richtexteditor.cpp:236
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Verifica l'ortografia…"
 
-#: plaintexteditor/plaintexteditor.cpp:171
-#: richtexteditor/richtexteditor.cpp:234
+#: plaintexteditor/plaintexteditor.cpp:180
+#: richtexteditor/richtexteditor.cpp:243
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Verifica automàticament l'ortogràfica"
 
-#: plaintexteditor/plaintexteditor.cpp:177
-#: richtexteditor/richtexteditor.cpp:240
+#: plaintexteditor/plaintexteditor.cpp:186
+#: richtexteditor/richtexteditor.cpp:249
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Idioma de la verificació ortogràfica"
 
-#: plaintexteditor/plaintexteditor.cpp:205
-#: richtextbrowser/richtextbrowser.cpp:165
-#: richtexteditor/richtexteditor.cpp:273
+#: plaintexteditor/plaintexteditor.cpp:214
+#: richtextbrowser/richtextbrowser.cpp:174
+#: richtexteditor/richtexteditor.cpp:282
 #, kde-format
 msgid "Speak Text"
 msgstr "Llig el text"
 
-#: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:491
+#: plaintexteditor/plaintexteditor.cpp:393
+#: richtexteditor/richtexteditor.cpp:500
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "No hi ha res que s'haja de verificar ortogràficament."
 
-#: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:509
+#: plaintexteditor/plaintexteditor.cpp:398
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
 
-#: richtexteditor/richtexteditor.cpp:266
+#: richtexteditor/richtexteditor.cpp:275
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permet les tabulacions"
 
-#: richtexteditor/richtexteditor.cpp:501
+#: richtexteditor/richtexteditor.cpp:510
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -78,13 +78,13 @@ msgstr ""
 "No hi ha disponible cap dorsal per a la verificació ortogràfica. Voleu "
 "enviar el correu igualment?"
 
-#: richtexteditor/richtexteditor.cpp:503
+#: richtexteditor/richtexteditor.cpp:512
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Envia"
 
-#: richtexteditor/richtexteditor.cpp:525
+#: richtexteditor/richtexteditor.cpp:534
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
