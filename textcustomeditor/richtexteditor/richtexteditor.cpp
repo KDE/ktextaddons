@@ -16,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KSharedConfig>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <KStandardGuiItem>
 #include <QActionGroup>
 #include <QIcon>
@@ -200,7 +200,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
-                QAction *clearAllAction = KStandardAction::clear(this, &RichTextEditor::slotUndoableClear, popup);
+                QAction *clearAllAction = KStandardActions::clear(this, &RichTextEditor::slotUndoableClear, popup);
                 if (emptyDocument) {
                     clearAllAction->setEnabled(false);
                 }
@@ -209,14 +209,14 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         }
         if (searchSupport()) {
             popup->addSeparator();
-            QAction *findAction = KStandardAction::find(this, &RichTextEditor::findText, popup);
+            QAction *findAction = KStandardActions::find(this, &RichTextEditor::findText, popup);
             popup->addAction(findAction);
             if (emptyDocument) {
                 findAction->setEnabled(false);
             }
             popup->addSeparator();
             if (!isReadOnly()) {
-                QAction *act = KStandardAction::replace(this, &RichTextEditor::replaceText, popup);
+                QAction *act = KStandardActions::replace(this, &RichTextEditor::replaceText, popup);
                 popup->addAction(act);
                 if (emptyDocument) {
                     act->setEnabled(false);

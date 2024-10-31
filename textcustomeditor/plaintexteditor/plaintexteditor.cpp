@@ -14,7 +14,7 @@
 #endif
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <KStandardGuiItem>
 #include <QActionGroup>
 #include <QIcon>
@@ -142,7 +142,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
             if (separatorAction) {
                 if (!emptyDocument) {
-                    QAction *clearAllAction = KStandardAction::clear(this, &PlainTextEditor::slotUndoableClear, popup);
+                    QAction *clearAllAction = KStandardActions::clear(this, &PlainTextEditor::slotUndoableClear, popup);
                     popup->insertAction(separatorAction, clearAllAction);
                 }
             }
@@ -150,13 +150,13 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
         if (d->supportFeatures & Search) {
             popup->addSeparator();
             if (!emptyDocument) {
-                QAction *findAction = KStandardAction::find(this, &PlainTextEditor::findText, popup);
+                QAction *findAction = KStandardActions::find(this, &PlainTextEditor::findText, popup);
                 popup->addAction(findAction);
                 popup->addSeparator();
             }
             if (!isReadOnly()) {
                 if (!emptyDocument) {
-                    QAction *replaceAction = KStandardAction::replace(this, &PlainTextEditor::replaceText, popup);
+                    QAction *replaceAction = KStandardActions::replace(this, &PlainTextEditor::replaceText, popup);
                     popup->addAction(replaceAction);
                     popup->addSeparator();
                 }

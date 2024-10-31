@@ -10,7 +10,7 @@
 #include <KStatefulBrush>
 
 #include <KLocalizedString>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <QDesktopServices>
 
 #include <KColorScheme>
@@ -113,7 +113,7 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
         QAction *configureAct = popup->addAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18n("Configure…"));
         connect(configureAct, &QAction::triggered, this, &GrammarResultTextEdit::configure);
         popup->addSeparator();
-        QAction *closeAct = KStandardAction::close(this, &GrammarResultTextEdit::closeChecker, this);
+        QAction *closeAct = KStandardActions::close(this, &GrammarResultTextEdit::closeChecker, this);
         closeAct->setShortcut({});
         popup->addAction(closeAct);
         popup->exec(event->globalPos());

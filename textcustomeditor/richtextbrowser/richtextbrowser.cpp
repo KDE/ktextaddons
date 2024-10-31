@@ -10,7 +10,7 @@
 #include <KCursor>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <KStandardGuiItem>
 #include <QIcon>
 
@@ -151,7 +151,7 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
                 separatorAction = actionList.at(idx);
             }
             if (separatorAction) {
-                QAction *clearAllAction = KStandardAction::clear(this, &RichTextBrowser::slotUndoableClear, popup);
+                QAction *clearAllAction = KStandardActions::clear(this, &RichTextBrowser::slotUndoableClear, popup);
                 if (emptyDocument) {
                     clearAllAction->setEnabled(false);
                 }
@@ -160,7 +160,7 @@ QMenu *RichTextBrowser::mousePopupMenu(QPoint pos)
         }
         if (searchSupport()) {
             popup->addSeparator();
-            QAction *findAction = KStandardAction::find(this, &RichTextBrowser::findText, popup);
+            QAction *findAction = KStandardActions::find(this, &RichTextBrowser::findText, popup);
             popup->addAction(findAction);
             if (emptyDocument) {
                 findAction->setEnabled(false);
