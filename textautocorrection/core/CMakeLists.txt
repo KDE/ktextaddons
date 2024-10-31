@@ -78,11 +78,13 @@ generate_export_header(KF6TextAutoCorrectionCore BASE_NAME textautocorrectioncor
 target_link_libraries(KF6TextAutoCorrectionCore
     PUBLIC
     Qt::Gui
-    KF6::ConfigWidgets
+    KF6::ConfigGui
     PRIVATE
     KF6::I18n
     KF6::Archive
+    KF6::ColorScheme
     Qt::Xml
+    Qt::Widgets
 )
 
 target_include_directories(KF6TextAutoCorrectionCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionCore/>")

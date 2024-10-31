@@ -63,7 +63,8 @@ target_sources(KF6TextCustomEditor PRIVATE
 
 target_link_libraries(KF6TextCustomEditor
     PRIVATE
-    KF6::ConfigWidgets
+    KF6::ConfigGui
+    KF6::ColorScheme
     KF6::SonnetUi
     KF6::SonnetCore
     KF6::WidgetsAddons

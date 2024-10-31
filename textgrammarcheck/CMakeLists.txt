@@ -127,7 +127,10 @@ target_link_libraries(KF6TextGrammarCheck
     PRIVATE
     Qt::Network
     KF6::I18n
-    KF6::ConfigWidgets
+    KF6::WidgetsAddons
+    KF6::ConfigCore
+    KF6::ConfigGui
+    KF6::ColorScheme
 )
 
 target_include_directories(KF6TextGrammarCheck INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/>")

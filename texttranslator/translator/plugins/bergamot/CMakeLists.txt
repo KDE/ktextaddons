@@ -86,8 +86,9 @@ ecm_qt_declare_logging_category(libbergamot HEADER libbergamot_debug.h IDENTIFIE
 
 target_link_libraries(libbergamot  Qt::Widgets
     KF6::I18n
+    KF6::ConfigCore
+    KF6::ConfigGui
     KF6::TextTranslator
-    KF6::ConfigWidgets
     KF6::TextAddonsWidgets
     KF6::WidgetsAddons
     KF6::Archive

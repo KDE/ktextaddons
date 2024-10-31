@@ -61,7 +61,7 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n
-    ConfigWidgets
+    ColorScheme
     Archive
     CoreAddons
     Sonnet

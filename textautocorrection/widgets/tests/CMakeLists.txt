@@ -12,4 +12,5 @@ add_executable(autocorrectionwidget_gui autocorrectionwidget_gui.h autocorrectio
 target_link_libraries(autocorrectionwidget_gui
   KF6::TextAutoCorrectionWidgets
   KF6::I18n
+  KF6::ConfigCore
 )

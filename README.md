@@ -17,7 +17,6 @@ Qt:
 KF6:
 
 - KF6Archive
-- KF6ConfigWidgets
 - KF6CoreAddons
 - KF6I18n
 - KF6Sonnet
