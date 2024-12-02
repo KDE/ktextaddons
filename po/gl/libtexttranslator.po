@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:38+0000\n"
+"POT-Creation-Date: 2024-12-02 00:40+0000\n"
 "PO-Revision-Date: 2024-07-30 17:29+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -662,70 +662,70 @@ msgstr "Todos os ficheiros (*)"
 msgid "Translate…"
 msgstr "Traducir…"
 
-#: translator/widgets/translatorwidget.cpp:219
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Pechar"
 
-#: translator/widgets/translatorwidget.cpp:222
+#: translator/widgets/translatorwidget.cpp:223
 #, kde-format
 msgid "Close"
 msgstr "Pechar"
 
-#: translator/widgets/translatorwidget.cpp:228
+#: translator/widgets/translatorwidget.cpp:229
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "De:"
 
-#: translator/widgets/translatorwidget.cpp:235
+#: translator/widgets/translatorwidget.cpp:236
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "A:"
 
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Inverter"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Borrar"
 
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Clear"
 msgstr "Borrar"
 
-#: translator/widgets/translatorwidget.cpp:260
+#: translator/widgets/translatorwidget.cpp:261
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Traducir"
 
-#: translator/widgets/translatorwidget.cpp:263
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgid "Translate"
 msgstr "Traducir"
 
-#: translator/widgets/translatorwidget.cpp:270
+#: translator/widgets/translatorwidget.cpp:271
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Depurar"
 
-#: translator/widgets/translatorwidget.cpp:288
+#: translator/widgets/translatorwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Configurar"
 
-#: translator/widgets/translatorwidget.cpp:368
+#: translator/widgets/translatorwidget.cpp:369
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -735,26 +735,26 @@ msgstr ""
 "Arrastre o texto que queira traducir. (teña coidado, o texto enviarase a un "
 "servidor externo)."
 
-#: translator/widgets/translatorwidget.cpp:370
+#: translator/widgets/translatorwidget.cpp:371
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Arrastre o texto que queira traducir."
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 "Non se detectou ningunha conexión de rede, polo que non se pode traducir o "
 "texto."
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Non hai rede"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

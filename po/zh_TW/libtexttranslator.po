@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:38+0000\n"
+"POT-Creation-Date: 2024-12-02 00:40+0000\n"
 "PO-Revision-Date: 2024-08-03 14:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -659,70 +659,70 @@ msgstr "所有檔案 (*)"
 msgid "Translate…"
 msgstr "翻譯…"
 
-#: translator/widgets/translatorwidget.cpp:219
+#: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "關閉"
 
-#: translator/widgets/translatorwidget.cpp:222
+#: translator/widgets/translatorwidget.cpp:223
 #, kde-format
 msgid "Close"
 msgstr "關閉"
 
-#: translator/widgets/translatorwidget.cpp:228
+#: translator/widgets/translatorwidget.cpp:229
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "原文："
 
-#: translator/widgets/translatorwidget.cpp:235
+#: translator/widgets/translatorwidget.cpp:236
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "譯文："
 
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "反轉"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "清除"
 
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Clear"
 msgstr "清除"
 
-#: translator/widgets/translatorwidget.cpp:260
+#: translator/widgets/translatorwidget.cpp:261
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "翻譯"
 
-#: translator/widgets/translatorwidget.cpp:263
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgid "Translate"
 msgstr "翻譯"
 
-#: translator/widgets/translatorwidget.cpp:270
+#: translator/widgets/translatorwidget.cpp:271
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "除錯"
 
-#: translator/widgets/translatorwidget.cpp:288
+#: translator/widgets/translatorwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "設定"
 
-#: translator/widgets/translatorwidget.cpp:368
+#: translator/widgets/translatorwidget.cpp:369
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -730,24 +730,24 @@ msgid ""
 "external Server)."
 msgstr "將您要翻譯的文字拖曳至此。（請注意，會傳送文字到外部伺服器。）"
 
-#: translator/widgets/translatorwidget.cpp:370
+#: translator/widgets/translatorwidget.cpp:371
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "將您要翻譯的文字拖曳至此。"
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "沒有偵測到網路連線，無法翻譯文字。"
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "沒有網路"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

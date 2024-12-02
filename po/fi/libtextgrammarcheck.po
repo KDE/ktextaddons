@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# Tommi Nieminen <translator@legisign.org>, 2019, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2023-11-30 14:45+0200\n"
+"PO-Revision-Date: 2024-10-16 20:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -38,8 +38,7 @@ msgid "Check Again"
 msgstr "Tarkista uudelleen"
 
 #: common/grammarresulttextedit.cpp:113
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
 msgstr "Asetukset…"
 
@@ -49,8 +48,7 @@ msgid "See on: %1"
 msgstr "Katso: %1"
 
 #: common/grammarresultwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sulje"
@@ -79,22 +77,19 @@ msgid ""
 msgstr "Asetuksia ei voi saada. Varmista, että grammalected on asennettu."
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Error during Extracting Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Virhe asetuksia tarkistettaessa"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Press Button for Reloading Settings"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Lataa asetukset uudelleen napsauttamalla painiketta"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Reload Settings"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Lataa asetukset uudelleen"
@@ -105,8 +100,7 @@ msgid "Python Path:"
 msgstr "Pythonin sijainti:"
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
-#, fuzzy, kde-format
-#| msgid "Add full 'grammalecte-cli.py' path"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Lisää ”grammalecte-cli.py”-tiedoston täysi sijainti"
@@ -146,8 +140,7 @@ msgid "Grammalecte cli file not found."
 msgstr "Grammalecten CLI-tiedostoa ei löytynyt."
 
 #: grammalecte/grammalecteresultwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Grammalecte error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
 msgstr "Grammalecten virhe:"
@@ -315,29 +308,25 @@ msgid "Configure LanguageTool"
 msgstr "LanguageToolin asetukset"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
-#, fuzzy, kde-format
-#| msgid "Use Local Instance"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
 msgstr "Käytä paikallista ohjelmaa"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Instance Path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Ohjelman sijainti:"
 
 #: languagetool/languagetoolconfigwidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Kieli:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Refresh"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Virkistä"
@@ -348,15 +337,13 @@ msgid "An error was reported: %1"
 msgstr "Raportoitiin virhe: %1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Failed to check grammar."
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
 msgstr "Kieliopin tarkistus epäonnistui"
 
 #: languagetool/languagetoolresultwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Check"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
 msgstr "Tarkista"
@@ -371,8 +358,7 @@ msgstr ""
 "%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:77
-#, fuzzy, kde-format
-#| msgid "List of Languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
 msgstr "Kielten luettelo"

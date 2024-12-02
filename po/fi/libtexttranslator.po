@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Tommi Nieminen <translator@legisign.org>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:38+0000\n"
-"PO-Revision-Date: 2023-11-30 14:44+0200\n"
+"POT-Creation-Date: 2024-12-02 00:40+0000\n"
+"PO-Revision-Date: 2024-10-16 20:55+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,8 +336,7 @@ msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Etsi…"
@@ -353,15 +352,13 @@ msgid "Delete"
 msgstr "Poista"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Päivitä luettelo"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Päivitä kieliluettelo verkosta"
@@ -372,8 +369,7 @@ msgid "Error: %1"
 msgstr "Virhe: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "Käytä käännösvälimuistia"
@@ -522,8 +518,7 @@ msgid "Configure Engine"
 msgstr "Moottorin asetukset"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Käytä vapaata lisenssiavainta"
@@ -556,8 +551,7 @@ msgid "Libre Translate"
 msgstr "Libre Translate"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "Palvelin vaatii API-avaimen"
@@ -626,11 +620,10 @@ msgstr "Mihin:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr "Moottori"
+msgstr "Moottori:"
 
 #: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
@@ -639,8 +632,7 @@ msgid "Translator Debug"
 msgstr "Käännösohjelman virheenpaikannus"
 
 #: translator/widgets/translatordebugdialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
 msgstr "Tallenna nimellä…"
 
@@ -654,8 +646,7 @@ msgstr ""
 "Virheen tarkka kuvaus on ”%2”."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Tiedoston tallennusvirhe"
@@ -666,84 +657,75 @@ msgid "All Files (*)"
 msgstr "Kaikki tiedostot (*)"
 
 #: translator/widgets/translatormenu.cpp:23
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgid "Translate…"
-msgstr "Käännä"
+msgstr "Käännä…"
 
-#: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#: translator/widgets/translatorwidget.cpp:220
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sulje"
 
-#: translator/widgets/translatorwidget.cpp:222
+#: translator/widgets/translatorwidget.cpp:223
 #, kde-format
 msgid "Close"
 msgstr "Sulje"
 
-#: translator/widgets/translatorwidget.cpp:228
+#: translator/widgets/translatorwidget.cpp:229
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Mistä:"
 
-#: translator/widgets/translatorwidget.cpp:235
+#: translator/widgets/translatorwidget.cpp:236
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Mihin:"
 
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Vaihda suuntaa"
 
-#: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#: translator/widgets/translatorwidget.cpp:253
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#: translator/widgets/translatorwidget.cpp:261
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Käännä"
 
-#: translator/widgets/translatorwidget.cpp:263
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgid "Translate"
 msgstr "Käännä"
 
-#: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#: translator/widgets/translatorwidget.cpp:271
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Virheenpaikannus"
 
-#: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#: translator/widgets/translatorwidget.cpp:289
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Asetukset"
 
-#: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#: translator/widgets/translatorwidget.cpp:369
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -752,28 +734,25 @@ msgstr ""
 "Vedä käännettävä teksti tähän. (Varoitus: teksti lähetetään ulkoiseen "
 "palvelimeen.)"
 
-#: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#: translator/widgets/translatorwidget.cpp:371
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Vedä käännettävä teksti tähän."
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Verkkoyhteyttä ei havaittu: tekstiä ei voi kääntää."
 
-#: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#: translator/widgets/translatorwidget.cpp:420
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Ei verkkoyhteyttä"
 
-#: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#: translator/widgets/translatorwidget.cpp:457
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Kääntämisvirhe"

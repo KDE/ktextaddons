@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Tommi Nieminen <translator@legisign.org>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-30 00:39+0000\n"
-"PO-Revision-Date: 2023-08-28 18:10+0300\n"
+"PO-Revision-Date: 2024-10-16 20:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -27,8 +27,7 @@ msgstr[1] "Tehtiin %1 korvausta"
 
 #: plaintexteditor/plaintexteditor.cpp:175
 #: richtexteditor/richtexteditor.cpp:236
-#, fuzzy, kde-format
-#| msgid "Check Spelling..."
+#, kde-format
 msgid "Check Spelling…"
 msgstr "Tarkista oikeinkirjoitus…"
 
@@ -84,15 +83,13 @@ msgid "Send"
 msgstr "Lähetä"
 
 #: richtexteditor/richtexteditor.cpp:534
-#, fuzzy, kde-format
-#| msgid "Skip"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr "Sivuuta"
+msgstr "Ohita"
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sulje"
@@ -112,15 +109,13 @@ msgstr ""
 "Lauseketta ”%1” ei löydetty."
 
 #: widgets/textfindreplacewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace"
 msgstr "Korvaa"
 
 #: widgets/textfindreplacewidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Replace All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replace All"
 msgstr "Korvaa kaikki"
@@ -150,22 +145,19 @@ msgid "F&ind:"
 msgstr "&Etsi:"
 
 #: widgets/textfindreplacewidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Etsittävä teksti"
 
 #: widgets/textfindreplacewidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Hyppää seuraavaan osumaan"
 
 #: widgets/textfindreplacewidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Hyppää edelliseen osumaan"
@@ -176,8 +168,7 @@ msgid "Options"
 msgstr "Valinnat"
 
 #: widgets/textfindreplacewidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Muuta haun toimintaa"
@@ -203,8 +194,7 @@ msgid "Respect Diacritic and Accents"
 msgstr "Säilytä tarkkeet"
 
 #: widgets/textgotolinewidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Go to Line:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Siirry riville:"

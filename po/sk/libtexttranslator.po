@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:38+0000\n"
+"POT-Creation-Date: 2024-12-02 00:40+0000\n"
 "PO-Revision-Date: 2023-12-08 20:12+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -671,75 +671,75 @@ msgstr "Všetky súbory (*)"
 msgid "Translate…"
 msgstr "Preložiť"
 
-#: translator/widgets/translatorwidget.cpp:219
+#: translator/widgets/translatorwidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zatvoriť"
 
-#: translator/widgets/translatorwidget.cpp:222
+#: translator/widgets/translatorwidget.cpp:223
 #, kde-format
 msgid "Close"
 msgstr "Zatvoriť"
 
-#: translator/widgets/translatorwidget.cpp:228
+#: translator/widgets/translatorwidget.cpp:229
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Z:"
 
-#: translator/widgets/translatorwidget.cpp:235
+#: translator/widgets/translatorwidget.cpp:236
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Do:"
 
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Otočiť"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:253
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Vymazať"
 
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Clear"
 msgstr "Vymazať"
 
-#: translator/widgets/translatorwidget.cpp:260
+#: translator/widgets/translatorwidget.cpp:261
 #, fuzzy, kde-format
 #| msgid "Translate"
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Preložiť"
 
-#: translator/widgets/translatorwidget.cpp:263
+#: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgid "Translate"
 msgstr "Preložiť"
 
-#: translator/widgets/translatorwidget.cpp:270
+#: translator/widgets/translatorwidget.cpp:271
 #, fuzzy, kde-format
 #| msgid "Debug"
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Ladenie"
 
-#: translator/widgets/translatorwidget.cpp:288
+#: translator/widgets/translatorwidget.cpp:289
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Konfigurovať"
 
-#: translator/widgets/translatorwidget.cpp:368
+#: translator/widgets/translatorwidget.cpp:369
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -752,7 +752,7 @@ msgstr ""
 "Pretiahnite text, ktorý chcete preložiť. (Pozor, text sa odošle na Google "
 "Server)."
 
-#: translator/widgets/translatorwidget.cpp:370
+#: translator/widgets/translatorwidget.cpp:371
 #, fuzzy, kde-format
 #| msgid ""
 #| "Drag text that you want to translate. (Be careful text will be send to "
@@ -763,19 +763,19 @@ msgstr ""
 "Pretiahnite text, ktorý chcete preložiť. (Pozor, text sa odošle na Google "
 "Server)."
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Nebolo zistené žiadne sieťové pripojenie, nemôžeme preložiť text."
 
-#: translator/widgets/translatorwidget.cpp:419
+#: translator/widgets/translatorwidget.cpp:420
 #, fuzzy, kde-format
 #| msgid "No network"
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Žiadna sieť"
 
-#: translator/widgets/translatorwidget.cpp:456
+#: translator/widgets/translatorwidget.cpp:457
 #, fuzzy, kde-format
 #| msgid "Translate error"
 msgctxt "@title:window"

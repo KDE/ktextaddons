@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Tommi Nieminen <translator@legisign.org>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2023-02-23 19:56+0200\n"
+"PO-Revision-Date: 2024-10-16 20:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -33,15 +33,13 @@ msgid "Select Custom System Path"
 msgstr "Valitse mukautettu järjestelmäsijainti"
 
 #: widgets/autocorrectionwidget.cpp:149
-#, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "LibreOfficen automaattikorjaus"
 
 #: widgets/autocorrectionwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "KMailin/Calligran automaattikorjaus"
@@ -52,8 +50,7 @@ msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "Korvattava merkkijono on sama kuin etsittävä jono."
 
 #: widgets/autocorrectionwidget.cpp:431
-#, fuzzy, kde-format
-#| msgid "Add Autocorrection Entry"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Lisää automaattikorjausmerkintä"
@@ -92,8 +89,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "KMailin automaattikorjaustiedosto (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Tuo automaattikorjaustiedosto"
@@ -104,8 +100,7 @@ msgid "Language was changed, do you want to save config for previous language?"
 msgstr "Kieltä vaihdettiin: haluatko tallentaa edellisen kielen asetukset?"
 
 #: widgets/autocorrectionwidget.cpp:683
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Tallenna asetukset"
@@ -116,8 +111,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Tallenna muutokset ennen asetusten vientiä."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Vie automaattikorjaustiedosto"
@@ -136,15 +130,13 @@ msgstr "Korvaus- ja poikkeussäännöt kielelle:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
 msgstr "Vie…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "Tuo…"
 
@@ -175,10 +167,9 @@ msgstr "&Etsi"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgid "&Replace"
-msgstr "Korvaa"
+msgstr "Ko&rvaa"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -295,10 +286,9 @@ msgstr "Useimmat tavalliset murto-osamerkinnät muutetaan, kun mahdollista"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "&Muuta 1/2 muotoon ½…"
+msgstr "Muuta &1/2 muotoon ½…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
@@ -340,8 +330,7 @@ msgstr "&Lihavoi, alle- ja yliviivaa automaattisesti (HTML-tila)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
-#, fuzzy, kde-format
-#| msgid "Replace 1st... with 1^st... (HTML mode)"
+#, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
 msgstr "Yläindeksoi ”st” merkinnöissä kuten ”1st” … (HTML-tila)"
 
@@ -471,7 +460,7 @@ msgstr "Mukautettu järjestelmäsijainti:"
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

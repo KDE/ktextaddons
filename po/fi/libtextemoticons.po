@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Tommi Nieminen <translator@legisign.org>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:38+0000\n"
-"PO-Revision-Date: 2023-04-20 17:30+0300\n"
+"PO-Revision-Date: 2024-10-16 20:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -75,8 +75,7 @@ msgid "Custom"
 msgstr "Mukautettu"
 
 #: widgets/emoticonlistview.cpp:116
-#, fuzzy, kde-format
-#| msgid "Clear Recents"
+#, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Tyhjennä viimeaikaiset"
@@ -87,8 +86,7 @@ msgid "Add Smiley"
 msgstr "Lisää hymiö"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
-msgstr "Etsi emojia…"
+msgstr "Etsi hymiötä…"
