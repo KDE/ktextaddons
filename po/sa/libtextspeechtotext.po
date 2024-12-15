@@ -61,13 +61,13 @@ msgstr "डिस्कमध्ये लेखनस्य समये त्
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
-msgstr ""
+msgstr "Vosk प्लगिन् सेटिंग्स्"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "अन्वेषण…"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
 #, kde-format
@@ -83,13 +83,13 @@ msgstr "लुप्"
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr ""
+msgstr "सूची अद्यतन करें"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "संजालतः भाषाणां सूचीं अद्यतनं कुर्वन्तु"
 
 #: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
 #, kde-format
@@ -142,13 +142,13 @@ msgstr "घूर्घायेत्"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr ""
+msgstr "यन्त्र:"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
-msgstr ""
+msgstr "Speech To Text विन्यस्तं कुर्वन्तु"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:17
 #, kde-format
@@ -159,7 +159,7 @@ msgstr "भाषणं पाठं प्रति..."
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
-msgstr ""
+msgstr "निवेशः : १."
 
 #: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
 #, kde-format

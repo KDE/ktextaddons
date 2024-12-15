@@ -50,13 +50,13 @@ msgstr "अत्र पश्यन्तु: %1"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "पिधानं करोतु"
 
 #: grammalecte/grammalecteconfigdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Grammalecte"
-msgstr ""
+msgstr "Grammalecte विन्यस्तं कुर्वन्तु"
 
 #: grammalecte/grammalecteconfigwidget.cpp:35
 #, kde-format
@@ -79,19 +79,19 @@ msgstr "विकल्पान् प्राप्तुं असम्भ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "विकल्पान् निष्कासयितुं समये त्रुटिः"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
-msgstr ""
+msgstr "सेटिङ्ग्स् पुनः लोड् कर्तुं बटन् नुदन्तु"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
-msgstr ""
+msgstr "सेटिंग्स् पुनः लोड् कुर्वन्तु"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
@@ -102,7 +102,7 @@ msgstr "पायथन मार्गः : १."
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "पूर्णं 'grammalecte-cli.py' मार्गं योजयन्तु"
 
 #: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "Grammalecte cli सञ्चिका न प्राप्ता।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Grammalecte error"
-msgstr ""
+msgstr "Grammalecte त्रुटिः"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:33
 #, kde-format
@@ -303,31 +303,31 @@ msgstr "युक्रेनियन"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure LanguageTool"
-msgstr ""
+msgstr "LanguageTool विन्यस्तं कुर्वन्तु"
 
 #: languagetool/languagetoolconfigwidget.cpp:22
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Local Instance"
-msgstr ""
+msgstr "स्थानीयदृष्टान्तस्य उपयोगं कुर्वन्तु"
 
 #: languagetool/languagetoolconfigwidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Instance Path:"
-msgstr ""
+msgstr "उदाहरणमार्गः : १."
 
 #: languagetool/languagetoolconfigwidget.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
-msgstr ""
+msgstr "भाषा:"
 
 #: languagetool/languagetoolconfigwidget.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "ताजगी"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
@@ -338,13 +338,13 @@ msgstr "एकः त्रुटिः निवेदिता: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "व्याकरणस्य जाँचं कर्तुं असफलम्।"
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check"
-msgstr ""
+msgstr "अनुशीलय"
 
 #: languagetool/languagetoolupdatecombobox.cpp:76
 #, kde-format
@@ -359,4 +359,4 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Languages"
-msgstr ""
+msgstr "भाषाणां सूची"

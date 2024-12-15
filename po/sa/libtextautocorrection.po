@@ -35,13 +35,13 @@ msgstr "Custom System Path इति चिनोतु"
 #, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
-msgstr ""
+msgstr "LibreOffice स्वतः सुधारः"
 
 #: widgets/autocorrectionwidget.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
-msgstr ""
+msgstr "केमेल/कैलिग्रा स्वतःशुद्धि"
 
 #: widgets/autocorrectionwidget.cpp:431
 #, kde-format
@@ -52,7 +52,7 @@ msgstr "\"Replace\" स्ट्रिंग् \"Find\" स्ट्रिं�
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr ""
+msgstr "स्वयम्शुद्धिप्रविष्टिः योजयतु"
 
 #: widgets/autocorrectionwidget.cpp:510
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "KMail स्वतः सुधारणसञ्चिका (*.xml) ."
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
-msgstr ""
+msgstr "स्वतःशुद्धिसञ्चिका आयातयन्तु"
 
 #: widgets/autocorrectionwidget.cpp:682
 #, kde-format
@@ -102,7 +102,7 @@ msgstr "भाषा परिवर्तिता, पूर्वभाषा
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
-msgstr ""
+msgstr "config रक्षतु"
 
 #: widgets/autocorrectionwidget.cpp:718
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "कृपया सेटिङ्ग्स् निर्यातय�
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
-msgstr ""
+msgstr "स्वतः सुधारणसञ्चिका निर्यातयन्तु"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21

@@ -20,13 +20,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
-msgstr ""
+msgstr "विरमतु"
 
 #: texttospeechactions.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr ""
+msgstr "विरमतु"
 
 #: texttospeechactions.cpp:72
 #, kde-format
@@ -42,7 +42,7 @@ msgstr "क्रीडतु"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
-msgstr ""
+msgstr "Text-To-Speech विन्यस्तं कुर्वन्तु"
 
 #: texttospeechconfiginterface.cpp:85
 #, kde-format
@@ -88,7 +88,7 @@ msgstr "ध्वनि:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "पिधानं करोतु"
 
 #: texttospeechwidget.cpp:59
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "मात्रा:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr ""
+msgstr "विन्यस्तं कुर्वन्तु..."
 
 #: texttospeechwidget.cpp:132
 #, kde-format
@@ -111,4 +111,4 @@ msgstr "इञ्जिनस्य समस्या अस्ति।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
-msgstr ""
+msgstr "Text To Speech इति"

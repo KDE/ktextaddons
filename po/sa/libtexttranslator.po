@@ -325,7 +325,7 @@ msgstr "यिद्दिश"
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr ""
+msgstr "Bergamot प्लगिन् सेटिंग्स्"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:31
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
@@ -338,7 +338,7 @@ msgstr "बर्गमोट्"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "अन्वेषण…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
 #, kde-format
@@ -354,13 +354,13 @@ msgstr "लुप्"
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr ""
+msgstr "सूची अद्यतन करें"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr ""
+msgstr "संजालतः भाषाणां सूचीं अद्यतनं कुर्वन्तु"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
@@ -371,7 +371,7 @@ msgstr "त्रुटिः %1"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr ""
+msgstr "अनुवादसञ्चयस्य उपयोगं कुर्वन्तु"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
@@ -514,13 +514,13 @@ msgstr "दीपL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr ""
+msgstr "इञ्जिनं विन्यस्तं कुर्वन्तु"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
-msgstr ""
+msgstr "Free License Key इत्यस्य उपयोगं कुर्वन्तु"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
@@ -553,7 +553,7 @@ msgstr "Libre अनुवाद करें"
 #, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
-msgstr ""
+msgstr "सर्वरस्य आवश्यकता आसीत् Api Key"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
 #: translator/plugins/lingva/lingvaenginewidget.cpp:23
@@ -605,7 +605,7 @@ msgstr "भवान् 'from' तथा 'to' इति भाषायाः �
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr ""
+msgstr "अनुवादकं विन्यस्तं कुर्वन्तु"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
@@ -622,13 +622,13 @@ msgstr "इत्यस्मै:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr ""
+msgstr "यन्त्र:"
 
 #: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
-msgstr ""
+msgstr "अनुवादक त्रुटिनिवारणम्"
 
 #: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
@@ -648,7 +648,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
-msgstr ""
+msgstr "सञ्चिका त्रुटिः रक्षतु"
 
 #: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
@@ -687,7 +687,7 @@ msgstr "इत्यस्मै:"
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
-msgstr ""
+msgstr "विपर्ययम्"
 
 #: translator/widgets/translatorwidget.cpp:253
 #, kde-format
@@ -715,13 +715,13 @@ msgstr "अनुवदति"
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
-msgstr ""
+msgstr "त्रुटिनिवारणम्"
 
 #: translator/widgets/translatorwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr ""
+msgstr "विन्यस्तं कुर्वन्तु"
 
 #: translator/widgets/translatorwidget.cpp:369
 #, kde-format
@@ -730,12 +730,14 @@ msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
+"यस्य पाठस्य अनुवादं कर्तुम् इच्छति तत् कर्षतु । (सावधानं भवतु पाठः बाह्यसर्वर प्रति प्रेषितः "
+"भविष्यति)।"
 
 #: translator/widgets/translatorwidget.cpp:371
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
-msgstr ""
+msgstr "यस्य पाठस्य अनुवादं कर्तुम् इच्छति तत् कर्षतु ।"
 
 #: translator/widgets/translatorwidget.cpp:420
 #, kde-format
@@ -746,10 +748,10 @@ msgstr "कोऽपि जालसंयोजनः न ज्ञातः, �
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
-msgstr ""
+msgstr "न जालम्"
 
 #: translator/widgets/translatorwidget.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
-msgstr ""
+msgstr "अनुवाददोषः"

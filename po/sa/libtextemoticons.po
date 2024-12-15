@@ -65,19 +65,19 @@ msgstr "ध्वजाः"
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr ""
+msgstr "इतिहास"
 
 #: widgets/emoticoncategorybuttons.cpp:88
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr ""
+msgstr "आचारः"
 
 #: widgets/emoticonlistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
-msgstr ""
+msgstr "स्पष्ट हाले"
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
@@ -88,4 +88,4 @@ msgstr "स्माइली इति योजयतु"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
-msgstr ""
+msgstr "इमोटिकॉन् अन्वेषणं कुर्वन्तु..."

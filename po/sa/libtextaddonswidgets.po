@@ -20,16 +20,16 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr ""
+msgstr "विशेषवर्णान् चिनोतु"
 
 #: selectspecialchardialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr ""
+msgstr "युज्"
 
 #: selectspecialchardialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"
-msgstr ""
+msgstr "विचि"
