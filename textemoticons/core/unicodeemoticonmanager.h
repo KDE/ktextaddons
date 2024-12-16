@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2020-2024 Laurent Montel <montel@kde.org>
+SPDX-FileCopyrightText: 2020-2024 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -10,6 +10,9 @@
 #include "textemoticonscore_export.h"
 #include "unicodeemoticon.h"
 #include <QObject>
+
+class UnicodeEmoticonManagerTest;
+
 namespace TextEmoticonsCore
 {
 class UnicodeEmoticonManagerPrivate;
@@ -24,9 +27,6 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
     Q_PROPERTY(QList<EmoticonCategory> categories READ categories CONSTANT)
 
 public:
-    explicit UnicodeEmoticonManager(QObject *parent = nullptr);
-    ~UnicodeEmoticonManager() override;
-
     static UnicodeEmoticonManager *self();
 
     [[nodiscard]] QList<UnicodeEmoticon> unicodeEmojiList() const;
@@ -35,6 +35,12 @@ public:
     [[nodiscard]] QList<EmoticonCategory> categories() const;
     [[nodiscard]] UnicodeEmoticon unicodeEmoticonForEmoji(const QString &emojiIdentifier) const;
     [[nodiscard]] int count() const;
+
+protected:
+    explicit UnicodeEmoticonManager(QObject *parent = nullptr);
+    ~UnicodeEmoticonManager() override;
+
+    friend UnicodeEmoticonManagerTest;
 
 private:
     std::unique_ptr<UnicodeEmoticonManagerPrivate> const d;

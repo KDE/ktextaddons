@@ -23,9 +23,6 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
     Q_PROPERTY(TextEmoticonsCore::EmojiModel *emojiModel READ emojiModel CONSTANT)
 
 public:
-    explicit EmojiModelManager(QObject *parent = nullptr);
-    ~EmojiModelManager() override;
-
     static EmojiModelManager *self();
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
@@ -42,6 +39,10 @@ public:
 Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
     void excludeEmoticonsChanged();
+
+protected:
+    explicit EmojiModelManager(QObject *parent = nullptr);
+    ~EmojiModelManager() override;
 
 private:
     class EmojiModelManagerPrivate;
