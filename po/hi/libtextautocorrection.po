@@ -1,64 +1,66 @@
-# Sanskrit translations for ktextaddons package.
+# Hindi translations for ktextaddons package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"PO-Revision-Date: 2024-12-15 19:31+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr "पठनविधाने संग्रहणं उद्घाटयितुं न शक्यते ।"
+msgstr "पुरालेख को पठन मोड में नहीं खोला जा सकता."
 
 #: widgets/autocorrectionwidget.cpp:134
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr "Custom Writable Path इति चिनोतु"
+msgstr "कस्टम लिखने योग्य पथ चुनें"
 
 #: widgets/autocorrectionwidget.cpp:139
 #, kde-format
 msgid "Select Custom System Path"
-msgstr "Custom System Path इति चिनोतु"
+msgstr "कस्टम सिस्टम पथ चुनें"
 
 #: widgets/autocorrectionwidget.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
-msgstr "LibreOffice स्वतः सुधारः"
+msgstr "लिबरऑफिस स्वतः सुधार"
 
 #: widgets/autocorrectionwidget.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
-msgstr "केमेल/कैलिग्रा स्वतःशुद्धि"
+msgstr "केमेल/कैलिग्रा स्वतः सुधार"
 
 #: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr "\"Replace\" स्ट्रिंग् \"Find\" स्ट्रिंग् इत्यस्य समानम् अस्ति ।"
+msgstr "\"प्रतिस्थापित करें\" स्ट्रिंग \"खोजें\" स्ट्रिंग के समान है।"
 
 #: widgets/autocorrectionwidget.cpp:431
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr "स्वयम्शुद्धिप्रविष्टिः योजयतु"
+msgstr "स्वतः सुधार प्रविष्टि जोड़ें"
 
 #: widgets/autocorrectionwidget.cpp:510
 #, kde-format
 msgid "&Modify"
-msgstr "&संशोधनं कुर्वन्तु"
+msgstr "&संशोधित करें"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
@@ -66,158 +68,158 @@ msgstr "&संशोधनं कुर्वन्तु"
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
-msgstr "&संयोजयति"
+msgstr "&जोड़ना"
 
 #: widgets/autocorrectionwidget.cpp:621
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
-msgstr "LibreOffice स्वयम्शुद्धिम् आयातयन्तु"
+msgstr "LibreOffice स्वतःसुधार आयात करें"
 
 #: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
-msgstr "LibreOffice स्वतः सुधारणसञ्चिका (*.dat)"
+msgstr "लिबरऑफिस स्वतः सुधार फ़ाइल (*.dat)"
 
 #: widgets/autocorrectionwidget.cpp:625
 #, kde-format
 msgid "Import KMail Autocorrection"
-msgstr "केमेल स्वशुद्धि आयात करें"
+msgstr "KMail स्वतः सुधार आयात करें"
 
 #: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
-msgstr "KMail स्वतः सुधारणसञ्चिका (*.xml) ."
+msgstr "केमेल स्वतःसुधार फ़ाइल (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
-msgstr "स्वतःशुद्धिसञ्चिका आयातयन्तु"
+msgstr "स्वतःसुधार फ़ाइल आयात करें"
 
 #: widgets/autocorrectionwidget.cpp:682
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
-msgstr "भाषा परिवर्तिता, पूर्वभाषायाः कृते config रक्षितुम् इच्छति वा?"
+msgstr "भाषा बदल दी गई है, क्या आप पिछली भाषा के लिए कॉन्फ़िगरेशन सहेजना चाहते हैं?"
 
 #: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
-msgstr "config रक्षतु"
+msgstr "कॉन्फ़िगरेशन सहेजें"
 
 #: widgets/autocorrectionwidget.cpp:718
 #, kde-format
 msgid "Please save changes before exporting settings."
-msgstr "कृपया सेटिङ्ग्स् निर्यातयितुं पूर्वं परिवर्तनं रक्षन्तु ।"
+msgstr "कृपया सेटिंग्स निर्यात करने से पहले परिवर्तन सहेजें."
 
 #: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
-msgstr "स्वतः सुधारणसञ्चिका निर्यातयन्तु"
+msgstr "स्वतःसुधार फ़ाइल निर्यात करें"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr "स्वयम् सुधारं सक्षमं कुर्वन्तु"
+msgstr "स्वतः सुधार सक्षम करें"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
-msgstr "भाषायाः प्रतिस्थापन अपवादः च : १."
+msgstr "भाषा के लिए प्रतिस्थापन और अपवाद:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
 #, kde-format
 msgid "Export…"
-msgstr "निर्यात…"
+msgstr "निर्यात करना…"
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
 #, kde-format
 msgid "Import…"
-msgstr "आयात…"
+msgstr "आयात करना…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: widgets/ui/autocorrectionwidget.ui:77
 #, kde-format
 msgid "Ad&vanced Autocorrection"
-msgstr "Ad&vanced स्वशुद्धिकरण"
+msgstr "उन्नत स्वतः सुधार"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #. i18n: ectx: property (text), widget (QPushButton, remove2)
 #: widgets/ui/autocorrectionwidget.ui:98 widgets/ui/autocorrectionwidget.ui:303
 #, kde-format
 msgid "Remove"
-msgstr "अपाकरोति"
+msgstr "निकालना"
 
 #. i18n: ectx: property (text), widget (QCheckBox, advancedAutocorrection)
 #: widgets/ui/autocorrectionwidget.ui:120
 #, kde-format
 msgid "&Enable word replacement"
-msgstr "&शब्दप्रतिस्थापनं सक्षमं कुर्वन्तु"
+msgstr "&शब्द प्रतिस्थापन सक्षम करें"
 
 #. i18n: ectx: property (text), widget (QLabel, findLabel)
 #: widgets/ui/autocorrectionwidget.ui:129
 #, kde-format
 msgid "&Find"
-msgstr "&अन्वेषय"
+msgstr "&खोजो"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
 #, kde-format
 msgid "&Replace"
-msgstr "&प्रत्याहृ"
+msgstr "&प्रतिस्थापित करें"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
 #, kde-format
 msgid "Find"
-msgstr "अन्वेषय"
+msgstr "खोजो"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:192
 #, kde-format
 msgid "Replace"
-msgstr "प्रत्याहृ"
+msgstr "प्रतिस्थापित करें"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: widgets/ui/autocorrectionwidget.ui:201
 #, kde-format
 msgid "E&xceptions"
-msgstr "ई&अपवादाः"
+msgstr "अपवाद"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: widgets/ui/autocorrectionwidget.ui:209
 #, kde-format
 msgid "Do not treat as the end of a sentence:"
-msgstr "वाक्यान्तवत् मा व्यवहरतु : १."
+msgstr "इसे वाक्य का अंत न समझें:"
 
 #. i18n: ectx: property (text), widget (QPushButton, remove1)
 #: widgets/ui/autocorrectionwidget.ui:235
 #, kde-format
 msgid "R&emove"
-msgstr "अपाकरोति"
+msgstr "निकालना"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: widgets/ui/autocorrectionwidget.ui:277
 #, kde-format
 msgid "Accept two uppercase letters in:"
-msgstr "अत्र बृहत् अक्षरद्वयं स्वीकुरुत : १."
+msgstr "दो बड़े अक्षर स्वीकार करें:"
 
 #. i18n: ectx: property (text), widget (QPushButton, add2)
 #: widgets/ui/autocorrectionwidget.ui:296
 #, kde-format
 msgid "Add"
-msgstr "संयोजयति"
+msgstr "जोड़ना"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
 #: widgets/ui/autocorrectionwidget.ui:344
 #, kde-format
 msgid "Si&mple Autocorrection"
-msgstr "सरल&mple स्वशुद्धिकरणम्"
+msgstr "सरल स्वतः सुधार"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
 #: widgets/ui/autocorrectionwidget.ui:350
@@ -225,7 +227,8 @@ msgstr "सरल&mple स्वशुद्धिकरणम्"
 msgid ""
 "Detect when a new sentence is started and always ensure that the first "
 "character is an uppercase character"
-msgstr "नूतनं वाक्यं कदा आरभ्यते इति ज्ञात्वा प्रथमवर्णः बृहत्वर्णः इति सर्वदा सुनिश्चितं कुर्वन्तु"
+msgstr ""
+"पता लगाएं कि नया वाक्य कब शुरू हुआ है और हमेशा सुनिश्चित करें कि पहला अक्षर बड़ा अक्षर हो"
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperCase)
 #: widgets/ui/autocorrectionwidget.ui:354
@@ -234,8 +237,8 @@ msgid ""
 "Convert &first letter of a sentence automatically to uppercase\n"
 "(e.g. \"my house. in this town\" to \"my house. In this town\")"
 msgstr ""
-"वाक्यस्य &प्रथमं अक्षरं स्वयमेव बृहत् अक्षरं परिवर्तयन्तु\n"
-"(उदा. \"मम गृहम्। अस्मिन् नगरे\" \"मम गृहम्। अस्मिन् नगरे\")"
+"वाक्य के &पहले अक्षर को स्वचालित रूप से अपरकेस में बदलें\n"
+"(उदाहरण के लिए \"मेरा घर. इस शहर में\" से \"मेरा घर. इस शहर में\")"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:364
@@ -245,9 +248,9 @@ msgid ""
 "bit too long. If some words must have two uppercase characters, then those "
 "exceptions should be added in the 'Exceptions' tab."
 msgstr ""
-"सर्वे शब्दाः शिफ्ट कीलम् किञ्चित् अतिदीर्घकालं यावत् अधः धारयितुं सामान्यदोषस्य कृते "
-"परीक्षिताः भवन्ति । यदि केषुचित् शब्देषु बृहत्वर्णद्वयं भवितुमर्हति तर्हि ते अपवादाः "
-"'Exceptions' ट्याब् मध्ये योजयितव्याः ।"
+"सभी शब्दों को शिफ्ट कुंजी को थोड़ा ज़्यादा देर तक दबाए रखने की आम गलती के लिए जाँचा जाता "
+"है। अगर कुछ शब्दों में दो बड़े अक्षर होने चाहिए, तो उन अपवादों को 'अपवाद' टैब में जोड़ा "
+"जाना चाहिए।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, upperUpper)
 #: widgets/ui/autocorrectionwidget.ui:368
@@ -257,8 +260,8 @@ msgid ""
 "character\n"
 " (e.g. PErfect to Perfect)"
 msgstr ""
-"&द्वौ लघुवर्णौ एकं लघुवर्णं एकं लघुवर्णं च परिवर्तयन्तु\n"
-" (उदा. PERfect to Perfect)"
+"&दो अपरकेस अक्षरों को एक अपरकेस और एक लोअरकेस अक्षर में बदलें\n"
+"(उदाहरण के लिए PErfect से Perfect)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ignoreDoubleSpace)
 #: widgets/ui/autocorrectionwidget.ui:375
@@ -267,32 +270,32 @@ msgid ""
 "Make sure that more than one space cannot be typed, as this is a common "
 "mistake which is quite hard to find in formatted text."
 msgstr ""
-"एकादशाधिकं स्थानं टङ्कयितुं न शक्यते इति सुनिश्चितं कुर्वन्तु, यतः एषा सामान्या त्रुटिः अस्ति "
-"या प्रारूपितपाठे अत्यन्तं कठिना भवति ।"
+"सुनिश्चित करें कि एक से अधिक स्पेस टाइप न किया जा सके, क्योंकि यह एक सामान्य गलती है, "
+"जिसे फॉर्मेटेड टेक्स्ट में ढूंढ पाना काफी कठिन होता है।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreDoubleSpace)
 #: widgets/ui/autocorrectionwidget.ui:378
 #, kde-format
 msgid "&Suppress double spaces"
-msgstr "&द्विगुणस्थानानि दमनं कुर्वन्तु"
+msgstr "&दोहरे रिक्त स्थान दबाएँ"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:385
 #, kde-format
 msgid "Most standard fraction notations will be converted when available"
-msgstr "अधिकांशं मानकं अंशसंकेतनं यदा उपलब्धं भवति तदा परिवर्तितं भविष्यति"
+msgstr "उपलब्ध होने पर अधिकांश मानक भिन्न संकेतन परिवर्तित कर दिए जाएंगे"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
 #, kde-format
 msgid "Re&place 1/2… with ½..."
-msgstr "Re&place 1/2... 1⁄2..."
+msgstr "1/2… को ½… से प्रतिस्थापित करें"
 
 #. i18n: ectx: property (text), widget (QCheckBox, capitalizeDaysName)
 #: widgets/ui/autocorrectionwidget.ui:395
 #, kde-format
 msgid "Capitalize name of days"
-msgstr "दिवसानां नाम दीर्घरूपेण लिखन्तु"
+msgstr "दिनों के नाम बड़े अक्षरों में लिखें"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoFormatUrl)
 #: widgets/ui/autocorrectionwidget.ui:402
@@ -301,14 +304,14 @@ msgid ""
 "Detect when a URL (Uniform Resource Locator) is typed and provide formatting "
 "that matches the way an Internet browser would show a URL."
 msgstr ""
-"कदा URL (Uniform Resource Locator) टङ्कितं भवति इति ज्ञात्वा अन्तर्जालब्राउजर् URL "
-"दर्शयति इति प्रकारेण सह सङ्गतं प्रारूपणं प्रदातुम् ।"
+"यह पता लगाता है कि URL (यूनिफ़ॉर्म रिसोर्स लोकेटर) कब टाइप किया गया है, तथा ऐसा "
+"फ़ॉर्मेटिंग प्रदान करता है जो इंटरनेट ब्राउज़र द्वारा URL दिखाने के तरीके से मेल खाता हो।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoFormatUrl)
 #: widgets/ui/autocorrectionwidget.ui:405
 #, kde-format
 msgid "Autoformat &URLs (HTML mode)"
-msgstr "स्वतः प्रारूपणं &URLs (HTML मोड) ."
+msgstr "स्वतः प्रारूपित करें &URLs (HTML मोड)"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, autoChangeFormat)
 #: widgets/ui/autocorrectionwidget.ui:412
@@ -317,44 +320,44 @@ msgid ""
 "When you use _underline_ or *bold*, the text between the underscores or "
 "asterisks will be converted to underlined or bold text."
 msgstr ""
-"यदा भवान् _underline_ अथवा *bold* इत्यस्य उपयोगं करोति तदा अण्डरस्कोर् अथवा "
-"ताराचिह्नयोः मध्ये पाठः रेखांकित अथवा बोल्ड् पाठे परिवर्तितः भविष्यति ।"
+"जब आप _अंडरलाइन_ या *बोल्ड* का उपयोग करते हैं, तो अंडरस्कोर या तारांकन के बीच का पाठ "
+"रेखांकित या बोल्ड पाठ में परिवर्तित हो जाएगा।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoChangeFormat)
 #: widgets/ui/autocorrectionwidget.ui:415
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
-msgstr "स्वयमेव &bold, strikeout तथा underline formatting (HTML mode) कुर्वन्तु ।"
+msgstr "स्वचालित रूप से &बोल्ड, स्ट्राइकआउट और अंडरलाइन फ़ॉर्मेटिंग करें (HTML मोड)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr "1st... इत्यस्य स्थाने 1^st... (HTML mode) इति स्थापयन्तु"
+msgstr "1st… को 1^st… से बदलें (HTML मोड)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
-msgstr "फ्रेंचपाठे विशिष्टविरामचिह्नानां पूर्वं अभङ्गस्थानं योजयन्तु"
+msgstr "फ्रेंच पाठ में विशिष्ट विराम चिह्नों से पहले नॉन-ब्रेकिंग स्पेस जोड़ें"
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
 #: widgets/ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr "द्विगुण उद्धरणस्य स्थाने फ्रेंच उद्धरणं स्थापयन्तु"
+msgstr "दोहरे उद्धरण चिह्नों को फ्रेंच उद्धरण चिह्नों से बदलें"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: widgets/ui/autocorrectionwidget.ui:457
 #, kde-format
 msgid "Custom &Quotes"
-msgstr "कस्टम &उद्धरण"
+msgstr "कस्टम और उद्धरण"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicDoubleQuotes)
 #: widgets/ui/autocorrectionwidget.ui:463
 #, kde-format
 msgid "Replace &double quotes with typographical quotes"
-msgstr "&double quotes इत्यस्य स्थाने मुद्रण उद्धरणं स्थापयन्तु"
+msgstr "&डबल उद्धरण चिह्नों को मुद्रण उद्धरण चिह्नों से बदलें"
 
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteBeginReplace)
 #. i18n: ectx: property (text), widget (QLabel, doubleQuoteEndReplace)
@@ -366,7 +369,7 @@ msgstr "&double quotes इत्यस्य स्थाने मुद्र�
 #: widgets/ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr "पूर्वनिर्धारितरूपेण"
+msgstr "डिफ़ॉल्ट रूप से"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
@@ -374,13 +377,13 @@ msgstr "पूर्वनिर्धारितरूपेण"
 #: widgets/ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
-msgstr "\" \" ."
+msgstr "\""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: widgets/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr "समाप्ति उद्धरणम् : १."
+msgstr "अंतिम उद्धरण:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -388,7 +391,7 @@ msgstr "समाप्ति उद्धरणम् : १."
 #: widgets/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr "उद्घाटन उद्धरणम् : १."
+msgstr "प्रारंभिक उद्धरण:"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
@@ -396,13 +399,13 @@ msgstr "उद्घाटन उद्धरणम् : १."
 #: widgets/ui/autocorrectionwidget.ui:669
 #, kde-format
 msgid "Default"
-msgstr "मूलभूतम्‌"
+msgstr "गलती करना"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
 #: widgets/ui/autocorrectionwidget.ui:572
 #, kde-format
 msgid "Replace &single quotes with typographical quotes"
-msgstr "&single quotes इत्यस्य स्थाने मुद्रणात्मकानि उद्धरणं स्थापयन्तु"
+msgstr "&एकल उद्धरण चिह्नों को मुद्रण संबंधी उद्धरण चिह्नों से बदलें"
 
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, singleQuote2)
@@ -410,25 +413,25 @@ msgstr "&single quotes इत्यस्य स्थाने मुद्र�
 #: widgets/ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
-msgstr "' ."
+msgstr "'"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: widgets/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr "समाप्ति उद्धरणम् : १."
+msgstr "समापन उद्धरण:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: widgets/ui/autocorrectionwidget.ui:707
 #, kde-format
 msgid "Path"
-msgstr "पथं"
+msgstr "पथ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: widgets/ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr "प्रणालीमार्गः : १."
+msgstr "सिस्टम पथ:"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
@@ -436,19 +439,19 @@ msgstr "प्रणालीमार्गः : १."
 #: widgets/ui/autocorrectionwidget.ui:750
 #, kde-format
 msgid "TextLabel"
-msgstr "TextLabel इति"
+msgstr "पाठलेबल"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: widgets/ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr "लेखनीयः मार्गः : १."
+msgstr "लिखने योग्य पथ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: widgets/ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr "कस्टम् सिस्टम् मार्गः : १."
+msgstr "कस्टम सिस्टम पथ:"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
@@ -456,10 +459,10 @@ msgstr "कस्टम् सिस्टम् मार्गः : १."
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr "..."
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr "कस्टम लेखनीय मार्गः : १."
+msgstr "कस्टम लेखन योग्य पथ:"

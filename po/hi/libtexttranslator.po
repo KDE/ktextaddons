@@ -1,4 +1,4 @@
-# Sanskrit translations for ktextaddons package.
+# Hindi translations for ktextaddons package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,19 +8,18 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-02 00:40+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
 msgid "Detect language"
-msgstr "भाषां ज्ञापयन्तु"
+msgstr "भाषा की जांच करो"
 
 #: translator/misc/translatorutil.cpp:36
 #, kde-format
@@ -35,27 +34,27 @@ msgstr "बोस्नियाई"
 #: translator/misc/translatorutil.cpp:42
 #, kde-format
 msgid "English"
-msgstr "आंग्ल"
+msgstr "अंग्रेज़ी"
 
 #: translator/misc/translatorutil.cpp:45
 #, kde-format
 msgid "Chinese (Simplified)"
-msgstr "चीनी (सरलीकृत) २."
+msgstr "सरलीकृत चीनी)"
 
 #: translator/misc/translatorutil.cpp:48
 #, kde-format
 msgid "Chinese (Traditional)"
-msgstr "चीनी (पारम्परिक) २."
+msgstr "चीनी पारंपरिक)"
 
 #: translator/misc/translatorutil.cpp:51
 #, kde-format
 msgid "Dutch"
-msgstr "डच्"
+msgstr "डच"
 
 #: translator/misc/translatorutil.cpp:54
 #, kde-format
 msgid "French"
-msgstr "फ्रेंचभाषा"
+msgstr "फ्रेंच"
 
 #: translator/misc/translatorutil.cpp:57
 #, kde-format
@@ -65,12 +64,12 @@ msgstr "जर्मन"
 #: translator/misc/translatorutil.cpp:60
 #, kde-format
 msgid "Greek"
-msgstr "ग्रीकभाषा"
+msgstr "यूनानी"
 
 #: translator/misc/translatorutil.cpp:63
 #, kde-format
 msgid "Italian"
-msgstr "इटालियन"
+msgstr "इतालवी"
 
 #: translator/misc/translatorutil.cpp:66
 #, kde-format
@@ -95,17 +94,17 @@ msgstr "रूसी"
 #: translator/misc/translatorutil.cpp:78
 #, kde-format
 msgid "Spanish"
-msgstr "स्पेनी भाषा"
+msgstr "स्पैनिश"
 
 #: translator/misc/translatorutil.cpp:81
 #, kde-format
 msgid "Afrikaans"
-msgstr "आफ्रिकादेशीयः"
+msgstr "अफ़्रीकी"
 
 #: translator/misc/translatorutil.cpp:84
 #, kde-format
 msgid "Albanian"
-msgstr "अल्बेनियाई"
+msgstr "अल्बानियन"
 
 #: translator/misc/translatorutil.cpp:87
 #, kde-format
@@ -115,17 +114,17 @@ msgstr "अरबी"
 #: translator/misc/translatorutil.cpp:90
 #, kde-format
 msgid "Armenian"
-msgstr "आर्मेनियाई"
+msgstr "अर्मेनियाई"
 
 #: translator/misc/translatorutil.cpp:93
 #, kde-format
 msgid "Azerbaijani"
-msgstr "अजरबैजानी"
+msgstr "आज़रबाइजानी"
 
 #: translator/misc/translatorutil.cpp:96
 #, kde-format
 msgid "Basque"
-msgstr "बास्क्"
+msgstr "बस्क"
 
 #: translator/misc/translatorutil.cpp:99
 #, kde-format
@@ -140,7 +139,7 @@ msgstr "बल्गेरियाई"
 #: translator/misc/translatorutil.cpp:105
 #, kde-format
 msgid "Catalan"
-msgstr "कातालान भाषा"
+msgstr "कातालान"
 
 #: translator/misc/translatorutil.cpp:108
 #, kde-format
@@ -155,17 +154,17 @@ msgstr "चेक"
 #: translator/misc/translatorutil.cpp:114
 #, kde-format
 msgid "Danish"
-msgstr "दानिशः"
+msgstr "डेनिश"
 
 #: translator/misc/translatorutil.cpp:117
 #, kde-format
 msgid "Estonian"
-msgstr "एस्टोनियाई"
+msgstr "एस्तोनियावासी"
 
 #: translator/misc/translatorutil.cpp:120
 #, kde-format
 msgid "Filipino"
-msgstr "फिलिपिनो"
+msgstr "filipino"
 
 #: translator/misc/translatorutil.cpp:123
 #, kde-format
@@ -180,32 +179,32 @@ msgstr "गैलिशियन्"
 #: translator/misc/translatorutil.cpp:129
 #, kde-format
 msgid "Georgian"
-msgstr "जॉर्जियाई"
+msgstr "जॉर्जीयन्"
 
 #: translator/misc/translatorutil.cpp:132
 #, kde-format
 msgid "Haitian Creole"
-msgstr "हैतीयन क्रियोल"
+msgstr "हाईटियन क्रियोल"
 
 #: translator/misc/translatorutil.cpp:135
 #, kde-format
 msgid "Hebrew"
-msgstr "हिब्रू"
+msgstr "यहूदी"
 
 #: translator/misc/translatorutil.cpp:138
 #, kde-format
 msgid "Hindi"
-msgstr "न"
+msgstr "नहीं"
 
 #: translator/misc/translatorutil.cpp:141
 #, kde-format
 msgid "Hungarian"
-msgstr "हङ्गेरी"
+msgstr "हंगेरी"
 
 #: translator/misc/translatorutil.cpp:144
 #, kde-format
 msgid "Icelandic"
-msgstr "आइसलैण्डिक"
+msgstr "आइसलैंड का"
 
 #: translator/misc/translatorutil.cpp:147
 #, kde-format
@@ -220,7 +219,7 @@ msgstr "आयरिश"
 #: translator/misc/translatorutil.cpp:153
 #, kde-format
 msgid "Latvian"
-msgstr "लाट्वियाई"
+msgstr "लात्वीयावासी"
 
 #: translator/misc/translatorutil.cpp:156
 #, kde-format
@@ -230,27 +229,27 @@ msgstr "लिथुआनियाई"
 #: translator/misc/translatorutil.cpp:159
 #, kde-format
 msgid "Macedonian"
-msgstr "मैसिडोनियाई"
+msgstr "मेसीडोनियन"
 
 #: translator/misc/translatorutil.cpp:162
 #, kde-format
 msgid "Malay"
-msgstr "मलय"
+msgstr "मलायी"
 
 #: translator/misc/translatorutil.cpp:165
 #, kde-format
 msgid "Maltese"
-msgstr "माल्टीज"
+msgstr "मोलतिज़"
 
 #: translator/misc/translatorutil.cpp:168
 #, kde-format
 msgid "Norwegian"
-msgstr "नार्वेदेशीयः"
+msgstr "नार्वेजियन"
 
 #: translator/misc/translatorutil.cpp:171
 #, kde-format
 msgid "Persian"
-msgstr "फारसी"
+msgstr "फ़ारसी"
 
 #: translator/misc/translatorutil.cpp:174
 #, kde-format
@@ -280,7 +279,7 @@ msgstr "स्लोवेनियाई"
 #: translator/misc/translatorutil.cpp:189
 #, kde-format
 msgid "Swahili"
-msgstr "स्वाहिली"
+msgstr "swahili"
 
 #: translator/misc/translatorutil.cpp:192
 #, kde-format
@@ -300,7 +299,7 @@ msgstr "तुर्की"
 #: translator/misc/translatorutil.cpp:201
 #, kde-format
 msgid "Ukrainian"
-msgstr "युक्रेनियन"
+msgstr "यूक्रेनी"
 
 #: translator/misc/translatorutil.cpp:204
 #, kde-format
@@ -315,99 +314,99 @@ msgstr "वियतनामी"
 #: translator/misc/translatorutil.cpp:210
 #, kde-format
 msgid "Welsh"
-msgstr "वेल्शभाषा"
+msgstr "वेल्श"
 
 #: translator/misc/translatorutil.cpp:213
 #, kde-format
 msgid "Yiddish"
-msgstr "यिद्दिश"
+msgstr "यहूदी"
 
 #: translator/plugins/bergamot/begamotenginedialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
-msgstr "Bergamot प्लगिन् सेटिंग्स्"
+msgstr "बर्गमोट प्लगइन सेटिंग्स"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:31
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
 msgid "Bergamot"
-msgstr "बर्गमोट्"
+msgstr "bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "अन्वेषण…"
+msgstr "खोजना…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
 #, kde-format
 msgid "Download"
-msgstr "अवाहरन"
+msgstr "डाउनलोड करना"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:92
 #, kde-format
 msgid "Delete"
-msgstr "लुप्"
+msgstr "मिटाना"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr "सूची अद्यतन करें"
+msgstr "सूची अपडेट करें"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
-msgstr "संजालतः भाषाणां सूचीं अद्यतनं कुर्वन्तु"
+msgstr "नेटवर्क से भाषाओं की सूची अपडेट करें"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
 #, kde-format
 msgid "Error: %1"
-msgstr "त्रुटिः %1"
+msgstr "त्रुटि: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr "अनुवादसञ्चयस्य उपयोगं कुर्वन्तु"
+msgstr "अनुवाद कैश का उपयोग करें"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
 #, kde-format
 msgid "Resource Usage"
-msgstr "संसाधनस्य उपयोगः"
+msgstr "स्रोत का उपयोग"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
 #, kde-format
 msgid "Thread:"
-msgstr "सूत्र:"
+msgstr "धागा:"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
-msgstr "सूत्रेण स्मृतिः : १."
+msgstr "थ्रेड द्वारा स्मृति:"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
 msgid "Languages"
-msgstr "भाषाः"
+msgstr "बोली"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:30
 #, kde-format
 msgid "Settings"
-msgstr "सेटिंग्स्"
+msgstr "सेटिंग्स"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:206
 #, kde-format
 msgid "Language model is not defined."
-msgstr "भाषाप्रतिरूपं न परिभाषितम्।"
+msgstr "भाषा मॉडल परिभाषित नहीं है."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
-msgstr "डाउनलोड् कर्तुं सञ्चिकां उद्घाटयितुं न शक्यते।"
+msgstr "फ़ाइल डाउनलोड करने के लिए नहीं खोली जा सकती."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:49
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
@@ -418,34 +417,34 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"त्रुटिः : इञ्जिनप्रणालीभिः भवतः सङ्गणकजालतः शङ्कितं यातायातम् ज्ञातम् । कृपया पश्चात् पुनः "
-"भवतः अनुरोधं प्रयतस्व।"
+"त्रुटि: इंजन सिस्टम ने आपके कंप्यूटर नेटवर्क से संदिग्ध ट्रैफ़िक का पता लगाया है। कृपया बाद में "
+"अपना अनुरोध फिर से आज़माएँ।"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:51
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
-msgstr "url - मध्ये प्रवेशः असम्भवः : %1"
+msgstr "यूआरएल तक पहुंचना असंभव: %1"
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:62
 #, kde-format
 msgid "CheckSum is not correct."
-msgstr "CheckSum सम्यक् नास्ति।"
+msgstr "चेकसम सही नहीं है."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:72
 #, kde-format
 msgid "Error during writing on disk: %1"
-msgstr "डिस्कमध्ये लेखनस्य समये त्रुटिः: %1"
+msgstr "डिस्क पर लिखते समय त्रुटि: %1"
 
 #: translator/plugins/bergamot/extractlanguagejob.cpp:30
 #, kde-format
 msgid "Impossible to extract language"
-msgstr "भाषां निष्कासयितुं असम्भवम्"
+msgstr "भाषा निकालना असंभव"
 
 #: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Source"
-msgstr "स्रोतः"
+msgstr "स्रोत"
 
 #: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
@@ -455,28 +454,28 @@ msgstr "लक्ष्य"
 #: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Type"
-msgstr "प्रकारः"
+msgstr "प्रकार"
 
 #: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Repository"
-msgstr "भण्डारः"
+msgstr "कोष"
 
 #: translator/plugins/bergamot/translatormodel.cpp:55
 #, kde-format
 msgid "Installed Version"
-msgstr "संस्थापितम् संस्करणम्"
+msgstr "स्थापित संस्करण"
 
 #: translator/plugins/bergamot/translatormodel.cpp:57
 #, kde-format
 msgid "Available Version"
-msgstr "उपलब्धं संस्करणम्"
+msgstr "उपलब्ध संस्करण"
 
 #: translator/plugins/bergamot/translatormodel.cpp:59
 #: translator/plugins/bergamot/translatormodel.cpp:127
 #, kde-format
 msgid "Installed"
-msgstr "संस्थापितम्"
+msgstr "स्थापित"
 
 #: translator/plugins/bing/bingengineclient.cpp:26
 #, kde-format
@@ -486,28 +485,28 @@ msgstr "बिंग"
 #: translator/plugins/bing/bingengineplugin.cpp:59
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr "त्रुटिः: जालसंस्करणे Bing प्रमाणपत्राणि अन्वेष्टुं असमर्थः।"
+msgstr "त्रुटि: वेब संस्करण में बिंग क्रेडेंशियल्स ढूंढने में असमर्थ।"
 
 #: translator/plugins/bing/bingengineplugin.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr "त्रुटिः: जालसंस्करणात् Bing कीलम् निष्कासयितुं असमर्थः।"
+msgstr "त्रुटि: वेब संस्करण से बिंग कुंजी निकालने में असमर्थ।"
 
 #: translator/plugins/bing/bingengineplugin.cpp:76
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr "त्रुटिः: जालसंस्करणात् Bing टोकनं निष्कासयितुं असमर्थः।"
+msgstr "त्रुटि: वेब संस्करण से बिंग टोकन निकालने में असमर्थ।"
 
 #: translator/plugins/bing/bingengineplugin.cpp:85
 #: translator/plugins/bing/bingengineplugin.cpp:94
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
-msgstr "त्रुटिः: जालसंस्करणात् अतिरिक्तं Bing सूचनां निष्कासयितुं असमर्थः।"
+msgstr "त्रुटि: वेब संस्करण से अतिरिक्त Bing जानकारी निकालने में असमर्थ।"
 
 #: translator/plugins/deepl/deeplengineclient.cpp:33
 #, kde-format
 msgid "DeepL"
-msgstr "दीपL"
+msgstr "डीपएल"
 
 #: translator/plugins/deepl/deeplengineconfiguredialog.cpp:17
 #: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:17
@@ -515,25 +514,25 @@ msgstr "दीपL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
-msgstr "इञ्जिनं विन्यस्तं कुर्वन्तु"
+msgstr "इंजन कॉन्फ़िगर करें"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
-msgstr "Free License Key इत्यस्य उपयोगं कुर्वन्तु"
+msgstr "निःशुल्क लाइसेंस कुंजी का उपयोग करें"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
-msgstr "अपि कील : १."
+msgstr "एपीआई कुंजी:"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:39
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
 #, kde-format
 msgid "Server needs Api Key."
-msgstr "सर्वरस्य कृते Api Key इत्यस्य आवश्यकता अस्ति ।"
+msgstr "सर्वर को Api कुंजी की आवश्यकता है."
 
 #: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
@@ -543,98 +542,98 @@ msgstr "गूगल"
 #: translator/plugins/google/googleengineplugin.cpp:82
 #, kde-format
 msgid "Invalid answer."
-msgstr "असिद्धम् उत्तरम् ।"
+msgstr "अमान्य उत्तर."
 
 #: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
 #, kde-format
 msgid "Libre Translate"
-msgstr "Libre अनुवाद करें"
+msgstr "निःशुल्क अनुवाद"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
-msgstr "सर्वरस्य आवश्यकता आसीत् Api Key"
+msgstr "सर्वर आवश्यक एपीआई कुंजी"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
 #: translator/plugins/lingva/lingvaenginewidget.cpp:23
 #, kde-format
 msgid "Server Url:"
-msgstr "सर्वर Url: ."
+msgstr "सर्वर यूआरएल:"
 
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
 #, kde-format
 msgid "Server url is not defined."
-msgstr "सर्वर url परिभाषितं नास्ति।"
+msgstr "सर्वर यूआरएल परिभाषित नहीं है."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:31
 #, kde-format
 msgid "Lingva"
-msgstr "भाषाविज्ञान"
+msgstr "भाषाई"
 
 #: translator/plugins/yandex/yandexengineclient.cpp:26
 #, kde-format
 msgid "Yandex"
-msgstr "यण्डेक्स"
+msgstr "Yandex"
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:64
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr "त्रुटिः: जालसंस्करणे Yandex SID अन्वेष्टुं असमर्थः।"
+msgstr "त्रुटि: वेब संस्करण में Yandex SID ढूंढने में असमर्थ।"
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:72
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr "त्रुटिः: जालसंस्करणात् Yandex SID निष्कासयितुं असमर्थः।"
+msgstr "त्रुटि: वेब संस्करण से Yandex SID निकालने में असमर्थ।"
 
 #: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Locale"
-msgstr "स्थानिक"
+msgstr "स्थानीय"
 
 #: translator/translatorengineclient.cpp:67
 #, kde-format
 msgid "Network"
-msgstr "जाल"
+msgstr "नेटवर्क"
 
 #: translator/translatorengineplugin.cpp:114
 #, kde-format
 msgid "You used same language for 'from' and 'to' language."
-msgstr "भवान् 'from' तथा 'to' इति भाषायाः कृते समानभाषां प्रयुक्तवान् ।"
+msgstr "आपने 'से' और 'तक' के लिए एक ही भाषा का प्रयोग किया है।"
 
 #: translator/widgets/translatorconfiguredialog.cpp:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
-msgstr "अनुवादकं विन्यस्तं कुर्वन्तु"
+msgstr "अनुवादक कॉन्फ़िगर करें"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:24
 #, kde-format
 msgid "From:"
-msgstr "इत्यस्मात्‌:"
+msgstr "से:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:25
 #, kde-format
 msgid "To:"
-msgstr "इत्यस्मै:"
+msgstr "को:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr "यन्त्र:"
+msgstr "इंजन:"
 
 #: translator/widgets/translatordebugdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
-msgstr "अनुवादक त्रुटिनिवारणम्"
+msgstr "अनुवादक डीबग"
 
 #: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As…"
-msgstr "Save As..."
+msgstr "के रूप रक्षित करें…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -642,87 +641,87 @@ msgid ""
 "Could not write the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
-"%1 इति सञ्चिकां लिखितुं न शक्यते:\n"
-"\"%2\" इति विस्तृतदोषविवरणम् ।"
+"फ़ाइल %1 नहीं लिखी जा सकी:\n"
+"\"%2\" विस्तृत त्रुटि विवरण है।"
 
 #: translator/widgets/translatordebugdialog.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
-msgstr "सञ्चिका त्रुटिः रक्षतु"
+msgstr "फ़ाइल सहेजने में त्रुटि"
 
 #: translator/widgets/translatordebugdialog.cpp:114
 #, kde-format
 msgid "All Files (*)"
-msgstr "सर्वाणि सञ्चिकाः (*) ."
+msgstr "सभी फाइलें (*)"
 
 #: translator/widgets/translatormenu.cpp:23
 #, kde-format
 msgid "Translate…"
-msgstr "अनुवदति…"
+msgstr "अनुवाद करना…"
 
 #: translator/widgets/translatorwidget.cpp:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr "पिधानं करोतु"
+msgstr "बंद करना"
 
 #: translator/widgets/translatorwidget.cpp:223
 #, kde-format
 msgid "Close"
-msgstr "पिधानं करोतु"
+msgstr "बंद करना"
 
 #: translator/widgets/translatorwidget.cpp:229
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
-msgstr "इत्यस्मात्‌:"
+msgstr "से:"
 
 #: translator/widgets/translatorwidget.cpp:236
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
-msgstr "इत्यस्मै:"
+msgstr "को:"
 
 #: translator/widgets/translatorwidget.cpp:248
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
-msgstr "विपर्ययम्"
+msgstr "औंधाना"
 
 #: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
-msgstr "स्पष्टः"
+msgstr "स्पष्ट"
 
 #: translator/widgets/translatorwidget.cpp:256
 #, kde-format
 msgid "Clear"
-msgstr "स्पष्टः"
+msgstr "स्पष्ट"
 
 #: translator/widgets/translatorwidget.cpp:261
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
-msgstr "अनुवदति"
+msgstr "अनुवाद"
 
 #: translator/widgets/translatorwidget.cpp:264
 #, kde-format
 msgid "Translate"
-msgstr "अनुवदति"
+msgstr "अनुवाद"
 
 #: translator/widgets/translatorwidget.cpp:271
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
-msgstr "त्रुटिनिवारणम्"
+msgstr "डिबग"
 
 #: translator/widgets/translatorwidget.cpp:289
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "विन्यस्तं कुर्वन्तु"
+msgstr "कॉन्फ़िगर"
 
 #: translator/widgets/translatorwidget.cpp:369
 #, kde-format
@@ -731,28 +730,28 @@ msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
 "external Server)."
 msgstr ""
-"यस्य पाठस्य अनुवादं कर्तुम् इच्छति तत् कर्षतु । (सावधानं भवतु पाठः बाह्यसर्वर प्रति प्रेषितः "
-"भविष्यति)।"
+"वह पाठ खींचें जिसका आप अनुवाद करना चाहते हैं। (सावधान रहें पाठ बाहरी सर्वर पर भेजा "
+"जाएगा)।"
 
 #: translator/widgets/translatorwidget.cpp:371
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
-msgstr "यस्य पाठस्य अनुवादं कर्तुम् इच्छति तत् कर्षतु ।"
+msgstr "वह पाठ खींचें जिसका आप अनुवाद करना चाहते हैं."
 
 #: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
-msgstr "कोऽपि जालसंयोजनः न ज्ञातः, वयं पाठस्य अनुवादं कर्तुं न शक्नुमः ।"
+msgstr "कोई नेटवर्क कनेक्शन नहीं मिला, हम पाठ का अनुवाद नहीं कर सकते."
 
 #: translator/widgets/translatorwidget.cpp:420
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
-msgstr "न जालम्"
+msgstr "कोई नेटवर्क नहीं"
 
 #: translator/widgets/translatorwidget.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
-msgstr "अनुवाददोषः"
+msgstr "अनुवाद त्रुटि"

@@ -1,4 +1,4 @@
-# Sanskrit translations for ktextaddons package.
+# Hindi translations for ktextaddons package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,29 +8,28 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:38+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: selectspecialchardialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr "विशेषवर्णान् चिनोतु"
+msgstr "विशेष वर्ण चुनें"
 
 #: selectspecialchardialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr "युज्"
+msgstr "डालना"
 
 #: selectspecialchardialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"
-msgstr "विचि"
+msgstr "चुनना"

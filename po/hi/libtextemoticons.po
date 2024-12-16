@@ -1,4 +1,4 @@
-# Sanskrit translations for ktextaddons package.
+# Hindi translations for ktextaddons package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,19 +8,18 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:38+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
 msgid "Symbols"
-msgstr "प्रतीकाः"
+msgstr "प्रतीक"
 
 #: core/unicodeemoticonmanager.cpp:46
 #, kde-format
@@ -30,7 +29,7 @@ msgstr "गतिविधि"
 #: core/unicodeemoticonmanager.cpp:48
 #, kde-format
 msgid "Objects"
-msgstr "विषयाः"
+msgstr "वस्तुओं"
 
 #: core/unicodeemoticonmanager.cpp:50
 #, kde-format
@@ -40,12 +39,12 @@ msgstr "प्रकृति"
 #: core/unicodeemoticonmanager.cpp:52
 #, kde-format
 msgid "Food"
-msgstr "आहारः"
+msgstr "खाना"
 
 #: core/unicodeemoticonmanager.cpp:54
 #, kde-format
 msgid "People"
-msgstr "जनाः"
+msgstr "लोग"
 
 #: core/unicodeemoticonmanager.cpp:56
 #, kde-format
@@ -55,12 +54,12 @@ msgstr "यात्रा"
 #: core/unicodeemoticonmanager.cpp:58
 #, kde-format
 msgid "Regional"
-msgstr "प्रादेशिक"
+msgstr "क्षेत्रीय"
 
 #: core/unicodeemoticonmanager.cpp:60
 #, kde-format
 msgid "Flags"
-msgstr "ध्वजाः"
+msgstr "झंडे"
 
 #: widgets/emoticoncategorybuttons.cpp:84
 #, kde-format
@@ -72,21 +71,21 @@ msgstr "इतिहास"
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr "आचारः"
+msgstr "रिवाज़"
 
 #: widgets/emoticonlistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
-msgstr "स्पष्ट हाले"
+msgstr "हालिया साफ़ करें"
 
 #: widgets/emoticontexteditaction.cpp:54
 #, kde-format
 msgid "Add Smiley"
-msgstr "स्माइली इति योजयतु"
+msgstr "स्माइली जोड़ें"
 
 #: widgets/emoticontexteditselector.cpp:83
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
-msgstr "इमोटिकॉन् अन्वेषणं कुर्वन्तु..."
+msgstr "इमोटिकॉन खोजें…"
