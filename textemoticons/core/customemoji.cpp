@@ -37,6 +37,16 @@ void CustomEmoji::setIsAnimatedEmoji(bool newIsAnimatedEmoji)
     mIsAnimatedEmoji = newIsAnimatedEmoji;
 }
 
+QString CustomEmoji::fileName() const
+{
+    return mFileName;
+}
+
+void CustomEmoji::setFileName(const QString &newFileName)
+{
+    mFileName = newFileName;
+}
+
 QDebug operator<<(QDebug d, const CustomEmoji &t)
 {
     d << "Identifier " << t.identifier();

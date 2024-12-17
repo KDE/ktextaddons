@@ -29,8 +29,12 @@ public:
     [[nodiscard]] bool isAnimatedEmoji() const;
     void setIsAnimatedEmoji(bool newIsAnimatedEmoji);
 
+    [[nodiscard]] QString fileName() const;
+    void setFileName(const QString &newFileName);
+
 private:
     QString mIdentifier;
+    QString mFileName;
     bool mIsAnimatedEmoji = false;
 };
 }
