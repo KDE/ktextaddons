@@ -27,6 +27,12 @@ public:
     static EmojiModelManager *self();
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 
+    /**
+     * @brief Set the settings group name used to store the recent identifiers.
+     * @note If not set, the group name is "EmoticonRecentUsed".
+     */
+    void setRecentSettingsGroupName(const QString &key);
+
     [[nodiscard]] const QStringList &recentIdentifier() const;
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
     Q_INVOKABLE void addIdentifier(const QString &identifier);

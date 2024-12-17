@@ -11,10 +11,6 @@
 #include <KSharedConfig>
 #include <TextEmoticonsCore/EmojiModel>
 using namespace TextEmoticonsCore;
-namespace
-{
-static const char myEmoticonRecentUsedGroupName[] = "EmoticonRecentUsed";
-}
 
 class EmojiModelManager::EmojiModelManagerPrivate
 {
@@ -26,17 +22,23 @@ public:
     }
     void loadRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(myEmoticonRecentUsedGroupName));
-        mRecentIdentifier = group.readEntry("Recents", QStringList());
+        KConfigGroup group(KSharedConfig::openConfig(), mSettingsGroupName);
+        // Try reading the old key first
+        if (group.hasKey("Recents")) {
+            mRecentIdentifier = group.readEntry("Recents", QStringList());
+        } else {
+            mRecentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
+        }
     }
 
     void writeRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openConfig(), QLatin1StringView(myEmoticonRecentUsedGroupName));
-        group.writeEntry("Recents", mRecentIdentifier);
+        KConfigGroup group(KSharedConfig::openConfig(), mSettingsGroupName);
+        group.writeEntry("LastUsedEmojis", mRecentIdentifier);
         group.sync();
     }
 
+    QString mSettingsGroupName = QStringLiteral("EmoticonRecentUsed");
     TextEmoticonsCore::EmojiModel *const mEmojiModel;
     QStringList mRecentIdentifier;
     QStringList mExcludeEmoticons;
@@ -63,6 +65,12 @@ EmojiModelManager *EmojiModelManager::self()
 TextEmoticonsCore::EmojiModel *EmojiModelManager::emojiModel() const
 {
     return d->mEmojiModel;
+}
+
+void EmojiModelManager::setRecentSettingsGroupName(const QString &key)
+{
+    d->mSettingsGroupName = key;
+    d->loadRecentUsed();
 }
 
 const QStringList &EmojiModelManager::recentIdentifier() const
