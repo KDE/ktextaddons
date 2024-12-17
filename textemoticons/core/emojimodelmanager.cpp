@@ -22,18 +22,23 @@ public:
     }
     void loadRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openConfig(), mSettingsGroupName);
         // Try reading the old key first
+        KConfigGroup group(KSharedConfig::openConfig(), QStringLiteral("EmoticonRecentUsed"));
         if (group.hasKey("Recents")) {
             mRecentIdentifier = group.readEntry("Recents", QStringList());
+            // Make sure to clean up the old key, so we don't read it again
+            group.deleteEntry("Recents");
+            group.sync();
         } else {
+            // Read the new key from state config
+            group = KConfigGroup(KSharedConfig::openStateConfig(), mSettingsGroupName);
             mRecentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
         }
     }
 
     void writeRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openConfig(), mSettingsGroupName);
+        KConfigGroup group(KSharedConfig::openStateConfig(), mSettingsGroupName);
         group.writeEntry("LastUsedEmojis", mRecentIdentifier);
         group.sync();
     }
