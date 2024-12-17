@@ -29,7 +29,7 @@ public:
 
     [[nodiscard]] const QStringList &recentIdentifier() const;
     void setRecentIdentifier(const QStringList &newRecentIdentifier);
-    void addIdentifier(const QString &identifier);
+    Q_INVOKABLE void addIdentifier(const QString &identifier);
 
     [[nodiscard]] TextEmoticonsCore::CustomEmojiIconManager *customEmojiIconManager() const;
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
