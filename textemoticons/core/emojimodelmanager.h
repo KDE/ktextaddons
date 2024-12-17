@@ -21,6 +21,7 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
     Q_OBJECT
 
     Q_PROPERTY(TextEmoticonsCore::EmojiModel *emojiModel READ emojiModel CONSTANT)
+    Q_PROPERTY(QStringList recentIdentifier READ recentIdentifier NOTIFY usedIdentifierChanged)
 
 public:
     static EmojiModelManager *self();
