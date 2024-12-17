@@ -19,6 +19,7 @@ class TEXTEMOTICONSCORE_EXPORT EmojiProxyModel : public QSortFilterProxyModel
     Q_OBJECT
 
     Q_PROPERTY(QString category READ category WRITE setCategory NOTIFY categoryChanged)
+    Q_PROPERTY(QStringList recentEmoticons READ recentEmoticons WRITE setRecentEmoticons NOTIFY recentEmoticonsChanged)
 
 public:
     explicit EmojiProxyModel(QObject *parent = nullptr);
@@ -34,6 +35,7 @@ public:
 
 Q_SIGNALS:
     void categoryChanged();
+    void recentEmoticonsChanged();
 
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;

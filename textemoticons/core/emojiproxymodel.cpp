@@ -92,6 +92,7 @@ void EmojiProxyModel::setRecentEmoticons(const QStringList &newRecentEmoticons)
         if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->mCategory) {
             invalidate();
         }
+        Q_EMIT recentEmoticonsChanged();
     }
 }
 
