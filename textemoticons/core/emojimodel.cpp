@@ -45,6 +45,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         case Identifier:
         case Qt::ToolTipRole:
             return unicodeEmoti.identifier();
+        case IsCustom:
+            return false;
         }
     } else {
         const auto &customEmoji = mCustomEmojiList.at(index.row() - mEmoticonList.count());
@@ -86,6 +88,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         case Identifier:
         case UnicodeEmoji:
             return customEmoji.identifier();
+        case IsCustom:
+            return true;
         case FileName: {
             if (mCustomEmojiIconManager) {
                 return mCustomEmojiIconManager->fileName(customEmoji.identifier());
@@ -151,11 +155,11 @@ void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
 
 QHash<int, QByteArray> EmojiModel::roleNames() const
 {
-    return {{{UnicodeEmoji, QByteArrayLiteral("unicode")}, {Identifier, QByteArrayLiteral("identifier")}, {Category, QByteArrayLiteral("category")}}};
     return {{
         {UnicodeEmoji, QByteArrayLiteral("unicode")},
         {Identifier, QByteArrayLiteral("identifier")},
         {Category, QByteArrayLiteral("category")},
+        {IsCustom, QByteArrayLiteral("isCustom")},
         {FileName, QByteArrayLiteral("fileName")},
     }};
 }

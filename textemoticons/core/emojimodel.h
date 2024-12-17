@@ -28,6 +28,7 @@ public:
         Order,
         Animated,
         AnimatedFileName,
+        IsCustom,
         FileName,
     };
     Q_ENUM(EmoticonsRoles)
