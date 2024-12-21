@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the ktextaddons package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-02 00:40+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -40,12 +42,12 @@ msgstr "आंग्ल"
 #: translator/misc/translatorutil.cpp:45
 #, kde-format
 msgid "Chinese (Simplified)"
-msgstr "चीनी (सरलीकृत) २."
+msgstr "चीनी (सरलीकृत)"
 
 #: translator/misc/translatorutil.cpp:48
 #, kde-format
 msgid "Chinese (Traditional)"
-msgstr "चीनी (पारम्परिक) २."
+msgstr "चीनी (पारम्परिक)"
 
 #: translator/misc/translatorutil.cpp:51
 #, kde-format
@@ -387,7 +389,7 @@ msgstr "सूत्र:"
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
 #, kde-format
 msgid "Memory by Thread:"
-msgstr "सूत्रेण स्मृतिः : १."
+msgstr "सूत्रेण स्मृतिः :"
 
 #: translator/plugins/bergamot/bergamotenginewidget.cpp:29
 #, kde-format
@@ -527,7 +529,7 @@ msgstr "Free License Key इत्यस्य उपयोगं कुर्�
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
-msgstr "अपि कील : १."
+msgstr "अपि कील :"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:39
 #: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42

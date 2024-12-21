@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the ktextaddons package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -126,7 +128,7 @@ msgstr "स्वयम् सुधारं सक्षमं कुर्व
 #: widgets/ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
-msgstr "भाषायाः प्रतिस्थापन अपवादः च : १."
+msgstr "भाषायाः प्रतिस्थापन अपवादः च :"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
@@ -193,7 +195,7 @@ msgstr "ई&अपवादाः"
 #: widgets/ui/autocorrectionwidget.ui:209
 #, kde-format
 msgid "Do not treat as the end of a sentence:"
-msgstr "वाक्यान्तवत् मा व्यवहरतु : १."
+msgstr "वाक्यान्तवत् मा व्यवहरतु :"
 
 #. i18n: ectx: property (text), widget (QPushButton, remove1)
 #: widgets/ui/autocorrectionwidget.ui:235
@@ -205,7 +207,7 @@ msgstr "अपाकरोति"
 #: widgets/ui/autocorrectionwidget.ui:277
 #, kde-format
 msgid "Accept two uppercase letters in:"
-msgstr "अत्र बृहत् अक्षरद्वयं स्वीकुरुत : १."
+msgstr "अत्र बृहत् अक्षरद्वयं स्वीकुरुत :"
 
 #. i18n: ectx: property (text), widget (QPushButton, add2)
 #: widgets/ui/autocorrectionwidget.ui:296
@@ -380,7 +382,7 @@ msgstr "\" \" ."
 #: widgets/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr "समाप्ति उद्धरणम् : १."
+msgstr "समाप्ति उद्धरणम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -388,7 +390,7 @@ msgstr "समाप्ति उद्धरणम् : १."
 #: widgets/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr "उद्घाटन उद्धरणम् : १."
+msgstr "उद्घाटन उद्धरणम् :"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
@@ -416,7 +418,7 @@ msgstr "' ."
 #: widgets/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr "समाप्ति उद्धरणम् : १."
+msgstr "समाप्ति उद्धरणम् :"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: widgets/ui/autocorrectionwidget.ui:707
@@ -428,7 +430,7 @@ msgstr "पथं"
 #: widgets/ui/autocorrectionwidget.ui:713
 #, kde-format
 msgid "System Path:"
-msgstr "प्रणालीमार्गः : १."
+msgstr "प्रणालीमार्गः :"
 
 #. i18n: ectx: property (text), widget (QLabel, systemPath)
 #. i18n: ectx: property (text), widget (QLabel, writablePath)
@@ -442,13 +444,13 @@ msgstr "TextLabel इति"
 #: widgets/ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr "लेखनीयः मार्गः : १."
+msgstr "लेखनीयः मार्गः :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: widgets/ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr "कस्टम् सिस्टम् मार्गः : १."
+msgstr "कस्टम् सिस्टम् मार्गः :"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
@@ -462,4 +464,4 @@ msgstr "..."
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr "कस्टम लेखनीय मार्गः : १."
+msgstr "कस्टम लेखनीय मार्गः :"
