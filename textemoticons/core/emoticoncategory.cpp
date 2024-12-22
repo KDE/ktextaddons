@@ -60,3 +60,5 @@ QDebug operator<<(QDebug d, const EmoticonCategory &t)
     d << "Category i18n" << t.i18nName();
     return d;
 }
+
+#include "moc_emoticoncategory.cpp"
