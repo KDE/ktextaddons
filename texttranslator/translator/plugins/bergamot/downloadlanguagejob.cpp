@@ -8,7 +8,6 @@
 #include "extractlanguagejob.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
-#include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QTemporaryFile>

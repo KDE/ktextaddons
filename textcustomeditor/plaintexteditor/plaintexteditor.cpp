@@ -15,7 +15,6 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KStandardActions>
-#include <KStandardGuiItem>
 #include <QActionGroup>
 #include <QIcon>
 

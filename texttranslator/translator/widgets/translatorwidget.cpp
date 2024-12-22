@@ -31,7 +31,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <QKeyEvent>
 #include <QLabel>
 #include <QMimeData>
-#include <QPainter>
 #include <QShortcut>
 #include <QSplitter>
 #include <QToolButton>

@@ -5,7 +5,6 @@
 */
 #pragma once
 #include "libbergamot_export.h"
-#include <QDir>
 #include <QString>
 
 namespace BergamotEngineUtils

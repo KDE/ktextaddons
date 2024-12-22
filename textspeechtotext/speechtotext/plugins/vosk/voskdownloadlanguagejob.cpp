@@ -10,7 +10,6 @@
 #include "speechtotext/speechtotextengineaccessmanager.h"
 #include "voskextractlanguagejob.h"
 #include <KLocalizedString>
-#include <QFileInfo>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QTemporaryFile>

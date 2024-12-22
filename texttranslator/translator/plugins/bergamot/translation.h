@@ -10,7 +10,6 @@
 #include "libbergamot_export.h"
 #include <QMetaType>
 #include <QString>
-#include <QVector>
 #include <memory>
 
 namespace slimt

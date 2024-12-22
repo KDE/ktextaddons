@@ -8,7 +8,6 @@
 #include "texttospeechutil.h"
 
 #include <KConfig>
-#include <KConfigGroup>
 #include <QLocale>
 #include <QTextToSpeech>
 #include <QVector>

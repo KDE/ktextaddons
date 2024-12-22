@@ -7,7 +7,6 @@
 #include "bergamotenginesettingswidgettest.h"
 #include "bergamotenginesettingswidget.h"
 #include <QComboBox>
-#include <QFormLayout>
 #include <QGroupBox>
 #include <QTest>
 #include <QVBoxLayout>

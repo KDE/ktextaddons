@@ -7,7 +7,6 @@
 #include "customemojiiconmanagerguitest.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include <QDebug>
 #include <QIcon>
 CustomEmojiIconManagerGuiTest::CustomEmojiIconManagerGuiTest(QObject *parent)
     : TextEmoticonsCore::CustomEmojiIconManager(parent)

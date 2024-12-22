@@ -7,7 +7,6 @@
 #include "speechtotextconfigurewidget.h"
 #include "speechtotextcomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QVBoxLayout>

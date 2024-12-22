@@ -11,7 +11,6 @@
 #include <KLocalizedString>
 #include <TextUtils/ConvertText>
 
-#include <QLineEdit>
 #include <QRegularExpression>
 #include <QTextBrowser>
 

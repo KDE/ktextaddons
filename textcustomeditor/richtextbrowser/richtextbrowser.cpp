@@ -9,9 +9,7 @@
 #include "widgets/textmessageindicator.h"
 #include <KCursor>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KStandardActions>
-#include <KStandardGuiItem>
 #include <QIcon>
 
 #include "config-textcustomeditor.h"

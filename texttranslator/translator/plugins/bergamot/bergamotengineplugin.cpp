@@ -6,7 +6,6 @@
 
 #include "bergamotengineplugin.h"
 #include "bergamotmarianinterface.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 

@@ -10,7 +10,6 @@
 #include "bergamotengineutils.h"
 #include "libbergamot_export.h"
 #include "translation.h"
-#include <QList>
 #include <QObject>
 #include <QString>
 #include <condition_variable>

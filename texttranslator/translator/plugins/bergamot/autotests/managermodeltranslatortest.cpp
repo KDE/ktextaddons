@@ -6,7 +6,6 @@
 
 #include "managermodeltranslatortest.h"
 #include "managermodeltranslator.h"
-#include <QJsonDocument>
 #include <QTest>
 QTEST_MAIN(ManagerModelTranslatorTest)
 ManagerModelTranslatorTest::ManagerModelTranslatorTest(QObject *parent)

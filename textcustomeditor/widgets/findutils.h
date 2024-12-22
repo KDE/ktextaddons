@@ -8,7 +8,6 @@
 
 #include "textcustomeditor_private_export.h"
 #include <QChar>
-#include <QStringView>
 #include <QTextDocument>
 #include <TextCustomEditor/TextEditFindBarBase>
 #include <qglobal.h>
