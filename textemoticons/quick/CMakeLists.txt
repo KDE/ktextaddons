@@ -6,7 +6,7 @@ ecm_add_qml_module(ktextaddonsquickplugin URI "org.kde.textaddons.emoticons" VER
 target_sources(ktextaddonsquickplugin PRIVATE types.h)
 
 target_link_libraries(ktextaddonsquickplugin PRIVATE
-        Qt6::Qml
+        Qt::Qml
         KF6::TextEmoticonsCore
 )
 

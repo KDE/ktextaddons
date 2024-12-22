@@ -57,7 +57,7 @@ generate_export_header(KF6TextAutoCorrectionWidgets BASE_NAME textautocorrection
 target_link_libraries(KF6TextAutoCorrectionWidgets
     PUBLIC
     KF6::TextAutoCorrectionCore
-    Qt6::Widgets
+    Qt::Widgets
     PRIVATE
     KF6::I18n
     KF6::TextAddonsWidgets
