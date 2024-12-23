@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-30 00:39+0000\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
 "PO-Revision-Date: 2024-12-11 17:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -25,38 +25,38 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 değiştirme yapıldı"
 msgstr[1] "%1 değiştirme yapıldı"
 
-#: plaintexteditor/plaintexteditor.cpp:175
+#: plaintexteditor/plaintexteditor.cpp:174
 #: richtexteditor/richtexteditor.cpp:236
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Yazımı Denetle…"
 
-#: plaintexteditor/plaintexteditor.cpp:180
+#: plaintexteditor/plaintexteditor.cpp:179
 #: richtexteditor/richtexteditor.cpp:243
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Kendiliğinden Yazım Denetimi"
 
-#: plaintexteditor/plaintexteditor.cpp:186
+#: plaintexteditor/plaintexteditor.cpp:185
 #: richtexteditor/richtexteditor.cpp:249
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Yazım Denetimi Dili"
 
-#: plaintexteditor/plaintexteditor.cpp:214
-#: richtextbrowser/richtextbrowser.cpp:174
+#: plaintexteditor/plaintexteditor.cpp:213
+#: richtextbrowser/richtextbrowser.cpp:172
 #: richtexteditor/richtexteditor.cpp:282
 #, kde-format
 msgid "Speak Text"
 msgstr "Metni Konuş"
 
-#: plaintexteditor/plaintexteditor.cpp:393
+#: plaintexteditor/plaintexteditor.cpp:392
 #: richtexteditor/richtexteditor.cpp:500
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Denetlenecek bir şey yok."
 
-#: plaintexteditor/plaintexteditor.cpp:398
+#: plaintexteditor/plaintexteditor.cpp:397
 #: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid "No backend available for spell checking."

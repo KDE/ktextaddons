@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
 "PO-Revision-Date: 2024-07-11 05:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgid "Impossible to store language info."
 msgstr "ენის ინფორმაციის შენახვა შეუძლებელია."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -39,22 +39,22 @@ msgstr ""
 "დააფიქსირა. მოთხოვნა მოგვიანებით სცადეთ."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "ბმულთან წვდომა შეუძლებელია: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "ფაილის გადმოსაწერად გახსნა შეუძლებელია."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "საკონტროლო ჯამი არასწორია."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "შეცდომა დისკზე ჩაწერისას: %1"

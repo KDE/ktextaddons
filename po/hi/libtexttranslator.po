@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-02 00:40+0000\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -404,12 +404,12 @@ msgstr "सेटिंग्स"
 msgid "Language model is not defined."
 msgstr "भाषा मॉडल परिभाषित नहीं है."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:36
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "फ़ाइल डाउनलोड करने के लिए नहीं खोली जा सकती."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:48
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
@@ -421,18 +421,18 @@ msgstr ""
 "त्रुटि: इंजन सिस्टम ने आपके कंप्यूटर नेटवर्क से संदिग्ध ट्रैफ़िक का पता लगाया है। कृपया बाद में "
 "अपना अनुरोध फिर से आज़माएँ।"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "यूआरएल तक पहुंचना असंभव: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:62
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "चेकसम सही नहीं है."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:72
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "डिस्क पर लिखते समय त्रुटि: %1"
@@ -661,70 +661,70 @@ msgstr "सभी फाइलें (*)"
 msgid "Translate…"
 msgstr "अनुवाद करना…"
 
-#: translator/widgets/translatorwidget.cpp:220
+#: translator/widgets/translatorwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "बंद करना"
 
-#: translator/widgets/translatorwidget.cpp:223
+#: translator/widgets/translatorwidget.cpp:222
 #, kde-format
 msgid "Close"
 msgstr "बंद करना"
 
-#: translator/widgets/translatorwidget.cpp:229
+#: translator/widgets/translatorwidget.cpp:228
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "से:"
 
-#: translator/widgets/translatorwidget.cpp:236
+#: translator/widgets/translatorwidget.cpp:235
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "को:"
 
-#: translator/widgets/translatorwidget.cpp:248
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "औंधाना"
 
-#: translator/widgets/translatorwidget.cpp:253
+#: translator/widgets/translatorwidget.cpp:252
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "स्पष्ट"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Clear"
 msgstr "स्पष्ट"
 
-#: translator/widgets/translatorwidget.cpp:261
+#: translator/widgets/translatorwidget.cpp:260
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "अनुवाद"
 
-#: translator/widgets/translatorwidget.cpp:264
+#: translator/widgets/translatorwidget.cpp:263
 #, kde-format
 msgid "Translate"
 msgstr "अनुवाद"
 
-#: translator/widgets/translatorwidget.cpp:271
+#: translator/widgets/translatorwidget.cpp:270
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "डिबग"
 
-#: translator/widgets/translatorwidget.cpp:289
+#: translator/widgets/translatorwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "कॉन्फ़िगर"
 
-#: translator/widgets/translatorwidget.cpp:369
+#: translator/widgets/translatorwidget.cpp:368
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -734,24 +734,24 @@ msgstr ""
 "वह पाठ खींचें जिसका आप अनुवाद करना चाहते हैं। (सावधान रहें पाठ बाहरी सर्वर पर भेजा "
 "जाएगा)।"
 
-#: translator/widgets/translatorwidget.cpp:371
+#: translator/widgets/translatorwidget.cpp:370
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "वह पाठ खींचें जिसका आप अनुवाद करना चाहते हैं."
 
-#: translator/widgets/translatorwidget.cpp:420
+#: translator/widgets/translatorwidget.cpp:419
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "कोई नेटवर्क कनेक्शन नहीं मिला, हम पाठ का अनुवाद नहीं कर सकते."
 
-#: translator/widgets/translatorwidget.cpp:420
+#: translator/widgets/translatorwidget.cpp:419
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "कोई नेटवर्क नहीं"
 
-#: translator/widgets/translatorwidget.cpp:457
+#: translator/widgets/translatorwidget.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
 "PO-Revision-Date: 2024-07-13 02:22+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -28,7 +28,7 @@ msgid "Impossible to store language info."
 msgstr "Impossibile memorizzare le informazioni sulla lingua"
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -38,22 +38,22 @@ msgstr ""
 "tuo computer. Ritenta la richiesta più tardi."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Impossibile accedere all'URL: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:37
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "Impossibile aprire il file da scaricare."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:62
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Il codice di controllo non è corretto."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:72
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Errore durante la scrittura su disco: %1"

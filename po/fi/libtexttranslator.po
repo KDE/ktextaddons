@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-02 00:40+0000\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
 "PO-Revision-Date: 2024-10-16 20:55+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -404,12 +404,12 @@ msgstr "Asetukset"
 msgid "Language model is not defined."
 msgstr "Kielimallia ei ole määritetty."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:36
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:35
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "Tiedostoa ei voi avata ladattavaksi."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:49
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:48
 #: translator/plugins/bergamot/managermodeltranslator.cpp:50
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
@@ -421,18 +421,18 @@ msgstr ""
 "Virhe: Moottorijärjestelmät ovat havainneet tietoverkossa epäilyttävää "
 "liikennettä. Yritä pyyntöä myöhemmin uudelleen."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:51
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:50
 #: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ei pääsyä verkko-osoitteeseen: %1"
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:62
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Tarkistussumma ei ole oikein."
 
-#: translator/plugins/bergamot/downloadlanguagejob.cpp:72
+#: translator/plugins/bergamot/downloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Virhe kirjoitettaessa levylle: %1"
@@ -661,70 +661,70 @@ msgstr "Kaikki tiedostot (*)"
 msgid "Translate…"
 msgstr "Käännä…"
 
-#: translator/widgets/translatorwidget.cpp:220
+#: translator/widgets/translatorwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sulje"
 
-#: translator/widgets/translatorwidget.cpp:223
+#: translator/widgets/translatorwidget.cpp:222
 #, kde-format
 msgid "Close"
 msgstr "Sulje"
 
-#: translator/widgets/translatorwidget.cpp:229
+#: translator/widgets/translatorwidget.cpp:228
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "Mistä:"
 
-#: translator/widgets/translatorwidget.cpp:236
+#: translator/widgets/translatorwidget.cpp:235
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "Mihin:"
 
-#: translator/widgets/translatorwidget.cpp:248
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "Vaihda suuntaa"
 
-#: translator/widgets/translatorwidget.cpp:253
+#: translator/widgets/translatorwidget.cpp:252
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: translator/widgets/translatorwidget.cpp:261
+#: translator/widgets/translatorwidget.cpp:260
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "Käännä"
 
-#: translator/widgets/translatorwidget.cpp:264
+#: translator/widgets/translatorwidget.cpp:263
 #, kde-format
 msgid "Translate"
 msgstr "Käännä"
 
-#: translator/widgets/translatorwidget.cpp:271
+#: translator/widgets/translatorwidget.cpp:270
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Virheenpaikannus"
 
-#: translator/widgets/translatorwidget.cpp:289
+#: translator/widgets/translatorwidget.cpp:288
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Asetukset"
 
-#: translator/widgets/translatorwidget.cpp:369
+#: translator/widgets/translatorwidget.cpp:368
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -734,24 +734,24 @@ msgstr ""
 "Vedä käännettävä teksti tähän. (Varoitus: teksti lähetetään ulkoiseen "
 "palvelimeen.)"
 
-#: translator/widgets/translatorwidget.cpp:371
+#: translator/widgets/translatorwidget.cpp:370
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Vedä käännettävä teksti tähän."
 
-#: translator/widgets/translatorwidget.cpp:420
+#: translator/widgets/translatorwidget.cpp:419
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Verkkoyhteyttä ei havaittu: tekstiä ei voi kääntää."
 
-#: translator/widgets/translatorwidget.cpp:420
+#: translator/widgets/translatorwidget.cpp:419
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Ei verkkoyhteyttä"
 
-#: translator/widgets/translatorwidget.cpp:457
+#: translator/widgets/translatorwidget.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
