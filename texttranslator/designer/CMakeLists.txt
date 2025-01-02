@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2022-2024 Laurent Montel <montel.org>
+# SPDX-FileCopyrightText: 2022-2025 Laurent Montel <montel@kde.org>
 include(ECMAddQtDesignerPlugin)
 ecm_qtdesignerplugin_widget(TextTranslator::TranslatorWidget
     INCLUDE_FILE "TextTranslator/TranslatorWidget"

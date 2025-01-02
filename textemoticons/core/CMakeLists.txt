@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
+# SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEmoticonsCore")

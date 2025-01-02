@@ -1,5 +1,5 @@
 /*
-  SPDX-FileCopyrightText: 2012-2024 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2012-2025 Laurent Montel <montel@kde.org>
   code based on calligra autocorrection.
 
   SPDX-License-Identifier: GPL-2.0-or-later

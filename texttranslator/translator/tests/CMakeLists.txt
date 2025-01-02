@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
+# SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 add_executable(translator_gui translator_gui.cpp)
 target_link_libraries(translator_gui
   KF6::TextTranslator KF6::I18n

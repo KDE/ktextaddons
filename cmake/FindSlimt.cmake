@@ -6,7 +6,7 @@
 #  slimt_LIBRARIES - the slimt library
 #  slimt_INCLUDE_DIRS - the include path of the slimt library
 
-# SPDX-FileCopyrightText: 2023-2024 Laurent Montel <montel.org>
+# SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 

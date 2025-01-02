@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2022-2024 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2022-2025 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(KTEXTADDONS_CURRENT_VERSION "1.5.46")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
-include(FeatureSummary)
 set(QT_REQUIRED_VERSION "6.7.0")
 set(KF_MIN_VERSION "6.8.0")
 set(QT6KEYCHAIN_LIB_VERSION "0.14.2")
+include(FeatureSummary)
 find_package(ECM ${KF_MIN_VERSION}  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://invent.kde.org/frameworks/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)

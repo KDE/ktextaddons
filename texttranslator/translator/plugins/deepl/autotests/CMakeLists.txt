@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2022-2024 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2022-2025 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 set(translator_deepl_LIB qt6keychain)
 ecm_add_test(deeplengineclienttest.cpp deeplengineclienttest.h ../deeplengineclient.cpp ../deeplengineplugin.cpp ../deeplengineutil.cpp ${translator_debug_deepl_SRCS}
