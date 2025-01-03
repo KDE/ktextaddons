@@ -19,7 +19,7 @@ class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager : public QObject
     Q_GADGET
 public:
     explicit CustomEmojiIconManager(QObject *parent = nullptr);
-    virtual ~CustomEmojiIconManager();
+    ~CustomEmojiIconManager() override;
     virtual QIcon generateIcon(const QString &customIdentifier);
     virtual QString fileName(const QString &customIdentifier);
 };
