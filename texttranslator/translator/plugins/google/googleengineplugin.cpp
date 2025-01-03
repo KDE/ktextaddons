@@ -14,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QRegularExpression>
 #include <QUrlQuery>
 #include <TextTranslator/TranslatorEngineAccessManager>
 
