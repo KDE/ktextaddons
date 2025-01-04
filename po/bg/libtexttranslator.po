@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"POT-Creation-Date: 2025-01-04 00:40+0000\n"
 "PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -543,7 +543,7 @@ msgstr "Сървърът изисква Api ключ."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:82
+#: translator/plugins/google/googleengineplugin.cpp:83
 #, kde-format
 msgid "Invalid answer."
 msgstr "Невалиден отговор."

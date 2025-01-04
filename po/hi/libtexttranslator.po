@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"POT-Creation-Date: 2025-01-04 00:40+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -540,7 +540,7 @@ msgstr "सर्वर को Api कुंजी की आवश्यकत�
 msgid "Google"
 msgstr "गूगल"
 
-#: translator/plugins/google/googleengineplugin.cpp:82
+#: translator/plugins/google/googleengineplugin.cpp:83
 #, kde-format
 msgid "Invalid answer."
 msgstr "अमान्य उत्तर."

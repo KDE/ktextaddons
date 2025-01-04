@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"POT-Creation-Date: 2025-01-04 00:40+0000\n"
 "PO-Revision-Date: 2024-07-30 09:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -541,7 +541,7 @@ msgstr "Серверу потрібен ключ API."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:82
+#: translator/plugins/google/googleengineplugin.cpp:83
 #, kde-format
 msgid "Invalid answer."
 msgstr "Некоректна відповідь."
