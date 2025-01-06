@@ -12,9 +12,7 @@ CustomEmojiIconManager::CustomEmojiIconManager(QObject *parent)
 {
 }
 
-CustomEmojiIconManager::~CustomEmojiIconManager()
-{
-}
+CustomEmojiIconManager::~CustomEmojiIconManager() = default;
 
 QIcon CustomEmojiIconManager::generateIcon(const QString &customIdentifier)
 {

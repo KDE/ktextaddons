@@ -8,9 +8,7 @@
 #include "emoticonunicodeutils.h"
 
 using namespace TextEmoticonsCore;
-CustomEmoji::CustomEmoji()
-{
-}
+CustomEmoji::CustomEmoji() = default;
 
 QString CustomEmoji::identifier() const
 {
