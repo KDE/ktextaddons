@@ -1,0 +1,210 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"PO-Revision-Date: 2025-01-08 18:32+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: plaintexteditor/plaintexteditfindbar.cpp:120
+#: richtexteditor/richtexteditfindbar.cpp:120
+#, kde-format
+msgid "%1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "لا استبدالات تمّت"
+msgstr[1] "تمّ استبدال واحد"
+msgstr[2] "تمّ استبدالان"
+msgstr[3] "تمّت %1 استبدالات"
+msgstr[4] "تمّ %1 استبدالًا"
+msgstr[5] "تمّ %1 استبدالًا"
+
+#: plaintexteditor/plaintexteditor.cpp:174
+#: richtexteditor/richtexteditor.cpp:236
+#, kde-format
+msgid "Check Spelling…"
+msgstr "دقّق الإملاء…"
+
+#: plaintexteditor/plaintexteditor.cpp:179
+#: richtexteditor/richtexteditor.cpp:243
+#, kde-format
+msgid "Auto Spell Check"
+msgstr "دقق الملاء آليًا"
+
+#: plaintexteditor/plaintexteditor.cpp:185
+#: richtexteditor/richtexteditor.cpp:249
+#, kde-format
+msgid "Spell Checking Language"
+msgstr "لغة تدقيق الإملاء"
+
+#: plaintexteditor/plaintexteditor.cpp:213
+#: richtextbrowser/richtextbrowser.cpp:172
+#: richtexteditor/richtexteditor.cpp:282
+#, kde-format
+msgid "Speak Text"
+msgstr "انطق النّصّ"
+
+#: plaintexteditor/plaintexteditor.cpp:392
+#: richtexteditor/richtexteditor.cpp:500
+#, kde-format
+msgid "Nothing to spell check."
+msgstr "لا يوجد شيء للتدقيق الإملائي"
+
+#: plaintexteditor/plaintexteditor.cpp:397
+#: richtexteditor/richtexteditor.cpp:518
+#, kde-format
+msgid "No backend available for spell checking."
+msgstr "لا توجد واجهة خلفية متاحة للتدقيق الإملائي."
+
+#: richtexteditor/richtexteditor.cpp:275
+#, kde-format
+msgid "Allow Tabulations"
+msgstr "السماح بالجداول"
+
+#: richtexteditor/richtexteditor.cpp:510
+#, kde-format
+msgid ""
+"No backend available for spell checking. Do you want to send the email "
+"anyways?"
+msgstr ""
+"لا توجد واجهة خلفية متاحة للتدقيق الإملائي. هل تريد إرسال البريد الإلكتروني "
+"على أية حال؟"
+
+#: richtexteditor/richtexteditor.cpp:512
+#, kde-format
+msgctxt "@action:button"
+msgid "Send"
+msgstr "أرسل"
+
+#: richtexteditor/richtexteditor.cpp:534
+#, kde-format
+msgctxt "@action:button"
+msgid "Skip"
+msgstr "تخطّ"
+
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "أغلق"
+
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
+#, kde-format
+msgid "Close"
+msgstr "أغلق"
+
+#: widgets/texteditfindbarbase.cpp:142
+#, kde-format
+msgid ""
+"End of message reached.\n"
+"Phrase '%1' could not be found."
+msgstr ""
+"تم الوصول إلى نهاية الرسالة.\n"
+"تعذر العثور على العبارة '%1'."
+
+#: widgets/textfindreplacewidget.cpp:26
+#, kde-format
+msgctxt "@action:button"
+msgid "Replace"
+msgstr "استبدل"
+
+#: widgets/textfindreplacewidget.cpp:27
+#, kde-format
+msgctxt "@action:button"
+msgid "Replace All"
+msgstr "استبدل الكلّ"
+
+#: widgets/textfindreplacewidget.cpp:30
+#, kde-format
+msgctxt "Replace text"
+msgid "Replace:"
+msgstr "استبدل:"
+
+#: widgets/textfindreplacewidget.cpp:66
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "السابق"
+
+#: widgets/textfindreplacewidget.cpp:67
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "التالي"
+
+#: widgets/textfindreplacewidget.cpp:73
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "ا&عثر:"
+
+#: widgets/textfindreplacewidget.cpp:76
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Text to search for"
+msgstr "النّصّ للبحث عنه"
+
+#: widgets/textfindreplacewidget.cpp:82
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Jump to next match"
+msgstr "انتقل إلى المطابقة التّالية"
+
+#: widgets/textfindreplacewidget.cpp:87
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Jump to previous match"
+msgstr "انتقل إلى المطابقة السّابقة"
+
+#: widgets/textfindreplacewidget.cpp:93
+#, kde-format
+msgid "Options"
+msgstr "خيارات"
+
+#: widgets/textfindreplacewidget.cpp:94
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Modify search behavior"
+msgstr "عدل سلوك البحث"
+
+#: widgets/textfindreplacewidget.cpp:97
+#, kde-format
+msgid "Case sensitive"
+msgstr "حسّاس لحالة الأحرف"
+
+#: widgets/textfindreplacewidget.cpp:100
+#, kde-format
+msgid "Whole word"
+msgstr "كامل الكلمة"
+
+#: widgets/textfindreplacewidget.cpp:103
+#, kde-format
+msgid "Regular Expression"
+msgstr "تعبير نمطيّ"
+
+#: widgets/textfindreplacewidget.cpp:106
+#, kde-format
+msgid "Respect Diacritic and Accents"
+msgstr "احترام التشكيل واللكنات"
+
+#: widgets/textgotolinewidget.cpp:49
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Go to Line:"
+msgstr "انتقل إلى سطر:"
+
+#: widgets/textgotolinewidget.cpp:56
+#, kde-format
+msgid "Go"
+msgstr "انتقال"

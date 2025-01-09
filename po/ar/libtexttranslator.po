@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-04 00:40+0000\n"
-"PO-Revision-Date: 2024-05-25 17:08+0400\n"
+"PO-Revision-Date: 2025-01-08 18:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: \n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -336,8 +337,7 @@ msgstr "برغموت"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
 #: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "ابحث…"
@@ -353,15 +353,13 @@ msgid "Delete"
 msgstr "احذف"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Update List"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update List"
-msgstr "حدث القائمة"
+msgstr "حدّث القائمة"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Update list of languages from network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "حدث قائمة اللغات من الشبكة"
@@ -372,8 +370,7 @@ msgid "Error: %1"
 msgstr "خطأ: %1"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Use translation cache"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "استخدم خبئة الترجمات"
@@ -522,8 +519,7 @@ msgid "Configure Engine"
 msgstr "اضبط المحرك"
 
 #: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Use Free License Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "استخدم مفتاح الترخيص المجاني"
@@ -556,8 +552,7 @@ msgid "Libre Translate"
 msgstr "مترجم لايبر"
 
 #: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Server required Api Key"
+#, kde-format
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "الخادوم يطلب مفتاح API"
@@ -626,8 +621,7 @@ msgstr "إلى:"
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
 #: translator/widgets/translatorconfigurewidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Engine:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "المحرّك:"
@@ -653,8 +647,7 @@ msgstr ""
 "وصف الخطأ المفصّل هو ”%2“."
 
 #: translator/widgets/translatordebugdialog.cpp:94
-#, fuzzy, kde-format
-#| msgid "Save File Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "خطأ في حفظ الملفّ"
@@ -670,8 +663,7 @@ msgid "Translate…"
 msgstr "ترجم…"
 
 #: translator/widgets/translatorwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "أغلق"
@@ -700,8 +692,7 @@ msgid "Invert"
 msgstr "اعكس"
 
 #: translator/widgets/translatorwidget.cpp:252
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "امسح"
@@ -712,8 +703,7 @@ msgid "Clear"
 msgstr "امسح"
 
 #: translator/widgets/translatorwidget.cpp:260
-#, fuzzy, kde-format
-#| msgid "Translate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "ترجم"
@@ -724,24 +714,19 @@ msgid "Translate"
 msgstr "ترجم"
 
 #: translator/widgets/translatorwidget.cpp:270
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "نقّح"
 
 #: translator/widgets/translatorwidget.cpp:288
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "اضبط"
 
 #: translator/widgets/translatorwidget.cpp:368
-#, fuzzy, kde-format
-#| msgid ""
-#| "Drag text that you want to translate. (Be careful text will be send to "
-#| "external Server)."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Drag text that you want to translate. (Be careful text will be send to "
@@ -749,8 +734,7 @@ msgid ""
 msgstr "اسحب النّصّ الذي تريد ترجمته هنا. (انتبه سيرسل النص إلى خادم خارجي)"
 
 #: translator/widgets/translatorwidget.cpp:370
-#, fuzzy, kde-format
-#| msgid "Drag text that you want to translate."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "اسحب النّصّ الذي تريد ترجمته هنا."
@@ -761,15 +745,13 @@ msgid "No network connection detected, we cannot translate text."
 msgstr "لم يُكتشف اتّصال بالشّبكة، لا يمكن ترجمة النّصّ."
 
 #: translator/widgets/translatorwidget.cpp:419
-#, fuzzy, kde-format
-#| msgid "No network"
+#, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "لا شبكة"
 
 #: translator/widgets/translatorwidget.cpp:456
-#, fuzzy, kde-format
-#| msgid "Translate error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "خطأ في التّرجمة"

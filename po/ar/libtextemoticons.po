@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:38+0000\n"
-"PO-Revision-Date: 2024-05-25 17:02+0400\n"
+"PO-Revision-Date: 2025-01-08 18:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -87,8 +87,7 @@ msgid "Add Smiley"
 msgstr "أضف وجهًا تعبيريًّا"
 
 #: widgets/emoticontexteditselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Search Emoticon…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "بحث في الصور التعبيرية..."

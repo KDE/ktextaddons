@@ -1,0 +1,169 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"PO-Revision-Date: 2025-01-08 18:26+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
+#, kde-format
+msgid "Google"
+msgstr "غوغل"
+
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
+#, kde-format
+msgid "Impossible to store language info."
+msgstr "من المستحيل تخزين معلومات اللغة."
+
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
+#, kde-format
+msgid ""
+"Error: Engine systems have detected suspicious traffic from your computer "
+"network. Please try your request again later."
+msgstr ""
+"خطأ: اكتشفت أنظمة المحرك حركة مرور مشبوهة من شبكة حاسوبك. الرجاء المحاولة "
+"لاحقًا."
+
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
+#, kde-format
+msgid "Impossible to access to url: %1"
+msgstr "من المستحيل الوصول إلى عنوان : %1"
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr "لا يمكن فتح الملف للتحميل."
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
+#, kde-format
+msgid "CheckSum is not correct."
+msgstr "المجموع الاختباري غير صحيح."
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
+#, kde-format
+msgid "Error during writing on disk: %1"
+msgstr "خطأ أثناء الكتابة على القرص: %1"
+
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Vosk Plugin Settings"
+msgstr "إعدادات البرنامج المساعد Vosk"
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr "بحث..."
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
+#, kde-format
+msgid "Download"
+msgstr "تحميل"
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:103
+#, kde-format
+msgid "Delete"
+msgstr "حذف"
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Update List"
+msgstr "حدّث القائمة"
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Update list of languages from network"
+msgstr "تحديث قائمة اللغات من الشبكة"
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
+#, kde-format
+msgid "Error: %1"
+msgstr "خطأ: %1"
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
+#, kde-format
+msgid "Vosk"
+msgstr "فوسك VOSK"
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#, kde-format
+msgid "Impossible to extract language"
+msgstr "من المستحيل استخراج اللغة"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
+#, kde-format
+msgid "Language"
+msgstr "اللغة"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:85
+#, kde-format
+msgid "Installed"
+msgstr "مثبتة"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#, kde-format
+msgid "Installed Version"
+msgstr "النسخة المثبتة"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
+#, kde-format
+msgid "Available Version"
+msgstr "الإصدار المتاح"
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
+#, kde-format
+msgid "Size"
+msgstr "الحجم"
+
+#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
+#, kde-format
+msgid "Whisper"
+msgstr "وسبر Whisper"
+
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Engine:"
+msgstr "المحرك:"
+
+#: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Speech To Text"
+msgstr "اضبط الكلام إلى نص"
+
+#: speechtotext/widgets/speechtotextmenu.cpp:17
+#, kde-format
+msgid "Speech to Text…"
+msgstr "الكلام إلى النص..."
+
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Input:"
+msgstr "الإدخال:"
+
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:70
+#, kde-format
+msgid "Default"
+msgstr "المبدئي:"
