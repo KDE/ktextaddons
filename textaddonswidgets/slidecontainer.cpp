@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QResizeEvent>
 
 using namespace TextAddonsWidgets;
-static const int SLIDE_DURATION = 250;
+static constexpr int SLIDE_DURATION = 250;
 
 SlideContainer::SlideContainer(QWidget *parent)
     : QFrame(parent)
