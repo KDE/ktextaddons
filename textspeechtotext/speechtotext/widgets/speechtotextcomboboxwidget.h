@@ -30,8 +30,8 @@ Q_SIGNALS:
     void engineChanged(const QString &engineName);
 
 private:
-    void slotConfigureEngine();
-    void slotEngineChanged(int index);
+    TEXTSPEECHTOTEXT_NO_EXPORT void slotConfigureEngine();
+    TEXTSPEECHTOTEXT_NO_EXPORT void slotEngineChanged(int index);
     QComboBox *const mEngine;
     QToolButton *const mConfigureEngine;
 };

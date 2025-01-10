@@ -20,9 +20,8 @@ public:
     void loadSettings();
     void saveSettings();
 
-    void initializeInput();
-
 private:
+    TEXTSPEECHTOTEXT_NO_EXPORT void initializeInput();
     QComboBox *const mDeviceComboBox;
 };
 }
