@@ -9,36 +9,36 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: TextGrammarCheck
-   cmake: "KF6::TextGrammarCheck"
- - qmake: TextTranslator
-   cmake: "KF6::TextTranslator"
- - qmake: TextAutoCorrectionCore
-   cmake: "KF6::TextAutoCorrectionCore"
- - qmake: TextAutoCorrectionWidgets
-   cmake: "KF6::TextAutoCorrectionWidgets"
- - qmake: TextEditTextToSpeech
-   cmake: "KF6::TextEditTextToSpeech"
- - qmake: TextAddonsWidgets
-   cmake: "KF6::TextAddonsWidgets"
- - qmake: TextEmoticonsCore
-   cmake: "KF6::TextEmoticonsCore"
- - qmake: TextEmoticonsWidgets
-   cmake: "KF6::TextEmoticonsWidgets"
- - qmake: TextUtils
-   cmake: "KF6::TextUtils"
- - qmake: TextCustomEditor
-   cmake: "KF6::TextCustomEditor"
+    - qmake: TextGrammarCheck
+      cmake: "KF6::TextGrammarCheck"
+    - qmake: TextTranslator
+      cmake: "KF6::TextTranslator"
+    - qmake: TextAutoCorrectionCore
+      cmake: "KF6::TextAutoCorrectionCore"
+    - qmake: TextAutoCorrectionWidgets
+      cmake: "KF6::TextAutoCorrectionWidgets"
+    - qmake: TextEditTextToSpeech
+      cmake: "KF6::TextEditTextToSpeech"
+    - qmake: TextAddonsWidgets
+      cmake: "KF6::TextAddonsWidgets"
+    - qmake: TextEmoticonsCore
+      cmake: "KF6::TextEmoticonsCore"
+    - qmake: TextEmoticonsWidgets
+      cmake: "KF6::TextEmoticonsWidgets"
+    - qmake: TextUtils
+      cmake: "KF6::TextUtils"
+    - qmake: TextCustomEditor
+      cmake: "KF6::TextCustomEditor"
 cmakename: KF6TextEditTextToSpeech
 
 public_lib: true
 public_source_dirs:
-  - textaddonswidgets
-  - textautocorrection
-  - textcustomeditor
-  - textedittexttospeech
-  - textemoticons
-  - textgrammarcheck
-  - textspeechtotext
-  - texttranslator
-  - textutils
+    - textaddonswidgets
+    - textautocorrection
+    - textcustomeditor
+    - textedittexttospeech
+    - textemoticons
+    - textgrammarcheck
+    - textspeechtotext
+    - texttranslator
+    - textutils
