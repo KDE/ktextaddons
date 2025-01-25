@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-02 00:39+0000\n"
-"PO-Revision-Date: 2024-08-02 07:50+0300\n"
+"PO-Revision-Date: 2025-01-24 09:26+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: common/grammarresulttextedit.cpp:36
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "לחיצה על הכפתור תרענן את ההגדרות"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
-msgstr "רענון ההגדרות"
+msgstr "ריענון ההגדרות"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
@@ -329,7 +329,7 @@ msgstr "שפה:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr "רענון"
+msgstr "ריענון"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
