@@ -5,11 +5,17 @@
 */
 
 #include "richtexteditor.h"
-using namespace Qt::Literals::StringLiterals;
 
+#include "config-textcustomeditor.h"
 #include "textcustomeditor_debug.h"
-
 #include "widgets/textmessageindicator.h"
+
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeech>
+#endif
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
+
+#include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KCursor>
@@ -18,28 +24,21 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <KStandardActions>
 #include <KStandardGuiItem>
-#include <QActionGroup>
-#include <QIcon>
-
-#include "config-textcustomeditor.h"
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
 #include <KIO/KUriFilterSearchProviderActions>
 #endif
+#include <Sonnet/BackgroundChecker>
 #include <Sonnet/Dialog>
 #include <Sonnet/Highlighter>
-#include <sonnet/backgroundchecker.h>
-#include <sonnet/spellcheckdecorator.h>
-#include <sonnet/speller.h>
-#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#include <TextEditTextToSpeech/TextToSpeech>
-#endif
-#include <TextEmoticonsWidgets/EmoticonTextEditAction>
+#include <Sonnet/SpellCheckDecorator>
+#include <Sonnet/Speller>
 
-#include <KColorScheme>
+#include <QActionGroup>
 #include <QApplication>
 #include <QClipboard>
 #include <QContextMenuEvent>
 #include <QDialogButtonBox>
+#include <QIcon>
 #include <QMenu>
 #include <QPushButton>
 #include <QScrollBar>
@@ -47,6 +46,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextDocumentFragment>
 
 using namespace TextCustomEditor;
+using namespace Qt::Literals::StringLiterals;
+
 class Q_DECL_HIDDEN RichTextEditor::RichTextEditorPrivate
 {
 public:

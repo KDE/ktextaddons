@@ -6,41 +6,40 @@
 #include "plaintexteditor.h"
 #include "config-textcustomeditor.h"
 #include "widgets/textmessageindicator.h"
+
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeech>
+#endif
+#include <TextEmoticonsWidgets/EmoticonTextEditAction>
+
 #include <KConfig>
 #include <KConfigGroup>
 #include <KCursor>
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
 #include <KIO/KUriFilterSearchProviderActions>
 #endif
+#include <KColorScheme>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KStandardActions>
-#include <QActionGroup>
-#include <QIcon>
-
-#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#include <TextEditTextToSpeech/TextToSpeech>
-#endif
+#include <Sonnet/BackgroundChecker>
 #include <Sonnet/Dialog>
-#include <TextEmoticonsWidgets/EmoticonTextEditAction>
-#include <sonnet/backgroundchecker.h>
+#include <Sonnet/Highlighter>
+#include <Sonnet/SpellCheckDecorator>
+#include <Sonnet/Speller>
 
-#include <KColorScheme>
+#include <QActionGroup>
 #include <QApplication>
 #include <QClipboard>
+#include <QIcon>
 #include <QMenu>
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextDocumentFragment>
 
-#include <sonnet/spellcheckdecorator.h>
-
-#include <sonnet/speller.h>
-
-#include <Sonnet/Highlighter>
-
 using namespace TextCustomEditor;
 using namespace Qt::Literals::StringLiterals;
+
 class Q_DECL_HIDDEN PlainTextEditor::PlainTextEditorPrivate
 {
 public:
