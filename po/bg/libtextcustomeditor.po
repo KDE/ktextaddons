@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"POT-Creation-Date: 2025-01-30 00:40+0000\n"
 "PO-Revision-Date: 2024-11-10 20:12+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -25,49 +25,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "Направена е 1 замяна"
 msgstr[1] "Направени са %1 замени"
 
-#: plaintexteditor/plaintexteditor.cpp:174
-#: richtexteditor/richtexteditor.cpp:236
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Проверка на правописа…"
 
-#: plaintexteditor/plaintexteditor.cpp:179
-#: richtexteditor/richtexteditor.cpp:243
+#: plaintexteditor/plaintexteditor.cpp:178
+#: richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Автоматична проверка на правописа"
 
-#: plaintexteditor/plaintexteditor.cpp:185
-#: richtexteditor/richtexteditor.cpp:249
+#: plaintexteditor/plaintexteditor.cpp:184
+#: richtexteditor/richtexteditor.cpp:250
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Език за проверка на правописа"
 
-#: plaintexteditor/plaintexteditor.cpp:213
+#: plaintexteditor/plaintexteditor.cpp:212
 #: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:282
+#: richtexteditor/richtexteditor.cpp:283
 #, kde-format
 msgid "Speak Text"
 msgstr "Изговаряне на текст"
 
-#: plaintexteditor/plaintexteditor.cpp:392
-#: richtexteditor/richtexteditor.cpp:500
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Няма нищо за проверка."
 
-#: plaintexteditor/plaintexteditor.cpp:397
-#: richtexteditor/richtexteditor.cpp:518
+#: plaintexteditor/plaintexteditor.cpp:396
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Не е намерен бекенд за проверка на правописа."
 
-#: richtexteditor/richtexteditor.cpp:275
+#: richtexteditor/richtexteditor.cpp:276
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Разрешаване на табулациите"
 
-#: richtexteditor/richtexteditor.cpp:510
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,13 +76,13 @@ msgstr ""
 "Не е намерен бекенд за проверка на правописа.Искате ли да изпратите "
 "имейлакакто е непроверен?"
 
-#: richtexteditor/richtexteditor.cpp:512
+#: richtexteditor/richtexteditor.cpp:513
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Изпращане"
 
-#: richtexteditor/richtexteditor.cpp:534
+#: richtexteditor/richtexteditor.cpp:535
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

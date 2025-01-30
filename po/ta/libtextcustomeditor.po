@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"POT-Creation-Date: 2025-01-30 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:29+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -25,62 +25,62 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 மாற்றம் செய்யப்பட்டது"
 msgstr[1] "%1 மாற்றங்கள் செய்யப்பட்டன"
 
-#: plaintexteditor/plaintexteditor.cpp:174
-#: richtexteditor/richtexteditor.cpp:236
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
 msgstr "எழுத்தாக்கத்தை சரிபார்…"
 
-#: plaintexteditor/plaintexteditor.cpp:179
-#: richtexteditor/richtexteditor.cpp:243
+#: plaintexteditor/plaintexteditor.cpp:178
+#: richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "தானியக்க சொல் திருத்தி"
 
-#: plaintexteditor/plaintexteditor.cpp:185
-#: richtexteditor/richtexteditor.cpp:249
+#: plaintexteditor/plaintexteditor.cpp:184
+#: richtexteditor/richtexteditor.cpp:250
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "சொற்திருத்த மொழி"
 
-#: plaintexteditor/plaintexteditor.cpp:213
+#: plaintexteditor/plaintexteditor.cpp:212
 #: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:282
+#: richtexteditor/richtexteditor.cpp:283
 #, kde-format
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
-#: plaintexteditor/plaintexteditor.cpp:392
-#: richtexteditor/richtexteditor.cpp:500
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "சொல்திருத்த எதுவுமில்லை"
 
-#: plaintexteditor/plaintexteditor.cpp:397
-#: richtexteditor/richtexteditor.cpp:518
+#: plaintexteditor/plaintexteditor.cpp:396
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "சொல் திருத்த பின்நிலை எதுவும் இல்லை. "
 
-#: richtexteditor/richtexteditor.cpp:275
+#: richtexteditor/richtexteditor.cpp:276
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "தத்தல்களை அனுமதி"
 
-#: richtexteditor/richtexteditor.cpp:510
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "சொல் திருத்த பின்நிலை எதுவும் இல்லை. இருப்பினும் அஞ்சலை அனுப்ப வேண்டுமா?"
 
-#: richtexteditor/richtexteditor.cpp:512
+#: richtexteditor/richtexteditor.cpp:513
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "அனுப்பு"
 
-#: richtexteditor/richtexteditor.cpp:534
+#: richtexteditor/richtexteditor.cpp:535
 #, fuzzy, kde-format
 #| msgid "Skip"
 msgctxt "@action:button"

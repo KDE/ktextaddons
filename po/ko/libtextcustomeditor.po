@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"POT-Creation-Date: 2025-01-30 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -24,62 +24,62 @@ msgid "%1 replacement made"
 msgid_plural "%1 replacements made"
 msgstr[0] "%1개 바뀜"
 
-#: plaintexteditor/plaintexteditor.cpp:174
-#: richtexteditor/richtexteditor.cpp:236
+#: plaintexteditor/plaintexteditor.cpp:173
+#: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
 msgstr "맞춤법 검사…"
 
-#: plaintexteditor/plaintexteditor.cpp:179
-#: richtexteditor/richtexteditor.cpp:243
+#: plaintexteditor/plaintexteditor.cpp:178
+#: richtexteditor/richtexteditor.cpp:244
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "자동 맞춤법 검사"
 
-#: plaintexteditor/plaintexteditor.cpp:185
-#: richtexteditor/richtexteditor.cpp:249
+#: plaintexteditor/plaintexteditor.cpp:184
+#: richtexteditor/richtexteditor.cpp:250
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "맞춤법 검사 언어"
 
-#: plaintexteditor/plaintexteditor.cpp:213
+#: plaintexteditor/plaintexteditor.cpp:212
 #: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:282
+#: richtexteditor/richtexteditor.cpp:283
 #, kde-format
 msgid "Speak Text"
 msgstr "텍스트 말하기"
 
-#: plaintexteditor/plaintexteditor.cpp:392
-#: richtexteditor/richtexteditor.cpp:500
+#: plaintexteditor/plaintexteditor.cpp:391
+#: richtexteditor/richtexteditor.cpp:501
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "맞춤법 검사할 것이 없습니다."
 
-#: plaintexteditor/plaintexteditor.cpp:397
-#: richtexteditor/richtexteditor.cpp:518
+#: plaintexteditor/plaintexteditor.cpp:396
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "맞춤법 검사 백엔드가 없습니다."
 
-#: richtexteditor/richtexteditor.cpp:275
+#: richtexteditor/richtexteditor.cpp:276
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "탭 허용"
 
-#: richtexteditor/richtexteditor.cpp:510
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "맞춤법 검사 백엔드가 없습니다. 그래도 메일을 보내시겠습니까?"
 
-#: richtexteditor/richtexteditor.cpp:512
+#: richtexteditor/richtexteditor.cpp:513
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "보내기"
 
-#: richtexteditor/richtexteditor.cpp:534
+#: richtexteditor/richtexteditor.cpp:535
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
