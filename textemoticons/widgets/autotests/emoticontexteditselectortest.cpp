@@ -38,7 +38,7 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     QVERIFY(mSearchUnicodeLineEdit->text().isEmpty());
     QVERIFY(!mSearchUnicodeLineEdit->placeholderText().isEmpty());
 
-    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmoticonToneComboBox *>(QStringLiteral("emoticonTonComboBox"));
+    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmoticonToneComboBox *>(QStringLiteral("emoticonToneComboBox"));
     QVERIFY(emoticonTonComboBox);
 
     QVERIFY(!w.customEmojiSupport());

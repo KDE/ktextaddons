@@ -28,7 +28,7 @@ public:
         : searchUnicodeLineEdit(new QLineEdit(q))
         , categoryButtons(new EmoticonCategoryButtons(q))
         , emoticonListView(new EmoticonListView(q))
-        , emoticonTonComboBox(new EmoticonToneComboBox(q))
+        , emoticonToneComboBox(new EmoticonToneComboBox(q))
         , emojiSortFilterProxyModel(new TextEmoticonsCore::EmojiSortFilterProxyModel(q))
         , qq(q)
     {
@@ -61,7 +61,7 @@ public:
     QLineEdit *const searchUnicodeLineEdit;
     EmoticonCategoryButtons *const categoryButtons;
     EmoticonListView *const emoticonListView;
-    EmoticonToneComboBox *const emoticonTonComboBox;
+    EmoticonToneComboBox *const emoticonToneComboBox;
     TextEmoticonsCore::EmojiSortFilterProxyModel *const emojiSortFilterProxyModel;
     bool customEmojiSupport = false;
     EmoticonTextEditSelector *const qq;
@@ -90,8 +90,8 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     d->searchUnicodeLineEdit->setClearButtonEnabled(true);
     d->searchUnicodeLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search Emoticon…"));
     hLayout->addWidget(d->searchUnicodeLineEdit);
-    d->emoticonTonComboBox->setObjectName(QStringLiteral("emoticonTonComboBox"));
-    hLayout->addWidget(d->emoticonTonComboBox);
+    d->emoticonToneComboBox->setObjectName(QStringLiteral("emoticonToneComboBox"));
+    hLayout->addWidget(d->emoticonToneComboBox);
 
     d->categoryButtons->setObjectName(QStringLiteral("mCategoryButtons"));
     mainLayout->addWidget(d->categoryButtons);
@@ -116,6 +116,10 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 
     connect(d->emoticonListView, &EmoticonListView::clearHistory, this, []() {
         TextEmoticonsCore::EmojiModelManager::self()->setRecentIdentifier(QStringList());
+    });
+
+    connect(d->emoticonToneComboBox, &TextEmoticonsWidgets::EmoticonToneComboBox::currentIndexChanged, this, [this]() {
+        d->emojiSortFilterProxyModel->setEmojiTone(d->emoticonToneComboBox->currentEmojiTone());
     });
 
     const QSize popupMenuSize = QSize(400, 250);
