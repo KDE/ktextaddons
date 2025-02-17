@@ -9,9 +9,7 @@
 
 #include "textemoticonswidgets_export.h"
 #include <QWidget>
-namespace TextEmoticonsCore
-{
-}
+
 namespace TextEmoticonsWidgets
 {
 /**
