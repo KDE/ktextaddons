@@ -8,6 +8,7 @@
 #include "emoticontexteditselector.h"
 #include "emoticoncategorybuttons.h"
 #include "emoticonlistview.h"
+#include "emoticontonecombobox.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -27,24 +28,25 @@ public:
         : searchUnicodeLineEdit(new QLineEdit(q))
         , categoryButtons(new EmoticonCategoryButtons(q))
         , emoticonListView(new EmoticonListView(q))
-        , emojiProxyModel(new TextEmoticonsCore::EmojiSortFilterProxyModel(q))
+        , emoticonTonComboBox(new EmoticonToneComboBox(q))
+        , emojiSortFilterProxyModel(new TextEmoticonsCore::EmojiSortFilterProxyModel(q))
         , qq(q)
     {
     }
     void slotUsedIdentifierChanged(const QStringList &lst)
     {
-        emojiProxyModel->setRecentEmoticons(lst);
+        emojiSortFilterProxyModel->setRecentEmoticons(lst);
     }
     void slotCategorySelected(const QString &category)
     {
         searchUnicodeLineEdit->setText({});
-        emojiProxyModel->setCategory(category);
+        emojiSortFilterProxyModel->setCategory(category);
         emoticonListView->setIsRecentView(category == TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier());
     }
 
     void slotSearchUnicode(const QString &str)
     {
-        emojiProxyModel->setSearchIdentifier(str);
+        emojiSortFilterProxyModel->setSearchIdentifier(str);
     }
 
     void slotItemSelected(const QString &str, const QString &identifier)
@@ -59,7 +61,8 @@ public:
     QLineEdit *const searchUnicodeLineEdit;
     EmoticonCategoryButtons *const categoryButtons;
     EmoticonListView *const emoticonListView;
-    TextEmoticonsCore::EmojiSortFilterProxyModel *const emojiProxyModel;
+    EmoticonToneComboBox *const emoticonTonComboBox;
+    TextEmoticonsCore::EmojiSortFilterProxyModel *const emojiSortFilterProxyModel;
     bool customEmojiSupport = false;
     EmoticonTextEditSelector *const qq;
 };
@@ -78,18 +81,25 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setSpacing(0);
     mainLayout->setContentsMargins({});
+
+    auto hLayout = new QHBoxLayout;
+    hLayout->setContentsMargins({});
+    mainLayout->addLayout(hLayout);
+
     d->searchUnicodeLineEdit->setObjectName(QStringLiteral("mSearchUnicodeLineEdit"));
     d->searchUnicodeLineEdit->setClearButtonEnabled(true);
     d->searchUnicodeLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search Emoticon…"));
-    mainLayout->addWidget(d->searchUnicodeLineEdit);
+    hLayout->addWidget(d->searchUnicodeLineEdit);
+    d->emoticonTonComboBox->setObjectName(QStringLiteral("emoticonTonComboBox"));
+    hLayout->addWidget(d->emoticonTonComboBox);
 
     d->categoryButtons->setObjectName(QStringLiteral("mCategoryButtons"));
     mainLayout->addWidget(d->categoryButtons);
     d->emoticonListView->setObjectName(QStringLiteral("mEmoticonListView"));
     mainLayout->addWidget(d->emoticonListView);
 
-    d->emojiProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
-    d->emoticonListView->setModel(d->emojiProxyModel);
+    d->emojiSortFilterProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
+    d->emoticonListView->setModel(d->emojiSortFilterProxyModel);
     connect(d->emoticonListView, &EmoticonListView::fontSizeChanged, d->emoticonListView, &EmoticonListView::setFontSize);
     connect(d->emoticonListView, &EmoticonListView::emojiItemSelected, this, [this](const QString &str, const QString &identifier) {
         d->slotItemSelected(str, identifier);
@@ -123,10 +133,10 @@ void EmoticonTextEditSelector::loadEmoticons()
 {
     if (!d->categoryButtons->wasLoaded()) {
         TextEmoticonsCore::UnicodeEmoticonManager *emojiManager = TextEmoticonsCore::UnicodeEmoticonManager::self();
-        d->emojiProxyModel->setSourceModel(TextEmoticonsCore::EmojiModelManager::self()->emojiModel());
+        d->emojiSortFilterProxyModel->setSourceModel(TextEmoticonsCore::EmojiModelManager::self()->emojiModel());
         const QList<TextEmoticonsCore::EmoticonCategory> categories = emojiManager->categories();
         d->categoryButtons->setCategories(categories, d->customEmojiSupport);
-        d->emojiProxyModel->setRecentEmoticons(TextEmoticonsCore::EmojiModelManager::self()->recentIdentifier());
+        d->emojiSortFilterProxyModel->setRecentEmoticons(TextEmoticonsCore::EmojiModelManager::self()->recentIdentifier());
     }
 }
 

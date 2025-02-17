@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "emojisortfilterproxymodel.h"
 #include "textemoticonswidgets_export.h"
 #include <QComboBox>
 namespace TextEmoticonsWidgets
@@ -15,5 +16,6 @@ class TEXTEMOTICONSWIDGETS_EXPORT EmoticonToneComboBox : public QComboBox
 public:
     explicit EmoticonToneComboBox(QWidget *parent = nullptr);
     ~EmoticonToneComboBox() override;
+    [[nodiscard]] TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone currentEmojiTone() const;
 };
 }

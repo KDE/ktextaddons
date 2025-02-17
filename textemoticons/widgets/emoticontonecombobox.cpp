@@ -5,7 +5,6 @@
 */
 
 #include "emoticontonecombobox.h"
-#include "emojisortfilterproxymodel.h"
 #include "emoticonunicodeutils.h"
 
 using namespace TextEmoticonsWidgets;
@@ -25,5 +24,10 @@ EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
 }
 
 EmoticonToneComboBox::~EmoticonToneComboBox() = default;
+
+TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone EmoticonToneComboBox::currentEmojiTone() const
+{
+    return currentData().value<TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone>();
+}
 
 #include "moc_emoticontonecombobox.cpp"

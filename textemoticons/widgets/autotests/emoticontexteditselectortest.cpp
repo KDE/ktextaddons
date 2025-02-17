@@ -8,6 +8,7 @@
 #include "emoticoncategorybuttons.h"
 #include "emoticonlistview.h"
 #include "emoticontexteditselector.h"
+#include "emoticontonecombobox.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
@@ -36,6 +37,9 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     QVERIFY(mSearchUnicodeLineEdit->isClearButtonEnabled());
     QVERIFY(mSearchUnicodeLineEdit->text().isEmpty());
     QVERIFY(!mSearchUnicodeLineEdit->placeholderText().isEmpty());
+
+    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmoticonToneComboBox *>(QStringLiteral("emoticonTonComboBox"));
+    QVERIFY(emoticonTonComboBox);
 
     QVERIFY(!w.customEmojiSupport());
 }
