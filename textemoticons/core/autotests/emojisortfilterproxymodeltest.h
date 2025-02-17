@@ -7,12 +7,13 @@
 
 #include <QObject>
 
-class EmojiProxyModelTest : public QObject
+class EmojiSortFilterProxyModelTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit EmojiProxyModelTest(QObject *parent = nullptr);
-    ~EmojiProxyModelTest() override = default;
+    explicit EmojiSortFilterProxyModelTest(QObject *parent = nullptr);
+    ~EmojiSortFilterProxyModelTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldHaveToneSuffix();
 };
