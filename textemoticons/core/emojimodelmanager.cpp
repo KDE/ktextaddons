@@ -16,37 +16,37 @@ class EmojiModelManager::EmojiModelManagerPrivate
 {
 public:
     EmojiModelManagerPrivate(EmojiModelManager *q)
-        : mEmojiModel(new TextEmoticonsCore::EmojiModel(q))
+        : emojiModel(new TextEmoticonsCore::EmojiModel(q))
     {
-        mEmojiModel->setUnicodeEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());
+        emojiModel->setUnicodeEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());
     }
     void loadRecentUsed()
     {
         // Try reading the old key first
         KConfigGroup group(KSharedConfig::openConfig(), QStringLiteral("EmoticonRecentUsed"));
         if (group.hasKey("Recents")) {
-            mRecentIdentifier = group.readEntry("Recents", QStringList());
+            recentIdentifier = group.readEntry("Recents", QStringList());
             // Make sure to clean up the old key, so we don't read it again
             group.deleteEntry("Recents");
             group.sync();
         } else {
             // Read the new key from state config
-            group = KConfigGroup(KSharedConfig::openStateConfig(), mSettingsGroupName);
-            mRecentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
+            group = KConfigGroup(KSharedConfig::openStateConfig(), settingsGroupName);
+            recentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
         }
     }
 
     void writeRecentUsed()
     {
-        KConfigGroup group(KSharedConfig::openStateConfig(), mSettingsGroupName);
-        group.writeEntry("LastUsedEmojis", mRecentIdentifier);
+        KConfigGroup group(KSharedConfig::openStateConfig(), settingsGroupName);
+        group.writeEntry("LastUsedEmojis", recentIdentifier);
         group.sync();
     }
 
-    QString mSettingsGroupName = QStringLiteral("EmoticonRecentUsed");
-    TextEmoticonsCore::EmojiModel *const mEmojiModel;
-    QStringList mRecentIdentifier;
-    QStringList mExcludeEmoticons;
+    QString settingsGroupName = QStringLiteral("EmoticonRecentUsed");
+    TextEmoticonsCore::EmojiModel *const emojiModel;
+    QStringList recentIdentifier;
+    QStringList excludeEmoticons;
 };
 
 EmojiModelManager::EmojiModelManager(QObject *parent)
@@ -69,60 +69,60 @@ EmojiModelManager *EmojiModelManager::self()
 
 TextEmoticonsCore::EmojiModel *EmojiModelManager::emojiModel() const
 {
-    return d->mEmojiModel;
+    return d->emojiModel;
 }
 
 void EmojiModelManager::setRecentSettingsGroupName(const QString &key)
 {
-    d->mSettingsGroupName = key;
+    d->settingsGroupName = key;
     d->loadRecentUsed();
 }
 
 const QStringList &EmojiModelManager::recentIdentifier() const
 {
-    return d->mRecentIdentifier;
+    return d->recentIdentifier;
 }
 
 void EmojiModelManager::setRecentIdentifier(const QStringList &newRecentIdentifier)
 {
-    d->mRecentIdentifier = newRecentIdentifier;
+    d->recentIdentifier = newRecentIdentifier;
     d->writeRecentUsed();
-    Q_EMIT usedIdentifierChanged(d->mRecentIdentifier);
+    Q_EMIT usedIdentifierChanged(d->recentIdentifier);
 }
 
 void EmojiModelManager::addIdentifier(const QString &identifier)
 {
-    if (int i = d->mRecentIdentifier.indexOf(identifier)) {
+    if (int i = d->recentIdentifier.indexOf(identifier)) {
         // Remove it for adding in top of list
         if (i != -1) {
-            d->mRecentIdentifier.removeAt(i);
+            d->recentIdentifier.removeAt(i);
         }
     }
-    d->mRecentIdentifier.prepend(identifier);
+    d->recentIdentifier.prepend(identifier);
     d->writeRecentUsed();
-    Q_EMIT usedIdentifierChanged(d->mRecentIdentifier);
+    Q_EMIT usedIdentifierChanged(d->recentIdentifier);
 }
 
 CustomEmojiIconManager *EmojiModelManager::customEmojiIconManager() const
 {
-    return d->mEmojiModel->customEmojiIconManager();
+    return d->emojiModel->customEmojiIconManager();
 }
 
 void EmojiModelManager::setCustomEmojiIconManager(CustomEmojiIconManager *newCustomEmojiIconManager)
 {
-    d->mEmojiModel->setCustomEmojiIconManager(newCustomEmojiIconManager);
+    d->emojiModel->setCustomEmojiIconManager(newCustomEmojiIconManager);
 }
 
 QStringList EmojiModelManager::excludeEmoticons() const
 {
-    return d->mExcludeEmoticons;
+    return d->excludeEmoticons;
 }
 
 void EmojiModelManager::setExcludeEmoticons(const QStringList &emoticons)
 {
-    if (d->mExcludeEmoticons != emoticons) {
-        d->mExcludeEmoticons = emoticons;
-        d->mEmojiModel->setExcludeEmoticons(d->mExcludeEmoticons);
+    if (d->excludeEmoticons != emoticons) {
+        d->excludeEmoticons = emoticons;
+        d->emojiModel->setExcludeEmoticons(d->excludeEmoticons);
         Q_EMIT excludeEmoticonsChanged();
     }
 }

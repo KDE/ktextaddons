@@ -5,7 +5,6 @@
 */
 
 #include "unicodeemoticonmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textemoticonscore_debug.h"
 #include "unicodeemoticonparser.h"
@@ -14,13 +13,14 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsCore;
 class TextEmoticonsCore::UnicodeEmoticonManagerPrivate
 {
 public:
     void loadUnicodeEmoji();
     [[nodiscard]] QString i18nUnicodeCategory(const QString &name) const;
-    QList<UnicodeEmoticon> mUnicodeEmojiList;
+    QList<UnicodeEmoticon> unicodeEmojiList;
 };
 
 void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
@@ -34,7 +34,7 @@ void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
     const QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
 
     const QJsonObject obj = doc.object();
-    mUnicodeEmojiList = unicodeParser.parse(obj);
+    unicodeEmojiList = unicodeParser.parse(obj);
 }
 
 QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) const
@@ -81,19 +81,19 @@ UnicodeEmoticonManager *UnicodeEmoticonManager::self()
 
 QList<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
 {
-    return d->mUnicodeEmojiList;
+    return d->unicodeEmojiList;
 }
 
 int UnicodeEmoticonManager::count() const
 {
-    return d->mUnicodeEmojiList.count();
+    return d->unicodeEmojiList.count();
 }
 
 QList<EmoticonCategory> UnicodeEmoticonManager::categories() const
 {
     QList<EmoticonCategory> categories;
     QSet<QString> seen;
-    for (const UnicodeEmoticon &emo : std::as_const(d->mUnicodeEmojiList)) {
+    for (const UnicodeEmoticon &emo : std::as_const(d->unicodeEmojiList)) {
         // Pick the first icon in each category
         const QString category = emo.category();
         if (!seen.contains(category)) {
@@ -120,13 +120,13 @@ QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &
     auto hasRequestedCategory = [category](const UnicodeEmoticon &emo) {
         return emo.category() == category;
     };
-    std::copy_if(d->mUnicodeEmojiList.begin(), d->mUnicodeEmojiList.end(), std::back_inserter(result), hasRequestedCategory);
+    std::copy_if(d->unicodeEmojiList.begin(), d->unicodeEmojiList.end(), std::back_inserter(result), hasRequestedCategory);
     return result;
 }
 
 UnicodeEmoticon UnicodeEmoticonManager::unicodeEmoticonForEmoji(const QString &emojiIdentifier) const
 {
-    for (const UnicodeEmoticon &emo : d->mUnicodeEmojiList) {
+    for (const UnicodeEmoticon &emo : d->unicodeEmojiList) {
         if (emo.hasEmoji(emojiIdentifier)) {
             return emo;
         }
