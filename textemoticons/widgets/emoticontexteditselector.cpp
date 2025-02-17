@@ -15,7 +15,7 @@
 #include <QVBoxLayout>
 #include <TextEmoticonsCore/EmojiModel>
 #include <TextEmoticonsCore/EmojiModelManager>
-#include <TextEmoticonsCore/EmojiProxyModel>
+#include <TextEmoticonsCore/EmojiSortFilterProxyModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
