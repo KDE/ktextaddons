@@ -24,6 +24,17 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
     Q_PROPERTY(QStringList recentIdentifier READ recentIdentifier NOTIFY usedIdentifierChanged)
 
 public:
+    enum class EmojiTone : uint8_t {
+        All, // Show all emoji
+        Original, // Show
+        Light, // tone1
+        MediumLight, // tone2
+        Medium, // tone3
+        MediumDark, // tone4
+        Dark, // tone5
+    };
+    Q_ENUM(EmojiTone)
+
     static EmojiModelManager *self();
     [[nodiscard]] TextEmoticonsCore::EmojiModel *emojiModel() const;
 

@@ -34,12 +34,14 @@ public:
             group = KConfigGroup(KSharedConfig::openStateConfig(), settingsGroupName);
             recentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
         }
+        // TODO save settings tone!
     }
 
     void writeRecentUsed()
     {
         KConfigGroup group(KSharedConfig::openStateConfig(), settingsGroupName);
         group.writeEntry("LastUsedEmojis", recentIdentifier);
+        // Load settings tone.
         group.sync();
     }
 

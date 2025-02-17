@@ -58,6 +58,8 @@ public:
             qq->parentWidget()->close();
         }
     }
+    // TODO save/load EmoticonToneComboBox settings
+
     QLineEdit *const searchUnicodeLineEdit;
     EmoticonCategoryButtons *const categoryButtons;
     EmoticonListView *const emoticonListView;
