@@ -49,7 +49,12 @@ public:
         } else {
             const QModelIndex sourceIndex = q->sourceModel()->index(source_row, 0, source_parent);
             const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
-            return identifier.contains(suffix);
+            if (identifier.contains("_tone"_L1) && identifier.contains(suffix)) {
+                return true;
+            } else if (!identifier.contains("_tone"_L1)) {
+                return true;
+            }
+            return false;
         }
     }
 
