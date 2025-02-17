@@ -44,7 +44,7 @@ public:
     [[nodiscard]] QString key() const;
     void setKey(const QString &key);
 
-    bool operator==(const UnicodeEmoticon &other) const;
+    [[nodiscard]] bool operator==(const UnicodeEmoticon &other) const;
 
 private:
     [[nodiscard]] TEXTEMOTICONSCORE_NO_EXPORT QString escapeUnicodeEmoji(const QString &pString);
