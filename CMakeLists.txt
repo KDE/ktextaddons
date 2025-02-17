@@ -130,6 +130,7 @@ add_subdirectory(textemoticons)
 add_subdirectory(textutils)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
 add_subdirectory(textspeechtotext)
+add_subdirectory(textautogeneratetext)
 
 find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(Qt6TextToSpeech PROPERTIES DESCRIPTION
