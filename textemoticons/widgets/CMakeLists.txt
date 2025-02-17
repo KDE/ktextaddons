@@ -9,7 +9,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSWIDGETS
     SOVERSION 1
 )
 
-add_library(KF6TextEmoticonsWidgets)
+add_library(KF6TextEmoticonsWidgets
+    emoticontonecombobox.h emoticontonecombobox.cpp)
 add_library(KF6::TextEmoticonsWidgets ALIAS KF6TextEmoticonsWidgets)
 
 target_sources(KF6TextEmoticonsWidgets PRIVATE
