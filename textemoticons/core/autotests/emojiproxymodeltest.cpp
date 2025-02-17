@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emojiproxymodeltest.h"
-#include "emojiproxymodel.h"
+#include "emojisortfilterproxymodel.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(EmojiProxyModelTest)
 EmojiProxyModelTest::EmojiProxyModelTest(QObject *parent)
@@ -14,7 +14,7 @@ EmojiProxyModelTest::EmojiProxyModelTest(QObject *parent)
 
 void EmojiProxyModelTest::shouldHaveDefaultValues()
 {
-    TextEmoticonsCore::EmojiProxyModel w;
+    TextEmoticonsCore::EmojiSortFilterProxyModel w;
 
     QVERIFY(w.category().isEmpty());
     QVERIFY(w.recentEmoticons().isEmpty());

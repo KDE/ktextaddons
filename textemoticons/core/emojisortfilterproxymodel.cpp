@@ -3,16 +3,16 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#include "emojiproxymodel.h"
+#include "emojisortfilterproxymodel.h"
 #include "emojimodel.h"
 #include "emoticonunicodeutils.h"
 
 using namespace TextEmoticonsCore;
 
-class EmojiProxyModel::EmojiProxyModelPrivate
+class EmojiSortFilterProxyModel::EmojiProxyModelPrivate
 {
 public:
-    EmojiProxyModelPrivate(EmojiProxyModel *qq)
+    EmojiProxyModelPrivate(EmojiSortFilterProxyModel *qq)
         : q(qq)
     {
     }
@@ -23,21 +23,21 @@ public:
     QString mCategory;
     QStringList mRecentEmoticons;
     QString mSearchIdentifier;
-    EmojiProxyModel *const q;
+    EmojiSortFilterProxyModel *const q;
 };
 
-EmojiProxyModel::EmojiProxyModel(QObject *parent)
+EmojiSortFilterProxyModel::EmojiSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
-    , d(new EmojiProxyModel::EmojiProxyModelPrivate(this))
+    , d(new EmojiSortFilterProxyModel::EmojiProxyModelPrivate(this))
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setFilterRole(EmojiModel::Identifier);
     sort(0);
 }
 
-EmojiProxyModel::~EmojiProxyModel() = default;
+EmojiSortFilterProxyModel::~EmojiSortFilterProxyModel() = default;
 
-bool EmojiProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     if (d->mCategory.isEmpty()) {
         return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
@@ -67,12 +67,12 @@ bool EmojiProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source
     return false;
 }
 
-QString EmojiProxyModel::searchIdentifier() const
+QString EmojiSortFilterProxyModel::searchIdentifier() const
 {
     return d->mSearchIdentifier;
 }
 
-void EmojiProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
+void EmojiSortFilterProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
 {
     if (d->mSearchIdentifier != newSearchIdentifier) {
         d->mSearchIdentifier = newSearchIdentifier;
@@ -80,12 +80,12 @@ void EmojiProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
     }
 }
 
-QStringList EmojiProxyModel::recentEmoticons() const
+QStringList EmojiSortFilterProxyModel::recentEmoticons() const
 {
     return d->mRecentEmoticons;
 }
 
-void EmojiProxyModel::setRecentEmoticons(const QStringList &newRecentEmoticons)
+void EmojiSortFilterProxyModel::setRecentEmoticons(const QStringList &newRecentEmoticons)
 {
     if (d->mRecentEmoticons != newRecentEmoticons) {
         d->mRecentEmoticons = newRecentEmoticons;
@@ -96,12 +96,12 @@ void EmojiProxyModel::setRecentEmoticons(const QStringList &newRecentEmoticons)
     }
 }
 
-QString EmojiProxyModel::category() const
+QString EmojiSortFilterProxyModel::category() const
 {
     return d->mCategory;
 }
 
-void EmojiProxyModel::setCategory(const QString &newCategorie)
+void EmojiSortFilterProxyModel::setCategory(const QString &newCategorie)
 {
     if (d->mCategory != newCategorie) {
         d->mCategory = newCategorie;
@@ -119,7 +119,7 @@ void EmojiProxyModel::setCategory(const QString &newCategorie)
     }
 }
 
-bool EmojiProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+bool EmojiSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     if (TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->mCategory) {
         const QString leftIdentifier = sourceModel()->data(left, EmojiModel::Identifier).toString();
@@ -139,4 +139,4 @@ bool EmojiProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right
     }
 }
 
-#include "moc_emojiproxymodel.cpp"
+#include "moc_emojisortfilterproxymodel.cpp"

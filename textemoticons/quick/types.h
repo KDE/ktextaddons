@@ -31,8 +31,8 @@ public:
 struct EmojiProxyModelForeign {
     Q_GADGET
     QML_ELEMENT
-    QML_NAMED_ELEMENT(EmojiProxyModel)
-    QML_FOREIGN(TextEmoticonsCore::EmojiProxyModel)
+    QML_NAMED_ELEMENT(EmojiSortFilterProxyModel)
+    QML_FOREIGN(TextEmoticonsCore::EmojiSortFilterProxyModel)
 };
 
 struct EmojiModelManagerForeign {

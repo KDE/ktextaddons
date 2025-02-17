@@ -14,7 +14,7 @@ namespace TextEmoticonsCore
  * @brief The EmojiProxyModel class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTEMOTICONSCORE_EXPORT EmojiProxyModel : public QSortFilterProxyModel
+class TEXTEMOTICONSCORE_EXPORT EmojiSortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
@@ -22,8 +22,8 @@ class TEXTEMOTICONSCORE_EXPORT EmojiProxyModel : public QSortFilterProxyModel
     Q_PROPERTY(QStringList recentEmoticons READ recentEmoticons WRITE setRecentEmoticons NOTIFY recentEmoticonsChanged)
 
 public:
-    explicit EmojiProxyModel(QObject *parent = nullptr);
-    ~EmojiProxyModel() override;
+    explicit EmojiSortFilterProxyModel(QObject *parent = nullptr);
+    ~EmojiSortFilterProxyModel() override;
     [[nodiscard]] QString category() const;
     void setCategory(const QString &newCategories);
 

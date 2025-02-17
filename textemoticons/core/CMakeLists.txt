@@ -26,8 +26,8 @@ target_sources(KF6TextEmoticonsCore PRIVATE
     unicodeemoticonparser.h
     emojimodel.cpp
     emojimodel.h
-    emojiproxymodel.cpp
-    emojiproxymodel.h
+    emojisortfilterproxymodel.cpp
+    emojisortfilterproxymodel.h
     emojimodelmanager.cpp
     emojimodelmanager.h
 
@@ -86,7 +86,7 @@ ecm_generate_headers(TextEmoticonsCore_CamelCase_HEADERS
     EmoticonCategory
     EmoticonUnicodeUtils
     EmojiModel
-    EmojiProxyModel
+    EmojiSortFilterProxyModel
     EmojiModelManager
     UnicodeEmoticonParser
     CustomEmojiIconManager

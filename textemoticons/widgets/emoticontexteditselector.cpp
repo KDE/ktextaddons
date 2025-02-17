@@ -27,7 +27,7 @@ public:
         : mSearchUnicodeLineEdit(new QLineEdit(q))
         , mCategoryButtons(new EmoticonCategoryButtons(q))
         , mEmoticonListView(new EmoticonListView(q))
-        , mEmojiProxyModel(new TextEmoticonsCore::EmojiProxyModel(q))
+        , mEmojiProxyModel(new TextEmoticonsCore::EmojiSortFilterProxyModel(q))
         , qq(q)
     {
     }
@@ -59,7 +59,7 @@ public:
     QLineEdit *const mSearchUnicodeLineEdit;
     EmoticonCategoryButtons *const mCategoryButtons;
     EmoticonListView *const mEmoticonListView;
-    TextEmoticonsCore::EmojiProxyModel *const mEmojiProxyModel;
+    TextEmoticonsCore::EmojiSortFilterProxyModel *const mEmojiProxyModel;
     bool mCustomEmojiSupport = false;
     EmoticonTextEditSelector *const qq;
 };
