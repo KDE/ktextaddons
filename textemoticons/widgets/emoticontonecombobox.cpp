@@ -14,7 +14,6 @@ EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
     QFont f = font();
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     setFont(f);
-    // TODO add emoji
     addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d")),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Original));
     addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fb")),
