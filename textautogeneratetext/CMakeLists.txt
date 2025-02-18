@@ -21,16 +21,15 @@ install(FILES
 install(EXPORT KF6TextAutogenerateTextTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6TextAutogenerateTextTargets.cmake NAMESPACE KF6::)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/ COMPONENT Devel
 )
 
 add_library(KF6TextAutogenerateText)
 add_library(KF6::TextAutogenerateText ALIAS KF6TextAutogenerateText)
-ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER texttranslator_debug.h
-    IDENTIFIER TEXTTRANSLATOR_LOG
-    CATEGORY_NAME org.kde.kf.texttranslator
-    OLD_CATEGORY_NAMES org.kde.kf6.texttranslator
+ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratetext_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext
     DESCRIPTION "KF6 (TextAutogenerateText)"
     EXPORT KTEXTADDONS
 )
@@ -39,13 +38,13 @@ target_sources(KF6TextAutogenerateText PRIVATE
 )
 if(BUILD_TESTING)
 endif()
-#add_subdirectory(translator/plugins)
+add_subdirectory(autogenerat/plugins)
 
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextAutogenerateText PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KF6TextAutogenerateText BASE_NAME texttranslator)
+generate_export_header(KF6TextAutogenerateText BASE_NAME textautogeneratetext)
 
 
 target_link_libraries(KF6TextAutogenerateText
@@ -71,7 +70,7 @@ install(TARGETS
 )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
+    ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/ COMPONENT Devel
 )
 
@@ -81,8 +80,8 @@ install(FILES
 )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/texttranslator
+    ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/textautogeneratetext
     COMPONENT Devel
 )
 
