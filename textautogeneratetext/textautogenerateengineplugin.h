@@ -7,13 +7,18 @@
 #pragma once
 
 #include <QObject>
+#include <memory>
 namespace TextAutogenerateText
 {
+class TextAutogenerateEnginePluginPrivate;
 class TextAutogenerateEnginePlugin : public QObject
 {
     Q_OBJECT
 public:
     explicit TextAutogenerateEnginePlugin(QObject *parent = nullptr);
     ~TextAutogenerateEnginePlugin() override;
+
+private:
+    std::unique_ptr<TextAutogenerateEnginePluginPrivate> const d;
 };
 }

@@ -7,8 +7,14 @@
 #include "textautogenerateengineplugin.h"
 
 using namespace TextAutogenerateText;
+class TextAutogenerateText::TextAutogenerateEnginePluginPrivate
+{
+    // TODO
+};
+
 TextAutogenerateEnginePlugin::TextAutogenerateEnginePlugin(QObject *parent)
     : QObject{parent}
+    , d(new TextAutogenerateText::TextAutogenerateEnginePluginPrivate)
 {
 }
 
