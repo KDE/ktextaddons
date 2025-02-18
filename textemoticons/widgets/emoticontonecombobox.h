@@ -17,5 +17,6 @@ public:
     explicit EmoticonToneComboBox(QWidget *parent = nullptr);
     ~EmoticonToneComboBox() override;
     [[nodiscard]] TextEmoticonsCore::EmojiModelManager::EmojiTone currentEmojiTone() const;
+    void setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone tone);
 };
 }

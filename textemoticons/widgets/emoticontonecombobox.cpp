@@ -30,4 +30,9 @@ TextEmoticonsCore::EmojiModelManager::EmojiTone EmoticonToneComboBox::currentEmo
     return currentData().value<TextEmoticonsCore::EmojiModelManager::EmojiTone>();
 }
 
+void EmoticonToneComboBox::setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone tone)
+{
+    setCurrentIndex(findData(QVariant::fromValue(tone)));
+}
+
 #include "moc_emoticontonecombobox.cpp"
