@@ -34,14 +34,14 @@ public:
             group = KConfigGroup(KSharedConfig::openStateConfig(), settingsGroupName);
             recentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
         }
-        // TODO save settings tone!
+        tone = static_cast<EmojiModelManager::EmojiTone>(group.readEntry("Tone", static_cast<int>(EmojiModelManager::EmojiTone::All)));
     }
 
     void writeSettings()
     {
         KConfigGroup group(KSharedConfig::openStateConfig(), settingsGroupName);
         group.writeEntry("LastUsedEmojis", recentIdentifier);
-        // Load settings tone.
+        group.writeEntry("Tone", static_cast<int>(tone));
         group.sync();
     }
 
@@ -49,6 +49,7 @@ public:
     TextEmoticonsCore::EmojiModel *const emojiModel;
     QStringList recentIdentifier;
     QStringList excludeEmoticons;
+    EmojiModelManager::EmojiTone tone = EmojiModelManager::EmojiTone::All;
 };
 
 EmojiModelManager::EmojiModelManager(QObject *parent)
@@ -126,6 +127,19 @@ void EmojiModelManager::setExcludeEmoticons(const QStringList &emoticons)
         d->excludeEmoticons = emoticons;
         d->emojiModel->setExcludeEmoticons(d->excludeEmoticons);
         Q_EMIT excludeEmoticonsChanged();
+    }
+}
+
+EmojiModelManager::EmojiTone EmojiModelManager::emojiTone() const
+{
+    return d->tone;
+}
+
+void EmojiModelManager::setEmojiTone(EmojiModelManager::EmojiTone tone)
+{
+    if (d->tone != tone) {
+        d->tone = tone;
+        Q_EMIT emojiToneChanged();
     }
 }
 

@@ -22,6 +22,7 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
 
     Q_PROPERTY(TextEmoticonsCore::EmojiModel *emojiModel READ emojiModel CONSTANT)
     Q_PROPERTY(QStringList recentIdentifier READ recentIdentifier NOTIFY usedIdentifierChanged)
+    Q_PROPERTY(EmojiModelManager::EmojiTone emojiTone READ emojiTone WRITE setEmojiTone NOTIFY emojiToneChanged)
 
 public:
     enum class EmojiTone : uint8_t {
@@ -54,9 +55,13 @@ public:
     [[nodiscard]] QStringList excludeEmoticons() const;
     void setExcludeEmoticons(const QStringList &emoticons);
 
+    [[nodiscard]] EmojiModelManager::EmojiTone emojiTone() const;
+    void setEmojiTone(EmojiModelManager::EmojiTone tone);
+
 Q_SIGNALS:
     void usedIdentifierChanged(const QStringList &lst);
     void excludeEmoticonsChanged();
+    void emojiToneChanged();
 
 protected:
     explicit EmojiModelManager(QObject *parent = nullptr);
