@@ -6,11 +6,13 @@
 
 #include "emoticontonecombobox.h"
 #include "emoticonunicodeutils.h"
+#include <KLocalizedString>
 
 using namespace TextEmoticonsWidgets;
 EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
     : QComboBox(parent)
 {
+    setToolTip(i18n("Select Tone"));
     QFont f = font();
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     setFont(f);
