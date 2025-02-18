@@ -47,7 +47,6 @@ public:
     [[nodiscard]] bool operator==(const UnicodeEmoticon &other) const;
 
 private:
-    [[nodiscard]] TEXTEMOTICONSCORE_NO_EXPORT QString escapeUnicodeEmoji(const QString &pString);
     QStringList mAliases;
     QString mIdentifier;
     QString mUnicode;

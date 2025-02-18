@@ -5,6 +5,7 @@
 */
 
 #include "emoticonunicodeutils.h"
+#include <QList>
 using namespace TextEmoticonsCore;
 QString EmoticonUnicodeUtils::emojiFontName()
 {
@@ -33,4 +34,26 @@ QString EmoticonUnicodeUtils::recentName()
 QString EmoticonUnicodeUtils::customName()
 {
     return QStringLiteral("🖼️");
+}
+
+// input: codepoints in hex like 1f9d7-1f3fb-2640
+// output: QString with 3 ucs4 code points for the above, which is in fact 5 QChars.
+QString EmoticonUnicodeUtils::escapeUnicodeEmoji(const QString &pString)
+{
+    QString retString;
+
+    const QList<QStringView> parts = QStringView(pString).split(QLatin1Char('-'));
+    for (const QStringView &item : parts) {
+        bool ok;
+        const int part = item.toInt(&ok, 16);
+        Q_ASSERT(ok);
+        if (QChar::requiresSurrogates(part)) {
+            retString += QChar::highSurrogate(part);
+            retString += QChar::lowSurrogate(part);
+        } else {
+            retString += QChar(part);
+        }
+    }
+
+    return retString;
 }
