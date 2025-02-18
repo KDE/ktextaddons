@@ -3,8 +3,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextautogeneratetext\")
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutogenerateText")
 
-if(0)
-
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutogenerateTextConfigVersion.cmake"
@@ -35,10 +33,15 @@ ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratet
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
+    textautogenerateengineplugin.h
+    textautogenerateengineplugin.cpp
 )
+
 if(BUILD_TESTING)
+    add_subdirectory(autotests)
 endif()
-add_subdirectory(autogenerat/plugins)
+
+add_subdirectory(autogenerate/plugins)
 
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -125,4 +128,3 @@ configure_package_config_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutogenerateTextConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
-endif()
