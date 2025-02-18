@@ -21,7 +21,7 @@ TranslatorMenu::TranslatorMenu(QObject *parent)
 {
     mMenu->setObjectName(QStringLiteral("menu"));
     mMenu->setTitle(i18n("Translate…"));
-    mMenu->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
+    mMenu->setIcon(QIcon::fromTheme(QStringLiteral("translate")));
     updateMenu();
 }
 
