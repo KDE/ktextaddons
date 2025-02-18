@@ -7,6 +7,7 @@
 
 #include "textemoticonscore_export.h"
 #include <QSortFilterProxyModel>
+#include <TextEmoticonsCore/EmojiModelManager>
 #include <memory>
 namespace TextEmoticonsCore
 {
@@ -20,20 +21,9 @@ class TEXTEMOTICONSCORE_EXPORT EmojiSortFilterProxyModel : public QSortFilterPro
 
     Q_PROPERTY(QString category READ category WRITE setCategory NOTIFY categoryChanged)
     Q_PROPERTY(QStringList recentEmoticons READ recentEmoticons WRITE setRecentEmoticons NOTIFY recentEmoticonsChanged)
-    Q_PROPERTY(EmojiTone emojiTone READ emojiTone WRITE setEmojiTone NOTIFY emojiToneChanged)
+    Q_PROPERTY(EmojiModelManager::EmojiTone emojiTone READ emojiTone WRITE setEmojiTone NOTIFY emojiToneChanged)
 
 public:
-    enum class EmojiTone : uint8_t {
-        All, // Show all emoji
-        Original, // Show
-        Light, // tone1
-        MediumLight, // tone2
-        Medium, // tone3
-        MediumDark, // tone4
-        Dark, // tone5
-    };
-    Q_ENUM(EmojiTone)
-
     explicit EmojiSortFilterProxyModel(QObject *parent = nullptr);
     ~EmojiSortFilterProxyModel() override;
     [[nodiscard]] QString category() const;
@@ -45,8 +35,8 @@ public:
     [[nodiscard]] QString searchIdentifier() const;
     void setSearchIdentifier(const QString &newSearchIdentifier);
 
-    [[nodiscard]] EmojiSortFilterProxyModel::EmojiTone emojiTone() const;
-    void setEmojiTone(EmojiSortFilterProxyModel::EmojiTone tone);
+    [[nodiscard]] EmojiModelManager::EmojiTone emojiTone() const;
+    void setEmojiTone(EmojiModelManager::EmojiTone tone);
 
     [[nodiscard]] QString emojiToneSuffix() const;
 Q_SIGNALS:

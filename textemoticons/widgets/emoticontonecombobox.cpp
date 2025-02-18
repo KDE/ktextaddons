@@ -15,19 +15,19 @@ EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     setFont(f);
     // TODO add emoji
-    addItem(QStringLiteral("Original"), QVariant::fromValue(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Original));
-    addItem(QStringLiteral("Light"), QVariant::fromValue(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Light));
-    addItem(QStringLiteral("MediumLight"), QVariant::fromValue(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::MediumLight));
-    addItem(QStringLiteral("Medium"), QVariant::fromValue(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Medium));
-    addItem(QStringLiteral("MediumDark"), QVariant::fromValue(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::MediumDark));
-    addItem(QStringLiteral("Dark"), QVariant::fromValue(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Dark));
+    addItem(QStringLiteral("Original"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Original));
+    addItem(QStringLiteral("Light"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light));
+    addItem(QStringLiteral("MediumLight"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumLight));
+    addItem(QStringLiteral("Medium"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Medium));
+    addItem(QStringLiteral("MediumDark"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumDark));
+    addItem(QStringLiteral("Dark"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark));
 }
 
 EmoticonToneComboBox::~EmoticonToneComboBox() = default;
 
-TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone EmoticonToneComboBox::currentEmojiTone() const
+TextEmoticonsCore::EmojiModelManager::EmojiTone EmoticonToneComboBox::currentEmojiTone() const
 {
-    return currentData().value<TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone>();
+    return currentData().value<TextEmoticonsCore::EmojiModelManager::EmojiTone>();
 }
 
 #include "moc_emoticontonecombobox.cpp"

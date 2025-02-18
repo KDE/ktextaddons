@@ -24,18 +24,18 @@ public:
     [[nodiscard]] QString emojiToneSuffix() const
     {
         switch (tone) {
-        case EmojiSortFilterProxyModel::EmojiTone::All:
-        case EmojiSortFilterProxyModel::EmojiTone::Original:
+        case EmojiModelManager::EmojiTone::All:
+        case EmojiModelManager::EmojiTone::Original:
             return {};
-        case EmojiSortFilterProxyModel::EmojiTone::Light:
+        case EmojiModelManager::EmojiTone::Light:
             return "_tone1"_L1;
-        case EmojiSortFilterProxyModel::EmojiTone::MediumLight:
+        case EmojiModelManager::EmojiTone::MediumLight:
             return "_tone2"_L1;
-        case EmojiSortFilterProxyModel::EmojiTone::Medium:
+        case EmojiModelManager::EmojiTone::Medium:
             return "_tone3"_L1;
-        case EmojiSortFilterProxyModel::EmojiTone::MediumDark:
+        case EmojiModelManager::EmojiTone::MediumDark:
             return "_tone4"_L1;
-        case EmojiSortFilterProxyModel::EmojiTone::Dark:
+        case EmojiModelManager::EmojiTone::Dark:
             return "_tone5"_L1;
         }
         return {};
@@ -61,7 +61,7 @@ public:
     QString category;
     QStringList recentEmoticons;
     QString searchIdentifier;
-    EmojiSortFilterProxyModel::EmojiTone tone = EmojiSortFilterProxyModel::EmojiTone::All;
+    EmojiModelManager::EmojiTone tone = EmojiModelManager::EmojiTone::All;
     EmojiSortFilterProxyModel *const q;
 };
 
@@ -105,12 +105,12 @@ bool EmojiSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelInd
     return false;
 }
 
-EmojiSortFilterProxyModel::EmojiTone EmojiSortFilterProxyModel::emojiTone() const
+EmojiModelManager::EmojiTone EmojiSortFilterProxyModel::emojiTone() const
 {
     return d->tone;
 }
 
-void EmojiSortFilterProxyModel::setEmojiTone(EmojiSortFilterProxyModel::EmojiTone tone)
+void EmojiSortFilterProxyModel::setEmojiTone(EmojiModelManager::EmojiTone tone)
 {
     if (d->tone != tone) {
         d->tone = tone;

@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emojisortfilterproxymodeltest.h"
+#include "emojimodelmanager.h"
 #include "emojisortfilterproxymodel.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(EmojiSortFilterProxyModelTest)
@@ -19,7 +20,7 @@ void EmojiSortFilterProxyModelTest::shouldHaveDefaultValues()
     QVERIFY(w.category().isEmpty());
     QVERIFY(w.recentEmoticons().isEmpty());
     QVERIFY(w.searchIdentifier().isEmpty());
-    QCOMPARE(w.emojiTone(), TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::All);
+    QCOMPARE(w.emojiTone(), TextEmoticonsCore::EmojiModelManager::EmojiTone::All);
     QCOMPARE(w.emojiToneSuffix(), QString());
 }
 
@@ -27,27 +28,27 @@ void EmojiSortFilterProxyModelTest::shouldHaveToneSuffix()
 {
     TextEmoticonsCore::EmojiSortFilterProxyModel w;
     {
-        w.setEmojiTone(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Original);
+        w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Original);
         QCOMPARE(w.emojiToneSuffix(), QString());
     }
     {
-        w.setEmojiTone(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Light);
+        w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light);
         QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone1"));
     }
     {
-        w.setEmojiTone(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::MediumLight);
+        w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumLight);
         QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone2"));
     }
     {
-        w.setEmojiTone(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Medium);
+        w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Medium);
         QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone3"));
     }
     {
-        w.setEmojiTone(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::MediumDark);
+        w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumDark);
         QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone4"));
     }
     {
-        w.setEmojiTone(TextEmoticonsCore::EmojiSortFilterProxyModel::EmojiTone::Dark);
+        w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark);
         QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone5"));
     }
 }
