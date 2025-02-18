@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:38+0000\n"
+"POT-Creation-Date: 2025-02-18 00:39+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -85,7 +85,7 @@ msgstr "हालिया साफ़ करें"
 msgid "Add Smiley"
 msgstr "स्माइली जोड़ें"
 
-#: widgets/emoticontexteditselector.cpp:83
+#: widgets/emoticontexteditselector.cpp:93
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
