@@ -20,7 +20,7 @@ public:
     {
         emojiModel->setUnicodeEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());
     }
-    void loadRecentUsed()
+    void loadSettings()
     {
         // Try reading the old key first
         KConfigGroup group(KSharedConfig::openConfig(), QStringLiteral("EmoticonRecentUsed"));
@@ -37,7 +37,7 @@ public:
         // TODO save settings tone!
     }
 
-    void writeRecentUsed()
+    void writeSettings()
     {
         KConfigGroup group(KSharedConfig::openStateConfig(), settingsGroupName);
         group.writeEntry("LastUsedEmojis", recentIdentifier);
@@ -55,12 +55,12 @@ EmojiModelManager::EmojiModelManager(QObject *parent)
     : QObject(parent)
     , d(new EmojiModelManagerPrivate(this))
 {
-    d->loadRecentUsed();
+    d->loadSettings();
 }
 
 EmojiModelManager::~EmojiModelManager()
 {
-    d->writeRecentUsed();
+    d->writeSettings();
 }
 
 EmojiModelManager *EmojiModelManager::self()
@@ -77,7 +77,7 @@ TextEmoticonsCore::EmojiModel *EmojiModelManager::emojiModel() const
 void EmojiModelManager::setRecentSettingsGroupName(const QString &key)
 {
     d->settingsGroupName = key;
-    d->loadRecentUsed();
+    d->loadSettings();
 }
 
 const QStringList &EmojiModelManager::recentIdentifier() const
@@ -88,7 +88,7 @@ const QStringList &EmojiModelManager::recentIdentifier() const
 void EmojiModelManager::setRecentIdentifier(const QStringList &newRecentIdentifier)
 {
     d->recentIdentifier = newRecentIdentifier;
-    d->writeRecentUsed();
+    d->writeSettings();
     Q_EMIT usedIdentifierChanged(d->recentIdentifier);
 }
 
@@ -101,7 +101,7 @@ void EmojiModelManager::addIdentifier(const QString &identifier)
         }
     }
     d->recentIdentifier.prepend(identifier);
-    d->writeRecentUsed();
+    d->writeSettings();
     Q_EMIT usedIdentifierChanged(d->recentIdentifier);
 }
 
