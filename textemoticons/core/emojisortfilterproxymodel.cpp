@@ -195,4 +195,5 @@ QString EmojiSortFilterProxyModel::emojiToneSuffix() const
 {
     return d->emojiToneSuffix();
 }
+
 #include "moc_emojisortfilterproxymodel.cpp"
