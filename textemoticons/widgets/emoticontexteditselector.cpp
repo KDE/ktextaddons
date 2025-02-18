@@ -58,7 +58,6 @@ public:
             qq->parentWidget()->close();
         }
     }
-    // TODO save/load EmoticonToneComboBox settings
 
     QLineEdit *const searchUnicodeLineEdit;
     EmoticonCategoryButtons *const categoryButtons;
@@ -94,6 +93,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     hLayout->addWidget(d->searchUnicodeLineEdit);
     d->emoticonToneComboBox->setObjectName(QStringLiteral("emoticonToneComboBox"));
     hLayout->addWidget(d->emoticonToneComboBox);
+    d->emoticonToneComboBox->setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::self()->emojiTone());
 
     d->categoryButtons->setObjectName(QStringLiteral("mCategoryButtons"));
     mainLayout->addWidget(d->categoryButtons);
@@ -121,9 +121,14 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     });
 
     connect(d->emoticonToneComboBox, &TextEmoticonsWidgets::EmoticonToneComboBox::currentIndexChanged, this, [this]() {
-        d->emojiSortFilterProxyModel->setEmojiTone(d->emoticonToneComboBox->currentEmojiTone());
+        TextEmoticonsCore::EmojiModelManager::self()->setEmojiTone(d->emoticonToneComboBox->currentEmojiTone());
     });
 
+    connect(TextEmoticonsCore::EmojiModelManager::self(), &TextEmoticonsCore::EmojiModelManager::emojiToneChanged, this, [this]() {
+        d->emojiSortFilterProxyModel->setEmojiTone(TextEmoticonsCore::EmojiModelManager::self()->emojiTone());
+    });
+
+    d->emojiSortFilterProxyModel->setEmojiTone(TextEmoticonsCore::EmojiModelManager::self()->emojiTone());
     const QSize popupMenuSize = QSize(400, 250);
     setMinimumSize(popupMenuSize);
 }

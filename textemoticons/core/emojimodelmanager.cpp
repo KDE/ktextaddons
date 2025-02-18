@@ -34,7 +34,7 @@ public:
             group = KConfigGroup(KSharedConfig::openStateConfig(), settingsGroupName);
             recentIdentifier = group.readEntry("LastUsedEmojis", QStringList());
         }
-        tone = static_cast<EmojiModelManager::EmojiTone>(group.readEntry("Tone", static_cast<int>(EmojiModelManager::EmojiTone::All)));
+        tone = static_cast<EmojiModelManager::EmojiTone>(group.readEntry("Tone", static_cast<int>(EmojiModelManager::EmojiTone::Original)));
     }
 
     void writeSettings()
@@ -139,6 +139,7 @@ void EmojiModelManager::setEmojiTone(EmojiModelManager::EmojiTone tone)
 {
     if (d->tone != tone) {
         d->tone = tone;
+        d->writeSettings();
         Q_EMIT emojiToneChanged();
     }
 }
