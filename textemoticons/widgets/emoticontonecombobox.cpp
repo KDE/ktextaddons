@@ -15,12 +15,18 @@ EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     setFont(f);
     // TODO add emoji
-    addItem(QStringLiteral("Original"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Original));
-    addItem(QStringLiteral("Light"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light));
-    addItem(QStringLiteral("MediumLight"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumLight));
-    addItem(QStringLiteral("Medium"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Medium));
-    addItem(QStringLiteral("MediumDark"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumDark));
-    addItem(QStringLiteral("Dark"), QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark));
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d")),
+            QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Original));
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fb")),
+            QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light));
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fc")),
+            QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumLight));
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fd")),
+            QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Medium));
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fe")),
+            QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumDark));
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3ff")),
+            QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark));
 }
 
 EmoticonToneComboBox::~EmoticonToneComboBox() = default;
