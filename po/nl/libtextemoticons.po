@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-18 00:39+0000\n"
+"POT-Creation-Date: 2025-02-19 00:40+0000\n"
 "PO-Revision-Date: 2024-07-11 09:58+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -85,8 +85,13 @@ msgstr "Recent wissen"
 msgid "Add Smiley"
 msgstr "Smiley toevoegen"
 
-#: widgets/emoticontexteditselector.cpp:93
+#: widgets/emoticontexteditselector.cpp:92
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Emoticon zoeken…"
+
+#: widgets/emoticontonecombobox.cpp:15
+#, kde-format
+msgid "Select Tone"
+msgstr ""

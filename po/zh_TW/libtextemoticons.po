@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-18 00:39+0000\n"
+"POT-Creation-Date: 2025-02-19 00:40+0000\n"
 "PO-Revision-Date: 2024-07-14 17:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -85,8 +85,13 @@ msgstr "清除最近使用"
 msgid "Add Smiley"
 msgstr "新增表情符號"
 
-#: widgets/emoticontexteditselector.cpp:93
+#: widgets/emoticontexteditselector.cpp:92
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "搜尋表情符號…"
+
+#: widgets/emoticontonecombobox.cpp:15
+#, kde-format
+msgid "Select Tone"
+msgstr ""
