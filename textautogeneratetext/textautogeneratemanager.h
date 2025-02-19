@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogeneratetext_export.h"
 #include <QObject>
 namespace TextAutogenerateText
 {
-class TextAutogenerateManager : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateManager : public QObject
 {
     Q_OBJECT
 public:

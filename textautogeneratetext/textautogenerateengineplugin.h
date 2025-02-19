@@ -5,13 +5,13 @@
 */
 
 #pragma once
-
+#include "textautogeneratetext_export.h"
 #include <QObject>
 #include <memory>
 namespace TextAutogenerateText
 {
 class TextAutogenerateEnginePluginPrivate;
-class TextAutogenerateEnginePlugin : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateEnginePlugin : public QObject
 {
     Q_OBJECT
 public:
