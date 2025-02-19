@@ -43,6 +43,14 @@ public:
 
     bool filterTone(int source_row, const QModelIndex &source_parent) const
     {
+        if (tone == EmojiModelManager::EmojiTone::Original) {
+            const QModelIndex sourceIndex = q->sourceModel()->index(source_row, 0, source_parent);
+            const QString identifier = sourceIndex.data(EmojiModel::Identifier).toString();
+            if (!identifier.contains("_tone"_L1)) {
+                return true;
+            }
+            return false;
+        }
         const QString suffix = emojiToneSuffix();
         if (suffix.isEmpty()) {
             return true;
