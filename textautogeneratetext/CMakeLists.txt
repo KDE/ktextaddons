@@ -63,8 +63,8 @@ target_link_libraries(KF6TextAutogenerateText
 target_include_directories(KF6TextAutogenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/>")
 
 set_target_properties(KF6TextAutogenerateText PROPERTIES
-    VERSION ${TEXTTRANSLATE_VERSION}
-    SOVERSION ${TEXTTRANSLATE_SOVERSION}
+    VERSION ${TEXTAUTOGENERATETEXT_VERSION}
+    SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
     EXPORT_NAME TextAutogenerateText
 )
 
@@ -95,7 +95,7 @@ if(BUILD_QCH)
         KF6TextAutogenerateText_QCH
         NAME KF6TextAutogenerateText
         BASE_NAME KF6TextAutogenerateText
-        VERSION ${TEXTTRANSLATE_VERSION}
+        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
         ${TextAutogenerateText_translator_HEADERS}
@@ -108,7 +108,7 @@ if(BUILD_QCH)
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            TEXTTRANSLATE_EXPORT
+            TEXTAUTOGENERATETEXT_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
