@@ -14,5 +14,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateManager : public QObject
 public:
     explicit TextAutogenerateManager(QObject *parent = nullptr);
     ~TextAutogenerateManager() override;
+
+    static TextAutogenerateManager *self();
 };
 }

@@ -13,4 +13,12 @@ TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
 
 TextAutogenerateManager::~TextAutogenerateManager() = default;
 
+TextAutogenerateManager *TextAutogenerateManager::self()
+{
+    static TextAutogenerateManager s_self;
+    return &s_self;
+}
+
+// TODO add loadSettings/saveSettings
+
 #include "moc_textautogeneratemanager.cpp"
