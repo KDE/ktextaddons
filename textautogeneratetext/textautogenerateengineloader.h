@@ -12,7 +12,7 @@
 namespace TextAutogenerateText
 {
 class TextAutogenerateEngineLoaderPrivate;
-class SpeechToTextClient;
+class TextAutogenerateTextClient;
 /**
  * @brief The TextAutogenerateEngineLoader class
  * @author Laurent Montel <montel@kde.org>
@@ -26,7 +26,7 @@ public:
     explicit TextAutogenerateEngineLoader(QObject *parent = nullptr);
     ~TextAutogenerateEngineLoader() override;
 
-    [[nodiscard]] TextAutogenerateText::SpeechToTextClient *createSpeechToTextClient(const QString &clientName);
+    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextClient *createSpeechToTextClient(const QString &clientName);
 
     [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 
