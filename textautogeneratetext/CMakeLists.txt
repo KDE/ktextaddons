@@ -36,6 +36,8 @@ ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratet
 target_sources(KF6TextAutogenerateText PRIVATE
     textautogenerateengineplugin.h
     textautogenerateengineplugin.cpp
+    # textautogenerateengineloader.cpp
+    # textautogenerateengineloader.cpp
 )
 
 if(BUILD_TESTING)
