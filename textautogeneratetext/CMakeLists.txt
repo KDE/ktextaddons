@@ -74,6 +74,15 @@ set_target_properties(KF6TextAutogenerateText PROPERTIES
     EXPORT_NAME TextAutogenerateText
 )
 
+ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetext_HEADERS
+    HEADER_NAMES
+    TextAutogenerateEnginePlugin
+    TextAutogenerateTextClient
+    TextAutogenerateTextPlugin
+    REQUIRED_HEADERS TextAutogenerateText_textautogeneratetext_HEADERS
+    PREFIX TextAutogenerateText
+)
+
 install(TARGETS
     KF6TextAutogenerateText
     EXPORT KF6TextAutogenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
@@ -85,12 +94,14 @@ install(FILES
 )
 
 install(FILES
+    ${TextAutogenerateText_Camelcasestextautogeneratetext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/TextAutogenerateText
     COMPONENT Devel
 )
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
+    ${TextAutogenerateText_textautogeneratetext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/textautogeneratetext
     COMPONENT Devel
 )
