@@ -40,6 +40,7 @@ public:
 
     [[nodiscard]] virtual TextAutogenerateText::TextAutogenerateTextClient::EngineType engineType() const = 0;
 
+    [[nodiscard]] QString convertEngineType(TextAutogenerateText::TextAutogenerateTextClient::EngineType type);
 Q_SIGNALS:
     void configureChanged();
 };

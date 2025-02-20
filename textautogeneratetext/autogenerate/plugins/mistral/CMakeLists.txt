@@ -13,6 +13,8 @@ ecm_qt_declare_logging_category(autogeneratetext_mistral
 target_sources(autogeneratetext_mistral PRIVATE
     mistralclient.h
     mistralclient.cpp
+    mistralplugin.h
+    mistralplugin.cpp
 )
 
 target_link_libraries(autogeneratetext_mistral PRIVATE KF6::TextAutogenerateText KF6::I18n)

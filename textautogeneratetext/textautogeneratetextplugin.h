@@ -25,6 +25,7 @@ public:
     [[nodiscard]] virtual bool loadSettings() = 0;
 
     virtual void clear() = 0;
+    [[nodiscard]] virtual QString result() = 0;
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
