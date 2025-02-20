@@ -47,6 +47,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             return unicodeEmoti.identifier();
         case IsCustom:
             return false;
+        case DiversityChildren:
+            return unicodeEmoti.diversityChildren();
         }
     } else {
         const auto &customEmoji = mCustomEmojiList.at(index.row() - mEmoticonList.count());
@@ -96,6 +98,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             }
             return customEmoji.fileName();
         }
+        case DiversityChildren:
+            return false;
         }
     }
     return {};
@@ -155,13 +159,12 @@ void EmojiModel::setExcludeEmoticons(const QStringList &emoticons)
 
 QHash<int, QByteArray> EmojiModel::roleNames() const
 {
-    return {{
-        {UnicodeEmoji, QByteArrayLiteral("unicode")},
-        {Identifier, QByteArrayLiteral("identifier")},
-        {Category, QByteArrayLiteral("category")},
-        {IsCustom, QByteArrayLiteral("isCustom")},
-        {FileName, QByteArrayLiteral("fileName")},
-    }};
+    return {{{UnicodeEmoji, QByteArrayLiteral("unicode")},
+             {Identifier, QByteArrayLiteral("identifier")},
+             {Category, QByteArrayLiteral("category")},
+             {IsCustom, QByteArrayLiteral("isCustom")},
+             {FileName, QByteArrayLiteral("fileName")},
+             {DiversityChildren, QByteArrayLiteral("diversityChildren")}}};
 }
 
 #include "moc_emojimodel.cpp"

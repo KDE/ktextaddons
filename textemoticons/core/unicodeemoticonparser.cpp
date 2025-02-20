@@ -45,7 +45,7 @@ QList<UnicodeEmoticon> UnicodeEmoticonParser::parse(const QJsonObject &o) const
         emoticon.setCategory(category);
         emoticon.setIdentifier(emojiObj["shortname"_L1].toString());
         emoticon.setOrder(emojiObj["order"_L1].toInt());
-        emoticon.setDiversityChildren(emojiObj["diversity_children"_L1].toArray().isEmpty());
+        emoticon.setDiversityChildren(!emojiObj["diversity_children"_L1].toArray().isEmpty());
         const auto shortnameAlternates = emojiObj["shortname_alternates"_L1].toArray();
         const auto ascii = emojiObj["ascii"_L1].toArray();
         emoticon.setAliases(aliases(shortnameAlternates, ascii));

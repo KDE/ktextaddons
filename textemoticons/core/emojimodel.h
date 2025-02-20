@@ -30,6 +30,7 @@ public:
         AnimatedFileName,
         IsCustom,
         FileName,
+        DiversityChildren,
     };
     Q_ENUM(EmoticonsRoles)
 
