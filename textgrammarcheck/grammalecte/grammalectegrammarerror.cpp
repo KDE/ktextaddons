@@ -5,13 +5,13 @@
 */
 
 #include "grammalectegrammarerror.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textgrammarcheck_debug.h"
 
 #include <QJsonArray>
 
 using namespace TextGrammarCheck;
+using namespace Qt::Literals::StringLiterals;
 
 GrammalecteGrammarError::GrammalecteGrammarError() = default;
 

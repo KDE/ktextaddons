@@ -8,7 +8,6 @@
 */
 
 #include "lingvaengineplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "lingvaengineutil.h"
 #include "lingvatranslator_debug.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonDocument>
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
 LingvaEnginePlugin::LingvaEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)
 {

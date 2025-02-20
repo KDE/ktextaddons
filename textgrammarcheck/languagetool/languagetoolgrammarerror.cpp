@@ -5,12 +5,12 @@
 */
 
 #include "languagetoolgrammarerror.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetoolmanager.h"
 #include "textgrammarcheck_debug.h"
-
 #include <QJsonArray>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolGrammarError::LanguageToolGrammarError() = default;
 

@@ -5,13 +5,13 @@
 */
 
 #include "languagetoolparser.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "languagetoolgrammarerror.h"
 
 #include <QJsonArray>
 
 using namespace TextGrammarCheck;
+using namespace Qt::Literals::StringLiterals;
 
 LanguageToolParser::LanguageToolParser() = default;
 

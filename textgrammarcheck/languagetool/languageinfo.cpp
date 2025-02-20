@@ -5,11 +5,11 @@
 */
 
 #include "languageinfo.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QJsonObject>
 
 using namespace TextGrammarCheck;
+using namespace Qt::Literals::StringLiterals;
 
 LanguageInfo::LanguageInfo() = default;
 

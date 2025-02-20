@@ -5,7 +5,6 @@
 */
 
 #include "importlibreofficeautocorrection.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautocorrection_debug.h"
 #include <KLocalizedString>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryDir>
 
 using namespace TextAutoCorrectionCore;
+using namespace Qt::Literals::StringLiterals;
 
 ImportLibreOfficeAutocorrection::ImportLibreOfficeAutocorrection() = default;
 

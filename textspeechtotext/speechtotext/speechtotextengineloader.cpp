@@ -5,7 +5,6 @@
 */
 
 #include "speechtotextengineloader.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "speechtotextclient.h"
 #include "textspeechtotext_debug.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDir>
 #include <QPluginLoader>
 using namespace TextSpeechToText;
+using namespace Qt::Literals::StringLiterals;
 class TextSpeechToText::SpeechToTextEngineLoaderPrivate
 {
 public:

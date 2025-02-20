@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechconfigwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textedittexttospeech_debug.h"
 #include "texttospeechconfiginterface.h"
@@ -23,6 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QTimer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     : QWidget(parent)

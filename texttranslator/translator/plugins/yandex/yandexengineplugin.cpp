@@ -7,7 +7,6 @@
 */
 
 #include "yandexengineplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <TextTranslator/TranslatorEngineAccessManager>
 
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonObject>
 #include <QUrlQuery>
 
+using namespace Qt::Literals::StringLiterals;
 QString YandexEnginePlugin::sYandexKey;
 
 YandexEnginePlugin::YandexEnginePlugin(QObject *parent)

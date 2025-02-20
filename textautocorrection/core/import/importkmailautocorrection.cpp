@@ -5,10 +5,10 @@
 */
 
 #include "importkmailautocorrection.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 #include <QXmlStreamReader>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoCorrectionCore;
 
 ImportKMailAutocorrection::ImportKMailAutocorrection() = default;

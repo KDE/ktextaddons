@@ -6,7 +6,6 @@
 */
 
 #include "translatorwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttranslator_debug.h"
 #include "translator/misc/translatorutil.h"
@@ -36,6 +35,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 namespace
 {

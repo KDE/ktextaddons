@@ -5,13 +5,13 @@
 */
 
 #include "languagetoolmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QColor>
 #include <QNetworkAccessManager>
 #include <QRandomGenerator>
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static const char myLanguageToolManagerGroupName[] = "LanguageTool";

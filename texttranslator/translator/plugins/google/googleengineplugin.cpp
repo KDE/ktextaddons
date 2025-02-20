@@ -5,7 +5,6 @@
 */
 
 #include "googleengineplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "googletranslator_debug.h"
 #include <KLocalizedString>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QUrlQuery>
 #include <TextTranslator/TranslatorEngineAccessManager>
 
+using namespace Qt::Literals::StringLiterals;
 GoogleEnginePlugin::GoogleEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)
 {

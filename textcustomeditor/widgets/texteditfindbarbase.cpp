@@ -5,7 +5,6 @@
 */
 
 #include "texteditfindbarbase.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textcustomeditor_debug.h"
 #include "widgets/textfindreplacewidget.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 using namespace TextCustomEditor;
+using namespace Qt::Literals::StringLiterals;
 
 TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     : QWidget(parent)

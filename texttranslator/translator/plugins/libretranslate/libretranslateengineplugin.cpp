@@ -8,7 +8,6 @@
 */
 
 #include "libretranslateengineplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libretranslateengineutil.h"
 #include "libretranslatetranslator_debug.h"
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextTranslator/TranslatorEngineAccessManager>
 #include <qt6keychain/keychain.h>
 
+using namespace Qt::Literals::StringLiterals;
 LibreTranslateEnginePlugin::LibreTranslateEnginePlugin(QObject *parent)
     : TextTranslator::TranslatorEnginePlugin(parent)
 {

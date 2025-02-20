@@ -5,11 +5,11 @@
 */
 
 #include "grammalectegenerateconfigoptionjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textgrammarcheck_debug.h"
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 GrammalecteGenerateConfigOptionJob::GrammalecteGenerateConfigOptionJob(QObject *parent)
     : QObject(parent)

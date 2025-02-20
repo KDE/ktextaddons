@@ -7,7 +7,6 @@
 */
 
 #include "bingengineplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "translator/plugins/bing/bingtranslator_debug.h"
 #include <KLocalizedString>
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QNetworkRequest>
 #include <TextTranslator/TranslatorEngineAccessManager>
 
+using namespace Qt::Literals::StringLiterals;
 QByteArray BingEnginePlugin::sBingKey;
 QByteArray BingEnginePlugin::sBingToken;
 QString BingEnginePlugin::sBingIg;

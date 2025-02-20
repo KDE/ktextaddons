@@ -5,7 +5,6 @@
 */
 
 #include "grammalecteparser.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grammalectegrammarerror.h"
 #include "textgrammarcheck_debug.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonValue>
 
 using namespace TextGrammarCheck;
+using namespace Qt::Literals::StringLiterals;
 
 GrammalecteParser::GrammalecteParser() = default;
 
