@@ -46,6 +46,9 @@ public:
 
     [[nodiscard]] bool operator==(const UnicodeEmoticon &other) const;
 
+    void setDiversityChildren(bool b);
+    [[nodiscard]] bool diversityChildren() const;
+
 private:
     QStringList mAliases;
     QString mIdentifier;
@@ -54,6 +57,7 @@ private:
     QString mKey;
     mutable QString mCachedHtml;
     int mOrder = -1;
+    bool mHasDiversityChildren = false;
 };
 }
 Q_DECLARE_METATYPE(TextEmoticonsCore::UnicodeEmoticon)

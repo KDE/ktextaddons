@@ -22,6 +22,7 @@ void UnicodeEmoticonTest::shouldHaveDefaultValues()
     QVERIFY(w.key().isEmpty());
     QVERIFY(!w.isValid());
     QCOMPARE(w.order(), -1);
+    QVERIFY(!w.diversityChildren());
 }
 
 #include "moc_unicodeemoticontest.cpp"
