@@ -2,7 +2,7 @@
     "version": 3,
     "configurePresets": [
         {
-            "name": "base-qt6",
+            "name": "base",
             "displayName": "base preset",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build-${presetName}",
@@ -10,8 +10,8 @@
             "hidden": true
         },	
         {   
-            "name": "dev-clang-qt6",
-            "displayName": "dev-clang-qt6",
+            "name": "dev-clang",
+            "displayName": "dev-clang",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
@@ -23,12 +23,12 @@
                 "CCACHE_DISABLE": "ON"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         },
         {
-            "name": "dev-mold-qt6",
-            "displayName": "Build qt6 as debug + using mold linker",
+            "name": "dev-mold",
+            "displayName": "Build as debug + using mold linker",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "BUILD_WITH_QT6": "ON",
@@ -36,26 +36,26 @@
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         },	
         {
-            "name": "dev-qt6",
-            "displayName": "Build against qt6",
-            "binaryDir": "${sourceDir}/build-qt6",
+            "name": "dev",
+            "displayName": "Build against",
+            "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "BUILD_WITH_QT6": "ON",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         },
         {
-            "name": "dev-bergamot-plugins-qt6",
-            "displayName": "Build against qt6 + bergamot plugins",
-            "binaryDir": "${sourceDir}/build-qt6-bergamot",
+            "name": "dev-bergamot-plugins",
+            "displayName": "Build against + bergamot plugins",
+            "binaryDir": "${sourceDir}/build-bergamot",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "BUILD_WITH_QT6": "ON",
@@ -66,12 +66,12 @@
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         },
         {
-            "name": "asan-qt6",
-            "displayName": "Build with Asan support (qt6).",
+            "name": "asan",
+            "displayName": "Build with Asan support.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "ECM_ENABLE_SANITIZERS" : "'address;undefined'",
@@ -79,11 +79,11 @@
                 "BUILD_WITH_QT6": "ON"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         },	
         {
-            "name": "unity-qt6",
+            "name": "unity",
             "displayName": "Build with CMake unity support.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
@@ -92,11 +92,11 @@
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         },
         {   
-            "name": "release-qt6",
+            "name": "release",
             "displayName": "Build as release mode.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
@@ -104,38 +104,38 @@
 		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
-                "base-qt6"
+                "base"
             ]
         }
     ],
     "buildPresets": [
         {
-            "name": "dev-clang-qt6",
-            "configurePreset": "dev-clang-qt6"
+            "name": "dev-clang",
+            "configurePreset": "dev-clang"
         },
         {
-            "name": "dev-mold-qt6",
-            "configurePreset": "dev-mold-qt6"
+            "name": "dev-mold",
+            "configurePreset": "dev-mold"
         },
         {
-            "name": "asan-qt6",
-            "configurePreset": "asan-qt6"
+            "name": "asan",
+            "configurePreset": "asan"
         },	
         {
-            "name": "dev-bergamot-plugins-qt6",
-            "configurePreset": "dev-bergamot-plugins-qt6"
+            "name": "dev-bergamot-plugins",
+            "configurePreset": "dev-bergamot-plugins"
         },
         {
-            "name": "dev-qt6",
-            "configurePreset": "dev-qt6"
+            "name": "dev",
+            "configurePreset": "dev"
         },
         {
-            "name": "release-qt6",
-            "configurePreset": "release-qt6"
+            "name": "release",
+            "configurePreset": "release"
         },	
         {
-            "name": "unity-qt6",
-            "configurePreset": "unity-qt6"
+            "name": "unity",
+            "configurePreset": "unity"
         }
     ]
 }
