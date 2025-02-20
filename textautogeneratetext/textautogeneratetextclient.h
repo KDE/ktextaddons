@@ -32,7 +32,7 @@ public:
 
     virtual QString translatedName() const = 0;
 
-    virtual TextAutogenerateTextPlugin *createTextAutogenratePlugin() = 0;
+    virtual TextAutogenerateTextPlugin *createTextAutogeneratePlugin() = 0;
 
     [[nodiscard]] virtual bool hasConfigurationDialog() const;
 
