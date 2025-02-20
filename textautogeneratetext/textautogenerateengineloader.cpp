@@ -17,7 +17,7 @@ class TextAutogenerateText::TextAutogenerateEngineLoaderPrivate
 {
 public:
     QSet<QString> loadedPlugins;
-    QHash<QString, TextAutogenerateTextClient *> speechToTextClients;
+    QHash<QString, TextAutogenerateTextClient *> autogenerateTextClients;
 };
 
 TextAutogenerateEngineLoader *TextAutogenerateEngineLoader::self()
@@ -49,7 +49,7 @@ void TextAutogenerateEngineLoader::loadPlugins()
         }
     }
     if (d->loadedPlugins.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "No speechtotext plugins available!";
+        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "No autogenerate plugins available!";
         Q_EMIT noPluginsFound();
     }
 }
@@ -77,13 +77,13 @@ void TextAutogenerateEngineLoader::loadPlugin(const QString &pluginPath)
         plugin.unload(); // don't leave it in memory
         return;
     }
-    d->speechToTextClients.insert(client->name(), client);
+    d->autogenerateTextClients.insert(client->name(), client);
 }
 
 TextAutogenerateTextClient *TextAutogenerateEngineLoader::createSpeechToTextClient(const QString &clientName)
 {
-    auto clientsItr = d->speechToTextClients.constFind(clientName);
-    if (clientsItr == d->speechToTextClients.constEnd()) {
+    auto clientsItr = d->autogenerateTextClients.constFind(clientName);
+    if (clientsItr == d->autogenerateTextClients.constEnd()) {
         qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Client name not found: " << clientName;
         Q_EMIT loadingSpeechToTextFailed();
         return nullptr;
@@ -93,8 +93,8 @@ TextAutogenerateTextClient *TextAutogenerateEngineLoader::createSpeechToTextClie
 
 bool TextAutogenerateEngineLoader::hasConfigurationDialog(const QString &clientName) const
 {
-    auto clientsItr = d->speechToTextClients.constFind(clientName);
-    if (clientsItr == d->speechToTextClients.constEnd()) {
+    auto clientsItr = d->autogenerateTextClients.constFind(clientName);
+    if (clientsItr == d->autogenerateTextClients.constEnd()) {
         qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Client name not found: " << clientName;
         return false;
     }
@@ -103,8 +103,8 @@ bool TextAutogenerateEngineLoader::hasConfigurationDialog(const QString &clientN
 
 bool TextAutogenerateEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
 {
-    auto clientsItr = d->speechToTextClients.constFind(clientName);
-    if (clientsItr == d->speechToTextClients.constEnd()) {
+    auto clientsItr = d->autogenerateTextClients.constFind(clientName);
+    if (clientsItr == d->autogenerateTextClients.constEnd()) {
         qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Client name not found: " << clientName;
         return false;
     }
@@ -114,7 +114,7 @@ bool TextAutogenerateEngineLoader::showConfigureDialog(const QString &clientName
 QMap<QString, QString> TextAutogenerateEngineLoader::speechToTextEngineInfos() const
 {
     QMap<QString, QString> map;
-    QHashIterator<QString, TextAutogenerateTextClient *> i(d->speechToTextClients);
+    QHashIterator<QString, TextAutogenerateTextClient *> i(d->autogenerateTextClients);
     while (i.hasNext()) {
         i.next();
         map.insert(i.key(), i.value()->translatedName());
@@ -124,8 +124,8 @@ QMap<QString, QString> TextAutogenerateEngineLoader::speechToTextEngineInfos() c
 
 QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
 {
-    if (!d->speechToTextClients.isEmpty()) {
-        return *d->speechToTextClients.keyBegin();
+    if (!d->autogenerateTextClients.isEmpty()) {
+        return *d->autogenerateTextClients.keyBegin();
     }
     qCWarning(TEXTAUTOGENERATETEXT_LOG) << "No plugin found ! ";
     return QString();
@@ -133,7 +133,7 @@ QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
 
 bool TextAutogenerateEngineLoader::hasEngine() const
 {
-    return !d->speechToTextClients.isEmpty();
+    return !d->autogenerateTextClients.isEmpty();
 }
 
 #include "moc_textautogenerateengineloader.cpp"
