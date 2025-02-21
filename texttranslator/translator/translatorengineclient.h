@@ -19,7 +19,7 @@ class TEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
     Q_OBJECT
 public:
     enum EngineType {
-        Locale,
+        Local,
         Network,
     };
     explicit TranslatorEngineClient(QObject *parent = nullptr);

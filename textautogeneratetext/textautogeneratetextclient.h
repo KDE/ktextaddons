@@ -19,7 +19,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextClient : public QObject
     Q_OBJECT
 public:
     enum EngineType {
-        Locale,
+        Local,
         Network,
     };
     explicit TextAutogenerateTextClient(QObject *parent = nullptr);

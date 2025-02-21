@@ -29,8 +29,8 @@ bool TextAutogenerateTextClient::showConfigureDialog(QWidget *parentWidget)
 QString TextAutogenerateTextClient::convertEngineType(TextAutogenerateText::TextAutogenerateTextClient::EngineType type)
 {
     switch (type) {
-    case TextAutogenerateText::TextAutogenerateTextClient::EngineType::Locale:
-        return i18n("Locale");
+    case TextAutogenerateText::TextAutogenerateTextClient::EngineType::Local:
+        return i18n("Local");
     case TextAutogenerateText::TextAutogenerateTextClient::EngineType::Network:
         return i18n("Network");
     }

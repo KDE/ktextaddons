@@ -61,8 +61,8 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> TranslatorEngineClient::
 QString TranslatorEngineClient::convertEngineType(TextTranslator::TranslatorEngineClient::EngineType type)
 {
     switch (type) {
-    case TextTranslator::TranslatorEngineClient::EngineType::Locale:
-        return i18n("Locale");
+    case TextTranslator::TranslatorEngineClient::EngineType::Local:
+        return i18n("Local");
     case TextTranslator::TranslatorEngineClient::EngineType::Network:
         return i18n("Network");
     }
