@@ -15,6 +15,9 @@ target_sources(autogeneratetext_mistral PRIVATE
     mistralclient.cpp
     mistralplugin.h
     mistralplugin.cpp
+
+    mistralconfiguredialog.h
+    mistralconfiguredialog.cpp
 )
 
 target_link_libraries(autogeneratetext_mistral PRIVATE KF6::TextAutogenerateText KF6::I18n)
