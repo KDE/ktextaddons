@@ -1,0 +1,37 @@
+# Translation of libtextautogeneratetext.po to Catalan
+# Copyright (C) 2025 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-22 00:40+0000\n"
+"PO-Revision-Date: 2025-02-21 10:14+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: autogenerate/plugins/mistral/mistralclient.cpp:25
+#, kde-format
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+# skip-rule: kct-locale
+#: textautogeneratetextclient.cpp:33
+#, fuzzy, kde-format
+#| msgid "Locale"
+msgid "Local"
+msgstr "Local"
+
+#: textautogeneratetextclient.cpp:35
+#, kde-format
+msgid "Network"
+msgstr "Xarxa"
