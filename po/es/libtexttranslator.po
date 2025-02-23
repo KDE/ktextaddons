@@ -1,15 +1,15 @@
 # Spanish translations for libtexttranslator.po package.
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) 2023-2025 This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
 # Automatically generated, 2023.
-# SPDX-FileCopyrightText: 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-22 00:40+0000\n"
-"PO-Revision-Date: 2024-07-30 16:49+0200\n"
+"PO-Revision-Date: 2025-02-23 00:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -341,7 +341,7 @@ msgstr "Bergamot"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
 #, kde-format
@@ -595,10 +595,9 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Error: No ha sido posible extraer el SID de Yandex de la versión web."
 
 #: translator/translatorengineclient.cpp:65
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
-msgstr "Configuración regional"
+msgstr "Local"
 
 #: translator/translatorengineclient.cpp:67
 #, kde-format
@@ -642,7 +641,7 @@ msgstr "Depuración del traductor"
 #: translator/widgets/translatordebugdialog.cpp:41
 #, kde-format
 msgid "Save As…"
-msgstr "Guardar como..."
+msgstr "Guardar como…"
 
 #: translator/widgets/translatordebugdialog.cpp:90
 #, kde-format
@@ -667,7 +666,7 @@ msgstr "Todos los archivos (*)"
 #: translator/widgets/translatormenu.cpp:23
 #, kde-format
 msgid "Translate…"
-msgstr "Traducir..."
+msgstr "Traducir…"
 
 #: translator/widgets/translatorwidget.cpp:219
 #, kde-format
@@ -764,14 +763,3 @@ msgstr "No hay red"
 msgctxt "@title:window"
 msgid "Translate error"
 msgstr "Error de traducción"
-
-#~ msgid "Translate..."
-#~ msgstr "Traducir..."
-
-#, fuzzy
-#~| msgid "Persian"
-#~ msgid "Version"
-#~ msgstr "Persa"
-
-#~ msgid "Problem when connecting to the translator web site."
-#~ msgstr "Ha ocurrido un problema al conectar con el sitio web del traductor."

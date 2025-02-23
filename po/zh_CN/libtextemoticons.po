@@ -94,4 +94,4 @@ msgstr "搜索表情符号…"
 #: widgets/emoticontonecombobox.cpp:15
 #, kde-format
 msgid "Select Tone"
-msgstr ""
+msgstr "选择色调"

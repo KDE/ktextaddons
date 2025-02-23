@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-22 00:40+0000\n"
-"PO-Revision-Date: 2025-02-21 20:09+0100\n"
+"PO-Revision-Date: 2025-02-22 16:16+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -23,10 +23,9 @@ msgid "Mistral AI"
 msgstr "Mistral AI"
 
 #: textautogeneratetextclient.cpp:33
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
-msgstr "Landsinställning"
+msgstr "Lokal"
 
 #: textautogeneratetextclient.cpp:35
 #, kde-format

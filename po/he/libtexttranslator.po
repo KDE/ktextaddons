@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-22 00:40+0000\n"
-"PO-Revision-Date: 2024-07-30 10:00+0300\n"
+"PO-Revision-Date: 2025-02-22 21:43+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -589,10 +589,9 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "שגיאה: לא ניתן לחלץ את ה־SID של Yandex מגרסת האתר."
 
 #: translator/translatorengineclient.cpp:65
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
-msgstr "הגדרות אזוריות"
+msgstr "מקומי"
 
 #: translator/translatorengineclient.cpp:67
 #, kde-format

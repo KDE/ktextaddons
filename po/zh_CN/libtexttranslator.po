@@ -586,10 +586,9 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "错误：无法从网页版本中提取 Yandex SID。"
 
 #: translator/translatorengineclient.cpp:65
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
-msgstr "区域设置"
+msgstr ""
 
 #: translator/translatorengineclient.cpp:67
 #, kde-format

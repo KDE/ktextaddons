@@ -20,7 +20,7 @@ msgstr ""
 #: autogenerate/plugins/mistral/mistralclient.cpp:25
 #, kde-format
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: textautogeneratetextclient.cpp:33
 #, kde-format
@@ -30,4 +30,4 @@ msgstr ""
 #: textautogeneratetextclient.cpp:35
 #, kde-format
 msgid "Network"
-msgstr ""
+msgstr "网络"
