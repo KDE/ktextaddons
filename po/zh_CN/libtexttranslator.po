@@ -588,7 +588,7 @@ msgstr "错误：无法从网页版本中提取 Yandex SID。"
 #: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Local"
-msgstr ""
+msgstr "本地"
 
 #: translator/translatorengineclient.cpp:67
 #, kde-format

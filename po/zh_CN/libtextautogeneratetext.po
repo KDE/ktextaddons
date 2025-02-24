@@ -25,7 +25,7 @@ msgstr "Mistral AI"
 #: textautogeneratetextclient.cpp:33
 #, kde-format
 msgid "Local"
-msgstr ""
+msgstr "本地"
 
 #: textautogeneratetextclient.cpp:35
 #, kde-format

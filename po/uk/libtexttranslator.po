@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the ruqola package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-22 00:40+0000\n"
-"PO-Revision-Date: 2024-07-30 09:56+0300\n"
+"PO-Revision-Date: 2025-02-22 11:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -589,8 +589,7 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Помилка: не вдалося видобути SID Yandex з вебверсії."
 
 #: translator/translatorengineclient.cpp:65
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
 msgstr "Локальний"
 
