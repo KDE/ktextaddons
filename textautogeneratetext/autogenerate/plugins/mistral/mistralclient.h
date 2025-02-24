@@ -19,4 +19,6 @@ public:
     [[nodiscard]] QString translatedName() const override;
     [[nodiscard]] TextAutogenerateText::TextAutogenerateTextPlugin *createTextAutogeneratePlugin() override;
     [[nodiscard]] TextAutogenerateText::TextAutogenerateTextClient::EngineType engineType() const override;
+    [[nodiscard]] bool hasConfigurationDialog() const override;
+    [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
 };

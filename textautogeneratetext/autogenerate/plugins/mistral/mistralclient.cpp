@@ -35,3 +35,14 @@ TextAutogenerateText::TextAutogenerateTextClient::EngineType MistralClient::engi
 {
     return TextAutogenerateText::TextAutogenerateTextClient::Network;
 }
+
+bool MistralClient::hasConfigurationDialog() const
+{
+    return true;
+}
+
+bool MistralClient::showConfigureDialog(QWidget *parentWidget)
+{
+    // TODO
+    return false;
+}
