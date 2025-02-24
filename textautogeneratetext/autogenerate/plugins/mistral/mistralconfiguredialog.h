@@ -7,11 +7,14 @@
 #pragma once
 
 #include <QDialog>
-
+class MistralConfigureWidget;
 class MistralConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit MistralConfigureDialog(QWidget *parent = nullptr);
     ~MistralConfigureDialog() override;
+
+private:
+    MistralConfigureWidget *const mMistralConfigureWidget;
 };

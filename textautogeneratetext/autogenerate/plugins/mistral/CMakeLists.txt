@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(autogeneratetext_mistral MODULE)
+add_library(autogeneratetext_mistral MODULE
+    mistralconfigurewidget.h mistralconfigurewidget.cpp)
 
 ecm_qt_declare_logging_category(autogeneratetext_mistral
     HEADER autogeneratetext_mistral_debug.h
