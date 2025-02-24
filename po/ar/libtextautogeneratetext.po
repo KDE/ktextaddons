@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-22 00:40+0000\n"
+"POT-Creation-Date: 2025-02-24 09:36+0000\n"
 "PO-Revision-Date: 2025-02-23 19:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -21,6 +21,13 @@ msgstr ""
 #: autogenerate/plugins/mistral/mistralclient.cpp:25
 #, kde-format
 msgid "Mistral AI"
+msgstr "مسترال أيه آي"
+
+#: autogenerate/plugins/mistral/mistralconfiguredialog.cpp:17
+#, fuzzy, kde-format
+#| msgid "Mistral AI"
+msgctxt "@title:window"
+msgid "Configure Mistral IA"
 msgstr "مسترال أيه آي"
 
 #: textautogeneratetextclient.cpp:33

@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-22 00:40+0000\n"
-"PO-Revision-Date: 2024-07-31 09:08+0200\n"
+"PO-Revision-Date: 2025-02-23 09:45+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -596,10 +596,9 @@ msgstr ""
 "Internet."
 
 #: translator/translatorengineclient.cpp:65
-#, fuzzy, kde-format
-#| msgid "Locale"
+#, kde-format
 msgid "Local"
-msgstr "Localisation"
+msgstr "Local"
 
 #: translator/translatorengineclient.cpp:67
 #, kde-format
