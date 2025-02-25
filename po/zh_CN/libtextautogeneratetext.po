@@ -23,11 +23,10 @@ msgid "Mistral AI"
 msgstr "Mistral AI"
 
 #: autogenerate/plugins/mistral/mistralconfiguredialog.cpp:17
-#, fuzzy, kde-format
-#| msgid "Mistral AI"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
-msgstr "Mistral AI"
+msgstr ""
 
 #: textautogeneratetextclient.cpp:33
 #, kde-format

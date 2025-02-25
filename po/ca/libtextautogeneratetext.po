@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-24 09:36+0000\n"
-"PO-Revision-Date: 2025-02-22 08:37+0100\n"
+"PO-Revision-Date: 2025-02-24 12:42+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -25,11 +25,10 @@ msgid "Mistral AI"
 msgstr "Mistral AI"
 
 #: autogenerate/plugins/mistral/mistralconfiguredialog.cpp:17
-#, fuzzy, kde-format
-#| msgid "Mistral AI"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
-msgstr "Mistral AI"
+msgstr "Configura Mistral AI"
 
 #: textautogeneratetextclient.cpp:33
 #, kde-format
