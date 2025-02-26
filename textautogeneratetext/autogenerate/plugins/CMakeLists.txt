@@ -2,3 +2,4 @@
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
 add_subdirectory(mistral)
+add_subdirectory(ollama)
