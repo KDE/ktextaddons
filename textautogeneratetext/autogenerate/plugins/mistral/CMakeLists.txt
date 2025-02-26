@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(autogeneratetext_mistral MODULE
-    mistralconfigurewidget.h mistralconfigurewidget.cpp)
+add_library(autogeneratetext_mistral MODULE)
 
 ecm_qt_declare_logging_category(autogeneratetext_mistral
     HEADER autogeneratetext_mistral_debug.h
@@ -19,6 +18,8 @@ target_sources(autogeneratetext_mistral PRIVATE
 
     mistralconfiguredialog.h
     mistralconfiguredialog.cpp
+    mistralconfigurewidget.h
+    mistralconfigurewidget.cpp
 )
 
 target_link_libraries(autogeneratetext_mistral PRIVATE KF6::TextAutogenerateText KF6::I18n)
