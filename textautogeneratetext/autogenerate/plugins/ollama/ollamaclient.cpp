@@ -5,6 +5,7 @@
 */
 
 #include "ollamaclient.h"
+#include "ollamaplugin.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -27,8 +28,7 @@ QString OllamaClient::translatedName() const
 
 TextAutogenerateText::TextAutogenerateTextPlugin *OllamaClient::createTextAutogeneratePlugin()
 {
-    // TODO
-    return nullptr;
+    return new OllamaPlugin(this);
 }
 
 TextAutogenerateText::TextAutogenerateTextClient::EngineType OllamaClient::engineType() const

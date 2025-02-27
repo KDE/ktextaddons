@@ -5,6 +5,7 @@
 */
 
 #include "mistralclient.h"
+#include "mistralplugin.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -27,8 +28,7 @@ QString MistralClient::translatedName() const
 
 TextAutogenerateText::TextAutogenerateTextPlugin *MistralClient::createTextAutogeneratePlugin()
 {
-    // TODO
-    return nullptr;
+    return new MistralPlugin(this);
 }
 
 TextAutogenerateText::TextAutogenerateTextClient::EngineType MistralClient::engineType() const
