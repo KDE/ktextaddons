@@ -43,11 +43,16 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogeneratetextplugin.cpp
     core/textautogeneratemanager.h
     core/textautogeneratemanager.cpp
+
+    core/textautogenerateengineutil.h
+    core/textautogenerateengineutil.cpp
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
     widgets/textautogenerateconfigurewidget.h
     widgets/textautogenerateconfigurewidget.cpp
+    widgets/textautogeneratetextconfigurecombowidget.cpp
+    widgets/textautogeneratetextconfigurecombowidget.h
 )
 
 if(BUILD_TESTING)
@@ -71,6 +76,7 @@ target_link_libraries(KF6TextAutogenerateText
     Qt::Network
     PRIVATE
     KF6::I18n
+    KF6::ConfigCore
 )
 
 target_include_directories(KF6TextAutogenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/>")
