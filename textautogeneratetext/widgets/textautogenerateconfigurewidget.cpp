@@ -5,11 +5,16 @@
 */
 
 #include "textautogenerateconfigurewidget.h"
+#include <KLocalizedString>
+#include <QVBoxLayout>
 
 using namespace TextAutogenerateText;
 TextAutogenerateConfigureWidget::TextAutogenerateConfigureWidget(QWidget *parent)
     : QWidget{parent}
 {
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins({});
 }
 
 TextAutogenerateConfigureWidget::~TextAutogenerateConfigureWidget() = default;
