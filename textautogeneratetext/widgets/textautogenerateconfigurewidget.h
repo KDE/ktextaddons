@@ -5,11 +5,11 @@
 */
 
 #pragma once
-
+#include "textautogeneratetext_export.h"
 #include <QWidget>
 namespace TextAutogenerateText
 {
-class TextAutogenerateConfigureWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -91,6 +91,14 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetext_HEADERS
     RELATIVE core
 )
 
+ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextwidgets_HEADERS
+    HEADER_NAMES
+    TextAutogenerateConfigureWidget
+    REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextwidgets_HEADERS
+    PREFIX TextAutogenerateText
+    RELATIVE widgets
+)
+
 install(TARGETS
     KF6TextAutogenerateText
     EXPORT KF6TextAutogenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
@@ -103,6 +111,7 @@ install(FILES
 
 install(FILES
     ${TextAutogenerateText_Camelcasestextautogeneratetext_HEADERS}
+    ${TextAutogenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/TextAutogenerateText
     COMPONENT Devel
 )
@@ -110,6 +119,7 @@ install(FILES
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
     ${TextAutogenerateText_textautogeneratetext_HEADERS}
+    ${TextAutogenerateText_textautogeneratetextwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/textautogeneratetext
     COMPONENT Devel
 )
@@ -123,9 +133,8 @@ if(BUILD_QCH)
         VERSION ${TEXTAUTOGENERATETEXT_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextAutogenerateText_translator_HEADERS}
-        ${TextAutogenerateText_translatorwidgets_HEADERS}
-        ${TextAutogenerateText_translatormisc_HEADERS}
+        ${TextAutogenerateText_textautogeneratetext_HEADERS}
+        ${TextAutogenerateText_textautogeneratetextwidgets_HEADERS}
         LINK_QCHS
             Qt6Core_QCH
             Qt6Gui_QCH
