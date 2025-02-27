@@ -47,6 +47,7 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
+    add_subdirectory(tests)
 endif()
 
 add_subdirectory(autogenerate/plugins)
