@@ -45,6 +45,11 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogeneratemanager.cpp
 )
 
+target_sources(KF6TextAutogenerateText PRIVATE
+    widgets/textautogenerateconfigurewidget.h
+    widgets/textautogenerateconfigurewidget.cpp
+)
+
 if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
