@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <textautogeneratetextplugin.h>
+#include "core/textautogeneratetextplugin.h"
 
 class OllamaPlugin : public TextAutogenerateText::TextAutogenerateTextPlugin
 {

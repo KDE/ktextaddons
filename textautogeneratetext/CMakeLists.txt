@@ -33,16 +33,16 @@ ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratet
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
-    textautogenerateengineplugin.h
-    textautogenerateengineplugin.cpp
-    textautogenerateengineloader.cpp
-    textautogenerateengineloader.h
-    textautogeneratetextclient.h
-    textautogeneratetextclient.cpp
-    textautogeneratetextplugin.h
-    textautogeneratetextplugin.cpp
-    textautogeneratemanager.h
-    textautogeneratemanager.cpp
+    core/textautogenerateengineplugin.h
+    core/textautogenerateengineplugin.cpp
+    core/textautogenerateengineloader.cpp
+    core/textautogenerateengineloader.h
+    core/textautogeneratetextclient.h
+    core/textautogeneratetextclient.cpp
+    core/textautogeneratetextplugin.h
+    core/textautogeneratetextplugin.cpp
+    core/textautogeneratemanager.h
+    core/textautogeneratemanager.cpp
 )
 
 if(BUILD_TESTING)
@@ -82,6 +82,7 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetext_HEADERS
     TextAutogenerateTextPlugin
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetext_HEADERS
     PREFIX TextAutogenerateText
+    RELATIVE core
 )
 
 install(TARGETS
