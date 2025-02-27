@@ -26,13 +26,13 @@ public:
     explicit TextAutogenerateEngineLoader(QObject *parent = nullptr);
     ~TextAutogenerateEngineLoader() override;
 
-    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextClient *createSpeechToTextClient(const QString &clientName);
+    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
 
     [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 
     [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
-    [[nodiscard]] QMap<QString, QString> speechToTextEngineInfos() const;
+    [[nodiscard]] QMap<QString, QString> textAutoGenerateTextEngineInfos() const;
 
     [[nodiscard]] QString fallbackFirstEngine() const;
 

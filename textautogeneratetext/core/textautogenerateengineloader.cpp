@@ -80,7 +80,7 @@ void TextAutogenerateEngineLoader::loadPlugin(const QString &pluginPath)
     d->autogenerateTextClients.insert(client->name(), client);
 }
 
-TextAutogenerateTextClient *TextAutogenerateEngineLoader::createSpeechToTextClient(const QString &clientName)
+TextAutogenerateTextClient *TextAutogenerateEngineLoader::createTextAutoGenerateTextClient(const QString &clientName)
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
@@ -111,7 +111,7 @@ bool TextAutogenerateEngineLoader::showConfigureDialog(const QString &clientName
     return (*clientsItr)->showConfigureDialog(parentWidget);
 }
 
-QMap<QString, QString> TextAutogenerateEngineLoader::speechToTextEngineInfos() const
+QMap<QString, QString> TextAutogenerateEngineLoader::textAutoGenerateTextEngineInfos() const
 {
     QMap<QString, QString> map;
     QHashIterator<QString, TextAutogenerateTextClient *> i(d->autogenerateTextClients);
