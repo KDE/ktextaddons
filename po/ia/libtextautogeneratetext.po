@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-24 09:36+0000\n"
+"POT-Creation-Date: 2025-02-27 00:39+0000\n"
 "PO-Revision-Date: 2025-02-24 16:11+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,6 +27,11 @@ msgstr "Mistral AI"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configura Mistral AI"
+
+#: autogenerate/plugins/ollama/ollamaclient.cpp:25
+#, kde-format
+msgid "Ollama"
+msgstr ""
 
 #: textautogeneratetextclient.cpp:33
 #, kde-format

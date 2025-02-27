@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-24 09:36+0000\n"
+"POT-Creation-Date: 2025-02-27 00:39+0000\n"
 "PO-Revision-Date: 2025-02-24 18:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,6 +29,11 @@ msgstr "IA Mistral"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configurar IA Mistral"
+
+#: autogenerate/plugins/ollama/ollamaclient.cpp:25
+#, kde-format
+msgid "Ollama"
+msgstr ""
 
 #: textautogeneratetextclient.cpp:33
 #, kde-format
