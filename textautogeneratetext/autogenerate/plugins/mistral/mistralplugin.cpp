@@ -28,3 +28,5 @@ QString MistralPlugin::result()
     // TODO
     return {};
 }
+
+#include "moc_mistralplugin.cpp"

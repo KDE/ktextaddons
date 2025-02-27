@@ -26,3 +26,5 @@ MistralConfigureDialog::MistralConfigureDialog(QWidget *parent)
 }
 
 MistralConfigureDialog::~MistralConfigureDialog() = default;
+
+#include "moc_mistralconfiguredialog.cpp"

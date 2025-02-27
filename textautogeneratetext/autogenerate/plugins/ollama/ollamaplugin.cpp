@@ -28,3 +28,5 @@ QString OllamaPlugin::result()
     // TODO
     return {};
 }
+
+#include "moc_ollamaplugin.cpp"

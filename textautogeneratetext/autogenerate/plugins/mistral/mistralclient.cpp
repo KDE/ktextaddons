@@ -46,3 +46,5 @@ bool MistralClient::showConfigureDialog(QWidget *parentWidget)
     // TODO
     return false;
 }
+
+#include "moc_mistralclient.cpp"

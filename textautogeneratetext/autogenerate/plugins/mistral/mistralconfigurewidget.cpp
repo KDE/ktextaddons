@@ -18,3 +18,5 @@ MistralConfigureWidget::MistralConfigureWidget(QWidget *parent)
 }
 
 MistralConfigureWidget::~MistralConfigureWidget() = default;
+
+#include "moc_mistralconfigurewidget.cpp"

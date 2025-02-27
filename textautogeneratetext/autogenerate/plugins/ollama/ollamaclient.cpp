@@ -46,3 +46,5 @@ bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
     // TODO
     return false;
 }
+
+#include "moc_ollamaclient.cpp"
