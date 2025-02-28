@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-27 00:39+0000\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
 "PO-Revision-Date: 2025-02-25 19:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: autogenerate/plugins/mistral/mistralclient.cpp:25
+#: autogenerate/plugins/mistral/mistralclient.cpp:26
 #, kde-format
 msgid "Mistral AI"
 msgstr "ШІ Mistral"
@@ -29,17 +29,17 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Налаштування ШІ Mistral"
 
-#: autogenerate/plugins/ollama/ollamaclient.cpp:25
+#: autogenerate/plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama"
 msgstr ""
 
-#: textautogeneratetextclient.cpp:33
+#: core/textautogeneratetextclient.cpp:33
 #, kde-format
 msgid "Local"
 msgstr "Локальний"
 
-#: textautogeneratetextclient.cpp:35
+#: core/textautogeneratetextclient.cpp:35
 #, kde-format
 msgid "Network"
 msgstr "Мережевий"

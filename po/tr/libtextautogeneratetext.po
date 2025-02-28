@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-27 00:39+0000\n"
-"PO-Revision-Date: 2025-02-25 09:33+0300\n"
+"POT-Creation-Date: 2025-02-28 00:40+0000\n"
+"PO-Revision-Date: 2025-02-27 14:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.03.70\n"
 
-#: autogenerate/plugins/mistral/mistralclient.cpp:25
+#: autogenerate/plugins/mistral/mistralclient.cpp:26
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
@@ -28,17 +28,17 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral AI’ı Yapılandır"
 
-#: autogenerate/plugins/ollama/ollamaclient.cpp:25
+#: autogenerate/plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama"
-msgstr ""
+msgstr "Ollama"
 
-#: textautogeneratetextclient.cpp:33
+#: core/textautogeneratetextclient.cpp:33
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: textautogeneratetextclient.cpp:35
+#: core/textautogeneratetextclient.cpp:35
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
