@@ -20,4 +20,4 @@ Dependencies:
 
 Options:
   cmake-options: "-DDISABLE_AUTOTEST_BROKEN_CI=TRUE"
-  require-passing-tests-on: ['Linux', 'FreeBSD']
+  require-passing-tests-on: ['@all']
