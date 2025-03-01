@@ -53,6 +53,12 @@ target_sources(KF6TextAutogenerateText PRIVATE
     widgets/textautogenerateconfigurewidget.cpp
     widgets/textautogeneratetextconfigurecombowidget.cpp
     widgets/textautogeneratetextconfigurecombowidget.h
+
+    widgets/textautogeneratetextlineeditwidget.h
+    widgets/textautogeneratetextlineeditwidget.cpp
+
+    widgets/textautogenerateresultwidget.h
+    widgets/textautogenerateresultwidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -100,6 +106,7 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
 ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextwidgets_HEADERS
     HEADER_NAMES
     TextAutogenerateConfigureWidget
+    TextAutogenerateResultWidget
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextwidgets_HEADERS
     PREFIX TextAutogenerateText
     RELATIVE widgets
