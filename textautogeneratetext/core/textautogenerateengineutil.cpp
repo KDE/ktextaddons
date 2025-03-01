@@ -7,7 +7,7 @@
 #include "textautogenerateengineutil.h"
 
 using namespace TextAutogenerateText;
-
+using namespace Qt::Literals::StringLiterals;
 QString TextAutogenerateEngineUtil::engineTranslateName()
 {
     return {};
@@ -15,5 +15,5 @@ QString TextAutogenerateEngineUtil::engineTranslateName()
 
 QString TextAutogenerateEngineUtil::defaultEngineName()
 {
-    return {};
+    return "ollama"_L1;
 }
