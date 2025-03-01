@@ -7,6 +7,3 @@
 #include "textautogenerateengineutil.h"
 
 using namespace TextAutogenerateText;
-TextAutogenerateEngineUtil::TextAutogenerateEngineUtil()
-{
-}

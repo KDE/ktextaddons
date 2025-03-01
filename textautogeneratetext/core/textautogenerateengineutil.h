@@ -8,9 +8,7 @@
 
 namespace TextAutogenerateText
 {
-class TextAutogenerateEngineUtil
+namespace TextAutogenerateEngineUtil
 {
-public:
-    TextAutogenerateEngineUtil();
 };
 }
