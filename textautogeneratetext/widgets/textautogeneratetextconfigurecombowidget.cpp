@@ -6,6 +6,7 @@
 
 #include "textautogeneratetextconfigurecombowidget.h"
 #include "core/textautogenerateengineloader.h"
+#include "core/textautogenerateengineutil.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QComboBox>
@@ -66,25 +67,19 @@ void TextAutogenerateTextConfigureComboWidget::slotEngineChanged(int index)
 
 void TextAutogenerateTextConfigureComboWidget::load()
 {
-    // TODO
-    /*
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
-    const QString engine = groupTranslate.readEntry(TranslatorUtil::engineTranslateName(), TranslatorUtil::defaultEngineName()); // Google by default
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());
+    const QString engine = groupTranslate.readEntry(TextAutogenerateEngineUtil::engineTranslateName(), TextAutogenerateEngineUtil::defaultEngineName());
     const int index = mEngineComboBox->findData(engine);
     if (index != -1) {
         mEngineComboBox->setCurrentIndex(index);
     }
-    */
 }
 
 void TextAutogenerateTextConfigureComboWidget::save()
 {
-    // TODO
-    /*
     const QString engine = mEngineComboBox->currentData().toString();
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
-    groupTranslate.writeEntry(TranslatorUtil::engineTranslateName(), engine);
-    */
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());
+    groupTranslate.writeEntry(TextAutogenerateEngineUtil::engineTranslateName(), engine);
 }
 
 #include "moc_textautogeneratetextconfigurecombowidget.cpp"

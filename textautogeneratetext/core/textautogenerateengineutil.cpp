@@ -17,3 +17,8 @@ QString TextAutogenerateEngineUtil::defaultEngineName()
 {
     return "ollama"_L1;
 }
+
+QString TextAutogenerateEngineUtil::groupAutoGenerateTextName()
+{
+    return "AutoGenerateText"_L1;
+}
