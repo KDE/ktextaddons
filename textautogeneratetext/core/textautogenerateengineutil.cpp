@@ -7,3 +7,13 @@
 #include "textautogenerateengineutil.h"
 
 using namespace TextAutogenerateText;
+
+QString TextAutogenerateEngineUtil::engineTranslateName()
+{
+    return {};
+}
+
+QString TextAutogenerateEngineUtil::defaultEngineName()
+{
+    return {};
+}

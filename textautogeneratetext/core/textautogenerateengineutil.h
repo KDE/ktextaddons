@@ -5,10 +5,12 @@
 */
 
 #pragma once
-
+#include <QString>
 namespace TextAutogenerateText
 {
 namespace TextAutogenerateEngineUtil
 {
+[[nodiscard]] QString engineTranslateName();
+[[nodiscard]] QString defaultEngineName();
 };
 }
