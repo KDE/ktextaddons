@@ -6,10 +6,15 @@
 
 #include "textautogenerateresultwidget.h"
 
+#include <QVBoxLayout>
+
 using namespace TextAutogenerateText;
 TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
     : QWidget{parent}
 {
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setContentsMargins(QMargins{});
 }
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;
