@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextlineeditwidgettest.h"
+#include "widgets/textautogeneratetextlineeditwidget.h"
 
 #include <QTest>
 QTEST_MAIN(TextAutogenerateTextLineEditWidgetTest)
