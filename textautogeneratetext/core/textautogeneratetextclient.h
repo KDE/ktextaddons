@@ -18,10 +18,17 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextClient : public QObject
 {
     Q_OBJECT
 public:
-    enum EngineType {
+    enum class EngineType : uint8_t {
         Local,
         Network,
     };
+
+    // Add more status
+    enum class Status : uint8_t {
+        Unknown,
+        Broken,
+    };
+
     explicit TextAutogenerateTextClient(QObject *parent = nullptr);
     ~TextAutogenerateTextClient() override;
 

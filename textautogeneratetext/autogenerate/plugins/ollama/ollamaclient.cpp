@@ -33,7 +33,7 @@ TextAutogenerateText::TextAutogenerateTextPlugin *OllamaClient::createTextAutoge
 
 TextAutogenerateText::TextAutogenerateTextClient::EngineType OllamaClient::engineType() const
 {
-    return TextAutogenerateText::TextAutogenerateTextClient::Local;
+    return TextAutogenerateText::TextAutogenerateTextClient::EngineType::Local;
 }
 
 bool OllamaClient::hasConfigurationDialog() const

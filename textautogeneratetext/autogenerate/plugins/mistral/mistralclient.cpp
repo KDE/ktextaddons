@@ -33,7 +33,7 @@ TextAutogenerateText::TextAutogenerateTextPlugin *MistralClient::createTextAutog
 
 TextAutogenerateText::TextAutogenerateTextClient::EngineType MistralClient::engineType() const
 {
-    return TextAutogenerateText::TextAutogenerateTextClient::Network;
+    return TextAutogenerateText::TextAutogenerateTextClient::EngineType::Network;
 }
 
 bool MistralClient::hasConfigurationDialog() const
