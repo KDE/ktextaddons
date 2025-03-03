@@ -59,6 +59,8 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/textautogenerateresultwidget.h
     widgets/textautogenerateresultwidget.cpp
+    widgets/textautogeneratetextlineedit.h
+    widgets/textautogeneratetextlineedit.cpp
 )
 
 if(BUILD_TESTING)

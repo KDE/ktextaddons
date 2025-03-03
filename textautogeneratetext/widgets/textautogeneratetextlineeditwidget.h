@@ -15,5 +15,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateTextLineEditWidget : pub
 public:
     explicit TextAutogenerateTextLineEditWidget(QWidget *parent = nullptr);
     ~TextAutogenerateTextLineEditWidget() override;
+
+private:
 };
 }
