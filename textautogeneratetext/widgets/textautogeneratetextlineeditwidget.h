@@ -9,6 +9,7 @@
 #include <QWidget>
 namespace TextAutogenerateText
 {
+class TextAutogenerateResultWidget;
 class TextAutogenerateTextLineEdit;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateTextLineEditWidget : public QWidget
 {
@@ -18,6 +19,7 @@ public:
     ~TextAutogenerateTextLineEditWidget() override;
 
 private:
+    TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;
 };
 }
