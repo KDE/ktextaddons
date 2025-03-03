@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:40+0000\n"
-"PO-Revision-Date: 2025-02-23 19:09+0400\n"
+"PO-Revision-Date: 2025-03-02 10:42+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -24,16 +24,15 @@ msgid "Mistral AI"
 msgstr "مسترال أيه آي"
 
 #: autogenerate/plugins/mistral/mistralconfiguredialog.cpp:17
-#, fuzzy, kde-format
-#| msgid "Mistral AI"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
-msgstr "مسترال أيه آي"
+msgstr "اضبط مسترال أيه آي"
 
 #: autogenerate/plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama"
-msgstr ""
+msgstr "أولاما"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
