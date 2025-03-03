@@ -13,3 +13,5 @@ TextAutogenerateTextLineEdit::TextAutogenerateTextLineEdit(QWidget *parent)
 }
 
 TextAutogenerateTextLineEdit::~TextAutogenerateTextLineEdit() = default;
+
+#include "moc_textautogeneratetextlineedit.cpp"

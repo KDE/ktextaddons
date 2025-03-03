@@ -18,3 +18,5 @@ TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
 }
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;
+
+#include "moc_textautogenerateresultwidget.cpp"

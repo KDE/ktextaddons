@@ -18,3 +18,5 @@ void TextAutogenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_textautogeneratetextlineeditwidgettest.cpp"
