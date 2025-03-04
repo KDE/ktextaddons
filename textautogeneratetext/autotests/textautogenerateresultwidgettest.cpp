@@ -12,3 +12,8 @@ TextAutogenerateResultWidgetTest::TextAutogenerateResultWidgetTest(QObject *pare
     : QObject{parent}
 {
 }
+
+void TextAutogenerateResultWidgetTest::shouldHaveDefaultValues()
+{
+    // TODO
+}

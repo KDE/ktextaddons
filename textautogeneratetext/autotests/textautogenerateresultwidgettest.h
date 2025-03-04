@@ -14,4 +14,7 @@ class TextAutogenerateResultWidgetTest : public QObject
 public:
     explicit TextAutogenerateResultWidgetTest(QObject *parent = nullptr);
     ~TextAutogenerateResultWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };

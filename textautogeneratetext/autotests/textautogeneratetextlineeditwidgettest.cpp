@@ -7,6 +7,7 @@
 #include "textautogeneratetextlineeditwidgettest.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
+#include <QHBoxLayout>
 #include <QTest>
 QTEST_MAIN(TextAutogenerateTextLineEditWidgetTest)
 TextAutogenerateTextLineEditWidgetTest::TextAutogenerateTextLineEditWidgetTest(QObject *parent)
@@ -16,7 +17,11 @@ TextAutogenerateTextLineEditWidgetTest::TextAutogenerateTextLineEditWidgetTest(Q
 
 void TextAutogenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 {
-    // TODO
+    TextAutogenerateText::TextAutogenerateTextLineEditWidget w;
+
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }
 
 #include "moc_textautogeneratetextlineeditwidgettest.cpp"
