@@ -5,11 +5,13 @@
 */
 
 #include "textautogeneratetextlineedit.h"
+#include <KLineEditEventHandler>
 
 using namespace TextAutogenerateText;
 TextAutogenerateTextLineEdit::TextAutogenerateTextLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
+    KLineEditEventHandler::catchReturnKey(this);
 }
 
 TextAutogenerateTextLineEdit::~TextAutogenerateTextLineEdit() = default;
