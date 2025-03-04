@@ -17,3 +17,5 @@ void TextAutogenerateResultWidgetTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_textautogenerateresultwidgettest.cpp"

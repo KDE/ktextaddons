@@ -28,3 +28,5 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 }
 
 TextAutogenerateWidget::~TextAutogenerateWidget() = default;
+
+#include "moc_textautogeneratewidget.cpp"

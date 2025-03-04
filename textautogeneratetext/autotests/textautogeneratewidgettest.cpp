@@ -5,8 +5,11 @@
 */
 
 #include "textautogeneratewidgettest.h"
+#include "widgets/textautogenerateresultwidget.h"
+#include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(TextAutogenerateWidgetTest)
 
 TextAutogenerateWidgetTest::TextAutogenerateWidgetTest(QObject *parent)
@@ -18,5 +21,16 @@ void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
 {
     TextAutogenerateText::TextAutogenerateWidget w;
 
-    // TODO
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto mTextAutogenerateResultWidget = w.findChild<TextAutogenerateText::TextAutogenerateResultWidget *>(QStringLiteral("mTextAutogenerateResultWidget"));
+    QVERIFY(mTextAutogenerateResultWidget);
+
+    auto mTextAutogenerateTextLineEditWidget =
+        w.findChild<TextAutogenerateText::TextAutogenerateTextLineEditWidget *>(QStringLiteral("mTextAutogenerateTextLineEditWidget"));
+    QVERIFY(mTextAutogenerateTextLineEditWidget);
 }
+
+#include "moc_textautogeneratewidgettest.cpp"
