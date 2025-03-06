@@ -13,3 +13,5 @@ TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
 }
 
 TextAutoGenerateChatModel::~TextAutoGenerateChatModel() = default;
+
+#include "moc_textautogeneratechatmodel.cpp"
