@@ -17,6 +17,8 @@ public:
     explicit TextAutogenerateTextLineEditWidget(QWidget *parent = nullptr);
     ~TextAutogenerateTextLineEditWidget() override;
 
+    [[nodiscard]] QString text() const;
+
 private:
     TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;
 };

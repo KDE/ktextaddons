@@ -23,4 +23,9 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
 
 TextAutogenerateTextLineEditWidget::~TextAutogenerateTextLineEditWidget() = default;
 
+QString TextAutogenerateTextLineEditWidget::text() const
+{
+    return mTextAutogenerateTextLineEdit->text();
+}
+
 #include "moc_textautogeneratetextlineeditwidget.cpp"
