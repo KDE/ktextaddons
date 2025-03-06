@@ -26,12 +26,12 @@ msgstr "Mistral AI"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
-msgstr ""
+msgstr "配置 Mistral IA"
 
 #: autogenerate/plugins/ollama/ollamaclient.cpp:26
 #, kde-format
 msgid "Ollama"
-msgstr ""
+msgstr "Ollama"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
