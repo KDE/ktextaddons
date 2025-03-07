@@ -5,12 +5,12 @@
 */
 
 #include "textautogenerateengineutil.h"
-
+#include <KLocalizedString>
 using namespace TextAutogenerateText;
 using namespace Qt::Literals::StringLiterals;
 QString TextAutogenerateEngineUtil::engineTranslateName()
 {
-    return {};
+    return i18n("Ollama");
 }
 
 QString TextAutogenerateEngineUtil::defaultEngineName()
