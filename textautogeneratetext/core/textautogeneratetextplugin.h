@@ -27,6 +27,8 @@ public:
     virtual void clear() = 0;
     [[nodiscard]] virtual QString result() = 0;
 
+    virtual void setPrompt(const QString &text) = 0;
+
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
 };

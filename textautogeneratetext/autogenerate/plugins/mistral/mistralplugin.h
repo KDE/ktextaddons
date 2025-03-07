@@ -18,4 +18,6 @@ public:
     [[nodiscard]] bool loadSettings() override;
     void clear() override;
     [[nodiscard]] QString result() override;
+
+    void setPrompt(const QString &text) override;
 };

@@ -29,4 +29,9 @@ QString OllamaPlugin::result()
     return {};
 }
 
+void OllamaPlugin::setPrompt(const QString &text)
+{
+    // TODO
+}
+
 #include "moc_ollamaplugin.cpp"

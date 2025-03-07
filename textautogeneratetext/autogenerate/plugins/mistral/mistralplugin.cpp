@@ -29,4 +29,9 @@ QString MistralPlugin::result()
     return {};
 }
 
+void MistralPlugin::setPrompt(const QString &text)
+{
+    // TODO
+}
+
 #include "moc_mistralplugin.cpp"
