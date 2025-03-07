@@ -18,5 +18,9 @@ public:
     };
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);
     ~TextAutoGenerateChatModel() override;
+
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 };
 }
