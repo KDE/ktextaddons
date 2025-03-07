@@ -14,12 +14,6 @@ TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
 
 TextAutoGenerateChatModel::~TextAutoGenerateChatModel() = default;
 
-QHash<int, QByteArray> TextAutoGenerateChatModel::roleNames() const
-{
-    // TODO
-    return {};
-}
-
 int TextAutoGenerateChatModel::rowCount(const QModelIndex &) const
 {
     // TODO

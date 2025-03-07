@@ -14,12 +14,14 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatModel : public QAbstractLi
     Q_OBJECT
 public:
     enum ChatRole : uint8_t {
-        // TODO
+        MessageRole,
+        SenderRole,
+        FinishedRole,
     };
+
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);
     ~TextAutoGenerateChatModel() override;
 
-    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 };
