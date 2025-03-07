@@ -19,6 +19,9 @@ public:
 
     [[nodiscard]] QString text() const;
 
+Q_SIGNALS:
+    void editingFinished(const QString &str);
+
 private:
     TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;
 };
