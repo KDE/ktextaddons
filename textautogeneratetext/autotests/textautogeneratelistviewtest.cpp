@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratelistviewtest.h"
+#include "widgets/textautogeneratelistview.h"
 #include <QTest>
 
 QTEST_MAIN(TextAutogenerateListViewTest);
@@ -16,6 +17,7 @@ TextAutogenerateListViewTest::TextAutogenerateListViewTest(QObject *parent)
 
 void TextAutogenerateListViewTest::shouldHaveDefaultValues()
 {
+    TextAutogenerateText::TextAutogenerateListView w;
     // TODO
 }
 

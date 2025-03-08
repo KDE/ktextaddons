@@ -74,6 +74,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/textautogeneratelistview.h
     widgets/textautogeneratelistview.cpp
+
+    widgets/textautogeneratelistviewdelegate.h
+    widgets/textautogeneratelistviewdelegate.cpp
 )
 
 if(BUILD_TESTING)
