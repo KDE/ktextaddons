@@ -9,12 +9,16 @@
 #include <QWidget>
 namespace TextAutogenerateText
 {
+class TextAutogenerateListView;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateResultWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit TextAutogenerateResultWidget(QWidget *parent = nullptr);
     ~TextAutogenerateResultWidget() override;
+
+private:
+    TextAutogenerateListView *const mTextAutogenerateListView;
 };
 
 }

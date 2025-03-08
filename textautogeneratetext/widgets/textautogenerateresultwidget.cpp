@@ -5,16 +5,21 @@
 */
 
 #include "textautogenerateresultwidget.h"
+#include "textautogeneratelistview.h"
 
 #include <QVBoxLayout>
 
 using namespace TextAutogenerateText;
 TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
     : QWidget{parent}
+    , mTextAutogenerateListView(new TextAutogenerateListView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
+
+    mTextAutogenerateListView->setObjectName(QStringLiteral("mTextAutogenerateListView"));
+    mainLayout->addWidget(mTextAutogenerateListView);
 }
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;
