@@ -12,3 +12,5 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 }
 
 TextAutogenerateListView::~TextAutogenerateListView() = default;
+
+#include "moc_textautogeneratelistview.cpp"

@@ -18,3 +18,5 @@ void TextAutogenerateListViewTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_textautogeneratelistviewtest.cpp"
