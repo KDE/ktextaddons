@@ -10,6 +10,7 @@ namespace TextAutogenerateText
 {
 class TextAutogenerateListViewDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
 public:
     explicit TextAutogenerateListViewDelegate(QObject *parent = nullptr);
     ~TextAutogenerateListViewDelegate() override;

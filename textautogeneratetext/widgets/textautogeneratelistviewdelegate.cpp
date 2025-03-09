@@ -12,3 +12,5 @@ TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QObject *pare
 }
 
 TextAutogenerateListViewDelegate::~TextAutogenerateListViewDelegate() = default;
+
+#include "moc_textautogeneratelistviewdelegate.cpp"
