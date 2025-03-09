@@ -49,6 +49,8 @@ textgrammarcheck/*.cpp
 textgrammarcheck/*.h
 textutils/*.cpp
 textutils/*.h
+textautogeneratetext/*.h
+textautogeneratetext/*.cpp
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
