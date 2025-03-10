@@ -11,6 +11,8 @@
 class OllamaClient : public TextAutogenerateText::TextAutogenerateTextClient
 {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.TextAutogenerateText.ollama")
+    Q_INTERFACES(TextAutogenerateText::TextAutogenerateTextClient)
 public:
     explicit OllamaClient(QObject *parent = nullptr);
     ~OllamaClient() override;

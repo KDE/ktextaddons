@@ -11,6 +11,8 @@
 class MistralClient : public TextAutogenerateText::TextAutogenerateTextClient
 {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.TextAutogenerateText.mistral")
+    Q_INTERFACES(TextAutogenerateText::TextAutogenerateTextClient)
 public:
     explicit MistralClient(QObject *parent = nullptr);
     ~MistralClient() override;
