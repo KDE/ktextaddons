@@ -10,3 +10,9 @@ using namespace TextAutogenerateText;
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
 TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
+
+QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage &t)
+{
+    // TODO
+    return d;
+}
