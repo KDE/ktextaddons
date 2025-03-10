@@ -3,6 +3,8 @@
 
 add_library(autogeneratetext_ollama MODULE)
 
+kconfig_add_kcfg_files(autogeneratetext_ollama GENERATE_MOC ollamasettings.kcfgc)
+
 ecm_qt_declare_logging_category(autogeneratetext_ollama
     HEADER autogeneratetext_ollama_debug.h
     IDENTIFIER AUTOGENERATETEXT_OLLAMA_LOG
@@ -20,6 +22,6 @@ target_sources(autogeneratetext_ollama PRIVATE
     ollamaconfigurewidget.cpp
 )
 
-target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutogenerateText KF6::I18n)
+target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutogenerateText KF6::I18n KF6::ConfigGui)
 
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
