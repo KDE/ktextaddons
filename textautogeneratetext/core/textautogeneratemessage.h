@@ -12,7 +12,15 @@ namespace TextAutogenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessage
 {
+    Q_GADGET
 public:
+    enum class Sender : uint8_t {
+        Unknown,
+        User,
+        LLM,
+    };
+    Q_ENUM(Sender)
+
     TextAutoGenerateMessage();
     ~TextAutoGenerateMessage();
 

@@ -26,3 +26,5 @@ void TextAutoGenerateMessage::setContent(const QString &newContent)
 {
     mContent = newContent;
 }
+
+#include "moc_textautogeneratemessage.cpp"
