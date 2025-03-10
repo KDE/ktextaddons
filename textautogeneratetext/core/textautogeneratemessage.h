@@ -27,8 +27,12 @@ public:
     [[nodiscard]] QString content() const;
     void setContent(const QString &newContent);
 
+    [[nodiscard]] TextAutoGenerateMessage::Sender sender() const;
+    void setSender(TextAutoGenerateMessage::Sender newSender);
+
 private:
     QString mContent;
+    TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);

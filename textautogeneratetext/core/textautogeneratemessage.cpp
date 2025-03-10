@@ -14,6 +14,7 @@ TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage &t)
 {
     d.space() << "content:" << t.content();
+    d.space() << "sender:" << t.sender();
     return d;
 }
 
@@ -25,6 +26,16 @@ QString TextAutoGenerateMessage::content() const
 void TextAutoGenerateMessage::setContent(const QString &newContent)
 {
     mContent = newContent;
+}
+
+TextAutoGenerateMessage::Sender TextAutoGenerateMessage::sender() const
+{
+    return mSender;
+}
+
+void TextAutoGenerateMessage::setSender(TextAutoGenerateMessage::Sender newSender)
+{
+    mSender = newSender;
 }
 
 #include "moc_textautogeneratemessage.cpp"
