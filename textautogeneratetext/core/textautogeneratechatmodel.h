@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
 namespace TextAutogenerateText
@@ -24,5 +25,11 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+
+    [[nodiscard]] QList<TextAutoGenerateMessage> messages() const;
+    void setMessages(const QList<TextAutoGenerateMessage> &newMessages);
+
+private:
+    QList<TextAutoGenerateMessage> mMessages;
 };
 }

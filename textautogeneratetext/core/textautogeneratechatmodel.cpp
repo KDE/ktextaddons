@@ -17,13 +17,23 @@ TextAutoGenerateChatModel::~TextAutoGenerateChatModel() = default;
 int TextAutoGenerateChatModel::rowCount(const QModelIndex &) const
 {
     // TODO
-    return 0;
+    return mMessages.count();
 }
 
 QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) const
 {
     // TODO
     return {};
+}
+
+QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
+{
+    return mMessages;
+}
+
+void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage> &newMessages)
+{
+    mMessages = newMessages;
 }
 
 #include "moc_textautogeneratechatmodel.cpp"
