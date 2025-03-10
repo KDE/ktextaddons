@@ -15,6 +15,12 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessage
 public:
     TextAutoGenerateMessage();
     ~TextAutoGenerateMessage();
+
+    [[nodiscard]] QString content() const;
+    void setContent(const QString &newContent);
+
+private:
+    QString mContent;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);

@@ -13,6 +13,16 @@ TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
 
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage &t)
 {
-    // TODO
+    d.space() << "content:" << t.content();
     return d;
+}
+
+QString TextAutoGenerateMessage::content() const
+{
+    return mContent;
+}
+
+void TextAutoGenerateMessage::setContent(const QString &newContent)
+{
+    mContent = newContent;
 }
