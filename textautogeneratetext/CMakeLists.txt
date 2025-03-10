@@ -44,6 +44,8 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogeneratetextplugin.cpp
     core/textautogeneratemanager.h
     core/textautogeneratemanager.cpp
+    core/textautogenerateengineaccessmanager.cpp
+    core/textautogenerateengineaccessmanager.h
 
     core/textautogenerateengineutil.h
     core/textautogenerateengineutil.cpp
