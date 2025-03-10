@@ -52,6 +52,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     core/textautogeneratechatmodel.h
     core/textautogeneratechatmodel.cpp
+
+    core/textautogeneratemessage.h
+    core/textautogeneratemessage.cpp
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
