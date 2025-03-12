@@ -19,3 +19,5 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(msg.content().isEmpty());
     QCOMPARE(msg.sender(), TextAutogenerateText::TextAutoGenerateMessage::Sender::Unknown);
 }
+
+#include "moc_textautogeneratemessagetest.cpp"
