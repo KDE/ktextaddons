@@ -12,6 +12,7 @@ TextAutogenerateTextLineEdit::TextAutogenerateTextLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
     KLineEditEventHandler::catchReturnKey(this);
+    setClearButtonEnabled(true);
 }
 
 TextAutogenerateTextLineEdit::~TextAutogenerateTextLineEdit() = default;
