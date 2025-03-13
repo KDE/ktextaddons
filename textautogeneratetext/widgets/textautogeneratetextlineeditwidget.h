@@ -7,6 +7,7 @@
 
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QPushButton;
 namespace TextAutogenerateText
 {
 class TextAutogenerateTextLineEdit;
@@ -24,5 +25,6 @@ Q_SIGNALS:
 
 private:
     TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;
+    QPushButton *const mSendMessage;
 };
 }
