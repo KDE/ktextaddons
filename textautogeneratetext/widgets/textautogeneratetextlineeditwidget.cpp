@@ -18,8 +18,8 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
 
     mTextAutogenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutogenerateTextLineEdit"));
     mainLayout->addWidget(mTextAutogenerateTextLineEdit);
-    // TODO add button for sending
 
+    // TODO add button for sending
     connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::editingFinished, this, [this]() {
         Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text());
     });
