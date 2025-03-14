@@ -9,6 +9,7 @@ using namespace TextAutogenerateText;
 TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
+    // TODO implement it
 }
 
 TextAutogenerateListViewDelegate::~TextAutogenerateListViewDelegate() = default;
