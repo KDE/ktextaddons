@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:41+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -43,4 +43,9 @@ msgstr ""
 #: core/textautogeneratetextclient.cpp:35
 #, kde-format
 msgid "Network"
+msgstr ""
+
+#: widgets/textautogeneratetextlineeditwidget.cpp:16
+#, kde-format
+msgid "Send"
 msgstr ""
