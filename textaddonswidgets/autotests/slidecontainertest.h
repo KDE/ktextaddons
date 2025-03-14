@@ -17,6 +17,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 class SlideContainerAutoTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit SlideContainerAutoTest(QObject *parent = nullptr);
 private Q_SLOTS:
     void testInit();
     void testSlideIn();
