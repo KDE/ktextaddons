@@ -16,6 +16,7 @@ TextAutogenerateConfigureDialog::TextAutogenerateConfigureDialog(QWidget *parent
     : QDialog(parent)
     , mTextAutogenerateConfigureWidget(new TextAutogenerateConfigureWidget(this))
 {
+    setWindowTitle(i18nc("@title:window", "Configure IA"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
