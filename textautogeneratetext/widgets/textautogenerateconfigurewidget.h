@@ -9,12 +9,16 @@
 #include <QWidget>
 namespace TextAutogenerateText
 {
+class TextAutogenerateTextConfigureComboWidget;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit TextAutogenerateConfigureWidget(QWidget *parent = nullptr);
     ~TextAutogenerateConfigureWidget() override;
+
+private:
+    TextAutogenerateTextConfigureComboWidget *const mPluginComboBox;
 };
 
 }
