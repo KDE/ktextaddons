@@ -5,12 +5,14 @@
 */
 
 #pragma once
-
+#include "textautogeneratetext_export.h"
 #include <QWidget>
 class QStackedWidget;
 namespace TextAutogenerateText
 {
-class TextAutogenerateStackWidget : public QWidget
+class TextAutogenerateNotWorkingWidget;
+class TextAutogenerateWidget;
+class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateStackWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -19,6 +21,8 @@ public:
 
 private:
     QStackedWidget *const mStackedWidget;
+    TextAutogenerateNotWorkingWidget *const mTextAutogenerateNotWorkingWidget;
+    TextAutogenerateWidget *const mTextAutogenerateWidget;
 };
 
 }
