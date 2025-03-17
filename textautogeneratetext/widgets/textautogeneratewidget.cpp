@@ -25,6 +25,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     mTextAutogenerateTextLineEditWidget->setObjectName(QStringLiteral("mTextAutogenerateTextLineEditWidget"));
     mainLayout->addWidget(mTextAutogenerateTextLineEditWidget);
+    connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::editingFinished);
 }
 
 TextAutogenerateWidget::~TextAutogenerateWidget() = default;
