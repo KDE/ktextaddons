@@ -23,8 +23,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/ COMPONENT Devel
 )
 
-add_library(KF6TextAutogenerateText
-    widgets/textautogeneratenotworkingwidget.h widgets/textautogeneratenotworkingwidget.cpp)
+add_library(KF6TextAutogenerateText)
 
 add_library(KF6::TextAutogenerateText ALIAS KF6TextAutogenerateText)
 ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratetext_debug.h
@@ -89,6 +88,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/textautogenerateconfiguredialog.h
     widgets/textautogenerateconfiguredialog.cpp
+
+    widgets/textautogeneratenotworkingwidget.h
+    widgets/textautogeneratenotworkingwidget.cpp
 )
 
 if(BUILD_TESTING)
