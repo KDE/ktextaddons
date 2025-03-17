@@ -6,6 +6,7 @@
 
 #include "textautogeneratenotworkingwidget.h"
 #include <QLabel>
+#include <QVBoxLayout>
 
 using namespace TextAutogenerateText;
 TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *parent)
