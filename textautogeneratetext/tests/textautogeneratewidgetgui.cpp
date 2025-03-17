@@ -18,7 +18,7 @@ TextAutoGenerateWidgetGui::TextAutoGenerateWidgetGui(QWidget *parent)
     auto configureButton = new QPushButton(QStringLiteral("Configure..."), this);
     mainLayout->addWidget(configureButton);
     connect(configureButton, &QPushButton::clicked, this, [this]() {
-        TextAutogenerateText::TextAutogenerateConfigureDialog d;
+        TextAutogenerateText::TextAutogenerateConfigureDialog d(this);
         d.exec();
     });
 
