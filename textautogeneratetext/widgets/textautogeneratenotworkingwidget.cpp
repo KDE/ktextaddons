@@ -14,3 +14,5 @@ TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *pare
 }
 
 TextAutogenerateNotWorkingWidget::~TextAutogenerateNotWorkingWidget() = default;
+
+#include "moc_textautogeneratenotworkingwidget.cpp"
