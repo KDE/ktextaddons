@@ -28,8 +28,13 @@ TextAutogenerateConfigureDialog::TextAutogenerateConfigureDialog(QWidget *parent
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutogenerateConfigureDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutogenerateConfigureDialog::accept);
+
+    mTextAutogenerateConfigureWidget->loadSettings();
 }
 
-TextAutogenerateConfigureDialog::~TextAutogenerateConfigureDialog() = default;
+TextAutogenerateConfigureDialog::~TextAutogenerateConfigureDialog()
+{
+    mTextAutogenerateConfigureWidget->saveSettings();
+}
 
 #include "moc_textautogenerateconfiguredialog.cpp"

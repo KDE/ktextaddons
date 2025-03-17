@@ -17,6 +17,9 @@ public:
     explicit TextAutogenerateConfigureWidget(QWidget *parent = nullptr);
     ~TextAutogenerateConfigureWidget() override;
 
+    void loadSettings();
+    void saveSettings();
+
 private:
     TextAutogenerateTextConfigureComboWidget *const mPluginComboBox;
 };

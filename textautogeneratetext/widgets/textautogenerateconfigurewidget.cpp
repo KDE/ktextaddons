@@ -34,4 +34,14 @@ TextAutogenerateConfigureWidget::TextAutogenerateConfigureWidget(QWidget *parent
 
 TextAutogenerateConfigureWidget::~TextAutogenerateConfigureWidget() = default;
 
+void TextAutogenerateConfigureWidget::saveSettings()
+{
+    mPluginComboBox->save();
+}
+
+void TextAutogenerateConfigureWidget::loadSettings()
+{
+    mPluginComboBox->load();
+}
+
 #include "moc_textautogenerateconfigurewidget.cpp"
