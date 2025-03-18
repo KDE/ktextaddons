@@ -33,4 +33,13 @@ TextAutogenerateStackWidget::TextAutogenerateStackWidget(QWidget *parent)
 
 TextAutogenerateStackWidget::~TextAutogenerateStackWidget() = default;
 
+void TextAutogenerateStackWidget::setBrokenEngine(bool state)
+{
+    if (state) {
+        mStackedWidget->setCurrentWidget(mTextAutogenerateNotWorkingWidget);
+    } else {
+        mStackedWidget->setCurrentWidget(mTextAutogenerateWidget);
+    }
+}
+
 #include "moc_textautogeneratestackwidget.cpp"

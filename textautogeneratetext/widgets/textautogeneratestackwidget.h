@@ -19,6 +19,8 @@ public:
     explicit TextAutogenerateStackWidget(QWidget *parent = nullptr);
     ~TextAutogenerateStackWidget() override;
 
+    void setBrokenEngine(bool state);
+
 private:
     QStackedWidget *const mStackedWidget;
     TextAutogenerateNotWorkingWidget *const mTextAutogenerateNotWorkingWidget;
