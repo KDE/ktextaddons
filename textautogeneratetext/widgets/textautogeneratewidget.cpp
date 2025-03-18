@@ -59,9 +59,7 @@ void TextAutogenerateWidget::loadEngine()
         /*
         connect(mTextAutogeneratePlugin, &TextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
         connect(mTextAutogeneratePlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
-        d->initLanguage();
         d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
-        d->invert->setVisible(d->translatorClient->hasInvertSupport());
         updatePlaceHolder();
         */
     }
