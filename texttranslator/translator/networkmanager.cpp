@@ -20,9 +20,7 @@ NetworkManager::NetworkManager(QObject *parent)
     });
 }
 
-NetworkManager::~NetworkManager()
-{
-}
+NetworkManager::~NetworkManager() = default;
 
 NetworkManager *NetworkManager::self()
 {
