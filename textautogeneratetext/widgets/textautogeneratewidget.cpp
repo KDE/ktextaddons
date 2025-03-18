@@ -5,6 +5,10 @@
 */
 
 #include "textautogeneratewidget.h"
+#include "core/textautogenerateengineloader.h"
+#include "core/textautogenerateengineutil.h"
+#include "core/textautogeneratetextclient.h"
+#include "core/textautogeneratetextplugin.h"
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
@@ -33,6 +37,34 @@ TextAutogenerateWidget::~TextAutogenerateWidget() = default;
 QString TextAutogenerateWidget::textLineEdit() const
 {
     return mTextAutogenerateTextLineEditWidget->text();
+}
+
+void TextAutogenerateWidget::loadEngine()
+{
+    if (mTextAutogeneratePlugin) {
+        disconnect(mTextAutogeneratePlugin);
+        delete mTextAutogeneratePlugin;
+        mTextAutogeneratePlugin = nullptr;
+    }
+    mTextAutogenerateClient =
+        TextAutogenerateText::TextAutogenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutogenerateEngineUtil::loadEngine());
+    if (!mTextAutogenerateClient) {
+        const QString fallBackEngineName = TextAutogenerateText::TextAutogenerateEngineLoader::self()->fallbackFirstEngine();
+        if (!fallBackEngineName.isEmpty()) {
+            mTextAutogenerateClient = TextAutogenerateText::TextAutogenerateEngineLoader::self()->createTextAutoGenerateTextClient(fallBackEngineName);
+        }
+    }
+    if (mTextAutogenerateClient) {
+        mTextAutogeneratePlugin = mTextAutogenerateClient->createTextAutogeneratePlugin();
+        /*
+        connect(mTextAutogeneratePlugin, &TextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
+        connect(mTextAutogeneratePlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
+        d->initLanguage();
+        d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
+        d->invert->setVisible(d->translatorClient->hasInvertSupport());
+        updatePlaceHolder();
+        */
+    }
 }
 
 #include "moc_textautogeneratewidget.cpp"

@@ -10,6 +10,8 @@ namespace TextAutogenerateText
 {
 class TextAutogenerateResultWidget;
 class TextAutogenerateTextLineEditWidget;
+class TextAutogenerateTextClient;
+class TextAutogenerateTextPlugin;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateWidget : public QWidget
 {
     Q_OBJECT
@@ -19,11 +21,15 @@ public:
 
     [[nodiscard]] QString textLineEdit() const;
 
+    void loadEngine();
 Q_SIGNALS:
     void editingFinished(const QString &str);
 
 private:
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
+
+    TextAutogenerateTextClient *mTextAutogenerateClient = nullptr;
+    TextAutogenerateTextPlugin *mTextAutogeneratePlugin = nullptr;
 };
 }

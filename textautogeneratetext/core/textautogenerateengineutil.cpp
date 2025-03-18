@@ -5,7 +5,9 @@
 */
 
 #include "textautogenerateengineutil.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 using namespace TextAutogenerateText;
 using namespace Qt::Literals::StringLiterals;
 QString TextAutogenerateEngineUtil::engineTranslateName()
@@ -21,4 +23,11 @@ QString TextAutogenerateEngineUtil::defaultEngineName()
 QString TextAutogenerateEngineUtil::groupAutoGenerateTextName()
 {
     return "AutoGenerateText"_L1;
+}
+
+QString TextAutogenerateEngineUtil::loadEngine()
+{
+    KConfigGroup myGeneralGroup(KSharedConfig::openConfig(), groupAutoGenerateTextName());
+    const QString engineTypeStr = myGeneralGroup.readEntry(engineTranslateName(), defaultEngineName()); // Default google
+    return engineTypeStr;
 }

@@ -13,5 +13,6 @@ namespace TextAutogenerateEngineUtil
 [[nodiscard]] QString engineTranslateName();
 [[nodiscard]] QString defaultEngineName();
 [[nodiscard]] QString groupAutoGenerateTextName();
+[[nodiscard]] QString loadEngine();
 };
 }
