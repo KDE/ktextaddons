@@ -36,4 +36,11 @@ void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage>
     mMessages = newMessages;
 }
 
+void TextAutoGenerateChatModel::resetConversation()
+{
+    beginResetModel();
+    mMessages.clear();
+    endResetModel();
+}
+
 #include "moc_textautogeneratechatmodel.cpp"

@@ -29,6 +29,8 @@ public:
     [[nodiscard]] QList<TextAutoGenerateMessage> messages() const;
     void setMessages(const QList<TextAutoGenerateMessage> &newMessages);
 
+    void resetConversation();
+
 private:
     QList<TextAutoGenerateMessage> mMessages;
 };
