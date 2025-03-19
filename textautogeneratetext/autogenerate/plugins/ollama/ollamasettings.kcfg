@@ -7,11 +7,26 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 
-<kcfgfile name="ollamaplugin" />
+  <include>KUser</include>
+  <kcfgfile name="ollamaplugin" />
   <group name="Ollama">
     <entry name="ServerUrl" type="Url">
       <label>The URL to the Ollama instance</label>
       <default code="true">QUrl(QStringLiteral("http://127.0.0.1:11434"))</default>
+    </entry>
+  </group>
+  <group name="LLM">
+    <entry name="SystemPrompt" type="String">
+      <label>The system prompt for the LLM</label>
+      <default code="true">
+        [] {
+            KUser user;
+            return QStringLiteral("You are an AI assistant. You are speaking to a person named %1. "
+                                  "Be helpful, professional, and courteous. Do not give inaccurate "
+                                  "information.")
+                .arg(user.property(KUser::UserProperty::FullName).toString());
+        } ()
+      </default>
     </entry>
   </group>
 </kcfg>
