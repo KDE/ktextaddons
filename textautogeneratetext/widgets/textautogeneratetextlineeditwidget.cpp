@@ -20,10 +20,10 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
     mainLayout->setContentsMargins(QMargins{});
 
     mTextAutogenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutogenerateTextLineEdit"));
-    mainLayout->addWidget(mTextAutogenerateTextLineEdit);
+    mainLayout->addWidget(mTextAutogenerateTextLineEdit, 0, Qt::AlignTop);
 
     mSendMessage->setObjectName(QStringLiteral("mSendMessage"));
-    mainLayout->addWidget(mSendMessage);
+    mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);
 
     connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::editingFinished, this, [this]() {
         Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text());
