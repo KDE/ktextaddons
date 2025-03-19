@@ -18,3 +18,5 @@ void TextAutogenerateNotWorkingWidgetTest::shouldHaveDefaultValues()
     TextAutogenerateText::TextAutogenerateNotWorkingWidget w;
     // TODO
 }
+
+#include "moc_textautogeneratenotworkingwidgettest.cpp"
