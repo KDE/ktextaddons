@@ -11,6 +11,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
   <group name="Ollama">
     <entry name="ServerUrl" type="Url">
       <label>The URL to the Ollama instance</label>
+      <default code="true">QUrl(QStringLiteral("http://127.0.0.1:11434"))</default>
     </entry>
   </group>
 </kcfg>
