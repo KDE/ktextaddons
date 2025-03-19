@@ -20,6 +20,9 @@ target_sources(autogeneratetext_ollama PRIVATE
 
     ollamaconfigurewidget.h
     ollamaconfigurewidget.cpp
+
+    ollamaconfiguredialog.h
+    ollamaconfiguredialog.cpp
 )
 
 target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutogenerateText KF6::I18n KF6::ConfigGui)
