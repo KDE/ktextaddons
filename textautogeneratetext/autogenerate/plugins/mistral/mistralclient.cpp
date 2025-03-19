@@ -5,6 +5,7 @@
 */
 
 #include "mistralclient.h"
+#include "mistralconfiguredialog.h"
 #include "mistralplugin.h"
 #include <KLocalizedString>
 
@@ -43,8 +44,9 @@ bool MistralClient::hasConfigurationDialog() const
 
 bool MistralClient::showConfigureDialog(QWidget *parentWidget)
 {
-    // TODO
-    return false;
+    // TODO use QPointer here ???
+    MistralConfigureDialog d;
+    return d.exec();
 }
 
 #include "moc_mistralclient.cpp"
