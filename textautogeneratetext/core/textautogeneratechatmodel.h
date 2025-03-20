@@ -31,6 +31,8 @@ public:
 
     void resetConversation();
 
+    void addMessage(const TextAutoGenerateMessage &msg);
+
 private:
     QList<TextAutoGenerateMessage> mMessages;
 };

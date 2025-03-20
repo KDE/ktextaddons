@@ -14,14 +14,19 @@ TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
 
 TextAutoGenerateChatModel::~TextAutoGenerateChatModel() = default;
 
-int TextAutoGenerateChatModel::rowCount(const QModelIndex &) const
+int TextAutoGenerateChatModel::rowCount(const QModelIndex &parent) const
 {
-    // TODO
+    if (parent.isValid()) {
+        return 0; // flat model
+    }
     return mMessages.count();
 }
 
 QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) const
 {
+    if (index.row() < 0 || index.row() >= mMessages.count()) {
+        return {};
+    }
     // TODO
     return {};
 }
@@ -41,6 +46,11 @@ void TextAutoGenerateChatModel::resetConversation()
     beginResetModel();
     mMessages.clear();
     endResetModel();
+}
+
+void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
+{
+    // TODO
 }
 
 #include "moc_textautogeneratechatmodel.cpp"
