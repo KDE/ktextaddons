@@ -98,7 +98,7 @@ if(BUILD_TESTING)
     add_subdirectory(tests)
 endif()
 
-add_subdirectory(autogenerate/plugins)
+add_subdirectory(plugins)
 
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
