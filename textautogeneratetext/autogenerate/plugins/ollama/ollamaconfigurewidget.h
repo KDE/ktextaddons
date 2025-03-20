@@ -6,11 +6,17 @@
 #pragma once
 
 #include <QWidget>
-
+class QLineEdit;
 class OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit OllamaConfigureWidget(QWidget *parent = nullptr);
     ~OllamaConfigureWidget() override;
+
+    void loadSettings();
+    void saveSettings();
+
+private:
+    QLineEdit *const mServerUrl;
 };

@@ -11,10 +11,14 @@
 
 OllamaConfigureDialog::OllamaConfigureDialog(QWidget *parent)
     : QDialog(parent)
+    , mOllamaConfigureWidget(new OllamaConfigureWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
+
+    mOllamaConfigureWidget->setObjectName(QStringLiteral("mOllamaConfigureWidget"));
+    mainLayout->addWidget(mOllamaConfigureWidget);
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     box->setObjectName(QStringLiteral("box"));

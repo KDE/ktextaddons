@@ -6,11 +6,14 @@
 #pragma once
 
 #include <QDialog>
-
+class OllamaConfigureWidget;
 class OllamaConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit OllamaConfigureDialog(QWidget *parent = nullptr);
     ~OllamaConfigureDialog() override;
+
+private:
+    OllamaConfigureWidget *const mOllamaConfigureWidget;
 };
