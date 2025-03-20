@@ -5,6 +5,7 @@
 */
 
 #include "ollamaclient.h"
+#include "ollamaconfiguredialog.h"
 #include "ollamaplugin.h"
 #include <KLocalizedString>
 
@@ -43,8 +44,9 @@ bool OllamaClient::hasConfigurationDialog() const
 
 bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
 {
-    // TODO
-    return false;
+    // TODO use QPointer ?
+    OllamaConfigureDialog d;
+    return d.exec();
 }
 
 #include "moc_ollamaclient.cpp"

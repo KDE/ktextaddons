@@ -23,6 +23,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
     mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
     KLineEditEventHandler::catchReturnKey(mServerUrl);
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
+
+    // TODO add model
+    // TODO add prompt
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;
