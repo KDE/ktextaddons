@@ -50,6 +50,7 @@ TranslatorConfigureListsWidget::TranslatorConfigureListsWidget(QWidget *parent)
 
     auto label = new QLabel(i18nc("@label:textbox", "Engine:"), this);
     label->setObjectName(QStringLiteral("label"));
+    label->setTextFormat(Qt::PlainText);
     hboxLayout->addWidget(label);
     hboxLayout->addWidget(d->mEngineConfigureComboWidget);
     hboxLayout->addStretch(0);

@@ -47,6 +47,7 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     hbox->addWidget(closeBtn);
 
     auto lab = new QLabel(i18nc("@label:textbox", "Go to Line:"));
+    lab->setTextFormat(Qt::PlainText);
     hbox->addWidget(lab);
     d->mSpinbox = new QSpinBox(this);
     d->mSpinbox->setMinimum(1);

@@ -37,6 +37,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     instanceLayout->setContentsMargins({});
     mInstancePathLabel->setObjectName(QStringLiteral("instancepath"));
     mInstancePathLabel->setEnabled(false);
+    mInstancePathLabel->setTextFormat(Qt::PlainText);
     instanceLayout->addWidget(mInstancePathLabel);
 
     mInstancePath->setObjectName(QStringLiteral("instancepath"));
@@ -51,6 +52,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     auto languageLayout = new QHBoxLayout;
     languageLayout->setObjectName(QStringLiteral("languagelayout"));
     auto languageLabel = new QLabel(i18nc("@label:textbox", "Language:"), this);
+    languageLabel->setTextFormat(Qt::PlainText);
     languageLabel->setObjectName(QStringLiteral("languageLabel"));
     languageLayout->addWidget(languageLabel);
 

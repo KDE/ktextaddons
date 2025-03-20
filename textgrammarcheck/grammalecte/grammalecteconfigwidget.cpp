@@ -109,6 +109,7 @@ QWidget *GrammalecteConfigWidget::addGrammarTab()
     auto horizontallayout = new QHBoxLayout;
     reloadSettingsLayout->addLayout(horizontallayout);
     auto label = new QLabel(i18nc("@label:textbox", "Press Button for Reloading Settings"), this);
+    label->setTextFormat(Qt::PlainText);
     label->setObjectName(QStringLiteral("label"));
     horizontallayout->addWidget(label);
 

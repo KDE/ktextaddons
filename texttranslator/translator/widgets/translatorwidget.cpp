@@ -226,6 +226,7 @@ void TranslatorWidget::init()
     connect(d->closeBtn, &QToolButton::clicked, this, &TranslatorWidget::slotCloseWidget);
 
     auto label = new QLabel(i18nc("Translate from language", "From:"), this);
+    label->setTextFormat(Qt::PlainText);
     hboxLayout->addWidget(label);
     d->fromCombobox = new QComboBox(this);
     d->fromCombobox->setMinimumWidth(50);
@@ -233,6 +234,7 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(d->fromCombobox);
 
     label = new QLabel(i18nc("Translate to language", "To:"), this);
+    label->setTextFormat(Qt::PlainText);
     hboxLayout->addWidget(label);
     d->toCombobox = new QComboBox(this);
     d->toCombobox->setMinimumWidth(50);

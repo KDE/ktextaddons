@@ -28,6 +28,7 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
 {
     auto lay = new QHBoxLayout(this);
     auto label = new QLabel(i18nc("Replace text", "Replace:"), this);
+    label->setTextFormat(Qt::PlainText);
     lay->addWidget(label);
     const int marg1 = lay->contentsMargins().left();
     const int marg2 = lay->contentsMargins().right();
@@ -71,6 +72,7 @@ TextFindWidget::TextFindWidget(QWidget *parent)
     const int marg2 = lay->contentsMargins().right();
     lay->setContentsMargins(marg1, 0, marg2, 0);
     auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
+    label->setTextFormat(Qt::PlainText);
     lay->addWidget(label);
 
     mSearch->setToolTip(i18nc("@info:tooltip", "Text to search for"));

@@ -30,6 +30,7 @@ SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
 
     auto label = new QLabel(i18nc("@label:textbox", "Input:"), this);
     label->setObjectName(QStringLiteral("label"));
+    label->setTextFormat(Qt::PlainText);
     mainLayout->addWidget(label);
 
     mDeviceComboBox->setObjectName(QStringLiteral("mDeviceComboBox"));

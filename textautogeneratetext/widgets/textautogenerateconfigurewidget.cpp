@@ -26,6 +26,7 @@ TextAutogenerateConfigureWidget::TextAutogenerateConfigureWidget(QWidget *parent
 
     auto label = new QLabel(i18n("Engine:"), this);
     label->setObjectName(QStringLiteral("label"));
+    label->setTextFormat(Qt::PlainText);
     hbox->addWidget(label);
 
     mPluginComboBox->setObjectName(QStringLiteral("mPluginComboBox"));

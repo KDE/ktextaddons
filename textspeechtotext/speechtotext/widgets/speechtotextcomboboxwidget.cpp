@@ -27,6 +27,7 @@ SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
 
     auto label = new QLabel(i18nc("@label:textbox", "Engine:"), this);
     label->setObjectName(QStringLiteral("label"));
+    label->setTextFormat(Qt::PlainText);
     mainLayout->addWidget(label);
 
     mEngine->setObjectName(QStringLiteral("mEngine"));

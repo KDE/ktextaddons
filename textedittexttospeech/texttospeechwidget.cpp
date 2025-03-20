@@ -57,6 +57,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     hbox->addStretch(0);
 
     auto volume = new QLabel(i18nc("@label:textbox", "Volume:"), this);
+    volume->setTextFormat(Qt::PlainText);
     hbox->addWidget(volume);
     d->mVolume = new TextToSpeechSliderWidget(QStringLiteral("%1 %"), this);
     d->mVolume->setMinimumWidth(100);
