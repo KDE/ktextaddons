@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-19 00:40+0000\n"
+"POT-Creation-Date: 2025-03-20 00:40+0000\n"
 "PO-Revision-Date: 2025-03-18 05:38+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: autogenerate/plugins/mistral/mistralclient.cpp:26
+#: autogenerate/plugins/mistral/mistralclient.cpp:27
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
@@ -34,6 +34,14 @@ msgstr "Mistral AI-ის მორგება"
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
+
+#: autogenerate/plugins/ollama/ollamaconfiguredialog.cpp:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Ollama"
+msgstr "ხი-ის მორგება"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
