@@ -9,6 +9,8 @@ using namespace TextAutogenerateText;
 
 class TextAutogenerateText::TextAutogenerateTextPluginPrivate
 {
+public:
+    bool hasError = false;
 };
 
 TextAutogenerateTextPlugin::TextAutogenerateTextPlugin(QObject *parent)
@@ -18,5 +20,10 @@ TextAutogenerateTextPlugin::TextAutogenerateTextPlugin(QObject *parent)
 }
 
 TextAutogenerateTextPlugin::~TextAutogenerateTextPlugin() = default;
+
+void TextAutogenerateTextPlugin::setHasError(bool error)
+{
+    d->hasError = error;
+}
 
 #include "moc_textautogeneratetextplugin.cpp"

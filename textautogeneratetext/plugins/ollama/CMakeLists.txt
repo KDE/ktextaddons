@@ -23,6 +23,9 @@ target_sources(autogeneratetext_ollama PRIVATE
 
     ollamaconfiguredialog.h
     ollamaconfiguredialog.cpp
+
+    ollamautils.h
+    ollamautils.cpp
 )
 
 target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutogenerateText KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons)

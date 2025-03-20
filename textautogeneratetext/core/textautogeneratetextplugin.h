@@ -29,6 +29,11 @@ public:
 
     virtual void setPrompt(const QString &text) = 0;
 
+    void setHasError(bool error);
+Q_SIGNALS:
+    void errorOccurred(const QString &message);
+    void finished(const QString &replyText);
+
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
 };
