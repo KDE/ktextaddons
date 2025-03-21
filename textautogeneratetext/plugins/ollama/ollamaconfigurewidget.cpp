@@ -26,6 +26,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
 
     // TODO add model
     // TODO add prompt
+    loadSettings();
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;

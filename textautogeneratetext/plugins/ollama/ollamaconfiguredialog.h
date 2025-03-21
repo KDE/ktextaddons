@@ -15,5 +15,6 @@ public:
     ~OllamaConfigureDialog() override;
 
 private:
+    void slotAccepted();
     OllamaConfigureWidget *const mOllamaConfigureWidget;
 };

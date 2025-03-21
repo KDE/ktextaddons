@@ -23,10 +23,16 @@ OllamaConfigureDialog::OllamaConfigureDialog(QWidget *parent)
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     box->setObjectName(QStringLiteral("box"));
     mainLayout->addWidget(box);
-    connect(box, &QDialogButtonBox::accepted, this, &OllamaConfigureDialog::accept);
+    connect(box, &QDialogButtonBox::accepted, this, &OllamaConfigureDialog::slotAccepted);
     connect(box, &QDialogButtonBox::rejected, this, &OllamaConfigureDialog::reject);
 }
 
 OllamaConfigureDialog::~OllamaConfigureDialog() = default;
+
+void OllamaConfigureDialog::slotAccepted()
+{
+    mOllamaConfigureWidget->saveSettings();
+    accept();
+}
 
 #include "moc_ollamaconfiguredialog.cpp"
