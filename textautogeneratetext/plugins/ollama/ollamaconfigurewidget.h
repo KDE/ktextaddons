@@ -7,6 +7,8 @@
 
 #include <QWidget>
 class QLineEdit;
+class QComboBox;
+class QPlainTextEdit;
 class OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -19,4 +21,6 @@ public:
 
 private:
     QLineEdit *const mServerUrl;
+    QPlainTextEdit *const mPrompt;
+    QComboBox *const mModelComboBox;
 };
