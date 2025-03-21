@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-30 00:40+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-11-10 20:12+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -126,69 +126,69 @@ msgctxt "Replace text"
 msgid "Replace:"
 msgstr "Замяна:"
 
-#: widgets/textfindreplacewidget.cpp:66
+#: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Предишен"
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:68
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Следващ"
 
-#: widgets/textfindreplacewidget.cpp:73
+#: widgets/textfindreplacewidget.cpp:74
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Търсене:"
 
-#: widgets/textfindreplacewidget.cpp:76
+#: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Текст за търсене"
 
-#: widgets/textfindreplacewidget.cpp:82
+#: widgets/textfindreplacewidget.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Преминаване към следващото съвпадение"
 
-#: widgets/textfindreplacewidget.cpp:87
+#: widgets/textfindreplacewidget.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Преминаване към предишното съвпадение"
 
-#: widgets/textfindreplacewidget.cpp:93
+#: widgets/textfindreplacewidget.cpp:95
 #, kde-format
 msgid "Options"
 msgstr "Опции"
 
-#: widgets/textfindreplacewidget.cpp:94
+#: widgets/textfindreplacewidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Промяна начина на търсене"
 
-#: widgets/textfindreplacewidget.cpp:97
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Case sensitive"
 msgstr "Чувствителен регистър"
 
-#: widgets/textfindreplacewidget.cpp:100
+#: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Whole word"
 msgstr "Цяла дума"
 
-#: widgets/textfindreplacewidget.cpp:103
+#: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Regular Expression"
 msgstr "Регулярен израз"
 
-#: widgets/textfindreplacewidget.cpp:106
+#: widgets/textfindreplacewidget.cpp:108
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "Спазване на диакритичните знаци и ударенията"
@@ -199,7 +199,7 @@ msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Отиване на ред:"
 
-#: widgets/textgotolinewidget.cpp:56
+#: widgets/textgotolinewidget.cpp:57
 #, kde-format
 msgid "Go"
 msgstr "Go"

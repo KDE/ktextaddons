@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextcustomeditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-30 00:40+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2023-09-24 12:36+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -123,69 +123,69 @@ msgctxt "Replace text"
 msgid "Replace:"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:66
+#: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:68
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:73
+#: widgets/textfindreplacewidget.cpp:74
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:76
+#: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:82
+#: widgets/textfindreplacewidget.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:87
+#: widgets/textfindreplacewidget.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:93
+#: widgets/textfindreplacewidget.cpp:95
 #, kde-format
 msgid "Options"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:94
+#: widgets/textfindreplacewidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:97
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Case sensitive"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:100
+#: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Whole word"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:103
+#: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Regular Expression"
 msgstr ""
 
-#: widgets/textfindreplacewidget.cpp:106
+#: widgets/textfindreplacewidget.cpp:108
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr ""
@@ -196,7 +196,7 @@ msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr ""
 
-#: widgets/textgotolinewidget.cpp:56
+#: widgets/textgotolinewidget.cpp:57
 #, kde-format
 msgid "Go"
 msgstr ""

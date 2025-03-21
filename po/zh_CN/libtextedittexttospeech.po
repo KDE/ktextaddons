@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -97,18 +97,18 @@ msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "音量："
 
-#: texttospeechwidget.cpp:80
+#: texttospeechwidget.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "配置…"
 
-#: texttospeechwidget.cpp:132
+#: texttospeechwidget.cpp:133
 #, kde-format
 msgid "Engine has a problem."
 msgstr "引擎遇到了一个问题。"
 
-#: texttospeechwidget.cpp:132
+#: texttospeechwidget.cpp:133
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

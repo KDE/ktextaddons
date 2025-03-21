@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-30 00:40+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-08-20 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -123,69 +123,69 @@ msgctxt "Replace text"
 msgid "Replace:"
 msgstr "바꾸기:"
 
-#: widgets/textfindreplacewidget.cpp:66
+#: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "이전"
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:68
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "다음"
 
-#: widgets/textfindreplacewidget.cpp:73
+#: widgets/textfindreplacewidget.cpp:74
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "찾기(&I):"
 
-#: widgets/textfindreplacewidget.cpp:76
+#: widgets/textfindreplacewidget.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "검색할 문자열"
 
-#: widgets/textfindreplacewidget.cpp:82
+#: widgets/textfindreplacewidget.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "다음 일치로 이동"
 
-#: widgets/textfindreplacewidget.cpp:87
+#: widgets/textfindreplacewidget.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "이전 일치로 이동"
 
-#: widgets/textfindreplacewidget.cpp:93
+#: widgets/textfindreplacewidget.cpp:95
 #, kde-format
 msgid "Options"
 msgstr "옵션"
 
-#: widgets/textfindreplacewidget.cpp:94
+#: widgets/textfindreplacewidget.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "검색 방식 변경"
 
-#: widgets/textfindreplacewidget.cpp:97
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Case sensitive"
 msgstr "대소문자 구분"
 
-#: widgets/textfindreplacewidget.cpp:100
+#: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Whole word"
 msgstr "단어 단위로"
 
-#: widgets/textfindreplacewidget.cpp:103
+#: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Regular Expression"
 msgstr "정규 표현식"
 
-#: widgets/textfindreplacewidget.cpp:106
+#: widgets/textfindreplacewidget.cpp:108
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "분음 기호와 강세 유지"
@@ -196,7 +196,7 @@ msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "줄로 이동:"
 
-#: widgets/textgotolinewidget.cpp:56
+#: widgets/textgotolinewidget.cpp:57
 #, kde-format
 msgid "Go"
 msgstr "이동"

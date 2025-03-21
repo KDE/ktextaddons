@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:39+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-08-02 14:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -88,29 +88,29 @@ msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Ayarları yeniden yüklemek için düğmeye basın"
 
-#: grammalecte/grammalecteconfigwidget.cpp:118
+#: grammalecte/grammalecteconfigwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Ayarları yeniden yükle"
 
-#: grammalecte/grammalecteconfigwidget.cpp:135
+#: grammalecte/grammalecteconfigwidget.cpp:136
 #, kde-format
 msgid "Python Path:"
 msgstr "Python yolu:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:140
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Tam “grammalecte-cli.py” yolunu ekle"
 
-#: grammalecte/grammalecteconfigwidget.cpp:141
+#: grammalecte/grammalecteconfigwidget.cpp:142
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Grammalecte yolu:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:147
+#: grammalecte/grammalecteconfigwidget.cpp:148
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
@@ -318,13 +318,13 @@ msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Örnek yolu:"
 
-#: languagetool/languagetoolconfigwidget.cpp:53
+#: languagetool/languagetoolconfigwidget.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Dil:"
 
-#: languagetool/languagetoolconfigwidget.cpp:65
+#: languagetool/languagetoolconfigwidget.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

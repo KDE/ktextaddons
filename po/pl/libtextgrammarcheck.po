@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:39+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-08-03 11:50+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -89,29 +89,29 @@ msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Naciśnij przycisk, aby wczytaj ustawienia ponownie"
 
-#: grammalecte/grammalecteconfigwidget.cpp:118
+#: grammalecte/grammalecteconfigwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Wczytaj ustawienia ponownie"
 
-#: grammalecte/grammalecteconfigwidget.cpp:135
+#: grammalecte/grammalecteconfigwidget.cpp:136
 #, kde-format
 msgid "Python Path:"
 msgstr "Ścieżka Pythona:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:140
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Dodaj ścieżkę pełnego 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:141
+#: grammalecte/grammalecteconfigwidget.cpp:142
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Ścieżka Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:147
+#: grammalecte/grammalecteconfigwidget.cpp:148
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
@@ -319,13 +319,13 @@ msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Ścieżka wystąpienia:"
 
-#: languagetool/languagetoolconfigwidget.cpp:53
+#: languagetool/languagetoolconfigwidget.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Język:"
 
-#: languagetool/languagetoolconfigwidget.cpp:65
+#: languagetool/languagetoolconfigwidget.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

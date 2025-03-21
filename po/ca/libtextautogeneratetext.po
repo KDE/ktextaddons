@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:40+0000\n"
-"PO-Revision-Date: 2025-03-18 09:32+0100\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"PO-Revision-Date: 2025-03-20 09:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,30 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: autogenerate/plugins/mistral/mistralclient.cpp:27
-#, kde-format
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: autogenerate/plugins/mistral/mistralconfiguredialog.cpp:17
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Mistral IA"
-msgstr "Configura Mistral AI"
-
-#: autogenerate/plugins/ollama/ollamaclient.cpp:26
-#: core/textautogenerateengineutil.cpp:15
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
-
-#: autogenerate/plugins/ollama/ollamaconfiguredialog.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
-msgctxt "@title:window"
-msgid "Configure Ollama"
-msgstr "Configura la IA"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -53,6 +33,28 @@ msgstr "Local"
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
+
+#: plugins/mistral/mistralclient.cpp:27
+#, kde-format
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: plugins/mistral/mistralconfiguredialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Mistral IA"
+msgstr "Configura Mistral AI"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Ollama"
+msgstr "Configura l'Ollama"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:25
+#, kde-format
+msgid "Server Url:"
+msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

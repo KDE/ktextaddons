@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-30 00:40+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:29+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -128,73 +128,73 @@ msgctxt "Replace text"
 msgid "Replace:"
 msgstr "மாற்று:"
 
-#: widgets/textfindreplacewidget.cpp:66
+#: widgets/textfindreplacewidget.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "முந்தையது"
 
-#: widgets/textfindreplacewidget.cpp:67
+#: widgets/textfindreplacewidget.cpp:68
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "அடுத்தது"
 
-#: widgets/textfindreplacewidget.cpp:73
+#: widgets/textfindreplacewidget.cpp:74
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&தேடு:"
 
-#: widgets/textfindreplacewidget.cpp:76
+#: widgets/textfindreplacewidget.cpp:78
 #, fuzzy, kde-format
 #| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "கண்டுபிடிக்க வேண்டிய சொற்றொடர்"
 
-#: widgets/textfindreplacewidget.cpp:82
+#: widgets/textfindreplacewidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "அடுத்தப் பொருத்தத்துக்குத் தாவு"
 
-#: widgets/textfindreplacewidget.cpp:87
+#: widgets/textfindreplacewidget.cpp:89
 #, fuzzy, kde-format
 #| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "முந்தைய பொருத்தத்துக்கு தாவு"
 
-#: widgets/textfindreplacewidget.cpp:93
+#: widgets/textfindreplacewidget.cpp:95
 #, kde-format
 msgid "Options"
 msgstr "விருப்பங்கள்"
 
-#: widgets/textfindreplacewidget.cpp:94
+#: widgets/textfindreplacewidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "தேடல் நடத்தையை மாற்று"
 
-#: widgets/textfindreplacewidget.cpp:97
+#: widgets/textfindreplacewidget.cpp:99
 #, kde-format
 msgid "Case sensitive"
 msgstr "எழுத்து வகையை (பெரிது/சிறிது) பொருட்படுத்து"
 
-#: widgets/textfindreplacewidget.cpp:100
+#: widgets/textfindreplacewidget.cpp:102
 #, kde-format
 msgid "Whole word"
 msgstr "முழு சொல்"
 
-#: widgets/textfindreplacewidget.cpp:103
+#: widgets/textfindreplacewidget.cpp:105
 #, kde-format
 msgid "Regular Expression"
 msgstr "சுருங்குறித் தொடர்"
 
-#: widgets/textfindreplacewidget.cpp:106
+#: widgets/textfindreplacewidget.cpp:108
 #, kde-format
 msgid "Respect Diacritic and Accents"
 msgstr "துணைக்குறிகளையும் ஒலிப்புக்குறிகளையும் பொருட்படுத்து"
@@ -206,7 +206,7 @@ msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "வரிக்கு செல்:"
 
-#: widgets/textgotolinewidget.cpp:56
+#: widgets/textgotolinewidget.cpp:57
 #, kde-format
 msgid "Go"
 msgstr "செல்"

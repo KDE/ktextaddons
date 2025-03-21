@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail_editorgrammar_plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:39+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2023-02-11 18:35+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -94,31 +94,31 @@ msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Stlačte tlačidlo na znovu-načítanie nastavení"
 
-#: grammalecte/grammalecteconfigwidget.cpp:118
+#: grammalecte/grammalecteconfigwidget.cpp:119
 #, fuzzy, kde-format
 #| msgid "Reload Settings"
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Znovunačítať nastavenia"
 
-#: grammalecte/grammalecteconfigwidget.cpp:135
+#: grammalecte/grammalecteconfigwidget.cpp:136
 #, kde-format
 msgid "Python Path:"
 msgstr "Cesta k Python-u:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "Add full 'grammalecte-cli.py' path"
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Pridať úplnú cestu 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:141
+#: grammalecte/grammalecteconfigwidget.cpp:142
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Cesta k Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:147
+#: grammalecte/grammalecteconfigwidget.cpp:148
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
@@ -327,14 +327,14 @@ msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Cesta inštancie:"
 
-#: languagetool/languagetoolconfigwidget.cpp:53
+#: languagetool/languagetoolconfigwidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "Language:"
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Jazyk:"
 
-#: languagetool/languagetoolconfigwidget.cpp:65
+#: languagetool/languagetoolconfigwidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Refresh"
 msgctxt "@info:tooltip"

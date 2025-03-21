@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:40+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,30 +17,10 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextautogeneratetext.pot\n"
 "X-Crowdin-File-ID: 57198\n"
 
-#: autogenerate/plugins/mistral/mistralclient.cpp:27
-#, kde-format
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: autogenerate/plugins/mistral/mistralconfiguredialog.cpp:17
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Mistral IA"
-msgstr "配置 Mistral IA"
-
-#: autogenerate/plugins/ollama/ollamaclient.cpp:26
-#: core/textautogenerateengineutil.cpp:15
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:27
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
-
-#: autogenerate/plugins/ollama/ollamaconfiguredialog.cpp:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
-msgctxt "@title:window"
-msgid "Configure Ollama"
-msgstr "配置 IA"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -51,6 +31,30 @@ msgstr "本地"
 #, kde-format
 msgid "Network"
 msgstr "网络"
+
+#: plugins/mistral/mistralclient.cpp:27
+#, kde-format
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: plugins/mistral/mistralconfiguredialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Mistral IA"
+msgstr "配置 Mistral IA"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:16
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Ollama"
+msgstr "配置 IA"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:25
+#, kde-format
+msgid "Server Url:"
+msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

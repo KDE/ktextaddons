@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:39+0000\n"
+"POT-Creation-Date: 2025-03-21 00:40+0000\n"
 "PO-Revision-Date: 2024-08-02 12:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -92,29 +92,29 @@ msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Premeu el botó per a tornar a carregar la configuració"
 
-#: grammalecte/grammalecteconfigwidget.cpp:118
+#: grammalecte/grammalecteconfigwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Torna a carregar la configuració"
 
-#: grammalecte/grammalecteconfigwidget.cpp:135
+#: grammalecte/grammalecteconfigwidget.cpp:136
 #, kde-format
 msgid "Python Path:"
 msgstr "Camí de Python:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:140
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Afegiu tot el camí a «grammalecte-cli.py»"
 
-#: grammalecte/grammalecteconfigwidget.cpp:141
+#: grammalecte/grammalecteconfigwidget.cpp:142
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Camí del Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:147
+#: grammalecte/grammalecteconfigwidget.cpp:148
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
@@ -323,13 +323,13 @@ msgctxt "@label:textbox"
 msgid "Instance Path:"
 msgstr "Camí de la instància:"
 
-#: languagetool/languagetoolconfigwidget.cpp:53
+#: languagetool/languagetoolconfigwidget.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Language:"
 msgstr "Idioma:"
 
-#: languagetool/languagetoolconfigwidget.cpp:65
+#: languagetool/languagetoolconfigwidget.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
