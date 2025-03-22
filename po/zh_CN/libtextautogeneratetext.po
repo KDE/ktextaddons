@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-03-22 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -44,16 +44,24 @@ msgid "Configure Mistral IA"
 msgstr "配置 Mistral IA"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr "配置 IA"
+msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:25
+#: plugins/ollama/ollamaconfigurewidget.cpp:29
 #, kde-format
 msgid "Server Url:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:33
+#, kde-format
+msgid "Model:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:36
+#, kde-format
+msgid "Prompt:"
 msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
