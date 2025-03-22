@@ -11,3 +11,5 @@ OllamaManager::OllamaManager(QObject *parent)
 }
 
 OllamaManager::~OllamaManager() = default;
+
+#include "moc_ollamamanager.cpp"
