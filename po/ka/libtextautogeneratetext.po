@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:40+0000\n"
-"PO-Revision-Date: 2025-03-21 04:36+0100\n"
+"PO-Revision-Date: 2025-03-22 03:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -58,12 +58,12 @@ msgstr "სერვერის URL:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:33
 #, kde-format
 msgid "Model:"
-msgstr ""
+msgstr "მოდელი:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:36
 #, kde-format
 msgid "Prompt:"
-msgstr ""
+msgstr "მოთხოვნის ზოლი:"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

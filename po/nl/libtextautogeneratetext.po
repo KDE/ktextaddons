@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-22 00:40+0000\n"
-"PO-Revision-Date: 2025-03-20 13:05+0100\n"
+"PO-Revision-Date: 2025-03-22 15:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -52,17 +52,17 @@ msgstr "Ollama configureren"
 #: plugins/ollama/ollamaconfigurewidget.cpp:29
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "URL van server:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:33
 #, kde-format
 msgid "Model:"
-msgstr ""
+msgstr "Model:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:36
 #, kde-format
 msgid "Prompt:"
-msgstr ""
+msgstr "Prompt:"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

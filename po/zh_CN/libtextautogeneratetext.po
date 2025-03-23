@@ -47,12 +47,12 @@ msgstr "配置 Mistral IA"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr ""
+msgstr "配置 Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:29
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "服务器 URL："
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:33
 #, kde-format
