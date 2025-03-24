@@ -20,6 +20,7 @@ public:
     void saveSettings();
 
 private:
+    void fillModels();
     QLineEdit *const mServerUrl;
     QPlainTextEdit *const mPrompt;
     QComboBox *const mModelComboBox;
