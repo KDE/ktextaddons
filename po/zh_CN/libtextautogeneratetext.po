@@ -57,12 +57,12 @@ msgstr "服务器 URL："
 #: plugins/ollama/ollamaconfigurewidget.cpp:33
 #, kde-format
 msgid "Model:"
-msgstr ""
+msgstr "模型："
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:36
 #, kde-format
 msgid "Prompt:"
-msgstr ""
+msgstr "提示词："
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
