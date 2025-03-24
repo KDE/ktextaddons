@@ -69,7 +69,8 @@ QVariant TranslatorModel::headerData(int section, Qt::Orientation orientation, i
 
 int TranslatorModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent)
+    if (parent.isValid()) // flat model
+        return 0;
     return mTranslators.count();
 }
 
