@@ -14,6 +14,7 @@ class OllamaManager : public QObject
 public:
     struct ModelsInfo {
         QStringList models;
+        QString errorOccured;
         bool hasError = false;
         bool isReady = false;
     };
@@ -22,8 +23,13 @@ public:
     ~OllamaManager() override;
     void loadModels();
 
+    static OllamaManager *self();
+
 Q_SIGNALS:
-    void modelsLoaded(const QStringList &models);
+    void modelsLoadDone(const ModelsInfo &models);
+
+private:
+    QMetaObject::Connection mOllamaCheckConnect;
 };
 Q_DECLARE_TYPEINFO(OllamaManager::ModelsInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t);

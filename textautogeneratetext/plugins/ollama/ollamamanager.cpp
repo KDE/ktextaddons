@@ -4,11 +4,18 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamanager.h"
+#include "core/textautogenerateengineaccessmanager.h"
+#include "ollamasettings.h"
 #include "ollamautils.h"
+
+#include <KLocalizedString>
+
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaManager::OllamaManager(QObject *parent)
     : QObject{parent}
 {
@@ -16,34 +23,37 @@ OllamaManager::OllamaManager(QObject *parent)
 
 OllamaManager::~OllamaManager() = default;
 
+OllamaManager *OllamaManager::self()
+{
+    static OllamaManager s_self;
+    return &s_self;
+}
+
 void OllamaManager::loadModels()
 {
-    /*
-      QNetworkRequest req{QUrl::fromUserInput(m_ollamaUrl + OllamaUtils::tagsPath())};
-      req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-      auto rep = m_manager->get(req);
-      m_ollamaCheck = connect(rep, &QNetworkReply::finished, this, [this, rep] {
-          if (rep->error() != QNetworkReply::NoError) {
-              Q_EMIT errorOccurred(i18n("Failed to connect to interface at %1: %2", m_ollamaUrl, rep->errorString()));
-              m_hasError = true;
-              Q_EMIT readyChanged();
-              Q_EMIT hasErrorChanged();
-              return;
-          }
+    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
-          const auto json = QJsonDocument::fromJson(rep->readAll());
-          const auto models = json["models"_L1].toArray();
-          for (const QJsonValue &model : models) {
-              m_models.push_back(model["name"_L1].toString());
-          }
-          Q_EMIT modelsChanged();
+    auto rep = TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->get(req);
+    mOllamaCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
+        if (rep->error() != QNetworkReply::NoError) {
+            ModelsInfo info;
+            info.errorOccured = i18n("Failed to connect to interface at %1: %2", OllamaSettings::serverUrl().toString(), rep->errorString());
+            info.hasError = true;
+            Q_EMIT modelsLoadDone(std::move(info));
+            return;
+        }
 
-          m_ready = !m_models.isEmpty();
-          m_hasError = false;
-          Q_EMIT readyChanged();
-          Q_EMIT hasErrorChanged();
-      });
-      */
+        ModelsInfo info;
+        const auto json = QJsonDocument::fromJson(rep->readAll());
+        const auto models = json["models"_L1].toArray();
+        for (const QJsonValue &model : models) {
+            info.models.push_back(model["name"_L1].toString());
+        }
+        info.isReady = !info.models.isEmpty();
+        info.hasError = false;
+        Q_EMIT modelsLoadDone(std::move(info));
+    });
 }
 
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
