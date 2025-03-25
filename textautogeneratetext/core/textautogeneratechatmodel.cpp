@@ -30,7 +30,9 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     const auto &message = mMessages[index.row()];
     switch (role) {
     case MessageRole:
+        return message.content();
     case SenderRole:
+        return QVariant::fromValue(message.sender());
     case FinishedRole:
         // TODO
         break;
