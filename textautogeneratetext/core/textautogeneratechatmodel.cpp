@@ -27,7 +27,14 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     if (index.row() < 0 || index.row() >= mMessages.count()) {
         return {};
     }
-    // TODO
+    const auto &message = mMessages[index.row()];
+    switch (role) {
+    case MessageRole:
+    case SenderRole:
+    case FinishedRole:
+        // TODO
+        break;
+    }
     return {};
 }
 
@@ -50,7 +57,9 @@ void TextAutoGenerateChatModel::resetConversation()
 
 void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
 {
-    // TODO
+    beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
+    mMessages.append(msg);
+    endInsertRows();
 }
 
 #include "moc_textautogeneratechatmodel.cpp"
