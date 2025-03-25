@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-03-25 00:40+0000\n"
 "PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -108,28 +108,28 @@ msgstr "Vosk"
 msgid "Impossible to extract language"
 msgstr "Ne eblas eltiri lingvon"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:40
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
 #, kde-format
 msgid "Language"
 msgstr "Lingvo"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:42
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:85
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
 #, kde-format
 msgid "Installed"
 msgstr "Instalita"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:44
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
 #, kde-format
 msgid "Installed Version"
 msgstr "Instalita Versio"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:46
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
 #, kde-format
 msgid "Available Version"
 msgstr "Disponebla Versio"
 
-#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:48
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
 #, kde-format
 msgid "Size"
 msgstr "Grandeco"
