@@ -16,15 +16,15 @@ OllamaPlugin::OllamaPlugin(QObject *parent)
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to load settings";
     }
 
-      connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
-          if (modelinfo.hasError) {
-              mReady = false;
-              Q_EMIT errorOccurred(modelinfo.errorOccured);
-          } else {
-              mReady = true;
-          }
-      });
-      OllamaManager::self()->loadModels();
+    connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
+        if (modelinfo.hasError) {
+            mReady = false;
+            Q_EMIT errorOccurred(modelinfo.errorOccured);
+        } else {
+            mReady = true;
+        }
+    });
+    OllamaManager::self()->loadModels();
 }
 
 OllamaPlugin::~OllamaPlugin() = default;
