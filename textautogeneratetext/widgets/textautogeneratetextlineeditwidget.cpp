@@ -25,11 +25,11 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
     mSendMessage->setObjectName(QStringLiteral("mSendMessage"));
     mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);
 
-    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::editingFinished, this, [this]() {
-        Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text());
+    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::sendMessage, this, [this](const QString &msg) {
+        Q_EMIT editingFinished(msg);
     });
     mSendMessage->setEnabled(false);
-    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::textEdited, this, [this](const QString &str) {
+    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::sendMessage, this, [this](const QString &str) {
         mSendMessage->setEnabled(!str.isEmpty());
     });
 
