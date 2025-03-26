@@ -30,3 +30,5 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
 }
 
 OllamaComboBoxWidget::~OllamaComboBoxWidget() = default;
+
+#include "moc_ollamacomboboxwidget.cpp"
