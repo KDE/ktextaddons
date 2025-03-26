@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:40+0000\n"
+"POT-Creation-Date: 2025-03-26 00:40+0000\n"
 "PO-Revision-Date: 2025-03-22 09:23+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -46,24 +46,29 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurer Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:29
+#: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
 msgstr "URL du serveur :"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:33
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:36
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:37
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
+msgstr ""
+
+#: plugins/ollama/ollamamanager.cpp:41
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
 msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19

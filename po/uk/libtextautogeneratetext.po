@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:40+0000\n"
-"PO-Revision-Date: 2025-03-22 09:30+0200\n"
+"POT-Creation-Date: 2025-03-26 00:40+0000\n"
+"PO-Revision-Date: 2025-03-25 08:24+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -50,24 +50,29 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Налаштувати Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:29
+#: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
 msgstr "Адреса сервера:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:33
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
 msgstr "Модель:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:36
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
 msgstr "Запит:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:37
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
+msgstr "Немає запиту системи"
+
+#: plugins/ollama/ollamamanager.cpp:41
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
 msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
