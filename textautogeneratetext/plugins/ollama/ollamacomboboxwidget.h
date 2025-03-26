@@ -15,6 +15,7 @@ public:
     explicit OllamaComboBoxWidget(QWidget *parent = nullptr);
     ~OllamaComboBoxWidget() override;
 
+    void setModels(const QStringList &lst);
 Q_SIGNALS:
     void reloadModel();
 

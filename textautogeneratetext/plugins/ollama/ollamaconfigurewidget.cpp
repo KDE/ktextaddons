@@ -5,6 +5,7 @@
 */
 
 #include "ollamaconfigurewidget.h"
+#include "ollamacomboboxwidget.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 
@@ -21,7 +22,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mServerUrl(new QLineEdit(this))
     , mPrompt(new QPlainTextEdit(this))
-    , mModelComboBox(new QComboBox(this))
+    , mModelComboBoxWidget(new OllamaComboBoxWidget(this))
     , mMessageWidget(new KMessageWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
@@ -38,16 +39,15 @@ OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
     mServerUrl->setPlaceholderText(QStringLiteral("http://127.0.0.1:11434"));
 
-    mModelComboBox->setObjectName(QStringLiteral("mModelComboBox"));
-    mainLayout->addRow(i18n("Model:"), mModelComboBox);
+    mModelComboBoxWidget->setObjectName(QStringLiteral("mModelComboBoxWidget"));
+    mainLayout->addRow(i18n("Model:"), mModelComboBoxWidget);
 
     mPrompt->setObjectName(QStringLiteral("mPrompt"));
     mainLayout->addRow(i18n("Prompt:"), mPrompt);
     mPrompt->setPlaceholderText(i18n("No system prompt"));
     // TODO add setPlaceHolder
 
-    // TODO fill model
-
+    connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
     loadSettings();
 }
 
@@ -62,21 +62,22 @@ void OllamaConfigureWidget::loadSettings()
 
 void OllamaConfigureWidget::saveSettings()
 {
+    // TODO
 }
 
 void OllamaConfigureWidget::fillModels()
 {
+    mMessageWidget->animatedHide();
     connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
             mMessageWidget->setText(modelinfo.errorOccured);
             mMessageWidget->animatedShow();
         } else {
-            mModelComboBox->addItems(modelinfo.models);
+            mModelComboBoxWidget->setModels(modelinfo.models);
         }
     });
     OllamaManager::self()->loadModels();
-    // TODO
 }
 
 #include "moc_ollamaconfigurewidget.cpp"

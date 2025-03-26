@@ -31,4 +31,9 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
 
 OllamaComboBoxWidget::~OllamaComboBoxWidget() = default;
 
+void OllamaComboBoxWidget::setModels(const QStringList &lst)
+{
+    mModelComboBox->addItems(lst);
+}
+
 #include "moc_ollamacomboboxwidget.cpp"
