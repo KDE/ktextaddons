@@ -116,6 +116,7 @@ target_link_libraries(KF6TextAutogenerateText
     KF6::I18n
     KF6::WidgetsAddons
     KF6::ConfigGui
+    KF6::TextWidgets
 )
 
 target_include_directories(KF6TextAutogenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/>")

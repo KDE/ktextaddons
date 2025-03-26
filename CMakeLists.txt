@@ -69,6 +69,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Sonnet
     SyntaxHighlighting
     WidgetsAddons
+    TextWidgets
 )
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
 add_feature_info(KIO_SUPPORT ${BUILD_KIO_SUPPORT} "Build with KIO support")
