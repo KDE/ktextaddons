@@ -28,6 +28,9 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         } ()
       </default>
     </entry>
+    <entry name="Model" type="String">
+      <label>The model used to generate responses</label>
+    </entry>
   </group>
 </kcfg>
 
