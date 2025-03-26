@@ -56,6 +56,40 @@ void OllamaManager::loadModels()
     });
 }
 
+#if 0
+KLLMReply *KLLMInterface::getCompletion(const KLLMRequest &request)
+{
+    Q_ASSERT(ready());
+
+    QNetworkRequest req{QUrl::fromUserInput(m_ollamaUrl + QStringLiteral("/api/generate"))};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+
+    QJsonObject data;
+    data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
+    data["prompt"_L1] = request.message();
+
+    const auto context = request.context().toJson();
+    if (!context.isNull()) {
+        data["context"_L1] = context;
+    }
+
+    if (!m_systemPrompt.isEmpty()) {
+        data["system"_L1] = m_systemPrompt;
+    }
+
+    auto buf = new QBuffer{this};
+    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
+
+    auto reply = new KLLMReply{m_manager->post(req, buf), this};
+    connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
+        Q_EMIT finished(reply->readResponse());
+        buf->deleteLater();
+    });
+    return reply;
+}
+
+#endif
+
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
 {
     d.space() << "models:" << t.models;
