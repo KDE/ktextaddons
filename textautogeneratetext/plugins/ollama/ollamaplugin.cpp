@@ -7,6 +7,7 @@
 #include "ollamaplugin.h"
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamanager.h"
+#include "ollamasettings.h"
 
 OllamaPlugin::OllamaPlugin(QObject *parent)
     : TextAutogenerateText::TextAutogenerateTextPlugin{parent}
@@ -32,6 +33,7 @@ OllamaPlugin::~OllamaPlugin() = default;
 
 bool OllamaPlugin::loadSettings()
 {
+    setCurrentModel(OllamaSettings::model());
     // TODO verify that server is ok.
     return false;
 }
