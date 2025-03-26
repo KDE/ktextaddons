@@ -9,5 +9,6 @@
 
 namespace OllamaUtils
 {
-QString tagsPath();
+[[nodiscard]] QString tagsPath();
+[[nodiscard]] QString completionPath();
 };

@@ -9,3 +9,8 @@ QString OllamaUtils::tagsPath()
 {
     return QStringLiteral("/api/tags");
 }
+
+QString OllamaUtils::completionPath()
+{
+    return QStringLiteral("/api/generate");
+}
