@@ -25,3 +25,5 @@ QDebug operator<<(QDebug d, const OllamaRequest &t)
     d.space() << "message:" << t.message();
     return d;
 }
+
+#include "moc_ollamarequest.cpp"
