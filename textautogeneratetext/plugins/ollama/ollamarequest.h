@@ -8,7 +8,7 @@
 
 #include <QDebug>
 #include <QObject>
-
+#include <TextAutogenerateText/TextAutogenerateTextContext>
 class OllamaRequest
 {
     Q_GADGET
@@ -21,6 +21,7 @@ public:
 
 private:
     QString mMessage;
+    TextAutogenerateText::TextAutogenerateTextContext mContext;
 };
 
 QDebug operator<<(QDebug d, const OllamaRequest &t);
