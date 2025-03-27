@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(autogeneratetext_ollama MODULE
-    ollamarequest.h ollamarequest.cpp)
+add_library(autogeneratetext_ollama MODULE)
 
 kconfig_add_kcfg_files(autogeneratetext_ollama GENERATE_MOC ollamasettings.kcfgc)
 
@@ -32,6 +31,9 @@ target_sources(autogeneratetext_ollama PRIVATE
     ollamamanager.cpp
     ollamacomboboxwidget.h
     ollamacomboboxwidget.cpp
+
+    ollamarequest.h
+    ollamarequest.cpp
 )
 
 target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutogenerateText KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons)
