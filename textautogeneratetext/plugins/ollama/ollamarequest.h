@@ -19,6 +19,11 @@ public:
     [[nodiscard]] QString message() const;
     void setMessage(const QString &newMessage);
 
+    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextContext context() const;
+    void setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext);
+
+    [[nodiscard]] bool operator==(const OllamaRequest &other) const;
+
 private:
     QString mMessage;
     TextAutogenerateText::TextAutogenerateTextContext mContext;

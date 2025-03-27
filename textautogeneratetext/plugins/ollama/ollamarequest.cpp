@@ -20,9 +20,25 @@ void OllamaRequest::setMessage(const QString &newMessage)
     mMessage = newMessage;
 }
 
+TextAutogenerateText::TextAutogenerateTextContext OllamaRequest::context() const
+{
+    return mContext;
+}
+
+void OllamaRequest::setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext)
+{
+    mContext = newContext;
+}
+
+bool OllamaRequest::operator==(const OllamaRequest &other) const
+{
+    return other.context() == mContext && other.message() == mMessage;
+}
+
 QDebug operator<<(QDebug d, const OllamaRequest &t)
 {
     d.space() << "message:" << t.message();
+    d.space() << "context:" << t.context();
     return d;
 }
 
