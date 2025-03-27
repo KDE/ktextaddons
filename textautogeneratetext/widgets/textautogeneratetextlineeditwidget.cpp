@@ -33,8 +33,13 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
         mSendMessage->setEnabled(!str.isEmpty());
     });
 
+    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::textChanged, this, [this]() {
+        mSendMessage->setEnabled(!mTextAutogenerateTextLineEdit->document()->isEmpty());
+    });
+
     connect(mSendMessage, &QPushButton::clicked, this, [this]() {
         Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text());
+        mTextAutogenerateTextLineEdit->clear();
     });
 }
 
