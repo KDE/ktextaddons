@@ -78,17 +78,17 @@ void OllamaManager::getCompletion(const OllamaRequest &request)
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
-        auto buf = new QBuffer{this};
-        buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
-        /*
+    auto buf = new QBuffer{this};
+    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
+    /*
 
-        auto reply = new KLLMReply{m_manager->post(req, buf), this};
-        connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
-            Q_EMIT finished(reply->readResponse());
-            buf->deleteLater();
-        });
-        return reply;
-        */
+    auto reply = new KLLMReply{m_manager->post(req, buf), this};
+    connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
+        Q_EMIT finished(reply->readResponse());
+        buf->deleteLater();
+    });
+    return reply;
+    */
 }
 
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
