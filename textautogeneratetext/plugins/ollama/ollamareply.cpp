@@ -78,3 +78,5 @@ bool OllamaReply::isFinished() const
 {
     return mFinished;
 }
+
+#include "moc_ollamareply.cpp"
