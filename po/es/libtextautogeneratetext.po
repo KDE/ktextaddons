@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-26 00:40+0000\n"
-"PO-Revision-Date: 2025-03-23 03:34+0100\n"
+"POT-Creation-Date: 2025-03-27 00:40+0000\n"
+"PO-Revision-Date: 2025-03-26 02:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -45,36 +45,42 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configurar IA Mistral"
 
+#: plugins/ollama/ollamacomboboxwidget.cpp:27
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reload Model"
+msgstr ""
+
 #: plugins/ollama/ollamaconfiguredialog.cpp:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurar Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:39
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
+#: plugins/ollama/ollamaconfigurewidget.cpp:43
 #, kde-format
 msgid "Model:"
 msgstr "Modelo:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:47
 #, kde-format
 msgid "No system prompt"
-msgstr ""
+msgstr "Sin prompt del sistema"
 
 #: plugins/ollama/ollamamanager.cpp:41
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
-msgstr ""
+msgstr "No se ha podido conectar a la interfaz %1: %2"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
