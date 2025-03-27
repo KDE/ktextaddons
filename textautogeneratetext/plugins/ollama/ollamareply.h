@@ -11,7 +11,7 @@
 
 class QNetworkReply;
 /**
- * @brief The KLLMReplyInfo class represents information about a reply from an LLM.
+ * @brief The OllamaReplyInfo class represents information about a reply from an LLM.
  *
  * When an LLM generates a completion, the server generally will return some information about the completion, including the
  * duration of the completion, the number of tokens received, and the duration of the prompt evaluation. This struct encapsulates such information.
@@ -38,10 +38,7 @@ struct OllamaReplyInfo {
 };
 
 /**
- * @brief The KLLMReply class represents a reply from an LLM.
- *
- * Requesting a completion from a KLLMInterface will return a KLLMReply. You can use this to track the progress of the LLM's
- * reply.
+ * @brief The OllamaReply class represents a reply from an LLM.
  *
  * If you want to stream a reply as it is written in real time, connect to contentAdded() and use readResponse() to retrieve
  * the new content. If you prefer to wait for the entire reply before displaying anything, connect to finished(), which will
