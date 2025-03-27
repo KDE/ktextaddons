@@ -12,6 +12,7 @@
 
 #include <KLocalizedString>
 
+#include <QBuffer>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -63,9 +64,9 @@ void OllamaManager::getCompletion(const OllamaRequest &request)
 {
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    QJsonObject data;
     // TODO
     /*
-        QJsonObject data;
         data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
         data["prompt"_L1] = request.message();
 
@@ -73,13 +74,13 @@ void OllamaManager::getCompletion(const OllamaRequest &request)
         if (!context.isNull()) {
             data["context"_L1] = context;
         }
-
-        if (!OllamaSettings::systemPrompt().isEmpty()) {
-            data["system"_L1] = OllamaSettings::systemPrompt();
-        }
-
+*/
+    if (!OllamaSettings::systemPrompt().isEmpty()) {
+        data["system"_L1] = OllamaSettings::systemPrompt();
+    }
         auto buf = new QBuffer{this};
         buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
+        /*
 
         auto reply = new KLLMReply{m_manager->post(req, buf), this};
         connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
