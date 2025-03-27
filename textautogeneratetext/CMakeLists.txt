@@ -55,6 +55,10 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     core/textautogeneratemessage.h
     core/textautogeneratemessage.cpp
+
+
+    core/textautogeneratetextcontext.h
+    core/textautogeneratetextcontext.cpp
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
