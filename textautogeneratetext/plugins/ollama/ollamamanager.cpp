@@ -2,6 +2,8 @@
   SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
   SPDX-License-Identifier: GPL-2.0-or-later
+
+  Based on code from alpaka
 */
 #include "ollamamanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
@@ -12,6 +14,7 @@
 
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 
@@ -61,38 +64,31 @@ void OllamaManager::getCompletion(const OllamaRequest &request)
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     // TODO
+    /*
+        QJsonObject data;
+        data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
+        data["prompt"_L1] = request.message();
+
+        const auto context = request.context().toJson();
+        if (!context.isNull()) {
+            data["context"_L1] = context;
+        }
+
+        if (!OllamaSettings::systemPrompt().isEmpty()) {
+            data["system"_L1] = OllamaSettings::systemPrompt();
+        }
+
+        auto buf = new QBuffer{this};
+        buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
+
+        auto reply = new KLLMReply{m_manager->post(req, buf), this};
+        connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
+            Q_EMIT finished(reply->readResponse());
+            buf->deleteLater();
+        });
+        return reply;
+        */
 }
-#if 0
-KLLMReply *KLLMInterface::getCompletion(const KLLMRequest &request)
-{
-    Q_ASSERT(ready());
-
-
-    QJsonObject data;
-    data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
-    data["prompt"_L1] = request.message();
-
-    const auto context = request.context().toJson();
-    if (!context.isNull()) {
-        data["context"_L1] = context;
-    }
-
-    if (!m_systemPrompt.isEmpty()) {
-        data["system"_L1] = m_systemPrompt;
-    }
-
-    auto buf = new QBuffer{this};
-    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
-
-    auto reply = new KLLMReply{m_manager->post(req, buf), this};
-    connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
-        Q_EMIT finished(reply->readResponse());
-        buf->deleteLater();
-    });
-    return reply;
-}
-
-#endif
 
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
 {
