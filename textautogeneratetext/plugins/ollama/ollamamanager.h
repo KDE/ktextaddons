@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include "ollamarequest.h"
+
 #include <QDebug>
 #include <QObject>
 class OllamaManager : public QObject
@@ -22,6 +24,7 @@ public:
     explicit OllamaManager(QObject *parent = nullptr);
     ~OllamaManager() override;
     void loadModels();
+    void getCompletion(const OllamaRequest &request);
 
     static OllamaManager *self();
 

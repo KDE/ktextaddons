@@ -56,13 +56,17 @@ void OllamaManager::loadModels()
     });
 }
 
+void OllamaManager::getCompletion(const OllamaRequest &request)
+{
+    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::completionPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    // TODO
+}
 #if 0
 KLLMReply *KLLMInterface::getCompletion(const KLLMRequest &request)
 {
     Q_ASSERT(ready());
 
-    QNetworkRequest req{QUrl::fromUserInput(m_ollamaUrl + QStringLiteral("/api/generate"))};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     QJsonObject data;
     data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
