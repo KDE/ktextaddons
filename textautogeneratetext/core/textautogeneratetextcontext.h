@@ -17,6 +17,8 @@ public:
     [[nodiscard]] QVariant contextData() const;
     void setContextData(const QVariant &newContextData);
 
+    [[nodiscard]] bool operator==(const TextAutogenerateTextContext &other) const;
+
 private:
     QVariant mContextData;
 };

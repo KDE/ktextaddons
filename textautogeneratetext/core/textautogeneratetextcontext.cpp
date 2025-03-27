@@ -20,6 +20,11 @@ void TextAutogenerateTextContext::setContextData(const QVariant &newContextData)
     mContextData = newContextData;
 }
 
+bool TextAutogenerateTextContext::operator==(const TextAutogenerateTextContext &other) const
+{
+    return other.contextData() == mContextData;
+}
+
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateTextContext &t)
 {
     d.space() << "contextData:" << t.contextData();
