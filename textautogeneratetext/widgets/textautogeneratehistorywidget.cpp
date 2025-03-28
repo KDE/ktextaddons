@@ -19,3 +19,5 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
 }
 
 TextAutogenerateHistoryWidget::~TextAutogenerateHistoryWidget() = default;
+
+#include "moc_textautogeneratehistorywidget.cpp"
