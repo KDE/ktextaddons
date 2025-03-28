@@ -1,7 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Loren Burkholder <computersemiexpert@outlook.com>
 // SPDX-FileCopyrightText: 2023 Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.com>
-//
-// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+// SPDX-FileCopyrightText: SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+// Based on Alpaka code
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "ollamareply.h"
 #include "autogeneratetext_ollama_debug.h"
