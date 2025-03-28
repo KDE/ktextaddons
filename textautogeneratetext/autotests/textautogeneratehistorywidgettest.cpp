@@ -21,3 +21,5 @@ void TextAutogenerateHistoryWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     // TODO
 }
+
+#include "moc_textautogeneratehistorywidgettest.cpp"
