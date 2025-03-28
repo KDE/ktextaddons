@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace TextAutogenerateText
 {
 class TextAutogenerateHistoryListView;
@@ -18,5 +19,6 @@ public:
 
 private:
     TextAutogenerateHistoryListView *const mTextAutogenerateHistoryListView;
+    QLineEdit *const mSearchLineEdit;
 };
 }
