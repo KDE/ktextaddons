@@ -15,5 +15,8 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateNotWorkingWidget : public QWid
 public:
     explicit TextAutogenerateNotWorkingWidget(QWidget *parent = nullptr);
     ~TextAutogenerateNotWorkingWidget() override;
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
 };
 }
