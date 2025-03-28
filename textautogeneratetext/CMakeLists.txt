@@ -59,8 +59,8 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogeneratetextcontext.h
     core/textautogeneratetextcontext.cpp
 
-    widgets/textautogeneratehistorywidget.h
-    widgets/textautogeneratehistorywidget.cpp
+    core/textautogeneratehistorymodel.h
+    core/textautogeneratehistorymodel.cpp
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
@@ -97,6 +97,12 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/textautogeneratenotworkingwidget.h
     widgets/textautogeneratenotworkingwidget.cpp
+
+    widgets/textautogeneratehistorywidget.h
+    widgets/textautogeneratehistorywidget.cpp
+
+    widgets/textautogeneratehistorylistview.h
+    widgets/textautogeneratehistorylistview.cpp
 )
 
 if(BUILD_TESTING)
