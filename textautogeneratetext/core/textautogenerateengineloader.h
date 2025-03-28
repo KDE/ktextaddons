@@ -45,6 +45,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugins();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(const QString &pluginPath);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateDisplayName(TextAutogenerateTextClient *client) const;
     std::unique_ptr<TextAutogenerateEngineLoaderPrivate> const d;
 };
 }

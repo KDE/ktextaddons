@@ -117,9 +117,14 @@ QMap<QString, QString> TextAutogenerateEngineLoader::textAutoGenerateTextEngineI
     QHashIterator<QString, TextAutogenerateTextClient *> i(d->autogenerateTextClients);
     while (i.hasNext()) {
         i.next();
-        map.insert(i.key(), i.value()->translatedName());
+        map.insert(i.key(), generateDisplayName(i.value()));
     }
     return map;
+}
+
+QString TextAutogenerateEngineLoader::generateDisplayName(TextAutogenerateTextClient *client) const
+{
+    return client->translatedName() + QStringLiteral(" (%1)").arg(client->convertEngineType(client->engineType()));
 }
 
 QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
