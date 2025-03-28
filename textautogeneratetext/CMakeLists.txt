@@ -61,6 +61,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     core/textautogeneratehistorymodel.h
     core/textautogeneratehistorymodel.cpp
+
+    core/textautogeneratehistorysortfilterproxymodel.h
+    core/textautogeneratehistorysortfilterproxymodel.cpp
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
@@ -147,6 +150,7 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutogenerateTextContext
     TextAutoGenerateHistoryModel
     TextAutoGenerateChatModel
+    TextAutoGenerateHistorySortFilterProxyModel
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutogenerateText
     RELATIVE core
