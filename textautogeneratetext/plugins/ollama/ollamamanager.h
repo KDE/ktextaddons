@@ -10,6 +10,7 @@
 
 #include <QDebug>
 #include <QObject>
+class OllamaReply;
 class OllamaManager : public QObject
 {
     Q_OBJECT
@@ -24,12 +25,13 @@ public:
     explicit OllamaManager(QObject *parent = nullptr);
     ~OllamaManager() override;
     void loadModels();
-    void getCompletion(const OllamaRequest &request);
+    [[nodiscard]] OllamaReply *getCompletion(const OllamaRequest &request);
 
     static OllamaManager *self();
 
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
+    void finished(const QString &replyText);
 
 private:
     QMetaObject::Connection mOllamaCheckConnect;

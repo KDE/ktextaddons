@@ -90,7 +90,6 @@ public:
      */
     [[nodiscard]] bool isFinished() const;
 
-protected:
     explicit OllamaReply(QNetworkReply *netReply, QObject *parent = nullptr);
 
 Q_SIGNALS:

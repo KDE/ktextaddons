@@ -7,6 +7,7 @@
 */
 #include "ollamamanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
+#include "ollamareply.h"
 #include "ollamasettings.h"
 #include "ollamautils.h"
 
@@ -60,7 +61,7 @@ void OllamaManager::loadModels()
     });
 }
 
-void OllamaManager::getCompletion(const OllamaRequest &request)
+OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
 {
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
@@ -80,15 +81,13 @@ void OllamaManager::getCompletion(const OllamaRequest &request)
     }
     auto buf = new QBuffer{this};
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
-    /*
 
-    auto reply = new KLLMReply{m_manager->post(req, buf), this};
-    connect(reply, &KLLMReply::finished, this, [this, reply, buf] {
+    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf), this};
+    connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
         Q_EMIT finished(reply->readResponse());
         buf->deleteLater();
     });
     return reply;
-    */
 }
 
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
