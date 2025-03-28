@@ -30,9 +30,15 @@ public:
     [[nodiscard]] TextAutoGenerateMessage::Sender sender() const;
     void setSender(TextAutoGenerateMessage::Sender newSender);
 
+    [[nodiscard]] qint64 dateTime() const;
+    void setDateTime(qint64 newDateTime);
+
+    [[nodiscard]] bool isValid() const;
+
 private:
     QString mContent;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
+    qint64 mDateTime = -1;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);

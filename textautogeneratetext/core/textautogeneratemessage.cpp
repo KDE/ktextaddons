@@ -15,6 +15,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
 {
     d.space() << "content:" << t.content();
     d.space() << "sender:" << t.sender();
+    d.space() << "dateTime:" << t.dateTime();
     return d;
 }
 
@@ -36,6 +37,21 @@ TextAutoGenerateMessage::Sender TextAutoGenerateMessage::sender() const
 void TextAutoGenerateMessage::setSender(TextAutoGenerateMessage::Sender newSender)
 {
     mSender = newSender;
+}
+
+qint64 TextAutoGenerateMessage::dateTime() const
+{
+    return mDateTime;
+}
+
+void TextAutoGenerateMessage::setDateTime(qint64 newDateTime)
+{
+    mDateTime = newDateTime;
+}
+
+bool TextAutoGenerateMessage::isValid() const
+{
+    return mSender != TextAutoGenerateMessage::Sender::Unknown;
 }
 
 #include "moc_textautogeneratemessage.cpp"
