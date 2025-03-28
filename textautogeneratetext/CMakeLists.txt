@@ -145,6 +145,8 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutogenerateTextClient
     TextAutogenerateTextPlugin
     TextAutogenerateTextContext
+    TextAutoGenerateHistoryModel
+    TextAutoGenerateChatModel
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutogenerateText
     RELATIVE core
