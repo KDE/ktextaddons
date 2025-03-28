@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:40+0000\n"
+"POT-Creation-Date: 2025-03-28 00:40+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -76,7 +76,7 @@ msgstr ""
 msgid "No system prompt"
 msgstr ""
 
-#: plugins/ollama/ollamamanager.cpp:41
+#: plugins/ollama/ollamamanager.cpp:45
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr ""

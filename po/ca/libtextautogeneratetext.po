@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:40+0000\n"
-"PO-Revision-Date: 2025-03-26 09:29+0100\n"
+"POT-Creation-Date: 2025-03-28 00:40+0000\n"
+"PO-Revision-Date: 2025-03-27 09:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -49,7 +49,7 @@ msgstr "Configura Mistral AI"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr ""
+msgstr "Torna a carregar el model"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:16
 #, kde-format
@@ -77,7 +77,7 @@ msgstr "Indicador:"
 msgid "No system prompt"
 msgstr "Sense indicador del sistema"
 
-#: plugins/ollama/ollamamanager.cpp:41
+#: plugins/ollama/ollamamanager.cpp:45
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Ha fallat en connectar amb la interfície a %1: %2"

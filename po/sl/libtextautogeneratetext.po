@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:40+0000\n"
-"PO-Revision-Date: 2025-03-26 05:28+0100\n"
+"POT-Creation-Date: 2025-03-28 00:40+0000\n"
+"PO-Revision-Date: 2025-03-27 06:54+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -48,7 +48,7 @@ msgstr "Konfiguriraj Mistral IA"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr ""
+msgstr "Ponovno naloži model"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:16
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "Poziv:"
 msgid "No system prompt"
 msgstr "Ni sistemskega poziva"
 
-#: plugins/ollama/ollamamanager.cpp:41
+#: plugins/ollama/ollamamanager.cpp:45
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Povezava z vmesnikom ni uspela na %1: %2"

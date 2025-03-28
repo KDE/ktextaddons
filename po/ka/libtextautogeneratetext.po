@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:40+0000\n"
-"PO-Revision-Date: 2025-03-26 02:46+0100\n"
+"POT-Creation-Date: 2025-03-28 00:40+0000\n"
+"PO-Revision-Date: 2025-03-27 04:05+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -48,7 +48,7 @@ msgstr "Mistral AI-ის მორგება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr ""
+msgstr "მოდელის თავიდან ჩატვირთვა"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:16
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "მოთხოვნის ზოლი:"
 msgid "No system prompt"
 msgstr "სისტემური კითხვის გარეშე"
 
-#: plugins/ollama/ollamamanager.cpp:41
+#: plugins/ollama/ollamamanager.cpp:45
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
