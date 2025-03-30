@@ -47,7 +47,7 @@ msgstr "配置 Mistral IA"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr ""
+msgstr "重新加载模型"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:16
 #, kde-format
@@ -88,10 +88,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid "The system prompt for the LLM"
-msgstr "没有系统提示词"
+msgstr ""
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
@@ -117,11 +116,9 @@ msgid "Conversation"
 msgstr "对话"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgid "Configure..."
-msgstr "配置 IA"
+msgstr ""
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

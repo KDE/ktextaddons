@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-29 00:41+0000\n"
-"PO-Revision-Date: 2025-03-27 04:05+0100\n"
+"PO-Revision-Date: 2025-03-29 02:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -85,20 +85,19 @@ msgstr "ვერ მივუერთდი ინტერფეისს მ
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr ""
+msgstr "Ollama-ის გაშვებული ასლის ბმული"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid "The system prompt for the LLM"
-msgstr "სისტემური კითხვის გარეშე"
+msgstr "სისტემური მოთხოვნა LLM-სთვის"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr ""
+msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -118,11 +117,9 @@ msgid "Conversation"
 msgstr "საუბარი"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgid "Configure..."
-msgstr "ხი-ის მორგება"
+msgstr "მორგება..."
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

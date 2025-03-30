@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-29 00:41+0000\n"
-"PO-Revision-Date: 2025-03-27 09:44+0100\n"
+"PO-Revision-Date: 2025-03-29 14:03+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -86,20 +86,19 @@ msgstr "Ha fallat en connectar amb la interfície a %1: %2"
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr ""
+msgstr "L'URL de la instància Ollama"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid "The system prompt for the LLM"
-msgstr "Sense indicador del sistema"
+msgstr "L'indicador del sistema del LLM"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr ""
+msgstr "El model que es fa servir per a generar les respostes"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -119,11 +118,9 @@ msgid "Conversation"
 msgstr "Conversa"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgid "Configure..."
-msgstr "Configura la IA"
+msgstr "Configura..."
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

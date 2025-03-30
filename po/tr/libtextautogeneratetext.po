@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-29 00:41+0000\n"
-"PO-Revision-Date: 2025-03-27 20:16+0300\n"
+"PO-Revision-Date: 2025-03-29 14:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -84,20 +84,19 @@ msgstr "%1 konumunda arayüze bağlanılamadı: %2"
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr ""
+msgstr "Ollama örneğine olan URL"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid "The system prompt for the LLM"
-msgstr "Sistem istemi yok"
+msgstr "LLM için olan sistem istemi"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr ""
+msgstr "Yanıtlar üretmek için kullanılan model"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -117,11 +116,9 @@ msgid "Conversation"
 msgstr "Konuşma"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:22
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgid "Configure..."
-msgstr "Yapay Zekâyı Yapılandır"
+msgstr "Yapılandır…"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format
