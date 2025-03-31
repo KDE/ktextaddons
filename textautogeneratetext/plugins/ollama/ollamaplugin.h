@@ -21,13 +21,9 @@ public:
 
     void setPrompt(const QString &text) override;
 
-    [[nodiscard]] bool ready() const;
-    void setReady(bool newReady);
-
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
 private:
-    bool mReady = false;
     QString mCurrentModel;
 };

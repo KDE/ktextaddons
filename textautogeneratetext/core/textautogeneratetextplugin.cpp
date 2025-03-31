@@ -11,6 +11,7 @@ class TextAutogenerateText::TextAutogenerateTextPluginPrivate
 {
 public:
     bool hasError = false;
+    bool isReady = false;
 };
 
 TextAutogenerateTextPlugin::TextAutogenerateTextPlugin(QObject *parent)
@@ -24,6 +25,16 @@ TextAutogenerateTextPlugin::~TextAutogenerateTextPlugin() = default;
 void TextAutogenerateTextPlugin::setHasError(bool error)
 {
     d->hasError = error;
+}
+
+bool TextAutogenerateTextPlugin::ready() const
+{
+    return d->isReady;
+}
+
+void TextAutogenerateTextPlugin::setReady(bool newReady)
+{
+    d->isReady = newReady;
 }
 
 #include "moc_textautogeneratetextplugin.cpp"

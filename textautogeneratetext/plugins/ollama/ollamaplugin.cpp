@@ -18,10 +18,10 @@ OllamaPlugin::OllamaPlugin(QObject *parent)
 
     connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
-            mReady = false;
+            setReady(false);
             Q_EMIT errorOccurred(modelinfo.errorOccured);
         } else {
-            mReady = true;
+            setReady(true);
         }
     });
     OllamaManager::self()->loadModels();
@@ -49,16 +49,6 @@ QString OllamaPlugin::result()
 void OllamaPlugin::setPrompt(const QString &text)
 {
     // TODO
-}
-
-bool OllamaPlugin::ready() const
-{
-    return mReady;
-}
-
-void OllamaPlugin::setReady(bool newReady)
-{
-    mReady = newReady;
 }
 
 QString OllamaPlugin::currentModel() const

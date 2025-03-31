@@ -31,6 +31,9 @@ public:
 
     void setHasError(bool error);
 
+    [[nodiscard]] bool ready() const;
+    void setReady(bool newReady);
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const QString &replyText);
