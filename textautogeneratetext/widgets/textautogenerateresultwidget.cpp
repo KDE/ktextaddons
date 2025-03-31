@@ -20,8 +20,24 @@ TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
 
     mTextAutogenerateListView->setObjectName(QStringLiteral("mTextAutogenerateListView"));
     mainLayout->addWidget(mTextAutogenerateListView);
+    loadHistory();
 }
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;
+
+void TextAutogenerateResultWidget::addMessage(const QString &str)
+{
+    // TODO
+}
+
+void TextAutogenerateResultWidget::loadHistory()
+{
+    // TODO
+}
+
+void TextAutogenerateResultWidget::saveHistory()
+{
+    // TODO
+}
 
 #include "moc_textautogenerateresultwidget.cpp"

@@ -17,7 +17,11 @@ public:
     explicit TextAutogenerateResultWidget(QWidget *parent = nullptr);
     ~TextAutogenerateResultWidget() override;
 
+    void addMessage(const QString &str);
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
     TextAutogenerateListView *const mTextAutogenerateListView;
 };
 
