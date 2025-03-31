@@ -10,12 +10,15 @@
 namespace TextAutogenerateText
 {
 class TextAutoGenerateChatModel;
+class TextAutoGenerateMessage;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateListView : public QListView
 {
     Q_OBJECT
 public:
     explicit TextAutogenerateListView(QWidget *parent = nullptr);
     ~TextAutogenerateListView() override;
+
+    void addMessage(const TextAutoGenerateMessage &msg);
 
 private:
     TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;

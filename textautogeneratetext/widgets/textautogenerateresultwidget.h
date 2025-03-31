@@ -10,6 +10,7 @@
 namespace TextAutogenerateText
 {
 class TextAutogenerateListView;
+class TextAutoGenerateMessage;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateResultWidget : public QWidget
 {
     Q_OBJECT
@@ -17,7 +18,7 @@ public:
     explicit TextAutogenerateResultWidget(QWidget *parent = nullptr);
     ~TextAutogenerateResultWidget() override;
 
-    void addMessage(const QString &str);
+    void addMessage(const TextAutoGenerateMessage &msg);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();

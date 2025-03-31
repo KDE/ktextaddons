@@ -7,12 +7,14 @@
 #include "textautogeneratewidget.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogenerateengineutil.h"
+#include "core/textautogeneratemessage.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
+#include <QDateTime>
 #include <QVBoxLayout>
 
 using namespace TextAutogenerateText;
@@ -77,8 +79,11 @@ void TextAutogenerateWidget::slotEditingFinished(const QString &str)
 void TextAutogenerateWidget::slotAutogenerateFinished(const QString &str)
 {
     qDebug() << " TextAutogenerateWidget::slotAutogenerateFinished " << str;
-    mTextAutogenerateResultWidget->addMessage(str);
-    // TODO
+    TextAutoGenerateMessage msg;
+    msg.setContent(str);
+    msg.setDateTime(QDateTime::currentSecsSinceEpoch());
+    // TODO msg.setSender();
+    mTextAutogenerateResultWidget->addMessage(msg);
 }
 
 void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
