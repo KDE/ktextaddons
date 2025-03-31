@@ -33,7 +33,7 @@ bool OllamaPlugin::loadSettings()
 {
     setCurrentModel(OllamaSettings::model());
     // TODO verify that server is ok.
-    return false;
+    return true;
 }
 
 void OllamaPlugin::clear()
