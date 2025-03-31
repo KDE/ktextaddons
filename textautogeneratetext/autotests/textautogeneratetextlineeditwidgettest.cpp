@@ -9,6 +9,7 @@
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
 #include <QHBoxLayout>
+#include <QPushButton>
 #include <QTest>
 QTEST_MAIN(TextAutogenerateTextLineEditWidgetTest)
 TextAutogenerateTextLineEditWidgetTest::TextAutogenerateTextLineEditWidgetTest(QObject *parent)
@@ -26,6 +27,11 @@ void TextAutogenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 
     auto mTextAutogenerateTextLineEdit = w.findChild<TextAutogenerateText::TextAutogenerateTextLineEdit *>(QStringLiteral("mTextAutogenerateTextLineEdit"));
     QVERIFY(mTextAutogenerateTextLineEdit);
+
+    auto mSendMessage = w.findChild<QPushButton *>(QStringLiteral("mSendMessage"));
+    QVERIFY(mSendMessage);
+    QVERIFY(!mSendMessage->text().isEmpty());
+    QVERIFY(!mSendMessage->isEnabled());
 }
 
 #include "moc_textautogeneratetextlineeditwidgettest.cpp"
