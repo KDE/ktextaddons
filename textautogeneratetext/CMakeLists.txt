@@ -26,8 +26,8 @@ install(FILES
 add_library(KF6TextAutogenerateText)
 
 add_library(KF6::TextAutogenerateText ALIAS KF6TextAutogenerateText)
-ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratetext_debug.h
-    IDENTIFIER TEXTAUTOGENERATETEXT_LOG
+ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratetextcore_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_CORE_LOG
     CATEGORY_NAME org.kde.kf.textautogeneratetext
     DESCRIPTION "KF6 (TextAutogenerateText)"
     EXPORT KTEXTADDONS

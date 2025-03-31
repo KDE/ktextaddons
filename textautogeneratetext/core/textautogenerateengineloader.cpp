@@ -6,8 +6,8 @@
 
 #include "textautogenerateengineloader.h"
 
-#include "textautogeneratetext_debug.h"
 #include "textautogeneratetextclient.h"
+#include "textautogeneratetextcore_debug.h"
 #include <QCoreApplication>
 #include <QDir>
 #include <QPluginLoader>
@@ -49,7 +49,7 @@ void TextAutogenerateEngineLoader::loadPlugins()
         }
     }
     if (d->loadedPlugins.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "No autogenerate plugins available!";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "No autogenerate plugins available!";
         Q_EMIT noPluginsFound();
     }
 }
@@ -60,20 +60,20 @@ void TextAutogenerateEngineLoader::loadPlugin(const QString &pluginPath)
     const QString pluginIID = plugin.metaData()["IID"_L1].toString();
     if (!pluginIID.isEmpty()) {
         if (d->loadedPlugins.contains(pluginIID)) {
-            qCDebug(TEXTAUTOGENERATETEXT_LOG) << "Skipping already loaded" << pluginPath;
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Skipping already loaded" << pluginPath;
             return;
         }
         d->loadedPlugins.insert(pluginIID);
     }
 
     if (!plugin.load()) { // We do this separately for better error handling
-        qCDebug(TEXTAUTOGENERATETEXT_LOG) << "Unable to load plugin" << pluginPath << "Error:" << plugin.errorString();
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Unable to load plugin" << pluginPath << "Error:" << plugin.errorString();
         d->loadedPlugins.remove(pluginIID);
         return;
     }
     TextAutogenerateTextClient *client = qobject_cast<TextAutogenerateTextClient *>(plugin.instance());
     if (!client) {
-        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Invalid plugin loaded" << pluginPath;
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid plugin loaded" << pluginPath;
         plugin.unload(); // don't leave it in memory
         return;
     }
@@ -84,7 +84,7 @@ TextAutogenerateTextClient *TextAutogenerateEngineLoader::createTextAutoGenerate
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
-        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Client name not found: " << clientName;
         Q_EMIT loadingSpeechToTextFailed();
         return nullptr;
     }
@@ -95,7 +95,7 @@ bool TextAutogenerateEngineLoader::hasConfigurationDialog(const QString &clientN
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
-        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Client name not found: " << clientName;
         return false;
     }
     return (*clientsItr)->hasConfigurationDialog();
@@ -105,7 +105,7 @@ bool TextAutogenerateEngineLoader::showConfigureDialog(const QString &clientName
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
-        qCWarning(TEXTAUTOGENERATETEXT_LOG) << "Client name not found: " << clientName;
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Client name not found: " << clientName;
         return false;
     }
     return (*clientsItr)->showConfigureDialog(parentWidget);
@@ -132,7 +132,7 @@ QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
     if (!d->autogenerateTextClients.isEmpty()) {
         return *d->autogenerateTextClients.keyBegin();
     }
-    qCWarning(TEXTAUTOGENERATETEXT_LOG) << "No plugin found ! ";
+    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "No plugin found ! ";
     return QString();
 }
 
