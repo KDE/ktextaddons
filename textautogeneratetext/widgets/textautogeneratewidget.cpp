@@ -70,16 +70,20 @@ void TextAutogenerateWidget::loadEngine()
 
 void TextAutogenerateWidget::slotEditingFinished(const QString &str)
 {
+    qDebug() << " TextAutogenerateWidget::slotEditingFinished " << str;
     // TODO
 }
 
-void TextAutogenerateWidget::slotAutogenerateFinished()
+void TextAutogenerateWidget::slotAutogenerateFinished(const QString &str)
 {
+    qDebug() << " TextAutogenerateWidget::slotAutogenerateFinished " << str;
+    mTextAutogenerateResultWidget->addMessage(str);
     // TODO
 }
 
-void TextAutogenerateWidget::slotAutogenerateFailed()
+void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 {
+    qDebug() << " TextAutogenerateWidget::slotAutogenerateFailed " << errorMessage;
     // TODO
 }
 

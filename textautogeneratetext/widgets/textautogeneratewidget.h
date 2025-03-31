@@ -25,8 +25,8 @@ public:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &errorMessage);
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
 
