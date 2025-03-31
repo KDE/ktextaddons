@@ -38,6 +38,7 @@ bool OllamaPlugin::loadSettings()
 
 void OllamaPlugin::clear()
 {
+    // TODO clear all thread
 }
 
 QString OllamaPlugin::result()
