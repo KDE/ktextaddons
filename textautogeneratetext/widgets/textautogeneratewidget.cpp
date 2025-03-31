@@ -76,13 +76,9 @@ void TextAutogenerateWidget::slotEditingFinished(const QString &str)
     // TODO
 }
 
-void TextAutogenerateWidget::slotAutogenerateFinished(const QString &str)
+void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)
 {
-    qDebug() << " TextAutogenerateWidget::slotAutogenerateFinished " << str;
-    TextAutoGenerateMessage msg;
-    msg.setContent(str);
-    msg.setDateTime(QDateTime::currentSecsSinceEpoch());
-    // TODO msg.setSender();
+    qDebug() << " TextAutogenerateWidget::slotAutogenerateFinished " << msg;
     mTextAutogenerateResultWidget->addMessage(msg);
 }
 

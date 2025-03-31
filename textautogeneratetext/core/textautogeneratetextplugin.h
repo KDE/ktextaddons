@@ -10,6 +10,7 @@
 #include <memory>
 namespace TextAutogenerateText
 {
+class TextAutoGenerateMessage;
 /**
  * @brief The TextAutogenerateTextPlugin class
  * @author Laurent Montel <montel@kde.org>
@@ -36,7 +37,7 @@ public:
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);
-    void finished(const QString &replyText);
+    void finished(const TextAutoGenerateMessage &msg);
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;

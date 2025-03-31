@@ -12,6 +12,7 @@ class TextAutogenerateResultWidget;
 class TextAutogenerateTextLineEditWidget;
 class TextAutogenerateTextClient;
 class TextAutogenerateTextPlugin;
+class TextAutoGenerateMessage;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateWidget : public QWidget
 {
     Q_OBJECT
@@ -25,7 +26,7 @@ public:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished(const TextAutoGenerateMessage &msg);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &errorMessage);
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
