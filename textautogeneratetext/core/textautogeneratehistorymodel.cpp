@@ -18,17 +18,16 @@ int TextAutoGenerateHistoryModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0; // flat model
     }
-    // return mMessages.count();
-    return 0;
+    return mHistoryInfos.count();
 }
 
 QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) const
 {
-    /*
-    if (index.row() < 0 || index.row() >= mMessages.count()) {
+    if (index.row() < 0 || index.row() >= mHistoryInfos.count()) {
         return {};
     }
-    const auto &message = mMessages[index.row()];
+    const auto &info = mHistoryInfos[index.row()];
+    /*
     switch (role) {
     case MessageRole:
         return message.content();
@@ -40,6 +39,16 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
     }
     */
     return {};
+}
+
+QList<TextAutoGenerateHistoryInfo> TextAutoGenerateHistoryModel::historyInfos() const
+{
+    return mHistoryInfos;
+}
+
+void TextAutoGenerateHistoryModel::setHistoryInfos(const QList<TextAutoGenerateHistoryInfo> &newHistoryInfos)
+{
+    mHistoryInfos = newHistoryInfos;
 }
 
 #include "moc_textautogeneratehistorymodel.cpp"

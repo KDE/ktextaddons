@@ -6,8 +6,11 @@
 
 #pragma once
 
+#include "textautogeneratehistoryinfo.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
+#include <QList>
+
 namespace TextAutogenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateHistoryModel : public QAbstractListModel
@@ -25,5 +28,11 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+
+    [[nodiscard]] QList<TextAutoGenerateHistoryInfo> historyInfos() const;
+    void setHistoryInfos(const QList<TextAutoGenerateHistoryInfo> &newHistoryInfos);
+
+private:
+    QList<TextAutoGenerateHistoryInfo> mHistoryInfos;
 };
 }
