@@ -9,6 +9,7 @@
 #include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
+#include "textautogeneratetextwidget_debug.h"
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
@@ -61,6 +62,8 @@ void TextAutogenerateWidget::loadEngine()
                 &TextAutogenerateText::TextAutogenerateTextPlugin::errorOccurred,
                 this,
                 &TextAutogenerateWidget::slotAutogenerateFailed);
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutogenerateEngineUtil::loadEngine();
     }
 }
 
