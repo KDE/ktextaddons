@@ -85,7 +85,7 @@ void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMess
 void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 {
     qDebug() << " TextAutogenerateWidget::slotAutogenerateFailed " << errorMessage;
-    // TODO
+    // TODO report error
 }
 
 #include "moc_textautogeneratewidget.cpp"
