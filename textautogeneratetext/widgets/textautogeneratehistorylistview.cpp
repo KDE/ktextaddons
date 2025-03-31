@@ -10,6 +10,8 @@ using namespace TextAutogenerateText;
 TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent)
     : QListView(parent)
 {
+    setDragEnabled(false);
+    setUniformItemSizes(true);
 }
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
