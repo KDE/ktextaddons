@@ -15,4 +15,5 @@ public:
     ~TextAutogenerateTextLineEditWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldEnableButton();
 };
