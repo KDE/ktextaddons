@@ -22,10 +22,11 @@ public:
     [[nodiscard]] QString textLineEdit() const;
 
     void loadEngine();
-Q_SIGNALS:
-    void editingFinished(const QString &str);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed();
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
 

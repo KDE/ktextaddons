@@ -29,7 +29,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     mTextAutogenerateTextLineEditWidget->setObjectName(QStringLiteral("mTextAutogenerateTextLineEditWidget"));
     mainLayout->addWidget(mTextAutogenerateTextLineEditWidget);
-    connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::editingFinished);
+    connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::slotEditingFinished);
 }
 
 TextAutogenerateWidget::~TextAutogenerateWidget() = default;
@@ -56,13 +56,27 @@ void TextAutogenerateWidget::loadEngine()
     }
     if (mTextAutogenerateClient) {
         mTextAutogeneratePlugin = mTextAutogenerateClient->createTextAutogeneratePlugin();
-        /*
-        connect(mTextAutogeneratePlugin, &TextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
-        connect(mTextAutogeneratePlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
-        d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
-        updatePlaceHolder();
-        */
+        connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutogenerateTextPlugin::finished, this, &TextAutogenerateWidget::slotAutogenerateFinished);
+        connect(mTextAutogeneratePlugin,
+                &TextAutogenerateText::TextAutogenerateTextPlugin::errorOccurred,
+                this,
+                &TextAutogenerateWidget::slotAutogenerateFailed);
     }
+}
+
+void TextAutogenerateWidget::slotEditingFinished(const QString &str)
+{
+    // TODO
+}
+
+void TextAutogenerateWidget::slotAutogenerateFinished()
+{
+    // TODO
+}
+
+void TextAutogenerateWidget::slotAutogenerateFailed()
+{
+    // TODO
 }
 
 #include "moc_textautogeneratewidget.cpp"
