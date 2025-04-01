@@ -19,7 +19,7 @@ TextAutoGenerateHistorySortFilterProxyModel::~TextAutoGenerateHistorySortFilterP
 
 bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
-    // TODO implement
+    // TODO implement filter subject
     return true;
 }
 
