@@ -50,6 +50,9 @@ void TextAutogenerateWidget::loadEngine()
         delete mTextAutogeneratePlugin;
         mTextAutogeneratePlugin = nullptr;
     }
+    // TODO connect(TextAutogenerateText::TextAutogenerateEngineLoader::self(), &TextAutogenerateText::TextAutogenerateEngineLoader::noPluginsFound, this, &)
+    TextAutogenerateText::TextAutogenerateEngineLoader::self()->loadPlugins();
+
     mTextAutogenerateClient =
         TextAutogenerateText::TextAutogenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutogenerateEngineUtil::loadEngine());
     if (!mTextAutogenerateClient) {
