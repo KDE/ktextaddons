@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
-
+class KMessageWidget;
 namespace TextAutogenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateNotWorkingWidget : public QWidget
@@ -16,7 +16,10 @@ public:
     explicit TextAutogenerateNotWorkingWidget(QWidget *parent = nullptr);
     ~TextAutogenerateNotWorkingWidget() override;
 
+    void setMessageError(const QString &str);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
+    KMessageWidget *const mMessageWidget;
 };
 }

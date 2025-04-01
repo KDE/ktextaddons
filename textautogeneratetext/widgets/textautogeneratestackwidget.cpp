@@ -33,7 +33,7 @@ TextAutogenerateStackWidget::TextAutogenerateStackWidget(QWidget *parent)
 
 TextAutogenerateStackWidget::~TextAutogenerateStackWidget() = default;
 
-void TextAutogenerateStackWidget::setBrokenEngine(bool state)
+void TextAutogenerateStackWidget::setBrokenEngine(bool state, const QString &errorMessage)
 {
     if (state) {
         mStackedWidget->setCurrentWidget(mTextAutogenerateNotWorkingWidget);

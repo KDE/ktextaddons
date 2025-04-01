@@ -19,7 +19,7 @@ public:
     explicit TextAutogenerateStackWidget(QWidget *parent = nullptr);
     ~TextAutogenerateStackWidget() override;
 
-    void setBrokenEngine(bool state);
+    void setBrokenEngine(bool state, const QString &errorMessage);
 
 private:
     QStackedWidget *const mStackedWidget;
