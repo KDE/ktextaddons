@@ -25,6 +25,7 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
 
     mSearchLineEdit->setObjectName("mSearchLineEdit"_L1);
     mSearchLineEdit->setClearButtonEnabled(true);
+    mSearchLineEdit->addAction(QIcon::fromTheme(QStringLiteral("view-filter")), QLineEdit::LeadingPosition);
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
@@ -43,7 +44,8 @@ TextAutogenerateHistoryWidget::~TextAutogenerateHistoryWidget() = default;
 
 void TextAutogenerateHistoryWidget::slotSearchTextChanged(const QString &str)
 {
-    // TODO change listview
+    // Improve it ???
+    mHistoryProxyModel->setFilterFixedString(str);
 }
 
 #include "moc_textautogeneratehistorywidget.cpp"
