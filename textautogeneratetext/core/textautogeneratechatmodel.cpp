@@ -49,7 +49,9 @@ QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
 
 void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage> &newMessages)
 {
+    beginResetModel();
     mMessages = newMessages;
+    endResetModel();
 }
 
 void TextAutoGenerateChatModel::resetConversation()
