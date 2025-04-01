@@ -117,6 +117,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/textautogeneratehistorylistview.h
     widgets/textautogeneratehistorylistview.cpp
+
+    widgets/textautogeneratehistorylistviewdelegate.h
+    widgets/textautogeneratehistorylistviewdelegate.cpp
 )
 
 if(BUILD_TESTING)
