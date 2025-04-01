@@ -29,8 +29,6 @@ TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *pare
     configureButton->setObjectName("configureButton"_L1);
     connect(configureButton, &QPushButton::clicked, this, &TextAutogenerateNotWorkingWidget::slotConfigure);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
-    // TODO add button for configure it ?
-    // TODO add message info
 }
 
 TextAutogenerateNotWorkingWidget::~TextAutogenerateNotWorkingWidget() = default;
@@ -39,6 +37,12 @@ void TextAutogenerateNotWorkingWidget::setMessageError(const QString &str)
 {
     mMessageWidget->setText(str);
     mMessageWidget->animatedShow();
+}
+
+void TextAutogenerateNotWorkingWidget::clearMessage()
+{
+    mMessageWidget->setText({});
+    mMessageWidget->animatedHide();
 }
 
 void TextAutogenerateNotWorkingWidget::slotConfigure()

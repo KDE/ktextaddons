@@ -36,8 +36,10 @@ TextAutogenerateStackWidget::~TextAutogenerateStackWidget() = default;
 void TextAutogenerateStackWidget::setBrokenEngine(bool state, const QString &errorMessage)
 {
     if (state) {
+        mTextAutogenerateNotWorkingWidget->setMessageError(errorMessage);
         mStackedWidget->setCurrentWidget(mTextAutogenerateNotWorkingWidget);
     } else {
+        mTextAutogenerateNotWorkingWidget->clearMessage();
         mStackedWidget->setCurrentWidget(mTextAutogenerateWidget);
     }
 }

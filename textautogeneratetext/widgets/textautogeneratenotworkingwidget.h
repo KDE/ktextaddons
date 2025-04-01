@@ -17,6 +17,7 @@ public:
     ~TextAutogenerateNotWorkingWidget() override;
 
     void setMessageError(const QString &str);
+    void clearMessage();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
