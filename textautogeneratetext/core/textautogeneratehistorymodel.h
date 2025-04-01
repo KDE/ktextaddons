@@ -19,7 +19,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateHistoryModel : public QAbstrac
 public:
     enum HistoryRole : uint8_t {
         Subject,
-        Date,
+        DateTime,
         Model,
     };
 

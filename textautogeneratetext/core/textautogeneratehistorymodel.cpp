@@ -27,17 +27,17 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
         return {};
     }
     const auto &info = mHistoryInfos[index.row()];
-    /*
     switch (role) {
-    case MessageRole:
-        return message.content();
-    case SenderRole:
-        return QVariant::fromValue(message.sender());
+    case Subject:
+        return info.subject();
+    case DateTime:
+        return info.dateTime();
+        /*
     case FinishedRole:
         // TODO
         break;
+        */
     }
-    */
     return {};
 }
 
