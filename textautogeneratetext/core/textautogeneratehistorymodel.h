@@ -33,7 +33,7 @@ public:
     void setHistoryInfos(const QList<TextAutoGenerateHistoryInfo> &newHistoryInfos);
 
     void clear();
-    void addMessage(const TextAutoGenerateHistoryInfo &msg);
+    void addInfo(const TextAutoGenerateHistoryInfo &msg);
 
 private:
     QList<TextAutoGenerateHistoryInfo> mHistoryInfos;

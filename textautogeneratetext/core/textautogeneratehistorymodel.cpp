@@ -60,7 +60,7 @@ void TextAutoGenerateHistoryModel::clear()
     endResetModel();
 }
 
-void TextAutoGenerateHistoryModel::addMessage(const TextAutoGenerateHistoryInfo &msg)
+void TextAutoGenerateHistoryModel::addInfo(const TextAutoGenerateHistoryInfo &msg)
 {
     beginInsertRows(QModelIndex(), 0, mHistoryInfos.count() - 1);
     mHistoryInfos.append(msg);
