@@ -48,7 +48,23 @@ QList<TextAutoGenerateHistoryInfo> TextAutoGenerateHistoryModel::historyInfos() 
 
 void TextAutoGenerateHistoryModel::setHistoryInfos(const QList<TextAutoGenerateHistoryInfo> &newHistoryInfos)
 {
+    beginResetModel();
     mHistoryInfos = newHistoryInfos;
+    endResetModel();
+}
+
+void TextAutoGenerateHistoryModel::clear()
+{
+    beginResetModel();
+    mHistoryInfos.clear();
+    endResetModel();
+}
+
+void TextAutoGenerateHistoryModel::addMessage(const TextAutoGenerateHistoryInfo &msg)
+{
+    beginInsertRows(QModelIndex(), 0, mHistoryInfos.count() - 1);
+    mHistoryInfos.append(msg);
+    endInsertRows();
 }
 
 #include "moc_textautogeneratehistorymodel.cpp"

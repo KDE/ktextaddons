@@ -32,6 +32,9 @@ public:
     [[nodiscard]] QList<TextAutoGenerateHistoryInfo> historyInfos() const;
     void setHistoryInfos(const QList<TextAutoGenerateHistoryInfo> &newHistoryInfos);
 
+    void clear();
+    void addMessage(const TextAutoGenerateHistoryInfo &msg);
+
 private:
     QList<TextAutoGenerateHistoryInfo> mHistoryInfos;
 };
