@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratehistorylistview.h"
+#include "textautogeneratehistorylistviewdelegate.h"
 
 using namespace TextAutogenerateText;
 TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent)
@@ -12,6 +13,8 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
 {
     setDragEnabled(false);
     setUniformItemSizes(true);
+    // Add delegate
+    setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 }
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
