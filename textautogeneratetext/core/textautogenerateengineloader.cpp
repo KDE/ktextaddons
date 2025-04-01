@@ -85,7 +85,7 @@ TextAutogenerateTextClient *TextAutogenerateEngineLoader::createTextAutoGenerate
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Client name not found: " << clientName;
-        Q_EMIT loadingSpeechToTextFailed();
+        Q_EMIT loadingPluginFailed();
         return nullptr;
     }
     return (*clientsItr);

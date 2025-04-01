@@ -29,6 +29,8 @@ TextAutogenerateStackWidget::TextAutogenerateStackWidget(QWidget *parent)
     mTextAutogenerateWidget->setObjectName(QStringLiteral("mTextAutogenerateWidget"));
     mStackedWidget->addWidget(mTextAutogenerateWidget);
     mStackedWidget->setCurrentWidget(mTextAutogenerateWidget);
+
+    // connect(mTextAutogenerateWidget, &TextAutogenerateWidget::, this, &TextAutogenerateStackWidget::setBrokenEngine);
 }
 
 TextAutogenerateStackWidget::~TextAutogenerateStackWidget() = default;

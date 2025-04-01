@@ -39,7 +39,7 @@ public:
     [[nodiscard]] bool hasEngine() const;
 
 Q_SIGNALS:
-    void loadingSpeechToTextFailed();
+    void loadingPluginFailed();
     void noPluginsFound();
 
 private:
