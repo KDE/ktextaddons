@@ -7,7 +7,6 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QSplitter;
-class QLabel;
 namespace TextAutogenerateText
 {
 class TextAutogenerateResultWidget;
@@ -16,6 +15,7 @@ class TextAutogenerateTextClient;
 class TextAutogenerateTextPlugin;
 class TextAutoGenerateMessage;
 class TextAutogenerateHistoryWidget;
+class TextAutogenerateHeaderWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateWidget : public QWidget
 {
     Q_OBJECT
@@ -33,6 +33,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &errorMessage);
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureChanged();
 
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
@@ -41,6 +42,6 @@ private:
     TextAutogenerateTextPlugin *mTextAutogeneratePlugin = nullptr;
     QSplitter *const mSplitter;
     TextAutogenerateHistoryWidget *const mHistoryWidget;
-    QLabel *const mEngineName;
+    TextAutogenerateHeaderWidget *const mHeaderWidget;
 };
 }

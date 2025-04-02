@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratewidgettest.h"
+#include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
@@ -40,8 +41,8 @@ void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSplitter);
     QCOMPARE(mSplitter->orientation(), Qt::Horizontal);
 
-    auto mEngineName = w.findChild<QLabel *>(QStringLiteral("mEngineName"));
-    QVERIFY(mEngineName);
+    auto mHeaderWidget = w.findChild<TextAutogenerateText::TextAutogenerateHeaderWidget *>(QStringLiteral("mHeaderWidget"));
+    QVERIFY(mHeaderWidget);
 }
 
 #include "moc_textautogeneratewidgettest.cpp"

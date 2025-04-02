@@ -11,6 +11,7 @@
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextwidget_debug.h"
+#include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogeneratehistorywidget.h"
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
@@ -30,17 +31,13 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     , mTextAutogenerateTextLineEditWidget(new TextAutogenerateTextLineEditWidget(this))
     , mSplitter(new QSplitter(this))
     , mHistoryWidget(new TextAutogenerateHistoryWidget(this))
-    , mEngineName(new QLabel(this))
+    , mHeaderWidget(new TextAutogenerateHeaderWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
-    mEngineName->setObjectName(QStringLiteral("mEngineName"));
-    mainLayout->addWidget(mEngineName);
-    QFont f = mEngineName->font();
-    f.setBold(true);
-    f.setItalic(true);
-    mEngineName->setFont(f);
+    mHeaderWidget->setObjectName(QStringLiteral("mHeaderWidget"));
+    mainLayout->addWidget(mHeaderWidget);
 
     mSplitter->setOrientation(Qt::Horizontal);
     mSplitter->setObjectName(QStringLiteral("mSplitter"));
@@ -58,6 +55,8 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     mTextAutogenerateTextLineEditWidget->setObjectName(QStringLiteral("mTextAutogenerateTextLineEditWidget"));
     mainLayout->addWidget(mTextAutogenerateTextLineEditWidget);
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::slotEditingFinished);
+
+    connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
     loadEngine();
     readConfig();
 }
@@ -105,7 +104,7 @@ void TextAutogenerateWidget::loadEngine()
         }
     }
     if (mTextAutogenerateClient) {
-        mEngineName->setText(TextAutogenerateText::TextAutogenerateEngineLoader::self()->generateDisplayName(mTextAutogenerateClient));
+        mHeaderWidget->updateEngineName(TextAutogenerateText::TextAutogenerateEngineLoader::self()->generateDisplayName(mTextAutogenerateClient));
         mTextAutogeneratePlugin = mTextAutogenerateClient->createTextAutogeneratePlugin();
         connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutogenerateTextPlugin::finished, this, &TextAutogenerateWidget::slotAutogenerateFinished);
         connect(mTextAutogeneratePlugin,
@@ -115,6 +114,11 @@ void TextAutogenerateWidget::loadEngine()
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutogenerateEngineUtil::loadEngine();
     }
+}
+
+void TextAutogenerateWidget::slotConfigureChanged()
+{
+    loadEngine();
 }
 
 void TextAutogenerateWidget::slotEditingFinished(const QString &str)
