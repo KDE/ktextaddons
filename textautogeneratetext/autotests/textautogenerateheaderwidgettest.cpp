@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QTest>
+#include <QToolButton>
 QTEST_MAIN(TextAutogenerateHeaderWidgetTest)
 
 TextAutogenerateHeaderWidgetTest::TextAutogenerateHeaderWidgetTest(QObject *parent)
@@ -25,6 +26,10 @@ void TextAutogenerateHeaderWidgetTest::shouldHaveDefaultValues()
     auto mEngineName = w.findChild<QLabel *>(QStringLiteral("mEngineName"));
     QVERIFY(mEngineName);
     QVERIFY(mEngineName->text().isEmpty());
+
+    auto mConfigureEngine = w.findChild<QToolButton *>(QStringLiteral("mConfigureEngine"));
+    QVERIFY(mConfigureEngine);
+    QVERIFY(mConfigureEngine->autoRaise());
 }
 
 #include "moc_textautogenerateheaderwidgettest.cpp"

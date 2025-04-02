@@ -30,6 +30,8 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
 
     mConfigureEngine->setObjectName("mConfigureEngine"_L1);
     mConfigureEngine->setToolTip(i18n("Configure…"));
+    mConfigureEngine->setAutoRaise(true);
+    mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::slotConfigureEngine);
