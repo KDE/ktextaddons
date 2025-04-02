@@ -30,7 +30,6 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         // TODO
     });
     menu.addAction(removeHistory);
-    // TODO
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());
     }
