@@ -15,6 +15,8 @@
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <KSplitterCollapserButton>
 #include <QDateTime>
 #include <QSplitter>
@@ -49,9 +51,27 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     mainLayout->addWidget(mTextAutogenerateTextLineEditWidget);
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::slotEditingFinished);
     loadEngine();
+    readConfig();
 }
 
-TextAutogenerateWidget::~TextAutogenerateWidget() = default;
+TextAutogenerateWidget::~TextAutogenerateWidget()
+{
+    writeConfig();
+}
+
+void TextAutogenerateWidget::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutogenerateWidget"));
+    group.writeEntry("mainSplitter", mSplitter->sizes());
+}
+
+void TextAutogenerateWidget::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutogenerateWidget"));
+    const QList<int> size = {100, 400};
+
+    mSplitter->setSizes(group.readEntry("mainSplitter", size));
+}
 
 QString TextAutogenerateWidget::textLineEdit() const
 {

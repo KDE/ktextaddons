@@ -9,6 +9,7 @@
 #include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
 #include <QSplitter>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutogenerateWidgetTest)
@@ -16,6 +17,7 @@ QTEST_MAIN(TextAutogenerateWidgetTest)
 TextAutogenerateWidgetTest::TextAutogenerateWidgetTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
