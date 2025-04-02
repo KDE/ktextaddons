@@ -120,6 +120,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/textautogeneratehistorylistviewdelegate.h
     widgets/textautogeneratehistorylistviewdelegate.cpp
+
+    widgets/textautogenerateheaderwidget.h
+    widgets/textautogenerateheaderwidget.cpp
 )
 
 if(BUILD_TESTING)
