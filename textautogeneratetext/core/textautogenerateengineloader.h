@@ -40,13 +40,13 @@ public:
 
     void loadPlugins();
 
+    [[nodiscard]] QString generateDisplayName(TextAutogenerateTextClient *client) const;
 Q_SIGNALS:
     void loadingPluginFailed();
     void noPluginsFound();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(const QString &pluginPath);
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateDisplayName(TextAutogenerateTextClient *client) const;
     std::unique_ptr<TextAutogenerateEngineLoaderPrivate> const d;
 };
 }

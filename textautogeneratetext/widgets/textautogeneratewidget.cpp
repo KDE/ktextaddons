@@ -37,6 +37,10 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     mainLayout->setContentsMargins(QMargins{});
     mEngineName->setObjectName(QStringLiteral("mEngineName"));
     mainLayout->addWidget(mEngineName);
+    QFont f = mEngineName->font();
+    f.setBold(true);
+    f.setItalic(true);
+    mEngineName->setFont(f);
 
     mSplitter->setOrientation(Qt::Horizontal);
     mSplitter->setObjectName(QStringLiteral("mSplitter"));
@@ -101,6 +105,7 @@ void TextAutogenerateWidget::loadEngine()
         }
     }
     if (mTextAutogenerateClient) {
+        mEngineName->setText(TextAutogenerateText::TextAutogenerateEngineLoader::self()->generateDisplayName(mTextAutogenerateClient));
         mTextAutogeneratePlugin = mTextAutogenerateClient->createTextAutogeneratePlugin();
         connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutogenerateTextPlugin::finished, this, &TextAutogenerateWidget::slotAutogenerateFinished);
         connect(mTextAutogeneratePlugin,
