@@ -19,6 +19,8 @@ public:
     ~TextAutogenerateHistoryWidget() override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotSearchTextChanged(const QString &str);
     TextAutogenerateHistoryListView *const mTextAutogenerateHistoryListView;
     QLineEdit *const mSearchLineEdit;

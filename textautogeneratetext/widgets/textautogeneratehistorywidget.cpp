@@ -42,6 +42,16 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
 
 TextAutogenerateHistoryWidget::~TextAutogenerateHistoryWidget() = default;
 
+void TextAutogenerateHistoryWidget::loadHistory()
+{
+    // TODO
+}
+
+void TextAutogenerateHistoryWidget::saveHistory()
+{
+    // TODO
+}
+
 void TextAutogenerateHistoryWidget::slotSearchTextChanged(const QString &str)
 {
     // Improve it ???
