@@ -16,6 +16,8 @@ public:
     explicit TextAutogenerateConfigureDialog(QWidget *parent = nullptr);
     ~TextAutogenerateConfigureDialog() override;
 
+    void saveSettings();
+
 private:
     TextAutogenerateConfigureWidget *const mTextAutogenerateConfigureWidget;
 };

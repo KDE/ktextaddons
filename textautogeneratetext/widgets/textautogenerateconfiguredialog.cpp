@@ -32,7 +32,9 @@ TextAutogenerateConfigureDialog::TextAutogenerateConfigureDialog(QWidget *parent
     mTextAutogenerateConfigureWidget->loadSettings();
 }
 
-TextAutogenerateConfigureDialog::~TextAutogenerateConfigureDialog()
+TextAutogenerateConfigureDialog::~TextAutogenerateConfigureDialog() = default;
+
+void TextAutogenerateConfigureDialog::saveSettings()
 {
     mTextAutogenerateConfigureWidget->saveSettings();
 }

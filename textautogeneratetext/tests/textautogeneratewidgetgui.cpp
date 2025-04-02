@@ -19,7 +19,9 @@ TextAutoGenerateWidgetGui::TextAutoGenerateWidgetGui(QWidget *parent)
     mainLayout->addWidget(configureButton, 0, Qt::AlignTop);
     connect(configureButton, &QPushButton::clicked, this, [this]() {
         TextAutogenerateText::TextAutogenerateConfigureDialog d(this);
-        d.exec();
+        if (d.exec()) {
+            d.saveSettings();
+        }
     });
 
     auto showGenerateDialogButton = new QPushButton(QStringLiteral("Show Dialog..."), this);

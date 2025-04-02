@@ -46,6 +46,7 @@ void TextAutogenerateHeaderWidget::slotConfigureEngine()
 {
     TextAutogenerateText::TextAutogenerateConfigureDialog d(this);
     if (d.exec()) {
+        d.saveSettings();
         Q_EMIT configChanged();
     }
 }
