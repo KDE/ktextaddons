@@ -35,6 +35,8 @@ public:
     void clear();
     void addInfo(const TextAutoGenerateHistoryInfo &msg);
 
+    void removeInfo(int identifier);
+
 private:
     QList<TextAutoGenerateHistoryInfo> mHistoryInfos;
 };

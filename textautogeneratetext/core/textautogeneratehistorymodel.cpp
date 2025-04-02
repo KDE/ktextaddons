@@ -67,4 +67,9 @@ void TextAutoGenerateHistoryModel::addInfo(const TextAutoGenerateHistoryInfo &ms
     endInsertRows();
 }
 
+void TextAutoGenerateHistoryModel::removeInfo(int identifier)
+{
+    // TODO
+}
+
 #include "moc_textautogeneratehistorymodel.cpp"
