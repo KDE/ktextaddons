@@ -81,6 +81,7 @@ void TextAutogenerateTextConfigureComboWidget::save()
     const QString engine = mEngineComboBox->currentData().toString();
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());
     groupTranslate.writeEntry(TextAutogenerateEngineUtil::engineTranslateName(), engine);
+    KSharedConfig::openConfig()->sync();
 }
 
 #include "moc_textautogeneratetextconfigurecombowidget.cpp"
