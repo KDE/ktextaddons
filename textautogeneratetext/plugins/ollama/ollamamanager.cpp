@@ -66,16 +66,15 @@ OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     QJsonObject data;
-    // TODO
+    // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
+    data["prompt"_L1] = request.message();
+    data["model"_L1] = OllamaSettings::model();
     /*
-        data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
-        data["prompt"_L1] = request.message();
-
         const auto context = request.context().toJson();
         if (!context.isNull()) {
             data["context"_L1] = context;
         }
-*/
+        */
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
