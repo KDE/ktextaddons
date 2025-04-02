@@ -26,7 +26,9 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
     auto removeHistory = new QAction(i18nc("@action", "Remove…"), &menu);
-    connect(removeHistory, &QAction::triggered, this, [this]() { });
+    connect(removeHistory, &QAction::triggered, this, [this]() {
+        // TODO
+    });
     menu.addAction(removeHistory);
     // TODO
     if (!menu.actions().isEmpty()) {
