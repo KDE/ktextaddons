@@ -5,9 +5,18 @@
 */
 #include "ollamaconfiguredialog.h"
 #include "ollamaconfigurewidget.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+#include <QWindow>
+
+namespace
+{
+const char myOllamaConfigureDialogGroupName[] = "OllamaConfigureDialog";
+}
 
 OllamaConfigureDialog::OllamaConfigureDialog(QWidget *parent)
     : QDialog(parent)
@@ -25,14 +34,33 @@ OllamaConfigureDialog::OllamaConfigureDialog(QWidget *parent)
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &OllamaConfigureDialog::slotAccepted);
     connect(box, &QDialogButtonBox::rejected, this, &OllamaConfigureDialog::reject);
+    readConfig();
 }
 
-OllamaConfigureDialog::~OllamaConfigureDialog() = default;
+OllamaConfigureDialog::~OllamaConfigureDialog()
+{
+    writeConfig();
+}
 
 void OllamaConfigureDialog::slotAccepted()
 {
     mOllamaConfigureWidget->saveSettings();
     accept();
+}
+
+void OllamaConfigureDialog::readConfig()
+{
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(400, 300));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaConfigureDialogGroupName));
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
+}
+
+void OllamaConfigureDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaConfigureDialogGroupName));
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 #include "moc_ollamaconfiguredialog.cpp"

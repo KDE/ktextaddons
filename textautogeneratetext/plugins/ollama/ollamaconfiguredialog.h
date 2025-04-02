@@ -16,5 +16,7 @@ public:
 
 private:
     void slotAccepted();
+    void readConfig();
+    void writeConfig();
     OllamaConfigureWidget *const mOllamaConfigureWidget;
 };
