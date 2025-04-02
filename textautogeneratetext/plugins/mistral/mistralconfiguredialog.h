@@ -16,5 +16,7 @@ public:
     ~MistralConfigureDialog() override;
 
 private:
+    void readConfig();
+    void writeConfig();
     MistralConfigureWidget *const mMistralConfigureWidget;
 };
