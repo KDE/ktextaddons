@@ -16,5 +16,8 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListView : public
 public:
     explicit TextAutogenerateHistoryListView(QWidget *parent = nullptr);
     ~TextAutogenerateHistoryListView() override;
+
+protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
 };
 }
