@@ -8,6 +8,7 @@
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
+#include <QSplitter>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutogenerateWidgetTest)
@@ -31,6 +32,10 @@ void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
     auto mTextAutogenerateTextLineEditWidget =
         w.findChild<TextAutogenerateText::TextAutogenerateTextLineEditWidget *>(QStringLiteral("mTextAutogenerateTextLineEditWidget"));
     QVERIFY(mTextAutogenerateTextLineEditWidget);
+
+    auto mSplitter = w.findChild<QSplitter *>(QStringLiteral("mSplitter"));
+    QVERIFY(mSplitter);
+    QCOMPARE(mSplitter->orientation(), Qt::Horizontal);
 }
 
 #include "moc_textautogeneratewidgettest.cpp"
