@@ -35,7 +35,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     mSplitter->setOrientation(Qt::Horizontal);
     mSplitter->setObjectName(QStringLiteral("mSplitter"));
 
-    mainLayout->addWidget(mSplitter);
+    mainLayout->addWidget(mSplitter, 1);
 
     mTextAutogenerateResultWidget->setObjectName(QStringLiteral("mTextAutogenerateResultWidget"));
 
