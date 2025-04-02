@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QSplitter;
 namespace TextAutogenerateText
 {
 class TextAutogenerateResultWidget;
@@ -13,6 +14,7 @@ class TextAutogenerateTextLineEditWidget;
 class TextAutogenerateTextClient;
 class TextAutogenerateTextPlugin;
 class TextAutoGenerateMessage;
+class TextAutogenerateHistoryWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateWidget : public QWidget
 {
     Q_OBJECT
@@ -33,5 +35,7 @@ private:
 
     TextAutogenerateTextClient *mTextAutogenerateClient = nullptr;
     TextAutogenerateTextPlugin *mTextAutogeneratePlugin = nullptr;
+    QSplitter *const mSplitter;
+    TextAutogenerateHistoryWidget *const mHistoryWidget;
 };
 }

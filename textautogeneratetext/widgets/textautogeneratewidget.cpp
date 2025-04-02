@@ -11,10 +11,13 @@
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextwidget_debug.h"
+#include "widgets/textautogeneratehistorywidget.h"
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
+#include <KSplitterCollapserButton>
 #include <QDateTime>
+#include <QSplitter>
 #include <QVBoxLayout>
 
 using namespace TextAutogenerateText;
@@ -22,13 +25,25 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     : QWidget{parent}
     , mTextAutogenerateResultWidget(new TextAutogenerateResultWidget(this))
     , mTextAutogenerateTextLineEditWidget(new TextAutogenerateTextLineEditWidget(this))
+    , mSplitter(new QSplitter(this))
+    , mHistoryWidget(new TextAutogenerateHistoryWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
 
+    mSplitter->setOrientation(Qt::Horizontal);
+    mSplitter->setObjectName(QStringLiteral("mSplitter"));
+
+    mainLayout->addWidget(mSplitter);
+
     mTextAutogenerateResultWidget->setObjectName(QStringLiteral("mTextAutogenerateResultWidget"));
-    mainLayout->addWidget(mTextAutogenerateResultWidget);
+
+    mHistoryWidget->setObjectName(QStringLiteral("mHistoryWidget"));
+    mSplitter->addWidget(mHistoryWidget);
+    mSplitter->addWidget(mTextAutogenerateResultWidget);
+
+    new KSplitterCollapserButton(mHistoryWidget, mSplitter);
 
     mTextAutogenerateTextLineEditWidget->setObjectName(QStringLiteral("mTextAutogenerateTextLineEditWidget"));
     mainLayout->addWidget(mTextAutogenerateTextLineEditWidget);
