@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:41+0000\n"
+"POT-Creation-Date: 2025-04-02 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -115,7 +115,7 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "对话"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:22
+#: widgets/textautogeneratenotworkingwidget.cpp:29
 #, kde-format
 msgid "Configure..."
 msgstr "配置..."

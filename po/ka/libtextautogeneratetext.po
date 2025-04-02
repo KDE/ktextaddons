@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:41+0000\n"
+"POT-Creation-Date: 2025-04-02 00:40+0000\n"
 "PO-Revision-Date: 2025-03-29 02:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -116,7 +116,7 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "საუბარი"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:22
+#: widgets/textautogeneratenotworkingwidget.cpp:29
 #, kde-format
 msgid "Configure..."
 msgstr "მორგება..."

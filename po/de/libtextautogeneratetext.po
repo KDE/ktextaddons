@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:41+0000\n"
+"POT-Creation-Date: 2025-04-02 00:40+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -116,7 +116,7 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr ""
 
-#: widgets/textautogeneratenotworkingwidget.cpp:22
+#: widgets/textautogeneratenotworkingwidget.cpp:29
 #, kde-format
 msgid "Configure..."
 msgstr ""
