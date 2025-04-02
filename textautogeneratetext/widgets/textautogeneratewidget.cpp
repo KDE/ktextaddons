@@ -19,6 +19,7 @@
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
 #include <QDateTime>
+#include <QLabel>
 #include <QSplitter>
 #include <QVBoxLayout>
 
@@ -29,10 +30,13 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     , mTextAutogenerateTextLineEditWidget(new TextAutogenerateTextLineEditWidget(this))
     , mSplitter(new QSplitter(this))
     , mHistoryWidget(new TextAutogenerateHistoryWidget(this))
+    , mEngineName(new QLabel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
+    mEngineName->setObjectName(QStringLiteral("mEngineName"));
+    mainLayout->addWidget(mEngineName);
 
     mSplitter->setOrientation(Qt::Horizontal);
     mSplitter->setObjectName(QStringLiteral("mSplitter"));

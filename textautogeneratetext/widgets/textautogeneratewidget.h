@@ -7,6 +7,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QSplitter;
+class QLabel;
 namespace TextAutogenerateText
 {
 class TextAutogenerateResultWidget;
@@ -40,5 +41,6 @@ private:
     TextAutogenerateTextPlugin *mTextAutogeneratePlugin = nullptr;
     QSplitter *const mSplitter;
     TextAutogenerateHistoryWidget *const mHistoryWidget;
+    QLabel *const mEngineName;
 };
 }

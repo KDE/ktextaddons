@@ -8,6 +8,7 @@
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
+#include <QLabel>
 #include <QSplitter>
 #include <QStandardPaths>
 #include <QTest>
@@ -38,6 +39,9 @@ void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
     auto mSplitter = w.findChild<QSplitter *>(QStringLiteral("mSplitter"));
     QVERIFY(mSplitter);
     QCOMPARE(mSplitter->orientation(), Qt::Horizontal);
+
+    auto mEngineName = w.findChild<QLabel *>(QStringLiteral("mEngineName"));
+    QVERIFY(mEngineName);
 }
 
 #include "moc_textautogeneratewidgettest.cpp"
