@@ -29,7 +29,7 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     mEngineName->setFont(f);
 
     mConfigureEngine->setObjectName("mConfigureEngine"_L1);
-    mConfigureEngine->setToolTip(i18n("Configure..."));
+    mConfigureEngine->setToolTip(i18n("Configure…"));
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::slotConfigureEngine);

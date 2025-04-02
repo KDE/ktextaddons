@@ -26,7 +26,7 @@ TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *pare
     mainLayout->addWidget(mMessageWidget);
     mMessageWidget->setCloseButtonVisible(false);
 
-    auto configureButton = new QPushButton(i18n("Configure..."), this);
+    auto configureButton = new QPushButton(i18n("Configure…"), this);
     configureButton->setObjectName("configureButton"_L1);
     connect(configureButton, &QPushButton::clicked, this, &TextAutogenerateNotWorkingWidget::slotConfigure);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
