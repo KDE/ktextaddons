@@ -14,6 +14,7 @@ OllamaPlugin::OllamaPlugin(QObject *parent)
 {
     if (!loadSettings()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to load settings";
+        return;
     }
 
     connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
@@ -60,6 +61,11 @@ QString OllamaPlugin::currentModel() const
 void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
 {
     mCurrentModel = newCurrentModel;
+}
+
+void OllamaPlugin::sendToLLM(const QString &message)
+{
+    // TODO
 }
 
 #include "moc_ollamaplugin.cpp"

@@ -20,6 +20,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QCOMPARE(msg.sender(), TextAutogenerateText::TextAutoGenerateMessage::Sender::Unknown);
     QCOMPARE(msg.dateTime(), -1);
     QVERIFY(!msg.isValid());
+    QVERIFY(!msg.inProgress());
 }
 
 #include "moc_textautogeneratemessagetest.cpp"

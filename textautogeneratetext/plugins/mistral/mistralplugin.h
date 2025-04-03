@@ -20,4 +20,7 @@ public:
     [[nodiscard]] QString result() override;
 
     void setPrompt(const QString &text) override;
+
+protected:
+    void sendToLLM(const QString &message) override;
 };

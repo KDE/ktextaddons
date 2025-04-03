@@ -19,8 +19,5 @@ public:
     ~TextAutogenerateListView() override;
 
     void addMessage(const TextAutoGenerateMessage &msg);
-
-private:
-    TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
 };
 }

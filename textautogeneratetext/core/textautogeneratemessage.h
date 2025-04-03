@@ -35,10 +35,16 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] bool inProgress() const;
+    void setInProgress(bool newInProgress);
+
+    [[nodiscard]] bool operator==(const TextAutoGenerateMessage &other) const;
+
 private:
     QString mContent;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
+    bool mInProgress = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);

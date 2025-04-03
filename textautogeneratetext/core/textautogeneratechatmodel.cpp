@@ -63,6 +63,7 @@ void TextAutoGenerateChatModel::resetConversation()
 
 void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
 {
+    qDebug() << " SSSSSSSSSSSSSSSSSSSSSS " << msg;
     beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
     mMessages.append(msg);
     endInsertRows();

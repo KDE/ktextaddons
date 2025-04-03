@@ -8,6 +8,7 @@
 #include <QObject>
 namespace TextAutogenerateText
 {
+class TextAutoGenerateChatModel;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateManager : public QObject
 {
     Q_OBJECT
@@ -16,5 +17,10 @@ public:
     ~TextAutogenerateManager() override;
 
     static TextAutogenerateManager *self();
+
+    [[nodiscard]] TextAutoGenerateChatModel *textAutoGenerateChatModel() const;
+
+private:
+    TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
 };
 }

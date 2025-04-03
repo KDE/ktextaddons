@@ -16,6 +16,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
     d.space() << "content:" << t.content();
     d.space() << "sender:" << t.sender();
     d.space() << "dateTime:" << t.dateTime();
+    d.space() << "in progress:" << t.inProgress();
     return d;
 }
 
@@ -52,6 +53,21 @@ void TextAutoGenerateMessage::setDateTime(qint64 newDateTime)
 bool TextAutoGenerateMessage::isValid() const
 {
     return mSender != TextAutoGenerateMessage::Sender::Unknown;
+}
+
+bool TextAutoGenerateMessage::inProgress() const
+{
+    return mInProgress;
+}
+
+void TextAutoGenerateMessage::setInProgress(bool newInProgress)
+{
+    mInProgress = newInProgress;
+}
+
+bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
+{
+    return other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime && other.content() == mContent;
 }
 
 #include "moc_textautogeneratemessage.cpp"

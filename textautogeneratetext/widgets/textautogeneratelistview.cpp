@@ -5,22 +5,23 @@
 */
 #include "textautogeneratelistview.h"
 #include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
 
 using namespace TextAutogenerateText;
 TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     : QListView(parent)
-    , mTextAutoGenerateChatModel(new TextAutoGenerateChatModel(this))
 {
     setItemDelegate(new TextAutogenerateListViewDelegate(this));
-    setModel(mTextAutoGenerateChatModel);
+    setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
 }
 
 TextAutogenerateListView::~TextAutogenerateListView() = default;
 
+// TODO remove it ???
 void TextAutogenerateListView::addMessage(const TextAutoGenerateMessage &msg)
 {
-    mTextAutoGenerateChatModel->addMessage(msg);
+    TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(msg);
 }
 
 #include "moc_textautogeneratelistview.cpp"

@@ -35,11 +35,14 @@ public:
     [[nodiscard]] bool ready() const;
     void setReady(bool newReady);
 
-    void setMessage(const QString &str);
+    void sendMessage(const QString &str);
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
+
+protected:
+    virtual void sendToLLM(const QString &message) = 0;
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;

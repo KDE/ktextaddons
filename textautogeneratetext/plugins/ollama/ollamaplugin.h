@@ -24,6 +24,9 @@ public:
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
+protected:
+    void sendToLLM(const QString &message) override;
+
 private:
     QString mCurrentModel;
 };
