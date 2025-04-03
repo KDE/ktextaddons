@@ -35,6 +35,8 @@ public:
     [[nodiscard]] bool ready() const;
     void setReady(bool newReady);
 
+    void setMessage(const QString &str);
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);

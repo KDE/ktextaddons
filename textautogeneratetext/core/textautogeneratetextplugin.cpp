@@ -37,4 +37,9 @@ void TextAutogenerateTextPlugin::setReady(bool newReady)
     d->isReady = newReady;
 }
 
+void TextAutogenerateTextPlugin::setMessage(const QString &str)
+{
+    // TODO
+}
+
 #include "moc_textautogeneratetextplugin.cpp"
