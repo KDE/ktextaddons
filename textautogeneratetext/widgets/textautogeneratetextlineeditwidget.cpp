@@ -26,7 +26,9 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
     mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);
 
     connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::sendMessage, this, [this](const QString &msg) {
-        Q_EMIT editingFinished(msg);
+        if (!msg.trimmed().isEmpty()) {
+            Q_EMIT editingFinished(msg);
+        }
     });
     mSendMessage->setEnabled(false);
     connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::sendMessage, this, [this](const QString &str) {
