@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-02 00:40+0000\n"
+"POT-Creation-Date: 2025-04-03 00:40+0000\n"
 "PO-Revision-Date: 2025-03-01 17:53+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -37,7 +37,7 @@ msgstr "Verkko"
 msgid "Mistral AI"
 msgstr "Mistral-tekoäly"
 
-#: plugins/mistral/mistralconfiguredialog.cpp:17
+#: plugins/mistral/mistralconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
@@ -49,7 +49,7 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:16
+#: plugins/ollama/ollamaconfiguredialog.cpp:25
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure Mistral IA"
@@ -119,12 +119,19 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr ""
 
+#: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure Mistral IA"
-msgid "Configure..."
+msgid "Configure…"
 msgstr "Mistral-tekoälyn asetukset"
+
+#: widgets/textautogeneratehistorylistview.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr ""
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

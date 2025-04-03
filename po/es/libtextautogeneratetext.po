@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-02 00:40+0000\n"
+"POT-Creation-Date: 2025-04-03 00:40+0000\n"
 "PO-Revision-Date: 2025-03-30 01:27+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr "Red"
 msgid "Mistral AI"
 msgstr "IA Mistral"
 
-#: plugins/mistral/mistralconfiguredialog.cpp:17
+#: plugins/mistral/mistralconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
@@ -51,7 +51,7 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Volver a cargar el modelo"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:16
+#: plugins/ollama/ollamaconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
@@ -117,10 +117,18 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Conversación"
 
+#: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
-#, kde-format
-msgid "Configure..."
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgid "Configure…"
 msgstr "Configurar…"
+
+#: widgets/textautogeneratehistorylistview.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr ""
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format
