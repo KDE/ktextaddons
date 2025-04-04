@@ -34,6 +34,8 @@ public:
 
     void addMessage(const TextAutoGenerateMessage &msg);
 
+    void replaceLastMessage(const TextAutoGenerateMessage &msg);
+
 private:
     QList<TextAutoGenerateMessage> mMessages;
 };

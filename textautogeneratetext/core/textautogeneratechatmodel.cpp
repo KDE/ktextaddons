@@ -67,4 +67,12 @@ void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
     endInsertRows();
 }
 
+void TextAutoGenerateChatModel::replaceLastMessage(const TextAutoGenerateMessage &msg)
+{
+    beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
+    mMessages.removeLast();
+    mMessages.append(msg);
+    endInsertRows();
+}
+
 #include "moc_textautogeneratechatmodel.cpp"
