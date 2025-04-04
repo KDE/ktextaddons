@@ -45,8 +45,13 @@ bool MistralClient::hasConfigurationDialog() const
 bool MistralClient::showConfigureDialog(QWidget *parentWidget)
 {
     // TODO use QPointer here ???
-    MistralConfigureDialog d;
+    MistralConfigureDialog d(parentWidget);
     return d.exec();
+}
+
+QString MistralClient::webSite() const
+{
+    return QStringLiteral("https://chat.mistral.ai/");
 }
 
 #include "moc_mistralclient.cpp"

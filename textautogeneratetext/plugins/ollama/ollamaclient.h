@@ -23,4 +23,5 @@ public:
     [[nodiscard]] TextAutogenerateText::TextAutogenerateTextClient::EngineType engineType() const override;
     [[nodiscard]] bool hasConfigurationDialog() const override;
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
+    [[nodiscard]] QString webSite() const override;
 };

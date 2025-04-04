@@ -45,8 +45,13 @@ bool OllamaClient::hasConfigurationDialog() const
 bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
 {
     // TODO use QPointer ?
-    OllamaConfigureDialog d;
+    OllamaConfigureDialog d(parentWidget);
     return d.exec();
+}
+
+QString OllamaClient::webSite() const
+{
+    return QStringLiteral("https://ollama.com/");
 }
 
 #include "moc_ollamaclient.cpp"
