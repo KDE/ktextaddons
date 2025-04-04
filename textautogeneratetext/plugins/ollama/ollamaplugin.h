@@ -26,6 +26,7 @@ public:
 
 protected:
     void sendToLLM(const QString &message) override;
+    void stop() override;
 
 private:
     QString mCurrentModel;

@@ -23,4 +23,5 @@ public:
 
 protected:
     void sendToLLM(const QString &message) override;
+    void stop() override;
 };

@@ -39,4 +39,9 @@ void MistralPlugin::sendToLLM(const QString &message)
     // TODO
 }
 
+void MistralPlugin::stop()
+{
+    // TODO
+}
+
 #include "moc_mistralplugin.cpp"

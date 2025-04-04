@@ -43,6 +43,7 @@ Q_SIGNALS:
 
 protected:
     virtual void sendToLLM(const QString &message) = 0;
+    virtual void stop() = 0;
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;

@@ -63,12 +63,17 @@ void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
     mCurrentModel = newCurrentModel;
 }
 
+void OllamaPlugin::stop()
+{
+    // TODO
+}
+
 void OllamaPlugin::sendToLLM(const QString &message)
 {
     OllamaRequest req;
     req.setMessage(message);
+    req.setModel(mCurrentModel);
     /*
-    req.setModel(KLLMCoreSettings::model());
     for (const auto &message : m_messages | std::views::reverse) {
         if (message.sender == Sender::LLM) {
             req.setContext(message.context);
