@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-03 00:40+0000\n"
-"PO-Revision-Date: 2025-03-29 11:35+0100\n"
+"PO-Revision-Date: 2025-04-03 07:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -118,16 +118,15 @@ msgstr "Pogovor"
 
 #: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "Konfiguriraj..."
+msgstr "Konfiguriraj…"
 
 #: widgets/textautogeneratehistorylistview.cpp:28
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr ""
+msgstr "Odstrani…"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

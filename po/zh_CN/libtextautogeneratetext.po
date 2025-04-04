@@ -117,10 +117,9 @@ msgstr "对话"
 
 #: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
-msgstr "配置..."
+msgstr ""
 
 #: widgets/textautogeneratehistorylistview.cpp:28
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-03 00:40+0000\n"
-"PO-Revision-Date: 2025-03-29 12:32+0200\n"
+"PO-Revision-Date: 2025-04-03 17:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -118,8 +118,7 @@ msgstr "Спілкування"
 
 #: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
 
@@ -127,7 +126,7 @@ msgstr "Налаштувати…"
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr ""
+msgstr "Вилучити…"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format
