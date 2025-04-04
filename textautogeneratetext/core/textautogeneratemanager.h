@@ -21,6 +21,8 @@ public:
     [[nodiscard]] TextAutoGenerateChatModel *textAutoGenerateChatModel() const;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
     TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
 };
 }

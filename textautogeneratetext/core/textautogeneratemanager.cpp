@@ -26,6 +26,14 @@ TextAutoGenerateChatModel *TextAutogenerateManager::textAutoGenerateChatModel() 
     return mTextAutoGenerateChatModel;
 }
 
+void TextAutogenerateManager::loadHistory()
+{
+}
+
+void TextAutogenerateManager::saveHistory()
+{
+}
+
 // TODO add loadSettings/saveSettings
 
 #include "moc_textautogeneratemanager.cpp"
