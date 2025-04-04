@@ -18,7 +18,7 @@ void TextAutogenerateTextLineEditTest::shouldHaveDefaultValues()
 {
     TextAutogenerateText::TextAutogenerateTextLineEdit d;
     QVERIFY(d.text().isEmpty());
-    QVERIFY(d.placeholderText().isEmpty());
+    QVERIFY(!d.placeholderText().isEmpty());
     QVERIFY(!d.acceptRichText());
     QVERIFY(d.tabChangesFocus());
 }
