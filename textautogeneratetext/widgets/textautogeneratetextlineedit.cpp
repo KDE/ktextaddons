@@ -6,12 +6,14 @@
 
 #include "textautogeneratetextlineedit.h"
 #include <KLineEditEventHandler>
+#include <KLocalizedString>
 #include <QAbstractTextDocumentLayout>
 
 using namespace TextAutogenerateText;
 TextAutogenerateTextLineEdit::TextAutogenerateTextLineEdit(QWidget *parent)
     : KTextEdit(parent)
 {
+    setPlaceholderText(i18nc("@info:placeholder", "Enter a message"));
     KLineEditEventHandler::catchReturnKey(this);
     setTabChangesFocus(true);
     setAcceptRichText(false);

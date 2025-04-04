@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextlineedittest.h"
+#include "widgets/textautogeneratetextlineedit.h"
 #include <QTest>
 QTEST_MAIN(TextAutogenerateTextLineEditTest)
 
@@ -15,7 +16,11 @@ TextAutogenerateTextLineEditTest::TextAutogenerateTextLineEditTest(QObject *pare
 
 void TextAutogenerateTextLineEditTest::shouldHaveDefaultValues()
 {
-    // TODO
+    TextAutogenerateText::TextAutogenerateTextLineEdit d;
+    QVERIFY(d.text().isEmpty());
+    QVERIFY(d.placeholderText().isEmpty());
+    QVERIFY(!d.acceptRichText());
+    QVERIFY(d.tabChangesFocus());
 }
 
 #include "moc_textautogeneratetextlineedittest.cpp"
