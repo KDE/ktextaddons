@@ -36,8 +36,7 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     case SenderRole:
         return QVariant::fromValue(message.sender());
     case FinishedRole:
-        // TODO
-        break;
+        return !message.inProgress();
     }
     return {};
 }
@@ -63,7 +62,6 @@ void TextAutoGenerateChatModel::resetConversation()
 
 void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
 {
-    qDebug() << " SSSSSSSSSSSSSSSSSSSSSS " << msg;
     beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
     mMessages.append(msg);
     endInsertRows();
