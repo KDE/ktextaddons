@@ -24,9 +24,13 @@ public:
 
     [[nodiscard]] bool operator==(const OllamaRequest &other) const;
 
+    [[nodiscard]] QString model() const;
+    void setModel(const QString &newModel);
+
 private:
     QString mMessage;
     TextAutogenerateText::TextAutogenerateTextContext mContext;
+    QString mModel;
 };
 
 QDebug operator<<(QDebug d, const OllamaRequest &t);

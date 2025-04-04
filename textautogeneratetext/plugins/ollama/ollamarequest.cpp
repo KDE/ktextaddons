@@ -34,13 +34,24 @@ void OllamaRequest::setContext(const TextAutogenerateText::TextAutogenerateTextC
 
 bool OllamaRequest::operator==(const OllamaRequest &other) const
 {
-    return other.context() == mContext && other.message() == mMessage;
+    return other.context() == mContext && other.message() == mMessage && other.model() == mModel;
+}
+
+QString OllamaRequest::model() const
+{
+    return mModel;
+}
+
+void OllamaRequest::setModel(const QString &newModel)
+{
+    mModel = newModel;
 }
 
 QDebug operator<<(QDebug d, const OllamaRequest &t)
 {
     d.space() << "message:" << t.message();
     d.space() << "context:" << t.context();
+    d.space() << "model:" << t.model();
     return d;
 }
 
