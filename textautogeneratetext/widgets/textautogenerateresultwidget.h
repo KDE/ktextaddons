@@ -18,7 +18,7 @@ public:
     explicit TextAutogenerateResultWidget(QWidget *parent = nullptr);
     ~TextAutogenerateResultWidget() override;
 
-    void addMessage(const TextAutoGenerateMessage &msg);
+    void setMessages(const QList<TextAutoGenerateMessage> &msg);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();

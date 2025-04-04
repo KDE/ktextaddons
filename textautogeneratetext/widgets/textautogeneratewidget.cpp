@@ -125,13 +125,12 @@ void TextAutogenerateWidget::slotEditingFinished(const QString &str)
 {
     qDebug() << " TextAutogenerateWidget::slotEditingFinished " << str;
     mTextAutogeneratePlugin->sendMessage(str);
-    // TODO
 }
 
 void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)
 {
     qDebug() << " TextAutogenerateWidget::slotAutogenerateFinished " << msg;
-    mTextAutogenerateResultWidget->addMessage(msg);
+    // mTextAutogenerateResultWidget->addMessage(msg);
 }
 
 void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)

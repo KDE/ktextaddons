@@ -25,9 +25,9 @@ TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;
 
-void TextAutogenerateResultWidget::addMessage(const TextAutoGenerateMessage &msg)
+void TextAutogenerateResultWidget::setMessages(const QList<TextAutoGenerateMessage> &msg)
 {
-    mTextAutogenerateListView->addMessage(msg);
+    // mTextAutogenerateListView->addMessage(msg);
     // TODO
 }
 

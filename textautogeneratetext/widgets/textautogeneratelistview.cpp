@@ -18,10 +18,9 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 
 TextAutogenerateListView::~TextAutogenerateListView() = default;
 
-// TODO remove it ???
-void TextAutogenerateListView::addMessage(const TextAutoGenerateMessage &msg)
+void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
 {
-    TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(msg);
+    TextAutogenerateManager::self()->textAutoGenerateChatModel()->setMessages(msg);
 }
 
 #include "moc_textautogeneratelistview.cpp"
