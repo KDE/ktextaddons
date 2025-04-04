@@ -14,5 +14,8 @@ class TextAutogenerateListViewDelegate : public QStyledItemDelegate
 public:
     explicit TextAutogenerateListViewDelegate(QObject *parent = nullptr);
     ~TextAutogenerateListViewDelegate() override;
+
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 }
