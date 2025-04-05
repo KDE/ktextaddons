@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-03 00:40+0000\n"
+"POT-Creation-Date: 2025-04-05 00:40+0000\n"
 "PO-Revision-Date: 2025-04-03 07:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -127,6 +127,12 @@ msgstr "Konfiguriraj…"
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Odstrani…"
+
+#: widgets/textautogeneratetextlineedit.cpp:16
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Enter a message"
+msgstr ""
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

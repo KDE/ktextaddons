@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-03 00:40+0000\n"
+"POT-Creation-Date: 2025-04-05 00:40+0000\n"
 "PO-Revision-Date: 2025-02-28 19:42+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -131,6 +131,12 @@ msgstr "Anpassa Mistral AI"
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
+msgstr ""
+
+#: widgets/textautogeneratetextlineedit.cpp:16
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Enter a message"
 msgstr ""
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
