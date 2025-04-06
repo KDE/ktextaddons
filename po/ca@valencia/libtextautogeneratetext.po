@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 00:40+0000\n"
-"PO-Revision-Date: 2025-04-03 09:37+0200\n"
+"PO-Revision-Date: 2025-04-05 10:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -133,7 +133,7 @@ msgstr "Elimina…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "Introduïu un missatge"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format

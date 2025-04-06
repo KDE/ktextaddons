@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 00:40+0000\n"
-"PO-Revision-Date: 2025-03-23 09:53+0400\n"
+"PO-Revision-Date: 2025-04-05 12:22+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -48,7 +48,7 @@ msgstr "اضبط مسترال أيه آي"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr ""
+msgstr "إعادة تحميل النموذج"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:25
 #, kde-format
@@ -64,40 +64,40 @@ msgstr "عنوان الخادم:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:43
 #, kde-format
 msgid "Model:"
-msgstr ""
+msgstr "النموذج:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "Prompt:"
-msgstr ""
+msgstr "الموجه:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:47
 #, kde-format
 msgid "No system prompt"
-msgstr ""
+msgstr "لا يوجد موجّه للنظام"
 
 #: plugins/ollama/ollamamanager.cpp:46
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
-msgstr ""
+msgstr "فشل الاتصال بالواجهة في %1: %2"
 
 #. i18n: ectx: label, entry (ServerUrl), group (Ollama)
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr ""
+msgstr "عنوان نسخة أولاما"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
 #, kde-format
 msgid "The system prompt for the LLM"
-msgstr ""
+msgstr "موجه النظام للنموذج اللغوي الكبير"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr ""
+msgstr "النموذج المستخدم لتوليد الاستجابات"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -118,17 +118,15 @@ msgstr "محادثة"
 
 #: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgid "Configure…"
-msgstr "اضبط الذكاء الاصطناعي"
+msgstr "اضبط…"
 
 #: widgets/textautogeneratehistorylistview.cpp:28
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr ""
+msgstr "أزل…"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
