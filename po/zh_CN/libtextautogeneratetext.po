@@ -131,7 +131,7 @@ msgstr "移除…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "输入信息"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format
