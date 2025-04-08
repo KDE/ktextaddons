@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-05 00:40+0000\n"
-"PO-Revision-Date: 2025-03-27 22:03+0900\n"
+"PO-Revision-Date: 2025-04-07 14:33+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -84,20 +84,19 @@ msgstr "無法連線到在 %1 的介面：%2"
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr ""
+msgstr "Ollama 實體的網址"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid "The system prompt for the LLM"
-msgstr "沒有系統 prompt"
+msgstr "LLM 的系統 prompt"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr ""
+msgstr "用來生成回應的模型"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -118,23 +117,21 @@ msgstr "對話"
 
 #: widgets/textautogenerateheaderwidget.cpp:32
 #: widgets/textautogeneratenotworkingwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgid "Configure…"
-msgstr "設定 IA"
+msgstr "設定…"
 
 #: widgets/textautogeneratehistorylistview.cpp:28
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr ""
+msgstr "移除…"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "輸入訊息"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format
