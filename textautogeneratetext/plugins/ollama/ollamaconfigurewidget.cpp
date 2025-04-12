@@ -47,7 +47,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
     mPrompt->setPlaceholderText(i18n("No system prompt"));
 
     connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
-    loadSettings();
+    fillModels();
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;
@@ -56,13 +56,15 @@ void OllamaConfigureWidget::loadSettings()
 {
     mServerUrl->setText(OllamaSettings::serverUrl().toString());
     mPrompt->setPlainText(OllamaSettings::systemPrompt());
-    fillModels();
+    qDebug() << " load " << OllamaSettings::model();
+    mModelComboBoxWidget->setCurrentModel(OllamaSettings::model());
 }
 
 void OllamaConfigureWidget::saveSettings()
 {
     OllamaSettings::setSystemPrompt(mPrompt->toPlainText());
     OllamaSettings::setServerUrl(QUrl(mServerUrl->text()));
+    OllamaSettings::setModel(mModelComboBoxWidget->currentModel());
 }
 
 void OllamaConfigureWidget::fillModels()
@@ -75,6 +77,7 @@ void OllamaConfigureWidget::fillModels()
             mMessageWidget->animatedShow();
         } else {
             mModelComboBoxWidget->setModels(modelinfo.models);
+            loadSettings();
         }
     });
     OllamaManager::self()->loadModels();
