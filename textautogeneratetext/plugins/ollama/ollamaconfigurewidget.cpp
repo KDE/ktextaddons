@@ -45,7 +45,6 @@ OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
     mPrompt->setObjectName(QStringLiteral("mPrompt"));
     mainLayout->addRow(i18n("Prompt:"), mPrompt);
     mPrompt->setPlaceholderText(i18n("No system prompt"));
-    // TODO add setPlaceHolder
 
     connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
     loadSettings();
@@ -62,7 +61,8 @@ void OllamaConfigureWidget::loadSettings()
 
 void OllamaConfigureWidget::saveSettings()
 {
-    // TODO
+    OllamaSettings::setSystemPrompt(mPrompt->toPlainText());
+    OllamaSettings::setServerUrl(QUrl(mServerUrl->text()));
 }
 
 void OllamaConfigureWidget::fillModels()
