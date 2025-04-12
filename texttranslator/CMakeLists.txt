@@ -57,6 +57,9 @@ target_sources(KF6TextTranslator PRIVATE
     translator/widgets/translatorconfigurecombowidget.h
     translator/widgets/translatorconfigurecombowidget.cpp
 
+    translator/widgets/translatorconfigurelanguagesortfilterproxymodel.h
+    translator/widgets/translatorconfigurelanguagesortfilterproxymodel.cpp
+
     translator/widgets/translatormenu.cpp
     translator/widgets/translatormenu.h
 
