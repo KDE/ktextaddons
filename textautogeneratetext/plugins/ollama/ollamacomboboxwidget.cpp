@@ -34,6 +34,7 @@ OllamaComboBoxWidget::~OllamaComboBoxWidget() = default;
 void OllamaComboBoxWidget::setModels(const QStringList &lst)
 {
     mModelComboBox->addItems(lst);
+    mModelComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
 
 void OllamaComboBoxWidget::setCurrentModel(const QString &str)
