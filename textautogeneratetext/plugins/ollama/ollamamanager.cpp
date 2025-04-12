@@ -69,12 +69,10 @@ OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
     // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
     data["prompt"_L1] = request.message();
     data["model"_L1] = OllamaSettings::model();
-    /*
-        const auto context = request.context().toJson();
-        if (!context.isNull()) {
-            data["context"_L1] = context;
-        }
-        */
+    const auto context = request.context().toJson();
+    if (!context.isNull()) {
+        data["context"_L1] = context;
+    }
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }

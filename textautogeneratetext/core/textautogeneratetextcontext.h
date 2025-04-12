@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QJsonValue>
 #include <QVariant>
 namespace TextAutogenerateText
 {
@@ -18,6 +19,8 @@ public:
     void setContextData(const QVariant &newContextData);
 
     [[nodiscard]] bool operator==(const TextAutogenerateTextContext &other) const;
+
+    [[nodiscard]] QJsonValue toJson() const;
 
 private:
     QVariant mContextData;

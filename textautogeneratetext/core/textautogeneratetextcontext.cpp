@@ -5,6 +5,8 @@
 */
 #include "textautogeneratetextcontext.h"
 
+#include <QJsonArray>
+
 using namespace TextAutogenerateText;
 TextAutogenerateTextContext::TextAutogenerateTextContext() = default;
 
@@ -23,6 +25,11 @@ void TextAutogenerateTextContext::setContextData(const QVariant &newContextData)
 bool TextAutogenerateTextContext::operator==(const TextAutogenerateTextContext &other) const
 {
     return other.contextData() == mContextData;
+}
+
+QJsonValue TextAutogenerateTextContext::toJson() const
+{
+    return mContextData.value<QJsonArray>();
 }
 
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateTextContext &t)
