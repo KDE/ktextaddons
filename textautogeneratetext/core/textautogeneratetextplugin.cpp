@@ -52,6 +52,7 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         msg.setContent(str);
         msg.setDateTime(QDateTime::currentSecsSinceEpoch());
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
+        sendToLLM(str);
         // TODO add question to LLM
         // TODO
     } else {
