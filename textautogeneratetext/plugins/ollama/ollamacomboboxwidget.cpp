@@ -36,4 +36,14 @@ void OllamaComboBoxWidget::setModels(const QStringList &lst)
     mModelComboBox->addItems(lst);
 }
 
+void OllamaComboBoxWidget::setCurrentModel(const QString &str)
+{
+    mModelComboBox->setCurrentIndex(mModelComboBox->findText(str));
+}
+
+QString OllamaComboBoxWidget::currentModel() const
+{
+    return mModelComboBox->currentText();
+}
+
 #include "moc_ollamacomboboxwidget.cpp"

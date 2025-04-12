@@ -16,6 +16,8 @@ public:
     ~OllamaComboBoxWidget() override;
 
     void setModels(const QStringList &lst);
+    void setCurrentModel(const QString &str);
+    [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
     void reloadModel();
 
