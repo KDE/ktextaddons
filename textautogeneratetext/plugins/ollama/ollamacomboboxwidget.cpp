@@ -39,7 +39,10 @@ void OllamaComboBoxWidget::setModels(const QStringList &lst)
 
 void OllamaComboBoxWidget::setCurrentModel(const QString &str)
 {
-    mModelComboBox->setCurrentIndex(mModelComboBox->findText(str));
+    const int index = mModelComboBox->findText(str);
+    if (index >= 0) {
+        mModelComboBox->setCurrentIndex(index);
+    }
 }
 
 QString OllamaComboBoxWidget::currentModel() const
