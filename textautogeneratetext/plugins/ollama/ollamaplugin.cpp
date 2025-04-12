@@ -6,6 +6,8 @@
 
 #include "ollamaplugin.h"
 #include "autogeneratetext_ollama_debug.h"
+#include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratemanager.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 
@@ -83,12 +85,12 @@ void OllamaPlugin::sendToLLM(const QString &message)
     */
     auto reply = OllamaManager::self()->getCompletion(req);
 
-#if 0
-    mConnections.insert(reply, connect(reply, &OllamaReply::contentAdded, this, [this, i = m_messages.size() - 1] {
-                            auto &message = m_messages[i];
-                            message.content = message.llmReply->readResponse();
-                            Q_EMIT dataChanged(index(i), index(i), {Roles::MessageRole});
+    mConnections.insert(reply, connect(reply, &OllamaReply::contentAdded, this, [reply]() {
+                            auto message = TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->lastMessage();
+                            message.setContent(reply->readResponse());
+                            TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceLastMessage(message);
                         }));
+#if 0
     mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [this, i = m_messages.size() - 1] {
                             auto &message = m_messages[i];
                             mConnections.remove(message.llmReply);

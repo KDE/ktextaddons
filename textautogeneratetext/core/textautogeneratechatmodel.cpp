@@ -75,4 +75,12 @@ void TextAutoGenerateChatModel::replaceLastMessage(const TextAutoGenerateMessage
     endInsertRows();
 }
 
+TextAutoGenerateMessage TextAutoGenerateChatModel::lastMessage() const
+{
+    if (mMessages.count() == 0) {
+        return TextAutoGenerateMessage();
+    }
+    return mMessages.last();
+}
+
 #include "moc_textautogeneratechatmodel.cpp"

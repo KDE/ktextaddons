@@ -36,6 +36,8 @@ public:
 
     void replaceLastMessage(const TextAutoGenerateMessage &msg);
 
+    [[nodiscard]] TextAutoGenerateMessage lastMessage() const;
+
 private:
     QList<TextAutoGenerateMessage> mMessages;
 };
