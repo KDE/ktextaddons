@@ -11,7 +11,8 @@ TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterPr
     : QSortFilterProxyModel{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
-    setFilterRole(TextAutoGenerateHistoryModel::DateTime);
+    setSortRole(TextAutoGenerateHistoryModel::DateTime);
+    setFilterRole(TextAutoGenerateHistoryModel::Subject);
     sort(0);
 }
 
