@@ -56,7 +56,6 @@ void OllamaConfigureWidget::loadSettings()
 {
     mServerUrl->setText(OllamaSettings::serverUrl().toString());
     mPrompt->setPlainText(OllamaSettings::systemPrompt());
-    qDebug() << " load " << OllamaSettings::model();
     mModelComboBoxWidget->setCurrentModel(OllamaSettings::model());
 }
 
@@ -65,6 +64,7 @@ void OllamaConfigureWidget::saveSettings()
     OllamaSettings::setSystemPrompt(mPrompt->toPlainText());
     OllamaSettings::setServerUrl(QUrl(mServerUrl->text()));
     OllamaSettings::setModel(mModelComboBoxWidget->currentModel());
+    OllamaSettings::self()->save();
 }
 
 void OllamaConfigureWidget::fillModels()
