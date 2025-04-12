@@ -8,6 +8,10 @@
 
 #include "core/textautogeneratetextplugin.h"
 
+#include "ollamareply.h"
+
+#include <QMultiHash>
+
 class OllamaPlugin : public TextAutogenerateText::TextAutogenerateTextPlugin
 {
     Q_OBJECT
@@ -30,4 +34,5 @@ protected:
 
 private:
     QString mCurrentModel;
+    QMultiHash<OllamaReply *, QMetaObject::Connection> mConnections;
 };
