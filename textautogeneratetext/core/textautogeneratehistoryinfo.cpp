@@ -13,8 +13,9 @@ TextAutoGenerateHistoryInfo::~TextAutoGenerateHistoryInfo() = default;
 
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateHistoryInfo &t)
 {
-    d << "subject:" << t.subject();
-    d << "datetime:" << t.dateTime();
+    d.space() << "subject:" << t.subject();
+    d.space() << "datetime:" << t.dateTime();
+    d.space() << "model" << t.model();
     return d;
 }
 
@@ -36,4 +37,14 @@ qint64 TextAutoGenerateHistoryInfo::dateTime() const
 void TextAutoGenerateHistoryInfo::setDateTime(qint64 newDateTime)
 {
     mDateTime = newDateTime;
+}
+
+QString TextAutoGenerateHistoryInfo::model() const
+{
+    return mModel;
+}
+
+void TextAutoGenerateHistoryInfo::setModel(const QString &newModel)
+{
+    mModel = newModel;
 }

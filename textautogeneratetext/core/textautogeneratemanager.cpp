@@ -34,6 +34,4 @@ void TextAutogenerateManager::saveHistory()
 {
 }
 
-// TODO add loadSettings/saveSettings
-
 #include "moc_textautogeneratemanager.cpp"

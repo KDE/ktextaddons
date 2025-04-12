@@ -22,7 +22,11 @@ public:
     [[nodiscard]] qint64 dateTime() const;
     void setDateTime(qint64 newDateTime);
 
+    [[nodiscard]] QString model() const;
+    void setModel(const QString &newModel);
+
 private:
+    QString mModel;
     QString mSubject;
     qint64 mDateTime = -1;
 };

@@ -32,11 +32,8 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
         return info.subject();
     case DateTime:
         return info.dateTime();
-        /*
-    case FinishedRole:
-        // TODO
-        break;
-        */
+    case Model:
+        return info.model();
     }
     return {};
 }
