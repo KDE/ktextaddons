@@ -7,6 +7,7 @@
 #include "ollamaclient.h"
 #include "ollamaconfiguredialog.h"
 #include "ollamaplugin.h"
+#include "ollamasettings.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -52,6 +53,11 @@ bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
 QString OllamaClient::webSite() const
 {
     return QStringLiteral("https://ollama.com/");
+}
+
+QString OllamaClient::modelName() const
+{
+    return OllamaSettings::model();
 }
 
 #include "moc_ollamaclient.cpp"

@@ -54,4 +54,10 @@ QString MistralClient::webSite() const
     return QStringLiteral("https://chat.mistral.ai/");
 }
 
+QString MistralClient::modelName() const
+{
+    // No model here
+    return {};
+}
+
 #include "moc_mistralclient.cpp"

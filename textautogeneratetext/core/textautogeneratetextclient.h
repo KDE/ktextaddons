@@ -35,21 +35,24 @@ public:
     /**
      * @returns the name of the implementing class.
      */
-    virtual QString name() const = 0;
+    [[nodiscard]] virtual QString name() const = 0;
 
-    virtual QString translatedName() const = 0;
+    [[nodiscard]] virtual QString translatedName() const = 0;
 
-    virtual QString webSite() const = 0;
+    [[nodiscard]] virtual QString webSite() const = 0;
 
     virtual TextAutogenerateTextPlugin *createTextAutogeneratePlugin() = 0;
 
     [[nodiscard]] virtual bool hasConfigurationDialog() const;
 
-    virtual bool showConfigureDialog(QWidget *parentWidget);
+    [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget);
 
     [[nodiscard]] virtual TextAutogenerateText::TextAutogenerateTextClient::EngineType engineType() const = 0;
 
     [[nodiscard]] static QString convertEngineType(TextAutogenerateText::TextAutogenerateTextClient::EngineType type);
+
+    [[nodiscard]] virtual QString modelName() const = 0;
+
 Q_SIGNALS:
     void configureChanged();
 };
