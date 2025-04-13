@@ -5,7 +5,6 @@
 */
 
 #include "translatorconfigurelanguagelistwidget.h"
-#include "translatorconfigurelanguagesortfilterproxymodel.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLabel>
@@ -35,7 +34,9 @@ TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(con
     mListSearchLine->setObjectName(QStringLiteral("mListSearchLine"));
     mainLayout->addWidget(mListSearchLine);
     mListSearchLine->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
-    auto filterProxyModel = new TranslatorConfigureLanguageSortFilterProxyModel(this);
+    auto filterProxyModel = new QSortFilterProxyModel(this);
+    filterProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    filterProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     filterProxyModel->setSourceModel(mModel);
     connect(mListSearchLine, &QLineEdit::textChanged, this, [filterProxyModel](const QString &str) {
         filterProxyModel->setFilterFixedString(str);
