@@ -90,20 +90,17 @@ void OllamaPlugin::sendToLLM(const QString &message)
                             message.setContent(reply->readResponse());
                             TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceLastMessage(message);
                         }));
-#if 0
-    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [reply] {
-        auto message = TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->lastMessage();
+    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [reply, this] {
+                            auto message = TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->lastMessage();
                             mConnections.remove(reply);
+                            reply->deleteLater();
+                            message.setInProgress(false);
+#if 0
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
-                            message.inProgress = false;
-                            reply->deleteLater();
-                            Q_EMIT dataChanged(index(i),
-                                               index(i),
-                                               {Roles::FinishedRole, Roles::TokensPerSecondRole, Roles::TokenCountRole, Roles::DurationRole});
-                            Q_EMIT replyInProgressChanged();
-                        }));
 #endif
+                            Q_EMIT finished(message); // TODO add message as argument ???
+                        }));
 }
 
 #include "moc_ollamaplugin.cpp"
