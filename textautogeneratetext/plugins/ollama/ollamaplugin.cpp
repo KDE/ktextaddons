@@ -91,14 +91,13 @@ void OllamaPlugin::sendToLLM(const QString &message)
                             TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceLastMessage(message);
                         }));
 #if 0
-    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [this, i = m_messages.size() - 1] {
-                            auto &message = m_messages[i];
-                            mConnections.remove(message.llmReply);
+    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [reply] {
+        auto message = TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->lastMessage();
+                            mConnections.remove(reply);
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
-                            message.llmReply->deleteLater();
-                            message.llmReply = nullptr;
                             message.inProgress = false;
+                            reply->deleteLater();
                             Q_EMIT dataChanged(index(i),
                                                index(i),
                                                {Roles::FinishedRole, Roles::TokensPerSecondRole, Roles::TokenCountRole, Roles::DurationRole});
