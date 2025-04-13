@@ -77,7 +77,7 @@ void TextAutoGenerateChatModel::replaceLastMessage(const TextAutoGenerateMessage
 
 TextAutoGenerateMessage TextAutoGenerateChatModel::lastMessage() const
 {
-    if (mMessages.count() == 0) {
+    if (mMessages.isEmpty()) {
         return TextAutoGenerateMessage();
     }
     return mMessages.last();
