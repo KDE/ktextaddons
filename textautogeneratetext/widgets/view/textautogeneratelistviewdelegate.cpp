@@ -5,10 +5,11 @@
 */
 #include "textautogeneratelistviewdelegate.h"
 #include "core/textautogeneratechatmodel.h"
+#include <QPainter>
 
 using namespace TextAutogenerateText;
 TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QObject *parent)
-    : QStyledItemDelegate{parent}
+    : QItemDelegate{parent}
 {
 }
 
@@ -16,14 +17,17 @@ TextAutogenerateListViewDelegate::~TextAutogenerateListViewDelegate() = default;
 
 void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    painter->save();
+    drawBackground(painter, option, index);
+    painter->restore();
     // TODO implement it
-    QStyledItemDelegate::paint(painter, option, index);
+    QItemDelegate::paint(painter, option, index);
 }
 
 QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     // TODO implement it.
-    return QStyledItemDelegate::sizeHint(option, index);
+    return QItemDelegate::sizeHint(option, index);
 }
 
 #include "moc_textautogeneratelistviewdelegate.cpp"

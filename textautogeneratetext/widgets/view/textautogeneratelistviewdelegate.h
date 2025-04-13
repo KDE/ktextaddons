@@ -5,10 +5,10 @@
 */
 #pragma once
 
-#include <QStyledItemDelegate>
+#include <QItemDelegate>
 namespace TextAutogenerateText
 {
-class TextAutogenerateListViewDelegate : public QStyledItemDelegate
+class TextAutogenerateListViewDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
