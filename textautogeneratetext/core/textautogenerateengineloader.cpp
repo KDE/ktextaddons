@@ -124,9 +124,11 @@ QMap<QString, QString> TextAutogenerateEngineLoader::textAutoGenerateTextEngineI
 
 QString TextAutogenerateEngineLoader::generateDisplayName(TextAutogenerateTextClient *client) const
 {
-    QString translatedName = client->translatedName() + QStringLiteral(" (%1)").arg(client->convertEngineType(client->engineType()));
-    if (!client->modelName().isEmpty()) {
-        translatedName += QStringLiteral(" (%1)").arg(client->modelName());
+    QString translatedName = client->translatedName();
+    if (const QString modelName = client->modelName(); !modelName.isEmpty()) {
+        translatedName += QStringLiteral(" (%1: %2)").arg(client->convertEngineType(client->engineType()), modelName);
+    } else {
+        translatedName += QStringLiteral(" (%1)").arg(client->convertEngineType(client->engineType()));
     }
     return translatedName;
 }
