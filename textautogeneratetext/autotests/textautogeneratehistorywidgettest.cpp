@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratehistorywidgettest.h"
-#include "widgets/textautogeneratehistorylistview.h"
 #include "widgets/textautogeneratehistorywidget.h"
+#include "widgets/view/textautogeneratehistorylistview.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>

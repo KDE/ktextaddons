@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratelistviewtest.h"
-#include "widgets/textautogeneratelistview.h"
+#include "widgets/view/textautogeneratelistview.h"
 #include <QTest>
 
 QTEST_MAIN(TextAutogenerateListViewTest);

@@ -6,7 +6,7 @@
 #include "textautogeneratehistorywidget.h"
 #include "core/textautogeneratehistorymodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
-#include "widgets/textautogeneratehistorylistview.h"
+#include "widgets/view/textautogeneratehistorylistview.h"
 #include <KLineEditEventHandler>
 #include <QLineEdit>
 #include <QVBoxLayout>

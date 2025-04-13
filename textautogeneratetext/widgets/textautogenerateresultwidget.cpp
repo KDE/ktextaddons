@@ -5,7 +5,7 @@
 */
 
 #include "textautogenerateresultwidget.h"
-#include "textautogeneratelistview.h"
+#include "view/textautogeneratelistview.h"
 
 #include <QVBoxLayout>
 
