@@ -29,10 +29,16 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStyleOptionViewItem listViewOptions() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkIfAtBottom();
     TEXTAUTOGENERATETEXT_NO_EXPORT void maybeScrollToBottom();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateVerticalPageStep();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void handleMouseEvent(QMouseEvent *event);
+    virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    virtual bool mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+
     bool mAtBottom = true;
     QPoint mPressedPosition;
+    QPersistentModelIndex mCurrentIndex = {};
 };
 }

@@ -7,6 +7,8 @@
 #include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
+#include <QApplication>
+#include <QMouseEvent>
 #include <QScrollBar>
 
 using namespace TextAutogenerateText;
@@ -55,22 +57,77 @@ void TextAutogenerateListView::updateVerticalPageStep()
 
 void TextAutogenerateListView::mouseReleaseEvent(QMouseEvent *event)
 {
-    // TODO
+    handleMouseEvent(event);
 }
 
 void TextAutogenerateListView::mouseDoubleClickEvent(QMouseEvent *event)
 {
-    // TODO
+    handleMouseEvent(event);
 }
 
 void TextAutogenerateListView::mousePressEvent(QMouseEvent *event)
 {
-    // TODO
+    mPressedPosition = event->pos();
+    handleMouseEvent(event);
 }
 
 void TextAutogenerateListView::mouseMoveEvent(QMouseEvent *event)
 {
+    // Drag support
+    const int distance = (event->pos() - mPressedPosition).manhattanLength();
+    if (distance > QApplication::startDragDistance()) {
+        mPressedPosition = {};
+        const QPersistentModelIndex index = indexAt(event->pos());
+        if (index.isValid()) {
+            QStyleOptionViewItem options = listViewOptions();
+            options.rect = visualRect(index);
+            if (maybeStartDrag(event, options, index)) {
+                return;
+            }
+        }
+    }
+    handleMouseEvent(event);
+}
+
+QStyleOptionViewItem TextAutogenerateListView::listViewOptions() const
+{
+    QStyleOptionViewItem option;
+    initViewItemOption(&option);
+    return option;
+}
+
+void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
+{
+    const QPersistentModelIndex index = indexAt(event->pos());
+    if (index.isValid()) {
+        if (mCurrentIndex != index) {
+            mCurrentIndex = index;
+        }
+
+        QStyleOptionViewItem options = listViewOptions();
+        options.rect = visualRect(mCurrentIndex);
+        if (mouseEvent(event, options, mCurrentIndex)) {
+            update(mCurrentIndex);
+        }
+    }
+}
+
+bool TextAutogenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
     // TODO
+    Q_UNUSED(event);
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+    return false;
+}
+
+bool TextAutogenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    // TODO
+    Q_UNUSED(event);
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+    return false;
 }
 
 #include "moc_textautogeneratelistview.cpp"
