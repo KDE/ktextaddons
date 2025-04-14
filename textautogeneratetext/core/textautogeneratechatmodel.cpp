@@ -38,6 +38,8 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return QVariant::fromValue(message.sender());
     case FinishedRole:
         return !message.inProgress();
+    case UuidRole:
+        return message.uuid();
     }
     return {};
 }

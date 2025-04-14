@@ -21,6 +21,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QCOMPARE(msg.dateTime(), -1);
     QVERIFY(!msg.isValid());
     QVERIFY(!msg.inProgress());
+    QVERIFY(msg.uuid().isEmpty());
 }
 
 #include "moc_textautogeneratemessagetest.cpp"

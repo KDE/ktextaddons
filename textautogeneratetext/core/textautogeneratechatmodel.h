@@ -19,6 +19,7 @@ public:
         SenderRole,
         FinishedRole,
         DateTimeRole,
+        UuidRole,
     };
 
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);
