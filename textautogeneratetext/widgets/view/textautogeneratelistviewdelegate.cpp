@@ -30,4 +30,9 @@ QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &opt
     return QItemDelegate::sizeHint(option, index);
 }
 
+void TextAutogenerateListViewDelegate::clearSizeHintCache()
+{
+    // TODO mSizeHintCache.clear();
+}
+
 #include "moc_textautogeneratelistviewdelegate.cpp"

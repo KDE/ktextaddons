@@ -40,7 +40,7 @@ void TextAutogenerateListView::resizeEvent(QResizeEvent *ev)
     checkIfAtBottom();
     maybeScrollToBottom(); // this forces a layout in QAIV, which then changes the vbar max value
     updateVerticalPageStep();
-    // TODO Q_EMIT needToClearSizeHintCache();
+    mDelegate->clearSizeHintCache();
 }
 
 void TextAutogenerateListView::checkIfAtBottom()
