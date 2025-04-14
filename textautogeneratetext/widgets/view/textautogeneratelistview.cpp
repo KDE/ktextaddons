@@ -26,6 +26,11 @@ void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> 
     TextAutogenerateManager::self()->textAutoGenerateChatModel()->setMessages(msg);
 }
 
+void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
+{
+    // TODO
+}
+
 void TextAutogenerateListView::resizeEvent(QResizeEvent *ev)
 {
     QListView::resizeEvent(ev);
