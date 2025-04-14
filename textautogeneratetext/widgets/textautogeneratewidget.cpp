@@ -123,7 +123,6 @@ void TextAutogenerateWidget::slotConfigureChanged()
 
 void TextAutogenerateWidget::slotEditingFinished(const QString &str)
 {
-    qDebug() << " TextAutogenerateWidget::slotEditingFinished " << str;
     mTextAutogeneratePlugin->sendMessage(str);
 }
 
