@@ -25,6 +25,8 @@ public:
     void clearSizeHintCache();
 
 private:
+    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
+    [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
     // Cache SizeHint value
     // We need to clear it when we resize widget.
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;
