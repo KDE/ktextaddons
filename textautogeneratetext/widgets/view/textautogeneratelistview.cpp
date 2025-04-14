@@ -7,7 +7,7 @@
 #include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
-#include <qscrollbar.h>
+#include <QScrollBar>
 
 using namespace TextAutogenerateText;
 TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
