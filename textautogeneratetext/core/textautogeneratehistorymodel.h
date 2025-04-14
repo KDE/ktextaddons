@@ -17,8 +17,8 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateHistoryModel : public QAbstrac
 {
     Q_OBJECT
 public:
-    enum HistoryRole : uint8_t {
-        Subject,
+    enum HistoryRole : uint16_t {
+        Subject = Qt::UserRole + 1,
         DateTime,
         Model,
     };

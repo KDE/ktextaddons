@@ -28,6 +28,7 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
     }
     const auto &info = mHistoryInfos[index.row()];
     switch (role) {
+    case Qt::DisplayRole:
     case Subject:
         return info.subject();
     case DateTime:
