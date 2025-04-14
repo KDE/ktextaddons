@@ -8,7 +8,7 @@
 
 using namespace TextAutogenerateText;
 TextAutogenerateHistoryListViewDelegate::TextAutogenerateHistoryListViewDelegate(QObject *parent)
-    : QStyledItemDelegate{parent}
+    : QItemDelegate{parent}
 {
 }
 
