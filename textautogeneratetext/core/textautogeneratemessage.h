@@ -40,7 +40,11 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateMessage &other) const;
 
+    [[nodiscard]] QByteArray uuid() const;
+    void setUuid(const QByteArray &newUuid);
+
 private:
+    QByteArray mUuid;
     QString mContent;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
