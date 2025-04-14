@@ -14,8 +14,9 @@
 using namespace TextAutogenerateText;
 TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     : QListView(parent)
+    , mDelegate(new TextAutogenerateListViewDelegate(this))
 {
-    setItemDelegate(new TextAutogenerateListViewDelegate(this));
+    setItemDelegate(mDelegate);
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
 }
 

@@ -6,10 +6,10 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QListView>
-
 namespace TextAutogenerateText
 {
 class TextAutoGenerateMessage;
+class TextAutogenerateListViewDelegate;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateListView : public QListView
 {
     Q_OBJECT
@@ -41,5 +41,6 @@ private:
     bool mAtBottom = true;
     QPoint mPressedPosition;
     QPersistentModelIndex mCurrentIndex = {};
+    TextAutogenerateListViewDelegate *const mDelegate;
 };
 }
