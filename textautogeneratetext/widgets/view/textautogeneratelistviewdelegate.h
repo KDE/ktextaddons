@@ -25,6 +25,16 @@ public:
     void clearSizeHintCache();
 
 private:
+    // TODO
+    struct MessageLayout {
+        // Text message
+        QRect textRect;
+        qreal baseLine; // used to draw sender/timestamp
+    };
+
+    [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;
+    [[nodiscard]] QSize textSizeHint(QTextDocument *doc, qreal *pBaseLine) const;
+    [[nodiscard]] TextAutogenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
     [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
     // Cache SizeHint value

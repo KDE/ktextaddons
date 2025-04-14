@@ -5,6 +5,7 @@
 */
 #include "textautogeneratelistviewdelegate.h"
 #include "core/textautogeneratechatmodel.h"
+#include "textautogeneratetextwidget_debug.h"
 #include <QPainter>
 #include <QTextFrame>
 #include <QTextFrameFormat>
@@ -23,12 +24,40 @@ void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
     painter->save();
     drawBackground(painter, option, index);
     painter->restore();
+
+    const MessageLayout layout = doLayout(option, index);
+    qDebug() << " layout.textRect " << layout.textRect;
+    // Message
+    if (layout.textRect.isValid()) {
+#ifdef DEBUG_PAINTING
+        painter->save();
+        painter->setPen(QPen(Qt::red));
+        painter->drawRect(layout.textRect);
+        painter->restore();
+#endif
+        // TODO DRAW mHelperText->draw(painter, layout.textRect, index, option);
+    }
+
     // TODO implement it
     QItemDelegate::paint(painter, option, index);
 }
 
 QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    auto it = mSizeHintCache.find(uuid);
+    if (it != mSizeHintCache.end()) {
+        const QSize result = it->value;
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "TextAutogenerateListViewDelegate: SizeHint found in cache: " << result;
+        return result;
+    }
+
+#if 0
+    const QSize size = mMessageListLayoutBase->sizeHint(option, index);
+    if (!size.isEmpty()) {
+        mSizeHintCache.insert(uuid, size);
+    }
+#endif
     // TODO implement it.
     return QItemDelegate::sizeHint(option, index);
 }
@@ -36,6 +65,36 @@ QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &opt
 void TextAutogenerateListViewDelegate::clearSizeHintCache()
 {
     mSizeHintCache.clear();
+}
+
+TextAutogenerateListViewDelegate::MessageLayout TextAutogenerateListViewDelegate::doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    TextAutogenerateListViewDelegate::MessageLayout layout;
+    QRect usableRect = option.rect;
+    const int maxWidth = qMax(30, option.rect.width() /* - textLeft - widthAfterMessage*/);
+    const QSize textSize = sizeHint(index, maxWidth, option, &layout.baseLine);
+    layout.textRect = QRect(0, usableRect.top(), maxWidth, textSize.height());
+    return layout;
+}
+
+QSize TextAutogenerateListViewDelegate::sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const
+{
+    Q_UNUSED(option)
+    auto *doc = documentForIndex(index, maxWidth);
+    return textSizeHint(doc, pBaseLine);
+}
+
+QSize TextAutogenerateListViewDelegate::textSizeHint(QTextDocument *doc, qreal *pBaseLine) const
+{
+    if (!doc) {
+        return {};
+    }
+    const QSize size(doc->idealWidth(), doc->size().height()); // do the layouting, required by lineAt(0) below
+
+    const QTextLine &line = doc->firstBlock().layout()->lineAt(0);
+    *pBaseLine = line.y() + line.ascent(); // relative
+    qDebug() << " doc->" << doc->toPlainText() << " size " << size;
+    return size;
 }
 
 QTextDocument *TextAutogenerateListViewDelegate::documentForIndex(const QModelIndex &index, int width) const
