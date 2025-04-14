@@ -5,7 +5,11 @@
 */
 #pragma once
 
+#include "lrucache.h"
 #include <QItemDelegate>
+#include <QTextDocument>
+#include <memory>
+
 namespace TextAutogenerateText
 {
 class TextAutogenerateListViewDelegate : public QItemDelegate
@@ -19,5 +23,12 @@ public:
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     void clearSizeHintCache();
+
+private:
+    // Cache SizeHint value
+    // We need to clear it when we resize widget.
+    mutable LRUCache<QByteArray, QSize> mSizeHintCache;
+
+    mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
 };
 }

@@ -11,6 +11,7 @@ using namespace TextAutogenerateText;
 TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QObject *parent)
     : QItemDelegate{parent}
 {
+    mSizeHintCache.setMaxEntries(32);
 }
 
 TextAutogenerateListViewDelegate::~TextAutogenerateListViewDelegate() = default;
@@ -32,7 +33,7 @@ QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &opt
 
 void TextAutogenerateListViewDelegate::clearSizeHintCache()
 {
-    // TODO mSizeHintCache.clear();
+    mSizeHintCache.clear();
 }
 
 #include "moc_textautogeneratelistviewdelegate.cpp"
