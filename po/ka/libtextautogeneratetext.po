@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 00:40+0000\n"
+"POT-Creation-Date: 2025-04-14 00:40+0000\n"
 "PO-Revision-Date: 2025-04-05 05:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:27
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -122,12 +122,6 @@ msgstr "საუბარი"
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: widgets/textautogeneratehistorylistview.cpp:28
-#, kde-format
-msgctxt "@action"
-msgid "Remove…"
-msgstr "წაშლა…"
-
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
@@ -138,3 +132,9 @@ msgstr "შეიყვანეთ შეტყობინება"
 #, kde-format
 msgid "Send"
 msgstr "გაგზავნა"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr "წაშლა…"

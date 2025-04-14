@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 00:40+0000\n"
+"POT-Creation-Date: 2025-04-14 00:40+0000\n"
 "PO-Revision-Date: 2025-04-07 00:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.07.70\n"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:27
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -121,12 +121,6 @@ msgstr "Konuşma"
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: widgets/textautogeneratehistorylistview.cpp:28
-#, kde-format
-msgctxt "@action"
-msgid "Remove…"
-msgstr "Kaldır…"
-
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
@@ -137,3 +131,9 @@ msgstr "Bir ileti girin…"
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr "Kaldır…"

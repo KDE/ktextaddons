@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 00:40+0000\n"
+"POT-Creation-Date: 2025-04-14 00:40+0000\n"
 "PO-Revision-Date: 2025-04-05 11:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.12.3\n"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:27
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -123,12 +123,6 @@ msgstr "Conversación"
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: widgets/textautogeneratehistorylistview.cpp:28
-#, kde-format
-msgctxt "@action"
-msgid "Remove…"
-msgstr "Eliminar…"
-
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
@@ -139,3 +133,9 @@ msgstr "Introduzca un mensaje"
 #, kde-format
 msgid "Send"
 msgstr "Enviar"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr "Eliminar…"

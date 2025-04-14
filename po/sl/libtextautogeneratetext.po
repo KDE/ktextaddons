@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-05 00:40+0000\n"
+"POT-Creation-Date: 2025-04-14 00:40+0000\n"
 "PO-Revision-Date: 2025-04-05 08:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:27
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -122,12 +122,6 @@ msgstr "Pogovor"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
 
-#: widgets/textautogeneratehistorylistview.cpp:28
-#, kde-format
-msgctxt "@action"
-msgid "Remove…"
-msgstr "Odstrani…"
-
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
@@ -138,3 +132,9 @@ msgstr "Vnesite sporočilo"
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:28
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr "Odstrani…"

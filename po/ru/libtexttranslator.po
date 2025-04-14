@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-13 00:40+0000\n"
+"POT-Creation-Date: 2025-04-14 00:40+0000\n"
 "PO-Revision-Date: 2024-06-22 11:32+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -337,7 +337,7 @@ msgid "Bergamot"
 msgstr "Bergamot"
 
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:37
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "Search…"
 msgctxt "@info:placeholder"
