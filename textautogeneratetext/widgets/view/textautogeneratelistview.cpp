@@ -29,7 +29,10 @@ void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> 
 
 void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
 {
-    // TODO
+    const QModelIndex index = indexAt(event->pos());
+    if (index.isValid()) {
+        // TODO
+    }
 }
 
 void TextAutogenerateListView::resizeEvent(QResizeEvent *ev)
