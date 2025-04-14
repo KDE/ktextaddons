@@ -63,6 +63,10 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
 TextAutogenerateWidget::~TextAutogenerateWidget()
 {
+    if (mTextAutogeneratePlugin) {
+        mTextAutogeneratePlugin->stop();
+        mTextAutogeneratePlugin->deleteLater();
+    }
     writeConfig();
 }
 

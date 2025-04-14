@@ -36,6 +36,7 @@ public:
     void setReady(bool newReady);
 
     void sendMessage(const QString &str);
+    virtual void stop() = 0;
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);
@@ -43,7 +44,6 @@ Q_SIGNALS:
 
 protected:
     virtual void sendToLLM(const QString &message) = 0;
-    virtual void stop() = 0;
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
