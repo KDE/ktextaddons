@@ -7,6 +7,7 @@
 #include "textautogeneratehistorylistview.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
 
@@ -25,11 +26,14 @@ TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
 void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
-    auto removeHistory = new QAction(i18nc("@action", "Remove…"), &menu);
-    connect(removeHistory, &QAction::triggered, this, [this]() {
-        // TODO
-    });
-    menu.addAction(removeHistory);
+    const QModelIndex index = indexAt(event->pos());
+    if (index.isValid()) {
+        auto removeHistory = new QAction(i18nc("@action", "Remove…"), &menu);
+        connect(removeHistory, &QAction::triggered, this, [this]() {
+            // TODO
+        });
+        menu.addAction(removeHistory);
+    }
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());
     }
