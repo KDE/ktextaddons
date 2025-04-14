@@ -28,6 +28,6 @@ QString TextAutogenerateEngineUtil::groupAutoGenerateTextName()
 QString TextAutogenerateEngineUtil::loadEngine()
 {
     KConfigGroup myGeneralGroup(KSharedConfig::openConfig(), groupAutoGenerateTextName());
-    const QString engineTypeStr = myGeneralGroup.readEntry(engineTranslateName(), defaultEngineName()); // Default google
+    const QString engineTypeStr = myGeneralGroup.readEntry(engineTranslateName(), defaultEngineName()); // Default ollama
     return engineTypeStr;
 }
