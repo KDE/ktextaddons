@@ -63,6 +63,7 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     }
 
     mTranslatorProxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    mTranslatorProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     mTranslatorProxyModel->setSourceModel(mTranslatorModel);
     mTreeView->setModel(mTranslatorProxyModel);
     mTreeView->setRootIsDecorated(false);
