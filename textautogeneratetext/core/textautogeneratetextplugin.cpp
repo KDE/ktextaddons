@@ -11,6 +11,7 @@
 #include "textautogeneratetextcore_debug.h"
 
 #include <QDateTime>
+#include <QUuid>
 
 using namespace TextAutogenerateText;
 
@@ -51,12 +52,14 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         msg.setSender(TextAutoGenerateMessage::Sender::User);
         msg.setContent(str);
         msg.setDateTime(QDateTime::currentSecsSinceEpoch());
+        msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
 
         TextAutoGenerateMessage msgLlm;
         msgLlm.setInProgress(true);
         msg.setSender(TextAutoGenerateMessage::Sender::LLM);
         msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
+        msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
         sendToLLM(str);
     } else {
