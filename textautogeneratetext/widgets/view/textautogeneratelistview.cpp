@@ -12,6 +12,7 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
+#include <QToolTip>
 
 using namespace TextAutogenerateText;
 TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
@@ -132,6 +133,7 @@ QStyleOptionViewItem TextAutogenerateListView::listViewOptions() const
 
 void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
 {
+    qDebug() << " void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)";
     const QPersistentModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         if (mCurrentIndex != index) {
@@ -157,6 +159,7 @@ bool TextAutogenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOp
 
 bool TextAutogenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
+    // TODO add tooltip
     // TODO
     Q_UNUSED(event);
     Q_UNUSED(option);
