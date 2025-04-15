@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:40+0000\n"
+"POT-Creation-Date: 2025-04-15 00:40+0000\n"
 "PO-Revision-Date: 2025-02-23 09:45+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -326,7 +326,7 @@ msgid "Bergamot Plugin Settings"
 msgstr "Configuration du module externe Bergamot"
 
 #: translator/plugins/bergamot/bergamotengineclient.cpp:31
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:172
 #, kde-format
 msgid "Bergamot"
 msgstr "Bergamot"
@@ -338,29 +338,29 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Rechercher…"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:78
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:79
 #, kde-format
 msgid "Download"
 msgstr "Télécharger"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:92
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:93
 #, kde-format
 msgid "Delete"
 msgstr "Supprimer"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:96
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Mettre à jour la liste"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Mettre à jour la liste de langues à partir du réseau"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:171
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:172
 #, kde-format
 msgid "Error: %1"
 msgstr "Erreur : %1"

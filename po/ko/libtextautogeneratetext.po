@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:40+0000\n"
+"POT-Creation-Date: 2025-04-15 00:40+0000\n"
 "PO-Revision-Date: 2025-04-07 00:04+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -132,7 +132,7 @@ msgstr "메시지 입력"
 msgid "Send"
 msgstr "보내기"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:28
+#: widgets/view/textautogeneratehistorylistview.cpp:31
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"

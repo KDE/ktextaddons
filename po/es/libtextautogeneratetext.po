@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:40+0000\n"
+"POT-Creation-Date: 2025-04-15 00:40+0000\n"
 "PO-Revision-Date: 2025-04-05 11:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -134,7 +134,7 @@ msgstr "Introduzca un mensaje"
 msgid "Send"
 msgstr "Enviar"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:28
+#: widgets/view/textautogeneratehistorylistview.cpp:31
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"

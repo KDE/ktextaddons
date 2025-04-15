@@ -470,19 +470,3 @@ msgstr "…"
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "Özel yazılabilir yol:"
-
-#~ msgid "Re&place"
-#~ msgstr "&Değiştir"
-
-#~ msgid "..."
-#~ msgstr "…"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Special Characters"
-#~ msgstr "Özel Karakterler Seç"
-
-#~ msgid "Insert"
-#~ msgstr "Ekle"
-
-#~ msgid "Select"
-#~ msgstr "Seç"

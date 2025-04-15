@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:40+0000\n"
+"POT-Creation-Date: 2025-04-15 00:40+0000\n"
 "PO-Revision-Date: 2024-07-11 17:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -73,34 +73,34 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Bilatu..."
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:82
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:83
 #, kde-format
 msgid "Download"
 msgstr "Zama-jaitsi"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:103
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:107
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Eguneratu zerrenda"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Eguneratu hizkuntzen zerrendan saretik"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:185
 #, kde-format
 msgid "Error: %1"
 msgstr "Errorea: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:184
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:185
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
 #, kde-format
 msgid "Vosk"
