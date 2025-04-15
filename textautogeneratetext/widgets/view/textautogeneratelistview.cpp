@@ -51,7 +51,7 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
     QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        auto copy = new QAction(i18nc("@action", "Copy"), &menu);
+        auto copy = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18nc("@action", "Copy"), &menu);
         connect(copy, &QAction::triggered, this, [index]() {
             const QString currentValue = index.data().toString();
             QClipboard *clip = QApplication::clipboard();
