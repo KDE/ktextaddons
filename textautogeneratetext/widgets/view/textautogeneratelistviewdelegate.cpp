@@ -99,7 +99,11 @@ TextAutogenerateListViewDelegate::MessageLayout TextAutogenerateListViewDelegate
     QRect usableRect = option.rect;
     const int maxWidth = qMax(30, option.rect.width() /* - textLeft - widthAfterMessage*/);
     const QSize textSize = sizeHint(index, maxWidth, option, &layout.baseLine);
-    layout.textRect = QRect(0, usableRect.top(), maxWidth, textSize.height());
+    // TODO customize
+    static int indent = 30;
+    const TextAutoGenerateMessage::Sender sender = index.data(TextAutoGenerateChatModel::SenderRole).value<TextAutoGenerateMessage::Sender>();
+
+    layout.textRect = QRect(sender == TextAutoGenerateMessage::Sender::User ? 80 : indent, usableRect.top(), maxWidth, textSize.height());
     return layout;
 }
 
