@@ -18,12 +18,6 @@ TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterPr
 
 TextAutoGenerateHistorySortFilterProxyModel::~TextAutoGenerateHistorySortFilterProxyModel() = default;
 
-bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
-{
-    // TODO implement filter subject
-    return true;
-}
-
 bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     // TODO
