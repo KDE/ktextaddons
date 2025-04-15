@@ -91,19 +91,18 @@ void TextAutogenerateListViewDelegate::clearSizeHintCache()
 void TextAutogenerateListViewDelegate::removeMessageCache(const QByteArray &uuid)
 {
     mDocumentCache.remove(uuid);
+    mSizeHintCache.remove(uuid);
 }
 
 TextAutogenerateListViewDelegate::MessageLayout TextAutogenerateListViewDelegate::doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     TextAutogenerateListViewDelegate::MessageLayout layout;
     QRect usableRect = option.rect;
-    const int maxWidth = qMax(30, option.rect.width() /* - textLeft - widthAfterMessage*/);
-    const QSize textSize = sizeHint(index, maxWidth, option, &layout.baseLine);
-    // TODO customize
-    static int indent = 30;
     const TextAutoGenerateMessage::Sender sender = index.data(TextAutoGenerateChatModel::SenderRole).value<TextAutoGenerateMessage::Sender>();
-
-    layout.textRect = QRect(sender == TextAutoGenerateMessage::Sender::User ? 80 : indent, usableRect.top(), maxWidth, textSize.height());
+    const int indent = (sender == TextAutoGenerateMessage::Sender::User) ? 80 : 30;
+    const int maxWidth = qMax(30, option.rect.width() - 2 * indent);
+    const QSize textSize = sizeHint(index, maxWidth, option, &layout.baseLine);
+    layout.textRect = QRect(indent, usableRect.top(), maxWidth, textSize.height());
     return layout;
 }
 
