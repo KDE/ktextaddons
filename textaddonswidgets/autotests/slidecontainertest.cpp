@@ -22,7 +22,6 @@ struct TestWindow : public QWidget {
     explicit TestWindow(QWidget *parent = nullptr)
         : QWidget(parent)
         , mContainer(new SlideContainer)
-        , mContent(nullptr)
     {
         createContent();
 
