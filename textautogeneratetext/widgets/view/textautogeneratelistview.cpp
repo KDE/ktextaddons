@@ -18,6 +18,18 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 {
     setItemDelegate(mDelegate);
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
+
+    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+            &QAbstractItemModel::dataChanged,
+            this,
+            [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                if (roles.contains(TextAutoGenerateChatModel::MessageRole) || roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
+                    const QByteArray uuid = topLeft.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+                    if (!uuid.isEmpty()) {
+                        mDelegate->removeMessageCache(uuid);
+                    }
+                }
+            });
 }
 
 TextAutogenerateListView::~TextAutogenerateListView()

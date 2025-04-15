@@ -24,6 +24,8 @@ public:
 
     void clearSizeHintCache();
 
+    void removeMessageCache(const QByteArray &uuid);
+
 private:
     struct MessageLayout {
         // Text message
@@ -36,6 +38,7 @@ private:
     [[nodiscard]] TextAutogenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
     [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
+    void draw(QPainter *painter, QRect rect, const QModelIndex &index, const QStyleOptionViewItem &option) const;
     // Cache SizeHint value
     // We need to clear it when we resize widget.
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;

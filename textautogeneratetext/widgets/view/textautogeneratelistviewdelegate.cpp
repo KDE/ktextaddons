@@ -9,6 +9,7 @@
 #include <QPainter>
 #include <QTextFrame>
 #include <QTextFrameFormat>
+#include <qabstracttextdocumentlayout.h>
 
 using namespace TextAutogenerateText;
 TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QObject *parent)
@@ -26,8 +27,6 @@ void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
     painter->restore();
 
     const MessageLayout layout = doLayout(option, index);
-    qDebug() << " layout.textRect " << layout.textRect;
-    // Message
     if (layout.textRect.isValid()) {
 #ifdef DEBUG_PAINTING
         painter->save();
@@ -35,11 +34,35 @@ void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         painter->drawRect(layout.textRect);
         painter->restore();
 #endif
-        // TODO DRAW mHelperText->draw(painter, layout.textRect, index, option);
+        draw(painter, layout.textRect, index, option);
     }
+}
 
-    // TODO implement it
-    QItemDelegate::paint(painter, option, index);
+void TextAutogenerateListViewDelegate::draw(QPainter *painter, QRect rect, const QModelIndex &index, const QStyleOptionViewItem &option) const
+{
+    auto *doc = documentForIndex(index, rect.width());
+    if (!doc) {
+        return;
+    }
+    painter->save();
+    painter->translate(rect.left(), rect.top());
+    const QRect clip(0, 0, rect.width(), rect.height());
+
+    QAbstractTextDocumentLayout::PaintContext ctx;
+    /*
+    if (selection) {
+        const QList<QAbstractTextDocumentLayout::Selection> selections =
+            MessageDelegateUtils::selection(selection, doc, index, option, msgAttach, msgUrl, isAMessage);
+        // Same as pDoc->drawContents(painter, clip) but we also set selections
+        ctx.selections = selections;
+        if (clip.isValid()) {
+            painter->setClipRect(clip);
+            ctx.clip = clip;
+        }
+    }
+    */
+    doc->documentLayout()->draw(painter, ctx);
+    painter->restore();
 }
 
 QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -52,19 +75,22 @@ QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &opt
         return result;
     }
 
-#if 0
-    const QSize size = mMessageListLayoutBase->sizeHint(option, index);
+    const TextAutogenerateListViewDelegate::MessageLayout layout = doLayout(option, index);
+    const QSize size = {layout.textRect.width(), layout.textRect.height()};
     if (!size.isEmpty()) {
         mSizeHintCache.insert(uuid, size);
     }
-#endif
-    // TODO implement it.
-    return QItemDelegate::sizeHint(option, index);
+    return size;
 }
 
 void TextAutogenerateListViewDelegate::clearSizeHintCache()
 {
     mSizeHintCache.clear();
+}
+
+void TextAutogenerateListViewDelegate::removeMessageCache(const QByteArray &uuid)
+{
+    mDocumentCache.remove(uuid);
 }
 
 TextAutogenerateListViewDelegate::MessageLayout TextAutogenerateListViewDelegate::doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -93,7 +119,7 @@ QSize TextAutogenerateListViewDelegate::textSizeHint(QTextDocument *doc, qreal *
 
     const QTextLine &line = doc->firstBlock().layout()->lineAt(0);
     *pBaseLine = line.y() + line.ascent(); // relative
-    qDebug() << " doc->" << doc->toPlainText() << " size " << size;
+    // qDebug() << " doc->" << doc->toPlainText() << " size " << size;
     return size;
 }
 

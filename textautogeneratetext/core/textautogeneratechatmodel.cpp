@@ -75,6 +75,11 @@ void TextAutoGenerateChatModel::replaceLastMessage(const TextAutoGenerateMessage
     beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
     mMessages.removeLast();
     mMessages.append(msg);
+    auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+        const QModelIndex index = createIndex(rowNumber, 0);
+        Q_EMIT dataChanged(index, index, roles);
+    };
+    emitChanged(1, {MessageRole});
     endInsertRows();
 }
 
