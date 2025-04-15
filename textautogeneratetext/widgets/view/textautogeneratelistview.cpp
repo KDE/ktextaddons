@@ -9,6 +9,7 @@
 #include "textautogeneratelistviewdelegate.h"
 #include <KLocalizedString>
 #include <QApplication>
+#include <QClipboard>
 #include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
@@ -51,8 +52,11 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         auto copy = new QAction(i18nc("@action", "Copy"), &menu);
-        connect(copy, &QAction::triggered, this, []() {
-            // TODO
+        connect(copy, &QAction::triggered, this, [index]() {
+            const QString currentValue = index.data().toString();
+            QClipboard *clip = QApplication::clipboard();
+            clip->setText(currentValue, QClipboard::Clipboard);
+            clip->setText(currentValue, QClipboard::Selection);
         });
         menu.addAction(copy);
     }
