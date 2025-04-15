@@ -7,7 +7,9 @@
 #include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
+#include <KLocalizedString>
 #include <QApplication>
+#include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
 
@@ -44,9 +46,17 @@ void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> 
 
 void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
 {
+    QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        // TODO
+        auto copy = new QAction(i18nc("@action", "Copy"), &menu);
+        connect(copy, &QAction::triggered, this, []() {
+            // TODO
+        });
+        menu.addAction(copy);
+    }
+    if (!menu.actions().isEmpty()) {
+        menu.exec(event->globalPos());
     }
 }
 
