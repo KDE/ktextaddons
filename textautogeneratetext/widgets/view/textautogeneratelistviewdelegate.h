@@ -25,7 +25,6 @@ public:
     void clearSizeHintCache();
 
 private:
-    // TODO
     struct MessageLayout {
         // Text message
         QRect textRect;
