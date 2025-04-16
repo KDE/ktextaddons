@@ -23,6 +23,10 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     setItemDelegate(mDelegate);
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
 
+    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateChatModel::conversationCleared, this, [this]() {
+        mDelegate->clearCache();
+    });
+
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::dataChanged,
             this,

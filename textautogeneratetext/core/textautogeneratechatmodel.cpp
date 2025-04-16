@@ -61,6 +61,7 @@ void TextAutoGenerateChatModel::resetConversation()
     beginResetModel();
     mMessages.clear();
     endResetModel();
+    Q_EMIT conversationCleared();
 }
 
 void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)

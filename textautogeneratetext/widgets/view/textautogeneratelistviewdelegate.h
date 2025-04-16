@@ -26,6 +26,8 @@ public:
 
     void removeMessageCache(const QByteArray &uuid);
 
+    void clearCache();
+
 private:
     struct MessageLayout {
         // Text message

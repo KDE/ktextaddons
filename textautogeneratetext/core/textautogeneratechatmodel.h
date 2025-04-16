@@ -39,6 +39,9 @@ public:
 
     [[nodiscard]] TextAutoGenerateMessage lastMessage() const;
 
+Q_SIGNALS:
+    void conversationCleared();
+
 private:
     QList<TextAutoGenerateMessage> mMessages;
 };

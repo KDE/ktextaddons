@@ -5,8 +5,10 @@
 */
 
 #include "textautogeneratewidget.h"
+#include "core/textautogeneratechatmodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogenerateengineutil.h"
+#include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
@@ -57,6 +59,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::slotEditingFinished);
 
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
+    connect(mHeaderWidget, &TextAutogenerateHeaderWidget::clearModel, this, &TextAutogenerateWidget::slotClearModel);
     loadEngine();
     readConfig();
 }
@@ -68,6 +71,11 @@ TextAutogenerateWidget::~TextAutogenerateWidget()
         mTextAutogeneratePlugin->deleteLater();
     }
     writeConfig();
+}
+
+void TextAutogenerateWidget::slotClearModel()
+{
+    TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
 }
 
 void TextAutogenerateWidget::writeConfig()
