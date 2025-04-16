@@ -33,6 +33,9 @@ public:
     [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool helpEvent(QHelpEvent *event, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
 
+    [[nodiscard]] QString selectedText() const;
+    [[nodiscard]] bool hasSelection() const;
+
 private:
     struct MessageLayout {
         // Text message

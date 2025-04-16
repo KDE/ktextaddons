@@ -233,5 +233,18 @@ std::unique_ptr<QTextDocument> TextAutogenerateListViewDelegate::createTextDocum
     frame->setFrameFormat(frameFormat);
     return doc;
 }
+QString TextAutogenerateListViewDelegate::selectedText() const
+{
+    // TODO
+    return {};
+    // return mTextSelectionImpl->textSelection()->selectedText(TextSelection::Format::Text);
+}
+
+bool TextAutogenerateListViewDelegate::hasSelection() const
+{
+    // TODO
+    return false;
+    // return mTextSelectionImpl->textSelection()->hasSelection();
+}
 
 #include "moc_textautogeneratelistviewdelegate.cpp"
