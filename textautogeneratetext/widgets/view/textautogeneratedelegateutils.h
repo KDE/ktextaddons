@@ -20,5 +20,7 @@ void generateToolTip(const QString &toolTip, const QString &href, QString &forma
 
 [[nodiscard]] QList<QAbstractTextDocumentLayout::Selection>
 selection(TextAutogenerateListViewTextSelection *selection, QTextDocument *doc, const QModelIndex &index, const QStyleOptionViewItem &option);
+
+void setClipboardSelection(TextAutogenerateListViewTextSelection *selection);
 }
 }
