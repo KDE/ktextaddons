@@ -27,6 +27,11 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
         mDelegate->clearCache();
     });
 
+    connect(mDelegate, &TextAutogenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
+        qDebug() << " update index " << index;
+        update(index);
+    });
+
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::dataChanged,
             this,

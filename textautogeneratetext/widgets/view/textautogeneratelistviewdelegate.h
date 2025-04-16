@@ -38,6 +38,9 @@ public:
     [[nodiscard]] bool hasSelection() const;
     [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
 
+Q_SIGNALS:
+    void updateView(const QModelIndex &index);
+
 private:
     struct MessageLayout {
         // Text message
@@ -56,7 +59,7 @@ private:
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;
 
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
-    QListView *const mListView;
+    QAbstractItemView *const mListView;
     TextAutogenerateListViewTextSelection *const mTextSelection;
 };
 }

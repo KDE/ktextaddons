@@ -22,7 +22,7 @@ TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QListView *vi
     , mTextSelection(new TextAutogenerateListViewTextSelection(this, this))
 {
     mSizeHintCache.setMaxEntries(32);
-    // connect(mTextSelection, &TextAutogenerateListViewTextSelection::repaintNeeded, mListView, &QListView::updateView);
+    connect(mTextSelection, &TextAutogenerateListViewTextSelection::repaintNeeded, this, &TextAutogenerateListViewDelegate::updateView);
 }
 
 TextAutogenerateListViewDelegate::~TextAutogenerateListViewDelegate() = default;
@@ -142,10 +142,10 @@ QSize TextAutogenerateListViewDelegate::textSizeHint(QTextDocument *doc, qreal *
 void TextAutogenerateListViewDelegate::selectAll(const QStyleOptionViewItem &option, const QModelIndex &index)
 {
     Q_UNUSED(option);
-#if 0
-    mTextSelectionImpl->textSelection()->selectMessage(index);
+    mTextSelection->selectMessage(index);
     mListView->update(index);
-    MessageDelegateUtils::setClipboardSelection(mTextSelectionImpl->textSelection());
+#if 0
+    MessageDelegateUtils::setClipboardSelection(mTextSelection);
 #endif
 }
 
