@@ -12,6 +12,7 @@
 class QListView;
 namespace TextAutogenerateText
 {
+class TextAutogenerateListViewTextSelection;
 class TextAutogenerateListViewDelegate : public QItemDelegate
 {
     Q_OBJECT
@@ -35,6 +36,7 @@ public:
 
     [[nodiscard]] QString selectedText() const;
     [[nodiscard]] bool hasSelection() const;
+    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
 
 private:
     struct MessageLayout {
@@ -46,14 +48,15 @@ private:
     [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;
     [[nodiscard]] QSize textSizeHint(QTextDocument *doc, qreal *pBaseLine) const;
     [[nodiscard]] TextAutogenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
     [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
     void draw(QPainter *painter, QRect rect, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     // Cache SizeHint value
     // We need to clear it when we resize widget.
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;
 
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
     QListView *const mListView;
+    TextAutogenerateListViewTextSelection *const mTextSelection;
 };
 }
