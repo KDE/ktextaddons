@@ -31,7 +31,7 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     switch (role) {
     case Qt::DisplayRole:
     case MessageRole:
-        return message.content();
+        return message.htmlGenerated();
     case DateTimeRole:
         return message.dateTime();
     case SenderRole:

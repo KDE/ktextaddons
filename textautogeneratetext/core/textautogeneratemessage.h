@@ -43,9 +43,12 @@ public:
     [[nodiscard]] QByteArray uuid() const;
     void setUuid(const QByteArray &newUuid);
 
+    [[nodiscard]] QString htmlGenerated() const;
+
 private:
     QByteArray mUuid;
     QString mContent;
+    QString mHtmlGenerated;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
     bool mInProgress = false;

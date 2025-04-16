@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratemessage.h"
-
+#include <KTextToHTML>
 using namespace TextAutogenerateText;
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
@@ -14,6 +14,7 @@ TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage &t)
 {
     d.space() << "content:" << t.content();
+    d.space() << "htmlGenerated:" << t.htmlGenerated();
     d.space() << "sender:" << t.sender();
     d.space() << "dateTime:" << t.dateTime();
     d.space() << "in progress:" << t.inProgress();
@@ -28,7 +29,11 @@ QString TextAutoGenerateMessage::content() const
 
 void TextAutoGenerateMessage::setContent(const QString &newContent)
 {
-    mContent = newContent;
+    if (mContent != newContent) {
+        mContent = newContent;
+        const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
+        mHtmlGenerated = KTextToHTML::convertToHtml(mContent, convertFlags);
+    }
 }
 
 TextAutoGenerateMessage::Sender TextAutoGenerateMessage::sender() const
@@ -80,6 +85,11 @@ QByteArray TextAutoGenerateMessage::uuid() const
 void TextAutoGenerateMessage::setUuid(const QByteArray &newUuid)
 {
     mUuid = newUuid;
+}
+
+QString TextAutoGenerateMessage::htmlGenerated() const
+{
+    return mHtmlGenerated;
 }
 
 #include "moc_textautogeneratemessage.cpp"
