@@ -9,14 +9,14 @@
 #include <QItemDelegate>
 #include <QTextDocument>
 #include <memory>
-
+class QListView;
 namespace TextAutogenerateText
 {
 class TextAutogenerateListViewDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateListViewDelegate(QObject *parent = nullptr);
+    explicit TextAutogenerateListViewDelegate(QListView *view);
     ~TextAutogenerateListViewDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
@@ -27,6 +27,11 @@ public:
     void removeMessageCache(const QByteArray &uuid);
 
     void clearCache();
+
+    void selectAll(const QStyleOptionViewItem &option, const QModelIndex &index);
+
+    [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] bool helpEvent(QHelpEvent *event, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
 
 private:
     struct MessageLayout {
@@ -46,5 +51,6 @@ private:
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;
 
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
+    QListView *const mListView;
 };
 }

@@ -35,8 +35,9 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void maybeScrollToBottom();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateVerticalPageStep();
     TEXTAUTOGENERATETEXT_NO_EXPORT void handleMouseEvent(QMouseEvent *event);
-    virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
-    virtual bool mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSelectAll(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT virtual bool mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
 
     bool mAtBottom = true;
     QPoint mPressedPosition;

@@ -63,10 +63,21 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
             clip->setText(currentValue, QClipboard::Selection);
         });
         menu.addAction(copy);
+        menu.addSeparator();
+        auto selectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All"), &menu);
+        connect(selectAllAction, &QAction::triggered, this, [this, index]() {
+            slotSelectAll(index);
+        });
+        menu.addAction(selectAllAction);
     }
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());
     }
+}
+
+void TextAutogenerateListView::slotSelectAll(const QModelIndex &index)
+{
+    mDelegate->selectAll(listViewOptions(), index);
 }
 
 void TextAutogenerateListView::resizeEvent(QResizeEvent *ev)
@@ -141,7 +152,6 @@ QStyleOptionViewItem TextAutogenerateListView::listViewOptions() const
 
 void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
 {
-    qDebug() << " void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)";
     const QPersistentModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         if (mCurrentIndex != index) {
@@ -167,12 +177,7 @@ bool TextAutogenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOp
 
 bool TextAutogenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
-    // TODO add tooltip
-    // TODO
-    Q_UNUSED(event);
-    Q_UNUSED(option);
-    Q_UNUSED(index);
-    return false;
+    return mDelegate->mouseEvent(event, option, index);
 }
 
 #include "moc_textautogeneratelistview.cpp"
