@@ -16,6 +16,7 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineName(new QLabel(this))
     , mConfigureEngine(new QToolButton(this))
+    , mClearChat(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -29,12 +30,18 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     mEngineName->setFont(f);
 
     mConfigureEngine->setObjectName("mConfigureEngine"_L1);
-    mConfigureEngine->setToolTip(i18n("Configure…"));
+    mConfigureEngine->setToolTip(i18nc("@info:tooltip", "Configure…"));
     mConfigureEngine->setAutoRaise(true);
     mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::slotConfigureEngine);
+
+    mClearChat->setObjectName("mClearChat"_L1);
+    mClearChat->setToolTip(i18nc("@info:tooltip", "Clear"));
+    mClearChat->setAutoRaise(true);
+    mClearChat->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure"))); // TODO fix it
+    mainLayout->addWidget(mClearChat);
 }
 
 TextAutogenerateHeaderWidget::~TextAutogenerateHeaderWidget() = default;
