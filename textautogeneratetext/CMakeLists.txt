@@ -123,6 +123,8 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/view/textautogeneratehistorylistviewdelegate.h
     widgets/view/textautogeneratehistorylistviewdelegate.cpp
+    widgets/view/textautogeneratelistviewtextselection.h
+    widgets/view/textautogeneratelistviewtextselection.cpp
     widgets/view/lrucache.h
 
     widgets/textautogenerateheaderwidget.h
