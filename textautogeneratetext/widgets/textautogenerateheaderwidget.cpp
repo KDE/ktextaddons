@@ -40,7 +40,7 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     mClearChat->setObjectName("mClearChat"_L1);
     mClearChat->setToolTip(i18nc("@info:tooltip", "Clear"));
     mClearChat->setAutoRaise(true);
-    mClearChat->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure"))); // TODO fix it
+    mClearChat->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-all")));
     mainLayout->addWidget(mClearChat);
 }
 
