@@ -183,6 +183,7 @@ void TextAutogenerateListViewTextSelection::selectWord(const QModelIndex &index,
     mEndIndex = index;
     mStartPos = cursor.selectionStart();
     mEndPos = cursor.selectionEnd();
+    qDebug() << " CXXXXXXXXXXXXXXX";
 }
 
 void TextAutogenerateListViewTextSelection::selectWordUnderCursor(const QModelIndex &index, int charPos)
