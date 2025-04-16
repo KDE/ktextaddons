@@ -42,6 +42,7 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     mClearChat->setAutoRaise(true);
     mClearChat->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-all")));
     mainLayout->addWidget(mClearChat);
+    connect(mClearChat, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::clearModel);
 }
 
 TextAutogenerateHeaderWidget::~TextAutogenerateHeaderWidget() = default;

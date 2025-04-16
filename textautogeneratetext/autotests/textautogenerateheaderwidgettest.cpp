@@ -7,8 +7,10 @@
 #include "widgets/textautogenerateheaderwidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
+#include <qtestmouse.h>
 QTEST_MAIN(TextAutogenerateHeaderWidgetTest)
 
 TextAutogenerateHeaderWidgetTest::TextAutogenerateHeaderWidgetTest(QObject *parent)
@@ -36,6 +38,16 @@ void TextAutogenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mClearChat);
     QVERIFY(mClearChat->autoRaise());
     QVERIFY(!mClearChat->toolTip().isEmpty());
+}
+
+void TextAutogenerateHeaderWidgetTest::shouldReactWhenClickClearButton()
+{
+    TextAutogenerateText::TextAutogenerateHeaderWidget w;
+    auto mClearChat = w.findChild<QToolButton *>(QStringLiteral("mClearChat"));
+
+    QSignalSpy clarModelSpy(&w, &TextAutogenerateText::TextAutogenerateHeaderWidget::clearModel);
+    QTest::mouseClick(mClearChat, Qt::LeftButton);
+    QCOMPARE(clarModelSpy.count(), 1);
 }
 
 #include "moc_textautogenerateheaderwidgettest.cpp"
