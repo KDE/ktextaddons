@@ -10,7 +10,7 @@
 #include <QTextFrame>
 #include <QTextFrameFormat>
 #include <qabstracttextdocumentlayout.h>
-
+// #define DEBUG_PAINTING
 using namespace TextAutogenerateText;
 TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QObject *parent)
     : QItemDelegate{parent}
