@@ -5,11 +5,13 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemanager.h"
 #include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratehistorymodel.h"
 
 using namespace TextAutogenerateText;
 TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateChatModel(new TextAutoGenerateChatModel(this))
+    , mTextAutoGenerateHistoryModel(new TextAutoGenerateHistoryModel(this))
 {
 }
 
@@ -32,6 +34,11 @@ void TextAutogenerateManager::loadHistory()
 
 void TextAutogenerateManager::saveHistory()
 {
+}
+
+TextAutoGenerateHistoryModel *TextAutogenerateManager::textAutoGenerateHistoryModel() const
+{
+    return mTextAutoGenerateHistoryModel;
 }
 
 #include "moc_textautogeneratemanager.cpp"
