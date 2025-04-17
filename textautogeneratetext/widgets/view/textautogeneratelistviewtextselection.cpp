@@ -6,7 +6,6 @@
 
 #include "textautogeneratelistviewtextselection.h"
 #include "textautogeneratelistviewdelegate.h"
-#include "textautogeneratetextwidget_debug.h"
 
 #include <QTextCursor>
 #include <QTextDocument>
@@ -104,7 +103,6 @@ bool TextAutogenerateListViewTextSelection::contains(const QModelIndex &index, i
         return false;
     }
     Q_ASSERT(index.model() == mStartIndex.model());
-    // TODO implement check attachment
     const int row = index.row();
     const OrderedPositions ordered = orderedPositions();
     if (row == ordered.fromRow) {
@@ -183,7 +181,6 @@ void TextAutogenerateListViewTextSelection::selectWord(const QModelIndex &index,
     mEndIndex = index;
     mStartPos = cursor.selectionStart();
     mEndPos = cursor.selectionEnd();
-    qDebug() << " CXXXXXXXXXXXXXXX";
 }
 
 void TextAutogenerateListViewTextSelection::selectWordUnderCursor(const QModelIndex &index, int charPos)
