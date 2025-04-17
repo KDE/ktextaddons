@@ -10,7 +10,6 @@ class QLineEdit;
 namespace TextAutogenerateText
 {
 class TextAutogenerateHistoryListView;
-class TextAutoGenerateHistorySortFilterProxyModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryWidget : public QWidget
 {
     Q_OBJECT
@@ -21,9 +20,7 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSearchTextChanged(const QString &str);
     TextAutogenerateHistoryListView *const mTextAutogenerateHistoryListView;
     QLineEdit *const mSearchLineEdit;
-    TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
 };
 }

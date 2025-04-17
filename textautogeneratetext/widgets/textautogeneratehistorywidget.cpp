@@ -17,7 +17,6 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
     : QWidget{parent}
     , mTextAutogenerateHistoryListView(new TextAutogenerateHistoryListView(this))
     , mSearchLineEdit(new QLineEdit(this))
-    , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -29,13 +28,10 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
-    // mHistoryProxyModel->setSourceModel(historyModel);
-    // mTextAutogenerateHistoryListView->setModel(mHistoryProxyModel);
-
     mTextAutogenerateHistoryListView->setObjectName("mTextAutogenerateHistoryListView"_L1);
     mainLayout->addWidget(mTextAutogenerateHistoryListView);
 
-    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutogenerateHistoryWidget::slotSearchTextChanged);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutogenerateHistoryListView, &TextAutogenerateHistoryListView::slotSearchTextChanged);
 }
 
 TextAutogenerateHistoryWidget::~TextAutogenerateHistoryWidget() = default;
@@ -48,12 +44,6 @@ void TextAutogenerateHistoryWidget::loadHistory()
 void TextAutogenerateHistoryWidget::saveHistory()
 {
     // TODO
-}
-
-void TextAutogenerateHistoryWidget::slotSearchTextChanged(const QString &str)
-{
-    // Improve it ???
-    mHistoryProxyModel->setFilterFixedString(str);
 }
 
 #include "moc_textautogeneratehistorywidget.cpp"

@@ -189,7 +189,6 @@ bool TextAutogenerateListViewDelegate::helpEvent(QHelpEvent *helpEvent, QAbstrac
                 QToolTip::showText(helpEvent->globalPos(), formattedTooltip, view);
                 return true;
             }
-
             return true;
         }
     }

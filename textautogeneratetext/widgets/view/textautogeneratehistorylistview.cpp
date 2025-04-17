@@ -6,6 +6,7 @@
 
 #include "textautogeneratehistorylistview.h"
 #include "core/textautogeneratehistorymodel.h"
+#include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
@@ -15,12 +16,15 @@
 using namespace TextAutogenerateText;
 TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent)
     : QListView(parent)
+    , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))
 {
     setDragEnabled(false);
     setUniformItemSizes(true);
     // Add delegate
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
-    setModel(TextAutogenerateManager::self()->textAutoGenerateHistoryModel());
+
+    mHistoryProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateHistoryModel());
+    setModel(mHistoryProxyModel);
 }
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
@@ -46,4 +50,9 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
+void TextAutogenerateHistoryListView::slotSearchTextChanged(const QString &str)
+{
+    // Improve it ???
+    mHistoryProxyModel->setFilterFixedString(str);
+}
 #include "moc_textautogeneratehistorylistview.cpp"
