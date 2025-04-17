@@ -23,6 +23,8 @@ TextAutogenerateConfigureDialog::TextAutogenerateConfigureDialog(QWidget *parent
     mTextAutogenerateConfigureWidget->setObjectName(QStringLiteral("mTextAutogenerateConfigureWidget"));
     mainLayout->addWidget(mTextAutogenerateConfigureWidget);
 
+    mainLayout->addStretch(1);
+
     auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
