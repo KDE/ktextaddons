@@ -28,7 +28,11 @@ public:
     [[nodiscard]] QString engine() const;
     void setEngine(const QString &newEngine);
 
+    [[nodiscard]] QByteArray referenceUuid() const;
+    void setReferenceUuid(const QByteArray &newReferenceUuid);
+
 private:
+    QByteArray mReferenceUuid;
     QString mEngine;
     QString mModel;
     QString mSubject;

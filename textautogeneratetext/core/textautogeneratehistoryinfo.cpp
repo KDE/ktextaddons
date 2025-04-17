@@ -17,6 +17,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateHistoryI
     d.space() << "datetime:" << t.dateTime();
     d.space() << "model" << t.model();
     d.space() << "engine" << t.engine();
+    d.space() << "referenceUuid" << t.referenceUuid();
     return d;
 }
 
@@ -58,4 +59,14 @@ QString TextAutoGenerateHistoryInfo::engine() const
 void TextAutoGenerateHistoryInfo::setEngine(const QString &newEngine)
 {
     mEngine = newEngine;
+}
+
+QByteArray TextAutoGenerateHistoryInfo::referenceUuid() const
+{
+    return mReferenceUuid;
+}
+
+void TextAutoGenerateHistoryInfo::setReferenceUuid(const QByteArray &newReferenceUuid)
+{
+    mReferenceUuid = newReferenceUuid;
 }
