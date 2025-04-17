@@ -252,7 +252,6 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
 
     // Text selection
     switch (eventType) {
-#if 1
     case QEvent::MouseButtonPress:
         // TODO mTextSelectionImpl->setMightStartDrag(false);
         if (const auto *doc = documentForIndex(index, messageRect.width())) {
@@ -299,6 +298,7 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
                 const QString link = doc->documentLayout()->anchorAt(pos);
                 if (!link.isEmpty()) {
+                    qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX " << link;
                     // TODO Q_EMIT mRocketChatAccount->openLinkRequested(link);
                     return true;
                 }
@@ -312,10 +312,8 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
 #endif
         // don't return true here, we need to send mouse release events to other helpers (ex: click on image)
         break;
-#endif
     case QEvent::MouseButtonDblClick:
         if (!mTextSelection->hasSelection()) {
-            qDebug() << " DOUBLE CLICK";
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
                 const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
                 qCDebug(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "double-clicked at pos" << charPos;
