@@ -65,7 +65,7 @@ void TextAutoGenerateHistoryModel::clear()
 
 void TextAutoGenerateHistoryModel::addInfo(const TextAutoGenerateHistoryInfo &msg)
 {
-    beginInsertRows(QModelIndex(), 0, mHistoryInfos.count() - 1);
+    beginInsertRows(QModelIndex(), mHistoryInfos.count(), mHistoryInfos.count());
     mHistoryInfos.append(msg);
     endInsertRows();
     qDebug() << " mHistoryInfos " << mHistoryInfos.count() << "mHistoryInfos " << mHistoryInfos;

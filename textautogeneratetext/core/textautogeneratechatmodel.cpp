@@ -66,14 +66,14 @@ void TextAutoGenerateChatModel::resetConversation()
 
 void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
 {
-    beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
+    beginInsertRows(QModelIndex(), mMessages.count(), mMessages.count());
     mMessages.append(msg);
     endInsertRows();
 }
 
 void TextAutoGenerateChatModel::replaceLastMessage(const TextAutoGenerateMessage &msg)
 {
-    beginInsertRows(QModelIndex(), 0, mMessages.count() - 1);
+    beginInsertRows(QModelIndex(), mMessages.count(), mMessages.count());
     mMessages.removeLast();
     mMessages.append(msg);
     auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
