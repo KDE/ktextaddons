@@ -28,7 +28,6 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     });
 
     connect(mDelegate, &TextAutogenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
-        qDebug() << " update index " << index;
         update(index);
     });
 
