@@ -29,10 +29,8 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
-    auto historyModel = new TextAutoGenerateHistoryModel(this);
-
-    mHistoryProxyModel->setSourceModel(historyModel);
-    mTextAutogenerateHistoryListView->setModel(mHistoryProxyModel);
+    // mHistoryProxyModel->setSourceModel(historyModel);
+    // mTextAutogenerateHistoryListView->setModel(mHistoryProxyModel);
 
     mTextAutogenerateHistoryListView->setObjectName("mTextAutogenerateHistoryListView"_L1);
     mainLayout->addWidget(mTextAutogenerateHistoryListView);
