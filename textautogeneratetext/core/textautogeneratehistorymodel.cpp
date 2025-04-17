@@ -35,6 +35,8 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
         return info.dateTime();
     case Model:
         return info.model();
+    case Engine:
+        return info.engine();
     }
     return {};
 }

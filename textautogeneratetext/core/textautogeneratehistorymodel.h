@@ -21,6 +21,7 @@ public:
         Subject = Qt::UserRole + 1,
         DateTime,
         Model,
+        Engine,
     };
 
     explicit TextAutoGenerateHistoryModel(QObject *parent = nullptr);
