@@ -173,8 +173,10 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutogenerateTextPlugin
     TextAutogenerateTextContext
     TextAutoGenerateHistoryModel
-    TextAutoGenerateChatModel
     TextAutoGenerateHistorySortFilterProxyModel
+    TextAutoGenerateChatModel
+    TextAutoGenerateHistoryInfo
+    TextAutogenerateManager
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutogenerateText
     RELATIVE core
