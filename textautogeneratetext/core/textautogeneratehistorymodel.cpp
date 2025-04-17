@@ -27,6 +27,7 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
         return {};
     }
     const auto &info = mHistoryInfos[index.row()];
+    qDebug() << " info " << info;
     switch (role) {
     case Qt::DisplayRole:
     case Subject:
@@ -67,6 +68,7 @@ void TextAutoGenerateHistoryModel::addInfo(const TextAutoGenerateHistoryInfo &ms
     beginInsertRows(QModelIndex(), 0, mHistoryInfos.count() - 1);
     mHistoryInfos.append(msg);
     endInsertRows();
+    qDebug() << " mHistoryInfos " << mHistoryInfos.count() << "mHistoryInfos " << mHistoryInfos;
 }
 
 bool TextAutoGenerateHistoryModel::removeInfo(const QByteArray &uuid)
