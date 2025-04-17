@@ -254,7 +254,7 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
     // Text selection
     switch (eventType) {
     case QEvent::MouseButtonPress:
-        // TODO mTextSelectionImpl->setMightStartDrag(false);
+        mTextSelection->setMightStartDrag(false);
         if (const auto *doc = documentForIndex(index, messageRect.width())) {
             const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
             qCDebug(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "pressed at pos" << charPos;
@@ -262,7 +262,7 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                 return false;
             }
             if (mTextSelection->contains(index, charPos) && doc->documentLayout()->hitTest(pos, Qt::ExactHit) != -1) {
-                // TODO mTextSelectionImpl->setMightStartDrag(true);
+                mTextSelection->setMightStartDrag(true);
                 return true;
             }
 
