@@ -59,7 +59,7 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         auto copyAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
-                                      mDelegate->hasSelection() ? i18nc("@action", "Copy") : i18nc("@action", "Copy Selection"),
+                                      mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"),
                                       &menu);
         copyAction->setShortcut(QKeySequence::Copy);
         connect(copyAction, &QAction::triggered, this, [index]() {
