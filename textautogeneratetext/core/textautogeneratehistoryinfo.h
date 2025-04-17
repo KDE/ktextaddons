@@ -25,7 +25,11 @@ public:
     [[nodiscard]] QString model() const;
     void setModel(const QString &newModel);
 
+    [[nodiscard]] QString engine() const;
+    void setEngine(const QString &newEngine);
+
 private:
+    QString mEngine;
     QString mModel;
     QString mSubject;
     qint64 mDateTime = -1;

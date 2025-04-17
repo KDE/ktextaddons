@@ -19,6 +19,8 @@ void TextAutoGenerateHistoryInfoTest::shouldHaveDefaultValues()
     TextAutogenerateText::TextAutoGenerateHistoryInfo info;
     QVERIFY(info.subject().isEmpty());
     QCOMPARE(info.dateTime(), -1);
+    QVERIFY(info.model().isEmpty());
+    QVERIFY(info.engine().isEmpty());
 }
 
 #include "moc_textautogeneratehistoryinfotest.cpp"

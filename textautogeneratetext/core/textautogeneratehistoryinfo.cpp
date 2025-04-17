@@ -16,6 +16,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateHistoryI
     d.space() << "subject:" << t.subject();
     d.space() << "datetime:" << t.dateTime();
     d.space() << "model" << t.model();
+    d.space() << "engine" << t.engine();
     return d;
 }
 
@@ -47,4 +48,14 @@ QString TextAutoGenerateHistoryInfo::model() const
 void TextAutoGenerateHistoryInfo::setModel(const QString &newModel)
 {
     mModel = newModel;
+}
+
+QString TextAutoGenerateHistoryInfo::engine() const
+{
+    return mEngine;
+}
+
+void TextAutoGenerateHistoryInfo::setEngine(const QString &newEngine)
+{
+    mEngine = newEngine;
 }
