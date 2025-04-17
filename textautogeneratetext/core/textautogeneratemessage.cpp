@@ -19,6 +19,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
     d.space() << "dateTime:" << t.dateTime();
     d.space() << "in progress:" << t.inProgress();
     d.space() << "uuid:" << t.uuid();
+    d.space() << "answerUuid:" << t.answerUuid();
     return d;
 }
 
@@ -74,7 +75,7 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
     return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent;
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -90,6 +91,16 @@ void TextAutoGenerateMessage::setUuid(const QByteArray &newUuid)
 QString TextAutoGenerateMessage::htmlGenerated() const
 {
     return mHtmlGenerated;
+}
+
+QByteArray TextAutoGenerateMessage::answerUuid() const
+{
+    return mAnswerUuid;
+}
+
+void TextAutoGenerateMessage::setAnswerUuid(const QByteArray &newAnswerUuid)
+{
+    mAnswerUuid = newAnswerUuid;
 }
 
 #include "moc_textautogeneratemessage.cpp"

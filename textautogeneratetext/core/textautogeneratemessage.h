@@ -45,7 +45,11 @@ public:
 
     [[nodiscard]] QString htmlGenerated() const;
 
+    [[nodiscard]] QByteArray answerUuid() const;
+    void setAnswerUuid(const QByteArray &newAnswerUuid);
+
 private:
+    QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;
     QString mHtmlGenerated;
