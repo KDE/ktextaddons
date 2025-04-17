@@ -59,19 +59,23 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
     QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        auto copy = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18nc("@action", "Copy"), &menu);
-        connect(copy, &QAction::triggered, this, [index]() {
+        auto copyAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
+                                      mDelegate->hasSelection() ? i18nc("@action", "Copy") : i18nc("@action", "Copy Selection"),
+                                      &menu);
+        copyAction->setShortcut(QKeySequence::Copy);
+        connect(copyAction, &QAction::triggered, this, [index]() {
             const QString currentValue = index.data().toString();
             QClipboard *clip = QApplication::clipboard();
             clip->setText(currentValue, QClipboard::Clipboard);
             clip->setText(currentValue, QClipboard::Selection);
         });
-        menu.addAction(copy);
+        menu.addAction(copyAction);
         menu.addSeparator();
         auto selectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All"), &menu);
         connect(selectAllAction, &QAction::triggered, this, [this, index]() {
             slotSelectAll(index);
         });
+        selectAllAction->setShortcut(QKeySequence::SelectAll);
         menu.addAction(selectAllAction);
     }
     if (!menu.actions().isEmpty()) {
