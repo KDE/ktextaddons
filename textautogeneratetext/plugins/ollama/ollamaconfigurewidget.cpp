@@ -12,9 +12,7 @@
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KMessageWidget>
-#include <QComboBox>
 #include <QFormLayout>
-#include <QLabel>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 

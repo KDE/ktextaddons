@@ -21,8 +21,6 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
-#include <QDateTime>
-#include <QLabel>
 #include <QSplitter>
 #include <QVBoxLayout>
 

@@ -13,7 +13,6 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
-#include <QToolTip>
 
 using namespace TextAutogenerateText;
 TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)

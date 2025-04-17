@@ -7,7 +7,6 @@
 #include "textautogeneratehistorylistview.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
 

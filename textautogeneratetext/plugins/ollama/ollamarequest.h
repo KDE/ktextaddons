@@ -7,7 +7,6 @@
 #pragma once
 
 #include <QDebug>
-#include <QObject>
 #include <TextAutogenerateText/TextAutogenerateTextContext>
 class OllamaRequest
 {

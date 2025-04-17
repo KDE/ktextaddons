@@ -9,7 +9,6 @@
 #include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
-#include <QLabel>
 #include <QSplitter>
 #include <QStandardPaths>
 #include <QTest>
