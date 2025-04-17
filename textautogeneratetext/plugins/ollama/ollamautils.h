@@ -11,4 +11,5 @@ namespace OllamaUtils
 {
 [[nodiscard]] QString tagsPath();
 [[nodiscard]] QString completionPath();
+[[nodiscard]] QString pullPath();
 };

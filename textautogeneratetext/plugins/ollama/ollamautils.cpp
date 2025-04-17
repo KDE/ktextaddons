@@ -14,3 +14,8 @@ QString OllamaUtils::completionPath()
 {
     return QStringLiteral("/api/generate");
 }
+
+QString OllamaUtils::pullPath()
+{
+    return QStringLiteral("/api/pull");
+}

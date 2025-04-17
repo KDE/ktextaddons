@@ -34,6 +34,24 @@ OllamaManager *OllamaManager::self()
     return &s_self;
 }
 
+void OllamaManager::downloadModel(const QString &modelName)
+{
+    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::pullPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    QJsonObject data;
+    data["model"_L1] = modelName;
+    auto buf = new QBuffer{this};
+    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
+
+    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf), this};
+    connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
+        Q_EMIT finished(reply->readResponse());
+        buf->deleteLater();
+    });
+    // return reply;
+    // TODO
+}
+
 void OllamaManager::loadModels()
 {
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};

@@ -29,6 +29,7 @@ public:
 
     static OllamaManager *self();
 
+    void downloadModel(const QString &modelName);
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
