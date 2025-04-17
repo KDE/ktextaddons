@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-16 00:41+0000\n"
+"POT-Creation-Date: 2025-04-17 00:40+0000\n"
 "PO-Revision-Date: 2025-03-15 10:52+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,20 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr ""
 
-#: widgets/textautogenerateheaderwidget.cpp:32
+#: widgets/textautogenerateheaderwidget.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure Mistral IA"
+msgctxt "@info:tooltip"
+msgid "Configure…"
+msgstr "Ustawienia Mistral AI"
+
+#: widgets/textautogenerateheaderwidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear"
+msgstr ""
+
 #: widgets/textautogeneratenotworkingwidget.cpp:29
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
@@ -145,8 +158,14 @@ msgctxt "@action"
 msgid "Remove…"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:54
+#: widgets/view/textautogeneratelistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
+msgstr ""
+
+#: widgets/view/textautogeneratelistview.cpp:72
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
 msgstr ""
