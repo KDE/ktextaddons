@@ -48,23 +48,25 @@ void TextAutogenerateTextPlugin::setReady(bool newReady)
 void TextAutogenerateTextPlugin::sendMessage(const QString &str)
 {
     if (ready()) {
-        {
-            TextAutoGenerateMessage msg;
-            msg.setSender(TextAutoGenerateMessage::Sender::User);
-            msg.setContent(str);
-            msg.setDateTime(QDateTime::currentSecsSinceEpoch());
-            msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
-            TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
-        }
-        {
-            TextAutoGenerateMessage msgLlm;
-            msgLlm.setInProgress(true);
-            msgLlm.setSender(TextAutoGenerateMessage::Sender::LLM);
-            msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
-            msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
-            TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
-            sendToLLM(str);
-        }
+        // User Message
+        TextAutoGenerateMessage msg;
+        msg.setSender(TextAutoGenerateMessage::Sender::User);
+        msg.setContent(str);
+        msg.setDateTime(QDateTime::currentSecsSinceEpoch());
+        msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+
+        // LLM Message
+        TextAutoGenerateMessage msgLlm;
+        msgLlm.setInProgress(true);
+        msgLlm.setSender(TextAutoGenerateMessage::Sender::LLM);
+        msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
+        msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+
+        msg.setAnswerUuid(msgLlm.uuid());
+
+        TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
+        TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
+        sendToLLM(str);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }
