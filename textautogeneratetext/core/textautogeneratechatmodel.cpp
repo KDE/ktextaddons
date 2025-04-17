@@ -92,4 +92,9 @@ TextAutoGenerateMessage TextAutoGenerateChatModel::lastMessage() const
     return mMessages.last();
 }
 
+void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
+{
+    // TODO
+}
+
 #include "moc_textautogeneratechatmodel.cpp"

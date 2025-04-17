@@ -39,6 +39,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateMessage lastMessage() const;
 
+    void removeDiscussion(const QByteArray &uuid);
+
 Q_SIGNALS:
     void conversationCleared();
 

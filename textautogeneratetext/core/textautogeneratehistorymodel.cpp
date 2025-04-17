@@ -69,8 +69,21 @@ void TextAutoGenerateHistoryModel::addInfo(const TextAutoGenerateHistoryInfo &ms
     endInsertRows();
 }
 
-void TextAutoGenerateHistoryModel::removeInfo(const QByteArray &uuid)
+bool TextAutoGenerateHistoryModel::removeInfo(const QByteArray &uuid)
 {
+    const auto find = [uuid](const TextAutoGenerateHistoryInfo &i) {
+        return i.referenceUuid() == uuid;
+    };
+    const auto it = std::find_if(mHistoryInfos.begin(), mHistoryInfos.end(), find);
+    if (it != mHistoryInfos.end()) {
+        const int i = std::distance(mHistoryInfos.begin(), it);
+        beginRemoveRows(QModelIndex(), i, i);
+        mHistoryInfos.removeAt(i);
+        endRemoveRows();
+        return true;
+    }
+    return false;
+    // TODO remove it + remove in model.
     // TODO
 }
 

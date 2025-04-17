@@ -37,7 +37,7 @@ public:
     void clear();
     void addInfo(const TextAutoGenerateHistoryInfo &msg);
 
-    void removeInfo(const QByteArray &uuid);
+    [[nodiscard]] bool removeInfo(const QByteArray &uuid);
 
 private:
     QList<TextAutoGenerateHistoryInfo> mHistoryInfos;

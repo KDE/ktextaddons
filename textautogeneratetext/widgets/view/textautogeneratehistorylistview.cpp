@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratehistorylistview.h"
+#include "core/textautogeneratehistorymodel.h"
+#include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
 #include <QContextMenuEvent>
@@ -18,6 +20,7 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     setUniformItemSizes(true);
     // Add delegate
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
+    setModel(TextAutogenerateManager::self()->textAutoGenerateHistoryModel());
 }
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
@@ -28,8 +31,13 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         auto removeHistory = new QAction(i18nc("@action", "Remove…"), &menu);
-        connect(removeHistory, &QAction::triggered, this, []() {
-            // TODO
+        connect(removeHistory, &QAction::triggered, this, [index]() {
+            const QByteArray uuid = index.data(TextAutoGenerateHistoryModel::ReferenceUuid).toByteArray();
+            if (!uuid.isEmpty()) {
+                if (TextAutogenerateManager::self()->textAutoGenerateHistoryModel()->removeInfo(uuid)) {
+                    // TODO remove in model directly
+                }
+            }
         });
         menu.addAction(removeHistory);
     }
