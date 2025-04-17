@@ -9,7 +9,9 @@
 #include "textautogeneratelistviewtextselection.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <QDesktopServices>
+#include <QDrag>
 #include <QListView>
+#include <QMimeData>
 #include <QPainter>
 #include <QTextFrame>
 #include <QTextFrameFormat>
@@ -238,6 +240,37 @@ bool TextAutogenerateListViewDelegate::hasSelection() const
     return mTextSelection->hasSelection();
 }
 
+bool TextAutogenerateListViewDelegate::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    const TextAutogenerateListViewDelegate::MessageLayout layout = doLayout(option, index);
+    if (maybeStartDrag(event, layout.textRect, option, index)) {
+        return true;
+    }
+    return false;
+}
+
+bool TextAutogenerateListViewDelegate::maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    if (!mTextSelection->mightStartDrag()) {
+        return false;
+    }
+    if (mTextSelection->hasSelection()) {
+        const QPoint pos = mouseEvent->pos() - messageRect.topLeft();
+        const auto *doc = documentForIndex(index, messageRect.width());
+        const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
+        if (charPos != -1 && mTextSelection->contains(index, charPos)) {
+            auto mimeData = new QMimeData;
+            mimeData->setHtml(mTextSelection->selectedText(TextAutogenerateListViewTextSelection::Format::Html));
+            mimeData->setText(mTextSelection->selectedText(TextAutogenerateListViewTextSelection::Format::Text));
+            auto drag = new QDrag(const_cast<QWidget *>(option.widget));
+            drag->setMimeData(mimeData);
+            drag->exec(Qt::CopyAction);
+            mTextSelection->setMightStartDrag(false); // don't clear selection on release
+            return true;
+        }
+    }
+    return false;
+}
 bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                                                         QRect messageRect,
                                                         const QStyleOptionViewItem &option,

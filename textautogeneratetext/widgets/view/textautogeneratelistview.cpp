@@ -176,11 +176,7 @@ void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
 
 bool TextAutogenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
-    // TODO
-    Q_UNUSED(event);
-    Q_UNUSED(option);
-    Q_UNUSED(index);
-    return false;
+    return mDelegate->maybeStartDrag(event, option, index);
 }
 
 bool TextAutogenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)

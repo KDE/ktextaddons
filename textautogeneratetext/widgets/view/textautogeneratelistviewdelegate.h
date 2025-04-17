@@ -33,6 +33,7 @@ public:
 
     [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool helpEvent(QHelpEvent *event, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
+    [[nodiscard]] bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
 
     [[nodiscard]] QString selectedText() const;
     [[nodiscard]] bool hasSelection() const;
@@ -54,6 +55,7 @@ private:
     [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
     void draw(QPainter *painter, QRect rect, const QModelIndex &index, const QStyleOptionViewItem &option) const;
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] bool maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     // Cache SizeHint value
     // We need to clear it when we resize widget.
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;
