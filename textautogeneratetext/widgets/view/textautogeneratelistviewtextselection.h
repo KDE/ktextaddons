@@ -29,8 +29,8 @@ public:
     [[nodiscard]] QTextCursor selectionForIndex(const QModelIndex &index, QTextDocument *doc) const;
 
     void clear();
-    void setTextAutogenerateListViewTextSelectionStart(const QModelIndex &index, int charPos);
-    void setTextAutogenerateListViewTextSelectionEnd(const QModelIndex &index, int charPos);
+    void setTextSelectionStart(const QModelIndex &index, int charPos);
+    void setTextSelectionEnd(const QModelIndex &index, int charPos);
     void setAttachmentTextAutogenerateListViewTextSelectionEnd(const QModelIndex &index, int charPos);
     void selectWordUnderCursor(const QModelIndex &index, int charPos);
     void selectMessage(const QModelIndex &index);

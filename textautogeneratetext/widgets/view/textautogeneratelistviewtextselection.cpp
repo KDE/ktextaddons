@@ -140,7 +140,7 @@ void TextAutogenerateListViewTextSelection::clear()
     }
 }
 
-void TextAutogenerateListViewTextSelection::setTextAutogenerateListViewTextSelectionStart(const QModelIndex &index, int charPos)
+void TextAutogenerateListViewTextSelection::setTextSelectionStart(const QModelIndex &index, int charPos)
 {
     clear();
     Q_ASSERT(index.isValid());
@@ -148,7 +148,7 @@ void TextAutogenerateListViewTextSelection::setTextAutogenerateListViewTextSelec
     mStartPos = charPos;
 }
 
-void TextAutogenerateListViewTextSelection::setTextAutogenerateListViewTextSelectionEnd(const QModelIndex &index, int charPos)
+void TextAutogenerateListViewTextSelection::setTextSelectionEnd(const QModelIndex &index, int charPos)
 {
     int from = mEndIndex.row();
     int to = index.row();

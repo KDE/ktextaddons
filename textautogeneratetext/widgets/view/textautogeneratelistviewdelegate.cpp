@@ -269,7 +269,7 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             // QWidgetTextControl also has code to support selectBlockOnTripleClick, shift to extend selection
             // (look there if you want to add these things)
 
-            // TODO mTextSelection->setTextSelectionStart(index, charPos);
+            mTextSelection->setTextSelectionStart(index, charPos);
             return true;
         } else {
             mTextSelection->clear();
@@ -283,7 +283,7 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             const int charPos = doc->documentLayout()->hitTest(pos, Qt::FuzzyHit);
             if (charPos != -1) {
                 // QWidgetTextControl also has code to support isPreediting()/commitPreedit(), selectBlockOnTripleClick
-                // TODO mTextSelection->setTextSelectionEnd(index, charPos);
+                mTextSelection->setTextSelectionEnd(index, charPos);
                 return true;
             }
         }
