@@ -22,6 +22,7 @@ public:
         DateTime,
         Model,
         Engine,
+        ReferenceUuid,
     };
 
     explicit TextAutoGenerateHistoryModel(QObject *parent = nullptr);
@@ -36,7 +37,7 @@ public:
     void clear();
     void addInfo(const TextAutoGenerateHistoryInfo &msg);
 
-    void removeInfo(int identifier);
+    void removeInfo(const QByteArray &uuid);
 
 private:
     QList<TextAutoGenerateHistoryInfo> mHistoryInfos;

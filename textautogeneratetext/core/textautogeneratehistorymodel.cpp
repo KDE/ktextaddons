@@ -37,6 +37,8 @@ QVariant TextAutoGenerateHistoryModel::data(const QModelIndex &index, int role) 
         return info.model();
     case Engine:
         return info.engine();
+    case ReferenceUuid:
+        return info.referenceUuid();
     }
     return {};
 }
@@ -67,7 +69,7 @@ void TextAutoGenerateHistoryModel::addInfo(const TextAutoGenerateHistoryInfo &ms
     endInsertRows();
 }
 
-void TextAutoGenerateHistoryModel::removeInfo(int identifier)
+void TextAutoGenerateHistoryModel::removeInfo(const QByteArray &uuid)
 {
     // TODO
 }
