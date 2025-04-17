@@ -205,4 +205,14 @@ void TextAutogenerateListViewTextSelection::selectMessage(const QModelIndex &ind
     }
 }
 
+bool TextAutogenerateListViewTextSelection::mightStartDrag() const
+{
+    return mMightStartDrag;
+}
+
+void TextAutogenerateListViewTextSelection::setMightStartDrag(bool newMightStartDrag)
+{
+    mMightStartDrag = newMightStartDrag;
+}
+
 #include "moc_textautogeneratelistviewtextselection.cpp"

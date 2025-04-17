@@ -35,6 +35,9 @@ public:
     void selectWordUnderCursor(const QModelIndex &index, int charPos);
     void selectMessage(const QModelIndex &index);
 
+    [[nodiscard]] bool mightStartDrag() const;
+    void setMightStartDrag(bool newMightStartDrag);
+
 Q_SIGNALS:
     void repaintNeeded(const QModelIndex &index);
 
@@ -55,5 +58,6 @@ private:
     int mStartPos = -1; // first selected character in start row
     int mEndPos = -1; // last selected character in end row
     TextAutogenerateListViewDelegate *const mDelegate;
+    bool mMightStartDrag = false;
 };
 }
