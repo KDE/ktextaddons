@@ -20,6 +20,7 @@ public:
         FinishedRole,
         DateTimeRole,
         UuidRole,
+        TopicRole,
     };
 
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);
@@ -27,6 +28,7 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] bool setData(const QModelIndex &index, const QVariant &value, int role) override;
 
     [[nodiscard]] QList<TextAutoGenerateMessage> messages() const;
     void setMessages(const QList<TextAutoGenerateMessage> &newMessages);
@@ -41,7 +43,6 @@ public:
 
     void removeDiscussion(const QByteArray &uuid);
 
-    void changeTopic(const QByteArray &uuid, const QString &topic);
 Q_SIGNALS:
     void conversationCleared();
 

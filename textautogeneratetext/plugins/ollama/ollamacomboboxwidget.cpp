@@ -17,6 +17,7 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
 
     mModelComboBox->setObjectName(QStringLiteral("mModelComboBox"));
     mainLayout->addWidget(mModelComboBox);

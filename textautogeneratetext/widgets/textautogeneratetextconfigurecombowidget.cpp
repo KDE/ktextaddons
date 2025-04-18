@@ -22,6 +22,7 @@ TextAutogenerateTextConfigureComboWidget::TextAutogenerateTextConfigureComboWidg
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
+    mainLayout->setSpacing(0);
 
     mEngineComboBox->setObjectName(QStringLiteral("mEngineComboBox"));
     mainLayout->addWidget(mEngineComboBox);

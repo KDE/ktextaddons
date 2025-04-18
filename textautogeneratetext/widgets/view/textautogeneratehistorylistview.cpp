@@ -34,7 +34,18 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        auto removeHistory = new QAction(i18nc("@action", "Remove…"), &menu);
+        auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
+        connect(renameHistory, &QAction::triggered, this, [index]() {
+            const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+            if (!uuid.isEmpty()) {
+                // TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+            }
+        });
+        menu.addAction(renameHistory);
+
+        menu.addSeparator();
+
+        auto removeHistory = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
         connect(removeHistory, &QAction::triggered, this, [index]() {
             const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
             if (!uuid.isEmpty()) {

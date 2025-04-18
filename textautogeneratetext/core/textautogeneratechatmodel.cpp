@@ -40,6 +40,8 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return !message.inProgress();
     case UuidRole:
         return message.uuid();
+    case TopicRole:
+        return message.topic();
     }
     return {};
 }
@@ -94,12 +96,37 @@ TextAutoGenerateMessage TextAutoGenerateChatModel::lastMessage() const
 
 void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
 {
-    // TODO
+    if (uuid.isEmpty()) {
+        return;
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        const int i = std::distance(mMessages.begin(), it);
+        const QByteArray answerUuid = it->answerUuid();
+        beginRemoveRows(QModelIndex(), i, i);
+        mMessages.removeAt(i);
+        endRemoveRows();
+
+        auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
+            return msg.uuid() == answerUuid;
+        };
+        const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
+        if (answerIt != mMessages.end()) {
+            const int i = std::distance(mMessages.begin(), answerIt);
+            beginRemoveRows(QModelIndex(), i, i);
+            mMessages.removeAt(i);
+            endRemoveRows();
+        }
+    }
 }
 
-void TextAutoGenerateChatModel::changeTopic(const QByteArray &uuid, const QString &topic)
+bool TextAutoGenerateChatModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     // TODO
+    return QAbstractListModel::setData(index, value, role);
 }
 
 #include "moc_textautogeneratechatmodel.cpp"
