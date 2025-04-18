@@ -21,7 +21,7 @@ TextAutoGenerateHistorySortFilterProxyModel::~TextAutoGenerateHistorySortFilterP
 
 bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    // TODO
+    // TODO add headers
     return true;
 }
 
