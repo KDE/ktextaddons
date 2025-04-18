@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:40+0000\n"
-"PO-Revision-Date: 2025-04-16 07:27+0200\n"
+"POT-Creation-Date: 2025-04-18 00:40+0000\n"
+"PO-Revision-Date: 2025-04-17 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -56,27 +56,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Konfiguriraj Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:39
+#: plugins/ollama/ollamaconfigurewidget.cpp:37
 #, kde-format
 msgid "Server Url:"
 msgstr "Url strežnika:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:43
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:44
 #, kde-format
 msgid "Prompt:"
 msgstr "Poziv:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:47
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "No system prompt"
 msgstr "Ni sistemskega poziva"
 
-#: plugins/ollama/ollamamanager.cpp:46
+#: plugins/ollama/ollamamanager.cpp:64
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Povezava z vmesnikom ni uspela na %1: %2"
@@ -117,8 +117,7 @@ msgid "Conversation"
 msgstr "Pogovor"
 
 #: widgets/textautogenerateheaderwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
@@ -127,9 +126,9 @@ msgstr "Konfiguriraj…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
-msgstr ""
+msgstr "Očisti"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
 msgid "Configure…"
 msgstr "Konfiguriraj…"
@@ -145,20 +144,26 @@ msgstr "Vnesite sporočilo"
 msgid "Send"
 msgstr "Pošlji"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:31
+#: widgets/view/textautogeneratehistorylistview.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Odstrani…"
 
-#: widgets/view/textautogeneratelistview.cpp:63
+#: widgets/view/textautogeneratelistview.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr ""
+
+#: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: widgets/view/textautogeneratelistview.cpp:72
+#: widgets/view/textautogeneratelistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "Izberi vse"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:40+0000\n"
-"PO-Revision-Date: 2025-04-16 09:30+0300\n"
+"POT-Creation-Date: 2025-04-18 00:40+0000\n"
+"PO-Revision-Date: 2025-04-17 13:19+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -56,27 +56,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Налаштувати Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:39
+#: plugins/ollama/ollamaconfigurewidget.cpp:37
 #, kde-format
 msgid "Server Url:"
 msgstr "Адреса сервера:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:43
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Model:"
 msgstr "Модель:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:44
 #, kde-format
 msgid "Prompt:"
 msgstr "Запит:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:47
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "No system prompt"
 msgstr "Немає запиту системи"
 
-#: plugins/ollama/ollamamanager.cpp:46
+#: plugins/ollama/ollamamanager.cpp:64
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Не вдалося встановити з'єднання з інтерфейсом на %1: %2"
@@ -117,8 +117,7 @@ msgid "Conversation"
 msgstr "Спілкування"
 
 #: widgets/textautogenerateheaderwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
@@ -127,9 +126,9 @@ msgstr "Налаштувати…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
-msgstr ""
+msgstr "Спорожнити"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
@@ -145,20 +144,26 @@ msgstr "Введіть повідомлення"
 msgid "Send"
 msgstr "Надіслати"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:31
+#: widgets/view/textautogeneratehistorylistview.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Вилучити…"
 
-#: widgets/view/textautogeneratelistview.cpp:63
+#: widgets/view/textautogeneratelistview.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr ""
+
+#: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistview.cpp:72
+#: widgets/view/textautogeneratelistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "Позначити все"

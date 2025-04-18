@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:40+0000\n"
+"POT-Creation-Date: 2025-04-18 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -55,27 +55,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "配置 Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:39
+#: plugins/ollama/ollamaconfigurewidget.cpp:37
 #, kde-format
 msgid "Server Url:"
 msgstr "服务器 URL："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:43
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:44
 #, kde-format
 msgid "Prompt:"
 msgstr "提示词："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:47
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "No system prompt"
 msgstr "没有系统提示词"
 
-#: plugins/ollama/ollamamanager.cpp:46
+#: plugins/ollama/ollamamanager.cpp:64
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "无法连接到位于 %1 的接口：%2"
@@ -116,11 +116,10 @@ msgid "Conversation"
 msgstr "对话"
 
 #: widgets/textautogenerateheaderwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "配置…"
+msgstr ""
 
 #: widgets/textautogenerateheaderwidget.cpp:41
 #, kde-format
@@ -128,7 +127,7 @@ msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr ""
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
 msgid "Configure…"
 msgstr "配置…"
@@ -144,19 +143,25 @@ msgstr "输入信息"
 msgid "Send"
 msgstr "发送"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:31
+#: widgets/view/textautogeneratehistorylistview.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "移除…"
 
-#: widgets/view/textautogeneratelistview.cpp:63
+#: widgets/view/textautogeneratelistview.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr ""
+
+#: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
-#: widgets/view/textautogeneratelistview.cpp:72
+#: widgets/view/textautogeneratelistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
