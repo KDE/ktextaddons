@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratehistorylistview.h"
-#include "core/textautogeneratehistorymodel.h"
+#include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
@@ -23,7 +23,7 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     // Add delegate
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
-    mHistoryProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateHistoryModel());
+    mHistoryProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
     setModel(mHistoryProxyModel);
 }
 
@@ -36,11 +36,9 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     if (index.isValid()) {
         auto removeHistory = new QAction(i18nc("@action", "Remove…"), &menu);
         connect(removeHistory, &QAction::triggered, this, [index]() {
-            const QByteArray uuid = index.data(TextAutoGenerateHistoryModel::ReferenceUuid).toByteArray();
+            const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
             if (!uuid.isEmpty()) {
-                if (TextAutogenerateManager::self()->textAutoGenerateHistoryModel()->removeInfo(uuid)) {
-                    // TODO remove in model directly
-                }
+                TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
             }
         });
         menu.addAction(removeHistory);

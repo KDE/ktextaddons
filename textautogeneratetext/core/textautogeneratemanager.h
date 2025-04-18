@@ -8,7 +8,6 @@
 #include <QObject>
 namespace TextAutogenerateText
 {
-class TextAutoGenerateHistoryModel;
 class TextAutoGenerateChatModel;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateManager : public QObject
 {
@@ -21,13 +20,10 @@ public:
 
     [[nodiscard]] TextAutoGenerateChatModel *textAutoGenerateChatModel() const;
 
-    [[nodiscard]] TextAutoGenerateHistoryModel *textAutoGenerateHistoryModel() const;
-
     virtual void loadHistory();
     virtual void saveHistory();
 
 private:
     TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
-    TextAutoGenerateHistoryModel *const mTextAutoGenerateHistoryModel;
 };
 }

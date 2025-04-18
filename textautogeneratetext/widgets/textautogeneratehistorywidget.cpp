@@ -4,8 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratehistorywidget.h"
-#include "core/textautogeneratehistorymodel.h"
-#include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "widgets/view/textautogeneratehistorylistview.h"
 #include <KLineEditEventHandler>
 #include <QLineEdit>

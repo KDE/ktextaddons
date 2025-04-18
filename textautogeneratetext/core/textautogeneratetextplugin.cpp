@@ -6,10 +6,8 @@
 
 #include "textautogeneratetextplugin.h"
 #include "core/textautogeneratechatmodel.h"
-#include "core/textautogeneratehistorymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
-#include "textautogeneratehistoryinfo.h"
 #include "textautogeneratetextcore_debug.h"
 
 #include <QDateTime>
@@ -65,12 +63,6 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
 
         msg.setAnswerUuid(msgLlm.uuid());
-        TextAutoGenerateHistoryInfo info;
-        info.setReferenceUuid(msg.uuid());
-        info.setSubject(msg.topic().isEmpty() ? msg.content() : msg.topic());
-        info.setDateTime(msg.dateTime());
-        // TODO add more
-        TextAutogenerateManager::self()->textAutoGenerateHistoryModel()->addInfo(std::move(info));
 
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
