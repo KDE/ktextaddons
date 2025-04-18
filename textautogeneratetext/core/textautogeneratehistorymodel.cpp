@@ -83,8 +83,6 @@ bool TextAutoGenerateHistoryModel::removeInfo(const QByteArray &uuid)
         return true;
     }
     return false;
-    // TODO remove it + remove in model.
-    // TODO
 }
 
 #include "moc_textautogeneratehistorymodel.cpp"

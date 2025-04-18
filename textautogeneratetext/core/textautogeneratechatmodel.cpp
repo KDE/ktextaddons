@@ -97,4 +97,9 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
     // TODO
 }
 
+void TextAutoGenerateChatModel::changeTopic(const QByteArray &uuid, const QString &topic)
+{
+    // TODO
+}
+
 #include "moc_textautogeneratechatmodel.cpp"

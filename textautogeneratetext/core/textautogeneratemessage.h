@@ -48,11 +48,15 @@ public:
     [[nodiscard]] QByteArray answerUuid() const;
     void setAnswerUuid(const QByteArray &newAnswerUuid);
 
+    [[nodiscard]] QString topic() const;
+    void setTopic(const QString &newTopic);
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;
     QString mHtmlGenerated;
+    QString mTopic;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
     bool mInProgress = false;

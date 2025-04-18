@@ -67,7 +67,7 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         msg.setAnswerUuid(msgLlm.uuid());
         TextAutoGenerateHistoryInfo info;
         info.setReferenceUuid(msg.uuid());
-        info.setSubject(msg.content());
+        info.setSubject(msg.topic().isEmpty() ? msg.content() : msg.topic());
         info.setDateTime(msg.dateTime());
         // TODO add more
         TextAutogenerateManager::self()->textAutoGenerateHistoryModel()->addInfo(std::move(info));
@@ -75,7 +75,6 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
         sendToLLM(str);
-
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }

@@ -41,6 +41,7 @@ public:
 
     void removeDiscussion(const QByteArray &uuid);
 
+    void changeTopic(const QByteArray &uuid, const QString &topic);
 Q_SIGNALS:
     void conversationCleared();
 

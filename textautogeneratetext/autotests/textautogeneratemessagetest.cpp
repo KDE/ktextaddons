@@ -23,6 +23,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(!msg.inProgress());
     QVERIFY(msg.uuid().isEmpty());
     QVERIFY(msg.answerUuid().isEmpty());
+    QVERIFY(msg.topic().isEmpty());
 }
 
 #include "moc_textautogeneratemessagetest.cpp"
