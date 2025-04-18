@@ -16,5 +16,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListViewDelegate 
 public:
     explicit TextAutogenerateHistoryListViewDelegate(QObject *parent = nullptr);
     ~TextAutogenerateHistoryListViewDelegate() override;
+
+    [[nodiscard]] bool helpEvent(QHelpEvent *helpEvent, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
 };
 }
