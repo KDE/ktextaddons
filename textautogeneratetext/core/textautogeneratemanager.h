@@ -23,9 +23,10 @@ public:
 
     [[nodiscard]] TextAutoGenerateHistoryModel *textAutoGenerateHistoryModel() const;
 
+    virtual void loadHistory();
+    virtual void saveHistory();
+
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
     TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
     TextAutoGenerateHistoryModel *const mTextAutoGenerateHistoryModel;
 };
