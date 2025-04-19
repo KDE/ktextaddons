@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:40+0000\n"
-"PO-Revision-Date: 2025-04-18 00:58+0200\n"
+"POT-Creation-Date: 2025-04-19 00:40+0000\n"
+"PO-Revision-Date: 2025-04-18 12:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -43,7 +43,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral AI configureren"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:27
+#: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
@@ -146,6 +146,12 @@ msgstr "Verzenden"
 #: widgets/view/textautogeneratehistorylistview.cpp:37
 #, kde-format
 msgctxt "@action"
+msgid "Modify…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:48
+#, kde-format
+msgctxt "@action"
 msgid "Remove…"
 msgstr "Verwijderen…"
 
@@ -153,7 +159,7 @@ msgstr "Verwijderen…"
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "Selectie kopiëren"
 
 #: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format

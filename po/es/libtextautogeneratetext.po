@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:40+0000\n"
-"PO-Revision-Date: 2025-04-17 11:44+0100\n"
+"POT-Creation-Date: 2025-04-19 00:40+0000\n"
+"PO-Revision-Date: 2025-04-18 17:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -45,7 +45,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configurar IA Mistral"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:27
+#: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
@@ -148,6 +148,12 @@ msgstr "Enviar"
 #: widgets/view/textautogeneratehistorylistview.cpp:37
 #, kde-format
 msgctxt "@action"
+msgid "Modify…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:48
+#, kde-format
+msgctxt "@action"
 msgid "Remove…"
 msgstr "Eliminar…"
 
@@ -155,7 +161,7 @@ msgstr "Eliminar…"
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "Copiar selección"
 
 #: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format

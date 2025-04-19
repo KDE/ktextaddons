@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:40+0000\n"
+"POT-Creation-Date: 2025-04-19 00:40+0000\n"
 "PO-Revision-Date: 2025-04-17 09:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -44,7 +44,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "اضبط مسترال أيه آي"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:27
+#: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
@@ -146,6 +146,12 @@ msgid "Send"
 msgstr "أرسل"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:37
+#, kde-format
+msgctxt "@action"
+msgid "Modify…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:48
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"

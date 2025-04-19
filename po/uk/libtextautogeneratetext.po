@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:40+0000\n"
-"PO-Revision-Date: 2025-04-17 13:19+0300\n"
+"POT-Creation-Date: 2025-04-19 00:40+0000\n"
+"PO-Revision-Date: 2025-04-18 09:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -44,7 +44,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Налаштування ШІ Mistral"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:27
+#: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
@@ -147,6 +147,12 @@ msgstr "Надіслати"
 #: widgets/view/textautogeneratehistorylistview.cpp:37
 #, kde-format
 msgctxt "@action"
+msgid "Modify…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:48
+#, kde-format
+msgctxt "@action"
 msgid "Remove…"
 msgstr "Вилучити…"
 
@@ -154,7 +160,7 @@ msgstr "Вилучити…"
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "Копіювати позначене"
 
 #: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format
