@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-19 00:40+0000\n"
-"PO-Revision-Date: 2025-04-16 08:51+0300\n"
+"PO-Revision-Date: 2025-04-19 18:21+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -117,8 +117,7 @@ msgid "Conversation"
 msgstr "דיון"
 
 #: widgets/textautogenerateheaderwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
@@ -127,7 +126,7 @@ msgstr "הגדרה…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
-msgstr ""
+msgstr "פינוי"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
@@ -149,7 +148,7 @@ msgstr "שליחה"
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
-msgstr ""
+msgstr "עריכה…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:48
 #, kde-format
@@ -161,7 +160,7 @@ msgstr "הסרה…"
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "העתקת הבחירה"
 
 #: widgets/view/textautogeneratelistview.cpp:62
 #, kde-format
@@ -173,4 +172,4 @@ msgstr "העתקה"
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "בחירה בהכול"
