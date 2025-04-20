@@ -124,21 +124,19 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
     }
 }
 
-bool TextAutoGenerateChatModel::setData(const QModelIndex &index, const QVariant &value, int role)
+bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
-    if (!index.isValid()) {
+    if (!idx.isValid()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
         return false;
     }
-    const int idx = index.row();
-    TextAutoGenerateMessage &msg = mMessages[idx];
+    const int id = idx.row();
+    TextAutoGenerateMessage &msg = mMessages[id];
     switch (role) {
     case ChatRoles::TopicRole: {
-        /*
-        user.setActive(value.toBool());
-        const QModelIndex newIndex = index(id.row(), AdminUsersPendingModel::ActiveUserDisplay);
+        msg.setTopic(value.toString());
+        const QModelIndex newIndex = index(idx.row(), ChatRoles::TopicRole);
         Q_EMIT dataChanged(newIndex, newIndex);
-        */
         return true;
     }
     case ChatRoles::MessageRole:
@@ -149,7 +147,7 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &index, const QVariant
         return false;
     }
     // TODO
-    return QAbstractListModel::setData(index, value, role);
+    return QAbstractListModel::setData(idx, value, role);
 }
 
 #include "moc_textautogeneratechatmodel.cpp"
