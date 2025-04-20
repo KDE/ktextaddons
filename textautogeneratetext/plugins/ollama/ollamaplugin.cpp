@@ -41,6 +41,10 @@ bool OllamaPlugin::loadSettings()
 
 void OllamaPlugin::clear()
 {
+    for (const auto &connection : std::as_const(mConnections)) {
+        disconnect(connection);
+    }
+    mConnections.clear();
     // TODO clear all thread
 }
 
@@ -61,7 +65,7 @@ void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
 
 void OllamaPlugin::stop()
 {
-    // TODO
+    clear();
 }
 
 void OllamaPlugin::sendToLLM(const QString &message)
