@@ -44,12 +44,6 @@ void OllamaPlugin::clear()
     // TODO clear all thread
 }
 
-QString OllamaPlugin::result()
-{
-    // TODO
-    return {};
-}
-
 void OllamaPlugin::setPrompt(const QString &text)
 {
     // TODO

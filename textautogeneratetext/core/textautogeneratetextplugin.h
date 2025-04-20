@@ -26,7 +26,6 @@ public:
     [[nodiscard]] virtual bool loadSettings() = 0;
 
     virtual void clear() = 0;
-    [[nodiscard]] virtual QString result() = 0;
 
     virtual void setPrompt(const QString &text) = 0;
 

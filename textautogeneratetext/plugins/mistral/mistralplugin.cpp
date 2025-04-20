@@ -23,12 +23,6 @@ void MistralPlugin::clear()
 {
 }
 
-QString MistralPlugin::result()
-{
-    // TODO
-    return {};
-}
-
 void MistralPlugin::setPrompt(const QString &text)
 {
     // TODO
