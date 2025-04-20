@@ -14,7 +14,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatModel : public QAbstractLi
 {
     Q_OBJECT
 public:
-    enum ChatRole : uint16_t {
+    enum ChatRoles : uint16_t {
         MessageRole = Qt::UserRole + 1,
         SenderRole,
         FinishedRole,

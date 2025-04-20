@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratechatmodel.h"
+#include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutogenerateText;
 TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
@@ -125,6 +126,28 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
 
 bool TextAutoGenerateChatModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
+    if (!index.isValid()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
+        return false;
+    }
+    const int idx = index.row();
+    TextAutoGenerateMessage &msg = mMessages[idx];
+    switch (role) {
+    case ChatRoles::TopicRole: {
+        /*
+        user.setActive(value.toBool());
+        const QModelIndex newIndex = index(id.row(), AdminUsersPendingModel::ActiveUserDisplay);
+        Q_EMIT dataChanged(newIndex, newIndex);
+        */
+        return true;
+    }
+    case ChatRoles::MessageRole:
+    case ChatRoles::SenderRole:
+    case ChatRoles::FinishedRole:
+    case ChatRoles::DateTimeRole:
+    case ChatRoles::UuidRole:
+        return false;
+    }
     // TODO
     return QAbstractListModel::setData(index, value, role);
 }
