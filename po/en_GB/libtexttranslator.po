@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 02:34+0000\n"
+"POT-Creation-Date: 2025-04-21 03:22+0000\n"
 "PO-Revision-Date: 2024-06-02 12:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -535,7 +535,7 @@ msgstr "Server needs API Key."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:80
+#: translator/plugins/google/googleengineplugin.cpp:81
 #, kde-format
 msgid "Invalid answer."
 msgstr "Invalid answer."

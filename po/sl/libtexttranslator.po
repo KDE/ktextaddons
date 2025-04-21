@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 02:34+0000\n"
+"POT-Creation-Date: 2025-04-21 03:22+0000\n"
 "PO-Revision-Date: 2023-09-06 07:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -537,7 +537,7 @@ msgstr "Strežnik potrebuje ključ api."
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:80
+#: translator/plugins/google/googleengineplugin.cpp:81
 #, kde-format
 msgid "Invalid answer."
 msgstr "Neveljaven odgovor."

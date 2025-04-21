@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 02:34+0000\n"
+"POT-Creation-Date: 2025-04-21 03:22+0000\n"
 "PO-Revision-Date: 2024-03-30 19:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -533,7 +533,7 @@ msgstr "服务器需要 API 密钥。"
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:80
+#: translator/plugins/google/googleengineplugin.cpp:81
 #, kde-format
 msgid "Invalid answer."
 msgstr "无效的回答。"

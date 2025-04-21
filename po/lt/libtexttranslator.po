@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 02:34+0000\n"
+"POT-Creation-Date: 2025-04-21 03:22+0000\n"
 "PO-Revision-Date: 2023-02-19 00:56+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Google"
 msgstr ""
 
-#: translator/plugins/google/googleengineplugin.cpp:80
+#: translator/plugins/google/googleengineplugin.cpp:81
 #, kde-format
 msgid "Invalid answer."
 msgstr ""

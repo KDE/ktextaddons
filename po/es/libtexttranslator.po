@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 02:34+0000\n"
+"POT-Creation-Date: 2025-04-21 03:22+0000\n"
 "PO-Revision-Date: 2023-09-07 11:29+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -541,7 +541,7 @@ msgstr "El servidor necesita clave de API:"
 msgid "Google"
 msgstr "Google"
 
-#: translator/plugins/google/googleengineplugin.cpp:80
+#: translator/plugins/google/googleengineplugin.cpp:81
 #, kde-format
 msgid "Invalid answer."
 msgstr "Respuesta no válida."
