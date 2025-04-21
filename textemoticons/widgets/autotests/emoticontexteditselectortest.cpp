@@ -10,6 +10,7 @@
 #include "emoticontexteditselector.h"
 #include "emoticontonecombobox.h"
 #include <QLineEdit>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(EmoticonTextEditSelectorTest)
@@ -17,6 +18,7 @@ QTEST_MAIN(EmoticonTextEditSelectorTest)
 EmoticonTextEditSelectorTest::EmoticonTextEditSelectorTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()

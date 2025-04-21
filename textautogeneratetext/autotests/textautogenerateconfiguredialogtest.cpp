@@ -7,6 +7,7 @@
 #include "widgets/textautogenerateconfiguredialog.h"
 #include "widgets/textautogenerateconfigurewidget.h"
 #include <QDialogButtonBox>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutogenerateConfigureDialogTest)
@@ -14,6 +15,7 @@ QTEST_MAIN(TextAutogenerateConfigureDialogTest)
 TextAutogenerateConfigureDialogTest::TextAutogenerateConfigureDialogTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutogenerateConfigureDialogTest::shouldHaveDefaultValues()
