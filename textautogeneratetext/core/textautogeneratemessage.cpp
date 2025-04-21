@@ -5,7 +5,8 @@
 */
 
 #include "textautogeneratemessage.h"
-#include <KTextToHTML>
+#include "core/textautogeneratemessageutils.h"
+
 using namespace TextAutogenerateText;
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
@@ -33,8 +34,7 @@ void TextAutoGenerateMessage::setContent(const QString &newContent)
 {
     if (mContent != newContent) {
         mContent = newContent;
-        const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
-        mHtmlGenerated = KTextToHTML::convertToHtml(mContent, convertFlags);
+        mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent);
     }
 }
 

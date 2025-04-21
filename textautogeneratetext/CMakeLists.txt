@@ -69,6 +69,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     core/textautogeneratehistorysortfilterproxymodel.h
     core/textautogeneratehistorysortfilterproxymodel.cpp
+
+    core/textautogeneratemessageutils.h
+    core/textautogeneratemessageutils.cpp
 )
 
 target_sources(KF6TextAutogenerateText PRIVATE
