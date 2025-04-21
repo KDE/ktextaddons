@@ -222,7 +222,8 @@ QTextDocument *TextAutogenerateListViewDelegate::documentForIndex(const QModelIn
 std::unique_ptr<QTextDocument> TextAutogenerateListViewDelegate::createTextDocument(const QString &text, int width) const
 {
     std::unique_ptr<QTextDocument> doc(new QTextDocument);
-    doc->setHtml(text);
+    doc->setMarkdown(text);
+    // doc->setHtml(text);
     doc->setTextWidth(width);
     QTextFrame *frame = doc->frameAt(0);
     QTextFrameFormat frameFormat = frame->frameFormat();
