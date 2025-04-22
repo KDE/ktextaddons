@@ -22,10 +22,15 @@ public:
 
     static TextAutogenerateManager *self();
 
+    void ask(const QString &msg);
+
     [[nodiscard]] TextAutoGenerateChatModel *textAutoGenerateChatModel() const;
 
     virtual void loadHistory();
     virtual void saveHistory();
+
+Q_SIGNALS:
+    void sendMessageRequested(const QString &str);
 
 private:
     TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;

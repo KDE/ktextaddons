@@ -21,6 +21,11 @@ TextAutogenerateManager *TextAutogenerateManager::self()
     return &s_self;
 }
 
+void TextAutogenerateManager::ask(const QString &msg)
+{
+    Q_EMIT sendMessageRequested(msg);
+}
+
 TextAutoGenerateChatModel *TextAutogenerateManager::textAutoGenerateChatModel() const
 {
     return mTextAutoGenerateChatModel;

@@ -58,6 +58,9 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::clearModel, this, &TextAutogenerateWidget::slotClearModel);
+
+    connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, &TextAutogenerateWidget::slotEditingFinished);
+
     loadEngine();
     readConfig();
 }
