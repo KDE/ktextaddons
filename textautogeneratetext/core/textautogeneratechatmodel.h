@@ -10,6 +10,10 @@
 #include <QAbstractListModel>
 namespace TextAutogenerateText
 {
+/**
+ * @brief The TextAutoGenerateChatModel class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatModel : public QAbstractListModel
 {
     Q_OBJECT

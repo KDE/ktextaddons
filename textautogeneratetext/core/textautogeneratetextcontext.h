@@ -9,6 +9,10 @@
 #include <QVariant>
 namespace TextAutogenerateText
 {
+/**
+ * @brief The TextAutogenerateTextContext class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextContext
 {
 public:

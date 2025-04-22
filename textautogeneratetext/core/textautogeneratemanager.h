@@ -9,6 +9,10 @@
 namespace TextAutogenerateText
 {
 class TextAutoGenerateChatModel;
+/**
+ * @brief The TextAutogenerateManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateManager : public QObject
 {
     Q_OBJECT

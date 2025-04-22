@@ -11,6 +11,10 @@ namespace TextAutogenerateText
 {
 class TextAutogenerateListView;
 class TextAutoGenerateMessage;
+/**
+ * @brief The TextAutogenerateResultWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateResultWidget : public QWidget
 {
     Q_OBJECT

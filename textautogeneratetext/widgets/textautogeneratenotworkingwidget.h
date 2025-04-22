@@ -9,6 +9,10 @@
 class KMessageWidget;
 namespace TextAutogenerateText
 {
+/**
+ * @brief The TextAutogenerateNotWorkingWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateNotWorkingWidget : public QWidget
 {
     Q_OBJECT

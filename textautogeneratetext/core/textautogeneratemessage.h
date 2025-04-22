@@ -10,6 +10,10 @@
 #include <QDebug>
 namespace TextAutogenerateText
 {
+/**
+ * @brief The TextAutoGenerateMessage class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessage
 {
     Q_GADGET

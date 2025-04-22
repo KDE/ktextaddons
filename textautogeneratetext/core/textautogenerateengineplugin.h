@@ -11,6 +11,10 @@
 namespace TextAutogenerateText
 {
 class TextAutogenerateEnginePluginPrivate;
+/**
+ * @brief The TextAutogenerateEnginePlugin class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateEnginePlugin : public QObject
 {
     Q_OBJECT

@@ -12,6 +12,10 @@ namespace TextAutogenerateText
 {
 class TextAutogenerateNotWorkingWidget;
 class TextAutogenerateWidget;
+/**
+ * @brief The TextAutogenerateStackWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateStackWidget : public QWidget
 {
     Q_OBJECT

@@ -9,6 +9,10 @@
 namespace TextAutogenerateText
 {
 class TextAutogenerateConfigureWidget;
+/**
+ * @brief The TextAutogenerateConfigureDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateConfigureDialog : public QDialog
 {
     Q_OBJECT

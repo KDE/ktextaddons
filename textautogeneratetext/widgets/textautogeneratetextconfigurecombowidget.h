@@ -12,6 +12,10 @@ class QComboBox;
 class QToolButton;
 namespace TextAutogenerateText
 {
+/**
+ * @brief The TextAutogenerateTextConfigureComboWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextConfigureComboWidget : public QWidget
 {
     Q_OBJECT

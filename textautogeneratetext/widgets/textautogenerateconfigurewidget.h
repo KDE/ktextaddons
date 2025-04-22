@@ -10,6 +10,10 @@
 namespace TextAutogenerateText
 {
 class TextAutogenerateTextConfigureComboWidget;
+/**
+ * @brief The TextAutogenerateConfigureWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateConfigureWidget : public QWidget
 {
     Q_OBJECT
