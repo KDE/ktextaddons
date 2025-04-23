@@ -146,7 +146,6 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
     case ChatRoles::UuidRole:
         return false;
     }
-    // TODO
     return QAbstractListModel::setData(idx, value, role);
 }
 
