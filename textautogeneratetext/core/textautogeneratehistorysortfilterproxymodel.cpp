@@ -19,12 +19,6 @@ TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterPr
 
 TextAutoGenerateHistorySortFilterProxyModel::~TextAutoGenerateHistorySortFilterProxyModel() = default;
 
-bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
-{
-    // TODO add headers
-    return true;
-}
-
 bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const TextAutoGenerateMessage::Sender sender =
