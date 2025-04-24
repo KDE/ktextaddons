@@ -19,6 +19,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     : QListView(parent)
     , mDelegate(new TextAutogenerateListViewDelegate(this))
 {
+    setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
     setItemDelegate(mDelegate);
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
 
