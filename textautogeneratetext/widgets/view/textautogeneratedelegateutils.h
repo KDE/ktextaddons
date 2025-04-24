@@ -24,5 +24,7 @@ selection(TextAutogenerateListViewTextSelection *selection, QTextDocument *doc, 
 void setClipboardSelection(TextAutogenerateListViewTextSelection *selection);
 
 [[nodiscard]] int spacingText();
+[[nodiscard]] int roundRectValue();
+[[nodiscard]] int marginText();
 }
 }
