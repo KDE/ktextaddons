@@ -7,6 +7,8 @@
 #include "textautogeneratemessage.h"
 #include "core/textautogeneratemessageutils.h"
 
+#include <QDateTime>
+
 using namespace TextAutogenerateText;
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
@@ -56,6 +58,8 @@ qint64 TextAutoGenerateMessage::dateTime() const
 void TextAutoGenerateMessage::setDateTime(qint64 newDateTime)
 {
     mDateTime = newDateTime;
+    QLocale locale;
+    mDateTimeStr = locale.toString(QDateTime::fromSecsSinceEpoch(mDateTime));
 }
 
 bool TextAutoGenerateMessage::isValid() const
@@ -112,6 +116,11 @@ QString TextAutoGenerateMessage::topic() const
 void TextAutoGenerateMessage::setTopic(const QString &newTopic)
 {
     mTopic = newTopic;
+}
+
+QString TextAutoGenerateMessage::dateTimeStr() const
+{
+    return mDateTimeStr;
 }
 
 #include "moc_textautogeneratemessage.cpp"

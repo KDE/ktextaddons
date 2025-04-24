@@ -23,6 +23,7 @@ public:
         SenderRole,
         FinishedRole,
         DateTimeRole,
+        DateTimeStrRole,
         UuidRole,
         TopicRole,
     };

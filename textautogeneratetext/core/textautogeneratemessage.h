@@ -55,12 +55,15 @@ public:
     [[nodiscard]] QString topic() const;
     void setTopic(const QString &newTopic);
 
+    QString dateTimeStr() const;
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;
     QString mHtmlGenerated;
     QString mTopic;
+    QString mDateTimeStr;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
     bool mInProgress = false;
