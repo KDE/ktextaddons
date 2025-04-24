@@ -22,5 +22,7 @@ void generateToolTip(const QString &toolTip, const QString &href, QString &forma
 selection(TextAutogenerateListViewTextSelection *selection, QTextDocument *doc, const QModelIndex &index, const QStyleOptionViewItem &option);
 
 void setClipboardSelection(TextAutogenerateListViewTextSelection *selection);
+
+[[nodiscard]] int spacingText();
 }
 }
