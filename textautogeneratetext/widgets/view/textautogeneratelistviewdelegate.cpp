@@ -93,7 +93,7 @@ QSize TextAutogenerateListViewDelegate::sizeHint(const QStyleOptionViewItem &opt
 
 void TextAutogenerateListViewDelegate::clearCache()
 {
-    mSizeHintCache.clear();
+    clearSizeHintCache();
     mDocumentCache.clear();
 }
 
