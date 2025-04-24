@@ -47,6 +47,9 @@ private:
         // Text message
         QRect textRect;
         qreal baseLine; // used to draw sender/timestamp
+
+        // Decoration
+        QRect decoRect;
     };
 
     [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;

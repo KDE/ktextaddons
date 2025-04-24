@@ -26,5 +26,8 @@ void setClipboardSelection(TextAutogenerateListViewTextSelection *selection);
 [[nodiscard]] int spacingText();
 [[nodiscard]] int roundRectValue();
 [[nodiscard]] int marginText();
+[[nodiscard]] int rightIndent();
+[[nodiscard]] int leftLLMIndent();
+[[nodiscard]] int leftUserIndent();
 }
 }
