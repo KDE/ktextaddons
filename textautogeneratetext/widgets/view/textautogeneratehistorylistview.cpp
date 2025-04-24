@@ -19,7 +19,7 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))
 {
     setDragEnabled(false);
-    setUniformItemSizes(true);
+    setUniformItemSizes(false);
     // Add delegate
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
