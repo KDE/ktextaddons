@@ -52,6 +52,7 @@ void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
 
 void TextAutogenerateListViewDelegate::draw(QPainter *painter, QRect rect, const QModelIndex &index, const QStyleOptionViewItem &option) const
 {
+    // TODO draw date
     auto *doc = documentForIndex(index, rect.width());
     if (!doc) {
         return;
