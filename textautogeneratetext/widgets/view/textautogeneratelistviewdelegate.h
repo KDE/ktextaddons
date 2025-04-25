@@ -50,6 +50,9 @@ private:
 
         // Decoration
         QRect decoRect;
+
+        // Date Size
+        QSize dateSize;
     };
 
     [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;
