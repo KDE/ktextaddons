@@ -75,8 +75,8 @@ void TextAutogenerateListViewDelegate::draw(QPainter *painter, QRect rect, const
         }
     }
     doc->documentLayout()->draw(painter, ctx);
-    drawDate(painter, index, option);
     painter->restore();
+    drawDate(painter, index, option);
 }
 
 void TextAutogenerateListViewDelegate::drawDate(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option) const
