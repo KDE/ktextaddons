@@ -60,6 +60,9 @@ public:
     [[nodiscard]] bool mouseHover() const;
     void setMouseHover(bool newMouseHover);
 
+    [[nodiscard]] bool archived() const;
+    void setArchived(bool newArchived);
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
@@ -71,6 +74,7 @@ private:
     qint64 mDateTime = -1;
     bool mInProgress = false;
     bool mMouseHover = false;
+    bool mArchived = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);
