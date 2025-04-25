@@ -22,13 +22,9 @@ public:
     explicit TextAutogenerateResultWidget(QWidget *parent = nullptr);
     ~TextAutogenerateResultWidget() override;
 
-    void setMessages(const QList<TextAutoGenerateMessage> &msg);
-
     void handleKeyPressEvent(QKeyEvent *ev);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
     TextAutogenerateListView *const mTextAutogenerateListView;
 };
 
