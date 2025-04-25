@@ -51,8 +51,8 @@ void TextAutogenerateManager::loadHistory()
         TextAutoGenerateMessage message;
 
         message.setContent(group.readEntry(QStringLiteral("Content")));
-        message.setSender(static_cast<TextAutoGenerateMessage::Sender>(group.readEntry(QStringLiteral("Sender")),
-                                                                       static_cast<TextAutoGenerateMessage::Sender>(TextAutoGenerateMessage::Sender::Unknown)));
+        const int sender = group.readEntry(QStringLiteral("Sender"), 0);
+        message.setSender(static_cast<TextAutoGenerateMessage::Sender>(sender));
         message.setDateTime(group.readEntry(QStringLiteral("DateTime"), 0));
         message.setUuid(group.readEntry(QStringLiteral("Uuid"), QByteArray()));
         message.setAnswerUuid(group.readEntry(QStringLiteral("AnswerUuid"), QByteArray()));
@@ -60,6 +60,9 @@ void TextAutogenerateManager::loadHistory()
 
         messages.append(std::move(message));
     }
+    std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+        return left.dateTime() < right.dateTime();
+    });
     mTextAutoGenerateChatModel->setMessages(messages);
 }
 
@@ -73,7 +76,7 @@ void TextAutogenerateManager::saveHistory()
         config->deleteGroup(group);
     }
     for (int i = 0, total = messages.count(); i < total; ++i) {
-        const QString groupName = QStringLiteral("DKIM Key Record #%1").arg(i);
+        const QString groupName = QStringLiteral("AutoGenerate #%1").arg(i);
         KConfigGroup group = config->group(groupName);
         const TextAutoGenerateMessage &info = messages.at(i);
         group.writeEntry(QStringLiteral("Content"), info.content());
@@ -83,6 +86,7 @@ void TextAutogenerateManager::saveHistory()
         group.writeEntry(QStringLiteral("AnswerUuid"), info.answerUuid());
         group.writeEntry(QStringLiteral("Topic"), info.topic());
     }
+    config->sync();
 }
 
 QStringList TextAutogenerateManager::keyRecorderList(KSharedConfig::Ptr &config) const

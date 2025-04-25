@@ -51,6 +51,7 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
 
 QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
 {
+    qDebug() << " 555555555555" << mMessages;
     return mMessages;
 }
 
@@ -63,6 +64,7 @@ void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage>
 
 void TextAutoGenerateChatModel::resetConversation()
 {
+    qDebug() << " void TextAutoGenerateChatModel::resetConversation()";
     beginResetModel();
     mMessages.clear();
     endResetModel();

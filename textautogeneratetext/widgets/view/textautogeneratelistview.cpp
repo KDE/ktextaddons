@@ -46,7 +46,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 
 TextAutogenerateListView::~TextAutogenerateListView()
 {
-    TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
+    // TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
 }
 
 void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
