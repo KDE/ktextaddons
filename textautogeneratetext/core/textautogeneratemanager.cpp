@@ -37,6 +37,7 @@ void TextAutogenerateManager::loadHistory()
 
 void TextAutogenerateManager::saveHistory()
 {
+    const QList<TextAutoGenerateMessage> messages = mTextAutoGenerateChatModel->messages();
 }
 
 #include "moc_textautogeneratemanager.cpp"
