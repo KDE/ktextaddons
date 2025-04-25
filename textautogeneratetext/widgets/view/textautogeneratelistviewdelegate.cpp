@@ -23,8 +23,8 @@ using namespace TextAutogenerateText;
 TextAutogenerateListViewDelegate::TextAutogenerateListViewDelegate(QListView *view)
     : QItemDelegate{view}
     , mEditedIcon(QIcon::fromTheme(QStringLiteral("document-edit")))
-    , mRemoveIcon(QIcon::fromTheme(QStringLiteral("document-edit")))
-    , mCopyIcon(QIcon::fromTheme(QStringLiteral("document-edit")))
+    , mRemoveIcon(QIcon::fromTheme(QStringLiteral("edit-delete")))
+    , mCopyIcon(QIcon::fromTheme(QStringLiteral("edit-copy")))
     , mListView(view)
     , mTextSelection(new TextAutogenerateListViewTextSelection(this, this))
 {
