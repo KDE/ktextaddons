@@ -29,5 +29,6 @@ void setClipboardSelection(TextAutogenerateListViewTextSelection *selection);
 [[nodiscard]] int rightIndent();
 [[nodiscard]] int leftLLMIndent();
 [[nodiscard]] int leftUserIndent();
+[[nodiscard]] int iconSpacing();
 }
 }
