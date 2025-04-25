@@ -27,6 +27,7 @@ public:
         UuidRole,
         TopicRole,
         MouseHoverRole,
+        ArchivedRole,
     };
 
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);

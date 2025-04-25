@@ -47,6 +47,8 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return message.topic();
     case MouseHoverRole:
         return message.mouseHover();
+    case ArchivedRole:
+        return message.archived();
     }
     return {};
 }

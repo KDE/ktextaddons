@@ -36,6 +36,10 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
         update(index);
     });
 
+    connect(mDelegate, &TextAutogenerateListViewDelegate::removeMessage, this, &TextAutogenerateListView::slotRemoveMessage);
+    connect(mDelegate, &TextAutogenerateListViewDelegate::editMessage, this, &TextAutogenerateListView::slotEditMessage);
+    connect(mDelegate, &TextAutogenerateListViewDelegate::copyMessage, this, &TextAutogenerateListView::slotCopyMessage);
+
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeInserted,
             this,
@@ -69,6 +73,26 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 TextAutogenerateListView::~TextAutogenerateListView()
 {
     // TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
+}
+
+void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    if (!uuid.isEmpty()) {
+        TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+    }
+}
+
+void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
+{
+    qWarning() << " Edit message not implemented yet";
+    // TODO
+}
+
+void TextAutogenerateListView::slotCopyMessage(const QModelIndex &index)
+{
+    qWarning() << " Copy message not implemented yet";
+    // TODO
 }
 
 void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)

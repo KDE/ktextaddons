@@ -41,6 +41,9 @@ public:
 
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
+    void editMessage(const QModelIndex &index);
+    void removeMessage(const QModelIndex &index);
+    void copyMessage(const QModelIndex &index);
 
 private:
     struct MessageLayout {
