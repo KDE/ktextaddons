@@ -62,6 +62,9 @@ private:
 
         // Favorite icon
         QRect copyIconRect;
+
+        // Date Area
+        QRect dateAreaRect;
     };
 
     [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;

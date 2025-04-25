@@ -131,7 +131,6 @@ bool TextAutoGenerateMessage::mouseHover() const
 
 void TextAutoGenerateMessage::setMouseHover(bool newMouseHover)
 {
-    qDebug() << " TextAutoGenerateMessage::setMouseHover " << newMouseHover;
     mMouseHover = newMouseHover;
 }
 
