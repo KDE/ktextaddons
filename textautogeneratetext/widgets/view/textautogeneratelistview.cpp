@@ -184,10 +184,16 @@ void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
 {
     const QPersistentModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
+        // When the cursor hovers another message, hide/show the reaction icon accordingly
         if (mCurrentIndex != index) {
+            if (mCurrentIndex.isValid()) {
+                auto lastModel = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
+                lastModel->setData(mCurrentIndex, false, TextAutoGenerateChatModel::MouseHoverRole);
+            }
             mCurrentIndex = index;
+            auto model = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
+            model->setData(mCurrentIndex, true, TextAutoGenerateChatModel::MouseHoverRole);
         }
-
         QStyleOptionViewItem options = listViewOptions();
         options.rect = visualRect(mCurrentIndex);
         if (mouseEvent(event, options, mCurrentIndex)) {
@@ -204,6 +210,16 @@ bool TextAutogenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOp
 bool TextAutogenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
     return mDelegate->mouseEvent(event, option, index);
+}
+
+void TextAutogenerateListView::leaveEvent(QEvent *event)
+{
+    if (mCurrentIndex.isValid()) {
+        auto lastModel = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
+        lastModel->setData(mCurrentIndex, false, TextAutoGenerateChatModel::MouseHoverRole);
+        mCurrentIndex = QPersistentModelIndex();
+    }
+    QListView::leaveEvent(event);
 }
 
 #include "moc_textautogeneratelistview.cpp"

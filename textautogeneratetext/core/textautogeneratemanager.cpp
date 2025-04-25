@@ -21,7 +21,6 @@ TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
 TextAutogenerateManager::~TextAutogenerateManager()
 {
     saveHistory();
-    qDebug() << " XCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC";
 }
 
 TextAutogenerateManager *TextAutogenerateManager::self()
@@ -61,6 +60,11 @@ void TextAutogenerateManager::loadHistory()
         messages.append(std::move(message));
     }
     std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+        if (left.dateTime() == right.dateTime()) {
+            if (left.sender() == TextAutoGenerateMessage::Sender::User) {
+                return true;
+            }
+        }
         return left.dateTime() < right.dateTime();
     });
     mTextAutoGenerateChatModel->setMessages(messages);
