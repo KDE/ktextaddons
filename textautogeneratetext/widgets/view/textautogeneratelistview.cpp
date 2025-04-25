@@ -20,7 +20,12 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     , mDelegate(new TextAutogenerateListViewDelegate(this))
 {
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setWordWrap(true); // so that the delegate sizeHint is called again when the width changes
     setItemDelegate(mDelegate);
+    setFocusPolicy(Qt::NoFocus);
+    scrollToBottom();
+    setMouseTracking(true);
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
 
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateChatModel::conversationCleared, this, [this]() {
@@ -30,6 +35,19 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     connect(mDelegate, &TextAutogenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
         update(index);
     });
+
+    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+            &QAbstractItemModel::rowsAboutToBeInserted,
+            this,
+            &TextAutogenerateListView::checkIfAtBottom);
+    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+            &QAbstractItemModel::rowsAboutToBeRemoved,
+            this,
+            &TextAutogenerateListView::checkIfAtBottom);
+    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+            &QAbstractItemModel::modelAboutToBeReset,
+            this,
+            &TextAutogenerateListView::checkIfAtBottom);
 
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::dataChanged,
@@ -42,6 +60,10 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
                     }
                 }
             });
+
+    // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
+    // This way it also catches the case of an item changing height (e.g. after async image loading)
+    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutogenerateListView::maybeScrollToBottom);
 }
 
 TextAutogenerateListView::~TextAutogenerateListView()
