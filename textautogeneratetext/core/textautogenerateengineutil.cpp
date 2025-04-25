@@ -31,3 +31,8 @@ QString TextAutogenerateEngineUtil::loadEngine()
     const QString engineTypeStr = myGeneralGroup.readEntry(engineTranslateName(), defaultEngineName()); // Default ollama
     return engineTypeStr;
 }
+
+QString TextAutogenerateEngineUtil::defaultConfigFileName()
+{
+    return QStringLiteral("textautogeneraterc");
+}
