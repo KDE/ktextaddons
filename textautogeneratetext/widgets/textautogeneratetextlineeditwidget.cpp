@@ -42,6 +42,7 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
         Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text());
         mTextAutogenerateTextLineEdit->clear();
     });
+    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::keyPressed, this, &TextAutogenerateTextLineEditWidget::keyPressed);
 }
 
 TextAutogenerateTextLineEditWidget::~TextAutogenerateTextLineEditWidget() = default;

@@ -31,6 +31,11 @@ void TextAutogenerateResultWidget::setMessages(const QList<TextAutoGenerateMessa
     // TODO
 }
 
+void TextAutogenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
+{
+    mTextAutogenerateListView->handleKeyPressEvent(ev);
+}
+
 void TextAutogenerateResultWidget::loadHistory()
 {
     // TODO

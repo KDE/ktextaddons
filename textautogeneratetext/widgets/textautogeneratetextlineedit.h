@@ -22,6 +22,7 @@ public:
     [[nodiscard]] QSize minimumSizeHint() const override;
 Q_SIGNALS:
     void sendMessage(const QString &);
+    void keyPressed(QKeyEvent *ev);
 
 protected:
     void keyPressEvent(QKeyEvent *e) override;

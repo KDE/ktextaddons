@@ -21,6 +21,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
+#include <QKeyEvent>
 #include <QSplitter>
 #include <QVBoxLayout>
 
@@ -61,6 +62,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, &TextAutogenerateWidget::slotEditingFinished);
 
+    connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
     loadEngine();
     readConfig();
 }
@@ -72,6 +74,21 @@ TextAutogenerateWidget::~TextAutogenerateWidget()
         mTextAutogeneratePlugin->deleteLater();
     }
     writeConfig();
+}
+
+void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
+{
+    /*
+    const int key = ev->key();
+    if (key == Qt::Key_Escape) {
+    } else if (ev->matches(QKeySequence::Copy) && mMessageLineWidget->messageTextEdit()->textCursor().selectedText().isEmpty()) {
+        mMessageListView->copyMessageToClipboard();
+        ev->accept();
+    } else {
+        mMessageListView->handleKeyPressEvent(ev);
+    }
+    */
+    mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
 }
 
 void TextAutogenerateWidget::slotClearModel()

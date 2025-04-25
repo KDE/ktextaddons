@@ -22,6 +22,7 @@ public:
 
 Q_SIGNALS:
     void editingFinished(const QString &str);
+    void keyPressed(QKeyEvent *ev);
 
 private:
     TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;

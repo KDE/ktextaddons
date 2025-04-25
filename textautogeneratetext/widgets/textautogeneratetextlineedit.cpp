@@ -54,6 +54,11 @@ void TextAutogenerateTextLineEdit::keyPressEvent(QKeyEvent *e)
         }
     }
     e->ignore();
+    // Check if the listview or room widget want to handle the key (e.g Esc, PageUp)
+    Q_EMIT keyPressed(e);
+    if (e->isAccepted()) {
+        return;
+    }
     // Assign key to KTextEdit first otherwise text() doesn't return correct text
     KTextEdit::keyPressEvent(e);
 }

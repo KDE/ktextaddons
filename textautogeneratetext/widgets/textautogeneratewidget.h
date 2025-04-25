@@ -35,6 +35,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureChanged();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotClearModel();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void keyPressedInLineEdit(QKeyEvent *ev);
 
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;

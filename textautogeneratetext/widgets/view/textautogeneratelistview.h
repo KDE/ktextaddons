@@ -19,6 +19,8 @@ public:
 
     void setMessages(const QList<TextAutoGenerateMessage> &msg);
 
+    void handleKeyPressEvent(QKeyEvent *ev);
+
 protected:
     void resizeEvent(QResizeEvent *ev) override;
 

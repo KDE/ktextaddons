@@ -222,4 +222,24 @@ void TextAutogenerateListView::leaveEvent(QEvent *event)
     QListView::leaveEvent(event);
 }
 
+void TextAutogenerateListView::handleKeyPressEvent(QKeyEvent *ev)
+{
+    const int key = ev->key();
+    if (key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_PageDown || key == Qt::Key_PageUp) {
+        // QListView/QAIV PageUp/PageDown moves the current item, first inside visible bounds
+        // before it triggers scrolling around. Let's just let the scrollarea handle it,
+        // since we don't show the current item.
+        QAbstractScrollArea::keyPressEvent(ev);
+        ev->accept();
+    } else if (ev->modifiers() & Qt::ControlModifier) {
+        if (key == Qt::Key_Home) {
+            scrollToTop();
+            ev->accept();
+        } else if (key == Qt::Key_End) {
+            scrollToBottom();
+            ev->accept();
+        }
+    }
+}
+
 #include "moc_textautogeneratelistview.cpp"
