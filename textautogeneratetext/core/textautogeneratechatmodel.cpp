@@ -45,13 +45,14 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return message.uuid();
     case TopicRole:
         return message.topic();
+    case MouseHoverRole:
+        return message.mouseHover();
     }
     return {};
 }
 
 QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
 {
-    qDebug() << " 555555555555" << mMessages;
     return mMessages;
 }
 
@@ -64,7 +65,6 @@ void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage>
 
 void TextAutoGenerateChatModel::resetConversation()
 {
-    qDebug() << " void TextAutoGenerateChatModel::resetConversation()";
     beginResetModel();
     mMessages.clear();
     endResetModel();
@@ -143,6 +143,10 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
         Q_EMIT dataChanged(newIndex, newIndex);
         return true;
     }
+    case ChatRoles::MouseHoverRole:
+        msg.setMouseHover(value.toBool());
+        Q_EMIT dataChanged(idx, idx, {ChatRoles::MouseHoverRole});
+        return true;
     case ChatRoles::MessageRole:
     case ChatRoles::SenderRole:
     case ChatRoles::FinishedRole:

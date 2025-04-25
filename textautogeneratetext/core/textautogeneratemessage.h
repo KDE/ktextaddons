@@ -57,6 +57,9 @@ public:
 
     [[nodiscard]] QString dateTimeStr() const;
 
+    [[nodiscard]] bool mouseHover() const;
+    void setMouseHover(bool newMouseHover);
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
@@ -67,6 +70,7 @@ private:
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
     bool mInProgress = false;
+    bool mMouseHover = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);

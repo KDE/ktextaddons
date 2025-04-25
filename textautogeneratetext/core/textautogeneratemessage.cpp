@@ -24,6 +24,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
     d.space() << "uuid:" << t.uuid();
     d.space() << "answerUuid:" << t.answerUuid();
     d.space() << "topic:" << t.topic();
+    d.space() << "mouseHover:" << t.mouseHover();
     return d;
 }
 
@@ -121,6 +122,17 @@ void TextAutoGenerateMessage::setTopic(const QString &newTopic)
 QString TextAutoGenerateMessage::dateTimeStr() const
 {
     return mDateTimeStr;
+}
+
+bool TextAutoGenerateMessage::mouseHover() const
+{
+    return mMouseHover;
+}
+
+void TextAutoGenerateMessage::setMouseHover(bool newMouseHover)
+{
+    qDebug() << " TextAutoGenerateMessage::setMouseHover " << newMouseHover;
+    mMouseHover = newMouseHover;
 }
 
 #include "moc_textautogeneratemessage.cpp"
