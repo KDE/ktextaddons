@@ -55,7 +55,7 @@ public:
     [[nodiscard]] QString topic() const;
     void setTopic(const QString &newTopic);
 
-    QString dateTimeStr() const;
+    [[nodiscard]] QString dateTimeStr() const;
 
 private:
     QByteArray mAnswerUuid;
