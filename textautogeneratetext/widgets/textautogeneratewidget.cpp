@@ -63,6 +63,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, &TextAutogenerateWidget::slotEditingFinished);
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
+    connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
     loadEngine();
     readConfig();
 }
@@ -166,6 +167,11 @@ void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 {
     qDebug() << " TextAutogenerateWidget::slotAutogenerateFailed " << errorMessage;
     // TODO report error
+}
+
+void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
+{
+    // TODO
 }
 
 #include "moc_textautogeneratewidget.cpp"

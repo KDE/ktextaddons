@@ -24,6 +24,9 @@ public:
 
     void handleKeyPressEvent(QKeyEvent *ev);
 
+Q_SIGNALS:
+    void editMessage(const QModelIndex &index);
+
 private:
     TextAutogenerateListView *const mTextAutogenerateListView;
 };
