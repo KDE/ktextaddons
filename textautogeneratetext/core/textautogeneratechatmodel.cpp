@@ -80,7 +80,7 @@ void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
     endInsertRows();
 }
 
-void TextAutoGenerateChatModel::changeInProgress(bool inProgress, const QByteArray &uuid)
+void TextAutoGenerateChatModel::changeInProgress(const QByteArray &uuid, bool inProgress)
 {
     if (uuid.isEmpty()) {
         return;
@@ -100,7 +100,7 @@ void TextAutoGenerateChatModel::changeInProgress(bool inProgress, const QByteArr
     }
 }
 
-void TextAutoGenerateChatModel::replaceContent(const QString &content, const QByteArray &uuid)
+void TextAutoGenerateChatModel::replaceContent(const QByteArray &uuid, const QString &content)
 {
     if (uuid.isEmpty()) {
         return;

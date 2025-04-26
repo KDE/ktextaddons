@@ -48,8 +48,8 @@ public:
 
     void removeDiscussion(const QByteArray &uuid);
 
-    void replaceContent(const QString &content, const QByteArray &uuid);
-    void changeInProgress(bool inProgress, const QByteArray &uuid);
+    void replaceContent(const QByteArray &uuid, const QString &content);
+    void changeInProgress(const QByteArray &uuid, bool inProgress);
 Q_SIGNALS:
     void conversationCleared();
 
