@@ -68,7 +68,7 @@ void OllamaPlugin::stop()
     clear();
 }
 
-void OllamaPlugin::sendToLLM(const QString &message)
+void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
 {
     OllamaRequest req;
     req.setMessage(message);
@@ -83,21 +83,19 @@ void OllamaPlugin::sendToLLM(const QString &message)
     */
     auto reply = OllamaManager::self()->getCompletion(req);
 
-    mConnections.insert(reply, connect(reply, &OllamaReply::contentAdded, this, [reply]() {
-                            auto message = TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->lastMessage();
-                            message.setContent(reply->readResponse());
-                            TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceLastMessage(message);
+    mConnections.insert(reply, connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
+                            TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceContent(reply->readResponse(), uuid);
                         }));
-    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [reply, this] {
-                            auto message = TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->lastMessage();
+    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
+                            TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(false, uuid);
+
                             mConnections.remove(reply);
                             reply->deleteLater();
-                            message.setInProgress(false);
 #if 0
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
 #endif
-                            Q_EMIT finished(message); // TODO add message as argument ???
+                            // Q_EMIT finished(message); // TODO add message as argument ???
                         }));
 }
 

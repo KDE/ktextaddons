@@ -80,17 +80,44 @@ void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
     endInsertRows();
 }
 
-void TextAutoGenerateChatModel::replaceLastMessage(const TextAutoGenerateMessage &msg)
+void TextAutoGenerateChatModel::changeInProgress(bool inProgress, const QByteArray &uuid)
 {
-    beginInsertRows(QModelIndex(), mMessages.count(), mMessages.count());
-    mMessages.removeLast();
-    mMessages.append(msg);
-    auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
-        const QModelIndex index = createIndex(rowNumber, 0);
-        Q_EMIT dataChanged(index, index, roles);
+    if (uuid.isEmpty()) {
+        return;
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
     };
-    emitChanged(mMessages.count() - 1, {MessageRole});
-    endInsertRows();
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        (*it).setInProgress(inProgress);
+        const int i = std::distance(mMessages.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {MessageRole});
+    }
+}
+
+void TextAutoGenerateChatModel::replaceContent(const QString &content, const QByteArray &uuid)
+{
+    if (uuid.isEmpty()) {
+        return;
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        (*it).setContent(content);
+        const int i = std::distance(mMessages.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {MessageRole});
+    }
 }
 
 TextAutoGenerateMessage TextAutoGenerateChatModel::lastMessage() const

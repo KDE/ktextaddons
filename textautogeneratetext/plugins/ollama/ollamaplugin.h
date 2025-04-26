@@ -28,7 +28,7 @@ public:
     void setCurrentModel(const QString &newCurrentModel);
 
 protected:
-    void sendToLLM(const QString &message) override;
+    void sendToLLM(const QString &message, const QByteArray &uuid) override;
     void stop() override;
 
 private:

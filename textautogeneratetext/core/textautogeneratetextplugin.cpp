@@ -62,11 +62,12 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
 
-        msg.setAnswerUuid(msgLlm.uuid());
+        const QByteArray llmUuid = msgLlm.uuid();
+        msg.setAnswerUuid(llmUuid);
 
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
-        sendToLLM(str);
+        sendToLLM(str, llmUuid);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }

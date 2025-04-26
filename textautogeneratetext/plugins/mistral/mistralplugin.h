@@ -21,6 +21,6 @@ public:
     void setPrompt(const QString &text) override;
 
 protected:
-    void sendToLLM(const QString &message) override;
+    void sendToLLM(const QString &message, const QByteArray &uuid) override;
     void stop() override;
 };

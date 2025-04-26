@@ -28,7 +28,7 @@ void MistralPlugin::setPrompt(const QString &text)
     // TODO
 }
 
-void MistralPlugin::sendToLLM(const QString &message)
+void MistralPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
 {
     // TODO
 }
