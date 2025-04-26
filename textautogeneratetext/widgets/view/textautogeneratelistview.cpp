@@ -97,8 +97,10 @@ void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
 
 void TextAutogenerateListView::slotCopyMessage(const QModelIndex &index)
 {
-    qWarning() << " Copy message not implemented yet";
-    // TODO
+    const QString currentValue = index.data().toString();
+    QClipboard *clip = QApplication::clipboard();
+    clip->setText(currentValue, QClipboard::Clipboard);
+    clip->setText(currentValue, QClipboard::Selection);
 }
 
 void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
