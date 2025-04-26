@@ -87,6 +87,7 @@ void TextAutogenerateListViewDelegate::draw(QPainter *painter, QRect rect, const
 
 void TextAutogenerateListViewDelegate::drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option) const
 {
+    const bool isMouseOver = index.data(TextAutoGenerateChatModel::MouseHoverRole).toBool();
     const TextAutogenerateListViewDelegate::MessageLayout layout = doLayout(option, index);
     if (layout.dateSize.isValid()) {
         const QPen origPen = painter->pen();
@@ -109,11 +110,11 @@ void TextAutogenerateListViewDelegate::drawDateAndIcons(QPainter *painter, const
         // qDebug() << " dateTextRect" << dateTextRect;
         const int lineY = (layout.dateAreaRect.top() + layout.dateAreaRect.bottom()) / 2;
         painter->drawLine(layout.dateAreaRect.left(), lineY, dateTextRect.left() - margin, lineY);
-        painter->drawLine(dateTextRect.right() + margin, lineY, layout.dateAreaRect.right(), lineY);
+        const int iconSize = isMouseOver ? buttonIconSize(option) : 0;
+        painter->drawLine(dateTextRect.right() + margin, lineY, layout.dateAreaRect.right() - iconSize, lineY);
         painter->setPen(origPen);
     }
 
-    const bool isMouseOver = index.data(TextAutoGenerateChatModel::MouseHoverRole).toBool();
     if (isMouseOver) {
         // Draw the edited icon
         if (layout.editedIconRect.isValid()) {
@@ -170,9 +171,14 @@ void TextAutogenerateListViewDelegate::removeMessageCache(const QByteArray &uuid
     mSizeHintCache.remove(uuid);
 }
 
+int TextAutogenerateListViewDelegate::buttonIconSize(const QStyleOptionViewItem &option) const
+{
+    return option.widget->style()->pixelMetric(QStyle::PM_ButtonIconSize);
+}
+
 TextAutogenerateListViewDelegate::MessageLayout TextAutogenerateListViewDelegate::doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const int iconSize = option.widget->style()->pixelMetric(QStyle::PM_ButtonIconSize);
+    const int iconSize = buttonIconSize(option);
     TextAutogenerateListViewDelegate::MessageLayout layout;
     QRect usableRect = option.rect;
     const TextAutoGenerateMessage::Sender sender = index.data(TextAutoGenerateChatModel::SenderRole).value<TextAutoGenerateMessage::Sender>();

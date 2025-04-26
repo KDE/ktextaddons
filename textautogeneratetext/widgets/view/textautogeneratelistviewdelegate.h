@@ -78,6 +78,7 @@ private:
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     void drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    [[nodiscard]] int buttonIconSize(const QStyleOptionViewItem &option) const;
 
     const QIcon mEditedIcon;
     const QIcon mRemoveIcon;
