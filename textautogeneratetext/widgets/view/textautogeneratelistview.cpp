@@ -117,11 +117,8 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
                                       mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"),
                                       &menu);
         copyAction->setShortcut(QKeySequence::Copy);
-        connect(copyAction, &QAction::triggered, this, [index]() {
-            const QString currentValue = index.data().toString();
-            QClipboard *clip = QApplication::clipboard();
-            clip->setText(currentValue, QClipboard::Clipboard);
-            clip->setText(currentValue, QClipboard::Selection);
+        connect(copyAction, &QAction::triggered, this, [index, this]() {
+            slotCopyMessage(index);
         });
         menu.addAction(copyAction);
         menu.addSeparator();
