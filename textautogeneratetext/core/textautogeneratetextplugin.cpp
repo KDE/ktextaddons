@@ -45,6 +45,14 @@ void TextAutogenerateTextPlugin::setReady(bool newReady)
     d->isReady = newReady;
 }
 
+void TextAutogenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)
+{
+    if (ready()) {
+        const QByteArray llmUuid = TextAutogenerateManager::self()->textAutoGenerateChatModel()->editMessage(uuid, str);
+        sendToLLM(str, llmUuid);
+    }
+}
+
 void TextAutogenerateTextPlugin::sendMessage(const QString &str)
 {
     if (ready()) {

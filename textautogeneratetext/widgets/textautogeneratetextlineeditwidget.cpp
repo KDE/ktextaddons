@@ -29,7 +29,8 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
         const QString str = msg.trimmed();
         mSendMessage->setEnabled(!str.isEmpty());
         if (!str.isEmpty()) {
-            Q_EMIT editingFinished(str);
+            Q_EMIT editingFinished(str, mUuid);
+            clearLineEdit();
         }
     });
     mSendMessage->setEnabled(false);
@@ -39,17 +40,38 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
     });
 
     connect(mSendMessage, &QPushButton::clicked, this, [this]() {
-        Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text());
-        mTextAutogenerateTextLineEdit->clear();
+        Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text(), mUuid);
+        clearLineEdit();
     });
     connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::keyPressed, this, &TextAutogenerateTextLineEditWidget::keyPressed);
 }
 
 TextAutogenerateTextLineEditWidget::~TextAutogenerateTextLineEditWidget() = default;
 
+void TextAutogenerateTextLineEditWidget::clearLineEdit()
+{
+    mTextAutogenerateTextLineEdit->clear();
+    mUuid.clear();
+}
+
 QString TextAutogenerateTextLineEditWidget::text() const
 {
     return mTextAutogenerateTextLineEdit->text();
+}
+
+void TextAutogenerateTextLineEditWidget::setText(const QString &str)
+{
+    mTextAutogenerateTextLineEdit->setText(str);
+}
+
+QByteArray TextAutogenerateTextLineEditWidget::uuid() const
+{
+    return mUuid;
+}
+
+void TextAutogenerateTextLineEditWidget::setUuid(const QByteArray &newUuid)
+{
+    mUuid = newUuid;
 }
 
 #include "moc_textautogeneratetextlineeditwidget.cpp"

@@ -35,7 +35,6 @@ void TextAutogenerateTextLineEdit::keyPressEvent(QKeyEvent *e)
     if (key == Qt::Key_Return || key == Qt::Key_Enter) {
         if ((key == Qt::Key_Enter && (e->modifiers() == Qt::KeypadModifier)) || !e->modifiers()) {
             Q_EMIT sendMessage(text());
-            clear();
         } else {
             textCursor().insertBlock();
             ensureCursorVisible();

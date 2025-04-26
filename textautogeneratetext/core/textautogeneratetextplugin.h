@@ -37,6 +37,8 @@ public:
     void sendMessage(const QString &str);
     virtual void stop() = 0;
 
+    void editMessage(const QByteArray &uuid, const QString &str);
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);

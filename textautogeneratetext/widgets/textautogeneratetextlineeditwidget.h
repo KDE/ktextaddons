@@ -20,12 +20,18 @@ public:
 
     [[nodiscard]] QString text() const;
 
+    [[nodiscard]] QByteArray uuid() const;
+    void setUuid(const QByteArray &newUuid);
+
+    void setText(const QString &str);
 Q_SIGNALS:
-    void editingFinished(const QString &str);
+    void editingFinished(const QString &str, const QByteArray &uuid);
     void keyPressed(QKeyEvent *ev);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void clearLineEdit();
     TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;
     QPushButton *const mSendMessage;
+    QByteArray mUuid;
 };
 }

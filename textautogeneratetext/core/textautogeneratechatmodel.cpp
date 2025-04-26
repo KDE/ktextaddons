@@ -80,6 +80,41 @@ void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
     endInsertRows();
 }
 
+QByteArray TextAutoGenerateChatModel::editMessage(const QByteArray &uuid, const QString &str)
+{
+    if (uuid.isEmpty()) {
+        return {};
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        const int i = std::distance(mMessages.begin(), it);
+        const QByteArray answerUuid = it->answerUuid();
+
+        (*it).setContent(str);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {MessageRole});
+
+        auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
+            return msg.uuid() == answerUuid;
+        };
+        const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
+        if (answerIt != mMessages.end()) {
+            const int i = std::distance(mMessages.begin(), answerIt);
+            (*answerIt).setInProgress(true);
+            (*answerIt).setContent({});
+            emitChanged(i, {MessageRole | FinishedRole});
+        }
+        return answerUuid;
+    }
+    return {};
+}
+
 void TextAutoGenerateChatModel::changeInProgress(const QByteArray &uuid, bool inProgress)
 {
     if (uuid.isEmpty()) {

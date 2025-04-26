@@ -60,7 +60,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::clearModel, this, &TextAutogenerateWidget::slotClearModel);
 
-    connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, &TextAutogenerateWidget::slotEditingFinished);
+    // TODO readd connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, &TextAutogenerateWidget::slotEditingFinished);
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
@@ -152,9 +152,13 @@ void TextAutogenerateWidget::slotConfigureChanged()
     loadEngine();
 }
 
-void TextAutogenerateWidget::slotEditingFinished(const QString &str)
+void TextAutogenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
 {
-    mTextAutogeneratePlugin->sendMessage(str);
+    if (uuid.isEmpty()) {
+        mTextAutogeneratePlugin->sendMessage(str);
+    } else {
+        mTextAutogeneratePlugin->editMessage(uuid, str);
+    }
 }
 
 void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)
@@ -171,7 +175,10 @@ void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 
 void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
 {
-    // TODO
+    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    const QString messageStr = index.data(TextAutoGenerateChatModel::MessageRole).toString();
+    mTextAutogenerateTextLineEditWidget->setUuid(uuid);
+    mTextAutogenerateTextLineEditWidget->setText(messageStr);
 }
 
 #include "moc_textautogeneratewidget.cpp"
