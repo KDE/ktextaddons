@@ -30,8 +30,6 @@ bool TextAutoGenerateChatSortFilterProxyModel::filterAcceptsRow(int source_row, 
         return !archived;
     }
     }
-
-    // TODO implement it
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
