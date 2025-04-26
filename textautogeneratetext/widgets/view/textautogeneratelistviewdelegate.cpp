@@ -47,9 +47,9 @@ void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         const bool isUser = (sender == TextAutoGenerateMessage::Sender::User);
         painter->setPen(QPen(Qt::NoPen));
         if (isUser) {
-            painter->setBrush(QBrush(mListView->palette().color(QPalette::Inactive, QPalette::Midlight)).color());
+            painter->setBrush(QBrush(option.palette.color(QPalette::Inactive, QPalette::Midlight)));
         } else {
-            painter->setBrush(QBrush(mListView->palette().color(QPalette::Active, QPalette::Mid)).color());
+            painter->setBrush(QBrush(option.palette.color(QPalette::Active, QPalette::Mid)));
         }
         painter->setRenderHint(QPainter::Antialiasing);
         painter->drawRoundedRect(
