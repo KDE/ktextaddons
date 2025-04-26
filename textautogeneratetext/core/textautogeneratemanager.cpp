@@ -85,6 +85,16 @@ void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> 
     });
 }
 
+bool TextAutogenerateManager::showArchived() const
+{
+    return mShowArchived;
+}
+
+void TextAutogenerateManager::setShowArchived(bool newShowArchived)
+{
+    mShowArchived = newShowArchived;
+}
+
 void TextAutogenerateManager::saveHistory()
 {
     const QList<TextAutoGenerateMessage> messages = mTextAutoGenerateChatModel->messages();

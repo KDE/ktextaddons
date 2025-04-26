@@ -31,6 +31,9 @@ public:
     virtual void loadHistory();
     virtual void saveHistory();
 
+    [[nodiscard]] bool showArchived() const;
+    void setShowArchived(bool newShowArchived);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
 
