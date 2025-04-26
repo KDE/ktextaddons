@@ -60,7 +60,22 @@ void TextAutogenerateManager::loadHistory()
 
         messages.append(std::move(message));
     }
-    std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+    filterListMessages(messages, mShowArchived);
+    mTextAutoGenerateChatModel->setMessages(messages);
+}
+
+void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const
+{
+    std::sort(messages.begin(), messages.end(), [archived](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+        if (archived) {
+            if (!left.archived() || !right.archived()) {
+                return false;
+            }
+        } else {
+            if (left.archived() || right.archived()) {
+                return false;
+            }
+        }
         if (left.dateTime() == right.dateTime()) {
             if (left.sender() == TextAutoGenerateMessage::Sender::User) {
                 return true;
@@ -68,7 +83,6 @@ void TextAutogenerateManager::loadHistory()
         }
         return left.dateTime() < right.dateTime();
     });
-    mTextAutoGenerateChatModel->setMessages(messages);
 }
 
 void TextAutogenerateManager::saveHistory()

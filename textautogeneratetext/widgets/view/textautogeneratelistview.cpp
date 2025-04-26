@@ -5,6 +5,7 @@
 */
 #include "textautogeneratelistview.h"
 #include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratechatsortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
 #include <KLocalizedString>
@@ -26,8 +27,13 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     setFocusPolicy(Qt::NoFocus);
     scrollToBottom();
     setMouseTracking(true);
+#if 0
+    auto filterProxyModel = new TextAutoGenerateChatSortFilterProxyModel(this);
+    filterProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
+    setModel(filterProxyModel);
+#else
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
-
+#endif
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateChatModel::conversationCleared, this, [this]() {
         mDelegate->clearCache();
     });

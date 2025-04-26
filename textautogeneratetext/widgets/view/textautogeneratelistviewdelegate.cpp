@@ -314,6 +314,7 @@ QTextDocument *TextAutogenerateListViewDelegate::documentForIndex(const QModelIn
 {
     Q_ASSERT(index.isValid());
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    qDebug() << " index " << index;
     Q_ASSERT(!uuid.isEmpty());
     auto it = mDocumentCache.find(uuid);
     if (it != mDocumentCache.end()) {

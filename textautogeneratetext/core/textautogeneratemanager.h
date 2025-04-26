@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <KSharedConfig>
 #include <QObject>
@@ -35,6 +36,8 @@ Q_SIGNALS:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const;
     TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
+    bool mShowArchived = false;
 };
 }
