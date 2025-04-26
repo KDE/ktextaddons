@@ -44,8 +44,6 @@ public:
 
     void addMessage(const TextAutoGenerateMessage &msg);
 
-    [[nodiscard]] TextAutoGenerateMessage lastMessage() const;
-
     void removeDiscussion(const QByteArray &uuid);
 
     void replaceContent(const QByteArray &uuid, const QString &content);

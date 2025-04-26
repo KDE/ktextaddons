@@ -120,14 +120,6 @@ void TextAutoGenerateChatModel::replaceContent(const QByteArray &uuid, const QSt
     }
 }
 
-TextAutoGenerateMessage TextAutoGenerateChatModel::lastMessage() const
-{
-    if (mMessages.isEmpty()) {
-        return TextAutoGenerateMessage();
-    }
-    return mMessages.last();
-}
-
 void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
