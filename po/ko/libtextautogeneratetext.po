@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-25 00:41+0000\n"
+"POT-Creation-Date: 2025-04-26 00:41+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -155,20 +155,42 @@ msgctxt "@action"
 msgid "Remove…"
 msgstr "삭제…"
 
-#: widgets/view/textautogeneratelistview.cpp:63
+#: widgets/view/textautogeneratelistview.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "선택 영역 복사"
 
-#: widgets/view/textautogeneratelistview.cpp:63
+#: widgets/view/textautogeneratelistview.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratelistview.cpp:74
+#: widgets/view/textautogeneratelistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "모두 선택"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove…"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "삭제…"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:296
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit..."
+msgstr ""
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:300
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
+msgctxt "@info:tooltip"
+msgid "Copy"
+msgstr "복사"
