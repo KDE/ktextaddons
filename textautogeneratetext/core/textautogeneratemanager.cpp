@@ -67,6 +67,7 @@ void TextAutogenerateManager::loadHistory()
 void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const
 {
     std::sort(messages.begin(), messages.end(), [archived](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+        /*
         if (archived) {
             if (!left.archived() || !right.archived()) {
                 return false;
@@ -76,6 +77,7 @@ void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> 
                 return false;
             }
         }
+        */
         if (left.dateTime() == right.dateTime()) {
             if (left.sender() == TextAutoGenerateMessage::Sender::User) {
                 return true;
