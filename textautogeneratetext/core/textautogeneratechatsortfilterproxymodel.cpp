@@ -17,6 +17,20 @@ TextAutoGenerateChatSortFilterProxyModel::~TextAutoGenerateChatSortFilterProxyMo
 
 bool TextAutoGenerateChatSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
+    switch (mMessageType) {
+    case MessageType::Unknown:
+    case MessageType::All:
+        return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
+    case MessageType::Archived: {
+        const bool archived = sourceModel()->index(source_row, 0).data(TextAutoGenerateChatModel::ArchivedRole).toBool();
+        return archived;
+    }
+    case MessageType::Active: {
+        const bool archived = sourceModel()->index(source_row, 0).data(TextAutoGenerateChatModel::ArchivedRole).toBool();
+        return !archived;
+    }
+    }
+
     // TODO implement it
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
