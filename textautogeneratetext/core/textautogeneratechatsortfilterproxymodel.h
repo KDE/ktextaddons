@@ -17,12 +17,19 @@ public:
         Unknown,
         All,
         Archived,
+        Active,
     };
 
     explicit TextAutoGenerateChatSortFilterProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateChatSortFilterProxyModel() override;
 
+    [[nodiscard]] MessageType messageType() const;
+    void setMessageType(MessageType newMessageType);
+
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+
+private:
+    MessageType mMessageType = MessageType::Unknown;
 };
 }

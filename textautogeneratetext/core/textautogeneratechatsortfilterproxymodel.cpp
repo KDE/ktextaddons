@@ -21,4 +21,17 @@ bool TextAutoGenerateChatSortFilterProxyModel::filterAcceptsRow(int source_row, 
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
+TextAutoGenerateChatSortFilterProxyModel::MessageType TextAutoGenerateChatSortFilterProxyModel::messageType() const
+{
+    return mMessageType;
+}
+
+void TextAutoGenerateChatSortFilterProxyModel::setMessageType(MessageType newMessageType)
+{
+    if (mMessageType != newMessageType) {
+        mMessageType = newMessageType;
+        invalidateFilter();
+    }
+}
+
 #include "moc_textautogeneratechatsortfilterproxymodel.cpp"
