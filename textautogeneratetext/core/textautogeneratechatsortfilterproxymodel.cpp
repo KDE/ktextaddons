@@ -11,6 +11,7 @@ using namespace TextAutogenerateText;
 TextAutoGenerateChatSortFilterProxyModel::TextAutoGenerateChatSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
+    setFilterRole(TextAutoGenerateChatModel::DateTimeRole);
 }
 
 TextAutoGenerateChatSortFilterProxyModel::~TextAutoGenerateChatSortFilterProxyModel() = default;
