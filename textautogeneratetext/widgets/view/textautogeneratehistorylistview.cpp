@@ -20,7 +20,6 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
 {
     setDragEnabled(false);
     setUniformItemSizes(false);
-    // Add delegate
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
     mHistoryProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
