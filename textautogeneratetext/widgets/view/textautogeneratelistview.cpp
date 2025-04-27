@@ -8,6 +8,7 @@
 #include "core/textautogeneratechatsortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
+#include "textautogenerateselectedmessagebackgroundanimation.h"
 #include <KLocalizedString>
 #include <QApplication>
 #include <QClipboard>
@@ -283,18 +284,16 @@ void TextAutogenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)
 {
-    /*
-            auto animation = new SelectedMessageBackgroundAnimation(this);
-            animation->setModelIndex(index);
-            connect(animation, &SelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
-                mMessageListDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
-                update(animation->modelIndex());
-            });
-            connect(animation, &SelectedMessageBackgroundAnimation::animationFinished, this, [this, animation]() {
-                mMessageListDelegate->removeNeedUpdateIndexBackground(animation->modelIndex());
-                update(animation->modelIndex());
-            });
-            animation->start();
-        */
+    auto animation = new TextAutogenerateSelectedMessageBackgroundAnimation(this);
+    animation->setModelIndex(index);
+    connect(animation, &TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
+        mDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
+        update(animation->modelIndex());
+    });
+    connect(animation, &TextAutogenerateSelectedMessageBackgroundAnimation::animationFinished, this, [this, animation]() {
+        mDelegate->removeNeedUpdateIndexBackground(animation->modelIndex());
+        update(animation->modelIndex());
+    });
+    animation->start();
 }
 #include "moc_textautogeneratelistview.cpp"

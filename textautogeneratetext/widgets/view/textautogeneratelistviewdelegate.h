@@ -39,6 +39,8 @@ public:
     [[nodiscard]] bool hasSelection() const;
     [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
 
+    void needUpdateIndexBackground(const QPersistentModelIndex &index, const QColor &color);
+    void removeNeedUpdateIndexBackground(const QPersistentModelIndex &index);
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
     void editMessage(const QModelIndex &index);
@@ -87,7 +89,11 @@ private:
     // Cache SizeHint value
     // We need to clear it when we resize widget.
     mutable LRUCache<QByteArray, QSize> mSizeHintCache;
-
+    struct IndexBackgroundColor {
+        QPersistentModelIndex index;
+        QColor color;
+    };
+    QList<IndexBackgroundColor> mIndexBackgroundColorList;
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
     QAbstractItemView *const mListView;
     TextAutogenerateListViewTextSelection *const mTextSelection;

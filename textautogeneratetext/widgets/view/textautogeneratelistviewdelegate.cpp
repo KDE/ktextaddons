@@ -508,4 +508,21 @@ bool TextAutogenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
     return false;
 }
 
+void TextAutogenerateListViewDelegate::needUpdateIndexBackground(const QPersistentModelIndex &index, const QColor &color)
+{
+    removeNeedUpdateIndexBackground(index);
+    const IndexBackgroundColor back{.index = index, .color = color};
+    mIndexBackgroundColorList.append(std::move(back));
+}
+
+void TextAutogenerateListViewDelegate::removeNeedUpdateIndexBackground(const QPersistentModelIndex &index)
+{
+    auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [index](const IndexBackgroundColor &key) {
+        return key.index == index;
+    });
+    if (it != mIndexBackgroundColorList.cend()) {
+        mIndexBackgroundColorList.erase(it);
+    }
+}
+
 #include "moc_textautogeneratelistviewdelegate.cpp"
