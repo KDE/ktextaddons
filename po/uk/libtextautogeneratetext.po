@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:41+0000\n"
-"PO-Revision-Date: 2025-04-19 18:56+0300\n"
+"POT-Creation-Date: 2025-04-27 00:41+0000\n"
+"PO-Revision-Date: 2025-04-26 15:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -156,42 +156,38 @@ msgctxt "@action"
 msgid "Remove…"
 msgstr "Вилучити…"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Копіювати позначене"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistview.cpp:120
+#: widgets/view/textautogeneratelistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Позначити все"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:320
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "Вилучити…"
+msgstr "Вилучити"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:296
+#: widgets/view/textautogeneratelistviewdelegate.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "Змінити…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:328
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копіювати"

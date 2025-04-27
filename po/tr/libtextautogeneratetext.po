@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:41+0000\n"
-"PO-Revision-Date: 2025-04-21 11:07+0300\n"
+"POT-Creation-Date: 2025-04-27 00:41+0000\n"
+"PO-Revision-Date: 2025-04-26 19:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -155,42 +155,38 @@ msgctxt "@action"
 msgid "Remove…"
 msgstr "Kaldır…"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Seçimi Kopyala"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: widgets/view/textautogeneratelistview.cpp:120
+#: widgets/view/textautogeneratelistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:320
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "Kaldır…"
+msgstr "Kaldır"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:296
+#: widgets/view/textautogeneratelistviewdelegate.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "Düzenle…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:328
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopyala"

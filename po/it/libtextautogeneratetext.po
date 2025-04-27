@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:41+0000\n"
+"POT-Creation-Date: 2025-04-27 00:41+0000\n"
 "PO-Revision-Date: 2025-04-05 17:47+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -156,25 +156,25 @@ msgctxt "@action"
 msgid "Remove…"
 msgstr "Rimuovi…"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:120
+#: widgets/view/textautogeneratelistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:292
+#: widgets/view/textautogeneratelistviewdelegate.cpp:320
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove…"
@@ -182,13 +182,13 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Rimuovi…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:296
+#: widgets/view/textautogeneratelistviewdelegate.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:300
+#: widgets/view/textautogeneratelistviewdelegate.cpp:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"

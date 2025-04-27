@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-26 00:41+0000\n"
-"PO-Revision-Date: 2025-04-19 16:18+0200\n"
+"POT-Creation-Date: 2025-04-27 00:41+0000\n"
+"PO-Revision-Date: 2025-04-26 16:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
@@ -155,42 +155,38 @@ msgctxt "@action"
 msgid "Remove…"
 msgstr "Verwijderen…"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Selectie kopiëren"
 
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratelistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: widgets/view/textautogeneratelistview.cpp:120
+#: widgets/view/textautogeneratelistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:320
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "Verwijderen…"
+msgstr "Verwijderen"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:296
+#: widgets/view/textautogeneratelistviewdelegate.cpp:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "Bewerken..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:328
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiëren"
