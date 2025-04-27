@@ -23,6 +23,7 @@ bool TextAutogenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
                                                         const QStyleOptionViewItem &option,
                                                         const QModelIndex &index)
 {
+    Q_UNUSED(option);
     if (!index.isValid()) {
         return false;
     }
