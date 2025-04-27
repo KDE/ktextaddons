@@ -15,12 +15,10 @@ TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateChatModel(new TextAutoGenerateChatModel(this))
 {
-    loadHistory();
 }
 
 TextAutogenerateManager::~TextAutogenerateManager()
 {
-    saveHistory();
 }
 
 TextAutogenerateManager *TextAutogenerateManager::self()

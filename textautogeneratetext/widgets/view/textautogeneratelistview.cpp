@@ -27,6 +27,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     setFocusPolicy(Qt::NoFocus);
     scrollToBottom();
     setMouseTracking(true);
+    TextAutogenerateManager::self()->loadHistory();
 #if 0
     auto filterProxyModel = new TextAutoGenerateChatSortFilterProxyModel(this);
     filterProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
@@ -78,6 +79,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 
 TextAutogenerateListView::~TextAutogenerateListView()
 {
+    TextAutogenerateManager::self()->saveHistory();
     // TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
 }
 
