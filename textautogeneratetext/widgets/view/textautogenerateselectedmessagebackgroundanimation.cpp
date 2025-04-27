@@ -7,7 +7,7 @@
 #include "textautogenerateselectedmessagebackgroundanimation.h"
 
 #include <QPropertyAnimation>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutogenerateText;
 TextAutogenerateSelectedMessageBackgroundAnimation::TextAutogenerateSelectedMessageBackgroundAnimation(QObject *parent)
     : QObject{parent}
