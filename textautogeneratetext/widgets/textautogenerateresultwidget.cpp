@@ -21,6 +21,7 @@ TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
     mTextAutogenerateListView->setObjectName(QStringLiteral("mTextAutogenerateListView"));
     mainLayout->addWidget(mTextAutogenerateListView);
     connect(mTextAutogenerateListView, &TextAutogenerateListView::editMessage, this, &TextAutogenerateResultWidget::editMessage);
+    connect(this, &TextAutogenerateResultWidget::goToDiscussion, mTextAutogenerateListView, &TextAutogenerateListView::slotGoToDiscussion);
 }
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;

@@ -25,9 +25,21 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
 
     mHistoryProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
     setModel(mHistoryProxyModel);
+
+    connect(this, &TextAutogenerateHistoryListView::clicked, this, &TextAutogenerateHistoryListView::slotClicked);
 }
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
+
+void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)
+{
+    if (idx.isValid()) {
+        const QByteArray uuid = idx.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+        if (!uuid.isEmpty()) {
+            Q_EMIT goToDiscussion(uuid);
+        }
+    }
+}
 
 void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {

@@ -49,6 +49,7 @@ public:
     void replaceContent(const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &uuid, bool inProgress);
     [[nodiscard]] QByteArray editMessage(const QByteArray &uuid, const QString &str);
+    [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
 Q_SIGNALS:
     void conversationCleared();
 

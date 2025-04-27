@@ -20,10 +20,14 @@ public:
 
     void slotSearchTextChanged(const QString &str);
 
+Q_SIGNALS:
+    void goToDiscussion(const QByteArray &uuid);
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotClicked(const QModelIndex &idx);
     TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
 };
 }

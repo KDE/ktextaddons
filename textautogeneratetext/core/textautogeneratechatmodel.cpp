@@ -213,4 +213,17 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
     return QAbstractListModel::setData(idx, value, role);
 }
 
+QModelIndex TextAutoGenerateChatModel::indexForUuid(const QByteArray &uuid) const
+{
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it == mMessages.end()) {
+        return {};
+    }
+    const QModelIndex idx = createIndex(std::distance(mMessages.begin(), it), 0);
+    return idx;
+}
+
 #include "moc_textautogeneratechatmodel.cpp"

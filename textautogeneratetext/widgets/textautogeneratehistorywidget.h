@@ -17,9 +17,10 @@ public:
     explicit TextAutogenerateHistoryWidget(QWidget *parent = nullptr);
     ~TextAutogenerateHistoryWidget() override;
 
+Q_SIGNALS:
+    void goToDiscussion(const QByteArray &uuid);
+
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void saveHistory();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadHistory();
     TextAutogenerateHistoryListView *const mTextAutogenerateHistoryListView;
     QLineEdit *const mSearchLineEdit;
 };

@@ -21,6 +21,8 @@ public:
 
     void handleKeyPressEvent(QKeyEvent *ev);
 
+    void slotGoToDiscussion(const QByteArray &uuid);
+
 protected:
     void resizeEvent(QResizeEvent *ev) override;
 

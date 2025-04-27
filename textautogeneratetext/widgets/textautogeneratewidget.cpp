@@ -64,6 +64,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
+    connect(mHistoryWidget, &TextAutogenerateHistoryWidget::goToDiscussion, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::goToDiscussion);
     loadEngine();
     readConfig();
 }

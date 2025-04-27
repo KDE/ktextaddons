@@ -267,4 +267,13 @@ void TextAutogenerateListView::handleKeyPressEvent(QKeyEvent *ev)
     }
 }
 
+void TextAutogenerateListView::slotGoToDiscussion(const QByteArray &uuid)
+{
+    const QModelIndex idx = TextAutogenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
+    if (idx.isValid()) {
+        scrollTo(idx);
+    }
+    // TODO
+}
+
 #include "moc_textautogeneratelistview.cpp"

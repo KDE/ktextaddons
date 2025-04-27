@@ -30,18 +30,9 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
     mainLayout->addWidget(mTextAutogenerateHistoryListView);
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutogenerateHistoryListView, &TextAutogenerateHistoryListView::slotSearchTextChanged);
+    connect(mTextAutogenerateHistoryListView, &TextAutogenerateHistoryListView::goToDiscussion, this, &TextAutogenerateHistoryWidget::goToDiscussion);
 }
 
 TextAutogenerateHistoryWidget::~TextAutogenerateHistoryWidget() = default;
-
-void TextAutogenerateHistoryWidget::loadHistory()
-{
-    // TODO
-}
-
-void TextAutogenerateHistoryWidget::saveHistory()
-{
-    // TODO
-}
 
 #include "moc_textautogeneratehistorywidget.cpp"

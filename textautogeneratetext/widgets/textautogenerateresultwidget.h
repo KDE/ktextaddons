@@ -26,6 +26,7 @@ public:
 
 Q_SIGNALS:
     void editMessage(const QModelIndex &index);
+    void goToDiscussion(const QByteArray &uuid);
 
 private:
     TextAutogenerateListView *const mTextAutogenerateListView;
