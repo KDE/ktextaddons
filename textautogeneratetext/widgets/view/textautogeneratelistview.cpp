@@ -284,9 +284,7 @@ void TextAutogenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)
 {
     /*
-        auto messageModel = qobject_cast<MessagesModel *>(model());
-        if (messageModel) {
-            auto animation = new SelectedMessageBackgroundAnimation(messageModel, this);
+            auto animation = new SelectedMessageBackgroundAnimation(this);
             animation->setModelIndex(index);
             connect(animation, &SelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
                 mMessageListDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
@@ -297,10 +295,6 @@ void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QMode
                 update(animation->modelIndex());
             });
             animation->start();
-
-        } else {
-            qCWarning(RUQOLAWIDGETS_LOG) << " message model empty";
-        }
         */
 }
 #include "moc_textautogeneratelistview.cpp"
