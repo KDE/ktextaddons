@@ -41,10 +41,10 @@ void TextAutogenerateSelectedMessageBackgroundAnimation::setBackgroundColor(cons
 
 void TextAutogenerateSelectedMessageBackgroundAnimation::start()
 {
-    /*
     auto animation = new QPropertyAnimation(this, "backgroundColor"_ba, this);
     animation->setDuration(2000);
-    const auto color = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color();
+    const auto color = QColor(Qt::red); // TODO
+    // const auto color = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color();
     animation->setStartValue(color);
     animation->setEndValue(QColor(Qt::transparent));
     animation->setEasingCurve(QEasingCurve::InOutQuad);
@@ -53,7 +53,6 @@ void TextAutogenerateSelectedMessageBackgroundAnimation::start()
         Q_EMIT animationFinished();
         deleteLater();
     });
-    */
 }
 
 #include "moc_textautogenerateselectedmessagebackgroundanimation.cpp"
