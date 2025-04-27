@@ -275,4 +275,32 @@ void TextAutogenerateListView::slotGoToDiscussion(const QByteArray &uuid)
     }
 }
 
+void TextAutogenerateListView::scrollTo(const QModelIndex &index, QAbstractItemView::ScrollHint hint)
+{
+    QListView::scrollTo(index, hint);
+    addSelectedMessageBackgroundAnimation(index);
+}
+
+void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)
+{
+    /*
+        auto messageModel = qobject_cast<MessagesModel *>(model());
+        if (messageModel) {
+            auto animation = new SelectedMessageBackgroundAnimation(messageModel, this);
+            animation->setModelIndex(index);
+            connect(animation, &SelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
+                mMessageListDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
+                update(animation->modelIndex());
+            });
+            connect(animation, &SelectedMessageBackgroundAnimation::animationFinished, this, [this, animation]() {
+                mMessageListDelegate->removeNeedUpdateIndexBackground(animation->modelIndex());
+                update(animation->modelIndex());
+            });
+            animation->start();
+
+        } else {
+            qCWarning(RUQOLAWIDGETS_LOG) << " message model empty";
+        }
+        */
+}
 #include "moc_textautogeneratelistview.cpp"

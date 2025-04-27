@@ -23,6 +23,8 @@ public:
 
     void slotGoToDiscussion(const QByteArray &uuid);
 
+    void scrollTo(const QModelIndex &index, ScrollHint hint = EnsureVisible) override;
+
 protected:
     void resizeEvent(QResizeEvent *ev) override;
 
@@ -48,6 +50,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT virtual bool mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCopyMessage(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void addSelectedMessageBackgroundAnimation(const QModelIndex &index);
 
     bool mAtBottom = true;
     QPoint mPressedPosition;
