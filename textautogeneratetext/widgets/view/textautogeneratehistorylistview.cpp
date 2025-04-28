@@ -66,10 +66,10 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         menu.addAction(removeHistory);
 
         const bool archived = index.data(TextAutoGenerateChatModel::ArchivedRole).toBool();
+        menu.addSeparator();
         if (archived) {
-            menu.addSeparator();
-            auto restoreArchived = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Restore"), &menu);
-            connect(restoreArchived, &QAction::triggered, this, [index]() {
+            auto restoreArchivedAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Restore"), &menu);
+            connect(restoreArchivedAction, &QAction::triggered, this, [index]() {
                 /*
                 const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
                 if (!uuid.isEmpty()) {
@@ -77,7 +77,21 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                 }
                 */
             });
-            menu.addAction(restoreArchived);
+            menu.addAction(restoreArchivedAction);
+        } else {
+#if 0
+            auto archiveAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Restore"), &menu);
+            connect(archiveAction, &QAction::triggered, this, [index]() {
+                /*
+                const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+                if (!uuid.isEmpty()) {
+                    TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                }
+                */
+            });
+            menu.addAction(archiveAction);
+#endif
+            // TODO
         }
     }
     if (!menu.actions().isEmpty()) {
