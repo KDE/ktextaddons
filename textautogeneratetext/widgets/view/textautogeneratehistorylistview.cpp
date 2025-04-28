@@ -68,7 +68,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         const bool archived = index.data(TextAutoGenerateChatModel::ArchivedRole).toBool();
         if (archived) {
             menu.addSeparator();
-            auto restoreArchived = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
+            auto restoreArchived = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Restore"), &menu);
             connect(restoreArchived, &QAction::triggered, this, [index]() {
                 /*
                 const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
