@@ -51,7 +51,7 @@ bool OpenAIClient::showConfigureDialog(QWidget *parentWidget)
 
 QString OpenAIClient::webSite() const
 {
-    return QStringLiteral("https://chat.openai.ai/");
+    return QStringLiteral("https://openai.com/");
 }
 
 QString OpenAIClient::modelName() const
