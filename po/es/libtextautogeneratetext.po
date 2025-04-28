@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-27 00:41+0000\n"
+"POT-Creation-Date: 2025-04-28 00:40+0000\n"
 "PO-Revision-Date: 2025-04-26 11:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -145,49 +145,49 @@ msgstr "Introduzca un mensaje"
 msgid "Send"
 msgstr "Enviar"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:37
+#: widgets/view/textautogeneratehistorylistview.cpp:48
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Modificar…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:48
+#: widgets/view/textautogeneratehistorylistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Eliminar…"
 
-#: widgets/view/textautogeneratelistview.cpp:111
+#: widgets/view/textautogeneratelistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copiar selección"
 
-#: widgets/view/textautogeneratelistview.cpp:111
+#: widgets/view/textautogeneratelistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copiar"
 
-#: widgets/view/textautogeneratelistview.cpp:119
+#: widgets/view/textautogeneratelistview.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:320
+#: widgets/view/textautogeneratelistviewdelegate.cpp:333
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Eliminar"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:324
+#: widgets/view/textautogeneratelistviewdelegate.cpp:337
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Editar…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:328
+#: widgets/view/textautogeneratelistviewdelegate.cpp:341
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
