@@ -70,6 +70,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogeneratetextcontext.h
     core/textautogeneratetextcontext.cpp
 
+
+    core/textautogeneratehistorymodel.h
+    core/textautogeneratehistorymodel.cpp
     core/textautogeneratehistorysortfilterproxymodel.h
     core/textautogeneratehistorysortfilterproxymodel.cpp
 
