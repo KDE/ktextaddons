@@ -13,7 +13,7 @@ using namespace TextAutogenerateText;
 TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *parent)
     : QWidget{parent}
     , mTextAutogenerateTextLineEdit(new TextAutogenerateTextLineEdit(this))
-    , mSendMessage(new QPushButton(i18n("Send"), this))
+    , mSendMessage(new QPushButton(QIcon::fromTheme(QStringLiteral("document-send")), i18n("Send"), this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
