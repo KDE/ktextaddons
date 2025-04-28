@@ -64,6 +64,21 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             }
         });
         menu.addAction(removeHistory);
+
+        const bool archived = index.data(TextAutoGenerateChatModel::ArchivedRole).toBool();
+        if (archived) {
+            menu.addSeparator();
+            auto restoreArchived = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
+            connect(restoreArchived, &QAction::triggered, this, [index]() {
+                /*
+                const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+                if (!uuid.isEmpty()) {
+                    TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                }
+                */
+            });
+            menu.addAction(restoreArchived);
+        }
     }
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());
