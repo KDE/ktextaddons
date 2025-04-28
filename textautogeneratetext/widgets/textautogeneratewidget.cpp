@@ -82,17 +82,12 @@ TextAutogenerateWidget::~TextAutogenerateWidget()
 
 void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
 {
-    /*
     const int key = ev->key();
     if (key == Qt::Key_Escape) {
-    } else if (ev->matches(QKeySequence::Copy) && mMessageLineWidget->messageTextEdit()->textCursor().selectedText().isEmpty()) {
-        mMessageListView->copyMessageToClipboard();
-        ev->accept();
+        // TODO
     } else {
-        mMessageListView->handleKeyPressEvent(ev);
+        mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
     }
-    */
-    mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
 }
 
 void TextAutogenerateWidget::slotClearModel()
