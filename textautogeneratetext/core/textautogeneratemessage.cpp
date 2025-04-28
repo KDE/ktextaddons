@@ -26,6 +26,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
     d.space() << "topic:" << t.topic();
     d.space() << "mouseHover:" << t.mouseHover();
     d.space() << "archived:" << t.archived();
+    d.space() << "editingMode:" << t.editingMode();
     return d;
 }
 
@@ -82,7 +83,8 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
     return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.topic() == mTopic && other.mArchived == mArchived;
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.topic() == mTopic && other.mArchived == mArchived
+        && other.editingMode() == mEditingMode;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -143,6 +145,16 @@ bool TextAutoGenerateMessage::archived() const
 void TextAutoGenerateMessage::setArchived(bool newArchived)
 {
     mArchived = newArchived;
+}
+
+bool TextAutoGenerateMessage::editingMode() const
+{
+    return mEditingMode;
+}
+
+void TextAutoGenerateMessage::setEditingMode(bool newEditingMode)
+{
+    mEditingMode = newEditingMode;
 }
 
 #include "moc_textautogeneratemessage.cpp"

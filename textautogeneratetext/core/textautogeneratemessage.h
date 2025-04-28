@@ -63,6 +63,9 @@ public:
     [[nodiscard]] bool archived() const;
     void setArchived(bool newArchived);
 
+    [[nodiscard]] bool editingMode() const;
+    void setEditingMode(bool newEditingMode);
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
@@ -75,6 +78,7 @@ private:
     bool mInProgress = false;
     bool mMouseHover = false;
     bool mArchived = false;
+    bool mEditingMode = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);
