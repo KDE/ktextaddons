@@ -6,6 +6,7 @@
 
 #include "textautogeneratehistorylistview.h"
 #include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratehistorymodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
@@ -22,7 +23,9 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     setUniformItemSizes(false);
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
-    mHistoryProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
+    auto historyModel = new TextAutoGenerateHistoryModel(this);
+    historyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
+    mHistoryProxyModel->setSourceModel(historyModel);
     setModel(mHistoryProxyModel);
 
     connect(this, &TextAutogenerateHistoryListView::clicked, this, &TextAutogenerateHistoryListView::slotClicked);
