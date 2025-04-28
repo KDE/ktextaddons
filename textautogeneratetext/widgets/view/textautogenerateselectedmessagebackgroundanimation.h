@@ -5,13 +5,13 @@
 */
 
 #pragma once
-
+#include "textautogeneratetext_private_export.h"
 #include <QColor>
 #include <QObject>
 #include <QPersistentModelIndex>
 namespace TextAutogenerateText
 {
-class TextAutogenerateSelectedMessageBackgroundAnimation : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateSelectedMessageBackgroundAnimation : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor NOTIFY backgroundColorChanged)
