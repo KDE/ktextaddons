@@ -28,6 +28,7 @@ public:
         TopicRole,
         MouseHoverRole,
         ArchivedRole,
+        EditingRole,
     };
 
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);

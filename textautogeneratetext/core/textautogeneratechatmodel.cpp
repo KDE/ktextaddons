@@ -49,6 +49,8 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return message.mouseHover();
     case ArchivedRole:
         return message.archived();
+    case EditingRole:
+        return message.editingMode();
     }
     return {};
 }
@@ -203,11 +205,16 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
         msg.setMouseHover(value.toBool());
         Q_EMIT dataChanged(idx, idx, {ChatRoles::MouseHoverRole});
         return true;
+    case ChatRoles::EditingRole:
+        msg.setEditingMode(value.toBool());
+        Q_EMIT dataChanged(idx, idx, {ChatRoles::EditingRole});
+        return true;
     case ChatRoles::MessageRole:
     case ChatRoles::SenderRole:
     case ChatRoles::FinishedRole:
     case ChatRoles::DateTimeRole:
     case ChatRoles::UuidRole:
+    case ChatRoles::ArchivedRole:
         return false;
     }
     return QAbstractListModel::setData(idx, value, role);
