@@ -60,7 +60,9 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::clearModel, this, &TextAutogenerateWidget::slotClearModel);
 
-    // TODO readd connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, &TextAutogenerateWidget::slotEditingFinished);
+    connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, [this](const QString &str) {
+        slotEditingFinished(str, {});
+    });
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
