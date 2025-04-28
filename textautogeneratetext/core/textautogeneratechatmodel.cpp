@@ -226,4 +226,12 @@ QModelIndex TextAutoGenerateChatModel::indexForUuid(const QByteArray &uuid) cons
     return idx;
 }
 
+Qt::ItemFlags TextAutoGenerateChatModel::flags(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return Qt::NoItemFlags;
+
+    return Qt::ItemIsEditable | QAbstractListModel::flags(index);
+}
+
 #include "moc_textautogeneratechatmodel.cpp"

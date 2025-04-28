@@ -8,6 +8,7 @@
 #include "core/textautogeneratechatmodel.h"
 #include <QAbstractItemView>
 #include <QHelpEvent>
+#include <QLineEdit>
 #include <QToolTip>
 
 using namespace TextAutogenerateText;
@@ -35,6 +36,40 @@ bool TextAutogenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
         return true;
     }
     return false;
+}
+
+QWidget *TextAutogenerateHistoryListViewDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+    QLineEdit *editor = new QLineEdit(parent);
+    return editor;
+}
+
+void TextAutogenerateHistoryListViewDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+{
+    QLineEdit *lineEdit = qobject_cast<QLineEdit *>(editor);
+    if (lineEdit) {
+        QString text = index.data(TextAutoGenerateChatModel::TopicRole).toString();
+        if (text.isEmpty()) {
+            text = index.data(TextAutoGenerateChatModel::MessageRole).toString();
+        }
+        lineEdit->setText(text);
+    }
+}
+
+void TextAutogenerateHistoryListViewDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
+{
+    QLineEdit *lineEdit = qobject_cast<QLineEdit *>(editor);
+    if (lineEdit) {
+        model->setData(index, lineEdit->text(), TextAutoGenerateChatModel::TopicRole);
+    }
+}
+
+void TextAutogenerateHistoryListViewDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    Q_UNUSED(index);
+    editor->setGeometry(option.rect);
 }
 
 #include "moc_textautogeneratehistorylistviewdelegate.cpp"

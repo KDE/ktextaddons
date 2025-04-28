@@ -46,10 +46,10 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
         auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
-        connect(renameHistory, &QAction::triggered, this, [index]() {
+        connect(renameHistory, &QAction::triggered, this, [index, this]() {
             const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
             if (!uuid.isEmpty()) {
-                // TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                edit(index);
             }
         });
         menu.addAction(renameHistory);
