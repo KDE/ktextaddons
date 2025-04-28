@@ -17,9 +17,7 @@ TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
 {
 }
 
-TextAutogenerateManager::~TextAutogenerateManager()
-{
-}
+TextAutogenerateManager::~TextAutogenerateManager() = default;
 
 TextAutogenerateManager *TextAutogenerateManager::self()
 {
