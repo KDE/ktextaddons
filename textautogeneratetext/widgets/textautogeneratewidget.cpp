@@ -85,6 +85,7 @@ void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
 {
     const int key = ev->key();
     if (key == Qt::Key_Escape) {
+        ev->accept();
         // TODO
     } else {
         mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
