@@ -11,6 +11,7 @@
 #include "ollamareply.h"
 
 #include <QMultiHash>
+#include <QPair>
 
 class OllamaPlugin : public TextAutogenerateText::TextAutogenerateTextPlugin
 {
