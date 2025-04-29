@@ -65,7 +65,9 @@ void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
 
 void OllamaPlugin::cancelRequest(const QByteArray &uuid)
 {
-    clear();
+    if (uuid.isEmpty()) {
+        clear();
+    }
 }
 
 void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
