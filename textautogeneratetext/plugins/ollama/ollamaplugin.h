@@ -29,7 +29,7 @@ public:
 
 protected:
     void sendToLLM(const QString &message, const QByteArray &uuid) override;
-    void cancelRequest() override;
+    void cancelRequest(const QByteArray &uuid) override;
 
 private:
     QString mCurrentModel;

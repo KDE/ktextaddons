@@ -74,7 +74,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 TextAutogenerateWidget::~TextAutogenerateWidget()
 {
     if (mTextAutogeneratePlugin) {
-        mTextAutogeneratePlugin->cancelRequest();
+        mTextAutogeneratePlugin->cancelRequest({});
         mTextAutogeneratePlugin->deleteLater();
     }
     writeConfig();

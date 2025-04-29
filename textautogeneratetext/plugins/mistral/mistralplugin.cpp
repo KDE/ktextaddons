@@ -33,7 +33,7 @@ void MistralPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
     // TODO
 }
 
-void MistralPlugin::cancelRequest()
+void MistralPlugin::cancelRequest(const QByteArray &uuid)
 {
     // TODO
 }

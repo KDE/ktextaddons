@@ -35,7 +35,7 @@ public:
     void setReady(bool newReady);
 
     void sendMessage(const QString &str);
-    virtual void cancelRequest() = 0;
+    virtual void cancelRequest(const QByteArray &uuid) = 0;
 
     void editMessage(const QByteArray &uuid, const QString &str);
 
