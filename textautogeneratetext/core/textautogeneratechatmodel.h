@@ -46,6 +46,7 @@ public:
     void addMessage(const TextAutoGenerateMessage &msg);
 
     void removeDiscussion(const QByteArray &uuid);
+    void cancelRequest(const QByteArray &uuid);
 
     void replaceContent(const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &uuid, bool inProgress);
