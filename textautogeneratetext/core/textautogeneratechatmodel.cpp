@@ -186,6 +186,11 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
     }
 }
 
+bool TextAutoGenerateChatModel::cancelRequest(const QModelIndex &index)
+{
+    return setData(index, false, TextAutoGenerateChatModel::FinishedRole);
+}
+
 bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
     if (!idx.isValid()) {
@@ -209,9 +214,12 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
         msg.setEditingMode(value.toBool());
         Q_EMIT dataChanged(idx, idx, {ChatRoles::EditingRole});
         return true;
+    case ChatRoles::FinishedRole:
+        msg.setInProgress(value.toBool());
+        Q_EMIT dataChanged(idx, idx, {ChatRoles::FinishedRole});
+        return true;
     case ChatRoles::MessageRole:
     case ChatRoles::SenderRole:
-    case ChatRoles::FinishedRole:
     case ChatRoles::DateTimeRole:
     case ChatRoles::UuidRole:
     case ChatRoles::ArchivedRole:

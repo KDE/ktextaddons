@@ -52,6 +52,7 @@ public:
     [[nodiscard]] QByteArray editMessage(const QByteArray &uuid, const QString &str);
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
+    [[nodiscard]] bool cancelRequest(const QModelIndex &index);
 Q_SIGNALS:
     void conversationCleared();
 
