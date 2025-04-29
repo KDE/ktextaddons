@@ -46,6 +46,7 @@ Q_SIGNALS:
     void editMessage(const QModelIndex &index);
     void removeMessage(const QModelIndex &index);
     void copyMessage(const QModelIndex &index);
+    void cancelRequest(const QModelIndex &index);
 
 private:
     struct MessageLayout {
@@ -68,6 +69,9 @@ private:
         // Favorite icon
         QRect copyIconRect;
 
+        // Cancel icon
+        QRect cancelIconRect;
+
         // Date Area
         QRect dateAreaRect;
     };
@@ -85,6 +89,7 @@ private:
     const QIcon mEditedIcon;
     const QIcon mRemoveIcon;
     const QIcon mCopyIcon;
+    const QIcon mCancelIcon;
 
     // Cache SizeHint value
     // We need to clear it when we resize widget.

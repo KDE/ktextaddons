@@ -47,6 +47,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     connect(mDelegate, &TextAutogenerateListViewDelegate::removeMessage, this, &TextAutogenerateListView::slotRemoveMessage);
     connect(mDelegate, &TextAutogenerateListViewDelegate::editMessage, this, &TextAutogenerateListView::editMessage);
     connect(mDelegate, &TextAutogenerateListViewDelegate::copyMessage, this, &TextAutogenerateListView::slotCopyMessage);
+    connect(mDelegate, &TextAutogenerateListViewDelegate::cancelRequest, this, &TextAutogenerateListView::slotCancelRequest);
 
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeInserted,
@@ -89,6 +90,14 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+    }
+}
+
+void TextAutogenerateListView::slotCancelRequest(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    if (!uuid.isEmpty()) {
+        // TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
     }
 }
 
