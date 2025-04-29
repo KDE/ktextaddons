@@ -22,5 +22,5 @@ public:
 
 protected:
     void sendToLLM(const QString &message, const QByteArray &uuid) override;
-    void stop() override;
+    void cancelRequest() override;
 };

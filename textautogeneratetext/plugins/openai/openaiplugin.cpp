@@ -33,7 +33,7 @@ void OpenAIPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
     // TODO
 }
 
-void OpenAIPlugin::stop()
+void OpenAIPlugin::cancelRequest()
 {
     // TODO
 }

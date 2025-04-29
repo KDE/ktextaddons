@@ -63,7 +63,7 @@ void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
     mCurrentModel = newCurrentModel;
 }
 
-void OllamaPlugin::stop()
+void OllamaPlugin::cancelRequest()
 {
     clear();
 }
