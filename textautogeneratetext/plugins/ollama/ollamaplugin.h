@@ -33,5 +33,5 @@ protected:
 
 private:
     QString mCurrentModel;
-    QMultiHash<OllamaReply *, QMetaObject::Connection> mConnections;
+    QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
 };

@@ -42,7 +42,7 @@ bool OllamaPlugin::loadSettings()
 void OllamaPlugin::clear()
 {
     for (const auto &connection : std::as_const(mConnections)) {
-        disconnect(connection);
+        disconnect(connection.second);
     }
     mConnections.clear();
     // TODO clear all thread
@@ -67,6 +67,8 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
         clear();
+    } else {
+        // TODO
     }
 }
 
@@ -85,19 +87,21 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
     */
     auto reply = OllamaManager::self()->getCompletion(req);
 
-    mConnections.insert(reply, connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
-                            TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid, reply->readResponse());
-                        }));
-    mConnections.insert(reply, connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
-                            TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
-                            mConnections.remove(reply);
-                            reply->deleteLater();
+    mConnections.insert(reply,
+                        QPair(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
+                                  TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid,
+                                                                                                                                     reply->readResponse());
+                              })));
+    mConnections.insert(reply, QPair(uuid, connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
+                                         TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
+                                         mConnections.remove(reply);
+                                         reply->deleteLater();
 #if 0
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
 #endif
-                            // Q_EMIT finished(message); // TODO add message as argument ???
-                        }));
+                                         // Q_EMIT finished(message); // TODO add message as argument ???
+                                     })));
 }
 
 #include "moc_ollamaplugin.cpp"
