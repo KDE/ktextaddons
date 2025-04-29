@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 00:40+0000\n"
+"POT-Creation-Date: 2025-04-29 00:40+0000\n"
 "PO-Revision-Date: 2025-04-17 17:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -99,6 +99,19 @@ msgstr "Le prompt de systema per le LLM"
 msgid "The model used to generate responses"
 msgstr "Le modello usate per generar responsas"
 
+#: plugins/openai/openaiclient.cpp:27
+#, kde-format
+msgid "OpenAI"
+msgstr ""
+
+#: plugins/openai/openaiconfiguredialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Openai IA"
+msgstr "Configura IA"
+
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -144,17 +157,24 @@ msgstr "Inserta un message"
 msgid "Send"
 msgstr "Invia"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:48
+#: widgets/view/textautogeneratehistorylistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:59
+#: widgets/view/textautogeneratehistorylistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Remove…"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:74
+#: widgets/view/textautogeneratehistorylistview.cpp:86
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr ""
 
 #: widgets/view/textautogeneratelistview.cpp:114
 #, kde-format

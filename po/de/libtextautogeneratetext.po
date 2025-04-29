@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 00:40+0000\n"
+"POT-Creation-Date: 2025-04-29 00:40+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -99,6 +99,17 @@ msgstr ""
 msgid "The model used to generate responses"
 msgstr ""
 
+#: plugins/openai/openaiclient.cpp:27
+#, kde-format
+msgid "OpenAI"
+msgstr ""
+
+#: plugins/openai/openaiconfiguredialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Openai IA"
+msgstr ""
+
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -144,16 +155,23 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:48
+#: widgets/view/textautogeneratehistorylistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:59
+#: widgets/view/textautogeneratehistorylistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:74
+#: widgets/view/textautogeneratehistorylistview.cpp:86
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
 msgstr ""
 
 #: widgets/view/textautogeneratelistview.cpp:114

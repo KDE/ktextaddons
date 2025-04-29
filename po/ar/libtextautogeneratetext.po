@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 00:40+0000\n"
-"PO-Revision-Date: 2025-04-19 13:15+0400\n"
+"POT-Creation-Date: 2025-04-29 00:40+0000\n"
+"PO-Revision-Date: 2025-04-28 17:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -99,6 +99,19 @@ msgstr "موجه النظام للنموذج اللغوي الكبير"
 msgid "The model used to generate responses"
 msgstr "النموذج المستخدم لتوليد الاستجابات"
 
+#: plugins/openai/openaiclient.cpp:27
+#, kde-format
+msgid "OpenAI"
+msgstr ""
+
+#: plugins/openai/openaiconfiguredialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Openai IA"
+msgstr "اضبط الذكاء الاصطناعي"
+
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -144,17 +157,24 @@ msgstr "أدخل رسالة"
 msgid "Send"
 msgstr "أرسل"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:48
+#: widgets/view/textautogeneratehistorylistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "عدّل…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:59
+#: widgets/view/textautogeneratehistorylistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "أزل…"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:74
+#: widgets/view/textautogeneratehistorylistview.cpp:86
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr ""
 
 #: widgets/view/textautogeneratelistview.cpp:114
 #, kde-format
@@ -175,23 +195,19 @@ msgid "Select All"
 msgstr "حدّد الكلّ"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "أزل…"
+msgstr "أزِل"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:337
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "حرّر..."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "انسخ"

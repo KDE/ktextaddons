@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-28 00:40+0000\n"
+"POT-Creation-Date: 2025-04-29 00:40+0000\n"
 "PO-Revision-Date: 2025-04-26 15:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -99,6 +99,19 @@ msgstr "Системний запит до великої мовної моде�
 msgid "The model used to generate responses"
 msgstr "Модель, яку буде використано для створення відповідей"
 
+#: plugins/openai/openaiclient.cpp:27
+#, kde-format
+msgid "OpenAI"
+msgstr ""
+
+#: plugins/openai/openaiconfiguredialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Openai IA"
+msgstr "Налаштування ШІ"
+
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -144,17 +157,24 @@ msgstr "Введіть повідомлення"
 msgid "Send"
 msgstr "Надіслати"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:48
+#: widgets/view/textautogeneratehistorylistview.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Змінити…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:59
+#: widgets/view/textautogeneratehistorylistview.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Вилучити…"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:74
+#: widgets/view/textautogeneratehistorylistview.cpp:86
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr ""
 
 #: widgets/view/textautogeneratelistview.cpp:114
 #, kde-format
