@@ -66,6 +66,7 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
+    connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::cancelRequest, this, &TextAutogenerateWidget::slotCancelRequest);
     connect(mHistoryWidget, &TextAutogenerateHistoryWidget::goToDiscussion, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::goToDiscussion);
     loadEngine();
     readConfig();
@@ -177,6 +178,11 @@ void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
     const QString messageStr = index.data(TextAutoGenerateChatModel::MessageRole).toString();
     mTextAutogenerateTextLineEditWidget->setUuid(uuid);
     mTextAutogenerateTextLineEditWidget->setText(messageStr);
+}
+
+void TextAutogenerateWidget::slotCancelRequest(const QByteArray &uuid)
+{
+    mTextAutogeneratePlugin->cancelRequest(uuid);
 }
 
 #include "moc_textautogeneratewidget.cpp"

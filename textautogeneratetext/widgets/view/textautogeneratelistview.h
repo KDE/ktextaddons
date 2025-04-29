@@ -38,6 +38,7 @@ protected:
 
 Q_SIGNALS:
     void editMessage(const QModelIndex &index);
+    void cancelRequest(const QByteArray &uuid);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStyleOptionViewItem listViewOptions() const;

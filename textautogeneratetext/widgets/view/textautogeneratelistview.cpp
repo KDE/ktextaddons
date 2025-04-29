@@ -89,6 +89,8 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
+        Q_EMIT cancelRequest(uuid);
+        // TODO disconnect
         TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
     }
 }
@@ -97,7 +99,7 @@ void TextAutogenerateListView::slotCancelRequest(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        TextAutogenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(uuid);
+        Q_EMIT cancelRequest(uuid);
     }
 }
 

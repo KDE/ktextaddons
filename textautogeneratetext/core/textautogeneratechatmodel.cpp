@@ -186,14 +186,6 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
     }
 }
 
-void TextAutoGenerateChatModel::cancelRequest(const QByteArray &uuid)
-{
-    if (uuid.isEmpty()) {
-        return;
-    }
-    // TODO
-}
-
 bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
     if (!idx.isValid()) {

@@ -68,6 +68,12 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
     if (uuid.isEmpty()) {
         clear();
     } else {
+        for (const auto &connection : std::as_const(mConnections)) {
+            if (connection.first == uuid) {
+                disconnect(connection.second);
+                // mConnections.take(connection.);
+            }
+        }
         // TODO
     }
 }
