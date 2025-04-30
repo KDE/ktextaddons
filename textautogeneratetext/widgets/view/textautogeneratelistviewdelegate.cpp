@@ -51,14 +51,17 @@ void TextAutogenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         auto it = std::find_if(mIndexBackgroundColorList.cbegin(), mIndexBackgroundColorList.cend(), [index](const IndexBackgroundColor &key) {
             return key.index == index;
         });
-        QColor goToMessageBackgroundColor;
+        QColor messageBackgroundColor;
         if (it != mIndexBackgroundColorList.cend()) {
-            goToMessageBackgroundColor = it->color;
+            messageBackgroundColor = it->color;
+        }
+        if (index.data(TextAutoGenerateChatModel::EditingRole).toBool()) {
+            messageBackgroundColor = Qt::green; // TODO fix color
         }
 
         if (isUser) {
-            if (goToMessageBackgroundColor.isValid() && goToMessageBackgroundColor != QColor(Qt::transparent)) {
-                painter->setBrush(QBrush(goToMessageBackgroundColor));
+            if (messageBackgroundColor.isValid() && messageBackgroundColor != QColor(Qt::transparent)) {
+                painter->setBrush(QBrush(messageBackgroundColor));
             } else {
                 painter->setBrush(QBrush(option.palette.color(QPalette::Inactive, QPalette::Midlight)));
             }

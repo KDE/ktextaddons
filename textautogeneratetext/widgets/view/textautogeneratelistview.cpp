@@ -45,7 +45,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     });
 
     connect(mDelegate, &TextAutogenerateListViewDelegate::removeMessage, this, &TextAutogenerateListView::slotRemoveMessage);
-    connect(mDelegate, &TextAutogenerateListViewDelegate::editMessage, this, &TextAutogenerateListView::editMessage);
+    connect(mDelegate, &TextAutogenerateListViewDelegate::editMessage, this, &TextAutogenerateListView::slotEditMessage);
     connect(mDelegate, &TextAutogenerateListViewDelegate::copyMessage, this, &TextAutogenerateListView::slotCopyMessage);
     connect(mDelegate, &TextAutogenerateListViewDelegate::cancelRequest, this, &TextAutogenerateListView::slotCancelRequest);
 
@@ -83,6 +83,13 @@ TextAutogenerateListView::~TextAutogenerateListView()
 {
     TextAutogenerateManager::self()->saveHistory();
     // TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
+}
+
+void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
+{
+    auto model = const_cast<QAbstractItemModel *>(index.model());
+    model->setData(index, true, TextAutoGenerateChatModel::EditingRole);
+    Q_EMIT editMessage(index);
 }
 
 void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
@@ -293,6 +300,15 @@ void TextAutogenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 {
     QListView::scrollTo(index, hint);
     addSelectedMessageBackgroundAnimation(index);
+}
+
+void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
+{
+    const QModelIndex idx = TextAutogenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
+    if (idx.isValid()) {
+        auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
+        lastModel->setData(idx, false, TextAutoGenerateChatModel::EditingRole);
+    }
 }
 
 void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)

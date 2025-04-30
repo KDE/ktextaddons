@@ -159,6 +159,7 @@ void TextAutogenerateWidget::slotEditingFinished(const QString &str, const QByte
     } else {
         mTextAutogeneratePlugin->editMessage(uuid, str);
     }
+    mTextAutogenerateResultWidget->editingFinished(uuid);
 }
 
 void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)

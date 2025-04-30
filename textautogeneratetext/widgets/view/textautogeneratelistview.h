@@ -25,6 +25,8 @@ public:
 
     void scrollTo(const QModelIndex &index, ScrollHint hint = EnsureVisible) override;
 
+    void editingFinished(const QByteArray &uuid);
+
 protected:
     void resizeEvent(QResizeEvent *ev) override;
 
@@ -53,6 +55,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCopyMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void addSelectedMessageBackgroundAnimation(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
 
     bool mAtBottom = true;
     QPoint mPressedPosition;

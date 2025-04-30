@@ -22,7 +22,7 @@ public:
     ~TextAutogenerateResultWidget() override;
 
     void handleKeyPressEvent(QKeyEvent *ev);
-
+    void editingFinished(const QByteArray &uuid);
 Q_SIGNALS:
     void editMessage(const QModelIndex &index);
     void goToDiscussion(const QByteArray &uuid);

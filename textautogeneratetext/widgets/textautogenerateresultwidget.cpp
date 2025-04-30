@@ -31,4 +31,9 @@ void TextAutogenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
 {
     mTextAutogenerateListView->handleKeyPressEvent(ev);
 }
+
+void TextAutogenerateResultWidget::editingFinished(const QByteArray &uuid)
+{
+    mTextAutogenerateListView->editingFinished(uuid);
+}
 #include "moc_textautogenerateresultwidget.cpp"
