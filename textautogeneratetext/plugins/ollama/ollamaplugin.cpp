@@ -94,20 +94,24 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
     auto reply = OllamaManager::self()->getCompletion(req);
 
     mConnections.insert(reply,
-                        QPair(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
-                                  TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid,
-                                                                                                                                     reply->readResponse());
-                              })));
-    mConnections.insert(reply, QPair(uuid, connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
-                                         TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
-                                         mConnections.remove(reply);
-                                         reply->deleteLater();
+                        QPair<QByteArray, QMetaObject::Connection>(
+                            uuid,
+                            connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
+                                TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid, reply->readResponse());
+                            })));
+    mConnections.insert(reply,
+                        QPair<QByteArray, QMetaObject::Connection>(
+                            uuid,
+                            connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
+                                TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
+                                mConnections.remove(reply);
+                                reply->deleteLater();
 #if 0
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
 #endif
-                                         // Q_EMIT finished(message); // TODO add message as argument ???
-                                     })));
+                                // Q_EMIT finished(message); // TODO add message as argument ???
+                            })));
 }
 
 #include "moc_ollamaplugin.cpp"
