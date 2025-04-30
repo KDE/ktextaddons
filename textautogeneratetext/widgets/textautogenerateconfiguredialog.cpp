@@ -5,8 +5,8 @@
 */
 
 #include "textautogenerateconfiguredialog.h"
+#include "core/textautogeneratemanager.h"
 #include "textautogenerateconfigurewidget.h"
-
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -39,6 +39,11 @@ TextAutogenerateConfigureDialog::~TextAutogenerateConfigureDialog() = default;
 void TextAutogenerateConfigureDialog::saveSettings()
 {
     mTextAutogenerateConfigureWidget->saveSettings();
+}
+
+void TextAutogenerateConfigureDialog::ask(const QString &str)
+{
+    TextAutogenerateText::TextAutogenerateManager::self()->ask(str);
 }
 
 #include "moc_textautogenerateconfiguredialog.cpp"
