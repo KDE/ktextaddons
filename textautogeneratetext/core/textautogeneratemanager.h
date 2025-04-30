@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <KSharedConfig>
 #include <QObject>
+#include <TextAutogenerateText/TextAutoGenerateMessage>
 namespace TextAutogenerateText
 {
 class TextAutoGenerateChatModel;
