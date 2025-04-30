@@ -22,7 +22,7 @@ class DotWidget : public QWidget
     Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
 
 public:
-    explicit DotWidget(QWidget *parent = nullptr);
+    explicit DotWidget(int index, QWidget *parent = nullptr);
     ~DotWidget() override;
 
     [[nodiscard]] qreal scale() const;
@@ -41,4 +41,12 @@ private:
     qreal mScale = 0.0;
     qreal mOpacity = 0.0;
     QList<Dot *> mDots;
+};
+
+class DotsWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit DotsWidget(QWidget *parent = nullptr);
+    ~DotsWidget() override;
 };

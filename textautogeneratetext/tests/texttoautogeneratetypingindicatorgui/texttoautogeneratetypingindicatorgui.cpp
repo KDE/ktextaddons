@@ -5,6 +5,7 @@
 */
 
 #include "texttoautogeneratetypingindicatorgui.h"
+#include <QHBoxLayout>
 #include <QPainter>
 #include <QParallelAnimationGroup>
 #include <QPauseAnimation>
@@ -35,21 +36,18 @@ Dot::Dot(QObject *parent, int duration, int index)
 
     auto sequencial = new QSequentialAnimationGroup(parent);
     sequencial->addAnimation(group);
-    sequencial->addPause(static_cast<int>((double)duration / (double)(index + 1)));
+    sequencial->addPause(duration * index / 2);
     sequencial->setLoopCount(-1);
     sequencial->start();
 }
 
-DotWidget::DotWidget(QWidget *parent)
+DotWidget::DotWidget(int index, QWidget *parent)
     : QWidget(parent)
     , mScale(1.0)
     , mOpacity(0.5)
 {
-    setFixedSize(200, 200);
     int duration = 1000; // Duration in milliseconds
-    for (int i = 0; i < 3; ++i) {
-        mDots.append(new Dot(this, duration, i));
-    }
+    new Dot(this, duration, index);
 }
 
 DotWidget::~DotWidget() = default;
@@ -89,14 +87,23 @@ void DotWidget::paintEvent(QPaintEvent *event)
     int dotSize = 20;
     int spacing = 40;
 
-    for (int i = 0; i < 3; ++i) {
         painter.setOpacity(mOpacity);
         painter.save();
-        painter.translate(spacing + i * (dotSize + spacing), height() / 2);
+        painter.translate(spacing + (dotSize + spacing), height() / 2);
         painter.rotate(45);
         painter.scale(mScale, mScale);
         painter.setBrush(Qt::black);
         painter.drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
         painter.restore();
+}
+
+DotsWidget::DotsWidget(QWidget *parent)
+    : QWidget(parent)
+{
+    auto mainLayout = new QHBoxLayout(this);
+    for (int i = 0; i < 3; ++i) {
+        mainLayout->addWidget(new DotWidget(i, this));
     }
 }
+
+DotsWidget::~DotsWidget() = default;
