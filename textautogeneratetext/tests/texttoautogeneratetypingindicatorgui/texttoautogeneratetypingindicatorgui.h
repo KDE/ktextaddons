@@ -6,21 +6,7 @@
 
 #pragma once
 
-#include <QWidget>
-/*
-class TextAutoGenerateWidgetGui : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit TextAutoGenerateWidgetGui(QWidget *parent = nullptr);
-    ~TextAutoGenerateWidgetGui() override;
-};
-*/
-#include <QPainter>
-#include <QParallelAnimationGroup>
 #include <QPropertyAnimation>
-#include <QSequentialAnimationGroup>
-#include <QTimer>
 #include <QWidget>
 
 class Dot
@@ -31,7 +17,6 @@ public:
 private:
     QPropertyAnimation scaleAnimation;
     QPropertyAnimation opacityAnimation;
-    QSequentialAnimationGroup animationGroup;
 };
 
 class DotWidget : public QWidget
