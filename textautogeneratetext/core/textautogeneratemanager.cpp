@@ -35,31 +35,6 @@ TextAutoGenerateChatModel *TextAutogenerateManager::textAutoGenerateChatModel() 
     return mTextAutoGenerateChatModel;
 }
 
-void TextAutogenerateManager::loadHistory()
-{
-    QList<TextAutoGenerateMessage> messages;
-    KSharedConfig::Ptr config;
-    const QStringList keyGroups = keyRecorderList(config);
-
-    for (const QString &groupName : keyGroups) {
-        KConfigGroup group = config->group(groupName);
-        TextAutoGenerateMessage message;
-
-        message.setContent(group.readEntry(QStringLiteral("Content")));
-        const int sender = group.readEntry(QStringLiteral("Sender"), 0);
-        message.setSender(static_cast<TextAutoGenerateMessage::Sender>(sender));
-        message.setDateTime(group.readEntry(QStringLiteral("DateTime"), 0));
-        message.setUuid(group.readEntry(QStringLiteral("Uuid"), QByteArray()));
-        message.setAnswerUuid(group.readEntry(QStringLiteral("AnswerUuid"), QByteArray()));
-        message.setTopic(group.readEntry(QStringLiteral("Topic"), QString()));
-        message.setArchived(group.readEntry(QStringLiteral("Archived"), false));
-
-        messages.append(std::move(message));
-    }
-    filterListMessages(messages, mShowArchived);
-    mTextAutoGenerateChatModel->setMessages(messages);
-}
-
 void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const
 {
     std::sort(messages.begin(), messages.end(), [archived](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
@@ -91,6 +66,31 @@ bool TextAutogenerateManager::showArchived() const
 void TextAutogenerateManager::setShowArchived(bool newShowArchived)
 {
     mShowArchived = newShowArchived;
+}
+
+void TextAutogenerateManager::loadHistory()
+{
+    QList<TextAutoGenerateMessage> messages;
+    KSharedConfig::Ptr config;
+    const QStringList keyGroups = keyRecorderList(config);
+
+    for (const QString &groupName : keyGroups) {
+        KConfigGroup group = config->group(groupName);
+        TextAutoGenerateMessage message;
+
+        message.setContent(group.readEntry(QStringLiteral("Content")));
+        const int sender = group.readEntry(QStringLiteral("Sender"), 0);
+        message.setSender(static_cast<TextAutoGenerateMessage::Sender>(sender));
+        message.setDateTime(group.readEntry(QStringLiteral("DateTime"), 0));
+        message.setUuid(group.readEntry(QStringLiteral("Uuid"), QByteArray()));
+        message.setAnswerUuid(group.readEntry(QStringLiteral("AnswerUuid"), QByteArray()));
+        message.setTopic(group.readEntry(QStringLiteral("Topic"), QString()));
+        message.setArchived(group.readEntry(QStringLiteral("Archived"), false));
+
+        messages.append(std::move(message));
+    }
+    filterListMessages(messages, mShowArchived);
+    mTextAutoGenerateChatModel->setMessages(messages);
 }
 
 void TextAutogenerateManager::saveHistory()
