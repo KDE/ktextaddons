@@ -13,10 +13,6 @@ class Dot
 {
 public:
     Dot(QObject *parent, int duration, int index);
-
-private:
-    QPropertyAnimation scaleAnimation;
-    QPropertyAnimation opacityAnimation;
 };
 
 class DotWidget : public QWidget

@@ -14,23 +14,26 @@
 
 Dot::Dot(QObject *parent, int duration, int index)
 {
-    scaleAnimation.setTargetObject(parent);
-    scaleAnimation.setPropertyName("scale");
-    scaleAnimation.setStartValue(1.0);
-    scaleAnimation.setEndValue(1.33);
-    scaleAnimation.setDuration(duration);
+    auto scaleAnimation = new QPropertyAnimation(parent);
 
-    opacityAnimation.setTargetObject(parent);
-    opacityAnimation.setPropertyName("opacity");
-    opacityAnimation.setStartValue(0.5);
-    opacityAnimation.setEndValue(1.0);
-    opacityAnimation.setDuration(duration);
+    scaleAnimation->setTargetObject(parent);
+    scaleAnimation->setPropertyName("scale");
+    scaleAnimation->setStartValue(1.0);
+    scaleAnimation->setEndValue(1.33);
+    scaleAnimation->setDuration(duration);
 
-    QParallelAnimationGroup *group = new QParallelAnimationGroup(parent);
-    group->addAnimation(&scaleAnimation);
-    group->addAnimation(&opacityAnimation);
+    auto opacityAnimation = new QPropertyAnimation(parent);
+    opacityAnimation->setTargetObject(parent);
+    opacityAnimation->setPropertyName("opacity");
+    opacityAnimation->setStartValue(0.5);
+    opacityAnimation->setEndValue(1.0);
+    opacityAnimation->setDuration(duration);
 
-    QSequentialAnimationGroup *sequencial = new QSequentialAnimationGroup(parent);
+    auto group = new QParallelAnimationGroup(parent);
+    group->addAnimation(scaleAnimation);
+    group->addAnimation(opacityAnimation);
+
+    auto sequencial = new QSequentialAnimationGroup(parent);
     sequencial->addAnimation(group);
     sequencial->addPause(static_cast<int>((double)duration / (double)(index + 1)));
     sequencial->setLoopCount(-1);
