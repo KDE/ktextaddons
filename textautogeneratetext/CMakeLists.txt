@@ -112,6 +112,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
     widgets/view/textautogenerateselectedmessagebackgroundanimation.h
     widgets/view/textautogenerateselectedmessagebackgroundanimation.cpp
 
+    widgets/view/textautogeneratemessagewaitingansweranimation.h
+    widgets/view/textautogeneratemessagewaitingansweranimation.cpp
+
     widgets/textautogeneratestackwidget.h
     widgets/textautogeneratestackwidget.cpp
 
