@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-29 00:40+0000\n"
-"PO-Revision-Date: 2025-04-26 04:50+0200\n"
+"POT-Creation-Date: 2025-04-30 00:41+0000\n"
+"PO-Revision-Date: 2025-04-29 04:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -102,15 +102,13 @@ msgstr "პასუხების გენერაციისთვის �
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "ხი-ის მორგება"
+msgstr "Openai IA-ის მორგება"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -174,40 +172,46 @@ msgstr "წაშლა…"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "აღდგენა"
 
-#: widgets/view/textautogeneratelistview.cpp:114
+#: widgets/view/textautogeneratelistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "მონიშნულის კოპირება"
 
-#: widgets/view/textautogeneratelistview.cpp:114
+#: widgets/view/textautogeneratelistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratelistview.cpp:122
+#: widgets/view/textautogeneratelistview.cpp:135
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:333
+#: widgets/view/textautogeneratelistviewdelegate.cpp:347
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "წაშლა"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:337
+#: widgets/view/textautogeneratelistviewdelegate.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "ჩასწორება..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:341
+#: widgets/view/textautogeneratelistviewdelegate.cpp:355
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "კოპირება"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:359
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Cancel"
+msgstr ""

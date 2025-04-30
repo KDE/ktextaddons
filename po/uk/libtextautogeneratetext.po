@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-29 00:40+0000\n"
-"PO-Revision-Date: 2025-04-26 15:47+0300\n"
+"POT-Creation-Date: 2025-04-30 00:41+0000\n"
+"PO-Revision-Date: 2025-04-29 08:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -102,15 +102,13 @@ msgstr "Модель, яку буде використано для створе
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "Налаштування ШІ"
+msgstr "Налаштування ШІ Openai"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -174,40 +172,46 @@ msgstr "Вилучити…"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Відновити"
 
-#: widgets/view/textautogeneratelistview.cpp:114
+#: widgets/view/textautogeneratelistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Копіювати позначене"
 
-#: widgets/view/textautogeneratelistview.cpp:114
+#: widgets/view/textautogeneratelistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistview.cpp:122
+#: widgets/view/textautogeneratelistview.cpp:135
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Позначити все"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:333
+#: widgets/view/textautogeneratelistviewdelegate.cpp:347
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Вилучити"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:337
+#: widgets/view/textautogeneratelistviewdelegate.cpp:351
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Змінити…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:341
+#: widgets/view/textautogeneratelistviewdelegate.cpp:355
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копіювати"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:359
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Cancel"
+msgstr ""
