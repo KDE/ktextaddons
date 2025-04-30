@@ -26,11 +26,12 @@ public:
 class Dot
 {
 public:
+    Dot(QObject *parent, int duration, int index);
+
+private:
     QPropertyAnimation scaleAnimation;
     QPropertyAnimation opacityAnimation;
     QSequentialAnimationGroup animationGroup;
-
-    Dot(QObject *parent, int duration, int index);
 };
 
 class DotWidget : public QWidget
@@ -40,40 +41,23 @@ class DotWidget : public QWidget
     Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
 
 public:
-    DotWidget(QWidget *parent = nullptr);
+    explicit DotWidget(QWidget *parent = nullptr);
+    ~DotWidget() override;
 
-    qreal scale() const
-    {
-        return m_scale;
-    }
+    [[nodiscard]] qreal scale() const;
 
-    qreal opacity() const
-    {
-        return m_opacity;
-    }
+    [[nodiscard]] qreal opacity() const;
 
 public Q_SLOTS:
-    void setScale(qreal scale)
-    {
-        if (m_scale != scale) {
-            m_scale = scale;
-            update();
-        }
-    }
+    void setScale(qreal scale);
 
-    void setOpacity(qreal opacity)
-    {
-        if (m_opacity != opacity) {
-            m_opacity = opacity;
-            update();
-        }
-    }
+    void setOpacity(qreal opacity);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    qreal m_scale;
-    qreal m_opacity;
-    QList<Dot *> dots;
+    qreal mScale = 0.0;
+    qreal mOpacity = 0.0;
+    QList<Dot *> mDots;
 };

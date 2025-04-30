@@ -39,13 +39,41 @@ Dot::Dot(QObject *parent, int duration, int index)
 
 DotWidget::DotWidget(QWidget *parent)
     : QWidget(parent)
-    , m_scale(1.0)
-    , m_opacity(0.5)
+    , mScale(1.0)
+    , mOpacity(0.5)
 {
     setFixedSize(200, 200);
     int duration = 1000; // Duration in milliseconds
     for (int i = 0; i < 3; ++i) {
-        dots.append(new Dot(this, duration, i));
+        mDots.append(new Dot(this, duration, i));
+    }
+}
+
+DotWidget::~DotWidget() = default;
+
+qreal DotWidget::scale() const
+{
+    return mScale;
+}
+
+qreal DotWidget::opacity() const
+{
+    return mOpacity;
+}
+
+void DotWidget::setScale(qreal scale)
+{
+    if (mScale != scale) {
+        mScale = scale;
+        update();
+    }
+}
+
+void DotWidget::setOpacity(qreal opacity)
+{
+    if (mOpacity != opacity) {
+        mOpacity = opacity;
+        update();
     }
 }
 
@@ -59,11 +87,11 @@ void DotWidget::paintEvent(QPaintEvent *event)
     int spacing = 40;
 
     for (int i = 0; i < 3; ++i) {
-        painter.setOpacity(m_opacity);
+        painter.setOpacity(mOpacity);
         painter.save();
         painter.translate(spacing + i * (dotSize + spacing), height() / 2);
         painter.rotate(45);
-        painter.scale(m_scale, m_scale);
+        painter.scale(mScale, mScale);
         painter.setBrush(Qt::black);
         painter.drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
         painter.restore();
