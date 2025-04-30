@@ -35,10 +35,13 @@ Dot::Dot(QObject *parent, int duration, int index)
     group->addAnimation(opacityAnimation);
 
     auto sequencial = new QSequentialAnimationGroup(parent);
+    const auto value = duration * index / 2;
+    // qDebug() << " Pause value " << value;
     sequencial->addAnimation(group);
-    sequencial->addPause(duration * index / 2);
     sequencial->setLoopCount(-1);
-    sequencial->start();
+    QTimer::singleShot(value, parent, [sequencial]() {
+        sequencial->start();
+    });
 }
 
 DotWidget::DotWidget(int index, QWidget *parent)
@@ -87,14 +90,14 @@ void DotWidget::paintEvent(QPaintEvent *event)
     int dotSize = 20;
     int spacing = 40;
 
-        painter.setOpacity(mOpacity);
-        painter.save();
-        painter.translate(spacing + (dotSize + spacing), height() / 2);
-        painter.rotate(45);
-        painter.scale(mScale, mScale);
-        painter.setBrush(Qt::black);
-        painter.drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
-        painter.restore();
+    painter.setOpacity(mOpacity);
+    painter.save();
+    painter.translate(spacing + (dotSize + spacing), height() / 2);
+    painter.rotate(45);
+    painter.scale(mScale, mScale);
+    painter.setBrush(Qt::black);
+    painter.drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
+    painter.restore();
 }
 
 DotsWidget::DotsWidget(QWidget *parent)
@@ -104,6 +107,7 @@ DotsWidget::DotsWidget(QWidget *parent)
     for (int i = 0; i < 3; ++i) {
         mainLayout->addWidget(new DotWidget(i, this));
     }
+    setFixedSize(400, 400);
 }
 
 DotsWidget::~DotsWidget() = default;
