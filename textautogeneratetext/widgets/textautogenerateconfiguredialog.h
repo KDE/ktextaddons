@@ -22,8 +22,6 @@ public:
 
     void saveSettings();
 
-    void ask(const QString &str);
-
 private:
     TextAutogenerateConfigureWidget *const mTextAutogenerateConfigureWidget;
 };
