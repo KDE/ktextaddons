@@ -134,3 +134,5 @@ DotsWidget::DotsWidget(QWidget *parent)
 }
 
 DotsWidget::~DotsWidget() = default;
+
+#include "moc_texttoautogeneratetypingindicatorgui.cpp"
