@@ -15,6 +15,7 @@ using namespace TextAutogenerateText;
 TextAutogenerateMessageWaitingAnswerAnimation::TextAutogenerateMessageWaitingAnswerAnimation(QObject *parent)
     : QObject{parent}
 {
+    createAnimations();
 }
 
 TextAutogenerateMessageWaitingAnswerAnimation::~TextAutogenerateMessageWaitingAnswerAnimation() = default;
@@ -35,10 +36,16 @@ void TextAutogenerateMessageWaitingAnswerAnimation::start()
     mSequencials->start();
 }
 
+int TextAutogenerateMessageWaitingAnswerAnimation::count() const
+{
+    return mScaleOpacities.count();
+}
+
 void TextAutogenerateMessageWaitingAnswerAnimation::createAnimations()
 {
     mSequencials = new QSequentialAnimationGroup(this);
-    const int duration = 2000; // Ms
+    const int duration = 1000; // Ms
+    mSequencials->addPause(duration);
     for (int i = 0; i < 3; i++) {
         mSequencials->addAnimation(createAnimation(i, duration));
     }
@@ -47,9 +54,9 @@ void TextAutogenerateMessageWaitingAnswerAnimation::createAnimations()
 TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutogenerateMessageWaitingAnswerAnimation::value(int i) const
 {
     if (i >= 0 && i < mScaleOpacities.count()) {
-        return {};
+        return mScaleOpacities.at(i);
     }
-    return mScaleOpacities.at(i);
+    return {};
 }
 
 QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::createAnimation(int index, int duration)
@@ -111,14 +118,20 @@ QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::create
     groupDown->addAnimation(opacityAnimationDown);
 
     auto sequencial = new QSequentialAnimationGroup(this);
-    const auto value = duration * index / 2;
-    // qDebug() << " Pause value " << value;
-    // TODO add pause
+    const auto value = duration * (index + 1) / 2;
     sequencial->addPause(value);
     sequencial->addAnimation(groupUp);
     sequencial->addAnimation(groupDown);
     sequencial->setLoopCount(-1);
+    sequencial->start();
     return sequencial;
+}
+
+QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t)
+{
+    d.space() << "scale:" << t.scale;
+    d.space() << "opacity:" << t.opacity;
+    return d;
 }
 
 #include "moc_textautogeneratemessagewaitingansweranimation.cpp"

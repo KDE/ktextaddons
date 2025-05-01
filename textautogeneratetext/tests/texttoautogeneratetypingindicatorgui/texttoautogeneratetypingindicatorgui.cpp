@@ -5,106 +5,25 @@
 */
 
 #include "texttoautogeneratetypingindicatorgui.h"
+#include <widgets/view/textautogeneratemessagewaitingansweranimation.h>
+
 #include <QHBoxLayout>
 #include <QPainter>
-#include <QParallelAnimationGroup>
-#include <QPauseAnimation>
-#include <QPropertyAnimation>
-#include <QSequentialAnimationGroup>
-#include <QTimer>
 
-Dot::Dot(QObject *parent, int duration, int index)
+DotsWidget::DotsWidget(QWidget *parent)
+    : QWidget(parent)
+    , mAnimation(new TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation(this))
 {
-    auto scaleAnimationUp = new QPropertyAnimation(parent);
-
-    scaleAnimationUp->setTargetObject(parent);
-    scaleAnimationUp->setPropertyName("scale");
-    scaleAnimationUp->setStartValue(1.0);
-    scaleAnimationUp->setEndValue(1.33);
-    scaleAnimationUp->setDuration(duration);
-
-    auto opacityAnimationUp = new QPropertyAnimation(parent);
-    opacityAnimationUp->setTargetObject(parent);
-    opacityAnimationUp->setPropertyName("opacity");
-    opacityAnimationUp->setStartValue(0.5);
-    opacityAnimationUp->setEndValue(1.0);
-    opacityAnimationUp->setDuration(duration);
-
-    auto scaleAnimationDown = new QPropertyAnimation(parent);
-
-    scaleAnimationDown->setTargetObject(parent);
-    scaleAnimationDown->setPropertyName("scale");
-    scaleAnimationDown->setStartValue(1.33);
-    scaleAnimationDown->setEndValue(1.0);
-    scaleAnimationDown->setDuration(duration);
-
-    auto opacityAnimationDown = new QPropertyAnimation(parent);
-    opacityAnimationDown->setTargetObject(parent);
-    opacityAnimationDown->setPropertyName("opacity");
-    opacityAnimationDown->setStartValue(1.0);
-    opacityAnimationDown->setEndValue(0.5);
-    opacityAnimationDown->setDuration(duration);
-
-    auto groupUp = new QParallelAnimationGroup(parent);
-    groupUp->addAnimation(scaleAnimationUp);
-    groupUp->addAnimation(opacityAnimationUp);
-
-    auto groupDown = new QParallelAnimationGroup(parent);
-    groupDown->addAnimation(scaleAnimationDown);
-    groupDown->addAnimation(opacityAnimationDown);
-
-    auto sequencial = new QSequentialAnimationGroup(parent);
-    const auto value = duration * index / 2;
-    // qDebug() << " Pause value " << value;
-    sequencial->addAnimation(groupUp);
-    sequencial->addAnimation(groupDown);
-    sequencial->setLoopCount(-1);
-    QTimer::singleShot(value, parent, [sequencial]() {
-        sequencial->start();
+    setFixedSize(400, 400);
+    mAnimation->start();
+    connect(mAnimation, &TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this]() {
+        update();
     });
 }
 
-DotWidget::DotWidget(int index, QWidget *parent)
-    : QWidget(parent)
-    , mScale(1.0)
-    , mOpacity(0.5)
-{
-    int duration = 1000; // Duration in milliseconds
-    mDot = new Dot(this, duration, index);
-}
+DotsWidget::~DotsWidget() = default;
 
-DotWidget::~DotWidget()
-{
-    delete mDot;
-}
-
-qreal DotWidget::scale() const
-{
-    return mScale;
-}
-
-qreal DotWidget::opacity() const
-{
-    return mOpacity;
-}
-
-void DotWidget::setScale(qreal scale)
-{
-    if (mScale != scale) {
-        mScale = scale;
-        update();
-    }
-}
-
-void DotWidget::setOpacity(qreal opacity)
-{
-    if (mOpacity != opacity) {
-        mOpacity = opacity;
-        update();
-    }
-}
-
-void DotWidget::paintEvent(QPaintEvent *event)
+void DotsWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
@@ -113,26 +32,17 @@ void DotWidget::paintEvent(QPaintEvent *event)
     int dotSize = 20;
     int spacing = 40;
 
-    painter.setOpacity(mOpacity);
-    painter.save();
-    painter.translate(spacing + (dotSize + spacing), height() / 2);
-    painter.rotate(45);
-    painter.scale(mScale, mScale);
-    painter.setBrush(Qt::black);
-    painter.drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
-    painter.restore();
-}
-
-DotsWidget::DotsWidget(QWidget *parent)
-    : QWidget(parent)
-{
-    auto mainLayout = new QHBoxLayout(this);
-    for (int i = 0; i < 3; ++i) {
-        mainLayout->addWidget(new DotWidget(i, this));
+    for (int i = 0; i < mAnimation->count(); ++i) {
+        TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = mAnimation->value(i);
+        painter.setOpacity(value.opacity);
+        painter.save();
+        painter.translate(spacing + i * (dotSize + spacing), height() / 2);
+        painter.rotate(45);
+        painter.scale(value.scale, value.scale);
+        painter.setBrush(Qt::black);
+        painter.drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
+        painter.restore();
     }
-    setFixedSize(400, 400);
 }
-
-DotsWidget::~DotsWidget() = default;
 
 #include "moc_texttoautogeneratetypingindicatorgui.cpp"

@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 
+#include <QDebug>
 #include <QObject>
 #include <QPersistentModelIndex>
 class QSequentialAnimationGroup;
@@ -30,6 +31,7 @@ public:
 
     [[nodiscard]] ScaleAndOpacity value(int i) const;
 
+    [[nodiscard]] int count() const;
 Q_SIGNALS:
     void valueChanged();
 
@@ -41,3 +43,5 @@ private:
     QSequentialAnimationGroup *mSequencials = nullptr;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t);

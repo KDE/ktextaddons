@@ -9,44 +9,20 @@
 #include <QPropertyAnimation>
 #include <QWidget>
 
-class Dot
+namespace TextAutogenerateText
 {
-public:
-    Dot(QObject *parent, int duration, int index);
-};
-
-class DotWidget : public QWidget
-{
-    Q_OBJECT
-    Q_PROPERTY(qreal scale READ scale WRITE setScale)
-    Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
-
-public:
-    explicit DotWidget(int index, QWidget *parent = nullptr);
-    ~DotWidget() override;
-
-    [[nodiscard]] qreal scale() const;
-
-    [[nodiscard]] qreal opacity() const;
-
-public Q_SLOTS:
-    void setScale(qreal scale);
-
-    void setOpacity(qreal opacity);
-
-protected:
-    void paintEvent(QPaintEvent *event) override;
-
-private:
-    qreal mScale = 0.0;
-    qreal mOpacity = 0.0;
-    Dot *mDot = nullptr;
-};
-
+class TextAutogenerateMessageWaitingAnswerAnimation;
+}
 class DotsWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit DotsWidget(QWidget *parent = nullptr);
     ~DotsWidget() override;
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
+private:
+    TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation *const mAnimation;
 };
