@@ -14,6 +14,11 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateMessageWaitingAnswerAnim
 {
     Q_OBJECT
 public:
+    struct ScaleAndOpacity {
+        qreal scale = 0.0;
+        qreal opacity = 0.0;
+    };
+
     explicit TextAutogenerateMessageWaitingAnswerAnimation(QObject *parent = nullptr);
     ~TextAutogenerateMessageWaitingAnswerAnimation() override;
 
@@ -22,7 +27,10 @@ public:
 
     void start();
 
+    [[nodiscard]] ScaleAndOpacity value(int i) const;
+
 private:
+    QList<ScaleAndOpacity> mScaleOpacities;
     QPersistentModelIndex mModelIndex;
 };
 }

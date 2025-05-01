@@ -29,3 +29,13 @@ void TextAutogenerateMessageWaitingAnswerAnimation::start()
 {
     // TODO
 }
+
+TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutogenerateMessageWaitingAnswerAnimation::value(int i) const
+{
+    if (i >= 0 && i < mScaleOpacities.count()) {
+        return {};
+    }
+    return mScaleOpacities.at(i);
+}
+
+#include "moc_textautogeneratemessagewaitingansweranimation.cpp"
