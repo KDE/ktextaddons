@@ -8,6 +8,7 @@
 
 #include <QObject>
 #include <QPersistentModelIndex>
+class QSequentialAnimationGroup;
 namespace TextAutogenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateMessageWaitingAnswerAnimation : public QObject
@@ -34,8 +35,9 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void createAnimations();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void createAnimation(int index, int duration);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QSequentialAnimationGroup *createAnimation(int index, int duration);
     QList<ScaleAndOpacity> mScaleOpacities;
     QPersistentModelIndex mModelIndex;
+    QSequentialAnimationGroup *mSequencials = nullptr;
 };
 }

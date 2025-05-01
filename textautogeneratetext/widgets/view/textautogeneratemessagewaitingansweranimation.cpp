@@ -31,14 +31,16 @@ void TextAutogenerateMessageWaitingAnswerAnimation::setModelIndex(const QPersist
 
 void TextAutogenerateMessageWaitingAnswerAnimation::start()
 {
-    // TODO
+    mSequencials->setLoopCount(-1);
+    mSequencials->start();
 }
 
 void TextAutogenerateMessageWaitingAnswerAnimation::createAnimations()
 {
+    mSequencials = new QSequentialAnimationGroup(this);
     const int duration = 2000; // Ms
     for (int i = 0; i < 3; i++) {
-        createAnimation(i, duration);
+        mSequencials->addAnimation(createAnimation(i, duration));
     }
 }
 
@@ -50,7 +52,7 @@ TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutogenerateM
     return mScaleOpacities.at(i);
 }
 
-void TextAutogenerateMessageWaitingAnswerAnimation::createAnimation(int index, int duration)
+QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::createAnimation(int index, int duration)
 {
     ScaleAndOpacity s;
     mScaleOpacities.append(s);
@@ -115,7 +117,7 @@ void TextAutogenerateMessageWaitingAnswerAnimation::createAnimation(int index, i
     sequencial->addAnimation(groupUp);
     sequencial->addAnimation(groupDown);
     sequencial->setLoopCount(-1);
-    // TODO
+    return sequencial;
 }
 
 #include "moc_textautogeneratemessagewaitingansweranimation.cpp"
