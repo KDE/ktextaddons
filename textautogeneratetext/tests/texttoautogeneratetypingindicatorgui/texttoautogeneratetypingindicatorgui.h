@@ -40,7 +40,7 @@ protected:
 private:
     qreal mScale = 0.0;
     qreal mOpacity = 0.0;
-    QList<Dot *> mDots;
+    Dot *mDot = nullptr;
 };
 
 class DotsWidget : public QWidget

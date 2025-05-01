@@ -70,10 +70,13 @@ DotWidget::DotWidget(int index, QWidget *parent)
     , mOpacity(0.5)
 {
     int duration = 1000; // Duration in milliseconds
-    new Dot(this, duration, index);
+    mDot = new Dot(this, duration, index);
 }
 
-DotWidget::~DotWidget() = default;
+DotWidget::~DotWidget()
+{
+    delete mDot;
+}
 
 qreal DotWidget::scale() const
 {
