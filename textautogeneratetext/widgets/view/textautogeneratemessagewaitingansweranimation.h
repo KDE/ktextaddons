@@ -29,7 +29,12 @@ public:
 
     [[nodiscard]] ScaleAndOpacity value(int i) const;
 
+Q_SIGNALS:
+    void valueChanged();
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void createAnimations();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void createAnimation(int index, int duration);
     QList<ScaleAndOpacity> mScaleOpacities;
     QPersistentModelIndex mModelIndex;
 };

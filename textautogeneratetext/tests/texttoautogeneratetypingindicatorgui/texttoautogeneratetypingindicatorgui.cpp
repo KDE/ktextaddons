@@ -15,20 +15,20 @@
 
 Dot::Dot(QObject *parent, int duration, int index)
 {
-    auto scaleAnimation = new QPropertyAnimation(parent);
+    auto scaleAnimationUp = new QPropertyAnimation(parent);
 
-    scaleAnimation->setTargetObject(parent);
-    scaleAnimation->setPropertyName("scale");
-    scaleAnimation->setStartValue(1.0);
-    scaleAnimation->setEndValue(1.33);
-    scaleAnimation->setDuration(duration);
+    scaleAnimationUp->setTargetObject(parent);
+    scaleAnimationUp->setPropertyName("scale");
+    scaleAnimationUp->setStartValue(1.0);
+    scaleAnimationUp->setEndValue(1.33);
+    scaleAnimationUp->setDuration(duration);
 
-    auto opacityAnimation = new QPropertyAnimation(parent);
-    opacityAnimation->setTargetObject(parent);
-    opacityAnimation->setPropertyName("opacity");
-    opacityAnimation->setStartValue(0.5);
-    opacityAnimation->setEndValue(1.0);
-    opacityAnimation->setDuration(duration);
+    auto opacityAnimationUp = new QPropertyAnimation(parent);
+    opacityAnimationUp->setTargetObject(parent);
+    opacityAnimationUp->setPropertyName("opacity");
+    opacityAnimationUp->setStartValue(0.5);
+    opacityAnimationUp->setEndValue(1.0);
+    opacityAnimationUp->setDuration(duration);
 
     auto scaleAnimationDown = new QPropertyAnimation(parent);
 
@@ -46,8 +46,8 @@ Dot::Dot(QObject *parent, int duration, int index)
     opacityAnimationDown->setDuration(duration);
 
     auto groupUp = new QParallelAnimationGroup(parent);
-    groupUp->addAnimation(scaleAnimation);
-    groupUp->addAnimation(opacityAnimation);
+    groupUp->addAnimation(scaleAnimationUp);
+    groupUp->addAnimation(opacityAnimationUp);
 
     auto groupDown = new QParallelAnimationGroup(parent);
     groupDown->addAnimation(scaleAnimationDown);
