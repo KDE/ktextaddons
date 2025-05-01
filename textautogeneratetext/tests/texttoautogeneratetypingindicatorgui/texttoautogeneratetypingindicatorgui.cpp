@@ -30,14 +30,34 @@ Dot::Dot(QObject *parent, int duration, int index)
     opacityAnimation->setEndValue(1.0);
     opacityAnimation->setDuration(duration);
 
-    auto group = new QParallelAnimationGroup(parent);
-    group->addAnimation(scaleAnimation);
-    group->addAnimation(opacityAnimation);
+    auto scaleAnimationDown = new QPropertyAnimation(parent);
+
+    scaleAnimationDown->setTargetObject(parent);
+    scaleAnimationDown->setPropertyName("scale");
+    scaleAnimationDown->setStartValue(1.33);
+    scaleAnimationDown->setEndValue(1.0);
+    scaleAnimationDown->setDuration(duration);
+
+    auto opacityAnimationDown = new QPropertyAnimation(parent);
+    opacityAnimationDown->setTargetObject(parent);
+    opacityAnimationDown->setPropertyName("opacity");
+    opacityAnimationDown->setStartValue(1.0);
+    opacityAnimationDown->setEndValue(0.5);
+    opacityAnimationDown->setDuration(duration);
+
+    auto groupUp = new QParallelAnimationGroup(parent);
+    groupUp->addAnimation(scaleAnimation);
+    groupUp->addAnimation(opacityAnimation);
+
+    auto groupDown = new QParallelAnimationGroup(parent);
+    groupDown->addAnimation(scaleAnimationDown);
+    groupDown->addAnimation(opacityAnimationDown);
 
     auto sequencial = new QSequentialAnimationGroup(parent);
     const auto value = duration * index / 2;
     // qDebug() << " Pause value " << value;
-    sequencial->addAnimation(group);
+    sequencial->addAnimation(groupUp);
+    sequencial->addAnimation(groupDown);
     sequencial->setLoopCount(-1);
     QTimer::singleShot(value, parent, [sequencial]() {
         sequencial->start();

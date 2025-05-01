@@ -6,6 +6,7 @@
 
 #include "textautogeneratemessagewaitingansweranimation.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutogenerateText;
 TextAutogenerateMessageWaitingAnswerAnimation::TextAutogenerateMessageWaitingAnswerAnimation(QObject *parent)
     : QObject{parent}
