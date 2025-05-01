@@ -114,6 +114,7 @@ QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::create
     const auto value = duration * index / 2;
     // qDebug() << " Pause value " << value;
     // TODO add pause
+    sequencial->addPause(value);
     sequencial->addAnimation(groupUp);
     sequencial->addAnimation(groupDown);
     sequencial->setLoopCount(-1);
