@@ -44,7 +44,7 @@ int TextAutogenerateMessageWaitingAnswerAnimation::count() const
 void TextAutogenerateMessageWaitingAnswerAnimation::createAnimations()
 {
     mSequencials = new QSequentialAnimationGroup(this);
-    const int duration = 500; // Ms
+    const int duration = 300; // Ms
     mSequencials->addPause(duration);
     for (int i = 0; i < 3; i++) {
         mSequencials->addAnimation(createAnimation(i, duration));
