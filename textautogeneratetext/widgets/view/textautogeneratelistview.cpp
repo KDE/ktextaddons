@@ -334,6 +334,7 @@ void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &inde
         mDelegate->removeNeedUpdateIndexBackground(index);
         update(index);
     });
+    animation->start();
 }
 
 void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)

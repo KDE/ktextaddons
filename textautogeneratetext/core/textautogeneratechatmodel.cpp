@@ -79,6 +79,13 @@ void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
 {
     beginInsertRows(QModelIndex(), mMessages.count(), mMessages.count());
     mMessages.append(msg);
+    if (msg.sender() == TextAutoGenerateMessage::Sender::LLM) {
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(mMessages.count() - 1, {FinishedRole});
+    }
     endInsertRows();
 }
 

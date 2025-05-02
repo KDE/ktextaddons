@@ -133,7 +133,7 @@ void TextAutogenerateListViewDelegate::drawInProgressIndicator(QPainter *painter
     for (int i = 0; i < scaleAndOpacities.count(); ++i) {
         const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = scaleAndOpacities.value(i);
         painter->setOpacity(value.opacity);
-        qDebug() << " value " << value;
+        // qDebug() << " value " << value;
         painter->save();
         painter->translate(spacing + i * (dotSize + spacing), layout.inProgressRect.height() / 2);
         painter->rotate(45);
