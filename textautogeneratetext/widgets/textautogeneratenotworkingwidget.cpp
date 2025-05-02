@@ -22,7 +22,7 @@ TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *pare
     mainLayout->setContentsMargins({});
 
     mMessageWidget->setObjectName("mMessageWidget"_L1);
-    mainLayout->addWidget(mMessageWidget);
+    mainLayout->addWidget(mMessageWidget, 0, Qt::AlignVCenter);
     mMessageWidget->setCloseButtonVisible(false);
 
     auto configureButton = new QPushButton(i18n("Configure…"), this);
