@@ -562,4 +562,23 @@ void TextAutogenerateListViewDelegate::removeNeedUpdateIndexBackground(const QPe
     }
 }
 
+void TextAutogenerateListViewDelegate::needUpdateWaitingAnswerAnimation(
+    const QPersistentModelIndex &index,
+    const QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities)
+{
+    removeNeedUpdateIndexBackground(index);
+    const IndexScaleAndOpacities back{.index = index, .scaleAndOpacities = scaleAndOpacities};
+    mIndexScaleAndOpacitiesList.append(std::move(back));
+}
+
+void TextAutogenerateListViewDelegate::removeNeedUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index)
+{
+    auto it = std::find_if(mIndexScaleAndOpacitiesList.cbegin(), mIndexScaleAndOpacitiesList.cend(), [index](const IndexScaleAndOpacities &key) {
+        return key.index == index;
+    });
+    if (it != mIndexScaleAndOpacitiesList.cend()) {
+        mIndexScaleAndOpacitiesList.erase(it);
+    }
+}
+
 #include "moc_textautogeneratelistviewdelegate.cpp"

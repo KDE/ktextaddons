@@ -127,6 +127,11 @@ QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::create
     return sequencial;
 }
 
+QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> TextAutogenerateMessageWaitingAnswerAnimation::scaleOpacities() const
+{
+    return mScaleOpacities;
+}
+
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t)
 {
     d.space() << "scale:" << t.scale;

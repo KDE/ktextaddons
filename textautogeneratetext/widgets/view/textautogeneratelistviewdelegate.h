@@ -6,6 +6,7 @@
 #pragma once
 
 #include "lrucache.h"
+#include "textautogeneratemessagewaitingansweranimation.h"
 #include <QItemDelegate>
 #include <QTextDocument>
 #include <memory>
@@ -41,6 +42,9 @@ public:
 
     void needUpdateIndexBackground(const QPersistentModelIndex &index, const QColor &color);
     void removeNeedUpdateIndexBackground(const QPersistentModelIndex &index);
+    void needUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index,
+                                          const QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities);
+    void removeNeedUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index);
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
     void editMessage(const QModelIndex &index);
@@ -99,6 +103,12 @@ private:
         QColor color;
     };
     QList<IndexBackgroundColor> mIndexBackgroundColorList;
+
+    struct IndexScaleAndOpacities {
+        QPersistentModelIndex index;
+        QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> scaleAndOpacities;
+    };
+    QList<IndexScaleAndOpacities> mIndexScaleAndOpacitiesList;
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
     QAbstractItemView *const mListView;
     TextAutogenerateListViewTextSelection *const mTextSelection;

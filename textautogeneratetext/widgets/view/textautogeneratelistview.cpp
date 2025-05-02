@@ -325,11 +325,11 @@ void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &inde
     auto animation = new TextAutogenerateMessageWaitingAnswerAnimation(this);
     animation->setModelIndex(index);
     connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
-        // mDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
+        mDelegate->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
         update(animation->modelIndex());
     });
     connect(this, &TextAutogenerateListView::waitingAnswerDone, this, [this](const QModelIndex &index) {
-        // mDelegate->removeNeedUpdateIndexBackground(index, animation->backgroundColor());
+        mDelegate->removeNeedUpdateIndexBackground(index);
         update(index);
     });
 }
