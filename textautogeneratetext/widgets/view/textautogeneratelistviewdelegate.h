@@ -78,6 +78,9 @@ private:
 
         // Date Area
         QRect dateAreaRect;
+
+        // In progress Area
+        QRect inProgressRect;
     };
 
     [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;

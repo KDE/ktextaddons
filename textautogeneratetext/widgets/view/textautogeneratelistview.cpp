@@ -73,6 +73,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
                         mDelegate->removeMessageCache(uuid);
                     }
                     if (roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
+                        qDebug() << " TextAutoGenerateChatModel::FinishedRole";
                         const bool inProgress = !topLeft.data(TextAutoGenerateChatModel::FinishedRole).toBool();
                         if (inProgress) {
                             addWaitingAnswerAnimation(topLeft);
@@ -322,6 +323,7 @@ void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
 
 void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
 {
+    qDebug() << " CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX addWaitingAnswerAnimation";
     auto animation = new TextAutogenerateMessageWaitingAnswerAnimation(this);
     animation->setModelIndex(index);
     connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
