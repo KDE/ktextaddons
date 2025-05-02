@@ -21,12 +21,10 @@ public:
 
 Q_SIGNALS:
     void configChanged();
-    void clearModel();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
     QLabel *const mEngineName;
     QToolButton *const mConfigureEngine;
-    QToolButton *const mClearChat;
 };
 }

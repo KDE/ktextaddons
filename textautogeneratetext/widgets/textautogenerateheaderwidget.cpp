@@ -16,7 +16,6 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineName(new QLabel(this))
     , mConfigureEngine(new QToolButton(this))
-    , mClearChat(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -36,13 +35,6 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::slotConfigureEngine);
-
-    mClearChat->setObjectName("mClearChat"_L1);
-    mClearChat->setToolTip(i18nc("@info:tooltip", "Clear"));
-    mClearChat->setAutoRaise(true);
-    mClearChat->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-all")));
-    mainLayout->addWidget(mClearChat);
-    connect(mClearChat, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::clearModel);
 }
 
 TextAutogenerateHeaderWidget::~TextAutogenerateHeaderWidget() = default;

@@ -33,21 +33,6 @@ void TextAutogenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mConfigureEngine);
     QVERIFY(mConfigureEngine->autoRaise());
     QVERIFY(!mConfigureEngine->toolTip().isEmpty());
-
-    auto mClearChat = w.findChild<QToolButton *>(QStringLiteral("mClearChat"));
-    QVERIFY(mClearChat);
-    QVERIFY(mClearChat->autoRaise());
-    QVERIFY(!mClearChat->toolTip().isEmpty());
-}
-
-void TextAutogenerateHeaderWidgetTest::shouldReactWhenClickClearButton()
-{
-    TextAutogenerateText::TextAutogenerateHeaderWidget w;
-    auto mClearChat = w.findChild<QToolButton *>(QStringLiteral("mClearChat"));
-
-    QSignalSpy clarModelSpy(&w, &TextAutogenerateText::TextAutogenerateHeaderWidget::clearModel);
-    QTest::mouseClick(mClearChat, Qt::LeftButton);
-    QCOMPARE(clarModelSpy.count(), 1);
 }
 
 #include "moc_textautogenerateheaderwidgettest.cpp"
