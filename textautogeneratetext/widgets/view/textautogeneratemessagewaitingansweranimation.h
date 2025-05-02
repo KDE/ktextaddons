@@ -34,6 +34,7 @@ public:
     [[nodiscard]] int count() const;
     [[nodiscard]] QList<ScaleAndOpacity> scaleOpacities() const;
 
+    void stopAndDelete();
 Q_SIGNALS:
     void valueChanged();
 

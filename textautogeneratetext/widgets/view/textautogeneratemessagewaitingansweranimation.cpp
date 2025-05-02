@@ -36,6 +36,12 @@ void TextAutogenerateMessageWaitingAnswerAnimation::start()
     mSequencials->start();
 }
 
+void TextAutogenerateMessageWaitingAnswerAnimation::stopAndDelete()
+{
+    mSequencials->stop();
+    deleteLater();
+}
+
 int TextAutogenerateMessageWaitingAnswerAnimation::count() const
 {
     return mScaleOpacities.count();
