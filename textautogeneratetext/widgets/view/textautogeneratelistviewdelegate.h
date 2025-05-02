@@ -84,11 +84,12 @@ private:
     [[nodiscard]] QSize textSizeHint(QTextDocument *doc, qreal *pBaseLine) const;
     [[nodiscard]] TextAutogenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
-    void draw(QPainter *painter, QRect rect, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
-    void drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    void drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
     [[nodiscard]] int buttonIconSize(const QStyleOptionViewItem &option) const;
+    void drawInProgressIndicator(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
 
     const QIcon mEditedIcon;
     const QIcon mRemoveIcon;

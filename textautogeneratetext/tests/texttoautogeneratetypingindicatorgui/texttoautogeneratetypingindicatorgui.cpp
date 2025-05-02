@@ -33,7 +33,7 @@ void DotsWidget::paintEvent(QPaintEvent *event)
     int spacing = 40;
 
     for (int i = 0; i < mAnimation->count(); ++i) {
-        TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = mAnimation->value(i);
+        const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = mAnimation->value(i);
         painter.setOpacity(value.opacity);
         painter.save();
         painter.translate(spacing + i * (dotSize + spacing), height() / 2);
