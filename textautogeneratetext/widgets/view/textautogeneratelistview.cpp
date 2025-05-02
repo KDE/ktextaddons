@@ -8,6 +8,7 @@
 #include "core/textautogeneratechatsortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
+#include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
 #include <KLocalizedString>
 #include <QApplication>
@@ -309,6 +310,16 @@ void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
         auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
         lastModel->setData(idx, false, TextAutoGenerateChatModel::EditingRole);
     }
+}
+
+void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
+{
+    auto animation = new TextAutogenerateMessageWaitingAnswerAnimation(this);
+    animation->setModelIndex(index);
+    connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
+        // mDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
+        update(animation->modelIndex());
+    });
 }
 
 void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)
