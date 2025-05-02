@@ -19,6 +19,7 @@
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
 #include <QKeyEvent>
@@ -58,7 +59,6 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::slotEditingFinished);
 
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
-    connect(mHeaderWidget, &TextAutogenerateHeaderWidget::clearModel, this, &TextAutogenerateWidget::slotClearModel);
 
     connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, [this](const QString &str) {
         slotEditingFinished(str, {});
@@ -68,6 +68,9 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::cancelRequest, this, &TextAutogenerateWidget::slotCancelRequest);
     connect(mHistoryWidget, &TextAutogenerateHistoryWidget::goToDiscussion, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::goToDiscussion);
+    connect(TextAutogenerateText::TextAutogenerateEngineLoader::self(), &TextAutogenerateText::TextAutogenerateEngineLoader::noPluginsFound, this, [this]() {
+        Q_EMIT noPluginsFound(i18n("No plugin found."));
+    });
     loadEngine();
     readConfig();
 }
@@ -90,11 +93,6 @@ void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
     } else {
         mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
     }
-}
-
-void TextAutogenerateWidget::slotClearModel()
-{
-    TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
 }
 
 void TextAutogenerateWidget::writeConfig()
@@ -123,7 +121,6 @@ void TextAutogenerateWidget::loadEngine()
         delete mTextAutogeneratePlugin;
         mTextAutogeneratePlugin = nullptr;
     }
-    // TODO connect(TextAutogenerateText::TextAutogenerateEngineLoader::self(), &TextAutogenerateText::TextAutogenerateEngineLoader::noPluginsFound, this, &)
     TextAutogenerateText::TextAutogenerateEngineLoader::self()->loadPlugins();
 
     mTextAutogenerateClient =
@@ -171,7 +168,7 @@ void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMess
 void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 {
     qDebug() << " TextAutogenerateWidget::slotAutogenerateFailed " << errorMessage;
-    // TODO report error
+    Q_EMIT pluginBroken(errorMessage);
 }
 
 void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)

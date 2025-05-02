@@ -27,6 +27,10 @@ public:
 
     void loadEngine();
 
+Q_SIGNALS:
+    void noPluginsFound(const QString &msg);
+    void pluginBroken(const QString &msg);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str, const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished(const TextAutoGenerateMessage &msg);
@@ -34,7 +38,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureChanged();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotClearModel();
     TEXTAUTOGENERATETEXT_NO_EXPORT void keyPressedInLineEdit(QKeyEvent *ev);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);

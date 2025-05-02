@@ -30,7 +30,12 @@ TextAutogenerateStackWidget::TextAutogenerateStackWidget(QWidget *parent)
     mStackedWidget->addWidget(mTextAutogenerateWidget);
     mStackedWidget->setCurrentWidget(mTextAutogenerateWidget);
 
-    // connect(mTextAutogenerateWidget, &TextAutogenerateWidget::, this, &TextAutogenerateStackWidget::setBrokenEngine);
+    connect(mTextAutogenerateWidget, &TextAutogenerateWidget::noPluginsFound, this, [this](const QString &msg) {
+        setBrokenEngine(true, msg);
+    });
+    connect(mTextAutogenerateWidget, &TextAutogenerateWidget::pluginBroken, this, [this](const QString &msg) {
+        setBrokenEngine(true, msg);
+    });
 }
 
 TextAutogenerateStackWidget::~TextAutogenerateStackWidget() = default;
