@@ -72,6 +72,14 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
                     if (!uuid.isEmpty()) {
                         mDelegate->removeMessageCache(uuid);
                     }
+                    if (roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
+                        const bool inProgress = !topLeft.data(TextAutoGenerateChatModel::FinishedRole).toBool();
+                        if (inProgress) {
+                            addWaitingAnswerAnimation(topLeft);
+                        } else {
+                            Q_EMIT waitingAnswerDone(topLeft);
+                        }
+                    }
                 }
             });
 
@@ -319,6 +327,10 @@ void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &inde
     connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
         // mDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
         update(animation->modelIndex());
+    });
+    connect(this, &TextAutogenerateListView::waitingAnswerDone, this, [this](const QModelIndex &index) {
+        // mDelegate->removeNeedUpdateIndexBackground(index, animation->backgroundColor());
+        update(index);
     });
 }
 
