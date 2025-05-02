@@ -114,6 +114,8 @@ target_sources(KF6TextAutogenerateText PRIVATE
 
     widgets/view/textautogeneratemessagewaitingansweranimation.h
     widgets/view/textautogeneratemessagewaitingansweranimation.cpp
+    widgets/view/textautogeneratecolorsandmessageviewstyle.h
+    widgets/view/textautogeneratecolorsandmessageviewstyle.cpp
 
     widgets/textautogeneratestackwidget.h
     widgets/textautogeneratestackwidget.cpp
@@ -165,6 +167,7 @@ target_link_libraries(KF6TextAutogenerateText
     KF6::ConfigGui
     KF6::TextWidgets
     KF6::CoreAddons
+    KF6::ColorScheme
 )
 
 target_include_directories(KF6TextAutogenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutogenerateText/>")
