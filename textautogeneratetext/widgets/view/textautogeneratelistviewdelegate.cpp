@@ -195,7 +195,6 @@ void TextAutogenerateListViewDelegate::drawDateAndIcons(QPainter *painter,
     }
 
     if (isMouseOver) {
-        // Draw the edited icon
         if (layout.editedIconRect.isValid()) {
             mEditedIcon.paint(painter, layout.editedIconRect);
         }
