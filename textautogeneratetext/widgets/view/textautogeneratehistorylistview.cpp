@@ -11,6 +11,7 @@
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
 
@@ -68,14 +69,22 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         menu.addSeparator();
 
         auto removeHistory = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
-        connect(removeHistory, &QAction::triggered, this, [index]() {
-            const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
-            if (!uuid.isEmpty()) {
-                TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+        connect(removeHistory, &QAction::triggered, this, [index, this]() {
+            if (KMessageBox::ButtonCode::PrimaryAction
+                == KMessageBox::questionTwoActions(this,
+                                                   i18n("Do you want to remove this discussion?"),
+                                                   i18nc("@title:window", "Remove Discussion"),
+                                                   KStandardGuiItem::remove(),
+                                                   KStandardGuiItem::cancel())) {
+                const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+                if (!uuid.isEmpty()) {
+                    TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                }
             }
         });
         menu.addAction(removeHistory);
 
+#if 0
         const bool archived = index.data(TextAutoGenerateChatModel::ArchivedRole).toBool();
         menu.addSeparator();
         if (archived) {
@@ -90,7 +99,6 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             });
             menu.addAction(restoreArchivedAction);
         } else {
-#if 0
             auto archiveAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Restore"), &menu);
             connect(archiveAction, &QAction::triggered, this, [index]() {
                 /*
@@ -101,9 +109,9 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                 */
             });
             menu.addAction(archiveAction);
-#endif
             // TODO
         }
+#endif
     }
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());

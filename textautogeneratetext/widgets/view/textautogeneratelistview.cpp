@@ -11,6 +11,7 @@
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QApplication>
 #include <QClipboard>
 #include <QMenu>
@@ -103,11 +104,18 @@ void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
 
 void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
-    if (!uuid.isEmpty()) {
-        Q_EMIT cancelRequest(uuid);
-        // TODO disconnect
-        TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+    if (KMessageBox::ButtonCode::PrimaryAction
+        == KMessageBox::questionTwoActions(this,
+                                           i18n("Do you want to remove this discussion?"),
+                                           i18nc("@title:window", "Remove Discussion"),
+                                           KStandardGuiItem::remove(),
+                                           KStandardGuiItem::cancel())) {
+        const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+        if (!uuid.isEmpty()) {
+            Q_EMIT cancelRequest(uuid);
+            // TODO disconnect
+            TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+        }
     }
 }
 
