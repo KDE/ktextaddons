@@ -30,9 +30,7 @@ bool TextAutogenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
     }
     if (helpEvent->type() == QEvent::ToolTip) {
         const QString subject = index.data(TextAutoGenerateChatModel::MessageRole).toString();
-        const QString topic = index.data(TextAutoGenerateChatModel::TopicRole).toString();
-        const QString formattedTooltip = topic.isEmpty() ? subject : topic;
-        QToolTip::showText(helpEvent->globalPos(), formattedTooltip, view);
+        QToolTip::showText(helpEvent->globalPos(), subject, view);
         return true;
     }
     return false;
