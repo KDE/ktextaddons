@@ -93,11 +93,14 @@ private:
     void drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
     [[nodiscard]] int buttonIconSize(const QStyleOptionViewItem &option) const;
     void drawInProgressIndicator(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
+    void slotUpdateColors();
 
     const QIcon mEditedIcon;
     const QIcon mRemoveIcon;
     const QIcon mCopyIcon;
     const QIcon mCancelIcon;
+
+    QColor mEditingColorMode;
 
     // Cache SizeHint value
     // We need to clear it when we resize widget.
