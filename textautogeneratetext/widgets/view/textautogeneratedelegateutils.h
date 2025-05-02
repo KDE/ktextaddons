@@ -30,5 +30,6 @@ void setClipboardSelection(TextAutogenerateListViewTextSelection *selection);
 [[nodiscard]] int leftLLMIndent();
 [[nodiscard]] int leftUserIndent();
 [[nodiscard]] int iconSpacing();
+[[nodiscard]] QSize progressIndicatorSize();
 }
 }
