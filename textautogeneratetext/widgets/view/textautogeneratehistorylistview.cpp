@@ -33,6 +33,14 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
 
+void TextAutogenerateHistoryListView::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Escape) {
+        event->accept();
+    } else {
+        QListView::keyPressEvent(event);
+    }
+}
 void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
