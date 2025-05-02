@@ -140,7 +140,7 @@ void TextAutoGenerateChatModel::changeInProgress(const QByteArray &uuid, bool in
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };
-        emitChanged(i, {MessageRole});
+        emitChanged(i, {MessageRole | FinishedRole});
     }
 }
 
