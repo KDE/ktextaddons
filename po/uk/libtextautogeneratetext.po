@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-01 00:41+0000\n"
+"POT-Creation-Date: 2025-05-03 00:41+0000\n"
 "PO-Revision-Date: 2025-04-30 09:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -127,17 +127,11 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: widgets/textautogenerateheaderwidget.cpp:33
+#: widgets/textautogenerateheaderwidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
-
-#: widgets/textautogenerateheaderwidget.cpp:41
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Clear"
-msgstr "Спорожнити"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
@@ -155,63 +149,85 @@ msgstr "Введіть повідомлення"
 msgid "Send"
 msgstr "Надіслати"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:51
+#: widgets/textautogeneratewidget.cpp:72
+#, kde-format
+msgid "No plugin found."
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:60
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Змінити…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:62
+#: widgets/view/textautogeneratehistorylistview.cpp:71
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Вилучити…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:74
-#: widgets/view/textautogeneratehistorylistview.cpp:86
+#: widgets/view/textautogeneratehistorylistview.cpp:75
+#: widgets/view/textautogeneratelistview.cpp:109
+#, kde-format
+msgid "Do you want to remove this discussion?"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:76
+#: widgets/view/textautogeneratelistview.cpp:110
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Discussion"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:91
+#: widgets/view/textautogeneratehistorylistview.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/view/textautogeneratelistview.cpp:134
+#: widgets/view/textautogeneratelistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Копіювати позначене"
 
-#: widgets/view/textautogeneratelistview.cpp:134
+#: widgets/view/textautogeneratelistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistview.cpp:142
+#: widgets/view/textautogeneratelistview.cpp:159
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Позначити все"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:350
+#: widgets/view/textautogeneratelistviewdelegate.cpp:406
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Вилучити"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:354
+#: widgets/view/textautogeneratelistviewdelegate.cpp:410
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Змінити…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:358
+#: widgets/view/textautogeneratelistviewdelegate.cpp:414
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:362
+#: widgets/view/textautogeneratelistviewdelegate.cpp:418
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Скасувати"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Clear"
+#~ msgstr "Спорожнити"
