@@ -26,6 +26,8 @@ MistralConfigureDialog::MistralConfigureDialog(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
+    mMistralConfigureWidget->setObjectName(QStringLiteral("mMistralConfigureWidget"));
+    mainLayout->addWidget(mMistralConfigureWidget);
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     box->setObjectName(QStringLiteral("box"));
     mainLayout->addWidget(box);
