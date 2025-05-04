@@ -43,6 +43,7 @@ bool TextAutogenerateTextPlugin::ready() const
 void TextAutogenerateTextPlugin::setReady(bool newReady)
 {
     d->isReady = newReady;
+    Q_EMIT initializedDone();
 }
 
 void TextAutogenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)

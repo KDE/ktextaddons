@@ -42,6 +42,7 @@ public:
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
+    void initializedDone();
 
 protected:
     virtual void sendToLLM(const QString &message, const QByteArray &uuid) = 0;

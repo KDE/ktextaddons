@@ -36,6 +36,7 @@ public:
 
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
+    void askMessageRequested(const QString &str);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;

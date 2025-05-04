@@ -32,6 +32,7 @@ Q_SIGNALS:
     void pluginBroken(const QString &msg);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str, const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFinished(const TextAutoGenerateMessage &msg);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &errorMessage);
@@ -41,6 +42,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void keyPressedInLineEdit(QKeyEvent *ev);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
 
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
@@ -50,5 +52,7 @@ private:
     QSplitter *const mSplitter;
     TextAutogenerateHistoryWidget *const mHistoryWidget;
     TextAutogenerateHeaderWidget *const mHeaderWidget;
+    QStringList mAskMessageList;
+    bool mPluginWasInitialized = false;
 };
 }

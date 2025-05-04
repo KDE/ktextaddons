@@ -61,7 +61,13 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
 
     connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, [this](const QString &str) {
+        qDebug() << " str " << str;
         slotEditingFinished(str, {});
+    });
+
+    connect(TextAutogenerateManager::self(), &TextAutogenerateManager::askMessageRequested, this, [this](const QString &str) {
+        qDebug() << " str " << str;
+        slotAskMessageRequester(str);
     });
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
@@ -139,6 +145,7 @@ void TextAutogenerateWidget::loadEngine()
                 &TextAutogenerateText::TextAutogenerateTextPlugin::errorOccurred,
                 this,
                 &TextAutogenerateWidget::slotAutogenerateFailed);
+        connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutogenerateTextPlugin::initializedDone, this, &TextAutogenerateWidget::slotInitializeDone);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutogenerateEngineUtil::loadEngine();
     }
@@ -182,6 +189,24 @@ void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
 void TextAutogenerateWidget::slotCancelRequest(const QByteArray &uuid)
 {
     mTextAutogeneratePlugin->cancelRequest(uuid);
+}
+
+void TextAutogenerateWidget::slotInitializeDone()
+{
+    mPluginWasInitialized = true;
+    for (const auto &str : std::as_const(mAskMessageList)) {
+        slotEditingFinished(str, {});
+    }
+    mAskMessageList.clear();
+}
+
+void TextAutogenerateWidget::slotAskMessageRequester(const QString &str)
+{
+    if (!mPluginWasInitialized) {
+        mAskMessageList.append(str);
+    } else {
+        slotEditingFinished(str, {});
+    }
 }
 
 #include "moc_textautogeneratewidget.cpp"
