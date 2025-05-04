@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-03 00:41+0000\n"
-"PO-Revision-Date: 2025-04-23 09:06+0200\n"
+"PO-Revision-Date: 2025-04-30 15:43+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -101,15 +101,13 @@ msgstr "Il modello utilizzato per generare risposte"
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "Configura AI"
+msgstr "Configura Openai IA"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -185,7 +183,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Ripristina"
 
 #: widgets/view/textautogeneratelistview.cpp:151
 #, kde-format
@@ -206,30 +204,28 @@ msgid "Select All"
 msgstr "Seleziona tutto"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "Rimuovi…"
+msgstr "Rimuovi"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:410
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "Modifica..."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:414
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:418
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Clear"
