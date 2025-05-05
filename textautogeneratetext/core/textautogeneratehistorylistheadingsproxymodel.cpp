@@ -6,6 +6,8 @@
 
 #include "textautogeneratehistorylistheadingsproxymodel.h"
 
+#include <QApplication>
+#include <QPalette>
 using namespace TextAutogenerateText;
 TextAutoGenerateHistoryListHeadingsProxyModel::TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent)
     : QAbstractProxyModel{parent}
@@ -16,14 +18,13 @@ TextAutoGenerateHistoryListHeadingsProxyModel::~TextAutoGenerateHistoryListHeadi
 
 QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &index, int role) const
 {
-#if 0
     switch (type(index)) {
     case IndexType::Root:
         return {};
     case IndexType::Section:
         switch (role) {
         case Qt::ItemDataRole::DisplayRole:
-            return RoomModel::sectionName(RoomModel::Section(index.row()));
+            return TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::Section(index.row()));
         case Qt::BackgroundRole:
             return QApplication::palette().brush(QPalette::Window);
         default:
@@ -33,7 +34,6 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
         return sourceModel()->data(mapToSource(index), role);
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
@@ -185,10 +185,9 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const Q
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelIndex &parent, int first, int last)
 {
-#if 0
     for (auto row = first; row <= last; ++row) {
         const QPersistentModelIndex index = sourceModel()->index(row, 0, parent);
-        const auto newSectionId = int(index.data(RoomModel::RoomSection).value<RoomModel::Section>());
+        const auto newSectionId = int(index.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::Section>());
         auto &newSection = mSections.at(newSectionId);
 
         const auto newLocation = std::lower_bound(newSection.cbegin(), newSection.cend(), index);
@@ -200,7 +199,6 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelI
 
         endInsertRows();
     }
-#endif
 }
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last)
@@ -222,14 +220,13 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsAboutToBeRemoved(const
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles)
 {
-#if 0
     for (auto row = topLeft.row(), last = bottomRight.row(); row <= last; ++row) {
         const auto sourceIndex = topLeft.siblingAtRow(row);
         const auto proxyIndex = mapFromSource(sourceIndex);
         Q_EMIT dataChanged(proxyIndex, proxyIndex, roles);
     }
 
-    if (!roles.empty() && !roles.contains(RoomModel::RoomSection))
+    if (!roles.empty() && !roles.contains(TextAutoGenerateChatModel::SectionRole))
         return;
 
     for (auto row = topLeft.row(), last = bottomRight.row(); row <= last; ++row) {
@@ -237,7 +234,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
         const auto ourOldIndex = mapFromSource(sourceIndex);
 
         const auto oldSectionId = int(ourOldIndex.internalId());
-        const auto newSectionId = int(sourceIndex.data(RoomModel::RoomSection).value<RoomModel::Section>());
+        const auto newSectionId = int(sourceIndex.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::Section>());
 
         if (oldSectionId == newSectionId)
             continue;
@@ -256,18 +253,16 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
 
         endMoveRows();
     }
-#endif
 }
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
 {
-#if 0
     for (auto &section : mSections)
         section.clear();
 
     for (auto row = 0, until = sourceModel()->rowCount(); row < until; ++row) {
         const QPersistentModelIndex index = sourceModel()->index(row, 0);
-        const auto newSectionId = uint(index.data(RoomModel::RoomSection).value<RoomModel::Section>());
+        const auto newSectionId = uint(index.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::Section>());
         auto &newSection = mSections.at(newSectionId);
 
         newSection.push_back(index);
@@ -275,7 +270,6 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
 
     for (auto &section : mSections)
         std::sort(section.begin(), section.end());
-#endif
 }
 
 auto TextAutoGenerateHistoryListHeadingsProxyModel::type(const QModelIndex &index) const -> IndexType

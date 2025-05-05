@@ -52,8 +52,16 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return message.archived();
     case EditingRole:
         return message.editingMode();
+    case SectionRole:
+        return QVariant::fromValue(section(message));
     }
     return {};
+}
+
+TextAutoGenerateChatModel::Section TextAutoGenerateChatModel::section(const TextAutoGenerateMessage &m) const
+{
+    // TODO
+    return TextAutoGenerateChatModel::Section::Unknown;
 }
 
 QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
@@ -201,7 +209,21 @@ bool TextAutoGenerateChatModel::cancelRequest(const QModelIndex &index)
 
 QString TextAutoGenerateChatModel::sectionName(Section sectionId)
 {
-    return {};
+    switch (sectionId) {
+    case TextAutoGenerateChatModel::Section::Today:
+        return i18n("Today");
+    case TextAutoGenerateChatModel::Section::LessThanSevenDays:
+        return i18n("7 days ago");
+    case TextAutoGenerateChatModel::Section::LessThanThirtyDays:
+        return i18n("30 days ago");
+    case TextAutoGenerateChatModel::Section::Later:
+        return i18n("Later");
+    case TextAutoGenerateChatModel::Section::Unknown:
+        return i18n("Unknown");
+    case TextAutoGenerateChatModel::Section::NSections:
+        break;
+    }
+    return QStringLiteral("ERROR");
 }
 
 bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &value, int role)

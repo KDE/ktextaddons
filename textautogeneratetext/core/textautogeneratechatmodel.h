@@ -29,14 +29,15 @@ public:
         MouseHoverRole,
         ArchivedRole,
         EditingRole,
+        SectionRole,
     };
 
     enum class Section : uint8_t {
         Today,
         LessThanSevenDays,
         LessThanThirtyDays,
-        ThisYear,
         Later,
+        Unknown,
         NSections,
     };
 
@@ -68,6 +69,7 @@ Q_SIGNALS:
     void conversationCleared();
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatModel::Section section(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateMessage> mMessages;
 };
 }
