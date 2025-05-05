@@ -51,6 +51,7 @@ Q_SIGNALS:
     void removeMessage(const QModelIndex &index);
     void copyMessage(const QModelIndex &index);
     void cancelRequest(const QModelIndex &index);
+    void refreshRequest(const QModelIndex &index);
 
 private:
     struct MessageLayout {
@@ -76,6 +77,9 @@ private:
         // Cancel icon
         QRect cancelIconRect;
 
+        // Refresh icon
+        QRect refreshIconRect;
+
         // Date Area
         QRect dateAreaRect;
 
@@ -99,6 +103,7 @@ private:
     const QIcon mRemoveIcon;
     const QIcon mCopyIcon;
     const QIcon mCancelIcon;
+    const QIcon mRefreshIcon;
 
     QColor mEditingColorMode;
 
