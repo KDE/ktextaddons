@@ -7,6 +7,7 @@
 #include "textautogeneratechatmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
+#include <QDateTime>
 
 using namespace TextAutogenerateText;
 TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
@@ -60,7 +61,19 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
 
 TextAutoGenerateChatModel::Section TextAutoGenerateChatModel::section(const TextAutoGenerateMessage &m) const
 {
-    // TODO
+    if (m.dateTime() == -1) {
+        return TextAutoGenerateChatModel::Section::Unknown;
+    }
+    const QDate d = QDateTime::fromSecsSinceEpoch(m.dateTime()).date();
+    if (d == QDate::currentDate()) {
+        return TextAutoGenerateChatModel::Section::Today;
+    } else if (QDate::currentDate().addDays(7) < d) {
+        return TextAutoGenerateChatModel::Section::LessThanSevenDays;
+    } else if (QDate::currentDate().addDays(30) < d) {
+        return TextAutoGenerateChatModel::Section::LessThanThirtyDays;
+    } else {
+        return TextAutoGenerateChatModel::Section::Later;
+    }
     return TextAutoGenerateChatModel::Section::Unknown;
 }
 
