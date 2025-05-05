@@ -10,6 +10,10 @@ class QLineEdit;
 namespace TextAutogenerateText
 {
 class TextAutogenerateHistoryListView;
+/**
+ * @brief The TextAutogenerateHistoryWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryWidget : public QWidget
 {
     Q_OBJECT

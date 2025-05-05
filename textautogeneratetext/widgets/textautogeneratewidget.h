@@ -16,6 +16,10 @@ class TextAutogenerateTextPlugin;
 class TextAutoGenerateMessage;
 class TextAutogenerateHistoryWidget;
 class TextAutogenerateHeaderWidget;
+/**
+ * @brief The TextAutogenerateWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateWidget : public QWidget
 {
     Q_OBJECT

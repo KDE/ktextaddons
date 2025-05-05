@@ -11,6 +11,10 @@ class QPushButton;
 namespace TextAutogenerateText
 {
 class TextAutogenerateTextLineEdit;
+/**
+ * @brief The TextAutogenerateTextLineEditWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateTextLineEditWidget : public QWidget
 {
     Q_OBJECT

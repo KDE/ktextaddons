@@ -9,6 +9,10 @@
 #include <KTextEdit>
 namespace TextAutogenerateText
 {
+/**
+ * @brief The TextAutogenerateTextLineEdit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateTextLineEdit : public KTextEdit
 {
     Q_OBJECT
