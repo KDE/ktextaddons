@@ -30,6 +30,7 @@ public:
 Q_SIGNALS:
     void noPluginsFound(const QString &msg);
     void pluginBroken(const QString &msg);
+    void stopEditingMode(const QByteArray &uuid);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();

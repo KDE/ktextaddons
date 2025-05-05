@@ -61,18 +61,17 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
 
     connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, [this](const QString &str) {
-        qDebug() << " str " << str;
         slotEditingFinished(str, {});
     });
 
     connect(TextAutogenerateManager::self(), &TextAutogenerateManager::askMessageRequested, this, [this](const QString &str) {
-        qDebug() << " str " << str;
         slotAskMessageRequester(str);
     });
 
     connect(mTextAutogenerateTextLineEditWidget, &TextAutogenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessage, this, &TextAutogenerateWidget::slotEditMessage);
     connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::cancelRequest, this, &TextAutogenerateWidget::slotCancelRequest);
+    connect(this, &TextAutogenerateWidget::stopEditingMode, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editingFinished);
     connect(mHistoryWidget, &TextAutogenerateHistoryWidget::goToDiscussion, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::goToDiscussion);
     connect(TextAutogenerateText::TextAutogenerateEngineLoader::self(), &TextAutogenerateText::TextAutogenerateEngineLoader::noPluginsFound, this, [this]() {
         Q_EMIT noPluginsFound(i18n("No plugin found."));
@@ -95,7 +94,10 @@ void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
     const int key = ev->key();
     if (key == Qt::Key_Escape) {
         ev->accept();
-        // TODO
+        if (const QByteArray uuid = mTextAutogenerateTextLineEditWidget->uuid(); !uuid.isEmpty()) {
+            Q_EMIT stopEditingMode(uuid);
+            mTextAutogenerateTextLineEditWidget->setUuid({});
+        }
     } else {
         mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
     }
