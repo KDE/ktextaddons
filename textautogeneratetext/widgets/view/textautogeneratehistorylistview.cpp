@@ -69,8 +69,12 @@ void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)
 
 void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
-    QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
+    if (!index.parent().isValid()) {
+        return;
+    }
+
+    QMenu menu(this);
     if (index.isValid()) {
         auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
         connect(renameHistory, &QAction::triggered, this, [index, this]() {
