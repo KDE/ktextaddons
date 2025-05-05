@@ -30,6 +30,7 @@ public:
         ArchivedRole,
         EditingRole,
         SectionRole,
+        WaitingAnswerRole,
     };
 
     enum class SectionHistory : uint8_t {

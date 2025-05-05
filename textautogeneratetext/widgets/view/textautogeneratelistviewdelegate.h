@@ -50,8 +50,8 @@ Q_SIGNALS:
     void editMessage(const QModelIndex &index);
     void removeMessage(const QModelIndex &index);
     void copyMessage(const QModelIndex &index);
-    void cancelRequest(const QModelIndex &index);
-    void refreshRequest(const QModelIndex &index);
+    void cancelRequested(const QModelIndex &index);
+    void refreshRequested(const QModelIndex &index);
 
 private:
     struct MessageLayout {

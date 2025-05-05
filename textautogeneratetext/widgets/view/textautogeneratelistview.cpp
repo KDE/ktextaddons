@@ -42,7 +42,8 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     connect(mDelegate, &TextAutogenerateListViewDelegate::removeMessage, this, &TextAutogenerateListView::slotRemoveMessage);
     connect(mDelegate, &TextAutogenerateListViewDelegate::editMessage, this, &TextAutogenerateListView::slotEditMessage);
     connect(mDelegate, &TextAutogenerateListViewDelegate::copyMessage, this, &TextAutogenerateListView::slotCopyMessage);
-    connect(mDelegate, &TextAutogenerateListViewDelegate::cancelRequest, this, &TextAutogenerateListView::slotCancelRequest);
+    connect(mDelegate, &TextAutogenerateListViewDelegate::cancelRequested, this, &TextAutogenerateListView::slotCancelRequested);
+    connect(mDelegate, &TextAutogenerateListViewDelegate::refreshRequested, this, &TextAutogenerateListView::slotRefreshRequested);
 
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeInserted,
@@ -106,19 +107,26 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
         const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
             Q_EMIT cancelRequest(uuid);
-            // TODO disconnect
             TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
         }
     }
 }
 
-void TextAutogenerateListView::slotCancelRequest(const QModelIndex &index)
+void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         if (TextAutogenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(index)) {
             Q_EMIT cancelRequest(uuid);
         }
+    }
+}
+
+void TextAutogenerateListView::slotRefreshRequested(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    if (!uuid.isEmpty()) {
+        // TODO TextAutogenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(index);
     }
 }
 
