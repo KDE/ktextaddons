@@ -24,8 +24,7 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
     case IndexType::Section:
         switch (role) {
         case Qt::ItemDataRole::DisplayRole:
-            // qDebug() << "ddd "<<TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::Section(index.row()));
-            return TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::Section(index.row()));
+            return TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::SectionHistory(index.row()));
         case Qt::BackgroundRole:
             return QApplication::palette().brush(QPalette::Window);
         default:
@@ -188,7 +187,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelI
 {
     for (auto row = first; row <= last; ++row) {
         const QPersistentModelIndex index = sourceModel()->index(row, 0, parent);
-        const auto newSectionId = int(index.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::Section>());
+        const auto newSectionId = int(index.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::SectionHistory>());
         auto &newSection = mSections.at(newSectionId);
 
         const auto newLocation = std::lower_bound(newSection.cbegin(), newSection.cend(), index);
@@ -235,7 +234,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
         const auto ourOldIndex = mapFromSource(sourceIndex);
 
         const auto oldSectionId = int(ourOldIndex.internalId());
-        const auto newSectionId = int(sourceIndex.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::Section>());
+        const auto newSectionId = int(sourceIndex.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::SectionHistory>());
 
         if (oldSectionId == newSectionId)
             continue;
@@ -263,7 +262,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
 
     for (auto row = 0, until = sourceModel()->rowCount(); row < until; ++row) {
         const QPersistentModelIndex index = sourceModel()->index(row, 0);
-        const auto newSectionId = uint(index.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::Section>());
+        const auto newSectionId = uint(index.data(TextAutoGenerateChatModel::SectionRole).value<TextAutoGenerateChatModel::SectionHistory>());
         auto &newSection = mSections.at(newSectionId);
 
         newSection.push_back(index);

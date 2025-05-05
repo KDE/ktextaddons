@@ -59,22 +59,22 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     return {};
 }
 
-TextAutoGenerateChatModel::Section TextAutoGenerateChatModel::section(const TextAutoGenerateMessage &m) const
+TextAutoGenerateChatModel::SectionHistory TextAutoGenerateChatModel::section(const TextAutoGenerateMessage &m) const
 {
     if (m.dateTime() == -1) {
-        return TextAutoGenerateChatModel::Section::Unknown;
+        return TextAutoGenerateChatModel::SectionHistory::Unknown;
     }
     const QDate d = QDateTime::fromSecsSinceEpoch(m.dateTime()).date();
     if (d == QDate::currentDate()) {
-        return TextAutoGenerateChatModel::Section::Today;
-    } else if (QDate::currentDate().addDays(7) < d) {
-        return TextAutoGenerateChatModel::Section::LessThanSevenDays;
-    } else if (QDate::currentDate().addDays(30) < d) {
-        return TextAutoGenerateChatModel::Section::LessThanThirtyDays;
+        return TextAutoGenerateChatModel::SectionHistory::Today;
+    } else if (d < QDate::currentDate().addDays(7)) {
+        return TextAutoGenerateChatModel::SectionHistory::LessThanSevenDays;
+    } else if (d < QDate::currentDate().addDays(30)) {
+        return TextAutoGenerateChatModel::SectionHistory::LessThanThirtyDays;
     } else {
-        return TextAutoGenerateChatModel::Section::Later;
+        return TextAutoGenerateChatModel::SectionHistory::Later;
     }
-    return TextAutoGenerateChatModel::Section::Unknown;
+    return TextAutoGenerateChatModel::SectionHistory::Unknown;
 }
 
 QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
@@ -220,20 +220,20 @@ bool TextAutoGenerateChatModel::cancelRequest(const QModelIndex &index)
     return setData(index, false, TextAutoGenerateChatModel::FinishedRole);
 }
 
-QString TextAutoGenerateChatModel::sectionName(Section sectionId)
+QString TextAutoGenerateChatModel::sectionName(SectionHistory sectionId)
 {
     switch (sectionId) {
-    case TextAutoGenerateChatModel::Section::Today:
+    case TextAutoGenerateChatModel::SectionHistory::Today:
         return i18n("Today");
-    case TextAutoGenerateChatModel::Section::LessThanSevenDays:
+    case TextAutoGenerateChatModel::SectionHistory::LessThanSevenDays:
         return i18n("7 days ago");
-    case TextAutoGenerateChatModel::Section::LessThanThirtyDays:
+    case TextAutoGenerateChatModel::SectionHistory::LessThanThirtyDays:
         return i18n("30 days ago");
-    case TextAutoGenerateChatModel::Section::Later:
+    case TextAutoGenerateChatModel::SectionHistory::Later:
         return i18n("Later");
-    case TextAutoGenerateChatModel::Section::Unknown:
+    case TextAutoGenerateChatModel::SectionHistory::Unknown:
         return i18n("Unknown");
-    case TextAutoGenerateChatModel::Section::NSections:
+    case TextAutoGenerateChatModel::SectionHistory::NSections:
         break;
     }
     return QStringLiteral("ERROR");

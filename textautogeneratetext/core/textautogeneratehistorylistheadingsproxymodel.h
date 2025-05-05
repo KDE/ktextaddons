@@ -17,7 +17,7 @@ public:
     explicit TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateHistoryListHeadingsProxyModel() override;
 
-    static constexpr uint sectionCount = uint(TextAutoGenerateChatModel::Section::NSections);
+    static constexpr uint sectionCount = uint(TextAutoGenerateChatModel::SectionHistory::NSections);
 
     // QAbstractItemModel interface
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;

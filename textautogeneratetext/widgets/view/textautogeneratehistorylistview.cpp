@@ -25,12 +25,9 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     setHeaderHidden(true);
     setDragEnabled(false);
     setIndentation(0);
-    /*
     setRootIsDecorated(false);
-    setItemsExpandable(false);
-*/
+    setItemsExpandable(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    // setUniformItemSizes(false);
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
     auto historyModel = new TextAutoGenerateHistoryModel(this);
@@ -39,12 +36,13 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     mHistoryListHeadingsProxyModel->setSourceModel(historyModel);
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
-    setModel(mHistoryListHeadingsProxyModel);
+    setModel(mHistoryProxyModel);
     connect(model(), &QAbstractItemModel::rowsInserted, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::modelReset, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::rowsMoved, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::layoutChanged, this, &QTreeView::expandAll);
     connect(this, &TextAutogenerateHistoryListView::clicked, this, &TextAutogenerateHistoryListView::slotClicked);
+    expandAll();
 }
 
 TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
