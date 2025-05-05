@@ -7,6 +7,7 @@
 #include "textautogeneratehistorylistheadingsproxymodel.h"
 
 #include <QApplication>
+#include <QFont>
 #include <QPalette>
 using namespace TextAutogenerateText;
 TextAutoGenerateHistoryListHeadingsProxyModel::TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent)
@@ -27,6 +28,11 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
             return TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::SectionHistory(index.row()));
         case Qt::BackgroundRole:
             return QApplication::palette().brush(QPalette::Window);
+        case Qt::FontRole: {
+            auto font = qvariant_cast<QFont>(QAbstractProxyModel::data(index, Qt::FontRole));
+            font.setBold(true);
+            return font;
+        }
         default:
             return {};
         }
