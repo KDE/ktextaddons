@@ -31,6 +31,15 @@ public:
         EditingRole,
     };
 
+    enum class Section : uint8_t {
+        Today,
+        LessThanSevenDays,
+        LessThanThirtyDays,
+        ThisYear,
+        Later,
+        NSections,
+    };
+
     explicit TextAutoGenerateChatModel(QObject *parent = nullptr);
     ~TextAutoGenerateChatModel() override;
 
@@ -53,6 +62,8 @@ public:
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
     [[nodiscard]] bool cancelRequest(const QModelIndex &index);
+
+    [[nodiscard]] static QString sectionName(TextAutoGenerateChatModel::Section sectionId);
 Q_SIGNALS:
     void conversationCleared();
 

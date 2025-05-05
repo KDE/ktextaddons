@@ -66,7 +66,6 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::parent(const QModelIn
 
 int TextAutoGenerateHistoryListHeadingsProxyModel::rowCount(const QModelIndex &parent) const
 {
-#if 0
     switch (type(parent)) {
     case IndexType::Root:
         return sectionCount;
@@ -76,7 +75,6 @@ int TextAutoGenerateHistoryListHeadingsProxyModel::rowCount(const QModelIndex &p
         return 0;
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
@@ -152,7 +150,6 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::setSourceModel(QAbstractItem
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QModelIndex &proxyIndex) const
 {
-#if 0
     if (!sourceModel())
         return {};
 
@@ -164,13 +161,11 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QMo
         return mSections.at(proxyIndex.internalId()).at(proxyIndex.row());
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const QModelIndex &sourceIndex) const
 {
-#if 0
     if (!sourceModel())
         return {};
 
@@ -185,8 +180,6 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const Q
             return createIndex(int(it - section.cbegin()), 0, sectionId);
     }
 
-    return {};
-#endif
     return {};
 }
 
@@ -212,7 +205,6 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelI
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last)
 {
-#if 0
     for (auto row = first; row <= last; ++row) {
         const auto index = sourceModel()->index(row, 0, parent);
 
@@ -226,7 +218,6 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsAboutToBeRemoved(const
 
         endRemoveRows();
     }
-#endif
 }
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles)

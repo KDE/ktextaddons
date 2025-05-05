@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "core/textautogeneratechatmodel.h"
 #include <QAbstractProxyModel>
 namespace TextAutogenerateText
 {
@@ -16,7 +17,7 @@ public:
     explicit TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateHistoryListHeadingsProxyModel() override;
 
-    static constexpr uint sectionCount = 42;
+    static constexpr uint sectionCount = uint(TextAutoGenerateChatModel::Section::NSections);
 
     // QAbstractItemModel interface
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
@@ -37,6 +38,9 @@ private:
     void onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last);
     void onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
     void rebuildSections();
+
+    // each section vector is kept sorted for performance reasons
+    std::array<std::vector<QPersistentModelIndex>, sectionCount> mSections;
 
     enum class IndexType : uint8_t {
         Root,

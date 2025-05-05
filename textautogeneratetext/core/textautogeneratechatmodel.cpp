@@ -6,6 +6,7 @@
 
 #include "textautogeneratechatmodel.h"
 #include "textautogeneratetextcore_debug.h"
+#include <KLocalizedString>
 
 using namespace TextAutogenerateText;
 TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
@@ -196,6 +197,11 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
 bool TextAutoGenerateChatModel::cancelRequest(const QModelIndex &index)
 {
     return setData(index, false, TextAutoGenerateChatModel::FinishedRole);
+}
+
+QString TextAutoGenerateChatModel::sectionName(Section sectionId)
+{
+    return {};
 }
 
 bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &value, int role)
