@@ -5,7 +5,6 @@
 */
 #include "textautogeneratelistview.h"
 #include "core/textautogeneratechatmodel.h"
-#include "core/textautogeneratechatsortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratelistviewdelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
@@ -31,13 +30,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     scrollToBottom();
     setMouseTracking(true);
     TextAutogenerateManager::self()->loadHistory();
-#if 0
-    auto filterProxyModel = new TextAutoGenerateChatSortFilterProxyModel(this);
-    filterProxyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
-    setModel(filterProxyModel);
-#else
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
-#endif
     connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateChatModel::conversationCleared, this, [this]() {
         mDelegate->clearCache();
     });

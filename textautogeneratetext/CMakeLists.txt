@@ -61,9 +61,6 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogeneratechatmodel.h
     core/textautogeneratechatmodel.cpp
 
-    core/textautogeneratechatsortfilterproxymodel.h
-    core/textautogeneratechatsortfilterproxymodel.cpp
-
     core/textautogeneratemessage.h
     core/textautogeneratemessage.cpp
 
