@@ -166,6 +166,22 @@ void TextAutoGenerateChatModel::changeInProgress(const QByteArray &uuid, bool in
     }
 }
 
+bool TextAutoGenerateChatModel::waitingAnswer(const TextAutoGenerateMessage &message) const
+{
+    const QByteArray answerUuid = message.answerUuid();
+    if (answerUuid.isEmpty()) {
+        return false;
+    }
+    auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == answerUuid;
+    };
+    const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
+    if (answerIt != mMessages.end()) {
+        return (*answerIt).inProgress();
+    }
+    return false;
+}
+
 void TextAutoGenerateChatModel::replaceContent(const QByteArray &uuid, const QString &content)
 {
     if (uuid.isEmpty()) {
