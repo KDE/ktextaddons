@@ -226,9 +226,9 @@ QString TextAutoGenerateChatModel::sectionName(SectionHistory sectionId)
     case TextAutoGenerateChatModel::SectionHistory::Today:
         return i18n("Today");
     case TextAutoGenerateChatModel::SectionHistory::LessThanSevenDays:
-        return i18n("7 days ago");
+        return i18n("7 days previous");
     case TextAutoGenerateChatModel::SectionHistory::LessThanThirtyDays:
-        return i18n("30 days ago");
+        return i18n("30 days previous");
     case TextAutoGenerateChatModel::SectionHistory::Later:
         return i18n("Later");
     case TextAutoGenerateChatModel::SectionHistory::Unknown:
