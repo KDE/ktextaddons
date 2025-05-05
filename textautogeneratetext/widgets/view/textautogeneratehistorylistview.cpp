@@ -6,6 +6,7 @@
 
 #include "textautogeneratehistorylistview.h"
 #include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratehistorylistheadingsproxymodel.h"
 #include "core/textautogeneratehistorymodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
@@ -17,18 +18,32 @@
 
 using namespace TextAutogenerateText;
 TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent)
-    : QListView(parent)
+    : QTreeView(parent)
     , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))
+    , mHistoryListHeadingsProxyModel(new TextAutoGenerateHistoryListHeadingsProxyModel(this))
 {
+    setHeaderHidden(true);
     setDragEnabled(false);
-    setUniformItemSizes(false);
+    setIndentation(0);
+    /*
+    setRootIsDecorated(false);
+    setItemsExpandable(false);
+*/
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // setUniformItemSizes(false);
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
     auto historyModel = new TextAutoGenerateHistoryModel(this);
     historyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
-    mHistoryProxyModel->setSourceModel(historyModel);
-    setModel(mHistoryProxyModel);
 
+    mHistoryListHeadingsProxyModel->setSourceModel(historyModel);
+
+    mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
+    setModel(mHistoryListHeadingsProxyModel);
+    connect(model(), &QAbstractItemModel::rowsInserted, this, &QTreeView::expandAll);
+    connect(model(), &QAbstractItemModel::modelReset, this, &QTreeView::expandAll);
+    connect(model(), &QAbstractItemModel::rowsMoved, this, &QTreeView::expandAll);
+    connect(model(), &QAbstractItemModel::layoutChanged, this, &QTreeView::expandAll);
     connect(this, &TextAutogenerateHistoryListView::clicked, this, &TextAutogenerateHistoryListView::slotClicked);
 }
 
@@ -39,7 +54,7 @@ void TextAutogenerateHistoryListView::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_Escape) {
         event->accept();
     } else {
-        QListView::keyPressEvent(event);
+        QTreeView::keyPressEvent(event);
     }
 }
 void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)

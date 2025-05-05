@@ -24,6 +24,7 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
     case IndexType::Section:
         switch (role) {
         case Qt::ItemDataRole::DisplayRole:
+            // qDebug() << "ddd "<<TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::Section(index.row()));
             return TextAutoGenerateChatModel::sectionName(TextAutoGenerateChatModel::Section(index.row()));
         case Qt::BackgroundRole:
             return QApplication::palette().brush(QPalette::Window);

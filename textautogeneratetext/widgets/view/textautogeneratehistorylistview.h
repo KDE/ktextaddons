@@ -6,12 +6,13 @@
 
 #pragma once
 #include "textautogeneratetext_private_export.h"
-#include <QListView>
+#include <QTreeView>
 
 namespace TextAutogenerateText
 {
+class TextAutoGenerateHistoryListHeadingsProxyModel;
 class TextAutoGenerateHistorySortFilterProxyModel;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListView : public QListView
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListView : public QTreeView
 {
     Q_OBJECT
 public:
@@ -30,5 +31,6 @@ protected:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotClicked(const QModelIndex &idx);
     TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
+    TextAutoGenerateHistoryListHeadingsProxyModel *const mHistoryListHeadingsProxyModel;
 };
 }
