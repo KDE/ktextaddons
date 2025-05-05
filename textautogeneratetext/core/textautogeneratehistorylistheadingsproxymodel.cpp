@@ -29,7 +29,7 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
         default:
             return {};
         }
-    case IndexType::Channel:
+    case IndexType::History:
         return sourceModel()->data(mapToSource(index), role);
     }
     Q_UNREACHABLE();
@@ -39,32 +39,28 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::index(int row, int column, const QModelIndex &parent) const
 {
-#if 0
     switch (type(parent)) {
     case IndexType::Root:
         return createIndex(row, column, sectionCount);
     case IndexType::Section:
         return createIndex(row, column, parent.row());
-    case IndexType::Channel:
+    case IndexType::History:
         return {};
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::parent(const QModelIndex &child) const
 {
-#if 0
     switch (type(child)) {
     case IndexType::Root:
     case IndexType::Section:
         return {};
-    case IndexType::Channel:
+    case IndexType::History:
         return createIndex(int(child.internalId()), 0, sectionCount);
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
@@ -76,7 +72,7 @@ int TextAutoGenerateHistoryListHeadingsProxyModel::rowCount(const QModelIndex &p
         return sectionCount;
     case IndexType::Section:
         return int(mSections.at(parent.row()).size());
-    case IndexType::Channel:
+    case IndexType::History:
         return 0;
     }
     Q_UNREACHABLE();
@@ -86,32 +82,28 @@ int TextAutoGenerateHistoryListHeadingsProxyModel::rowCount(const QModelIndex &p
 
 int TextAutoGenerateHistoryListHeadingsProxyModel::columnCount(const QModelIndex &parent) const
 {
-#if 0
     switch (type(parent)) {
     case IndexType::Root:
     case IndexType::Section:
         return 1;
-    case IndexType::Channel:
+    case IndexType::History:
         return 0;
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
 Qt::ItemFlags TextAutoGenerateHistoryListHeadingsProxyModel::flags(const QModelIndex &proxyIndex) const
 {
-#if 0
     switch (type(proxyIndex)) {
     case IndexType::Root:
         return {};
     case IndexType::Section:
         return Qt::ItemFlag::ItemIsEnabled;
-    case IndexType::Channel:
+    case IndexType::History:
         return QAbstractProxyModel::flags(proxyIndex);
     }
     Q_UNREACHABLE();
-#endif
     return {};
 }
 
@@ -168,7 +160,7 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QMo
     case IndexType::Root:
     case IndexType::Section:
         return {};
-    case IndexType::Channel:
+    case IndexType::History:
         return mSections.at(proxyIndex.internalId()).at(proxyIndex.row());
     }
     Q_UNREACHABLE();
@@ -294,7 +286,7 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
         std::sort(section.begin(), section.end());
 #endif
 }
-#if 0
+
 auto TextAutoGenerateHistoryListHeadingsProxyModel::type(const QModelIndex &index) const -> IndexType
 {
     if (!index.isValid())
@@ -303,8 +295,7 @@ auto TextAutoGenerateHistoryListHeadingsProxyModel::type(const QModelIndex &inde
     if (index.internalId() == sectionCount)
         return IndexType::Section;
 
-    return IndexType::Channel;
+    return IndexType::History;
 }
-#endif
 
 #include "moc_textautogeneratehistorylistheadingsproxymodel.cpp"
