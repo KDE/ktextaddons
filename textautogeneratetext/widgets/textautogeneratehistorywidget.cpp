@@ -6,6 +6,7 @@
 #include "textautogeneratehistorywidget.h"
 #include "widgets/view/textautogeneratehistorylistview.h"
 #include <KLineEditEventHandler>
+#include <KLocalizedString>
 #include <QLineEdit>
 #include <QVBoxLayout>
 
@@ -23,6 +24,7 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
     mSearchLineEdit->setObjectName("mSearchLineEdit"_L1);
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->addAction(QIcon::fromTheme(QStringLiteral("view-filter")), QLineEdit::LeadingPosition);
+    mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 

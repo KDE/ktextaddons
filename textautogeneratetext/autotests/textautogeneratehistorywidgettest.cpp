@@ -28,6 +28,7 @@ void TextAutogenerateHistoryWidgetTest::shouldHaveDefaultValues()
     auto mSearchLineEdit = w.findChild<QLineEdit *>("mSearchLineEdit"_L1);
     QVERIFY(mSearchLineEdit);
     QVERIFY(mSearchLineEdit->isClearButtonEnabled());
+    QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
 }
 
 #include "moc_textautogeneratehistorywidgettest.cpp"
