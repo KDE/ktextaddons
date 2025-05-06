@@ -74,7 +74,6 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
                 // mConnections.take(connection.);
             }
         }
-        // TODO
     }
 }
 

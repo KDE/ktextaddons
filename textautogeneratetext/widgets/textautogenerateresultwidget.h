@@ -24,9 +24,10 @@ public:
     void handleKeyPressEvent(QKeyEvent *ev);
     void editingFinished(const QByteArray &uuid);
 Q_SIGNALS:
-    void editMessage(const QModelIndex &index);
+    void editMessageRequested(const QModelIndex &index);
     void goToDiscussion(const QByteArray &uuid);
-    void cancelRequest(const QByteArray &uuid);
+    void cancelRequested(const QByteArray &uuid);
+    void refreshAnswerRequested(const QModelIndex &index);
 
 private:
     TextAutogenerateListView *const mTextAutogenerateListView;

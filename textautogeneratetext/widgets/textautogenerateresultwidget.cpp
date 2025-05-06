@@ -20,9 +20,10 @@ TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
 
     mTextAutogenerateListView->setObjectName(QStringLiteral("mTextAutogenerateListView"));
     mainLayout->addWidget(mTextAutogenerateListView);
-    connect(mTextAutogenerateListView, &TextAutogenerateListView::editMessage, this, &TextAutogenerateResultWidget::editMessage);
+    connect(mTextAutogenerateListView, &TextAutogenerateListView::editMessageRequested, this, &TextAutogenerateResultWidget::editMessageRequested);
     connect(this, &TextAutogenerateResultWidget::goToDiscussion, mTextAutogenerateListView, &TextAutogenerateListView::slotGoToDiscussion);
-    connect(mTextAutogenerateListView, &TextAutogenerateListView::cancelRequest, this, &TextAutogenerateResultWidget::cancelRequest);
+    connect(mTextAutogenerateListView, &TextAutogenerateListView::cancelRequested, this, &TextAutogenerateResultWidget::cancelRequested);
+    connect(mTextAutogenerateListView, &TextAutogenerateListView::refreshAnswerRequested, this, &TextAutogenerateResultWidget::refreshAnswerRequested);
 }
 
 TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;

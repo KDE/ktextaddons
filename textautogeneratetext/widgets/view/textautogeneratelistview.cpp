@@ -91,7 +91,7 @@ void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
 {
     auto model = const_cast<QAbstractItemModel *>(index.model());
     model->setData(index, true, TextAutoGenerateChatModel::EditingRole);
-    Q_EMIT editMessage(index);
+    Q_EMIT editMessageRequested(index);
 }
 
 void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
@@ -104,7 +104,7 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
                                            KStandardGuiItem::cancel())) {
         const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
-            Q_EMIT cancelRequest(uuid);
+            Q_EMIT cancelRequested(uuid);
             TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
         }
     }
@@ -115,7 +115,7 @@ void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         if (TextAutogenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(index)) {
-            Q_EMIT cancelRequest(uuid);
+            Q_EMIT cancelRequested(uuid);
         }
     }
 }
@@ -124,7 +124,10 @@ void TextAutogenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        // TODO TextAutogenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(index);
+        const QModelIndex index = TextAutogenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(uuid);
+        if (index.isValid()) {
+            Q_EMIT refreshAnswerRequested(index);
+        }
     }
 }
 

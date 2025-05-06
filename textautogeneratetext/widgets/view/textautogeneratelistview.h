@@ -39,8 +39,9 @@ protected:
     void leaveEvent(QEvent *event) override;
 
 Q_SIGNALS:
-    void editMessage(const QModelIndex &index);
-    void cancelRequest(const QByteArray &uuid);
+    void editMessageRequested(const QModelIndex &index);
+    void cancelRequested(const QByteArray &uuid);
+    void refreshAnswerRequested(const QModelIndex &index);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStyleOptionViewItem listViewOptions() const;

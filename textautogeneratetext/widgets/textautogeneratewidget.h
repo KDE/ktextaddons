@@ -48,6 +48,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QModelIndex &index);
 
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
     TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;

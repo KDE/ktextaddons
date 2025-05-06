@@ -91,6 +91,22 @@ void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage>
     endResetModel();
 }
 
+QModelIndex TextAutoGenerateChatModel::refreshAnswer(const QByteArray &uuid) const
+{
+    if (uuid.isEmpty()) {
+        return {};
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.answerUuid() == uuid;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it == mMessages.end()) {
+        return {};
+    }
+    const QModelIndex idx = createIndex(std::distance(mMessages.begin(), it), 0);
+    return idx;
+}
+
 void TextAutoGenerateChatModel::resetConversation()
 {
     beginResetModel();
