@@ -37,6 +37,7 @@ public:
     void stopAndDelete();
 Q_SIGNALS:
     void valueChanged();
+    void waitingAnswerDone(const QModelIndex &index);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void createAnimations();

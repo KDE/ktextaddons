@@ -71,8 +71,6 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
                         const bool inProgress = !topLeft.data(TextAutoGenerateChatModel::FinishedRole).toBool();
                         if (inProgress) {
                             addWaitingAnswerAnimation(topLeft);
-                        } else {
-                            Q_EMIT waitingAnswerDone(topLeft);
                         }
                     }
                 }
@@ -337,8 +335,7 @@ void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &inde
         mDelegate->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
         update(animation->modelIndex());
     });
-    connect(this, &TextAutogenerateListView::waitingAnswerDone, this, [this, animation](const QModelIndex &index) {
-        animation->stopAndDelete();
+    connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::waitingAnswerDone, this, [this, index]() {
         mDelegate->removeNeedUpdateWaitingAnswerAnimation(index);
         update(index);
     });
