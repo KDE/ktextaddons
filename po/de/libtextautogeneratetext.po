@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-05 00:40+0000\n"
+"POT-Creation-Date: 2025-05-06 00:40+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,6 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/textautogeneratechatmodel.cpp:245
+#, kde-format
+msgid "Today"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:247
+#, kde-format
+msgid "7 days previous"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:249
+#, kde-format
+msgid "30 days previous"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:251
+#, kde-format
+msgid "Later"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:253
+#, kde-format
+msgid "Unknown"
+msgstr ""
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
@@ -133,6 +158,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr ""
 
+#: widgets/textautogeneratehistorywidget.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr ""
+
 #: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
 msgid "Configure…"
@@ -149,81 +180,87 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:78
+#: widgets/textautogeneratewidget.cpp:77
 #, kde-format
 msgid "No plugin found."
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:60
+#: widgets/view/textautogeneratehistorylistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:71
+#: widgets/view/textautogeneratehistorylistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:75
-#: widgets/view/textautogeneratelistview.cpp:109
+#: widgets/view/textautogeneratehistorylistview.cpp:92
+#: widgets/view/textautogeneratelistview.cpp:103
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:76
-#: widgets/view/textautogeneratelistview.cpp:110
+#: widgets/view/textautogeneratehistorylistview.cpp:93
+#: widgets/view/textautogeneratelistview.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:91
-#: widgets/view/textautogeneratehistorylistview.cpp:102
+#: widgets/view/textautogeneratehistorylistview.cpp:108
+#: widgets/view/textautogeneratehistorylistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:151
+#: widgets/view/textautogeneratelistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:151
+#: widgets/view/textautogeneratelistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:159
+#: widgets/view/textautogeneratelistview.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:406
+#: widgets/view/textautogeneratelistviewdelegate.cpp:421
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:410
+#: widgets/view/textautogeneratelistviewdelegate.cpp:425
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:414
+#: widgets/view/textautogeneratelistviewdelegate.cpp:429
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:418
+#: widgets/view/textautogeneratelistviewdelegate.cpp:433
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
+msgstr ""
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:437
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
 msgstr ""
