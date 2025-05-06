@@ -24,12 +24,15 @@ public:
 
     explicit OllamaManager(QObject *parent = nullptr);
     ~OllamaManager() override;
-    void loadModels();
-    [[nodiscard]] OllamaReply *getCompletion(const OllamaRequest &request);
-
     static OllamaManager *self();
 
+    void loadModels();
+    void getVersion();
+    [[nodiscard]] OllamaReply *getCompletion(const OllamaRequest &request);
     void downloadModel(const QString &modelName);
+    void deleteModel(const QString &modelName);
+
+    void showModelInfo(const QString &modelName);
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);

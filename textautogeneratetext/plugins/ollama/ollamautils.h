@@ -12,4 +12,7 @@ namespace OllamaUtils
 [[nodiscard]] QString tagsPath();
 [[nodiscard]] QString completionPath();
 [[nodiscard]] QString pullPath();
+[[nodiscard]] QString versionPath();
+[[nodiscard]] QString modelInfoPath();
+[[nodiscard]] QString chatPath();
 };

@@ -19,3 +19,18 @@ QString OllamaUtils::pullPath()
 {
     return QStringLiteral("/api/pull");
 }
+
+QString OllamaUtils::versionPath()
+{
+    return QStringLiteral("/api/version");
+}
+
+QString OllamaUtils::modelInfoPath()
+{
+    return QStringLiteral("/api/show");
+}
+
+QString OllamaUtils::chatPath()
+{
+    return QStringLiteral("/api/chat");
+}
