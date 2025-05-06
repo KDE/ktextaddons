@@ -1,6 +1,11 @@
 KTextAddons
 =======
-Various text handling addons
+Various text handling addons:
+- Auto-correction API
+- Text to Speak widgets
+- Text translator widgets (Several backend)
+- Text Emoticon support
+- LLM support widgets/backend (ollama)
 
 # Dependencies
 
@@ -22,3 +27,6 @@ KF6:
 - KF6Sonnet
 - KF6KIO
 - KF6SyntaxHighlighting
+- KF6Config
+- KF6ColorScheme
+- KF6TextWidgets
