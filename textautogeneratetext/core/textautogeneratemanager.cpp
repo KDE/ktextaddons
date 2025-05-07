@@ -86,6 +86,7 @@ void TextAutogenerateManager::loadHistory()
         message.setAnswerUuid(group.readEntry(QStringLiteral("AnswerUuid"), QByteArray()));
         message.setTopic(group.readEntry(QStringLiteral("Topic"), QString()));
         message.setArchived(group.readEntry(QStringLiteral("Archived"), false));
+        message.setModelInfo(group.readEntry(QStringLiteral("ModelInfo")));
 
         messages.append(std::move(message));
     }
@@ -113,6 +114,7 @@ void TextAutogenerateManager::saveHistory()
         group.writeEntry(QStringLiteral("AnswerUuid"), info.answerUuid());
         group.writeEntry(QStringLiteral("Topic"), info.topic());
         group.writeEntry(QStringLiteral("Archived"), info.archived());
+        group.writeEntry(QStringLiteral("ModelInfo"), info.modelInfo());
     }
     config->sync();
 }
