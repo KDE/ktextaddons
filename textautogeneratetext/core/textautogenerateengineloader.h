@@ -41,6 +41,8 @@ public:
     void loadPlugins();
 
     [[nodiscard]] QString generateDisplayName(TextAutogenerateTextClient *client) const;
+    [[nodiscard]] QString website(TextAutogenerateTextClient *client) const;
+
 Q_SIGNALS:
     void loadingPluginFailed();
     void noPluginsFound();

@@ -133,6 +133,11 @@ QString TextAutogenerateEngineLoader::generateDisplayName(TextAutogenerateTextCl
     return translatedName;
 }
 
+QString TextAutogenerateEngineLoader::website(TextAutogenerateTextClient *client) const
+{
+    return client->webSite();
+}
+
 QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
 {
     if (!d->autogenerateTextClients.isEmpty()) {
