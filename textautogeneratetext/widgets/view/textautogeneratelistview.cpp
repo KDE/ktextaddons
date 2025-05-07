@@ -9,6 +9,7 @@
 #include "textautogeneratelistviewdelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
+#include "textautogeneratetextwidget_animation_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QApplication>
@@ -335,11 +336,13 @@ void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &inde
     auto animation = new TextAutogenerateMessageWaitingAnswerAnimation(this);
     animation->setModelIndex(index);
     connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateMessageWaitingAnswerAnimation start";
         mDelegate->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
         update(animation->modelIndex());
     });
     connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::waitingAnswerDone, this, [this, index]() {
         mDelegate->removeNeedUpdateWaitingAnswerAnimation(index);
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateMessageWaitingAnswerAnimation end";
         update(index);
     });
     animation->start();
@@ -350,10 +353,12 @@ void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QMode
     auto animation = new TextAutogenerateSelectedMessageBackgroundAnimation(this);
     animation->setModelIndex(index);
     connect(animation, &TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateSelectedMessageBackgroundAnimation start";
         mDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
         update(animation->modelIndex());
     });
     connect(animation, &TextAutogenerateSelectedMessageBackgroundAnimation::animationFinished, this, [this, animation]() {
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateSelectedMessageBackgroundAnimation end";
         mDelegate->removeNeedUpdateIndexBackground(animation->modelIndex());
         update(animation->modelIndex());
     });

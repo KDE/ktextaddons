@@ -40,6 +40,12 @@ ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratet
     EXPORT KTEXTADDONS
 )
 
+ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratetextwidget_animation_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext.widget_animation
+    DESCRIPTION "KF6 (TextAutogenerateText widget animation)"
+    EXPORT KTEXTADDONS
+)
 
 target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogenerateengineplugin.h
