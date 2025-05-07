@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
 #include "textautogeneratetextcore_debug.h"
+#include <KLocalizedString>
 
 #include <QDateTime>
 #include <QUuid>
@@ -57,7 +58,7 @@ void TextAutogenerateTextPlugin::editMessage(const QByteArray &uuid, const QStri
 
 QString TextAutogenerateTextPlugin::generatePluginInfo() const
 {
-    return engineName();
+    return i18n("Engine: %1, Model: %2", engineName(), currentModel());
 }
 
 void TextAutogenerateTextPlugin::sendMessage(const QString &str)
