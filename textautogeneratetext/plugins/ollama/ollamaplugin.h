@@ -28,6 +28,10 @@ public:
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
+    [[nodiscard]] QString engineName() const override;
+
+    [[nodiscard]] static QString name();
+
 protected:
     void sendToLLM(const QString &message, const QByteArray &uuid) override;
     void cancelRequest(const QByteArray &uuid) override;

@@ -11,6 +11,7 @@
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 
+using namespace Qt::Literals::StringLiterals;
 OllamaPlugin::OllamaPlugin(QObject *parent)
     : TextAutogenerateText::TextAutogenerateTextPlugin{parent}
 {
@@ -31,6 +32,11 @@ OllamaPlugin::OllamaPlugin(QObject *parent)
 }
 
 OllamaPlugin::~OllamaPlugin() = default;
+
+QString OllamaPlugin::name()
+{
+    return "ollama"_L1;
+}
 
 bool OllamaPlugin::loadSettings()
 {
@@ -61,6 +67,11 @@ QString OllamaPlugin::currentModel() const
 void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
 {
     mCurrentModel = newCurrentModel;
+}
+
+QString OllamaPlugin::engineName() const
+{
+    return name();
 }
 
 void OllamaPlugin::cancelRequest(const QByteArray &uuid)

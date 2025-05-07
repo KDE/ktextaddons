@@ -20,6 +20,9 @@ public:
 
     void setPrompt(const QString &text) override;
 
+    [[nodiscard]] QString engineName() const override;
+    [[nodiscard]] static QString name();
+
 protected:
     void sendToLLM(const QString &message, const QByteArray &uuid) override;
     void cancelRequest(const QByteArray &uuid) override;

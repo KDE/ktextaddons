@@ -19,7 +19,7 @@ OpenAIClient::~OpenAIClient() = default;
 
 QString OpenAIClient::name() const
 {
-    return "openai"_L1;
+    return OpenAIPlugin::name();
 }
 
 QString OpenAIClient::translatedName() const

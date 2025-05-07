@@ -39,6 +39,8 @@ public:
 
     void editMessage(const QByteArray &uuid, const QString &str);
 
+    [[nodiscard]] virtual QString engineName() const = 0;
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
@@ -49,5 +51,6 @@ protected:
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generatePluginInfo() const;
 };
 }

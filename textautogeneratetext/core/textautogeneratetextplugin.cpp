@@ -54,6 +54,11 @@ void TextAutogenerateTextPlugin::editMessage(const QByteArray &uuid, const QStri
     }
 }
 
+QString TextAutogenerateTextPlugin::generatePluginInfo() const
+{
+    return engineName();
+}
+
 void TextAutogenerateTextPlugin::sendMessage(const QString &str)
 {
     if (ready()) {
@@ -70,6 +75,7 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         msgLlm.setSender(TextAutoGenerateMessage::Sender::LLM);
         msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+        msgLlm.setModelInfo(generatePluginInfo());
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);

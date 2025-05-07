@@ -20,7 +20,7 @@ OllamaClient::~OllamaClient() = default;
 
 QString OllamaClient::name() const
 {
-    return "ollama"_L1;
+    return OllamaPlugin::name();
 }
 
 QString OllamaClient::translatedName() const

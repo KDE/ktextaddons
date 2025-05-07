@@ -5,7 +5,7 @@
 */
 
 #include "mistralplugin.h"
-
+using namespace Qt::Literals::StringLiterals;
 MistralPlugin::MistralPlugin(QObject *parent)
     : TextAutogenerateText::TextAutogenerateTextPlugin{parent}
 {
@@ -28,6 +28,11 @@ void MistralPlugin::setPrompt(const QString &text)
     // TODO
 }
 
+QString MistralPlugin::engineName() const
+{
+    return name();
+}
+
 void MistralPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
 {
     // TODO
@@ -36,6 +41,11 @@ void MistralPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
 void MistralPlugin::cancelRequest(const QByteArray &uuid)
 {
     // TODO
+}
+
+QString MistralPlugin::name()
+{
+    return "mistral"_L1;
 }
 
 #include "moc_mistralplugin.cpp"

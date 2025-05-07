@@ -5,7 +5,7 @@
 */
 
 #include "openaiplugin.h"
-
+using namespace Qt::Literals::StringLiterals;
 OpenAIPlugin::OpenAIPlugin(QObject *parent)
     : TextAutogenerateText::TextAutogenerateTextPlugin{parent}
 {
@@ -26,6 +26,16 @@ void OpenAIPlugin::clear()
 void OpenAIPlugin::setPrompt(const QString &text)
 {
     // TODO
+}
+
+QString OpenAIPlugin::engineName() const
+{
+    return name();
+}
+
+QString OpenAIPlugin::name()
+{
+    return "openai"_L1;
 }
 
 void OpenAIPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
