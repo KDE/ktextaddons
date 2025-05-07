@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(autogeneratetext_ollama MODULE
-    ollamareply.h ollamareply.cpp)
+add_library(autogeneratetext_ollama MODULE)
 
 kconfig_add_kcfg_files(autogeneratetext_ollama GENERATE_MOC ollamasettings.kcfgc)
 
