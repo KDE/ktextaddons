@@ -80,6 +80,9 @@ private:
         // Refresh icon
         QRect refreshIconRect;
 
+        // Info icon
+        QRect infoIconRect;
+
         // Date Area
         QRect dateAreaRect;
 
@@ -104,6 +107,7 @@ private:
     const QIcon mCopyIcon;
     const QIcon mCancelIcon;
     const QIcon mRefreshIcon;
+    const QIcon mInformationIcon;
 
     QColor mEditingColorMode;
 
