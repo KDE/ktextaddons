@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QWidget>
 class QSplitter;
 namespace TextAutogenerateText
@@ -20,7 +20,7 @@ class TextAutogenerateHeaderWidget;
  * @brief The TextAutogenerateWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateWidget : public QWidget
 {
     Q_OBJECT
 public:
