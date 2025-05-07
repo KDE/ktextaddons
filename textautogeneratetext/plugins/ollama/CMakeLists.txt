@@ -42,3 +42,7 @@ target_sources(autogeneratetext_ollama PRIVATE
 target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutogenerateText KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons)
 
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
