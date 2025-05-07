@@ -58,9 +58,17 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     case WaitingAnswerRole:
         return waitingAnswer(message);
     case ModelInfoRole:
-        return message.modelInfo();
+        return generateModelInfo(message);
     }
     return {};
+}
+
+QString TextAutoGenerateChatModel::generateModelInfo(const TextAutoGenerateMessage &m) const
+{
+    if (m.engineName().isEmpty() && m.modelName().isEmpty()) {
+        return {};
+    }
+    return i18n("Engine: %1\nModel: %2", m.engineName(), m.modelName());
 }
 
 TextAutoGenerateChatModel::SectionHistory TextAutoGenerateChatModel::section(const TextAutoGenerateMessage &m) const

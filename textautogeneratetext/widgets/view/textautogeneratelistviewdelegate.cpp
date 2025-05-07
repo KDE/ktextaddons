@@ -444,8 +444,8 @@ bool TextAutogenerateListViewDelegate::helpEvent(QHelpEvent *helpEvent, QAbstrac
             return true;
         }
         if (layout.infoIconRect.contains(helpEventPos)) {
-            // TODO show model info
-            QToolTip::showText(helpEvent->globalPos(), i18nc("@info:tooltip", "Info"), view);
+            const QString modelInfo = index.data(TextAutoGenerateChatModel::ModelInfoRole).toString();
+            QToolTip::showText(helpEvent->globalPos(), modelInfo, view);
             return true;
         }
     }

@@ -75,6 +75,7 @@ Q_SIGNALS:
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateMessage> mMessages;
 };
 }

@@ -66,8 +66,11 @@ public:
     [[nodiscard]] bool editingMode() const;
     void setEditingMode(bool newEditingMode);
 
-    [[nodiscard]] QString modelInfo() const;
-    void setModelInfo(const QString &newModelInfo);
+    [[nodiscard]] QString modelName() const;
+    void setModelName(const QString &newModelName);
+
+    [[nodiscard]] QString engineName() const;
+    void setEngineName(const QString &newEngineName);
 
 private:
     QByteArray mAnswerUuid;
@@ -76,7 +79,8 @@ private:
     QString mHtmlGenerated;
     QString mTopic;
     QString mDateTimeStr;
-    QString mModelInfo;
+    QString mModelName;
+    QString mEngineName;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
     bool mInProgress = false;

@@ -27,7 +27,8 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
     d.space() << "mouseHover:" << t.mouseHover();
     d.space() << "archived:" << t.archived();
     d.space() << "editingMode:" << t.editingMode();
-    d.space() << "modelInfo:" << t.modelInfo();
+    d.space() << "engineName:" << t.engineName();
+    d.space() << "modelName:" << t.modelName();
     return d;
 }
 
@@ -85,7 +86,7 @@ bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) c
 {
     return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
         && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.topic() == mTopic && other.mArchived == mArchived
-        && other.editingMode() == mEditingMode && other.modelInfo() == mModelInfo;
+        && other.editingMode() == mEditingMode && other.modelName() == mModelName && other.engineName() == mEngineName;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -158,14 +159,24 @@ void TextAutoGenerateMessage::setEditingMode(bool newEditingMode)
     mEditingMode = newEditingMode;
 }
 
-QString TextAutoGenerateMessage::modelInfo() const
+QString TextAutoGenerateMessage::modelName() const
 {
-    return mModelInfo;
+    return mModelName;
 }
 
-void TextAutoGenerateMessage::setModelInfo(const QString &newModelInfo)
+void TextAutoGenerateMessage::setModelName(const QString &newModelName)
 {
-    mModelInfo = newModelInfo;
+    mModelName = newModelName;
+}
+
+QString TextAutoGenerateMessage::engineName() const
+{
+    return mEngineName;
+}
+
+void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
+{
+    mEngineName = newEngineName;
 }
 
 #include "moc_textautogeneratemessage.cpp"

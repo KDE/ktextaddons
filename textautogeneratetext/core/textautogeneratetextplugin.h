@@ -54,6 +54,5 @@ protected:
 
 private:
     std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generatePluginInfo() const;
 };
 }
