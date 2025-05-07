@@ -25,9 +25,6 @@ public:
 
     void setPrompt(const QString &text) override;
 
-    [[nodiscard]] QString currentModel() const;
-    void setCurrentModel(const QString &newCurrentModel);
-
     [[nodiscard]] QString engineName() const override;
 
     [[nodiscard]] static QString name();
@@ -37,6 +34,5 @@ protected:
     void cancelRequest(const QByteArray &uuid) override;
 
 private:
-    QString mCurrentModel;
     QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
 };

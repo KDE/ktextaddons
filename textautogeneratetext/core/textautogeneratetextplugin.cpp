@@ -20,6 +20,7 @@ class TextAutogenerateText::TextAutogenerateTextPluginPrivate
 public:
     bool hasError = false;
     bool isReady = false;
+    QString currentModel;
 };
 
 TextAutogenerateTextPlugin::TextAutogenerateTextPlugin(QObject *parent)
@@ -86,6 +87,16 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }
+}
+
+QString TextAutogenerateTextPlugin::currentModel() const
+{
+    return d->currentModel;
+}
+
+void TextAutogenerateTextPlugin::setCurrentModel(const QString &newCurrentModel)
+{
+    d->currentModel = newCurrentModel;
 }
 
 #include "moc_textautogeneratetextplugin.cpp"

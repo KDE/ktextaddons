@@ -59,16 +59,6 @@ void OllamaPlugin::setPrompt(const QString &text)
     // TODO
 }
 
-QString OllamaPlugin::currentModel() const
-{
-    return mCurrentModel;
-}
-
-void OllamaPlugin::setCurrentModel(const QString &newCurrentModel)
-{
-    mCurrentModel = newCurrentModel;
-}
-
 QString OllamaPlugin::engineName() const
 {
     return name();
@@ -92,7 +82,7 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
 {
     OllamaRequest req;
     req.setMessage(message);
-    req.setModel(mCurrentModel);
+    req.setModel(currentModel());
     /*
     for (const auto &msg : m_messages | std::views::reverse) {
         if (msg.sender == Sender::LLM) {

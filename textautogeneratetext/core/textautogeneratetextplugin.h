@@ -41,6 +41,9 @@ public:
 
     [[nodiscard]] virtual QString engineName() const = 0;
 
+    [[nodiscard]] QString currentModel() const;
+    void setCurrentModel(const QString &newCurrentModel);
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
