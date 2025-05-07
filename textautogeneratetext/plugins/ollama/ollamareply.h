@@ -50,6 +50,15 @@ class OllamaReply : public QObject
 
 public:
     /**
+     * @brief Specifies the request type.
+     *
+     * When the class in instantiated the type of request should be specified
+     */
+    enum class RequestTypes : uint8_t {
+        StreamingGenerate,
+        Show
+    };
+    /**
      * @brief Get the current response content.
      *
      * This function returns what it has recieved of the response so far. Therefore, until finished() is emitted, this
@@ -90,7 +99,17 @@ public:
      */
     [[nodiscard]] bool isFinished() const;
 
-    explicit OllamaReply(QNetworkReply *netReply, QObject *parent = nullptr);
+    explicit OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
+    ~OllamaReply() override;
+
+    /**
+     * @brief Get request type.
+     *
+     * The request type is set when this object is created.
+     *
+     * @return Corresponding request type.
+     */
+    const RequestTypes &requestType() const;
 
 Q_SIGNALS:
     /**
@@ -117,6 +136,7 @@ private:
 
     QList<QJsonDocument> mTokens;
 
+    const RequestTypes mRequestType = RequestTypes::StreamingGenerate;
     TextAutogenerateText::TextAutogenerateTextContext mContext;
     OllamaReplyInfo mInfo;
 

@@ -11,14 +11,15 @@
 
 using namespace Qt::StringLiterals;
 
-OllamaReply::OllamaReply(QNetworkReply *netReply, QObject *parent)
+OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : QObject{parent}
     , mReply{netReply}
+    , mRequestType{requestType}
 {
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
         // Normally, we could assume that the tokens will never be empty once the request finishes, but it could be possible
         // that the request failed and we have no tokens to parse.
-        if (!mTokens.empty()) {
+        if (mRequestType == RequestTypes::StreamingGenerate && !mTokens.empty()) {
             const auto finalResponse = mTokens.constLast();
             mContext.setContextData(finalResponse["context"_L1].toArray());
             mInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
@@ -40,27 +41,47 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, QObject *parent)
         mIncompleteTokens += mReply->read(received - mReceivedSize);
         mReceivedSize = received;
 
-        auto completeTokens = mIncompleteTokens.split('\n');
-        if (completeTokens.size() <= 1) {
-            return;
-        }
-        mIncompleteTokens = completeTokens.last();
-        completeTokens.removeLast();
+        switch (mRequestType) {
+        case RequestTypes::Show:
+            mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
+            break;
+        case RequestTypes::StreamingGenerate:
+            auto completeTokens = mIncompleteTokens.split('\n');
+            if (completeTokens.size() <= 1) {
+                return;
+            }
+            mIncompleteTokens = completeTokens.last();
+            completeTokens.removeLast();
 
-        mTokens.reserve(completeTokens.count());
-        for (const auto &tok : std::as_const(completeTokens)) {
-            mTokens.append(QJsonDocument::fromJson(tok));
+            mTokens.reserve(completeTokens.count());
+            for (const auto &tok : std::as_const(completeTokens)) {
+                mTokens.append(QJsonDocument::fromJson(tok));
+            }
+            break;
         }
 
         Q_EMIT contentAdded();
     });
 }
 
+OllamaReply::~OllamaReply() = default;
+
+const OllamaReply::RequestTypes &OllamaReply::requestType() const
+{
+    return mRequestType;
+}
+
 QString OllamaReply::readResponse() const
 {
     QString ret;
-    for (const auto &tok : mTokens) {
-        ret += tok["response"_L1].toString();
+    switch (mRequestType) {
+    case RequestTypes::Show:
+        // TODO
+        break;
+    case RequestTypes::StreamingGenerate:
+        for (const auto &tok : mTokens) {
+            ret += tok["response"_L1].toString();
+        }
     }
     return ret;
 }

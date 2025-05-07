@@ -53,7 +53,9 @@ void OllamaManager::downloadModel(const QString &modelName)
     auto buf = new QBuffer{this};
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 
-    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf), this};
+    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf),
+                                 OllamaReply::RequestTypes::StreamingGenerate,
+                                 this};
     connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
         Q_EMIT finished(reply->readResponse());
         buf->deleteLater();
@@ -94,6 +96,9 @@ void OllamaManager::getVersion()
 
 void OllamaManager::loadModels()
 {
+    if (mOllamaCheckConnect) {
+        disconnect(mOllamaCheckConnect);
+    }
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
@@ -137,7 +142,9 @@ OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
     auto buf = new QBuffer{this};
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 
-    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf), this};
+    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf),
+                                 OllamaReply::RequestTypes::StreamingGenerate,
+                                 this};
     connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
         Q_EMIT finished(reply->readResponse());
         buf->deleteLater();
