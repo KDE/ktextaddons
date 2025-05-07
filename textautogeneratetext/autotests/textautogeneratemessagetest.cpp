@@ -24,6 +24,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(msg.uuid().isEmpty());
     QVERIFY(msg.answerUuid().isEmpty());
     QVERIFY(msg.topic().isEmpty());
+    QVERIFY(msg.modelInfo().isEmpty());
 }
 
 #include "moc_textautogeneratemessagetest.cpp"

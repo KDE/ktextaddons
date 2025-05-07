@@ -57,6 +57,8 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
         return QVariant::fromValue(section(message));
     case WaitingAnswerRole:
         return waitingAnswer(message);
+    case ModelInfoRole:
+        return message.modelInfo();
     }
     return {};
 }
@@ -307,6 +309,7 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
     case ChatRoles::ArchivedRole:
     case ChatRoles::SectionRole:
     case ChatRoles::WaitingAnswerRole:
+    case ChatRoles::ModelInfoRole:
         return false;
     }
     return QAbstractListModel::setData(idx, value, role);

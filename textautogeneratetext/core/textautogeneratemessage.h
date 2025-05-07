@@ -66,6 +66,9 @@ public:
     [[nodiscard]] bool editingMode() const;
     void setEditingMode(bool newEditingMode);
 
+    [[nodiscard]] QString modelInfo() const;
+    void setModelInfo(const QString &newModelInfo);
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
@@ -73,6 +76,7 @@ private:
     QString mHtmlGenerated;
     QString mTopic;
     QString mDateTimeStr;
+    QString mModelInfo;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     qint64 mDateTime = -1;
     bool mInProgress = false;
