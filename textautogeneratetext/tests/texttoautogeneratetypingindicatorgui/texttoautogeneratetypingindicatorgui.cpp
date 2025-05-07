@@ -7,7 +7,6 @@
 #include "texttoautogeneratetypingindicatorgui.h"
 #include <widgets/view/textautogeneratemessagewaitingansweranimation.h>
 
-#include <QHBoxLayout>
 #include <QPainter>
 
 DotsWidget::DotsWidget(QWidget *parent)

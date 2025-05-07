@@ -7,7 +7,6 @@
 #include "widgets/textautogenerateheaderwidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
