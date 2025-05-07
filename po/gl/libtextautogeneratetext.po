@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-06 00:40+0000\n"
+"POT-Creation-Date: 2025-05-07 00:41+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.12.3\n"
 
-#: core/textautogeneratechatmodel.cpp:245
+#: core/textautogeneratechatmodel.cpp:261
 #, kde-format
 msgid "Today"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:247
+#: core/textautogeneratechatmodel.cpp:263
 #, kde-format
 msgid "7 days previous"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:249
+#: core/textautogeneratechatmodel.cpp:265
 #, kde-format
 msgid "30 days previous"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:251
+#: core/textautogeneratechatmodel.cpp:267
 #, kde-format
 msgid "Later"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:253
+#: core/textautogeneratechatmodel.cpp:269
 #, kde-format
 msgid "Unknown"
 msgstr ""
@@ -102,7 +102,7 @@ msgstr ""
 msgid "No system prompt"
 msgstr ""
 
-#: plugins/ollama/ollamamanager.cpp:64
+#: plugins/ollama/ollamamanager.cpp:104
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr ""
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Send"
 msgstr "Enviar"
 
-#: widgets/textautogeneratewidget.cpp:77
+#: widgets/textautogeneratewidget.cpp:78
 #, kde-format
 msgid "No plugin found."
 msgstr ""
@@ -205,13 +205,13 @@ msgid "Remove…"
 msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:92
-#: widgets/view/textautogeneratelistview.cpp:103
+#: widgets/view/textautogeneratelistview.cpp:101
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:93
-#: widgets/view/textautogeneratelistview.cpp:104
+#: widgets/view/textautogeneratelistview.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
@@ -224,19 +224,19 @@ msgctxt "@action"
 msgid "Restore"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:152
+#: widgets/view/textautogeneratelistview.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:152
+#: widgets/view/textautogeneratelistview.cpp:153
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:160
+#: widgets/view/textautogeneratelistview.cpp:161
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
