@@ -8,7 +8,7 @@
 #include "textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateChatModel class

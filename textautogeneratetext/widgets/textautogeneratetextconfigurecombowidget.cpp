@@ -13,8 +13,8 @@
 #include <QHBoxLayout>
 #include <QToolButton>
 
-using namespace TextAutogenerateText;
-TextAutogenerateTextConfigureComboWidget::TextAutogenerateTextConfigureComboWidget(QWidget *parent)
+using namespace TextAutoGenerateText;
+TextAutoGenerateTextConfigureComboWidget::TextAutoGenerateTextConfigureComboWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineComboBox(new QComboBox(this))
     , mConfigureEngine(new QToolButton(this))
@@ -31,29 +31,29 @@ TextAutogenerateTextConfigureComboWidget::TextAutogenerateTextConfigureComboWidg
     mainLayout->addWidget(mConfigureEngine);
     mConfigureEngine->setEnabled(false); // Disable by default
     mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
-    connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutogenerateTextConfigureComboWidget::slotConfigureEngine);
-    connect(mEngineComboBox, &QComboBox::currentIndexChanged, this, &TextAutogenerateTextConfigureComboWidget::slotEngineChanged);
+    connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine);
+    connect(mEngineComboBox, &QComboBox::currentIndexChanged, this, &TextAutoGenerateTextConfigureComboWidget::slotEngineChanged);
 
     fillEngine();
 }
 
-TextAutogenerateTextConfigureComboWidget::~TextAutogenerateTextConfigureComboWidget() = default;
+TextAutoGenerateTextConfigureComboWidget::~TextAutoGenerateTextConfigureComboWidget() = default;
 
-void TextAutogenerateTextConfigureComboWidget::slotConfigureEngine()
+void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 {
     const QString engine = mEngineComboBox->currentData().toString();
-    if (TextAutogenerateText::TextAutogenerateEngineLoader::self()->hasConfigurationDialog(engine)) {
-        if (TextAutogenerateText::TextAutogenerateEngineLoader::self()->showConfigureDialog(engine, this)) {
+    if (TextAutoGenerateText::TextAutogenerateEngineLoader::self()->hasConfigurationDialog(engine)) {
+        if (TextAutoGenerateText::TextAutogenerateEngineLoader::self()->showConfigureDialog(engine, this)) {
             Q_EMIT configureChanged(engine);
         }
     }
 }
 
-void TextAutogenerateTextConfigureComboWidget::fillEngine()
+void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 {
     mEngineComboBox->clear();
-    TextAutogenerateText::TextAutogenerateEngineLoader::self()->loadPlugins();
-    const QMap<QString, QString> map = TextAutogenerateText::TextAutogenerateEngineLoader::self()->textAutoGenerateTextEngineInfos();
+    TextAutoGenerateText::TextAutogenerateEngineLoader::self()->loadPlugins();
+    const QMap<QString, QString> map = TextAutoGenerateText::TextAutogenerateEngineLoader::self()->textAutoGenerateTextEngineInfos();
     QMapIterator<QString, QString> iMap(map);
     while (iMap.hasNext()) {
         iMap.next();
@@ -61,14 +61,14 @@ void TextAutogenerateTextConfigureComboWidget::fillEngine()
     }
 }
 
-void TextAutogenerateTextConfigureComboWidget::slotEngineChanged(int index)
+void TextAutoGenerateTextConfigureComboWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngineComboBox->itemData(index).toString();
-    mConfigureEngine->setEnabled(TextAutogenerateText::TextAutogenerateEngineLoader::self()->hasConfigurationDialog(engine));
+    mConfigureEngine->setEnabled(TextAutoGenerateText::TextAutogenerateEngineLoader::self()->hasConfigurationDialog(engine));
     Q_EMIT engineChanged(engine);
 }
 
-void TextAutogenerateTextConfigureComboWidget::load()
+void TextAutoGenerateTextConfigureComboWidget::load()
 {
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());
     const QString engine = groupTranslate.readEntry(TextAutogenerateEngineUtil::engineTranslateName(), TextAutogenerateEngineUtil::defaultEngineName());
@@ -78,7 +78,7 @@ void TextAutogenerateTextConfigureComboWidget::load()
     }
 }
 
-void TextAutogenerateTextConfigureComboWidget::save()
+void TextAutoGenerateTextConfigureComboWidget::save()
 {
     const QString engine = mEngineComboBox->currentData().toString();
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());

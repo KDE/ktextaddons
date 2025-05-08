@@ -6,7 +6,7 @@
 #pragma once
 
 #include <QIdentityProxyModel>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateHistoryModel : public QIdentityProxyModel
 {

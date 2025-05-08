@@ -8,5 +8,5 @@ add_executable(texttoautogeneratewidget_gui
 )
 
 target_link_libraries(texttoautogeneratewidget_gui
-    KF6::TextAutogenerateText
+    KF6::TextAutoGenerateText
 )

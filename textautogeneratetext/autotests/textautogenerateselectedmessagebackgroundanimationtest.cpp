@@ -16,15 +16,15 @@ TextAutogenerateSelectedMessageBackgroundAnimationTest::TextAutogenerateSelected
 
 void TextAutogenerateSelectedMessageBackgroundAnimationTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateSelectedMessageBackgroundAnimation d(nullptr);
+    TextAutoGenerateText::TextAutogenerateSelectedMessageBackgroundAnimation d(nullptr);
     QVERIFY(!d.backgroundColor().isValid());
     QVERIFY(!d.modelIndex().isValid());
 }
 
 void TextAutogenerateSelectedMessageBackgroundAnimationTest::shouldEmitBackgroundColorChanged()
 {
-    TextAutogenerateText::TextAutogenerateSelectedMessageBackgroundAnimation d(nullptr);
-    QSignalSpy backgroundColorChangedspy(&d, &TextAutogenerateText::TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColorChanged);
+    TextAutoGenerateText::TextAutogenerateSelectedMessageBackgroundAnimation d(nullptr);
+    QSignalSpy backgroundColorChangedspy(&d, &TextAutoGenerateText::TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColorChanged);
     QColor color(Qt::red);
     d.setBackgroundColor(color);
     QCOMPARE(backgroundColorChangedspy.count(), 1);

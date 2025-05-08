@@ -8,7 +8,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QItemDelegate>
 
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListViewDelegate : public QItemDelegate
 {

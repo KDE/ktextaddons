@@ -5,7 +5,7 @@
 */
 #include "textautogeneratechat.h"
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateChat::TextAutoGenerateChat() = default;
 
 TextAutoGenerateChat::~TextAutoGenerateChat() = default;
@@ -50,12 +50,12 @@ QList<TextAutoGenerateMessage> TextAutoGenerateChat::messages() const
     return mMessages;
 }
 
-void TextAutoGenerateChat::setMessages(const QList<TextAutogenerateText::TextAutoGenerateMessage> &newMessages)
+void TextAutoGenerateChat::setMessages(const QList<TextAutoGenerateText::TextAutoGenerateMessage> &newMessages)
 {
     mMessages = newMessages;
 }
 
-QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateChat &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
 {
     d.space() << "favorite:" << t.favorite();
     d.space() << "archived:" << t.archived();

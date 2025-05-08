@@ -9,23 +9,23 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 
-using namespace TextAutogenerateText;
-TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *parent)
+using namespace TextAutoGenerateText;
+TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(QWidget *parent)
     : QWidget{parent}
-    , mTextAutogenerateTextLineEdit(new TextAutogenerateTextLineEdit(this))
+    , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
     , mSendMessage(new QPushButton(QIcon::fromTheme(QStringLiteral("document-send")), i18n("Send"), this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
 
-    mTextAutogenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutogenerateTextLineEdit"));
-    mainLayout->addWidget(mTextAutogenerateTextLineEdit, 0, Qt::AlignTop);
+    mTextAutoGenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutoGenerateTextLineEdit"));
+    mainLayout->addWidget(mTextAutoGenerateTextLineEdit, 0, Qt::AlignTop);
 
     mSendMessage->setObjectName(QStringLiteral("mSendMessage"));
     mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);
 
-    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::sendMessage, this, [this](const QString &msg) {
+    connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::sendMessage, this, [this](const QString &msg) {
         const QString str = msg.trimmed();
         mSendMessage->setEnabled(!str.isEmpty());
         if (!str.isEmpty()) {
@@ -35,41 +35,41 @@ TextAutogenerateTextLineEditWidget::TextAutogenerateTextLineEditWidget(QWidget *
     });
     mSendMessage->setEnabled(false);
 
-    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::textChanged, this, [this]() {
-        mSendMessage->setEnabled(!mTextAutogenerateTextLineEdit->document()->isEmpty());
+    connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::textChanged, this, [this]() {
+        mSendMessage->setEnabled(!mTextAutoGenerateTextLineEdit->document()->isEmpty());
     });
 
     connect(mSendMessage, &QPushButton::clicked, this, [this]() {
-        Q_EMIT editingFinished(mTextAutogenerateTextLineEdit->text(), mUuid);
+        Q_EMIT editingFinished(mTextAutoGenerateTextLineEdit->text(), mUuid);
         clearLineEdit();
     });
-    connect(mTextAutogenerateTextLineEdit, &TextAutogenerateTextLineEdit::keyPressed, this, &TextAutogenerateTextLineEditWidget::keyPressed);
+    connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::keyPressed, this, &TextAutoGenerateTextLineEditWidget::keyPressed);
 }
 
-TextAutogenerateTextLineEditWidget::~TextAutogenerateTextLineEditWidget() = default;
+TextAutoGenerateTextLineEditWidget::~TextAutoGenerateTextLineEditWidget() = default;
 
-void TextAutogenerateTextLineEditWidget::clearLineEdit()
+void TextAutoGenerateTextLineEditWidget::clearLineEdit()
 {
-    mTextAutogenerateTextLineEdit->clear();
+    mTextAutoGenerateTextLineEdit->clear();
     mUuid.clear();
 }
 
-QString TextAutogenerateTextLineEditWidget::text() const
+QString TextAutoGenerateTextLineEditWidget::text() const
 {
-    return mTextAutogenerateTextLineEdit->text();
+    return mTextAutoGenerateTextLineEdit->text();
 }
 
-void TextAutogenerateTextLineEditWidget::setText(const QString &str)
+void TextAutoGenerateTextLineEditWidget::setText(const QString &str)
 {
-    mTextAutogenerateTextLineEdit->setText(str);
+    mTextAutoGenerateTextLineEdit->setText(str);
 }
 
-QByteArray TextAutogenerateTextLineEditWidget::uuid() const
+QByteArray TextAutoGenerateTextLineEditWidget::uuid() const
 {
     return mUuid;
 }
 
-void TextAutogenerateTextLineEditWidget::setUuid(const QByteArray &newUuid)
+void TextAutoGenerateTextLineEditWidget::setUuid(const QByteArray &newUuid)
 {
     mUuid = newUuid;
 }

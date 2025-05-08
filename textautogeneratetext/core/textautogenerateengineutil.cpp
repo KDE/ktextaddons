@@ -8,7 +8,7 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 QString TextAutogenerateEngineUtil::engineTranslateName()
 {

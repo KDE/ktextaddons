@@ -6,7 +6,7 @@
 #include "textautogeneratechatsmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateChatsModel::TextAutoGenerateChatsModel(QObject *parent)
     : QAbstractListModel{parent}
 {

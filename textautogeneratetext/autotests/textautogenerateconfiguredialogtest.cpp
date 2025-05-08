@@ -20,12 +20,12 @@ TextAutogenerateConfigureDialogTest::TextAutogenerateConfigureDialogTest(QObject
 
 void TextAutogenerateConfigureDialogTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateConfigureDialog d;
+    TextAutoGenerateText::TextAutogenerateConfigureDialog d;
     auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
     auto mTextAutogenerateConfigureWidget =
-        d.findChild<TextAutogenerateText::TextAutogenerateConfigureWidget *>(QStringLiteral("mTextAutogenerateConfigureWidget"));
+        d.findChild<TextAutoGenerateText::TextAutogenerateConfigureWidget *>(QStringLiteral("mTextAutogenerateConfigureWidget"));
     QVERIFY(mTextAutogenerateConfigureWidget);
 
     auto button = d.findChild<QDialogButtonBox *>(QStringLiteral("button"));

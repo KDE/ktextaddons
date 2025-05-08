@@ -17,7 +17,7 @@ TextAutogenerateListViewTest::TextAutogenerateListViewTest(QObject *parent)
 
 void TextAutogenerateListViewTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateListView w;
+    TextAutoGenerateText::TextAutogenerateListView w;
     QCOMPARE(w.verticalScrollMode(), QAbstractItemView::ScrollPerPixel);
 }
 

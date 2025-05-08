@@ -11,7 +11,7 @@
 #include <QTextDocument>
 #include <memory>
 class QListView;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateListViewTextSelection;
 class TextAutogenerateListViewDelegate : public QItemDelegate

@@ -10,17 +10,17 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <QToolButton>
-QTEST_MAIN(TextAutogenerateTextConfigureComboWidgetTest)
+QTEST_MAIN(TextAutoGenerateTextConfigureComboWidgetTest)
 
-TextAutogenerateTextConfigureComboWidgetTest::TextAutogenerateTextConfigureComboWidgetTest(QObject *parent)
+TextAutoGenerateTextConfigureComboWidgetTest::TextAutoGenerateTextConfigureComboWidgetTest(QObject *parent)
     : QObject{parent}
 {
     QStandardPaths::setTestModeEnabled(true);
 }
 
-void TextAutogenerateTextConfigureComboWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateTextConfigureComboWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateTextConfigureComboWidget d;
+    TextAutoGenerateText::TextAutoGenerateTextConfigureComboWidget d;
     auto mEngineComboBox = d.findChild<QComboBox *>(QStringLiteral("mEngineComboBox"));
     QVERIFY(mEngineComboBox);
     auto mConfigureEngine = d.findChild<QToolButton *>(QStringLiteral("mConfigureEngine"));

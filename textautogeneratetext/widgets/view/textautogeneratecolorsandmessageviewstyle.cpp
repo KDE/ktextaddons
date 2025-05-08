@@ -7,7 +7,7 @@
 #include "textautogeneratecolorsandmessageviewstyle.h"
 
 #include <QApplication>
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateColorsAndMessageViewStyle::TextAutogenerateColorsAndMessageViewStyle()
 {
     regenerateColorScheme();

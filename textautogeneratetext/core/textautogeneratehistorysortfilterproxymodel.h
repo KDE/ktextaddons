@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QSortFilterProxyModel>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateHistorySortFilterProxyModel class

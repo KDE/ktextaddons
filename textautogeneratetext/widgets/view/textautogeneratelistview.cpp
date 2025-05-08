@@ -18,7 +18,7 @@
 #include <QMouseEvent>
 #include <QScrollBar>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     : QListView(parent)
     , mDelegate(new TextAutogenerateListViewDelegate(this))

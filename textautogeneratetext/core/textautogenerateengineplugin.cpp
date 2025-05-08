@@ -6,15 +6,15 @@
 
 #include "textautogenerateengineplugin.h"
 
-using namespace TextAutogenerateText;
-class TextAutogenerateText::TextAutogenerateEnginePluginPrivate
+using namespace TextAutoGenerateText;
+class TextAutoGenerateText::TextAutogenerateEnginePluginPrivate
 {
     // TODO
 };
 
 TextAutoGenerateEnginePlugin::TextAutoGenerateEnginePlugin(QObject *parent)
     : QObject{parent}
-    , d(new TextAutogenerateText::TextAutogenerateEnginePluginPrivate)
+    , d(new TextAutoGenerateText::TextAutogenerateEnginePluginPrivate)
 {
 }
 

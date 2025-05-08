@@ -8,7 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 class QStackedWidget;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateNotWorkingWidget;
 class TextAutogenerateWidget;

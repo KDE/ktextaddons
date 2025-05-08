@@ -9,12 +9,12 @@
 
 #include <QDateTime>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
 TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
 
-QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage &t)
 {
     d.space() << "content:" << t.content();
     d.space() << "htmlGenerated:" << t.htmlGenerated();
@@ -185,7 +185,7 @@ TextAutoGenerateTextContext TextAutoGenerateMessage::context() const
     return mContext;
 }
 
-void TextAutoGenerateMessage::setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext)
+void TextAutoGenerateMessage::setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext)
 {
     mContext = newContext;
 }

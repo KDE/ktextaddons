@@ -16,7 +16,7 @@
 #include <QContextMenuEvent>
 #include <QMenu>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent)
     : QTreeView(parent)
     , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))

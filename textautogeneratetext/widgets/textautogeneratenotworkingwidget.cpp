@@ -11,7 +11,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *parent)
     : QWidget{parent}
@@ -47,7 +47,7 @@ void TextAutogenerateNotWorkingWidget::clearMessage()
 
 void TextAutogenerateNotWorkingWidget::slotConfigure()
 {
-    TextAutogenerateText::TextAutogenerateConfigureDialog d(this);
+    TextAutoGenerateText::TextAutogenerateConfigureDialog d(this);
     d.exec();
 }
 

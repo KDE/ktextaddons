@@ -8,7 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 class QNetworkAccessManager;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutogenerateEngineAccessManager class

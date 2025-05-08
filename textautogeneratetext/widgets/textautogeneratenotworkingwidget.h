@@ -7,7 +7,7 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 class KMessageWidget;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutogenerateNotWorkingWidget class

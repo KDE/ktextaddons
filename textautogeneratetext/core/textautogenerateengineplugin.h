@@ -8,7 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <memory>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateEnginePluginPrivate;
 /**

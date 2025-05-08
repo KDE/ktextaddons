@@ -8,7 +8,7 @@
 #include <KTextToHTML>
 
 // TODO add syntax higthlighting
-QString TextAutogenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
+QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
 {
     const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
     return KTextToHTML::convertToHtml(str, convertFlags);

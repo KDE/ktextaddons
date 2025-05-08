@@ -8,7 +8,7 @@
 
 #include <core/textautogeneratetextplugin.h>
 
-class MistralPlugin : public TextAutogenerateText::TextAutoGenerateTextPlugin
+class MistralPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:

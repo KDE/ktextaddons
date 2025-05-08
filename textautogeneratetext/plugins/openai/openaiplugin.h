@@ -8,7 +8,7 @@
 
 #include <core/textautogeneratetextplugin.h>
 
-class OpenAIPlugin : public TextAutogenerateText::TextAutoGenerateTextPlugin
+class OpenAIPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:

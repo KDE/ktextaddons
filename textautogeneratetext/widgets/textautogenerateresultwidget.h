@@ -7,7 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateListView;
 /**

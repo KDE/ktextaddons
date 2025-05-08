@@ -7,7 +7,7 @@
 #include "textautogeneratemessage.h"
 #include "textautogeneratemessagesmodel.h"
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {

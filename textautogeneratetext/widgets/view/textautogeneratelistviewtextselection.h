@@ -11,7 +11,7 @@
 
 class QTextCursor;
 class QTextDocument;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateListViewDelegate;
 class TextAutogenerateListViewTextSelection : public QObject

@@ -17,7 +17,7 @@ TextAutogenerateNotWorkingWidgetTest::TextAutogenerateNotWorkingWidgetTest(QObje
 
 void TextAutogenerateNotWorkingWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateNotWorkingWidget w;
+    TextAutoGenerateText::TextAutogenerateNotWorkingWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

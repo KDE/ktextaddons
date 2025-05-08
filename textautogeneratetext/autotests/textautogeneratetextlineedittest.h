@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class TextAutogenerateTextLineEditTest : public QObject
+class TextAutoGenerateTextLineEditTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextLineEditTest(QObject *parent = nullptr);
-    ~TextAutogenerateTextLineEditTest() override = default;
+    explicit TextAutoGenerateTextLineEditTest(QObject *parent = nullptr);
+    ~TextAutoGenerateTextLineEditTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

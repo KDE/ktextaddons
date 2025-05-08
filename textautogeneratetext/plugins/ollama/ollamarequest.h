@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QDebug>
-#include <TextAutogenerateText/TextAutogenerateTextContext>
+#include <TextAutoGenerateText/TextAutoGenerateTextContext>
 class OllamaRequest
 {
     Q_GADGET
@@ -18,8 +18,8 @@ public:
     [[nodiscard]] QString message() const;
     void setMessage(const QString &newMessage);
 
-    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextContext context() const;
-    void setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext);
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextContext context() const;
+    void setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext);
 
     [[nodiscard]] bool operator==(const OllamaRequest &other) const;
 
@@ -28,7 +28,7 @@ public:
 
 private:
     QString mMessage;
-    TextAutogenerateText::TextAutoGenerateTextContext mContext;
+    TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     QString mModel;
 };
 

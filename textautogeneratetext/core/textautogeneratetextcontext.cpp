@@ -7,7 +7,7 @@
 
 #include <QJsonArray>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateTextContext::TextAutoGenerateTextContext() = default;
 
 TextAutoGenerateTextContext::~TextAutoGenerateTextContext() = default;
@@ -32,7 +32,7 @@ QJsonValue TextAutoGenerateTextContext::toJson() const
     return mContextData.value<QJsonArray>();
 }
 
-QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateTextContext &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextContext &t)
 {
     d.space() << "contextData:" << t.contextData();
     return d;

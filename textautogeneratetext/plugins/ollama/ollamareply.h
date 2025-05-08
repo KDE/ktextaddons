@@ -7,8 +7,8 @@
 #pragma once
 
 #include <QJsonDocument>
-#include <TextAutogenerateText/TextAutoGenerateTextReplyInfo>
-#include <TextAutogenerateText/TextAutogenerateTextContext>
+#include <TextAutoGenerateText/TextAutoGenerateTextContext>
+#include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
 class QNetworkReply;
 
@@ -56,7 +56,7 @@ public:
      *
      * @return A context object that refers to this response.
      */
-    const TextAutogenerateText::TextAutoGenerateTextContext &context() const;
+    const TextAutoGenerateText::TextAutoGenerateTextContext &context() const;
 
     /**
      * @brief Get extra information about the reply.
@@ -66,7 +66,7 @@ public:
      *
      * @return Extra information about the reply.
      */
-    const TextAutogenerateText::TextAutoGenerateTextReplyInfo &info() const;
+    const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &info() const;
 
     /**
      * @brief Check whether the reply has finished.
@@ -112,8 +112,8 @@ private:
     QList<QJsonDocument> mTokens;
 
     const RequestTypes mRequestType = RequestTypes::StreamingGenerate;
-    TextAutogenerateText::TextAutoGenerateTextContext mContext;
-    TextAutogenerateText::TextAutoGenerateTextReplyInfo mInfo;
+    TextAutoGenerateText::TextAutoGenerateTextContext mContext;
+    TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     int mReceivedSize = 0;
     bool mFinished = false;

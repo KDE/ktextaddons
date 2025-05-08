@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QVariant>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateTextReplyInfo class represents information about a reply from an LLM.

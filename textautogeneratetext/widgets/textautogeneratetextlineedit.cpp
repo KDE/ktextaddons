@@ -9,8 +9,8 @@
 #include <KLocalizedString>
 #include <QAbstractTextDocumentLayout>
 
-using namespace TextAutogenerateText;
-TextAutogenerateTextLineEdit::TextAutogenerateTextLineEdit(QWidget *parent)
+using namespace TextAutoGenerateText;
+TextAutoGenerateTextLineEdit::TextAutoGenerateTextLineEdit(QWidget *parent)
     : KTextEdit(parent)
 {
     setPlaceholderText(i18nc("@info:placeholder", "Enter a message"));
@@ -21,14 +21,14 @@ TextAutogenerateTextLineEdit::TextAutogenerateTextLineEdit(QWidget *parent)
     connect(document()->documentLayout(), &QAbstractTextDocumentLayout::documentSizeChanged, this, &QWidget::updateGeometry);
 }
 
-TextAutogenerateTextLineEdit::~TextAutogenerateTextLineEdit() = default;
+TextAutoGenerateTextLineEdit::~TextAutoGenerateTextLineEdit() = default;
 
-QString TextAutogenerateTextLineEdit::text() const
+QString TextAutoGenerateTextLineEdit::text() const
 {
     return toPlainText();
 }
 
-void TextAutogenerateTextLineEdit::keyPressEvent(QKeyEvent *e)
+void TextAutoGenerateTextLineEdit::keyPressEvent(QKeyEvent *e)
 {
     const int key = e->key();
 
@@ -62,7 +62,7 @@ void TextAutogenerateTextLineEdit::keyPressEvent(QKeyEvent *e)
     KTextEdit::keyPressEvent(e);
 }
 
-QSize TextAutogenerateTextLineEdit::sizeHint() const
+QSize TextAutoGenerateTextLineEdit::sizeHint() const
 {
     // The width of the QTextDocument is the current widget width, so this is somewhat circular logic.
     // But I don't really want to redo the layout with a different width like idealWidth(), seems slow.
@@ -71,7 +71,7 @@ QSize TextAutogenerateTextLineEdit::sizeHint() const
     return {docSize.width() + margin, qMin(300, docSize.height()) + margin};
 }
 
-QSize TextAutogenerateTextLineEdit::minimumSizeHint() const
+QSize TextAutoGenerateTextLineEdit::minimumSizeHint() const
 {
     const int margin = int(document()->documentMargin());
     return {300, fontMetrics().height() + margin};

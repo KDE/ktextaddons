@@ -7,16 +7,16 @@
 #include "textautogeneratetextlineedittest.h"
 #include "widgets/textautogeneratetextlineedit.h"
 #include <QTest>
-QTEST_MAIN(TextAutogenerateTextLineEditTest)
+QTEST_MAIN(TextAutoGenerateTextLineEditTest)
 
-TextAutogenerateTextLineEditTest::TextAutogenerateTextLineEditTest(QObject *parent)
+TextAutoGenerateTextLineEditTest::TextAutoGenerateTextLineEditTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateTextLineEditTest::shouldHaveDefaultValues()
+void TextAutoGenerateTextLineEditTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateTextLineEdit d;
+    TextAutoGenerateText::TextAutoGenerateTextLineEdit d;
     QVERIFY(d.text().isEmpty());
     QVERIFY(!d.placeholderText().isEmpty());
     QVERIFY(!d.acceptRichText());

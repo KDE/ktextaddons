@@ -15,9 +15,9 @@ TextAutoGenerateMessageTest::TextAutoGenerateMessageTest(QObject *parent)
 
 void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutoGenerateMessage msg;
+    TextAutoGenerateText::TextAutoGenerateMessage msg;
     QVERIFY(msg.content().isEmpty());
-    QCOMPARE(msg.sender(), TextAutogenerateText::TextAutoGenerateMessage::Sender::Unknown);
+    QCOMPARE(msg.sender(), TextAutoGenerateText::TextAutoGenerateMessage::Sender::Unknown);
     QCOMPARE(msg.dateTime(), -1);
     QVERIFY(!msg.isValid());
     QVERIFY(!msg.inProgress());

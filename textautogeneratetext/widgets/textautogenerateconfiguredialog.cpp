@@ -11,7 +11,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateConfigureDialog::TextAutogenerateConfigureDialog(QWidget *parent)
     : QDialog(parent)
     , mTextAutogenerateConfigureWidget(new TextAutogenerateConfigureWidget(this))

@@ -9,7 +9,7 @@
 #include <KLocalizedString>
 #include <QDateTime>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
     : QAbstractListModel{parent}
 {

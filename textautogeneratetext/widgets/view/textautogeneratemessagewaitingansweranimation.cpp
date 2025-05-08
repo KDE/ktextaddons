@@ -12,7 +12,7 @@
 #include <QSequentialAnimationGroup>
 
 using namespace Qt::Literals::StringLiterals;
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateMessageWaitingAnswerAnimation::TextAutogenerateMessageWaitingAnswerAnimation(QObject *parent)
     : QObject{parent}
 {
@@ -155,7 +155,7 @@ QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> TextAutoge
     return mScaleOpacities;
 }
 
-QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t)
 {
     d.space() << "scale:" << t.scale;
     d.space() << "opacity:" << t.opacity;

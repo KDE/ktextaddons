@@ -6,21 +6,21 @@
 
 #pragma once
 
-#include <TextAutogenerateText/TextAutoGenerateTextClient>
+#include <TextAutoGenerateText/TextAutoGenerateTextClient>
 
-class OllamaClient : public TextAutogenerateText::TextAutoGenerateTextClient
+class OllamaClient : public TextAutoGenerateText::TextAutoGenerateTextClient
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.kde.TextAutogenerateText.ollama")
-    Q_INTERFACES(TextAutogenerateText::TextAutoGenerateTextClient)
+    Q_PLUGIN_METADATA(IID "org.kde.TextAutoGenerateText.ollama")
+    Q_INTERFACES(TextAutoGenerateText::TextAutoGenerateTextClient)
 public:
     explicit OllamaClient(QObject *parent = nullptr);
     ~OllamaClient() override;
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] QString translatedName() const override;
-    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextPlugin *createTextAutogeneratePlugin() override;
-    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutogeneratePlugin() override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
     [[nodiscard]] bool hasConfigurationDialog() const override;
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
     [[nodiscard]] QString webSite() const override;

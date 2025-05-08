@@ -8,7 +8,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QTreeView>
 
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateHistoryListHeadingsProxyModel;
 class TextAutoGenerateHistorySortFilterProxyModel;

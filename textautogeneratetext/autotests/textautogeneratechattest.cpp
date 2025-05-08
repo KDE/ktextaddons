@@ -15,7 +15,7 @@ TextAutoGenerateChatTest::TextAutoGenerateChatTest(QObject *parent)
 
 void TextAutoGenerateChatTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutoGenerateChat w;
+    TextAutoGenerateText::TextAutoGenerateChat w;
     QVERIFY(!w.favorite());
     QVERIFY(!w.archived());
     QVERIFY(w.identifier().isEmpty());

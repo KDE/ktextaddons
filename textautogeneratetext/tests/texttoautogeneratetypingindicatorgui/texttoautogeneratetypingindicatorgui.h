@@ -8,7 +8,7 @@
 
 #include <QWidget>
 
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateMessageWaitingAnswerAnimation;
 }
@@ -23,5 +23,5 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation *const mAnimation;
+    TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation *const mAnimation;
 };

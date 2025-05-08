@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QDialog>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateConfigureWidget;
 /**

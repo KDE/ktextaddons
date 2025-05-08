@@ -9,7 +9,7 @@
 #include <QColor>
 #include <QObject>
 #include <QPersistentModelIndex>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateSelectedMessageBackgroundAnimation : public QObject
 {

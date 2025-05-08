@@ -8,19 +8,19 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QPushButton;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
-class TextAutogenerateTextLineEdit;
+class TextAutoGenerateTextLineEdit;
 /**
- * @brief The TextAutogenerateTextLineEditWidget class
+ * @brief The TextAutoGenerateTextLineEditWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateTextLineEditWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextLineEditWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateTextLineEditWidget() override;
+    explicit TextAutoGenerateTextLineEditWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateTextLineEditWidget() override;
 
     [[nodiscard]] QString text() const;
 
@@ -34,7 +34,7 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearLineEdit();
-    TextAutogenerateTextLineEdit *const mTextAutogenerateTextLineEdit;
+    TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     QPushButton *const mSendMessage;
     QByteArray mUuid;
 };

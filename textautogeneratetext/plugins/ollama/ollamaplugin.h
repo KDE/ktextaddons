@@ -13,7 +13,7 @@
 #include <QMultiHash>
 #include <QPair>
 
-class OllamaPlugin : public TextAutogenerateText::TextAutoGenerateTextPlugin
+class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:

@@ -9,7 +9,7 @@
 
 #include <QVBoxLayout>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
     : QWidget{parent}
     , mTextAutogenerateListView(new TextAutogenerateListView(this))

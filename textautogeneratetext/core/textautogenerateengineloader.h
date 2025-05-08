@@ -9,7 +9,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <memory>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateEngineLoaderPrivate;
 class TextAutoGenerateTextClient;
@@ -26,7 +26,7 @@ public:
     explicit TextAutogenerateEngineLoader(QObject *parent = nullptr);
     ~TextAutogenerateEngineLoader() override;
 
-    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
 
     [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 

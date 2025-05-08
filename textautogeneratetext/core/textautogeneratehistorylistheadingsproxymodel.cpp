@@ -9,7 +9,7 @@
 #include <QApplication>
 #include <QFont>
 #include <QPalette>
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateHistoryListHeadingsProxyModel::TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent)
     : QAbstractProxyModel{parent}
 {

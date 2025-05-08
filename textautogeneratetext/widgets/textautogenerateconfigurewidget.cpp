@@ -10,10 +10,10 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateConfigureWidget::TextAutogenerateConfigureWidget(QWidget *parent)
     : QWidget{parent}
-    , mPluginComboBox(new TextAutogenerateTextConfigureComboWidget(this))
+    , mPluginComboBox(new TextAutoGenerateTextConfigureComboWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));

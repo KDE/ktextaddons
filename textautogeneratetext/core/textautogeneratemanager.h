@@ -7,8 +7,8 @@
 #include "textautogeneratetext_export.h"
 #include <KSharedConfig>
 #include <QObject>
-#include <TextAutogenerateText/TextAutoGenerateMessage>
-namespace TextAutogenerateText
+#include <TextAutoGenerateText/TextAutoGenerateMessage>
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
 /**

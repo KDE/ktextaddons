@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QListView>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessage;
 class TextAutogenerateListViewDelegate;

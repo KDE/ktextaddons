@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QPersistentModelIndex>
 class QSequentialAnimationGroup;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateMessageWaitingAnswerAnimation : public QObject
 {
@@ -47,5 +47,5 @@ private:
     QSequentialAnimationGroup *mSequencials = nullptr;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t);

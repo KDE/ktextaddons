@@ -7,7 +7,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateHistoryListView;
 /**

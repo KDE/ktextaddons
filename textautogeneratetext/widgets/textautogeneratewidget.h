@@ -7,10 +7,10 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 class QSplitter;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateResultWidget;
-class TextAutogenerateTextLineEditWidget;
+class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateTextClient;
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateMessage;
@@ -51,7 +51,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QModelIndex &index);
 
     TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
-    TextAutogenerateTextLineEditWidget *const mTextAutogenerateTextLineEditWidget;
+    TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;
 
     TextAutoGenerateTextClient *mTextAutogenerateClient = nullptr;
     TextAutoGenerateTextPlugin *mTextAutogeneratePlugin = nullptr;

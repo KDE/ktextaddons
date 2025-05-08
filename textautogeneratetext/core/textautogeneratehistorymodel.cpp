@@ -5,7 +5,7 @@
 */
 #include "textautogeneratehistorymodel.h"
 #include "textautogeneratemessagesmodel.h"
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateHistoryModel::TextAutoGenerateHistoryModel(QObject *parent)
     : QIdentityProxyModel{parent}
 {

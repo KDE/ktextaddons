@@ -53,7 +53,7 @@ void OllamaManager::downloadModel(const QString &modelName)
     auto buf = new QBuffer{this};
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 
-    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf),
+    auto reply = new OllamaReply{TextAutoGenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf),
                                  OllamaReply::RequestTypes::StreamingGenerate,
                                  this};
     connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
@@ -66,7 +66,7 @@ void OllamaManager::getVersion()
 {
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::versionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-    auto rep = TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->get(req);
+    auto rep = TextAutoGenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->get(req);
     mOllamaCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             /*
@@ -102,7 +102,7 @@ void OllamaManager::loadModels()
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
-    auto rep = TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->get(req);
+    auto rep = TextAutoGenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->get(req);
     mOllamaCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;
@@ -142,7 +142,7 @@ OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
     auto buf = new QBuffer{this};
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 
-    auto reply = new OllamaReply{TextAutogenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf),
+    auto reply = new OllamaReply{TextAutoGenerateText::TextAutogenerateEngineAccessManager::self()->networkManager()->post(req, buf),
                                  OllamaReply::RequestTypes::StreamingGenerate,
                                  this};
     connect(reply, &OllamaReply::finished, this, [this, reply, buf] {

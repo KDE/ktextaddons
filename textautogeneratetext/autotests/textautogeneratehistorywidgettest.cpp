@@ -18,11 +18,11 @@ TextAutogenerateHistoryWidgetTest::TextAutogenerateHistoryWidgetTest(QWidget *pa
 
 void TextAutogenerateHistoryWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateHistoryWidget w;
+    TextAutoGenerateText::TextAutogenerateHistoryWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    auto mTextAutogenerateHistoryListView = w.findChild<TextAutogenerateText::TextAutogenerateHistoryListView *>("mTextAutogenerateHistoryListView"_L1);
+    auto mTextAutogenerateHistoryListView = w.findChild<TextAutoGenerateText::TextAutogenerateHistoryListView *>("mTextAutogenerateHistoryListView"_L1);
     QVERIFY(mTextAutogenerateHistoryListView);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>("mSearchLineEdit"_L1);

@@ -11,7 +11,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 OpenAIClient::OpenAIClient(QObject *parent)
-    : TextAutogenerateText::TextAutoGenerateTextClient{parent}
+    : TextAutoGenerateText::TextAutoGenerateTextClient{parent}
 {
 }
 
@@ -27,14 +27,14 @@ QString OpenAIClient::translatedName() const
     return i18n("OpenAI");
 }
 
-TextAutogenerateText::TextAutoGenerateTextPlugin *OpenAIClient::createTextAutogeneratePlugin()
+TextAutoGenerateText::TextAutoGenerateTextPlugin *OpenAIClient::createTextAutogeneratePlugin()
 {
     return new OpenAIPlugin(this);
 }
 
-TextAutogenerateText::TextAutoGenerateTextClient::EngineType OpenAIClient::engineType() const
+TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OpenAIClient::engineType() const
 {
-    return TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Network;
+    return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network;
 }
 
 bool OpenAIClient::hasConfigurationDialog() const

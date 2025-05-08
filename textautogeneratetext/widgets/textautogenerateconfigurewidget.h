@@ -7,9 +7,9 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
-class TextAutogenerateTextConfigureComboWidget;
+class TextAutoGenerateTextConfigureComboWidget;
 /**
  * @brief The TextAutogenerateConfigureWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -25,7 +25,7 @@ public:
     void saveSettings();
 
 private:
-    TextAutogenerateTextConfigureComboWidget *const mPluginComboBox;
+    TextAutoGenerateTextConfigureComboWidget *const mPluginComboBox;
 };
 
 }

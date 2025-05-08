@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutogenerateTextConfigureComboWidgetTest : public QObject
+class TextAutoGenerateTextConfigureComboWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextConfigureComboWidgetTest(QObject *parent = nullptr);
-    ~TextAutogenerateTextConfigureComboWidgetTest() override = default;
+    explicit TextAutoGenerateTextConfigureComboWidgetTest(QObject *parent = nullptr);
+    ~TextAutoGenerateTextConfigureComboWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

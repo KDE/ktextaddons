@@ -7,8 +7,8 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
-#include <TextAutogenerateText/TextAutoGenerateMessage>
-namespace TextAutogenerateText
+#include <TextAutoGenerateText/TextAutoGenerateMessage>
+namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
 {
@@ -28,16 +28,16 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateChat &other) const;
 
-    [[nodiscard]] QList<TextAutogenerateText::TextAutoGenerateMessage> messages() const;
-    void setMessages(const QList<TextAutogenerateText::TextAutoGenerateMessage> &newMessages);
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateMessage> messages() const;
+    void setMessages(const QList<TextAutoGenerateText::TextAutoGenerateMessage> &newMessages);
 
 private:
-    QList<TextAutogenerateText::TextAutoGenerateMessage> mMessages;
+    QList<TextAutoGenerateText::TextAutoGenerateMessage> mMessages;
     QByteArray mIdentifier;
     bool mFavorite = false;
     bool mArchived = false;
 };
 
 }
-Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateChat, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateChat &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateChat, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t);

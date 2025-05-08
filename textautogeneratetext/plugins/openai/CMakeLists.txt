@@ -22,6 +22,6 @@ target_sources(autogeneratetext_openai PRIVATE
     openaiconfigurewidget.cpp
 )
 
-target_link_libraries(autogeneratetext_openai PRIVATE KF6::TextAutogenerateText KF6::I18n KF6::ConfigGui)
+target_link_libraries(autogeneratetext_openai PRIVATE KF6::TextAutoGenerateText KF6::I18n KF6::ConfigGui)
 
 install(TARGETS autogeneratetext_openai  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)

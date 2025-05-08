@@ -14,9 +14,9 @@
 #include <QDateTime>
 #include <QUuid>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 
-class TextAutogenerateText::TextAutogenerateTextPluginPrivate
+class TextAutoGenerateText::TextAutoGenerateTextPluginPrivate
 {
 public:
     bool hasError = false;
@@ -26,7 +26,7 @@ public:
 
 TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
     : QObject{parent}
-    , d(new TextAutogenerateText::TextAutogenerateTextPluginPrivate)
+    , d(new TextAutoGenerateText::TextAutoGenerateTextPluginPrivate)
 {
 }
 

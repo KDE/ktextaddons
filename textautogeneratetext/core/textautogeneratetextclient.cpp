@@ -6,7 +6,7 @@
 
 #include "textautogeneratetextclient.h"
 #include <KLocalizedString>
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutoGenerateTextClient::TextAutoGenerateTextClient(QObject *parent)
     : QObject{parent}
 {
@@ -26,12 +26,12 @@ bool TextAutoGenerateTextClient::showConfigureDialog(QWidget *parentWidget)
     return false;
 }
 
-QString TextAutoGenerateTextClient::convertEngineType(TextAutogenerateText::TextAutoGenerateTextClient::EngineType type)
+QString TextAutoGenerateTextClient::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type)
 {
     switch (type) {
-    case TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Local:
+    case TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local:
         return i18n("Local");
-    case TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Network:
+    case TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network:
         return i18n("Network");
     }
     Q_UNREACHABLE();

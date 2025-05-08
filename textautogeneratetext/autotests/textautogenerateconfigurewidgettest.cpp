@@ -16,7 +16,7 @@ TextAutogenerateConfigureWidgetTest::TextAutogenerateConfigureWidgetTest(QObject
 
 void TextAutogenerateConfigureWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateConfigureWidget w;
+    TextAutoGenerateText::TextAutogenerateConfigureWidget w;
     // TODO
 }
 

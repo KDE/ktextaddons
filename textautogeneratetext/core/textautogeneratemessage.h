@@ -8,8 +8,8 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
-#include <TextAutogenerateText/TextAutogenerateTextContext>
-namespace TextAutogenerateText
+#include <TextAutoGenerateText/TextAutoGenerateTextContext>
+namespace TextAutoGenerateText
 {
 /**
  * @brief The TextAutoGenerateMessage class
@@ -73,8 +73,8 @@ public:
     [[nodiscard]] QString engineName() const;
     void setEngineName(const QString &newEngineName);
 
-    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextContext context() const;
-    void setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext);
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextContext context() const;
+    void setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext);
 
 private:
     QByteArray mAnswerUuid;
@@ -86,7 +86,7 @@ private:
     QString mModelName;
     QString mEngineName;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
-    TextAutogenerateText::TextAutoGenerateTextContext mContext;
+    TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     // TextAutoGenerateMessage::KLLMReplyInfo info;
 
     qint64 mDateTime = -1;
@@ -96,5 +96,5 @@ private:
     bool mEditingMode = false;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage &t);

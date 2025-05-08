@@ -8,14 +8,14 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <memory>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessage;
 /**
- * @brief The TextAutogenerateTextPlugin class
+ * @brief The TextAutoGenerateTextPlugin class
  * @author Laurent Montel <montel@kde.org>
  */
-class TextAutogenerateTextPluginPrivate;
+class TextAutoGenerateTextPluginPrivate;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
@@ -53,6 +53,6 @@ protected:
     virtual void sendToLLM(const QString &message, const QByteArray &uuid) = 0;
 
 private:
-    std::unique_ptr<TextAutogenerateTextPluginPrivate> const d;
+    std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }

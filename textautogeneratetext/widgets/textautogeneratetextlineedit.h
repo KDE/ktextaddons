@@ -7,18 +7,18 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <KTextEdit>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
- * @brief The TextAutogenerateTextLineEdit class
+ * @brief The TextAutoGenerateTextLineEdit class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateTextLineEdit : public KTextEdit
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEdit : public KTextEdit
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextLineEdit(QWidget *parent = nullptr);
-    ~TextAutogenerateTextLineEdit() override;
+    explicit TextAutoGenerateTextLineEdit(QWidget *parent = nullptr);
+    ~TextAutoGenerateTextLineEdit() override;
 
     [[nodiscard]] QString text() const;
 

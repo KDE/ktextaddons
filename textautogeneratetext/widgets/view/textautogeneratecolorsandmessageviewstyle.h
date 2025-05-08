@@ -9,7 +9,7 @@
 #include <KColorScheme>
 #include <QObject>
 
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutogenerateColorsAndMessageViewStyle : public QObject
 {

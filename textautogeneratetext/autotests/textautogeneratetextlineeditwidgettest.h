@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutogenerateTextLineEditWidgetTest : public QObject
+class TextAutoGenerateTextLineEditWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextLineEditWidgetTest(QObject *parent = nullptr);
-    ~TextAutogenerateTextLineEditWidgetTest() override = default;
+    explicit TextAutoGenerateTextLineEditWidgetTest(QObject *parent = nullptr);
+    ~TextAutoGenerateTextLineEditWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldEnableButton();

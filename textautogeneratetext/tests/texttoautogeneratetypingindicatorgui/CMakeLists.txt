@@ -8,5 +8,5 @@ add_executable(texttoautogeneratetypingindicatorgui_gui
 )
 
 target_link_libraries(texttoautogeneratetypingindicatorgui_gui
-    KF6::TextAutogenerateText
+    KF6::TextAutoGenerateText
 )

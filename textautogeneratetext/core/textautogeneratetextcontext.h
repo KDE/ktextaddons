@@ -7,10 +7,10 @@
 #include "textautogeneratetext_export.h"
 #include <QJsonValue>
 #include <QVariant>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
- * @brief The TextAutogenerateTextContext class
+ * @brief The TextAutoGenerateTextContext class
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextContext
@@ -30,4 +30,4 @@ private:
     QVariant mContextData;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateTextContext &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextContext &t);

@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include <TextAutogenerateText/TextAutoGenerateChat>
+#include <TextAutoGenerateText/TextAutoGenerateChat>
 
 #include <QAbstractListModel>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatsModel : public QAbstractListModel
 {

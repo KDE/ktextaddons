@@ -12,8 +12,8 @@
 #include <QDir>
 #include <QPluginLoader>
 using namespace Qt::Literals::StringLiterals;
-using namespace TextAutogenerateText;
-class TextAutogenerateText::TextAutogenerateEngineLoaderPrivate
+using namespace TextAutoGenerateText;
+class TextAutoGenerateText::TextAutogenerateEngineLoaderPrivate
 {
 public:
     QSet<QString> loadedPlugins;
@@ -28,7 +28,7 @@ TextAutogenerateEngineLoader *TextAutogenerateEngineLoader::self()
 
 TextAutogenerateEngineLoader::TextAutogenerateEngineLoader(QObject *parent)
     : QObject{parent}
-    , d(new TextAutogenerateText::TextAutogenerateEngineLoaderPrivate)
+    , d(new TextAutoGenerateText::TextAutogenerateEngineLoaderPrivate)
 {
     loadPlugins();
 }

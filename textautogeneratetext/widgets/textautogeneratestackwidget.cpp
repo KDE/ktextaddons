@@ -11,7 +11,7 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateStackWidget::TextAutogenerateStackWidget(QWidget *parent)
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))

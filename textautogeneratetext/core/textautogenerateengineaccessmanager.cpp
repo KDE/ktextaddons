@@ -7,7 +7,7 @@
 
 #include <QNetworkAccessManager>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateEngineAccessManager::TextAutogenerateEngineAccessManager(QObject *parent)
     : QObject(parent)
     , mNetworkAccessManager(new QNetworkAccessManager(this))

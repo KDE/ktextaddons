@@ -8,7 +8,7 @@
 
 #include <QString>
 
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateMessageUtils
 {

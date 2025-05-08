@@ -11,7 +11,7 @@
 #include <QLineEdit>
 #include <QToolTip>
 
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateHistoryListViewDelegate::TextAutogenerateHistoryListViewDelegate(QObject *parent)
     : QItemDelegate{parent}
 {

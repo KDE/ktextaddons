@@ -11,7 +11,7 @@
 #include <QLabel>
 #include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineName(new QLabel(this))
@@ -46,7 +46,7 @@ void TextAutogenerateHeaderWidget::updateEngineName(const QString &engineName)
 
 void TextAutogenerateHeaderWidget::slotConfigureEngine()
 {
-    TextAutogenerateText::TextAutogenerateConfigureDialog d(this);
+    TextAutoGenerateText::TextAutogenerateConfigureDialog d(this);
     if (d.exec()) {
         d.saveSettings();
         Q_EMIT configChanged();

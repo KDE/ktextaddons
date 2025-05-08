@@ -86,12 +86,12 @@ QString OllamaReply::readResponse() const
     return ret;
 }
 
-const TextAutogenerateText::TextAutoGenerateTextContext &OllamaReply::context() const
+const TextAutoGenerateText::TextAutoGenerateTextContext &OllamaReply::context() const
 {
     return mContext;
 }
 
-const TextAutogenerateText::TextAutoGenerateTextReplyInfo &OllamaReply::info() const
+const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &OllamaReply::info() const
 {
     return mInfo;
 }

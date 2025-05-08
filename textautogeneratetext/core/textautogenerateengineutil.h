@@ -6,7 +6,7 @@
 
 #pragma once
 #include <QString>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 namespace TextAutogenerateEngineUtil
 {

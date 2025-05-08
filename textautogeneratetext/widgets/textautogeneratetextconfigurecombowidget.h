@@ -10,18 +10,18 @@
 #include <QWidget>
 class QComboBox;
 class QToolButton;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 /**
- * @brief The TextAutogenerateTextConfigureComboWidget class
+ * @brief The TextAutoGenerateTextConfigureComboWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextConfigureComboWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigureComboWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextConfigureComboWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateTextConfigureComboWidget() override;
+    explicit TextAutoGenerateTextConfigureComboWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateTextConfigureComboWidget() override;
 
     void load();
     void save();

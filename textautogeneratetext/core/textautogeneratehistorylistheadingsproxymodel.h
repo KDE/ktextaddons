@@ -8,7 +8,7 @@
 
 #include "core/textautogeneratemessagesmodel.h"
 #include <QAbstractProxyModel>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateHistoryListHeadingsProxyModel final : public QAbstractProxyModel
 {

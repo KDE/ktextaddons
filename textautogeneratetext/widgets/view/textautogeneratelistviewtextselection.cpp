@@ -10,7 +10,7 @@
 #include <QTextCursor>
 #include <QTextDocument>
 #include <QTextDocumentFragment>
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 
 TextAutogenerateListViewTextSelection::TextAutogenerateListViewTextSelection(TextAutogenerateListViewDelegate *delegate, QObject *parent)
     : QObject(parent)

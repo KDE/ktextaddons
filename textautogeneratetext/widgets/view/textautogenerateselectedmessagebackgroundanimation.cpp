@@ -8,7 +8,7 @@
 #include "textautogeneratecolorsandmessageviewstyle.h"
 #include <QPropertyAnimation>
 using namespace Qt::Literals::StringLiterals;
-using namespace TextAutogenerateText;
+using namespace TextAutoGenerateText;
 TextAutogenerateSelectedMessageBackgroundAnimation::TextAutogenerateSelectedMessageBackgroundAnimation(QObject *parent)
     : QObject{parent}
 {

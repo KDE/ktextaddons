@@ -9,7 +9,7 @@
 #include <QWidget>
 class QLabel;
 class QToolButton;
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHeaderWidget : public QWidget
 {

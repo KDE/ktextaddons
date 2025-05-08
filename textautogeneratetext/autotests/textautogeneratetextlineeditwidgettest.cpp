@@ -11,22 +11,22 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QTest>
-QTEST_MAIN(TextAutogenerateTextLineEditWidgetTest)
-TextAutogenerateTextLineEditWidgetTest::TextAutogenerateTextLineEditWidgetTest(QObject *parent)
+QTEST_MAIN(TextAutoGenerateTextLineEditWidgetTest)
+TextAutoGenerateTextLineEditWidgetTest::TextAutoGenerateTextLineEditWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutogenerateText::TextAutogenerateTextLineEditWidget w;
+    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w;
 
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mTextAutogenerateTextLineEdit = w.findChild<TextAutogenerateText::TextAutogenerateTextLineEdit *>(QStringLiteral("mTextAutogenerateTextLineEdit"));
-    QVERIFY(mTextAutogenerateTextLineEdit);
+    auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(QStringLiteral("mTextAutoGenerateTextLineEdit"));
+    QVERIFY(mTextAutoGenerateTextLineEdit);
 
     auto mSendMessage = w.findChild<QPushButton *>(QStringLiteral("mSendMessage"));
     QVERIFY(mSendMessage);
@@ -34,20 +34,20 @@ void TextAutogenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!mSendMessage->isEnabled());
 }
 
-void TextAutogenerateTextLineEditWidgetTest::shouldEnableButton()
+void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()
 {
-    TextAutogenerateText::TextAutogenerateTextLineEditWidget w;
-    auto mTextAutogenerateTextLineEdit = w.findChild<TextAutogenerateText::TextAutogenerateTextLineEdit *>(QStringLiteral("mTextAutogenerateTextLineEdit"));
-    QVERIFY(mTextAutogenerateTextLineEdit);
+    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w;
+    auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(QStringLiteral("mTextAutoGenerateTextLineEdit"));
+    QVERIFY(mTextAutoGenerateTextLineEdit);
 
     auto mSendMessage = w.findChild<QPushButton *>(QStringLiteral("mSendMessage"));
     QVERIFY(mSendMessage);
     QVERIFY(!mSendMessage->isEnabled());
 
-    mTextAutogenerateTextLineEdit->setText(QStringLiteral("foo"));
+    mTextAutoGenerateTextLineEdit->setText(QStringLiteral("foo"));
     QVERIFY(mSendMessage->isEnabled());
 
-    mTextAutogenerateTextLineEdit->clear();
+    mTextAutoGenerateTextLineEdit->clear();
     QVERIFY(!mSendMessage->isEnabled());
 }
 

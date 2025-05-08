@@ -12,7 +12,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 OllamaClient::OllamaClient(QObject *parent)
-    : TextAutogenerateText::TextAutoGenerateTextClient{parent}
+    : TextAutoGenerateText::TextAutoGenerateTextClient{parent}
 {
 }
 
@@ -28,14 +28,14 @@ QString OllamaClient::translatedName() const
     return i18n("Ollama");
 }
 
-TextAutogenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutogeneratePlugin()
+TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutogeneratePlugin()
 {
     return new OllamaPlugin(this);
 }
 
-TextAutogenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engineType() const
+TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engineType() const
 {
-    return TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Local;
+    return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local;
 }
 
 bool OllamaClient::hasConfigurationDialog() const

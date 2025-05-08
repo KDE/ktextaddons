@@ -7,11 +7,11 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QObject>
-namespace TextAutogenerateText
+namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;
 /**
- * @brief The TextAutogenerateTextClient class
+ * @brief The TextAutoGenerateTextClient class
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
@@ -47,9 +47,9 @@ public:
 
     [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget);
 
-    [[nodiscard]] virtual TextAutogenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
 
-    [[nodiscard]] static QString convertEngineType(TextAutogenerateText::TextAutoGenerateTextClient::EngineType type);
+    [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type);
 
     [[nodiscard]] virtual QString modelName() const = 0;
 
@@ -57,4 +57,4 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-Q_DECLARE_INTERFACE(TextAutogenerateText::TextAutoGenerateTextClient, "org.kde.textautogeneratetext.client")
+Q_DECLARE_INTERFACE(TextAutoGenerateText::TextAutoGenerateTextClient, "org.kde.textautogeneratetext.client")
