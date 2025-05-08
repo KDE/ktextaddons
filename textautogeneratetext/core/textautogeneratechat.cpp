@@ -45,11 +45,22 @@ bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
     return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite;
 }
 
+QList<TextAutoGenerateMessage> TextAutoGenerateChat::messages() const
+{
+    return mMessages;
+}
+
+void TextAutoGenerateChat::setMessages(const QList<TextAutogenerateText::TextAutoGenerateMessage> &newMessages)
+{
+    mMessages = newMessages;
+}
+
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateChat &t)
 {
     d.space() << "favorite:" << t.favorite();
     d.space() << "archived:" << t.archived();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "messages:" << t.messages();
     return d;
 }
 

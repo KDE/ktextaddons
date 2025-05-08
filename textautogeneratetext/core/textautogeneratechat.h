@@ -7,6 +7,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
+#include <TextAutogenerateText/TextAutoGenerateMessage>
 namespace TextAutogenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
@@ -27,7 +28,11 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateChat &other) const;
 
+    [[nodiscard]] QList<TextAutogenerateText::TextAutoGenerateMessage> messages() const;
+    void setMessages(const QList<TextAutogenerateText::TextAutoGenerateMessage> &newMessages);
+
 private:
+    QList<TextAutogenerateText::TextAutoGenerateMessage> mMessages;
     QByteArray mIdentifier;
     bool mFavorite = false;
     bool mArchived = false;
