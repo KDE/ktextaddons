@@ -57,7 +57,7 @@ void TextAutoGenerateChat::setMessages(const QList<TextAutoGenerateText::TextAut
 
 QString TextAutoGenerateChat::title() const
 {
-    if (mTitle.isEmpty()) {
+    if (mTitle.isEmpty() && !mMessages.isEmpty()) {
         return mMessages.constFirst().topic();
     }
     return mTitle;
