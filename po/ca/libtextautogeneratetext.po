@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-07 00:41+0000\n"
+"POT-Creation-Date: 2025-05-08 00:41+0000\n"
 "PO-Revision-Date: 2025-05-06 09:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,27 +19,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/textautogeneratechatmodel.cpp:261
+#: core/textautogeneratechatmodel.cpp:71
+#, kde-format
+msgid ""
+"Engine: %1\n"
+"Model: %2"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:271
 #, kde-format
 msgid "Today"
 msgstr "Avui"
 
-#: core/textautogeneratechatmodel.cpp:263
+#: core/textautogeneratechatmodel.cpp:273
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/textautogeneratechatmodel.cpp:265
+#: core/textautogeneratechatmodel.cpp:275
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/textautogeneratechatmodel.cpp:267
+#: core/textautogeneratechatmodel.cpp:277
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/textautogeneratechatmodel.cpp:269
+#: core/textautogeneratechatmodel.cpp:279
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
@@ -102,7 +109,7 @@ msgstr "Indicador:"
 msgid "No system prompt"
 msgstr "Sense indicador del sistema"
 
-#: plugins/ollama/ollamamanager.cpp:104
+#: plugins/ollama/ollamamanager.cpp:109
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Ha fallat en connectar amb la interfície a %1: %2"
@@ -199,13 +206,13 @@ msgid "Remove…"
 msgstr "Elimina…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:92
-#: widgets/view/textautogeneratelistview.cpp:101
+#: widgets/view/textautogeneratelistview.cpp:102
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Voleu eliminar aquest debat?"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:93
-#: widgets/view/textautogeneratelistview.cpp:102
+#: widgets/view/textautogeneratelistview.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
@@ -218,49 +225,49 @@ msgctxt "@action"
 msgid "Restore"
 msgstr "Restaura"
 
-#: widgets/view/textautogeneratelistview.cpp:153
+#: widgets/view/textautogeneratelistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia la selecció"
 
-#: widgets/view/textautogeneratelistview.cpp:153
+#: widgets/view/textautogeneratelistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratelistview.cpp:161
+#: widgets/view/textautogeneratelistview.cpp:162
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:421
+#: widgets/view/textautogeneratelistviewdelegate.cpp:427
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Elimina"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#: widgets/view/textautogeneratelistviewdelegate.cpp:431
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Edita..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:429
+#: widgets/view/textautogeneratelistviewdelegate.cpp:435
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:433
+#: widgets/view/textautogeneratelistviewdelegate.cpp:439
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:437
+#: widgets/view/textautogeneratelistviewdelegate.cpp:443
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

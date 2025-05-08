@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-07 00:41+0000\n"
+"POT-Creation-Date: 2025-05-08 00:41+0000\n"
 "PO-Revision-Date: 2025-05-03 14:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,27 +18,34 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: core/textautogeneratechatmodel.cpp:261
+#: core/textautogeneratechatmodel.cpp:71
+#, kde-format
+msgid ""
+"Engine: %1\n"
+"Model: %2"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:271
 #, kde-format
 msgid "Today"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:263
+#: core/textautogeneratechatmodel.cpp:273
 #, kde-format
 msgid "7 days previous"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:265
+#: core/textautogeneratechatmodel.cpp:275
 #, kde-format
 msgid "30 days previous"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:267
+#: core/textautogeneratechatmodel.cpp:277
 #, kde-format
 msgid "Later"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:269
+#: core/textautogeneratechatmodel.cpp:279
 #, kde-format
 msgid "Unknown"
 msgstr ""
@@ -101,7 +108,7 @@ msgstr "בקשה:"
 msgid "No system prompt"
 msgstr "אין הנחיית מערכת"
 
-#: plugins/ollama/ollamamanager.cpp:104
+#: plugins/ollama/ollamamanager.cpp:109
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
@@ -198,13 +205,13 @@ msgid "Remove…"
 msgstr "הסרה…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:92
-#: widgets/view/textautogeneratelistview.cpp:101
+#: widgets/view/textautogeneratelistview.cpp:102
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "להסיר את השיחה?"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:93
-#: widgets/view/textautogeneratelistview.cpp:102
+#: widgets/view/textautogeneratelistview.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
@@ -217,49 +224,49 @@ msgctxt "@action"
 msgid "Restore"
 msgstr "שחזור"
 
-#: widgets/view/textautogeneratelistview.cpp:153
+#: widgets/view/textautogeneratelistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "העתקת הבחירה"
 
-#: widgets/view/textautogeneratelistview.cpp:153
+#: widgets/view/textautogeneratelistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratelistview.cpp:161
+#: widgets/view/textautogeneratelistview.cpp:162
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "בחירה בהכול"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:421
+#: widgets/view/textautogeneratelistviewdelegate.cpp:427
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "הסרה"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#: widgets/view/textautogeneratelistviewdelegate.cpp:431
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "עריכה…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:429
+#: widgets/view/textautogeneratelistviewdelegate.cpp:435
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:433
+#: widgets/view/textautogeneratelistviewdelegate.cpp:439
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:437
+#: widgets/view/textautogeneratelistviewdelegate.cpp:443
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

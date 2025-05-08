@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-07 00:41+0000\n"
-"PO-Revision-Date: 2025-05-03 14:48+0900\n"
+"POT-Creation-Date: 2025-05-08 00:41+0000\n"
+"PO-Revision-Date: 2025-05-07 10:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,30 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.07.70\n"
 
-#: core/textautogeneratechatmodel.cpp:261
+#: core/textautogeneratechatmodel.cpp:71
+#, kde-format
+msgid ""
+"Engine: %1\n"
+"Model: %2"
+msgstr ""
+
+#: core/textautogeneratechatmodel.cpp:271
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "今天"
 
-#: core/textautogeneratechatmodel.cpp:263
+#: core/textautogeneratechatmodel.cpp:273
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "前 7 天"
 
-#: core/textautogeneratechatmodel.cpp:265
+#: core/textautogeneratechatmodel.cpp:275
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "前 30 天"
 
-#: core/textautogeneratechatmodel.cpp:267
+#: core/textautogeneratechatmodel.cpp:277
 #, kde-format
 msgid "Later"
-msgstr ""
+msgstr "更晚"
 
-#: core/textautogeneratechatmodel.cpp:269
+#: core/textautogeneratechatmodel.cpp:279
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
@@ -100,7 +107,7 @@ msgstr "Prompt："
 msgid "No system prompt"
 msgstr "沒有系統 prompt"
 
-#: plugins/ollama/ollamamanager.cpp:104
+#: plugins/ollama/ollamamanager.cpp:109
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "無法連線到在 %1 的介面：%2"
@@ -161,7 +168,7 @@ msgstr "設定…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "搜尋…"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:28
 #, kde-format
@@ -197,13 +204,13 @@ msgid "Remove…"
 msgstr "移除…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:92
-#: widgets/view/textautogeneratelistview.cpp:101
+#: widgets/view/textautogeneratelistview.cpp:102
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "您確定要移除這個討論嗎？"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:93
-#: widgets/view/textautogeneratelistview.cpp:102
+#: widgets/view/textautogeneratelistview.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
@@ -216,53 +223,53 @@ msgctxt "@action"
 msgid "Restore"
 msgstr "回復"
 
-#: widgets/view/textautogeneratelistview.cpp:153
+#: widgets/view/textautogeneratelistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "複製選取範圍"
 
-#: widgets/view/textautogeneratelistview.cpp:153
+#: widgets/view/textautogeneratelistview.cpp:154
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratelistview.cpp:161
+#: widgets/view/textautogeneratelistview.cpp:162
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "全部選取"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:421
+#: widgets/view/textautogeneratelistviewdelegate.cpp:427
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "移除"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#: widgets/view/textautogeneratelistviewdelegate.cpp:431
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "編輯..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:429
+#: widgets/view/textautogeneratelistviewdelegate.cpp:435
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:433
+#: widgets/view/textautogeneratelistviewdelegate.cpp:439
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "取消"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:437
+#: widgets/view/textautogeneratelistviewdelegate.cpp:443
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "重新整理"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Clear"
