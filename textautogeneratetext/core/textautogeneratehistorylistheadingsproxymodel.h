@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "core/textautogeneratechatmodel.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include <QAbstractProxyModel>
 namespace TextAutogenerateText
 {
@@ -17,7 +17,7 @@ public:
     explicit TextAutoGenerateHistoryListHeadingsProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateHistoryListHeadingsProxyModel() override;
 
-    static constexpr uint sectionCount = uint(TextAutoGenerateChatModel::SectionHistory::NSections);
+    static constexpr uint sectionCount = uint(TextAutoGenerateMessagesModel::SectionHistory::NSections);
 
     // QAbstractItemModel interface
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;

@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelistview.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratelistviewdelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
@@ -32,7 +32,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     setMouseTracking(true);
     TextAutogenerateManager::self()->loadHistory();
     setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
-    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateChatModel::conversationCleared, this, [this]() {
+    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
         mDelegate->clearCache();
     });
 
@@ -63,13 +63,13 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (roles.contains(TextAutoGenerateChatModel::MessageRole) || roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
-                    const QByteArray uuid = topLeft.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+                if (roles.contains(TextAutoGenerateMessagesModel::MessageRole) || roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+                    const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
                     if (!uuid.isEmpty()) {
                         mDelegate->removeMessageCache(uuid);
                     }
-                    if (roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
-                        const bool inProgress = !topLeft.data(TextAutoGenerateChatModel::FinishedRole).toBool();
+                    if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+                        const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
                         if (inProgress) {
                             addWaitingAnswerAnimation(topLeft);
                         }
@@ -91,7 +91,7 @@ TextAutogenerateListView::~TextAutogenerateListView()
 void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
 {
     auto model = const_cast<QAbstractItemModel *>(index.model());
-    model->setData(index, true, TextAutoGenerateChatModel::EditingRole);
+    model->setData(index, true, TextAutoGenerateMessagesModel::EditingRole);
     Q_EMIT editMessageRequested(index);
 }
 
@@ -103,7 +103,7 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
                                            i18nc("@title:window", "Remove Discussion"),
                                            KStandardGuiItem::remove(),
                                            KStandardGuiItem::cancel())) {
-        const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+        const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
             Q_EMIT cancelRequested(uuid);
             TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
@@ -113,7 +113,7 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
 
 void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         if (TextAutogenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(index)) {
             Q_EMIT cancelRequested(uuid);
@@ -123,7 +123,7 @@ void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
 
 void TextAutogenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         const QModelIndex index = TextAutogenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(uuid);
         if (index.isValid()) {
@@ -254,11 +254,11 @@ void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
         if (mCurrentIndex != index) {
             if (mCurrentIndex.isValid()) {
                 auto lastModel = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
-                lastModel->setData(mCurrentIndex, false, TextAutoGenerateChatModel::MouseHoverRole);
+                lastModel->setData(mCurrentIndex, false, TextAutoGenerateMessagesModel::MouseHoverRole);
             }
             mCurrentIndex = index;
             auto model = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
-            model->setData(mCurrentIndex, true, TextAutoGenerateChatModel::MouseHoverRole);
+            model->setData(mCurrentIndex, true, TextAutoGenerateMessagesModel::MouseHoverRole);
         }
         QStyleOptionViewItem options = listViewOptions();
         options.rect = visualRect(mCurrentIndex);
@@ -282,7 +282,7 @@ void TextAutogenerateListView::leaveEvent(QEvent *event)
 {
     if (mCurrentIndex.isValid()) {
         auto lastModel = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
-        lastModel->setData(mCurrentIndex, false, TextAutoGenerateChatModel::MouseHoverRole);
+        lastModel->setData(mCurrentIndex, false, TextAutoGenerateMessagesModel::MouseHoverRole);
         mCurrentIndex = QPersistentModelIndex();
     }
     QListView::leaveEvent(event);
@@ -327,7 +327,7 @@ void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
     const QModelIndex idx = TextAutogenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
     if (idx.isValid()) {
         auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
-        lastModel->setData(idx, false, TextAutoGenerateChatModel::EditingRole);
+        lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
     }
 }
 

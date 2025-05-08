@@ -5,11 +5,11 @@
 */
 
 #include "textautogeneratehistorylistview.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratehistorylistheadingsproxymodel.h"
 #include "core/textautogeneratehistorymodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -58,7 +58,7 @@ void TextAutogenerateHistoryListView::keyPressEvent(QKeyEvent *event)
 void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
-        const QByteArray uuid = idx.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+        const QByteArray uuid = idx.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
             Q_EMIT goToDiscussion(uuid);
         }
@@ -76,7 +76,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     if (index.isValid()) {
         auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
         connect(renameHistory, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+            const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
             if (!uuid.isEmpty()) {
                 edit(index);
             }
@@ -93,7 +93,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                                                    i18nc("@title:window", "Remove Discussion"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())) {
-                const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
+                const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
                 if (!uuid.isEmpty()) {
                     TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
                 }

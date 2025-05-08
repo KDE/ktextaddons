@@ -5,11 +5,11 @@
 */
 
 #include "textautogeneratewidget.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextwidget_debug.h"
@@ -183,8 +183,8 @@ void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 
 void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
-    const QString messageStr = index.data(TextAutoGenerateChatModel::MessageRole).toString();
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
     mTextAutogenerateTextLineEditWidget->setUuid(uuid);
     mTextAutogenerateTextLineEditWidget->setText(messageStr);
 }
@@ -196,8 +196,8 @@ void TextAutogenerateWidget::slotCancelRequest(const QByteArray &uuid)
 
 void TextAutogenerateWidget::slotRefreshAnswer(const QModelIndex &index)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
-    const QString messageStr = index.data(TextAutoGenerateChatModel::MessageRole).toString();
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
     mTextAutogeneratePlugin->editMessage(uuid, messageStr);
 }
 

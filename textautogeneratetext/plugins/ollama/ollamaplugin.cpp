@@ -6,8 +6,8 @@
 
 #include "ollamaplugin.h"
 #include "autogeneratetext_ollama_debug.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 

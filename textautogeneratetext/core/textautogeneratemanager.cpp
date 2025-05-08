@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemanager.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogenerateengineutil.h"
+#include "core/textautogeneratemessagesmodel.h"
 
 #include <KConfigGroup>
 #include <QRegularExpression>
@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 using namespace TextAutogenerateText;
 TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
     : QObject{parent}
-    , mTextAutoGenerateChatModel(new TextAutoGenerateChatModel(this))
+    , mTextAutoGenerateChatModel(new TextAutoGenerateMessagesModel(this))
 {
 }
 
@@ -30,7 +30,7 @@ void TextAutogenerateManager::ask(const QString &msg)
     Q_EMIT askMessageRequested(msg);
 }
 
-TextAutoGenerateChatModel *TextAutogenerateManager::textAutoGenerateChatModel() const
+TextAutoGenerateMessagesModel *TextAutogenerateManager::textAutoGenerateChatModel() const
 {
     return mTextAutoGenerateChatModel;
 }

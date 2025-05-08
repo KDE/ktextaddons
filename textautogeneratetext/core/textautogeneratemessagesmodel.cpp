@@ -4,20 +4,20 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "textautogeneratechatmodel.h"
+#include "textautogeneratemessagesmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 #include <QDateTime>
 
 using namespace TextAutogenerateText;
-TextAutoGenerateChatModel::TextAutoGenerateChatModel(QObject *parent)
+TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
     : QAbstractListModel{parent}
 {
 }
 
-TextAutoGenerateChatModel::~TextAutoGenerateChatModel() = default;
+TextAutoGenerateMessagesModel::~TextAutoGenerateMessagesModel() = default;
 
-int TextAutoGenerateChatModel::rowCount(const QModelIndex &parent) const
+int TextAutoGenerateMessagesModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0; // flat model
@@ -25,7 +25,7 @@ int TextAutoGenerateChatModel::rowCount(const QModelIndex &parent) const
     return mMessages.count();
 }
 
-QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) const
+QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() < 0 || index.row() >= mMessages.count()) {
         return {};
@@ -63,7 +63,7 @@ QVariant TextAutoGenerateChatModel::data(const QModelIndex &index, int role) con
     return {};
 }
 
-QString TextAutoGenerateChatModel::generateModelInfo(const TextAutoGenerateMessage &m) const
+QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateMessage &m) const
 {
     if (m.engineName().isEmpty() && m.modelName().isEmpty()) {
         return {};
@@ -71,37 +71,37 @@ QString TextAutoGenerateChatModel::generateModelInfo(const TextAutoGenerateMessa
     return i18n("Engine: %1\nModel: %2", m.engineName(), m.modelName());
 }
 
-TextAutoGenerateChatModel::SectionHistory TextAutoGenerateChatModel::section(const TextAutoGenerateMessage &m) const
+TextAutoGenerateMessagesModel::SectionHistory TextAutoGenerateMessagesModel::section(const TextAutoGenerateMessage &m) const
 {
     if (m.dateTime() == -1) {
-        return TextAutoGenerateChatModel::SectionHistory::Unknown;
+        return TextAutoGenerateMessagesModel::SectionHistory::Unknown;
     }
     const QDate d = QDateTime::fromSecsSinceEpoch(m.dateTime()).date();
     if (d == QDate::currentDate()) {
-        return TextAutoGenerateChatModel::SectionHistory::Today;
+        return TextAutoGenerateMessagesModel::SectionHistory::Today;
     } else if (d < QDate::currentDate().addDays(7)) {
-        return TextAutoGenerateChatModel::SectionHistory::LessThanSevenDays;
+        return TextAutoGenerateMessagesModel::SectionHistory::LessThanSevenDays;
     } else if (d < QDate::currentDate().addDays(30)) {
-        return TextAutoGenerateChatModel::SectionHistory::LessThanThirtyDays;
+        return TextAutoGenerateMessagesModel::SectionHistory::LessThanThirtyDays;
     } else {
-        return TextAutoGenerateChatModel::SectionHistory::Later;
+        return TextAutoGenerateMessagesModel::SectionHistory::Later;
     }
-    return TextAutoGenerateChatModel::SectionHistory::Unknown;
+    return TextAutoGenerateMessagesModel::SectionHistory::Unknown;
 }
 
-QList<TextAutoGenerateMessage> TextAutoGenerateChatModel::messages() const
+QList<TextAutoGenerateMessage> TextAutoGenerateMessagesModel::messages() const
 {
     return mMessages;
 }
 
-void TextAutoGenerateChatModel::setMessages(const QList<TextAutoGenerateMessage> &newMessages)
+void TextAutoGenerateMessagesModel::setMessages(const QList<TextAutoGenerateMessage> &newMessages)
 {
     beginResetModel();
     mMessages = newMessages;
     endResetModel();
 }
 
-QModelIndex TextAutoGenerateChatModel::refreshAnswer(const QByteArray &uuid) const
+QModelIndex TextAutoGenerateMessagesModel::refreshAnswer(const QByteArray &uuid) const
 {
     if (uuid.isEmpty()) {
         return {};
@@ -117,7 +117,7 @@ QModelIndex TextAutoGenerateChatModel::refreshAnswer(const QByteArray &uuid) con
     return idx;
 }
 
-void TextAutoGenerateChatModel::resetConversation()
+void TextAutoGenerateMessagesModel::resetConversation()
 {
     beginResetModel();
     mMessages.clear();
@@ -125,7 +125,7 @@ void TextAutoGenerateChatModel::resetConversation()
     Q_EMIT conversationCleared();
 }
 
-void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
+void TextAutoGenerateMessagesModel::addMessage(const TextAutoGenerateMessage &msg)
 {
     beginInsertRows(QModelIndex(), mMessages.count(), mMessages.count());
     mMessages.append(msg);
@@ -139,7 +139,7 @@ void TextAutoGenerateChatModel::addMessage(const TextAutoGenerateMessage &msg)
     endInsertRows();
 }
 
-QByteArray TextAutoGenerateChatModel::editMessage(const QByteArray &uuid, const QString &str)
+QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, const QString &str)
 {
     if (uuid.isEmpty()) {
         return {};
@@ -174,7 +174,7 @@ QByteArray TextAutoGenerateChatModel::editMessage(const QByteArray &uuid, const 
     return {};
 }
 
-void TextAutoGenerateChatModel::changeInProgress(const QByteArray &uuid, bool inProgress)
+void TextAutoGenerateMessagesModel::changeInProgress(const QByteArray &uuid, bool inProgress)
 {
     if (uuid.isEmpty()) {
         return;
@@ -194,7 +194,7 @@ void TextAutoGenerateChatModel::changeInProgress(const QByteArray &uuid, bool in
     }
 }
 
-bool TextAutoGenerateChatModel::waitingAnswer(const TextAutoGenerateMessage &message) const
+bool TextAutoGenerateMessagesModel::waitingAnswer(const TextAutoGenerateMessage &message) const
 {
     const QByteArray answerUuid = message.answerUuid();
     if (answerUuid.isEmpty()) {
@@ -210,7 +210,7 @@ bool TextAutoGenerateChatModel::waitingAnswer(const TextAutoGenerateMessage &mes
     return false;
 }
 
-void TextAutoGenerateChatModel::replaceContent(const QByteArray &uuid, const QString &content)
+void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid, const QString &content)
 {
     if (uuid.isEmpty()) {
         return;
@@ -230,7 +230,7 @@ void TextAutoGenerateChatModel::replaceContent(const QByteArray &uuid, const QSt
     }
 }
 
-void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
+void TextAutoGenerateMessagesModel::removeDiscussion(const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
         return;
@@ -259,33 +259,33 @@ void TextAutoGenerateChatModel::removeDiscussion(const QByteArray &uuid)
     }
 }
 
-bool TextAutoGenerateChatModel::cancelRequest(const QModelIndex &index)
+bool TextAutoGenerateMessagesModel::cancelRequest(const QModelIndex &index)
 {
-    return setData(index, false, TextAutoGenerateChatModel::FinishedRole);
+    return setData(index, false, TextAutoGenerateMessagesModel::FinishedRole);
 }
 
-QString TextAutoGenerateChatModel::sectionName(SectionHistory sectionId)
+QString TextAutoGenerateMessagesModel::sectionName(SectionHistory sectionId)
 {
     switch (sectionId) {
-    case TextAutoGenerateChatModel::SectionHistory::Favorite:
+    case TextAutoGenerateMessagesModel::SectionHistory::Favorite:
         return i18n("Favorite");
-    case TextAutoGenerateChatModel::SectionHistory::Today:
+    case TextAutoGenerateMessagesModel::SectionHistory::Today:
         return i18n("Today");
-    case TextAutoGenerateChatModel::SectionHistory::LessThanSevenDays:
+    case TextAutoGenerateMessagesModel::SectionHistory::LessThanSevenDays:
         return i18n("7 days previous");
-    case TextAutoGenerateChatModel::SectionHistory::LessThanThirtyDays:
+    case TextAutoGenerateMessagesModel::SectionHistory::LessThanThirtyDays:
         return i18n("30 days previous");
-    case TextAutoGenerateChatModel::SectionHistory::Later:
+    case TextAutoGenerateMessagesModel::SectionHistory::Later:
         return i18n("Later");
-    case TextAutoGenerateChatModel::SectionHistory::Unknown:
+    case TextAutoGenerateMessagesModel::SectionHistory::Unknown:
         return i18n("Unknown");
-    case TextAutoGenerateChatModel::SectionHistory::NSections:
+    case TextAutoGenerateMessagesModel::SectionHistory::NSections:
         break;
     }
     return QStringLiteral("ERROR");
 }
 
-bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &value, int role)
+bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
     if (!idx.isValid()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
@@ -325,7 +325,7 @@ bool TextAutoGenerateChatModel::setData(const QModelIndex &idx, const QVariant &
     return QAbstractListModel::setData(idx, value, role);
 }
 
-QModelIndex TextAutoGenerateChatModel::indexForUuid(const QByteArray &uuid) const
+QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) const
 {
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
@@ -338,7 +338,7 @@ QModelIndex TextAutoGenerateChatModel::indexForUuid(const QByteArray &uuid) cons
     return idx;
 }
 
-Qt::ItemFlags TextAutoGenerateChatModel::flags(const QModelIndex &index) const
+Qt::ItemFlags TextAutoGenerateMessagesModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid())
         return Qt::NoItemFlags;
@@ -346,4 +346,4 @@ Qt::ItemFlags TextAutoGenerateChatModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEditable | QAbstractListModel::flags(index);
 }
 
-#include "moc_textautogeneratechatmodel.cpp"
+#include "moc_textautogeneratemessagesmodel.cpp"

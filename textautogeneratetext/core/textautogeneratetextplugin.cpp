@@ -5,9 +5,9 @@
 */
 
 #include "textautogeneratetextplugin.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 

@@ -5,8 +5,8 @@
 */
 
 #include "textautogeneratemessagewaitingansweranimation.h"
-#include "core/textautogeneratechatmodel.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include <QParallelAnimationGroup>
 #include <QPropertyAnimation>
 #include <QSequentialAnimationGroup>
@@ -21,9 +21,9 @@ TextAutogenerateMessageWaitingAnswerAnimation::TextAutogenerateMessageWaitingAns
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
-                    if (roles.contains(TextAutoGenerateChatModel::FinishedRole)) {
-                        const bool inProgress = !topLeft.data(TextAutoGenerateChatModel::FinishedRole).toBool();
+                if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+                    if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+                        const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
                         if (!inProgress) {
                             if (mModelIndex == topLeft) {
                                 Q_EMIT waitingAnswerDone(topLeft);

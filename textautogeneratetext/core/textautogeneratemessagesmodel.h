@@ -14,7 +14,7 @@ namespace TextAutogenerateText
  * @brief The TextAutoGenerateChatModel class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessagesModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -44,8 +44,8 @@ public:
         NSections,
     };
 
-    explicit TextAutoGenerateChatModel(QObject *parent = nullptr);
-    ~TextAutoGenerateChatModel() override;
+    explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);
+    ~TextAutoGenerateMessagesModel() override;
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
@@ -68,13 +68,13 @@ public:
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
     [[nodiscard]] bool cancelRequest(const QModelIndex &index);
-    [[nodiscard]] static QString sectionName(TextAutoGenerateChatModel::SectionHistory sectionId);
+    [[nodiscard]] static QString sectionName(TextAutoGenerateMessagesModel::SectionHistory sectionId);
 
 Q_SIGNALS:
     void conversationCleared();
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessagesModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateMessage> mMessages;

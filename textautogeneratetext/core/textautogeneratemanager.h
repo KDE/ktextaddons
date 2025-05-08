@@ -10,7 +10,7 @@
 #include <TextAutogenerateText/TextAutoGenerateMessage>
 namespace TextAutogenerateText
 {
-class TextAutoGenerateChatModel;
+class TextAutoGenerateMessagesModel;
 /**
  * @brief The TextAutogenerateManager class
  * @author Laurent Montel <montel@kde.org>
@@ -26,7 +26,7 @@ public:
 
     void ask(const QString &msg);
 
-    [[nodiscard]] TextAutoGenerateChatModel *textAutoGenerateChatModel() const;
+    [[nodiscard]] TextAutoGenerateMessagesModel *textAutoGenerateChatModel() const;
 
     virtual void loadHistory();
     virtual void saveHistory();
@@ -41,7 +41,7 @@ Q_SIGNALS:
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const;
-    TextAutoGenerateChatModel *const mTextAutoGenerateChatModel;
+    TextAutoGenerateMessagesModel *const mTextAutoGenerateChatModel;
     bool mShowArchived = false;
 };
 }

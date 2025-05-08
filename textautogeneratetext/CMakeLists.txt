@@ -68,8 +68,8 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogenerateengineutil.h
     core/textautogenerateengineutil.cpp
 
-    core/textautogeneratechatmodel.h
-    core/textautogeneratechatmodel.cpp
+    core/textautogeneratemessagesmodel.h
+    core/textautogeneratemessagesmodel.cpp
 
     core/textautogeneratemessage.h
     core/textautogeneratemessage.cpp
@@ -195,7 +195,7 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutogenerateTextPlugin
     TextAutogenerateTextContext
     TextAutoGenerateHistorySortFilterProxyModel
-    TextAutoGenerateChatModel
+    TextAutoGenerateMessagesModel
     TextAutogenerateManager
     TextAutoGenerateMessage
     TextAutoGenerateTextReplyInfo
