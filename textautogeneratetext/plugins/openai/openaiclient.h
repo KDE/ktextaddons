@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <TextAutogenerateText/TextAutogenerateTextClient>
+#include <TextAutogenerateText/TextAutoGenerateTextClient>
 
 class OpenAIClient : public TextAutogenerateText::TextAutoGenerateTextClient
 {
