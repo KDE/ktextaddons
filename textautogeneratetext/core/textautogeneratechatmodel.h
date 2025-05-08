@@ -35,6 +35,7 @@ public:
     };
 
     enum class SectionHistory : uint8_t {
+        Favorite,
         Today,
         LessThanSevenDays,
         LessThanThirtyDays,

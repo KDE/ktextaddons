@@ -267,6 +267,8 @@ bool TextAutoGenerateChatModel::cancelRequest(const QModelIndex &index)
 QString TextAutoGenerateChatModel::sectionName(SectionHistory sectionId)
 {
     switch (sectionId) {
+    case TextAutoGenerateChatModel::SectionHistory::Favorite:
+        return i18n("Favorite");
     case TextAutoGenerateChatModel::SectionHistory::Today:
         return i18n("Today");
     case TextAutoGenerateChatModel::SectionHistory::LessThanSevenDays:
