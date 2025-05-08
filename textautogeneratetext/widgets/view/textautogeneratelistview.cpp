@@ -30,9 +30,9 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     setFocusPolicy(Qt::NoFocus);
     scrollToBottom();
     setMouseTracking(true);
-    TextAutogenerateManager::self()->loadHistory();
-    setModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
-    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
+    TextAutoGenerateManager::self()->loadHistory();
+    setModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
+    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
         mDelegate->clearCache();
     });
 
@@ -46,20 +46,20 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
     connect(mDelegate, &TextAutogenerateListViewDelegate::cancelRequested, this, &TextAutogenerateListView::slotCancelRequested);
     connect(mDelegate, &TextAutogenerateListViewDelegate::refreshRequested, this, &TextAutogenerateListView::slotRefreshRequested);
 
-    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeInserted,
             this,
             &TextAutogenerateListView::checkIfAtBottom);
-    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeRemoved,
             this,
             &TextAutogenerateListView::checkIfAtBottom);
-    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::modelAboutToBeReset,
             this,
             &TextAutogenerateListView::checkIfAtBottom);
 
-    connect(TextAutogenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
@@ -84,7 +84,7 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 
 TextAutogenerateListView::~TextAutogenerateListView()
 {
-    TextAutogenerateManager::self()->saveHistory();
+    TextAutoGenerateManager::self()->saveHistory();
     // TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
 }
 
@@ -106,7 +106,7 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
         const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
             Q_EMIT cancelRequested(uuid);
-            TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+            TextAutoGenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
         }
     }
 }
@@ -115,7 +115,7 @@ void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        if (TextAutogenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(index)) {
+        if (TextAutoGenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(index)) {
             Q_EMIT cancelRequested(uuid);
         }
     }
@@ -125,7 +125,7 @@ void TextAutogenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        const QModelIndex index = TextAutogenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(uuid);
+        const QModelIndex index = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(uuid);
         if (index.isValid()) {
             Q_EMIT refreshAnswerRequested(index);
         }
@@ -142,7 +142,7 @@ void TextAutogenerateListView::slotCopyMessage(const QModelIndex &index)
 
 void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
 {
-    TextAutogenerateManager::self()->textAutoGenerateChatModel()->setMessages(msg);
+    TextAutoGenerateManager::self()->textAutoGenerateChatModel()->setMessages(msg);
 }
 
 void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
@@ -310,7 +310,7 @@ void TextAutogenerateListView::handleKeyPressEvent(QKeyEvent *ev)
 
 void TextAutogenerateListView::slotGoToDiscussion(const QByteArray &uuid)
 {
-    const QModelIndex idx = TextAutogenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
+    const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
     if (idx.isValid()) {
         scrollTo(idx);
     }
@@ -324,7 +324,7 @@ void TextAutogenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
 {
-    const QModelIndex idx = TextAutogenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
+    const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
     if (idx.isValid()) {
         auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
         lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);

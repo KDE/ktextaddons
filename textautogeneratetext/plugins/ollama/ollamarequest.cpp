@@ -22,12 +22,12 @@ void OllamaRequest::setMessage(const QString &newMessage)
     mMessage = newMessage;
 }
 
-TextAutogenerateText::TextAutogenerateTextContext OllamaRequest::context() const
+TextAutogenerateText::TextAutoGenerateTextContext OllamaRequest::context() const
 {
     return mContext;
 }
 
-void OllamaRequest::setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext)
+void OllamaRequest::setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext)
 {
     mContext = newContext;
 }

@@ -56,7 +56,7 @@ public:
      *
      * @return A context object that refers to this response.
      */
-    const TextAutogenerateText::TextAutogenerateTextContext &context() const;
+    const TextAutogenerateText::TextAutoGenerateTextContext &context() const;
 
     /**
      * @brief Get extra information about the reply.
@@ -112,7 +112,7 @@ private:
     QList<QJsonDocument> mTokens;
 
     const RequestTypes mRequestType = RequestTypes::StreamingGenerate;
-    TextAutogenerateText::TextAutogenerateTextContext mContext;
+    TextAutogenerateText::TextAutoGenerateTextContext mContext;
     TextAutogenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     int mReceivedSize = 0;

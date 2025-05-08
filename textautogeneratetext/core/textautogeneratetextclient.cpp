@@ -7,31 +7,31 @@
 #include "textautogeneratetextclient.h"
 #include <KLocalizedString>
 using namespace TextAutogenerateText;
-TextAutogenerateTextClient::TextAutogenerateTextClient(QObject *parent)
+TextAutoGenerateTextClient::TextAutoGenerateTextClient(QObject *parent)
     : QObject{parent}
 {
 }
 
-TextAutogenerateTextClient::~TextAutogenerateTextClient() = default;
+TextAutoGenerateTextClient::~TextAutoGenerateTextClient() = default;
 
-bool TextAutogenerateTextClient::hasConfigurationDialog() const
+bool TextAutoGenerateTextClient::hasConfigurationDialog() const
 {
     return false;
 }
 
-bool TextAutogenerateTextClient::showConfigureDialog(QWidget *parentWidget)
+bool TextAutoGenerateTextClient::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget);
     // Nothing by default
     return false;
 }
 
-QString TextAutogenerateTextClient::convertEngineType(TextAutogenerateText::TextAutogenerateTextClient::EngineType type)
+QString TextAutoGenerateTextClient::convertEngineType(TextAutogenerateText::TextAutoGenerateTextClient::EngineType type)
 {
     switch (type) {
-    case TextAutogenerateText::TextAutogenerateTextClient::EngineType::Local:
+    case TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Local:
         return i18n("Local");
-    case TextAutogenerateText::TextAutogenerateTextClient::EngineType::Network:
+    case TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Network:
         return i18n("Network");
     }
     Q_UNREACHABLE();

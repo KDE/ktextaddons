@@ -24,39 +24,39 @@ public:
     QString currentModel;
 };
 
-TextAutogenerateTextPlugin::TextAutogenerateTextPlugin(QObject *parent)
+TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
     : QObject{parent}
     , d(new TextAutogenerateText::TextAutogenerateTextPluginPrivate)
 {
 }
 
-TextAutogenerateTextPlugin::~TextAutogenerateTextPlugin() = default;
+TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
-void TextAutogenerateTextPlugin::setHasError(bool error)
+void TextAutoGenerateTextPlugin::setHasError(bool error)
 {
     d->hasError = error;
 }
 
-bool TextAutogenerateTextPlugin::ready() const
+bool TextAutoGenerateTextPlugin::ready() const
 {
     return d->isReady;
 }
 
-void TextAutogenerateTextPlugin::setReady(bool newReady)
+void TextAutoGenerateTextPlugin::setReady(bool newReady)
 {
     d->isReady = newReady;
     Q_EMIT initializedDone();
 }
 
-void TextAutogenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)
+void TextAutoGenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)
 {
     if (ready()) {
-        const QByteArray llmUuid = TextAutogenerateManager::self()->textAutoGenerateChatModel()->editMessage(uuid, str);
+        const QByteArray llmUuid = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->editMessage(uuid, str);
         sendToLLM(str, llmUuid);
     }
 }
 
-void TextAutogenerateTextPlugin::sendMessage(const QString &str)
+void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
 {
     if (ready()) {
         // User Message
@@ -78,20 +78,20 @@ void TextAutogenerateTextPlugin::sendMessage(const QString &str)
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
-        TextAutogenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
+        TextAutoGenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
+        TextAutoGenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
         sendToLLM(str, llmUuid);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }
 }
 
-QString TextAutogenerateTextPlugin::currentModel() const
+QString TextAutoGenerateTextPlugin::currentModel() const
 {
     return d->currentModel;
 }
 
-void TextAutogenerateTextPlugin::setCurrentModel(const QString &newCurrentModel)
+void TextAutoGenerateTextPlugin::setCurrentModel(const QString &newCurrentModel)
 {
     d->currentModel = newCurrentModel;
 }

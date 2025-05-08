@@ -13,16 +13,16 @@ namespace TextAutogenerateText
  * @brief The TextAutogenerateTextContext class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextContext
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextContext
 {
 public:
-    TextAutogenerateTextContext();
-    ~TextAutogenerateTextContext();
+    TextAutoGenerateTextContext();
+    ~TextAutoGenerateTextContext();
 
     [[nodiscard]] QVariant contextData() const;
     void setContextData(const QVariant &newContextData);
 
-    [[nodiscard]] bool operator==(const TextAutogenerateTextContext &other) const;
+    [[nodiscard]] bool operator==(const TextAutoGenerateTextContext &other) const;
 
     [[nodiscard]] QJsonValue toJson() const;
 
@@ -30,4 +30,4 @@ private:
     QVariant mContextData;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateTextContext &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateTextContext &t);

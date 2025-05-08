@@ -191,13 +191,13 @@ set_target_properties(KF6TextAutogenerateText PROPERTIES
 
 ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEADERS
     HEADER_NAMES
-    TextAutogenerateEnginePlugin
-    TextAutogenerateTextClient
-    TextAutogenerateTextPlugin
+    TextAutoGenerateEnginePlugin
+    TextAutoGenerateTextClient
+    TextAutoGenerateTextPlugin
     TextAutogenerateTextContext
     TextAutoGenerateHistorySortFilterProxyModel
     TextAutoGenerateMessagesModel
-    TextAutogenerateManager
+    TextAutoGenerateManager
     TextAutoGenerateMessage
     TextAutoGenerateChat
     TextAutoGenerateTextReplyInfo

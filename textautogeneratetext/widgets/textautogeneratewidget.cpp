@@ -60,11 +60,11 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
 
-    connect(TextAutogenerateManager::self(), &TextAutogenerateManager::sendMessageRequested, this, [this](const QString &str) {
+    connect(TextAutoGenerateManager::self(), &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
         slotEditingFinished(str, {});
     });
 
-    connect(TextAutogenerateManager::self(), &TextAutogenerateManager::askMessageRequested, this, [this](const QString &str) {
+    connect(TextAutoGenerateManager::self(), &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
         slotAskMessageRequester(str);
     });
 
@@ -143,12 +143,12 @@ void TextAutogenerateWidget::loadEngine()
     if (mTextAutogenerateClient) {
         mHeaderWidget->updateEngineName(TextAutogenerateText::TextAutogenerateEngineLoader::self()->generateDisplayName(mTextAutogenerateClient));
         mTextAutogeneratePlugin = mTextAutogenerateClient->createTextAutogeneratePlugin();
-        connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutogenerateTextPlugin::finished, this, &TextAutogenerateWidget::slotAutogenerateFinished);
+        connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutoGenerateTextPlugin::finished, this, &TextAutogenerateWidget::slotAutogenerateFinished);
         connect(mTextAutogeneratePlugin,
-                &TextAutogenerateText::TextAutogenerateTextPlugin::errorOccurred,
+                &TextAutogenerateText::TextAutoGenerateTextPlugin::errorOccurred,
                 this,
                 &TextAutogenerateWidget::slotAutogenerateFailed);
-        connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutogenerateTextPlugin::initializedDone, this, &TextAutogenerateWidget::slotInitializeDone);
+        connect(mTextAutogeneratePlugin, &TextAutogenerateText::TextAutoGenerateTextPlugin::initializedDone, this, &TextAutogenerateWidget::slotInitializeDone);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutogenerateEngineUtil::loadEngine();
     }

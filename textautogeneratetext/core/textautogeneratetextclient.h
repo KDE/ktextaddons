@@ -9,12 +9,12 @@
 #include <QObject>
 namespace TextAutogenerateText
 {
-class TextAutogenerateTextPlugin;
+class TextAutoGenerateTextPlugin;
 /**
  * @brief The TextAutogenerateTextClient class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextClient : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
 {
     Q_OBJECT
 public:
@@ -29,8 +29,8 @@ public:
         Broken,
     };
 
-    explicit TextAutogenerateTextClient(QObject *parent = nullptr);
-    ~TextAutogenerateTextClient() override;
+    explicit TextAutoGenerateTextClient(QObject *parent = nullptr);
+    ~TextAutoGenerateTextClient() override;
 
     /**
      * @returns the name of the implementing class.
@@ -41,15 +41,15 @@ public:
 
     [[nodiscard]] virtual QString webSite() const = 0;
 
-    virtual TextAutogenerateTextPlugin *createTextAutogeneratePlugin() = 0;
+    virtual TextAutoGenerateTextPlugin *createTextAutogeneratePlugin() = 0;
 
     [[nodiscard]] virtual bool hasConfigurationDialog() const;
 
     [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget);
 
-    [[nodiscard]] virtual TextAutogenerateText::TextAutogenerateTextClient::EngineType engineType() const = 0;
+    [[nodiscard]] virtual TextAutogenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
 
-    [[nodiscard]] static QString convertEngineType(TextAutogenerateText::TextAutogenerateTextClient::EngineType type);
+    [[nodiscard]] static QString convertEngineType(TextAutogenerateText::TextAutoGenerateTextClient::EngineType type);
 
     [[nodiscard]] virtual QString modelName() const = 0;
 
@@ -57,4 +57,4 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-Q_DECLARE_INTERFACE(TextAutogenerateText::TextAutogenerateTextClient, "org.kde.textautogeneratetext.client")
+Q_DECLARE_INTERFACE(TextAutogenerateText::TextAutoGenerateTextClient, "org.kde.textautogeneratetext.client")

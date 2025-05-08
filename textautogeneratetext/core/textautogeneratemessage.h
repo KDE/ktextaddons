@@ -73,8 +73,8 @@ public:
     [[nodiscard]] QString engineName() const;
     void setEngineName(const QString &newEngineName);
 
-    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextContext context() const;
-    void setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext);
+    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextContext context() const;
+    void setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext);
 
 private:
     QByteArray mAnswerUuid;
@@ -86,7 +86,7 @@ private:
     QString mModelName;
     QString mEngineName;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
-    TextAutogenerateText::TextAutogenerateTextContext mContext;
+    TextAutogenerateText::TextAutoGenerateTextContext mContext;
     // TextAutoGenerateMessage::KLLMReplyInfo info;
 
     qint64 mDateTime = -1;

@@ -15,14 +15,14 @@ class TextAutoGenerateMessagesModel;
  * @brief The TextAutogenerateManager class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateManager : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateManager(QObject *parent = nullptr);
-    ~TextAutogenerateManager() override;
+    explicit TextAutoGenerateManager(QObject *parent = nullptr);
+    ~TextAutoGenerateManager() override;
 
-    static TextAutogenerateManager *self();
+    static TextAutoGenerateManager *self();
 
     void ask(const QString &msg);
 

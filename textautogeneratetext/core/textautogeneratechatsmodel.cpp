@@ -86,3 +86,5 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     }
     return QAbstractListModel::setData(idx, value, role);
 }
+
+#include "moc_textautogeneratechatsmodel.cpp"

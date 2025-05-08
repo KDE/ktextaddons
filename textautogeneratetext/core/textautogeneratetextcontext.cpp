@@ -8,31 +8,31 @@
 #include <QJsonArray>
 
 using namespace TextAutogenerateText;
-TextAutogenerateTextContext::TextAutogenerateTextContext() = default;
+TextAutoGenerateTextContext::TextAutoGenerateTextContext() = default;
 
-TextAutogenerateTextContext::~TextAutogenerateTextContext() = default;
+TextAutoGenerateTextContext::~TextAutoGenerateTextContext() = default;
 
-QVariant TextAutogenerateTextContext::contextData() const
+QVariant TextAutoGenerateTextContext::contextData() const
 {
     return mContextData;
 }
 
-void TextAutogenerateTextContext::setContextData(const QVariant &newContextData)
+void TextAutoGenerateTextContext::setContextData(const QVariant &newContextData)
 {
     mContextData = newContextData;
 }
 
-bool TextAutogenerateTextContext::operator==(const TextAutogenerateTextContext &other) const
+bool TextAutoGenerateTextContext::operator==(const TextAutoGenerateTextContext &other) const
 {
     return other.contextData() == mContextData;
 }
 
-QJsonValue TextAutogenerateTextContext::toJson() const
+QJsonValue TextAutoGenerateTextContext::toJson() const
 {
     return mContextData.value<QJsonArray>();
 }
 
-QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutogenerateTextContext &t)
+QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateTextContext &t)
 {
     d.space() << "contextData:" << t.contextData();
     return d;

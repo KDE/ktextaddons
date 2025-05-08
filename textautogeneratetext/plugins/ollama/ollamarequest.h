@@ -18,8 +18,8 @@ public:
     [[nodiscard]] QString message() const;
     void setMessage(const QString &newMessage);
 
-    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextContext context() const;
-    void setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext);
+    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextContext context() const;
+    void setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext);
 
     [[nodiscard]] bool operator==(const OllamaRequest &other) const;
 
@@ -28,7 +28,7 @@ public:
 
 private:
     QString mMessage;
-    TextAutogenerateText::TextAutogenerateTextContext mContext;
+    TextAutogenerateText::TextAutoGenerateTextContext mContext;
     QString mModel;
 };
 

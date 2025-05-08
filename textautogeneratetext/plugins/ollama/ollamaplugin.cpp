@@ -13,7 +13,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 OllamaPlugin::OllamaPlugin(QObject *parent)
-    : TextAutogenerateText::TextAutogenerateTextPlugin{parent}
+    : TextAutogenerateText::TextAutoGenerateTextPlugin{parent}
 {
     if (!loadSettings()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to load settings";
@@ -97,13 +97,13 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
                         QPair<QByteArray, QMetaObject::Connection>(
                             uuid,
                             connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
-                                TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid, reply->readResponse());
+                                TextAutogenerateText::TextAutoGenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid, reply->readResponse());
                             })));
     mConnections.insert(reply,
                         QPair<QByteArray, QMetaObject::Connection>(
                             uuid,
                             connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
-                                TextAutogenerateText::TextAutogenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
+                                TextAutogenerateText::TextAutoGenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
                                 mConnections.remove(reply);
                                 reply->deleteLater();
 #if 0

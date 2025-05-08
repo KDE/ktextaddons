@@ -12,7 +12,7 @@
 namespace TextAutogenerateText
 {
 class TextAutogenerateEngineLoaderPrivate;
-class TextAutogenerateTextClient;
+class TextAutoGenerateTextClient;
 /**
  * @brief The TextAutogenerateEngineLoader class
  * @author Laurent Montel <montel@kde.org>
@@ -26,7 +26,7 @@ public:
     explicit TextAutogenerateEngineLoader(QObject *parent = nullptr);
     ~TextAutogenerateEngineLoader() override;
 
-    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
+    [[nodiscard]] TextAutogenerateText::TextAutoGenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
 
     [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
 
@@ -40,8 +40,8 @@ public:
 
     void loadPlugins();
 
-    [[nodiscard]] QString generateDisplayName(TextAutogenerateTextClient *client) const;
-    [[nodiscard]] QString website(TextAutogenerateTextClient *client) const;
+    [[nodiscard]] QString generateDisplayName(TextAutoGenerateTextClient *client) const;
+    [[nodiscard]] QString website(TextAutoGenerateTextClient *client) const;
 
 Q_SIGNALS:
     void loadingPluginFailed();

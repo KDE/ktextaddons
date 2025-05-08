@@ -11,7 +11,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 MistralClient::MistralClient(QObject *parent)
-    : TextAutogenerateText::TextAutogenerateTextClient{parent}
+    : TextAutogenerateText::TextAutoGenerateTextClient{parent}
 {
 }
 
@@ -27,14 +27,14 @@ QString MistralClient::translatedName() const
     return i18n("Mistral AI");
 }
 
-TextAutogenerateText::TextAutogenerateTextPlugin *MistralClient::createTextAutogeneratePlugin()
+TextAutogenerateText::TextAutoGenerateTextPlugin *MistralClient::createTextAutogeneratePlugin()
 {
     return new MistralPlugin(this);
 }
 
-TextAutogenerateText::TextAutogenerateTextClient::EngineType MistralClient::engineType() const
+TextAutogenerateText::TextAutoGenerateTextClient::EngineType MistralClient::engineType() const
 {
-    return TextAutogenerateText::TextAutogenerateTextClient::EngineType::Network;
+    return TextAutogenerateText::TextAutoGenerateTextClient::EngineType::Network;
 }
 
 bool MistralClient::hasConfigurationDialog() const

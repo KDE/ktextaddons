@@ -180,12 +180,12 @@ void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
     mEngineName = newEngineName;
 }
 
-TextAutogenerateTextContext TextAutoGenerateMessage::context() const
+TextAutoGenerateTextContext TextAutoGenerateMessage::context() const
 {
     return mContext;
 }
 
-void TextAutoGenerateMessage::setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext)
+void TextAutoGenerateMessage::setContext(const TextAutogenerateText::TextAutoGenerateTextContext &newContext)
 {
     mContext = newContext;
 }

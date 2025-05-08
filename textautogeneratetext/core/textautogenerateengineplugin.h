@@ -15,12 +15,12 @@ class TextAutogenerateEnginePluginPrivate;
  * @brief The TextAutogenerateEnginePlugin class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateEnginePlugin : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEnginePlugin : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateEnginePlugin(QObject *parent = nullptr);
-    ~TextAutogenerateEnginePlugin() override;
+    explicit TextAutoGenerateEnginePlugin(QObject *parent = nullptr);
+    ~TextAutoGenerateEnginePlugin() override;
 
 private:
     std::unique_ptr<TextAutogenerateEnginePluginPrivate> const d;

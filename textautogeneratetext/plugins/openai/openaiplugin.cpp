@@ -7,7 +7,7 @@
 #include "openaiplugin.h"
 using namespace Qt::Literals::StringLiterals;
 OpenAIPlugin::OpenAIPlugin(QObject *parent)
-    : TextAutogenerateText::TextAutogenerateTextPlugin{parent}
+    : TextAutogenerateText::TextAutoGenerateTextPlugin{parent}
 {
 }
 

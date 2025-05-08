@@ -16,12 +16,12 @@ class TextAutoGenerateMessage;
  * @author Laurent Montel <montel@kde.org>
  */
 class TextAutogenerateTextPluginPrivate;
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateTextPlugin : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateTextPlugin(QObject *parent = nullptr);
-    ~TextAutogenerateTextPlugin() override;
+    explicit TextAutoGenerateTextPlugin(QObject *parent = nullptr);
+    ~TextAutoGenerateTextPlugin() override;
 
     [[nodiscard]] virtual bool loadSettings() = 0;
 

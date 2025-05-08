@@ -31,7 +31,7 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
 
     auto historyModel = new TextAutoGenerateHistoryModel(this);
-    historyModel->setSourceModel(TextAutogenerateManager::self()->textAutoGenerateChatModel());
+    historyModel->setSourceModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
 
     mHistoryListHeadingsProxyModel->setSourceModel(historyModel);
 
@@ -95,7 +95,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                                                    KStandardGuiItem::cancel())) {
                 const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
                 if (!uuid.isEmpty()) {
-                    TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                    TextAutoGenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
                 }
             }
         });

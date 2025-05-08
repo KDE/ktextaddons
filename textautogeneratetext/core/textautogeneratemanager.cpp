@@ -11,31 +11,31 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QRegularExpression>
 
 using namespace TextAutogenerateText;
-TextAutogenerateManager::TextAutogenerateManager(QObject *parent)
+TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateChatModel(new TextAutoGenerateMessagesModel(this))
 {
 }
 
-TextAutogenerateManager::~TextAutogenerateManager() = default;
+TextAutoGenerateManager::~TextAutoGenerateManager() = default;
 
-TextAutogenerateManager *TextAutogenerateManager::self()
+TextAutoGenerateManager *TextAutoGenerateManager::self()
 {
-    static TextAutogenerateManager s_self;
+    static TextAutoGenerateManager s_self;
     return &s_self;
 }
 
-void TextAutogenerateManager::ask(const QString &msg)
+void TextAutoGenerateManager::ask(const QString &msg)
 {
     Q_EMIT askMessageRequested(msg);
 }
 
-TextAutoGenerateMessagesModel *TextAutogenerateManager::textAutoGenerateChatModel() const
+TextAutoGenerateMessagesModel *TextAutoGenerateManager::textAutoGenerateChatModel() const
 {
     return mTextAutoGenerateChatModel;
 }
 
-void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const
+void TextAutoGenerateManager::filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const
 {
     std::sort(messages.begin(), messages.end(), [archived](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
         /*
@@ -58,17 +58,17 @@ void TextAutogenerateManager::filterListMessages(QList<TextAutoGenerateMessage> 
     });
 }
 
-bool TextAutogenerateManager::showArchived() const
+bool TextAutoGenerateManager::showArchived() const
 {
     return mShowArchived;
 }
 
-void TextAutogenerateManager::setShowArchived(bool newShowArchived)
+void TextAutoGenerateManager::setShowArchived(bool newShowArchived)
 {
     mShowArchived = newShowArchived;
 }
 
-void TextAutogenerateManager::loadHistory()
+void TextAutoGenerateManager::loadHistory()
 {
     QList<TextAutoGenerateMessage> messages;
     KSharedConfig::Ptr config;
@@ -95,7 +95,7 @@ void TextAutogenerateManager::loadHistory()
     mTextAutoGenerateChatModel->setMessages(messages);
 }
 
-void TextAutogenerateManager::saveHistory()
+void TextAutoGenerateManager::saveHistory()
 {
     const QList<TextAutoGenerateMessage> messages = mTextAutoGenerateChatModel->messages();
     KSharedConfig::Ptr config;
@@ -121,7 +121,7 @@ void TextAutogenerateManager::saveHistory()
     config->sync();
 }
 
-QStringList TextAutogenerateManager::keyRecorderList(KSharedConfig::Ptr &config) const
+QStringList TextAutoGenerateManager::keyRecorderList(KSharedConfig::Ptr &config) const
 {
     config = KSharedConfig::openConfig(TextAutogenerateEngineUtil::defaultConfigFileName(), KConfig::NoGlobals);
     const QStringList keyGroups = config->groupList().filter(QRegularExpression(QStringLiteral("AutoGenerate #\\d+")));

@@ -12,12 +12,12 @@ class TextAutogenerateText::TextAutogenerateEnginePluginPrivate
     // TODO
 };
 
-TextAutogenerateEnginePlugin::TextAutogenerateEnginePlugin(QObject *parent)
+TextAutoGenerateEnginePlugin::TextAutoGenerateEnginePlugin(QObject *parent)
     : QObject{parent}
     , d(new TextAutogenerateText::TextAutogenerateEnginePluginPrivate)
 {
 }
 
-TextAutogenerateEnginePlugin::~TextAutogenerateEnginePlugin() = default;
+TextAutoGenerateEnginePlugin::~TextAutoGenerateEnginePlugin() = default;
 
 #include "moc_textautogenerateengineplugin.cpp"

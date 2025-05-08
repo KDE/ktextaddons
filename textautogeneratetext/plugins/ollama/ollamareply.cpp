@@ -86,7 +86,7 @@ QString OllamaReply::readResponse() const
     return ret;
 }
 
-const TextAutogenerateText::TextAutogenerateTextContext &OllamaReply::context() const
+const TextAutogenerateText::TextAutoGenerateTextContext &OllamaReply::context() const
 {
     return mContext;
 }
