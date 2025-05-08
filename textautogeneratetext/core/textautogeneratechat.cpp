@@ -40,6 +40,11 @@ void TextAutoGenerateChat::setIdentifier(const QByteArray &newIdentifier)
     mIdentifier = newIdentifier;
 }
 
+bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
+{
+    return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite;
+}
+
 QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateChat &t)
 {
     d.space() << "favorite:" << t.favorite();

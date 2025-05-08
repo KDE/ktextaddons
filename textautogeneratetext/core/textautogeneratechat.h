@@ -25,6 +25,8 @@ public:
     [[nodiscard]] QByteArray identifier() const;
     void setIdentifier(const QByteArray &newIdentifier);
 
+    [[nodiscard]] bool operator==(const TextAutoGenerateChat &other) const;
+
 private:
     QByteArray mIdentifier;
     bool mFavorite = false;

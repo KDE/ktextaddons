@@ -24,7 +24,8 @@ install(FILES
 )
 
 add_library(KF6TextAutogenerateText
-    core/textautogeneratechat.h core/textautogeneratechat.cpp)
+    core/textautogeneratechat.h core/textautogeneratechat.cpp
+    core/textautogeneratechatsmodel.h core/textautogeneratechatsmodel.cpp)
 
 add_library(KF6::TextAutogenerateText ALIAS KF6TextAutogenerateText)
 ecm_qt_declare_logging_category(KF6TextAutogenerateText HEADER textautogeneratetextcore_debug.h
@@ -198,6 +199,7 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateMessagesModel
     TextAutogenerateManager
     TextAutoGenerateMessage
+    TextAutoGenerateChat
     TextAutoGenerateTextReplyInfo
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutogenerateText

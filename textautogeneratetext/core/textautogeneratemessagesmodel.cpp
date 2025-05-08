@@ -294,32 +294,32 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
     const int id = idx.row();
     TextAutoGenerateMessage &msg = mMessages[id];
     switch (role) {
-    case ChatRoles::TopicRole: {
+    case MessageRoles::TopicRole: {
         msg.setTopic(value.toString());
-        const QModelIndex newIndex = index(idx.row(), ChatRoles::TopicRole);
+        const QModelIndex newIndex = index(idx.row(), MessageRoles::TopicRole);
         Q_EMIT dataChanged(newIndex, newIndex);
         return true;
     }
-    case ChatRoles::MouseHoverRole:
+    case MessageRoles::MouseHoverRole:
         msg.setMouseHover(value.toBool());
-        Q_EMIT dataChanged(idx, idx, {ChatRoles::MouseHoverRole});
+        Q_EMIT dataChanged(idx, idx, {MessageRoles::MouseHoverRole});
         return true;
-    case ChatRoles::EditingRole:
+    case MessageRoles::EditingRole:
         msg.setEditingMode(value.toBool());
-        Q_EMIT dataChanged(idx, idx, {ChatRoles::EditingRole});
+        Q_EMIT dataChanged(idx, idx, {MessageRoles::EditingRole});
         return true;
-    case ChatRoles::FinishedRole:
+    case MessageRoles::FinishedRole:
         msg.setInProgress(value.toBool());
-        Q_EMIT dataChanged(idx, idx, {ChatRoles::FinishedRole});
+        Q_EMIT dataChanged(idx, idx, {MessageRoles::FinishedRole});
         return true;
-    case ChatRoles::MessageRole:
-    case ChatRoles::SenderRole:
-    case ChatRoles::DateTimeRole:
-    case ChatRoles::UuidRole:
-    case ChatRoles::ArchivedRole:
-    case ChatRoles::SectionRole:
-    case ChatRoles::WaitingAnswerRole:
-    case ChatRoles::ModelInfoRole:
+    case MessageRoles::MessageRole:
+    case MessageRoles::SenderRole:
+    case MessageRoles::DateTimeRole:
+    case MessageRoles::UuidRole:
+    case MessageRoles::ArchivedRole:
+    case MessageRoles::SectionRole:
+    case MessageRoles::WaitingAnswerRole:
+    case MessageRoles::ModelInfoRole:
         return false;
     }
     return QAbstractListModel::setData(idx, value, role);
