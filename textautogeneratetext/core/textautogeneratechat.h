@@ -19,8 +19,18 @@ public:
     [[nodiscard]] bool favorite() const;
     void setFavorite(bool newFavorite);
 
+    [[nodiscard]] bool archived() const;
+    void setArchived(bool newArchived);
+
+    [[nodiscard]] QByteArray identifier() const;
+    void setIdentifier(const QByteArray &newIdentifier);
+
 private:
+    QByteArray mIdentifier;
     bool mFavorite = false;
+    bool mArchived = false;
 };
 
 }
+Q_DECLARE_TYPEINFO(TextAutogenerateText::TextAutoGenerateChat, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateChat &t);

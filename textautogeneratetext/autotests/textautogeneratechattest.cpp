@@ -17,4 +17,8 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
 {
     TextAutogenerateText::TextAutoGenerateChat w;
     QVERIFY(!w.favorite());
+    QVERIFY(!w.archived());
+    QVERIFY(w.identifier().isEmpty());
 }
+
+#include "moc_textautogeneratechattest.cpp"
