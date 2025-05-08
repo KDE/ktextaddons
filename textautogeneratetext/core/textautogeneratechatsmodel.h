@@ -45,5 +45,6 @@ public:
 
 private:
     QList<TextAutoGenerateChat> mChats;
+    QString sectionName(SectionHistory sectionId);
 };
 }

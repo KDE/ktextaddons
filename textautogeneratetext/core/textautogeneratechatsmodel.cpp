@@ -5,7 +5,7 @@
 */
 #include "textautogeneratechatsmodel.h"
 #include "textautogeneratetextcore_debug.h"
-
+#include <KLocalizedString>
 using namespace TextAutogenerateText;
 TextAutoGenerateChatsModel::TextAutoGenerateChatsModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -94,4 +94,26 @@ Qt::ItemFlags TextAutoGenerateChatsModel::flags(const QModelIndex &index) const
 
     return Qt::ItemIsEditable | QAbstractListModel::flags(index);
 }
+
+QString TextAutoGenerateChatsModel::sectionName(SectionHistory sectionId)
+{
+    switch (sectionId) {
+    case TextAutoGenerateChatsModel::SectionHistory::Favorite:
+        return i18n("Favorite");
+    case TextAutoGenerateChatsModel::SectionHistory::Today:
+        return i18n("Today");
+    case TextAutoGenerateChatsModel::SectionHistory::LessThanSevenDays:
+        return i18n("7 days previous");
+    case TextAutoGenerateChatsModel::SectionHistory::LessThanThirtyDays:
+        return i18n("30 days previous");
+    case TextAutoGenerateChatsModel::SectionHistory::Later:
+        return i18n("Later");
+    case TextAutoGenerateChatsModel::SectionHistory::Unknown:
+        return i18n("Unknown");
+    case TextAutoGenerateChatsModel::SectionHistory::NSections:
+        break;
+    }
+    return QStringLiteral("ERROR");
+}
+
 #include "moc_textautogeneratechatsmodel.cpp"
