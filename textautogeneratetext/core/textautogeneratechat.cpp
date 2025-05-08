@@ -9,3 +9,13 @@ using namespace TextAutogenerateText;
 TextAutoGenerateChat::TextAutoGenerateChat() = default;
 
 TextAutoGenerateChat::~TextAutoGenerateChat() = default;
+
+bool TextAutoGenerateChat::favorite() const
+{
+    return mFavorite;
+}
+
+void TextAutoGenerateChat::setFavorite(bool newFavorite)
+{
+    mFavorite = newFavorite;
+}

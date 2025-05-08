@@ -15,6 +15,12 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
 public:
     TextAutoGenerateChat();
     ~TextAutoGenerateChat();
+
+    [[nodiscard]] bool favorite() const;
+    void setFavorite(bool newFavorite);
+
+private:
+    bool mFavorite = false;
 };
 
 }
