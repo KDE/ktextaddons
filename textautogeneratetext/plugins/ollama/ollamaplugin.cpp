@@ -107,6 +107,7 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
                                 mConnections.remove(reply);
                                 reply->deleteLater();
 #if 0
+                                // TODO add context + info
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
 #endif

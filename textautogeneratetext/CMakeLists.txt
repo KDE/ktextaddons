@@ -61,6 +61,9 @@ target_sources(KF6TextAutogenerateText PRIVATE
     core/textautogenerateengineaccessmanager.cpp
     core/textautogenerateengineaccessmanager.h
 
+    core/textautogeneratetextreplyinfo.h
+    core/textautogeneratetextreplyinfo.cpp
+
     core/textautogenerateengineutil.h
     core/textautogenerateengineutil.cpp
 
@@ -194,6 +197,7 @@ ecm_generate_headers(TextAutogenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateChatModel
     TextAutogenerateManager
     TextAutoGenerateMessage
+    TextAutoGenerateTextReplyInfo
     REQUIRED_HEADERS TextAutogenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutogenerateText
     RELATIVE core

@@ -91,7 +91,7 @@ const TextAutogenerateText::TextAutogenerateTextContext &OllamaReply::context() 
     return mContext;
 }
 
-const OllamaReplyInfo &OllamaReply::info() const
+const TextAutogenerateText::TextAutoGenerateTextReplyInfo &OllamaReply::info() const
 {
     return mInfo;
 }

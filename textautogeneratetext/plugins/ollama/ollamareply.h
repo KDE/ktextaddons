@@ -7,35 +7,10 @@
 #pragma once
 
 #include <QJsonDocument>
+#include <TextAutogenerateText/TextAutoGenerateTextReplyInfo>
 #include <TextAutogenerateText/TextAutogenerateTextContext>
 
 class QNetworkReply;
-/**
- * @brief The OllamaReplyInfo class represents information about a reply from an LLM.
- *
- * When an LLM generates a completion, the server generally will return some information about the completion, including the
- * duration of the completion, the number of tokens received, and the duration of the prompt evaluation. This struct encapsulates such information.
- * If any one of these fields is not available, it will be set to its default value.
- */
-struct OllamaReplyInfo {
-    //! The total time from when the request was received by the server to when the reply was returned.
-    std::chrono::nanoseconds totalDuration;
-
-    //! The time spent loading the model.
-    std::chrono::nanoseconds loadDuration;
-
-    //! The number of tokens in the prompt.
-    int promptEvalTokenCount;
-
-    //! The time spent evaluating the prompt.
-    std::chrono::nanoseconds promptEvalDuration;
-
-    //! The number of tokens in the reply.
-    int tokenCount;
-
-    //! The time spent generating the reply.
-    std::chrono::nanoseconds duration;
-};
 
 /**
  * @brief The OllamaReply class represents a reply from an LLM.
@@ -88,7 +63,7 @@ public:
      *
      * @return Extra information about the reply.
      */
-    const OllamaReplyInfo &info() const;
+    const TextAutogenerateText::TextAutoGenerateTextReplyInfo &info() const;
 
     /**
      * @brief Check whether the reply has finished.
@@ -138,7 +113,7 @@ private:
 
     const RequestTypes mRequestType = RequestTypes::StreamingGenerate;
     TextAutogenerateText::TextAutogenerateTextContext mContext;
-    OllamaReplyInfo mInfo;
+    TextAutogenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     int mReceivedSize = 0;
     bool mFinished = false;
