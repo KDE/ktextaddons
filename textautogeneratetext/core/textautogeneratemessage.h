@@ -8,6 +8,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
+#include <TextAutogenerateText/TextAutogenerateTextContext>
 namespace TextAutogenerateText
 {
 /**
@@ -72,6 +73,9 @@ public:
     [[nodiscard]] QString engineName() const;
     void setEngineName(const QString &newEngineName);
 
+    [[nodiscard]] TextAutogenerateText::TextAutogenerateTextContext context() const;
+    void setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext);
+
 private:
     QByteArray mAnswerUuid;
     QByteArray mUuid;
@@ -82,6 +86,9 @@ private:
     QString mModelName;
     QString mEngineName;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
+    TextAutogenerateText::TextAutogenerateTextContext mContext;
+    // TextAutoGenerateMessage::KLLMReplyInfo info;
+
     qint64 mDateTime = -1;
     bool mInProgress = false;
     bool mMouseHover = false;

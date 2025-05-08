@@ -29,6 +29,7 @@ QDebug operator<<(QDebug d, const TextAutogenerateText::TextAutoGenerateMessage 
     d.space() << "editingMode:" << t.editingMode();
     d.space() << "engineName:" << t.engineName();
     d.space() << "modelName:" << t.modelName();
+    d.space() << "context:" << t.context();
     return d;
 }
 
@@ -86,7 +87,7 @@ bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) c
 {
     return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
         && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.topic() == mTopic && other.mArchived == mArchived
-        && other.editingMode() == mEditingMode && other.modelName() == mModelName && other.engineName() == mEngineName;
+        && other.editingMode() == mEditingMode && other.modelName() == mModelName && other.engineName() == mEngineName && other.context() == mContext;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -177,6 +178,16 @@ QString TextAutoGenerateMessage::engineName() const
 void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
 {
     mEngineName = newEngineName;
+}
+
+TextAutogenerateTextContext TextAutoGenerateMessage::context() const
+{
+    return mContext;
+}
+
+void TextAutoGenerateMessage::setContext(const TextAutogenerateText::TextAutogenerateTextContext &newContext)
+{
+    mContext = newContext;
 }
 
 #include "moc_textautogeneratemessage.cpp"
