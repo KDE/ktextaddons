@@ -49,9 +49,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
     const auto &chat = mChats[index.row()];
     switch (role) {
     case Qt::DisplayRole:
-        break;
     case Title:
-        return {}; // TODO
+        return title(chat);
     case Identifier:
         return chat.identifier();
     case Favorite:
@@ -60,6 +59,11 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return chat.archived();
     }
     return {};
+}
+
+QString TextAutoGenerateChatsModel::title(const TextAutoGenerateChat &chat) const
+{
+    return chat.title();
 }
 
 bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant &value, int role)
@@ -72,17 +76,23 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     TextAutoGenerateChat &chat = mChats[id];
     switch (role) {
     case ChatRoles::Title: {
-        /*
-        msg.setTi(value.toString());
-        const QModelIndex newIndex = index(idx.row(), MessageRoles::TopicRole);
+        chat.setTitle(value.toString());
+        const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Title);
         Q_EMIT dataChanged(newIndex, newIndex);
-        */
         return true;
     }
-        // TODO
-    case ChatRoles::Archived:
-    case ChatRoles::Favorite:
-        return false;
+    case ChatRoles::Archived: {
+        chat.setArchived(value.toBool());
+        const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Archived);
+        Q_EMIT dataChanged(newIndex, newIndex);
+        return true;
+    }
+    case ChatRoles::Favorite: {
+        chat.setFavorite(value.toBool());
+        const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Favorite);
+        Q_EMIT dataChanged(newIndex, newIndex);
+        return true;
+    }
     }
     return QAbstractListModel::setData(idx, value, role);
 }

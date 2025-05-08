@@ -42,7 +42,7 @@ void TextAutoGenerateChat::setIdentifier(const QByteArray &newIdentifier)
 
 bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
 {
-    return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite;
+    return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite && other.title() == mTitle;
 }
 
 QList<TextAutoGenerateMessage> TextAutoGenerateChat::messages() const
@@ -55,8 +55,22 @@ void TextAutoGenerateChat::setMessages(const QList<TextAutoGenerateText::TextAut
     mMessages = newMessages;
 }
 
+QString TextAutoGenerateChat::title() const
+{
+    if (mTitle.isEmpty()) {
+        return mMessages.constFirst().topic();
+    }
+    return mTitle;
+}
+
+void TextAutoGenerateChat::setTitle(const QString &newTitle)
+{
+    mTitle = newTitle;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
 {
+    d.space() << "title:" << t.title();
     d.space() << "favorite:" << t.favorite();
     d.space() << "archived:" << t.archived();
     d.space() << "identifier:" << t.identifier();

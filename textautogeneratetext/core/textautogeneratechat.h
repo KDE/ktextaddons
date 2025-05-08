@@ -31,9 +31,13 @@ public:
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateMessage> messages() const;
     void setMessages(const QList<TextAutoGenerateText::TextAutoGenerateMessage> &newMessages);
 
+    [[nodiscard]] QString title() const;
+    void setTitle(const QString &newTitle);
+
 private:
     QList<TextAutoGenerateText::TextAutoGenerateMessage> mMessages;
     QByteArray mIdentifier;
+    QString mTitle;
     bool mFavorite = false;
     bool mArchived = false;
 };

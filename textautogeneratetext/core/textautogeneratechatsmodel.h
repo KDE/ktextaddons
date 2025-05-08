@@ -44,6 +44,7 @@ public:
     void addChat(const TextAutoGenerateChat &chat);
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString sectionName(SectionHistory sectionId);
     QList<TextAutoGenerateChat> mChats;
 };
