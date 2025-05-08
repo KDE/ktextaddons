@@ -33,6 +33,9 @@ public:
         StreamingGenerate,
         Show
     };
+    explicit OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
+    ~OllamaReply() override;
+
     /**
      * @brief Get the current response content.
      *
@@ -73,9 +76,6 @@ public:
      * @return Whether the reply has finished.
      */
     [[nodiscard]] bool isFinished() const;
-
-    explicit OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
-    ~OllamaReply() override;
 
     /**
      * @brief Get request type.
