@@ -13,7 +13,7 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *parent)
+TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(QWidget *parent)
     : QWidget{parent}
     , mMessageWidget(new KMessageWidget(this))
 {
@@ -27,27 +27,27 @@ TextAutogenerateNotWorkingWidget::TextAutogenerateNotWorkingWidget(QWidget *pare
 
     auto configureButton = new QPushButton(i18n("Configure…"), this);
     configureButton->setObjectName("configureButton"_L1);
-    connect(configureButton, &QPushButton::clicked, this, &TextAutogenerateNotWorkingWidget::slotConfigure);
+    connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::slotConfigure);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
 }
 
-TextAutogenerateNotWorkingWidget::~TextAutogenerateNotWorkingWidget() = default;
+TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
 
-void TextAutogenerateNotWorkingWidget::setMessageError(const QString &str)
+void TextAutoGenerateNotWorkingWidget::setMessageError(const QString &str)
 {
     mMessageWidget->setText(str);
     mMessageWidget->animatedShow();
 }
 
-void TextAutogenerateNotWorkingWidget::clearMessage()
+void TextAutoGenerateNotWorkingWidget::clearMessage()
 {
     mMessageWidget->setText({});
     mMessageWidget->animatedHide();
 }
 
-void TextAutogenerateNotWorkingWidget::slotConfigure()
+void TextAutoGenerateNotWorkingWidget::slotConfigure()
 {
-    TextAutoGenerateText::TextAutogenerateConfigureDialog d(this);
+    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(this);
     d.exec();
 }
 

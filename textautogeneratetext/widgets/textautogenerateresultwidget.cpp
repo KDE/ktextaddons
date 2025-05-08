@@ -10,31 +10,31 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateResultWidget::TextAutogenerateResultWidget(QWidget *parent)
+TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(QWidget *parent)
     : QWidget{parent}
-    , mTextAutogenerateListView(new TextAutogenerateListView(this))
+    , mTextAutoGenerateListView(new TextAutoGenerateListView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
 
-    mTextAutogenerateListView->setObjectName(QStringLiteral("mTextAutogenerateListView"));
-    mainLayout->addWidget(mTextAutogenerateListView);
-    connect(mTextAutogenerateListView, &TextAutogenerateListView::editMessageRequested, this, &TextAutogenerateResultWidget::editMessageRequested);
-    connect(this, &TextAutogenerateResultWidget::goToDiscussion, mTextAutogenerateListView, &TextAutogenerateListView::slotGoToDiscussion);
-    connect(mTextAutogenerateListView, &TextAutogenerateListView::cancelRequested, this, &TextAutogenerateResultWidget::cancelRequested);
-    connect(mTextAutogenerateListView, &TextAutogenerateListView::refreshAnswerRequested, this, &TextAutogenerateResultWidget::refreshAnswerRequested);
+    mTextAutoGenerateListView->setObjectName(QStringLiteral("mTextAutoGenerateListView"));
+    mainLayout->addWidget(mTextAutoGenerateListView);
+    connect(mTextAutoGenerateListView, &TextAutoGenerateListView::editMessageRequested, this, &TextAutoGenerateResultWidget::editMessageRequested);
+    connect(this, &TextAutoGenerateResultWidget::goToDiscussion, mTextAutoGenerateListView, &TextAutoGenerateListView::slotGoToDiscussion);
+    connect(mTextAutoGenerateListView, &TextAutoGenerateListView::cancelRequested, this, &TextAutoGenerateResultWidget::cancelRequested);
+    connect(mTextAutoGenerateListView, &TextAutoGenerateListView::refreshAnswerRequested, this, &TextAutoGenerateResultWidget::refreshAnswerRequested);
 }
 
-TextAutogenerateResultWidget::~TextAutogenerateResultWidget() = default;
+TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;
 
-void TextAutogenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
+void TextAutoGenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
 {
-    mTextAutogenerateListView->handleKeyPressEvent(ev);
+    mTextAutoGenerateListView->handleKeyPressEvent(ev);
 }
 
-void TextAutogenerateResultWidget::editingFinished(const QByteArray &uuid)
+void TextAutoGenerateResultWidget::editingFinished(const QByteArray &uuid)
 {
-    mTextAutogenerateListView->editingFinished(uuid);
+    mTextAutoGenerateListView->editingFinished(uuid);
 }
 #include "moc_textautogenerateresultwidget.cpp"

@@ -12,42 +12,42 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateStackWidget::TextAutogenerateStackWidget(QWidget *parent)
+TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(QWidget *parent)
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))
-    , mTextAutogenerateNotWorkingWidget(new TextAutogenerateNotWorkingWidget(this))
-    , mTextAutogenerateWidget(new TextAutogenerateWidget(this))
+    , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(this))
+    , mTextAutoGenerateWidget(new TextAutoGenerateWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
     mainLayout->addWidget(mStackedWidget);
-    mTextAutogenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutogenerateNotWorkingWidget"));
-    mStackedWidget->addWidget(mTextAutogenerateNotWorkingWidget);
+    mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
+    mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
 
-    mTextAutogenerateWidget->setObjectName(QStringLiteral("mTextAutogenerateWidget"));
-    mStackedWidget->addWidget(mTextAutogenerateWidget);
-    mStackedWidget->setCurrentWidget(mTextAutogenerateWidget);
+    mTextAutoGenerateWidget->setObjectName(QStringLiteral("mTextAutoGenerateWidget"));
+    mStackedWidget->addWidget(mTextAutoGenerateWidget);
+    mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
 
-    connect(mTextAutogenerateWidget, &TextAutogenerateWidget::noPluginsFound, this, [this](const QString &msg) {
+    connect(mTextAutoGenerateWidget, &TextAutoGenerateWidget::noPluginsFound, this, [this](const QString &msg) {
         setBrokenEngine(true, msg);
     });
-    connect(mTextAutogenerateWidget, &TextAutogenerateWidget::pluginBroken, this, [this](const QString &msg) {
+    connect(mTextAutoGenerateWidget, &TextAutoGenerateWidget::pluginBroken, this, [this](const QString &msg) {
         setBrokenEngine(true, msg);
     });
 }
 
-TextAutogenerateStackWidget::~TextAutogenerateStackWidget() = default;
+TextAutoGenerateStackWidget::~TextAutoGenerateStackWidget() = default;
 
-void TextAutogenerateStackWidget::setBrokenEngine(bool state, const QString &errorMessage)
+void TextAutoGenerateStackWidget::setBrokenEngine(bool state, const QString &errorMessage)
 {
     if (state) {
-        mTextAutogenerateNotWorkingWidget->setMessageError(errorMessage);
-        mStackedWidget->setCurrentWidget(mTextAutogenerateNotWorkingWidget);
+        mTextAutoGenerateNotWorkingWidget->setMessageError(errorMessage);
+        mStackedWidget->setCurrentWidget(mTextAutoGenerateNotWorkingWidget);
     } else {
-        mTextAutogenerateNotWorkingWidget->clearMessage();
-        mStackedWidget->setCurrentWidget(mTextAutogenerateWidget);
+        mTextAutoGenerateNotWorkingWidget->clearMessage();
+        mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
     }
 }
 

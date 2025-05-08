@@ -8,13 +8,13 @@
 
 #include <QApplication>
 using namespace TextAutoGenerateText;
-TextAutogenerateColorsAndMessageViewStyle::TextAutogenerateColorsAndMessageViewStyle()
+TextAutoGenerateColorsAndMessageViewStyle::TextAutoGenerateColorsAndMessageViewStyle()
 {
     regenerateColorScheme();
     qGuiApp->installEventFilter(this);
 }
 
-bool TextAutogenerateColorsAndMessageViewStyle::eventFilter(QObject *obj, QEvent *event)
+bool TextAutoGenerateColorsAndMessageViewStyle::eventFilter(QObject *obj, QEvent *event)
 {
     Q_UNUSED(obj);
     if (event->type() == QEvent::ApplicationPaletteChange) {
@@ -23,23 +23,23 @@ bool TextAutogenerateColorsAndMessageViewStyle::eventFilter(QObject *obj, QEvent
     return false;
 }
 
-TextAutogenerateColorsAndMessageViewStyle &TextAutogenerateColorsAndMessageViewStyle::self()
+TextAutoGenerateColorsAndMessageViewStyle &TextAutoGenerateColorsAndMessageViewStyle::self()
 {
-    static TextAutogenerateColorsAndMessageViewStyle c;
+    static TextAutoGenerateColorsAndMessageViewStyle c;
     return c;
 }
 
-KColorScheme TextAutogenerateColorsAndMessageViewStyle::schemeView() const
+KColorScheme TextAutoGenerateColorsAndMessageViewStyle::schemeView() const
 {
     return mSchemeView;
 }
 
-KColorScheme TextAutogenerateColorsAndMessageViewStyle::schemeWindow() const
+KColorScheme TextAutoGenerateColorsAndMessageViewStyle::schemeWindow() const
 {
     return mSchemeWindow;
 }
 
-void TextAutogenerateColorsAndMessageViewStyle::regenerateColorScheme()
+void TextAutoGenerateColorsAndMessageViewStyle::regenerateColorScheme()
 {
     const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
     if (!(mSchemeWindow == colorScheme)) {

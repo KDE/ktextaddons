@@ -9,21 +9,21 @@
 #include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
-QTEST_MAIN(TextAutogenerateHistoryWidgetTest)
+QTEST_MAIN(TextAutoGenerateHistoryWidgetTest)
 using namespace Qt::Literals::StringLiterals;
-TextAutogenerateHistoryWidgetTest::TextAutogenerateHistoryWidgetTest(QWidget *parent)
+TextAutoGenerateHistoryWidgetTest::TextAutoGenerateHistoryWidgetTest(QWidget *parent)
     : QWidget{parent}
 {
 }
 
-void TextAutogenerateHistoryWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateHistoryWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateHistoryWidget w;
+    TextAutoGenerateText::TextAutoGenerateHistoryWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    auto mTextAutogenerateHistoryListView = w.findChild<TextAutoGenerateText::TextAutogenerateHistoryListView *>("mTextAutogenerateHistoryListView"_L1);
-    QVERIFY(mTextAutogenerateHistoryListView);
+    auto mTextAutoGenerateHistoryListView = w.findChild<TextAutoGenerateText::TextAutoGenerateHistoryListView *>("mTextAutoGenerateHistoryListView"_L1);
+    QVERIFY(mTextAutoGenerateHistoryListView);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>("mSearchLineEdit"_L1);
     QVERIFY(mSearchLineEdit);

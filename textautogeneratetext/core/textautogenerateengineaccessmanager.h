@@ -11,17 +11,17 @@ class QNetworkAccessManager;
 namespace TextAutoGenerateText
 {
 /**
- * @brief The TextAutogenerateEngineAccessManager class
+ * @brief The TextAutoGenerateEngineAccessManager class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateEngineAccessManager : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineAccessManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateEngineAccessManager(QObject *parent = nullptr);
-    ~TextAutogenerateEngineAccessManager();
+    explicit TextAutoGenerateEngineAccessManager(QObject *parent = nullptr);
+    ~TextAutoGenerateEngineAccessManager();
 
-    static TextAutogenerateEngineAccessManager *self();
+    static TextAutoGenerateEngineAccessManager *self();
 
     QNetworkAccessManager *networkManager() const;
 

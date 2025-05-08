@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class TextAutogenerateResultWidgetTest : public QObject
+class TextAutoGenerateResultWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateResultWidgetTest(QObject *parent = nullptr);
-    ~TextAutogenerateResultWidgetTest() override = default;
+    explicit TextAutoGenerateResultWidgetTest(QObject *parent = nullptr);
+    ~TextAutoGenerateResultWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

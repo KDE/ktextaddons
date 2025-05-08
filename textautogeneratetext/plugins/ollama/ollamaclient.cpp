@@ -28,7 +28,7 @@ QString OllamaClient::translatedName() const
     return i18n("Ollama");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutogeneratePlugin()
+TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGeneratePlugin()
 {
     return new OllamaPlugin(this);
 }

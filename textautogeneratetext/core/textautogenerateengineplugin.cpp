@@ -7,14 +7,14 @@
 #include "textautogenerateengineplugin.h"
 
 using namespace TextAutoGenerateText;
-class TextAutoGenerateText::TextAutogenerateEnginePluginPrivate
+class TextAutoGenerateText::TextAutoGenerateEnginePluginPrivate
 {
     // TODO
 };
 
 TextAutoGenerateEnginePlugin::TextAutoGenerateEnginePlugin(QObject *parent)
     : QObject{parent}
-    , d(new TextAutoGenerateText::TextAutogenerateEnginePluginPrivate)
+    , d(new TextAutoGenerateText::TextAutoGenerateEnginePluginPrivate)
 {
 }
 

@@ -13,13 +13,13 @@
 class QListView;
 namespace TextAutoGenerateText
 {
-class TextAutogenerateListViewTextSelection;
-class TextAutogenerateListViewDelegate : public QItemDelegate
+class TextAutoGenerateListViewTextSelection;
+class TextAutoGenerateListViewDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateListViewDelegate(QListView *view);
-    ~TextAutogenerateListViewDelegate() override;
+    explicit TextAutoGenerateListViewDelegate(QListView *view);
+    ~TextAutoGenerateListViewDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
@@ -43,7 +43,7 @@ public:
     void needUpdateIndexBackground(const QPersistentModelIndex &index, const QColor &color);
     void removeNeedUpdateIndexBackground(const QPersistentModelIndex &index);
     void needUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index,
-                                          const QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities);
+                                          const QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities);
     void removeNeedUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index);
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
@@ -92,7 +92,7 @@ private:
 
     [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;
     [[nodiscard]] QSize textSizeHint(QTextDocument *doc, qreal *pBaseLine) const;
-    [[nodiscard]] TextAutogenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
     void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
@@ -122,11 +122,11 @@ private:
 
     struct IndexScaleAndOpacities {
         QPersistentModelIndex index;
-        QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> scaleAndOpacities;
+        QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> scaleAndOpacities;
     };
     QList<IndexScaleAndOpacities> mIndexScaleAndOpacitiesList;
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
     QAbstractItemView *const mListView;
-    TextAutogenerateListViewTextSelection *const mTextSelection;
+    TextAutoGenerateListViewTextSelection *const mTextSelection;
 };
 }

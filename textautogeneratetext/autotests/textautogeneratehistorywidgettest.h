@@ -7,12 +7,12 @@
 
 #include <QWidget>
 
-class TextAutogenerateHistoryWidgetTest : public QWidget
+class TextAutoGenerateHistoryWidgetTest : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateHistoryWidgetTest(QWidget *parent = nullptr);
-    ~TextAutogenerateHistoryWidgetTest() override = default;
+    explicit TextAutoGenerateHistoryWidgetTest(QWidget *parent = nullptr);
+    ~TextAutoGenerateHistoryWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

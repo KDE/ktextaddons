@@ -10,12 +10,12 @@
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListViewDelegate : public QItemDelegate
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListViewDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateHistoryListViewDelegate(QObject *parent = nullptr);
-    ~TextAutogenerateHistoryListViewDelegate() override;
+    explicit TextAutoGenerateHistoryListViewDelegate(QObject *parent = nullptr);
+    ~TextAutoGenerateHistoryListViewDelegate() override;
 
     [[nodiscard]] bool helpEvent(QHelpEvent *helpEvent, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
 

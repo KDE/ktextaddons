@@ -12,12 +12,12 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateHistoryListHeadingsProxyModel;
 class TextAutoGenerateHistorySortFilterProxyModel;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryListView : public QTreeView
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListView : public QTreeView
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateHistoryListView(QWidget *parent = nullptr);
-    ~TextAutogenerateHistoryListView() override;
+    explicit TextAutoGenerateHistoryListView(QWidget *parent = nullptr);
+    ~TextAutoGenerateHistoryListView() override;
 
     void slotSearchTextChanged(const QString &str);
 

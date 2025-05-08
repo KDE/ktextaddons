@@ -8,7 +8,7 @@
 #include <QNetworkAccessManager>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateEngineAccessManager::TextAutogenerateEngineAccessManager(QObject *parent)
+TextAutoGenerateEngineAccessManager::TextAutoGenerateEngineAccessManager(QObject *parent)
     : QObject(parent)
     , mNetworkAccessManager(new QNetworkAccessManager(this))
 {
@@ -17,15 +17,15 @@ TextAutogenerateEngineAccessManager::TextAutogenerateEngineAccessManager(QObject
     mNetworkAccessManager->enableStrictTransportSecurityStore(true);
 }
 
-TextAutogenerateEngineAccessManager::~TextAutogenerateEngineAccessManager() = default;
+TextAutoGenerateEngineAccessManager::~TextAutoGenerateEngineAccessManager() = default;
 
-TextAutogenerateEngineAccessManager *TextAutogenerateEngineAccessManager::self()
+TextAutoGenerateEngineAccessManager *TextAutoGenerateEngineAccessManager::self()
 {
-    static TextAutogenerateEngineAccessManager s_self;
+    static TextAutoGenerateEngineAccessManager s_self;
     return &s_self;
 }
 
-QNetworkAccessManager *TextAutogenerateEngineAccessManager::networkManager() const
+QNetworkAccessManager *TextAutoGenerateEngineAccessManager::networkManager() const
 {
     return mNetworkAccessManager;
 }

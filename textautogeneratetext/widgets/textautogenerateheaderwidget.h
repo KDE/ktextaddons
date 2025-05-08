@@ -11,12 +11,12 @@ class QLabel;
 class QToolButton;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHeaderWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHeaderWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateHeaderWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateHeaderWidget() override;
+    explicit TextAutoGenerateHeaderWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateHeaderWidget() override;
     void updateEngineName(const QString &engineName);
 
 Q_SIGNALS:

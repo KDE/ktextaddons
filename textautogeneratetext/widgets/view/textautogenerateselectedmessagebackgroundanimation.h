@@ -11,13 +11,13 @@
 #include <QPersistentModelIndex>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateSelectedMessageBackgroundAnimation : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSelectedMessageBackgroundAnimation : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor NOTIFY backgroundColorChanged)
 public:
-    explicit TextAutogenerateSelectedMessageBackgroundAnimation(QObject *parent = nullptr);
-    ~TextAutogenerateSelectedMessageBackgroundAnimation() override;
+    explicit TextAutoGenerateSelectedMessageBackgroundAnimation(QObject *parent = nullptr);
+    ~TextAutoGenerateSelectedMessageBackgroundAnimation() override;
 
     [[nodiscard]] QColor backgroundColor() const;
     void setBackgroundColor(const QColor &newBackgroundColor);

@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutogenerateConfigureDialogTest : public QObject
+class TextAutoGenerateConfigureDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateConfigureDialogTest(QObject *parent = nullptr);
-    ~TextAutogenerateConfigureDialogTest() override = default;
+    explicit TextAutoGenerateConfigureDialogTest(QObject *parent = nullptr);
+    ~TextAutoGenerateConfigureDialogTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

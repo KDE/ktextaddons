@@ -42,8 +42,8 @@ TextAutoGenerateTextConfigureComboWidget::~TextAutoGenerateTextConfigureComboWid
 void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 {
     const QString engine = mEngineComboBox->currentData().toString();
-    if (TextAutoGenerateText::TextAutogenerateEngineLoader::self()->hasConfigurationDialog(engine)) {
-        if (TextAutoGenerateText::TextAutogenerateEngineLoader::self()->showConfigureDialog(engine, this)) {
+    if (TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->hasConfigurationDialog(engine)) {
+        if (TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->showConfigureDialog(engine, this)) {
             Q_EMIT configureChanged(engine);
         }
     }
@@ -52,8 +52,8 @@ void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 {
     mEngineComboBox->clear();
-    TextAutoGenerateText::TextAutogenerateEngineLoader::self()->loadPlugins();
-    const QMap<QString, QString> map = TextAutoGenerateText::TextAutogenerateEngineLoader::self()->textAutoGenerateTextEngineInfos();
+    TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->loadPlugins();
+    const QMap<QString, QString> map = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->textAutoGenerateTextEngineInfos();
     QMapIterator<QString, QString> iMap(map);
     while (iMap.hasNext()) {
         iMap.next();
@@ -64,14 +64,14 @@ void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 void TextAutoGenerateTextConfigureComboWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngineComboBox->itemData(index).toString();
-    mConfigureEngine->setEnabled(TextAutoGenerateText::TextAutogenerateEngineLoader::self()->hasConfigurationDialog(engine));
+    mConfigureEngine->setEnabled(TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->hasConfigurationDialog(engine));
     Q_EMIT engineChanged(engine);
 }
 
 void TextAutoGenerateTextConfigureComboWidget::load()
 {
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());
-    const QString engine = groupTranslate.readEntry(TextAutogenerateEngineUtil::engineTranslateName(), TextAutogenerateEngineUtil::defaultEngineName());
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutoGenerateEngineUtil::groupAutoGenerateTextName());
+    const QString engine = groupTranslate.readEntry(TextAutoGenerateEngineUtil::engineTranslateName(), TextAutoGenerateEngineUtil::defaultEngineName());
     const int index = mEngineComboBox->findData(engine);
     if (index != -1) {
         mEngineComboBox->setCurrentIndex(index);
@@ -81,8 +81,8 @@ void TextAutoGenerateTextConfigureComboWidget::load()
 void TextAutoGenerateTextConfigureComboWidget::save()
 {
     const QString engine = mEngineComboBox->currentData().toString();
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutogenerateEngineUtil::groupAutoGenerateTextName());
-    groupTranslate.writeEntry(TextAutogenerateEngineUtil::engineTranslateName(), engine);
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextAutoGenerateEngineUtil::groupAutoGenerateTextName());
+    groupTranslate.writeEntry(TextAutoGenerateEngineUtil::engineTranslateName(), engine);
     KSharedConfig::openConfig()->sync();
 }
 

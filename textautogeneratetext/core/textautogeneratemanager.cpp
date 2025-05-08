@@ -123,7 +123,7 @@ void TextAutoGenerateManager::saveHistory()
 
 QStringList TextAutoGenerateManager::keyRecorderList(KSharedConfig::Ptr &config) const
 {
-    config = KSharedConfig::openConfig(TextAutogenerateEngineUtil::defaultConfigFileName(), KConfig::NoGlobals);
+    config = KSharedConfig::openConfig(TextAutoGenerateEngineUtil::defaultConfigFileName(), KConfig::NoGlobals);
     const QStringList keyGroups = config->groupList().filter(QRegularExpression(QStringLiteral("AutoGenerate #\\d+")));
     return keyGroups;
 }

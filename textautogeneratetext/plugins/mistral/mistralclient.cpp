@@ -27,7 +27,7 @@ QString MistralClient::translatedName() const
     return i18n("Mistral AI");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *MistralClient::createTextAutogeneratePlugin()
+TextAutoGenerateText::TextAutoGenerateTextPlugin *MistralClient::createTextAutoGeneratePlugin()
 {
     return new MistralPlugin(this);
 }

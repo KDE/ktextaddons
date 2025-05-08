@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutogenerateNotWorkingWidgetTest : public QObject
+class TextAutoGenerateNotWorkingWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateNotWorkingWidgetTest(QObject *parent = nullptr);
-    ~TextAutogenerateNotWorkingWidgetTest() override = default;
+    explicit TextAutoGenerateNotWorkingWidgetTest(QObject *parent = nullptr);
+    ~TextAutoGenerateNotWorkingWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

@@ -10,29 +10,29 @@
 #include <KSharedConfig>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-QString TextAutogenerateEngineUtil::engineTranslateName()
+QString TextAutoGenerateEngineUtil::engineTranslateName()
 {
     return i18n("Ollama");
 }
 
-QString TextAutogenerateEngineUtil::defaultEngineName()
+QString TextAutoGenerateEngineUtil::defaultEngineName()
 {
     return "ollama"_L1;
 }
 
-QString TextAutogenerateEngineUtil::groupAutoGenerateTextName()
+QString TextAutoGenerateEngineUtil::groupAutoGenerateTextName()
 {
     return "AutoGenerateText"_L1;
 }
 
-QString TextAutogenerateEngineUtil::loadEngine()
+QString TextAutoGenerateEngineUtil::loadEngine()
 {
     KConfigGroup myGeneralGroup(KSharedConfig::openConfig(), groupAutoGenerateTextName());
     const QString engineTypeStr = myGeneralGroup.readEntry(engineTranslateName(), defaultEngineName()); // Default ollama
     return engineTypeStr;
 }
 
-QString TextAutogenerateEngineUtil::defaultConfigFileName()
+QString TextAutoGenerateEngineUtil::defaultConfigFileName()
 {
     return QStringLiteral("textautogeneraterc");
 }

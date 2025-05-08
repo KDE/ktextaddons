@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutogenerateSelectedMessageBackgroundAnimationTest : public QObject
+class TextAutoGenerateSelectedMessageBackgroundAnimationTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateSelectedMessageBackgroundAnimationTest(QObject *parent = nullptr);
-    ~TextAutogenerateSelectedMessageBackgroundAnimationTest() override = default;
+    explicit TextAutoGenerateSelectedMessageBackgroundAnimationTest(QObject *parent = nullptr);
+    ~TextAutoGenerateSelectedMessageBackgroundAnimationTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldEmitBackgroundColorChanged();

@@ -9,23 +9,23 @@
 class QLineEdit;
 namespace TextAutoGenerateText
 {
-class TextAutogenerateHistoryListView;
+class TextAutoGenerateHistoryListView;
 /**
- * @brief The TextAutogenerateHistoryWidget class
+ * @brief The TextAutoGenerateHistoryWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateHistoryWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateHistoryWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateHistoryWidget() override;
+    explicit TextAutoGenerateHistoryWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateHistoryWidget() override;
 
 Q_SIGNALS:
     void goToDiscussion(const QByteArray &uuid);
 
 private:
-    TextAutogenerateHistoryListView *const mTextAutogenerateHistoryListView;
+    TextAutoGenerateHistoryListView *const mTextAutoGenerateHistoryListView;
     QLineEdit *const mSearchLineEdit;
 };
 }

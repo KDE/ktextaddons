@@ -12,21 +12,21 @@
 #include <QTextDocumentFragment>
 using namespace TextAutoGenerateText;
 
-TextAutogenerateListViewTextSelection::TextAutogenerateListViewTextSelection(TextAutogenerateListViewDelegate *delegate, QObject *parent)
+TextAutoGenerateListViewTextSelection::TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewDelegate *delegate, QObject *parent)
     : QObject(parent)
     , mDelegate(delegate)
 {
 }
 
-bool TextAutogenerateListViewTextSelection::hasSelection() const
+bool TextAutoGenerateListViewTextSelection::hasSelection() const
 {
     return mStartIndex.isValid() && mEndIndex.isValid() && ((mStartPos > -1 && mEndPos > -1 && mStartPos != mEndPos));
 }
 
-TextAutogenerateListViewTextSelection::OrderedPositions TextAutogenerateListViewTextSelection::orderedPositions() const
+TextAutoGenerateListViewTextSelection::OrderedPositions TextAutoGenerateListViewTextSelection::orderedPositions() const
 {
     Q_ASSERT(!mStartIndex.isValid() || !mEndIndex.isValid() || mStartIndex.model() == mEndIndex.model());
-    TextAutogenerateListViewTextSelection::OrderedPositions ret{mStartIndex.row(), mStartPos, mEndIndex.row(), mEndPos};
+    TextAutoGenerateListViewTextSelection::OrderedPositions ret{mStartIndex.row(), mStartPos, mEndIndex.row(), mEndPos};
     if (ret.fromRow > ret.toRow) {
         std::swap(ret.fromRow, ret.toRow);
         std::swap(ret.fromCharPos, ret.toCharPos);
@@ -34,7 +34,7 @@ TextAutogenerateListViewTextSelection::OrderedPositions TextAutogenerateListView
     return ret;
 }
 
-QTextCursor TextAutogenerateListViewTextSelection::selectionForIndex(const QModelIndex &index, QTextDocument *doc) const
+QTextCursor TextAutoGenerateListViewTextSelection::selectionForIndex(const QModelIndex &index, QTextDocument *doc) const
 {
     if (!hasSelection()) {
         return {};
@@ -65,7 +65,7 @@ QTextCursor TextAutogenerateListViewTextSelection::selectionForIndex(const QMode
     return cursor;
 }
 
-void TextAutogenerateListViewTextSelection::selectionText(const OrderedPositions ordered,
+void TextAutoGenerateListViewTextSelection::selectionText(const OrderedPositions ordered,
                                                           Format format,
                                                           int row,
                                                           const QModelIndex &index,
@@ -80,7 +80,7 @@ void TextAutogenerateListViewTextSelection::selectionText(const OrderedPositions
     }
 }
 
-QString TextAutogenerateListViewTextSelection::selectedText(Format format) const
+QString TextAutoGenerateListViewTextSelection::selectedText(Format format) const
 {
     if (!hasSelection()) {
         return {};
@@ -97,7 +97,7 @@ QString TextAutogenerateListViewTextSelection::selectedText(Format format) const
     return str;
 }
 
-bool TextAutogenerateListViewTextSelection::contains(const QModelIndex &index, int charPos) const
+bool TextAutoGenerateListViewTextSelection::contains(const QModelIndex &index, int charPos) const
 {
     if (!hasSelection()) {
         return false;
@@ -116,7 +116,7 @@ bool TextAutogenerateListViewTextSelection::contains(const QModelIndex &index, i
     }
 }
 
-void TextAutogenerateListViewTextSelection::clear()
+void TextAutoGenerateListViewTextSelection::clear()
 {
     const QModelIndex index = mStartIndex;
     const OrderedPositions ordered = orderedPositions();
@@ -138,7 +138,7 @@ void TextAutogenerateListViewTextSelection::clear()
     }
 }
 
-void TextAutogenerateListViewTextSelection::setTextSelectionStart(const QModelIndex &index, int charPos)
+void TextAutoGenerateListViewTextSelection::setTextSelectionStart(const QModelIndex &index, int charPos)
 {
     clear();
     Q_ASSERT(index.isValid());
@@ -146,7 +146,7 @@ void TextAutogenerateListViewTextSelection::setTextSelectionStart(const QModelIn
     mStartPos = charPos;
 }
 
-void TextAutogenerateListViewTextSelection::setTextSelectionEnd(const QModelIndex &index, int charPos)
+void TextAutoGenerateListViewTextSelection::setTextSelectionEnd(const QModelIndex &index, int charPos)
 {
     int from = mEndIndex.row();
     int to = index.row();
@@ -171,7 +171,7 @@ void TextAutogenerateListViewTextSelection::setTextSelectionEnd(const QModelInde
     mEndPos = charPos;
 }
 
-void TextAutogenerateListViewTextSelection::selectWord(const QModelIndex &index, int charPos, QTextDocument *doc)
+void TextAutoGenerateListViewTextSelection::selectWord(const QModelIndex &index, int charPos, QTextDocument *doc)
 {
     QTextCursor cursor(doc);
     cursor.setPosition(charPos);
@@ -183,13 +183,13 @@ void TextAutogenerateListViewTextSelection::selectWord(const QModelIndex &index,
     mEndPos = cursor.selectionEnd();
 }
 
-void TextAutogenerateListViewTextSelection::selectWordUnderCursor(const QModelIndex &index, int charPos)
+void TextAutoGenerateListViewTextSelection::selectWordUnderCursor(const QModelIndex &index, int charPos)
 {
     QTextDocument *doc = mDelegate->documentForIndex(index, -1);
     selectWord(index, charPos, doc);
 }
 
-void TextAutogenerateListViewTextSelection::selectMessage(const QModelIndex &index)
+void TextAutoGenerateListViewTextSelection::selectMessage(const QModelIndex &index)
 {
     Q_ASSERT(index.isValid());
     clear();
@@ -202,12 +202,12 @@ void TextAutogenerateListViewTextSelection::selectMessage(const QModelIndex &ind
     }
 }
 
-bool TextAutogenerateListViewTextSelection::mightStartDrag() const
+bool TextAutoGenerateListViewTextSelection::mightStartDrag() const
 {
     return mMightStartDrag;
 }
 
-void TextAutogenerateListViewTextSelection::setMightStartDrag(bool newMightStartDrag)
+void TextAutoGenerateListViewTextSelection::setMightStartDrag(bool newMightStartDrag)
 {
     mMightStartDrag = newMightStartDrag;
 }

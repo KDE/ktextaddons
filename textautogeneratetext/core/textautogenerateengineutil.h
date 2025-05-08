@@ -8,7 +8,7 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
-namespace TextAutogenerateEngineUtil
+namespace TextAutoGenerateEngineUtil
 {
 [[nodiscard]] QString engineTranslateName();
 [[nodiscard]] QString defaultEngineName();

@@ -9,29 +9,29 @@
 #include <QPropertyAnimation>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutogenerateSelectedMessageBackgroundAnimation::TextAutogenerateSelectedMessageBackgroundAnimation(QObject *parent)
+TextAutoGenerateSelectedMessageBackgroundAnimation::TextAutoGenerateSelectedMessageBackgroundAnimation(QObject *parent)
     : QObject{parent}
 {
 }
 
-TextAutogenerateSelectedMessageBackgroundAnimation::~TextAutogenerateSelectedMessageBackgroundAnimation() = default;
+TextAutoGenerateSelectedMessageBackgroundAnimation::~TextAutoGenerateSelectedMessageBackgroundAnimation() = default;
 
-QColor TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColor() const
+QColor TextAutoGenerateSelectedMessageBackgroundAnimation::backgroundColor() const
 {
     return m_backgroundColor;
 }
 
-QPersistentModelIndex TextAutogenerateSelectedMessageBackgroundAnimation::modelIndex() const
+QPersistentModelIndex TextAutoGenerateSelectedMessageBackgroundAnimation::modelIndex() const
 {
     return mModelIndex;
 }
 
-void TextAutogenerateSelectedMessageBackgroundAnimation::setModelIndex(const QPersistentModelIndex &newModelIndex)
+void TextAutoGenerateSelectedMessageBackgroundAnimation::setModelIndex(const QPersistentModelIndex &newModelIndex)
 {
     mModelIndex = newModelIndex;
 }
 
-void TextAutogenerateSelectedMessageBackgroundAnimation::setBackgroundColor(const QColor &newBackgroundColor)
+void TextAutoGenerateSelectedMessageBackgroundAnimation::setBackgroundColor(const QColor &newBackgroundColor)
 {
     if (m_backgroundColor == newBackgroundColor)
         return;
@@ -39,11 +39,11 @@ void TextAutogenerateSelectedMessageBackgroundAnimation::setBackgroundColor(cons
     Q_EMIT backgroundColorChanged();
 }
 
-void TextAutogenerateSelectedMessageBackgroundAnimation::start()
+void TextAutoGenerateSelectedMessageBackgroundAnimation::start()
 {
     auto animation = new QPropertyAnimation(this, "backgroundColor"_ba, this);
     animation->setDuration(2000);
-    const auto color = TextAutogenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color();
+    const auto color = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color();
     animation->setStartValue(color);
     animation->setEndValue(QColor(Qt::transparent));
     animation->setEasingCurve(QEasingCurve::InOutQuad);

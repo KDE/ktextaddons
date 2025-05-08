@@ -11,12 +11,12 @@
 
 namespace TextAutoGenerateText
 {
-class TextAutogenerateColorsAndMessageViewStyle : public QObject
+class TextAutoGenerateColorsAndMessageViewStyle : public QObject
 {
     Q_OBJECT
 public:
-    static TextAutogenerateColorsAndMessageViewStyle &self();
-    TextAutogenerateColorsAndMessageViewStyle();
+    static TextAutoGenerateColorsAndMessageViewStyle &self();
+    TextAutoGenerateColorsAndMessageViewStyle();
 
     [[nodiscard]] KColorScheme schemeView() const;
 

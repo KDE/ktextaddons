@@ -13,24 +13,24 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
-QTEST_MAIN(TextAutogenerateWidgetTest)
+QTEST_MAIN(TextAutoGenerateWidgetTest)
 
-TextAutogenerateWidgetTest::TextAutogenerateWidgetTest(QObject *parent)
+TextAutoGenerateWidgetTest::TextAutoGenerateWidgetTest(QObject *parent)
     : QObject{parent}
 {
     QStandardPaths::setTestModeEnabled(true);
 }
 
-void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateWidget w;
+    TextAutoGenerateText::TextAutoGenerateWidget w;
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mTextAutogenerateResultWidget = w.findChild<TextAutoGenerateText::TextAutogenerateResultWidget *>(QStringLiteral("mTextAutogenerateResultWidget"));
-    QVERIFY(mTextAutogenerateResultWidget);
+    auto mTextAutoGenerateResultWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateResultWidget *>(QStringLiteral("mTextAutoGenerateResultWidget"));
+    QVERIFY(mTextAutoGenerateResultWidget);
 
     auto mTextAutoGenerateTextLineEditWidget =
         w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEditWidget *>(QStringLiteral("mTextAutoGenerateTextLineEditWidget"));
@@ -40,7 +40,7 @@ void TextAutogenerateWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSplitter);
     QCOMPARE(mSplitter->orientation(), Qt::Horizontal);
 
-    auto mHeaderWidget = w.findChild<TextAutoGenerateText::TextAutogenerateHeaderWidget *>(QStringLiteral("mHeaderWidget"));
+    auto mHeaderWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateHeaderWidget *>(QStringLiteral("mHeaderWidget"));
     QVERIFY(mHeaderWidget);
 }
 

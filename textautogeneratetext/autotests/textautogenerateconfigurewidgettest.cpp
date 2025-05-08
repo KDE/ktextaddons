@@ -7,16 +7,16 @@
 #include "textautogenerateconfigurewidgettest.h"
 #include "widgets/textautogenerateconfigurewidget.h"
 #include <QTest>
-QTEST_MAIN(TextAutogenerateConfigureWidgetTest)
+QTEST_MAIN(TextAutoGenerateConfigureWidgetTest)
 
-TextAutogenerateConfigureWidgetTest::TextAutogenerateConfigureWidgetTest(QObject *parent)
+TextAutoGenerateConfigureWidgetTest::TextAutoGenerateConfigureWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateConfigureWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateConfigureWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateConfigureWidget w;
+    TextAutoGenerateText::TextAutoGenerateConfigureWidget w;
     // TODO
 }
 

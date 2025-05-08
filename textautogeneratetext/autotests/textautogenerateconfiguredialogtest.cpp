@@ -10,23 +10,23 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
-QTEST_MAIN(TextAutogenerateConfigureDialogTest)
+QTEST_MAIN(TextAutoGenerateConfigureDialogTest)
 
-TextAutogenerateConfigureDialogTest::TextAutogenerateConfigureDialogTest(QObject *parent)
+TextAutoGenerateConfigureDialogTest::TextAutoGenerateConfigureDialogTest(QObject *parent)
     : QObject{parent}
 {
     QStandardPaths::setTestModeEnabled(true);
 }
 
-void TextAutogenerateConfigureDialogTest::shouldHaveDefaultValues()
+void TextAutoGenerateConfigureDialogTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateConfigureDialog d;
+    TextAutoGenerateText::TextAutoGenerateConfigureDialog d;
     auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    auto mTextAutogenerateConfigureWidget =
-        d.findChild<TextAutoGenerateText::TextAutogenerateConfigureWidget *>(QStringLiteral("mTextAutogenerateConfigureWidget"));
-    QVERIFY(mTextAutogenerateConfigureWidget);
+    auto mTextAutoGenerateConfigureWidget =
+        d.findChild<TextAutoGenerateText::TextAutoGenerateConfigureWidget *>(QStringLiteral("mTextAutoGenerateConfigureWidget"));
+    QVERIFY(mTextAutoGenerateConfigureWidget);
 
     auto button = d.findChild<QDialogButtonBox *>(QStringLiteral("button"));
     QVERIFY(button);

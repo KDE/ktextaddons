@@ -9,17 +9,17 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
-class TextAutogenerateListView;
+class TextAutoGenerateListView;
 /**
- * @brief The TextAutogenerateResultWidget class
+ * @brief The TextAutoGenerateResultWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateResultWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateResultWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateResultWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateResultWidget() override;
+    explicit TextAutoGenerateResultWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateResultWidget() override;
 
     void handleKeyPressEvent(QKeyEvent *ev);
     void editingFinished(const QByteArray &uuid);
@@ -30,7 +30,7 @@ Q_SIGNALS:
     void refreshAnswerRequested(const QModelIndex &index);
 
 private:
-    TextAutogenerateListView *const mTextAutogenerateListView;
+    TextAutoGenerateListView *const mTextAutoGenerateListView;
 };
 
 }

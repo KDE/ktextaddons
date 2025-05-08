@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class TextAutogenerateListViewTest : public QObject
+class TextAutoGenerateListViewTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateListViewTest(QObject *parent = nullptr);
-    ~TextAutogenerateListViewTest() override = default;
+    explicit TextAutoGenerateListViewTest(QObject *parent = nullptr);
+    ~TextAutoGenerateListViewTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

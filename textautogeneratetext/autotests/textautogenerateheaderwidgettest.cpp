@@ -10,16 +10,16 @@
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
-QTEST_MAIN(TextAutogenerateHeaderWidgetTest)
+QTEST_MAIN(TextAutoGenerateHeaderWidgetTest)
 
-TextAutogenerateHeaderWidgetTest::TextAutogenerateHeaderWidgetTest(QObject *parent)
+TextAutoGenerateHeaderWidgetTest::TextAutoGenerateHeaderWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateHeaderWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateHeaderWidget w;
+    TextAutoGenerateText::TextAutoGenerateHeaderWidget w;
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

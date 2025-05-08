@@ -10,15 +10,15 @@ class KMessageWidget;
 namespace TextAutoGenerateText
 {
 /**
- * @brief The TextAutogenerateNotWorkingWidget class
+ * @brief The TextAutoGenerateNotWorkingWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateNotWorkingWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateNotWorkingWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateNotWorkingWidget() override;
+    explicit TextAutoGenerateNotWorkingWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateNotWorkingWidget() override;
 
     void setMessageError(const QString &str);
     void clearMessage();

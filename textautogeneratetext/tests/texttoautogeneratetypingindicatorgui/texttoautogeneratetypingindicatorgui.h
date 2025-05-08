@@ -10,7 +10,7 @@
 
 namespace TextAutoGenerateText
 {
-class TextAutogenerateMessageWaitingAnswerAnimation;
+class TextAutoGenerateMessageWaitingAnswerAnimation;
 }
 class DotsWidget : public QWidget
 {
@@ -23,5 +23,5 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation *const mAnimation;
+    TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation *const mAnimation;
 };

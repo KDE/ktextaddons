@@ -7,18 +7,18 @@
 #include "textautogeneratehistorylistviewtest.h"
 #include "widgets/view/textautogeneratehistorylistview.h"
 #include <QTest>
-QTEST_MAIN(TextAutogenerateHistoryListViewTest)
+QTEST_MAIN(TextAutoGenerateHistoryListViewTest)
 
-TextAutogenerateHistoryListViewTest::TextAutogenerateHistoryListViewTest(QObject *parent)
+TextAutoGenerateHistoryListViewTest::TextAutoGenerateHistoryListViewTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-TextAutogenerateHistoryListViewTest::~TextAutogenerateHistoryListViewTest() = default;
+TextAutoGenerateHistoryListViewTest::~TextAutoGenerateHistoryListViewTest() = default;
 
-void TextAutogenerateHistoryListViewTest::shouldHaveDefaultValues()
+void TextAutoGenerateHistoryListViewTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateHistoryListView w;
+    TextAutoGenerateText::TextAutoGenerateHistoryListView w;
     QVERIFY(!w.dragEnabled());
     QCOMPARE(w.indentation(), 0);
     QVERIFY(!w.rootIsDecorated());

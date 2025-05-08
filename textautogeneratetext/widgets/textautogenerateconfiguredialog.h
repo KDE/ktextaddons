@@ -8,21 +8,21 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
-class TextAutogenerateConfigureWidget;
+class TextAutoGenerateConfigureWidget;
 /**
- * @brief The TextAutogenerateConfigureDialog class
+ * @brief The TextAutoGenerateConfigureDialog class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateConfigureDialog : public QDialog
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateConfigureDialog(QWidget *parent = nullptr);
-    ~TextAutogenerateConfigureDialog() override;
+    explicit TextAutoGenerateConfigureDialog(QWidget *parent = nullptr);
+    ~TextAutoGenerateConfigureDialog() override;
 
     void saveSettings();
 
 private:
-    TextAutogenerateConfigureWidget *const mTextAutogenerateConfigureWidget;
+    TextAutoGenerateConfigureWidget *const mTextAutoGenerateConfigureWidget;
 };
 }

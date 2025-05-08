@@ -10,25 +10,25 @@
 class QStackedWidget;
 namespace TextAutoGenerateText
 {
-class TextAutogenerateNotWorkingWidget;
-class TextAutogenerateWidget;
+class TextAutoGenerateNotWorkingWidget;
+class TextAutoGenerateWidget;
 /**
- * @brief The TextAutogenerateStackWidget class
+ * @brief The TextAutoGenerateStackWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateStackWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateStackWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateStackWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateStackWidget() override;
+    explicit TextAutoGenerateStackWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateStackWidget() override;
 
     void setBrokenEngine(bool state, const QString &errorMessage);
 
 private:
     QStackedWidget *const mStackedWidget;
-    TextAutogenerateNotWorkingWidget *const mTextAutogenerateNotWorkingWidget;
-    TextAutogenerateWidget *const mTextAutogenerateWidget;
+    TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
+    TextAutoGenerateWidget *const mTextAutoGenerateWidget;
 };
 
 }

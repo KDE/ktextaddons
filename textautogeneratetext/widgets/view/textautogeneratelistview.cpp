@@ -19,9 +19,9 @@
 #include <QScrollBar>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
+TextAutoGenerateListView::TextAutoGenerateListView(QWidget *parent)
     : QListView(parent)
-    , mDelegate(new TextAutogenerateListViewDelegate(this))
+    , mDelegate(new TextAutoGenerateListViewDelegate(this))
 {
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -36,28 +36,28 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
         mDelegate->clearCache();
     });
 
-    connect(mDelegate, &TextAutogenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
+    connect(mDelegate, &TextAutoGenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
         update(index);
     });
 
-    connect(mDelegate, &TextAutogenerateListViewDelegate::removeMessage, this, &TextAutogenerateListView::slotRemoveMessage);
-    connect(mDelegate, &TextAutogenerateListViewDelegate::editMessage, this, &TextAutogenerateListView::slotEditMessage);
-    connect(mDelegate, &TextAutogenerateListViewDelegate::copyMessage, this, &TextAutogenerateListView::slotCopyMessage);
-    connect(mDelegate, &TextAutogenerateListViewDelegate::cancelRequested, this, &TextAutogenerateListView::slotCancelRequested);
-    connect(mDelegate, &TextAutogenerateListViewDelegate::refreshRequested, this, &TextAutogenerateListView::slotRefreshRequested);
+    connect(mDelegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveMessage);
+    connect(mDelegate, &TextAutoGenerateListViewDelegate::editMessage, this, &TextAutoGenerateListView::slotEditMessage);
+    connect(mDelegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
+    connect(mDelegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
+    connect(mDelegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
 
     connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeInserted,
             this,
-            &TextAutogenerateListView::checkIfAtBottom);
+            &TextAutoGenerateListView::checkIfAtBottom);
     connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::rowsAboutToBeRemoved,
             this,
-            &TextAutogenerateListView::checkIfAtBottom);
+            &TextAutoGenerateListView::checkIfAtBottom);
     connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::modelAboutToBeReset,
             this,
-            &TextAutogenerateListView::checkIfAtBottom);
+            &TextAutoGenerateListView::checkIfAtBottom);
 
     connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
             &QAbstractItemModel::dataChanged,
@@ -79,23 +79,23 @@ TextAutogenerateListView::TextAutogenerateListView(QWidget *parent)
 
     // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
     // This way it also catches the case of an item changing height (e.g. after async image loading)
-    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutogenerateListView::maybeScrollToBottom);
+    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateListView::maybeScrollToBottom);
 }
 
-TextAutogenerateListView::~TextAutogenerateListView()
+TextAutoGenerateListView::~TextAutoGenerateListView()
 {
     TextAutoGenerateManager::self()->saveHistory();
-    // TextAutogenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
+    // TextAutoGenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
 }
 
-void TextAutogenerateListView::slotEditMessage(const QModelIndex &index)
+void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {
     auto model = const_cast<QAbstractItemModel *>(index.model());
     model->setData(index, true, TextAutoGenerateMessagesModel::EditingRole);
     Q_EMIT editMessageRequested(index);
 }
 
-void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
+void TextAutoGenerateListView::slotRemoveMessage(const QModelIndex &index)
 {
     if (KMessageBox::ButtonCode::PrimaryAction
         == KMessageBox::questionTwoActions(this,
@@ -111,7 +111,7 @@ void TextAutogenerateListView::slotRemoveMessage(const QModelIndex &index)
     }
 }
 
-void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
+void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
@@ -121,7 +121,7 @@ void TextAutogenerateListView::slotCancelRequested(const QModelIndex &index)
     }
 }
 
-void TextAutogenerateListView::slotRefreshRequested(const QModelIndex &index)
+void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
@@ -132,7 +132,7 @@ void TextAutogenerateListView::slotRefreshRequested(const QModelIndex &index)
     }
 }
 
-void TextAutogenerateListView::slotCopyMessage(const QModelIndex &index)
+void TextAutoGenerateListView::slotCopyMessage(const QModelIndex &index)
 {
     const QString currentValue = index.data().toString();
     QClipboard *clip = QApplication::clipboard();
@@ -140,12 +140,12 @@ void TextAutogenerateListView::slotCopyMessage(const QModelIndex &index)
     clip->setText(currentValue, QClipboard::Selection);
 }
 
-void TextAutogenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
+void TextAutoGenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
 {
     TextAutoGenerateManager::self()->textAutoGenerateChatModel()->setMessages(msg);
 }
 
-void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
+void TextAutoGenerateListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
@@ -171,12 +171,12 @@ void TextAutogenerateListView::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
-void TextAutogenerateListView::slotSelectAll(const QModelIndex &index)
+void TextAutoGenerateListView::slotSelectAll(const QModelIndex &index)
 {
     mDelegate->selectAll(listViewOptions(), index);
 }
 
-void TextAutogenerateListView::resizeEvent(QResizeEvent *ev)
+void TextAutoGenerateListView::resizeEvent(QResizeEvent *ev)
 {
     QListView::resizeEvent(ev);
 
@@ -187,41 +187,41 @@ void TextAutogenerateListView::resizeEvent(QResizeEvent *ev)
     mDelegate->clearSizeHintCache();
 }
 
-void TextAutogenerateListView::checkIfAtBottom()
+void TextAutoGenerateListView::checkIfAtBottom()
 {
     auto *vbar = verticalScrollBar();
     mAtBottom = vbar->value() == vbar->maximum();
 }
 
-void TextAutogenerateListView::maybeScrollToBottom()
+void TextAutoGenerateListView::maybeScrollToBottom()
 {
     if (mAtBottom) {
         scrollToBottom();
     }
 }
 
-void TextAutogenerateListView::updateVerticalPageStep()
+void TextAutoGenerateListView::updateVerticalPageStep()
 {
     verticalScrollBar()->setPageStep(viewport()->height() * 3 / 4);
 }
 
-void TextAutogenerateListView::mouseReleaseEvent(QMouseEvent *event)
+void TextAutoGenerateListView::mouseReleaseEvent(QMouseEvent *event)
 {
     handleMouseEvent(event);
 }
 
-void TextAutogenerateListView::mouseDoubleClickEvent(QMouseEvent *event)
+void TextAutoGenerateListView::mouseDoubleClickEvent(QMouseEvent *event)
 {
     handleMouseEvent(event);
 }
 
-void TextAutogenerateListView::mousePressEvent(QMouseEvent *event)
+void TextAutoGenerateListView::mousePressEvent(QMouseEvent *event)
 {
     mPressedPosition = event->pos();
     handleMouseEvent(event);
 }
 
-void TextAutogenerateListView::mouseMoveEvent(QMouseEvent *event)
+void TextAutoGenerateListView::mouseMoveEvent(QMouseEvent *event)
 {
     // Drag support
     const int distance = (event->pos() - mPressedPosition).manhattanLength();
@@ -239,14 +239,14 @@ void TextAutogenerateListView::mouseMoveEvent(QMouseEvent *event)
     handleMouseEvent(event);
 }
 
-QStyleOptionViewItem TextAutogenerateListView::listViewOptions() const
+QStyleOptionViewItem TextAutoGenerateListView::listViewOptions() const
 {
     QStyleOptionViewItem option;
     initViewItemOption(&option);
     return option;
 }
 
-void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
+void TextAutoGenerateListView::handleMouseEvent(QMouseEvent *event)
 {
     const QPersistentModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
@@ -268,17 +268,17 @@ void TextAutogenerateListView::handleMouseEvent(QMouseEvent *event)
     }
 }
 
-bool TextAutogenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+bool TextAutoGenerateListView::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
     return mDelegate->maybeStartDrag(event, option, index);
 }
 
-bool TextAutogenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+bool TextAutoGenerateListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
     return mDelegate->mouseEvent(event, option, index);
 }
 
-void TextAutogenerateListView::leaveEvent(QEvent *event)
+void TextAutoGenerateListView::leaveEvent(QEvent *event)
 {
     if (mCurrentIndex.isValid()) {
         auto lastModel = const_cast<QAbstractItemModel *>(mCurrentIndex.model());
@@ -288,7 +288,7 @@ void TextAutogenerateListView::leaveEvent(QEvent *event)
     QListView::leaveEvent(event);
 }
 
-void TextAutogenerateListView::handleKeyPressEvent(QKeyEvent *ev)
+void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
 {
     const int key = ev->key();
     if (key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_PageDown || key == Qt::Key_PageUp) {
@@ -308,7 +308,7 @@ void TextAutogenerateListView::handleKeyPressEvent(QKeyEvent *ev)
     }
 }
 
-void TextAutogenerateListView::slotGoToDiscussion(const QByteArray &uuid)
+void TextAutoGenerateListView::slotGoToDiscussion(const QByteArray &uuid)
 {
     const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
     if (idx.isValid()) {
@@ -316,13 +316,13 @@ void TextAutogenerateListView::slotGoToDiscussion(const QByteArray &uuid)
     }
 }
 
-void TextAutogenerateListView::scrollTo(const QModelIndex &index, QAbstractItemView::ScrollHint hint)
+void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemView::ScrollHint hint)
 {
     QListView::scrollTo(index, hint);
     addSelectedMessageBackgroundAnimation(index);
 }
 
-void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
+void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 {
     const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
     if (idx.isValid()) {
@@ -331,34 +331,34 @@ void TextAutogenerateListView::editingFinished(const QByteArray &uuid)
     }
 }
 
-void TextAutogenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
+void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
 {
-    auto animation = new TextAutogenerateMessageWaitingAnswerAnimation(this);
+    auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(this);
     animation->setModelIndex(index);
-    connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
-        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateMessageWaitingAnswerAnimation start";
+    connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation start";
         mDelegate->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
         update(animation->modelIndex());
     });
-    connect(animation, &TextAutogenerateMessageWaitingAnswerAnimation::waitingAnswerDone, this, [this, index]() {
+    connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::waitingAnswerDone, this, [this, index]() {
         mDelegate->removeNeedUpdateWaitingAnswerAnimation(index);
-        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateMessageWaitingAnswerAnimation end";
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation end";
         update(index);
     });
     animation->start();
 }
 
-void TextAutogenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)
+void TextAutoGenerateListView::addSelectedMessageBackgroundAnimation(const QModelIndex &index)
 {
-    auto animation = new TextAutogenerateSelectedMessageBackgroundAnimation(this);
+    auto animation = new TextAutoGenerateSelectedMessageBackgroundAnimation(this);
     animation->setModelIndex(index);
-    connect(animation, &TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
-        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateSelectedMessageBackgroundAnimation start";
+    connect(animation, &TextAutoGenerateSelectedMessageBackgroundAnimation::backgroundColorChanged, this, [this, animation]() {
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateSelectedMessageBackgroundAnimation start";
         mDelegate->needUpdateIndexBackground(animation->modelIndex(), animation->backgroundColor());
         update(animation->modelIndex());
     });
-    connect(animation, &TextAutogenerateSelectedMessageBackgroundAnimation::animationFinished, this, [this, animation]() {
-        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutogenerateSelectedMessageBackgroundAnimation end";
+    connect(animation, &TextAutoGenerateSelectedMessageBackgroundAnimation::animationFinished, this, [this, animation]() {
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateSelectedMessageBackgroundAnimation end";
         mDelegate->removeNeedUpdateIndexBackground(animation->modelIndex());
         update(animation->modelIndex());
     });

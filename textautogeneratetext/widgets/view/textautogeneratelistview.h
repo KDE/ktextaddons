@@ -9,13 +9,13 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessage;
-class TextAutogenerateListViewDelegate;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateListView : public QListView
+class TextAutoGenerateListViewDelegate;
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateListView(QWidget *parent = nullptr);
-    ~TextAutogenerateListView() override;
+    explicit TextAutoGenerateListView(QWidget *parent = nullptr);
+    ~TextAutoGenerateListView() override;
 
     void setMessages(const QList<TextAutoGenerateMessage> &msg);
 
@@ -63,6 +63,6 @@ private:
     bool mAtBottom = true;
     QPoint mPressedPosition;
     QPersistentModelIndex mCurrentIndex = {};
-    TextAutogenerateListViewDelegate *const mDelegate;
+    TextAutoGenerateListViewDelegate *const mDelegate;
 };
 }

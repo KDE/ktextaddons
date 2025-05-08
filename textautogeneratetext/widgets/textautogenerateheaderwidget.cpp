@@ -12,7 +12,7 @@
 #include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
+TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(QWidget *parent)
     : QWidget{parent}
     , mEngineName(new QLabel(this))
     , mConfigureEngine(new QToolButton(this))
@@ -34,19 +34,19 @@ TextAutogenerateHeaderWidget::TextAutogenerateHeaderWidget(QWidget *parent)
     mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
-    connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutogenerateHeaderWidget::slotConfigureEngine);
+    connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::slotConfigureEngine);
 }
 
-TextAutogenerateHeaderWidget::~TextAutogenerateHeaderWidget() = default;
+TextAutoGenerateHeaderWidget::~TextAutoGenerateHeaderWidget() = default;
 
-void TextAutogenerateHeaderWidget::updateEngineName(const QString &engineName)
+void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
 {
     mEngineName->setText(engineName);
 }
 
-void TextAutogenerateHeaderWidget::slotConfigureEngine()
+void TextAutoGenerateHeaderWidget::slotConfigureEngine()
 {
-    TextAutoGenerateText::TextAutogenerateConfigureDialog d(this);
+    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(this);
     if (d.exec()) {
         d.saveSettings();
         Q_EMIT configChanged();

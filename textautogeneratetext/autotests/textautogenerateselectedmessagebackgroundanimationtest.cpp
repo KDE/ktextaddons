@@ -8,23 +8,23 @@
 #include "widgets/view/textautogenerateselectedmessagebackgroundanimation.h"
 #include <QSignalSpy>
 #include <QTest>
-QTEST_MAIN(TextAutogenerateSelectedMessageBackgroundAnimationTest)
-TextAutogenerateSelectedMessageBackgroundAnimationTest::TextAutogenerateSelectedMessageBackgroundAnimationTest(QObject *parent)
+QTEST_MAIN(TextAutoGenerateSelectedMessageBackgroundAnimationTest)
+TextAutoGenerateSelectedMessageBackgroundAnimationTest::TextAutoGenerateSelectedMessageBackgroundAnimationTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateSelectedMessageBackgroundAnimationTest::shouldHaveDefaultValues()
+void TextAutoGenerateSelectedMessageBackgroundAnimationTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateSelectedMessageBackgroundAnimation d(nullptr);
+    TextAutoGenerateText::TextAutoGenerateSelectedMessageBackgroundAnimation d(nullptr);
     QVERIFY(!d.backgroundColor().isValid());
     QVERIFY(!d.modelIndex().isValid());
 }
 
-void TextAutogenerateSelectedMessageBackgroundAnimationTest::shouldEmitBackgroundColorChanged()
+void TextAutoGenerateSelectedMessageBackgroundAnimationTest::shouldEmitBackgroundColorChanged()
 {
-    TextAutoGenerateText::TextAutogenerateSelectedMessageBackgroundAnimation d(nullptr);
-    QSignalSpy backgroundColorChangedspy(&d, &TextAutoGenerateText::TextAutogenerateSelectedMessageBackgroundAnimation::backgroundColorChanged);
+    TextAutoGenerateText::TextAutoGenerateSelectedMessageBackgroundAnimation d(nullptr);
+    QSignalSpy backgroundColorChangedspy(&d, &TextAutoGenerateText::TextAutoGenerateSelectedMessageBackgroundAnimation::backgroundColorChanged);
     QColor color(Qt::red);
     d.setBackgroundColor(color);
     QCOMPARE(backgroundColorChangedspy.count(), 1);

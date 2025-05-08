@@ -13,7 +13,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutogenerateMessageWaitingAnswerAnimation::TextAutogenerateMessageWaitingAnswerAnimation(QObject *parent)
+TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAnswerAnimation(QObject *parent)
     : QObject{parent}
 {
     createAnimations();
@@ -35,36 +35,36 @@ TextAutogenerateMessageWaitingAnswerAnimation::TextAutogenerateMessageWaitingAns
             });
 }
 
-TextAutogenerateMessageWaitingAnswerAnimation::~TextAutogenerateMessageWaitingAnswerAnimation() = default;
+TextAutoGenerateMessageWaitingAnswerAnimation::~TextAutoGenerateMessageWaitingAnswerAnimation() = default;
 
-QPersistentModelIndex TextAutogenerateMessageWaitingAnswerAnimation::modelIndex() const
+QPersistentModelIndex TextAutoGenerateMessageWaitingAnswerAnimation::modelIndex() const
 {
     return mModelIndex;
 }
 
-void TextAutogenerateMessageWaitingAnswerAnimation::setModelIndex(const QPersistentModelIndex &newModelIndex)
+void TextAutoGenerateMessageWaitingAnswerAnimation::setModelIndex(const QPersistentModelIndex &newModelIndex)
 {
     mModelIndex = newModelIndex;
 }
 
-void TextAutogenerateMessageWaitingAnswerAnimation::start()
+void TextAutoGenerateMessageWaitingAnswerAnimation::start()
 {
     mSequencials->setLoopCount(-1);
     mSequencials->start();
 }
 
-void TextAutogenerateMessageWaitingAnswerAnimation::stopAndDelete()
+void TextAutoGenerateMessageWaitingAnswerAnimation::stopAndDelete()
 {
     mSequencials->stop();
     deleteLater();
 }
 
-int TextAutogenerateMessageWaitingAnswerAnimation::count() const
+int TextAutoGenerateMessageWaitingAnswerAnimation::count() const
 {
     return mScaleOpacities.count();
 }
 
-void TextAutogenerateMessageWaitingAnswerAnimation::createAnimations()
+void TextAutoGenerateMessageWaitingAnswerAnimation::createAnimations()
 {
     mSequencials = new QSequentialAnimationGroup(this);
     const int duration = 300; // Ms
@@ -74,7 +74,7 @@ void TextAutogenerateMessageWaitingAnswerAnimation::createAnimations()
     }
 }
 
-TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutogenerateMessageWaitingAnswerAnimation::value(int i) const
+TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutoGenerateMessageWaitingAnswerAnimation::value(int i) const
 {
     if (i >= 0 && i < mScaleOpacities.count()) {
         return mScaleOpacities.at(i);
@@ -82,7 +82,7 @@ TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutogenerateM
     return {};
 }
 
-QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::createAnimation(int index, int duration)
+QSequentialAnimationGroup *TextAutoGenerateMessageWaitingAnswerAnimation::createAnimation(int index, int duration)
 {
     ScaleAndOpacity s;
     mScaleOpacities.append(s);
@@ -150,12 +150,12 @@ QSequentialAnimationGroup *TextAutogenerateMessageWaitingAnswerAnimation::create
     return sequencial;
 }
 
-QList<TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> TextAutogenerateMessageWaitingAnswerAnimation::scaleOpacities() const
+QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> TextAutoGenerateMessageWaitingAnswerAnimation::scaleOpacities() const
 {
     return mScaleOpacities;
 }
 
-QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t)
 {
     d.space() << "scale:" << t.scale;
     d.space() << "opacity:" << t.opacity;

@@ -12,7 +12,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
 /**
- * @brief The TextAutogenerateManager class
+ * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManager : public QObject

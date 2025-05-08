@@ -8,16 +8,16 @@
 #include <KMessageWidget>
 #include <QTest>
 #include <QVBoxLayout>
-QTEST_MAIN(TextAutogenerateNotWorkingWidgetTest)
+QTEST_MAIN(TextAutoGenerateNotWorkingWidgetTest)
 
-TextAutogenerateNotWorkingWidgetTest::TextAutogenerateNotWorkingWidgetTest(QObject *parent)
+TextAutoGenerateNotWorkingWidgetTest::TextAutoGenerateNotWorkingWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateNotWorkingWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateNotWorkingWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateNotWorkingWidget w;
+    TextAutoGenerateText::TextAutoGenerateNotWorkingWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

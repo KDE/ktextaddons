@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class TextAutogenerateHistoryListViewTest : public QObject
+class TextAutoGenerateHistoryListViewTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateHistoryListViewTest(QObject *parent = nullptr);
-    ~TextAutogenerateHistoryListViewTest() override;
+    explicit TextAutoGenerateHistoryListViewTest(QObject *parent = nullptr);
+    ~TextAutoGenerateHistoryListViewTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

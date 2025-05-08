@@ -9,23 +9,23 @@
 class QSplitter;
 namespace TextAutoGenerateText
 {
-class TextAutogenerateResultWidget;
+class TextAutoGenerateResultWidget;
 class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateTextClient;
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateMessage;
-class TextAutogenerateHistoryWidget;
-class TextAutogenerateHeaderWidget;
+class TextAutoGenerateHistoryWidget;
+class TextAutoGenerateHeaderWidget;
 /**
- * @brief The TextAutogenerateWidget class
+ * @brief The TextAutoGenerateWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateWidget() override;
+    explicit TextAutoGenerateWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateWidget() override;
 
     [[nodiscard]] QString textLineEdit() const;
 
@@ -50,14 +50,14 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QModelIndex &index);
 
-    TextAutogenerateResultWidget *const mTextAutogenerateResultWidget;
+    TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;
 
-    TextAutoGenerateTextClient *mTextAutogenerateClient = nullptr;
-    TextAutoGenerateTextPlugin *mTextAutogeneratePlugin = nullptr;
+    TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
+    TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
     QSplitter *const mSplitter;
-    TextAutogenerateHistoryWidget *const mHistoryWidget;
-    TextAutogenerateHeaderWidget *const mHeaderWidget;
+    TextAutoGenerateHistoryWidget *const mHistoryWidget;
+    TextAutoGenerateHeaderWidget *const mHeaderWidget;
     QStringList mAskMessageList;
     bool mPluginWasInitialized = false;
 };

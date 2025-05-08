@@ -8,16 +8,16 @@
 #include "widgets/view/textautogeneratelistview.h"
 #include <QTest>
 
-QTEST_MAIN(TextAutogenerateListViewTest);
+QTEST_MAIN(TextAutoGenerateListViewTest);
 
-TextAutogenerateListViewTest::TextAutogenerateListViewTest(QObject *parent)
+TextAutoGenerateListViewTest::TextAutoGenerateListViewTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateListViewTest::shouldHaveDefaultValues()
+void TextAutoGenerateListViewTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutogenerateListView w;
+    TextAutoGenerateText::TextAutoGenerateListView w;
     QCOMPARE(w.verticalScrollMode(), QAbstractItemView::ScrollPerPixel);
 }
 

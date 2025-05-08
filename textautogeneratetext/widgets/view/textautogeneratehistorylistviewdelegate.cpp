@@ -12,14 +12,14 @@
 #include <QToolTip>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateHistoryListViewDelegate::TextAutogenerateHistoryListViewDelegate(QObject *parent)
+TextAutoGenerateHistoryListViewDelegate::TextAutoGenerateHistoryListViewDelegate(QObject *parent)
     : QItemDelegate{parent}
 {
 }
 
-TextAutogenerateHistoryListViewDelegate::~TextAutogenerateHistoryListViewDelegate() = default;
+TextAutoGenerateHistoryListViewDelegate::~TextAutoGenerateHistoryListViewDelegate() = default;
 
-bool TextAutogenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
+bool TextAutoGenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
                                                         QAbstractItemView *view,
                                                         const QStyleOptionViewItem &option,
                                                         const QModelIndex &index)
@@ -36,7 +36,7 @@ bool TextAutogenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
     return false;
 }
 
-QWidget *TextAutogenerateHistoryListViewDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+QWidget *TextAutoGenerateHistoryListViewDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     Q_UNUSED(option);
     Q_UNUSED(index);
@@ -44,7 +44,7 @@ QWidget *TextAutogenerateHistoryListViewDelegate::createEditor(QWidget *parent, 
     return editor;
 }
 
-void TextAutogenerateHistoryListViewDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+void TextAutoGenerateHistoryListViewDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
     QLineEdit *lineEdit = qobject_cast<QLineEdit *>(editor);
     if (lineEdit) {
@@ -56,7 +56,7 @@ void TextAutogenerateHistoryListViewDelegate::setEditorData(QWidget *editor, con
     }
 }
 
-void TextAutogenerateHistoryListViewDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
+void TextAutoGenerateHistoryListViewDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
 {
     QLineEdit *lineEdit = qobject_cast<QLineEdit *>(editor);
     if (lineEdit) {
@@ -64,7 +64,7 @@ void TextAutogenerateHistoryListViewDelegate::setModelData(QWidget *editor, QAbs
     }
 }
 
-void TextAutogenerateHistoryListViewDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
+void TextAutoGenerateHistoryListViewDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     Q_UNUSED(index);
     editor->setGeometry(option.rect);

@@ -41,7 +41,7 @@ public:
 
     [[nodiscard]] virtual QString webSite() const = 0;
 
-    virtual TextAutoGenerateTextPlugin *createTextAutogeneratePlugin() = 0;
+    virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() = 0;
 
     [[nodiscard]] virtual bool hasConfigurationDialog() const;
 

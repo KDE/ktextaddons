@@ -11,20 +11,20 @@
 #include <memory>
 namespace TextAutoGenerateText
 {
-class TextAutogenerateEngineLoaderPrivate;
+class TextAutoGenerateEngineLoaderPrivate;
 class TextAutoGenerateTextClient;
 /**
- * @brief The TextAutogenerateEngineLoader class
+ * @brief The TextAutoGenerateEngineLoader class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateEngineLoader : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
 {
     Q_OBJECT
 public:
-    static TextAutogenerateEngineLoader *self();
+    static TextAutoGenerateEngineLoader *self();
 
-    explicit TextAutogenerateEngineLoader(QObject *parent = nullptr);
-    ~TextAutogenerateEngineLoader() override;
+    explicit TextAutoGenerateEngineLoader(QObject *parent = nullptr);
+    ~TextAutoGenerateEngineLoader() override;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
 
@@ -49,6 +49,6 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(const QString &pluginPath);
-    std::unique_ptr<TextAutogenerateEngineLoaderPrivate> const d;
+    std::unique_ptr<TextAutoGenerateEngineLoaderPrivate> const d;
 };
 }

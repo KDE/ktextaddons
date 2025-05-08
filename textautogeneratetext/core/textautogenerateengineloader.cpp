@@ -13,29 +13,29 @@
 #include <QPluginLoader>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-class TextAutoGenerateText::TextAutogenerateEngineLoaderPrivate
+class TextAutoGenerateText::TextAutoGenerateEngineLoaderPrivate
 {
 public:
     QSet<QString> loadedPlugins;
     QHash<QString, TextAutoGenerateTextClient *> autogenerateTextClients;
 };
 
-TextAutogenerateEngineLoader *TextAutogenerateEngineLoader::self()
+TextAutoGenerateEngineLoader *TextAutoGenerateEngineLoader::self()
 {
-    static TextAutogenerateEngineLoader s_self;
+    static TextAutoGenerateEngineLoader s_self;
     return &s_self;
 }
 
-TextAutogenerateEngineLoader::TextAutogenerateEngineLoader(QObject *parent)
+TextAutoGenerateEngineLoader::TextAutoGenerateEngineLoader(QObject *parent)
     : QObject{parent}
-    , d(new TextAutoGenerateText::TextAutogenerateEngineLoaderPrivate)
+    , d(new TextAutoGenerateText::TextAutoGenerateEngineLoaderPrivate)
 {
     loadPlugins();
 }
 
-TextAutogenerateEngineLoader::~TextAutogenerateEngineLoader() = default;
+TextAutoGenerateEngineLoader::~TextAutoGenerateEngineLoader() = default;
 
-void TextAutogenerateEngineLoader::loadPlugins()
+void TextAutoGenerateEngineLoader::loadPlugins()
 {
     const QStringList libPaths = QCoreApplication::libraryPaths();
     const QString pathSuffix(QStringLiteral("/kf6/textautogeneratetext/"));
@@ -54,7 +54,7 @@ void TextAutogenerateEngineLoader::loadPlugins()
     }
 }
 
-void TextAutogenerateEngineLoader::loadPlugin(const QString &pluginPath)
+void TextAutoGenerateEngineLoader::loadPlugin(const QString &pluginPath)
 {
     QPluginLoader plugin(pluginPath);
     const QString pluginIID = plugin.metaData()["IID"_L1].toString();
@@ -80,7 +80,7 @@ void TextAutogenerateEngineLoader::loadPlugin(const QString &pluginPath)
     d->autogenerateTextClients.insert(client->name(), client);
 }
 
-TextAutoGenerateTextClient *TextAutogenerateEngineLoader::createTextAutoGenerateTextClient(const QString &clientName)
+TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::createTextAutoGenerateTextClient(const QString &clientName)
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
@@ -91,7 +91,7 @@ TextAutoGenerateTextClient *TextAutogenerateEngineLoader::createTextAutoGenerate
     return (*clientsItr);
 }
 
-bool TextAutogenerateEngineLoader::hasConfigurationDialog(const QString &clientName) const
+bool TextAutoGenerateEngineLoader::hasConfigurationDialog(const QString &clientName) const
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
@@ -101,7 +101,7 @@ bool TextAutogenerateEngineLoader::hasConfigurationDialog(const QString &clientN
     return (*clientsItr)->hasConfigurationDialog();
 }
 
-bool TextAutogenerateEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
+bool TextAutoGenerateEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {
@@ -111,7 +111,7 @@ bool TextAutogenerateEngineLoader::showConfigureDialog(const QString &clientName
     return (*clientsItr)->showConfigureDialog(parentWidget);
 }
 
-QMap<QString, QString> TextAutogenerateEngineLoader::textAutoGenerateTextEngineInfos() const
+QMap<QString, QString> TextAutoGenerateEngineLoader::textAutoGenerateTextEngineInfos() const
 {
     QMap<QString, QString> map;
     QHashIterator<QString, TextAutoGenerateTextClient *> i(d->autogenerateTextClients);
@@ -122,7 +122,7 @@ QMap<QString, QString> TextAutogenerateEngineLoader::textAutoGenerateTextEngineI
     return map;
 }
 
-QString TextAutogenerateEngineLoader::generateDisplayName(TextAutoGenerateTextClient *client) const
+QString TextAutoGenerateEngineLoader::generateDisplayName(TextAutoGenerateTextClient *client) const
 {
     QString translatedName = client->translatedName();
     if (const QString modelName = client->modelName(); !modelName.isEmpty()) {
@@ -133,12 +133,12 @@ QString TextAutogenerateEngineLoader::generateDisplayName(TextAutoGenerateTextCl
     return translatedName;
 }
 
-QString TextAutogenerateEngineLoader::website(TextAutoGenerateTextClient *client) const
+QString TextAutoGenerateEngineLoader::website(TextAutoGenerateTextClient *client) const
 {
     return client->webSite();
 }
 
-QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
+QString TextAutoGenerateEngineLoader::fallbackFirstEngine() const
 {
     if (!d->autogenerateTextClients.isEmpty()) {
         return *d->autogenerateTextClients.keyBegin();
@@ -147,7 +147,7 @@ QString TextAutogenerateEngineLoader::fallbackFirstEngine() const
     return QString();
 }
 
-bool TextAutogenerateEngineLoader::hasEngine() const
+bool TextAutoGenerateEngineLoader::hasEngine() const
 {
     return !d->autogenerateTextClients.isEmpty();
 }

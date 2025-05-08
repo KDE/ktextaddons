@@ -17,7 +17,7 @@
 #include <QMenu>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent)
+TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(QWidget *parent)
     : QTreeView(parent)
     , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))
     , mHistoryListHeadingsProxyModel(new TextAutoGenerateHistoryListHeadingsProxyModel(this))
@@ -28,7 +28,7 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     setRootIsDecorated(false);
     setItemsExpandable(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setItemDelegate(new TextAutogenerateHistoryListViewDelegate(this));
+    setItemDelegate(new TextAutoGenerateHistoryListViewDelegate(this));
 
     auto historyModel = new TextAutoGenerateHistoryModel(this);
     historyModel->setSourceModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
@@ -41,13 +41,13 @@ TextAutogenerateHistoryListView::TextAutogenerateHistoryListView(QWidget *parent
     connect(model(), &QAbstractItemModel::modelReset, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::rowsMoved, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::layoutChanged, this, &QTreeView::expandAll);
-    connect(this, &TextAutogenerateHistoryListView::clicked, this, &TextAutogenerateHistoryListView::slotClicked);
+    connect(this, &TextAutoGenerateHistoryListView::clicked, this, &TextAutoGenerateHistoryListView::slotClicked);
     expandAll();
 }
 
-TextAutogenerateHistoryListView::~TextAutogenerateHistoryListView() = default;
+TextAutoGenerateHistoryListView::~TextAutoGenerateHistoryListView() = default;
 
-void TextAutogenerateHistoryListView::keyPressEvent(QKeyEvent *event)
+void TextAutoGenerateHistoryListView::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape) {
         event->accept();
@@ -55,7 +55,7 @@ void TextAutogenerateHistoryListView::keyPressEvent(QKeyEvent *event)
         QTreeView::keyPressEvent(event);
     }
 }
-void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)
+void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
         const QByteArray uuid = idx.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
@@ -65,7 +65,7 @@ void TextAutogenerateHistoryListView::slotClicked(const QModelIndex &idx)
     }
 }
 
-void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
+void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
     const QModelIndex index = indexAt(event->pos());
     if (!index.parent().isValid()) {
@@ -110,7 +110,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                 /*
                 const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
                 if (!uuid.isEmpty()) {
-                    TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                    TextAutoGenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
                 }
                 */
             });
@@ -121,7 +121,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                 /*
                 const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
                 if (!uuid.isEmpty()) {
-                    TextAutogenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                    TextAutoGenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
                 }
                 */
             });
@@ -135,7 +135,7 @@ void TextAutogenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
-void TextAutogenerateHistoryListView::slotSearchTextChanged(const QString &str)
+void TextAutoGenerateHistoryListView::slotSearchTextChanged(const QString &str)
 {
     mHistoryProxyModel->setFilterFixedString(str);
 }

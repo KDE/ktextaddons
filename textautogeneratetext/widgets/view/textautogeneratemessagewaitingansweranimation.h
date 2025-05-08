@@ -12,7 +12,7 @@
 class QSequentialAnimationGroup;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutogenerateMessageWaitingAnswerAnimation : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMessageWaitingAnswerAnimation : public QObject
 {
     Q_OBJECT
 public:
@@ -21,8 +21,8 @@ public:
         qreal opacity = 0.0;
     };
 
-    explicit TextAutogenerateMessageWaitingAnswerAnimation(QObject *parent = nullptr);
-    ~TextAutogenerateMessageWaitingAnswerAnimation() override;
+    explicit TextAutoGenerateMessageWaitingAnswerAnimation(QObject *parent = nullptr);
+    ~TextAutoGenerateMessageWaitingAnswerAnimation() override;
 
     [[nodiscard]] QPersistentModelIndex modelIndex() const;
     void setModelIndex(const QPersistentModelIndex &newModelIndex);
@@ -47,5 +47,5 @@ private:
     QSequentialAnimationGroup *mSequencials = nullptr;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity &t);

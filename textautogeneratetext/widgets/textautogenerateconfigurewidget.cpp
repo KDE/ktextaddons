@@ -11,7 +11,7 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateConfigureWidget::TextAutogenerateConfigureWidget(QWidget *parent)
+TextAutoGenerateConfigureWidget::TextAutoGenerateConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mPluginComboBox(new TextAutoGenerateTextConfigureComboWidget(this))
 {
@@ -33,14 +33,14 @@ TextAutogenerateConfigureWidget::TextAutogenerateConfigureWidget(QWidget *parent
     hbox->addWidget(mPluginComboBox);
 }
 
-TextAutogenerateConfigureWidget::~TextAutogenerateConfigureWidget() = default;
+TextAutoGenerateConfigureWidget::~TextAutoGenerateConfigureWidget() = default;
 
-void TextAutogenerateConfigureWidget::saveSettings()
+void TextAutoGenerateConfigureWidget::saveSettings()
 {
     mPluginComboBox->save();
 }
 
-void TextAutogenerateConfigureWidget::loadSettings()
+void TextAutoGenerateConfigureWidget::loadSettings()
 {
     mPluginComboBox->load();
 }

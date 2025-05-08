@@ -10,9 +10,9 @@
 #include <memory>
 namespace TextAutoGenerateText
 {
-class TextAutogenerateEnginePluginPrivate;
+class TextAutoGenerateEnginePluginPrivate;
 /**
- * @brief The TextAutogenerateEnginePlugin class
+ * @brief The TextAutoGenerateEnginePlugin class
  * @author Laurent Montel <montel@kde.org>
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEnginePlugin : public QObject
@@ -23,6 +23,6 @@ public:
     ~TextAutoGenerateEnginePlugin() override;
 
 private:
-    std::unique_ptr<TextAutogenerateEnginePluginPrivate> const d;
+    std::unique_ptr<TextAutoGenerateEnginePluginPrivate> const d;
 };
 }

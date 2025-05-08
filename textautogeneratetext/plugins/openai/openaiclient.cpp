@@ -27,7 +27,7 @@ QString OpenAIClient::translatedName() const
     return i18n("OpenAI");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *OpenAIClient::createTextAutogeneratePlugin()
+TextAutoGenerateText::TextAutoGenerateTextPlugin *OpenAIClient::createTextAutoGeneratePlugin()
 {
     return new OpenAIPlugin(this);
 }

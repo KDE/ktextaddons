@@ -27,13 +27,13 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
+TextAutoGenerateWidget::TextAutoGenerateWidget(QWidget *parent)
     : QWidget{parent}
-    , mTextAutogenerateResultWidget(new TextAutogenerateResultWidget(this))
+    , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(this))
     , mTextAutoGenerateTextLineEditWidget(new TextAutoGenerateTextLineEditWidget(this))
     , mSplitter(new QSplitter(this))
-    , mHistoryWidget(new TextAutogenerateHistoryWidget(this))
-    , mHeaderWidget(new TextAutogenerateHeaderWidget(this))
+    , mHistoryWidget(new TextAutoGenerateHistoryWidget(this))
+    , mHeaderWidget(new TextAutoGenerateHeaderWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -46,19 +46,19 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
 
     mainLayout->addWidget(mSplitter, 1);
 
-    mTextAutogenerateResultWidget->setObjectName(QStringLiteral("mTextAutogenerateResultWidget"));
+    mTextAutoGenerateResultWidget->setObjectName(QStringLiteral("mTextAutoGenerateResultWidget"));
 
     mHistoryWidget->setObjectName(QStringLiteral("mHistoryWidget"));
     mSplitter->addWidget(mHistoryWidget);
-    mSplitter->addWidget(mTextAutogenerateResultWidget);
+    mSplitter->addWidget(mTextAutoGenerateResultWidget);
 
     new KSplitterCollapserButton(mHistoryWidget, mSplitter);
 
     mTextAutoGenerateTextLineEditWidget->setObjectName(QStringLiteral("mTextAutoGenerateTextLineEditWidget"));
     mainLayout->addWidget(mTextAutoGenerateTextLineEditWidget);
-    connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::editingFinished, this, &TextAutogenerateWidget::slotEditingFinished);
+    connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::editingFinished, this, &TextAutoGenerateWidget::slotEditingFinished);
 
-    connect(mHeaderWidget, &TextAutogenerateHeaderWidget::configChanged, this, &TextAutogenerateWidget::slotConfigureChanged);
+    connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::configChanged, this, &TextAutoGenerateWidget::slotConfigureChanged);
 
     connect(TextAutoGenerateManager::self(), &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
         slotEditingFinished(str, {});
@@ -68,29 +68,29 @@ TextAutogenerateWidget::TextAutogenerateWidget(QWidget *parent)
         slotAskMessageRequester(str);
     });
 
-    connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::keyPressed, this, &TextAutogenerateWidget::keyPressedInLineEdit);
-    connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editMessageRequested, this, &TextAutogenerateWidget::slotEditMessage);
-    connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::cancelRequested, this, &TextAutogenerateWidget::slotCancelRequest);
-    connect(mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::refreshAnswerRequested, this, &TextAutogenerateWidget::slotRefreshAnswer);
-    connect(this, &TextAutogenerateWidget::stopEditingMode, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::editingFinished);
-    connect(mHistoryWidget, &TextAutogenerateHistoryWidget::goToDiscussion, mTextAutogenerateResultWidget, &TextAutogenerateResultWidget::goToDiscussion);
-    connect(TextAutoGenerateText::TextAutogenerateEngineLoader::self(), &TextAutoGenerateText::TextAutogenerateEngineLoader::noPluginsFound, this, [this]() {
+    connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::keyPressed, this, &TextAutoGenerateWidget::keyPressedInLineEdit);
+    connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editMessageRequested, this, &TextAutoGenerateWidget::slotEditMessage);
+    connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::cancelRequested, this, &TextAutoGenerateWidget::slotCancelRequest);
+    connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::refreshAnswerRequested, this, &TextAutoGenerateWidget::slotRefreshAnswer);
+    connect(this, &TextAutoGenerateWidget::stopEditingMode, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editingFinished);
+    connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::goToDiscussion, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::goToDiscussion);
+    connect(TextAutoGenerateText::TextAutoGenerateEngineLoader::self(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
         Q_EMIT noPluginsFound(i18n("No plugin found."));
     });
     loadEngine();
     readConfig();
 }
 
-TextAutogenerateWidget::~TextAutogenerateWidget()
+TextAutoGenerateWidget::~TextAutoGenerateWidget()
 {
-    if (mTextAutogeneratePlugin) {
-        mTextAutogeneratePlugin->cancelRequest({});
-        mTextAutogeneratePlugin->deleteLater();
+    if (mTextAutoGeneratePlugin) {
+        mTextAutoGeneratePlugin->cancelRequest({});
+        mTextAutoGeneratePlugin->deleteLater();
     }
     writeConfig();
 }
 
-void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
+void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
 {
     const int key = ev->key();
     if (key == Qt::Key_Escape) {
@@ -100,88 +100,88 @@ void TextAutogenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
             mTextAutoGenerateTextLineEditWidget->setUuid({});
         }
     } else {
-        mTextAutogenerateResultWidget->handleKeyPressEvent(ev);
+        mTextAutoGenerateResultWidget->handleKeyPressEvent(ev);
     }
 }
 
-void TextAutogenerateWidget::writeConfig()
+void TextAutoGenerateWidget::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutogenerateWidget"));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutoGenerateWidget"));
     group.writeEntry("mainSplitter", mSplitter->sizes());
 }
 
-void TextAutogenerateWidget::readConfig()
+void TextAutoGenerateWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutogenerateWidget"));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutoGenerateWidget"));
     const QList<int> size = {100, 400};
 
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
 }
 
-QString TextAutogenerateWidget::textLineEdit() const
+QString TextAutoGenerateWidget::textLineEdit() const
 {
     return mTextAutoGenerateTextLineEditWidget->text();
 }
 
-void TextAutogenerateWidget::loadEngine()
+void TextAutoGenerateWidget::loadEngine()
 {
-    if (mTextAutogeneratePlugin) {
-        disconnect(mTextAutogeneratePlugin);
-        delete mTextAutogeneratePlugin;
-        mTextAutogeneratePlugin = nullptr;
+    if (mTextAutoGeneratePlugin) {
+        disconnect(mTextAutoGeneratePlugin);
+        delete mTextAutoGeneratePlugin;
+        mTextAutoGeneratePlugin = nullptr;
     }
-    TextAutoGenerateText::TextAutogenerateEngineLoader::self()->loadPlugins();
+    TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->loadPlugins();
 
-    mTextAutogenerateClient =
-        TextAutoGenerateText::TextAutogenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutogenerateEngineUtil::loadEngine());
-    if (!mTextAutogenerateClient) {
-        const QString fallBackEngineName = TextAutoGenerateText::TextAutogenerateEngineLoader::self()->fallbackFirstEngine();
+    mTextAutoGenerateClient =
+        TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
+    if (!mTextAutoGenerateClient) {
+        const QString fallBackEngineName = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
-            mTextAutogenerateClient = TextAutoGenerateText::TextAutogenerateEngineLoader::self()->createTextAutoGenerateTextClient(fallBackEngineName);
+            mTextAutoGenerateClient = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(fallBackEngineName);
         }
     }
-    if (mTextAutogenerateClient) {
-        mHeaderWidget->updateEngineName(TextAutoGenerateText::TextAutogenerateEngineLoader::self()->generateDisplayName(mTextAutogenerateClient));
-        mTextAutogeneratePlugin = mTextAutogenerateClient->createTextAutogeneratePlugin();
-        connect(mTextAutogeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::finished, this, &TextAutogenerateWidget::slotAutogenerateFinished);
-        connect(mTextAutogeneratePlugin,
+    if (mTextAutoGenerateClient) {
+        mHeaderWidget->updateEngineName(TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->generateDisplayName(mTextAutoGenerateClient));
+        mTextAutoGeneratePlugin = mTextAutoGenerateClient->createTextAutoGeneratePlugin();
+        connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::finished, this, &TextAutoGenerateWidget::slotAutogenerateFinished);
+        connect(mTextAutoGeneratePlugin,
                 &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred,
                 this,
-                &TextAutogenerateWidget::slotAutogenerateFailed);
-        connect(mTextAutogeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, &TextAutogenerateWidget::slotInitializeDone);
+                &TextAutoGenerateWidget::slotAutogenerateFailed);
+        connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
     } else {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutogenerateEngineUtil::loadEngine();
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
     }
 }
 
-void TextAutogenerateWidget::slotConfigureChanged()
+void TextAutoGenerateWidget::slotConfigureChanged()
 {
     loadEngine();
 }
 
-void TextAutogenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
+void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
-        mTextAutogeneratePlugin->sendMessage(str);
+        mTextAutoGeneratePlugin->sendMessage(str);
     } else {
-        mTextAutogeneratePlugin->editMessage(uuid, str);
+        mTextAutoGeneratePlugin->editMessage(uuid, str);
     }
-    mTextAutogenerateResultWidget->editingFinished(uuid);
+    mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
 
-void TextAutogenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)
+void TextAutoGenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)
 {
-    qDebug() << " TextAutogenerateWidget::slotAutogenerateFinished " << msg;
-    // mTextAutogenerateResultWidget->addMessage(msg);
+    qDebug() << " TextAutoGenerateWidget::slotAutogenerateFinished " << msg;
+    // mTextAutoGenerateResultWidget->addMessage(msg);
 }
 
-void TextAutogenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
+void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 {
-    qDebug() << " TextAutogenerateWidget::slotAutogenerateFailed " << errorMessage;
+    qDebug() << " TextAutoGenerateWidget::slotAutogenerateFailed " << errorMessage;
     Q_EMIT pluginBroken(errorMessage);
 }
 
-void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
+void TextAutoGenerateWidget::slotEditMessage(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
@@ -189,19 +189,19 @@ void TextAutogenerateWidget::slotEditMessage(const QModelIndex &index)
     mTextAutoGenerateTextLineEditWidget->setText(messageStr);
 }
 
-void TextAutogenerateWidget::slotCancelRequest(const QByteArray &uuid)
+void TextAutoGenerateWidget::slotCancelRequest(const QByteArray &uuid)
 {
-    mTextAutogeneratePlugin->cancelRequest(uuid);
+    mTextAutoGeneratePlugin->cancelRequest(uuid);
 }
 
-void TextAutogenerateWidget::slotRefreshAnswer(const QModelIndex &index)
+void TextAutoGenerateWidget::slotRefreshAnswer(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
-    mTextAutogeneratePlugin->editMessage(uuid, messageStr);
+    mTextAutoGeneratePlugin->editMessage(uuid, messageStr);
 }
 
-void TextAutogenerateWidget::slotInitializeDone()
+void TextAutoGenerateWidget::slotInitializeDone()
 {
     mPluginWasInitialized = true;
     for (const auto &str : std::as_const(mAskMessageList)) {
@@ -210,7 +210,7 @@ void TextAutogenerateWidget::slotInitializeDone()
     mAskMessageList.clear();
 }
 
-void TextAutogenerateWidget::slotAskMessageRequester(const QString &str)
+void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
 {
     if (!mPluginWasInitialized) {
         mAskMessageList.append(str);

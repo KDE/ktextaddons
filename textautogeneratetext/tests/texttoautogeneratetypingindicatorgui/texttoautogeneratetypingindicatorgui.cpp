@@ -11,11 +11,11 @@
 
 DotsWidget::DotsWidget(QWidget *parent)
     : QWidget(parent)
-    , mAnimation(new TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation(this))
+    , mAnimation(new TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation(this))
 {
     setFixedSize(400, 400);
     mAnimation->start();
-    connect(mAnimation, &TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::valueChanged, this, [this]() {
+    connect(mAnimation, &TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation::valueChanged, this, [this]() {
         update();
     });
 }
@@ -32,7 +32,7 @@ void DotsWidget::paintEvent(QPaintEvent *event)
     int spacing = 40;
 
     for (int i = 0; i < mAnimation->count(); ++i) {
-        const TextAutoGenerateText::TextAutogenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = mAnimation->value(i);
+        const TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = mAnimation->value(i);
         painter.setOpacity(value.opacity);
         painter.save();
         painter.translate(spacing + i * (dotSize + spacing), height() / 2);

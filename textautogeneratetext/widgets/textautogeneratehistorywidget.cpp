@@ -12,9 +12,9 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
+TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(QWidget *parent)
     : QWidget{parent}
-    , mTextAutogenerateHistoryListView(new TextAutogenerateHistoryListView(this))
+    , mTextAutoGenerateHistoryListView(new TextAutoGenerateHistoryListView(this))
     , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -28,13 +28,13 @@ TextAutogenerateHistoryWidget::TextAutogenerateHistoryWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
-    mTextAutogenerateHistoryListView->setObjectName("mTextAutogenerateHistoryListView"_L1);
-    mainLayout->addWidget(mTextAutogenerateHistoryListView);
+    mTextAutoGenerateHistoryListView->setObjectName("mTextAutoGenerateHistoryListView"_L1);
+    mainLayout->addWidget(mTextAutoGenerateHistoryListView);
 
-    connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutogenerateHistoryListView, &TextAutogenerateHistoryListView::slotSearchTextChanged);
-    connect(mTextAutogenerateHistoryListView, &TextAutogenerateHistoryListView::goToDiscussion, this, &TextAutogenerateHistoryWidget::goToDiscussion);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::slotSearchTextChanged);
+    connect(mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::goToDiscussion, this, &TextAutoGenerateHistoryWidget::goToDiscussion);
 }
 
-TextAutogenerateHistoryWidget::~TextAutogenerateHistoryWidget() = default;
+TextAutoGenerateHistoryWidget::~TextAutoGenerateHistoryWidget() = default;
 
 #include "moc_textautogeneratehistorywidget.cpp"

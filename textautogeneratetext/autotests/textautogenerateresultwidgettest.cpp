@@ -6,14 +6,14 @@
 
 #include "textautogenerateresultwidgettest.h"
 #include <QTest>
-QTEST_MAIN(TextAutogenerateResultWidgetTest)
+QTEST_MAIN(TextAutoGenerateResultWidgetTest)
 
-TextAutogenerateResultWidgetTest::TextAutogenerateResultWidgetTest(QObject *parent)
+TextAutoGenerateResultWidgetTest::TextAutoGenerateResultWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutogenerateResultWidgetTest::shouldHaveDefaultValues()
+void TextAutoGenerateResultWidgetTest::shouldHaveDefaultValues()
 {
     // TODO
 }

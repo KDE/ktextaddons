@@ -11,15 +11,15 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextConfigureComboWidget;
 /**
- * @brief The TextAutogenerateConfigureWidget class
+ * @brief The TextAutoGenerateConfigureWidget class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutogenerateConfigureWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutogenerateConfigureWidget(QWidget *parent = nullptr);
-    ~TextAutogenerateConfigureWidget() override;
+    explicit TextAutoGenerateConfigureWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateConfigureWidget() override;
 
     void loadSettings();
     void saveSettings();
