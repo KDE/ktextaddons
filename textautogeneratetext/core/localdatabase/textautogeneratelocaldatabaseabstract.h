@@ -25,6 +25,7 @@ public:
     [[nodiscard]] QString dbFileName(const QString &identifier) const;
 
 protected:
+    [[nodiscard]] QString databaseName() const;
     const QString mBasePath;
     const DatabaseType mDatabaseType = DatabaseType::Unknown;
 };

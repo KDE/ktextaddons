@@ -27,6 +27,13 @@ add_library(KF6TextAutoGenerateText
     core/localdatabase/textautogeneratelocaldatabaseabstract.h core/localdatabase/textautogeneratelocaldatabaseabstract.cpp)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
+ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext.database
+    DESCRIPTION "KF6 (TextAutoGenerateText core database)"
+    EXPORT KTEXTADDONS
+)
+
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_debug.h
     IDENTIFIER TEXTAUTOGENERATETEXT_CORE_LOG
     CATEGORY_NAME org.kde.kf.textautogeneratetext
