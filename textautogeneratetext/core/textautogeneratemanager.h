@@ -25,8 +25,6 @@ public:
     explicit TextAutoGenerateManager(QObject *parent = nullptr);
     ~TextAutoGenerateManager() override;
 
-    static TextAutoGenerateManager *self();
-
     void ask(const QString &msg);
 
     [[nodiscard]] TextAutoGenerateMessagesModel *textAutoGenerateMessagesModel() const;

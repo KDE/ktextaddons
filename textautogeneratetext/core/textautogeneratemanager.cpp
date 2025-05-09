@@ -22,12 +22,6 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 
 TextAutoGenerateManager::~TextAutoGenerateManager() = default;
 
-TextAutoGenerateManager *TextAutoGenerateManager::self()
-{
-    static TextAutoGenerateManager s_self;
-    return &s_self;
-}
-
 void TextAutoGenerateManager::ask(const QString &msg)
 {
     Q_EMIT askMessageRequested(msg);

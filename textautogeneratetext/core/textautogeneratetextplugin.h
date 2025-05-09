@@ -11,11 +11,12 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessage;
+class TextAutoGenerateTextPluginPrivate;
+class TextAutoGenerateManager;
 /**
  * @brief The TextAutoGenerateTextPlugin class
  * @author Laurent Montel <montel@kde.org>
  */
-class TextAutoGenerateTextPluginPrivate;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
@@ -44,6 +45,8 @@ public:
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
+    void setManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);

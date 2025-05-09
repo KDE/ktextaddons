@@ -34,6 +34,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     , mSplitter(new QSplitter(this))
     , mHistoryWidget(new TextAutoGenerateHistoryWidget(manager, this))
     , mHeaderWidget(new TextAutoGenerateHeaderWidget(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -149,6 +150,7 @@ void TextAutoGenerateWidget::loadEngine()
     if (mTextAutoGenerateClient) {
         mHeaderWidget->updateEngineName(TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->generateDisplayName(mTextAutoGenerateClient));
         mTextAutoGeneratePlugin = mTextAutoGenerateClient->createTextAutoGeneratePlugin();
+        mTextAutoGeneratePlugin->setManager(mManager);
         connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::finished, this, &TextAutoGenerateWidget::slotAutogenerateFinished);
         connect(mTextAutoGeneratePlugin,
                 &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred,

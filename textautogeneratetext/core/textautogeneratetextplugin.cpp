@@ -22,6 +22,7 @@ public:
     bool hasError = false;
     bool isReady = false;
     QString currentModel;
+    TextAutoGenerateManager *manager = nullptr;
 };
 
 TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
@@ -51,7 +52,7 @@ void TextAutoGenerateTextPlugin::setReady(bool newReady)
 void TextAutoGenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)
 {
     if (ready()) {
-        const QByteArray llmUuid = TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->editMessage(uuid, str);
+        const QByteArray llmUuid = d->manager->textAutoGenerateMessagesModel()->editMessage(uuid, str);
         sendToLLM(str, llmUuid);
     }
 }
@@ -78,8 +79,8 @@ void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->addMessage(std::move(msg));
-        TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->addMessage(std::move(msgLlm));
+        d->manager->textAutoGenerateMessagesModel()->addMessage(std::move(msg));
+        d->manager->textAutoGenerateMessagesModel()->addMessage(std::move(msgLlm));
         sendToLLM(str, llmUuid);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
@@ -94,6 +95,16 @@ QString TextAutoGenerateTextPlugin::currentModel() const
 void TextAutoGenerateTextPlugin::setCurrentModel(const QString &newCurrentModel)
 {
     d->currentModel = newCurrentModel;
+}
+
+void TextAutoGenerateTextPlugin::setManager(TextAutoGenerateManager *manager)
+{
+    d->manager = manager;
+}
+
+TextAutoGenerateManager *TextAutoGenerateTextPlugin::manager() const
+{
+    return d->manager;
 }
 
 #include "moc_textautogeneratetextplugin.cpp"
