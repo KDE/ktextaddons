@@ -29,7 +29,7 @@
 using namespace TextAutoGenerateText;
 TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(this))
+    , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(manager, this))
     , mTextAutoGenerateTextLineEditWidget(new TextAutoGenerateTextLineEditWidget(this))
     , mSplitter(new QSplitter(this))
     , mHistoryWidget(new TextAutoGenerateHistoryWidget(this))

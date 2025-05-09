@@ -10,9 +10,9 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(QWidget *parent)
+TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mTextAutoGenerateListView(new TextAutoGenerateListView(this))
+    , mTextAutoGenerateListView(new TextAutoGenerateListView(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));

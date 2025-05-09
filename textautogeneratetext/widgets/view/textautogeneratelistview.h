@@ -8,13 +8,14 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateMessage;
 class TextAutoGenerateListViewDelegate;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateListView(QWidget *parent = nullptr);
+    explicit TextAutoGenerateListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateListView() override;
 
     void handleKeyPressEvent(QKeyEvent *ev);
@@ -62,5 +63,6 @@ private:
     QPoint mPressedPosition;
     QPersistentModelIndex mCurrentIndex = {};
     TextAutoGenerateListViewDelegate *const mDelegate;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

@@ -9,6 +9,7 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateListView;
 /**
  * @brief The TextAutoGenerateResultWidget class
@@ -18,7 +19,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateResultWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateResultWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateResultWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateResultWidget() override;
 
     void handleKeyPressEvent(QKeyEvent *ev);
