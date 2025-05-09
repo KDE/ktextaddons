@@ -22,6 +22,17 @@ QString TextAutoGenerateLocalDatabaseAbstract::dbFileName(const QString &identif
     return dirPath + QLatin1Char('/') + identifier + QStringLiteral(".sqlite");
 }
 
+QString TextAutoGenerateLocalDatabaseAbstract::schemaDatabaseStr() const
+{
+    return schemaDataBase();
+}
+
+QString TextAutoGenerateLocalDatabaseAbstract::schemaDataBase() const
+{
+    Q_ASSERT(false);
+    return {};
+}
+
 QString TextAutoGenerateLocalDatabaseAbstract::databaseName() const
 {
     QString prefix;

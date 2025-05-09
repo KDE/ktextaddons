@@ -24,7 +24,11 @@ public:
 
     [[nodiscard]] QString dbFileName(const QString &identifier) const;
 
+    // Only for test!
+    [[nodiscard]] QString schemaDatabaseStr() const;
+
 protected:
+    [[nodiscard]] virtual QString schemaDataBase() const;
     [[nodiscard]] QString databaseName() const;
     const QString mBasePath;
     const DatabaseType mDatabaseType = DatabaseType::Unknown;
