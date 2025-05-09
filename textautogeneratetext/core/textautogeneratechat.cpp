@@ -68,6 +68,14 @@ void TextAutoGenerateChat::setTitle(const QString &newTitle)
     mTitle = newTitle;
 }
 
+qint64 TextAutoGenerateChat::dateTime() const
+{
+    if (!mMessages.isEmpty()) {
+        return mMessages.constFirst().dateTime();
+    }
+    return -1;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
 {
     d.space() << "title:" << t.title();

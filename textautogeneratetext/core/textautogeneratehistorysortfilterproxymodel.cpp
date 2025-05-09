@@ -4,16 +4,15 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratehistorysortfilterproxymodel.h"
-#include "textautogeneratemessage.h"
-#include "textautogeneratemessagesmodel.h"
+#include "textautogeneratechatsmodel.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
-    setSortRole(TextAutoGenerateMessagesModel::DateTimeRole);
-    setFilterRole(TextAutoGenerateMessagesModel::MessageRole);
+    setSortRole(TextAutoGenerateChatsModel::DateTime);
+    setFilterRole(TextAutoGenerateChatsModel::Title);
     sort(0);
     setRecursiveFilteringEnabled(true);
 }
@@ -27,11 +26,6 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
     if (!source_parent.isValid()) {
         return false;
     }
-    const TextAutoGenerateMessage::Sender sender =
-        sourceModel()->index(source_row, 0, source_parent).data(TextAutoGenerateMessagesModel::SenderRole).value<TextAutoGenerateMessage::Sender>();
-    if (sender != TextAutoGenerateMessage::Sender::User) {
-        return false;
-    }
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
@@ -42,8 +36,8 @@ bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &le
     }
     // assumes that we have a section → channels hierarchy
     if (left.parent().isValid() && right.parent().isValid()) {
-        const qint64 leftDateTime = sourceModel()->data(left, TextAutoGenerateMessagesModel::DateTimeRole).toDouble();
-        const qint64 rightDateTime = sourceModel()->data(right, TextAutoGenerateMessagesModel::DateTimeRole).toDouble();
+        const qint64 leftDateTime = sourceModel()->data(left, TextAutoGenerateChatsModel::DateTime).toDouble();
+        const qint64 rightDateTime = sourceModel()->data(right, TextAutoGenerateChatsModel::DateTime).toDouble();
         return leftDateTime < rightDateTime;
     }
     return left.row() < right.row();

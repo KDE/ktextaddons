@@ -19,6 +19,7 @@ public:
         Favorite,
         Identifier,
         Section,
+        DateTime,
     };
 
     enum class SectionHistory : uint8_t {
@@ -49,6 +50,7 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateChat &chat) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
 };
 }

@@ -59,6 +59,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return chat.archived();
     case Section:
         return QVariant::fromValue(section(chat));
+    case DateTime:
+        return dateTime(chat);
     }
     return {};
 }
@@ -66,6 +68,11 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
 QString TextAutoGenerateChatsModel::title(const TextAutoGenerateChat &chat) const
 {
     return chat.title();
+}
+
+qint64 TextAutoGenerateChatsModel::dateTime(const TextAutoGenerateChat &chat) const
+{
+    return chat.dateTime();
 }
 
 bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant &value, int role)
@@ -95,6 +102,10 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
         Q_EMIT dataChanged(newIndex, newIndex);
         return true;
     }
+    case ChatRoles::Identifier:
+    case ChatRoles::Section:
+    case ChatRoles::DateTime:
+        break;
     }
     return QAbstractListModel::setData(idx, value, role);
 }

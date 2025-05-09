@@ -34,6 +34,8 @@ public:
     [[nodiscard]] QString title() const;
     void setTitle(const QString &newTitle);
 
+    [[nodiscard]] qint64 dateTime() const;
+
 private:
     QList<TextAutoGenerateText::TextAutoGenerateMessage> mMessages;
     QByteArray mIdentifier;
