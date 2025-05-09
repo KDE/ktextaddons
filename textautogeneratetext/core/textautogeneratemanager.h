@@ -46,6 +46,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
+    void addMessage(const TextAutoGenerateMessage &msg);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

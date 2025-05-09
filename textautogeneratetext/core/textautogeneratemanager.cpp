@@ -86,6 +86,11 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
     return mTextAutoGeneratePlugin;
 }
 
+void TextAutoGenerateManager::addMessage(const TextAutoGenerateMessage &msg)
+{
+    textAutoGenerateMessagesModel()->addMessage(msg);
+}
+
 void TextAutoGenerateManager::loadEngine()
 {
     if (mTextAutoGeneratePlugin) {

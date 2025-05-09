@@ -79,8 +79,8 @@ void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        d->manager->textAutoGenerateMessagesModel()->addMessage(std::move(msg));
-        d->manager->textAutoGenerateMessagesModel()->addMessage(std::move(msgLlm));
+        d->manager->addMessage(std::move(msg));
+        d->manager->addMessage(std::move(msgLlm));
         sendToLLM(str, llmUuid);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
