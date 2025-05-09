@@ -20,6 +20,12 @@ QString TextAutoGenerateLocalDatabaseUtils::localMessagesDatabasePath()
         + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::Messages);
 }
 
+QString TextAutoGenerateLocalDatabaseUtils::localChatsDatabasePath()
+{
+    return TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
+        + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::Chats);
+}
+
 QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath pathType)
 {
     switch (pathType) {
