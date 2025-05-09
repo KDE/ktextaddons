@@ -57,6 +57,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return chat.favorite();
     case Archived:
         return chat.archived();
+    case Section:
+        return QVariant::fromValue(section(chat));
     }
     return {};
 }
@@ -124,6 +126,14 @@ QString TextAutoGenerateChatsModel::sectionName(SectionHistory sectionId)
         break;
     }
     return QStringLiteral("ERROR");
+}
+
+TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateChat &chat) const
+{
+    if (chat.messages().isEmpty()) {
+        return TextAutoGenerateChatsModel::SectionHistory::Unknown;
+    }
+    return section(chat.messages().constLast());
 }
 
 TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateMessage &m) const

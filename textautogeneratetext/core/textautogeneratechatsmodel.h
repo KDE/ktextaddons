@@ -18,6 +18,7 @@ public:
         Archived,
         Favorite,
         Identifier,
+        Section,
     };
 
     enum class SectionHistory : uint8_t {
@@ -42,11 +43,12 @@ public:
     void setChats(const QList<TextAutoGenerateChat> &newMessages);
 
     void addChat(const TextAutoGenerateChat &chat);
+    [[nodiscard]] static QString sectionName(SectionHistory sectionId);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString sectionName(SectionHistory sectionId);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
 };
 }
