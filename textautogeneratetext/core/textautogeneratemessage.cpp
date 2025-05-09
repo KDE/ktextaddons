@@ -8,6 +8,7 @@
 #include "core/textautogeneratemessageutils.h"
 
 #include <QDateTime>
+#include <QJsonDocument>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

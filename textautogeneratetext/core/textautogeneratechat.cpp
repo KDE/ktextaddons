@@ -5,6 +5,7 @@
 */
 #include "textautogeneratechat.h"
 
+#include <QJsonDocument>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
