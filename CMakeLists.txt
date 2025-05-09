@@ -60,7 +60,7 @@ if (BUILD_QUICK)
     include(ECMQmlModule)
 endif ()
 
-find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml Sql)
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n
