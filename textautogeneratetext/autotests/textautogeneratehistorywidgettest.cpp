@@ -18,7 +18,7 @@ TextAutoGenerateHistoryWidgetTest::TextAutoGenerateHistoryWidgetTest(QWidget *pa
 
 void TextAutoGenerateHistoryWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateHistoryWidget w;
+    TextAutoGenerateText::TextAutoGenerateHistoryWidget w(nullptr);
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 

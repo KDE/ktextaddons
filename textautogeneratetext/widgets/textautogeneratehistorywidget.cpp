@@ -12,9 +12,9 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(QWidget *parent)
+TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mTextAutoGenerateHistoryListView(new TextAutoGenerateHistoryListView(this))
+    , mTextAutoGenerateHistoryListView(new TextAutoGenerateHistoryListView(manager, this))
     , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);

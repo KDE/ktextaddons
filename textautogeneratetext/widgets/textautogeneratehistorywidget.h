@@ -9,6 +9,7 @@
 class QLineEdit;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateHistoryListView;
 /**
  * @brief The TextAutoGenerateHistoryWidget class
@@ -18,7 +19,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryWidget : public Q
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateHistoryWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateHistoryWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateHistoryWidget() override;
 
 Q_SIGNALS:

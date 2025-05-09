@@ -32,7 +32,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(manager, this))
     , mTextAutoGenerateTextLineEditWidget(new TextAutoGenerateTextLineEditWidget(this))
     , mSplitter(new QSplitter(this))
-    , mHistoryWidget(new TextAutoGenerateHistoryWidget(this))
+    , mHistoryWidget(new TextAutoGenerateHistoryWidget(manager, this))
     , mHeaderWidget(new TextAutoGenerateHeaderWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);

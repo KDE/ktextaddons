@@ -10,13 +10,14 @@
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateHistoryListHeadingsProxyModel;
 class TextAutoGenerateHistorySortFilterProxyModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListView : public QTreeView
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateHistoryListView(QWidget *parent = nullptr);
+    explicit TextAutoGenerateHistoryListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateHistoryListView() override;
 
     void slotSearchTextChanged(const QString &str);
@@ -32,5 +33,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotClicked(const QModelIndex &idx);
     TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
     TextAutoGenerateHistoryListHeadingsProxyModel *const mHistoryListHeadingsProxyModel;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
