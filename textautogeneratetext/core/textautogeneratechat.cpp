@@ -5,6 +5,9 @@
 */
 #include "textautogeneratechat.h"
 
+#include <QJsonObject>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateChat::TextAutoGenerateChat() = default;
 
@@ -74,6 +77,34 @@ qint64 TextAutoGenerateChat::dateTime() const
         return mMessages.constFirst().dateTime();
     }
     return -1;
+}
+
+QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, bool toBinary)
+{
+    QJsonDocument d;
+    QJsonObject o;
+    if (!chat.mTitle.isEmpty()) {
+        o["title"_L1] = chat.mTitle;
+    }
+    o["favorite"_L1] = chat.mFavorite;
+    o["archived"_L1] = chat.mArchived;
+    o["identifier"_L1] = QString::fromLatin1(chat.mIdentifier);
+
+    if (toBinary) {
+        return QCborValue::fromJsonValue(o).toCbor();
+    }
+    d.setObject(o);
+    return d.toJson(QJsonDocument::Indented);
+}
+
+TextAutoGenerateChat TextAutoGenerateChat::deserialize(const QJsonObject &o)
+{
+    TextAutoGenerateChat chat;
+    chat.setTitle(o["title"_L1].toString());
+    chat.setFavorite(o["favorite"_L1].toBool(false));
+    chat.setArchived(o["archived"_L1].toBool(false));
+    chat.setIdentifier(o["archived"_L1].toString().toLatin1());
+    return chat;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)

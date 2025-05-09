@@ -8,7 +8,8 @@
 #include "core/textautogeneratemessageutils.h"
 
 #include <QDateTime>
-
+#include <QJsonObject>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
@@ -166,6 +167,62 @@ TextAutoGenerateTextContext TextAutoGenerateMessage::context() const
 void TextAutoGenerateMessage::setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext)
 {
     mContext = newContext;
+}
+
+QString TextAutoGenerateMessage::senderToString() const
+{
+    switch (mSender) {
+    case Sender::Unknown:
+        return {};
+    case Sender::User:
+        return QStringLiteral("user");
+    case Sender::LLM:
+        return QStringLiteral("llm");
+    }
+    Q_UNREACHABLE();
+}
+
+TextAutoGenerateMessage::Sender TextAutoGenerateMessage::senderFromString(const QString &str)
+{
+    if (str == "user"_L1) {
+        return TextAutoGenerateMessage::Sender::User;
+    } else if (str == "llm"_L1) {
+        return TextAutoGenerateMessage::Sender::LLM;
+    } else {
+        return TextAutoGenerateMessage::Sender::Unknown;
+    }
+}
+
+QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg, bool toBinary)
+{
+    QJsonDocument d;
+    QJsonObject o;
+    o["identifier"_L1] = QString::fromLatin1(msg.mUuid);
+    o["answerIdentifier"_L1] = QString::fromLatin1(msg.mAnswerUuid);
+    o["text"_L1] = msg.mContent;
+    o["modelName"_L1] = msg.mModelName;
+    o["engineName"_L1] = msg.mEngineName;
+    o["sender"_L1] = msg.senderToString();
+    o["dateTime"_L1] = msg.mDateTime;
+    if (toBinary) {
+        return QCborValue::fromJsonValue(o).toCbor();
+    }
+    d.setObject(o);
+    return d.toJson(QJsonDocument::Indented);
+}
+
+TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &o)
+{
+    TextAutoGenerateMessage msg;
+
+    msg.setUuid(o["identifier"_L1].toString().toLatin1());
+    msg.setAnswerUuid(o["answerIdentifier"_L1].toString().toLatin1());
+    msg.setContent(o["text"_L1].toString());
+    msg.setModelName(o["modelName"_L1].toString());
+    msg.setEngineName(o["engineName"_L1].toString());
+    msg.setDateTime(o["dateTime"_L1].toInteger());
+    msg.setSender(senderFromString(o["sender"_L1].toString()));
+    return msg;
 }
 
 #include "moc_textautogeneratemessage.cpp"

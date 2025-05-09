@@ -36,6 +36,9 @@ public:
 
     [[nodiscard]] qint64 dateTime() const;
 
+    static QByteArray serialize(const TextAutoGenerateChat &msg, bool toBinary = true);
+    [[nodiscard]] static TextAutoGenerateChat deserialize(const QJsonObject &source);
+
 private:
     QList<TextAutoGenerateText::TextAutoGenerateMessage> mMessages;
     QByteArray mIdentifier;
