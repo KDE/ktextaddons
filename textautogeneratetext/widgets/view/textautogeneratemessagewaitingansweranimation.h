@@ -12,6 +12,7 @@
 class QSequentialAnimationGroup;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMessageWaitingAnswerAnimation : public QObject
 {
     Q_OBJECT
@@ -21,7 +22,7 @@ public:
         qreal opacity = 0.0;
     };
 
-    explicit TextAutoGenerateMessageWaitingAnswerAnimation(QObject *parent = nullptr);
+    explicit TextAutoGenerateMessageWaitingAnswerAnimation(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateMessageWaitingAnswerAnimation() override;
 
     [[nodiscard]] QPersistentModelIndex modelIndex() const;

@@ -13,26 +13,29 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAnswerAnimation(QObject *parent)
+TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAnswerAnimation(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                             QObject *parent)
     : QObject{parent}
 {
     createAnimations();
-    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(),
-            &QAbstractItemModel::dataChanged,
-            this,
-            [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+    if (manager) {
+        connect(manager->textAutoGenerateMessagesModel(),
+                &QAbstractItemModel::dataChanged,
+                this,
+                [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
                     if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                        const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
-                        if (!inProgress) {
-                            if (mModelIndex == topLeft) {
-                                Q_EMIT waitingAnswerDone(topLeft);
-                                stopAndDelete();
+                        if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+                            const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
+                            if (!inProgress) {
+                                if (mModelIndex == topLeft) {
+                                    Q_EMIT waitingAnswerDone(topLeft);
+                                    stopAndDelete();
+                                }
                             }
                         }
                     }
-                }
-            });
+                });
+    }
 }
 
 TextAutoGenerateMessageWaitingAnswerAnimation::~TextAutoGenerateMessageWaitingAnswerAnimation() = default;

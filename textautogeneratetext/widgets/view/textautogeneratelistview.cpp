@@ -318,7 +318,7 @@ void TextAutoGenerateListView::setChatId(const QByteArray &chatId)
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
 {
-    auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(this);
+    auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(mManager, this);
     animation->setModelIndex(index);
     connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
         qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation start";

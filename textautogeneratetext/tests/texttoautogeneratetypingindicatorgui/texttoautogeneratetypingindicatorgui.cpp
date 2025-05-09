@@ -11,7 +11,7 @@
 
 DotsWidget::DotsWidget(QWidget *parent)
     : QWidget(parent)
-    , mAnimation(new TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation(this))
+    , mAnimation(new TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation(nullptr, this))
 {
     setFixedSize(400, 400);
     mAnimation->start();
