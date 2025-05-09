@@ -45,16 +45,10 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
         return !message.inProgress();
     case UuidRole:
         return message.uuid();
-    case TopicRole:
-        return message.topic();
     case MouseHoverRole:
         return message.mouseHover();
-    case ArchivedRole:
-        return message.archived();
     case EditingRole:
         return message.editingMode();
-    case SectionRole:
-        return QVariant::fromValue(section(message));
     case WaitingAnswerRole:
         return waitingAnswer(message);
     case ModelInfoRole:
@@ -69,24 +63,6 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
         return {};
     }
     return i18n("Engine: %1\nModel: %2", m.engineName(), m.modelName());
-}
-
-TextAutoGenerateMessagesModel::SectionHistory TextAutoGenerateMessagesModel::section(const TextAutoGenerateMessage &m) const
-{
-    if (m.dateTime() == -1) {
-        return TextAutoGenerateMessagesModel::SectionHistory::Unknown;
-    }
-    const QDate d = QDateTime::fromSecsSinceEpoch(m.dateTime()).date();
-    if (d == QDate::currentDate()) {
-        return TextAutoGenerateMessagesModel::SectionHistory::Today;
-    } else if (d < QDate::currentDate().addDays(7)) {
-        return TextAutoGenerateMessagesModel::SectionHistory::LessThanSevenDays;
-    } else if (d < QDate::currentDate().addDays(30)) {
-        return TextAutoGenerateMessagesModel::SectionHistory::LessThanThirtyDays;
-    } else {
-        return TextAutoGenerateMessagesModel::SectionHistory::Later;
-    }
-    return TextAutoGenerateMessagesModel::SectionHistory::Unknown;
 }
 
 QList<TextAutoGenerateMessage> TextAutoGenerateMessagesModel::messages() const
@@ -264,27 +240,6 @@ bool TextAutoGenerateMessagesModel::cancelRequest(const QModelIndex &index)
     return setData(index, false, TextAutoGenerateMessagesModel::FinishedRole);
 }
 
-QString TextAutoGenerateMessagesModel::sectionName(SectionHistory sectionId)
-{
-    switch (sectionId) {
-    case TextAutoGenerateMessagesModel::SectionHistory::Favorite:
-        return i18n("Favorite");
-    case TextAutoGenerateMessagesModel::SectionHistory::Today:
-        return i18n("Today");
-    case TextAutoGenerateMessagesModel::SectionHistory::LessThanSevenDays:
-        return i18n("7 days previous");
-    case TextAutoGenerateMessagesModel::SectionHistory::LessThanThirtyDays:
-        return i18n("30 days previous");
-    case TextAutoGenerateMessagesModel::SectionHistory::Later:
-        return i18n("Later");
-    case TextAutoGenerateMessagesModel::SectionHistory::Unknown:
-        return i18n("Unknown");
-    case TextAutoGenerateMessagesModel::SectionHistory::NSections:
-        break;
-    }
-    return QStringLiteral("ERROR");
-}
-
 bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
     if (!idx.isValid()) {
@@ -294,12 +249,6 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
     const int id = idx.row();
     TextAutoGenerateMessage &msg = mMessages[id];
     switch (role) {
-    case MessageRoles::TopicRole: {
-        msg.setTopic(value.toString());
-        const QModelIndex newIndex = index(idx.row(), MessageRoles::TopicRole);
-        Q_EMIT dataChanged(newIndex, newIndex);
-        return true;
-    }
     case MessageRoles::MouseHoverRole:
         msg.setMouseHover(value.toBool());
         Q_EMIT dataChanged(idx, idx, {MessageRoles::MouseHoverRole});
@@ -316,8 +265,6 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
     case MessageRoles::SenderRole:
     case MessageRoles::DateTimeRole:
     case MessageRoles::UuidRole:
-    case MessageRoles::ArchivedRole:
-    case MessageRoles::SectionRole:
     case MessageRoles::WaitingAnswerRole:
     case MessageRoles::ModelInfoRole:
         return false;

@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratehistorylistviewdelegate.h"
-#include "core/textautogeneratemessagesmodel.h"
+#include "core/textautogeneratechatsmodel.h"
 #include <QAbstractItemView>
 #include <QHelpEvent>
 #include <QLineEdit>
@@ -29,7 +29,7 @@ bool TextAutoGenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
         return false;
     }
     if (helpEvent->type() == QEvent::ToolTip) {
-        const QString subject = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
+        const QString subject = index.data(TextAutoGenerateChatsModel::Title).toString();
         QToolTip::showText(helpEvent->globalPos(), subject, view);
         return true;
     }
@@ -48,10 +48,7 @@ void TextAutoGenerateHistoryListViewDelegate::setEditorData(QWidget *editor, con
 {
     QLineEdit *lineEdit = qobject_cast<QLineEdit *>(editor);
     if (lineEdit) {
-        QString text = index.data(TextAutoGenerateMessagesModel::TopicRole).toString();
-        if (text.isEmpty()) {
-            text = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
-        }
+        const QString text = index.data(TextAutoGenerateChatsModel::Title).toString();
         lineEdit->setText(text);
     }
 }
@@ -60,7 +57,7 @@ void TextAutoGenerateHistoryListViewDelegate::setModelData(QWidget *editor, QAbs
 {
     QLineEdit *lineEdit = qobject_cast<QLineEdit *>(editor);
     if (lineEdit) {
-        model->setData(index, lineEdit->text(), TextAutoGenerateMessagesModel::TopicRole);
+        model->setData(index, lineEdit->text(), TextAutoGenerateChatsModel::Title);
     }
 }
 

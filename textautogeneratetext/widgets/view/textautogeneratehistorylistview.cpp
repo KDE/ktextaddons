@@ -6,7 +6,6 @@
 
 #include "textautogeneratehistorylistview.h"
 #include "core/textautogeneratehistorylistheadingsproxymodel.h"
-#include "core/textautogeneratehistorymodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessagesmodel.h"
@@ -30,10 +29,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(QWidget *parent
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setItemDelegate(new TextAutoGenerateHistoryListViewDelegate(this));
 
-    auto historyModel = new TextAutoGenerateHistoryModel(this);
-    historyModel->setSourceModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
-
-    mHistoryListHeadingsProxyModel->setSourceModel(historyModel);
+    mHistoryListHeadingsProxyModel->setSourceModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
     setModel(mHistoryProxyModel);

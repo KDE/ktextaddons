@@ -25,23 +25,10 @@ public:
         DateTimeRole,
         DateTimeStrRole,
         UuidRole,
-        TopicRole,
         MouseHoverRole,
-        ArchivedRole,
         EditingRole,
-        SectionRole,
         WaitingAnswerRole,
         ModelInfoRole,
-    };
-
-    enum class SectionHistory : uint8_t {
-        Favorite,
-        Today,
-        LessThanSevenDays,
-        LessThanThirtyDays,
-        Later,
-        Unknown,
-        NSections,
     };
 
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);
@@ -68,13 +55,11 @@ public:
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
     [[nodiscard]] bool cancelRequest(const QModelIndex &index);
-    [[nodiscard]] static QString sectionName(TextAutoGenerateMessagesModel::SectionHistory sectionId);
 
 Q_SIGNALS:
     void conversationCleared();
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessagesModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateMessage> mMessages;

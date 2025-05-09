@@ -23,7 +23,6 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(!msg.inProgress());
     QVERIFY(msg.uuid().isEmpty());
     QVERIFY(msg.answerUuid().isEmpty());
-    QVERIFY(msg.topic().isEmpty());
     QVERIFY(msg.engineName().isEmpty());
     QVERIFY(msg.modelName().isEmpty());
 }

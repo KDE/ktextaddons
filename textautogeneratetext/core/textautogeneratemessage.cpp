@@ -23,9 +23,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage 
     d.space() << "in progress:" << t.inProgress();
     d.space() << "uuid:" << t.uuid();
     d.space() << "answerUuid:" << t.answerUuid();
-    d.space() << "topic:" << t.topic();
     d.space() << "mouseHover:" << t.mouseHover();
-    d.space() << "archived:" << t.archived();
     d.space() << "editingMode:" << t.editingMode();
     d.space() << "engineName:" << t.engineName();
     d.space() << "modelName:" << t.modelName();
@@ -86,8 +84,8 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
     return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.topic() == mTopic && other.mArchived == mArchived
-        && other.editingMode() == mEditingMode && other.modelName() == mModelName && other.engineName() == mEngineName && other.context() == mContext;
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == mEditingMode && other.modelName() == mModelName
+        && other.engineName() == mEngineName && other.context() == mContext;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -115,16 +113,6 @@ void TextAutoGenerateMessage::setAnswerUuid(const QByteArray &newAnswerUuid)
     mAnswerUuid = newAnswerUuid;
 }
 
-QString TextAutoGenerateMessage::topic() const
-{
-    return mTopic;
-}
-
-void TextAutoGenerateMessage::setTopic(const QString &newTopic)
-{
-    mTopic = newTopic;
-}
-
 QString TextAutoGenerateMessage::dateTimeStr() const
 {
     return mDateTimeStr;
@@ -138,16 +126,6 @@ bool TextAutoGenerateMessage::mouseHover() const
 void TextAutoGenerateMessage::setMouseHover(bool newMouseHover)
 {
     mMouseHover = newMouseHover;
-}
-
-bool TextAutoGenerateMessage::archived() const
-{
-    return mArchived;
-}
-
-void TextAutoGenerateMessage::setArchived(bool newArchived)
-{
-    mArchived = newArchived;
 }
 
 bool TextAutoGenerateMessage::editingMode() const

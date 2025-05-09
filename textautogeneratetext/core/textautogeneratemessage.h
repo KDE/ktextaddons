@@ -53,16 +53,10 @@ public:
     [[nodiscard]] QByteArray answerUuid() const;
     void setAnswerUuid(const QByteArray &newAnswerUuid);
 
-    [[nodiscard]] QString topic() const;
-    void setTopic(const QString &newTopic);
-
     [[nodiscard]] QString dateTimeStr() const;
 
     [[nodiscard]] bool mouseHover() const;
     void setMouseHover(bool newMouseHover);
-
-    [[nodiscard]] bool archived() const;
-    void setArchived(bool newArchived);
 
     [[nodiscard]] bool editingMode() const;
     void setEditingMode(bool newEditingMode);
@@ -81,7 +75,6 @@ private:
     QByteArray mUuid;
     QString mContent;
     QString mHtmlGenerated;
-    QString mTopic;
     QString mDateTimeStr;
     QString mModelName;
     QString mEngineName;
@@ -92,7 +85,6 @@ private:
     qint64 mDateTime = -1;
     bool mInProgress = false;
     bool mMouseHover = false;
-    bool mArchived = false;
     bool mEditingMode = false;
 };
 }
