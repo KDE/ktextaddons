@@ -88,10 +88,6 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
 
 TextAutoGenerateWidget::~TextAutoGenerateWidget()
 {
-    if (mTextAutoGeneratePlugin) {
-        mTextAutoGeneratePlugin->cancelRequest({});
-        mTextAutoGeneratePlugin->deleteLater();
-    }
     writeConfig();
 }
 
@@ -136,32 +132,15 @@ QString TextAutoGenerateWidget::textLineEdit() const
 
 void TextAutoGenerateWidget::loadEngine()
 {
-    if (mTextAutoGeneratePlugin) {
-        disconnect(mTextAutoGeneratePlugin);
-        delete mTextAutoGeneratePlugin;
-        mTextAutoGeneratePlugin = nullptr;
-    }
-    TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->loadPlugins();
-
-    mTextAutoGenerateClient =
-        TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
-    if (!mTextAutoGenerateClient) {
-        const QString fallBackEngineName = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->fallbackFirstEngine();
-        if (!fallBackEngineName.isEmpty()) {
-            mTextAutoGenerateClient = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(fallBackEngineName);
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
+        mManager->loadEngine();
+        if (mManager->textAutoGenerateClient()) {
+            mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
         }
-    }
-    if (mTextAutoGenerateClient) {
-        mHeaderWidget->updateEngineName(TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->generateDisplayName(mTextAutoGenerateClient));
-        mTextAutoGeneratePlugin = mTextAutoGenerateClient->createTextAutoGeneratePlugin();
-        mTextAutoGeneratePlugin->setManager(mManager);
-        connect(mTextAutoGeneratePlugin,
-                &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred,
-                this,
-                &TextAutoGenerateWidget::slotAutogenerateFailed);
-        connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
-    } else {
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
     }
 }
 
@@ -173,9 +152,9 @@ void TextAutoGenerateWidget::slotConfigureChanged()
 void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
-        mTextAutoGeneratePlugin->sendMessage(str);
+        mManager->textAutoGeneratePlugin()->sendMessage(str);
     } else {
-        mTextAutoGeneratePlugin->editMessage(uuid, str);
+        mManager->textAutoGeneratePlugin()->editMessage(uuid, str);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
@@ -196,14 +175,14 @@ void TextAutoGenerateWidget::slotEditMessage(const QModelIndex &index)
 
 void TextAutoGenerateWidget::slotCancelRequest(const QByteArray &uuid)
 {
-    mTextAutoGeneratePlugin->cancelRequest(uuid);
+    mManager->textAutoGeneratePlugin()->cancelRequest(uuid);
 }
 
 void TextAutoGenerateWidget::slotRefreshAnswer(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
-    mTextAutoGeneratePlugin->editMessage(uuid, messageStr);
+    mManager->textAutoGeneratePlugin()->editMessage(uuid, messageStr);
 }
 
 void TextAutoGenerateWidget::slotInitializeDone()

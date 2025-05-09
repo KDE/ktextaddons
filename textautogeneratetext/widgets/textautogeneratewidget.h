@@ -11,8 +11,6 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateResultWidget;
 class TextAutoGenerateTextLineEditWidget;
-class TextAutoGenerateTextClient;
-class TextAutoGenerateTextPlugin;
 class TextAutoGenerateMessage;
 class TextAutoGenerateManager;
 class TextAutoGenerateHistoryWidget;
@@ -55,8 +53,6 @@ private:
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;
 
-    TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
-    TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
     QSplitter *const mSplitter;
     TextAutoGenerateHistoryWidget *const mHistoryWidget;
     TextAutoGenerateHeaderWidget *const mHeaderWidget;

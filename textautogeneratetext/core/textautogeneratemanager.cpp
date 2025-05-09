@@ -26,7 +26,13 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 {
 }
 
-TextAutoGenerateManager::~TextAutoGenerateManager() = default;
+TextAutoGenerateManager::~TextAutoGenerateManager()
+{
+    if (mTextAutoGeneratePlugin) {
+        mTextAutoGeneratePlugin->cancelRequest({});
+        mTextAutoGeneratePlugin->deleteLater();
+    }
+}
 
 void TextAutoGenerateManager::ask(const QString &msg)
 {
@@ -87,14 +93,13 @@ void TextAutoGenerateManager::loadEngine()
         delete mTextAutoGeneratePlugin;
         mTextAutoGeneratePlugin = nullptr;
     }
-    TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->loadPlugins();
+    mTextAutoGenerateEngineLoader->loadPlugins();
 
-    mTextAutoGenerateClient =
-        TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
+    mTextAutoGenerateClient = mTextAutoGenerateEngineLoader->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
     if (!mTextAutoGenerateClient) {
-        const QString fallBackEngineName = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->fallbackFirstEngine();
+        const QString fallBackEngineName = mTextAutoGenerateEngineLoader->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
-            mTextAutoGenerateClient = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(fallBackEngineName);
+            mTextAutoGenerateClient = mTextAutoGenerateEngineLoader->createTextAutoGenerateTextClient(fallBackEngineName);
         }
     }
     if (mTextAutoGenerateClient) {
