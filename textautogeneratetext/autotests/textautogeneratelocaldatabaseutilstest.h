@@ -15,4 +15,5 @@ public:
     ~TextAutoGenerateLocalDatabaseUtilsTest() override = default;
 private Q_SLOTS:
     void shouldCheckPath();
+    void shouldCheckDataBase();
 };

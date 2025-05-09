@@ -24,4 +24,12 @@ void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckPath()
         QStringLiteral("chats/"));
 }
 
+void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckDataBase()
+{
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteMessage(), QStringLiteral("DELETE FROM MESSAGES WHERE messageId = ?"));
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage(), QStringLiteral("INSERT OR REPLACE INTO MESSAGES VALUES (?, ?)"));
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteChat(), QStringLiteral("DELETE FROM CHATS WHERE chatId = ?"));
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceChat(), QStringLiteral("INSERT OR REPLACE INTO CHATS VALUES (?, ?)"));
+}
+
 #include "moc_textautogeneratelocaldatabaseutilstest.cpp"

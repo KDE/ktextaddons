@@ -19,5 +19,11 @@ enum class DatabasePath : uint8_t {
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localMessagesDatabasePath();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString localChatsDatabasePath();
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath pathType);
+
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceChat();
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteChat();
+
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString insertReplaceMessage();
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString deleteMessage();
 }
 }

@@ -37,3 +37,23 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
     Q_UNREACHABLE();
     return {};
 }
+
+QString TextAutoGenerateLocalDatabaseUtils::insertReplaceChat()
+{
+    return QStringLiteral("INSERT OR REPLACE INTO CHATS VALUES (?, ?)");
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::deleteChat()
+{
+    return QStringLiteral("DELETE FROM CHATS WHERE chatId = ?");
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage()
+{
+    return QStringLiteral("INSERT OR REPLACE INTO MESSAGES VALUES (?, ?)");
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::deleteMessage()
+{
+    return QStringLiteral("DELETE FROM MESSAGES WHERE messageId = ?");
+}
