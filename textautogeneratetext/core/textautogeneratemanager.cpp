@@ -6,8 +6,12 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "textautogeneratemanager.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/textautogeneratechatsmodel.h"
+#include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratemessagesmodel.h"
+#include "core/textautogeneratetextclient.h"
+#include "core/textautogeneratetextplugin.h"
 #include "textautogenerateengineloader.h"
+#include "textautogeneratetextcore_debug.h"
 
 #include <KConfigGroup>
 #include <QRegularExpression>
@@ -61,4 +65,48 @@ void TextAutoGenerateManager::loadHistory()
     mTextAutoGenerateChatsModel->setChats(std::move(chats));
 }
 
+QString TextAutoGenerateManager::generateEngineDisplayName() const
+{
+    return mTextAutoGenerateEngineLoader->generateDisplayName(mTextAutoGenerateClient);
+}
+
+TextAutoGenerateTextClient *TextAutoGenerateManager::textAutoGenerateClient() const
+{
+    return mTextAutoGenerateClient;
+}
+
+TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() const
+{
+    return mTextAutoGeneratePlugin;
+}
+
+void TextAutoGenerateManager::loadEngine()
+{
+    if (mTextAutoGeneratePlugin) {
+        disconnect(mTextAutoGeneratePlugin);
+        delete mTextAutoGeneratePlugin;
+        mTextAutoGeneratePlugin = nullptr;
+    }
+    TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->loadPlugins();
+
+    mTextAutoGenerateClient =
+        TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
+    if (!mTextAutoGenerateClient) {
+        const QString fallBackEngineName = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->fallbackFirstEngine();
+        if (!fallBackEngineName.isEmpty()) {
+            mTextAutoGenerateClient = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->createTextAutoGenerateTextClient(fallBackEngineName);
+        }
+    }
+    if (mTextAutoGenerateClient) {
+        mTextAutoGeneratePlugin = mTextAutoGenerateClient->createTextAutoGeneratePlugin();
+        mTextAutoGeneratePlugin->setManager(this);
+        connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
+        connect(mTextAutoGeneratePlugin,
+                &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone,
+                this,
+                &TextAutoGenerateManager::pluginsInitializedDone);
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
+    }
+}
 #include "moc_textautogeneratemanager.cpp"

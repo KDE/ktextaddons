@@ -15,6 +15,9 @@ class TextAutoGenerateMessagesModel;
 class TextAutoGenerateLocalDatabaseManager;
 class TextAutoGenerateChatsModel;
 class TextAutoGenerateEngineLoader;
+class TextAutoGenerateTextClient;
+class TextAutoGenerateTextPlugin;
+
 /**
  * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
@@ -36,17 +39,27 @@ public:
     void setShowArchived(bool newShowArchived);
 
     [[nodiscard]] TextAutoGenerateChatsModel *textAutoGenerateChatsModel() const;
-    TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
+    [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
+    void loadEngine();
+
+    [[nodiscard]] QString generateEngineDisplayName() const;
+    [[nodiscard]] TextAutoGenerateTextClient *textAutoGenerateClient() const;
+
+    [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
+    void pluginsInitializedDone();
+    void errorOccured(const QString &msg);
 
 private:
     TextAutoGenerateMessagesModel *const mTextAutoGenerateMessagesModel;
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
+    TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
+    TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
     bool mShowArchived = false;
 };
 }

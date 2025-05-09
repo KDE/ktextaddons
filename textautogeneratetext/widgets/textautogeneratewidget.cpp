@@ -155,7 +155,6 @@ void TextAutoGenerateWidget::loadEngine()
         mHeaderWidget->updateEngineName(TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->generateDisplayName(mTextAutoGenerateClient));
         mTextAutoGeneratePlugin = mTextAutoGenerateClient->createTextAutoGeneratePlugin();
         mTextAutoGeneratePlugin->setManager(mManager);
-        connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::finished, this, &TextAutoGenerateWidget::slotAutogenerateFinished);
         connect(mTextAutoGeneratePlugin,
                 &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred,
                 this,
@@ -179,12 +178,6 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByte
         mTextAutoGeneratePlugin->editMessage(uuid, str);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
-}
-
-void TextAutoGenerateWidget::slotAutogenerateFinished(const TextAutoGenerateMessage &msg)
-{
-    qDebug() << " TextAutoGenerateWidget::slotAutogenerateFinished " << msg;
-    // mTextAutoGenerateResultWidget->addMessage(msg);
 }
 
 void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
