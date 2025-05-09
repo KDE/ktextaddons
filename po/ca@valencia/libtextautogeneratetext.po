@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-08 00:41+0000\n"
-"PO-Revision-Date: 2025-05-06 09:09+0200\n"
+"POT-Creation-Date: 2025-05-09 00:40+0000\n"
+"PO-Revision-Date: 2025-05-08 09:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,34 +19,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/textautogeneratechatmodel.cpp:71
+#: core/textautogeneratechatsmodel.cpp:112
+#: core/textautogeneratemessagesmodel.cpp:271
 #, kde-format
-msgid ""
-"Engine: %1\n"
-"Model: %2"
+msgid "Favorite"
 msgstr ""
 
-#: core/textautogeneratechatmodel.cpp:271
+#: core/textautogeneratechatsmodel.cpp:114
+#: core/textautogeneratemessagesmodel.cpp:273
 #, kde-format
 msgid "Today"
 msgstr "Hui"
 
-#: core/textautogeneratechatmodel.cpp:273
+#: core/textautogeneratechatsmodel.cpp:116
+#: core/textautogeneratemessagesmodel.cpp:275
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/textautogeneratechatmodel.cpp:275
+#: core/textautogeneratechatsmodel.cpp:118
+#: core/textautogeneratemessagesmodel.cpp:277
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/textautogeneratechatmodel.cpp:277
+#: core/textautogeneratechatsmodel.cpp:120
+#: core/textautogeneratemessagesmodel.cpp:279
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/textautogeneratechatmodel.cpp:279
+#: core/textautogeneratechatsmodel.cpp:122
+#: core/textautogeneratemessagesmodel.cpp:281
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
@@ -55,6 +59,15 @@ msgstr "Desconegut"
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
+
+#: core/textautogeneratemessagesmodel.cpp:71
+#, kde-format
+msgid ""
+"Engine: %1\n"
+"Model: %2"
+msgstr ""
+"Motor: %1\n"
+"Model: %2"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
