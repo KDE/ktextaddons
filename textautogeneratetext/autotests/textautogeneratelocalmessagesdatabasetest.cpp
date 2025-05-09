@@ -90,4 +90,19 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()
     */
 }
 
+void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteMessages() // this test depends on shouldStoreMessages()
+{
+    // GIVEN
+    TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
+    const QString messageId = (QStringLiteral("uu4"));
+
+    // WHEN
+    logger.deleteMessage(otherChatId(), messageId);
+
+    // THEN
+    auto tableModel = logger.createMessageModel(otherChatId());
+    QVERIFY(tableModel);
+    QCOMPARE(tableModel->rowCount(), 0);
+}
+
 #include "moc_textautogeneratelocalmessagesdatabasetest.cpp"

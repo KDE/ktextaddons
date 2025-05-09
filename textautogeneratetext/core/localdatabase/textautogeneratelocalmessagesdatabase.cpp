@@ -26,6 +26,19 @@ TextAutoGenerateLocalMessagesDatabase::TextAutoGenerateLocalMessagesDatabase()
 
 TextAutoGenerateLocalMessagesDatabase::~TextAutoGenerateLocalMessagesDatabase() = default;
 
+void TextAutoGenerateLocalMessagesDatabase::deleteMessage(const QString &chatIdentifier, const QString &messageId)
+{
+    QSqlDatabase db;
+    if (!checkDataBase(chatIdentifier, db)) {
+        return;
+    }
+    QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteMessage(), db);
+    query.addBindValue(messageId);
+    if (!query.exec()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in MESSAGES table" << db.databaseName() << query.lastError();
+    }
+}
+
 void TextAutoGenerateLocalMessagesDatabase::addMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m)
 {
     QSqlDatabase db;

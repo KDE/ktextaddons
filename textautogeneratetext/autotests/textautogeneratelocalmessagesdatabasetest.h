@@ -19,4 +19,5 @@ private Q_SLOTS:
     void initTestCase();
     void shouldVerifyDbFileName();
     void shouldStoreMessages();
+    void shouldDeleteMessages();
 };
