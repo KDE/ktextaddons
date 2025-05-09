@@ -42,7 +42,7 @@ void TextAutoGenerateLocalMessagesDatabase::deleteMessage(const QString &chatIde
     }
 }
 
-void TextAutoGenerateLocalMessagesDatabase::addMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m)
+void TextAutoGenerateLocalMessagesDatabase::insertOrReplaceMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m)
 {
     QSqlDatabase db;
     if (initializeDataBase(chatIdentifier, db)) {

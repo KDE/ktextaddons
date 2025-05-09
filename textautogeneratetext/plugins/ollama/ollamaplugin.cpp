@@ -93,17 +93,16 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
     */
     auto reply = OllamaManager::self()->getCompletion(req);
 
-    mConnections.insert(reply,
-                        QPair<QByteArray, QMetaObject::Connection>(
-                            uuid,
-                            connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
-                                TextAutoGenerateText::TextAutoGenerateManager::self()->textAutoGenerateChatModel()->replaceContent(uuid, reply->readResponse());
-                            })));
+    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, uuid]() {
+                                                                              TextAutoGenerateText::TextAutoGenerateManager::self()
+                                                                                  ->textAutoGenerateMessagesModel()
+                                                                                  ->replaceContent(uuid, reply->readResponse());
+                                                                          })));
     mConnections.insert(reply,
                         QPair<QByteArray, QMetaObject::Connection>(
                             uuid,
                             connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
-                                TextAutoGenerateText::TextAutoGenerateManager::self()->textAutoGenerateChatModel()->changeInProgress(uuid, false);
+                                TextAutoGenerateText::TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->changeInProgress(uuid, false);
                                 mConnections.remove(reply);
                                 reply->deleteLater();
 #if 0

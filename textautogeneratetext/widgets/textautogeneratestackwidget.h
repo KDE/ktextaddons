@@ -11,6 +11,7 @@ class QStackedWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateNotWorkingWidget;
+class TextAutoGenerateManager;
 class TextAutoGenerateWidget;
 /**
  * @brief The TextAutoGenerateStackWidget class
@@ -20,7 +21,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateStackWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateStackWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateStackWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateStackWidget() override;
 
     void setBrokenEngine(bool state, const QString &errorMessage);

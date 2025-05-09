@@ -51,7 +51,7 @@ void TextAutoGenerateTextPlugin::setReady(bool newReady)
 void TextAutoGenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)
 {
     if (ready()) {
-        const QByteArray llmUuid = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->editMessage(uuid, str);
+        const QByteArray llmUuid = TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->editMessage(uuid, str);
         sendToLLM(str, llmUuid);
     }
 }
@@ -78,8 +78,8 @@ void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        TextAutoGenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msg));
-        TextAutoGenerateManager::self()->textAutoGenerateChatModel()->addMessage(std::move(msgLlm));
+        TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->addMessage(std::move(msg));
+        TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->addMessage(std::move(msgLlm));
         sendToLLM(str, llmUuid);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";

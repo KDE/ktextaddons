@@ -5,10 +5,10 @@
 */
 
 #include "textautogeneratehistorylistview.h"
+#include "core/textautogeneratechatsmodel.h"
 #include "core/textautogeneratehistorylistheadingsproxymodel.h"
 #include "core/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
-#include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -29,7 +29,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(QWidget *parent
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setItemDelegate(new TextAutoGenerateHistoryListViewDelegate(this));
 
-    mHistoryListHeadingsProxyModel->setSourceModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
+    mHistoryListHeadingsProxyModel->setSourceModel(TextAutoGenerateManager::self()->textAutoGenerateChatsModel());
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
     setModel(mHistoryProxyModel);
@@ -54,9 +54,9 @@ void TextAutoGenerateHistoryListView::keyPressEvent(QKeyEvent *event)
 void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
-        const QByteArray uuid = idx.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+        const QByteArray uuid = idx.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
         if (!uuid.isEmpty()) {
-            Q_EMIT goToDiscussion(uuid);
+            Q_EMIT switchToChat(uuid);
         }
     }
 }
@@ -72,7 +72,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     if (index.isValid()) {
         auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
         connect(renameHistory, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+            const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
             if (!uuid.isEmpty()) {
                 edit(index);
             }
@@ -89,9 +89,9 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                                                    i18nc("@title:window", "Remove Discussion"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())) {
-                const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+                const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                 if (!uuid.isEmpty()) {
-                    TextAutoGenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+                    // TODO TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->removeDiscussion(uuid);
                 }
             }
         });

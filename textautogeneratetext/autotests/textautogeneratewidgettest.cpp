@@ -23,7 +23,7 @@ TextAutoGenerateWidgetTest::TextAutoGenerateWidgetTest(QObject *parent)
 
 void TextAutoGenerateWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateWidget w;
+    TextAutoGenerateText::TextAutoGenerateWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);

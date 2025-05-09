@@ -17,7 +17,7 @@ TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAns
     : QObject{parent}
 {
     createAnimations();
-    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(),
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {

@@ -7,6 +7,9 @@
 #include "textautogeneratelocalchatsdatabase.h"
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
+#include <QFileInfo>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
@@ -42,6 +45,57 @@ void TextAutoGenerateLocalChatsDatabase::insertOrUpdateChat(const TextAutoGenera
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in ROOMS table" << db.databaseName() << query.lastError();
         }
     }
+}
+
+QList<TextAutoGenerateChat> TextAutoGenerateLocalChatsDatabase::loadChats() const
+{
+    const QString dbName = generateDbName(QString());
+    QSqlDatabase db = QSqlDatabase::database(dbName);
+    if (!db.isValid()) {
+        // Open the DB if it exists (don't create a new one)
+        const QString fileName = dbFileName(QString());
+        // qDebug() << " fileName " << fileName;
+        if (!QFileInfo::exists(fileName)) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
+            return {};
+        }
+        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db.setDatabaseName(fileName);
+        if (!db.open()) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
+            return {};
+        }
+    }
+
+    Q_ASSERT(db.isValid());
+    Q_ASSERT(db.isOpen());
+    const QString query = TextAutoGenerateLocalChatsDatabase::generateQueryStr();
+    QSqlQuery resultQuery(db);
+    resultQuery.prepare(query);
+    if (!resultQuery.exec()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " Impossible to execute query: " << resultQuery.lastError() << " query: " << query;
+        return {};
+    }
+
+    QList<TextAutoGenerateChat> listChats;
+    while (resultQuery.next()) {
+        const QString json = resultQuery.value(QStringLiteral("json")).toString();
+        listChats.append(convertJsonToMessage(json));
+    }
+    return listChats;
+}
+
+TextAutoGenerateChat TextAutoGenerateLocalChatsDatabase::convertJsonToMessage(const QString &json) const
+{
+    const QJsonDocument doc = QJsonDocument::fromJson(json.toUtf8());
+    const TextAutoGenerateChat msg = TextAutoGenerateChat::deserialize(doc.object());
+    return msg;
+}
+
+QString TextAutoGenerateLocalChatsDatabase::generateQueryStr()
+{
+    const QString query = QStringLiteral("SELECT * FROM CHATS");
+    return query;
 }
 
 void TextAutoGenerateLocalChatsDatabase::deleteChat(const QString &chatId)

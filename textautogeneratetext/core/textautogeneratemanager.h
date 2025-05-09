@@ -8,9 +8,12 @@
 #include <KSharedConfig>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <memory>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
+class TextAutoGenerateLocalDatabaseManager;
+class TextAutoGenerateChatsModel;
 /**
  * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
@@ -26,22 +29,22 @@ public:
 
     void ask(const QString &msg);
 
-    [[nodiscard]] TextAutoGenerateMessagesModel *textAutoGenerateChatModel() const;
+    [[nodiscard]] TextAutoGenerateMessagesModel *textAutoGenerateMessagesModel() const;
 
-    virtual void loadHistory();
-    virtual void saveHistory();
+    void loadHistory();
 
     [[nodiscard]] bool showArchived() const;
     void setShowArchived(bool newShowArchived);
 
+    [[nodiscard]] TextAutoGenerateChatsModel *textAutoGenerateChatsModel() const;
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void filterListMessages(QList<TextAutoGenerateMessage> &messages, bool archived) const;
-    TextAutoGenerateMessagesModel *const mTextAutoGenerateChatModel;
+    TextAutoGenerateMessagesModel *const mTextAutoGenerateMessagesModel;
+    TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
+    std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     bool mShowArchived = false;
 };
 }

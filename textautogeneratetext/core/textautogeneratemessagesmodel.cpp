@@ -65,6 +65,16 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     return i18n("Engine: %1\nModel: %2", m.engineName(), m.modelName());
 }
 
+QByteArray TextAutoGenerateMessagesModel::chatId() const
+{
+    return mChatId;
+}
+
+void TextAutoGenerateMessagesModel::setChatId(const QByteArray &newChatId)
+{
+    mChatId = newChatId;
+}
+
 QList<TextAutoGenerateMessage> TextAutoGenerateMessagesModel::messages() const
 {
     return mMessages;
@@ -283,14 +293,6 @@ QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) 
     }
     const QModelIndex idx = createIndex(std::distance(mMessages.begin(), it), 0);
     return idx;
-}
-
-Qt::ItemFlags TextAutoGenerateMessagesModel::flags(const QModelIndex &index) const
-{
-    if (!index.isValid())
-        return Qt::NoItemFlags;
-
-    return Qt::ItemIsEditable | QAbstractListModel::flags(index);
 }
 
 #include "moc_textautogeneratemessagesmodel.cpp"

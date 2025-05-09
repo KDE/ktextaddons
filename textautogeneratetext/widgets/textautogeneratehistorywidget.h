@@ -22,7 +22,7 @@ public:
     ~TextAutoGenerateHistoryWidget() override;
 
 Q_SIGNALS:
-    void goToDiscussion(const QByteArray &uuid);
+    void switchToChat(const QByteArray &uuid);
 
 private:
     TextAutoGenerateHistoryListView *const mTextAutoGenerateHistoryListView;

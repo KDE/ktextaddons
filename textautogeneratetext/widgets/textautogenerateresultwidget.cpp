@@ -21,7 +21,6 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(QWidget *parent)
     mTextAutoGenerateListView->setObjectName(QStringLiteral("mTextAutoGenerateListView"));
     mainLayout->addWidget(mTextAutoGenerateListView);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::editMessageRequested, this, &TextAutoGenerateResultWidget::editMessageRequested);
-    connect(this, &TextAutoGenerateResultWidget::goToDiscussion, mTextAutoGenerateListView, &TextAutoGenerateListView::slotGoToDiscussion);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::cancelRequested, this, &TextAutoGenerateResultWidget::cancelRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::refreshAnswerRequested, this, &TextAutoGenerateResultWidget::refreshAnswerRequested);
 }
@@ -36,5 +35,10 @@ void TextAutoGenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
 void TextAutoGenerateResultWidget::editingFinished(const QByteArray &uuid)
 {
     mTextAutoGenerateListView->editingFinished(uuid);
+}
+
+void TextAutoGenerateResultWidget::setChatId(const QByteArray &chatId)
+{
+    mTextAutoGenerateListView->setChatId(chatId);
 }
 #include "moc_textautogenerateresultwidget.cpp"

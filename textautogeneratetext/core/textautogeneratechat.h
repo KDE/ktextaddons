@@ -7,9 +7,11 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
+#include <QPointer>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateMessagesModel;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
 {
     Q_GADGET
@@ -28,9 +30,6 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateChat &other) const;
 
-    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateMessage> messages() const;
-    void setMessages(const QList<TextAutoGenerateText::TextAutoGenerateMessage> &newMessages);
-
     [[nodiscard]] QString title() const;
     void setTitle(const QString &newTitle);
 
@@ -39,8 +38,10 @@ public:
     static QByteArray serialize(const TextAutoGenerateChat &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateChat deserialize(const QJsonObject &source);
 
+    QPointer<TextAutoGenerateMessagesModel> messageModel() const;
+
 private:
-    QList<TextAutoGenerateText::TextAutoGenerateMessage> mMessages;
+    QPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
     QString mTitle;
     bool mFavorite = false;

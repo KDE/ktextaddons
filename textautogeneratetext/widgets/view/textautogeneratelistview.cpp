@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelistview.h"
+#include "core/textautogeneratechatsmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratelistviewdelegate.h"
@@ -31,8 +32,8 @@ TextAutoGenerateListView::TextAutoGenerateListView(QWidget *parent)
     scrollToBottom();
     setMouseTracking(true);
     TextAutoGenerateManager::self()->loadHistory();
-    setModel(TextAutoGenerateManager::self()->textAutoGenerateChatModel());
-    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
+    setModel(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel());
+    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
         mDelegate->clearCache();
     });
 
@@ -46,20 +47,20 @@ TextAutoGenerateListView::TextAutoGenerateListView(QWidget *parent)
     connect(mDelegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
 
-    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(),
             &QAbstractItemModel::rowsAboutToBeInserted,
             this,
             &TextAutoGenerateListView::checkIfAtBottom);
-    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(),
             &QAbstractItemModel::rowsAboutToBeRemoved,
             this,
             &TextAutoGenerateListView::checkIfAtBottom);
-    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(),
             &QAbstractItemModel::modelAboutToBeReset,
             this,
             &TextAutoGenerateListView::checkIfAtBottom);
 
-    connect(TextAutoGenerateManager::self()->textAutoGenerateChatModel(),
+    connect(TextAutoGenerateManager::self()->textAutoGenerateMessagesModel(),
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
@@ -82,11 +83,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(QWidget *parent)
     connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateListView::maybeScrollToBottom);
 }
 
-TextAutoGenerateListView::~TextAutoGenerateListView()
-{
-    TextAutoGenerateManager::self()->saveHistory();
-    // TextAutoGenerateManager::self()->textAutoGenerateChatModel()->resetConversation();
-}
+TextAutoGenerateListView::~TextAutoGenerateListView() = default;
 
 void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {
@@ -106,7 +103,7 @@ void TextAutoGenerateListView::slotRemoveMessage(const QModelIndex &index)
         const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
             Q_EMIT cancelRequested(uuid);
-            TextAutoGenerateManager::self()->textAutoGenerateChatModel()->removeDiscussion(uuid);
+            TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->removeDiscussion(uuid);
         }
     }
 }
@@ -115,7 +112,7 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        if (TextAutoGenerateManager::self()->textAutoGenerateChatModel()->cancelRequest(index)) {
+        if (TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->cancelRequest(index)) {
             Q_EMIT cancelRequested(uuid);
         }
     }
@@ -125,7 +122,7 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        const QModelIndex index = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->refreshAnswer(uuid);
+        const QModelIndex index = TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->refreshAnswer(uuid);
         if (index.isValid()) {
             Q_EMIT refreshAnswerRequested(index);
         }
@@ -138,11 +135,6 @@ void TextAutoGenerateListView::slotCopyMessage(const QModelIndex &index)
     QClipboard *clip = QApplication::clipboard();
     clip->setText(currentValue, QClipboard::Clipboard);
     clip->setText(currentValue, QClipboard::Selection);
-}
-
-void TextAutoGenerateListView::setMessages(const QList<TextAutoGenerateMessage> &msg)
-{
-    TextAutoGenerateManager::self()->textAutoGenerateChatModel()->setMessages(msg);
 }
 
 void TextAutoGenerateListView::contextMenuEvent(QContextMenuEvent *event)
@@ -308,14 +300,6 @@ void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
     }
 }
 
-void TextAutoGenerateListView::slotGoToDiscussion(const QByteArray &uuid)
-{
-    const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
-    if (idx.isValid()) {
-        scrollTo(idx);
-    }
-}
-
 void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemView::ScrollHint hint)
 {
     QListView::scrollTo(index, hint);
@@ -324,11 +308,16 @@ void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 {
-    const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateChatModel()->indexForUuid(uuid);
+    const QModelIndex idx = TextAutoGenerateManager::self()->textAutoGenerateMessagesModel()->indexForUuid(uuid);
     if (idx.isValid()) {
         auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
         lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
     }
+}
+
+void TextAutoGenerateListView::setChatId(const QByteArray &chatId)
+{
+    setModel(TextAutoGenerateManager::self()->textAutoGenerateChatsModel()->messageModel(chatId));
 }
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)

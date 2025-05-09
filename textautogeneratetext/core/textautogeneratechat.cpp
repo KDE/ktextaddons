@@ -4,15 +4,22 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechat.h"
+#include "textautogeneratemessagesmodel.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateChat::TextAutoGenerateChat() = default;
+TextAutoGenerateChat::TextAutoGenerateChat()
+{
+    mMessageModel = new TextAutoGenerateMessagesModel();
+}
 
-TextAutoGenerateChat::~TextAutoGenerateChat() = default;
+TextAutoGenerateChat::~TextAutoGenerateChat()
+{
+    delete mMessageModel;
+}
 
 bool TextAutoGenerateChat::favorite() const
 {
@@ -42,6 +49,9 @@ QByteArray TextAutoGenerateChat::identifier() const
 void TextAutoGenerateChat::setIdentifier(const QByteArray &newIdentifier)
 {
     mIdentifier = newIdentifier;
+    if (mMessageModel) {
+        mMessageModel->setChatId(mIdentifier);
+    }
 }
 
 bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
@@ -49,20 +59,12 @@ bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
     return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite && other.title() == mTitle;
 }
 
-QList<TextAutoGenerateMessage> TextAutoGenerateChat::messages() const
-{
-    return mMessages;
-}
-
-void TextAutoGenerateChat::setMessages(const QList<TextAutoGenerateText::TextAutoGenerateMessage> &newMessages)
-{
-    mMessages = newMessages;
-}
-
 QString TextAutoGenerateChat::title() const
 {
-    if (mTitle.isEmpty() && !mMessages.isEmpty()) {
-        return mMessages.constFirst().htmlGenerated();
+    if (mMessageModel) {
+        if (mTitle.isEmpty() && !mMessageModel->messages().isEmpty()) {
+            return mMessageModel->messages().constFirst().htmlGenerated();
+        }
     }
     return mTitle;
 }
@@ -74,8 +76,10 @@ void TextAutoGenerateChat::setTitle(const QString &newTitle)
 
 qint64 TextAutoGenerateChat::dateTime() const
 {
-    if (!mMessages.isEmpty()) {
-        return mMessages.constFirst().dateTime();
+    if (mMessageModel) {
+        if (!mMessageModel->messages().isEmpty()) {
+            return mMessageModel->messages().constLast().dateTime();
+        }
     }
     return -1;
 }
@@ -108,13 +112,17 @@ TextAutoGenerateChat TextAutoGenerateChat::deserialize(const QJsonObject &o)
     return chat;
 }
 
+QPointer<TextAutoGenerateMessagesModel> TextAutoGenerateChat::messageModel() const
+{
+    return mMessageModel;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
 {
     d.space() << "title:" << t.title();
     d.space() << "favorite:" << t.favorite();
     d.space() << "archived:" << t.archived();
     d.space() << "identifier:" << t.identifier();
-    d.space() << "messages:" << t.messages();
     return d;
 }
 

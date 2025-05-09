@@ -17,15 +17,13 @@ public:
     explicit TextAutoGenerateListView(QWidget *parent = nullptr);
     ~TextAutoGenerateListView() override;
 
-    void setMessages(const QList<TextAutoGenerateMessage> &msg);
-
     void handleKeyPressEvent(QKeyEvent *ev);
-
-    void slotGoToDiscussion(const QByteArray &uuid);
 
     void scrollTo(const QModelIndex &index, ScrollHint hint = EnsureVisible) override;
 
     void editingFinished(const QByteArray &uuid);
+
+    void setChatId(const QByteArray &chatId);
 
 protected:
     void resizeEvent(QResizeEvent *ev) override;

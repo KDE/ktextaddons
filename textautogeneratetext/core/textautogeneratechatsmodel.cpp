@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechatsmodel.h"
+#include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 using namespace TextAutoGenerateText;
@@ -141,10 +142,10 @@ QString TextAutoGenerateChatsModel::sectionName(SectionHistory sectionId)
 
 TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateChat &chat) const
 {
-    if (chat.messages().isEmpty()) {
+    if (!chat.messageModel() || chat.messageModel()->messages().isEmpty()) {
         return TextAutoGenerateChatsModel::SectionHistory::Unknown;
     }
-    return section(chat.messages().constLast());
+    return section(chat.messageModel()->messages().constLast());
 }
 
 TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateMessage &m) const
@@ -163,6 +164,18 @@ TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(c
         return TextAutoGenerateChatsModel::SectionHistory::Later;
     }
     return TextAutoGenerateChatsModel::SectionHistory::Unknown;
+}
+
+TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messageModel(const QByteArray &chatId) const
+{
+    const int roomCount = mChats.count();
+    for (int i = 0; i < roomCount; ++i) {
+        const TextAutoGenerateChat chat = mChats.at(i);
+        if (chat.identifier() == chatId) {
+            return chat.messageModel();
+        }
+    }
+    return {};
 }
 
 #include "moc_textautogeneratechatsmodel.cpp"

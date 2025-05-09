@@ -14,6 +14,7 @@ class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateTextClient;
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateMessage;
+class TextAutoGenerateManager;
 class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
 /**
@@ -24,7 +25,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateWidget() override;
 
     [[nodiscard]] QString textLineEdit() const;
@@ -49,6 +50,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSwitchToChat(const QByteArray &chatId);
 
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;

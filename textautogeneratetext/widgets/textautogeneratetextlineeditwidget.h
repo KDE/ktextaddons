@@ -28,6 +28,10 @@ public:
     void setUuid(const QByteArray &newUuid);
 
     void setText(const QString &str);
+
+    [[nodiscard]] QByteArray chatId() const;
+    void setChatId(const QByteArray &newChatId);
+
 Q_SIGNALS:
     void editingFinished(const QString &str, const QByteArray &uuid);
     void keyPressed(QKeyEvent *ev);
@@ -37,5 +41,6 @@ private:
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     QPushButton *const mSendMessage;
     QByteArray mUuid;
+    QByteArray mChatId;
 };
 }

@@ -19,7 +19,7 @@ public:
     ~TextAutoGenerateLocalMessagesDatabase() override;
 
     void deleteMessage(const QString &chatIdentifier, const QString &messageId);
-    void addMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m);
+    void insertOrReplaceMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m);
 
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createMessageModel(const QString &chatIdentifier) const;
 

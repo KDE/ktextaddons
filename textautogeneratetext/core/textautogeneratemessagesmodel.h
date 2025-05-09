@@ -53,8 +53,10 @@ public:
     void changeInProgress(const QByteArray &uuid, bool inProgress);
     [[nodiscard]] QByteArray editMessage(const QByteArray &uuid, const QString &str);
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;
-    [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
     [[nodiscard]] bool cancelRequest(const QModelIndex &index);
+
+    [[nodiscard]] QByteArray chatId() const;
+    void setChatId(const QByteArray &newChatId);
 
 Q_SIGNALS:
     void conversationCleared();
@@ -63,5 +65,6 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateMessage> mMessages;
+    QByteArray mChatId;
 };
 }

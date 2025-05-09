@@ -54,6 +54,16 @@ void TextAutoGenerateTextLineEditWidget::clearLineEdit()
     mUuid.clear();
 }
 
+QByteArray TextAutoGenerateTextLineEditWidget::chatId() const
+{
+    return mChatId;
+}
+
+void TextAutoGenerateTextLineEditWidget::setChatId(const QByteArray &newChatId)
+{
+    mChatId = newChatId;
+}
+
 QString TextAutoGenerateTextLineEditWidget::text() const
 {
     return mTextAutoGenerateTextLineEdit->text();

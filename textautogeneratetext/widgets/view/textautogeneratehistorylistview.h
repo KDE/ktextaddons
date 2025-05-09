@@ -22,7 +22,7 @@ public:
     void slotSearchTextChanged(const QString &str);
 
 Q_SIGNALS:
-    void goToDiscussion(const QByteArray &uuid);
+    void switchToChat(const QByteArray &uuid);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;

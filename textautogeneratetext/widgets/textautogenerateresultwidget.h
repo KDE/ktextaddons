@@ -23,11 +23,13 @@ public:
 
     void handleKeyPressEvent(QKeyEvent *ev);
     void editingFinished(const QByteArray &uuid);
+    void setChatId(const QByteArray &chatId);
+
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);
-    void goToDiscussion(const QByteArray &uuid);
     void cancelRequested(const QByteArray &uuid);
     void refreshAnswerRequested(const QModelIndex &index);
+    void switchToChat(const QByteArray &uuid);
 
 private:
     TextAutoGenerateListView *const mTextAutoGenerateListView;

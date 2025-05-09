@@ -32,7 +32,7 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(QWidget *parent)
     mainLayout->addWidget(mTextAutoGenerateHistoryListView);
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::slotSearchTextChanged);
-    connect(mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::goToDiscussion, this, &TextAutoGenerateHistoryWidget::goToDiscussion);
+    connect(mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::switchToChat, this, &TextAutoGenerateHistoryWidget::switchToChat);
 }
 
 TextAutoGenerateHistoryWidget::~TextAutoGenerateHistoryWidget() = default;

@@ -27,7 +27,7 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateWidget::TextAutoGenerateWidget(QWidget *parent)
+TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(this))
     , mTextAutoGenerateTextLineEditWidget(new TextAutoGenerateTextLineEditWidget(this))
@@ -60,11 +60,11 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(QWidget *parent)
 
     connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::configChanged, this, &TextAutoGenerateWidget::slotConfigureChanged);
 
-    connect(TextAutoGenerateManager::self(), &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
+    connect(manager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
         slotEditingFinished(str, {});
     });
 
-    connect(TextAutoGenerateManager::self(), &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
+    connect(manager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
         slotAskMessageRequester(str);
     });
 
@@ -73,7 +73,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(QWidget *parent)
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::cancelRequested, this, &TextAutoGenerateWidget::slotCancelRequest);
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::refreshAnswerRequested, this, &TextAutoGenerateWidget::slotRefreshAnswer);
     connect(this, &TextAutoGenerateWidget::stopEditingMode, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editingFinished);
-    connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::goToDiscussion, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::goToDiscussion);
+    connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, &TextAutoGenerateWidget::slotSwitchToChat);
     connect(TextAutoGenerateText::TextAutoGenerateEngineLoader::self(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
         Q_EMIT noPluginsFound(i18n("No plugin found."));
     });
@@ -88,6 +88,12 @@ TextAutoGenerateWidget::~TextAutoGenerateWidget()
         mTextAutoGeneratePlugin->deleteLater();
     }
     writeConfig();
+}
+
+void TextAutoGenerateWidget::slotSwitchToChat(const QByteArray &chatId)
+{
+    mTextAutoGenerateTextLineEditWidget->setChatId(chatId);
+    mTextAutoGenerateResultWidget->setChatId(chatId);
 }
 
 void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
