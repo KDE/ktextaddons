@@ -8,10 +8,11 @@
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
 #include <QFileInfo>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
-#include <qjsonobject.h>
 
 static const char s_schemaMessagesDataBase[] = "CREATE TABLE MESSAGES (messageId TEXT PRIMARY KEY NOT NULL, timestamp INTEGER, json TEXT)";
 enum class MessagesFields {
