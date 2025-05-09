@@ -38,6 +38,11 @@ bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &le
     if (left.parent().isValid() && right.parent().isValid()) {
         const qint64 leftDateTime = sourceModel()->data(left, TextAutoGenerateChatsModel::DateTime).toDouble();
         const qint64 rightDateTime = sourceModel()->data(right, TextAutoGenerateChatsModel::DateTime).toDouble();
+        const bool leftFavorite = sourceModel()->data(left, TextAutoGenerateChatsModel::Favorite).toBool();
+        const bool rightFavorite = sourceModel()->data(right, TextAutoGenerateChatsModel::Favorite).toBool();
+        if (leftFavorite && (leftFavorite == rightFavorite)) {
+            return leftDateTime < rightDateTime;
+        }
         return leftDateTime < rightDateTime;
     }
     return left.row() < right.row();
