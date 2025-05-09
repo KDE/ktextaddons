@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldVerifyDbFileName();
     void shouldStoreMessages();
     void shouldDeleteMessages();
+    void shouldReturnNullIfDoesNotExist();
 };

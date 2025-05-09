@@ -50,7 +50,7 @@ QString TextAutoGenerateLocalDatabaseUtils::deleteChat()
 
 QString TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage()
 {
-    return QStringLiteral("INSERT OR REPLACE INTO MESSAGES VALUES (?, ?)");
+    return QStringLiteral("INSERT OR REPLACE INTO MESSAGES VALUES (?, ?, ?)");
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::deleteMessage()

@@ -40,7 +40,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::initTestCase()
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase messagesDatabase;
-    QCOMPARE(messagesDatabase.schemaDatabaseStr(), QStringLiteral("CREATE TABLE MESSAGES (messageId TEXT PRIMARY KEY NOT NULL, json TEXT)"));
+    QCOMPARE(messagesDatabase.schemaDatabaseStr(), QStringLiteral("CREATE TABLE MESSAGES (messageId TEXT PRIMARY KEY NOT NULL, timestamp INTEGER, json TEXT)"));
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldVerifyDbFileName()
@@ -58,14 +58,17 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()
     TextAutoGenerateText::TextAutoGenerateMessage message1;
     message1.setContent(QString::fromUtf8("Message text: €1"));
     message1.setUuid("uu1");
+    message1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(23, 30, 50)).toMSecsSinceEpoch());
     logger.addMessage(chatId(), message1);
 
     message1.setContent(QString::fromUtf8("Message text: €2"));
+    message1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(23, 30, 55)).toMSecsSinceEpoch());
     logger.addMessage(chatId(), message1); // update an existing message 5s later
 
     TextAutoGenerateText::TextAutoGenerateMessage message2;
     message2.setContent(QString::fromUtf8("Message text: ßĐ"));
     message2.setUuid("uu2");
+    message2.setDateTime(QDateTime(QDate(2023, 6, 7), QTime(23, 30, 55)).toMSecsSinceEpoch());
     logger.addMessage(chatId(), message2);
 
     TextAutoGenerateText::TextAutoGenerateMessage messageOtherRoom;
@@ -105,4 +108,13 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteMessages() // this t
     QCOMPARE(tableModel->rowCount(), 0);
 }
 
+void TextAutoGenerateLocalMessagesDatabaseTest::shouldReturnNullIfDoesNotExist()
+{
+    // GIVEN
+    TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
+    // WHEN
+    auto tableModel = logger.createMessageModel(QStringLiteral("does not exist"));
+    // THEN
+    QVERIFY(!tableModel);
+}
 #include "moc_textautogeneratelocalmessagesdatabasetest.cpp"

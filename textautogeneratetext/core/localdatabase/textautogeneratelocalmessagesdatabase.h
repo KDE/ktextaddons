@@ -23,7 +23,13 @@ public:
 
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createMessageModel(const QString &chatIdentifier) const;
 
+    [[nodiscard]] QList<TextAutoGenerateMessage> loadMessages(const QString &chatIdentifier) const;
+
 protected:
     [[nodiscard]] QString schemaDataBase() const override;
+
+private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage convertJsonToMessage(const QString &json) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT static QString generateQueryStr();
 };
 };
