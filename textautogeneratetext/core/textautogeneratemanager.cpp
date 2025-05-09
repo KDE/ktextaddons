@@ -88,6 +88,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
 
 void TextAutoGenerateManager::addMessage(const TextAutoGenerateMessage &msg)
 {
+    // TODO add to database
     textAutoGenerateMessagesModel()->addMessage(msg);
 }
 
