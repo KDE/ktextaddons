@@ -23,9 +23,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
 )
 
-add_library(KF6TextAutoGenerateText
-    core/textautogeneratechat.h core/textautogeneratechat.cpp
-    core/textautogeneratechatsmodel.h core/textautogeneratechatsmodel.cpp)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_debug.h
@@ -86,6 +84,14 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     core/textautogeneratemessageutils.h
     core/textautogeneratemessageutils.cpp
+
+    core/textautogeneratechat.h
+    core/textautogeneratechat.cpp
+    core/textautogeneratechatsmodel.h
+    core/textautogeneratechatsmodel.cpp
+
+    core/localdatabase/textautogeneratelocaldatabaseutils.h
+    core/localdatabase/textautogeneratelocaldatabaseutils.cpp
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
