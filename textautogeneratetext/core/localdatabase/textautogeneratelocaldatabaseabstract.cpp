@@ -7,6 +7,10 @@
 #include "textautogeneratelocaldatabaseabstract.h"
 #include "textautogeneratetextcore_database_debug.h"
 
+#include <QDir>
+#include <QSqlError>
+#include <QSqlQuery>
+
 using namespace TextAutoGenerateText;
 TextAutoGenerateLocalDatabaseAbstract::TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type)
     : mBasePath(basePath)
@@ -16,10 +20,11 @@ TextAutoGenerateLocalDatabaseAbstract::TextAutoGenerateLocalDatabaseAbstract(con
 
 TextAutoGenerateLocalDatabaseAbstract::~TextAutoGenerateLocalDatabaseAbstract() = default;
 
-QString TextAutoGenerateLocalDatabaseAbstract::dbFileName(const QString &identifier) const
+QString TextAutoGenerateLocalDatabaseAbstract::dbFileName(const QString &id) const
 {
+    const QString identifier = id.isEmpty() ? databaseName() : id;
     const QString dirPath = mBasePath;
-    return dirPath + QLatin1Char('/') + identifier + QStringLiteral(".sqlite");
+    return dirPath + identifier + QStringLiteral(".sqlite");
 }
 
 QString TextAutoGenerateLocalDatabaseAbstract::schemaDatabaseStr() const
@@ -48,4 +53,60 @@ QString TextAutoGenerateLocalDatabaseAbstract::databaseName() const
         break;
     }
     return prefix;
+}
+
+bool TextAutoGenerateLocalDatabaseAbstract::checkDataBase(const QString &id, QSqlDatabase &db)
+{
+    const QString dbName = generateDbName(id);
+    db = QSqlDatabase::database(dbName);
+    if (!db.isValid()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG)
+            << "The assumption was wrong, deleteMessage was called before addMessage, in account database file " << dbName;
+        return false;
+    }
+    Q_ASSERT(db.isOpen());
+    return true;
+}
+
+QString TextAutoGenerateLocalDatabaseAbstract::generateDbName(const QString &id) const
+{
+    return id.isEmpty() ? databaseName() : (databaseName() + QLatin1String("-") + id);
+}
+
+bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id, QSqlDatabase &db)
+{
+    const QString dbName = generateDbName(id);
+    db = QSqlDatabase::database(dbName);
+    if (!db.isValid()) {
+        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        const QString dirPath = mBasePath;
+        if (!QDir().mkpath(dirPath)) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create" << dirPath;
+            return false;
+        }
+        const QString fileName = dbFileName(id);
+        const bool newDb = QFileInfo::exists(fileName);
+        db.setDatabaseName(fileName);
+        if (!db.open()) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create" << db.databaseName();
+            return false;
+        }
+        QSqlQuery query(db);
+        if (!newDb) {
+            query.exec(schemaDataBase());
+            if (query.lastError().isValid()) {
+                qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create table LOGS in" << db.databaseName() << ":" << db.lastError();
+                return false;
+            }
+        }
+        // Using the write-ahead log and sync = NORMAL for faster writes
+        // (idea taken from kactivities-stat)
+        query.exec(QStringLiteral("PRAGMA synchronous = 1"));
+        // use the write-ahead log (requires sqlite > 3.7.0)
+        query.exec(QStringLiteral("PRAGMA journal_mode = WAL"));
+    }
+
+    Q_ASSERT(db.isValid());
+    Q_ASSERT(db.isOpen());
+    return true;
 }

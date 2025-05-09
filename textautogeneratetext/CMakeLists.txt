@@ -104,6 +104,8 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     core/localdatabase/textautogeneratelocaldatabaseabstract.cpp
     core/localdatabase/textautogeneratelocalchatsdatabase.h
     core/localdatabase/textautogeneratelocalchatsdatabase.cpp
+    core/localdatabase/textautogeneratelocalmessagesdatabase.cpp
+    core/localdatabase/textautogeneratelocalmessagesdatabase.h
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
@@ -188,6 +190,7 @@ target_link_libraries(KF6TextAutoGenerateText
     Qt::Widgets
     Qt::Network
     PRIVATE
+    Qt::Sql
     KF6::I18n
     KF6::WidgetsAddons
     KF6::ConfigGui

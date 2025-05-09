@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QSortFilterProxyModel>
+#include <QSqlDatabase>
 #include <QString>
 namespace TextAutoGenerateText
 {
@@ -22,7 +23,7 @@ public:
     explicit TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type);
     virtual ~TextAutoGenerateLocalDatabaseAbstract();
 
-    [[nodiscard]] QString dbFileName(const QString &identifier) const;
+    [[nodiscard]] QString dbFileName(const QString &id) const;
 
     // Only for test!
     [[nodiscard]] QString schemaDatabaseStr() const;
@@ -30,8 +31,11 @@ public:
 protected:
     [[nodiscard]] virtual QString schemaDataBase() const;
     [[nodiscard]] QString databaseName() const;
+    [[nodiscard]] bool initializeDataBase(const QString &chatId, QSqlDatabase &db);
+    [[nodiscard]] bool checkDataBase(const QString &id, QSqlDatabase &db);
     const QString mBasePath;
     const DatabaseType mDatabaseType = DatabaseType::Unknown;
+    [[nodiscard]] QString generateDbName(const QString &id) const;
 };
 
 }
