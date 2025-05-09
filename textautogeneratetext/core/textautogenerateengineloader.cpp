@@ -20,12 +20,6 @@ public:
     QHash<QString, TextAutoGenerateTextClient *> autogenerateTextClients;
 };
 
-TextAutoGenerateEngineLoader *TextAutoGenerateEngineLoader::self()
-{
-    static TextAutoGenerateEngineLoader s_self;
-    return &s_self;
-}
-
 TextAutoGenerateEngineLoader::TextAutoGenerateEngineLoader(QObject *parent)
     : QObject{parent}
     , d(new TextAutoGenerateText::TextAutoGenerateEngineLoaderPrivate)

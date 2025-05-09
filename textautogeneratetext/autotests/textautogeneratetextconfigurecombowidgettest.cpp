@@ -20,7 +20,7 @@ TextAutoGenerateTextConfigureComboWidgetTest::TextAutoGenerateTextConfigureCombo
 
 void TextAutoGenerateTextConfigureComboWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextConfigureComboWidget d;
+    TextAutoGenerateText::TextAutoGenerateTextConfigureComboWidget d(nullptr);
     auto mEngineComboBox = d.findChild<QComboBox *>(QStringLiteral("mEngineComboBox"));
     QVERIFY(mEngineComboBox);
     auto mConfigureEngine = d.findChild<QToolButton *>(QStringLiteral("mConfigureEngine"));

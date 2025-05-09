@@ -5,7 +5,6 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <KSharedConfig>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 #include <memory>

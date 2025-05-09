@@ -15,7 +15,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))
-    , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(this))
+    , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(manager, this))
     , mTextAutoGenerateWidget(new TextAutoGenerateWidget(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);

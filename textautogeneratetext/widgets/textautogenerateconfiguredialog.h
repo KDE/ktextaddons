@@ -8,6 +8,7 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateConfigureWidget;
 /**
  * @brief The TextAutoGenerateConfigureDialog class
@@ -17,7 +18,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateConfigureDialog : public QDial
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateConfigureDialog(QWidget *parent = nullptr);
+    explicit TextAutoGenerateConfigureDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateConfigureDialog() override;
 
     void saveSettings();

@@ -13,9 +13,10 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(QWidget *parent)
+TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mMessageWidget(new KMessageWidget(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -47,7 +48,7 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 
 void TextAutoGenerateNotWorkingWidget::slotConfigure()
 {
-    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(this);
+    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(mManager, this);
     d.exec();
 }
 

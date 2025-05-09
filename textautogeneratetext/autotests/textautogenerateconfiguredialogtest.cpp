@@ -20,7 +20,7 @@ TextAutoGenerateConfigureDialogTest::TextAutoGenerateConfigureDialogTest(QObject
 
 void TextAutoGenerateConfigureDialogTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateConfigureDialog d;
+    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(nullptr);
     auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 

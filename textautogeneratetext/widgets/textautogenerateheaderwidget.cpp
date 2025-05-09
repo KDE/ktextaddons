@@ -12,10 +12,11 @@
 #include <QToolButton>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(QWidget *parent)
+TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mEngineName(new QLabel(this))
     , mConfigureEngine(new QToolButton(this))
+    , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -46,7 +47,7 @@ void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
 
 void TextAutoGenerateHeaderWidget::slotConfigureEngine()
 {
-    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(this);
+    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(mManager, this);
     if (d.exec()) {
         d.saveSettings();
         Q_EMIT configChanged();

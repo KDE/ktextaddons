@@ -12,9 +12,9 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateConfigureDialog::TextAutoGenerateConfigureDialog(QWidget *parent)
+TextAutoGenerateConfigureDialog::TextAutoGenerateConfigureDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
-    , mTextAutoGenerateConfigureWidget(new TextAutoGenerateConfigureWidget(this))
+    , mTextAutoGenerateConfigureWidget(new TextAutoGenerateConfigureWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure IA"));
     auto mainLayout = new QVBoxLayout(this);

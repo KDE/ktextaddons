@@ -9,6 +9,7 @@
 class KMessageWidget;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 /**
  * @brief The TextAutoGenerateNotWorkingWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -17,7 +18,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingWidget : public QWid
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateNotWorkingWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateNotWorkingWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateNotWorkingWidget() override;
 
     void setMessageError(const QString &str);
@@ -26,5 +27,6 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
     KMessageWidget *const mMessageWidget;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

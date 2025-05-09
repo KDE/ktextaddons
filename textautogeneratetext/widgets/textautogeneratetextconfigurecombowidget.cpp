@@ -7,6 +7,7 @@
 #include "textautogeneratetextconfigurecombowidget.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogenerateengineutil.h"
+#include "core/textautogeneratemanager.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QComboBox>
@@ -14,10 +15,11 @@
 #include <QToolButton>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextConfigureComboWidget::TextAutoGenerateTextConfigureComboWidget(QWidget *parent)
+TextAutoGenerateTextConfigureComboWidget::TextAutoGenerateTextConfigureComboWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mEngineComboBox(new QComboBox(this))
     , mConfigureEngine(new QToolButton(this))
+    , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -34,7 +36,9 @@ TextAutoGenerateTextConfigureComboWidget::TextAutoGenerateTextConfigureComboWidg
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine);
     connect(mEngineComboBox, &QComboBox::currentIndexChanged, this, &TextAutoGenerateTextConfigureComboWidget::slotEngineChanged);
 
-    fillEngine();
+    if (mManager) {
+        fillEngine();
+    }
 }
 
 TextAutoGenerateTextConfigureComboWidget::~TextAutoGenerateTextConfigureComboWidget() = default;
@@ -42,8 +46,8 @@ TextAutoGenerateTextConfigureComboWidget::~TextAutoGenerateTextConfigureComboWid
 void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 {
     const QString engine = mEngineComboBox->currentData().toString();
-    if (TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->hasConfigurationDialog(engine)) {
-        if (TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->showConfigureDialog(engine, this)) {
+    if (mManager->textAutoGenerateEngineLoader()->hasConfigurationDialog(engine)) {
+        if (mManager->textAutoGenerateEngineLoader()->showConfigureDialog(engine, this)) {
             Q_EMIT configureChanged(engine);
         }
     }
@@ -52,8 +56,8 @@ void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 {
     mEngineComboBox->clear();
-    TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->loadPlugins();
-    const QMap<QString, QString> map = TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->textAutoGenerateTextEngineInfos();
+    mManager->loadEngine();
+    const QMap<QString, QString> map = mManager->textAutoGenerateEngineLoader()->textAutoGenerateTextEngineInfos();
     QMapIterator<QString, QString> iMap(map);
     while (iMap.hasNext()) {
         iMap.next();
@@ -64,7 +68,7 @@ void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 void TextAutoGenerateTextConfigureComboWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngineComboBox->itemData(index).toString();
-    mConfigureEngine->setEnabled(TextAutoGenerateText::TextAutoGenerateEngineLoader::self()->hasConfigurationDialog(engine));
+    mConfigureEngine->setEnabled(mManager->textAutoGenerateEngineLoader()->hasConfigurationDialog(engine));
     Q_EMIT engineChanged(engine);
 }
 

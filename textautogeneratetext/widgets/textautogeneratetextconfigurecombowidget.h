@@ -12,6 +12,7 @@ class QComboBox;
 class QToolButton;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 /**
  * @brief The TextAutoGenerateTextConfigureComboWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -20,7 +21,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigureComboWidget : pub
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextConfigureComboWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextConfigureComboWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextConfigureComboWidget() override;
 
     void load();
@@ -36,5 +37,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEngineChanged(int index);
     QComboBox *const mEngineComboBox;
     QToolButton *const mConfigureEngine;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

@@ -9,6 +9,7 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateTextConfigureComboWidget;
 /**
  * @brief The TextAutoGenerateConfigureWidget class
@@ -18,7 +19,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateConfigureWidget : public QWidg
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateConfigureWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateConfigureWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateConfigureWidget() override;
 
     void loadSettings();

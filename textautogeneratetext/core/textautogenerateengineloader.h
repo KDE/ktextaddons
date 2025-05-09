@@ -21,8 +21,6 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineLoader : public QObject
 {
     Q_OBJECT
 public:
-    static TextAutoGenerateEngineLoader *self();
-
     explicit TextAutoGenerateEngineLoader(QObject *parent = nullptr);
     ~TextAutoGenerateEngineLoader() override;
 

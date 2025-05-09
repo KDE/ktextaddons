@@ -19,7 +19,7 @@ TextAutoGenerateHeaderWidgetTest::TextAutoGenerateHeaderWidgetTest(QObject *pare
 
 void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateHeaderWidget w;
+    TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});

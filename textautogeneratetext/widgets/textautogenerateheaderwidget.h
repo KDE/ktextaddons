@@ -11,11 +11,12 @@ class QLabel;
 class QToolButton;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHeaderWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateHeaderWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateHeaderWidget() override;
     void updateEngineName(const QString &engineName);
 
@@ -26,5 +27,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
     QLabel *const mEngineName;
     QToolButton *const mConfigureEngine;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

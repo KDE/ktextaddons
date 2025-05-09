@@ -11,9 +11,9 @@
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateConfigureWidget::TextAutoGenerateConfigureWidget(QWidget *parent)
+TextAutoGenerateConfigureWidget::TextAutoGenerateConfigureWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mPluginComboBox(new TextAutoGenerateTextConfigureComboWidget(this))
+    , mPluginComboBox(new TextAutoGenerateTextConfigureComboWidget(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
