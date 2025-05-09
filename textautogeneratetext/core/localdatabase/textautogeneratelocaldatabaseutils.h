@@ -8,7 +8,7 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
-namespace TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalDatabaseUtils
+namespace TextAutoGenerateLocalDatabaseUtils
 {
 enum class DatabasePath : uint8_t {
     Chats,
