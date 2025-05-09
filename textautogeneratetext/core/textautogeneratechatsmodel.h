@@ -46,6 +46,7 @@ public:
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString sectionName(SectionHistory sectionId);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateChat> mChats;
 };
 }

@@ -126,4 +126,22 @@ QString TextAutoGenerateChatsModel::sectionName(SectionHistory sectionId)
     return QStringLiteral("ERROR");
 }
 
+TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateMessage &m) const
+{
+    if (m.dateTime() == -1) {
+        return TextAutoGenerateChatsModel::SectionHistory::Unknown;
+    }
+    const QDate d = QDateTime::fromSecsSinceEpoch(m.dateTime()).date();
+    if (d == QDate::currentDate()) {
+        return TextAutoGenerateChatsModel::SectionHistory::Today;
+    } else if (d < QDate::currentDate().addDays(7)) {
+        return TextAutoGenerateChatsModel::SectionHistory::LessThanSevenDays;
+    } else if (d < QDate::currentDate().addDays(30)) {
+        return TextAutoGenerateChatsModel::SectionHistory::LessThanThirtyDays;
+    } else {
+        return TextAutoGenerateChatsModel::SectionHistory::Later;
+    }
+    return TextAutoGenerateChatsModel::SectionHistory::Unknown;
+}
+
 #include "moc_textautogeneratechatsmodel.cpp"
