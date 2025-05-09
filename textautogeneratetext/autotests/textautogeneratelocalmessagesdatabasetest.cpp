@@ -22,6 +22,12 @@ static QString otherChatId()
     return QStringLiteral("otherChatId");
 }
 
+enum class Fields {
+    MessageId,
+    TimeStamp,
+    Json,
+}; // in the same order as the table
+
 TextAutoGenerateLocalMessagesDatabaseTest::TextAutoGenerateLocalMessagesDatabaseTest(QObject *parent)
     : QObject{parent}
 {
@@ -83,14 +89,12 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()
     // THEN
     QVERIFY(tableModel);
     QCOMPARE(tableModel->rowCount(), 2);
-    /*
     const QSqlRecord record0 = tableModel->record(0);
-    QCOMPARE(record0.value(int(Fields::Json)).toByteArray(), Message::serialize(message1, false));
-    QCOMPARE(record0.value(int(Fields::TimeStamp)).toULongLong(), message1.timeStamp());
+    QCOMPARE(record0.value(int(Fields::Json)).toByteArray(), TextAutoGenerateText::TextAutoGenerateMessage::serialize(message1, false));
+    QCOMPARE(record0.value(int(Fields::TimeStamp)).toULongLong(), message1.dateTime());
     const QSqlRecord record1 = tableModel->record(1);
-    QCOMPARE(record1.value(int(Fields::Json)).toByteArray(), Message::serialize(message2, false));
-    QCOMPARE(record1.value(int(Fields::TimeStamp)).toULongLong(), message2.timeStamp());
-    */
+    QCOMPARE(record1.value(int(Fields::Json)).toByteArray(), TextAutoGenerateText::TextAutoGenerateMessage::serialize(message2, false));
+    QCOMPARE(record1.value(int(Fields::TimeStamp)).toULongLong(), message2.dateTime());
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteMessages() // this test depends on shouldStoreMessages()
