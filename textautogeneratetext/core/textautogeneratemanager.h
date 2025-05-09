@@ -14,6 +14,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateMessagesModel;
 class TextAutoGenerateLocalDatabaseManager;
 class TextAutoGenerateChatsModel;
+class TextAutoGenerateEngineLoader;
 /**
  * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
@@ -35,6 +36,8 @@ public:
     void setShowArchived(bool newShowArchived);
 
     [[nodiscard]] TextAutoGenerateChatsModel *textAutoGenerateChatsModel() const;
+    TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -42,6 +45,7 @@ Q_SIGNALS:
 private:
     TextAutoGenerateMessagesModel *const mTextAutoGenerateMessagesModel;
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
+    TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     bool mShowArchived = false;
 };

@@ -7,6 +7,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/textautogeneratechatsmodel.h"
 #include "core/textautogeneratemessagesmodel.h"
+#include "textautogenerateengineloader.h"
 
 #include <KConfigGroup>
 #include <QRegularExpression>
@@ -16,6 +17,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateMessagesModel(new TextAutoGenerateMessagesModel(this))
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
+    , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
 {
 }
@@ -35,6 +37,11 @@ TextAutoGenerateMessagesModel *TextAutoGenerateManager::textAutoGenerateMessages
 TextAutoGenerateChatsModel *TextAutoGenerateManager::textAutoGenerateChatsModel() const
 {
     return mTextAutoGenerateChatsModel;
+}
+
+TextAutoGenerateEngineLoader *TextAutoGenerateManager::textAutoGenerateEngineLoader() const
+{
+    return mTextAutoGenerateEngineLoader;
 }
 
 bool TextAutoGenerateManager::showArchived() const

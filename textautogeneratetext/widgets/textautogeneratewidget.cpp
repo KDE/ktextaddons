@@ -61,13 +61,15 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
 
     connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::configChanged, this, &TextAutoGenerateWidget::slotConfigureChanged);
 
-    connect(manager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
-        slotEditingFinished(str, {});
-    });
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
+            slotEditingFinished(str, {});
+        });
 
-    connect(manager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
-        slotAskMessageRequester(str);
-    });
+        connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
+            slotAskMessageRequester(str);
+        });
+    }
 
     connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::keyPressed, this, &TextAutoGenerateWidget::keyPressedInLineEdit);
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editMessageRequested, this, &TextAutoGenerateWidget::slotEditMessage);
@@ -75,9 +77,11 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::refreshAnswerRequested, this, &TextAutoGenerateWidget::slotRefreshAnswer);
     connect(this, &TextAutoGenerateWidget::stopEditingMode, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editingFinished);
     connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, &TextAutoGenerateWidget::slotSwitchToChat);
-    connect(TextAutoGenerateText::TextAutoGenerateEngineLoader::self(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
-        Q_EMIT noPluginsFound(i18n("No plugin found."));
-    });
+    if (mManager) {
+        connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
+            Q_EMIT noPluginsFound(i18n("No plugin found."));
+        });
+    }
     loadEngine();
     readConfig();
 }
