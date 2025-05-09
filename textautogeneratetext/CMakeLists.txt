@@ -23,7 +23,8 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
 )
 
-add_library(KF6TextAutoGenerateText)
+add_library(KF6TextAutoGenerateText
+    core/localdatabase/textautogeneratelocaldatabasemanager.h core/localdatabase/textautogeneratelocaldatabasemanager.cpp)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
