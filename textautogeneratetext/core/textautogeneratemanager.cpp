@@ -41,6 +41,7 @@ void TextAutoGenerateManager::createNewChat()
     TextAutoGenerateChat chat;
     chat.setIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128));
     mTextAutoGenerateChatsModel->addChat(chat);
+    mDatabaseManager->insertOrUpdateChat(chat);
 }
 
 TextAutoGenerateMessagesModel *TextAutoGenerateManager::textAutoGenerateMessagesModel() const
