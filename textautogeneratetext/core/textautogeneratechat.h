@@ -17,6 +17,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
     Q_GADGET
 public:
     TextAutoGenerateChat();
+    TextAutoGenerateChat(const TextAutoGenerateChat &other);
+    TextAutoGenerateChat &operator=(const TextAutoGenerateChat &other);
+
     ~TextAutoGenerateChat();
 
     [[nodiscard]] bool favorite() const;
@@ -38,10 +41,10 @@ public:
     static QByteArray serialize(const TextAutoGenerateChat &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateChat deserialize(const QJsonObject &source);
 
-    QPointer<TextAutoGenerateMessagesModel> messageModel() const;
+    TextAutoGenerateMessagesModel *messageModel() const;
 
 private:
-    QPointer<TextAutoGenerateMessagesModel> mMessageModel;
+    QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
     QString mTitle;
     bool mFavorite = false;

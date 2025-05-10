@@ -12,14 +12,32 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateChat::TextAutoGenerateChat()
+    : mMessageModel(new TextAutoGenerateMessagesModel())
 {
-    mMessageModel = new TextAutoGenerateMessagesModel();
 }
 
-TextAutoGenerateChat::~TextAutoGenerateChat()
+TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
+    : mMessageModel(other.mMessageModel)
+    , mIdentifier(other.mIdentifier)
+    , mTitle(other.mTitle)
+    , mFavorite(other.mFavorite)
+    , mArchived(other.mArchived)
 {
-    delete mMessageModel;
 }
+
+TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat &other)
+{
+    if (this != &other) {
+        mMessageModel = other.mMessageModel;
+        mIdentifier = other.mIdentifier;
+        mTitle = other.mTitle;
+        mFavorite = other.mFavorite;
+        mArchived = other.mArchived;
+    }
+    return *this;
+}
+
+TextAutoGenerateChat::~TextAutoGenerateChat() = default;
 
 bool TextAutoGenerateChat::favorite() const
 {
@@ -112,9 +130,9 @@ TextAutoGenerateChat TextAutoGenerateChat::deserialize(const QJsonObject &o)
     return chat;
 }
 
-QPointer<TextAutoGenerateMessagesModel> TextAutoGenerateChat::messageModel() const
+TextAutoGenerateMessagesModel *TextAutoGenerateChat::messageModel() const
 {
-    return mMessageModel;
+    return mMessageModel.data();
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
