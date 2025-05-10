@@ -58,7 +58,10 @@ bool TextAutoGenerateManager::showArchived() const
 
 void TextAutoGenerateManager::setShowArchived(bool newShowArchived)
 {
-    mShowArchived = newShowArchived;
+    if (mShowArchived != newShowArchived) {
+        mShowArchived = newShowArchived;
+        Q_EMIT showArchiveChanged();
+    }
 }
 
 void TextAutoGenerateManager::loadHistory()

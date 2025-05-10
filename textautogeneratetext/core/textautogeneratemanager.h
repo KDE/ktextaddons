@@ -58,6 +58,7 @@ Q_SIGNALS:
     void pluginsInitializedDone();
     void errorOccured(const QString &msg);
     void currentChatIdChanged();
+    void showArchiveChanged();
 
 private:
     TextAutoGenerateMessagesModel *const mTextAutoGenerateMessagesModel;
