@@ -56,6 +56,7 @@ Q_SIGNALS:
     void askMessageRequested(const QString &str);
     void pluginsInitializedDone();
     void errorOccured(const QString &msg);
+    void currentChatIdChanged();
 
 private:
     TextAutoGenerateMessagesModel *const mTextAutoGenerateMessagesModel;

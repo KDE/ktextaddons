@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+  SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemanager.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
@@ -96,7 +96,10 @@ QByteArray TextAutoGenerateManager::currentChatId() const
 
 void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatId)
 {
-    mCurrentChatId = newCurrentChatId;
+    if (mCurrentChatId != newCurrentChatId) {
+        mCurrentChatId = newCurrentChatId;
+        Q_EMIT currentChatIdChanged();
+    }
 }
 
 void TextAutoGenerateManager::loadEngine()
