@@ -166,7 +166,7 @@ TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(c
     return TextAutoGenerateChatsModel::SectionHistory::Unknown;
 }
 
-TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messageModel(const QByteArray &chatId) const
+TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const QByteArray &chatId) const
 {
     const int roomCount = mChats.count();
     for (int i = 0; i < roomCount; ++i) {

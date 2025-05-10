@@ -76,8 +76,10 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::cancelRequested, this, &TextAutoGenerateWidget::slotCancelRequest);
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::refreshAnswerRequested, this, &TextAutoGenerateWidget::slotRefreshAnswer);
     connect(this, &TextAutoGenerateWidget::stopEditingMode, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editingFinished);
-    connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, &TextAutoGenerateWidget::slotSwitchToChat);
     if (mManager) {
+        connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, [this](const QByteArray &chatId) {
+            mManager->setCurrentChatId(chatId);
+        });
         connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
             Q_EMIT noPluginsFound(i18n("No plugin found."));
         });
@@ -89,11 +91,6 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
 TextAutoGenerateWidget::~TextAutoGenerateWidget()
 {
     writeConfig();
-}
-
-void TextAutoGenerateWidget::slotSwitchToChat(const QByteArray &chatId)
-{
-    mTextAutoGenerateTextLineEditWidget->setChatId(chatId);
 }
 
 void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)

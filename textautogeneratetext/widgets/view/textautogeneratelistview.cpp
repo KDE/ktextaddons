@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelistview.h"
-#include "core/textautogeneratechatsmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratelistviewdelegate.h"
@@ -314,7 +313,7 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
-    setModel(mManager->textAutoGenerateChatsModel()->messageModel(mManager->currentChatId()));
+    setModel(mManager->messagesModelFromChatId(mManager->currentChatId()));
 }
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)

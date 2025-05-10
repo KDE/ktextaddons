@@ -41,6 +41,5 @@ private:
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     QPushButton *const mSendMessage;
     QByteArray mUuid;
-    QByteArray mChatId;
 };
 }

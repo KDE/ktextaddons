@@ -51,6 +51,7 @@ public:
     [[nodiscard]] QByteArray currentChatId() const;
     void setCurrentChatId(const QByteArray &newCurrentChatId);
 
+    [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

@@ -102,6 +102,11 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
     }
 }
 
+TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(const QByteArray &chatId)
+{
+    return textAutoGenerateChatsModel()->messagesModel(chatId);
+}
+
 void TextAutoGenerateManager::loadEngine()
 {
     if (mTextAutoGeneratePlugin) {
