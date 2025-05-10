@@ -89,6 +89,16 @@ void TextAutoGenerateManager::addMessage(const TextAutoGenerateMessage &msg)
     textAutoGenerateMessagesModel()->addMessage(msg);
 }
 
+QByteArray TextAutoGenerateManager::currentChatId() const
+{
+    return mCurrentChatId;
+}
+
+void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatId)
+{
+    mCurrentChatId = newCurrentChatId;
+}
+
 void TextAutoGenerateManager::loadEngine()
 {
     if (mTextAutoGeneratePlugin) {

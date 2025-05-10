@@ -48,6 +48,9 @@ public:
 
     void addMessage(const TextAutoGenerateMessage &msg);
 
+    [[nodiscard]] QByteArray currentChatId() const;
+    void setCurrentChatId(const QByteArray &newCurrentChatId);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -61,6 +64,7 @@ private:
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
     TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
+    QByteArray mCurrentChatId;
     bool mShowArchived = false;
 };
 }
