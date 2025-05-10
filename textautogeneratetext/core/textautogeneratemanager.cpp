@@ -86,6 +86,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
 void TextAutoGenerateManager::addMessage(const TextAutoGenerateMessage &msg)
 {
     // TODO add to database
+    // TODO Use correct textAutoGenerateMessagesModel
     textAutoGenerateMessagesModel()->addMessage(msg);
 }
 
@@ -104,6 +105,10 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
 
 TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(const QByteArray &chatId)
 {
+    if (chatId.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " chatid is empty it's a bug!!!!";
+        return nullptr;
+    }
     return textAutoGenerateChatsModel()->messagesModel(chatId);
 }
 
