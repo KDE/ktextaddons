@@ -38,7 +38,7 @@ QString OpenAIPlugin::name()
     return "openai"_L1;
 }
 
-void OpenAIPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
+void OpenAIPlugin::sendToLLM(const SendToLLMInfo &info)
 {
     // TODO
 }

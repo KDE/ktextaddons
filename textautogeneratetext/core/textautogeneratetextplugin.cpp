@@ -53,7 +53,12 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &uuid, const QStri
 {
     if (ready()) {
         const QByteArray llmUuid = d->manager->textAutoGenerateMessagesModel()->editMessage(uuid, str);
-        sendToLLM(str, llmUuid);
+
+        SendToLLMInfo info;
+        info.message = str;
+        info.messageUuid = llmUuid;
+
+        sendToLLM(std::move(info));
     }
 }
 
@@ -81,7 +86,10 @@ void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
 
         d->manager->addMessage(std::move(msg));
         d->manager->addMessage(std::move(msgLlm));
-        sendToLLM(str, llmUuid);
+        SendToLLMInfo info;
+        info.message = str;
+        info.messageUuid = llmUuid;
+        sendToLLM(std::move(info));
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }

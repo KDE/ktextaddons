@@ -30,7 +30,7 @@ public:
     [[nodiscard]] static QString name();
 
 protected:
-    void sendToLLM(const QString &message, const QByteArray &uuid) override;
+    void sendToLLM(const SendToLLMInfo &info) override;
     void cancelRequest(const QByteArray &uuid) override;
 
 private:

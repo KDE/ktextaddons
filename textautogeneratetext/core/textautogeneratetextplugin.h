@@ -59,7 +59,7 @@ Q_SIGNALS:
     void initializedDone();
 
 protected:
-    virtual void sendToLLM(const QString &message, const QByteArray &uuid) = 0;
+    virtual void sendToLLM(const SendToLLMInfo &info) = 0;
 
 private:
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;

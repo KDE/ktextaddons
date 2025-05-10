@@ -78,10 +78,10 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
     }
 }
 
-void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
+void OllamaPlugin::sendToLLM(const SendToLLMInfo &info)
 {
     OllamaRequest req;
-    req.setMessage(message);
+    req.setMessage(info.message);
     req.setModel(currentModel());
     /*
     for (const auto &msg : m_messages | std::views::reverse) {
@@ -92,13 +92,14 @@ void OllamaPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
     }
     */
     auto reply = OllamaManager::self()->getCompletion(req);
-
-    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, uuid, this]() {
-                                                                              manager()->textAutoGenerateMessagesModel()->replaceContent(uuid,
-                                                                                                                                         reply->readResponse());
-                                                                          })));
-    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::finished, this, [reply, uuid, this] {
-                                                                              manager()->textAutoGenerateMessagesModel()->changeInProgress(uuid, false);
+    const QByteArray messageUuid = info.messageUuid;
+    mConnections.insert(reply,
+                        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::contentAdded, this, [reply, messageUuid, this]() {
+                                                                       manager()->textAutoGenerateMessagesModel()->replaceContent(messageUuid,
+                                                                                                                                  reply->readResponse());
+                                                                   })));
+    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, this] {
+                                                                              manager()->textAutoGenerateMessagesModel()->changeInProgress(messageUuid, false);
                                                                               mConnections.remove(reply);
                                                                               reply->deleteLater();
 #if 0

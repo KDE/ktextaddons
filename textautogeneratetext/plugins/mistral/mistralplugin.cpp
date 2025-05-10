@@ -33,7 +33,7 @@ QString MistralPlugin::engineName() const
     return name();
 }
 
-void MistralPlugin::sendToLLM(const QString &message, const QByteArray &uuid)
+void MistralPlugin::sendToLLM(const SendToLLMInfo &info)
 {
     // TODO
 }
