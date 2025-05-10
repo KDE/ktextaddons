@@ -37,8 +37,4 @@ void TextAutoGenerateResultWidget::editingFinished(const QByteArray &uuid)
     mTextAutoGenerateListView->editingFinished(uuid);
 }
 
-void TextAutoGenerateResultWidget::setChatId(const QByteArray &chatId)
-{
-    mTextAutoGenerateListView->setChatId(chatId);
-}
 #include "moc_textautogenerateresultwidget.cpp"

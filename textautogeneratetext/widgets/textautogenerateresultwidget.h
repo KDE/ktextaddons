@@ -24,7 +24,6 @@ public:
 
     void handleKeyPressEvent(QKeyEvent *ev);
     void editingFinished(const QByteArray &uuid);
-    void setChatId(const QByteArray &chatId);
 
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);

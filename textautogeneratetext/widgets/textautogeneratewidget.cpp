@@ -94,7 +94,6 @@ TextAutoGenerateWidget::~TextAutoGenerateWidget()
 void TextAutoGenerateWidget::slotSwitchToChat(const QByteArray &chatId)
 {
     mTextAutoGenerateTextLineEditWidget->setChatId(chatId);
-    mTextAutoGenerateResultWidget->setChatId(chatId);
 }
 
 void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)

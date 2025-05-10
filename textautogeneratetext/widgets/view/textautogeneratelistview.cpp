@@ -38,6 +38,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
         connect(mManager->textAutoGenerateMessagesModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
             mDelegate->clearCache();
         });
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateListView::slotCurrentChatIdChanged);
     }
 
     connect(mDelegate, &TextAutoGenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
@@ -311,9 +312,9 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
     }
 }
 
-void TextAutoGenerateListView::setChatId(const QByteArray &chatId)
+void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
-    setModel(mManager->textAutoGenerateChatsModel()->messageModel(chatId));
+    setModel(mManager->textAutoGenerateChatsModel()->messageModel(mManager->currentChatId()));
 }
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)

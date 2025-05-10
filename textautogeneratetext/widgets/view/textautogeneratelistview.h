@@ -24,8 +24,6 @@ public:
 
     void editingFinished(const QByteArray &uuid);
 
-    void setChatId(const QByteArray &chatId);
-
 protected:
     void resizeEvent(QResizeEvent *ev) override;
 
@@ -58,6 +56,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void addWaitingAnswerAnimation(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshRequested(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
 
     bool mAtBottom = true;
     QPoint mPressedPosition;
