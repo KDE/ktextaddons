@@ -5,6 +5,7 @@
 */
 #include "textautogeneratechattest.h"
 #include "core/textautogeneratechat.h"
+#include <QJsonDocument>
 #include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateChatTest)
