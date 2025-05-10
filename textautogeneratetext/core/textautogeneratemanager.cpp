@@ -13,9 +13,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "textautogenerateengineloader.h"
 #include "textautogeneratetextcore_debug.h"
 
-#include <KConfigGroup>
-#include <QRegularExpression>
-
 using namespace TextAutoGenerateText;
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
