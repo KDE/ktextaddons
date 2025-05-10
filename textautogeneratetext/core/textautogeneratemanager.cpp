@@ -44,6 +44,26 @@ void TextAutoGenerateManager::createNewChat()
     mDatabaseManager->insertOrUpdateChat(chat);
 }
 
+void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        messagesModel->replaceContent(uuid, content);
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
+    }
+}
+
+void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        messagesModel->changeInProgress(uuid, inProgress);
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
+    }
+}
+
 TextAutoGenerateMessagesModel *TextAutoGenerateManager::textAutoGenerateMessagesModel() const
 {
     return mTextAutoGenerateMessagesModel;

@@ -172,6 +172,7 @@ TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const Q
     const int roomCount = mChats.count();
     for (int i = 0; i < roomCount; ++i) {
         const TextAutoGenerateChat chat = mChats.at(i);
+        qDebug() << " chat.identifier() " << chat.identifier() << " chatId " << chatId;
         if (chat.identifier() == chatId) {
             return chat.messageModel();
         }

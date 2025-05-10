@@ -53,6 +53,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId);
     void createNewChat();
+    void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content);
+    void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
