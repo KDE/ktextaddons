@@ -52,6 +52,7 @@ public:
     void setCurrentChatId(const QByteArray &newCurrentChatId);
 
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId);
+    void createNewChat();
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

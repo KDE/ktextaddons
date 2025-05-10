@@ -36,6 +36,13 @@ void TextAutoGenerateManager::ask(const QString &msg)
     Q_EMIT askMessageRequested(msg);
 }
 
+void TextAutoGenerateManager::createNewChat()
+{
+    TextAutoGenerateChat chat;
+    chat.setIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128));
+    mTextAutoGenerateChatsModel->addChat(chat);
+}
+
 TextAutoGenerateMessagesModel *TextAutoGenerateManager::textAutoGenerateMessagesModel() const
 {
     return mTextAutoGenerateMessagesModel;
@@ -68,7 +75,11 @@ void TextAutoGenerateManager::loadHistory()
 {
     // Load chat from database
     const QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats();
-    mTextAutoGenerateChatsModel->setChats(std::move(chats));
+    if (chats.isEmpty()) {
+        createNewChat();
+    } else {
+        mTextAutoGenerateChatsModel->setChats(std::move(chats));
+    }
 }
 
 QString TextAutoGenerateManager::generateEngineDisplayName() const
