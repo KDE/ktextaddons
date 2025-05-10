@@ -108,7 +108,7 @@ TextAutoGenerateChat TextAutoGenerateChat::deserialize(const QJsonObject &o)
     chat.setTitle(o["title"_L1].toString());
     chat.setFavorite(o["favorite"_L1].toBool(false));
     chat.setArchived(o["archived"_L1].toBool(false));
-    chat.setIdentifier(o["archived"_L1].toString().toLatin1());
+    chat.setIdentifier(o["identifier"_L1].toString().toLatin1());
     return chat;
 }
 
