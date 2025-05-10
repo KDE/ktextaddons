@@ -15,4 +15,5 @@ public:
     ~TextAutoGenerateChatTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldSerializeDeserialize();
 };

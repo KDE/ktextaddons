@@ -5,6 +5,7 @@
 */
 #include "textautogeneratechattest.h"
 #include "core/textautogeneratechat.h"
+#include <QJsonObject>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateChatTest)
 
@@ -23,6 +24,35 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
 
     // 10/05/2025 => size 72
     QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 72);
+}
+
+void TextAutoGenerateChatTest::shouldSerializeDeserialize()
+{
+    {
+        TextAutoGenerateText::TextAutoGenerateChat w;
+        w.setArchived(false);
+        w.setFavorite(true);
+        w.setTitle(QStringLiteral("bla"));
+        w.setIdentifier("foo");
+
+        const QByteArray ba = w.serialize(w, false);
+        QJsonDocument doc = QJsonDocument::fromJson(ba);
+        TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        QCOMPARE(w, ba1);
+    }
+
+    {
+        TextAutoGenerateText::TextAutoGenerateChat w;
+        w.setArchived(true);
+        w.setFavorite(false);
+        w.setTitle(QStringLiteral("bla2"));
+        w.setIdentifier("foo3");
+
+        const QByteArray ba = w.serialize(w, false);
+        QJsonDocument doc = QJsonDocument::fromJson(ba);
+        TextAutoGenerateText::TextAutoGenerateChat ba1 = TextAutoGenerateText::TextAutoGenerateChat::deserialize(doc.object());
+        QCOMPARE(w, ba1);
+    }
 }
 
 #include "moc_textautogeneratechattest.cpp"

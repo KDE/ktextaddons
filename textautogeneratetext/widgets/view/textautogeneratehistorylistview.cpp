@@ -58,6 +58,7 @@ void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
         const QByteArray uuid = idx.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+        qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << uuid;
         if (!uuid.isEmpty()) {
             Q_EMIT switchToChat(uuid);
         }

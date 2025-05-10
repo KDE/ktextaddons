@@ -48,6 +48,7 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return {};
     }
     const auto &chat = mChats[index.row()];
+    qDebug() << " chat " << chat;
     switch (role) {
     case Qt::DisplayRole:
     case Title:

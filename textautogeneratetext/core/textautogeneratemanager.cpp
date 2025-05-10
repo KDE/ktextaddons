@@ -114,6 +114,7 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
 {
     if (mCurrentChatId != newCurrentChatId) {
         mCurrentChatId = newCurrentChatId;
+        qDebug() << " mCurrentChatId" << mCurrentChatId;
         Q_EMIT currentChatIdChanged();
     }
 }
