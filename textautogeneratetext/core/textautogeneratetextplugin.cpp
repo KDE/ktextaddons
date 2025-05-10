@@ -107,4 +107,16 @@ TextAutoGenerateManager *TextAutoGenerateTextPlugin::manager() const
     return d->manager;
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToLLMInfo &t)
+{
+    QString message;
+    QByteArray messageUuid;
+    QByteArray chatId;
+
+    d.space() << "message:" << t.message;
+    d.space() << "messageUuid:" << t.messageUuid;
+    d.space() << "chatId:" << t.chatId;
+    return d;
+}
+
 #include "moc_textautogeneratetextplugin.cpp"

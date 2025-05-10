@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QDebug>
 #include <QObject>
 #include <memory>
 namespace TextAutoGenerateText
@@ -21,6 +22,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
+    struct TEXTAUTOGENERATETEXT_EXPORT SendToLLMInfo {
+        QString message;
+        QByteArray messageUuid;
+        QByteArray chatId;
+    };
     explicit TextAutoGenerateTextPlugin(QObject *parent = nullptr);
     ~TextAutoGenerateTextPlugin() override;
 
@@ -59,3 +65,5 @@ private:
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToLLMInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToLLMInfo &t);
