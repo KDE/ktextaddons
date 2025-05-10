@@ -20,6 +20,9 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(!w.archived());
     QVERIFY(w.title().isEmpty());
     QVERIFY(w.identifier().isEmpty());
+
+    // 10/05/2025 => size 72
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 72);
 }
 
 #include "moc_textautogeneratechattest.cpp"
