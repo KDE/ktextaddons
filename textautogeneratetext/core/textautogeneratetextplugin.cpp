@@ -49,19 +49,22 @@ void TextAutoGenerateTextPlugin::setReady(bool newReady)
     Q_EMIT initializedDone();
 }
 
-void TextAutoGenerateTextPlugin::editMessage(const QByteArray &uuid, const QString &str)
+void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str)
 {
     if (ready()) {
-        // TODO
-        /*
-        const QByteArray llmUuid = d->manager->textAutoGenerateMessagesModel()->editMessage(uuid, str);
+        auto messageModel = d->manager->messagesModelFromChatId(chatId);
+        if (messageModel) {
+            const QByteArray llmUuid = messageModel->editMessage(uuid, str);
 
-        SendToLLMInfo info;
-        info.message = str;
-        info.messageUuid = llmUuid;
+            SendToLLMInfo info;
+            info.message = str;
+            info.messageUuid = llmUuid;
+            info.chatId = chatId;
 
-        sendToLLM(std::move(info));
-        */
+            sendToLLM(std::move(info));
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << chatId;
+        }
     }
 }
 

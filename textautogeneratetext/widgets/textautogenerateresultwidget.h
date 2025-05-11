@@ -28,7 +28,7 @@ public:
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QModelIndex &index);
+    void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &index);
     void switchToChat(const QByteArray &uuid);
 
 private:

@@ -99,13 +99,11 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        // TODO
-        /*
-        const QModelIndex index = mManager->textAutoGenerateMessagesModel()->refreshAnswer(uuid);
+        const QByteArray chatId = mManager->currentChatId();
+        const QModelIndex index = mManager->refreshAnswer(chatId, uuid);
         if (index.isValid()) {
-            Q_EMIT refreshAnswerRequested(index);
+            Q_EMIT refreshAnswerRequested(chatId, index);
         }
-        */
     }
 }
 
@@ -299,8 +297,6 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
-    qDebug() << " SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs" << mManager->currentChatId();
-    qDebug() << " model : " << mManager->messagesModelFromChatId(mManager->currentChatId());
     setModel(mManager->messagesModelFromChatId(mManager->currentChatId()));
 }
 

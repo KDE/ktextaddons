@@ -45,11 +45,12 @@ public:
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
     void addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg);
+    [[nodiscard]] QModelIndex refreshAnswer(const QByteArray &chatId, const QByteArray &uuid) const;
 
     [[nodiscard]] QByteArray currentChatId() const;
     void setCurrentChatId(const QByteArray &newCurrentChatId);
 
-    [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId);
+    [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId) const;
     void createNewChat();
     void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);

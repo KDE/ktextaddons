@@ -40,7 +40,7 @@ protected:
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QModelIndex &index);
+    void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &index);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStyleOptionViewItem listViewOptions() const;

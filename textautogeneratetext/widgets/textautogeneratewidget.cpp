@@ -151,7 +151,7 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByte
     if (uuid.isEmpty()) {
         mManager->textAutoGeneratePlugin()->sendMessage(str);
     } else {
-        mManager->textAutoGeneratePlugin()->editMessage(uuid, str);
+        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
@@ -175,11 +175,11 @@ void TextAutoGenerateWidget::slotCancelRequest(const QByteArray &uuid)
     mManager->textAutoGeneratePlugin()->cancelRequest(uuid);
 }
 
-void TextAutoGenerateWidget::slotRefreshAnswer(const QModelIndex &index)
+void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
-    mManager->textAutoGeneratePlugin()->editMessage(uuid, messageStr);
+    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr);
 }
 
 void TextAutoGenerateWidget::slotInitializeDone()

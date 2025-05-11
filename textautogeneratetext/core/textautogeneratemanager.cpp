@@ -127,6 +127,15 @@ void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAut
     }
 }
 
+QModelIndex TextAutoGenerateManager::refreshAnswer(const QByteArray &chatId, const QByteArray &uuid) const
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        return messagesModel->refreshAnswer(uuid);
+    }
+    return {};
+}
+
 QByteArray TextAutoGenerateManager::currentChatId() const
 {
     return mCurrentChatId;
@@ -136,12 +145,11 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
 {
     if (mCurrentChatId != newCurrentChatId) {
         mCurrentChatId = newCurrentChatId;
-        qDebug() << " mCurrentChatId" << mCurrentChatId;
         Q_EMIT currentChatIdChanged();
     }
 }
 
-TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(const QByteArray &chatId)
+TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(const QByteArray &chatId) const
 {
     if (chatId.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " chatid is empty it's a bug!!!!";
