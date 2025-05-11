@@ -172,7 +172,17 @@ void TextAutoGenerateManager::checkInitializedMessagesModel()
         if (!mTextAutoGenerateChatsModel->isInitialized(chatId)) {
             auto messagesModel = messagesModelFromChatId(chatId);
             if (messagesModel) {
-                const QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
+                QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
+                // Sort messages
+                std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+                    if (left.dateTime() == right.dateTime()) {
+                        if (left.sender() == TextAutoGenerateMessage::Sender::User) {
+                            return true;
+                        }
+                    }
+                    return left.dateTime() < right.dateTime();
+                });
+
                 messagesModel->setMessages(messages);
                 connect(messagesModel,
                         &QAbstractItemModel::dataChanged,
