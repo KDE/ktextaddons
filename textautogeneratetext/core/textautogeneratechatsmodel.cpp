@@ -158,10 +158,11 @@ TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(c
     if (chat.favorite()) {
         return TextAutoGenerateChatsModel::SectionHistory::Favorite;
     }
-    qDebug() << " CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" << chat;
-    if (!chat.messageModel() || chat.messageModel()->messages().isEmpty()) {
-        qDebug() << " XCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCqsdqsddsqdsqd";
+    if (!chat.messageModel()) {
         return TextAutoGenerateChatsModel::SectionHistory::Unknown;
+    }
+    if (chat.messageModel()->messages().isEmpty()) {
+        return TextAutoGenerateChatsModel::SectionHistory::Today;
     }
     return section(chat.messageModel()->messages().constLast());
 }
