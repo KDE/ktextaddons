@@ -68,7 +68,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
 
 QString TextAutoGenerateChatsModel::title(const TextAutoGenerateChat &chat) const
 {
-    return chat.title();
+    const QString chatTitle = chat.title();
+    return chatTitle.isEmpty() ? i18n("New Chat...") : chatTitle;
 }
 
 qint64 TextAutoGenerateChatsModel::dateTime(const TextAutoGenerateChat &chat) const
