@@ -155,7 +155,12 @@ QString TextAutoGenerateChatsModel::sectionName(SectionHistory sectionId)
 
 TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateChat &chat) const
 {
+    if (chat.favorite()) {
+        return TextAutoGenerateChatsModel::SectionHistory::Favorite;
+    }
+    qDebug() << " CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" << chat;
     if (!chat.messageModel() || chat.messageModel()->messages().isEmpty()) {
+        qDebug() << " XCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCqsdqsddsqdsqd";
         return TextAutoGenerateChatsModel::SectionHistory::Unknown;
     }
     return section(chat.messageModel()->messages().constLast());
