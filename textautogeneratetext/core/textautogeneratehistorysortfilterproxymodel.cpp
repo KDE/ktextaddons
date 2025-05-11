@@ -26,6 +26,11 @@ bool TextAutoGenerateHistorySortFilterProxyModel::filterAcceptsRow(int source_ro
     if (!source_parent.isValid()) {
         return false;
     }
+    const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+    const bool archived = sourceIndex.data(TextAutoGenerateChatsModel::Archived).toBool();
+    if (mShowArchived != archived) {
+        return false;
+    }
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
@@ -46,6 +51,19 @@ bool TextAutoGenerateHistorySortFilterProxyModel::lessThan(const QModelIndex &le
         return leftDateTime < rightDateTime;
     }
     return left.row() < right.row();
+}
+
+bool TextAutoGenerateHistorySortFilterProxyModel::showArchived() const
+{
+    return mShowArchived;
+}
+
+void TextAutoGenerateHistorySortFilterProxyModel::setShowArchived(bool newShowArchived)
+{
+    if (mShowArchived != newShowArchived) {
+        mShowArchived = newShowArchived;
+        invalidateFilter();
+    }
 }
 
 #include "moc_textautogeneratehistorysortfilterproxymodel.cpp"

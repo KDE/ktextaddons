@@ -19,9 +19,15 @@ public:
     explicit TextAutoGenerateHistorySortFilterProxyModel(QObject *parent = nullptr);
     ~TextAutoGenerateHistorySortFilterProxyModel() override;
 
+    [[nodiscard]] bool showArchived() const;
+    void setShowArchived(bool newShowArchived);
+
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
     [[nodiscard]] bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
+
+private:
+    bool mShowArchived = false;
 };
 
 }

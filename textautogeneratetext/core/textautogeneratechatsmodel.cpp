@@ -168,6 +168,7 @@ TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(c
 
 TextAutoGenerateChatsModel::SectionHistory TextAutoGenerateChatsModel::section(const TextAutoGenerateMessage &m) const
 {
+    qDebug() << " m " << m;
     if (m.dateTime() == -1) {
         return TextAutoGenerateChatsModel::SectionHistory::Unknown;
     }
