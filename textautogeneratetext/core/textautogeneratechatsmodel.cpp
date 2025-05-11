@@ -201,4 +201,20 @@ void TextAutoGenerateChatsModel::setInitialized(const QByteArray &chatId, bool s
     }
 }
 
+void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        const int i = std::distance(mChats.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {Title | DateTime});
+    }
+}
+
 #include "moc_textautogeneratechatsmodel.cpp"
