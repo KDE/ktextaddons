@@ -24,7 +24,8 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (roles.contains(TextAutoGenerateChatsModel::Title)) {
+                if (roles.contains(TextAutoGenerateChatsModel::Title) || roles.contains(TextAutoGenerateChatsModel::Favorite)
+                    || roles.contains(TextAutoGenerateChatsModel::Archived)) {
                     const QByteArray chatId = topLeft.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                     const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
                     mDatabaseManager->insertOrUpdateChat(chat);
@@ -132,6 +133,11 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
         return messagesModel->cancelRequest(index);
     }
     return false;
+}
+
+void TextAutoGenerateManager::changeFavoriteHistory(const QByteArray &chatId, bool favorite)
+{
+    mTextAutoGenerateChatsModel->changeFavorite(chatId, favorite);
 }
 
 void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId, const QByteArray &uuid)

@@ -91,6 +91,19 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 
         menu.addSeparator();
 
+        auto changeFavoriteHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Favorite…"), &menu);
+        const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+        connect(changeFavoriteHistory, &QAction::triggered, this, [index, this]() {
+            const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+            if (!uuid.isEmpty()) {
+                const bool isFavorite = index.data(TextAutoGenerateChatsModel::Favorite).toBool();
+                mManager->changeFavoriteHistory(uuid, !isFavorite);
+            }
+        });
+        menu.addAction(changeFavoriteHistory);
+
+        menu.addSeparator();
+
         auto removeHistory = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
         connect(removeHistory, &QAction::triggered, this, [index, this]() {
             if (KMessageBox::ButtonCode::PrimaryAction

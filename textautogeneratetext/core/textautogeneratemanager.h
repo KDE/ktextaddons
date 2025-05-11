@@ -57,6 +57,7 @@ public:
     void removeDiscussion(const QByteArray &chatId, const QByteArray &uuid);
     [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);
 
+    void changeFavoriteHistory(const QByteArray &chatId, bool favorite);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
