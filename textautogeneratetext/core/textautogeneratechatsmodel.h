@@ -48,6 +48,10 @@ public:
 
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModel(const QByteArray &chatId) const;
 
+    [[nodiscard]] bool isInitialized(const QByteArray &chatId) const;
+
+    void setInitialized(const QByteArray &chatId, bool state);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateMessage &m) const;

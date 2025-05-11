@@ -178,4 +178,27 @@ TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const Q
     return {};
 }
 
+bool TextAutoGenerateChatsModel::isInitialized(const QByteArray &chatId) const
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).initialized();
+    }
+    return false;
+}
+
+void TextAutoGenerateChatsModel::setInitialized(const QByteArray &chatId, bool state)
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        (*it).setInitialized(state);
+    }
+}
+
 #include "moc_textautogeneratechatsmodel.cpp"

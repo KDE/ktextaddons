@@ -22,6 +22,7 @@ TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
     , mTitle(other.mTitle)
     , mFavorite(other.mFavorite)
     , mArchived(other.mArchived)
+    , mInitialized(other.mInitialized)
 {
 }
 
@@ -33,6 +34,7 @@ TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat
         mTitle = other.mTitle;
         mFavorite = other.mFavorite;
         mArchived = other.mArchived;
+        mInitialized = other.mInitialized;
     }
     return *this;
 }
@@ -74,7 +76,8 @@ void TextAutoGenerateChat::setIdentifier(const QByteArray &newIdentifier)
 
 bool TextAutoGenerateChat::operator==(const TextAutoGenerateChat &other) const
 {
-    return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite && other.title() == mTitle;
+    return other.identifier() == mIdentifier && other.archived() == mArchived && other.favorite() == mFavorite && other.title() == mTitle
+        && other.initialized() == mInitialized;
 }
 
 QString TextAutoGenerateChat::title() const
@@ -135,12 +138,23 @@ TextAutoGenerateMessagesModel *TextAutoGenerateChat::messageModel() const
     return mMessageModel.data();
 }
 
+bool TextAutoGenerateChat::initialized() const
+{
+    return mInitialized;
+}
+
+void TextAutoGenerateChat::setInitialized(bool newInitialized)
+{
+    mInitialized = newInitialized;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
 {
     d.space() << "title:" << t.title();
     d.space() << "favorite:" << t.favorite();
     d.space() << "archived:" << t.archived();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "initialized:" << t.initialized();
     return d;
 }
 

@@ -41,7 +41,10 @@ public:
     static QByteArray serialize(const TextAutoGenerateChat &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateChat deserialize(const QJsonObject &source);
 
-    TextAutoGenerateMessagesModel *messageModel() const;
+    [[nodiscard]] TextAutoGenerateMessagesModel *messageModel() const;
+
+    [[nodiscard]] bool initialized() const;
+    void setInitialized(bool newInitialized);
 
 private:
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
@@ -49,6 +52,7 @@ private:
     QString mTitle;
     bool mFavorite = false;
     bool mArchived = false;
+    bool mInitialized = false;
 };
 
 }

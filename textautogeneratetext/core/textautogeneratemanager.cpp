@@ -160,7 +160,22 @@ void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatI
 {
     if (mCurrentChatId != newCurrentChatId) {
         mCurrentChatId = newCurrentChatId;
+        checkInitializedMessagesModel();
         Q_EMIT currentChatIdChanged();
+    }
+}
+
+void TextAutoGenerateManager::checkInitializedMessagesModel()
+{
+    if (!mCurrentChatId.isEmpty()) {
+        if (!mTextAutoGenerateChatsModel->isInitialized(mCurrentChatId)) {
+            auto messagesModel = messagesModelFromChatId(mCurrentChatId);
+            if (messagesModel) {
+                const QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
+                messagesModel->setMessages(messages);
+            }
+            mTextAutoGenerateChatsModel->setInitialized(mCurrentChatId, true);
+        }
     }
 }
 

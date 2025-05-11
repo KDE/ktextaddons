@@ -17,9 +17,9 @@ TextAutoGenerateLocalDatabaseManager::TextAutoGenerateLocalDatabaseManager()
 
 TextAutoGenerateLocalDatabaseManager::~TextAutoGenerateLocalDatabaseManager() = default;
 
-QList<TextAutoGenerateMessage> TextAutoGenerateLocalDatabaseManager::loadMessages(const QString &chatIdentifier) const
+QList<TextAutoGenerateMessage> TextAutoGenerateLocalDatabaseManager::loadMessages(const QByteArray &chatIdentifier) const
 {
-    return mMessagesDatabase->loadMessages(chatIdentifier);
+    return mMessagesDatabase->loadMessages(QString::fromLatin1(chatIdentifier));
 }
 
 QList<TextAutoGenerateChat> TextAutoGenerateLocalDatabaseManager::loadChats() const
