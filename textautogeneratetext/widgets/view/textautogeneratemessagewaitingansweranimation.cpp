@@ -19,6 +19,8 @@ TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAns
 {
     createAnimations();
     if (manager) {
+        // TODO
+        /*
         connect(manager->textAutoGenerateMessagesModel(),
                 &QAbstractItemModel::dataChanged,
                 this,
@@ -35,6 +37,7 @@ TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAns
                         }
                     }
                 });
+                */
     }
 }
 

@@ -34,9 +34,11 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     if (mManager) {
         mManager->loadHistory();
         // TODO
+        /*
         connect(mManager->textAutoGenerateMessagesModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
             mDelegate->clearCache();
         });
+        */
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateListView::slotCurrentChatIdChanged);
     }
 
@@ -75,7 +77,7 @@ void TextAutoGenerateListView::slotRemoveMessage(const QModelIndex &index)
         const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
         if (!uuid.isEmpty()) {
             Q_EMIT cancelRequested(uuid);
-            mManager->textAutoGenerateMessagesModel()->removeDiscussion(uuid);
+            // TODO mManager->textAutoGenerateMessagesModel()->removeDiscussion(uuid);
         }
     }
 }
@@ -84,9 +86,12 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
+        // TODO
+        /*
         if (mManager->textAutoGenerateMessagesModel()->cancelRequest(index)) {
             Q_EMIT cancelRequested(uuid);
         }
+        */
     }
 }
 
@@ -94,10 +99,13 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
+        // TODO
+        /*
         const QModelIndex index = mManager->textAutoGenerateMessagesModel()->refreshAnswer(uuid);
         if (index.isValid()) {
             Q_EMIT refreshAnswerRequested(index);
         }
+        */
     }
 }
 
@@ -280,11 +288,13 @@ void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 {
+    /*
     const QModelIndex idx = mManager->textAutoGenerateMessagesModel()->indexForUuid(uuid);
     if (idx.isValid()) {
         auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
         lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
     }
+    */
 }
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()

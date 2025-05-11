@@ -30,8 +30,6 @@ public:
 
     void ask(const QString &msg);
 
-    [[nodiscard]] TextAutoGenerateMessagesModel *textAutoGenerateMessagesModel() const;
-
     void loadHistory();
 
     [[nodiscard]] bool showArchived() const;
@@ -46,7 +44,7 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
-    void addMessage(const TextAutoGenerateMessage &msg);
+    void addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg);
 
     [[nodiscard]] QByteArray currentChatId() const;
     void setCurrentChatId(const QByteArray &newCurrentChatId);
@@ -64,7 +62,6 @@ Q_SIGNALS:
     void showArchiveChanged();
 
 private:
-    TextAutoGenerateMessagesModel *const mTextAutoGenerateMessagesModel;
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;

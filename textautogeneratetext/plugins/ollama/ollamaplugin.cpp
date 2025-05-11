@@ -102,7 +102,7 @@ void OllamaPlugin::sendToLLM(const SendToLLMInfo &info)
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, chatId, this] {
-                                                       manager()->textAutoGenerateMessagesModel()->changeInProgress(messageUuid, false);
+                                                       manager()->changeInProgress(chatId, messageUuid, false);
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
 #if 0

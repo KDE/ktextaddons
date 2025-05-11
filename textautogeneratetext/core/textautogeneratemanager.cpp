@@ -16,7 +16,6 @@
 using namespace TextAutoGenerateText;
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
-    , mTextAutoGenerateMessagesModel(new TextAutoGenerateMessagesModel(this))
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
@@ -70,11 +69,6 @@ void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const Q
     }
 }
 
-TextAutoGenerateMessagesModel *TextAutoGenerateManager::textAutoGenerateMessagesModel() const
-{
-    return mTextAutoGenerateMessagesModel;
-}
-
 TextAutoGenerateChatsModel *TextAutoGenerateManager::textAutoGenerateChatsModel() const
 {
     return mTextAutoGenerateChatsModel;
@@ -124,11 +118,13 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
     return mTextAutoGeneratePlugin;
 }
 
-void TextAutoGenerateManager::addMessage(const TextAutoGenerateMessage &msg)
+void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
-    // TODO add to database
-    // TODO Use correct textAutoGenerateMessagesModel
-    textAutoGenerateMessagesModel()->addMessage(msg);
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        // TODO add to database
+        messagesModel->addMessage(msg);
+    }
 }
 
 QByteArray TextAutoGenerateManager::currentChatId() const
