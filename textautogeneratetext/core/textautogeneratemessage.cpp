@@ -201,8 +201,10 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     o["identifier"_L1] = QString::fromLatin1(msg.mUuid);
     o["answerIdentifier"_L1] = QString::fromLatin1(msg.mAnswerUuid);
     o["text"_L1] = msg.mContent;
-    o["modelName"_L1] = msg.mModelName;
-    o["engineName"_L1] = msg.mEngineName;
+    if (msg.sender() != Sender::User) {
+        o["modelName"_L1] = msg.mModelName;
+        o["engineName"_L1] = msg.mEngineName;
+    }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
     if (toBinary) {
