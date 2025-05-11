@@ -119,7 +119,6 @@ Qt::ItemFlags TextAutoGenerateChatsModel::flags(const QModelIndex &index) const
 
 TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) const
 {
-    qDebug() << " TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) const" << chatId;
     if (chatId.isEmpty()) {
         return {};
     }
@@ -130,7 +129,6 @@ TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) 
     if (it == mChats.end()) {
         return {};
     }
-    qDebug() << " FOUND ******* " << chatId;
     return *it;
 }
 
