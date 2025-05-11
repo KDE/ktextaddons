@@ -39,7 +39,6 @@ void TextAutoGenerateLocalChatsDatabase::insertOrUpdateChat(const TextAutoGenera
     QSqlDatabase db;
     if (initializeDataBase(QString(), db)) {
         QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::insertReplaceChat(), db);
-        qDebug() << " XCXXXXXXXXXXXXXXXXXXXXXXXX" << chat;
         query.addBindValue(QString::fromLatin1(chat.identifier()));
         query.addBindValue(TextAutoGenerateChat::serialize(chat, false)); // TODO use binary ?
         if (!query.exec()) {

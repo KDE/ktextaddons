@@ -93,7 +93,6 @@ QString TextAutoGenerateChat::title() const
 void TextAutoGenerateChat::setTitle(const QString &newTitle)
 {
     mTitle = newTitle;
-    qDebug() << " XCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" << mTitle;
 }
 
 qint64 TextAutoGenerateChat::dateTime() const
