@@ -58,7 +58,6 @@ void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
         const QByteArray uuid = idx.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-        qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << uuid;
         if (!uuid.isEmpty()) {
             Q_EMIT switchToChat(uuid);
         }
@@ -95,7 +94,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
                                                    KStandardGuiItem::cancel())) {
                 const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                 if (!uuid.isEmpty()) {
-                    // TODO mManager->textAutoGenerateMessagesModel()->removeDiscussion(uuid);
+                    mManager->removeDiscussion(mManager->currentChatId(), uuid);
                 }
             }
         });

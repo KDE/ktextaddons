@@ -118,6 +118,14 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
     return mTextAutoGeneratePlugin;
 }
 
+void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId, const QByteArray &uuid)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        // TODO remove from database
+        messagesModel->removeDiscussion(uuid);
+    }
+}
 void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
     auto messagesModel = messagesModelFromChatId(chatId);

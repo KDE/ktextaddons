@@ -54,6 +54,7 @@ public:
     void createNewChat();
     void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
+    void removeDiscussion(const QByteArray &chatId, const QByteArray &uuid);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
