@@ -87,6 +87,21 @@ void TextAutoGenerateMessagesModel::setMessages(const QList<TextAutoGenerateMess
     endResetModel();
 }
 
+TextAutoGenerateMessage TextAutoGenerateMessagesModel::message(const QByteArray &uuid) const
+{
+    if (uuid.isEmpty()) {
+        return {};
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it == mMessages.end()) {
+        return {};
+    }
+    return *it;
+}
+
 QModelIndex TextAutoGenerateMessagesModel::refreshAnswer(const QByteArray &uuid) const
 {
     if (uuid.isEmpty()) {

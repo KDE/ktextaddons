@@ -41,6 +41,8 @@ public:
     [[nodiscard]] QList<TextAutoGenerateMessage> messages() const;
     void setMessages(const QList<TextAutoGenerateMessage> &newMessages);
 
+    [[nodiscard]] TextAutoGenerateMessage message(const QByteArray &uuid) const;
+
     [[nodiscard]] QModelIndex refreshAnswer(const QByteArray &uuid) const;
 
     void resetConversation();

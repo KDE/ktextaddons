@@ -177,7 +177,12 @@ void TextAutoGenerateManager::checkInitializedMessagesModel()
                 connect(messagesModel,
                         &QAbstractItemModel::dataChanged,
                         this,
-                        [this, chatId](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                        [this, chatId, messagesModel](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                            if (roles.contains(TextAutoGenerateMessagesModel::MessageRole)) {
+                                const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+                                const TextAutoGenerateMessage msg = messagesModel->message(uuid);
+                                mDatabaseManager->insertOrReplaceMessage(chatId, msg);
+                            }
                             mTextAutoGenerateChatsModel->messagesChanged(chatId);
                         });
                 connect(messagesModel, &QAbstractItemModel::rowsRemoved, this, [this, chatId]() {
