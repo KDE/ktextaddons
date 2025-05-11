@@ -16,6 +16,16 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
 {
     Q_GADGET
 public:
+    enum class SectionHistory : uint8_t {
+        Favorite,
+        Today,
+        LessThanSevenDays,
+        LessThanThirtyDays,
+        Later,
+        Unknown,
+        NSections,
+    };
+
     TextAutoGenerateChat();
     TextAutoGenerateChat(const TextAutoGenerateChat &other);
     TextAutoGenerateChat &operator=(const TextAutoGenerateChat &other);
@@ -46,7 +56,11 @@ public:
     [[nodiscard]] bool initialized() const;
     void setInitialized(bool newInitialized);
 
+    [[nodiscard]] TextAutoGenerateChat::SectionHistory section() const;
+
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(const TextAutoGenerateMessage &m) const;
+
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
     QString mTitle;

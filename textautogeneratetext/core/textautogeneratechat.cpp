@@ -109,9 +109,7 @@ QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, boo
 {
     QJsonDocument d;
     QJsonObject o;
-    // if (!chat.mTitle.isEmpty()) {
     o["title"_L1] = chat.title();
-    //}
     o["favorite"_L1] = chat.mFavorite;
     o["archived"_L1] = chat.mArchived;
     o["identifier"_L1] = QString::fromLatin1(chat.mIdentifier);
@@ -156,6 +154,39 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
     d.space() << "identifier:" << t.identifier();
     d.space() << "initialized:" << t.initialized();
     return d;
+}
+
+TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::section() const
+{
+    if (favorite()) {
+        return TextAutoGenerateChat::SectionHistory::Favorite;
+    }
+    if (!messageModel()) {
+        return TextAutoGenerateChat::SectionHistory::Unknown;
+    }
+    if (messageModel()->messages().isEmpty()) {
+        return TextAutoGenerateChat::SectionHistory::Today;
+    }
+    return sectionMessage(messageModel()->messages().constLast());
+}
+
+TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::sectionMessage(const TextAutoGenerateMessage &m) const
+{
+    qDebug() << " m " << m;
+    if (m.dateTime() == -1) {
+        return TextAutoGenerateChat::SectionHistory::Unknown;
+    }
+    const QDate d = QDateTime::fromSecsSinceEpoch(m.dateTime()).date();
+    if (d == QDate::currentDate()) {
+        return TextAutoGenerateChat::SectionHistory::Today;
+    } else if (d < QDate::currentDate().addDays(7)) {
+        return TextAutoGenerateChat::SectionHistory::LessThanSevenDays;
+    } else if (d < QDate::currentDate().addDays(30)) {
+        return TextAutoGenerateChat::SectionHistory::LessThanThirtyDays;
+    } else {
+        return TextAutoGenerateChat::SectionHistory::Later;
+    }
+    return TextAutoGenerateChat::SectionHistory::Unknown;
 }
 
 #include "moc_textautogeneratechat.cpp"

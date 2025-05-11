@@ -46,7 +46,7 @@ public:
     void setChats(const QList<TextAutoGenerateChat> &newMessages);
 
     void addChat(const TextAutoGenerateChat &chat);
-    [[nodiscard]] static QString sectionName(SectionHistory sectionId);
+    [[nodiscard]] static QString sectionName(TextAutoGenerateChat::SectionHistory sectionId);
 
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModel(const QByteArray &chatId) const;
 
@@ -58,8 +58,6 @@ public:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateMessage &m) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatsModel::SectionHistory section(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
 };
