@@ -137,6 +137,7 @@ void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAut
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
         // TODO add to database
+        mDatabaseManager->insertOrReplaceMessage(chatId, msg);
         messagesModel->addMessage(msg);
     }
 }

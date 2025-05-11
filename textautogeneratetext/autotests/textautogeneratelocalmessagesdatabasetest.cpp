@@ -12,14 +12,14 @@
 
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalMessagesDatabaseTest)
 
-static QString chatId()
+static QByteArray chatId()
 {
-    return QStringLiteral("myChatId");
+    return QByteArrayLiteral("myChatId");
 }
 
-static QString otherChatId()
+static QByteArray otherChatId()
 {
-    return QStringLiteral("otherChatId");
+    return QByteArrayLiteral("otherChatId");
 }
 
 enum class Fields {
@@ -39,8 +39,8 @@ void TextAutoGenerateLocalMessagesDatabaseTest::initTestCase()
 
     // Clean up after previous runs
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase chatsDatabase;
-    QFile::remove(chatsDatabase.dbFileName(chatId()));
-    QFile::remove(chatsDatabase.dbFileName(otherChatId()));
+    QFile::remove(chatsDatabase.dbFileName(QString::fromLatin1(chatId())));
+    QFile::remove(chatsDatabase.dbFileName(QString::fromLatin1(otherChatId())));
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldDefaultValues()
@@ -52,7 +52,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldDefaultValues()
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase messagesDataBase;
-    QCOMPARE(messagesDataBase.dbFileName(chatId()),
+    QCOMPARE(messagesDataBase.dbFileName(QString::fromLatin1(chatId())),
              QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/database/messages/myChatId.sqlite"));
 }
 
@@ -84,7 +84,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()
     logger.insertOrReplaceMessage(otherChatId(), messageOtherRoom);
 
     // WHEN
-    auto tableModel = logger.createMessageModel(chatId());
+    auto tableModel = logger.createMessageModel(QString::fromLatin1(chatId()));
 
     // THEN
     QVERIFY(tableModel);
@@ -107,7 +107,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteMessages() // this t
     logger.deleteMessage(otherChatId(), messageId);
 
     // THEN
-    auto tableModel = logger.createMessageModel(otherChatId());
+    auto tableModel = logger.createMessageModel(QString::fromLatin1(otherChatId()));
     QVERIFY(tableModel);
     QCOMPARE(tableModel->rowCount(), 0);
 }

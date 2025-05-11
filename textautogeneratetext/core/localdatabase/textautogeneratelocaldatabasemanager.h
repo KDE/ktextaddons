@@ -21,8 +21,8 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateMessage> loadMessages(const QString &chatIdentifier) const;
 
-    void deleteMessage(const QString &chatIdentifier, const QString &messageId);
-    void insertOrReplaceMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m);
+    void deleteMessage(const QByteArray &chatIdentifier, const QString &messageId);
+    void insertOrReplaceMessage(const QByteArray &chatIdentifier, const TextAutoGenerateMessage &m);
 
     void deleteChat(const QString &chatId);
     void insertOrUpdateChat(const TextAutoGenerateChat &chat);

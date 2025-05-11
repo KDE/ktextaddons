@@ -27,12 +27,12 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalDatabaseManager::loadChats() co
     return mChatsDatabase->loadChats();
 }
 
-void TextAutoGenerateLocalDatabaseManager::deleteMessage(const QString &chatIdentifier, const QString &messageId)
+void TextAutoGenerateLocalDatabaseManager::deleteMessage(const QByteArray &chatIdentifier, const QString &messageId)
 {
     mMessagesDatabase->deleteMessage(chatIdentifier, messageId);
 }
 
-void TextAutoGenerateLocalDatabaseManager::insertOrReplaceMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m)
+void TextAutoGenerateLocalDatabaseManager::insertOrReplaceMessage(const QByteArray &chatIdentifier, const TextAutoGenerateMessage &m)
 {
     mMessagesDatabase->insertOrReplaceMessage(chatIdentifier, m);
 }

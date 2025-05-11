@@ -29,10 +29,10 @@ TextAutoGenerateLocalMessagesDatabase::TextAutoGenerateLocalMessagesDatabase()
 
 TextAutoGenerateLocalMessagesDatabase::~TextAutoGenerateLocalMessagesDatabase() = default;
 
-void TextAutoGenerateLocalMessagesDatabase::deleteMessage(const QString &chatIdentifier, const QString &messageId)
+void TextAutoGenerateLocalMessagesDatabase::deleteMessage(const QByteArray &chatIdentifier, const QString &messageId)
 {
     QSqlDatabase db;
-    if (!checkDataBase(chatIdentifier, db)) {
+    if (!checkDataBase(QString::fromLatin1(chatIdentifier), db)) {
         return;
     }
     QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteMessage(), db);
@@ -42,10 +42,10 @@ void TextAutoGenerateLocalMessagesDatabase::deleteMessage(const QString &chatIde
     }
 }
 
-void TextAutoGenerateLocalMessagesDatabase::insertOrReplaceMessage(const QString &chatIdentifier, const TextAutoGenerateMessage &m)
+void TextAutoGenerateLocalMessagesDatabase::insertOrReplaceMessage(const QByteArray &chatIdentifier, const TextAutoGenerateMessage &m)
 {
     QSqlDatabase db;
-    if (initializeDataBase(chatIdentifier, db)) {
+    if (initializeDataBase(QString::fromLatin1(chatIdentifier), db)) {
         QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage(), db);
         query.addBindValue(QString::fromLatin1(m.uuid()));
         query.addBindValue(m.dateTime());
