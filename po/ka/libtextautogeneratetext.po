@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-10 00:41+0000\n"
+"POT-Creation-Date: 2025-05-11 00:41+0000\n"
 "PO-Revision-Date: 2025-05-09 05:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 
-#: core/textautogeneratechatsmodel.cpp:126
+#: core/textautogeneratechatsmodel.cpp:127
 #, kde-format
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: core/textautogeneratechatsmodel.cpp:128
+#: core/textautogeneratechatsmodel.cpp:129
 #, kde-format
 msgid "Today"
 msgstr "დღეს"
 
-#: core/textautogeneratechatsmodel.cpp:130
+#: core/textautogeneratechatsmodel.cpp:131
 #, kde-format
 msgid "7 days previous"
 msgstr "წინა 7 დღე"
 
-#: core/textautogeneratechatsmodel.cpp:132
+#: core/textautogeneratechatsmodel.cpp:133
 #, kde-format
 msgid "30 days previous"
 msgstr "წინა 30 დღე"
 
-#: core/textautogeneratechatsmodel.cpp:134
+#: core/textautogeneratechatsmodel.cpp:135
 #, kde-format
 msgid "Later"
 msgstr "მოგვიანებით"
 
-#: core/textautogeneratechatsmodel.cpp:136
+#: core/textautogeneratechatsmodel.cpp:137
 #, kde-format
 msgid "Unknown"
 msgstr "უცნობი"
@@ -194,38 +194,38 @@ msgstr "შეიყვანეთ შეტყობინება"
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: widgets/textautogeneratewidget.cpp:82
+#: widgets/textautogeneratewidget.cpp:85
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
 
-#: widgets/view/textautogeneratehistorylistview.cpp:76
+#: widgets/view/textautogeneratehistorylistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "შეცვლა…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:87
+#: widgets/view/textautogeneratehistorylistview.cpp:88
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "წაშლა…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:91
+#: widgets/view/textautogeneratehistorylistview.cpp:92
 #: widgets/view/textautogeneratelistview.cpp:95
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "წაშლით ამ კამათს?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:92
+#: widgets/view/textautogeneratehistorylistview.cpp:93
 #: widgets/view/textautogeneratelistview.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:107
-#: widgets/view/textautogeneratehistorylistview.cpp:118
+#: widgets/view/textautogeneratehistorylistview.cpp:108
+#: widgets/view/textautogeneratehistorylistview.cpp:119
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
