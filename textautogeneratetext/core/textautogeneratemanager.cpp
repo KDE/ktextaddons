@@ -48,8 +48,6 @@ void TextAutoGenerateManager::createNewChat()
 void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
-    qDebug() << "replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content) " << chatId << " uuid" << uuid << " messagesModel "
-             << messagesModel;
     if (messagesModel) {
         messagesModel->replaceContent(uuid, content);
     } else {
@@ -60,8 +58,6 @@ void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QBy
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
-    qDebug() << "changeInProgress(const QByteArray &chatId, const QByteArray &uuid, const QString &content) " << chatId << " uuid" << uuid << "messagesModel "
-             << messagesModel;
     if (messagesModel) {
         messagesModel->changeInProgress(uuid, inProgress);
     } else {
