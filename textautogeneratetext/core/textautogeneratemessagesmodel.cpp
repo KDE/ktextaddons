@@ -35,6 +35,8 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
     case Qt::DisplayRole:
     case MessageRole:
         return message.htmlGenerated();
+    case OriginalMessageRole:
+        return message.content();
     case DateTimeStrRole:
         return message.dateTimeStr();
     case DateTimeRole:
@@ -292,6 +294,7 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
     case MessageRoles::UuidRole:
     case MessageRoles::WaitingAnswerRole:
     case MessageRoles::ModelInfoRole:
+    case MessageRoles::OriginalMessageRole:
         return false;
     }
     return QAbstractListModel::setData(idx, value, role);

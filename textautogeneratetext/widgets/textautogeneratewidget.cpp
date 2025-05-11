@@ -176,7 +176,7 @@ void TextAutoGenerateWidget::slotCancelRequest(const QByteArray &uuid)
 void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-    const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
+    const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
     mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr);
 }
 

@@ -29,6 +29,7 @@ public:
         EditingRole,
         WaitingAnswerRole,
         ModelInfoRole,
+        OriginalMessageRole,
     };
 
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);
