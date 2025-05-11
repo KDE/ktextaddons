@@ -87,20 +87,17 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     switch (role) {
     case ChatRoles::Title: {
         chat.setTitle(value.toString());
-        const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Title);
-        Q_EMIT dataChanged(newIndex, newIndex, {TextAutoGenerateChatsModel::ChatRoles::Title});
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Title});
         return true;
     }
     case ChatRoles::Archived: {
         chat.setArchived(value.toBool());
-        const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Archived);
-        Q_EMIT dataChanged(newIndex, newIndex, {TextAutoGenerateChatsModel::ChatRoles::Archived});
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Archived});
         return true;
     }
     case ChatRoles::Favorite: {
         chat.setFavorite(value.toBool());
-        const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Favorite);
-        Q_EMIT dataChanged(newIndex, newIndex, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
         return true;
     }
     case ChatRoles::Identifier:
