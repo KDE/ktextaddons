@@ -212,7 +212,6 @@ void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool f
     auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
     if (it != mChats.end()) {
         (*it).setFavorite(favorite);
-        qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDDDDDD" << favorite;
         const int i = std::distance(mChats.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
             const QModelIndex index = createIndex(rowNumber, 0);
