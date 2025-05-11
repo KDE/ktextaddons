@@ -84,7 +84,7 @@ QString TextAutoGenerateChat::title() const
 {
     if (mMessageModel) {
         if (mTitle.isEmpty() && !mMessageModel->messages().isEmpty()) {
-            return mMessageModel->messages().constFirst().htmlGenerated();
+            return mMessageModel->messages().constFirst().content();
         }
     }
     return mTitle;
