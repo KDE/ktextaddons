@@ -33,7 +33,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     setMouseTracking(true);
     if (mManager) {
         mManager->loadHistory();
-        setModel(mManager->textAutoGenerateMessagesModel());
+        // TODO
         connect(mManager->textAutoGenerateMessagesModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
             mDelegate->clearCache();
         });
@@ -49,30 +49,6 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(mDelegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
-
-    if (mManager) {
-        connect(mManager->textAutoGenerateMessagesModel(), &QAbstractItemModel::rowsAboutToBeInserted, this, &TextAutoGenerateListView::checkIfAtBottom);
-        connect(mManager->textAutoGenerateMessagesModel(), &QAbstractItemModel::rowsAboutToBeRemoved, this, &TextAutoGenerateListView::checkIfAtBottom);
-        connect(mManager->textAutoGenerateMessagesModel(), &QAbstractItemModel::modelAboutToBeReset, this, &TextAutoGenerateListView::checkIfAtBottom);
-
-        connect(mManager->textAutoGenerateMessagesModel(),
-                &QAbstractItemModel::dataChanged,
-                this,
-                [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                    if (roles.contains(TextAutoGenerateMessagesModel::MessageRole) || roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                        const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-                        if (!uuid.isEmpty()) {
-                            mDelegate->removeMessageCache(uuid);
-                        }
-                        if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                            const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
-                            if (inProgress) {
-                                addWaitingAnswerAnimation(topLeft);
-                            }
-                        }
-                    }
-                });
-    }
 
     // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
     // This way it also catches the case of an item changing height (e.g. after async image loading)
@@ -313,6 +289,8 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
+    qDebug() << " SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs" << mManager->currentChatId();
+    qDebug() << " model : " << mManager->messagesModelFromChatId(mManager->currentChatId());
     setModel(mManager->messagesModelFromChatId(mManager->currentChatId()));
 }
 
@@ -349,4 +327,37 @@ void TextAutoGenerateListView::addSelectedMessageBackgroundAnimation(const QMode
     });
     animation->start();
 }
+
+void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
+{
+    QAbstractItemModel *oldModel = model();
+    if (oldModel) {
+        disconnect(oldModel, nullptr, this, nullptr);
+    }
+    QListView::setModel(newModel);
+    connect(newModel, &QAbstractItemModel::rowsAboutToBeInserted, this, &TextAutoGenerateListView::checkIfAtBottom);
+    connect(newModel, &QAbstractItemModel::rowsAboutToBeRemoved, this, &TextAutoGenerateListView::checkIfAtBottom);
+    connect(newModel, &QAbstractItemModel::modelAboutToBeReset, this, &TextAutoGenerateListView::checkIfAtBottom);
+    // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
+    // This way it also catches the case of an item changing height (e.g. after async image loading)
+    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateListView::maybeScrollToBottom);
+
+    connect(newModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+        if (roles.contains(TextAutoGenerateMessagesModel::MessageRole) || roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+            const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+            if (!uuid.isEmpty()) {
+                mDelegate->removeMessageCache(uuid);
+            }
+            if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+                const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
+                if (inProgress) {
+                    addWaitingAnswerAnimation(topLeft);
+                }
+            }
+        }
+    });
+
+    scrollToBottom();
+}
+
 #include "moc_textautogeneratelistview.cpp"

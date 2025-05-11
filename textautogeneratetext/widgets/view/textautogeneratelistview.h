@@ -24,6 +24,8 @@ public:
 
     void editingFinished(const QByteArray &uuid);
 
+    void setModel(QAbstractItemModel *newModel) override;
+
 protected:
     void resizeEvent(QResizeEvent *ev) override;
 
