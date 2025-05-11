@@ -20,6 +20,18 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
 {
+    connect(mTextAutoGenerateChatsModel,
+            &QAbstractItemModel::dataChanged,
+            this,
+            [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                qDebug() << " XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << roles;
+                if (roles.contains(TextAutoGenerateChatsModel::Title)) {
+                    const QByteArray chatId = topLeft.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+                    const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+                    mDatabaseManager->insertOrUpdateChat(chat);
+                    qDebug() << " CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << chat;
+                }
+            });
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()

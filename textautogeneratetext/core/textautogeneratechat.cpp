@@ -93,6 +93,7 @@ QString TextAutoGenerateChat::title() const
 void TextAutoGenerateChat::setTitle(const QString &newTitle)
 {
     mTitle = newTitle;
+    qDebug() << " XCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" << mTitle;
 }
 
 qint64 TextAutoGenerateChat::dateTime() const
@@ -109,9 +110,9 @@ QByteArray TextAutoGenerateChat::serialize(const TextAutoGenerateChat &chat, boo
 {
     QJsonDocument d;
     QJsonObject o;
-    if (!chat.mTitle.isEmpty()) {
-        o["title"_L1] = chat.mTitle;
-    }
+    // if (!chat.mTitle.isEmpty()) {
+    o["title"_L1] = chat.title();
+    //}
     o["favorite"_L1] = chat.mFavorite;
     o["archived"_L1] = chat.mArchived;
     o["identifier"_L1] = QString::fromLatin1(chat.mIdentifier);

@@ -88,19 +88,19 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Title: {
         chat.setTitle(value.toString());
         const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Title);
-        Q_EMIT dataChanged(newIndex, newIndex);
+        Q_EMIT dataChanged(newIndex, newIndex, {TextAutoGenerateChatsModel::ChatRoles::Title});
         return true;
     }
     case ChatRoles::Archived: {
         chat.setArchived(value.toBool());
         const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Archived);
-        Q_EMIT dataChanged(newIndex, newIndex);
+        Q_EMIT dataChanged(newIndex, newIndex, {TextAutoGenerateChatsModel::ChatRoles::Archived});
         return true;
     }
     case ChatRoles::Favorite: {
         chat.setFavorite(value.toBool());
         const QModelIndex newIndex = index(idx.row(), TextAutoGenerateChatsModel::ChatRoles::Favorite);
-        Q_EMIT dataChanged(newIndex, newIndex);
+        Q_EMIT dataChanged(newIndex, newIndex, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
         return true;
     }
     case ChatRoles::Identifier:
@@ -117,6 +117,23 @@ Qt::ItemFlags TextAutoGenerateChatsModel::flags(const QModelIndex &index) const
         return Qt::NoItemFlags;
 
     return Qt::ItemIsEditable | QAbstractListModel::flags(index);
+}
+
+TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) const
+{
+    qDebug() << " TextAutoGenerateChat TextAutoGenerateChatsModel::chat(const QByteArray &chatId) const" << chatId;
+    if (chatId.isEmpty()) {
+        return {};
+    }
+    auto matchesUuid = [&](const TextAutoGenerateChat &c) {
+        return c.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), matchesUuid);
+    if (it == mChats.end()) {
+        return {};
+    }
+    qDebug() << " FOUND ******* " << chatId;
+    return *it;
 }
 
 QString TextAutoGenerateChatsModel::sectionName(SectionHistory sectionId)
