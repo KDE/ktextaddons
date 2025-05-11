@@ -55,6 +55,7 @@ public:
     void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
     void removeDiscussion(const QByteArray &chatId, const QByteArray &uuid);
+    [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

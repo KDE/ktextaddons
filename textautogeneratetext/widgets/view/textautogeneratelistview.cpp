@@ -86,12 +86,9 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        // TODO
-        /*
-        if (mManager->textAutoGenerateMessagesModel()->cancelRequest(index)) {
+        if (mManager->cancelRequest(mManager->currentChatId(), index)) {
             Q_EMIT cancelRequested(uuid);
         }
-        */
     }
 }
 
