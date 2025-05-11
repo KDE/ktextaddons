@@ -96,7 +96,6 @@ void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
-        qDebug() << " info " << info;
         sendToLLM(std::move(info));
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
