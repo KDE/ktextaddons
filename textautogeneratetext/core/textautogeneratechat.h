@@ -25,6 +25,7 @@ public:
         Unknown,
         NSections,
     };
+    Q_ENUM(SectionHistory)
 
     TextAutoGenerateChat();
     TextAutoGenerateChat(const TextAutoGenerateChat &other);
@@ -58,12 +59,19 @@ public:
 
     [[nodiscard]] TextAutoGenerateChat::SectionHistory section() const;
 
+    [[nodiscard]] SectionHistory sectionHistory() const;
+    void setSectionHistory(SectionHistory newSectionHistory);
+
+    [[nodiscard]] static TextAutoGenerateChat::SectionHistory sectionHistoryFromString(const QString &str);
+
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString sectionHistoryToString() const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(const TextAutoGenerateMessage &m) const;
 
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
     QString mTitle;
+    SectionHistory mSectionHistory = SectionHistory::Today;
     bool mFavorite = false;
     bool mArchived = false;
     bool mInitialized = false;
