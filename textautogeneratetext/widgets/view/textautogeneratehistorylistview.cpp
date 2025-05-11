@@ -72,6 +72,13 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     }
 
     QMenu menu(this);
+    auto newChatHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), i18nc("@action", "New Chat…"), &menu);
+    connect(newChatHistory, &QAction::triggered, this, [this]() {
+        mManager->createNewChat();
+    });
+    menu.addAction(newChatHistory);
+    menu.addSeparator();
+
     if (index.isValid()) {
         auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
         connect(renameHistory, &QAction::triggered, this, [index, this]() {
