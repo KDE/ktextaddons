@@ -39,14 +39,18 @@ void TextAutoGenerateManager::ask(const QString &msg)
 void TextAutoGenerateManager::createNewChat()
 {
     TextAutoGenerateChat chat;
-    chat.setIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128));
+    const QByteArray chatId = QUuid::createUuid().toByteArray(QUuid::Id128);
+    chat.setIdentifier(chatId);
     mTextAutoGenerateChatsModel->addChat(chat);
     mDatabaseManager->insertOrUpdateChat(chat);
+    setCurrentChatId(chatId);
 }
 
 void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
+    qDebug() << "replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content) " << chatId << " uuid" << uuid << " messagesModel "
+             << messagesModel;
     if (messagesModel) {
         messagesModel->replaceContent(uuid, content);
     } else {
@@ -57,6 +61,8 @@ void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QBy
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
+    qDebug() << "changeInProgress(const QByteArray &chatId, const QByteArray &uuid, const QString &content) " << chatId << " uuid" << uuid << "messagesModel "
+             << messagesModel;
     if (messagesModel) {
         messagesModel->changeInProgress(uuid, inProgress);
     } else {
