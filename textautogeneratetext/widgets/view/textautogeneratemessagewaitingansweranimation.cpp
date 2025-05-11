@@ -13,31 +13,29 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAnswerAnimation(TextAutoGenerateText::TextAutoGenerateManager *manager,
+TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAnswerAnimation(const QByteArray &chatId,
+                                                                                             TextAutoGenerateText::TextAutoGenerateManager *manager,
                                                                                              QObject *parent)
     : QObject{parent}
 {
     createAnimations();
     if (manager) {
-        // TODO
-        /*
-        connect(manager->textAutoGenerateMessagesModel(),
-                &QAbstractItemModel::dataChanged,
-                this,
-                [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+        auto messagesModel = manager->messagesModelFromChatId(chatId);
+        if (messagesModel) {
+            connect(messagesModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
                     if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                        if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                            const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
-                            if (!inProgress) {
-                                if (mModelIndex == topLeft) {
-                                    Q_EMIT waitingAnswerDone(topLeft);
-                                    stopAndDelete();
-                                }
+                        const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
+                        if (!inProgress) {
+                            if (mModelIndex == topLeft) {
+                                Q_EMIT waitingAnswerDone(topLeft);
+                                stopAndDelete();
                             }
                         }
                     }
-                });
-                */
+                }
+            });
+        }
     }
 }
 

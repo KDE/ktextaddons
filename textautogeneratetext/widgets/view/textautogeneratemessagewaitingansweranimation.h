@@ -22,7 +22,9 @@ public:
         qreal opacity = 0.0;
     };
 
-    explicit TextAutoGenerateMessageWaitingAnswerAnimation(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
+    explicit TextAutoGenerateMessageWaitingAnswerAnimation(const QByteArray &chatId,
+                                                           TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                           QObject *parent = nullptr);
     ~TextAutoGenerateMessageWaitingAnswerAnimation() override;
 
     [[nodiscard]] QPersistentModelIndex modelIndex() const;
