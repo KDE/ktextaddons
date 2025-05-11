@@ -149,6 +149,9 @@ void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAut
         // TODO add to database
         mDatabaseManager->insertOrReplaceMessage(chatId, msg);
         messagesModel->addMessage(msg);
+        // Update chat
+        const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+        mDatabaseManager->insertOrUpdateChat(chat);
     }
 }
 
