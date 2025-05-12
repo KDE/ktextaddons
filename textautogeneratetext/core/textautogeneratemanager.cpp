@@ -146,14 +146,14 @@ void TextAutoGenerateManager::changeFavoriteHistory(const QByteArray &chatId, bo
     mTextAutoGenerateChatsModel->changeFavorite(chatId, favorite);
 }
 
-void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId, const QByteArray &uuid)
+void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
-    if (messagesModel) {
-        // TODO remove from database
-        messagesModel->removeDiscussion(uuid);
+    if (!chatId.isEmpty()) {
+        mTextAutoGenerateChatsModel->removeDiscussion(chatId);
+        // TODO remove files
     }
 }
+
 void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
     auto messagesModel = messagesModelFromChatId(chatId);

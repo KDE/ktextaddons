@@ -54,7 +54,7 @@ public:
     void createNewChat();
     void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
-    void removeDiscussion(const QByteArray &chatId, const QByteArray &uuid);
+    void removeDiscussion(const QByteArray &chatId);
     [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);
 
     void changeFavoriteHistory(const QByteArray &chatId, bool favorite);

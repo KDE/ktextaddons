@@ -56,6 +56,8 @@ public:
 
     void messagesChanged(const QByteArray &chatId);
 
+    void removeDiscussion(const QByteArray &chatId);
+
     void changeFavorite(const QByteArray &chatId, bool favorite);
 
     void archiveDiscussion(const QByteArray &chatId, bool favorite);

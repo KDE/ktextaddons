@@ -204,6 +204,20 @@ void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
     }
 }
 
+void TextAutoGenerateChatsModel::removeDiscussion(const QByteArray &chatId)
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        const int i = std::distance(mChats.begin(), it);
+        beginRemoveRows(QModelIndex(), i, i);
+        mChats.removeAt(i);
+        endRemoveRows();
+    }
+}
+
 void TextAutoGenerateChatsModel::archiveDiscussion(const QByteArray &chatId, bool archive)
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
