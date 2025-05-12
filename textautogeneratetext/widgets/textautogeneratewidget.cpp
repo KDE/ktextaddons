@@ -168,7 +168,7 @@ void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 void TextAutoGenerateWidget::slotEditMessage(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-    const QString messageStr = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
+    const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
     mTextAutoGenerateTextLineEditWidget->setUuid(uuid);
     mTextAutoGenerateTextLineEditWidget->setText(messageStr);
 }
