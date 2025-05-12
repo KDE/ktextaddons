@@ -21,6 +21,8 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QCOMPARE(msg.dateTime(), -1);
     QVERIFY(!msg.isValid());
     QVERIFY(!msg.inProgress());
+    QVERIFY(!msg.editingMode());
+    QVERIFY(!msg.mouseHover());
     QVERIFY(msg.uuid().isEmpty());
     QVERIFY(msg.answerUuid().isEmpty());
     QVERIFY(msg.engineName().isEmpty());

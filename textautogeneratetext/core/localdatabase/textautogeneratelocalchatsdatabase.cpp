@@ -98,7 +98,7 @@ QString TextAutoGenerateLocalChatsDatabase::generateQueryStr()
     return query;
 }
 
-void TextAutoGenerateLocalChatsDatabase::deleteChat(const QString &chatId)
+void TextAutoGenerateLocalChatsDatabase::deleteChat(const QByteArray &chatId)
 {
     QSqlDatabase db;
     if (!checkDataBase(QString(), db)) {

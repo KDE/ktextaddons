@@ -37,10 +37,10 @@ void TextAutoGenerateLocalDatabaseManager::insertOrReplaceMessage(const QByteArr
     mMessagesDatabase->insertOrReplaceMessage(chatIdentifier, m);
 }
 
-void TextAutoGenerateLocalDatabaseManager::deleteChat(const QString &chatId)
+void TextAutoGenerateLocalDatabaseManager::deleteChat(const QByteArray &chatId)
 {
     mChatsDatabase->deleteChat(chatId);
-    // TODO delete messageId file
+    mMessagesDatabase->deleteDatabase(chatId);
 }
 
 void TextAutoGenerateLocalDatabaseManager::insertOrUpdateChat(const TextAutoGenerateChat &chat)

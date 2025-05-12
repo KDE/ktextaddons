@@ -25,6 +25,8 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateMessage> loadMessages(const QString &chatIdentifier) const;
 
+    void deleteDatabase(const QByteArray &chatIdentifier);
+
 protected:
     [[nodiscard]] QString schemaDataBase() const override;
 

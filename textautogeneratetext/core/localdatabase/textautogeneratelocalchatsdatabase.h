@@ -16,7 +16,7 @@ public:
     TextAutoGenerateLocalChatsDatabase();
     ~TextAutoGenerateLocalChatsDatabase() override;
 
-    void deleteChat(const QString &chatId);
+    void deleteChat(const QByteArray &chatId);
     void insertOrUpdateChat(const TextAutoGenerateChat &chat);
 
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;

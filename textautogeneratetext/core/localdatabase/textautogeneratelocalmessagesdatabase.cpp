@@ -29,6 +29,21 @@ TextAutoGenerateLocalMessagesDatabase::TextAutoGenerateLocalMessagesDatabase()
 
 TextAutoGenerateLocalMessagesDatabase::~TextAutoGenerateLocalMessagesDatabase() = default;
 
+void TextAutoGenerateLocalMessagesDatabase::deleteDatabase(const QByteArray &chatIdentifier)
+{
+    const QString chatId = QString::fromLatin1(chatIdentifier);
+    QSqlDatabase db;
+    if (!checkDataBase(chatId, db)) {
+        return;
+    }
+    const QString dbName = generateDbName(chatId);
+    QSqlDatabase::removeDatabase(dbName);
+    const QString path = dbFileName(chatId);
+    if (!QFile(path).remove()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Impossible to remove file" << path;
+    }
+}
+
 void TextAutoGenerateLocalMessagesDatabase::deleteMessage(const QByteArray &chatIdentifier, const QString &messageId)
 {
     QSqlDatabase db;
