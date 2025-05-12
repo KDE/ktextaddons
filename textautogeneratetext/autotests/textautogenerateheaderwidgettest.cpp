@@ -7,6 +7,7 @@
 #include "widgets/textautogenerateheaderwidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
@@ -32,6 +33,21 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mConfigureEngine);
     QVERIFY(mConfigureEngine->autoRaise());
     QVERIFY(!mConfigureEngine->toolTip().isEmpty());
+
+    auto mNewChat = w.findChild<QToolButton *>(QStringLiteral("mNewChat"));
+    QVERIFY(mNewChat);
+    QVERIFY(mNewChat->autoRaise());
+    QVERIFY(!mNewChat->toolTip().isEmpty());
+}
+
+void TextAutoGenerateHeaderWidgetTest::shouldEmitNewChat()
+{
+    TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    auto mNewChat = w.findChild<QToolButton *>(QStringLiteral("mNewChat"));
+
+    QSignalSpy addNewChatChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::addNewChat);
+    QTest::mouseClick(mNewChat, Qt::LeftButton);
+    QCOMPARE(addNewChatChanged.count(), 1);
 }
 
 #include "moc_textautogenerateheaderwidgettest.cpp"
