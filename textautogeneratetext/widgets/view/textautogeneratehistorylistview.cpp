@@ -76,7 +76,7 @@ void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
-    auto newChatHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), i18nc("@action", "New Chat…"), &menu);
+    auto newChatHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), i18nc("@action", "New Chat"), &menu);
     connect(newChatHistory, &QAction::triggered, this, [this]() {
         mManager->createNewChat();
     });
