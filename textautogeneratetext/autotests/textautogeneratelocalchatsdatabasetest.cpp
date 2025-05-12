@@ -32,7 +32,7 @@ void TextAutoGenerateLocalChatsDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalChatsDatabase chatsDataBase;
     QCOMPARE(chatsDataBase.dbFileName({}),
-             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/database/chats/chats.sqlite"));
+             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/ai-database/chats/chats.sqlite"));
 }
 
 #include "moc_textautogeneratelocalchatsdatabasetest.cpp"

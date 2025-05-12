@@ -53,7 +53,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase messagesDataBase;
     QCOMPARE(messagesDataBase.dbFileName(QString::fromLatin1(chatId())),
-             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/database/messages/myChatId.sqlite"));
+             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/ai-database/messages/myChatId.sqlite"));
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()

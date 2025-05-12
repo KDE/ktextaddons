@@ -11,7 +11,7 @@
 using namespace TextAutoGenerateText;
 QString TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/database/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/ai-database/");
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::localMessagesDatabasePath()
