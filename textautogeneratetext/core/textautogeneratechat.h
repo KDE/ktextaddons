@@ -48,6 +48,7 @@ public:
     void setTitle(const QString &newTitle);
 
     [[nodiscard]] qint64 dateTime() const;
+    void setDateTime(qint64 dt);
 
     static QByteArray serialize(const TextAutoGenerateChat &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateChat deserialize(const QJsonObject &source);
@@ -59,19 +60,13 @@ public:
 
     [[nodiscard]] TextAutoGenerateChat::SectionHistory section() const;
 
-    [[nodiscard]] SectionHistory sectionHistory() const;
-    void setSectionHistory(SectionHistory newSectionHistory);
-
-    [[nodiscard]] static TextAutoGenerateChat::SectionHistory sectionHistoryFromString(const QString &str);
-
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString sectionHistoryToString() const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(const TextAutoGenerateMessage &m) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
 
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
     QString mTitle;
-    SectionHistory mSectionHistory = SectionHistory::Today;
+    qint64 mDateTime = -1;
     bool mFavorite = false;
     bool mArchived = false;
     bool mInitialized = false;
