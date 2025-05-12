@@ -68,6 +68,11 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
             slotAskMessageRequester(str);
         });
+
+        connect(mManager, &TextAutoGenerateManager::currentChatIdChanged, this, [this]() {
+            mTextAutoGenerateTextLineEditWidget->setEnabled(!mManager->currentChatId().isEmpty());
+        });
+        mTextAutoGenerateTextLineEditWidget->setEnabled(!mManager->currentChatId().isEmpty());
     }
 
     connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::keyPressed, this, &TextAutoGenerateWidget::keyPressedInLineEdit);
