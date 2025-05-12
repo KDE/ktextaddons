@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-11 00:41+0000\n"
+"POT-Creation-Date: 2025-05-12 00:40+0000\n"
 "PO-Revision-Date: 2025-05-09 10:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,32 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: core/textautogeneratechatsmodel.cpp:127
+#: core/textautogeneratechatsmodel.cpp:72
+#, kde-format
+msgid "New Chat..."
+msgstr ""
+
+#: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: core/textautogeneratechatsmodel.cpp:129
+#: core/textautogeneratechatsmodel.cpp:141
 #, kde-format
 msgid "Today"
 msgstr "Hui"
 
-#: core/textautogeneratechatsmodel.cpp:131
+#: core/textautogeneratechatsmodel.cpp:143
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/textautogeneratechatsmodel.cpp:133
+#: core/textautogeneratechatsmodel.cpp:145
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/textautogeneratechatsmodel.cpp:135
+#: core/textautogeneratechatsmodel.cpp:147
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/textautogeneratechatsmodel.cpp:137
+#: core/textautogeneratechatsmodel.cpp:149
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"
@@ -195,56 +200,69 @@ msgstr "Introduïu un missatge"
 msgid "Send"
 msgstr "Envia"
 
-#: widgets/textautogeneratewidget.cpp:85
+#: widgets/textautogeneratewidget.cpp:83
 #, kde-format
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
 
-#: widgets/view/textautogeneratehistorylistview.cpp:77
+#: widgets/view/textautogeneratehistorylistview.cpp:75
+#, kde-format
+msgctxt "@action"
+msgid "New Chat…"
+msgstr ""
+
+#: widgets/view/textautogeneratehistorylistview.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Modifica…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:88
+#: widgets/view/textautogeneratehistorylistview.cpp:94
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@action"
+msgid "Favorite…"
+msgstr "Preferit"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Elimina…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:92
-#: widgets/view/textautogeneratelistview.cpp:95
+#: widgets/view/textautogeneratehistorylistview.cpp:111
+#: widgets/view/textautogeneratelistview.cpp:73
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Voleu eliminar este debat?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:93
-#: widgets/view/textautogeneratelistview.cpp:96
+#: widgets/view/textautogeneratehistorylistview.cpp:112
+#: widgets/view/textautogeneratelistview.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Elimina el debat"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:108
-#: widgets/view/textautogeneratehistorylistview.cpp:119
+#: widgets/view/textautogeneratehistorylistview.cpp:127
+#: widgets/view/textautogeneratehistorylistview.cpp:138
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Restaura"
 
-#: widgets/view/textautogeneratelistview.cpp:142
+#: widgets/view/textautogeneratelistview.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia la selecció"
 
-#: widgets/view/textautogeneratelistview.cpp:142
+#: widgets/view/textautogeneratelistview.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratelistview.cpp:150
+#: widgets/view/textautogeneratelistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
