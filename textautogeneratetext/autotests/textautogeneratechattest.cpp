@@ -24,7 +24,7 @@ void TextAutoGenerateChatTest::shouldHaveDefaultValues()
     QVERIFY(w.identifier().isEmpty());
 
     // 10/05/2025 => size 72
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 72);
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateChat), 80);
 }
 
 void TextAutoGenerateChatTest::shouldSerializeDeserialize()
