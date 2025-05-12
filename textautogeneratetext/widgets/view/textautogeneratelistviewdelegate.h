@@ -48,7 +48,6 @@ public:
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
     void editMessage(const QModelIndex &index);
-    void removeMessage(const QModelIndex &index);
     void copyMessage(const QModelIndex &index);
     void cancelRequested(const QModelIndex &index);
     void refreshRequested(const QModelIndex &index);
@@ -64,9 +63,6 @@ private:
 
         // Date Size
         QSize dateSize;
-
-        // Remove icon
-        QRect removeIconRect;
 
         // Edited icon
         QRect editedIconRect;
@@ -103,7 +99,6 @@ private:
     void slotUpdateColors();
 
     const QIcon mEditedIcon;
-    const QIcon mRemoveIcon;
     const QIcon mCopyIcon;
     const QIcon mCancelIcon;
     const QIcon mRefreshIcon;

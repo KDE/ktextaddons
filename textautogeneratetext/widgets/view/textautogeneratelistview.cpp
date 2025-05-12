@@ -46,7 +46,6 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
         update(index);
     });
 
-    connect(mDelegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveMessage);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::editMessage, this, &TextAutoGenerateListView::slotEditMessage);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
@@ -64,22 +63,6 @@ void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
     auto model = const_cast<QAbstractItemModel *>(index.model());
     model->setData(index, true, TextAutoGenerateMessagesModel::EditingRole);
     Q_EMIT editMessageRequested(index);
-}
-
-void TextAutoGenerateListView::slotRemoveMessage(const QModelIndex &index)
-{
-    if (KMessageBox::ButtonCode::PrimaryAction
-        == KMessageBox::questionTwoActions(this,
-                                           i18n("Do you want to remove this discussion?"),
-                                           i18nc("@title:window", "Remove Discussion"),
-                                           KStandardGuiItem::remove(),
-                                           KStandardGuiItem::cancel())) {
-        const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-        if (!uuid.isEmpty()) {
-            Q_EMIT cancelRequested(uuid);
-            mManager->removeDiscussion(mManager->currentChatId(), uuid);
-        }
-    }
 }
 
 void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
