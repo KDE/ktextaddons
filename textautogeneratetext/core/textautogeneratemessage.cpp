@@ -5,7 +5,8 @@
 */
 
 #include "textautogeneratemessage.h"
-#include "core/textautogeneratemessageutils.h"
+#include "textautogenerateanswerinfo.h"
+#include "textautogeneratemessageutils.h"
 
 #include <QDateTime>
 #include <QJsonDocument>
@@ -86,8 +87,8 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
     return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == mEditingMode && other.modelName() == mModelName
-        && other.engineName() == mEngineName && other.context() == mContext;
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == mEditingMode && other.modelName() == modelName()
+        && other.engineName() == engineName() && other.context() == mContext;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -142,22 +143,28 @@ void TextAutoGenerateMessage::setEditingMode(bool newEditingMode)
 
 QString TextAutoGenerateMessage::modelName() const
 {
-    return mModelName;
+    if (mMessageInfo) {
+        return mMessageInfo->modelName();
+    }
+    return {};
 }
 
 void TextAutoGenerateMessage::setModelName(const QString &newModelName)
 {
-    mModelName = newModelName;
+    answerInfo()->setModelName(newModelName);
 }
 
 QString TextAutoGenerateMessage::engineName() const
 {
-    return mEngineName;
+    if (mMessageInfo) {
+        return mMessageInfo->engineName();
+    }
+    return {};
 }
 
 void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
 {
-    mEngineName = newEngineName;
+    answerInfo()->setEngineName(newEngineName);
 }
 
 TextAutoGenerateTextContext TextAutoGenerateMessage::context() const
@@ -202,8 +209,8 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     o["answerIdentifier"_L1] = QString::fromLatin1(msg.mAnswerUuid);
     o["text"_L1] = msg.mContent;
     if (msg.sender() != Sender::User) {
-        o["modelName"_L1] = msg.mModelName;
-        o["engineName"_L1] = msg.mEngineName;
+        o["modelName"_L1] = msg.modelName();
+        o["engineName"_L1] = msg.engineName();
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
@@ -226,6 +233,14 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));
     return msg;
+}
+
+TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::answerInfo()
+{
+    if (!mMessageInfo) {
+        mMessageInfo = new TextAutoGenerateAnswerInfo;
+    }
+    return mMessageInfo;
 }
 
 #include "moc_textautogeneratemessage.cpp"

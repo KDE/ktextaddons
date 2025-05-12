@@ -5,15 +5,14 @@
 */
 
 #pragma once
-
+#include "textautogeneratetext_export.h"
 #include <QSharedData>
 
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateAnswerInfo : public QSharedData
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedData
 {
 public:
-    explicit TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other);
     TextAutoGenerateAnswerInfo();
     ~TextAutoGenerateAnswerInfo();
 

@@ -229,6 +229,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateMessagesModel
     TextAutoGenerateManager
     TextAutoGenerateMessage
+    TextAutoGenerateAnswerInfo
     TextAutoGenerateChat
     TextAutoGenerateTextReplyInfo
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS

@@ -8,7 +8,9 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
+#include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
 #include <TextAutoGenerateText/TextAutoGenerateTextContext>
+
 namespace TextAutoGenerateText
 {
 /**
@@ -77,15 +79,16 @@ public:
 
     [[nodiscard]] static TextAutoGenerateMessage::Sender senderFromString(const QString &str);
 
+    [[nodiscard]] TextAutoGenerateAnswerInfo *answerInfo();
+
 private:
+    QSharedDataPointer<TextAutoGenerateAnswerInfo> mMessageInfo;
     // TODO add parentUuid;
     QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;
     QString mHtmlGenerated;
     QString mDateTimeStr;
-    QString mModelName;
-    QString mEngineName;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
     TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     // TextAutoGenerateMessage::KLLMReplyInfo info;

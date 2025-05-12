@@ -38,11 +38,3 @@ void TextAutoGenerateAnswerInfo::setEngineName(const QString &newEngineName)
 {
     mEngineName = newEngineName;
 }
-
-TextAutoGenerateAnswerInfo::TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other)
-    : QSharedData(other)
-{
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " ModerationMessage(const ModerationMessage &other) created " << this;
-    mModelName = other.modelName();
-    mEngineName = other.engineName();
-}
