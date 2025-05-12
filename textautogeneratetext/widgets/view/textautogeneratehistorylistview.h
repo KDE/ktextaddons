@@ -31,6 +31,7 @@ protected:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotClicked(const QModelIndex &idx);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotShowArchived();
     TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
     TextAutoGenerateHistoryListHeadingsProxyModel *const mHistoryListHeadingsProxyModel;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;

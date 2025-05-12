@@ -32,6 +32,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
 
     if (mManager) {
         mHistoryListHeadingsProxyModel->setSourceModel(mManager->textAutoGenerateChatsModel());
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, &TextAutoGenerateHistoryListView::slotShowArchived);
     }
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
@@ -46,6 +47,11 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
 
 TextAutoGenerateHistoryListView::~TextAutoGenerateHistoryListView() = default;
 
+void TextAutoGenerateHistoryListView::slotShowArchived()
+{
+    mHistoryProxyModel->setShowArchived(mManager->showArchived());
+}
+
 void TextAutoGenerateHistoryListView::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Escape) {
@@ -54,6 +60,7 @@ void TextAutoGenerateHistoryListView::keyPressEvent(QKeyEvent *event)
         QTreeView::keyPressEvent(event);
     }
 }
+
 void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 {
     if (idx.isValid()) {
