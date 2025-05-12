@@ -204,6 +204,23 @@ void TextAutoGenerateChatsModel::messagesChanged(const QByteArray &chatId)
     }
 }
 
+void TextAutoGenerateChatsModel::archiveDiscussion(const QByteArray &chatId, bool archive)
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        (*it).setArchived(archive);
+        const int i = std::distance(mChats.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {Archived});
+    }
+}
+
 void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool favorite)
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {

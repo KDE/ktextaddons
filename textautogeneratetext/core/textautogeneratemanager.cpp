@@ -135,6 +135,12 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
     return false;
 }
 
+void TextAutoGenerateManager::archiveDiscussion(const QByteArray &chatId, bool archive)
+{
+    // TODO
+    mTextAutoGenerateChatsModel->archiveDiscussion(chatId, archive);
+}
+
 void TextAutoGenerateManager::changeFavoriteHistory(const QByteArray &chatId, bool favorite)
 {
     mTextAutoGenerateChatsModel->changeFavorite(chatId, favorite);

@@ -111,34 +111,16 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         });
         menu.addAction(changeFavoriteHistory);
 
-#if 0
-        const bool archived = index.data(TextAutoGenerateChatModel::ArchivedRole).toBool();
+        const bool archived = index.data(TextAutoGenerateChatsModel::Archived).toBool();
         menu.addSeparator();
-        if (archived) {
-            auto restoreArchivedAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Restore"), &menu);
-            connect(restoreArchivedAction, &QAction::triggered, this, [index]() {
-                /*
-                const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
-                if (!uuid.isEmpty()) {
-                    mManager->textAutoGenerateChatModel()->removeDiscussion(uuid);
-                }
-                */
-            });
-            menu.addAction(restoreArchivedAction);
-        } else {
-            auto archiveAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18nc("@action", "Archive"), &menu);
-            connect(archiveAction, &QAction::triggered, this, [index]() {
-                /*
-                const QByteArray uuid = index.data(TextAutoGenerateChatModel::UuidRole).toByteArray();
-                if (!uuid.isEmpty()) {
-                    mManager->textAutoGenerateChatModel()->removeDiscussion(uuid);
-                }
-                */
-            });
-            menu.addAction(archiveAction);
-            // TODO
-        }
-#endif
+        auto archivedAction = new QAction(archived ? i18nc("@action", "Restore") : i18nc("@action", "Archive"), &menu);
+        connect(archivedAction, &QAction::triggered, this, [index, archived, this]() {
+            const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+            if (!uuid.isEmpty()) {
+                mManager->archiveDiscussion(uuid, !archived);
+            }
+        });
+        menu.addAction(archivedAction);
 
         menu.addSeparator();
 

@@ -58,6 +58,7 @@ public:
     [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);
 
     void changeFavoriteHistory(const QByteArray &chatId, bool favorite);
+    void archiveDiscussion(const QByteArray &chatId, bool archive);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

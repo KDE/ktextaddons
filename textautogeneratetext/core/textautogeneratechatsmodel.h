@@ -58,6 +58,8 @@ public:
 
     void changeFavorite(const QByteArray &chatId, bool favorite);
 
+    void archiveDiscussion(const QByteArray &chatId, bool favorite);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
