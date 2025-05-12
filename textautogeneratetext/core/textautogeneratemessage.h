@@ -78,6 +78,7 @@ public:
     [[nodiscard]] static TextAutoGenerateMessage::Sender senderFromString(const QString &str);
 
 private:
+    // TODO add parentUuid;
     QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;

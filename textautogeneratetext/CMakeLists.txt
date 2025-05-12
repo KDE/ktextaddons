@@ -23,8 +23,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
 )
 
-add_library(KF6TextAutoGenerateText
-    core/localdatabase/textautogeneratelocaldatabasemanager.h core/localdatabase/textautogeneratelocaldatabasemanager.cpp)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
@@ -38,6 +37,13 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
     IDENTIFIER TEXTAUTOGENERATETEXT_CORE_LOG
     CATEGORY_NAME org.kde.kf.textautogeneratetext
     DESCRIPTION "KF6 (TextAutoGenerateText core)"
+    EXPORT KTEXTADDONS
+)
+
+ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_memory_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext
+    DESCRIPTION "KF6 (TextAutoGenerateText core memory)"
     EXPORT KTEXTADDONS
 )
 
@@ -81,6 +87,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     core/textautogeneratemessage.h
     core/textautogeneratemessage.cpp
 
+    core/textautogenerateanswerinfo.h
+    core/textautogenerateanswerinfo.cpp
+
     core/textautogeneratetextcontext.h
     core/textautogeneratetextcontext.cpp
 
@@ -107,6 +116,8 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     core/localdatabase/textautogeneratelocalchatsdatabase.cpp
     core/localdatabase/textautogeneratelocalmessagesdatabase.cpp
     core/localdatabase/textautogeneratelocalmessagesdatabase.h
+    core/localdatabase/textautogeneratelocaldatabasemanager.h
+    core/localdatabase/textautogeneratelocaldatabasemanager.cpp
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
