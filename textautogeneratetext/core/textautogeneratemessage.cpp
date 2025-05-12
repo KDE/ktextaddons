@@ -76,18 +76,18 @@ bool TextAutoGenerateMessage::isValid() const
 
 bool TextAutoGenerateMessage::inProgress() const
 {
-    return mInProgress;
+    return messageStateValue(MessageState::InProgress);
 }
 
 void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 {
-    mInProgress = newInProgress;
+    assignMessageStateValue(MessageState::InProgress, newInProgress);
 }
 
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
-    return other.uuid() == mUuid && other.inProgress() == mInProgress && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == mEditingMode && other.modelName() == modelName()
+    return other.uuid() == mUuid && other.inProgress() == inProgress() && other.sender() == mSender && other.dateTime() == mDateTime
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == editingMode() && other.modelName() == modelName()
         && other.engineName() == engineName() && other.context() == mContext;
 }
 
@@ -123,22 +123,22 @@ QString TextAutoGenerateMessage::dateTimeStr() const
 
 bool TextAutoGenerateMessage::mouseHover() const
 {
-    return mMouseHover;
+    return messageStateValue(MessageState::HoverHighlight);
 }
 
 void TextAutoGenerateMessage::setMouseHover(bool newMouseHover)
 {
-    mMouseHover = newMouseHover;
+    assignMessageStateValue(MessageState::HoverHighlight, newMouseHover);
 }
 
 bool TextAutoGenerateMessage::editingMode() const
 {
-    return mEditingMode;
+    return messageStateValue(MessageState::Edited);
 }
 
 void TextAutoGenerateMessage::setEditingMode(bool newEditingMode)
 {
-    mEditingMode = newEditingMode;
+    assignMessageStateValue(MessageState::Edited, newEditingMode);
 }
 
 QString TextAutoGenerateMessage::modelName() const
@@ -243,4 +243,27 @@ TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::answerInfo()
     return mMessageInfo;
 }
 
+bool TextAutoGenerateMessage::messageStateValue(MessageState type) const
+{
+    return mMessageStates & type;
+}
+
+TextAutoGenerateMessage::MessageStates TextAutoGenerateMessage::messageStates() const
+{
+    return mMessageStates;
+}
+
+void TextAutoGenerateMessage::setMessageStates(const MessageStates &newMessageStates)
+{
+    mMessageStates = newMessageStates;
+}
+
+void TextAutoGenerateMessage::assignMessageStateValue(MessageState type, bool status)
+{
+    if (status) {
+        mMessageStates |= type;
+    } else {
+        mMessageStates &= ~type;
+    }
+}
 #include "moc_textautogeneratemessage.cpp"

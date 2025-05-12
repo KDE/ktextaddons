@@ -28,6 +28,15 @@ public:
     };
     Q_ENUM(Sender)
 
+    enum MessageState {
+        None = 0,
+        HoverHighlight = 1,
+        Edited = 2,
+        InProgress = 4,
+    };
+    Q_FLAGS(MessageState MessageStates)
+    Q_DECLARE_FLAGS(MessageStates, MessageState)
+
     TextAutoGenerateMessage();
     ~TextAutoGenerateMessage();
 
@@ -82,6 +91,10 @@ public:
     [[nodiscard]] TextAutoGenerateAnswerInfo *answerInfo();
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(const MessageStates &newMessageStates);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);
+    TEXTAUTOGENERATETEXT_NO_EXPORT bool messageStateValue(MessageState type) const;
     QSharedDataPointer<TextAutoGenerateAnswerInfo> mMessageInfo;
     // TODO add parentUuid;
     QByteArray mAnswerUuid;
@@ -93,10 +106,8 @@ private:
     TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     // TextAutoGenerateMessage::KLLMReplyInfo info;
 
+    MessageStates mMessageStates = MessageStates(MessageState::None);
     qint64 mDateTime = -1;
-    bool mInProgress = false;
-    bool mMouseHover = false;
-    bool mEditingMode = false;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);
