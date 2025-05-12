@@ -22,11 +22,13 @@ public:
 
 Q_SIGNALS:
     void configChanged();
+    void addNewChat();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
     QLabel *const mEngineName;
     QToolButton *const mConfigureEngine;
+    QToolButton *const mNewChat;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

@@ -61,6 +61,9 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::configChanged, this, &TextAutoGenerateWidget::slotConfigureChanged);
 
     if (mManager) {
+        connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewChat, this, [this]() {
+            mManager->createNewChat();
+        });
         connect(mManager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
             slotEditingFinished(str, {});
         });

@@ -16,6 +16,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     : QWidget{parent}
     , mEngineName(new QLabel(this))
     , mConfigureEngine(new QToolButton(this))
+    , mNewChat(new QToolButton(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -36,6 +37,14 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::slotConfigureEngine);
+
+    // TODO favorite button
+    mNewChat->setObjectName("mNewChat"_L1);
+    mNewChat->setToolTip(i18nc("@info:tooltip", "New Chat"));
+    mNewChat->setAutoRaise(true);
+    mNewChat->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    mainLayout->addWidget(mNewChat);
+    connect(mNewChat, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::addNewChat);
 }
 
 TextAutoGenerateHeaderWidget::~TextAutoGenerateHeaderWidget() = default;
