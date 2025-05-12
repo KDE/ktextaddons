@@ -232,7 +232,9 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
         Q_EMIT dataChanged(proxyIndex, proxyIndex, roles);
     }
 
-    if (!roles.empty() && (!roles.contains(TextAutoGenerateChatsModel::Section) && !roles.contains(TextAutoGenerateChatsModel::Favorite)))
+    if (!roles.empty()
+        && (!roles.contains(TextAutoGenerateChatsModel::Section) && !roles.contains(TextAutoGenerateChatsModel::Favorite)
+            && !roles.contains(TextAutoGenerateChatsModel::DateTime)))
         return;
     for (auto row = topLeft.row(), last = bottomRight.row(); row <= last; ++row) {
         const auto sourceIndex = topLeft.siblingAtRow(row);
