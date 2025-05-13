@@ -33,12 +33,6 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     setMouseTracking(true);
     if (mManager) {
         mManager->loadHistory();
-        // TODO
-        /*
-        connect(mManager->textAutoGenerateMessagesModel(), &TextAutoGenerateMessagesModel::conversationCleared, this, [this]() {
-            mDelegate->clearCache();
-        });
-        */
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateListView::slotCurrentChatIdChanged);
     }
 
@@ -266,13 +260,14 @@ void TextAutoGenerateListView::scrollTo(const QModelIndex &index, QAbstractItemV
 
 void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 {
-    /*
-    const QModelIndex idx = mManager->textAutoGenerateMessagesModel()->indexForUuid(uuid);
-    if (idx.isValid()) {
-        auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
-        lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
+    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+    if (model) {
+        const QModelIndex idx = model->indexForUuid(uuid);
+        if (idx.isValid()) {
+            auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
+            lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
+        }
     }
-    */
 }
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()
