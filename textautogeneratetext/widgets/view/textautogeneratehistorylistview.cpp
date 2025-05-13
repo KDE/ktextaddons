@@ -33,6 +33,10 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
     if (mManager) {
         mHistoryListHeadingsProxyModel->setSourceModel(mManager->textAutoGenerateChatsModel());
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, &TextAutoGenerateHistoryListView::slotShowArchived);
+        connect(mManager,
+                &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged,
+                this,
+                &TextAutoGenerateHistoryListView::slotCurrentChatIdChanged);
     }
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
@@ -48,6 +52,12 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
 }
 
 TextAutoGenerateHistoryListView::~TextAutoGenerateHistoryListView() = default;
+
+void TextAutoGenerateHistoryListView::slotCurrentChatIdChanged()
+{
+    const QByteArray chatId = mManager->currentChatId();
+    // TODO
+}
 
 void TextAutoGenerateHistoryListView::slotShowArchived()
 {
