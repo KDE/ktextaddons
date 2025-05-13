@@ -16,4 +16,5 @@ public:
     ~TextAutoGenerateManagerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldIsFavorite();
 };

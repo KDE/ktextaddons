@@ -22,4 +22,9 @@ void TextAutoGenerateManagerTest::shouldHaveDefaultValues()
     QVERIFY(!w.showArchived());
 }
 
+void TextAutoGenerateManagerTest::shouldIsFavorite()
+{
+    TextAutoGenerateText::TextAutoGenerateManager w;
+    QVERIFY(!w.chatIsFavorite({}));
+}
 #include "moc_textautogeneratemanagertest.cpp"
