@@ -27,6 +27,7 @@ public:
     ~TextAutoGenerateWidget() override;
 
     [[nodiscard]] QString textLineEdit() const;
+    void slotSearchText();
 
     void loadEngine();
 
@@ -48,7 +49,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSearchText();
 
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;
