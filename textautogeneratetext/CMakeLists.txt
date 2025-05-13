@@ -157,6 +157,12 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     widgets/view/textautogeneratecolorsandmessageviewstyle.h
     widgets/view/textautogeneratecolorsandmessageviewstyle.cpp
 
+    widgets/view/textautogeneratesearchlistview.h
+    widgets/view/textautogeneratesearchlistview.cpp
+
+    widgets/view/textautogeneratesearchlistviewdelegate.h
+    widgets/view/textautogeneratesearchlistviewdelegate.cpp
+
     widgets/textautogeneratestackwidget.h
     widgets/textautogeneratestackwidget.cpp
 
@@ -180,6 +186,12 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     widgets/textautogenerateheaderwidget.h
     widgets/textautogenerateheaderwidget.cpp
+
+    widgets/textautogeneratesearchwidget.h
+    widgets/textautogeneratesearchwidget.cpp
+
+    widgets/textautogeneratesearchdialog.h
+    widgets/textautogeneratesearchdialog.cpp
 )
 
 if(BUILD_TESTING)
