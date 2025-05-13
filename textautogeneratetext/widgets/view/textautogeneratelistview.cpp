@@ -32,7 +32,6 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     scrollToBottom();
     setMouseTracking(true);
     if (mManager) {
-        mManager->loadHistory();
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateListView::slotCurrentChatIdChanged);
     }
 

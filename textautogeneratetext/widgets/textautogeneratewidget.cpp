@@ -147,6 +147,7 @@ void TextAutoGenerateWidget::loadEngine()
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
         }
+        mManager->loadHistory();
     }
 }
 
