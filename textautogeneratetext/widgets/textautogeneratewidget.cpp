@@ -15,6 +15,7 @@
 #include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogeneratehistorywidget.h"
 #include "widgets/textautogenerateresultwidget.h"
+#include "widgets/textautogeneratesearchdialog.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
 #include <KConfigGroup>
@@ -22,6 +23,7 @@
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
 #include <QKeyEvent>
+#include <QPointer>
 #include <QSplitter>
 #include <QVBoxLayout>
 
@@ -60,6 +62,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
 
     connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::configChanged, this, &TextAutoGenerateWidget::slotConfigureChanged);
 
+    connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::searchText, this, &TextAutoGenerateWidget::slotSearchText);
     if (mManager) {
         connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewChat, this, [this]() {
             mManager->createNewChat();
@@ -208,6 +211,13 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
     } else {
         slotEditingFinished(str, {});
     }
+}
+
+void TextAutoGenerateWidget::slotSearchText()
+{
+    QPointer<TextAutoGenerateSearchDialog> dlg = new TextAutoGenerateSearchDialog(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose, true);
+    dlg->show();
 }
 
 #include "moc_textautogeneratewidget.cpp"
