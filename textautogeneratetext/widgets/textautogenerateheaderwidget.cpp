@@ -19,6 +19,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     , mConfigureEngine(new QToolButton(this))
     , mNewChat(new QToolButton(this))
     , mFavorite(new QToolButton(this))
+    , mSearch(new QToolButton(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -39,6 +40,13 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mainLayout->addWidget(mConfigureEngine);
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::slotConfigureEngine);
+
+    mSearch->setObjectName("mSearch"_L1);
+    mSearch->setToolTip(i18nc("@info:tooltip", "Search…"));
+    mSearch->setAutoRaise(true);
+    mSearch->setIcon(QIcon::fromTheme(QStringLiteral("search")));
+    mainLayout->addWidget(mSearch);
+    connect(mSearch, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::searchText);
 
     mNewChat->setObjectName("mNewChat"_L1);
     mNewChat->setToolTip(i18nc("@info:tooltip", "New Chat"));

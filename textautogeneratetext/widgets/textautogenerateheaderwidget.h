@@ -24,6 +24,7 @@ Q_SIGNALS:
     void configChanged();
     void addNewChat();
     void changeFavoriteRequested(bool f);
+    void searchText();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
@@ -32,6 +33,7 @@ private:
     QToolButton *const mConfigureEngine;
     QToolButton *const mNewChat;
     QToolButton *const mFavorite;
+    QToolButton *const mSearch;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

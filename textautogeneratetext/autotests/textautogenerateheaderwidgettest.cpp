@@ -46,6 +46,11 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!mFavorite->isChecked());
     QVERIFY(!mFavorite->isEnabled());
     QVERIFY(!mFavorite->toolTip().isEmpty());
+
+    auto mSearch = w.findChild<QToolButton *>(QStringLiteral("mSearch"));
+    QVERIFY(mSearch);
+    QVERIFY(mSearch->autoRaise());
+    QVERIFY(!mSearch->toolTip().isEmpty());
 }
 
 void TextAutoGenerateHeaderWidgetTest::shouldEmitNewChat()
