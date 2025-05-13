@@ -90,6 +90,9 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
             Q_EMIT noPluginsFound(i18n("No plugin found."));
         });
+        connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::changeFavoriteRequested, this, [this](bool checked) {
+            mManager->changeFavoriteHistory(mManager->currentChatId(), checked);
+        });
     }
     loadEngine();
     readConfig();

@@ -68,8 +68,7 @@ TextAutoGenerateHeaderWidget::~TextAutoGenerateHeaderWidget() = default;
 void TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged()
 {
     mFavorite->setEnabled(!mManager->currentChatId().isEmpty());
-    // TODO define checkable ?
-    // TODO
+    mFavorite->setChecked(mManager->chatIsFavorite(mManager->currentChatId()));
 }
 
 void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
