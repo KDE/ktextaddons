@@ -18,6 +18,8 @@ void TextAutoGenerateManagerTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateManager w;
     QVERIFY(w.currentChatId().isEmpty());
+    QVERIFY(w.textAutoGenerateChatsModel());
+    QVERIFY(!w.showArchived());
 }
 
 #include "moc_textautogeneratemanagertest.cpp"
