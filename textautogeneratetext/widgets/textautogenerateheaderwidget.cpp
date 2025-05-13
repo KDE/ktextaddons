@@ -40,7 +40,6 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mainLayout->addStretch(1);
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::slotConfigureEngine);
 
-    // TODO favorite button
     mNewChat->setObjectName("mNewChat"_L1);
     mNewChat->setToolTip(i18nc("@info:tooltip", "New Chat"));
     mNewChat->setAutoRaise(true);
