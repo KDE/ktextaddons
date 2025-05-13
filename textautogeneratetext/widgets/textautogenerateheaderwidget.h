@@ -23,12 +23,14 @@ public:
 Q_SIGNALS:
     void configChanged();
     void addNewChat();
+    void changeFavoriteRequested();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
     QLabel *const mEngineName;
     QToolButton *const mConfigureEngine;
     QToolButton *const mNewChat;
+    QToolButton *const mFavorite;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

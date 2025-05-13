@@ -17,6 +17,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     , mEngineName(new QLabel(this))
     , mConfigureEngine(new QToolButton(this))
     , mNewChat(new QToolButton(this))
+    , mFavorite(new QToolButton(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -45,6 +46,14 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mNewChat->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     mainLayout->addWidget(mNewChat);
     connect(mNewChat, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::addNewChat);
+
+    mFavorite->setObjectName("mFavorite"_L1);
+    mFavorite->setToolTip(i18nc("@info:tooltip", "Favorite"));
+    mFavorite->setAutoRaise(true);
+    mFavorite->setCheckable(true);
+    mFavorite->setIcon(QIcon::fromTheme(QStringLiteral("favorite")));
+    mainLayout->addWidget(mFavorite);
+    connect(mFavorite, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::changeFavoriteRequested);
 }
 
 TextAutoGenerateHeaderWidget::~TextAutoGenerateHeaderWidget() = default;
