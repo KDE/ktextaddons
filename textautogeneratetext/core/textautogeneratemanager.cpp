@@ -129,7 +129,6 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
-        // TODO remove from database
         return messagesModel->cancelRequest(index);
     }
     return false;
@@ -137,7 +136,6 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
 
 void TextAutoGenerateManager::archiveDiscussion(const QByteArray &chatId, bool archive)
 {
-    // TODO
     mTextAutoGenerateChatsModel->archiveDiscussion(chatId, archive);
 }
 
