@@ -27,6 +27,7 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
     QLabel *const mEngineName;
     QToolButton *const mConfigureEngine;
     QToolButton *const mNewChat;

@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateheaderwidget.h"
+#include "core/textautogeneratemanager.h"
 #include "widgets/textautogenerateconfiguredialog.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -52,11 +53,23 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mFavorite->setAutoRaise(true);
     mFavorite->setCheckable(true);
     mFavorite->setIcon(QIcon::fromTheme(QStringLiteral("favorite")));
+    mFavorite->setEnabled(false);
+    mFavorite->setChecked(false);
     mainLayout->addWidget(mFavorite);
     connect(mFavorite, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::changeFavoriteRequested);
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged);
+    }
 }
 
 TextAutoGenerateHeaderWidget::~TextAutoGenerateHeaderWidget() = default;
+
+void TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged()
+{
+    mFavorite->setEnabled(!mManager->currentChatId().isEmpty());
+    // TODO define checkable ?
+    // TODO
+}
 
 void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
 {
