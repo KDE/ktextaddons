@@ -44,6 +44,7 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mFavorite->autoRaise());
     QVERIFY(mFavorite->isCheckable());
     QVERIFY(!mFavorite->isChecked());
+    QVERIFY(!mFavorite->isEnabled());
     QVERIFY(!mFavorite->toolTip().isEmpty());
 }
 
