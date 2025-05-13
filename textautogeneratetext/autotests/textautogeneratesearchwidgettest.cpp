@@ -6,10 +6,11 @@
 #include "textautogeneratesearchwidgettest.h"
 #include "widgets/textautogeneratesearchwidget.h"
 #include "widgets/view/textautogeneratesearchlistview.h"
+#include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateSearchWidgetTest)
-
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateSearchWidgetTest::TextAutoGenerateSearchWidgetTest(QObject *parent)
     : QObject{parent}
 {
@@ -26,6 +27,11 @@ void TextAutoGenerateSearchWidgetTest::shouldHaveDefaultValues()
     auto mTextAutoGenerateSearchListView =
         w.findChild<TextAutoGenerateText::TextAutoGenerateSearchListView *>(QStringLiteral("mTextAutoGenerateSearchListView"));
     QVERIFY(mTextAutoGenerateSearchListView);
+
+    auto mSearchLineEdit = w.findChild<QLineEdit *>("mSearchLineEdit"_L1);
+    QVERIFY(mSearchLineEdit);
+    QVERIFY(mSearchLineEdit->isClearButtonEnabled());
+    QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
 }
 
 #include "moc_textautogeneratesearchwidgettest.cpp"

@@ -10,8 +10,8 @@
 #include <QLineEdit>
 #include <QVBoxLayout>
 
-using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
+using namespace TextAutoGenerateText;
 TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateHistoryListView(new TextAutoGenerateHistoryListView(manager, this))
