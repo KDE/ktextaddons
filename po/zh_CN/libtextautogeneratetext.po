@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-12 00:40+0000\n"
+"POT-Creation-Date: 2025-05-13 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -20,49 +20,51 @@ msgstr ""
 #: core/textautogeneratechatsmodel.cpp:72
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "新聊天..."
 
 #: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "收藏"
 
 #: core/textautogeneratechatsmodel.cpp:141
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "今天"
 
 #: core/textautogeneratechatsmodel.cpp:143
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "过去 7 天"
 
 #: core/textautogeneratechatsmodel.cpp:145
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "过去 30 天"
 
 #: core/textautogeneratechatsmodel.cpp:147
 #, kde-format
 msgid "Later"
-msgstr ""
+msgstr "之后"
 
 #: core/textautogeneratechatsmodel.cpp:149
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: core/textautogeneratemessagesmodel.cpp:65
+#: core/textautogeneratemessagesmodel.cpp:67
 #, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2"
 msgstr ""
+"引擎：%1\n"
+"模型：%2"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -143,15 +145,13 @@ msgstr "用于生成回复的模型"
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "配置 IA"
+msgstr "配置 OpenAI IA"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -170,17 +170,24 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "对话"
 
-#: widgets/textautogenerateheaderwidget.cpp:33
+#: widgets/textautogenerateheaderwidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr ""
+msgstr "配置…"
+
+#: widgets/textautogenerateheaderwidget.cpp:43
+#, fuzzy, kde-format
+#| msgid "New Chat..."
+msgctxt "@info:tooltip"
+msgid "New Chat"
+msgstr "新聊天..."
 
 #: widgets/textautogeneratehistorywidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "搜索…"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:29
 #, kde-format
@@ -198,103 +205,117 @@ msgstr "输入信息"
 msgid "Send"
 msgstr "发送"
 
-#: widgets/textautogeneratewidget.cpp:83
+#: widgets/textautogeneratewidget.cpp:91
 #, kde-format
 msgid "No plugin found."
-msgstr ""
+msgstr "没有找到插件。"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:75
-#, kde-format
+#: widgets/view/textautogeneratehistorylistview.cpp:79
+#, fuzzy, kde-format
+#| msgid "New Chat..."
 msgctxt "@action"
-msgid "New Chat…"
-msgstr ""
+msgid "New Chat"
+msgstr "新聊天..."
 
-#: widgets/view/textautogeneratehistorylistview.cpp:83
+#: widgets/view/textautogeneratehistorylistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
-msgstr ""
+msgstr "修改…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:94
+#: widgets/view/textautogeneratehistorylistview.cpp:102
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@action"
+msgid "Remove as Favorite"
+msgstr "收藏"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:102
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@action"
+msgid "Set as Favorite"
+msgstr "收藏"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:115
 #, kde-format
 msgctxt "@action"
-msgid "Favorite…"
+msgid "Restore"
+msgstr "恢复"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:115
+#, kde-format
+msgctxt "@action"
+msgid "Archive"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:107
+#: widgets/view/textautogeneratehistorylistview.cpp:126
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "移除…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:111
-#: widgets/view/textautogeneratelistview.cpp:73
+#: widgets/view/textautogeneratehistorylistview.cpp:130
 #, kde-format
 msgid "Do you want to remove this discussion?"
-msgstr ""
+msgstr "您想要移除此讨论吗？"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:112
-#: widgets/view/textautogeneratelistview.cpp:74
+#: widgets/view/textautogeneratehistorylistview.cpp:131
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
-msgstr ""
+msgstr "移除讨论"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:127
-#: widgets/view/textautogeneratehistorylistview.cpp:138
-#, kde-format
-msgctxt "@action"
-msgid "Restore"
-msgstr ""
-
-#: widgets/view/textautogeneratelistview.cpp:121
+#: widgets/view/textautogeneratelistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "复制选中内容"
 
-#: widgets/view/textautogeneratelistview.cpp:121
+#: widgets/view/textautogeneratelistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "复制"
 
-#: widgets/view/textautogeneratelistview.cpp:129
+#: widgets/view/textautogeneratelistview.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "全部选中"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:427
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "移除…"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:431
+#: widgets/view/textautogeneratelistviewdelegate.cpp:421
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "编辑..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:435
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "复制"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:439
+#: widgets/view/textautogeneratelistviewdelegate.cpp:429
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:443
+#: widgets/view/textautogeneratelistviewdelegate.cpp:433
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "刷新"
+
+#~ msgctxt "@action"
+#~ msgid "New Chat…"
+#~ msgstr "新聊天…"
+
+#~ msgctxt "@action"
+#~ msgid "Favorite…"
+#~ msgstr "收藏…"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Remove"
+#~ msgstr "移除"
