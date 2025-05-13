@@ -180,6 +180,14 @@ QByteArray TextAutoGenerateManager::currentChatId() const
     return mCurrentChatId;
 }
 
+bool TextAutoGenerateManager::chatIsFavorite(const QByteArray &chatId) const
+{
+    if (chatId.isEmpty()) {
+        return false;
+    }
+    return mTextAutoGenerateChatsModel->chatIsFavorite(chatId);
+}
+
 void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatId)
 {
     if (mCurrentChatId != newCurrentChatId) {

@@ -235,6 +235,18 @@ void TextAutoGenerateChatsModel::archiveDiscussion(const QByteArray &chatId, boo
     }
 }
 
+bool TextAutoGenerateChatsModel::chatIsFavorite(const QByteArray &chatId) const
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).favorite();
+    }
+    return false;
+}
+
 void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool favorite)
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
