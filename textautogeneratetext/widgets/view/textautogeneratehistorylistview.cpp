@@ -56,7 +56,19 @@ TextAutoGenerateHistoryListView::~TextAutoGenerateHistoryListView() = default;
 void TextAutoGenerateHistoryListView::slotCurrentChatIdChanged()
 {
     const QByteArray chatId = mManager->currentChatId();
-    // TODO
+    const int nSections = mHistoryProxyModel->rowCount();
+    for (int sectionId = 0; sectionId < nSections; ++sectionId) {
+        const auto section = mHistoryProxyModel->index(sectionId, 0, {});
+        const auto sectionSize = mHistoryProxyModel->rowCount(section);
+
+        for (int roomIdx = 0; roomIdx < sectionSize; ++roomIdx) {
+            const auto roomModelIndex = mHistoryProxyModel->index(roomIdx, 0, section);
+            const auto identifier = roomModelIndex.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+            if (identifier == chatId) {
+                selectionModel()->setCurrentIndex(roomModelIndex, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
+            }
+        }
+    }
 }
 
 void TextAutoGenerateHistoryListView::slotShowArchived()
