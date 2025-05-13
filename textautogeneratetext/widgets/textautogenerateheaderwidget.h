@@ -23,7 +23,7 @@ public:
 Q_SIGNALS:
     void configChanged();
     void addNewChat();
-    void changeFavoriteRequested();
+    void changeFavoriteRequested(bool f);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();

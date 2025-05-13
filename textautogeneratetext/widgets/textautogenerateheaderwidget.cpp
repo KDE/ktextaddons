@@ -56,7 +56,9 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mFavorite->setEnabled(false);
     mFavorite->setChecked(false);
     mainLayout->addWidget(mFavorite);
-    connect(mFavorite, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::changeFavoriteRequested);
+    connect(mFavorite, &QToolButton::clicked, this, [this](bool checked) {
+        Q_EMIT changeFavoriteRequested(checked);
+    });
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged);
     }

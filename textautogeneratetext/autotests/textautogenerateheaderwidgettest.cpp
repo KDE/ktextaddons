@@ -58,4 +58,29 @@ void TextAutoGenerateHeaderWidgetTest::shouldEmitNewChat()
     QCOMPARE(addNewChatChanged.count(), 1);
 }
 
+void TextAutoGenerateHeaderWidgetTest::shouldEmitChangeFavoriteRequested()
+{
+    TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
+    auto mFavorite = w.findChild<QToolButton *>(QStringLiteral("mFavorite"));
+
+    // Force enable for testing
+    mFavorite->setEnabled(true);
+
+    QSignalSpy changeFavoriteRequested(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::changeFavoriteRequested);
+    QTest::mouseClick(mFavorite, Qt::LeftButton);
+    QCOMPARE(changeFavoriteRequested.count(), 1);
+    QVERIFY(changeFavoriteRequested.at(0).at(0).toBool());
+
+    changeFavoriteRequested.clear();
+    QTest::mouseClick(mFavorite, Qt::LeftButton);
+    QCOMPARE(changeFavoriteRequested.count(), 1);
+    QVERIFY(!changeFavoriteRequested.at(0).at(0).toBool());
+
+    changeFavoriteRequested.clear();
+    mFavorite->setChecked(true);
+    QTest::mouseClick(mFavorite, Qt::LeftButton);
+    QCOMPARE(changeFavoriteRequested.count(), 1);
+    QVERIFY(!changeFavoriteRequested.at(0).at(0).toBool());
+}
+
 #include "moc_textautogenerateheaderwidgettest.cpp"
