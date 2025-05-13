@@ -149,6 +149,7 @@ void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
     if (!chatId.isEmpty()) {
         mTextAutoGenerateChatsModel->removeDiscussion(chatId);
         mDatabaseManager->deleteChat(chatId);
+        setCurrentChatId({});
     }
 }
 
