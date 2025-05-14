@@ -19,5 +19,14 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchJob : public QObje
 public:
     explicit TextAutoGenerateSearchJob(QObject *parent = nullptr);
     ~TextAutoGenerateSearchJob() override;
+
+    [[nodiscard]] bool canStart() const;
+
+    void start();
+    [[nodiscard]] QString searchText() const;
+    void setSearchText(const QString &newSearchText);
+
+private:
+    QString mSearchText;
 };
 }
