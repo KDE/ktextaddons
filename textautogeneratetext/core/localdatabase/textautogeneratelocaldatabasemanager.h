@@ -29,6 +29,8 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;
 
+    void searchTextInDatabase(const QString &searchText);
+
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatsDatabase> mChatsDatabase;

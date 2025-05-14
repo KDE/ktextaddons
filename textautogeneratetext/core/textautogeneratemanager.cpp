@@ -189,7 +189,7 @@ bool TextAutoGenerateManager::chatIsFavorite(const QByteArray &chatId) const
 
 void TextAutoGenerateManager::searchTextInDatabase(const QString &searchText)
 {
-    // TODO
+    mDatabaseManager->searchTextInDatabase(searchText);
 }
 
 void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatId)
