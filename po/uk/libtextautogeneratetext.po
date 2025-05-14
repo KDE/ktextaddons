@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-13 00:40+0000\n"
-"PO-Revision-Date: 2025-05-12 09:50+0300\n"
+"POT-Creation-Date: 2025-05-14 00:42+0000\n"
+"PO-Revision-Date: 2025-05-13 09:16+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -171,20 +171,35 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: widgets/textautogenerateheaderwidget.cpp:34
+#: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
 
-#: widgets/textautogenerateheaderwidget.cpp:43
+#: widgets/textautogenerateheaderwidget.cpp:45
 #, fuzzy, kde-format
-#| msgid "New Chat..."
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:tooltip"
+msgid "Search…"
+msgstr "Шукати…"
+
+#: widgets/textautogenerateheaderwidget.cpp:52
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "Нове спілкування…"
+msgstr "Нове спілкування"
+
+#: widgets/textautogenerateheaderwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@info:tooltip"
+msgid "Favorite"
+msgstr "Улюблене"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -194,6 +209,14 @@ msgstr "Шукати…"
 #, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
+
+#: widgets/textautogeneratesearchdialog.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@title:window"
+msgid "Search"
+msgstr "Шукати…"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -206,80 +229,77 @@ msgstr "Введіть повідомлення"
 msgid "Send"
 msgstr "Надіслати"
 
-#: widgets/textautogeneratewidget.cpp:91
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr "Не знайдено додатка."
 
-#: widgets/view/textautogeneratehistorylistview.cpp:79
-#, fuzzy, kde-format
-#| msgid "New Chat..."
+#: widgets/view/textautogeneratehistorylistview.cpp:101
+#, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "Нове спілкування…"
+msgstr "Нове спілкування"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:89
+#: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Змінити…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:102
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#: widgets/view/textautogeneratehistorylistview.cpp:124
+#, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "Улюблене"
+msgstr "Вилучити з улюблених"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:102
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#: widgets/view/textautogeneratehistorylistview.cpp:124
+#, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "Улюблене"
+msgstr "Зробити улюбленим"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "Архівувати"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:126
+#: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Вилучити…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:130
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Хочете вилучити це обговорення?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:131
+#: widgets/view/textautogeneratehistorylistview.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Вилучення обговорення"
 
-#: widgets/view/textautogeneratelistview.cpp:104
+#: widgets/view/textautogeneratelistview.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Копіювати позначене"
 
-#: widgets/view/textautogeneratelistview.cpp:104
+#: widgets/view/textautogeneratelistview.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistview.cpp:112
+#: widgets/view/textautogeneratelistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

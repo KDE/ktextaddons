@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-13 00:40+0000\n"
+"POT-Creation-Date: 2025-05-14 00:42+0000\n"
 "PO-Revision-Date: 2025-03-01 17:53+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -174,7 +174,7 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr ""
 
-#: widgets/textautogenerateheaderwidget.cpp:34
+#: widgets/textautogenerateheaderwidget.cpp:37
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure Mistral IA"
@@ -182,13 +182,26 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Mistral-tekoälyn asetukset"
 
-#: widgets/textautogenerateheaderwidget.cpp:43
+#: widgets/textautogenerateheaderwidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Search…"
+msgstr ""
+
+#: widgets/textautogenerateheaderwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr ""
 
+#: widgets/textautogenerateheaderwidget.cpp:59
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Favorite"
+msgstr ""
+
 #: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -201,6 +214,12 @@ msgstr ""
 msgid "Configure…"
 msgstr "Mistral-tekoälyn asetukset"
 
+#: widgets/textautogeneratesearchdialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Search"
+msgstr ""
+
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
@@ -212,77 +231,77 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:91
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:79
+#: widgets/view/textautogeneratehistorylistview.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:89
+#: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:102
+#: widgets/view/textautogeneratehistorylistview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:102
+#: widgets/view/textautogeneratehistorylistview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:126
+#: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:130
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:131
+#: widgets/view/textautogeneratehistorylistview.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:104
+#: widgets/view/textautogeneratelistview.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:104
+#: widgets/view/textautogeneratelistview.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:112
+#: widgets/view/textautogeneratelistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
