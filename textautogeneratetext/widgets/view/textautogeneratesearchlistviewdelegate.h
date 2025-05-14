@@ -5,17 +5,19 @@
 */
 
 #pragma once
+#include "textautogeneratelistviewbasedelegate.h"
 #include "textautogeneratetext_private_export.h"
-#include <QItemDelegate>
-#include <QObject>
-
+class QListView;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListViewDelegate : public QItemDelegate
+class TextAutoGenerateListViewTextSelection;
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListViewDelegate : public TextAutoGenerateListViewBaseDelegate
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateSearchListViewDelegate(QObject *parent = nullptr);
+    explicit TextAutoGenerateSearchListViewDelegate(QListView *view);
     ~TextAutoGenerateSearchListViewDelegate() override;
+
+    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const override;
 };
 }

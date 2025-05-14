@@ -13,12 +13,12 @@ class QTextCursor;
 class QTextDocument;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateListViewDelegate;
+class TextAutoGenerateListViewBaseDelegate;
 class TextAutoGenerateListViewTextSelection : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewDelegate *delegate, QObject *parent = nullptr);
+    explicit TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewBaseDelegate *delegate, QObject *parent = nullptr);
     [[nodiscard]] bool hasSelection() const;
     enum class Format : uint8_t {
         Text,
@@ -57,7 +57,7 @@ private:
     QPersistentModelIndex mEndIndex;
     int mStartPos = -1; // first selected character in start row
     int mEndPos = -1; // last selected character in end row
-    TextAutoGenerateListViewDelegate *const mDelegate;
+    TextAutoGenerateListViewBaseDelegate *const mDelegate;
     bool mMightStartDrag = false;
 };
 }

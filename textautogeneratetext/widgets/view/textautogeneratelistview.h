@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "textautogeneratebaselistview.h"
 #include "textautogeneratetext_private_export.h"
 #include <QListView>
 namespace TextAutoGenerateText
@@ -11,7 +12,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateManager;
 class TextAutoGenerateMessage;
 class TextAutoGenerateListViewDelegate;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateListView : public QListView
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateListView : public TextAutoGenerateBaseListView
 {
     Q_OBJECT
 public:

@@ -21,7 +21,9 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateSearchMessagesModel::search
 
 void TextAutoGenerateSearchMessagesModel::setSearchMessages(const QList<TextAutoGenerateSearchMessage> &newSearchMessages)
 {
+    beginResetModel();
     mSearchMessages = newSearchMessages;
+    endResetModel();
 }
 
 int TextAutoGenerateSearchMessagesModel::rowCount(const QModelIndex &parent) const

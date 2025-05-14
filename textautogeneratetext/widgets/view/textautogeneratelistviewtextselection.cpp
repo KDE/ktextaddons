@@ -12,7 +12,7 @@
 #include <QTextDocumentFragment>
 using namespace TextAutoGenerateText;
 
-TextAutoGenerateListViewTextSelection::TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewDelegate *delegate, QObject *parent)
+TextAutoGenerateListViewTextSelection::TextAutoGenerateListViewTextSelection(TextAutoGenerateListViewBaseDelegate *delegate, QObject *parent)
     : QObject(parent)
     , mDelegate(delegate)
 {

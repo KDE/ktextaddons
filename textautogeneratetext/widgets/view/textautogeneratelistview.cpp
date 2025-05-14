@@ -20,17 +20,11 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
-    : QListView(parent)
+    : TextAutoGenerateBaseListView(parent)
     , mDelegate(new TextAutoGenerateListViewDelegate(this))
     , mManager(manager)
 {
-    setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setWordWrap(true); // so that the delegate sizeHint is called again when the width changes
     setItemDelegate(mDelegate);
-    setFocusPolicy(Qt::NoFocus);
-    scrollToBottom();
-    setMouseTracking(true);
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateListView::slotCurrentChatIdChanged);
     }

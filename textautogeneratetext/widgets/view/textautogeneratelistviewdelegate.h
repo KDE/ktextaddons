@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "lrucache.h"
+#include "textautogeneratelistviewbasedelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include <QItemDelegate>
 #include <QTextDocument>
@@ -14,7 +14,7 @@ class QListView;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateListViewTextSelection;
-class TextAutoGenerateListViewDelegate : public QItemDelegate
+class TextAutoGenerateListViewDelegate : public TextAutoGenerateListViewBaseDelegate
 {
     Q_OBJECT
 public:
@@ -24,21 +24,11 @@ public:
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-    void clearSizeHintCache();
-
-    void removeMessageCache(const QByteArray &uuid);
-
-    void clearCache();
-
-    void selectAll(const QStyleOptionViewItem &option, const QModelIndex &index);
-
     [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool helpEvent(QHelpEvent *event, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index) override;
     [[nodiscard]] bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
 
-    [[nodiscard]] QString selectedText() const;
-    [[nodiscard]] bool hasSelection() const;
-    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const;
+    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const override;
 
     void needUpdateIndexBackground(const QPersistentModelIndex &index, const QColor &color);
     void removeNeedUpdateIndexBackground(const QPersistentModelIndex &index);
@@ -46,7 +36,6 @@ public:
                                           const QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities);
     void removeNeedUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index);
 Q_SIGNALS:
-    void updateView(const QModelIndex &index);
     void editMessage(const QModelIndex &index);
     void copyMessage(const QModelIndex &index);
     void cancelRequested(const QModelIndex &index);
@@ -86,10 +75,7 @@ private:
         QRect inProgressRect;
     };
 
-    [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option, qreal *pBaseLine) const;
-    [[nodiscard]] QSize textSizeHint(QTextDocument *doc, qreal *pBaseLine) const;
     [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    [[nodiscard]] std::unique_ptr<QTextDocument> createTextDocument(const QString &text, int width) const;
     void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] bool maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
@@ -106,9 +92,6 @@ private:
 
     QColor mEditingColorMode;
 
-    // Cache SizeHint value
-    // We need to clear it when we resize widget.
-    mutable LRUCache<QByteArray, QSize> mSizeHintCache;
     struct IndexBackgroundColor {
         QPersistentModelIndex index;
         QColor color;
@@ -120,8 +103,5 @@ private:
         QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> scaleAndOpacities;
     };
     QList<IndexScaleAndOpacities> mIndexScaleAndOpacitiesList;
-    mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
-    QAbstractItemView *const mListView;
-    TextAutoGenerateListViewTextSelection *const mTextSelection;
 };
 }
