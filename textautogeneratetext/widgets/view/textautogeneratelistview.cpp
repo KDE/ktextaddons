@@ -20,9 +20,8 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
-    : TextAutoGenerateBaseListView(parent)
+    : TextAutoGenerateBaseListView(manager, parent)
     , mDelegate(new TextAutoGenerateListViewDelegate(this))
-    , mManager(manager)
 {
     setItemDelegate(mDelegate);
     if (mManager) {
@@ -72,14 +71,6 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
             Q_EMIT refreshAnswerRequested(chatId, index);
         }
     }
-}
-
-void TextAutoGenerateListView::slotCopyMessage(const QModelIndex &index)
-{
-    const QString currentValue = index.data().toString();
-    QClipboard *clip = QApplication::clipboard();
-    clip->setText(currentValue, QClipboard::Clipboard);
-    clip->setText(currentValue, QClipboard::Selection);
 }
 
 void TextAutoGenerateListView::contextMenuEvent(QContextMenuEvent *event)
@@ -174,13 +165,6 @@ void TextAutoGenerateListView::mouseMoveEvent(QMouseEvent *event)
         }
     }
     handleMouseEvent(event);
-}
-
-QStyleOptionViewItem TextAutoGenerateListView::listViewOptions() const
-{
-    QStyleOptionViewItem option;
-    initViewItemOption(&option);
-    return option;
 }
 
 void TextAutoGenerateListView::handleMouseEvent(QMouseEvent *event)

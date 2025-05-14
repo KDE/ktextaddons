@@ -11,9 +11,8 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchListView::TextAutoGenerateSearchListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
-    : TextAutoGenerateBaseListView(parent)
+    : TextAutoGenerateBaseListView(manager, parent)
     , mDelegate(new TextAutoGenerateSearchListViewDelegate(this))
-    , mManager(manager)
     , mModel(new TextAutoGenerateSearchMessagesModel(this))
 {
     setItemDelegate(mDelegate);

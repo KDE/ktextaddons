@@ -8,11 +8,17 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TextAutoGenerateBaseListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateBaseListView(QWidget *parent = nullptr);
+    explicit TextAutoGenerateBaseListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateBaseListView() override;
+
+protected:
+    void slotCopyMessage(const QModelIndex &index);
+    [[nodiscard]] QStyleOptionViewItem listViewOptions() const;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

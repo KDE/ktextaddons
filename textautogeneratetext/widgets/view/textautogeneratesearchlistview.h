@@ -21,7 +21,6 @@ public:
 
 private:
     TextAutoGenerateText::TextAutoGenerateSearchListViewDelegate *const mDelegate;
-    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     TextAutoGenerateSearchMessagesModel *const mModel;
 };
 }

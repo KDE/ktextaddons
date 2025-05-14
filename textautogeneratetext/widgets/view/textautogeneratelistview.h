@@ -44,7 +44,6 @@ Q_SIGNALS:
     void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &index);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStyleOptionViewItem listViewOptions() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkIfAtBottom();
     TEXTAUTOGENERATETEXT_NO_EXPORT void maybeScrollToBottom();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateVerticalPageStep();
@@ -53,7 +52,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT virtual bool mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveMessage(const QModelIndex &index);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotCopyMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void addSelectedMessageBackgroundAnimation(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
@@ -65,6 +63,5 @@ private:
     QPoint mPressedPosition;
     QPersistentModelIndex mCurrentIndex = {};
     TextAutoGenerateListViewDelegate *const mDelegate;
-    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
