@@ -17,7 +17,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchJob : public QObje
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateSearchJob(QObject *parent = nullptr);
+    explicit TextAutoGenerateSearchJob(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateSearchJob() override;
 
     [[nodiscard]] bool canStart() const;
@@ -28,5 +28,6 @@ public:
 
 private:
     QString mSearchText;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

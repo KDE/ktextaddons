@@ -16,7 +16,7 @@ TextAutoGenerateSearchJobTest::TextAutoGenerateSearchJobTest(QObject *parent)
 
 void TextAutoGenerateSearchJobTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSearchJob job;
+    TextAutoGenerateText::TextAutoGenerateSearchJob job(nullptr);
     QVERIFY(job.searchText().isEmpty());
     QVERIFY(!job.canStart());
 }

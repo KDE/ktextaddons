@@ -8,8 +8,9 @@
 #include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateSearchJob::TextAutoGenerateSearchJob(QObject *parent)
+TextAutoGenerateSearchJob::TextAutoGenerateSearchJob(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
     : QObject{parent}
+    , mManager(manager)
 {
 }
 
@@ -17,7 +18,7 @@ TextAutoGenerateSearchJob::~TextAutoGenerateSearchJob() = default;
 
 bool TextAutoGenerateSearchJob::canStart() const
 {
-    return !mSearchText.isEmpty();
+    return mManager && !mSearchText.isEmpty();
 }
 
 void TextAutoGenerateSearchJob::start()
