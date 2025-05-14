@@ -60,6 +60,8 @@ public:
     void changeFavoriteHistory(const QByteArray &chatId, bool favorite);
     void archiveDiscussion(const QByteArray &chatId, bool archive);
     [[nodiscard]] bool chatIsFavorite(const QByteArray &chatId) const;
+
+    void searchTextInDatabase(const QString &searchText);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
