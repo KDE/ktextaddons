@@ -29,6 +29,8 @@ public:
     [[nodiscard]] virtual QTextDocument *documentForIndex(const QModelIndex &index, int width) const = 0;
     [[nodiscard]] QString selectedText() const;
     [[nodiscard]] bool hasSelection() const;
+    [[nodiscard]] virtual bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
 
     void selectAll(const QStyleOptionViewItem &option, const QModelIndex &index);
 

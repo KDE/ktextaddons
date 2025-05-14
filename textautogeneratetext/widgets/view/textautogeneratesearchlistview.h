@@ -20,7 +20,6 @@ public:
     ~TextAutoGenerateSearchListView() override;
 
 private:
-    TextAutoGenerateText::TextAutoGenerateSearchListViewDelegate *const mDelegate;
     TextAutoGenerateSearchMessagesModel *const mModel;
 };
 }

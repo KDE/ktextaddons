@@ -59,6 +59,17 @@ std::unique_ptr<QTextDocument> TextAutoGenerateListViewBaseDelegate::createTextD
     frame->setFrameFormat(frameFormat);
     return doc;
 }
+
+bool TextAutoGenerateListViewBaseDelegate::mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    return false;
+}
+
+bool TextAutoGenerateListViewBaseDelegate::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    return false;
+}
+
 QString TextAutoGenerateListViewBaseDelegate::selectedText() const
 {
     return mTextSelection->selectedText(TextAutoGenerateListViewTextSelection::Format::Text);

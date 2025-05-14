@@ -4,8 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratebaselistview.h"
+#include "widgets/view/textautogeneratelistviewbasedelegate.h"
 #include <QApplication>
 #include <QClipboard>
+#include <QMouseEvent>
 #include <QScrollBar>
 
 using namespace TextAutoGenerateText;
@@ -26,6 +28,22 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
 }
 
 TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView() = default;
+
+void TextAutoGenerateBaseListView::slotSelectAll(const QModelIndex &index)
+{
+    mDelegate->selectAll(listViewOptions(), index);
+}
+
+void TextAutoGenerateBaseListView::resizeEvent(QResizeEvent *ev)
+{
+    QListView::resizeEvent(ev);
+
+    // Fix not being really at bottom when the view gets reduced by the header widget becoming taller
+    checkIfAtBottom();
+    maybeScrollToBottom(); // this forces a layout in QAIV, which then changes the vbar max value
+    updateVerticalPageStep();
+    mDelegate->clearSizeHintCache();
+}
 
 void TextAutoGenerateBaseListView::slotCopyMessage(const QModelIndex &index)
 {
@@ -58,6 +76,66 @@ void TextAutoGenerateBaseListView::maybeScrollToBottom()
 void TextAutoGenerateBaseListView::updateVerticalPageStep()
 {
     verticalScrollBar()->setPageStep(viewport()->height() * 3 / 4);
+}
+
+bool TextAutoGenerateBaseListView::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    return mDelegate->maybeStartDrag(event, option, index);
+}
+
+bool TextAutoGenerateBaseListView::mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
+{
+    return mDelegate->mouseEvent(event, option, index);
+}
+
+void TextAutoGenerateBaseListView::mouseReleaseEvent(QMouseEvent *event)
+{
+    handleMouseEvent(event);
+}
+
+void TextAutoGenerateBaseListView::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    handleMouseEvent(event);
+}
+
+void TextAutoGenerateBaseListView::mousePressEvent(QMouseEvent *event)
+{
+    mPressedPosition = event->pos();
+    handleMouseEvent(event);
+}
+
+void TextAutoGenerateBaseListView::mouseMoveEvent(QMouseEvent *event)
+{
+    // Drag support
+    const int distance = (event->pos() - mPressedPosition).manhattanLength();
+    if (distance > QApplication::startDragDistance()) {
+        mPressedPosition = {};
+        const QPersistentModelIndex index = indexAt(event->pos());
+        if (index.isValid()) {
+            QStyleOptionViewItem options = listViewOptions();
+            options.rect = visualRect(index);
+            if (maybeStartDrag(event, options, index)) {
+                return;
+            }
+        }
+    }
+    handleMouseEvent(event);
+}
+
+void TextAutoGenerateBaseListView::handleMouseEvent(QMouseEvent *event)
+{
+    const QPersistentModelIndex index = indexAt(event->pos());
+    if (index.isValid()) {
+        // When the cursor hovers another message, hide/show the reaction icon accordingly
+        if (mCurrentIndex != index) {
+            mCurrentIndex = index;
+        }
+        QStyleOptionViewItem options = listViewOptions();
+        options.rect = visualRect(mCurrentIndex);
+        if (mouseEvent(event, options, mCurrentIndex)) {
+            update(mCurrentIndex);
+        }
+    }
 }
 
 #include "moc_textautogeneratebaselistview.cpp"
