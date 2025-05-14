@@ -18,7 +18,7 @@ TextAutoGenerateSearchWidgetTest::TextAutoGenerateSearchWidgetTest(QObject *pare
 
 void TextAutoGenerateSearchWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSearchWidget w;
+    TextAutoGenerateText::TextAutoGenerateSearchWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);

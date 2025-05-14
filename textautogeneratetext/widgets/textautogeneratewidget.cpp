@@ -215,7 +215,7 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
 
 void TextAutoGenerateWidget::slotSearchText()
 {
-    QPointer<TextAutoGenerateSearchDialog> dlg = new TextAutoGenerateSearchDialog(this);
+    QPointer<TextAutoGenerateSearchDialog> dlg = new TextAutoGenerateSearchDialog(mManager, this);
     dlg->setAttribute(Qt::WA_DeleteOnClose, true);
     dlg->show();
 }

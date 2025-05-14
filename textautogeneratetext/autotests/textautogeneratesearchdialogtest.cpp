@@ -21,7 +21,7 @@ TextAutoGenerateSearchDialogTest::TextAutoGenerateSearchDialogTest(QObject *pare
 
 void TextAutoGenerateSearchDialogTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSearchDialog d;
+    TextAutoGenerateText::TextAutoGenerateSearchDialog d(nullptr);
     auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 

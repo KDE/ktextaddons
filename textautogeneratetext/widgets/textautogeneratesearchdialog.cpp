@@ -19,9 +19,9 @@ namespace
 const char myTextAutoGenerateSearchDialogGroupName[] = "TextAutoGenerateSearchDialog";
 }
 using namespace TextAutoGenerateText;
-TextAutoGenerateSearchDialog::TextAutoGenerateSearchDialog(QWidget *parent)
+TextAutoGenerateSearchDialog::TextAutoGenerateSearchDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog{parent}
-    , mTextAutoGenerateSearchWidget(new TextAutoGenerateSearchWidget(this))
+    , mTextAutoGenerateSearchWidget(new TextAutoGenerateSearchWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Search"));
 

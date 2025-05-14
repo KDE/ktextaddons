@@ -12,9 +12,9 @@
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateSearchWidget::TextAutoGenerateSearchWidget(QWidget *parent)
+TextAutoGenerateSearchWidget::TextAutoGenerateSearchWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mTextAutoGenerateSearchListView(new TextAutoGenerateSearchListView(this))
+    , mTextAutoGenerateSearchListView(new TextAutoGenerateSearchListView(manager, this))
     , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);

@@ -10,11 +10,12 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateSearchWidget;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateSearchDialog(QWidget *parent = nullptr);
+    explicit TextAutoGenerateSearchDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateSearchDialog() override;
 
 private:

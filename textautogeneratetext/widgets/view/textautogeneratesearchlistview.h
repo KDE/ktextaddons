@@ -8,11 +8,17 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
+class TextAutoGenerateSearchListViewDelegate;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateSearchListView(QWidget *parent = nullptr);
+    explicit TextAutoGenerateSearchListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateSearchListView() override;
+
+private:
+    TextAutoGenerateText::TextAutoGenerateSearchListViewDelegate *const mDelegate;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
