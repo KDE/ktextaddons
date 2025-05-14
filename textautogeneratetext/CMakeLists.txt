@@ -124,6 +124,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     core/localdatabase/textautogeneratelocalmessagesdatabase.h
     core/localdatabase/textautogeneratelocaldatabasemanager.h
     core/localdatabase/textautogeneratelocaldatabasemanager.cpp
+
+    core/textautogeneratesearchjob.h
+    core/textautogeneratesearchjob.cpp
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
