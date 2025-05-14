@@ -19,11 +19,12 @@ public:
 protected:
     void slotCopyMessage(const QModelIndex &index);
     [[nodiscard]] QStyleOptionViewItem listViewOptions() const;
-    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
-
     void checkIfAtBottom();
     void maybeScrollToBottom();
     void updateVerticalPageStep();
+
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    QPoint mPressedPosition;
 
 private:
     bool mAtBottom = true;

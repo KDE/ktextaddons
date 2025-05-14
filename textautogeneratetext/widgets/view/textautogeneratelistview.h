@@ -56,7 +56,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
 
-    QPoint mPressedPosition;
     QPersistentModelIndex mCurrentIndex = {};
     TextAutoGenerateListViewDelegate *const mDelegate;
 };

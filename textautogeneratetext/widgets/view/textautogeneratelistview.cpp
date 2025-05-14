@@ -36,10 +36,6 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(mDelegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(mDelegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
-
-    // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
-    // This way it also catches the case of an item changing height (e.g. after async image loading)
-    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateListView::maybeScrollToBottom);
 }
 
 TextAutoGenerateListView::~TextAutoGenerateListView() = default;

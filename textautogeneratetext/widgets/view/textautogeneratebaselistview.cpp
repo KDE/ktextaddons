@@ -20,6 +20,9 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
     setFocusPolicy(Qt::NoFocus);
     scrollToBottom();
     setMouseTracking(true);
+    // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
+    // This way it also catches the case of an item changing height (e.g. after async image loading)
+    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateBaseListView::maybeScrollToBottom);
 }
 
 TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView() = default;
