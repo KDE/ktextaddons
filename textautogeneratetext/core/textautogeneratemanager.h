@@ -69,6 +69,7 @@ Q_SIGNALS:
     void errorOccured(const QString &msg);
     void currentChatIdChanged();
     void showArchiveChanged();
+    void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
