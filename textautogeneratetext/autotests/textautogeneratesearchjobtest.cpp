@@ -19,3 +19,5 @@ void TextAutoGenerateSearchJobTest::shouldHaveDefaultValues()
     TextAutoGenerateText::TextAutoGenerateSearchJob job;
     // TODO
 }
+
+#include "moc_textautogeneratesearchjobtest.cpp"

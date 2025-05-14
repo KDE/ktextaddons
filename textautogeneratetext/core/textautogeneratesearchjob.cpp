@@ -13,3 +13,5 @@ TextAutoGenerateSearchJob::TextAutoGenerateSearchJob(QObject *parent)
 }
 
 TextAutoGenerateSearchJob::~TextAutoGenerateSearchJob() = default;
+
+#include "moc_textautogeneratesearchjob.cpp"
