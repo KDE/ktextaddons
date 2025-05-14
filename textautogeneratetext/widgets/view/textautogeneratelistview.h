@@ -44,9 +44,6 @@ Q_SIGNALS:
     void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &index);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void checkIfAtBottom();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void maybeScrollToBottom();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void updateVerticalPageStep();
     TEXTAUTOGENERATETEXT_NO_EXPORT void handleMouseEvent(QMouseEvent *event);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotSelectAll(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
@@ -59,7 +56,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
 
-    bool mAtBottom = true;
     QPoint mPressedPosition;
     QPersistentModelIndex mCurrentIndex = {};
     TextAutoGenerateListViewDelegate *const mDelegate;

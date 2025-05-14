@@ -115,24 +115,6 @@ void TextAutoGenerateListView::resizeEvent(QResizeEvent *ev)
     mDelegate->clearSizeHintCache();
 }
 
-void TextAutoGenerateListView::checkIfAtBottom()
-{
-    auto *vbar = verticalScrollBar();
-    mAtBottom = vbar->value() == vbar->maximum();
-}
-
-void TextAutoGenerateListView::maybeScrollToBottom()
-{
-    if (mAtBottom) {
-        scrollToBottom();
-    }
-}
-
-void TextAutoGenerateListView::updateVerticalPageStep()
-{
-    verticalScrollBar()->setPageStep(viewport()->height() * 3 / 4);
-}
-
 void TextAutoGenerateListView::mouseReleaseEvent(QMouseEvent *event)
 {
     handleMouseEvent(event);

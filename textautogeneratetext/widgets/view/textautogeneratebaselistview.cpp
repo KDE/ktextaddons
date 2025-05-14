@@ -6,6 +6,7 @@
 #include "textautogeneratebaselistview.h"
 #include <QApplication>
 #include <QClipboard>
+#include <QScrollBar>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -36,6 +37,24 @@ QStyleOptionViewItem TextAutoGenerateBaseListView::listViewOptions() const
     QStyleOptionViewItem option;
     initViewItemOption(&option);
     return option;
+}
+
+void TextAutoGenerateBaseListView::checkIfAtBottom()
+{
+    auto *vbar = verticalScrollBar();
+    mAtBottom = vbar->value() == vbar->maximum();
+}
+
+void TextAutoGenerateBaseListView::maybeScrollToBottom()
+{
+    if (mAtBottom) {
+        scrollToBottom();
+    }
+}
+
+void TextAutoGenerateBaseListView::updateVerticalPageStep()
+{
+    verticalScrollBar()->setPageStep(viewport()->height() * 3 / 4);
 }
 
 #include "moc_textautogeneratebaselistview.cpp"
