@@ -13,4 +13,16 @@ TextAutoGenerateAskJob::TextAutoGenerateAskJob(QObject *parent)
 
 TextAutoGenerateAskJob::~TextAutoGenerateAskJob() = default;
 
+bool TextAutoGenerateAskJob::canStart() const
+{
+    // TODO
+    return false;
+}
+
+void TextAutoGenerateAskJob::start()
+{
+    // TODO
+    deleteLater();
+}
+
 #include "moc_textautogenerateaskjob.cpp"

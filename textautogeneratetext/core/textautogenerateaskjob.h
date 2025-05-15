@@ -14,5 +14,8 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
 public:
     explicit TextAutoGenerateAskJob(QObject *parent = nullptr);
     ~TextAutoGenerateAskJob() override;
+    [[nodiscard]] bool canStart() const;
+
+    void start();
 };
 }

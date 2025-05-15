@@ -26,6 +26,9 @@ public:
     [[nodiscard]] QString searchText() const;
     void setSearchText(const QString &newSearchText);
 
+Q_SIGNALS:
+    void searchDone();
+
 private:
     QString mSearchText;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
