@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratesearchjob.h"
+#include "textautogeneratemanager.h"
 #include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
@@ -28,6 +29,7 @@ void TextAutoGenerateSearchJob::start()
         deleteLater();
         return;
     }
+    mManager->searchTextInDatabase(mSearchText);
     // TODO
 }
 
