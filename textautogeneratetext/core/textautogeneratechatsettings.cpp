@@ -33,11 +33,12 @@ bool TextAutoGenerateChatSettings::isEmpty() const
 
 bool TextAutoGenerateChatSettings::PendingTypedInfo::isValid() const
 {
-    return !text.isEmpty();
+    return !text.isEmpty() && (scrollbarPosition != -1);
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateChatSettings::PendingTypedInfo &t)
 {
     d.space() << "text" << t.text;
+    d.space() << "scrollbarPosition" << t.scrollbarPosition;
     return d;
 }

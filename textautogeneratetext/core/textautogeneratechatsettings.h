@@ -15,6 +15,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatSettings
 public:
     struct TEXTAUTOGENERATETEXT_EXPORT PendingTypedInfo {
         QString text;
+        int scrollbarPosition = -1;
         [[nodiscard]] bool isValid() const;
     };
     TextAutoGenerateChatSettings();
@@ -22,9 +23,9 @@ public:
 
     void remove(const QByteArray &roomId);
 
-    void add(const QByteArray &roomId, const PendingTypedInfo &info);
+    void add(const QByteArray &chatId, const PendingTypedInfo &info);
 
-    [[nodiscard]] PendingTypedInfo value(const QByteArray &roomId);
+    [[nodiscard]] PendingTypedInfo value(const QByteArray &chatId);
 
     [[nodiscard]] bool isEmpty() const;
 
