@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratesearchwidget.h"
+#include "textautogeneratesearchlineedit.h"
 #include "widgets/view/textautogeneratesearchlistview.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -15,7 +16,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateSearchWidget::TextAutoGenerateSearchWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateSearchListView(new TextAutoGenerateSearchListView(manager, this))
-    , mSearchLineEdit(new QLineEdit(this))
+    , mSearchLineEdit(new TextAutoGenerateSearchLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -31,7 +32,7 @@ TextAutoGenerateSearchWidget::TextAutoGenerateSearchWidget(TextAutoGenerateText:
     mTextAutoGenerateSearchListView->setObjectName(QStringLiteral("mTextAutoGenerateSearchListView"));
     mainLayout->addWidget(mTextAutoGenerateSearchListView);
 
-    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateSearchWidget::slotSearchTextChanged);
+    connect(mSearchLineEdit, &TextAutoGenerateSearchLineEdit::searchText, this, &TextAutoGenerateSearchWidget::slotSearchTextChanged);
 }
 
 TextAutoGenerateSearchWidget::~TextAutoGenerateSearchWidget() = default;

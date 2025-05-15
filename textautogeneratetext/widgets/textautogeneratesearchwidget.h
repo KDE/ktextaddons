@@ -7,11 +7,11 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
-class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateSearchListView;
 class TextAutoGenerateManager;
+class TextAutoGenerateSearchLineEdit;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchWidget : public QWidget
 {
     Q_OBJECT
@@ -22,6 +22,6 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotSearchTextChanged(const QString &str);
     TextAutoGenerateSearchListView *const mTextAutoGenerateSearchListView;
-    QLineEdit *const mSearchLineEdit;
+    TextAutoGenerateSearchLineEdit *const mSearchLineEdit;
 };
 }
