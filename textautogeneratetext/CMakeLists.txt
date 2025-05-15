@@ -130,6 +130,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     core/textautogeneratesearchjob.h
     core/textautogeneratesearchjob.cpp
+
+    core/textautogenerateaskjob.h
+    core/textautogenerateaskjob.cpp
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
@@ -262,6 +265,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextReplyInfo
     TextAutoGenerateSearchMessagesModel
     TextAutoGenerateSearchMessage
+    TextAutoGenerateAskJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
