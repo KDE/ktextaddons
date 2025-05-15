@@ -32,12 +32,15 @@ void TextAutoGenerateSearchLineEdit::slotSearchTextEdited()
     }
 
     mSearchTimer->setSingleShot(true);
-    mSearchTimer->start(300ms);
+    mSearchTimer->start(500ms);
 }
 
 void TextAutoGenerateSearchLineEdit::slotTextChanged(const QString &text)
 {
-    Q_EMIT searchText(text);
+    const QString trimmedStr = text.trimmed();
+    if (!trimmedStr.isEmpty()) {
+        Q_EMIT searchText(trimmedStr);
+    }
 }
 
 #include "moc_textautogeneratesearchlineedit.cpp"
