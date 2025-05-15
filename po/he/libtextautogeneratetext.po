@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-14 00:42+0000\n"
-"PO-Revision-Date: 2025-05-09 07:51+0300\n"
+"POT-Creation-Date: 2025-05-15 00:41+0000\n"
+"PO-Revision-Date: 2025-05-13 21:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: core/textautogeneratechatsmodel.cpp:72
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "שיחה חדשה…"
 
 #: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
@@ -92,7 +92,7 @@ msgstr "הגדרת Mistral AI"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr "רענון מודל"
+msgstr "ריענון מודל"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:25
 #, kde-format
@@ -189,7 +189,7 @@ msgstr "חיפוש…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "שיחה חדש"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
 #, fuzzy, kde-format
@@ -238,7 +238,7 @@ msgstr "לא נמצא תוסף."
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "שיחה חדש"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
@@ -247,18 +247,16 @@ msgid "Modify…"
 msgstr "עריכה…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "הוספה למועדפים"
+msgstr "הסרה מהמועדפים"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "הוספה למועדפים"
+msgstr "הגדרה כמועדף"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
@@ -270,7 +268,7 @@ msgstr "שחזור"
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "העברה לארכיון"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
@@ -289,47 +287,47 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "הסרת שיחה"
 
-#: widgets/view/textautogeneratelistview.cpp:97
+#: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "העתקת הבחירה"
 
-#: widgets/view/textautogeneratelistview.cpp:97
+#: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratelistview.cpp:105
+#: widgets/view/textautogeneratelistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "בחירה בהכול"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:421
+#: widgets/view/textautogeneratelistviewdelegate.cpp:372
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "עריכה…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#: widgets/view/textautogeneratelistviewdelegate.cpp:376
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:429
+#: widgets/view/textautogeneratelistviewdelegate.cpp:380
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:433
+#: widgets/view/textautogeneratelistviewdelegate.cpp:384
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr "רענון"
+msgstr "ריענון"
 
 #, fuzzy
 #~| msgid "Favorite"

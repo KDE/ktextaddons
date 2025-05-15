@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-14 00:42+0000\n"
-"PO-Revision-Date: 2025-05-13 13:02+0200\n"
+"POT-Creation-Date: 2025-05-15 00:41+0000\n"
+"PO-Revision-Date: 2025-05-14 23:29+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -177,9 +177,7 @@ msgid "Configure…"
 msgstr "Configureren…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Zoeken…"
@@ -191,8 +189,7 @@ msgid "New Chat"
 msgstr "Nieuwe chat"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Favoriet"
@@ -210,12 +207,10 @@ msgid "Configure…"
 msgstr "Configureren…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr "Zoeken…"
+msgstr "Zoeken"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -286,43 +281,43 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Discussie verwijderen"
 
-#: widgets/view/textautogeneratelistview.cpp:97
+#: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Selectie kopiëren"
 
-#: widgets/view/textautogeneratelistview.cpp:97
+#: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: widgets/view/textautogeneratelistview.cpp:105
+#: widgets/view/textautogeneratelistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:421
+#: widgets/view/textautogeneratelistviewdelegate.cpp:372
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Bewerken..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#: widgets/view/textautogeneratelistviewdelegate.cpp:376
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:429
+#: widgets/view/textautogeneratelistviewdelegate.cpp:380
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:433
+#: widgets/view/textautogeneratelistviewdelegate.cpp:384
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

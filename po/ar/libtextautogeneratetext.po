@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-14 00:42+0000\n"
-"PO-Revision-Date: 2025-05-10 13:46+0400\n"
+"POT-Creation-Date: 2025-05-15 00:41+0000\n"
+"PO-Revision-Date: 2025-05-14 17:14+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: core/textautogeneratechatsmodel.cpp:72
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "دردشة جديدة…"
 
 #: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
@@ -178,9 +178,7 @@ msgid "Configure…"
 msgstr "اضبط…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "ابحث…"
@@ -189,11 +187,10 @@ msgstr "ابحث…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "دردشة جديدة"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "المفضّلة"
@@ -211,12 +208,10 @@ msgid "Configure…"
 msgstr "اضبط…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr "ابحث…"
+msgstr "ابحث"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -238,7 +233,7 @@ msgstr "لم يعثر على ملحق."
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "دردشة جديدة"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
@@ -247,18 +242,16 @@ msgid "Modify…"
 msgstr "عدّل…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "المفضّلة"
+msgstr "أزِل من المفضّلة"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "المفضّلة"
+msgstr "فضّله"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
@@ -270,7 +263,7 @@ msgstr "استعد"
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "أرشف"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
@@ -289,43 +282,43 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "أزل المناقة"
 
-#: widgets/view/textautogeneratelistview.cpp:97
+#: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "انسخ التحديد"
 
-#: widgets/view/textautogeneratelistview.cpp:97
+#: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratelistview.cpp:105
+#: widgets/view/textautogeneratelistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "حدّد الكلّ"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:421
+#: widgets/view/textautogeneratelistviewdelegate.cpp:372
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "حرّر..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:425
+#: widgets/view/textautogeneratelistviewdelegate.cpp:376
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:429
+#: widgets/view/textautogeneratelistviewdelegate.cpp:380
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:433
+#: widgets/view/textautogeneratelistviewdelegate.cpp:384
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
