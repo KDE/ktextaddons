@@ -211,6 +211,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     widgets/textautogeneratesearchdialog.h
     widgets/textautogeneratesearchdialog.cpp
+
+    widgets/textautogeneratesearchlineedit.h
+    widgets/textautogeneratesearchlineedit.cpp
 )
 
 if(BUILD_TESTING)
