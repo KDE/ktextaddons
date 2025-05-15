@@ -10,6 +10,7 @@
 #include "core/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
+#include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
 #include "textautogeneratetextcore_debug.h"
 
@@ -19,6 +20,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
+    , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
 {
     connect(mTextAutoGenerateChatsModel,
             &QAbstractItemModel::dataChanged,
@@ -51,6 +53,8 @@ void TextAutoGenerateManager::createNewChat()
     TextAutoGenerateChat chat;
     const QByteArray chatId = QUuid::createUuid().toByteArray(QUuid::Id128);
     chat.setIdentifier(chatId);
+    // we don't need to initialize it. (new chat => no data)
+    chat.setInitialized(true);
     mTextAutoGenerateChatsModel->addChat(chat);
     mDatabaseManager->insertOrUpdateChat(chat);
     setCurrentChatId(chatId);

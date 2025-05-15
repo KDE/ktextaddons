@@ -16,6 +16,7 @@ class TextAutoGenerateChatsModel;
 class TextAutoGenerateEngineLoader;
 class TextAutoGenerateTextClient;
 class TextAutoGenerateTextPlugin;
+class TextAutoGenerateChatSettings;
 
 /**
  * @brief The TextAutoGenerateManager class
@@ -78,6 +79,7 @@ private:
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
     TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
+    std::unique_ptr<TextAutoGenerateChatSettings> mTextAutoGenerateChatSettings;
     QByteArray mCurrentChatId;
     bool mShowArchived = false;
 };
