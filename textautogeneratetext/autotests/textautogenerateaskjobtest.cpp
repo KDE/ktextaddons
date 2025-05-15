@@ -18,3 +18,5 @@ void TextAutoGenerateAskJobTest::shouldHaveDefaultValues()
     TextAutoGenerateText::TextAutoGenerateAskJob w;
     // TODO
 }
+
+#include "moc_textautogenerateaskjobtest.cpp"

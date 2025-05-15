@@ -19,3 +19,5 @@ void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
     QCOMPARE(info.scrollbarPosition, -1);
     QVERIFY(!info.isValid());
 }
+
+#include "moc_textautogeneratechatsettingstest.cpp"

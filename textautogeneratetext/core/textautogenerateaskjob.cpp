@@ -12,3 +12,5 @@ TextAutoGenerateAskJob::TextAutoGenerateAskJob(QObject *parent)
 }
 
 TextAutoGenerateAskJob::~TextAutoGenerateAskJob() = default;
+
+#include "moc_textautogenerateaskjob.cpp"
