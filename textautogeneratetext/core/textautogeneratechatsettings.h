@@ -21,7 +21,7 @@ public:
     TextAutoGenerateChatSettings();
     ~TextAutoGenerateChatSettings();
 
-    void remove(const QByteArray &roomId);
+    void remove(const QByteArray &chatId);
 
     void add(const QByteArray &chatId, const PendingTypedInfo &info);
 
