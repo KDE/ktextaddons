@@ -126,10 +126,7 @@ void TextAutoGenerateBaseListView::handleMouseEvent(QMouseEvent *event)
 {
     const QPersistentModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        // When the cursor hovers another message, hide/show the reaction icon accordingly
-        if (mCurrentIndex != index) {
-            mCurrentIndex = index;
-        }
+        mCurrentIndex = index;
         QStyleOptionViewItem options = listViewOptions();
         options.rect = visualRect(mCurrentIndex);
         if (mouseEvent(event, options, mCurrentIndex)) {
