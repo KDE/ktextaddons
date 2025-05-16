@@ -97,12 +97,15 @@ void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 
 void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
+    bool isArchived = mManager ? mManager->showArchived() : false;
     QMenu menu(this);
-    auto newChatHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), i18nc("@action", "New Chat"), &menu);
-    connect(newChatHistory, &QAction::triggered, this, [this]() {
-        mManager->createNewChat();
-    });
-    menu.addAction(newChatHistory);
+    if (!isArchived) {
+        auto newChatHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), i18nc("@action", "New Chat"), &menu);
+        connect(newChatHistory, &QAction::triggered, this, [this]() {
+            mManager->createNewChat();
+        });
+        menu.addAction(newChatHistory);
+    }
     const QModelIndex index = indexAt(event->pos());
     if (index.parent().isValid()) {
         menu.addSeparator();
