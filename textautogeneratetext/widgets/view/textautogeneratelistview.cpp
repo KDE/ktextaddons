@@ -27,6 +27,9 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     setItemDelegate(mDelegate);
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateListView::slotCurrentChatIdChanged);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, [this, delegate]() {
+            delegate->setShowArchive(mManager->showArchived());
+        });
     }
 
     connect(mDelegate, &TextAutoGenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {

@@ -35,6 +35,7 @@ public:
     void needUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index,
                                           const QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities);
     void removeNeedUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index);
+    void setShowArchive(bool archive);
 Q_SIGNALS:
     void editMessage(const QModelIndex &index);
     void copyMessage(const QModelIndex &index);
@@ -103,5 +104,6 @@ private:
         QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> scaleAndOpacities;
     };
     QList<IndexScaleAndOpacities> mIndexScaleAndOpacitiesList;
+    bool mShowArchive = false;
 };
 }
