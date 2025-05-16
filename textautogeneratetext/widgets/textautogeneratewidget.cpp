@@ -162,7 +162,7 @@ void TextAutoGenerateWidget::slotConfigureChanged()
 void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
-        mManager->textAutoGeneratePlugin()->sendMessage(str);
+        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
     } else {
         mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str);
     }

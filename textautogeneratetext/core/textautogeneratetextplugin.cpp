@@ -68,7 +68,7 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QBy
     }
 }
 
-void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
+void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str)
 {
     if (ready()) {
         // User Message
@@ -90,8 +90,8 @@ void TextAutoGenerateTextPlugin::sendMessage(const QString &str)
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        d->manager->addMessage(d->manager->currentChatId(), std::move(msg));
-        d->manager->addMessage(d->manager->currentChatId(), std::move(msgLlm));
+        d->manager->addMessage(chatId, std::move(msg));
+        d->manager->addMessage(chatId, std::move(msgLlm));
         SendToLLMInfo info;
         info.message = str;
         info.messageUuid = llmUuid;

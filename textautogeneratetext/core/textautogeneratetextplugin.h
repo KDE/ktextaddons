@@ -41,7 +41,7 @@ public:
     [[nodiscard]] bool ready() const;
     void setReady(bool newReady);
 
-    void sendMessage(const QString &str);
+    void sendMessage(const QByteArray &chatId, const QString &str);
     virtual void cancelRequest(const QByteArray &uuid) = 0;
 
     void editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str);
