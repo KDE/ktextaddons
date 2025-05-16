@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 00:41+0000\n"
-"PO-Revision-Date: 2025-05-13 21:31+0100\n"
+"POT-Creation-Date: 2025-05-16 00:41+0000\n"
+"PO-Revision-Date: 2025-05-14 17:30+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -179,9 +179,7 @@ msgid "Configure…"
 msgstr "Configurar…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Buscar…"
@@ -193,14 +191,13 @@ msgid "New Chat"
 msgstr "Nueva charla"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Favorita"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -212,12 +209,10 @@ msgid "Configure…"
 msgstr "Configurar…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr "Buscar…"
+msgstr "Buscar"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format

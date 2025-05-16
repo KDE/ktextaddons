@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 00:41+0000\n"
+"POT-Creation-Date: 2025-05-16 00:41+0000\n"
 "PO-Revision-Date: 2025-05-13 21:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -199,7 +199,7 @@ msgid "Favorite"
 msgstr "הוספה למועדפים"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"

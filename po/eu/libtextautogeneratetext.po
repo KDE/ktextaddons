@@ -1,57 +1,59 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Translation for libtextautogeneratetext.po to Euskara/Basque (eu).
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>.
 #
+# Translators:
+# SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-16 00:41+0000\n"
-"PO-Revision-Date: 2025-05-14 03:38+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
-"Language: ka\n"
+"PO-Revision-Date: 2025-05-15 22:39+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: core/textautogeneratechatsmodel.cpp:72
 #, kde-format
 msgid "New Chat..."
-msgstr "ახალი ჩატი..."
+msgstr "Berriketa berria..."
 
 #: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
 msgid "Favorite"
-msgstr "რჩეული"
+msgstr "Gogokoa"
 
 #: core/textautogeneratechatsmodel.cpp:141
 #, kde-format
 msgid "Today"
-msgstr "დღეს"
+msgstr "Gaur"
 
 #: core/textautogeneratechatsmodel.cpp:143
 #, kde-format
 msgid "7 days previous"
-msgstr "წინა 7 დღე"
+msgstr "7 egun lehenago"
 
 #: core/textautogeneratechatsmodel.cpp:145
 #, kde-format
 msgid "30 days previous"
-msgstr "წინა 30 დღე"
+msgstr "30 egun lehenago"
 
 #: core/textautogeneratechatsmodel.cpp:147
 #, kde-format
 msgid "Later"
-msgstr "მოგვიანებით"
+msgstr "Beranduago"
 
 #: core/textautogeneratechatsmodel.cpp:149
 #, kde-format
 msgid "Unknown"
-msgstr "უცნობი"
+msgstr "Ezezaguna"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
 #, kde-format
@@ -64,84 +66,84 @@ msgid ""
 "Engine: %1\n"
 "Model: %2"
 msgstr ""
-"ძრავა: %1\n"
-"მოდელი: %2"
+"Motorra: %1\n"
+"Eredua: %2"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
 msgid "Local"
-msgstr "ლოკალური"
+msgstr "Lokala"
 
 #: core/textautogeneratetextclient.cpp:35
 #, kde-format
 msgid "Network"
-msgstr "ქსელური"
+msgstr "Sarea"
 
 #: plugins/mistral/mistralclient.cpp:27
 #, kde-format
 msgid "Mistral AI"
-msgstr "Mistral AI"
+msgstr "Mistral AA"
 
 #: plugins/mistral/mistralconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
-msgstr "Mistral AI-ის მორგება"
+msgstr "Konfiguratu Mistral AA"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr "მოდელის თავიდან ჩატვირთვა"
+msgstr "Birzamatu eredua"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr "Ollama-ის მორგება"
+msgstr "Konfiguratu Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:37
 #, kde-format
 msgid "Server Url:"
-msgstr "სერვერის URL:"
+msgstr "Zerbitzariaren URLa:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Model:"
-msgstr "მოდელი:"
+msgstr "Eredua:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:44
 #, kde-format
 msgid "Prompt:"
-msgstr "მოთხოვნის ზოლი:"
+msgstr "Gonbita:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "No system prompt"
-msgstr "სისტემური კითხვის გარეშე"
+msgstr "Sistemaren gonbitik ez"
 
 #: plugins/ollama/ollamamanager.cpp:109
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
-msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
+msgstr "%1(e)ko interfazera konektatzea huts egiten du: %2"
 
 #. i18n: ectx: label, entry (ServerUrl), group (Ollama)
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr "Ollama-ის გაშვებული ასლის ბმული"
+msgstr "Ollama instantziarako URLa"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:20
 #, kde-format
 msgid "The system prompt for the LLM"
-msgstr "სისტემური მოთხოვნა LLM-სთვის"
+msgstr "LLMrako sistemaren gonbita"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
+msgstr "Erantzunak sortzeko eredua"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
@@ -152,190 +154,174 @@ msgstr "OpenAI"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "Openai IA-ის მორგება"
+msgstr "Konfiguratu Openai AA"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure IA"
-msgstr "ხი-ის მორგება"
+msgstr "Konfiguratu AA"
 
 #: widgets/textautogenerateconfigurewidget.cpp:27
 #, kde-format
 msgid "Engine:"
-msgstr "ძრავა:"
+msgstr "Motorra:"
 
 #: widgets/textautogeneratedialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
-msgstr "საუბარი"
+msgstr "Elkarrizketa"
 
 #: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "მორგება…"
+msgstr "Konfiguratu..."
 
 #: widgets/textautogenerateheaderwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
-msgstr "ძებნა…"
+msgstr "Bilatu..."
 
 #: widgets/textautogenerateheaderwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "ახალი ჩატი"
+msgstr "Berriketa berria"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
-msgstr "რჩეული"
+msgstr "Gogokoa"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr "ძებნა…"
+msgstr "Bilatu..."
 
 #: widgets/textautogeneratenotworkingwidget.cpp:29
 #, kde-format
 msgid "Configure…"
-msgstr "მორგება…"
+msgstr "Konfiguratu..."
 
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr "ძებნა"
+msgstr "Bilatu"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr "შეიყვანეთ შეტყობინება"
+msgstr "Sartu mezu bat"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:16
 #, kde-format
 msgid "Send"
-msgstr "გაგზავნა"
+msgstr "Bidali"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
-msgstr "დამატებების გარეშე."
+msgstr "Ez da pluginik aurkitu."
 
 #: widgets/view/textautogeneratehistorylistview.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "ახალი ჩატი"
+msgstr "Berriketa berria"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
-msgstr "შეცვლა…"
+msgstr "Aldatu..."
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "რჩეულებიდან წაშლა"
+msgstr "Kendu gogokoetatik"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "რჩეულად მონიშვნა"
+msgstr "Ezarri gogoko gisa"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr "აღდგენა"
+msgstr "Lehengoratu"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr "დაარქივება"
+msgstr "Artxibatu"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr "წაშლა…"
+msgstr "Kendu..."
 
 #: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgid "Do you want to remove this discussion?"
-msgstr "წაშლით ამ კამათს?"
+msgstr "Elkarrizketa hau kendu nahi duzu?"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
-msgstr "კამათის წაშლა"
+msgstr "Kendu elkarrizketa"
 
 #: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr "მონიშნულის კოპირება"
+msgstr "Kopiatu hautapena"
 
 #: widgets/view/textautogeneratelistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
-msgstr "კოპირება"
+msgstr "Kopiatu"
 
 #: widgets/view/textautogeneratelistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "ყველას მონიშვნა"
+msgstr "Hautatu dena"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:372
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr "ჩასწორება..."
+msgstr "Editatu..."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:376
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
-msgstr "კოპირება"
+msgstr "Kopiatu"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:380
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr "გაუქმება"
+msgstr "Utzi"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:384
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr "განახლება"
-
-#~ msgctxt "@action"
-#~ msgid "New Chat…"
-#~ msgstr "ახალი ჩატი…"
-
-#~ msgctxt "@action"
-#~ msgid "Favorite…"
-#~ msgstr "რჩეული…"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Remove"
-#~ msgstr "წაშლა"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Clear"
-#~ msgstr "გასუფთავება"
+msgstr "Berritu"

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 00:41+0000\n"
-"PO-Revision-Date: 2025-05-13 09:12+0200\n"
+"POT-Creation-Date: 2025-05-16 00:41+0000\n"
+"PO-Revision-Date: 2025-05-14 08:51+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -185,7 +185,7 @@ msgstr "Rechercher..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "Nouvelle discussion"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
 #, fuzzy, kde-format
@@ -195,7 +195,7 @@ msgid "Favorite"
 msgstr "Préféré"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:28
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -234,7 +234,7 @@ msgstr "Aucun module externe n'a été trouvé."
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "Nouvelle discussion"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
@@ -243,18 +243,16 @@ msgid "Modify…"
 msgstr "Modifier…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "Préféré"
+msgstr "Supprimer de la liste des signets"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "Préféré"
+msgstr "Marquer comme signet"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
@@ -266,7 +264,7 @@ msgstr "Restaurer"
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "Archiver"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
