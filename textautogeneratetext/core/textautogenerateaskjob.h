@@ -8,6 +8,7 @@
 #include <QObject>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
 {
     Q_OBJECT
@@ -17,5 +18,18 @@ public:
     [[nodiscard]] bool canStart() const;
 
     void start();
+
+    [[nodiscard]] TextAutoGenerateManager *manager() const;
+    void setManager(TextAutoGenerateManager *newManager);
+
+    [[nodiscard]] QString text() const;
+    void setText(const QString &newText);
+
+Q_SIGNALS:
+    void generateTextDone(const QString &str);
+
+private:
+    QString mText;
+    TextAutoGenerateManager *mManager = nullptr;
 };
 }

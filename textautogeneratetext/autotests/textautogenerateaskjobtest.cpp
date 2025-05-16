@@ -16,7 +16,9 @@ TextAutoGenerateAskJobTest::TextAutoGenerateAskJobTest(QObject *parent)
 void TextAutoGenerateAskJobTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateAskJob w;
-    // TODO
+    QVERIFY(!w.manager());
+    QVERIFY(w.text().isEmpty());
+    QVERIFY(!w.canStart());
 }
 
 #include "moc_textautogenerateaskjobtest.cpp"
