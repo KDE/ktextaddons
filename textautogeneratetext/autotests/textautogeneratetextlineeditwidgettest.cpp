@@ -19,7 +19,7 @@ TextAutoGenerateTextLineEditWidgetTest::TextAutoGenerateTextLineEditWidgetTest(Q
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w;
+    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
 
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
@@ -36,7 +36,7 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w;
+    TextAutoGenerateText::TextAutoGenerateTextLineEditWidget w(nullptr);
     auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(QStringLiteral("mTextAutoGenerateTextLineEdit"));
     QVERIFY(mTextAutoGenerateTextLineEdit);
 

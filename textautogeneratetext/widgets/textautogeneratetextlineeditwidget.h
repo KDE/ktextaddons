@@ -11,6 +11,7 @@ class QPushButton;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextLineEdit;
+class TextAutoGenerateManager;
 /**
  * @brief The TextAutoGenerateTextLineEditWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -19,7 +20,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditWidget : pub
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextLineEditWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextLineEditWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextLineEditWidget() override;
 
     [[nodiscard]] QString text() const;

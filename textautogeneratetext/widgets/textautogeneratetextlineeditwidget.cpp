@@ -4,13 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextlineeditwidget.h"
+#include "core/textautogeneratemanager.h"
 #include "widgets/textautogeneratetextlineedit.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QPushButton>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(QWidget *parent)
+TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
     , mSendMessage(new QPushButton(QIcon::fromTheme(QStringLiteral("document-send")), i18n("Send"), this))
@@ -44,6 +45,11 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(QWidget *
         clearLineEdit();
     });
     connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::keyPressed, this, &TextAutoGenerateTextLineEditWidget::keyPressed);
+    if (manager) {
+        connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, [this, manager]() {
+            setEnabled(!manager->showArchived());
+        });
+    }
 }
 
 TextAutoGenerateTextLineEditWidget::~TextAutoGenerateTextLineEditWidget() = default;

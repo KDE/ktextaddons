@@ -31,7 +31,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(manager, this))
-    , mTextAutoGenerateTextLineEditWidget(new TextAutoGenerateTextLineEditWidget(this))
+    , mTextAutoGenerateTextLineEditWidget(new TextAutoGenerateTextLineEditWidget(manager, this))
     , mSplitter(new QSplitter(this))
     , mHistoryWidget(new TextAutoGenerateHistoryWidget(manager, this))
     , mHeaderWidget(new TextAutoGenerateHeaderWidget(manager, this))
@@ -76,9 +76,9 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         });
 
         connect(mManager, &TextAutoGenerateManager::currentChatIdChanged, this, [this]() {
-            mTextAutoGenerateTextLineEditWidget->setEnabled(!mManager->currentChatId().isEmpty());
+            mTextAutoGenerateTextLineEditWidget->setEnabled(lineEditWidgetEnabledState());
         });
-        mTextAutoGenerateTextLineEditWidget->setEnabled(!mManager->currentChatId().isEmpty());
+        mTextAutoGenerateTextLineEditWidget->setEnabled(lineEditWidgetEnabledState());
     }
 
     connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::keyPressed, this, &TextAutoGenerateWidget::keyPressedInLineEdit);
@@ -104,6 +104,11 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
 TextAutoGenerateWidget::~TextAutoGenerateWidget()
 {
     writeConfig();
+}
+
+bool TextAutoGenerateWidget::lineEditWidgetEnabledState() const
+{
+    return !mManager->currentChatId().isEmpty() && !mManager->showArchived();
 }
 
 void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
