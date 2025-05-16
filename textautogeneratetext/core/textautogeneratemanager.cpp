@@ -183,6 +183,13 @@ QByteArray TextAutoGenerateManager::currentChatId() const
     return mCurrentChatId;
 }
 
+void TextAutoGenerateManager::checkCurrentChat()
+{
+    if (mCurrentChatId.isEmpty()) {
+        createNewChat();
+    }
+}
+
 bool TextAutoGenerateManager::chatIsFavorite(const QByteArray &chatId) const
 {
     if (chatId.isEmpty()) {

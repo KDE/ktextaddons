@@ -63,6 +63,7 @@ public:
     [[nodiscard]] bool chatIsFavorite(const QByteArray &chatId) const;
 
     void searchTextInDatabase(const QString &searchText);
+    void checkCurrentChat();
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
