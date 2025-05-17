@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-16 00:41+0000\n"
-"PO-Revision-Date: 2025-05-07 10:03+0900\n"
+"PO-Revision-Date: 2025-05-16 15:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: core/textautogeneratechatsmodel.cpp:72
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "新聊天…"
 
 #: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "收藏"
 
 #: core/textautogeneratechatsmodel.cpp:141
 #, kde-format
@@ -63,6 +63,8 @@ msgid ""
 "Engine: %1\n"
 "Model: %2"
 msgstr ""
+"引擎：%1\n"
+"模型：%2"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -175,7 +177,7 @@ msgid "Configure…"
 msgstr "設定…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Search…"
 msgctxt "@info:tooltip"
@@ -186,13 +188,13 @@ msgstr "搜尋…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "新聊天"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
-msgstr ""
+msgstr "收藏"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:28
@@ -207,12 +209,12 @@ msgid "Configure…"
 msgstr "設定…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Search…"
 msgctxt "@title:window"
 msgid "Search"
-msgstr "搜尋…"
+msgstr "搜尋"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -234,7 +236,7 @@ msgstr "找不到外掛程式。"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "新聊天"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:111
 #, kde-format
@@ -246,13 +248,13 @@ msgstr "變更…"
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr ""
+msgstr "從收藏中移除"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr ""
+msgstr "設為收藏"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:137
 #, kde-format
@@ -264,7 +266,7 @@ msgstr "回復"
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "封存"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format

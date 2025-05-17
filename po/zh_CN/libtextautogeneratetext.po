@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-16 00:41+0000\n"
+"POT-Creation-Date: 2025-05-17 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -218,7 +218,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "输入信息"
 
-#: widgets/textautogeneratetextlineeditwidget.cpp:16
+#: widgets/textautogeneratetextlineeditwidget.cpp:17
 #, kde-format
 msgid "Send"
 msgstr "发送"
@@ -228,72 +228,72 @@ msgstr "发送"
 msgid "No plugin found."
 msgstr "没有找到插件。"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:101
+#: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "新聊天"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:111
+#: widgets/view/textautogeneratehistorylistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "修改…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:124
+#: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "取消设为常用"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:124
+#: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "设为常用"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "恢复"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "存档"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:148
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "移除…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:152
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "您想要移除此讨论吗？"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:153
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除讨论"
 
-#: widgets/view/textautogeneratelistview.cpp:79
+#: widgets/view/textautogeneratelistview.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "复制选中内容"
 
-#: widgets/view/textautogeneratelistview.cpp:79
+#: widgets/view/textautogeneratelistview.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "复制"
 
-#: widgets/view/textautogeneratelistview.cpp:87
+#: widgets/view/textautogeneratelistview.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

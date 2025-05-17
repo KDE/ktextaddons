@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-16 00:41+0000\n"
+"POT-Creation-Date: 2025-05-17 00:40+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -218,7 +218,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "메시지 입력"
 
-#: widgets/textautogeneratetextlineeditwidget.cpp:16
+#: widgets/textautogeneratetextlineeditwidget.cpp:17
 #, kde-format
 msgid "Send"
 msgstr "보내기"
@@ -228,72 +228,72 @@ msgstr "보내기"
 msgid "No plugin found."
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:101
+#: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:111
+#: widgets/view/textautogeneratehistorylistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "수정…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:124
+#: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:124
+#: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:148
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "삭제…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:152
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:153
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:79
+#: widgets/view/textautogeneratelistview.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "선택 영역 복사"
 
-#: widgets/view/textautogeneratelistview.cpp:79
+#: widgets/view/textautogeneratelistview.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratelistview.cpp:87
+#: widgets/view/textautogeneratelistview.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

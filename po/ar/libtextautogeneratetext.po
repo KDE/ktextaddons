@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-16 00:41+0000\n"
+"POT-Creation-Date: 2025-05-17 00:40+0000\n"
 "PO-Revision-Date: 2025-05-14 17:14+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -219,7 +219,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "أدخل رسالة"
 
-#: widgets/textautogeneratetextlineeditwidget.cpp:16
+#: widgets/textautogeneratetextlineeditwidget.cpp:17
 #, kde-format
 msgid "Send"
 msgstr "أرسل"
@@ -229,72 +229,72 @@ msgstr "أرسل"
 msgid "No plugin found."
 msgstr "لم يعثر على ملحق."
 
-#: widgets/view/textautogeneratehistorylistview.cpp:101
+#: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "دردشة جديدة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:111
+#: widgets/view/textautogeneratehistorylistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "عدّل…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:124
+#: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "أزِل من المفضّلة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:124
+#: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "فضّله"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "استعد"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:137
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "أرشف"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:148
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "أزل…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:152
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "أتريد إزالة هذه المناقشة؟"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:153
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "أزل المناقة"
 
-#: widgets/view/textautogeneratelistview.cpp:79
+#: widgets/view/textautogeneratelistview.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "انسخ التحديد"
 
-#: widgets/view/textautogeneratelistview.cpp:79
+#: widgets/view/textautogeneratelistview.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratelistview.cpp:87
+#: widgets/view/textautogeneratelistview.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
