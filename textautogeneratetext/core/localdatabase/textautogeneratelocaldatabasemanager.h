@@ -8,6 +8,7 @@
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 #include <memory>
 namespace TextAutoGenerateText
 {
@@ -29,7 +30,7 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;
 
-    void searchTextInDatabase(const QString &searchText);
+    [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
 
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;

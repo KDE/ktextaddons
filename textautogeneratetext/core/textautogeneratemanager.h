@@ -7,6 +7,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
+#include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 #include <memory>
 namespace TextAutoGenerateText
 {
@@ -62,7 +63,7 @@ public:
     void archiveDiscussion(const QByteArray &chatId, bool archive);
     [[nodiscard]] bool chatIsFavorite(const QByteArray &chatId) const;
 
-    void searchTextInDatabase(const QString &searchText);
+    [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
     void checkCurrentChat();
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);

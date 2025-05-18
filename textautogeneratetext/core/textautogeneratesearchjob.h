@@ -8,6 +8,8 @@
 
 #include <QObject>
 
+#include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
+
 #include "textautogeneratetext_private_export.h"
 namespace TextAutoGenerateText
 {
@@ -27,7 +29,7 @@ public:
     void setSearchText(const QString &newSearchText);
 
 Q_SIGNALS:
-    void searchDone();
+    void searchDone(const QList<TextAutoGenerateSearchMessage> &msgs);
 
 private:
     QString mSearchText;

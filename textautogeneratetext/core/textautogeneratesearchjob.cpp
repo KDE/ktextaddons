@@ -29,7 +29,7 @@ void TextAutoGenerateSearchJob::start()
         deleteLater();
         return;
     }
-    mManager->searchTextInDatabase(mSearchText);
+    Q_EMIT searchDone(mManager->searchTextInDatabase(mSearchText));
     // TODO
 }
 
