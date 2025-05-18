@@ -151,6 +151,51 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalMessagesDatabase::loadMessag
     return listMessages;
 }
 
+QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::searchMessages(const QString &chatIdentifier, const QString &searchText) const
+{
+    const QString dbName = generateDbName(chatIdentifier);
+    QSqlDatabase db = QSqlDatabase::database(dbName);
+    if (!db.isValid()) {
+        // Open the DB if it exists (don't create a new one)
+        const QString fileName = dbFileName(chatIdentifier);
+        // qDebug() << " fileName " << fileName;
+        if (!QFileInfo::exists(fileName)) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
+            return {};
+        }
+        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db.setDatabaseName(fileName);
+        if (!db.open()) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
+            return {};
+        }
+    }
+
+    Q_ASSERT(db.isValid());
+    Q_ASSERT(db.isOpen());
+    const QString query = TextAutoGenerateLocalMessagesDatabase::generateQueryStr();
+    QSqlQuery resultQuery(db);
+    resultQuery.prepare(query);
+    if (!resultQuery.exec()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " Impossible to execute query: " << resultQuery.lastError() << " query: " << query;
+        return {};
+    }
+    QList<TextAutoGenerateSearchMessage> lstSearchMessages;
+    while (resultQuery.next()) {
+        const QString json = resultQuery.value(QStringLiteral("json")).toString();
+        const TextAutoGenerateMessage msg = convertJsonToMessage(json);
+        if (msg.content().contains(searchText)) {
+            TextAutoGenerateSearchMessage searchMessage;
+            searchMessage.setMessageId(msg.uuid());
+            searchMessage.setChatId(chatIdentifier.toLatin1());
+            searchMessage.setDateTime(msg.dateTime());
+            searchMessage.setPreviewText(msg.content()); // TODO create preview
+            lstSearchMessages.append(searchMessage);
+        }
+    }
+    return lstSearchMessages;
+}
+
 TextAutoGenerateMessage TextAutoGenerateLocalMessagesDatabase::convertJsonToMessage(const QString &json) const
 {
     const QJsonDocument doc = QJsonDocument::fromJson(json.toUtf8());

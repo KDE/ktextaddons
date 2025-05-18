@@ -6,6 +6,7 @@
 #pragma once
 
 #include "core/textautogeneratemessage.h"
+#include "core/textautogeneratesearchmessage.h"
 #include "textautogeneratelocaldatabaseabstract.h"
 
 #include <QSqlTableModel>
@@ -24,6 +25,8 @@ public:
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createMessageModel(const QString &chatIdentifier) const;
 
     [[nodiscard]] QList<TextAutoGenerateMessage> loadMessages(const QString &chatIdentifier) const;
+
+    [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchMessages(const QString &chatIdentifier, const QString &searchText) const;
 
     void deleteDatabase(const QByteArray &chatIdentifier);
 
