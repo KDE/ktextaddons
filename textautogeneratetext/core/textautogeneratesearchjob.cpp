@@ -30,7 +30,7 @@ void TextAutoGenerateSearchJob::start()
         return;
     }
     Q_EMIT searchDone(mManager->searchTextInDatabase(mSearchText));
-    // TODO
+    deleteLater();
 }
 
 QString TextAutoGenerateSearchJob::searchText() const
