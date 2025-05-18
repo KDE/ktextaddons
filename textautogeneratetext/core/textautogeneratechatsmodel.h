@@ -64,6 +64,8 @@ public:
 
     [[nodiscard]] bool chatIsFavorite(const QByteArray &chatId) const;
 
+    [[nodiscard]] QList<QByteArray> chatsId() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
