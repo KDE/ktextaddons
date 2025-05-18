@@ -21,4 +21,9 @@ TextAutoGenerateSearchListView::TextAutoGenerateSearchListView(TextAutoGenerateT
 
 TextAutoGenerateSearchListView::~TextAutoGenerateSearchListView() = default;
 
+void TextAutoGenerateSearchListView::setSearchMessages(const QList<TextAutoGenerateSearchMessage> &msgs)
+{
+    mModel->setSearchMessages(msgs);
+}
+
 #include "moc_textautogeneratesearchlistview.cpp"

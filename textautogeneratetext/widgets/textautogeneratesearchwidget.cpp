@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratesearchwidget.h"
+#include "core/textautogeneratesearchjob.h"
 #include "textautogeneratesearchlineedit.h"
 #include "widgets/view/textautogeneratesearchlistview.h"
 #include <KLineEditEventHandler>
@@ -17,6 +18,7 @@ TextAutoGenerateSearchWidget::TextAutoGenerateSearchWidget(TextAutoGenerateText:
     : QWidget{parent}
     , mTextAutoGenerateSearchListView(new TextAutoGenerateSearchListView(manager, this))
     , mSearchLineEdit(new TextAutoGenerateSearchLineEdit(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -39,7 +41,16 @@ TextAutoGenerateSearchWidget::~TextAutoGenerateSearchWidget() = default;
 
 void TextAutoGenerateSearchWidget::slotSearchTextChanged(const QString &str)
 {
+    TextAutoGenerateSearchJob *job = new TextAutoGenerateSearchJob(mManager, this);
+    job->setSearchText(str);
+    connect(job, &TextAutoGenerateSearchJob::searchDone, this, &TextAutoGenerateSearchWidget::slotSearchDone);
+    job->start();
     qDebug() << " Str " << str;
+}
+
+void TextAutoGenerateSearchWidget::slotSearchDone(const QList<TextAutoGenerateSearchMessage> &msgs)
+{
+    mTextAutoGenerateSearchListView->setSearchMessages(msgs);
 }
 
 #include "moc_textautogeneratesearchwidget.cpp"
