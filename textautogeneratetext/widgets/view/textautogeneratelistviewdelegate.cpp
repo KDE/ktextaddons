@@ -206,7 +206,7 @@ void TextAutoGenerateListViewDelegate::drawDateAndIcons(QPainter *painter,
         if (layout.cancelIconRect.isValid()) {
             mCancelIcon.paint(painter, layout.cancelIconRect);
         }
-        if (layout.refreshIconRect.isValid() && !waitingAnswer) {
+        if (layout.refreshIconRect.isValid() && !waitingAnswer && !mShowArchive) {
             mRefreshIcon.paint(painter, layout.refreshIconRect);
         }
         if (layout.infoIconRect.isValid() && !waitingAnswer) {
