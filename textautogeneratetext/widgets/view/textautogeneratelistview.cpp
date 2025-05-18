@@ -32,9 +32,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
         });
     }
 
-    connect(mDelegate, &TextAutoGenerateListViewDelegate::updateView, this, [this](const QModelIndex &index) {
-        update(index);
-    });
+    connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);
 
     connect(delegate, &TextAutoGenerateListViewDelegate::editMessage, this, &TextAutoGenerateListView::slotEditMessage);
     connect(delegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
@@ -43,6 +41,11 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
 }
 
 TextAutoGenerateListView::~TextAutoGenerateListView() = default;
+
+void TextAutoGenerateListView::slotUpdateView()
+{
+    viewport()->update();
+}
 
 void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {

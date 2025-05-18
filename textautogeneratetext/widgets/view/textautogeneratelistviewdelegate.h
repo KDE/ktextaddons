@@ -41,6 +41,7 @@ Q_SIGNALS:
     void copyMessage(const QModelIndex &index);
     void cancelRequested(const QModelIndex &index);
     void refreshRequested(const QModelIndex &index);
+    void updateView();
 
 private:
     struct MessageLayout {

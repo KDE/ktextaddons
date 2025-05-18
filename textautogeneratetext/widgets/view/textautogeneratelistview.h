@@ -44,5 +44,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void addWaitingAnswerAnimation(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotUpdateView();
 };
 }

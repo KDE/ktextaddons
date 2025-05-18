@@ -42,7 +42,7 @@ void TextAutoGenerateListViewDelegate::slotUpdateColors()
 {
     const KColorScheme scheme = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView();
     mEditingColorMode = scheme.foreground(KColorScheme::NegativeText).color();
-    // Q_EMIT updateView();
+    Q_EMIT updateView();
 }
 
 void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -590,7 +590,7 @@ void TextAutoGenerateListViewDelegate::setShowArchive(bool archive)
 {
     if (mShowArchive != archive) {
         mShowArchive = archive;
-        // TODO updateView()
+        Q_EMIT updateView();
     }
 }
 
