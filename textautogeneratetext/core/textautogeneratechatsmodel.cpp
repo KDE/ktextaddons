@@ -155,12 +155,12 @@ QString TextAutoGenerateChatsModel::sectionName(TextAutoGenerateChat::SectionHis
 
 TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const QByteArray &chatId) const
 {
-    const int roomCount = mChats.count();
-    for (int i = 0; i < roomCount; ++i) {
-        const TextAutoGenerateChat &chat = mChats.at(i);
-        if (chat.identifier() == chatId) {
-            return chat.messageModel();
-        }
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).messageModel();
     }
     return {};
 }
