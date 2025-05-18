@@ -249,8 +249,11 @@ bool TextAutoGenerateChatsModel::chatIsFavorite(const QByteArray &chatId) const
 
 QList<QByteArray> TextAutoGenerateChatsModel::chatsId() const
 {
-    // TODO
-    return {};
+    QList<QByteArray> lst;
+    for (const TextAutoGenerateChat &chat : mChats) {
+        lst.append(chat.identifier());
+    }
+    return lst;
 }
 
 void TextAutoGenerateChatsModel::changeFavorite(const QByteArray &chatId, bool favorite)
