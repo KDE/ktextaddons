@@ -27,7 +27,7 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalDatabaseManager::loadChats() co
     return mChatsDatabase->loadChats();
 }
 
-QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalDatabaseManager::searchTextInDatabase(const QString &searchText)
+QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalDatabaseManager::searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText)
 {
     return {};
     // TODO
