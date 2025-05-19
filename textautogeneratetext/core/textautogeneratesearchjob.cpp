@@ -6,7 +6,6 @@
 
 #include "textautogeneratesearchjob.h"
 #include "textautogeneratemanager.h"
-#include "textautogeneratesearchmessageutils.h"
 #include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
@@ -30,7 +29,6 @@ void TextAutoGenerateSearchJob::start()
         deleteLater();
         return;
     }
-    // TODO improve it.
     QList<TextAutoGenerateSearchMessage> messages = mManager->searchTextInDatabase(mSearchText.toLower());
     // Sort messages
     std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateSearchMessage &left, const TextAutoGenerateSearchMessage &right) {
