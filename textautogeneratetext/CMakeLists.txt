@@ -220,6 +220,7 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 )
 
 if(BUILD_TESTING)
+    add_subdirectory(core/autotests)
     add_subdirectory(autotests)
     add_subdirectory(tests)
 endif()

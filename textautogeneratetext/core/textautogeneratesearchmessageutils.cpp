@@ -15,3 +15,8 @@ QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
     }
     return str;
 }
+
+QString createGoToMessage(const QString &chatId, const QString &messageId)
+{
+    return {};
+}
