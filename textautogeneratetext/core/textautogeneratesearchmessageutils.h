@@ -11,6 +11,6 @@ namespace TextAutoGenerateText
 namespace TextAutoGenerateSearchMessageUtils
 {
 [[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString generatePreview(const QString &str);
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString createGoToMessage(const QString &chatId, const QString &messageId);
+[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString generateGoToMessageLink(const QString &chatId, const QString &messageId);
 };
 }

@@ -14,8 +14,10 @@ TextAutoGenerateSearchMessageUtilsTest::TextAutoGenerateSearchMessageUtilsTest(Q
 {
 }
 
-void TextAutoGenerateSearchMessageUtilsTest::shouldCreateGoToMessage()
+void TextAutoGenerateSearchMessageUtilsTest::shouldGenerateGoToMessageLink()
 {
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(QStringLiteral("bla"), QStringLiteral("messageID")),
+             QStringLiteral("storage://bla:messageID"));
     // TODO
 }
 

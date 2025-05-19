@@ -16,7 +16,7 @@ QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
     return str;
 }
 
-QString createGoToMessage(const QString &chatId, const QString &messageId)
+QString TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(const QString &chatId, const QString &messageId)
 {
-    return {};
+    return QStringLiteral("storage://%1:%2").arg(chatId, messageId);
 }

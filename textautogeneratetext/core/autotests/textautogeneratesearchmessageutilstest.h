@@ -15,5 +15,5 @@ public:
     explicit TextAutoGenerateSearchMessageUtilsTest(QObject *parent = nullptr);
     ~TextAutoGenerateSearchMessageUtilsTest() override = default;
 private Q_SLOTS:
-    void shouldCreateGoToMessage();
+    void shouldGenerateGoToMessageLink();
 };
