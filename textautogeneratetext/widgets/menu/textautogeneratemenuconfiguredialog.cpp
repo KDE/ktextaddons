@@ -19,14 +19,14 @@ const char myTextAutoGenerateMenuConfigureDialogGroupName[] = "TextAutoGenerateM
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuConfigureDialog::TextAutoGenerateMenuConfigureDialog(QWidget *parent)
     : QDialog(parent)
-    , mAiTextMenuConfigureWidget(new TextAutoGenerateMenuConfigureWidget(this))
+    , mTextMenuConfigureWidget(new TextAutoGenerateMenuConfigureWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Configure AI text plugins"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
-    mAiTextMenuConfigureWidget->setObjectName(QStringLiteral("mAiTextMenuConfigureWidget"));
-    mainLayout->addWidget(mAiTextMenuConfigureWidget);
+    mTextMenuConfigureWidget->setObjectName(QStringLiteral("mTextMenuConfigureWidget"));
+    mainLayout->addWidget(mTextMenuConfigureWidget);
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     box->setObjectName(QStringLiteral("box"));
@@ -43,12 +43,12 @@ TextAutoGenerateMenuConfigureDialog::~TextAutoGenerateMenuConfigureDialog()
 
 void TextAutoGenerateMenuConfigureDialog::setAiTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
 {
-    mAiTextMenuConfigureWidget->setAiTextInfos(infos);
+    mTextMenuConfigureWidget->setTextInfos(infos);
 }
 
 QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuConfigureDialog::aiTextInfos() const
 {
-    return mAiTextMenuConfigureWidget->aiTextInfos();
+    return mTextMenuConfigureWidget->textInfos();
 }
 
 void TextAutoGenerateMenuConfigureDialog::readConfig()

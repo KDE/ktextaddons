@@ -25,6 +25,6 @@ private:
     void readConfig();
     void writeConfig();
 
-    TextAutoGenerateMenuConfigureWidget *const mAiTextMenuConfigureWidget;
+    TextAutoGenerateMenuConfigureWidget *const mTextMenuConfigureWidget;
 };
 }

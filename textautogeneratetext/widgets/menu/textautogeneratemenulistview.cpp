@@ -25,12 +25,12 @@ TextAutoGenerateMenuListView::TextAutoGenerateMenuListView(QWidget *parent)
 
 TextAutoGenerateMenuListView::~TextAutoGenerateMenuListView() = default;
 
-void TextAutoGenerateMenuListView::setAiTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
+void TextAutoGenerateMenuListView::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
 {
     mModel->setInfos(infos);
 }
 
-QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuListView::aiTextInfos() const
+QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuListView::textInfos() const
 {
     return mModel->infos();
 }

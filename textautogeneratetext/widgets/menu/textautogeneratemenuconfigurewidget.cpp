@@ -21,14 +21,14 @@ TextAutoGenerateMenuConfigureWidget::TextAutoGenerateMenuConfigureWidget(QWidget
 
 TextAutoGenerateMenuConfigureWidget::~TextAutoGenerateMenuConfigureWidget() = default;
 
-void TextAutoGenerateMenuConfigureWidget::setAiTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
+void TextAutoGenerateMenuConfigureWidget::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
 {
-    mListView->setAiTextInfos(infos);
+    mListView->setTextInfos(infos);
 }
 
-QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuConfigureWidget::aiTextInfos() const
+QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuConfigureWidget::textInfos() const
 {
-    return mListView->aiTextInfos();
+    return mListView->textInfos();
 }
 
 #include "moc_textautogeneratemenuconfigurewidget.cpp"

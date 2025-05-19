@@ -19,8 +19,8 @@ public:
     explicit TextAutoGenerateMenuListView(QWidget *parent = nullptr);
     ~TextAutoGenerateMenuListView() override;
 
-    void setAiTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos);
-    [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> aiTextInfos() const;
+    void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos);
+    [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
