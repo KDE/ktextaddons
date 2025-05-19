@@ -20,3 +20,5 @@ void TextAutoGenerateMenuTextInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.enabled());
     QVERIFY(info.requestText().isEmpty());
 }
+
+#include "moc_textautogeneratemenutextinfotest.cpp"
