@@ -22,9 +22,8 @@ public:
     [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> aiTextInfos() const;
 
 private:
-    void readConfig();
-    void writeConfig();
-
+    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateMenuConfigureWidget *const mTextMenuConfigureWidget;
 };
 }

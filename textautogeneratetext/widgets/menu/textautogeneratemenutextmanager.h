@@ -25,7 +25,7 @@ public:
     void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newTextInfos);
 
 private:
-    [[nodiscard]] QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
     QList<TextAutoGenerateMenuTextInfo> mTextInfos;
 };
 }

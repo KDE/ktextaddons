@@ -24,8 +24,8 @@ public:
     void setSelectedText(const QString &newSelectedText);
 
 private:
-    void initializeMenu();
-    void slotConfigure();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void initializeMenu();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
     QString mSelectedText;
     QMenu *const mTextMenu;
     TextAutoGenerateMenuTextManager *const mMenuTextManager;
