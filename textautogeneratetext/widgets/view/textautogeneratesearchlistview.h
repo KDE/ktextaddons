@@ -6,12 +6,10 @@
 #pragma once
 #include "textautogeneratebaselistview.h"
 #include "textautogeneratetext_private_export.h"
-#include <QListView>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
-class TextAutoGenerateSearchListViewDelegate;
 class TextAutoGenerateSearchMessagesModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchListView : public TextAutoGenerateBaseListView
 {
@@ -23,6 +21,7 @@ public:
     void setSearchMessages(const QList<TextAutoGenerateSearchMessage> &msgs);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotGoToMessage(const QString &link);
     TextAutoGenerateSearchMessagesModel *const mModel;
 };
 }

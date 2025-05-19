@@ -18,6 +18,26 @@ public:
     explicit TextAutoGenerateSearchListViewDelegate(QListView *view);
     ~TextAutoGenerateSearchListViewDelegate() override;
 
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const override;
+    [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+
+Q_SIGNALS:
+    void goToMessage(const QString &link);
+
+private:
+    struct MessageLayout {
+        // Text message
+        QRect textRect;
+        // Decoration
+        QRect decoRect;
+
+        // TODO remove it ???
+        qreal baseLine; // used to draw sender/timestamp
+    };
+    void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    [[nodiscard]] TextAutoGenerateSearchListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index) override;
+    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
 };
 }

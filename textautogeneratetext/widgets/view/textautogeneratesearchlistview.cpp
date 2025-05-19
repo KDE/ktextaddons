@@ -14,7 +14,9 @@ TextAutoGenerateSearchListView::TextAutoGenerateSearchListView(TextAutoGenerateT
     : TextAutoGenerateBaseListView(manager, parent)
     , mModel(new TextAutoGenerateSearchMessagesModel(this))
 {
-    mDelegate = new TextAutoGenerateSearchListViewDelegate(this);
+    auto delegate = new TextAutoGenerateSearchListViewDelegate(this);
+    connect(delegate, &TextAutoGenerateSearchListViewDelegate::goToMessage, this, &TextAutoGenerateSearchListView::slotGoToMessage);
+    mDelegate = delegate;
     setItemDelegate(mDelegate);
     setModel(mModel);
 }
@@ -24,6 +26,11 @@ TextAutoGenerateSearchListView::~TextAutoGenerateSearchListView() = default;
 void TextAutoGenerateSearchListView::setSearchMessages(const QList<TextAutoGenerateSearchMessage> &msgs)
 {
     mModel->setSearchMessages(msgs);
+}
+
+void TextAutoGenerateSearchListView::slotGoToMessage(const QString &link)
+{
+    // TODO
 }
 
 #include "moc_textautogeneratesearchlistview.cpp"
