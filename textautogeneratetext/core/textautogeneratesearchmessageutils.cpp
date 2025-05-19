@@ -10,8 +10,8 @@ using namespace TextAutoGenerateText;
 
 QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
 {
-    if (str.length() > 60) {
-        return QStringLiteral("%1...").arg(str.right(60));
+    if (str.length() > 120) {
+        return QStringLiteral("%1...").arg(str.left(120));
     }
     return str;
 }

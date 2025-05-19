@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratelocalmessagesdatabase.h"
+#include "core/textautogeneratesearchmessageutils.h"
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
 #include <QFileInfo>
@@ -189,7 +190,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
             searchMessage.setMessageId(msg.uuid());
             searchMessage.setChatId(chatIdentifier.toLatin1());
             searchMessage.setDateTime(msg.dateTime());
-            searchMessage.setPreviewText(msg.content()); // TODO create preview
+            searchMessage.setPreviewText(TextAutoGenerateSearchMessageUtils::generatePreview(msg.content()));
             lstSearchMessages.append(searchMessage);
         }
     }
