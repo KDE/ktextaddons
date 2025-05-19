@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-17 00:40+0000\n"
+"POT-Creation-Date: 2025-05-19 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -195,7 +195,7 @@ msgid "Favorite"
 msgstr "常用"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:28
+#: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -281,19 +281,19 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除讨论"
 
-#: widgets/view/textautogeneratelistview.cpp:82
+#: widgets/view/textautogeneratelistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "复制选中内容"
 
-#: widgets/view/textautogeneratelistview.cpp:82
+#: widgets/view/textautogeneratelistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "复制"
 
-#: widgets/view/textautogeneratelistview.cpp:90
+#: widgets/view/textautogeneratelistview.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

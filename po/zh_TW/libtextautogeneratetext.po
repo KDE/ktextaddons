@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-17 00:40+0000\n"
+"POT-Creation-Date: 2025-05-19 00:41+0000\n"
 "PO-Revision-Date: 2025-05-16 15:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -195,7 +195,7 @@ msgid "Favorite"
 msgstr "收藏"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:28
+#: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -281,19 +281,19 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除討論"
 
-#: widgets/view/textautogeneratelistview.cpp:82
+#: widgets/view/textautogeneratelistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "複製選取範圍"
 
-#: widgets/view/textautogeneratelistview.cpp:82
+#: widgets/view/textautogeneratelistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratelistview.cpp:90
+#: widgets/view/textautogeneratelistview.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

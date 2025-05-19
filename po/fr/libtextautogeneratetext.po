@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-17 00:40+0000\n"
+"POT-Creation-Date: 2025-05-19 00:41+0000\n"
 "PO-Revision-Date: 2025-05-15 07:52+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -192,7 +192,7 @@ msgid "Favorite"
 msgstr "Préféré"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:28
+#: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
@@ -278,19 +278,19 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Supprimer la discussion"
 
-#: widgets/view/textautogeneratelistview.cpp:82
+#: widgets/view/textautogeneratelistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copier la sélection"
 
-#: widgets/view/textautogeneratelistview.cpp:82
+#: widgets/view/textautogeneratelistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copier"
 
-#: widgets/view/textautogeneratelistview.cpp:90
+#: widgets/view/textautogeneratelistview.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
