@@ -61,6 +61,13 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
     EXPORT KTEXTADDONS
 )
 
+ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextwidget_menu_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_WIDGET_MENU_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext.widget_menu
+    DESCRIPTION "KF6 (TextAutoGenerateText widget menu)"
+    EXPORT KTEXTADDONS
+)
+
 target_sources(KF6TextAutoGenerateText PRIVATE
     core/textautogenerateengineplugin.h
     core/textautogenerateengineplugin.cpp
@@ -217,6 +224,23 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     widgets/textautogeneratesearchlineedit.h
     widgets/textautogeneratesearchlineedit.cpp
+
+    widgets/menu/textautogeneratemenuconfiguredialog.cpp
+    widgets/menu/textautogeneratemenuconfiguredialog.h
+    widgets/menu/textautogeneratemenuconfigurewidget.cpp
+    widgets/menu/textautogeneratemenuconfigurewidget.h
+    widgets/menu/textautogeneratemenulistview.cpp
+    widgets/menu/textautogeneratemenulistview.h
+    widgets/menu/textautogeneratemenulistviewdelegate.cpp
+    widgets/menu/textautogeneratemenulistviewdelegate.h
+    widgets/menu/textautogeneratemenumodel.cpp
+    widgets/menu/textautogeneratemenumodel.h
+    widgets/menu/textautogeneratemenutextinfo.cpp
+    widgets/menu/textautogeneratemenutextinfo.h
+    widgets/menu/textautogeneratemenutextmanager.cpp
+    widgets/menu/textautogeneratemenutextmanager.h
+    widgets/menu/textautogeneratemenuwidget.cpp
+    widgets/menu/textautogeneratemenuwidget.h
 )
 
 if(BUILD_TESTING)
