@@ -4,14 +4,14 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratemenutextinfo.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
+#include <TextAutoGenerateText/TextAutoGenerateMenuTextInfo>
 
 #include <QWidget>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMenuListView;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMenuConfigureWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
