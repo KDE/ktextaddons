@@ -314,6 +314,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_
     RELATIVE widgets
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateMenuWidget
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/menu
+)
+
 install(TARGETS
     KF6TextAutoGenerateText
     EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
@@ -327,6 +335,7 @@ install(FILES
 install(FILES
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -335,6 +344,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
     ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
