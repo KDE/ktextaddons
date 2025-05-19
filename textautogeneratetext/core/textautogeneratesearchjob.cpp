@@ -30,8 +30,16 @@ void TextAutoGenerateSearchJob::start()
         return;
     }
     // TODO improve it.
-    const QList<TextAutoGenerateSearchMessage> lst = mManager->searchTextInDatabase(mSearchText.toLower());
-    Q_EMIT searchDone(lst);
+    QList<TextAutoGenerateSearchMessage> messages = mManager->searchTextInDatabase(mSearchText.toLower());
+    // Sort messages
+    std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateSearchMessage &left, const TextAutoGenerateSearchMessage &right) {
+        if (left.dateTime() == right.dateTime()) {
+            return true;
+        }
+        return left.dateTime() < right.dateTime();
+    });
+
+    Q_EMIT searchDone(messages);
     deleteLater();
 }
 
