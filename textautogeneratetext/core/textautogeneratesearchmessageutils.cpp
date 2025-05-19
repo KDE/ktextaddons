@@ -23,7 +23,7 @@ QString TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(const QStrin
 
 QString TextAutoGenerateSearchMessageUtils::generatePreviewText(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
-    return QStringLiteral("%1 <a href=\'%2'>%3</a>")
+    return QStringLiteral("%1<br/> <a href=\'%2'>%3</a>")
         .arg(TextAutoGenerateSearchMessageUtils::generatePreview(msg.content()),
              generateGoToMessageLink(QString::fromLatin1(chatId), QString::fromLatin1(msg.uuid())),
              i18n("Go to message"));
