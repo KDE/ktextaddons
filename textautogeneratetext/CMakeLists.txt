@@ -273,7 +273,6 @@ target_link_libraries(KF6TextAutoGenerateText
     KF6::CoreAddons
     KF6::ColorScheme
 )
-
 target_include_directories(KF6TextAutoGenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/>")
 
 set_target_properties(KF6TextAutoGenerateText PROPERTIES

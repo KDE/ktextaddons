@@ -8,3 +8,4 @@ macro(add_textautogenerate_widgets_menu_unittest _source)
         LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText
 )
 endmacro()
+add_textautogenerate_widgets_menu_unittest(textautogeneratemenutextinfotest.cpp)
