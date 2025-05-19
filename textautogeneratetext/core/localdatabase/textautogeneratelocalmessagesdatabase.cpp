@@ -184,7 +184,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
     while (resultQuery.next()) {
         const QString json = resultQuery.value(QStringLiteral("json")).toString();
         const TextAutoGenerateMessage msg = convertJsonToMessage(json);
-        if (msg.content().contains(searchText)) {
+        if (msg.content().contains(searchText.toLower(), Qt::CaseInsensitive)) {
             TextAutoGenerateSearchMessage searchMessage;
             searchMessage.setMessageId(msg.uuid());
             searchMessage.setChatId(chatIdentifier.toLatin1());
