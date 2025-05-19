@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratesearchmessageutils.h"
-
+#include <KLocalizedString>
 using namespace TextAutoGenerateText;
 
 QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
@@ -19,4 +19,12 @@ QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
 QString TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(const QString &chatId, const QString &messageId)
 {
     return QStringLiteral("storage://%1:%2").arg(chatId, messageId);
+}
+
+QString TextAutoGenerateSearchMessageUtils::generatePreviewText(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
+{
+    return QStringLiteral("%1 <a href=\'%2'>%3</a>")
+        .arg(TextAutoGenerateSearchMessageUtils::generatePreview(msg.content()),
+             generateGoToMessageLink(QString::fromLatin1(chatId), QString::fromLatin1(msg.uuid())),
+             i18n("Go to message"));
 }

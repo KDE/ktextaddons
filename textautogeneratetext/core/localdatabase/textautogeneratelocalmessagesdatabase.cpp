@@ -190,7 +190,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
             searchMessage.setMessageId(msg.uuid());
             searchMessage.setChatId(chatIdentifier.toLatin1());
             searchMessage.setDateTime(msg.dateTime());
-            searchMessage.setPreviewText(TextAutoGenerateSearchMessageUtils::generatePreview(msg.content()));
+            searchMessage.setPreviewText(TextAutoGenerateSearchMessageUtils::generatePreviewText(searchMessage.chatId(), msg));
             lstSearchMessages.append(searchMessage);
         }
     }
