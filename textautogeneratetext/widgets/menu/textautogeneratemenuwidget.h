@@ -27,7 +27,7 @@ private:
     void initializeMenu();
     void slotConfigure();
     QString mSelectedText;
-    QMenu *const mAiTextMenu;
-    TextAutoGenerateMenuTextManager *const mAiTextManager;
+    QMenu *const mTextMenu;
+    TextAutoGenerateMenuTextManager *const mMenuTextManager;
 };
 }
