@@ -18,3 +18,5 @@ void TextAutoGenerateSearchMessageUtilsTest::shouldCreateGoToMessage()
 {
     // TODO
 }
+
+#include "moc_textautogeneratesearchmessageutilstest.cpp"
