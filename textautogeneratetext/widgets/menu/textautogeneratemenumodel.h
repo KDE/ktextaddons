@@ -5,13 +5,13 @@
 */
 
 #pragma once
-
 #include "textautogeneratemenutextinfo.h"
+#include "textautogeneratetext_private_export.h"
 
 #include <QAbstractListModel>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateMenuModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMenuModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

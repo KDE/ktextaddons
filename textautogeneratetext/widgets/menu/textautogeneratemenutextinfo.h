@@ -5,10 +5,11 @@
 */
 
 #pragma once
+#include "textautogeneratetext_private_export.h"
 #include <QDebug>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateMenuTextInfo
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMenuTextInfo
 {
 public:
     TextAutoGenerateMenuTextInfo();

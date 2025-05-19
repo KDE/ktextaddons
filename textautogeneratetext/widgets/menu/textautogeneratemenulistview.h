@@ -5,14 +5,14 @@
 */
 
 #pragma once
-
 #include "textautogeneratemenutextinfo.h"
+#include "textautogeneratetext_private_export.h"
 
 #include <QListView>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMenuModel;
-class TextAutoGenerateMenuListView : public QListView
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMenuListView : public QListView
 {
     Q_OBJECT
 public:
