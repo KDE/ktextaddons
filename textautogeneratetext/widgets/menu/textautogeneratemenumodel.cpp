@@ -64,12 +64,12 @@ bool TextAutoGenerateMenuModel::setData(const QModelIndex &idx, const QVariant &
     return QAbstractListModel::setData(idx, value, role);
 }
 
-QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuModel::infos() const
+QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuModel::textInfos() const
 {
     return mTextInfos;
 }
 
-void TextAutoGenerateMenuModel::setInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems)
+void TextAutoGenerateMenuModel::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems)
 {
     beginResetModel();
     mTextInfos = newAskItems;

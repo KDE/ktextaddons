@@ -27,12 +27,12 @@ TextAutoGenerateMenuListView::~TextAutoGenerateMenuListView() = default;
 
 void TextAutoGenerateMenuListView::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
 {
-    mModel->setInfos(infos);
+    mModel->setTextInfos(infos);
 }
 
 QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuListView::textInfos() const
 {
-    return mModel->infos();
+    return mModel->textInfos();
 }
 
 void TextAutoGenerateMenuListView::contextMenuEvent(QContextMenuEvent *event)

@@ -41,12 +41,12 @@ TextAutoGenerateMenuConfigureDialog::~TextAutoGenerateMenuConfigureDialog()
     writeConfig();
 }
 
-void TextAutoGenerateMenuConfigureDialog::setAiTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
+void TextAutoGenerateMenuConfigureDialog::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos)
 {
     mTextMenuConfigureWidget->setTextInfos(infos);
 }
 
-QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuConfigureDialog::aiTextInfos() const
+QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuConfigureDialog::textInfos() const
 {
     return mTextMenuConfigureWidget->textInfos();
 }

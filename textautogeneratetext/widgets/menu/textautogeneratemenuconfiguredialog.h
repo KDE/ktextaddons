@@ -18,8 +18,8 @@ public:
     explicit TextAutoGenerateMenuConfigureDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateMenuConfigureDialog() override;
 
-    void setAiTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos);
-    [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> aiTextInfos() const;
+    void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &infos);
+    [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();

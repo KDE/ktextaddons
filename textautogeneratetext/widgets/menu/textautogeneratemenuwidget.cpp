@@ -72,9 +72,9 @@ void TextAutoGenerateMenuWidget::setSelectedText(const QString &newSelectedText)
 void TextAutoGenerateMenuWidget::slotConfigure()
 {
     auto dlg = new TextAutoGenerateMenuConfigureDialog(nullptr);
-    dlg->setAiTextInfos(mMenuTextManager->textInfos());
+    dlg->setTextInfos(mMenuTextManager->textInfos());
     if (dlg->exec()) {
-        mMenuTextManager->setTextInfos(dlg->aiTextInfos());
+        mMenuTextManager->setTextInfos(dlg->textInfos());
         mMenuTextManager->save();
         mTextMenu->clear();
         initializeMenu();

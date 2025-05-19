@@ -28,8 +28,8 @@ public:
     [[nodiscard]] bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     [[nodiscard]] Qt::ItemFlags flags(const QModelIndex &index) const override;
 
-    [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> infos() const;
-    void setInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems);
+    [[nodiscard]] QList<TextAutoGenerateMenuTextInfo> textInfos() const;
+    void setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newAskItems);
 
     void addItem(const TextAutoGenerateMenuTextInfo &msg);
     void removeInfo(int index);
