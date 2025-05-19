@@ -133,6 +133,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     core/textautogenerateaskjob.h
     core/textautogenerateaskjob.cpp
+
+    core/textautogeneratesearchmessageutils.h
+    core/textautogeneratesearchmessageutils.cpp
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
