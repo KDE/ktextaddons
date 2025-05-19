@@ -29,8 +29,11 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalDatabaseManager::loadChats() co
 
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalDatabaseManager::searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText)
 {
-    return {};
-    // TODO
+    QList<TextAutoGenerateSearchMessage> lst;
+    for (const QByteArray &id : listIds) {
+        lst.append(mMessagesDatabase->searchMessages(QString::fromLatin1(id), searchText));
+    }
+    return lst;
 }
 
 void TextAutoGenerateLocalDatabaseManager::deleteMessage(const QByteArray &chatIdentifier, const QString &messageId)
