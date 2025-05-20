@@ -23,7 +23,7 @@ public:
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 Q_SIGNALS:
-    void goToMessage(const QString &link);
+    void goToMessage(const QUrl &link);
 
 private:
     struct MessageLayout {

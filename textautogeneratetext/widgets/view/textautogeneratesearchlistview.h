@@ -21,7 +21,7 @@ public:
     void setSearchMessages(const QList<TextAutoGenerateSearchMessage> &msgs);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotGoToMessage(const QString &link);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotGoToMessage(const QUrl &link);
     TextAutoGenerateSearchMessagesModel *const mModel;
 };
 }

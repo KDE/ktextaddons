@@ -28,7 +28,7 @@ void TextAutoGenerateSearchListView::setSearchMessages(const QList<TextAutoGener
     mModel->setSearchMessages(msgs);
 }
 
-void TextAutoGenerateSearchListView::slotGoToMessage(const QString &link)
+void TextAutoGenerateSearchListView::slotGoToMessage(const QUrl &link)
 {
     // TODO
 }

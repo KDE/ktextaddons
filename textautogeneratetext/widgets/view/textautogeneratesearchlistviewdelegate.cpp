@@ -224,14 +224,13 @@ bool TextAutoGenerateSearchListViewDelegate::handleMouseEvent(QMouseEvent *mouse
         if (!mTextSelection->hasSelection()) {
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
                 const QString link = doc->documentLayout()->anchorAt(pos);
-                qDebug() << " link " << link;
                 if (!link.isEmpty()) {
                     if (link.startsWith(TextAutoGenerateSearchMessageUtils::scheme())) {
-                        Q_EMIT goToMessage(link);
-                        return true;
+                        Q_EMIT goToMessage(QUrl(link));
                     } else {
                         QDesktopServices::openUrl(QUrl(link));
                     }
+                    return true;
                 }
             }
         } else if (mTextSelection->mightStartDrag()) {
