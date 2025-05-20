@@ -46,7 +46,11 @@ bool MistralClient::showConfigureDialog(QWidget *parentWidget)
 {
     // TODO use QPointer here ???
     MistralConfigureDialog d(parentWidget);
-    return d.exec();
+    bool b = d.exec();
+    if (b) {
+        // TODO save
+    }
+    return b;
 }
 
 QString MistralClient::webSite() const
