@@ -247,6 +247,18 @@ bool TextAutoGenerateChatsModel::chatIsFavorite(const QByteArray &chatId) const
     return false;
 }
 
+bool TextAutoGenerateChatsModel::chatIsArchived(const QByteArray &chatId) const
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).archived();
+    }
+    return false;
+}
+
 QList<QByteArray> TextAutoGenerateChatsModel::chatsId() const
 {
     QList<QByteArray> lst;
