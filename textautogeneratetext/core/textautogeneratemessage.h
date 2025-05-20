@@ -24,7 +24,9 @@ public:
     enum class Sender : uint8_t {
         Unknown,
         User,
-        LLM,
+        Assistant,
+        System,
+        // TODO Tool,
     };
     Q_ENUM(Sender)
 
@@ -89,6 +91,8 @@ public:
     [[nodiscard]] static TextAutoGenerateMessage::Sender senderFromString(const QString &str);
 
     [[nodiscard]] TextAutoGenerateAnswerInfo *answerInfo();
+
+    [[nodiscard]] QJsonObject convertToChat() const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;

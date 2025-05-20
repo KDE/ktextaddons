@@ -29,6 +29,7 @@ public:
     void loadModels();
     void getVersion();
     [[nodiscard]] OllamaReply *getCompletion(const OllamaRequest &request);
+    [[nodiscard]] OllamaReply *getChatCompletion(const OllamaRequest &request);
     void downloadModel(const QString &modelName);
     void deleteModel(const QString &modelName);
 

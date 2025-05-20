@@ -184,8 +184,10 @@ QString TextAutoGenerateMessage::senderToString() const
         return {};
     case Sender::User:
         return QStringLiteral("user");
-    case Sender::LLM:
+    case Sender::Assistant:
         return QStringLiteral("llm");
+    case Sender::System:
+        return QStringLiteral("system");
     }
     Q_UNREACHABLE();
 }
@@ -195,7 +197,7 @@ TextAutoGenerateMessage::Sender TextAutoGenerateMessage::senderFromString(const 
     if (str == "user"_L1) {
         return TextAutoGenerateMessage::Sender::User;
     } else if (str == "llm"_L1) {
-        return TextAutoGenerateMessage::Sender::LLM;
+        return TextAutoGenerateMessage::Sender::Assistant;
     } else {
         return TextAutoGenerateMessage::Sender::Unknown;
     }
@@ -241,6 +243,28 @@ TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::answerInfo()
         mMessageInfo = new TextAutoGenerateAnswerInfo;
     }
     return mMessageInfo;
+}
+
+QJsonObject TextAutoGenerateMessage::convertToChat() const
+{
+    QJsonObject obj;
+    QString role;
+    switch (mSender) {
+    case Sender::Unknown:
+        break;
+    case Sender::User:
+        role = QStringLiteral("user");
+    case Sender::Assistant:
+        role = QStringLiteral("assistant");
+    case Sender::System:
+        role = QStringLiteral("system");
+    }
+    if (role.isEmpty()) {
+        return obj;
+    }
+    obj["role"_L1] = role;
+    obj["content"_L1] = mContent;
+    return obj;
 }
 
 bool TextAutoGenerateMessage::messageStateValue(MessageState type) const

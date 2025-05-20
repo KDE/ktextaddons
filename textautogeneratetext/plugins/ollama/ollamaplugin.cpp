@@ -78,7 +78,7 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
     }
 }
 
-void OllamaPlugin::askToLLM(const QString &msg)
+void OllamaPlugin::askToAssistant(const QString &msg)
 {
     OllamaRequest req;
     req.setMessage(msg);
@@ -86,10 +86,10 @@ void OllamaPlugin::askToLLM(const QString &msg)
     auto reply = OllamaManager::self()->getCompletion(req);
     const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
     mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, this]() {
-                                                                              Q_EMIT askToLlmAnswer(reply->readResponse());
+                                                                              Q_EMIT askToAssistantAnswer(reply->readResponse());
                                                                           })));
     mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::finished, this, [reply, this] {
-                                                                              Q_EMIT askToLlmDone();
+                                                                              Q_EMIT askToAssistantDone();
                                                                               mConnections.remove(reply);
                                                                               reply->deleteLater();
 #if 0
@@ -101,7 +101,7 @@ void OllamaPlugin::askToLLM(const QString &msg)
                                                                           })));
 }
 
-void OllamaPlugin::sendToLLM(const SendToLLMInfo &info)
+void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     OllamaRequest req;
     req.setMessage(info.message);

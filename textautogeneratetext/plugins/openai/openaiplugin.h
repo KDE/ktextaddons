@@ -24,7 +24,7 @@ public:
     [[nodiscard]] static QString name();
 
 protected:
-    void sendToLLM(const SendToLLMInfo &info) override;
-    void askToLLM(const QString &msg) override;
+    void sendToAssistant(const SendToAssistantInfo &info) override;
+    void askToAssistant(const QString &msg) override;
     void cancelRequest(const QByteArray &uuid) override;
 };

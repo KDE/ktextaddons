@@ -46,7 +46,7 @@ TextAutoGenerateManager::~TextAutoGenerateManager()
 void TextAutoGenerateManager::askToLLM(const QString &msg)
 {
     if (mTextAutoGeneratePlugin) {
-        mTextAutoGeneratePlugin->askToLLM(msg);
+        mTextAutoGeneratePlugin->askToAssistant(msg);
     }
 }
 

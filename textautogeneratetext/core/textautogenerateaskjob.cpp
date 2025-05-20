@@ -49,11 +49,11 @@ void TextAutoGenerateAskJob::slotAutogenerateFailed(const QString &msg)
 void TextAutoGenerateAskJob::slotInitializeDone()
 {
     connect(mManager->textAutoGeneratePlugin(),
-            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToLlmDone,
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToAssistantDone,
             this,
             &TextAutoGenerateAskJob::slotAskToLlmDone);
     connect(mManager->textAutoGeneratePlugin(),
-            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToLlmAnswer,
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToAssistant,
             this,
             &TextAutoGenerateAskJob::slotAskToLlmAnswer);
 

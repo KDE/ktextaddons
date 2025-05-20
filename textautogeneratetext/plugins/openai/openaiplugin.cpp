@@ -38,12 +38,12 @@ QString OpenAIPlugin::name()
     return "openai"_L1;
 }
 
-void OpenAIPlugin::sendToLLM(const SendToLLMInfo &info)
+void OpenAIPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     // TODO
 }
 
-void OpenAIPlugin::askToLLM(const QString &msg)
+void OpenAIPlugin::askToAssistant(const QString &msg)
 {
     // TODO
 }

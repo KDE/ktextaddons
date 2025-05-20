@@ -152,6 +152,35 @@ OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
     return reply;
 }
 
+OllamaReply *OllamaManager::getChatCompletion(const OllamaRequest &request)
+{
+    // TODO fix me
+    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::chatPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    QJsonObject data;
+    // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
+    data["prompt"_L1] = request.message();
+    data["model"_L1] = OllamaSettings::model();
+    const auto context = request.context().toJson();
+    if (!context.isNull()) {
+        data["context"_L1] = context;
+    }
+    if (!OllamaSettings::systemPrompt().isEmpty()) {
+        data["system"_L1] = OllamaSettings::systemPrompt();
+    }
+    auto buf = new QBuffer{this};
+    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
+
+    auto reply = new OllamaReply{TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, buf),
+                                 OllamaReply::RequestTypes::StreamingGenerate,
+                                 this};
+    connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
+        Q_EMIT finished(reply->readResponse());
+        buf->deleteLater();
+    });
+    return reply;
+}
+
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
 {
     d.space() << "models:" << t.models;

@@ -56,12 +56,12 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QBy
         if (messageModel) {
             const QByteArray llmUuid = messageModel->editMessage(uuid, str);
 
-            SendToLLMInfo info;
+            SendToAssistantInfo info;
             info.message = str;
             info.messageUuid = llmUuid;
             info.chatId = chatId;
 
-            sendToLLM(std::move(info));
+            sendToAssistant(std::move(info));
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << chatId;
         }
@@ -81,7 +81,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         // LLM Message
         TextAutoGenerateMessage msgLlm;
         msgLlm.setInProgress(true);
-        msgLlm.setSender(TextAutoGenerateMessage::Sender::LLM);
+        msgLlm.setSender(TextAutoGenerateMessage::Sender::Assistant);
         msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         msgLlm.setEngineName(engineName());
@@ -92,11 +92,11 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
 
         d->manager->addMessage(chatId, std::move(msg));
         d->manager->addMessage(chatId, std::move(msgLlm));
-        SendToLLMInfo info;
+        SendToAssistantInfo info;
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
-        sendToLLM(std::move(info));
+        sendToAssistant(std::move(info));
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }
@@ -122,7 +122,7 @@ TextAutoGenerateManager *TextAutoGenerateTextPlugin::manager() const
     return d->manager;
 }
 
-QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToLLMInfo &t)
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo &t)
 {
     d.space() << "message:" << t.message;
     d.space() << "messageUuid:" << t.messageUuid;

@@ -22,7 +22,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
-    struct TEXTAUTOGENERATETEXT_EXPORT SendToLLMInfo {
+    struct TEXTAUTOGENERATETEXT_EXPORT SendToAssistantInfo {
         QString message;
         QByteArray messageUuid;
         QByteArray chatId;
@@ -53,20 +53,20 @@ public:
 
     void setManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
-    virtual void askToLLM(const QString &msg) = 0;
+    virtual void askToAssistant(const QString &msg) = 0;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
     void initializedDone();
-    void askToLlmAnswer(const QString &message);
-    void askToLlmDone();
+    void askToAssistantAnswer(const QString &message);
+    void askToAssistantDone();
 
 protected:
-    virtual void sendToLLM(const SendToLLMInfo &info) = 0;
+    virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
 
 private:
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToLLMInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToLLMInfo &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo &t);

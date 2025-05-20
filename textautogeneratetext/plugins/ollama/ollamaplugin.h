@@ -30,9 +30,9 @@ public:
     [[nodiscard]] static QString name();
 
 protected:
-    void sendToLLM(const SendToLLMInfo &info) override;
+    void sendToAssistant(const SendToAssistantInfo &info) override;
     void cancelRequest(const QByteArray &uuid) override;
-    void askToLLM(const QString &msg) override;
+    void askToAssistant(const QString &msg) override;
 
 private:
     QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;

@@ -33,12 +33,12 @@ QString MistralPlugin::engineName() const
     return name();
 }
 
-void MistralPlugin::sendToLLM(const SendToLLMInfo &info)
+void MistralPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     // TODO
 }
 
-void MistralPlugin::askToLLM(const QString &msg)
+void MistralPlugin::askToAssistant(const QString &msg)
 {
     // TODO
 }
