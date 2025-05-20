@@ -43,6 +43,11 @@ void OpenAIPlugin::sendToLLM(const SendToLLMInfo &info)
     // TODO
 }
 
+void OpenAIPlugin::askToLLM(const QString &msg)
+{
+    // TODO
+}
+
 void OpenAIPlugin::cancelRequest(const QByteArray &uuid)
 {
     // TODO

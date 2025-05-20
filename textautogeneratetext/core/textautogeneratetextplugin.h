@@ -53,10 +53,13 @@ public:
 
     void setManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
+    virtual void askToLLM(const QString &msg) = 0;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
     void initializedDone();
+    void askToLlmAnswer(const QString &message);
+    void askToLlmDone();
 
 protected:
     virtual void sendToLLM(const SendToLLMInfo &info) = 0;

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaskjob.h"
+#include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
@@ -17,15 +19,14 @@ TextAutoGenerateAskJob::~TextAutoGenerateAskJob() = default;
 bool TextAutoGenerateAskJob::canStart() const
 {
     if (!mManager) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Manager is empty! It's a bug";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Manager is null! It's a bug";
         return false;
     }
     if (mText.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Text is empty! It's a bug";
         return false;
     }
-    // TODO
-    return false;
+    return true;
 }
 
 void TextAutoGenerateAskJob::start()
@@ -34,7 +35,39 @@ void TextAutoGenerateAskJob::start()
         deleteLater();
         return;
     }
-    // TODO
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateAskJob::slotInitializeDone);
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateAskJob::slotAutogenerateFailed);
+    mManager->loadEngine();
+}
+
+void TextAutoGenerateAskJob::slotAutogenerateFailed(const QString &msg)
+{
+    Q_EMIT errorOccured(msg);
+    deleteLater();
+}
+
+void TextAutoGenerateAskJob::slotInitializeDone()
+{
+    connect(mManager->textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToLlmDone,
+            this,
+            &TextAutoGenerateAskJob::slotAskToLlmDone);
+    connect(mManager->textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToLlmAnswer,
+            this,
+            &TextAutoGenerateAskJob::slotAskToLlmAnswer);
+
+    mManager->askToLLM(mText);
+}
+
+void TextAutoGenerateAskJob::slotAskToLlmAnswer(const QString &msg)
+{
+    Q_EMIT generateTextInProgress(msg);
+}
+
+void TextAutoGenerateAskJob::slotAskToLlmDone()
+{
+    Q_EMIT generateTextDone();
     deleteLater();
 }
 

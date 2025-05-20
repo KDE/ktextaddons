@@ -38,6 +38,11 @@ void MistralPlugin::sendToLLM(const SendToLLMInfo &info)
     // TODO
 }
 
+void MistralPlugin::askToLLM(const QString &msg)
+{
+    // TODO
+}
+
 void MistralPlugin::cancelRequest(const QByteArray &uuid)
 {
     // TODO

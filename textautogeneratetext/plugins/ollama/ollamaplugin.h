@@ -32,6 +32,7 @@ public:
 protected:
     void sendToLLM(const SendToLLMInfo &info) override;
     void cancelRequest(const QByteArray &uuid) override;
+    void askToLLM(const QString &msg) override;
 
 private:
     QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;

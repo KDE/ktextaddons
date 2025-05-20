@@ -78,6 +78,29 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
     }
 }
 
+void OllamaPlugin::askToLLM(const QString &msg)
+{
+    OllamaRequest req;
+    req.setMessage(msg);
+    req.setModel(currentModel());
+    auto reply = OllamaManager::self()->getCompletion(req);
+    const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
+    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, this]() {
+                                                                              Q_EMIT askToLlmAnswer(reply->readResponse());
+                                                                          })));
+    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::finished, this, [reply, this] {
+                                                                              Q_EMIT askToLlmDone();
+                                                                              mConnections.remove(reply);
+                                                                              reply->deleteLater();
+#if 0
+                                // TODO add context + info
+                            message.context = message.llmReply->context();
+                            message.info = message.llmReply->info();
+#endif
+                                                                              // Q_EMIT finished(message); // TODO add message as argument ???
+                                                                          })));
+}
+
 void OllamaPlugin::sendToLLM(const SendToLLMInfo &info)
 {
     OllamaRequest req;

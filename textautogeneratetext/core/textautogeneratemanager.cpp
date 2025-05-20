@@ -43,6 +43,13 @@ TextAutoGenerateManager::~TextAutoGenerateManager()
     }
 }
 
+void TextAutoGenerateManager::askToLLM(const QString &msg)
+{
+    if (mTextAutoGeneratePlugin) {
+        mTextAutoGeneratePlugin->askToLLM(msg);
+    }
+}
+
 void TextAutoGenerateManager::ask(const QString &msg)
 {
     Q_EMIT askMessageRequested(msg);
