@@ -235,7 +235,7 @@ void TextAutoGenerateChatsModel::archiveDiscussion(const QByteArray &chatId, boo
     }
 }
 
-bool TextAutoGenerateChatsModel::chatIsFavorite(const QByteArray &chatId) const
+bool TextAutoGenerateChatsModel::chatIsFavorited(const QByteArray &chatId) const
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {
         return chat.identifier() == chatId;

@@ -214,7 +214,7 @@ bool TextAutoGenerateManager::chatIsFavorite(const QByteArray &chatId) const
     if (chatId.isEmpty()) {
         return false;
     }
-    return mTextAutoGenerateChatsModel->chatIsFavorite(chatId);
+    return mTextAutoGenerateChatsModel->chatIsFavorited(chatId);
 }
 
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateManager::searchTextInDatabase(const QString &searchText)

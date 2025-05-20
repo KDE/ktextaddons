@@ -62,7 +62,7 @@ public:
 
     void archiveDiscussion(const QByteArray &chatId, bool favorite);
 
-    [[nodiscard]] bool chatIsFavorite(const QByteArray &chatId) const;
+    [[nodiscard]] bool chatIsFavorited(const QByteArray &chatId) const;
     [[nodiscard]] bool chatIsArchived(const QByteArray &chatId) const;
 
     [[nodiscard]] QList<QByteArray> chatsId() const;
