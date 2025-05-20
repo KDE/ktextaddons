@@ -16,9 +16,14 @@ QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
     return str;
 }
 
+QString TextAutoGenerateSearchMessageUtils::scheme()
+{
+    return QStringLiteral("storage");
+}
+
 QString TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(const QString &chatId, const QString &messageId)
 {
-    return QStringLiteral("storage://%1:%2").arg(chatId, messageId);
+    return QStringLiteral("%1://%2:%3").arg(scheme(), chatId, messageId);
 }
 
 QString TextAutoGenerateSearchMessageUtils::generatePreviewText(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
