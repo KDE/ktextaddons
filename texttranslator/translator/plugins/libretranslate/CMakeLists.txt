@@ -28,7 +28,8 @@ target_sources(translator_libretranslate PRIVATE
 )
 
 target_link_libraries(translator_libretranslate PRIVATE KF6::TextTranslator
-    KF6::I18n KF6::ConfigCore
+    KF6::I18n
+    KF6::ConfigCore
     KF6::TextAddonsWidgets
     KF6::WidgetsAddons
 )
