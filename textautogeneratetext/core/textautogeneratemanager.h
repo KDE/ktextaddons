@@ -65,6 +65,7 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
     void checkCurrentChat();
+    void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -72,7 +73,7 @@ Q_SIGNALS:
     void errorOccured(const QString &msg);
     void currentChatIdChanged();
     void showArchiveChanged();
-    void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
+    void showMessageId(const QByteArray &msgId);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();

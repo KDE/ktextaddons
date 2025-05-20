@@ -7,6 +7,7 @@
 #include "textautogeneratesearchlistview.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratesearchmessagesmodel.h"
+#include "core/textautogeneratesearchmessageutils.h"
 #include "textautogeneratesearchlistviewdelegate.h"
 
 using namespace TextAutoGenerateText;
@@ -28,9 +29,15 @@ void TextAutoGenerateSearchListView::setSearchMessages(const QList<TextAutoGener
     mModel->setSearchMessages(msgs);
 }
 
-void TextAutoGenerateSearchListView::slotGoToMessage(const QUrl &link)
+void TextAutoGenerateSearchListView::slotGoToMessage(const QString &link)
 {
-    // TODO
+    QString path = link;
+    path = path.remove(TextAutoGenerateSearchMessageUtils::scheme() + QStringLiteral("://"));
+    qDebug() << " path " << path;
+    const QStringList pathList = path.split(QLatin1Char(':'));
+    if (pathList.count() == 2) {
+        mManager->goToMessage(pathList.at(0).toLatin1(), pathList.at(1).toLatin1());
+    }
 }
 
 #include "moc_textautogeneratesearchlistview.cpp"

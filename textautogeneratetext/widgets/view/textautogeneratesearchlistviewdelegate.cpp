@@ -226,7 +226,7 @@ bool TextAutoGenerateSearchListViewDelegate::handleMouseEvent(QMouseEvent *mouse
                 const QString link = doc->documentLayout()->anchorAt(pos);
                 if (!link.isEmpty()) {
                     if (link.startsWith(TextAutoGenerateSearchMessageUtils::scheme())) {
-                        Q_EMIT goToMessage(QUrl(link));
+                        Q_EMIT goToMessage(link);
                     } else {
                         QDesktopServices::openUrl(QUrl(link));
                     }

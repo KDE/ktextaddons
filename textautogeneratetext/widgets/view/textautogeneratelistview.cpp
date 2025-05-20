@@ -30,6 +30,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, [this, delegate]() {
             delegate->setShowArchive(mManager->showArchived());
         });
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showMessageId, this, &TextAutoGenerateListView::goToMessageId);
     }
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);
@@ -150,6 +151,17 @@ void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
         } else if (key == Qt::Key_End) {
             scrollToBottom();
             ev->accept();
+        }
+    }
+}
+
+void TextAutoGenerateListView::goToMessageId(const QByteArray &uuid)
+{
+    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+    if (model) {
+        const QModelIndex idx = model->indexForUuid(uuid);
+        if (idx.isValid()) {
+            scrollTo(idx);
         }
     }
 }

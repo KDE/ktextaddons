@@ -190,6 +190,17 @@ void TextAutoGenerateManager::checkCurrentChat()
     }
 }
 
+void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteArray &messageId)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (!messagesModel) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find channel" << chatId;
+        return;
+    }
+    setCurrentChatId(chatId);
+    Q_EMIT showMessageId(messageId);
+}
+
 bool TextAutoGenerateManager::chatIsFavorite(const QByteArray &chatId) const
 {
     if (chatId.isEmpty()) {
