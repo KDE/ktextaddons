@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-19 00:41+0000\n"
+"POT-Creation-Date: 2025-05-20 00:41+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -63,6 +63,11 @@ msgstr ""
 msgid ""
 "Engine: %1\n"
 "Model: %2"
+msgstr ""
+
+#: core/textautogeneratesearchmessageutils.cpp:29
+#, kde-format
+msgid "Go to message"
 msgstr ""
 
 #: core/textautogeneratetextclient.cpp:33
@@ -152,6 +157,59 @@ msgctxt "@title:window"
 msgid "Configure Openai IA"
 msgstr ""
 
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure AI text plugins"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:41
+#, kde-format
+msgctxt "@action"
+msgid "Add…"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:44
+#, kde-format
+msgid "Ask to AI"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:50
+#: widgets/view/textautogeneratehistorylistview.cpp:114
+#, kde-format
+msgctxt "@action"
+msgid "Modify…"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:57
+#: widgets/view/textautogeneratehistorylistview.cpp:151
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:60
+#, kde-format
+msgid "Do you want to remove it?"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Remove"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenuwidget.cpp:22
+#, kde-format
+msgid "Ask AI…"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenuwidget.cpp:49
+#, kde-format
+msgctxt "@action"
+msgid "Configure…"
+msgstr ""
+
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -233,12 +291,6 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr ""
 
-#: widgets/view/textautogeneratehistorylistview.cpp:114
-#, kde-format
-msgctxt "@action"
-msgid "Modify…"
-msgstr ""
-
 #: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
@@ -261,12 +313,6 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
-
-#: widgets/view/textautogeneratehistorylistview.cpp:151
-#, kde-format
-msgctxt "@action"
-msgid "Remove…"
 msgstr ""
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155

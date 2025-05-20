@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-19 00:41+0000\n"
+"POT-Creation-Date: 2025-05-20 00:41+0000\n"
 "PO-Revision-Date: 2025-05-14 09:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -66,6 +66,13 @@ msgid ""
 msgstr ""
 "Рушій: %1\n"
 "Модель: %2"
+
+#: core/textautogeneratesearchmessageutils.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Enter a message"
+msgid "Go to message"
+msgstr "Введіть повідомлення"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -154,6 +161,63 @@ msgctxt "@title:window"
 msgid "Configure Openai IA"
 msgstr "Налаштування ШІ Openai"
 
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure AI text plugins"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:41
+#, kde-format
+msgctxt "@action"
+msgid "Add…"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:44
+#, kde-format
+msgid "Ask to AI"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenulistview.cpp:50
+#: widgets/view/textautogeneratehistorylistview.cpp:114
+#, kde-format
+msgctxt "@action"
+msgid "Modify…"
+msgstr "Змінити…"
+
+#: widgets/menu/textautogeneratemenulistview.cpp:57
+#: widgets/view/textautogeneratehistorylistview.cpp:151
+#, kde-format
+msgctxt "@action"
+msgid "Remove…"
+msgstr "Вилучити…"
+
+#: widgets/menu/textautogeneratemenulistview.cpp:60
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this discussion?"
+msgid "Do you want to remove it?"
+msgstr "Хочете вилучити це обговорення?"
+
+#: widgets/menu/textautogeneratemenulistview.cpp:61
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Remove"
+msgctxt "@title"
+msgid "Remove"
+msgstr "Вилучити"
+
+#: widgets/menu/textautogeneratemenuwidget.cpp:22
+#, kde-format
+msgid "Ask AI…"
+msgstr ""
+
+#: widgets/menu/textautogeneratemenuwidget.cpp:49
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgctxt "@action"
+msgid "Configure…"
+msgstr "Налаштувати…"
+
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -235,12 +299,6 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "Нове спілкування"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:114
-#, kde-format
-msgctxt "@action"
-msgid "Modify…"
-msgstr "Змінити…"
-
 #: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
@@ -264,12 +322,6 @@ msgstr "Відновити"
 msgctxt "@action"
 msgid "Archive"
 msgstr "Архівувати"
-
-#: widgets/view/textautogeneratehistorylistview.cpp:151
-#, kde-format
-msgctxt "@action"
-msgid "Remove…"
-msgstr "Вилучити…"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
@@ -332,10 +384,6 @@ msgstr "Оновити"
 #~ msgctxt "@action"
 #~ msgid "Favorite…"
 #~ msgstr "Додати до улюблених…"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Remove"
-#~ msgstr "Вилучити"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Clear"
