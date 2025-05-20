@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "textautogeneratewidgetgui.h"
+#include "textautogenerateaskjobwidget.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new TextAutoGenerateWidgetGui;
+    auto w = new TextAutoGenerateAskJobWidget;
     w->resize(600, 400);
     w->show();
     app.exec();

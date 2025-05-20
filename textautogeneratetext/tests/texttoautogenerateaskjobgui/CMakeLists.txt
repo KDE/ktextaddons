@@ -3,6 +3,8 @@
 
 add_executable(texttoautogenerateaskjob_gui
     texttoautogenerateaskjob_gui.cpp
+    textautogenerateaskjobwidget.h
+    textautogenerateaskjobwidget.cpp
 )
 
 target_link_libraries(texttoautogenerateaskjob_gui
