@@ -19,7 +19,15 @@ TextAutoGenerateSearchJob::~TextAutoGenerateSearchJob() = default;
 
 bool TextAutoGenerateSearchJob::canStart() const
 {
-    return mManager && !mSearchText.isEmpty();
+    if (!mManager) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Manager is null! It's a bug";
+        return false;
+    }
+    if (mSearchText.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Text is empty! It's a bug";
+        return false;
+    }
+    return true;
 }
 
 void TextAutoGenerateSearchJob::start()
