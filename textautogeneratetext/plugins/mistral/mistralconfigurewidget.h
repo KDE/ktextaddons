@@ -7,11 +7,17 @@
 #pragma once
 
 #include <QWidget>
-
+class QLineEdit;
 class MistralConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit MistralConfigureWidget(QWidget *parent = nullptr);
     ~MistralConfigureWidget() override;
+
+    void setApiKey(const QString &key);
+    [[nodiscard]] QString apiKey() const;
+
+private:
+    QLineEdit *const mApiKey;
 };

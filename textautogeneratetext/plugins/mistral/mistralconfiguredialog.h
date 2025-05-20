@@ -15,6 +15,9 @@ public:
     explicit MistralConfigureDialog(QWidget *parent = nullptr);
     ~MistralConfigureDialog() override;
 
+    void setApiKey(const QString &key);
+    [[nodiscard]] QString apiKey() const;
+
 private:
     void readConfig();
     void writeConfig();

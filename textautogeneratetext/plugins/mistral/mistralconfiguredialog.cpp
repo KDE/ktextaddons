@@ -41,6 +41,16 @@ MistralConfigureDialog::~MistralConfigureDialog()
     writeConfig();
 }
 
+void MistralConfigureDialog::setApiKey(const QString &key)
+{
+    mMistralConfigureWidget->setApiKey(key);
+}
+
+QString MistralConfigureDialog::apiKey() const
+{
+    return mMistralConfigureWidget->apiKey();
+}
+
 void MistralConfigureDialog::readConfig()
 {
     create(); // ensure a window is created

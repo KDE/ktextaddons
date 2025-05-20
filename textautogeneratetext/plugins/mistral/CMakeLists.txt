@@ -27,6 +27,7 @@ target_link_libraries(autogeneratetext_mistral
     KF6::TextAutoGenerateText
     KF6::I18n
     KF6::ConfigGui
+    KF6::WidgetsAddons
     qt6keychain
 )
 
