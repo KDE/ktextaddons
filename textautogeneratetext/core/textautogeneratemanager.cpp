@@ -198,7 +198,7 @@ void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteA
         return;
     }
     setCurrentChatId(chatId);
-    setShowArchived(mTextAutoGenerateChatsModel->isInitialized(mCurrentChatId));
+    setShowArchived(mTextAutoGenerateChatsModel->chatIsArchived(mCurrentChatId));
     Q_EMIT showMessageId(messageId);
 }
 
