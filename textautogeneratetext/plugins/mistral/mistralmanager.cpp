@@ -5,6 +5,7 @@
 */
 
 #include "mistralmanager.h"
+#include "core/textautogenerateengineaccessmanager.h"
 
 MistralManager::MistralManager(QObject *parent)
     : QObject{parent}
