@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QWidget>
-class QLineEdit;
+class KPasswordLineEdit;
 class MistralConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -19,5 +19,5 @@ public:
     [[nodiscard]] QString apiKey() const;
 
 private:
-    QLineEdit *const mApiKey;
+    KPasswordLineEdit *const mApiKey;
 };
