@@ -28,8 +28,8 @@ TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAns
                         const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
                         if (!inProgress) {
                             if (mModelIndex == topLeft) {
-                                Q_EMIT waitingAnswerDone(topLeft);
                                 stopAndDelete();
+                                Q_EMIT waitingAnswerDone(topLeft);
                             }
                         }
                     }
