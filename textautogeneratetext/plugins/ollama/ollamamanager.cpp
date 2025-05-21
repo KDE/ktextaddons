@@ -28,12 +28,6 @@ OllamaManager::OllamaManager(QObject *parent)
 
 OllamaManager::~OllamaManager() = default;
 
-OllamaManager *OllamaManager::self()
-{
-    static OllamaManager s_self;
-    return &s_self;
-}
-
 void OllamaManager::deleteModel(const QString &modelName)
 {
     // TODO

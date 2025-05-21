@@ -24,7 +24,6 @@ public:
 
     explicit OllamaManager(QObject *parent = nullptr);
     ~OllamaManager() override;
-    static OllamaManager *self();
 
     void loadModels();
     void getVersion();
