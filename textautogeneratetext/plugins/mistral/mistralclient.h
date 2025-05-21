@@ -7,7 +7,7 @@
 #pragma once
 
 #include <TextAutoGenerateText/TextAutoGenerateTextClient>
-
+class MistralManager;
 class MistralClient : public TextAutoGenerateText::TextAutoGenerateTextClient
 {
     Q_OBJECT
@@ -25,4 +25,7 @@ public:
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
     [[nodiscard]] QString webSite() const override;
     [[nodiscard]] QString modelName() const override;
+
+private:
+    MistralManager *const mManager;
 };

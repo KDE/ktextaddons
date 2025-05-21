@@ -6,12 +6,15 @@
 
 #include "mistralclient.h"
 #include "mistralconfiguredialog.h"
+#include "mistralmanager.h"
 #include "mistralplugin.h"
+
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
 MistralClient::MistralClient(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextClient{parent}
+    , mManager(new MistralManager(parent))
 {
 }
 
@@ -29,7 +32,7 @@ QString MistralClient::translatedName() const
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin *MistralClient::createTextAutoGeneratePlugin()
 {
-    return new MistralPlugin(this);
+    return new MistralPlugin(mManager, this);
 }
 
 TextAutoGenerateText::TextAutoGenerateTextClient::EngineType MistralClient::engineType() const

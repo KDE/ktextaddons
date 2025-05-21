@@ -6,8 +6,9 @@
 
 #include "mistralplugin.h"
 using namespace Qt::Literals::StringLiterals;
-MistralPlugin::MistralPlugin(QObject *parent)
+MistralPlugin::MistralPlugin(MistralManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
+    , mMistralManager(manager)
 {
 }
 

@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include <core/textautogeneratetextplugin.h>
-
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
+class MistralManager;
 class MistralPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:
-    explicit MistralPlugin(QObject *parent = nullptr);
+    explicit MistralPlugin(MistralManager *manager, QObject *parent = nullptr);
     ~MistralPlugin() override;
 
     [[nodiscard]] bool loadSettings() override;
@@ -27,4 +27,7 @@ protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
     void cancelRequest(const QByteArray &uuid) override;
+
+private:
+    MistralManager *const mMistralManager;
 };
