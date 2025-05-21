@@ -30,7 +30,6 @@ TextAutoGenerateEngineLoader::~TextAutoGenerateEngineLoader() = default;
 
 void TextAutoGenerateEngineLoader::loadPlugins()
 {
-    qDebug() << " void TextAutoGenerateEngineLoader::loadPlugins()*******";
     const QStringList libPaths = QCoreApplication::libraryPaths();
     const QString pathSuffix(QStringLiteral("/kf6/textautogeneratetext/"));
     for (const QString &libPath : libPaths) {
@@ -52,7 +51,6 @@ void TextAutoGenerateEngineLoader::loadPlugin(const QString &pluginPath)
 {
     QPluginLoader plugin(pluginPath);
     const QString pluginIID = plugin.metaData()["IID"_L1].toString();
-    qDebug() << "pluginPath  " << pluginPath << " pluginIID " << pluginIID;
     if (!pluginIID.isEmpty()) {
         if (d->loadedPlugins.contains(pluginIID)) {
             qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "Skipping already loaded" << pluginPath;
