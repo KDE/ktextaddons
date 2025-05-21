@@ -66,7 +66,7 @@ public:
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QString &searchText);
     void checkCurrentChat();
     void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
-    void askToLLM(const QString &msg);
+    void askToAssistant(const QString &msg);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

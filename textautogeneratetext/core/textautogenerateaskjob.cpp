@@ -57,7 +57,7 @@ void TextAutoGenerateAskJob::slotInitializeDone()
             this,
             &TextAutoGenerateAskJob::slotAskToLlmAnswer);
 
-    mManager->askToLLM(mText);
+    mManager->askToAssistant(mText);
 }
 
 void TextAutoGenerateAskJob::slotAskToLlmAnswer(const QString &msg)
