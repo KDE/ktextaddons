@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QVariant>
+#include <QDebug>
 namespace TextAutoGenerateText
 {
 /**
@@ -35,3 +35,5 @@ struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
     std::chrono::nanoseconds duration = {};
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextReplyInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &t);
