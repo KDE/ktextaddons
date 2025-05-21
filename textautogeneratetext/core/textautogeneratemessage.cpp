@@ -245,7 +245,7 @@ TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::answerInfo()
     return mMessageInfo;
 }
 
-QJsonObject TextAutoGenerateMessage::convertToChat() const
+QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
 {
     QJsonObject obj;
     QString role;

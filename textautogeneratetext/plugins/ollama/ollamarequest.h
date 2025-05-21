@@ -7,6 +7,7 @@
 #pragma once
 
 #include <QDebug>
+#include <QJsonObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextContext>
 class OllamaRequest
 {
@@ -26,7 +27,11 @@ public:
     [[nodiscard]] QString model() const;
     void setModel(const QString &newModel);
 
+    [[nodiscard]] QJsonObject messages() const;
+    void setMessages(const QJsonObject &newMessages);
+
 private:
+    QJsonObject mMessages;
     QString mMessage;
     TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     QString mModel;

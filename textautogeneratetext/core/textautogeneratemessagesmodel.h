@@ -8,6 +8,7 @@
 #include "textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
+#include <QJsonArray>
 namespace TextAutoGenerateText
 {
 /**
@@ -61,6 +62,7 @@ public:
     [[nodiscard]] QByteArray chatId() const;
     void setChatId(const QByteArray &newChatId);
 
+    [[nodiscard]] QJsonArray convertToOllamaChat() const;
 Q_SIGNALS:
     void conversationCleared();
 

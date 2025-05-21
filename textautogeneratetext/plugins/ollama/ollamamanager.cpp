@@ -154,20 +154,17 @@ OllamaReply *OllamaManager::getCompletion(const OllamaRequest &request)
 
 OllamaReply *OllamaManager::getChatCompletion(const OllamaRequest &request)
 {
-    // TODO fix me
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     QJsonObject data;
-    // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
-    data["prompt"_L1] = request.message();
+    // TODO data["prompt"_L1] = request.message();
     data["model"_L1] = OllamaSettings::model();
-    const auto context = request.context().toJson();
-    if (!context.isNull()) {
-        data["context"_L1] = context;
-    }
+    data["messages"_L1] = request.messages();
+    /*
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
+    */
     auto buf = new QBuffer{this};
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 

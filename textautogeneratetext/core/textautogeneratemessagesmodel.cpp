@@ -8,6 +8,7 @@
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 #include <QDateTime>
+#include <QJsonObject>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
@@ -311,6 +312,15 @@ QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) 
     }
     const QModelIndex idx = createIndex(std::distance(mMessages.begin(), it), 0);
     return idx;
+}
+
+QJsonArray TextAutoGenerateMessagesModel::convertToOllamaChat() const
+{
+    QJsonArray array;
+    for (const auto &msg : mMessages) {
+        array.append(msg.convertToOllamaChatJson());
+    }
+    return array;
 }
 
 #include "moc_textautogeneratemessagesmodel.cpp"

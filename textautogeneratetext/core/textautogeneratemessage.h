@@ -92,7 +92,7 @@ public:
 
     [[nodiscard]] TextAutoGenerateAnswerInfo *answerInfo();
 
-    [[nodiscard]] QJsonObject convertToChat() const;
+    [[nodiscard]] QJsonObject convertToOllamaChatJson() const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;

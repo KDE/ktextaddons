@@ -34,7 +34,7 @@ void OllamaRequest::setContext(const TextAutoGenerateText::TextAutoGenerateTextC
 
 bool OllamaRequest::operator==(const OllamaRequest &other) const
 {
-    return other.context() == mContext && other.message() == mMessage && other.model() == mModel;
+    return other.context() == mContext && other.message() == mMessage && other.model() == mModel && mMessages == other.messages();
 }
 
 QString OllamaRequest::model() const
@@ -47,11 +47,22 @@ void OllamaRequest::setModel(const QString &newModel)
     mModel = newModel;
 }
 
+QJsonObject OllamaRequest::messages() const
+{
+    return mMessages;
+}
+
+void OllamaRequest::setMessages(const QJsonObject &newMessages)
+{
+    mMessages = newMessages;
+}
+
 QDebug operator<<(QDebug d, const OllamaRequest &t)
 {
     d.space() << "message:" << t.message();
     d.space() << "context:" << t.context();
     d.space() << "model:" << t.model();
+    d.space() << "messages:" << t.messages();
     return d;
 }
 
