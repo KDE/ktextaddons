@@ -5,13 +5,11 @@
 */
 
 #include "textautogeneratereply.h"
-
-using namespace TextAutoGenerateText;
 #include <QJsonArray>
 #include <QNetworkReply>
 
 using namespace Qt::StringLiterals;
-
+using namespace TextAutoGenerateText;
 TextAutoGenerateReply::TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : QObject{parent}
     , mReply{netReply}

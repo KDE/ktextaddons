@@ -37,6 +37,7 @@ public:
      * When the class in instantiated the type of request should be specified
      */
     enum class RequestTypes : uint8_t {
+        Unknown,
         StreamingGenerate,
         StreamingChat,
         Show
@@ -58,8 +59,8 @@ public:
     /**
      * @brief Get extra information about the reply.
      *
-     * This function returns a KLLMReplyInfo object containing information about this reply. If the reply has not finished, the KLLMReplyInfo object will have
-     * all members set to their default values.
+     * This function returns a TextAutoGenerateTextReplyInfo object containing information about this reply. If the reply has not finished, the KLLMReplyInfo
+     * object will have all members set to their default values.
      *
      * @return Extra information about the reply.
      */
@@ -72,7 +73,7 @@ public:
      *
      * @return Corresponding request type.
      */
-    const RequestTypes &requestType() const;
+    const TextAutoGenerateText::TextAutoGenerateReply::RequestTypes &requestType() const;
 
 Q_SIGNALS:
     /**
@@ -99,7 +100,8 @@ protected:
 
     QList<QJsonDocument> mTokens;
 
-    const RequestTypes mRequestType = RequestTypes::StreamingGenerate;
+    const RequestTypes mRequestType = RequestTypes::Unknown;
+    // TODO context remove it
     TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
