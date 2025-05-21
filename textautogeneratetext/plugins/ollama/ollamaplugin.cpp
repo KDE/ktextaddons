@@ -107,15 +107,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     req.setMessage(info.message);
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
-    /*
-    for (const auto &msg : m_messages | std::views::reverse) {
-        if (msg.sender == Sender::LLM) {
-            req.setContext(message.context);
-            break;
-        }
-    }
-    */
-    auto reply = OllamaManager::self()->getCompletion(req);
+    auto reply = OllamaManager::self()->getChatCompletion(req);
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
     mConnections.insert(

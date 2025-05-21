@@ -31,6 +31,7 @@ public:
      */
     enum class RequestTypes : uint8_t {
         StreamingGenerate,
+        StreamingChat,
         Show
     };
     explicit OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);

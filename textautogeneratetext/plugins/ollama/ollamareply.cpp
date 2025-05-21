@@ -45,6 +45,20 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
         case RequestTypes::Show:
             mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
             break;
+        case RequestTypes::StreamingChat: {
+            auto completeTokens = mIncompleteTokens.split('\n');
+            if (completeTokens.size() <= 1) {
+                return;
+            }
+            mIncompleteTokens = completeTokens.last();
+            completeTokens.removeLast();
+
+            mTokens.reserve(completeTokens.count());
+            for (const auto &tok : std::as_const(completeTokens)) {
+                mTokens.append(QJsonDocument::fromJson(tok));
+            }
+            break;
+        }
         case RequestTypes::StreamingGenerate:
             auto completeTokens = mIncompleteTokens.split('\n');
             if (completeTokens.size() <= 1) {
@@ -75,6 +89,11 @@ QString OllamaReply::readResponse() const
 {
     QString ret;
     switch (mRequestType) {
+    case RequestTypes::StreamingChat:
+        for (const auto &tok : mTokens) {
+            ret += tok["message"_L1]["content"_L1].toString();
+        }
+        break;
     case RequestTypes::Show:
         // TODO
         break;

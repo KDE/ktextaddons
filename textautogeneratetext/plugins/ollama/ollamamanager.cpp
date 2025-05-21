@@ -157,7 +157,6 @@ OllamaReply *OllamaManager::getChatCompletion(const OllamaRequest &request)
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     QJsonObject data;
-    // TODO data["prompt"_L1] = request.message();
     data["model"_L1] = OllamaSettings::model();
     data["messages"_L1] = request.messages();
     /*
@@ -165,15 +164,12 @@ OllamaReply *OllamaManager::getChatCompletion(const OllamaRequest &request)
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
     */
-    auto buf = new QBuffer{this};
-    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
-
-    auto reply = new OllamaReply{TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, buf),
-                                 OllamaReply::RequestTypes::StreamingGenerate,
-                                 this};
-    connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
+    auto reply = new OllamaReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        OllamaReply::RequestTypes::StreamingChat,
+        this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
-        buf->deleteLater();
     });
     return reply;
 }
