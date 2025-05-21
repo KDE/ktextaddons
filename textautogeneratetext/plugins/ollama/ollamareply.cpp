@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Loren Burkholder <computersemiexpert@outlook.com>
 // SPDX-FileCopyrightText: 2023 Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.com>
-// SPDX-FileCopyrightText: SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+// SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 // Based on Alpaka code
 // SPDX-License-Identifier: GPL-2.0-or-later
 
