@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 00:41+0000\n"
-"PO-Revision-Date: 2025-05-14 03:38+0200\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
+"PO-Revision-Date: 2025-05-20 03:51+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -67,12 +67,10 @@ msgstr ""
 "ძრავა: %1\n"
 "მოდელი: %2"
 
-#: core/textautogeneratesearchmessageutils.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#: core/textautogeneratesearchmessageutils.cpp:34
+#, kde-format
 msgid "Go to message"
-msgstr "შეიყვანეთ შეტყობინება"
+msgstr "შეტყობინებაზე გადასვლა"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -94,6 +92,11 @@ msgstr "Mistral AI"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral AI-ის მორგება"
+
+#: plugins/mistral/mistralconfigurewidget.cpp:22
+#, kde-format
+msgid "Api Key:"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -165,18 +168,18 @@ msgstr "Openai IA-ის მორგება"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "ხი-ის ტექსტური დამატებების მორგება"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "დამატება…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "ხი-სთვის კითხვა"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -193,15 +196,12 @@ msgid "Remove…"
 msgstr "წაშლა…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "წაშლით ამ კამათს?"
+msgstr "მართლა გნებავთ მისი წაშლა?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "წაშლა"
@@ -209,11 +209,10 @@ msgstr "წაშლა"
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "ხი-სთვის კითხვა…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "მორგება…"
@@ -334,43 +333,43 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "მონიშნულის კოპირება"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratelistview.cpp:93
+#: widgets/view/textautogeneratelistview.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:372
+#: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "ჩასწორება..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

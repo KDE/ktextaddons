@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 00:41+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -64,7 +64,7 @@ msgid ""
 "Model: %2"
 msgstr ""
 
-#: core/textautogeneratesearchmessageutils.cpp:29
+#: core/textautogeneratesearchmessageutils.cpp:34
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Enter a message"
@@ -91,6 +91,11 @@ msgstr "Mistral AI"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral IA 설정"
+
+#: plugins/mistral/mistralconfigurewidget.cpp:22
+#, kde-format
+msgid "Api Key:"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -332,31 +337,31 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "선택 영역 복사"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratelistview.cpp:93
+#: widgets/view/textautogeneratelistview.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "모두 선택"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:372
+#: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -364,13 +369,13 @@ msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

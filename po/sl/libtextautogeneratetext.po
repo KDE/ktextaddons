@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 00:41+0000\n"
-"PO-Revision-Date: 2025-05-14 07:00+0200\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
+"PO-Revision-Date: 2025-05-20 07:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -67,12 +67,10 @@ msgstr ""
 "Stroj: %1\n"
 "Model: %2"
 
-#: core/textautogeneratesearchmessageutils.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#: core/textautogeneratesearchmessageutils.cpp:34
+#, kde-format
 msgid "Go to message"
-msgstr "Vnesite sporočilo"
+msgstr "Pojdi na sporočilo"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -94,6 +92,11 @@ msgstr "Mistral AI"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Konfiguriraj Mistral IA"
+
+#: plugins/mistral/mistralconfigurewidget.cpp:22
+#, kde-format
+msgid "Api Key:"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -165,18 +168,18 @@ msgstr "Konfiguriraj Openai IA"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Konfiguriraj besedilne vtičnike umetne inteligence"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Dodaj…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Vprašaj umetno inteligenco"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -193,15 +196,12 @@ msgid "Remove…"
 msgstr "Odstrani…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "Ali želite odstraniti to razpravo?"
+msgstr "Ali želite to odstraniti?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Odstrani"
@@ -209,11 +209,10 @@ msgstr "Odstrani"
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Vprašaj umetno inteligenco…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
@@ -334,43 +333,43 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Odstrani razpravo"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Kopiraj izbiro"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: widgets/view/textautogeneratelistview.cpp:93
+#: widgets/view/textautogeneratelistview.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:372
+#: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Uredi..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 00:41+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2025-04-08 08:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -64,7 +64,7 @@ msgid ""
 "Model: %2"
 msgstr ""
 
-#: core/textautogeneratesearchmessageutils.cpp:29
+#: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
 msgstr ""
@@ -89,6 +89,11 @@ msgstr "Mistral-tekoäly"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral-tekoälyn asetukset"
+
+#: plugins/mistral/mistralconfigurewidget.cpp:22
+#, kde-format
+msgid "Api Key:"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -332,43 +337,43 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistview.cpp:93
+#: widgets/view/textautogeneratelistview.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:372
+#: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

@@ -1,5 +1,5 @@
 # Spanish translations for libtextautogeneratetext.po package.
-# Copyright (C) 2025 This file is part of KDE
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 # Automatically generated, 2025.
 #
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 00:41+0000\n"
-"PO-Revision-Date: 2025-05-14 17:30+0100\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
+"PO-Revision-Date: 2025-05-21 01:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -68,12 +68,10 @@ msgstr ""
 "Motor: %1\n"
 "Modelo: %2"
 
-#: core/textautogeneratesearchmessageutils.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#: core/textautogeneratesearchmessageutils.cpp:34
+#, kde-format
 msgid "Go to message"
-msgstr "Introduzca un mensaje"
+msgstr "Ir al mensaje"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -95,6 +93,11 @@ msgstr "IA Mistral"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configurar IA Mistral"
+
+#: plugins/mistral/mistralconfigurewidget.cpp:22
+#, kde-format
+msgid "Api Key:"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -166,18 +169,18 @@ msgstr "Configurar la IA OpenAI"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Configurar complementos de texto de IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Añadir…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Preguntar a la IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -194,27 +197,23 @@ msgid "Remove…"
 msgstr "Eliminar…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "¿Desea eliminar esta discusión?"
+msgstr "¿Desea eliminarlo?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr "Eliminar…"
+msgstr "Eliminar"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Preguntar a la IA…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Configurar…"
@@ -335,43 +334,43 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Eliminar discusión"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copiar selección"
 
-#: widgets/view/textautogeneratelistview.cpp:85
+#: widgets/view/textautogeneratelistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copiar"
 
-#: widgets/view/textautogeneratelistview.cpp:93
+#: widgets/view/textautogeneratelistview.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:372
+#: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Editar…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Copiar"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
