@@ -20,6 +20,12 @@ target_sources(autogeneratetext_mistral PRIVATE
     mistralconfiguredialog.cpp
     mistralconfigurewidget.h
     mistralconfigurewidget.cpp
+
+    mistralmanager.h
+    mistralmanager.cpp
+
+    mistralutils.h
+    mistralutils.cpp
 )
 
 target_link_libraries(autogeneratetext_mistral
