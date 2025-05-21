@@ -119,6 +119,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, chatId, this] {
                                                        manager()->changeInProgress(chatId, messageUuid, false);
+                                                       qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << " progress finished";
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
 #if 0
