@@ -47,12 +47,12 @@ void OllamaRequest::setModel(const QString &newModel)
     mModel = newModel;
 }
 
-QJsonObject OllamaRequest::messages() const
+QJsonArray OllamaRequest::messages() const
 {
     return mMessages;
 }
 
-void OllamaRequest::setMessages(const QJsonObject &newMessages)
+void OllamaRequest::setMessages(const QJsonArray &newMessages)
 {
     mMessages = newMessages;
 }

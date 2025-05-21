@@ -106,6 +106,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     OllamaRequest req;
     req.setMessage(info.message);
     req.setModel(currentModel());
+    req.setMessages(info.messagesArray);
     /*
     for (const auto &msg : m_messages | std::views::reverse) {
         if (msg.sender == Sender::LLM) {
