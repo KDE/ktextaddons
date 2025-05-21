@@ -16,12 +16,13 @@
 #include <QLineEdit>
 #include <QPlainTextEdit>
 
-OllamaConfigureWidget::OllamaConfigureWidget(QWidget *parent)
+OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mServerUrl(new QLineEdit(this))
     , mPrompt(new QPlainTextEdit(this))
     , mModelComboBoxWidget(new OllamaComboBoxWidget(this))
     , mMessageWidget(new KMessageWidget(this))
+    , mManager(manager)
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -68,7 +69,7 @@ void OllamaConfigureWidget::saveSettings()
 void OllamaConfigureWidget::fillModels()
 {
     mMessageWidget->animatedHide();
-    connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
+    connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
             mMessageWidget->setText(modelinfo.errorOccured);
@@ -78,7 +79,7 @@ void OllamaConfigureWidget::fillModels()
             loadSettings();
         }
     });
-    OllamaManager::self()->loadModels();
+    mManager->loadModels();
 }
 
 #include "moc_ollamaconfigurewidget.cpp"

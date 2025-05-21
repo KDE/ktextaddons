@@ -7,20 +7,20 @@
 #include "ollamaplugin.h"
 #include "autogeneratetext_ollama_debug.h"
 #include "core/textautogeneratemanager.h"
-#include "core/textautogeneratemessagesmodel.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 
 using namespace Qt::Literals::StringLiterals;
-OllamaPlugin::OllamaPlugin(QObject *parent)
+OllamaPlugin::OllamaPlugin(OllamaManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
+    , mManager(manager)
 {
     if (!loadSettings()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to load settings";
         return;
     }
 
-    connect(OllamaManager::self(), &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
+    connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
             Q_EMIT errorOccurred(modelinfo.errorOccured);
@@ -28,7 +28,7 @@ OllamaPlugin::OllamaPlugin(QObject *parent)
             setReady(true);
         }
     });
-    OllamaManager::self()->loadModels();
+    mManager->loadModels();
 }
 
 OllamaPlugin::~OllamaPlugin() = default;
@@ -83,7 +83,7 @@ void OllamaPlugin::askToAssistant(const QString &msg)
     OllamaRequest req;
     req.setMessage(msg);
     req.setModel(currentModel());
-    auto reply = OllamaManager::self()->getCompletion(req);
+    auto reply = mManager->getCompletion(req);
     const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
     mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, this]() {
                                                                               Q_EMIT askToAssistantAnswer(reply->readResponse());
@@ -107,7 +107,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     req.setMessage(info.message);
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
-    auto reply = OllamaManager::self()->getChatCompletion(req);
+    auto reply = mManager->getChatCompletion(req);
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
     mConnections.insert(

@@ -12,12 +12,12 @@
 
 #include <QMultiHash>
 #include <QPair>
-
+class OllamaManager;
 class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:
-    explicit OllamaPlugin(QObject *parent = nullptr);
+    explicit OllamaPlugin(OllamaManager *manager, QObject *parent = nullptr);
     ~OllamaPlugin() override;
 
     [[nodiscard]] bool loadSettings() override;
@@ -36,4 +36,5 @@ protected:
 
 private:
     QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
+    OllamaManager *const mManager;
 };

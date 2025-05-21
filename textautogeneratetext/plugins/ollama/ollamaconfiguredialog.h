@@ -7,11 +7,12 @@
 
 #include <QDialog>
 class OllamaConfigureWidget;
+class OllamaManager;
 class OllamaConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit OllamaConfigureDialog(QWidget *parent = nullptr);
+    explicit OllamaConfigureDialog(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaConfigureDialog() override;
 
 private:

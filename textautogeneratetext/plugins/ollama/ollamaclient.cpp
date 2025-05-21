@@ -6,6 +6,7 @@
 
 #include "ollamaclient.h"
 #include "ollamaconfiguredialog.h"
+#include "ollamamanager.h"
 #include "ollamaplugin.h"
 #include "ollamasettings.h"
 #include <KLocalizedString>
@@ -13,6 +14,7 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaClient::OllamaClient(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextClient{parent}
+    , mManager(new OllamaManager(this))
 {
 }
 
@@ -30,7 +32,7 @@ QString OllamaClient::translatedName() const
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGeneratePlugin()
 {
-    return new OllamaPlugin(this);
+    return new OllamaPlugin(mManager, this);
 }
 
 TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engineType() const
@@ -46,7 +48,7 @@ bool OllamaClient::hasConfigurationDialog() const
 bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
 {
     // TODO use QPointer ?
-    OllamaConfigureDialog d(parentWidget);
+    OllamaConfigureDialog d(mManager, parentWidget);
     return d.exec();
 }
 

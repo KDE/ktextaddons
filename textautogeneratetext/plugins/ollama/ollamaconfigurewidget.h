@@ -10,11 +10,12 @@ class QLineEdit;
 class OllamaComboBoxWidget;
 class QPlainTextEdit;
 class KMessageWidget;
+class OllamaManager;
 class OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaConfigureWidget(QWidget *parent = nullptr);
+    explicit OllamaConfigureWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaConfigureWidget() override;
 
     void loadSettings();
@@ -26,4 +27,5 @@ private:
     QPlainTextEdit *const mPrompt;
     OllamaComboBoxWidget *const mModelComboBoxWidget;
     KMessageWidget *const mMessageWidget;
+    OllamaManager *const mManager;
 };

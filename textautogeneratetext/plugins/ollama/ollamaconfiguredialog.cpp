@@ -18,9 +18,9 @@ namespace
 const char myOllamaConfigureDialogGroupName[] = "OllamaConfigureDialog";
 }
 
-OllamaConfigureDialog::OllamaConfigureDialog(QWidget *parent)
+OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *parent)
     : QDialog(parent)
-    , mOllamaConfigureWidget(new OllamaConfigureWidget(this))
+    , mOllamaConfigureWidget(new OllamaConfigureWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     auto mainLayout = new QVBoxLayout(this);
