@@ -92,14 +92,15 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         msg.setAnswerUuid(llmUuid);
 
         d->manager->addMessage(chatId, std::move(msg));
-        d->manager->addMessage(chatId, std::move(msgLlm));
         SendToAssistantInfo info;
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
         auto messageModel = d->manager->messagesModelFromChatId(chatId);
         info.messagesArray = messageModel->convertToOllamaChat();
-        qDebug() << " info " << info;
+
+        d->manager->addMessage(chatId, std::move(msgLlm));
+        // qDebug() << " info " << info;
         sendToAssistant(std::move(info));
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
