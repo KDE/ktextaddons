@@ -12,14 +12,12 @@
 using namespace Qt::StringLiterals;
 
 OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
-    : QObject{parent}
-    , mReply{netReply}
-    , mRequestType{requestType}
+    : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}
 {
     connect(mReply, &QNetworkReply::finished, mReply, [this] {
         // Normally, we could assume that the tokens will never be empty once the request finishes, but it could be possible
         // that the request failed and we have no tokens to parse.
-        if (mRequestType == RequestTypes::StreamingGenerate && !mTokens.empty()) {
+        if ((mRequestType == RequestTypes::StreamingGenerate || mRequestType == RequestTypes::StreamingChat) && !mTokens.empty()) {
             const auto finalResponse = mTokens.constLast();
             mContext.setContextData(finalResponse["context"_L1].toArray());
             mInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
@@ -29,9 +27,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             mInfo.tokenCount = finalResponse["eval_count"_L1].toVariant().toULongLong();
             mInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
         }
-
         qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama response finished";
-        mFinished = true;
         Q_EMIT finished();
     });
     connect(mReply, &QNetworkReply::errorOccurred, mReply, [](QNetworkReply::NetworkError e) {
@@ -80,11 +76,6 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
 
 OllamaReply::~OllamaReply() = default;
 
-const OllamaReply::RequestTypes &OllamaReply::requestType() const
-{
-    return mRequestType;
-}
-
 QString OllamaReply::readResponse() const
 {
     QString ret;
@@ -103,21 +94,6 @@ QString OllamaReply::readResponse() const
         }
     }
     return ret;
-}
-
-const TextAutoGenerateText::TextAutoGenerateTextContext &OllamaReply::context() const
-{
-    return mContext;
-}
-
-const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &OllamaReply::info() const
-{
-    return mInfo;
-}
-
-bool OllamaReply::isFinished() const
-{
-    return mFinished;
 }
 
 #include "moc_ollamareply.cpp"
