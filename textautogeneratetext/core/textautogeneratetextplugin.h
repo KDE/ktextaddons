@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QDebug>
+#include <QJsonArray>
 #include <QObject>
 #include <memory>
 namespace TextAutoGenerateText
@@ -26,6 +27,7 @@ public:
         QString message;
         QByteArray messageUuid;
         QByteArray chatId;
+        QJsonArray messagesArray;
     };
     explicit TextAutoGenerateTextPlugin(QObject *parent = nullptr);
     ~TextAutoGenerateTextPlugin() override;

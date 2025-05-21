@@ -60,6 +60,7 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QBy
             info.message = str;
             info.messageUuid = llmUuid;
             info.chatId = chatId;
+            info.messagesArray = messageModel->convertToOllamaChat();
 
             sendToAssistant(std::move(info));
         } else {
@@ -96,6 +97,9 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
+        auto messageModel = d->manager->messagesModelFromChatId(chatId);
+        info.messagesArray = messageModel->convertToOllamaChat();
+        qDebug() << " info " << info;
         sendToAssistant(std::move(info));
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
@@ -127,6 +131,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlug
     d.space() << "message:" << t.message;
     d.space() << "messageUuid:" << t.messageUuid;
     d.space() << "chatId:" << t.chatId;
+    d.space() << "messagesArray:" << t.messagesArray;
     return d;
 }
 

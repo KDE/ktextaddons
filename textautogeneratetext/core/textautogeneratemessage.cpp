@@ -198,6 +198,8 @@ TextAutoGenerateMessage::Sender TextAutoGenerateMessage::senderFromString(const 
         return TextAutoGenerateMessage::Sender::User;
     } else if (str == "llm"_L1) {
         return TextAutoGenerateMessage::Sender::Assistant;
+    } else if (str == "system"_L1) {
+        return TextAutoGenerateMessage::Sender::System;
     } else {
         return TextAutoGenerateMessage::Sender::Unknown;
     }
@@ -254,10 +256,13 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
         break;
     case Sender::User:
         role = QStringLiteral("user");
+        break;
     case Sender::Assistant:
         role = QStringLiteral("assistant");
+        break;
     case Sender::System:
         role = QStringLiteral("system");
+        break;
     }
     if (role.isEmpty()) {
         return obj;
