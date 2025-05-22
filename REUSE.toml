@@ -17,3 +17,10 @@ path = "docs/pics/**.png"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 KDE Community"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = ["textautogeneratetext/plugins/ollama/modelsmanager/available_models.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "jeffser <jeffrysamuer@gmail.com>"
+SPDX-License-Identifier = "GPL-2.0-or-later"
+
