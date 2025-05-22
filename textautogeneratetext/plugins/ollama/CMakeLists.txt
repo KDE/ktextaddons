@@ -2,10 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
 
-find_package(Qt6 REQUIRED COMPONENTS Core)
-
-add_library(autogeneratetext_ollama MODULE
-    modelsmanager/ollamamodelinfosdelegate.h modelsmanager/ollamamodelinfosdelegate.cpp)
+add_library(autogeneratetext_ollama MODULE)
 
 kconfig_add_kcfg_files(autogeneratetext_ollama GENERATE_MOC ollamasettings.kcfgc)
 
@@ -60,10 +57,12 @@ target_sources(autogeneratetext_ollama PRIVATE
     modelsmanager/ollamamodelinfosmodel.cpp
     modelsmanager/ollamamodelinfossortproxymodel.h
     modelsmanager/ollamamodelinfossortproxymodel.cpp
+
+    modelsmanager/ollamamodelinfosdelegate.h
+    modelsmanager/ollamamodelinfosdelegate.cpp
 )
 
 target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutoGenerateText KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons)
-target_link_libraries(autogeneratetext_ollama PRIVATE Qt6::Core)
 
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
