@@ -15,6 +15,9 @@ public:
     explicit OpenAIConfigureDialog(QWidget *parent = nullptr);
     ~OpenAIConfigureDialog() override;
 
+    void setApiKey(const QString &key);
+    [[nodiscard]] QString apiKey() const;
+
 private:
     void readConfig();
     void writeConfig();

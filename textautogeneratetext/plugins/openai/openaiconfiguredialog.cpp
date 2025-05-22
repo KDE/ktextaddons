@@ -55,4 +55,15 @@ void OpenAIConfigureDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOpenAIConfigureDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
+
+void OpenAIConfigureDialog::setApiKey(const QString &key)
+{
+    mOpenaiConfigureWidget->setApiKey(key);
+}
+
+QString OpenAIConfigureDialog::apiKey() const
+{
+    return mOpenaiConfigureWidget->apiKey();
+}
+
 #include "moc_openaiconfiguredialog.cpp"
