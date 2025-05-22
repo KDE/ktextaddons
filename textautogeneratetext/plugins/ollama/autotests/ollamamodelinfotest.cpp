@@ -21,3 +21,5 @@ void OllamaModelInfoTest::shouldHaveDefaultValues()
     QVERIFY(w.languages().isEmpty());
     QVERIFY(!w.isValid());
 }
+
+#include "moc_ollamamodelinfotest.cpp"

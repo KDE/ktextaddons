@@ -14,11 +14,19 @@ class OllamaModelInfosModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
+    enum ModelInfoRoles {
+        ModelName = Qt::UserRole + 1,
+    };
+    Q_ENUM(ModelInfoRoles)
+
     explicit OllamaModelInfosModel(QObject *parent = nullptr);
     ~OllamaModelInfosModel() override;
 
     [[nodiscard]] QList<OllamaModelInfo> modelInfos() const;
     void setModelInfos(const QList<OllamaModelInfo> &newModelInfos);
+
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
 private:
     QList<OllamaModelInfo> mModelInfos;

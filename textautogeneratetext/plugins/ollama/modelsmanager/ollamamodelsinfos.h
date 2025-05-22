@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
 #include "ollamamodelinfo.h"
+#include "textautogenerateollama_private_export.h"
 #include <QJsonObject>
 
-class OllamaModelsInfos
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelsInfos
 {
 public:
     OllamaModelsInfos();

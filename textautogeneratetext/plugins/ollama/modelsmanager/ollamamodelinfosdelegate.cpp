@@ -11,3 +11,5 @@ OllamaModelInfosDelegate::OllamaModelInfosDelegate(QListView *view)
 }
 
 OllamaModelInfosDelegate::~OllamaModelInfosDelegate() = default;
+
+#include "moc_ollamamodelinfosdelegate.cpp"

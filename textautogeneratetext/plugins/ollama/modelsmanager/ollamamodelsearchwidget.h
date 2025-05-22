@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class QLineEdit;
-class OllamaModelSearchWidget : public QWidget
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelSearchWidget : public QWidget
 {
     Q_OBJECT
 public:

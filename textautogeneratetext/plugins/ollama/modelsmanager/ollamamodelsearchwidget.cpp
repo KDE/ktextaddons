@@ -17,6 +17,7 @@ OllamaModelSearchWidget::OllamaModelSearchWidget(QWidget *parent)
 
     mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
     mainLayout->addWidget(mSearchLineEdit);
+    mSearchLineEdit->setClearButtonEnabled(true);
 }
 
 OllamaModelSearchWidget::~OllamaModelSearchWidget() = default;

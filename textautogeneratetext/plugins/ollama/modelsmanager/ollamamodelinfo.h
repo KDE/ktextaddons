@@ -11,18 +11,22 @@ class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfo
 {
     Q_GADGET
 public:
-    enum class Category : uint8_t {
-        Unknown,
-        Tools,
-        Small,
-        Medium,
-        Big,
-        Huge,
-        Multilingual,
-        Code,
-        Math,
+    enum class Category : uint16_t {
+        Unknown = 0,
+        Tools = 1,
+        Small = 2,
+        Medium = 4,
+        Big = 8,
+        Huge = 16,
+        Multilingual = 32,
+        Code = 64,
+        Math = 128,
+        Vision = 256,
+        Embedding = 512,
+        Reasoning = 1024,
     };
-    Q_ENUM(Category)
+    Q_FLAGS(Category Categories)
+    Q_DECLARE_FLAGS(Categories, Category)
 
     struct ModelTag {
         QString tag;
@@ -51,12 +55,17 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] Categories categories() const;
+    void setCategories(const Categories &newCategories);
+
 private:
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT Category convertStringToCategory(const QString &str) const;
     QString mName;
     QString mUrl;
     QString mAuthor;
     QStringList mLanguages;
     QList<ModelTag> mTags;
+    Categories mCategories = Category::Unknown;
 };
 
 Q_DECLARE_TYPEINFO(OllamaModelInfo, Q_RELOCATABLE_TYPE);

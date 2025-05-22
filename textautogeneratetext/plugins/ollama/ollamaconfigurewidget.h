@@ -4,14 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerateollama_export.h"
 #include <QWidget>
 class QLineEdit;
 class OllamaComboBoxWidget;
 class QPlainTextEdit;
 class KMessageWidget;
 class OllamaManager;
-class OllamaConfigureWidget : public QWidget
+class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:

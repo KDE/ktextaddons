@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerateollama_private_export.h"
 #include <QDialog>
 class OllamaModelWidget;
-class OllamaModelDialog : public QDialog
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -15,7 +15,7 @@ public:
     ~OllamaModelDialog() override;
 
 private:
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void writeConfig();
     OllamaModelWidget *const mOllamaModelWidget;
-    void readConfig();
-    void writeConfig();
 };

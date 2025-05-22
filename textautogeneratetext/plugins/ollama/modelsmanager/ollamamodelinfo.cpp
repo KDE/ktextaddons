@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinfo.h"
+#include "autogeneratetext_ollama_debug.h"
+#include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
 OllamaModelInfo::OllamaModelInfo() = default;
@@ -15,12 +17,56 @@ bool OllamaModelInfo::isValid() const
     return !mName.isEmpty();
 }
 
+OllamaModelInfo::Categories OllamaModelInfo::categories() const
+{
+    return mCategories;
+}
+
+void OllamaModelInfo::setCategories(const Categories &newCategories)
+{
+    mCategories = newCategories;
+}
+
 void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
 {
     mName = name;
     mAuthor = obj["author"_L1].toString();
     mUrl = obj["url"_L1].toString();
+    const QVariantList varLst = obj["categories"_L1].toArray().toVariantList();
+    for (const auto &v : varLst) {
+        mCategories |= convertStringToCategory(v.toString());
+    }
+    // qDebug() << " mCategories " << mCategories;
     // TODO
+}
+
+OllamaModelInfo::Category OllamaModelInfo::convertStringToCategory(const QString &str) const
+{
+    if (str == "tools"_L1) {
+        return Category::Tools;
+    } else if (str == "small"_L1) {
+        return Category::Small;
+    } else if (str == "medium"_L1) {
+        return Category::Medium;
+    } else if (str == "big"_L1) {
+        return Category::Big;
+    } else if (str == "huge"_L1) {
+        return Category::Huge;
+    } else if (str == "multilingual"_L1) {
+        return Category::Multilingual;
+    } else if (str == "code"_L1) {
+        return Category::Code;
+    } else if (str == "math"_L1) {
+        return Category::Math;
+    } else if (str == "vision"_L1) {
+        return Category::Vision;
+    } else if (str == "embedding"_L1) {
+        return Category::Embedding;
+    } else if (str == "reasoning"_L1) {
+        return Category::Reasoning;
+    }
+    qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to convert " << str;
+    return Category::Unknown;
 }
 
 QString OllamaModelInfo::name() const
@@ -87,6 +133,7 @@ QDebug operator<<(QDebug d, const OllamaModelInfo &t)
     d.space() << "author" << t.author();
     d.space() << "languages" << t.languages();
     d.space() << "tags" << t.tags();
+    d.space() << "categories" << t.categories();
     return d;
 }
 
