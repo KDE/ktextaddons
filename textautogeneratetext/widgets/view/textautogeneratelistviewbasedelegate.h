@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
 #include "lrucache.h"
+#include "textautogeneratetext_export.h"
 #include <QItemDelegate>
 #include <QTextDocument>
 #include <memory>
@@ -13,7 +13,7 @@ class QListView;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateListViewTextSelection;
-class TextAutoGenerateListViewBaseDelegate : public QItemDelegate
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewBaseDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
