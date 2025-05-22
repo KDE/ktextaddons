@@ -6,7 +6,7 @@
 #pragma once
 
 #include <QObject>
-
+class MistralReply;
 class MistralManager : public QObject
 {
     Q_OBJECT
@@ -14,4 +14,8 @@ public:
     explicit MistralManager(QObject *parent = nullptr);
     ~MistralManager() override;
     void loadModels();
+
+#if 0
+    [[nodiscard]] MistralReply *getChatCompletion(const OllamaRequest &request);
+#endif
 };
