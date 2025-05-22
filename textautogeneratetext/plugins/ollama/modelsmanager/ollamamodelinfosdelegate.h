@@ -15,4 +15,6 @@ class OllamaModelInfosDelegate : public TextAutoGenerateText::TextAutoGenerateLi
 public:
     explicit OllamaModelInfosDelegate(QListView *view);
     ~OllamaModelInfosDelegate() override;
+
+    [[nodiscard]] QTextDocument *documentForIndex(const QModelIndex &index, int width) const override;
 };

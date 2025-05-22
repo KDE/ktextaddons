@@ -12,4 +12,10 @@ OllamaModelInfosDelegate::OllamaModelInfosDelegate(QListView *view)
 
 OllamaModelInfosDelegate::~OllamaModelInfosDelegate() = default;
 
+QTextDocument *OllamaModelInfosDelegate::documentForIndex(const QModelIndex &index, int width) const
+{
+    // TODO
+    return nullptr;
+}
+
 #include "moc_ollamamodelinfosdelegate.cpp"
