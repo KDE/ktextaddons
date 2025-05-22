@@ -10,7 +10,7 @@ QString MistralUtils::modelsPath()
     return QStringLiteral("/v1/models");
 }
 
-QString MistralUtils::chatsPath()
+QString MistralUtils::chatPath()
 {
     return QStringLiteral("/v1/chat/completions");
 }

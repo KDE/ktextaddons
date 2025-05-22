@@ -10,5 +10,5 @@
 namespace MistralUtils
 {
 [[nodiscard]] QString modelsPath();
-[[nodiscard]] QString chatsPath();
+[[nodiscard]] QString chatPath();
 };
