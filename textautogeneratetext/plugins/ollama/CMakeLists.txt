@@ -29,6 +29,8 @@ target_sources(textautogenerateollama PRIVATE
     ollamareply.h
     ollamareply.cpp
 
+    textautogenerateollama_private_export.h
+
     modelsmanager/ollamamodelinfo.cpp
     modelsmanager/ollamamodelinfo.h
 
@@ -54,7 +56,13 @@ target_sources(textautogenerateollama PRIVATE
     modelsmanager/ollamamodelinfosdelegate.h
     modelsmanager/ollamamodelinfosdelegate.cpp
 
-    textautogenerateollama_private_export.h
+    modelsmanager/ollamamodelinfosmanager.h
+    modelsmanager/ollamamodelinfosmanager.cpp
+
+    modelsmanager/ollamamodellistview.h
+    modelsmanager/ollamamodellistview.cpp
+
+    modelsmanager/ollamamodelsmanager.qrc
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -81,6 +89,7 @@ set_target_properties(textautogenerateollama PROPERTIES
 install(TARGETS textautogenerateollama ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 #####
+
 
 add_library(autogeneratetext_ollama MODULE)
 

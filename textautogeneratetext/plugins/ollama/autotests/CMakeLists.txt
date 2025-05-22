@@ -14,3 +14,5 @@ endmacro()
 
 add_ollama_plugin_unittest(ollamautilstest.cpp)
 add_ollama_plugin_unittest(ollamamodelinfotest.cpp)
+add_ollama_plugin_unittest(ollamamodelsinfostest.cpp)
+add_ollama_plugin_unittest(ollamamodellistviewtest.cpp)
