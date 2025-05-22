@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(autogeneratetext_mistral MODULE
-    mistralreply.h mistralreply.cpp)
+add_library(autogeneratetext_mistral MODULE)
 
 kconfig_add_kcfg_files(autogeneratetext_mistral GENERATE_MOC mistralsettings.kcfgc)
 
@@ -26,6 +25,9 @@ target_sources(autogeneratetext_mistral PRIVATE
 
     mistralmanager.h
     mistralmanager.cpp
+
+    mistralreply.h
+    mistralreply.cpp
 
     mistralutils.h
     mistralutils.cpp
