@@ -1,7 +1,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(autogeneratetext_ollama MODULE)
+
+find_package(Qt6 REQUIRED COMPONENTS Core)
+
+add_library(autogeneratetext_ollama MODULE
+    modelsmanager/ollamamodelinfosdelegate.h modelsmanager/ollamamodelinfosdelegate.cpp)
 
 kconfig_add_kcfg_files(autogeneratetext_ollama GENERATE_MOC ollamasettings.kcfgc)
 
@@ -34,9 +38,32 @@ target_sources(autogeneratetext_ollama PRIVATE
 
     ollamareply.h
     ollamareply.cpp
+
+    modelsmanager/ollamamodelinfo.cpp
+    modelsmanager/ollamamodelinfo.h
+
+    modelsmanager/ollamamodelsinfos.h
+    modelsmanager/ollamamodelsinfos.cpp
+
+    modelsmanager/ollamamodelwidget.h
+    modelsmanager/ollamamodelwidget.cpp
+
+    modelsmanager/ollamamodeldialog.h
+    modelsmanager/ollamamodeldialog.cpp
+
+    modelsmanager/ollamamodelsearchwidget.h
+    modelsmanager/ollamamodelsearchwidget.cpp
+
+    modelsmanager/ollamamodelinfowidget.h
+    modelsmanager/ollamamodelinfowidget.cpp
+    modelsmanager/ollamamodelinfosmodel.h
+    modelsmanager/ollamamodelinfosmodel.cpp
+    modelsmanager/ollamamodelinfossortproxymodel.h
+    modelsmanager/ollamamodelinfossortproxymodel.cpp
 )
 
 target_link_libraries(autogeneratetext_ollama PRIVATE KF6::TextAutoGenerateText KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons)
+target_link_libraries(autogeneratetext_ollama PRIVATE Qt6::Core)
 
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
