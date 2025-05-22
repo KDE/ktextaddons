@@ -58,6 +58,8 @@ public:
     [[nodiscard]] Categories categories() const;
     void setCategories(const Categories &newCategories);
 
+    [[nodiscard]] QString description() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT Category convertStringToCategory(const QString &str) const;
     QString mName;

@@ -16,6 +16,7 @@ class OllamaModelInfosModel : public QAbstractListModel
 public:
     enum ModelInfoRoles {
         ModelName = Qt::UserRole + 1,
+        Description,
     };
     Q_ENUM(ModelInfoRoles)
 

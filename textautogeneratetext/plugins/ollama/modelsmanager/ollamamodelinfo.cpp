@@ -27,6 +27,12 @@ void OllamaModelInfo::setCategories(const Categories &newCategories)
     mCategories = newCategories;
 }
 
+QString OllamaModelInfo::description() const
+{
+    // TODO
+    return {};
+}
+
 void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
 {
     mName = name;
