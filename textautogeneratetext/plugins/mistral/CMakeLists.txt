@@ -4,6 +4,8 @@
 add_library(autogeneratetext_mistral MODULE
     mistralreply.h mistralreply.cpp)
 
+kconfig_add_kcfg_files(autogeneratetext_mistral GENERATE_MOC mistralsettings.kcfgc)
+
 ecm_qt_declare_logging_category(autogeneratetext_mistral
     HEADER autogeneratetext_mistral_debug.h
     IDENTIFIER AUTOGENERATETEXT_MISTRAL_LOG
@@ -35,6 +37,7 @@ target_link_libraries(autogeneratetext_mistral
     KF6::I18n
     KF6::ConfigGui
     KF6::WidgetsAddons
+    KF6::CoreAddons
     qt6keychain
 )
 

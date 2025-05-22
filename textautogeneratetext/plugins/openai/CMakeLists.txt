@@ -28,6 +28,7 @@ target_link_libraries(autogeneratetext_openai
     KF6::I18n
     KF6::ConfigGui
     KF6::WidgetsAddons
+    KF6::CoreAddons
     qt6keychain
 )
 
