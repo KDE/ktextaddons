@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamautilstest.h"
-#include "../ollamautils.h"
+#include "ollamautils.h"
 #include <QTest>
 QTEST_MAIN(OllamaUtilsTest)
 

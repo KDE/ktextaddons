@@ -12,5 +12,5 @@ macro(add_ollama_plugin_unittest _source)
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
 
-#add_ollama_plugin_unittest(ollamautilstest.cpp "../ollamautils.cpp")
+add_ollama_plugin_unittest(ollamautilstest.cpp)
 add_ollama_plugin_unittest(ollamamodelinfotest.cpp)
