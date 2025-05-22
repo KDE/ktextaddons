@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class MistralReply;
 class MistralManager : public QObject
 {
@@ -15,7 +15,5 @@ public:
     ~MistralManager() override;
     void loadModels();
 
-#if 0
-    [[nodiscard]] MistralReply *getChatCompletion(const OllamaRequest &request);
-#endif
+    [[nodiscard]] MistralReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 };

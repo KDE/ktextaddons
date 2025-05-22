@@ -7,8 +7,12 @@
 #include "mistralmanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
 #include "mistralreply.h"
+#include "mistralsettings.h"
 #include "mistralutils.h"
-
+#include <QJsonObject>
+#include <QNetworkRequest>
+#include <qnetworkaccessmanager.h>
+using namespace Qt::Literals::StringLiterals;
 MistralManager::MistralManager(QObject *parent)
     : QObject{parent}
 {
@@ -21,14 +25,12 @@ void MistralManager::loadModels()
     // TODO
 }
 
-#if 0
-
-MistralReply *MistralManager::getChatCompletion(const OllamaRequest &request)
+MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::chatPath())};
+    QNetworkRequest req{QUrl::fromUserInput(MistralSettings::serverUrl().toString() + MistralUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     QJsonObject data;
-    data["model"_L1] = OllamaSettings::model();
+    data["model"_L1] = MistralSettings::model();
     data["messages"_L1] = request.messages();
     /*
     if (!OllamaSettings::systemPrompt().isEmpty()) {
@@ -37,12 +39,12 @@ MistralReply *MistralManager::getChatCompletion(const OllamaRequest &request)
     */
     auto reply = new MistralReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaReply::RequestTypes::StreamingChat,
+        MistralReply::RequestTypes::StreamingChat,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
-        Q_EMIT finished(reply->readResponse());
+    connect(reply, &MistralReply::finished, this, [this, reply] {
+        // TODO Q_EMIT finished(reply->readResponse());
     });
     return reply;
 }
-#endif
+
 #include "moc_mistralmanager.cpp"
