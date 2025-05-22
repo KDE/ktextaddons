@@ -32,9 +32,6 @@ target_sources(autogeneratetext_ollama PRIVATE
     ollamacomboboxwidget.h
     ollamacomboboxwidget.cpp
 
-    ollamarequest.h
-    ollamarequest.cpp
-
     ollamareply.h
     ollamareply.cpp
 )

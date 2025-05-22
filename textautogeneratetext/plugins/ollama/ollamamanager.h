@@ -5,8 +5,7 @@
 */
 
 #pragma once
-
-#include "ollamarequest.h"
+#include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 
 #include <QDebug>
 #include <QObject>
@@ -27,8 +26,8 @@ public:
 
     void loadModels();
     void getVersion();
-    [[nodiscard]] OllamaReply *getCompletion(const OllamaRequest &request);
-    [[nodiscard]] OllamaReply *getChatCompletion(const OllamaRequest &request);
+    [[nodiscard]] OllamaReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
+    [[nodiscard]] OllamaReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
     void downloadModel(const QString &modelName);
     void deleteModel(const QString &modelName);
 

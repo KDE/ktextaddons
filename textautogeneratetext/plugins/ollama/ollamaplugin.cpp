@@ -80,7 +80,7 @@ void OllamaPlugin::cancelRequest(const QByteArray &uuid)
 
 void OllamaPlugin::askToAssistant(const QString &msg)
 {
-    OllamaRequest req;
+    TextAutoGenerateText::TextAutoGenerateTextRequest req;
     req.setMessage(msg);
     req.setModel(currentModel());
     auto reply = mManager->getCompletion(req);
@@ -103,7 +103,7 @@ void OllamaPlugin::askToAssistant(const QString &msg)
 
 void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
-    OllamaRequest req;
+    TextAutoGenerateText::TextAutoGenerateTextRequest req;
     req.setMessage(info.message);
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
