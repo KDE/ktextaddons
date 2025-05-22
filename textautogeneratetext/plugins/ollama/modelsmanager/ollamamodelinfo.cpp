@@ -36,7 +36,20 @@ void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
     for (const auto &v : varLst) {
         mCategories |= convertStringToCategory(v.toString());
     }
-    // qDebug() << " mCategories " << mCategories;
+    const QJsonArray tagsArrayList = obj["tags"_L1].toArray();
+    for (int i = 0; i < tagsArrayList.count(); ++i) {
+        const QJsonArray tagsArray = tagsArrayList.at(i).toArray();
+        const QVariantList tagInfo = tagsArray.toVariantList();
+        if (tagInfo.count() != 2) {
+            qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "tagInfo different from 2 " << tagInfo;
+        } else {
+            ModelTag tag;
+            tag.tag = tagInfo.at(0).toString();
+            tag.size = tagInfo.at(1).toString();
+            mTags.append(std::move(tag));
+        }
+    }
+    qDebug() << " mCategories " << mTags;
     // TODO
 }
 
