@@ -53,6 +53,8 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelinfosdelegate.h
     modelsmanager/ollamamodelinfosdelegate.cpp
+
+    textautogenerateollama_private_export.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -107,7 +109,6 @@ target_link_libraries(autogeneratetext_ollama
     KF6::CoreAddons
     KF6::I18n
 )
-
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
 if(BUILD_TESTING)

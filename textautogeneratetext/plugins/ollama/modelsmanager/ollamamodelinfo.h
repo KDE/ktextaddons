@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerateollama_private_export.h"
 #include <QDebug>
 #include <QString>
-class OllamaModelInfo
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfo
 {
     Q_GADGET
 public:
