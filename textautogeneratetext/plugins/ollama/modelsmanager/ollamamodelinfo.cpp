@@ -49,8 +49,13 @@ void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
             mTags.append(std::move(tag));
         }
     }
-    qDebug() << " mCategories " << mTags;
-    // TODO
+    QStringList lst;
+    const auto languages = obj["languages"_L1].toArray().toVariantList();
+    for (const auto &l : languages) {
+        lst.append(l.toString());
+    }
+    mLanguages = lst;
+    qDebug() << " dsddd " << *this;
 }
 
 OllamaModelInfo::Category OllamaModelInfo::convertStringToCategory(const QString &str) const
