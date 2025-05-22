@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-
+#include "textautogenerateollama_export.h"
 #include <QJsonDocument>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextContext>
@@ -20,7 +20,7 @@ class QNetworkReply;
  * the new content. If you prefer to wait for the entire reply before displaying anything, connect to finished(), which will
  * only be emitted once the reply is complete.
  */
-class OllamaReply : public TextAutoGenerateText::TextAutoGenerateReply
+class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaReply : public TextAutoGenerateText::TextAutoGenerateReply
 {
     Q_OBJECT
 

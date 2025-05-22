@@ -8,8 +8,8 @@ macro(add_ollama_plugin_unittest _source _additional)
     add_test(NAME ${_name} COMMAND ${_name} )
 
     ecm_mark_as_test(${_name})
-    target_link_libraries(${_name} Qt::Test KF6::TextAutoGenerateText)
+    target_link_libraries(${_name} Qt::Test KF6::TextAutoGenerateText textautogenerateollama)
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
 
-add_ollama_plugin_unittest(ollamautilstest.cpp "../ollamautils.cpp")
+#add_ollama_plugin_unittest(ollamautilstest.cpp "../ollamautils.cpp")

@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include <TextAutoGenerateText/TextAutoGenerateTextRequest>
-
+#include "textautogenerateollama_export.h"
 #include <QDebug>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class OllamaReply;
-class OllamaManager : public QObject
+class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public QObject
 {
     Q_OBJECT
 public:

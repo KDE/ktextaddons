@@ -5,7 +5,7 @@
 */
 
 #include "ollamaplugin.h"
-#include "autogeneratetext_ollama_debug.h"
+#include "autogeneratetext_ollama_plugin_debug.h"
 #include "core/textautogeneratemanager.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
@@ -16,7 +16,7 @@ OllamaPlugin::OllamaPlugin(OllamaManager *manager, QObject *parent)
     , mManager(manager)
 {
     if (!loadSettings()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to load settings";
+        qCWarning(AUTOGENERATETEXT_OLLAMA_PLUGIN_LOG) << "Impossible to load settings";
         return;
     }
 
@@ -119,7 +119,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, chatId, this] {
                                                        manager()->changeInProgress(chatId, messageUuid, false);
-                                                       qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << " progress finished";
+                                                       qCDebug(AUTOGENERATETEXT_OLLAMA_PLUGIN_LOG) << " progress finished";
                                                        mConnections.remove(reply);
                                                        reply->deleteLater();
 #if 0
