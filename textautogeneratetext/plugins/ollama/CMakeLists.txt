@@ -77,10 +77,8 @@ set_target_properties(textautogenerateollama PROPERTIES
     EXPORT_NAME TextAutoGenerateText
 )
 
-install(TARGETS
-    textautogenerateollama
-    EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+
+install(TARGETS textautogenerateollama ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 #####
 
