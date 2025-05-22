@@ -11,6 +11,12 @@ class MistralManager : public QObject
 {
     Q_OBJECT
 public:
+    struct ModelsInfo {
+        QStringList models;
+        QString errorOccured;
+        bool hasError = false;
+        bool isReady = false;
+    };
     explicit MistralManager(QObject *parent = nullptr);
     ~MistralManager() override;
     void loadModels();
@@ -18,5 +24,6 @@ public:
     [[nodiscard]] MistralReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 
 Q_SIGNALS:
+    void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
 };

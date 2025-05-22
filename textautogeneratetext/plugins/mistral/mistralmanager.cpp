@@ -9,6 +9,7 @@
 #include "mistralreply.h"
 #include "mistralsettings.h"
 #include "mistralutils.h"
+#include <KLocalizedString>
 #include <QJsonObject>
 #include <QNetworkRequest>
 #include <qnetworkaccessmanager.h>
@@ -22,7 +23,34 @@ MistralManager::~MistralManager() = default;
 
 void MistralManager::loadModels()
 {
-    // TODO
+#if 0
+    if (mOllamaCheckConnect) {
+        disconnect(mOllamaCheckConnect);
+    }
+    QNetworkRequest req{QUrl::fromUserInput(MistralSettings::serverUrl().toString() + MistralUtils::tagsPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+
+    auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
+    mOllamaCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
+        if (rep->error() != QNetworkReply::NoError) {
+            ModelsInfo info;
+            info.errorOccured = i18n("Failed to connect to interface at %1: %2", MistralUtils::serverUrl().toString(), rep->errorString());
+            info.hasError = true;
+            Q_EMIT modelsLoadDone(std::move(info));
+            return;
+        }
+
+        ModelsInfo info;
+        const auto json = QJsonDocument::fromJson(rep->readAll());
+        const auto models = json["models"_L1].toArray();
+        for (const QJsonValue &model : models) {
+            info.models.push_back(model["name"_L1].toString());
+        }
+        info.isReady = !info.models.isEmpty();
+        info.hasError = false;
+        Q_EMIT modelsLoadDone(std::move(info));
+    });
+#endif
 }
 
 MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
