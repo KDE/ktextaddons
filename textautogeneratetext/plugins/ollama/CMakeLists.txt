@@ -111,4 +111,5 @@ install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
+    add_subdirectory(tests)
 endif()
