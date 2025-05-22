@@ -13,4 +13,10 @@ MistralReply::MistralReply(QNetworkReply *netReply, RequestTypes requestType, QO
 
 MistralReply::~MistralReply() = default;
 
+QString MistralReply::readResponse() const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_mistralreply.cpp"

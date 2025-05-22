@@ -42,7 +42,7 @@ MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::Text
         MistralReply::RequestTypes::StreamingChat,
         this};
     connect(reply, &MistralReply::finished, this, [this, reply] {
-        // TODO Q_EMIT finished(reply->readResponse());
+        Q_EMIT finished(reply->readResponse());
     });
     return reply;
 }

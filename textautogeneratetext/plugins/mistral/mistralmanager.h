@@ -16,4 +16,7 @@ public:
     void loadModels();
 
     [[nodiscard]] MistralReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
+
+Q_SIGNALS:
+    void finished(const QString &replyText);
 };

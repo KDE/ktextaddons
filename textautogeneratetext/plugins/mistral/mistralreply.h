@@ -14,4 +14,5 @@ class MistralReply : public TextAutoGenerateText::TextAutoGenerateReply
 public:
     explicit MistralReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     ~MistralReply() override;
+    [[nodiscard]] QString readResponse() const;
 };
