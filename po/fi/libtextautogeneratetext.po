@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:41+0000\n"
+"POT-Creation-Date: 2025-05-22 00:41+0000\n"
 "PO-Revision-Date: 2025-04-08 08:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -52,12 +52,12 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: core/textautogeneratemessagesmodel.cpp:67
+#: core/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -79,7 +79,7 @@ msgstr "Paikallinen"
 msgid "Network"
 msgstr "Verkko"
 
-#: plugins/mistral/mistralclient.cpp:27
+#: plugins/mistral/mistralclient.cpp:30
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral-tekoäly"
@@ -90,7 +90,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral-tekoälyn asetukset"
 
-#: plugins/mistral/mistralconfigurewidget.cpp:22
+#: plugins/mistral/mistralconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
 msgstr ""
@@ -107,27 +107,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollaman asetukset"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:37
+#: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
 msgstr "Palvelimen verkko-osoite:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
 msgstr "Malli:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:44
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
 msgstr "Kehote:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
 msgstr "Ei järjestelmäkehotetta"
 
-#: plugins/ollama/ollamamanager.cpp:109
+#: plugins/ollama/ollamamanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Yhteydenotto liitäntään osoitteessa %1 epäonnistui: %2"

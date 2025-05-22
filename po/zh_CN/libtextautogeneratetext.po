@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:41+0000\n"
+"POT-Creation-Date: 2025-05-22 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -52,12 +52,12 @@ msgstr "之后"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: core/textautogeneratemessagesmodel.cpp:67
+#: core/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -81,7 +81,7 @@ msgstr "本地"
 msgid "Network"
 msgstr "网络"
 
-#: plugins/mistral/mistralclient.cpp:27
+#: plugins/mistral/mistralclient.cpp:30
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
@@ -92,7 +92,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "配置 Mistral IA"
 
-#: plugins/mistral/mistralconfigurewidget.cpp:22
+#: plugins/mistral/mistralconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
 msgstr ""
@@ -109,27 +109,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "配置 Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:37
+#: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
 msgstr "服务器 URL："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:44
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
 msgstr "提示词："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
 msgstr "没有系统提示词"
 
-#: plugins/ollama/ollamamanager.cpp:109
+#: plugins/ollama/ollamamanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "无法连接到位于 %1 的接口：%2"

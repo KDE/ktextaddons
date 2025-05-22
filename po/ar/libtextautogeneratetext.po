@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:41+0000\n"
-"PO-Revision-Date: 2025-05-14 17:14+0400\n"
+"POT-Creation-Date: 2025-05-22 00:41+0000\n"
+"PO-Revision-Date: 2025-05-21 17:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -53,12 +53,12 @@ msgstr "لاحقا"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
 msgid "Ollama"
 msgstr "أولاما"
 
-#: core/textautogeneratemessagesmodel.cpp:67
+#: core/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -68,11 +68,9 @@ msgstr ""
 "النموذج: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#, kde-format
 msgid "Go to message"
-msgstr "أدخل رسالة"
+msgstr "انتقل إلى الرسالة"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -84,7 +82,7 @@ msgstr "محليّ"
 msgid "Network"
 msgstr "شبكة"
 
-#: plugins/mistral/mistralclient.cpp:27
+#: plugins/mistral/mistralclient.cpp:30
 #, kde-format
 msgid "Mistral AI"
 msgstr "مسترال أيه آي"
@@ -95,10 +93,10 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "اضبط مسترال أيه آي"
 
-#: plugins/mistral/mistralconfigurewidget.cpp:22
+#: plugins/mistral/mistralconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "مفتاح و‌ب‌ت API:"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -112,27 +110,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "اضبط أولاما"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:37
+#: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
 msgstr "عنوان الخادم:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
 msgstr "النموذج:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:44
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
 msgstr "الموجه:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
 msgstr "لا يوجد موجّه للنظام"
 
-#: plugins/ollama/ollamamanager.cpp:109
+#: plugins/ollama/ollamamanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "فشل الاتصال بالواجهة في %1: %2"
@@ -170,18 +168,18 @@ msgstr "اضبط أوبن أيه آي"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "اضبط ملحقات الذكاء الاصطناعي النصية"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "أضف…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "اسأل الذكاء الاصطناعي"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -198,27 +196,23 @@ msgid "Remove…"
 msgstr "أزل…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "أتريد إزالة هذه المناقشة؟"
+msgstr "أتريد إزالته؟"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr "أزِل"
+msgstr "أزل"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "اسأل الذكاء الاصطناعي…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "اضبط…"

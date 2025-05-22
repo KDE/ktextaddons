@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:41+0000\n"
-"PO-Revision-Date: 2025-05-09 14:19+0200\n"
+"POT-Creation-Date: 2025-05-22 00:41+0000\n"
+"PO-Revision-Date: 2025-05-21 14:45+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: core/textautogeneratechatsmodel.cpp:72
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "Nuova chat..."
 
 #: core/textautogeneratechatsmodel.cpp:139
 #, kde-format
@@ -52,12 +52,12 @@ msgstr "Più tardi"
 msgid "Unknown"
 msgstr "Sconosciuto"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:28
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
 
-#: core/textautogeneratemessagesmodel.cpp:67
+#: core/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -67,11 +67,9 @@ msgstr ""
 "Modello: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#, kde-format
 msgid "Go to message"
-msgstr "Digita un messaggio"
+msgstr "Vai al messaggio"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -83,7 +81,7 @@ msgstr "Locale"
 msgid "Network"
 msgstr "Rete"
 
-#: plugins/mistral/mistralclient.cpp:27
+#: plugins/mistral/mistralclient.cpp:30
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
@@ -94,10 +92,10 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configura Mistral AI"
 
-#: plugins/mistral/mistralconfigurewidget.cpp:22
+#: plugins/mistral/mistralconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "Chiave API:"
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -111,27 +109,27 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura Ollama"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:37
+#: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del server:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
 msgstr "Modello:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:44
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
 msgstr "Nessun prompt di sistema"
 
-#: plugins/ollama/ollamamanager.cpp:109
+#: plugins/ollama/ollamamanager.cpp:103
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Connessione all'interfaccia al %1 non riuscita: %2"
@@ -169,18 +167,18 @@ msgstr "Configura Openai IA"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Configura le estensioni di testo dell'IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Aggiungi…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Chiedi all'IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -197,15 +195,12 @@ msgid "Remove…"
 msgstr "Rimuovi…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "Vuoi rimuovere questa discussione?"
+msgstr "Vuoi rimuoverlo?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Rimuovi"
@@ -213,14 +208,13 @@ msgstr "Rimuovi"
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Chiedi all'IA…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -246,9 +240,7 @@ msgid "Configure…"
 msgstr "Configura…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Cerca…"
@@ -257,11 +249,10 @@ msgstr "Cerca…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "Nuova chat"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Preferito"
@@ -279,12 +270,10 @@ msgid "Configure…"
 msgstr "Configura..."
 
 #: widgets/textautogeneratesearchdialog.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr "Cerca…"
+msgstr "Cerca"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -306,21 +295,19 @@ msgstr "Nessuna estensione trovata."
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "Nuova chat"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:127
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr "Preferito"
+msgstr "Rimuovi da preferito"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:127
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr "Preferito"
+msgstr "Imposta come preferito"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
@@ -332,7 +319,7 @@ msgstr "Ripristina"
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "Archivia"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
