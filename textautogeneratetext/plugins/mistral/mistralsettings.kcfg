@@ -9,7 +9,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
 
   <include>KUser</include>
   <kcfgfile name="mistralplugin" />
-  <group name="Ollama">
+  <group name="Mistral">
     <entry name="ServerUrl" type="Url">
       <label>The URL to the Ollama instance</label>
       <default code="true">QUrl(QStringLiteral("https://api.mistral.ai/v1"))</default>
