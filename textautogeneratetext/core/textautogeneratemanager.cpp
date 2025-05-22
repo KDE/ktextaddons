@@ -57,6 +57,8 @@ void TextAutoGenerateManager::ask(const QString &msg)
 
 void TextAutoGenerateManager::createNewChat()
 {
+    // Switch back to not archived list
+    setShowArchived(false);
     TextAutoGenerateChat chat;
     const QByteArray chatId = QUuid::createUuid().toByteArray(QUuid::Id128);
     chat.setIdentifier(chatId);
