@@ -5,6 +5,7 @@
 */
 #include "ollamamodelinfo.h"
 #include "autogeneratetext_ollama_debug.h"
+#include "ollamamodelutils.h"
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -35,8 +36,7 @@ void OllamaModelInfo::setCategories(const Categories &newCategories)
 
 QString OllamaModelInfo::description() const
 {
-    // TODO
-    return {};
+    return mDescription;
 }
 
 void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
@@ -67,6 +67,7 @@ void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
         lst.append(l.toString());
     }
     mLanguages = lst;
+    mDescription = OllamaModelUtils::description(mName);
 }
 
 OllamaModelInfo::Category OllamaModelInfo::convertStringToCategory(const QString &str) const

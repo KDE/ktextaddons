@@ -68,6 +68,7 @@ private:
     QString mName;
     QString mUrl;
     QString mAuthor;
+    QString mDescription;
     QStringList mLanguages;
     QList<ModelTag> mTags;
     Categories mCategories = Category::Unknown;
