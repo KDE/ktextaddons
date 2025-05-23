@@ -39,6 +39,7 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
         model->setModelInfos(manager.modelInfos());
     }
     mListView->setModel(mProxyModel);
+    connect(mSearchWidget, &OllamaModelSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);
 }
 
 OllamaModelWidget::~OllamaModelWidget() = default;
