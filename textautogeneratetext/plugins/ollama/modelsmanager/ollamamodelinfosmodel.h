@@ -18,6 +18,7 @@ public:
         ModelName = Qt::UserRole + 1,
         Description,
         Categories,
+        Author,
     };
     Q_ENUM(ModelInfoRoles)
 

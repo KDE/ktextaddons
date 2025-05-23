@@ -4,16 +4,26 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinfowidget.h"
+#include "ollamamodelinfosmodel.h"
+#include <QLabel>
 #include <QVBoxLayout>
 
 OllamaModelInfoWidget::OllamaModelInfoWidget(QWidget *parent)
     : QWidget{parent}
+    , mMainLayout(new QVBoxLayout(this))
+    , mModelName(new QLabel(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mainLayout->setContentsMargins({});
+    mMainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mMainLayout->setContentsMargins({});
+    mMainLayout->addWidget(mModelName);
+    mMainLayout->addStretch(1);
 }
 
 OllamaModelInfoWidget::~OllamaModelInfoWidget() = default;
+
+void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
+{
+    mModelName->setText(index.data(OllamaModelInfosModel::ModelName).toString());
+}
 
 #include "moc_ollamamodelinfowidget.cpp"

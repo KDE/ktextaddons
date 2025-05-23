@@ -18,6 +18,7 @@ public:
     ~OllamaModelWidget() override;
 
 private:
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &index);
     OllamaModelSearchWidget *const mSearchWidget;
     OllamaModelListView *const mListView;
     OllamaModelInfoWidget *const mInfoWidget;

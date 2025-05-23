@@ -26,11 +26,15 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     mSearchWidget->setObjectName(QStringLiteral("mSearchWidget"));
     mainLayout->addWidget(mSearchWidget);
 
+    auto hbox = new QHBoxLayout();
+    mainLayout->addLayout(hbox);
+    hbox->setContentsMargins({});
     mListView->setObjectName(QStringLiteral("mListView"));
-    mainLayout->addWidget(mListView);
+    hbox->addWidget(mListView);
 
     mInfoWidget->setObjectName(QStringLiteral("mInfoWidget"));
-    mainLayout->addWidget(mInfoWidget);
+    hbox->addWidget(mInfoWidget);
+    mInfoWidget->hide();
 
     auto model = new OllamaModelInfosModel(this);
     mProxyModel->setSourceModel(model);
@@ -40,8 +44,19 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     }
     mListView->setModel(mProxyModel);
     connect(mSearchWidget, &OllamaModelSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);
+    connect(mListView, &OllamaModelListView::clicked, this, &OllamaModelWidget::slotClicked);
 }
 
 OllamaModelWidget::~OllamaModelWidget() = default;
+
+void OllamaModelWidget::slotClicked(const QModelIndex &index)
+{
+    if (!index.isValid()) {
+        return;
+    }
+    mInfoWidget->setVisible(true);
+    mInfoWidget->generateWidget(index);
+    qDebug() << " activated" << index;
+}
 
 #include "moc_ollamamodelwidget.cpp"
