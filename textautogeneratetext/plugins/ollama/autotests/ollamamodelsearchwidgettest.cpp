@@ -26,3 +26,5 @@ void OllamaModelSearchWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit->text().isEmpty());
     QVERIFY(mSearchLineEdit->placeholderText().isEmpty());
 }
+
+#include "moc_ollamamodelsearchwidgettest.cpp"
