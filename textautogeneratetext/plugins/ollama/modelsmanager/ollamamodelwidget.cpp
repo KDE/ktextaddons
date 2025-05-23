@@ -6,6 +6,7 @@
 #include "ollamamodelwidget.h"
 #include "ollamamodelinfosmanager.h"
 #include "ollamamodelinfosmodel.h"
+#include "ollamamodelinfossortproxymodel.h"
 #include "ollamamodelinfowidget.h"
 #include "ollamamodellistview.h"
 #include "ollamamodelsearchwidget.h"
@@ -16,6 +17,7 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     , mSearchWidget(new OllamaModelSearchWidget(this))
     , mListView(new OllamaModelListView(this))
     , mInfoWidget(new OllamaModelInfoWidget(this))
+    , mProxyModel(new OllamaModelInfosSortProxyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
@@ -31,12 +33,12 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     mainLayout->addWidget(mInfoWidget);
 
     auto model = new OllamaModelInfosModel(this);
+    mProxyModel->setSourceModel(model);
     OllamaModelInfosManager manager;
     if (manager.loadAvailableModels()) {
         model->setModelInfos(manager.modelInfos());
     }
-    mListView->setModel(model);
-    // TODO add proxy model
+    mListView->setModel(mProxyModel);
 }
 
 OllamaModelWidget::~OllamaModelWidget() = default;

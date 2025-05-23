@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <QAbstractProxyModel>
+#include <QSortFilterProxyModel>
 
-class OllamaModelInfosSortProxyModel : public QAbstractProxyModel
+class OllamaModelInfosSortProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:

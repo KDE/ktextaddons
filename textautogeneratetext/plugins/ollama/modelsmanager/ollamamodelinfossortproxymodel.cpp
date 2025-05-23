@@ -7,7 +7,7 @@
 #include "ollamamodelinfossortproxymodel.h"
 
 OllamaModelInfosSortProxyModel::OllamaModelInfosSortProxyModel(QObject *parent)
-    : QAbstractProxyModel{parent}
+    : QSortFilterProxyModel{parent}
 {
 }
 
