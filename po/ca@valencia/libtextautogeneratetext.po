@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:41+0000\n"
+"POT-Creation-Date: 2025-05-23 00:41+0000\n"
 "PO-Revision-Date: 2025-05-21 11:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -95,9 +95,43 @@ msgid "Configure Mistral IA"
 msgstr "Configura la IA Mistral"
 
 #: plugins/mistral/mistralconfigurewidget.cpp:27
+#: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
 msgstr "Clau de l'API:"
+
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "No s'ha pogut connectar amb la interfície a %1: %2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
+#: plugins/mistral/mistralsettings.kcfg:14
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "L'URL de la instància Ollama"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:20
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "L'indicatiu del sistema de LLM"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:32
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "El model que s'utilitza per a generar les respostes"
+
+#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Ollama Models"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -130,29 +164,6 @@ msgstr "Indicatiu:"
 #, kde-format
 msgid "No system prompt"
 msgstr "Sense indicatiu del sistema"
-
-#: plugins/ollama/ollamamanager.cpp:103
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "No s'ha pogut connectar amb la interfície a %1: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "L'URL de la instància Ollama"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "L'indicatiu del sistema de LLM"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "El model que s'utilitza per a generar les respostes"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format

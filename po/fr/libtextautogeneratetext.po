@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:41+0000\n"
-"PO-Revision-Date: 2025-05-15 07:52+0200\n"
+"POT-Creation-Date: 2025-05-23 00:41+0000\n"
+"PO-Revision-Date: 2025-05-21 08:42+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -64,11 +64,9 @@ msgstr ""
 "Modèle : %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#, kde-format
 msgid "Go to message"
-msgstr "Saisissez un message"
+msgstr "Aller au message"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -92,8 +90,42 @@ msgid "Configure Mistral IA"
 msgstr "Configurer Mistral IA"
 
 #: plugins/mistral/mistralconfigurewidget.cpp:27
+#: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
+msgstr ""
+
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "Impossible de se connecter à l'interface de %1 : %2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
+#: plugins/mistral/mistralsettings.kcfg:14
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "L'URL vers l'instance Ollama"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:20
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "L'invite du système pour le moteur LLM"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:32
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "Le modèle utilisé pour générer des réponses"
+
+#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Ollama Models"
 msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
@@ -128,29 +160,6 @@ msgstr "Invite de commandes :"
 msgid "No system prompt"
 msgstr "Aucune invite système"
 
-#: plugins/ollama/ollamamanager.cpp:103
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "Impossible de se connecter à l'interface de %1 : %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "L'URL vers l'instance Ollama"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "L'invite du système pour le moteur LLM"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "Le modèle utilisé pour générer des réponses"
-
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
@@ -166,18 +175,18 @@ msgstr "Configurer l'IA de OpenAI"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Configurer les modules externes de texte pour IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Ajouter..."
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Demander à l'IA"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -194,15 +203,12 @@ msgid "Remove…"
 msgstr "Supprimer..."
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "Voulez-vous supprimer cette discussion ?"
+msgstr "Voulez-vous la supprimer ?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Supprimer"
@@ -210,11 +216,10 @@ msgstr "Supprimer"
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Demandez à l'IA..."
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Configurer..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:41+0000\n"
+"POT-Creation-Date: 2025-05-23 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -69,7 +69,7 @@ msgstr ""
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
-msgstr ""
+msgstr "跳转到消息"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -93,8 +93,42 @@ msgid "Configure Mistral IA"
 msgstr "配置 Mistral IA"
 
 #: plugins/mistral/mistralconfigurewidget.cpp:27
+#: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
+msgstr ""
+
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "无法连接到位于 %1 的接口：%2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
+#: plugins/mistral/mistralsettings.kcfg:14
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "Ollama 实例的 URL"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:20
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "该大语言模型的系统提示词"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:32
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "用于生成回复的模型"
+
+#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Ollama Models"
 msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
@@ -129,29 +163,6 @@ msgstr "提示词："
 msgid "No system prompt"
 msgstr "没有系统提示词"
 
-#: plugins/ollama/ollamamanager.cpp:103
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "无法连接到位于 %1 的接口：%2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "Ollama 实例的 URL"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "该大语言模型的系统提示词"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "用于生成回复的模型"
-
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
@@ -167,18 +178,18 @@ msgstr "配置 OpenAI IA"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "配置 AI 文本插件"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "添加…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Ask 到 AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -197,24 +208,24 @@ msgstr "移除…"
 #: widgets/menu/textautogeneratemenulistview.cpp:60
 #, kde-format
 msgid "Do you want to remove it?"
-msgstr ""
+msgstr "您想要移除此项吗？"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Ask AI…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr ""
+msgstr "配置…"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

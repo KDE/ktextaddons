@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:41+0000\n"
+"POT-Creation-Date: 2025-05-23 00:41+0000\n"
 "PO-Revision-Date: 2025-05-21 17:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -94,9 +94,43 @@ msgid "Configure Mistral IA"
 msgstr "اضبط مسترال أيه آي"
 
 #: plugins/mistral/mistralconfigurewidget.cpp:27
+#: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
 msgstr "مفتاح و‌ب‌ت API:"
+
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "فشل الاتصال بالواجهة في %1: %2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
+#: plugins/mistral/mistralsettings.kcfg:14
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "عنوان نسخة أولاما"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:20
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "موجه النظام للنموذج اللغوي الكبير"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/mistral/mistralsettings.kcfg:32
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "النموذج المستخدم لتوليد الاستجابات"
+
+#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Manage Ollama Models"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -129,29 +163,6 @@ msgstr "الموجه:"
 #, kde-format
 msgid "No system prompt"
 msgstr "لا يوجد موجّه للنظام"
-
-#: plugins/ollama/ollamamanager.cpp:103
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "فشل الاتصال بالواجهة في %1: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "عنوان نسخة أولاما"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "موجه النظام للنموذج اللغوي الكبير"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "النموذج المستخدم لتوليد الاستجابات"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
