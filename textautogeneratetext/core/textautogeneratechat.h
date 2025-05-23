@@ -60,6 +60,9 @@ public:
 
     [[nodiscard]] TextAutoGenerateChat::SectionHistory section() const;
 
+    [[nodiscard]] bool inProgress() const;
+    void setInProgress(bool newInProgress);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
 
@@ -70,6 +73,7 @@ private:
     bool mFavorite = false;
     bool mArchived = false;
     bool mInitialized = false;
+    bool mInProgress = false;
 };
 
 }

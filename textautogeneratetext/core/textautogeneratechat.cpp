@@ -24,6 +24,7 @@ TextAutoGenerateChat::TextAutoGenerateChat(const TextAutoGenerateChat &other)
     , mFavorite(other.mFavorite)
     , mArchived(other.mArchived)
     , mInitialized(other.mInitialized)
+    , mInProgress(other.mInProgress)
 {
 }
 
@@ -37,6 +38,7 @@ TextAutoGenerateChat &TextAutoGenerateChat::operator=(const TextAutoGenerateChat
         mFavorite = other.mFavorite;
         mArchived = other.mArchived;
         mInitialized = other.mInitialized;
+        mInProgress = other.mInProgress;
     }
     return *this;
 }
@@ -163,6 +165,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t)
     d.space() << "identifier:" << t.identifier();
     d.space() << "initialized:" << t.initialized();
     d.space() << "dateTime:" << t.dateTime();
+    d.space() << "inProgress:" << t.inProgress();
     return d;
 }
 
@@ -196,6 +199,17 @@ TextAutoGenerateChat::SectionHistory TextAutoGenerateChat::sectionMessage(qint64
         return TextAutoGenerateChat::SectionHistory::Later;
     }
     return TextAutoGenerateChat::SectionHistory::Unknown;
+}
+
+bool TextAutoGenerateChat::inProgress() const
+{
+    return mInProgress;
+}
+
+void TextAutoGenerateChat::setInProgress(bool newInProgress)
+{
+    qDebug() << " TextAutoGenerateChat::setInProgress " << newInProgress;
+    mInProgress = newInProgress;
 }
 
 #include "moc_textautogeneratechat.cpp"
