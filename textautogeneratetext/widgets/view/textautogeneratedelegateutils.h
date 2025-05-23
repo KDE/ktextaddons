@@ -22,7 +22,7 @@ void generateToolTip(const QString &toolTip, const QString &href, QString &forma
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QList<QAbstractTextDocumentLayout::Selection>
 selection(TextAutoGenerateListViewTextSelection *selection, QTextDocument *doc, const QModelIndex &index, const QStyleOptionViewItem &option);
 
-void setClipboardSelection(TextAutoGenerateListViewTextSelection *selection);
+TEXTAUTOGENERATETEXT_EXPORT void setClipboardSelection(TextAutoGenerateListViewTextSelection *selection);
 
 [[nodiscard]] int spacingText();
 [[nodiscard]] int roundRectValue();
