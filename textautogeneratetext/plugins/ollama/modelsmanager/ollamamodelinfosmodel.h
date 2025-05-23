@@ -17,6 +17,7 @@ public:
     enum ModelInfoRoles {
         ModelName = Qt::UserRole + 1,
         Description,
+        Categories,
     };
     Q_ENUM(ModelInfoRoles)
 
