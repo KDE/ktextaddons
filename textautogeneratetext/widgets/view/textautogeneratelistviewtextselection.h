@@ -6,6 +6,7 @@
 */
 
 #pragma once
+#include "textautogeneratetext_export.h"
 #include <QObject>
 #include <QPersistentModelIndex>
 
@@ -14,7 +15,7 @@ class QTextDocument;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateListViewBaseDelegate;
-class TextAutoGenerateListViewTextSelection : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewTextSelection : public QObject
 {
     Q_OBJECT
 public:
