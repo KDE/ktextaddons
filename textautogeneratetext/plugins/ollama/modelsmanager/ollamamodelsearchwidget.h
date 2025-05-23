@@ -7,6 +7,7 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class QLineEdit;
+class OllamaModelsInfosCategoriesComboBox;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelSearchWidget : public QWidget
 {
     Q_OBJECT
@@ -19,4 +20,5 @@ Q_SIGNALS:
 
 private:
     QLineEdit *const mSearchLineEdit;
+    OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
 };

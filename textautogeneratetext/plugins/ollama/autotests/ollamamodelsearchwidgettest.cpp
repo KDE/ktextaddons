@@ -5,6 +5,7 @@
 */
 #include "ollamamodelsearchwidgettest.h"
 #include "modelsmanager/ollamamodelsearchwidget.h"
+#include "modelsmanager/ollamamodelsinfoscategoriescombobox.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QSignalSpy>
@@ -26,6 +27,9 @@ void OllamaModelSearchWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit);
     QVERIFY(mSearchLineEdit->text().isEmpty());
     QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
+
+    auto mCategoriesComboBox = w.findChild<OllamaModelsInfosCategoriesComboBox *>(QStringLiteral("mCategoriesComboBox"));
+    QVERIFY(mCategoriesComboBox);
 }
 
 void OllamaModelSearchWidgetTest::shouldEmitSearchText()
