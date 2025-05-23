@@ -6,11 +6,11 @@
 
 #pragma once
 #include "textautogeneratetext_private_export.h"
-#include <QItemDelegate>
+#include <QStyledItemDelegate>
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListViewDelegate : public QItemDelegate
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListViewDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:

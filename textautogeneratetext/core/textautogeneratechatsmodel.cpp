@@ -58,6 +58,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return chat.favorite();
     case Archived:
         return chat.archived();
+    case InProgress:
+        return chat.inProgress();
     case Section:
         return QVariant::fromValue(chat.section());
     case DateTime:
@@ -99,6 +101,11 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Favorite: {
         chat.setFavorite(value.toBool());
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
+        return true;
+    }
+    case ChatRoles::InProgress: {
+        chat.setInProgress(value.toBool());
+        Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::InProgress});
         return true;
     }
     case ChatRoles::Identifier:
@@ -255,6 +262,38 @@ bool TextAutoGenerateChatsModel::chatIsArchived(const QByteArray &chatId) const
     auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
     if (it != mChats.end()) {
         return (*it).archived();
+    }
+    return false;
+}
+
+void TextAutoGenerateChatsModel::setChatInProgress(const QByteArray &chatId, bool state)
+{
+    if (chatId.isEmpty()) {
+        return;
+    }
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        (*it).setInProgress(state);
+        const int i = std::distance(mChats.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {InProgress});
+    }
+}
+
+bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).inProgress();
     }
     return false;
 }

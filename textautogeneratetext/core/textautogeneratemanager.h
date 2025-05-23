@@ -67,6 +67,7 @@ public:
     void checkCurrentChat();
     void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
     void askToAssistant(const QString &msg);
+    [[nodiscard]] bool chatInProgress(const QByteArray &chatId) const;
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -75,6 +76,7 @@ Q_SIGNALS:
     void currentChatIdChanged();
     void showArchiveChanged();
     void showMessageId(const QByteArray &msgId);
+    void chatInProgressChanged(bool inProgress);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();

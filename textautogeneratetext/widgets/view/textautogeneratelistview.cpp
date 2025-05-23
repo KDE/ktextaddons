@@ -31,6 +31,9 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
             delegate->setShowArchive(mManager->showArchived());
         });
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showMessageId, this, &TextAutoGenerateListView::goToMessageId);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, [delegate](bool inProgress) {
+            delegate->setInProgress(inProgress);
+        });
     }
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);

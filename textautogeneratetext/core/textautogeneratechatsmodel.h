@@ -19,6 +19,7 @@ public:
         Favorite,
         Identifier,
         Section,
+        InProgress,
         DateTime,
     };
 
@@ -64,8 +65,11 @@ public:
 
     [[nodiscard]] bool chatIsFavorited(const QByteArray &chatId) const;
     [[nodiscard]] bool chatIsArchived(const QByteArray &chatId) const;
+    [[nodiscard]] bool chatInProgress(const QByteArray &chatId) const;
 
     [[nodiscard]] QList<QByteArray> chatsId() const;
+
+    void setChatInProgress(const QByteArray &chatId, bool state);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;

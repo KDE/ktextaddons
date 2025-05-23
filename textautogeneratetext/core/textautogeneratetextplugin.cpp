@@ -62,11 +62,18 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QBy
             info.chatId = chatId;
             info.messagesArray = messageModel->convertToOllamaChat();
 
-            sendToAssistant(std::move(info));
+            initializeProgress(info);
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << chatId;
         }
     }
+}
+
+void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &info)
+{
+    // Start progress
+    d->manager->changeInProgress(info.chatId, info.messageUuid, true);
+    sendToAssistant(std::move(info));
 }
 
 void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str)
@@ -101,7 +108,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
 
         d->manager->addMessage(chatId, std::move(msgLlm));
         // qDebug() << " info " << info;
-        sendToAssistant(std::move(info));
+        initializeProgress(info);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }

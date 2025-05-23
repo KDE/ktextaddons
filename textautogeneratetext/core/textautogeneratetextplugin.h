@@ -67,6 +67,7 @@ protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }
