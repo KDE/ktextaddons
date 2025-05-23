@@ -25,17 +25,14 @@ QTextDocument *OllamaModelInfosDelegate::documentForIndex(const QModelIndex &ind
         }
         return ret;
     }
-    /*
-        const QString text = index.data(OllamaModelInfosModel::MessageRole).toString();
-        if (text.isEmpty()) {
-            return nullptr;
-        }
-        auto doc = createTextDocument(text, width);
-        auto ret = doc.get();
-        mDocumentCache.insert(uuid, std::move(doc));
-        return ret;
-        */
-    return nullptr;
+    const QString text = index.data(OllamaModelInfosModel::Description).toString();
+    if (text.isEmpty()) {
+        return nullptr;
+    }
+    auto doc = createTextDocument(text, width);
+    auto ret = doc.get();
+    mDocumentCache.insert(uuid, std::move(doc));
+    return ret;
 }
 
 #include "moc_ollamamodelinfosdelegate.cpp"

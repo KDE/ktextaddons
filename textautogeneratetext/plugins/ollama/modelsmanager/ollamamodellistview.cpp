@@ -9,8 +9,7 @@
 OllamaModelListView::OllamaModelListView(QWidget *parent)
     : QListView(parent)
 {
-    // setItemDelegate(new OllamaModelInfosDelegate(this));
-    // TODO add model too.
+    setItemDelegate(new OllamaModelInfosDelegate(this));
 }
 
 OllamaModelListView::~OllamaModelListView() = default;
