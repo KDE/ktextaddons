@@ -66,6 +66,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelutils.h
     modelsmanager/ollamamodelutils.cpp
+
+    modelsmanager/ollamamodelinfosdelegateutils.h
+    modelsmanager/ollamamodelinfosdelegateutils.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
