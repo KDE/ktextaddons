@@ -28,13 +28,11 @@ QVariant OllamaModelInfosModel::data(const QModelIndex &index, int role) const
     const OllamaModelInfo &modelInfo = mModelInfos.at(index.row());
     switch (role) {
     case Description:
-        // TODO
-        return {};
+        return modelInfo.description();
     case ModelName:
     case Qt::DisplayRole:
         return modelInfo.name();
     }
-
     return {};
 }
 
