@@ -593,7 +593,6 @@ void TextAutoGenerateListViewDelegate::setShowArchive(bool archive)
 
 void TextAutoGenerateListViewDelegate::setInProgress(bool newInProgress)
 {
-    qDebug() << " TextAutoGenerateListViewDelegate::setInProgress " << newInProgress;
     if (mInProgress != newInProgress) {
         mInProgress = newInProgress;
         Q_EMIT updateView();
