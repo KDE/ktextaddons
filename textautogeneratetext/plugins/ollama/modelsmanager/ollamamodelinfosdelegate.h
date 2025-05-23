@@ -34,4 +34,5 @@ private:
     void draw(QPainter *painter, const OllamaModelInfosDelegate::ModelInfoLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
 
     [[nodiscard]] OllamaModelInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
 };
