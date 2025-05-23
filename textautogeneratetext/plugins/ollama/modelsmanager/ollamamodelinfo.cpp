@@ -17,6 +17,12 @@ bool OllamaModelInfo::isValid() const
     return !mName.isEmpty();
 }
 
+bool OllamaModelInfo::operator==(const OllamaModelInfo &other) const
+{
+    return mName == other.name() && mUrl == other.url() && mAuthor == other.author() && mLanguages == other.languages() && mTags == other.tags()
+        && mCategories == other.categories();
+}
+
 OllamaModelInfo::Categories OllamaModelInfo::categories() const
 {
     return mCategories;
@@ -158,6 +164,11 @@ QDebug operator<<(QDebug d, const OllamaModelInfo &t)
     d.space() << "tags" << t.tags();
     d.space() << "categories" << t.categories();
     return d;
+}
+
+bool OllamaModelInfo::ModelTag::operator==(const ModelTag &other) const
+{
+    return tag == other.tag && size == other.size;
 }
 
 #include "moc_ollamamodelinfo.cpp"

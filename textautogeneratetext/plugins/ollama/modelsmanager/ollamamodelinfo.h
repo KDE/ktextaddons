@@ -31,6 +31,7 @@ public:
     struct ModelTag {
         QString tag;
         QString size;
+        [[nodiscard]] bool operator==(const ModelTag &other) const;
     };
 
     OllamaModelInfo();
@@ -59,6 +60,8 @@ public:
     void setCategories(const Categories &newCategories);
 
     [[nodiscard]] QString description() const;
+
+    [[nodiscard]] bool operator==(const OllamaModelInfo &other) const;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT Category convertStringToCategory(const QString &str) const;
