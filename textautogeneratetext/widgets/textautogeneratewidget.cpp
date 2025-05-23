@@ -108,7 +108,7 @@ TextAutoGenerateWidget::~TextAutoGenerateWidget()
 
 bool TextAutoGenerateWidget::lineEditWidgetEnabledState() const
 {
-    return !mManager->currentChatId().isEmpty() && !mManager->showArchived();
+    return !mManager->currentChatId().isEmpty() && !mManager->showArchived() && !mManager->chatInProgress(mManager->currentChatId());
 }
 
 void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)

@@ -39,8 +39,10 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearLineEdit();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateEnableState();
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     QPushButton *const mSendMessage;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QByteArray mUuid;
 };
 }

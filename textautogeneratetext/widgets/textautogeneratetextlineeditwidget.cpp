@@ -15,6 +15,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
     , mSendMessage(new QPushButton(QIcon::fromTheme(QStringLiteral("document-send")), i18n("Send"), this))
+    , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -45,14 +46,19 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         clearLineEdit();
     });
     connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::keyPressed, this, &TextAutoGenerateTextLineEditWidget::keyPressed);
-    if (manager) {
-        connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, [this, manager]() {
-            setEnabled(!manager->showArchived());
-        });
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
     }
 }
 
 TextAutoGenerateTextLineEditWidget::~TextAutoGenerateTextLineEditWidget() = default;
+
+void TextAutoGenerateTextLineEditWidget::updateEnableState()
+{
+    setEnabled(!mManager->showArchived() && !mManager->chatInProgress(mManager->currentChatId()));
+}
 
 void TextAutoGenerateTextLineEditWidget::clearLineEdit()
 {
