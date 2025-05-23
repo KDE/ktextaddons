@@ -208,7 +208,6 @@ bool TextAutoGenerateChat::inProgress() const
 
 void TextAutoGenerateChat::setInProgress(bool newInProgress)
 {
-    qDebug() << " TextAutoGenerateChat::setInProgress " << newInProgress;
     mInProgress = newInProgress;
 }
 
