@@ -15,4 +15,5 @@ public:
     ~OllamaModelSearchWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldEmitSearchText();
 };

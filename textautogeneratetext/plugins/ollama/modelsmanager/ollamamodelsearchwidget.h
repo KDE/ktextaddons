@@ -14,6 +14,9 @@ public:
     explicit OllamaModelSearchWidget(QWidget *parent = nullptr);
     ~OllamaModelSearchWidget() override;
 
+Q_SIGNALS:
+    void searchText(const QString &str);
+
 private:
     QLineEdit *const mSearchLineEdit;
 };

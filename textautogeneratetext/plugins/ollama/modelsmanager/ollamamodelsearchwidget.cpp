@@ -20,6 +20,7 @@ OllamaModelSearchWidget::OllamaModelSearchWidget(QWidget *parent)
     mainLayout->addWidget(mSearchLineEdit);
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search Model…"));
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &OllamaModelSearchWidget::searchText);
 }
 
 OllamaModelSearchWidget::~OllamaModelSearchWidget() = default;

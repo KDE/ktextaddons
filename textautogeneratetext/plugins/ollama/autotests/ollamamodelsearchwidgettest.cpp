@@ -7,6 +7,7 @@
 #include "modelsmanager/ollamamodelsearchwidget.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(OllamaModelSearchWidgetTest)
 OllamaModelSearchWidgetTest::OllamaModelSearchWidgetTest(QObject *parent)
@@ -24,7 +25,21 @@ void OllamaModelSearchWidgetTest::shouldHaveDefaultValues()
     auto mSearchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchLineEdit"));
     QVERIFY(mSearchLineEdit);
     QVERIFY(mSearchLineEdit->text().isEmpty());
-    QVERIFY(mSearchLineEdit->placeholderText().isEmpty());
+    QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
+}
+
+void OllamaModelSearchWidgetTest::shouldEmitSearchText()
+{
+    OllamaModelSearchWidget w;
+    QSignalSpy searchTextSpy(&w, &OllamaModelSearchWidget::searchText);
+
+    auto mSearchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchLineEdit"));
+    mSearchLineEdit->setText(QStringLiteral("foo"));
+    QCOMPARE(searchTextSpy.count(), 1);
+
+    searchTextSpy.clear();
+    mSearchLineEdit->clear();
+    QCOMPARE(searchTextSpy.count(), 1);
 }
 
 #include "moc_ollamamodelsearchwidgettest.cpp"
