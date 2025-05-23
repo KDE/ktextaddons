@@ -29,7 +29,9 @@ private:
     struct ModelInfoLayout {
         // Text
         QRect textRect;
+        qreal baseLine; // used to draw sender/timestamp
     };
+    void draw(QPainter *painter, const OllamaModelInfosDelegate::ModelInfoLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
 
     [[nodiscard]] OllamaModelInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
 };
