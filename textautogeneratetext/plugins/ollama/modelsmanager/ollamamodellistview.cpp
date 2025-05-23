@@ -9,6 +9,14 @@
 OllamaModelListView::OllamaModelListView(QWidget *parent)
     : QListView(parent)
 {
+    setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setWordWrap(true); // so that the delegate sizeHint is called again when the width changes
+
+    setFocusPolicy(Qt::NoFocus);
+    scrollToBottom();
+    setMouseTracking(true);
+
     setItemDelegate(new OllamaModelInfosDelegate(this));
 }
 
