@@ -5,13 +5,20 @@
 */
 
 #pragma once
-
+#include "ollamamodelinfo.h"
+#include "textautogenerateollama_private_export.h"
 #include <QSortFilterProxyModel>
 
-class OllamaModelInfosSortProxyModel : public QSortFilterProxyModel
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfosSortProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
     explicit OllamaModelInfosSortProxyModel(QObject *parent = nullptr);
     ~OllamaModelInfosSortProxyModel() override;
+
+    [[nodiscard]] OllamaModelInfo::Categories categories() const;
+    void setCategories(const OllamaModelInfo::Categories &newCategories);
+
+private:
+    OllamaModelInfo::Categories mCategories = OllamaModelInfo::Category::Unknown;
 };
