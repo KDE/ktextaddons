@@ -18,3 +18,5 @@ void OllamaModelInfosSortProxyModelTest::shouldHaveDefaultValues()
     OllamaModelInfosSortProxyModel w;
     QCOMPARE(w.categories(), OllamaModelInfo::Category::Unknown);
 }
+
+#include "moc_ollamamodelinfossortproxymodeltest.cpp"
