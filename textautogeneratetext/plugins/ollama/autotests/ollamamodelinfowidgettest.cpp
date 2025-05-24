@@ -6,6 +6,7 @@
 #include "ollamamodelinfowidgettest.h"
 #include "modelsmanager/ollamamodelinfowidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(OllamaModelInfoWidgetTest)
 OllamaModelInfoWidgetTest::OllamaModelInfoWidgetTest(QObject *parent)
     : QObject{parent}
@@ -15,5 +16,8 @@ OllamaModelInfoWidgetTest::OllamaModelInfoWidgetTest(QObject *parent)
 void OllamaModelInfoWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelInfoWidget w;
+    auto mMainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mMainLayout);
+    QCOMPARE(mMainLayout->contentsMargins(), QMargins());
     // TODO
 }
