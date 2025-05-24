@@ -28,17 +28,18 @@ void OllamaModelInfosDelegate::paint(QPainter *painter, const QStyleOptionViewIt
 
     const int margin = OllamaModelInfosDelegateUtils::basicMargin();
     painter->save();
+    painter->setRenderHint(QPainter::Antialiasing);
     // painter->setPen(Qt::NoPen);
     // painter->setBrush(Qt::red); // TODO
     // painter->setBrush(ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color());
     const int offset = static_cast<int>(static_cast<double>(margin) / 2.0);
     painter->drawRoundedRect(option.rect.adjusted(offset, offset, -offset, 0), 5, 5);
-    painter->restore();
 
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
     if (layout.textRect.isValid()) {
         draw(painter, layout, index, option);
     }
+    painter->restore();
 }
 
 void OllamaModelInfosDelegate::draw(QPainter *painter,
@@ -215,8 +216,8 @@ QSize OllamaModelInfosDelegate::sizeHint(const QStyleOptionViewItem &option, con
 
     // Note: option.rect in this method is huge (as big as the viewport)
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
-    const QSize size = {option.rect.width() + static_cast<int>(OllamaModelInfosDelegateUtils::basicMargin() * 2),
-                        layout.textRect.height() + static_cast<int>(OllamaModelInfosDelegateUtils::basicMargin()) * 2};
+    const QSize size = {option.rect.width() - 2 * OllamaModelInfosDelegateUtils::basicMargin(),
+                        layout.textRect.height() + 2 * OllamaModelInfosDelegateUtils::basicMargin()};
     if (!size.isEmpty()) {
         mSizeHintCache.insert(modelName, size);
     }
