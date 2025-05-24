@@ -33,7 +33,7 @@ void OllamaModelInfosDelegate::paint(QPainter *painter, const QStyleOptionViewIt
     // painter->setBrush(Qt::red); // TODO
     // painter->setBrush(ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color());
     const int offset = static_cast<int>(static_cast<double>(margin) / 2.0);
-    painter->drawRoundedRect(option.rect.adjusted(offset, offset, -offset, 0), 5, 5);
+    painter->drawRoundedRect(option.rect.adjusted(offset, offset, -offset, -offset), 5, 5);
 
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
     if (layout.textRect.isValid()) {
@@ -115,7 +115,7 @@ OllamaModelInfosDelegate::ModelInfoLayout OllamaModelInfosDelegate::doLayout(con
     const QSize textSize = documentSizeHint(index, maxWidth, option, &layout.baseLine);
     QRect usableRect = option.rect;
 
-    layout.textRect = QRect(option.rect.width() - maxWidth, usableRect.top(), maxWidth, textSize.height());
+    layout.textRect = QRect(10, usableRect.top() + 10, maxWidth - 20, textSize.height() + 20);
     return layout;
 }
 
