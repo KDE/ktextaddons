@@ -63,6 +63,8 @@ public:
 
     [[nodiscard]] bool operator==(const OllamaModelInfo &other) const;
 
+    static QString convertCategoryToI18n(OllamaModelInfo::Category cat);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT Category convertStringToCategory(const QString &str) const;
     QString mName;

@@ -6,6 +6,7 @@
 #include "ollamamodelinfo.h"
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelutils.h"
+#include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -68,6 +69,38 @@ void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
     }
     mLanguages = lst;
     mDescription = OllamaModelUtils::description(mName);
+}
+
+QString OllamaModelInfo::convertCategoryToI18n(OllamaModelInfo::Category cat)
+{
+    switch (cat) {
+    case Category::Unknown:
+        return {};
+    case Category::Tools:
+        return i18n("Tools");
+    case Category::Small:
+        return i18n("Small");
+    case Category::Medium:
+        return i18n("Medium");
+    case Category::Big:
+        return i18n("Big");
+    case Category::Huge:
+        return i18n("Huge");
+    case Category::Multilingual:
+        return i18n("Multilingual");
+    case Category::Code:
+        return i18n("Code");
+    case Category::Math:
+        return i18n("Math");
+    case Category::Vision:
+        return i18n("Vision");
+    case Category::Embedding:
+        return i18n("Embedding");
+    case Category::Reasoning:
+        return i18n("Reasoning");
+    }
+    qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Missing translating Category " << static_cast<int>(cat);
+    return {};
 }
 
 OllamaModelInfo::Category OllamaModelInfo::convertStringToCategory(const QString &str) const
