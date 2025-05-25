@@ -37,7 +37,9 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
     mDownloadWidget = new QWidget(this);
     auto downloadLayout = new QVBoxLayout(mDownloadWidget);
     for (const auto &t : tags) {
-        downloadLayout->addWidget(new OllamaModelDownloadWidget(t.size, t.tag, mDownloadWidget));
+        auto downLoadWidget = new OllamaModelDownloadWidget(t.size, t.tag, mDownloadWidget);
+        connect(downLoadWidget, &OllamaModelDownloadWidget::downloadModel, this, &OllamaModelInfoWidget::downloadModel);
+        downloadLayout->addWidget(downLoadWidget);
     }
     mMainLayout->addWidget(mDownloadWidget, 1, Qt::AlignTop);
 }

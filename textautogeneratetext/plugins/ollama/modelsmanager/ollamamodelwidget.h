@@ -21,6 +21,7 @@ public:
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &index);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotDownloadModel(const QString &url);
     OllamaModelSearchWidget *const mSearchWidget;
     OllamaModelListView *const mListView;
     OllamaModelInfoWidget *const mInfoWidget;

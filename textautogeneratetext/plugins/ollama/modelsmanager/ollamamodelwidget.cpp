@@ -40,11 +40,15 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     splitter->addWidget(mListView);
 
     mInfoWidget->setObjectName(QStringLiteral("mInfoWidget"));
-    splitter->addWidget(mInfoWidget);
-    mInfoWidget->hide();
+    splitter->addWidget(mStackedWidget);
+    mStackedWidget->hide();
 
-    mDownloadWidget->setObjectName(QStringLiteral("mDownloadWidget")); // TODO
-    mStackedWidget->setObjectName(QStringLiteral("mStackedWidget")); // TODO
+    mDownloadWidget->setObjectName(QStringLiteral("mDownloadWidget"));
+    mStackedWidget->setObjectName(QStringLiteral("mStackedWidget"));
+    mStackedWidget->addWidget(mInfoWidget);
+    mStackedWidget->addWidget(mDownloadWidget);
+    mStackedWidget->setCurrentWidget(mInfoWidget);
+    connect(mInfoWidget, &OllamaModelInfoWidget::downloadModel, this, &OllamaModelWidget::slotDownloadModel);
 
     auto model = new OllamaModelInfosModel(this);
     mProxyModel->setSourceModel(model);
@@ -64,8 +68,16 @@ void OllamaModelWidget::slotClicked(const QModelIndex &index)
     if (!index.isValid()) {
         return;
     }
-    mInfoWidget->setVisible(true);
+    mStackedWidget->setVisible(true);
+    mStackedWidget->setCurrentWidget(mInfoWidget);
     mInfoWidget->generateWidget(index);
+}
+
+void OllamaModelWidget::slotDownloadModel(const QString &url)
+{
+    qDebug() << " url " << url;
+    // TODO use url
+    mStackedWidget->setCurrentWidget(mDownloadWidget);
 }
 
 #include "moc_ollamamodelwidget.cpp"
