@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelwidget.h"
+#include "ollamamodeldownloadwidget.h"
 #include "ollamamodelinfosmanager.h"
 #include "ollamamodelinfosmodel.h"
 #include "ollamamodelinfossortproxymodel.h"
@@ -11,6 +12,7 @@
 #include "ollamamodellistview.h"
 #include "ollamamodelsearchwidget.h"
 #include <QSplitter>
+#include <QStackedWidget>
 #include <QVBoxLayout>
 
 OllamaModelWidget::OllamaModelWidget(QWidget *parent)
@@ -19,6 +21,8 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     , mListView(new OllamaModelListView(this))
     , mInfoWidget(new OllamaModelInfoWidget(this))
     , mProxyModel(new OllamaModelInfosSortProxyModel(this))
+    , mDownloadWidget(new OllamaModelDownloadWidget({}, {}, this)) // TODO fix me
+    , mStackedWidget(new QStackedWidget(this))
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
@@ -38,6 +42,9 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     mInfoWidget->setObjectName(QStringLiteral("mInfoWidget"));
     splitter->addWidget(mInfoWidget);
     mInfoWidget->hide();
+
+    mDownloadWidget->setObjectName(QStringLiteral("mDownloadWidget")); // TODO
+    mStackedWidget->setObjectName(QStringLiteral("mStackedWidget")); // TODO
 
     auto model = new OllamaModelInfosModel(this);
     mProxyModel->setSourceModel(model);
@@ -59,7 +66,6 @@ void OllamaModelWidget::slotClicked(const QModelIndex &index)
     }
     mInfoWidget->setVisible(true);
     mInfoWidget->generateWidget(index);
-    qDebug() << " activated" << index;
 }
 
 #include "moc_ollamamodelwidget.cpp"
