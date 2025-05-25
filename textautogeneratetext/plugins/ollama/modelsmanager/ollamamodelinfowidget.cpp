@@ -33,14 +33,13 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
     mModelName->setText(index.data(OllamaModelInfosModel::ModelName).toString());
 
     const QList<OllamaModelInfo::ModelTag> tags = index.data(OllamaModelInfosModel::Tags).value<QList<OllamaModelInfo::ModelTag>>();
-    qDebug() << " tags " << tags;
     delete mDownloadWidget;
     mDownloadWidget = new QWidget;
     auto downloadLayout = new QVBoxLayout(mDownloadWidget);
     for (const auto &t : tags) {
         downloadLayout->addWidget(new OllamaModelDownloadWidget(t.size, t.tag, mDownloadWidget));
     }
-    mMainLayout->addWidget(mDownloadWidget);
+    mMainLayout->addWidget(mDownloadWidget, 0, Qt::AlignTop);
     mMainLayout->addStretch(1);
 }
 
