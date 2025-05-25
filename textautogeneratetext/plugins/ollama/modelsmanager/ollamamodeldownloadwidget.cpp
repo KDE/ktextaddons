@@ -14,3 +14,5 @@ OllamaModelDownloadWidget::OllamaModelDownloadWidget(QWidget *parent)
 }
 
 OllamaModelDownloadWidget::~OllamaModelDownloadWidget() = default;
+
+#include "moc_ollamamodeldownloadwidget.cpp"

@@ -18,3 +18,5 @@ void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
     OllamaModelDownloadWidget w;
     // TODO
 }
+
+#include "moc_ollamamodeldownloadwidgettest.cpp"

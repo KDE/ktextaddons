@@ -21,3 +21,5 @@ void OllamaModelInfoWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(mMainLayout->contentsMargins(), QMargins());
     // TODO
 }
+
+#include "moc_ollamamodelinfowidgettest.cpp"
