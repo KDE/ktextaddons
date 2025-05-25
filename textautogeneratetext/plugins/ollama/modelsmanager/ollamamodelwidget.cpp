@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelwidget.h"
-#include "ollamamodeldownloadwidget.h"
+#include "ollamamodeldownloadprogresswidget.h"
 #include "ollamamodelinfosmanager.h"
 #include "ollamamodelinfosmodel.h"
 #include "ollamamodelinfossortproxymodel.h"
@@ -21,7 +21,7 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     , mListView(new OllamaModelListView(this))
     , mInfoWidget(new OllamaModelInfoWidget(this))
     , mProxyModel(new OllamaModelInfosSortProxyModel(this))
-    , mDownloadWidget(new OllamaModelDownloadWidget({}, {}, this)) // TODO fix me
+    , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(this))
     , mStackedWidget(new QStackedWidget(this))
 {
     auto splitter = new QSplitter(this);
@@ -43,10 +43,10 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     splitter->addWidget(mStackedWidget);
     mStackedWidget->hide();
 
-    mDownloadWidget->setObjectName(QStringLiteral("mDownloadWidget"));
+    mOllamaModelDownloadProgressWidget->setObjectName(QStringLiteral("mOllamaModelDownloadProgressWidget"));
     mStackedWidget->setObjectName(QStringLiteral("mStackedWidget"));
     mStackedWidget->addWidget(mInfoWidget);
-    mStackedWidget->addWidget(mDownloadWidget);
+    mStackedWidget->addWidget(mOllamaModelDownloadProgressWidget);
     mStackedWidget->setCurrentWidget(mInfoWidget);
     connect(mInfoWidget, &OllamaModelInfoWidget::downloadModel, this, &OllamaModelWidget::slotDownloadModel);
 
@@ -77,7 +77,7 @@ void OllamaModelWidget::slotDownloadModel(const QString &url)
 {
     qDebug() << " url " << url;
     // TODO use url
-    mStackedWidget->setCurrentWidget(mDownloadWidget);
+    mStackedWidget->setCurrentWidget(mOllamaModelDownloadProgressWidget);
 }
 
 #include "moc_ollamamodelwidget.cpp"

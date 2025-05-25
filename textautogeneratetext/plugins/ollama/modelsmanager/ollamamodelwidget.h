@@ -10,7 +10,7 @@ class OllamaModelSearchWidget;
 class OllamaModelListView;
 class OllamaModelInfoWidget;
 class OllamaModelInfosSortProxyModel;
-class OllamaModelDownloadWidget;
+class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelWidget : public QWidget
 {
@@ -26,6 +26,6 @@ private:
     OllamaModelListView *const mListView;
     OllamaModelInfoWidget *const mInfoWidget;
     OllamaModelInfosSortProxyModel *const mProxyModel;
-    OllamaModelDownloadWidget *const mDownloadWidget;
+    OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;
     QStackedWidget *const mStackedWidget;
 };

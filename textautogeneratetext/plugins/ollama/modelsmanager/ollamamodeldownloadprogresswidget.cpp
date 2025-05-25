@@ -31,6 +31,7 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *pa
     connect(cancelDownload, &QPushButton::clicked, this, [this]() {
         // TODO
     });
+    mainLayout->addStretch(1);
 }
 
 OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = default;
