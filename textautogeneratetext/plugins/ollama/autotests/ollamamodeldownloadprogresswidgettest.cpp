@@ -6,6 +6,7 @@
 #include "ollamamodeldownloadprogresswidgettest.h"
 #include "modelsmanager/ollamamodeldownloadprogresswidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(OllamaModelDownloadProgressWidgetTest)
 
 OllamaModelDownloadProgressWidgetTest::OllamaModelDownloadProgressWidgetTest(QObject *parent)
@@ -16,6 +17,10 @@ OllamaModelDownloadProgressWidgetTest::OllamaModelDownloadProgressWidgetTest(QOb
 void OllamaModelDownloadProgressWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelDownloadProgressWidget w;
+
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     // TODO
 }
 
