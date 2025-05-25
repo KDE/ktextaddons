@@ -10,4 +10,5 @@
 namespace OllamaModelInfosDelegateUtils
 {
 [[nodiscard]] qreal basicMargin();
+[[nodiscard]] int textMargin();
 };

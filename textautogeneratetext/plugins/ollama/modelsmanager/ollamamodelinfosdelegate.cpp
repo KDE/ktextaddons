@@ -116,7 +116,10 @@ OllamaModelInfosDelegate::ModelInfoLayout OllamaModelInfosDelegate::doLayout(con
     const QSize textSize = documentSizeHint(index, maxWidth, option, &layout.baseLine);
     QRect usableRect = option.rect;
 
-    layout.textRect = QRect(10, usableRect.top() + 10, maxWidth - 20, textSize.height() + 20);
+    layout.textRect = QRect(OllamaModelInfosDelegateUtils::textMargin(),
+                            usableRect.top() + OllamaModelInfosDelegateUtils::textMargin(),
+                            maxWidth - 2 * OllamaModelInfosDelegateUtils::textMargin(),
+                            textSize.height() + 2 * OllamaModelInfosDelegateUtils::textMargin());
     return layout;
 }
 
@@ -217,8 +220,8 @@ QSize OllamaModelInfosDelegate::sizeHint(const QStyleOptionViewItem &option, con
 
     // Note: option.rect in this method is huge (as big as the viewport)
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
-    const QSize size = {option.rect.width() - 2 * static_cast<int>(OllamaModelInfosDelegateUtils::basicMargin()),
-                        layout.textRect.height() + 2 * static_cast<int>(OllamaModelInfosDelegateUtils::basicMargin())};
+    const QSize size = {option.rect.width() - 2 * static_cast<int>(OllamaModelInfosDelegateUtils::textMargin()),
+                        layout.textRect.height() + static_cast<int>(OllamaModelInfosDelegateUtils::textMargin())};
     if (!size.isEmpty()) {
         mSizeHintCache.insert(modelName, size);
     }

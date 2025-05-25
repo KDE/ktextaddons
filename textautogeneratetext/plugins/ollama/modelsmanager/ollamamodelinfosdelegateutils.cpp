@@ -11,3 +11,8 @@ qreal OllamaModelInfosDelegateUtils::basicMargin()
 {
     return 8;
 }
+
+int OllamaModelInfosDelegateUtils::textMargin()
+{
+    return 15;
+}
