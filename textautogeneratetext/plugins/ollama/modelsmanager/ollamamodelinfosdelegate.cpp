@@ -43,6 +43,14 @@ void OllamaModelInfosDelegate::paint(QPainter *painter, const QStyleOptionViewIt
     painter->restore();
 }
 
+void OllamaModelInfosDelegate::drawCatergories(QPainter *painter,
+                                               const OllamaModelInfosDelegate::ModelInfoLayout &layout,
+                                               const QModelIndex &index,
+                                               const QStyleOptionViewItem &option) const
+{
+    // TODO
+}
+
 void OllamaModelInfosDelegate::draw(QPainter *painter,
                                     const OllamaModelInfosDelegate::ModelInfoLayout &layout,
                                     const QModelIndex &index,
