@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadprogresswidget.h"
+#include <KLocalizedString>
+#include <QVBoxLayout>
 
 OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *parent)
     : QWidget{parent}
@@ -11,3 +13,5 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *pa
 }
 
 OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = default;
+
+#include "moc_ollamamodeldownloadprogresswidget.cpp"

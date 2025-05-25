@@ -18,3 +18,5 @@ void OllamaModelDownloadProgressWidgetTest::shouldHaveDefaultValues()
     OllamaModelDownloadProgressWidget w;
     // TODO
 }
+
+#include "moc_ollamamodeldownloadprogresswidgettest.cpp"
