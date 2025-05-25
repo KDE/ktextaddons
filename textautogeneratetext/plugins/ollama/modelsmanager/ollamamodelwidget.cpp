@@ -10,6 +10,7 @@
 #include "ollamamodelinfowidget.h"
 #include "ollamamodellistview.h"
 #include "ollamamodelsearchwidget.h"
+#include <QSplitter>
 #include <QVBoxLayout>
 
 OllamaModelWidget::OllamaModelWidget(QWidget *parent)
@@ -19,21 +20,25 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     , mInfoWidget(new OllamaModelInfoWidget(this))
     , mProxyModel(new OllamaModelInfosSortProxyModel(this))
 {
+    auto splitter = new QSplitter(this);
+    splitter->setOrientation(Qt::Horizontal);
+    splitter->setObjectName(QStringLiteral("splitter"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
 
     mSearchWidget->setObjectName(QStringLiteral("mSearchWidget"));
     mainLayout->addWidget(mSearchWidget);
+    mainLayout->addWidget(splitter);
 
     auto hbox = new QHBoxLayout();
     mainLayout->addLayout(hbox);
     hbox->setContentsMargins({});
     mListView->setObjectName(QStringLiteral("mListView"));
-    hbox->addWidget(mListView);
+    splitter->addWidget(mListView);
 
     mInfoWidget->setObjectName(QStringLiteral("mInfoWidget"));
-    hbox->addWidget(mInfoWidget);
+    splitter->addWidget(mInfoWidget);
     mInfoWidget->hide();
 
     auto model = new OllamaModelInfosModel(this);
