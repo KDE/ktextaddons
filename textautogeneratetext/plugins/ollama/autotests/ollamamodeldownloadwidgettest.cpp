@@ -5,6 +5,7 @@
 */
 #include "ollamamodeldownloadwidgettest.h"
 #include "modelsmanager/ollamamodeldownloadwidget.h"
+#include <QHBoxLayout>
 #include <QTest>
 QTEST_MAIN(OllamaModelDownloadWidgetTest)
 
@@ -15,7 +16,10 @@ OllamaModelDownloadWidgetTest::OllamaModelDownloadWidgetTest(QObject *parent)
 
 void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelDownloadWidget w;
+    OllamaModelDownloadWidget w(QString{}, QString{});
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     // TODO
 }
 
