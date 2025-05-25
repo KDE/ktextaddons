@@ -16,6 +16,9 @@ public:
     ~OllamaModelInfoWidget() override;
     void generateWidget(const QModelIndex &index);
 
+Q_SIGNALS:
+    void downloadModel(const QString &url);
+
 private:
     QVBoxLayout *const mMainLayout;
     QLabel *const mModelName;

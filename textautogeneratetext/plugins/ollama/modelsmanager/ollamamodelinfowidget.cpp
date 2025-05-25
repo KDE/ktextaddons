@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinfowidget.h"
+#include "ollamamodeldownloadwidget.h"
 #include "ollamamodelinfosmodel.h"
 #include <QLabel>
 #include <QVBoxLayout>
