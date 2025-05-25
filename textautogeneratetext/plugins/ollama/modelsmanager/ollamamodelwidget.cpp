@@ -29,11 +29,8 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
 
     mSearchWidget->setObjectName(QStringLiteral("mSearchWidget"));
     mainLayout->addWidget(mSearchWidget);
-    mainLayout->addWidget(splitter);
+    mainLayout->addWidget(splitter, 1);
 
-    auto hbox = new QHBoxLayout();
-    mainLayout->addLayout(hbox);
-    hbox->setContentsMargins({});
     mListView->setObjectName(QStringLiteral("mListView"));
     splitter->addWidget(mListView);
 
