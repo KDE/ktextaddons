@@ -39,8 +39,7 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
     for (const auto &t : tags) {
         downloadLayout->addWidget(new OllamaModelDownloadWidget(t.size, t.tag, mDownloadWidget));
     }
-    mMainLayout->addWidget(mDownloadWidget, 0, Qt::AlignTop);
-    mMainLayout->addStretch(1);
+    mMainLayout->addWidget(mDownloadWidget, 1, Qt::AlignTop);
 }
 
 #include "moc_ollamamodelinfowidget.cpp"
