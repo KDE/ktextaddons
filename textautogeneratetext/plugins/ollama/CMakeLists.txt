@@ -75,6 +75,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodeldownloadwidget.h
     modelsmanager/ollamamodeldownloadwidget.cpp
+
+    modelsmanager/ollamamodeldownloadprogresswidget.h
+    modelsmanager/ollamamodeldownloadprogresswidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
