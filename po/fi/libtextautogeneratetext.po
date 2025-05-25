@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:41+0000\n"
+"POT-Creation-Date: 2025-05-25 00:41+0000\n"
 "PO-Revision-Date: 2025-04-08 08:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -127,6 +127,61 @@ msgstr "Vastausten tuottamiseen käytetty malli"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
+#, kde-format
+msgid "Tools"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
+#, kde-format
+msgid "Small"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
+#, kde-format
+msgid "Big"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
+#, kde-format
+msgid "Huge"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
+#, kde-format
+msgid "Multilingual"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
+#, kde-format
+msgid "Code"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
+#, kde-format
+msgid "Math"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
+#, kde-format
+msgid "Vision"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
+#, kde-format
+msgid "Embedding"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
+#, kde-format
+msgid "Reasoning"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24

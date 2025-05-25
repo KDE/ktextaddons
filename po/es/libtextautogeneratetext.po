@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:41+0000\n"
-"PO-Revision-Date: 2025-05-24 01:35+0100\n"
+"POT-Creation-Date: 2025-05-25 00:41+0000\n"
+"PO-Revision-Date: 2025-05-24 21:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -133,13 +133,66 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Gestión de modelos de Ollama"
 
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
+#, kde-format
+msgid "Tools"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
+#, kde-format
+msgid "Small"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
+#, kde-format
+msgid "Big"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
+#, kde-format
+msgid "Huge"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
+#, kde-format
+msgid "Multilingual"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
+#, kde-format
+msgid "Code"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
+#, kde-format
+msgid "Math"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
+#, kde-format
+msgid "Vision"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
+#, kde-format
+msgid "Embedding"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
+#, kde-format
+msgid "Reasoning"
+msgstr ""
+
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "Buscar…"
+msgstr "Modelo de búsqueda…"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
 #, kde-format
@@ -147,11 +200,13 @@ msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
 "compared to the Llama 3.1 405B model."
 msgstr ""
+"Nuevo modelo 70B de última generación. Llama 3.3 70B ofrece un rendimiento "
+"similar al modelo Llama 3.1 405B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr ""
+msgstr "QwQ es el modelo de razonamiento de la serie Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
@@ -159,11 +214,13 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
+"Llama 3.2 Vision es una colección de modelos generativos de razonamiento de "
+"imágenes ajustados por instrucciones en tamaños 11B y 90B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
+msgstr "Llama 3.2 de Meta se reduce con los modelos 1B y 3B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -171,22 +228,26 @@ msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
 "405B parameter sizes."
 msgstr ""
+"Llama 3.1 es un nuevo modelo de última generación de Meta, disponible con "
+"tamaños de parámetros 8B, 70B y 405B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
-msgstr ""
+msgstr "Meta Llama 3: el LLM disponible abiertamente más capaz hasta la fecha."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr ""
+msgstr "El modelo 7B publicado por Mistral AI, actualizado a la versión 0.3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
 msgid ""
 "A high-performing open embedding model with a large token context window."
 msgstr ""
+"Un modelo abierto de alto rendimiento para integrar, con una gran ventana de "
+"contextos de tókenes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
 #, kde-format
@@ -194,6 +255,8 @@ msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
+"Gemma es una familia de modelos abiertos ligeros y de última generación "
+"creada por Google DeepMind. Actualizada a la versión 1.1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
 #, kde-format
@@ -201,11 +264,14 @@ msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
 "0.5B to 110B parameters"
 msgstr ""
+"Qwen 1.5 es una serie de modelos extensos de lenguaje de Alibaba Cloud, que "
+"abarca parámetros desde 0.5B hasta 110B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
 msgstr ""
+"Qwen2 es una nueva serie de modelos extensos de lenguaje del grupo Alibaba."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
@@ -213,6 +279,8 @@ msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
 "open models by Microsoft."
 msgstr ""
+"Phi-3 es una familia de modelos abiertos 3B ligeros (Mini) y 14B (Medium) de "
+"última generación de Microsoft."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
 #, kde-format
@@ -220,6 +288,8 @@ msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
 "parameters."
 msgstr ""
+"Llama 2 es una colección de modelos de lenguaje fundacionales que abarcan "
+"parámetros desde 7B hasta 70B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:30
 #, kde-format
@@ -228,6 +298,9 @@ msgid ""
 "encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
 "and has multilingual support."
 msgstr ""
+"Los modelos Qwen2.5 están preentrenados con el más reciente conjunto de "
+"datos a gran escala de Alibaba, que abarca hasta 18 billones de tókenes. El "
+"modelo admite hasta 128 000 tókenes y es multilingüe."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:32
 #, kde-format
@@ -235,6 +308,8 @@ msgid ""
 "Google Gemma 2 is a high-performing and efficient model available in three "
 "sizes: 2B, 9B, and 27B."
 msgstr ""
+"Google Gemma 2es un modelo eficiente y de alto rendimiento disponible en "
+"tres tamaños: 2B, 9B y 27B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:34
 #, kde-format
@@ -243,6 +318,9 @@ msgid ""
 "vision encoder and Vicuna for general-purpose visual and language "
 "understanding. Updated to version 1.6."
 msgstr ""
+"LLaVA es un es un novedoso modelo extenso multimodal, entrenado de extremo a "
+"extremo, que combina un codificador de visión y Vicuna para la comprensión "
+"visual y del lenguaje de propósito general."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:36
 #, kde-format
@@ -250,6 +328,8 @@ msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
 msgstr ""
+"Un modelo extenso de lenguaje que puede usar indicaciones de texto para "
+"generar y discutir código."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:38
 #, kde-format
@@ -257,6 +337,9 @@ msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
 "improvements in code generation, code reasoning, and code fixing."
 msgstr ""
+"La última serie de modelos Qwen específicos de código, con mejoras "
+"significativas en la generación de código, el razonamiento de código y la "
+"corrección de código."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
 #, kde-format
@@ -264,6 +347,8 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
+"Un modelo 12B de última generación con una longitud de contexto de 128k, "
+"creado por Mistral AI en colaboración con NVIDIA."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -538,6 +623,9 @@ msgid ""
 "capable in code generation, mathematics, and reasoning with 128k context "
 "window and support for dozens of languages."
 msgstr ""
+"Mistral Large 2 es el nuevo modelo insignia de Mistral que es "
+"significativamente mejor en generación de código, matemáticas y razonamiento "
+"con una ventana de contexto de 128K y compatible con docenas de idiomas."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:103
 #, kde-format
@@ -591,7 +679,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
 #, kde-format
 msgid "Model focused on math and logic problems"
-msgstr ""
+msgstr "Modelo enfocado a problemas matemáticos y lógicos."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
 #, kde-format
@@ -636,12 +724,13 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:123
 #, kde-format
 msgid "Code generation model based on Code Llama."
-msgstr ""
+msgstr "Modelo de generación de código basado en Code Llama."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
 msgstr ""
+"Una extensión de Llama 2 que admite un contexto de hasta 128 000 tókenes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
 #, kde-format
@@ -653,7 +742,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
 msgid "General use model based on Llama 2."
-msgstr ""
+msgstr "Modelo de uso general basado en Llama 2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:127
 #, kde-format
@@ -780,6 +869,7 @@ msgstr ""
 #, kde-format
 msgid "An extension of Mistral to support context windows of 64K or 128K."
 msgstr ""
+"Una extensión de Mistral que admite ventanas de contexto de 64K o 128K."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
 #, kde-format
@@ -845,6 +935,10 @@ msgid ""
 "cases and support for retrieval augmented generation (RAG), streamlining "
 "code generation, translation and bug fixing."
 msgstr ""
+"Los modelos IBM Granite 2B y 8B están diseñados para admitir casos de uso "
+"basados ​​en herramientas y compatibilidad con generación de recuperación "
+"aumentada (RAG), que agiliza la generación de código, la traducción y la "
+"corrección de errores."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
 #, kde-format
@@ -1183,7 +1277,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
-msgstr ""
+msgstr "El modelo actual más capaz que funciona con una sola GPU."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
@@ -1238,6 +1332,9 @@ msgid ""
 "art vision understanding and enhances long context capabilities up to 128k "
 "tokens without compromising text performance."
 msgstr ""
+"Basado en Mistral Small 3, Mistral Small 3.1 (2503) añade comprensión de "
+"visión de última generación y mejora las capacidades de grandes contextos de "
+"hasta 128 000 tókenes sin comprometer el rendimiento del texto."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:268
 #, kde-format
@@ -1264,7 +1361,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
-msgstr ""
+msgstr "La colección más reciente de modelos multimodales de Meta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1273,6 +1370,9 @@ msgid ""
 "have been fine-tuned for improved reasoning and instruction-following "
 "capabilities."
 msgstr ""
+"Los modelos IBM Granite 2B y 8B son modelos de lenguaje de contextos de 128K "
+"que han sido afinados para capacidades de razonamiento mejorado y "
+"seguimiento de instrucciones."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
