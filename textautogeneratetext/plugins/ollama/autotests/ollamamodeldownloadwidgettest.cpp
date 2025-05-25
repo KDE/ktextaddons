@@ -25,8 +25,8 @@ void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
-    QVERIFY(label);
+    auto labelTag = w.findChild<QLabel *>(QStringLiteral("labelTag"));
+    QVERIFY(labelTag);
 
     auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));
     QVERIFY(toolButton);
@@ -35,24 +35,24 @@ void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
 
 void OllamaModelDownloadWidgetTest::shouldVerifyName()
 {
-    const QString name = QStringLiteral("bla1");
-    OllamaModelDownloadWidget w(name, QString{});
+    const QString tag = QStringLiteral("bla1");
+    OllamaModelDownloadWidget w(tag, QString{});
 
-    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
-    QCOMPARE(label->text(), name);
+    auto labelTag = w.findChild<QLabel *>(QStringLiteral("labelTag"));
+    QCOMPARE(labelTag->text(), tag);
 }
 
 void OllamaModelDownloadWidgetTest::shouldEmitDownloadModel()
 {
     const QString name = QStringLiteral("bla1");
-    const QString url = QStringLiteral("www.kde.org");
-    OllamaModelDownloadWidget w(name, url);
+    const QString size = QStringLiteral("32G");
+    OllamaModelDownloadWidget w(name, size);
     QSignalSpy spy(&w, &OllamaModelDownloadWidget::downloadModel);
 
     auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));
     QTest::mouseClick(toolButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
-    QCOMPARE(spy.at(0).at(0).toString(), url);
+    QCOMPARE(spy.at(0).at(0).toString(), name);
 }
 
 #include "moc_ollamamodeldownloadwidgettest.cpp"
