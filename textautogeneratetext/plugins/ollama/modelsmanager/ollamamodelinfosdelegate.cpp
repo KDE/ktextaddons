@@ -216,8 +216,8 @@ QSize OllamaModelInfosDelegate::sizeHint(const QStyleOptionViewItem &option, con
 
     // Note: option.rect in this method is huge (as big as the viewport)
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
-    const QSize size = {option.rect.width() - 2 * OllamaModelInfosDelegateUtils::basicMargin(),
-                        layout.textRect.height() + 2 * OllamaModelInfosDelegateUtils::basicMargin()};
+    const QSize size = {option.rect.width() - 2 * static_cast<int>(OllamaModelInfosDelegateUtils::basicMargin()),
+                        layout.textRect.height() + 2 * static_cast<int>(OllamaModelInfosDelegateUtils::basicMargin())};
     if (!size.isEmpty()) {
         mSizeHintCache.insert(modelName, size);
     }
