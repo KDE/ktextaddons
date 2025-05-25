@@ -6,11 +6,19 @@
 #pragma once
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
-
+class QProgressBar;
+class QLabel;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDownloadProgressWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit OllamaModelDownloadProgressWidget(QWidget *parent = nullptr);
     ~OllamaModelDownloadProgressWidget() override;
+
+Q_SIGNALS:
+    void cancelDownload();
+
+private:
+    QProgressBar *const mProgressBar;
+    QLabel *const mModelName;
 };
