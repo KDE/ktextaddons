@@ -72,6 +72,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelsinfoscategoriescombobox.h
     modelsmanager/ollamamodelsinfoscategoriescombobox.cpp
+
+    modelsmanager/ollamamodeldownloadwidget.h
+    modelsmanager/ollamamodeldownloadwidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -98,7 +101,6 @@ set_target_properties(textautogenerateollama PROPERTIES
 install(TARGETS textautogenerateollama ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 #####
-
 
 add_library(autogeneratetext_ollama MODULE)
 
