@@ -23,6 +23,7 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
     splitter->setObjectName(QStringLiteral("splitter"));
+    splitter->setChildrenCollapsible(false);
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});

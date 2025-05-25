@@ -34,7 +34,7 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
 
     const QList<OllamaModelInfo::ModelTag> tags = index.data(OllamaModelInfosModel::Tags).value<QList<OllamaModelInfo::ModelTag>>();
     delete mDownloadWidget;
-    mDownloadWidget = new QWidget;
+    mDownloadWidget = new QWidget(this);
     auto downloadLayout = new QVBoxLayout(mDownloadWidget);
     for (const auto &t : tags) {
         downloadLayout->addWidget(new OllamaModelDownloadWidget(t.size, t.tag, mDownloadWidget));
