@@ -20,6 +20,7 @@ OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &name, const 
     mainLayout->addWidget(label);
 
     auto toolButton = new QToolButton(this);
+    toolButton->setIcon(QIcon::fromTheme(QStringLiteral("download")));
     toolButton->setAutoRaise(true);
     toolButton->setObjectName(QStringLiteral("toolButton"));
     mainLayout->addWidget(toolButton);
