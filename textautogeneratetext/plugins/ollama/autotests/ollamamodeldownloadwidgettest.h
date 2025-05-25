@@ -15,4 +15,6 @@ public:
     ~OllamaModelDownloadWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldVerifyName();
+    void shouldEmitDownloadModel();
 };
