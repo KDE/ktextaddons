@@ -28,6 +28,9 @@ void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
     auto labelTag = w.findChild<QLabel *>(QStringLiteral("labelTag"));
     QVERIFY(labelTag);
 
+    auto labelSize = w.findChild<QLabel *>(QStringLiteral("labelSize"));
+    QVERIFY(labelSize);
+
     auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));
     QVERIFY(toolButton);
     QVERIFY(toolButton->autoRaise());
