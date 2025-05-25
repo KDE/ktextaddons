@@ -22,4 +22,5 @@ Q_SIGNALS:
 private:
     QVBoxLayout *const mMainLayout;
     QLabel *const mModelName;
+    QVBoxLayout *mDescriptionLayout = nullptr;
 };

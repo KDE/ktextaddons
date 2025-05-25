@@ -20,6 +20,7 @@ public:
         Categories,
         Author,
         Url,
+        Tags,
     };
     Q_ENUM(ModelInfoRoles)
 

@@ -35,6 +35,8 @@ QVariant OllamaModelInfosModel::data(const QModelIndex &index, int role) const
         return modelInfo.author();
     case Url:
         return modelInfo.url();
+    case Tags:
+        return QVariant::fromValue(modelInfo.tags());
     case ModelName:
     case Qt::DisplayRole:
         return modelInfo.name();
