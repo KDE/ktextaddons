@@ -8,14 +8,20 @@
 #include "ollamamanager.h"
 #include "ollamamodelinstalledlistview.h"
 #include <KLocalizedString>
+#include <QLineEdit>
 #include <QVBoxLayout>
 OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
+    , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
+
+    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    mainLayout->addWidget(mSearchLineEdit);
 
     mOllamaModelInstalledListView->setObjectName(QStringLiteral("mOllamaModelInstalledListView"));
     mainLayout->addWidget(mOllamaModelInstalledListView);
