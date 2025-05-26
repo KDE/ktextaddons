@@ -15,11 +15,11 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
-OllamaModelWidget::OllamaModelWidget(QWidget *parent)
+OllamaModelWidget::OllamaModelWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mSearchWidget(new OllamaModelSearchWidget(this))
     , mListView(new OllamaModelListView(this))
-    , mInfoWidget(new OllamaModelInfoWidget(this))
+    , mInfoWidget(new OllamaModelInfoWidget(manager, this))
     , mProxyModel(new OllamaModelInfosSortProxyModel(this))
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(this))
     , mStackedWidget(new QStackedWidget(this))
@@ -52,9 +52,9 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
 
     auto model = new OllamaModelInfosModel(this);
     mProxyModel->setSourceModel(model);
-    OllamaModelInfosManager manager;
-    if (manager.loadAvailableModels()) {
-        model->setModelInfos(manager.modelInfos());
+    OllamaModelInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        model->setModelInfos(managerModelInfosManager.modelInfos());
     }
     mListView->setModel(mProxyModel);
     connect(mSearchWidget, &OllamaModelSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);

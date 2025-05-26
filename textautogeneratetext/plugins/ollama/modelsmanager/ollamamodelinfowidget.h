@@ -8,11 +8,12 @@
 #include <QWidget>
 class QVBoxLayout;
 class QLabel;
+class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInfoWidget(QWidget *parent = nullptr);
+    explicit OllamaModelInfoWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelInfoWidget() override;
     void generateWidget(const QModelIndex &index);
 

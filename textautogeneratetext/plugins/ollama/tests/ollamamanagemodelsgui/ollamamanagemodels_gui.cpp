@@ -5,6 +5,7 @@
 */
 
 #include "modelsmanager/ollamamodelwidget.h"
+#include "ollamamanager.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
@@ -18,7 +19,8 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto w = new OllamaModelWidget;
+    auto manager = new OllamaManager;
+    auto w = new OllamaModelWidget(manager);
     w->resize(600, 400);
     w->show();
     app.exec();

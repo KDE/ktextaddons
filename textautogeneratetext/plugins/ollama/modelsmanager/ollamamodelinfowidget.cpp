@@ -4,12 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinfowidget.h"
+#include "ollamamanager.h"
 #include "ollamamodeldownloadwidget.h"
 #include "ollamamodelinfosmodel.h"
 #include <QLabel>
 #include <QVBoxLayout>
 
-OllamaModelInfoWidget::OllamaModelInfoWidget(QWidget *parent)
+OllamaModelInfoWidget::OllamaModelInfoWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mMainLayout(new QVBoxLayout(this))
     , mModelName(new QLabel(this))

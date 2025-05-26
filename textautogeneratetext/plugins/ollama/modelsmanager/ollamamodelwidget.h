@@ -12,11 +12,12 @@ class OllamaModelInfoWidget;
 class OllamaModelInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
+class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelWidget(QWidget *parent = nullptr);
+    explicit OllamaModelWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelWidget() override;
 
 private:

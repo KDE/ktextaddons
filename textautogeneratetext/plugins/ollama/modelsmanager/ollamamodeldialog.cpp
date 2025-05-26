@@ -5,6 +5,7 @@
 */
 #include "ollamamodeldialog.h"
 
+#include "ollamamanager.h"
 #include "ollamamodelwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -17,9 +18,9 @@ namespace
 {
 const char myOllamaModelDialogGroupName[] = "OllamaModelDialog";
 }
-OllamaModelDialog::OllamaModelDialog(QWidget *parent)
+OllamaModelDialog::OllamaModelDialog(OllamaManager *manager, QWidget *parent)
     : QDialog(parent)
-    , mOllamaModelWidget(new OllamaModelWidget(this))
+    , mOllamaModelWidget(new OllamaModelWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Manage Ollama Models"));
     auto mainLayout = new QVBoxLayout(this);

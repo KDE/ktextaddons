@@ -15,7 +15,7 @@ OllamaModelInfoWidgetTest::OllamaModelInfoWidgetTest(QObject *parent)
 
 void OllamaModelInfoWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelInfoWidget w;
+    OllamaModelInfoWidget w(nullptr);
     auto mMainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mMainLayout);
     QCOMPARE(mMainLayout->contentsMargins(), QMargins());
