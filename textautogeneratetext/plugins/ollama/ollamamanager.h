@@ -33,6 +33,8 @@ public:
     void deleteModel(const QString &modelName);
 
     void showModelInfo(const QString &modelName);
+    [[nodiscard]] QStringList listModels() const;
+
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
@@ -40,6 +42,7 @@ Q_SIGNALS:
 
 private:
     QMetaObject::Connection mOllamaCheckConnect;
+    QStringList mListModels;
 };
 Q_DECLARE_TYPEINFO(OllamaManager::ModelsInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t);

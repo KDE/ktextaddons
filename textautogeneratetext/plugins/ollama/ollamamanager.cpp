@@ -38,6 +38,11 @@ void OllamaManager::showModelInfo(const QString &modelName)
     // TODO
 }
 
+QStringList OllamaManager::listModels() const
+{
+    return mListModels;
+}
+
 OllamaReply *OllamaManager::downloadModel(const QString &modelName)
 {
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::pullPath())};
@@ -95,6 +100,7 @@ void OllamaManager::loadModels()
     if (mOllamaCheckConnect) {
         disconnect(mOllamaCheckConnect);
     }
+    mListModels.clear();
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
@@ -112,7 +118,9 @@ void OllamaManager::loadModels()
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
-            info.models.push_back(model["name"_L1].toString());
+            const QString name = model["name"_L1].toString();
+            info.models.push_back(name);
+            mListModels.append(name);
         }
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
