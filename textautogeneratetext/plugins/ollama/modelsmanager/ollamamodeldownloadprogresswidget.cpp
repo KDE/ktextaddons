@@ -4,16 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadprogresswidget.h"
+#include "ollamamanager.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QVBoxLayout>
-
 OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *parent)
     : QWidget{parent}
     , mProgressBar(new QProgressBar(this))
     , mModelName(new QLabel(this))
+    , mProgressStatusLabel(new QLabel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -22,8 +23,12 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *pa
     mModelName->setObjectName(QStringLiteral("mModelName"));
     mainLayout->addWidget(mModelName);
 
+    mProgressStatusLabel->setObjectName(QStringLiteral("mProgressStatusLabel"));
+    mainLayout->addWidget(mProgressStatusLabel);
+
     mProgressBar->setObjectName(QStringLiteral("mProgressBar"));
     mainLayout->addWidget(mProgressBar);
+    mProgressBar->setRange(0, 100);
 
     auto cancelDownload = new QPushButton(i18n("Cancel"), this);
     cancelDownload->setObjectName(QStringLiteral("cancelDownload"));
@@ -35,5 +40,21 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *pa
 }
 
 OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = default;
+
+void OllamaModelDownloadProgressWidget::downloadModel(const QString &url)
+{
+    OllamaManager *manager = new OllamaManager(this);
+    connect(manager, &OllamaManager::downloadInProgress, this, &OllamaModelDownloadProgressWidget::slotDownloadProgressInfo);
+    manager->downloadModel(QStringLiteral("codellama:70b"));
+}
+
+void OllamaModelDownloadProgressWidget::slotDownloadProgressInfo(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info)
+{
+    // qDebug() << "info " << info;
+    mProgressStatusLabel->setText(info.status);
+    if (info.total != 0) {
+        mProgressBar->setValue(info.completed * 100 / info.total);
+    }
+}
 
 #include "moc_ollamamodeldownloadprogresswidget.cpp"

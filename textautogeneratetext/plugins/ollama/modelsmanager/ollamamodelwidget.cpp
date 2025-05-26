@@ -79,6 +79,7 @@ void OllamaModelWidget::slotDownloadModel(const QString &url)
     qDebug() << " url " << url;
     // TODO use url
     mStackedWidget->setCurrentWidget(mOllamaModelDownloadProgressWidget);
+    mOllamaModelDownloadProgressWidget->downloadModel(url);
 }
 
 #include "moc_ollamamodelwidget.cpp"

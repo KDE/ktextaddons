@@ -38,7 +38,7 @@ void OllamaManager::showModelInfo(const QString &modelName)
     // TODO
 }
 
-void OllamaManager::downloadModel(const QString &modelName)
+OllamaReply *OllamaManager::downloadModel(const QString &modelName)
 {
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::pullPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
@@ -48,12 +48,14 @@ void OllamaManager::downloadModel(const QString &modelName)
     buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 
     auto reply = new OllamaReply{TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, buf),
-                                 OllamaReply::RequestTypes::StreamingGenerate,
+                                 OllamaReply::RequestTypes::DownloadModel,
                                  this};
     connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
         Q_EMIT finished(reply->readResponse());
         buf->deleteLater();
     });
+    connect(reply, &OllamaReply::downloadInProgress, this, &OllamaManager::downloadInProgress);
+    return reply;
 }
 
 void OllamaManager::getVersion()

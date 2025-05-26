@@ -8,6 +8,7 @@
 #include "textautogenerateollama_export.h"
 #include <QDebug>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class OllamaReply;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public QObject
@@ -28,13 +29,14 @@ public:
     void getVersion();
     [[nodiscard]] OllamaReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
     [[nodiscard]] OllamaReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
-    void downloadModel(const QString &modelName);
+    [[nodiscard]] OllamaReply *downloadModel(const QString &modelName);
     void deleteModel(const QString &modelName);
 
     void showModelInfo(const QString &modelName);
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
+    void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
 private:
     QMetaObject::Connection mOllamaCheckConnect;
