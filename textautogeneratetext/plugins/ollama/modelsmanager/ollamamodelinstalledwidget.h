@@ -9,6 +9,7 @@
 class OllamaModelInstalledListView;
 class OllamaManager;
 class OllamaModelSearchLineEdit;
+class QToolButton;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledWidget : public QWidget
 {
     Q_OBJECT
@@ -17,6 +18,8 @@ public:
     ~OllamaModelInstalledWidget() override;
 
 private:
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotRemoveModel();
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
     OllamaModelSearchLineEdit *const mSearchLineEdit;
+    QToolButton *const mRemoveModelButton;
 };

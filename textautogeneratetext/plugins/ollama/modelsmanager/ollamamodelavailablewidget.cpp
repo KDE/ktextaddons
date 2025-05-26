@@ -61,9 +61,18 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setFilterFixedString);
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setCategories);
     connect(mListView, &OllamaModelAvailableListView::clicked, this, &OllamaModelAvailableWidget::slotClicked);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::removeModel, this, &OllamaModelAvailableWidget::slotRemoveModel);
 }
 
 OllamaModelAvailableWidget::~OllamaModelAvailableWidget() = default;
+
+void OllamaModelAvailableWidget::slotRemoveModel()
+{
+    const auto currentIndex = mListView->currentIndex();
+    if (currentIndex.isValid()) {
+        // TODO update
+    }
+}
 
 void OllamaModelAvailableWidget::slotClicked(const QModelIndex &index)
 {

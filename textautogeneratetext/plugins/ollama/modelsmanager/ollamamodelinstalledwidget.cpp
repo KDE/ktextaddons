@@ -11,11 +11,13 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 #include <QSortFilterProxyModel>
+#include <QToolButton>
 #include <QVBoxLayout>
 OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
     , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
+    , mRemoveModelButton(new QToolButton(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
@@ -36,12 +38,25 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     }
     auto proxyModel = new QSortFilterProxyModel(this);
     proxyModel->setSourceModel(model);
-    connect(mSearchLineEdit, &OllamaModelSearchLineEdit::textChanged, this, [this, proxyModel](const QString &str) {
+    connect(mSearchLineEdit, &OllamaModelSearchLineEdit::textChanged, this, [proxyModel](const QString &str) {
         proxyModel->setFilterFixedString(str);
     });
     mOllamaModelInstalledListView->setModel(proxyModel);
+
+    mRemoveModelButton->setObjectName(QStringLiteral("mRemoveModelButton"));
+    mainLayout->addWidget(mRemoveModelButton);
+    mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+    connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
 }
 
 OllamaModelInstalledWidget::~OllamaModelInstalledWidget() = default;
+
+void OllamaModelInstalledWidget::slotRemoveModel()
+{
+    const auto currentIndex = mOllamaModelInstalledListView->currentIndex();
+    if (currentIndex.isValid()) {
+        // TODO update
+    }
+}
 
 #include "moc_ollamamodelinstalledwidget.cpp"

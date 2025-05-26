@@ -6,6 +6,7 @@
 #include "ollamamodelinstalledwidgettest.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
 #include <QTest>
+#include <QToolButton>
 #include <QVBoxLayout>
 QTEST_MAIN(OllamaModelInstalledWidgetTest)
 
@@ -22,6 +23,9 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     QCOMPARE(mainLayout->spacing(), 0);
+
+    auto mRemoveModelButton = w.findChild<QToolButton *>(QStringLiteral("mRemoveModelButton"));
+    QVERIFY(mRemoveModelButton);
 }
 
 #include "moc_ollamamodelinstalledwidgettest.cpp"

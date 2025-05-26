@@ -9,6 +9,7 @@
 #include <QWidget>
 class OllamaModelSearchLineEdit;
 class OllamaModelsInfosCategoriesComboBox;
+class QToolButton;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableSearchWidget : public QWidget
 {
     Q_OBJECT
@@ -19,8 +20,10 @@ public:
 Q_SIGNALS:
     void searchText(const QString &str);
     void categoriesChanged(const QList<OllamaModelAvailableInfo::Category> &categories);
+    void removeModel();
 
 private:
     OllamaModelSearchLineEdit *const mSearchLineEdit;
     OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
+    QToolButton *const mRemoveModelButton;
 };
