@@ -9,6 +9,7 @@
 OllamaModelInfosSortProxyModel::OllamaModelInfosSortProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
 }
 
 OllamaModelInfosSortProxyModel::~OllamaModelInfosSortProxyModel() = default;
