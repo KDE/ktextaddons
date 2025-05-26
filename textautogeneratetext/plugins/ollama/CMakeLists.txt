@@ -101,6 +101,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelsearchlineedit.h
     modelsmanager/ollamamodelsearchlineedit.cpp
+
+    modelsmanager/ollamamodeldownloadfromnamedialog.h
+    modelsmanager/ollamamodeldownloadfromnamedialog.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
