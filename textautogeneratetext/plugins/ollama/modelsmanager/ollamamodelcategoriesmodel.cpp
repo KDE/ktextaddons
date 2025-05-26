@@ -61,16 +61,16 @@ QList<OllamaModelCategoriesModel::CategoryInfo> OllamaModelCategoriesModel::cate
     return mCategories;
 }
 
-OllamaModelInfo::Categories OllamaModelCategoriesModel::categoriesSelected() const
+QList<OllamaModelInfo::Category> OllamaModelCategoriesModel::categoriesSelected() const
 {
-    OllamaModelInfo::Categories categories;
+    QList<OllamaModelInfo::Category> categories;
     const int rowCountNb = rowCount();
     // First one is not a message type
     for (int i = 0; i < rowCountNb; i++) {
         QStandardItem *itemModel = item(i);
         if (itemModel) {
             if (itemModel->isCheckable() && itemModel->checkState() == Qt::Checked) {
-                categories |= itemModel->data(Identifier).value<OllamaModelInfo::Category>();
+                categories.append(itemModel->data(Identifier).value<OllamaModelInfo::Category>());
             }
         }
     }

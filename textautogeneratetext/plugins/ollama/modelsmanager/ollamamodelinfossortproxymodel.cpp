@@ -15,12 +15,12 @@ OllamaModelInfosSortProxyModel::OllamaModelInfosSortProxyModel(QObject *parent)
 
 OllamaModelInfosSortProxyModel::~OllamaModelInfosSortProxyModel() = default;
 
-OllamaModelInfo::Categories OllamaModelInfosSortProxyModel::categories() const
+QList<OllamaModelInfo::Category> OllamaModelInfosSortProxyModel::categories() const
 {
     return mCategories;
 }
 
-void OllamaModelInfosSortProxyModel::setCategories(OllamaModelInfo::Categories newCategories)
+void OllamaModelInfosSortProxyModel::setCategories(const QList<OllamaModelInfo::Category> &newCategories)
 {
     if (mCategories != newCategories) {
         mCategories = newCategories;
@@ -31,15 +31,15 @@ void OllamaModelInfosSortProxyModel::setCategories(OllamaModelInfo::Categories n
 bool OllamaModelInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
-    if (mCategories != OllamaModelInfo::Category::Unknown) {
+    if (!mCategories.isEmpty()) {
         const OllamaModelInfo::Categories categories = modelIndex.data(OllamaModelInfosModel::Categories).value<OllamaModelInfo::Categories>();
         if (categories == OllamaModelInfo::Category::Unknown) {
             return true;
         }
-        if (categories == mCategories) {
-            return true;
-        } else {
-            return false;
+        for (const auto c : std::as_const(mCategories)) {
+            if (!(categories & c)) {
+                return false;
+            }
         }
     }
 

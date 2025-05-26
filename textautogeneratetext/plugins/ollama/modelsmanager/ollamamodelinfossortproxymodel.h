@@ -16,12 +16,12 @@ public:
     explicit OllamaModelInfosSortProxyModel(QObject *parent = nullptr);
     ~OllamaModelInfosSortProxyModel() override;
 
-    [[nodiscard]] OllamaModelInfo::Categories categories() const;
-    void setCategories(OllamaModelInfo::Categories newCategories);
+    [[nodiscard]] QList<OllamaModelInfo::Category> categories() const;
+    void setCategories(const QList<OllamaModelInfo::Category> &newCategories);
 
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:
-    OllamaModelInfo::Categories mCategories = OllamaModelInfo::Category::Unknown;
+    QList<OllamaModelInfo::Category> mCategories;
 };

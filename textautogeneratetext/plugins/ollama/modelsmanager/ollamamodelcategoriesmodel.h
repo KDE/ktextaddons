@@ -30,7 +30,7 @@ public:
 
     [[nodiscard]] QList<CategoryInfo> categories() const;
 
-    [[nodiscard]] OllamaModelInfo::Categories categoriesSelected() const;
+    [[nodiscard]] QList<OllamaModelInfo::Category> categoriesSelected() const;
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, OllamaModelInfo::Category identifier);

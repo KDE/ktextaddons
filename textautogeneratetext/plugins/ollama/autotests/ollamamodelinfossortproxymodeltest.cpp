@@ -16,7 +16,7 @@ OllamaModelInfosSortProxyModelTest::OllamaModelInfosSortProxyModelTest(QObject *
 void OllamaModelInfosSortProxyModelTest::shouldHaveDefaultValues()
 {
     OllamaModelInfosSortProxyModel w;
-    QCOMPARE(w.categories(), OllamaModelInfo::Category::Unknown);
+    QVERIFY(w.categories().isEmpty());
     QCOMPARE(w.filterCaseSensitivity(), Qt::CaseInsensitive);
 }
 

@@ -18,7 +18,7 @@ public:
 
 Q_SIGNALS:
     void searchText(const QString &str);
-    void categoriesChanged(OllamaModelInfo::Categories categories);
+    void categoriesChanged(const QList<OllamaModelInfo::Category> &categories);
 
 private:
     QLineEdit *const mSearchLineEdit;
