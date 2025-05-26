@@ -40,6 +40,7 @@ void OllamaModelInfosDelegate::paint(QPainter *painter, const QStyleOptionViewIt
     if (layout.textRect.isValid()) {
         draw(painter, layout, index, option);
     }
+    drawCatergories(painter, layout, index, option);
     painter->restore();
 }
 
@@ -48,6 +49,11 @@ void OllamaModelInfosDelegate::drawCatergories(QPainter *painter,
                                                const QModelIndex &index,
                                                const QStyleOptionViewItem &option) const
 {
+    QRect rect = layout.textRect;
+    const QStringList categoriesName = index.data(OllamaModelInfosModel::CategoriesName).toStringList();
+    for (const auto &name : categoriesName) {
+        painter->drawText(rect.x(), rect.bottom(), name);
+    }
     // TODO
 }
 
