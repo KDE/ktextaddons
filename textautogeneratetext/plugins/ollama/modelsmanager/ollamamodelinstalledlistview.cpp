@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledlistview.h"
-#include "ollamamodelavailableinfosdelegate.h"
+#include "ollamamodelinstalledinfosdelegate.h"
 
 OllamaModelInstalledListView::OllamaModelInstalledListView(QWidget *parent)
     : QListView(parent)
@@ -17,7 +17,7 @@ OllamaModelInstalledListView::OllamaModelInstalledListView(QWidget *parent)
     scrollToBottom();
     setMouseTracking(true);
 
-    setItemDelegate(new OllamaModelAvailableInfosDelegate(this));
+    setItemDelegate(new OllamaModelInstalledInfosDelegate(this));
 }
 
 OllamaModelInstalledListView::~OllamaModelInstalledListView() = default;
