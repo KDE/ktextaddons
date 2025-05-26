@@ -5,10 +5,12 @@
 */
 #pragma once
 #include "textautogenerateollama_export.h"
-#include <QDialog>
+#include <KPageDialog>
 class OllamaConfigureWidget;
 class OllamaManager;
-class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureDialog : public QDialog
+class OllamaModelAvailableWidget;
+class OllamaModelInstalledWidget;
+class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureDialog : public KPageDialog
 {
     Q_OBJECT
 public:
@@ -20,4 +22,6 @@ private:
     void readConfig();
     void writeConfig();
     OllamaConfigureWidget *const mOllamaConfigureWidget;
+    OllamaModelAvailableWidget *const mOllamaModelWidget;
+    OllamaModelInstalledWidget *const mOllamaModelInstalledWidget;
 };
