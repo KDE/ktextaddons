@@ -35,13 +35,13 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
     addPage(configureGeneralWidgetPage);
 
-    const QString modelAvailablePageName = i18nc("@title Preferences page name", "Models");
+    const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
     auto configureModelWidgetPage = new KPageWidgetItem(mOllamaModelWidget, modelAvailablePageName);
     mOllamaModelWidget->setObjectName(QStringLiteral("mOllamaModelWidget"));
     // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
     addPage(configureModelWidgetPage);
 
-    const QString modelInstalledPageName = i18nc("@title Preferences page name", "Installed");
+    const QString modelInstalledPageName = i18nc("@title Preferences page name", "Installed Models");
     auto configureModelInstalledWidgetPage = new KPageWidgetItem(mOllamaModelInstalledWidget, modelInstalledPageName);
     mOllamaModelInstalledWidget->setObjectName(QStringLiteral("mOllamaModelInstalledWidget"));
     // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
