@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "modelsmanager/ollamamodelinstalledinfo.h"
 #include "textautogenerateollama_export.h"
 #include <QDebug>
 #include <QObject>
@@ -33,7 +34,9 @@ public:
     void deleteModel(const QString &modelName);
 
     void showModelInfo(const QString &modelName);
-    [[nodiscard]] QStringList listModels() const;
+
+    [[nodiscard]] QList<OllamaModelInstalledInfo> installedInfos() const;
+    void setInstalledInfos(const QList<OllamaModelInstalledInfo> &newInstalledInfos);
 
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
@@ -42,7 +45,7 @@ Q_SIGNALS:
 
 private:
     QMetaObject::Connection mOllamaCheckConnect;
-    QStringList mListModels;
+    QList<OllamaModelInstalledInfo> mInstalledInfos;
 };
 Q_DECLARE_TYPEINFO(OllamaManager::ModelsInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t);

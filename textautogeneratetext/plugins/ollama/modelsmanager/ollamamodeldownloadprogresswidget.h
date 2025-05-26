@@ -9,11 +9,12 @@
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 class QProgressBar;
 class QLabel;
+class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDownloadProgressWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelDownloadProgressWidget(QWidget *parent = nullptr);
+    explicit OllamaModelDownloadProgressWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelDownloadProgressWidget() override;
 
     void downloadModel(const QString &url);
@@ -25,4 +26,5 @@ private:
     QProgressBar *const mProgressBar;
     QLabel *const mModelName;
     QLabel *const mProgressStatusLabel;
+    OllamaManager *const mManager;
 };

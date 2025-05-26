@@ -7,6 +7,7 @@
 */
 #include "ollamamanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
+#include "modelsmanager/ollamamodelinstalledinfo.h"
 #include "ollamareply.h"
 #include "ollamasettings.h"
 #include "ollamautils.h"
@@ -38,9 +39,14 @@ void OllamaManager::showModelInfo(const QString &modelName)
     // TODO
 }
 
-QStringList OllamaManager::listModels() const
+QList<OllamaModelInstalledInfo> OllamaManager::installedInfos() const
 {
-    return mListModels;
+    return mInstalledInfos;
+}
+
+void OllamaManager::setInstalledInfos(const QList<OllamaModelInstalledInfo> &newInstalledInfos)
+{
+    mInstalledInfos = newInstalledInfos;
 }
 
 OllamaReply *OllamaManager::downloadModel(const QString &modelName)
@@ -100,7 +106,7 @@ void OllamaManager::loadModels()
     if (mOllamaCheckConnect) {
         disconnect(mOllamaCheckConnect);
     }
-    mListModels.clear();
+    mInstalledInfos.clear();
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
@@ -118,9 +124,11 @@ void OllamaManager::loadModels()
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["models"_L1].toArray();
         for (const QJsonValue &model : models) {
+            OllamaModelInstalledInfo installed;
+            installed.parseInfo(model.toObject());
+            mInstalledInfos.append(std::move(installed));
             const QString name = model["name"_L1].toString();
             info.models.push_back(name);
-            mListModels.append(name);
         }
         info.isReady = !info.models.isEmpty();
         info.hasError = false;

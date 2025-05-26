@@ -70,7 +70,7 @@ void OllamaConfigureWidget::fillModels()
 {
     mMessageWidget->animatedHide();
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
-        qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
+        // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
             mMessageWidget->setText(modelinfo.errorOccured);
             mMessageWidget->animatedShow();

@@ -21,6 +21,12 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mainLayout->addWidget(mOllamaModelInstalledListView);
 
     auto model = new OllamaModelInstalledInfosModel(this);
+    if (manager) {
+        connect(manager, &OllamaManager::modelsLoadDone, this, [model, manager]() {
+            qDebug() << "manager->installedInfos() " << manager->installedInfos();
+            model->setModelInstalledInfos(manager->installedInfos());
+        });
+    }
     // mProxyModel->setSourceModel(model);
     // TODO fill model
     mOllamaModelInstalledListView->setModel(model);

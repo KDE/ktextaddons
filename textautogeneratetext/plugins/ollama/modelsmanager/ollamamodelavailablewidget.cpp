@@ -21,7 +21,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     , mListView(new OllamaModelAvailableListView(this))
     , mInfoWidget(new OllamaModelInfoWidget(manager, this))
     , mProxyModel(new OllamaModelAvailableInfosSortProxyModel(this))
-    , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(this))
+    , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(manager, this))
     , mStackedWidget(new QStackedWidget(this))
 {
     auto splitter = new QSplitter(this);

@@ -16,7 +16,7 @@ OllamaModelDownloadProgressWidgetTest::OllamaModelDownloadProgressWidgetTest(QOb
 
 void OllamaModelDownloadProgressWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelDownloadProgressWidget w;
+    OllamaModelDownloadProgressWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);

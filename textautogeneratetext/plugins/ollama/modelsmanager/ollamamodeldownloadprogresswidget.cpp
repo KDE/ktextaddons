@@ -11,11 +11,12 @@
 #include <QProgressBar>
 #include <QPushButton>
 #include <QVBoxLayout>
-OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *parent)
+OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mProgressBar(new QProgressBar(this))
     , mModelName(new QLabel(this))
     , mProgressStatusLabel(new QLabel(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -37,6 +38,9 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(QWidget *pa
     connect(cancelDownload, &QPushButton::clicked, this, [this]() {
         // TODO
     });
+    if (mManager) {
+        connect(mManager, &OllamaManager::downloadInProgress, this, &OllamaModelDownloadProgressWidget::slotDownloadProgressInfo);
+    }
     mainLayout->addStretch(1);
 }
 
@@ -45,10 +49,7 @@ OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = defaul
 void OllamaModelDownloadProgressWidget::downloadModel(const QString &url)
 {
     qDebug() << " downloadModel " << url;
-    // TODO allow to cancel download.
-    OllamaManager *manager = new OllamaManager(this);
-    connect(manager, &OllamaManager::downloadInProgress, this, &OllamaModelDownloadProgressWidget::slotDownloadProgressInfo);
-    auto reply = manager->downloadModel(url);
+    auto reply = mManager->downloadModel(url);
     // TODO reply->
 }
 
