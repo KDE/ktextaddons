@@ -34,7 +34,9 @@ void OllamaModelInfosDelegate::paint(QPainter *painter, const QStyleOptionViewIt
     }
 
     const int offset = static_cast<int>(static_cast<double>(margin) / 2.0);
-    painter->drawRoundedRect(option.rect.adjusted(offset, offset, -offset, -offset), 5, 5);
+    painter->drawRoundedRect(option.rect.adjusted(offset, offset, -offset, -offset),
+                             OllamaModelInfosDelegateUtils::rectRoundValue(),
+                             OllamaModelInfosDelegateUtils::rectRoundValue());
 
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
     if (layout.textRect.isValid()) {
@@ -49,17 +51,12 @@ void OllamaModelInfosDelegate::drawCatergories(QPainter *painter,
                                                const QModelIndex &index,
                                                const QStyleOptionViewItem &option) const
 {
+    Q_UNUSED(index);
+    Q_UNUSED(option);
     for (const auto &cat : layout.categoriesLayout) {
-        // TODO
+        painter->drawRoundedRect(cat.categoryRect, OllamaModelInfosDelegateUtils::rectRoundValue(), OllamaModelInfosDelegateUtils::rectRoundValue());
+        painter->drawText(cat.categoryRect.translated(OllamaModelInfosDelegateUtils::categoryMarginText(), 0), cat.categoryString);
     }
-#if 0
-    QRect rect = layout.textRect;
-    const QStringList categoriesName = index.data(OllamaModelInfosModel::CategoriesName).toStringList();
-    for (const auto &name : categoriesName) {
-        painter->drawText(rect.x(), rect.bottom(), name);
-    }
-#endif
-    // TODO
 }
 
 void OllamaModelInfosDelegate::draw(QPainter *painter,
@@ -112,11 +109,6 @@ bool OllamaModelInfosDelegate::mouseEvent(QEvent *event, const QStyleOptionViewI
     return false;
 }
 
-bool OllamaModelInfosDelegate::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
-{
-    return false;
-}
-
 bool OllamaModelInfosDelegate::helpEvent(QHelpEvent *helpEvent, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
     if (!index.isValid()) {
@@ -142,11 +134,16 @@ OllamaModelInfosDelegate::ModelInfoLayout OllamaModelInfosDelegate::doLayout(con
 
     const QStringList categoriesName = index.data(OllamaModelInfosModel::CategoriesName).toStringList();
     const QFontMetricsF emojiFontMetrics(option.font);
+    int offset = 0;
     for (const QString &cat : categoriesName) {
         CategoryLayout catLayout;
         catLayout.categoryString = cat;
         const qreal categoryWidth = emojiFontMetrics.horizontalAdvance(catLayout.categoryString);
-        catLayout.categoryRect = {}; // TODO
+        catLayout.categoryRect = QRectF(layout.textRect.x() + offset,
+                                        layout.textRect.bottom() - 30,
+                                        categoryWidth + OllamaModelInfosDelegateUtils::categoryMarginText() * 2,
+                                        20); // TODO
+        offset += catLayout.categoryRect.width() + OllamaModelInfosDelegateUtils::categoryOffset();
         layout.categoriesLayout.append(catLayout);
     }
     return layout;
