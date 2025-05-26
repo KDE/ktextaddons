@@ -47,7 +47,9 @@ QList<OllamaModelInstalledInfo> OllamaModelInstalledInfosModel::modelInstalledIn
 
 void OllamaModelInstalledInfosModel::setModelInstalledInfos(const QList<OllamaModelInstalledInfo> &newModelInfos)
 {
+    beginResetModel();
     mModelInstalledInfos = newModelInfos;
+    endResetModel();
 }
 
 #include "moc_ollamamodelinstalledinfosmodel.cpp"

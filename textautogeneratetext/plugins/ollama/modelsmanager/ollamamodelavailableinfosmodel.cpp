@@ -53,7 +53,9 @@ QList<OllamaModelAvailableInfo> OllamaModelAvailableInfosModel::modelInfos() con
 
 void OllamaModelAvailableInfosModel::setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos)
 {
+    beginResetModel();
     mModelInfos = newModelInfos;
+    endResetModel();
 }
 
 #include "moc_ollamamodelavailableinfosmodel.cpp"
