@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "ollamamodelinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QStandardItemModel>
 
@@ -14,7 +15,7 @@ class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCategoriesModel : public QS
     Q_OBJECT
 public:
     struct CategoryInfo {
-        QString identifier;
+        OllamaModelInfo::Category identifier;
         QString name;
     };
 
@@ -35,6 +36,8 @@ public:
     [[nodiscard]] QStringList categoriesSelected() const;
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, const QString &identifier);
-    QList<CategoryInfo> mAppsCategories;
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, OllamaModelInfo::Category identifier);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillCategories();
+    QList<CategoryInfo> mCategories;
 };
+Q_DECLARE_TYPEINFO(OllamaModelCategoriesModel::CategoryInfo, Q_RELOCATABLE_TYPE);

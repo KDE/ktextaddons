@@ -10,15 +10,41 @@
 OllamaModelCategoriesModel::OllamaModelCategoriesModel(QObject *parent)
     : QStandardItemModel(parent)
 {
+    fillCategories();
 }
 
 OllamaModelCategoriesModel::~OllamaModelCategoriesModel() = default;
 
-void OllamaModelCategoriesModel::createItem(const QString &displayStr, const QString &identifier)
+void OllamaModelCategoriesModel::fillCategories()
+{
+    const QList<OllamaModelInfo::Category> cat{
+        OllamaModelInfo::Category::Tools,
+        OllamaModelInfo::Category::Small,
+        OllamaModelInfo::Category::Medium,
+        OllamaModelInfo::Category::Big,
+        OllamaModelInfo::Category::Huge,
+        OllamaModelInfo::Category::Multilingual,
+        OllamaModelInfo::Category::Code,
+        OllamaModelInfo::Category::Math,
+        OllamaModelInfo::Category::Vision,
+        OllamaModelInfo::Category::Embedding,
+        OllamaModelInfo::Category::Reasoning,
+    };
+    mCategories.reserve(cat.count());
+
+    for (const auto c : cat) {
+        mCategories.append(CategoryInfo{
+            .identifier = c,
+            .name = OllamaModelInfo::convertCategoryToI18n(c),
+        });
+    }
+}
+
+void OllamaModelCategoriesModel::createItem(const QString &displayStr, OllamaModelInfo::Category identifier)
 {
     auto item = new QStandardItem(displayStr);
     item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-    item->setData(identifier, Identifier);
+    item->setData(QVariant::fromValue(identifier), Identifier);
     item->setData(Qt::Unchecked, Qt::CheckStateRole);
     item->setToolTip(displayStr);
     appendRow(item);
@@ -26,7 +52,7 @@ void OllamaModelCategoriesModel::createItem(const QString &displayStr, const QSt
 
 QList<OllamaModelCategoriesModel::CategoryInfo> OllamaModelCategoriesModel::appsCategories() const
 {
-    return mAppsCategories;
+    return mCategories;
 }
 
 void OllamaModelCategoriesModel::setAppsCategories(const QList<CategoryInfo> &appsCategories)
@@ -41,7 +67,7 @@ void OllamaModelCategoriesModel::setAppsCategories(const QList<CategoryInfo> &ap
 
 bool OllamaModelCategoriesModel::wasFilled() const
 {
-    return !mAppsCategories.isEmpty();
+    return !mCategories.isEmpty();
 }
 
 QStringList OllamaModelCategoriesModel::categoriesSelected() const
