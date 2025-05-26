@@ -47,7 +47,9 @@ void OllamaModelInfo::parseInfo(const QString &name, const QJsonObject &obj)
     mUrl = obj["url"_L1].toString();
     const QVariantList varLst = obj["categories"_L1].toArray().toVariantList();
     for (const auto &v : varLst) {
-        mCategories |= convertStringToCategory(v.toString());
+        const OllamaModelInfo::Category c = convertStringToCategory(v.toString());
+        mCategories |= c;
+        mCategoriesName.append(convertCategoryToI18n(c));
     }
     const QJsonArray tagsArrayList = obj["tags"_L1].toArray();
     for (int i = 0; i < tagsArrayList.count(); ++i) {
@@ -102,6 +104,16 @@ QString OllamaModelInfo::convertCategoryToI18n(OllamaModelInfo::Category cat)
     }
     qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Missing translating Category " << static_cast<int>(cat);
     return {};
+}
+
+QStringList OllamaModelInfo::categoriesName() const
+{
+    return mCategoriesName;
+}
+
+void OllamaModelInfo::setCategoriesName(const QStringList &newCategoriesName)
+{
+    mCategoriesName = newCategoriesName;
 }
 
 OllamaModelInfo::Category OllamaModelInfo::convertStringToCategory(const QString &str) const
@@ -198,6 +210,7 @@ QDebug operator<<(QDebug d, const OllamaModelInfo &t)
     d.space() << "languages" << t.languages();
     d.space() << "tags" << t.tags();
     d.space() << "categories" << t.categories();
+    d.space() << "categoriesName" << t.categoriesName();
     return d;
 }
 

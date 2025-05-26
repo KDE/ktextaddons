@@ -27,6 +27,8 @@ QVariant OllamaModelInfosModel::data(const QModelIndex &index, int role) const
     }
     const OllamaModelInfo &modelInfo = mModelInfos.at(index.row());
     switch (role) {
+    case CategoriesName:
+        return modelInfo.categoriesName();
     case Categories:
         return QVariant::fromValue(modelInfo.categories());
     case Description:

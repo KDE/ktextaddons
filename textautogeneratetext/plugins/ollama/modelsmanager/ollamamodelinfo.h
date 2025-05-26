@@ -65,6 +65,9 @@ public:
 
     static QString convertCategoryToI18n(OllamaModelInfo::Category cat);
 
+    [[nodiscard]] QStringList categoriesName() const;
+    void setCategoriesName(const QStringList &newCategoriesName);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT Category convertStringToCategory(const QString &str) const;
     QString mName;
@@ -74,6 +77,7 @@ private:
     QStringList mLanguages;
     QList<ModelTag> mTags;
     Categories mCategories = Category::Unknown;
+    QStringList mCategoriesName;
 };
 
 Q_DECLARE_TYPEINFO(OllamaModelInfo, Q_RELOCATABLE_TYPE);
