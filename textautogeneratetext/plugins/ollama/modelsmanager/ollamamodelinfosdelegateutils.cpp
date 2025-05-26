@@ -16,3 +16,18 @@ int OllamaModelInfosDelegateUtils::textMargin()
 {
     return 15;
 }
+
+qreal OllamaModelInfosDelegateUtils::rectRoundValue()
+{
+    return 5;
+}
+
+int OllamaModelInfosDelegateUtils::categoryOffset()
+{
+    return 10;
+}
+
+int OllamaModelInfosDelegateUtils::categoryMarginText()
+{
+    return 10;
+}

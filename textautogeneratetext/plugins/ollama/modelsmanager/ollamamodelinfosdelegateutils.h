@@ -11,4 +11,7 @@ namespace OllamaModelInfosDelegateUtils
 {
 [[nodiscard]] qreal basicMargin();
 [[nodiscard]] int textMargin();
+[[nodiscard]] qreal rectRoundValue();
+[[nodiscard]] int categoryOffset();
+[[nodiscard]] int categoryMarginText();
 };
