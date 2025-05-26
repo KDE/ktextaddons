@@ -19,6 +19,9 @@ public:
     [[nodiscard]] OllamaModelInfo::Categories categories() const;
     void setCategories(OllamaModelInfo::Categories newCategories);
 
+protected:
+    [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+
 private:
     OllamaModelInfo::Categories mCategories = OllamaModelInfo::Category::Unknown;
 };

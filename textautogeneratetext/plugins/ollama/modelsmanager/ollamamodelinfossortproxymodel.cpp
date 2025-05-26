@@ -5,6 +5,7 @@
 */
 
 #include "ollamamodelinfossortproxymodel.h"
+#include "ollamamodelinfosmodel.h"
 
 OllamaModelInfosSortProxyModel::OllamaModelInfosSortProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
@@ -25,6 +26,24 @@ void OllamaModelInfosSortProxyModel::setCategories(OllamaModelInfo::Categories n
         mCategories = newCategories;
         invalidateFilter();
     }
+}
+
+bool OllamaModelInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+{
+    const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
+    if (mCategories != OllamaModelInfo::Category::Unknown) {
+        const OllamaModelInfo::Categories categories = modelIndex.data(OllamaModelInfosModel::Categories).value<OllamaModelInfo::Categories>();
+        if (categories == OllamaModelInfo::Category::Unknown) {
+            return true;
+        }
+        if (categories == mCategories) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
 #include "moc_ollamamodelinfossortproxymodel.cpp"
