@@ -10,6 +10,7 @@
 #include "ollamamodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <QLineEdit>
+#include <QSortFilterProxyModel>
 #include <QVBoxLayout>
 OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
@@ -33,9 +34,12 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
             model->setModelInstalledInfos(manager->installedInfos());
         });
     }
-    // mProxyModel->setSourceModel(model);
-    // TODO fill model
-    mOllamaModelInstalledListView->setModel(model);
+    auto proxyModel = new QSortFilterProxyModel(this);
+    proxyModel->setSourceModel(model);
+    connect(mSearchLineEdit, &OllamaModelSearchLineEdit::textChanged, this, [this, proxyModel](const QString &str) {
+        proxyModel->setFilterFixedString(str);
+    });
+    mOllamaModelInstalledListView->setModel(proxyModel);
 }
 
 OllamaModelInstalledWidget::~OllamaModelInstalledWidget() = default;
