@@ -30,7 +30,6 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     auto model = new OllamaModelInstalledInfosModel(this);
     if (manager) {
         connect(manager, &OllamaManager::modelsLoadDone, this, [model, manager]() {
-            qDebug() << "manager->installedInfos() " << manager->installedInfos();
             model->setModelInstalledInfos(manager->installedInfos());
         });
     }
