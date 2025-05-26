@@ -24,8 +24,14 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
+    auto hboxLayout = new QHBoxLayout;
+    hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
+    hboxLayout->setContentsMargins({});
+    hboxLayout->setSpacing(0);
+    mainLayout->addLayout(hboxLayout);
+
     mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
-    mainLayout->addWidget(mSearchLineEdit);
+    hboxLayout->addWidget(mSearchLineEdit);
 
     mOllamaModelInstalledListView->setObjectName(QStringLiteral("mOllamaModelInstalledListView"));
     mainLayout->addWidget(mOllamaModelInstalledListView);
@@ -44,7 +50,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mOllamaModelInstalledListView->setModel(proxyModel);
 
     mRemoveModelButton->setObjectName(QStringLiteral("mRemoveModelButton"));
-    mainLayout->addWidget(mRemoveModelButton);
+    hboxLayout->addWidget(mRemoveModelButton);
     mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
 }
