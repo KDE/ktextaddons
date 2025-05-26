@@ -28,12 +28,9 @@ public:
     explicit OllamaModelCategoriesModel(QObject *parent = nullptr);
     ~OllamaModelCategoriesModel() override;
 
-    [[nodiscard]] QList<CategoryInfo> appsCategories() const;
-    void setAppsCategories(const QList<CategoryInfo> &appsCategories);
+    [[nodiscard]] QList<CategoryInfo> categories() const;
 
-    [[nodiscard]] bool wasFilled() const;
-
-    [[nodiscard]] QStringList categoriesSelected() const;
+    [[nodiscard]] QList<OllamaModelInfo::Category> categoriesSelected() const;
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, OllamaModelInfo::Category identifier);

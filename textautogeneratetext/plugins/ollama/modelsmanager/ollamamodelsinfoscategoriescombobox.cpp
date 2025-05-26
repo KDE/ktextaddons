@@ -5,12 +5,21 @@
 */
 
 #include "ollamamodelsinfoscategoriescombobox.h"
-
+#include "ollamamodelcategoriesmodel.h"
 OllamaModelsInfosCategoriesComboBox::OllamaModelsInfosCategoriesComboBox(QWidget *parent)
     : QComboBox(parent)
+    , mModel(new OllamaModelCategoriesModel(this))
 {
+    setModel(mModel);
+    connect(mModel, &OllamaModelCategoriesModel::itemChanged, this, &OllamaModelsInfosCategoriesComboBox::categoriesChanged);
+    setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
 
 OllamaModelsInfosCategoriesComboBox::~OllamaModelsInfosCategoriesComboBox() = default;
+
+QList<OllamaModelInfo::Category> OllamaModelsInfosCategoriesComboBox::categories() const
+{
+    return mModel->categoriesSelected();
+}
 
 #include "moc_ollamamodelsinfoscategoriescombobox.cpp"
