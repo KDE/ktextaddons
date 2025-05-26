@@ -20,10 +20,10 @@ public:
 Q_SIGNALS:
     void searchText(const QString &str);
     void categoriesChanged(const QList<OllamaModelAvailableInfo::Category> &categories);
-    void removeModel();
+    void addModel();
 
 private:
     OllamaModelSearchLineEdit *const mSearchLineEdit;
     OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
-    QToolButton *const mRemoveModelButton;
+    QToolButton *const mAddModelButton;
 };

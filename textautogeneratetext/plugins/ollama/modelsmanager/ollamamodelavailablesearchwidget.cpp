@@ -15,7 +15,7 @@ OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *pare
     : QWidget{parent}
     , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
     , mCategoriesComboBox(new OllamaModelsInfosCategoriesComboBox(this))
-    , mRemoveModelButton(new QToolButton(this))
+    , mAddModelButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
@@ -31,10 +31,11 @@ OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *pare
     connect(mCategoriesComboBox, &OllamaModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
         Q_EMIT categoriesChanged(mCategoriesComboBox->categories());
     });
-    mRemoveModelButton->setObjectName(QStringLiteral("mRemoveModelButton"));
-    mainLayout->addWidget(mRemoveModelButton);
-    mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelAvailableSearchWidget::removeModel);
+    mAddModelButton->setObjectName(QStringLiteral("mAddModelButton"));
+    mainLayout->addWidget(mAddModelButton);
+    mAddModelButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAddModelButton->setToolTip(i18nc("@info:tooltip", "Add Model"));
+    connect(mAddModelButton, &QToolButton::clicked, this, &OllamaModelAvailableSearchWidget::addModel);
 }
 
 OllamaModelAvailableSearchWidget::~OllamaModelAvailableSearchWidget() = default;
