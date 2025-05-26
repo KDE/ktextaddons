@@ -6,10 +6,10 @@
 #include "ollamamodelavailablewidget.h"
 #include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailableinfosmodel.h"
+#include "ollamamodelavailableinfossortproxymodel.h"
 #include "ollamamodelavailablelistview.h"
 #include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodeldownloadprogresswidget.h"
-#include "ollamamodelinfossortproxymodel.h"
 #include "ollamamodelinfowidget.h"
 #include <QSplitter>
 #include <QStackedWidget>
@@ -20,7 +20,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     , mSearchWidget(new OllamaModelAvailableSearchWidget(this))
     , mListView(new OllamaModelAvailableListView(this))
     , mInfoWidget(new OllamaModelInfoWidget(manager, this))
-    , mProxyModel(new OllamaModelInfosSortProxyModel(this))
+    , mProxyModel(new OllamaModelAvailableInfosSortProxyModel(this))
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(this))
     , mStackedWidget(new QStackedWidget(this))
 {
@@ -57,8 +57,8 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
         model->setModelInfos(managerModelInfosManager.modelInfos());
     }
     mListView->setModel(mProxyModel);
-    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);
-    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelInfosSortProxyModel::setCategories);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setFilterFixedString);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setCategories);
     connect(mListView, &OllamaModelAvailableListView::clicked, this, &OllamaModelAvailableWidget::slotClicked);
 }
 

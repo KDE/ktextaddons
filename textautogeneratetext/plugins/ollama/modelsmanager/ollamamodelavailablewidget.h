@@ -9,7 +9,7 @@
 class OllamaModelAvailableSearchWidget;
 class OllamaModelAvailableListView;
 class OllamaModelInfoWidget;
-class OllamaModelInfosSortProxyModel;
+class OllamaModelAvailableInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
 class OllamaManager;
@@ -26,7 +26,7 @@ private:
     OllamaModelAvailableSearchWidget *const mSearchWidget;
     OllamaModelAvailableListView *const mListView;
     OllamaModelInfoWidget *const mInfoWidget;
-    OllamaModelInfosSortProxyModel *const mProxyModel;
+    OllamaModelAvailableInfosSortProxyModel *const mProxyModel;
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;
     QStackedWidget *const mStackedWidget;
 };

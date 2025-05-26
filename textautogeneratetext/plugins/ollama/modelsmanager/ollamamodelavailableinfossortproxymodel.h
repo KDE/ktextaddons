@@ -9,12 +9,12 @@
 #include "textautogenerateollama_private_export.h"
 #include <QSortFilterProxyModel>
 
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfosSortProxyModel : public QSortFilterProxyModel
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfosSortProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInfosSortProxyModel(QObject *parent = nullptr);
-    ~OllamaModelInfosSortProxyModel() override;
+    explicit OllamaModelAvailableInfosSortProxyModel(QObject *parent = nullptr);
+    ~OllamaModelAvailableInfosSortProxyModel() override;
 
     [[nodiscard]] QList<OllamaModelAvailableInfo::Category> categories() const;
     void setCategories(const QList<OllamaModelAvailableInfo::Category> &newCategories);

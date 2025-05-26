@@ -52,8 +52,8 @@ target_sources(textautogenerateollama PRIVATE
     modelsmanager/ollamamodelinfowidget.cpp
     modelsmanager/ollamamodelavailableinfosmodel.h
     modelsmanager/ollamamodelavailableinfosmodel.cpp
-    modelsmanager/ollamamodelinfossortproxymodel.h
-    modelsmanager/ollamamodelinfossortproxymodel.cpp
+    modelsmanager/ollamamodelavailableinfossortproxymodel.h
+    modelsmanager/ollamamodelavailableinfossortproxymodel.cpp
 
     modelsmanager/ollamamodelavailableinfosdelegate.h
     modelsmanager/ollamamodelavailableinfosdelegate.cpp

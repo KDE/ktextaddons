@@ -4,23 +4,23 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "ollamamodelinfossortproxymodel.h"
+#include "ollamamodelavailableinfossortproxymodel.h"
 #include "ollamamodelavailableinfosmodel.h"
 
-OllamaModelInfosSortProxyModel::OllamaModelInfosSortProxyModel(QObject *parent)
+OllamaModelAvailableInfosSortProxyModel::OllamaModelAvailableInfosSortProxyModel(QObject *parent)
     : QSortFilterProxyModel{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 }
 
-OllamaModelInfosSortProxyModel::~OllamaModelInfosSortProxyModel() = default;
+OllamaModelAvailableInfosSortProxyModel::~OllamaModelAvailableInfosSortProxyModel() = default;
 
-QList<OllamaModelAvailableInfo::Category> OllamaModelInfosSortProxyModel::categories() const
+QList<OllamaModelAvailableInfo::Category> OllamaModelAvailableInfosSortProxyModel::categories() const
 {
     return mCategories;
 }
 
-void OllamaModelInfosSortProxyModel::setCategories(const QList<OllamaModelAvailableInfo::Category> &newCategories)
+void OllamaModelAvailableInfosSortProxyModel::setCategories(const QList<OllamaModelAvailableInfo::Category> &newCategories)
 {
     if (mCategories != newCategories) {
         mCategories = newCategories;
@@ -28,7 +28,7 @@ void OllamaModelInfosSortProxyModel::setCategories(const QList<OllamaModelAvaila
     }
 }
 
-bool OllamaModelInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+bool OllamaModelAvailableInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
     if (!mCategories.isEmpty()) {
@@ -47,4 +47,4 @@ bool OllamaModelInfosSortProxyModel::filterAcceptsRow(int source_row, const QMod
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
-#include "moc_ollamamodelinfossortproxymodel.cpp"
+#include "moc_ollamamodelavailableinfossortproxymodel.cpp"

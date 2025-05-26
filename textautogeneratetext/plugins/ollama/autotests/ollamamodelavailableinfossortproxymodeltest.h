@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class OllamaModelInfosSortProxyModelTest : public QObject
+class OllamaModelAvailableInfosSortProxyModelTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInfosSortProxyModelTest(QObject *parent = nullptr);
-    ~OllamaModelInfosSortProxyModelTest() override = default;
+    explicit OllamaModelAvailableInfosSortProxyModelTest(QObject *parent = nullptr);
+    ~OllamaModelAvailableInfosSortProxyModelTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };
