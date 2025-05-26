@@ -30,15 +30,18 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
         mMainLayout->removeWidget(mDownloadWidget);
         mDownloadWidget->deleteLater();
     }
-    mModelName->setText(index.data(OllamaModelInfosModel::ModelName).toString());
+    const QString modelName = index.data(OllamaModelInfosModel::ModelName).toString();
+    mModelName->setText(modelName);
 
     const QList<OllamaModelInfo::ModelTag> tags = index.data(OllamaModelInfosModel::Tags).value<QList<OllamaModelInfo::ModelTag>>();
     delete mDownloadWidget;
     mDownloadWidget = new QWidget(this);
     auto downloadLayout = new QVBoxLayout(mDownloadWidget);
     for (const auto &t : tags) {
-        auto downLoadWidget = new OllamaModelDownloadWidget(t.size, t.tag, mDownloadWidget);
-        connect(downLoadWidget, &OllamaModelDownloadWidget::downloadModel, this, &OllamaModelInfoWidget::downloadModel);
+        auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, mDownloadWidget);
+        connect(downLoadWidget, &OllamaModelDownloadWidget::downloadModel, this, [this, modelName](const QString &tagName) {
+            Q_EMIT downloadModel(QStringLiteral("%1:%2").arg(modelName, tagName));
+        });
         downloadLayout->addWidget(downLoadWidget);
     }
     mMainLayout->addWidget(mDownloadWidget, 1, Qt::AlignTop);

@@ -5,6 +5,7 @@
 */
 #include "ollamamodeldownloadprogresswidget.h"
 #include "ollamamanager.h"
+#include "ollamareply.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QProgressBar>
@@ -43,9 +44,12 @@ OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = defaul
 
 void OllamaModelDownloadProgressWidget::downloadModel(const QString &url)
 {
+    qDebug() << " downloadModel " << url;
+    // TODO allow to cancel download.
     OllamaManager *manager = new OllamaManager(this);
     connect(manager, &OllamaManager::downloadInProgress, this, &OllamaModelDownloadProgressWidget::slotDownloadProgressInfo);
-    manager->downloadModel(QStringLiteral("codellama:70b"));
+    auto reply = manager->downloadModel(url);
+    // TODO reply->
 }
 
 void OllamaModelDownloadProgressWidget::slotDownloadProgressInfo(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info)
