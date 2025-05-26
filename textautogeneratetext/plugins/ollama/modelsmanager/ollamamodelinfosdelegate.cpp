@@ -49,11 +49,16 @@ void OllamaModelInfosDelegate::drawCatergories(QPainter *painter,
                                                const QModelIndex &index,
                                                const QStyleOptionViewItem &option) const
 {
+    for (const auto &cat : layout.categoriesLayout) {
+        // TODO
+    }
+#if 0
     QRect rect = layout.textRect;
     const QStringList categoriesName = index.data(OllamaModelInfosModel::CategoriesName).toStringList();
     for (const auto &name : categoriesName) {
         painter->drawText(rect.x(), rect.bottom(), name);
     }
+#endif
     // TODO
 }
 
@@ -134,6 +139,14 @@ OllamaModelInfosDelegate::ModelInfoLayout OllamaModelInfosDelegate::doLayout(con
                             usableRect.top() + OllamaModelInfosDelegateUtils::textMargin(),
                             maxWidth - 2 * OllamaModelInfosDelegateUtils::textMargin(),
                             textSize.height() + 2 * OllamaModelInfosDelegateUtils::textMargin());
+
+    const QStringList categoriesName = index.data(OllamaModelInfosModel::CategoriesName).toStringList();
+    for (const QString &cat : categoriesName) {
+        CategoryLayout catLayout;
+        catLayout.categoryString = cat;
+        catLayout.categoryRect = {}; // TODO
+        layout.categoriesLayout.append(catLayout);
+    }
     return layout;
 }
 
