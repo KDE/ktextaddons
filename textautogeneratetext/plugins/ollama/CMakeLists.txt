@@ -3,8 +3,7 @@
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-add_library(textautogenerateollama
-    modelsmanager/ollamamodelinstalledwidget.h modelsmanager/ollamamodelinstalledwidget.cpp)
+add_library(textautogenerateollama)
 kconfig_add_kcfg_files(textautogenerateollama GENERATE_MOC ollamasettings.kcfgc)
 ecm_qt_declare_logging_category(textautogenerateollama
     HEADER autogeneratetext_ollama_debug.h
@@ -93,6 +92,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelinstalledlistview.cpp
     modelsmanager/ollamamodelinstalledlistview.h
+
+    modelsmanager/ollamamodelinstalledwidget.h
+    modelsmanager/ollamamodelinstalledwidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
