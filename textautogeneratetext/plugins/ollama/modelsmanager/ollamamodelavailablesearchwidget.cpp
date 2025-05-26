@@ -20,6 +20,7 @@ OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *pare
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
 
     mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
     mainLayout->addWidget(mSearchLineEdit);
