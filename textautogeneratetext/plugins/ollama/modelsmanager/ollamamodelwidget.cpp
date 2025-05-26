@@ -58,6 +58,7 @@ OllamaModelWidget::OllamaModelWidget(QWidget *parent)
     }
     mListView->setModel(mProxyModel);
     connect(mSearchWidget, &OllamaModelSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);
+    connect(mSearchWidget, &OllamaModelSearchWidget::categoriesChanged, mProxyModel, &OllamaModelInfosSortProxyModel::setCategories);
     connect(mListView, &OllamaModelListView::clicked, this, &OllamaModelWidget::slotClicked);
 }
 

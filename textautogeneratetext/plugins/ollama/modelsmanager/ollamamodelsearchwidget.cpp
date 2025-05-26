@@ -26,6 +26,9 @@ OllamaModelSearchWidget::OllamaModelSearchWidget(QWidget *parent)
 
     mCategoriesComboBox->setObjectName(QStringLiteral("mCategoriesComboBox"));
     mainLayout->addWidget(mCategoriesComboBox);
+    connect(mCategoriesComboBox, &OllamaModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
+        Q_EMIT categoriesChanged(mCategoriesComboBox->categories());
+    });
 }
 
 OllamaModelSearchWidget::~OllamaModelSearchWidget() = default;

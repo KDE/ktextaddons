@@ -17,7 +17,7 @@ public:
     ~OllamaModelInfosSortProxyModel() override;
 
     [[nodiscard]] OllamaModelInfo::Categories categories() const;
-    void setCategories(const OllamaModelInfo::Categories &newCategories);
+    void setCategories(OllamaModelInfo::Categories newCategories);
 
 private:
     OllamaModelInfo::Categories mCategories = OllamaModelInfo::Category::Unknown;

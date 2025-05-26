@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "ollamamodelinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class QLineEdit;
@@ -17,6 +18,7 @@ public:
 
 Q_SIGNALS:
     void searchText(const QString &str);
+    void categoriesChanged(OllamaModelInfo::Categories categories);
 
 private:
     QLineEdit *const mSearchLineEdit;

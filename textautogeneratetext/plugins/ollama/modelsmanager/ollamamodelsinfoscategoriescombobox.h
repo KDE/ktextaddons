@@ -15,7 +15,7 @@ public:
     explicit OllamaModelsInfosCategoriesComboBox(QWidget *parent = nullptr);
     ~OllamaModelsInfosCategoriesComboBox() override;
 
-    [[nodiscard]] QList<OllamaModelInfo::Category> categories() const;
+    [[nodiscard]] OllamaModelInfo::Categories categories() const;
 Q_SIGNALS:
     void categoriesChanged();
 

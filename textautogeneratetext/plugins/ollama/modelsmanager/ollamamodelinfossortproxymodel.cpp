@@ -19,7 +19,7 @@ OllamaModelInfo::Categories OllamaModelInfosSortProxyModel::categories() const
     return mCategories;
 }
 
-void OllamaModelInfosSortProxyModel::setCategories(const OllamaModelInfo::Categories &newCategories)
+void OllamaModelInfosSortProxyModel::setCategories(OllamaModelInfo::Categories newCategories)
 {
     if (mCategories != newCategories) {
         mCategories = newCategories;
