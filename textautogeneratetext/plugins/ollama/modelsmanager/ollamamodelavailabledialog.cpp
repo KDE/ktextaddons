@@ -3,7 +3,7 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodeldialog.h"
+#include "ollamamodelavailabledialog.h"
 
 #include "ollamamanager.h"
 #include "ollamamodelavailablewidget.h"
@@ -18,7 +18,7 @@ namespace
 {
 const char myOllamaModelDialogGroupName[] = "OllamaModelDialog";
 }
-OllamaModelDialog::OllamaModelDialog(OllamaManager *manager, QWidget *parent)
+OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, QWidget *parent)
     : QDialog(parent)
     , mOllamaModelWidget(new OllamaModelAvailableWidget(manager, this))
 {
@@ -30,17 +30,17 @@ OllamaModelDialog::OllamaModelDialog(OllamaManager *manager, QWidget *parent)
     auto box = new QDialogButtonBox(QDialogButtonBox::Close, this);
     box->setObjectName(QStringLiteral("box"));
     mainLayout->addWidget(box);
-    connect(box, &QDialogButtonBox::accepted, this, &OllamaModelDialog::accept);
-    connect(box, &QDialogButtonBox::rejected, this, &OllamaModelDialog::reject);
+    connect(box, &QDialogButtonBox::accepted, this, &OllamaModelAvailableDialog::accept);
+    connect(box, &QDialogButtonBox::rejected, this, &OllamaModelAvailableDialog::reject);
     readConfig();
 }
 
-OllamaModelDialog::~OllamaModelDialog()
+OllamaModelAvailableDialog::~OllamaModelAvailableDialog()
 {
     writeConfig();
 }
 
-void OllamaModelDialog::readConfig()
+void OllamaModelAvailableDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(400, 300));
@@ -49,10 +49,10 @@ void OllamaModelDialog::readConfig()
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
-void OllamaModelDialog::writeConfig()
+void OllamaModelAvailableDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myOllamaModelDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
-#include "moc_ollamamodeldialog.cpp"
+#include "moc_ollamamodelavailabledialog.cpp"

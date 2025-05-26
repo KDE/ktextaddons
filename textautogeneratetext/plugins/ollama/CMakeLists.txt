@@ -43,8 +43,8 @@ target_sources(textautogenerateollama PRIVATE
     modelsmanager/ollamamodelavailablewidget.h
     modelsmanager/ollamamodelavailablewidget.cpp
 
-    modelsmanager/ollamamodeldialog.h
-    modelsmanager/ollamamodeldialog.cpp
+    modelsmanager/ollamamodelavailabledialog.h
+    modelsmanager/ollamamodelavailabledialog.cpp
 
     modelsmanager/ollamamodelavailablesearchwidget.h
     modelsmanager/ollamamodelavailablesearchwidget.cpp

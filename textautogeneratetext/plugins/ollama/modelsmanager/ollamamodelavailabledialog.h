@@ -8,12 +8,12 @@
 #include <QDialog>
 class OllamaModelAvailableWidget;
 class OllamaManager;
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDialog : public QDialog
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit OllamaModelDialog(OllamaManager *manager, QWidget *parent = nullptr);
-    ~OllamaModelDialog() override;
+    explicit OllamaModelAvailableDialog(OllamaManager *manager, QWidget *parent = nullptr);
+    ~OllamaModelAvailableDialog() override;
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void readConfig();
