@@ -14,3 +14,5 @@ OllamaModelSearchLineEdit::OllamaModelSearchLineEdit(QWidget *parent)
 }
 
 OllamaModelSearchLineEdit::~OllamaModelSearchLineEdit() = default;
+
+#include "moc_ollamamodelsearchlineedit.cpp"

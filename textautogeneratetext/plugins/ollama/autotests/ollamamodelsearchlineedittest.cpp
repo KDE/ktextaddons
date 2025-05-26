@@ -18,3 +18,5 @@ void OllamaModelSearchLineEditTest::shouldHaveDefaultValues()
     OllamaModelSearchLineEdit w;
     // TODO
 }
+
+#include "moc_ollamamodelsearchlineedittest.cpp"
