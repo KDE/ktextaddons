@@ -25,26 +25,15 @@ public:
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 private:
-    struct CategoryLayout {
-        QRectF categoryRect;
-        QString categoryString;
-    };
-
     struct ModelInfoLayout {
         // Text
         QRect textRect;
         qreal baseLine; // used to draw sender/timestamp
-
-        QList<CategoryLayout> categoriesLayout;
     };
     void draw(QPainter *painter,
               const OllamaModelInstalledInfosDelegate::ModelInfoLayout &layout,
               const QModelIndex &index,
               const QStyleOptionViewItem &option) const;
-    void drawCatergories(QPainter *painter,
-                         const OllamaModelInstalledInfosDelegate::ModelInfoLayout &layout,
-                         const QModelIndex &index,
-                         const QStyleOptionViewItem &option) const;
 
     [[nodiscard]] OllamaModelInstalledInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
