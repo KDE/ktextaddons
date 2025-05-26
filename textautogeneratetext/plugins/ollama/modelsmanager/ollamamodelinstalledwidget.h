@@ -7,11 +7,12 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class OllamaModelInstalledListView;
+class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInstalledWidget(QWidget *parent = nullptr);
+    explicit OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelInstalledWidget() override;
 
 private:

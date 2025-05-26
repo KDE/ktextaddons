@@ -24,7 +24,7 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     : KPageDialog(parent)
     , mOllamaConfigureWidget(new OllamaConfigureWidget(manager, this))
     , mOllamaModelWidget(new OllamaModelAvailableWidget(manager, this))
-    , mOllamaModelInstalledWidget(new OllamaModelInstalledWidget(this))
+    , mOllamaModelInstalledWidget(new OllamaModelInstalledWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     setFaceType(KPageDialog::List);

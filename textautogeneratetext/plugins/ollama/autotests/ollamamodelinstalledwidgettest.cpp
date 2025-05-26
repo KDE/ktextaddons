@@ -6,6 +6,7 @@
 #include "ollamamodelinstalledwidgettest.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(OllamaModelInstalledWidgetTest)
 
 OllamaModelInstalledWidgetTest::OllamaModelInstalledWidgetTest(QObject *parent)
@@ -15,7 +16,11 @@ OllamaModelInstalledWidgetTest::OllamaModelInstalledWidgetTest(QObject *parent)
 
 void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelInstalledWidget w;
+    OllamaModelInstalledWidget w(nullptr);
+
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
     // TODO
 }
 
