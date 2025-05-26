@@ -3,22 +3,22 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelsearchwidgettest.h"
-#include "modelsmanager/ollamamodelsearchwidget.h"
+#include "ollamamodelavailblesearchwidgettest.h"
+#include "modelsmanager/ollamamodelavailablesearchwidget.h"
 #include "modelsmanager/ollamamodelsinfoscategoriescombobox.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QSignalSpy>
 #include <QTest>
-QTEST_MAIN(OllamaModelSearchWidgetTest)
-OllamaModelSearchWidgetTest::OllamaModelSearchWidgetTest(QObject *parent)
+QTEST_MAIN(OllamaModelAvailbleSearchWidgetTest)
+OllamaModelAvailbleSearchWidgetTest::OllamaModelAvailbleSearchWidgetTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void OllamaModelSearchWidgetTest::shouldHaveDefaultValues()
+void OllamaModelAvailbleSearchWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelSearchWidget w;
+    OllamaModelAvailableSearchWidget w;
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -32,10 +32,10 @@ void OllamaModelSearchWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mCategoriesComboBox);
 }
 
-void OllamaModelSearchWidgetTest::shouldEmitSearchText()
+void OllamaModelAvailbleSearchWidgetTest::shouldEmitSearchText()
 {
-    OllamaModelSearchWidget w;
-    QSignalSpy searchTextSpy(&w, &OllamaModelSearchWidget::searchText);
+    OllamaModelAvailableSearchWidget w;
+    QSignalSpy searchTextSpy(&w, &OllamaModelAvailableSearchWidget::searchText);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchLineEdit"));
     mSearchLineEdit->setText(QStringLiteral("foo"));
@@ -46,4 +46,4 @@ void OllamaModelSearchWidgetTest::shouldEmitSearchText()
     QCOMPARE(searchTextSpy.count(), 1);
 }
 
-#include "moc_ollamamodelsearchwidgettest.cpp"
+#include "moc_ollamamodelavailblesearchwidgettest.cpp"

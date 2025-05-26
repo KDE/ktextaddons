@@ -7,7 +7,7 @@
 #include "textautogenerateollama_private_export.h"
 #include <QDebug>
 #include <QString>
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfo
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfo
 {
     Q_GADGET
 public:
@@ -34,8 +34,8 @@ public:
         [[nodiscard]] bool operator==(const ModelTag &other) const;
     };
 
-    OllamaModelInfo();
-    ~OllamaModelInfo();
+    OllamaModelAvailableInfo();
+    ~OllamaModelAvailableInfo();
 
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
@@ -61,9 +61,9 @@ public:
 
     [[nodiscard]] QString description() const;
 
-    [[nodiscard]] bool operator==(const OllamaModelInfo &other) const;
+    [[nodiscard]] bool operator==(const OllamaModelAvailableInfo &other) const;
 
-    static QString convertCategoryToI18n(OllamaModelInfo::Category cat);
+    static QString convertCategoryToI18n(OllamaModelAvailableInfo::Category cat);
 
     [[nodiscard]] QStringList categoriesName() const;
     void setCategoriesName(const QStringList &newCategoriesName);
@@ -80,6 +80,6 @@ private:
     QStringList mCategoriesName;
 };
 
-Q_DECLARE_TYPEINFO(OllamaModelInfo, Q_RELOCATABLE_TYPE);
-QDebug operator<<(QDebug d, const OllamaModelInfo &t);
-QDebug operator<<(QDebug d, const OllamaModelInfo::ModelTag &t);
+Q_DECLARE_TYPEINFO(OllamaModelAvailableInfo, Q_RELOCATABLE_TYPE);
+QDebug operator<<(QDebug d, const OllamaModelAvailableInfo &t);
+QDebug operator<<(QDebug d, const OllamaModelAvailableInfo::ModelTag &t);

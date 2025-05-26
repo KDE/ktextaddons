@@ -7,12 +7,12 @@
 
 #include <QObject>
 
-class OllamaModelSearchWidgetTest : public QObject
+class OllamaModelAvailbleSearchWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit OllamaModelSearchWidgetTest(QObject *parent = nullptr);
-    ~OllamaModelSearchWidgetTest() override = default;
+    explicit OllamaModelAvailbleSearchWidgetTest(QObject *parent = nullptr);
+    ~OllamaModelAvailbleSearchWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldEmitSearchText();

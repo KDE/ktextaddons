@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "modelsmanager/ollamamodelwidget.h"
+#include "modelsmanager/ollamamodelavailablewidget.h"
 #include "ollamamanager.h"
 #include <QApplication>
 #include <QCommandLineParser>
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     parser.process(app);
 
     auto manager = new OllamaManager;
-    auto w = new OllamaModelWidget(manager);
+    auto w = new OllamaModelAvailableWidget(manager);
     w->resize(600, 400);
     w->show();
     app.exec();

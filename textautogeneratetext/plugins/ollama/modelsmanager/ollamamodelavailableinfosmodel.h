@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "ollamamodelinfo.h"
+#include "ollamamodelavailableinfo.h"
 
 #include <QAbstractListModel>
 
-class OllamaModelInfosModel : public QAbstractListModel
+class OllamaModelAvailableInfosModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -25,15 +25,15 @@ public:
     };
     Q_ENUM(ModelInfoRoles)
 
-    explicit OllamaModelInfosModel(QObject *parent = nullptr);
-    ~OllamaModelInfosModel() override;
+    explicit OllamaModelAvailableInfosModel(QObject *parent = nullptr);
+    ~OllamaModelAvailableInfosModel() override;
 
-    [[nodiscard]] QList<OllamaModelInfo> modelInfos() const;
-    void setModelInfos(const QList<OllamaModelInfo> &newModelInfos);
+    [[nodiscard]] QList<OllamaModelAvailableInfo> modelInfos() const;
+    void setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos);
 
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
 private:
-    QList<OllamaModelInfo> mModelInfos;
+    QList<OllamaModelAvailableInfo> mModelInfos;
 };

@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class OllamaModelInfoTest : public QObject
+class OllamaModelAvailableInfoTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInfoTest(QObject *parent = nullptr);
-    ~OllamaModelInfoTest() override = default;
+    explicit OllamaModelAvailableInfoTest(QObject *parent = nullptr);
+    ~OllamaModelAvailableInfoTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

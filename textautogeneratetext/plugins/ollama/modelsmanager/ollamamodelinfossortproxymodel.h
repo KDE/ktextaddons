@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "ollamamodelinfo.h"
+#include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QSortFilterProxyModel>
 
@@ -16,12 +16,12 @@ public:
     explicit OllamaModelInfosSortProxyModel(QObject *parent = nullptr);
     ~OllamaModelInfosSortProxyModel() override;
 
-    [[nodiscard]] QList<OllamaModelInfo::Category> categories() const;
-    void setCategories(const QList<OllamaModelInfo::Category> &newCategories);
+    [[nodiscard]] QList<OllamaModelAvailableInfo::Category> categories() const;
+    void setCategories(const QList<OllamaModelAvailableInfo::Category> &newCategories);
 
 protected:
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
 
 private:
-    QList<OllamaModelInfo::Category> mCategories;
+    QList<OllamaModelAvailableInfo::Category> mCategories;
 };

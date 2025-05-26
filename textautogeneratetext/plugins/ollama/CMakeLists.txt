@@ -1,7 +1,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
-add_library(textautogenerateollama)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+add_library(textautogenerateollama
+    modelsmanager/ollamamodelinstalledwidget.h modelsmanager/ollamamodelinstalledwidget.cpp)
 kconfig_add_kcfg_files(textautogenerateollama GENERATE_MOC ollamasettings.kcfgc)
 ecm_qt_declare_logging_category(textautogenerateollama
     HEADER autogeneratetext_ollama_debug.h
@@ -31,36 +34,36 @@ target_sources(textautogenerateollama PRIVATE
 
     textautogenerateollama_private_export.h
 
-    modelsmanager/ollamamodelinfo.cpp
-    modelsmanager/ollamamodelinfo.h
+    modelsmanager/ollamamodelavailableinfo.cpp
+    modelsmanager/ollamamodelavailableinfo.h
 
     modelsmanager/ollamamodelsinfos.h
     modelsmanager/ollamamodelsinfos.cpp
 
-    modelsmanager/ollamamodelwidget.h
-    modelsmanager/ollamamodelwidget.cpp
+    modelsmanager/ollamamodelavailablewidget.h
+    modelsmanager/ollamamodelavailablewidget.cpp
 
     modelsmanager/ollamamodeldialog.h
     modelsmanager/ollamamodeldialog.cpp
 
-    modelsmanager/ollamamodelsearchwidget.h
-    modelsmanager/ollamamodelsearchwidget.cpp
+    modelsmanager/ollamamodelavailablesearchwidget.h
+    modelsmanager/ollamamodelavailablesearchwidget.cpp
 
     modelsmanager/ollamamodelinfowidget.h
     modelsmanager/ollamamodelinfowidget.cpp
-    modelsmanager/ollamamodelinfosmodel.h
-    modelsmanager/ollamamodelinfosmodel.cpp
+    modelsmanager/ollamamodelavailableinfosmodel.h
+    modelsmanager/ollamamodelavailableinfosmodel.cpp
     modelsmanager/ollamamodelinfossortproxymodel.h
     modelsmanager/ollamamodelinfossortproxymodel.cpp
 
-    modelsmanager/ollamamodelinfosdelegate.h
-    modelsmanager/ollamamodelinfosdelegate.cpp
+    modelsmanager/ollamamodelavailableinfosdelegate.h
+    modelsmanager/ollamamodelavailableinfosdelegate.cpp
 
-    modelsmanager/ollamamodelinfosmanager.h
-    modelsmanager/ollamamodelinfosmanager.cpp
+    modelsmanager/ollamamodelavailableinfosmanager.h
+    modelsmanager/ollamamodelavailableinfosmanager.cpp
 
-    modelsmanager/ollamamodellistview.h
-    modelsmanager/ollamamodellistview.cpp
+    modelsmanager/ollamamodelavailablelistview.h
+    modelsmanager/ollamamodelavailablelistview.cpp
 
     modelsmanager/ollamamodelsmanager.qrc
 
@@ -81,6 +84,15 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelcategoriesmodel.cpp
     modelsmanager/ollamamodelcategoriesmodel.h
+
+    modelsmanager/ollamamodelinstalledinfo.h
+    modelsmanager/ollamamodelinstalledinfo.cpp
+
+    modelsmanager/ollamamodelinstalledinfosmodel.cpp
+    modelsmanager/ollamamodelinstalledinfosmodel.h
+
+    modelsmanager/ollamamodelinstalledlistview.cpp
+    modelsmanager/ollamamodelinstalledlistview.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -97,6 +109,7 @@ target_link_libraries(textautogenerateollama
     KF6::CoreAddons
     KF6::WidgetsAddons
 )
+target_link_libraries(textautogenerateollama PRIVATE Qt6::Widgets)
 set_target_properties(textautogenerateollama PROPERTIES
     VERSION ${TEXTAUTOGENERATETEXT_VERSION}
     SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
@@ -132,6 +145,7 @@ target_link_libraries(autogeneratetext_ollama
     KF6::ConfigGui
     KF6::CoreAddons
     KF6::I18n
+    KF6::WidgetsAddons
 )
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 

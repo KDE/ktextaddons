@@ -3,22 +3,22 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelwidget.h"
+#include "ollamamodelavailablewidget.h"
+#include "ollamamodelavailableinfosmanager.h"
+#include "ollamamodelavailableinfosmodel.h"
+#include "ollamamodelavailablelistview.h"
+#include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodeldownloadprogresswidget.h"
-#include "ollamamodelinfosmanager.h"
-#include "ollamamodelinfosmodel.h"
 #include "ollamamodelinfossortproxymodel.h"
 #include "ollamamodelinfowidget.h"
-#include "ollamamodellistview.h"
-#include "ollamamodelsearchwidget.h"
 #include <QSplitter>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
-OllamaModelWidget::OllamaModelWidget(OllamaManager *manager, QWidget *parent)
+OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mSearchWidget(new OllamaModelSearchWidget(this))
-    , mListView(new OllamaModelListView(this))
+    , mSearchWidget(new OllamaModelAvailableSearchWidget(this))
+    , mListView(new OllamaModelAvailableListView(this))
     , mInfoWidget(new OllamaModelInfoWidget(manager, this))
     , mProxyModel(new OllamaModelInfosSortProxyModel(this))
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(this))
@@ -48,23 +48,23 @@ OllamaModelWidget::OllamaModelWidget(OllamaManager *manager, QWidget *parent)
     mStackedWidget->addWidget(mInfoWidget);
     mStackedWidget->addWidget(mOllamaModelDownloadProgressWidget);
     mStackedWidget->setCurrentWidget(mInfoWidget);
-    connect(mInfoWidget, &OllamaModelInfoWidget::downloadModel, this, &OllamaModelWidget::slotDownloadModel);
+    connect(mInfoWidget, &OllamaModelInfoWidget::downloadModel, this, &OllamaModelAvailableWidget::slotDownloadModel);
 
-    auto model = new OllamaModelInfosModel(this);
+    auto model = new OllamaModelAvailableInfosModel(this);
     mProxyModel->setSourceModel(model);
-    OllamaModelInfosManager managerModelInfosManager;
+    OllamaModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {
         model->setModelInfos(managerModelInfosManager.modelInfos());
     }
     mListView->setModel(mProxyModel);
-    connect(mSearchWidget, &OllamaModelSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);
-    connect(mSearchWidget, &OllamaModelSearchWidget::categoriesChanged, mProxyModel, &OllamaModelInfosSortProxyModel::setCategories);
-    connect(mListView, &OllamaModelListView::clicked, this, &OllamaModelWidget::slotClicked);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelInfosSortProxyModel::setFilterFixedString);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelInfosSortProxyModel::setCategories);
+    connect(mListView, &OllamaModelAvailableListView::clicked, this, &OllamaModelAvailableWidget::slotClicked);
 }
 
-OllamaModelWidget::~OllamaModelWidget() = default;
+OllamaModelAvailableWidget::~OllamaModelAvailableWidget() = default;
 
-void OllamaModelWidget::slotClicked(const QModelIndex &index)
+void OllamaModelAvailableWidget::slotClicked(const QModelIndex &index)
 {
     if (!index.isValid()) {
         return;
@@ -74,12 +74,10 @@ void OllamaModelWidget::slotClicked(const QModelIndex &index)
     mInfoWidget->generateWidget(index);
 }
 
-void OllamaModelWidget::slotDownloadModel(const QString &url)
+void OllamaModelAvailableWidget::slotDownloadModel(const QString &url)
 {
-    qDebug() << " url " << url;
-    // TODO use url
     mStackedWidget->setCurrentWidget(mOllamaModelDownloadProgressWidget);
     mOllamaModelDownloadProgressWidget->downloadModel(url);
 }
 
-#include "moc_ollamamodelwidget.cpp"
+#include "moc_ollamamodelavailablewidget.cpp"

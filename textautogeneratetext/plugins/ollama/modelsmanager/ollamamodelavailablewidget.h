@@ -6,25 +6,25 @@
 #pragma once
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
-class OllamaModelSearchWidget;
-class OllamaModelListView;
+class OllamaModelAvailableSearchWidget;
+class OllamaModelAvailableListView;
 class OllamaModelInfoWidget;
 class OllamaModelInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
 class OllamaManager;
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelWidget : public QWidget
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelWidget(OllamaManager *manager, QWidget *parent = nullptr);
-    ~OllamaModelWidget() override;
+    explicit OllamaModelAvailableWidget(OllamaManager *manager, QWidget *parent = nullptr);
+    ~OllamaModelAvailableWidget() override;
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &index);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotDownloadModel(const QString &url);
-    OllamaModelSearchWidget *const mSearchWidget;
-    OllamaModelListView *const mListView;
+    OllamaModelAvailableSearchWidget *const mSearchWidget;
+    OllamaModelAvailableListView *const mListView;
     OllamaModelInfoWidget *const mInfoWidget;
     OllamaModelInfosSortProxyModel *const mProxyModel;
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;

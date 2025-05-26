@@ -14,22 +14,22 @@ OllamaModelsInfos::~OllamaModelsInfos() = default;
 
 void OllamaModelsInfos::parseModelsInfo(const QJsonObject &obj)
 {
-    QList<OllamaModelInfo> lstInfo;
+    QList<OllamaModelAvailableInfo> lstInfo;
     const QStringList keys = obj.keys();
     for (const auto &k : keys) {
-        OllamaModelInfo info;
+        OllamaModelAvailableInfo info;
         info.parseInfo(k, obj[k].toObject());
         lstInfo.append(std::move(info));
     }
     mInfos = std::move(lstInfo);
 }
 
-QList<OllamaModelInfo> OllamaModelsInfos::infos() const
+QList<OllamaModelAvailableInfo> OllamaModelsInfos::infos() const
 {
     return mInfos;
 }
 
-void OllamaModelsInfos::setInfos(const QList<OllamaModelInfo> &newInfos)
+void OllamaModelsInfos::setInfos(const QList<OllamaModelAvailableInfo> &newInfos)
 {
     mInfos = newInfos;
 }

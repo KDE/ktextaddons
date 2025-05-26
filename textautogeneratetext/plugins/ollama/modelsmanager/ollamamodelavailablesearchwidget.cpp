@@ -3,13 +3,13 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelsearchwidget.h"
+#include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodelsinfoscategoriescombobox.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLineEdit>
 
-OllamaModelSearchWidget::OllamaModelSearchWidget(QWidget *parent)
+OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
     , mCategoriesComboBox(new OllamaModelsInfosCategoriesComboBox(this))
@@ -22,7 +22,7 @@ OllamaModelSearchWidget::OllamaModelSearchWidget(QWidget *parent)
     mainLayout->addWidget(mSearchLineEdit);
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search Model…"));
-    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &OllamaModelSearchWidget::searchText);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &OllamaModelAvailableSearchWidget::searchText);
 
     mCategoriesComboBox->setObjectName(QStringLiteral("mCategoriesComboBox"));
     mainLayout->addWidget(mCategoriesComboBox);
@@ -31,6 +31,6 @@ OllamaModelSearchWidget::OllamaModelSearchWidget(QWidget *parent)
     });
 }
 
-OllamaModelSearchWidget::~OllamaModelSearchWidget() = default;
+OllamaModelAvailableSearchWidget::~OllamaModelAvailableSearchWidget() = default;
 
-#include "moc_ollamamodelsearchwidget.cpp"
+#include "moc_ollamamodelavailablesearchwidget.cpp"

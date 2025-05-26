@@ -3,20 +3,20 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelinfosmanager.h"
+#include "ollamamodelavailableinfosmanager.h"
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelsinfos.h"
 #include <QFile>
 #include <QJsonDocument>
 
-OllamaModelInfosManager::OllamaModelInfosManager(QObject *parent)
+OllamaModelAvailableInfosManager::OllamaModelAvailableInfosManager(QObject *parent)
     : QObject{parent}
 {
 }
 
-OllamaModelInfosManager::~OllamaModelInfosManager() = default;
+OllamaModelAvailableInfosManager::~OllamaModelAvailableInfosManager() = default;
 
-bool OllamaModelInfosManager::loadAvailableModels()
+bool OllamaModelAvailableInfosManager::loadAvailableModels()
 {
     QFile f(QStringLiteral(":/available_models"));
     if (!f.open(QIODevice::ReadOnly)) {
@@ -34,14 +34,14 @@ bool OllamaModelInfosManager::loadAvailableModels()
     return true;
 }
 
-QList<OllamaModelInfo> OllamaModelInfosManager::modelInfos() const
+QList<OllamaModelAvailableInfo> OllamaModelAvailableInfosManager::modelInfos() const
 {
     return mModelInfos;
 }
 
-void OllamaModelInfosManager::setModelInfos(const QList<OllamaModelInfo> &newModelInfos)
+void OllamaModelAvailableInfosManager::setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos)
 {
     mModelInfos = newModelInfos;
 }
 
-#include "moc_ollamamodelinfosmanager.cpp"
+#include "moc_ollamamodelavailableinfosmanager.cpp"

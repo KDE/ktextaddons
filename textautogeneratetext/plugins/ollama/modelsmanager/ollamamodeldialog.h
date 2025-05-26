@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogenerateollama_private_export.h"
 #include <QDialog>
-class OllamaModelWidget;
+class OllamaModelAvailableWidget;
 class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDialog : public QDialog
 {
@@ -18,5 +18,5 @@ public:
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void readConfig();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void writeConfig();
-    OllamaModelWidget *const mOllamaModelWidget;
+    OllamaModelAvailableWidget *const mOllamaModelWidget;
 };

@@ -3,10 +3,10 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodellistview.h"
-#include "ollamamodelinfosdelegate.h"
+#include "ollamamodelinstalledlistview.h"
+#include "ollamamodelavailableinfosdelegate.h"
 
-OllamaModelListView::OllamaModelListView(QWidget *parent)
+OllamaModelInstalledListView::OllamaModelInstalledListView(QWidget *parent)
     : QListView(parent)
 {
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
@@ -17,9 +17,9 @@ OllamaModelListView::OllamaModelListView(QWidget *parent)
     scrollToBottom();
     setMouseTracking(true);
 
-    setItemDelegate(new OllamaModelInfosDelegate(this));
+    setItemDelegate(new OllamaModelAvailableInfosDelegate(this));
 }
 
-OllamaModelListView::~OllamaModelListView() = default;
+OllamaModelInstalledListView::~OllamaModelInstalledListView() = default;
 
-#include "moc_ollamamodellistview.cpp"
+#include "moc_ollamamodelinstalledlistview.cpp"

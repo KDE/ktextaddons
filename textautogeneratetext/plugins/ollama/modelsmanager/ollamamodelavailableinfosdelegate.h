@@ -9,12 +9,12 @@
 #include "widgets/view/textautogeneratelistviewbasedelegate.h"
 #include <QObject>
 
-class OllamaModelInfosDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
+class OllamaModelAvailableInfosDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInfosDelegate(QListView *view);
-    ~OllamaModelInfosDelegate() override;
+    explicit OllamaModelAvailableInfosDelegate(QListView *view);
+    ~OllamaModelAvailableInfosDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
@@ -37,12 +37,15 @@ private:
 
         QList<CategoryLayout> categoriesLayout;
     };
-    void draw(QPainter *painter, const OllamaModelInfosDelegate::ModelInfoLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    void draw(QPainter *painter,
+              const OllamaModelAvailableInfosDelegate::ModelInfoLayout &layout,
+              const QModelIndex &index,
+              const QStyleOptionViewItem &option) const;
     void drawCatergories(QPainter *painter,
-                         const OllamaModelInfosDelegate::ModelInfoLayout &layout,
+                         const OllamaModelAvailableInfosDelegate::ModelInfoLayout &layout,
                          const QModelIndex &index,
                          const QStyleOptionViewItem &option) const;
 
-    [[nodiscard]] OllamaModelInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    [[nodiscard]] OllamaModelAvailableInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
     [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
 };

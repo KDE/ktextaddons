@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "ollamamodelinfo.h"
+#include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QJsonObject>
 
@@ -16,10 +16,10 @@ public:
 
     void parseModelsInfo(const QJsonObject &obj);
 
-    [[nodiscard]] QList<OllamaModelInfo> infos() const;
-    void setInfos(const QList<OllamaModelInfo> &newInfos);
+    [[nodiscard]] QList<OllamaModelAvailableInfo> infos() const;
+    void setInfos(const QList<OllamaModelAvailableInfo> &newInfos);
 
 private:
-    QList<OllamaModelInfo> mInfos;
+    QList<OllamaModelAvailableInfo> mInfos;
 };
 Q_DECLARE_TYPEINFO(OllamaModelsInfos, Q_RELOCATABLE_TYPE);

@@ -3,16 +3,16 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelinfosmodel.h"
+#include "ollamamodelavailableinfosmodel.h"
 
-OllamaModelInfosModel::OllamaModelInfosModel(QObject *parent)
+OllamaModelAvailableInfosModel::OllamaModelAvailableInfosModel(QObject *parent)
     : QAbstractListModel{parent}
 {
 }
 
-OllamaModelInfosModel::~OllamaModelInfosModel() = default;
+OllamaModelAvailableInfosModel::~OllamaModelAvailableInfosModel() = default;
 
-int OllamaModelInfosModel::rowCount(const QModelIndex &parent) const
+int OllamaModelAvailableInfosModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0; // flat model
@@ -20,12 +20,12 @@ int OllamaModelInfosModel::rowCount(const QModelIndex &parent) const
     return mModelInfos.count();
 }
 
-QVariant OllamaModelInfosModel::data(const QModelIndex &index, int role) const
+QVariant OllamaModelAvailableInfosModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() < 0 || index.row() >= mModelInfos.count()) {
         return {};
     }
-    const OllamaModelInfo &modelInfo = mModelInfos.at(index.row());
+    const OllamaModelAvailableInfo &modelInfo = mModelInfos.at(index.row());
     switch (role) {
     case CategoriesName:
         return modelInfo.categoriesName();
@@ -46,14 +46,14 @@ QVariant OllamaModelInfosModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-QList<OllamaModelInfo> OllamaModelInfosModel::modelInfos() const
+QList<OllamaModelAvailableInfo> OllamaModelAvailableInfosModel::modelInfos() const
 {
     return mModelInfos;
 }
 
-void OllamaModelInfosModel::setModelInfos(const QList<OllamaModelInfo> &newModelInfos)
+void OllamaModelAvailableInfosModel::setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos)
 {
     mModelInfos = newModelInfos;
 }
 
-#include "moc_ollamamodelinfosmodel.cpp"
+#include "moc_ollamamodelavailableinfosmodel.cpp"

@@ -7,10 +7,10 @@
 #include "textautogenerateollama_private_export.h"
 #include <QListView>
 
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelListView : public QListView
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit OllamaModelListView(QWidget *parent = nullptr);
-    ~OllamaModelListView() override;
+    explicit OllamaModelInstalledListView(QWidget *parent = nullptr);
+    ~OllamaModelInstalledListView() override;
 };

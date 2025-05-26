@@ -4,21 +4,21 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "ollamamodelinfo.h"
+#include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class QLineEdit;
 class OllamaModelsInfosCategoriesComboBox;
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelSearchWidget : public QWidget
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableSearchWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelSearchWidget(QWidget *parent = nullptr);
-    ~OllamaModelSearchWidget() override;
+    explicit OllamaModelAvailableSearchWidget(QWidget *parent = nullptr);
+    ~OllamaModelAvailableSearchWidget() override;
 
 Q_SIGNALS:
     void searchText(const QString &str);
-    void categoriesChanged(const QList<OllamaModelInfo::Category> &categories);
+    void categoriesChanged(const QList<OllamaModelAvailableInfo::Category> &categories);
 
 private:
     QLineEdit *const mSearchLineEdit;

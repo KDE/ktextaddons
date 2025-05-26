@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodellistviewtest.h"
-#include "modelsmanager/ollamamodellistview.h"
+#include "modelsmanager/ollamamodelavailablelistview.h"
 #include <QTest>
 QTEST_MAIN(OllamaModelListViewTest)
 
@@ -15,7 +15,7 @@ OllamaModelListViewTest::OllamaModelListViewTest(QObject *parent)
 
 void OllamaModelListViewTest::shouldHaveDefaultValues()
 {
-    OllamaModelListView view;
+    OllamaModelAvailableListView view;
     // TODO
 }
 
