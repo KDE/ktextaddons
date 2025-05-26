@@ -26,10 +26,17 @@ public:
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 private:
+    struct CategoryLayout {
+        QRectF categoryRect;
+        QString categoryString;
+    };
+
     struct ModelInfoLayout {
         // Text
         QRect textRect;
         qreal baseLine; // used to draw sender/timestamp
+
+        QList<CategoryLayout> categoriesLayout;
     };
     void draw(QPainter *painter, const OllamaModelInfosDelegate::ModelInfoLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
     void drawCatergories(QPainter *painter,
