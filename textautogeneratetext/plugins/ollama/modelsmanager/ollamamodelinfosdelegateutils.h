@@ -14,4 +14,5 @@ namespace OllamaModelInfosDelegateUtils
 [[nodiscard]] qreal rectRoundValue();
 [[nodiscard]] int categoryOffset();
 [[nodiscard]] int categoryMarginText();
+[[nodiscard]] int spacingBetweenTextAndCategories();
 };

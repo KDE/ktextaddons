@@ -140,7 +140,7 @@ OllamaModelInfosDelegate::ModelInfoLayout OllamaModelInfosDelegate::doLayout(con
         catLayout.categoryString = cat;
         const qreal categoryWidth = emojiFontMetrics.horizontalAdvance(catLayout.categoryString);
         catLayout.categoryRect = QRectF(layout.textRect.x() + offset,
-                                        layout.textRect.bottom() - 30,
+                                        option.rect.bottom() - 30,
                                         categoryWidth + OllamaModelInfosDelegateUtils::categoryMarginText() * 2,
                                         20); // TODO
         offset += catLayout.categoryRect.width() + OllamaModelInfosDelegateUtils::categoryOffset();
@@ -247,7 +247,8 @@ QSize OllamaModelInfosDelegate::sizeHint(const QStyleOptionViewItem &option, con
     // Note: option.rect in this method is huge (as big as the viewport)
     const OllamaModelInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
     const QSize size = {option.rect.width() - 2 * static_cast<int>(OllamaModelInfosDelegateUtils::textMargin()),
-                        layout.textRect.height() + static_cast<int>(OllamaModelInfosDelegateUtils::textMargin())};
+                        layout.textRect.height() + static_cast<int>(OllamaModelInfosDelegateUtils::textMargin())
+                            + OllamaModelInfosDelegateUtils::spacingBetweenTextAndCategories()};
     if (!size.isEmpty()) {
         mSizeHintCache.insert(modelName, size);
     }

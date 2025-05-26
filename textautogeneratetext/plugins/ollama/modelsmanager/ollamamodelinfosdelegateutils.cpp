@@ -31,3 +31,8 @@ int OllamaModelInfosDelegateUtils::categoryMarginText()
 {
     return 10;
 }
+
+int OllamaModelInfosDelegateUtils::spacingBetweenTextAndCategories()
+{
+    return 10;
+}
