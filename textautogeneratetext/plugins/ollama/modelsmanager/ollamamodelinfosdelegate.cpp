@@ -141,9 +141,11 @@ OllamaModelInfosDelegate::ModelInfoLayout OllamaModelInfosDelegate::doLayout(con
                             textSize.height() + 2 * OllamaModelInfosDelegateUtils::textMargin());
 
     const QStringList categoriesName = index.data(OllamaModelInfosModel::CategoriesName).toStringList();
+    const QFontMetricsF emojiFontMetrics(option.font);
     for (const QString &cat : categoriesName) {
         CategoryLayout catLayout;
         catLayout.categoryString = cat;
+        const qreal categoryWidth = emojiFontMetrics.horizontalAdvance(catLayout.categoryString);
         catLayout.categoryRect = {}; // TODO
         layout.categoriesLayout.append(catLayout);
     }
