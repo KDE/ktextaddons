@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
-"PO-Revision-Date: 2025-05-22 09:19+0200\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-24 09:13+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -126,7 +126,14 @@ msgstr "Le modèle utilisé pour générer des réponses"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr ""
+msgstr "Gérer les modèles de Ollama"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Annuler"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
-"PO-Revision-Date: 2025-05-24 05:43+0200\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-25 04:04+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -132,60 +132,67 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama-ის მოდელების მართვა"
 
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "გაუქმება"
+
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "ხელსაწყოები"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "პატარა"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "საშუალო"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "დიდი"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "უზარმაზარი"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "მრავალენოვანი"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "კოდი"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "მათემატიკა"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "ხედვა"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "ჩაშენება"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "მსჯელობა"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
 "PO-Revision-Date: 2025-05-23 07:10+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -131,6 +131,13 @@ msgstr "Model, uporabljen za ustvarjanje odgovorov"
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Upravlja modele Ollama"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Prekliči"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format

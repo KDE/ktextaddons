@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
-"PO-Revision-Date: 2025-05-24 12:12+0200\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-25 14:19+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -131,60 +131,67 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama-modellen beheren"
 
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Annuleren"
+
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Hulpmiddelen"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Middel"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Groot"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Enorm"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Meerdere talen"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Wiskunde"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Visie"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Inbedden"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Redenering"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
 #, kde-format
@@ -358,7 +365,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr ""
+msgstr "State-of-the-art groot ingebed model uit mixedbread.ai"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
 #, kde-format
@@ -366,6 +373,8 @@ msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
 "that comes in three sizes: 3B, 7B and 15B parameters."
 msgstr ""
+"StarCoder2 is de volgende generatie transparant getrainde open code LLM's "
+"die in drie groottes komen: 3B, 7B en 15B parameters."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
@@ -373,6 +382,8 @@ msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
 "8x7b and 8x22b parameter sizes."
 msgstr ""
+"Een set van Mixture of Experts (MoE) model met open gewichten door Mistral "
+"AI in 8x7b en 8x22b parameter groottes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:46
 #, kde-format
@@ -380,6 +391,9 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
+"Ongecensureerd, 8x7b en 8x22b fijn afgeregelde modellen gebaseerd op de "
+"Mixtral mixture of experts modellen die excelleren in coderingstaken. "
+"Gemaakt door Eric Hartford."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:49
 #, kde-format
@@ -389,6 +403,10 @@ msgid ""
 "generation, natural language understanding, mathematical reasoning, and "
 "instruction following."
 msgstr ""
+"CodeGemma is een verzameling van krachtige, lichtgewicht modellen die een "
+"variëteit van coderingstaken zoals fill-in-the-middle codeaanvulling, code "
+"generatie, verstaan van natuurlijke taal, mathematisch redenering en volgen "
+"van instructie kunnen uitvoeren."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:52
 #, kde-format
@@ -396,6 +414,8 @@ msgid ""
 "An open-source Mixture-of-Experts code language model that achieves "
 "performance comparable to GPT4-Turbo in code-specific tasks."
 msgstr ""
+"Een open-source Mixture-of-Experts code taalmodel dat prestaties bereikt "
+"vergelijkbaar met GPT4-Turbo in code-specifieke taken."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:54
 #, kde-format
@@ -403,11 +423,13 @@ msgid ""
 "Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
 "outstanding reasoning and language understanding capabilities."
 msgstr ""
+"Phi-2: een 2.7B taalmodel door Microsoft Research dat uitstekende redenering "
+"demonstreert en vaardigheden van verstaan van taal."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
 #, kde-format
 msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
-msgstr ""
+msgstr "Ongecensureerd Llama 2 model door George Sung en Jarrad Hope."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:56
 #, kde-format
@@ -415,12 +437,16 @@ msgid ""
 "DeepSeek Coder is a capable coding model trained on two trillion code and "
 "natural language tokens."
 msgstr ""
+"DeepSeek Coder is een capabel coderingsmodel getraind op twee triljoen code- "
+"en natuurlijke taal tokens."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:57
 #, kde-format
 msgid ""
 "A suite of text embedding models by Snowflake, optimized for performance."
 msgstr ""
+"Een suite van tekst ingebedde modellen door Snowflake, geoptimaliseerd voor "
+"prestaties."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:59
 #, kde-format

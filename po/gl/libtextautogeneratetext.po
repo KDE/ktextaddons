@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -127,6 +127,11 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, kde-format
+msgid "Cancel"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81

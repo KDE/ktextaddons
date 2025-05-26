@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
-"PO-Revision-Date: 2025-05-21 08:08+0300\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-25 21:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -130,70 +130,75 @@ msgstr "המודל שמשמש ליצירת התגובות"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr ""
+msgstr "ניהול מודלים של Ollama"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "ביטול"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "כלים"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "קטן"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "בינוני"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "גדול"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "ענק"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "רב־לשוני"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "קוד"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "מתמטיקה"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "ראייה"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "הטמעה"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "נימוק"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "חיפוש…"
+msgstr "חיפוש מודל…"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
 #, kde-format
@@ -217,7 +222,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
+msgstr "‏Llama 3.2 מבית Meta חושב בקטן עם מודלים בגודל 1B ו־3B ."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -225,16 +230,18 @@ msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
 "405B parameter sizes."
 msgstr ""
+"‏Llama 3.1 הוא מודל מוביל מסוגו מבית Meta שזמין בגודלי משתנים של 8B,‏ 70B ו־"
+"405B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
-msgstr ""
+msgstr "Meta Llama 3: ה־LLM/מש״ג עם הכי הרבה יכולות נכון להיום"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr ""
+msgstr "מודל 7B שיצא לאור על ידי Mistral AI, עודכן לגרסה 0.3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
@@ -378,7 +385,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
 #, kde-format
 msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
-msgstr ""
+msgstr "מודל Llama 2 לא מצונזר מאת ג׳ורג׳ סאנג וג׳ראד הופ."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:56
 #, kde-format
@@ -482,7 +489,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
 #, kde-format
 msgid "A family of open foundation models by IBM for Code Intelligence"
-msgstr ""
+msgstr "משפחה של מודלים עם יסוד פתוח מבית IBM לתבונת תכנות"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
 #, kde-format
@@ -490,6 +497,8 @@ msgid ""
 "Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
 "Mistral 7B model using the OpenOrca dataset."
 msgstr ""
+"Mistral OpenOrca הוא מודל עם 7 מיליארד פרמטרים, שכוון על גבי מודל Mistral 7B "
+"עם סדרת הנתונים OpenOrca."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
 #, kde-format
@@ -681,6 +690,8 @@ msgid ""
 "SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
 "generation tasks"
 msgstr ""
+"SQLCoder הוא מודל להשלמת קוד תוכנה שכוון לפי StarCoder למשימות יצירת שאילתות "
+"SQL"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
 #, kde-format

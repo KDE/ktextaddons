@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
 "PO-Revision-Date: 2025-04-08 08:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -127,6 +127,11 @@ msgstr "Vastausten tuottamiseen käytetty malli"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, kde-format
+msgid "Cancel"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
-"PO-Revision-Date: 2025-05-24 20:48+0300\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-25 19:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -131,60 +131,67 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama Modellerini Yönet"
 
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "İptal"
+
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Araçlar"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Küçük"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Orta"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Büyük"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Devasa"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Çok Dilli"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Kod"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Matematik"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Vizyon"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Gömülü"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Gerekçelendirme"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:41+0000\n"
-"PO-Revision-Date: 2025-05-24 21:39+0100\n"
+"POT-Creation-Date: 2025-05-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-26 00:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -133,60 +133,67 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Gestión de modelos de Ollama"
 
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Cancelar"
+
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Herramientas"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Pequeño"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Grande"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Enorme"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Multilingüe"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Matemáticas"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Visión"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Para integrar"
 
 #: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Razonamiento"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
 #, kde-format
@@ -356,11 +363,14 @@ msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
 "model on 3 trillion tokens."
 msgstr ""
+"El proyecto TinyLlama es un esfuerzo abierto para entrenar un modelo "
+"compacto de Llama de 1.1B en 3 billones de tókenes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
 msgstr ""
+"Modelo para incrustar de gran tamaño de última generación de mixedbread.ai."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
 #, kde-format
@@ -368,6 +378,8 @@ msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
 "that comes in three sizes: 3B, 7B and 15B parameters."
 msgstr ""
+"StarCoder2 es la próxima generación de LLM de código abierto entrenados de "
+"forma transparente que viene en tres tamaños: parámetros 3B, 7B y 15B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
@@ -375,6 +387,8 @@ msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
 "8x7b and 8x22b parameter sizes."
 msgstr ""
+"Un conjunto de modelos de mezcla de expertos (MoE) con pesos abiertos de "
+"Mistral AI en tamaños de parámetros de 8x7b y 8x22b."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:46
 #, kde-format
@@ -382,6 +396,9 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
+"Modelos 8x7b y 8x22b optimizados, sin censura, basados ​​en los modelos de "
+"mezcla de modelos de expertos de Mixtral, que destaca en tareas de "
+"programación. Creado por Eric Hartford."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:49
 #, kde-format
@@ -391,6 +408,10 @@ msgid ""
 "generation, natural language understanding, mathematical reasoning, and "
 "instruction following."
 msgstr ""
+"CodeGemma es una colección de modelos livianos y potentes que pueden "
+"realizar una variedad de tareas de programación, como completar código "
+"intermedio, generación de código, comprensión del lenguaje natural, "
+"razonamiento matemático y seguimiento de instrucciones."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:52
 #, kde-format
@@ -398,6 +419,8 @@ msgid ""
 "An open-source Mixture-of-Experts code language model that achieves "
 "performance comparable to GPT4-Turbo in code-specific tasks."
 msgstr ""
+"Un modelo de lenguaje de código de mezcla de expertos de código abierto que "
+"logra un rendimiento comparable a GPT4-Turbo en tareas específicas de código."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:54
 #, kde-format
@@ -405,6 +428,8 @@ msgid ""
 "Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
 "outstanding reasoning and language understanding capabilities."
 msgstr ""
+"Phi-2: un modelo de lenguaje 2.7B de Microsoft Research que demuestra "
+"capacidades excepcionales de razonamiento y comprensión del lenguaje."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
 #, kde-format
@@ -738,6 +763,8 @@ msgid ""
 "A 7B and 15B uncensored variant of the Dolphin model family that excels at "
 "coding, based on StarCoder2."
 msgstr ""
+"Una variante sin censura 7B y 15B de la familia de modelos Dolphin que "
+"destaca en la programación, basada en StarCoder2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
@@ -1286,6 +1313,9 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
+"Phi-4-mini aporta mejoras significativas con compatibilidad multilingüe, "
+"razonamiento y matemáticas, y ahora ya admite la tan esperada funcionalidad "
+"de llamada de funciones."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:254
 #, kde-format
@@ -1294,6 +1324,10 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"Un modelo de lenguaje de visión compacto y eficiente, diseñado "
+"específicamente para la comprensión visual de documentos, que permite la "
+"extracción automatizada de contenido de tablas, gráficos, infografías, "
+"gráficos y diagramas, entre otros."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
@@ -1301,6 +1335,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
+"Granite-3.2 es una familia de modelos de IA de contexto largo de IBM Granite "
+"optimizados para capacidades de pensamiento."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
 #, kde-format
@@ -1309,6 +1345,9 @@ msgid ""
 "excels in advanced Arabic language capabilities for enterprises in the "
 "Middle East and Northern Africa."
 msgstr ""
+"Una nueva versión de última generación del modelo liviano Command R7B que "
+"destaca por sus capacidades avanzadas en el idioma árabe para empresas de "
+"Medio Oriente y del norte de África."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
 #, kde-format
@@ -1316,6 +1355,8 @@ msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
 "fast, secure, and high-quality AI"
 msgstr ""
+"Modelo de 111 mil millones de parámetros optimizado para empresas exigentes "
+"que requieren IA rápida, segura y de alta calidad."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
 #, kde-format
@@ -1324,6 +1365,9 @@ msgid ""
 "including math and coding benchmarks, ranging from 2.4B to 32B parameters "
 "developed and released by LG AI Research."
 msgstr ""
+"EXAONE Deep exhibe capacidades superiores en varias tareas de razonamiento, "
+"incluidas pruebas de referencia de matemáticas y programación, que van desde "
+"2.4B a 32B de parámetros, desarrollado y publicado por LG AI Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
 #, kde-format
@@ -1343,6 +1387,10 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
+"Cogito v1 Preview es una familia de modelos de razonamiento híbrido de Deep "
+"Cogito que superan a los mejores modelos abiertos disponibles del mismo "
+"tamaño, incluidos sus homólogos de LLaMA, DeepSeek y Qwen en la mayoría de "
+"los referentes estándares."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
@@ -1350,6 +1398,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
+"DeepCoder es un modelo codificador 14B totalmente de código abierto al nivel "
+"de O3-mini, que también dispone de una versión 1.5B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1357,6 +1407,9 @@ msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
+"Qwen3 es la última generación de modelos extensos de lenguaje de la serie "
+"Qwen y ofrece un conjunto integral de modelos densos y de mezcla de expertos "
+"(MoE)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
@@ -1380,6 +1433,9 @@ msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
 "reasoning models that rival much larger models on complex reasoning tasks."
 msgstr ""
+"Phi 4 reasoning y reasoning plus son modelos de razonamiento de peso abierto "
+"de 14 mil millones de parámetros que rivalizan con modelos mucho más grandes "
+"en tareas de razonamiento complejas."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:282
 #, kde-format
@@ -1387,6 +1443,8 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
+"Phi 4 mini reasoning es un modelo ligero abierto que compensa la eficiencia "
+"con la capacidad de razonamiento avanzada."
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
