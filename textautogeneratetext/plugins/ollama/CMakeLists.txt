@@ -36,8 +36,8 @@ target_sources(textautogenerateollama PRIVATE
     modelsmanager/ollamamodelavailableinfo.cpp
     modelsmanager/ollamamodelavailableinfo.h
 
-    modelsmanager/ollamamodelsinfos.h
-    modelsmanager/ollamamodelsinfos.cpp
+    modelsmanager/ollamamodelsavalableinfos.h
+    modelsmanager/ollamamodelsavalableinfos.cpp
 
     modelsmanager/ollamamodelavailablewidget.h
     modelsmanager/ollamamodelavailablewidget.cpp

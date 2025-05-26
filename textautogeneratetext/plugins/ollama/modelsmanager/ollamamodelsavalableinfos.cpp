@@ -3,16 +3,16 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelsinfos.h"
+#include "ollamamodelsavalableinfos.h"
 #include <QJsonArray>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
-OllamaModelsInfos::OllamaModelsInfos() = default;
+OllamaModelsAvalableInfos::OllamaModelsAvalableInfos() = default;
 
-OllamaModelsInfos::~OllamaModelsInfos() = default;
+OllamaModelsAvalableInfos::~OllamaModelsAvalableInfos() = default;
 
-void OllamaModelsInfos::parseModelsInfo(const QJsonObject &obj)
+void OllamaModelsAvalableInfos::parseModelsInfo(const QJsonObject &obj)
 {
     QList<OllamaModelAvailableInfo> lstInfo;
     const QStringList keys = obj.keys();
@@ -24,12 +24,12 @@ void OllamaModelsInfos::parseModelsInfo(const QJsonObject &obj)
     mInfos = std::move(lstInfo);
 }
 
-QList<OllamaModelAvailableInfo> OllamaModelsInfos::infos() const
+QList<OllamaModelAvailableInfo> OllamaModelsAvalableInfos::infos() const
 {
     return mInfos;
 }
 
-void OllamaModelsInfos::setInfos(const QList<OllamaModelAvailableInfo> &newInfos)
+void OllamaModelsAvalableInfos::setInfos(const QList<OllamaModelAvailableInfo> &newInfos)
 {
     mInfos = newInfos;
 }

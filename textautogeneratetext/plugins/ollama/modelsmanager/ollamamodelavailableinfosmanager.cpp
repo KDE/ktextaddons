@@ -5,7 +5,7 @@
 */
 #include "ollamamodelavailableinfosmanager.h"
 #include "autogeneratetext_ollama_debug.h"
-#include "ollamamodelsinfos.h"
+#include "ollamamodelsavalableinfos.h"
 #include <QFile>
 #include <QJsonDocument>
 
@@ -28,7 +28,7 @@ bool OllamaModelAvailableInfosManager::loadAvailableModels()
     QJsonParseError error;
     const auto doc = QJsonDocument::fromJson(content, &error);
 
-    OllamaModelsInfos info;
+    OllamaModelsAvalableInfos info;
     info.parseModelsInfo(doc.object());
     mModelInfos = info.infos();
     return true;

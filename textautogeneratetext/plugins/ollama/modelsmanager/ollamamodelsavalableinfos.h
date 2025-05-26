@@ -8,11 +8,11 @@
 #include "textautogenerateollama_private_export.h"
 #include <QJsonObject>
 
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelsInfos
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelsAvalableInfos
 {
 public:
-    OllamaModelsInfos();
-    ~OllamaModelsInfos();
+    OllamaModelsAvalableInfos();
+    ~OllamaModelsAvalableInfos();
 
     void parseModelsInfo(const QJsonObject &obj);
 
@@ -22,4 +22,4 @@ public:
 private:
     QList<OllamaModelAvailableInfo> mInfos;
 };
-Q_DECLARE_TYPEINFO(OllamaModelsInfos, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(OllamaModelsAvalableInfos, Q_RELOCATABLE_TYPE);
