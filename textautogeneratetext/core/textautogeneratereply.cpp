@@ -33,4 +33,12 @@ const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &TextAutoGenerateReply
 {
     return mInfo;
 }
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t)
+{
+    d.space() << "total:" << t.total;
+    d.space() << "completed:" << t.completed;
+    d.space() << "status:" << t.status;
+    return d;
+}
 #include "moc_textautogeneratereply.cpp"

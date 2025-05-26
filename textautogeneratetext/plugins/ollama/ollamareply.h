@@ -38,4 +38,8 @@ public:
      * @return The content that has been returned so far.
      */
     [[nodiscard]] QString readResponse() const;
+
+private:
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo
+    parseDownLoadInfo(const QJsonDocument &doc) const;
 };

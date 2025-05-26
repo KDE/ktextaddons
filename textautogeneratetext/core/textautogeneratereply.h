@@ -31,6 +31,12 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateReply : public QObject
     Q_OBJECT
 
 public:
+    struct DownloadModelInfo {
+        quint64 total = 0;
+        quint64 completed = 0;
+        QString status;
+    };
+
     /**
      * @brief Specifies the request type.
      *
@@ -40,7 +46,8 @@ public:
         Unknown,
         StreamingGenerate,
         StreamingChat,
-        Show
+        Show,
+        DownloadModel,
     };
     explicit TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     ~TextAutoGenerateReply() override;
@@ -94,6 +101,8 @@ Q_SIGNALS:
      */
     void finished();
 
+    void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
+
 protected:
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;
@@ -105,6 +114,8 @@ protected:
     TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
-    int mReceivedSize = 0;
+    qint64 mReceivedSize = 0;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t);

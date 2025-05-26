@@ -7,10 +7,11 @@
 #include "ollamareply.h"
 #include "autogeneratetext_ollama_debug.h"
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QNetworkReply>
 
 using namespace Qt::StringLiterals;
-
+using namespace Qt::Literals::StringLiterals;
 OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}
 {
@@ -34,10 +35,25 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
         qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
-        mIncompleteTokens += mReply->read(received - mReceivedSize);
+        const QByteArray data = mReply->read(received - mReceivedSize);
+        mIncompleteTokens += data;
         mReceivedSize = received;
 
         switch (mRequestType) {
+        case RequestTypes::DownloadModel: {
+            const auto completeTokens = mIncompleteTokens.split('\n');
+            if (completeTokens.isEmpty()) {
+                return;
+            }
+            for (const QByteArray &ba : completeTokens) {
+                if (!ba.isEmpty()) {
+                    Q_EMIT downloadInProgress(parseDownLoadInfo(QJsonDocument::fromJson(ba)));
+                }
+            }
+            break;
+        }
+        case RequestTypes::Unknown:
+            break;
         case RequestTypes::Show:
             mTokens.append(QJsonDocument::fromJson(mIncompleteTokens));
             break;
@@ -80,6 +96,9 @@ QString OllamaReply::readResponse() const
 {
     QString ret;
     switch (mRequestType) {
+    case RequestTypes::DownloadModel:
+    case RequestTypes::Unknown:
+        break;
     case RequestTypes::StreamingChat:
         for (const auto &tok : mTokens) {
             ret += tok["message"_L1]["content"_L1].toString();
@@ -94,6 +113,16 @@ QString OllamaReply::readResponse() const
         }
     }
     return ret;
+}
+
+TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo OllamaReply::parseDownLoadInfo(const QJsonDocument &doc) const
+{
+    TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo info;
+    const QJsonObject obj = doc.object();
+    info.completed = obj["completed"_L1].toInteger(0);
+    info.total = obj["total"_L1].toInteger(0);
+    info.status = obj["status"_L1].toString();
+    return info;
 }
 
 #include "moc_ollamareply.cpp"
