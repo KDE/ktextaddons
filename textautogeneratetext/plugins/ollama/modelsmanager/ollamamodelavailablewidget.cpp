@@ -31,6 +31,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
 
     mSearchWidget->setObjectName(QStringLiteral("mSearchWidget"));
     mainLayout->addWidget(mSearchWidget);

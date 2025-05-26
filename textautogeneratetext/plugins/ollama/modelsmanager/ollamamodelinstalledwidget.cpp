@@ -4,16 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledwidget.h"
-#include "modelsmanager/ollamamodelinstalledinfosmodel.h"
 #include "ollamamanager.h"
+#include "ollamamodelinstalledinfosmodel.h"
 #include "ollamamodelinstalledlistview.h"
+#include "ollamamodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <QLineEdit>
 #include <QVBoxLayout>
 OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
-    , mSearchLineEdit(new QLineEdit(this))
+    , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));

@@ -21,7 +21,7 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
-    // TODO
+    QCOMPARE(mainLayout->spacing(), 0);
 }
 
 #include "moc_ollamamodelinstalledwidgettest.cpp"

@@ -98,6 +98,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelinstalledinfosdelegate.cpp
     modelsmanager/ollamamodelinstalledinfosdelegate.h
+
+    modelsmanager/ollamamodelsearchlineedit.h
+    modelsmanager/ollamamodelsearchlineedit.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

@@ -7,7 +7,7 @@
 #include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
-class QLineEdit;
+class OllamaModelSearchLineEdit;
 class OllamaModelsInfosCategoriesComboBox;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableSearchWidget : public QWidget
 {
@@ -21,6 +21,6 @@ Q_SIGNALS:
     void categoriesChanged(const QList<OllamaModelAvailableInfo::Category> &categories);
 
 private:
-    QLineEdit *const mSearchLineEdit;
+    OllamaModelSearchLineEdit *const mSearchLineEdit;
     OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
 };

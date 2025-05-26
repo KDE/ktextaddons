@@ -8,7 +8,7 @@
 #include <QWidget>
 class OllamaModelInstalledListView;
 class OllamaManager;
-class QLineEdit;
+class OllamaModelSearchLineEdit;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledWidget : public QWidget
 {
     Q_OBJECT
@@ -18,5 +18,5 @@ public:
 
 private:
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
-    QLineEdit *const mSearchLineEdit;
+    OllamaModelSearchLineEdit *const mSearchLineEdit;
 };
