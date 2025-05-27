@@ -22,4 +22,5 @@ private:
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
     OllamaModelSearchLineEdit *const mSearchLineEdit;
     QToolButton *const mRemoveModelButton;
+    OllamaManager *const mManager;
 };

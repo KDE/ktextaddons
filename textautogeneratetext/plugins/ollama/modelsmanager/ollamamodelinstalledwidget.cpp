@@ -9,6 +9,7 @@
 #include "ollamamodelinstalledlistview.h"
 #include "ollamamodelsearchlineedit.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QLineEdit>
 #include <QSortFilterProxyModel>
 #include <QToolButton>
@@ -18,6 +19,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
     , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
     , mRemoveModelButton(new QToolButton(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
@@ -37,9 +39,9 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mainLayout->addWidget(mOllamaModelInstalledListView);
 
     auto model = new OllamaModelInstalledInfosModel(this);
-    if (manager) {
-        connect(manager, &OllamaManager::modelsLoadDone, this, [model, manager]() {
-            model->setModelInstalledInfos(manager->installedInfos());
+    if (mManager) {
+        connect(mManager, &OllamaManager::modelsLoadDone, this, [model, this]() {
+            model->setModelInstalledInfos(mManager->installedInfos());
         });
     }
     auto proxyModel = new QSortFilterProxyModel(this);
@@ -61,7 +63,17 @@ void OllamaModelInstalledWidget::slotRemoveModel()
 {
     const auto currentIndex = mOllamaModelInstalledListView->currentIndex();
     if (currentIndex.isValid()) {
-        // TODO update
+        if (KMessageBox::warningTwoActions(this,
+                                           i18n("Do you want to remove this model?"),
+                                           i18nc("@title", "Remove Model"),
+                                           KStandardGuiItem::remove(),
+                                           KStandardGuiItem::cancel())
+            == KMessageBox::PrimaryAction) {
+            if (mManager) {
+                mManager->deleteModel(currentIndex.data(OllamaModelInstalledInfosModel::ModelName).toString());
+                // TODO update list
+            }
+        }
     }
 }
 
