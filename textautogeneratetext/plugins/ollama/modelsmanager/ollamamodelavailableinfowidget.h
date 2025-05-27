@@ -9,12 +9,12 @@
 class QVBoxLayout;
 class QLabel;
 class OllamaManager;
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInfoWidget : public QWidget
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelInfoWidget(OllamaManager *manager, QWidget *parent = nullptr);
-    ~OllamaModelInfoWidget() override;
+    explicit OllamaModelAvailableInfoWidget(OllamaManager *manager, QWidget *parent = nullptr);
+    ~OllamaModelAvailableInfoWidget() override;
     void generateWidget(const QModelIndex &index);
 
 Q_SIGNALS:

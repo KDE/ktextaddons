@@ -3,14 +3,14 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelinfowidget.h"
+#include "ollamamodelavailableinfowidget.h"
 #include "ollamamanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodeldownloadwidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 
-OllamaModelInfoWidget::OllamaModelInfoWidget(OllamaManager *manager, QWidget *parent)
+OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mMainLayout(new QVBoxLayout(this))
     , mModelName(new QLabel(this))
@@ -24,9 +24,9 @@ OllamaModelInfoWidget::OllamaModelInfoWidget(OllamaManager *manager, QWidget *pa
     mModelName->setFont(f);
 }
 
-OllamaModelInfoWidget::~OllamaModelInfoWidget() = default;
+OllamaModelAvailableInfoWidget::~OllamaModelAvailableInfoWidget() = default;
 
-void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
+void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
 {
     if (mDownloadWidget) {
         mMainLayout->removeWidget(mDownloadWidget);
@@ -51,4 +51,4 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
     mMainLayout->addWidget(mDownloadWidget, 1, Qt::AlignTop);
 }
 
-#include "moc_ollamamodelinfowidget.cpp"
+#include "moc_ollamamodelavailableinfowidget.cpp"
