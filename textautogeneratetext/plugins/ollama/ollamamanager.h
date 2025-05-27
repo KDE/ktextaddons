@@ -38,6 +38,8 @@ public:
     [[nodiscard]] QList<OllamaModelInstalledInfo> installedInfos() const;
     void setInstalledInfos(const QList<OllamaModelInstalledInfo> &newInstalledInfos);
 
+    [[nodiscard]] bool isAlreadyInstalled(const QString &modelName) const;
+
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);

@@ -207,4 +207,20 @@ QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
     d.space() << "isReady:" << t.isReady;
     return d;
 }
+
+bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
+{
+    if (modelName.isEmpty()) {
+        return {};
+    }
+    auto matchesModelName = [&](const OllamaModelInstalledInfo &info) {
+        return info.model() == modelName;
+    };
+    auto it = std::find_if(mInstalledInfos.begin(), mInstalledInfos.end(), matchesModelName);
+    if (it == mInstalledInfos.end()) {
+        return false;
+    }
+    return true;
+}
+
 #include "moc_ollamamanager.cpp"

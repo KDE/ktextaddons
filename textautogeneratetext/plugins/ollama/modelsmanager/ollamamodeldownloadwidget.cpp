@@ -32,6 +32,7 @@ OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, con
 
     mainLayout->addLayout(infoLayout);
 
+    // TODO if already downloaded => disable it.
     auto toolButton = new QToolButton(this);
     toolButton->setIcon(QIcon::fromTheme(QStringLiteral("download")));
     toolButton->setAutoRaise(true);
