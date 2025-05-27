@@ -56,7 +56,6 @@ void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 {
     mEngineComboBox->clear();
-    mManager->loadEngine();
     const QMap<QString, QString> map = mManager->textAutoGenerateEngineLoader()->textAutoGenerateTextEngineInfos();
     QMapIterator<QString, QString> iMap(map);
     while (iMap.hasNext()) {
