@@ -36,6 +36,7 @@ private:
         qreal baseLine; // used to draw sender/timestamp
 
         QList<CategoryLayout> categoriesLayout;
+        QRect categoryRect;
     };
     void draw(QPainter *painter,
               const OllamaModelAvailableInfosDelegate::ModelInfoLayout &layout,

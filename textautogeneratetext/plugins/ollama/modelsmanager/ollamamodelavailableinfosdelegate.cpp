@@ -135,17 +135,27 @@ OllamaModelAvailableInfosDelegate::ModelInfoLayout OllamaModelAvailableInfosDele
 
     const QStringList categoriesName = index.data(OllamaModelAvailableInfosModel::CategoriesName).toStringList();
     const QFontMetricsF emojiFontMetrics(option.font);
-    int offset = 0;
+    int offsetX = 0;
+    int offsetY = layout.textRect.bottom() - 10;
+    int categoryWith = 0;
+    layout.categoryRect = QRect(layout.textRect.x() + offsetX, offsetY, layout.textRect.width(), 20);
     for (const QString &cat : categoriesName) {
         CategoryLayout catLayout;
         catLayout.categoryString = cat;
-        const qreal categoryWidth = emojiFontMetrics.horizontalAdvance(catLayout.categoryString);
-        catLayout.categoryRect = QRectF(layout.textRect.x() + offset,
-                                        option.rect.bottom() - 30,
-                                        categoryWidth + OllamaModelInfosDelegateUtils::categoryMarginText() * 2,
+        const qreal categoryWidthText = emojiFontMetrics.horizontalAdvance(catLayout.categoryString);
+        catLayout.categoryRect = QRectF(layout.textRect.x() + offsetX,
+                                        offsetY,
+                                        categoryWidthText + OllamaModelInfosDelegateUtils::categoryMarginText() * 2,
                                         20); // TODO
-        offset += catLayout.categoryRect.width() + OllamaModelInfosDelegateUtils::categoryOffset();
+        offsetX += catLayout.categoryRect.width() + OllamaModelInfosDelegateUtils::categoryOffset();
         layout.categoriesLayout.append(catLayout);
+        categoryWith += categoryWidthText + OllamaModelInfosDelegateUtils::categoryMarginText() * 2 + OllamaModelInfosDelegateUtils::categoryOffset() * 3;
+        if (categoryWith >= layout.textRect.width()) {
+            offsetX = 0;
+            offsetY += 30;
+            categoryWith = 0;
+            layout.categoryRect.setBottom(layout.categoryRect.bottom() + 40); // TODO fix me hardcoded values
+        }
     }
     return layout;
 }
@@ -252,7 +262,8 @@ QSize OllamaModelAvailableInfosDelegate::sizeHint(const QStyleOptionViewItem &op
     const OllamaModelAvailableInfosDelegate::ModelInfoLayout layout = doLayout(option, index);
     const QSize size = {option.rect.width() - 2 * static_cast<int>(OllamaModelInfosDelegateUtils::textMargin()),
                         layout.textRect.height() + static_cast<int>(OllamaModelInfosDelegateUtils::textMargin())
-                            + OllamaModelInfosDelegateUtils::spacingBetweenTextAndCategories()};
+                            + OllamaModelInfosDelegateUtils::spacingBetweenTextAndCategories() + layout.categoryRect.height()};
+    qDebug() << "  layout.categoryRect.height() " << layout.categoryRect.height() << " size " << size;
     if (!size.isEmpty()) {
         mSizeHintCache.insert(modelName, size);
     }
