@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 add_library(textautogenerateollama)
 kconfig_add_kcfg_files(textautogenerateollama GENERATE_MOC ollamasettings.kcfgc)
@@ -104,6 +105,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodeldownloadfromnamedialog.h
     modelsmanager/ollamamodeldownloadfromnamedialog.cpp
+
+    modelsmanager/ollamamodeldownloadfromnamewidget.h
+    modelsmanager/ollamamodeldownloadfromnamewidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -158,6 +162,7 @@ target_link_libraries(autogeneratetext_ollama
     KF6::I18n
     KF6::WidgetsAddons
 )
+target_link_libraries(autogeneratetext_ollama PRIVATE Qt6::Widgets)
 install(TARGETS autogeneratetext_ollama  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
 if(BUILD_TESTING)

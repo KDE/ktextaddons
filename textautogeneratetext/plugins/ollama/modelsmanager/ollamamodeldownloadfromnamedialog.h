@@ -6,11 +6,14 @@
 #pragma once
 
 #include <QDialog>
-
+class OllamaModelDownloadFromNameWidget;
 class OllamaModelDownloadFromNameDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit OllamaModelDownloadFromNameDialog(QWidget *parent = nullptr);
     ~OllamaModelDownloadFromNameDialog() override;
+
+private:
+    OllamaModelDownloadFromNameWidget *const mOllamaModelDownloadFromNameWidget;
 };
