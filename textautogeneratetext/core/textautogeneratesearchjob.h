@@ -13,7 +13,6 @@
 #include "textautogeneratetext_private_export.h"
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateSearchWidget;
 class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchJob : public QObject
 {

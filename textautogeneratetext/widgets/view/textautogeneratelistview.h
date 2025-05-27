@@ -10,7 +10,6 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
-class TextAutoGenerateMessage;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateListView : public TextAutoGenerateBaseListView
 {
     Q_OBJECT

@@ -13,7 +13,6 @@
 class QListView;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateListViewTextSelection;
 class TextAutoGenerateListViewDelegate : public TextAutoGenerateListViewBaseDelegate
 {
     Q_OBJECT
