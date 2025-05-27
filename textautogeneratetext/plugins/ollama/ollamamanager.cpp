@@ -31,7 +31,21 @@ OllamaManager::~OllamaManager() = default;
 
 void OllamaManager::deleteModel(const QString &modelName)
 {
-    // TODO
+    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::deletePath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    QJsonObject data;
+    data["model"_L1] = modelName;
+    auto reply = new OllamaReply{TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->sendCustomRequest(
+                                     req,
+                                     "DELETE",
+                                     QJsonDocument(data).toJson(QJsonDocument::Compact)),
+                                 OllamaReply::RequestTypes::DeleteModel,
+                                 this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
+        // if (reply->error() == QNetworkReply::NoError) {
+        Q_EMIT finished(reply->readResponse());
+        //}
+    });
 }
 
 void OllamaManager::showModelInfo(const QString &modelName)

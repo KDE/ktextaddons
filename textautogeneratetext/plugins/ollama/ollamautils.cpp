@@ -34,3 +34,8 @@ QString OllamaUtils::chatPath()
 {
     return QStringLiteral("/api/chat");
 }
+
+QString OllamaUtils::deletePath()
+{
+    return QStringLiteral("/api/delete");
+}

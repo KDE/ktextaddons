@@ -15,4 +15,5 @@ namespace OllamaUtils
 [[nodiscard]] TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT QString versionPath();
 [[nodiscard]] TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT QString modelInfoPath();
 [[nodiscard]] TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT QString chatPath();
+[[nodiscard]] TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT QString deletePath();
 };

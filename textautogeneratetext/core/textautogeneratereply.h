@@ -48,6 +48,7 @@ public:
         StreamingChat,
         Show,
         DownloadModel,
+        DeleteModel,
     };
     explicit TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     ~TextAutoGenerateReply() override;
