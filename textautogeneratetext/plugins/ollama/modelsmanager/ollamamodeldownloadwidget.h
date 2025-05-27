@@ -11,7 +11,7 @@ class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelDownloadWidget : public QWi
 {
     Q_OBJECT
 public:
-    explicit OllamaModelDownloadWidget(const QString &name, const QString &url, QWidget *parent = nullptr);
+    explicit OllamaModelDownloadWidget(const QString &name, const QString &url, bool alreadyInstalled, QWidget *parent = nullptr);
     ~OllamaModelDownloadWidget() override;
 Q_SIGNALS:
     void downloadModel(const QString &url);

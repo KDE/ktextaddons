@@ -8,7 +8,7 @@
 #include <QLabel>
 #include <QToolButton>
 
-OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, const QString &modelSize, QWidget *parent)
+OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, const QString &modelSize, bool alreadyInstalled, QWidget *parent)
     : QWidget{parent}
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -34,13 +34,16 @@ OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, con
 
     // TODO if already downloaded => disable it.
     auto toolButton = new QToolButton(this);
-    toolButton->setIcon(QIcon::fromTheme(QStringLiteral("download")));
+    toolButton->setEnabled(!alreadyInstalled);
+    toolButton->setIcon(alreadyInstalled ? QIcon::fromTheme(QStringLiteral("dialog-ok")) : QIcon::fromTheme(QStringLiteral("download")));
     toolButton->setAutoRaise(true);
     toolButton->setObjectName(QStringLiteral("toolButton"));
     mainLayout->addWidget(toolButton, 0, Qt::AlignTop);
-    connect(toolButton, &QToolButton::clicked, this, [this, tagName]() {
-        Q_EMIT downloadModel(tagName);
-    });
+    if (!alreadyInstalled) {
+        connect(toolButton, &QToolButton::clicked, this, [this, tagName]() {
+            Q_EMIT downloadModel(tagName);
+        });
+    }
 }
 
 OllamaModelDownloadWidget::~OllamaModelDownloadWidget() = default;

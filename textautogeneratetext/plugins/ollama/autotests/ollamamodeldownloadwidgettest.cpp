@@ -20,7 +20,7 @@ OllamaModelDownloadWidgetTest::OllamaModelDownloadWidgetTest(QObject *parent)
 
 void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
 {
-    OllamaModelDownloadWidget w(QString{}, QString{});
+    OllamaModelDownloadWidget w(QString{}, QString{}, false);
     auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     // QVERIFY(mainLayout);
     //  QCOMPARE(mainLayout->contentsMargins(), QMargins{});
@@ -39,7 +39,7 @@ void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
 void OllamaModelDownloadWidgetTest::shouldVerifyName()
 {
     const QString tag = QStringLiteral("bla1");
-    OllamaModelDownloadWidget w(tag, QString{});
+    OllamaModelDownloadWidget w(tag, QString{}, false);
 
     auto labelTag = w.findChild<QLabel *>(QStringLiteral("labelTag"));
     QCOMPARE(labelTag->text(), tag);
@@ -49,7 +49,7 @@ void OllamaModelDownloadWidgetTest::shouldEmitDownloadModel()
 {
     const QString name = QStringLiteral("bla1");
     const QString size = QStringLiteral("32G");
-    OllamaModelDownloadWidget w(name, size);
+    OllamaModelDownloadWidget w(name, size, false);
     QSignalSpy spy(&w, &OllamaModelDownloadWidget::downloadModel);
 
     auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));

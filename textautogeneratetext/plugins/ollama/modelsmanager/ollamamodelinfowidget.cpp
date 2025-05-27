@@ -40,7 +40,8 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
     mDownloadWidget = new QWidget(this);
     auto downloadLayout = new QVBoxLayout(mDownloadWidget);
     for (const auto &t : tags) {
-        auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, mDownloadWidget);
+        const bool alreadyInstalled = mOllamaManager->isAlreadyInstalled(QStringLiteral("%1:%2").arg(modelName, t.tag));
+        auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, alreadyInstalled, mDownloadWidget);
         connect(downLoadWidget, &OllamaModelDownloadWidget::downloadModel, this, [this, modelName](const QString &tagName) {
             Q_EMIT downloadModel(QStringLiteral("%1:%2").arg(modelName, tagName));
         });
