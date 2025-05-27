@@ -5,7 +5,6 @@
 */
 #include "ollamamodelsavalableinfos.h"
 #include <QJsonArray>
-#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaModelsAvalableInfos::OllamaModelsAvalableInfos() = default;

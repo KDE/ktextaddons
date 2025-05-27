@@ -6,7 +6,6 @@
 #include "textautogeneratemenutextmanager.h"
 
 #include <KConfigGroup>
-#include <KSharedConfig>
 #include <QRegularExpression>
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuTextManager::TextAutoGenerateMenuTextManager(QObject *parent)

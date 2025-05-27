@@ -7,7 +7,6 @@
 */
 #include "ollamamanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
-#include "modelsmanager/ollamamodelinstalledinfo.h"
 #include "ollamareply.h"
 #include "ollamasettings.h"
 #include "ollamautils.h"
