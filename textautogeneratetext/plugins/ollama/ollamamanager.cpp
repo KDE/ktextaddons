@@ -69,15 +69,13 @@ OllamaReply *OllamaManager::downloadModel(const QString &modelName)
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     QJsonObject data;
     data["model"_L1] = modelName;
-    auto buf = new QBuffer{this};
-    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
 
-    auto reply = new OllamaReply{TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, buf),
-                                 OllamaReply::RequestTypes::DownloadModel,
-                                 this};
-    connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
+    auto reply = new OllamaReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        OllamaReply::RequestTypes::DownloadModel,
+        this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
-        buf->deleteLater();
     });
     connect(reply, &OllamaReply::downloadInProgress, this, &OllamaManager::downloadInProgress);
     return reply;
