@@ -263,7 +263,6 @@ QSize OllamaModelAvailableInfosDelegate::sizeHint(const QStyleOptionViewItem &op
     const QSize size = {option.rect.width() - 2 * static_cast<int>(OllamaModelInfosDelegateUtils::textMargin()),
                         layout.textRect.height() + static_cast<int>(OllamaModelInfosDelegateUtils::textMargin())
                             + OllamaModelInfosDelegateUtils::spacingBetweenTextAndCategories() + layout.categoryRect.height()};
-    qDebug() << "  layout.categoryRect.height() " << layout.categoryRect.height() << " size " << size;
     if (!size.isEmpty()) {
         mSizeHintCache.insert(modelName, size);
     }
