@@ -8,7 +8,7 @@
 #include <QWidget>
 class OllamaModelAvailableSearchWidget;
 class OllamaModelAvailableListView;
-class OllamaModelInfoWidget;
+class OllamaModelAvailableInfoWidget;
 class OllamaModelAvailableInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
@@ -26,7 +26,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotAddModel();
     OllamaModelAvailableSearchWidget *const mSearchWidget;
     OllamaModelAvailableListView *const mListView;
-    OllamaModelInfoWidget *const mInfoWidget;
+    OllamaModelAvailableInfoWidget *const mInfoWidget;
     OllamaModelAvailableInfosSortProxyModel *const mProxyModel;
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;
     QStackedWidget *const mStackedWidget;

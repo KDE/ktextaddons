@@ -4,7 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledwidgettest.h"
+#include "modelsmanager/ollamamodelinstalledinfowidget.h"
+#include "modelsmanager/ollamamodelinstalledlistview.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
+#include "modelsmanager/ollamamodelsearchlineedit.h"
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -26,6 +29,14 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
 
     auto mRemoveModelButton = w.findChild<QToolButton *>(QStringLiteral("mRemoveModelButton"));
     QVERIFY(mRemoveModelButton);
+
+    auto mOllamaModelInstalledListView = w.findChild<OllamaModelInstalledListView *>(QStringLiteral("mOllamaModelInstalledListView"));
+    QVERIFY(mOllamaModelInstalledListView);
+
+    auto mSearchLineEdit = w.findChild<OllamaModelSearchLineEdit *>(QStringLiteral("mSearchLineEdit"));
+    QVERIFY(mSearchLineEdit);
+    auto mOllamaModelInstalledInfoWidget = w.findChild<OllamaModelInstalledInfoWidget *>(QStringLiteral("mOllamaModelInstalledInfoWidget"));
+    QVERIFY(mOllamaModelInstalledInfoWidget);
 }
 
 #include "moc_ollamamodelinstalledwidgettest.cpp"

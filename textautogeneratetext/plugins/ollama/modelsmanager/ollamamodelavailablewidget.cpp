@@ -8,10 +8,10 @@
 #include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodelavailableinfossortproxymodel.h"
+#include "ollamamodelavailableinfowidget.h"
 #include "ollamamodelavailablelistview.h"
 #include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodeldownloadprogresswidget.h"
-#include "ollamamodelinfowidget.h"
 #include <QSplitter>
 #include <QStackedWidget>
 #include <QVBoxLayout>
@@ -20,7 +20,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     : QWidget{parent}
     , mSearchWidget(new OllamaModelAvailableSearchWidget(this))
     , mListView(new OllamaModelAvailableListView(this))
-    , mInfoWidget(new OllamaModelInfoWidget(manager, this))
+    , mInfoWidget(new OllamaModelAvailableInfoWidget(manager, this))
     , mProxyModel(new OllamaModelAvailableInfosSortProxyModel(this))
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(manager, this))
     , mStackedWidget(new QStackedWidget(this))
@@ -50,7 +50,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     mStackedWidget->addWidget(mInfoWidget);
     mStackedWidget->addWidget(mOllamaModelDownloadProgressWidget);
     mStackedWidget->setCurrentWidget(mInfoWidget);
-    connect(mInfoWidget, &OllamaModelInfoWidget::downloadModel, this, &OllamaModelAvailableWidget::slotDownloadModel);
+    connect(mInfoWidget, &OllamaModelAvailableInfoWidget::downloadModel, this, &OllamaModelAvailableWidget::slotDownloadModel);
 
     auto model = new OllamaModelAvailableInfosModel(this);
     mProxyModel->setSourceModel(model);

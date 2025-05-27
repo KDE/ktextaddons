@@ -20,6 +20,7 @@ public:
         Family,
         QuantizationLevel,
         ParameterSize,
+        DescriptionInfo,
     };
     Q_ENUM(ModelInfoRoles)
 

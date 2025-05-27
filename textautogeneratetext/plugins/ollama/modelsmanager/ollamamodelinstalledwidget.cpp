@@ -6,12 +6,14 @@
 #include "ollamamodelinstalledwidget.h"
 #include "ollamamanager.h"
 #include "ollamamodelinstalledinfosmodel.h"
+#include "ollamamodelinstalledinfowidget.h"
 #include "ollamamodelinstalledlistview.h"
 #include "ollamamodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLineEdit>
 #include <QSortFilterProxyModel>
+#include <QSplitter>
 #include <QToolButton>
 #include <QVBoxLayout>
 OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent)
@@ -19,6 +21,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
     , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
     , mRemoveModelButton(new QToolButton(this))
+    , mOllamaModelInstalledInfoWidget(new OllamaModelInstalledInfoWidget(this))
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -35,8 +38,16 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
     hboxLayout->addWidget(mSearchLineEdit);
 
+    auto splitter = new QSplitter(this);
+    splitter->setObjectName(QStringLiteral("splitter"));
+    mainLayout->addWidget(splitter);
+    splitter->setChildrenCollapsible(false);
+
     mOllamaModelInstalledListView->setObjectName(QStringLiteral("mOllamaModelInstalledListView"));
-    mainLayout->addWidget(mOllamaModelInstalledListView);
+    splitter->addWidget(mOllamaModelInstalledListView);
+
+    mOllamaModelInstalledInfoWidget->setObjectName(QStringLiteral("mOllamaModelInstalledInfoWidget"));
+    splitter->addWidget(mOllamaModelInstalledInfoWidget);
 
     auto model = new OllamaModelInstalledInfosModel(this);
     if (mManager) {
@@ -55,9 +66,18 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     hboxLayout->addWidget(mRemoveModelButton);
     mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
+    connect(mOllamaModelInstalledListView, &OllamaModelInstalledListView::clicked, this, &OllamaModelInstalledWidget::slotClicked);
 }
 
 OllamaModelInstalledWidget::~OllamaModelInstalledWidget() = default;
+
+void OllamaModelInstalledWidget::slotClicked(const QModelIndex &index)
+{
+    if (index.isValid()) {
+        const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
+        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info);
+    }
+}
 
 void OllamaModelInstalledWidget::slotRemoveModel()
 {

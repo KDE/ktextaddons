@@ -27,6 +27,8 @@ QVariant OllamaModelInstalledInfosModel::data(const QModelIndex &index, int role
     }
     const OllamaModelInstalledInfo &modelInfo = mModelInstalledInfos.at(index.row());
     switch (role) {
+    case DescriptionInfo:
+        return QVariant::fromValue(modelInfo);
     case Family:
         return modelInfo.family();
     case QuantizationLevel:
