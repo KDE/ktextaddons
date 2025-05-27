@@ -13,3 +13,5 @@ OllamaModelDownloadFromNameWidget::OllamaModelDownloadFromNameWidget(QWidget *pa
 }
 
 OllamaModelDownloadFromNameWidget::~OllamaModelDownloadFromNameWidget() = default;
+
+#include "moc_ollamamodeldownloadfromnamewidget.cpp"
