@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-26 00:40+0000\n"
-"PO-Revision-Date: 2025-05-24 21:43+0200\n"
+"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"PO-Revision-Date: 2025-05-26 13:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -100,7 +100,7 @@ msgstr "Configura la IA Mistral"
 msgid "Api Key:"
 msgstr "Clau de l'API:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:117
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "No s'ha pogut connectar amb la interfície a %1: %2"
@@ -127,75 +127,86 @@ msgstr "La indicació del sistema de LLM"
 msgid "The model used to generate responses"
 msgstr "El model que s'utilitza per a generar les respostes"
 
-#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Gestioneu els models d'Ollama"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
+#, kde-format
+msgid "Tools"
+msgstr "Eines"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
+#, kde-format
+msgid "Small"
+msgstr "Xicotet"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
+#, kde-format
+msgid "Medium"
+msgstr "Mitjà"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
+#, kde-format
+msgid "Big"
+msgstr "Gran"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
+#, kde-format
+msgid "Huge"
+msgstr "Enorme"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
+#, kde-format
+msgid "Multilingual"
+msgstr "Multilingüe"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
+#, kde-format
+msgid "Code"
+msgstr "Codi"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
+#, kde-format
+msgid "Math"
+msgstr "Matemàtica"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
+#, kde-format
+msgid "Vision"
+msgstr "Visió"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
+#, kde-format
+msgid "Embedding"
+msgstr "Incrustacions"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
+#, kde-format
+msgid "Reasoning"
+msgstr "Raonament"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
-#| msgid "Cancel"
+#| msgid "Reload Model"
+msgctxt "@info:tooltip"
+msgid "Add Model"
+msgstr "Torna a carregar el model"
+
+#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
+#, kde-format
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
-#, kde-format
-msgid "Tools"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
-#, kde-format
-msgid "Small"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
-#, kde-format
-msgid "Medium"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
-#, kde-format
-msgid "Big"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
-#, kde-format
-msgid "Huge"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
-#, kde-format
-msgid "Multilingual"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
-#, kde-format
-msgid "Code"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
-#, kde-format
-msgid "Math"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
-#, kde-format
-msgid "Vision"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
-#, kde-format
-msgid "Embedding"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
-#, kde-format
-msgid "Reasoning"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:13
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
@@ -1693,11 +1704,31 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Torna a carregar el model"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:25
+#: plugins/ollama/ollamaconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura Ollama"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Manage Ollama Models"
+msgctxt "@title Preferences page name"
+msgid "Installed Models"
+msgstr "Gestioneu els models d'Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format

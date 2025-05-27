@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-26 00:40+0000\n"
-"PO-Revision-Date: 2025-05-24 09:13+0200\n"
+"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"PO-Revision-Date: 2025-05-25 12:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -95,7 +95,7 @@ msgstr "Configurer Mistral IA"
 msgid "Api Key:"
 msgstr "Clé API :"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:117
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Impossible de se connecter à l'interface de %1 : %2"
@@ -122,81 +122,92 @@ msgstr "L'invite du système pour le moteur LLM"
 msgid "The model used to generate responses"
 msgstr "Le modèle utilisé pour générer des réponses"
 
-#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Gérer les modèles de Ollama"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
+#, kde-format
+msgid "Tools"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
+#, kde-format
+msgid "Small"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
+#, kde-format
+msgid "Medium"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
+#, kde-format
+msgid "Big"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
+#, kde-format
+msgid "Huge"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
+#, kde-format
+msgid "Multilingual"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
+#, kde-format
+msgid "Code"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
+#, kde-format
+msgid "Math"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
+#, kde-format
+msgid "Vision"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
+#, kde-format
+msgid "Embedding"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
+#, kde-format
+msgid "Reasoning"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@info:tooltip"
+msgid "Add Model"
+msgstr "Recharger un modèle"
+
+#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Cancel"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
+#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:13
 #, kde-format
-msgid "Tools"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
-#, kde-format
-msgid "Small"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
-#, kde-format
-msgid "Medium"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
-#, kde-format
-msgid "Big"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
-#, kde-format
-msgid "Huge"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
-#, kde-format
-msgid "Multilingual"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
-#, kde-format
-msgid "Code"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
-#, kde-format
-msgid "Math"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
-#, kde-format
-msgid "Vision"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
-#, kde-format
-msgid "Embedding"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
-#, kde-format
-msgid "Reasoning"
-msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "Rechercher..."
+msgstr "Rechercher un modèle..."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
 #, kde-format
@@ -208,7 +219,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr ""
+msgstr "QwQ est le modèle de raisonnement de la série « Qwen »."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
@@ -220,7 +231,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
+msgstr "Llama 3.2 de Meta est réduit avec les modèles 1B et 3B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -233,11 +244,12 @@ msgstr ""
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
 msgstr ""
+"Meta Llama 3 : le LLM le plus performant et librement disponible à ce jour"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr ""
+msgstr "Le modèle 7B publié par Mistral AI, mis à jour vers la version 0.3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
@@ -263,6 +275,7 @@ msgstr ""
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
 msgstr ""
+"Qwen2 est une nouvelle série de grands modèles de langage du groupe Alibaba"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
@@ -332,7 +345,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr ""
+msgstr "Grand modèle d'intégration ultramoderne de mixedbread.ai"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
 #, kde-format
@@ -381,7 +394,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
 #, kde-format
 msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
-msgstr ""
+msgstr "Modèle Llama 2 non censuré développé par George Sung et Jarrad Hope."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:56
 #, kde-format
@@ -420,7 +433,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:65
 #, kde-format
 msgid "Yi 1.5 is a high-performing, bilingual language model."
-msgstr ""
+msgstr "Yi 1.5 est un modèle linguistique bilingue performant."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:66
 #, kde-format
@@ -565,7 +578,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
 #, kde-format
 msgid "State-of-the-art code generation model"
-msgstr ""
+msgstr "Modèle de génération de code à la pointe de la technologie"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
@@ -648,7 +661,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
 #, kde-format
 msgid "Model focused on math and logic problems"
-msgstr ""
+msgstr "Modèle axé sur les problèmes mathématiques et logiques"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
 #, kde-format
@@ -689,11 +702,13 @@ msgstr ""
 #, kde-format
 msgid "General use models based on Llama and Llama 2 from Nous Research."
 msgstr ""
+"Modèles d'utilisation générale reposant sur Llama et Llama 2 de Nous "
+"Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:123
 #, kde-format
 msgid "Code generation model based on Code Llama."
-msgstr ""
+msgstr "Modèle de génération de code reposant sur Code Llama."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
@@ -710,7 +725,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
 msgid "General use model based on Llama 2."
-msgstr ""
+msgstr "Modèle d'utilisation générale reposant sur Llama 2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:127
 #, kde-format
@@ -776,7 +791,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
-msgstr ""
+msgstr "Un nouveau petit modèle LLaVA optimisé à partir de Phi 3 Mini."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
 #, kde-format
@@ -824,7 +839,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
 #, kde-format
 msgid "Uncensored version of Wizard LM model"
-msgstr ""
+msgstr "Version non censurée du modèle d'assistant LM"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
 #, kde-format
@@ -888,7 +903,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
 #, kde-format
 msgid "Great code generation model based on Llama2."
-msgstr ""
+msgstr "Excellent modèle de génération de code reposant sur Llama2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
@@ -1028,7 +1043,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:192
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
-msgstr ""
+msgstr "DBRX est un LLM ouvert et polyvalent créé par Databricks."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:194
 #, kde-format
@@ -1241,6 +1256,8 @@ msgstr ""
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
 msgstr ""
+"Le modèle courant le plus performant fonctionnant sur un seul processeur "
+"graphique (GPU)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
@@ -1321,7 +1338,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
-msgstr ""
+msgstr "La dernière collection de modèles multimodaux de Meta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1351,11 +1368,31 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Recharger un modèle"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:25
+#: plugins/ollama/ollamaconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurer Ollama"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Manage Ollama Models"
+msgctxt "@title Preferences page name"
+msgid "Installed Models"
+msgstr "Gérer les modèles de Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-26 00:40+0000\n"
-"PO-Revision-Date: 2025-05-25 21:00+0300\n"
+"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"PO-Revision-Date: 2025-05-26 13:20+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -99,7 +99,7 @@ msgstr "הגדרת Mistral AI"
 msgid "Api Key:"
 msgstr "מפתח API:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:117
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
@@ -126,75 +126,86 @@ msgstr "הנחיית מערכת ל־LLM/מש״ג"
 msgid "The model used to generate responses"
 msgstr "המודל שמשמש ליצירת התגובות"
 
-#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "ניהול מודלים של Ollama"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Cancel"
-msgid "Cancel"
-msgstr "ביטול"
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
 #, kde-format
 msgid "Tools"
 msgstr "כלים"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
 #, kde-format
 msgid "Small"
 msgstr "קטן"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
 #, kde-format
 msgid "Medium"
 msgstr "בינוני"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
 #, kde-format
 msgid "Big"
 msgstr "גדול"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
 #, kde-format
 msgid "Huge"
 msgstr "ענק"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
 #, kde-format
 msgid "Multilingual"
 msgstr "רב־לשוני"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
 #, kde-format
 msgid "Code"
 msgstr "קוד"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
 #, kde-format
 msgid "Math"
 msgstr "מתמטיקה"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
 #, kde-format
 msgid "Vision"
 msgstr "ראייה"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
 #, kde-format
 msgid "Embedding"
 msgstr "הטמעה"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
 msgstr "נימוק"
 
-#: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@info:tooltip"
+msgid "Add Model"
+msgstr "ריענון מודל"
+
+#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
+#, kde-format
+msgid "Cancel"
+msgstr "ביטול"
+
+#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:13
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
@@ -1338,6 +1349,8 @@ msgid ""
 "have been fine-tuned for improved reasoning and instruction-following "
 "capabilities."
 msgstr ""
+"מודלים בגודל 2B ו־8B של IBM Granite הם מודלים של שפה עם אורך הקשר של 128K "
+"שכווננו לנימוק ויכולות מעקב אחר הוראות משופרים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
@@ -1345,6 +1358,8 @@ msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
 "reasoning models that rival much larger models on complex reasoning tasks."
 msgstr ""
+"Phi 4 עם נימוק ונימוק פלוס הם מודלים במשקל פתוח לנימוק עם 14 מיליארד משתנים "
+"שמתחרים במודלים גדולים ומורכבים על משימות נימוק מורכבות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:282
 #, kde-format
@@ -1352,6 +1367,8 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
+"Phi 4 מזערי עם נימוק הוא מודל קליל ופתוח שמאזן בין יעילות ליכולות נימוק "
+"מתקדמות."
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -1359,11 +1376,31 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "ריענון מודל"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:25
+#: plugins/ollama/ollamaconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "הגדרת Ollama"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Manage Ollama Models"
+msgctxt "@title Preferences page name"
+msgid "Installed Models"
+msgstr "ניהול מודלים של Ollama"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format

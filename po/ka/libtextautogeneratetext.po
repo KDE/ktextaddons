@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-26 00:40+0000\n"
-"PO-Revision-Date: 2025-05-25 04:04+0200\n"
+"POT-Creation-Date: 2025-05-27 00:40+0000\n"
+"PO-Revision-Date: 2025-05-26 04:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -99,7 +99,7 @@ msgstr "Mistral AI-ის მორგება"
 msgid "Api Key:"
 msgstr "API გასაღები:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:103
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:117
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
@@ -126,75 +126,86 @@ msgstr "სისტემური მოთხოვნა LLM-სთვის
 msgid "The model used to generate responses"
 msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
 
-#: plugins/ollama/modelsmanager/ollamamodeldialog.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama-ის მოდელების მართვა"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Cancel"
-msgid "Cancel"
-msgstr "გაუქმება"
-
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:81
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
 #, kde-format
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
 #, kde-format
 msgid "Small"
 msgstr "პატარა"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:85
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
 #, kde-format
 msgid "Medium"
 msgstr "საშუალო"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:87
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
 #, kde-format
 msgid "Big"
 msgstr "დიდი"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:89
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
 #, kde-format
 msgid "Huge"
 msgstr "უზარმაზარი"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:91
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
 #, kde-format
 msgid "Multilingual"
 msgstr "მრავალენოვანი"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
 #, kde-format
 msgid "Code"
 msgstr "კოდი"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
 #, kde-format
 msgid "Math"
 msgstr "მათემატიკა"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:97
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
 #, kde-format
 msgid "Vision"
 msgstr "ხედვა"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:99
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
 #, kde-format
 msgid "Embedding"
 msgstr "ჩაშენება"
 
-#: plugins/ollama/modelsmanager/ollamamodelinfo.cpp:101
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: plugins/ollama/modelsmanager/ollamamodelsearchwidget.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@info:tooltip"
+msgid "Add Model"
+msgstr "მოდელის თავიდან ჩატვირთვა"
+
+#: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
+#, kde-format
+msgid "Categories"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
+#, kde-format
+msgid "Cancel"
+msgstr "გაუქმება"
+
+#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:13
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
@@ -1687,11 +1698,31 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "მოდელის თავიდან ჩატვირთვა"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:25
+#: plugins/ollama/ollamaconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama-ის მორგება"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr ""
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Manage Ollama Models"
+msgctxt "@title Preferences page name"
+msgid "Installed Models"
+msgstr "Ollama-ის მოდელების მართვა"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
