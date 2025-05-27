@@ -46,6 +46,17 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mPrompt->setPlaceholderText(i18n("No system prompt"));
 
     connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
+    connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
+        // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
+        if (modelinfo.hasError) {
+            mMessageWidget->setText(modelinfo.errorOccured);
+            mMessageWidget->animatedShow();
+        } else {
+            mModelComboBoxWidget->setModels(modelinfo.models);
+            loadSettings();
+        }
+    });
+    connect(mManager, &OllamaManager::refreshInstalledModels, this, &OllamaConfigureWidget::fillModels);
     fillModels();
 }
 
@@ -69,16 +80,7 @@ void OllamaConfigureWidget::saveSettings()
 void OllamaConfigureWidget::fillModels()
 {
     mMessageWidget->animatedHide();
-    connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
-        // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
-        if (modelinfo.hasError) {
-            mMessageWidget->setText(modelinfo.errorOccured);
-            mMessageWidget->animatedShow();
-        } else {
-            mModelComboBoxWidget->setModels(modelinfo.models);
-            loadSettings();
-        }
-    });
+
     mManager->loadModels();
 }
 

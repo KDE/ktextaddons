@@ -43,7 +43,7 @@ void OllamaManager::deleteModel(const QString &modelName)
                                  this};
     connect(reply, &OllamaReply::finished, this, [this, reply] {
         // if (reply->error() == QNetworkReply::NoError) {
-        Q_EMIT finished(reply->readResponse());
+        Q_EMIT refreshInstalledModels();
         //}
     });
 }
