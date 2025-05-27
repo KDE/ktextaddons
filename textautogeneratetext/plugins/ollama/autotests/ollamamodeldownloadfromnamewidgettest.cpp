@@ -5,6 +5,7 @@
 */
 #include "ollamamodeldownloadfromnamewidgettest.h"
 #include "modelsmanager/ollamamodeldownloadfromnamewidget.h"
+#include <QLabel>
 #include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
@@ -25,6 +26,10 @@ void OllamaModelDownloadFromNameWidgetTest::shouldHaveDefaultValues()
     auto mModelNameLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mModelNameLineEdit"));
     QVERIFY(mModelNameLineEdit);
     QVERIFY(mModelNameLineEdit->text().isEmpty());
+
+    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
+    QVERIFY(label);
+    QVERIFY(!label->text().isEmpty());
 }
 
 #include "moc_ollamamodeldownloadfromnamewidgettest.cpp"

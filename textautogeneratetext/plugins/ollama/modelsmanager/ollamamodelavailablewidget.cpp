@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailablewidget.h"
+#include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
 #include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodelavailableinfossortproxymodel.h"
@@ -61,16 +62,17 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setFilterFixedString);
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setCategories);
     connect(mListView, &OllamaModelAvailableListView::clicked, this, &OllamaModelAvailableWidget::slotClicked);
-    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::addModel, this, &OllamaModelAvailableWidget::slotRemoveModel);
+    connect(mSearchWidget, &OllamaModelAvailableSearchWidget::addModel, this, &OllamaModelAvailableWidget::slotAddModel);
 }
 
 OllamaModelAvailableWidget::~OllamaModelAvailableWidget() = default;
 
-void OllamaModelAvailableWidget::slotRemoveModel()
+void OllamaModelAvailableWidget::slotAddModel()
 {
-    const auto currentIndex = mListView->currentIndex();
-    if (currentIndex.isValid()) {
-        // TODO update
+    OllamaModelDownloadFromNameDialog d(this);
+    if (d.exec()) {
+        const QString modelName = d.modelName();
+        // TODO
     }
 }
 

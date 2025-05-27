@@ -6,6 +6,7 @@
 #include "ollamamodeldownloadfromnamewidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <QLabel>
 #include <QLineEdit>
 #include <QVBoxLayout>
 
@@ -16,6 +17,10 @@ OllamaModelDownloadFromNameWidget::OllamaModelDownloadFromNameWidget(QWidget *pa
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
+
+    auto label = new QLabel(i18n("Please enter model name as \"name:tag\""), this);
+    label->setObjectName(QStringLiteral("label"));
+    mainLayout->addWidget(label);
 
     mModelNameLineEdit->setObjectName(QStringLiteral("mModelNameLineEdit"));
     mainLayout->addWidget(mModelNameLineEdit);
