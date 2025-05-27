@@ -18,7 +18,7 @@ OllamaModelInfoWidget::OllamaModelInfoWidget(OllamaManager *manager, QWidget *pa
 {
     mMainLayout->setObjectName(QStringLiteral("mainlayout"));
     mMainLayout->setContentsMargins({});
-    mMainLayout->addWidget(mModelName);
+    mMainLayout->addWidget(mModelName, 0, Qt::AlignHCenter);
     QFont f = mModelName->font();
     f.setBold(true);
     mModelName->setFont(f);
