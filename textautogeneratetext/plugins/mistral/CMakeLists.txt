@@ -26,6 +26,7 @@ target_sources(textautogeneratemistral PRIVATE
 
     mistralutils.h
     mistralutils.cpp
+    textautogeneratemistral_private_export.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -78,7 +79,6 @@ target_link_libraries(autogeneratetext_mistral
     textautogeneratemistral
     qt6keychain
 )
-
 install(TARGETS autogeneratetext_mistral  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
 if(BUILD_TESTING)

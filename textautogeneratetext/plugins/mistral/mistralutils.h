@@ -5,10 +5,11 @@
 */
 
 #pragma once
+#include "textautogeneratemistral_private_export.h"
 #include <QString>
 
 namespace MistralUtils
 {
-[[nodiscard]] QString modelsPath();
-[[nodiscard]] QString chatPath();
+[[nodiscard]] TEXTAUTOGENERATEMISTRAL_TESTS_EXPORT QString modelsPath();
+[[nodiscard]] TEXTAUTOGENERATEMISTRAL_TESTS_EXPORT QString chatPath();
 };

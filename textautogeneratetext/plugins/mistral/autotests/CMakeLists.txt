@@ -10,3 +10,6 @@ macro(add_mistral_plugin_unittest _source)
     target_link_libraries(${_name} Qt::Test KF6::TextAutoGenerateText textautogeneratemistral)
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
+
+
+add_mistral_plugin_unittest(mistralutilstest.cpp)
