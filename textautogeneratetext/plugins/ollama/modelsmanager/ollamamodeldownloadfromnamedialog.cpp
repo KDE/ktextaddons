@@ -19,7 +19,7 @@ OllamaModelDownloadFromNameDialog::OllamaModelDownloadFromNameDialog(QWidget *pa
     mOllamaModelDownloadFromNameWidget->setObjectName(QStringLiteral("mOllamaModelDownloadFromNameWidget"));
     mainLayout->addWidget(mOllamaModelDownloadFromNameWidget);
 
-    auto box = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     box->setObjectName(QStringLiteral("box"));
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &OllamaModelDownloadFromNameDialog::accept);

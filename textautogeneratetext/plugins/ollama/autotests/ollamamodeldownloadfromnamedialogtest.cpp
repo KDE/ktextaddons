@@ -28,6 +28,7 @@ void OllamaModelDownloadFromNameDialogTest::shouldHaveDefaultValues()
 
     auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));
     QVERIFY(buttonBox);
+    QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }
 
 #include "moc_ollamamodeldownloadfromnamedialogtest.cpp"
