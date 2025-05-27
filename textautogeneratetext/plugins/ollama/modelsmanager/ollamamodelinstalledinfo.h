@@ -33,6 +33,10 @@ public:
     [[nodiscard]] QString modifyAt() const;
     void setModifyAt(const QString &newModifyAt);
 
+    [[nodiscard]] QString modifyAtInLocal() const;
+
+    [[nodiscard]] bool operator==(const OllamaModelInstalledInfo &other) const;
+
 private:
     QString mName;
     QString mModel;
@@ -40,7 +44,6 @@ private:
     QString mFamily;
     QString mParameterSize;
     QString mModifyAt;
-    // TODO modifyAt
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t);

@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfo.h"
+#include <QLocale>
 using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledInfo::OllamaModelInstalledInfo() = default;
 
@@ -13,6 +14,9 @@ void OllamaModelInstalledInfo::parseInfo(const QJsonObject &obj)
 {
     mName = obj["name"_L1].toString();
     mModel = obj["model"_L1].toString();
+    mModifyAt = obj["modified_at"_L1].toString();
+    QDateTime d = QDateTime::fromString(mModifyAt, Qt::ISODateWithMs);
+    qDebug() << " d " << d;
     // Details
     const QJsonObject detailsObj = obj["details"_L1].toObject();
     mFamily = detailsObj["family"_L1].toString();
@@ -88,4 +92,16 @@ QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
     d.space() << "parameterSize:" << t.parameterSize();
     d.space() << "family:" << t.family();
     return d;
+}
+
+bool OllamaModelInstalledInfo::operator==(const OllamaModelInstalledInfo &other) const
+{
+    return mName == other.name() && mModel == other.model() && mQuantizationLevel == other.quantizationLevel() && mFamily == other.family()
+        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt();
+}
+
+QString OllamaModelInstalledInfo::modifyAtInLocal() const
+{
+    const QDateTime d = QDateTime::fromString(mModifyAt, Qt::ISODateWithMs);
+    return QLocale().toString(d);
 }

@@ -22,6 +22,7 @@ public:
         Author,
         Url,
         Tags,
+        Languages,
     };
     Q_ENUM(ModelInfoRoles)
 
