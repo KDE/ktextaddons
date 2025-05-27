@@ -24,4 +24,5 @@ private:
     QVBoxLayout *const mMainLayout;
     QLabel *const mModelName;
     QWidget *mDownloadWidget = nullptr;
+    OllamaManager *const mOllamaManager;
 };

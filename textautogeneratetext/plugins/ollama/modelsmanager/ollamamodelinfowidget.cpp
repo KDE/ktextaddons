@@ -14,6 +14,7 @@ OllamaModelInfoWidget::OllamaModelInfoWidget(OllamaManager *manager, QWidget *pa
     : QWidget{parent}
     , mMainLayout(new QVBoxLayout(this))
     , mModelName(new QLabel(this))
+    , mOllamaManager(manager)
 {
     mMainLayout->setObjectName(QStringLiteral("mainlayout"));
     mMainLayout->setContentsMargins({});
