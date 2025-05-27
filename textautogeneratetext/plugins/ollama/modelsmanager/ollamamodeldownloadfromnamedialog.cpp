@@ -27,4 +27,9 @@ OllamaModelDownloadFromNameDialog::OllamaModelDownloadFromNameDialog(QWidget *pa
 
 OllamaModelDownloadFromNameDialog::~OllamaModelDownloadFromNameDialog() = default;
 
+QString OllamaModelDownloadFromNameDialog::modelName() const
+{
+    return mOllamaModelDownloadFromNameWidget->modelName();
+}
+
 #include "moc_ollamamodeldownloadfromnamedialog.cpp"

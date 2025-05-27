@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelsearchlineedit.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 
 OllamaModelSearchLineEdit::OllamaModelSearchLineEdit(QWidget *parent)
@@ -11,6 +12,7 @@ OllamaModelSearchLineEdit::OllamaModelSearchLineEdit(QWidget *parent)
 {
     setClearButtonEnabled(true);
     setPlaceholderText(i18nc("@info:placeholder", "Search Model…"));
+    KLineEditEventHandler::catchReturnKey(this);
 }
 
 OllamaModelSearchLineEdit::~OllamaModelSearchLineEdit() = default;
