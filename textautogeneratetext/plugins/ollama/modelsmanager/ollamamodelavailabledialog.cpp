@@ -16,7 +16,7 @@
 #include <QWindow>
 namespace
 {
-const char myOllamaModelDialogGroupName[] = "OllamaModelDialog";
+const char myOllamaModelDialogGroupName[] = "OllamaModelAvailableDialog";
 }
 OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, QWidget *parent)
     : QDialog(parent)
