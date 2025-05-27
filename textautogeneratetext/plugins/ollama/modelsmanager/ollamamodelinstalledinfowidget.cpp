@@ -70,7 +70,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
     mQuantizationLevelLabel->setText(info.quantizationLevel());
-    // mModifiedAtLabel->setText(info.()); // TODO
+    mModifiedAtLabel->setText(info.modifyAt());
 }
 
 #include "moc_ollamamodelinstalledinfowidget.cpp"

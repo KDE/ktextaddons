@@ -30,12 +30,16 @@ public:
     [[nodiscard]] QString parameterSize() const;
     void setParameterSize(const QString &newParameterSize);
 
+    [[nodiscard]] QString modifyAt() const;
+    void setModifyAt(const QString &newModifyAt);
+
 private:
     QString mName;
     QString mModel;
     QString mQuantizationLevel;
     QString mFamily;
     QString mParameterSize;
+    QString mModifyAt;
     // TODO modifyAt
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);

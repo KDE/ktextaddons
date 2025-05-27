@@ -21,6 +21,7 @@ void OllamaModelInstalledInfoTest::shouldHaveDefaultValues()
     QVERIFY(w.quantizationLevel().isEmpty());
     QVERIFY(w.family().isEmpty());
     QVERIFY(w.parameterSize().isEmpty());
+    QVERIFY(w.modifyAt().isEmpty());
 }
 
 #include "moc_ollamamodelinstalledinfotest.cpp"

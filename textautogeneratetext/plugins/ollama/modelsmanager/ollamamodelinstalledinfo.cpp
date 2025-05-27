@@ -30,6 +30,16 @@ void OllamaModelInstalledInfo::setParameterSize(const QString &newParameterSize)
     mParameterSize = newParameterSize;
 }
 
+QString OllamaModelInstalledInfo::modifyAt() const
+{
+    return mModifyAt;
+}
+
+void OllamaModelInstalledInfo::setModifyAt(const QString &newModifyAt)
+{
+    mModifyAt = newModifyAt;
+}
+
 QString OllamaModelInstalledInfo::name() const
 {
     return mName;
