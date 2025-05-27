@@ -57,6 +57,7 @@ MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::Text
 {
     QNetworkRequest req{QUrl::fromUserInput(MistralSettings::serverUrl().toString() + MistralUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    req.setRawHeader("Authorization", QByteArray("Bearer YOUR_API_KEY"));
     QJsonObject data;
     data["model"_L1] = MistralSettings::model();
     data["messages"_L1] = request.messages();
