@@ -127,7 +127,6 @@ target_link_libraries(textautogenerateollama
     KF6::CoreAddons
     KF6::WidgetsAddons
 )
-target_link_libraries(textautogenerateollama PRIVATE Qt6::Widgets)
 set_target_properties(textautogenerateollama PROPERTIES
     VERSION ${TEXTAUTOGENERATETEXT_VERSION}
     SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}

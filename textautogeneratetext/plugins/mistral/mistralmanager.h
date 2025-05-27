@@ -4,10 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "textautogeneratemistral_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class MistralReply;
-class MistralManager : public QObject
+class TEXTAUTOGENERATEMISTRAL_EXPORT MistralManager : public QObject
 {
     Q_OBJECT
 public:
