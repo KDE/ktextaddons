@@ -101,5 +101,5 @@ bool OllamaModelInstalledInfo::operator==(const OllamaModelInstalledInfo &other)
 QString OllamaModelInstalledInfo::modifyAtInLocal() const
 {
     const QDateTime d = QDateTime::fromString(mModifyAt, Qt::ISODateWithMs);
-    return QLocale().toString(d);
+    return QLocale().toString(d, QLocale::ShortFormat);
 }
