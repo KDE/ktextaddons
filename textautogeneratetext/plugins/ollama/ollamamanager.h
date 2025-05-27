@@ -41,7 +41,7 @@ public:
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
-    void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
+    void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     void refreshInstalledModels();
 
 private:

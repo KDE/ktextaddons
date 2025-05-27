@@ -77,7 +77,9 @@ OllamaReply *OllamaManager::downloadModel(const QString &modelName)
         Q_EMIT finished(reply->readResponse());
         Q_EMIT refreshInstalledModels();
     });
-    connect(reply, &OllamaReply::downloadInProgress, this, &OllamaManager::downloadInProgress);
+    connect(reply, &OllamaReply::downloadInProgress, this, [this, modelName](const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info) {
+        Q_EMIT downloadInProgress(modelName, info);
+    });
     return reply;
 }
 

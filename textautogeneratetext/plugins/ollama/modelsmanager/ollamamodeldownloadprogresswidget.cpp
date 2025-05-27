@@ -14,7 +14,7 @@
 OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mProgressBar(new QProgressBar(this))
-    , mModelName(new QLabel(this))
+    , mModelNameLabel(new QLabel(this))
     , mProgressStatusLabel(new QLabel(this))
     , mManager(manager)
 {
@@ -22,8 +22,8 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mModelName->setObjectName(QStringLiteral("mModelName"));
-    mainLayout->addWidget(mModelName);
+    mModelNameLabel->setObjectName(QStringLiteral("mModelNameLabel"));
+    mainLayout->addWidget(mModelNameLabel);
 
     mProgressStatusLabel->setObjectName(QStringLiteral("mProgressStatusLabel"));
     mainLayout->addWidget(mProgressStatusLabel);
@@ -46,19 +46,23 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
 
 OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = default;
 
-void OllamaModelDownloadProgressWidget::downloadModel(const QString &url)
+void OllamaModelDownloadProgressWidget::downloadModel(const QString &modelName)
 {
-    qDebug() << " downloadModel " << url;
-    auto reply = mManager->downloadModel(url);
+    mModelName = modelName;
+    qDebug() << " downloadModel " << modelName;
+    auto reply = mManager->downloadModel(modelName);
     // TODO reply->
 }
 
-void OllamaModelDownloadProgressWidget::slotDownloadProgressInfo(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info)
+void OllamaModelDownloadProgressWidget::slotDownloadProgressInfo(const QString &modelName,
+                                                                 const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info)
 {
-    // qDebug() << "info " << info;
-    mProgressStatusLabel->setText(info.status);
-    if (info.total != 0) {
-        mProgressBar->setValue(info.completed * 100 / info.total);
+    if (modelName == mModelName) {
+        // qDebug() << "info " << info;
+        mProgressStatusLabel->setText(info.status);
+        if (info.total != 0) {
+            mProgressBar->setValue(info.completed * 100 / info.total);
+        }
     }
 }
 

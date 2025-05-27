@@ -22,9 +22,11 @@ Q_SIGNALS:
     void cancelDownload();
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotDownloadProgressInfo(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotDownloadProgressInfo(const QString &modelName,
+                                                                   const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
     QProgressBar *const mProgressBar;
-    QLabel *const mModelName;
+    QLabel *const mModelNameLabel;
     QLabel *const mProgressStatusLabel;
     OllamaManager *const mManager;
+    QString mModelName;
 };
