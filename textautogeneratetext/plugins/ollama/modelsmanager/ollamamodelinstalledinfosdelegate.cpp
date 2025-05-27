@@ -243,7 +243,7 @@ QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelI
         }
         return ret;
     }
-    const QString text = index.data(OllamaModelInstalledInfosModel::Description).toString();
+    const QString text = index.data(OllamaModelInstalledInfosModel::ModelName).toString();
     if (text.isEmpty()) {
         return nullptr;
     }
