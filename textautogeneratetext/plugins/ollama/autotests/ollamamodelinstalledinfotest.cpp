@@ -15,8 +15,12 @@ OllamaModelInstalledInfoTest::OllamaModelInstalledInfoTest(QObject *parent)
 
 void OllamaModelInstalledInfoTest::shouldHaveDefaultValues()
 {
-    // TODO
     OllamaModelInstalledInfo w;
+    QVERIFY(w.model().isEmpty());
+    QVERIFY(w.name().isEmpty());
+    QVERIFY(w.quantizationLevel().isEmpty());
+    QVERIFY(w.family().isEmpty());
+    QVERIFY(w.parameterSize().isEmpty());
 }
 
 #include "moc_ollamamodelinstalledinfotest.cpp"

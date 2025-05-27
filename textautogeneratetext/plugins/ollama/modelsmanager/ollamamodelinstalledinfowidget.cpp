@@ -13,6 +13,7 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     , mFamilyNameLabel(new QLabel(this))
     , mParameterSizeLabel(new QLabel(this))
     , mQuantizationLevelLabel(new QLabel(this))
+    , mModifiedAtLabel(new QLabel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -43,6 +44,15 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
         mQuantizationLevelLabel->setObjectName(QStringLiteral("mQuantizationLevelLabel"));
         mainLayout->addWidget(mQuantizationLevelLabel);
     }
+
+    {
+        auto label = new QLabel(i18n("Modified At:"), this);
+        mainLayout->addWidget(label);
+        changeFont(label);
+
+        mModifiedAtLabel->setObjectName(QStringLiteral("mModifiedAtLabel"));
+        mainLayout->addWidget(mModifiedAtLabel);
+    }
     mainLayout->addStretch(1);
 }
 
@@ -60,6 +70,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
     mQuantizationLevelLabel->setText(info.quantizationLevel());
+    // mModifiedAtLabel->setText(info.()); // TODO
 }
 
 #include "moc_ollamamodelinstalledinfowidget.cpp"

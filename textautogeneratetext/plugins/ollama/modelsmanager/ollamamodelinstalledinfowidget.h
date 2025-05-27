@@ -22,4 +22,5 @@ private:
     QLabel *const mFamilyNameLabel;
     QLabel *const mParameterSizeLabel;
     QLabel *const mQuantizationLevelLabel;
+    QLabel *const mModifiedAtLabel;
 };
