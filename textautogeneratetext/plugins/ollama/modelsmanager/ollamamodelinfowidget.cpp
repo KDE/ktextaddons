@@ -34,6 +34,7 @@ void OllamaModelInfoWidget::generateWidget(const QModelIndex &index)
     }
     const QString modelName = index.data(OllamaModelAvailableInfosModel::ModelName).toString();
     mModelName->setText(modelName);
+    // TODO show categories + languages
 
     const QList<OllamaModelAvailableInfo::ModelTag> tags = index.data(OllamaModelAvailableInfosModel::Tags).value<QList<OllamaModelAvailableInfo::ModelTag>>();
     delete mDownloadWidget;
