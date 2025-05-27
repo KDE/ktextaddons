@@ -63,15 +63,15 @@ void OllamaModelInstalledWidget::slotRemoveModel()
 {
     const auto currentIndex = mOllamaModelInstalledListView->currentIndex();
     if (currentIndex.isValid()) {
+        const QString modelName = currentIndex.data(OllamaModelInstalledInfosModel::ModelName).toString();
         if (KMessageBox::warningTwoActions(this,
-                                           i18n("Do you want to remove this model?"),
+                                           i18n("Do you want to remove this model (%1)?", modelName),
                                            i18nc("@title", "Remove Model"),
                                            KStandardGuiItem::remove(),
                                            KStandardGuiItem::cancel())
             == KMessageBox::PrimaryAction) {
             if (mManager) {
-                mManager->deleteModel(currentIndex.data(OllamaModelInstalledInfosModel::ModelName).toString());
-                // TODO update list
+                mManager->deleteModel(modelName);
             }
         }
     }
