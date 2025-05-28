@@ -16,6 +16,7 @@ void MistralUtilsTest::shouldHaveDefaultValues()
 {
     QCOMPARE(MistralUtils::modelsPath(), QStringLiteral("/v1/models"));
     QCOMPARE(MistralUtils::chatPath(), QStringLiteral("/v1/chat/completions"));
+    QCOMPARE(MistralUtils::mistralAiUrl(), QStringLiteral("https://api.mistral.ai"));
 }
 
 #include "moc_mistralutilstest.cpp"

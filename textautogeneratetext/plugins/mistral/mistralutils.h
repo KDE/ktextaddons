@@ -12,4 +12,5 @@ namespace MistralUtils
 {
 [[nodiscard]] TEXTAUTOGENERATEMISTRAL_TESTS_EXPORT QString modelsPath();
 [[nodiscard]] TEXTAUTOGENERATEMISTRAL_TESTS_EXPORT QString chatPath();
+[[nodiscard]] TEXTAUTOGENERATEMISTRAL_TESTS_EXPORT QString mistralAiUrl();
 };

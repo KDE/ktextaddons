@@ -14,3 +14,8 @@ QString MistralUtils::chatPath()
 {
     return QStringLiteral("/v1/chat/completions");
 }
+
+QString MistralUtils::mistralAiUrl()
+{
+    return QStringLiteral("https://api.mistral.ai");
+}
