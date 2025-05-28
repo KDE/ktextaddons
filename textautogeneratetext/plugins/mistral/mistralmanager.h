@@ -32,5 +32,6 @@ Q_SIGNALS:
     void finished(const QString &replyText);
 
 private:
+    QMetaObject::Connection mMistralAICheckConnect;
     QByteArray mApiKey;
 };
