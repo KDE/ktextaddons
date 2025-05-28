@@ -13,4 +13,12 @@ TextAutoGenerateManagerBase::TextAutoGenerateManagerBase(QObject *parent)
 
 TextAutoGenerateManagerBase::~TextAutoGenerateManagerBase() = default;
 
+QDebug operator<<(QDebug d, const TextAutoGenerateManagerBase::ModelsInfo &t)
+{
+    d.space() << "models:" << t.models;
+    d.space() << "hasError:" << t.hasError;
+    d.space() << "isReady:" << t.isReady;
+    return d;
+}
+
 #include "moc_textautogeneratemanagerbase.cpp"
