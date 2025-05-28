@@ -55,9 +55,9 @@ void MistralManager::loadModels()
 
 MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    QNetworkRequest req{QUrl::fromUserInput(MistralSettings::serverUrl().toString() + MistralUtils::chatPath())};
+    QNetworkRequest req{QUrl::fromUserInput(MistralUtils::mistralAiUrl() + MistralUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-    req.setRawHeader("Authorization", QByteArray("Bearer YOUR_API_KEY"));
+    req.setRawHeader("Authorization", mApiKey);
     QJsonObject data;
     data["model"_L1] = MistralSettings::model();
     data["messages"_L1] = request.messages();
@@ -76,12 +76,12 @@ MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::Text
     return reply;
 }
 
-QString MistralManager::apiKey() const
+QByteArray MistralManager::apiKey() const
 {
     return mApiKey;
 }
 
-void MistralManager::setApiKey(const QString &newApiKey)
+void MistralManager::setApiKey(const QByteArray &newApiKey)
 {
     mApiKey = newApiKey;
 }
