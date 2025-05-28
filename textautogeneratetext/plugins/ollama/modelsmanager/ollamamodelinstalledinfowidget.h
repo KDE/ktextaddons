@@ -8,6 +8,7 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class QLabel;
+class QVBoxLayout;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledInfoWidget : public QWidget
 {
     Q_OBJECT
@@ -23,4 +24,6 @@ private:
     QLabel *const mParameterSizeLabel;
     QLabel *const mQuantizationLevelLabel;
     QLabel *const mModifiedAtLabel;
+    QVBoxLayout *const mMainLayout;
+    QWidget *mInfoWidget = nullptr;
 };

@@ -21,6 +21,7 @@ public:
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotRemoveModel();
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotCurrentChanged();
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
     OllamaModelSearchLineEdit *const mSearchLineEdit;
     QToolButton *const mRemoveModelButton;

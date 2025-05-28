@@ -63,10 +63,12 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mOllamaModelInstalledListView->setModel(proxyModel);
 
     mRemoveModelButton->setObjectName(QStringLiteral("mRemoveModelButton"));
+    mRemoveModelButton->setEnabled(false);
     hboxLayout->addWidget(mRemoveModelButton);
     mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
     connect(mOllamaModelInstalledListView, &OllamaModelInstalledListView::clicked, this, &OllamaModelInstalledWidget::slotClicked);
+    connect(mOllamaModelInstalledListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &OllamaModelInstalledWidget::slotCurrentChanged);
 }
 
 OllamaModelInstalledWidget::~OllamaModelInstalledWidget() = default;
@@ -77,6 +79,11 @@ void OllamaModelInstalledWidget::slotClicked(const QModelIndex &index)
         const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
         mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info);
     }
+}
+
+void OllamaModelInstalledWidget::slotCurrentChanged()
+{
+    mRemoveModelButton->setEnabled(mOllamaModelInstalledListView->currentIndex().isValid());
 }
 
 void OllamaModelInstalledWidget::slotRemoveModel()
@@ -92,6 +99,7 @@ void OllamaModelInstalledWidget::slotRemoveModel()
             == KMessageBox::PrimaryAction) {
             if (mManager) {
                 mManager->deleteModel(modelName);
+                // mRemoveModelButton->setEnabled(false); // TODO verify it.
             }
         }
     }

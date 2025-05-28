@@ -5,6 +5,7 @@
 */
 #include "ollamamodelinstalledinfowidget.h"
 #include <KLocalizedString>
+#include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
 
@@ -14,46 +15,45 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     , mParameterSizeLabel(new QLabel(this))
     , mQuantizationLevelLabel(new QLabel(this))
     , mModifiedAtLabel(new QLabel(this))
+    , mMainLayout(new QVBoxLayout(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mMainLayout->setObjectName(QStringLiteral("mainLayout"));
 
     {
         auto label = new QLabel(i18n("Family:"), this);
-        mainLayout->addWidget(label);
+        mMainLayout->addWidget(label);
         changeFont(label);
 
         mFamilyNameLabel->setObjectName(QStringLiteral("mFamilyNameLabel"));
-        mainLayout->addWidget(mFamilyNameLabel);
+        mMainLayout->addWidget(mFamilyNameLabel);
     }
 
     {
         auto label = new QLabel(i18n("Parameter Size:"), this);
-        mainLayout->addWidget(label);
+        mMainLayout->addWidget(label);
         changeFont(label);
 
         mParameterSizeLabel->setObjectName(QStringLiteral("mParameterSizeLabel"));
-        mainLayout->addWidget(mParameterSizeLabel);
+        mMainLayout->addWidget(mParameterSizeLabel);
     }
 
     {
         auto label = new QLabel(i18n("Quantization Level:"), this);
-        mainLayout->addWidget(label);
+        mMainLayout->addWidget(label);
         changeFont(label);
 
         mQuantizationLevelLabel->setObjectName(QStringLiteral("mQuantizationLevelLabel"));
-        mainLayout->addWidget(mQuantizationLevelLabel);
+        mMainLayout->addWidget(mQuantizationLevelLabel);
     }
 
     {
         auto label = new QLabel(i18n("Modified At:"), this);
-        mainLayout->addWidget(label);
+        mMainLayout->addWidget(label);
         changeFont(label);
 
         mModifiedAtLabel->setObjectName(QStringLiteral("mModifiedAtLabel"));
-        mainLayout->addWidget(mModifiedAtLabel);
+        mMainLayout->addWidget(mModifiedAtLabel);
     }
-    mainLayout->addStretch(1);
 }
 
 OllamaModelInstalledInfoWidget::~OllamaModelInstalledInfoWidget() = default;
@@ -71,6 +71,15 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     mParameterSizeLabel->setText(info.parameterSize());
     mQuantizationLevelLabel->setText(info.quantizationLevel());
     mModifiedAtLabel->setText(info.modifyAtInLocal());
+    if (mInfoWidget) {
+        mMainLayout->removeWidget(mInfoWidget);
+        mInfoWidget->deleteLater();
+    }
+    mInfoWidget = new QWidget(this);
+    auto infoLayout = new QVBoxLayout(mInfoWidget);
+
+    auto langugesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
+    mMainLayout->addWidget(langugesGroupBox, 1);
 }
 
 #include "moc_ollamamodelinstalledinfowidget.cpp"
