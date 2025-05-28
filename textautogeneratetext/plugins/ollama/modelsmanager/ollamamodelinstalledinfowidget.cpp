@@ -76,10 +76,16 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
         mInfoWidget->deleteLater();
     }
     mInfoWidget = new QWidget(this);
+    mMainLayout->addWidget(mInfoWidget, 1);
     auto infoLayout = new QVBoxLayout(mInfoWidget);
+    infoLayout->setContentsMargins({});
 
-    auto langugesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
-    mMainLayout->addWidget(langugesGroupBox, 1);
+    auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
+    infoLayout->addWidget(languagesGroupBox);
+
+    auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
+    infoLayout->addWidget(featuresGroupBox);
+    infoLayout->addStretch(1);
 }
 
 #include "moc_ollamamodelinstalledinfowidget.cpp"
