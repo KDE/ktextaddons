@@ -16,6 +16,10 @@ target_sources(textautogenerateopenai PRIVATE
     openaiconfiguredialog.cpp
     openaiconfigurewidget.h
     openaiconfigurewidget.cpp
+    openaimanager.cpp
+    openaimanager.h
+    openaireply.cpp
+    openaireply.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
