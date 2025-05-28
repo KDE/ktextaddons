@@ -20,6 +20,9 @@ target_sources(textautogenerateopenai PRIVATE
     openaimanager.h
     openaireply.cpp
     openaireply.h
+
+    openaiutils.h
+    openaiutils.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
