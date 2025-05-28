@@ -11,5 +11,5 @@ macro(add_mistral_plugin_unittest _source)
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
 
-
 add_mistral_plugin_unittest(mistralutilstest.cpp)
+add_mistral_plugin_unittest(mistralmanagertest.cpp)
