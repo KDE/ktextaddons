@@ -19,7 +19,7 @@ public:
     [[nodiscard]] QString apiKey() const;
 
 private:
-    void readConfig();
-    void writeConfig();
+    TEXTAUTOGENERATEOPENAI_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATEOPENAI_NO_EXPORT void writeConfig();
     OpenAIConfigureWidget *const mOpenaiConfigureWidget;
 };
