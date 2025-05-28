@@ -5,22 +5,16 @@
 */
 #pragma once
 #include "textautogeneratemistral_export.h"
-#include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class MistralReply;
-class TEXTAUTOGENERATEMISTRAL_EXPORT MistralManager : public QObject
+class TEXTAUTOGENERATEMISTRAL_EXPORT MistralManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
 public:
-    struct ModelsInfo {
-        QStringList models;
-        QString errorOccured;
-        bool hasError = false;
-        bool isReady = false;
-    };
     explicit MistralManager(QObject *parent = nullptr);
     ~MistralManager() override;
-    void loadModels();
+    void loadModels() override;
 
     [[nodiscard]] MistralReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 
@@ -28,7 +22,6 @@ public:
     void setApiKey(const QByteArray &newApiKey);
 
 Q_SIGNALS:
-    void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
 
 private:

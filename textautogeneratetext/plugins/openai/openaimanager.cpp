@@ -10,11 +10,12 @@
 // #include "mistralutils.h"
 #include <KLocalizedString>
 #include <QJsonObject>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QNetworkRequest>
-#include <qnetworkaccessmanager.h>
 using namespace Qt::Literals::StringLiterals;
 OpenAIManager::OpenAIManager(QObject *parent)
-    : QObject{parent}
+    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
 {
 }
 

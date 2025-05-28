@@ -5,6 +5,9 @@
 */
 
 #include "openaiplugin.h"
+#include "openaimanager.h"
+#include <qt6keychain/keychain.h>
+
 using namespace Qt::Literals::StringLiterals;
 OpenAIPlugin::OpenAIPlugin(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}

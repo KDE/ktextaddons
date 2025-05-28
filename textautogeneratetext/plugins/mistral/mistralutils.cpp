@@ -19,3 +19,13 @@ QString MistralUtils::mistralAiUrl()
 {
     return QStringLiteral("https://api.mistral.ai");
 }
+
+QString MistralUtils::mistralGroupName()
+{
+    return QStringLiteral("MistralAI");
+}
+
+QString MistralUtils::apiGroupName()
+{
+    return QStringLiteral("apiKey");
+}

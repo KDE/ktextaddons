@@ -11,12 +11,13 @@
 #include "mistralutils.h"
 #include <KLocalizedString>
 #include <QJsonObject>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QNetworkRequest>
-#include <qnetworkaccessmanager.h>
-#include <qnetworkreply.h>
+
 using namespace Qt::Literals::StringLiterals;
 MistralManager::MistralManager(QObject *parent)
-    : QObject{parent}
+    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
 {
 }
 

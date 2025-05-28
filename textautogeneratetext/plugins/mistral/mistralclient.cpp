@@ -8,8 +8,8 @@
 #include "mistralconfiguredialog.h"
 #include "mistralmanager.h"
 #include "mistralplugin.h"
-
 #include <KLocalizedString>
+#include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
 MistralClient::MistralClient(QObject *parent)

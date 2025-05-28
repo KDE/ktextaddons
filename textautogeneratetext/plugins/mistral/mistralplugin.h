@@ -8,6 +8,10 @@
 
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 class MistralManager;
+namespace QKeychain
+{
+class Job;
+}
 class MistralPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
@@ -29,5 +33,6 @@ protected:
     void cancelRequest(const QByteArray &uuid) override;
 
 private:
+    void slotApiKeyRead(QKeychain::Job *baseJob);
     MistralManager *const mMistralManager;
 };

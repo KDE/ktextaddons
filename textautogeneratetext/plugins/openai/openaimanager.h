@@ -5,22 +5,16 @@
 */
 #pragma once
 #include "textautogenerateopenai_export.h"
-#include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class OpenAIReply;
-class TEXTAUTOGENERATEOPENAI_EXPORT OpenAIManager : public QObject
+class TEXTAUTOGENERATEOPENAI_EXPORT OpenAIManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
 public:
-    struct ModelsInfo {
-        QStringList models;
-        QString errorOccured;
-        bool hasError = false;
-        bool isReady = false;
-    };
     explicit OpenAIManager(QObject *parent = nullptr);
     ~OpenAIManager() override;
-    void loadModels();
+    void loadModels() override;
 
     [[nodiscard]] OpenAIReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 
@@ -28,7 +22,6 @@ public:
     void setApiKey(const QString &newApiKey);
 
 Q_SIGNALS:
-    void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
 
 private:

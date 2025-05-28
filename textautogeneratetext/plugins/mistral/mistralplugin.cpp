@@ -5,6 +5,11 @@
 */
 
 #include "mistralplugin.h"
+#include "autogeneratetext_mistral_debug.h"
+#include "mistralmanager.h"
+#include "mistralutils.h"
+#include <qt6keychain/keychain.h>
+
 using namespace Qt::Literals::StringLiterals;
 MistralPlugin::MistralPlugin(MistralManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
@@ -16,8 +21,11 @@ MistralPlugin::~MistralPlugin() = default;
 
 bool MistralPlugin::loadSettings()
 {
-    // TODO
-    return false;
+    auto readJob = new QKeychain::ReadPasswordJob(MistralUtils::mistralGroupName(), this);
+    connect(readJob, &QKeychain::Job::finished, this, &MistralPlugin::slotApiKeyRead);
+    readJob->setKey(MistralUtils::apiGroupName());
+    readJob->start();
+    return true;
 }
 
 void MistralPlugin::clear()
@@ -47,6 +55,17 @@ void MistralPlugin::askToAssistant(const QString &msg)
 void MistralPlugin::cancelRequest(const QByteArray &uuid)
 {
     // TODO
+}
+
+void MistralPlugin::slotApiKeyRead(QKeychain::Job *baseJob)
+{
+    auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+    Q_ASSERT(job);
+    if (!job->error()) {
+        mMistralManager->setApiKey(job->textData().toLatin1());
+    } else {
+        qCWarning(AUTOGENERATETEXT_MISTRAL_LOG) << "We have an error during reading password " << job->errorString();
+    }
 }
 
 QString MistralPlugin::name()

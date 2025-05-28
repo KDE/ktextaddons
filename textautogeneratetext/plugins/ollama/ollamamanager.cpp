@@ -22,7 +22,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 OllamaManager::OllamaManager(QObject *parent)
-    : QObject{parent}
+    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
 {
 }
 
@@ -165,15 +165,12 @@ OllamaReply *OllamaManager::getCompletion(const TextAutoGenerateText::TextAutoGe
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
-    auto buf = new QBuffer{this};
-    buf->setData(QJsonDocument(data).toJson(QJsonDocument::Compact));
-
-    auto reply = new OllamaReply{TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, buf),
-                                 OllamaReply::RequestTypes::StreamingGenerate,
-                                 this};
-    connect(reply, &OllamaReply::finished, this, [this, reply, buf] {
+    auto reply = new OllamaReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        OllamaReply::RequestTypes::StreamingGenerate,
+        this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
-        buf->deleteLater();
     });
     return reply;
 }
@@ -198,14 +195,6 @@ OllamaReply *OllamaManager::getChatCompletion(const TextAutoGenerateText::TextAu
         Q_EMIT finished(reply->readResponse());
     });
     return reply;
-}
-
-QDebug operator<<(QDebug d, const OllamaManager::ModelsInfo &t)
-{
-    d.space() << "models:" << t.models;
-    d.space() << "hasError:" << t.hasError;
-    d.space() << "isReady:" << t.isReady;
-    return d;
 }
 
 bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
