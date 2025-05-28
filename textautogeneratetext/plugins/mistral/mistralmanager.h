@@ -18,13 +18,13 @@ public:
 
     [[nodiscard]] MistralReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 
-    [[nodiscard]] QByteArray apiKey() const;
-    void setApiKey(const QByteArray &newApiKey);
+    [[nodiscard]] QString apiKey() const;
+    void setApiKey(const QString &newApiKey);
 
 Q_SIGNALS:
     void finished(const QString &replyText);
 
 private:
     QMetaObject::Connection mMistralAICheckConnect;
-    QByteArray mApiKey;
+    QString mApiKey;
 };

@@ -49,6 +49,7 @@ bool MistralClient::showConfigureDialog(QWidget *parentWidget)
 {
     // TODO use QPointer here ???
     MistralConfigureDialog d(parentWidget);
+    d.setApiKey(mManager->apiKey());
     bool b = d.exec();
     if (b) {
         // TODO save

@@ -62,7 +62,7 @@ void MistralPlugin::slotApiKeyRead(QKeychain::Job *baseJob)
     auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
     Q_ASSERT(job);
     if (!job->error()) {
-        mMistralManager->setApiKey(job->textData().toLatin1());
+        mMistralManager->setApiKey(job->textData());
     } else {
         qCWarning(AUTOGENERATETEXT_MISTRAL_LOG) << "We have an error during reading password " << job->errorString();
     }
