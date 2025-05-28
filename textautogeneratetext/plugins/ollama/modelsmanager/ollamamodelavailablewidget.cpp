@@ -5,7 +5,6 @@
 */
 #include "ollamamodelavailablewidget.h"
 #include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
-#include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodelavailableinfossortproxymodel.h"
 #include "ollamamodelavailableinfowidget.h"
@@ -24,6 +23,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     , mProxyModel(new OllamaModelAvailableInfosSortProxyModel(this))
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(manager, this))
     , mStackedWidget(new QStackedWidget(this))
+    , mAvailableInfosModel(new OllamaModelAvailableInfosModel(this))
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
@@ -52,12 +52,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     mStackedWidget->setCurrentWidget(mInfoWidget);
     connect(mInfoWidget, &OllamaModelAvailableInfoWidget::downloadModel, this, &OllamaModelAvailableWidget::slotDownloadModel);
 
-    auto model = new OllamaModelAvailableInfosModel(this);
-    mProxyModel->setSourceModel(model);
-    OllamaModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        model->setModelInfos(managerModelInfosManager.modelInfos());
-    }
+    mProxyModel->setSourceModel(mAvailableInfosModel);
     mListView->setModel(mProxyModel);
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::searchText, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setFilterFixedString);
     connect(mSearchWidget, &OllamaModelAvailableSearchWidget::categoriesChanged, mProxyModel, &OllamaModelAvailableInfosSortProxyModel::setCategories);
@@ -66,6 +61,11 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
 }
 
 OllamaModelAvailableWidget::~OllamaModelAvailableWidget() = default;
+
+void OllamaModelAvailableWidget::setAvailableInfos(const QList<OllamaModelAvailableInfo> &infos)
+{
+    mAvailableInfosModel->setModelInfos(infos);
+}
 
 void OllamaModelAvailableWidget::slotAddModel()
 {

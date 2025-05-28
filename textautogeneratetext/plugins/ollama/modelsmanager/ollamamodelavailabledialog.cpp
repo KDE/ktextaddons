@@ -6,7 +6,9 @@
 #include "ollamamodelavailabledialog.h"
 
 #include "ollamamanager.h"
+#include "ollamamodelavailableinfosmanager.h"
 #include "ollamamodelavailablewidget.h"
+
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -26,6 +28,11 @@ OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, Q
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mOllamaModelWidget->setObjectName(QStringLiteral("mOllamaModelWidget"));
+
+    OllamaModelAvailableInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        mOllamaModelWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
+    }
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Close, this);
     box->setObjectName(QStringLiteral("box"));

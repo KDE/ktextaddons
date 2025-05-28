@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamaconfiguredialog.h"
+#include "modelsmanager/ollamamodelavailableinfosmanager.h"
 #include "modelsmanager/ollamamodelavailablewidget.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
 #include "ollamaconfigurewidget.h"
@@ -28,6 +29,11 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     setFaceType(KPageDialog::List);
+
+    OllamaModelAvailableInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        mOllamaModelWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
+    }
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mOllamaConfigureWidget, generalPageName);
