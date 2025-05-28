@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
-"PO-Revision-Date: 2025-05-26 13:20+0300\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
+"PO-Revision-Date: 2025-05-27 14:42+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -99,7 +99,7 @@ msgstr "הגדרת Mistral AI"
 msgid "Api Key:"
 msgstr "מפתח API:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:117
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:131
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
@@ -187,17 +187,39 @@ msgstr "הטמעה"
 msgid "Reasoning"
 msgstr "נימוק"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:45
+#, kde-format
+msgid "Languages Supported"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:55
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#| msgid "Model:"
+msgid "Models"
+msgstr "מודל:"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "ריענון מודל"
+msgstr "הוספת מודל"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
+msgstr "קטגוריות"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:16
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@title:window"
+msgid "Download Model"
+msgstr "ריענון מודל"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
+#, kde-format
+msgid "Please enter model name as \"name:tag\""
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
@@ -205,7 +227,41 @@ msgstr ""
 msgid "Cancel"
 msgstr "ביטול"
 
-#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:13
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:22
+#, kde-format
+msgid "Family:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:31
+#, kde-format
+msgid "Parameter Size:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:40
+#, kde-format
+msgid "Quantization Level:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:49
+#, kde-format
+msgid "Modified At:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this discussion?"
+msgid "Do you want to remove this model (%1)?"
+msgstr "להסיר את השיחה?"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@title"
+msgid "Remove Model"
+msgstr "ריענון מודל"
+
+#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
@@ -221,7 +277,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr ""
+msgstr "QwQ הוא מודל הנימוק של סדרת Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
@@ -557,13 +613,15 @@ msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
 "multilingual models that support 23 languages."
 msgstr ""
+"Aya 23, יצאה לאור על ידי Cohere, היא משפחה של מודלים רב־לשוניים מהשורה "
+"הראשונה שתומכת ב־23 שפות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
 msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
 "data."
-msgstr ""
+msgstr "CodeQwen1.5 הוא מודל שפה גדול שאומן מראש על כמות גדולה של נתוני קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:90
 #, kde-format
@@ -582,7 +640,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
 #, kde-format
 msgid "State-of-the-art code generation model"
-msgstr ""
+msgstr "מודל יצירת קוד מהשורה הראשונה"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
@@ -1283,6 +1341,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
+"Granite-3.2 היא משפחה של מודלים של בינה מלאכותית מבית IBM Granite שכוון "
+"ליכולות חשיבתיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
 #, kde-format
@@ -1298,6 +1358,8 @@ msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
 "fast, secure, and high-quality AI"
 msgstr ""
+"מודל של 111 מיליארד משתנים שממוטב לטובת ארגונים תובעניים שדורשים בינה "
+"מלאכותית מהירה, בטוחה ובאיכות גבוהה"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
 #, kde-format
@@ -1314,6 +1376,9 @@ msgid ""
 "art vision understanding and enhances long context capabilities up to 128k "
 "tokens without compromising text performance."
 msgstr ""
+"בנייה על Mistral Small 3,‏ Mistral Small 3.1 (2503) מוסיפה הבנהחזותית מהדרגה "
+"הראשונה ומרחיבה את יכולות ההקשר הארוך עד 128k אסימונים בלי לפגוע בביצועי "
+"הטקסט."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:268
 #, kde-format
@@ -1322,6 +1387,9 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
+"Cogito v1 Preview היא משפחה של מודלי נימוק משולבים מבית Deep Cogito שמתעלים "
+"על הביצועים של המודלים הפתוחים הטובים ביותר באותו הגודל, כולל המתחרים מבית "
+"LLaMA,‏ DeepSeek ו־Qwen על פני רוב מדידות הביצועים הרגילות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
@@ -1329,6 +1397,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
+"DeepCoder הוא מודל כתיבת קוד עם 14B בקוד פתוח לחלוטין ברמת O3-mini, שיש לו "
+"גם גרסת 1.5B זמינה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1336,11 +1406,13 @@ msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
+"Qwen3 הוא הדור האחרון של מודלי שפה גדולים בסדרת Qwen, הוא מציע סדרה נרחבת של "
+"מודלים צפופים ושל ערבוב תחומי מומחיות (MoE)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
-msgstr ""
+msgstr "האוסף העדכני ביותר של מודלים רב תחומיים מבית Meta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1386,21 +1458,19 @@ msgstr "הגדרת Ollama"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "כללי"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "מודלים זמינים"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Manage Ollama Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr "ניהול מודלים של Ollama"
+msgstr "מודלים מותקנים"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format

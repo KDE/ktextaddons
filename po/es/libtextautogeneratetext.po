@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-27 00:40+0000\n"
-"PO-Revision-Date: 2025-05-26 12:46+0100\n"
+"POT-Creation-Date: 2025-05-28 00:41+0000\n"
+"PO-Revision-Date: 2025-05-27 12:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -100,7 +100,7 @@ msgstr "Configurar IA Mistral"
 msgid "Api Key:"
 msgstr "Clave de la API:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:117
+#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:131
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "No se ha podido conectar a la interfaz %1: %2"
@@ -188,17 +188,39 @@ msgstr "Para integrar"
 msgid "Reasoning"
 msgstr "Razonamiento"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:45
+#, kde-format
+msgid "Languages Supported"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:55
 #, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#| msgid "Model:"
+msgid "Models"
+msgstr "Modelo:"
+
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "Volver a cargar el modelo"
+msgstr "Añadir modelo"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
+msgstr "Categorías"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:16
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@title:window"
+msgid "Download Model"
+msgstr "Volver a cargar el modelo"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
+#, kde-format
+msgid "Please enter model name as \"name:tag\""
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
@@ -206,7 +228,41 @@ msgstr ""
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:13
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:22
+#, kde-format
+msgid "Family:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:31
+#, kde-format
+msgid "Parameter Size:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:40
+#, kde-format
+msgid "Quantization Level:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:49
+#, kde-format
+msgid "Modified At:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:88
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this discussion?"
+msgid "Do you want to remove this model (%1)?"
+msgstr "¿Desea eliminar esta discusión?"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@title"
+msgid "Remove Model"
+msgstr "Volver a cargar el modelo"
+
+#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
@@ -1336,6 +1392,8 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
+"Una familia de modelos de razonamiento de código completamente abierto "
+"creada usando un conjunto de datos derivado de la destilación de DeepSeek-R1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
@@ -1344,6 +1402,9 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
+"Una versión optimizada de Deepseek-R1-Distilled-Qwen-1.5B que supera el "
+"rendimiento de OpenAI o1-preview con solo 1.5B parámetros en evaluaciones "
+"matemáticas populares."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:248
 #, kde-format
@@ -1351,6 +1412,8 @@ msgid ""
 "A version of the DeepSeek-R1 model that has been post trained to provide "
 "unbiased, accurate, and factual information by Perplexity."
 msgstr ""
+"Una versión del modelo DeepSeek-R1 que ha sido entrenado posteriormente para "
+"proporcionar información imparcial, precisa y objetiva mediante Perplexity."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
@@ -1513,21 +1576,19 @@ msgstr "Configurar Ollama"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "Modelos disponibles"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Manage Ollama Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr "Gestión de modelos de Ollama"
+msgstr "Modelos instalados"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
