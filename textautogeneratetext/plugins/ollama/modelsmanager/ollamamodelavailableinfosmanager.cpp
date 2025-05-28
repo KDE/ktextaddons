@@ -44,4 +44,19 @@ void OllamaModelAvailableInfosManager::setModelInfos(const QList<OllamaModelAvai
     mModelInfos = newModelInfos;
 }
 
+OllamaModelAvailableInfo OllamaModelAvailableInfosManager::modelInfo(const QString &modelName) const
+{
+    if (modelName.isEmpty()) {
+        return {};
+    }
+    auto matchesModelName = [&](const OllamaModelAvailableInfo &info) {
+        return info.name() == modelName;
+    };
+    auto it = std::find_if(mModelInfos.begin(), mModelInfos.end(), matchesModelName);
+    if (it == mModelInfos.end()) {
+        return *it;
+    }
+    return {};
+}
+
 #include "moc_ollamamodelavailableinfosmanager.cpp"

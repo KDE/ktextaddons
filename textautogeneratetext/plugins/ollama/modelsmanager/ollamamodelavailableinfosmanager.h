@@ -19,6 +19,8 @@ public:
     [[nodiscard]] QList<OllamaModelAvailableInfo> modelInfos() const;
     void setModelInfos(const QList<OllamaModelAvailableInfo> &newModelInfos);
 
+    [[nodiscard]] OllamaModelAvailableInfo modelInfo(const QString &modelName) const;
+
 private:
     QList<OllamaModelAvailableInfo> mModelInfos;
 };
