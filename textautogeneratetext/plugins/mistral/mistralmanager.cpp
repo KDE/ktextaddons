@@ -76,4 +76,14 @@ MistralReply *MistralManager::getChatCompletion(const TextAutoGenerateText::Text
     return reply;
 }
 
+QString MistralManager::apiKey() const
+{
+    return mApiKey;
+}
+
+void MistralManager::setApiKey(const QString &newApiKey)
+{
+    mApiKey = newApiKey;
+}
+
 #include "moc_mistralmanager.cpp"

@@ -24,7 +24,13 @@ public:
 
     [[nodiscard]] MistralReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
 
+    [[nodiscard]] QString apiKey() const;
+    void setApiKey(const QString &newApiKey);
+
 Q_SIGNALS:
     void modelsLoadDone(const ModelsInfo &models);
     void finished(const QString &replyText);
+
+private:
+    QString mApiKey;
 };
