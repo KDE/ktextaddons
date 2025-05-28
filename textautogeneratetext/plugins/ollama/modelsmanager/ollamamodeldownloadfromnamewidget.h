@@ -15,6 +15,9 @@ public:
     ~OllamaModelDownloadFromNameWidget() override;
     [[nodiscard]] QString modelName() const;
 
+Q_SIGNALS:
+    void textChanged(const QString &str);
+
 private:
     QLineEdit *const mModelNameLineEdit;
 };

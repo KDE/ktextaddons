@@ -27,6 +27,10 @@ public:
 Q_SIGNALS:
     void modelsLoadDone(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &models);
     void refreshInstalledModels();
+    void finished(const QString &replyText);
+
+protected:
+    QMetaObject::Connection mCheckConnect;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo, Q_RELOCATABLE_TYPE);

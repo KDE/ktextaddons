@@ -25,6 +25,7 @@ OllamaModelDownloadFromNameWidget::OllamaModelDownloadFromNameWidget(QWidget *pa
     mModelNameLineEdit->setObjectName(QStringLiteral("mModelNameLineEdit"));
     mainLayout->addWidget(mModelNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mModelNameLineEdit);
+    connect(mModelNameLineEdit, &QLineEdit::textChanged, this, &OllamaModelDownloadFromNameWidget::textChanged);
 }
 
 OllamaModelDownloadFromNameWidget::~OllamaModelDownloadFromNameWidget() = default;

@@ -31,41 +31,40 @@ OllamaModelAvailableInfoWidget::~OllamaModelAvailableInfoWidget() = default;
 
 void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
 {
-    if (mDownloadWidget) {
-        mMainLayout->removeWidget(mDownloadWidget);
-        mDownloadWidget->deleteLater();
+    if (mInfoWidget) {
+        mMainLayout->removeWidget(mInfoWidget);
+        mInfoWidget->deleteLater();
     }
     const QString modelName = index.data(OllamaModelAvailableInfosModel::ModelName).toString();
     mModelName->setText(modelName);
 
-    delete mDownloadWidget;
-    mDownloadWidget = new QWidget(this);
-    auto downloadLayout = new QVBoxLayout(mDownloadWidget);
+    mInfoWidget = new QWidget(this);
+    auto infoLayout = new QVBoxLayout(mInfoWidget);
 
-    auto langugesGroupBox = new QGroupBox(i18n("Languages Supported"), mDownloadWidget);
-    auto languagesGroupBoxLayout = new OllamaModelFlowLayout(langugesGroupBox);
+    auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
+    auto languagesGroupBoxLayout = new OllamaModelFlowLayout(languagesGroupBox);
     const QStringList languages = index.data(OllamaModelAvailableInfosModel::Languages).toStringList();
     for (const auto &l : languages) {
         const QLocale locale(l);
-        languagesGroupBoxLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mDownloadWidget));
+        languagesGroupBoxLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
     }
-    downloadLayout->addWidget(langugesGroupBox);
+    infoLayout->addWidget(languagesGroupBox);
     // TODO show categories
 
-    auto downloadModelGroupBox = new QGroupBox(i18n("Models"), mDownloadWidget);
+    auto downloadModelGroupBox = new QGroupBox(i18n("Models"), mInfoWidget);
 
-    downloadLayout->addWidget(downloadModelGroupBox);
+    infoLayout->addWidget(downloadModelGroupBox);
     auto downloadGroupBoxLayout = new QVBoxLayout(downloadModelGroupBox);
     const QList<OllamaModelAvailableInfo::ModelTag> tags = index.data(OllamaModelAvailableInfosModel::Tags).value<QList<OllamaModelAvailableInfo::ModelTag>>();
     for (const auto &t : tags) {
         const bool alreadyInstalled = mOllamaManager->isAlreadyInstalled(QStringLiteral("%1:%2").arg(modelName, t.tag));
-        auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, alreadyInstalled, mDownloadWidget);
+        auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, alreadyInstalled, mInfoWidget);
         connect(downLoadWidget, &OllamaModelDownloadWidget::downloadModel, this, [this, modelName](const QString &tagName) {
             Q_EMIT downloadModel(QStringLiteral("%1:%2").arg(modelName, tagName));
         });
         downloadGroupBoxLayout->addWidget(downLoadWidget);
     }
-    mMainLayout->addWidget(mDownloadWidget, 1, Qt::AlignTop);
+    mMainLayout->addWidget(mInfoWidget, 1, Qt::AlignTop);
 }
 
 #include "moc_ollamamodelavailableinfowidget.cpp"

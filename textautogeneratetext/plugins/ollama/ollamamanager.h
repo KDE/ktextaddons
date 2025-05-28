@@ -35,10 +35,8 @@ public:
     [[nodiscard]] bool isAlreadyInstalled(const QString &modelName) const;
 
 Q_SIGNALS:
-    void finished(const QString &replyText);
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
 private:
-    QMetaObject::Connection mOllamaCheckConnect;
     QList<OllamaModelInstalledInfo> mInstalledInfos;
 };

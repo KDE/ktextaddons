@@ -23,6 +23,6 @@ Q_SIGNALS:
 private:
     QVBoxLayout *const mMainLayout;
     QLabel *const mModelName;
-    QWidget *mDownloadWidget = nullptr;
+    QWidget *mInfoWidget = nullptr;
     OllamaManager *const mOllamaManager;
 };

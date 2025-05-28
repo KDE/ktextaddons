@@ -8,6 +8,7 @@
 #include "ollamamodeldownloadfromnamewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 OllamaModelDownloadFromNameDialog::OllamaModelDownloadFromNameDialog(QWidget *parent)
     : QDialog(parent)
@@ -24,6 +25,12 @@ OllamaModelDownloadFromNameDialog::OllamaModelDownloadFromNameDialog(QWidget *pa
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &OllamaModelDownloadFromNameDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &OllamaModelDownloadFromNameDialog::reject);
+    auto okButton = box->button(QDialogButtonBox::Ok);
+    okButton->setEnabled(false);
+    connect(mOllamaModelDownloadFromNameWidget, &OllamaModelDownloadFromNameWidget::textChanged, this, [okButton](const QString &str) {
+        // TODO verify that str is name:tag
+        okButton->setEnabled(!str.trimmed().isEmpty());
+    });
 }
 
 OllamaModelDownloadFromNameDialog::~OllamaModelDownloadFromNameDialog() = default;

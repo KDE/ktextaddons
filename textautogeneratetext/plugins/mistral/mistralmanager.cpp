@@ -25,14 +25,14 @@ MistralManager::~MistralManager() = default;
 
 void MistralManager::loadModels()
 {
-    if (mMistralAICheckConnect) {
-        disconnect(mMistralAICheckConnect);
+    if (mCheckConnect) {
+        disconnect(mCheckConnect);
     }
     QNetworkRequest req{QUrl::fromUserInput(MistralUtils::mistralAiUrl() + MistralUtils::modelsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
-    mMistralAICheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
+    mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;
             info.errorOccured = i18n("Failed to connect to interface at %1: %2", MistralUtils::mistralAiUrl(), rep->errorString());

@@ -88,7 +88,7 @@ void OllamaManager::getVersion()
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::versionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
-    mOllamaCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
+    mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             /*
             ModelsInfo info;
@@ -117,15 +117,15 @@ void OllamaManager::getVersion()
 
 void OllamaManager::loadModels()
 {
-    if (mOllamaCheckConnect) {
-        disconnect(mOllamaCheckConnect);
+    if (mCheckConnect) {
+        disconnect(mCheckConnect);
     }
     mInstalledInfos.clear();
     QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::tagsPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
-    mOllamaCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
+    mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
         if (rep->error() != QNetworkReply::NoError) {
             ModelsInfo info;
             info.errorOccured = i18n("Failed to connect to interface at %1: %2", OllamaSettings::serverUrl().toString(), rep->errorString());

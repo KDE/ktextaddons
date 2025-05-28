@@ -71,9 +71,9 @@ void OllamaModelAvailableWidget::slotAddModel()
 {
     OllamaModelDownloadFromNameDialog d(this);
     if (d.exec()) {
-        const QString modelName = d.modelName();
-        if (!modelName.trimmed().isEmpty()) {
-            // TODO
+        const QString modelName = d.modelName().trimmed();
+        if (!modelName.isEmpty()) {
+            // TODO implement download
         }
     }
 }
