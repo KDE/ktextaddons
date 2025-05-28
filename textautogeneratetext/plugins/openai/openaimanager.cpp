@@ -6,7 +6,7 @@
 
 #include "openaimanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
-#include "mistralreply.h"
+#include "openaireply.h"
 // #include "mistralutils.h"
 #include <KLocalizedString>
 #include <QJsonObject>
