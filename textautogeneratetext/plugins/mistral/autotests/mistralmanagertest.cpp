@@ -17,3 +17,5 @@ void MistralManagerTest::shouldHaveDefaultValues()
     MistralManager w;
     QVERIFY(w.apiKey().isEmpty());
 }
+
+#include "moc_mistralmanagertest.cpp"

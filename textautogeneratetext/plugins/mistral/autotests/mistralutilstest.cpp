@@ -17,3 +17,5 @@ void MistralUtilsTest::shouldHaveDefaultValues()
     QCOMPARE(MistralUtils::modelsPath(), QStringLiteral("/v1/models"));
     QCOMPARE(MistralUtils::chatPath(), QStringLiteral("/v1/chat/completions"));
 }
+
+#include "moc_mistralutilstest.cpp"
