@@ -5,10 +5,10 @@
 */
 
 #pragma once
-
+#include "textautogenerateopenai_export.h"
 #include <QDialog>
 class OpenAIConfigureWidget;
-class OpenAIConfigureDialog : public QDialog
+class TEXTAUTOGENERATEOPENAI_EXPORT OpenAIConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
