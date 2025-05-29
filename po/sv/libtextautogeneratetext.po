@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:41+0000\n"
+"POT-Creation-Date: 2025-05-29 00:41+0000\n"
 "PO-Revision-Date: 2025-04-17 12:27+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -98,7 +98,8 @@ msgstr "Anpassa Mistral AI"
 msgid "Api Key:"
 msgstr ""
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Misslyckades ansluta till gränssnitt på %1: %2"
@@ -125,7 +126,7 @@ msgstr "Systemprompten för språkmodellen"
 msgid "The model used to generate responses"
 msgstr "Modellen som används för att generera svar"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -186,12 +187,13 @@ msgstr ""
 msgid "Reasoning"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
 #, kde-format
 msgid "Languages Supported"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:55
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "Model:"
 msgid "Models"
@@ -210,7 +212,7 @@ msgstr "Uppdatera modell"
 msgid "Categories"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:16
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reload Model"
@@ -228,32 +230,37 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
 #, kde-format
 msgid "Family:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:31
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
 #, kde-format
 msgid "Parameter Size:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
 #, kde-format
 msgid "Quantization Level:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
 #, kde-format
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#, kde-format
+msgid "Features Supported"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:89
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reload Model"
@@ -1420,25 +1427,25 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Uppdatera modell"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:29
+#: plugins/ollama/ollamaconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Anpassa Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"

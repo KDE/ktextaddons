@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:41+0000\n"
-"PO-Revision-Date: 2025-05-27 12:45+0100\n"
+"POT-Creation-Date: 2025-05-29 00:41+0000\n"
+"PO-Revision-Date: 2025-05-28 12:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -100,7 +100,8 @@ msgstr "Configurar IA Mistral"
 msgid "Api Key:"
 msgstr "Clave de la API:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "No se ha podido conectar a la interfaz %1: %2"
@@ -127,7 +128,7 @@ msgstr "Prompt del sistema para el LLM"
 msgid "The model used to generate responses"
 msgstr "Modelo que se usa para generar respuestas"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -188,16 +189,16 @@ msgstr "Para integrar"
 msgid "Reasoning"
 msgstr "Razonamiento"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "Idiomas permitidos"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Model:"
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
+#, kde-format
 msgid "Models"
-msgstr "Modelo:"
+msgstr "Modelos"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
 #, kde-format
@@ -210,57 +211,58 @@ msgstr "Añadir modelo"
 msgid "Categories"
 msgstr "Categorías"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "Volver a cargar el modelo"
+msgstr "Descargar modelo"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "Introduzca el nombre del modelo como «nombre:etiqueta»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Familia:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:31
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "Tamaño de parámetros:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
 #, kde-format
 msgid "Quantization Level:"
-msgstr ""
+msgstr "Nivel de cuantización:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
 #, kde-format
 msgid "Modified At:"
-msgstr ""
+msgstr "Modificado:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#| msgid "Languages Supported"
+msgid "Features Supported"
+msgstr "Idiomas permitidos"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr "¿Desea eliminar esta discusión?"
+msgstr "¿Desea eliminar este modelo (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "Volver a cargar el modelo"
+msgstr "Eliminar modelo"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
@@ -686,6 +688,8 @@ msgid ""
 "A versatile model for AI software development scenarios, including code "
 "completion."
 msgstr ""
+"Un modelo versátil para escenarios de desarrollo de software de IA, que "
+"incluye terminación de código."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
 #, kde-format
@@ -693,6 +697,9 @@ msgid ""
 "A family of open-source models trained on a wide variety of data, surpassing "
 "ChatGPT on various benchmarks. Updated to version 3.5-0106."
 msgstr ""
+"Una familia de modelos de código abierto entrenados con una amplia variedad "
+"de datos, que supera a ChatGPT en diversas pruebas de referencia. "
+"Actualizado a la versión 3.5-0106."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
 #, kde-format
@@ -700,6 +707,8 @@ msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
 "multilingual models that support 23 languages."
 msgstr ""
+"Aya 23, lanzado por Cohere, es una nueva familia de modelos multilingües de "
+"última generación que admiten 23 idiomas."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
@@ -707,6 +716,8 @@ msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
 "data."
 msgstr ""
+"CodeQwen1.5 es un modelo de lenguaje extenso preentrenado con una gran "
+"cantidad de datos de código fuente."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:90
 #, kde-format
@@ -714,6 +725,8 @@ msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
 "discussion and coding tasks."
 msgstr ""
+"La poderosa familia de modelos de Nous Research que destaca en tareas de "
+"programación y discusión científica."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
 #, kde-format
@@ -721,11 +734,13 @@ msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
 "excel at real-world enterprise use cases."
 msgstr ""
+"Command R+ es un modelo de lenguaje extenso, potente y escalable, diseñado "
+"específicamente para destacar en casos de uso empresariales del mundo real."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
 #, kde-format
 msgid "State-of-the-art code generation model"
-msgstr ""
+msgstr "Modelo de generación de código de última generación."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
@@ -1512,8 +1527,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
-"DeepCoder es un modelo codificador 14B totalmente de código abierto al nivel "
-"de O3-mini, que también dispone de una versión 1.5B."
+"DeepCoder es un modelo codificador de 14B totalmente de código abierto al "
+"nivel de O3-mini, que también dispone de una versión de 1.5B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1566,25 +1581,25 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Volver a cargar el modelo"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:29
+#: plugins/ollama/ollamaconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurar Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "General"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modelos disponibles"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"

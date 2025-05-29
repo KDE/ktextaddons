@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:41+0000\n"
-"PO-Revision-Date: 2025-05-27 05:31+0200\n"
+"POT-Creation-Date: 2025-05-29 00:41+0000\n"
+"PO-Revision-Date: 2025-05-28 04:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -99,7 +99,8 @@ msgstr "Mistral AI-ის მორგება"
 msgid "Api Key:"
 msgstr "API გასაღები:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
@@ -126,7 +127,7 @@ msgstr "სისტემური მოთხოვნა LLM-სთვის
 msgid "The model used to generate responses"
 msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -187,16 +188,16 @@ msgstr "ჩაშენება"
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "მხარდაჭერილი ენები"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Model:"
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
+#, kde-format
 msgid "Models"
-msgstr "მოდელი:"
+msgstr "მოდელები"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
 #, kde-format
@@ -209,57 +210,58 @@ msgstr "მოდელის დამატება"
 msgid "Categories"
 msgstr "კატეგორიები"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "მოდელის თავიდან ჩატვირთვა"
+msgstr "მოდელის გადმოწერა"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "შეიყვანეთ მოდელის სახელი ფორმით \"სახელი:ჭდე\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
 #, kde-format
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "ოჯახი:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:31
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "პარამეტრის ზომა:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
 #, kde-format
 msgid "Quantization Level:"
-msgstr ""
+msgstr "კვანტიზაციის დონე:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
 #, kde-format
 msgid "Modified At:"
-msgstr ""
+msgstr "ცვლილების დრო:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#| msgid "Languages Supported"
+msgid "Features Supported"
+msgstr "მხარდაჭერილი ენები"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr "წაშლით ამ კამათს?"
+msgstr "მართლა გნებავთ, წაშალოთ ეს მოდელი (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "მოდელის თავიდან ჩატვირთვა"
+msgstr "მოდელის წაშლა"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
@@ -1754,25 +1756,25 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "მოდელის თავიდან ჩატვირთვა"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:29
+#: plugins/ollama/ollamaconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "ზოგადი"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "ხელმისაწვდომი მოდელები"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"

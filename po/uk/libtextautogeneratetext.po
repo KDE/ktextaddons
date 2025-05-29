@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-28 00:41+0000\n"
-"PO-Revision-Date: 2025-05-27 17:30+0300\n"
+"POT-Creation-Date: 2025-05-29 00:41+0000\n"
+"PO-Revision-Date: 2025-05-28 08:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -99,7 +99,8 @@ msgstr "Налаштування ШІ Mistral"
 msgid "Api Key:"
 msgstr "Ключ API:"
 
-#: plugins/mistral/mistralmanager.cpp:37 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Не вдалося встановити з'єднання з інтерфейсом на %1: %2"
@@ -126,7 +127,7 @@ msgstr "Системний запит до великої мовної моде�
 msgid "The model used to generate responses"
 msgstr "Модель, яку буде використано для створення відповідей"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -187,16 +188,16 @@ msgstr "Вкладення"
 msgid "Reasoning"
 msgstr "Аналіз"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "Підтримувані мови"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Model:"
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
+#, kde-format
 msgid "Models"
-msgstr "Модель:"
+msgstr "Моделі"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
 #, kde-format
@@ -209,57 +210,58 @@ msgstr "Додати модель"
 msgid "Categories"
 msgstr "Категорії"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:16
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "Перезавантажити модель"
+msgstr "Отримання моделі"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Сімейство:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:31
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "Параметричний розмір:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
 #, kde-format
 msgid "Quantization Level:"
-msgstr ""
+msgstr "Рівень квантизації:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
 #, kde-format
 msgid "Modified At:"
-msgstr ""
+msgstr "Дата зміни:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#| msgid "Languages Supported"
+msgid "Features Supported"
+msgstr "Підтримувані мови"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr "Хочете вилучити це обговорення?"
+msgstr "Хочете вилучити цю модель (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "Перезавантажити модель"
+msgstr "Вилучення моделі"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
@@ -1755,25 +1757,25 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Перезавантажити модель"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:29
+#: plugins/ollama/ollamaconfiguredialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Налаштувати Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:38
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Загальне"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:44
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Доступні моделі"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
