@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfowidget.h"
+#include "ollamamodelflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
@@ -91,14 +92,14 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     if (it != infoAvailableInfos.end()) {
         auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
         infoLayout->addWidget(languagesGroupBox);
-        auto vboxLanguagesLayout = new QVBoxLayout(languagesGroupBox);
+        auto vboxLanguagesLayout = new OllamaModelFlowLayout(languagesGroupBox);
         for (const auto &lang : (*it).languages()) {
             const QLocale locale(lang);
             vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
         }
         auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
         infoLayout->addWidget(featuresGroupBox);
-        auto vboxfeaturesLayout = new QVBoxLayout(featuresGroupBox);
+        auto vboxfeaturesLayout = new OllamaModelFlowLayout(featuresGroupBox);
         for (const auto &cat : (*it).categoriesName()) {
             vboxfeaturesLayout->addWidget(new QLabel(cat, mInfoWidget));
         }
