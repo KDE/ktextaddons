@@ -247,7 +247,8 @@ QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelI
     if (text.isEmpty()) {
         return nullptr;
     }
-    auto doc = createTextDocument(QStringLiteral("<b>%1</b><br/>").arg(QString::fromLatin1(modelName)) + text, width);
+    const QString name = index.data(OllamaModelInstalledInfosModel::Name).toString();
+    auto doc = createTextDocument(QStringLiteral("<b>%1</b><br/>").arg(QString::fromLatin1(modelName)) + name, width);
     auto ret = doc.get();
     mDocumentCache.insert(modelName, std::move(doc));
     return ret;

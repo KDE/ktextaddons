@@ -16,6 +16,7 @@ class OllamaModelInstalledInfosModel : public QAbstractListModel
 public:
     enum ModelInfoRoles {
         ModelName = Qt::UserRole + 1,
+        Name,
         Description,
         Family,
         QuantizationLevel,
