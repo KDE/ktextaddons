@@ -21,11 +21,16 @@ void OllamaModelInstalledInfo::parseInfo(const QJsonObject &obj)
     mQuantizationLevel = detailsObj["quantization_level"_L1].toString();
     mParameterSize = detailsObj["parameter_size"_L1].toString();
 
-    const int position = model().indexOf(QLatin1Char(':'));
-    QString originalModelName = model().first(position);
+    mGeneratedModelName = convertModelNameToDisplay(model());
+}
+
+QString OllamaModelInstalledInfo::convertModelNameToDisplay(const QString &modelName)
+{
+    const int position = modelName.indexOf(QLatin1Char(':'));
+    QString originalModelName = modelName.first(position);
     originalModelName = originalModelName.at(0).toUpper() + originalModelName.mid(1, originalModelName.size());
     originalModelName.replace(QLatin1Char('-'), QLatin1Char(' '));
-    mGeneratedModelName = originalModelName;
+    return originalModelName;
 }
 
 QString OllamaModelInstalledInfo::parameterSize() const

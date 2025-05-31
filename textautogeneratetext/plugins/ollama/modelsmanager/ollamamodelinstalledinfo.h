@@ -39,6 +39,8 @@ public:
 
     [[nodiscard]] QString generateModelName() const;
 
+    static QString convertModelNameToDisplay(const QString &modelName);
+
 private:
     QString mName;
     QString mModel;
