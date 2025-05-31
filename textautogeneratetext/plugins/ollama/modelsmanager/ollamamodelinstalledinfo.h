@@ -37,6 +37,8 @@ public:
 
     [[nodiscard]] bool operator==(const OllamaModelInstalledInfo &other) const;
 
+    [[nodiscard]] QString generateModelName() const;
+
 private:
     QString mName;
     QString mModel;
@@ -44,6 +46,7 @@ private:
     QString mFamily;
     QString mParameterSize;
     QString mModifyAt;
+    QString mGeneratedModelName;
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t);

@@ -36,6 +36,7 @@ QVariant OllamaModelInstalledInfosModel::data(const QModelIndex &index, int role
     case ParameterSize:
         return modelInfo.parameterSize();
     case ModelName:
+        return modelInfo.generateModelName();
     case Qt::DisplayRole:
         return modelInfo.name();
     }
