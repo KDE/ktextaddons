@@ -105,4 +105,8 @@ void OllamaModelInstalledWidget::slotRemoveModel()
     }
 }
 
+void OllamaModelInstalledWidget::setAvailableInfos(const QList<OllamaModelAvailableInfo> &infos)
+{
+    mModelAvailableInfos = infos;
+}
 #include "moc_ollamamodelinstalledwidget.cpp"
