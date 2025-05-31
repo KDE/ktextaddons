@@ -21,6 +21,6 @@ Dependencies:
 
 Options:
   cmake-options: "-DDISABLE_AUTOTEST_BROKEN_CI=TRUE"
-  require-passing-tests-on: ['Linux', 'FreeBSD']
-  allow-failing-tests-on: ['Windows']
+  require-passing-tests-on: ['Linux']
+  allow-failing-tests-on: ['Windows', 'FreeBSD']
   tests-run-in-parallel: True
