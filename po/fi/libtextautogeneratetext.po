@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-29 00:41+0000\n"
-"PO-Revision-Date: 2025-04-08 08:14+0300\n"
+"PO-Revision-Date: 2025-05-29 19:06+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -20,37 +20,37 @@ msgstr ""
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "Uusi keskustelu…"
 
 #: core/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "Suosikki"
 
 #: core/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Tänään"
 
 #: core/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "Edelliset 7 päivää"
 
 #: core/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "Edelliset 30 päivää"
 
 #: core/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
-msgstr ""
+msgstr "Myöhemmin"
 
 #: core/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "Tuntematon"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
@@ -63,11 +63,13 @@ msgid ""
 "Engine: %1\n"
 "Model: %2"
 msgstr ""
+"Moottori: %1\n"
+"Malli: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
-msgstr ""
+msgstr "Siirry viestiin"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -94,7 +96,7 @@ msgstr "Mistral-tekoälyn asetukset"
 #: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "API-avain:"
 
 #: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
 #: plugins/openai/openaimanager.cpp:37
@@ -128,62 +130,62 @@ msgstr "Vastausten tuottamiseen käytetty malli"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr ""
+msgstr "Hallinnoi Ollama-malleja"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Työkalut"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Keskikokoinen"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Suuri"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Valtava"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Monikielinen"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Koodi"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Matematiikka"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Visio"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Upotus"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Järkeily"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
@@ -198,17 +200,15 @@ msgid "Models"
 msgstr "Malli:"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "Virkistä malli"
+msgstr "Lisää malli"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
-msgstr ""
+msgstr "Luokat"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, fuzzy, kde-format
@@ -226,7 +226,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
 #, kde-format
@@ -270,7 +270,7 @@ msgstr "Virkistä malli"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr ""
+msgstr "Etsi mallia…"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
 #, kde-format
@@ -278,11 +278,13 @@ msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
 "compared to the Llama 3.1 405B model."
 msgstr ""
+"Uusi ajantasainen 70 mrd -malli. Llama 3.3 70 mrd tarjoaa samanlaisen "
+"suorituskyvyn Llama 3.1 405 mrd -malliin verrattuna."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr ""
+msgstr "QwQ on Qwen-sarjan uusi järkeilymalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
@@ -290,11 +292,13 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
+"Llama 3.2 Vision on kokoelma ohjeisiin virittyneitä generatiivisia "
+"järkeilymalleja 11:n ja 90 miljardin koissa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
+msgstr "Metan Llama 3.2 pienenee 1 mrd- ja 3 mrd -malleilla."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -302,22 +306,27 @@ msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
 "405B parameter sizes."
 msgstr ""
+"Llama 3.1 on Metan uusi ajantasainen malli, joka on saatavissa 8:n, 70:n ja "
+"405 miljardin parametrikoissa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
 msgstr ""
+"Meta Llama 3: toistaiseksi kyvykkäin avoimesti saatavilla oleva suuri "
+"kielimalli"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr ""
+msgstr "Mistral AI:n julkaisema 7 mrd -malli päivitettynä versioon 0.3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
 msgid ""
 "A high-performing open embedding model with a large token context window."
 msgstr ""
+"Suorituskykyinen avoin upotusmalli, jossa on suuri merkkikonteksti-ikkuna."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
 #, kde-format
@@ -325,6 +334,8 @@ msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
+"Gemma on Googlen DeepMindin koostamien kevyiden ajantasaisten avointen "
+"mallien perhe. Päivitetty versioon 1.1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
 #, kde-format
@@ -332,11 +343,13 @@ msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
 "0.5B to 110B parameters"
 msgstr ""
+"Qwen 1.5 on sarja Alibaba Cloudin suuria kielimalleja, jotka ulottuvat 0,5:"
+"stä 110 miljardiin parametriin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
-msgstr ""
+msgstr "Qwen2 on Alibaba Groupin uusi suurten kielimallien sarja."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
@@ -344,6 +357,8 @@ msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
 "open models by Microsoft."
 msgstr ""
+"Phi-3 on Microsoftin kevyiden ajantasaisten avointen 3 mrd- (Mini-) ja 14 "
+"mrd -mallien (Medium) sarja."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
 #, kde-format
@@ -351,6 +366,8 @@ msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
 "parameters."
 msgstr ""
+"Llama 2 on kokoelma perustavia kielimalleja ulottuen 7:stä 70 miljardiin "
+"parametriin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:30
 #, kde-format
@@ -359,6 +376,9 @@ msgid ""
 "encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
 "and has multilingual support."
 msgstr ""
+"Qwen2.5-mallit on esiharjoitettu Alibaban uusimmalla suuren mittakaavan "
+"datajoukolla, jossa on jopa 18 triljoonaa merkkiä. Mallissa on tuki aina 128 "
+"tuhanteen merkkiin asti ja monikielituki."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:32
 #, kde-format
@@ -366,6 +386,8 @@ msgid ""
 "Google Gemma 2 is a high-performing and efficient model available in three "
 "sizes: 2B, 9B, and 27B."
 msgstr ""
+"Google Gemma 2 on suorituskykyinen ja tehokas malli, jota saa kolmessa "
+"koossa: 2, 9 tai 27 miljardia."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:34
 #, kde-format
@@ -374,6 +396,9 @@ msgid ""
 "vision encoder and Vicuna for general-purpose visual and language "
 "understanding. Updated to version 1.6."
 msgstr ""
+"LLaVA on uusi päästä päähän -harjoitettu suuri multimodaalinen malli, joka "
+"yhdistää näkymäkoodauksen ja Vicunan yleiskäyttöistä näkymä- ja "
+"kieliymmärrystä varten. Päivitetty versioon 1.6."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:36
 #, kde-format
@@ -381,6 +406,8 @@ msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
 msgstr ""
+"Suuri kielimalli, jota voi käyttää tekstikehotteessa tuottamaan koodia ja "
+"keskustelemaan siitä."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:38
 #, kde-format
@@ -388,6 +415,8 @@ msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
 "improvements in code generation, code reasoning, and code fixing."
 msgstr ""
+"Koodiin keskittyvien Qwen-mallien uusin sarja, jossa on merkittäviä "
+"parannuksia koodin luontiin, järkeilyyn ja korjaukseen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
 #, kde-format
@@ -395,6 +424,8 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
+"Ajantasainen 12 mrd malli 128 tuhannen kontekstipituudella; koostanut "
+"Mistral AI yhteistyössä NVidian kanssa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -402,11 +433,13 @@ msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
 "model on 3 trillion tokens."
 msgstr ""
+"TinyLlama-projekti on avoin yritys harjoittaa pieni 1,1 mrd Llama-malli 3 "
+"biljoonalla merkillä."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr ""
+msgstr "Ajantasainen suuri upotusmalli mixedbread.ai:lta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
 #, kde-format
@@ -414,6 +447,8 @@ msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
 "that comes in three sizes: 3B, 7B and 15B parameters."
 msgstr ""
+"StatCoder2 on seuraavan sukupolven läpinäkyvästi harjoitettu avoimen koodin "
+"suuri kielimalli, jota saa kolmessa koossa: 3, 7 ja 15 miljardia parametria."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
@@ -1435,19 +1470,19 @@ msgstr "Ollaman asetukset"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "Perusasetukset"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:44
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "Saatavilla olevat mallit"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr ""
+msgstr "Asennetut mallit"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
@@ -1472,7 +1507,7 @@ msgstr "Ei järjestelmäkehotetta"
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
 #, fuzzy, kde-format
@@ -1486,25 +1521,25 @@ msgstr "Mistral-tekoälyn asetukset"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Tekstitekoälyliitännäisten asetukset"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Lisää…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Kysy tekoälyltä"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
-msgstr ""
+msgstr "Muuta…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
 #: widgets/view/textautogeneratehistorylistview.cpp:151
@@ -1516,24 +1551,21 @@ msgstr "Poista…"
 #: widgets/menu/textautogeneratemenulistview.cpp:60
 #, kde-format
 msgid "Do you want to remove it?"
-msgstr ""
+msgstr "Haluatko poistaa sen?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr "Poista…"
+msgstr "Poista"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Kysy tekoälyltä…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Asetukset…"
@@ -1556,37 +1588,35 @@ msgid "Conversation"
 msgstr "Keskustelu"
 
 #: widgets/textautogenerateheaderwidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Mistral-tekoälyn asetukset"
+msgstr "Asetukset…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
-msgstr ""
+msgstr "Etsi…"
 
 #: widgets/textautogenerateheaderwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "Uusi keskustelu"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
-msgstr ""
+msgstr "Suosikki"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "Etsi…"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:29
 #, kde-format
@@ -1597,13 +1627,13 @@ msgstr "Asetukset…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr ""
+msgstr "Etsi"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "Kirjoita viesti"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:17
 #, kde-format
@@ -1613,87 +1643,87 @@ msgstr "Lähetä"
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
-msgstr ""
+msgstr "Liitännäistä ei löytynyt."
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "Uusi keskustelu"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr ""
+msgstr "Poista suosikeista"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr ""
+msgstr "Aseta suosikiksi"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Palauta"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "Arkistoi"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
-msgstr ""
+msgstr "Haluatko poistaa tämän keskustelun?"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
-msgstr ""
+msgstr "Poista keskustelu"
 
 #: widgets/view/textautogeneratelistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "Kopioi valinta"
 
 #: widgets/view/textautogeneratelistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
-msgstr ""
+msgstr "Kopioi"
 
 #: widgets/view/textautogeneratelistview.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "Valitse kaikki"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "Muokkaa…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
-msgstr ""
+msgstr "Kopioi"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "Virkistä"
