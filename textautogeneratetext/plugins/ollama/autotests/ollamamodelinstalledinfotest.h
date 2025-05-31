@@ -15,4 +15,6 @@ public:
     ~OllamaModelInstalledInfoTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldGenerateModelName_data();
+    void shouldGenerateModelName();
 };
