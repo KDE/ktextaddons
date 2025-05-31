@@ -65,7 +65,8 @@ void OllamaModelInstalledInfoWidget::changeFont(QLabel *label)
     label->setFont(f);
 }
 
-void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info)
+void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info,
+                                                                 const QList<OllamaModelAvailableInfo> &infoAvailableInfos)
 {
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
@@ -80,11 +81,29 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     auto infoLayout = new QVBoxLayout(mInfoWidget);
     infoLayout->setContentsMargins({});
 
-    auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
-    infoLayout->addWidget(languagesGroupBox);
+    QString installedName = info.model();
+    const int position = installedName.indexOf(QLatin1Char(':'));
+    installedName = installedName.first(position);
+    auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
+        return availableInfo.name() == installedName;
+    };
+    auto it = std::find_if(infoAvailableInfos.begin(), infoAvailableInfos.end(), matchesModelName);
+    if (it != infoAvailableInfos.end()) {
+        auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
+        infoLayout->addWidget(languagesGroupBox);
+        auto vboxLanguagesLayout = new QVBoxLayout(languagesGroupBox);
+        for (const auto &lang : (*it).languages()) {
+            const QLocale locale(lang);
+            vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
+        }
+        auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
+        infoLayout->addWidget(featuresGroupBox);
+        auto vboxfeaturesLayout = new QVBoxLayout(featuresGroupBox);
+        for (const auto &cat : (*it).categoriesName()) {
+            vboxfeaturesLayout->addWidget(new QLabel(cat, mInfoWidget));
+        }
+    }
 
-    auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
-    infoLayout->addWidget(featuresGroupBox);
     infoLayout->addStretch(1);
 }
 

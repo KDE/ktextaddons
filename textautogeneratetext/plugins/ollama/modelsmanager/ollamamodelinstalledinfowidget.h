@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "ollamamodelavailableinfo.h"
 #include "ollamamodelinstalledinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
@@ -16,7 +17,7 @@ public:
     explicit OllamaModelInstalledInfoWidget(QWidget *parent = nullptr);
     ~OllamaModelInstalledInfoWidget() override;
 
-    void setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info);
+    void setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info, const QList<OllamaModelAvailableInfo> &infos);
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void changeFont(QLabel *label);

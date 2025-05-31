@@ -77,7 +77,7 @@ void OllamaModelInstalledWidget::slotClicked(const QModelIndex &index)
 {
     if (index.isValid()) {
         const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
-        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info);
+        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info, mModelAvailableInfos);
     }
 }
 
