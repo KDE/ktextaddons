@@ -19,3 +19,25 @@ void TextAutoGenerateTextInstance::setName(const QString &newName)
 {
     mName = newName;
 }
+
+QString TextAutoGenerateTextInstance::pluginName() const
+{
+    return mPluginName;
+}
+
+void TextAutoGenerateTextInstance::setPluginName(const QString &newPluginName)
+{
+    mPluginName = newPluginName;
+}
+
+bool TextAutoGenerateTextInstance::isValid() const
+{
+    return !mName.isEmpty() && !mPluginName.isEmpty();
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t)
+{
+    d.space() << "name:" << t.name();
+    d.space() << "pluginName:" << t.pluginName();
+    return d;
+}

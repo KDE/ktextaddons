@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 
-#include <QString>
+#include <QDebug>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstance
@@ -18,7 +18,15 @@ public:
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
 
+    [[nodiscard]] QString pluginName() const;
+    void setPluginName(const QString &newPluginName);
+
+    [[nodiscard]] bool isValid() const;
+
 private:
     QString mName;
+    QString mPluginName;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextInstance, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t);
