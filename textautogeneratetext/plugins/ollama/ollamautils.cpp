@@ -39,3 +39,8 @@ QString OllamaUtils::deletePath()
 {
     return QStringLiteral("/api/delete");
 }
+
+QString OllamaUtils::createPath()
+{
+    return QStringLiteral("/api/create");
+}
