@@ -13,3 +13,5 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(QWidget *parent)
 }
 
 OllamaModelCreateWidget::~OllamaModelCreateWidget() = default;
+
+#include "moc_ollamamodelcreatewidget.cpp"
