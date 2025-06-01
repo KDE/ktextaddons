@@ -5,19 +5,12 @@
 */
 
 #pragma once
-
 #include <QWidget>
-class KPasswordLineEdit;
-class OpenAIConfigureWidget : public QWidget
+#include <TextAutoGenerateText/NetworkConfigureWidget>
+class OpenAIConfigureWidget : public TextAutoGenerateText::NetworkConfigureWidget
 {
     Q_OBJECT
 public:
     explicit OpenAIConfigureWidget(QWidget *parent = nullptr);
     ~OpenAIConfigureWidget() override;
-
-    void setApiKey(const QString &key);
-    [[nodiscard]] QString apiKey() const;
-
-private:
-    KPasswordLineEdit *const mApiKey;
 };
