@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:41+0000\n"
-"PO-Revision-Date: 2025-04-17 12:27+0200\n"
+"POT-Creation-Date: 2025-06-01 00:41+0000\n"
+"PO-Revision-Date: 2025-05-31 16:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,42 +15,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "Ny chatt..."
 
 #: core/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "Favorit"
 
 #: core/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Idag"
 
 #: core/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "Föregående 7 dagar"
 
 #: core/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "Föregående 30 dagar"
 
 #: core/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
-msgstr ""
+msgstr "Senare"
 
 #: core/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "Okänd"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
@@ -63,13 +63,13 @@ msgid ""
 "Engine: %1\n"
 "Model: %2"
 msgstr ""
+"Gränssnitt: %1\n"
+"Modell: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#, kde-format
 msgid "Go to message"
-msgstr "Skriv in ett meddelande"
+msgstr "Gå till meddelande"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -96,7 +96,7 @@ msgstr "Anpassa Mistral AI"
 #: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "Programmeringsgränssnittsnyckel:"
 
 #: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
 #: plugins/openai/openaimanager.cpp:37
@@ -130,127 +130,122 @@ msgstr "Modellen som används för att generera svar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr ""
+msgstr "Hantera Ollama-modeller"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Verktyg"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Stor"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Enorm"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Flerspråkig"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Kod"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Matematik"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Vision"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Inbäddad"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Resonemang"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "Språk som stöds"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Models"
-msgstr "Modell:"
+msgstr "Modeller"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "Uppdatera modell"
+msgstr "Lägg till modell"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "Uppdatera modell"
+msgstr "Ladda ner modell"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "Ange modellnamn som \"namn:etikett\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Familj:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "Parameterstorlek:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Features Supported"
 msgstr ""
@@ -261,12 +256,10 @@ msgid "Do you want to remove this model (%1)?"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "Uppdatera modell"
+msgstr "Ta bort modell"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
@@ -1433,19 +1426,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Anpassa Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/ollama/ollamaconfiguredialog.cpp:51
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
@@ -1474,15 +1467,13 @@ msgstr "Ingen systemprompt"
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "Anpassa IA"
+msgstr "Anpassa Openai IA"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1521,12 +1512,10 @@ msgid "Do you want to remove it?"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr "Ta bort…"
+msgstr "Ta bort"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
@@ -1534,8 +1523,7 @@ msgid "Ask AI…"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Anpassa…"
@@ -1681,9 +1669,7 @@ msgid "Edit..."
 msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:373
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiera"
@@ -1698,7 +1684,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "Uppdatera"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Clear"

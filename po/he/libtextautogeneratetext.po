@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:41+0000\n"
-"PO-Revision-Date: 2025-05-30 12:12+0300\n"
+"POT-Creation-Date: 2025-06-01 00:41+0000\n"
+"PO-Revision-Date: 2025-05-31 19:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -189,7 +189,7 @@ msgid "Reasoning"
 msgstr "נימוק"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
 msgstr "שפות נתמכות"
@@ -226,27 +226,27 @@ msgstr "נא למלא שם של מודל בתור „name:tag” (שם:תגית)
 msgid "Cancel"
 msgstr "ביטול"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
 msgstr "משפחה:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
 msgstr "גודל פרמטרים:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
 msgstr "רמת כימות:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
 msgstr "מועד עריכה:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Features Supported"
 msgstr "יכולות נתמכות"
@@ -1170,6 +1170,8 @@ msgid ""
 "Llama Guard 3 is a series of models fine-tuned for content safety "
 "classification of LLM inputs and responses."
 msgstr ""
+"Llama Guard 3 היא סדרה של מודלים שכווננו לסיווג בטוח של תוכן של קלטי ותגובות "
+"LLM/מש״ג."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
 #, kde-format
@@ -1381,6 +1383,8 @@ msgid ""
 "including math and coding benchmarks, ranging from 2.4B to 32B parameters "
 "developed and released by LG AI Research."
 msgstr ""
+"EXAONE Deep מדגים יכולות נעלות במגוון משימות נימוק לרבות מתמטיקה ומדידת "
+"ביצועי פיתוח, נא בין 2.4B ו־32B משתנים, פותח ויצא לאור על ידי LG AI Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
 #, kde-format
@@ -1467,19 +1471,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "הגדרת Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "כללי"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "מודלים זמינים"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/ollama/ollamaconfiguredialog.cpp:51
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"

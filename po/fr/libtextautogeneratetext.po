@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:41+0000\n"
-"PO-Revision-Date: 2025-05-29 15:13+0200\n"
+"POT-Creation-Date: 2025-06-01 00:41+0000\n"
+"PO-Revision-Date: 2025-05-30 21:51+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -185,7 +185,7 @@ msgid "Reasoning"
 msgstr "Raisonnement"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
 msgstr "Langues prises en charge"
@@ -222,30 +222,30 @@ msgstr "Veuillez saisir le nom du modèle comme « nom : libellé »"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
 msgstr "Famille :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
 msgstr "Taille du paramètre :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
 msgstr "Niveau de quantification :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
 msgstr "Modifié à :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Features Supported"
-msgstr ""
+msgstr "Fonctionnalités prises en charge"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
 #, kde-format
@@ -335,6 +335,8 @@ msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
 "0.5B to 110B parameters"
 msgstr ""
+"Qwen 1.5 est une série de grands modèles de langage de Alibaba Cloud allant "
+"de 0,5B à 110B paramètres"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
@@ -348,6 +350,8 @@ msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
 "open models by Microsoft."
 msgstr ""
+"Phi-3 est une famille de modèles ouverts, légers 3B (Mini) et 14B (Medium) à "
+"la pointe de la technologie de Microsoft."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
 #, kde-format
@@ -405,6 +409,8 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
+"Un modèle 12B ultramoderne avec une longueur de contexte de 128 K, construit "
+"par Mistral AI en collaboration de Nvidia."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -433,6 +439,8 @@ msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
 "8x7b and 8x22b parameter sizes."
 msgstr ""
+"Un ensemble de modèles de mélange d'experts (MoE) avec des poids ouverts "
+"conçus par Mistral AI en taille de paramètres 8x7b et 8x22b."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:46
 #, kde-format
@@ -529,6 +537,8 @@ msgid ""
 "A general-purpose model ranging from 3 billion parameters to 70 billion, "
 "suitable for entry-level hardware."
 msgstr ""
+"Un modèle polyvalent allant de 3 milliards de paramètres à 70 milliards, "
+"adapté au matériel d'entrée de gamme."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:68
 #, kde-format
@@ -614,6 +624,8 @@ msgid ""
 "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
 "Llama 2 uncensored by Eric Hartford."
 msgstr ""
+"Wizard Vicuna Uncensored est un modèle de paramètres 7B, 13B et 30B reposant "
+"sur Llama 2 non censuré par Eric Hartford."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
 #, kde-format
@@ -651,6 +663,8 @@ msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
 "multilingual models that support 23 languages."
 msgstr ""
+"Aya 23, publié par Cohere, est une nouvelle famille de modèles multilingues "
+"à la pointe de la technologie prenant en charge 23 langues."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
@@ -744,6 +758,8 @@ msgid ""
 "BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
 "augmented with the LLaVA architecture."
 msgstr ""
+"BakLLaVA est un modèle multimodal constitué du modèle standard Mistral 7B "
+"complété par l'architecture LLaVA."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
 #, kde-format
@@ -840,6 +856,8 @@ msgid ""
 "A 7B and 15B uncensored variant of the Dolphin model family that excels at "
 "coding, based on StarCoder2."
 msgstr ""
+"Une variante non censurée 7B et 15B de la famille de modèles Dolphin très "
+"performants dans le codage, reposant sur StarCoder2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
@@ -897,6 +915,8 @@ msgid ""
 "InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
 "outstanding reasoning capability."
 msgstr ""
+"InternLM2.5 est un modèle de paramètre 7B adapté à des scénarios pratiques "
+"avec une capacité exceptionnelle de raisonnement."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:138
 #, kde-format
@@ -904,6 +924,8 @@ msgid ""
 "A compact, yet powerful 10.7B large language model designed for single-turn "
 "conversation."
 msgstr ""
+"Un grand modèle de langage, déjà très puissant, de 10.7B, conçu pour une "
+"conversation en un seul tour."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
 #, kde-format
@@ -911,6 +933,8 @@ msgid ""
 "Athene-V2 is a 72B parameter model which excels at code completion, "
 "mathematics, and log extraction tasks."
 msgstr ""
+"Athene-V2 est un modèle de paramètre 72B performant pour les tâches de "
+"complètement de code, de mathématiques et d'extraction de journaux."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
@@ -967,6 +991,8 @@ msgid ""
 "SmolLM2 is a family of compact language models available in three size: "
 "135M, 360M, and 1.7B parameters."
 msgstr ""
+"SmolLM2 est une famille de modèles de langues compactes disponibles en trois "
+"tailles : paramètres de 135M, 360M et 1,7B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
 #, kde-format
@@ -979,6 +1005,9 @@ msgid ""
 "A commercial-friendly small language model by NVIDIA optimized for roleplay, "
 "RAG QA, and function calling."
 msgstr ""
+"Un petit modèle de langage facile d'accès commercial conçu par NVIidia "
+"optimisé pour le jeu de rôles, l'assurance qualité « RAG QA » et l'appel de "
+"fonctions."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
 #, kde-format
@@ -1075,6 +1104,8 @@ msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
 msgstr ""
+"Un modèle de discussions léger permettant une sortie précise et réactive "
+"sans nécessiter de matériel haut de gamme."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
@@ -1109,6 +1140,8 @@ msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
 "capabilities of processing long contexts."
 msgstr ""
+"MistralLite est un modèle adapté reposant sur Mistral avec des capacités "
+"améliorées de traitement de longs contextes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
 #, kde-format
@@ -1132,6 +1165,8 @@ msgid ""
 "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
 "interleaving the model with itself."
 msgstr ""
+"MegaDolphin-2.2-120b est une dérivation de Dolphin-2.2-70b créée en "
+"entrelaçant le modèle avec lui-même."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:181
 #, kde-format
@@ -1148,6 +1183,8 @@ msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
 "useful for content conversion tasks."
 msgstr ""
+"Une série de modèles transformant du contenu « HTML » en contenu "
+"« Markdown », ce qui est utile pour les tâches de conversion de contenu."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
@@ -1193,6 +1230,8 @@ msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
 "information extraction, based on Phi-3."
 msgstr ""
+"Un modèle 3.8B adapté à partir d'un ensemble de données synthétiques privées "
+"de haute qualité pour l'extraction d'informations, reposant sur Phi-3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
 #, kde-format
@@ -1265,6 +1304,8 @@ msgid ""
 "Llama Guard 3 is a series of models fine-tuned for content safety "
 "classification of LLM inputs and responses."
 msgstr ""
+"Llama Guard 3 est une série de modèles adaptés pour la classification de la "
+"sécurité du contenu des entrées et des réponses du LLM."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
 #, kde-format
@@ -1302,6 +1343,8 @@ msgid ""
 "The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
 "in prompts and/or responses."
 msgstr ""
+"Les modèles IBM Granite Guardian 3.0 2B et 8B sont conçus pour détecter les "
+"risques dans les invites et / ou les réponses."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
 #, kde-format
@@ -1386,6 +1429,8 @@ msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
 "with 37B activated for each token."
 msgstr ""
+"Un modèle linguistique fort de mélange d'experts (MoE) avec 671B paramètres "
+"totaux avec 37B activés pour chaque jeton."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:238
 #, kde-format
@@ -1410,6 +1455,9 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
+"Une famille entièrement « Open source » de modèles de raisonnement "
+"construits à l'aide d'un ensemble de données dérivées de la distillation de "
+"DeepSeek-R1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
@@ -1455,6 +1503,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
+"Granite-3.2 est une famille de modèles d'IA à contexte long d'IBM Granite "
+"adaptée pour des capacités de réflexion."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
 #, kde-format
@@ -1470,6 +1520,8 @@ msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
 "fast, secure, and high-quality AI"
 msgstr ""
+"Modèle de 111 milliards de paramètres optimisé pour les entreprises "
+"exigeantes ayant besoin d'une IA rapide, sécurisée et de haute qualité"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
 #, kde-format
@@ -1501,6 +1553,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
+"DeepCoder est un modèle de codeur 14B entièrement « Open source » au niveau "
+"O3-mini, avec une version 1.5B également disponible."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1535,6 +1589,8 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
+"Phi 4 mini est un modèle ouvert léger faisant un compromis entre "
+"l'efficacité avec une capacité avancée de raisonnement."
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -1548,19 +1604,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurer Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Général"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modèles disponibles"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/ollama/ollamaconfiguredialog.cpp:51
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
