@@ -9,3 +9,13 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance() = default;
+
+QString TextAutoGenerateTextInstance::name() const
+{
+    return mName;
+}
+
+void TextAutoGenerateTextInstance::setName(const QString &newName)
+{
+    mName = newName;
+}
