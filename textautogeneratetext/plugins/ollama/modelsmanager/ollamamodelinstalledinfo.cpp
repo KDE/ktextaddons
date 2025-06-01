@@ -100,6 +100,7 @@ QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
     d.space() << "quantizationLevel:" << t.quantizationLevel();
     d.space() << "parameterSize:" << t.parameterSize();
     d.space() << "family:" << t.family();
+    d.space() << "generateModelName:" << t.generateModelName();
     return d;
 }
 
