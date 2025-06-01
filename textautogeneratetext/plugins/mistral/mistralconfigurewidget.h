@@ -6,18 +6,11 @@
 
 #pragma once
 
-#include <QWidget>
-class KPasswordLineEdit;
-class MistralConfigureWidget : public QWidget
+#include <TextAutoGenerateText/NetworkConfigureWidget>
+class MistralConfigureWidget : public TextAutoGenerateText::NetworkConfigureWidget
 {
     Q_OBJECT
 public:
     explicit MistralConfigureWidget(QWidget *parent = nullptr);
     ~MistralConfigureWidget() override;
-
-    void setApiKey(const QString &key);
-    [[nodiscard]] QString apiKey() const;
-
-private:
-    KPasswordLineEdit *const mApiKey;
 };

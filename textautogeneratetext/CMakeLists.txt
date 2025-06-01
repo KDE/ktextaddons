@@ -23,7 +23,10 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
 )
 
-add_library(KF6TextAutoGenerateText)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+add_library(KF6TextAutoGenerateText
+    widgets/networkpluginconfigure/networkconfigurewidget.h widgets/networkpluginconfigure/networkconfigurewidget.cpp)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
@@ -284,6 +287,7 @@ target_link_libraries(KF6TextAutoGenerateText
     KF6::CoreAddons
     KF6::ColorScheme
 )
+target_link_libraries(KF6TextAutoGenerateText PRIVATE Qt6::Widgets)
 target_include_directories(KF6TextAutoGenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/>")
 
 set_target_properties(KF6TextAutoGenerateText PROPERTIES
@@ -329,6 +333,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_
     RELATIVE widgets
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS
+    HEADER_NAMES
+    NetworkConfigureWidget
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/networkpluginconfigure
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS
     HEADER_NAMES
     TextAutoGenerateMenuWidget
@@ -354,6 +366,7 @@ install(FILES
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -363,6 +376,7 @@ install(FILES
     ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
