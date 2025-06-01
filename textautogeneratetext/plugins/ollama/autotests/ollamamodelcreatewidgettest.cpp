@@ -6,6 +6,7 @@
 #include "ollamamodelcreatewidgettest.h"
 #include "modelsmanager/ollamamodelcreatewidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(OllamaModelCreateWidgetTest)
 
 OllamaModelCreateWidgetTest::OllamaModelCreateWidgetTest(QObject *parent)
