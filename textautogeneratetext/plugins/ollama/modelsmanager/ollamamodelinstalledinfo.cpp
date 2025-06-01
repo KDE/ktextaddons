@@ -26,8 +26,11 @@ void OllamaModelInstalledInfo::parseInfo(const QJsonObject &obj)
 
 QString OllamaModelInstalledInfo::convertModelNameToDisplay(const QString &modelName)
 {
-    const int position = modelName.indexOf(QLatin1Char(':'));
-    QString originalModelName = modelName.first(position);
+    QString originalModelName = modelName;
+    if (modelName.contains(QLatin1Char(':'))) {
+        const int position = modelName.indexOf(QLatin1Char(':'));
+        originalModelName = modelName.first(position);
+    }
     originalModelName = originalModelName.at(0).toUpper() + originalModelName.mid(1, originalModelName.size());
     originalModelName.replace(QLatin1Char('-'), QLatin1Char(' '));
     return originalModelName;
