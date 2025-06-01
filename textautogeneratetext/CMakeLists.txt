@@ -23,10 +23,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
 )
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
-
-add_library(KF6TextAutoGenerateText
-    widgets/networkpluginconfigure/networkconfigurewidget.h widgets/networkpluginconfigure/networkconfigurewidget.cpp)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
@@ -157,6 +154,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     core/textautogeneratetextinstance.h
     core/textautogeneratetextinstance.cpp
+
+    core/textautogeneratetextinstancemanager.h
+    core/textautogeneratetextinstancemanager.cpp
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
@@ -255,6 +255,10 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     widgets/menu/textautogeneratemenutextmanager.h
     widgets/menu/textautogeneratemenuwidget.cpp
     widgets/menu/textautogeneratemenuwidget.h
+
+
+    widgets/networkpluginconfigure/networkconfigurewidget.h
+    widgets/networkpluginconfigure/networkconfigurewidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -287,7 +291,6 @@ target_link_libraries(KF6TextAutoGenerateText
     KF6::CoreAddons
     KF6::ColorScheme
 )
-target_link_libraries(KF6TextAutoGenerateText PRIVATE Qt6::Widgets)
 target_include_directories(KF6TextAutoGenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/>")
 
 set_target_properties(KF6TextAutoGenerateText PROPERTIES
@@ -316,6 +319,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextRequest
     TextAutoGenerateManagerBase
     TextAutoGenerateTextInstance
+    TextAutoGenerateTextInstanceManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
