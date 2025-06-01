@@ -32,7 +32,11 @@ QString OllamaModelInstalledInfo::convertModelNameToDisplay(const QString &model
         originalModelName = modelName.first(position);
     }
     originalModelName = originalModelName.at(0).toUpper() + originalModelName.mid(1, originalModelName.size());
-    originalModelName.replace(QLatin1Char('-'), QLatin1Char(' '));
+    const QStringList lst = originalModelName.split(QLatin1Char('-'));
+    if (lst.count() == 2) {
+        const QString secondPart = lst.at(1);
+        originalModelName = lst.at(0) + QLatin1Char(' ') + secondPart.at(0).toUpper() + secondPart.mid(1, secondPart.size());
+    }
     return originalModelName;
 }
 

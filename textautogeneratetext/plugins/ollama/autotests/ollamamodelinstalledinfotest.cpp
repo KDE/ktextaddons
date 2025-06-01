@@ -28,9 +28,9 @@ void OllamaModelInstalledInfoTest::shouldGenerateModelName_data()
 {
     QTest::addColumn<QString>("modelname");
     QTest::addColumn<QString>("displaymodelname");
-    QTest::newRow("test1") << QStringLiteral("reader-lm:0.5b") << QStringLiteral("Reader lm");
+    QTest::newRow("test1") << QStringLiteral("reader-lm:0.5b") << QStringLiteral("Reader Lm");
     QTest::newRow("test2") << QStringLiteral("deepseek:0.5b") << QStringLiteral("Deepseek");
-    QTest::newRow("test3") << QStringLiteral("reader-lm") << QStringLiteral("Reader lm");
+    QTest::newRow("test3") << QStringLiteral("reader-lm") << QStringLiteral("Reader Lm");
 }
 
 void OllamaModelInstalledInfoTest::shouldGenerateModelName()
