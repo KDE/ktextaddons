@@ -45,7 +45,6 @@ void TextAutoGenerateSearchWidget::slotSearchTextChanged(const QString &str)
     job->setSearchText(str);
     connect(job, &TextAutoGenerateSearchJob::searchDone, this, &TextAutoGenerateSearchWidget::slotSearchDone);
     job->start();
-    qDebug() << " Str " << str;
 }
 
 void TextAutoGenerateSearchWidget::slotSearchDone(const QList<TextAutoGenerateSearchMessage> &msgs)
