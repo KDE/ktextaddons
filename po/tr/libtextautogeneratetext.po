@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:41+0000\n"
+"POT-Creation-Date: 2025-06-01 00:41+0000\n"
 "PO-Revision-Date: 2025-05-29 21:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -188,7 +188,7 @@ msgid "Reasoning"
 msgstr "Akıl Yürütme"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
 msgstr "Desteklenen Diller"
@@ -225,27 +225,27 @@ msgstr "Model adını “ad:künye” biçiminde girin"
 msgid "Cancel"
 msgstr "İptal"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
 msgstr "Aile:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
 msgstr "Parametre boyutu:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
 msgstr "Nicemleme düzeyi:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
 msgstr "Değiştirilme:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Features Supported"
 msgstr "Desteklenen Özellikler"
@@ -1753,19 +1753,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama’yı Yapılandır"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Genel"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Kullanılabilir Modeller"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/ollama/ollamaconfiguredialog.cpp:51
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"

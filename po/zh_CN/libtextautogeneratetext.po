@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-29 00:41+0000\n"
+"POT-Creation-Date: 2025-06-01 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -14,8 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextautogeneratetext.pot\n"
-"X-Crowdin-File-ID: 57198\n"
+"X-Crowdin-File: /kf6-stable/messages/ktextaddons/libtextautogeneratetext."
+"pot\n"
+"X-Crowdin-File-ID: 57624\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -188,24 +189,21 @@ msgid "Reasoning"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:83
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Models"
-msgstr "模型："
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "重新加载模型"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
@@ -213,12 +211,10 @@ msgid "Categories"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "重新加载模型"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
@@ -230,44 +226,41 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Features Supported"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr "您想要移除此讨论吗？"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "重新加载模型"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
@@ -1434,25 +1427,23 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "配置 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:44
+#: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Manage Ollama Models"
+#: plugins/ollama/ollamaconfiguredialog.cpp:51
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr "管理 Olama 模型"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
