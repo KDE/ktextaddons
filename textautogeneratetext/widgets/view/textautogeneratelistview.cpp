@@ -80,32 +80,6 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
     }
 }
 
-void TextAutoGenerateListView::contextMenuEvent(QContextMenuEvent *event)
-{
-    QMenu menu(this);
-    const QModelIndex index = indexAt(event->pos());
-    if (index.isValid()) {
-        auto copyAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
-                                      mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"),
-                                      &menu);
-        copyAction->setShortcut(QKeySequence::Copy);
-        connect(copyAction, &QAction::triggered, this, [index, this]() {
-            slotCopyMessage(index);
-        });
-        menu.addAction(copyAction);
-        menu.addSeparator();
-        auto selectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All"), &menu);
-        connect(selectAllAction, &QAction::triggered, this, [this, index]() {
-            slotSelectAll(index);
-        });
-        selectAllAction->setShortcut(QKeySequence::SelectAll);
-        menu.addAction(selectAllAction);
-    }
-    if (!menu.actions().isEmpty()) {
-        menu.exec(event->globalPos());
-    }
-}
-
 void TextAutoGenerateListView::handleMouseEvent(QMouseEvent *event)
 {
     const QPersistentModelIndex index = indexAt(event->pos());

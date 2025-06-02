@@ -5,8 +5,10 @@
 */
 #include "textautogeneratebaselistview.h"
 #include "widgets/view/textautogeneratelistviewbasedelegate.h"
+#include <KLocalizedString>
 #include <QApplication>
 #include <QClipboard>
+#include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
 
@@ -28,6 +30,32 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
 }
 
 TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView() = default;
+
+void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
+{
+    QMenu menu(this);
+    const QModelIndex index = indexAt(event->pos());
+    if (index.isValid()) {
+        auto copyAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
+                                      mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"),
+                                      &menu);
+        copyAction->setShortcut(QKeySequence::Copy);
+        connect(copyAction, &QAction::triggered, this, [index, this]() {
+            slotCopyMessage(index);
+        });
+        menu.addAction(copyAction);
+        menu.addSeparator();
+        auto selectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All"), &menu);
+        connect(selectAllAction, &QAction::triggered, this, [this, index]() {
+            slotSelectAll(index);
+        });
+        selectAllAction->setShortcut(QKeySequence::SelectAll);
+        menu.addAction(selectAllAction);
+    }
+    if (!menu.actions().isEmpty()) {
+        menu.exec(event->globalPos());
+    }
+}
 
 void TextAutoGenerateBaseListView::slotSelectAll(const QModelIndex &index)
 {
