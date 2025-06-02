@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-01 00:41+0000\n"
-"PO-Revision-Date: 2025-05-31 19:07+0300\n"
+"POT-Creation-Date: 2025-06-02 00:41+0000\n"
+"PO-Revision-Date: 2025-06-01 20:58+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -92,12 +92,6 @@ msgstr "Mistral AI"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "הגדרת Mistral AI"
-
-#: plugins/mistral/mistralconfigurewidget.cpp:27
-#: plugins/openai/openaiconfigurewidget.cpp:27
-#, kde-format
-msgid "Api Key:"
-msgstr "מפתח API:"
 
 #: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
 #: plugins/openai/openaimanager.cpp:37
@@ -274,6 +268,8 @@ msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
 "compared to the Llama 3.1 405B model."
 msgstr ""
+"מודל 70B מהשורה הראשונה. Llama 3.3 70B מציע ביצועים דומים בהשוואה למודל "
+"Llama 3.1 405B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
@@ -286,6 +282,8 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
+"Llama 3.2 Vision הוא אוסף של מודלים יוצרים עם נימוק לתמונות מוכווני הנחיות "
+"בגדלים 11B ו־90B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
@@ -315,7 +313,7 @@ msgstr "מודל 7B שיצא לאור על ידי Mistral AI, עודכן לגר�
 #, kde-format
 msgid ""
 "A high-performing open embedding model with a large token context window."
-msgstr ""
+msgstr "מודל הטמעה פתוח עם ביצועים מעולים וחלון הקשר אסימונים גדול."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
 #, kde-format
@@ -323,6 +321,8 @@ msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
+"Gemma היא משפחה של מודלים קלילים ופתוחים מהשורה הראשונה שנבנתה על ידי Google "
+"DeepMind. עודכנה לגרסה 1.1"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
 #, kde-format
@@ -330,11 +330,13 @@ msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
 "0.5B to 110B parameters"
 msgstr ""
+"Qwen 1.5 היא סדרה של מודלי שפה גדולים מבית Alibaba Cloud שמשתרעת החל מ־0.5B "
+"ועד 110B משתנים"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
-msgstr ""
+msgstr "Qwen2 היא סדרה חדשה של מודלי שפה גדולים מבית קבוצת Alibaba"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
@@ -1509,6 +1511,23 @@ msgstr "בקשה:"
 msgid "No system prompt"
 msgstr "אין הנחיית מערכת"
 
+#. i18n: ectx: label, entry (Temperature), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:35
+#, kde-format
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+
+#. i18n: ectx: label, entry (Seed), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:38
+#, kde-format
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
@@ -1572,6 +1591,11 @@ msgstr "לשאול בינה מלאכותית…"
 msgctxt "@action"
 msgid "Configure…"
 msgstr "הגדרה…"
+
+#: widgets/networkpluginconfigure/networkconfigurewidget.cpp:29
+#, kde-format
+msgid "Api Key:"
+msgstr "מפתח API:"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

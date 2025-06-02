@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-01 00:41+0000\n"
+"POT-Creation-Date: 2025-06-02 00:41+0000\n"
 "PO-Revision-Date: 2025-05-24 21:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -91,12 +91,6 @@ msgstr "Mistral AI"
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "設定 Mistral IA"
-
-#: plugins/mistral/mistralconfigurewidget.cpp:27
-#: plugins/openai/openaiconfigurewidget.cpp:27
-#, kde-format
-msgid "Api Key:"
-msgstr "API 金鑰："
 
 #: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
 #: plugins/openai/openaimanager.cpp:37
@@ -1476,6 +1470,23 @@ msgstr "Prompt："
 msgid "No system prompt"
 msgstr "沒有系統 prompt"
 
+#. i18n: ectx: label, entry (Temperature), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:35
+#, kde-format
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+
+#. i18n: ectx: label, entry (Seed), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:38
+#, kde-format
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
@@ -1539,6 +1550,11 @@ msgstr "詢問 AI…"
 msgctxt "@action"
 msgid "Configure…"
 msgstr "設定…"
+
+#: widgets/networkpluginconfigure/networkconfigurewidget.cpp:29
+#, kde-format
+msgid "Api Key:"
+msgstr "API 金鑰："
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
