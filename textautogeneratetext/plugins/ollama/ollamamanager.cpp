@@ -6,6 +6,7 @@
   Based on code from alpaka
 */
 #include "ollamamanager.h"
+#include "autogeneratetext_ollama_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
 #include "ollamareply.h"
 #include "ollamasettings.h"
@@ -41,6 +42,7 @@ void OllamaManager::deleteModel(const QString &modelName)
                                  OllamaReply::RequestTypes::DeleteModel,
                                  this};
     connect(reply, &OllamaReply::finished, this, [this, reply] {
+        // TODO verify it.
         // if (reply->error() == QNetworkReply::NoError) {
         Q_EMIT refreshInstalledModels();
         //}
@@ -165,6 +167,7 @@ OllamaReply *OllamaManager::getCompletion(const TextAutoGenerateText::TextAutoGe
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
+    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaReply::RequestTypes::StreamingGenerate,
@@ -182,11 +185,16 @@ OllamaReply *OllamaManager::getChatCompletion(const TextAutoGenerateText::TextAu
     QJsonObject data;
     data["model"_L1] = OllamaSettings::model();
     data["messages"_L1] = request.messages();
+    data["temperature"_L1] = OllamaSettings::temperature();
+    if (OllamaSettings::seed() != 0) {
+        data["seed"_L1] = OllamaSettings::seed();
+    }
     /*
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
     */
+    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaReply::RequestTypes::StreamingChat,

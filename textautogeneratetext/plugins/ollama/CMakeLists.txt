@@ -11,6 +11,14 @@ ecm_qt_declare_logging_category(textautogenerateollama
     EXPORT KTEXTADDONS
 )
 
+ecm_qt_declare_logging_category(textautogenerateollama
+    HEADER autogeneratetext_ollama_generate_json_debug.h
+    IDENTIFIER AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG
+    CATEGORY_NAME org.kde.kf.autogeneratetext.ollama_json
+    DESCRIPTION "autogenerate text ollama (json info)"
+    EXPORT KTEXTADDONS
+)
+
 target_sources(textautogenerateollama PRIVATE
     ollamaconfigurewidget.h
     ollamaconfigurewidget.cpp
