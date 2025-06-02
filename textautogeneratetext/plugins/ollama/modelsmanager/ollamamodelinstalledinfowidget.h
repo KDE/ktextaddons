@@ -21,6 +21,8 @@ public:
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void changeFont(QLabel *label);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void
+    appendCategories(QStringList &lst, OllamaModelAvailableInfo::Category cat, OllamaModelAvailableInfo::Categories categories);
     QLabel *const mFamilyNameLabel;
     QLabel *const mParameterSizeLabel;
     QLabel *const mQuantizationLevelLabel;
