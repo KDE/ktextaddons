@@ -25,11 +25,13 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
     mMessageWidget->setObjectName("mMessageWidget"_L1);
     mainLayout->addWidget(mMessageWidget, 0, Qt::AlignVCenter);
     mMessageWidget->setCloseButtonVisible(false);
+    mMessageWidget->setMessageType(KMessageWidget::MessageType::Error);
 
     auto configureButton = new QPushButton(i18n("Configure…"), this);
     configureButton->setObjectName("configureButton"_L1);
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::slotConfigure);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
+    mainLayout->addStretch(1);
 }
 
 TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
