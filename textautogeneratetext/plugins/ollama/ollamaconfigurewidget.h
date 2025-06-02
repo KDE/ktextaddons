@@ -11,6 +11,8 @@ class OllamaComboBoxWidget;
 class QPlainTextEdit;
 class KMessageWidget;
 class OllamaManager;
+class QDoubleSpinBox;
+class QSpinBox;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -27,5 +29,7 @@ private:
     QPlainTextEdit *const mPrompt;
     OllamaComboBoxWidget *const mModelComboBoxWidget;
     KMessageWidget *const mMessageWidget;
+    QDoubleSpinBox *const mTemperature;
+    QSpinBox *const mSeed;
     OllamaManager *const mManager;
 };

@@ -33,9 +33,11 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
     <entry name="Temperature" type="Double">
       <label>The temperature of the model. Increasing the temperature will make the model answer more creatively.</label>
+      <default>0.8</default>
     </entry>
     <entry name="Seed" type="Int">
       <label>Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: 0)</label>
+      <default>0</default>
     </entry>    
   </group>  
 </kcfg>
