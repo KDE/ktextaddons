@@ -13,6 +13,11 @@ TextAutoGenerateTextInstanceManager::TextAutoGenerateTextInstanceManager(QObject
 
 TextAutoGenerateTextInstanceManager::~TextAutoGenerateTextInstanceManager() = default;
 
+void TextAutoGenerateTextInstanceManager::loadInstances()
+{
+    // TODO
+}
+
 QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstanceManager::instances() const
 {
     return mInstances;

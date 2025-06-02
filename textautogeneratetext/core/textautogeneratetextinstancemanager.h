@@ -21,6 +21,8 @@ public:
     [[nodiscard]] QList<TextAutoGenerateTextInstance> instances() const;
     void setInstances(const QList<TextAutoGenerateTextInstance> &newInstances);
 
+    void loadInstances();
+
 private:
     QList<TextAutoGenerateTextInstance> mInstances;
 };
