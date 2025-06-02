@@ -12,3 +12,5 @@ TextAutoGenerateTextInstanceManager::TextAutoGenerateTextInstanceManager(QObject
 }
 
 TextAutoGenerateTextInstanceManager::~TextAutoGenerateTextInstanceManager() = default;
+
+#include "moc_textautogeneratetextinstancemanager.cpp"

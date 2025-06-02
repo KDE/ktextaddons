@@ -41,3 +41,5 @@ QString NetworkConfigureWidget::apiKey() const
 {
     return mApiKey->password();
 }
+
+#include "moc_networkconfigurewidget.cpp"
