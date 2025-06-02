@@ -20,6 +20,7 @@ public:
     void slotSelectAll(const QModelIndex &index);
 
 protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     void mouseDoubleClickEvent(QMouseEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;

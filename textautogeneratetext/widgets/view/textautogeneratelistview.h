@@ -26,7 +26,6 @@ public:
     void setModel(QAbstractItemModel *newModel) override;
 
 protected:
-    void contextMenuEvent(QContextMenuEvent *event) override;
     void leaveEvent(QEvent *event) override;
 
 Q_SIGNALS:
