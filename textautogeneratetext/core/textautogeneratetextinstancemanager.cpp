@@ -13,4 +13,14 @@ TextAutoGenerateTextInstanceManager::TextAutoGenerateTextInstanceManager(QObject
 
 TextAutoGenerateTextInstanceManager::~TextAutoGenerateTextInstanceManager() = default;
 
+QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstanceManager::instances() const
+{
+    return mInstances;
+}
+
+void TextAutoGenerateTextInstanceManager::setInstances(const QList<TextAutoGenerateTextInstance> &newInstances)
+{
+    mInstances = newInstances;
+}
+
 #include "moc_textautogeneratetextinstancemanager.cpp"

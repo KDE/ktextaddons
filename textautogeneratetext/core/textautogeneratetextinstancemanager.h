@@ -7,6 +7,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextInstance>
 
 namespace TextAutoGenerateText
 {
@@ -16,5 +17,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceManager : public Q
 public:
     explicit TextAutoGenerateTextInstanceManager(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstanceManager() override;
+
+    [[nodiscard]] QList<TextAutoGenerateTextInstance> instances() const;
+    void setInstances(const QList<TextAutoGenerateTextInstance> &newInstances);
+
+private:
+    QList<TextAutoGenerateTextInstance> mInstances;
 };
 }
