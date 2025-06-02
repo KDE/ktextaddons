@@ -97,15 +97,34 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
             const QLocale locale(lang);
             vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
         }
-        auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
-        infoLayout->addWidget(featuresGroupBox);
-        auto vboxfeaturesLayout = new OllamaModelFlowLayout(featuresGroupBox);
-        for (const auto &cat : (*it).categoriesName()) {
-            vboxfeaturesLayout->addWidget(new QLabel(cat, mInfoWidget));
+
+        QStringList categoriesName;
+        const OllamaModelAvailableInfo::Categories categories = (*it).categories();
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Tools, categories);
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Multilingual, categories);
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Code, categories);
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Math, categories);
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Vision, categories);
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Embedding, categories);
+        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Reasoning, categories);
+        if (!categoriesName.isEmpty()) {
+            auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
+            infoLayout->addWidget(featuresGroupBox);
+            auto vboxfeaturesLayout = new OllamaModelFlowLayout(featuresGroupBox);
+            for (const QString &name : categoriesName) {
+                vboxfeaturesLayout->addWidget(new QLabel(name, mInfoWidget));
+            }
         }
     }
 
     infoLayout->addStretch(1);
+}
+
+void OllamaModelInstalledInfoWidget::appendCategories(QStringList &lst, OllamaModelAvailableInfo::Category cat, OllamaModelAvailableInfo::Categories categories)
+{
+    if (categories & cat) {
+        lst.append(OllamaModelAvailableInfo::convertCategoryToI18n(cat));
+    }
 }
 
 #include "moc_ollamamodelinstalledinfowidget.cpp"
