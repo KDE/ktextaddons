@@ -6,6 +6,7 @@
   Based on code from alpaka
 */
 #include "ollamamanager.h"
+#include "autogeneratetext_ollama_debug.h"
 #include "autogeneratetext_ollama_generate_json_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
 #include "ollamareply.h"
@@ -52,6 +53,36 @@ void OllamaManager::deleteModel(const QString &modelName)
 void OllamaManager::showModelInfo(const QString &modelName)
 {
     // TODO
+}
+
+void OllamaManager::createModel(const CreateModelInfo &info)
+{
+    if (!info.isValid()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Invalid info";
+        return;
+    }
+    QNetworkRequest req{QUrl::fromUserInput(OllamaSettings::serverUrl().toString() + OllamaUtils::createPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    QJsonObject data;
+    data["model"_L1] = info.modelName;
+    data["from"_L1] = info.fromModelName;
+    if (!info.systemPrompt.isEmpty()) {
+        data["system"_L1] = info.systemPrompt;
+    }
+
+    auto reply = new OllamaReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        OllamaReply::RequestTypes::CreateModel,
+        this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
+        Q_EMIT finished(reply->readResponse());
+        Q_EMIT refreshInstalledModels();
+    });
+    /*
+    connect(reply, &OllamaReply::downloadInProgress, this, [this, modelName](const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info) {
+        Q_EMIT downloadInProgress(modelName, info);
+    });
+    */
 }
 
 QList<OllamaModelInstalledInfo> OllamaManager::installedInfos() const
@@ -218,6 +249,19 @@ bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
         return false;
     }
     return true;
+}
+
+QDebug operator<<(QDebug d, const OllamaManager::CreateModelInfo &t)
+{
+    d.space() << "modelName:" << t.modelName;
+    d.space() << "fromModelName:" << t.fromModelName;
+    d.space() << "systemPrompt:" << t.systemPrompt;
+    return d;
+}
+
+bool OllamaManager::CreateModelInfo::isValid() const
+{
+    return !modelName.isEmpty();
 }
 
 #include "moc_ollamamanager.cpp"

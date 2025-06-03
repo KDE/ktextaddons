@@ -17,6 +17,13 @@ class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public TextAutoGenerateText:
 {
     Q_OBJECT
 public:
+    struct TEXTAUTOGENERATEOLLAMA_EXPORT CreateModelInfo {
+        QString modelName;
+        QString fromModelName;
+        QString systemPrompt;
+        [[nodiscard]] bool isValid() const;
+    };
+
     explicit OllamaManager(QObject *parent = nullptr);
     ~OllamaManager() override;
 
@@ -29,6 +36,8 @@ public:
 
     void showModelInfo(const QString &modelName);
 
+    void createModel(const CreateModelInfo &info);
+
     [[nodiscard]] QList<OllamaModelInstalledInfo> installedInfos() const;
     void setInstalledInfos(const QList<OllamaModelInstalledInfo> &newInstalledInfos);
 
@@ -40,3 +49,5 @@ Q_SIGNALS:
 private:
     QList<OllamaModelInstalledInfo> mInstalledInfos;
 };
+Q_DECLARE_TYPEINFO(OllamaManager::CreateModelInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATEOLLAMA_EXPORT QDebug operator<<(QDebug d, const OllamaManager::CreateModelInfo &t);
