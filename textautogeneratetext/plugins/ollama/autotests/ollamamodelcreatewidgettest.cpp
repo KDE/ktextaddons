@@ -16,7 +16,7 @@ OllamaModelCreateWidgetTest::OllamaModelCreateWidgetTest(QObject *parent)
 
 OllamaModelCreateWidgetTest::~OllamaModelCreateWidgetTest()
 {
-    OllamaModelCreateWidget w;
+    OllamaModelCreateWidget w(nullptr);
     // TODO
 }
 

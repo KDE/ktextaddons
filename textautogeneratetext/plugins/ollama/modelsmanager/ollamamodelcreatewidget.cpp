@@ -7,8 +7,9 @@
 #include <KLocalizedString>
 #include <QVBoxLayout>
 
-OllamaModelCreateWidget::OllamaModelCreateWidget(QWidget *parent)
+OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
+    , mManager(manager)
 {
 }
 

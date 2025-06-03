@@ -6,6 +6,7 @@
 #include "ollamaconfiguredialog.h"
 #include "modelsmanager/ollamamodelavailableinfosmanager.h"
 #include "modelsmanager/ollamamodelavailablewidget.h"
+#include "modelsmanager/ollamamodelcreatewidget.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
 #include "ollamaconfigurewidget.h"
 #include <KConfigGroup>
@@ -26,6 +27,7 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     , mOllamaConfigureWidget(new OllamaConfigureWidget(manager, this))
     , mOllamaModelWidget(new OllamaModelAvailableWidget(manager, this))
     , mOllamaModelInstalledWidget(new OllamaModelInstalledWidget(manager, this))
+    , mOllamaModelCreateWidget(new OllamaModelCreateWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     setFaceType(KPageDialog::List);
@@ -53,6 +55,12 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     mOllamaModelInstalledWidget->setObjectName(QStringLiteral("mOllamaModelInstalledWidget"));
     // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
     addPage(configureModelInstalledWidgetPage);
+
+    const QString modelCreatePageName = i18nc("@title Preferences page name", "Create Models");
+    auto configureModelCreateWidgetPage = new KPageWidgetItem(mOllamaModelCreateWidget, modelCreatePageName);
+    mOllamaModelCreateWidget->setObjectName(QStringLiteral("mOllamaModelCreateWidget"));
+    // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
+    addPage(configureModelCreateWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaConfigureDialog::slotAccepted);
     readConfig();

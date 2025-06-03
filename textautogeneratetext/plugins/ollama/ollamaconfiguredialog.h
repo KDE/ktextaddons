@@ -10,6 +10,7 @@ class OllamaConfigureWidget;
 class OllamaManager;
 class OllamaModelAvailableWidget;
 class OllamaModelInstalledWidget;
+class OllamaModelCreateWidget;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureDialog : public KPageDialog
 {
     Q_OBJECT
@@ -24,4 +25,5 @@ private:
     OllamaConfigureWidget *const mOllamaConfigureWidget;
     OllamaModelAvailableWidget *const mOllamaModelWidget;
     OllamaModelInstalledWidget *const mOllamaModelInstalledWidget;
+    OllamaModelCreateWidget *const mOllamaModelCreateWidget;
 };
