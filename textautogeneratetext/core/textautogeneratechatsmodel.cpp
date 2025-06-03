@@ -286,6 +286,18 @@ void TextAutoGenerateChatsModel::setChatInProgress(const QByteArray &chatId, boo
     }
 }
 
+QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.identifier() == chatId;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).title();
+    }
+    return {};
+}
+
 bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {

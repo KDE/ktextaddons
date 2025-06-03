@@ -71,6 +71,8 @@ public:
 
     void setChatInProgress(const QByteArray &chatId, bool state);
 
+    [[nodiscard]] QString title(const QByteArray &chatId) const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
