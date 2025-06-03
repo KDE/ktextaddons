@@ -11,6 +11,7 @@
 #include "ollamamodelavailablelistview.h"
 #include "ollamamodelavailablesearchwidget.h"
 #include "ollamamodeldownloadprogresswidget.h"
+#include <QScrollArea>
 #include <QSplitter>
 #include <QStackedWidget>
 #include <QVBoxLayout>
@@ -24,6 +25,7 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     , mOllamaModelDownloadProgressWidget(new OllamaModelDownloadProgressWidget(manager, this))
     , mStackedWidget(new QStackedWidget(this))
     , mAvailableInfosModel(new OllamaModelAvailableInfosModel(this))
+    , mScrollArea(new QScrollArea(this))
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
@@ -41,15 +43,20 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
     mListView->setObjectName(QStringLiteral("mListView"));
     splitter->addWidget(mListView);
 
+    mScrollArea->setObjectName(QStringLiteral("mScrollArea"));
+    mScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    mScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    mScrollArea->setWidgetResizable(true);
+    mScrollArea->setWidget(mInfoWidget);
     mInfoWidget->setObjectName(QStringLiteral("mInfoWidget"));
     splitter->addWidget(mStackedWidget);
     mStackedWidget->hide();
 
     mOllamaModelDownloadProgressWidget->setObjectName(QStringLiteral("mOllamaModelDownloadProgressWidget"));
     mStackedWidget->setObjectName(QStringLiteral("mStackedWidget"));
-    mStackedWidget->addWidget(mInfoWidget);
+    mStackedWidget->addWidget(mScrollArea);
     mStackedWidget->addWidget(mOllamaModelDownloadProgressWidget);
-    mStackedWidget->setCurrentWidget(mInfoWidget);
+    mStackedWidget->setCurrentWidget(mScrollArea);
     connect(mInfoWidget, &OllamaModelAvailableInfoWidget::downloadModel, this, &OllamaModelAvailableWidget::slotDownloadModel);
 
     mProxyModel->setSourceModel(mAvailableInfosModel);
@@ -84,7 +91,7 @@ void OllamaModelAvailableWidget::slotClicked(const QModelIndex &index)
         return;
     }
     mStackedWidget->setVisible(true);
-    mStackedWidget->setCurrentWidget(mInfoWidget);
+    mStackedWidget->setCurrentWidget(mScrollArea);
     mInfoWidget->generateWidget(index);
 }
 

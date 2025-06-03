@@ -14,6 +14,7 @@ class OllamaModelAvailableInfosSortProxyModel;
 class OllamaModelDownloadProgressWidget;
 class QStackedWidget;
 class OllamaManager;
+class QScrollArea;
 class OllamaModelAvailableInfosModel;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableWidget : public QWidget
 {
@@ -35,4 +36,5 @@ private:
     OllamaModelDownloadProgressWidget *const mOllamaModelDownloadProgressWidget;
     QStackedWidget *const mStackedWidget;
     OllamaModelAvailableInfosModel *const mAvailableInfosModel;
+    QScrollArea *const mScrollArea;
 };
