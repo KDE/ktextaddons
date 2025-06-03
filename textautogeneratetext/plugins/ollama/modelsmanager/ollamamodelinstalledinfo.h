@@ -41,6 +41,9 @@ public:
 
     static QString convertModelNameToDisplay(const QString &modelName);
 
+    [[nodiscard]] QString parentModel() const;
+    void setParentModel(const QString &newParentModel);
+
 private:
     QString mName;
     QString mModel;
@@ -49,6 +52,7 @@ private:
     QString mParameterSize;
     QString mModifyAt;
     QString mGeneratedModelName;
+    QString mParentModel;
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t);

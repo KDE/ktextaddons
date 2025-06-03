@@ -119,8 +119,10 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelflowlayout.h
     modelsmanager/ollamamodelflowlayout.cpp
+
     modelsmanager/ollamamodelcreatewidget.h
     modelsmanager/ollamamodelcreatewidget.cpp
+
     modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp
     modelsmanager/ollamamodelcreatefromexistingmodelwidget.h
 )

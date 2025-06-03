@@ -82,6 +82,15 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     auto infoLayout = new QVBoxLayout(mInfoWidget);
     infoLayout->setContentsMargins({});
 
+    if (const QString parentModelName = info.parentModel(); !parentModelName.isEmpty()) {
+        auto label = new QLabel(i18n("Parent Model:"), mInfoWidget);
+        infoLayout->addWidget(label);
+        changeFont(label);
+
+        auto parentModelLabel = new QLabel(parentModelName, mInfoWidget);
+        infoLayout->addWidget(parentModelLabel);
+    }
+
     QString installedName = info.model();
     const int position = installedName.indexOf(QLatin1Char(':'));
     installedName = installedName.first(position);

@@ -4,13 +4,19 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerateollama_private_export.h"
 #include <QWidget>
-
-class OllamaModelCreateFromExistingModelWidget : public QWidget
+class QLineEdit;
+class OllamaManager;
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCreateFromExistingModelWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit OllamaModelCreateFromExistingModelWidget(QWidget *parent = nullptr);
+    explicit OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelCreateFromExistingModelWidget() override;
+
+private:
+    QLineEdit *const mModelName;
+    QLineEdit *const mTagName;
+    OllamaManager *const mOllamaManager;
 };

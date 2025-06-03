@@ -20,6 +20,7 @@ void OllamaModelInstalledInfo::parseInfo(const QJsonObject &obj)
     mFamily = detailsObj["family"_L1].toString();
     mQuantizationLevel = detailsObj["quantization_level"_L1].toString();
     mParameterSize = detailsObj["parameter_size"_L1].toString();
+    mParentModel = detailsObj["parent_model"_L1].toString();
 
     mGeneratedModelName = convertModelNameToDisplay(model());
 }
@@ -38,6 +39,16 @@ QString OllamaModelInstalledInfo::convertModelNameToDisplay(const QString &model
         originalModelName = lst.at(0) + QLatin1Char(' ') + secondPart.at(0).toUpper() + secondPart.mid(1, secondPart.size());
     }
     return originalModelName;
+}
+
+QString OllamaModelInstalledInfo::parentModel() const
+{
+    return mParentModel;
+}
+
+void OllamaModelInstalledInfo::setParentModel(const QString &newParentModel)
+{
+    mParentModel = newParentModel;
 }
 
 QString OllamaModelInstalledInfo::parameterSize() const
@@ -103,6 +114,7 @@ void OllamaModelInstalledInfo::setFamily(const QString &newFamily)
 QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
 {
     d.space() << "model:" << t.model();
+    d.space() << "parentModel:" << t.parentModel();
     d.space() << "name:" << t.name();
     d.space() << "quantizationLevel:" << t.quantizationLevel();
     d.space() << "parameterSize:" << t.parameterSize();
@@ -114,7 +126,7 @@ QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
 bool OllamaModelInstalledInfo::operator==(const OllamaModelInstalledInfo &other) const
 {
     return mName == other.name() && mModel == other.model() && mQuantizationLevel == other.quantizationLevel() && mFamily == other.family()
-        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt();
+        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt() && mParentModel == other.parentModel();
 }
 
 QString OllamaModelInstalledInfo::modifyAtInLocal() const
