@@ -49,6 +49,7 @@ public:
         Show,
         DownloadModel,
         DeleteModel,
+        CreateModel,
     };
     explicit TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     ~TextAutoGenerateReply() override;

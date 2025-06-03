@@ -54,6 +54,8 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
         }
         case RequestTypes::DeleteModel:
             break;
+        case RequestTypes::CreateModel:
+            break;
         case RequestTypes::Unknown:
             break;
         case RequestTypes::Show:
@@ -100,6 +102,7 @@ QString OllamaReply::readResponse() const
     switch (mRequestType) {
     case RequestTypes::DownloadModel:
     case RequestTypes::DeleteModel:
+    case RequestTypes::CreateModel:
     case RequestTypes::Unknown:
         break;
     case RequestTypes::StreamingChat:
