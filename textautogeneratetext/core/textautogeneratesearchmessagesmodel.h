@@ -29,6 +29,7 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] bool isEmpty() const;
 
 private:
     QList<TextAutoGenerateSearchMessage> mSearchMessages;

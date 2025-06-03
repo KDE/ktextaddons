@@ -9,6 +9,9 @@
 #include "core/textautogeneratesearchmessagesmodel.h"
 #include "core/textautogeneratesearchmessageutils.h"
 #include "textautogeneratesearchlistviewdelegate.h"
+#include <KLocalizedString>
+#include <QEvent>
+#include <QPainter>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateSearchListView::TextAutoGenerateSearchListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -37,6 +40,43 @@ void TextAutoGenerateSearchListView::slotGoToMessage(const QString &link)
     if (pathList.count() == 2) {
         mManager->goToMessage(pathList.at(0).toLatin1(), pathList.at(1).toLatin1());
     }
+}
+
+void TextAutoGenerateSearchListView::paintEvent(QPaintEvent *event)
+{
+    if (mModel->isEmpty()) {
+        const QString label = i18n("No Messages Found.");
+
+        QPainter p(viewport());
+
+        QFont font = p.font();
+        font.setItalic(true);
+        p.setFont(font);
+
+        if (!mTextColor.isValid()) {
+            generalPaletteChanged();
+        }
+        p.setPen(mTextColor);
+        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, label);
+    } else {
+        TextAutoGenerateBaseListView::paintEvent(event);
+    }
+}
+
+void TextAutoGenerateSearchListView::generalPaletteChanged()
+{
+    const QPalette palette = viewport()->palette();
+    QColor color = palette.text().color();
+    color.setAlpha(128);
+    mTextColor = color;
+}
+
+bool TextAutoGenerateSearchListView::event(QEvent *ev)
+{
+    if (ev->type() == QEvent::ApplicationPaletteChange) {
+        generalPaletteChanged();
+    }
+    return TextAutoGenerateBaseListView::event(ev);
 }
 
 #include "moc_textautogeneratesearchlistview.cpp"

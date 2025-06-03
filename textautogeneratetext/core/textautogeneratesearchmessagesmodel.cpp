@@ -54,4 +54,9 @@ QVariant TextAutoGenerateSearchMessagesModel::data(const QModelIndex &index, int
     return {};
 }
 
+bool TextAutoGenerateSearchMessagesModel::isEmpty() const
+{
+    return mSearchMessages.isEmpty();
+}
+
 #include "moc_textautogeneratesearchmessagesmodel.cpp"

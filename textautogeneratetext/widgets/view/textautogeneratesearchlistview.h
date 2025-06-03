@@ -20,8 +20,14 @@ public:
 
     void setSearchMessages(const QList<TextAutoGenerateSearchMessage> &msgs);
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+    [[nodiscard]] bool event(QEvent *ev) override;
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotGoToMessage(const QString &link);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void generalPaletteChanged();
+    QColor mTextColor;
     TextAutoGenerateSearchMessagesModel *const mModel;
 };
 }
