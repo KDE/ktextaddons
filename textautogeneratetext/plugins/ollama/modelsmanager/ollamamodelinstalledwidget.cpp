@@ -12,6 +12,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLineEdit>
+#include <QScrollArea>
 #include <QSortFilterProxyModel>
 #include <QSplitter>
 #include <QToolButton>
@@ -46,8 +47,14 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     mOllamaModelInstalledListView->setObjectName(QStringLiteral("mOllamaModelInstalledListView"));
     splitter->addWidget(mOllamaModelInstalledListView);
 
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setObjectName(QStringLiteral("scrollArea"));
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    splitter->addWidget(scrollArea);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setWidget(mOllamaModelInstalledInfoWidget);
     mOllamaModelInstalledInfoWidget->setObjectName(QStringLiteral("mOllamaModelInstalledInfoWidget"));
-    splitter->addWidget(mOllamaModelInstalledInfoWidget);
 
     auto model = new OllamaModelInstalledInfosModel(this);
     if (mManager) {

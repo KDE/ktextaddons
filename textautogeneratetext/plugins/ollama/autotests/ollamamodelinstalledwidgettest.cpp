@@ -8,6 +8,7 @@
 #include "modelsmanager/ollamamodelinstalledlistview.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
 #include "modelsmanager/ollamamodelsearchlineedit.h"
+#include <QScrollArea>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -37,6 +38,12 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit);
     auto mOllamaModelInstalledInfoWidget = w.findChild<OllamaModelInstalledInfoWidget *>(QStringLiteral("mOllamaModelInstalledInfoWidget"));
     QVERIFY(mOllamaModelInstalledInfoWidget);
+
+    auto scrollArea = w.findChild<QScrollArea *>(QStringLiteral("scrollArea"));
+    QVERIFY(scrollArea);
+    QCOMPARE(scrollArea->horizontalScrollBarPolicy(), Qt::ScrollBarAlwaysOff);
+    QCOMPARE(scrollArea->verticalScrollBarPolicy(), Qt::ScrollBarAsNeeded);
+    QVERIFY(scrollArea->widgetResizable());
 }
 
 #include "moc_ollamamodelinstalledwidgettest.cpp"
