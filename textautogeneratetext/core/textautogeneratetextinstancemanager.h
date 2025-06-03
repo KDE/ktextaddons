@@ -23,6 +23,8 @@ public:
 
     void loadInstances();
 
+    void saveInstances();
+
 private:
     QList<TextAutoGenerateTextInstance> mInstances;
 };

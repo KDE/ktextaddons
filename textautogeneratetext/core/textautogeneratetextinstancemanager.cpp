@@ -18,6 +18,11 @@ void TextAutoGenerateTextInstanceManager::loadInstances()
     // TODO
 }
 
+void TextAutoGenerateTextInstanceManager::saveInstances()
+{
+    // TODO
+}
+
 QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstanceManager::instances() const
 {
     return mInstances;
