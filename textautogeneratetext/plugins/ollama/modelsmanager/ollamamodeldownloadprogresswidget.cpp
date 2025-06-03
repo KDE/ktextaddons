@@ -23,10 +23,10 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
     mainLayout->setContentsMargins({});
 
     mModelNameLabel->setObjectName(QStringLiteral("mModelNameLabel"));
-    mainLayout->addWidget(mModelNameLabel);
+    mainLayout->addWidget(mModelNameLabel, 0, Qt::AlignHCenter);
 
     mProgressStatusLabel->setObjectName(QStringLiteral("mProgressStatusLabel"));
-    mainLayout->addWidget(mProgressStatusLabel);
+    mainLayout->addWidget(mProgressStatusLabel, 0, Qt::AlignHCenter);
 
     mProgressBar->setObjectName(QStringLiteral("mProgressBar"));
     mainLayout->addWidget(mProgressBar);
@@ -49,6 +49,7 @@ OllamaModelDownloadProgressWidget::~OllamaModelDownloadProgressWidget() = defaul
 void OllamaModelDownloadProgressWidget::downloadModel(const QString &modelName)
 {
     mModelName = modelName;
+    mModelNameLabel->setText(modelName);
     qDebug() << " downloadModel " << modelName;
     auto reply = mManager->downloadModel(modelName);
     // TODO reply->
