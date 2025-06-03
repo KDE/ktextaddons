@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-01 00:41+0000\n"
+"POT-Creation-Date: 2025-06-03 02:39+0000\n"
 "PO-Revision-Date: 2025-06-01 20:58+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -246,7 +246,7 @@ msgstr "רמת כימות:"
 msgid "Modified At:"
 msgstr "מועד עריכה:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
 msgstr "יכולות נתמכות"
@@ -1629,7 +1629,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "חיפוש…"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:30
 #, kde-format
 msgid "Configure…"
 msgstr "הגדרה…"
@@ -1655,6 +1655,24 @@ msgstr "שליחה"
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr "העתקת הבחירה"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "העתקה"
+
+#: widgets/view/textautogeneratebaselistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "בחירה בהכול"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
@@ -1696,24 +1714,6 @@ msgstr "להסיר את השיחה?"
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "הסרת שיחה"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy Selection"
-msgstr "העתקת הבחירה"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy"
-msgstr "העתקה"
-
-#: widgets/view/textautogeneratelistview.cpp:97
-#, kde-format
-msgctxt "@action"
-msgid "Select All"
-msgstr "בחירה בהכול"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
