@@ -320,6 +320,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateManagerBase
     TextAutoGenerateTextInstance
     TextAutoGenerateTextInstanceManager
+    TextAutoGenerateChatsModel
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
