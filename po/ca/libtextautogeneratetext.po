@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:41+0000\n"
-"PO-Revision-Date: 2025-05-29 09:40+0200\n"
+"POT-Creation-Date: 2025-06-03 00:41+0000\n"
+"PO-Revision-Date: 2025-06-02 10:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -94,7 +94,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configura Mistral AI"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -241,7 +241,7 @@ msgstr "Nivell de quantificació:"
 msgid "Modified At:"
 msgstr "Modificat el:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
 msgstr "Característiques admeses"
@@ -1784,22 +1784,61 @@ msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Models instal·lats"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#, kde-format
+msgid "Temperature:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:51
+#, fuzzy, kde-format
+#| msgid ""
+#| "The temperature of the model. Increasing the temperature will make the "
+#| "model answer more creatively."
+msgctxt "@info:tooltip"
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+"La temperatura del model. L'augment de la temperatura farà que la resposta "
+"del model sigui més creativa."
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#, kde-format
+msgid "Seed:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sets the random number seed to use for generation. Setting this to a "
+#| "specific number will make the model generate the same text for the same "
+#| "prompt. (Default: 0)"
+msgctxt "@info:tooltip"
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+"Estableix el nombre aleatori de llavors a usar per a la generació. Establir "
+"això a un nombre específic farà que el model generi el mateix text per a la "
+"mateixa indicació. (Predeterminat: 0)"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Indicació:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgid "No system prompt"
 msgstr "Sense indicació del sistema"
@@ -1811,15 +1850,20 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"La temperatura del model. L'augment de la temperatura farà que la resposta "
+"del model sigui més creativa."
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:38
+#: plugins/ollama/ollamasettings.kcfg:39
 #, kde-format
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"Estableix el nombre aleatori de llavors a usar per a la generació. Establir "
+"això a un nombre específic farà que el model generi el mateix text per a la "
+"mateixa indicació. (Predeterminat: 0)"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
@@ -1938,7 +1982,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Cerca…"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:30
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
@@ -1964,6 +2008,24 @@ msgstr "Envia"
 #, kde-format
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr "Copia la selecció"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "Copia"
+
+#: widgets/view/textautogeneratebaselistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "Selecciona-ho tot"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
@@ -2005,24 +2067,6 @@ msgstr "Voleu eliminar aquest debat?"
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Elimina el debat"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy Selection"
-msgstr "Copia la selecció"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy"
-msgstr "Copia"
-
-#: widgets/view/textautogeneratelistview.cpp:97
-#, kde-format
-msgctxt "@action"
-msgid "Select All"
-msgstr "Selecciona-ho tot"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format

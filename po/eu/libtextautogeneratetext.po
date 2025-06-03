@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:41+0000\n"
+"POT-Creation-Date: 2025-06-03 00:41+0000\n"
 "PO-Revision-Date: 2025-05-15 22:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -97,7 +97,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Konfiguratu Mistral AA"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
 msgstr ""
@@ -1455,22 +1455,49 @@ msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Server Url:"
 msgstr "Zerbitzariaren URLa:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Model:"
 msgstr "Eredua:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#, kde-format
+msgid "Temperature:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:51
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#, kde-format
+msgid "Seed:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Gonbita:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgid "No system prompt"
 msgstr "Sistemaren gonbitik ez"
@@ -1484,7 +1511,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:38
+#: plugins/ollama/ollamasettings.kcfg:39
 #, kde-format
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
@@ -1613,7 +1640,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Bilatu..."
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:30
 #, kde-format
 msgid "Configure…"
 msgstr "Konfiguratu..."
@@ -1639,6 +1666,24 @@ msgstr "Bidali"
 #, kde-format
 msgid "No plugin found."
 msgstr "Ez da pluginik aurkitu."
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr "Kopiatu hautapena"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "Kopiatu"
+
+#: widgets/view/textautogeneratebaselistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "Hautatu dena"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
@@ -1680,24 +1725,6 @@ msgstr "Elkarrizketa hau kendu nahi duzu?"
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Kendu elkarrizketa"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy Selection"
-msgstr "Kopiatu hautapena"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy"
-msgstr "Kopiatu"
-
-#: widgets/view/textautogeneratelistview.cpp:97
-#, kde-format
-msgctxt "@action"
-msgid "Select All"
-msgstr "Hautatu dena"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:41+0000\n"
+"POT-Creation-Date: 2025-06-03 00:41+0000\n"
 "PO-Revision-Date: 2025-05-24 21:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -92,7 +92,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "設定 Mistral IA"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
 msgstr ""
@@ -1450,22 +1450,49 @@ msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "管理 Ollama 模型"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Server Url:"
 msgstr "伺服器網址："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#, kde-format
+msgid "Temperature:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:51
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#, kde-format
+msgid "Seed:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgid "No system prompt"
 msgstr "沒有系統 prompt"
@@ -1479,7 +1506,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:38
+#: plugins/ollama/ollamasettings.kcfg:39
 #, kde-format
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
@@ -1604,7 +1631,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "搜尋…"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:30
 #, kde-format
 msgid "Configure…"
 msgstr "設定…"
@@ -1630,6 +1657,24 @@ msgstr "傳送"
 #, kde-format
 msgid "No plugin found."
 msgstr "找不到外掛程式。"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr "複製選取範圍"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "複製"
+
+#: widgets/view/textautogeneratebaselistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "全部選取"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
@@ -1671,24 +1716,6 @@ msgstr "您確定要移除這個討論嗎？"
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除討論"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy Selection"
-msgstr "複製選取範圍"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy"
-msgstr "複製"
-
-#: widgets/view/textautogeneratelistview.cpp:97
-#, kde-format
-msgctxt "@action"
-msgid "Select All"
-msgstr "全部選取"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format

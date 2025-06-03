@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:41+0000\n"
+"POT-Creation-Date: 2025-06-03 00:41+0000\n"
 "PO-Revision-Date: 2025-05-28 10:58+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -92,7 +92,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configura Mistral AI"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -239,7 +239,7 @@ msgstr "Livello di quantizzazione:"
 msgid "Modified At:"
 msgstr "Modificato alle:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "Languages Supported"
 msgid "Features Supported"
@@ -1724,22 +1724,49 @@ msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Modelli installati"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del server:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Model:"
 msgstr "Modello:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#, kde-format
+msgid "Temperature:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:51
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#, kde-format
+msgid "Seed:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgid "No system prompt"
 msgstr "Nessun prompt di sistema"
@@ -1753,7 +1780,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:38
+#: plugins/ollama/ollamasettings.kcfg:39
 #, kde-format
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
@@ -1878,7 +1905,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Cerca…"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:30
 #, kde-format
 msgid "Configure…"
 msgstr "Configura..."
@@ -1904,6 +1931,24 @@ msgstr "Invia"
 #, kde-format
 msgid "No plugin found."
 msgstr "Nessuna estensione trovata."
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr "Copia la selezione"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "Copia"
+
+#: widgets/view/textautogeneratebaselistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "Seleziona tutto"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
@@ -1945,24 +1990,6 @@ msgstr "Vuoi rimuovere questa discussione?"
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Rimuovi discussione"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy Selection"
-msgstr "Copia la selezione"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy"
-msgstr "Copia"
-
-#: widgets/view/textautogeneratelistview.cpp:97
-#, kde-format
-msgctxt "@action"
-msgid "Select All"
-msgstr "Seleziona tutto"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format

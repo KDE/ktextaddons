@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-02 00:41+0000\n"
+"POT-Creation-Date: 2025-06-03 00:41+0000\n"
 "PO-Revision-Date: 2025-06-01 20:58+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -93,7 +93,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "הגדרת Mistral AI"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -240,7 +240,7 @@ msgstr "רמת כימות:"
 msgid "Modified At:"
 msgstr "מועד עריכה:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
 msgstr "יכולות נתמכות"
@@ -1491,22 +1491,49 @@ msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "מודלים מותקנים"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:38
+#: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
 msgid "Server Url:"
 msgstr "כתובת שרת:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Model:"
 msgstr "מודל:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#, kde-format
+msgid "Temperature:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:51
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"The temperature of the model. Increasing the temperature will make the model "
+"answer more creatively."
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
+#, kde-format
+msgid "Seed:"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Sets the random number seed to use for generation. Setting this to a "
+"specific number will make the model generate the same text for the same "
+"prompt. (Default: 0)"
+msgstr ""
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "בקשה:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgid "No system prompt"
 msgstr "אין הנחיית מערכת"
@@ -1520,7 +1547,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:38
+#: plugins/ollama/ollamasettings.kcfg:39
 #, kde-format
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
@@ -1645,7 +1672,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "חיפוש…"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:29
+#: widgets/textautogeneratenotworkingwidget.cpp:30
 #, kde-format
 msgid "Configure…"
 msgstr "הגדרה…"
@@ -1671,6 +1698,24 @@ msgstr "שליחה"
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy Selection"
+msgstr "העתקת הבחירה"
+
+#: widgets/view/textautogeneratebaselistview.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "Copy"
+msgstr "העתקה"
+
+#: widgets/view/textautogeneratebaselistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr "בחירה בהכול"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
@@ -1712,24 +1757,6 @@ msgstr "להסיר את השיחה?"
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "הסרת שיחה"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy Selection"
-msgstr "העתקת הבחירה"
-
-#: widgets/view/textautogeneratelistview.cpp:89
-#, kde-format
-msgctxt "@action"
-msgid "Copy"
-msgstr "העתקה"
-
-#: widgets/view/textautogeneratelistview.cpp:97
-#, kde-format
-msgctxt "@action"
-msgid "Select All"
-msgstr "בחירה בהכול"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
