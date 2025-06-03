@@ -121,6 +121,8 @@ target_sources(textautogenerateollama PRIVATE
     modelsmanager/ollamamodelflowlayout.cpp
     modelsmanager/ollamamodelcreatewidget.h
     modelsmanager/ollamamodelcreatewidget.cpp
+    modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp
+    modelsmanager/ollamamodelcreatefromexistingmodelwidget.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
