@@ -54,9 +54,38 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
     auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
+
+    // Make sure that createButton is Enabled
+    auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
+    mModelName->setText(QStringLiteral("fff"));
+
     QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::createNewModelRequested);
     QTest::mouseClick(createNewModelButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
+}
+
+void OllamaModelCreateFromExistingModelWidgetTest::shouldChangeCreateButtonEnableState()
+{
+    OllamaModelCreateFromExistingModelWidget w(nullptr);
+    auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
+    auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
+
+    QVERIFY(!createNewModelButton->isEnabled());
+
+    mModelName->setText(QStringLiteral("fff"));
+    QVERIFY(createNewModelButton->isEnabled());
+
+    mModelName->setText(QStringLiteral("222"));
+    QVERIFY(createNewModelButton->isEnabled());
+
+    mModelName->setText({});
+    QVERIFY(!createNewModelButton->isEnabled());
+
+    mModelName->setText(QStringLiteral("test"));
+    QVERIFY(createNewModelButton->isEnabled());
+
+    mModelName->setText(QStringLiteral(" "));
+    QVERIFY(!createNewModelButton->isEnabled());
 }
 
 #include "moc_ollamamodelcreatefromexistingmodelwidgettest.cpp"

@@ -17,4 +17,5 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldEmitCancelSignal();
     void shouldEmitCreateSignal();
+    void shouldChangeCreateButtonEnableState();
 };
