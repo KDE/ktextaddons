@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 02:39+0000\n"
-"PO-Revision-Date: 2025-05-29 12:42+0200\n"
+"POT-Creation-Date: 2025-06-04 02:33+0000\n"
+"PO-Revision-Date: 2025-06-03 14:07+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: \n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -250,12 +250,12 @@ msgstr "Gewijzigd op:"
 msgid "Features Supported"
 msgstr "Ondersteunde mogelijkheden"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Wilt u dit model (%1) verwijderen?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1086,6 +1086,9 @@ msgid ""
 "language understanding and domain-specific knowledge, particularly in "
 "programming and mathematics."
 msgstr ""
+"Een uitbreiding van Llama 2 die zich specialiseert in integreren van zowel "
+"algemeen begrijpen van taal als domein-specifieke kennis, speciaal in "
+"programmeren en wiskunde."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
 #, kde-format
@@ -1093,6 +1096,8 @@ msgid ""
 "Fine-tuned Llama 2 model to answer medical questions based on an open source "
 "medical dataset."
 msgstr ""
+"Fijn afgestemd Llama 2 model om medische vragen te beantwoorden gebaseerd op "
+"een open-source medische gegevensset."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:156
 #, kde-format
@@ -1100,6 +1105,8 @@ msgid ""
 "Open-source medical large language model adapted from Llama 2 to the medical "
 "domain."
 msgstr ""
+"Open-source medisch large language model aangepast uit Llama 2 naar het "
+"medische domein."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
 #, kde-format
@@ -1107,6 +1114,9 @@ msgid ""
 "A series of models from Groq that represent a significant advancement in "
 "open-source AI capabilities for tool use/function calling."
 msgstr ""
+"Een serie modellen van Groq die een aanzienlijke vooruitgang representeert "
+"in open-source AI mogelijkheden voor aanroepen van hulpmiddel gebruik/"
+"functie."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
 #, kde-format
@@ -1114,27 +1124,33 @@ msgid ""
 "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
 "NVIDIA to improve the helpfulness of LLM generated responses to user queries."
 msgstr ""
+"Llama-3.1-Nemotron-70B-Instruct is een groot language model aangepast door "
+"NVIDIA om de behulpzaamheid van LLM gegenereerde respons op gebruikersvragen "
+"te verbeteren."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
 #, kde-format
 msgid ""
 "Nexus Raven is a 13B instruction tuned model for function calling tasks."
 msgstr ""
+"Nexus Raven is een 13B op instructie afgestemd model voor taken met "
+"aanroepen van functies."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:163
 #, kde-format
 msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
-msgstr ""
+msgstr "Het Nous Hermes 2 model van Nous Research, nu getraind over Mixtral."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
 #, kde-format
 msgid "Great code generation model based on Llama2."
-msgstr ""
+msgstr "Geweldig model voor generatie van code gebaseerd op Llama2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
 msgid "Uncensored Llama2 based model with support for a 16K context window."
 msgstr ""
+"Ongecensureerd Llama 2 model met ondersteuning voor een 16K contextvenster."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
 #, kde-format
@@ -1602,7 +1618,7 @@ msgstr "Ollama configureren"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format

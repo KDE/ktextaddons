@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 02:39+0000\n"
-"PO-Revision-Date: 2025-06-01 20:58+0300\n"
+"POT-Creation-Date: 2025-06-04 02:33+0000\n"
+"PO-Revision-Date: 2025-06-03 14:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -251,12 +251,12 @@ msgstr "מועד עריכה:"
 msgid "Features Supported"
 msgstr "יכולות נתמכות"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "להסיר את המודל הזה (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1304,6 +1304,9 @@ msgid ""
 "models, and competitive with open-weight models such as Llama 3.1 on English "
 "academic benchmarks."
 msgstr ""
+"OLMo 2 היא משפחה חדשה של מודלים בגודלי 7B ו־13B שאומנו על למעלה מ־5T "
+"אסימונים. המודלים האלה משתווים או מתעלים על מודלים פתוחים בגדלים זהים "
+"ומתחרים במודלים במשקל פתוח כגון Llama 3.1 לפי מבחני ביצועים אקדמיים באנגלית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:241
 #, kde-format
@@ -1312,6 +1315,9 @@ msgid ""
 "and quality to build powerful AI applications on commodity GPUs and edge "
 "devices."
 msgstr ""
+"המודל הקטן ביותר בסדרת R של Cohere שמספקת מהירות מסחררת, יעילות ואיכות כדי "
+"לבנות יישומי בינה מלאכותית עתירי יכולות על גבי מעבדים גרפיים והתקני קצה "
+"זולים יחסית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:243
 #, kde-format
@@ -1319,6 +1325,8 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
+"משפחה שלמה בקוד פתוח של מודלים לנימוק שנבנו על סדרת נתונים שנגזרה על ידי "
+"זיקוק של DeppSeek-R1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
@@ -1327,6 +1335,8 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
+"גרסה מכווננת של Deepseek-R1-Distilled-Qwen-1.5B שעוקפת את הביצועים של o1-"
+"preview מבית OpenAI עם 1.5B משתנים על שערוכים מתמטיים נפוצים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:248
 #, kde-format
@@ -1349,6 +1359,8 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
+"Phi-4-mini מציג שיפורים משמעותיים בתמיכה רב־לשונית, נימוק ומתמטיקה, ומעתה "
+"יכולת הקריאה לפונקציות, שכה ציפו לה, סוף סוף נתמכת."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:254
 #, kde-format
@@ -1357,6 +1369,8 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"מודל חסכוני ויעיל לשפה חזותית, תוכנן במיוחד להבנה של מסמכים חזותיים, הפעלת "
+"חילוץ תוכן אוטומטי מטבלאות, תרשימים, כרזות מידע, שרטוטים, תרשימים ועוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
@@ -1374,6 +1388,8 @@ msgid ""
 "excels in advanced Arabic language capabilities for enterprises in the "
 "Middle East and Northern Africa."
 msgstr ""
+"גרסה מהשורה הראשונה של המודל הקליל Command R7B שמצטיין ביכולות מתקדמות "
+"בערבית לארגונים במזרח התיכון ובצפון אפריקה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
 #, kde-format
