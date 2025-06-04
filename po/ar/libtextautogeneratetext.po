@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 00:41+0000\n"
+"POT-Creation-Date: 2025-06-04 00:41+0000\n"
 "PO-Revision-Date: 2025-05-29 09:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -93,7 +93,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "اضبط مسترال أيه آي"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:164
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -183,7 +183,7 @@ msgid "Reasoning"
 msgstr "تفكير"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:102
 #, kde-format
 msgid "Languages Supported"
 msgstr "اللغات المدعومة"
@@ -203,6 +203,16 @@ msgstr "أضف نموذجًا"
 #, kde-format
 msgid "Categories"
 msgstr "الفئات"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:22
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:25
+#, kde-format
+msgid "Tag:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -240,17 +250,23 @@ msgstr "مستوى القياس:"
 msgid "Modified At:"
 msgstr "عُدّل في:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Model:"
+msgid "Parent Model:"
+msgstr "النموذج:"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
 msgid "Features Supported"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "أتريد إزالة هذه النموذج (%1)؟"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1463,29 +1479,37 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "إعادة تحميل النموذج"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:30
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "اضبط أولاما"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:39
+#: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "عام"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:45
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "النماذج المتاحة"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:51
+#: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "النماذج المثبتة"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title Preferences page name"
+msgid "Create Models"
+msgstr "أزل النموذج"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
@@ -1777,6 +1801,11 @@ msgstr "ألغِ"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "أنعش"
+
+#: widgets/view/textautogeneratesearchlistview.cpp:48
+#, kde-format
+msgid "No Messages Found."
+msgstr ""
 
 #, fuzzy
 #~| msgid "Favorite"

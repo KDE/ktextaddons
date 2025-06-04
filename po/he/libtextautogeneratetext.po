@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 00:41+0000\n"
-"PO-Revision-Date: 2025-06-01 20:58+0300\n"
+"POT-Creation-Date: 2025-06-04 00:41+0000\n"
+"PO-Revision-Date: 2025-06-03 14:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -93,7 +93,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "הגדרת Mistral AI"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:164
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -183,7 +183,7 @@ msgid "Reasoning"
 msgstr "נימוק"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:102
 #, kde-format
 msgid "Languages Supported"
 msgstr "שפות נתמכות"
@@ -203,6 +203,16 @@ msgstr "הוספת מודל"
 #, kde-format
 msgid "Categories"
 msgstr "קטגוריות"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:22
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:25
+#, kde-format
+msgid "Tag:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -240,17 +250,23 @@ msgstr "רמת כימות:"
 msgid "Modified At:"
 msgstr "מועד עריכה:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Model:"
+msgid "Parent Model:"
+msgstr "מודל:"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
 msgid "Features Supported"
 msgstr "יכולות נתמכות"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "להסיר את המודל הזה (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1298,6 +1314,9 @@ msgid ""
 "models, and competitive with open-weight models such as Llama 3.1 on English "
 "academic benchmarks."
 msgstr ""
+"OLMo 2 היא משפחה חדשה של מודלים בגודלי 7B ו־13B שאומנו על למעלה מ־5T "
+"אסימונים. המודלים האלה משתווים או מתעלים על מודלים פתוחים בגדלים זהים "
+"ומתחרים במודלים במשקל פתוח כגון Llama 3.1 לפי מבחני ביצועים אקדמיים באנגלית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:241
 #, kde-format
@@ -1306,6 +1325,9 @@ msgid ""
 "and quality to build powerful AI applications on commodity GPUs and edge "
 "devices."
 msgstr ""
+"המודל הקטן ביותר בסדרת R של Cohere שמספקת מהירות מסחררת, יעילות ואיכות כדי "
+"לבנות יישומי בינה מלאכותית עתירי יכולות על גבי מעבדים גרפיים והתקני קצה "
+"זולים יחסית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:243
 #, kde-format
@@ -1313,6 +1335,8 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
+"משפחה שלמה בקוד פתוח של מודלים לנימוק שנבנו על סדרת נתונים שנגזרה על ידי "
+"זיקוק של DeppSeek-R1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
@@ -1321,6 +1345,8 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
+"גרסה מכווננת של Deepseek-R1-Distilled-Qwen-1.5B שעוקפת את הביצועים של o1-"
+"preview מבית OpenAI עם 1.5B משתנים על שערוכים מתמטיים נפוצים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:248
 #, kde-format
@@ -1343,6 +1369,8 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
+"Phi-4-mini מציג שיפורים משמעותיים בתמיכה רב־לשונית, נימוק ומתמטיקה, ומעתה "
+"יכולת הקריאה לפונקציות, שכה ציפו לה, סוף סוף נתמכת."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:254
 #, kde-format
@@ -1351,6 +1379,8 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"מודל חסכוני ויעיל לשפה חזותית, תוכנן במיוחד להבנה של מסמכים חזותיים, הפעלת "
+"חילוץ תוכן אוטומטי מטבלאות, תרשימים, כרזות מידע, שרטוטים, תרשימים ועוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
@@ -1368,6 +1398,8 @@ msgid ""
 "excels in advanced Arabic language capabilities for enterprises in the "
 "Middle East and Northern Africa."
 msgstr ""
+"גרסה מהשורה הראשונה של המודל הקליל Command R7B שמצטיין ביכולות מתקדמות "
+"בערבית לארגונים במזרח התיכון ובצפון אפריקה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
 #, kde-format
@@ -1467,29 +1499,37 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "ריענון מודל"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:30
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "הגדרת Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:39
+#: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "כללי"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:45
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "מודלים זמינים"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:51
+#: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "מודלים מותקנים"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title Preferences page name"
+msgid "Create Models"
+msgstr "הסרת מודל"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
@@ -1504,7 +1544,7 @@ msgstr "מודל:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "טמפרטורה:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:51
 #, kde-format
@@ -1513,11 +1553,12 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"הטמפרטורה של המודל. הגברת הטמפרטורה יגרום למודל לענות בצורה יותר יצירתית."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "גרעין:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
@@ -1527,6 +1568,8 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"הגדרת גרעין המספר האקראי שישמש ליצירה. הגדרת הערך הזה למספר מסוים יגרום "
+"למודל לייצר את אותו הטקסט לאותו הפרומפט. (ברירת מחדל: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
@@ -1545,6 +1588,7 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"הטמפרטורה של המודל. הגברת הטמפרטורה יגרום למודל לענות בצורה יותר יצירתית."
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:39
@@ -1554,6 +1598,8 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"הגדרת גרעין המספר האקראי שישמש ליצירה. הגדרת הערך הזה למספר מסוים יגרום "
+"למודל לייצר את אותו הטקסט לאותו הפרומפט. (ברירת מחדל: 0)"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
@@ -1781,6 +1827,11 @@ msgstr "ביטול"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "ריענון"
+
+#: widgets/view/textautogeneratesearchlistview.cpp:48
+#, kde-format
+msgid "No Messages Found."
+msgstr ""
 
 #, fuzzy
 #~| msgid "Favorite"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-03 00:41+0000\n"
-"PO-Revision-Date: 2025-06-02 05:58+0200\n"
+"POT-Creation-Date: 2025-06-04 00:41+0000\n"
+"PO-Revision-Date: 2025-06-03 05:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -93,7 +93,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral AI-ის მორგება"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:133
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:164
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -183,7 +183,7 @@ msgid "Reasoning"
 msgstr "მსჯელობა"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:102
 #, kde-format
 msgid "Languages Supported"
 msgstr "მხარდაჭერილი ენები"
@@ -203,6 +203,16 @@ msgstr "მოდელის დამატება"
 #, kde-format
 msgid "Categories"
 msgstr "კატეგორიები"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:22
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:25
+#, kde-format
+msgid "Tag:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -240,17 +250,23 @@ msgstr "კვანტიზაციის დონე:"
 msgid "Modified At:"
 msgstr "ცვლილების დრო:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#, fuzzy, kde-format
+#| msgid "Model:"
+msgid "Parent Model:"
+msgstr "მოდელი:"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
 msgid "Features Supported"
 msgstr "მხარდაჭერილი ფუნქციები"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "მართლა გნებავთ, წაშალოთ ეს მოდელი (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:96
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1749,29 +1765,37 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "მოდელის თავიდან ჩატვირთვა"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:30
+#: plugins/ollama/ollamaconfiguredialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:39
+#: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "ზოგადი"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:45
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "ხელმისაწვდომი მოდელები"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:51
+#: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "დაყენებული მოდელები"
+
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@title Preferences page name"
+msgid "Create Models"
+msgstr "მოდელის წაშლა"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
@@ -1786,13 +1810,10 @@ msgstr "მოდელი:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "ტემპერატურა:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:51
-#, fuzzy, kde-format
-#| msgid ""
-#| "The temperature of the model. Increasing the temperature will make the "
-#| "model answer more creatively."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
@@ -1804,14 +1825,10 @@ msgstr ""
 #: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "საწყ. მნიშვნელობა:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the random number seed to use for generation. Setting this to a "
-#| "specific number will make the model generate the same text for the same "
-#| "prompt. (Default: 0)"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
@@ -2080,6 +2097,11 @@ msgstr "გაუქმება"
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "განახლება"
+
+#: widgets/view/textautogeneratesearchlistview.cpp:48
+#, kde-format
+msgid "No Messages Found."
+msgstr ""
 
 #~ msgctxt "@action"
 #~ msgid "New Chat…"
