@@ -15,7 +15,8 @@ class OllamaModelInstalledInfosModel : public QAbstractListModel
     Q_OBJECT
 public:
     enum ModelInfoRoles {
-        ModelName = Qt::UserRole + 1,
+        ModelGeneratedName = Qt::UserRole + 1,
+        OriginalName,
         Name,
         Description,
         Family,
