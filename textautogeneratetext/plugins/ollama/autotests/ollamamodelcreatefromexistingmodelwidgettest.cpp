@@ -8,6 +8,7 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <QPushButton>
 #include <QTest>
 QTEST_MAIN(OllamaModelCreateFromExistingModelWidgetTest)
 OllamaModelCreateFromExistingModelWidgetTest::OllamaModelCreateFromExistingModelWidgetTest(QObject *parent)
@@ -28,6 +29,14 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
     auto mPromptPlainTextEdit = w.findChild<QPlainTextEdit *>(QStringLiteral("mPromptPlainTextEdit"));
     QVERIFY(mPromptPlainTextEdit);
     QVERIFY(mPromptPlainTextEdit->toPlainText().isEmpty());
+
+    auto cancelButton = w.findChild<QPushButton *>(QStringLiteral("cancelButton"));
+    QVERIFY(cancelButton);
+    QVERIFY(!cancelButton->text().isEmpty());
+
+    auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
+    QVERIFY(createNewModelButton);
+    QVERIFY(!createNewModelButton->text().isEmpty());
 }
 
 #include "moc_ollamamodelcreatefromexistingmodelwidgettest.cpp"

@@ -16,7 +16,12 @@ public:
     explicit OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelCreateFromExistingModelWidget() override;
 
+Q_SIGNALS:
+    void cancelRequested();
+    void createNewModelRequested();
+
 private:
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotCreateModel();
     QLineEdit *const mModelName;
     QLineEdit *const mTagName;
     OllamaManager *const mOllamaManager;

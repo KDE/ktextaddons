@@ -8,6 +8,7 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <QPushButton>
 OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mModelName(new QLineEdit(this))
@@ -29,11 +30,21 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     mPromptPlainTextEdit->setObjectName(QStringLiteral("mPromptPlainTextEdit"));
     mainLayout->addRow(i18n("Prompt:"), mPromptPlainTextEdit);
 
-    // TODO base
+    auto cancelButton = new QPushButton(i18n("Cancel"), this);
+    cancelButton->setObjectName(QStringLiteral("cancelButton"));
+    connect(cancelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
 
-    // TODO prompt
+    auto createNewModelButton = new QPushButton(i18n("Create"), this);
+    createNewModelButton->setObjectName(QStringLiteral("createNewModelButton"));
+    connect(createNewModelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::slotCreateModel);
 }
 
 OllamaModelCreateFromExistingModelWidget::~OllamaModelCreateFromExistingModelWidget() = default;
+
+void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
+{
+    // TOOD
+    Q_EMIT createNewModelRequested();
+}
 
 #include "moc_ollamamodelcreatefromexistingmodelwidget.cpp"
