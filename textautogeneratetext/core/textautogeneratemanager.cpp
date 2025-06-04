@@ -88,15 +88,20 @@ bool TextAutoGenerateManager::chatInProgress(const QByteArray &chatId) const
     return textAutoGenerateChatsModel()->chatInProgress(chatId);
 }
 
+void TextAutoGenerateManager::changeChatInPogressStatus(const QByteArray &chatId, bool inProgress)
+{
+    textAutoGenerateChatsModel()->setChatInProgress(chatId, inProgress);
+    if (chatId == currentChatId()) {
+        Q_EMIT chatInProgressChanged(inProgress);
+    }
+}
+
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
         messagesModel->changeInProgress(uuid, inProgress);
-        textAutoGenerateChatsModel()->setChatInProgress(chatId, inProgress);
-        if (chatId == currentChatId()) {
-            Q_EMIT chatInProgressChanged(inProgress);
-        }
+        changeChatInPogressStatus(chatId, inProgress);
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
     }
@@ -155,6 +160,7 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
+        changeChatInPogressStatus(chatId, false);
         return messagesModel->cancelRequest(index);
     }
     return false;
