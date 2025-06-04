@@ -34,6 +34,13 @@ const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &TextAutoGenerateReply
     return mInfo;
 }
 
+void TextAutoGenerateReply::cancel()
+{
+    if (mReply) {
+        mReply->abort();
+    }
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t)
 {
     d.space() << "total:" << t.total;

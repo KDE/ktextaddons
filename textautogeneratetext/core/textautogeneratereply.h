@@ -84,6 +84,8 @@ public:
      */
     const TextAutoGenerateText::TextAutoGenerateReply::RequestTypes &requestType() const;
 
+    void cancel();
+
 Q_SIGNALS:
     /**
      * @brief Emits when new content has been added to the response.
