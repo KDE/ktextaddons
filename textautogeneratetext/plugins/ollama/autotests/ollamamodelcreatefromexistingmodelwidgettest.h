@@ -15,4 +15,6 @@ public:
     ~OllamaModelCreateFromExistingModelWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldEmitCancelSignal();
+    void shouldEmitCreateSignal();
 };

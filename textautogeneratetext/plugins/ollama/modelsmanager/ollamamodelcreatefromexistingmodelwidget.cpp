@@ -43,7 +43,9 @@ OllamaModelCreateFromExistingModelWidget::~OllamaModelCreateFromExistingModelWid
 
 void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
 {
-    // TOOD
+    if (mOllamaManager) {
+        // TODO
+    }
     Q_EMIT createNewModelRequested();
 }
 

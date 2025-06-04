@@ -9,6 +9,7 @@
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(OllamaModelCreateFromExistingModelWidgetTest)
 OllamaModelCreateFromExistingModelWidgetTest::OllamaModelCreateFromExistingModelWidgetTest(QObject *parent)
@@ -37,6 +38,24 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
     auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
     QVERIFY(createNewModelButton);
     QVERIFY(!createNewModelButton->text().isEmpty());
+}
+
+void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCancelSignal()
+{
+    OllamaModelCreateFromExistingModelWidget w(nullptr);
+    auto cancelButton = w.findChild<QPushButton *>(QStringLiteral("cancelButton"));
+    QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
+    QTest::mouseClick(cancelButton, Qt::LeftButton);
+    QCOMPARE(spy.count(), 1);
+}
+
+void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
+{
+    OllamaModelCreateFromExistingModelWidget w(nullptr);
+    auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
+    QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::createNewModelRequested);
+    QTest::mouseClick(createNewModelButton, Qt::LeftButton);
+    QCOMPARE(spy.count(), 1);
 }
 
 #include "moc_ollamamodelcreatefromexistingmodelwidgettest.cpp"
