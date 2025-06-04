@@ -106,9 +106,9 @@ OllamaReply *OllamaManager::downloadModel(const QString &modelName)
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaReply::RequestTypes::DownloadModel,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
+    connect(reply, &OllamaReply::finished, this, [this, reply, modelName] {
         Q_EMIT finished(reply->readResponse());
-        Q_EMIT downloadDone();
+        Q_EMIT downloadDone(modelName);
         Q_EMIT refreshInstalledModels();
     });
     connect(reply, &OllamaReply::downloadInProgress, this, [this, modelName](const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info) {
