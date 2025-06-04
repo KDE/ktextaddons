@@ -6,6 +6,8 @@
 #include "ollamamodelcreatefromexistingmodelwidgettest.h"
 #include "modelsmanager/ollamamodelcreatefromexistingmodelwidget.h"
 #include <QFormLayout>
+#include <QLineEdit>
+#include <QPlainTextEdit>
 #include <QTest>
 QTEST_MAIN(OllamaModelCreateFromExistingModelWidgetTest)
 OllamaModelCreateFromExistingModelWidgetTest::OllamaModelCreateFromExistingModelWidgetTest(QObject *parent)
@@ -16,7 +18,16 @@ OllamaModelCreateFromExistingModelWidgetTest::OllamaModelCreateFromExistingModel
 void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    // TODO
+
+    auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
+    QVERIFY(mModelName);
+    QVERIFY(mModelName->text().isEmpty());
+    auto mTagName = w.findChild<QLineEdit *>(QStringLiteral("mTagName"));
+    QVERIFY(mTagName);
+    QVERIFY(mTagName->text().isEmpty());
+    auto mPromptPlainTextEdit = w.findChild<QPlainTextEdit *>(QStringLiteral("mPromptPlainTextEdit"));
+    QVERIFY(mPromptPlainTextEdit);
+    QVERIFY(mPromptPlainTextEdit->toPlainText().isEmpty());
 }
 
 #include "moc_ollamamodelcreatefromexistingmodelwidgettest.cpp"

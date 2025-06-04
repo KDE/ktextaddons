@@ -7,11 +7,13 @@
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QPlainTextEdit>
 OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mModelName(new QLineEdit(this))
     , mTagName(new QLineEdit(this))
     , mOllamaManager(manager)
+    , mPromptPlainTextEdit(new QPlainTextEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
@@ -23,6 +25,9 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
 
     mTagName->setObjectName(QStringLiteral("mTagName"));
     mainLayout->addRow(i18n("Tag:"), mTagName);
+
+    mPromptPlainTextEdit->setObjectName(QStringLiteral("mPromptPlainTextEdit"));
+    mainLayout->addRow(i18n("Prompt:"), mPromptPlainTextEdit);
 
     // TODO base
 

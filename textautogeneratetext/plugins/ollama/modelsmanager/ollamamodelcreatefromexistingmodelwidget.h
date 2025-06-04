@@ -8,6 +8,7 @@
 #include <QWidget>
 class QLineEdit;
 class OllamaManager;
+class QPlainTextEdit;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCreateFromExistingModelWidget : public QWidget
 {
     Q_OBJECT
@@ -19,4 +20,5 @@ private:
     QLineEdit *const mModelName;
     QLineEdit *const mTagName;
     OllamaManager *const mOllamaManager;
+    QPlainTextEdit *const mPromptPlainTextEdit;
 };
