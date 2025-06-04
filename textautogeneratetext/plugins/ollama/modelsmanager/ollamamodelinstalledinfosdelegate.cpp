@@ -211,7 +211,7 @@ bool OllamaModelInstalledInfosDelegate::handleMouseEvent(QMouseEvent *mouseEvent
 
 QSize OllamaModelInstalledInfosDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const QByteArray modelName = index.data(OllamaModelInstalledInfosModel::ModelName).toByteArray();
+    const QByteArray modelName = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toByteArray();
     auto it = mSizeHintCache.find(modelName);
     if (it != mSizeHintCache.end()) {
         const QSize result = it->value;
@@ -233,7 +233,7 @@ QSize OllamaModelInstalledInfosDelegate::sizeHint(const QStyleOptionViewItem &op
 QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelIndex &index, int width) const
 {
     Q_ASSERT(index.isValid());
-    const QByteArray modelName = index.data(OllamaModelInstalledInfosModel::ModelName).toByteArray();
+    const QByteArray modelName = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toByteArray();
     Q_ASSERT(!modelName.isEmpty());
     auto it = mDocumentCache.find(modelName);
     if (it != mDocumentCache.end()) {
@@ -243,7 +243,7 @@ QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelI
         }
         return ret;
     }
-    const QString text = index.data(OllamaModelInstalledInfosModel::ModelName).toString();
+    const QString text = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toString();
     if (text.isEmpty()) {
         return nullptr;
     }
