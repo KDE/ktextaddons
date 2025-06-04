@@ -17,6 +17,7 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
     , mModelNameLabel(new QLabel(this))
     , mProgressStatusLabel(new QLabel(this))
     , mManager(manager)
+    , mCancelDownloadButton(new QPushButton(i18n("Cancel"), this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -32,14 +33,16 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
     mainLayout->addWidget(mProgressBar);
     mProgressBar->setRange(0, 100);
 
-    auto cancelDownload = new QPushButton(i18n("Cancel"), this);
-    cancelDownload->setObjectName(QStringLiteral("cancelDownload"));
-    mainLayout->addWidget(cancelDownload);
-    connect(cancelDownload, &QPushButton::clicked, this, [this]() {
+    mCancelDownloadButton->setObjectName(QStringLiteral("mCancelDownloadButton"));
+    mainLayout->addWidget(mCancelDownloadButton);
+    connect(mCancelDownloadButton, &QPushButton::clicked, this, [this]() {
         // TODO
     });
     if (mManager) {
         connect(mManager, &OllamaManager::downloadInProgress, this, &OllamaModelDownloadProgressWidget::slotDownloadProgressInfo);
+        connect(mManager, &OllamaManager::downloadDone, this, [this] {
+            mCancelDownloadButton->hide();
+        });
     }
     mainLayout->addStretch(1);
 }
@@ -52,6 +55,7 @@ void OllamaModelDownloadProgressWidget::downloadModel(const QString &modelName)
     mModelNameLabel->setText(modelName);
     qDebug() << " downloadModel " << modelName;
     auto reply = mManager->downloadModel(modelName);
+    mCancelDownloadButton->show();
     // TODO reply->
 }
 

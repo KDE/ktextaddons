@@ -28,6 +28,7 @@ Q_SIGNALS:
     void modelsLoadDone(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &models);
     void refreshInstalledModels();
     void finished(const QString &replyText);
+    void downloadDone();
 
 protected:
     QMetaObject::Connection mCheckConnect;
