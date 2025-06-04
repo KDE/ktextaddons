@@ -38,6 +38,7 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
     auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
     QVERIFY(createNewModelButton);
     QVERIFY(!createNewModelButton->text().isEmpty());
+    QVERIFY(!createNewModelButton->isEnabled());
 }
 
 void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCancelSignal()
