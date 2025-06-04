@@ -14,7 +14,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateLocalChatsDatabase;
 class TextAutoGenerateLocalMessagesDatabase;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalDatabaseManager
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalDatabaseManager final
 {
 public:
     TextAutoGenerateLocalDatabaseManager();
