@@ -20,7 +20,6 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
-    mainLayout->setSpacing(0);
 
     mModelName->setObjectName(QStringLiteral("mModelName"));
     mainLayout->addRow(i18n("Name:"), mModelName);
@@ -31,9 +30,8 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     mPromptPlainTextEdit->setObjectName(QStringLiteral("mPromptPlainTextEdit"));
     mainLayout->addRow(i18n("Prompt:"), mPromptPlainTextEdit);
 
-    auto cancelButton = new QPushButton(i18nc("@action:button", "Cancel"), this);
-    cancelButton->setObjectName(QStringLiteral("cancelButton"));
-    connect(cancelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
+    auto hboxLayout = new QHBoxLayout;
+    mainLayout->addItem(hboxLayout);
 
     auto createNewModelButton = new QPushButton(i18nc("@action:button", "Create"), this);
     createNewModelButton->setObjectName(QStringLiteral("createNewModelButton"));
@@ -42,6 +40,12 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     connect(mModelName, &QLineEdit::textChanged, this, [createNewModelButton](const QString &str) {
         createNewModelButton->setEnabled(!str.trimmed().isEmpty());
     });
+    hboxLayout->addWidget(createNewModelButton);
+
+    auto cancelButton = new QPushButton(i18nc("@action:button", "Cancel"), this);
+    cancelButton->setObjectName(QStringLiteral("cancelButton"));
+    connect(cancelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
+    hboxLayout->addWidget(cancelButton);
 }
 
 OllamaModelCreateFromExistingModelWidget::~OllamaModelCreateFromExistingModelWidget() = default;
@@ -52,11 +56,10 @@ void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
         OllamaManager::CreateModelInfo info;
         info.modelName = mModelName->text().trimmed();
         info.systemPrompt = mPromptPlainTextEdit->toPlainText().trimmed();
-        // TODO
+        // TODO info.fromModelName =
         mOllamaManager->createModel(info);
-        // TODO
     }
-    Q_EMIT createNewModelRequested();
+    Q_EMIT createNewModelDone();
 }
 
 #include "moc_ollamamodelcreatefromexistingmodelwidget.cpp"

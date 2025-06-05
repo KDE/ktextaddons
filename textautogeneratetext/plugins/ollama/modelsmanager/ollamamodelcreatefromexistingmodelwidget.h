@@ -18,7 +18,7 @@ public:
 
 Q_SIGNALS:
     void cancelRequested();
-    void createNewModelRequested();
+    void createNewModelDone();
 
 private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotCreateModel();

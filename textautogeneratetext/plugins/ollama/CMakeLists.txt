@@ -125,6 +125,9 @@ target_sources(textautogenerateollama PRIVATE
 
     modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp
     modelsmanager/ollamamodelcreatefromexistingmodelwidget.h
+
+    modelsmanager/ollamamodelcreatecombobox.h
+    modelsmanager/ollamamodelcreatecombobox.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

@@ -59,7 +59,7 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
     auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
     mModelName->setText(QStringLiteral("fff"));
 
-    QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::createNewModelRequested);
+    QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::createNewModelDone);
     QTest::mouseClick(createNewModelButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
 }
