@@ -69,6 +69,9 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
 )
 
 target_sources(KF6TextAutoGenerateText PRIVATE
+    core/textautogeneratetextutils.h
+    core/textautogeneratetextutils.cpp
+
     core/textautogenerateengineplugin.h
     core/textautogenerateengineplugin.cpp
     core/textautogenerateengineloader.cpp
