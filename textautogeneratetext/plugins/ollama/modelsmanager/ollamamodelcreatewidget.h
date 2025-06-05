@@ -8,6 +8,7 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class OllamaManager;
+class QStackedWidget;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCreateWidget : public QWidget
 {
     Q_OBJECT
@@ -17,4 +18,5 @@ public:
 
 private:
     OllamaManager *const mManager;
+    QStackedWidget *const mStackWidget;
 };
