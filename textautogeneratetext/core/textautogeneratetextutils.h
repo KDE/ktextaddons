@@ -8,8 +8,8 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
-namespace TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextUtils
+namespace TextAutoGenerateTextUtils
 {
-[[nodiscard]] QString findExecutable(const QString &exec);
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString findExecutable(const QString &exec);
 };
 }
