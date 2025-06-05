@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:41+0000\n"
+"POT-Creation-Date: 2025-06-05 00:41+0000\n"
 "PO-Revision-Date: 2025-05-28 18:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configura Mistral AI"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:164
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -204,15 +204,36 @@ msgstr "Adde Modello"
 msgid "Categories"
 msgstr "Categorias"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
 #, kde-format
 msgid "Name:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
 #, kde-format
 msgid "Tag:"
 msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#, kde-format
+msgid "Prompt:"
+msgstr "Symbolo de demanda:"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Cancella"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Remove Modello"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -224,11 +245,6 @@ msgstr "Discarga Modello"
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
 msgstr ""
-
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
-#, kde-format
-msgid "Cancel"
-msgstr "Cancella"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
@@ -1499,11 +1515,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
-#, kde-format
-msgid "Prompt:"
-msgstr "Symbolo de demanda:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format

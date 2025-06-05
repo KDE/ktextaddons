@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:41+0000\n"
-"PO-Revision-Date: 2025-06-03 14:44+0200\n"
+"POT-Creation-Date: 2025-06-05 00:41+0000\n"
+"PO-Revision-Date: 2025-06-04 23:32+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -92,7 +92,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Mistral AI configureren"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:164
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -203,15 +203,36 @@ msgstr "Model toevoegen"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
 #, kde-format
 msgid "Name:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
 #, kde-format
 msgid "Tag:"
 msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#, kde-format
+msgid "Prompt:"
+msgstr "Prompt:"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Create Models"
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Modellen aanmaken"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -223,11 +244,6 @@ msgstr "Model downloaden"
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
 msgstr "Voer modelnaam in als \"naam:tag\""
-
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
-#, kde-format
-msgid "Cancel"
-msgstr "Annuleren"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
@@ -250,10 +266,9 @@ msgid "Modified At:"
 msgstr "Gewijzigd op:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Parent Model:"
-msgstr "Model:"
+msgstr "Oudermodel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
@@ -1550,6 +1565,8 @@ msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
 "fast, secure, and high-quality AI"
 msgstr ""
+"Model met 111 biljoen parameters geoptimaliseerd voor eisende ondernemingen "
+"die snelle, nauwkeurige en hoge-kwaliteit AI vereisen"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
 #, kde-format
@@ -1592,7 +1609,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
-msgstr ""
+msgstr "De laatste verzameling van multimodale modellen van Meta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1638,7 +1655,7 @@ msgstr "Algemeen"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "Beschikbare modellen"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
@@ -1647,12 +1664,10 @@ msgid "Installed Models"
 msgstr "Geïnstalleerde modellen"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Model verwijderen"
+msgstr "Modellen aanmaken"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
@@ -1690,11 +1705,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
-#, kde-format
-msgid "Prompt:"
-msgstr "Prompt:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format

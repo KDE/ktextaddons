@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:41+0000\n"
-"PO-Revision-Date: 2025-06-03 11:02+0200\n"
+"POT-Creation-Date: 2025-06-05 00:41+0000\n"
+"PO-Revision-Date: 2025-06-04 09:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -94,7 +94,7 @@ msgctxt "@title:window"
 msgid "Configure Mistral IA"
 msgstr "Configura Mistral AI"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:164
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -205,15 +205,36 @@ msgstr "Afegeix un model"
 msgid "Categories"
 msgstr "Categories"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "Etiqueta:"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#, kde-format
+msgid "Prompt:"
+msgstr "Indicació:"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Create Models"
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Crea models"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -225,11 +246,6 @@ msgstr "Baixada de model"
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
 msgstr "Introduïu el nom del model com a «nom:etiqueta»"
-
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
-#, kde-format
-msgid "Cancel"
-msgstr "Cancel·la"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
@@ -252,10 +268,9 @@ msgid "Modified At:"
 msgstr "Modificat el:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Parent Model:"
-msgstr "Model:"
+msgstr "Model pare:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
@@ -1801,12 +1816,10 @@ msgid "Installed Models"
 msgstr "Models instal·lats"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Elimina el model"
+msgstr "Crea models"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
@@ -1849,11 +1862,6 @@ msgstr ""
 "Estableix el nombre aleatori de llavors a usar per a la generació. Establir "
 "això a un nombre específic farà que el model generi el mateix text per a la "
 "mateixa indicació. (Predeterminat: 0)"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
-#, kde-format
-msgid "Prompt:"
-msgstr "Indicació:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
@@ -2112,4 +2120,4 @@ msgstr "Actualitza"
 #: widgets/view/textautogeneratesearchlistview.cpp:48
 #, kde-format
 msgid "No Messages Found."
-msgstr ""
+msgstr "No s'ha trobat cap missatge."
