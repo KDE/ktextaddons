@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 02:33+0000\n"
+"POT-Creation-Date: 2025-06-05 02:35+0000\n"
 "PO-Revision-Date: 2025-05-29 17:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -99,7 +99,7 @@ msgstr "Налаштування ШІ Mistral"
 msgid "Api Key:"
 msgstr "Ключ API:"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:132
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -221,7 +221,7 @@ msgstr "Отримання моделі"
 msgid "Please enter model name as \"name:tag\""
 msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:20
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 02:33+0000\n"
+"POT-Creation-Date: 2025-06-05 02:35+0000\n"
 "PO-Revision-Date: 2025-05-29 21:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -98,7 +98,7 @@ msgstr "Mistral AI’ı Yapılandır"
 msgid "Api Key:"
 msgstr "API anahtarı:"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:132
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -220,7 +220,7 @@ msgstr "Model İndir"
 msgid "Please enter model name as \"name:tag\""
 msgstr "Model adını “ad:künye” biçiminde girin"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:20
 #, kde-format
 msgid "Cancel"
 msgstr "İptal"

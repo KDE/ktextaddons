@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 02:33+0000\n"
+"POT-Creation-Date: 2025-06-05 02:35+0000\n"
 "PO-Revision-Date: 2025-05-29 09:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -99,7 +99,7 @@ msgstr "اضبط مسترال أيه آي"
 msgid "Api Key:"
 msgstr "مفتاح و‌ب‌ت API:"
 
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:131
+#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:132
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -221,7 +221,7 @@ msgstr "نزل النموذج"
 msgid "Please enter model name as \"name:tag\""
 msgstr "الرجاء إدخال اسم النموذج كـ \"name:tag\""
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:20
 #, kde-format
 msgid "Cancel"
 msgstr "ألغِ"
