@@ -5,6 +5,7 @@
 */
 #include "ollamamodelcreatefromexistingmodelwidget.h"
 #include "ollamamanager.h"
+#include "ollamamodelcreatecombobox.h"
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
@@ -16,10 +17,14 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     , mTagName(new QLineEdit(this))
     , mOllamaManager(manager)
     , mPromptPlainTextEdit(new QPlainTextEdit(this))
+    , mOllamaModelCreateComboBox(new OllamaModelCreateComboBox(manager, this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
+
+    mOllamaModelCreateComboBox->setObjectName(QStringLiteral("mOllamaModelCreateComboBox"));
+    mainLayout->addRow(i18n("Base:"), mOllamaModelCreateComboBox);
 
     mModelName->setObjectName(QStringLiteral("mModelName"));
     mainLayout->addRow(i18n("Name:"), mModelName);
@@ -53,11 +58,13 @@ OllamaModelCreateFromExistingModelWidget::~OllamaModelCreateFromExistingModelWid
 void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
 {
     if (mOllamaManager) {
-        OllamaManager::CreateModelInfo info;
-        info.modelName = mModelName->text().trimmed();
-        info.systemPrompt = mPromptPlainTextEdit->toPlainText().trimmed();
-        // TODO info.fromModelName =
-        mOllamaManager->createModel(info);
+        const OllamaManager::CreateModelInfo info{
+            .modelName = mModelName->text().trimmed(),
+            .fromModelName = mOllamaModelCreateComboBox->modelName(),
+            .systemPrompt = mPromptPlainTextEdit->toPlainText().trimmed(),
+        };
+        qDebug() << " info " << info;
+        mOllamaManager->createModel(std::move(info));
     }
     Q_EMIT createNewModelDone();
 }

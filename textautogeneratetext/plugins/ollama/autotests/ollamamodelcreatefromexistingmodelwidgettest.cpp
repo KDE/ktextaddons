@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatefromexistingmodelwidgettest.h"
+#include "modelsmanager/ollamamodelcreatecombobox.h"
 #include "modelsmanager/ollamamodelcreatefromexistingmodelwidget.h"
 #include <QFormLayout>
 #include <QLineEdit>
@@ -30,6 +31,9 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
     auto mPromptPlainTextEdit = w.findChild<QPlainTextEdit *>(QStringLiteral("mPromptPlainTextEdit"));
     QVERIFY(mPromptPlainTextEdit);
     QVERIFY(mPromptPlainTextEdit->toPlainText().isEmpty());
+
+    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(QStringLiteral("mOllamaModelCreateComboBox"));
+    QVERIFY(mOllamaModelCreateComboBox);
 
     auto cancelButton = w.findChild<QPushButton *>(QStringLiteral("cancelButton"));
     QVERIFY(cancelButton);

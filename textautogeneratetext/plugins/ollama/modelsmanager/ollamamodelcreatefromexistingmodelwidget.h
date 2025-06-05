@@ -9,6 +9,7 @@
 class QLineEdit;
 class OllamaManager;
 class QPlainTextEdit;
+class OllamaModelCreateComboBox;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCreateFromExistingModelWidget : public QWidget
 {
     Q_OBJECT
@@ -26,4 +27,5 @@ private:
     QLineEdit *const mTagName;
     OllamaManager *const mOllamaManager;
     QPlainTextEdit *const mPromptPlainTextEdit;
+    OllamaModelCreateComboBox *const mOllamaModelCreateComboBox;
 };
