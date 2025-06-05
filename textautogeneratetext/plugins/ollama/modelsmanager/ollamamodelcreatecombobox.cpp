@@ -5,21 +5,32 @@
 */
 
 #include "ollamamodelcreatecombobox.h"
+#include "ollamamanager.h"
 
-OllamaModelCreateComboBox::OllamaModelCreateComboBox(QWidget *parent)
+OllamaModelCreateComboBox::OllamaModelCreateComboBox(OllamaManager *manager, QWidget *parent)
     : QComboBox(parent)
+    , mOllamaManager(manager)
 {
+    fillEngine();
 }
 
 OllamaModelCreateComboBox::~OllamaModelCreateComboBox() = default;
 
 QString OllamaModelCreateComboBox::modelName() const
 {
-    // TODO
-    return {};
+    return currentData().toString();
 }
 
 void OllamaModelCreateComboBox::fillEngine()
 {
-    // TODO
+    if (mOllamaManager) {
+        connect(mOllamaManager, &OllamaManager::modelsLoadDone, this, [this]() {
+            const QList<OllamaModelInstalledInfo> infos = mOllamaManager->installedInfos();
+            for (const auto &info : infos) {
+                addItem(info.generateModelName(), info.model());
+            }
+        });
+    }
 }
+
+#include "moc_ollamamodelcreatecombobox.cpp"

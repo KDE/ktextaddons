@@ -6,16 +6,17 @@
 #pragma once
 #include "textautogenerateollama_private_export.h"
 #include <QComboBox>
-
+class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCreateComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit OllamaModelCreateComboBox(QWidget *parent = nullptr);
+    explicit OllamaModelCreateComboBox(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelCreateComboBox() override;
 
     [[nodiscard]] QString modelName() const;
 
 private:
-    void fillEngine();
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillEngine();
+    OllamaManager *const mOllamaManager;
 };
