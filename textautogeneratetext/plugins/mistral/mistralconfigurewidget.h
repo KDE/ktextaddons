@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <TextAutoGenerateText/NetworkConfigureWidget>
-class MistralConfigureWidget : public TextAutoGenerateText::NetworkConfigureWidget
+#include <TextAutoGenerateText/NetworkPluginConfigureWidget>
+class MistralConfigureWidget : public TextAutoGenerateText::NetworkPluginConfigureWidget
 {
     Q_OBJECT
 public:

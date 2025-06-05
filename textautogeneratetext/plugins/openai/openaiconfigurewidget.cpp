@@ -12,7 +12,7 @@
 #include <QFormLayout>
 
 OpenAIConfigureWidget::OpenAIConfigureWidget(QWidget *parent)
-    : TextAutoGenerateText::NetworkConfigureWidget{parent}
+    : TextAutoGenerateText::NetworkPluginConfigureWidget{parent}
 {
 }
 

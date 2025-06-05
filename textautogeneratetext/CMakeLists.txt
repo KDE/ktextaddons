@@ -259,9 +259,8 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     widgets/menu/textautogeneratemenuwidget.cpp
     widgets/menu/textautogeneratemenuwidget.h
 
-
-    widgets/networkpluginconfigure/networkconfigurewidget.h
-    widgets/networkpluginconfigure/networkconfigurewidget.cpp
+    widgets/networkpluginconfigure/networkpluginconfigurewidget.h
+    widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -343,7 +342,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS
     HEADER_NAMES
-    NetworkConfigureWidget
+    NetworkPluginConfigureWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/networkpluginconfigure
