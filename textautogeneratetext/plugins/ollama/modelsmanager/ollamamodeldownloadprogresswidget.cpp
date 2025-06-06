@@ -42,6 +42,7 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
 
     mCancelDownloadButton->setObjectName(QStringLiteral("mCancelDownloadButton"));
     mCancelDownloadButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-cancel")));
+    mCancelDownloadButton->setToolTip(i18nc("@info:tooltip", "Cancel"));
     hboxLayout->addWidget(mCancelDownloadButton);
     connect(mCancelDownloadButton, &QToolButton::clicked, this, [this]() {
         if (OllamaReply *value = mDownloadReply.take(mModelNameLabel->text()); value) {
