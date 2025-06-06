@@ -261,6 +261,13 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     widgets/networkpluginconfigure/networkpluginconfigurewidget.h
     widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp
+
+    widgets/textautogeneratetextinstancemanagerwidget.h
+    widgets/textautogeneratetextinstancemanagerwidget.cpp
+
+
+    widgets/quickask/quickaskdialog.h
+    widgets/quickask/quickaskdialog.cpp
 )
 
 if(BUILD_TESTING)
