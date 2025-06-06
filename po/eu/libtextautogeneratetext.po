@@ -1,7 +1,7 @@
 # Translation for libtextautogeneratetext.po to Euskara/Basque (eu).
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:41+0000\n"
-"PO-Revision-Date: 2025-05-15 22:39+0200\n"
+"POT-Creation-Date: 2025-06-06 00:42+0000\n"
+"PO-Revision-Date: 2025-06-05 21:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -70,11 +70,9 @@ msgstr ""
 "Eredua: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#, kde-format
 msgid "Go to message"
-msgstr "Sartu mezu bat"
+msgstr "Joan mezura"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
@@ -129,185 +127,197 @@ msgstr "Erantzunak sortzeko eredua"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr ""
+msgstr "Ollama ereduak kudeatu"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Tresnak"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Txikia"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Ertaina"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Handia"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Itzela"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Eleaniztuna"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Kodea"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Matematika"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Ikusmena"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Txertatzea"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Arrazoiketa"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:102
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "Onartutako lengoaiak"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Models"
-msgstr "Eredua:"
+msgstr "Ereduak"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr "Birzamatu eredua"
+msgstr "Gehitu eredua"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
+msgstr "Kategoriak"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:27
+#, kde-format
+msgid "Base:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:30
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "Izena:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:33
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "Etiketa:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:36
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Gonbita:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Cancel"
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Sortu"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:50
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Utzi"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
+#, kde-format
 msgctxt "@action:button"
-msgid "Create"
-msgstr "Birzamatu eredua"
+msgid "Load GGUF File…"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@title:window"
+msgid "Select GGUF File"
+msgstr "Hautatu dena"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "Create Models"
+msgctxt "@action:button"
+msgid "Create Model"
+msgstr "Ereduak sortzea"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "Birzamatu eredua"
+msgstr "Eredua zama-jaistea"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Familia:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "Parametroen neurria:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
-msgstr ""
+msgstr "Kuantifikazio-maila:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
-msgstr ""
+msgstr "v"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Parent Model:"
-msgstr "Eredua:"
+msgstr "Guraso-eredua:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
 msgid "Features Supported"
-msgstr ""
+msgstr "Onartutako ezaugarriak"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr "Elkarrizketa hau kendu nahi duzu?"
+msgstr "Eredu hau kendu nahi duzu (%1)?"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "Birzamatu eredua"
+msgstr "Kendu eredua"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "Bilatu..."
+msgstr "Bilatu eredua..."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
 #, kde-format
@@ -315,11 +325,13 @@ msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
 "compared to the Llama 3.1 405B model."
 msgstr ""
+"70B eredu berri modernoa. Llama 3.3 70B(e)k Llama 3.1 405B ereduarekin "
+"alderatuz antzeko errendimendua eskaintzen du."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr ""
+msgstr "QwQ Qwen seriearen arrazoiketa-eredua da."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
@@ -1432,7 +1444,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
-msgstr ""
+msgstr "Metaren eredu multimodalen azken bilduma."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1472,27 +1484,25 @@ msgstr "Konfiguratu Ollama"
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "Orokorra"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "Eredu erabilgarriak"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr ""
+msgstr "Instalatutako ereduak"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Birzamatu eredua"
+msgstr "Ereduak sortzea"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:41
 #, kde-format
@@ -1507,7 +1517,7 @@ msgstr "Eredua:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "Tenperatura:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:51
 #, kde-format
@@ -1516,11 +1526,13 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"Ereduaren tenperatura. Tenperaturak gora egiten badu, ereduaren erantzunak "
+"modu sortzaileagoan erantzungo du."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "Hazia:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
@@ -1530,6 +1542,9 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"Sorkuntzarako erabili beharreko hausazko zenbakien hazia ezartzen du. Hau "
+"zenbaki zehatz batean ezarriz gero, galdera berdinerako ereduak erantzun "
+"bera sortzea eragingo du. (Lehenetsia: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
@@ -1543,6 +1558,8 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"Ereduaren tenperatura. Tenperaturak gora egiten badu, ereduaren erantzunak "
+"modu sortzaileagoan erantzungo du."
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:39
@@ -1568,18 +1585,18 @@ msgstr "Konfiguratu Openai AA"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Konfiguratu AA testu pluginak"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Gehitu…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Galdetu AAri"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
@@ -1596,35 +1613,31 @@ msgid "Remove…"
 msgstr "Kendu..."
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove it?"
-msgstr "Elkarrizketa hau kendu nahi duzu?"
+msgstr "Kendu nahi duzu?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove…"
+#, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr "Kendu..."
+msgstr "Kendu"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:22
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Galdetu AAri..."
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Konfiguratu..."
 
-#: widgets/networkpluginconfigure/networkconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "APIaren gakoa:"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -1787,4 +1800,4 @@ msgstr "Berritu"
 #: widgets/view/textautogeneratesearchlistview.cpp:48
 #, kde-format
 msgid "No Messages Found."
-msgstr ""
+msgstr "Ez da mezurik aurkitu."

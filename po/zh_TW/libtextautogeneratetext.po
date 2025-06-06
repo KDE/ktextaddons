@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:41+0000\n"
+"POT-Creation-Date: 2025-06-06 00:42+0000\n"
 "PO-Revision-Date: 2025-05-24 21:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -206,23 +206,36 @@ msgstr "重新載入模型"
 msgid "Categories"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:27
+#, kde-format
+msgid "Base:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:30
 #, kde-format
 msgid "Name:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:33
 #, kde-format
 msgid "Tag:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:36
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt："
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reload Model"
+msgctxt "@action:button"
+msgid "Create"
+msgstr "重新載入模型"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:50
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Cancel"
@@ -230,12 +243,26 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Load GGUF File…"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@title:window"
+msgid "Select GGUF File"
+msgstr "全部選取"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reload Model"
 msgctxt "@action:button"
-msgid "Create"
+msgid "Create Model"
 msgstr "重新載入模型"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
@@ -1612,7 +1639,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "設定…"
 
-#: widgets/networkpluginconfigure/networkconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "API 金鑰："

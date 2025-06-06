@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:41+0000\n"
-"PO-Revision-Date: 2025-06-04 23:32+0200\n"
+"POT-Creation-Date: 2025-06-06 00:42+0000\n"
+"PO-Revision-Date: 2025-06-05 12:24+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -203,35 +203,59 @@ msgstr "Model toevoegen"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:27
+#, kde-format
+msgid "Base:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:30
 #, kde-format
 msgid "Name:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:33
 #, kde-format
 msgid "Tag:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:36
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr "Aanmaken"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:50
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Load GGUF File…"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@title:window"
+msgid "Select GGUF File"
+msgstr "Alles selecteren"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@title Preferences page name"
 #| msgid "Create Models"
 msgctxt "@action:button"
-msgid "Create"
+msgid "Create Model"
 msgstr "Modellen aanmaken"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
@@ -1184,6 +1208,10 @@ msgid ""
 "cases and support for retrieval augmented generation (RAG), streamlining "
 "code generation, translation and bug fixing."
 msgstr ""
+"De IBM Granite 2B en 8B modellen zijn ontworpen om op hulpmiddelen "
+"gebaseerde gebruiksgevallen te ondersteunen en voor retrieval augmented "
+"generation (RAG) te ondersteunen, waarmee generatie van code, vertaling en "
+"reparatie van bugs gestroomlijnd wordt."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
 #, kde-format
@@ -1192,6 +1220,9 @@ msgid ""
 "instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
 "with open-source code snippets."
 msgstr ""
+"Magicoder is een familie van 7B parameter modellen getraind op 75K "
+"synthetisch instructiegegevens met gebruik van OSS-Instruct, en nieuwe "
+"benadering om LLM's met open-source codefragmenten uit te lichten."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
 #, kde-format
@@ -1199,6 +1230,8 @@ msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
 msgstr ""
+"Een lichtgewicht chatmodel dat accurate en responsieve uitvoer biedt zonder "
+"geavanceerde hardware te vereisen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
@@ -1206,6 +1239,8 @@ msgid ""
 "A high-performing code instruct model created by merging two existing code "
 "models."
 msgstr ""
+"Een hoog presterende code-instructie-model gemaakt door samenvoegen van twee "
+"bestaande codemodellen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
 #, kde-format
@@ -1213,6 +1248,8 @@ msgid ""
 "Falcon2 is an 11B parameters causal decoder-only model built by TII and "
 "trained over 5T tokens."
 msgstr ""
+"Falcon2 is een 11B parameters causaal alleen decoderen model gebouwd door "
+"TII en getraind over 5T tokens."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
 #, kde-format
@@ -1220,6 +1257,8 @@ msgid ""
 "Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
 "MelodysDreamj."
 msgstr ""
+"Wizard Vicuna is een 13B parameter model gebaseerd op Llama 2 getraind door "
+"MelodysDreamj."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
 #, kde-format
@@ -1227,6 +1266,8 @@ msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
 "capabilities of processing long contexts."
 msgstr ""
+"MistralLite is een fijn afgestemd model gebaseerd op Mistral met verbeterde "
+"mogelijkheden voor verwerken van lange contexten."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
 #, kde-format
@@ -1234,11 +1275,14 @@ msgid ""
 "MathΣtral: a 7B model designed for math reasoning and scientific discovery "
 "by Mistral AI."
 msgstr ""
+"MathΣtral: een 7B model ontworpen voor wiskunde redenering en "
+"wetenschappelijke ontdekking door Mistral AI."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
 #, kde-format
 msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
 msgstr ""
+"7B parameter text-naar-SQL model gemaakt door MotherDuck en Numbers Station."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
 #, kde-format
@@ -1246,6 +1290,8 @@ msgid ""
 "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
 "interleaving the model with itself."
 msgstr ""
+"MegaDolphin-2.2-120b is een transformatie van Dolphin-2.2-70b gemaakt door "
+"interleaving het model met zichzelf."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:181
 #, kde-format
@@ -1253,6 +1299,8 @@ msgid ""
 "Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
 "parameters designed to fit into a single GPU"
 msgstr ""
+"Solar Pro Preview: een geavanceerd large language model (LLM) met 22 biljoen "
+"parameters ontworpen om te passen in een enkele GPU"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
 #, kde-format
@@ -1260,17 +1308,23 @@ msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
 "useful for content conversion tasks."
 msgstr ""
+"Een serie modellen die HTML-inhoud naar Markdown-inhoud converteert, wat "
+"nuttig is voor taken met converteren van conversie."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
 msgstr ""
+"Een top-presterend mengsel van expertsmodel, fijn afgestemd met gegevens van "
+"hoge kwaliteit."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
 msgstr ""
+"Een 7B chat-model fijn afgestemd met gegevens van hoge kwaliteit en "
+"gebaseerd op Zephyr."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
 #, kde-format
@@ -1278,6 +1332,8 @@ msgid ""
 "Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
 "Designed for chat and code generation."
 msgstr ""
+"Samenvoeging van het Open Orca OpenChat model en het Garage-bAInd Platypus 2 "
+"model. Ontworpen voor chat en generatie van code."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
 #, kde-format
@@ -1792,7 +1848,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Configureren…"
 
-#: widgets/networkpluginconfigure/networkconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "API-sleutel:"

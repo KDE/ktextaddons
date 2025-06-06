@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 00:41+0000\n"
-"PO-Revision-Date: 2025-06-04 04:09+0200\n"
+"POT-Creation-Date: 2025-06-06 00:42+0000\n"
+"PO-Revision-Date: 2025-06-05 05:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -204,35 +204,59 @@ msgstr "მოდელის დამატება"
 msgid "Categories"
 msgstr "კატეგორიები"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:27
+#, kde-format
+msgid "Base:"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:30
 #, kde-format
 msgid "Name:"
 msgstr "სახელი:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:33
 #, kde-format
 msgid "Tag:"
 msgstr "ჭდე:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:36
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "მოთხოვნის ზოლი:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Create"
+msgstr "შექმნა"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:50
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Load GGUF File…"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@title:window"
+msgid "Select GGUF File"
+msgstr "ყველას მონიშვნა"
+
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@title Preferences page name"
 #| msgid "Create Models"
 msgctxt "@action:button"
-msgid "Create"
+msgid "Create Model"
 msgstr "მოდელების შექმნა"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
@@ -1943,7 +1967,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: widgets/networkpluginconfigure/networkconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "API გასაღები:"
