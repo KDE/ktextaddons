@@ -67,11 +67,10 @@ void OllamaModelDownloadProgressWidget::downloadModel(const QString &modelName)
 {
     mModelName = modelName;
     mModelNameLabel->setText(modelName);
-    qDebug() << " downloadModel " << modelName;
+    // qDebug() << " downloadModel " << modelName;
     auto reply = mManager->downloadModel(modelName);
     mDownloadReply.insert(modelName, reply);
     mCancelDownloadButton->show();
-    // TODO reply->
 }
 
 void OllamaModelDownloadProgressWidget::slotDownloadProgressInfo(const QString &modelName,
