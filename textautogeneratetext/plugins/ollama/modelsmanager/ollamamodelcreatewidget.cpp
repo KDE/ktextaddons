@@ -50,6 +50,7 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
     createModelButton->setObjectName(QStringLiteral("createModelButton"));
     selectModeWidgetLayout->addWidget(createModelButton);
     connect(createModelButton, &QPushButton::clicked, this, [this]() {
+        mOllamaModelCreateFromExistingModelWidget->clear();
         mStackWidget->setCurrentWidget(mOllamaModelCreateFromExistingModelWidget);
     });
     connect(mOllamaModelCreateFromExistingModelWidget,
