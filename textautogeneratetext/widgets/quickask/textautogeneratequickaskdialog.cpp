@@ -3,7 +3,9 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "quickaskdialog.h"
+#include "textautogeneratequickaskdialog.h"
+#include "core/textautogeneratemanager.h"
+#include "textautogeneratequickaskwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -18,27 +20,31 @@ const char myQuickAskDialogGroupName[] = "QuickAskDialog";
 }
 
 using namespace TextAutoGenerateText;
-QuickAskDialog::QuickAskDialog(QWidget *parent)
+TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
+    , mTextAutoGenerateQuickAskWidget(new TextAutoGenerateQuickAskWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Conversation"));
 
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
+    mTextAutoGenerateQuickAskWidget->setObjectName(QStringLiteral("mTextAutoGenerateQuickAskWidget"));
+    mainLayout->addWidget(mTextAutoGenerateQuickAskWidget);
+
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
-    connect(button, &QDialogButtonBox::rejected, this, &QuickAskDialog::reject);
+    connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateQuickAskDialog::reject);
     readConfig();
 }
 
-QuickAskDialog::~QuickAskDialog()
+TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog()
 {
     writeConfig();
 }
 
-void QuickAskDialog::readConfig()
+void TextAutoGenerateQuickAskDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(400, 300));
@@ -47,10 +53,10 @@ void QuickAskDialog::readConfig()
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
-void QuickAskDialog::writeConfig()
+void TextAutoGenerateQuickAskDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myQuickAskDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
-#include "moc_quickaskdialog.cpp"
+#include "moc_textautogeneratequickaskdialog.cpp"
