@@ -55,6 +55,13 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
 
 OllamaModelCreateFromExistingModelWidget::~OllamaModelCreateFromExistingModelWidget() = default;
 
+void OllamaModelCreateFromExistingModelWidget::clear()
+{
+    mModelName->clear();
+    mTagName->clear();
+    mPromptPlainTextEdit->clear();
+}
+
 void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
 {
     if (mOllamaManager) {
@@ -63,7 +70,7 @@ void OllamaModelCreateFromExistingModelWidget::slotCreateModel()
             .fromModelName = mOllamaModelCreateComboBox->modelName(),
             .systemPrompt = mPromptPlainTextEdit->toPlainText().trimmed(),
         };
-        qDebug() << " info " << info;
+        // qDebug() << " info " << info;
         mOllamaManager->createModel(std::move(info));
     }
     Q_EMIT createNewModelDone();

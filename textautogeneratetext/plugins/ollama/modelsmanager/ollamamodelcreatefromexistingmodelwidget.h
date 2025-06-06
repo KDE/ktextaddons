@@ -17,6 +17,7 @@ public:
     explicit OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent = nullptr);
     ~OllamaModelCreateFromExistingModelWidget() override;
 
+    void clear();
 Q_SIGNALS:
     void cancelRequested();
     void createNewModelDone();
