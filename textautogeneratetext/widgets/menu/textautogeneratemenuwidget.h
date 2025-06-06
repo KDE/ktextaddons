@@ -16,6 +16,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuWidget : public QObject
     Q_OBJECT
 public:
     explicit TextAutoGenerateMenuWidget(QObject *parent = nullptr);
+    explicit TextAutoGenerateMenuWidget(TextAutoGenerateMenuTextManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateMenuWidget() override;
 
     [[nodiscard]] QMenu *menu() const;
@@ -23,9 +24,13 @@ public:
     [[nodiscard]] QString selectedText() const;
     void setSelectedText(const QString &newSelectedText);
 
+Q_SIGNALS:
+    void refreshMenu();
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeMenu();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void initialize();
     QString mSelectedText;
     QMenu *const mTextMenu;
     TextAutoGenerateMenuTextManager *const mMenuTextManager;

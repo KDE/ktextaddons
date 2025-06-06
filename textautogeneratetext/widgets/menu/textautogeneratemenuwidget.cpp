@@ -14,15 +14,29 @@
 #include <QMenu>
 using namespace TextAutoGenerateText;
 TextAutoGenerateMenuWidget::TextAutoGenerateMenuWidget(QObject *parent)
+    : TextAutoGenerateMenuWidget(new TextAutoGenerateMenuTextManager(parent), parent)
+{
+}
+
+TextAutoGenerateMenuWidget::TextAutoGenerateMenuWidget(TextAutoGenerateMenuTextManager *manager, QObject *parent)
     : QObject{parent}
     , mTextMenu(new QMenu)
-    , mMenuTextManager(new TextAutoGenerateMenuTextManager(this))
+    , mMenuTextManager(manager)
+{
+    initialize();
+}
+
+void TextAutoGenerateMenuWidget::initialize()
 {
     mMenuTextManager->load();
     mTextMenu->setTitle(i18n("Ask AI…"));
     // mMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     mTextMenu->setObjectName(QStringLiteral("mMenu"));
     initializeMenu();
+    connect(this, &TextAutoGenerateMenuWidget::refreshMenu, this, [this]() {
+        mTextMenu->clear();
+        initializeMenu();
+    });
 }
 
 TextAutoGenerateMenuWidget::~TextAutoGenerateMenuWidget()
