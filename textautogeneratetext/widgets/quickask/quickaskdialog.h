@@ -19,5 +19,9 @@ class TEXTAUTOGENERATETEXT_EXPORT QuickAskDialog : public QDialog
 public:
     explicit QuickAskDialog(QWidget *parent = nullptr);
     ~QuickAskDialog() override;
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
 };
 }
