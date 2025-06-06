@@ -6,6 +6,7 @@
 #include "ollamamodelcreatefromexistingmodelwidgettest.h"
 #include "modelsmanager/ollamamodelcreatecombobox.h"
 #include "modelsmanager/ollamamodelcreatefromexistingmodelwidget.h"
+#include <QDialogButtonBox>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -35,20 +36,19 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
     auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(QStringLiteral("mOllamaModelCreateComboBox"));
     QVERIFY(mOllamaModelCreateComboBox);
 
-    auto cancelButton = w.findChild<QPushButton *>(QStringLiteral("cancelButton"));
-    QVERIFY(cancelButton);
-    QVERIFY(!cancelButton->text().isEmpty());
+    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    QVERIFY(buttonBox);
+    QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 
-    auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
-    QVERIFY(createNewModelButton);
-    QVERIFY(!createNewModelButton->text().isEmpty());
+    auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
     QVERIFY(!createNewModelButton->isEnabled());
 }
 
 void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCancelSignal()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    auto cancelButton = w.findChild<QPushButton *>(QStringLiteral("cancelButton"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
     QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
     QTest::mouseClick(cancelButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
@@ -57,7 +57,8 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCancelSignal()
 void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
 
     // Make sure that createButton is Enabled
     auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
@@ -71,7 +72,8 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
 void OllamaModelCreateFromExistingModelWidgetTest::shouldChangeCreateButtonEnableState()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    auto createNewModelButton = w.findChild<QPushButton *>(QStringLiteral("createNewModelButton"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
     auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
 
     QVERIFY(!createNewModelButton->isEnabled());

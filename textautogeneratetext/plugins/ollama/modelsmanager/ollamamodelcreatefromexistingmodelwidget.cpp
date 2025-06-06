@@ -7,10 +7,12 @@
 #include "ollamamanager.h"
 #include "ollamamodelcreatecombobox.h"
 #include <KLocalizedString>
+#include <QDialogButtonBox>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QPushButton>
+
 OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mModelName(new QLineEdit(this))
@@ -35,22 +37,20 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     mPromptPlainTextEdit->setObjectName(QStringLiteral("mPromptPlainTextEdit"));
     mainLayout->addRow(i18n("Prompt:"), mPromptPlainTextEdit);
 
-    auto hboxLayout = new QHBoxLayout;
-    mainLayout->addItem(hboxLayout);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
+    createNewModelButton->setText(i18nc("@action:button", "Create"));
 
-    auto createNewModelButton = new QPushButton(i18nc("@action:button", "Create"), this);
-    createNewModelButton->setObjectName(QStringLiteral("createNewModelButton"));
     createNewModelButton->setEnabled(false);
     connect(createNewModelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::slotCreateModel);
     connect(mModelName, &QLineEdit::textChanged, this, [createNewModelButton, this](const QString &str) {
         createNewModelButton->setEnabled(!str.trimmed().isEmpty() && !mOllamaModelCreateComboBox->modelName().isEmpty());
     });
-    hboxLayout->addWidget(createNewModelButton);
 
-    auto cancelButton = new QPushButton(i18nc("@action:button", "Cancel"), this);
-    cancelButton->setObjectName(QStringLiteral("cancelButton"));
+    auto cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
     connect(cancelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
-    hboxLayout->addWidget(cancelButton);
+    mainLayout->addWidget(buttonBox);
 }
 
 OllamaModelCreateFromExistingModelWidget::~OllamaModelCreateFromExistingModelWidget() = default;
