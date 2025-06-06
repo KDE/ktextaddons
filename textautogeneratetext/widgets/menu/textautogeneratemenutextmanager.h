@@ -5,13 +5,13 @@
 */
 #pragma once
 #include "textautogeneratemenutextinfo.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 
 #include <KSharedConfig>
 #include <QObject>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMenuTextManager : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuTextManager : public QObject
 {
     Q_OBJECT
 public:

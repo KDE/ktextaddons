@@ -331,6 +331,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsm
     TextAutoGenerateMenuConfigureDialog
     TextAutoGenerateMenuTextInfo
     TextAutoGenerateMenuConfigureWidget
+    TextAutoGenerateMenuTextManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/menu
