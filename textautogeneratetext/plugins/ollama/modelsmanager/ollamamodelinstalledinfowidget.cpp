@@ -22,38 +22,38 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
 
     {
         auto label = new QLabel(i18n("Family:"), this);
-        mMainLayout->addWidget(label);
+        mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
         mFamilyNameLabel->setObjectName(QStringLiteral("mFamilyNameLabel"));
-        mMainLayout->addWidget(mFamilyNameLabel);
+        mMainLayout->addWidget(mFamilyNameLabel, 0, Qt::AlignTop);
     }
 
     {
         auto label = new QLabel(i18n("Parameter Size:"), this);
-        mMainLayout->addWidget(label);
+        mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
         mParameterSizeLabel->setObjectName(QStringLiteral("mParameterSizeLabel"));
-        mMainLayout->addWidget(mParameterSizeLabel);
+        mMainLayout->addWidget(mParameterSizeLabel, 0, Qt::AlignTop);
     }
 
     {
         auto label = new QLabel(i18n("Quantization Level:"), this);
-        mMainLayout->addWidget(label);
+        mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
         mQuantizationLevelLabel->setObjectName(QStringLiteral("mQuantizationLevelLabel"));
-        mMainLayout->addWidget(mQuantizationLevelLabel);
+        mMainLayout->addWidget(mQuantizationLevelLabel, 0, Qt::AlignTop);
     }
 
     {
         auto label = new QLabel(i18n("Modified At:"), this);
-        mMainLayout->addWidget(label);
+        mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
         mModifiedAtLabel->setObjectName(QStringLiteral("mModifiedAtLabel"));
-        mMainLayout->addWidget(mModifiedAtLabel);
+        mMainLayout->addWidget(mModifiedAtLabel, 0, Qt::AlignTop);
     }
 }
 

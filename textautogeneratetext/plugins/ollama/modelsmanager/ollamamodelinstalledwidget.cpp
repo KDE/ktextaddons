@@ -71,11 +71,16 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
 
     mRemoveModelButton->setObjectName(QStringLiteral("mRemoveModelButton"));
     mRemoveModelButton->setEnabled(false);
+    scrollArea->hide();
     hboxLayout->addWidget(mRemoveModelButton);
     mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
     connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
     connect(mOllamaModelInstalledListView, &OllamaModelInstalledListView::clicked, this, &OllamaModelInstalledWidget::slotClicked);
-    connect(mOllamaModelInstalledListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &OllamaModelInstalledWidget::slotCurrentChanged);
+    connect(mOllamaModelInstalledListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, scrollArea]() {
+        const bool isEnabled = mOllamaModelInstalledListView->currentIndex().isValid();
+        mRemoveModelButton->setEnabled(isEnabled);
+        scrollArea->setVisible(isEnabled);
+    });
 }
 
 OllamaModelInstalledWidget::~OllamaModelInstalledWidget() = default;
@@ -86,11 +91,6 @@ void OllamaModelInstalledWidget::slotClicked(const QModelIndex &index)
         const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
         mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info, mModelAvailableInfos);
     }
-}
-
-void OllamaModelInstalledWidget::slotCurrentChanged()
-{
-    mRemoveModelButton->setEnabled(mOllamaModelInstalledListView->currentIndex().isValid());
 }
 
 void OllamaModelInstalledWidget::slotRemoveModel()
