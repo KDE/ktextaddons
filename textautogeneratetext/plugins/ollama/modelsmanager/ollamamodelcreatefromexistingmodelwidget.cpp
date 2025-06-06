@@ -42,8 +42,8 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     createNewModelButton->setObjectName(QStringLiteral("createNewModelButton"));
     createNewModelButton->setEnabled(false);
     connect(createNewModelButton, &QPushButton::clicked, this, &OllamaModelCreateFromExistingModelWidget::slotCreateModel);
-    connect(mModelName, &QLineEdit::textChanged, this, [createNewModelButton](const QString &str) {
-        createNewModelButton->setEnabled(!str.trimmed().isEmpty());
+    connect(mModelName, &QLineEdit::textChanged, this, [createNewModelButton, this](const QString &str) {
+        createNewModelButton->setEnabled(!str.trimmed().isEmpty() && !mOllamaModelCreateComboBox->modelName().isEmpty());
     });
     hboxLayout->addWidget(createNewModelButton);
 
