@@ -31,6 +31,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeMenu();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
     TEXTAUTOGENERATETEXT_NO_EXPORT void initialize();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateMenu();
     QString mSelectedText;
     QMenu *const mTextMenu;
     TextAutoGenerateMenuTextManager *const mMenuTextManager;

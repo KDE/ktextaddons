@@ -22,7 +22,10 @@ QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuTextManager::textInfos()
 
 void TextAutoGenerateMenuTextManager::setTextInfos(const QList<TextAutoGenerateMenuTextInfo> &newTextInfos)
 {
-    mTextInfos = newTextInfos;
+    if (mTextInfos != newTextInfos) {
+        mTextInfos = newTextInfos;
+        Q_EMIT textInfoChanged();
+    }
 }
 
 void TextAutoGenerateMenuTextManager::load()

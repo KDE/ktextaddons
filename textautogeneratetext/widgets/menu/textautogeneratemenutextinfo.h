@@ -21,6 +21,8 @@ public:
     [[nodiscard]] QString requestText() const;
     void setRequestText(const QString &newRequestText);
 
+    [[nodiscard]] bool operator==(const TextAutoGenerateMenuTextInfo &other) const;
+
 private:
     QString mRequestText;
     bool mEnabled = true;

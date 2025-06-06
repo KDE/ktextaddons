@@ -30,6 +30,11 @@ void TextAutoGenerateMenuTextInfo::setRequestText(const QString &newRequestText)
     mRequestText = newRequestText;
 }
 
+bool TextAutoGenerateMenuTextInfo::operator==(const TextAutoGenerateMenuTextInfo &other) const
+{
+    return mEnabled == other.mEnabled && mRequestText == other.mRequestText;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateMenuTextInfo &t)
 {
     d.space() << "enabled:" << t.enabled();
