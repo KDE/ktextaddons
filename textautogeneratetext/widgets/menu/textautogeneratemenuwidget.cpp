@@ -33,10 +33,8 @@ void TextAutoGenerateMenuWidget::initialize()
     // mMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     mTextMenu->setObjectName(QStringLiteral("mMenu"));
     initializeMenu();
-    connect(this, &TextAutoGenerateMenuWidget::refreshMenu, this, [this]() {
-        mTextMenu->clear();
-        initializeMenu();
-    });
+    connect(mMenuTextManager, &TextAutoGenerateMenuTextManager::textInfoChanged, this, &TextAutoGenerateMenuWidget::updateMenu);
+    connect(this, &TextAutoGenerateMenuWidget::refreshMenu, this, &TextAutoGenerateMenuWidget::updateMenu);
 }
 
 TextAutoGenerateMenuWidget::~TextAutoGenerateMenuWidget()
@@ -83,6 +81,12 @@ void TextAutoGenerateMenuWidget::setSelectedText(const QString &newSelectedText)
     mSelectedText = newSelectedText;
 }
 
+void TextAutoGenerateMenuWidget::updateMenu()
+{
+    mTextMenu->clear();
+    initializeMenu();
+}
+
 void TextAutoGenerateMenuWidget::slotConfigure()
 {
     auto dlg = new TextAutoGenerateMenuConfigureDialog(nullptr);
@@ -90,8 +94,7 @@ void TextAutoGenerateMenuWidget::slotConfigure()
     if (dlg->exec()) {
         mMenuTextManager->setTextInfos(dlg->textInfos());
         mMenuTextManager->save();
-        mTextMenu->clear();
-        initializeMenu();
+        updateMenu();
     }
     delete dlg;
 }
