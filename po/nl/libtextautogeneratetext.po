@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-05 02:35+0000\n"
-"PO-Revision-Date: 2025-06-03 14:07+0200\n"
+"PO-Revision-Date: 2025-06-05 10:26+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "Language: nl\n"
@@ -1159,6 +1159,10 @@ msgid ""
 "cases and support for retrieval augmented generation (RAG), streamlining "
 "code generation, translation and bug fixing."
 msgstr ""
+"De IBM Granite 2B en 8B modellen zijn ontworpen om op hulpmiddelen "
+"gebaseerde gebruiksgevallen te ondersteunen en voor retrieval augmented "
+"generation (RAG) te ondersteunen, waarmee generatie van code, vertaling en "
+"reparatie van bugs gestroomlijnd wordt."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
 #, kde-format
@@ -1167,6 +1171,9 @@ msgid ""
 "instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
 "with open-source code snippets."
 msgstr ""
+"Magicoder is een familie van 7B parameter modellen getraind op 75K "
+"synthetisch instructiegegevens met gebruik van OSS-Instruct, en nieuwe "
+"benadering om LLM's met open-source codefragmenten uit te lichten."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
 #, kde-format
@@ -1174,6 +1181,8 @@ msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
 msgstr ""
+"Een lichtgewicht chatmodel dat accurate en responsieve uitvoer biedt zonder "
+"geavanceerde hardware te vereisen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
@@ -1181,6 +1190,8 @@ msgid ""
 "A high-performing code instruct model created by merging two existing code "
 "models."
 msgstr ""
+"Een hoog presterende code-instructie-model gemaakt door samenvoegen van twee "
+"bestaande codemodellen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
 #, kde-format
@@ -1188,6 +1199,8 @@ msgid ""
 "Falcon2 is an 11B parameters causal decoder-only model built by TII and "
 "trained over 5T tokens."
 msgstr ""
+"Falcon2 is een 11B parameters causaal alleen decoderen model gebouwd door "
+"TII en getraind over 5T tokens."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
 #, kde-format
