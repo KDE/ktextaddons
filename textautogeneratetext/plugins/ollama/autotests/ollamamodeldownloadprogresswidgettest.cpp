@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QProgressBar>
 #include <QTest>
+#include <QToolButton>
 #include <QVBoxLayout>
 QTEST_MAIN(OllamaModelDownloadProgressWidgetTest)
 
@@ -30,6 +31,10 @@ void OllamaModelDownloadProgressWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mModelNameLabel);
     auto mProgressStatusLabel = w.findChild<QLabel *>(QStringLiteral("mProgressStatusLabel"));
     QVERIFY(mProgressStatusLabel);
+
+    auto mCancelDownloadButton = w.findChild<QToolButton *>(QStringLiteral("mCancelDownloadButton"));
+    QVERIFY(mCancelDownloadButton);
+    QVERIFY(!mCancelDownloadButton->toolTip().isEmpty());
 }
 
 #include "moc_ollamamodeldownloadprogresswidgettest.cpp"
