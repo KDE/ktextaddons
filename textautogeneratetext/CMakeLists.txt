@@ -173,8 +173,9 @@ target_sources(KF6TextAutoGenerateText PRIVATE
 
     widgets/textautogenerateresultwidget.h
     widgets/textautogenerateresultwidget.cpp
-    widgets/textautogeneratetextlineedit.h
-    widgets/textautogeneratetextlineedit.cpp
+
+    widgets/common/textautogeneratetextlineedit.h
+    widgets/common/textautogeneratetextlineedit.cpp
 
     widgets/textautogeneratewidget.h
     widgets/textautogeneratewidget.cpp

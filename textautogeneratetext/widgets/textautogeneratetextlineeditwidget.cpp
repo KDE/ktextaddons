@@ -5,7 +5,7 @@
 */
 #include "textautogeneratetextlineeditwidget.h"
 #include "core/textautogeneratemanager.h"
-#include "widgets/textautogeneratetextlineedit.h"
+#include "widgets/common/textautogeneratetextlineedit.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QPushButton>

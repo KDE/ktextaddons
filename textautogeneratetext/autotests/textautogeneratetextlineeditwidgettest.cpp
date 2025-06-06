@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratetextlineeditwidgettest.h"
-#include "widgets/textautogeneratetextlineedit.h"
+#include "widgets/common/textautogeneratetextlineedit.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 
 #include <QHBoxLayout>
