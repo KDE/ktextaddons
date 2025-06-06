@@ -5,8 +5,8 @@
 */
 
 #include "textautogeneratewidgettest.h"
+#include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/textautogenerateheaderwidget.h"
-#include "widgets/textautogenerateresultwidget.h"
 #include "widgets/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogeneratewidget.h"
 #include <QSplitter>

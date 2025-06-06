@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratenotworkingwidgettest.h"
-#include "widgets/textautogeneratenotworkingwidget.h"
+#include "widgets/common/textautogeneratenotworkingwidget.h"
 #include <KMessageWidget>
 #include <QTest>
 #include <QVBoxLayout>

@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratestackwidget.h"
-#include "textautogeneratenotworkingwidget.h"
+#include "common/textautogeneratenotworkingwidget.h"
 #include "textautogeneratewidget.h"
 
 #include <QStackedWidget>
