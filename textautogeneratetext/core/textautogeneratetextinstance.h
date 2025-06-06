@@ -23,9 +23,13 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] QByteArray instanceUuid() const;
+    void setInstanceUuid(const QByteArray &newInstanceUuid);
+
 private:
     QString mName;
     QString mPluginName;
+    QByteArray mInstanceUuid;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextInstance, Q_RELOCATABLE_TYPE);

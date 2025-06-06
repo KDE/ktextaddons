@@ -33,4 +33,14 @@ void TextAutoGenerateTextInstanceManager::setInstances(const QList<TextAutoGener
     mInstances = newInstances;
 }
 
+void TextAutoGenerateTextInstanceManager::deleteInstance(const QByteArray &uuid)
+{
+    // TODO
+}
+
+void TextAutoGenerateTextInstanceManager::addInstance(const TextAutoGenerateTextInstance &instance)
+{
+    // TODO
+}
+
 #include "moc_textautogeneratetextinstancemanager.cpp"
