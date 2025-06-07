@@ -4,3 +4,4 @@
 add_subdirectory(textautogeneratetypingindicatorgui)
 add_subdirectory(textautogeneratewidgetgui)
 add_subdirectory(textautogenerateaskjobgui)
+add_subdirectory(textautogeneratequickaskgui)
