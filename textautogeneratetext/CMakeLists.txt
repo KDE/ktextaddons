@@ -372,6 +372,15 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsm
     RELATIVE widgets/menu
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateQuickAskDialog
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/quickask
+)
+
+
 install(TARGETS
     KF6TextAutoGenerateText
     EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
@@ -387,6 +396,7 @@ install(FILES
     ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -397,6 +407,7 @@ install(FILES
     ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )

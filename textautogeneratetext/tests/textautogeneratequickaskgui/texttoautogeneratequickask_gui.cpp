@@ -7,6 +7,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
+#include <TextAutoGenerateText/TextAutoGenerateQuickAskDialog>
 
 int main(int argc, char **argv)
 {
@@ -17,12 +18,8 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    /*
-    auto w = new TextAutoGenerateWidgetGui;
-    w->resize(600, 400);
-    w->show();
-    delete w;
-    */
+    auto d = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(nullptr); // TODO
+    d->exec();
     app.exec();
     return 0;
 }
