@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 02:35+0000\n"
+"POT-Creation-Date: 2025-06-07 02:32+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1528,12 +1528,12 @@ msgctxt "@title"
 msgid "Remove"
 msgstr "삭제…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:22
+#: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
 msgid "Ask AI…"
 msgstr ""
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:49
+#: widgets/menu/textautogeneratemenuwidget.cpp:61
 #, fuzzy, kde-format
 #| msgid "Configure…"
 msgctxt "@action"

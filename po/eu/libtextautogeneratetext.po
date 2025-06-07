@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 02:35+0000\n"
+"POT-Creation-Date: 2025-06-07 02:32+0000\n"
 "PO-Revision-Date: 2025-06-05 21:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1524,12 +1524,12 @@ msgctxt "@title"
 msgid "Remove"
 msgstr "Kendu"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:22
+#: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
 msgid "Ask AI…"
 msgstr "Galdetu AAri..."
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:49
+#: widgets/menu/textautogeneratemenuwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"

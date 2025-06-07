@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-05 02:35+0000\n"
+"POT-Creation-Date: 2025-06-07 02:32+0000\n"
 "PO-Revision-Date: 2025-06-02 02:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1866,12 +1866,12 @@ msgctxt "@title"
 msgid "Remove"
 msgstr "Eliminar"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:22
+#: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
 msgid "Ask AI…"
 msgstr "Preguntar a la IA…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:49
+#: widgets/menu/textautogeneratemenuwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
