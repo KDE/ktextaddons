@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:42+0000\n"
-"PO-Revision-Date: 2025-06-05 12:24+0200\n"
+"POT-Creation-Date: 2025-06-07 00:41+0000\n"
+"PO-Revision-Date: 2025-06-06 12:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -203,60 +203,50 @@ msgstr "Model toevoegen"
 msgid "Categories"
 msgstr "Categorieën"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
 #, kde-format
 msgid "Base:"
-msgstr ""
+msgstr "Basis:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:30
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "Naam:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:33
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "Tag:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:36
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Aanmaken"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:50
-#, kde-format
-msgctxt "@action:button"
-msgid "Cancel"
-msgstr "Annuleren"
-
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr ""
+msgstr "GGUF-bestand laden…"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Alles selecteren"
+msgstr "GGUF-bestand selecteren"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Create Models"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Modellen aanmaken"
+msgstr "Model aanmaken"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -268,6 +258,13 @@ msgstr "Model downloaden"
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
 msgstr "Voer modelnaam in als \"naam:tag\""
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:45
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Cancel"
+msgstr "Annuleren"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
@@ -1341,6 +1338,8 @@ msgid ""
 "A language model created by combining two fine-tuned Llama 2 70B models into "
 "one."
 msgstr ""
+"Een taalmodel gemaakt door combineren van twee fijn afgestemde Llama 2 70B "
+"modellen in één."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
 #, kde-format
@@ -1348,6 +1347,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
+"De IBM Granite 1B en 3B modellen vormen het eerste mengsel van experts (MoE) "
+"Granite modellen van IBM ontworpen voor gebruik bij lage vertraging."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:190
 #, kde-format
@@ -1355,6 +1356,8 @@ msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
 "information extraction, based on Phi-3."
 msgstr ""
+"Een 3.8B model fijn afgestemd op een private synthetische gegevensset van "
+"hoge kwaliteit voor extractie van informatie, gebaseerd op Phi-3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
 #, kde-format
@@ -1362,11 +1365,13 @@ msgid ""
 "Cohere For AI's language models trained to perform well across 23 different "
 "languages."
 msgstr ""
+"Taalmodel van Cohere For AI getraind om goed te presteren over 23 "
+"verschillende talen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:192
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
-msgstr ""
+msgstr "DBRX is een open, LLM voor algemeen gebruik gemaakt door Databricks."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:194
 #, kde-format
@@ -1374,6 +1379,8 @@ msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
 "International Digital Commerce Group (AIDC-AI)."
 msgstr ""
+"Een open groot model voor redeneren voor oplossingen in de echte wereld door "
+"de Alibaba International Digital Commerce Group (AIDC-AI)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
 #, kde-format
@@ -1386,6 +1393,8 @@ msgid ""
 "An open weights function calling model based on Llama 3, competitive with "
 "GPT-4o function calling capabilities."
 msgstr ""
+"Een open gewichten functie-aanroep-model gebaseerd op Llama 3, in competitie "
+"met GPT-4o functie-aanroep-mogelijkheden."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:198
 #, kde-format
@@ -1393,6 +1402,8 @@ msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
 "use cases."
 msgstr ""
+"Een robuust conversationeel model ontworpen om gebruikt te worden voor "
+"gebruiksgevallen in zowel chat als instructie."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:200
 #, kde-format
@@ -1400,6 +1411,9 @@ msgid ""
 "An upgraded version of DeekSeek-V2 that integrates the general and coding "
 "abilities of both DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct."
 msgstr ""
+"Een opgewaardeerde versie van DeekSeek-V2 die de algemene en "
+"coderingsmogelijkheden integreert van zowel DeepSeek-V2-Chat als DeepSeek-"
+"Coder-V2-Instruct."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:202
 #, kde-format
@@ -1408,6 +1422,9 @@ msgid ""
 "text prompt input and text output responses against a set of defined safety "
 "policies."
 msgstr ""
+"ShieldGemma is een set ven modellen fijn afgestemd op instructies voor het "
+"evalueren van de veiligheid van invoer na tekstprompt en tekstuitvoer "
+"antwoorden tegen een set van gedefinieerde beveiligingsbeleidsregels."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
 #, kde-format
@@ -1429,6 +1446,8 @@ msgid ""
 "Sentence-transformers model that can be used for tasks like clustering or "
 "semantic search."
 msgstr ""
+"Model voor transformatie van zinnen dat gebruikt kan worden voor taken zoals "
+"clusteren of semantisch zoeken."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
 #, kde-format
@@ -1450,6 +1469,9 @@ msgid ""
 "Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
 "support without sacrificing English performance or scalability."
 msgstr ""
+"Snowflake's frontier embedding model. Arctic Embed 2.0 voegt meertalige "
+"ondersteuning toe zonder opofferen van prestaties in Engels of "
+"schaalbaarheid."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:213
 #, kde-format
@@ -1795,6 +1817,17 @@ msgctxt "@title:window"
 msgid "Configure Openai IA"
 msgstr "Openai IA configureren"
 
+#: widgets/common/textautogeneratenotworkingwidget.cpp:30
+#, kde-format
+msgid "Configure…"
+msgstr "Configureren…"
+
+#: widgets/common/textautogeneratetextlineedit.cpp:16
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Enter a message"
+msgstr "Voer een bericht in"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1837,12 +1870,12 @@ msgctxt "@title"
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:22
+#: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
 msgid "Ask AI…"
 msgstr "Aan AI vragen…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:49
+#: widgets/menu/textautogeneratemenuwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
@@ -1852,6 +1885,13 @@ msgstr "Configureren…"
 #, kde-format
 msgid "Api Key:"
 msgstr "API-sleutel:"
+
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/textautogeneratedialog.cpp:30
+#, kde-format
+msgctxt "@title:window"
+msgid "Conversation"
+msgstr "Conversatie"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -1863,12 +1903,6 @@ msgstr "IA configureren"
 #, kde-format
 msgid "Engine:"
 msgstr "Engine:"
-
-#: widgets/textautogeneratedialog.cpp:30
-#, kde-format
-msgctxt "@title:window"
-msgid "Conversation"
-msgstr "Conversatie"
 
 #: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
@@ -1901,22 +1935,11 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Zoeken…"
 
-#: widgets/textautogeneratenotworkingwidget.cpp:30
-#, kde-format
-msgid "Configure…"
-msgstr "Configureren…"
-
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Zoeken"
-
-#: widgets/textautogeneratetextlineedit.cpp:16
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Enter a message"
-msgstr "Voer een bericht in"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:17
 #, kde-format
@@ -1999,12 +2022,6 @@ msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Cancel"
-msgstr "Annuleren"
-
 #: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2014,7 +2031,11 @@ msgstr "Vernieuwen"
 #: widgets/view/textautogeneratesearchlistview.cpp:48
 #, kde-format
 msgid "No Messages Found."
-msgstr ""
+msgstr "Geen berichten gevonden."
+
+#~ msgctxt "@action:button"
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
 
 #, fuzzy
 #~| msgid "Favorite"
