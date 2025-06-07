@@ -19,7 +19,7 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
     mainLayout->setContentsMargins({});
 
     mTextAutoGenerateResultWidget->setObjectName(QStringLiteral("mTextAutoGenerateResultWidget"));
-    mainLayout->addWidget(mTextAutoGenerateResultWidget);
+    mainLayout->addWidget(mTextAutoGenerateResultWidget, 1);
 
     mTextAutoGenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutoGenerateTextLineEdit"));
     mainLayout->addWidget(mTextAutoGenerateTextLineEdit);
