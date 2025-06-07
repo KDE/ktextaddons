@@ -24,7 +24,7 @@ TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateT
     : QDialog(parent)
     , mTextAutoGenerateQuickAskWidget(new TextAutoGenerateQuickAskWidget(manager, this))
 {
-    setWindowTitle(i18nc("@title:window", "Conversation"));
+    setWindowTitle(i18nc("@title:window", "Quick Ask"));
 
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
