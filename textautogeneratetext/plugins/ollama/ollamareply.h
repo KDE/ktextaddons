@@ -31,7 +31,7 @@ public:
     /**
      * @brief Get the current response content.
      *
-     * This function returns what it has recieved of the response so far. Therefore, until finished() is emitted, this
+     * This function returns what it has received of the response so far. Therefore, until finished() is emitted, this
      * function may return different values. However, once finished() is emitted, the content is guaranteed to remain
      * constant.
      *
