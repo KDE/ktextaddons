@@ -7,6 +7,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateQuickAskDialog>
 
 int main(int argc, char **argv)
@@ -18,7 +19,9 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto d = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(nullptr); // TODO
+    auto *manager = new TextAutoGenerateText::TextAutoGenerateManager;
+    auto d = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(manager);
+    manager->setParent(d);
     const int result = d->exec();
     delete d;
 
