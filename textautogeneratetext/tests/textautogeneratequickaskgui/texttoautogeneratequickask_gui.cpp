@@ -19,7 +19,8 @@ int main(int argc, char **argv)
     parser.process(app);
 
     auto d = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(nullptr); // TODO
-    d->exec();
-    app.exec();
-    return 0;
+    const int result = d->exec();
+    delete d;
+
+    return result;
 }
