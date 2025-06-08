@@ -40,10 +40,10 @@ TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;
 void TextAutoGenerateQuickAskWidget::loadEngine()
 {
     if (mManager) {
-        /*
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateQuickAskWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
         mManager->loadEngine();
+        /*
         if (mManager->textAutoGenerateClient()) {
             mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
         } else {
@@ -51,6 +51,20 @@ void TextAutoGenerateQuickAskWidget::loadEngine()
         }
     */
     }
+}
+
+void TextAutoGenerateQuickAskWidget::slotAutogenerateFailed(const QString &str)
+{
+    mStackedWidget->setCurrentWidget(mTextAutoGenerateNotWorkingWidget);
+}
+
+void TextAutoGenerateQuickAskWidget::slotInitializeDone()
+{
+    mPluginWasInitialized = true;
+    for (const auto &str : std::as_const(mAskMessageList)) {
+        slotEditingFinished(str, {});
+    }
+    mAskMessageList.clear();
 }
 
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)

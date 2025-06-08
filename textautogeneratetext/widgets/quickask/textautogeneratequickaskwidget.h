@@ -27,9 +27,13 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadEngine();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str, const QByteArray &uuid);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateQuickAskViewWidget *const mTextAutoGenerateQuickAskViewWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
     TextAutoGenerateManager *const mManager;
+    QStringList mAskMessageList;
+    bool mPluginWasInitialized = false;
 };
 }
