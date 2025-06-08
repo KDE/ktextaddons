@@ -144,14 +144,14 @@ QSequentialAnimationGroup *TextAutoGenerateMessageWaitingAnswerAnimation::create
     groupDown->addAnimation(scaleAnimationDown);
     groupDown->addAnimation(opacityAnimationDown);
 
-    auto sequencial = new QSequentialAnimationGroup(this);
+    auto sequential = new QSequentialAnimationGroup(this);
     const auto value = duration * (index + 1) / 2;
-    sequencial->addPause(value);
-    sequencial->addAnimation(groupUp);
-    sequencial->addAnimation(groupDown);
-    sequencial->setLoopCount(-1);
-    sequencial->start();
-    return sequencial;
+    sequential->addPause(value);
+    sequential->addAnimation(groupUp);
+    sequential->addAnimation(groupDown);
+    sequential->setLoopCount(-1);
+    sequential->start();
+    return sequential;
 }
 
 QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> TextAutoGenerateMessageWaitingAnswerAnimation::scaleOpacities() const
