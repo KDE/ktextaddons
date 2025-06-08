@@ -16,6 +16,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     , mStackedWidget(new QStackedWidget(this))
     , mTextAutoGenerateQuickAskViewWidget(new TextAutoGenerateQuickAskViewWidget(manager, this))
     , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(manager, this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -30,8 +31,40 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
     mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
+
+    loadEngine();
 }
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;
+
+void TextAutoGenerateQuickAskWidget::loadEngine()
+{
+    /*
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateQuickAskWidget::slotInitializeDone);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
+        mManager->loadEngine();
+        if (mManager->textAutoGenerateClient()) {
+            mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
+        } else {
+            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
+        }
+        mManager->loadHistory();
+    }
+    */
+}
+
+void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
+{
+    /*
+    mManager->checkCurrentChat();
+    if (uuid.isEmpty()) {
+        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
+    } else {
+        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str);
+    }
+    mTextAutoGenerateResultWidget->editingFinished(uuid);
+    */
+}
 
 #include "moc_textautogeneratequickaskwidget.cpp"

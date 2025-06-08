@@ -25,8 +25,11 @@ public:
     ~TextAutoGenerateQuickAskWidget() override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadEngine();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str, const QByteArray &uuid);
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateQuickAskViewWidget *const mTextAutoGenerateQuickAskViewWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
+    TextAutoGenerateManager *const mManager;
 };
 }
