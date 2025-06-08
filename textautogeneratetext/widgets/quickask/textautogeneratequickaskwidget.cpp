@@ -34,6 +34,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
     mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
 
+    mManager->setSaveInDatabase(false);
     loadEngine();
 }
 
@@ -53,6 +54,7 @@ void TextAutoGenerateQuickAskWidget::loadEngine()
 
 void TextAutoGenerateQuickAskWidget::slotAutogenerateFailed(const QString &str)
 {
+    mTextAutoGenerateNotWorkingWidget->setMessageError(str);
     mStackedWidget->setCurrentWidget(mTextAutoGenerateNotWorkingWidget);
 }
 
