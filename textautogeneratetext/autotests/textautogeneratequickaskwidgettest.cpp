@@ -20,3 +20,5 @@ void TextAutoGenerateQuickAskWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }
+
+#include "moc_textautogeneratequickaskwidgettest.cpp"

@@ -18,3 +18,5 @@ void TextAutoGenerateQuickAskDialogTest::shouldHaveDefaultValues()
     TextAutoGenerateText::TextAutoGenerateQuickAskDialog d(nullptr);
     // TODO
 }
+
+#include "moc_textautogeneratequickaskdialogtest.cpp"
