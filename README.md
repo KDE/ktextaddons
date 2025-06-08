@@ -1,13 +1,14 @@
-KTextAddons
-=======
+# KTextAddons
+
 Various text handling addons:
+
 - Auto-correction API
 - Text to Speak widgets
 - Text translator widgets (Several backend)
 - Text Emoticon support
 - LLM support widgets/backend (ollama)
 
-# Dependencies
+## Dependencies
 
 - extra-cmake-modules
 
