@@ -68,6 +68,9 @@ public:
     void goToMessage(const QByteArray &chatId, const QByteArray &messageId);
     void askToAssistant(const QString &msg);
     [[nodiscard]] bool chatInProgress(const QByteArray &chatId) const;
+    [[nodiscard]] bool saveInDatabase() const;
+    void setSaveInDatabase(bool newSaveInDatabase);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -89,5 +92,6 @@ private:
     std::unique_ptr<TextAutoGenerateChatSettings> mTextAutoGenerateChatSettings;
     QByteArray mCurrentChatId;
     bool mShowArchived = false;
+    bool mSaveInDatabase = true;
 };
 }

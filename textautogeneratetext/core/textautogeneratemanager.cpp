@@ -26,11 +26,13 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             &QAbstractItemModel::dataChanged,
             this,
             [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (roles.contains(TextAutoGenerateChatsModel::Title) || roles.contains(TextAutoGenerateChatsModel::Favorite)
-                    || roles.contains(TextAutoGenerateChatsModel::Archived)) {
-                    const QByteArray chatId = topLeft.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-                    const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
-                    mDatabaseManager->insertOrUpdateChat(chat);
+                if (mSaveInDatabase) {
+                    if (roles.contains(TextAutoGenerateChatsModel::Title) || roles.contains(TextAutoGenerateChatsModel::Favorite)
+                        || roles.contains(TextAutoGenerateChatsModel::Archived)) {
+                        const QByteArray chatId = topLeft.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+                        const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+                        mDatabaseManager->insertOrUpdateChat(chat);
+                    }
                 }
             });
 }
@@ -65,7 +67,9 @@ void TextAutoGenerateManager::createNewChat()
     // we don't need to initialize it. (new chat => no data)
     chat.setInitialized(true);
     mTextAutoGenerateChatsModel->addChat(chat);
-    mDatabaseManager->insertOrUpdateChat(chat);
+    if (mSaveInDatabase) {
+        mDatabaseManager->insertOrUpdateChat(chat);
+    }
     setCurrentChatId(chatId);
 }
 
@@ -94,6 +98,16 @@ void TextAutoGenerateManager::changeChatInPogressStatus(const QByteArray &chatId
     if (chatId == currentChatId()) {
         Q_EMIT chatInProgressChanged(inProgress);
     }
+}
+
+bool TextAutoGenerateManager::saveInDatabase() const
+{
+    return mSaveInDatabase;
+}
+
+void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
+{
+    mSaveInDatabase = newSaveInDatabase;
 }
 
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
@@ -180,7 +194,9 @@ void TextAutoGenerateManager::removeDiscussion(const QByteArray &chatId)
 {
     if (!chatId.isEmpty()) {
         mTextAutoGenerateChatsModel->removeDiscussion(chatId);
-        mDatabaseManager->deleteChat(chatId);
+        if (mSaveInDatabase) {
+            mDatabaseManager->deleteChat(chatId);
+        }
     }
 }
 
@@ -188,11 +204,15 @@ void TextAutoGenerateManager::addMessage(const QByteArray &chatId, const TextAut
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
-        mDatabaseManager->insertOrReplaceMessage(chatId, msg);
+        if (mSaveInDatabase) {
+            mDatabaseManager->insertOrReplaceMessage(chatId, msg);
+        }
         messagesModel->addMessage(msg);
-        // Update chat
-        const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
-        mDatabaseManager->insertOrUpdateChat(chat);
+        if (mSaveInDatabase) {
+            // Update chat
+            const TextAutoGenerateChat chat = mTextAutoGenerateChatsModel->chat(chatId);
+            mDatabaseManager->insertOrUpdateChat(chat);
+        }
     }
 }
 
@@ -258,29 +278,31 @@ void TextAutoGenerateManager::checkInitializedMessagesModel()
         if (!mTextAutoGenerateChatsModel->isInitialized(chatId)) {
             auto messagesModel = messagesModelFromChatId(chatId);
             if (messagesModel) {
-                QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
-                // Sort messages
-                std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
-                    if (left.dateTime() == right.dateTime()) {
-                        if (left.sender() == TextAutoGenerateMessage::Sender::User) {
-                            return true;
-                        }
-                    }
-                    return left.dateTime() < right.dateTime();
-                });
-
-                messagesModel->setMessages(messages);
-                connect(messagesModel,
-                        &QAbstractItemModel::dataChanged,
-                        this,
-                        [this, chatId, messagesModel](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                            if (roles.contains(TextAutoGenerateMessagesModel::MessageRole)) {
-                                const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-                                const TextAutoGenerateMessage msg = messagesModel->message(uuid);
-                                mDatabaseManager->insertOrReplaceMessage(chatId, msg);
+                if (mSaveInDatabase) {
+                    QList<TextAutoGenerateMessage> messages = mDatabaseManager->loadMessages(mCurrentChatId);
+                    // Sort messages
+                    std::sort(messages.begin(), messages.end(), [](const TextAutoGenerateMessage &left, const TextAutoGenerateMessage &right) {
+                        if (left.dateTime() == right.dateTime()) {
+                            if (left.sender() == TextAutoGenerateMessage::Sender::User) {
+                                return true;
                             }
-                            mTextAutoGenerateChatsModel->messagesChanged(chatId);
-                        });
+                        }
+                        return left.dateTime() < right.dateTime();
+                    });
+
+                    messagesModel->setMessages(messages);
+                    connect(messagesModel,
+                            &QAbstractItemModel::dataChanged,
+                            this,
+                            [this, chatId, messagesModel](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                                if (roles.contains(TextAutoGenerateMessagesModel::MessageRole)) {
+                                    const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+                                    const TextAutoGenerateMessage msg = messagesModel->message(uuid);
+                                    mDatabaseManager->insertOrReplaceMessage(chatId, msg);
+                                }
+                                mTextAutoGenerateChatsModel->messagesChanged(chatId);
+                            });
+                }
                 connect(messagesModel, &QAbstractItemModel::rowsRemoved, this, [this, chatId]() {
                     mTextAutoGenerateChatsModel->messagesChanged(chatId);
                 });
