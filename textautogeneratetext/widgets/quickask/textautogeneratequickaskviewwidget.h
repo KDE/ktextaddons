@@ -8,7 +8,7 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateTextLineEdit;
+class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateResultWidget;
 class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateQuickAskViewWidget : public QWidget
@@ -19,7 +19,7 @@ public:
     ~TextAutoGenerateQuickAskViewWidget() override;
 
 private:
-    TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
+    TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineWidget;
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
 };
 }

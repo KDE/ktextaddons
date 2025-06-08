@@ -6,12 +6,12 @@
 #include "textautogeneratequickaskviewwidget.h"
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogenerateresultwidget.h"
-#include "widgets/common/textautogeneratetextlineedit.h"
+#include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
+    , mTextAutoGenerateTextLineWidget(new TextAutoGenerateTextLineEditWidget(manager, this))
     , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -21,8 +21,8 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
     mTextAutoGenerateResultWidget->setObjectName(QStringLiteral("mTextAutoGenerateResultWidget"));
     mainLayout->addWidget(mTextAutoGenerateResultWidget, 1);
 
-    mTextAutoGenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutoGenerateTextLineEdit"));
-    mainLayout->addWidget(mTextAutoGenerateTextLineEdit);
+    mTextAutoGenerateTextLineWidget->setObjectName(QStringLiteral("mTextAutoGenerateTextLineWidget"));
+    mainLayout->addWidget(mTextAutoGenerateTextLineWidget);
 }
 
 TextAutoGenerateQuickAskViewWidget::~TextAutoGenerateQuickAskViewWidget() = default;
