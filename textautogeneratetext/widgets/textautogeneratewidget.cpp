@@ -13,10 +13,10 @@
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/common/textautogenerateresultwidget.h"
+#include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogenerateheaderwidget.h"
 #include "widgets/textautogeneratehistorywidget.h"
 #include "widgets/textautogeneratesearchdialog.h"
-#include "widgets/textautogeneratetextlineeditwidget.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>

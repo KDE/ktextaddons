@@ -6,7 +6,7 @@
 
 #include "textautogeneratetextlineeditwidgettest.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
-#include "widgets/textautogeneratetextlineeditwidget.h"
+#include "widgets/common/textautogeneratetextlineeditwidget.h"
 
 #include <QHBoxLayout>
 #include <QPushButton>

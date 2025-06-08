@@ -168,8 +168,8 @@ target_sources(KF6TextAutoGenerateText PRIVATE
     widgets/textautogeneratetextconfigurecombowidget.cpp
     widgets/textautogeneratetextconfigurecombowidget.h
 
-    widgets/textautogeneratetextlineeditwidget.h
-    widgets/textautogeneratetextlineeditwidget.cpp
+    widgets/common/textautogeneratetextlineeditwidget.h
+    widgets/common/textautogeneratetextlineeditwidget.cpp
 
     widgets/common/textautogenerateresultwidget.h
     widgets/common/textautogenerateresultwidget.cpp
