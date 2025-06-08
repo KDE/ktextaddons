@@ -39,8 +39,8 @@ TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;
 
 void TextAutoGenerateQuickAskWidget::loadEngine()
 {
-    /*
     if (mManager) {
+        /*
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateQuickAskWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
         mManager->loadEngine();
@@ -49,9 +49,8 @@ void TextAutoGenerateQuickAskWidget::loadEngine()
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
         }
-        mManager->loadHistory();
-    }
     */
+    }
 }
 
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
