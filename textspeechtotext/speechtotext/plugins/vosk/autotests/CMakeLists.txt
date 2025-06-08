@@ -10,7 +10,7 @@ macro(add_voskspeechtotext_unittest _source)
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
         voskspeechtotext
-)
+    )
 endmacro()
 
 add_voskspeechtotext_unittest(voskspeechtotextinfotest.cpp)

@@ -7,4 +7,3 @@ Singleton=true
 ItemAccessors=true
 Visibility=TEXTAUTOGENERATEOLLAMA_EXPORT
 IncludeFiles=\"textautogenerateollama_export.h\"
-

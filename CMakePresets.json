@@ -8,8 +8,8 @@
             "binaryDir": "${sourceDir}/build-${presetName}",
             "installDir": "$env{KF6}",
             "hidden": true
-        },	
-        {   
+        },
+        {
             "name": "dev-clang",
             "displayName": "dev-clang",
             "cacheVariables": {
@@ -17,7 +17,7 @@
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
                 "BUILD_WITH_QT6": "ON"
-            },  
+            },
             "environment": {
                 "CXX": "clang++",
                 "CCACHE_DISABLE": "ON"
@@ -38,7 +38,7 @@
             "inherits": [
                 "base"
             ]
-        },	
+        },
         {
             "name": "dev",
             "displayName": "Build against",
@@ -59,10 +59,10 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "BUILD_WITH_QT6": "ON",
-		"BERGAMOT_TRANSLATOR_PLUGIN": "ON",
-		"BLA_PREFER_PKGCONFIG": "ON",
-		"BLA_PKGCONFIG_BLAS": "openblas",
-		"cblas_cblas_LIBRARY": "cblas",
+                "BERGAMOT_TRANSLATOR_PLUGIN": "ON",
+                "BLA_PREFER_PKGCONFIG": "ON",
+                "BLA_PKGCONFIG_BLAS": "openblas",
+                "cblas_cblas_LIBRARY": "cblas",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
@@ -74,14 +74,14 @@
             "displayName": "Build with Asan support.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "ECM_ENABLE_SANITIZERS" : "'address;undefined'",
+                "ECM_ENABLE_SANITIZERS": "'address;undefined'",
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
                 "BUILD_WITH_QT6": "ON"
             },
             "inherits": [
                 "base"
             ]
-        },	
+        },
         {
             "name": "unity",
             "displayName": "Build with CMake unity support.",
@@ -95,13 +95,13 @@
                 "base"
             ]
         },
-        {   
+        {
             "name": "release",
             "displayName": "Build as release mode.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-		"BUILD_WITH_QT6": "ON",
-		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+                "BUILD_WITH_QT6": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
                 "base"
@@ -120,7 +120,7 @@
         {
             "name": "asan",
             "configurePreset": "asan"
-        },	
+        },
         {
             "name": "dev-bergamot-plugins",
             "configurePreset": "dev-bergamot-plugins"
@@ -132,7 +132,7 @@
         {
             "name": "release",
             "configurePreset": "release"
-        },	
+        },
         {
             "name": "unity",
             "configurePreset": "unity"

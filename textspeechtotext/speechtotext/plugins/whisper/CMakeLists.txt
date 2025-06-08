@@ -9,17 +9,23 @@ ecm_qt_declare_logging_category(speechtotext_whisper
     DESCRIPTION "whisper speechtotext"
     EXPORT KTEXTADDONS
 )
-target_sources(speechtotext_whisper PRIVATE
-    whisperspeechtotextclient.h
-    whisperspeechtotextclient.cpp
-
-    whisperspeechtotextplugin.h
-    whisperspeechtotextplugin.cpp
-
-    whisperspeechtotextpluginjob.h
-    whisperspeechtotextpluginjob.cpp
+target_sources(
+    speechtotext_whisper
+    PRIVATE
+        whisperspeechtotextclient.h
+        whisperspeechtotextclient.cpp
+        whisperspeechtotextplugin.h
+        whisperspeechtotextplugin.cpp
+        whisperspeechtotextpluginjob.h
+        whisperspeechtotextpluginjob.cpp
 )
 
-target_link_libraries(speechtotext_whisper PRIVATE KF6::TextSpeechToText KF6::I18n)
+target_link_libraries(
+    speechtotext_whisper
+    PRIVATE KF6::TextSpeechToText KF6::I18n
+)
 
-install(TARGETS speechtotext_whisper  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)
+install(
+    TARGETS speechtotext_whisper
+    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/
+)

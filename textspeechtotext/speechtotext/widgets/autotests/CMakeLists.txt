@@ -9,7 +9,7 @@ macro(add_speechtotext_widget_unittest _source)
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
         KF6::TextSpeechToText
-)
+    )
 endmacro()
 add_speechtotext_widget_unittest(speechtotextconfigurewidgettest.cpp)
 add_speechtotext_widget_unittest(speechtotextselectdevicewidgettest.cpp)

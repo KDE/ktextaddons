@@ -18,4 +18,3 @@ ecm_add_qtdesignerplugin(texttranslatorwidgets
     INSTALL_DESTINATION "${KDE_INSTALL_QTPLUGINDIR}/designer"
     COMPONENT Devel
 )
-

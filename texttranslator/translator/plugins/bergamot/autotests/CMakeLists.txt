@@ -10,7 +10,7 @@ macro(add_translator_bergamot_unittest _source)
         LINK_LIBRARIES Qt::Test
         Qt::Widgets
         libbergamot
-)
+    )
 endmacro()
 add_translator_bergamot_unittest(bergamotengineutilstest.cpp)
 add_translator_bergamot_unittest(translatortest.cpp)

@@ -5,7 +5,7 @@ macro(add_textedit_texttospeech_unittest _source)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "texttospeech-"
         LINK_LIBRARIES Qt::Test KF6::TextEditTextToSpeech Qt::Widgets Qt::TextToSpeech
-)
+    )
 endmacro()
 
 add_textedit_texttospeech_unittest( texttospeechwidgettest.cpp)

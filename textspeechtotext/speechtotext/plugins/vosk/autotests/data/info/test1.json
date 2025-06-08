@@ -1,13 +1,12 @@
-    {
-        "lang": "ua",
-        "lang_text": "Ukrainian",
-        "md5": "138fb6e39f858619527030f064c0a8fc",
-        "name": "vosk-model-uk-v3",
-        "obsolete": "false",
-        "size": 371048965,
-        "size_text": "353.9MiB",
-        "type": "big",
-        "url": "https://alphacephei.com/vosk/models/vosk-model-uk-v3.zip",
-        "version": "v3"
-    }
-
+{
+    "lang": "ua",
+    "lang_text": "Ukrainian",
+    "md5": "138fb6e39f858619527030f064c0a8fc",
+    "name": "vosk-model-uk-v3",
+    "obsolete": "false",
+    "size": 371048965,
+    "size_text": "353.9MiB",
+    "type": "big",
+    "url": "https://alphacephei.com/vosk/models/vosk-model-uk-v3.zip",
+    "version": "v3"
+}

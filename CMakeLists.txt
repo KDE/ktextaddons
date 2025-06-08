@@ -9,11 +9,20 @@ set(KF_MIN_VERSION "6.14.0")
 set(QT6KEYCHAIN_LIB_VERSION "0.14.2")
 set(CMAKE_CXX_STANDARD 20)
 include(FeatureSummary)
-find_package(ECM ${KF_MIN_VERSION}  NO_MODULE)
-set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://invent.kde.org/frameworks/extra-cmake-modules")
-feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
+find_package(ECM ${KF_MIN_VERSION} NO_MODULE)
+set_package_properties(
+    ECM
+    PROPERTIES
+        TYPE REQUIRED
+        DESCRIPTION "Extra CMake Modules."
+        URL "https://invent.kde.org/frameworks/extra-cmake-modules"
+)
+feature_summary(
+    WHAT REQUIRED_PACKAGES_NOT_FOUND
+    FATAL_ON_MISSING_REQUIRED_PACKAGES
+)
 
-set(CMAKE_MODULE_PATH  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
@@ -31,46 +40,56 @@ include(CMakeDependentOption)
 include(ECMQtDeclareLoggingCategory)
 include(ECMCheckOutboundLicense)
 
-file(GLOB_RECURSE ALL_SOURCE_FILES
-textaddonswidgets/*.cpp
-textaddonswidgets/*.h
-textedittexttospeech/*.cpp
-textedittexttospeech/*.h
-textspeechtotext/*.cpp
-textspeechtotext/*.h
-textautocorrection/*.cpp
-textautocorrection/*.h
-textemoticons/*.cpp
-textemoticons/*.h
-texttranslator/*.cpp
-texttranslator/*.h
-textcustomeditor/*.cpp
-textcustomeditor/*.h
-textgrammarcheck/*.cpp
-textgrammarcheck/*.h
-textutils/*.cpp
-textutils/*.h
-textautogeneratetext/*.h
-textautogeneratetext/*.cpp
+file(
+    GLOB_RECURSE ALL_SOURCE_FILES
+    textaddonswidgets/*.cpp
+    textaddonswidgets/*.h
+    textedittexttospeech/*.cpp
+    textedittexttospeech/*.h
+    textspeechtotext/*.cpp
+    textspeechtotext/*.h
+    textautocorrection/*.cpp
+    textautocorrection/*.h
+    textemoticons/*.cpp
+    textemoticons/*.h
+    texttranslator/*.cpp
+    texttranslator/*.h
+    textcustomeditor/*.cpp
+    textcustomeditor/*.h
+    textgrammarcheck/*.cpp
+    textgrammarcheck/*.h
+    textutils/*.cpp
+    textutils/*.h
+    textautogeneratetext/*.h
+    textautogeneratetext/*.cpp
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 option(BUILD_QUICK "Build with QtQuick support (experimental)" OFF)
-if (BUILD_QUICK)
+if(BUILD_QUICK)
     include(ECMQmlModule)
-endif ()
+endif()
 
-find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml Sql)
+find_package(
+    Qt6
+    ${QT_REQUIRED_VERSION}
+    CONFIG
+    REQUIRED Widgets Core Network Xml Sql
+)
 
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
-    I18n
-    ColorScheme
-    Archive
-    CoreAddons
-    Sonnet
-    SyntaxHighlighting
-    WidgetsAddons
-    TextWidgets
+find_package(
+    KF6
+    ${KF_MIN_VERSION}
+    REQUIRED
+    COMPONENTS
+        I18n
+        ColorScheme
+        Archive
+        CoreAddons
+        Sonnet
+        SyntaxHighlighting
+        WidgetsAddons
+        TextWidgets
 )
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
 add_feature_info(KIO_SUPPORT ${BUILD_KIO_SUPPORT} "Build with KIO support")
@@ -80,20 +99,31 @@ if(${BUILD_KIO_SUPPORT})
 endif()
 
 option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
-add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
+add_feature_info(
+    DESIGNERPLUGIN
+    ${BUILD_DESIGNERPLUGIN}
+    "Build plugin for Qt Designer"
+)
 
 find_package(Qt6Keychain ${QT6KEYCHAIN_LIB_VERSION} CONFIG)
-set_package_properties(Qt6Keychain PROPERTIES
-                                   DESCRIPTION "Provides support for secure credentials storage"
-                                   URL "https://github.com/frankosterfeld/qtkeychain"
-                                   TYPE REQUIRED)
+set_package_properties(
+    Qt6Keychain
+    PROPERTIES
+        DESCRIPTION "Provides support for secure credentials storage"
+        URL "https://github.com/frankosterfeld/qtkeychain"
+        TYPE REQUIRED
+)
 
 if(BUILD_TESTING)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
     add_definitions(-DBUILD_TESTING)
 endif()
 
-option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
+option(
+    USE_UNITY_CMAKE_SUPPORT
+    "Use UNITY cmake support (speedup compile time)"
+    OFF
+)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if(USE_UNITY_CMAKE_SUPPORT)
@@ -101,15 +131,35 @@ if(USE_UNITY_CMAKE_SUPPORT)
 endif()
 
 option(BERGAMOT_TRANSLATOR_PLUGIN "Build bergamot translator plugin" OFF)
-add_feature_info(BERGAMOT_TRANSLATOR_PLUGIN ${BERGAMOT_TRANSLATOR_PLUGIN} "Bergamot translator plugin (local translation) (Experimental. Need to download bergamot source code first)")
+add_feature_info(
+    BERGAMOT_TRANSLATOR_PLUGIN
+    ${BERGAMOT_TRANSLATOR_PLUGIN}
+    "Bergamot translator plugin (local translation) (Experimental. Need to download bergamot source code first)"
+)
 
 option(SPEAK_TO_TEXT_VOSK_PLUGIN "Build vosk speak to text support" OFF)
-add_feature_info(SPEAK_TO_TEXT_VOSK_PLUGIN ${SPEAK_TO_TEXT_VOSK_PLUGIN} "Vosk speak to text plugin (local text to speak) (Experimental)")
+add_feature_info(
+    SPEAK_TO_TEXT_VOSK_PLUGIN
+    ${SPEAK_TO_TEXT_VOSK_PLUGIN}
+    "Vosk speak to text plugin (local text to speak) (Experimental)"
+)
 
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
+option(
+    BUILD_QCH
+    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
+    OFF
+)
+add_feature_info(
+    QCH
+    ${BUILD_QCH}
+    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
+)
 
-option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)" OFF)
+option(
+    DISABLE_AUTOTEST_BROKEN_CI
+    "Disable autotest broken on CI (work locally)"
+    OFF
+)
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(
@@ -118,13 +168,14 @@ ecm_set_disabled_deprecation_versions(
 )
 
 if(BERGAMOT_TRANSLATOR_PLUGIN)
-   find_package(slimt)
-   set_package_properties(slimt PROPERTIES DESCRIPTION
-       "Add local translation based on Bergamot"
-       TYPE OPTIONAL
-  )
+    find_package(slimt)
+    set_package_properties(
+        slimt
+        PROPERTIES
+            DESCRIPTION "Add local translation based on Bergamot"
+            TYPE OPTIONAL
+    )
 endif()
-
 
 add_subdirectory(textaddonswidgets)
 add_subdirectory(textautocorrection)
@@ -137,9 +188,9 @@ add_subdirectory(textspeechtotext)
 add_subdirectory(textautogeneratetext)
 
 find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
-set_package_properties(Qt6TextToSpeech PROPERTIES DESCRIPTION
-    "Add support for text to speech"
-    TYPE OPTIONAL
+set_package_properties(
+    Qt6TextToSpeech
+    PROPERTIES DESCRIPTION "Add support for text to speech" TYPE OPTIONAL
 )
 if(TARGET Qt6::TextToSpeech)
     add_subdirectory(textedittexttospeech)
@@ -151,7 +202,6 @@ ecm_qt_install_logging_categories(
         FILE ktextaddons.categories
         DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
-
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)

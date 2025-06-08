@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextautogeneratetext\")
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoGenerateText")
+set(CMAKECONFIG_INSTALL_DIR
+    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoGenerateText"
+)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h"
@@ -9,18 +11,25 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXT
     SOVERSION 1
 )
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfigVersion.cmake"
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF6TextAutoGenerateTextTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF6TextAutoGenerateTextTargets.cmake NAMESPACE KF6::)
+install(
+    EXPORT KF6TextAutoGenerateTextTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KF6TextAutoGenerateTextTargets.cmake
+    NAMESPACE KF6::
+)
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/
+    COMPONENT Devel
 )
 
 add_library(KF6TextAutoGenerateText)
@@ -68,212 +77,165 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
     EXPORT KTEXTADDONS
 )
 
-target_sources(KF6TextAutoGenerateText PRIVATE
-    core/textautogeneratetextutils.h
-    core/textautogeneratetextutils.cpp
-
-    core/textautogenerateengineplugin.h
-    core/textautogenerateengineplugin.cpp
-    core/textautogenerateengineloader.cpp
-    core/textautogenerateengineloader.h
-    core/textautogeneratetextclient.h
-    core/textautogeneratetextclient.cpp
-    core/textautogeneratetextplugin.h
-    core/textautogeneratetextplugin.cpp
-    core/textautogeneratemanager.h
-    core/textautogeneratemanager.cpp
-    core/textautogenerateengineaccessmanager.cpp
-    core/textautogenerateengineaccessmanager.h
-
-    core/textautogeneratechatsettings.h
-    core/textautogeneratechatsettings.cpp
-
-    core/textautogeneratetextreplyinfo.h
-    core/textautogeneratetextreplyinfo.cpp
-
-    core/textautogenerateengineutil.h
-    core/textautogenerateengineutil.cpp
-
-    core/textautogeneratemessagesmodel.h
-    core/textautogeneratemessagesmodel.cpp
-
-    core/textautogeneratesearchmessagesmodel.h
-    core/textautogeneratesearchmessagesmodel.cpp
-
-    core/textautogeneratesearchmessage.h
-    core/textautogeneratesearchmessage.cpp
-
-    core/textautogeneratemessage.h
-    core/textautogeneratemessage.cpp
-
-    core/textautogenerateanswerinfo.h
-    core/textautogenerateanswerinfo.cpp
-
-    core/textautogeneratetextcontext.h
-    core/textautogeneratetextcontext.cpp
-
-    core/textautogeneratehistorysortfilterproxymodel.h
-    core/textautogeneratehistorysortfilterproxymodel.cpp
-
-    core/textautogeneratehistorylistheadingsproxymodel.h
-    core/textautogeneratehistorylistheadingsproxymodel.cpp
-
-    core/textautogeneratemessageutils.h
-    core/textautogeneratemessageutils.cpp
-
-    core/textautogeneratechat.h
-    core/textautogeneratechat.cpp
-    core/textautogeneratechatsmodel.h
-    core/textautogeneratechatsmodel.cpp
-
-    core/localdatabase/textautogeneratelocaldatabaseutils.h
-    core/localdatabase/textautogeneratelocaldatabaseutils.cpp
-
-    core/localdatabase/textautogeneratelocaldatabaseabstract.h
-    core/localdatabase/textautogeneratelocaldatabaseabstract.cpp
-    core/localdatabase/textautogeneratelocalchatsdatabase.h
-    core/localdatabase/textautogeneratelocalchatsdatabase.cpp
-    core/localdatabase/textautogeneratelocalmessagesdatabase.cpp
-    core/localdatabase/textautogeneratelocalmessagesdatabase.h
-    core/localdatabase/textautogeneratelocaldatabasemanager.h
-    core/localdatabase/textautogeneratelocaldatabasemanager.cpp
-
-    core/textautogeneratesearchjob.h
-    core/textautogeneratesearchjob.cpp
-
-    core/textautogenerateaskjob.h
-    core/textautogenerateaskjob.cpp
-
-    core/textautogeneratesearchmessageutils.h
-    core/textautogeneratesearchmessageutils.cpp
-
-    core/textautogeneratereply.h
-    core/textautogeneratereply.cpp
-    core/textautogeneratetextrequest.cpp
-    core/textautogeneratetextrequest.h
-
-    core/textautogeneratemanagerbase.h
-    core/textautogeneratemanagerbase.cpp
-
-    core/textautogeneratetextinstance.h
-    core/textautogeneratetextinstance.cpp
-
-    core/textautogeneratetextinstancemanager.h
-    core/textautogeneratetextinstancemanager.cpp
+target_sources(
+    KF6TextAutoGenerateText
+    PRIVATE
+        core/textautogeneratetextutils.h
+        core/textautogeneratetextutils.cpp
+        core/textautogenerateengineplugin.h
+        core/textautogenerateengineplugin.cpp
+        core/textautogenerateengineloader.cpp
+        core/textautogenerateengineloader.h
+        core/textautogeneratetextclient.h
+        core/textautogeneratetextclient.cpp
+        core/textautogeneratetextplugin.h
+        core/textautogeneratetextplugin.cpp
+        core/textautogeneratemanager.h
+        core/textautogeneratemanager.cpp
+        core/textautogenerateengineaccessmanager.cpp
+        core/textautogenerateengineaccessmanager.h
+        core/textautogeneratechatsettings.h
+        core/textautogeneratechatsettings.cpp
+        core/textautogeneratetextreplyinfo.h
+        core/textautogeneratetextreplyinfo.cpp
+        core/textautogenerateengineutil.h
+        core/textautogenerateengineutil.cpp
+        core/textautogeneratemessagesmodel.h
+        core/textautogeneratemessagesmodel.cpp
+        core/textautogeneratesearchmessagesmodel.h
+        core/textautogeneratesearchmessagesmodel.cpp
+        core/textautogeneratesearchmessage.h
+        core/textautogeneratesearchmessage.cpp
+        core/textautogeneratemessage.h
+        core/textautogeneratemessage.cpp
+        core/textautogenerateanswerinfo.h
+        core/textautogenerateanswerinfo.cpp
+        core/textautogeneratetextcontext.h
+        core/textautogeneratetextcontext.cpp
+        core/textautogeneratehistorysortfilterproxymodel.h
+        core/textautogeneratehistorysortfilterproxymodel.cpp
+        core/textautogeneratehistorylistheadingsproxymodel.h
+        core/textautogeneratehistorylistheadingsproxymodel.cpp
+        core/textautogeneratemessageutils.h
+        core/textautogeneratemessageutils.cpp
+        core/textautogeneratechat.h
+        core/textautogeneratechat.cpp
+        core/textautogeneratechatsmodel.h
+        core/textautogeneratechatsmodel.cpp
+        core/localdatabase/textautogeneratelocaldatabaseutils.h
+        core/localdatabase/textautogeneratelocaldatabaseutils.cpp
+        core/localdatabase/textautogeneratelocaldatabaseabstract.h
+        core/localdatabase/textautogeneratelocaldatabaseabstract.cpp
+        core/localdatabase/textautogeneratelocalchatsdatabase.h
+        core/localdatabase/textautogeneratelocalchatsdatabase.cpp
+        core/localdatabase/textautogeneratelocalmessagesdatabase.cpp
+        core/localdatabase/textautogeneratelocalmessagesdatabase.h
+        core/localdatabase/textautogeneratelocaldatabasemanager.h
+        core/localdatabase/textautogeneratelocaldatabasemanager.cpp
+        core/textautogeneratesearchjob.h
+        core/textautogeneratesearchjob.cpp
+        core/textautogenerateaskjob.h
+        core/textautogenerateaskjob.cpp
+        core/textautogeneratesearchmessageutils.h
+        core/textautogeneratesearchmessageutils.cpp
+        core/textautogeneratereply.h
+        core/textautogeneratereply.cpp
+        core/textautogeneratetextrequest.cpp
+        core/textautogeneratetextrequest.h
+        core/textautogeneratemanagerbase.h
+        core/textautogeneratemanagerbase.cpp
+        core/textautogeneratetextinstance.h
+        core/textautogeneratetextinstance.cpp
+        core/textautogeneratetextinstancemanager.h
+        core/textautogeneratetextinstancemanager.cpp
 )
 
-target_sources(KF6TextAutoGenerateText PRIVATE
-    widgets/textautogenerateconfigurewidget.h
-    widgets/textautogenerateconfigurewidget.cpp
-    widgets/textautogeneratetextconfigurecombowidget.cpp
-    widgets/textautogeneratetextconfigurecombowidget.h
-
-    widgets/common/textautogeneratetextlineeditwidget.h
-    widgets/common/textautogeneratetextlineeditwidget.cpp
-
-    widgets/common/textautogenerateresultwidget.h
-    widgets/common/textautogenerateresultwidget.cpp
-
-    widgets/common/textautogeneratetextlineedit.h
-    widgets/common/textautogeneratetextlineedit.cpp
-
-    widgets/common/textautogeneratenotworkingwidget.h
-    widgets/common/textautogeneratenotworkingwidget.cpp    
-
-    widgets/textautogeneratewidget.h
-    widgets/textautogeneratewidget.cpp
-
-    widgets/textautogeneratedialog.h
-    widgets/textautogeneratedialog.cpp
-
-    widgets/view/textautogeneratelistview.h
-    widgets/view/textautogeneratelistview.cpp
-
-    widgets/view/textautogeneratelistviewdelegate.h
-    widgets/view/textautogeneratelistviewdelegate.cpp
-    widgets/view/textautogeneratelistviewbasedelegate.cpp
-    widgets/view/textautogeneratelistviewbasedelegate.h
-
-    widgets/view/textautogeneratedelegateutils.h
-    widgets/view/textautogeneratedelegateutils.cpp
-
-    widgets/view/textautogenerateselectedmessagebackgroundanimation.h
-    widgets/view/textautogenerateselectedmessagebackgroundanimation.cpp
-
-    widgets/view/textautogeneratemessagewaitingansweranimation.h
-    widgets/view/textautogeneratemessagewaitingansweranimation.cpp
-    widgets/view/textautogeneratecolorsandmessageviewstyle.h
-    widgets/view/textautogeneratecolorsandmessageviewstyle.cpp
-    widgets/view/textautogeneratebaselistview.h
-    widgets/view/textautogeneratebaselistview.cpp
-
-    widgets/view/textautogeneratesearchlistview.h
-    widgets/view/textautogeneratesearchlistview.cpp
-
-    widgets/view/textautogeneratesearchlistviewdelegate.h
-    widgets/view/textautogeneratesearchlistviewdelegate.cpp
-
-    widgets/textautogeneratestackwidget.h
-    widgets/textautogeneratestackwidget.cpp
-
-    widgets/textautogenerateconfiguredialog.h
-    widgets/textautogenerateconfiguredialog.cpp
-
-    widgets/textautogeneratehistorywidget.h
-    widgets/textautogeneratehistorywidget.cpp
-
-    widgets/view/textautogeneratehistorylistview.h
-    widgets/view/textautogeneratehistorylistview.cpp
-
-    widgets/view/textautogeneratehistorylistviewdelegate.h
-    widgets/view/textautogeneratehistorylistviewdelegate.cpp
-    widgets/view/textautogeneratelistviewtextselection.h
-    widgets/view/textautogeneratelistviewtextselection.cpp
-    widgets/view/lrucache.h
-
-    widgets/textautogenerateheaderwidget.h
-    widgets/textautogenerateheaderwidget.cpp
-
-    widgets/textautogeneratesearchwidget.h
-    widgets/textautogeneratesearchwidget.cpp
-
-    widgets/textautogeneratesearchdialog.h
-    widgets/textautogeneratesearchdialog.cpp
-
-    widgets/textautogeneratesearchlineedit.h
-    widgets/textautogeneratesearchlineedit.cpp
-
-    widgets/menu/textautogeneratemenuconfiguredialog.cpp
-    widgets/menu/textautogeneratemenuconfiguredialog.h
-    widgets/menu/textautogeneratemenuconfigurewidget.cpp
-    widgets/menu/textautogeneratemenuconfigurewidget.h
-    widgets/menu/textautogeneratemenulistview.cpp
-    widgets/menu/textautogeneratemenulistview.h
-    widgets/menu/textautogeneratemenulistviewdelegate.cpp
-    widgets/menu/textautogeneratemenulistviewdelegate.h
-    widgets/menu/textautogeneratemenumodel.cpp
-    widgets/menu/textautogeneratemenumodel.h
-    widgets/menu/textautogeneratemenutextinfo.cpp
-    widgets/menu/textautogeneratemenutextinfo.h
-    widgets/menu/textautogeneratemenutextmanager.cpp
-    widgets/menu/textautogeneratemenutextmanager.h
-    widgets/menu/textautogeneratemenuwidget.cpp
-    widgets/menu/textautogeneratemenuwidget.h
-
-    widgets/networkpluginconfigure/networkpluginconfigurewidget.h
-    widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp
-
-    widgets/textautogeneratetextinstancemanagerwidget.h
-    widgets/textautogeneratetextinstancemanagerwidget.cpp
-
-
-    widgets/quickask/textautogeneratequickaskdialog.h
-    widgets/quickask/textautogeneratequickaskdialog.cpp
-
-    widgets/quickask/textautogeneratequickaskwidget.h
-    widgets/quickask/textautogeneratequickaskwidget.cpp
-    widgets/quickask/textautogeneratequickaskviewwidget.h
-    widgets/quickask/textautogeneratequickaskviewwidget.cpp
+target_sources(
+    KF6TextAutoGenerateText
+    PRIVATE
+        widgets/textautogenerateconfigurewidget.h
+        widgets/textautogenerateconfigurewidget.cpp
+        widgets/textautogeneratetextconfigurecombowidget.cpp
+        widgets/textautogeneratetextconfigurecombowidget.h
+        widgets/common/textautogeneratetextlineeditwidget.h
+        widgets/common/textautogeneratetextlineeditwidget.cpp
+        widgets/common/textautogenerateresultwidget.h
+        widgets/common/textautogenerateresultwidget.cpp
+        widgets/common/textautogeneratetextlineedit.h
+        widgets/common/textautogeneratetextlineedit.cpp
+        widgets/common/textautogeneratenotworkingwidget.h
+        widgets/common/textautogeneratenotworkingwidget.cpp
+        widgets/textautogeneratewidget.h
+        widgets/textautogeneratewidget.cpp
+        widgets/textautogeneratedialog.h
+        widgets/textautogeneratedialog.cpp
+        widgets/view/textautogeneratelistview.h
+        widgets/view/textautogeneratelistview.cpp
+        widgets/view/textautogeneratelistviewdelegate.h
+        widgets/view/textautogeneratelistviewdelegate.cpp
+        widgets/view/textautogeneratelistviewbasedelegate.cpp
+        widgets/view/textautogeneratelistviewbasedelegate.h
+        widgets/view/textautogeneratedelegateutils.h
+        widgets/view/textautogeneratedelegateutils.cpp
+        widgets/view/textautogenerateselectedmessagebackgroundanimation.h
+        widgets/view/textautogenerateselectedmessagebackgroundanimation.cpp
+        widgets/view/textautogeneratemessagewaitingansweranimation.h
+        widgets/view/textautogeneratemessagewaitingansweranimation.cpp
+        widgets/view/textautogeneratecolorsandmessageviewstyle.h
+        widgets/view/textautogeneratecolorsandmessageviewstyle.cpp
+        widgets/view/textautogeneratebaselistview.h
+        widgets/view/textautogeneratebaselistview.cpp
+        widgets/view/textautogeneratesearchlistview.h
+        widgets/view/textautogeneratesearchlistview.cpp
+        widgets/view/textautogeneratesearchlistviewdelegate.h
+        widgets/view/textautogeneratesearchlistviewdelegate.cpp
+        widgets/textautogeneratestackwidget.h
+        widgets/textautogeneratestackwidget.cpp
+        widgets/textautogenerateconfiguredialog.h
+        widgets/textautogenerateconfiguredialog.cpp
+        widgets/textautogeneratehistorywidget.h
+        widgets/textautogeneratehistorywidget.cpp
+        widgets/view/textautogeneratehistorylistview.h
+        widgets/view/textautogeneratehistorylistview.cpp
+        widgets/view/textautogeneratehistorylistviewdelegate.h
+        widgets/view/textautogeneratehistorylistviewdelegate.cpp
+        widgets/view/textautogeneratelistviewtextselection.h
+        widgets/view/textautogeneratelistviewtextselection.cpp
+        widgets/view/lrucache.h
+        widgets/textautogenerateheaderwidget.h
+        widgets/textautogenerateheaderwidget.cpp
+        widgets/textautogeneratesearchwidget.h
+        widgets/textautogeneratesearchwidget.cpp
+        widgets/textautogeneratesearchdialog.h
+        widgets/textautogeneratesearchdialog.cpp
+        widgets/textautogeneratesearchlineedit.h
+        widgets/textautogeneratesearchlineedit.cpp
+        widgets/menu/textautogeneratemenuconfiguredialog.cpp
+        widgets/menu/textautogeneratemenuconfiguredialog.h
+        widgets/menu/textautogeneratemenuconfigurewidget.cpp
+        widgets/menu/textautogeneratemenuconfigurewidget.h
+        widgets/menu/textautogeneratemenulistview.cpp
+        widgets/menu/textautogeneratemenulistview.h
+        widgets/menu/textautogeneratemenulistviewdelegate.cpp
+        widgets/menu/textautogeneratemenulistviewdelegate.h
+        widgets/menu/textautogeneratemenumodel.cpp
+        widgets/menu/textautogeneratemenumodel.h
+        widgets/menu/textautogeneratemenutextinfo.cpp
+        widgets/menu/textautogeneratemenutextinfo.h
+        widgets/menu/textautogeneratemenutextmanager.cpp
+        widgets/menu/textautogeneratemenutextmanager.h
+        widgets/menu/textautogeneratemenuwidget.cpp
+        widgets/menu/textautogeneratemenuwidget.h
+        widgets/networkpluginconfigure/networkpluginconfigurewidget.h
+        widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp
+        widgets/textautogeneratetextinstancemanagerwidget.h
+        widgets/textautogeneratetextinstancemanagerwidget.cpp
+        widgets/quickask/textautogeneratequickaskdialog.h
+        widgets/quickask/textautogeneratequickaskdialog.cpp
+        widgets/quickask/textautogeneratequickaskwidget.h
+        widgets/quickask/textautogeneratequickaskwidget.cpp
+        widgets/quickask/textautogeneratequickaskviewwidget.h
+        widgets/quickask/textautogeneratequickaskviewwidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -285,33 +247,35 @@ endif()
 
 add_subdirectory(plugins)
 
-
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextAutoGenerateText PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextAutoGenerateText BASE_NAME textautogeneratetext)
 
-
-target_link_libraries(KF6TextAutoGenerateText
-    PUBLIC
-    Qt::Gui
-    Qt::Widgets
-    Qt::Network
+target_link_libraries(
+    KF6TextAutoGenerateText
+    PUBLIC Qt::Gui Qt::Widgets Qt::Network
     PRIVATE
-    Qt::Sql
-    KF6::I18n
-    KF6::WidgetsAddons
-    KF6::ConfigGui
-    KF6::TextWidgets
-    KF6::CoreAddons
-    KF6::ColorScheme
+        Qt::Sql
+        KF6::I18n
+        KF6::WidgetsAddons
+        KF6::ConfigGui
+        KF6::TextWidgets
+        KF6::CoreAddons
+        KF6::ColorScheme
 )
-target_include_directories(KF6TextAutoGenerateText INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/>")
+target_include_directories(
+    KF6TextAutoGenerateText
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/>"
+)
 
-set_target_properties(KF6TextAutoGenerateText PROPERTIES
-    VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-    SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
-    EXPORT_NAME TextAutoGenerateText
+set_target_properties(
+    KF6TextAutoGenerateText
+    PROPERTIES
+        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
+        SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
+        EXPORT_NAME TextAutoGenerateText
 )
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS
@@ -380,38 +344,42 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsq
     RELATIVE widgets/quickask
 )
 
-
-install(TARGETS
-    KF6TextAutoGenerateText
-    EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+install(
+    TARGETS KF6TextAutoGenerateText
+    EXPORT KF6TextAutoGenerateTextTargets
+    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/ COMPONENT Devel
-)
-
-install(FILES
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
-    ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/
     COMPONENT Devel
 )
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
-    ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
-    ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
-    ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
-    ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
-    ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
+install(
+    FILES
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
+    DESTINATION
+        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
 
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
+        ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
+    DESTINATION
+        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
+    COMPONENT Devel
+)
 
 if(BUILD_QCH)
     ecm_add_qch(
@@ -434,7 +402,7 @@ if(BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-)
+    )
 endif()
 if(BUILD_QCH)
     ecm_install_qch_export(
@@ -442,12 +410,14 @@ if(BUILD_QCH)
         FILE KF6TextAutoGenerateTextQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-)
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoGenerateTextQchTargets.cmake\")")
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS
+        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoGenerateTextQchTargets.cmake\")"
+    )
 endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KFTextAutoGenerateTextConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF6TextAutoGenerateTextConfig.cmake"
-    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )

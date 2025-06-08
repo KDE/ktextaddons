@@ -6,6 +6,6 @@ macro(add_textautogenerate_core_unittest _source)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-core-"
         LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText
-)
+    )
 endmacro()
 add_textautogenerate_core_unittest(textautogeneratesearchmessageutilstest.cpp)

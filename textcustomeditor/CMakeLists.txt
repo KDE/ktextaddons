@@ -10,10 +10,15 @@ if(TARGET KF6::KIOWidgets)
     set(HAVE_KTEXTADDONS_KIO_SUPPORT TRUE)
 endif()
 
-configure_file(config-textcustomeditor.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
+configure_file(
+    config-textcustomeditor.h.in
+    ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h
+)
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextCustomEditor")
+set(CMAKECONFIG_INSTALL_DIR
+    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextCustomEditor"
+)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTCUSTOMEDITOR
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h"
@@ -24,55 +29,56 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTCUSTOMEDITOR
 add_library(KF6TextCustomEditor)
 add_library(KF6::TextCustomEditor ALIAS KF6TextCustomEditor)
 
-target_sources(KF6TextCustomEditor PRIVATE
-    plaintexteditor/plaintexteditfindbar.cpp
-    plaintexteditor/plaintexteditor.cpp
-    plaintexteditor/plaintexteditorwidget.cpp
-    plaintexteditor/plaintextsyntaxspellcheckinghighlighter.cpp
-    widgets/findutils.cpp
-    widgets/textfindreplacewidget.cpp
-    widgets/texteditfindbarbase.cpp
-    widgets/textgotolinewidget.cpp
-    widgets/textmessageindicator.cpp
-    richtexteditor/richtexteditor.cpp
-    richtexteditor/richtexteditfindbar.cpp
-    richtexteditor/richtexteditorwidget.cpp
-    plaintexteditor/plaintexteditfindbar.h
-    plaintexteditor/plaintexteditor.h
-    plaintexteditor/plaintexteditorwidget.h
-    plaintexteditor/plaintextsyntaxspellcheckinghighlighter.h
-    widgets/findutils.h
-    widgets/textfindreplacewidget.h
-    widgets/texteditfindbarbase.h
-    widgets/textgotolinewidget.h
-    widgets/textmessageindicator.h
-    richtexteditor/richtexteditor.h
-    richtexteditor/richtexteditfindbar.h
-    richtexteditor/richtexteditorwidget.h
-
-    richtextbrowser/richtextbrowser.cpp
-    richtextbrowser/richtextbrowser.h
-    richtextbrowser/richtextbrowserwidget.cpp
-    richtextbrowser/richtextbrowserwidget.h
-    richtextbrowser/richtextbrowserfindbar.cpp
-    richtextbrowser/richtextbrowserfindbar.h
-
-    core/texteditorcompleter.h
-    core/texteditorcompleter.cpp
+target_sources(
+    KF6TextCustomEditor
+    PRIVATE
+        plaintexteditor/plaintexteditfindbar.cpp
+        plaintexteditor/plaintexteditor.cpp
+        plaintexteditor/plaintexteditorwidget.cpp
+        plaintexteditor/plaintextsyntaxspellcheckinghighlighter.cpp
+        widgets/findutils.cpp
+        widgets/textfindreplacewidget.cpp
+        widgets/texteditfindbarbase.cpp
+        widgets/textgotolinewidget.cpp
+        widgets/textmessageindicator.cpp
+        richtexteditor/richtexteditor.cpp
+        richtexteditor/richtexteditfindbar.cpp
+        richtexteditor/richtexteditorwidget.cpp
+        plaintexteditor/plaintexteditfindbar.h
+        plaintexteditor/plaintexteditor.h
+        plaintexteditor/plaintexteditorwidget.h
+        plaintexteditor/plaintextsyntaxspellcheckinghighlighter.h
+        widgets/findutils.h
+        widgets/textfindreplacewidget.h
+        widgets/texteditfindbarbase.h
+        widgets/textgotolinewidget.h
+        widgets/textmessageindicator.h
+        richtexteditor/richtexteditor.h
+        richtexteditor/richtexteditfindbar.h
+        richtexteditor/richtexteditorwidget.h
+        richtextbrowser/richtextbrowser.cpp
+        richtextbrowser/richtextbrowser.h
+        richtextbrowser/richtextbrowserwidget.cpp
+        richtextbrowser/richtextbrowserwidget.h
+        richtextbrowser/richtextbrowserfindbar.cpp
+        richtextbrowser/richtextbrowserfindbar.h
+        core/texteditorcompleter.h
+        core/texteditorcompleter.cpp
 )
 
-target_link_libraries(KF6TextCustomEditor
+target_link_libraries(
+    KF6TextCustomEditor
     PRIVATE
-    KF6::ConfigGui
-    KF6::ColorScheme
-    KF6::SonnetUi
-    KF6::SonnetCore
-    KF6::WidgetsAddons
-    KF6::I18n
-    KF6::SyntaxHighlighting
-    KF6::TextUtils
-    KF6::TextEmoticonsWidgets
-    KF6::TextAddonsWidgets
+        KF6::ConfigGui
+        KF6::ColorScheme
+        KF6::SonnetUi
+        KF6::SonnetCore
+        KF6::WidgetsAddons
+        KF6::I18n
+        KF6::SyntaxHighlighting
+        KF6::TextUtils
+        KF6::TextEmoticonsWidgets
+        KF6::TextAddonsWidgets
 )
 
 if(TARGET KF6::KIOWidgets)
@@ -80,31 +86,40 @@ if(TARGET KF6::KIOWidgets)
 endif()
 
 if(TARGET Qt6::TextToSpeech)
-    target_link_libraries(KF6TextCustomEditor PRIVATE KF6TextEditTextToSpeech
-)
+    target_link_libraries(KF6TextCustomEditor PRIVATE KF6TextEditTextToSpeech)
 endif()
 
 ecm_qt_declare_logging_category(KF6TextCustomEditor HEADER textcustomeditor_debug.h
     IDENTIFIER TEXTCUSTOMEDITOR_LOG
     CATEGORY_NAME org.kde.kf.textcustomeditor
     OLD_CATEGORY_NAMES org.kde.kf6.textcustomeditor
-    DESCRIPTION "KF6 (textcustomeditor)" EXPORT KTEXTADDONS)
+    DESCRIPTION "KF6 (textcustomeditor)" EXPORT KTEXTADDONS
+)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextCustomEditor PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextCustomEditor BASE_NAME TextCustomEditor)
 
-target_include_directories(KF6TextCustomEditor INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor;>")
-
-
-set_target_properties(KF6TextCustomEditor PROPERTIES
-    VERSION ${TEXTCUSTOMEDITOR_VERSION}
-    SOVERSION ${TEXTCUSTOMEDITOR_SOVERSION}
-    EXPORT_NAME TextCustomEditor
+target_include_directories(
+    KF6TextCustomEditor
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor;>"
 )
 
-install(TARGETS KF6TextCustomEditor EXPORT KF6TextCustomEditorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+set_target_properties(
+    KF6TextCustomEditor
+    PROPERTIES
+        VERSION ${TEXTCUSTOMEDITOR_VERSION}
+        SOVERSION ${TEXTCUSTOMEDITOR_SOVERSION}
+        EXPORT_NAME TextCustomEditor
+)
+
+install(
+    TARGETS KF6TextCustomEditor
+    EXPORT KF6TextCustomEditorTargets
+    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+)
 
 ecm_generate_headers(TextCustomEditor_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
@@ -154,46 +169,48 @@ ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_core_HEADERS
     RELATIVE core
 )
 
-install(FILES
-    ${TextCustomEditor_texteditor_core_HEADERS}
-    ${TextCustomEditor_richtexteditor_HEADERS}
-    ${TextCustomEditor_texteditor_widgets_HEADERS}
-    ${TextCustomEditor_plaintexteditor_HEADERS}
-    ${TextCustomEditor_richtextbrowser_HEADERS}
-    ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_export.h
+install(
+    FILES
+        ${TextCustomEditor_texteditor_core_HEADERS}
+        ${TextCustomEditor_richtexteditor_HEADERS}
+        ${TextCustomEditor_texteditor_widgets_HEADERS}
+        ${TextCustomEditor_plaintexteditor_HEADERS}
+        ${TextCustomEditor_richtextbrowser_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/textcustomeditor
     COMPONENT Devel
 )
-install(FILES
-    ${TextCustomEditor_CamelCasetexteditor_core_HEADERS}
-    ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
-    ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
-    ${TextCustomEditor_CamelCasetexteditor_widgets_HEADERS}
-    ${TextCustomEditor_CamelCaserichtextbrowser_HEADERS}
+install(
+    FILES
+        ${TextCustomEditor_CamelCasetexteditor_core_HEADERS}
+        ${TextCustomEditor_CamelCasetextrichtexteditor_HEADERS}
+        ${TextCustomEditor_CamelCaseplaintexteditor_HEADERS}
+        ${TextCustomEditor_CamelCasetexteditor_widgets_HEADERS}
+        ${TextCustomEditor_CamelCaserichtextbrowser_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/TextCustomEditor/
     COMPONENT Devel
 )
 
-
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfigVersion.cmake"
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextCustomEditorConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF6TextCustomEditorTargets
+install(
+    EXPORT KF6TextCustomEditorTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE KF6TextCustomEditorTargets.cmake
     NAMESPACE KF6::
 )
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor
     COMPONENT Devel
 )
-
 
 if(BUILD_QCH)
     ecm_add_qch(
@@ -217,7 +234,7 @@ if(BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-)
+    )
 endif()
 
 if(BUILD_QCH)
@@ -226,8 +243,10 @@ if(BUILD_QCH)
         FILE KF6TextCustomEditorQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextCustomEditorQchTargets.cmake\")")
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS
+        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextCustomEditorQchTargets.cmake\")"
+    )
 endif()
 
 configure_package_config_file(
@@ -249,4 +268,3 @@ endif()
 if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
 endif()
-

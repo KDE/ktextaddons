@@ -3,7 +3,9 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextedittexttospeech\")
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEditTextToSpeech")
+set(CMAKECONFIG_INSTALL_DIR
+    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEditTextToSpeech"
+)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h"
@@ -14,69 +16,78 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
 add_library(KF6TextEditTextToSpeech)
 add_library(KF6::TextEditTextToSpeech ALIAS KF6TextEditTextToSpeech)
 
-target_sources(KF6TextEditTextToSpeech PRIVATE
-    texttospeech.cpp
-    texttospeechwidget.cpp
-    texttospeechconfigwidget.cpp
-    texttospeechinterface.cpp
-    texttospeechconfiginterface.cpp
-    texttospeechconfigdialog.cpp
-    texttospeechlanguagecombobox.cpp
-    texttospeechactions.cpp
-    texttospeech.h
-    texttospeechwidget.h
-    texttospeechconfigwidget.h
-    texttospeechinterface.h
-    texttospeechconfiginterface.h
-    texttospeechconfigdialog.h
-    texttospeechlanguagecombobox.h
-    texttospeechactions.h
-    texttospeechsliderwidget.h
-    texttospeechsliderwidget.cpp
-    texttospeechutil.h
-    texttospeechutil.cpp
-    texttospeechcontainerwidget.h
-    texttospeechcontainerwidget.cpp
-
-    texttospeechvoicecombobox.h
-    texttospeechvoicecombobox.cpp
+target_sources(
+    KF6TextEditTextToSpeech
+    PRIVATE
+        texttospeech.cpp
+        texttospeechwidget.cpp
+        texttospeechconfigwidget.cpp
+        texttospeechinterface.cpp
+        texttospeechconfiginterface.cpp
+        texttospeechconfigdialog.cpp
+        texttospeechlanguagecombobox.cpp
+        texttospeechactions.cpp
+        texttospeech.h
+        texttospeechwidget.h
+        texttospeechconfigwidget.h
+        texttospeechinterface.h
+        texttospeechconfiginterface.h
+        texttospeechconfigdialog.h
+        texttospeechlanguagecombobox.h
+        texttospeechactions.h
+        texttospeechsliderwidget.h
+        texttospeechsliderwidget.cpp
+        texttospeechutil.h
+        texttospeechutil.cpp
+        texttospeechcontainerwidget.h
+        texttospeechcontainerwidget.cpp
+        texttospeechvoicecombobox.h
+        texttospeechvoicecombobox.cpp
 )
 
-target_link_libraries(KF6TextEditTextToSpeech
+target_link_libraries(
+    KF6TextEditTextToSpeech
     PRIVATE
-    KF6::ConfigCore
-    KF6::ConfigGui
-    KF6::WidgetsAddons
-    KF6::I18n
-    Qt::TextToSpeech
+        KF6::ConfigCore
+        KF6::ConfigGui
+        KF6::WidgetsAddons
+        KF6::I18n
+        Qt::TextToSpeech
 )
 
 ecm_qt_declare_logging_category(KF6TextEditTextToSpeech HEADER textedittexttospeech_debug.h
     IDENTIFIER TEXTEDITTEXTTOSPEECH_LOG
     CATEGORY_NAME org.kde.kf.textedittexttospeech
     OLD_CATEGORY_NAMES org.kde.kf6.textedittexttospeech
-    DESCRIPTION "KF6 (textedit text to speech)" EXPORT KTEXTADDONS)
+    DESCRIPTION "KF6 (textedit text to speech)" EXPORT KTEXTADDONS
+)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF6TextEditTextToSpeech PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF6TextEditTextToSpeech BASE_NAME textedittexttospeech)
 
-target_include_directories(KF6TextEditTextToSpeech INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech;>")
-
-
-target_link_libraries(KF6TextEditTextToSpeech
-    PRIVATE
-    KF6::I18n
+target_include_directories(
+    KF6TextEditTextToSpeech
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech;>"
 )
 
-set_target_properties(KF6TextEditTextToSpeech PROPERTIES
-    VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
-    SOVERSION ${TEXTEDITTEXTTOSPEECH_SOVERSION}
-    EXPORT_NAME TextEditTextToSpeech
+target_link_libraries(KF6TextEditTextToSpeech PRIVATE KF6::I18n)
+
+set_target_properties(
+    KF6TextEditTextToSpeech
+    PROPERTIES
+        VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
+        SOVERSION ${TEXTEDITTEXTTOSPEECH_SOVERSION}
+        EXPORT_NAME TextEditTextToSpeech
 )
 
-install(TARGETS KF6TextEditTextToSpeech EXPORT KF6TextEditTextToSpeechTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS KF6TextEditTextToSpeech
+    EXPORT KF6TextEditTextToSpeechTargets
+    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
@@ -96,15 +107,18 @@ ecm_generate_headers(TextEdit_CamelCasetexttospeechs_HEADERS
     PREFIX TextEditTextToSpeech
 )
 
-install(FILES
-    ${TextEdit_texttospeechs_HEADERS}
-    ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
+install(
+    FILES
+        ${TextEdit_texttospeechs_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
+    DESTINATION
+        ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
     COMPONENT Devel
 )
-install(FILES
-    ${TextEdit_CamelCasetexttospeechs_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
+install(
+    FILES ${TextEdit_CamelCasetexttospeechs_HEADERS}
+    DESTINATION
+        ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
     COMPONENT Devel
 )
 if(BUILD_QCH)
@@ -113,18 +127,17 @@ if(BUILD_QCH)
         FILE KF6TextEditTextToSpeechQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechQchTargets.cmake\")")
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS
+        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechQchTargets.cmake\")"
+    )
 endif()
 
-
-
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech
     COMPONENT Devel
 )
-
 
 if(BUILD_QCH)
     ecm_add_qch(
@@ -146,7 +159,7 @@ if(BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-)
+    )
 endif()
 
 configure_package_config_file(
@@ -155,14 +168,16 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEditTextToSpeechConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEditTextToSpeechConfigVersion.cmake"
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEditTextToSpeechConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF6TextEditTextToSpeechConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KF6TextEditTextToSpeechTargets
+install(
+    EXPORT KF6TextEditTextToSpeechTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE KF6TextEditTextToSpeechTargets.cmake
     NAMESPACE KF6::

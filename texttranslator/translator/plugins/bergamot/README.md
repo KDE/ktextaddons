@@ -1,15 +1,15 @@
 # Bergamot Translator Plugin
 
-### Dependencies
+## Dependencies
 
-This plugin depends against Marian. It needs some dependancies:
+This plugin depends against Marian. It needs some dependencies:
 
-  - openblas, onednn, gperftools
-  - Opensuse : 
-      - sudo zypper install gperftools-devel onednn-devel openblas-devel
+- openblas, onednn, gperftools
+- Opensuse :
+  - sudo zypper install gperftools-devel onednn-devel openblas-devel
 
-### Download Bergamot-translator
+## Download Bergamot-translator
 
 We need to download bergamot-translator source code
-   - git clone https://github.com/browsermt/bergamot-translator.git
-   
+
+- [git clone https://github.com/browsermt/bergamot-translator.git](bergamot-translator)

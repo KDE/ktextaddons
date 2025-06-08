@@ -5,7 +5,7 @@ set(VOSK_DIR "${CMAKE_BINARY_DIR}/vosk")
 set(VOSK_ZIP "${CMAKE_BINARY_DIR}/vosk.zip")
 
 # plugins
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(SPEECHTOTEXT_PLUGINS_DIR ${CMAKE_SOURCE_DIR}/speechtotext)
     set(PLUGINS_DIR ${CMAKE_SOURCE_DIR}/plugins)
 else()
@@ -14,7 +14,7 @@ else()
 endif()
 
 function(isFileEmpty FILENAME RESULT_VARIABLE)
-    if (NOT EXISTS ${FILENAME})
+    if(NOT EXISTS ${FILENAME})
         set(${RESULT_VARIABLE} TRUE PARENT_SCOPE)
         return()
     endif()
@@ -29,7 +29,7 @@ function(isFileEmpty FILENAME RESULT_VARIABLE)
 endfunction()
 
 # Set installation directories
-if (UNIX AND NOT APPLE AND NOT ANDROID)
+if(UNIX AND NOT APPLE AND NOT ANDROID)
     set(CPACK_SET_DESTDIR true)
     set(CPACK_INSTALL_PREFIX /opt/VoiceAssistant)
     set(CMAKE_INSTALL_PREFIX ${CPACK_INSTALL_PREFIX})

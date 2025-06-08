@@ -8,4 +8,3 @@ Mutators=true
 Singleton=true
 ItemAccessors=true
 IncludeFiles=\"textautocorrectioncore_export.h\"
-

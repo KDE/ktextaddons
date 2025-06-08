@@ -10,17 +10,22 @@ ecm_qt_declare_logging_category(translator_debug_google_SRCS
     DESCRIPTION "google translator"
     EXPORT KTEXTADDONS
 )
-target_sources(translator_google PRIVATE
-    ${translator_debug_google_SRCS}
-    googleengineclient.h
-    googleengineclient.cpp
-    googleengineplugin.h
-    googleengineplugin.cpp
+target_sources(
+    translator_google
+    PRIVATE
+        ${translator_debug_google_SRCS}
+        googleengineclient.h
+        googleengineclient.cpp
+        googleengineplugin.h
+        googleengineplugin.cpp
 )
 
 target_link_libraries(translator_google PRIVATE KF6::TextTranslator KF6::I18n)
 
-install(TARGETS translator_google  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
+install(
+    TARGETS translator_google
+    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/
+)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

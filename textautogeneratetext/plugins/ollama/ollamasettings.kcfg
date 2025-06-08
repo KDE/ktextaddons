@@ -38,7 +38,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="Seed" type="Int">
       <label>Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: 0)</label>
       <default>0</default>
-    </entry>    
-  </group>  
+    </entry>
+  </group>
 </kcfg>
-

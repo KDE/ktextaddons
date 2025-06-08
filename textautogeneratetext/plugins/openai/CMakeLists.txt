@@ -11,18 +11,19 @@ ecm_qt_declare_logging_category(textautogenerateopenai
     EXPORT KTEXTADDONS
 )
 
-target_sources(textautogenerateopenai PRIVATE
-    openaiconfiguredialog.h
-    openaiconfiguredialog.cpp
-    openaiconfigurewidget.h
-    openaiconfigurewidget.cpp
-    openaimanager.cpp
-    openaimanager.h
-    openaireply.cpp
-    openaireply.h
-
-    openaiutils.h
-    openaiutils.cpp
+target_sources(
+    textautogenerateopenai
+    PRIVATE
+        openaiconfiguredialog.h
+        openaiconfiguredialog.cpp
+        openaiconfigurewidget.h
+        openaiconfigurewidget.cpp
+        openaimanager.cpp
+        openaimanager.h
+        openaireply.cpp
+        openaireply.h
+        openaiutils.h
+        openaiutils.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -30,44 +31,46 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 generate_export_header(textautogenerateopenai BASE_NAME textautogenerateopenai)
 
-target_link_libraries(textautogenerateopenai
-    PUBLIC
-    KF6::TextAutoGenerateText
-    PRIVATE
-    KF6::I18n
-    KF6::ConfigGui
-    KF6::CoreAddons
-    KF6::WidgetsAddons
+target_link_libraries(
+    textautogenerateopenai
+    PUBLIC KF6::TextAutoGenerateText
+    PRIVATE KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons
 )
-set_target_properties(textautogenerateopenai PROPERTIES
-    VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-    SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
-    EXPORT_NAME TextAutoGenerateText
+set_target_properties(
+    textautogenerateopenai
+    PROPERTIES
+        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
+        SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
+        EXPORT_NAME TextAutoGenerateText
 )
 
-install(TARGETS textautogenerateopenai ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
+install(
+    TARGETS textautogenerateopenai ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    LIBRARY NAMELINK_SKIP
+)
 
 #######
 
 add_library(autogeneratetext_openai MODULE)
 
-target_sources(autogeneratetext_openai PRIVATE
-    openaiclient.h
-    openaiclient.cpp
-    openaiplugin.h
-    openaiplugin.cpp
-
+target_sources(
+    autogeneratetext_openai
+    PRIVATE openaiclient.h openaiclient.cpp openaiplugin.h openaiplugin.cpp
 )
 
-target_link_libraries(autogeneratetext_openai
+target_link_libraries(
+    autogeneratetext_openai
     PRIVATE
-    KF6::TextAutoGenerateText
-    KF6::I18n
-    KF6::ConfigGui
-    KF6::WidgetsAddons
-    KF6::CoreAddons
-    qt6keychain
-    textautogenerateopenai
+        KF6::TextAutoGenerateText
+        KF6::I18n
+        KF6::ConfigGui
+        KF6::WidgetsAddons
+        KF6::CoreAddons
+        qt6keychain
+        textautogenerateopenai
 )
 
-install(TARGETS autogeneratetext_openai  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
+install(
+    TARGETS autogeneratetext_openai
+    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/
+)
