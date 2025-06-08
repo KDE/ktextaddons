@@ -7,6 +7,7 @@
 #include "core/textautogeneratemanager.h"
 
 #include "textautogeneratequickaskviewwidget.h"
+#include "widgets/common/textautogeneratenotworkingwidget.h"
 #include <QStackedWidget>
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
@@ -14,6 +15,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))
     , mTextAutoGenerateQuickAskViewWidget(new TextAutoGenerateQuickAskViewWidget(manager, this))
+    , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -24,6 +26,10 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 
     mTextAutoGenerateQuickAskViewWidget->setObjectName(QStringLiteral("mTextAutoGenerateQuickAskViewWidget"));
     mStackedWidget->addWidget(mTextAutoGenerateQuickAskViewWidget);
+
+    mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
+    mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
+    mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
 }
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;

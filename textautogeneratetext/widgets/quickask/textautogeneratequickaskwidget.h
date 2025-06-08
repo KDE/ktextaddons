@@ -12,6 +12,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateQuickAskViewWidget;
 class TextAutoGenerateManager;
+class TextAutoGenerateNotWorkingWidget;
 /**
  * @brief The TextAutoGenerateQuickAskWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -26,5 +27,6 @@ public:
 private:
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateQuickAskViewWidget *const mTextAutoGenerateQuickAskViewWidget;
+    TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
 };
 }

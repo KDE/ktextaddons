@@ -6,6 +6,7 @@
 #include "textautogeneratequickaskwidgettest.h"
 #include "widgets/quickask/textautogeneratequickaskwidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateQuickAskWidgetTest)
 TextAutoGenerateQuickAskWidgetTest::TextAutoGenerateQuickAskWidgetTest(QObject *parent)
     : QObject{parent}
@@ -15,5 +16,7 @@ TextAutoGenerateQuickAskWidgetTest::TextAutoGenerateQuickAskWidgetTest(QObject *
 void TextAutoGenerateQuickAskWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateQuickAskWidget w(nullptr);
-    // TODO
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }
