@@ -64,7 +64,6 @@ file(
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
-
 set(PRE_COMMIT_INSTALLED FALSE)
 if(${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
     if(EXISTS "${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit")
@@ -80,7 +79,6 @@ if(NOT ${PRE_COMMIT_INSTALLED})
     include(KDEClangFormat)
     kde_clang_format(${ALL_SOURCE_FILES})
 endif()
-
 
 option(BUILD_QUICK "Build with QtQuick support (experimental)" OFF)
 if(BUILD_QUICK)
