@@ -354,6 +354,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsq
     RELATIVE widgets/quickask
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateTextInstancesManagerWidget
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/instancesmanager
+)
+
 install(
     TARGETS KF6TextAutoGenerateText
     EXPORT KF6TextAutoGenerateTextTargets
@@ -374,6 +382,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
@@ -388,6 +397,7 @@ install(
         ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel

@@ -5,12 +5,12 @@
 */
 
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QWidget>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstancesManagerListView;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextInstancesManagerWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerWidget : public QWidget
 {
     Q_OBJECT
 public:
