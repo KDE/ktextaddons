@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-03 14:39+0300\n"
+"PO-Revision-Date: 2025-06-08 12:12+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1010,7 +1010,7 @@ msgstr ""
 msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
-msgstr ""
+msgstr "מודל שיחה קליל שמספק פלט מדויק ותגובתי ללא צורך בחומרה חזקה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
@@ -1018,6 +1018,7 @@ msgid ""
 "A high-performing code instruct model created by merging two existing code "
 "models."
 msgstr ""
+"מודל הנחיות קוד עם ביצועים מהירים שנוצר על ידי מיזוג של מודלים קיימים של קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
 #, kde-format
@@ -1025,6 +1026,8 @@ msgid ""
 "Falcon2 is an 11B parameters causal decoder-only model built by TII and "
 "trained over 5T tokens."
 msgstr ""
+"Falcon2 מודל פענוח סיבתי בלבד עם 11B משתנים שנבנה על ידי TII ואומן על למעלה "
+"מ־5T אסימונים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
 #, kde-format
@@ -1032,6 +1035,8 @@ msgid ""
 "Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
 "MelodysDreamj."
 msgstr ""
+"Wizard Vicuna הוא מודל בגודל 13B שמבוסס על Llama 2 ואומן על ידי "
+"MelodysDreamj."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
 #, kde-format
@@ -1039,6 +1044,8 @@ msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
 "capabilities of processing long contexts."
 msgstr ""
+"MistralLite הוא מודל שכוון בקפידה על בסיס Mistral עם יכולות מורחבות של עיבוד "
+"הקשרים ארוכים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
 #, kde-format
@@ -1046,11 +1053,14 @@ msgid ""
 "MathΣtral: a 7B model designed for math reasoning and scientific discovery "
 "by Mistral AI."
 msgstr ""
+"MathΣtral: מודל בגודל 7B שתוכנן לנימוק מתמטי וגילויים מדעיים מבית Mistral AI."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
 #, kde-format
 msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
 msgstr ""
+"מודל בגודל 7B שמציע טקסט ל־SQL ונוצר על ידי MotherDuck ועל ידי Numbers "
+"Station."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
 #, kde-format
@@ -1058,6 +1068,8 @@ msgid ""
 "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
 "interleaving the model with itself."
 msgstr ""
+"MegaDolphin-2.2-120b הוא התמרה של Dolphin-2.2-70b שנוצרה על ידי שזירת המודל "
+"בעצמו."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:181
 #, kde-format
@@ -1065,6 +1077,8 @@ msgid ""
 "Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
 "parameters designed to fit into a single GPU"
 msgstr ""
+"Solar Pro Preview: מודל שפה גדול (LLM) מתקדם עם 22 מיליארד משתנים שתוכנן "
+"להתאים למעבד גרפי יחיד"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
 #, kde-format
@@ -1215,6 +1229,8 @@ msgid ""
 "The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
 "in prompts and/or responses."
 msgstr ""
+"המודלים IBM Granite Guardian 3.0 2B ו־8B תוכננו לזהות סקנות בבקשות ו/או "
+"תגובות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
 #, kde-format
@@ -1223,6 +1239,8 @@ msgid ""
 "Korean) generative models ranging from 2.4B to 32B parameters, developed and "
 "released by LG AI Research."
 msgstr ""
+"EXAONE 3.5 הוא אוסף של מודלים יוצרים מוכווני הנחיות בשתי שפות (אנגלית "
+"וקוריאנית) שנעים בין 2.4B ל־32B משתנים, פותח ויצא לאור על ידי LG AI Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
 #, kde-format
@@ -1230,6 +1248,8 @@ msgid ""
 "Sailor2 are multilingual language models made for South-East Asia. Available "
 "in 1B, 8B, and 20B parameter sizes."
 msgstr ""
+"Sailor2 הם מודלים רב־לשוניים שנועדו לדרום־מזרח אסיה. זמינים בגדלים של1B,‏ 8B "
+"ו־20B משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
 #, kde-format
@@ -1264,13 +1284,13 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:228
 #, kde-format
 msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
-msgstr ""
+msgstr "Phi-4 הוא מודל 14B משתנים פתוח מהשורה הראשונה מבית מיקרוסופט."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
 #, kde-format
 msgid ""
 "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
-msgstr ""
+msgstr "מודל נימוק קטן וחדש שכוון בהתאם למודל ההנחיות Qwen 2.5 בגודל 3B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:231
 #, kde-format
@@ -1288,6 +1308,8 @@ msgid ""
 "to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on "
 "Llama and Qwen."
 msgstr ""
+"הדור הראשון של מודלי נימוק מבית DeepSeek עם ביצועים שווי ערך ל־OpenAI-o1, "
+"כולל שישה מודלים דחוסים שנגזרו מ־DeepSeek-R1 שמבוסס על Llama ועל Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
 #, kde-format
@@ -1295,6 +1317,8 @@ msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
 "with 37B activated for each token."
 msgstr ""
+"מודל שפה חזק עם ערבוב תחומי מומחיות (MoE) עם כמות כוללת של 671B משתנים עם "
+"37B מופעלים לכל אסימון."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:238
 #, kde-format
