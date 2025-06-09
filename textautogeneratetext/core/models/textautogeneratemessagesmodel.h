@@ -5,10 +5,10 @@
 */
 
 #pragma once
-#include "core/textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
 #include <QJsonArray>
+#include <TextAutoGenerateText/TextAutoGenerateMessage>
 namespace TextAutoGenerateText
 {
 /**
