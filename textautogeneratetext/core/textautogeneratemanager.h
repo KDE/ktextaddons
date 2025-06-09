@@ -18,6 +18,7 @@ class TextAutoGenerateEngineLoader;
 class TextAutoGenerateTextClient;
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateChatSettings;
+class TextAutoGenerateTextInstancesManager;
 
 /**
  * @brief The TextAutoGenerateManager class
@@ -71,6 +72,8 @@ public:
     [[nodiscard]] bool saveInDatabase() const;
     void setSaveInDatabase(bool newSaveInDatabase);
 
+    [[nodiscard]] TextAutoGenerateTextInstancesManager *textAutoGenerateTextInstancesManager() const;
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -90,6 +93,7 @@ private:
     TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
     TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
     std::unique_ptr<TextAutoGenerateChatSettings> mTextAutoGenerateChatSettings;
+    TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     QByteArray mCurrentChatId;
     bool mShowArchived = false;
     bool mSaveInDatabase = true;

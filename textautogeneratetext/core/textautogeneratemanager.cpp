@@ -7,12 +7,13 @@
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
-#include "core/textautogenerateengineutil.h"
-#include "core/textautogeneratetextclient.h"
-#include "core/textautogeneratetextplugin.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
+#include "textautogenerateengineutil.h"
+#include "textautogeneratetextclient.h"
 #include "textautogeneratetextcore_debug.h"
+#include "textautogeneratetextinstancesmanager.h"
+#include "textautogeneratetextplugin.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
@@ -21,6 +22,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
     , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
+    , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this))
 {
     connect(mTextAutoGenerateChatsModel,
             &QAbstractItemModel::dataChanged,
@@ -98,6 +100,11 @@ void TextAutoGenerateManager::changeChatInPogressStatus(const QByteArray &chatId
     if (chatId == currentChatId()) {
         Q_EMIT chatInProgressChanged(inProgress);
     }
+}
+
+TextAutoGenerateTextInstancesManager *TextAutoGenerateManager::textAutoGenerateTextInstancesManager() const
+{
+    return mTextAutoGenerateTextInstancesManager;
 }
 
 bool TextAutoGenerateManager::saveInDatabase() const
