@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "networkpluginconfigurewidget.h"
+#include "textautogeneratenetworkpluginconfigurewidget.h"
 
 #include <KAuthorized>
 #include <KLineEditEventHandler>
@@ -13,7 +13,7 @@
 #include <QFormLayout>
 
 using namespace TextAutoGenerateText;
-NetworkPluginConfigureWidget::NetworkPluginConfigureWidget(QWidget *parent)
+TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfigureWidget(QWidget *parent)
     : QWidget{parent}
     , mApiKey(new KPasswordLineEdit(this))
 {
@@ -30,16 +30,16 @@ NetworkPluginConfigureWidget::NetworkPluginConfigureWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
 }
 
-NetworkPluginConfigureWidget::~NetworkPluginConfigureWidget() = default;
+TextAutoGenerateNetworkPluginConfigureWidget::~TextAutoGenerateNetworkPluginConfigureWidget() = default;
 
-void NetworkPluginConfigureWidget::setApiKey(const QString &key)
+void TextAutoGenerateNetworkPluginConfigureWidget::setApiKey(const QString &key)
 {
     mApiKey->setPassword(key);
 }
 
-QString NetworkPluginConfigureWidget::apiKey() const
+QString TextAutoGenerateNetworkPluginConfigureWidget::apiKey() const
 {
     return mApiKey->password();
 }
 
-#include "moc_networkpluginconfigurewidget.cpp"
+#include "moc_textautogeneratenetworkpluginconfigurewidget.cpp"

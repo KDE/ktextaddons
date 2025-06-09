@@ -6,8 +6,8 @@
 
 #pragma once
 #include <QWidget>
-#include <TextAutoGenerateText/NetworkPluginConfigureWidget>
-class OpenAIConfigureWidget : public TextAutoGenerateText::NetworkPluginConfigureWidget
+#include <TextAutoGenerateText/TextAutoGenerateNetworkPluginConfigureWidget>
+class OpenAIConfigureWidget : public TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget
 {
     Q_OBJECT
 public:

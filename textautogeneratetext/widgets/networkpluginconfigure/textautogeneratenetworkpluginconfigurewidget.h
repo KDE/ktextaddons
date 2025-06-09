@@ -11,12 +11,12 @@
 class KPasswordLineEdit;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT NetworkPluginConfigureWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit NetworkPluginConfigureWidget(QWidget *parent = nullptr);
-    ~NetworkPluginConfigureWidget() override;
+    explicit TextAutoGenerateNetworkPluginConfigureWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateNetworkPluginConfigureWidget() override;
 
     void setApiKey(const QString &key);
     [[nodiscard]] QString apiKey() const;

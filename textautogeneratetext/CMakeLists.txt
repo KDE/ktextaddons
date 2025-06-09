@@ -157,6 +157,22 @@ target_sources(
         widgets/textautogenerateconfigurewidget.cpp
         widgets/textautogeneratetextconfigurecombowidget.cpp
         widgets/textautogeneratetextconfigurecombowidget.h
+        widgets/textautogeneratetextinstancemanagerwidget.h
+        widgets/textautogeneratetextinstancemanagerwidget.cpp
+        widgets/textautogeneratestackwidget.h
+        widgets/textautogeneratestackwidget.cpp
+        widgets/textautogenerateconfiguredialog.h
+        widgets/textautogenerateconfiguredialog.cpp
+        widgets/textautogeneratehistorywidget.h
+        widgets/textautogeneratehistorywidget.cpp
+        widgets/textautogenerateheaderwidget.h
+        widgets/textautogenerateheaderwidget.cpp
+        widgets/textautogeneratesearchwidget.h
+        widgets/textautogeneratesearchwidget.cpp
+        widgets/textautogeneratesearchdialog.h
+        widgets/textautogeneratesearchdialog.cpp
+        widgets/textautogeneratesearchlineedit.h
+        widgets/textautogeneratesearchlineedit.cpp
         widgets/common/textautogeneratetextlineeditwidget.h
         widgets/common/textautogeneratetextlineeditwidget.cpp
         widgets/common/textautogenerateresultwidget.h
@@ -189,12 +205,6 @@ target_sources(
         widgets/view/textautogeneratesearchlistview.cpp
         widgets/view/textautogeneratesearchlistviewdelegate.h
         widgets/view/textautogeneratesearchlistviewdelegate.cpp
-        widgets/textautogeneratestackwidget.h
-        widgets/textautogeneratestackwidget.cpp
-        widgets/textautogenerateconfiguredialog.h
-        widgets/textautogenerateconfiguredialog.cpp
-        widgets/textautogeneratehistorywidget.h
-        widgets/textautogeneratehistorywidget.cpp
         widgets/view/textautogeneratehistorylistview.h
         widgets/view/textautogeneratehistorylistview.cpp
         widgets/view/textautogeneratehistorylistviewdelegate.h
@@ -202,14 +212,6 @@ target_sources(
         widgets/view/textautogeneratelistviewtextselection.h
         widgets/view/textautogeneratelistviewtextselection.cpp
         widgets/view/lrucache.h
-        widgets/textautogenerateheaderwidget.h
-        widgets/textautogenerateheaderwidget.cpp
-        widgets/textautogeneratesearchwidget.h
-        widgets/textautogeneratesearchwidget.cpp
-        widgets/textautogeneratesearchdialog.h
-        widgets/textautogeneratesearchdialog.cpp
-        widgets/textautogeneratesearchlineedit.h
-        widgets/textautogeneratesearchlineedit.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
         widgets/menu/textautogeneratemenuconfigurewidget.cpp
@@ -226,10 +228,8 @@ target_sources(
         widgets/menu/textautogeneratemenutextmanager.h
         widgets/menu/textautogeneratemenuwidget.cpp
         widgets/menu/textautogeneratemenuwidget.h
-        widgets/networkpluginconfigure/networkpluginconfigurewidget.h
-        widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp
-        widgets/textautogeneratetextinstancemanagerwidget.h
-        widgets/textautogeneratetextinstancemanagerwidget.cpp
+        widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h
+        widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp
         widgets/quickask/textautogeneratequickaskdialog.h
         widgets/quickask/textautogeneratequickaskdialog.cpp
         widgets/quickask/textautogeneratequickaskwidget.h
@@ -318,7 +318,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS
     HEADER_NAMES
-    NetworkPluginConfigureWidget
+    TextAutoGenerateNetworkPluginConfigureWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/networkpluginconfigure

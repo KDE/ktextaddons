@@ -12,7 +12,7 @@
 #include <QFormLayout>
 
 MistralConfigureWidget::MistralConfigureWidget(QWidget *parent)
-    : TextAutoGenerateText::NetworkPluginConfigureWidget{parent}
+    : TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget{parent}
 {
 }
 
