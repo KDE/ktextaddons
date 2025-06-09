@@ -5,10 +5,10 @@
 */
 
 #include "textautogeneratewidget.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratemanager.h"
-#include "core/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextwidget_debug.h"

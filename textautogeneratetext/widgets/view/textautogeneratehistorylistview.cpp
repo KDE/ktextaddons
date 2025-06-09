@@ -5,9 +5,9 @@
 */
 
 #include "textautogeneratehistorylistview.h"
-#include "core/textautogeneratechatsmodel.h"
-#include "core/textautogeneratehistorylistheadingsproxymodel.h"
-#include "core/textautogeneratehistorysortfilterproxymodel.h"
+#include "core/models/textautogeneratechatsmodel.h"
+#include "core/models/textautogeneratehistorylistheadingsproxymodel.h"
+#include "core/models/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
 #include <KLocalizedString>

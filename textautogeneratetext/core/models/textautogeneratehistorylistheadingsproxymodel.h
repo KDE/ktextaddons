@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "core/textautogeneratechatsmodel.h"
+#include "core/models/textautogeneratechatsmodel.h"
 #include <QAbstractProxyModel>
 namespace TextAutoGenerateText
 {

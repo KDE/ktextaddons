@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratemessage.h"
+#include "core/textautogeneratemessage.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
 #include <QJsonArray>

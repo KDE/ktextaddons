@@ -5,9 +5,9 @@
 */
 #include "textautogeneratemanager.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
-#include "core/textautogeneratechatsmodel.h"
+#include "core/models/textautogeneratechatsmodel.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineutil.h"
-#include "core/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratechatsettings.h"

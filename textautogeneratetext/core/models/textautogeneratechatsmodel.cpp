@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechatsmodel.h"
-#include "core/textautogeneratemessagesmodel.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 using namespace TextAutoGenerateText;

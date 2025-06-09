@@ -5,8 +5,8 @@
 */
 
 #include "textautogeneratemessagewaitingansweranimation.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
-#include "core/textautogeneratemessagesmodel.h"
 #include <QParallelAnimationGroup>
 #include <QPropertyAnimation>
 #include <QSequentialAnimationGroup>

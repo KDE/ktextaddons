@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratehistorylistviewdelegate.h"
-#include "core/textautogeneratechatsmodel.h"
+#include "core/models/textautogeneratechatsmodel.h"
 #include <QAbstractItemView>
 #include <QHelpEvent>
 #include <QLineEdit>

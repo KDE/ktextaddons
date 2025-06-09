@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelistview.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
-#include "core/textautogeneratemessagesmodel.h"
 #include "textautogeneratelistviewdelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"

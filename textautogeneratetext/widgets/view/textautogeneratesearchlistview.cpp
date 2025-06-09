@@ -5,8 +5,8 @@
 */
 
 #include "textautogeneratesearchlistview.h"
+#include "core/models/textautogeneratesearchmessagesmodel.h"
 #include "core/textautogeneratemanager.h"
-#include "core/textautogeneratesearchmessagesmodel.h"
 #include "core/textautogeneratesearchmessageutils.h"
 #include "textautogeneratesearchlistviewdelegate.h"
 #include <KLocalizedString>

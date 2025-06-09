@@ -100,10 +100,6 @@ target_sources(
         core/textautogeneratetextreplyinfo.cpp
         core/textautogenerateengineutil.h
         core/textautogenerateengineutil.cpp
-        core/textautogeneratemessagesmodel.h
-        core/textautogeneratemessagesmodel.cpp
-        core/textautogeneratesearchmessagesmodel.h
-        core/textautogeneratesearchmessagesmodel.cpp
         core/textautogeneratesearchmessage.h
         core/textautogeneratesearchmessage.cpp
         core/textautogeneratemessage.h
@@ -112,16 +108,19 @@ target_sources(
         core/textautogenerateanswerinfo.cpp
         core/textautogeneratetextcontext.h
         core/textautogeneratetextcontext.cpp
-        core/textautogeneratehistorysortfilterproxymodel.h
-        core/textautogeneratehistorysortfilterproxymodel.cpp
-        core/textautogeneratehistorylistheadingsproxymodel.h
-        core/textautogeneratehistorylistheadingsproxymodel.cpp
         core/textautogeneratemessageutils.h
         core/textautogeneratemessageutils.cpp
         core/textautogeneratechat.h
         core/textautogeneratechat.cpp
-        core/textautogeneratechatsmodel.h
-        core/textautogeneratechatsmodel.cpp
+        core/models/textautogeneratemessagesmodel.h
+        core/models/textautogeneratemessagesmodel.cpp
+        core/models/textautogeneratesearchmessagesmodel.h
+        core/models/textautogeneratesearchmessagesmodel.cpp
+        core/models/textautogeneratehistorysortfilterproxymodel.h
+        core/models/textautogeneratehistorysortfilterproxymodel.cpp
+        core/models/textautogeneratehistorylistheadingsproxymodel.cpp
+        core/models/textautogeneratechatsmodel.h
+        core/models/textautogeneratechatsmodel.cpp
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
@@ -284,14 +283,11 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextClient
     TextAutoGenerateTextPlugin
     TextAutoGenerateTextContext
-    TextAutoGenerateHistorySortFilterProxyModel
-    TextAutoGenerateMessagesModel
     TextAutoGenerateManager
     TextAutoGenerateMessage
     TextAutoGenerateAnswerInfo
     TextAutoGenerateChat
     TextAutoGenerateTextReplyInfo
-    TextAutoGenerateSearchMessagesModel
     TextAutoGenerateSearchMessage
     TextAutoGenerateAskJob
     TextAutoGenerateReply
@@ -299,10 +295,20 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateManagerBase
     TextAutoGenerateTextInstance
     TextAutoGenerateTextInstanceManager
-    TextAutoGenerateChatsModel
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
+)
+
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateHistorySortFilterProxyModel
+    TextAutoGenerateMessagesModel
+    TextAutoGenerateSearchMessagesModel
+    TextAutoGenerateChatsModel
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/models
 )
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS
@@ -363,6 +369,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsmenu_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextnetworkpluginconfigure_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
@@ -376,6 +383,7 @@ install(
         ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
