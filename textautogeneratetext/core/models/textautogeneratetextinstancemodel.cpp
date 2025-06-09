@@ -13,16 +13,37 @@ TextAutoGenerateTextInstanceModel::TextAutoGenerateTextInstanceModel(QObject *pa
 
 TextAutoGenerateTextInstanceModel::~TextAutoGenerateTextInstanceModel() = default;
 
-int TextAutoGenerateTextInstanceModel::rowCount(const QModelIndex &) const
+int TextAutoGenerateTextInstanceModel::rowCount(const QModelIndex &parent) const
 {
-    // TODO
-    return {};
+    if (parent.isValid()) {
+        return 0; // flat model
+    }
+    return mTextInstances.count();
 }
 
 QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int role) const
 {
     // TODO
     return {};
+}
+
+QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstanceModel::textInstances() const
+{
+    return mTextInstances;
+}
+
+void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGenerateTextInstance> &newTextInstances)
+{
+    beginResetModel();
+    mTextInstances = newTextInstances;
+    endResetModel();
+}
+
+void TextAutoGenerateTextInstanceModel::addTextInstances(const TextAutoGenerateTextInstance &instance)
+{
+    beginInsertRows(QModelIndex(), mTextInstances.count(), mTextInstances.count());
+    mTextInstances.append(instance);
+    endInsertRows();
 }
 
 #include "moc_textautogeneratetextinstancemodel.cpp"

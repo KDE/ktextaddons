@@ -7,6 +7,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
+#include <TextAutoGenerateText/TextAutoGenerateTextInstance>
 namespace TextAutoGenerateText
 {
 /**
@@ -22,5 +23,13 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+
+    [[nodiscard]] QList<TextAutoGenerateTextInstance> textInstances() const;
+    void setTextInstances(const QList<TextAutoGenerateTextInstance> &newTextInstances);
+
+    void addTextInstances(const TextAutoGenerateTextInstance &instance);
+
+private:
+    QList<TextAutoGenerateTextInstance> mTextInstances;
 };
 }
