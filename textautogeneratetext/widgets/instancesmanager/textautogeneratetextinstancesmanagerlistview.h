@@ -8,11 +8,15 @@
 #include <QListView>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextInstanceModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextInstancesManagerListView : public QListView
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateTextInstancesManagerListView(QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerListView() override;
+
+private:
+    TextAutoGenerateTextInstanceModel *const mModel;
 };
 }
