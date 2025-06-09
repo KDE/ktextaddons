@@ -121,6 +121,8 @@ target_sources(
         core/models/textautogeneratehistorylistheadingsproxymodel.cpp
         core/models/textautogeneratechatsmodel.h
         core/models/textautogeneratechatsmodel.cpp
+        core/models/textautogeneratetextinstancemodel.h
+        core/models/textautogeneratetextinstancemodel.cpp
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
