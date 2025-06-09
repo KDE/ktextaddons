@@ -24,3 +24,5 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
     // TODO
     return {};
 }
+
+#include "moc_textautogeneratetextinstancemodel.cpp"
