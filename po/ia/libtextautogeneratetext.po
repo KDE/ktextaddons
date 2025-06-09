@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 00:41+0000\n"
+"POT-Creation-Date: 2025-06-09 00:41+0000\n"
 "PO-Revision-Date: 2025-05-28 18:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1587,6 +1587,11 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Inserta un message"
 
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#, kde-format
+msgid "Send"
+msgstr "Invia"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1704,11 +1709,6 @@ msgstr "Cerca..."
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Cerca"
-
-#: widgets/textautogeneratetextlineeditwidget.cpp:17
-#, kde-format
-msgid "Send"
-msgstr "Invia"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format

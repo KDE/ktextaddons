@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 00:41+0000\n"
-"PO-Revision-Date: 2025-06-06 09:15+0200\n"
+"POT-Creation-Date: 2025-06-09 00:41+0000\n"
+"PO-Revision-Date: 2025-06-08 10:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -1931,6 +1931,11 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Introduïu un missatge"
 
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#, kde-format
+msgid "Send"
+msgstr "Envia"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1993,7 +1998,7 @@ msgstr "Clau de l'API:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Resposta ràpida"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -2048,11 +2053,6 @@ msgstr "Busca…"
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Busca"
-
-#: widgets/textautogeneratetextlineeditwidget.cpp:17
-#, kde-format
-msgid "Send"
-msgstr "Envia"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format
@@ -2140,7 +2140,3 @@ msgstr "Actualitza"
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"

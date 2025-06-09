@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 00:41+0000\n"
-"PO-Revision-Date: 2025-06-06 21:33+0300\n"
+"POT-Creation-Date: 2025-06-09 00:41+0000\n"
+"PO-Revision-Date: 2025-06-08 19:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1914,6 +1914,11 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "İleti gir…"
 
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#, kde-format
+msgid "Send"
+msgstr "Gönder"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1976,7 +1981,7 @@ msgstr "API anahtarı:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Tez Sor"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -2031,11 +2036,6 @@ msgstr "Ara…"
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Ara"
-
-#: widgets/textautogeneratetextlineeditwidget.cpp:17
-#, kde-format
-msgid "Send"
-msgstr "Gönder"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format

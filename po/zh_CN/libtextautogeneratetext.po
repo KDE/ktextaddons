@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 00:41+0000\n"
+"POT-Creation-Date: 2025-06-09 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1577,6 +1577,11 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "输入信息"
 
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#, kde-format
+msgid "Send"
+msgstr "发送"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1694,11 +1699,6 @@ msgstr "搜索…"
 msgctxt "@title:window"
 msgid "Search"
 msgstr "搜索"
-
-#: widgets/textautogeneratetextlineeditwidget.cpp:17
-#, kde-format
-msgid "Send"
-msgstr "发送"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format

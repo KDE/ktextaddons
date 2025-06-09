@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 00:41+0000\n"
-"PO-Revision-Date: 2025-06-06 12:18+0200\n"
+"POT-Creation-Date: 2025-06-09 00:41+0000\n"
+"PO-Revision-Date: 2025-06-08 16:51+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1455,6 +1455,8 @@ msgid ""
 "OpenCoder is an open and reproducible code LLM family which includes 1.5B "
 "and 8B models, supporting chat in English and Chinese languages."
 msgstr ""
+"OpenCoder is een open en reproduceerbare LLM familie voor code die 1.5B en "
+"8B modellen omvat, ondersteunt chat in Engelse en Chinese talen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
 #, kde-format
@@ -1462,6 +1464,8 @@ msgid ""
 "Tülu 3 is a leading instruction following model family, offering fully open-"
 "source data, code, and recipes by the The Allen Institute for AI."
 msgstr ""
+"Tülu 3 is een leidende instructie volgende modelfamilie, die volledige open-"
+"source gegevens, code en recepten biedt door de The Allen Institute voor AI."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
 #, kde-format
@@ -1489,6 +1493,9 @@ msgid ""
 "Korean) generative models ranging from 2.4B to 32B parameters, developed and "
 "released by LG AI Research."
 msgstr ""
+"EXAONE 3.5 is een verzameling van op instructie afgerichte tweetalige "
+"(Engels en Koreaans) generatieve modellen variërend van 2.4B tot 32B "
+"parameters, ontwikkeld en vrij gegeven door LG AI Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
 #, kde-format
@@ -1496,6 +1503,8 @@ msgid ""
 "Sailor2 are multilingual language models made for South-East Asia. Available "
 "in 1B, 8B, and 20B parameter sizes."
 msgstr ""
+"Sailor2 zijn meertalige taalmodellen gemaakt voor Zuid-Oost Azië. "
+"Beschikbaar in groottes van 1B, 8B en 20B parameters."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
 #, kde-format
@@ -1503,6 +1512,8 @@ msgid ""
 "A family of efficient AI models under 10B parameters performant in science, "
 "math, and coding through innovative training techniques."
 msgstr ""
+"Een familie van efficiënte AI modellen onder 10B parameters presterend in "
+"wetenschap, wiskunde en codering via innovatieve trainingstechnieken."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:221
 #, kde-format
@@ -1511,6 +1522,10 @@ msgid ""
 "trillion tokens of data, demonstrated significant improvements over their "
 "predecessors in performance and speed in IBM’s initial testing."
 msgstr ""
+"De IBM Granite 2B en 8B modellen zijn text-alleen dichte LLM's getraind op "
+"meer dan 12 triljoen tokens van gegevens, demonstrerend aanzienlijke "
+"verbeteringen over hun voorgangers in prestaties en snelheid in het initiële "
+"testen van IBM."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:224
 #, kde-format
@@ -1518,6 +1533,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
+"De IBM Granite 1B en 3B modellen vormen lange-context mengsel van experts "
+"(MoE) Granite modellen van IBM ontworpen voor gebruik bij lage vertraging."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:226
 #, kde-format
@@ -1526,17 +1543,22 @@ msgid ""
 "biencoder embedding models, with 30M available in English only and 278M "
 "serving multilingual use cases."
 msgstr ""
+"De IBM Granite met ingebed 30M en 278M modellen zijn op tekst-alleen dichte "
+"bi-encoder ingebedde modellen, met 30M beschikbaar in alleen Engels en 278M "
+"die meertalige gebruiksgevallen bedienen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:228
 #, kde-format
 msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
-msgstr ""
+msgstr "Phi-4 is een 14B parameter, state-of-the-art open model van Microsoft."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
 #, kde-format
 msgid ""
 "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
 msgstr ""
+"Een nieuw klein redeneringsmodel fijn afgestemd uit het Qwen 2.5 3B "
+"instructiemodel."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:231
 #, kde-format
@@ -1546,6 +1568,10 @@ msgid ""
 "model, enabling coding, math, agentic, function calling, and general use "
 "cases."
 msgstr ""
+"Dolphin 3.0 Llama 3.1 8B 🐬 is de volgende generatie van de Dolphin serie van "
+"op instructie afgerichte modellen ontworpen om het ultimate voor algemene "
+"doelen lokale model, codering inschakelend, wiskunde, agent, functie "
+"aanroepend en algemene gebruiksgevallen te zijn."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
 #, kde-format
@@ -1554,6 +1580,9 @@ msgid ""
 "to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on "
 "Llama and Qwen."
 msgstr ""
+"De eerste generatie van DeepSeek van redeneringsmodellen met vergelijkbare "
+"prestaties tot OpenAI-o1, inclusief zes dichte modellen gedestilleerd uit "
+"DeepSeek-R1 gebaseerd op Llama en Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
 #, kde-format
@@ -1561,6 +1590,8 @@ msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
 "with 37B activated for each token."
 msgstr ""
+"Een sterk Mixture-of-Experts (MoE) taalmodel met 671B totaal aantal "
+"parameters met 37B geactiveerd voor elk token."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:238
 #, kde-format
@@ -1570,6 +1601,10 @@ msgid ""
 "models, and competitive with open-weight models such as Llama 3.1 on English "
 "academic benchmarks."
 msgstr ""
+"OLMo 2 is een nieuwe familie van 7B en 13B modellen getraind op tot 5T "
+"tokens. Deze modellen zijn gelijk aan of beter dan equivalent van grootte "
+"volledig open modellen en competitief met open-gewicht modellen zoals Llama "
+"3.1 op Engelse academisch benchmarks."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:241
 #, kde-format
@@ -1578,6 +1613,9 @@ msgid ""
 "and quality to build powerful AI applications on commodity GPUs and edge "
 "devices."
 msgstr ""
+"He kleinste model in de R serie van Cohere levert topsnelheden, efficiëntie "
+"en kwaliteit om krachtige AI toepassingen te bouwen op gewone GPU's en "
+"randapparaten."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:243
 #, kde-format
@@ -1585,6 +1623,8 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
+"Een volledige open-source familie van redeneringsmodellen gebouwd met een "
+"gegevensset afgeleid door DeepSeek-R1 te distilleren."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
@@ -1593,6 +1633,9 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
+"Een fijn afgestemde versie van Deepseek-R1-Distilled-Qwen-1.5B die de "
+"prestaties van OpenAI’s o1-preview overtreft met net 1.5B parameters op "
+"populaire wiskundige evaluaties."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:248
 #, kde-format
@@ -1600,11 +1643,13 @@ msgid ""
 "A version of the DeepSeek-R1 model that has been post trained to provide "
 "unbiased, accurate, and factual information by Perplexity."
 msgstr ""
+"Een versie van het DeepSeek-R1 model dat nagetraind is om niet "
+"vooringenomen, accurate en feitelijke informatie te leveren door Perplexity."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
-msgstr ""
+msgstr "Het huidige, maast capabele model dat draait op een enkele GPU."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
@@ -1613,6 +1658,9 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
+"Phi-4-mini brengt aanzienlijke verbeteringen in meertalige ondersteuning, "
+"redeneren en wiskunde en nu, de langverwachte functie-aanroep-mogelijkheid "
+"wordt eindelijk ondersteund."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:254
 #, kde-format
@@ -1628,6 +1676,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
+"Granite-3.2 is een familie van lange context AI modellen van IBM Granite "
+"fijn afgeregeld voor nadenkmogelijkheden."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
 #, kde-format
@@ -1828,6 +1878,11 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Voer een bericht in"
 
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#, kde-format
+msgid "Send"
+msgstr "Verzenden"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1945,11 +2000,6 @@ msgstr "Zoeken…"
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Zoeken"
-
-#: widgets/textautogeneratetextlineeditwidget.cpp:17
-#, kde-format
-msgid "Send"
-msgstr "Verzenden"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format

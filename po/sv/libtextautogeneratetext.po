@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-08 00:41+0000\n"
-"PO-Revision-Date: 2025-06-07 20:05+0200\n"
+"POT-Creation-Date: 2025-06-09 00:41+0000\n"
+"PO-Revision-Date: 2025-06-08 13:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1918,6 +1918,11 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Skriv in ett meddelande"
 
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#, kde-format
+msgid "Send"
+msgstr "Skicka"
+
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
@@ -1980,7 +1985,7 @@ msgstr "Programmeringsgränssnittsnyckel:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Snabbfråga"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -2035,11 +2040,6 @@ msgstr "Sök…"
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Sök"
-
-#: widgets/textautogeneratetextlineeditwidget.cpp:17
-#, kde-format
-msgid "Send"
-msgstr "Skicka"
 
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format
