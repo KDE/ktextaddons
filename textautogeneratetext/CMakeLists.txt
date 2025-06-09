@@ -237,6 +237,8 @@ target_sources(
         widgets/quickask/textautogeneratequickaskviewwidget.cpp
         widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h
         widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.h
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp
 )
 
 if(BUILD_TESTING)
