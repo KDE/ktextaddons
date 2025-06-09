@@ -33,6 +33,8 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return instance.name();
     case InstanceRoles::PluginName:
         return instance.pluginName();
+    case InstanceRoles::Uuid:
+        return instance.instanceUuid();
     }
     return {};
 }
@@ -54,6 +56,20 @@ void TextAutoGenerateTextInstanceModel::addTextInstances(const TextAutoGenerateT
     beginInsertRows(QModelIndex(), mTextInstances.count(), mTextInstances.count());
     mTextInstances.append(instance);
     endInsertRows();
+}
+
+void TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
+{
+    auto matchesUuid = [&](const TextAutoGenerateTextInstance &instance) {
+        return instance.instanceUuid() == uuid;
+    };
+    const auto answerIt = std::find_if(mTextInstances.begin(), mTextInstances.end(), matchesUuid);
+    if (answerIt != mTextInstances.end()) {
+        const int i = std::distance(mTextInstances.begin(), answerIt);
+        beginRemoveRows(QModelIndex(), i, i);
+        mTextInstances.removeAt(i);
+        endRemoveRows();
+    }
 }
 
 #include "moc_textautogeneratetextinstancemodel.cpp"

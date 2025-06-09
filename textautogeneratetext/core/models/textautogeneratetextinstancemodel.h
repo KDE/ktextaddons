@@ -21,6 +21,7 @@ public:
     enum InstanceRoles : uint16_t {
         Name = Qt::UserRole + 1,
         PluginName,
+        Uuid,
     };
     explicit TextAutoGenerateTextInstanceModel(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstanceModel() override;
@@ -32,6 +33,8 @@ public:
     void setTextInstances(const QList<TextAutoGenerateTextInstance> &newTextInstances);
 
     void addTextInstances(const TextAutoGenerateTextInstance &instance);
+
+    void removeInstance(const QByteArray &uuid);
 
 private:
     QList<TextAutoGenerateTextInstance> mTextInstances;
