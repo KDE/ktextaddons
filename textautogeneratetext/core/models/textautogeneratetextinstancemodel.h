@@ -20,6 +20,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceModel : public QAb
 public:
     enum InstanceRoles : uint16_t {
         Name = Qt::UserRole + 1,
+        PluginName,
     };
     explicit TextAutoGenerateTextInstanceModel(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstanceModel() override;

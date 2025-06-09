@@ -23,7 +23,17 @@ int TextAutoGenerateTextInstanceModel::rowCount(const QModelIndex &parent) const
 
 QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int role) const
 {
-    // TODO
+    if (index.row() < 0 || index.row() >= mTextInstances.count()) {
+        return {};
+    }
+    const auto &instance = mTextInstances[index.row()];
+    switch (role) {
+    case Qt::DisplayRole:
+    case InstanceRoles::Name:
+        return instance.name();
+    case InstanceRoles::PluginName:
+        return instance.pluginName();
+    }
     return {};
 }
 
