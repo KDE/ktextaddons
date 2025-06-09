@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "textautogeneratetextinstancemanagerwidget.h"
+#include "textautogeneratetextinstancesmanagerwidget.h"
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextInstanceManagerWidget::TextAutoGenerateTextInstanceManagerWidget(QWidget *parent)
+TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManagerWidget(QWidget *parent)
     : QWidget{parent}
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -16,6 +16,6 @@ TextAutoGenerateTextInstanceManagerWidget::TextAutoGenerateTextInstanceManagerWi
     mainLayout->setContentsMargins(QMargins{});
 }
 
-TextAutoGenerateTextInstanceManagerWidget::~TextAutoGenerateTextInstanceManagerWidget() = default;
+TextAutoGenerateTextInstancesManagerWidget::~TextAutoGenerateTextInstancesManagerWidget() = default;
 
-#include "moc_textautogeneratetextinstancemanagerwidget.cpp"
+#include "moc_textautogeneratetextinstancesmanagerwidget.cpp"

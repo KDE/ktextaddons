@@ -147,8 +147,8 @@ target_sources(
         core/textautogeneratemanagerbase.cpp
         core/textautogeneratetextinstance.h
         core/textautogeneratetextinstance.cpp
-        core/textautogeneratetextinstancemanager.h
-        core/textautogeneratetextinstancemanager.cpp
+        core/textautogeneratetextinstancesmanager.h
+        core/textautogeneratetextinstancesmanager.cpp
 )
 
 target_sources(
@@ -235,8 +235,8 @@ target_sources(
         widgets/quickask/textautogeneratequickaskwidget.cpp
         widgets/quickask/textautogeneratequickaskviewwidget.h
         widgets/quickask/textautogeneratequickaskviewwidget.cpp
-        widgets/instancesmanager/textautogeneratetextinstancemanagerwidget.h
-        widgets/instancesmanager/textautogeneratetextinstancemanagerwidget.cpp
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -296,7 +296,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextRequest
     TextAutoGenerateManagerBase
     TextAutoGenerateTextInstance
-    TextAutoGenerateTextInstanceManager
+    TextAutoGenerateTextInstancesManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core

@@ -11,12 +11,12 @@
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstanceManager : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstanceManager(QObject *parent = nullptr);
-    ~TextAutoGenerateTextInstanceManager() override;
+    explicit TextAutoGenerateTextInstancesManager(QObject *parent = nullptr);
+    ~TextAutoGenerateTextInstancesManager() override;
 
     [[nodiscard]] QList<TextAutoGenerateTextInstance> instances() const;
     void setInstances(const QList<TextAutoGenerateTextInstance> &newInstances);

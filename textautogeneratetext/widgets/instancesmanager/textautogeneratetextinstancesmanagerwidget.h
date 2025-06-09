@@ -9,11 +9,11 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextInstanceManagerWidget : public QWidget
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextInstancesManagerWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstanceManagerWidget(QWidget *parent = nullptr);
-    ~TextAutoGenerateTextInstanceManagerWidget() override;
+    explicit TextAutoGenerateTextInstancesManagerWidget(QWidget *parent = nullptr);
+    ~TextAutoGenerateTextInstancesManagerWidget() override;
 };
 }
