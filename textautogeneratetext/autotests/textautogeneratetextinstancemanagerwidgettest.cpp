@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratetextinstancemanagerwidgettest.h"
-#include "widgets/textautogeneratetextinstancemanagerwidget.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancemanagerwidget.h"
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateTextInstanceManagerWidgetTest)

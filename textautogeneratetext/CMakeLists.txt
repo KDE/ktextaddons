@@ -158,8 +158,6 @@ target_sources(
         widgets/textautogenerateconfigurewidget.cpp
         widgets/textautogeneratetextconfigurecombowidget.cpp
         widgets/textautogeneratetextconfigurecombowidget.h
-        widgets/textautogeneratetextinstancemanagerwidget.h
-        widgets/textautogeneratetextinstancemanagerwidget.cpp
         widgets/textautogeneratestackwidget.h
         widgets/textautogeneratestackwidget.cpp
         widgets/textautogenerateconfiguredialog.h
@@ -237,6 +235,8 @@ target_sources(
         widgets/quickask/textautogeneratequickaskwidget.cpp
         widgets/quickask/textautogeneratequickaskviewwidget.h
         widgets/quickask/textautogeneratequickaskviewwidget.cpp
+        widgets/instancesmanager/textautogeneratetextinstancemanagerwidget.h
+        widgets/instancesmanager/textautogeneratetextinstancemanagerwidget.cpp
 )
 
 if(BUILD_TESTING)
