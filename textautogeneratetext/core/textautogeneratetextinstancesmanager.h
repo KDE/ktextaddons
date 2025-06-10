@@ -31,6 +31,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextInstanceModel *textAutoGenerateTextInstanceModel() const;
 
+    [[nodiscard]] QByteArray currentInstance() const;
+
 private:
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
 };

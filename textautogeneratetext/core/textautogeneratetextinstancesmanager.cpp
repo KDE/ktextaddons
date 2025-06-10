@@ -50,4 +50,10 @@ void TextAutoGenerateTextInstancesManager::addInstance(const TextAutoGenerateTex
     mTextAutoGenerateTextInstanceModel->addTextInstances(instance);
 }
 
+QByteArray TextAutoGenerateTextInstancesManager::currentInstance() const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_textautogeneratetextinstancesmanager.cpp"
