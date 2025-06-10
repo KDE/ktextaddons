@@ -32,7 +32,13 @@ install(
     COMPONENT Devel
 )
 
-add_library(KF6TextAutoGenerateText)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+add_library(
+    KF6TextAutoGenerateText
+    widgets/quickask/textautogeneratequickaskheaderwidget.h
+    widgets/quickask/textautogeneratequickaskheaderwidget.cpp
+)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
@@ -269,6 +275,7 @@ target_link_libraries(
         KF6::CoreAddons
         KF6::ColorScheme
 )
+target_link_libraries(KF6TextAutoGenerateText PRIVATE Qt6::Widgets)
 target_include_directories(
     KF6TextAutoGenerateText
     INTERFACE
