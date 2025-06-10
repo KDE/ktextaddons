@@ -4,3 +4,4 @@
 add_subdirectory(mistral)
 add_subdirectory(ollama)
 add_subdirectory(openai)
+add_subdirectory(genericnetworkplugin)
