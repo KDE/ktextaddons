@@ -16,4 +16,9 @@ TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManag
 
 TextAutoGenerateTextInstancesManagerListView::~TextAutoGenerateTextInstancesManagerListView() = default;
 
+void TextAutoGenerateTextInstancesManagerListView::slotSearchChanged(const QString &str)
+{
+    // TODO
+}
+
 #include "moc_textautogeneratetextinstancesmanagerlistview.cpp"

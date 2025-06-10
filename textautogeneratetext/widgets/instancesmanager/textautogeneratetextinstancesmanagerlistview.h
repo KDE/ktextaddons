@@ -16,6 +16,8 @@ public:
     explicit TextAutoGenerateTextInstancesManagerListView(QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerListView() override;
 
+    void slotSearchChanged(const QString &str);
+
 private:
     TextAutoGenerateTextInstanceModel *const mModel;
 };
