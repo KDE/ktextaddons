@@ -11,6 +11,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextLineEditWidget;
 class TextAutoGenerateResultWidget;
 class TextAutoGenerateManager;
+class TextAutoGenerateQuickAskHeaderWidget;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateQuickAskViewWidget : public QWidget
 {
     Q_OBJECT
@@ -18,8 +19,12 @@ public:
     explicit TextAutoGenerateQuickAskViewWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskViewWidget() override;
 
+Q_SIGNALS:
+    void editingFinished(const QString &str, const QByteArray &uuid);
+
 private:
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineWidget;
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
+    TextAutoGenerateQuickAskHeaderWidget *const mTextAutoGenerateQuickAskHeaderWidget;
 };
 }

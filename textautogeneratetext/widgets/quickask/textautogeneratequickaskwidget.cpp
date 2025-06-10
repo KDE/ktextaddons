@@ -7,6 +7,7 @@
 #include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratemanager.h"
 
+#include "core/textautogeneratetextplugin.h"
 #include "textautogeneratequickaskviewwidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/common/textautogeneratenotworkingwidget.h"
@@ -37,6 +38,11 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
         mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
     });
+    connect(mTextAutoGenerateQuickAskViewWidget,
+            &TextAutoGenerateQuickAskViewWidget::editingFinished,
+            this,
+            &TextAutoGenerateQuickAskWidget::slotEditingFinished);
+
     if (mManager) {
         mManager->setSaveInDatabase(false);
     }
@@ -74,15 +80,13 @@ void TextAutoGenerateQuickAskWidget::slotInitializeDone()
 
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
 {
-    /*
     mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
         mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
     } else {
         mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str);
     }
-    mTextAutoGenerateResultWidget->editingFinished(uuid);
-    */
+    // mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
 
 #include "moc_textautogeneratequickaskwidget.cpp"
