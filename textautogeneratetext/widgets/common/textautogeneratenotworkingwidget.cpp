@@ -5,9 +5,13 @@
 */
 
 #include "textautogeneratenotworkingwidget.h"
+#include "core/textautogeneratetextutils.h"
+#include "textautogeneratenotworkingmessagewidget.h"
+#include "textautogeneratetextwidget_debug.h"
 #include "widgets/textautogenerateconfiguredialog.h"
 #include <KLocalizedString>
 #include <KMessageWidget>
+#include <QProcess>
 #include <QPushButton>
 #include <QVBoxLayout>
 
@@ -15,7 +19,7 @@ using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mMessageWidget(new KMessageWidget(this))
+    , mMessageWidget(new TextAutoGenerateNotWorkingMessageWidget(this))
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -24,10 +28,9 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
 
     mMessageWidget->setObjectName("mMessageWidget"_L1);
     mainLayout->addWidget(mMessageWidget, 0, Qt::AlignVCenter);
-    mMessageWidget->setCloseButtonVisible(false);
-    mMessageWidget->setMessageType(KMessageWidget::MessageType::Error);
+    connect(mMessageWidget, &TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &TextAutoGenerateNotWorkingWidget::slotStartOllama);
 
-    auto configureButton = new QPushButton(i18n("Configure…"), this);
+    auto configureButton = new QPushButton(i18nc("@action:button", "Configure…"), this);
     configureButton->setObjectName("configureButton"_L1);
     connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::slotConfigure);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
@@ -52,6 +55,22 @@ void TextAutoGenerateNotWorkingWidget::slotConfigure()
 {
     TextAutoGenerateText::TextAutoGenerateConfigureDialog d(mManager, this);
     d.exec();
+}
+
+void TextAutoGenerateNotWorkingWidget::slotStartOllama()
+{
+    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(QStringLiteral("ollama"));
+    if (ollamaPath.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
+        return;
+    }
+    const bool status = QProcess::startDetached(ollamaPath, {QStringLiteral("start")});
+    if (!status) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to start ollama";
+    } else {
+        clearMessage();
+        Q_EMIT ollamaStarted();
+    }
 }
 
 #include "moc_textautogeneratenotworkingwidget.cpp"

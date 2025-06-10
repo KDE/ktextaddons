@@ -10,6 +10,7 @@ class KMessageWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+class TextAutoGenerateNotWorkingMessageWidget;
 /**
  * @brief The TextAutoGenerateNotWorkingWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -24,9 +25,13 @@ public:
     void setMessageError(const QString &str);
     void clearMessage();
 
+Q_SIGNALS:
+    void ollamaStarted();
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotStartOllama();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
-    KMessageWidget *const mMessageWidget;
+    TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

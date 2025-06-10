@@ -36,6 +36,9 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
     connect(mTextAutoGenerateWidget, &TextAutoGenerateWidget::pluginBroken, this, [this](const QString &msg) {
         setBrokenEngine(true, msg);
     });
+    connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
+        setBrokenEngine(false, {});
+    });
 }
 
 TextAutoGenerateStackWidget::~TextAutoGenerateStackWidget() = default;

@@ -34,6 +34,9 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
     mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
 
+    connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
+        mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
+    });
     if (mManager) {
         mManager->setSaveInDatabase(false);
     }

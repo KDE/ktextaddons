@@ -18,7 +18,7 @@ TextAutoGenerateTextInstancesManagerWidgetTest::TextAutoGenerateTextInstancesMan
 
 void TextAutoGenerateTextInstancesManagerWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextInstancesManagerWidget w;
+    TextAutoGenerateText::TextAutoGenerateTextInstancesManagerWidget w(nullptr);
 
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
@@ -31,6 +31,7 @@ void TextAutoGenerateTextInstancesManagerWidgetTest::shouldHaveDefaultValues()
     auto mSearchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchLineEdit"));
     QVERIFY(mSearchLineEdit);
     QVERIFY(mSearchLineEdit->isClearButtonEnabled());
+    QVERIFY(mSearchLineEdit->text().isEmpty());
 }
 
 #include "moc_textautogeneratetextinstancesmanagerwidgettest.cpp"
