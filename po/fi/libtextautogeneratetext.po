@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:41+0000\n"
+"POT-Creation-Date: 2025-06-10 00:41+0000\n"
 "PO-Revision-Date: 2025-05-29 19:06+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,42 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: core/textautogeneratechatsmodel.cpp:74
+#: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
 msgstr "Uusi keskustelu…"
 
-#: core/textautogeneratechatsmodel.cpp:146
+#: core/models/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
 msgstr "Suosikki"
 
-#: core/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
 
-#: core/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
 msgstr "Edelliset 7 päivää"
 
-#: core/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
 msgstr "Edelliset 30 päivää"
 
-#: core/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
 msgstr "Myöhemmin"
 
-#: core/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "Ollama"
-
-#: core/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -65,6 +60,11 @@ msgid ""
 msgstr ""
 "Moottori: %1\n"
 "Malli: %2"
+
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
@@ -1686,7 +1686,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Asetukset…"
 
-#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "API-avain:"

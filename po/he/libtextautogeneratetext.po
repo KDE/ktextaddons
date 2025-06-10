@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:41+0000\n"
-"PO-Revision-Date: 2025-06-08 12:12+0300\n"
+"POT-Creation-Date: 2025-06-10 00:41+0000\n"
+"PO-Revision-Date: 2025-06-09 14:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,47 +18,42 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.04.1\n"
 
-#: core/textautogeneratechatsmodel.cpp:74
+#: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
 msgstr "שיחה חדשה…"
 
-#: core/textautogeneratechatsmodel.cpp:146
+#: core/models/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
 msgstr "הוספה למועדפים"
 
-#: core/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
 msgstr "היום"
 
-#: core/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
 msgstr "7 הימים הקודמים"
 
-#: core/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
 msgstr "30 הימים הקודמים"
 
-#: core/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
 msgstr "מאוחר יותר"
 
-#: core/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "Ollama"
-
-#: core/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -66,6 +61,11 @@ msgid ""
 msgstr ""
 "מנוע: %1\n"
 "מודל: %2"
+
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
@@ -912,11 +912,13 @@ msgid ""
 "Athene-V2 is a 72B parameter model which excels at code completion, "
 "mathematics, and log extraction tasks."
 msgstr ""
+"Athene-V2 הוא מודל בגודל 72B שמצטיין במשימות השלמת קוד, מתמטיקה וחילוץ "
+"מיומנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
-msgstr ""
+msgstr "מודל קטן וחדש מסוג LLaVA שכוונן מתוך Phi 3 Mini."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
 #, kde-format
@@ -925,6 +927,8 @@ msgid ""
 "Meta's Llama 2 models. The model is designed to excel particularly in "
 "reasoning."
 msgstr ""
+"Orca 2 נבנו על ידי אגף המחקר של מיקרוסופט, והם גרסאות מכווננות של המודלים "
+"Llama 2 מבית Meta. המודל תוכנן להצטיין במיוחד בנימוק."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:144
 #, kde-format
@@ -1208,7 +1212,7 @@ msgstr ""
 msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
 "use cases."
-msgstr ""
+msgstr "מודל שיח איתן שתוכנן לשימוש למקרי שיחה והנחיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:200
 #, kde-format
@@ -1226,11 +1230,13 @@ msgid ""
 "text prompt input and text output responses against a set of defined safety "
 "policies."
 msgstr ""
+"ShieldGemma היא סדרה של מודלים מוכווני הנחיות להערכת בטיחות של קלט בקשות "
+"טקסט ותגובות פלט טקסט כנגד סדרה של מדיניויות בטיחות מוגדרת."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
 #, kde-format
 msgid "A state-of-the-art fact-checking model developed by Bespoke Labs."
-msgstr ""
+msgstr "מודל מהשורה הראשונה לבדיקת עובדות שפותח על ידי Bespoke Labs."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:205
 #, kde-format
@@ -1247,6 +1253,7 @@ msgid ""
 "Sentence-transformers model that can be used for tasks like clustering or "
 "semantic search."
 msgstr ""
+"אפשר להשתמש במודל התמרות משפטים למשימות כמו סידור בצבירים או חיפוש סמנטי."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
 #, kde-format
@@ -1254,6 +1261,8 @@ msgid ""
 "OpenCoder is an open and reproducible code LLM family which includes 1.5B "
 "and 8B models, supporting chat in English and Chinese languages."
 msgstr ""
+"OpenCoder היא משפחת מש״גים פתוחה לקוד שאפשר לשחזר וכוללת מודלים בגדלים 1.5B "
+"ו־8B, תומכים בשיחה באנגלית ובסינית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
 #, kde-format
@@ -1261,6 +1270,8 @@ msgid ""
 "Tülu 3 is a leading instruction following model family, offering fully open-"
 "source data, code, and recipes by the The Allen Institute for AI."
 msgstr ""
+"Tülu 3 היא משפחת מודלים מובילה למעקב אחר משימות, שמציעה נתונים בקודפתוח "
+"לגמרי, קוד ומתכונים מבית מכון אלן לבינה מלאכותית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
 #, kde-format
@@ -1303,6 +1314,8 @@ msgid ""
 "A family of efficient AI models under 10B parameters performant in science, "
 "math, and coding through innovative training techniques."
 msgstr ""
+"משפחה של מודלי בינה מלאכותית יעילים עם פחות מ־10B משתנים עם ביצועים טובים "
+"במדעים, מתמטיקה ותכנות בזכות טכניקות אימון חדשניות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:221
 #, kde-format
@@ -1734,7 +1747,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "מפתח API:"

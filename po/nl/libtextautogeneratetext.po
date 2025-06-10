@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:41+0000\n"
-"PO-Revision-Date: 2025-06-08 16:51+0200\n"
+"POT-Creation-Date: 2025-06-10 00:41+0000\n"
+"PO-Revision-Date: 2025-06-09 14:37+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -17,47 +17,42 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.1\n"
 
-#: core/textautogeneratechatsmodel.cpp:74
+#: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
 msgstr "Nieuwe chat..."
 
-#: core/textautogeneratechatsmodel.cpp:146
+#: core/models/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
 msgstr "Favoriet"
 
-#: core/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
 msgstr "Vandaag"
 
-#: core/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dagen eerder"
 
-#: core/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dagen eerder"
 
-#: core/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
 msgstr "Later"
 
-#: core/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "Ollama"
-
-#: core/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -65,6 +60,11 @@ msgid ""
 msgstr ""
 "Engine: %1\n"
 "Model: %2"
+
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
@@ -1669,6 +1669,9 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"Een compacte en efficiënte visietaalmodel, speciaal ontworpen voor begrijpen "
+"van visuele documenten, met inschakelen van geautomatiseerde extractie van "
+"inhoud uit tabellen, grafieken, infografieken, plots, diagrammen en meer."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
@@ -1686,6 +1689,9 @@ msgid ""
 "excels in advanced Arabic language capabilities for enterprises in the "
 "Middle East and Northern Africa."
 msgstr ""
+"Een nieuwe state-of-the-art versie van het lichtgewicht commando R7B model "
+"dat uitblinkt in geavanceerde mogelijkheden voor de Arabische taal voor "
+"ondernemingen in het Midden-Oosten en Noord-Africa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
 #, kde-format
@@ -1703,6 +1709,9 @@ msgid ""
 "including math and coding benchmarks, ranging from 2.4B to 32B parameters "
 "developed and released by LG AI Research."
 msgstr ""
+"EXAONE Deep vertoont superieure mogelijkheden in verschillende taken voor "
+"redeneren inclusief benchmarks voor wiskunde en codering, variërend van 2.4B "
+"tot 32B parameters ontwikkelt en uitgegeven door LG AI Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
 #, kde-format
@@ -1711,6 +1720,9 @@ msgid ""
 "art vision understanding and enhances long context capabilities up to 128k "
 "tokens without compromising text performance."
 msgstr ""
+"Bouwend op Mistral Small 3, voegt Mistral Small 3.1 (2503) state-of-the-art "
+"begrijpen van visuele en verbeterde lange context mogelijkheden tot 128k "
+"tokens zonder vermindering van prestaties bij tekst."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:268
 #, kde-format
@@ -1719,6 +1731,10 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
+"Cogito v1 Preview is een familie van hybride redeneringsmodellen door Deep "
+"Cogito dat beter is dan de best beschikbare open modellen met dezelfde "
+"grootte, inclusief tegenhangers uit LLaMA, DeepSeek en Qwen over de meeste "
+"standaard benchmarks."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
@@ -1726,6 +1742,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
+"DeepCoder is een volledig open-source 14B coderingsmodel op O3-mini niveau, "
+"met een ook beschikbare 1.5B versie."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1733,6 +1751,9 @@ msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
+"Qwen3 is de laatste generatie van large language modellen in de Qwen serie, "
+"die een uitgebreide suite van dichte en mixture-of-experts (MoE) modellen "
+"biedt."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
@@ -1746,6 +1767,9 @@ msgid ""
 "have been fine-tuned for improved reasoning and instruction-following "
 "capabilities."
 msgstr ""
+"IBM Granite 2B and 8B modellen zijn 128K contextlengte taalmodellen die fijn "
+"afgeregeld zijn voor verbeterde mogelijkheden voor redenering en volgen van "
+"instructies."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
@@ -1753,6 +1777,9 @@ msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
 "reasoning models that rival much larger models on complex reasoning tasks."
 msgstr ""
+"Phi 4 reasoning en reasoning plus zijn 14-biljoen parameters open-gewicht "
+"redeneringsmodellen die rivaliseren met veel grotere modellen op complexe "
+"redeneringstaken."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:282
 #, kde-format
@@ -1760,6 +1787,8 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
+"Phi 4 mini reasoning is een lichtgewicht open model dat efficiëntie "
+"balanceert met geavanceerde mogelijkheden voor redeneren."
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
@@ -1819,6 +1848,8 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"De temperatuur van het model. De temperatuur verhogen maakt dat het model "
+"creatiever zal antwoorden."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
@@ -1833,6 +1864,9 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"Zet de seed met willekeurig getal om te gebruiken voor generatie. Dit "
+"instellen op een specifiek getal zal het model dezelfde tekst laten "
+"genereren voor dezelfde prompt. (Standaard: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
@@ -1846,6 +1880,8 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"De temperatuur van het model. De temperatuur verhogen maakt dat het model "
+"creatiever zal antwoorden."
 
 #. i18n: ectx: label, entry (Seed), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:39
@@ -1855,6 +1891,9 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"Zet de seed met willekeurig getal om te gebruiken voor generatie. Dit "
+"instellen op een specifiek getal zal het model dezelfde tekst laten "
+"genereren voor dezelfde prompt. (Standaard: 0)"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
@@ -1936,7 +1975,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Configureren…"
 
-#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "API-sleutel:"
@@ -1945,7 +1984,7 @@ msgstr "API-sleutel:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Snel vragen"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

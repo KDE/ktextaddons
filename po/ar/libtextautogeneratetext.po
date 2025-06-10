@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-09 00:41+0000\n"
+"POT-Creation-Date: 2025-06-10 00:41+0000\n"
 "PO-Revision-Date: 2025-05-29 09:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,47 +18,42 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: core/textautogeneratechatsmodel.cpp:74
+#: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
 msgstr "دردشة جديدة…"
 
-#: core/textautogeneratechatsmodel.cpp:146
+#: core/models/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
 msgstr "المفضّلة"
 
-#: core/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
 msgstr "اليوم"
 
-#: core/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
 msgstr "7 أيام السابقة"
 
-#: core/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
 msgstr "30 يوم سابق"
 
-#: core/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
 msgstr "لاحقا"
 
-#: core/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "أولاما"
-
-#: core/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:68
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -66,6 +61,11 @@ msgid ""
 msgstr ""
 "المحرّك: %1\n"
 "النموذج: %2"
+
+#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
+#, kde-format
+msgid "Ollama"
+msgstr "أولاما"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
@@ -1693,7 +1693,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "اضبط…"
 
-#: widgets/networkpluginconfigure/networkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
 #, kde-format
 msgid "Api Key:"
 msgstr "مفتاح و‌ب‌ت API:"
