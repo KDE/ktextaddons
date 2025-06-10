@@ -27,3 +27,5 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(configureButton);
     QVERIFY(!configureButton->toolTip().isEmpty());
 }
+
+#include "moc_textautogeneratequickaskheaderwidgettest.cpp"
