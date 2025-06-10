@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QListView>
+class QSortFilterProxyModel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstanceModel;
@@ -20,5 +21,6 @@ public:
 
 private:
     TextAutoGenerateTextInstanceModel *const mModel;
+    QSortFilterProxyModel *const mSortFilterProxyModel;
 };
 }
