@@ -24,6 +24,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     configureButton->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
     configureButton->setToolTip(i18nc("@info:tooltip", "Configure…"));
     mainLayout->addWidget(configureButton);
+    connect(configureButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::configureRequested);
 }
 
 TextAutoGenerateQuickAskHeaderWidget::~TextAutoGenerateQuickAskHeaderWidget() = default;

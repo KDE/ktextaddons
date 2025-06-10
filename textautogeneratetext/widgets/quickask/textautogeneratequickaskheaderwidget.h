@@ -17,6 +17,9 @@ public:
     explicit TextAutoGenerateQuickAskHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskHeaderWidget() override;
 
+Q_SIGNALS:
+    void configureRequested();
+
 private:
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
