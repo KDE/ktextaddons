@@ -5,15 +5,20 @@
 */
 #include "textautogeneratetextinstancesmanagerlistview.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
+#include "core/textautogeneratetextinstancesmanager.h"
 #include <QSortFilterProxyModel>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManagerListView(QWidget *parent)
+TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManagerListView(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                           QWidget *parent)
     : QListView(parent)
-    , mModel(new TextAutoGenerateTextInstanceModel(this))
     , mSortFilterProxyModel(new QSortFilterProxyModel(this))
+    , mTextAutoGenerateManager(manager)
 {
     setDragEnabled(false);
-    mSortFilterProxyModel->setSourceModel(mModel);
+    if (mTextAutoGenerateManager) {
+        mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
+    }
     setModel(mSortFilterProxyModel);
 }
 

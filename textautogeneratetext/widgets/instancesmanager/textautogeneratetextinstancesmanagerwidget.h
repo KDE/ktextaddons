@@ -11,11 +11,12 @@ class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstancesManagerListView;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstancesManagerWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextInstancesManagerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerWidget() override;
 
 private:

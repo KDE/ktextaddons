@@ -9,18 +9,18 @@
 class QSortFilterProxyModel;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateTextInstanceModel;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextInstancesManagerListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstancesManagerListView(QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextInstancesManagerListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerListView() override;
 
     void slotSearchChanged(const QString &str);
 
 private:
-    TextAutoGenerateTextInstanceModel *const mModel;
     QSortFilterProxyModel *const mSortFilterProxyModel;
+    TextAutoGenerateManager *const mTextAutoGenerateManager;
 };
 }

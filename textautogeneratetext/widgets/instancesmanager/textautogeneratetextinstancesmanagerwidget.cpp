@@ -9,11 +9,12 @@
 #include <KLineEditEventHandler>
 #include <QLineEdit>
 #include <QVBoxLayout>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManagerWidget(QWidget *parent)
+TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManagerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mInstancesManagerListView(new TextAutoGenerateTextInstancesManagerListView(this))
+    , mInstancesManagerListView(new TextAutoGenerateTextInstancesManagerListView(manager, this))
     , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
