@@ -4,10 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstancesmanager.h"
+#include "core/models/textautogeneratetextinstancemodel.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(QObject *parent)
     : QObject{parent}
+    , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
 {
 }
 
@@ -23,24 +25,29 @@ void TextAutoGenerateTextInstancesManager::saveInstances()
     // TODO
 }
 
+TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAutoGenerateTextInstanceModel() const
+{
+    return mTextAutoGenerateTextInstanceModel;
+}
+
 QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstancesManager::instances() const
 {
-    return mInstances;
+    return mTextAutoGenerateTextInstanceModel->textInstances();
 }
 
 void TextAutoGenerateTextInstancesManager::setInstances(const QList<TextAutoGenerateTextInstance> &newInstances)
 {
-    mInstances = newInstances;
+    mTextAutoGenerateTextInstanceModel->setTextInstances(newInstances);
 }
 
 void TextAutoGenerateTextInstancesManager::deleteInstance(const QByteArray &uuid)
 {
-    // TODO
+    mTextAutoGenerateTextInstanceModel->removeInstance(uuid);
 }
 
 void TextAutoGenerateTextInstancesManager::addInstance(const TextAutoGenerateTextInstance &instance)
 {
-    // TODO
+    mTextAutoGenerateTextInstanceModel->addTextInstances(instance);
 }
 
 #include "moc_textautogeneratetextinstancesmanager.cpp"

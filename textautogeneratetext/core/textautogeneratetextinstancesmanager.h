@@ -11,6 +11,7 @@
 
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextInstanceModel;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public QObject
 {
     Q_OBJECT
@@ -28,7 +29,9 @@ public:
 
     void saveInstances();
 
+    [[nodiscard]] TextAutoGenerateTextInstanceModel *textAutoGenerateTextInstanceModel() const;
+
 private:
-    QList<TextAutoGenerateTextInstance> mInstances;
+    TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
 };
 }
