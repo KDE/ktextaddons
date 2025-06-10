@@ -6,16 +6,24 @@
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
 #include "textautogeneratetextinstancesmanagerlistview.h"
+#include <KLineEditEventHandler>
+#include <QLineEdit>
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManagerWidget(QWidget *parent)
     : QWidget{parent}
     , mInstancesManagerListView(new TextAutoGenerateTextInstancesManagerListView(this))
+    , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(QMargins{});
+
+    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    mainLayout->addWidget(mSearchLineEdit);
+    mSearchLineEdit->setClearButtonEnabled(true);
+    KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
 
     mInstancesManagerListView->setObjectName(QStringLiteral("mInstancesManagerListView"));
     mainLayout->addWidget(mInstancesManagerListView);

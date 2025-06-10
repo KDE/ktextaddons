@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
+class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstancesManagerListView;
@@ -19,5 +20,6 @@ public:
 
 private:
     TextAutoGenerateTextInstancesManagerListView *const mInstancesManagerListView;
+    QLineEdit *const mSearchLineEdit;
 };
 }

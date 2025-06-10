@@ -5,7 +5,9 @@
 */
 
 #include "textautogeneratetextinstancesmanagerwidgettest.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
+#include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateTextInstancesManagerWidgetTest)
@@ -21,6 +23,14 @@ void TextAutoGenerateTextInstancesManagerWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto mInstancesManagerListView =
+        w.findChild<TextAutoGenerateText::TextAutoGenerateTextInstancesManagerListView *>(QStringLiteral("mInstancesManagerListView"));
+    QVERIFY(mInstancesManagerListView);
+
+    auto mSearchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchLineEdit"));
+    QVERIFY(mSearchLineEdit);
+    QVERIFY(mSearchLineEdit->isClearButtonEnabled());
 }
 
 #include "moc_textautogeneratetextinstancesmanagerwidgettest.cpp"
