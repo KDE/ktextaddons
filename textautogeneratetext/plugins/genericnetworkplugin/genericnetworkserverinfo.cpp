@@ -96,7 +96,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
 {
     QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> listInfo;
     for (int i = static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown) + 1;
-         i < static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown);
+         i < static_cast<int>(GenericNetworkManager::PluginNetworkType::LastElement);
          ++i) {
         const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
             .localizedName = translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
