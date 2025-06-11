@@ -22,5 +22,6 @@ public:
 private:
     TextAutoGenerateTextInstancesManagerListView *const mInstancesManagerListView;
     QLineEdit *const mSearchLineEdit;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
