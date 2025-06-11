@@ -39,7 +39,6 @@ public:
     void loadPlugins();
 
     [[nodiscard]] QString generateDisplayName(TextAutoGenerateTextClient *client) const;
-    [[nodiscard]] QString website(TextAutoGenerateTextClient *client) const;
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const;
 

@@ -51,11 +51,6 @@ bool GenericNetworkClient::showConfigureDialog(QWidget *parentWidget)
     return true;
 }
 
-QString GenericNetworkClient::webSite() const
-{
-    return QStringLiteral("foo");
-}
-
 QString GenericNetworkClient::modelName() const
 {
     // No model here

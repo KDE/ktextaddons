@@ -29,7 +29,7 @@ public:
         Broken,
     };
     struct SupportedServer {
-        QString serverName;
+        QString localizedName;
         QString identifier;
         QString pluginName;
         [[nodiscard]] bool isValid() const;
@@ -44,8 +44,6 @@ public:
     [[nodiscard]] virtual QString name() const = 0;
 
     [[nodiscard]] virtual QString translatedName() const = 0;
-
-    [[nodiscard]] virtual QString webSite() const = 0;
 
     virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() = 0;
 

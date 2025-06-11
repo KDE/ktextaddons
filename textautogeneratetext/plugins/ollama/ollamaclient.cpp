@@ -52,11 +52,6 @@ bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
     return d.exec();
 }
 
-QString OllamaClient::webSite() const
-{
-    return QStringLiteral("https://ollama.com/");
-}
-
 QString OllamaClient::modelName() const
 {
     return OllamaSettings::model();

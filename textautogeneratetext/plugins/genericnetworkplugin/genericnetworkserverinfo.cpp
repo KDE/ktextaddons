@@ -98,10 +98,11 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
     for (int i = static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown) + 1;
          i < static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown);
          ++i) {
-        TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info;
-        info.serverName = translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i));
-        info.identifier = pluginName(static_cast<GenericNetworkManager::PluginNetworkType>(i));
-        info.pluginName = name;
+        const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
+            .localizedName = translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
+            .identifier = pluginName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
+            .pluginName = name,
+        };
         listInfo.append(std::move(info));
     }
     return listInfo;

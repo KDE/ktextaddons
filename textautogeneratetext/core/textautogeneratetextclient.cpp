@@ -40,6 +40,6 @@ QString TextAutoGenerateTextClient::convertEngineType(TextAutoGenerateText::Text
 
 bool TextAutoGenerateTextClient::SupportedServer::isValid() const
 {
-    return !serverName.isEmpty() && !identifier.isEmpty() && !pluginName.isEmpty();
+    return !localizedName.isEmpty() && !identifier.isEmpty() && !pluginName.isEmpty();
 }
 #include "moc_textautogeneratetextclient.cpp"

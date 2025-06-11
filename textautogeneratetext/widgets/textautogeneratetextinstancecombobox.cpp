@@ -23,6 +23,9 @@ void TextAutoGenerateTextInstanceComboBox::fillEngine()
 {
     clear();
     const QList<TextAutoGenerateTextClient::SupportedServer> list = mManager->textAutoGenerateEngineLoader()->supportedServers();
+    for (const auto &info : list) {
+        addItem(info.localizedName);
+    }
 
     /*
     QMapIterator<QString, QString> iMap(map);

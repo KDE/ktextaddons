@@ -125,11 +125,6 @@ QString TextAutoGenerateEngineLoader::generateDisplayName(TextAutoGenerateTextCl
     return translatedName;
 }
 
-QString TextAutoGenerateEngineLoader::website(TextAutoGenerateTextClient *client) const
-{
-    return client->webSite();
-}
-
 QList<TextAutoGenerateTextClient::SupportedServer> TextAutoGenerateEngineLoader::supportedServers() const
 {
     QList<TextAutoGenerateTextClient::SupportedServer> lst;
