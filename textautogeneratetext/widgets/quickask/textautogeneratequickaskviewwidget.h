@@ -23,8 +23,10 @@ Q_SIGNALS:
     void editingFinished(const QString &str, const QByteArray &uuid);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureRequested();
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineWidget;
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateQuickAskHeaderWidget *const mTextAutoGenerateQuickAskHeaderWidget;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
