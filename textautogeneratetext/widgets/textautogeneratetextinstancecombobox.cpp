@@ -24,14 +24,13 @@ void TextAutoGenerateTextInstanceComboBox::fillEngine()
     clear();
     const QList<TextAutoGenerateTextClient::SupportedServer> list = mManager->textAutoGenerateEngineLoader()->supportedServers();
     for (const auto &info : list) {
-        addItem(info.localizedName);
+        addItem(info.localizedName, QVariant::fromValue(info));
     }
-
-    /*
-    QMapIterator<QString, QString> iMap(map);
-    while (iMap.hasNext()) {
-        iMap.next();
-        mEngineComboBox->addItem(iMap.value(), iMap.key());
-    }
-    */
 }
+
+TextAutoGenerateTextClient::SupportedServer TextAutoGenerateTextInstanceComboBox::selectedInstanceType() const
+{
+    return currentData().value<TextAutoGenerateTextClient::SupportedServer>();
+}
+
+#include "moc_textautogeneratetextinstancecombobox.cpp"
