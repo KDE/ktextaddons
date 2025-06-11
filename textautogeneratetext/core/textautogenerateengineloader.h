@@ -6,13 +6,13 @@
 
 #pragma once
 
+#include "core/textautogeneratetextclient.h"
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <memory>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateEngineLoaderPrivate;
-class TextAutoGenerateTextClient;
 /**
  * @brief The TextAutoGenerateEngineLoader class
  * @author Laurent Montel <montel@kde.org>
@@ -40,6 +40,8 @@ public:
 
     [[nodiscard]] QString generateDisplayName(TextAutoGenerateTextClient *client) const;
     [[nodiscard]] QString website(TextAutoGenerateTextClient *client) const;
+
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const;
 
 Q_SIGNALS:
     void loadingPluginFailed();

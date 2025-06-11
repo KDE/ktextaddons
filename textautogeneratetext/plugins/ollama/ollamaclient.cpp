@@ -62,4 +62,8 @@ QString OllamaClient::modelName() const
     return OllamaSettings::model();
 }
 
+QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> OllamaClient::supportedServers() const
+{
+    return {};
+}
 #include "moc_ollamaclient.cpp"

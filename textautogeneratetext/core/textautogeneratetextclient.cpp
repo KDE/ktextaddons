@@ -38,4 +38,8 @@ QString TextAutoGenerateTextClient::convertEngineType(TextAutoGenerateText::Text
     return {};
 }
 
+bool TextAutoGenerateTextClient::SupportedServer::isValid() const
+{
+    return !serverName.isEmpty() && !identifier.isEmpty() && !pluginName.isEmpty();
+}
 #include "moc_textautogeneratetextclient.cpp"

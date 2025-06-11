@@ -6,7 +6,6 @@
 
 #include "textautogenerateengineloader.h"
 
-#include "textautogeneratetextclient.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QCoreApplication>
 #include <QDir>
@@ -129,6 +128,17 @@ QString TextAutoGenerateEngineLoader::generateDisplayName(TextAutoGenerateTextCl
 QString TextAutoGenerateEngineLoader::website(TextAutoGenerateTextClient *client) const
 {
     return client->webSite();
+}
+
+QList<TextAutoGenerateTextClient::SupportedServer> TextAutoGenerateEngineLoader::supportedServers() const
+{
+    QList<TextAutoGenerateTextClient::SupportedServer> lst;
+    QHashIterator<QString, TextAutoGenerateTextClient *> i(d->autogenerateTextClients);
+    while (i.hasNext()) {
+        i.next();
+        lst += i.value()->supportedServers();
+    }
+    return lst;
 }
 
 QString TextAutoGenerateEngineLoader::fallbackFirstEngine() const

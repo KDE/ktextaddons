@@ -28,6 +28,12 @@ public:
         Unknown,
         Broken,
     };
+    struct SupportedServer {
+        QString serverName;
+        QString identifier;
+        QString pluginName;
+        [[nodiscard]] bool isValid() const;
+    };
 
     explicit TextAutoGenerateTextClient(QObject *parent = nullptr);
     ~TextAutoGenerateTextClient() override;
@@ -52,9 +58,11 @@ public:
     [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type);
 
     [[nodiscard]] virtual QString modelName() const = 0;
+    [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 
 Q_SIGNALS:
     void configureChanged();
 };
 }
 Q_DECLARE_INTERFACE(TextAutoGenerateText::TextAutoGenerateTextClient, "org.kde.textautogeneratetext.client")
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer, Q_RELOCATABLE_TYPE);

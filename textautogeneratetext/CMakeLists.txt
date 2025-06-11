@@ -38,6 +38,8 @@ add_library(
     KF6TextAutoGenerateText
     widgets/quickask/textautogeneratequickaskheaderwidget.h
     widgets/quickask/textautogeneratequickaskheaderwidget.cpp
+    widgets/textautogeneratetextinstancecombobox.h
+    widgets/textautogeneratetextinstancecombobox.cpp
 )
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)

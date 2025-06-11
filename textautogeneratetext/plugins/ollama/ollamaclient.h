@@ -25,6 +25,7 @@ public:
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
     [[nodiscard]] QString webSite() const override;
     [[nodiscard]] QString modelName() const override;
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const override;
 
 private:
     OllamaManager *const mManager;
