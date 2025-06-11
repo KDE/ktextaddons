@@ -66,4 +66,24 @@ QString GenericNetworkManager::apiUrl() const
     return {};
 }
 
+QString GenericNetworkManager::description() const
+{
+    switch (mPluginNetworkType) {
+    case PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return {};
+    case PluginNetworkType::MistralAI:
+        return {};
+    case PluginNetworkType::OpenAI:
+        return {};
+    }
+    return {};
+}
+
+QString GenericNetworkManager::pluginName() const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_genericnetworkmanager.cpp"

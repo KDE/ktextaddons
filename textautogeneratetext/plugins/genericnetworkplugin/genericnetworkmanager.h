@@ -16,6 +16,11 @@ public:
         MistralAI,
         OpenAI,
     };
+
+    enum class Limitation : uint8_t {
+        None = 0,
+    };
+
     explicit GenericNetworkManager(QObject *parent = nullptr);
     ~GenericNetworkManager() override;
 
@@ -26,7 +31,12 @@ public:
     [[nodiscard]] QString webSite() const;
 
     [[nodiscard]] QString apiUrl() const;
+    [[nodiscard]] QString description() const;
 
+    [[nodiscard]] QString pluginName() const;
+
+    // [[nodiscard]] QString pluginName() const;
 private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
+    // TODO limitation type
 };
