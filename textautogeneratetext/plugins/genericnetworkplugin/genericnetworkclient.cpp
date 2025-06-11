@@ -5,6 +5,9 @@
 */
 
 #include "genericnetworkclient.h"
+#include "genericnetworkmanager.h"
+#include "genericnetworkplugin.h"
+#include "genericnetworkserverinfo.h"
 #include <KLocalizedString>
 #include <qt6keychain/keychain.h>
 
@@ -18,18 +21,18 @@ GenericNetworkClient::~GenericNetworkClient() = default;
 
 QString GenericNetworkClient::name() const
 {
-    return "mistral"_L1;
+    return "generic"_L1;
 }
 
 QString GenericNetworkClient::translatedName() const
 {
-    return i18n("Mistral AI");
+    return i18n("Generic");
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin()
 {
-    return {};
-    // new MistralPlugin(mManager, this);
+    auto plugin = new GenericNetworkPlugin(new GenericNetworkManager(this), this);
+    return plugin;
 }
 
 TextAutoGenerateText::TextAutoGenerateTextClient::EngineType GenericNetworkClient::engineType() const
@@ -50,13 +53,19 @@ bool GenericNetworkClient::showConfigureDialog(QWidget *parentWidget)
 
 QString GenericNetworkClient::webSite() const
 {
-    return QStringLiteral("https://chat.mistral.ai/");
+    return QStringLiteral("foo");
 }
 
 QString GenericNetworkClient::modelName() const
 {
     // No model here
     return {};
+}
+
+QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkClient::supportedServers() const
+{
+    const GenericNetworkServerInfo info;
+    return info.supportedServers(name());
 }
 
 #include "moc_genericnetworkclient.cpp"

@@ -11,11 +11,12 @@ namespace QKeychain
 {
 class Job;
 }
+class GenericNetworkManager;
 class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkPlugin(QObject *parent = nullptr);
+    explicit GenericNetworkPlugin(GenericNetworkManager *manager, QObject *parent = nullptr);
     ~GenericNetworkPlugin() override;
 
     [[nodiscard]] bool loadSettings() override;
@@ -33,4 +34,5 @@ protected:
 
 private:
     void slotApiKeyRead(QKeychain::Job *baseJob);
+    GenericNetworkManager *const mManager;
 };

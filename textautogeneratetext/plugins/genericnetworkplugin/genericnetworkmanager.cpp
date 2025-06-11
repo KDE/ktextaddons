@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmanager.h"
-#include "autogeneratetext_genericnetwork_debug.h"
+#include "genericnetworkserverinfo.h"
 #include <KLocalizedString>
 
 GenericNetworkManager::GenericNetworkManager(QObject *parent)
@@ -26,64 +26,42 @@ void GenericNetworkManager::setPluginNetworkType(PluginNetworkType newPluginNetw
 
 QString GenericNetworkManager::translatedName() const
 {
-    switch (mPluginNetworkType) {
-    case PluginNetworkType::Unknown:
-        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
-        return {};
-    case PluginNetworkType::MistralAI:
-        return {};
-    case PluginNetworkType::OpenAI:
-        return {};
-    }
-    return {};
+    const GenericNetworkServerInfo info;
+    return info.translatedName(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::webSite() const
 {
-    switch (mPluginNetworkType) {
-    case PluginNetworkType::Unknown:
-        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
-        return {};
-    case PluginNetworkType::MistralAI:
-        return {};
-    case PluginNetworkType::OpenAI:
-        return {};
-    }
-    return {};
+    const GenericNetworkServerInfo info;
+    return info.webSite(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::apiUrl() const
 {
-    switch (mPluginNetworkType) {
-    case PluginNetworkType::Unknown:
-        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
-        return {};
-    case PluginNetworkType::MistralAI:
-        return {};
-    case PluginNetworkType::OpenAI:
-        return {};
-    }
-    return {};
+    const GenericNetworkServerInfo info;
+    return info.apiUrl(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::description() const
 {
-    switch (mPluginNetworkType) {
-    case PluginNetworkType::Unknown:
-        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
-        return {};
-    case PluginNetworkType::MistralAI:
-        return {};
-    case PluginNetworkType::OpenAI:
-        return {};
-    }
-    return {};
+    const GenericNetworkServerInfo info;
+    return info.description(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::pluginName() const
 {
-    // TODO
-    return {};
+    const GenericNetworkServerInfo info;
+    return info.pluginName(mPluginNetworkType);
+}
+
+QString GenericNetworkManager::apiKey() const
+{
+    return mApiKey;
+}
+
+void GenericNetworkManager::setApiKey(const QString &newApiKey)
+{
+    mApiKey = newApiKey;
 }
 
 #include "moc_genericnetworkmanager.cpp"

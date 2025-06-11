@@ -9,8 +9,9 @@
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
-GenericNetworkPlugin::GenericNetworkPlugin(QObject *parent)
+GenericNetworkPlugin::GenericNetworkPlugin(GenericNetworkManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
+    , mManager(manager)
 {
 }
 

@@ -15,6 +15,7 @@ public:
         Unknown = 0,
         MistralAI,
         OpenAI,
+        LastElement,
     };
 
     enum class Limitation : uint8_t {
@@ -35,8 +36,11 @@ public:
 
     [[nodiscard]] QString pluginName() const;
 
-    // [[nodiscard]] QString pluginName() const;
+    [[nodiscard]] QString apiKey() const;
+    void setApiKey(const QString &newApiKey);
+
 private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
+    QString mApiKey;
     // TODO limitation type
 };
