@@ -32,8 +32,10 @@ public:
     [[nodiscard]] TextAutoGenerateTextInstanceModel *textAutoGenerateTextInstanceModel() const;
 
     [[nodiscard]] QByteArray currentInstance() const;
+    void setCurrentinstance(const QByteArray &newCurrentinstance);
 
 private:
+    QByteArray mCurrentinstance;
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
 };
 }

@@ -52,8 +52,12 @@ void TextAutoGenerateTextInstancesManager::addInstance(const TextAutoGenerateTex
 
 QByteArray TextAutoGenerateTextInstancesManager::currentInstance() const
 {
-    // TODO
-    return {};
+    return mCurrentinstance;
+}
+
+void TextAutoGenerateTextInstancesManager::setCurrentinstance(const QByteArray &newCurrentinstance)
+{
+    mCurrentinstance = newCurrentinstance;
 }
 
 #include "moc_textautogeneratetextinstancesmanager.cpp"
