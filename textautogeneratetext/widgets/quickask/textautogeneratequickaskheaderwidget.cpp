@@ -20,6 +20,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
 
     mainLayout->addStretch(1);
     auto configureButton = new QToolButton(this);
+    configureButton->setAutoRaise(true);
     configureButton->setObjectName(QStringLiteral("configureButton"));
     configureButton->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
     configureButton->setToolTip(i18nc("@info:tooltip", "Configure…"));
