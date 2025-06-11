@@ -11,6 +11,7 @@ class QMenu;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMenuTextManager;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMenuWidget : public QObject
 {
     Q_OBJECT
@@ -24,6 +25,12 @@ public:
     [[nodiscard]] QString selectedText() const;
     void setSelectedText(const QString &newSelectedText);
 
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
+    void setManager(TextAutoGenerateText::TextAutoGenerateManager *newManager);
+
+    [[nodiscard]] QWidget *parentWidget() const;
+    void setParentWidget(QWidget *newParentWidget);
+
 Q_SIGNALS:
     void refreshMenu();
 
@@ -35,5 +42,7 @@ private:
     QString mSelectedText;
     QMenu *const mTextMenu;
     TextAutoGenerateMenuTextManager *const mMenuTextManager;
+    TextAutoGenerateText::TextAutoGenerateManager *mManager = nullptr;
+    QWidget *mParentWidget = nullptr;
 };
 }
