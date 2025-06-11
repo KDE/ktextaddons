@@ -42,4 +42,12 @@ bool TextAutoGenerateTextClient::SupportedServer::isValid() const
 {
     return !localizedName.isEmpty() && !identifier.isEmpty() && !pluginName.isEmpty();
 }
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer &t)
+{
+    d.space() << "localizedName:" << t.localizedName;
+    d.space() << "identifier:" << t.identifier;
+    d.space() << "pluginName:" << t.pluginName;
+    return d;
+}
 #include "moc_textautogeneratetextclient.cpp"

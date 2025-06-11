@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QDebug>
 #include <QObject>
 namespace TextAutoGenerateText
 {
@@ -64,3 +65,5 @@ Q_SIGNALS:
 }
 Q_DECLARE_INTERFACE(TextAutoGenerateText::TextAutoGenerateTextClient, "org.kde.textautogeneratetext.client")
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer, Q_RELOCATABLE_TYPE);
+Q_DECLARE_METATYPE(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer)
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer &t);
