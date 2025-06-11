@@ -38,7 +38,7 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
 
     auto importModelFromGGUFFileButton = new QPushButton(i18nc("@action:button", "Load GGUF File…"), this);
     importModelFromGGUFFileButton->setObjectName(QStringLiteral("importModelFromGGUFFileButton"));
-    selectModeWidgetLayout->addWidget(importModelFromGGUFFileButton);
+    selectModeWidgetLayout->addWidget(importModelFromGGUFFileButton, 0, Qt::AlignTop);
     connect(importModelFromGGUFFileButton, &QPushButton::clicked, this, [this]() {
         const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select GGUF File"));
         if (!fileName.isEmpty()) {
@@ -48,7 +48,7 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
 
     auto createModelButton = new QPushButton(i18nc("@action:button", "Create Model"), this);
     createModelButton->setObjectName(QStringLiteral("createModelButton"));
-    selectModeWidgetLayout->addWidget(createModelButton);
+    selectModeWidgetLayout->addWidget(createModelButton, 0, Qt::AlignTop);
     connect(createModelButton, &QPushButton::clicked, this, [this]() {
         mOllamaModelCreateFromExistingModelWidget->clear();
         mStackWidget->setCurrentWidget(mOllamaModelCreateFromExistingModelWidget);
