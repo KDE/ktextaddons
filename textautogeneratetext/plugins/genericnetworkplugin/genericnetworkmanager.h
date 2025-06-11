@@ -22,6 +22,11 @@ public:
     [[nodiscard]] PluginNetworkType pluginNetworkType() const;
     void setPluginNetworkType(PluginNetworkType newPluginNetworkType);
 
+    [[nodiscard]] QString translatedName() const;
+    [[nodiscard]] QString webSite() const;
+
+    [[nodiscard]] QString apiUrl() const;
+
 private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
 };
