@@ -59,6 +59,11 @@ QString OllamaClient::modelName() const
 
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> OllamaClient::supportedServers() const
 {
-    return {};
+    const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
+        .localizedName = translatedName(),
+        .identifier = name(),
+        .pluginName = name(),
+    };
+    return {info};
 }
 #include "moc_ollamaclient.cpp"
