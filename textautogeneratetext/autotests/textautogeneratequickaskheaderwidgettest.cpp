@@ -30,13 +30,16 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!configureButton->toolTip().isEmpty());
     QVERIFY(configureButton->autoRaise());
 }
-/*
-    QSignalSpy spy(&w, &OllamaModelDownloadWidget::downloadModel);
 
-    auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));
+void TextAutoGenerateQuickAskHeaderWidgetTest::shouldEmitConfigureRequested()
+{
+    TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget w(nullptr);
+
+    QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget::configureRequested);
+
+    auto toolButton = w.findChild<QToolButton *>(QStringLiteral("configureButton"));
     QTest::mouseClick(toolButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
-    QCOMPARE(spy.at(0).at(0).toString(), name);
-*/
+}
 
 #include "moc_textautogeneratequickaskheaderwidgettest.cpp"
