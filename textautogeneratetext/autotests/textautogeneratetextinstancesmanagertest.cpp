@@ -17,6 +17,7 @@ void TextAutoGenerateTextInstancesManagerTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateTextInstancesManager w;
     QVERIFY(w.instances().isEmpty());
+    QVERIFY(w.currentInstance().isEmpty());
     // TODO
 }
 
