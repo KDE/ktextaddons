@@ -30,6 +30,7 @@ private:
     QString mName;
     QString mPluginName;
     QByteArray mInstanceUuid;
+    // TODO plugin settings
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextInstance, Q_RELOCATABLE_TYPE);

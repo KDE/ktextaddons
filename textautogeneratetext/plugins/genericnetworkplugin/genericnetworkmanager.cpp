@@ -11,3 +11,15 @@ GenericNetworkManager::GenericNetworkManager(QObject *parent)
 }
 
 GenericNetworkManager::~GenericNetworkManager() = default;
+
+GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const
+{
+    return mPluginNetworkType;
+}
+
+void GenericNetworkManager::setPluginNetworkType(PluginNetworkType newPluginNetworkType)
+{
+    mPluginNetworkType = newPluginNetworkType;
+}
+
+#include "moc_genericnetworkmanager.cpp"
