@@ -44,6 +44,7 @@ bool GenericNetworkClient::hasConfigurationDialog() const
 
 bool GenericNetworkClient::showConfigureDialog(QWidget *parentWidget)
 {
+    Q_UNUSED(parentWidget);
     return true;
 }
 

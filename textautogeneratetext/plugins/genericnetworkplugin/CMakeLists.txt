@@ -12,7 +12,10 @@ ecm_qt_declare_logging_category(textautogenerategenericnetwork
     EXPORT KTEXTADDONS
 )
 
-target_sources(textautogenerategenericnetwork PRIVATE)
+target_sources(
+    textautogenerategenericnetwork
+    PRIVATE genericnetworkmanager.h genericnetworkmanager.cpp
+)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
