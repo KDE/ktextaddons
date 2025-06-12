@@ -26,9 +26,13 @@ public:
     [[nodiscard]] QByteArray instanceUuid() const;
     void setInstanceUuid(const QByteArray &newInstanceUuid);
 
+    [[nodiscard]] QString pluginIdentifier() const;
+    void setPluginIdentifier(const QString &newPluginIdentifier);
+
 private:
     QString mName;
     QString mPluginName;
+    QString mPluginIdentifier;
     QByteArray mInstanceUuid;
     // TODO plugin settings
 };

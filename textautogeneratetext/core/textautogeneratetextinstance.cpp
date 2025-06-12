@@ -32,7 +32,7 @@ void TextAutoGenerateTextInstance::setPluginName(const QString &newPluginName)
 
 bool TextAutoGenerateTextInstance::isValid() const
 {
-    return !mName.isEmpty() && !mPluginName.isEmpty() && !mInstanceUuid.isEmpty();
+    return !mName.isEmpty() && !mPluginName.isEmpty() && !mInstanceUuid.isEmpty() && !mPluginIdentifier.isEmpty();
 }
 
 QByteArray TextAutoGenerateTextInstance::instanceUuid() const
@@ -45,10 +45,21 @@ void TextAutoGenerateTextInstance::setInstanceUuid(const QByteArray &newInstance
     mInstanceUuid = newInstanceUuid;
 }
 
+QString TextAutoGenerateTextInstance::pluginIdentifier() const
+{
+    return mPluginIdentifier;
+}
+
+void TextAutoGenerateTextInstance::setPluginIdentifier(const QString &newPluginIdentifier)
+{
+    mPluginIdentifier = newPluginIdentifier;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "pluginName:" << t.pluginName();
+    d.space() << "pluginIdentifier:" << t.pluginIdentifier();
     d.space() << "instanceUuid:" << t.instanceUuid();
     return d;
 }
