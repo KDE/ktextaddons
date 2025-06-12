@@ -119,10 +119,13 @@ target_sources(
         core/models/textautogeneratehistorysortfilterproxymodel.h
         core/models/textautogeneratehistorysortfilterproxymodel.cpp
         core/models/textautogeneratehistorylistheadingsproxymodel.cpp
+        core/models/textautogeneratehistorylistheadingsproxymodel.h
         core/models/textautogeneratechatsmodel.h
         core/models/textautogeneratechatsmodel.cpp
         core/models/textautogeneratetextinstancemodel.h
         core/models/textautogeneratetextinstancemodel.cpp
+        core/models/textautogeneratetextinstancesortfilterproxymodel.h
+        core/models/textautogeneratetextinstancesortfilterproxymodel.cpp
         core/localdatabase/textautogeneratelocaldatabaseutils.h
         core/localdatabase/textautogeneratelocaldatabaseutils.cpp
         core/localdatabase/textautogeneratelocaldatabaseabstract.h
@@ -186,6 +189,8 @@ target_sources(
         widgets/common/textautogeneratenotworkingwidget.cpp
         widgets/common/textautogeneratenotworkingmessagewidget.h
         widgets/common/textautogeneratenotworkingmessagewidget.cpp
+        widgets/common/textautogeneratenotinstancefoundwidget.h
+        widgets/common/textautogeneratenotinstancefoundwidget.cpp
         widgets/view/textautogeneratelistview.h
         widgets/view/textautogeneratelistview.cpp
         widgets/view/textautogeneratelistviewdelegate.h

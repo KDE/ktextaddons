@@ -94,6 +94,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         msgLlm.setEngineName(engineName());
         msgLlm.setModelName(currentModel());
+        // TODO msgLlm.setInstanceName(currentModel());
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);

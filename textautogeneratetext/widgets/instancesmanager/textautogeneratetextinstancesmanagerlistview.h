@@ -6,9 +6,9 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QListView>
-class QSortFilterProxyModel;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextInstanceSortFilterProxyModel;
 class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextInstancesManagerListView : public QListView
 {
@@ -19,8 +19,11 @@ public:
 
     void slotSearchChanged(const QString &str);
 
+protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
+
 private:
-    QSortFilterProxyModel *const mSortFilterProxyModel;
+    TextAutoGenerateTextInstanceSortFilterProxyModel *const mSortFilterProxyModel;
     TextAutoGenerateManager *const mTextAutoGenerateManager;
 };
 }

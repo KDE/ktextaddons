@@ -9,6 +9,7 @@
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
 #include <QLineEdit>
 #include <QTest>
+#include <QToolButton>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateTextInstancesManagerWidgetTest)
 TextAutoGenerateTextInstancesManagerWidgetTest::TextAutoGenerateTextInstancesManagerWidgetTest(QObject *parent)
@@ -32,6 +33,11 @@ void TextAutoGenerateTextInstancesManagerWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit);
     QVERIFY(mSearchLineEdit->isClearButtonEnabled());
     QVERIFY(mSearchLineEdit->text().isEmpty());
+
+    auto addInstanceButton = w.findChild<QToolButton *>(QStringLiteral("addInstanceButton"));
+    QVERIFY(addInstanceButton);
+    QVERIFY(!addInstanceButton->toolTip().isEmpty());
+    QVERIFY(addInstanceButton->autoRaise());
 }
 
 #include "moc_textautogeneratetextinstancesmanagerwidgettest.cpp"
