@@ -88,7 +88,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
-    TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
     TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;

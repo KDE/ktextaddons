@@ -5,11 +5,13 @@
 */
 #include "textautogeneratetextinstancesmanager.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
+#include "core/textautogenerateengineloader.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
+    , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
 {
 }
 
@@ -58,6 +60,11 @@ QByteArray TextAutoGenerateTextInstancesManager::currentInstance() const
 void TextAutoGenerateTextInstancesManager::setCurrentinstance(const QByteArray &newCurrentinstance)
 {
     mCurrentinstance = newCurrentinstance;
+}
+
+TextAutoGenerateEngineLoader *TextAutoGenerateTextInstancesManager::textAutoGenerateEngineLoader() const
+{
+    return mTextAutoGenerateEngineLoader;
 }
 
 #include "moc_textautogeneratetextinstancesmanager.cpp"

@@ -19,7 +19,6 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
-    , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
     , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this))
@@ -135,7 +134,7 @@ TextAutoGenerateChatsModel *TextAutoGenerateManager::textAutoGenerateChatsModel(
 
 TextAutoGenerateEngineLoader *TextAutoGenerateManager::textAutoGenerateEngineLoader() const
 {
-    return mTextAutoGenerateEngineLoader;
+    return mTextAutoGenerateTextInstancesManager->textAutoGenerateEngineLoader();
 }
 
 bool TextAutoGenerateManager::showArchived() const
@@ -164,7 +163,7 @@ void TextAutoGenerateManager::loadHistory()
 
 QString TextAutoGenerateManager::generateEngineDisplayName() const
 {
-    return mTextAutoGenerateEngineLoader->generateDisplayName(mTextAutoGenerateClient);
+    return textAutoGenerateEngineLoader()->generateDisplayName(mTextAutoGenerateClient);
 }
 
 TextAutoGenerateTextClient *TextAutoGenerateManager::textAutoGenerateClient() const
@@ -338,13 +337,13 @@ void TextAutoGenerateManager::loadEngine()
         delete mTextAutoGeneratePlugin;
         mTextAutoGeneratePlugin = nullptr;
     }
-    mTextAutoGenerateEngineLoader->loadPlugins();
+    textAutoGenerateEngineLoader()->loadPlugins();
 
-    mTextAutoGenerateClient = mTextAutoGenerateEngineLoader->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
+    mTextAutoGenerateClient = textAutoGenerateEngineLoader()->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
     if (!mTextAutoGenerateClient) {
-        const QString fallBackEngineName = mTextAutoGenerateEngineLoader->fallbackFirstEngine();
+        const QString fallBackEngineName = textAutoGenerateEngineLoader()->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
-            mTextAutoGenerateClient = mTextAutoGenerateEngineLoader->createTextAutoGenerateTextClient(fallBackEngineName);
+            mTextAutoGenerateClient = textAutoGenerateEngineLoader()->createTextAutoGenerateTextClient(fallBackEngineName);
         }
     }
     if (mTextAutoGenerateClient) {

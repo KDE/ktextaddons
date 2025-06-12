@@ -12,6 +12,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstanceModel;
+class TextAutoGenerateEngineLoader;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public QObject
 {
     Q_OBJECT
@@ -34,8 +35,11 @@ public:
     [[nodiscard]] QByteArray currentInstance() const;
     void setCurrentinstance(const QByteArray &newCurrentinstance);
 
+    [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
+
 private:
     QByteArray mCurrentinstance;
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
+    TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
 };
 }
