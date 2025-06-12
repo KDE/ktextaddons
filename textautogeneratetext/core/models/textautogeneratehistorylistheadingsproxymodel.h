@@ -49,5 +49,4 @@ private:
     };
     [[nodiscard]] IndexType type(const QModelIndex &index) const;
 };
-
 }
