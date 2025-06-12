@@ -40,11 +40,6 @@ TextAutoGenerateText::TextAutoGenerateTextClient::EngineType GenericNetworkClien
     return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network;
 }
 
-bool GenericNetworkClient::hasConfigurationDialog() const
-{
-    return true;
-}
-
 bool GenericNetworkClient::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget);

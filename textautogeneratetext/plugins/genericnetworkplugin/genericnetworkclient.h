@@ -20,7 +20,6 @@ public:
     [[nodiscard]] QString translatedName() const override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
-    [[nodiscard]] bool hasConfigurationDialog() const override;
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
     [[nodiscard]] QString modelName() const override;
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const override;

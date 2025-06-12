@@ -31,7 +31,6 @@ TextAutoGenerateTextConfigureComboWidget::TextAutoGenerateTextConfigureComboWidg
 
     mConfigureEngine->setObjectName(QStringLiteral("mConfigureEngine"));
     mainLayout->addWidget(mConfigureEngine);
-    mConfigureEngine->setEnabled(false); // Disable by default
     mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
     connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine);
     connect(mEngineComboBox, &QComboBox::currentIndexChanged, this, &TextAutoGenerateTextConfigureComboWidget::slotEngineChanged);
@@ -46,10 +45,8 @@ TextAutoGenerateTextConfigureComboWidget::~TextAutoGenerateTextConfigureComboWid
 void TextAutoGenerateTextConfigureComboWidget::slotConfigureEngine()
 {
     const QString engine = mEngineComboBox->currentData().toString();
-    if (mManager->textAutoGenerateEngineLoader()->hasConfigurationDialog(engine)) {
-        if (mManager->textAutoGenerateEngineLoader()->showConfigureDialog(engine, this)) {
-            Q_EMIT configureChanged(engine);
-        }
+    if (mManager->textAutoGenerateEngineLoader()->showConfigureDialog(engine, this)) {
+        Q_EMIT configureChanged(engine);
     }
 }
 
@@ -67,7 +64,6 @@ void TextAutoGenerateTextConfigureComboWidget::fillEngine()
 void TextAutoGenerateTextConfigureComboWidget::slotEngineChanged(int index)
 {
     const QString engine = mEngineComboBox->itemData(index).toString();
-    mConfigureEngine->setEnabled(mManager->textAutoGenerateEngineLoader()->hasConfigurationDialog(engine));
     Q_EMIT engineChanged(engine);
 }
 

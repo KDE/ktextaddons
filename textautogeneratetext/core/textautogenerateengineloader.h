@@ -26,8 +26,6 @@ public:
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
 
-    [[nodiscard]] bool hasConfigurationDialog(const QString &clientName) const;
-
     [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
     [[nodiscard]] QMap<QString, QString> textAutoGenerateTextEngineInfos() const;

@@ -48,8 +48,6 @@ public:
 
     virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() = 0;
 
-    [[nodiscard]] virtual bool hasConfigurationDialog() const;
-
     [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget);
 
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;

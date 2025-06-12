@@ -40,11 +40,6 @@ TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engin
     return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local;
 }
 
-bool OllamaClient::hasConfigurationDialog() const
-{
-    return true;
-}
-
 bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
 {
     // TODO use QPointer ?

@@ -83,16 +83,6 @@ TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::createTextAutoGenerate
     return (*clientsItr);
 }
 
-bool TextAutoGenerateEngineLoader::hasConfigurationDialog(const QString &clientName) const
-{
-    auto clientsItr = d->autogenerateTextClients.constFind(clientName);
-    if (clientsItr == d->autogenerateTextClients.constEnd()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Client name not found: " << clientName;
-        return false;
-    }
-    return (*clientsItr)->hasConfigurationDialog();
-}
-
 bool TextAutoGenerateEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);

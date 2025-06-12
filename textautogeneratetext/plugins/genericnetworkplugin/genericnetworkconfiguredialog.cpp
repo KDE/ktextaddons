@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkconfiguredialog.h"
+#include "widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -17,10 +18,17 @@ const char myGenericNetworkConfigureDialogGroupName[] = "GenericNetworkConfigure
 }
 GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(QWidget *parent)
     : KPageDialog(parent)
+    , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget(this))
 {
     // TODO update title
     setWindowTitle(i18nc("@title:window", "Configure"));
     setFaceType(KPageDialog::List);
+
+    const QString generalPageName = i18nc("@title Preferences page name", "General");
+    auto configureGeneralWidgetPage = new KPageWidgetItem(mConfigureWidget, generalPageName);
+    mConfigureWidget->setObjectName(QStringLiteral("mConfigureWidget"));
+    // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
+    addPage(configureGeneralWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &GenericNetworkConfigureDialog::slotAccepted);
     readConfig();
