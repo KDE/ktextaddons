@@ -35,7 +35,7 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return instance.pluginName();
     case InstanceRoles::Uuid:
         return instance.instanceUuid();
-    case InstanceRoles::PluginIdentifer:
+    case InstanceRoles::PluginIdentifier:
         return instance.pluginIdentifier();
     }
     return {};
