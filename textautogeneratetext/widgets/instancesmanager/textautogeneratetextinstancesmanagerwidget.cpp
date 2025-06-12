@@ -55,6 +55,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             instance.setName(d.instanceName());
             instance.setPluginName(server.localizedName);
             instance.setPluginIdentifier(server.pluginName);
+            // TODO add identifier
             mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
         }
     });
