@@ -156,8 +156,9 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::setSourceModel(QAbstractItem
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QModelIndex &proxyIndex) const
 {
-    if (!sourceModel())
+    if (!sourceModel()) {
         return {};
+    }
 
     switch (type(proxyIndex)) {
     case IndexType::Root:
@@ -172,11 +173,13 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapToSource(const QMo
 
 QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const QModelIndex &sourceIndex) const
 {
-    if (!sourceModel())
+    if (!sourceModel()) {
         return {};
+    }
 
-    if (!sourceIndex.isValid())
+    if (!sourceIndex.isValid()) {
         return {};
+    }
 
     for (auto sectionId = size_t(0), iMax = mSections.size(); sectionId < iMax; ++sectionId) {
         const auto &section = mSections.at(sectionId);
@@ -264,8 +267,9 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
 
 void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
 {
-    for (auto &section : mSections)
+    for (auto &section : mSections) {
         section.clear();
+    }
 
     for (auto row = 0, until = sourceModel()->rowCount(); row < until; ++row) {
         const QPersistentModelIndex index = sourceModel()->index(row, 0);
@@ -275,17 +279,20 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
         newSection.push_back(index);
     }
 
-    for (auto &section : mSections)
+    for (auto &section : mSections) {
         std::sort(section.begin(), section.end());
+    }
 }
 
 auto TextAutoGenerateHistoryListHeadingsProxyModel::type(const QModelIndex &index) const -> IndexType
 {
-    if (!index.isValid())
+    if (!index.isValid()) {
         return IndexType::Root;
+    }
 
-    if (index.internalId() == sectionCount)
+    if (index.internalId() == sectionCount) {
         return IndexType::Section;
+    }
 
     return IndexType::History;
 }
