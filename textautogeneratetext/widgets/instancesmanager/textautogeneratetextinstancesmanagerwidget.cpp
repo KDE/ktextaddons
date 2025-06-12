@@ -6,8 +6,8 @@
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
 #include "core/textautogeneratetextinstancesmanager.h"
+#include "textautogenerateaddinstancedialog.h"
 #include "textautogeneratetextinstancesmanagerlistview.h"
-#include "widgets/textautogenerateaddinstancedialog.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLineEdit>

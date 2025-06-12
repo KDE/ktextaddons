@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancewidgettest.h"
-#include "widgets/textautogenerateaddinstancewidget.h"
-#include "widgets/textautogeneratetextinstancecombobox.h"
+#include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancecombobox.h"
 #include <QLabel>
 #include <QTest>
 #include <QVBoxLayout>

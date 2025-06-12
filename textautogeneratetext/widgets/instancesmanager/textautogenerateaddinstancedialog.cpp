@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancedialog.h"
-#include "widgets/textautogenerateaddinstancewidget.h"
+#include "textautogenerateaddinstancewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
