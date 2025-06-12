@@ -22,3 +22,5 @@ void TextAutoGenerateTextInstanceTest::shouldHaveDefaultValues()
     QVERIFY(w.pluginIdentifier().isEmpty());
     QVERIFY(!w.isValid());
 }
+
+#include "moc_textautogeneratetextinstancetest.cpp"
