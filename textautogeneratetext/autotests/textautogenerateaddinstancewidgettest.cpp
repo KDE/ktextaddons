@@ -30,3 +30,5 @@ void TextAutoGenerateAddInstanceWidgetTest::shouldHaveDefaultValues()
     auto mInstanceComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateTextInstanceComboBox *>(QStringLiteral("mInstanceComboBox"));
     QVERIFY(mInstanceComboBox);
 }
+
+#include "moc_textautogenerateaddinstancewidgettest.cpp"

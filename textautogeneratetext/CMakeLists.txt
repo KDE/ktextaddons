@@ -249,6 +249,8 @@ target_sources(
         widgets/instancesmanager/textautogenerateaddinstancewidget.cpp
         widgets/instancesmanager/textautogeneratetextinstancecombobox.h
         widgets/instancesmanager/textautogeneratetextinstancecombobox.cpp
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerlistviewdelegate.h
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerlistviewdelegate.cpp
 )
 
 if(BUILD_TESTING)
