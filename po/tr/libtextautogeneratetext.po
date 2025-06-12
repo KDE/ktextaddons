@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:41+0000\n"
-"PO-Revision-Date: 2025-06-08 19:30+0300\n"
+"POT-Creation-Date: 2025-06-12 00:41+0000\n"
+"PO-Revision-Date: 2025-06-11 12:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -81,45 +81,22 @@ msgstr "Yerel"
 msgid "Network"
 msgstr "Ağ"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:26
-#: plugins/mistral/mistralclient.cpp:30
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
+msgid "Generic"
+msgstr "Genel"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: plugins/mistral/mistralconfiguredialog.cpp:25
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
-msgctxt "@title:window"
-msgid "Configure Mistral IA"
-msgstr "Mistral AI’ı Yapılandır"
-
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
-#: plugins/openai/openaimanager.cpp:37
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "%1 konumunda arayüze bağlanılamadı: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
-#: plugins/mistral/mistralsettings.kcfg:14
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "Ollama örneği URL’si"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:20
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "LLM için olan sistem istemi"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:32
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "Yanıtlar üretmek için kullanılan model"
+msgid "OpenAI"
+msgstr "OpenAI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1871,6 +1848,29 @@ msgstr ""
 msgid "No system prompt"
 msgstr "Sistem istemi yok"
 
+#: plugins/ollama/ollamamanager.cpp:165
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "%1 konumunda arayüze bağlanılamadı: %2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "Ollama örneği URL’si"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "LLM için olan sistem istemi"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "Yanıtlar üretmek için kullanılan model"
+
 #. i18n: ectx: label, entry (Temperature), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:35
 #, kde-format
@@ -1893,27 +1893,14 @@ msgstr ""
 "sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
 "(Öntanımlı: 0)."
 
-#: plugins/openai/openaiclient.cpp:27
-#, kde-format
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: plugins/openai/openaiconfiguredialog.cpp:25
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Openai IA"
-msgstr "OpenAI Zekâsını Yapılandır"
-
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr "Ollama’yı Başlat"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Yapılandır…"
@@ -1928,6 +1915,14 @@ msgstr "İleti gir…"
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
+#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:30
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr "Ara…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1993,12 +1988,23 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Tez Sor"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:25
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
 #: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Yapılandır…"
+
+#: widgets/textautogenerateaddinstancedialog.cpp:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr ""
+
+#: widgets/textautogenerateaddinstancewidget.cpp:21
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -2034,13 +2040,6 @@ msgstr "Yeni sohbet"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Sık kullanılanlara ekle"
-
-#: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:30
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Search…"
-msgstr "Ara…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
@@ -2134,6 +2133,14 @@ msgstr "Yenile"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Mistral AI’ı Yapılandır"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "OpenAI Zekâsını Yapılandır"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:41+0000\n"
+"POT-Creation-Date: 2025-06-12 00:41+0000\n"
 "PO-Revision-Date: 2025-06-08 13:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -81,45 +81,22 @@ msgstr "Lokal"
 msgid "Network"
 msgstr "Nätverk"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:26
-#: plugins/mistral/mistralclient.cpp:30
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
+msgid "Generic"
+msgstr "Allmänt"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: plugins/mistral/mistralconfiguredialog.cpp:25
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
-msgctxt "@title:window"
-msgid "Configure Mistral IA"
-msgstr "Anpassa Mistral AI"
-
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
-#: plugins/openai/openaimanager.cpp:37
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "Misslyckades ansluta till gränssnitt på %1: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
-#: plugins/mistral/mistralsettings.kcfg:14
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "Webbadressen till instansen av Ollama"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:20
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "Systemprompten för språkmodellen"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:32
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "Modellen som används för att generera svar"
+msgid "OpenAI"
+msgstr "OpenAI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1875,6 +1852,29 @@ msgstr ""
 msgid "No system prompt"
 msgstr "Ingen systemprompt"
 
+#: plugins/ollama/ollamamanager.cpp:165
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "Misslyckades ansluta till gränssnitt på %1: %2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "Webbadressen till instansen av Ollama"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "Systemprompten för språkmodellen"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "Modellen som används för att generera svar"
+
 #. i18n: ectx: label, entry (Temperature), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:35
 #, kde-format
@@ -1896,17 +1896,6 @@ msgstr ""
 "Ställer in det slumptal som ska användas för generering. Om det ställs in "
 "till ett specifikt tal genererar modellen samma text för samma fråga. "
 "(Standardvärde: 0)"
-
-#: plugins/openai/openaiclient.cpp:27
-#, kde-format
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: plugins/openai/openaiconfiguredialog.cpp:25
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Openai IA"
-msgstr "Anpassa Openai IA"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, fuzzy, kde-format
@@ -1932,6 +1921,14 @@ msgstr "Skriv in ett meddelande"
 #, kde-format
 msgid "Send"
 msgstr "Skicka"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
+#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:30
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr "Sök…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1997,12 +1994,23 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Snabbfråga"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:25
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
 #: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Anpassa…"
+
+#: widgets/textautogenerateaddinstancedialog.cpp:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr ""
+
+#: widgets/textautogenerateaddinstancewidget.cpp:21
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -2038,13 +2046,6 @@ msgstr "Ny chatt"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Favorit"
-
-#: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:30
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Search…"
-msgstr "Sök…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
@@ -2138,6 +2139,14 @@ msgstr "Uppdatera"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Inga meddelanden hittades."
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Anpassa Mistral AI"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "Anpassa Openai IA"
 
 #~| msgid "Cancel"
 #~ msgctxt "@action:button"

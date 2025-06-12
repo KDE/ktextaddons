@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:41+0000\n"
-"PO-Revision-Date: 2025-06-09 14:00+0300\n"
+"POT-Creation-Date: 2025-06-12 00:41+0000\n"
+"PO-Revision-Date: 2025-06-11 11:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -82,45 +82,22 @@ msgstr "מקומי"
 msgid "Network"
 msgstr "רשת"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:26
-#: plugins/mistral/mistralclient.cpp:30
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
+msgid "Generic"
+msgstr "כללי"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: plugins/mistral/mistralconfiguredialog.cpp:25
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
-msgctxt "@title:window"
-msgid "Configure Mistral IA"
-msgstr "הגדרת Mistral AI"
-
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
-#: plugins/openai/openaimanager.cpp:37
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
-#: plugins/mistral/mistralsettings.kcfg:14
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "הכתובת למופע ה־Ollama"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:20
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "הנחיית מערכת ל־LLM/מש״ג"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:32
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "המודל שמשמש ליצירת התגובות"
+msgid "OpenAI"
+msgstr "OpenAI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1033,12 +1010,12 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
 #, kde-format
 msgid "Great code generation model based on Llama2."
-msgstr ""
+msgstr "מודל מעולה ליצירת קוד שמבוסס על Llama2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
 msgid "Uncensored Llama2 based model with support for a 16K context window."
-msgstr ""
+msgstr "מודל לא מצונזר שמבוסס על Llama2 עם תמיכה בחלון הקשר בגודל 16K."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
 #, kde-format
@@ -1055,6 +1032,9 @@ msgid ""
 "instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
 "with open-source code snippets."
 msgstr ""
+"Magicoder היא משפחה של מודלים בגודל 7B משתנים שאומנה על 75K נתוני הנחיות "
+"סינתטיים עם OSS-Instruct, גישה אצילית להעשרת LLMs/מש״גים במקטעי קוד בקוד "
+"פתוח."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
 #, kde-format
@@ -1137,12 +1117,13 @@ msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
 "useful for content conversion tasks."
 msgstr ""
+"סדרה של מודלים שממירים תוכן HTML לתוכן Markdown, שימושי למשימות המרת תוכן."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
-msgstr ""
+msgstr "מודל ערבוב מומחים עם ביצועים מיטביים, עבר דיוק עם נתונים באיכות גבוהה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
@@ -1648,6 +1629,29 @@ msgstr ""
 msgid "No system prompt"
 msgstr "אין הנחיית מערכת"
 
+#: plugins/ollama/ollamamanager.cpp:165
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "הכתובת למופע ה־Ollama"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "הנחיית מערכת ל־LLM/מש״ג"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "המודל שמשמש ליצירת התגובות"
+
 #. i18n: ectx: label, entry (Temperature), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:35
 #, kde-format
@@ -1668,27 +1672,14 @@ msgstr ""
 "הגדרת גרעין המספר האקראי שישמש ליצירה. הגדרת הערך הזה למספר מסוים יגרום "
 "למודל לייצר את אותו הטקסט לאותו הפרומפט. (ברירת מחדל: 0)"
 
-#: plugins/openai/openaiclient.cpp:27
-#, kde-format
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: plugins/openai/openaiconfiguredialog.cpp:25
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Openai IA"
-msgstr "הגדרת בינה מלאכותית של OpenAI"
-
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr "הפעלת Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "הגדרה…"
@@ -1703,6 +1694,14 @@ msgstr "נא לכתוב הודעה"
 #, kde-format
 msgid "Send"
 msgstr "שליחה"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
+#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:30
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr "חיפוש…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1768,12 +1767,23 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "שאלה מהירה"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:25
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
 #: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
+
+#: widgets/textautogenerateaddinstancedialog.cpp:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr ""
+
+#: widgets/textautogenerateaddinstancewidget.cpp:21
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -1809,13 +1819,6 @@ msgstr "שיחה חדש"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "הוספה למועדפים"
-
-#: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:30
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Search…"
-msgstr "חיפוש…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
@@ -1909,6 +1912,14 @@ msgstr "ריענון"
 #, kde-format
 msgid "No Messages Found."
 msgstr "לא נמצאו הודעות."
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "הגדרת Mistral AI"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "הגדרת בינה מלאכותית של OpenAI"
 
 #~| msgid "Cancel"
 #~ msgctxt "@action:button"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-11 00:41+0000\n"
+"POT-Creation-Date: 2025-06-12 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -81,45 +81,20 @@ msgstr "本地"
 msgid "Network"
 msgstr "网络"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:26
-#: plugins/mistral/mistralclient.cpp:30
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#, kde-format
+msgid "Generic"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: plugins/mistral/mistralconfiguredialog.cpp:25
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
-msgctxt "@title:window"
-msgid "Configure Mistral IA"
-msgstr "配置 Mistral IA"
-
-#: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:165
-#: plugins/openai/openaimanager.cpp:37
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "无法连接到位于 %1 的接口：%2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#. i18n: ectx: label, entry (ServerUrl), group (Mistral)
-#: plugins/mistral/mistralsettings.kcfg:14
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "Ollama 实例的 URL"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:20
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "该大语言模型的系统提示词"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/mistral/mistralsettings.kcfg:32
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "用于生成回复的模型"
+msgid "OpenAI"
+msgstr "OpenAI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1539,6 +1514,29 @@ msgstr ""
 msgid "No system prompt"
 msgstr "没有系统提示词"
 
+#: plugins/ollama/ollamamanager.cpp:165
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "无法连接到位于 %1 的接口：%2"
+
+#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
+#: plugins/ollama/ollamasettings.kcfg:14
+#, kde-format
+msgid "The URL to the Ollama instance"
+msgstr "Ollama 实例的 URL"
+
+#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:20
+#, kde-format
+msgid "The system prompt for the LLM"
+msgstr "该大语言模型的系统提示词"
+
+#. i18n: ectx: label, entry (Model), group (LLM)
+#: plugins/ollama/ollamasettings.kcfg:32
+#, kde-format
+msgid "The model used to generate responses"
+msgstr "用于生成回复的模型"
+
 #. i18n: ectx: label, entry (Temperature), group (LLM)
 #: plugins/ollama/ollamasettings.kcfg:35
 #, kde-format
@@ -1555,17 +1553,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-
-#: plugins/openai/openaiclient.cpp:27
-#, kde-format
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: plugins/openai/openaiconfiguredialog.cpp:25
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure Openai IA"
-msgstr "配置 OpenAI IA"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, fuzzy, kde-format
@@ -1591,6 +1578,14 @@ msgstr "输入信息"
 #, kde-format
 msgid "Send"
 msgstr "发送"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
+#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratesearchwidget.cpp:30
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr "搜索…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1656,12 +1651,23 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr ""
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:25
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
 #: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "配置…"
+
+#: widgets/textautogenerateaddinstancedialog.cpp:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr ""
+
+#: widgets/textautogenerateaddinstancewidget.cpp:21
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
@@ -1697,13 +1703,6 @@ msgstr "新聊天"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "常用"
-
-#: widgets/textautogeneratehistorywidget.cpp:27
-#: widgets/textautogeneratesearchwidget.cpp:30
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Search…"
-msgstr "搜索…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
@@ -1797,3 +1796,11 @@ msgstr "刷新"
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "配置 Mistral IA"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "配置 OpenAI IA"
