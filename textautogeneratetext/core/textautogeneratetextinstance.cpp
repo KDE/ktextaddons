@@ -55,6 +55,16 @@ void TextAutoGenerateTextInstance::setPluginIdentifier(const QString &newPluginI
     mPluginIdentifier = newPluginIdentifier;
 }
 
+void TextAutoGenerateTextInstance::load()
+{
+    // TODO
+}
+
+void TextAutoGenerateTextInstance::save()
+{
+    // TODO
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t)
 {
     d.space() << "name:" << t.name();

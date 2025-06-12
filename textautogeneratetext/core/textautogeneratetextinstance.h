@@ -29,6 +29,9 @@ public:
     [[nodiscard]] QString pluginIdentifier() const;
     void setPluginIdentifier(const QString &newPluginIdentifier);
 
+    void load();
+    void save();
+
 private:
     QString mName;
     QString mPluginName;
