@@ -21,6 +21,7 @@ public:
     enum InstanceRoles : uint16_t {
         Name = Qt::UserRole + 1,
         PluginName,
+        PluginIdentifer,
         Uuid,
     };
     explicit TextAutoGenerateTextInstanceModel(QObject *parent = nullptr);
