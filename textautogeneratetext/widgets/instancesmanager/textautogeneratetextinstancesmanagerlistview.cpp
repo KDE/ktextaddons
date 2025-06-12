@@ -6,6 +6,7 @@
 #include "textautogeneratetextinstancesmanagerlistview.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogeneratetextinstancesmanager.h"
+#include "textautogeneratetextinstancesmanagerlistviewdelegate.h"
 #include <QSortFilterProxyModel>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 using namespace TextAutoGenerateText;
@@ -15,6 +16,7 @@ TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManag
     , mSortFilterProxyModel(new QSortFilterProxyModel(this))
     , mTextAutoGenerateManager(manager)
 {
+    setItemDelegate(new TextAutoGenerateTextInstancesManagerListViewDelegate(this));
     setDragEnabled(false);
     if (mTextAutoGenerateManager) {
         mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());

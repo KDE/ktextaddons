@@ -14,5 +14,8 @@ class TextAutoGenerateTextInstancesManagerListViewDelegate : public QStyledItemD
 public:
     explicit TextAutoGenerateTextInstancesManagerListViewDelegate(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerListViewDelegate() override;
+
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 }
