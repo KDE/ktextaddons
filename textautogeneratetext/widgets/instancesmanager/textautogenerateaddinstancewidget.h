@@ -23,6 +23,9 @@ public:
 
     [[nodiscard]] QString instanceName() const;
 
+Q_SIGNALS:
+    void buttonOkEnabled(bool status);
+
 private:
     TextAutoGenerateTextInstanceComboBox *const mInstanceComboBox;
     QLineEdit *const mNameLineEdit;

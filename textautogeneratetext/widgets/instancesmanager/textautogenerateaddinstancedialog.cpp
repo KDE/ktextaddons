@@ -7,6 +7,7 @@
 #include "textautogenerateaddinstancewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 TextAutoGenerateAddInstanceDialog::TextAutoGenerateAddInstanceDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -24,8 +25,13 @@ TextAutoGenerateAddInstanceDialog::TextAutoGenerateAddInstanceDialog(TextAutoGen
     auto button = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, this);
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
+    auto buttonOk = button->button(QDialogButtonBox::Ok);
+    buttonOk->setEnabled(false);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateAddInstanceDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateAddInstanceDialog::accept);
+    connect(mTextAutoGenerateAddInstanceWidget, &TextAutoGenerateAddInstanceWidget::buttonOkEnabled, this, [buttonOk](bool state) {
+        buttonOk->setEnabled(state);
+    });
 }
 
 TextAutoGenerateAddInstanceDialog::~TextAutoGenerateAddInstanceDialog() = default;
