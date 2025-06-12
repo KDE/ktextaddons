@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-09 14:00+0300\n"
+"PO-Revision-Date: 2025-06-11 11:25+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -986,12 +986,12 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
 #, kde-format
 msgid "Great code generation model based on Llama2."
-msgstr ""
+msgstr "מודל מעולה ליצירת קוד שמבוסס על Llama2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
 msgid "Uncensored Llama2 based model with support for a 16K context window."
-msgstr ""
+msgstr "מודל לא מצונזר שמבוסס על Llama2 עם תמיכה בחלון הקשר בגודל 16K."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
 #, kde-format
@@ -1008,6 +1008,9 @@ msgid ""
 "instruction data using OSS-Instruct, a novel approach to enlightening LLMs "
 "with open-source code snippets."
 msgstr ""
+"Magicoder היא משפחה של מודלים בגודל 7B משתנים שאומנה על 75K נתוני הנחיות "
+"סינתטיים עם OSS-Instruct, גישה אצילית להעשרת LLMs/מש״גים במקטעי קוד בקוד "
+"פתוח."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
 #, kde-format
@@ -1090,12 +1093,13 @@ msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
 "useful for content conversion tasks."
 msgstr ""
+"סדרה של מודלים שממירים תוכן HTML לתוכן Markdown, שימושי למשימות המרת תוכן."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
-msgstr ""
+msgstr "מודל ערבוב מומחים עם ביצועים מיטביים, עבר דיוק עם נתונים באיכות גבוהה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
