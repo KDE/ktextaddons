@@ -35,4 +35,9 @@ TextAutoGenerateTextClient::SupportedServer TextAutoGenerateAddInstanceDialog::s
     return mTextAutoGenerateAddInstanceWidget->selectedInstanceType();
 }
 
+QString TextAutoGenerateAddInstanceDialog::instanceName() const
+{
+    return mTextAutoGenerateAddInstanceWidget->instanceName();
+}
+
 #include "moc_textautogenerateaddinstancedialog.cpp"

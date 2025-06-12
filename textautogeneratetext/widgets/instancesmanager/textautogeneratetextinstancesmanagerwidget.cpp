@@ -51,7 +51,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
             qDebug() << " selectedInstanceType:" << server;
             TextAutoGenerateTextInstance instance;
-            // instance.setName(server.name);
+            instance.setName(d.instanceName());
             instance.setPluginName(server.localizedName);
             instance.setPluginIdentifier(server.pluginName);
             mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);

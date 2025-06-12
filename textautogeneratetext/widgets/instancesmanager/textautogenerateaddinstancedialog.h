@@ -19,6 +19,7 @@ public:
     ~TextAutoGenerateAddInstanceDialog() override;
 
     [[nodiscard]] TextAutoGenerateTextClient::SupportedServer selectedInstanceType() const;
+    [[nodiscard]] QString instanceName() const;
 
 private:
     TextAutoGenerateAddInstanceWidget *const mTextAutoGenerateAddInstanceWidget;

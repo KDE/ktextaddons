@@ -6,9 +6,10 @@
 #include "textautogenerateaddinstancewidgettest.h"
 #include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancecombobox.h"
+#include <QFormLayout>
 #include <QLabel>
+#include <QLineEdit>
 #include <QTest>
-#include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateAddInstanceWidgetTest)
 
 TextAutoGenerateAddInstanceWidgetTest::TextAutoGenerateAddInstanceWidgetTest(QObject *parent)
@@ -19,16 +20,17 @@ TextAutoGenerateAddInstanceWidgetTest::TextAutoGenerateAddInstanceWidgetTest(QOb
 void TextAutoGenerateAddInstanceWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateAddInstanceWidget w(nullptr);
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QFormLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
-    QVERIFY(label);
-    QVERIFY(!label->text().isEmpty());
-
     auto mInstanceComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateTextInstanceComboBox *>(QStringLiteral("mInstanceComboBox"));
     QVERIFY(mInstanceComboBox);
+
+    auto mNameLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mNameLineEdit"));
+    QVERIFY(mNameLineEdit);
+    QVERIFY(mNameLineEdit->isClearButtonEnabled());
+    QVERIFY(mNameLineEdit->text().isEmpty());
 }
 
 #include "moc_textautogenerateaddinstancewidgettest.cpp"

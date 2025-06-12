@@ -7,6 +7,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 #include <TextAutoGenerateText/TextAutoGenerateTextClient>
+class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstanceComboBox;
@@ -20,7 +21,10 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextClient::SupportedServer selectedInstanceType() const;
 
+    [[nodiscard]] QString instanceName() const;
+
 private:
     TextAutoGenerateTextInstanceComboBox *const mInstanceComboBox;
+    QLineEdit *const mNameLineEdit;
 };
 }

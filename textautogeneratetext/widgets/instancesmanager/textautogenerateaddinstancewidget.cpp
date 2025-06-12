@@ -5,25 +5,29 @@
 */
 #include "textautogenerateaddinstancewidget.h"
 #include "textautogeneratetextinstancecombobox.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <QFormLayout>
 #include <QLabel>
-#include <QVBoxLayout>
+#include <QLineEdit>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateAddInstanceWidget::TextAutoGenerateAddInstanceWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mInstanceComboBox(new TextAutoGenerateTextInstanceComboBox(manager, this))
+    , mNameLineEdit(new QLineEdit(this))
 {
-    auto mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    auto label = new QLabel(i18n("Select a Type of Instance:"), this);
-    label->setObjectName(QStringLiteral("label"));
-    mainLayout->addWidget(label);
+    mNameLineEdit->setObjectName(QStringLiteral("mNameLineEdit"));
+    mNameLineEdit->setClearButtonEnabled(true);
+    mainLayout->addRow(i18n("Name:"), mNameLineEdit);
+    KLineEditEventHandler::catchReturnKey(mNameLineEdit);
 
     mInstanceComboBox->setObjectName(QStringLiteral("mInstanceComboBox"));
-    mainLayout->addWidget(mInstanceComboBox);
+    mainLayout->addRow(i18n("Select a Type of Instance:"), mInstanceComboBox);
 }
 
 TextAutoGenerateAddInstanceWidget::~TextAutoGenerateAddInstanceWidget() = default;
@@ -31,6 +35,11 @@ TextAutoGenerateAddInstanceWidget::~TextAutoGenerateAddInstanceWidget() = defaul
 TextAutoGenerateTextClient::SupportedServer TextAutoGenerateAddInstanceWidget::selectedInstanceType() const
 {
     return mInstanceComboBox->selectedInstanceType();
+}
+
+QString TextAutoGenerateAddInstanceWidget::instanceName() const
+{
+    return mNameLineEdit->text();
 }
 
 #include "moc_textautogenerateaddinstancewidget.cpp"
