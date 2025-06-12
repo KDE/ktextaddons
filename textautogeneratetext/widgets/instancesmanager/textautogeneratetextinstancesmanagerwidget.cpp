@@ -43,6 +43,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     auto addInstanceButton = new QToolButton(this);
     addInstanceButton->setObjectName(QStringLiteral("addInstanceButton"));
     addInstanceButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    addInstanceButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
     addInstanceButton->setAutoRaise(true);
     hboxLayout->addWidget(addInstanceButton);
     connect(addInstanceButton, &QToolButton::clicked, this, [this, manager]() {
