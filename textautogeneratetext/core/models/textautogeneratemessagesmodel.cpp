@@ -65,7 +65,7 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     if (m.engineName().isEmpty() && m.modelName().isEmpty()) {
         return {};
     }
-    return i18n("Engine: %1\nModel: %2", m.engineName(), m.modelName());
+    return i18n("Engine: %1\nModel: %2\nInstance Name: %3", m.engineName(), m.modelName(), m.instanceName());
 }
 
 QByteArray TextAutoGenerateMessagesModel::chatId() const
