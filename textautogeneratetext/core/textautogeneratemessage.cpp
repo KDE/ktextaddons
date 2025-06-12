@@ -149,6 +149,19 @@ QString TextAutoGenerateMessage::modelName() const
     return {};
 }
 
+void TextAutoGenerateMessage::setInstanceName(const QString &instanceName)
+{
+    answerInfo()->setInstanceName(instanceName);
+}
+
+QString TextAutoGenerateMessage::instanceName() const
+{
+    if (mMessageInfo) {
+        return mMessageInfo->instanceName();
+    }
+    return {};
+}
+
 void TextAutoGenerateMessage::setModelName(const QString &newModelName)
 {
     answerInfo()->setModelName(newModelName);
@@ -215,6 +228,7 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     if (msg.sender() != Sender::User) {
         o["modelName"_L1] = msg.modelName();
         o["engineName"_L1] = msg.engineName();
+        o["instanceName"_L1] = msg.instanceName();
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
@@ -234,6 +248,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setContent(o["text"_L1].toString());
     msg.setModelName(o["modelName"_L1].toString());
     msg.setEngineName(o["engineName"_L1].toString());
+    msg.setInstanceName(o["instanceName"_L1].toString());
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));
     return msg;

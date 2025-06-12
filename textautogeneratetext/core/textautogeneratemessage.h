@@ -80,6 +80,9 @@ public:
     [[nodiscard]] QString engineName() const;
     void setEngineName(const QString &newEngineName);
 
+    [[nodiscard]] QString instanceName() const;
+    void setInstanceName(const QString &newEngineName);
+
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextContext context() const;
     void setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext);
 

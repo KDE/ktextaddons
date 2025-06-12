@@ -38,3 +38,13 @@ void TextAutoGenerateAnswerInfo::setEngineName(const QString &newEngineName)
 {
     mEngineName = newEngineName;
 }
+
+QString TextAutoGenerateAnswerInfo::instanceName() const
+{
+    return mInstanceName;
+}
+
+void TextAutoGenerateAnswerInfo::setInstanceName(const QString &newInstanceName)
+{
+    mInstanceName = newInstanceName;
+}
