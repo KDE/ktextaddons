@@ -7,6 +7,7 @@
 #include "ollamaplugin.h"
 #include "autogeneratetext_ollama_plugin_debug.h"
 #include "core/textautogeneratemanager.h"
+#include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
 
@@ -40,7 +41,8 @@ QString OllamaPlugin::name()
 
 void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    // TODO
+    OllamaConfigureDialog d(mManager, parentWidget);
+    d.exec();
 }
 
 bool OllamaPlugin::loadSettings()
