@@ -6,6 +6,7 @@
 #include "textautogeneratenotinstancefoundwidgettest.h"
 #include "widgets/common/textautogeneratenotinstancefoundwidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateNotInstanceFoundWidgetTest)
 
 TextAutoGenerateNotInstanceFoundWidgetTest::TextAutoGenerateNotInstanceFoundWidgetTest(QObject *parent)
@@ -16,7 +17,10 @@ TextAutoGenerateNotInstanceFoundWidgetTest::TextAutoGenerateNotInstanceFoundWidg
 void TextAutoGenerateNotInstanceFoundWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateNotInstanceFoundWidget w;
-    // TODO
+
+    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }
 
 #include "moc_textautogeneratenotinstancefoundwidgettest.cpp"
