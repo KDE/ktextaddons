@@ -6,8 +6,9 @@
 #pragma once
 #include "textautogenerategenericnetwork_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 
-class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkManager : public QObject
+class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
 public:
@@ -24,6 +25,8 @@ public:
 
     explicit GenericNetworkManager(QObject *parent = nullptr);
     ~GenericNetworkManager() override;
+
+    void loadModels() override;
 
     [[nodiscard]] PluginNetworkType pluginNetworkType() const;
     void setPluginNetworkType(PluginNetworkType newPluginNetworkType);

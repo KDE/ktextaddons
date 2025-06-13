@@ -11,3 +11,5 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
 }
 
 GenericNetworkReply::~GenericNetworkReply() = default;
+
+#include "moc_genericnetworkreply.cpp"

@@ -8,11 +8,16 @@
 #include <KLocalizedString>
 
 GenericNetworkManager::GenericNetworkManager(QObject *parent)
-    : QObject{parent}
+    : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
 {
 }
 
 GenericNetworkManager::~GenericNetworkManager() = default;
+
+void GenericNetworkManager::loadModels()
+{
+    // TODO
+}
 
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const
 {
