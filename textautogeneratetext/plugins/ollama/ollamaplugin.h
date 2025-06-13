@@ -29,6 +29,8 @@ public:
 
     [[nodiscard]] static QString name();
 
+    void showConfigureDialog(QWidget *parentWidget) override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void cancelRequest(const QByteArray &uuid) override;

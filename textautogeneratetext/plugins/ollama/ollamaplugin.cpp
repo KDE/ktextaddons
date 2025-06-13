@@ -38,6 +38,11 @@ QString OllamaPlugin::name()
     return "ollama"_L1;
 }
 
+void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
+{
+    // TODO
+}
+
 bool OllamaPlugin::loadSettings()
 {
     setCurrentModel(OllamaSettings::model());

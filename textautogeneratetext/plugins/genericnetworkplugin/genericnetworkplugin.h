@@ -27,6 +27,8 @@ public:
     [[nodiscard]] QString engineName() const override;
     [[nodiscard]] static QString name();
 
+    void showConfigureDialog(QWidget *parentWidget) override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;

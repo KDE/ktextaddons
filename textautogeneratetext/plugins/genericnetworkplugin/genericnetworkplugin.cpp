@@ -75,4 +75,9 @@ QString GenericNetworkPlugin::name()
     return "mistral"_L1;
 }
 
+void GenericNetworkPlugin::showConfigureDialog(QWidget *parentWidget)
+{
+    // TODO
+}
+
 #include "moc_genericnetworkplugin.cpp"
