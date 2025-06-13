@@ -20,6 +20,7 @@ void TextAutoGenerateTextInstanceTest::shouldHaveDefaultValues()
     QVERIFY(w.pluginName().isEmpty());
     QVERIFY(w.instanceUuid().isEmpty());
     QVERIFY(w.pluginIdentifier().isEmpty());
+    QVERIFY(w.currentModel().isEmpty());
     QVERIFY(!w.isValid());
 }
 

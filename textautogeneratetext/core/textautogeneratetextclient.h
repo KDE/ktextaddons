@@ -48,13 +48,13 @@ public:
 
     virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() = 0;
 
-    [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget);
+    [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget); // TODO remove it
 
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
 
     [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type);
 
-    [[nodiscard]] virtual QString modelName() const = 0;
+    [[nodiscard]] virtual QString modelName() const = 0; // TODO remove it
     [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 
 Q_SIGNALS:

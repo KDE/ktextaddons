@@ -65,11 +65,32 @@ void TextAutoGenerateTextInstance::save()
     // TODO
 }
 
+QString TextAutoGenerateTextInstance::currentModel() const
+{
+    return mCurrentModel;
+}
+
+void TextAutoGenerateTextInstance::setCurrentModel(const QString &newCurrentModel)
+{
+    mCurrentModel = newCurrentModel;
+}
+
+TextAutoGenerateTextPlugin *TextAutoGenerateTextInstance::plugin() const
+{
+    return mPlugin;
+}
+
+void TextAutoGenerateTextInstance::setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin)
+{
+    mPlugin = newPlugin;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t)
 {
     d.space() << "name:" << t.name();
     d.space() << "pluginName:" << t.pluginName();
     d.space() << "pluginIdentifier:" << t.pluginIdentifier();
+    d.space() << "currentModel:" << t.currentModel();
     d.space() << "instanceUuid:" << t.instanceUuid();
     return d;
 }

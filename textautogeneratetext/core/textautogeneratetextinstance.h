@@ -9,6 +9,7 @@
 #include <QDebug>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextPlugin;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstance
 {
 public:
@@ -32,11 +33,19 @@ public:
     void load();
     void save();
 
+    [[nodiscard]] QString currentModel() const;
+    void setCurrentModel(const QString &newCurrentModel);
+
+    TextAutoGenerateText::TextAutoGenerateTextPlugin *plugin() const;
+    void setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin);
+
 private:
     QString mName;
     QString mPluginName;
     QString mPluginIdentifier;
+    QString mCurrentModel;
     QByteArray mInstanceUuid;
+    TextAutoGenerateText::TextAutoGenerateTextPlugin *mPlugin = nullptr;
     // TODO plugin settings
 };
 }
