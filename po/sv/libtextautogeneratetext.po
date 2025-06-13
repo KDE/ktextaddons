@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-12 00:41+0000\n"
-"PO-Revision-Date: 2025-06-08 13:12+0200\n"
+"POT-Creation-Date: 2025-06-13 00:41+0000\n"
+"PO-Revision-Date: 2025-06-12 17:27+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -53,10 +53,14 @@ msgid "Unknown"
 msgstr "Okänd"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2"
 msgid ""
 "Engine: %1\n"
-"Model: %2"
+"Model: %2\n"
+"Instance Name: %3"
 msgstr ""
 "Gränssnitt: %1\n"
 "Modell: %2"
@@ -71,21 +75,34 @@ msgstr "Ollama"
 msgid "Go to message"
 msgstr "Gå till meddelande"
 
-#: core/textautogeneratetextclient.cpp:33
+#: core/textautogeneratetextclient.cpp:28
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
 
-#: core/textautogeneratetextclient.cpp:35
+#: core/textautogeneratetextclient.cpp:30
 #, kde-format
 msgid "Network"
 msgstr "Nätverk"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Generic"
+msgstr "Generella"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Anpassa IA"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/ollama/ollamaconfiguredialog.cpp:41
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
 msgstr "Allmänt"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
@@ -187,6 +204,7 @@ msgid "Base:"
 msgstr "Bas:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
 #, kde-format
 msgid "Name:"
 msgstr "Namn:"
@@ -1781,12 +1799,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Anpassa Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:41
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "General"
-msgstr "Allmänt"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1898,15 +1910,13 @@ msgstr ""
 "(Standardvärde: 0)"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr "Starta Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Anpassa…"
@@ -1922,6 +1932,31 @@ msgstr "Skriv in ett meddelande"
 msgid "Send"
 msgstr "Skicka"
 
+#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr "Lägg till instans"
+
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr "Välj en typ av instans:"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:44
+#, kde-format
+msgctxt "@action"
+msgid "Edit…"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@action"
+msgid "Remove Instance"
+msgstr "Lägg till instans"
+
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
@@ -1929,6 +1964,14 @@ msgstr "Skicka"
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Sök…"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@info:tooltip"
+msgid "Add Instance…"
+msgstr "Lägg till instans"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -2000,17 +2043,6 @@ msgstr "Snabbfråga"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Anpassa…"
-
-#: widgets/textautogenerateaddinstancedialog.cpp:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Instance"
-msgstr ""
-
-#: widgets/textautogenerateaddinstancewidget.cpp:21
-#, kde-format
-msgid "Select a Type of Instance:"
-msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

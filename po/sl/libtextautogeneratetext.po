@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-12 00:41+0000\n"
-"PO-Revision-Date: 2025-06-11 06:03+0200\n"
+"POT-Creation-Date: 2025-06-13 00:41+0000\n"
+"PO-Revision-Date: 2025-06-12 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -54,10 +54,14 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2"
 msgid ""
 "Engine: %1\n"
-"Model: %2"
+"Model: %2\n"
+"Instance Name: %3"
 msgstr ""
 "Stroj: %1\n"
 "Model: %2"
@@ -72,21 +76,34 @@ msgstr "Ollama"
 msgid "Go to message"
 msgstr "Pojdi na sporočilo"
 
-#: core/textautogeneratetextclient.cpp:33
+#: core/textautogeneratetextclient.cpp:28
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: core/textautogeneratetextclient.cpp:35
+#: core/textautogeneratetextclient.cpp:30
 #, kde-format
 msgid "Network"
 msgstr "Omrežje"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Generic"
+msgstr "Generično"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Konfiguriraj IA"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/ollama/ollamaconfiguredialog.cpp:41
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
 msgstr "Splošno"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
@@ -188,6 +205,7 @@ msgid "Base:"
 msgstr "Osnova:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
 #, kde-format
 msgid "Name:"
 msgstr "Ime:"
@@ -1778,12 +1796,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Konfiguriraj Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:41
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "General"
-msgstr "Splošno"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1917,6 +1929,31 @@ msgstr "Vnesite sporočilo"
 msgid "Send"
 msgstr "Pošlji"
 
+#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr "Dodaj pojavek"
+
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr "Izberite vrsto pojavka:"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:44
+#, kde-format
+msgctxt "@action"
+msgid "Edit…"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@action"
+msgid "Remove Instance"
+msgstr "Dodaj pojavek"
+
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
@@ -1924,6 +1961,14 @@ msgstr "Pošlji"
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Išči…"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@info:tooltip"
+msgid "Add Instance…"
+msgstr "Dodaj pojavek"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1995,17 +2040,6 @@ msgstr "Hitro vprašaj"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
-
-#: widgets/textautogenerateaddinstancedialog.cpp:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Instance"
-msgstr ""
-
-#: widgets/textautogenerateaddinstancewidget.cpp:21
-#, kde-format
-msgid "Select a Type of Instance:"
-msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format

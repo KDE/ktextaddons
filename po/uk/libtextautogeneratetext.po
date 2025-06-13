@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-12 00:41+0000\n"
-"PO-Revision-Date: 2025-06-11 16:47+0300\n"
+"POT-Creation-Date: 2025-06-13 00:41+0000\n"
+"PO-Revision-Date: 2025-06-12 18:19+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -54,10 +54,14 @@ msgid "Unknown"
 msgstr "Невідомо"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2"
 msgid ""
 "Engine: %1\n"
-"Model: %2"
+"Model: %2\n"
+"Instance Name: %3"
 msgstr ""
 "Рушій: %1\n"
 "Модель: %2"
@@ -72,21 +76,34 @@ msgstr "Ollama"
 msgid "Go to message"
 msgstr "Перейти до повідомлення"
 
-#: core/textautogeneratetextclient.cpp:33
+#: core/textautogeneratetextclient.cpp:28
 #, kde-format
 msgid "Local"
 msgstr "Локальний"
 
-#: core/textautogeneratetextclient.cpp:35
+#: core/textautogeneratetextclient.cpp:30
 #, kde-format
 msgid "Network"
 msgstr "Мережевий"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Generic"
+msgstr "Загальний"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Налаштування ШІ"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/ollama/ollamaconfiguredialog.cpp:41
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "General"
 msgstr "Загальне"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
@@ -188,6 +205,7 @@ msgid "Base:"
 msgstr "Основа:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
 #, kde-format
 msgid "Name:"
 msgstr "Назва:"
@@ -1786,12 +1804,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Налаштувати Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:41
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "General"
-msgstr "Загальне"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1925,6 +1937,31 @@ msgstr "Введіть повідомлення"
 msgid "Send"
 msgstr "Надіслати"
 
+#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr "Додати екземпляр"
+
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
+#, kde-format
+msgid "Select a Type of Instance:"
+msgstr "Виберіть тип екземпляра:"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:44
+#, kde-format
+msgctxt "@action"
+msgid "Edit…"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@action"
+msgid "Remove Instance"
+msgstr "Додати екземпляр"
+
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
@@ -1932,6 +1969,14 @@ msgstr "Надіслати"
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Шукати…"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@info:tooltip"
+msgid "Add Instance…"
+msgstr "Додати екземпляр"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -2003,17 +2048,6 @@ msgstr "Швидке питання"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
-
-#: widgets/textautogenerateaddinstancedialog.cpp:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Add Instance"
-msgstr ""
-
-#: widgets/textautogenerateaddinstancewidget.cpp:21
-#, kde-format
-msgid "Select a Type of Instance:"
-msgstr ""
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
 #, kde-format
