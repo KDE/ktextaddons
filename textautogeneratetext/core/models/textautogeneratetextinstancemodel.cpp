@@ -11,7 +11,10 @@ TextAutoGenerateTextInstanceModel::TextAutoGenerateTextInstanceModel(QObject *pa
 {
 }
 
-TextAutoGenerateTextInstanceModel::~TextAutoGenerateTextInstanceModel() = default;
+TextAutoGenerateTextInstanceModel::~TextAutoGenerateTextInstanceModel()
+{
+    qDeleteAll(mTextInstances);
+}
 
 int TextAutoGenerateTextInstanceModel::rowCount(const QModelIndex &parent) const
 {
@@ -30,30 +33,31 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
     switch (role) {
     case Qt::DisplayRole:
     case InstanceRoles::Name:
-        return instance.name();
+        return instance->name();
     case InstanceRoles::PluginName:
-        return instance.pluginName();
+        return instance->pluginName();
     case InstanceRoles::Uuid:
-        return instance.instanceUuid();
+        return instance->instanceUuid();
     case InstanceRoles::PluginIdentifier:
-        return instance.pluginIdentifier();
+        return instance->pluginIdentifier();
     }
     return {};
 }
 
-QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstanceModel::textInstances() const
+QList<TextAutoGenerateTextInstance *> TextAutoGenerateTextInstanceModel::textInstances() const
 {
     return mTextInstances;
 }
 
-void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGenerateTextInstance> &newTextInstances)
+void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGenerateTextInstance *> &newTextInstances)
 {
     beginResetModel();
+    qDeleteAll(mTextInstances);
     mTextInstances = newTextInstances;
     endResetModel();
 }
 
-void TextAutoGenerateTextInstanceModel::addTextInstances(const TextAutoGenerateTextInstance &instance)
+void TextAutoGenerateTextInstanceModel::addTextInstances(TextAutoGenerateTextInstance *instance)
 {
     beginInsertRows(QModelIndex(), mTextInstances.count(), mTextInstances.count());
     mTextInstances.append(instance);
@@ -62,8 +66,8 @@ void TextAutoGenerateTextInstanceModel::addTextInstances(const TextAutoGenerateT
 
 void TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
 {
-    auto matchesUuid = [&](const TextAutoGenerateTextInstance &instance) {
-        return instance.instanceUuid() == uuid;
+    auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
+        return instance->instanceUuid() == uuid;
     };
     const auto answerIt = std::find_if(mTextInstances.begin(), mTextInstances.end(), matchesUuid);
     if (answerIt != mTextInstances.end()) {

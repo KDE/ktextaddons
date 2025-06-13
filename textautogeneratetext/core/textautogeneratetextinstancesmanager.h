@@ -20,11 +20,11 @@ public:
     explicit TextAutoGenerateTextInstancesManager(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstancesManager() override;
 
-    [[nodiscard]] QList<TextAutoGenerateTextInstance> instances() const;
-    void setInstances(const QList<TextAutoGenerateTextInstance> &newInstances);
+    [[nodiscard]] QList<TextAutoGenerateTextInstance *> instances() const;
+    void setInstances(const QList<TextAutoGenerateTextInstance *> &newInstances);
 
     void deleteInstance(const QByteArray &uuid);
-    void addInstance(const TextAutoGenerateTextInstance &instance);
+    void addInstance(TextAutoGenerateTextInstance *instance);
 
     void loadInstances();
 

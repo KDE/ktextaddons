@@ -30,14 +30,14 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
-    [[nodiscard]] QList<TextAutoGenerateTextInstance> textInstances() const;
-    void setTextInstances(const QList<TextAutoGenerateTextInstance> &newTextInstances);
+    [[nodiscard]] QList<TextAutoGenerateTextInstance *> textInstances() const;
+    void setTextInstances(const QList<TextAutoGenerateTextInstance *> &newTextInstances);
 
-    void addTextInstances(const TextAutoGenerateTextInstance &instance);
+    void addTextInstances(TextAutoGenerateTextInstance *instance);
 
     void removeInstance(const QByteArray &uuid);
 
 private:
-    QList<TextAutoGenerateTextInstance> mTextInstances;
+    QList<TextAutoGenerateTextInstance *> mTextInstances;
 };
 }

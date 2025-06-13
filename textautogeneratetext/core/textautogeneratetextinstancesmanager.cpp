@@ -32,12 +32,12 @@ TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAut
     return mTextAutoGenerateTextInstanceModel;
 }
 
-QList<TextAutoGenerateTextInstance> TextAutoGenerateTextInstancesManager::instances() const
+QList<TextAutoGenerateTextInstance *> TextAutoGenerateTextInstancesManager::instances() const
 {
     return mTextAutoGenerateTextInstanceModel->textInstances();
 }
 
-void TextAutoGenerateTextInstancesManager::setInstances(const QList<TextAutoGenerateTextInstance> &newInstances)
+void TextAutoGenerateTextInstancesManager::setInstances(const QList<TextAutoGenerateTextInstance *> &newInstances)
 {
     mTextAutoGenerateTextInstanceModel->setTextInstances(newInstances);
 }
@@ -47,7 +47,7 @@ void TextAutoGenerateTextInstancesManager::deleteInstance(const QByteArray &uuid
     mTextAutoGenerateTextInstanceModel->removeInstance(uuid);
 }
 
-void TextAutoGenerateTextInstancesManager::addInstance(const TextAutoGenerateTextInstance &instance)
+void TextAutoGenerateTextInstancesManager::addInstance(TextAutoGenerateTextInstance *instance)
 {
     mTextAutoGenerateTextInstanceModel->addTextInstances(instance);
 }
