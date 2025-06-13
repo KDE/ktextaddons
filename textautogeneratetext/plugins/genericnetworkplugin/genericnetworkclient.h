@@ -21,6 +21,6 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override; // TODO remove it
-    [[nodiscard]] QString modelName() const override;
+    [[nodiscard]] QString modelName() const override; // TODO remove it
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const override;
 };
