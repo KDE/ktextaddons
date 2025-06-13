@@ -18,3 +18,5 @@ void TextAutoGenerateNotInstanceFoundWidgetTest::shouldHaveDefaultValues()
     TextAutoGenerateText::TextAutoGenerateNotInstanceFoundWidget w;
     // TODO
 }
+
+#include "moc_textautogeneratenotinstancefoundwidgettest.cpp"

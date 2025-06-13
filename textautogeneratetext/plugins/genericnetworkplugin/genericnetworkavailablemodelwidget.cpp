@@ -11,3 +11,5 @@ GenericNetworkAvailableModelWidget::GenericNetworkAvailableModelWidget(QWidget *
 }
 
 GenericNetworkAvailableModelWidget::~GenericNetworkAvailableModelWidget() = default;
+
+#include "moc_genericnetworkavailablemodelwidget.cpp"

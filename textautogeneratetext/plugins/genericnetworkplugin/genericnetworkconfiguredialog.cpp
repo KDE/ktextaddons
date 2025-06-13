@@ -59,3 +59,5 @@ void GenericNetworkConfigureDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myGenericNetworkConfigureDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
+
+#include "moc_genericnetworkconfiguredialog.cpp"
