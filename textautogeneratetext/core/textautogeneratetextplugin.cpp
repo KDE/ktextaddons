@@ -33,6 +33,11 @@ TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
 
 TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
+void TextAutoGenerateTextPlugin::showConfigureDialog(QWidget *parentWidget)
+{
+    Q_UNUSED(parentWidget);
+}
+
 void TextAutoGenerateTextPlugin::setHasError(bool error)
 {
     d->hasError = error;

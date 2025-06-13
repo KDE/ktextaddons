@@ -32,6 +32,8 @@ public:
     explicit TextAutoGenerateTextPlugin(QObject *parent = nullptr);
     ~TextAutoGenerateTextPlugin() override;
 
+    virtual void showConfigureDialog(QWidget *parentWidget);
+
     [[nodiscard]] virtual bool loadSettings() = 0;
 
     virtual void clear() = 0;
