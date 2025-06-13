@@ -5,6 +5,7 @@
 */
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkavailablemodelwidget.h"
+#include "genericnetworkmanager.h"
 #include "widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -17,7 +18,7 @@ namespace
 {
 const char myGenericNetworkConfigureDialogGroupName[] = "GenericNetworkConfigureDialog";
 }
-GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(QWidget *parent)
+GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManager *manager, QWidget *parent)
     : KPageDialog(parent)
     , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget(this))
     , mAvailableModelWidget(new GenericNetworkAvailableModelWidget(this))

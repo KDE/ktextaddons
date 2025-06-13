@@ -12,11 +12,12 @@ namespace TextAutoGenerateText
 class TextAutoGenerateNetworkPluginConfigureWidget;
 }
 class GenericNetworkAvailableModelWidget;
+class GenericNetworkManager;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkConfigureDialog : public KPageDialog
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkConfigureDialog(QWidget *parent = nullptr);
+    explicit GenericNetworkConfigureDialog(GenericNetworkManager *manager, QWidget *parent = nullptr);
     ~GenericNetworkConfigureDialog() override;
 
 private:
