@@ -22,7 +22,7 @@ TextAutoGenerateNotInstanceFoundWidget::TextAutoGenerateNotInstanceFoundWidget(Q
     mainLayout->addWidget(label);
 
     auto addInstanceButton = new QPushButton(i18nc("@action:button", "Add instance…"), this);
-    label->setObjectName("addInstanceButton"_L1);
+    addInstanceButton->setObjectName("addInstanceButton"_L1);
     mainLayout->addWidget(addInstanceButton);
     connect(addInstanceButton, &QPushButton::clicked, this, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested);
 }
