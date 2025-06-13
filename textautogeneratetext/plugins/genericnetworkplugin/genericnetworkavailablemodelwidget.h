@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerategeneric_private_export.h"
 #include <QWidget>
 class GenericNetworkManager;
-class GenericNetworkAvailableModelWidget : public QWidget
+class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkAvailableModelWidget : public QWidget
 {
     Q_OBJECT
 public:

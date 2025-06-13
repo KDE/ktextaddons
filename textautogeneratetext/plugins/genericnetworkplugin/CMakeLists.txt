@@ -27,6 +27,7 @@ target_sources(
         genericnetworkreply.cpp
         genericnetworknetworkpluginconfigurewidget.h
         genericnetworknetworkpluginconfigurewidget.cpp
+        textautogenerategeneric_private_export.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

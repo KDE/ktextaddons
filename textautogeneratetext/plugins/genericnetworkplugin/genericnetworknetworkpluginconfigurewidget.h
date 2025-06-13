@@ -5,9 +5,11 @@
 */
 #pragma once
 
+#include "textautogenerategeneric_private_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateNetworkPluginConfigureWidget>
 class GenericNetworkManager;
-class GenericNetworkNetworkPluginConfigureWidget : public TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget
+class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkNetworkPluginConfigureWidget
+    : public TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget
 {
     Q_OBJECT
 public:
