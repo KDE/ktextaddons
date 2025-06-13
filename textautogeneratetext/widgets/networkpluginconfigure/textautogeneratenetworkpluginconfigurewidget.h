@@ -9,6 +9,7 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 class KPasswordLineEdit;
+class QLineEdit;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget : public QWidget
@@ -21,7 +22,11 @@ public:
     void setApiKey(const QString &key);
     [[nodiscard]] QString apiKey() const;
 
+    void setInstanceName(const QString &name);
+    [[nodiscard]] QString instanceName() const;
+
 private:
     KPasswordLineEdit *const mApiKey;
+    QLineEdit *const mInstanceName;
 };
 }
