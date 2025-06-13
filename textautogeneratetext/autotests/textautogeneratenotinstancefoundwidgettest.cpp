@@ -5,6 +5,8 @@
 */
 #include "textautogeneratenotinstancefoundwidgettest.h"
 #include "widgets/common/textautogeneratenotinstancefoundwidget.h"
+#include <QLabel>
+#include <QPushButton>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateNotInstanceFoundWidgetTest)
@@ -21,6 +23,14 @@ void TextAutoGenerateNotInstanceFoundWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
+    QVERIFY(label);
+    QVERIFY(!label->text().isEmpty());
+
+    auto addInstanceButton = w.findChild<QPushButton *>(QStringLiteral("addInstanceButton"));
+    QVERIFY(addInstanceButton);
+    QVERIFY(!addInstanceButton->text().isEmpty());
 }
 
 #include "moc_textautogeneratenotinstancefoundwidgettest.cpp"

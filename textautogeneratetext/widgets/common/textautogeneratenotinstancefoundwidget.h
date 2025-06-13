@@ -15,5 +15,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateNotInstanceFoundWidget :
 public:
     explicit TextAutoGenerateNotInstanceFoundWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateNotInstanceFoundWidget() override;
+Q_SIGNALS:
+    void addInstanceRequested();
 };
 }
