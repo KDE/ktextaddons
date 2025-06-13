@@ -6,11 +6,11 @@
 #pragma once
 
 #include <QWidget>
-
+class GenericNetworkManager;
 class GenericNetworkAvailableModelWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkAvailableModelWidget(QWidget *parent = nullptr);
+    explicit GenericNetworkAvailableModelWidget(GenericNetworkManager *manager, QWidget *parent = nullptr);
     ~GenericNetworkAvailableModelWidget() override;
 };

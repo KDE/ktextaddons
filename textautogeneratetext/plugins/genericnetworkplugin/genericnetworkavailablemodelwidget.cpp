@@ -4,9 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkavailablemodelwidget.h"
+#include "genericnetworkmanager.h"
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
-GenericNetworkAvailableModelWidget::GenericNetworkAvailableModelWidget(QWidget *parent)
+GenericNetworkAvailableModelWidget::GenericNetworkAvailableModelWidget(GenericNetworkManager *manager, QWidget *parent)
     : QWidget{parent}
 {
     auto mainLayout = new QVBoxLayout(this);

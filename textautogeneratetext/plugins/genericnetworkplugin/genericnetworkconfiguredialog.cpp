@@ -6,7 +6,7 @@
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkavailablemodelwidget.h"
 #include "genericnetworkmanager.h"
-#include "widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h"
+#include "genericnetworknetworkpluginconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -20,8 +20,8 @@ const char myGenericNetworkConfigureDialogGroupName[] = "GenericNetworkConfigure
 }
 GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManager *manager, QWidget *parent)
     : KPageDialog(parent)
-    , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget(this))
-    , mAvailableModelWidget(new GenericNetworkAvailableModelWidget(this))
+    , mConfigureWidget(new GenericNetworkNetworkPluginConfigureWidget(manager, this))
+    , mAvailableModelWidget(new GenericNetworkAvailableModelWidget(manager, this))
 {
     // TODO update title
     setWindowTitle(i18nc("@title:window", "Configure"));

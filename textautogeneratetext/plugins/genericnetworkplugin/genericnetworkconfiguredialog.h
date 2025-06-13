@@ -7,12 +7,9 @@
 #pragma once
 #include "textautogenerategenericnetwork_export.h"
 #include <KPageDialog>
-namespace TextAutoGenerateText
-{
-class TextAutoGenerateNetworkPluginConfigureWidget;
-}
 class GenericNetworkAvailableModelWidget;
 class GenericNetworkManager;
+class GenericNetworkNetworkPluginConfigureWidget;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkConfigureDialog : public KPageDialog
 {
     Q_OBJECT
@@ -24,6 +21,6 @@ private:
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void readConfig();
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void slotAccepted();
-    TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget *const mConfigureWidget;
+    GenericNetworkNetworkPluginConfigureWidget *const mConfigureWidget;
     GenericNetworkAvailableModelWidget *const mAvailableModelWidget;
 };

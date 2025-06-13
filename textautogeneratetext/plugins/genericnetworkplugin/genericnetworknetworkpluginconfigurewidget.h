@@ -6,11 +6,11 @@
 #pragma once
 
 #include <TextAutoGenerateText/TextAutoGenerateNetworkPluginConfigureWidget>
-
+class GenericNetworkManager;
 class GenericNetworkNetworkPluginConfigureWidget : public TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkNetworkPluginConfigureWidget(QWidget *parent = nullptr);
+    explicit GenericNetworkNetworkPluginConfigureWidget(GenericNetworkManager *manager, QWidget *parent = nullptr);
     ~GenericNetworkNetworkPluginConfigureWidget() override;
 };
