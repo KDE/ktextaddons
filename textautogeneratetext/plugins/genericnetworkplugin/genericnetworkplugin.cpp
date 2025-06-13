@@ -5,13 +5,14 @@
 */
 
 #include "genericnetworkplugin.h"
-// #include "autogeneratetext_mistral_debug.h"
+#include "genericnetworkconfiguredialog.h"
+#include "genericnetworkmanager.h"
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
-GenericNetworkPlugin::GenericNetworkPlugin(GenericNetworkManager *manager, QObject *parent)
+GenericNetworkPlugin::GenericNetworkPlugin(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
-    , mManager(manager)
+    , mManager(new GenericNetworkManager(this))
 {
 }
 
@@ -77,7 +78,8 @@ QString GenericNetworkPlugin::name()
 
 void GenericNetworkPlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    // TODO
+    GenericNetworkConfigureDialog d(mManager, parentWidget);
+    d.exec();
 }
 
 #include "moc_genericnetworkplugin.cpp"

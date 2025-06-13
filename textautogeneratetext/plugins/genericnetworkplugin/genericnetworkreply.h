@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "textautogenerategenericnetwork_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 
-class GenericNetworkReply : public TextAutoGenerateText::TextAutoGenerateReply
+class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkReply : public TextAutoGenerateText::TextAutoGenerateReply
 {
     Q_OBJECT
 public:

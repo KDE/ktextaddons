@@ -5,7 +5,6 @@
 */
 
 #include "genericnetworkclient.h"
-#include "genericnetworkmanager.h"
 #include "genericnetworkplugin.h"
 #include "genericnetworkserverinfo.h"
 #include <KLocalizedString>
@@ -31,7 +30,7 @@ QString GenericNetworkClient::translatedName() const
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin()
 {
-    auto plugin = new GenericNetworkPlugin(new GenericNetworkManager(this), this);
+    auto plugin = new GenericNetworkPlugin(this);
     return plugin;
 }
 
