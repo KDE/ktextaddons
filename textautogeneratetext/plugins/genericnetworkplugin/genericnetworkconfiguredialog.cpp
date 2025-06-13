@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkconfiguredialog.h"
+#include "genericnetworkavailablemodelwidget.h"
 #include "widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -19,6 +20,7 @@ const char myGenericNetworkConfigureDialogGroupName[] = "GenericNetworkConfigure
 GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(QWidget *parent)
     : KPageDialog(parent)
     , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget(this))
+    , mAvailableModelWidget(new GenericNetworkAvailableModelWidget(this))
 {
     // TODO update title
     setWindowTitle(i18nc("@title:window", "Configure"));
@@ -29,6 +31,11 @@ GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(QWidget *parent)
     mConfigureWidget->setObjectName(QStringLiteral("mConfigureWidget"));
     // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
     addPage(configureGeneralWidgetPage);
+
+    const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
+    auto configureModelWidgetPage = new KPageWidgetItem(mAvailableModelWidget, modelAvailablePageName);
+    mAvailableModelWidget->setObjectName(QStringLiteral("mAvailableModelWidget"));
+    addPage(configureModelWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &GenericNetworkConfigureDialog::slotAccepted);
     readConfig();

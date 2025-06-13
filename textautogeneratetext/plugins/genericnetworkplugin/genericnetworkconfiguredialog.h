@@ -11,6 +11,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateNetworkPluginConfigureWidget;
 }
+class GenericNetworkAvailableModelWidget;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkConfigureDialog : public KPageDialog
 {
     Q_OBJECT
@@ -23,4 +24,5 @@ private:
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void readConfig();
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void slotAccepted();
     TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget *const mConfigureWidget;
+    GenericNetworkAvailableModelWidget *const mAvailableModelWidget;
 };
