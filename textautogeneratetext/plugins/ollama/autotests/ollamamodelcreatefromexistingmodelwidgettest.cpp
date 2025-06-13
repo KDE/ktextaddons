@@ -13,6 +13,7 @@
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QTest>
+
 QTEST_MAIN(OllamaModelCreateFromExistingModelWidgetTest)
 OllamaModelCreateFromExistingModelWidgetTest::OllamaModelCreateFromExistingModelWidgetTest(QObject *parent)
     : QObject{parent}

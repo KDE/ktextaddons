@@ -7,8 +7,11 @@
 #include "widgets/common/textautogeneratenotinstancefoundwidget.h"
 #include <QLabel>
 #include <QPushButton>
+#include <QSignalSpy>
 #include <QTest>
 #include <QVBoxLayout>
+#include <qtestmouse.h>
+
 QTEST_MAIN(TextAutoGenerateNotInstanceFoundWidgetTest)
 
 TextAutoGenerateNotInstanceFoundWidgetTest::TextAutoGenerateNotInstanceFoundWidgetTest(QObject *parent)
@@ -31,6 +34,16 @@ void TextAutoGenerateNotInstanceFoundWidgetTest::shouldHaveDefaultValues()
     auto addInstanceButton = w.findChild<QPushButton *>(QStringLiteral("addInstanceButton"));
     QVERIFY(addInstanceButton);
     QVERIFY(!addInstanceButton->text().isEmpty());
+}
+
+void TextAutoGenerateNotInstanceFoundWidgetTest::shouldEmitSignal()
+{
+    TextAutoGenerateText::TextAutoGenerateNotInstanceFoundWidget w;
+    auto addInstanceButton = w.findChild<QPushButton *>(QStringLiteral("addInstanceButton"));
+
+    QSignalSpy addInstanceRequested(&w, &TextAutoGenerateText::TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested);
+    QTest::mouseClick(addInstanceButton, Qt::LeftButton);
+    QCOMPARE(addInstanceRequested.count(), 1);
 }
 
 #include "moc_textautogeneratenotinstancefoundwidgettest.cpp"
