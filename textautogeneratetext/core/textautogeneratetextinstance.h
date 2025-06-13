@@ -36,7 +36,7 @@ public:
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
-    TextAutoGenerateText::TextAutoGenerateTextPlugin *plugin() const;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *plugin() const;
     void setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin);
 
 private:
