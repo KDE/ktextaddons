@@ -12,3 +12,5 @@ GenericNetworkNetworkPluginConfigureWidget::GenericNetworkNetworkPluginConfigure
 }
 
 GenericNetworkNetworkPluginConfigureWidget::~GenericNetworkNetworkPluginConfigureWidget() = default;
+
+#include "moc_genericnetworknetworkpluginconfigurewidget.cpp"
