@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:41+0000\n"
+"POT-Creation-Date: 2025-06-14 00:41+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -85,14 +85,14 @@ msgstr "本地"
 msgid "Network"
 msgstr "網路"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "@title Preferences page name"
 #| msgid "General"
 msgid "Generic"
 msgstr "一般"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure IA"
@@ -100,12 +100,19 @@ msgctxt "@title:window"
 msgid "Configure"
 msgstr "設定 IA"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "一般"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
@@ -207,6 +214,7 @@ msgstr "基礎："
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
 msgstr "名稱："
@@ -1470,12 +1478,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "設定 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "Available Models"
-msgstr "可用模型"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1573,6 +1575,17 @@ msgid ""
 msgstr ""
 "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固定"
 "的文字。（預設：0）"
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#, kde-format
+msgid "No instance found. Please add one."
+msgstr ""
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#, kde-format
+msgctxt "@action:button"
+msgid "Add instance…"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, fuzzy, kde-format
@@ -1691,7 +1704,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "設定…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "API 金鑰："

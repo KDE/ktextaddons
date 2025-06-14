@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:41+0000\n"
-"PO-Revision-Date: 2025-06-12 14:10+0200\n"
+"POT-Creation-Date: 2025-06-14 00:41+0000\n"
+"PO-Revision-Date: 2025-06-13 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -53,17 +53,15 @@ msgid "Unknown"
 msgstr "Onbekend"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2"
+#, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "Engine: %1\n"
-"Model: %2"
+"Model: %2\n"
+"Naam exemplaar: %3"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
@@ -85,25 +83,30 @@ msgstr "Lokaal"
 msgid "Network"
 msgstr "Netwerk"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Algemeen"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "IA configureren"
+msgstr "Configureren"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Algemeen"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr "Beschikbare modellen"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
@@ -205,6 +208,7 @@ msgstr "Basis:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
 msgstr "Naam:"
@@ -1798,12 +1802,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama configureren"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "Available Models"
-msgstr "Beschikbare modellen"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1908,6 +1906,19 @@ msgstr ""
 "instellen op een specifiek getal zal het model dezelfde tekst laten "
 "genereren voor dezelfde prompt. (Standaard: 0)"
 
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#, kde-format
+msgid "No instance found. Please add one."
+msgstr ""
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Instance…"
+msgctxt "@action:button"
+msgid "Add instance…"
+msgstr "Exemplaar toevoegen…"
+
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, kde-format
 msgctxt "@action"
@@ -1946,15 +1957,13 @@ msgstr "Een type exemplaar selecteren:"
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Bewerken…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Instance"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Exemplaar toevoegen"
+msgstr "Exemplaar verwijderen"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
 #: widgets/textautogeneratehistorywidget.cpp:27
@@ -1965,12 +1974,10 @@ msgid "Search…"
 msgstr "Zoeken…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Instance"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Exemplaar toevoegen"
+msgstr "Exemplaar toevoegen…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -2025,7 +2032,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Configureren…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "API-sleutel:"

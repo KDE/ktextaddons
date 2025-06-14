@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:41+0000\n"
+"POT-Creation-Date: 2025-06-14 00:41+0000\n"
 "PO-Revision-Date: 2025-06-12 17:27+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -85,12 +85,12 @@ msgstr "Lokal"
 msgid "Network"
 msgstr "Nätverk"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Generella"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure IA"
@@ -98,12 +98,19 @@ msgctxt "@title:window"
 msgid "Configure"
 msgstr "Anpassa IA"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Allmänt"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr "Tillgängliga modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
@@ -205,6 +212,7 @@ msgstr "Bas:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
 msgstr "Namn:"
@@ -1799,12 +1807,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Anpassa Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "Available Models"
-msgstr "Tillgängliga modeller"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1908,6 +1910,19 @@ msgstr ""
 "Ställer in det slumptal som ska användas för generering. Om det ställs in "
 "till ett specifikt tal genererar modellen samma text för samma fråga. "
 "(Standardvärde: 0)"
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#, kde-format
+msgid "No instance found. Please add one."
+msgstr ""
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Instance"
+msgctxt "@action:button"
+msgid "Add instance…"
+msgstr "Lägg till instans"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, kde-format
@@ -2026,7 +2041,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Anpassa…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "Programmeringsgränssnittsnyckel:"

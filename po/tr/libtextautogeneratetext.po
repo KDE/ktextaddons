@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:41+0000\n"
-"PO-Revision-Date: 2025-06-12 12:45+0300\n"
+"POT-Creation-Date: 2025-06-14 00:41+0000\n"
+"PO-Revision-Date: 2025-06-13 13:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -53,17 +53,15 @@ msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2"
+#, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "İşletke: %1\n"
-"Model: %2"
+"Model: %2\n"
+"Örnek adı: %3"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
@@ -85,25 +83,30 @@ msgstr "Yerel"
 msgid "Network"
 msgstr "Ağ"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Genel"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Yapay Zekâyı Yapılandır"
+msgstr "Yapılandır"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Genel"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr "Kullanılabilir Modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
@@ -205,6 +208,7 @@ msgstr "Temel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
@@ -1795,12 +1799,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama’yı Yapılandır"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "Available Models"
-msgstr "Kullanılabilir Modeller"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1905,6 +1903,19 @@ msgstr ""
 "sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
 "(Öntanımlı: 0)."
 
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#, kde-format
+msgid "No instance found. Please add one."
+msgstr ""
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Instance…"
+msgctxt "@action:button"
+msgid "Add instance…"
+msgstr "Örnek ekle…"
+
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, kde-format
 msgctxt "@action"
@@ -1943,15 +1954,13 @@ msgstr "Bir örnek türü seç:"
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Düzenle…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Instance"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Örnek Ekle"
+msgstr "Örneği Kaldır"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
 #: widgets/textautogeneratehistorywidget.cpp:27
@@ -1962,12 +1971,10 @@ msgid "Search…"
 msgstr "Ara…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Instance"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Örnek Ekle"
+msgstr "Örnek ekle…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -2022,7 +2029,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "API anahtarı:"

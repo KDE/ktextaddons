@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:41+0000\n"
-"PO-Revision-Date: 2025-06-12 06:54+0200\n"
+"POT-Creation-Date: 2025-06-14 00:41+0000\n"
+"PO-Revision-Date: 2025-06-13 06:38+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -54,17 +54,15 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2"
+#, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "Stroj: %1\n"
-"Model: %2"
+"Model: %2\n"
+"Ime pojavka: %3"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
@@ -86,25 +84,30 @@ msgstr "Lokalno"
 msgid "Network"
 msgstr "Omrežje"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
 msgid "Generic"
 msgstr "Generično"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Konfiguriraj IA"
+msgstr "Konfiguriraj"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:41
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Splošno"
+
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#, kde-format
+msgctxt "@title Preferences page name"
+msgid "Available Models"
+msgstr "Razpoložljivi modeli"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
@@ -206,6 +209,7 @@ msgstr "Osnova:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
 msgstr "Ime:"
@@ -1796,12 +1800,6 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Konfiguriraj Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
-#, kde-format
-msgctxt "@title Preferences page name"
-msgid "Available Models"
-msgstr "Razpoložljivi modeli"
-
 #: plugins/ollama/ollamaconfiguredialog.cpp:53
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -1906,6 +1904,19 @@ msgstr ""
 "nastavite na določeno število, bo model ustvaril isto besedilo za isti "
 "poziv. (Privzeto: 0)"
 
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#, kde-format
+msgid "No instance found. Please add one."
+msgstr ""
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Instance…"
+msgctxt "@action:button"
+msgid "Add instance…"
+msgstr "Dodaj pojavek…"
+
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
 #, kde-format
 msgctxt "@action"
@@ -1944,15 +1955,13 @@ msgstr "Izberite vrsto pojavka:"
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Uredi…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Instance"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Dodaj pojavek"
+msgstr "Odstrani pojavek"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
 #: widgets/textautogeneratehistorywidget.cpp:27
@@ -1963,12 +1972,10 @@ msgid "Search…"
 msgstr "Išči…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Instance"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Dodaj pojavek"
+msgstr "Dodaj pojavek…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -2023,7 +2030,7 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:29
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
 #, kde-format
 msgid "Api Key:"
 msgstr "Ključ api:"
