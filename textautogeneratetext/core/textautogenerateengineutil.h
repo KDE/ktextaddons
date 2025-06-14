@@ -10,9 +10,9 @@ namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateEngineUtil
 {
-[[nodiscard]] QString engineTranslateName();
-[[nodiscard]] QString defaultEngineName();
-[[nodiscard]] QString groupAutoGenerateTextName();
+[[nodiscard]] QString engineTranslateName(); // TODO remove
+[[nodiscard]] QString defaultEngineName(); // TODO remove
+[[nodiscard]] QString groupAutoGenerateTextName(); // TODO remove
 [[nodiscard]] QString loadEngine();
 [[nodiscard]] QString defaultConfigFileName();
 };
