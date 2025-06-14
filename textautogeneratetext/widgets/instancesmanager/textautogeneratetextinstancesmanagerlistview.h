@@ -21,6 +21,7 @@ public:
 
 Q_SIGNALS:
     void removeInstance(const QUuid &uuid);
+    void editInstance(const QUuid &uuid);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;

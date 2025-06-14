@@ -43,7 +43,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     if (index.isValid()) {
         auto editAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
-            // TODO
+            Q_EMIT editInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toUuid());
         });
         menu.addAction(editAction);
         menu.addSeparator();
