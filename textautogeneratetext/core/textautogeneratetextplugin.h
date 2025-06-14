@@ -58,6 +58,10 @@ public:
     void setManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
     virtual void askToAssistant(const QString &msg) = 0;
+
+    virtual void load();
+    virtual void save();
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);

@@ -34,6 +34,16 @@ OllamaPlugin::OllamaPlugin(OllamaManager *manager, QObject *parent)
 
 OllamaPlugin::~OllamaPlugin() = default;
 
+void OllamaPlugin::load()
+{
+    // TODO
+}
+
+void OllamaPlugin::save()
+{
+    // TODO
+}
+
 QString OllamaPlugin::name()
 {
     return "ollama"_L1;

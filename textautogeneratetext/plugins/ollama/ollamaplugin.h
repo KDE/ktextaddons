@@ -31,6 +31,9 @@ public:
 
     void showConfigureDialog(QWidget *parentWidget) override;
 
+    void load() override;
+    void save() override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void cancelRequest(const QByteArray &uuid) override;

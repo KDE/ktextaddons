@@ -33,6 +33,16 @@ TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
 
 TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
+void TextAutoGenerateTextPlugin::load()
+{
+    // reimpl
+}
+
+void TextAutoGenerateTextPlugin::save()
+{
+    // reimpl
+}
+
 void TextAutoGenerateTextPlugin::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget);
