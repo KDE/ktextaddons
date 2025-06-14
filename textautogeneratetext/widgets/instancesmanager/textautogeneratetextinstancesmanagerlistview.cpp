@@ -43,13 +43,13 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     if (index.isValid()) {
         auto editAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
-            // slotCopyMessage(index);
+            // TODO
         });
         menu.addAction(editAction);
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove Instance"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-            // slotCopyMessage(index);
+            Q_EMIT removeInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toUuid());
         });
         menu.addAction(removeAction);
     }

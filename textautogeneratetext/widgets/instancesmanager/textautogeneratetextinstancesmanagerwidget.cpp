@@ -60,6 +60,10 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
         }
     });
 
+    connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QUuid &uuid) {
+        // TODO
+        qDebug() << " remove instance " << uuid;
+    });
     mInstancesManagerListView->setObjectName(QStringLiteral("mInstancesManagerListView"));
     mainLayout->addWidget(mInstancesManagerListView);
 }

@@ -19,6 +19,9 @@ public:
 
     void slotSearchChanged(const QString &str);
 
+Q_SIGNALS:
+    void removeInstance(const QUuid &uuid);
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
