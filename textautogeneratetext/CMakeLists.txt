@@ -298,6 +298,7 @@ set_target_properties(
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS
     HEADER_NAMES
+    TextAutoGenerateChatSettings
     TextAutoGenerateTextClient
     TextAutoGenerateTextPlugin
     TextAutoGenerateTextContext
