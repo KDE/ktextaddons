@@ -24,7 +24,10 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
 
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
-    // TODO
+    const auto instanceList = instances();
+    for (const auto inst : instanceList) {
+        inst->save();
+    }
 }
 
 TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAutoGenerateTextInstanceModel() const
