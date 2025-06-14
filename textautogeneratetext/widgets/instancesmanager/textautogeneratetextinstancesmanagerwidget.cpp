@@ -55,7 +55,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             instance->setName(d.instanceName());
             instance->setPluginName(server.localizedName);
             instance->setPluginIdentifier(server.pluginName);
-            // TODO add identifier
+            // TODO generate unique add identifier
             mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
         }
     });
