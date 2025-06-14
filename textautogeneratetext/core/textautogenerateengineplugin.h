@@ -22,8 +22,8 @@ public:
     explicit TextAutoGenerateEnginePlugin(QObject *parent = nullptr);
     ~TextAutoGenerateEnginePlugin() override;
 
-    void load();
-    void save();
+    virtual void load();
+    virtual void save();
 
 private:
     std::unique_ptr<TextAutoGenerateEnginePluginPrivate> const d;
