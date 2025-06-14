@@ -82,8 +82,6 @@ target_sources(
     PRIVATE
         core/textautogeneratetextutils.h
         core/textautogeneratetextutils.cpp
-        core/textautogenerateengineplugin.h
-        core/textautogenerateengineplugin.cpp
         core/textautogenerateengineloader.cpp
         core/textautogenerateengineloader.h
         core/textautogeneratetextclient.h
@@ -300,7 +298,6 @@ set_target_properties(
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS
     HEADER_NAMES
-    TextAutoGenerateEnginePlugin
     TextAutoGenerateTextClient
     TextAutoGenerateTextPlugin
     TextAutoGenerateTextContext
