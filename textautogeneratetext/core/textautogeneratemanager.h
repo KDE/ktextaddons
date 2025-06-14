@@ -74,6 +74,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextInstancesManager *textAutoGenerateTextInstancesManager() const;
 
+    [[nodiscard]] TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -91,7 +93,7 @@ private:
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
     TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
-    std::unique_ptr<TextAutoGenerateChatSettings> mTextAutoGenerateChatSettings;
+    std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     QByteArray mCurrentChatId;
     bool mShowArchived = false;

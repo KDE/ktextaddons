@@ -101,6 +101,11 @@ void TextAutoGenerateManager::changeChatInPogressStatus(const QByteArray &chatId
     }
 }
 
+TextAutoGenerateChatSettings *TextAutoGenerateManager::textAutoGenerateChatSettings() const
+{
+    return mTextAutoGenerateChatSettings.get();
+}
+
 TextAutoGenerateTextInstancesManager *TextAutoGenerateManager::textAutoGenerateTextInstancesManager() const
 {
     return mTextAutoGenerateTextInstancesManager;

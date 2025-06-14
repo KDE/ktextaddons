@@ -89,6 +89,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     if (mManager) {
         connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, [this](const QByteArray &chatId) {
             mManager->setCurrentChatId(chatId);
+            // TODO store info
         });
         connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
             Q_EMIT noPluginsFound(i18n("No plugin found."));
