@@ -20,4 +20,14 @@ TextAutoGenerateEnginePlugin::TextAutoGenerateEnginePlugin(QObject *parent)
 
 TextAutoGenerateEnginePlugin::~TextAutoGenerateEnginePlugin() = default;
 
+void TextAutoGenerateEnginePlugin::load()
+{
+    // TODO
+}
+
+void TextAutoGenerateEnginePlugin::save()
+{
+    // TODO
+}
+
 #include "moc_textautogenerateengineplugin.cpp"

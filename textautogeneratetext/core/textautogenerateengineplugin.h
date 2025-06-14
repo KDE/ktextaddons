@@ -22,6 +22,9 @@ public:
     explicit TextAutoGenerateEnginePlugin(QObject *parent = nullptr);
     ~TextAutoGenerateEnginePlugin() override;
 
+    void load();
+    void save();
+
 private:
     std::unique_ptr<TextAutoGenerateEnginePluginPrivate> const d;
 };
