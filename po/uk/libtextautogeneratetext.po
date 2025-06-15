@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:41+0000\n"
-"PO-Revision-Date: 2025-06-13 09:09+0300\n"
+"POT-Creation-Date: 2025-06-15 00:41+0000\n"
+"PO-Revision-Date: 2025-06-14 20:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1915,12 +1915,10 @@ msgstr ""
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr ""
+msgstr "Не знайдено жодного екземпляра. Будь ласка, додайте екземпляр."
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Додати екземпляр…"
@@ -2097,7 +2095,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Пошук"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:95
 #, kde-format
 msgid "No plugin found."
 msgstr "Не знайдено додатка."

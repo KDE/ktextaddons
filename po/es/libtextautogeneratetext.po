@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:41+0000\n"
-"PO-Revision-Date: 2025-06-13 12:13+0100\n"
+"POT-Creation-Date: 2025-06-15 00:41+0000\n"
+"PO-Revision-Date: 2025-06-15 00:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1928,12 +1928,10 @@ msgstr ""
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr ""
+msgstr "No se ha encontrado ninguna instancia. Añada una."
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Añadir instancia…"
@@ -2110,7 +2108,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:95
 #, kde-format
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
