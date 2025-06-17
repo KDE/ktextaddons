@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-15 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 07:08+0300\n"
+"PO-Revision-Date: 2025-06-16 16:32+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -418,6 +418,7 @@ msgid ""
 "Google Gemma 2 is a high-performing and efficient model available in three "
 "sizes: 2B, 9B, and 27B."
 msgstr ""
+"Google Gemma 2 הוא מודל יעיל עם ביצועים גבוהים בשלושה גדלים: 2B, 9B ו־27B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:34
 #, kde-format
@@ -432,7 +433,7 @@ msgstr ""
 msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
-msgstr ""
+msgstr "מודל שפה גדול שיכול להשתמש בהנחיות טקסט כדי ליצור קוד ולדבר עליו."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:38
 #, kde-format
@@ -447,6 +448,8 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
+"מודל 12B מהשורה הראשונה עם אורך הקשר של 128k, נבנה על ידי Mistral AI בשיתוף "
+"עם NVIDIA."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -454,6 +457,8 @@ msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
 "model on 3 trillion tokens."
 msgstr ""
+"מיזם TinyLlama הוא מאמץ פתוח לאימון מודל 1.1B חסכוני מסוג Llama על 3 מיליארד "
+"אסימונים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
@@ -466,6 +471,8 @@ msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
 "that comes in three sizes: 3B, 7B and 15B parameters."
 msgstr ""
+"StarCoder2 הוא הדור הבא של מש״גים/LLMs בקוד פתוח שאומנו בצורה שקופהומגיעים "
+"בשלושה גדלים: 3B, 7B ו־15B משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
@@ -543,6 +550,8 @@ msgid ""
 "The uncensored Dolphin model based on Mistral that excels at coding tasks. "
 "Updated to version 2.8."
 msgstr ""
+"מודל Dolphin הלא מצונזר שמבוסס על Mistral ומתמחה במשימות כתיבת קוד. מעודכן "
+"לגרסה 2.8."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:63
 #, kde-format
@@ -1150,7 +1159,7 @@ msgstr "מודל ערבוב מומחים עם ביצועים מיטביים, ע�
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
-msgstr ""
+msgstr "מודל שיחה בגודל 7B עם נתונים באיכות גבוהה על בסיס Zephyr."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
 #, kde-format
@@ -1158,6 +1167,8 @@ msgid ""
 "Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
 "Designed for chat and code generation."
 msgstr ""
+"מיזוג בין המודל Open Orca OpenChat לבין Garage-bAInd Platypus 2. תוכנן לשיחה "
+"וליצירת קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
 #, kde-format
@@ -1165,6 +1176,7 @@ msgid ""
 "A language model created by combining two fine-tuned Llama 2 70B models into "
 "one."
 msgstr ""
+"מודל שפה שנוצר על ידי שילוב בין שני מודלים מסוג Llama 2 בגודל 70B לאחד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
 #, kde-format
