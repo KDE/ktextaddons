@@ -8,7 +8,9 @@
 #include "core/models/textautogeneratetextinstancesortfilterproxymodel.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "textautogeneratetextinstancesmanagerlistviewdelegate.h"
+#include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QSortFilterProxyModel>
@@ -43,13 +45,31 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     if (index.isValid()) {
         auto editAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
-            Q_EMIT editInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray());
+            const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+            if (uuid.isEmpty()) {
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+            } else {
+                Q_EMIT editInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray());
+            }
         });
         menu.addAction(editAction);
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove Instance"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
-            Q_EMIT removeInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray());
+            const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+            if (uuid.isEmpty()) {
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+            } else {
+                // TODO add instance name ?
+                if (KMessageBox::warningTwoActions(this,
+                                                   i18n("Do you want to this instance?"),
+                                                   i18nc("@title", "Remove"),
+                                                   KStandardGuiItem::remove(),
+                                                   KStandardGuiItem::cancel())
+                    == KMessageBox::PrimaryAction) {
+                    Q_EMIT removeInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray());
+                }
+            }
         });
         menu.addAction(removeAction);
     }

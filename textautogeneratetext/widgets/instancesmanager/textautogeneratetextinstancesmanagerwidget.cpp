@@ -12,9 +12,9 @@
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLineEdit>
+#include <QToolButton>
 #include <QVBoxLayout>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
-#include <qtoolbutton.h>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManagerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -62,9 +62,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     });
 
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QByteArray &uuid) {
-        // TODO
         mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->removeInstance(uuid);
-        qDebug() << " remove instance " << uuid;
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         // TODO
