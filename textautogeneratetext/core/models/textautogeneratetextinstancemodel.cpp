@@ -73,9 +73,9 @@ void TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == uuid;
     };
-    const auto answerIt = std::find_if(mTextInstances.begin(), mTextInstances.end(), matchesUuid);
-    if (answerIt != mTextInstances.end()) {
-        const int i = std::distance(mTextInstances.begin(), answerIt);
+    const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
+    if (answerIt != mTextInstances.constEnd()) {
+        const int i = std::distance(mTextInstances.constBegin(), answerIt);
         beginRemoveRows(QModelIndex(), i, i);
         mTextInstances.removeAt(i);
         endRemoveRows();
@@ -87,9 +87,9 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(cons
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == uuid;
     };
-    const auto answerIt = std::find_if(mTextInstances.begin(), mTextInstances.end(), matchesUuid);
-    if (answerIt != mTextInstances.end()) {
-        const int i = std::distance(mTextInstances.begin(), answerIt);
+    const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
+    if (answerIt != mTextInstances.constEnd()) {
+        const int i = std::distance(mTextInstances.constBegin(), answerIt);
         return mTextInstances.at(i)->plugin();
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Instance not found for uuid:" << uuid;
