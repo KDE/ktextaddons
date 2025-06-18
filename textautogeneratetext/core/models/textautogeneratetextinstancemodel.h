@@ -23,6 +23,7 @@ public:
         PluginName,
         PluginIdentifier,
         Uuid,
+        Plugin,
     };
     explicit TextAutoGenerateTextInstanceModel(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstanceModel() override;
@@ -36,6 +37,8 @@ public:
     void addTextInstances(TextAutoGenerateTextInstance *instance);
 
     void removeInstance(const QByteArray &uuid);
+
+    [[nodiscard]] TextAutoGenerateTextPlugin *editInstance(const QByteArray &uuid);
 
 private:
     QList<TextAutoGenerateTextInstance *> mTextInstances;

@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstancemodel.h"
+#include "core/textautogeneratetextplugin.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstanceModel::TextAutoGenerateTextInstanceModel(QObject *parent)
@@ -40,6 +41,8 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return instance->instanceUuid();
     case InstanceRoles::PluginIdentifier:
         return instance->pluginIdentifier();
+    case InstanceRoles::Plugin:
+        return QVariant::fromValue(instance->plugin());
     }
     return {};
 }
@@ -76,6 +79,19 @@ void TextAutoGenerateTextInstanceModel::removeInstance(const QByteArray &uuid)
         mTextInstances.removeAt(i);
         endRemoveRows();
     }
+}
+
+TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(const QByteArray &uuid)
+{
+    auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
+        return instance->instanceUuid() == uuid;
+    };
+    const auto answerIt = std::find_if(mTextInstances.begin(), mTextInstances.end(), matchesUuid);
+    if (answerIt != mTextInstances.end()) {
+        const int i = std::distance(mTextInstances.begin(), answerIt);
+        return mTextInstances.at(i)->plugin();
+    }
+    return nullptr;
 }
 
 #include "moc_textautogeneratetextinstancemodel.cpp"
