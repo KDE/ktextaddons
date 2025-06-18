@@ -23,11 +23,11 @@ TextAutoGenerateAddInstanceWidget::TextAutoGenerateAddInstanceWidget(TextAutoGen
 
     mNameLineEdit->setObjectName(QStringLiteral("mNameLineEdit"));
     mNameLineEdit->setClearButtonEnabled(true);
-    mainLayout->addRow(i18n("Name:"), mNameLineEdit);
+    mainLayout->addRow(i18nc("@label:textbox", "Name:"), mNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mNameLineEdit);
 
     mInstanceComboBox->setObjectName(QStringLiteral("mInstanceComboBox"));
-    mainLayout->addRow(i18n("Select a Type of Instance:"), mInstanceComboBox);
+    mainLayout->addRow(i18nc("@label:textbox", "Select a Type of Instance:"), mInstanceComboBox);
     connect(mNameLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
         Q_EMIT buttonOkEnabled(!str.isEmpty());
     });

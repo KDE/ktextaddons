@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
+#include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "textautogenerateaddinstancedialog.h"
 #include "textautogeneratetextinstancesmanagerlistview.h"
@@ -60,11 +61,12 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
         }
     });
 
-    connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QUuid &uuid) {
+    connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QByteArray &uuid) {
         // TODO
+        mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->removeInstance(uuid);
         qDebug() << " remove instance " << uuid;
     });
-    connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QUuid &uuid) {
+    connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         // TODO
         qDebug() << " edit instance " << uuid;
     });

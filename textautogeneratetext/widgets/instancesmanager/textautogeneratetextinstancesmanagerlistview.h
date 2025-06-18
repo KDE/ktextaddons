@@ -20,8 +20,8 @@ public:
     void slotSearchChanged(const QString &str);
 
 Q_SIGNALS:
-    void removeInstance(const QUuid &uuid);
-    void editInstance(const QUuid &uuid);
+    void removeInstance(const QByteArray &uuid);
+    void editInstance(const QByteArray &uuid);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
