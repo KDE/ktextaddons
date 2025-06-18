@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextinstancemodel.h"
 #include "core/textautogeneratetextplugin.h"
+#include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstanceModel::TextAutoGenerateTextInstanceModel(QObject *parent)
@@ -91,6 +92,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(cons
         const int i = std::distance(mTextInstances.begin(), answerIt);
         return mTextInstances.at(i)->plugin();
     }
+    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Instance not found for uuid:" << uuid;
     return nullptr;
 }
 
