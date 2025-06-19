@@ -28,6 +28,9 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
         return; // nothing to be done...
     }
 
+    KConfigGroup configGeneralGroup(config, QStringLiteral("General"));
+    mCurrentinstance = configGeneralGroup.readEntry("currentInstance", QByteArray());
+
     QList<TextAutoGenerateTextInstance *> lstInstances;
     const auto instanceList = groupList(config);
     for (const auto &group : instanceList) {
@@ -48,6 +51,10 @@ QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) con
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
     auto config = new KConfig(QStringLiteral("autogeneratetext"));
+
+    KConfigGroup configGeneralGroup(config, QStringLiteral("General"));
+    configGeneralGroup.writeEntry("currentInstance", mCurrentinstance);
+
     const auto instanceList = groupList(config);
     for (const auto &group : instanceList) {
         config->deleteGroup(group);
