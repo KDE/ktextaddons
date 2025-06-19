@@ -77,4 +77,9 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
 
 TextAutoGenerateTextInstancesManagerWidget::~TextAutoGenerateTextInstancesManagerWidget() = default;
 
+void TextAutoGenerateTextInstancesManagerWidget::save()
+{
+    mManager->textAutoGenerateTextInstancesManager()->saveInstances();
+}
+
 #include "moc_textautogeneratetextinstancesmanagerwidget.cpp"

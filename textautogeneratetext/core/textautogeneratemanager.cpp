@@ -337,6 +337,8 @@ TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(
 
 void TextAutoGenerateManager::loadEngine()
 {
+    mTextAutoGenerateTextInstancesManager->loadInstances();
+
     if (mTextAutoGeneratePlugin) {
         disconnect(mTextAutoGeneratePlugin);
         delete mTextAutoGeneratePlugin;

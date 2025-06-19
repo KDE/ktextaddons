@@ -19,6 +19,8 @@ public:
     explicit TextAutoGenerateTextInstancesManagerWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerWidget() override;
 
+    void save();
+
 private:
     TextAutoGenerateTextInstancesManagerListView *const mInstancesManagerListView;
     QLineEdit *const mSearchLineEdit;
