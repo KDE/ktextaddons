@@ -254,6 +254,8 @@ target_sources(
         widgets/instancesmanager/textautogeneratetextinstancecombobox.cpp
         widgets/instancesmanager/textautogeneratetextinstancesmanagerlistviewdelegate.h
         widgets/instancesmanager/textautogeneratetextinstancesmanagerlistviewdelegate.cpp
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h
+        widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp
 )
 
 if(BUILD_TESTING)
@@ -372,6 +374,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsq
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS
     HEADER_NAMES
     TextAutoGenerateTextInstancesManagerWidget
+    TextAutoGenerateTextInstancesManagerDialog
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/instancesmanager
