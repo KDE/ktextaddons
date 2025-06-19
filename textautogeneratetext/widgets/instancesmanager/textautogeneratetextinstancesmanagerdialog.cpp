@@ -34,7 +34,7 @@ TextAutoGenerateTextInstancesManagerDialog::TextAutoGenerateTextInstancesManager
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateTextInstancesManagerDialog::reject);
-    connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateTextInstancesManagerDialog::accept);
+    connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateTextInstancesManagerDialog::slotAccept);
     readConfig();
 }
 
@@ -50,6 +50,12 @@ void TextAutoGenerateTextInstancesManagerDialog::readConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
+}
+
+void TextAutoGenerateTextInstancesManagerDialog::slotAccept()
+{
+    mTextAutoGenerateTextInstancesManagerWidget->save();
+    accept();
 }
 
 void TextAutoGenerateTextInstancesManagerDialog::writeConfig()
