@@ -9,15 +9,18 @@
 #include <QDialog>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextInstancesManagerWidget;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManagerDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstancesManagerDialog(QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextInstancesManagerDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateTextInstancesManagerDialog() override;
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
+    TextAutoGenerateTextInstancesManagerWidget *const mTextAutoGenerateTextInstancesManagerWidget;
 };
 }

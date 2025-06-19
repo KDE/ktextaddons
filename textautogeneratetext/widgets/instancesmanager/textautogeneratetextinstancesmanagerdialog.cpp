@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextinstancesmanagerdialog.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -17,13 +18,17 @@ namespace
 const char myTextAutoGenerateTextInstancesManagerDialogGroupName[] = "TextAutoGenerateTextInstancesManagerDialog";
 }
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextInstancesManagerDialog::TextAutoGenerateTextInstancesManagerDialog(QWidget *parent)
+TextAutoGenerateTextInstancesManagerDialog::TextAutoGenerateTextInstancesManagerDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
+    , mTextAutoGenerateTextInstancesManagerWidget(new TextAutoGenerateTextInstancesManagerWidget(manager, this))
 {
     setWindowTitle(i18nc("@title:window", "Configure Instances"));
 
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
+
+    mTextAutoGenerateTextInstancesManagerWidget->setObjectName(QStringLiteral("mTextAutoGenerateTextInstancesManagerWidget"));
+    mainLayout->addWidget(mTextAutoGenerateTextInstancesManagerWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, this);
     button->setObjectName(QStringLiteral("button"));
