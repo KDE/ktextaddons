@@ -28,16 +28,15 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
         return; // nothing to be done...
     }
 
-    /*
-        QStringList::const_iterator groupEnd = instances.constEnd();
-        for (QStringList::const_iterator group = instances.constBegin(); group != groupEnd; ++group) {
-            KConfigGroup configGroup(config, *group);
-            Identity identity;
-            identity.readConfig(configGroup);
-            mIdentities << identity;
-        }
-      */
-    // TODO
+    QList<TextAutoGenerateTextInstance *> lstInstances;
+    const auto instanceList = groupList(config);
+    for (const auto &group : instanceList) {
+        KConfigGroup configGroup(config, group);
+        TextAutoGenerateTextInstance *inst = new TextAutoGenerateTextInstance;
+        inst->load(configGroup);
+        lstInstances.append(inst);
+    }
+    setInstances(lstInstances);
 }
 
 QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) const
@@ -59,6 +58,7 @@ void TextAutoGenerateTextInstancesManager::saveInstances()
         KConfigGroup group = config->group(QStringLiteral("Instance #%1").arg(i));
         instanceLst.at(i)->save(group);
     }
+    config->sync();
 }
 
 TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAutoGenerateTextInstanceModel() const
