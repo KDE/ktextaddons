@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 
+#include <KConfigGroup>
 #include <QDebug>
 namespace TextAutoGenerateText
 {
@@ -30,7 +31,7 @@ public:
     [[nodiscard]] QString pluginIdentifier() const;
     void setPluginIdentifier(const QString &newPluginIdentifier);
 
-    void load();
+    void load(const KConfigGroup &config);
     void save();
 
     [[nodiscard]] QString currentModel() const;

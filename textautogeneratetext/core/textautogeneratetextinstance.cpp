@@ -55,9 +55,14 @@ void TextAutoGenerateTextInstance::setPluginIdentifier(const QString &newPluginI
     mPluginIdentifier = newPluginIdentifier;
 }
 
-void TextAutoGenerateTextInstance::load()
+void TextAutoGenerateTextInstance::load(const KConfigGroup &config)
 {
-    // TODO
+    mEnabled = config.readEntry("enabled", false);
+    mName = config.readEntry("name", QString());
+    mPluginName = config.readEntry("pluginName", QString());
+    mPluginIdentifier = config.readEntry("pluginIdentifier", QString());
+    mCurrentModel = config.readEntry("currentModel", QString());
+    mInstanceUuid = config.readEntry("uuid", QByteArray());
 }
 
 void TextAutoGenerateTextInstance::save()
