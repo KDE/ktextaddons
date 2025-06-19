@@ -17,7 +17,7 @@ class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:
-    explicit OllamaPlugin(OllamaManager *manager, QObject *parent = nullptr);
+    explicit OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~OllamaPlugin() override;
 
     [[nodiscard]] bool loadSettings() override;
@@ -28,11 +28,14 @@ public:
     [[nodiscard]] QString engineName() const override;
 
     [[nodiscard]] static QString name();
+    [[nodiscard]] QString translatedPluginName() const override;
 
     void showConfigureDialog(QWidget *parentWidget) override;
 
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
+
+    [[nodiscard]] QStringList models() const override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;

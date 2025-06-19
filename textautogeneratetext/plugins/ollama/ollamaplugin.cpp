@@ -10,11 +10,12 @@
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
+#include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
-OllamaPlugin::OllamaPlugin(OllamaManager *manager, QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
-    , mManager(manager)
+OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
+    : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
+    , mManager(new OllamaManager(this))
 {
     if (!loadSettings()) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_PLUGIN_LOG) << "Impossible to load settings";
@@ -44,9 +45,20 @@ void OllamaPlugin::save(KConfigGroup &config)
     // TODO
 }
 
+QStringList OllamaPlugin::models() const
+{
+    // TODO
+    return {};
+}
+
 QString OllamaPlugin::name()
 {
     return "ollama"_L1;
+}
+
+QString OllamaPlugin::translatedPluginName() const
+{
+    return i18n("Ollama");
 }
 
 void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)

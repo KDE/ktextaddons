@@ -14,7 +14,7 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaClient::OllamaClient(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextClient{parent}
-    , mManager(new OllamaManager(this))
+
 {
 }
 
@@ -30,22 +30,16 @@ QString OllamaClient::translatedName() const
     return i18n("Ollama");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGeneratePlugin(const QString &serverIdentifier)
+TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                             const QString &serverIdentifier)
 {
     Q_UNUSED(serverIdentifier)
-    return new OllamaPlugin(mManager, this);
+    return new OllamaPlugin(manager, this);
 }
 
 TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engineType() const
 {
     return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local;
-}
-
-bool OllamaClient::showConfigureDialog(QWidget *parentWidget)
-{
-    // TODO use QPointer ?
-    OllamaConfigureDialog d(mManager, parentWidget);
-    return d.exec();
 }
 
 QString OllamaClient::modelName() const
