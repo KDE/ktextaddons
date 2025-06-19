@@ -31,7 +31,7 @@ public:
 
     void showConfigureDialog(QWidget *parentWidget) override;
 
-    void load() override;
+    void load(const KConfigGroup &config) override;
     void save() override;
 
 protected:

@@ -33,8 +33,9 @@ TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
 
 TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
-void TextAutoGenerateTextPlugin::load()
+void TextAutoGenerateTextPlugin::load(const KConfigGroup &config)
 {
+    Q_UNUSED(config);
     // reimpl
 }
 

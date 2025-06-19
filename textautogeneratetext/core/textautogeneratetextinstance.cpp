@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstance.h"
+#include "core/textautogeneratetextplugin.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
@@ -63,6 +64,7 @@ void TextAutoGenerateTextInstance::load(const KConfigGroup &config)
     mPluginIdentifier = config.readEntry("pluginIdentifier", QString());
     mCurrentModel = config.readEntry("currentModel", QString());
     mInstanceUuid = config.readEntry("uuid", QByteArray());
+    mPlugin->load(config);
 }
 
 void TextAutoGenerateTextInstance::save()

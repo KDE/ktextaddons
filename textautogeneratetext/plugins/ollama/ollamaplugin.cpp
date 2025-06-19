@@ -34,7 +34,7 @@ OllamaPlugin::OllamaPlugin(OllamaManager *manager, QObject *parent)
 
 OllamaPlugin::~OllamaPlugin() = default;
 
-void OllamaPlugin::load()
+void OllamaPlugin::load(const KConfigGroup &config)
 {
     // TODO
 }

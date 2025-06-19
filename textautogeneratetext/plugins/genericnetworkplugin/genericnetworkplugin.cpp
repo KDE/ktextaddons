@@ -18,7 +18,7 @@ GenericNetworkPlugin::GenericNetworkPlugin(QObject *parent)
 
 GenericNetworkPlugin::~GenericNetworkPlugin() = default;
 
-void GenericNetworkPlugin::load()
+void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
 }
 

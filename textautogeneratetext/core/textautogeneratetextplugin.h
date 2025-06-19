@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QObject>
+#include <kconfiggroup.h>
 #include <memory>
 namespace TextAutoGenerateText
 {
@@ -59,7 +60,7 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
     virtual void askToAssistant(const QString &msg) = 0;
 
-    virtual void load();
+    virtual void load(const KConfigGroup &config);
     virtual void save();
 
 Q_SIGNALS:
