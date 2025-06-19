@@ -12,6 +12,7 @@ class QToolButton;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+class TextAutoGenerateTextModelComboBox;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHeaderWidget : public QWidget
 {
     Q_OBJECT
@@ -27,13 +28,12 @@ Q_SIGNALS:
     void searchText();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureEngine();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
     QLabel *const mEngineName;
-    QToolButton *const mConfigureEngine;
     QToolButton *const mNewChat;
     QToolButton *const mFavorite;
     QToolButton *const mSearch;
+    TextAutoGenerateTextModelComboBox *const mModelComboBox;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

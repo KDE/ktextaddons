@@ -43,7 +43,6 @@ public:
     void loadEngine();
 
     [[nodiscard]] QString generateEngineDisplayName() const;
-    [[nodiscard]] TextAutoGenerateTextClient *textAutoGenerateClient() const;
 
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
@@ -91,8 +90,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
-    TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr; // TODO REMOVE IT
-    TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr; // TODO REMOVE IT
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     QByteArray mCurrentChatId;

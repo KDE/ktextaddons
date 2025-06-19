@@ -8,7 +8,6 @@
 #include "core/textautogeneratetextutils.h"
 #include "textautogeneratenotworkingmessagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
-#include "widgets/textautogenerateconfiguredialog.h"
 #include <KLocalizedString>
 #include <KMessageWidget>
 #include <QProcess>
@@ -53,8 +52,6 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 
 void TextAutoGenerateNotWorkingWidget::slotConfigure()
 {
-    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(mManager, this);
-    d.exec();
 }
 
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()

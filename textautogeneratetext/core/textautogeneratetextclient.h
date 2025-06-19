@@ -11,6 +11,7 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;
+class TextAutoGenerateManager;
 /**
  * @brief The TextAutoGenerateTextClient class
  * @author Laurent Montel <montel@kde.org>
@@ -46,9 +47,8 @@ public:
 
     [[nodiscard]] virtual QString translatedName() const = 0;
 
-    virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(const QString &serverIdentifier = {}) = 0;
-
-    [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget); // TODO remove it
+    virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                     const QString &serverIdentifier) = 0;
 
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
 

@@ -26,6 +26,7 @@ public:
         Plugin,
         Enabled,
         IsDefault,
+        TranslatedPluginName,
     };
     explicit TextAutoGenerateTextInstanceModel(QObject *parent = nullptr);
     ~TextAutoGenerateTextInstanceModel() override;
@@ -44,8 +45,10 @@ public:
 
     [[nodiscard]] bool isEmpty() const;
 
-    [[nodiscard]] QByteArray currentinstance() const;
-    void setCurrentinstance(const QByteArray &newCurrentinstance);
+    [[nodiscard]] QByteArray currentInstance() const;
+    void setCurrentInstance(const QByteArray &newCurrentinstance);
+
+    [[nodiscard]] TextAutoGenerateTextPlugin *currentPlugin() const;
 
 private:
     QList<TextAutoGenerateTextInstance *> mTextInstances;

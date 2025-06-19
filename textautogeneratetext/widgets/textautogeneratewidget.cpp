@@ -7,7 +7,6 @@
 #include "textautogeneratewidget.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
-#include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
@@ -151,11 +150,7 @@ void TextAutoGenerateWidget::loadEngine()
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
         mManager->loadEngine();
-        if (mManager->textAutoGenerateClient()) {
-            mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
-        } else {
-            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
-        }
+        mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
         mManager->loadHistory();
     }
 }

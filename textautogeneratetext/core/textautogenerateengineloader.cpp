@@ -83,27 +83,6 @@ TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::searchTextAutoGenerate
     return (*clientsItr);
 }
 
-bool TextAutoGenerateEngineLoader::showConfigureDialog(const QString &clientName, QWidget *parentWidget)
-{
-    auto clientsItr = d->autogenerateTextClients.constFind(clientName);
-    if (clientsItr == d->autogenerateTextClients.constEnd()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Client name not found: " << clientName;
-        return false;
-    }
-    return (*clientsItr)->showConfigureDialog(parentWidget);
-}
-
-QMap<QString, QString> TextAutoGenerateEngineLoader::textAutoGenerateTextEngineInfos() const
-{
-    QMap<QString, QString> map;
-    QHashIterator<QString, TextAutoGenerateTextClient *> i(d->autogenerateTextClients);
-    while (i.hasNext()) {
-        i.next();
-        map.insert(i.key(), generateDisplayName(i.value()));
-    }
-    return map;
-}
-
 QString TextAutoGenerateEngineLoader::generateDisplayName(TextAutoGenerateTextClient *client) const
 {
     QString translatedName = client->translatedName();
@@ -124,15 +103,6 @@ QList<TextAutoGenerateTextClient::SupportedServer> TextAutoGenerateEngineLoader:
         lst += i.value()->supportedServers();
     }
     return lst;
-}
-
-QString TextAutoGenerateEngineLoader::fallbackFirstEngine() const
-{
-    if (!d->autogenerateTextClients.isEmpty()) {
-        return *d->autogenerateTextClients.keyBegin();
-    }
-    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "No plugin found ! ";
-    return QString();
 }
 
 bool TextAutoGenerateEngineLoader::hasEngine() const

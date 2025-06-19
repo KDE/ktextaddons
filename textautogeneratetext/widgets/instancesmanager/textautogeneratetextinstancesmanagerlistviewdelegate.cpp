@@ -27,8 +27,8 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
         return;
     }
 
-    const QString pluginName = index.data(TextAutoGenerateTextInstanceModel::PluginName).toString();
-    if (pluginName.isEmpty()) {
+    const QString translatedPluginName = index.data(TextAutoGenerateTextInstanceModel::TranslatedPluginName).toString();
+    if (translatedPluginName.isEmpty()) {
         QStyledItemDelegate::paint(painter, option, index);
         return;
     }
@@ -55,12 +55,12 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     painter->setPen(option.palette.text().color());
     const QRect line1Rect(rect.left() + 5, rect.top(), rect.width(), fontMetrics.height());
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
-    if (!pluginName.isEmpty()) {
+    if (!translatedPluginName.isEmpty()) {
         f.setItalic(true);
         f.setPointSize(f.pointSize() - 2);
         painter->setFont(f);
         const QRect line2Rect(rect.left() + 5, rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
-        painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, pluginName);
+        painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, translatedPluginName);
     }
     painter->restore();
 }

@@ -8,7 +8,6 @@
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
-#include "widgets/textautogenerateconfiguredialog.h"
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -42,11 +41,6 @@ TextAutoGenerateQuickAskViewWidget::~TextAutoGenerateQuickAskViewWidget() = defa
 
 void TextAutoGenerateQuickAskViewWidget::slotConfigureRequested()
 {
-    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(mManager, this);
-    if (d.exec()) {
-        d.saveSettings();
-        // Q_EMIT configChanged();
-    }
 }
 
 #include "moc_textautogeneratequickaskviewwidget.cpp"

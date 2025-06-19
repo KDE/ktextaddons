@@ -6,7 +6,7 @@
 
 #include "textautogenerateheaderwidget.h"
 #include "core/textautogeneratemanager.h"
-#include "widgets/textautogenerateconfiguredialog.h"
+#include "widgets/textautogeneratetextmodelcombobox.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -16,10 +16,10 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mEngineName(new QLabel(this))
-    , mConfigureEngine(new QToolButton(this))
     , mNewChat(new QToolButton(this))
     , mFavorite(new QToolButton(this))
     , mSearch(new QToolButton(this))
+    , mModelComboBox(new TextAutoGenerateTextModelComboBox(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -33,13 +33,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     f.setItalic(true);
     mEngineName->setFont(f);
 
-    mConfigureEngine->setObjectName("mConfigureEngine"_L1);
-    mConfigureEngine->setToolTip(i18nc("@info:tooltip", "Configure…"));
-    mConfigureEngine->setAutoRaise(true);
-    mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
-    mainLayout->addWidget(mConfigureEngine);
-    mainLayout->addStretch(1);
-    connect(mConfigureEngine, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::slotConfigureEngine);
+    mainLayout->addWidget(mModelComboBox, 1);
 
     mSearch->setObjectName("mSearch"_L1);
     mSearch->setToolTip(i18nc("@info:tooltip", "Search…"));
@@ -82,15 +76,6 @@ void TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged()
 void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
 {
     mEngineName->setText(engineName);
-}
-
-void TextAutoGenerateHeaderWidget::slotConfigureEngine()
-{
-    TextAutoGenerateText::TextAutoGenerateConfigureDialog d(mManager, this);
-    if (d.exec()) {
-        d.saveSettings();
-        Q_EMIT configChanged();
-    }
 }
 
 #include "moc_textautogenerateheaderwidget.cpp"

@@ -14,13 +14,6 @@ TextAutoGenerateTextClient::TextAutoGenerateTextClient(QObject *parent)
 
 TextAutoGenerateTextClient::~TextAutoGenerateTextClient() = default;
 
-bool TextAutoGenerateTextClient::showConfigureDialog(QWidget *parentWidget)
-{
-    Q_UNUSED(parentWidget);
-    // Nothing by default
-    return false;
-}
-
 QString TextAutoGenerateTextClient::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type)
 {
     switch (type) {

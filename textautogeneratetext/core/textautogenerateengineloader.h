@@ -26,12 +26,6 @@ public:
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *searchTextAutoGenerateTextClient(const QString &clientName);
 
-    [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
-
-    [[nodiscard]] QMap<QString, QString> textAutoGenerateTextEngineInfos() const;
-
-    [[nodiscard]] QString fallbackFirstEngine() const;
-
     [[nodiscard]] bool hasEngine() const;
 
     void loadPlugins();

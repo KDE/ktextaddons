@@ -30,14 +30,15 @@ public:
         QByteArray chatId;
         QJsonArray messagesArray;
     };
-    explicit TextAutoGenerateTextPlugin(QObject *parent = nullptr);
+    explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateTextPlugin() override;
 
-    virtual void showConfigureDialog(QWidget *parentWidget);
+    virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
     [[nodiscard]] virtual bool loadSettings() = 0; // TODO remove it
 
     virtual void clear() = 0;
+    [[nodiscard]] virtual QString translatedPluginName() const = 0;
 
     virtual void setPrompt(const QString &text) = 0;
 
@@ -56,12 +57,13 @@ public:
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);
 
-    void setManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
     virtual void askToAssistant(const QString &msg) = 0;
 
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
+
+    [[nodiscard]] virtual QStringList models() const = 0;
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);

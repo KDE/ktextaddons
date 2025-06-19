@@ -48,6 +48,8 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return instance->enabled();
     case InstanceRoles::IsDefault:
         return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance);
+    case InstanceRoles::TranslatedPluginName:
+        return instance->plugin()->translatedPluginName();
     }
     return {};
 }
@@ -70,18 +72,33 @@ bool TextAutoGenerateTextInstanceModel::isEmpty() const
     return mTextInstances.isEmpty();
 }
 
-QByteArray TextAutoGenerateTextInstanceModel::currentinstance() const
+QByteArray TextAutoGenerateTextInstanceModel::currentInstance() const
 {
     return mCurrentinstance;
 }
 
-void TextAutoGenerateTextInstanceModel::setCurrentinstance(const QByteArray &newCurrentinstance)
+void TextAutoGenerateTextInstanceModel::setCurrentInstance(const QByteArray &newCurrentinstance)
 {
     if (mCurrentinstance != newCurrentinstance) {
         beginResetModel();
         mCurrentinstance = newCurrentinstance;
         endResetModel();
     }
+}
+
+TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() const
+{
+    if (mCurrentinstance.isEmpty() || isEmpty()) {
+        return nullptr;
+    }
+    auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
+        return instance->instanceUuid() == mCurrentinstance;
+    };
+    const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
+    if (answerIt != mTextInstances.constEnd()) {
+        return (*answerIt)->plugin();
+    }
+    return mTextInstances.constFirst()->plugin();
 }
 
 void TextAutoGenerateTextInstanceModel::addTextInstances(TextAutoGenerateTextInstance *instance)

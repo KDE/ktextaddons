@@ -13,11 +13,12 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstanceModel;
 class TextAutoGenerateEngineLoader;
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextInstancesManager(QObject *parent = nullptr);
+    explicit TextAutoGenerateTextInstancesManager(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~TextAutoGenerateTextInstancesManager() override;
 
     [[nodiscard]] QList<TextAutoGenerateTextInstance *> instances() const;
@@ -40,9 +41,12 @@ public:
     [[nodiscard]] QString configFileName() const;
     [[nodiscard]] bool isEmpty() const;
 
+    [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList groupList(KConfig *config) const;
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

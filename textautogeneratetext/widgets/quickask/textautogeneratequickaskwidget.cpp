@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskwidget.h"
-#include "core/textautogenerateengineutil.h"
 #include "core/textautogeneratemanager.h"
 
 #include "core/textautogeneratetextplugin.h"
@@ -57,9 +56,6 @@ void TextAutoGenerateQuickAskWidget::loadEngine()
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateQuickAskWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
         mManager->loadEngine();
-        if (!mManager->textAutoGenerateClient()) {
-            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
-        }
     }
 }
 

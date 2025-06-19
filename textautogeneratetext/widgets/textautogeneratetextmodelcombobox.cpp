@@ -13,4 +13,7 @@ TextAutoGenerateTextModelComboBox::TextAutoGenerateTextModelComboBox(QWidget *pa
 
 TextAutoGenerateTextModelComboBox::~TextAutoGenerateTextModelComboBox() = default;
 
+// TODO add list of model
+// TODO get current Model
+
 #include "moc_textautogeneratetextmodelcombobox.cpp"

@@ -29,7 +29,7 @@ TextAutoGenerateAddInstanceWidget::TextAutoGenerateAddInstanceWidget(TextAutoGen
     mInstanceComboBox->setObjectName(QStringLiteral("mInstanceComboBox"));
     mainLayout->addRow(i18nc("@label:textbox", "Select a Type of Instance:"), mInstanceComboBox);
     connect(mNameLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
-        Q_EMIT buttonOkEnabled(!str.isEmpty());
+        Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty());
     });
 }
 

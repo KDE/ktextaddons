@@ -29,11 +29,6 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mEngineName);
     QVERIFY(mEngineName->text().isEmpty());
 
-    auto mConfigureEngine = w.findChild<QToolButton *>(QStringLiteral("mConfigureEngine"));
-    QVERIFY(mConfigureEngine);
-    QVERIFY(mConfigureEngine->autoRaise());
-    QVERIFY(!mConfigureEngine->toolTip().isEmpty());
-
     auto mNewChat = w.findChild<QToolButton *>(QStringLiteral("mNewChat"));
     QVERIFY(mNewChat);
     QVERIFY(mNewChat->autoRaise());

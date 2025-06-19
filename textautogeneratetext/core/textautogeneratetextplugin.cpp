@@ -19,15 +19,19 @@ using namespace TextAutoGenerateText;
 class TextAutoGenerateText::TextAutoGenerateTextPluginPrivate
 {
 public:
+    explicit TextAutoGenerateTextPluginPrivate(TextAutoGenerateManager *manager_)
+        : manager(manager_)
+    {
+    }
     bool hasError = false;
     bool isReady = false;
     QString currentModel;
-    TextAutoGenerateManager *manager = nullptr;
+    TextAutoGenerateManager *const manager;
 };
 
-TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(QObject *parent)
+TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(TextAutoGenerateManager *manager, QObject *parent)
     : QObject{parent}
-    , d(new TextAutoGenerateText::TextAutoGenerateTextPluginPrivate)
+    , d(new TextAutoGenerateText::TextAutoGenerateTextPluginPrivate(manager))
 {
 }
 
@@ -43,11 +47,6 @@ void TextAutoGenerateTextPlugin::save(KConfigGroup &config)
 {
     Q_UNUSED(config);
     // reimpl
-}
-
-void TextAutoGenerateTextPlugin::showConfigureDialog(QWidget *parentWidget)
-{
-    Q_UNUSED(parentWidget);
 }
 
 void TextAutoGenerateTextPlugin::setHasError(bool error)
@@ -140,11 +139,6 @@ QString TextAutoGenerateTextPlugin::currentModel() const
 void TextAutoGenerateTextPlugin::setCurrentModel(const QString &newCurrentModel)
 {
     d->currentModel = newCurrentModel;
-}
-
-void TextAutoGenerateTextPlugin::setManager(TextAutoGenerateManager *manager)
-{
-    d->manager = manager;
 }
 
 TextAutoGenerateManager *TextAutoGenerateTextPlugin::manager() const

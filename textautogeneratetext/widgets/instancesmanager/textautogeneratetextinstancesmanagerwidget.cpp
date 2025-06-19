@@ -54,7 +54,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
         TextAutoGenerateAddInstanceDialog d(manager, this);
         if (d.exec()) {
             const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
-            qDebug() << " selectedInstanceType:" << server;
+            // qDebug() << " selectedInstanceType:" << server;
             auto instance = new TextAutoGenerateTextInstance;
             instance->setName(d.instanceName());
             instance->setPluginName(server.pluginName);
@@ -65,7 +65,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             if (!client) {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
             } else {
-                auto plugin = client->createTextAutoGeneratePlugin(server.identifier);
+                auto plugin = client->createTextAutoGeneratePlugin(mManager, server.identifier);
                 instance->setPlugin(plugin);
                 mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
             }
@@ -77,12 +77,11 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid);
-        if (plugin) {
-            plugin->showConfigureDialog(this);
-        }
+        Q_ASSERT(plugin);
+        plugin->showConfigureDialog(this);
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::markAsDefaultChanged, this, [this](const QByteArray &uuid) {
-        mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->setCurrentinstance(uuid);
+        mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->setCurrentInstance(uuid);
     });
     mInstancesManagerListView->setObjectName(QStringLiteral("mInstancesManagerListView"));
     mainLayout->addWidget(mInstancesManagerListView);

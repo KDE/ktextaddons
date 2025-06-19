@@ -9,7 +9,6 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
-#include "textautogenerateengineutil.h"
 #include "textautogeneratetextclient.h"
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetextinstancesmanager.h"
@@ -21,7 +20,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
     , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
-    , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this))
+    , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
 {
     connect(mTextAutoGenerateChatsModel,
             &QAbstractItemModel::dataChanged,
@@ -40,16 +39,16 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
 {
-    if (mTextAutoGeneratePlugin) {
-        mTextAutoGeneratePlugin->cancelRequest({});
-        mTextAutoGeneratePlugin->deleteLater();
+    if (textAutoGeneratePlugin()) {
+        textAutoGeneratePlugin()->cancelRequest({});
+        textAutoGeneratePlugin()->deleteLater();
     }
 }
 
 void TextAutoGenerateManager::askToAssistant(const QString &msg)
 {
-    if (mTextAutoGeneratePlugin) {
-        mTextAutoGeneratePlugin->askToAssistant(msg);
+    if (textAutoGeneratePlugin()) {
+        textAutoGeneratePlugin()->askToAssistant(msg);
     }
 }
 
@@ -168,17 +167,12 @@ void TextAutoGenerateManager::loadHistory()
 
 QString TextAutoGenerateManager::generateEngineDisplayName() const
 {
-    return textAutoGenerateEngineLoader()->generateDisplayName(mTextAutoGenerateClient);
-}
-
-TextAutoGenerateTextClient *TextAutoGenerateManager::textAutoGenerateClient() const
-{
-    return mTextAutoGenerateClient;
+    return textAutoGeneratePlugin() ? textAutoGeneratePlugin()->translatedPluginName() : QString();
 }
 
 TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() const
 {
-    return mTextAutoGeneratePlugin;
+    return mTextAutoGenerateTextInstancesManager->textAutoGeneratePlugin();
 }
 
 bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QModelIndex &index)
@@ -337,31 +331,16 @@ TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(
 
 void TextAutoGenerateManager::loadEngine()
 {
-    if (mTextAutoGeneratePlugin) {
-        disconnect(mTextAutoGeneratePlugin);
-        delete mTextAutoGeneratePlugin;
-        mTextAutoGeneratePlugin = nullptr;
+    if (textAutoGeneratePlugin()) {
+        disconnect(textAutoGeneratePlugin());
+        delete textAutoGeneratePlugin();
     }
     mTextAutoGenerateTextInstancesManager->loadInstances();
 
-    // TODO REMOVE IT
-    mTextAutoGenerateClient = textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
-    if (!mTextAutoGenerateClient) {
-        const QString fallBackEngineName = textAutoGenerateEngineLoader()->fallbackFirstEngine();
-        if (!fallBackEngineName.isEmpty()) {
-            mTextAutoGenerateClient = textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(fallBackEngineName);
-        }
-    }
-    if (mTextAutoGenerateClient) {
-        mTextAutoGeneratePlugin = mTextAutoGenerateClient->createTextAutoGeneratePlugin();
-        mTextAutoGeneratePlugin->setManager(this);
-        connect(mTextAutoGeneratePlugin, &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
-        connect(mTextAutoGeneratePlugin,
-                &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone,
-                this,
-                &TextAutoGenerateManager::pluginsInitializedDone);
-    } else {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to create client" << TextAutoGenerateEngineUtil::loadEngine();
-    }
+    connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
+    connect(textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone,
+            this,
+            &TextAutoGenerateManager::pluginsInitializedDone);
 }
 #include "moc_textautogeneratemanager.cpp"

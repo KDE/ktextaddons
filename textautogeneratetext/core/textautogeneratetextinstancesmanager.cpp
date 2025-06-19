@@ -6,16 +6,18 @@
 #include "textautogeneratetextinstancesmanager.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
+#include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(QObject *parent)
+TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextAutoGenerateManager *manager, QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
+    , mManager(manager)
 {
 }
 
@@ -29,6 +31,14 @@ QString TextAutoGenerateTextInstancesManager::configFileName() const
 bool TextAutoGenerateTextInstancesManager::isEmpty() const
 {
     return mTextAutoGenerateTextInstanceModel->isEmpty();
+}
+
+TextAutoGenerateTextPlugin *TextAutoGenerateTextInstancesManager::textAutoGeneratePlugin() const
+{
+    if (mTextAutoGenerateTextInstanceModel->isEmpty()) {
+        return nullptr;
+    }
+    return mTextAutoGenerateTextInstanceModel->currentPlugin();
 }
 
 void TextAutoGenerateTextInstancesManager::loadInstances()
@@ -55,7 +65,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to create client " << inst->pluginName();
             delete inst;
         } else {
-            auto plugin = client->createTextAutoGeneratePlugin(inst->pluginIdentifier());
+            auto plugin = client->createTextAutoGeneratePlugin(mManager, inst->pluginIdentifier());
             inst->setPlugin(plugin);
             lstInstances.append(inst);
         }
@@ -116,12 +126,12 @@ void TextAutoGenerateTextInstancesManager::addInstance(TextAutoGenerateTextInsta
 
 QByteArray TextAutoGenerateTextInstancesManager::currentInstance() const
 {
-    return mTextAutoGenerateTextInstanceModel->currentinstance();
+    return mTextAutoGenerateTextInstanceModel->currentInstance();
 }
 
 void TextAutoGenerateTextInstancesManager::setCurrentinstance(const QByteArray &newCurrentinstance)
 {
-    mTextAutoGenerateTextInstanceModel->setCurrentinstance(newCurrentinstance);
+    mTextAutoGenerateTextInstanceModel->setCurrentInstance(newCurrentinstance);
 }
 
 TextAutoGenerateEngineLoader *TextAutoGenerateTextInstancesManager::textAutoGenerateEngineLoader() const
