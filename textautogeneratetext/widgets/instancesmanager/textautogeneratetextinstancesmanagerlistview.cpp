@@ -43,13 +43,28 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
+        const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
+        if (!isDefault) {
+            auto markAsDefault = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Mark As Default"), &menu);
+            menu.addAction(markAsDefault);
+            menu.addSeparator();
+            connect(markAsDefault, &QAction::triggered, this, [index, this]() {
+                const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+                if (uuid.isEmpty()) {
+                    qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+                } else {
+                    Q_EMIT markAsDefaultChanged(uuid);
+                }
+            });
+        }
+
         auto editAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
             const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
             if (uuid.isEmpty()) {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
             } else {
-                Q_EMIT editInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray());
+                Q_EMIT editInstance(uuid);
             }
         });
         menu.addAction(editAction);
@@ -67,7 +82,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())
                     == KMessageBox::PrimaryAction) {
-                    Q_EMIT removeInstance(index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray());
+                    Q_EMIT removeInstance(uuid);
                 }
             }
         });

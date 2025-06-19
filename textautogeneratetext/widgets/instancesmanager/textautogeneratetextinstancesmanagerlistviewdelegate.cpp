@@ -39,11 +39,16 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
 
     painter->save();
 
+    const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
+    QFont f = option.font;
+    if (isDefault) {
+        f.setBold(true);
+    }
     // Set the painter font
-    painter->setFont(option.font);
+    painter->setFont(f);
 
     // Calculate the text rectangles
-    QFontMetrics fontMetrics(option.font);
+    QFontMetrics fontMetrics(f);
     const QRect rect = option.rect;
 
     // Draw the two lines
@@ -51,7 +56,6 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     const QRect line1Rect(rect.left() + 5, rect.top(), rect.width(), fontMetrics.height());
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
     if (!pluginName.isEmpty()) {
-        QFont f = option.font;
         f.setItalic(true);
         f.setPointSize(f.pointSize() - 2);
         painter->setFont(f);

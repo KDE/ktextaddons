@@ -6,9 +6,11 @@
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
+#include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "textautogenerateaddinstancedialog.h"
 #include "textautogeneratetextinstancesmanagerlistview.h"
+#include "textautogeneratetextwidget_debug.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -53,12 +55,20 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
         if (d.exec()) {
             const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
             qDebug() << " selectedInstanceType:" << server;
-            TextAutoGenerateTextInstance *instance = new TextAutoGenerateTextInstance;
+            auto instance = new TextAutoGenerateTextInstance;
             instance->setName(d.instanceName());
-            instance->setPluginName(server.localizedName);
-            instance->setPluginIdentifier(server.pluginName);
-            // TODO generate unique add identifier
-            mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
+            instance->setPluginName(server.pluginName);
+            instance->setPluginIdentifier(server.identifier);
+            instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+            instance->setEnabled(true);
+            auto client = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(server.pluginName);
+            if (!client) {
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
+            } else {
+                auto plugin = client->createTextAutoGeneratePlugin(server.identifier);
+                instance->setPlugin(plugin);
+                mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
+            }
         }
     });
 
@@ -70,6 +80,9 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
         if (plugin) {
             plugin->showConfigureDialog(this);
         }
+    });
+    connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::markAsDefaultChanged, this, [this](const QByteArray &uuid) {
+        mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->setCurrentinstance(uuid);
     });
     mInstancesManagerListView->setObjectName(QStringLiteral("mInstancesManagerListView"));
     mainLayout->addWidget(mInstancesManagerListView);
