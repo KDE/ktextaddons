@@ -72,7 +72,7 @@ void TextAutoGenerateEngineLoader::loadPlugin(const QString &pluginPath)
     d->autogenerateTextClients.insert(client->name(), client);
 }
 
-TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::createTextAutoGenerateTextClient(const QString &clientName)
+TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::searchTextAutoGenerateTextClient(const QString &clientName)
 {
     auto clientsItr = d->autogenerateTextClients.constFind(clientName);
     if (clientsItr == d->autogenerateTextClients.constEnd()) {

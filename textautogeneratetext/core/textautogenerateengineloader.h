@@ -24,7 +24,7 @@ public:
     explicit TextAutoGenerateEngineLoader(QObject *parent = nullptr);
     ~TextAutoGenerateEngineLoader() override;
 
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *createTextAutoGenerateTextClient(const QString &clientName);
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient *searchTextAutoGenerateTextClient(const QString &clientName);
 
     [[nodiscard]] bool showConfigureDialog(const QString &clientName, QWidget *parentWidget);
 
