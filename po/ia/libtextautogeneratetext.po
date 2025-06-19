@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-15 00:41+0000\n"
+"POT-Creation-Date: 2025-06-19 00:41+0000\n"
 "PO-Revision-Date: 2025-05-28 18:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -214,7 +214,6 @@ msgid "Base:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
@@ -1624,18 +1623,25 @@ msgctxt "@title:window"
 msgid "Add Instance"
 msgstr ""
 
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr ""
+
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
 #, kde-format
+msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:44
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:50
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove as Favorite"
@@ -1643,7 +1649,20 @@ msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Remove como favorito"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:39
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:65
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this discussion?"
+msgid "Do you want to this instance?"
+msgstr "Tu vole remover iste discussion?"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/menu/textautogeneratemenulistview.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Remove"
+msgstr "Remove"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:41
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -1651,7 +1670,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Cerca..."
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -1692,12 +1711,6 @@ msgstr "Remove…"
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "Tu vole remover lo?"
-
-#: widgets/menu/textautogeneratemenulistview.cpp:61
-#, kde-format
-msgctxt "@title"
-msgid "Remove"
-msgstr "Remove"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
