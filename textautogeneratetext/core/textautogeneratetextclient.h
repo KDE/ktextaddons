@@ -46,7 +46,7 @@ public:
 
     [[nodiscard]] virtual QString translatedName() const = 0;
 
-    virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() = 0;
+    virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(const QString &serverIdentifier = {}) = 0;
 
     [[nodiscard]] virtual bool showConfigureDialog(QWidget *parentWidget); // TODO remove it
 

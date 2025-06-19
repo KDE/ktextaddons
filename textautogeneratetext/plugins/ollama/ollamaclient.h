@@ -19,7 +19,7 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] QString translatedName() const override;
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin() override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(const QString &serverIdentifier = {}) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override; // TODO remove it
     [[nodiscard]] QString modelName() const override; // TODO remove it

@@ -6,6 +6,7 @@
 #include "textautogeneratetextinstancesmanager.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
+#include "textautogeneratetextcore_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>
@@ -20,24 +21,44 @@ TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(QObje
 
 TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager() = default;
 
+QString TextAutoGenerateTextInstancesManager::configFileName() const
+{
+    return QStringLiteral("autogeneratetextinstances");
+}
+
+bool TextAutoGenerateTextInstancesManager::isEmpty() const
+{
+    return mTextAutoGenerateTextInstanceModel->isEmpty();
+}
+
 void TextAutoGenerateTextInstancesManager::loadInstances()
 {
-    auto config = new KConfig(QStringLiteral("autogeneratetext"));
+    mTextAutoGenerateEngineLoader->loadPlugins();
+    auto config = new KConfig(configFileName());
     const QStringList instances = groupList(config);
     if (instances.isEmpty()) {
         return; // nothing to be done...
     }
 
     KConfigGroup configGeneralGroup(config, QStringLiteral("General"));
-    mCurrentinstance = configGeneralGroup.readEntry("currentInstance", QByteArray());
+    setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 
     QList<TextAutoGenerateTextInstance *> lstInstances;
     const auto instanceList = groupList(config);
     for (const auto &group : instanceList) {
         KConfigGroup configGroup(config, group);
-        TextAutoGenerateTextInstance *inst = new TextAutoGenerateTextInstance;
+        auto inst = new TextAutoGenerateTextInstance;
         inst->load(configGroup);
-        lstInstances.append(inst);
+
+        auto client = mTextAutoGenerateEngineLoader->searchTextAutoGenerateTextClient(inst->pluginName());
+        if (!client) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to create client " << inst->pluginName();
+            delete inst;
+        } else {
+            auto plugin = client->createTextAutoGeneratePlugin(inst->pluginIdentifier());
+            inst->setPlugin(plugin);
+            lstInstances.append(inst);
+        }
     }
     setInstances(lstInstances);
 }
@@ -50,10 +71,10 @@ QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) con
 
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
-    auto config = new KConfig(QStringLiteral("autogeneratetext"));
+    auto config = new KConfig(configFileName());
 
     KConfigGroup configGeneralGroup(config, QStringLiteral("General"));
-    configGeneralGroup.writeEntry("currentInstance", mCurrentinstance);
+    configGeneralGroup.writeEntry("currentInstance", currentInstance());
 
     const auto instanceList = groupList(config);
     for (const auto &group : instanceList) {
@@ -95,12 +116,12 @@ void TextAutoGenerateTextInstancesManager::addInstance(TextAutoGenerateTextInsta
 
 QByteArray TextAutoGenerateTextInstancesManager::currentInstance() const
 {
-    return mCurrentinstance;
+    return mTextAutoGenerateTextInstanceModel->currentinstance();
 }
 
 void TextAutoGenerateTextInstancesManager::setCurrentinstance(const QByteArray &newCurrentinstance)
 {
-    mCurrentinstance = newCurrentinstance;
+    mTextAutoGenerateTextInstanceModel->setCurrentinstance(newCurrentinstance);
 }
 
 TextAutoGenerateEngineLoader *TextAutoGenerateTextInstancesManager::textAutoGenerateEngineLoader() const

@@ -94,6 +94,6 @@ install(
     DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/
 )
 
-# if(BUILD_TESTING)
-#     add_subdirectory(autotests)
-# endif()
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()

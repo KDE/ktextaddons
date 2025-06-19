@@ -22,4 +22,5 @@ public:
 
     [[nodiscard]] QString pluginName(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers(const QString &pluginName) const;
+    [[nodiscard]] GenericNetworkManager::PluginNetworkType pluginNetworkTypeFromString(const QString &str) const;
 };

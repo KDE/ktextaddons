@@ -337,20 +337,19 @@ TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(
 
 void TextAutoGenerateManager::loadEngine()
 {
-    mTextAutoGenerateTextInstancesManager->loadInstances();
-
     if (mTextAutoGeneratePlugin) {
         disconnect(mTextAutoGeneratePlugin);
         delete mTextAutoGeneratePlugin;
         mTextAutoGeneratePlugin = nullptr;
     }
-    textAutoGenerateEngineLoader()->loadPlugins();
+    mTextAutoGenerateTextInstancesManager->loadInstances();
 
-    mTextAutoGenerateClient = textAutoGenerateEngineLoader()->createTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
+    // TODO REMOVE IT
+    mTextAutoGenerateClient = textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(TextAutoGenerateEngineUtil::loadEngine());
     if (!mTextAutoGenerateClient) {
         const QString fallBackEngineName = textAutoGenerateEngineLoader()->fallbackFirstEngine();
         if (!fallBackEngineName.isEmpty()) {
-            mTextAutoGenerateClient = textAutoGenerateEngineLoader()->createTextAutoGenerateTextClient(fallBackEngineName);
+            mTextAutoGenerateClient = textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(fallBackEngineName);
         }
     }
     if (mTextAutoGenerateClient) {

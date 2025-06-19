@@ -37,9 +37,11 @@ public:
 
     [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
 
+    [[nodiscard]] QString configFileName() const;
+    [[nodiscard]] bool isEmpty() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList groupList(KConfig *config) const;
-    QByteArray mCurrentinstance;
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
 };

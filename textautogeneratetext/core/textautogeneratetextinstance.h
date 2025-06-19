@@ -51,7 +51,6 @@ private:
     QByteArray mInstanceUuid;
     TextAutoGenerateText::TextAutoGenerateTextPlugin *mPlugin = nullptr;
     bool mEnabled = true;
-    // TODO plugin settings
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextInstance, Q_RELOCATABLE_TYPE);

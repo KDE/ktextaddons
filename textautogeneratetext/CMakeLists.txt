@@ -155,6 +155,8 @@ target_sources(
 target_sources(
     KF6TextAutoGenerateText
     PRIVATE
+        widgets/textautogeneratetextmodelcombobox.h
+        widgets/textautogeneratetextmodelcombobox.cpp
         widgets/textautogenerateconfigurewidget.h
         widgets/textautogenerateconfigurewidget.cpp
         widgets/textautogeneratestackwidget.h

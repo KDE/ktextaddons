@@ -28,7 +28,7 @@ QString GenericNetworkClient::translatedName() const
     return i18n("Generic");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin()
+TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin(const QString &serverIdentifier)
 {
     auto plugin = new GenericNetworkPlugin(this);
     return plugin;

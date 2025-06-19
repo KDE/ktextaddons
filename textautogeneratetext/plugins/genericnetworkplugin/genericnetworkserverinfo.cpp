@@ -92,6 +92,18 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
     return {};
 }
 
+GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetworkTypeFromString(const QString &str) const
+{
+    if (str == QLatin1StringView("mistralai")) {
+        return GenericNetworkManager::PluginNetworkType::MistralAI;
+    } else if (str == QLatin1StringView("openai")) {
+        return GenericNetworkManager::PluginNetworkType::OpenAI;
+    } else {
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
+        return GenericNetworkManager::PluginNetworkType::Unknown;
+    }
+}
+
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkServerInfo::supportedServers(const QString &name) const
 {
     QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> listInfo;

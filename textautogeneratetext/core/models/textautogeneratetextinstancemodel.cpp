@@ -44,6 +44,10 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return instance->pluginIdentifier();
     case InstanceRoles::Plugin:
         return QVariant::fromValue(instance->plugin());
+    case InstanceRoles::Enabled:
+        return instance->enabled();
+    case InstanceRoles::IsDefault:
+        return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance);
     }
     return {};
 }
@@ -59,6 +63,25 @@ void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGen
     qDeleteAll(mTextInstances);
     mTextInstances = newTextInstances;
     endResetModel();
+}
+
+bool TextAutoGenerateTextInstanceModel::isEmpty() const
+{
+    return mTextInstances.isEmpty();
+}
+
+QByteArray TextAutoGenerateTextInstanceModel::currentinstance() const
+{
+    return mCurrentinstance;
+}
+
+void TextAutoGenerateTextInstanceModel::setCurrentinstance(const QByteArray &newCurrentinstance)
+{
+    if (mCurrentinstance != newCurrentinstance) {
+        beginResetModel();
+        mCurrentinstance = newCurrentinstance;
+        endResetModel();
+    }
 }
 
 void TextAutoGenerateTextInstanceModel::addTextInstances(TextAutoGenerateTextInstance *instance)

@@ -91,8 +91,8 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
-    TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr;
-    TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr;
+    TextAutoGenerateTextClient *mTextAutoGenerateClient = nullptr; // TODO REMOVE IT
+    TextAutoGenerateTextPlugin *mTextAutoGeneratePlugin = nullptr; // TODO REMOVE IT
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     QByteArray mCurrentChatId;
