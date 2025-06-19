@@ -32,7 +32,7 @@ public:
     void setPluginIdentifier(const QString &newPluginIdentifier);
 
     void load(const KConfigGroup &config);
-    void save();
+    void save(KConfigGroup &config);
 
     [[nodiscard]] QString currentModel() const;
     void setCurrentModel(const QString &newCurrentModel);

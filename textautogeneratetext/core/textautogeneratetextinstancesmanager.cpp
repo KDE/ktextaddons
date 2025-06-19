@@ -49,8 +49,10 @@ QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) con
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
     const auto instanceList = instances();
-    for (const auto inst : instanceList) {
-        inst->save();
+    auto config = new KConfig(QStringLiteral("autogeneratetext"));
+    for (int i = 0; i < instanceList.count(); ++i) {
+        KConfigGroup group = config->group(QStringLiteral("Instance #%1").arg(i));
+        // TODO instanceList.at(i)->save(group);
     }
 }
 

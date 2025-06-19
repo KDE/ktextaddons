@@ -39,7 +39,7 @@ void OllamaPlugin::load(const KConfigGroup &config)
     // TODO
 }
 
-void OllamaPlugin::save()
+void OllamaPlugin::save(KConfigGroup &config)
 {
     // TODO
 }

@@ -35,7 +35,7 @@ public:
 
     virtual void showConfigureDialog(QWidget *parentWidget);
 
-    [[nodiscard]] virtual bool loadSettings() = 0;
+    [[nodiscard]] virtual bool loadSettings() = 0; // TODO remove it
 
     virtual void clear() = 0;
 
@@ -61,7 +61,7 @@ public:
     virtual void askToAssistant(const QString &msg) = 0;
 
     virtual void load(const KConfigGroup &config);
-    virtual void save();
+    virtual void save(KConfigGroup &config);
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);

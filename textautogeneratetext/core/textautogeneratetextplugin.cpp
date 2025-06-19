@@ -39,8 +39,9 @@ void TextAutoGenerateTextPlugin::load(const KConfigGroup &config)
     // reimpl
 }
 
-void TextAutoGenerateTextPlugin::save()
+void TextAutoGenerateTextPlugin::save(KConfigGroup &config)
 {
+    Q_UNUSED(config);
     // reimpl
 }
 

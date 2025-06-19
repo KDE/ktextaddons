@@ -22,7 +22,7 @@ void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
 }
 
-void GenericNetworkPlugin::save()
+void GenericNetworkPlugin::save(KConfigGroup &config)
 {
 }
 

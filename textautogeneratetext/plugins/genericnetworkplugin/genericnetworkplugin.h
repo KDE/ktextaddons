@@ -30,7 +30,7 @@ public:
     void showConfigureDialog(QWidget *parentWidget) override;
 
     void load(const KConfigGroup &config) override;
-    void save() override;
+    void save(KConfigGroup &config) override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;

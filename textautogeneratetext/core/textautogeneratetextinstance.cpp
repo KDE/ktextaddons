@@ -67,9 +67,15 @@ void TextAutoGenerateTextInstance::load(const KConfigGroup &config)
     mPlugin->load(config);
 }
 
-void TextAutoGenerateTextInstance::save()
+void TextAutoGenerateTextInstance::save(KConfigGroup &config)
 {
-    // TODO
+    config.writeEntry("enabled", mEnabled);
+    config.writeEntry("name", mName);
+    config.writeEntry("pluginName", mPluginName);
+    config.writeEntry("pluginIdentifier", mPluginIdentifier);
+    config.writeEntry("currentModel", mCurrentModel);
+    config.writeEntry("uuid", mInstanceUuid);
+    mPlugin->save(config);
 }
 
 QString TextAutoGenerateTextInstance::currentModel() const
