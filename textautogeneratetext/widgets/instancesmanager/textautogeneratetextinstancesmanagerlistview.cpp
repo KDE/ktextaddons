@@ -62,7 +62,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
             } else {
                 // TODO add instance name ?
                 if (KMessageBox::warningTwoActions(this,
-                                                   i18n("Do you want to this instance?"),
+                                                   i18n("Do you want to remove this instance?"),
                                                    i18nc("@title", "Remove"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())
