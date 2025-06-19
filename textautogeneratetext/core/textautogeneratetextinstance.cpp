@@ -85,6 +85,16 @@ void TextAutoGenerateTextInstance::setPlugin(TextAutoGenerateText::TextAutoGener
     mPlugin = newPlugin;
 }
 
+bool TextAutoGenerateTextInstance::enabled() const
+{
+    return mEnabled;
+}
+
+void TextAutoGenerateTextInstance::setEnabled(bool newEnabled)
+{
+    mEnabled = newEnabled;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t)
 {
     d.space() << "name:" << t.name();
@@ -92,5 +102,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInst
     d.space() << "pluginIdentifier:" << t.pluginIdentifier();
     d.space() << "currentModel:" << t.currentModel();
     d.space() << "instanceUuid:" << t.instanceUuid();
+    d.space() << "enabled:" << t.enabled();
     return d;
 }

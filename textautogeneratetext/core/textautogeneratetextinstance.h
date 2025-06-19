@@ -39,6 +39,9 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *plugin() const;
     void setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin);
 
+    [[nodiscard]] bool enabled() const;
+    void setEnabled(bool newEnabled);
+
 private:
     QString mName;
     QString mPluginName;
@@ -46,6 +49,7 @@ private:
     QString mCurrentModel;
     QByteArray mInstanceUuid;
     TextAutoGenerateText::TextAutoGenerateTextPlugin *mPlugin = nullptr;
+    bool mEnabled = true;
     // TODO plugin settings
 };
 }
