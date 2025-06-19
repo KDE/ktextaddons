@@ -5,6 +5,7 @@
 */
 
 #include "genericnetworkclient.h"
+#include "core/textautogeneratemanager.h"
 #include "genericnetworkplugin.h"
 #include "genericnetworkserverinfo.h"
 #include <KLocalizedString>
@@ -28,21 +29,16 @@ QString GenericNetworkClient::translatedName() const
     return i18n("Generic");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin(const QString &serverIdentifier)
+TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                                     const QString &serverIdentifier)
 {
-    auto plugin = new GenericNetworkPlugin(this);
+    auto plugin = new GenericNetworkPlugin(serverIdentifier, manager, this);
     return plugin;
 }
 
 TextAutoGenerateText::TextAutoGenerateTextClient::EngineType GenericNetworkClient::engineType() const
 {
     return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network;
-}
-
-bool GenericNetworkClient::showConfigureDialog(QWidget *parentWidget)
-{
-    Q_UNUSED(parentWidget);
-    return true;
 }
 
 QString GenericNetworkClient::modelName() const

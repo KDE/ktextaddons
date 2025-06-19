@@ -42,6 +42,8 @@ public:
     [[nodiscard]] QString apiKey() const;
     void setApiKey(const QString &newApiKey);
 
+    [[nodiscard]] QString translatedPluginName() const;
+
 private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
     QString mApiKey;

@@ -7,13 +7,16 @@
 #include "genericnetworkplugin.h"
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkmanager.h"
+#include "genericnetworkserverinfo.h"
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
-GenericNetworkPlugin::GenericNetworkPlugin(QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateTextPlugin{parent}
-    , mManager(new GenericNetworkManager(this))
+GenericNetworkPlugin::GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
+    : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
+    , mGenericManager(new GenericNetworkManager(this))
 {
+    const GenericNetworkServerInfo info;
+    mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(serverIdentifier));
 }
 
 GenericNetworkPlugin::~GenericNetworkPlugin() = default;
@@ -24,6 +27,11 @@ void GenericNetworkPlugin::load(const KConfigGroup &config)
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
 {
+}
+
+QStringList GenericNetworkPlugin::models() const
+{
+    return {};
 }
 
 bool GenericNetworkPlugin::loadSettings()
@@ -84,9 +92,14 @@ QString GenericNetworkPlugin::name()
     return "mistral"_L1;
 }
 
+QString GenericNetworkPlugin::translatedPluginName() const
+{
+    return mGenericManager->translatedPluginName();
+}
+
 void GenericNetworkPlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    GenericNetworkConfigureDialog d(mManager, parentWidget);
+    GenericNetworkConfigureDialog d(mGenericManager, parentWidget);
     d.exec();
 }
 

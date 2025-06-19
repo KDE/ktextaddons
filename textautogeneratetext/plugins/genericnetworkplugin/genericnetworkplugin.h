@@ -16,7 +16,7 @@ class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPl
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkPlugin(QObject *parent = nullptr);
+    explicit GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~GenericNetworkPlugin() override;
 
     [[nodiscard]] bool loadSettings() override;
@@ -26,11 +26,14 @@ public:
 
     [[nodiscard]] QString engineName() const override;
     [[nodiscard]] static QString name();
+    [[nodiscard]] QString translatedPluginName() const override;
 
     void showConfigureDialog(QWidget *parentWidget) override;
 
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
+
+    [[nodiscard]] QStringList models() const override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
@@ -39,5 +42,5 @@ protected:
 
 private:
     void slotApiKeyRead(QKeychain::Job *baseJob);
-    GenericNetworkManager *const mManager;
+    GenericNetworkManager *const mGenericManager;
 };

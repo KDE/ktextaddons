@@ -18,9 +18,9 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] QString translatedName() const override;
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(const QString &serverIdentifier = {}) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                                 const QString &serverIdentifier) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
-    [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override; // TODO remove it
     [[nodiscard]] QString modelName() const override; // TODO remove it
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const override;
 };

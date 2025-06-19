@@ -59,6 +59,12 @@ QString GenericNetworkManager::pluginName() const
     return info.pluginName(mPluginNetworkType);
 }
 
+QString GenericNetworkManager::translatedPluginName() const
+{
+    const GenericNetworkServerInfo info;
+    return info.translatedName(mPluginNetworkType);
+}
+
 QString GenericNetworkManager::apiKey() const
 {
     return mApiKey;
