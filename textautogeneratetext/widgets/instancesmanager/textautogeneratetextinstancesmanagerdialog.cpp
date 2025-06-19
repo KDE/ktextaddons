@@ -63,3 +63,5 @@ void TextAutoGenerateTextInstancesManagerDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myTextAutoGenerateTextInstancesManagerDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
 }
+
+#include "moc_textautogeneratetextinstancesmanagerdialog.cpp"
