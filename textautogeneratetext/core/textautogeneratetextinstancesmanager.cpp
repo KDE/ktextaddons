@@ -6,6 +6,9 @@
 #include "textautogeneratetextinstancesmanager.h"
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
+#include <KConfig>
+#include <KConfigGroup>
+#include <QRegularExpression>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(QObject *parent)
@@ -19,7 +22,28 @@ TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager() = 
 
 void TextAutoGenerateTextInstancesManager::loadInstances()
 {
+    auto config = new KConfig(QStringLiteral("autogeneratetext"));
+    const QStringList instances = groupList(config);
+    if (instances.isEmpty()) {
+        return; // nothing to be done...
+    }
+
+    /*
+        QStringList::const_iterator groupEnd = instances.constEnd();
+        for (QStringList::const_iterator group = instances.constBegin(); group != groupEnd; ++group) {
+            KConfigGroup configGroup(config, *group);
+            Identity identity;
+            identity.readConfig(configGroup);
+            mIdentities << identity;
+        }
+      */
     // TODO
+}
+
+QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) const
+{
+    static const QRegularExpression regExpr(QStringLiteral("^Instance #\\d+$"));
+    return config->groupList().filter(regExpr);
 }
 
 void TextAutoGenerateTextInstancesManager::saveInstances()

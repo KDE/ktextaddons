@@ -8,7 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextInstance>
-
+class KConfig;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextInstanceModel;
@@ -38,6 +38,7 @@ public:
     [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList groupList(KConfig *config) const;
     QByteArray mCurrentinstance;
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
