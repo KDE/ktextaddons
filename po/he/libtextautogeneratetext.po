@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-16 16:32+0300\n"
+"PO-Revision-Date: 2025-06-18 16:48+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1145,18 +1145,20 @@ msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
 "information extraction, based on Phi-3."
 msgstr ""
+"מודל בגודל 3.8B שכוון לפי ערכת נתונים מלאכותית באיכות גבוהה לחילוץ נתונים, "
+"מבוסס על Phi-3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
 #, kde-format
 msgid ""
 "Cohere For AI's language models trained to perform well across 23 different "
 "languages."
-msgstr ""
+msgstr "מודלי השפה של Cohere For AI אומנו כדי להתמודד היטב מול 23 שפות שונות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:192
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
-msgstr ""
+msgstr "DBRX הוא LLM/מש״ג פתוח לשימוש כללי שנוצר על ידי Databricks."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:194
 #, kde-format
@@ -1164,11 +1166,13 @@ msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
 "International Digital Commerce Group (AIDC-AI)."
 msgstr ""
+"מודל נימוק גדול ופתוח לפתרונות מהעולם האמיתי מבית Alibaba International "
+"Digital Commerce Group (AIDC-AI)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
-msgstr ""
+msgstr "מודל הטמעה מבית BAAI למיפוי טקסטים לווקטורים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
 #, kde-format
@@ -1176,6 +1180,8 @@ msgid ""
 "An open weights function calling model based on Llama 3, competitive with "
 "GPT-4o function calling capabilities."
 msgstr ""
+"מודל קריאת לפונקציית משקלות פתוח שמבוסס על Llama 3, מתחרה ביכולות הקריאה "
+"לפונקציות של GPT-4o."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:198
 #, kde-format
