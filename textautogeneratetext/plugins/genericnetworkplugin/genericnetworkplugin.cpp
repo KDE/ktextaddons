@@ -8,25 +8,34 @@
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkmanager.h"
 #include "genericnetworkserverinfo.h"
+#include "genericnetworksettings.h"
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkPlugin::GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
+    , mSettings(new GenericNetworkSettings)
     , mGenericManager(new GenericNetworkManager(this))
 {
     const GenericNetworkServerInfo info;
     mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(serverIdentifier));
 }
 
-GenericNetworkPlugin::~GenericNetworkPlugin() = default;
+GenericNetworkPlugin::~GenericNetworkPlugin()
+{
+    delete mSettings;
+}
 
 void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
+    mSettings->setDisplayName(config.readEntry(QStringLiteral("Name")));
+    mSettings->setCurrentModel(config.readEntry(QStringLiteral("CurrentModel")));
 }
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
 {
+    config.writeEntry(QStringLiteral("Name"), mSettings->displayName());
+    config.writeEntry(QStringLiteral("CurrentModel"), mSettings->currentModel());
 }
 
 QStringList GenericNetworkPlugin::models() const
@@ -76,9 +85,10 @@ void GenericNetworkPlugin::slotApiKeyRead(QKeychain::Job *baseJob)
     */
 }
 
-QString GenericNetworkPlugin::name()
+QString GenericNetworkPlugin::name() const
 {
-    return "mistral"_L1;
+    const GenericNetworkServerInfo info;
+    return info.pluginName(mGenericManager->pluginNetworkType());
 }
 
 QString GenericNetworkPlugin::translatedPluginName() const
@@ -92,6 +102,21 @@ void GenericNetworkPlugin::showConfigureDialog(QWidget *parentWidget)
     if (d.exec()) {
         Q_EMIT configChanged();
     }
+}
+
+QString GenericNetworkPlugin::displayName() const
+{
+    return mSettings->displayName();
+}
+
+void GenericNetworkPlugin::setDisplayName(const QString &newName)
+{
+    mSettings->setDisplayName(newName);
+}
+
+QString GenericNetworkPlugin::currentModel() const
+{
+    return mSettings->currentModel();
 }
 
 #include "moc_genericnetworkplugin.cpp"

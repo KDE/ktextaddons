@@ -72,6 +72,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
             lstInstances.append(inst);
         }
     }
+    qDebug() << " lstInstances " << lstInstances;
     setInstances(lstInstances);
 }
 

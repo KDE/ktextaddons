@@ -25,6 +25,7 @@ public:
 
 private:
     void fillModels();
+    QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     QPlainTextEdit *const mPrompt;
     OllamaComboBoxWidget *const mModelComboBoxWidget;

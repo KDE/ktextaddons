@@ -26,6 +26,24 @@ int TextAutoGenerateTextInstanceModel::rowCount(const QModelIndex &parent) const
     return mTextInstances.count();
 }
 
+bool TextAutoGenerateTextInstanceModel::setData(const QModelIndex &idx, const QVariant &value, int role)
+{
+    if (!idx.isValid()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "ERROR: invalid index";
+        return false;
+    }
+    const int id = idx.row();
+    const auto &instance = mTextInstances[id];
+    switch (role) {
+    case Qt::CheckStateRole:
+    case InstanceRoles::Enabled:
+        instance->setEnabled(value.toBool());
+        Q_EMIT dataChanged(idx, idx, {InstanceRoles::Enabled});
+        return true;
+    }
+    return QAbstractListModel::setData(idx, value, role);
+}
+
 QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() < 0 || index.row() >= mTextInstances.count()) {
@@ -35,7 +53,7 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
     switch (role) {
     case Qt::DisplayRole:
     case InstanceRoles::Name:
-        return instance->name();
+        return instance->displayName();
     case InstanceRoles::PluginName:
         return instance->pluginName();
     case InstanceRoles::Uuid:
@@ -44,6 +62,8 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return instance->pluginIdentifier();
     case InstanceRoles::Plugin:
         return QVariant::fromValue(instance->plugin());
+    case Qt::CheckStateRole:
+        return instance->enabled() ? Qt::Checked : Qt::Unchecked;
     case InstanceRoles::Enabled:
         return instance->enabled();
     case InstanceRoles::IsDefault:
@@ -88,8 +108,12 @@ void TextAutoGenerateTextInstanceModel::setCurrentInstance(const QByteArray &new
 
 TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() const
 {
-    if (mCurrentinstance.isEmpty() || isEmpty()) {
+    if (isEmpty()) {
         return nullptr;
+    }
+    if (mCurrentinstance.isEmpty()) {
+        // Fall back to first instance
+        return mTextInstances.constFirst()->plugin();
     }
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == mCurrentinstance;
@@ -134,6 +158,14 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(cons
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Instance not found for uuid:" << uuid;
     return nullptr;
+}
+
+Qt::ItemFlags TextAutoGenerateTextInstanceModel::flags(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return Qt::NoItemFlags;
+
+    return Qt::ItemIsUserCheckable | QAbstractListModel::flags(index);
 }
 
 #include "moc_textautogeneratetextinstancemodel.cpp"

@@ -17,8 +17,7 @@ public:
     TextAutoGenerateTextInstance();
     ~TextAutoGenerateTextInstance();
 
-    [[nodiscard]] QString name() const;
-    void setName(const QString &newName);
+    [[nodiscard]] QString displayName() const;
 
     [[nodiscard]] QString pluginName() const;
     void setPluginName(const QString &newPluginName);
@@ -44,7 +43,6 @@ public:
     void setEnabled(bool newEnabled);
 
 private:
-    QString mName;
     QString mPluginName;
     QString mPluginIdentifier;
     QString mCurrentModel;

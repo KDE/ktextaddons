@@ -29,7 +29,11 @@ public:
     [[nodiscard]] QString systemPrompt() const;
     void setSystemPrompt(const QString &newSystemPrompt);
 
+    [[nodiscard]] QString displayName() const;
+    void setDisplayName(const QString &newName);
+
 private:
+    QString mDisplayName;
     QUrl mServerUrl = QUrl(QStringLiteral("http://127.0.0.1:11434"));
     QString mSystemPrompt;
     QString mCurrentModel;

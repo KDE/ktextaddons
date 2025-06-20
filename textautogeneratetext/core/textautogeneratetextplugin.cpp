@@ -25,7 +25,6 @@ public:
     }
     bool hasError = false;
     bool isReady = false;
-    QString currentModel;
     TextAutoGenerateManager *const manager;
 };
 
@@ -129,16 +128,6 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }
-}
-
-QString TextAutoGenerateTextPlugin::currentModel() const
-{
-    return d->currentModel;
-}
-
-void TextAutoGenerateTextPlugin::setCurrentModel(const QString &newCurrentModel)
-{
-    d->currentModel = newCurrentModel;
 }
 
 TextAutoGenerateManager *TextAutoGenerateTextPlugin::manager() const

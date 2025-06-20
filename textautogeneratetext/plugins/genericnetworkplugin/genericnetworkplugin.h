@@ -11,6 +11,7 @@ namespace QKeychain
 {
 class Job;
 }
+class GenericNetworkSettings;
 class GenericNetworkManager;
 class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
@@ -24,7 +25,7 @@ public:
     void setPrompt(const QString &text) override;
 
     [[nodiscard]] QString engineName() const override;
-    [[nodiscard]] static QString name();
+    [[nodiscard]] QString name() const;
     [[nodiscard]] QString translatedPluginName() const override;
 
     void showConfigureDialog(QWidget *parentWidget) override;
@@ -34,6 +35,11 @@ public:
 
     [[nodiscard]] QStringList models() const override;
 
+    [[nodiscard]] QString displayName() const override;
+    void setDisplayName(const QString &newName) override;
+
+    [[nodiscard]] QString currentModel() const override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
@@ -41,5 +47,6 @@ protected:
 
 private:
     void slotApiKeyRead(QKeychain::Job *baseJob);
+    GenericNetworkSettings *const mSettings;
     GenericNetworkManager *const mGenericManager;
 };

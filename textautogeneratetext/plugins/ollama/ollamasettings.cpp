@@ -69,3 +69,13 @@ void OllamaSettings::setSystemPrompt(const QString &newSystemPrompt)
 {
     mSystemPrompt = newSystemPrompt;
 }
+
+QString OllamaSettings::displayName() const
+{
+    return mDisplayName;
+}
+
+void OllamaSettings::setDisplayName(const QString &newName)
+{
+    mDisplayName = newName;
+}

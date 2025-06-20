@@ -336,6 +336,11 @@ void TextAutoGenerateManager::loadEngine()
         delete textAutoGeneratePlugin();
     }
     mTextAutoGenerateTextInstancesManager->loadInstances();
+    if (mTextAutoGenerateTextInstancesManager->isEmpty()) {
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "We need to add instances";
+        Q_EMIT needToAddInstances();
+        return;
+    }
 
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
     connect(textAutoGeneratePlugin(),

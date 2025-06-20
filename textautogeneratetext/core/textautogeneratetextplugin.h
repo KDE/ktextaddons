@@ -52,8 +52,7 @@ public:
 
     [[nodiscard]] virtual QString engineName() const = 0;
 
-    [[nodiscard]] QString currentModel() const;
-    void setCurrentModel(const QString &newCurrentModel);
+    [[nodiscard]] virtual QString currentModel() const = 0;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
     virtual void askToAssistant(const QString &msg) = 0;
@@ -62,6 +61,9 @@ public:
     virtual void save(KConfigGroup &config);
 
     [[nodiscard]] virtual QStringList models() const = 0;
+
+    [[nodiscard]] virtual QString displayName() const = 0;
+    virtual void setDisplayName(const QString &newName) = 0;
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);

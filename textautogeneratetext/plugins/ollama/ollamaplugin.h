@@ -27,7 +27,6 @@ public:
 
     [[nodiscard]] QString engineName() const override;
 
-    [[nodiscard]] static QString name();
     [[nodiscard]] QString translatedPluginName() const override;
 
     void showConfigureDialog(QWidget *parentWidget) override;
@@ -36,6 +35,10 @@ public:
     void save(KConfigGroup &config) override;
 
     [[nodiscard]] QStringList models() const override;
+
+    [[nodiscard]] QString displayName() const override;
+    void setDisplayName(const QString &newName) override;
+    [[nodiscard]] QString currentModel() const override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;

@@ -19,6 +19,7 @@
 
 OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
+    , mName(new QLineEdit(this))
     , mServerUrl(new QLineEdit(this))
     , mPrompt(new QPlainTextEdit(this))
     , mModelComboBoxWidget(new OllamaComboBoxWidget(this))
@@ -35,6 +36,10 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mainLayout->addWidget(mMessageWidget);
     mMessageWidget->setVisible(false);
     mMessageWidget->setMessageType(KMessageWidget::MessageType::Error);
+
+    mName->setObjectName(QStringLiteral("mName"));
+    KLineEditEventHandler::catchReturnKey(mName);
+    mainLayout->addRow(i18n("Name:"), mName);
 
     mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
     KLineEditEventHandler::catchReturnKey(mServerUrl);
@@ -81,6 +86,7 @@ OllamaConfigureWidget::~OllamaConfigureWidget() = default;
 
 void OllamaConfigureWidget::loadSettings()
 {
+    mName->setText(mManager->ollamaSettings()->displayName());
     mServerUrl->setText(mManager->ollamaSettings()->serverUrl().toString());
     mPrompt->setPlainText(mManager->ollamaSettings()->systemPrompt());
     mModelComboBoxWidget->setCurrentModel(mManager->ollamaSettings()->currentModel());
@@ -90,6 +96,7 @@ void OllamaConfigureWidget::loadSettings()
 
 void OllamaConfigureWidget::saveSettings()
 {
+    mManager->ollamaSettings()->setDisplayName(mName->text());
     mManager->ollamaSettings()->setSystemPrompt(mPrompt->toPlainText());
     mManager->ollamaSettings()->setServerUrl(QUrl(mServerUrl->text()));
     mManager->ollamaSettings()->setCurrentModel(mModelComboBoxWidget->currentModel());

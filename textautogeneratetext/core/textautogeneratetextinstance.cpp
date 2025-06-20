@@ -11,14 +11,9 @@ TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance() = default;
 
-QString TextAutoGenerateTextInstance::name() const
+QString TextAutoGenerateTextInstance::displayName() const
 {
-    return mName;
-}
-
-void TextAutoGenerateTextInstance::setName(const QString &newName)
-{
-    mName = newName;
+    return mPlugin->displayName();
 }
 
 QString TextAutoGenerateTextInstance::pluginName() const
@@ -33,7 +28,7 @@ void TextAutoGenerateTextInstance::setPluginName(const QString &newPluginName)
 
 bool TextAutoGenerateTextInstance::isValid() const
 {
-    return !mName.isEmpty() && !mPluginName.isEmpty() && !mInstanceUuid.isEmpty() && !mPluginIdentifier.isEmpty();
+    return !mPluginName.isEmpty() && !mInstanceUuid.isEmpty() && !mPluginIdentifier.isEmpty();
 }
 
 QByteArray TextAutoGenerateTextInstance::instanceUuid() const
@@ -59,7 +54,6 @@ void TextAutoGenerateTextInstance::setPluginIdentifier(const QString &newPluginI
 void TextAutoGenerateTextInstance::load(const KConfigGroup &config)
 {
     mEnabled = config.readEntry("enabled", false);
-    mName = config.readEntry("name", QString());
     mPluginName = config.readEntry("pluginName", QString());
     mPluginIdentifier = config.readEntry("pluginIdentifier", QString());
     mCurrentModel = config.readEntry("currentModel", QString());
@@ -69,7 +63,6 @@ void TextAutoGenerateTextInstance::load(const KConfigGroup &config)
 void TextAutoGenerateTextInstance::save(KConfigGroup &config)
 {
     config.writeEntry("enabled", mEnabled);
-    config.writeEntry("name", mName);
     config.writeEntry("pluginName", mPluginName);
     config.writeEntry("pluginIdentifier", mPluginIdentifier);
     config.writeEntry("currentModel", mCurrentModel);
@@ -111,7 +104,6 @@ void TextAutoGenerateTextInstance::setEnabled(bool newEnabled)
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t)
 {
-    d.space() << "name:" << t.name();
     d.space() << "pluginName:" << t.pluginName();
     d.space() << "pluginIdentifier:" << t.pluginIdentifier();
     d.space() << "currentModel:" << t.currentModel();

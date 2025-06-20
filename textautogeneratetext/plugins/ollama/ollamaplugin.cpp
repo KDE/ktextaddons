@@ -36,6 +36,7 @@ OllamaPlugin::~OllamaPlugin()
 
 void OllamaPlugin::load(const KConfigGroup &config)
 {
+    mOllamaSettings->setDisplayName(config.readEntry(QStringLiteral("Name")));
     mOllamaSettings->setSeed(config.readEntry(QStringLiteral("Seed"), 0));
     if (config.hasKey(QStringLiteral("ServerUrl"))) {
         mOllamaSettings->setServerUrl(config.readEntry(QStringLiteral("ServerUrl"), QUrl()));
@@ -51,6 +52,7 @@ void OllamaPlugin::load(const KConfigGroup &config)
 
 void OllamaPlugin::save(KConfigGroup &config)
 {
+    config.writeEntry(QStringLiteral("Name"), mOllamaSettings->displayName());
     config.writeEntry(QStringLiteral("Seed"), mOllamaSettings->seed());
     config.writeEntry(QStringLiteral("ServerUrl"), mOllamaSettings->serverUrl());
     config.writeEntry(QStringLiteral("SystemPrompt"), mOllamaSettings->systemPrompt());
@@ -62,11 +64,6 @@ QStringList OllamaPlugin::models() const
 {
     // TODO
     return {};
-}
-
-QString OllamaPlugin::name()
-{
-    return "ollama"_L1;
 }
 
 QString OllamaPlugin::translatedPluginName() const
@@ -98,7 +95,7 @@ void OllamaPlugin::setPrompt(const QString &text)
 
 QString OllamaPlugin::engineName() const
 {
-    return name();
+    return "ollama"_L1;
 }
 
 void OllamaPlugin::cancelRequest(const QByteArray &uuid)
@@ -166,6 +163,21 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
 #endif
                                                        // Q_EMIT finished(message); // TODO add message as argument ???
                                                    })));
+}
+
+QString OllamaPlugin::displayName() const
+{
+    return mOllamaSettings->displayName();
+}
+
+void OllamaPlugin::setDisplayName(const QString &newName)
+{
+    mOllamaSettings->setDisplayName(newName);
+}
+
+QString OllamaPlugin::currentModel() const
+{
+    return mOllamaSettings->currentModel();
 }
 
 #include "moc_ollamaplugin.cpp"
