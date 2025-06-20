@@ -56,7 +56,6 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
             // qDebug() << " selectedInstanceType:" << server;
             auto instance = new TextAutoGenerateTextInstance;
-            instance->setName(d.instanceName());
             instance->setPluginName(server.pluginName);
             instance->setPluginIdentifier(server.identifier);
             instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
@@ -66,6 +65,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
             } else {
                 auto plugin = client->createTextAutoGeneratePlugin(mManager, server.identifier);
+                plugin->setDisplayName(d.instanceName());
                 instance->setPlugin(plugin);
                 mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
             }
