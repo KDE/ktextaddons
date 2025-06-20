@@ -7,7 +7,7 @@
 #include "textautogenerategenericnetwork_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
-
+class GenericNetworkSettings;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
@@ -16,6 +16,7 @@ public:
         Unknown = 0,
         MistralAI,
         OpenAI,
+        KlusterAI,
         LastElement,
     };
 
@@ -23,7 +24,7 @@ public:
         None = 0,
     };
 
-    explicit GenericNetworkManager(QObject *parent = nullptr);
+    explicit GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent = nullptr);
     ~GenericNetworkManager() override;
 
     void loadModels() override;
@@ -44,8 +45,12 @@ public:
 
     [[nodiscard]] QString translatedPluginName() const;
 
+    [[nodiscard]] GenericNetworkSettings *genericNetworkSettings() const;
+
 private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
     QString mApiKey;
+    GenericNetworkSettings *const mGenericNetworkSettings;
+
     // TODO limitation type
 };

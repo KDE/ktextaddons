@@ -6,9 +6,14 @@
 
 #include "textautogeneratestackwidget.h"
 #include "common/textautogeneratenotworkingwidget.h"
+#include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextinstancesmanager.h"
 #include "textautogeneratewidget.h"
+#include "widgets/common/textautogeneratenotinstancefoundwidget.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 
 #include <QStackedWidget>
+#include <QTimer>
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
@@ -16,7 +21,9 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))
     , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(manager, this))
+    , mTextAutoGenerateNotInstanceFoundWidget(new TextAutoGenerateNotInstanceFoundWidget(this))
     , mTextAutoGenerateWidget(new TextAutoGenerateWidget(manager, this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
@@ -25,6 +32,9 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
     mainLayout->addWidget(mStackedWidget);
     mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
+
+    mTextAutoGenerateNotInstanceFoundWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotInstanceFoundWidget"));
+    mStackedWidget->addWidget(mTextAutoGenerateNotInstanceFoundWidget);
 
     mTextAutoGenerateWidget->setObjectName(QStringLiteral("mTextAutoGenerateWidget"));
     mStackedWidget->addWidget(mTextAutoGenerateWidget);
@@ -39,9 +49,27 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
         setBrokenEngine(false, {});
     });
+    connect(mTextAutoGenerateWidget, &TextAutoGenerateWidget::needToAddInstances, this, &TextAutoGenerateStackWidget::slotNeedToAddInstances);
+    connect(mTextAutoGenerateNotInstanceFoundWidget, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested, this, [this]() {
+        TextAutoGenerateTextInstancesManagerDialog dlg(mManager, this);
+        if (dlg.exec()) {
+            if (mManager->textAutoGenerateTextInstancesManager()->isEmpty()) {
+                mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
+            } else {
+                mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
+            }
+        }
+    });
+
+    QTimer::singleShot(0, mTextAutoGenerateWidget, &TextAutoGenerateWidget::loadEngine);
 }
 
 TextAutoGenerateStackWidget::~TextAutoGenerateStackWidget() = default;
+
+void TextAutoGenerateStackWidget::slotNeedToAddInstances()
+{
+    mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
+}
 
 void TextAutoGenerateStackWidget::setBrokenEngine(bool state, const QString &errorMessage)
 {
@@ -52,6 +80,11 @@ void TextAutoGenerateStackWidget::setBrokenEngine(bool state, const QString &err
         mTextAutoGenerateNotWorkingWidget->clearMessage();
         mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
     }
+}
+
+void TextAutoGenerateStackWidget::slotSearchText()
+{
+    mTextAutoGenerateWidget->slotSearchText();
 }
 
 #include "moc_textautogeneratestackwidget.cpp"

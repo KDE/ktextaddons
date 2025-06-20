@@ -22,4 +22,12 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(QStringLiteral("openaisdfsdf")), GenericNetworkManager::PluginNetworkType::Unknown);
 }
 
+void GenericNetworkServerInfoTest::shouldCheckApiUrl()
+{
+    GenericNetworkServerInfo info;
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::MistralAI), QStringLiteral("https://chat.mistral.ai/"));
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OpenAI), QStringLiteral("https://api.openai.com/v1/"));
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::KlusterAI), QStringLiteral("https://api.kluster.ai/v1/"));
+}
+
 #include "moc_genericnetworkserverinfotest.cpp"

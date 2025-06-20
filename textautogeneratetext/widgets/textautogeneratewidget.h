@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QPointer>
 #include <QWidget>
 class QSplitter;
 namespace TextAutoGenerateText
@@ -15,6 +16,7 @@ class TextAutoGenerateMessage;
 class TextAutoGenerateManager;
 class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
+class TextAutoGenerateSearchDialog;
 /**
  * @brief The TextAutoGenerateWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -35,6 +37,7 @@ Q_SIGNALS:
     void noPluginsFound(const QString &msg);
     void pluginBroken(const QString &msg);
     void stopEditingMode(const QByteArray &uuid);
+    void needToAddInstances();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
@@ -60,5 +63,6 @@ private:
     QStringList mAskMessageList;
     bool mPluginWasInitialized = false;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    QPointer<TextAutoGenerateSearchDialog> mSearchDialog;
 };
 }

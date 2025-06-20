@@ -11,6 +11,7 @@ class QStackedWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateNotWorkingWidget;
+class TextAutoGenerateNotInstanceFoundWidget;
 class TextAutoGenerateManager;
 class TextAutoGenerateWidget;
 /**
@@ -25,11 +26,15 @@ public:
     ~TextAutoGenerateStackWidget() override;
 
     void setBrokenEngine(bool state, const QString &errorMessage);
+    void slotSearchText();
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotNeedToAddInstances();
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
+    TextAutoGenerateNotInstanceFoundWidget *const mTextAutoGenerateNotInstanceFoundWidget;
     TextAutoGenerateWidget *const mTextAutoGenerateWidget;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 
 }

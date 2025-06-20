@@ -15,7 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 GenericNetworkPlugin::GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
     , mSettings(new GenericNetworkSettings)
-    , mGenericManager(new GenericNetworkManager(this))
+    , mGenericManager(new GenericNetworkManager(mSettings, this))
 {
     const GenericNetworkServerInfo info;
     mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(serverIdentifier));

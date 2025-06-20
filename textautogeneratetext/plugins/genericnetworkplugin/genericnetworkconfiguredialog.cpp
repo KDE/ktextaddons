@@ -49,7 +49,7 @@ GenericNetworkConfigureDialog::~GenericNetworkConfigureDialog()
 
 void GenericNetworkConfigureDialog::slotAccepted()
 {
-    // TODO mOllamaConfigureWidget->saveSettings();
+    mConfigureWidget->saveSettings();
     accept();
 }
 

@@ -15,4 +15,10 @@ class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkNetworkPluginCon
 public:
     explicit GenericNetworkNetworkPluginConfigureWidget(GenericNetworkManager *manager, QWidget *parent = nullptr);
     ~GenericNetworkNetworkPluginConfigureWidget() override;
+
+    void loadSettings();
+    void saveSettings();
+
+private:
+    GenericNetworkManager *const mManager;
 };
