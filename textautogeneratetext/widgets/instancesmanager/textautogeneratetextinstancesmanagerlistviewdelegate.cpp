@@ -39,6 +39,31 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
 
     painter->save();
 
+    // Check if the item has a CheckStateRole
+    const QVariant checkStateData = index.data(Qt::CheckStateRole);
+    if (checkStateData.isValid()) {
+        // Get the checkbox state
+        const Qt::CheckState checkState = static_cast<Qt::CheckState>(checkStateData.toInt());
+
+        // Get the checkbox style options
+        QStyleOptionButton checkboxOption;
+        checkboxOption.state = QStyle::State_Enabled;
+        if (checkState == Qt::Checked) {
+            checkboxOption.state |= QStyle::State_On;
+        } else if (checkState == Qt::Unchecked) {
+            checkboxOption.state |= QStyle::State_Off;
+        } else {
+            checkboxOption.state |= QStyle::State_NoChange;
+        }
+
+        // Center the checkbox in the item's rect
+        checkboxOption.rect = QApplication::style()->subElementRect(QStyle::SE_ItemViewItemCheckIndicator, &option);
+        checkboxOption.rect.moveCenter(QPoint(option.rect.left(), option.rect.center().y()));
+
+        // Draw the checkbox
+        QApplication::style()->drawControl(QStyle::CE_CheckBox, &checkboxOption, painter);
+    }
+
     const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
     QFont f = option.font;
     if (isDefault) {
@@ -51,15 +76,16 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     QFontMetrics fontMetrics(f);
     const QRect rect = option.rect;
 
+    const QSize checkboxSize = QApplication::style()->sizeFromContents(QStyle::CT_CheckBox, nullptr, QSize(), nullptr);
     // Draw the two lines
     painter->setPen(option.palette.text().color());
-    const QRect line1Rect(rect.left() + 5, rect.top(), rect.width(), fontMetrics.height());
+    const QRect line1Rect(rect.left() + 5 + checkboxSize.width(), rect.top(), rect.width(), fontMetrics.height());
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
     if (!translatedPluginName.isEmpty()) {
         f.setItalic(true);
         f.setPointSize(f.pointSize() - 2);
         painter->setFont(f);
-        const QRect line2Rect(rect.left() + 5, rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
+        const QRect line2Rect(rect.left() + 5 + checkboxSize.width(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
         painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, translatedPluginName);
     }
     painter->restore();
