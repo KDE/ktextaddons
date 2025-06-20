@@ -28,6 +28,7 @@ protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditInstance(const QModelIndex &index);
     TextAutoGenerateTextInstanceSortFilterProxyModel *const mSortFilterProxyModel;
     TextAutoGenerateManager *const mTextAutoGenerateManager;
 };

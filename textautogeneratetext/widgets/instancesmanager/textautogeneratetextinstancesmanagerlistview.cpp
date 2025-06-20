@@ -29,6 +29,7 @@ TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManag
         mSortFilterProxyModel->setSourceModel(mTextAutoGenerateManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
     }
     setModel(mSortFilterProxyModel);
+    connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextInstancesManagerListView::slotEditInstance);
 }
 
 TextAutoGenerateTextInstancesManagerListView::~TextAutoGenerateTextInstancesManagerListView() = default;
@@ -36,6 +37,16 @@ TextAutoGenerateTextInstancesManagerListView::~TextAutoGenerateTextInstancesMana
 void TextAutoGenerateTextInstancesManagerListView::slotSearchChanged(const QString &str)
 {
     mSortFilterProxyModel->setSearchText(str);
+}
+
+void TextAutoGenerateTextInstancesManagerListView::slotEditInstance(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
+    if (uuid.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
+    } else {
+        Q_EMIT editInstance(uuid);
+    }
 }
 
 void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenuEvent *event)
@@ -48,7 +59,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
             auto markAsDefault = new QAction(i18nc("@action", "Mark As Default"), &menu);
             menu.addAction(markAsDefault);
             menu.addSeparator();
-            connect(markAsDefault, &QAction::triggered, this, [index, this]() {
+            connect(markAsDefault, &QAction::triggered, this, [this, index] {
                 const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
                 if (uuid.isEmpty()) {
                     qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
@@ -60,12 +71,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
 
         auto editAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Edit…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
-            const QByteArray uuid = index.data(TextAutoGenerateTextInstanceModel::Uuid).toByteArray();
-            if (uuid.isEmpty()) {
-                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
-            } else {
-                Q_EMIT editInstance(uuid);
-            }
+            slotEditInstance(index);
         });
         menu.addAction(editAction);
         menu.addSeparator();
