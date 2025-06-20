@@ -253,6 +253,11 @@ bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
     return true;
 }
 
+OllamaSettings *OllamaManager::ollamaSettings() const
+{
+    return mOllamaSettings;
+}
+
 QDebug operator<<(QDebug d, const OllamaManager::CreateModelInfo &t)
 {
     d.space() << "modelName:" << t.modelName;

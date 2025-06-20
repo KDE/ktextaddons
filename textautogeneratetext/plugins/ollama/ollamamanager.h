@@ -44,6 +44,8 @@ public:
 
     [[nodiscard]] bool isAlreadyInstalled(const QString &modelName) const;
 
+    [[nodiscard]] OllamaSettings *ollamaSettings() const;
+
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
