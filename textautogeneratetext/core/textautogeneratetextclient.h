@@ -54,7 +54,6 @@ public:
 
     [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type);
 
-    [[nodiscard]] virtual QString modelName() const = 0; // TODO remove it
     [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 
 Q_SIGNALS:

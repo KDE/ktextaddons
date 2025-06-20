@@ -42,11 +42,6 @@ TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engin
     return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local;
 }
 
-QString OllamaClient::modelName() const
-{
-    return OllamaSettings::model();
-}
-
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> OllamaClient::supportedServers() const
 {
     const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{

@@ -41,12 +41,6 @@ TextAutoGenerateText::TextAutoGenerateTextClient::EngineType GenericNetworkClien
     return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network;
 }
 
-QString GenericNetworkClient::modelName() const
-{
-    // No model here
-    return {};
-}
-
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkClient::supportedServers() const
 {
     const GenericNetworkServerInfo info;
