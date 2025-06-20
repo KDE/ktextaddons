@@ -17,11 +17,6 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
     , mManager(new OllamaManager(this))
 {
-    if (!loadSettings()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMA_PLUGIN_LOG) << "Impossible to load settings";
-        return;
-    }
-
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
@@ -65,13 +60,6 @@ void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
 {
     OllamaConfigureDialog d(mManager, parentWidget);
     d.exec();
-}
-
-bool OllamaPlugin::loadSettings()
-{
-    setCurrentModel(OllamaSettings::model());
-    // TODO verify that server is ok.
-    return true;
 }
 
 void OllamaPlugin::clear()

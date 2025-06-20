@@ -20,7 +20,6 @@ public:
     explicit OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~OllamaPlugin() override;
 
-    [[nodiscard]] bool loadSettings() override;
     void clear() override;
 
     void setPrompt(const QString &text) override;

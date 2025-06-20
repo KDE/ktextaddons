@@ -19,7 +19,6 @@ public:
     explicit GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     ~GenericNetworkPlugin() override;
 
-    [[nodiscard]] bool loadSettings() override;
     void clear() override;
 
     void setPrompt(const QString &text) override;

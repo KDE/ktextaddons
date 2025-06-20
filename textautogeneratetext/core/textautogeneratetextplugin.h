@@ -35,8 +35,6 @@ public:
 
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
-    [[nodiscard]] virtual bool loadSettings() = 0; // TODO remove it
-
     virtual void clear() = 0;
     [[nodiscard]] virtual QString translatedPluginName() const = 0;
 

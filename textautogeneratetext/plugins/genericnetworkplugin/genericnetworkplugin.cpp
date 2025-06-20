@@ -34,17 +34,6 @@ QStringList GenericNetworkPlugin::models() const
     return {};
 }
 
-bool GenericNetworkPlugin::loadSettings()
-{
-    /*
-    auto readJob = new QKeychain::ReadPasswordJob(MistralUtils::mistralGroupName(), this);
-    connect(readJob, &QKeychain::Job::finished, this, &GenericNetworkPlugin::slotApiKeyRead);
-    readJob->setKey(MistralUtils::apiGroupName());
-    readJob->start();
-    */
-    return true;
-}
-
 void GenericNetworkPlugin::clear()
 {
 }
