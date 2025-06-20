@@ -7,6 +7,7 @@
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
@@ -41,6 +42,8 @@ TextAutoGenerateQuickAskViewWidget::~TextAutoGenerateQuickAskViewWidget() = defa
 
 void TextAutoGenerateQuickAskViewWidget::slotConfigureRequested()
 {
+    TextAutoGenerateTextInstancesManagerDialog dlg(mManager, this);
+    dlg.exec();
 }
 
 #include "moc_textautogeneratequickaskviewwidget.cpp"
