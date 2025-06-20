@@ -81,10 +81,10 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
             if (uuid.isEmpty()) {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "invalid instance uuid";
             } else {
-                // TODO add instance name ?
+                const QString name = index.data(TextAutoGenerateTextInstanceModel::Name).toString();
                 if (KMessageBox::warningTwoActions(this,
-                                                   i18n("Do you want to remove this instance?"),
-                                                   i18nc("@title", "Remove"),
+                                                   i18n("Do you want to remove this instance (%1)?", name),
+                                                   i18nc("@title", "Remove Instance"),
                                                    KStandardGuiItem::remove(),
                                                    KStandardGuiItem::cancel())
                     == KMessageBox::PrimaryAction) {
