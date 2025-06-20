@@ -15,7 +15,8 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
-    , mManager(new OllamaManager(this))
+    , mOllamaSettings(new OllamaSettings)
+    , mManager(new OllamaManager(mOllamaSettings, this))
 {
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
@@ -28,7 +29,10 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
     mManager->loadModels();
 }
 
-OllamaPlugin::~OllamaPlugin() = default;
+OllamaPlugin::~OllamaPlugin()
+{
+    delete mOllamaSettings;
+}
 
 void OllamaPlugin::load(const KConfigGroup &config)
 {

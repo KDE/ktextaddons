@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
 add_library(textautogenerateollama)
-kconfig_add_kcfg_files(textautogenerateollama GENERATE_MOC ollamasettings.kcfgc)
 ecm_qt_declare_logging_category(textautogenerateollama
     HEADER autogeneratetext_ollama_debug.h
     IDENTIFIER AUTOGENERATETEXT_OLLAMA_LOG
@@ -34,6 +33,8 @@ target_sources(
         ollamacomboboxwidget.cpp
         ollamareply.h
         ollamareply.cpp
+        ollamasettings.h
+        ollamasettings.cpp
         textautogenerateollama_private_export.h
         modelsmanager/ollamamodelavailableinfo.cpp
         modelsmanager/ollamamodelavailableinfo.h

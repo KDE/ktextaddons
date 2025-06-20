@@ -7,6 +7,7 @@
 #include "modelsmanager/ollamamodelavailableinfosmanager.h"
 #include "modelsmanager/ollamamodelavailablewidget.h"
 #include "ollamamanager.h"
+#include "ollamasettings.h"
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
@@ -20,7 +21,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    auto manager = new OllamaManager;
+    auto manager = new OllamaManager(new OllamaSettings);
     auto w = new OllamaModelAvailableWidget(manager);
     OllamaModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {

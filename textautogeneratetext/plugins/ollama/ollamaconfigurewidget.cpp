@@ -7,7 +7,6 @@
 #include "ollamaconfigurewidget.h"
 #include "ollamacomboboxwidget.h"
 #include "ollamamanager.h"
-#include "ollamasettings.h"
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -81,21 +80,25 @@ OllamaConfigureWidget::~OllamaConfigureWidget() = default;
 
 void OllamaConfigureWidget::loadSettings()
 {
+    /*
     mServerUrl->setText(OllamaSettings::serverUrl().toString());
     mPrompt->setPlainText(OllamaSettings::systemPrompt());
     mModelComboBoxWidget->setCurrentModel(OllamaSettings::model());
     mTemperature->setValue(OllamaSettings::temperature());
     mSeed->setValue(OllamaSettings::seed());
+    */
 }
 
 void OllamaConfigureWidget::saveSettings()
 {
+    /*
     OllamaSettings::setSystemPrompt(mPrompt->toPlainText());
     OllamaSettings::setServerUrl(QUrl(mServerUrl->text()));
     OllamaSettings::setModel(mModelComboBoxWidget->currentModel());
     OllamaSettings::setTemperature(mTemperature->value());
     OllamaSettings::setSeed(mSeed->value());
     OllamaSettings::self()->save();
+    */
 }
 
 void OllamaConfigureWidget::fillModels()

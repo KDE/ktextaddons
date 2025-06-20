@@ -13,6 +13,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 class OllamaReply;
+class OllamaSettings;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
@@ -24,7 +25,7 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
-    explicit OllamaManager(QObject *parent = nullptr);
+    explicit OllamaManager(OllamaSettings *settings, QObject *parent = nullptr);
     ~OllamaManager() override;
 
     void loadModels() override;
@@ -48,6 +49,7 @@ Q_SIGNALS:
 
 private:
     QList<OllamaModelInstalledInfo> mInstalledInfos;
+    OllamaSettings *const mOllamaSettings;
 };
 Q_DECLARE_TYPEINFO(OllamaManager::CreateModelInfo, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATEOLLAMA_EXPORT QDebug operator<<(QDebug d, const OllamaManager::CreateModelInfo &t);

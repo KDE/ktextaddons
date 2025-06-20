@@ -13,6 +13,7 @@
 #include <QMultiHash>
 #include <QPair>
 class OllamaManager;
+class OllamaSettings;
 class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
@@ -43,5 +44,6 @@ protected:
 
 private:
     QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
+    OllamaSettings *const mOllamaSettings;
     OllamaManager *const mManager;
 };

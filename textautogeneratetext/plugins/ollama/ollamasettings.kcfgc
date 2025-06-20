@@ -1,9 +1,0 @@
-#SPDX-License-Identifier: GPL-2.0-or-later
-#SPDX-FileCopyrightText: none
-File=ollamasettings.kcfg
-ClassName=OllamaSettings
-Mutators=true
-Singleton=true
-ItemAccessors=true
-Visibility=TEXTAUTOGENERATEOLLAMA_EXPORT
-IncludeFiles=\"textautogenerateollama_export.h\"
