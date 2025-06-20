@@ -36,7 +36,7 @@ OllamaPlugin::~OllamaPlugin()
 
 void OllamaPlugin::load(const KConfigGroup &config)
 {
-    mOllamaSettings->setSeed(config.readEntry(QStringLiteral("seed"), 0));
+    mOllamaSettings->setSeed(config.readEntry(QStringLiteral("Seed"), 0));
     if (config.hasKey(QStringLiteral("ServerUrl"))) {
         mOllamaSettings->setServerUrl(config.readEntry(QStringLiteral("ServerUrl"), QUrl()));
     }
@@ -51,7 +51,11 @@ void OllamaPlugin::load(const KConfigGroup &config)
 
 void OllamaPlugin::save(KConfigGroup &config)
 {
-    // TODO
+    config.writeEntry(QStringLiteral("Seed"), mOllamaSettings->seed());
+    config.writeEntry(QStringLiteral("ServerUrl"), mOllamaSettings->temperature());
+    config.writeEntry(QStringLiteral("SystemPrompt"), mOllamaSettings->systemPrompt());
+    config.writeEntry(QStringLiteral("Temperature"), mOllamaSettings->temperature());
+    config.writeEntry(QStringLiteral("CurrentModel"), mOllamaSettings->currentModel());
 }
 
 QStringList OllamaPlugin::models() const
