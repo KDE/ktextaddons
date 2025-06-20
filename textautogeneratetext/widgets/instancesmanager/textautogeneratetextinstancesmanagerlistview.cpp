@@ -45,7 +45,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     if (index.isValid()) {
         const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
         if (!isDefault) {
-            auto markAsDefault = new QAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18nc("@action", "Mark As Default"), &menu);
+            auto markAsDefault = new QAction(i18nc("@action", "Mark As Default"), &menu);
             menu.addAction(markAsDefault);
             menu.addSeparator();
             connect(markAsDefault, &QAction::triggered, this, [index, this]() {
