@@ -18,12 +18,12 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateQuickAskViewWidget : pub
 public:
     explicit TextAutoGenerateQuickAskViewWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskViewWidget() override;
+    void slotConfigureRequested();
 
 Q_SIGNALS:
     void editingFinished(const QString &str, const QByteArray &uuid);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureRequested();
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineWidget;
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateQuickAskHeaderWidget *const mTextAutoGenerateQuickAskHeaderWidget;

@@ -38,6 +38,10 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     mTextAutoGenerateNotInstanceFoundWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotInstanceFoundWidget"));
     mStackedWidget->addWidget(mTextAutoGenerateNotInstanceFoundWidget);
 
+    connect(mTextAutoGenerateNotInstanceFoundWidget, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested, this, [this]() {
+        mTextAutoGenerateQuickAskViewWidget->slotConfigureRequested();
+    });
+
     mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
 
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
