@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 06:25+0200\n"
+"POT-Creation-Date: 2025-06-20 00:41+0000\n"
+"PO-Revision-Date: 2025-06-19 07:05+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -64,27 +64,22 @@ msgstr ""
 "Model: %2\n"
 "Ime pojavka: %3"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "Ollama"
-
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
 msgstr "Pojdi na sporočilo"
 
-#: core/textautogeneratetextclient.cpp:28
+#: core/textautogeneratetextclient.cpp:21
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: core/textautogeneratetextclient.cpp:30
+#: core/textautogeneratetextclient.cpp:23
 #, kde-format
 msgid "Network"
 msgstr "Omrežje"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
 msgid "Generic"
 msgstr "Generično"
@@ -1787,6 +1782,11 @@ msgstr ""
 "Mini sklepanje Phi 4 je lahek odprt model, ki uravnoteži učinkovitost z "
 "naprednimi sposobnostmi sklepanja."
 
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:61
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
+
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1920,7 +1920,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Zaženi Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
@@ -1944,45 +1944,57 @@ msgid "Add Instance"
 msgstr "Dodaj pojavek"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Ime:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Izberite vrsto pojavka:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:46
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Instances"
+msgstr "Konfiguriraj IA"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Mark As Default"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Odstrani pojavek"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:65
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
-msgid "Do you want to this instance?"
-msgstr "Ali želite odstraniti to razpravo?"
+#| msgid "Do you want to this instance?"
+msgid "Do you want to remove this instance?"
+msgstr "Ali želite na ta pojavek?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:81
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Odstrani"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:41
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -1990,7 +2002,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Išči…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:48
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2055,22 +2067,10 @@ msgid "Quick Ask"
 msgstr "Hitro vprašaj"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
-#: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
-
-#: widgets/textautogenerateconfiguredialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure IA"
-msgstr "Konfiguriraj IA"
-
-#: widgets/textautogenerateconfigurewidget.cpp:27
-#, kde-format
-msgid "Engine:"
-msgstr "Stroj:"
 
 #: widgets/textautogeneratedialog.cpp:35
 #, kde-format
@@ -2078,19 +2078,19 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Pogovor"
 
-#: widgets/textautogenerateheaderwidget.cpp:45
+#: widgets/textautogenerateheaderwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Išči…"
 
-#: widgets/textautogenerateheaderwidget.cpp:52
+#: widgets/textautogenerateheaderwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "Novi klepet"
 
-#: widgets/textautogenerateheaderwidget.cpp:59
+#: widgets/textautogenerateheaderwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -2102,7 +2102,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Išči"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
@@ -2188,6 +2188,9 @@ msgstr "Osveži"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Ni najdenih sporočil."
+
+#~ msgid "Engine:"
+#~ msgstr "Stroj:"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Mistral IA"

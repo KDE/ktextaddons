@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 20:37+0300\n"
+"POT-Creation-Date: 2025-06-20 00:41+0000\n"
+"PO-Revision-Date: 2025-06-19 09:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -64,27 +64,22 @@ msgstr ""
 "Модель: %2\n"
 "Назва екземпляра: %3"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "Ollama"
-
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
 msgstr "Перейти до повідомлення"
 
-#: core/textautogeneratetextclient.cpp:28
+#: core/textautogeneratetextclient.cpp:21
 #, kde-format
 msgid "Local"
 msgstr "Локальний"
 
-#: core/textautogeneratetextclient.cpp:30
+#: core/textautogeneratetextclient.cpp:23
 #, kde-format
 msgid "Network"
 msgstr "Мережевий"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
 msgid "Generic"
 msgstr "Загальний"
@@ -1795,6 +1790,11 @@ msgstr ""
 "Phi 4 mini reasoning — це невибаглива відкрита модель, яка поєднує "
 "ефективність із розширеними можливостями міркування."
 
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:61
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
+
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1928,7 +1928,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Запустити Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
@@ -1952,45 +1952,57 @@ msgid "Add Instance"
 msgstr "Додати екземпляр"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Назва:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Виберіть тип екземпляра:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:46
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Instances"
+msgstr "Налаштування ШІ"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Mark As Default"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Вилучити екземпляр"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:65
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
-msgid "Do you want to this instance?"
-msgstr "Хочете вилучити це обговорення?"
+#| msgid "Do you want to this instance?"
+msgid "Do you want to remove this instance?"
+msgstr "Хочете вилучити цей екземпляр?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:81
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Вилучити"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:41
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -1998,7 +2010,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Шукати…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:48
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2063,22 +2075,10 @@ msgid "Quick Ask"
 msgstr "Швидке питання"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
-#: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
-
-#: widgets/textautogenerateconfiguredialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure IA"
-msgstr "Налаштування ШІ"
-
-#: widgets/textautogenerateconfigurewidget.cpp:27
-#, kde-format
-msgid "Engine:"
-msgstr "Рушій:"
 
 #: widgets/textautogeneratedialog.cpp:35
 #, kde-format
@@ -2086,19 +2086,19 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: widgets/textautogenerateheaderwidget.cpp:45
+#: widgets/textautogenerateheaderwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Шукати…"
 
-#: widgets/textautogenerateheaderwidget.cpp:52
+#: widgets/textautogenerateheaderwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "Нове спілкування"
 
-#: widgets/textautogenerateheaderwidget.cpp:59
+#: widgets/textautogenerateheaderwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -2110,7 +2110,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Пошук"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr "Не знайдено додатка."
@@ -2196,6 +2196,9 @@ msgstr "Оновити"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Повідомлень не знайдено."
+
+#~ msgid "Engine:"
+#~ msgstr "Рушій:"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Mistral IA"

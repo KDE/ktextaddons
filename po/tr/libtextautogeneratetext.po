@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-19 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 17:15+0300\n"
+"POT-Creation-Date: 2025-06-20 00:41+0000\n"
+"PO-Revision-Date: 2025-06-19 22:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -63,27 +63,22 @@ msgstr ""
 "Model: %2\n"
 "Örnek adı: %3"
 
-#: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
-#, kde-format
-msgid "Ollama"
-msgstr "Ollama"
-
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
 msgstr "İletiye git"
 
-#: core/textautogeneratetextclient.cpp:28
+#: core/textautogeneratetextclient.cpp:21
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: core/textautogeneratetextclient.cpp:30
+#: core/textautogeneratetextclient.cpp:23
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
 
-#: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
 msgid "Generic"
 msgstr "Genel"
@@ -1786,6 +1781,11 @@ msgstr ""
 "Phi 4 Mini Reasoning, verimliliği gelişmiş akıl yürütme yeteneğiyle "
 "dengeleyen hafif ve açık bir modeldir."
 
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:61
+#, kde-format
+msgid "Ollama"
+msgstr "Ollama"
+
 #: plugins/ollama/ollamacomboboxwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1919,7 +1919,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Ollama’yı Başlat"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:33
+#: widgets/common/textautogeneratenotworkingwidget.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
@@ -1943,45 +1943,57 @@ msgid "Add Instance"
 msgstr "Örnek Ekle"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Ad:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Bir örnek türü seç:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:46
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
+msgctxt "@title:window"
+msgid "Configure Instances"
+msgstr "Yapay Zekâyı Yapılandır"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Mark As Default"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:65
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
-msgid "Do you want to this instance?"
-msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
+#| msgid "Do you want to this instance?"
+msgid "Do you want to remove this instance?"
+msgstr "Bu örneğe gitmek istiyor musunuz?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:81
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:41
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -1989,7 +2001,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Ara…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:48
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
@@ -2054,22 +2066,10 @@ msgid "Quick Ask"
 msgstr "Tez Sor"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
-#: widgets/textautogenerateheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Yapılandır…"
-
-#: widgets/textautogenerateconfiguredialog.cpp:19
-#, kde-format
-msgctxt "@title:window"
-msgid "Configure IA"
-msgstr "Yapay Zekâyı Yapılandır"
-
-#: widgets/textautogenerateconfigurewidget.cpp:27
-#, kde-format
-msgid "Engine:"
-msgstr "İşletke:"
 
 #: widgets/textautogeneratedialog.cpp:35
 #, kde-format
@@ -2077,19 +2077,19 @@ msgctxt "@title:window"
 msgid "Conversation"
 msgstr "Konuşma"
 
-#: widgets/textautogenerateheaderwidget.cpp:45
+#: widgets/textautogenerateheaderwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Ara…"
 
-#: widgets/textautogenerateheaderwidget.cpp:52
+#: widgets/textautogenerateheaderwidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "Yeni sohbet"
 
-#: widgets/textautogenerateheaderwidget.cpp:59
+#: widgets/textautogenerateheaderwidget.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -2101,7 +2101,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Ara"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr "Bulunan eklenti yok."
@@ -2187,6 +2187,9 @@ msgstr "Yenile"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."
+
+#~ msgid "Engine:"
+#~ msgstr "İşletke:"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Mistral IA"
