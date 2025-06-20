@@ -83,17 +83,6 @@ TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::searchTextAutoGenerate
     return (*clientsItr);
 }
 
-QString TextAutoGenerateEngineLoader::generateDisplayName(TextAutoGenerateTextClient *client) const
-{
-    QString translatedName = client->translatedName();
-    if (const QString modelName = client->modelName(); !modelName.isEmpty()) {
-        translatedName += QStringLiteral(" (%1: %2)").arg(client->convertEngineType(client->engineType()), modelName);
-    } else {
-        translatedName += QStringLiteral(" (%1)").arg(client->convertEngineType(client->engineType()));
-    }
-    return translatedName;
-}
-
 QList<TextAutoGenerateTextClient::SupportedServer> TextAutoGenerateEngineLoader::supportedServers() const
 {
     QList<TextAutoGenerateTextClient::SupportedServer> lst;

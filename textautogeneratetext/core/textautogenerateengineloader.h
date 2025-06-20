@@ -30,8 +30,6 @@ public:
 
     void loadPlugins();
 
-    [[nodiscard]] QString generateDisplayName(TextAutoGenerateTextClient *client) const;
-
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const;
 
 Q_SIGNALS:
