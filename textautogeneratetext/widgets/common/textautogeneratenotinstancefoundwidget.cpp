@@ -17,13 +17,15 @@ TextAutoGenerateNotInstanceFoundWidget::TextAutoGenerateNotInstanceFoundWidget(Q
     mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
 
+    mainLayout->addStretch(1);
     auto label = new QLabel(i18n("No instance found. Please add one."), this);
     label->setObjectName("label"_L1);
-    mainLayout->addWidget(label);
+    mainLayout->addWidget(label, 0, Qt::AlignHCenter);
 
     auto addInstanceButton = new QPushButton(i18nc("@action:button", "Add instance…"), this);
     addInstanceButton->setObjectName("addInstanceButton"_L1);
-    mainLayout->addWidget(addInstanceButton);
+    mainLayout->addWidget(addInstanceButton, 0, Qt::AlignHCenter);
+    mainLayout->addStretch(1);
     connect(addInstanceButton, &QPushButton::clicked, this, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested);
 }
 
