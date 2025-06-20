@@ -77,7 +77,9 @@ QString OllamaPlugin::translatedPluginName() const
 void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
 {
     OllamaConfigureDialog d(mManager, parentWidget);
-    d.exec();
+    if (d.exec()) {
+        Q_EMIT configChanged();
+    }
 }
 
 void OllamaPlugin::clear()

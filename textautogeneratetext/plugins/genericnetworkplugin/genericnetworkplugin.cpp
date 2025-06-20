@@ -89,7 +89,9 @@ QString GenericNetworkPlugin::translatedPluginName() const
 void GenericNetworkPlugin::showConfigureDialog(QWidget *parentWidget)
 {
     GenericNetworkConfigureDialog d(mGenericManager, parentWidget);
-    d.exec();
+    if (d.exec()) {
+        Q_EMIT configChanged();
+    }
 }
 
 #include "moc_genericnetworkplugin.cpp"

@@ -69,6 +69,7 @@ Q_SIGNALS:
     void initializedDone();
     void askToAssistantAnswer(const QString &message);
     void askToAssistantDone();
+    void configChanged();
 
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
