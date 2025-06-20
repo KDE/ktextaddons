@@ -35,15 +35,24 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
     connect(mTextAutoGenerateQuickAskHeaderWidget,
             &TextAutoGenerateQuickAskHeaderWidget::configureRequested,
             this,
-            &TextAutoGenerateQuickAskViewWidget::slotConfigureRequested);
+            &TextAutoGenerateQuickAskViewWidget::slotConfigureInstances);
+
+    connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::cancelRequested, this, &TextAutoGenerateQuickAskViewWidget::cancelRequested);
+
+    connect(mTextAutoGenerateResultWidget,
+            &TextAutoGenerateResultWidget::refreshAnswerRequested,
+            this,
+            &TextAutoGenerateQuickAskViewWidget::refreshAnswerRequested);
 }
 
 TextAutoGenerateQuickAskViewWidget::~TextAutoGenerateQuickAskViewWidget() = default;
 
-void TextAutoGenerateQuickAskViewWidget::slotConfigureRequested()
+void TextAutoGenerateQuickAskViewWidget::slotConfigureInstances()
 {
     TextAutoGenerateTextInstancesManagerDialog dlg(mManager, this);
-    dlg.exec();
+    if (dlg.exec()) {
+        Q_EMIT configureChanged();
+    }
 }
 
 #include "moc_textautogeneratequickaskviewwidget.cpp"

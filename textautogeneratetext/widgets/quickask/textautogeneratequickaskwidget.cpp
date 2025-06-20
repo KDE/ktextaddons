@@ -4,8 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskwidget.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 
+#include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratequickaskviewwidget.h"
 #include "textautogeneratetextwidget_debug.h"
@@ -39,7 +41,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     mStackedWidget->addWidget(mTextAutoGenerateNotInstanceFoundWidget);
 
     connect(mTextAutoGenerateNotInstanceFoundWidget, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested, this, [this]() {
-        mTextAutoGenerateQuickAskViewWidget->slotConfigureRequested();
+        mTextAutoGenerateQuickAskViewWidget->slotConfigureInstances();
     });
 
     mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
@@ -52,6 +54,23 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             this,
             &TextAutoGenerateQuickAskWidget::slotEditingFinished);
 
+    connect(mTextAutoGenerateQuickAskViewWidget,
+            &TextAutoGenerateQuickAskViewWidget::cancelRequested,
+            this,
+            &TextAutoGenerateQuickAskWidget::slotCancelRequest);
+
+    connect(mTextAutoGenerateQuickAskViewWidget, &TextAutoGenerateQuickAskViewWidget::configureChanged, this, [this]() {
+        if (mManager->textAutoGenerateTextInstancesManager()->isEmpty()) {
+            mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
+        } else {
+            mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
+        }
+    });
+    connect(mTextAutoGenerateQuickAskViewWidget,
+            &TextAutoGenerateQuickAskViewWidget::refreshAnswerRequested,
+            this,
+            &TextAutoGenerateQuickAskWidget::slotRefreshAnswer);
+
     if (mManager) {
         mManager->setSaveInDatabase(false);
     }
@@ -59,6 +78,18 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 }
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;
+
+void TextAutoGenerateQuickAskWidget::slotCancelRequest(const QByteArray &uuid)
+{
+    mManager->textAutoGeneratePlugin()->cancelRequest(uuid);
+}
+
+void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
+    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr);
+}
 
 void TextAutoGenerateQuickAskWidget::loadEngine()
 {

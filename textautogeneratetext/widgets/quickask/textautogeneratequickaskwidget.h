@@ -6,6 +6,7 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
+#include <QModelIndex>
 #include <QWidget>
 class QStackedWidget;
 namespace TextAutoGenerateText
@@ -31,6 +32,8 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &str);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotNeedToAddInstances();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index);
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateQuickAskViewWidget *const mTextAutoGenerateQuickAskViewWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
