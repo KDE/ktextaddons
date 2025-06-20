@@ -64,9 +64,6 @@ void TextAutoGenerateTextInstance::load(const KConfigGroup &config)
     mPluginIdentifier = config.readEntry("pluginIdentifier", QString());
     mCurrentModel = config.readEntry("currentModel", QString());
     mInstanceUuid = config.readEntry("uuid", QByteArray());
-    if (mPlugin) {
-        mPlugin->load(config);
-    }
 }
 
 void TextAutoGenerateTextInstance::save(KConfigGroup &config)
