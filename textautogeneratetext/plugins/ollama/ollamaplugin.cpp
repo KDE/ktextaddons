@@ -52,7 +52,7 @@ void OllamaPlugin::load(const KConfigGroup &config)
 void OllamaPlugin::save(KConfigGroup &config)
 {
     config.writeEntry(QStringLiteral("Seed"), mOllamaSettings->seed());
-    config.writeEntry(QStringLiteral("ServerUrl"), mOllamaSettings->temperature());
+    config.writeEntry(QStringLiteral("ServerUrl"), mOllamaSettings->serverUrl());
     config.writeEntry(QStringLiteral("SystemPrompt"), mOllamaSettings->systemPrompt());
     config.writeEntry(QStringLiteral("Temperature"), mOllamaSettings->temperature());
     config.writeEntry(QStringLiteral("CurrentModel"), mOllamaSettings->currentModel());
