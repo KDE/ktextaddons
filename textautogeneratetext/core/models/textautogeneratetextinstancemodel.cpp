@@ -89,7 +89,15 @@ void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGen
 
 bool TextAutoGenerateTextInstanceModel::isEmpty() const
 {
-    return mTextInstances.isEmpty();
+    if (mTextInstances.isEmpty()) {
+        return true;
+    }
+    for (const auto &inst : mTextInstances) {
+        if (inst->enabled()) {
+            return false;
+        }
+    }
+    return true;
 }
 
 QByteArray TextAutoGenerateTextInstanceModel::currentInstance() const

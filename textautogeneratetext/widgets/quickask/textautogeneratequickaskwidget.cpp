@@ -9,6 +9,7 @@
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratequickaskviewwidget.h"
 #include "textautogeneratetextwidget_debug.h"
+#include "widgets/common/textautogeneratenotinstancefoundwidget.h"
 #include "widgets/common/textautogeneratenotworkingwidget.h"
 #include <QStackedWidget>
 #include <QVBoxLayout>
@@ -18,6 +19,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     , mStackedWidget(new QStackedWidget(this))
     , mTextAutoGenerateQuickAskViewWidget(new TextAutoGenerateQuickAskViewWidget(manager, this))
     , mTextAutoGenerateNotWorkingWidget(new TextAutoGenerateNotWorkingWidget(manager, this))
+    , mTextAutoGenerateNotInstanceFoundWidget(new TextAutoGenerateNotInstanceFoundWidget(this))
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -32,6 +34,10 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 
     mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
+
+    mTextAutoGenerateNotInstanceFoundWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotInstanceFoundWidget"));
+    mStackedWidget->addWidget(mTextAutoGenerateNotInstanceFoundWidget);
+
     mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
 
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
@@ -55,8 +61,14 @@ void TextAutoGenerateQuickAskWidget::loadEngine()
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateQuickAskWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateQuickAskWidget::slotAutogenerateFailed);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateQuickAskWidget::slotNeedToAddInstances);
         mManager->loadEngine();
     }
+}
+
+void TextAutoGenerateQuickAskWidget::slotNeedToAddInstances()
+{
+    mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
 }
 
 void TextAutoGenerateQuickAskWidget::slotAutogenerateFailed(const QString &str)
