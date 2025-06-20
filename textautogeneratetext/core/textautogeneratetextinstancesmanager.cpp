@@ -66,6 +66,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
             delete inst;
         } else {
             auto plugin = client->createTextAutoGeneratePlugin(mManager, inst->pluginIdentifier());
+            connect(plugin, &TextAutoGenerateTextPlugin::configChanged, this, &TextAutoGenerateTextInstancesManager::saveInstances);
             inst->setPlugin(plugin);
             lstInstances.append(inst);
         }
