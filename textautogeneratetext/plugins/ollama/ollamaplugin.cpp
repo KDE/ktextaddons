@@ -36,7 +36,17 @@ OllamaPlugin::~OllamaPlugin()
 
 void OllamaPlugin::load(const KConfigGroup &config)
 {
-    // TODO
+    mOllamaSettings->setSeed(config.readEntry(QStringLiteral("seed"), 0));
+    if (config.hasKey(QStringLiteral("ServerUrl"))) {
+        mOllamaSettings->setServerUrl(config.readEntry(QStringLiteral("ServerUrl"), QUrl()));
+    }
+    if (config.hasKey(QStringLiteral("Temperature"))) {
+        mOllamaSettings->setTemperature(config.readEntry(QStringLiteral("Temperature"), 0.8));
+    }
+    if (config.hasKey(QStringLiteral("SystemPrompt"))) {
+        mOllamaSettings->setSystemPrompt(config.readEntry(QStringLiteral("SystemPrompt")));
+    }
+    mOllamaSettings->setCurrentModel(config.readEntry(QStringLiteral("CurrentModel")));
 }
 
 void OllamaPlugin::save(KConfigGroup &config)
