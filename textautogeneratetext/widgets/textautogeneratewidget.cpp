@@ -25,6 +25,7 @@
 #include <QPointer>
 #include <QSplitter>
 #include <QVBoxLayout>
+#include <qtimer.h>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -96,8 +97,11 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::changeFavoriteRequested, this, [this](bool checked) {
             mManager->changeFavoriteHistory(mManager->currentChatId(), checked);
         });
+
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateWidget::needToAddInstances);
     }
-    loadEngine();
     readConfig();
 }
 
@@ -147,8 +151,6 @@ QString TextAutoGenerateWidget::textLineEdit() const
 void TextAutoGenerateWidget::loadEngine()
 {
     if (mManager) {
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
         mManager->loadEngine();
         mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
         mManager->loadHistory();
@@ -217,9 +219,11 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
 
 void TextAutoGenerateWidget::slotSearchText()
 {
-    QPointer<TextAutoGenerateSearchDialog> dlg = new TextAutoGenerateSearchDialog(mManager, this);
-    dlg->setAttribute(Qt::WA_DeleteOnClose, true);
-    dlg->show();
+    if (!mSearchDialog) {
+        mSearchDialog = new TextAutoGenerateSearchDialog(mManager, this);
+        mSearchDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        mSearchDialog->show();
+    }
 }
 
 #include "moc_textautogeneratewidget.cpp"
