@@ -10,7 +10,6 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
-#include "textautogeneratetextwidget_debug.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogenerateheaderwidget.h"
