@@ -22,9 +22,12 @@ public:
     explicit TextAutoGenerateQuickAskDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskDialog() override;
 
+    void ask(const QString &str);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateQuickAskWidget *const mTextAutoGenerateQuickAskWidget;
+    TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

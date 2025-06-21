@@ -23,6 +23,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
     , mTextAutoGenerateQuickAskWidget(new TextAutoGenerateQuickAskWidget(manager, this))
+    , mManager(manager)
 {
     setWindowTitle(i18nc("@title:window", "Quick Ask"));
 
@@ -42,6 +43,11 @@ TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateT
 TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog()
 {
     writeConfig();
+}
+
+void TextAutoGenerateQuickAskDialog::ask(const QString &str)
+{
+    mManager->ask(str);
 }
 
 void TextAutoGenerateQuickAskDialog::readConfig()
