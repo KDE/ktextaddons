@@ -6,7 +6,6 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
-class KMessageWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;

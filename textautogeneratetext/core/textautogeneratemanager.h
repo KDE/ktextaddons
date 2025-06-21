@@ -15,7 +15,6 @@ class TextAutoGenerateMessagesModel;
 class TextAutoGenerateLocalDatabaseManager;
 class TextAutoGenerateChatsModel;
 class TextAutoGenerateEngineLoader;
-class TextAutoGenerateTextClient;
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateChatSettings;
 class TextAutoGenerateTextInstancesManager;
