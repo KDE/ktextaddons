@@ -108,6 +108,8 @@ target_sources(
         core/textautogeneratemessageutils.cpp
         core/textautogeneratechat.h
         core/textautogeneratechat.cpp
+        core/textautogenerateexportchatbasejob.cpp
+        core/textautogenerateexportchatbasejob.h
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -310,6 +312,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateManagerBase
     TextAutoGenerateTextInstance
     TextAutoGenerateTextInstancesManager
+    TextAutoGenerateExportChatBaseJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
