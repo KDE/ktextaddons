@@ -21,7 +21,6 @@
 #include <KSharedConfig>
 #include <KSplitterCollapserButton>
 #include <QKeyEvent>
-#include <QPointer>
 #include <QSplitter>
 #include <QVBoxLayout>
 #include <qtimer.h>
