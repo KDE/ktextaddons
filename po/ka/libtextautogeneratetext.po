@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-20 00:41+0000\n"
-"PO-Revision-Date: 2025-06-19 05:10+0200\n"
+"POT-Creation-Date: 2025-06-21 00:41+0000\n"
+"PO-Revision-Date: 2025-06-20 04:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -104,6 +104,12 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "ხელმისაწვდომი მოდელები"
 
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:36
+#: plugins/ollama/ollamamanager.cpp:166
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
+
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
@@ -113,6 +119,11 @@ msgstr "Mistral AI"
 #, kde-format
 msgid "OpenAI"
 msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
+#, kde-format
+msgid "Kluster AI"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -203,6 +214,7 @@ msgid "Base:"
 msgstr "ბაზა:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
@@ -214,7 +226,7 @@ msgid "Tag:"
 msgstr "ჭდე:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
 msgid "Prompt:"
 msgstr "მოთხოვნის ზოლი:"
@@ -1789,7 +1801,7 @@ msgstr ""
 "Phi 4 მინი მსჯელობა არის მსუბუქი ღია მოდელი, რომელიც აბალანსებს ეფექტურობას "
 "მოწინავე მსჯელობის უნარით."
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:61
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:71
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1818,89 +1830,39 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "მოდელების შექმნა"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "Server Url:"
 msgstr "სერვერის URL:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Model:"
 msgstr "მოდელი:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:53
 #, kde-format
 msgid "Temperature:"
 msgstr "ტემპერატურა:"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:51
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"The temperature of the model. Increasing the temperature will make the model "
-"answer more creatively."
-msgstr ""
-"მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
-"შემოქმედებით გიპასუხოთ."
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
-#, kde-format
-msgid "Seed:"
-msgstr "საწყ. მნიშვნელობა:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Sets the random number seed to use for generation. Setting this to a "
-"specific number will make the model generate the same text for the same "
-"prompt. (Default: 0)"
-msgstr ""
-"აყენებს შემთხვევით რიცხვების თესლს გენერაციისთვის. ამის სპეციფიკურ რიცხვზე "
-"დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე მოთხოვნისთვის. "
-"(ნაგულისხმევი: 0)"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:63
-#, kde-format
-msgid "No system prompt"
-msgstr "სისტემური კითხვის გარეშე"
-
-#: plugins/ollama/ollamamanager.cpp:165
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "Ollama-ის გაშვებული ასლის ბმული"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "სისტემური მოთხოვნა LLM-სთვის"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
-
-#. i18n: ectx: label, entry (Temperature), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:35
-#, kde-format
-msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
 "მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
 "შემოქმედებით გიპასუხოთ."
 
-#. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:39
+#: plugins/ollama/ollamaconfigurewidget.cpp:59
 #, kde-format
+msgid "Seed:"
+msgstr "საწყ. მნიშვნელობა:"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
 "specific number will make the model generate the same text for the same "
@@ -1910,12 +1872,17 @@ msgstr ""
 "დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე მოთხოვნისთვის. "
 "(ნაგულისხმევი: 0)"
 
-#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#, kde-format
+msgid "No system prompt"
+msgstr "სისტემური კითხვის გარეშე"
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
 msgstr "გაშვებული ასლები აღმოჩენილი არაა. დაამატეთ ერთი მაინც."
 
-#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
@@ -1963,43 +1930,42 @@ msgid "Select a Type of Instance:"
 msgstr "აირჩიეთ გაშვებული ასლის ტიპი:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "ხი-ის მორგება"
+msgstr "გაშვებული ასლების მორგება"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:48
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "ნაგულისხმევად მონიშვნა"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, fuzzy, kde-format
-#| msgid "Do you want to this instance?"
-msgid "Do you want to remove this instance?"
-msgstr "გნებავთ ეს გაშვებული ასლი?"
+#| msgid "Do you want to remove this instance?"
+msgid "Do you want to remove this instance (%1)?"
+msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:81
-#: widgets/menu/textautogeneratemenulistview.cpp:61
-#, kde-format
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Instance"
 msgctxt "@title"
-msgid "Remove"
-msgstr "წაშლა"
+msgid "Remove Instance"
+msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
 #: widgets/textautogeneratehistorywidget.cpp:27
@@ -2050,6 +2016,12 @@ msgstr "წაშლა…"
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "მართლა გნებავთ მისი წაშლა?"
+
+#: widgets/menu/textautogeneratemenulistview.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Remove"
+msgstr "წაშლა"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
@@ -2109,7 +2081,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:95
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
@@ -2195,6 +2167,31 @@ msgstr "განახლება"
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgid "The URL to the Ollama instance"
+#~ msgstr "Ollama-ის გაშვებული ასლის ბმული"
+
+#~ msgid "The system prompt for the LLM"
+#~ msgstr "სისტემური მოთხოვნა LLM-სთვის"
+
+#~ msgid "The model used to generate responses"
+#~ msgstr "პასუხების გენერაციისთვის გამოყენებული მოდელი"
+
+#~ msgid ""
+#~ "The temperature of the model. Increasing the temperature will make the "
+#~ "model answer more creatively."
+#~ msgstr ""
+#~ "მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
+#~ "შემოქმედებით გიპასუხოთ."
+
+#~ msgid ""
+#~ "Sets the random number seed to use for generation. Setting this to a "
+#~ "specific number will make the model generate the same text for the same "
+#~ "prompt. (Default: 0)"
+#~ msgstr ""
+#~ "აყენებს შემთხვევით რიცხვების თესლს გენერაციისთვის. ამის სპეციფიკურ "
+#~ "რიცხვზე დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე "
+#~ "მოთხოვნისთვის. (ნაგულისხმევი: 0)"
 
 #~ msgid "Engine:"
 #~ msgstr "ძრავა:"

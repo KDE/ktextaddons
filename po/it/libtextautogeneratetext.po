@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-20 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 15:29+0200\n"
+"POT-Creation-Date: 2025-06-21 00:41+0000\n"
+"PO-Revision-Date: 2025-06-20 14:15+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -103,6 +103,12 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modelli disponibili"
 
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:36
+#: plugins/ollama/ollamamanager.cpp:166
+#, kde-format
+msgid "Failed to connect to interface at %1: %2"
+msgstr "Connessione all'interfaccia al %1 non riuscita: %2"
+
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
@@ -112,6 +118,11 @@ msgstr "Mistral AI"
 #, kde-format
 msgid "OpenAI"
 msgstr "OpenAI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
+#, kde-format
+msgid "Kluster AI"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -202,6 +213,7 @@ msgid "Base:"
 msgstr "Base:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
+#: plugins/ollama/ollamaconfigurewidget.cpp:42
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
@@ -213,7 +225,7 @@ msgid "Tag:"
 msgstr "Etichetta:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
@@ -1805,7 +1817,7 @@ msgstr ""
 "Il ragionamento Phi 4 mini è un modello aperto e leggero che bilancia "
 "l'efficienza con capacità di ragionamento avanzate."
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:61
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:71
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1834,89 +1846,39 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Crea modelli"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "Server Url:"
 msgstr "URL del server:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Model:"
 msgstr "Modello:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:53
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:51
-#, kde-format
-msgctxt "@info:tooltip"
-msgid ""
-"The temperature of the model. Increasing the temperature will make the model "
-"answer more creatively."
-msgstr ""
-"La temperatura del modello. Aumentando la temperatura, il modello risponderà "
-"in modo più creativo."
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:54
-#, kde-format
-msgid "Seed:"
-msgstr "Seme:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Sets the random number seed to use for generation. Setting this to a "
-"specific number will make the model generate the same text for the same "
-"prompt. (Default: 0)"
-msgstr ""
-"Imposta il seme del numero casuale da utilizzare per la generazione. "
-"Impostando questo valore su un numero specifico, il modello genererà lo "
-"stesso testo per lo stesso prompt. (Predefinito: 0)"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:63
-#, kde-format
-msgid "No system prompt"
-msgstr "Nessun prompt di sistema"
-
-#: plugins/ollama/ollamamanager.cpp:165
-#, kde-format
-msgid "Failed to connect to interface at %1: %2"
-msgstr "Connessione all'interfaccia al %1 non riuscita: %2"
-
-#. i18n: ectx: label, entry (ServerUrl), group (Ollama)
-#: plugins/ollama/ollamasettings.kcfg:14
-#, kde-format
-msgid "The URL to the Ollama instance"
-msgstr "L'URL all'istanza di Ollama"
-
-#. i18n: ectx: label, entry (SystemPrompt), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:20
-#, kde-format
-msgid "The system prompt for the LLM"
-msgstr "Il prompt di sistema per lo LLM"
-
-#. i18n: ectx: label, entry (Model), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:32
-#, kde-format
-msgid "The model used to generate responses"
-msgstr "Il modello utilizzato per generare risposte"
-
-#. i18n: ectx: label, entry (Temperature), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:35
-#, kde-format
-msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
 "La temperatura del modello. Aumentando la temperatura, il modello risponderà "
 "in modo più creativo."
 
-#. i18n: ectx: label, entry (Seed), group (LLM)
-#: plugins/ollama/ollamasettings.kcfg:39
+#: plugins/ollama/ollamaconfigurewidget.cpp:59
 #, kde-format
+msgid "Seed:"
+msgstr "Seme:"
+
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Sets the random number seed to use for generation. Setting this to a "
 "specific number will make the model generate the same text for the same "
@@ -1926,12 +1888,17 @@ msgstr ""
 "Impostando questo valore su un numero specifico, il modello genererà lo "
 "stesso testo per lo stesso prompt. (Predefinito: 0)"
 
-#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:20
+#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#, kde-format
+msgid "No system prompt"
+msgstr "Nessun prompt di sistema"
+
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
 msgstr "Nessuna istanza trovata. Aggiungine una."
 
-#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:24
+#: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
@@ -1967,57 +1934,54 @@ msgid "Add Instance"
 msgstr "Aggiungi istanza"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nome:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Seleziona un tipo di istanza:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Configura AI"
+msgstr "Configura istanze"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:48
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "Marca come predefinita"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Modifica…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Rimuovi istanza"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
-msgid "Do you want to remove this instance?"
-msgstr "Vuoi rimuovere questa discussione?"
+#| msgid "Do you want to remove this instance?"
+msgid "Do you want to remove this instance (%1)?"
+msgstr "Vuoi rimuovere questa istanza?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:81
-#: widgets/menu/textautogeneratemenulistview.cpp:61
-#, kde-format
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Instance"
 msgctxt "@title"
-msgid "Remove"
-msgstr "Rimuovi"
+msgid "Remove Instance"
+msgstr "Rimuovi istanza"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
 #: widgets/textautogeneratehistorywidget.cpp:27
@@ -2068,6 +2032,12 @@ msgstr "Rimuovi…"
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "Vuoi rimuoverlo?"
+
+#: widgets/menu/textautogeneratemenulistview.cpp:61
+#, kde-format
+msgctxt "@title"
+msgid "Remove"
+msgstr "Rimuovi"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
@@ -2127,7 +2097,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Cerca"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:95
 #, kde-format
 msgid "No plugin found."
 msgstr "Nessuna estensione trovata."
@@ -2213,6 +2183,31 @@ msgstr "Aggiorna"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Nessun messaggio trovato."
+
+#~ msgid "The URL to the Ollama instance"
+#~ msgstr "L'URL all'istanza di Ollama"
+
+#~ msgid "The system prompt for the LLM"
+#~ msgstr "Il prompt di sistema per lo LLM"
+
+#~ msgid "The model used to generate responses"
+#~ msgstr "Il modello utilizzato per generare risposte"
+
+#~ msgid ""
+#~ "The temperature of the model. Increasing the temperature will make the "
+#~ "model answer more creatively."
+#~ msgstr ""
+#~ "La temperatura del modello. Aumentando la temperatura, il modello "
+#~ "risponderà in modo più creativo."
+
+#~ msgid ""
+#~ "Sets the random number seed to use for generation. Setting this to a "
+#~ "specific number will make the model generate the same text for the same "
+#~ "prompt. (Default: 0)"
+#~ msgstr ""
+#~ "Imposta il seme del numero casuale da utilizzare per la generazione. "
+#~ "Impostando questo valore su un numero specifico, il modello genererà lo "
+#~ "stesso testo per lo stesso prompt. (Predefinito: 0)"
 
 #~ msgid "Engine:"
 #~ msgstr "Motore:"
