@@ -14,7 +14,7 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkModelAvailableInfo
 public:
     GenericNetworkModelAvailableInfo();
     ~GenericNetworkModelAvailableInfo();
-    void parseInfo(const QString &name, const QJsonObject &obj);
+    void parseInfo(const QJsonObject &obj);
     [[nodiscard]] QString description() const;
     void setDescription(const QString &newDescription);
 
@@ -30,6 +30,7 @@ private:
     QString mDescription;
     QString mName;
     bool mToolsSupported = false;
+    // TODO add tags
 };
 Q_DECLARE_TYPEINFO(GenericNetworkModelAvailableInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t);

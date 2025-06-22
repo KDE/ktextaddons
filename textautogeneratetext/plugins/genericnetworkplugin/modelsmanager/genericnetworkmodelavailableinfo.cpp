@@ -4,13 +4,16 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmodelavailableinfo.h"
-
+using namespace Qt::Literals::StringLiterals;
 GenericNetworkModelAvailableInfo::GenericNetworkModelAvailableInfo() = default;
 
 GenericNetworkModelAvailableInfo::~GenericNetworkModelAvailableInfo() = default;
 
-void GenericNetworkModelAvailableInfo::parseInfo(const QString &name, const QJsonObject &obj)
+void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
 {
+    mToolsSupported = obj["tools_supported"_L1].toBool();
+    mDescription = obj["description"_L1].toString();
+    mName = obj["name"_L1].toString();
     // TODO
 }
 
