@@ -30,6 +30,8 @@ target_sources(
         textautogenerategeneric_private_export.h
         genericnetworksettings.h
         genericnetworksettings.cpp
+        modelsmanager/genericnetworkmodelavailableinfo.h
+        modelsmanager/genericnetworkmodelavailableinfo.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
