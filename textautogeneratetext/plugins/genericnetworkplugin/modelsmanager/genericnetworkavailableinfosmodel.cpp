@@ -26,27 +26,13 @@ QVariant GenericNetworkAvailableInfosModel::data(const QModelIndex &index, int r
         return {};
     }
     const GenericNetworkModelAvailableInfo &modelInfo = mModelInfos.at(index.row());
-    /*
     switch (role) {
-    case CategoriesName:
-        return modelInfo.categoriesName();
-    case Categories:
-        return QVariant::fromValue(modelInfo.categories());
     case Description:
         return modelInfo.description();
-    case Author:
-        return modelInfo.author();
-    case Url:
-        return modelInfo.url();
-    case Languages:
-        return modelInfo.languages();
-    case Tags:
-        return QVariant::fromValue(modelInfo.tags());
     case ModelName:
     case Qt::DisplayRole:
-        return modelInfo.name();
+        return modelInfo.modelName();
     }
-    */
     return {};
 }
 

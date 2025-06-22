@@ -20,15 +20,15 @@ public:
 
     [[nodiscard]] bool operator==(const GenericNetworkModelAvailableInfo &other) const;
 
-    [[nodiscard]] QString name() const;
-    void setName(const QString &newName);
+    [[nodiscard]] QString modelName() const;
+    void setModelName(const QString &newName);
 
     bool toolsSupported() const;
     void setToolsSupported(bool newToolsSupported);
 
 private:
     QString mDescription;
-    QString mName;
+    QString mModelName;
     bool mToolsSupported = false;
     // TODO add tags
 };
