@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogenerategenericnetwork_export.h"
+#include <QDebug>
 #include <QJsonObject>
 #include <QString>
 
@@ -14,4 +15,13 @@ public:
     GenericNetworkModelAvailableInfo();
     ~GenericNetworkModelAvailableInfo();
     void parseInfo(const QString &name, const QJsonObject &obj);
+    [[nodiscard]] QString description() const;
+    void setDescription(const QString &newDescription);
+
+    [[nodiscard]] bool operator==(const GenericNetworkModelAvailableInfo &other) const;
+
+private:
+    QString mDescription;
 };
+Q_DECLARE_TYPEINFO(GenericNetworkModelAvailableInfo, Q_RELOCATABLE_TYPE);
+QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t);

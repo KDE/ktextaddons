@@ -13,3 +13,24 @@ void GenericNetworkModelAvailableInfo::parseInfo(const QString &name, const QJso
 {
     // TODO
 }
+
+QString GenericNetworkModelAvailableInfo::description() const
+{
+    return mDescription;
+}
+
+void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescription)
+{
+    mDescription = newDescription;
+}
+
+bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
+{
+    return mDescription == other.description();
+}
+
+QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
+{
+    d.space() << "description:" << t.description();
+    return d;
+}
