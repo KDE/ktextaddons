@@ -26,11 +26,33 @@ void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescript
 
 bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
 {
-    return mDescription == other.description();
+    return mDescription == other.description() && mName == other.name() && mToolsSupported == other.toolsSupported();
+}
+
+QString GenericNetworkModelAvailableInfo::name() const
+{
+    return mName;
+}
+
+void GenericNetworkModelAvailableInfo::setName(const QString &newName)
+{
+    mName = newName;
+}
+
+bool GenericNetworkModelAvailableInfo::toolsSupported() const
+{
+    return mToolsSupported;
+}
+
+void GenericNetworkModelAvailableInfo::setToolsSupported(bool newToolsSupported)
+{
+    mToolsSupported = newToolsSupported;
 }
 
 QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
 {
+    d.space() << "name:" << t.name();
     d.space() << "description:" << t.description();
+    d.space() << "toolsSupported:" << t.toolsSupported();
     return d;
 }
