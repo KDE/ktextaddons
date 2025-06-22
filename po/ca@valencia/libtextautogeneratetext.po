@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 11:03+0200\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-21 10:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1927,32 +1927,28 @@ msgid "Add Instance"
 msgstr "Afig una instància"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nom:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Seleccioneu el tipus d'instància:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Configura la IA"
+msgstr "Configureu instàncies"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "Marca com a predeterminada"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
@@ -1967,15 +1963,12 @@ msgid "Remove Instance"
 msgstr "Elimina la instància"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Voleu eliminar este debat?"
+msgstr "Voleu eliminar esta instància (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Elimina la instància"
@@ -2052,7 +2045,7 @@ msgstr "Configura…"
 msgid "Api Key:"
 msgstr "Clau de l'API:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -2094,7 +2087,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Busca"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
@@ -2180,31 +2173,3 @@ msgstr "Actualitza"
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "L'URL de la instància Ollama"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "L'indicatiu del sistema de LLM"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "El model que s'utilitza per a generar les respostes"
-
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "La temperatura del model. L'augment de la temperatura farà que la "
-#~ "resposta del model siga més creativa."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Establix el nombre aleatori de llavors que s'utilitzarà per a la "
-#~ "generació. Establir açò a un nombre específic farà que el model genere el "
-#~ "mateix text per al mateix indicatiu. (Predeterminat: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "Motor:"

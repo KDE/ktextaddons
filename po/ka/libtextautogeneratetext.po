@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-06-20 04:56+0200\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-21 06:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -123,7 +123,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "ხი Kluster"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1954,15 +1954,12 @@ msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი?"
+msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
@@ -2039,7 +2036,7 @@ msgstr "მორგება…"
 msgid "Api Key:"
 msgstr "API გასაღები:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -2081,7 +2078,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."

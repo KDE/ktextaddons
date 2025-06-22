@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-06-14 07:08+0200\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-21 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -122,7 +122,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1914,32 +1914,28 @@ msgid "Add Instance"
 msgstr "Lägg till instans"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Namn:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Välj en typ av instans:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Anpassa IA"
+msgstr "Anpassa instanser"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "Markera som förval"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
@@ -1954,15 +1950,12 @@ msgid "Remove Instance"
 msgstr "Ta bort instans"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Vill du ta bort diskussionen?"
+msgstr "Vill du ta bort instansen (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Ta bort instans"
@@ -2039,7 +2032,7 @@ msgstr "Anpassa…"
 msgid "Api Key:"
 msgstr "Programmeringsgränssnittsnyckel:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -2081,7 +2074,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Sök"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "Inga insticksprogram hittades."

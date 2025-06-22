@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-05-30 21:51+0200\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-20 12:34+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -50,17 +50,15 @@ msgid "Unknown"
 msgstr "Inconnu "
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2"
+#, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "Moteur : %1\n"
-"Modèle : %2"
+"Modèle : %2\n"
+"Nom de l'instance : %3"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
@@ -78,19 +76,15 @@ msgid "Network"
 msgstr "Réseau"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Generic"
-msgstr "Général"
+msgstr "Générique"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Configurer une IA"
+msgstr "Configurer"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:41
@@ -213,19 +207,19 @@ msgstr "Catégories"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
 #, kde-format
 msgid "Base:"
-msgstr ""
+msgstr "Base :"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
 #: plugins/ollama/ollamaconfigurewidget.cpp:42
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "Nom :"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "Étiquette :"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:67
@@ -234,34 +228,28 @@ msgid "Prompt:"
 msgstr "Invite de commandes :"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "Supprimer un modèle"
+msgstr "Créer"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr ""
+msgstr "Charger le fichier « GGUF »…"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Tout sélectionner"
+msgstr "Sélectionner un fichier « GGUF »"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Supprimer un modèle"
+msgstr "Créer un modèle"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
@@ -302,10 +290,9 @@ msgid "Modified At:"
 msgstr "Modifié à :"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Parent Model:"
-msgstr "Modèle :"
+msgstr "Modèle parent :"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
 #, kde-format
@@ -1681,12 +1668,10 @@ msgid "Installed Models"
 msgstr "Modèles installés"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Supprimer un modèle"
+msgstr "Créer des modèles"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
@@ -1701,7 +1686,7 @@ msgstr "Modèle :"
 #: plugins/ollama/ollamaconfigurewidget.cpp:53
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "Température :"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
@@ -1710,11 +1695,13 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"La température du modèle. L'augmentation de la température conduira le "
+"modèle  à répondre de façon plus créative."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:59
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "Flux :"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:61
 #, kde-format
@@ -1733,24 +1720,22 @@ msgstr "Aucune invite système"
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr ""
+msgstr "Aucune instance trouvée. Veuillez en ajouter une."
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr ""
+msgstr "Ajouter une instance..."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr "Démarrer Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Configurer..."
@@ -1770,19 +1755,19 @@ msgstr "Envoyer"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
-msgstr ""
+msgstr "Ajouter une instance"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Nom :"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr ""
+msgstr "Sélectionnez un type d'instance :"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
 #, fuzzy, kde-format
@@ -1802,15 +1787,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Modifier…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove as Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Supprimer de la liste des signets"
+msgstr "Supprimer  l'instance"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, fuzzy, kde-format
@@ -1838,7 +1821,7 @@ msgstr "Rechercher..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr ""
+msgstr "Ajouter une instance..."
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -1898,11 +1881,11 @@ msgstr "Configurer..."
 msgid "Api Key:"
 msgstr "Clé API :"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Demande rapide"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
 #, kde-format
@@ -1940,7 +1923,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Rechercher"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "Aucun module externe n'a été trouvé."
@@ -2025,7 +2008,7 @@ msgstr "Actualiser"
 #: widgets/view/textautogeneratesearchlistview.cpp:48
 #, kde-format
 msgid "No Messages Found."
-msgstr ""
+msgstr "Aucun message trouvé."
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "L'URL vers l'instance Ollama"

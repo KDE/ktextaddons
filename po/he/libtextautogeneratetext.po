@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-06-20 22:30+0300\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-21 08:19+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -983,7 +983,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
 #, kde-format
 msgid "Uncensored version of Wizard LM model"
-msgstr ""
+msgstr "גרסה לא מצונזרת של המודל Wizard LM"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
 #, kde-format
@@ -991,11 +991,13 @@ msgid ""
 "A commercial-friendly small language model by NVIDIA optimized for roleplay, "
 "RAG QA, and function calling."
 msgstr ""
+"מודל שפה קטן מבית NVIDIA שמתאים לשימוש מסחרי והותאם למשחקי תפקידים, שו״ת עם "
+"RAG וקריאה לפונקציות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
 #, kde-format
 msgid "An extension of Mistral to support context windows of 64K or 128K."
-msgstr ""
+msgstr "הרחבה של Mistral כדי לתמוך בחלונות הקשר של 64K או 128K."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
 #, kde-format
@@ -1004,6 +1006,8 @@ msgid ""
 "language understanding and domain-specific knowledge, particularly in "
 "programming and mathematics."
 msgstr ""
+"הרחבה של Llama 2 שמתמחה בשילוב הבנת שפה כללית וידע בתחומים מסוימים, במיוחד "
+"בתכנות ומתמטיקה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
 #, kde-format
@@ -1017,7 +1021,7 @@ msgstr ""
 msgid ""
 "Open-source medical large language model adapted from Llama 2 to the medical "
 "domain."
-msgstr ""
+msgstr "מודל שפה גדול רפואי בקוד פתוח שהוסב מ־Llama 2 לתחום הרפואי."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
 #, kde-format
@@ -1025,6 +1029,8 @@ msgid ""
 "A series of models from Groq that represent a significant advancement in "
 "open-source AI capabilities for tool use/function calling."
 msgstr ""
+"סדרה של מודלים מבית Grok שמייצגים התפתחות משמעותית ביכולות בינה מלאכותית "
+"בקוד פתוח לשימוש בכלים/קריאה לפונקציות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
 #, kde-format
@@ -1032,17 +1038,19 @@ msgid ""
 "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
 "NVIDIA to improve the helpfulness of LLM generated responses to user queries."
 msgstr ""
+"Llama-3.1-Nemotron-70B-Instruct הוא מודל שפה גדול שהותאם על ידי NVIDIA "
+"לשיפור היעילות של תגובות שנוצרו על ידי מש״ג/LLM לשאלות משתמשים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
 #, kde-format
 msgid ""
 "Nexus Raven is a 13B instruction tuned model for function calling tasks."
-msgstr ""
+msgstr "Nexus Raven הוא מודל בגודל 13B שמכוון למשימות קריאה לפונקציות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:163
 #, kde-format
 msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
-msgstr ""
+msgstr "המודל Nous Hermes 2 מבית Nous Research, מאומן מעתה על גבי Mistral."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
 #, kde-format
@@ -1745,18 +1753,15 @@ msgid "Remove Instance"
 msgstr "הסרת מופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "להסיר את המופע הזה?"
+msgstr "להסיר את המופע הזה (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "הסרת מופע"
+msgstr "להסיר את המופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
 #: widgets/textautogeneratehistorywidget.cpp:27
@@ -1830,7 +1835,7 @@ msgstr "הגדרה…"
 msgid "Api Key:"
 msgstr "מפתח API:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -1872,7 +1877,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "חיפוש"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-06-17 00:23+0200\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-21 11:58+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -122,7 +122,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1909,32 +1909,28 @@ msgid "Add Instance"
 msgstr "Добавяне на екземпляр"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Име:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Select a Type of Instance:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Избиране на вид на екземпляра:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Конфигуриране на ИА"
+msgstr "Конфигуриране на екземплярите"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "Маркиране като „По подразбиране“"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
 #, kde-format
@@ -1949,15 +1945,12 @@ msgid "Remove Instance"
 msgstr "Премахване на екземпляр"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Искате ли да премахнете тази дискусия?"
+msgstr "Искате ли да премахнете този екземпляр (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Премахване на екземпляр"
@@ -2034,7 +2027,7 @@ msgstr "Конфигуриране…"
 msgid "Api Key:"
 msgstr "Api ключ:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -2076,7 +2069,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Търсене"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "Не е намерен плъгин."
@@ -2162,42 +2155,3 @@ msgstr "Обновяване"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "URL адресът към екземпляра на Ollama"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "Системният подканващ бутон за LLM"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "Моделът, използван за генериране на отговори"
-
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "Температурата на модела. Повишаването на температурата ще направи модела "
-#~ "да реагира по-креативно."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Задава началната стойност на случайното число, което да се използва за "
-#~ "генериране. Задаването на конкретно число ще накара модела да генерира "
-#~ "един и същ текст за едно и също запитване. (По подразбиране: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "Основна програма:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Конфигуриране на Mistral IA"
-
-#~ msgid "Cancel"
-#~ msgstr "Отказ"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Конфигуриране на Openai IA"

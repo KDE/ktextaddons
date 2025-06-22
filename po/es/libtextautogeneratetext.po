@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:41+0000\n"
-"PO-Revision-Date: 2025-06-20 20:35+0100\n"
+"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"PO-Revision-Date: 2025-06-21 14:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -114,7 +114,7 @@ msgstr "No se ha podido conectar a la interfaz %1: %2"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
 #, kde-format
 msgid "Mistral AI"
-msgstr "IA Mistral"
+msgstr "Mistral AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -1968,15 +1968,12 @@ msgid "Remove Instance"
 msgstr "Eliminar instancia"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "¿Quiere eliminar esta instancia?"
+msgstr "¿Quiere eliminar esta instancia (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Eliminar instancia"
@@ -2053,7 +2050,7 @@ msgstr "Configurar…"
 msgid "Api Key:"
 msgstr "Clave de la API:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:27
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
@@ -2095,7 +2092,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:93
 #, kde-format
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
@@ -2181,28 +2178,3 @@ msgstr "Actualizar"
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "La URL de la instancia de Ollama"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "Prompt del sistema para el LLM"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "Modelo que se usa para generar respuestas"
-
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "La temperatura del modelo. Un aumento de la temperatura hará que el "
-#~ "modelo responda con más creatividad."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Define el número de semilla aleatorio que debe usar la generación. Si se "
-#~ "usa un número específico, el modelo generará el mismo texto para la misma "
-#~ "pregunta (el valor predeterminado es 0)."
