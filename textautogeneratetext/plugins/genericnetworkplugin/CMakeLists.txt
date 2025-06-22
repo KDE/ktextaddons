@@ -32,6 +32,8 @@ target_sources(
         genericnetworksettings.cpp
         modelsmanager/genericnetworkmodelavailableinfo.h
         modelsmanager/genericnetworkmodelavailableinfo.cpp
+        modelsmanager/genericnetworkavailableinfosmodel.cpp
+        modelsmanager/genericnetworkavailableinfosmodel.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
