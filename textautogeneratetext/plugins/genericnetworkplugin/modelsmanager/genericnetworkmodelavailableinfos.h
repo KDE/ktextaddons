@@ -6,12 +6,14 @@
 #pragma once
 #include "genericnetworkmodelavailableinfo.h"
 #include "textautogenerategeneric_private_export.h"
-
+#include <QJsonArray>
 class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkModelAvailableInfos
 {
 public:
     GenericNetworkModelAvailableInfos();
     ~GenericNetworkModelAvailableInfos();
+
+    void parseModelsInfo(const QJsonArray &array);
 
     [[nodiscard]] QList<GenericNetworkModelAvailableInfo> infos() const;
     void setInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos);

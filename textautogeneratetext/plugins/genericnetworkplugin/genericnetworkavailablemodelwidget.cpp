@@ -5,14 +5,19 @@
 */
 #include "genericnetworkavailablemodelwidget.h"
 #include "genericnetworkmanager.h"
+#include "modelsmanager/genericnetworkmodelavailablewidget.h"
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkAvailableModelWidget::GenericNetworkAvailableModelWidget(GenericNetworkManager *manager, QWidget *parent)
     : QWidget{parent}
+    , mGenericNetworkModelAvailableWidget(new GenericNetworkModelAvailableWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
+
+    mGenericNetworkModelAvailableWidget->setObjectName(QStringLiteral("mGenericNetworkModelAvailableWidget"));
+    mainLayout->addWidget(mGenericNetworkModelAvailableWidget);
 }
 
 GenericNetworkAvailableModelWidget::~GenericNetworkAvailableModelWidget() = default;

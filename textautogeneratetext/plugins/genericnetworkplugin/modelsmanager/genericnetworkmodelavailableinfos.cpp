@@ -9,6 +9,17 @@ GenericNetworkModelAvailableInfos::GenericNetworkModelAvailableInfos() = default
 
 GenericNetworkModelAvailableInfos::~GenericNetworkModelAvailableInfos() = default;
 
+void GenericNetworkModelAvailableInfos::parseModelsInfo(const QJsonArray &array)
+{
+    QList<GenericNetworkModelAvailableInfo> lstInfo;
+    for (int i = 0; i < array.count(); ++i) {
+        GenericNetworkModelAvailableInfo info;
+        info.parseInfo(array[i].toObject());
+        lstInfo.append(std::move(info));
+    }
+    mInfos = std::move(lstInfo);
+}
+
 QList<GenericNetworkModelAvailableInfo> GenericNetworkModelAvailableInfos::infos() const
 {
     return mInfos;
