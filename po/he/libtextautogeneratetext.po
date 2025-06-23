@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-22 00:42+0000\n"
-"PO-Revision-Date: 2025-06-21 08:19+0300\n"
+"PO-Revision-Date: 2025-06-22 22:07+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -123,7 +123,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
@@ -662,7 +662,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
 #, kde-format
 msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
-msgstr ""
+msgstr "מודל מבוסס Llama 2 שכוון לשיפור יכולות שיח בסינית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
 #, kde-format
@@ -726,13 +726,15 @@ msgid ""
 "Stable Code 3B is a coding model with instruct and code completion variants "
 "on par with models such as Code Llama 7B that are 2.5x larger."
 msgstr ""
+"Stable Code 3B הוא מודל פיתוח עם הגוונים של הנחיות וכתיבת קוד שמצליח להדביק "
+"מודלים כגון Code Llama 7B שגדולים ממנו פי 2.5."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:97
 #, kde-format
 msgid ""
 "An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset "
 "by Eric Hartford and based on TinyLlama."
-msgstr ""
+msgstr "."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
 #, kde-format
@@ -823,13 +825,15 @@ msgid ""
 "A model from NVIDIA based on Llama 3 that excels at conversational question "
 "answering (QA) and retrieval-augmented generation (RAG)."
 msgstr ""
+"מודל מבית NVIDIA שמבוסס על Llama 3 ומוביל במענה על שאלות כחלק מדיון (QA) "
+"ויצירה משולבת אחזור (RAG)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:120
 #, kde-format
 msgid ""
 "Conversational model based on Llama 2 that performs competitively on various "
 "benchmarks."
-msgstr ""
+msgstr "מודל דיון שמבוסס על Llama 2 עם ביצועים תחרותיים במגוון מדדים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
 #, kde-format
@@ -843,17 +847,17 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
 #, kde-format
 msgid "General use models based on Llama and Llama 2 from Nous Research."
-msgstr ""
+msgstr "מודלים לשימוש כללי שמבוססים על Llama ו־Llama 2 מבית Nous Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:123
 #, kde-format
 msgid "Code generation model based on Code Llama."
-msgstr ""
+msgstr "מודל ליצירת קוד שמבוסס על Code Llama."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
-msgstr ""
+msgstr "הרחבה של Llama 2 שתומכת בהקשר של עד 128k אסימונים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
 #, kde-format
@@ -865,12 +869,12 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
 msgid "General use model based on Llama 2."
-msgstr ""
+msgstr "מודל לשימוש כללי שמבוסס על Llama 2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:127
 #, kde-format
 msgid "A strong, economical, and efficient Mixture-of-Experts language model."
-msgstr ""
+msgstr "מודל שפה חזק, יעיל וחסכוני עם ערבוב תחומי מומחיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:129
 #, kde-format
@@ -906,6 +910,8 @@ msgid ""
 "A large language model built by the Technology Innovation Institute (TII) "
 "for use in summarization, text generation, and chat bots."
 msgstr ""
+"מודל שפה גדול שנבנה על ידי Technology Innovation Institute (TII) למטרות "
+"תקצור, יצירת טקסט ובוטים לשיחות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
 #, kde-format
@@ -913,6 +919,8 @@ msgid ""
 "InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
 "outstanding reasoning capability."
 msgstr ""
+"InternLM2.5 הוא מודל בגודל 7B משתנים שתפור לתרחישים מעשיים עם יכולות נימוק "
+"יוצאות מן הכלל."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:138
 #, kde-format
@@ -920,6 +928,8 @@ msgid ""
 "A compact, yet powerful 10.7B large language model designed for single-turn "
 "conversation."
 msgstr ""
+"מודל שפה גדול חסכוני אך עוצמתי בגודל 10.7B שתוכנן לענות לשאלה עם מענה יחיד "
+"ומלא."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
 #, kde-format
