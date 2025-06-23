@@ -12,6 +12,12 @@
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 {
 public:
+    enum class Limitation : uint8_t {
+        None = 0,
+        TextOnly,
+        NoSeed,
+        NoSystemMessage,
+    };
     GenericNetworkServerInfo();
     ~GenericNetworkServerInfo();
     [[nodiscard]] QString translatedName(GenericNetworkManager::PluginNetworkType type) const;

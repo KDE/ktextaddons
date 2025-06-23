@@ -20,10 +20,6 @@ public:
         LastElement,
     };
 
-    enum class Limitation : uint8_t {
-        None = 0,
-    };
-
     explicit GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent = nullptr);
     ~GenericNetworkManager() override;
 
