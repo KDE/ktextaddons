@@ -16,4 +16,7 @@ macro(add_generic_plugin_unittest _source)
     )
     set_target_properties(${_name} PROPERTIES DISABLE_PRECOMPILE_HEADERS ON)
 endmacro()
+
 add_generic_plugin_unittest(genericnetworkserverinfotest.cpp)
+add_generic_plugin_unittest(genericnetworkmodelavailablewidgettest.cpp)
+add_generic_plugin_unittest(genericnetworkmodelavailablelistviewtest.cpp)
