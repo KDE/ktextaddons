@@ -5,6 +5,8 @@
 */
 
 #include "emoticoncategorybuttons.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticoncategorybutton.h"
 #include "emoticonunicodeutils.h"
 #include <KLocalizedString>
@@ -21,9 +23,9 @@ EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
     , mMainLayout(new QHBoxLayout(this))
     , mButtonGroup(new QButtonGroup(this))
 {
-    mMainLayout->setObjectName(QStringLiteral("mMainLayout"));
+    mMainLayout->setObjectName(u"mMainLayout"_s);
     mMainLayout->setContentsMargins({});
-    mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
+    mButtonGroup->setObjectName(u"mButtonGroup"_s);
 }
 
 EmoticonCategoryButtons::~EmoticonCategoryButtons() = default;

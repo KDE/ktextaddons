@@ -26,8 +26,8 @@ void GenericNetworkManager::loadModels()
     if (mCheckConnect) {
         disconnect(mCheckConnect);
     }
-    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + QStringLiteral("models"))};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + u"models"_s)};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {

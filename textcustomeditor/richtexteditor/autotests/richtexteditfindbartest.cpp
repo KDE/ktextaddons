@@ -5,6 +5,8 @@
 */
 
 #include "richtexteditfindbartest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "richtexteditor/richtexteditfindbar.h"
 #include "widgets/findutils.h"
 #include <QTest>
@@ -50,30 +52,30 @@ void RichTextEditFindBarTest::shouldSearchText_data()
     QTest::addColumn<TextCustomEditor::TextEditFindBarBase::FindFlags>("flags");
     QTest::addColumn<bool>("found");
 
-    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << TextCustomEditor::TextEditFindBarBase::FindFlags() << false;
+    QTest::newRow("empty") << QString() << u"blabla"_s << TextCustomEditor::TextEditFindBarBase::FindFlags() << false;
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindRespectDiacritics;
-        QTest::newRow("empty-1") << QString() << QStringLiteral("blabla") << flags << false;
+        QTest::newRow("empty-1") << QString() << u"blabla"_s << flags << false;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindCaseSensitively;
-        QTest::newRow("empty-2") << QString() << QStringLiteral("blabla") << flags << false;
+        QTest::newRow("empty-2") << QString() << u"blabla"_s << flags << false;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("findwholewords-1") << QStringLiteral("bla bla") << QStringLiteral("bla") << flags << true;
+        QTest::newRow("findwholewords-1") << u"bla bla"_s << u"bla"_s << flags << true;
 
-        QTest::newRow("findwholewords-2") << QStringLiteral("blabla") << QStringLiteral("bla") << flags << false;
+        QTest::newRow("findwholewords-2") << u"blabla"_s << u"bla"_s << flags << false;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindRespectDiacritics;
-        QTest::newRow("find-diacritics-1") << QStringLiteral("numéro numéro") << QStringLiteral("numero") << flags << false;
+        QTest::newRow("find-diacritics-1") << u"numéro numéro"_s << u"numero"_s << flags << false;
 
-        QTest::newRow("find-diacritics-2") << QStringLiteral("numéro numéro") << QStringLiteral("numéro") << flags << true;
+        QTest::newRow("find-diacritics-2") << u"numéro numéro"_s << u"numéro"_s << flags << true;
     }
 }
 
@@ -100,39 +102,37 @@ void RichTextEditFindBarTest::shouldReplaceAllText_data()
     QTest::addColumn<int>("nbElement");
     QTest::addColumn<QString>("resultStr");
 
-    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << QStringLiteral("replace") << TextCustomEditor::TextEditFindBarBase::FindFlags() << 0
-                           << QString();
+    QTest::newRow("empty") << QString() << u"blabla"_s << u"replace"_s << TextCustomEditor::TextEditFindBarBase::FindFlags() << 0 << QString();
 
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords") << QStringLiteral("bla bla") << QStringLiteral("bla") << QStringLiteral("replace") << flags << 2
-                                    << QStringLiteral("replace replace");
+        QTest::newRow("wholewords") << u"bla bla"_s << u"bla"_s << QStringLiteral("replace") << flags << 2 << u"replace replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
         flags |= TextCustomEditor::TextEditFindBarBase::FindRespectDiacritics;
-        QTest::newRow("wholewords-diacritics") << QStringLiteral("réunion reunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace") << flags
-                                               << 2 << QStringLiteral("replace reunion replace");
+        QTest::newRow("wholewords-diacritics") << u"réunion reunion réunion"_s << u"réunion"_s << QStringLiteral("replace") << flags << 2
+                                               << u"replace reunion replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics") << QStringLiteral("réunion reunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace")
-                                                  << flags << 3 << QStringLiteral("replace replace replace");
+        QTest::newRow("wholewords-no-diacritics") << u"réunion reunion réunion"_s << u"réunion"_s << QStringLiteral("replace") << flags << 3
+                                                  << u"replace replace replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics-2") << QStringLiteral("réunion réunion réunion") << QStringLiteral("réunion") << QStringLiteral("replace")
-                                                    << flags << 3 << QStringLiteral("replace replace replace");
+        QTest::newRow("wholewords-no-diacritics-2") << u"réunion réunion réunion"_s << u"réunion"_s << QStringLiteral("replace") << flags << 3
+                                                    << u"replace replace replace"_s;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("wholewords-no-diacritics-2") << QStringLiteral("voiture voiture voiture") << QStringLiteral("réunion") << QStringLiteral("replace")
-                                                    << flags << 0 << QStringLiteral("voiture voiture voiture");
+        QTest::newRow("wholewords-no-diacritics-2") << u"voiture voiture voiture"_s << u"réunion"_s << QStringLiteral("replace") << flags << 0
+                                                    << u"voiture voiture voiture"_s;
     }
 }
 

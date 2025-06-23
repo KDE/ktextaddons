@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodeldownloadwidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
@@ -21,38 +23,38 @@ OllamaModelDownloadWidgetTest::OllamaModelDownloadWidgetTest(QObject *parent)
 void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelDownloadWidget w(QString{}, QString{}, false);
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     // QVERIFY(mainLayout);
     //  QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto labelTag = w.findChild<QLabel *>(QStringLiteral("labelTag"));
+    auto labelTag = w.findChild<QLabel *>(u"labelTag"_s);
     QVERIFY(labelTag);
 
-    auto labelSize = w.findChild<QLabel *>(QStringLiteral("labelSize"));
+    auto labelSize = w.findChild<QLabel *>(u"labelSize"_s);
     QVERIFY(labelSize);
 
-    auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));
+    auto toolButton = w.findChild<QToolButton *>(u"toolButton"_s);
     QVERIFY(toolButton);
     QVERIFY(toolButton->autoRaise());
 }
 
 void OllamaModelDownloadWidgetTest::shouldVerifyName()
 {
-    const QString tag = QStringLiteral("bla1");
+    const QString tag = u"bla1"_s;
     OllamaModelDownloadWidget w(tag, QString{}, false);
 
-    auto labelTag = w.findChild<QLabel *>(QStringLiteral("labelTag"));
+    auto labelTag = w.findChild<QLabel *>(u"labelTag"_s);
     QCOMPARE(labelTag->text(), tag);
 }
 
 void OllamaModelDownloadWidgetTest::shouldEmitDownloadModel()
 {
-    const QString name = QStringLiteral("bla1");
-    const QString size = QStringLiteral("32G");
+    const QString name = u"bla1"_s;
+    const QString size = u"32G"_s;
     OllamaModelDownloadWidget w(name, size, false);
     QSignalSpy spy(&w, &OllamaModelDownloadWidget::downloadModel);
 
-    auto toolButton = w.findChild<QToolButton *>(QStringLiteral("toolButton"));
+    auto toolButton = w.findChild<QToolButton *>(u"toolButton"_s);
     QTest::mouseClick(toolButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy.at(0).at(0).toString(), name);

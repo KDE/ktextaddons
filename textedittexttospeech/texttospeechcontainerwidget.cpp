@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechcontainerwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeechwidget.h"
 #include <QHBoxLayout>
 using namespace TextEditTextToSpeech;
@@ -15,7 +17,7 @@ public:
     TextToSpeechContainerWidgetPrivate(TextToSpeechContainerWidget *q)
         : mainLayout(new QHBoxLayout(q))
     {
-        mainLayout->setObjectName(QStringLiteral("mainLayout"));
+        mainLayout->setObjectName(u"mainLayout"_s);
         mainLayout->setContentsMargins({});
     }
     TextToSpeechWidget *textToSpeechWidget = nullptr;

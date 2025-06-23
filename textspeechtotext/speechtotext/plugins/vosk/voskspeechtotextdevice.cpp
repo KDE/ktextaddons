@@ -6,6 +6,8 @@
 */
 
 #include "voskspeechtotextdevice.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libvoskspeechtotext_debug.h"
 #if HAVE_VOSK_API_SUPPORT
 #include "vosk_api.h"
@@ -100,7 +102,7 @@ qint64 VoskSpeechToTextDevice::writeData(const char *data, qint64 len)
 void VoskSpeechToTextDevice::parseText(const char *json)
 {
     const QJsonDocument obj = QJsonDocument::fromJson(json);
-    QString text = obj[QStringLiteral("text")].toString();
+    QString text = obj[u"text"_s].toString();
 
     if (text.isEmpty())
         return;
@@ -131,7 +133,7 @@ void VoskSpeechToTextDevice::parseText(const char *json)
 void VoskSpeechToTextDevice::parsePartial(const char *json)
 {
     const QJsonDocument obj = QJsonDocument::fromJson(json);
-    QString text = obj[QStringLiteral("partial")].toString();
+    QString text = obj[u"partial"_s].toString();
     if (text.isEmpty())
         return;
     text.append(u' ');

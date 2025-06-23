@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratebaselistview.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/view/textautogeneratelistviewbasedelegate.h"
 #include <KLocalizedString>
 #include <QApplication>
@@ -36,16 +38,15 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
     QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        auto copyAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
-                                      mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"),
-                                      &menu);
+        auto copyAction =
+            new QAction(QIcon::fromTheme(u"edit-copy"_s), mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"), &menu);
         copyAction->setShortcut(QKeySequence::Copy);
         connect(copyAction, &QAction::triggered, this, [index, this]() {
             slotCopyMessage(index);
         });
         menu.addAction(copyAction);
         menu.addSeparator();
-        auto selectAllAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-select-all")), i18nc("@action", "Select All"), &menu);
+        auto selectAllAction = new QAction(QIcon::fromTheme(u"edit-select-all"_s), i18nc("@action", "Select All"), &menu);
         connect(selectAllAction, &QAction::triggered, this, [this, index]() {
             slotSelectAll(index);
         });

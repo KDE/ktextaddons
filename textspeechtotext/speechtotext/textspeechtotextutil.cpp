@@ -5,16 +5,17 @@
 */
 
 #include "textspeechtotextutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace TextSpeechToText;
 QString TextSpeechToTextUtil::groupTranslateName()
 {
-    return QStringLiteral("TextToSpeech");
+    return u"TextToSpeech"_s;
 }
 
 QString TextSpeechToTextUtil::engineTextToSpeechName()
 {
-    return QStringLiteral("engine");
+    return u"engine"_s;
 }
 
 QString TextSpeechToTextUtil::defaultEngineName()

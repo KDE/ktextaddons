@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodelinstalledinfo.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(OllamaModelInstalledInfoTest)
@@ -28,9 +30,9 @@ void OllamaModelInstalledInfoTest::shouldGenerateModelName_data()
 {
     QTest::addColumn<QString>("modelname");
     QTest::addColumn<QString>("displaymodelname");
-    QTest::newRow("test1") << QStringLiteral("reader-lm:0.5b") << QStringLiteral("Reader Lm");
-    QTest::newRow("test2") << QStringLiteral("deepseek:0.5b") << QStringLiteral("Deepseek");
-    QTest::newRow("test3") << QStringLiteral("reader-lm") << QStringLiteral("Reader Lm");
+    QTest::newRow("test1") << u"reader-lm:0.5b"_s << u"Reader Lm"_s;
+    QTest::newRow("test2") << u"deepseek:0.5b"_s << u"Deepseek"_s;
+    QTest::newRow("test3") << u"reader-lm"_s << u"Reader Lm"_s;
 }
 
 void OllamaModelInstalledInfoTest::shouldGenerateModelName()

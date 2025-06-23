@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskheaderwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratemanager.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -15,14 +17,14 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     mainLayout->addStretch(1);
     auto configureButton = new QToolButton(this);
     configureButton->setAutoRaise(true);
-    configureButton->setObjectName(QStringLiteral("configureButton"));
-    configureButton->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
+    configureButton->setObjectName(u"configureButton"_s);
+    configureButton->setIcon(QIcon::fromTheme(u"settings-configure"_s));
     configureButton->setToolTip(i18nc("@info:tooltip", "Configure…"));
     mainLayout->addWidget(configureButton);
     connect(configureButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::configureRequested);

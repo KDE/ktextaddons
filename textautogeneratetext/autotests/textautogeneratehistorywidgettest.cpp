@@ -19,7 +19,7 @@ TextAutoGenerateHistoryWidgetTest::TextAutoGenerateHistoryWidgetTest(QWidget *pa
 void TextAutoGenerateHistoryWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateHistoryWidget w(nullptr);
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
     auto mTextAutoGenerateHistoryListView = w.findChild<TextAutoGenerateText::TextAutoGenerateHistoryListView *>("mTextAutoGenerateHistoryListView"_L1);

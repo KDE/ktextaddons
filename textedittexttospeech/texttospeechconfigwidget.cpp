@@ -26,45 +26,45 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     : QWidget(parent)
-    , mVolume(new TextToSpeechSliderWidget(QStringLiteral("%1 %"), this))
-    , mRate(new TextToSpeechSliderWidget(QStringLiteral("%1"), this))
-    , mPitch(new TextToSpeechSliderWidget(QStringLiteral("%1"), this))
+    , mVolume(new TextToSpeechSliderWidget(u"%1 %"_s, this))
+    , mRate(new TextToSpeechSliderWidget(u"%1"_s, this))
+    , mPitch(new TextToSpeechSliderWidget(u"%1"_s, this))
     , mAvailableEngine(new QComboBox(this))
     , mLanguage(new TextToSpeechLanguageComboBox(this))
     , mTextToSpeechConfigInterface(new TextToSpeechConfigInterface(this))
     , mVoice(new TextToSpeechVoiceComboBox(this))
-    , mTestButton(new QPushButton(QIcon::fromTheme(QStringLiteral("player-volume")), i18n("Test"), this))
+    , mTestButton(new QPushButton(QIcon::fromTheme(u"player-volume"_s), i18n("Test"), this))
 {
     auto layout = new QFormLayout(this);
-    mVolume->setObjectName(QStringLiteral("volume"));
+    mVolume->setObjectName(u"volume"_s);
     mVolume->setRange(0, 100);
     connect(mVolume, &TextToSpeechSliderWidget::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     layout->addRow(i18n("Volume:"), mVolume);
 
-    mRate->setObjectName(QStringLiteral("rate"));
+    mRate->setObjectName(u"rate"_s);
     mRate->setRange(-100, 100);
     layout->addRow(i18n("Rate:"), mRate);
     connect(mRate, &TextToSpeechSliderWidget::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     mPitch->setRange(-100, 100);
     connect(mPitch, &TextToSpeechSliderWidget::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
-    mPitch->setObjectName(QStringLiteral("pitch"));
+    mPitch->setObjectName(u"pitch"_s);
     layout->addRow(i18n("Pitch:"), mPitch);
 
-    mAvailableEngine->setObjectName(QStringLiteral("engine"));
+    mAvailableEngine->setObjectName(u"engine"_s);
     layout->addRow(i18n("Engine:"), mAvailableEngine);
     connect(mAvailableEngine, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::slotAvailableEngineChanged);
 
-    mLanguage->setObjectName(QStringLiteral("language"));
+    mLanguage->setObjectName(u"language"_s);
     layout->addRow(i18n("Language:"), mLanguage);
     connect(mLanguage, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mVoice->setObjectName(QStringLiteral("voice"));
+    mVoice->setObjectName(u"voice"_s);
     layout->addRow(i18n("Voice:"), mVoice);
     connect(mVoice, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
-    mTestButton->setObjectName(QStringLiteral("mTestButton"));
+    mTestButton->setObjectName(u"mTestButton"_s);
     layout->addWidget(mTestButton);
     connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);

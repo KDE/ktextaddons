@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechgui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeech.h"
 #include <KLocalizedString>
 #include <QAction>
@@ -19,11 +21,11 @@
 TextToSpeechGui::TextToSpeechGui(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle(QStringLiteral("text to speech window"));
+    setWindowTitle(u"text to speech window"_s);
     mEdit = new QTextEdit;
     setCentralWidget(mEdit);
 
-    QMenu *editMenu = menuBar()->addMenu(QStringLiteral("Edit"));
+    QMenu *editMenu = menuBar()->addMenu(u"Edit"_s);
 
     auto act = new QAction(i18nc("@action", "Speech text"), this);
     connect(act, &QAction::triggered, this, &TextToSpeechGui::slotTextToSpeech);

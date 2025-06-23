@@ -30,7 +30,7 @@ YandexEnginePlugin::~YandexEnginePlugin() = default;
 void YandexEnginePlugin::translate()
 {
     if (sYandexKey.isEmpty()) {
-        const QUrl url(QStringLiteral("https://translate.yandex.com"));
+        const QUrl url(u"https://translate.yandex.com"_s);
 
         QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
         connect(reply, &QNetworkReply::finished, this, [this, reply]() {
@@ -77,13 +77,13 @@ void YandexEnginePlugin::parseCredentials(QNetworkReply *reply)
 
     const QString sid = QString::fromUtf8(webSiteData.mid(sidBeginPosition, sidEndPosition - sidBeginPosition));
 
-    QStringList sidParts = sid.split(QLatin1Char('.'));
+    QStringList sidParts = sid.split(u'.');
 
     for (int i = 0, total = sidParts.size(); i < total; ++i) {
         std::reverse(sidParts[i].begin(), sidParts[i].end());
     }
 
-    sYandexKey = sidParts.join(QLatin1Char('.'));
+    sYandexKey = sidParts.join(u'.');
     translateText();
 }
 
@@ -98,16 +98,16 @@ void YandexEnginePlugin::translateText()
     if (from() == "auto"_L1) {
         lang = languageCode(to());
     } else {
-        lang = languageCode(from()) + QLatin1Char('-') + languageCode(to());
+        lang = languageCode(from()) + u'-' + languageCode(to());
     }
     // qDebug() << " lang " << lang;
     // Generate API url
-    QUrl url(QStringLiteral("https://translate.yandex.net/api/v1/tr.json/translate"));
+    QUrl url(u"https://translate.yandex.net/api/v1/tr.json/translate"_s);
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("id"), sYandexKey + "-2-0"_L1);
-    query.addQueryItem(QStringLiteral("srv"), QStringLiteral("tr-text"));
-    query.addQueryItem(QStringLiteral("text"), inputText());
-    query.addQueryItem(QStringLiteral("lang"), lang);
+    query.addQueryItem(u"id"_s, sYandexKey + "-2-0"_L1);
+    query.addQueryItem(u"srv"_s, u"tr-text"_s);
+    query.addQueryItem(u"text"_s, inputText());
+    query.addQueryItem(u"lang"_s, lang);
     url.setQuery(query);
 
     // Setup request
@@ -139,22 +139,22 @@ void YandexEnginePlugin::parseTranslation(QNetworkReply *reply)
 
     // Parse language
     if (from() == "auto"_L1) {
-        QString sourceCode = jsonData.value(QStringLiteral("lang")).toString();
-        sourceCode = sourceCode.left(sourceCode.indexOf(QLatin1Char('-')));
+        QString sourceCode = jsonData.value(u"lang"_s).toString();
+        sourceCode = sourceCode.left(sourceCode.indexOf(u'-'));
         qDebug() << " sourceCode " << sourceCode;
     }
 
     // qDebug() << "jsonData  " << jsonData;
-    appendResult(jsonData.value(QStringLiteral("text")).toArray().at(0).toString());
+    appendResult(jsonData.value(u"text"_s).toArray().at(0).toString());
     Q_EMIT translateDone();
 }
 
 QString YandexEnginePlugin::languageCode(const QString &langStr)
 {
     if (langStr == "zh"_L1) {
-        return QStringLiteral("zn");
+        return u"zn"_s;
     } else if (langStr == "ja"_L1) {
-        return QStringLiteral("jv");
+        return u"jv"_s;
     }
     return langStr;
 }

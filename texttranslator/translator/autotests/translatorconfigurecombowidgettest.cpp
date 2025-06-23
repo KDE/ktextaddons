@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurecombowidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/widgets/translatorconfigurecombowidget.h"
 #include <QComboBox>
 #include <QHBoxLayout>
@@ -21,12 +23,12 @@ TranslatorConfigureComboWidgetTest::TranslatorConfigureComboWidgetTest(QObject *
 void TranslatorConfigureComboWidgetTest::shouldHaveDefaultValues()
 {
     TextTranslator::TranslatorConfigureComboWidget d;
-    auto mEngineComboBox = d.findChild<QComboBox *>(QStringLiteral("mEngineComboBox"));
+    auto mEngineComboBox = d.findChild<QComboBox *>(u"mEngineComboBox"_s);
     QVERIFY(mEngineComboBox);
-    auto mConfigureEngine = d.findChild<QToolButton *>(QStringLiteral("mConfigureEngine"));
+    auto mConfigureEngine = d.findChild<QToolButton *>(u"mConfigureEngine"_s);
     QVERIFY(mConfigureEngine);
 
-    auto mainLayout = d.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 

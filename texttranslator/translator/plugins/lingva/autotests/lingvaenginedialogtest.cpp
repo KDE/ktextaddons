@@ -5,6 +5,8 @@
 */
 
 #include "lingvaenginedialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../lingvaenginedialog.h"
 #include "../lingvaenginewidget.h"
 #include <QDialogButtonBox>
@@ -20,13 +22,13 @@ void LingvaEngineDialogTest::shouldHaveDefaultValues()
 {
     LingvaEngineDialog d;
     QVERIFY(!d.windowTitle().isEmpty());
-    auto mConfigureWidget = d.findChild<LingvaEngineWidget *>(QStringLiteral("mConfigureWidget"));
+    auto mConfigureWidget = d.findChild<LingvaEngineWidget *>(u"mConfigureWidget"_s);
     QVERIFY(mConfigureWidget);
 
-    auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = d.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 

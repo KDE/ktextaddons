@@ -5,6 +5,8 @@
 */
 
 #include "lingvaenginewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -15,10 +17,10 @@ LingvaEngineWidget::LingvaEngineWidget(QWidget *parent)
     , mServerUrl(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
+    mServerUrl->setObjectName(u"mServerUrl"_s);
     mServerUrl->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
     KLineEditEventHandler::catchReturnKey(mServerUrl);

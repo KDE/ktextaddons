@@ -7,6 +7,8 @@
 */
 
 #include "translation.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <slimt/Response.hh>
 
 Translation::Translation()

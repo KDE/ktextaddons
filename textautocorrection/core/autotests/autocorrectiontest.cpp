@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectiontest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../autocorrection.h"
 #include "settings/textautocorrectionsettings.h"
 #include <QStandardPaths>
@@ -24,7 +26,7 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 AutoCorrectionTest::AutoCorrectionTest()
 {
     QStandardPaths::setTestModeEnabled(true);
-    mConfig = KSharedConfig::openConfig(QStringLiteral("autocorrectiontestrc"));
+    mConfig = KSharedConfig::openConfig(u"autocorrectiontestrc"_s);
     TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setSharedConfig(mConfig);
     TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->load();
 }
@@ -66,32 +68,32 @@ void AutoCorrectionTest::shouldUpperCaseFirstCharOfSentence()
 
     // Uppercase here.
     QTextDocument doc;
-    QString text = QStringLiteral("foo");
+    QString text = u"foo"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
-    QCOMPARE(doc.toPlainText(), QStringLiteral("Foo"));
+    QCOMPARE(doc.toPlainText(), u"Foo"_s);
 
     // IT's not first char -> not uppercase
-    text = QStringLiteral(" foo");
+    text = u" foo"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
     // It's already uppercase
-    text = QStringLiteral("Foo");
+    text = u"Foo"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
     // Word is after a ". "
-    text = QStringLiteral("Foo. foo");
+    text = u"Foo. foo"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
-    QCOMPARE(doc.toPlainText(), QStringLiteral("Foo. Foo"));
+    QCOMPARE(doc.toPlainText(), u"Foo. Foo"_s);
     QCOMPARE(position, text.length());
 }
 
@@ -105,44 +107,44 @@ void AutoCorrectionTest::shouldFixTwoUpperCaseChars()
 
     // Remove two uppercases
     QTextDocument doc;
-    QString text = QStringLiteral("FOo");
+    QString text = u"FOo"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
-    QCOMPARE(doc.toPlainText(), QStringLiteral("Foo"));
+    QCOMPARE(doc.toPlainText(), u"Foo"_s);
 
     // There is not two uppercase
-    text = QStringLiteral("foo");
+    text = u"foo"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
-    text = QStringLiteral("Foo");
+    text = u"Foo"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
     // There is a uppercase word
-    text = QStringLiteral("FOO");
+    text = u"FOO"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
     // Exclude 2 upper letter
-    text = QStringLiteral("ABc");
+    text = u"ABc"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
-    QCOMPARE(doc.toPlainText(), QStringLiteral("Abc"));
+    QCOMPARE(doc.toPlainText(), u"Abc"_s);
 
     QSet<QString> exception;
-    exception.insert(QStringLiteral("ABc"));
+    exception.insert(u"ABc"_s);
     settings->setTwoUpperLetterExceptions(exception);
     autocorrection.setAutoCorrectionSettings(settings);
-    text = QStringLiteral("ABc");
+    text = u"ABc"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
@@ -158,27 +160,27 @@ void AutoCorrectionTest::shouldReplaceSingleQuote()
     autocorrection.setAutoCorrectionSettings(settings);
 
     TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes simpleQuote;
-    simpleQuote.begin = QLatin1Char('A');
-    simpleQuote.end = QLatin1Char('B');
+    simpleQuote.begin = u'A';
+    simpleQuote.end = u'B';
 
     settings->setTypographicSingleQuotes(simpleQuote);
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
-    QString text = QStringLiteral("sss");
-    doc.setPlainText(QStringLiteral("'") + text);
+    QString text = u"sss"_s;
+    doc.setPlainText(u"'"_s + text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(simpleQuote.begin + text));
 
-    text = QStringLiteral("sss");
-    doc.setPlainText(text + QStringLiteral("'"));
+    text = u"sss"_s;
+    doc.setPlainText(text + u"'"_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + simpleQuote.end));
 
-    text = QStringLiteral("sss");
-    doc.setPlainText(QStringLiteral("'") + text + QStringLiteral("'"));
+    text = u"sss"_s;
+    doc.setPlainText(u"'"_s + text + u"'"_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(simpleQuote.begin + text + simpleQuote.end));
@@ -191,28 +193,28 @@ void AutoCorrectionTest::shouldReplaceDoubleQuote()
     settings->setEnabledAutoCorrection(true);
     settings->setReplaceDoubleQuotes(true);
     TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes doubleQuote;
-    doubleQuote.begin = QLatin1Char('A');
-    doubleQuote.end = QLatin1Char('B');
+    doubleQuote.begin = u'A';
+    doubleQuote.end = u'B';
 
     settings->setTypographicDoubleQuotes(doubleQuote);
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
-    QString text = QStringLiteral("sss");
+    QString text = u"sss"_s;
 
-    doc.setPlainText(QLatin1Char('"') + text);
+    doc.setPlainText(u'"' + text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + text));
 
-    text = QStringLiteral("sss");
-    doc.setPlainText(text + QStringLiteral("\""));
+    text = u"sss"_s;
+    doc.setPlainText(text + u"\""_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + doubleQuote.end));
 
-    text = QStringLiteral("sss");
-    doc.setPlainText(QStringLiteral("\"") + text + QStringLiteral("\""));
+    text = u"sss"_s;
+    doc.setPlainText(u"\""_s + text + u"\""_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + text + doubleQuote.end));
@@ -226,12 +228,12 @@ void AutoCorrectionTest::shouldNotReplaceUppercaseLetter()
     settings->setFixTwoUppercaseChars(true);
     autocorrection.setAutoCorrectionSettings(settings);
     QSet<QString> exceptions;
-    exceptions.insert(QStringLiteral("ABc"));
+    exceptions.insert(u"ABc"_s);
     settings->setTwoUpperLetterExceptions(exceptions);
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
-    QString text = QStringLiteral("foo ABc");
+    QString text = u"foo ABc"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
@@ -248,19 +250,19 @@ void AutoCorrectionTest::shouldReplaceToTextFormat()
 
     QTextDocument doc;
     // We don't use html => don't change it.
-    QString text = QStringLiteral("*foo*");
+    QString text = u"*foo*"_s;
     doc.setHtml(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
-    QString result = QStringLiteral("foo");
+    QString result = u"foo"_s;
     doc.setHtml(text);
     position = text.length();
     autocorrection.autocorrect(true, doc, position);
     QCOMPARE(doc.toPlainText(), result);
 
-    text = QStringLiteral("*foo*");
+    text = u"*foo*"_s;
     doc.setHtml(text);
     position = text.length();
     autocorrection.autocorrect(true, doc, position);
@@ -272,7 +274,7 @@ void AutoCorrectionTest::shouldReplaceToTextFormat()
     QCOMPARE(charFormat.font().bold(), true);
     QCOMPARE(charFormat.font().strikeOut(), false);
 
-    text = QStringLiteral("_foo_");
+    text = u"_foo_"_s;
     doc.setHtml(text);
     position = text.length();
     autocorrection.autocorrect(true, doc, position);
@@ -284,7 +286,7 @@ void AutoCorrectionTest::shouldReplaceToTextFormat()
     QCOMPARE(charFormat.font().bold(), false);
     QCOMPARE(charFormat.font().strikeOut(), false);
 
-    text = QStringLiteral("-foo-");
+    text = u"-foo-"_s;
     doc.setHtml(text);
     position = text.length();
     autocorrection.autocorrect(true, doc, position);
@@ -297,17 +299,17 @@ void AutoCorrectionTest::shouldReplaceToTextFormat()
     QCOMPARE(charFormat.font().strikeOut(), true);
 
     // Don't convert it.
-    text = QStringLiteral("-foo1");
+    text = u"-foo1"_s;
     doc.setHtml(text);
     position = text.length();
     autocorrection.autocorrect(true, doc, position);
     QCOMPARE(doc.toPlainText(), text);
 
-    text = QStringLiteral("*foo* blabla");
+    text = u"*foo* blabla"_s;
     position = 5;
     doc.setHtml(text);
     autocorrection.autocorrect(true, doc, position);
-    result = QStringLiteral("foo blabla");
+    result = u"foo blabla"_s;
     QCOMPARE(doc.toPlainText(), result);
     QCOMPARE(position, 3);
 
@@ -323,20 +325,20 @@ void AutoCorrectionTest::shouldReplaceAutoFraction()
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
-    QString text = QStringLiteral("1/2");
+    QString text = u"1/2"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
 
-    QCOMPARE(doc.toPlainText(), QStringLiteral("½"));
+    QCOMPARE(doc.toPlainText(), u"½"_s);
 
-    QString suffix = QStringLiteral(" after");
-    text = QStringLiteral("1/2");
+    QString suffix = u" after"_s;
+    text = u"1/2"_s;
     position = 3;
     text += suffix;
     doc.setPlainText(text);
     autocorrection.autocorrect(false, doc, position);
-    QCOMPARE(doc.toPlainText(), QString(QStringLiteral("½") + suffix));
+    QCOMPARE(doc.toPlainText(), QString(u"½"_s + suffix));
     QCOMPARE(position, 1);
 }
 
@@ -349,23 +351,23 @@ void AutoCorrectionTest::shouldNotAddSpaceWhenWeAlreadyHaveASpace()
     autocorrection.setAutoCorrectionSettings(settings);
     QTextDocument doc;
     // We already a space => don't allow to add more
-    QString text = QStringLiteral("FOO ");
+    QString text = u"FOO "_s;
     doc.setPlainText(text);
     int position = text.length();
     bool result = autocorrection.autocorrect(false, doc, position);
     QCOMPARE(result, false);
 
     // We can add a space
-    text = QStringLiteral("FOO");
+    text = u"FOO"_s;
     doc.setPlainText(text);
     position = text.length();
     result = autocorrection.autocorrect(false, doc, position);
     QCOMPARE(result, true);
 
     // We have a space => don't add it.
-    text = QStringLiteral("FOO ");
+    text = u"FOO "_s;
     position = text.length();
-    QString fullText = text + QStringLiteral("FOO");
+    QString fullText = text + u"FOO"_s;
     doc.setPlainText(fullText);
     result = autocorrection.autocorrect(false, doc, position);
     QCOMPARE(result, false);
@@ -381,7 +383,7 @@ void AutoCorrectionTest::shouldAutocorrectWord()
 
     QTextDocument doc;
     // No changes
-    QString text = QStringLiteral("FOOAA");
+    QString text = u"FOOAA"_s;
     doc.setPlainText(text);
     int position = text.length();
     int oldPosition = position;
@@ -391,19 +393,19 @@ void AutoCorrectionTest::shouldAutocorrectWord()
 
     // Convert word
     QHash<QString, QString> entries;
-    const QString convertWord = QStringLiteral("BLABLA");
+    const QString convertWord = u"BLABLA"_s;
     entries.insert(text, convertWord);
     settings->setAutocorrectEntries(entries);
     autocorrection.setAutoCorrectionSettings(settings);
-    text = QStringLiteral("FOOAA");
+    text = u"FOOAA"_s;
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), convertWord);
     QCOMPARE(position, convertWord.length());
 
-    QString suffix = QStringLiteral(" TOTO");
-    text = QStringLiteral("FOOAA");
+    QString suffix = u" TOTO"_s;
+    text = u"FOOAA"_s;
     position = text.length();
     text += suffix;
     doc.setPlainText(text);
@@ -420,13 +422,13 @@ void AutoCorrectionTest::shouldNotUpperCaseFirstCharOfSentence()
     settings->setUppercaseFirstCharOfSentence(true);
     autocorrection.setAutoCorrectionSettings(settings);
     QSet<QString> lst;
-    lst.insert(QStringLiteral("Foo."));
+    lst.insert(u"Foo."_s);
     settings->setUpperCaseExceptions(lst);
     autocorrection.setAutoCorrectionSettings(settings);
 
     // Uppercase here.
     QTextDocument doc;
-    QString text = QStringLiteral("foo. blabla Foo. tt");
+    QString text = u"foo. blabla Foo. tt"_s;
     doc.setPlainText(text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
@@ -438,7 +440,7 @@ void AutoCorrectionTest::shouldNotUpperCaseFirstCharOfSentence()
     doc.setPlainText(text);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
-    QString result = QStringLiteral("foo. blabla Foo. Tt");
+    QString result = u"foo. blabla Foo. Tt"_s;
     QCOMPARE(doc.toPlainText(), result);
 }
 
@@ -452,86 +454,86 @@ void AutoCorrectionTest::shouldAutocorrectMultiWord_data()
     QTest::addColumn<mapAutoCorrect>("convertStringHash");
 
     mapAutoCorrect map;
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("simpleReplace") << QStringLiteral("boo") << QStringLiteral("bla") << map;
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("simpleReplace") << u"boo"_s << u"bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("a boo"), QStringLiteral("b bla"));
-    QTest::newRow("multiword") << QStringLiteral("a boo") << QStringLiteral("b bla") << map;
+    map.insert(u"a boo"_s, u"b bla"_s);
+    QTest::newRow("multiword") << u"a boo"_s << u"b bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("a boo"), QStringLiteral("b bla"));
-    map.insert(QStringLiteral("a booeeeeeeeeeeeeeeeeeee"), QStringLiteral("b blaeee"));
-    QTest::newRow("multiword-2") << QStringLiteral("toto. a boo") << QStringLiteral("toto. b bla") << map;
+    map.insert(u"a boo"_s, u"b bla"_s);
+    map.insert(u"a booeeeeeeeeeeeeeeeeeee"_s, u"b blaeee"_s);
+    QTest::newRow("multiword-2") << u"toto. a boo"_s << u"toto. b bla"_s << map;
 
     map.clear();
-    QTest::newRow("multiword-2 without replace") << QStringLiteral("toto. a boo") << QStringLiteral("toto. a boo") << map;
+    QTest::newRow("multiword-2 without replace") << u"toto. a boo"_s << u"toto. a boo"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("a boo"), QStringLiteral("b bla"));
-    QTest::newRow("multiword-2 with uppercase") << QStringLiteral("toto. A boo") << QStringLiteral("toto. B bla") << map;
+    map.insert(u"a boo"_s, u"b bla"_s);
+    QTest::newRow("multiword-2 with uppercase") << u"toto. A boo"_s << u"toto. B bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("a boo1111111111"), QStringLiteral("b bla"));
-    QTest::newRow("multiword-3") << QStringLiteral("a boo") << QStringLiteral("a boo") << map;
+    map.insert(u"a boo1111111111"_s, u"b bla"_s);
+    QTest::newRow("multiword-3") << u"a boo"_s << u"a boo"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("Bla"));
-    QTest::newRow("withuppercase") << QStringLiteral("Boo") << QStringLiteral("Bla") << map;
+    map.insert(u"boo"_s, u"Bla"_s);
+    QTest::newRow("withuppercase") << u"Boo"_s << u"Bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("withuppercase-2") << QStringLiteral("Boo") << QStringLiteral("Bla") << map;
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("withuppercase-2") << u"Boo"_s << u"Bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("Bla"));
-    QTest::newRow("withuppercase-3") << QStringLiteral("Boo") << QStringLiteral("Bla") << map;
+    map.insert(u"boo"_s, u"Bla"_s);
+    QTest::newRow("withuppercase-3") << u"Boo"_s << u"Bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("Bla"));
-    QTest::newRow("withuppercase-4") << QStringLiteral("boo") << QStringLiteral("bla") << map;
+    map.insert(u"boo"_s, u"Bla"_s);
+    QTest::newRow("withuppercase-4") << u"boo"_s << u"bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("booooo"), QStringLiteral("bla"));
-    QTest::newRow("nofindtext") << QStringLiteral("boo") << QStringLiteral("boo") << map;
+    map.insert(u"booooo"_s, u"bla"_s);
+    QTest::newRow("nofindtext") << u"boo"_s << u"boo"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boosss"), QStringLiteral("Blasss"));
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("withponct") << QStringLiteral("boo!") << QStringLiteral("bla!") << map;
+    map.insert(u"boosss"_s, u"Blasss"_s);
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("withponct") << u"boo!"_s << u"bla!"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boosss"), QStringLiteral("Blasss"));
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("withponct-2") << QStringLiteral("lolo. boo!") << QStringLiteral("lolo. bla!") << map;
+    map.insert(u"boosss"_s, u"Blasss"_s);
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("withponct-2") << u"lolo. boo!"_s << u"lolo. bla!"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("dontreplaceinpieceofword") << QStringLiteral("voitureboo") << QStringLiteral("voitureboo") << map;
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("dontreplaceinpieceofword") << u"voitureboo"_s << u"voitureboo"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("dontreplaceall") << QStringLiteral("Boo boo boo") << QStringLiteral("Boo boo bla") << map;
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("dontreplaceall") << u"Boo boo boo"_s << u"Boo boo bla"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    map.insert(QStringLiteral("boo boo"), QStringLiteral("bli"));
-    QTest::newRow("replace-1") << QStringLiteral("Boo boo boo") << QStringLiteral("Boo bli") << map;
+    map.insert(u"boo"_s, u"bla"_s);
+    map.insert(u"boo boo"_s, u"bli"_s);
+    QTest::newRow("replace-1") << u"Boo boo boo"_s << u"Boo bli"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("boo boo"), QStringLiteral("bli"));
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    QTest::newRow("replace-1-order") << QStringLiteral("Boo boo boo") << QStringLiteral("Boo bli") << map;
+    map.insert(u"boo boo"_s, u"bli"_s);
+    map.insert(u"boo"_s, u"bla"_s);
+    QTest::newRow("replace-1-order") << u"Boo boo boo"_s << u"Boo bli"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("au delà"), QStringLiteral("au-delà"));
-    map.insert(QStringLiteral("boo boo"), QStringLiteral("bli"));
-    QTest::newRow("replace-2") << QStringLiteral("voilà au delà") << QStringLiteral("voilà au-delà") << map;
+    map.insert(u"au delà"_s, u"au-delà"_s);
+    map.insert(u"boo boo"_s, u"bli"_s);
+    QTest::newRow("replace-2") << u"voilà au delà"_s << u"voilà au-delà"_s << map;
 
     map.clear();
-    map.insert(QStringLiteral("au delà"), QStringLiteral("au-delà"));
-    map.insert(QStringLiteral("avant JC"), QStringLiteral("avant J.-C."));
-    QTest::newRow("replace-3") << QStringLiteral("il est né avant JC") << QStringLiteral("il est né avant J.-C.") << map;
+    map.insert(u"au delà"_s, u"au-delà"_s);
+    map.insert(u"avant JC"_s, u"avant J.-C."_s);
+    QTest::newRow("replace-3") << u"il est né avant JC"_s << u"il est né avant J.-C."_s << map;
 }
 
 void AutoCorrectionTest::shouldAutocorrectMultiWord()
@@ -560,18 +562,18 @@ void AutoCorrectionTest::shouldAddNonBreakingSpace_data()
     QTest::addColumn<QString>("convertedString");
     QTest::addColumn<QString>("language");
     QTest::addColumn<bool>("enableAddNonBreakingSpace");
-    QTest::newRow("convert1") << QStringLiteral("boo !") << QStringLiteral("boob!") << QStringLiteral("fr") << true;
-    QTest::newRow("disable") << QStringLiteral("boo !") << QStringLiteral("boo !") << QStringLiteral("fr") << false;
-    QTest::newRow("nonchanges") << QStringLiteral("boo") << QStringLiteral("boo") << QStringLiteral("fr") << true;
-    QTest::newRow("convert2") << QStringLiteral("boo ;") << QStringLiteral("boob;") << QStringLiteral("fr") << true;
-    QTest::newRow("convert3") << QStringLiteral("boo ?") << QStringLiteral("boob?") << QStringLiteral("fr") << true;
-    QTest::newRow("convert4") << QStringLiteral("boo :") << QStringLiteral("boob:") << QStringLiteral("fr") << true;
-    QTest::newRow("nonfrenchlanguage") << QStringLiteral("boo :") << QStringLiteral("boo :") << QStringLiteral("ge") << true;
-    QTest::newRow("onecharacter") << QStringLiteral(":") << QStringLiteral(":") << QStringLiteral("fr") << true;
-    QTest::newRow("onecharacter2") << QStringLiteral(" ") << QStringLiteral(" ") << QStringLiteral("fr") << true;
-    QTest::newRow("percentage") << QStringLiteral("50 %") << QStringLiteral("50b%") << QStringLiteral("fr") << true;
-    QTest::newRow("degrees") << QStringLiteral("50 °C") << QStringLiteral("50b°C") << QStringLiteral("fr") << true;
-    QTest::newRow("simplespace") << QStringLiteral(" ") << QStringLiteral(" ") << QStringLiteral("fr") << true;
+    QTest::newRow("convert1") << u"boo !"_s << u"boob!"_s << QStringLiteral("fr") << true;
+    QTest::newRow("disable") << u"boo !"_s << u"boo !"_s << QStringLiteral("fr") << false;
+    QTest::newRow("nonchanges") << u"boo"_s << u"boo"_s << QStringLiteral("fr") << true;
+    QTest::newRow("convert2") << u"boo ;"_s << u"boob;"_s << QStringLiteral("fr") << true;
+    QTest::newRow("convert3") << u"boo ?"_s << u"boob?"_s << QStringLiteral("fr") << true;
+    QTest::newRow("convert4") << u"boo :"_s << u"boob:"_s << QStringLiteral("fr") << true;
+    QTest::newRow("nonfrenchlanguage") << u"boo :"_s << u"boo :"_s << QStringLiteral("ge") << true;
+    QTest::newRow("onecharacter") << u":"_s << u":"_s << QStringLiteral("fr") << true;
+    QTest::newRow("onecharacter2") << u" "_s << u" "_s << QStringLiteral("fr") << true;
+    QTest::newRow("percentage") << u"50 %"_s << u"50b%"_s << QStringLiteral("fr") << true;
+    QTest::newRow("degrees") << u"50 °C"_s << u"50b°C"_s << QStringLiteral("fr") << true;
+    QTest::newRow("simplespace") << u" "_s << u" "_s << QStringLiteral("fr") << true;
 }
 
 void AutoCorrectionTest::shouldAddNonBreakingSpace()
@@ -587,7 +589,7 @@ void AutoCorrectionTest::shouldAddNonBreakingSpace()
     settings->setAddNonBreakingSpace(enableAddNonBreakingSpace);
 
     settings->setLanguage(language);
-    settings->setNonBreakingSpace(QChar(QLatin1Char('b')));
+    settings->setNonBreakingSpace(QChar(u'b'));
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
@@ -609,38 +611,32 @@ void AutoCorrectionTest::shouldReplaceWithMultiOption_data()
     QTest::addColumn<bool>("fixtwouppercase");
     QTest::addColumn<int>("position");
     mapAutoCorrect map;
-    map.insert(QStringLiteral("boo"), QStringLiteral("bla"));
-    map.insert(QStringLiteral(":j2:"), QStringLiteral("TV"));
-    map.insert(QStringLiteral("i"), QStringLiteral("I"));
-    map.insert(QStringLiteral("Noel"), QStringLiteral("noal"));
+    map.insert(u"boo"_s, u"bla"_s);
+    map.insert(u":j2:"_s, u"TV"_s);
+    map.insert(u"i"_s, u"I"_s);
+    map.insert(u"Noel"_s, u"noal"_s);
     // create a big word otherwise we can't reproduce bug
-    map.insert(QStringLiteral("anticonstitutionnellement"), QStringLiteral("2"));
+    map.insert(u"anticonstitutionnellement"_s, u"2"_s);
 
-    QTest::newRow("disable") << QStringLiteral("Boo boo boo") << QStringLiteral("Boo boo boo") << map << false << false << false << false << -1;
-    QTest::newRow("enablebutdisablealloptions") << QStringLiteral("Boo boo boo") << QStringLiteral("Boo boo boo") << map << true << false << false << false
-                                                << -1;
-    QTest::newRow("enableandenableuppercase") << QStringLiteral("Boo boo boo") << QStringLiteral("Boo boo boo") << map << true << true << false << false << -1;
-    QTest::newRow("enableandenableuppercaseandadvanced")
-        << QStringLiteral("Boo boo boo") << QStringLiteral("Boo boo bla") << map << true << true << true << false << -1;
+    QTest::newRow("disable") << u"Boo boo boo"_s << u"Boo boo boo"_s << map << false << false << false << false << -1;
+    QTest::newRow("enablebutdisablealloptions") << u"Boo boo boo"_s << u"Boo boo boo"_s << map << true << false << false << false << -1;
+    QTest::newRow("enableandenableuppercase") << u"Boo boo boo"_s << u"Boo boo boo"_s << map << true << true << false << false << -1;
+    QTest::newRow("enableandenableuppercaseandadvanced") << u"Boo boo boo"_s << u"Boo boo bla"_s << map << true << true << true << false << -1;
 
-    QTest::newRow("enableandenableuppercaseandadvanced-2")
-        << QStringLiteral("Boo boo. boo") << QStringLiteral("Boo boo. Bla") << map << true << true << true << false << -1;
-    QTest::newRow("enableandenableuppercaseandadvanced-3")
-        << QStringLiteral("blablobli") << QStringLiteral("Blablobli") << map << true << true << true << false << -1;
-    QTest::newRow("enableandenableuppercaseandadvanced-4")
-        << QStringLiteral("blablobli. foo") << QStringLiteral("blablobli. Foo") << map << true << true << true << false << -1;
+    QTest::newRow("enableandenableuppercaseandadvanced-2") << u"Boo boo. boo"_s << u"Boo boo. Bla"_s << map << true << true << true << false << -1;
+    QTest::newRow("enableandenableuppercaseandadvanced-3") << u"blablobli"_s << u"Blablobli"_s << map << true << true << true << false << -1;
+    QTest::newRow("enableandenableuppercaseandadvanced-4") << u"blablobli. foo"_s << u"blablobli. Foo"_s << map << true << true << true << false << -1;
 
-    QTest::newRow("enableandenablefixtowuppercase") << QStringLiteral("Boo boo. BOo") << QStringLiteral("Boo boo. Boo") << map << true << true << false << true
-                                                    << -1;
-    QTest::newRow("enableandenablefixtowuppercase-2") << QStringLiteral("Boo BOo") << QStringLiteral("Boo Boo") << map << true << true << false << true << -1;
+    QTest::newRow("enableandenablefixtowuppercase") << u"Boo boo. BOo"_s << u"Boo boo. Boo"_s << map << true << true << false << true << -1;
+    QTest::newRow("enableandenablefixtowuppercase-2") << u"Boo BOo"_s << u"Boo Boo"_s << map << true << true << false << true << -1;
 
-    QTest::newRow(":j2:") << QStringLiteral(":j2:") << QStringLiteral("TV") << map << true << false << true << false << -1;
-    QTest::newRow(":j2: bla") << QStringLiteral(":j2: bla") << QStringLiteral(":j2: bla") << map << true << false << true << false << -1;
-    QTest::newRow(":j2: bla 1") << QStringLiteral(":j2: bla") << QStringLiteral("TV bla") << map << true << false << true << false << 4;
-    QTest::newRow(":j2: bla 2") << QStringLiteral(":j2: :j2:") << QStringLiteral(":j2: TV") << map << true << false << true << false << -1;
-    QTest::newRow("La mais il n est pas ici ") << QStringLiteral("La mais il n est pas ici ") << QStringLiteral("La mais il n est pas ici ") << map << true
-                                               << false << true << false << 25;
-    QTest::newRow("a noel") << QStringLiteral("a noel") << QStringLiteral("a noal") << map << true << false << true << false << 6;
+    QTest::newRow(":j2:") << u":j2:"_s << u"TV"_s << map << true << false << true << false << -1;
+    QTest::newRow(":j2: bla") << u":j2: bla"_s << u":j2: bla"_s << map << true << false << true << false << -1;
+    QTest::newRow(":j2: bla 1") << u":j2: bla"_s << u"TV bla"_s << map << true << false << true << false << 4;
+    QTest::newRow(":j2: bla 2") << u":j2: :j2:"_s << u":j2: TV"_s << map << true << false << true << false << -1;
+    QTest::newRow("La mais il n est pas ici ") << u"La mais il n est pas ici "_s << u"La mais il n est pas ici "_s << map << true << false << true << false
+                                               << 25;
+    QTest::newRow("a noel") << u"a noel"_s << u"a noal"_s << map << true << false << true << false << 6;
     // TODO add more
 }
 
@@ -678,62 +674,62 @@ void AutoCorrectionTest::shouldAddNonBreakingSpaceBeforeAfterQuote()
     settings->setEnabledAutoCorrection(true);
     settings->setReplaceDoubleQuotes(true);
     settings->setReplaceSingleQuotes(true);
-    settings->setLanguage(QStringLiteral("fr"));
+    settings->setLanguage(u"fr"_s);
     settings->setAddNonBreakingSpace(true);
     // TODO fix me verify why it doesn't use no breaking space
-    const QChar nbsp = QChar(/*QChar::Nbsp*/ QLatin1Char('b'));
+    const QChar nbsp = QChar(/*QChar::Nbsp*/ u'b');
     settings->setNonBreakingSpace(nbsp);
     autocorrection.setAutoCorrectionSettings(settings);
 
     TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes doubleQuote;
-    doubleQuote.begin = QLatin1Char('A');
-    doubleQuote.end = QLatin1Char('B');
+    doubleQuote.begin = u'A';
+    doubleQuote.end = u'B';
     settings->setTypographicDoubleQuotes(doubleQuote);
 
     TextAutoCorrectionCore::AutoCorrectionUtils::TypographicQuotes simpleQuote;
-    simpleQuote.begin = QLatin1Char('A');
-    simpleQuote.end = QLatin1Char('B');
+    simpleQuote.begin = u'A';
+    simpleQuote.end = u'B';
 
     settings->setTypographicSingleQuotes(simpleQuote);
     autocorrection.setAutoCorrectionSettings(settings);
 
     QTextDocument doc;
-    QString text = QStringLiteral("sss");
+    QString text = u"sss"_s;
 
-    doc.setPlainText(QLatin1Char('"') + text);
+    doc.setPlainText(u'"' + text);
     int position = text.length();
     autocorrection.autocorrect(false, doc, position);
 
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text));
 
-    text = QStringLiteral("sss");
-    doc.setPlainText(text + QStringLiteral("\""));
+    text = u"sss"_s;
+    doc.setPlainText(text + u"\""_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + nbsp + doubleQuote.end));
 
     // Simple quote
-    text = QStringLiteral("sss");
-    doc.setPlainText(text + QStringLiteral("\'"));
+    text = u"sss"_s;
+    doc.setPlainText(text + u"\'"_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(text + nbsp + simpleQuote.end));
 
-    text = QStringLiteral("sss");
-    doc.setPlainText(QStringLiteral("\"") + text + QStringLiteral("\""));
+    text = u"sss"_s;
+    doc.setPlainText(u"\""_s + text + u"\""_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text + nbsp + doubleQuote.end));
 
     // Simple quote
-    text = QStringLiteral("sss");
-    doc.setPlainText(QStringLiteral("\'") + text + QStringLiteral("\'"));
+    text = u"sss"_s;
+    doc.setPlainText(u"\'"_s + text + u"\'"_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(simpleQuote.begin + nbsp + text + nbsp + simpleQuote.end));
 
-    text = QLatin1Char('(');
-    doc.setPlainText(QStringLiteral("\"") + text + QStringLiteral("\""));
+    text = u'(';
+    doc.setPlainText(u"\""_s + text + u"\""_s);
     position = text.length();
     autocorrection.autocorrect(false, doc, position);
     QCOMPARE(doc.toPlainText(), QString(doubleQuote.begin + nbsp + text + nbsp + doubleQuote.end));

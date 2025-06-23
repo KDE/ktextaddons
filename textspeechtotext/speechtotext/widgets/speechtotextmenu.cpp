@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextmenu.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <QMenu>
 
@@ -13,9 +15,9 @@ SpeechToTextMenu::SpeechToTextMenu(QObject *parent)
     : QObject{parent}
     , mMenu(new QMenu)
 {
-    mMenu->setObjectName(QStringLiteral("menu"));
+    mMenu->setObjectName(u"menu"_s);
     mMenu->setTitle(i18n("Speech to Text…"));
-    mMenu->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
+    mMenu->setIcon(QIcon::fromTheme(u"preferences-desktop-locale"_s));
     updateMenu();
 }
 

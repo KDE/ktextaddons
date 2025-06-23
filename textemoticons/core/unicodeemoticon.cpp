@@ -5,6 +5,8 @@
 */
 
 #include "unicodeemoticon.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticonunicodeutils.h"
 
 using namespace TextEmoticonsCore;
@@ -34,8 +36,9 @@ QString UnicodeEmoticon::unicodeDisplay() const
 {
     if (!mUnicode.isEmpty()) {
         if (mCachedHtml.isEmpty()) {
-            mCachedHtml = QStringLiteral("<span style=\"font: x-large %3\" title=\"%2\">%1</span>")
-                              .arg(mUnicode, mIdentifier, TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
+            mCachedHtml = u"<span style=\"font: x-large %3\" title=\"%2\">%1</span>"_s.arg(mUnicode,
+                                                                                           mIdentifier,
+                                                                                           TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
         }
     }
     return mCachedHtml;

@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteresultjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textgrammarcheck_debug.h"
 
 #include <QFileInfo>
@@ -33,9 +35,9 @@ void GrammalecteResultJob::start()
         args.reserve(6);
         args << mGrammarlecteCliPath;
         if (!mArguments.isEmpty()) {
-            args << QStringLiteral("-on") << mArguments;
+            args << u"-on"_s << mArguments;
         }
-        args << QStringLiteral("-f") << file->fileName() << QStringLiteral("-j");
+        args << u"-f"_s << file->fileName() << QStringLiteral("-j");
         mProcess->setArguments(args);
         connect(mProcess, &QProcess::finished, this, &GrammalecteResultJob::slotFinished);
         connect(mProcess, &QProcess::errorOccurred, this, &GrammalecteResultJob::receivedError);

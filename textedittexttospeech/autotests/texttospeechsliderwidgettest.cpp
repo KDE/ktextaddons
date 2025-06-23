@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechsliderwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeechsliderwidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
@@ -19,14 +21,14 @@ TextToSpeechSliderWidgetTest::TextToSpeechSliderWidgetTest(QObject *parent)
 void TextToSpeechSliderWidgetTest::shouldHaveDefaultValues()
 {
     TextEditTextToSpeech::TextToSpeechSliderWidget w({});
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
+    auto mLabel = w.findChild<QLabel *>(u"mLabel"_s);
     QVERIFY(mLabel);
 
-    auto mSlider = w.findChild<QSlider *>(QStringLiteral("mSlider"));
+    auto mSlider = w.findChild<QSlider *>(u"mSlider"_s);
     QVERIFY(mSlider);
     QCOMPARE(mSlider->orientation(), Qt::Horizontal);
 }

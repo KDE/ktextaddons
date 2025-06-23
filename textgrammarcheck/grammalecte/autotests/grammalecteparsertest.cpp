@@ -10,7 +10,7 @@
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(GrammalecteParserTest)
-
+using namespace Qt::Literals::StringLiterals;
 GrammalecteParserTest::GrammalecteParserTest(QObject *parent)
     : QObject(parent)
 {
@@ -21,16 +21,16 @@ void GrammalecteParserTest::shouldParseJson_data()
 {
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("numberOfElement");
-    QTest::newRow("noerror") << QStringLiteral("noerror") << 0;
-    QTest::newRow("noerror2") << QStringLiteral("noerror2") << 0;
-    QTest::newRow("result2") << QStringLiteral("result2") << 3;
+    QTest::newRow("noerror") << u"noerror"_s << 0;
+    QTest::newRow("noerror2") << u"noerror2"_s << 0;
+    QTest::newRow("result2") << u"result2"_s << 3;
 }
 
 void GrammalecteParserTest::shouldParseJson()
 {
     QFETCH(QString, fileName);
     QFETCH(int, numberOfElement);
-    const QString originalJsonFile = QLatin1StringView(GRAMMALECTE_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1StringView(GRAMMALECTE_DATA_DIR) + u'/' + fileName + u".json"_s;
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

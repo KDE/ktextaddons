@@ -6,9 +6,10 @@
 
 #pragma once
 #include "textautogenerateollama_export.h"
+
 #include <QString>
 #include <QUrl>
-
+using namespace Qt::Literals::StringLiterals;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaSettings
 {
 public:
@@ -34,7 +35,7 @@ public:
 
 private:
     QString mDisplayName;
-    QUrl mServerUrl = QUrl(QStringLiteral("http://127.0.0.1:11434"));
+    QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
     QString mSystemPrompt;
     QString mCurrentModel;
     int mSeed = 0;

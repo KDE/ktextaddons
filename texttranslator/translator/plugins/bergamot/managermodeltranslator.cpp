@@ -5,6 +5,8 @@
 */
 
 #include "managermodeltranslator.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotengineutils.h"
 #include "downloadlanguagejob.h"
 #include "libbergamot_debug.h"

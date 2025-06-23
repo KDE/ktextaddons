@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectionutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocorrectionutils.h"
 #include <QTest>
 QTEST_MAIN(AutoCorrectionUtilsTest)
@@ -15,7 +17,7 @@ AutoCorrectionUtilsTest::AutoCorrectionUtilsTest(QObject *parent)
 
 void AutoCorrectionUtilsTest::shouldConvertToLibreOfficeFilename()
 {
-    QCOMPARE(TextAutoCorrectionCore::AutoCorrectionUtils::libreofficeFile(QStringLiteral("Fr_fr")), QStringLiteral("acor_Fr_fr.dat"));
+    QCOMPARE(TextAutoCorrectionCore::AutoCorrectionUtils::libreofficeFile(u"Fr_fr"_s), u"acor_Fr_fr.dat"_s);
 }
 
 void AutoCorrectionUtilsTest::shouldSplitString()
@@ -36,12 +38,11 @@ void AutoCorrectionUtilsTest::shouldSplitString_data()
     QTest::addColumn<QString>("words");
     QTest::addColumn<QStringList>("result");
     QTest::addRow("empty") << QString() << QStringList();
-    QTest::addRow("1 word") << QStringLiteral("blabla") << QStringList({QStringLiteral("blabla")});
-    QTest::addRow("no word") << QStringLiteral(" ") << QStringList();
-    QTest::addRow("2 words") << QStringLiteral("blabla foo") << QStringList({QStringLiteral("blabla foo"), QStringLiteral("foo")});
-    QTest::addRow("3 words") << QStringLiteral("blabla foo la")
-                             << QStringList({QStringLiteral("blabla foo la"), QStringLiteral("foo la"), QStringLiteral("la")});
-    QTest::addRow("1 word") << QStringLiteral("l'blabla") << QStringList({QStringLiteral("l'blabla")});
+    QTest::addRow("1 word") << u"blabla"_s << QStringList({u"blabla"_s});
+    QTest::addRow("no word") << u" "_s << QStringList();
+    QTest::addRow("2 words") << u"blabla foo"_s << QStringList({u"blabla foo"_s, QStringLiteral("foo")});
+    QTest::addRow("3 words") << u"blabla foo la"_s << QStringList({u"blabla foo la"_s, u"foo la"_s, QStringLiteral("la")});
+    QTest::addRow("1 word") << u"l'blabla"_s << QStringList({u"l'blabla"_s});
 }
 
 #include "moc_autocorrectionutilstest.cpp"

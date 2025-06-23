@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextlineeditwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
 #include <KLocalizedString>
@@ -14,17 +16,17 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
-    , mSendMessage(new QPushButton(QIcon::fromTheme(QStringLiteral("document-send")), i18n("Send"), this))
+    , mSendMessage(new QPushButton(QIcon::fromTheme(u"document-send"_s), i18n("Send"), this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
 
-    mTextAutoGenerateTextLineEdit->setObjectName(QStringLiteral("mTextAutoGenerateTextLineEdit"));
+    mTextAutoGenerateTextLineEdit->setObjectName(u"mTextAutoGenerateTextLineEdit"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineEdit, 0, Qt::AlignTop);
 
-    mSendMessage->setObjectName(QStringLiteral("mSendMessage"));
+    mSendMessage->setObjectName(u"mSendMessage"_s);
     mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);
 
     connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::sendMessage, this, [this](const QString &msg) {

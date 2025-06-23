@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteconfigwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalecte/grammalecteconfigwidget.h"
 #include "grammalecte/grammalecteurlrequesterwidget.h"
 #include <QFormLayout>
@@ -26,49 +28,49 @@ GrammalecteConfigWidgetTest::GrammalecteConfigWidgetTest(QObject *parent)
 void GrammalecteConfigWidgetTest::shouldHaveDefaultValue()
 {
     TextGrammarCheck::GrammalecteConfigWidget w(nullptr, true);
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins());
 
-    auto mTab = w.findChild<QTabWidget *>(QStringLiteral("mTab"));
+    auto mTab = w.findChild<QTabWidget *>(u"mTab"_s);
     QVERIFY(mTab);
 
-    auto generalWidget = mTab->findChild<QWidget *>(QStringLiteral("general"));
+    auto generalWidget = mTab->findChild<QWidget *>(u"general"_s);
     QVERIFY(generalWidget);
-    auto lay = generalWidget->findChild<QFormLayout *>(QStringLiteral("generallayout"));
+    auto lay = generalWidget->findChild<QFormLayout *>(u"generallayout"_s);
     QVERIFY(lay);
 
-    auto mPythonPath = generalWidget->findChild<TextGrammarCheck::GrammalecteUrlRequesterWidget *>(QStringLiteral("pythonpath"));
+    auto mPythonPath = generalWidget->findChild<TextGrammarCheck::GrammalecteUrlRequesterWidget *>(u"pythonpath"_s);
     QVERIFY(mPythonPath);
     QVERIFY(!mPythonPath->path().isEmpty());
 
-    auto mGrammalectePath = generalWidget->findChild<TextGrammarCheck::GrammalecteUrlRequesterWidget *>(QStringLiteral("grammalectepath"));
+    auto mGrammalectePath = generalWidget->findChild<TextGrammarCheck::GrammalecteUrlRequesterWidget *>(u"grammalectepath"_s);
     QVERIFY(mGrammalectePath);
     QVERIFY(mGrammalectePath->path().isEmpty());
 
-    auto grammalecteInfoDownload = generalWidget->findChild<QLabel *>(QStringLiteral("grammalecteInfoDownload"));
+    auto grammalecteInfoDownload = generalWidget->findChild<QLabel *>(u"grammalecteInfoDownload"_s);
     QVERIFY(grammalecteInfoDownload);
     QVERIFY(!grammalecteInfoDownload->text().isEmpty());
     QVERIFY(grammalecteInfoDownload->openExternalLinks());
     QCOMPARE(grammalecteInfoDownload->textFormat(), Qt::RichText);
 
-    auto mStackedWidget = mTab->findChild<QStackedWidget *>(QStringLiteral("stackedwidget"));
+    auto mStackedWidget = mTab->findChild<QStackedWidget *>(u"stackedwidget"_s);
     QVERIFY(mStackedWidget);
-    auto mScrollArea = mStackedWidget->findChild<QScrollArea *>(QStringLiteral("scrollarea"));
+    auto mScrollArea = mStackedWidget->findChild<QScrollArea *>(u"scrollarea"_s);
     QVERIFY(mScrollArea);
     QVERIFY(mScrollArea->widget());
-    QCOMPARE(mScrollArea->widget()->objectName(), QStringLiteral("grammar"));
+    QCOMPARE(mScrollArea->widget()->objectName(), u"grammar"_s);
 
-    auto mReloadSettingsWidget = mStackedWidget->findChild<QWidget *>(QStringLiteral("reloadwidget"));
+    auto mReloadSettingsWidget = mStackedWidget->findChild<QWidget *>(u"reloadwidget"_s);
     QVERIFY(mReloadSettingsWidget);
 
-    auto reloadSettingsLayout = mReloadSettingsWidget->findChild<QVBoxLayout *>(QStringLiteral("reloadSettingsLayout"));
+    auto reloadSettingsLayout = mReloadSettingsWidget->findChild<QVBoxLayout *>(u"reloadSettingsLayout"_s);
     QVERIFY(reloadSettingsLayout);
 
-    auto label = mReloadSettingsWidget->findChild<QLabel *>(QStringLiteral("label"));
+    auto label = mReloadSettingsWidget->findChild<QLabel *>(u"label"_s);
     QVERIFY(label);
     QVERIFY(!label->text().isEmpty());
-    auto buttonReloadSettings = mReloadSettingsWidget->findChild<QToolButton *>(QStringLiteral("buttonReloadSettings"));
+    auto buttonReloadSettings = mReloadSettingsWidget->findChild<QToolButton *>(u"buttonReloadSettings"_s);
     QVERIFY(buttonReloadSettings);
     // QVERIFY(!buttonReloadSettings->icon().isNull());
 }

@@ -5,6 +5,8 @@
 */
 
 #include "richtextbrowserfindbartest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "richtextbrowser/richtextbrowserfindbar.h"
 #include <QTest>
 #include <QTextBrowser>
@@ -49,30 +51,30 @@ void RichTextBrowserFindBarTest::shouldSearchText_data()
     QTest::addColumn<TextCustomEditor::TextEditFindBarBase::FindFlags>("flags");
     QTest::addColumn<bool>("found");
 
-    QTest::newRow("empty") << QString() << QStringLiteral("blabla") << TextCustomEditor::TextEditFindBarBase::FindFlags() << false;
+    QTest::newRow("empty") << QString() << u"blabla"_s << TextCustomEditor::TextEditFindBarBase::FindFlags() << false;
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindRespectDiacritics;
-        QTest::newRow("empty-1") << QString() << QStringLiteral("blabla") << flags << false;
+        QTest::newRow("empty-1") << QString() << u"blabla"_s << flags << false;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindCaseSensitively;
-        QTest::newRow("empty-2") << QString() << QStringLiteral("blabla") << flags << false;
+        QTest::newRow("empty-2") << QString() << u"blabla"_s << flags << false;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindWholeWords;
-        QTest::newRow("findwholewords-1") << QStringLiteral("bla bla") << QStringLiteral("bla") << flags << true;
+        QTest::newRow("findwholewords-1") << u"bla bla"_s << u"bla"_s << flags << true;
 
-        QTest::newRow("findwholewords-2") << QStringLiteral("blabla") << QStringLiteral("bla") << flags << false;
+        QTest::newRow("findwholewords-2") << u"blabla"_s << u"bla"_s << flags << false;
     }
     {
         TextCustomEditor::TextEditFindBarBase::FindFlags flags;
         flags |= TextCustomEditor::TextEditFindBarBase::FindRespectDiacritics;
-        QTest::newRow("find-diacritics-1") << QStringLiteral("numéro numéro") << QStringLiteral("numero") << flags << false;
+        QTest::newRow("find-diacritics-1") << u"numéro numéro"_s << u"numero"_s << flags << false;
 
-        QTest::newRow("find-diacritics-2") << QStringLiteral("numéro numéro") << QStringLiteral("numéro") << flags << true;
+        QTest::newRow("find-diacritics-2") << u"numéro numéro"_s << u"numéro"_s << flags << true;
     }
 }
 

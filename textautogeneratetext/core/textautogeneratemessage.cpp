@@ -196,11 +196,11 @@ QString TextAutoGenerateMessage::senderToString() const
     case Sender::Unknown:
         return {};
     case Sender::User:
-        return QStringLiteral("user");
+        return u"user"_s;
     case Sender::Assistant:
-        return QStringLiteral("llm");
+        return u"llm"_s;
     case Sender::System:
-        return QStringLiteral("system");
+        return u"system"_s;
     }
     Q_UNREACHABLE();
 }
@@ -270,13 +270,13 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
     case Sender::Unknown:
         break;
     case Sender::User:
-        role = QStringLiteral("user");
+        role = u"user"_s;
         break;
     case Sender::Assistant:
-        role = QStringLiteral("assistant");
+        role = u"assistant"_s;
         break;
     case Sender::System:
-        role = QStringLiteral("system");
+        role = u"system"_s;
         break;
     }
     if (role.isEmpty()) {

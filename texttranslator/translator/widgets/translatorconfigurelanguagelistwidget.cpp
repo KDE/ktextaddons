@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurelanguagelistwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLabel>
@@ -24,14 +26,14 @@ TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(con
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins({});
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mLabel->setObjectName(QStringLiteral("mLabel"));
+    mLabel->setObjectName(u"mLabel"_s);
     mainLayout->addWidget(mLabel);
 
-    mModel->setObjectName(QStringLiteral("mModel"));
+    mModel->setObjectName(u"mModel"_s);
 
-    mListSearchLine->setObjectName(QStringLiteral("mListSearchLine"));
+    mListSearchLine->setObjectName(u"mListSearchLine"_s);
     mainLayout->addWidget(mListSearchLine);
     mListSearchLine->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     auto filterProxyModel = new QSortFilterProxyModel(this);
@@ -42,7 +44,7 @@ TranslatorConfigureLanguageListWidget::TranslatorConfigureLanguageListWidget(con
         filterProxyModel->setFilterFixedString(str);
     });
 
-    mLanguageListWidget->setObjectName(QStringLiteral("mLanguageListWidget"));
+    mLanguageListWidget->setObjectName(u"mLanguageListWidget"_s);
     mainLayout->addWidget(mLanguageListWidget);
     mLanguageListWidget->setModel(filterProxyModel);
     KLineEditEventHandler::catchReturnKey(mListSearchLine);

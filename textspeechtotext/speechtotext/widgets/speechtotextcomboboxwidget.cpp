@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextcomboboxwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "speechtotext/textspeechtotextutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -22,21 +24,21 @@ SpeechToTextComboBoxWidget::SpeechToTextComboBoxWidget(QWidget *parent)
     , mConfigureEngine(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     auto label = new QLabel(i18nc("@label:textbox", "Engine:"), this);
-    label->setObjectName(QStringLiteral("label"));
+    label->setObjectName(u"label"_s);
     label->setTextFormat(Qt::PlainText);
     mainLayout->addWidget(label);
 
-    mEngine->setObjectName(QStringLiteral("mEngine"));
+    mEngine->setObjectName(u"mEngine"_s);
     mainLayout->addWidget(mEngine);
 
-    mConfigureEngine->setObjectName(QStringLiteral("mConfigureEngine"));
+    mConfigureEngine->setObjectName(u"mConfigureEngine"_s);
     mainLayout->addWidget(mConfigureEngine);
     mConfigureEngine->setEnabled(false); // Disable by default
-    mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
+    mConfigureEngine->setIcon(QIcon::fromTheme(u"settings-configure"_s));
 
     connect(mConfigureEngine, &QToolButton::clicked, this, &SpeechToTextComboBoxWidget::slotConfigureEngine);
     connect(mEngine, &QComboBox::currentIndexChanged, this, &SpeechToTextComboBoxWidget::slotEngineChanged);

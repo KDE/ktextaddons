@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeechinterface.h"
 #include "texttospeechsliderwidget.h"
 #include "texttospeechwidget.h"
@@ -20,7 +22,7 @@ TextToSpeechWidgetTest::TextToSpeechWidgetTest(QObject *parent)
     : QObject(parent)
 {
     qRegisterMetaType<TextEditTextToSpeech::TextToSpeechWidget::State>();
-    QIcon::setThemeName(QStringLiteral("breeze"));
+    QIcon::setThemeName(u"breeze"_s);
 }
 
 void TextToSpeechWidgetTest::addInterface(TextEditTextToSpeech::TextToSpeechWidget *widget)
@@ -34,29 +36,29 @@ void TextToSpeechWidgetTest::shouldHaveDefaultValue()
     TextEditTextToSpeech::TextToSpeechWidget textToSpeechWidget;
     addInterface(&textToSpeechWidget);
 
-    auto hbox = textToSpeechWidget.findChild<QHBoxLayout *>(QStringLiteral("hbox"));
+    auto hbox = textToSpeechWidget.findChild<QHBoxLayout *>(u"hbox"_s);
     QVERIFY(hbox);
     QCOMPARE(hbox->contentsMargins(), QMargins{});
 
     QCOMPARE(textToSpeechWidget.state(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
 
-    auto closeButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("close-button"));
+    auto closeButton = textToSpeechWidget.findChild<QToolButton *>(u"close-button"_s);
     QVERIFY(closeButton);
 
-    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("stopbutton"));
+    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(u"stopbutton"_s);
     QVERIFY(stopButton);
     QVERIFY(stopButton->isEnabled());
     QVERIFY(!stopButton->icon().isNull());
 
-    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("playpausebutton"));
+    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(u"playpausebutton"_s);
     QVERIFY(playPauseButton);
     QVERIFY(!playPauseButton->isEnabled());
     QVERIFY(!playPauseButton->icon().isNull());
 
-    auto volume = textToSpeechWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(QStringLiteral("volumeslider"));
+    auto volume = textToSpeechWidget.findChild<TextEditTextToSpeech::TextToSpeechSliderWidget *>(u"volumeslider"_s);
     QVERIFY(volume);
 
-    auto configureButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("configurebutton"));
+    auto configureButton = textToSpeechWidget.findChild<QToolButton *>(u"configurebutton"_s);
     QVERIFY(configureButton);
     QVERIFY(!configureButton->icon().isNull());
 }
@@ -67,10 +69,10 @@ void TextToSpeechWidgetTest::shouldChangeButtonEnableStateWhenChangeState()
     addInterface(&textToSpeechWidget);
     textToSpeechWidget.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
 
-    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("stopbutton"));
+    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(u"stopbutton"_s);
     QVERIFY(stopButton->isEnabled());
 
-    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("playpausebutton"));
+    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(u"playpausebutton"_s);
     QVERIFY(playPauseButton->isEnabled());
 
     textToSpeechWidget.setState(TextEditTextToSpeech::TextToSpeechWidget::Pause);
@@ -88,7 +90,7 @@ void TextToSpeechWidgetTest::shouldChangeStateWhenClickOnPlayPause()
     addInterface(&textToSpeechWidget);
 
     textToSpeechWidget.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
-    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("playpausebutton"));
+    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(u"playpausebutton"_s);
     QCOMPARE(textToSpeechWidget.state(), TextEditTextToSpeech::TextToSpeechWidget::Play);
 
     QTest::mouseClick(playPauseButton, Qt::LeftButton);
@@ -104,7 +106,7 @@ void TextToSpeechWidgetTest::shouldChangeStateWhenClickOnStop()
     addInterface(&textToSpeechWidget);
     textToSpeechWidget.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
 
-    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("stopbutton"));
+    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(u"stopbutton"_s);
     QTest::mouseClick(stopButton, Qt::LeftButton);
     QCOMPARE(textToSpeechWidget.state(), TextEditTextToSpeech::TextToSpeechWidget::Stop);
 }
@@ -117,9 +119,9 @@ void TextToSpeechWidgetTest::shouldEmitStateChanged()
     textToSpeechWidget.setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
     QCOMPARE(spy.count(), 0);
 
-    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("stopbutton"));
+    auto stopButton = textToSpeechWidget.findChild<QToolButton *>(u"stopbutton"_s);
 
-    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(QStringLiteral("playpausebutton"));
+    auto playPauseButton = textToSpeechWidget.findChild<QToolButton *>(u"playpausebutton"_s);
 
     QTest::mouseClick(playPauseButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);

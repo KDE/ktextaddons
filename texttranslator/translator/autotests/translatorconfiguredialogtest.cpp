@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfiguredialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/widgets/translatorconfiguredialog.h"
 #include "translator/widgets/translatorconfigurewidget.h"
 #include <QDialogButtonBox>
@@ -22,13 +24,13 @@ void TranslatorConfigureDialogTest::shouldHaveDefaultValues()
 {
     TextTranslator::TranslatorConfigureDialog w;
     QVERIFY(!w.windowTitle().isEmpty());
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mTranslatorConfigureWidget = w.findChild<TextTranslator::TranslatorConfigureWidget *>(QStringLiteral("mTranslatorConfigureWidget"));
+    auto mTranslatorConfigureWidget = w.findChild<TextTranslator::TranslatorConfigureWidget *>(u"mTranslatorConfigureWidget"_s);
     QVERIFY(mTranslatorConfigureWidget);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 

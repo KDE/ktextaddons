@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectionwidget_gui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocorrectionlineedit.h"
 #include "autocorrectiontextedit.h"
 #include "autocorrectionwidget.h"
@@ -23,7 +25,7 @@
 ConfigureTestDialog::ConfigureTestDialog(TextAutoCorrectionCore::AutoCorrection *autoCorrection, QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(QStringLiteral("Configure Autocorrection"));
+    setWindowTitle(u"Configure Autocorrection"_s);
     auto mainLayout = new QVBoxLayout(this);
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
@@ -52,7 +54,7 @@ void ConfigureTestDialog::slotSaveSettings()
 
 AutocorrectionTestWidget::AutocorrectionTestWidget(QWidget *parent)
     : QWidget(parent)
-    , mConfig(KSharedConfig::openConfig(QStringLiteral("autocorrectionguirc")))
+    , mConfig(KSharedConfig::openConfig(u"autocorrectionguirc"_s))
 {
     TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->setSharedConfig(mConfig);
     TextAutoCorrectionCore::TextAutoCorrectionSettings::self()->load();
@@ -61,8 +63,8 @@ AutocorrectionTestWidget::AutocorrectionTestWidget(QWidget *parent)
     auto lay = new QVBoxLayout(this);
     auto bar = new QToolBar;
     lay->addWidget(bar);
-    bar->addAction(QStringLiteral("Configure…"), this, &AutocorrectionTestWidget::slotConfigure);
-    auto richText = new QAction(QStringLiteral("HTML mode"), this);
+    bar->addAction(u"Configure…"_s, this, &AutocorrectionTestWidget::slotConfigure);
+    auto richText = new QAction(u"HTML mode"_s, this);
     richText->setCheckable(true);
     connect(richText, &QAction::toggled, this, &AutocorrectionTestWidget::slotChangeMode);
     bar->addAction(richText);

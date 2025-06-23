@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstancesmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextplugin.h"
@@ -25,7 +27,7 @@ TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager() = 
 
 QString TextAutoGenerateTextInstancesManager::configFileName() const
 {
-    return QStringLiteral("autogeneratetextinstances");
+    return u"autogeneratetextinstances"_s;
 }
 
 bool TextAutoGenerateTextInstancesManager::isEmpty() const
@@ -50,7 +52,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
         return; // nothing to be done...
     }
 
-    KConfigGroup configGeneralGroup(config, QStringLiteral("General"));
+    KConfigGroup configGeneralGroup(config, u"General"_s);
     setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 
     QList<TextAutoGenerateTextInstance *> lstInstances;
@@ -78,7 +80,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
 
 QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) const
 {
-    static const QRegularExpression regExpr(QStringLiteral("^Instance #\\d+$"));
+    static const QRegularExpression regExpr(u"^Instance #\\d+$"_s);
     return config->groupList().filter(regExpr);
 }
 
@@ -86,7 +88,7 @@ void TextAutoGenerateTextInstancesManager::saveInstances()
 {
     auto config = new KConfig(configFileName());
 
-    KConfigGroup configGeneralGroup(config, QStringLiteral("General"));
+    KConfigGroup configGeneralGroup(config, u"General"_s);
     configGeneralGroup.writeEntry("currentInstance", currentInstance());
 
     const auto instanceList = groupList(config);
@@ -96,7 +98,7 @@ void TextAutoGenerateTextInstancesManager::saveInstances()
 
     const QList<TextAutoGenerateTextInstance *> instanceLst = instances();
     for (int i = 0; i < instanceLst.count(); ++i) {
-        KConfigGroup group = config->group(QStringLiteral("Instance #%1").arg(i));
+        KConfigGroup group = config->group(u"Instance #%1"_s.arg(i));
         instanceLst.at(i)->save(group);
     }
     config->sync();

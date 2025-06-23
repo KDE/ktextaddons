@@ -5,6 +5,8 @@
 */
 
 #include "libretranslateengineclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libretranslateengineconfiguredialog.h"
 #include "libretranslateengineplugin.h"
 #include "libretranslateengineutil.h"
@@ -25,7 +27,7 @@ LibreTranslateEngineClient::~LibreTranslateEngineClient() = default;
 
 QString LibreTranslateEngineClient::name() const
 {
-    return QStringLiteral("libretranslate");
+    return u"libretranslate"_s;
 }
 
 QString LibreTranslateEngineClient::translatedName() const

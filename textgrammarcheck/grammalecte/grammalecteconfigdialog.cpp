@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteconfigdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalecteconfigwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -24,13 +26,13 @@ GrammalecteConfigDialog::GrammalecteConfigDialog(QWidget *parent, bool disableMe
 {
     setWindowTitle(i18nc("@title:window", "Configure Grammalecte"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
 
-    mConfigWidget->setObjectName(QStringLiteral("configwidget"));
+    mConfigWidget->setObjectName(u"configwidget"_s);
     mainLayout->addWidget(mConfigWidget);
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    box->setObjectName(QStringLiteral("box"));
+    box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &GrammalecteConfigDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &GrammalecteConfigDialog::reject);

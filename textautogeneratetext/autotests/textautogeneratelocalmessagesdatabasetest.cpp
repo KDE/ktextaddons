@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocalmessagesdatabasetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/localdatabase/textautogeneratelocalmessagesdatabase.h"
 #include "core/textautogeneratemessage.h"
 #include <QSqlRecord>
@@ -46,14 +48,14 @@ void TextAutoGenerateLocalMessagesDatabaseTest::initTestCase()
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase messagesDatabase;
-    QCOMPARE(messagesDatabase.schemaDatabaseStr(), QStringLiteral("CREATE TABLE MESSAGES (messageId TEXT PRIMARY KEY NOT NULL, timestamp INTEGER, json TEXT)"));
+    QCOMPARE(messagesDatabase.schemaDatabaseStr(), u"CREATE TABLE MESSAGES (messageId TEXT PRIMARY KEY NOT NULL, timestamp INTEGER, json TEXT)"_s);
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase messagesDataBase;
     QCOMPARE(messagesDataBase.dbFileName(QString::fromLatin1(chatId())),
-             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/ai-database/messages/myChatId.sqlite"));
+             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/messages/myChatId.sqlite"_s);
 }
 
 void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()
@@ -101,7 +103,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldDeleteMessages() // this t
 {
     // GIVEN
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
-    const QString messageId = (QStringLiteral("uu4"));
+    const QString messageId = (u"uu4"_s);
 
     // WHEN
     logger.deleteMessage(otherChatId(), messageId);
@@ -117,7 +119,7 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldReturnNullIfDoesNotExist()
     // GIVEN
     TextAutoGenerateText::TextAutoGenerateLocalMessagesDatabase logger;
     // WHEN
-    auto tableModel = logger.createMessageModel(QStringLiteral("does not exist"));
+    auto tableModel = logger.createMessageModel(u"does not exist"_s);
     // THEN
     QVERIFY(!tableModel);
 }

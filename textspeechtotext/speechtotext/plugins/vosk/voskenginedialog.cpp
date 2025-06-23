@@ -5,6 +5,8 @@
 */
 
 #include "voskenginedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "voskenginelanguagewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -25,13 +27,13 @@ VoskEngineDialog::VoskEngineDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Vosk Plugin Settings"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mVoskEngineWidget->setObjectName(QStringLiteral("mVoskEngineWidget"));
+    mVoskEngineWidget->setObjectName(u"mVoskEngineWidget"_s);
     mainLayout->addWidget(mVoskEngineWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(u"buttonBox"_s);
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &VoskEngineDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &VoskEngineDialog::reject);

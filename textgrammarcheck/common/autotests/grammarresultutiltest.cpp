@@ -5,6 +5,8 @@
 */
 
 #include "grammarresultutiltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "common/grammarresultutil.h"
 #include <QTest>
 #include <QTextDocument>
@@ -48,13 +50,13 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
         QTest::newRow("noerror") << QString() << QStringList() << grammarErrorLists << lstGrammarActions << QString();
     }
     {
-        const QString text = QStringLiteral("Boo foo, ah car");
+        const QString text = u"Boo foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarAction> lstGrammarActions;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         QTest::newRow("noerror2") << text << QStringList() << grammarErrorLists << lstGrammarActions << text;
     }
     {
-        const QString text = QStringLiteral("Boo foo, ah car");
+        const QString text = u"Boo foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -71,12 +73,12 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {QStringLiteral("joo")};
-        const QString result = QStringLiteral("joo foo, ah car");
+        const QStringList replacement = {u"joo"_s};
+        const QString result = u"joo foo, ah car"_s;
         QTest::newRow("error1") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
     {
-        const QString text = QStringLiteral("Boo foo, ah car");
+        const QString text = u"Boo foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -93,12 +95,12 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = QStringList{QStringLiteral("ppppppp")};
-        const QString result = QStringLiteral("ppppppp foo, ah car");
+        const QStringList replacement = QStringList{u"ppppppp"_s};
+        const QString result = u"ppppppp foo, ah car"_s;
         QTest::newRow("error2-word-big") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
     {
-        const QString text = QStringLiteral("Boo foo, ah car");
+        const QString text = u"Boo foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -115,14 +117,14 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = QStringList{QStringLiteral("p")};
-        const QString result = QStringLiteral("p foo, ah car");
+        const QStringList replacement = QStringList{u"p"_s};
+        const QString result = u"p foo, ah car"_s;
         QTest::newRow("error3-word-smaller") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
 
     // Two errors
     {
-        const QString text = QStringLiteral("Boo foo, ah car");
+        const QString text = u"Boo foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -153,13 +155,13 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {QStringLiteral("joo"), QStringLiteral("AAA")};
-        const QString result = QStringLiteral("joo AAA, ah car");
+        const QStringList replacement = {u"joo"_s, QStringLiteral("AAA")};
+        const QString result = u"joo AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
     // Bug 459113
     {
-        const QString text = QStringLiteral("Boo foo, ah car");
+        const QString text = u"Boo foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -190,12 +192,12 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {QStringLiteral("jooAA"), QStringLiteral("AAA")};
-        const QString result = QStringLiteral("jooAA AAA, ah car");
+        const QStringList replacement = {u"jooAA"_s, QStringLiteral("AAA")};
+        const QString result = u"jooAA AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors-bigger") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
     {
-        const QString text = QStringLiteral("Boo\n foo, ah car");
+        const QString text = u"Boo\n foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -226,13 +228,13 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {QStringLiteral("jooAA"), QStringLiteral("AAA")};
-        const QString result = QStringLiteral("jooAA\n AAA, ah car");
+        const QStringList replacement = {u"jooAA"_s, QStringLiteral("AAA")};
+        const QString result = u"jooAA\n AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors-bigger-1") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
 
     {
-        const QString text = QStringLiteral("Boo\n foo, ah car");
+        const QString text = u"Boo\n foo, ah car"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -263,13 +265,13 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {QStringLiteral("b"), QStringLiteral("AAA")};
-        const QString result = QStringLiteral("b\n AAA, ah car");
+        const QStringList replacement = {u"b"_s, QStringLiteral("AAA")};
+        const QString result = u"b\n AAA, ah car"_s;
         QTest::newRow("error1-with-two-errors-smaller-1") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
 
     {
-        const QString text = QStringLiteral("Je suis  la qui empeche\nil est la.\n tout passage dans l'herbe");
+        const QString text = u"Je suis  la qui empeche\nil est la.\n tout passage dans l'herbe"_s;
         QVector<TextGrammarCheck::GrammarError> grammarErrorLists;
         {
             TextGrammarCheck::GrammarError err;
@@ -314,8 +316,8 @@ void GrammarResultUtilTest::shouldReplaceWord_data()
             act.setLength(3);
             lstGrammarActions.append(act);
         }
-        const QStringList replacement = {QStringLiteral(" "), QStringLiteral("EMPECHE"), QStringLiteral("A")};
-        const QString result = QStringLiteral("Je suis la qui EMPECHE\nil A la.\n tout passage dans l'herbe");
+        const QStringList replacement = {u" "_s, QStringLiteral("EMPECHE"), QStringLiteral("A")};
+        const QString result = u"Je suis la qui EMPECHE\nil A la.\n tout passage dans l'herbe"_s;
         QTest::newRow("error3") << text << replacement << grammarErrorLists << lstGrammarActions << result;
     }
 }

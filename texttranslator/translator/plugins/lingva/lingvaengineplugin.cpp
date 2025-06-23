@@ -40,8 +40,7 @@ void LingvaEnginePlugin::translateText()
 {
     clear();
 
-    const QUrl url(QStringLiteral("%1/api/v1/%2/%3/%4")
-                       .arg(mServerUrl, languageCode(from()), languageCode(to()), QString::fromUtf8(QUrl::toPercentEncoding(inputText()))));
+    const QUrl url(u"%1/api/v1/%2/%3/%4"_s.arg(mServerUrl, languageCode(from()), languageCode(to()), QString::fromUtf8(QUrl::toPercentEncoding(inputText()))));
 
     qCDebug(TRANSLATOR_LINGVA_LOG) << " url " << url;
     const QNetworkRequest request(url);
@@ -71,7 +70,7 @@ void LingvaEnginePlugin::parseTranslation(QNetworkReply *reply)
     }
 
     const QJsonObject responseObject = jsonResponse.object();
-    setResult(responseObject.value(QStringLiteral("translation")).toString());
+    setResult(responseObject.value(u"translation"_s).toString());
     reply->deleteLater();
     qCDebug(TRANSLATOR_LINGVA_LOG) << " result " << result();
     Q_EMIT translateDone();
@@ -91,9 +90,9 @@ void LingvaEnginePlugin::slotConfigureChanged()
 QString LingvaEnginePlugin::languageCode(const QString &langStr)
 {
     if (langStr == "zh"_L1) {
-        return QStringLiteral("zh");
+        return u"zh"_s;
     } else if (langStr == "zt"_L1) {
-        return QStringLiteral("zh_HANT");
+        return u"zh_HANT"_s;
     }
     return langStr;
 }

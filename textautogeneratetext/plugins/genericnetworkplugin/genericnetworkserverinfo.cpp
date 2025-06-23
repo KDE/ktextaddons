@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkserverinfo.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autogeneratetext_genericnetwork_debug.h"
 
 #include <KLocalizedString>
@@ -39,9 +41,9 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
     case GenericNetworkManager::PluginNetworkType::MistralAI:
         return {};
     case GenericNetworkManager::PluginNetworkType::OpenAI:
-        return QStringLiteral("https://openai.com/");
+        return u"https://openai.com/"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
-        return QStringLiteral("https://www.kluster.ai/");
+        return u"https://www.kluster.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -55,11 +57,11 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return {};
     case GenericNetworkManager::PluginNetworkType::MistralAI:
-        return QStringLiteral("https://chat.mistral.ai/");
+        return u"https://chat.mistral.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenAI:
-        return QStringLiteral("https://api.openai.com/v1/");
+        return u"https://api.openai.com/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
-        return QStringLiteral("https://api.kluster.ai/v1/");
+        return u"https://api.kluster.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -91,11 +93,11 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return {};
     case GenericNetworkManager::PluginNetworkType::MistralAI:
-        return QStringLiteral("mistralai");
+        return u"mistralai"_s;
     case GenericNetworkManager::PluginNetworkType::OpenAI:
-        return QStringLiteral("openai");
+        return u"openai"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
-        return QStringLiteral("klusterai");
+        return u"klusterai"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }

@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetool/languagetoolconfigdialog.h"
 #include "languagetool/languagetoolgetlistoflanguagejob.h"
 #include "languagetool/languagetoolmanager.h"
@@ -32,10 +34,10 @@ LanguageToolWidget::LanguageToolWidget(QWidget *parent)
     mNetworkAccessManager->enableStrictTransportSecurityStore(true);
     auto mainLayout = new QVBoxLayout(this);
 
-    auto button = new QPushButton(QStringLiteral("Check Grammar"), this);
+    auto button = new QPushButton(u"Check Grammar"_s, this);
     mainLayout->addWidget(button);
 
-    auto languageButton = new QPushButton(QStringLiteral("Get List Of Languages"), this);
+    auto languageButton = new QPushButton(u"Get List Of Languages"_s, this);
     mainLayout->addWidget(languageButton);
 
     mInput = new QTextEdit(this);
@@ -67,10 +69,10 @@ void LanguageToolWidget::slotReplaceText(const TextGrammarCheck::GrammarAction &
 void LanguageToolWidget::slotCheckGrammar()
 {
     auto job = new TextGrammarCheck::LanguageToolResultJob(this);
-    job->setUrl(QStringLiteral("https://api.languagetoolplus.com/v2/check"));
+    job->setUrl(u"https://api.languagetoolplus.com/v2/check"_s);
     job->setNetworkAccessManager(mNetworkAccessManager);
     job->setText(mInput->toPlainText());
-    job->setLanguage(QStringLiteral("fr"));
+    job->setLanguage(u"fr"_s);
     connect(job, &TextGrammarCheck::LanguageToolResultJob::finished, this, &LanguageToolWidget::slotResultFinished);
     connect(job, &TextGrammarCheck::LanguageToolResultJob::error, this, &LanguageToolWidget::slotError);
     job->start();
@@ -79,7 +81,7 @@ void LanguageToolWidget::slotCheckGrammar()
 void LanguageToolWidget::slotGetListOfLanguages()
 {
     auto job = new TextGrammarCheck::LanguageToolGetListOfLanguageJob(this);
-    job->setUrl(QStringLiteral("https://api.languagetoolplus.com/v2/languages"));
+    job->setUrl(u"https://api.languagetoolplus.com/v2/languages"_s);
     job->setNetworkAccessManager(mNetworkAccessManager);
     connect(job, &TextGrammarCheck::LanguageToolGetListOfLanguageJob::finished, this, &LanguageToolWidget::slotGetLanguagesFinished);
     connect(job, &TextGrammarCheck::LanguageToolGetListOfLanguageJob::error, this, &LanguageToolWidget::slotGetLanguagesError);

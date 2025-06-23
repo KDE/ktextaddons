@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 
@@ -25,19 +27,19 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mStackedWidget->setObjectName(QStringLiteral("mStackedWidget"));
+    mStackedWidget->setObjectName(u"mStackedWidget"_s);
     mainLayout->addWidget(mStackedWidget);
 
-    mTextAutoGenerateQuickAskViewWidget->setObjectName(QStringLiteral("mTextAutoGenerateQuickAskViewWidget"));
+    mTextAutoGenerateQuickAskViewWidget->setObjectName(u"mTextAutoGenerateQuickAskViewWidget"_s);
     mStackedWidget->addWidget(mTextAutoGenerateQuickAskViewWidget);
 
-    mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
+    mTextAutoGenerateNotWorkingWidget->setObjectName(u"mTextAutoGenerateNotWorkingWidget"_s);
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
 
-    mTextAutoGenerateNotInstanceFoundWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotInstanceFoundWidget"));
+    mTextAutoGenerateNotInstanceFoundWidget->setObjectName(u"mTextAutoGenerateNotInstanceFoundWidget"_s);
     mStackedWidget->addWidget(mTextAutoGenerateNotInstanceFoundWidget);
 
     connect(mTextAutoGenerateNotInstanceFoundWidget, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested, this, [this]() {

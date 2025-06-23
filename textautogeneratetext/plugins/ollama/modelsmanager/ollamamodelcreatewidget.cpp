@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamodelcreatefromexistingmodelwidget.h"
 #include <KLocalizedString>
 #include <QFileDialog>
@@ -20,14 +22,14 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
     , mSelectModeWidget(new QWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
 
-    mStackWidget->setObjectName(QStringLiteral("mStackWidget"));
+    mStackWidget->setObjectName(u"mStackWidget"_s);
     mainLayout->addWidget(mStackWidget);
 
-    mOllamaModelCreateFromExistingModelWidget->setObjectName(QStringLiteral("mOllamaModelCreateFromExistingModelWidget"));
-    mSelectModeWidget->setObjectName(QStringLiteral("mSelectModeWidget"));
+    mOllamaModelCreateFromExistingModelWidget->setObjectName(u"mOllamaModelCreateFromExistingModelWidget"_s);
+    mSelectModeWidget->setObjectName(u"mSelectModeWidget"_s);
 
     auto selectModeWidgetLayout = new QHBoxLayout(mSelectModeWidget);
 
@@ -37,7 +39,7 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
     mStackWidget->setCurrentWidget(mSelectModeWidget);
 
     auto importModelFromGGUFFileButton = new QPushButton(i18nc("@action:button", "Load GGUF File…"), this);
-    importModelFromGGUFFileButton->setObjectName(QStringLiteral("importModelFromGGUFFileButton"));
+    importModelFromGGUFFileButton->setObjectName(u"importModelFromGGUFFileButton"_s);
     selectModeWidgetLayout->addWidget(importModelFromGGUFFileButton, 0, Qt::AlignTop);
     connect(importModelFromGGUFFileButton, &QPushButton::clicked, this, [this]() {
         const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select GGUF File"));
@@ -47,7 +49,7 @@ OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget
     });
 
     auto createModelButton = new QPushButton(i18nc("@action:button", "Create Model"), this);
-    createModelButton->setObjectName(QStringLiteral("createModelButton"));
+    createModelButton->setObjectName(u"createModelButton"_s);
     selectModeWidgetLayout->addWidget(createModelButton, 0, Qt::AlignTop);
     connect(createModelButton, &QPushButton::clicked, this, [this]() {
         mOllamaModelCreateFromExistingModelWidget->clear();

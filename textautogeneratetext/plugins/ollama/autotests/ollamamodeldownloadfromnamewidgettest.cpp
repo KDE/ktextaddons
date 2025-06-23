@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadfromnamewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodeldownloadfromnamewidget.h"
 #include <QLabel>
 #include <QLineEdit>
@@ -19,15 +21,15 @@ OllamaModelDownloadFromNameWidgetTest::OllamaModelDownloadFromNameWidgetTest(QOb
 void OllamaModelDownloadFromNameWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelDownloadFromNameWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mModelNameLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mModelNameLineEdit"));
+    auto mModelNameLineEdit = w.findChild<QLineEdit *>(u"mModelNameLineEdit"_s);
     QVERIFY(mModelNameLineEdit);
     QVERIFY(mModelNameLineEdit->text().isEmpty());
 
-    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto label = w.findChild<QLabel *>(u"label"_s);
     QVERIFY(label);
     QVERIFY(!label->text().isEmpty());
 }

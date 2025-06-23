@@ -58,7 +58,7 @@ public:
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
 #endif
     {
-        KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
+        KConfig sonnetKConfig(u"sonnetrc"_s);
         KConfigGroup group(&sonnetKConfig, "Spelling"_L1);
         checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         supportFeatures |= RichTextEditor::Search;
@@ -233,10 +233,8 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                 d->speller = new Sonnet::Speller();
             }
             if (!d->speller->availableBackends().isEmpty()) {
-                QAction *spellCheckAction = popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
-                                                             i18n("Check Spelling…"),
-                                                             this,
-                                                             &RichTextEditor::slotCheckSpelling);
+                QAction *spellCheckAction =
+                    popup->addAction(QIcon::fromTheme(u"tools-check-spelling"_s), i18n("Check Spelling…"), this, &RichTextEditor::slotCheckSpelling);
                 if (emptyDocument) {
                     spellCheckAction->setEnabled(false);
                 }
@@ -281,7 +279,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         if (!emptyDocument) {
             QAction *speakAction = popup->addAction(i18n("Speak Text"));
-            speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+            speakAction->setIcon(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s));
             connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
         }
 #endif
@@ -510,7 +508,7 @@ void RichTextEditor::checkSpelling(bool force)
             const int answer = KMessageBox::questionTwoActions(this,
                                                                i18n("No backend available for spell checking. Do you want to send the email anyways?"),
                                                                QString(),
-                                                               KGuiItem(i18nc("@action:button", "Send"), QStringLiteral("mail-send")),
+                                                               KGuiItem(i18nc("@action:button", "Send"), u"mail-send"_s),
                                                                KStandardGuiItem::cancel());
             if (answer == KMessageBox::ButtonCode::PrimaryAction) {
                 Q_EMIT spellCheckingFinished();

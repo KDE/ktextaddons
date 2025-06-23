@@ -5,18 +5,19 @@
 */
 
 #include "lingvaengineutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 QString LingvaEngineUtil::groupName()
 {
-    return QStringLiteral("LingvaTranslator");
+    return u"LingvaTranslator"_s;
 }
 
 QString LingvaEngineUtil::serverUrlKey()
 {
-    return QStringLiteral("ServerUrl");
+    return u"ServerUrl"_s;
 }
 
 QString LingvaEngineUtil::defaultServerUrl()
 {
-    return QStringLiteral("https://lingva.ml");
+    return u"https://lingva.ml"_s;
 }

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfowidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamodelflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
@@ -18,14 +20,14 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     , mModifiedAtLabel(new QLabel(this))
     , mMainLayout(new QVBoxLayout(this))
 {
-    mMainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mMainLayout->setObjectName(u"mainLayout"_s);
 
     {
         auto label = new QLabel(i18n("Family:"), this);
         mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
-        mFamilyNameLabel->setObjectName(QStringLiteral("mFamilyNameLabel"));
+        mFamilyNameLabel->setObjectName(u"mFamilyNameLabel"_s);
         mMainLayout->addWidget(mFamilyNameLabel, 0, Qt::AlignTop);
     }
 
@@ -34,7 +36,7 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
         mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
-        mParameterSizeLabel->setObjectName(QStringLiteral("mParameterSizeLabel"));
+        mParameterSizeLabel->setObjectName(u"mParameterSizeLabel"_s);
         mMainLayout->addWidget(mParameterSizeLabel, 0, Qt::AlignTop);
     }
 
@@ -43,7 +45,7 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
         mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
-        mQuantizationLevelLabel->setObjectName(QStringLiteral("mQuantizationLevelLabel"));
+        mQuantizationLevelLabel->setObjectName(u"mQuantizationLevelLabel"_s);
         mMainLayout->addWidget(mQuantizationLevelLabel, 0, Qt::AlignTop);
     }
 
@@ -52,7 +54,7 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
         mMainLayout->addWidget(label, 0, Qt::AlignTop);
         changeFont(label);
 
-        mModifiedAtLabel->setObjectName(QStringLiteral("mModifiedAtLabel"));
+        mModifiedAtLabel->setObjectName(u"mModifiedAtLabel"_s);
         mMainLayout->addWidget(mModifiedAtLabel, 0, Qt::AlignTop);
     }
 }
@@ -92,7 +94,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     }
 
     QString installedName = info.model();
-    const int position = installedName.indexOf(QLatin1Char(':'));
+    const int position = installedName.indexOf(u':');
     installedName = installedName.first(position);
     auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
         return availableInfo.name() == installedName;

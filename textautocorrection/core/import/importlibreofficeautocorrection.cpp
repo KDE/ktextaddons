@@ -86,13 +86,13 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
     QString archiveFileName;
     switch (type) {
     case DOCUMENT:
-        archiveFileName = QStringLiteral("DocumentList.xml");
+        archiveFileName = u"DocumentList.xml"_s;
         break;
     case SENTENCE:
-        archiveFileName = QStringLiteral("SentenceExceptList.xml");
+        archiveFileName = u"SentenceExceptList.xml"_s;
         break;
     case WORD:
-        archiveFileName = QStringLiteral("WordExceptList.xml");
+        archiveFileName = u"WordExceptList.xml"_s;
         break;
     default:
         return false;
@@ -105,7 +105,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
     if (documentList->isFile()) {
         const auto archiveFile = static_cast<const KArchiveFile *>(documentList);
         archiveFile->copyTo(mTempDir->path());
-        QFile file(mTempDir->path() + QLatin1Char('/') + archiveFileName);
+        QFile file(mTempDir->path() + u'/' + archiveFileName);
         if (!file.open(QIODevice::ReadOnly)) {
             qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << file.fileName();
         }
@@ -120,9 +120,9 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
                     if (tag == "block-list:block"_L1) {
                         switch (type) {
                         case DOCUMENT:
-                            if (e.hasAttribute(QStringLiteral("block-list:abbreviated-name")) && e.hasAttribute(QStringLiteral("block-list:name"))) {
-                                const QString find = e.attribute(QStringLiteral("block-list:abbreviated-name"));
-                                const QString replace = e.attribute(QStringLiteral("block-list:name"));
+                            if (e.hasAttribute(u"block-list:abbreviated-name"_s) && e.hasAttribute(u"block-list:name"_s)) {
+                                const QString find = e.attribute(u"block-list:abbreviated-name"_s);
+                                const QString replace = e.attribute(u"block-list:name"_s);
                                 mAutocorrectEntries.insert(find, replace);
                                 const int findLenght(find.length());
                                 mMaxFindStringLength = qMax(findLenght, mMaxFindStringLength);
@@ -130,14 +130,14 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
                             }
                             break;
                         case SENTENCE:
-                            if (e.hasAttribute(QStringLiteral("block-list:abbreviated-name"))) {
-                                mUpperCaseExceptions.insert(e.attribute(QStringLiteral("block-list:abbreviated-name")));
+                            if (e.hasAttribute(u"block-list:abbreviated-name"_s)) {
+                                mUpperCaseExceptions.insert(e.attribute(u"block-list:abbreviated-name"_s));
                             }
 
                             break;
                         case WORD:
-                            if (e.hasAttribute(QStringLiteral("block-list:abbreviated-name"))) {
-                                mTwoUpperLetterExceptions.insert(e.attribute(QStringLiteral("block-list:abbreviated-name")));
+                            if (e.hasAttribute(u"block-list:abbreviated-name"_s)) {
+                                mTwoUpperLetterExceptions.insert(e.attribute(u"block-list:abbreviated-name"_s));
                             }
                             break;
                         }

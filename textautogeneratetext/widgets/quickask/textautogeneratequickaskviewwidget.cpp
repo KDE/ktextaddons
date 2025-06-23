@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskviewwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
@@ -19,17 +21,17 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
     // mainLayout->setSpacing(0);
 
-    mTextAutoGenerateQuickAskHeaderWidget->setObjectName(QStringLiteral("mTextAutoGenerateQuickAskHeaderWidget"));
+    mTextAutoGenerateQuickAskHeaderWidget->setObjectName(u"mTextAutoGenerateQuickAskHeaderWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateQuickAskHeaderWidget);
 
-    mTextAutoGenerateResultWidget->setObjectName(QStringLiteral("mTextAutoGenerateResultWidget"));
+    mTextAutoGenerateResultWidget->setObjectName(u"mTextAutoGenerateResultWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateResultWidget, 1);
 
-    mTextAutoGenerateTextLineWidget->setObjectName(QStringLiteral("mTextAutoGenerateTextLineWidget"));
+    mTextAutoGenerateTextLineWidget->setObjectName(u"mTextAutoGenerateTextLineWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineWidget);
     connect(mTextAutoGenerateTextLineWidget, &TextAutoGenerateTextLineEditWidget::editingFinished, this, &TextAutoGenerateQuickAskViewWidget::editingFinished);
     connect(mTextAutoGenerateQuickAskHeaderWidget,

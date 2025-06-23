@@ -7,6 +7,8 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 */
 // Qt
 #include <QApplication>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QLineEdit>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -25,11 +27,11 @@ public:
         auto container = new SlideContainer(this);
 
         auto inButton = new QPushButton(this);
-        inButton->setText(QStringLiteral("Slide &In"));
+        inButton->setText(u"Slide &In"_s);
         connect(inButton, &QPushButton::clicked, container, &SlideContainer::slideIn);
 
         auto outButton = new QPushButton(this);
-        outButton->setText(QStringLiteral("Slide &Out"));
+        outButton->setText(u"Slide &Out"_s);
         connect(outButton, &QPushButton::clicked, container, &SlideContainer::slideOut);
 
         auto layout = new QVBoxLayout(this);
@@ -38,7 +40,7 @@ public:
         layout->addWidget(container);
 
         auto content = new QLineEdit(container);
-        content->setText(QStringLiteral("Some long text. Some long text. Some long text. Some long text."));
+        content->setText(u"Some long text. Some long text. Some long text. Some long text."_s);
         container->setContent(content);
     }
 };

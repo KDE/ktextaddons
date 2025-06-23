@@ -23,7 +23,7 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
 
     mSearchLineEdit->setObjectName("mSearchLineEdit"_L1);
     mSearchLineEdit->setClearButtonEnabled(true);
-    mSearchLineEdit->addAction(QIcon::fromTheme(QStringLiteral("view-filter")), QLineEdit::LeadingPosition);
+    mSearchLineEdit->addAction(QIcon::fromTheme(u"view-filter"_s), QLineEdit::LeadingPosition);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);

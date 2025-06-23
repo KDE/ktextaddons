@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailableinfosmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelsavalableinfos.h"
 #include <QFile>
@@ -18,7 +20,7 @@ OllamaModelAvailableInfosManager::~OllamaModelAvailableInfosManager() = default;
 
 bool OllamaModelAvailableInfosManager::loadAvailableModels()
 {
-    QFile f(QStringLiteral(":/available_models"));
+    QFile f(u":/available_models"_s);
     if (!f.open(QIODevice::ReadOnly)) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to load:" << f.fileName();
         return false;

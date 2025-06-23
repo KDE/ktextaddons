@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translatorconfigurecombowidget.h"
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -28,16 +30,16 @@ TranslatorConfigureWidget::TranslatorConfigureWidget(QWidget *parent)
     , d(new TranslatorConfigureWidgetPrivate(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    d->mEngineConfigureComboWidget->setObjectName(QStringLiteral("mEngineConfigureComboWidget"));
+    d->mEngineConfigureComboWidget->setObjectName(u"mEngineConfigureComboWidget"_s);
     auto hboxLayout = new QHBoxLayout;
     hboxLayout->setContentsMargins({});
     mainLayout->addLayout(hboxLayout);
 
     auto label = new QLabel(i18nc("@label:textbox", "Engine:"), this);
-    label->setObjectName(QStringLiteral("label"));
+    label->setObjectName(u"label"_s);
     label->setTextFormat(Qt::PlainText);
     hboxLayout->addWidget(label);
     hboxLayout->addWidget(d->mEngineConfigureComboWidget);

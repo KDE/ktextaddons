@@ -5,6 +5,8 @@
 */
 
 #include "lingvaengineclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "lingvaenginedialog.h"
 #include "lingvaengineplugin.h"
 #include "lingvaengineutil.h"
@@ -23,7 +25,7 @@ LingvaEngineClient::~LingvaEngineClient() = default;
 
 QString LingvaEngineClient::name() const
 {
-    return QStringLiteral("lingva");
+    return u"lingva"_s;
 }
 
 QString LingvaEngineClient::translatedName() const

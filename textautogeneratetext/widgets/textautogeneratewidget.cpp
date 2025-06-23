@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratemanager.h"
@@ -36,25 +38,25 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
-    mHeaderWidget->setObjectName(QStringLiteral("mHeaderWidget"));
+    mHeaderWidget->setObjectName(u"mHeaderWidget"_s);
     mainLayout->addWidget(mHeaderWidget);
 
     mSplitter->setOrientation(Qt::Horizontal);
-    mSplitter->setObjectName(QStringLiteral("mSplitter"));
+    mSplitter->setObjectName(u"mSplitter"_s);
 
     mainLayout->addWidget(mSplitter, 1);
 
-    mTextAutoGenerateResultWidget->setObjectName(QStringLiteral("mTextAutoGenerateResultWidget"));
+    mTextAutoGenerateResultWidget->setObjectName(u"mTextAutoGenerateResultWidget"_s);
 
-    mHistoryWidget->setObjectName(QStringLiteral("mHistoryWidget"));
+    mHistoryWidget->setObjectName(u"mHistoryWidget"_s);
     mSplitter->addWidget(mHistoryWidget);
     mSplitter->addWidget(mTextAutoGenerateResultWidget);
 
     new KSplitterCollapserButton(mHistoryWidget, mSplitter);
 
-    mTextAutoGenerateTextLineEditWidget->setObjectName(QStringLiteral("mTextAutoGenerateTextLineEditWidget"));
+    mTextAutoGenerateTextLineEditWidget->setObjectName(u"mTextAutoGenerateTextLineEditWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineEditWidget);
     connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::editingFinished, this, &TextAutoGenerateWidget::slotEditingFinished);
 
@@ -129,13 +131,13 @@ void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
 
 void TextAutoGenerateWidget::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutoGenerateWidget"));
+    KConfigGroup group(KSharedConfig::openStateConfig(), u"TextAutoGenerateWidget"_s);
     group.writeEntry("mainSplitter", mSplitter->sizes());
 }
 
 void TextAutoGenerateWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("TextAutoGenerateWidget"));
+    KConfigGroup group(KSharedConfig::openStateConfig(), u"TextAutoGenerateWidget"_s);
     const QList<int> size = {100, 400};
 
     mSplitter->setSizes(group.readEntry("mainSplitter", size));

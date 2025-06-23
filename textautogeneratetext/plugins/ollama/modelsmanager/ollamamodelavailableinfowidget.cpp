@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailableinfowidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodeldownloadwidget.h"
@@ -19,7 +21,7 @@ OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *ma
     , mModelName(new QLabel(this))
     , mOllamaManager(manager)
 {
-    mMainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mMainLayout->setObjectName(u"mainlayout"_s);
     mMainLayout->setContentsMargins({});
     mMainLayout->addWidget(mModelName, 0, Qt::AlignHCenter);
     QFont f = mModelName->font();
@@ -57,10 +59,10 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     auto downloadGroupBoxLayout = new QVBoxLayout(downloadModelGroupBox);
     const QList<OllamaModelAvailableInfo::ModelTag> tags = index.data(OllamaModelAvailableInfosModel::Tags).value<QList<OllamaModelAvailableInfo::ModelTag>>();
     for (const auto &t : tags) {
-        const bool alreadyInstalled = mOllamaManager->isAlreadyInstalled(QStringLiteral("%1:%2").arg(modelName, t.tag));
+        const bool alreadyInstalled = mOllamaManager->isAlreadyInstalled(u"%1:%2"_s.arg(modelName, t.tag));
         auto downLoadWidget = new OllamaModelDownloadWidget(t.tag, t.size, alreadyInstalled, mInfoWidget);
         connect(downLoadWidget, &OllamaModelDownloadWidget::downloadModel, this, [this, modelName](const QString &tagName) {
-            Q_EMIT downloadModel(QStringLiteral("%1:%2").arg(modelName, tagName));
+            Q_EMIT downloadModel(u"%1:%2"_s.arg(modelName, tagName));
         });
         downloadGroupBoxLayout->addWidget(downLoadWidget);
     }

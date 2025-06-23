@@ -5,6 +5,8 @@
 */
 
 #include "grammalectemanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QStandardPaths>
@@ -30,9 +32,9 @@ GrammalecteManager *GrammalecteManager::self()
 void GrammalecteManager::saveSettings()
 {
     KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myConfigGroupName));
-    grp.writeEntry(QStringLiteral("pythonpath"), mPythonPath);
-    grp.writeEntry(QStringLiteral("grammalectepath"), mGrammalectePath);
-    grp.writeEntry(QStringLiteral("options"), mOptions);
+    grp.writeEntry(u"pythonpath"_s, mPythonPath);
+    grp.writeEntry(u"grammalectepath"_s, mGrammalectePath);
+    grp.writeEntry(u"options"_s, mOptions);
 }
 
 QStringList GrammalecteManager::options() const
@@ -48,12 +50,12 @@ void GrammalecteManager::setOptions(const QStringList &saveOptions)
 void GrammalecteManager::loadSettings()
 {
     KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myConfigGroupName));
-    mPythonPath = grp.readEntry(QStringLiteral("pythonpath"));
+    mPythonPath = grp.readEntry(u"pythonpath"_s);
     if (mPythonPath.isEmpty()) {
-        mPythonPath = QStandardPaths::findExecutable(QStringLiteral("python3"));
+        mPythonPath = QStandardPaths::findExecutable(u"python3"_s);
     }
-    mGrammalectePath = grp.readEntry(QStringLiteral("grammalectepath"));
-    mOptions = grp.readEntry(QStringLiteral("options"), QStringList());
+    mGrammalectePath = grp.readEntry(u"grammalectepath"_s);
+    mOptions = grp.readEntry(u"options"_s, QStringList());
 }
 
 QString GrammalecteManager::pythonPath() const

@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TextSpeechToText;
 
 class TextSpeechToText::SpeechToTextPluginPrivate

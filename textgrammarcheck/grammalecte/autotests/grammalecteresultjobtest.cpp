@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteresultjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalecte/grammalecteresultjob.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -30,13 +32,13 @@ void GrammarResultJobTest::shouldBeAbleToStart()
     TextGrammarCheck::GrammalecteResultJob job;
     // Args can be empty if we use default values
     QVERIFY(!job.canStart());
-    job.setText(QStringLiteral("ff"));
+    job.setText(u"ff"_s);
     QVERIFY(!job.canStart());
-    job.setPythonPath(QStringLiteral("/usr/bin/"));
+    job.setPythonPath(u"/usr/bin/"_s);
     QVERIFY(!job.canStart());
-    job.setGrammarlecteCliPath(QStringLiteral("/usr/bin/ls"));
+    job.setGrammarlecteCliPath(u"/usr/bin/ls"_s);
     QVERIFY(job.canStart());
-    job.setArguments(QStringList() << QStringLiteral("ff"));
+    job.setArguments(QStringList() << u"ff"_s);
     QVERIFY(job.canStart());
 }
 

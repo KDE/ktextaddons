@@ -10,7 +10,7 @@
 #include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(GrammalecteGrammarErrorTest)
-
+using namespace Qt::Literals::StringLiterals;
 GrammalecteGrammarErrorTest::GrammalecteGrammarErrorTest(QObject *parent)
     : QObject(parent)
 {
@@ -34,19 +34,19 @@ void GrammalecteGrammarErrorTest::shouldParseJson_data()
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("nbBlock");
     QTest::addColumn<TextGrammarCheck::GrammalecteGrammarError>("error");
-    QTest::newRow("empty-error") << QStringLiteral("empty-error") << 1 << TextGrammarCheck::GrammalecteGrammarError();
+    QTest::newRow("empty-error") << u"empty-error"_s << 1 << TextGrammarCheck::GrammalecteGrammarError();
     TextGrammarCheck::GrammalecteGrammarError err;
     err.setBlockId(1);
     err.setStart(15);
     err.setLength(5);
     err.setColor(QColor(217, 128, 38));
-    err.setSuggestions(QStringList() << QStringLiteral("Alors"));
-    err.setError(QStringLiteral("Après un point, une majuscule est généralement requise."));
-    err.setOption(QStringLiteral("maj"));
-    err.setRule(QStringLiteral("majuscule_après_point"));
-    QTest::newRow("error1") << QStringLiteral("error1") << 1 << err;
+    err.setSuggestions(QStringList() << u"Alors"_s);
+    err.setError(u"Après un point, une majuscule est généralement requise."_s);
+    err.setOption(u"maj"_s);
+    err.setRule(u"majuscule_après_point"_s);
+    QTest::newRow("error1") << u"error1"_s << 1 << err;
     err.setColor(QColor());
-    QTest::newRow("empty-color") << QStringLiteral("empty-color") << 1 << err;
+    QTest::newRow("empty-color") << u"empty-color"_s << 1 << err;
 }
 
 void GrammalecteGrammarErrorTest::shouldParseJson()
@@ -54,7 +54,7 @@ void GrammalecteGrammarErrorTest::shouldParseJson()
     QFETCH(QString, fileName);
     QFETCH(int, nbBlock);
     QFETCH(TextGrammarCheck::GrammalecteGrammarError, error);
-    const QString originalJsonFile = QLatin1StringView(GRAMMALECTE_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1StringView(GRAMMALECTE_DATA_DIR) + u'/' + fileName + u".json"_s;
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

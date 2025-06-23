@@ -30,7 +30,7 @@ QVector<GrammarError> GrammalecteParser::parseResult(const QJsonObject &obj) con
         if (current.type() == QJsonValue::Object) {
             // Check lGrammarErrors
             const QJsonObject grammaObject = current.toObject();
-            const int blockId = grammaObject.value(QStringLiteral("iParagraph")).toInt();
+            const int blockId = grammaObject.value(u"iParagraph"_s).toInt();
             // qDebug() << " blockId " << blockId;
             const QJsonArray grammarErrorArray = grammaObject.value("lGrammarErrors"_L1).toArray();
             for (const QJsonValue &error : grammarErrorArray) {

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancecombobox.h"
 #include <QFormLayout>
@@ -20,14 +22,14 @@ TextAutoGenerateAddInstanceWidgetTest::TextAutoGenerateAddInstanceWidgetTest(QOb
 void TextAutoGenerateAddInstanceWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateAddInstanceWidget w(nullptr);
-    auto mainLayout = w.findChild<QFormLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QFormLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mInstanceComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateTextInstanceComboBox *>(QStringLiteral("mInstanceComboBox"));
+    auto mInstanceComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateTextInstanceComboBox *>(u"mInstanceComboBox"_s);
     QVERIFY(mInstanceComboBox);
 
-    auto mNameLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mNameLineEdit"));
+    auto mNameLineEdit = w.findChild<QLineEdit *>(u"mNameLineEdit"_s);
     QVERIFY(mNameLineEdit);
     QVERIFY(mNameLineEdit->isClearButtonEnabled());
     QVERIFY(mNameLineEdit->text().isEmpty());

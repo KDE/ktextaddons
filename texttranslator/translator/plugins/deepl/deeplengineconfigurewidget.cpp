@@ -5,6 +5,7 @@
 */
 
 #include "deeplengineconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 
@@ -19,13 +20,13 @@ DeeplEngineConfigureWidget::DeeplEngineConfigureWidget(QWidget *parent)
     , mApiKey(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
     KLineEditEventHandler::catchReturnKey(mApiKey);
-    mUseFreeLicense->setObjectName(QStringLiteral("mUseFreeLicense"));
+    mUseFreeLicense->setObjectName(u"mUseFreeLicense"_s);
     mainLayout->addWidget(mUseFreeLicense);
 
-    mApiKey->setObjectName(QStringLiteral("mApiKey"));
+    mApiKey->setObjectName(u"mApiKey"_s);
     mApiKey->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Api Key:"), mApiKey);
 }

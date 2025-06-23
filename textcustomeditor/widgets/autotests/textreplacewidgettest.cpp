@@ -5,6 +5,8 @@
 */
 
 #include "textreplacewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/textfindreplacewidget.h"
 #include <QLineEdit>
 #include <QPushButton>
@@ -20,16 +22,16 @@ void TextReplaceWidgetTest::shouldHaveDefaultValues()
 {
     TextCustomEditor::TextReplaceWidget w;
     QVERIFY(w.replaceLineEdit());
-    auto mReplace = w.findChild<QLineEdit *>(QStringLiteral("mReplace"));
+    auto mReplace = w.findChild<QLineEdit *>(u"mReplace"_s);
     QVERIFY(mReplace);
     QVERIFY(mReplace->isClearButtonEnabled());
     QVERIFY(mReplace->text().isEmpty());
 
-    auto mReplaceBtn = w.findChild<QPushButton *>(QStringLiteral("mReplaceBtn"));
+    auto mReplaceBtn = w.findChild<QPushButton *>(u"mReplaceBtn"_s);
     QVERIFY(mReplaceBtn);
     QVERIFY(!mReplaceBtn->text().isEmpty());
 
-    auto mReplaceAllBtn = w.findChild<QPushButton *>(QStringLiteral("mReplaceAllBtn"));
+    auto mReplaceAllBtn = w.findChild<QPushButton *>(u"mReplaceAllBtn"_s);
     QVERIFY(mReplaceAllBtn);
     QVERIFY(!mReplaceAllBtn->text().isEmpty());
 }

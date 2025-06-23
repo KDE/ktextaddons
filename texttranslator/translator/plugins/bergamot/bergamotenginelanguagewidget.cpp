@@ -5,6 +5,8 @@
 */
 
 #include "bergamotenginelanguagewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libbergamot_debug.h"
 #include "translatormodel.h"
 #include "translatorproxymodel.h"
@@ -30,26 +32,26 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     , mProgressBarWidget(new QWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     auto hboxLayout = new QHBoxLayout;
-    hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
+    hboxLayout->setObjectName(u"hboxLayout"_s);
     hboxLayout->setContentsMargins({});
     mainLayout->addLayout(hboxLayout);
 
     auto vboxLayout = new QVBoxLayout;
-    vboxLayout->setObjectName(QStringLiteral("vboxLayout"));
+    vboxLayout->setObjectName(u"vboxLayout"_s);
     vboxLayout->setContentsMargins({});
 
-    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     vboxLayout->addWidget(mSearchLineEdit);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     mSearchLineEdit->setClearButtonEnabled(true);
 
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
 
-    mTreeView->setObjectName(QStringLiteral("mTreeView"));
+    mTreeView->setObjectName(u"mTreeView"_s);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::errorText, this, &BergamotEngineLanguageWidget::slotError);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::progress, this, &BergamotEngineLanguageWidget::slotProgressInfo);
     connect(ManagerModelTranslator::self(), &ManagerModelTranslator::extractDone, mTranslatorModel, &TranslatorModel::updateInstalledLanguage);
@@ -73,11 +75,11 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     hboxLayout->addLayout(vboxLayout);
 
     auto buttonLayout = new QVBoxLayout;
-    buttonLayout->setObjectName(QStringLiteral("buttonLayout"));
+    buttonLayout->setObjectName(u"buttonLayout"_s);
     hboxLayout->addLayout(buttonLayout);
 
-    auto downLoadLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("download-symbolic")), i18n("Download"), this);
-    downLoadLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
+    auto downLoadLanguage = new QPushButton(QIcon::fromTheme(u"download-symbolic"_s), i18n("Download"), this);
+    downLoadLanguage->setObjectName(u"downLoadLanguage"_s);
     buttonLayout->addWidget(downLoadLanguage);
     connect(downLoadLanguage, &QPushButton::clicked, this, [this]() {
         const auto currentlySelectedIndex = mTranslatorProxyModel->mapToSource(mTreeView->selectionModel()->currentIndex());
@@ -90,13 +92,13 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
         slotDownLoad(url, checkSum);
     });
 
-    auto deleteLanguage = new QPushButton(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete"), this);
-    deleteLanguage->setObjectName(QStringLiteral("downLoadLanguage"));
+    auto deleteLanguage = new QPushButton(QIcon::fromTheme(u"edit-delete"_s), i18n("Delete"), this);
+    deleteLanguage->setObjectName(u"downLoadLanguage"_s);
     buttonLayout->addWidget(deleteLanguage);
 
     auto updateListLanguage = new QPushButton(i18nc("@action:button", "Update List"), this);
     updateListLanguage->setToolTip(i18nc("@info:tooltip", "Update list of languages from network"));
-    updateListLanguage->setObjectName(QStringLiteral("updateListLanguage"));
+    updateListLanguage->setObjectName(u"updateListLanguage"_s);
     buttonLayout->addWidget(updateListLanguage);
     buttonLayout->addStretch(1); // spacer
     connect(updateListLanguage, &QPushButton::clicked, this, &BergamotEngineLanguageWidget::slotUpdateListLanguage);
@@ -104,15 +106,15 @@ BergamotEngineLanguageWidget::BergamotEngineLanguageWidget(QWidget *parent)
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &BergamotEngineLanguageWidget::slotTextChanged);
 
     auto progressBarLayout = new QHBoxLayout;
-    progressBarLayout->setObjectName(QStringLiteral("progressBarLayout"));
+    progressBarLayout->setObjectName(u"progressBarLayout"_s);
 
-    mProgressBarLabel->setObjectName(QStringLiteral("mProgressBarLabel"));
+    mProgressBarLabel->setObjectName(u"mProgressBarLabel"_s);
     progressBarLayout->addWidget(mProgressBarLabel);
 
-    mProgressBar->setObjectName(QStringLiteral("mProgressBar"));
+    mProgressBar->setObjectName(u"mProgressBar"_s);
     progressBarLayout->addWidget(mProgressBar);
 
-    mProgressBarWidget->setObjectName(QStringLiteral("mProgressBarWidget"));
+    mProgressBarWidget->setObjectName(u"mProgressBarWidget"_s);
     mProgressBarWidget->setLayout(progressBarLayout);
 
     mainLayout->addWidget(mProgressBarWidget);

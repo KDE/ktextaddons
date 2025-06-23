@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechatsmodel.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
@@ -157,7 +159,7 @@ QString TextAutoGenerateChatsModel::sectionName(TextAutoGenerateChat::SectionHis
     case TextAutoGenerateChat::SectionHistory::NSections:
         break;
     }
-    return QStringLiteral("ERROR");
+    return u"ERROR"_s;
 }
 
 TextAutoGenerateMessagesModel *TextAutoGenerateChatsModel::messagesModel(const QByteArray &chatId) const

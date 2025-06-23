@@ -5,6 +5,7 @@
 */
 
 #include "richtextbrowser/richtextbrowserwidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -20,7 +21,7 @@ int main(int argc, char **argv)
     parser.process(app);
 
     auto w = new TextCustomEditor::RichTextBrowserWidget();
-    w->setPlainText(QStringLiteral("Test RichTextBrowserWidget"));
+    w->setPlainText(u"Test RichTextBrowserWidget"_s);
     w->resize(800, 600);
     w->show();
     app.exec();

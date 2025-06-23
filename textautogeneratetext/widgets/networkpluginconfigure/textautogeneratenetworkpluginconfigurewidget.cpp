@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratenetworkpluginconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KAuthorized>
 #include <KLineEditEventHandler>
@@ -19,15 +20,14 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     , mInstanceName(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
-    mApiKey->setObjectName(QStringLiteral("mApiKey"));
-    mInstanceName->setObjectName(QStringLiteral("mInstanceName"));
+    mApiKey->setObjectName(u"mApiKey"_s);
+    mInstanceName->setObjectName(u"mInstanceName"_s);
     mInstanceName->setClearButtonEnabled(true);
 
-    mApiKey->setObjectName(QStringLiteral("mPasswordLineEdit"));
-    mApiKey->setRevealPasswordMode(KAuthorized::authorize(QStringLiteral("lineedit_reveal_password")) ? KPassword::RevealMode::OnlyNew
-                                                                                                      : KPassword::RevealMode::Never);
+    mApiKey->setObjectName(u"mPasswordLineEdit"_s);
+    mApiKey->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew : KPassword::RevealMode::Never);
 
     mainLayout->addRow(i18n("Name:"), mInstanceName);
 

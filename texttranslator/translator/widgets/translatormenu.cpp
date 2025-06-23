@@ -5,6 +5,8 @@
 */
 
 #include "translatormenu.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttranslator_debug.h"
 #include "translator/misc/translatorutil.h"
 #include "translator/translatorengineloader.h"
@@ -19,9 +21,9 @@ TranslatorMenu::TranslatorMenu(QObject *parent)
     : QObject(parent)
     , mMenu(new QMenu)
 {
-    mMenu->setObjectName(QStringLiteral("menu"));
+    mMenu->setObjectName(u"menu"_s);
     mMenu->setTitle(i18n("Translate…"));
-    mMenu->setIcon(QIcon::fromTheme(QStringLiteral("translate")));
+    mMenu->setIcon(QIcon::fromTheme(u"translate"_s));
     updateMenu();
 }
 
@@ -38,16 +40,16 @@ bool TranslatorMenu::isEmpty() const
 void TranslatorMenu::updateMenu()
 {
     mMenu->clear();
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), QStringLiteral("Translate"));
-    const QString engine = groupTranslate.readEntry(QStringLiteral("engine"), QStringLiteral("google")); // Google by default
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), u"Translate"_s);
+    const QString engine = groupTranslate.readEntry(u"engine"_s, u"google"_s); // Google by default
     // qDebug() << " engine " << engine;
     const QString currentPluginName = TextTranslator::TranslatorEngineLoader::self()->currentPluginName(engine);
     QString actionText;
     if (!currentPluginName.isEmpty()) {
-        actionText = QStringLiteral("[%1] ").arg(currentPluginName);
+        actionText = u"[%1] "_s.arg(currentPluginName);
     }
-    const auto fromList = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
-    const auto toList = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
+    const auto fromList = groupTranslate.readEntry(u"From"_s, QStringList());
+    const auto toList = groupTranslate.readEntry(u"To"_s, QStringList());
     for (const auto &fromLang : fromList) {
         const QString fromLangI18n = TextTranslator::TranslatorUtil::searchI18nFromLanguage(fromLang);
         if (fromLangI18n.isEmpty()) {
@@ -60,7 +62,7 @@ void TranslatorMenu::updateMenu()
                 } else {
                     if (fromLangI18n != toLangI18n) {
                         auto action = new QAction(mMenu);
-                        action->setText(QStringLiteral("%1%2 -> %3").arg(actionText, fromLangI18n, toLangI18n));
+                        action->setText(u"%1%2 -> %3"_s.arg(actionText, fromLangI18n, toLangI18n));
                         connect(action, &QAction::triggered, this, [this, fromLang, toLang]() {
                             Q_EMIT translate(fromLang, toLang, mModelIndex);
                         });

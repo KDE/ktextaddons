@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmodelavailableinfosdelegate.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autogeneratetext_genericnetwork_debug.h"
 #include "genericnetworkavailableinfosmodel.h"
 #include "genericnetworkmodelinfosdelegateutils.h"
@@ -276,7 +278,7 @@ QTextDocument *GenericNetworkModelAvailableInfosDelegate::documentForIndex(const
     if (text.isEmpty()) {
         return nullptr;
     }
-    auto doc = createTextDocument(QStringLiteral("<b>%1</b><br/>").arg(QString::fromLatin1(modelName)) + text, width);
+    auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(modelName)) + text, width);
     auto ret = doc.get();
     mDocumentCache.insert(modelName, std::move(doc));
     return ret;

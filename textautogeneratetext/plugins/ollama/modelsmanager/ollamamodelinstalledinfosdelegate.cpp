@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfosdelegate.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelinfosdelegateutils.h"
 #include "ollamamodelinstalledinfosmodel.h"
@@ -248,7 +250,7 @@ QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelI
         return nullptr;
     }
     const QString name = index.data(OllamaModelInstalledInfosModel::Name).toString();
-    auto doc = createTextDocument(QStringLiteral("<b>%1</b><br/>").arg(QString::fromLatin1(modelName)) + name, width);
+    auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(modelName)) + name, width);
     auto ret = doc.get();
     mDocumentCache.insert(modelName, std::move(doc));
     return ret;

@@ -5,6 +5,8 @@
 */
 
 #include "importexportautocorrectionlibreofficetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "export/exportlibreofficeautocorrection.h"
 #include "import/importlibreofficeautocorrection.h"
 #include <QStandardPaths>
@@ -22,7 +24,7 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
 {
     QFETCH(QString, filename);
 
-    const QString originalFile = QLatin1StringView(AUTOCORRECTION_DATA_DIR) + QLatin1Char('/') + filename;
+    const QString originalFile = QLatin1StringView(AUTOCORRECTION_DATA_DIR) + u'/' + filename;
 
     // First step
     TextAutoCorrectionCore::ImportLibreOfficeAutocorrection import;
@@ -71,7 +73,7 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
 void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport_data()
 {
     QTest::addColumn<QString>("filename");
-    QTest::newRow("disable") << QStringLiteral("acor_fr.dat");
+    QTest::newRow("disable") << u"acor_fr.dat"_s;
 }
 
 #include "moc_importexportautocorrectionlibreofficetest.cpp"

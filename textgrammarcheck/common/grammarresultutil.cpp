@@ -28,7 +28,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
                 for (int i = 0; i < blockNumberId; ++i) {
                     const QTextBlock block = document->findBlockByNumber(i);
                     if (block.isValid()) {
-                        if (block.text() != QLatin1Char('\n')) {
+                        if (block.text() != u'\n') {
                             startSelectionIndex -= block.length();
                         }
                     }
@@ -46,7 +46,7 @@ void GrammarResultUtil::applyGrammarResult(const QVector<TextGrammarCheck::Gramm
             QString toolTip = info.error();
             // TODO generate new tooltip!
             if (!info.url().isEmpty()) {
-                toolTip += QLatin1Char('\n') + i18n("See on: %1", info.url());
+                toolTip += u'\n' + i18n("See on: %1", info.url());
             }
             format.setToolTip(toolTip);
             TextGrammarCheck::GrammarAction act;

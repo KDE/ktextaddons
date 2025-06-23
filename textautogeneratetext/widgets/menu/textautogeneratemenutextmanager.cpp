@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratemenutextmanager.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <QRegularExpression>
@@ -37,8 +38,8 @@ void TextAutoGenerateMenuTextManager::load()
     for (const QString &groupName : keyGroups) {
         KConfigGroup group = config->group(groupName);
         TextAutoGenerateMenuTextInfo info;
-        info.setRequestText(group.readEntry(QStringLiteral("RequestedText")));
-        info.setEnabled(group.readEntry(QStringLiteral("Enabled"), true));
+        info.setRequestText(group.readEntry(u"RequestedText"_s));
+        info.setEnabled(group.readEntry(u"Enabled"_s, true));
         infos.append(std::move(info));
     }
     setTextInfos(infos);
@@ -53,11 +54,11 @@ void TextAutoGenerateMenuTextManager::save()
         config->deleteGroup(group);
     }
     for (int i = 0, total = mTextInfos.count(); i < total; ++i) {
-        const QString groupName = QStringLiteral("AskIA #%1").arg(i);
+        const QString groupName = u"AskIA #%1"_s.arg(i);
         KConfigGroup group = config->group(groupName);
         const TextAutoGenerateMenuTextInfo &info = mTextInfos.at(i);
-        group.writeEntry(QStringLiteral("RequestedText"), info.requestText());
-        group.writeEntry(QStringLiteral("Enabled"), info.enabled());
+        group.writeEntry(u"RequestedText"_s, info.requestText());
+        group.writeEntry(u"Enabled"_s, info.enabled());
     }
     config->sync();
 }
@@ -65,7 +66,7 @@ void TextAutoGenerateMenuTextManager::save()
 QStringList TextAutoGenerateMenuTextManager::keyRecorderList(KSharedConfig::Ptr &config) const
 {
     config = KSharedConfig::openConfig();
-    const QStringList keyGroups = config->groupList().filter(QRegularExpression(QStringLiteral("AskIA #\\d+")));
+    const QStringList keyGroups = config->groupList().filter(QRegularExpression(u"AskIA #\\d+"_s));
     return keyGroups;
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "textautogenerateresultwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/view/textautogeneratelistview.h"
 
 #include <QVBoxLayout>
@@ -15,10 +17,10 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
     , mTextAutoGenerateListView(new TextAutoGenerateListView(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
 
-    mTextAutoGenerateListView->setObjectName(QStringLiteral("mTextAutoGenerateListView"));
+    mTextAutoGenerateListView->setObjectName(u"mTextAutoGenerateListView"_s);
     mainLayout->addWidget(mTextAutoGenerateListView);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::editMessageRequested, this, &TextAutoGenerateResultWidget::editMessageRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::cancelRequested, this, &TextAutoGenerateResultWidget::cancelRequested);

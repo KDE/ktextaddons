@@ -6,6 +6,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include <QApplication>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -31,17 +33,17 @@ public:
         QList<TextEmoticonsCore::CustomEmoji> customEmoji;
         {
             TextEmoticonsCore::CustomEmoji custom;
-            custom.setIdentifier(QStringLiteral(":custom1:"));
+            custom.setIdentifier(u":custom1:"_s);
             customEmoji.append(custom);
         }
         {
             TextEmoticonsCore::CustomEmoji custom;
-            custom.setIdentifier(QStringLiteral(":custom2:"));
+            custom.setIdentifier(u":custom2:"_s);
             customEmoji.append(custom);
         }
         {
             TextEmoticonsCore::CustomEmoji custom;
-            custom.setIdentifier(QStringLiteral(":gif1:"));
+            custom.setIdentifier(u":gif1:"_s);
             custom.setIsAnimatedEmoji(true);
             customEmoji.append(custom);
         }

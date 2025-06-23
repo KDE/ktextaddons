@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextselectdevicewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "speechtotext/widgets/speechtotextselectdevicewidget.h"
 #include <QComboBox>
 #include <QHBoxLayout>
@@ -23,15 +25,15 @@ void SpeechToTextSelectDeviceWidgetTest::shouldHaveDefaultValues()
 {
     TextSpeechToText::SpeechToTextSelectDeviceWidget w;
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto label = w.findChild<QLabel *>(u"label"_s);
     QVERIFY(label);
     QVERIFY(!label->text().isEmpty());
 
-    auto mDeviceComboBox = w.findChild<QComboBox *>(QStringLiteral("mDeviceComboBox"));
+    auto mDeviceComboBox = w.findChild<QComboBox *>(u"mDeviceComboBox"_s);
     QVERIFY(mDeviceComboBox);
 }
 

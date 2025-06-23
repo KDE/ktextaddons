@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocalchatsdatabasetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/localdatabase/textautogeneratelocalchatsdatabase.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -25,14 +27,13 @@ void TextAutoGenerateLocalChatsDatabaseTest::initTestCase()
 void TextAutoGenerateLocalChatsDatabaseTest::shouldDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateLocalChatsDatabase chatsDatabase;
-    QCOMPARE(chatsDatabase.schemaDatabaseStr(), QStringLiteral("CREATE TABLE CHATS (chatId TEXT PRIMARY KEY NOT NULL, json TEXT)"));
+    QCOMPARE(chatsDatabase.schemaDatabaseStr(), u"CREATE TABLE CHATS (chatId TEXT PRIMARY KEY NOT NULL, json TEXT)"_s);
 }
 
 void TextAutoGenerateLocalChatsDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalChatsDatabase chatsDataBase;
-    QCOMPARE(chatsDataBase.dbFileName({}),
-             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/ai-database/chats/chats.sqlite"));
+    QCOMPARE(chatsDataBase.dbFileName({}), QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/chats/chats.sqlite"_s);
 }
 
 #include "moc_textautogeneratelocalchatsdatabasetest.cpp"

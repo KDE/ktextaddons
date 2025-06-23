@@ -5,6 +5,8 @@
 */
 
 #include "converttexttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "converttext.h"
 #include <QTest>
 #include <QTextDocument>
@@ -18,20 +20,20 @@ ConvertTextTest::ConvertTextTest(QObject *parent)
 void ConvertTextTest::shouldHaveDefaultValues()
 {
     {
-        const QString str(QStringLiteral("foo"));
-        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("foo"));
+        const QString str(u"foo"_s);
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), u"foo"_s);
     }
     {
-        const QString str(QStringLiteral("numérique"));
-        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("numerique"));
+        const QString str(u"numérique"_s);
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), u"numerique"_s);
     }
     {
-        const QString str(QStringLiteral("téléphone"));
-        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("telephone"));
+        const QString str(u"téléphone"_s);
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), u"telephone"_s);
     }
     {
-        const QString str(QStringLiteral("noël"));
-        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), QStringLiteral("noel"));
+        const QString str(u"noël"_s);
+        QCOMPARE(TextUtils::ConvertText::normalize(QStringView(str)), u"noel"_s);
     }
 }
 
@@ -41,9 +43,9 @@ void ConvertTextTest::testUpperCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("FOO") << 0 << 3;
-    QTest::newRow("onelinewithselectionuppercase") << QStringLiteral("FOO") << QStringLiteral("FOO") << 0 << 3;
+    QTest::newRow("onelinewithoutselection") << u"foo"_s << u"foo"_s << -1 << -1;
+    QTest::newRow("onelinewithselection") << u"foo"_s << u"FOO"_s << 0 << 3;
+    QTest::newRow("onelinewithselectionuppercase") << u"FOO"_s << u"FOO"_s << 0 << 3;
 }
 
 void ConvertTextTest::testUpperCase()
@@ -70,9 +72,9 @@ void ConvertTextTest::testLowerCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("foo") << 0 << 3;
-    QTest::newRow("onelinewithselectionuppercase") << QStringLiteral("FOO") << QStringLiteral("foo") << 0 << 3;
+    QTest::newRow("onelinewithoutselection") << u"foo"_s << u"foo"_s << -1 << -1;
+    QTest::newRow("onelinewithselection") << u"foo"_s << u"foo"_s << 0 << 3;
+    QTest::newRow("onelinewithselectionuppercase") << u"FOO"_s << u"foo"_s << 0 << 3;
 }
 
 void ConvertTextTest::testLowerCase()
@@ -99,9 +101,9 @@ void ConvertTextTest::testSentenceCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("Foo") << 0 << 3;
-    QTest::newRow("bigline") << QStringLiteral("foo bla foo.\nddd") << QStringLiteral("Foo bla foo.\nDdd") << 0 << 16;
+    QTest::newRow("onelinewithoutselection") << u"foo"_s << u"foo"_s << -1 << -1;
+    QTest::newRow("onelinewithselection") << u"foo"_s << u"Foo"_s << 0 << 3;
+    QTest::newRow("bigline") << u"foo bla foo.\nddd"_s << u"Foo bla foo.\nDdd"_s << 0 << 16;
 }
 
 void ConvertTextTest::testSentenceCase()
@@ -128,10 +130,10 @@ void ConvertTextTest::testReverseCase_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("FOO") << 0 << 3;
-    QTest::newRow("reverseCase") << QStringLiteral("fOo bla\tfOO") << QStringLiteral("FoO BLA\tFoo") << 0 << 12;
-    QTest::newRow("notallineselected") << QStringLiteral("fOo bla\tfOO") << QStringLiteral("FoO bla\tfOO") << 0 << 3;
+    QTest::newRow("onelinewithoutselection") << u"foo"_s << u"foo"_s << -1 << -1;
+    QTest::newRow("onelinewithselection") << u"foo"_s << u"FOO"_s << 0 << 3;
+    QTest::newRow("reverseCase") << u"fOo bla\tfOO"_s << u"FoO BLA\tFoo"_s << 0 << 12;
+    QTest::newRow("notallineselected") << u"fOo bla\tfOO"_s << u"FoO bla\tfOO"_s << 0 << 3;
 }
 
 void ConvertTextTest::testReverseCase()

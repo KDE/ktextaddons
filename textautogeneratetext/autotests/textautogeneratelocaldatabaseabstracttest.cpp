@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocaldatabaseabstracttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/localdatabase/textautogeneratelocaldatabaseabstract.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalDatabaseAbstractTest)
@@ -30,12 +32,12 @@ TextAutoGenerateLocalDatabaseAbstractTest::TextAutoGenerateLocalDatabaseAbstract
 void TextAutoGenerateLocalDatabaseAbstractTest::shouldHaveDefaultValues()
 {
     {
-        TestLocalDatabaseBase w(QStringLiteral("foo/bla/"), TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract::DatabaseType::Chats);
-        QCOMPARE(w.currentDatabaseName(), QStringLiteral("chats"));
+        TestLocalDatabaseBase w(u"foo/bla/"_s, TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract::DatabaseType::Chats);
+        QCOMPARE(w.currentDatabaseName(), u"chats"_s);
     }
     {
-        TestLocalDatabaseBase w(QStringLiteral("foo/bla/"), TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract::DatabaseType::Messages);
-        QCOMPARE(w.currentDatabaseName(), QStringLiteral("messages"));
+        TestLocalDatabaseBase w(u"foo/bla/"_s, TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract::DatabaseType::Messages);
+        QCOMPARE(w.currentDatabaseName(), u"messages"_s);
     }
 }
 

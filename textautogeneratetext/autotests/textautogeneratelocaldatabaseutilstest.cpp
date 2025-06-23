@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratelocaldatabaseutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/localdatabase/textautogeneratelocaldatabaseutils.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalDatabaseUtilsTest)
@@ -18,19 +20,18 @@ void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckPath()
 {
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::databasePath(
                  TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::DatabasePath::Messages),
-             QStringLiteral("messages/"));
+             u"messages/"_s);
     QCOMPARE(
         TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::DatabasePath::Chats),
-        QStringLiteral("chats/"));
+        u"chats/"_s);
 }
 
 void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckDataBase()
 {
-    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteMessage(), QStringLiteral("DELETE FROM MESSAGES WHERE messageId = ?"));
-    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage(),
-             QStringLiteral("INSERT OR REPLACE INTO MESSAGES VALUES (?, ?, ?)"));
-    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteChat(), QStringLiteral("DELETE FROM CHATS WHERE chatId = ?"));
-    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceChat(), QStringLiteral("INSERT OR REPLACE INTO CHATS VALUES (?, ?)"));
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteMessage(), u"DELETE FROM MESSAGES WHERE messageId = ?"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage(), u"INSERT OR REPLACE INTO MESSAGES VALUES (?, ?, ?)"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteChat(), u"DELETE FROM CHATS WHERE chatId = ?"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceChat(), u"INSERT OR REPLACE INTO CHATS VALUES (?, ?)"_s);
 }
 
 #include "moc_textautogeneratelocaldatabaseutilstest.cpp"

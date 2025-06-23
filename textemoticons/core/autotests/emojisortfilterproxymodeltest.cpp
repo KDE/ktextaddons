@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emojisortfilterproxymodeltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emojimodelmanager.h"
 #include "emojisortfilterproxymodel.h"
 #include <QTest>
@@ -33,23 +35,23 @@ void EmojiSortFilterProxyModelTest::shouldHaveToneSuffix()
     }
     {
         w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light);
-        QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone1"));
+        QCOMPARE(w.emojiToneSuffix(), u"_tone1"_s);
     }
     {
         w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumLight);
-        QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone2"));
+        QCOMPARE(w.emojiToneSuffix(), u"_tone2"_s);
     }
     {
         w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Medium);
-        QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone3"));
+        QCOMPARE(w.emojiToneSuffix(), u"_tone3"_s);
     }
     {
         w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumDark);
-        QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone4"));
+        QCOMPARE(w.emojiToneSuffix(), u"_tone4"_s);
     }
     {
         w.setEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark);
-        QCOMPARE(w.emojiToneSuffix(), QStringLiteral("_tone5"));
+        QCOMPARE(w.emojiToneSuffix(), u"_tone5"_s);
     }
 }
 

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadprogresswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamanager.h"
 #include "ollamareply.h"
 #include <KLocalizedString>
@@ -20,28 +22,28 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
     , mCancelDownloadButton(new QToolButton(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mModelNameLabel->setObjectName(QStringLiteral("mModelNameLabel"));
+    mModelNameLabel->setObjectName(u"mModelNameLabel"_s);
     QFont f = mModelNameLabel->font();
     f.setBold(true);
     mModelNameLabel->setFont(f);
 
     mainLayout->addWidget(mModelNameLabel, 0, Qt::AlignHCenter);
 
-    mProgressStatusLabel->setObjectName(QStringLiteral("mProgressStatusLabel"));
+    mProgressStatusLabel->setObjectName(u"mProgressStatusLabel"_s);
     mainLayout->addWidget(mProgressStatusLabel, 0, Qt::AlignHCenter);
 
     auto hboxLayout = new QHBoxLayout;
     mainLayout->addLayout(hboxLayout);
 
-    mProgressBar->setObjectName(QStringLiteral("mProgressBar"));
+    mProgressBar->setObjectName(u"mProgressBar"_s);
     hboxLayout->addWidget(mProgressBar);
     mProgressBar->setRange(0, 100);
 
-    mCancelDownloadButton->setObjectName(QStringLiteral("mCancelDownloadButton"));
-    mCancelDownloadButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-cancel")));
+    mCancelDownloadButton->setObjectName(u"mCancelDownloadButton"_s);
+    mCancelDownloadButton->setIcon(QIcon::fromTheme(u"dialog-cancel"_s));
     mCancelDownloadButton->setToolTip(i18nc("@info:tooltip", "Cancel"));
     hboxLayout->addWidget(mCancelDownloadButton);
     connect(mCancelDownloadButton, &QToolButton::clicked, this, [this]() {

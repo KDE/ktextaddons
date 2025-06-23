@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaskjobwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -21,7 +23,7 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
 
     auto lineEdit = new QLineEdit(this);
     hbox->addWidget(lineEdit);
-    auto button = new QPushButton(QStringLiteral("Ask"), this);
+    auto button = new QPushButton(u"Ask"_s, this);
     hbox->addWidget(button);
 
     mainLayout->addLayout(hbox);

@@ -5,6 +5,8 @@
 */
 
 #include "translatortest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator.h"
 #include <QJsonDocument>
 #include <QTest>
@@ -36,7 +38,7 @@ void TranslatorTest::shouldParseJson_data()
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<Translator>("result");
     QTest::addColumn<bool>("isValid");
-    QTest::newRow("empty") << QStringLiteral("empty") << Translator() << false;
+    QTest::newRow("empty") << u"empty"_s << Translator() << false;
 }
 
 void TranslatorTest::shouldParseJson()
@@ -44,7 +46,7 @@ void TranslatorTest::shouldParseJson()
     QFETCH(QString, fileName);
     QFETCH(Translator, result);
     QFETCH(bool, isValid);
-    const QString originalJsonFile = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/translator/") + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1String(BERGAMOT_DATA_DIR) + u"/translator/"_s + fileName + u".json"_s;
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

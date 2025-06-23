@@ -5,6 +5,8 @@
 */
 
 #include "googleengineclienttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../googleengineclient.h"
 #include <QTest>
 QTEST_MAIN(GoogleEngineClientTest)
@@ -17,7 +19,7 @@ GoogleEngineClientTest::GoogleEngineClientTest(QObject *parent)
 void GoogleEngineClientTest::shouldHaveDefaultValues()
 {
     GoogleEngineClient client;
-    QCOMPARE(client.name(), QStringLiteral("google"));
+    QCOMPARE(client.name(), u"google"_s);
     QVERIFY(client.createTranslator());
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());

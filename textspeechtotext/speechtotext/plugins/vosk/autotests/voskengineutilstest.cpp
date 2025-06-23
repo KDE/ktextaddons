@@ -5,6 +5,8 @@
 */
 
 #include "voskengineutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "voskengineutils.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -18,13 +20,12 @@ VoskEngineUtilsTest::VoskEngineUtilsTest(QObject *parent)
 
 void VoskEngineUtilsTest::shouldDefineStoragePath()
 {
-    QCOMPARE(VoskEngineUtils::storageLanguagePath(),
-             QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/vosk-texttospeech"));
+    QCOMPARE(VoskEngineUtils::storageLanguagePath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/vosk-texttospeech"_s);
 }
 
 void VoskEngineUtilsTest::shouldDefineRepositoryPath()
 {
-    QCOMPARE(VoskEngineUtils::defaultVoskRepository(), QStringLiteral("https://alphacephei.com/vosk/models/model-list.json"));
+    QCOMPARE(VoskEngineUtils::defaultVoskRepository(), u"https://alphacephei.com/vosk/models/model-list.json"_s);
 }
 
 void VoskEngineUtilsTest::shouldVerifyLanguageInstalledStruct()
@@ -40,10 +41,10 @@ void VoskEngineUtilsTest::shouldVerifyLanguageInstalledStruct()
 void VoskEngineUtilsTest::shouldSaveLoadLanguageInstalled()
 {
     VoskEngineUtils::LanguageInstalled info;
-    info.absoluteLanguageModelPath = QStringLiteral("absolute path");
-    info.name = QStringLiteral("Name1");
-    info.url = QStringLiteral("https://foo.bla.com");
-    info.versionStr = QStringLiteral("version");
+    info.absoluteLanguageModelPath = u"absolute path"_s;
+    info.name = u"Name1"_s;
+    info.url = u"https://foo.bla.com"_s;
+    info.versionStr = u"version"_s;
     const QString pathTest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
     QVERIFY(VoskEngineUtils::createInstalledLanguageInfo(pathTest, info));
 

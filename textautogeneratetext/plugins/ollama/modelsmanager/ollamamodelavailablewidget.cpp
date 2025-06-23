@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailablewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodelavailableinfossortproxymodel.h"
@@ -29,31 +31,31 @@ OllamaModelAvailableWidget::OllamaModelAvailableWidget(OllamaManager *manager, Q
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
-    splitter->setObjectName(QStringLiteral("splitter"));
+    splitter->setObjectName(u"splitter"_s);
     splitter->setChildrenCollapsible(false);
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
-    mSearchWidget->setObjectName(QStringLiteral("mSearchWidget"));
+    mSearchWidget->setObjectName(u"mSearchWidget"_s);
     mainLayout->addWidget(mSearchWidget);
     mainLayout->addWidget(splitter, 1);
 
-    mListView->setObjectName(QStringLiteral("mListView"));
+    mListView->setObjectName(u"mListView"_s);
     splitter->addWidget(mListView);
 
-    mScrollArea->setObjectName(QStringLiteral("mScrollArea"));
+    mScrollArea->setObjectName(u"mScrollArea"_s);
     mScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     mScrollArea->setWidgetResizable(true);
     mScrollArea->setWidget(mInfoWidget);
-    mInfoWidget->setObjectName(QStringLiteral("mInfoWidget"));
+    mInfoWidget->setObjectName(u"mInfoWidget"_s);
     splitter->addWidget(mStackedWidget);
     mStackedWidget->hide();
 
-    mOllamaModelDownloadProgressWidget->setObjectName(QStringLiteral("mOllamaModelDownloadProgressWidget"));
-    mStackedWidget->setObjectName(QStringLiteral("mStackedWidget"));
+    mOllamaModelDownloadProgressWidget->setObjectName(u"mOllamaModelDownloadProgressWidget"_s);
+    mStackedWidget->setObjectName(u"mStackedWidget"_s);
     mStackedWidget->addWidget(mScrollArea);
     mStackedWidget->addWidget(mOllamaModelDownloadProgressWidget);
     mStackedWidget->setCurrentWidget(mScrollArea);

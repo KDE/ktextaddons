@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratemenuconfiguredialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratemenuconfigurewidget.h"
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -23,13 +25,13 @@ TextAutoGenerateMenuConfigureDialog::TextAutoGenerateMenuConfigureDialog(QWidget
 {
     setWindowTitle(i18nc("@title:window", "Configure AI text plugins"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
 
-    mTextMenuConfigureWidget->setObjectName(QStringLiteral("mTextMenuConfigureWidget"));
+    mTextMenuConfigureWidget->setObjectName(u"mTextMenuConfigureWidget"_s);
     mainLayout->addWidget(mTextMenuConfigureWidget);
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    box->setObjectName(QStringLiteral("box"));
+    box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &TextAutoGenerateMenuConfigureDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &TextAutoGenerateMenuConfigureDialog::reject);

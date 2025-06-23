@@ -5,6 +5,8 @@
 */
 
 #include "voskengineutils.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libvoskspeechtotext_debug.h"
 #include <QDir>
 #include <QJsonDocument>
@@ -13,18 +15,18 @@
 
 QString VoskEngineUtils::defaultVoskRepository()
 {
-    return QStringLiteral("https://alphacephei.com/vosk/models/model-list.json");
+    return u"https://alphacephei.com/vosk/models/model-list.json"_s;
 }
 
 QString VoskEngineUtils::storageLanguagePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/vosk-texttospeech");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/vosk-texttospeech"_s;
 }
 
 VoskEngineUtils::LanguageInstalled VoskEngineUtils::loadInstalledLanguageInfo(const QString &modelInfoPath)
 {
     VoskEngineUtils::LanguageInstalled info;
-    QFile file(modelInfoPath + QStringLiteral("/model_info.json"));
+    QFile file(modelInfoPath + u"/model_info.json"_s);
     if (!file.open(QFile::ReadOnly)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to open model_info.json in " << modelInfoPath;
         return info;
@@ -41,7 +43,7 @@ VoskEngineUtils::LanguageInstalled VoskEngineUtils::loadInstalledLanguageInfo(co
 
 bool VoskEngineUtils::createInstalledLanguageInfo(const QString &modelInfoPath, const LanguageInstalled &installed)
 {
-    QFile file(modelInfoPath + QStringLiteral("/model_info.json"));
+    QFile file(modelInfoPath + u"/model_info.json"_s);
     if (!file.open(QFile::WriteOnly)) {
         qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to save model_info.json in :" << modelInfoPath;
         return false;
@@ -71,7 +73,7 @@ QVector<VoskEngineUtils::LanguageInstalled> VoskEngineUtils::languageLocallyStor
     // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " list " << list;
     for (const auto &name : list) {
         // qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << " name " << dir;
-        const QString modelLanguagePath{dir.absolutePath() + QLatin1Char('/') + name};
+        const QString modelLanguagePath{dir.absolutePath() + u'/' + name};
         const VoskEngineUtils::LanguageInstalled info = loadInstalledLanguageInfo(modelLanguagePath);
         if (info.isValid()) {
             languages.append(info);

@@ -5,6 +5,8 @@
 */
 
 #include "bingengineclienttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../bingengineclient.h"
 #include <QTest>
 QTEST_MAIN(BingEngineClientTest)
@@ -17,7 +19,7 @@ BingEngineClientTest::BingEngineClientTest(QObject *parent)
 void BingEngineClientTest::shouldHaveDefaultValues()
 {
     BingEngineClient client;
-    QCOMPARE(client.name(), QStringLiteral("bing"));
+    QCOMPARE(client.name(), u"bing"_s);
     QVERIFY(client.createTranslator());
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());

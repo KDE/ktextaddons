@@ -5,6 +5,8 @@
 */
 
 #include "voskextractlanguagejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libvoskspeechtotext_debug.h"
 #include "voskengineutils.h"
 #include <KLocalizedString>
@@ -31,12 +33,12 @@ void VoskExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, cons
     for (const QString &it : lst) {
         const KArchiveEntry *entry = dir->entry(it);
         if (entry->isDirectory()) {
-            // qDebug() << " directory ********" << it << "sss " << (path + it + QLatin1Char('/'));
-            extractRecursive(static_cast<const KArchiveDirectory *>(entry), path + it + QLatin1Char('/'));
+            // qDebug() << " directory ********" << it << "sss " << (path + it + u'/');
+            extractRecursive(static_cast<const KArchiveDirectory *>(entry), path + it + u'/');
         } else if (entry->isFile()) {
             const KArchiveEntry *filePathEntry = dir->entry(it);
             const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
-            const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + path};
+            const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + u'/' + path};
             // qDebug() << "storeDirectory  " << storeDirectory << " ddd " << it;
             if (!QDir().mkpath(storeDirectory)) {
                 qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;

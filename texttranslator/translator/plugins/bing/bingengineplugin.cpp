@@ -34,7 +34,7 @@ BingEnginePlugin::~BingEnginePlugin() = default;
 void BingEnginePlugin::translate()
 {
     if (sBingKey.isEmpty() || sBingToken.isEmpty()) {
-        const QUrl url(QStringLiteral("https://www.bing.com/translator"));
+        const QUrl url(u"https://www.bing.com/translator"_s);
         QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(QNetworkRequest(url));
         connect(reply, &QNetworkReply::finished, this, [this, reply]() {
             parseCredentials(reply);
@@ -112,14 +112,13 @@ void BingEnginePlugin::translateText()
         + "&to=" + languageCode(to()).toUtf8() + "&token=" + sBingToken + "&key=" + sBingKey;
 
     qCDebug(TRANSLATOR_BING_LOG) << " postData " << postData;
-    QUrl url(QStringLiteral("https://www.bing.com/ttranslatev3"));
-    url.setQuery(QStringLiteral("IG=%1&IID=%2").arg(sBingIg, sBingIid));
+    QUrl url(u"https://www.bing.com/ttranslatev3"_s);
+    url.setQuery(u"IG=%1&IID=%2"_s.arg(sBingIg, sBingIid));
     qCDebug(TRANSLATOR_BING_LOG) << " url " << url;
 
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"_L1);
-    request.setHeader(QNetworkRequest::UserAgentHeader,
-                      QStringLiteral("%1/%2").arg(QCoreApplication::applicationName(), QCoreApplication::applicationVersion()));
+    request.setHeader(QNetworkRequest::UserAgentHeader, u"%1/%2"_s.arg(QCoreApplication::applicationName(), QCoreApplication::applicationVersion()));
 
     QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->post(request, postData);
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply](QNetworkReply::NetworkError error) {
@@ -140,7 +139,7 @@ void BingEnginePlugin::parseTranslation(QNetworkReply *reply)
     qCDebug(TRANSLATOR_BING_LOG) << " jsonResponse " << jsonResponse;
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
     if (from() == "auto"_L1) {
-        const QString langCode = responseObject.value(QStringLiteral("detectedLanguage")).toObject().value(QStringLiteral("language")).toString();
+        const QString langCode = responseObject.value(u"detectedLanguage"_s).toObject().value(u"language"_s).toString();
         setFrom(langCode);
         //        if (m_sourceLang == NoLanguage)
         //        {
@@ -149,14 +148,14 @@ void BingEnginePlugin::parseTranslation(QNetworkReply *reply)
         //        }
     }
 
-    const QJsonObject translationsObject = responseObject.value(QStringLiteral("translations")).toArray().first().toObject();
-    appendResult(translationsObject.value(QStringLiteral("text")).toString());
+    const QJsonObject translationsObject = responseObject.value(u"translations"_s).toArray().first().toObject();
+    appendResult(translationsObject.value(u"text"_s).toString());
     if (hasDebug()) {
         setJsonDebug(QString::fromUtf8(jsonResponse.toJson(QJsonDocument::Indented)));
     }
 
     qCDebug(TRANSLATOR_BING_LOG) << " mResult " << result();
-    // m_translationTranslit               += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
+    // m_translationTranslit               += translationsObject.value(u"transliteration"_s).toObject().value(u"text"_s).toString();
     reply->deleteLater();
     Q_EMIT translateDone();
 }
@@ -164,17 +163,17 @@ void BingEnginePlugin::parseTranslation(QNetworkReply *reply)
 QString BingEnginePlugin::languageCode(const QString &langStr)
 {
     if (langStr == "auto"_L1) {
-        return QStringLiteral("auto-detect");
+        return u"auto-detect"_s;
     } else if (langStr == "sr"_L1) {
-        return QStringLiteral("sr-Cyrl");
+        return u"sr-Cyrl"_s;
     } else if (langStr == "bs"_L1) {
-        return QStringLiteral("bs-Latn");
+        return u"bs-Latn"_s;
     } else if (langStr == "hmn"_L1) {
-        return QStringLiteral("mww");
+        return u"mww"_s;
     } else if (langStr == "zh"_L1) {
-        return QStringLiteral("zh-Hans");
+        return u"zh-Hans"_s;
     } else if (langStr == "zt"_L1) {
-        return QStringLiteral("zh-Hant");
+        return u"zh-Hant"_s;
     }
     return langStr;
 }

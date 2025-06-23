@@ -457,19 +457,19 @@ void AutoCorrectionSettings::migrateKMailXmlFile()
 {
 #if 0
     // TODO
-    QString kdelang = QStringLiteral("en_US");
+    QString kdelang = u"en_US"_s;
     const QStringList lst = QLocale::system().uiLanguages();
     if (!lst.isEmpty()) {
         kdelang = lst.at(0);
-        if (kdelang == QLatin1Char('C')) {
-            kdelang = QStringLiteral("en_US");
+        if (kdelang == u'C') {
+            kdelang = u"en_US"_s;
         }
     }
-    static QRegularExpression reg(QStringLiteral("@.*"));
+    static QRegularExpression reg(u"@.*"_s);
     kdelang.remove(reg);
 
     QString localFileName;
-    static QRegularExpression regpath(QRegularExpression(QStringLiteral("_.*")));
+    static QRegularExpression regpath(QRegularExpression(u"_.*"_s));
     // Look at local file:
     if (!forceGlobal) {
         if (!mAutoCorrectLang.isEmpty()) {
@@ -480,7 +480,7 @@ void AutoCorrectionSettings::migrateKMailXmlFile()
                 localFileName =
                     QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/custom-"_L1 + kdelang + ".xml"_L1);
             }
-            if (localFileName.isEmpty() && kdelang.contains(QLatin1Char('_'))) {
+            if (localFileName.isEmpty() && kdelang.contains(u'_')) {
                 kdelang.remove(regpath);
                 localFileName =
                     QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/custom-"_L1 + kdelang + ".xml"_L1);
@@ -491,7 +491,7 @@ void AutoCorrectionSettings::migrateKMailXmlFile()
     // Load Global directly
     if (!mAutoCorrectLang.isEmpty()) {
         if (mAutoCorrectLang == "en_US"_L1) {
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("autocorrect/autocorrect.xml"));
+            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"autocorrect/autocorrect.xml"_s);
         } else {
             fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/"_L1 + mAutoCorrectLang + ".xml"_L1);
         }
@@ -499,13 +499,13 @@ void AutoCorrectionSettings::migrateKMailXmlFile()
         if (fname.isEmpty() && !kdelang.isEmpty()) {
             fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/"_L1 + kdelang + ".xml"_L1);
         }
-        if (fname.isEmpty() && kdelang.contains(QLatin1Char('_'))) {
+        if (fname.isEmpty() && kdelang.contains(u'_')) {
             kdelang.remove(regpath);
             fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/"_L1 + kdelang + ".xml"_L1);
         }
     }
     if (fname.isEmpty()) {
-        fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("autocorrect/autocorrect.xml"));
+        fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"autocorrect/autocorrect.xml"_s);
     }
 
     if (mAutoCorrectLang.isEmpty()) {
@@ -521,26 +521,26 @@ void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)
     d->mTwoUpperLetterExceptions.clear();
     d->mSuperScriptEntries.clear();
 
-    QString kdelang = QStringLiteral("en-US");
+    QString kdelang = u"en-US"_s;
     const QStringList lst = QLocale::system().uiLanguages();
     if (!lst.isEmpty()) {
         kdelang = lst.at(0);
-        if (kdelang == QLatin1Char('C')) {
-            kdelang = QStringLiteral("en-US");
+        if (kdelang == u'C') {
+            kdelang = u"en-US"_s;
         }
     }
-    static QRegularExpression reg(QStringLiteral("@.*"));
+    static QRegularExpression reg(u"@.*"_s);
     kdelang.remove(reg);
 
     QString localFileName;
-    static QRegularExpression regpath(QRegularExpression(QStringLiteral("_.*")));
+    static QRegularExpression regpath(QRegularExpression(u"_.*"_s));
     // Look at local file:
     if (!forceGlobal) {
         if (d->mAutoCorrectLang.isEmpty()) {
             if (!kdelang.isEmpty()) {
                 localFileName = containsAutoCorrectionFile(kdelang);
             }
-            if (localFileName.isEmpty() && kdelang.contains(QLatin1Char('_'))) {
+            if (localFileName.isEmpty() && kdelang.contains(u'_')) {
                 kdelang.remove(regpath);
                 localFileName = containsAutoCorrectionFile(kdelang);
             }
@@ -554,7 +554,7 @@ void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)
         if (fname.isEmpty() && !kdelang.isEmpty()) {
             fname = containsAutoCorrectionFile(kdelang);
         }
-        if (fname.isEmpty() && kdelang.contains(QLatin1Char('_'))) {
+        if (fname.isEmpty() && kdelang.contains(u'_')) {
             kdelang.remove(regpath);
             fname = containsAutoCorrectionFile(kdelang);
         }

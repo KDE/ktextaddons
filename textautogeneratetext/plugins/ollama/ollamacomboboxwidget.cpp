@@ -5,6 +5,8 @@
 */
 
 #include "ollamacomboboxwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <QComboBox>
 #include <QHBoxLayout>
@@ -15,16 +17,16 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
     , mModelComboBox(new QComboBox(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
-    mModelComboBox->setObjectName(QStringLiteral("mModelComboBox"));
+    mModelComboBox->setObjectName(u"mModelComboBox"_s);
     mainLayout->addWidget(mModelComboBox);
 
     auto buttonReloadSettings = new QToolButton(this);
-    buttonReloadSettings->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
-    buttonReloadSettings->setObjectName(QStringLiteral("buttonReloadSettings"));
+    buttonReloadSettings->setIcon(QIcon::fromTheme(u"view-refresh"_s));
+    buttonReloadSettings->setObjectName(u"buttonReloadSettings"_s);
     buttonReloadSettings->setToolTip(i18nc("@info:tooltip", "Reload Model"));
     mainLayout->addWidget(buttonReloadSettings);
     connect(buttonReloadSettings, &QToolButton::clicked, this, &OllamaComboBoxWidget::reloadModel);

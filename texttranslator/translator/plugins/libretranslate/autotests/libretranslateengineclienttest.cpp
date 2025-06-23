@@ -5,6 +5,8 @@
 */
 
 #include "libretranslateengineclienttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../libretranslateengineclient.h"
 #include <QTest>
 QTEST_MAIN(LibreTranslateEngineClientTest)
@@ -17,7 +19,7 @@ LibreTranslateEngineClientTest::LibreTranslateEngineClientTest(QObject *parent)
 void LibreTranslateEngineClientTest::shouldHaveDefaultValues()
 {
     LibreTranslateEngineClient client;
-    QCOMPARE(client.name(), QStringLiteral("libretranslate"));
+    QCOMPARE(client.name(), u"libretranslate"_s);
     QVERIFY(client.createTranslator());
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());

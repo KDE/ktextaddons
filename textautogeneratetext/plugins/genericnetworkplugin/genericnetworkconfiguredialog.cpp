@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkconfiguredialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "genericnetworkavailablemodelwidget.h"
 #include "genericnetworkmanager.h"
 #include "genericnetworknetworkpluginconfigurewidget.h"
@@ -29,13 +31,13 @@ GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManag
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mConfigureWidget, generalPageName);
-    mConfigureWidget->setObjectName(QStringLiteral("mConfigureWidget"));
-    // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("ruqola")));
+    mConfigureWidget->setObjectName(u"mConfigureWidget"_s);
+    // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"ruqola"_s));
     addPage(configureGeneralWidgetPage);
 
     const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
     auto configureModelWidgetPage = new KPageWidgetItem(mAvailableModelWidget, modelAvailablePageName);
-    mAvailableModelWidget->setObjectName(QStringLiteral("mAvailableModelWidget"));
+    mAvailableModelWidget->setObjectName(u"mAvailableModelWidget"_s);
     addPage(configureModelWidgetPage);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &GenericNetworkConfigureDialog::slotAccepted);

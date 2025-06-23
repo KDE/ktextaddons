@@ -5,6 +5,8 @@
 */
 
 #include "libretranslateengineconfigurewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../libretranslateengineconfigurewidget.h"
 #include <QCheckBox>
 #include <QFormLayout>
@@ -21,15 +23,15 @@ void LibreTranslateEngineConfigureWidgetTest::shouldHaveDefaultValues()
     LibreTranslateEngineConfigureWidget w;
     QVERIFY(w.serverUrl().isEmpty());
 
-    auto mainLayout = w.findChild<QFormLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QFormLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mServerUrl = w.findChild<QLineEdit *>(QStringLiteral("mServerUrl"));
+    auto mServerUrl = w.findChild<QLineEdit *>(u"mServerUrl"_s);
     QVERIFY(mServerUrl);
     QVERIFY(mServerUrl->isClearButtonEnabled());
 
-    auto mApiKey = w.findChild<QLineEdit *>(QStringLiteral("mApiKey"));
+    auto mApiKey = w.findChild<QLineEdit *>(u"mApiKey"_s);
     QVERIFY(mApiKey);
     QVERIFY(mApiKey->isClearButtonEnabled());
 
@@ -37,7 +39,7 @@ void LibreTranslateEngineConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(w.serverUrl().isEmpty());
     QVERIFY(!w.serverRequiredApiKey());
 
-    auto mRequiredApiKey = w.findChild<QCheckBox *>(QStringLiteral("mRequiredApiKey"));
+    auto mRequiredApiKey = w.findChild<QCheckBox *>(u"mRequiredApiKey"_s);
     QVERIFY(mRequiredApiKey);
     QVERIFY(!mRequiredApiKey->isChecked());
 }

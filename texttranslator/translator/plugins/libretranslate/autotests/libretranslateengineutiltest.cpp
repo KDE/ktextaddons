@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "libretranslateengineutiltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../libretranslateengineutil.h"
 #include <QTest>
 QTEST_MAIN(LibreTranslateEngineUtilTest)
@@ -14,8 +16,8 @@ LibreTranslateEngineUtilTest::LibreTranslateEngineUtilTest(QObject *parent)
 
 void LibreTranslateEngineUtilTest::shouldHaveDefaultValues()
 {
-    QCOMPARE(LibreTranslateEngineUtil::groupName(), QStringLiteral("LibreTranslateTranslator"));
-    QCOMPARE(LibreTranslateEngineUtil::serverUrlKey(), QStringLiteral("ServerUrl"));
+    QCOMPARE(LibreTranslateEngineUtil::groupName(), u"LibreTranslateTranslator"_s);
+    QCOMPARE(LibreTranslateEngineUtil::serverUrlKey(), u"ServerUrl"_s);
 }
 
 #include "moc_libretranslateengineutiltest.cpp"

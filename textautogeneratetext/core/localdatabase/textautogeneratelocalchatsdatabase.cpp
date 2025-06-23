@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratelocalchatsdatabase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
 #include <QFileInfo>
@@ -59,7 +61,7 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalChatsDatabase::loadChats() cons
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
             return {};
         }
-        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
         db.setDatabaseName(fileName);
         if (!db.open()) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
@@ -79,7 +81,7 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalChatsDatabase::loadChats() cons
 
     QList<TextAutoGenerateChat> listChats;
     while (resultQuery.next()) {
-        const QString json = resultQuery.value(QStringLiteral("json")).toString();
+        const QString json = resultQuery.value(u"json"_s).toString();
         listChats.append(convertJsonToMessage(json));
     }
     return listChats;
@@ -94,7 +96,7 @@ TextAutoGenerateChat TextAutoGenerateLocalChatsDatabase::convertJsonToMessage(co
 
 QString TextAutoGenerateLocalChatsDatabase::generateQueryStr()
 {
-    const QString query = QStringLiteral("SELECT * FROM CHATS");
+    const QString query = u"SELECT * FROM CHATS"_s;
     return query;
 }
 

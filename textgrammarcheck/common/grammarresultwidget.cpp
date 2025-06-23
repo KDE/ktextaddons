@@ -5,6 +5,8 @@
 */
 
 #include "grammarresultwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammarresulttextedit.h"
 
 #include <KLocalizedString>
@@ -17,7 +19,7 @@ GrammarResultWidget::GrammarResultWidget(QWidget *parent)
     , mResult(new GrammarResultTextEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
@@ -26,8 +28,8 @@ GrammarResultWidget::GrammarResultWidget(QWidget *parent)
     mainLayout->addLayout(mExtraWidgetLayout);
 
     auto closeBtn = new QToolButton(this);
-    closeBtn->setObjectName(QStringLiteral("close-button"));
-    closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
+    closeBtn->setObjectName(u"close-button"_s);
+    closeBtn->setIcon(QIcon::fromTheme(u"dialog-close"_s));
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
     closeBtn->setAutoRaise(true);
@@ -35,7 +37,7 @@ GrammarResultWidget::GrammarResultWidget(QWidget *parent)
     mExtraWidgetLayout->addStretch(1);
     connect(closeBtn, &QToolButton::clicked, this, &GrammarResultWidget::closeChecker);
 
-    mResult->setObjectName(QStringLiteral("grammarResult"));
+    mResult->setObjectName(u"grammarResult"_s);
     connect(mResult, &GrammarResultTextEdit::replaceText, this, &GrammarResultWidget::replaceText);
     connect(mResult, &GrammarResultTextEdit::checkAgain, this, &GrammarResultWidget::checkAgain);
     connect(mResult, &GrammarResultTextEdit::closeChecker, this, &GrammarResultWidget::closeChecker);

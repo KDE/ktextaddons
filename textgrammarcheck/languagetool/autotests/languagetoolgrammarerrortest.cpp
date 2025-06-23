@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QTest>
 QTEST_GUILESS_MAIN(LanguageToolGrammarErrorTest)
+using namespace Qt::Literals::StringLiterals;
 LanguageToolGrammarErrorTest::LanguageToolGrammarErrorTest(QObject *parent)
     : QObject(parent)
 {
@@ -24,12 +25,12 @@ void LanguageToolGrammarErrorTest::shouldParseJson_data()
     err.setStart(3);
     err.setLength(8);
     err.setColor(QColor(Qt::red));
-    err.setSuggestions(QStringList() << QStringLiteral("ne suis pas"));
-    err.setError(QStringLiteral("Voulez-vous écrire \"ne suis pas\" ?"));
-    // err.setOption(QStringLiteral("maj"));
-    err.setRule(QStringLiteral("P_V_PAS"));
-    err.setUrl(QStringLiteral("http://www.academie-francaise.fr/ne"));
-    QTest::newRow("parse-error1") << QStringLiteral("parse-error1") << 1 << err;
+    err.setSuggestions(QStringList() << u"ne suis pas"_s);
+    err.setError(u"Voulez-vous écrire \"ne suis pas\" ?"_s);
+    // err.setOption(u"maj"_s);
+    err.setRule(u"P_V_PAS"_s);
+    err.setUrl(u"http://www.academie-francaise.fr/ne"_s);
+    QTest::newRow("parse-error1") << u"parse-error1"_s << 1 << err;
 }
 
 void LanguageToolGrammarErrorTest::shouldParseJson()
@@ -37,7 +38,7 @@ void LanguageToolGrammarErrorTest::shouldParseJson()
     QFETCH(QString, fileName);
     QFETCH(int, nbBlock);
     QFETCH(TextGrammarCheck::LanguageToolGrammarError, error);
-    const QString originalJsonFile = QLatin1StringView(LANGUAGETOOL_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1StringView(LANGUAGETOOL_DATA_DIR) + u'/' + fileName + u".json"_s;
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

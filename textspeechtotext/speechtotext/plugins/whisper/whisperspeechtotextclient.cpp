@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "whisperspeechtotextclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "whisperspeechtotextplugin.h"
 #include <KLocalizedString>
 
@@ -16,7 +18,7 @@ WhisperSpeechToTextClient::~WhisperSpeechToTextClient() = default;
 
 QString WhisperSpeechToTextClient::name() const
 {
-    return QStringLiteral("whisper");
+    return u"whisper"_s;
 }
 
 QString WhisperSpeechToTextClient::translatedName() const

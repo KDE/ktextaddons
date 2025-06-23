@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolcombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languageinfo.h"
 #include <KLocalizedString>
 using namespace TextGrammarCheck;
@@ -27,36 +29,36 @@ void LanguageToolComboBox::fillComboBox(const QVector<LanguageInfo> &info)
 
 void LanguageToolComboBox::fillComboBox()
 {
-    addItem(i18n("Asturian"), QStringLiteral("ast"));
-    addItem(i18n("English"), QStringLiteral("en"));
-    addItem(i18n("English (Australian)"), QStringLiteral("en-AU"));
-    addItem(i18n("English (Canadian)"), QStringLiteral("en-CA"));
-    addItem(i18n("Belarusian"), QStringLiteral("be"));
-    addItem(i18n("Breton"), QStringLiteral("br"));
-    addItem(i18n("Catalan"), QStringLiteral("ca"));
-    addItem(i18n("Chinese"), QStringLiteral("zh"));
-    addItem(i18n("Danish"), QStringLiteral("da"));
-    addItem(i18n("Dutch"), QStringLiteral("nl"));
-    addItem(i18n("Esperanto"), QStringLiteral("eo"));
-    addItem(i18n("French"), QStringLiteral("fr"));
-    addItem(i18n("Galician"), QStringLiteral("gl"));
-    addItem(i18n("German"), QStringLiteral("de"));
-    addItem(i18n("Greek"), QStringLiteral("el"));
-    addItem(i18n("Italian"), QStringLiteral("it"));
-    addItem(i18n("Japanese"), QStringLiteral("ja"));
-    addItem(i18n("Khmer"), QStringLiteral("km"));
-    addItem(i18n("Persian"), QStringLiteral("fa"));
-    addItem(i18n("Polish"), QStringLiteral("pl"));
-    addItem(i18n("Portuguese"), QStringLiteral("pt"));
-    addItem(i18n("Romanian"), QStringLiteral("ro"));
-    addItem(i18n("Russian"), QStringLiteral("ru"));
-    addItem(i18n("Slovak"), QStringLiteral("sk"));
-    addItem(i18n("Slovenian"), QStringLiteral("sl"));
-    addItem(i18n("Spanish"), QStringLiteral("es"));
-    addItem(i18n("Swedish"), QStringLiteral("sv"));
-    addItem(i18n("Tagalog"), QStringLiteral("tl"));
-    addItem(i18n("Tamil"), QStringLiteral("ta"));
-    addItem(i18n("Ukrainian"), QStringLiteral("uk-UA"));
+    addItem(i18n("Asturian"), u"ast"_s);
+    addItem(i18n("English"), u"en"_s);
+    addItem(i18n("English (Australian)"), u"en-AU"_s);
+    addItem(i18n("English (Canadian)"), u"en-CA"_s);
+    addItem(i18n("Belarusian"), u"be"_s);
+    addItem(i18n("Breton"), u"br"_s);
+    addItem(i18n("Catalan"), u"ca"_s);
+    addItem(i18n("Chinese"), u"zh"_s);
+    addItem(i18n("Danish"), u"da"_s);
+    addItem(i18n("Dutch"), u"nl"_s);
+    addItem(i18n("Esperanto"), u"eo"_s);
+    addItem(i18n("French"), u"fr"_s);
+    addItem(i18n("Galician"), u"gl"_s);
+    addItem(i18n("German"), u"de"_s);
+    addItem(i18n("Greek"), u"el"_s);
+    addItem(i18n("Italian"), u"it"_s);
+    addItem(i18n("Japanese"), u"ja"_s);
+    addItem(i18n("Khmer"), u"km"_s);
+    addItem(i18n("Persian"), u"fa"_s);
+    addItem(i18n("Polish"), u"pl"_s);
+    addItem(i18n("Portuguese"), u"pt"_s);
+    addItem(i18n("Romanian"), u"ro"_s);
+    addItem(i18n("Russian"), u"ru"_s);
+    addItem(i18n("Slovak"), u"sk"_s);
+    addItem(i18n("Slovenian"), u"sl"_s);
+    addItem(i18n("Spanish"), u"es"_s);
+    addItem(i18n("Swedish"), u"sv"_s);
+    addItem(i18n("Tagalog"), u"tl"_s);
+    addItem(i18n("Tamil"), u"ta"_s);
+    addItem(i18n("Ukrainian"), u"uk-UA"_s);
 }
 
 void LanguageToolComboBox::setLanguage(const QString &str)

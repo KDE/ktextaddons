@@ -56,12 +56,12 @@ void TextAutoGenerateNotWorkingWidget::slotConfigure()
 
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()
 {
-    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(QStringLiteral("ollama"));
+    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Ollama doesn't exist";
         return;
     }
-    const bool status = QProcess::startDetached(ollamaPath, {QStringLiteral("start")});
+    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
     if (!status) {
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to start ollama";
     } else {

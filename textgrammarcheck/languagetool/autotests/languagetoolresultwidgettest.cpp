@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolresultwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "common/grammarresulttextedit.h"
 #include "languagetool/languagetoolresultwidget.h"
 #include <QTest>
@@ -18,11 +20,11 @@ LanguageToolResultWidgetTest::LanguageToolResultWidgetTest(QObject *parent)
 void LanguageToolResultWidgetTest::shouldHaveDefaultValue()
 {
     TextGrammarCheck::LanguageToolResultWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins());
 
-    auto mResult = w.findChild<TextGrammarCheck::GrammarResultTextEdit *>(QStringLiteral("grammarResult"));
+    auto mResult = w.findChild<TextGrammarCheck::GrammarResultTextEdit *>(u"grammarResult"_s);
     QVERIFY(mResult);
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteurlrequesterwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFileDialog>
@@ -18,15 +20,15 @@ GrammalecteUrlRequesterWidget::GrammalecteUrlRequesterWidget(QWidget *parent)
     , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mLineEdit->setObjectName(QStringLiteral("mLineEdit"));
+    mLineEdit->setObjectName(u"mLineEdit"_s);
     mainLayout->addWidget(mLineEdit);
     KLineEditEventHandler::catchReturnKey(mLineEdit);
     auto selectUrlButton = new QToolButton(this);
-    selectUrlButton->setText(QStringLiteral("…"));
-    selectUrlButton->setObjectName(QStringLiteral("selectUrlButton"));
+    selectUrlButton->setText(u"…"_s);
+    selectUrlButton->setObjectName(u"selectUrlButton"_s);
     mainLayout->addWidget(selectUrlButton);
 
     connect(selectUrlButton, &QToolButton::clicked, this, [this]() {

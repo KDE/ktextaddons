@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskenginedialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "voskenginedialog.h"
 #include "voskenginelanguagewidget.h"
 #include <QDialogButtonBox>
@@ -20,13 +22,13 @@ void VoskEngineDialogTest::shouldHaveDefaultValues()
 {
     VoskEngineDialog w;
     QVERIFY(!w.windowTitle().isEmpty());
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mVoskEngineWidget = w.findChild<VoskEngineLanguageWidget *>(QStringLiteral("mVoskEngineWidget"));
+    auto mVoskEngineWidget = w.findChild<VoskEngineLanguageWidget *>(u"mVoskEngineWidget"_s);
     QVERIFY(mVoskEngineWidget);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 

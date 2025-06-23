@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratelistviewtextselection.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratelistviewdelegate.h"
 
 #include <QTextCursor>
@@ -76,7 +78,7 @@ void TextAutoGenerateListViewTextSelection::selectionText(const OrderedPositions
     const QTextDocumentFragment fragment(cursor);
     str += format == Format::Text ? fragment.toPlainText() : fragment.toHtml();
     if (row < ordered.toRow) {
-        str += QLatin1Char('\n');
+        str += u'\n';
     }
 }
 

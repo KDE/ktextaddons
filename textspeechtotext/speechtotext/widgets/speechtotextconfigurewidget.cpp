@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "speechtotextcomboboxwidget.h"
 #include "speechtotextselectdevicewidget.h"
 #include <KLocalizedString>
@@ -19,13 +21,13 @@ SpeechToTextConfigureWidget::SpeechToTextConfigureWidget(QWidget *parent)
     , mSpeechToTextDevice(new SpeechToTextSelectDeviceWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mSpeechToTextDevice->setObjectName(QStringLiteral("mSpeechToTextDevice"));
+    mSpeechToTextDevice->setObjectName(u"mSpeechToTextDevice"_s);
     mainLayout->addWidget(mSpeechToTextDevice);
 
-    mSpeechToTextComboBox->setObjectName(QStringLiteral("mSpeechToTextComboBox"));
+    mSpeechToTextComboBox->setObjectName(u"mSpeechToTextComboBox"_s);
     mainLayout->addWidget(mSpeechToTextComboBox);
     mSpeechToTextComboBox->fillEngine();
 }

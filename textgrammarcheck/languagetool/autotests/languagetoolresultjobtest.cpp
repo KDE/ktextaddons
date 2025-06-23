@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolresultjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetool/languagetoolresultjob.h"
 #include <QTest>
 QTEST_MAIN(LanguageToolResultJobTest)
@@ -28,18 +30,18 @@ void LanguageToolResultJobTest::shouldBeAbleToStart()
 {
     TextGrammarCheck::LanguageToolResultJob job;
     QVERIFY(!job.canStart());
-    job.setText(QStringLiteral("foo"));
+    job.setText(u"foo"_s);
     QVERIFY(!job.canStart());
-    job.setUrl(QStringLiteral("http://www.kde.org"));
+    job.setUrl(u"http://www.kde.org"_s);
     QVERIFY(!job.canStart());
-    job.setLanguage(QStringLiteral("foo"));
+    job.setLanguage(u"foo"_s);
     QVERIFY(!job.canStart());
     QNetworkAccessManager network;
     job.setNetworkAccessManager(&network);
     QVERIFY(job.canStart());
-    job.setText(QStringLiteral(" "));
+    job.setText(u" "_s);
     QVERIFY(!job.canStart());
-    job.setText(QStringLiteral(" DDDD"));
+    job.setText(u" DDDD"_s);
     QVERIFY(job.canStart());
 }
 

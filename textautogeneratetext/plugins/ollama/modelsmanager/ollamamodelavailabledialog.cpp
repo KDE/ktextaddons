@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailabledialog.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
 #include "ollamamodelavailableinfosmanager.h"
@@ -26,8 +27,8 @@ OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, Q
 {
     setWindowTitle(i18nc("@title:window", "Manage Ollama Models"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mOllamaModelWidget->setObjectName(QStringLiteral("mOllamaModelWidget"));
+    mainLayout->setObjectName(u"mainlayout"_s);
+    mOllamaModelWidget->setObjectName(u"mOllamaModelWidget"_s);
 
     OllamaModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {
@@ -35,7 +36,7 @@ OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, Q
     }
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    box->setObjectName(QStringLiteral("box"));
+    box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &OllamaModelAvailableDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &OllamaModelAvailableDialog::reject);

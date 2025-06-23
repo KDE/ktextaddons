@@ -4,43 +4,44 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamautils.h"
+using namespace Qt::Literals::StringLiterals;
 
 QString OllamaUtils::tagsPath()
 {
-    return QStringLiteral("/api/tags");
+    return u"/api/tags"_s;
 }
 
 QString OllamaUtils::completionPath()
 {
-    return QStringLiteral("/api/generate");
+    return u"/api/generate"_s;
 }
 
 QString OllamaUtils::pullPath()
 {
-    return QStringLiteral("/api/pull");
+    return u"/api/pull"_s;
 }
 
 QString OllamaUtils::versionPath()
 {
-    return QStringLiteral("/api/version");
+    return u"/api/version"_s;
 }
 
 QString OllamaUtils::modelInfoPath()
 {
-    return QStringLiteral("/api/show");
+    return u"/api/show"_s;
 }
 
 QString OllamaUtils::chatPath()
 {
-    return QStringLiteral("/api/chat");
+    return u"/api/chat"_s;
 }
 
 QString OllamaUtils::deletePath()
 {
-    return QStringLiteral("/api/delete");
+    return u"/api/delete"_s;
 }
 
 QString OllamaUtils::createPath()
 {
-    return QStringLiteral("/api/create");
+    return u"/api/create"_s;
 }

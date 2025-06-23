@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurelistswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/misc/translatorutil.h"
 #include "translator/translatorengineloader.h"
 #include "translatorconfigurecombowidget.h"
@@ -36,32 +38,32 @@ TranslatorConfigureListsWidget::TranslatorConfigureListsWidget(QWidget *parent)
     , d(new TranslatorConfigureListsWidgetPrivate(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
-    d->mEngineConfigureComboWidget->setObjectName(QStringLiteral("mEngineConfigureComboWidget"));
+    mainLayout->setObjectName(u"mainLayout"_s);
+    d->mEngineConfigureComboWidget->setObjectName(u"mEngineConfigureComboWidget"_s);
     connect(d->mEngineConfigureComboWidget,
             &TranslatorConfigureComboWidget::configureChanged,
             this,
             &TranslatorConfigureListsWidget::slotEngineSettingsChanged);
 
     auto hboxLayout = new QHBoxLayout;
-    hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
+    hboxLayout->setObjectName(u"hboxLayout"_s);
     hboxLayout->setContentsMargins({});
     mainLayout->addLayout(hboxLayout);
 
     auto label = new QLabel(i18nc("@label:textbox", "Engine:"), this);
-    label->setObjectName(QStringLiteral("label"));
+    label->setObjectName(u"label"_s);
     label->setTextFormat(Qt::PlainText);
     hboxLayout->addWidget(label);
     hboxLayout->addWidget(d->mEngineConfigureComboWidget);
     hboxLayout->addStretch(0);
 
     auto hLanguageListboxLayout = new QHBoxLayout;
-    hLanguageListboxLayout->setObjectName(QStringLiteral("hLanguageListboxLayout"));
+    hLanguageListboxLayout->setObjectName(u"hLanguageListboxLayout"_s);
     hLanguageListboxLayout->setContentsMargins({});
     mainLayout->addLayout(hLanguageListboxLayout);
 
-    d->mFromLanguageWidget->setObjectName(QStringLiteral("mFromLanguageWidget"));
-    d->mToLanguageWidget->setObjectName(QStringLiteral("mToLanguageWidget"));
+    d->mFromLanguageWidget->setObjectName(u"mFromLanguageWidget"_s);
+    d->mToLanguageWidget->setObjectName(u"mToLanguageWidget"_s);
     hLanguageListboxLayout->addWidget(d->mFromLanguageWidget);
     hLanguageListboxLayout->addWidget(d->mToLanguageWidget);
 
@@ -73,8 +75,8 @@ TranslatorConfigureListsWidget::~TranslatorConfigureListsWidget() = default;
 void TranslatorConfigureListsWidget::save()
 {
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
-    groupTranslate.writeEntry(QStringLiteral("From"), d->mFromLanguageWidget->selectedLanguages());
-    groupTranslate.writeEntry(QStringLiteral("To"), d->mToLanguageWidget->selectedLanguages());
+    groupTranslate.writeEntry(u"From"_s, d->mFromLanguageWidget->selectedLanguages());
+    groupTranslate.writeEntry(u"To"_s, d->mToLanguageWidget->selectedLanguages());
     d->mEngineConfigureComboWidget->save();
 }
 
@@ -91,8 +93,8 @@ void TranslatorConfigureListsWidget::slotEngineSettingsChanged(const QString &en
 void TranslatorConfigureListsWidget::loadLanguagesList()
 {
     KConfigGroup groupTranslate(KSharedConfig::openConfig(), TranslatorUtil::groupTranslateName());
-    const auto fromLanguages = groupTranslate.readEntry(QStringLiteral("From"), QStringList());
-    const auto toLanguages = groupTranslate.readEntry(QStringLiteral("To"), QStringList());
+    const auto fromLanguages = groupTranslate.readEntry(u"From"_s, QStringList());
+    const auto toLanguages = groupTranslate.readEntry(u"To"_s, QStringList());
     d->mFromLanguageWidget->setSelectedLanguages(fromLanguages);
     d->mToLanguageWidget->setSelectedLanguages(toLanguages);
 }

@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratesearchmessageutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratesearchmessageutils.h"
 #include <QTest>
 
@@ -16,10 +18,8 @@ TextAutoGenerateSearchMessageUtilsTest::TextAutoGenerateSearchMessageUtilsTest(Q
 
 void TextAutoGenerateSearchMessageUtilsTest::shouldGenerateGoToMessageLink()
 {
-    QCOMPARE(TextAutoGenerateText::TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(QStringLiteral("bla"), QStringLiteral("messageID")),
-             QStringLiteral("storage://bla:messageID"));
-    QCOMPARE(TextAutoGenerateText::TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(QStringLiteral("foo"), QStringLiteral("msg1")),
-             QStringLiteral("storage://foo:msg1"));
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(u"bla"_s, u"messageID"_s), u"storage://bla:messageID"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(u"foo"_s, u"msg1"_s), u"storage://foo:msg1"_s);
 }
 
 #include "moc_textautogeneratesearchmessageutilstest.cpp"

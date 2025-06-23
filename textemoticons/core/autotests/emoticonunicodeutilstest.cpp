@@ -5,6 +5,8 @@
 */
 
 #include "emoticonunicodeutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticonunicodeutils.h"
 #include <QTest>
 
@@ -17,8 +19,8 @@ EmoticonUnicodeUtilsTest::EmoticonUnicodeUtilsTest(QObject *parent)
 
 void EmoticonUnicodeUtilsTest::shouldHaveDefaultValues()
 {
-    QCOMPARE(TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier(), QStringLiteral("recents"));
-    QCOMPARE(TextEmoticonsCore::EmoticonUnicodeUtils::customIdentifier(), QStringLiteral("customs"));
+    QCOMPARE(TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier(), u"recents"_s);
+    QCOMPARE(TextEmoticonsCore::EmoticonUnicodeUtils::customIdentifier(), u"customs"_s);
 }
 
 #include "moc_emoticonunicodeutilstest.cpp"

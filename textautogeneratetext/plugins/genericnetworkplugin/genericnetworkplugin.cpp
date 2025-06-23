@@ -28,14 +28,14 @@ GenericNetworkPlugin::~GenericNetworkPlugin()
 
 void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
-    mSettings->setDisplayName(config.readEntry(QStringLiteral("Name")));
-    mSettings->setCurrentModel(config.readEntry(QStringLiteral("CurrentModel")));
+    mSettings->setDisplayName(config.readEntry(u"Name"_s));
+    mSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
 }
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
 {
-    config.writeEntry(QStringLiteral("Name"), mSettings->displayName());
-    config.writeEntry(QStringLiteral("CurrentModel"), mSettings->currentModel());
+    config.writeEntry(u"Name"_s, mSettings->displayName());
+    config.writeEntry(u"CurrentModel"_s, mSettings->currentModel());
 }
 
 QStringList GenericNetworkPlugin::models() const

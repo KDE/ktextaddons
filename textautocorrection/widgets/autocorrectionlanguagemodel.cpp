@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectionlanguagemodel.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QLocale>
 
 using namespace TextAutoCorrectionWidgets;
@@ -30,7 +32,7 @@ QString AutoCorrectionLanguageModel::language(int index) const
 
 static bool stripCountryCode(QString *languageCode)
 {
-    const int idx = languageCode->indexOf(QLatin1Char('_'));
+    const int idx = languageCode->indexOf(u'_');
     if (idx != -1) {
         *languageCode = languageCode->left(idx);
         return true;

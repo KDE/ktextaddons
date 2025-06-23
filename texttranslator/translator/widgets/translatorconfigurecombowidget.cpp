@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurecombowidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/misc/translatorutil.h"
 #include "translator/translatorengineloader.h"
 #include <KConfigGroup>
@@ -20,16 +22,16 @@ TranslatorConfigureComboWidget::TranslatorConfigureComboWidget(QWidget *parent)
     , mConfigureEngine(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
 
-    mEngineComboBox->setObjectName(QStringLiteral("mEngineComboBox"));
+    mEngineComboBox->setObjectName(u"mEngineComboBox"_s);
     mainLayout->addWidget(mEngineComboBox);
 
-    mConfigureEngine->setObjectName(QStringLiteral("mConfigureEngine"));
+    mConfigureEngine->setObjectName(u"mConfigureEngine"_s);
     mainLayout->addWidget(mConfigureEngine);
     mConfigureEngine->setEnabled(false); // Disable by default
-    mConfigureEngine->setIcon(QIcon::fromTheme(QStringLiteral("settings-configure")));
+    mConfigureEngine->setIcon(QIcon::fromTheme(u"settings-configure"_s));
     connect(mConfigureEngine, &QToolButton::clicked, this, &TranslatorConfigureComboWidget::slotConfigureEngine);
     connect(mEngineComboBox, &QComboBox::currentIndexChanged, this, &TranslatorConfigureComboWidget::slotEngineChanged);
 

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emoticoncategorybuttonstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticoncategorybuttons.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
@@ -18,11 +20,11 @@ void EmoticonCategoryButtonsTest::shouldHaveDefaultValues()
 {
     TextEmoticonsWidgets::EmoticonCategoryButtons w;
 
-    auto mMainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mMainLayout"));
+    auto mMainLayout = w.findChild<QHBoxLayout *>(u"mMainLayout"_s);
     QVERIFY(mMainLayout);
     QCOMPARE(mMainLayout->contentsMargins(), QMargins{});
 
-    auto mButtonGroup = w.findChild<QButtonGroup *>(QStringLiteral("mButtonGroup"));
+    auto mButtonGroup = w.findChild<QButtonGroup *>(u"mButtonGroup"_s);
     QVERIFY(mButtonGroup);
     QVERIFY(mButtonGroup->buttons().isEmpty());
 }

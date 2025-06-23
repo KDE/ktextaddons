@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamanager.h"
 #include "ollamamodelinstalledinfosmodel.h"
 #include "ollamamodelinstalledinfowidget.h"
@@ -26,35 +28,35 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
     auto hboxLayout = new QHBoxLayout;
-    hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
+    hboxLayout->setObjectName(u"hboxLayout"_s);
     hboxLayout->setContentsMargins({});
     hboxLayout->setSpacing(0);
     mainLayout->addLayout(hboxLayout);
 
-    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     hboxLayout->addWidget(mSearchLineEdit);
 
     auto splitter = new QSplitter(this);
-    splitter->setObjectName(QStringLiteral("splitter"));
+    splitter->setObjectName(u"splitter"_s);
     mainLayout->addWidget(splitter);
     splitter->setChildrenCollapsible(false);
 
-    mOllamaModelInstalledListView->setObjectName(QStringLiteral("mOllamaModelInstalledListView"));
+    mOllamaModelInstalledListView->setObjectName(u"mOllamaModelInstalledListView"_s);
     splitter->addWidget(mOllamaModelInstalledListView);
 
     auto scrollArea = new QScrollArea(this);
-    scrollArea->setObjectName(QStringLiteral("scrollArea"));
+    scrollArea->setObjectName(u"scrollArea"_s);
     scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     splitter->addWidget(scrollArea);
     scrollArea->setWidgetResizable(true);
     scrollArea->setWidget(mOllamaModelInstalledInfoWidget);
-    mOllamaModelInstalledInfoWidget->setObjectName(QStringLiteral("mOllamaModelInstalledInfoWidget"));
+    mOllamaModelInstalledInfoWidget->setObjectName(u"mOllamaModelInstalledInfoWidget"_s);
 
     auto model = new OllamaModelInstalledInfosModel(this);
     if (mManager) {
@@ -69,11 +71,11 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     });
     mOllamaModelInstalledListView->setModel(proxyModel);
 
-    mRemoveModelButton->setObjectName(QStringLiteral("mRemoveModelButton"));
+    mRemoveModelButton->setObjectName(u"mRemoveModelButton"_s);
     mRemoveModelButton->setEnabled(false);
     scrollArea->hide();
     hboxLayout->addWidget(mRemoveModelButton);
-    mRemoveModelButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+    mRemoveModelButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
     connect(mOllamaModelInstalledListView, &OllamaModelInstalledListView::clicked, this, &OllamaModelInstalledWidget::slotClicked);
     connect(mOllamaModelInstalledListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, scrollArea]() {

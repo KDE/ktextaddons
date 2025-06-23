@@ -7,6 +7,8 @@
 */
 
 #include "bergamotmarianinterface.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
 #include <chrono>

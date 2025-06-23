@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextaction.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textspeechtotext/speechtotextmanager.h"
 using namespace TextSpeechToText;
 SpeechToTextAction::SpeechToTextAction(QObject *parent)

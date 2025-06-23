@@ -5,6 +5,8 @@
 */
 
 #include "bergamotengineutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotengineutils.h"
 #include <QTest>
 
@@ -16,22 +18,22 @@ BergamotEngineUtilsTest::BergamotEngineUtilsTest(QObject *parent)
 
 void BergamotEngineUtilsTest::shouldDefaultBergamotRepository()
 {
-    QCOMPARE(BergamotEngineUtils::defaultBergamotRepository(), QStringLiteral("https://translatelocally.com/models.json"));
-    QCOMPARE(BergamotEngineUtils::groupName(), QStringLiteral("BergamotTranslator"));
-    QCOMPARE(BergamotEngineUtils::coreNumberKey(), QStringLiteral("CoreNumber"));
-    QCOMPARE(BergamotEngineUtils::memoryByThreadKey(), QStringLiteral("MemoryByThread"));
-    QCOMPARE(BergamotEngineUtils::useLocalCacheKey(), QStringLiteral("UseLocalKey"));
+    QCOMPARE(BergamotEngineUtils::defaultBergamotRepository(), u"https://translatelocally.com/models.json"_s);
+    QCOMPARE(BergamotEngineUtils::groupName(), u"BergamotTranslator"_s);
+    QCOMPARE(BergamotEngineUtils::coreNumberKey(), u"CoreNumber"_s);
+    QCOMPARE(BergamotEngineUtils::memoryByThreadKey(), u"MemoryByThread"_s);
+    QCOMPARE(BergamotEngineUtils::useLocalCacheKey(), u"UseLocalKey"_s);
 }
 
 void BergamotEngineUtilsTest::shouldExtractInfoFromLanguageLocallyStored()
 {
     {
-        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/test-stored-languages/test1");
+        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + u"/test-stored-languages/test1"_s;
         const QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(originalDir);
         QCOMPARE(list.count(), 0);
     }
     {
-        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + QStringLiteral("/test-stored-languages/test2");
+        const QString originalDir = QLatin1String(BERGAMOT_DATA_DIR) + u"/test-stored-languages/test2"_s;
         const QVector<BergamotEngineUtils::LanguageInstalled> list = BergamotEngineUtils::languageLocallyStored(originalDir);
         QCOMPARE(list.count(), 3);
     }

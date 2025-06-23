@@ -5,6 +5,7 @@
 */
 
 #include "texttospeechutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -12,12 +13,12 @@
 
 QString TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName()
 {
-    return QStringLiteral("texttospeechrc");
+    return u"texttospeechrc"_s;
 }
 
 QString TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName()
 {
-    return QStringLiteral("Settings");
+    return u"Settings"_s;
 }
 
 TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings TextEditTextToSpeech::TextToSpeechUtil::loadSettings()

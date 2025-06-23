@@ -5,6 +5,8 @@
 */
 
 #include "yandexengineclienttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../yandexengineclient.h"
 #include <QTest>
 QTEST_MAIN(YandexEngineClientTest)
@@ -17,7 +19,7 @@ YandexEngineClientTest::YandexEngineClientTest(QObject *parent)
 void YandexEngineClientTest::shouldHaveDefaultValues()
 {
     YandexEngineClient client;
-    QCOMPARE(client.name(), QStringLiteral("yandex"));
+    QCOMPARE(client.name(), u"yandex"_s);
     QVERIFY(client.createTranslator());
     QVERIFY(!client.translatedName().isEmpty());
     QVERIFY(!client.supportedFromLanguages().isEmpty());

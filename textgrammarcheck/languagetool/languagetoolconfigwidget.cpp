@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolconfigwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetoolcombobox.h"
 #include "languagetoolmanager.h"
 #include "languagetoolupdatecombobox.h"
@@ -26,21 +28,21 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     , mLanguageToolUpdateCombobox(new LanguageToolUpdateComboBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
 
-    mUseLocalInstance->setObjectName(QStringLiteral("uselocalinstance"));
+    mUseLocalInstance->setObjectName(u"uselocalinstance"_s);
     mainLayout->addWidget(mUseLocalInstance);
 
     auto instanceLayout = new QHBoxLayout;
-    instanceLayout->setObjectName(QStringLiteral("instancelayout"));
+    instanceLayout->setObjectName(u"instancelayout"_s);
     instanceLayout->setContentsMargins({});
-    mInstancePathLabel->setObjectName(QStringLiteral("instancepath"));
+    mInstancePathLabel->setObjectName(u"instancepath"_s);
     mInstancePathLabel->setEnabled(false);
     mInstancePathLabel->setTextFormat(Qt::PlainText);
     instanceLayout->addWidget(mInstancePathLabel);
 
-    mInstancePath->setObjectName(QStringLiteral("instancepath"));
+    mInstancePath->setObjectName(u"instancepath"_s);
     mInstancePath->setEnabled(false);
     mInstancePath->setClearButtonEnabled(true);
     KLineEditEventHandler::catchReturnKey(mInstancePath);
@@ -50,20 +52,20 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     connect(mUseLocalInstance, &QCheckBox::clicked, this, &LanguageToolConfigWidget::updateWidgets);
 
     auto languageLayout = new QHBoxLayout;
-    languageLayout->setObjectName(QStringLiteral("languagelayout"));
+    languageLayout->setObjectName(u"languagelayout"_s);
     auto languageLabel = new QLabel(i18nc("@label:textbox", "Language:"), this);
     languageLabel->setTextFormat(Qt::PlainText);
-    languageLabel->setObjectName(QStringLiteral("languageLabel"));
+    languageLabel->setObjectName(u"languageLabel"_s);
     languageLayout->addWidget(languageLabel);
 
-    mLanguageToolCombobox->setObjectName(QStringLiteral("languagecombobox"));
+    mLanguageToolCombobox->setObjectName(u"languagecombobox"_s);
     languageLayout->addWidget(mLanguageToolCombobox);
     mLanguageToolUpdateCombobox->setLanguageToolCombobox(mLanguageToolCombobox);
     mLanguageToolUpdateCombobox->setParentWidget(this);
 
     auto refreshButton = new QToolButton(this);
-    refreshButton->setObjectName(QStringLiteral("refreshbutton"));
-    refreshButton->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+    refreshButton->setObjectName(u"refreshbutton"_s);
+    refreshButton->setIcon(QIcon::fromTheme(u"view-refresh"_s));
     refreshButton->setToolTip(i18nc("@info:tooltip", "Refresh"));
     if (!LanguageToolManager::self()->allowToGetListOfLanguages()) {
         refreshButton->setVisible(false);
@@ -92,7 +94,7 @@ LanguageToolConfigWidget::~LanguageToolConfigWidget()
 void LanguageToolConfigWidget::slotResetValue()
 {
     mUseLocalInstance->setChecked(false);
-    mInstancePath->setText(QStringLiteral("https://api.languagetoolplus.com/v2"));
+    mInstancePath->setText(u"https://api.languagetoolplus.com/v2"_s);
     updateWidgets(false);
 }
 

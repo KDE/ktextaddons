@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectionlineedit.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QKeyEvent>
 #include <QTextCursor>
 #include <TextAutoCorrectionCore/AutoCorrection>
@@ -77,7 +79,7 @@ void AutoCorrectionLineEdit::keyPressEvent(QKeyEvent *e)
                 cur.setPosition(position);
                 if (e->key() == Qt::Key_Space) {
                     if (addSpace) {
-                        cur.insertText(QStringLiteral(" "));
+                        cur.insertText(u" "_s);
                         setTextCursor(cur);
                     }
                     return;

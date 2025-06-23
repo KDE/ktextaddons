@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratetextinstancecombobox.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -18,15 +20,15 @@ TextAutoGenerateAddInstanceWidget::TextAutoGenerateAddInstanceWidget(TextAutoGen
     , mNameLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mNameLineEdit->setObjectName(QStringLiteral("mNameLineEdit"));
+    mNameLineEdit->setObjectName(u"mNameLineEdit"_s);
     mNameLineEdit->setClearButtonEnabled(true);
     mainLayout->addRow(i18nc("@label:textbox", "Name:"), mNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mNameLineEdit);
 
-    mInstanceComboBox->setObjectName(QStringLiteral("mInstanceComboBox"));
+    mInstanceComboBox->setObjectName(u"mInstanceComboBox"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Select a Type of Instance:"), mInstanceComboBox);
     connect(mNameLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
         Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty());

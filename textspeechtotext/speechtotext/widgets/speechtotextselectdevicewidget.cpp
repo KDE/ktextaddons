@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextselectdevicewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -25,15 +27,15 @@ SpeechToTextSelectDeviceWidget::SpeechToTextSelectDeviceWidget(QWidget *parent)
     , mDeviceComboBox(new QComboBox(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     auto label = new QLabel(i18nc("@label:textbox", "Input:"), this);
-    label->setObjectName(QStringLiteral("label"));
+    label->setObjectName(u"label"_s);
     label->setTextFormat(Qt::PlainText);
     mainLayout->addWidget(label);
 
-    mDeviceComboBox->setObjectName(QStringLiteral("mDeviceComboBox"));
+    mDeviceComboBox->setObjectName(u"mDeviceComboBox"_s);
     mainLayout->addWidget(mDeviceComboBox);
     initializeInput();
 }

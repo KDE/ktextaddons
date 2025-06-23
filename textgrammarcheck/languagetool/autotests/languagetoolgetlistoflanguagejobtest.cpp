@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolgetlistoflanguagejobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetool/languagetoolgetlistoflanguagejob.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(LanguageToolGetListOfLanguageJobTest)
@@ -26,7 +28,7 @@ void LanguageToolGetListOfLanguageJobTest::shouldBeAbleToStart()
 {
     TextGrammarCheck::LanguageToolGetListOfLanguageJob job;
     QVERIFY(!job.canStart());
-    job.setUrl(QStringLiteral("foo"));
+    job.setUrl(u"foo"_s);
     QVERIFY(!job.canStart());
     QNetworkAccessManager network;
     job.setNetworkAccessManager(&network);

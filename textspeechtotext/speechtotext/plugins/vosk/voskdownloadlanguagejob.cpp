@@ -5,6 +5,8 @@
 */
 
 #include "voskdownloadlanguagejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "generateinstalledlanguageinfojob.h"
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
@@ -94,8 +96,8 @@ void VoskDownloadLanguageJob::generateInstalledLanguageInfo()
 {
     auto generateInstalledLanguageJob = new GenerateInstalledLanguageInfoJob(this);
     GenerateInstalledLanguageInfoJob::LanguageInfo info;
-    info.pathToStore = VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + mInfo.name;
-    info.info.absoluteLanguageModelPath = VoskEngineUtils::storageLanguagePath() + QLatin1Char('/') + mInfo.name;
+    info.pathToStore = VoskEngineUtils::storageLanguagePath() + u'/' + mInfo.name;
+    info.info.absoluteLanguageModelPath = VoskEngineUtils::storageLanguagePath() + u'/' + mInfo.name;
     info.info.name = mInfo.name;
     info.info.url = mInfo.url.toString();
     info.info.versionStr = mInfo.version;

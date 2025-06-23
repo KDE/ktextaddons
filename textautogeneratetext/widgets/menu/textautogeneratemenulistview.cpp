@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratemenulistview.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratemenulistviewdelegate.h"
 #include "textautogeneratemenumodel.h"
@@ -38,7 +39,7 @@ QList<TextAutoGenerateMenuTextInfo> TextAutoGenerateMenuListView::textInfos() co
 void TextAutoGenerateMenuListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
-    auto addAction = new QAction(QIcon::fromTheme(QStringLiteral("list-add")), i18nc("@action", "Add…"), &menu);
+    auto addAction = new QAction(QIcon::fromTheme(u"list-add"_s), i18nc("@action", "Add…"), &menu);
     connect(addAction, &QAction::triggered, this, [this]() {
         TextAutoGenerateMenuTextInfo info;
         info.setRequestText(i18n("Ask to AI"));
@@ -47,14 +48,14 @@ void TextAutoGenerateMenuListView::contextMenuEvent(QContextMenuEvent *event)
     menu.addAction(addAction);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
-        auto editAction = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
+        auto editAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
         connect(editAction, &QAction::triggered, this, [index, this]() {
             edit(index);
         });
         menu.addAction(editAction);
 
         menu.addSeparator();
-        auto removeAction = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
+        auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove…"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
             if (KMessageBox::warningTwoActions(this,
                                                i18n("Do you want to remove it?"),

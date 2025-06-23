@@ -5,6 +5,8 @@
 */
 
 #include "selectspecialchardialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KCharSelect>
 #include <KConfigGroup>
 #include <KLocalizedString>

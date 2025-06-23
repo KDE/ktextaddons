@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurelistswidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/widgets/translatorconfigurecombowidget.h"
 #include "translator/widgets/translatorconfigurelanguagelistwidget.h"
 #include "translator/widgets/translatorconfigurelistswidget.h"
@@ -22,16 +24,16 @@ TranslatorConfigureListsWidgetTest::TranslatorConfigureListsWidgetTest(QObject *
 void TranslatorConfigureListsWidgetTest::shouldHaveDefaultValues()
 {
     TextTranslator::TranslatorConfigureListsWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mEngineConfigureComboWidget = w.findChild<TextTranslator::TranslatorConfigureComboWidget *>(QStringLiteral("mEngineConfigureComboWidget"));
+    auto mEngineConfigureComboWidget = w.findChild<TextTranslator::TranslatorConfigureComboWidget *>(u"mEngineConfigureComboWidget"_s);
     QVERIFY(mEngineConfigureComboWidget);
 
-    auto mFromLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mFromLanguageWidget"));
+    auto mFromLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(u"mFromLanguageWidget"_s);
     QVERIFY(mFromLanguageWidget);
 
-    auto mToLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(QStringLiteral("mToLanguageWidget"));
+    auto mToLanguageWidget = w.findChild<TextTranslator::TranslatorConfigureLanguageListWidget *>(u"mToLanguageWidget"_s);
     QVERIFY(mToLanguageWidget);
 }
 

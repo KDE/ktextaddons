@@ -5,6 +5,8 @@
 */
 
 #include "speechtotexttoolbuttonwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textspeechtotext/speechtotextmanager.h"
 #include <QHBoxLayout>
 #include <QToolButton>
@@ -15,10 +17,10 @@ SpeechToTextToolButtonWidget::SpeechToTextToolButtonWidget(QWidget *parent)
     , mToolButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mToolButton->setObjectName(QStringLiteral("mToolButton"));
+    mToolButton->setObjectName(u"mToolButton"_s);
     mainLayout->addWidget(mToolButton);
     connect(mToolButton, &QToolButton::clicked, this, &SpeechToTextToolButtonWidget::slotButtonClicked);
 }

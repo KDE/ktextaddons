@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratequickaskwidget.h"
 #include <KConfigGroup>
@@ -28,13 +30,13 @@ TextAutoGenerateQuickAskDialog::TextAutoGenerateQuickAskDialog(TextAutoGenerateT
     setWindowTitle(i18nc("@title:window", "Quick Ask"));
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mTextAutoGenerateQuickAskWidget->setObjectName(QStringLiteral("mTextAutoGenerateQuickAskWidget"));
+    mTextAutoGenerateQuickAskWidget->setObjectName(u"mTextAutoGenerateQuickAskWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateQuickAskWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    button->setObjectName(QStringLiteral("button"));
+    button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateQuickAskDialog::reject);
     readConfig();

@@ -5,6 +5,8 @@
 */
 
 #include "grammarresulttextedit.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammarresultutil.h"
 #include "textgrammarcheck_debug.h"
 #include <KStatefulBrush>
@@ -107,10 +109,10 @@ void GrammarResultTextEdit::contextMenuEvent(QContextMenuEvent *event)
             }
         }
         popup->addSeparator();
-        QAction *checkAgainAct = popup->addAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18n("Check Again"));
+        QAction *checkAgainAct = popup->addAction(QIcon::fromTheme(u"view-refresh"_s), i18n("Check Again"));
         connect(checkAgainAct, &QAction::triggered, this, &GrammarResultTextEdit::checkAgain);
         popup->addSeparator();
-        QAction *configureAct = popup->addAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18n("Configure…"));
+        QAction *configureAct = popup->addAction(QIcon::fromTheme(u"settings-configure"_s), i18n("Configure…"));
         connect(configureAct, &QAction::triggered, this, &GrammarResultTextEdit::configure);
         popup->addSeparator();
         QAction *closeAct = KStandardActions::close(this, &GrammarResultTextEdit::closeChecker, this);

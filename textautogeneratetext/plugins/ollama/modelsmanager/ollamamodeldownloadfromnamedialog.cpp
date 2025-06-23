@@ -5,6 +5,8 @@
 */
 
 #include "ollamamodeldownloadfromnamedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamodeldownloadfromnamewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
@@ -16,12 +18,12 @@ OllamaModelDownloadFromNameDialog::OllamaModelDownloadFromNameDialog(QWidget *pa
 {
     setWindowTitle(i18nc("@title:window", "Download Model"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
-    mOllamaModelDownloadFromNameWidget->setObjectName(QStringLiteral("mOllamaModelDownloadFromNameWidget"));
+    mainLayout->setObjectName(u"mainLayout"_s);
+    mOllamaModelDownloadFromNameWidget->setObjectName(u"mOllamaModelDownloadFromNameWidget"_s);
     mainLayout->addWidget(mOllamaModelDownloadFromNameWidget);
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    box->setObjectName(QStringLiteral("box"));
+    box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &OllamaModelDownloadFromNameDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &OllamaModelDownloadFromNameDialog::reject);

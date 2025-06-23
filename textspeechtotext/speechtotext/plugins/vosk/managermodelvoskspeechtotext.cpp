@@ -5,6 +5,8 @@
 */
 
 #include "managermodelvoskspeechtotext.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libvoskspeechtotext_debug.h"
 #include "speechtotext/speechtotextengineaccessmanager.h"
 #include "voskengineutils.h"

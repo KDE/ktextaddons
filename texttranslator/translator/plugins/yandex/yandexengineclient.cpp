@@ -5,6 +5,8 @@
 */
 
 #include "yandexengineclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/misc/translatorutil.h"
 #include "yandexengineplugin.h"
 #include <KLocalizedString>
@@ -18,7 +20,7 @@ YandexEngineClient::~YandexEngineClient() = default;
 
 QString YandexEngineClient::name() const
 {
-    return QStringLiteral("yandex");
+    return u"yandex"_s;
 }
 
 QString YandexEngineClient::translatedName() const

@@ -5,6 +5,8 @@
 */
 
 #include "texttospeech.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeechutil.h"
 
 #include <KConfig>

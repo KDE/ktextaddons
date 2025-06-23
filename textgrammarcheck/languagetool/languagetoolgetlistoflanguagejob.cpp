@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolgetlistoflanguagejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textgrammarcheck_debug.h"
 
 #include <QNetworkAccessManager>
@@ -60,7 +62,7 @@ void LanguageToolGetListOfLanguageJob::slotCheckListOfLanguagesFinished()
 
 void LanguageToolGetListOfLanguageJob::addRequestAttribute(QNetworkRequest &request) const
 {
-    request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, u"application/x-www-form-urlencoded"_s);
 }
 
 QString LanguageToolGetListOfLanguageJob::listOfLanguagePath() const

@@ -20,12 +20,11 @@ void TextAutoGenerateSearchWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateSearchWidget w(nullptr);
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mTextAutoGenerateSearchListView =
-        w.findChild<TextAutoGenerateText::TextAutoGenerateSearchListView *>(QStringLiteral("mTextAutoGenerateSearchListView"));
+    auto mTextAutoGenerateSearchListView = w.findChild<TextAutoGenerateText::TextAutoGenerateSearchListView *>(u"mTextAutoGenerateSearchListView"_s);
     QVERIFY(mTextAutoGenerateSearchListView);
 
     auto mSearchLineEdit = w.findChild<QLineEdit *>("mSearchLineEdit"_L1);

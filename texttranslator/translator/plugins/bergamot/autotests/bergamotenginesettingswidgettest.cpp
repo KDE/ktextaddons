@@ -5,6 +5,8 @@
 */
 
 #include "bergamotenginesettingswidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotenginesettingswidget.h"
 #include <QComboBox>
 #include <QGroupBox>
@@ -19,18 +21,18 @@ BergamotEngineSettingsWidgetTest::BergamotEngineSettingsWidgetTest(QObject *pare
 void BergamotEngineSettingsWidgetTest::shouldHaveDefaultValues()
 {
     BergamotEngineSettingsWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto resourceBox = w.findChild<QGroupBox *>(QStringLiteral("resourceBox"));
+    auto resourceBox = w.findChild<QGroupBox *>(u"resourceBox"_s);
     QVERIFY(resourceBox);
     QVERIFY(!resourceBox->title().isEmpty());
 
-    auto mNumberThreads = w.findChild<QComboBox *>(QStringLiteral("mNumberThreads"));
+    auto mNumberThreads = w.findChild<QComboBox *>(u"mNumberThreads"_s);
     QVERIFY(mNumberThreads);
 
-    auto mMemoryByThreads = w.findChild<QComboBox *>(QStringLiteral("mMemoryByThreads"));
+    auto mMemoryByThreads = w.findChild<QComboBox *>(u"mMemoryByThreads"_s);
     QVERIFY(mMemoryByThreads);
 }
 

@@ -21,17 +21,17 @@ TextAutoGenerateSearchWidget::TextAutoGenerateSearchWidget(TextAutoGenerateText:
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
 
     mSearchLineEdit->setObjectName("mSearchLineEdit"_L1);
     mSearchLineEdit->setClearButtonEnabled(true);
-    mSearchLineEdit->addAction(QIcon::fromTheme(QStringLiteral("view-filter")), QLineEdit::LeadingPosition);
+    mSearchLineEdit->addAction(QIcon::fromTheme(u"view-filter"_s), QLineEdit::LeadingPosition);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
-    mTextAutoGenerateSearchListView->setObjectName(QStringLiteral("mTextAutoGenerateSearchListView"));
+    mTextAutoGenerateSearchListView->setObjectName(u"mTextAutoGenerateSearchListView"_s);
     mainLayout->addWidget(mTextAutoGenerateSearchListView);
 
     connect(mSearchLineEdit, &TextAutoGenerateSearchLineEdit::searchText, this, &TextAutoGenerateSearchWidget::slotSearchTextChanged);

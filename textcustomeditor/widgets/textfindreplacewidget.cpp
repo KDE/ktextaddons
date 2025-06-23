@@ -37,9 +37,9 @@ TextReplaceWidget::TextReplaceWidget(QWidget *parent)
     mReplace->setClearButtonEnabled(true);
     lay->addWidget(mReplace);
 
-    mReplace->setObjectName(QStringLiteral("mReplace"));
-    mReplaceBtn->setObjectName(QStringLiteral("mReplaceBtn"));
-    mReplaceAllBtn->setObjectName(QStringLiteral("mReplaceAllBtn"));
+    mReplace->setObjectName(u"mReplace"_s);
+    mReplaceBtn->setObjectName(u"mReplaceBtn"_s);
+    mReplaceAllBtn->setObjectName(u"mReplaceAllBtn"_s);
 
     connect(mReplaceBtn, &QPushButton::clicked, this, &TextReplaceWidget::replaceText);
     lay->addWidget(mReplaceBtn);
@@ -64,8 +64,8 @@ void TextReplaceWidget::slotSearchStringEmpty(bool isEmpty)
 TextFindWidget::TextFindWidget(QWidget *parent)
     : QWidget(parent)
     , mSearch(new QLineEdit(this))
-    , mFindPrevBtn(new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this))
-    , mFindNextBtn(new QPushButton(QIcon::fromTheme(QStringLiteral("go-down-search")), i18nc("Find and go to the next search match", "Next"), this))
+    , mFindPrevBtn(new QPushButton(QIcon::fromTheme(u"go-up-search"_s), i18nc("Find and go to the previous search match", "Previous"), this))
+    , mFindNextBtn(new QPushButton(QIcon::fromTheme(u"go-down-search"_s), i18nc("Find and go to the next search match", "Next"), this))
 {
     auto lay = new QHBoxLayout(this);
     const int marg1 = lay->contentsMargins().left();
@@ -77,24 +77,24 @@ TextFindWidget::TextFindWidget(QWidget *parent)
 
     mSearch->setToolTip(i18nc("@info:tooltip", "Text to search for"));
     mSearch->setClearButtonEnabled(true);
-    mSearch->setObjectName(QStringLiteral("mSearch"));
+    mSearch->setObjectName(u"mSearch"_s);
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
     mFindNextBtn->setToolTip(i18nc("@info:tooltip", "Jump to next match"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
-    mFindNextBtn->setObjectName(QStringLiteral("mFindNextBtn"));
+    mFindNextBtn->setObjectName(u"mFindNextBtn"_s);
 
     mFindPrevBtn->setToolTip(i18nc("@info:tooltip", "Jump to previous match"));
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
-    mFindPrevBtn->setObjectName(QStringLiteral("mFindPrevBtn"));
+    mFindPrevBtn->setObjectName(u"mFindPrevBtn"_s);
 
     auto optionsBtn = new QPushButton(this);
     optionsBtn->setText(i18n("Options"));
     optionsBtn->setToolTip(i18nc("@info:tooltip", "Modify search behavior"));
-    optionsBtn->setObjectName(QStringLiteral("optionsBtn"));
+    optionsBtn->setObjectName(u"optionsBtn"_s);
     auto optionsMenu = new QMenu(optionsBtn);
     mCaseSensitiveAct = optionsMenu->addAction(i18n("Case sensitive"));
     mCaseSensitiveAct->setCheckable(true);
@@ -146,7 +146,7 @@ void TextFindWidget::setFoundMatch(bool match)
 
         KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
 
-        styleSheet = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
+        styleSheet = u"QLineEdit{ background-color:%1 }"_s.arg(bgBrush.brush(mSearch->palette()).color().name());
     }
 
     mSearch->setStyleSheet(styleSheet);

@@ -5,6 +5,8 @@
 */
 
 #include "voskspeechtotextinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "voskspeechtotextinfo.h"
 #include <QJsonDocument>
 #include <QTest>
@@ -33,18 +35,18 @@ void VoskSpeechToTextInfoTest::shouldParseJson_data()
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<VoskSpeechToTextInfo>("result");
     QTest::addColumn<bool>("isValid");
-    QTest::newRow("empty") << QStringLiteral("empty") << VoskSpeechToTextInfo() << false;
+    QTest::newRow("empty") << u"empty"_s << VoskSpeechToTextInfo() << false;
     VoskSpeechToTextInfo info;
-    info.setLangText(QStringLiteral("Ukrainian"));
-    info.setIdentifier(QStringLiteral("ua"));
-    info.setMd5(QStringLiteral("138fb6e39f858619527030f064c0a8fc"));
+    info.setLangText(u"Ukrainian"_s);
+    info.setIdentifier(u"ua"_s);
+    info.setMd5(u"138fb6e39f858619527030f064c0a8fc"_s);
     info.setObsolete(false);
     info.setSize(371048965);
-    info.setName(QStringLiteral("vosk-model-uk-v3"));
-    info.setType(QStringLiteral("big"));
-    info.setUrl(QStringLiteral("https://alphacephei.com/vosk/models/vosk-model-uk-v3.zip"));
-    info.setVersion(QStringLiteral("v3"));
-    QTest::newRow("test1") << QStringLiteral("test1") << info << true;
+    info.setName(u"vosk-model-uk-v3"_s);
+    info.setType(u"big"_s);
+    info.setUrl(u"https://alphacephei.com/vosk/models/vosk-model-uk-v3.zip"_s);
+    info.setVersion(u"v3"_s);
+    QTest::newRow("test1") << u"test1"_s << info << true;
 }
 
 void VoskSpeechToTextInfoTest::shouldParseJson()
@@ -52,7 +54,7 @@ void VoskSpeechToTextInfoTest::shouldParseJson()
     QFETCH(QString, fileName);
     QFETCH(VoskSpeechToTextInfo, result);
     QFETCH(bool, isValid);
-    const QString originalJsonFile = QLatin1String(VOSK_DATA_DIR) + QStringLiteral("/info/") + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1String(VOSK_DATA_DIR) + u"/info/"_s + fileName + u".json"_s;
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

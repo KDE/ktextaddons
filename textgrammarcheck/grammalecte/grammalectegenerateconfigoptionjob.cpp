@@ -24,7 +24,7 @@ void GrammalecteGenerateConfigOptionJob::start()
     if (canStart()) {
         mProcess = new QProcess(this);
         mProcess->setProgram(mPythonPath);
-        mProcess->setArguments(QStringList() << mGrammarlecteCliPath << QStringLiteral("-lo"));
+        mProcess->setArguments(QStringList() << mGrammarlecteCliPath << u"-lo"_s);
         connect(mProcess, &QProcess::finished, this, &GrammalecteGenerateConfigOptionJob::slotFinished);
         connect(mProcess, &QProcess::errorOccurred, this, &GrammalecteGenerateConfigOptionJob::receivedError);
         connect(mProcess, &QProcess::readyReadStandardError, this, &GrammalecteGenerateConfigOptionJob::receivedStdErr);
@@ -99,8 +99,8 @@ void GrammalecteGenerateConfigOptionJob::slotFinished(int exitCode, QProcess::Ex
 QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOptionJob::parseResult() const
 {
     QVector<GrammalecteGenerateConfigOptionJob::Option> opts;
-    static const QRegularExpression reg(QStringLiteral("^([a-zA-Z0-9]+):\\s*(True|False)\\s*(.*)$"));
-    const QList<QStringView> lst = QStringView(mResult).split(QLatin1Char('\n'));
+    static const QRegularExpression reg(u"^([a-zA-Z0-9]+):\\s*(True|False)\\s*(.*)$"_s);
+    const QList<QStringView> lst = QStringView(mResult).split(u'\n');
     for (const QStringView &str : lst) {
         const QRegularExpressionMatch match = reg.matchView(str);
         if (match.hasMatch()) {
@@ -108,7 +108,7 @@ QVector<GrammalecteGenerateConfigOptionJob::Option> GrammalecteGenerateConfigOpt
             const QString value = match.captured(2);
             const QString description = match.captured(3);
             if (!optionName.isEmpty() && !description.isEmpty() && !value.isEmpty()) {
-                if (description == QLatin1Char('?')) {
+                if (description == u'?') {
                     continue;
                 }
                 GrammalecteGenerateConfigOptionJob::Option opt;

@@ -5,6 +5,8 @@
 */
 
 #include "bingengineclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bingengineplugin.h"
 #include "translator/misc/translatorutil.h"
 #include <KLocalizedString>
@@ -18,7 +20,7 @@ BingEngineClient::~BingEngineClient() = default;
 
 QString BingEngineClient::name() const
 {
-    return QStringLiteral("bing");
+    return u"bing"_s;
 }
 
 QString BingEngineClient::translatedName() const

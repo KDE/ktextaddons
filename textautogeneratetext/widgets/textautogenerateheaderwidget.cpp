@@ -38,14 +38,14 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mSearch->setObjectName("mSearch"_L1);
     mSearch->setToolTip(i18nc("@info:tooltip", "Search…"));
     mSearch->setAutoRaise(true);
-    mSearch->setIcon(QIcon::fromTheme(QStringLiteral("search")));
+    mSearch->setIcon(QIcon::fromTheme(u"search"_s));
     mainLayout->addWidget(mSearch);
     connect(mSearch, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::searchText);
 
     mNewChat->setObjectName("mNewChat"_L1);
     mNewChat->setToolTip(i18nc("@info:tooltip", "New Chat"));
     mNewChat->setAutoRaise(true);
-    mNewChat->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    mNewChat->setIcon(QIcon::fromTheme(u"document-new"_s));
     mainLayout->addWidget(mNewChat);
     connect(mNewChat, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::addNewChat);
 
@@ -53,7 +53,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mFavorite->setToolTip(i18nc("@info:tooltip", "Favorite"));
     mFavorite->setAutoRaise(true);
     mFavorite->setCheckable(true);
-    mFavorite->setIcon(QIcon::fromTheme(QStringLiteral("favorite")));
+    mFavorite->setIcon(QIcon::fromTheme(u"favorite"_s));
     mFavorite->setEnabled(false);
     mFavorite->setChecked(false);
     mainLayout->addWidget(mFavorite);

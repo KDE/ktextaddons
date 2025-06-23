@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratemenuconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratemenulistview.h"
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
@@ -12,10 +14,10 @@ TextAutoGenerateMenuConfigureWidget::TextAutoGenerateMenuConfigureWidget(QWidget
     , mListView(new TextAutoGenerateMenuListView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
 
-    mListView->setObjectName(QStringLiteral("mListView"));
+    mListView->setObjectName(u"mListView"_s);
     mainLayout->addWidget(mListView);
 }
 

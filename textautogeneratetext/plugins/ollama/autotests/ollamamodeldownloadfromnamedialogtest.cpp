@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadfromnamedialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodeldownloadfromnamedialog.h"
 #include "modelsmanager/ollamamodeldownloadfromnamewidget.h"
 #include <QDialogButtonBox>
@@ -20,13 +22,13 @@ void OllamaModelDownloadFromNameDialogTest::shouldHaveDefaultValues()
 {
     OllamaModelDownloadFromNameDialog w;
     QVERIFY(!w.windowTitle().isEmpty());
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mOllamaModelDownloadFromNameWidget = w.findChild<OllamaModelDownloadFromNameWidget *>(QStringLiteral("mOllamaModelDownloadFromNameWidget"));
+    auto mOllamaModelDownloadFromNameWidget = w.findChild<OllamaModelDownloadFromNameWidget *>(u"mOllamaModelDownloadFromNameWidget"_s);
     QVERIFY(mOllamaModelDownloadFromNameWidget);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"box"_s);
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }

@@ -16,7 +16,7 @@ GenericNetworkAvailableModelWidget::GenericNetworkAvailableModelWidget(GenericNe
     mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
 
-    mGenericNetworkModelAvailableWidget->setObjectName(QStringLiteral("mGenericNetworkModelAvailableWidget"));
+    mGenericNetworkModelAvailableWidget->setObjectName(u"mGenericNetworkModelAvailableWidget"_s);
     mainLayout->addWidget(mGenericNetworkModelAvailableWidget);
 }
 

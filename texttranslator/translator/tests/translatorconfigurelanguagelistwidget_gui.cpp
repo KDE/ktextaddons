@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurelanguagelistwidget_gui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/misc/translatorutil.h"
 #include "translator/widgets/translatorconfigurelanguagelistwidget.h"
 
@@ -20,7 +22,7 @@ TranslatorConfigureLanguageListWidget_gui::TranslatorConfigureLanguageListWidget
 {
     auto mainLayout = new QVBoxLayout(this);
 
-    auto w = new TextTranslator::TranslatorConfigureLanguageListWidget(QStringLiteral("from"), this);
+    auto w = new TextTranslator::TranslatorConfigureLanguageListWidget(u"from"_s, this);
     mainLayout->addWidget(w);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);

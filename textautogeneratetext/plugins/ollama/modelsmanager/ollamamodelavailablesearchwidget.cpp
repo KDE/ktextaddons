@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailablesearchwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamodelsearchlineedit.h"
 #include "ollamamodelsinfoscategoriescombobox.h"
 #include <KLocalizedString>
@@ -18,22 +20,22 @@ OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *pare
     , mAddModelButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
-    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     mainLayout->addWidget(mSearchLineEdit);
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &OllamaModelAvailableSearchWidget::searchText);
 
-    mCategoriesComboBox->setObjectName(QStringLiteral("mCategoriesComboBox"));
+    mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);
     mainLayout->addWidget(mCategoriesComboBox);
     connect(mCategoriesComboBox, &OllamaModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
         Q_EMIT categoriesChanged(mCategoriesComboBox->categories());
     });
-    mAddModelButton->setObjectName(QStringLiteral("mAddModelButton"));
+    mAddModelButton->setObjectName(u"mAddModelButton"_s);
     mainLayout->addWidget(mAddModelButton);
-    mAddModelButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAddModelButton->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAddModelButton->setToolTip(i18nc("@info:tooltip", "Add Model"));
     connect(mAddModelButton, &QToolButton::clicked, this, &OllamaModelAvailableSearchWidget::addModel);
 }

@@ -5,6 +5,7 @@
 */
 
 #include "textgotolinewidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QIcon>
@@ -34,10 +35,10 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     auto hbox = new QHBoxLayout(this);
     hbox->setContentsMargins(2, 2, 2, 2);
     auto closeBtn = new QToolButton(this);
-    closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
+    closeBtn->setIcon(QIcon::fromTheme(u"dialog-close"_s));
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
-    closeBtn->setObjectName(QStringLiteral("closebutton"));
+    closeBtn->setObjectName(u"closebutton"_s);
 #ifndef QT_NO_ACCESSIBILITY
     closeBtn->setAccessibleName(i18n("Close"));
 #endif
@@ -51,13 +52,13 @@ TextGoToLineWidget::TextGoToLineWidget(QWidget *parent)
     hbox->addWidget(lab);
     d->mSpinbox = new QSpinBox(this);
     d->mSpinbox->setMinimum(1);
-    d->mSpinbox->setObjectName(QStringLiteral("line"));
+    d->mSpinbox->setObjectName(u"line"_s);
     connect(d->mSpinbox, &QSpinBox::editingFinished, this, &TextGoToLineWidget::slotGoToLine);
     hbox->addWidget(d->mSpinbox);
-    d->mGoToLine = new QPushButton(QIcon::fromTheme(QStringLiteral("go-jump")), i18n("Go"));
+    d->mGoToLine = new QPushButton(QIcon::fromTheme(u"go-jump"_s), i18n("Go"));
     d->mGoToLine->setFlat(true);
     connect(d->mGoToLine, &QPushButton::clicked, this, &TextGoToLineWidget::slotGoToLine);
-    d->mGoToLine->setObjectName(QStringLiteral("gotoline"));
+    d->mGoToLine->setObjectName(u"gotoline"_s);
     hbox->addWidget(d->mGoToLine);
     hbox->addStretch();
     d->mSpinbox->setFocus();

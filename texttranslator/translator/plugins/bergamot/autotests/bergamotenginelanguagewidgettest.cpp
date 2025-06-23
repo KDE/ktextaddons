@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "bergamotenginelanguagewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotenginelanguagewidget.h"
 #include <QTest>
 #include <QVBoxLayout>
@@ -16,7 +18,7 @@ BergamotEngineLanguageWidgetTest::BergamotEngineLanguageWidgetTest(QObject *pare
 void BergamotEngineLanguageWidgetTest::shouldHaveDefaultValues()
 {
     BergamotEngineLanguageWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 

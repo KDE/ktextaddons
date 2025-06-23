@@ -5,6 +5,8 @@
 */
 
 #include "begamotenginedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotenginewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -23,13 +25,13 @@ BegamotEngineDialog::BegamotEngineDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Bergamot Plugin Settings"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mBergamotEngineWidget->setObjectName(QStringLiteral("mBergamotEngineWidget"));
+    mBergamotEngineWidget->setObjectName(u"mBergamotEngineWidget"_s);
     mainLayout->addWidget(mBergamotEngineWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(u"buttonBox"_s);
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &BegamotEngineDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &BegamotEngineDialog::reject);

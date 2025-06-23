@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratestackwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "common/textautogeneratenotworkingwidget.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextinstancesmanager.h"
@@ -26,17 +28,17 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     mainLayout->addWidget(mStackedWidget);
-    mTextAutoGenerateNotWorkingWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotWorkingWidget"));
+    mTextAutoGenerateNotWorkingWidget->setObjectName(u"mTextAutoGenerateNotWorkingWidget"_s);
     mStackedWidget->addWidget(mTextAutoGenerateNotWorkingWidget);
 
-    mTextAutoGenerateNotInstanceFoundWidget->setObjectName(QStringLiteral("mTextAutoGenerateNotInstanceFoundWidget"));
+    mTextAutoGenerateNotInstanceFoundWidget->setObjectName(u"mTextAutoGenerateNotInstanceFoundWidget"_s);
     mStackedWidget->addWidget(mTextAutoGenerateNotInstanceFoundWidget);
 
-    mTextAutoGenerateWidget->setObjectName(QStringLiteral("mTextAutoGenerateWidget"));
+    mTextAutoGenerateWidget->setObjectName(u"mTextAutoGenerateWidget"_s);
     mStackedWidget->addWidget(mTextAutoGenerateWidget);
     mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
 

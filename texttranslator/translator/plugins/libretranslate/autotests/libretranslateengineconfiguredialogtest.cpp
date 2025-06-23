@@ -5,6 +5,8 @@
 */
 
 #include "libretranslateengineconfiguredialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../libretranslateengineconfiguredialog.h"
 #include "../libretranslateengineconfigurewidget.h"
 #include <QDialogButtonBox>
@@ -20,13 +22,13 @@ void LibreTranslateEngineConfigureDialogTest::shouldHaveDefaultValues()
 {
     LibreTranslateEngineConfigureDialog d;
     QVERIFY(!d.windowTitle().isEmpty());
-    auto mConfigureWidget = d.findChild<LibreTranslateEngineConfigureWidget *>(QStringLiteral("mConfigureWidget"));
+    auto mConfigureWidget = d.findChild<LibreTranslateEngineConfigureWidget *>(u"mConfigureWidget"_s);
     QVERIFY(mConfigureWidget);
 
-    auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = d.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 

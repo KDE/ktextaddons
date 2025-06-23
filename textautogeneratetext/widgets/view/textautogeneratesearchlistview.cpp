@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratesearchlistview.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratesearchmessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratesearchmessageutils.h"
@@ -35,8 +37,8 @@ void TextAutoGenerateSearchListView::setSearchMessages(const QList<TextAutoGener
 void TextAutoGenerateSearchListView::slotGoToMessage(const QString &link)
 {
     QString path = link;
-    path = path.remove(TextAutoGenerateSearchMessageUtils::scheme() + QStringLiteral("://"));
-    const QStringList pathList = path.split(QLatin1Char(':'));
+    path = path.remove(TextAutoGenerateSearchMessageUtils::scheme() + u"://"_s);
+    const QStringList pathList = path.split(u':');
     if (pathList.count() == 2) {
         mManager->goToMessage(pathList.at(0).toLatin1(), pathList.at(1).toLatin1());
     }

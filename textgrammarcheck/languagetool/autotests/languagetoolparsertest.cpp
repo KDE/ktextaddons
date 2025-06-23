@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(LanguageToolParserTest)
 LanguageToolParserTest::LanguageToolParserTest(QObject *parent)
     : QObject(parent)
@@ -20,16 +21,16 @@ void LanguageToolParserTest::shouldParseJson_data()
 {
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("numberOfElement");
-    QTest::newRow("noerror") << QStringLiteral("noerror") << 0;
-    QTest::newRow("test1") << QStringLiteral("test1") << 1;
-    QTest::newRow("test2") << QStringLiteral("test2") << 3;
+    QTest::newRow("noerror") << u"noerror"_s << 0;
+    QTest::newRow("test1") << u"test1"_s << 1;
+    QTest::newRow("test2") << u"test2"_s << 3;
 }
 
 void LanguageToolParserTest::shouldParseJson()
 {
     QFETCH(QString, fileName);
     QFETCH(int, numberOfElement);
-    const QString originalJsonFile = QLatin1StringView(LANGUAGETOOL_DATA_DIR) + QLatin1Char('/') + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1StringView(LANGUAGETOOL_DATA_DIR) + u'/' + fileName + u".json"_s;
     QFile f(originalJsonFile);
     QVERIFY(f.open(QIODevice::ReadOnly));
     const QByteArray content = f.readAll();

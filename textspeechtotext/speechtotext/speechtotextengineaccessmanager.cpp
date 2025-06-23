@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotextengineaccessmanager.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QNetworkAccessManager>
 

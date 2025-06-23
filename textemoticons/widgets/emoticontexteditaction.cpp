@@ -5,6 +5,8 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "emoticontexteditaction.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticontexteditselector.h"
 
 #include <KLocalizedString>
@@ -56,7 +58,7 @@ EmoticonTextEditAction::EmoticonTextEditAction(QObject *parent)
 {
     delete menu();
     setMenu(d->emoticonMenu);
-    setIcon(QIcon::fromTheme(QStringLiteral("face-smile")));
+    setIcon(QIcon::fromTheme(u"face-smile"_s));
     setPopupMode(QToolButton::InstantPopup);
     connect(d->selector, &EmoticonTextEditSelector::insertEmoji, this, &EmoticonTextEditAction::insertEmoticon);
 }

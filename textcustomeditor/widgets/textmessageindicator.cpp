@@ -5,6 +5,7 @@
 */
 
 #include "textmessageindicator.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QAbstractScrollArea>
 #include <QApplication>
@@ -17,7 +18,7 @@ using namespace TextCustomEditor;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     : QWidget(parent)
 {
-    setObjectName(QStringLiteral("TextMessageIndicator"));
+    setObjectName(u"TextMessageIndicator"_s);
     setFocusPolicy(Qt::NoFocus);
     QPalette pal = palette();
     pal.setColor(QPalette::Active, QPalette::Window, QApplication::palette().highlight().color());
@@ -46,13 +47,13 @@ void TextMessageIndicator::display(const QString &message, const QString &detail
     if (icon != None) {
         switch (icon) {
         case Error:
-            mSymbol = QIcon::fromTheme(QStringLiteral("dialog-error")).pixmap(iconSize);
+            mSymbol = QIcon::fromTheme(u"dialog-error"_s).pixmap(iconSize);
             break;
         case Warning:
-            mSymbol = QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(iconSize);
+            mSymbol = QIcon::fromTheme(u"dialog-warning"_s).pixmap(iconSize);
             break;
         default:
-            mSymbol = QIcon::fromTheme(QStringLiteral("dialog-information")).pixmap(iconSize);
+            mSymbol = QIcon::fromTheme(u"dialog-information"_s).pixmap(iconSize);
             break;
         }
     }

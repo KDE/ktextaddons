@@ -5,35 +5,37 @@
 */
 
 #include "emoticonunicodeutils.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QList>
 using namespace TextEmoticonsCore;
 QString EmoticonUnicodeUtils::emojiFontName()
 {
 #ifdef Q_OS_WIN
-    return QStringLiteral("Segoe UI Emoji");
+    return u"Segoe UI Emoji"_s;
 #else
-    return QStringLiteral("NotoColorEmoji");
+    return u"NotoColorEmoji"_s;
 #endif
 }
 
 QString EmoticonUnicodeUtils::recentIdentifier()
 {
-    return QStringLiteral("recents");
+    return u"recents"_s;
 }
 
 QString EmoticonUnicodeUtils::customIdentifier()
 {
-    return QStringLiteral("customs");
+    return u"customs"_s;
 }
 
 QString EmoticonUnicodeUtils::recentName()
 {
-    return QStringLiteral("⌛️");
+    return u"⌛️"_s;
 }
 
 QString EmoticonUnicodeUtils::customName()
 {
-    return QStringLiteral("🖼️");
+    return u"🖼️"_s;
 }
 
 // input: codepoints in hex like 1f9d7-1f3fb-2640
@@ -42,7 +44,7 @@ QString EmoticonUnicodeUtils::escapeUnicodeEmoji(const QString &pString)
 {
     QString retString;
 
-    const QList<QStringView> parts = QStringView(pString).split(QLatin1Char('-'));
+    const QList<QStringView> parts = QStringView(pString).split(u'-');
     for (const QStringView &item : parts) {
         bool ok;
         const int part = item.toInt(&ok, 16);

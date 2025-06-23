@@ -5,6 +5,8 @@
 */
 
 #include "deeplengineconfigurewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../deeplengineconfigurewidget.h"
 #include <QCheckBox>
 #include <QFormLayout>
@@ -21,15 +23,15 @@ void DeeplEngineConfigureWidgetTest::shouldHaveDefaultValues()
     DeeplEngineConfigureWidget w;
     QVERIFY(!w.useFreeLicenceKey());
 
-    auto mainLayout = w.findChild<QFormLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QFormLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mUseFreeLicense = w.findChild<QCheckBox *>(QStringLiteral("mUseFreeLicense"));
+    auto mUseFreeLicense = w.findChild<QCheckBox *>(u"mUseFreeLicense"_s);
     QVERIFY(mUseFreeLicense);
     QVERIFY(!mUseFreeLicense->isChecked());
 
-    auto mApiKey = w.findChild<QLineEdit *>(QStringLiteral("mApiKey"));
+    auto mApiKey = w.findChild<QLineEdit *>(u"mApiKey"_s);
     QVERIFY(mApiKey);
     QVERIFY(mApiKey->isClearButtonEnabled());
 }

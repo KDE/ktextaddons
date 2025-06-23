@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/widgets/translatorconfigurecombowidget.h"
 #include "translator/widgets/translatorconfigurewidget.h"
 #include <QLabel>
@@ -20,14 +22,14 @@ void TranslatorConfigureWidgetTest::shouldHaveDefaultValues()
 {
     TextTranslator::TranslatorConfigureWidget w;
 
-    auto mEngineConfigureComboWidget = w.findChild<TextTranslator::TranslatorConfigureComboWidget *>(QStringLiteral("mEngineConfigureComboWidget"));
+    auto mEngineConfigureComboWidget = w.findChild<TextTranslator::TranslatorConfigureComboWidget *>(u"mEngineConfigureComboWidget"_s);
     QVERIFY(mEngineConfigureComboWidget);
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto label = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto label = w.findChild<QLabel *>(u"label"_s);
     QVERIFY(label);
     QVERIFY(!label->text().isEmpty());
 }

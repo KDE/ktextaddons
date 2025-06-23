@@ -26,7 +26,7 @@ public:
 void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
 {
     UnicodeEmoticonParser unicodeParser;
-    QFile file(QStringLiteral(":/emoji.json"));
+    QFile file(u":/emoji.json"_s);
     if (!file.open(QFile::ReadOnly)) {
         qCWarning(TEXTEMOTICONSCORE_LOG) << "Impossible to open file: " << file.errorString();
         return;

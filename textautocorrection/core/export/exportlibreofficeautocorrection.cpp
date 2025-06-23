@@ -13,7 +13,7 @@
 #include <QXmlStreamWriter>
 
 using namespace TextAutoCorrectionCore;
-
+using namespace Qt::Literals::StringLiterals;
 ExportLibreOfficeAutocorrection::ExportLibreOfficeAutocorrection() = default;
 
 ExportLibreOfficeAutocorrection::~ExportLibreOfficeAutocorrection()
@@ -28,8 +28,8 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language, const 
         writablePath.isEmpty() ? AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath() : writablePath;
     QDir().mkpath(libreOfficeWritableLocalAutoCorrectionPath);
     QString fixLangExtension = language;
-    fixLangExtension.replace(QLatin1Char('_'), QLatin1Char('-'));
-    const QString fname = fileName.isEmpty() ? libreOfficeWritableLocalAutoCorrectionPath + QStringLiteral("acor_%1.dat").arg(fixLangExtension) : fileName;
+    fixLangExtension.replace(u'_', u'-');
+    const QString fname = fileName.isEmpty() ? libreOfficeWritableLocalAutoCorrectionPath + u"acor_%1.dat"_s.arg(fixLangExtension) : fileName;
     // qDebug() << " fname " << fname;
     mZip = new KZip(fname);
     const bool result = mZip->open(QIODevice::WriteOnly);
@@ -65,20 +65,20 @@ bool ExportLibreOfficeAutocorrection::exportDocumentList()
     streamWriter.setAutoFormattingIndent(2);
     streamWriter.writeStartDocument();
 
-    streamWriter.writeStartElement(QStringLiteral("block-list:block-list"));
-    streamWriter.writeAttribute(QStringLiteral("xmlns:block-list"), QStringLiteral("http://openoffice.org/2001/block-list"));
+    streamWriter.writeStartElement(u"block-list:block-list"_s);
+    streamWriter.writeAttribute(u"xmlns:block-list"_s, u"http://openoffice.org/2001/block-list"_s);
     QHashIterator<QString, QString> i(mAutocorrectEntries);
     while (i.hasNext()) {
         i.next();
-        streamWriter.writeStartElement(QStringLiteral("block-list:block"));
-        streamWriter.writeAttribute(QStringLiteral("block-list:abbreviated-name"), i.key());
-        streamWriter.writeAttribute(QStringLiteral("block-list:name"), i.value());
+        streamWriter.writeStartElement(u"block-list:block"_s);
+        streamWriter.writeAttribute(u"block-list:abbreviated-name"_s, i.key());
+        streamWriter.writeAttribute(u"block-list:name"_s, i.value());
         streamWriter.writeEndElement();
     }
     streamWriter.writeEndElement();
     streamWriter.writeEndDocument();
     temporaryShareFile.close();
-    mZip->addLocalFile(temporaryShareFile.fileName(), QStringLiteral("DocumentList.xml"));
+    mZip->addLocalFile(temporaryShareFile.fileName(), u"DocumentList.xml"_s);
     return true;
 }
 
@@ -93,13 +93,13 @@ bool ExportLibreOfficeAutocorrection::exportSentenceExceptList()
     streamWriter.setAutoFormattingIndent(2);
     streamWriter.writeStartDocument();
 
-    streamWriter.writeStartElement(QStringLiteral("block-list:block-list"));
-    streamWriter.writeAttribute(QStringLiteral("xmlns:block-list"), QStringLiteral("http://openoffice.org/2001/block-list"));
+    streamWriter.writeStartElement(u"block-list:block-list"_s);
+    streamWriter.writeAttribute(u"xmlns:block-list"_s, u"http://openoffice.org/2001/block-list"_s);
 
     QSet<QString>::const_iterator upper = mUpperCaseExceptions.constBegin();
     while (upper != mUpperCaseExceptions.constEnd()) {
-        streamWriter.writeStartElement(QStringLiteral("block-list:block"));
-        streamWriter.writeAttribute(QStringLiteral("block-list:abbreviated-name"), *upper);
+        streamWriter.writeStartElement(u"block-list:block"_s);
+        streamWriter.writeAttribute(u"block-list:abbreviated-name"_s, *upper);
         streamWriter.writeEndElement();
         ++upper;
     }
@@ -107,7 +107,7 @@ bool ExportLibreOfficeAutocorrection::exportSentenceExceptList()
     streamWriter.writeEndDocument();
     temporaryShareFile.close();
 
-    mZip->addLocalFile(temporaryShareFile.fileName(), QStringLiteral("SentenceExceptList.xml"));
+    mZip->addLocalFile(temporaryShareFile.fileName(), u"SentenceExceptList.xml"_s);
     return true;
 }
 
@@ -122,13 +122,13 @@ bool ExportLibreOfficeAutocorrection::exportWordExceptList()
     streamWriter.setAutoFormattingIndent(2);
     streamWriter.writeStartDocument();
 
-    streamWriter.writeStartElement(QStringLiteral("block-list:block-list"));
-    streamWriter.writeAttribute(QStringLiteral("xmlns:block-list"), QStringLiteral("http://openoffice.org/2001/block-list"));
+    streamWriter.writeStartElement(u"block-list:block-list"_s);
+    streamWriter.writeAttribute(u"xmlns:block-list"_s, u"http://openoffice.org/2001/block-list"_s);
 
     QSet<QString>::const_iterator twoUpper = mTwoUpperLetterExceptions.constBegin();
     while (twoUpper != mTwoUpperLetterExceptions.constEnd()) {
-        streamWriter.writeStartElement(QStringLiteral("block-list:block"));
-        streamWriter.writeAttribute(QStringLiteral("block-list:abbreviated-name"), *twoUpper);
+        streamWriter.writeStartElement(u"block-list:block"_s);
+        streamWriter.writeAttribute(u"block-list:abbreviated-name"_s, *twoUpper);
         streamWriter.writeEndElement();
         ++twoUpper;
     }
@@ -136,7 +136,7 @@ bool ExportLibreOfficeAutocorrection::exportWordExceptList()
     streamWriter.writeEndDocument();
     temporaryShareFile.close();
 
-    mZip->addLocalFile(temporaryShareFile.fileName(), QStringLiteral("WordExceptList.xml"));
+    mZip->addLocalFile(temporaryShareFile.fileName(), u"WordExceptList.xml"_s);
     return true;
 }
 
@@ -150,26 +150,26 @@ bool ExportLibreOfficeAutocorrection::exportManifest()
     streamWriter.setAutoFormattingIndent(2);
     streamWriter.writeStartDocument();
 
-    streamWriter.writeStartElement(QStringLiteral("manifest:manifest"));
+    streamWriter.writeStartElement(u"manifest:manifest"_s);
 
-    streamWriter.writeStartElement(QStringLiteral("manifest:file-entry"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:full-path"), QStringLiteral("/"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:media-type"), QString());
+    streamWriter.writeStartElement(u"manifest:file-entry"_s);
+    streamWriter.writeAttribute(u"manifest:full-path"_s, u"/"_s);
+    streamWriter.writeAttribute(u"manifest:media-type"_s, QString());
     streamWriter.writeEndElement();
 
-    streamWriter.writeStartElement(QStringLiteral("manifest:file-entry"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:full-path"), QStringLiteral("DocumentList.xml"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:media-type"), QString());
+    streamWriter.writeStartElement(u"manifest:file-entry"_s);
+    streamWriter.writeAttribute(u"manifest:full-path"_s, u"DocumentList.xml"_s);
+    streamWriter.writeAttribute(u"manifest:media-type"_s, QString());
     streamWriter.writeEndElement();
 
-    streamWriter.writeStartElement(QStringLiteral("manifest:file-entry"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:full-path"), QStringLiteral("SentenceExceptList.xml"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:media-type"), QString());
+    streamWriter.writeStartElement(u"manifest:file-entry"_s);
+    streamWriter.writeAttribute(u"manifest:full-path"_s, u"SentenceExceptList.xml"_s);
+    streamWriter.writeAttribute(u"manifest:media-type"_s, QString());
     streamWriter.writeEndElement();
 
-    streamWriter.writeStartElement(QStringLiteral("manifest:file-entry"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:full-path"), QStringLiteral("WordExceptList.xml"));
-    streamWriter.writeAttribute(QStringLiteral("manifest:media-type"), QStringLiteral("text/xml"));
+    streamWriter.writeStartElement(u"manifest:file-entry"_s);
+    streamWriter.writeAttribute(u"manifest:full-path"_s, u"WordExceptList.xml"_s);
+    streamWriter.writeAttribute(u"manifest:media-type"_s, u"text/xml"_s);
     streamWriter.writeEndElement();
 
     streamWriter.writeEndElement();
@@ -178,8 +178,8 @@ bool ExportLibreOfficeAutocorrection::exportManifest()
 
     // Add mimetype file
     mZip->setCompression(KZip::NoCompression);
-    mZip->writeFile(QStringLiteral("mimetype"), "");
+    mZip->writeFile(u"mimetype"_s, "");
     mZip->setCompression(KZip::DeflateCompression);
-    mZip->addLocalFile(temporaryShareFile.fileName(), QStringLiteral("META-INF/manifest.xml"));
+    mZip->addLocalFile(temporaryShareFile.fileName(), u"META-INF/manifest.xml"_s);
     return true;
 }

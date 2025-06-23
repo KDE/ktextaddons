@@ -5,31 +5,32 @@
 */
 
 #include "textautogeneratesearchmessageutils.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 using namespace TextAutoGenerateText;
 
 QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
 {
     if (str.length() > 120) {
-        return QStringLiteral("%1...").arg(str.left(120));
+        return u"%1..."_s.arg(str.left(120));
     }
     return str;
 }
 
 QString TextAutoGenerateSearchMessageUtils::scheme()
 {
-    return QStringLiteral("storage");
+    return u"storage"_s;
 }
 
 QString TextAutoGenerateSearchMessageUtils::generateGoToMessageLink(const QString &chatId, const QString &messageId)
 {
-    return QStringLiteral("%1://%2:%3").arg(scheme(), chatId, messageId);
+    return u"%1://%2:%3"_s.arg(scheme(), chatId, messageId);
 }
 
 QString TextAutoGenerateSearchMessageUtils::generatePreviewText(const QByteArray &chatId, const TextAutoGenerateMessage &msg)
 {
-    return QStringLiteral("%1<br/> <a href=\'%2'>%3</a>")
-        .arg(TextAutoGenerateSearchMessageUtils::generatePreview(msg.content()),
-             generateGoToMessageLink(QString::fromLatin1(chatId), QString::fromLatin1(msg.uuid())),
-             i18n("Go to message"));
+    return u"%1<br/> <a href=\'%2'>%3</a>"_s.arg(TextAutoGenerateSearchMessageUtils::generatePreview(msg.content()),
+                                                 generateGoToMessageLink(QString::fromLatin1(chatId), QString::fromLatin1(msg.uuid())),
+                                                 i18n("Go to message"));
 }

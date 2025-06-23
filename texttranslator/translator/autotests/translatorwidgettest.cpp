@@ -5,6 +5,8 @@
 */
 
 #include "translatorwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/widgets/translatorwidget.h"
 
 #include <QPushButton>
@@ -26,15 +28,15 @@ TranslatorWidgetTest::TranslatorWidgetTest()
 void TranslatorWidgetTest::shouldHaveDefaultValuesOnCreation()
 {
     TextTranslator::TranslatorWidget edit;
-    auto from = edit.findChild<QComboBox *>(QStringLiteral("from"));
-    auto to = edit.findChild<QComboBox *>(QStringLiteral("to"));
+    auto from = edit.findChild<QComboBox *>(u"from"_s);
+    auto to = edit.findChild<QComboBox *>(u"to"_s);
 
-    auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(QStringLiteral("inputtext"));
-    auto translate = edit.findChild<QPushButton *>(QStringLiteral("translate-button"));
-    auto clear = edit.findChild<QPushButton *>(QStringLiteral("clear-button"));
-    auto invert = edit.findChild<QPushButton *>(QStringLiteral("invert-button"));
-    auto configure = edit.findChild<QToolButton *>(QStringLiteral("configure_button"));
-    auto close = edit.findChild<QToolButton *>(QStringLiteral("close-button"));
+    auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(u"inputtext"_s);
+    auto translate = edit.findChild<QPushButton *>(u"translate-button"_s);
+    auto clear = edit.findChild<QPushButton *>(u"clear-button"_s);
+    auto invert = edit.findChild<QPushButton *>(u"invert-button"_s);
+    auto configure = edit.findChild<QToolButton *>(u"configure_button"_s);
+    auto close = edit.findChild<QToolButton *>(u"close-button"_s);
     QVERIFY(configure);
     QVERIFY(close);
     QVERIFY(invert);
@@ -53,19 +55,19 @@ void TranslatorWidgetTest::shouldEnableTranslateButtonWhenTextToTranslateIsNotEm
 {
     TextTranslator::TranslatorWidget edit;
 
-    auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(QStringLiteral("inputtext"));
-    auto translate = edit.findChild<QPushButton *>(QStringLiteral("translate-button"));
-    inputtext->setPlainText(QStringLiteral("Foo"));
+    auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(u"inputtext"_s);
+    auto translate = edit.findChild<QPushButton *>(u"translate-button"_s);
+    inputtext->setPlainText(u"Foo"_s);
     QCOMPARE(translate->isEnabled(), true);
 }
 
 void TranslatorWidgetTest::shouldDisableTranslateButtonAndClearTextWhenClickOnClearButton()
 {
     TextTranslator::TranslatorWidget edit;
-    auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(QStringLiteral("inputtext"));
-    auto translate = edit.findChild<QPushButton *>(QStringLiteral("translate-button"));
-    inputtext->setPlainText(QStringLiteral("Foo"));
-    auto clear = edit.findChild<QPushButton *>(QStringLiteral("clear-button"));
+    auto inputtext = edit.findChild<TextTranslator::TranslatorTextEdit *>(u"inputtext"_s);
+    auto translate = edit.findChild<QPushButton *>(u"translate-button"_s);
+    inputtext->setPlainText(u"Foo"_s);
+    auto clear = edit.findChild<QPushButton *>(u"clear-button"_s);
     QTest::mouseClick(clear, Qt::LeftButton);
     QCOMPARE(inputtext->toPlainText(), QString());
     QCOMPARE(translate->isEnabled(), false);
@@ -74,14 +76,14 @@ void TranslatorWidgetTest::shouldDisableTranslateButtonAndClearTextWhenClickOnCl
 void TranslatorWidgetTest::shouldInvertLanguageWhenClickOnInvertButton()
 {
     TextTranslator::TranslatorWidget edit;
-    auto from = edit.findChild<QComboBox *>(QStringLiteral("from"));
-    auto to = edit.findChild<QComboBox *>(QStringLiteral("to"));
+    auto from = edit.findChild<QComboBox *>(u"from"_s);
+    auto to = edit.findChild<QComboBox *>(u"to"_s);
 
     const int fromIndex = 5;
     const int toIndex = 7;
     from->setCurrentIndex(fromIndex);
     to->setCurrentIndex(toIndex);
-    auto invert = edit.findChild<QPushButton *>(QStringLiteral("invert-button"));
+    auto invert = edit.findChild<QPushButton *>(u"invert-button"_s);
     QTest::mouseClick(invert, Qt::LeftButton);
     const int newFromIndex = from->currentIndex();
     const int newToIndex = to->currentIndex();

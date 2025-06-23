@@ -5,6 +5,8 @@
 */
 
 #include "bergamotengineutils.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libbergamot_debug.h"
 #include "translator.h"
 
@@ -16,32 +18,32 @@
 
 QString BergamotEngineUtils::defaultBergamotRepository()
 {
-    return QStringLiteral("https://translatelocally.com/models.json");
+    return u"https://translatelocally.com/models.json"_s;
 }
 
 QString BergamotEngineUtils::groupName()
 {
-    return QStringLiteral("BergamotTranslator");
+    return u"BergamotTranslator"_s;
 }
 
 QString BergamotEngineUtils::coreNumberKey()
 {
-    return QStringLiteral("CoreNumber");
+    return u"CoreNumber"_s;
 }
 
 QString BergamotEngineUtils::memoryByThreadKey()
 {
-    return QStringLiteral("MemoryByThread");
+    return u"MemoryByThread"_s;
 }
 
 QString BergamotEngineUtils::useLocalCacheKey()
 {
-    return QStringLiteral("UseLocalKey");
+    return u"UseLocalKey"_s;
 }
 
 QString BergamotEngineUtils::storageLanguagePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/bergamot-translator");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/bergamot-translator"_s;
 }
 
 void BergamotEngineUtils::SettingsInfo::loadSettingsInfo()
@@ -73,8 +75,8 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
     // qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " list " << list;
     for (const auto &name : list) {
         // qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << " name " << dir;
-        const QString modelLanguagePath{dir.absolutePath() + QLatin1Char('/') + name};
-        QFile modelInfoFile(modelLanguagePath + QStringLiteral("/model_info.json"));
+        const QString modelLanguagePath{dir.absolutePath() + u'/' + name};
+        QFile modelInfoFile(modelLanguagePath + u"/model_info.json"_s);
         if (!modelInfoFile.exists()) {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "model_info.json not found in " << name;
             return {};
@@ -96,7 +98,7 @@ QVector<BergamotEngineUtils::LanguageInstalled> BergamotEngineUtils::languageLoc
                 // qDebug() << " translator " << translator;
                 BergamotEngineUtils::LanguageInstalled lang;
                 const QString shortName = translator.shortName();
-                const QStringList langIdentifier = shortName.split(QLatin1Char('-'));
+                const QStringList langIdentifier = shortName.split(u'-');
                 if (langIdentifier.count() >= 2) {
                     lang.from = langIdentifier.at(0);
                     lang.to = langIdentifier.at(1);

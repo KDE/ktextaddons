@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratetextinstancesmanagerdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -25,13 +27,13 @@ TextAutoGenerateTextInstancesManagerDialog::TextAutoGenerateTextInstancesManager
     setWindowTitle(i18nc("@title:window", "Configure Instances"));
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mTextAutoGenerateTextInstancesManagerWidget->setObjectName(QStringLiteral("mTextAutoGenerateTextInstancesManagerWidget"));
+    mTextAutoGenerateTextInstancesManagerWidget->setObjectName(u"mTextAutoGenerateTextInstancesManagerWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateTextInstancesManagerWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, this);
-    button->setObjectName(QStringLiteral("button"));
+    button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateTextInstancesManagerDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateTextInstancesManagerDialog::slotAccept);

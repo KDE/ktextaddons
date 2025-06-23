@@ -5,6 +5,8 @@
 */
 
 #include "importkmailautocorrectiontest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "import/importkmailautocorrection.h"
 #include <QTest>
 QTEST_MAIN(ImportKMailAutocorrectionTest)
@@ -33,14 +35,14 @@ void ImportKMailAutocorrectionTest::shouldHaveDefaultValues()
 
 void ImportKMailAutocorrectionTest::shouldLoadFile()
 {
-    const QString originalFile = QLatin1StringView(AUTOCORRECTION_DATA_DIR) + QStringLiteral("/custom-fr.xml");
+    const QString originalFile = QLatin1StringView(AUTOCORRECTION_DATA_DIR) + u"/custom-fr.xml"_s;
     TextAutoCorrectionCore::ImportKMailAutocorrection import;
     QString messageError;
     QVERIFY(import.import(originalFile, messageError));
-    QCOMPARE(import.typographicSingleQuotes().begin, QStringLiteral("‘"));
-    QCOMPARE(import.typographicSingleQuotes().end, QStringLiteral("’"));
-    QCOMPARE(import.typographicDoubleQuotes().begin, QStringLiteral("“"));
-    QCOMPARE(import.typographicDoubleQuotes().end, QStringLiteral("”"));
+    QCOMPARE(import.typographicSingleQuotes().begin, u"‘"_s);
+    QCOMPARE(import.typographicSingleQuotes().end, u"’"_s);
+    QCOMPARE(import.typographicDoubleQuotes().begin, u"“"_s);
+    QCOMPARE(import.typographicDoubleQuotes().end, u"”"_s);
 
     const auto resultTwoUpperLetterExceptions = import.twoUpperLetterExceptions();
     QCOMPARE(resultTwoUpperLetterExceptions.count(), 21);

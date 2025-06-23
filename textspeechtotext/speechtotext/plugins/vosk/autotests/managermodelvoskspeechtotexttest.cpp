@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "managermodelvoskspeechtotexttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "managermodelvoskspeechtotext.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -25,17 +27,17 @@ void ManagerModelVoskSpeechToTextTest::shouldLoadModelList_data()
 {
     QTest::addColumn<QString>("fileName");
     QTest::addColumn<int>("numberOfTranslator");
-    QTest::newRow("empty") << QStringLiteral("empty") << 0;
-    QTest::newRow("fullmodels") << QStringLiteral("model-list") << 106;
+    QTest::newRow("empty") << u"empty"_s << 0;
+    QTest::newRow("fullmodels") << u"model-list"_s << 106;
     // 1 correct 1 invalid
-    QTest::newRow("invalid") << QStringLiteral("invalid") << 1;
+    QTest::newRow("invalid") << u"invalid"_s << 1;
 }
 
 void ManagerModelVoskSpeechToTextTest::shouldLoadModelList()
 {
     QFETCH(QString, fileName);
     QFETCH(int, numberOfTranslator);
-    const QString originalJsonFile = QLatin1String(VOSK_DATA_DIR) + QStringLiteral("/modellanguages/") + fileName + QStringLiteral(".json");
+    const QString originalJsonFile = QLatin1String(VOSK_DATA_DIR) + u"/modellanguages/"_s + fileName + u".json"_s;
     ManagerModelVoskSpeechToText w;
     w.loadModelList(originalJsonFile);
     QCOMPARE(w.speechToTextInfos().count(), numberOfTranslator);

@@ -38,7 +38,7 @@ TranslatorEngineLoader::~TranslatorEngineLoader() = default;
 void TranslatorEngineLoader::loadPlugins()
 {
     const QStringList libPaths = QCoreApplication::libraryPaths();
-    const QString pathSuffix(QStringLiteral("/kf6/translator/"));
+    const QString pathSuffix(u"/kf6/translator/"_s);
     for (const QString &libPath : libPaths) {
         QDir dir(libPath + pathSuffix);
         if (!dir.exists()) {
@@ -105,7 +105,7 @@ QMap<QString, QString> TranslatorEngineLoader::translatorEngineInfos() const
     QHashIterator<QString, TranslatorEngineClient *> i(d->translatorClients);
     while (i.hasNext()) {
         i.next();
-        map.insert(i.key(), i.value()->translatedName() + QStringLiteral(" (%1)").arg(TranslatorEngineClient::convertEngineType(i.value()->engineType())));
+        map.insert(i.key(), i.value()->translatedName() + u" (%1)"_s.arg(TranslatorEngineClient::convertEngineType(i.value()->engineType())));
     }
     return map;
 }

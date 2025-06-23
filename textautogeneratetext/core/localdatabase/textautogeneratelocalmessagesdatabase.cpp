@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratelocalmessagesdatabase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratesearchmessageutils.h"
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
@@ -90,7 +92,7 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalMessagesDatabase::createMes
         if (!QFileInfo::exists(fileName)) {
             return {};
         }
-        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
         db.setDatabaseName(fileName);
         if (!db.open()) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
@@ -101,7 +103,7 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalMessagesDatabase::createMes
     Q_ASSERT(db.isValid());
     Q_ASSERT(db.isOpen());
     auto model = std::make_unique<QSqlTableModel>(nullptr, db);
-    model->setTable(QStringLiteral("MESSAGES"));
+    model->setTable(u"MESSAGES"_s);
     model->setSort(int(MessagesFields::TimeStamp), Qt::AscendingOrder);
     model->select();
     return model;
@@ -109,8 +111,8 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalMessagesDatabase::createMes
 
 QString TextAutoGenerateLocalMessagesDatabase::generateQueryStr()
 {
-    QString query = QStringLiteral("SELECT * FROM MESSAGES");
-    query += QStringLiteral(" ORDER BY timestamp DESC");
+    QString query = u"SELECT * FROM MESSAGES"_s;
+    query += u" ORDER BY timestamp DESC"_s;
     return query;
 }
 
@@ -126,7 +128,7 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalMessagesDatabase::loadMessag
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
             return {};
         }
-        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
         db.setDatabaseName(fileName);
         if (!db.open()) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
@@ -146,7 +148,7 @@ QList<TextAutoGenerateMessage> TextAutoGenerateLocalMessagesDatabase::loadMessag
 
     QList<TextAutoGenerateMessage> listMessages;
     while (resultQuery.next()) {
-        const QString json = resultQuery.value(QStringLiteral("json")).toString();
+        const QString json = resultQuery.value(u"json"_s).toString();
         listMessages.append(convertJsonToMessage(json));
     }
     return listMessages;
@@ -164,7 +166,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
             return {};
         }
-        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
         db.setDatabaseName(fileName);
         if (!db.open()) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
@@ -183,7 +185,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
     }
     QList<TextAutoGenerateSearchMessage> lstSearchMessages;
     while (resultQuery.next()) {
-        const QString json = resultQuery.value(QStringLiteral("json")).toString();
+        const QString json = resultQuery.value(u"json"_s).toString();
         const TextAutoGenerateMessage msg = convertJsonToMessage(json);
         if (msg.content().contains(searchText, Qt::CaseInsensitive)) {
             TextAutoGenerateSearchMessage searchMessage;

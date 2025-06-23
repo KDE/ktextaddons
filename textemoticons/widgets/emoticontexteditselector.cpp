@@ -6,6 +6,8 @@
 */
 
 #include "emoticontexteditselector.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticoncategorybuttons.h"
 #include "emoticonlistview.h"
 #include "emoticontonecombobox.h"
@@ -79,7 +81,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     d->emoticonListView->setFontSize(defaultFontSize);
     d->categoryButtons->setFont(f);
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setSpacing(0);
     mainLayout->setContentsMargins({});
 
@@ -87,20 +89,20 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     hLayout->setContentsMargins({});
     mainLayout->addLayout(hLayout);
 
-    d->searchUnicodeLineEdit->setObjectName(QStringLiteral("mSearchUnicodeLineEdit"));
+    d->searchUnicodeLineEdit->setObjectName(u"mSearchUnicodeLineEdit"_s);
     d->searchUnicodeLineEdit->setClearButtonEnabled(true);
     d->searchUnicodeLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search Emoticon…"));
     hLayout->addWidget(d->searchUnicodeLineEdit);
-    d->emoticonToneComboBox->setObjectName(QStringLiteral("emoticonToneComboBox"));
+    d->emoticonToneComboBox->setObjectName(u"emoticonToneComboBox"_s);
     hLayout->addWidget(d->emoticonToneComboBox);
     d->emoticonToneComboBox->setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::self()->emojiTone());
 
-    d->categoryButtons->setObjectName(QStringLiteral("mCategoryButtons"));
+    d->categoryButtons->setObjectName(u"mCategoryButtons"_s);
     mainLayout->addWidget(d->categoryButtons);
-    d->emoticonListView->setObjectName(QStringLiteral("mEmoticonListView"));
+    d->emoticonListView->setObjectName(u"mEmoticonListView"_s);
     mainLayout->addWidget(d->emoticonListView);
 
-    d->emojiSortFilterProxyModel->setObjectName(QStringLiteral("mEmoticonProxyModel"));
+    d->emojiSortFilterProxyModel->setObjectName(u"mEmoticonProxyModel"_s);
     d->emoticonListView->setModel(d->emojiSortFilterProxyModel);
     connect(d->emoticonListView, &EmoticonListView::fontSizeChanged, d->emoticonListView, &EmoticonListView::setFontSize);
     connect(d->emoticonListView, &EmoticonListView::emojiItemSelected, this, [this](const QString &str, const QString &identifier) {

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskspeechtotextclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "voskenginedialog.h"
 #include "voskspeechtotextplugin.h"
 #include <KLocalizedString>
@@ -18,7 +20,7 @@ VoskSpeechToTextClient::~VoskSpeechToTextClient() = default;
 
 QString VoskSpeechToTextClient::name() const
 {
-    return QStringLiteral("vosk");
+    return u"vosk"_s;
 }
 
 QString VoskSpeechToTextClient::translatedName() const

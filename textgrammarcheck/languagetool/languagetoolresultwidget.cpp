@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolresultwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "common/grammarresulttextedit.h"
 #include "languagetoolcombobox.h"
 #include "languagetoolmanager.h"
@@ -63,15 +65,15 @@ void LanguageToolResultWidget::slotError(const QString &str)
 void LanguageToolResultWidget::addExtraWidget()
 {
     auto extraWidgetLayout = new QHBoxLayout;
-    extraWidgetLayout->setObjectName(QStringLiteral("extraWidgetLayout"));
+    extraWidgetLayout->setObjectName(u"extraWidgetLayout"_s);
     extraWidgetLayout->setContentsMargins({});
     mLanguageToolComboBox = new LanguageToolComboBox(this);
-    mLanguageToolComboBox->setObjectName(QStringLiteral("languagetoolcombobox"));
+    mLanguageToolComboBox->setObjectName(u"languagetoolcombobox"_s);
     extraWidgetLayout->addWidget(mLanguageToolComboBox);
 
     auto recheckBtn = new QToolButton(this);
-    recheckBtn->setObjectName(QStringLiteral("recheck-button"));
-    recheckBtn->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+    recheckBtn->setObjectName(u"recheck-button"_s);
+    recheckBtn->setIcon(QIcon::fromTheme(u"view-refresh"_s));
     recheckBtn->setIconSize(QSize(16, 16));
     recheckBtn->setToolTip(i18nc("@info:tooltip", "Check"));
     recheckBtn->setAutoRaise(true);

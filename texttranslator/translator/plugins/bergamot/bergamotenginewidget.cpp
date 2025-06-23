@@ -5,6 +5,8 @@
 */
 
 #include "bergamotenginewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotenginelanguagewidget.h"
 #include <KLocalizedString>
 #include <QTabWidget>
@@ -17,14 +19,14 @@ BergamotEngineWidget::BergamotEngineWidget(QWidget *parent)
     , mSettingsWidget(new BergamotEngineSettingsWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mTabWidget->setObjectName(QStringLiteral("mTabWidget"));
+    mTabWidget->setObjectName(u"mTabWidget"_s);
     mainLayout->addWidget(mTabWidget);
 
-    mLanguageWidget->setObjectName(QStringLiteral("mLanguageWidget"));
-    mSettingsWidget->setObjectName(QStringLiteral("mSettingsWidget"));
+    mLanguageWidget->setObjectName(u"mLanguageWidget"_s);
+    mSettingsWidget->setObjectName(u"mSettingsWidget"_s);
 
     mTabWidget->addTab(mLanguageWidget, i18n("Languages"));
     mTabWidget->addTab(mSettingsWidget, i18n("Settings"));

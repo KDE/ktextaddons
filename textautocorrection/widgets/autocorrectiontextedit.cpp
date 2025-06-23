@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectiontextedit.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <TextAutoCorrectionCore/AutoCorrection>
 
 #include <QKeyEvent>
@@ -75,7 +77,7 @@ void AutoCorrectionTextEdit::keyPressEvent(QKeyEvent *e)
                 QTextCursor cur = textCursor();
                 cur.setPosition(position);
                 const bool spacePressed = (e->key() == Qt::Key_Space);
-                const QChar insertChar = spacePressed ? QLatin1Char(' ') : QLatin1Char('\n');
+                const QChar insertChar = spacePressed ? u' ' : u'\n';
                 if (richText && !isSpecial(initialTextFormat)) {
                     if (addSpace || !spacePressed) {
                         cur.insertText(insertChar, initialTextFormat);

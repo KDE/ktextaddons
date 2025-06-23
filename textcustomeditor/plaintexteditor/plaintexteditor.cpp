@@ -50,7 +50,7 @@ public:
         , webshortcutMenuManager(new KIO::KUriFilterSearchProviderActions(q))
 #endif
     {
-        KConfig sonnetKConfig(QStringLiteral("sonnetrc"));
+        KConfig sonnetKConfig(u"sonnetrc"_s);
         KConfigGroup group(&sonnetKConfig, "Spelling"_L1);
         checkSpellingEnabled = group.readEntry("checkerEnabledByDefault", false);
         supportFeatures |= PlainTextEditor::Search;
@@ -169,10 +169,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
             }
             if (!d->speller->availableBackends().isEmpty()) {
                 if (!emptyDocument) {
-                    popup->addAction(QIcon::fromTheme(QStringLiteral("tools-check-spelling")),
-                                     i18n("Check Spelling…"),
-                                     this,
-                                     &PlainTextEditor::slotCheckSpelling);
+                    popup->addAction(QIcon::fromTheme(u"tools-check-spelling"_s), i18n("Check Spelling…"), this, &PlainTextEditor::slotCheckSpelling);
                     popup->addSeparator();
                 }
                 QAction *autoSpellCheckAction = popup->addAction(i18n("Auto Spell Check"), this, &PlainTextEditor::slotToggleAutoSpellCheck);
@@ -210,7 +207,7 @@ void PlainTextEditor::contextMenuEvent(QContextMenuEvent *event)
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
             if (!emptyDocument) {
                 QAction *speakAction = popup->addAction(i18n("Speak Text"));
-                speakAction->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")));
+                speakAction->setIcon(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s));
                 connect(speakAction, &QAction::triggered, this, &PlainTextEditor::slotSpeakText);
             }
 #endif

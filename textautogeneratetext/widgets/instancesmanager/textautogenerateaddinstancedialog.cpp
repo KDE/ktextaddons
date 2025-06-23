@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogenerateaddinstancewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
@@ -17,13 +19,13 @@ TextAutoGenerateAddInstanceDialog::TextAutoGenerateAddInstanceDialog(TextAutoGen
     setWindowTitle(i18nc("@title:window", "Add Instance"));
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mTextAutoGenerateAddInstanceWidget->setObjectName(QStringLiteral("mTextAutoGenerateAddInstanceWidget"));
+    mTextAutoGenerateAddInstanceWidget->setObjectName(u"mTextAutoGenerateAddInstanceWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateAddInstanceWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok, this);
-    button->setObjectName(QStringLiteral("button"));
+    button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     auto buttonOk = button->button(QDialogButtonBox::Ok);
     buttonOk->setEnabled(false);

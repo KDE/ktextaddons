@@ -5,41 +5,42 @@
 */
 
 #include "libretranslateengineutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 QString LibreTranslateEngineUtil::groupName()
 {
-    return QStringLiteral("LibreTranslateTranslator");
+    return u"LibreTranslateTranslator"_s;
 }
 
 QString LibreTranslateEngineUtil::serverUrlKey()
 {
-    return QStringLiteral("ServerUrl");
+    return u"ServerUrl"_s;
 }
 
 QString LibreTranslateEngineUtil::translatorGroupName()
 {
-    return QStringLiteral("LibreTranslate");
+    return u"LibreTranslate"_s;
 }
 
 QString LibreTranslateEngineUtil::serverRequiredApiKey()
 {
-    return QStringLiteral("RequiredApiKey");
+    return u"RequiredApiKey"_s;
 }
 
 QString LibreTranslateEngineUtil::defaultServerUrl()
 {
-    return QStringLiteral("https://libretranslate.com");
+    return u"https://libretranslate.com"_s;
 }
 
 QString LibreTranslateEngineUtil::adaptUrl(QString serverUrl)
 {
-    if (!serverUrl.startsWith(QStringLiteral("https://")) && !serverUrl.startsWith(QStringLiteral("http://"))) {
-        serverUrl.prepend(QStringLiteral("https://")); // Add https:// by default
+    if (!serverUrl.startsWith(u"https://"_s) && !serverUrl.startsWith(u"http://"_s)) {
+        serverUrl.prepend(u"https://"_s); // Add https:// by default
     }
     return serverUrl;
 }
 
 QString LibreTranslateEngineUtil::apiGroupName()
 {
-    return QStringLiteral("apiKey");
+    return u"apiKey"_s;
 }

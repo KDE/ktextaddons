@@ -5,6 +5,8 @@
 */
 
 #include "bergamotenginewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotenginewidget.h"
 #include <QTabWidget>
 #include <QTest>
@@ -18,11 +20,11 @@ BergamotEngineWidgetTest::BergamotEngineWidgetTest(QObject *parent)
 void BergamotEngineWidgetTest::shouldHaveDefaultValues()
 {
     BergamotEngineWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mTabWidget = w.findChild<QTabWidget *>(QStringLiteral("mTabWidget"));
+    auto mTabWidget = w.findChild<QTabWidget *>(u"mTabWidget"_s);
     QVERIFY(mTabWidget);
 
     // TODO

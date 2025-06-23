@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmodelavailablewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/genericnetworkmodelavailablelistview.h"
 #include <QSplitter>
 #include <QVBoxLayout>
@@ -14,11 +16,11 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(QWidget *
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
-    splitter->setObjectName(QStringLiteral("splitter"));
+    splitter->setObjectName(u"splitter"_s);
     splitter->setChildrenCollapsible(false);
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 

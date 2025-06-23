@@ -5,13 +5,14 @@
 */
 
 #include "textautogeneratelocaldatabaseutils.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QStandardPaths>
 
 using namespace TextAutoGenerateText;
 QString TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + QStringLiteral("/ai-database/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/"_s;
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::localMessagesDatabasePath()
@@ -30,9 +31,9 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
 {
     switch (pathType) {
     case TextAutoGenerateLocalDatabaseUtils::DatabasePath::Messages:
-        return QStringLiteral("messages/");
+        return u"messages/"_s;
     case TextAutoGenerateLocalDatabaseUtils::DatabasePath::Chats:
-        return QStringLiteral("chats/");
+        return u"chats/"_s;
     }
     Q_UNREACHABLE();
     return {};
@@ -40,20 +41,20 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
 
 QString TextAutoGenerateLocalDatabaseUtils::insertReplaceChat()
 {
-    return QStringLiteral("INSERT OR REPLACE INTO CHATS VALUES (?, ?)");
+    return u"INSERT OR REPLACE INTO CHATS VALUES (?, ?)"_s;
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::deleteChat()
 {
-    return QStringLiteral("DELETE FROM CHATS WHERE chatId = ?");
+    return u"DELETE FROM CHATS WHERE chatId = ?"_s;
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage()
 {
-    return QStringLiteral("INSERT OR REPLACE INTO MESSAGES VALUES (?, ?, ?)");
+    return u"INSERT OR REPLACE INTO MESSAGES VALUES (?, ?, ?)"_s;
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::deleteMessage()
 {
-    return QStringLiteral("DELETE FROM MESSAGES WHERE messageId = ?");
+    return u"DELETE FROM MESSAGES WHERE messageId = ?"_s;
 }

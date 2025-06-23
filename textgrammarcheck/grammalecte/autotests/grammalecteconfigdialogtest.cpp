@@ -5,6 +5,8 @@
 */
 
 #include "grammalecteconfigdialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalecte/grammalecteconfigdialog.h"
 #include "grammalecte/grammalecteconfigwidget.h"
 #include <QDialogButtonBox>
@@ -23,13 +25,13 @@ void GrammalecteConfigDialogTest::shouldHaveDefaultValue()
     TextGrammarCheck::GrammalecteConfigDialog w(nullptr, true);
     QVERIFY(!w.windowTitle().isEmpty());
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
 
-    auto mConfigWidget = w.findChild<TextGrammarCheck::GrammalecteConfigWidget *>(QStringLiteral("configwidget"));
+    auto mConfigWidget = w.findChild<TextGrammarCheck::GrammalecteConfigWidget *>(u"configwidget"_s);
     QVERIFY(mConfigWidget);
 
-    auto box = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));
+    auto box = w.findChild<QDialogButtonBox *>(u"box"_s);
     QVERIFY(box);
 }
 

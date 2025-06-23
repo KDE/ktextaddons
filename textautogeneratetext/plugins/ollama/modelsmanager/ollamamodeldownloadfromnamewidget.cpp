@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadfromnamewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLabel>
@@ -15,14 +17,14 @@ OllamaModelDownloadFromNameWidget::OllamaModelDownloadFromNameWidget(QWidget *pa
     , mModelNameLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
 
     auto label = new QLabel(i18n("Please enter model name as \"name:tag\""), this);
-    label->setObjectName(QStringLiteral("label"));
+    label->setObjectName(u"label"_s);
     mainLayout->addWidget(label);
 
-    mModelNameLineEdit->setObjectName(QStringLiteral("mModelNameLineEdit"));
+    mModelNameLineEdit->setObjectName(u"mModelNameLineEdit"_s);
     mainLayout->addWidget(mModelNameLineEdit);
     KLineEditEventHandler::catchReturnKey(mModelNameLineEdit);
     connect(mModelNameLineEdit, &QLineEdit::textChanged, this, &OllamaModelDownloadFromNameWidget::textChanged);

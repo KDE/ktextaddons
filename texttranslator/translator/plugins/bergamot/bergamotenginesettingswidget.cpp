@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "bergamotenginesettingswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <QCheckBox>
 #include <QComboBox>
@@ -19,20 +21,20 @@ BergamotEngineSettingsWidget::BergamotEngineSettingsWidget(QWidget *parent)
     , mUseLocalCache(new QCheckBox(i18nc("@option:check", "Use translation cache"), this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     auto resourceBox = new QGroupBox(i18n("Resource Usage"), this);
-    resourceBox->setObjectName(QStringLiteral("resourceBox"));
+    resourceBox->setObjectName(u"resourceBox"_s);
     mainLayout->addWidget(resourceBox);
 
-    mNumberThreads->setObjectName(QStringLiteral("mNumberThreads"));
-    mMemoryByThreads->setObjectName(QStringLiteral("mMemoryByThreads"));
+    mNumberThreads->setObjectName(u"mNumberThreads"_s);
+    mMemoryByThreads->setObjectName(u"mMemoryByThreads"_s);
 
-    mUseLocalCache->setObjectName(QStringLiteral("mUseLocalCache"));
+    mUseLocalCache->setObjectName(u"mUseLocalCache"_s);
 
     auto formLayout = new QFormLayout;
-    formLayout->setObjectName(QStringLiteral("formLayout"));
+    formLayout->setObjectName(u"formLayout"_s);
     resourceBox->setLayout(formLayout);
     formLayout->addRow(i18n("Thread:"), mNumberThreads);
     formLayout->addRow(i18n("Memory by Thread:"), mMemoryByThreads);

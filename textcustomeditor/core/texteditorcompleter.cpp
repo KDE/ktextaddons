@@ -5,6 +5,8 @@
  */
 
 #include "texteditorcompleter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QAbstractItemView>
 #include <QCompleter>
 #include <QPlainTextEdit>
@@ -60,7 +62,7 @@ void TextEditorCompleter::TextEditorCompleterPrivate::createCompleter()
 
 QString TextEditorCompleter::TextEditorCompleterPrivate::wordUnderCursor() const
 {
-    static QString eow = QStringLiteral("~!@#$%^&*()+{}|\"<>,./;'[]\\-= "); // everything without ':', '?' and '_'
+    static QString eow = u"~!@#$%^&*()+{}|\"<>,./;'[]\\-= "_s; // everything without ':', '?' and '_'
     QTextCursor tc;
     QTextDocument *document = nullptr;
     if (plainTextEdit) {
@@ -148,7 +150,7 @@ QCompleter *TextEditorCompleter::completer() const
 
 void TextEditorCompleter::setCompleterStringList(const QStringList &listWord)
 {
-    d->completer->setModel(new QStringListModel(QStringList() << listWord << QStringLiteral("TESTING"), d->completer));
+    d->completer->setModel(new QStringListModel(QStringList() << listWord << u"TESTING"_s, d->completer));
 }
 
 void TextEditorCompleter::slotCompletion(const QString &completion)

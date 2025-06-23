@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechutiltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeechutil.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(TextToSpeechUtilTest)
@@ -15,8 +17,8 @@ TextToSpeechUtilTest::TextToSpeechUtilTest(QObject *parent)
 
 void TextToSpeechUtilTest::shouldHaveDefaultValues()
 {
-    QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName(), QStringLiteral("texttospeechrc"));
-    QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName(), QStringLiteral("Settings"));
+    QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName(), u"texttospeechrc"_s);
+    QCOMPARE(TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigGroupName(), u"Settings"_s);
 }
 
 #include "moc_texttospeechutiltest.cpp"

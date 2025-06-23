@@ -5,11 +5,13 @@
 */
 
 #include "ollamasettings.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KUser>
 
 OllamaSettings::OllamaSettings()
 {
-    mServerUrl = QUrl(QStringLiteral("http://127.0.0.1:11434"));
+    mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
     KUser user;
     mSystemPrompt = QStringLiteral(
                         "You are an AI assistant. You are speaking to a person named %1. "

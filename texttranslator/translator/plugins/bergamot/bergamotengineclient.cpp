@@ -5,6 +5,8 @@
 */
 
 #include "bergamotengineclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "begamotenginedialog.h"
 #include "bergamotengineplugin.h"
 #include "translator/misc/translatorutil.h"
@@ -23,7 +25,7 @@ BergamotEngineClient::~BergamotEngineClient() = default;
 
 QString BergamotEngineClient::name() const
 {
-    return QStringLiteral("bergamot");
+    return u"bergamot"_s;
 }
 
 QString BergamotEngineClient::translatedName() const

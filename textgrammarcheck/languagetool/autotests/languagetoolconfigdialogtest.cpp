@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolconfigdialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetool/languagetoolconfigdialog.h"
 #include "languagetool/languagetoolconfigwidget.h"
 #include <QDialogButtonBox>
@@ -23,13 +25,13 @@ void LanguageToolConfigDialogTest::shouldHaveDefaultValue()
     TextGrammarCheck::LanguageToolConfigDialog w(nullptr);
     QVERIFY(!w.windowTitle().isEmpty());
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
 
-    auto mConfigWidget = w.findChild<TextGrammarCheck::LanguageToolConfigWidget *>(QStringLiteral("configwidget"));
+    auto mConfigWidget = w.findChild<TextGrammarCheck::LanguageToolConfigWidget *>(u"configwidget"_s);
     QVERIFY(mConfigWidget);
 
-    auto box = w.findChild<QDialogButtonBox *>(QStringLiteral("box"));
+    auto box = w.findChild<QDialogButtonBox *>(u"box"_s);
     QVERIFY(box);
 }
 

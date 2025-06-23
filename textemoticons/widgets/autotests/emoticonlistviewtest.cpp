@@ -5,6 +5,8 @@
 */
 
 #include "emoticonlistviewtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticonlistview.h"
 #include <QTest>
 QTEST_MAIN(EmoticonListViewTest)
@@ -22,7 +24,7 @@ void EmoticonListViewTest::shouldHaveDefaultValues()
     QVERIFY(!w.dragEnabled());
     QVERIFY(w.hasMouseTracking());
     QCOMPARE(w.contextMenuPolicy(), Qt::DefaultContextMenu);
-    QCOMPARE(w.itemDelegate()->objectName(), QStringLiteral("emoticonDelegate"));
+    QCOMPARE(w.itemDelegate()->objectName(), u"emoticonDelegate"_s);
 }
 
 #include "moc_emoticonlistviewtest.cpp"

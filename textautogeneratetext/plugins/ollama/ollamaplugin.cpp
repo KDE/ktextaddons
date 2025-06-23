@@ -36,28 +36,28 @@ OllamaPlugin::~OllamaPlugin()
 
 void OllamaPlugin::load(const KConfigGroup &config)
 {
-    mOllamaSettings->setDisplayName(config.readEntry(QStringLiteral("Name")));
-    mOllamaSettings->setSeed(config.readEntry(QStringLiteral("Seed"), 0));
-    if (config.hasKey(QStringLiteral("ServerUrl"))) {
-        mOllamaSettings->setServerUrl(config.readEntry(QStringLiteral("ServerUrl"), QUrl()));
+    mOllamaSettings->setDisplayName(config.readEntry(u"Name"_s));
+    mOllamaSettings->setSeed(config.readEntry(u"Seed"_s, 0));
+    if (config.hasKey(u"ServerUrl"_s)) {
+        mOllamaSettings->setServerUrl(config.readEntry(u"ServerUrl"_s, QUrl()));
     }
-    if (config.hasKey(QStringLiteral("Temperature"))) {
-        mOllamaSettings->setTemperature(config.readEntry(QStringLiteral("Temperature"), 0.8));
+    if (config.hasKey(u"Temperature"_s)) {
+        mOllamaSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
     }
-    if (config.hasKey(QStringLiteral("SystemPrompt"))) {
-        mOllamaSettings->setSystemPrompt(config.readEntry(QStringLiteral("SystemPrompt")));
+    if (config.hasKey(u"SystemPrompt"_s)) {
+        mOllamaSettings->setSystemPrompt(config.readEntry(u"SystemPrompt"_s));
     }
-    mOllamaSettings->setCurrentModel(config.readEntry(QStringLiteral("CurrentModel")));
+    mOllamaSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
 }
 
 void OllamaPlugin::save(KConfigGroup &config)
 {
-    config.writeEntry(QStringLiteral("Name"), mOllamaSettings->displayName());
-    config.writeEntry(QStringLiteral("Seed"), mOllamaSettings->seed());
-    config.writeEntry(QStringLiteral("ServerUrl"), mOllamaSettings->serverUrl());
-    config.writeEntry(QStringLiteral("SystemPrompt"), mOllamaSettings->systemPrompt());
-    config.writeEntry(QStringLiteral("Temperature"), mOllamaSettings->temperature());
-    config.writeEntry(QStringLiteral("CurrentModel"), mOllamaSettings->currentModel());
+    config.writeEntry(u"Name"_s, mOllamaSettings->displayName());
+    config.writeEntry(u"Seed"_s, mOllamaSettings->seed());
+    config.writeEntry(u"ServerUrl"_s, mOllamaSettings->serverUrl());
+    config.writeEntry(u"SystemPrompt"_s, mOllamaSettings->systemPrompt());
+    config.writeEntry(u"Temperature"_s, mOllamaSettings->temperature());
+    config.writeEntry(u"CurrentModel"_s, mOllamaSettings->currentModel());
 }
 
 QStringList OllamaPlugin::models() const

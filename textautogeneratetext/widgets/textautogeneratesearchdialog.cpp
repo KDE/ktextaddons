@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratesearchdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratesearchwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -26,13 +28,13 @@ TextAutoGenerateSearchDialog::TextAutoGenerateSearchDialog(TextAutoGenerateText:
     setWindowTitle(i18nc("@title:window", "Search"));
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mTextAutoGenerateSearchWidget->setObjectName(QStringLiteral("mTextAutoGenerateSearchWidget"));
+    mTextAutoGenerateSearchWidget->setObjectName(u"mTextAutoGenerateSearchWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateSearchWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    button->setObjectName(QStringLiteral("button"));
+    button->setObjectName(u"button"_s);
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateSearchDialog::reject);
     readConfig();

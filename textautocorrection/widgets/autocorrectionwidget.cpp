@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectionwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocorrectionutils.h"
 
 #include "ui_autocorrectionwidget.h"

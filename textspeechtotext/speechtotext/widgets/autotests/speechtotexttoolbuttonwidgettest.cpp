@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "speechtotexttoolbuttonwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "speechtotext/widgets/speechtotexttoolbuttonwidget.h"
 #include <QHBoxLayout>
 #include <QTest>
@@ -18,10 +20,10 @@ void SpeechToTextToolButtonWidgetTest::shouldHaveDefaultValues()
 {
     TextSpeechToText::SpeechToTextToolButtonWidget w;
 
-    auto mToolButton = w.findChild<QToolButton *>(QStringLiteral("mToolButton"));
+    auto mToolButton = w.findChild<QToolButton *>(u"mToolButton"_s);
     QVERIFY(mToolButton);
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 }

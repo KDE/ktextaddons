@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatefromexistingmodelwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodelcreatecombobox.h"
 #include "modelsmanager/ollamamodelcreatefromexistingmodelwidget.h"
 #include <QDialogButtonBox>
@@ -24,20 +26,20 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
 
-    auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
+    auto mModelName = w.findChild<QLineEdit *>(u"mModelName"_s);
     QVERIFY(mModelName);
     QVERIFY(mModelName->text().isEmpty());
-    auto mTagName = w.findChild<QLineEdit *>(QStringLiteral("mTagName"));
+    auto mTagName = w.findChild<QLineEdit *>(u"mTagName"_s);
     QVERIFY(mTagName);
     QVERIFY(mTagName->text().isEmpty());
-    auto mPromptPlainTextEdit = w.findChild<QPlainTextEdit *>(QStringLiteral("mPromptPlainTextEdit"));
+    auto mPromptPlainTextEdit = w.findChild<QPlainTextEdit *>(u"mPromptPlainTextEdit"_s);
     QVERIFY(mPromptPlainTextEdit);
     QVERIFY(mPromptPlainTextEdit->toPlainText().isEmpty());
 
-    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(QStringLiteral("mOllamaModelCreateComboBox"));
+    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(u"mOllamaModelCreateComboBox"_s);
     QVERIFY(mOllamaModelCreateComboBox);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 
@@ -48,7 +50,7 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldHaveDefaultValues()
 void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCancelSignal()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     auto cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
     QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::cancelRequested);
     QTest::mouseClick(cancelButton, Qt::LeftButton);
@@ -58,15 +60,15 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCancelSignal()
 void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
 
-    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(QStringLiteral("mOllamaModelCreateComboBox"));
-    mOllamaModelCreateComboBox->addItem(QStringLiteral("foo"), QStringLiteral("foo"));
+    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(u"mOllamaModelCreateComboBox"_s);
+    mOllamaModelCreateComboBox->addItem(u"foo"_s, u"foo"_s);
 
     // Make sure that createButton is Enabled
-    auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
-    mModelName->setText(QStringLiteral("fff"));
+    auto mModelName = w.findChild<QLineEdit *>(u"mModelName"_s);
+    mModelName->setText(u"fff"_s);
 
     QSignalSpy spy(&w, &OllamaModelCreateFromExistingModelWidget::createNewModelDone);
     QTest::mouseClick(createNewModelButton, Qt::LeftButton);
@@ -76,28 +78,28 @@ void OllamaModelCreateFromExistingModelWidgetTest::shouldEmitCreateSignal()
 void OllamaModelCreateFromExistingModelWidgetTest::shouldChangeCreateButtonEnableState()
 {
     OllamaModelCreateFromExistingModelWidget w(nullptr);
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
-    auto mModelName = w.findChild<QLineEdit *>(QStringLiteral("mModelName"));
+    auto mModelName = w.findChild<QLineEdit *>(u"mModelName"_s);
 
-    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(QStringLiteral("mOllamaModelCreateComboBox"));
-    mOllamaModelCreateComboBox->addItem(QStringLiteral("foo"), QStringLiteral("foo"));
+    auto mOllamaModelCreateComboBox = w.findChild<OllamaModelCreateComboBox *>(u"mOllamaModelCreateComboBox"_s);
+    mOllamaModelCreateComboBox->addItem(u"foo"_s, u"foo"_s);
 
     QVERIFY(!createNewModelButton->isEnabled());
 
-    mModelName->setText(QStringLiteral("fff"));
+    mModelName->setText(u"fff"_s);
     QVERIFY(createNewModelButton->isEnabled());
 
-    mModelName->setText(QStringLiteral("222"));
+    mModelName->setText(u"222"_s);
     QVERIFY(createNewModelButton->isEnabled());
 
     mModelName->setText({});
     QVERIFY(!createNewModelButton->isEnabled());
 
-    mModelName->setText(QStringLiteral("test"));
+    mModelName->setText(u"test"_s);
     QVERIFY(createNewModelButton->isEnabled());
 
-    mModelName->setText(QStringLiteral(" "));
+    mModelName->setText(u" "_s);
     QVERIFY(!createNewModelButton->isEnabled());
 }
 

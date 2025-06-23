@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/textautogenerateheaderwidget.h"
@@ -25,22 +27,22 @@ void TextAutoGenerateWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateWidget w(nullptr);
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mTextAutoGenerateResultWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateResultWidget *>(QStringLiteral("mTextAutoGenerateResultWidget"));
+    auto mTextAutoGenerateResultWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateResultWidget *>(u"mTextAutoGenerateResultWidget"_s);
     QVERIFY(mTextAutoGenerateResultWidget);
 
     auto mTextAutoGenerateTextLineEditWidget =
-        w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEditWidget *>(QStringLiteral("mTextAutoGenerateTextLineEditWidget"));
+        w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEditWidget *>(u"mTextAutoGenerateTextLineEditWidget"_s);
     QVERIFY(mTextAutoGenerateTextLineEditWidget);
 
-    auto mSplitter = w.findChild<QSplitter *>(QStringLiteral("mSplitter"));
+    auto mSplitter = w.findChild<QSplitter *>(u"mSplitter"_s);
     QVERIFY(mSplitter);
     QCOMPARE(mSplitter->orientation(), Qt::Horizontal);
 
-    auto mHeaderWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateHeaderWidget *>(QStringLiteral("mHeaderWidget"));
+    auto mHeaderWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateHeaderWidget *>(u"mHeaderWidget"_s);
     QVERIFY(mHeaderWidget);
 }
 

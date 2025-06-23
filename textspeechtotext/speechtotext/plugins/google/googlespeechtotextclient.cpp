@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "googlespeechtotextclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "googlespeechtotextplugin.h"
 #include <KLocalizedString>
 
@@ -16,7 +18,7 @@ GoogleSpeechToTextClient::~GoogleSpeechToTextClient() = default;
 
 QString GoogleSpeechToTextClient::name() const
 {
-    return QStringLiteral("google");
+    return u"google"_s;
 }
 
 QString GoogleSpeechToTextClient::translatedName() const

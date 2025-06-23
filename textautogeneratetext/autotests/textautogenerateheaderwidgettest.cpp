@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateheaderwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/textautogenerateheaderwidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
@@ -21,20 +23,20 @@ TextAutoGenerateHeaderWidgetTest::TextAutoGenerateHeaderWidgetTest(QObject *pare
 void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mEngineName = w.findChild<QLabel *>(QStringLiteral("mEngineName"));
+    auto mEngineName = w.findChild<QLabel *>(u"mEngineName"_s);
     QVERIFY(mEngineName);
     QVERIFY(mEngineName->text().isEmpty());
 
-    auto mNewChat = w.findChild<QToolButton *>(QStringLiteral("mNewChat"));
+    auto mNewChat = w.findChild<QToolButton *>(u"mNewChat"_s);
     QVERIFY(mNewChat);
     QVERIFY(mNewChat->autoRaise());
     QVERIFY(!mNewChat->toolTip().isEmpty());
 
-    auto mFavorite = w.findChild<QToolButton *>(QStringLiteral("mFavorite"));
+    auto mFavorite = w.findChild<QToolButton *>(u"mFavorite"_s);
     QVERIFY(mFavorite);
     QVERIFY(mFavorite->autoRaise());
     QVERIFY(mFavorite->isCheckable());
@@ -42,7 +44,7 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!mFavorite->isEnabled());
     QVERIFY(!mFavorite->toolTip().isEmpty());
 
-    auto mSearch = w.findChild<QToolButton *>(QStringLiteral("mSearch"));
+    auto mSearch = w.findChild<QToolButton *>(u"mSearch"_s);
     QVERIFY(mSearch);
     QVERIFY(mSearch->autoRaise());
     QVERIFY(!mSearch->toolTip().isEmpty());
@@ -51,7 +53,7 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
 void TextAutoGenerateHeaderWidgetTest::shouldEmitNewChat()
 {
     TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
-    auto mNewChat = w.findChild<QToolButton *>(QStringLiteral("mNewChat"));
+    auto mNewChat = w.findChild<QToolButton *>(u"mNewChat"_s);
 
     QSignalSpy addNewChatChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::addNewChat);
     QTest::mouseClick(mNewChat, Qt::LeftButton);
@@ -61,7 +63,7 @@ void TextAutoGenerateHeaderWidgetTest::shouldEmitNewChat()
 void TextAutoGenerateHeaderWidgetTest::shouldEmitChangeFavoriteRequested()
 {
     TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
-    auto mFavorite = w.findChild<QToolButton *>(QStringLiteral("mFavorite"));
+    auto mFavorite = w.findChild<QToolButton *>(u"mFavorite"_s);
 
     // Force enable for testing
     mFavorite->setEnabled(true);

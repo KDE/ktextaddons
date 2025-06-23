@@ -5,6 +5,8 @@
 */
 
 #include "speechtotextclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TextSpeechToText;
 SpeechToTextClient::SpeechToTextClient(QObject *parent)
     : QObject{parent}

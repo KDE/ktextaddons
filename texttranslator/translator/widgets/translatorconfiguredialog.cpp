@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfiguredialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translatorconfigurewidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
@@ -17,14 +19,14 @@ TranslatorConfigureDialog::TranslatorConfigureDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure Translator"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mTranslatorConfigureWidget->setObjectName(QStringLiteral("mTranslatorConfigureWidget"));
+    mTranslatorConfigureWidget->setObjectName(u"mTranslatorConfigureWidget"_s);
     mainLayout->addWidget(mTranslatorConfigureWidget);
     mainLayout->addStretch();
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(u"buttonBox"_s);
     mainLayout->addWidget(buttonBox);
 
     connect(buttonBox, &QDialogButtonBox::accepted, this, &TranslatorConfigureDialog::slotAccept);

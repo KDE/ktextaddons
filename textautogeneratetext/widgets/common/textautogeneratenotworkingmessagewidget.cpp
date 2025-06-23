@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratenotworkingmessagewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 
 using namespace TextAutoGenerateText;
@@ -15,7 +17,7 @@ TextAutoGenerateNotWorkingMessageWidget::TextAutoGenerateNotWorkingMessageWidget
     setPosition(KMessageWidget::Header);
 
     auto startOllamaAction = new QAction(i18nc("@action", "Start Ollama"), this);
-    startOllamaAction->setObjectName(QStringLiteral("decodeEncryptionKeyAction"));
+    startOllamaAction->setObjectName(u"decodeEncryptionKeyAction"_s);
     connect(startOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::startOllama);
     addAction(startOllamaAction);
 }

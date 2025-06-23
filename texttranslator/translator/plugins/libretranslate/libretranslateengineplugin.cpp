@@ -58,7 +58,7 @@ void LibreTranslateEnginePlugin::translateText()
     if (!mApiKey.isEmpty()) {
         postData += "&api_key=" + mApiKey.toUtf8();
     }
-    const auto url = QUrl(QStringLiteral("%1/translate").arg(mServerUrl));
+    const auto url = QUrl(u"%1/translate"_s.arg(mServerUrl));
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"_L1);
     request.setUrl(url);
@@ -89,7 +89,7 @@ void LibreTranslateEnginePlugin::parseTranslation(QNetworkReply *reply)
     }
 
     const QJsonObject responseObject = jsonResponse.object();
-    setResult(responseObject.value(QStringLiteral("translatedText")).toString());
+    setResult(responseObject.value(u"translatedText"_s).toString());
     reply->deleteLater();
     qCDebug(TRANSLATOR_LIBRETRANSLATE_LOG) << " result " << result();
     Q_EMIT translateDone();

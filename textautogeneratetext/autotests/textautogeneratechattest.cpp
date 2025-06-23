@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechattest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/textautogeneratechat.h"
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -33,7 +35,7 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         TextAutoGenerateText::TextAutoGenerateChat w;
         w.setArchived(false);
         w.setFavorite(true);
-        w.setTitle(QStringLiteral("bla"));
+        w.setTitle(u"bla"_s);
         w.setIdentifier("foo");
 
         const QByteArray ba = w.serialize(w, false);
@@ -46,7 +48,7 @@ void TextAutoGenerateChatTest::shouldSerializeDeserialize()
         TextAutoGenerateText::TextAutoGenerateChat w;
         w.setArchived(true);
         w.setFavorite(false);
-        w.setTitle(QStringLiteral("bla2"));
+        w.setTitle(u"bla2"_s);
         w.setIdentifier("foo3");
 
         const QByteArray ba = w.serialize(w, false);

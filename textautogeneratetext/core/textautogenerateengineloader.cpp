@@ -30,7 +30,7 @@ TextAutoGenerateEngineLoader::~TextAutoGenerateEngineLoader() = default;
 void TextAutoGenerateEngineLoader::loadPlugins()
 {
     const QStringList libPaths = QCoreApplication::libraryPaths();
-    const QString pathSuffix(QStringLiteral("/kf6/textautogeneratetext/"));
+    const QString pathSuffix(u"/kf6/textautogeneratetext/"_s);
     for (const QString &libPath : libPaths) {
         const QDir dir(libPath + pathSuffix);
         if (!dir.exists()) {

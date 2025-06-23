@@ -5,6 +5,8 @@
 */
 
 #include "ollamaconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamacomboboxwidget.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
@@ -29,33 +31,33 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     , mManager(manager)
 {
     auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mMessageWidget->setObjectName(QStringLiteral("mMessageWidget"));
+    mMessageWidget->setObjectName(u"mMessageWidget"_s);
     mainLayout->addWidget(mMessageWidget);
     mMessageWidget->setVisible(false);
     mMessageWidget->setMessageType(KMessageWidget::MessageType::Error);
 
-    mName->setObjectName(QStringLiteral("mName"));
+    mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
     mainLayout->addRow(i18n("Name:"), mName);
 
-    mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
+    mServerUrl->setObjectName(u"mServerUrl"_s);
     KLineEditEventHandler::catchReturnKey(mServerUrl);
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
-    mServerUrl->setPlaceholderText(QStringLiteral("http://127.0.0.1:11434"));
+    mServerUrl->setPlaceholderText(u"http://127.0.0.1:11434"_s);
 
-    mModelComboBoxWidget->setObjectName(QStringLiteral("mModelComboBoxWidget"));
+    mModelComboBoxWidget->setObjectName(u"mModelComboBoxWidget"_s);
     mainLayout->addRow(i18n("Model:"), mModelComboBoxWidget);
 
-    mTemperature->setObjectName(QStringLiteral("mTemperature"));
+    mTemperature->setObjectName(u"mTemperature"_s);
     mainLayout->addRow(i18n("Temperature:"), mTemperature);
     mTemperature->setRange(0.0, 10.0);
     mTemperature->setSingleStep(0.01);
     mTemperature->setToolTip(i18nc("@info:tooltip", "The temperature of the model. Increasing the temperature will make the model answer more creatively."));
 
-    mSeed->setObjectName(QStringLiteral("mSeed"));
+    mSeed->setObjectName(u"mSeed"_s);
     mainLayout->addRow(i18n("Seed:"), mSeed);
     mSeed->setToolTip(i18nc("@info:tooltip",
                             "Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text "
@@ -63,7 +65,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mSeed->setRange(0, 10);
     mSeed->setSingleStep(1);
 
-    mPrompt->setObjectName(QStringLiteral("mPrompt"));
+    mPrompt->setObjectName(u"mPrompt"_s);
     mainLayout->addRow(i18n("Prompt:"), mPrompt);
     mPrompt->setPlaceholderText(i18n("No system prompt"));
 

@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolconfigdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetoolconfigwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -25,13 +27,13 @@ LanguageToolConfigDialog::LanguageToolConfigDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure LanguageTool"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
 
-    mConfigWidget->setObjectName(QStringLiteral("configwidget"));
+    mConfigWidget->setObjectName(u"configwidget"_s);
     mainLayout->addWidget(mConfigWidget);
 
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Reset, this);
-    box->setObjectName(QStringLiteral("box"));
+    box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &LanguageToolConfigDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &LanguageToolConfigDialog::reject);

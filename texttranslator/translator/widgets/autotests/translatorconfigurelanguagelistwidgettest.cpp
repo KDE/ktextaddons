@@ -5,6 +5,8 @@
 */
 
 #include "translatorconfigurelanguagelistwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "translator/widgets/translatorconfigurelanguagelistwidget.h"
 #include <QLabel>
 #include <QLineEdit>
@@ -20,18 +22,18 @@ TranslatorConfigureLanguageListWidgetTest::TranslatorConfigureLanguageListWidget
 void TranslatorConfigureLanguageListWidgetTest::shouldHaveDefaultValues()
 {
     TextTranslator::TranslatorConfigureLanguageListWidget w({});
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mLanguageListWidget = w.findChild<QListView *>(QStringLiteral("mLanguageListWidget"));
+    auto mLanguageListWidget = w.findChild<QListView *>(u"mLanguageListWidget"_s);
     QVERIFY(mLanguageListWidget);
 
-    auto mListSearchLine = w.findChild<QLineEdit *>(QStringLiteral("mListSearchLine"));
+    auto mListSearchLine = w.findChild<QLineEdit *>(u"mListSearchLine"_s);
     QVERIFY(mListSearchLine);
     QVERIFY(!mListSearchLine->placeholderText().isEmpty());
 
-    auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
+    auto mLabel = w.findChild<QLabel *>(u"mLabel"_s);
     QVERIFY(mLabel);
     QVERIFY(mLabel->text().isEmpty());
     QVERIFY(w.selectedLanguages().isEmpty());
@@ -39,9 +41,9 @@ void TranslatorConfigureLanguageListWidgetTest::shouldHaveDefaultValues()
 
 void TranslatorConfigureLanguageListWidgetTest::shouldAssignLabel()
 {
-    const QString label{QStringLiteral("FOO")};
+    const QString label{u"FOO"_s};
     TextTranslator::TranslatorConfigureLanguageListWidget w(label);
-    auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
+    auto mLabel = w.findChild<QLabel *>(u"mLabel"_s);
     QVERIFY(mLabel);
     QCOMPARE(mLabel->text(), label);
 }

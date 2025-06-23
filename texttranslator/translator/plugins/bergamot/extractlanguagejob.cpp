@@ -5,6 +5,8 @@
 */
 
 #include "extractlanguagejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bergamotengineutils.h"
 #include "libbergamot_debug.h"
 #include <KLocalizedString>
@@ -49,7 +51,7 @@ void ExtractLanguageJob::start()
     const QStringList lst = zipDir->entries();
     // qDebug() << " list of files " << lst;
     for (const QString &name : lst) {
-        const QString storeDirectory{BergamotEngineUtils::storageLanguagePath() + QLatin1Char('/') + name};
+        const QString storeDirectory{BergamotEngineUtils::storageLanguagePath() + u'/' + name};
         if (!QDir().mkpath(storeDirectory)) {
             qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create :" << storeDirectory;
             continue;
@@ -60,7 +62,7 @@ void ExtractLanguageJob::start()
             const QStringList entries = configDirectory->entries();
             // qDebug() << " list of files entries " << entries;
             for (const QString &file : entries) {
-                const KArchiveEntry *filePathEntry = zipDir->entry(name + QStringLiteral("/%1").arg(file));
+                const KArchiveEntry *filePathEntry = zipDir->entry(name + u"/%1"_s.arg(file));
                 if (filePathEntry && filePathEntry->isFile()) {
                     const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
                     if (!filePath->copyTo(storeDirectory)) {

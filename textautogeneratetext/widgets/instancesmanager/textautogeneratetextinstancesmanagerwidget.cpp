@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratetextinstancesmanagerwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextinstancesmanager.h"
@@ -27,17 +29,17 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
     mainLayout->setSpacing(0);
 
     auto hboxLayout = new QHBoxLayout;
     hboxLayout->setContentsMargins({});
-    hboxLayout->setObjectName(QStringLiteral("hboxLayout"));
+    hboxLayout->setObjectName(u"hboxLayout"_s);
 
     mainLayout->addLayout(hboxLayout);
 
-    mSearchLineEdit->setObjectName(QStringLiteral("mSearchLineEdit"));
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     hboxLayout->addWidget(mSearchLineEdit);
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
@@ -45,8 +47,8 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     connect(mSearchLineEdit, &QLineEdit::textChanged, mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::slotSearchChanged);
 
     auto addInstanceButton = new QToolButton(this);
-    addInstanceButton->setObjectName(QStringLiteral("addInstanceButton"));
-    addInstanceButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    addInstanceButton->setObjectName(u"addInstanceButton"_s);
+    addInstanceButton->setIcon(QIcon::fromTheme(u"list-add"_s));
     addInstanceButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
     addInstanceButton->setAutoRaise(true);
     hboxLayout->addWidget(addInstanceButton);
@@ -83,7 +85,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::markAsDefaultChanged, this, [this](const QByteArray &uuid) {
         mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->setCurrentInstance(uuid);
     });
-    mInstancesManagerListView->setObjectName(QStringLiteral("mInstancesManagerListView"));
+    mInstancesManagerListView->setObjectName(u"mInstancesManagerListView"_s);
     mainLayout->addWidget(mInstancesManagerListView);
 }
 

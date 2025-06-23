@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadprogresswidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "modelsmanager/ollamamodeldownloadprogresswidget.h"
 #include <QLabel>
 #include <QProgressBar>
@@ -21,18 +23,18 @@ void OllamaModelDownloadProgressWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelDownloadProgressWidget w(nullptr);
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mProgressBar = w.findChild<QProgressBar *>(QStringLiteral("mProgressBar"));
+    auto mProgressBar = w.findChild<QProgressBar *>(u"mProgressBar"_s);
     QVERIFY(mProgressBar);
-    auto mModelNameLabel = w.findChild<QLabel *>(QStringLiteral("mModelNameLabel"));
+    auto mModelNameLabel = w.findChild<QLabel *>(u"mModelNameLabel"_s);
     QVERIFY(mModelNameLabel);
-    auto mProgressStatusLabel = w.findChild<QLabel *>(QStringLiteral("mProgressStatusLabel"));
+    auto mProgressStatusLabel = w.findChild<QLabel *>(u"mProgressStatusLabel"_s);
     QVERIFY(mProgressStatusLabel);
 
-    auto mCancelDownloadButton = w.findChild<QToolButton *>(QStringLiteral("mCancelDownloadButton"));
+    auto mCancelDownloadButton = w.findChild<QToolButton *>(u"mCancelDownloadButton"_s);
     QVERIFY(mCancelDownloadButton);
     QVERIFY(!mCancelDownloadButton->toolTip().isEmpty());
 }

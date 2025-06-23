@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "voskenginelanguagewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "voskenginelanguagewidget.h"
 #include <QTest>
 #include <QVBoxLayout>
@@ -16,7 +18,7 @@ VoskEngineLanguageWidgetTest::VoskEngineLanguageWidgetTest(QObject *parent)
 void VoskEngineLanguageWidgetTest::shouldHaveDefaultValues()
 {
     VoskEngineLanguageWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 

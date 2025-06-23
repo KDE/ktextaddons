@@ -5,6 +5,8 @@
 */
 
 #include "grammalectewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalecte/grammalecteconfigdialog.h"
 #include "grammalecte/grammalecteresultjob.h"
 #include <TextGrammarCheck/GrammalecteManager>
@@ -27,10 +29,10 @@ GrammalecteWidget::GrammalecteWidget(QWidget *parent)
     QStandardPaths::setTestModeEnabled(true);
     auto mainLayout = new QVBoxLayout(this);
 
-    auto button = new QPushButton(QStringLiteral("Check Grammar"), this);
+    auto button = new QPushButton(u"Check Grammar"_s, this);
     mainLayout->addWidget(button);
 
-    auto checkSettingsButton = new QPushButton(QStringLiteral("Get Settings"), this);
+    auto checkSettingsButton = new QPushButton(u"Get Settings"_s, this);
     mainLayout->addWidget(checkSettingsButton);
 
     mInput = new QTextEdit(this);
@@ -70,8 +72,8 @@ void GrammalecteWidget::slotReplaceText(const TextGrammarCheck::GrammarAction &a
 void GrammalecteWidget::slotGetSettings()
 {
     auto job = new TextGrammarCheck::GrammalecteGenerateConfigOptionJob(this);
-    job->setPythonPath(QStringLiteral("/usr/bin/python3"));
-    job->setGrammarlecteCliPath(QStringLiteral("/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py"));
+    job->setPythonPath(u"/usr/bin/python3"_s);
+    job->setGrammarlecteCliPath(u"/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py"_s);
     connect(job, &TextGrammarCheck::GrammalecteGenerateConfigOptionJob::finished, this, &GrammalecteWidget::slotGetSettingsFinished);
     job->start();
 }
@@ -83,8 +85,8 @@ void GrammalecteWidget::slotGetSettingsFinished(const QVector<TextGrammarCheck::
 void GrammalecteWidget::slotCheckGrammar()
 {
     auto job = new TextGrammarCheck::GrammalecteResultJob(this);
-    job->setPythonPath(QStringLiteral("/usr/bin/python3"));
-    job->setGrammarlecteCliPath(QStringLiteral("/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py"));
+    job->setPythonPath(u"/usr/bin/python3"_s);
+    job->setGrammarlecteCliPath(u"/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py"_s);
     job->setText(mInput->toPlainText());
     connect(job, &TextGrammarCheck::GrammalecteResultJob::finished, this, &GrammalecteWidget::slotResultFinished);
     job->start();

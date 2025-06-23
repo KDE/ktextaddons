@@ -5,6 +5,8 @@
 */
 
 #include "deeplengineclient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "deeplengineconfiguredialog.h"
 #include "deeplengineplugin.h"
 #include "deeplengineutil.h"
@@ -25,7 +27,7 @@ DeeplEngineClient::~DeeplEngineClient() = default;
 
 QString DeeplEngineClient::name() const
 {
-    return QStringLiteral("deepl");
+    return u"deepl"_s;
 }
 
 QString DeeplEngineClient::translatedName() const

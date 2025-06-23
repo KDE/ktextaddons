@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechactionstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../texttospeechactions.h"
 #include <QSignalSpy>
 #include <QTest>
@@ -15,7 +17,7 @@ TextToSpeechActionsTest::TextToSpeechActionsTest(QObject *parent)
     : QObject(parent)
 {
     qRegisterMetaType<TextEditTextToSpeech::TextToSpeechWidget::State>();
-    QIcon::setThemeName(QStringLiteral("breeze"));
+    QIcon::setThemeName(u"breeze"_s);
 }
 
 TextToSpeechActionsTest::~TextToSpeechActionsTest() = default;

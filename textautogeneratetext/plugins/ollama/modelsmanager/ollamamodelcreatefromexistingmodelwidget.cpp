@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelcreatefromexistingmodelwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ollamamanager.h"
 #include "ollamamodelcreatecombobox.h"
 #include <KLocalizedString>
@@ -22,23 +24,23 @@ OllamaModelCreateFromExistingModelWidget::OllamaModelCreateFromExistingModelWidg
     , mOllamaModelCreateComboBox(new OllamaModelCreateComboBox(manager, this))
 {
     auto mainLayout = new QFormLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(u"mainlayout"_s);
     mainLayout->setContentsMargins({});
 
-    mOllamaModelCreateComboBox->setObjectName(QStringLiteral("mOllamaModelCreateComboBox"));
+    mOllamaModelCreateComboBox->setObjectName(u"mOllamaModelCreateComboBox"_s);
     mainLayout->addRow(i18n("Base:"), mOllamaModelCreateComboBox);
 
-    mModelName->setObjectName(QStringLiteral("mModelName"));
+    mModelName->setObjectName(u"mModelName"_s);
     mainLayout->addRow(i18n("Name:"), mModelName);
 
-    mTagName->setObjectName(QStringLiteral("mTagName"));
+    mTagName->setObjectName(u"mTagName"_s);
     mainLayout->addRow(i18n("Tag:"), mTagName);
 
-    mPromptPlainTextEdit->setObjectName(QStringLiteral("mPromptPlainTextEdit"));
+    mPromptPlainTextEdit->setObjectName(u"mPromptPlainTextEdit"_s);
     mainLayout->addRow(i18n("Prompt:"), mPromptPlainTextEdit);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    buttonBox->setObjectName(u"buttonBox"_s);
     auto createNewModelButton = buttonBox->button(QDialogButtonBox::Ok);
     createNewModelButton->setText(i18nc("@action:button", "Create"));
 

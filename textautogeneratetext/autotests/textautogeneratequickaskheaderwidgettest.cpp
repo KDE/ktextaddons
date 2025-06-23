@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskheaderwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
 #include <QHBoxLayout>
 #include <QSignalSpy>
@@ -21,11 +23,11 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget w(nullptr);
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto configureButton = w.findChild<QToolButton *>(QStringLiteral("configureButton"));
+    auto configureButton = w.findChild<QToolButton *>(u"configureButton"_s);
     QVERIFY(configureButton);
     QVERIFY(!configureButton->toolTip().isEmpty());
     QVERIFY(configureButton->autoRaise());
@@ -37,7 +39,7 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldEmitConfigureRequested()
 
     QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateQuickAskHeaderWidget::configureRequested);
 
-    auto toolButton = w.findChild<QToolButton *>(QStringLiteral("configureButton"));
+    auto toolButton = w.findChild<QToolButton *>(u"configureButton"_s);
     QTest::mouseClick(toolButton, Qt::LeftButton);
     QCOMPARE(spy.count(), 1);
 }

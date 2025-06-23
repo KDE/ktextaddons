@@ -5,6 +5,8 @@
 */
 
 #include "languagetoolconfigwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "languagetool/languagetoolcombobox.h"
 #include "languagetool/languagetoolconfigwidget.h"
 #include <QCheckBox>
@@ -26,35 +28,35 @@ LanguageToolConfigWidgetTest::LanguageToolConfigWidgetTest(QObject *parent)
 void LanguageToolConfigWidgetTest::shouldHaveDefaultValue()
 {
     TextGrammarCheck::LanguageToolConfigWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins());
 
-    auto mUseLocalInstance = w.findChild<QCheckBox *>(QStringLiteral("uselocalinstance"));
+    auto mUseLocalInstance = w.findChild<QCheckBox *>(u"uselocalinstance"_s);
     QVERIFY(mUseLocalInstance);
     QVERIFY(!mUseLocalInstance->text().isEmpty());
     QVERIFY(!mUseLocalInstance->isChecked());
 
-    auto instancePathLabel = w.findChild<QLabel *>(QStringLiteral("instancepath"));
+    auto instancePathLabel = w.findChild<QLabel *>(u"instancepath"_s);
     QVERIFY(instancePathLabel);
     QVERIFY(!instancePathLabel->text().isEmpty());
     QVERIFY(!instancePathLabel->isEnabled());
 
-    auto mInstancePath = w.findChild<QLineEdit *>(QStringLiteral("instancepath"));
+    auto mInstancePath = w.findChild<QLineEdit *>(u"instancepath"_s);
     QVERIFY(mInstancePath);
     // We load default value
     QVERIFY(!mInstancePath->text().isEmpty());
     QVERIFY(!mInstancePath->isEnabled());
     QVERIFY(mInstancePath->isClearButtonEnabled());
 
-    auto languageLabel = w.findChild<QLabel *>(QStringLiteral("languageLabel"));
+    auto languageLabel = w.findChild<QLabel *>(u"languageLabel"_s);
     QVERIFY(languageLabel);
     QVERIFY(!languageLabel->text().isEmpty());
 
-    auto mLanguageToolCombobox = w.findChild<TextGrammarCheck::LanguageToolComboBox *>(QStringLiteral("languagecombobox"));
+    auto mLanguageToolCombobox = w.findChild<TextGrammarCheck::LanguageToolComboBox *>(u"languagecombobox"_s);
     QVERIFY(mLanguageToolCombobox);
 
-    auto refreshButton = w.findChild<QToolButton *>(QStringLiteral("refreshbutton"));
+    auto refreshButton = w.findChild<QToolButton *>(u"refreshbutton"_s);
     QVERIFY(refreshButton);
     // QVERIFY(!refreshButton->icon().isNull());
 }
@@ -63,11 +65,11 @@ void LanguageToolConfigWidgetTest::shouldUpdateWidgets()
 {
     TextGrammarCheck::LanguageToolConfigWidget w;
 
-    auto mUseLocalInstance = w.findChild<QCheckBox *>(QStringLiteral("uselocalinstance"));
+    auto mUseLocalInstance = w.findChild<QCheckBox *>(u"uselocalinstance"_s);
 
-    auto instancePathLabel = w.findChild<QLabel *>(QStringLiteral("instancepath"));
+    auto instancePathLabel = w.findChild<QLabel *>(u"instancepath"_s);
 
-    auto mInstancePath = w.findChild<QLineEdit *>(QStringLiteral("instancepath"));
+    auto mInstancePath = w.findChild<QLineEdit *>(u"instancepath"_s);
     QTest::mouseClick(mUseLocalInstance, Qt::LeftButton);
 
     QVERIFY(mUseLocalInstance->isChecked());

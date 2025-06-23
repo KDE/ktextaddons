@@ -7,6 +7,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 // Self
 #include "slidecontainertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 // Local
 #include <TextAddonsWidgets/SlideContainer>

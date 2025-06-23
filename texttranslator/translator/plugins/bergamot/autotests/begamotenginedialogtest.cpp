@@ -5,6 +5,8 @@
 */
 
 #include "begamotenginedialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "begamotenginedialog.h"
 #include "bergamotenginewidget.h"
 #include <QDialogButtonBox>
@@ -21,13 +23,13 @@ BegamotEngineDialogTest::BegamotEngineDialogTest(QObject *parent)
 void BegamotEngineDialogTest::shouldHaveDefaultValues()
 {
     BegamotEngineDialog w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mBergamotEngineWidget = w.findChild<BergamotEngineWidget *>(QStringLiteral("mBergamotEngineWidget"));
+    auto mBergamotEngineWidget = w.findChild<BergamotEngineWidget *>(u"mBergamotEngineWidget"_s);
     QVERIFY(mBergamotEngineWidget);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 

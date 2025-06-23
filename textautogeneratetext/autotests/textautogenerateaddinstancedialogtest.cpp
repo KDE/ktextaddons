@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaddinstancedialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "widgets/instancesmanager/textautogenerateaddinstancedialog.h"
 #include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
 #include <QDialogButtonBox>
@@ -20,14 +22,13 @@ void TextAutoGenerateAddInstanceDialogTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateAddInstanceDialog d(nullptr);
     QVERIFY(!d.windowTitle().isEmpty());
-    auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mTextAutoGenerateAddInstanceWidget =
-        d.findChild<TextAutoGenerateText::TextAutoGenerateAddInstanceWidget *>(QStringLiteral("mTextAutoGenerateAddInstanceWidget"));
+    auto mTextAutoGenerateAddInstanceWidget = d.findChild<TextAutoGenerateText::TextAutoGenerateAddInstanceWidget *>(u"mTextAutoGenerateAddInstanceWidget"_s);
     QVERIFY(mTextAutoGenerateAddInstanceWidget);
 
-    auto button = d.findChild<QDialogButtonBox *>(QStringLiteral("button"));
+    auto button = d.findChild<QDialogButtonBox *>(u"button"_s);
     QVERIFY(button);
     QCOMPARE(button->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Cancel | QDialogButtonBox::Ok});
 }

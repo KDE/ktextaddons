@@ -5,6 +5,8 @@
 */
 
 #include "emoticontonecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 
@@ -16,17 +18,17 @@ EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
     QFont f = font();
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     setFont(f);
-    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d")),
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(u"1f44d"_s),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Original));
-    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fb")),
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(u"1f44d-1f3fb"_s),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Light));
-    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fc")),
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(u"1f44d-1f3fc"_s),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumLight));
-    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fd")),
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(u"1f44d-1f3fd"_s),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Medium));
-    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3fe")),
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(u"1f44d-1f3fe"_s),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::MediumDark));
-    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(QStringLiteral("1f44d-1f3ff")),
+    addItem(TextEmoticonsCore::EmoticonUnicodeUtils::escapeUnicodeEmoji(u"1f44d-1f3ff"_s),
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark));
 }
 

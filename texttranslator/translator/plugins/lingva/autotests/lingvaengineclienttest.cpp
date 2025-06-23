@@ -5,6 +5,8 @@
 */
 
 #include "lingvaengineclienttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../lingvaengineclient.h"
 #include "translator/translatorengineplugin.h"
 #include <QTest>
@@ -18,7 +20,7 @@ LingvaEngineClientTest::LingvaEngineClientTest(QObject *parent)
 void LingvaEngineClientTest::shouldHaveDefaultValues()
 {
     LingvaEngineClient client;
-    QCOMPARE(client.name(), QStringLiteral("lingva"));
+    QCOMPARE(client.name(), u"lingva"_s);
     auto plugin = client.createTranslator();
     QVERIFY(plugin);
     delete plugin;

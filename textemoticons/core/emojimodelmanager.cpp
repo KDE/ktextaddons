@@ -5,6 +5,7 @@
 */
 
 #include "emojimodelmanager.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "unicodeemoticonmanager.h"
 #include <KConfigGroup>
@@ -23,7 +24,7 @@ public:
     void loadSettings()
     {
         // Try reading the old key first
-        KConfigGroup group(KSharedConfig::openConfig(), QStringLiteral("EmoticonRecentUsed"));
+        KConfigGroup group(KSharedConfig::openConfig(), u"EmoticonRecentUsed"_s);
         if (group.hasKey("Recents")) {
             recentIdentifier = group.readEntry("Recents", QStringList());
             // Make sure to clean up the old key, so we don't read it again
@@ -45,7 +46,7 @@ public:
         group.sync();
     }
 
-    QString settingsGroupName = QStringLiteral("EmoticonRecentUsed");
+    QString settingsGroupName = u"EmoticonRecentUsed"_s;
     TextEmoticonsCore::EmojiModel *const emojiModel;
     QStringList recentIdentifier;
     QStringList excludeEmoticons;

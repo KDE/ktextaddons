@@ -5,6 +5,8 @@
 */
 
 #include "libretranslateengineconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QCheckBox>
@@ -20,28 +22,28 @@ LibreTranslateEngineConfigureWidget::LibreTranslateEngineConfigureWidget(QWidget
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setContentsMargins({});
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
 
-    mServerUrl->setObjectName(QStringLiteral("mServerUrl"));
+    mServerUrl->setObjectName(u"mServerUrl"_s);
     mServerUrl->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Server Url:"), mServerUrl);
 
-    mRequiredApiKey->setObjectName(QStringLiteral("mRequiredApiKey"));
+    mRequiredApiKey->setObjectName(u"mRequiredApiKey"_s);
     mainLayout->addWidget(mRequiredApiKey);
 
-    mApiKey->setObjectName(QStringLiteral("mApiKey"));
+    mApiKey->setObjectName(u"mApiKey"_s);
     mApiKey->setClearButtonEnabled(true);
     mainLayout->addRow(i18n("Api Key:"), mApiKey);
     connect(mRequiredApiKey, &QCheckBox::clicked, this, &LibreTranslateEngineConfigureWidget::updateApiKeyState);
 
     const QStringList listServer{
-        QStringLiteral("https://libretranslate.com"),
-        QStringLiteral("https://libretranslate.de"),
-        QStringLiteral("https://translate.argosopentech.com"),
-        QStringLiteral("https://translate.api.skitzen.com"),
-        QStringLiteral("https://translate.fortytwo-it.com"),
-        QStringLiteral("https://translate.terraprint.co"),
-        QStringLiteral("https://lt.vern.cc"),
+        u"https://libretranslate.com"_s,
+        u"https://libretranslate.de"_s,
+        u"https://translate.argosopentech.com"_s,
+        u"https://translate.api.skitzen.com"_s,
+        u"https://translate.fortytwo-it.com"_s,
+        u"https://translate.terraprint.co"_s,
+        u"https://lt.vern.cc"_s,
     };
 
     KLineEditEventHandler::catchReturnKey(mApiKey);

@@ -5,6 +5,8 @@
 */
 
 #include "emoticontexteditselectortest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "emoticoncategorybuttons.h"
 #include "emoticonlistview.h"
 #include "emoticontexteditselector.h"
@@ -24,23 +26,23 @@ EmoticonTextEditSelectorTest::EmoticonTextEditSelectorTest(QObject *parent)
 void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
 {
     TextEmoticonsWidgets::EmoticonTextEditSelector w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mCategoryButtons = w.findChild<TextEmoticonsWidgets::EmoticonCategoryButtons *>(QStringLiteral("mCategoryButtons"));
+    auto mCategoryButtons = w.findChild<TextEmoticonsWidgets::EmoticonCategoryButtons *>(u"mCategoryButtons"_s);
     QVERIFY(mCategoryButtons);
 
-    auto mEmoticonListView = w.findChild<TextEmoticonsWidgets::EmoticonListView *>(QStringLiteral("mEmoticonListView"));
+    auto mEmoticonListView = w.findChild<TextEmoticonsWidgets::EmoticonListView *>(u"mEmoticonListView"_s);
     QVERIFY(mEmoticonListView);
 
-    auto mSearchUnicodeLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mSearchUnicodeLineEdit"));
+    auto mSearchUnicodeLineEdit = w.findChild<QLineEdit *>(u"mSearchUnicodeLineEdit"_s);
     QVERIFY(mSearchUnicodeLineEdit);
     QVERIFY(mSearchUnicodeLineEdit->isClearButtonEnabled());
     QVERIFY(mSearchUnicodeLineEdit->text().isEmpty());
     QVERIFY(!mSearchUnicodeLineEdit->placeholderText().isEmpty());
 
-    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmoticonToneComboBox *>(QStringLiteral("emoticonToneComboBox"));
+    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmoticonToneComboBox *>(u"emoticonToneComboBox"_s);
     QVERIFY(emoticonTonComboBox);
 
     QVERIFY(!w.customEmojiSupport());

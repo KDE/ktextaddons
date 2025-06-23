@@ -45,7 +45,7 @@ QString LanguageToolManager::languageToolCheckPath() const
     if (mLanguageToolPath.isEmpty()) {
         return {};
     }
-    return mLanguageToolPath + QStringLiteral("/check");
+    return mLanguageToolPath + u"/check"_s;
 }
 
 QString LanguageToolManager::languageToolLanguagesPath() const
@@ -58,7 +58,7 @@ QString LanguageToolManager::languageToolLanguagesPath() const
 
 QString LanguageToolManager::convertToLanguagePath(const QString &path)
 {
-    return path + QStringLiteral("/languages");
+    return path + u"/languages"_s;
 }
 
 QColor LanguageToolManager::grammarColorForError(const QString &error)
@@ -86,21 +86,21 @@ void LanguageToolManager::setLanguageToolPath(const QString &path)
 void LanguageToolManager::loadSettings()
 {
     KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
-    mLanguageToolPath = grp.readEntry(QStringLiteral("languagetoolpath"), QStringLiteral("https://api.languagetoolplus.com/v2"));
+    mLanguageToolPath = grp.readEntry(u"languagetoolpath"_s, QStringLiteral("https://api.languagetoolplus.com/v2"));
     if (mLanguageToolPath == "https://languagetool.org/api/v2"_L1) {
-        mLanguageToolPath = QStringLiteral("https://api.languagetoolplus.com/v2");
+        mLanguageToolPath = u"https://api.languagetoolplus.com/v2"_s;
     }
-    mLanguage = grp.readEntry(QStringLiteral("language"), QStringLiteral("en"));
-    mUseLocalInstance = grp.readEntry(QStringLiteral("useLocalInstance"), false);
+    mLanguage = grp.readEntry(u"language"_s, QStringLiteral("en"));
+    mUseLocalInstance = grp.readEntry(u"useLocalInstance"_s, false);
     // TODO add options ?
 }
 
 void LanguageToolManager::saveSettings()
 {
     KConfigGroup grp(KSharedConfig::openConfig(), QLatin1StringView(myLanguageToolManagerGroupName));
-    grp.writeEntry(QStringLiteral("languagetoolpath"), mLanguageToolPath);
-    grp.writeEntry(QStringLiteral("language"), mLanguage);
-    grp.writeEntry(QStringLiteral("useLocalInstance"), mUseLocalInstance);
+    grp.writeEntry(u"languagetoolpath"_s, mLanguageToolPath);
+    grp.writeEntry(u"language"_s, mLanguage);
+    grp.writeEntry(u"useLocalInstance"_s, mUseLocalInstance);
 }
 
 QString LanguageToolManager::language() const

@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratelocaldatabaseabstract.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "textautogeneratetextcore_database_debug.h"
 
 #include <QDir>
@@ -24,7 +26,7 @@ QString TextAutoGenerateLocalDatabaseAbstract::dbFileName(const QString &id) con
 {
     const QString identifier = id.isEmpty() ? databaseName() : id;
     const QString dirPath = mBasePath;
-    return dirPath + identifier + QStringLiteral(".sqlite");
+    return dirPath + identifier + u".sqlite"_s;
 }
 
 QString TextAutoGenerateLocalDatabaseAbstract::schemaDatabaseStr() const
@@ -46,10 +48,10 @@ QString TextAutoGenerateLocalDatabaseAbstract::databaseName() const
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Unknown data base it's a bug";
         break;
     case DatabaseType::Chats:
-        prefix = QStringLiteral("chats");
+        prefix = u"chats"_s;
         break;
     case DatabaseType::Messages:
-        prefix = QStringLiteral("messages");
+        prefix = u"messages"_s;
         break;
     }
     return prefix;
@@ -78,7 +80,7 @@ bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id
     const QString dbName = generateDbName(id);
     db = QSqlDatabase::database(dbName);
     if (!db.isValid()) {
-        db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), dbName);
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
         const QString dirPath = mBasePath;
         if (!QDir().mkpath(dirPath)) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't create" << dirPath;
@@ -101,9 +103,9 @@ bool TextAutoGenerateLocalDatabaseAbstract::initializeDataBase(const QString &id
         }
         // Using the write-ahead log and sync = NORMAL for faster writes
         // (idea taken from kactivities-stat)
-        query.exec(QStringLiteral("PRAGMA synchronous = 1"));
+        query.exec(u"PRAGMA synchronous = 1"_s);
         // use the write-ahead log (requires sqlite > 3.7.0)
-        query.exec(QStringLiteral("PRAGMA journal_mode = WAL"));
+        query.exec(u"PRAGMA journal_mode = WAL"_s);
     }
 
     Q_ASSERT(db.isValid());

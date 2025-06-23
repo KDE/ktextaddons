@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechsliderwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QFontMetrics>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -19,15 +21,15 @@ TextToSpeechSliderWidget::TextToSpeechSliderWidget(const QString &labelInfo, QWi
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
-    mSlider->setObjectName(QStringLiteral("mSlider"));
-    mLabel->setObjectName(QStringLiteral("mLabel"));
+    mainLayout->setObjectName(u"mainLayout"_s);
+    mSlider->setObjectName(u"mSlider"_s);
+    mLabel->setObjectName(u"mLabel"_s);
     mSlider->setOrientation(Qt::Horizontal);
     mainLayout->addWidget(mSlider);
     mainLayout->addWidget(mLabel);
 
     const QFontMetrics f(mLabel->font());
-    mLabel->setMinimumWidth(f.horizontalAdvance(QStringLiteral("MMMM")));
+    mLabel->setMinimumWidth(f.horizontalAdvance(u"MMMM"_s));
     connect(mSlider, &QSlider::valueChanged, this, &TextToSpeechSliderWidget::slotValueChanged);
 }
 

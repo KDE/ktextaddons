@@ -257,187 +257,187 @@ QString TranslatorUtil::languageCode(TranslatorUtil::Language lang)
     QString ret;
     switch (lang) {
     case automatic:
-        ret = QStringLiteral("auto");
+        ret = u"auto"_s;
         break;
     case hmong:
-        ret = QStringLiteral("hmn");
+        ret = u"hmn"_s;
         break;
     case en:
-        ret = QStringLiteral("en");
+        ret = u"en"_s;
         break;
     case zh:
-        ret = QStringLiteral("zh-CN");
+        ret = u"zh-CN"_s;
         break;
     case zt:
-        ret = QStringLiteral("zh-TW");
+        ret = u"zh-TW"_s;
         break;
     case nl:
-        ret = QStringLiteral("nl");
+        ret = u"nl"_s;
         break;
     case fr:
-        ret = QStringLiteral("fr");
+        ret = u"fr"_s;
         break;
     case de:
-        ret = QStringLiteral("de");
+        ret = u"de"_s;
         break;
     case el:
-        ret = QStringLiteral("el");
+        ret = u"el"_s;
         break;
     case it:
-        ret = QStringLiteral("it");
+        ret = u"it"_s;
         break;
     case ja:
-        ret = QStringLiteral("ja");
+        ret = u"ja"_s;
         break;
     case ko:
-        ret = QStringLiteral("ko");
+        ret = u"ko"_s;
         break;
     case pt:
-        ret = QStringLiteral("pt");
+        ret = u"pt"_s;
         break;
     case ru:
-        ret = QStringLiteral("ru");
+        ret = u"ru"_s;
         break;
     case es:
-        ret = QStringLiteral("es");
+        ret = u"es"_s;
         break;
     case af:
-        ret = QStringLiteral("af");
+        ret = u"af"_s;
         break;
     case sq:
-        ret = QStringLiteral("sq");
+        ret = u"sq"_s;
         break;
     case ar:
-        ret = QStringLiteral("ar");
+        ret = u"ar"_s;
         break;
     case hy:
-        ret = QStringLiteral("hy");
+        ret = u"hy"_s;
         break;
     case az:
-        ret = QStringLiteral("az");
+        ret = u"az"_s;
         break;
     case eu:
-        ret = QStringLiteral("eu");
+        ret = u"eu"_s;
         break;
     case be:
-        ret = QStringLiteral("be");
+        ret = u"be"_s;
         break;
     case bg:
-        ret = QStringLiteral("bg");
+        ret = u"bg"_s;
         break;
     case ca:
-        ret = QStringLiteral("ca");
+        ret = u"ca"_s;
         break;
     case hr:
-        ret = QStringLiteral("hr");
+        ret = u"hr"_s;
         break;
     case cs:
-        ret = QStringLiteral("cs");
+        ret = u"cs"_s;
         break;
     case da:
-        ret = QStringLiteral("da");
+        ret = u"da"_s;
         break;
     case et:
-        ret = QStringLiteral("et");
+        ret = u"et"_s;
         break;
     case tl:
-        ret = QStringLiteral("tl");
+        ret = u"tl"_s;
         break;
     case fi:
-        ret = QStringLiteral("fi");
+        ret = u"fi"_s;
         break;
     case gl:
-        ret = QStringLiteral("gl");
+        ret = u"gl"_s;
         break;
     case ka:
-        ret = QStringLiteral("ka");
+        ret = u"ka"_s;
         break;
     case ht:
-        ret = QStringLiteral("ht");
+        ret = u"ht"_s;
         break;
     case iw:
-        ret = QStringLiteral("he");
+        ret = u"he"_s;
         break;
     case hi:
-        ret = QStringLiteral("hi");
+        ret = u"hi"_s;
         break;
     case hu:
-        ret = QStringLiteral("hu");
+        ret = u"hu"_s;
         break;
     case is:
-        ret = QStringLiteral("is");
+        ret = u"is"_s;
         break;
     case id:
-        ret = QStringLiteral("id");
+        ret = u"id"_s;
         break;
     case ga:
-        ret = QStringLiteral("ga");
+        ret = u"ga"_s;
         break;
     case lv:
-        ret = QStringLiteral("lv");
+        ret = u"lv"_s;
         break;
     case lt:
-        ret = QStringLiteral("lt");
+        ret = u"lt"_s;
         break;
     case mk:
-        ret = QStringLiteral("mk");
+        ret = u"mk"_s;
         break;
     case ms:
-        ret = QStringLiteral("ms");
+        ret = u"ms"_s;
         break;
     case mt:
-        ret = QStringLiteral("mt");
+        ret = u"mt"_s;
         break;
     case no:
-        ret = QStringLiteral("no");
+        ret = u"no"_s;
         break;
     case fa:
-        ret = QStringLiteral("fa");
+        ret = u"fa"_s;
         break;
     case pl:
-        ret = QStringLiteral("pl");
+        ret = u"pl"_s;
         break;
     case ro:
-        ret = QStringLiteral("ro");
+        ret = u"ro"_s;
         break;
     case sr:
-        ret = QStringLiteral("sr");
+        ret = u"sr"_s;
         break;
     case sk:
-        ret = QStringLiteral("sk");
+        ret = u"sk"_s;
         break;
     case sl:
-        ret = QStringLiteral("sl");
+        ret = u"sl"_s;
         break;
     case sw:
-        ret = QStringLiteral("sw");
+        ret = u"sw"_s;
         break;
     case sv:
-        ret = QStringLiteral("sv");
+        ret = u"sv"_s;
         break;
     case th:
-        ret = QStringLiteral("th");
+        ret = u"th"_s;
         break;
     case tr:
-        ret = QStringLiteral("tr");
+        ret = u"tr"_s;
         break;
     case uk:
-        ret = QStringLiteral("uk");
+        ret = u"uk"_s;
         break;
     case ur:
-        ret = QStringLiteral("ur");
+        ret = u"ur"_s;
         break;
     case vi:
-        ret = QStringLiteral("vi");
+        ret = u"vi"_s;
         break;
     case cy:
-        ret = QStringLiteral("cy");
+        ret = u"cy"_s;
         break;
     case yi:
-        ret = QStringLiteral("yi");
+        ret = u"yi"_s;
         break;
     case bs:
-        return QStringLiteral("bs");
+        return u"bs"_s;
     }
     return ret;
 }
@@ -449,17 +449,17 @@ void TranslatorUtil::addItemToFromComboBox(QComboBox *combo, const QString &lang
 
 QString TranslatorUtil::groupTranslateName()
 {
-    return QStringLiteral("Translate");
+    return u"Translate"_s;
 }
 
 QString TranslatorUtil::engineTranslateName()
 {
-    return QStringLiteral("engine");
+    return u"engine"_s;
 }
 
 QString TranslatorUtil::defaultEngineName()
 {
-    return QStringLiteral("google");
+    return u"google"_s;
 }
 
 QString TranslatorUtil::loadEngine()

@@ -38,17 +38,17 @@ void GoogleEnginePlugin::translate()
     clear();
 
     QUrlQuery urlQuery;
-    urlQuery.addQueryItem(QStringLiteral("client"), QStringLiteral("gtx"));
-    urlQuery.addQueryItem(QStringLiteral("sl"), languageCode(from()));
-    urlQuery.addQueryItem(QStringLiteral("tl"), languageCode(to()));
-    urlQuery.addQueryItem(QStringLiteral("dt"), QStringLiteral("t"));
-    urlQuery.addQueryItem(QStringLiteral("q"), inputText());
+    urlQuery.addQueryItem(u"client"_s, u"gtx"_s);
+    urlQuery.addQueryItem(u"sl"_s, languageCode(from()));
+    urlQuery.addQueryItem(u"tl"_s, languageCode(to()));
+    urlQuery.addQueryItem(u"dt"_s, u"t"_s);
+    urlQuery.addQueryItem(u"q"_s, inputText());
 
     QUrl url;
     url.setQuery(urlQuery);
-    url.setScheme(QStringLiteral("https"));
-    url.setHost(QStringLiteral("translate.googleapis.com"));
-    url.setPath(QStringLiteral("/translate_a/single"));
+    url.setScheme(u"https"_s);
+    url.setHost(u"translate.googleapis.com"_s);
+    url.setPath(u"/translate_a/single"_s);
     const QNetworkRequest request(url);
 
     QNetworkReply *reply = TextTranslator::TranslatorEngineAccessManager::self()->networkManager()->get(request);
@@ -61,7 +61,7 @@ void GoogleEnginePlugin::translate()
 QString GoogleEnginePlugin::languageCode(const QString &langStr)
 {
     if (langStr == "iw"_L1) {
-        return QStringLiteral("iw");
+        return u"iw"_s;
     }
     return langStr;
 }
@@ -73,8 +73,8 @@ void GoogleEnginePlugin::slotTranslateFinished(QNetworkReply *reply)
     reply->deleteLater();
     //  jsonData contains arrays like this: ["foo",,"bar"]
     //  but this is not valid JSON for QJSON, it expects empty strings: ["foo","","bar"]
-    mJsonData.replace(QRegularExpression(QStringLiteral(",{3,3}")), QStringLiteral(",\"\",\"\","));
-    mJsonData.replace(QRegularExpression(QStringLiteral(",{2,2}")), QStringLiteral(",\"\","));
+    mJsonData.replace(QRegularExpression(u",{3,3}"_s), u",\"\",\"\","_s);
+    mJsonData.replace(QRegularExpression(u",{2,2}"_s), u",\"\","_s);
     qCDebug(TRANSLATOR_GOOGLE_LOG) << mJsonData;
 
     QJsonParseError parsingError;

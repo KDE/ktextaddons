@@ -154,8 +154,8 @@ TranslatorWidget::~TranslatorWidget()
 void TranslatorWidget::writeConfig()
 {
     if (d->languageSettingsChanged) {
-        KConfigGroup myGroup(KSharedConfig::openConfig(), QStringLiteral("General"));
-        myGroup.writeEntry(QStringLiteral("FromLanguage"), d->fromCombobox->itemData(d->fromCombobox->currentIndex()).toString());
+        KConfigGroup myGroup(KSharedConfig::openConfig(), u"General"_s);
+        myGroup.writeEntry(u"FromLanguage"_s, d->fromCombobox->itemData(d->fromCombobox->currentIndex()).toString());
         myGroup.writeEntry("ToLanguage", d->toCombobox->itemData(d->toCombobox->currentIndex()).toString());
         myGroup.sync();
     }
@@ -170,8 +170,8 @@ void TranslatorWidget::readConfig()
     const QList<int> size = {100, 100};
     d->splitter->setSizes(myGroupUi.readEntry("mainSplitter", size));
 
-    KConfigGroup myGroup(KSharedConfig::openConfig(), QStringLiteral("General"));
-    const QString from = myGroup.readEntry(QStringLiteral("FromLanguage"));
+    KConfigGroup myGroup(KSharedConfig::openConfig(), u"General"_s);
+    const QString from = myGroup.readEntry(u"FromLanguage"_s);
     if (from.isEmpty()) {
         return;
     }
@@ -185,7 +185,7 @@ void TranslatorWidget::readConfig()
     d->fillToCombobox(from);
     d->toCombobox->blockSignals(false);
 
-    const QString to = myGroup.readEntry(QStringLiteral("ToLanguage"));
+    const QString to = myGroup.readEntry(u"ToLanguage"_s);
     const int indexTo = d->toCombobox->findData(to);
     if (indexTo != -1) {
         d->toCombobox->setCurrentIndex(indexTo);
@@ -213,8 +213,8 @@ void TranslatorWidget::init()
                                    style()->pixelMetric(QStyle::PM_LayoutRightMargin),
                                    style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
     d->closeBtn = new QToolButton(this);
-    d->closeBtn->setObjectName(QStringLiteral("close-button"));
-    d->closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
+    d->closeBtn->setObjectName(u"close-button"_s);
+    d->closeBtn->setIcon(QIcon::fromTheme(u"dialog-close"_s));
     d->closeBtn->setIconSize(QSize(16, 16));
     d->closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
 
@@ -230,7 +230,7 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(label);
     d->fromCombobox = new QComboBox(this);
     d->fromCombobox->setMinimumWidth(50);
-    d->fromCombobox->setObjectName(QStringLiteral("from"));
+    d->fromCombobox->setObjectName(u"from"_s);
     hboxLayout->addWidget(d->fromCombobox);
 
     label = new QLabel(i18nc("Translate to language", "To:"), this);
@@ -238,7 +238,7 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(label);
     d->toCombobox = new QComboBox(this);
     d->toCombobox->setMinimumWidth(50);
-    d->toCombobox->setObjectName(QStringLiteral("to"));
+    d->toCombobox->setObjectName(u"to"_s);
 
     hboxLayout->addWidget(d->toCombobox);
 
@@ -247,12 +247,12 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(separator);
 
     d->invert = new QPushButton(i18nc("Invert language choices so that from becomes to and to becomes from", "Invert"), this);
-    d->invert->setObjectName(QStringLiteral("invert-button"));
+    d->invert->setObjectName(u"invert-button"_s);
     connect(d->invert, &QPushButton::clicked, this, &TranslatorWidget::slotInvertLanguage);
     hboxLayout->addWidget(d->invert);
 
     d->clear = new QPushButton(i18nc("@action:button", "Clear"), this);
-    d->clear->setObjectName(QStringLiteral("clear-button"));
+    d->clear->setObjectName(u"clear-button"_s);
 #ifndef QT_NO_ACCESSIBILITY
     d->clear->setAccessibleName(i18n("Clear"));
 #endif
@@ -260,7 +260,7 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(d->clear);
 
     d->translate = new QPushButton(i18nc("@action:button", "Translate"), this);
-    d->translate->setObjectName(QStringLiteral("translate-button"));
+    d->translate->setObjectName(u"translate-button"_s);
 #ifndef QT_NO_ACCESSIBILITY
     d->translate->setAccessibleName(i18n("Translate"));
 #endif
@@ -284,8 +284,8 @@ void TranslatorWidget::init()
     hboxLayout->addWidget(d->engineNameLabel);
 
     auto configureButton = new QToolButton(this);
-    configureButton->setObjectName(QStringLiteral("configure_button"));
-    configureButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+    configureButton->setObjectName(u"configure_button"_s);
+    configureButton->setIcon(QIcon::fromTheme(u"configure"_s));
     configureButton->setIconSize(QSize(16, 16));
     configureButton->setToolTip(i18nc("@info:tooltip", "Configure"));
     connect(configureButton, &QToolButton::clicked, this, [this]() {
@@ -305,14 +305,14 @@ void TranslatorWidget::init()
     d->splitter = new QSplitter;
     d->splitter->setChildrenCollapsible(false);
     d->inputText = new TranslatorTextEdit(this);
-    d->inputText->setObjectName(QStringLiteral("inputtext"));
+    d->inputText->setObjectName(u"inputtext"_s);
 
     connect(d->inputText, &TranslatorTextEdit::textChanged, this, &TranslatorWidget::slotTextChanged);
     connect(d->inputText, &TranslatorTextEdit::translateText, this, &TranslatorWidget::slotTranslate);
 
     d->splitter->addWidget(d->inputText);
     d->translatorResultTextEdit = new QPlainTextEdit(this);
-    d->translatorResultTextEdit->setObjectName(QStringLiteral("translatedtext"));
+    d->translatorResultTextEdit->setObjectName(u"translatedtext"_s);
     d->translatorResultTextEdit->setReadOnly(true);
     d->splitter->addWidget(d->translatorResultTextEdit);
 
@@ -357,7 +357,7 @@ void TranslatorWidget::switchEngine()
         connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
         connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
         d->initLanguage();
-        d->engineNameLabel->setText(QStringLiteral("[%1]").arg(d->translatorClient->translatedName()));
+        d->engineNameLabel->setText(u"[%1]"_s.arg(d->translatorClient->translatedName()));
         d->invert->setVisible(d->translatorClient->hasInvertSupport());
         updatePlaceHolder();
     }

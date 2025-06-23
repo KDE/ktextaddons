@@ -5,6 +5,8 @@
 */
 
 #include "downloadlanguagejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
@@ -17,7 +19,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), QStringLiteral("Add specific archive file name")));
+    parser.addOption(QCommandLineOption(QStringList() << u"+[file]"_s, u"Add specific archive file name"_s));
 
     parser.process(app);
     if (!parser.positionalArguments().isEmpty()) {

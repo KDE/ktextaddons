@@ -5,6 +5,8 @@
 */
 
 #include "grammalectegenerateconfigoptionjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grammalecte/grammalectegenerateconfigoptionjob.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -31,9 +33,9 @@ void GrammalecteGenerateConfigOptionJobTest::shouldBeAbleToStart()
 {
     TextGrammarCheck::GrammalecteGenerateConfigOptionJob job;
     QVERIFY(!job.canStart());
-    job.setPythonPath(QStringLiteral("ff"));
+    job.setPythonPath(u"ff"_s);
     QVERIFY(!job.canStart());
-    job.setGrammarlecteCliPath(QStringLiteral("ff"));
+    job.setGrammarlecteCliPath(u"ff"_s);
     QVERIFY(job.canStart());
 }
 

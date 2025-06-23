@@ -5,6 +5,8 @@
 */
 
 #include "textautogeneratehistorylistview.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratehistorylistheadingsproxymodel.h"
 #include "core/models/textautogeneratehistorysortfilterproxymodel.h"
@@ -100,7 +102,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     bool isArchived = mManager ? mManager->showArchived() : false;
     QMenu menu(this);
     if (!isArchived) {
-        auto newChatHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-new")), i18nc("@action", "New Chat"), &menu);
+        auto newChatHistory = new QAction(QIcon::fromTheme(u"document-new"_s), i18nc("@action", "New Chat"), &menu);
         connect(newChatHistory, &QAction::triggered, this, [this]() {
             mManager->createNewChat();
         });
@@ -111,7 +113,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
         menu.addSeparator();
 
         if (index.isValid()) {
-            auto renameHistory = new QAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18nc("@action", "Modify…"), &menu);
+            auto renameHistory = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
             connect(renameHistory, &QAction::triggered, this, [index, this]() {
                 const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                 if (!uuid.isEmpty()) {
@@ -123,9 +125,8 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             menu.addSeparator();
 
             const bool isFavorite = index.data(TextAutoGenerateChatsModel::Favorite).toBool();
-            auto changeFavoriteHistory = new QAction(QIcon::fromTheme(QStringLiteral("favorite")),
-                                                     isFavorite ? i18nc("@action", "Remove as Favorite") : i18nc("@action", "Set as Favorite"),
-                                                     &menu);
+            auto changeFavoriteHistory =
+                new QAction(QIcon::fromTheme(u"favorite"_s), isFavorite ? i18nc("@action", "Remove as Favorite") : i18nc("@action", "Set as Favorite"), &menu);
             const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
             connect(changeFavoriteHistory, &QAction::triggered, this, [index, isFavorite, this]() {
                 const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
@@ -148,7 +149,7 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 
             menu.addSeparator();
 
-            auto removeHistory = new QAction(QIcon::fromTheme(QStringLiteral("list-remove")), i18nc("@action", "Remove…"), &menu);
+            auto removeHistory = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove…"), &menu);
             connect(removeHistory, &QAction::triggered, this, [index, this]() {
                 if (KMessageBox::ButtonCode::PrimaryAction
                     == KMessageBox::questionTwoActions(this,

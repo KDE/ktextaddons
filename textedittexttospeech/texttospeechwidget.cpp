@@ -5,6 +5,8 @@
 */
 
 #include "texttospeechwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "texttospeechactions.h"
 #include "texttospeechconfigdialog.h"
 #include "texttospeechinterface.h"
@@ -42,15 +44,15 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     , d(new TextEditTextToSpeech::TextToSpeechWidgetPrivate)
 {
     auto hbox = new QHBoxLayout(this);
-    hbox->setObjectName(QStringLiteral("hbox"));
+    hbox->setObjectName(u"hbox"_s);
     hbox->setContentsMargins(QMargins{});
 
     d->mTextToSpeechActions = new TextToSpeechActions(this);
     connect(d->mTextToSpeechActions, &TextToSpeechActions::stateChanged, this, &TextToSpeechWidget::stateChanged);
 
     auto close = new QToolButton(this);
-    close->setObjectName(QStringLiteral("close-button"));
-    close->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
+    close->setObjectName(u"close-button"_s);
+    close->setIcon(QIcon::fromTheme(u"dialog-close"_s));
     close->setToolTip(i18nc("@info:tooltip", "Close"));
     connect(close, &QToolButton::clicked, this, &TextToSpeechWidget::slotCloseTextToSpeechWidget);
     hbox->addWidget(close);
@@ -59,27 +61,27 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     auto volume = new QLabel(i18nc("@label:textbox", "Volume:"), this);
     volume->setTextFormat(Qt::PlainText);
     hbox->addWidget(volume);
-    d->mVolume = new TextToSpeechSliderWidget(QStringLiteral("%1 %"), this);
+    d->mVolume = new TextToSpeechSliderWidget(u"%1 %"_s, this);
     d->mVolume->setMinimumWidth(100);
-    d->mVolume->setObjectName(QStringLiteral("volumeslider"));
+    d->mVolume->setObjectName(u"volumeslider"_s);
     d->mVolume->setRange(0, 100);
     connect(d->mVolume, &TextToSpeechSliderWidget::valueChanged, this, &TextToSpeechWidget::slotVolumeChanged);
     hbox->addWidget(d->mVolume);
 
     d->mStopButton = new QToolButton(this);
-    d->mStopButton->setObjectName(QStringLiteral("stopbutton"));
+    d->mStopButton->setObjectName(u"stopbutton"_s);
     d->mStopButton->setDefaultAction(d->mTextToSpeechActions->stopAction());
     hbox->addWidget(d->mStopButton);
 
     d->mPlayPauseButton = new QToolButton(this);
-    d->mPlayPauseButton->setObjectName(QStringLiteral("playpausebutton"));
+    d->mPlayPauseButton->setObjectName(u"playpausebutton"_s);
     d->mPlayPauseButton->setDefaultAction(d->mTextToSpeechActions->playPauseAction());
     hbox->addWidget(d->mPlayPauseButton);
 
     d->mConfigureButton = new QToolButton(this);
-    d->mConfigureButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+    d->mConfigureButton->setIcon(QIcon::fromTheme(u"configure"_s));
     d->mConfigureButton->setToolTip(i18nc("@info:tooltip", "Configure…"));
-    d->mConfigureButton->setObjectName(QStringLiteral("configurebutton"));
+    d->mConfigureButton->setObjectName(u"configurebutton"_s);
     connect(d->mConfigureButton, &QToolButton::clicked, this, &TextToSpeechWidget::slotConfigure);
     hbox->addWidget(d->mConfigureButton);
 

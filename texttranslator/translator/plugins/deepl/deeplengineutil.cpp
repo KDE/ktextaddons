@@ -5,23 +5,24 @@
 */
 
 #include "deeplengineutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 QString DeeplEngineUtil::groupName()
 {
-    return QStringLiteral("DeepLTranslator");
+    return u"DeepLTranslator"_s;
 }
 
 QString DeeplEngineUtil::freeLicenseKey()
 {
-    return QStringLiteral("freeLicense");
+    return u"freeLicense"_s;
 }
 
 QString DeeplEngineUtil::apiGroupName()
 {
-    return QStringLiteral("apiKey");
+    return u"apiKey"_s;
 }
 
 QString DeeplEngineUtil::translatorGroupName()
 {
-    return QStringLiteral("DeepL");
+    return u"DeepL"_s;
 }

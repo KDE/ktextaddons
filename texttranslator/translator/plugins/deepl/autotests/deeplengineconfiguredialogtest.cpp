@@ -5,6 +5,8 @@
 */
 
 #include "deeplengineconfiguredialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../deeplengineconfiguredialog.h"
 #include "../deeplengineconfigurewidget.h"
 #include <QDialogButtonBox>
@@ -20,13 +22,13 @@ void DeeplEngineConfigureDialogTest::shouldHaveDefaultValues()
 {
     DeeplEngineConfigureDialog d;
     QVERIFY(!d.windowTitle().isEmpty());
-    auto mConfigureWidget = d.findChild<DeeplEngineConfigureWidget *>(QStringLiteral("mConfigureWidget"));
+    auto mConfigureWidget = d.findChild<DeeplEngineConfigureWidget *>(u"mConfigureWidget"_s);
     QVERIFY(mConfigureWidget);
 
-    auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = d.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 
