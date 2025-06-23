@@ -17,10 +17,6 @@ set_package_properties(
         DESCRIPTION "Extra CMake Modules."
         URL "https://invent.kde.org/frameworks/extra-cmake-modules"
 )
-feature_summary(
-    WHAT REQUIRED_PACKAGES_NOT_FOUND
-    FATAL_ON_MISSING_REQUIRED_PACKAGES
-)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
 
