@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkserverinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "genericnetworkserverinfo.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(GenericNetworkServerInfoTest)
 
+using namespace Qt::Literals::StringLiterals;
 GenericNetworkServerInfoTest::GenericNetworkServerInfoTest(QObject *parent)
     : QObject{parent}
 {

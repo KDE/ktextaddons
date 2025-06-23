@@ -10,6 +10,8 @@
 #include <QWidget>
 class KPasswordLineEdit;
 class QLineEdit;
+class QSpinBox;
+class QDoubleSpinBox;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget : public QWidget
@@ -25,8 +27,16 @@ public:
     void setInstanceName(const QString &name);
     [[nodiscard]] QString instanceName() const;
 
+    void setTemperature(double temp);
+    [[nodiscard]] double temperature() const;
+
+    void setMaxTokens(int tokens);
+    [[nodiscard]] int tokens() const;
+
 private:
     KPasswordLineEdit *const mApiKey;
     QLineEdit *const mInstanceName;
+    QSpinBox *const mMaxToken;
+    QDoubleSpinBox *const mTemperature;
 };
 }

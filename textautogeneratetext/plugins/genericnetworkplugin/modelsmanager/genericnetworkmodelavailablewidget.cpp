@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmodelavailablewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/genericnetworkmodelavailablelistview.h"
 #include <QSplitter>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(QWidget *parent)
     : QWidget{parent}
     , mAvailableListView(new GenericNetworkModelAvailableListView(this))
