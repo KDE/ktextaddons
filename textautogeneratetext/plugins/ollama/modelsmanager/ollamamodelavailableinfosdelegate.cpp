@@ -109,17 +109,6 @@ bool OllamaModelAvailableInfosDelegate::mouseEvent(QEvent *event, const QStyleOp
     return false;
 }
 
-bool OllamaModelAvailableInfosDelegate::helpEvent(QHelpEvent *helpEvent, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index)
-{
-    if (!index.isValid()) {
-        return false;
-    }
-    if (helpEvent->type() == QEvent::ToolTip) {
-        // TODO
-    }
-    return false;
-}
-
 OllamaModelAvailableInfosDelegate::ModelInfoLayout OllamaModelAvailableInfosDelegate::doLayout(const QStyleOptionViewItem &option,
                                                                                                const QModelIndex &index) const
 {

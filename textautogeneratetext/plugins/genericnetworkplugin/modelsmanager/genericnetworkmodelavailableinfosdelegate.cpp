@@ -111,20 +111,6 @@ bool GenericNetworkModelAvailableInfosDelegate::mouseEvent(QEvent *event, const 
     return false;
 }
 
-bool GenericNetworkModelAvailableInfosDelegate::helpEvent(QHelpEvent *helpEvent,
-                                                          QAbstractItemView *view,
-                                                          const QStyleOptionViewItem &option,
-                                                          const QModelIndex &index)
-{
-    if (!index.isValid()) {
-        return false;
-    }
-    if (helpEvent->type() == QEvent::ToolTip) {
-        // TODO
-    }
-    return false;
-}
-
 GenericNetworkModelAvailableInfosDelegate::ModelInfoLayout GenericNetworkModelAvailableInfosDelegate::doLayout(const QStyleOptionViewItem &option,
                                                                                                                const QModelIndex &index) const
 {
