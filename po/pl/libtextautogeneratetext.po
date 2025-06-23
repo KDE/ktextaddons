@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-03-15 10:52+0100\n"
+"PO-Revision-Date: 2025-06-22 08:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,41 +16,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "Nowa rozmowa…"
 
 #: core/textautogeneratechatsmodel.cpp:146
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "Ulubione"
 
 #: core/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Dzisiaj"
 
 #: core/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "7 dni wstecz"
 
 #: core/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "30 dni wstecz"
 
 #: core/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Later"
-msgstr ""
+msgstr "Później"
 
 #: core/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "Nieznany"
 
 #: core/textautogenerateengineutil.cpp:15 plugins/ollama/ollamaclient.cpp:30
 #, kde-format
@@ -63,16 +64,18 @@ msgid ""
 "Engine: %1\n"
 "Model: %2"
 msgstr ""
+"Silnik: %1\n"
+"Model: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:34
 #, kde-format
 msgid "Go to message"
-msgstr ""
+msgstr "Przejdź do wiadomości"
 
 #: core/textautogeneratetextclient.cpp:33
 #, kde-format
 msgid "Local"
-msgstr "Lokalna"
+msgstr "Lokalny"
 
 #: core/textautogeneratetextclient.cpp:35
 #, kde-format
@@ -88,19 +91,19 @@ msgstr "Mistral AI"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Mistral IA"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia Mistral IA"
 
 #: plugins/mistral/mistralconfigurewidget.cpp:27
 #: plugins/openai/openaiconfigurewidget.cpp:27
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "Klucz API:"
 
 #: plugins/mistral/mistralmanager.cpp:38 plugins/ollama/ollamamanager.cpp:132
 #: plugins/openai/openaimanager.cpp:37
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
-msgstr ""
+msgstr "Nie udało się połączyć z interfejsem %1: %2"
 
 #. i18n: ectx: label, entry (ServerUrl), group (Ollama)
 #. i18n: ectx: label, entry (ServerUrl), group (Mistral)
@@ -108,162 +111,162 @@ msgstr ""
 #: plugins/ollama/ollamasettings.kcfg:14
 #, kde-format
 msgid "The URL to the Ollama instance"
-msgstr ""
+msgstr "Adres URL do wystąpienie Ollama"
 
 #. i18n: ectx: label, entry (SystemPrompt), group (LLM)
 #: plugins/mistral/mistralsettings.kcfg:20
 #: plugins/ollama/ollamasettings.kcfg:20
 #, kde-format
 msgid "The system prompt for the LLM"
-msgstr ""
+msgstr "Systemowy wiersz zapytań dla LLM"
 
 #. i18n: ectx: label, entry (Model), group (LLM)
 #: plugins/mistral/mistralsettings.kcfg:32
 #: plugins/ollama/ollamasettings.kcfg:32
 #, kde-format
 msgid "The model used to generate responses"
-msgstr ""
+msgstr "Model używany do dawania odpowiedzi"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
-msgstr ""
+msgstr "Zarządzaj modelami Ollama"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "Narzędzia"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "Mały"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "Średni"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "Duży"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "Wielkie"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "Wielojęzyczny"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "Kod"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "Matematyka"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "Wizja"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
 #, kde-format
 msgid "Embedding"
-msgstr ""
+msgstr "Osadzanie"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
-msgstr ""
+msgstr "Rozumowanie"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "Obsługiwane języki"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
 #, kde-format
 msgid "Models"
-msgstr ""
+msgstr "Modele"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
-msgstr ""
+msgstr "Dodaj model"
 
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr ""
+msgstr "Pobierz model"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "Wpisz nazwę modelu jako \"nazwa:znacznik\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:20
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Rodzina:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "Rozmiar parametru:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
 msgid "Quantization Level:"
-msgstr ""
+msgstr "Poziom kwantyzacji:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
-msgstr ""
+msgstr "Zmieniony dnia:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
-msgstr ""
+msgstr "Obsługiwany funkcje"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr ""
+msgstr "Czy usunąć ten model (%1)?"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr ""
+msgstr "Usuń model"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr ""
+msgstr "Poszukaj modeli…"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
 #, kde-format
@@ -275,7 +278,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr ""
+msgstr "QwQ jest modelem rozumowania z serii Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
@@ -287,7 +290,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
+msgstr "Llama 3.2 Mety celuje w małe modele 1B oraz 3B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -299,12 +302,12 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
-msgstr ""
+msgstr "Meta Llama 3: najlepszy otwarcie dostępny LLM na dzień dzisiejszy"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr ""
+msgstr "Model 7B wydany przez Mistral AI, uaktualniony do wersji 0.3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
@@ -399,7 +402,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr ""
+msgstr "Najlepszy dostępny duży model do osadzania od mixedbread.ai"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
 #, kde-format
@@ -430,6 +433,10 @@ msgid ""
 "generation, natural language understanding, mathematical reasoning, and "
 "instruction following."
 msgstr ""
+"CodeGemma jest zbiorem silnych i lekkich modeli, które wykonują różne "
+"zadania programistyczne, takie jak uzupełnianie kodu na zasadzie wypełnij-w-"
+"środku, tworzenie kodu, rozumienie języka naturalnego, rozumienie "
+"matematyczne oraz podążanie za instrukcjami."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:52
 #, kde-format
@@ -449,6 +456,7 @@ msgstr ""
 #, kde-format
 msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
 msgstr ""
+"Niecenzurowana wersja modelu Llama 2 George'a Sung'a oraz Jarrad'a Hope'a."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:56
 #, kde-format
@@ -487,7 +495,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:65
 #, kde-format
 msgid "Yi 1.5 is a high-performing, bilingual language model."
-msgstr ""
+msgstr "Yi 1.5 jest wysoce wydajnym dwujęzycznym modelem językowym."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:66
 #, kde-format
@@ -527,7 +535,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
-msgstr ""
+msgstr "Osadzanie modeli na bardzo dużych zbiorach danych na poziomie zdań."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
 #, kde-format
@@ -552,7 +560,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
 #, kde-format
 msgid "A family of open foundation models by IBM for Code Intelligence"
-msgstr ""
+msgstr "Rodzina modeli o otwartej podstawie od IBM do opisywania kodu"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
 #, kde-format
@@ -632,7 +640,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
 #, kde-format
 msgid "State-of-the-art code generation model"
-msgstr ""
+msgstr "Najlepszy dostępny model tworzenia kodu"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
@@ -662,6 +670,9 @@ msgid ""
 "capable in code generation, mathematics, and reasoning with 128k context "
 "window and support for dozens of languages."
 msgstr ""
+"Mistral Large 2 jest nowym flagowym modelem Mistrala, który jest znacznie "
+"lepszy w tworzeniu kodu, matematyce i rozumowaniu z oknem kontekstu 128k i "
+"wsparciem dla wielu języków."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:103
 #, kde-format
@@ -670,6 +681,9 @@ msgid ""
 "Qwen2 LLMs, which significantly outperforms the mathematical capabilities of "
 "open-source models and even closed-source models (e.g., GPT4o)."
 msgstr ""
+"Qwen2 Math jest serią specjalistycznych matematycznych modeli językowych "
+"zbudowanych na LLM Qwen2, które są znacznie lepsze w matematyce niż modele o "
+"otwartym kodzie, a nawet zamkniętym (np., GPT4o)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:105
 #, kde-format
@@ -715,7 +729,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
 #, kde-format
 msgid "Model focused on math and logic problems"
-msgstr ""
+msgstr "Model silny w matematyce i problemach logicznych"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
 #, kde-format
@@ -760,7 +774,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:123
 #, kde-format
 msgid "Code generation model based on Code Llama."
-msgstr ""
+msgstr "Model tworzenia kodu oparty na Code Llama."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
@@ -777,7 +791,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
 msgid "General use model based on Llama 2."
-msgstr ""
+msgstr "Model ogólnego przeznaczenia na podstawie Llama 2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:127
 #, kde-format
@@ -843,7 +857,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
-msgstr ""
+msgstr "Nowy mały model LLaVA dostrojony z Phi 3 Mini."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
 #, kde-format
@@ -891,7 +905,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
 #, kde-format
 msgid "Uncensored version of Wizard LM model"
-msgstr ""
+msgstr "Niecenzurowana wersja modelu Wizard LM"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
 #, kde-format
@@ -955,7 +969,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
 #, kde-format
 msgid "Great code generation model based on Llama2."
-msgstr ""
+msgstr "Świetny model tworzenia kodu oparty na Llama2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
@@ -1096,6 +1110,7 @@ msgstr ""
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
 msgstr ""
+"DBRX jest otwartym LLM ogólnego zastosowania stworzony przez Databricks."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:194
 #, kde-format
@@ -1107,7 +1122,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
-msgstr ""
+msgstr "Osadzanie modeli z mapowania tekstu BAAI do wektorów."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
 #, kde-format
@@ -1214,6 +1229,10 @@ msgid ""
 "trillion tokens of data, demonstrated significant improvements over their "
 "predecessors in performance and speed in IBM’s initial testing."
 msgstr ""
+"Modele IBM Granite 2B oraz 8B są gęstymi modelami LLM dającymi tylko tekst, "
+"przećwiczonymi na 12 trylionach tokenów i odznaczają się większą szybkością "
+"i wydajnością względem swoich poprzedników, co wykazały początkowe testy w "
+"IBM."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:224
 #, kde-format
@@ -1249,6 +1268,10 @@ msgid ""
 "model, enabling coding, math, agentic, function calling, and general use "
 "cases."
 msgstr ""
+"Dolphin 3.0 Llama 3.1 8B 🐬 jest kolejną generacją modeli z dostrojonymi "
+"instrukcjami z serii Dolphin przeznaczone do bycia lokalnymi modelami o "
+"ogólnym zastosowaniu, umożliwiając: programowanie, matematykę, agentic, "
+"wywoływanie funkcji oraz odpowiadanie na ogólne zapytania.."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
 #, kde-format
@@ -1273,6 +1296,10 @@ msgid ""
 "models, and competitive with open-weight models such as Llama 3.1 on English "
 "academic benchmarks."
 msgstr ""
+"OLMo 2 jest rodziną nowych modeli 7B oraz 13B przećwiczonych na 5T tokenach. "
+"Modele te są równe lub lepsze niż otwarte modele o takich samych rozmiarach, "
+"a także mogą współzawodniczyć z modelami o otwartych wagach takich jak Llama "
+"3.1 w angielskich akademickich benchmarkach."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:241
 #, kde-format
@@ -1307,7 +1334,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
-msgstr ""
+msgstr "Bieżący, najlepszy model działający na pojedynczym GPU."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
@@ -1324,6 +1351,9 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"Zwarty i wydajny graficzny model językowy, stworzony w szczególności do "
+"wizualnego rozumienia dokumentów, umożliwiający wydobywanie treści z tabel, "
+"wykresów, infografik, diagramów itp."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
@@ -1362,6 +1392,10 @@ msgid ""
 "art vision understanding and enhances long context capabilities up to 128k "
 "tokens without compromising text performance."
 msgstr ""
+"Zbudowany na podstawie Mistral Small 3, Mistral Small 3.1 (2503) dodaje "
+"najlepsze dostępne rozumienie wizualne i polepsza zdolności długich "
+"kontekstów aż do 128k tokenów bez pogorszenia wydajności przy obsłudze "
+"tekstu."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:268
 #, kde-format
@@ -1370,6 +1404,10 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
+"Wczesna wersja Cogito v1 jest rodziną hybrydowych modeli rozumowania "
+"stworzony przez Deep Cogito, który działa lepiej niż najlepsze dostępne "
+"modele otwarte o tym samym rozmiarze, uwzględniając w tym LLaMA, DeepSeek "
+"oraz Qwen w większości standardowych benchmarków."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
@@ -1389,6 +1427,7 @@ msgstr ""
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
 msgstr ""
+"Zbiór najświeższych modeli od Mety, mogących pracować w różnych trybach."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1416,192 +1455,180 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
-msgstr ""
+msgstr "Wczytaj model ponownie"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia Ollamy"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "Ogólne"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:45
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
-msgstr ""
+msgstr "Dostępne modele"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:51
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
-msgstr ""
+msgstr "Wgrane modele"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:38
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "Adres URL serwera:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:42
 #, kde-format
 msgid "Model:"
-msgstr ""
+msgstr "Model:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:45
 #, kde-format
 msgid "Prompt:"
-msgstr ""
+msgstr "Zapytanie:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:46
 #, kde-format
 msgid "No system prompt"
-msgstr ""
+msgstr "Brak systemowego wiersza poleceń"
 
 #: plugins/openai/openaiclient.cpp:27
 #, kde-format
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia OpenAI IA"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
-msgstr ""
+msgstr "Ustawienia wtyczek tekstowych AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
-msgstr ""
+msgstr "Dodaj…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:44
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "Zapytaj AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
 #: widgets/view/textautogeneratehistorylistview.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
-msgstr ""
+msgstr "Zmień…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
 #: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
-msgstr ""
+msgstr "Usuń…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:60
 #, kde-format
 msgid "Do you want to remove it?"
-msgstr ""
+msgstr "Czy chcesz go usunąć?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:32
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "Zapytaj AI…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia…"
 
 #: widgets/textautogenerateconfiguredialog.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure IA"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia IA"
 
 #: widgets/textautogenerateconfigurewidget.cpp:27
 #, kde-format
 msgid "Engine:"
-msgstr ""
+msgstr "Silnik:"
 
 #: widgets/textautogeneratedialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
-msgstr ""
+msgstr "Rozmowa"
 
 #: widgets/textautogenerateheaderwidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia…"
 
 #: widgets/textautogenerateheaderwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Search…"
-msgstr ""
+msgstr "Poszukaj…"
 
 #: widgets/textautogenerateheaderwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "Nowa rozmowa"
 
 #: widgets/textautogenerateheaderwidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
-msgstr ""
+msgstr "Ulubione"
 
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
-msgstr ""
+msgstr "Poszukaj…"
 
 #: widgets/textautogeneratenotworkingwidget.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgid "Configure…"
-msgstr "Ustawienia Mistral AI"
+msgstr "Ustawienia…"
 
 #: widgets/textautogeneratesearchdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
-msgstr ""
+msgstr "Poszukaj"
 
 #: widgets/textautogeneratetextlineedit.cpp:16
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter a message"
-msgstr ""
+msgstr "Wpisz wiadomość"
 
 #: widgets/textautogeneratetextlineeditwidget.cpp:17
 #, kde-format
@@ -1611,87 +1638,87 @@ msgstr "Wyślij"
 #: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
-msgstr ""
+msgstr "Nie znaleziono żadnej wtyczki."
 
 #: widgets/view/textautogeneratebaselistview.cpp:40
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
-msgstr ""
+msgstr "Skopiuj zaznaczenie"
 
 #: widgets/view/textautogeneratebaselistview.cpp:40
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
-msgstr ""
+msgstr "Skopiuj"
 
 #: widgets/view/textautogeneratebaselistview.cpp:48
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "Zaznacz wszystko"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "Nowa rozmowa"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
-msgstr ""
+msgstr "Usuń z ulubionych"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
-msgstr ""
+msgstr "Ustaw jako ulubiony"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Przywróć"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
-msgstr ""
+msgstr "Archiwizuj"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
-msgstr ""
+msgstr "Czy chcesz usunąć tę rozmowę?"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
-msgstr ""
+msgstr "Usuń rozmowę"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:369
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
-msgstr ""
+msgstr "Edytuj…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
-msgstr ""
+msgstr "Skopiuj"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "Odśwież"
