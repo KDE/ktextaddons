@@ -14,5 +14,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextModelComboBox : public QCo
 public:
     explicit TextAutoGenerateTextModelComboBox(QWidget *parent = nullptr);
     ~TextAutoGenerateTextModelComboBox() override;
+    void setModelList(const QStringList &lst);
+    [[nodiscard]] QString currentModel() const;
 };
 }
