@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-22 22:07+0300\n"
+"PO-Revision-Date: 2025-06-23 07:56+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -624,7 +624,7 @@ msgstr ""
 msgid ""
 "A versatile model for AI software development scenarios, including code "
 "completion."
-msgstr ""
+msgstr "מודל גמיש לתרחישי פיתוח תוכנה לבינה מלאכותית, כולל השלמת קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
 #, kde-format
@@ -632,6 +632,8 @@ msgid ""
 "A family of open-source models trained on a wide variety of data, surpassing "
 "ChatGPT on various benchmarks. Updated to version 3.5-0106."
 msgstr ""
+"משפחה של מודלים בקוד פתוח שאומנו על מגוון רחב של נתונים, עוקפת את ChatGPT "
+"במגוון מדדים. מעודכנת לגרסה 3.5-0106."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
 #, kde-format
@@ -655,6 +657,8 @@ msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
 "discussion and coding tasks."
 msgstr ""
+"משפחת המודלים העוצמתי מבית Nous Research שמצטיינת בדיונים מדעיים ובמשימות "
+"פיתוח קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
 #, kde-format
@@ -690,6 +694,8 @@ msgid ""
 "OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
 "open datasets."
 msgstr ""
+"OpenHermes 2.5 הוא מודל בגודל 7B שכוון על ידי Teknium על גבי Mistral עם "
+"סדרות נתונים פתוחות לגמרי."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
 #, kde-format
@@ -721,6 +727,9 @@ msgid ""
 "trained on multilingual data in English, Spanish, German, Italian, French, "
 "Portuguese, and Dutch."
 msgstr ""
+"Stable LM 2 הוא מודל שפה מהשורה הראשונה בגדלים של 1.6B ו־12B משתנים שאומן על "
+"נתונים רב־לשוניים באנגלית, ספרדית, גרמנית, איטלקית, צרפתית, פורטוגלית "
+"והולנדית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:109
 #, kde-format
@@ -728,6 +737,8 @@ msgid ""
 "BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
 "augmented with the LLaVA architecture."
 msgstr ""
+"BakLLaVA הוא מודל רב חושי שמורכב ממודל הבסיס Mistral 7B מרובד בארכיטקטורת "
+"LLaVA."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
 #, kde-format
@@ -736,29 +747,32 @@ msgid ""
 "tuning that teaches a LLM to detect mistakes in its reasoning and correct "
 "course."
 msgstr ""
+"מודל עם ביצועים מעולים שאומן עם טכניקה חדשה שנקראת כוונון שיקוף (Reflection-"
+"tuning) שמלמדת LLM/מש״ג לזהות טעויות בנימוק ולתקן את המסלול."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:113
 #, kde-format
 msgid "An advanced language model crafted with 2 trillion bilingual tokens."
-msgstr ""
+msgstr "מודל שפה מתקדם שנבנה סביב 2 מיליארד אסימונים דו־לשוניים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
 #, kde-format
 msgid ""
 "This model extends LLama-3 8B's context length from 8k to over 1m tokens."
 msgstr ""
+"המודל הזה מרחיב את אורך ההקשר של LLama-3 8B מ־8k ליותר ממיליון אסימונים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
 #, kde-format
 msgid "Model focused on math and logic problems"
-msgstr ""
+msgstr "מודל שממוקד בבעיות מתמטיות ולוגיות"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
 #, kde-format
 msgid ""
 "moondream2 is a small vision language model designed to run efficiently on "
 "edge devices."
-msgstr ""
+msgstr "moondream2 הוא מודל שפה חזותית קטן שתוכנן לרוץ ביעילות על מכשירי קצה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
 #, kde-format
