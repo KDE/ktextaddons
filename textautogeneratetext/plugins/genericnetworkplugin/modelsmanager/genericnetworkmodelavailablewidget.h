@@ -7,6 +7,10 @@
 #include "textautogenerategeneric_private_export.h"
 #include <QWidget>
 class GenericNetworkModelAvailableListView;
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateModelSearchLineEdit;
+}
 class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -16,4 +20,5 @@ public:
 
 private:
     GenericNetworkModelAvailableListView *const mAvailableListView;
+    TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
 };

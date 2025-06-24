@@ -6,6 +6,7 @@
 #include "genericnetworkmodelavailablewidget.h"
 
 #include "modelsmanager/genericnetworkmodelavailablelistview.h"
+#include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QSplitter>
 #include <QVBoxLayout>
 
@@ -13,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(QWidget *parent)
     : QWidget{parent}
     , mAvailableListView(new GenericNetworkModelAvailableListView(this))
+    , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
@@ -26,7 +28,15 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(QWidget *
 
     mainLayout->addWidget(splitter);
 
-    splitter->addWidget(mAvailableListView);
+    auto widget = new QWidget(this);
+    widget->setObjectName(u"splitter"_s);
+    auto vboxLayout = new QVBoxLayout(widget);
+    vboxLayout->setContentsMargins({});
+    vboxLayout->setSpacing(0);
+    vboxLayout->addWidget(mSearchLineEdit);
+    vboxLayout->addWidget(mAvailableListView);
+
+    splitter->addWidget(widget);
 }
 
 GenericNetworkModelAvailableWidget::~GenericNetworkModelAvailableWidget() = default;
