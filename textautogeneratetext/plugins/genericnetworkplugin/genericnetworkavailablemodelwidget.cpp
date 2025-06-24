@@ -10,7 +10,7 @@
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkAvailableModelWidget::GenericNetworkAvailableModelWidget(GenericNetworkManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mGenericNetworkModelAvailableWidget(new GenericNetworkModelAvailableWidget(this))
+    , mGenericNetworkModelAvailableWidget(new GenericNetworkModelAvailableWidget(manager, this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);

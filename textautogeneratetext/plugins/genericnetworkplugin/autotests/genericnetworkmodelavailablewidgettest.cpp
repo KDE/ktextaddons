@@ -15,7 +15,7 @@ GenericNetworkModelAvailableWidgetTest::GenericNetworkModelAvailableWidgetTest(Q
 
 void GenericNetworkModelAvailableWidgetTest::shouldHaveDefaultValues()
 {
-    GenericNetworkModelAvailableWidget w;
+    GenericNetworkModelAvailableWidget w(nullptr);
     // TODO
 }
 

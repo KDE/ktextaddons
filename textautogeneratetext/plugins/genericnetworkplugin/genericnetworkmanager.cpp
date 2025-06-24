@@ -107,6 +107,16 @@ GenericNetworkSettings *GenericNetworkManager::genericNetworkSettings() const
     return mGenericNetworkSettings;
 }
 
+QList<GenericNetworkModelAvailableInfo> GenericNetworkManager::infos() const
+{
+    return mInfos;
+}
+
+void GenericNetworkManager::setInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos)
+{
+    mInfos = newInfos;
+}
+
 QString GenericNetworkManager::apiKey() const
 {
     return mApiKey;

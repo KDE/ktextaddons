@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "modelsmanager/genericnetworkmodelavailableinfo.h"
 #include "textautogenerategenericnetwork_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
@@ -43,10 +44,14 @@ public:
 
     [[nodiscard]] GenericNetworkSettings *genericNetworkSettings() const;
 
+    [[nodiscard]] QList<GenericNetworkModelAvailableInfo> infos() const;
+    void setInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos);
+
 private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
     QString mApiKey;
     GenericNetworkSettings *const mGenericNetworkSettings;
 
+    QList<GenericNetworkModelAvailableInfo> mInfos;
     // TODO limitation type
 };
