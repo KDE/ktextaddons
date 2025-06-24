@@ -16,6 +16,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateMessage;
 class TextAutoGenerateTextPluginPrivate;
 class TextAutoGenerateManager;
+class TextAutoGenerateReply;
 /**
  * @brief The TextAutoGenerateTextPlugin class
  * @author Laurent Montel <montel@kde.org>
@@ -75,6 +76,7 @@ Q_SIGNALS:
 
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
+    QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);

@@ -120,20 +120,24 @@ void OllamaPlugin::askToAssistant(const QString &msg)
     req.setModel(currentModel());
     auto reply = mManager->getCompletion(req);
     const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
-    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::contentAdded, this, [reply, this]() {
-                                                                              Q_EMIT askToAssistantAnswer(reply->readResponse());
-                                                                          })));
-    mConnections.insert(reply, QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &OllamaReply::finished, this, [reply, this] {
-                                                                              Q_EMIT askToAssistantDone();
-                                                                              mConnections.remove(reply);
-                                                                              reply->deleteLater();
+    mConnections.insert(
+        reply,
+        QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, this]() {
+                                                       Q_EMIT askToAssistantAnswer(reply->readResponse());
+                                                   })));
+    mConnections.insert(
+        reply,
+        QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, this] {
+                                                       Q_EMIT askToAssistantDone();
+                                                       mConnections.remove(reply);
+                                                       reply->deleteLater();
 #if 0
                                 // TODO add context + info
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
 #endif
-                                                                              // Q_EMIT finished(message); // TODO add message as argument ???
-                                                                          })));
+                                                       // Q_EMIT finished(message); // TODO add message as argument ???
+                                                   })));
 }
 
 void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)

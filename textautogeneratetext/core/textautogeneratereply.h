@@ -86,6 +86,7 @@ public:
 
     void cancel();
 
+    [[nodiscard]] virtual QString readResponse() const = 0;
 Q_SIGNALS:
     /**
      * @brief Emits when new content has been added to the response.

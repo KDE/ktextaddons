@@ -47,7 +47,6 @@ protected:
 
 private:
     QStringList mModels;
-    QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mManager;
 };

@@ -9,6 +9,8 @@
 #include <QObject>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextRequest;
+class TextAutoGenerateReply;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManagerBase : public QObject
 {
     Q_OBJECT
@@ -24,6 +26,8 @@ public:
 
     virtual void loadModels() = 0;
 
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
 Q_SIGNALS:
     void modelsLoadDone(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &models);
     void refreshInstalledModels();

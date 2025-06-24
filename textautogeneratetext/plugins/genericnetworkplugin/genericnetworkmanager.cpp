@@ -56,6 +56,18 @@ void GenericNetworkManager::loadModels()
     });
 }
 
+TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return {};
+}
+
+TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return {};
+}
+
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const
 {
     return mPluginNetworkType;

@@ -185,7 +185,7 @@ void OllamaManager::loadModels()
     });
 }
 
-OllamaReply *OllamaManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
     QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaUtils::completionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
@@ -211,7 +211,7 @@ OllamaReply *OllamaManager::getCompletion(const TextAutoGenerateText::TextAutoGe
     return reply;
 }
 
-OllamaReply *OllamaManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
     QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
