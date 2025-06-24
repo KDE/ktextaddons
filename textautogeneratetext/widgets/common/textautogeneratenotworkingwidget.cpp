@@ -31,7 +31,7 @@ TextAutoGenerateNotWorkingWidget::TextAutoGenerateNotWorkingWidget(TextAutoGener
 
     auto configureButton = new QPushButton(i18nc("@action:button", "Configure…"), this);
     configureButton->setObjectName("configureButton"_L1);
-    connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::slotConfigure);
+    connect(configureButton, &QPushButton::clicked, this, &TextAutoGenerateNotWorkingWidget::configureInstances);
     mainLayout->addWidget(configureButton, 0, Qt::AlignVCenter);
     mainLayout->addStretch(1);
 }
@@ -48,10 +48,6 @@ void TextAutoGenerateNotWorkingWidget::clearMessage()
 {
     mMessageWidget->setText({});
     mMessageWidget->animatedHide();
-}
-
-void TextAutoGenerateNotWorkingWidget::slotConfigure()
-{
 }
 
 void TextAutoGenerateNotWorkingWidget::slotStartOllama()

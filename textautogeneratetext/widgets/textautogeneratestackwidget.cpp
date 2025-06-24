@@ -51,22 +51,32 @@ TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::T
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
         setBrokenEngine(false, {});
     });
+    connect(mTextAutoGenerateNotWorkingWidget,
+            &TextAutoGenerateNotWorkingWidget::configureInstances,
+            this,
+            &TextAutoGenerateStackWidget::slotConfigureInstances);
     connect(mTextAutoGenerateWidget, &TextAutoGenerateWidget::needToAddInstances, this, &TextAutoGenerateStackWidget::slotNeedToAddInstances);
-    connect(mTextAutoGenerateNotInstanceFoundWidget, &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested, this, [this]() {
-        TextAutoGenerateTextInstancesManagerDialog dlg(mManager, this);
-        if (dlg.exec()) {
-            if (mManager->textAutoGenerateTextInstancesManager()->isEmpty()) {
-                mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
-            } else {
-                mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
-            }
-        }
-    });
+    connect(mTextAutoGenerateNotInstanceFoundWidget,
+            &TextAutoGenerateNotInstanceFoundWidget::addInstanceRequested,
+            this,
+            &TextAutoGenerateStackWidget::slotConfigureInstances);
 
     QTimer::singleShot(0, mTextAutoGenerateWidget, &TextAutoGenerateWidget::loadEngine);
 }
 
 TextAutoGenerateStackWidget::~TextAutoGenerateStackWidget() = default;
+
+void TextAutoGenerateStackWidget::slotConfigureInstances()
+{
+    TextAutoGenerateTextInstancesManagerDialog dlg(mManager, this);
+    if (dlg.exec()) {
+        if (mManager->textAutoGenerateTextInstancesManager()->isEmpty()) {
+            mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
+        } else {
+            mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
+        }
+    }
+}
 
 void TextAutoGenerateStackWidget::slotNeedToAddInstances()
 {

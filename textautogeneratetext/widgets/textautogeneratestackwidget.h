@@ -30,6 +30,7 @@ public:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotNeedToAddInstances();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureInstances();
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
     TextAutoGenerateNotInstanceFoundWidget *const mTextAutoGenerateNotInstanceFoundWidget;

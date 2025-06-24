@@ -26,10 +26,10 @@ public:
 
 Q_SIGNALS:
     void ollamaStarted();
+    void configureInstances();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotStartOllama();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigure();
     TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
