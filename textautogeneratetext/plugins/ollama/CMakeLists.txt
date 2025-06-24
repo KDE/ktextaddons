@@ -81,8 +81,6 @@ target_sources(
         modelsmanager/ollamamodelinstalledwidget.cpp
         modelsmanager/ollamamodelinstalledinfosdelegate.cpp
         modelsmanager/ollamamodelinstalledinfosdelegate.h
-        modelsmanager/ollamamodelsearchlineedit.h
-        modelsmanager/ollamamodelsearchlineedit.cpp
         modelsmanager/ollamamodeldownloadfromnamedialog.h
         modelsmanager/ollamamodeldownloadfromnamedialog.cpp
         modelsmanager/ollamamodeldownloadfromnamewidget.h

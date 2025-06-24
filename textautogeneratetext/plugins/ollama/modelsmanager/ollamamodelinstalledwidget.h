@@ -8,10 +8,13 @@
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
 class OllamaModelInstalledListView;
-class OllamaManager;
-class OllamaModelSearchLineEdit;
-class QToolButton;
 class OllamaModelInstalledInfoWidget;
+class OllamaManager;
+class QToolButton;
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateModelSearchLineEdit;
+}
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledWidget : public QWidget
 {
     Q_OBJECT
@@ -26,7 +29,7 @@ private:
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void slotClicked(const QModelIndex &);
     QList<OllamaModelAvailableInfo> mModelAvailableInfos;
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
-    OllamaModelSearchLineEdit *const mSearchLineEdit;
+    TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     QToolButton *const mRemoveModelButton;
     OllamaModelInstalledInfoWidget *const mOllamaModelInstalledInfoWidget;
     OllamaManager *const mManager;

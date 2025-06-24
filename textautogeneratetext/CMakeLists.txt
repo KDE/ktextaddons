@@ -185,6 +185,8 @@ target_sources(
         widgets/common/textautogeneratenotworkingmessagewidget.cpp
         widgets/common/textautogeneratenotinstancefoundwidget.h
         widgets/common/textautogeneratenotinstancefoundwidget.cpp
+        widgets/common/textautogeneratemodelsearchlineedit.cpp
+        widgets/common/textautogeneratemodelsearchlineedit.h
         widgets/view/textautogeneratelistview.h
         widgets/view/textautogeneratelistview.cpp
         widgets/view/textautogeneratelistviewdelegate.h

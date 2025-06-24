@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
 #include "ollamamodelinstalledinfosmodel.h"
 #include "ollamamodelinstalledinfowidget.h"
 #include "ollamamodelinstalledlistview.h"
-#include "ollamamodelsearchlineedit.h"
+
+#include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QLineEdit>
@@ -19,10 +19,11 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSplitter>
 #include <QToolButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
-    , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
+    , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
     , mRemoveModelButton(new QToolButton(this))
     , mOllamaModelInstalledInfoWidget(new OllamaModelInstalledInfoWidget(this))
     , mManager(manager)
@@ -66,7 +67,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     }
     auto proxyModel = new QSortFilterProxyModel(this);
     proxyModel->setSourceModel(model);
-    connect(mSearchLineEdit, &OllamaModelSearchLineEdit::textChanged, this, [proxyModel](const QString &str) {
+    connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [proxyModel](const QString &str) {
         proxyModel->setFilterFixedString(str);
     });
     mOllamaModelInstalledListView->setModel(proxyModel);

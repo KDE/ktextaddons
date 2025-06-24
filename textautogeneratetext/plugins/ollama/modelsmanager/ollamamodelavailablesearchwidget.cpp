@@ -4,18 +4,18 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailablesearchwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
-#include "ollamamodelsearchlineedit.h"
 #include "ollamamodelsinfoscategoriescombobox.h"
+#include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QToolButton>
+using namespace Qt::Literals::StringLiterals;
 
 OllamaModelAvailableSearchWidget::OllamaModelAvailableSearchWidget(QWidget *parent)
     : QWidget{parent}
-    , mSearchLineEdit(new OllamaModelSearchLineEdit(this))
+    , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
     , mCategoriesComboBox(new OllamaModelsInfosCategoriesComboBox(this))
     , mAddModelButton(new QToolButton(this))
 {

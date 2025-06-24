@@ -3,11 +3,11 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "ollamamodelsearchlineedit.h"
+#include "textautogeneratemodelsearchlineedit.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
-
-OllamaModelSearchLineEdit::OllamaModelSearchLineEdit(QWidget *parent)
+using namespace TextAutoGenerateText;
+TextAutoGenerateModelSearchLineEdit::TextAutoGenerateModelSearchLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
     setClearButtonEnabled(true);
@@ -15,6 +15,6 @@ OllamaModelSearchLineEdit::OllamaModelSearchLineEdit(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(this);
 }
 
-OllamaModelSearchLineEdit::~OllamaModelSearchLineEdit() = default;
+TextAutoGenerateModelSearchLineEdit::~TextAutoGenerateModelSearchLineEdit() = default;
 
-#include "moc_ollamamodelsearchlineedit.cpp"
+#include "moc_textautogeneratemodelsearchlineedit.cpp"

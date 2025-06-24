@@ -4,18 +4,18 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "modelsmanager/ollamamodelinstalledinfowidget.h"
 #include "modelsmanager/ollamamodelinstalledlistview.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
-#include "modelsmanager/ollamamodelsearchlineedit.h"
+#include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QScrollArea>
 #include <QTest>
 #include <QToolButton>
 #include <QVBoxLayout>
 QTEST_MAIN(OllamaModelInstalledWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledWidgetTest::OllamaModelInstalledWidgetTest(QObject *parent)
     : QObject{parent}
 {
@@ -36,7 +36,7 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
     auto mOllamaModelInstalledListView = w.findChild<OllamaModelInstalledListView *>(u"mOllamaModelInstalledListView"_s);
     QVERIFY(mOllamaModelInstalledListView);
 
-    auto mSearchLineEdit = w.findChild<OllamaModelSearchLineEdit *>(u"mSearchLineEdit"_s);
+    auto mSearchLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *>(u"mSearchLineEdit"_s);
     QVERIFY(mSearchLineEdit);
     auto mOllamaModelInstalledInfoWidget = w.findChild<OllamaModelInstalledInfoWidget *>(u"mOllamaModelInstalledInfoWidget"_s);
     QVERIFY(mOllamaModelInstalledInfoWidget);

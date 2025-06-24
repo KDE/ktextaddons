@@ -7,7 +7,10 @@
 #include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
-class OllamaModelSearchLineEdit;
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateModelSearchLineEdit;
+}
 class OllamaModelsInfosCategoriesComboBox;
 class QToolButton;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableSearchWidget : public QWidget
@@ -23,7 +26,7 @@ Q_SIGNALS:
     void addModel();
 
 private:
-    OllamaModelSearchLineEdit *const mSearchLineEdit;
+    TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
     QToolButton *const mAddModelButton;
 };
