@@ -11,14 +11,20 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;
 }
+class GenericNetworkManager;
+class GenericNetworkAvailableInfosModel;
+class GenericNetworkModelAvailableInfosSortProxyModel;
 class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkModelAvailableWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkModelAvailableWidget(QWidget *parent = nullptr);
+    explicit GenericNetworkModelAvailableWidget(GenericNetworkManager *manager, QWidget *parent = nullptr);
     ~GenericNetworkModelAvailableWidget() override;
 
 private:
     GenericNetworkModelAvailableListView *const mAvailableListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
+    GenericNetworkAvailableInfosModel *const mAvailableInfosModel;
+    GenericNetworkModelAvailableInfosSortProxyModel *const mProxyModel;
+    GenericNetworkManager *const mManager;
 };

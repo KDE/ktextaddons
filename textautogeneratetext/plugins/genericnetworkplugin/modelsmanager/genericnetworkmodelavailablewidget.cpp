@@ -5,16 +5,22 @@
 */
 #include "genericnetworkmodelavailablewidget.h"
 
-#include "modelsmanager/genericnetworkmodelavailablelistview.h"
+#include "genericnetworkavailableinfosmodel.h"
+#include "genericnetworkmanager.h"
+#include "genericnetworkmodelavailableinfossortproxymodel.h"
+#include "genericnetworkmodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QSplitter>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
-GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(QWidget *parent)
+GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(GenericNetworkManager *manager, QWidget *parent)
     : QWidget{parent}
     , mAvailableListView(new GenericNetworkModelAvailableListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
+    , mAvailableInfosModel(new GenericNetworkAvailableInfosModel(this))
+    , mProxyModel(new GenericNetworkModelAvailableInfosSortProxyModel(this))
+    , mManager(manager)
 {
     auto splitter = new QSplitter(this);
     splitter->setOrientation(Qt::Horizontal);
@@ -36,7 +42,14 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(QWidget *
     vboxLayout->addWidget(mSearchLineEdit);
     vboxLayout->addWidget(mAvailableListView);
 
+    mProxyModel->setSourceModel(mAvailableInfosModel);
+    mAvailableListView->setModel(mProxyModel);
+    mAvailableInfosModel->setModelInfos(mManager->infos());
+
     splitter->addWidget(widget);
+    connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [this](const QString &str) {
+        mProxyModel->setFilterFixedString(str);
+    });
 }
 
 GenericNetworkModelAvailableWidget::~GenericNetworkModelAvailableWidget() = default;
