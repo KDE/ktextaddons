@@ -72,7 +72,10 @@ void TextAutoGenerateTextInstance::save(KConfigGroup &config)
 
 QString TextAutoGenerateTextInstance::currentModel() const
 {
-    return mPlugin->currentModel();
+    if (mPlugin) {
+        return mPlugin->currentModel();
+    }
+    return {};
 }
 
 TextAutoGenerateTextPlugin *TextAutoGenerateTextInstance::plugin() const

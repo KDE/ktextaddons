@@ -44,7 +44,9 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(GenericNe
 
     mProxyModel->setSourceModel(mAvailableInfosModel);
     mAvailableListView->setModel(mProxyModel);
-    mAvailableInfosModel->setModelInfos(mManager->infos());
+    if (mManager) {
+        mAvailableInfosModel->setModelInfos(mManager->infos());
+    }
 
     splitter->addWidget(widget);
     connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [this](const QString &str) {
