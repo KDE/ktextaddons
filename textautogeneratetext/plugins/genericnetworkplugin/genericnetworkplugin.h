@@ -47,6 +47,7 @@ protected:
 
 private:
     void slotApiKeyRead(QKeychain::Job *baseJob);
+    QStringList mModels;
     GenericNetworkSettings *const mSettings;
     GenericNetworkManager *const mGenericManager;
 };

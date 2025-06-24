@@ -19,6 +19,20 @@ GenericNetworkPlugin::GenericNetworkPlugin(const QString &serverIdentifier, Text
 {
     const GenericNetworkServerInfo info;
     mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(serverIdentifier));
+    connect(mGenericManager,
+            &GenericNetworkManager::modelsLoadDone,
+            this,
+            [this](const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &modelinfo) {
+                if (modelinfo.hasError) {
+                    setReady(false);
+                    Q_EMIT errorOccurred(modelinfo.errorOccured);
+                    mModels.clear();
+                } else {
+                    setReady(true);
+                    mModels = modelinfo.models;
+                }
+            });
+    mGenericManager->loadModels();
 }
 
 GenericNetworkPlugin::~GenericNetworkPlugin()
@@ -44,7 +58,7 @@ void GenericNetworkPlugin::save(KConfigGroup &config)
 
 QStringList GenericNetworkPlugin::models() const
 {
-    return {};
+    return mModels;
 }
 
 void GenericNetworkPlugin::clear()
