@@ -34,7 +34,6 @@ public:
     void save(KConfigGroup &config);
 
     [[nodiscard]] QString currentModel() const;
-    void setCurrentModel(const QString &newCurrentModel);
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *plugin() const;
     void setPlugin(TextAutoGenerateText::TextAutoGenerateTextPlugin *newPlugin);
@@ -45,7 +44,6 @@ public:
 private:
     QString mPluginName;
     QString mPluginIdentifier;
-    QString mCurrentModel;
     QByteArray mInstanceUuid;
     TextAutoGenerateText::TextAutoGenerateTextPlugin *mPlugin = nullptr;
     bool mEnabled = true;
