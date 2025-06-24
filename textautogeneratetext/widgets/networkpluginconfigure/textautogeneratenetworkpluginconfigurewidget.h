@@ -31,7 +31,7 @@ public:
     [[nodiscard]] double temperature() const;
 
     void setMaxTokens(int tokens);
-    [[nodiscard]] int tokens() const;
+    [[nodiscard]] int maxTokens() const;
 
 private:
     KPasswordLineEdit *const mApiKey;

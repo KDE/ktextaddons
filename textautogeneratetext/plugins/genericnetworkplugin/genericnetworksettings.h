@@ -19,7 +19,15 @@ public:
     void setCurrentModel(const QString &newCurrentModel);
     [[nodiscard]] QString currentModel() const;
 
+    [[nodiscard]] int maxTokens() const;
+    void setMaxTokens(int newMaxTokens);
+
+    [[nodiscard]] double temperature() const;
+    void setTemperature(double newTemperature);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
+    int mMaxTokens = 0;
+    double mTemperature = 0.0;
 };

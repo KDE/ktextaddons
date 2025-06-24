@@ -24,6 +24,26 @@ QString GenericNetworkSettings::currentModel() const
     return mCurrentModel;
 }
 
+int GenericNetworkSettings::maxTokens() const
+{
+    return mMaxTokens;
+}
+
+void GenericNetworkSettings::setMaxTokens(int newMaxTokens)
+{
+    mMaxTokens = newMaxTokens;
+}
+
+double GenericNetworkSettings::temperature() const
+{
+    return mTemperature;
+}
+
+void GenericNetworkSettings::setTemperature(double newTemperature)
+{
+    mTemperature = newTemperature;
+}
+
 void GenericNetworkSettings::setCurrentModel(const QString &newCurrentModel)
 {
     mCurrentModel = newCurrentModel;

@@ -84,7 +84,7 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setMaxTokens(int tokens)
     mMaxToken->setValue(tokens);
 }
 
-int TextAutoGenerateNetworkPluginConfigureWidget::tokens() const
+int TextAutoGenerateNetworkPluginConfigureWidget::maxTokens() const
 {
     return mMaxToken->value();
 }

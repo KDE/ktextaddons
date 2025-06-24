@@ -30,12 +30,16 @@ void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
     mSettings->setDisplayName(config.readEntry(u"Name"_s));
     mSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    mSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.0));
+    mSettings->setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
 }
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
 {
     config.writeEntry(u"Name"_s, mSettings->displayName());
     config.writeEntry(u"CurrentModel"_s, mSettings->currentModel());
+    config.writeEntry(u"MaxToken"_s, mSettings->maxTokens());
+    config.writeEntry(u"Temperature"_s, mSettings->temperature());
 }
 
 QStringList GenericNetworkPlugin::models() const
