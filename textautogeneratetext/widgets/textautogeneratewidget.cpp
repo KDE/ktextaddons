@@ -206,6 +206,9 @@ void TextAutoGenerateWidget::slotInitializeDone()
         slotEditingFinished(str, {});
     }
     mAskMessageList.clear();
+    qDebug() << " mManager->textAutoGeneratePlugin() " << mManager->textAutoGeneratePlugin();
+    qDebug() << " mManager->textAutoGeneratePlugin()->models() " << mManager->textAutoGeneratePlugin()->models();
+    mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
 }
 
 void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)

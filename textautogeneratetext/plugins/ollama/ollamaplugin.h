@@ -46,6 +46,7 @@ protected:
     void askToAssistant(const QString &msg) override;
 
 private:
+    QStringList mModels;
     QMultiHash<OllamaReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mManager;

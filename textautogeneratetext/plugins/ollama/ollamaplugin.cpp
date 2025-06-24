@@ -22,8 +22,10 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
         if (modelinfo.hasError) {
             setReady(false);
             Q_EMIT errorOccurred(modelinfo.errorOccured);
+            mModels.clear();
         } else {
             setReady(true);
+            mModels = modelinfo.models;
         }
     });
     mManager->loadModels();
@@ -62,8 +64,7 @@ void OllamaPlugin::save(KConfigGroup &config)
 
 QStringList OllamaPlugin::models() const
 {
-    // TODO
-    return {};
+    return mModels;
 }
 
 QString OllamaPlugin::translatedPluginName() const

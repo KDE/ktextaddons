@@ -78,4 +78,14 @@ void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
     mEngineName->setText(engineName);
 }
 
+void TextAutoGenerateHeaderWidget::setModelList(const QStringList &lst)
+{
+    mModelComboBox->setModelList(lst);
+}
+
+QString TextAutoGenerateHeaderWidget::currentModel() const
+{
+    return mModelComboBox->currentModel();
+}
+
 #include "moc_textautogenerateheaderwidget.cpp"

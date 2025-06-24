@@ -21,6 +21,8 @@ public:
     ~TextAutoGenerateHeaderWidget() override;
     void updateEngineName(const QString &engineName);
 
+    void setModelList(const QStringList &lst);
+    [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
     void configChanged();
     void addNewChat();
