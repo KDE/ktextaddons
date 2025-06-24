@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2023-11-13 09:30+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -63,38 +63,38 @@ msgstr "Региональные"
 msgid "Flags"
 msgstr "Флаги"
 
-#: widgets/emoticoncategorybuttons.cpp:84
+#: widgets/emoticoncategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "История"
 
-#: widgets/emoticoncategorybuttons.cpp:88
+#: widgets/emoticoncategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Нестандартные"
 
-#: widgets/emoticonlistview.cpp:116
+#: widgets/emoticonlistview.cpp:118
 #, fuzzy, kde-format
 #| msgid "Clear Recents"
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Очистить список последних"
 
-#: widgets/emoticontexteditaction.cpp:54
+#: widgets/emoticontexteditaction.cpp:56
 #, kde-format
 msgid "Add Smiley"
 msgstr "Добавить смайлик"
 
-#: widgets/emoticontexteditselector.cpp:92
+#: widgets/emoticontexteditselector.cpp:94
 #, fuzzy, kde-format
 #| msgid "Search Emoticon..."
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Найти смайлик…"
 
-#: widgets/emoticontonecombobox.cpp:15
+#: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
 msgstr ""

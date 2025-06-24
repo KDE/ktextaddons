@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 08:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,24 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: texttospeechactions.cpp:28
+#: texttospeechactions.cpp:30
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Atura"
 
-#: texttospeechactions.cpp:31
+#: texttospeechactions.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Atura"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
 msgstr "Pausa"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
 msgstr "Reprodueix"
@@ -87,30 +87,30 @@ msgstr "Idioma:"
 msgid "Voice:"
 msgstr "Veu:"
 
-#: texttospeechwidget.cpp:54
+#: texttospeechwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Tanca"
 
-#: texttospeechwidget.cpp:59
+#: texttospeechwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Volum:"
 
-#: texttospeechwidget.cpp:81
+#: texttospeechwidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configura…"
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgid "Engine has a problem."
 msgstr "El motor té un problema."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

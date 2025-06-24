@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 11:40+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -25,49 +25,49 @@ msgid_plural "%1 replacements made"
 msgstr[0] "%1 reimplaciamento facite"
 msgstr[1] "%1 reimplaciamentos facite"
 
-#: plaintexteditor/plaintexteditor.cpp:173
+#: plaintexteditor/plaintexteditor.cpp:172
 #: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Controlo Orthographic..."
 
-#: plaintexteditor/plaintexteditor.cpp:178
-#: richtexteditor/richtexteditor.cpp:244
+#: plaintexteditor/plaintexteditor.cpp:175
+#: richtexteditor/richtexteditor.cpp:242
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Auto Controlo Orthographic"
 
-#: plaintexteditor/plaintexteditor.cpp:184
-#: richtexteditor/richtexteditor.cpp:250
+#: plaintexteditor/plaintexteditor.cpp:181
+#: richtexteditor/richtexteditor.cpp:248
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Linguage pro le controlo orthographic"
 
-#: plaintexteditor/plaintexteditor.cpp:212
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:283
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:173
+#: richtexteditor/richtexteditor.cpp:281
 #, kde-format
 msgid "Speak Text"
 msgstr "Pronuncia texto"
 
-#: plaintexteditor/plaintexteditor.cpp:391
-#: richtexteditor/richtexteditor.cpp:501
+#: plaintexteditor/plaintexteditor.cpp:388
+#: richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nihil de controlar orthographicamente"
 
-#: plaintexteditor/plaintexteditor.cpp:396
-#: richtexteditor/richtexteditor.cpp:519
+#: plaintexteditor/plaintexteditor.cpp:393
+#: richtexteditor/richtexteditor.cpp:517
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Necun retro-administration disponibile per analysator syntactic"
 
-#: richtexteditor/richtexteditor.cpp:276
+#: richtexteditor/richtexteditor.cpp:274
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permitte Tabulationes"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,25 +76,25 @@ msgstr ""
 "Necun retro-administration disponibile per analysator syntactic. Tu vole "
 "inviar le message de eposta malgrado isto?"
 
-#: richtexteditor/richtexteditor.cpp:513
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Invia"
 
-#: richtexteditor/richtexteditor.cpp:535
+#: richtexteditor/richtexteditor.cpp:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Salta"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Claude"
 
-#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "Claude"
@@ -193,13 +193,13 @@ msgstr "Expression Regular"
 msgid "Respect Diacritic and Accents"
 msgstr "Respecta Diacritic e Accentos"
 
-#: widgets/textgotolinewidget.cpp:49
+#: widgets/textgotolinewidget.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Vade al Linea:"
 
-#: widgets/textgotolinewidget.cpp:57
+#: widgets/textgotolinewidget.cpp:58
 #, kde-format
 msgid "Go"
 msgstr "Vade"

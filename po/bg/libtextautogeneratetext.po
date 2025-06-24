@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 11:58+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.07.70\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:74
+#: core/models/textautogeneratechatsmodel.cpp:76
 #, kde-format
 msgid "New Chat..."
 msgstr "Нов чат..."
 
-#: core/models/textautogeneratechatsmodel.cpp:146
+#: core/models/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Favorite"
 msgstr "Прибавяне в Любими"
 
-#: core/models/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Today"
 msgstr "Днес"
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "7 days previous"
 msgstr "7 дни по-рано"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "30 days previous"
 msgstr "30 дни по-рано"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Later"
 msgstr "По-късно"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -63,7 +63,7 @@ msgstr ""
 "Модел: %2\n"
 "Име на екземпляр: %3"
 
-#: core/textautogeneratesearchmessageutils.cpp:34
+#: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
 msgstr "Отиване до съобщението"
@@ -83,21 +83,21 @@ msgstr "Мрежа"
 msgid "Generic"
 msgstr "Общи"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Настройване"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:41
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:43
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Общи"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -109,22 +109,22 @@ msgstr "Налични модели"
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Неуспешно свързване с интерфейс в %1: %2"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
 msgid "Mistral AI"
 msgstr "Мистрал ИИ"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
 msgstr "Kluster AI"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -185,18 +185,18 @@ msgstr "Вграждане"
 msgid "Reasoning"
 msgstr "Разсъждение"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:102
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "Поддържани езици"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
 #, kde-format
 msgid "Models"
 msgstr "Модели"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
@@ -207,107 +207,107 @@ msgstr "Добавяне на модел"
 msgid "Categories"
 msgstr "Категории"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
 msgstr "База:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#: plugins/ollama/ollamaconfigurewidget.cpp:44
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:41
 #, kde-format
 msgid "Name:"
 msgstr "Име:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
 msgstr "Етикет:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
+#: plugins/ollama/ollamaconfigurewidget.cpp:69
 #, kde-format
 msgid "Prompt:"
 msgstr "Запитване:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:43
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Създаване"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
 msgstr "Зареждане на файл GGUF…"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
 msgstr "Избиране на файл GGUF"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
 msgstr "Създаване на модел"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
 msgstr "Изтегляне на модел"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:23
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
 msgstr "Моля, въведете името на модела като \"име:етикет\""
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:45
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
+#: widgets/view/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Отказ"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:26
 #, kde-format
 msgid "Family:"
 msgstr "Фамилия:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:35
 #, kde-format
 msgid "Parameter Size:"
 msgstr "Размер на параметъра:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:44
 #, kde-format
 msgid "Quantization Level:"
 msgstr "Ниво на квантуване:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:53
 #, kde-format
 msgid "Modified At:"
 msgstr "Променено в:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
 #, kde-format
 msgid "Parent Model:"
 msgstr "Родителски модел:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
 msgid "Features Supported"
 msgstr "Поддържани функции"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:104
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Искате ли да премахнете този модел (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -319,7 +319,7 @@ msgctxt "@info:placeholder"
 msgid "Search Model…"
 msgstr "Търсене на модел…"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:17
 #, kde-format
 msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
@@ -328,12 +328,12 @@ msgstr ""
 "Нов, модерен модел 70B. Llama 3.3 70B предлага подобна производителност в "
 "сравнение с модела Llama 3.1 405B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
 msgstr "QwQ е моделът на разсъждение от серията Qwen."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
@@ -342,12 +342,12 @@ msgstr ""
 "Llama 3.2 Vision е колекция от настроени с инструкции генеративни модели за "
 "образно разсъждение в размери 11B и 90B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
 msgstr "Llama 3.2 на Meta се предлага в малки размери с модели 1B и 3B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
@@ -356,17 +356,17 @@ msgstr ""
 "Llama 3.1 е нов, модерен модел от Meta, предлаган в размери на параметрите "
 "8B, 70B и 405B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
 msgstr "Meta Llama 3: Най-способният отворено достъпен LLM до момента"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
 msgstr "Моделът 7B, пуснат от Mistral AI, актуализиран до версия 0.3."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
 #, kde-format
 msgid ""
 "A high-performing open embedding model with a large token context window."
@@ -374,7 +374,7 @@ msgstr ""
 "Високопроизводителен модел за отворено вграждане с голям прозорец за "
 "контекст на токени."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
 #, kde-format
 msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
@@ -383,7 +383,7 @@ msgstr ""
 "Gemma е семейство от леки, свръхмодерни отворени модели, създадени от Google "
 "DeepMind. Актуализирано до версия 1.1."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
 msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
@@ -392,12 +392,12 @@ msgstr ""
 "Qwen 1.5 е серия от големи езикови модели от Alibaba Cloud, обхващащи от 0,5 "
 "милиарда до 110 милиарда параметри."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
 msgstr "Qwen2 е нова серия от големи езикови модели от Alibaba Group."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
 #, kde-format
 msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
@@ -406,7 +406,7 @@ msgstr ""
 "Phi-3 е семейство от леки 3B (Mini) и 14B (Medium) модерни отворени модели "
 "на Microsoft."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:29
 #, kde-format
 msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
@@ -415,7 +415,7 @@ msgstr ""
 "Llama 2 е колекция от модели на основни езици, вариращи от 7B до 70B "
 "параметри."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:30
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:31
 #, kde-format
 msgid ""
 "Qwen2.5 models are pretrained on Alibaba's latest large-scale dataset, "
@@ -426,7 +426,7 @@ msgstr ""
 "данни на Alibaba, обхващащ до 18 трилиона токена. Моделът поддържа до 128 "
 "000 токена и има многоезична поддръжка."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:33
 #, kde-format
 msgid ""
 "Google Gemma 2 is a high-performing and efficient model available in three "
@@ -435,7 +435,7 @@ msgstr ""
 "Google Gemma 2 е високопроизводителен и ефикасен модел, предлаган в три "
 "размера: 2B, 9B и 27B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:34
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:35
 #, kde-format
 msgid ""
 "LLaVA is a novel end-to-end trained large multimodal model that combines a "
@@ -446,7 +446,7 @@ msgstr ""
 "визуален енкодер и Vicuna за общо визуално и езиково разбиране. Актуализиран "
 "до версия 1.6."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:36
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:37
 #, kde-format
 msgid ""
 "A large language model that can use text prompts to generate and discuss "
@@ -455,7 +455,7 @@ msgstr ""
 "Голям езиков модел, който може да използва текстови подкани за генериране и "
 "обсъждане на код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:38
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
 #, kde-format
 msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
@@ -465,7 +465,7 @@ msgstr ""
 "подобрения в генерирането на код, разсъжденията върху кода и коригирането на "
 "кода."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
 msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
@@ -474,7 +474,7 @@ msgstr ""
 "Най-съвременен 12B модел с дължина на контекста от 128k, изграден от Mistral "
 "AI в сътрудничество с NVIDIA."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
@@ -483,12 +483,12 @@ msgstr ""
 "Проектът TinyLlama е отворено начинание за обучение на компактен 1.1B Llama "
 "модел върху 3 трилиона токена."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:42
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
 msgstr "Най-съвременен модел за голямо вграждане от mixedbread.ai"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
 msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
@@ -497,7 +497,7 @@ msgstr ""
 "StarCoder2 е следващото поколение прозрачно обучени LLM с отворен код, което "
 "се предлага в три размера: 3B, 7B и 15B параметри."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:45
 #, kde-format
 msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
@@ -506,7 +506,7 @@ msgstr ""
 "Набор от модели на смес от експерти (MoE) с отворени тегла от Mistral AI с "
 "размери на параметрите 8x7b и 8x22b."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:47
 #, kde-format
 msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
@@ -516,7 +516,7 @@ msgstr ""
 "експертни модели на Mixtral, която се отличава с отлични резултати при "
 "задачи по кодиране. Създадени от Ерик Хартфорд."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:50
 #, kde-format
 msgid ""
 "CodeGemma is a collection of powerful, lightweight models that can perform a "
@@ -529,7 +529,7 @@ msgstr ""
 "по средата, генериране на код, разбиране на естествен език, математическо "
 "разсъждение и следване на инструкции."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:52
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:53
 #, kde-format
 msgid ""
 "An open-source Mixture-of-Experts code language model that achieves "
@@ -630,7 +630,7 @@ msgstr ""
 "Модел LLaVA, фино настроен от Llama 3 Instruct с по-добри резултати в "
 "няколко бенчмарка."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:69
 #, kde-format
 msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
@@ -639,7 +639,7 @@ msgstr ""
 "Zephyr е серия от фино настроени версии на моделите Mistral и Mixtral, "
 "обучени да действат като полезни асистенти."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
 #, kde-format
 msgid ""
 "A lightweight AI model with 3.8 billion parameters with performance "
@@ -648,13 +648,13 @@ msgstr ""
 "Лек AI модел с 3,8 милиарда параметъра, чиято производителност изпреварва "
 "подобни и по-големи модели."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
 msgstr ""
 "Вграждане на модели върху много големи набори от данни на ниво изречения."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
 #, kde-format
 msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
@@ -663,7 +663,7 @@ msgstr ""
 "Codestral е първият по рода си кодов модел на Mistral AI, предназначен за "
 "задачи по генериране на код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
 #, kde-format
 msgid ""
 "StarCoder is a code generation model trained on 80+ programming languages."
@@ -671,7 +671,7 @@ msgstr ""
 "StarCoder е модел за генериране на код, обучен на над 80 езика за "
 "програмиране."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
 #, kde-format
 msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
@@ -680,12 +680,12 @@ msgstr ""
 "Модел на чат за общо ползване, базиран на Llama и Llama 2 с размери на "
 "контекста от 2K до 16K."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
 #, kde-format
 msgid "A family of open foundation models by IBM for Code Intelligence"
 msgstr "Семейство от модели с отворена основа от IBM за Code Intelligence"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
 #, kde-format
 msgid ""
 "Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
@@ -694,7 +694,7 @@ msgstr ""
 "Mistral OpenOrca е модел със 7 милиарда параметра, фино настроен върху "
 "модела Mistral 7B, използвайки набора от данни OpenOrca."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:77
 #, kde-format
 msgid ""
 "A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
@@ -703,7 +703,7 @@ msgstr ""
 "Семейство от малки модели с параметри 135M, 360M и 1.7B, обучени върху нов "
 "висококачествен набор от данни."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
 #, kde-format
 msgid ""
 "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
@@ -712,14 +712,14 @@ msgstr ""
 "Wizard Vicuna Uncensored е модел с параметри 7B, 13B и 30B, базиран на Llama "
 "2, нецензурирана от Ерик Хартфорд."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
 #, kde-format
 msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
 msgstr ""
 "Модел, базиран на Llama 2, е фино настроен за подобряване на способността за "
 "китайски диалог."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
 #, kde-format
 msgid ""
 "BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
@@ -728,7 +728,7 @@ msgstr ""
 "BGE-M3 е нов модел от BAAI, отличаващ се със своята гъвкавост по отношение "
 "на многофункционалност, многоезичност и многогранност."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:85
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
 #, kde-format
 msgid ""
 "A versatile model for AI software development scenarios, including code "
@@ -737,7 +737,7 @@ msgstr ""
 "Универсален модел за сценарии за разработка на софтуер с изкуствен интелект, "
 "включително довършване на код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
 #, kde-format
 msgid ""
 "A family of open-source models trained on a wide variety of data, surpassing "
@@ -747,7 +747,7 @@ msgstr ""
 "данни, превъзхождащи ChatGPT по различни бенчмаркове. Актуализирано до "
 "версия 3.5-0106."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:85
 #, kde-format
 msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
@@ -756,7 +756,7 @@ msgstr ""
 "Aya 23, пусната на пазара от Cohere, е ново семейство от най-съвременни, "
 "многоезични модели, които поддържат 23 езика."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:86
 #, kde-format
 msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
@@ -765,7 +765,7 @@ msgstr ""
 "CodeQwen1.5 е голям езиков модел, предварително обучен върху голямо "
 "количество кодови данни."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
 #, kde-format
 msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
@@ -774,7 +774,7 @@ msgstr ""
 "Мощното семейство от модели на Nous Research, което се отличава с научни "
 "дискусии и задачи по кодиране."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
 #, kde-format
 msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
@@ -783,12 +783,12 @@ msgstr ""
 "Command R+ е мощен, мащабируем модел за голям език, създаден специално за "
 "постигане на отлични резултати в реални корпоративни случаи."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
 msgid "State-of-the-art code generation model"
 msgstr "Най-съвременен модел за генериране на код"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:91
 #, kde-format
 msgid ""
 "Stable Code 3B is a coding model with instruct and code completion variants "
@@ -797,7 +797,7 @@ msgstr ""
 "Stable Code 3B е модел на кодиране с варианти за инструкции и довършване на "
 "код, наравно с модели като Code Llama 7B, които са 2,5 пъти по-големи."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:97
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
 #, kde-format
 msgid ""
 "An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset "
@@ -806,7 +806,7 @@ msgstr ""
 "Експериментален 1.1B параметричен модел, обучен върху новия набор от данни "
 "Dolphin 2.8 от Ерик Хартфорд и базиран на TinyLlama."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
 #, kde-format
 msgid ""
 "OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
@@ -815,7 +815,7 @@ msgstr ""
 "OpenHermes 2.5 е 7B модел, фино настроен от Teknium на Mistral с напълно "
 "отворени набори от данни."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
 msgid ""
 "Mistral Large 2 is Mistral's new flagship model that is significantly more "
@@ -826,7 +826,7 @@ msgstr ""
 "способен в генерирането на код, математиката и разсъжденията, със 128k "
 "контекстен прозорец и поддръжка на десетки езици."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:103
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
 #, kde-format
 msgid ""
 "Qwen2 Math is a series of specialized math language models built upon the "
@@ -837,7 +837,7 @@ msgstr ""
 "върху Qwen2 LLM, които значително превъзхождат математическите възможности "
 "на модели с отворен код и дори модели със затворен код (напр. GPT4o)."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:105
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
 #, kde-format
 msgid ""
 "A strong multi-lingual general language model with competitive performance "
@@ -846,7 +846,7 @@ msgstr ""
 "Силен многоезичен общ езиков модел с конкурентна производителност спрямо "
 "Llama 3."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:107
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:102
 #, kde-format
 msgid ""
 "Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model "
@@ -857,7 +857,7 @@ msgstr ""
 "многоезични данни на английски, испански, немски, италиански, френски, "
 "португалски и холандски езици."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:104
 #, kde-format
 msgid ""
 "BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
@@ -866,7 +866,7 @@ msgstr ""
 "BakLLaVA е мултимодален модел, състоящ се от базовия модел Mistral 7B, "
 "допълнен с архитектурата LLaVA."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:106
 #, kde-format
 msgid ""
 "A high-performing model trained with a new technique called Reflection-"
@@ -877,12 +877,12 @@ msgstr ""
 "tuning, която учи LLM да открива грешки в разсъжденията си и да коригира "
 "курса."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:113
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:108
 #, kde-format
 msgid "An advanced language model crafted with 2 trillion bilingual tokens."
 msgstr "Усъвършенстван езиков модел, създаден с 2 трилиона двуезични токена."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:109
 #, kde-format
 msgid ""
 "This model extends LLama-3 8B's context length from 8k to over 1m tokens."
@@ -890,12 +890,12 @@ msgstr ""
 "Този модел разширява дължината на контекста на LLama-3 8B от 8k до над 1m "
 "токена."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:110
 #, kde-format
 msgid "Model focused on math and logic problems"
 msgstr "Модел, фокусиран върху математически и логически задачи"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
 #, kde-format
 msgid ""
 "moondream2 is a small vision language model designed to run efficiently on "
@@ -904,7 +904,7 @@ msgstr ""
 "moondream2 е малък модел на език за зрение, проектиран да работи ефективно "
 "на периферни устройства."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:112
 #, kde-format
 msgid ""
 "A fine-tuned model based on Mistral with good coverage of domain and "
@@ -912,7 +912,7 @@ msgid ""
 msgstr ""
 "Фино настроен модел, базиран на Mistral, с добро покритие на домейна и езика."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:119
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
 #, kde-format
 msgid ""
 "A model from NVIDIA based on Llama 3 that excels at conversational question "
@@ -922,7 +922,7 @@ msgstr ""
 "въпроси чрез разговор (QA) и генериране на добавени данни чрез извличане "
 "(RAG)."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:120
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
 #, kde-format
 msgid ""
 "Conversational model based on Llama 2 that performs competitively on various "
@@ -931,7 +931,7 @@ msgstr ""
 "Разговорен модел, базиран на Llama 2, който се представя конкурентно в "
 "различни бенчмаркове."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
 #, kde-format
 msgid ""
 "SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
@@ -940,22 +940,22 @@ msgstr ""
 "SQLCoder е модел за довършване на код, фино настроен върху StarCoder за "
 "задачи за генериране на SQL."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
 #, kde-format
 msgid "General use models based on Llama and Llama 2 from Nous Research."
 msgstr "Модели за общо ползване, базирани на Llama и Llama 2 от Nous Research."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:123
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:118
 #, kde-format
 msgid "Code generation model based on Code Llama."
 msgstr "Модел за генериране на код, базиран на Code Llama."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:119
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
 msgstr "Разширение на Llama 2, което поддържа контекст до 128k токена."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:120
 #, kde-format
 msgid ""
 "A 7B and 15B uncensored variant of the Dolphin model family that excels at "
@@ -964,17 +964,17 @@ msgstr ""
 "Нецензуриран вариант 7B и 15B от семейството модели Dolphin, който се "
 "отличава с кодиране, базиран на StarCoder2."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
 #, kde-format
 msgid "General use model based on Llama 2."
 msgstr "Модел за общо ползване, базиран на Llama 2."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:127
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
 #, kde-format
 msgid "A strong, economical, and efficient Mixture-of-Experts language model."
 msgstr "Силен, икономичен и ефикасен езиков модел „Смес от експерти“."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:129
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
 msgid ""
 "Starling is a large language model trained by reinforcement learning from AI "
@@ -984,7 +984,7 @@ msgstr ""
 "връзка с изкуствен интелект, фокусиран върху подобряване на полезността на "
 "чатботовете."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:130
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
 #, kde-format
 msgid ""
 "A companion assistant trained in philosophy, psychology, and personal "
@@ -993,7 +993,7 @@ msgstr ""
 "Асистент-компаньон, обучен по философия, психология и лични взаимоотношения. "
 "Базиран на Мистрал."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:131
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
 msgid ""
 "Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous "
@@ -1002,7 +1002,7 @@ msgstr ""
 "Hermes 3 е най-новата версия на водещата серия LLM програми Hermes от Nous "
 "Research."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:128
 #, kde-format
 msgid ""
 "Yi-Coder is a series of open-source code language models that delivers state-"
@@ -1011,7 +1011,7 @@ msgstr ""
 "Yi-Coder е серия от модели езици за код с отворен код, които предоставят най-"
 "съвременна производителност на кодиране с по-малко от 10 милиарда параметъра."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:136
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:131
 #, kde-format
 msgid ""
 "A large language model built by the Technology Innovation Institute (TII) "
@@ -1020,7 +1020,7 @@ msgstr ""
 "Голям езиков модел, създаден от Института за технологични иновации (TII) за "
 "използване в обобщаване, генериране на текст и чат ботове."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:132
 #, kde-format
 msgid ""
 "InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
@@ -1029,7 +1029,7 @@ msgstr ""
 "InternLM2.5 е 7B параметричен модел, пригоден за практически сценарии с "
 "изключителни възможности за разсъждение."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:138
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
 #, kde-format
 msgid ""
 "A compact, yet powerful 10.7B large language model designed for single-turn "
@@ -1038,7 +1038,7 @@ msgstr ""
 "Компактен, но мощен езиков модел с обем 10,7 B, предназначен за разговори с "
 "един завой."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:134
 #, kde-format
 msgid ""
 "Athene-V2 is a 72B parameter model which excels at code completion, "
@@ -1047,12 +1047,12 @@ msgstr ""
 "Athene-V2 е 72B параметричен модел, който се отличава с отлични резултати "
 "при задачи за довършване на код, математика и извличане на лог файлове."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:135
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
 msgstr "Нов малък модел LLaVA, фино настроен от Phi 3 Mini."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
 #, kde-format
 msgid ""
 "Orca 2 is built by Microsoft research, and are a fine-tuned version of "
@@ -1063,7 +1063,7 @@ msgstr ""
 "усъвършенствана версия на моделите Llama 2 на Meta. Моделът е проектиран да "
 "се отличава особено в разсъжденията."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:144
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
 #, kde-format
 msgid ""
 "A series of multimodal LLMs (MLLMs) designed for vision-language "
@@ -1072,7 +1072,7 @@ msgstr ""
 "Серия от мултимодални LLM (MLLM), предназначени за разбиране на визуален "
 "език."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:145
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
 msgid ""
 "Llama 2 based model fine tuned on an Orca-style dataset. Originally called "
@@ -1081,7 +1081,7 @@ msgstr ""
 "Модел, базиран на Llama 2, фино настроен върху набор от данни в стил Orca. "
 "Първоначално наречен Free Willy."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:146
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:141
 #, kde-format
 msgid ""
 "Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
@@ -1090,7 +1090,7 @@ msgstr ""
 "Mistral Small 3 поставя нов стандарт в категорията „малки“ модели за големи "
 "езици под 70B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:147
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
 #, kde-format
 msgid ""
 "2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language "
@@ -1099,7 +1099,7 @@ msgstr ""
 "2.7B нецензуриран модел Dolphin от Ерик Хартфорд, базиран на езиковия модел "
 "Phi от Microsoft Research."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:148
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:143
 #, kde-format
 msgid ""
 "SmolLM2 is a family of compact language models available in three size: "
@@ -1108,12 +1108,12 @@ msgstr ""
 "SmolLM2 е семейство от компактни езикови модели, предлагани в три размера: "
 "135M, 360M и 1.7B параметри."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:144
 #, kde-format
 msgid "Uncensored version of Wizard LM model"
 msgstr "Нецензурирана версия на модела на Wizard LM"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:145
 #, kde-format
 msgid ""
 "A commercial-friendly small language model by NVIDIA optimized for roleplay, "
@@ -1122,13 +1122,13 @@ msgstr ""
 "Комерсиално удобен малък езиков модел от NVIDIA, оптимизиран за ролева игра, "
 "RAG QA и извикване на функции."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:146
 #, kde-format
 msgid "An extension of Mistral to support context windows of 64K or 128K."
 msgstr ""
 "Разширение на Mistral за поддръжка на контекстни прозорци от 64K или 128K."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:148
 #, kde-format
 msgid ""
 "An expansion of Llama 2 that specializes in integrating both general "
@@ -1139,7 +1139,7 @@ msgstr ""
 "разбиране, така и на специфични за дадена област знания, особено в "
 "програмирането и математиката."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
 #, kde-format
 msgid ""
 "Fine-tuned Llama 2 model to answer medical questions based on an open source "
@@ -1148,7 +1148,7 @@ msgstr ""
 "Усъвършенстван модел Llama 2 за отговаряне на медицински въпроси, базиран на "
 "набор от медицински данни с отворен код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:156
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
 #, kde-format
 msgid ""
 "Open-source medical large language model adapted from Llama 2 to the medical "
@@ -1157,7 +1157,7 @@ msgstr ""
 "Модел на голям медицински език с отворен код, адаптиран от Llama 2 за "
 "медицинската област."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
 #, kde-format
 msgid ""
 "A series of models from Groq that represent a significant advancement in "
@@ -1167,7 +1167,7 @@ msgstr ""
 "възможностите на изкуствения интелект с отворен код за използване на "
 "инструменти/извикване на функции."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
 #, kde-format
 msgid ""
 "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
@@ -1177,30 +1177,30 @@ msgstr ""
 "NVIDIA, за да подобри полезността на генерираните от LLM отговори на "
 "потребителски запитвания."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:157
 #, kde-format
 msgid ""
 "Nexus Raven is a 13B instruction tuned model for function calling tasks."
 msgstr "Nexus Raven е 13B инструкционен модел за задачи, извикващи функции."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:163
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
 #, kde-format
 msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
 msgstr "Моделът Nous Hermes 2 от Nous Research, вече обучен върху Mixtral."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:159
 #, kde-format
 msgid "Great code generation model based on Llama2."
 msgstr "Страхотен модел за генериране на код, базиран на Llama2."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
 #, kde-format
 msgid "Uncensored Llama2 based model with support for a 16K context window."
 msgstr ""
 "Нецензуриран модел, базиран на Llama2, с поддръжка за 16K контекстен "
 "прозорец."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
 #, kde-format
 msgid ""
 "The IBM Granite 2B and 8B models are designed to support tool-based use "
@@ -1212,7 +1212,7 @@ msgstr ""
 "информация (RAG), рационализирайки генерирането на код, превода и "
 "коригирането на грешки."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
 msgid ""
 "Magicoder is a family of 7B parameter models trained on 75K synthetic "
@@ -1223,7 +1223,7 @@ msgstr ""
 "синтетични данни от инструкции, използващи OSS-Instruct, нов подход за "
 "опростенване на LLM с фрагменти от код с отворен код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
 #, kde-format
 msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
@@ -1232,7 +1232,7 @@ msgstr ""
 "Лек модел за чат, позволяващ точен и бърз изход, без да изисква висок клас "
 "хардуер."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:168
 #, kde-format
 msgid ""
 "A high-performing code instruct model created by merging two existing code "
@@ -1241,7 +1241,7 @@ msgstr ""
 "Високопроизводителен модел за кодови инструкции, създаден чрез сливане на "
 "два съществуващи модела код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:169
 #, kde-format
 msgid ""
 "Falcon2 is an 11B parameters causal decoder-only model built by TII and "
@@ -1250,7 +1250,7 @@ msgstr ""
 "Falcon2 е модел, базиран само на причинно-следствени декодери с 11 милиарда "
 "параметри, изграден от TII и обучен върху 5 тирана токени."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
 #, kde-format
 msgid ""
 "Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
@@ -1259,7 +1259,7 @@ msgstr ""
 "Wizard Vicuna е 13B параметричен модел, базиран на Llama 2, обучен от "
 "MelodysDreamj."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:171
 #, kde-format
 msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
@@ -1268,7 +1268,7 @@ msgstr ""
 "MistralLite е фино настроен модел, базиран на Mistral с подобрени "
 "възможности за обработка на дълги контексти."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
 #, kde-format
 msgid ""
 "MathΣtral: a 7B model designed for math reasoning and scientific discovery "
@@ -1277,14 +1277,14 @@ msgstr ""
 "MathΣtral: 7B модел, проектиран за математически разсъждения и научни "
 "открития от Mistral AI."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
 msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
 msgstr ""
 "7B параметричен текст-към-SQL модел, създаден от MotherDuck и Numbers "
 "Station."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
 #, kde-format
 msgid ""
 "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
@@ -1293,7 +1293,7 @@ msgstr ""
 "MegaDolphin-2.2-120b е трансформация на Dolphin-2.2-70b, създадена чрез "
 "преплитане на модела със самия него."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:181
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
 #, kde-format
 msgid ""
 "Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
@@ -1302,7 +1302,7 @@ msgstr ""
 "Преглед на Solar Pro: усъвършенстван модел на голям език (LLM) с 22 милиарда "
 "параметъра, проектиран да се побере в един графичен процесор"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
 #, kde-format
 msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
@@ -1311,7 +1311,7 @@ msgstr ""
 "Серия от модели, които конвертират HTML съдържание в Markdown съдържание, "
 "което е полезно за задачи за конвертиране на съдържание."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
@@ -1319,13 +1319,13 @@ msgstr ""
 "Високоефективен модел, съчетан с висококачествени данни, и е съчетание от "
 "експерти."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
 msgstr ""
 "7B чат модел, фино настроен с висококачествени данни и базиран на Zephyr."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
 #, kde-format
 msgid ""
 "Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
@@ -1334,7 +1334,7 @@ msgstr ""
 "Сливане на модела Open Orca OpenChat и модела Garage-bAInd Platypus 2. "
 "Проектиран за чат и генериране на код."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:180
 #, kde-format
 msgid ""
 "A language model created by combining two fine-tuned Llama 2 70B models into "
@@ -1343,7 +1343,7 @@ msgstr ""
 "Езиков модел, създаден чрез комбиниране на два фино настроени модела Llama 2 "
 "70B в един."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
 #, kde-format
 msgid ""
 "The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
@@ -1352,7 +1352,7 @@ msgstr ""
 "Моделите IBM Granite 1B и 3B са първата комбинация от експертни (MoE) модели "
 "Granite от IBM, проектирани за използване с ниска латентност."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:190
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
 msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
@@ -1361,7 +1361,7 @@ msgstr ""
 "Модел с размер 3.8B, фино настроен върху частен висококачествен синтетичен "
 "набор от данни за извличане на информация, базиран на Phi-3."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
 msgid ""
 "Cohere For AI's language models trained to perform well across 23 different "
@@ -1370,12 +1370,12 @@ msgstr ""
 "Езиковите модели на Cohere For AI са обучени да работят добре на 23 различни "
 "езика."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:192
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:185
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
 msgstr "DBRX е отворена, универсална LLM система, създадена от Databricks."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:194
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
 #, kde-format
 msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
@@ -1384,12 +1384,12 @@ msgstr ""
 "Отворен модел за широкообхватно разсъждение за реални решения от Alibaba "
 "International Digital Commerce Group (AIDC-AI)."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
 msgstr "Модел за вграждане от BAAI, преобразуващ текстове във вектори."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:188
 #, kde-format
 msgid ""
 "An open weights function calling model based on Llama 3, competitive with "
@@ -1398,7 +1398,7 @@ msgstr ""
 "Отворен модел за извикване на функции с тегла, базиран на Llama 3, "
 "конкурентен на възможностите за извикване на функции на GPT-4o."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:198
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
 #, kde-format
 msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
@@ -1407,7 +1407,7 @@ msgstr ""
 "Надежден разговорен модел, предназначен за употреба както в чат, така и в "
 "случаи на обучение."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:200
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
 #, kde-format
 msgid ""
 "An upgraded version of DeekSeek-V2 that integrates the general and coding "
@@ -1416,7 +1416,7 @@ msgstr ""
 "Подобрена версия на DeekSeek-V2, която интегрира общите и кодиращите "
 "възможности както на DeepSeek-V2-Chat, така и на DeepSeek-Coder-V2-Instruct."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:202
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:193
 #, kde-format
 msgid ""
 "ShieldGemma is set of instruction tuned models for evaluating the safety of "
@@ -1427,13 +1427,13 @@ msgstr ""
 "безопасността на въвеждането на текстови подкани и извеждането на текст "
 "спрямо набор от дефинирани политики за безопасност."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
 #, kde-format
 msgid "A state-of-the-art fact-checking model developed by Bespoke Labs."
 msgstr ""
 "Най-съвременен модел за проверка на фактите, разработен от Bespoke Labs."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:205
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:196
 #, kde-format
 msgid ""
 "Llama Guard 3 is a series of models fine-tuned for content safety "
@@ -1442,7 +1442,7 @@ msgstr ""
 "Llama Guard 3 е серия от модели, фино настроени за класификация на "
 "безопасността на съдържанието на входни данни и отговори от LLM."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
 #, kde-format
 msgid ""
 "Sentence-transformers model that can be used for tasks like clustering or "
@@ -1451,7 +1451,7 @@ msgstr ""
 "Модел на трансформатори на изречения, който може да се използва за задачи "
 "като клъстериране или семантично търсене."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:199
 #, kde-format
 msgid ""
 "OpenCoder is an open and reproducible code LLM family which includes 1.5B "
@@ -1460,7 +1460,7 @@ msgstr ""
 "OpenCoder е семейство LLM с отворен и възпроизводим код, което включва 1.5B "
 "и 8B модели, поддържащи чат на английски и китайски език."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:201
 #, kde-format
 msgid ""
 "Tülu 3 is a leading instruction following model family, offering fully open-"
@@ -1469,7 +1469,7 @@ msgstr ""
 "Tülu 3 е водещо семейство модели, следващи инструкции, предлагащо напълно "
 "отворени данни, код и рецепти от Института Алън за изкуствен интелект."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:203
 #, kde-format
 msgid ""
 "Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
@@ -1479,7 +1479,7 @@ msgstr ""
 "многоезична поддръжка, без да се прави компромис с производителността или "
 "мащабируемостта на английския език."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:213
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
 #, kde-format
 msgid ""
 "The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
@@ -1488,7 +1488,7 @@ msgstr ""
 "Моделите IBM Granite Guardian 3.0 2B и 8B са проектирани да откриват рискове "
 "в подкани и/или отговори."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
 #, kde-format
 msgid ""
 "EXAONE 3.5 is a collection of instruction-tuned bilingual (English and "
@@ -1499,7 +1499,7 @@ msgstr ""
 "с настроени инструкции, вариращи от 2.4B до 32B параметри, разработени и "
 "пуснати на пазара от LG AI Research."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
 #, kde-format
 msgid ""
 "Sailor2 are multilingual language models made for South-East Asia. Available "
@@ -1508,7 +1508,7 @@ msgstr ""
 "Sailor2 са многоезични езикови модели, създадени за Югоизточна Азия. "
 "Предлагат се с размери на параметрите 1B, 8B и 20B."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
 #, kde-format
 msgid ""
 "A family of efficient AI models under 10B parameters performant in science, "
@@ -1518,7 +1518,7 @@ msgstr ""
 "представящи се в науката, математиката и кодирането чрез иновативни техники "
 "за обучение."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:221
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
 #, kde-format
 msgid ""
 "The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 "
@@ -1530,7 +1530,7 @@ msgstr ""
 "предшественици в производителността и скоростта при първоначалните тестове "
 "на IBM."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:224
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
 #, kde-format
 msgid ""
 "The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
@@ -1539,7 +1539,7 @@ msgstr ""
 "Моделите IBM Granite 1B и 3B са дългоконтекстни смесени експертни (MoE) "
 "модели Granite от IBM, проектирани за използване с ниска латентност."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:226
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
 #, kde-format
 msgid ""
 "The IBM Granite Embedding 30M and 278M models models are text-only dense "
@@ -1550,19 +1550,19 @@ msgstr ""
 "вграждане на плътни биенкодери, като 30M е наличен само на английски език, а "
 "278M обслужва многоезични случаи на употреба."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:228
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
 #, kde-format
 msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
 msgstr "Phi-4 е 14B параметър, модерен отворен модел от Microsoft."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:220
 #, kde-format
 msgid ""
 "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
 msgstr ""
 "Нов модел за малки разсъждения, фино настроен от модела Qwen 2.5 3B Instruct."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:231
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:222
 #, kde-format
 msgid ""
 "Dolphin 3.0 Llama 3.1 8B 🐬 is the next generation of the Dolphin series of "
@@ -1575,7 +1575,7 @@ msgstr ""
 "общо предназначение, позволяващ кодиране, математика, агентни извиквания, "
 "извикване на функции и общи случаи на употреба."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:225
 #, kde-format
 msgid ""
 "DeepSeek's first-generation of reasoning models with comparable performance "
@@ -1586,7 +1586,7 @@ msgstr ""
 "производителност с OpenAI-o1, включително шест плътни модела, дестилирани от "
 "DeepSeek-R1, базирани на Llama и Qwen."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:227
 #, kde-format
 msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
@@ -1595,7 +1595,7 @@ msgstr ""
 "Силен езиков модел, базиран на смесица от експерти (MoE), с общо 671 "
 "милиарда параметъра, като за всеки токен са активирани 37 милиарда."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:238
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
 #, kde-format
 msgid ""
 "OLMo 2 is a new family of 7B and 13B models trained on up to 5T tokens. "
@@ -1608,7 +1608,7 @@ msgstr ""
 "модели и са конкурентни на модели с отворено тегло, като Llama 3.1, по "
 "английски академични бенчмаркове."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:241
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:232
 #, kde-format
 msgid ""
 "The smallest model in Cohere's R series delivers top-tier speed, efficiency, "
@@ -1619,7 +1619,7 @@ msgstr ""
 "ефективност и качество, за да изгражда мощни AI приложения на масови "
 "графични процесори и периферни устройства."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:243
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
 #, kde-format
 msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
@@ -1628,7 +1628,7 @@ msgstr ""
 "Напълно отворено семейство от модели за разсъждение, изградени с помощта на "
 "набор от данни, получен чрез дестилиране на DeepSeek-R1."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
 #, kde-format
 msgid ""
 "A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the "
@@ -1639,7 +1639,7 @@ msgstr ""
 "производителността на o1-preview на OpenAI само с 1.5B параметри при "
 "популярни математически оценки."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:248
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:239
 #, kde-format
 msgid ""
 "A version of the DeepSeek-R1 model that has been post trained to provide "
@@ -1648,13 +1648,13 @@ msgstr ""
 "Версия на модела DeepSeek-R1, която е била допълнително обучена да "
 "предоставя безпристрастна, точна и фактическа информация от Perplexity."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:240
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
 msgstr ""
 "Настоящият, най-способен модел, който работи на един графичен процесор."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:242
 #, kde-format
 msgid ""
 "Phi-4-mini brings significant enhancements in multilingual support, "
@@ -1665,7 +1665,7 @@ msgstr ""
 "разсъжденията и математиката, а сега дългоочакваната функция за извикване на "
 "функции най-накрая е поддържана."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:254
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
 msgid ""
 "A compact and efficient vision-language model, specifically designed for "
@@ -1676,7 +1676,7 @@ msgstr ""
 "визуално разбиране на документи, позволяващ автоматизирано извличане на "
 "съдържание от таблици, диаграми, инфографики, графики, диаграми и други."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:247
 #, kde-format
 msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
@@ -1685,7 +1685,7 @@ msgstr ""
 "Granite-3.2 е семейство от дългоконтекстни AI модели от IBM Granite, фино "
 "настроени за възможности за мислене."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
 msgid ""
 "A new state-of-the-art version of the lightweight Command R7B model that "
@@ -1696,7 +1696,7 @@ msgstr ""
 "усъвършенствани възможности за работа с арабски език, предназначена за "
 "предприятия в Близкия изток и Северна Африка."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
 msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
@@ -1705,7 +1705,7 @@ msgstr ""
 "Модел със 111 милиарда параметра, оптимизиран за взискателни предприятия, "
 "които се нуждаят от бърз, сигурен и висококачествен изкуствен интелект."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:253
 #, kde-format
 msgid ""
 "EXAONE Deep exhibits superior capabilities in various reasoning tasks "
@@ -1716,7 +1716,7 @@ msgstr ""
 "разсъждение, включително математически и кодиращи бенчмаркове, вариращи от "
 "2,4 до 32 милиарда параметри, разработени и пуснати от LG AI Research."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
 msgid ""
 "Building upon Mistral Small 3, Mistral Small 3.1 (2503) adds state-of-the-"
@@ -1727,7 +1727,7 @@ msgstr ""
 "разбиране на зрението и подобрява възможностите за дълъг контекст до 128 000 "
 "токена, без да се прави компромис с производителността на текста."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:268
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:259
 #, kde-format
 msgid ""
 "Cogito v1 Preview is a family of hybrid reasoning models by Deep Cogito that "
@@ -1739,7 +1739,7 @@ msgstr ""
 "размер, включително аналози от LLaMA, DeepSeek и Qwen в повечето стандартни "
 "бенчмаркове."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:261
 #, kde-format
 msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
@@ -1748,7 +1748,7 @@ msgstr ""
 "DeepCoder е напълно отворен код 14B кодер на ниво O3-mini, като се предлага "
 "и 1.5B версия."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:263
 #, kde-format
 msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
@@ -1757,12 +1757,12 @@ msgstr ""
 "Qwen3 е най-новото поколение големи езикови модели от серията Qwen, "
 "предлагащи цялостен набор от плътни и смесени от експерти (MoE) модели."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
 msgstr "Най-новата колекция от мултимодални модели на Meta."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:267
 #, kde-format
 msgid ""
 "IBM Granite 2B and 8B models are 128K context length language models that "
@@ -1773,7 +1773,7 @@ msgstr ""
 "които са фино настроени за подобрени възможности за разсъждение и следване "
 "на инструкции."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
 msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
@@ -1783,7 +1783,7 @@ msgstr ""
 "разсъждение с отворено тегло, които съперничат на много по-големи модели при "
 "сложни задачи за разсъждение."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:282
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
 msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
@@ -1797,46 +1797,47 @@ msgstr ""
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:28
+#: plugins/ollama/ollamacomboboxwidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Презареждане на модела"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Конфигуриране на Олама"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:53
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Инсталирани модели"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Създаване на модели"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
 #, kde-format
 msgid "Server Url:"
 msgstr "Адрес на сървър:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:50
+#: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
 msgid "Model:"
 msgstr "Модел:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:53
+#: plugins/ollama/ollamaconfigurewidget.cpp:55
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
 #, kde-format
 msgid "Temperature:"
 msgstr "Температура:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1846,12 +1847,12 @@ msgstr ""
 "Температурата на модела. Повишаването на температурата ще направи модела да "
 "реагира по-креативно."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
 #, kde-format
 msgid "Seed:"
 msgstr "Сийд:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:61
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1863,7 +1864,7 @@ msgstr ""
 "генериране. Задаването на конкретно число ще накара модела да генерира един "
 "и същ текст за едно и също запитване. (По подразбиране: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgid "No system prompt"
 msgstr "Няма системна подкана"
@@ -1879,7 +1880,7 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Добавяне на екземпляр…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -1897,65 +1898,65 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Въведете съобщение"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:19
 #, kde-format
 msgid "Send"
 msgstr "Изпращане"
 
-#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:17
+#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
 msgstr "Добавяне на екземпляр"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Име:"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Избиране на вид на екземпляра:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Конфигуриране на екземплярите"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Маркиране като „По подразбиране“"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Редактиране…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Премахване на екземпляр"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Искате ли да премахнете този екземпляр (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Премахване на екземпляр"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -1963,83 +1964,88 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Търсене…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:50
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Добавяне на екземпляр…"
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
 msgstr "Конфигуриране на AI текстови плъгини"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:41
+#: widgets/menu/textautogeneratemenulistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
 msgstr "Добавяне…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:44
+#: widgets/menu/textautogeneratemenulistview.cpp:45
 #, kde-format
 msgid "Ask to AI"
 msgstr "Запитване на изкуствения интелект"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:114
+#: widgets/menu/textautogeneratemenulistview.cpp:51
+#: widgets/view/textautogeneratehistorylistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Промяна…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/menu/textautogeneratemenulistview.cpp:58
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Премахване…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:60
+#: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "Искате ли да го премахнете?"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:61
+#: widgets/menu/textautogeneratemenulistview.cpp:62
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Премахване"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:32
+#: widgets/menu/textautogeneratemenuwidget.cpp:34
 #, kde-format
 msgid "Ask AI…"
 msgstr "Запитване към ИИ…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:61
+#: widgets/menu/textautogeneratemenuwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Конфигуриране…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:42
 #, kde-format
 msgid "Api Key:"
 msgstr "Api ключ:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
+#, kde-format
+msgid "Max Tokens:"
+msgstr ""
+
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Бърз въпрос"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Конфигуриране…"
 
-#: widgets/textautogeneratedialog.cpp:35
+#: widgets/textautogeneratedialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
@@ -2063,95 +2069,95 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Прибавяне в Любими"
 
-#: widgets/textautogeneratesearchdialog.cpp:26
+#: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Търсене"
 
-#: widgets/textautogeneratewidget.cpp:93
+#: widgets/textautogeneratewidget.cpp:95
 #, kde-format
 msgid "No plugin found."
 msgstr "Не е намерен плъгин."
 
-#: widgets/view/textautogeneratebaselistview.cpp:40
+#: widgets/view/textautogeneratebaselistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Копиране на селекцията"
 
-#: widgets/view/textautogeneratebaselistview.cpp:40
+#: widgets/view/textautogeneratebaselistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Копиране"
 
-#: widgets/view/textautogeneratebaselistview.cpp:48
+#: widgets/view/textautogeneratebaselistview.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Избиране на всичко"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:103
+#: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Нов чат"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:127
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Премахване от любими"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:127
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Задаване като любим"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Архив"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Искате ли да премахнете тази дискусия?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Премахване на дискусията"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:369
+#: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Редактиране..."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:373
+#: widgets/view/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копиране"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:381
+#: widgets/view/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Обновяване"
 
-#: widgets/view/textautogeneratesearchlistview.cpp:48
+#: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."

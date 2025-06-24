@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 08:22+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,24 +18,24 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.05.1\n"
 
-#: texttospeechactions.cpp:28
+#: texttospeechactions.cpp:30
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "עצירה"
 
-#: texttospeechactions.cpp:31
+#: texttospeechactions.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "עצירה"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
 msgstr "השהיה"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
 msgstr "השמעה"
@@ -86,30 +86,30 @@ msgstr "שפה:"
 msgid "Voice:"
 msgstr "קול:"
 
-#: texttospeechwidget.cpp:54
+#: texttospeechwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "סגירה"
 
-#: texttospeechwidget.cpp:59
+#: texttospeechwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "עוצמת שמע:"
 
-#: texttospeechwidget.cpp:81
+#: texttospeechwidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgid "Engine has a problem."
 msgstr "יש בעיה במנוע."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-14 22:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.07.70\n"
 
-#: texttospeechactions.cpp:28
+#: texttospeechactions.cpp:30
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "Спиране"
 
-#: texttospeechactions.cpp:31
+#: texttospeechactions.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Спиране"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
 msgstr "Пауза"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
 msgstr "Изпълнение"
@@ -85,30 +85,30 @@ msgstr "Език:"
 msgid "Voice:"
 msgstr "Глас:"
 
-#: texttospeechwidget.cpp:54
+#: texttospeechwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Затваряне"
 
-#: texttospeechwidget.cpp:59
+#: texttospeechwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Сила на звука:"
 
-#: texttospeechwidget.cpp:81
+#: texttospeechwidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Настройване…"
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgid "Engine has a problem."
 msgstr "Основната програма срещна проблем."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

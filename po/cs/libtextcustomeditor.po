@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-12 11:40+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -26,74 +26,74 @@ msgstr[0] "Provedena %1 náhrada"
 msgstr[1] "Provedeny %1 náhrady"
 msgstr[2] "Provedeno %1 náhrad"
 
-#: plaintexteditor/plaintexteditor.cpp:173
+#: plaintexteditor/plaintexteditor.cpp:172
 #: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
 msgstr "Zkontrolovat pravopis…"
 
-#: plaintexteditor/plaintexteditor.cpp:178
-#: richtexteditor/richtexteditor.cpp:244
+#: plaintexteditor/plaintexteditor.cpp:175
+#: richtexteditor/richtexteditor.cpp:242
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Automatická kontrola pravopisu"
 
-#: plaintexteditor/plaintexteditor.cpp:184
-#: richtexteditor/richtexteditor.cpp:250
+#: plaintexteditor/plaintexteditor.cpp:181
+#: richtexteditor/richtexteditor.cpp:248
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Jazyk kontroly pravopisu"
 
-#: plaintexteditor/plaintexteditor.cpp:212
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:283
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:173
+#: richtexteditor/richtexteditor.cpp:281
 #, kde-format
 msgid "Speak Text"
 msgstr "Přečíst text"
 
-#: plaintexteditor/plaintexteditor.cpp:391
-#: richtexteditor/richtexteditor.cpp:501
+#: plaintexteditor/plaintexteditor.cpp:388
+#: richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Nic ke kontrole pravopisu."
 
-#: plaintexteditor/plaintexteditor.cpp:396
-#: richtexteditor/richtexteditor.cpp:519
+#: plaintexteditor/plaintexteditor.cpp:393
+#: richtexteditor/richtexteditor.cpp:517
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr ""
 
-#: richtexteditor/richtexteditor.cpp:276
+#: richtexteditor/richtexteditor.cpp:274
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Povolit tabulátory"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
 
-#: richtexteditor/richtexteditor.cpp:513
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Odeslat"
 
-#: richtexteditor/richtexteditor.cpp:535
+#: richtexteditor/richtexteditor.cpp:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Přeskočit"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavřít"
 
-#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "Zavřít"
@@ -192,13 +192,13 @@ msgstr "Regulární výraz"
 msgid "Respect Diacritic and Accents"
 msgstr ""
 
-#: widgets/textgotolinewidget.cpp:49
+#: widgets/textgotolinewidget.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Přejít na řádek:"
 
-#: widgets/textgotolinewidget.cpp:57
+#: widgets/textgotolinewidget.cpp:58
 #, kde-format
 msgid "Go"
 msgstr "Přejít"

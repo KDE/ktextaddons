@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-15 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: speechtotext/plugins/google/googlespeechtotextclient.cpp:24
+#: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
 msgid "Google"
 msgstr "गूगल"
@@ -29,8 +29,8 @@ msgstr "गूगल"
 msgid "Impossible to store language info."
 msgstr "भाषा संबंधी जानकारी संग्रहीत करना असंभव है।"
 
-#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:49
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -39,73 +39,73 @@ msgstr ""
 "त्रुटि: इंजन सिस्टम ने आपके कंप्यूटर नेटवर्क से संदिग्ध ट्रैफ़िक का पता लगाया है। कृपया बाद में "
 "अपना अनुरोध फिर से आज़माएँ।"
 
-#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "यूआरएल तक पहुंचना असंभव: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "फ़ाइल डाउनलोड करने के लिए नहीं खोली जा सकती."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "चेकसम सही नहीं है."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "डिस्क पर लिखते समय त्रुटि: %1"
 
-#: speechtotext/plugins/vosk/voskenginedialog.cpp:26
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Vosk Plugin Settings"
 msgstr "वोस्क प्लगइन सेटिंग्स"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:48
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "खोजना…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:83
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:85
 #, kde-format
 msgid "Download"
 msgstr "डाउनलोड करना"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:104
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:106
 #, kde-format
 msgid "Delete"
 msgstr "मिटाना"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:108
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "सूची अपडेट करें"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:109
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "नेटवर्क से भाषाओं की सूची अपडेट करें"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:185
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटि: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:185
-#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:26
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
 #, kde-format
 msgid "Vosk"
 msgstr "मोम"
 
-#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:56
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "भाषा निकालना असंभव"
@@ -136,35 +136,35 @@ msgstr "उपलब्ध संस्करण"
 msgid "Size"
 msgstr "आकार"
 
-#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:24
+#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
 #, kde-format
 msgid "Whisper"
 msgstr "फुसफुसाना"
 
-#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:28
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "इंजन:"
 
-#: speechtotext/widgets/speechtotextconfiguredialog.cpp:18
+#: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Speech To Text"
 msgstr "स्पीच टू टेक्स्ट कॉन्फ़िगर करें"
 
-#: speechtotext/widgets/speechtotextmenu.cpp:17
+#: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
 msgid "Speech to Text…"
 msgstr "भाषण से पाठ…"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:31
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Input:"
 msgstr "इनपुट:"
 
-#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:71
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:73
 #, kde-format
 msgid "Default"
 msgstr "गलती करना"

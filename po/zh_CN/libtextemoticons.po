@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -62,36 +62,36 @@ msgstr "地区"
 msgid "Flags"
 msgstr "旗帜"
 
-#: widgets/emoticoncategorybuttons.cpp:84
+#: widgets/emoticoncategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "历史记录"
 
-#: widgets/emoticoncategorybuttons.cpp:88
+#: widgets/emoticoncategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "自定义"
 
-#: widgets/emoticonlistview.cpp:116
+#: widgets/emoticonlistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "清除最近表情符号"
 
-#: widgets/emoticontexteditaction.cpp:54
+#: widgets/emoticontexteditaction.cpp:56
 #, kde-format
 msgid "Add Smiley"
 msgstr "添加表情符号"
 
-#: widgets/emoticontexteditselector.cpp:92
+#: widgets/emoticontexteditselector.cpp:94
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "搜索表情符号…"
 
-#: widgets/emoticontonecombobox.cpp:15
+#: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
 msgstr "选择色调"

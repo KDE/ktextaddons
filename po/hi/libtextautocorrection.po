@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:39+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -24,95 +24,95 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "पुरालेख को पठन मोड में नहीं खोला जा सकता."
 
-#: widgets/autocorrectionwidget.cpp:134
+#: widgets/autocorrectionwidget.cpp:136
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "कस्टम लिखने योग्य पथ चुनें"
 
-#: widgets/autocorrectionwidget.cpp:139
+#: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "कस्टम सिस्टम पथ चुनें"
 
-#: widgets/autocorrectionwidget.cpp:149
+#: widgets/autocorrectionwidget.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "लिबरऑफिस स्वतः सुधार"
 
-#: widgets/autocorrectionwidget.cpp:153
+#: widgets/autocorrectionwidget.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "केमेल/कैलिग्रा स्वतः सुधार"
 
-#: widgets/autocorrectionwidget.cpp:431
+#: widgets/autocorrectionwidget.cpp:433
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "\"प्रतिस्थापित करें\" स्ट्रिंग \"खोजें\" स्ट्रिंग के समान है।"
 
-#: widgets/autocorrectionwidget.cpp:431
+#: widgets/autocorrectionwidget.cpp:433
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "स्वतः सुधार प्रविष्टि जोड़ें"
 
-#: widgets/autocorrectionwidget.cpp:510
+#: widgets/autocorrectionwidget.cpp:512
 #, kde-format
 msgid "&Modify"
 msgstr "&संशोधित करें"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:513 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:515 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&जोड़ना"
 
-#: widgets/autocorrectionwidget.cpp:621
+#: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice स्वतःसुधार आयात करें"
 
-#: widgets/autocorrectionwidget.cpp:622
+#: widgets/autocorrectionwidget.cpp:624
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "लिबरऑफिस स्वतः सुधार फ़ाइल (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:625
+#: widgets/autocorrectionwidget.cpp:627
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "KMail स्वतः सुधार आयात करें"
 
-#: widgets/autocorrectionwidget.cpp:626
+#: widgets/autocorrectionwidget.cpp:628
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "केमेल स्वतःसुधार फ़ाइल (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:658
+#: widgets/autocorrectionwidget.cpp:660
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "स्वतःसुधार फ़ाइल आयात करें"
 
-#: widgets/autocorrectionwidget.cpp:682
+#: widgets/autocorrectionwidget.cpp:684
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "भाषा बदल दी गई है, क्या आप पिछली भाषा के लिए कॉन्फ़िगरेशन सहेजना चाहते हैं?"
 
-#: widgets/autocorrectionwidget.cpp:683
+#: widgets/autocorrectionwidget.cpp:685
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "कॉन्फ़िगरेशन सहेजें"
 
-#: widgets/autocorrectionwidget.cpp:718
+#: widgets/autocorrectionwidget.cpp:720
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "कृपया सेटिंग्स निर्यात करने से पहले परिवर्तन सहेजें."
 
-#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
+#: widgets/autocorrectionwidget.cpp:720 widgets/autocorrectionwidget.cpp:723
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

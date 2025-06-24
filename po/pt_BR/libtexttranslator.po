@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-15 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2023-10-05 18:11-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -322,88 +322,88 @@ msgstr "Galês"
 msgid "Yiddish"
 msgstr "Iídiche"
 
-#: translator/plugins/bergamot/begamotenginedialog.cpp:24
+#: translator/plugins/bergamot/begamotenginedialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:31
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:172
+#: translator/plugins/bergamot/bergamotengineclient.cpp:33
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Bergamot"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:47
-#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:36
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:49
+#: translator/widgets/translatorconfigurelanguagelistwidget.cpp:38
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Pesquisar..."
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:79
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:81
 #, kde-format
 msgid "Download"
 msgstr "Baixar"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:93
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:95
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:97
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:99
 #, fuzzy, kde-format
 #| msgid "Update List"
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Atualizar lista"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:98
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Update list of languages from network"
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Atualizar lista de idiomas da rede"
 
-#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:172
+#: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:174
 #, kde-format
 msgid "Error: %1"
 msgstr "Erro: %1"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:19
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:21
 #, fuzzy, kde-format
 #| msgid "Use translation cache"
 msgctxt "@option:check"
 msgid "Use translation cache"
 msgstr "Usar cache de tradução"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:25
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:27
 #, kde-format
 msgid "Resource Usage"
 msgstr "Uso de recursos"
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:37
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:39
 #, kde-format
 msgid "Thread:"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:38
+#: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:40
 #, kde-format
 msgid "Memory by Thread:"
 msgstr ""
 
-#: translator/plugins/bergamot/bergamotenginewidget.cpp:29
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:31
 #, kde-format
 msgid "Languages"
 msgstr "Idiomas"
 
-#: translator/plugins/bergamot/bergamotenginewidget.cpp:30
+#: translator/plugins/bergamot/bergamotenginewidget.cpp:32
 #, kde-format
 msgid "Settings"
 msgstr "Configurações"
 
-#: translator/plugins/bergamot/bergamotmarianinterface.cpp:206
+#: translator/plugins/bergamot/bergamotmarianinterface.cpp:208
 #, kde-format
 msgid "Language model is not defined."
 msgstr "O modelo de idioma não está definido."
@@ -414,7 +414,7 @@ msgid "Cannot open file for downloading."
 msgstr "Não foi possível abrir o arquivo para baixar."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:48
-#: translator/plugins/bergamot/managermodeltranslator.cpp:50
+#: translator/plugins/bergamot/managermodeltranslator.cpp:52
 #: translator/plugins/yandex/yandexengineplugin.cpp:55
 #: translator/translatorengineplugin.cpp:106
 #, kde-format
@@ -426,7 +426,7 @@ msgstr ""
 "computador. Tente sua solicitação novamente mais tarde."
 
 #: translator/plugins/bergamot/downloadlanguagejob.cpp:50
-#: translator/plugins/bergamot/managermodeltranslator.cpp:52
+#: translator/plugins/bergamot/managermodeltranslator.cpp:54
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Não foi possível acessar a URL: %1"
@@ -441,7 +441,7 @@ msgstr "A soma de verificação não está correta."
 msgid "Error during writing on disk: %1"
 msgstr "Erro ao gravar no disco: %1"
 
-#: translator/plugins/bergamot/extractlanguagejob.cpp:30
+#: translator/plugins/bergamot/extractlanguagejob.cpp:32
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Não foi possível extrair o idioma"
@@ -482,7 +482,7 @@ msgstr "Versão disponível"
 msgid "Installed"
 msgstr "Instalado"
 
-#: translator/plugins/bing/bingengineclient.cpp:26
+#: translator/plugins/bing/bingengineclient.cpp:28
 #, kde-format
 msgid "Bing"
 msgstr "Bing"
@@ -509,28 +509,28 @@ msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
 "Erro: Não foi possível extrair informações adicionais do Bing da versão web."
 
-#: translator/plugins/deepl/deeplengineclient.cpp:33
+#: translator/plugins/deepl/deeplengineclient.cpp:35
 #, kde-format
 msgid "DeepL"
 msgstr "DeepL"
 
-#: translator/plugins/deepl/deeplengineconfiguredialog.cpp:17
-#: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:17
-#: translator/plugins/lingva/lingvaenginedialog.cpp:18
+#: translator/plugins/deepl/deeplengineconfiguredialog.cpp:19
+#: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:19
+#: translator/plugins/lingva/lingvaenginedialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Engine"
 msgstr "Configurar mecanismo"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:18
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:19
 #, fuzzy, kde-format
 #| msgid "Use Free License Key"
 msgctxt "@option:check"
 msgid "Use Free License Key"
 msgstr "Usar chave de licença gratuita"
 
-#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:30
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:34
+#: translator/plugins/deepl/deeplengineconfigurewidget.cpp:31
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:36
 #, kde-format
 msgid "Api Key:"
 msgstr "Chave da API:"
@@ -551,20 +551,20 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr "Resposta inválida."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:33
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:19
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:21
 #, fuzzy, kde-format
 #| msgid "Server required Api Key"
 msgctxt "@option:check"
 msgid "Server required Api Key"
 msgstr "O servidor solicitou a chave da API"
 
-#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:27
-#: translator/plugins/lingva/lingvaenginewidget.cpp:23
+#: translator/plugins/libretranslate/libretranslateengineconfigurewidget.cpp:29
+#: translator/plugins/lingva/lingvaenginewidget.cpp:25
 #, kde-format
 msgid "Server Url:"
 msgstr "URL do servidor:"
@@ -574,12 +574,12 @@ msgstr "URL do servidor:"
 msgid "Server url is not defined."
 msgstr "A URL do servidor não está definida."
 
-#: translator/plugins/lingva/lingvaengineclient.cpp:31
+#: translator/plugins/lingva/lingvaengineclient.cpp:33
 #, kde-format
 msgid "Lingva"
 msgstr "Lingva"
 
-#: translator/plugins/yandex/yandexengineclient.cpp:26
+#: translator/plugins/yandex/yandexengineclient.cpp:28
 #, kde-format
 msgid "Yandex"
 msgstr "Yandex"
@@ -610,24 +610,24 @@ msgstr "Sem rede"
 msgid "You used same language for 'from' and 'to' language."
 msgstr "Você usou o mesmo idioma em 'de' e 'para'."
 
-#: translator/widgets/translatorconfiguredialog.cpp:18
+#: translator/widgets/translatorconfiguredialog.cpp:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Translator"
 msgstr "Configurar o tradutor"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:24
+#: translator/widgets/translatorconfigurelistswidget.cpp:26
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:25
+#: translator/widgets/translatorconfigurelistswidget.cpp:27
 #, kde-format
 msgid "To:"
 msgstr "Para:"
 
-#: translator/widgets/translatorconfigurelistswidget.cpp:51
-#: translator/widgets/translatorconfigurewidget.cpp:39
+#: translator/widgets/translatorconfigurelistswidget.cpp:53
+#: translator/widgets/translatorconfigurewidget.cpp:41
 #, fuzzy, kde-format
 #| msgid "Engine:"
 msgctxt "@label:textbox"
@@ -667,7 +667,7 @@ msgstr "Erro de gravação do arquivo"
 msgid "All Files (*)"
 msgstr "Todos os arquivos (*)"
 
-#: translator/widgets/translatormenu.cpp:23
+#: translator/widgets/translatormenu.cpp:25
 #, fuzzy, kde-format
 #| msgid "Translate"
 msgid "Translate…"

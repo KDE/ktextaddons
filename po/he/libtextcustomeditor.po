@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 08:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,74 +28,74 @@ msgstr[1] "בוצעו שתי החלפות"
 msgstr[2] "בוצעו %1 החלפות"
 msgstr[3] "בוצעו %1 החלפות"
 
-#: plaintexteditor/plaintexteditor.cpp:173
+#: plaintexteditor/plaintexteditor.cpp:172
 #: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
 msgstr "בדיקת איות…"
 
-#: plaintexteditor/plaintexteditor.cpp:178
-#: richtexteditor/richtexteditor.cpp:244
+#: plaintexteditor/plaintexteditor.cpp:175
+#: richtexteditor/richtexteditor.cpp:242
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "בדיקת איות אוטומטית"
 
-#: plaintexteditor/plaintexteditor.cpp:184
-#: richtexteditor/richtexteditor.cpp:250
+#: plaintexteditor/plaintexteditor.cpp:181
+#: richtexteditor/richtexteditor.cpp:248
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "שפת בדיקת האיות"
 
-#: plaintexteditor/plaintexteditor.cpp:212
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:283
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:173
+#: richtexteditor/richtexteditor.cpp:281
 #, kde-format
 msgid "Speak Text"
 msgstr "הקראת טקסט"
 
-#: plaintexteditor/plaintexteditor.cpp:391
-#: richtexteditor/richtexteditor.cpp:501
+#: plaintexteditor/plaintexteditor.cpp:388
+#: richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "אין תוכן לבדיקת איות."
 
-#: plaintexteditor/plaintexteditor.cpp:396
-#: richtexteditor/richtexteditor.cpp:519
+#: plaintexteditor/plaintexteditor.cpp:393
+#: richtexteditor/richtexteditor.cpp:517
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "אין מנגנון זמין לבדיקת איות."
 
-#: richtexteditor/richtexteditor.cpp:276
+#: richtexteditor/richtexteditor.cpp:274
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "לאפשר טאבים"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "אין מנגנון זמין לבדיקת איות. לשלוח את ההודעה בכל זאת?"
 
-#: richtexteditor/richtexteditor.cpp:513
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "שליחה"
 
-#: richtexteditor/richtexteditor.cpp:535
+#: richtexteditor/richtexteditor.cpp:533
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "דילוג"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "סגירה"
 
-#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "סגירה"
@@ -194,13 +194,13 @@ msgstr "ביטוי רגולרי"
 msgid "Respect Diacritic and Accents"
 msgstr "התחשבות בסימנים דיאקריטיים והגווני אותיות"
 
-#: widgets/textgotolinewidget.cpp:49
+#: widgets/textgotolinewidget.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "מעבר לשורה:"
 
-#: widgets/textgotolinewidget.cpp:57
+#: widgets/textgotolinewidget.cpp:58
 #, kde-format
 msgid "Go"
 msgstr "מעבר"

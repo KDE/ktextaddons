@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2025-02-19 09:19+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -64,36 +64,36 @@ msgstr "Regional"
 msgid "Flags"
 msgstr "Banderes"
 
-#: widgets/emoticoncategorybuttons.cpp:84
+#: widgets/emoticoncategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Historial"
 
-#: widgets/emoticoncategorybuttons.cpp:88
+#: widgets/emoticoncategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Personalitzats"
 
-#: widgets/emoticonlistview.cpp:116
+#: widgets/emoticonlistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Neteja els recents"
 
-#: widgets/emoticontexteditaction.cpp:54
+#: widgets/emoticontexteditaction.cpp:56
 #, kde-format
 msgid "Add Smiley"
 msgstr "Afegeix una emoticona"
 
-#: widgets/emoticontexteditselector.cpp:92
+#: widgets/emoticontexteditselector.cpp:94
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Cerca una emoticona…"
 
-#: widgets/emoticontonecombobox.cpp:15
+#: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
 msgstr "Selecciona el to"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-02 00:39+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2023-01-09 18:51+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -24,101 +24,101 @@ msgstr ""
 msgid "Archive cannot be opened in read mode."
 msgstr "Não é possível aceder ao pacote no modo de leitura."
 
-#: widgets/autocorrectionwidget.cpp:134
+#: widgets/autocorrectionwidget.cpp:136
 #, kde-format
 msgid "Select Custom Writable Path"
 msgstr "Seleccionar a Localização Personalizada de Escrita"
 
-#: widgets/autocorrectionwidget.cpp:139
+#: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "Select Custom System Path"
 msgstr "Seleccionar a Localização Personalizada no Sistema"
 
-#: widgets/autocorrectionwidget.cpp:149
+#: widgets/autocorrectionwidget.cpp:151
 #, fuzzy, kde-format
 #| msgid "LibreOffice Autocorrection"
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Correcção Automática do LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:153
+#: widgets/autocorrectionwidget.cpp:155
 #, fuzzy, kde-format
 #| msgid "KMail/Calligra Autocorrection"
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Correcção Automática do KMail/Calligra"
 
-#: widgets/autocorrectionwidget.cpp:431
+#: widgets/autocorrectionwidget.cpp:433
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
 msgstr "O texto \"Substituir\" é o mesmo que o \"Procurar\"."
 
-#: widgets/autocorrectionwidget.cpp:431
+#: widgets/autocorrectionwidget.cpp:433
 #, fuzzy, kde-format
 #| msgid "Add Autocorrection Entry"
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
 msgstr "Adicionar o Item à Correcção Automática"
 
-#: widgets/autocorrectionwidget.cpp:510
+#: widgets/autocorrectionwidget.cpp:512
 #, kde-format
 msgid "&Modify"
 msgstr "&Modificar"
 
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: widgets/autocorrectionwidget.cpp:513 widgets/ui/autocorrectionwidget.ui:88
+#: widgets/autocorrectionwidget.cpp:515 widgets/ui/autocorrectionwidget.ui:88
 #: widgets/ui/autocorrectionwidget.ui:228
 #, kde-format
 msgid "&Add"
 msgstr "&Adicionar"
 
-#: widgets/autocorrectionwidget.cpp:621
+#: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Importar a Correcção Automática do LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:622
+#: widgets/autocorrectionwidget.cpp:624
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "Ficheiro de Correcção Automática do LibreOffice (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:625
+#: widgets/autocorrectionwidget.cpp:627
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Importar a Correcção Automática do KMail"
 
-#: widgets/autocorrectionwidget.cpp:626
+#: widgets/autocorrectionwidget.cpp:628
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "Ficheiro de Correcção Automática do KMail (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:658
+#: widgets/autocorrectionwidget.cpp:660
 #, fuzzy, kde-format
 #| msgid "Import Autocorrection File"
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importar um Ficheiro de Correcção Automática"
 
-#: widgets/autocorrectionwidget.cpp:682
+#: widgets/autocorrectionwidget.cpp:684
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "A língua foi alterada; deseja gravar a configuração da língua anterior?"
 
-#: widgets/autocorrectionwidget.cpp:683
+#: widgets/autocorrectionwidget.cpp:685
 #, fuzzy, kde-format
 #| msgid "Save config"
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Gravar a configuração"
 
-#: widgets/autocorrectionwidget.cpp:718
+#: widgets/autocorrectionwidget.cpp:720
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Por favor, grave as alterações antes de exportar as definições."
 
-#: widgets/autocorrectionwidget.cpp:718 widgets/autocorrectionwidget.cpp:721
+#: widgets/autocorrectionwidget.cpp:720 widgets/autocorrectionwidget.cpp:723
 #, fuzzy, kde-format
 #| msgid "Export Autocorrection File"
 msgctxt "@title:window"

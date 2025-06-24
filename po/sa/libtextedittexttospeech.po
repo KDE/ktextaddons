@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
-#: texttospeechactions.cpp:28
+#: texttospeechactions.cpp:30
 #, kde-format
 msgctxt "@action"
 msgid "Stop"
 msgstr "विरमतु"
 
-#: texttospeechactions.cpp:31
+#: texttospeechactions.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "विरमतु"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
 msgstr "विराम"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
 msgstr "क्रीडतु"
@@ -85,30 +85,30 @@ msgstr "भाषा:"
 msgid "Voice:"
 msgstr "ध्वनि:"
 
-#: texttospeechwidget.cpp:54
+#: texttospeechwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "पिधानं करोतु"
 
-#: texttospeechwidget.cpp:59
+#: texttospeechwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "मात्रा:"
 
-#: texttospeechwidget.cpp:81
+#: texttospeechwidget.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "विन्यस्तं कुर्वन्तु..."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgid "Engine has a problem."
 msgstr "इञ्जिनस्य समस्या अस्ति।"
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

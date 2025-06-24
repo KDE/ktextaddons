@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2023-01-18 13:34+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -17,26 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: texttospeechactions.cpp:28
+#: texttospeechactions.cpp:30
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Parar"
 
-#: texttospeechactions.cpp:31
+#: texttospeechactions.cpp:33
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Parar"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
 msgstr "Pausa"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
 msgstr "Tocar"
@@ -87,33 +87,33 @@ msgstr "Língua:"
 msgid "Voice:"
 msgstr "Voz:"
 
-#: texttospeechwidget.cpp:54
+#: texttospeechwidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Fechar"
 
-#: texttospeechwidget.cpp:59
+#: texttospeechwidget.cpp:61
 #, fuzzy, kde-format
 #| msgid "Volume:"
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Volume:"
 
-#: texttospeechwidget.cpp:81
+#: texttospeechwidget.cpp:83
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configurar..."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgid "Engine has a problem."
 msgstr "O motor está com problemas."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Text To Speech"
 msgctxt "@title:window"

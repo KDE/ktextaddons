@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2023-12-12 17:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -28,77 +28,77 @@ msgstr[1] "Сделано %1 замены"
 msgstr[2] "Сделано %1 замен"
 msgstr[3] "Сделана %1 замена"
 
-#: plaintexteditor/plaintexteditor.cpp:173
+#: plaintexteditor/plaintexteditor.cpp:172
 #: richtexteditor/richtexteditor.cpp:237
 #, fuzzy, kde-format
 #| msgid "Check Spelling..."
 msgid "Check Spelling…"
 msgstr "Проверить орфографию…"
 
-#: plaintexteditor/plaintexteditor.cpp:178
-#: richtexteditor/richtexteditor.cpp:244
+#: plaintexteditor/plaintexteditor.cpp:175
+#: richtexteditor/richtexteditor.cpp:242
 #, kde-format
 msgid "Auto Spell Check"
 msgstr "Автоматическая проверка орфографии"
 
-#: plaintexteditor/plaintexteditor.cpp:184
-#: richtexteditor/richtexteditor.cpp:250
+#: plaintexteditor/plaintexteditor.cpp:181
+#: richtexteditor/richtexteditor.cpp:248
 #, kde-format
 msgid "Spell Checking Language"
 msgstr "Язык для проверки орфографии"
 
-#: plaintexteditor/plaintexteditor.cpp:212
-#: richtextbrowser/richtextbrowser.cpp:172
-#: richtexteditor/richtexteditor.cpp:283
+#: plaintexteditor/plaintexteditor.cpp:209
+#: richtextbrowser/richtextbrowser.cpp:173
+#: richtexteditor/richtexteditor.cpp:281
 #, kde-format
 msgid "Speak Text"
 msgstr "Озвучить текст"
 
-#: plaintexteditor/plaintexteditor.cpp:391
-#: richtexteditor/richtexteditor.cpp:501
+#: plaintexteditor/plaintexteditor.cpp:388
+#: richtexteditor/richtexteditor.cpp:499
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Нет текста для проверки орфографии."
 
-#: plaintexteditor/plaintexteditor.cpp:396
-#: richtexteditor/richtexteditor.cpp:519
+#: plaintexteditor/plaintexteditor.cpp:393
+#: richtexteditor/richtexteditor.cpp:517
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Не найден модуль для проверки орфографии."
 
-#: richtexteditor/richtexteditor.cpp:276
+#: richtexteditor/richtexteditor.cpp:274
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Включить табуляцию"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "Не найден модуль для проверки орфографии. Всё равно отправить письмо?"
 
-#: richtexteditor/richtexteditor.cpp:513
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Отправить"
 
-#: richtexteditor/richtexteditor.cpp:535
+#: richtexteditor/richtexteditor.cpp:533
 #, fuzzy, kde-format
 #| msgid "Skip"
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Пропустить"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:39
+#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Закрыть"
 
-#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:42
+#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "Закрыть"
@@ -203,14 +203,14 @@ msgstr "Регулярное выражение"
 msgid "Respect Diacritic and Accents"
 msgstr "Учитывать диакритические знаки и ударения"
 
-#: widgets/textgotolinewidget.cpp:49
+#: widgets/textgotolinewidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "Go to Line:"
 msgctxt "@label:textbox"
 msgid "Go to Line:"
 msgstr "Перейти к строке:"
 
-#: widgets/textgotolinewidget.cpp:57
+#: widgets/textgotolinewidget.cpp:58
 #, kde-format
 msgid "Go"
 msgstr "Перейти"

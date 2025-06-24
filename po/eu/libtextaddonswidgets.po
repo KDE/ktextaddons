@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 17:37+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: selectspecialchardialog.cpp:32
+#: selectspecialchardialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "Hautatu karaktere bereziak"
 
-#: selectspecialchardialog.cpp:40
+#: selectspecialchardialog.cpp:42
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "Sartu"
 
-#: selectspecialchardialog.cpp:53
+#: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"

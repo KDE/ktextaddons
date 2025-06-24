@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:38+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-09-08 12:52+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: selectspecialchardialog.cpp:32
+#: selectspecialchardialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
 msgstr "மேம்பட்ட எழுத்துகளைத் தேர்ந்தெடுப்பது"
 
-#: selectspecialchardialog.cpp:40
+#: selectspecialchardialog.cpp:42
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
 msgstr "நுழை"
 
-#: selectspecialchardialog.cpp:53
+#: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"

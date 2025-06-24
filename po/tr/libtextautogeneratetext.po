@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:42+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 08:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.04.2\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:74
+#: core/models/textautogeneratechatsmodel.cpp:76
 #, kde-format
 msgid "New Chat..."
 msgstr "Yeni Sohbet…"
 
-#: core/models/textautogeneratechatsmodel.cpp:146
+#: core/models/textautogeneratechatsmodel.cpp:148
 #, kde-format
 msgid "Favorite"
 msgstr "Sık Kullanılanlara Ekle"
 
-#: core/models/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Today"
 msgstr "Bugün"
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "7 days previous"
 msgstr "7 gün öncesi"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "30 days previous"
 msgstr "30 gün öncesi"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "Later"
 msgstr "Sonrası"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -63,7 +63,7 @@ msgstr ""
 "Model: %2\n"
 "Örnek adı: %3"
 
-#: core/textautogeneratesearchmessageutils.cpp:34
+#: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
 msgstr "İletiye git"
@@ -83,21 +83,21 @@ msgstr "Ağ"
 msgid "Generic"
 msgstr "Genel"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:41
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:43
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Genel"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:47
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -109,22 +109,22 @@ msgstr "Kullanılabilir Modeller"
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1 konumunda arayüze bağlanılamadı: %2"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:22
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
 msgstr "Kluster AI"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
@@ -185,18 +185,18 @@ msgstr "Gömülü"
 msgid "Reasoning"
 msgstr "Akıl Yürütme"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:44
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:102
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "Desteklenen Diller"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
 #, kde-format
 msgid "Models"
 msgstr "Modeller"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
+#: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Model"
@@ -207,107 +207,107 @@ msgstr "Model ekle"
 msgid "Categories"
 msgstr "Kategoriler"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:29
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
 msgstr "Temel:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:32
-#: plugins/ollama/ollamaconfigurewidget.cpp:42
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
+#: plugins/ollama/ollamaconfigurewidget.cpp:44
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:41
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
 msgstr "Künye:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
+#: plugins/ollama/ollamaconfigurewidget.cpp:69
 #, kde-format
 msgid "Prompt:"
 msgstr "İstem:"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:43
+#: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Oluştur"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:39
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
 msgstr "GGUF Dosyası Yükle…"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:43
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
 msgstr "GGUF Dosyası Seç"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
 msgstr "Model Oluştur"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
 msgstr "Model İndir"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
+#: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:23
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
 msgstr "Model adını “ad:künye” biçiminde girin"
 
-#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:45
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
+#: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
+#: widgets/view/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "İptal"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:26
 #, kde-format
 msgid "Family:"
 msgstr "Aile:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:35
 #, kde-format
 msgid "Parameter Size:"
 msgstr "Parametre boyutu:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:44
 #, kde-format
 msgid "Quantization Level:"
 msgstr "Nicemleme düzeyi:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:53
 #, kde-format
 msgid "Modified At:"
 msgstr "Değiştirilme:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
 #, kde-format
 msgid "Parent Model:"
 msgstr "Üst model:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:120
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
 msgid "Features Supported"
 msgstr "Desteklenen Özellikler"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:104
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Bu modeli kaldırmak istiyor musunuz (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -319,7 +319,7 @@ msgctxt "@info:placeholder"
 msgid "Search Model…"
 msgstr "Model ara…"
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:15
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:17
 #, kde-format
 msgid ""
 "New state of the art 70B model. Llama 3.3 70B offers similar performance "
@@ -328,12 +328,12 @@ msgstr ""
 "Yeni son teknoloji 70 milyar parametreli modeli. Llama 3.3 70B, Llama 3.1 "
 "405B modeliyle karşılaştırıldığında benzer başarım sunar."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:16
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
 msgstr "QwQ, Qwen serisinin akıl yürütme modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
@@ -342,12 +342,12 @@ msgstr ""
 "Llama 3.2 Vision, 11 ve 90 milyar boyutlu yönergelerle ayarlanmış görsel "
 "akıl yürütme üretme modellerinin bir koleksiyonudur."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
 msgstr "Meta’nın Llama 3.2’si 1 ve 3 milyarlık modelleriyle küçülüyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
@@ -356,17 +356,17 @@ msgstr ""
 "Llama 3.1, Meta’nın 8, 70 ve 405 milyarlık parametre boyutlarında var olan "
 "yeni ve son teknoloji bir modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
 msgstr "Meta Llama 3: Bugüne kadarki en yetenekli açık erişimli LLM."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
 msgstr "Mistral AI tarafından yayınlanan 7B modeli 0.3 sürümüne güncellendi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
 #, kde-format
 msgid ""
 "A high-performing open embedding model with a large token context window."
@@ -374,7 +374,7 @@ msgstr ""
 "Büyük bir jeton bağlam penceresine sahip, yüksek başarımlı, açık bir "
 "yerleştirme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
 #, kde-format
 msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
@@ -383,7 +383,7 @@ msgstr ""
 "Gemma, Google DeepMind tarafından oluşturulmuş hafif, son teknoloji açık "
 "modellerden oluşan bir ailedir. 1.1 sürümüne güncellendi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
 msgid ""
 "Qwen 1.5 is a series of large language models by Alibaba Cloud spanning from "
@@ -392,12 +392,12 @@ msgstr ""
 "Qwen 1.5, Alibaba Cloud tarafından geliştirilen 0,5 milyardan 110 milyara "
 "kadar parametreye sahip büyük dil modelleri serisidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
 #, kde-format
 msgid "Qwen2 is a new series of large language models from Alibaba group"
 msgstr "Qwen 2, Alibaba grubunun yeni büyük dil modelleri serisidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:27
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
 #, kde-format
 msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
@@ -406,7 +406,7 @@ msgstr ""
 "Phi-3, Microsoft’un hafif 3 (Mini) ve 14 (Orta) milyarlık son teknoloji açık "
 "model ailesidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:28
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:29
 #, kde-format
 msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
@@ -415,7 +415,7 @@ msgstr ""
 "Llama 2, 7B’den 70B’ye kadar parametrelere sahip temel dil modelleri "
 "koleksiyonudur."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:30
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:31
 #, kde-format
 msgid ""
 "Qwen2.5 models are pretrained on Alibaba's latest large-scale dataset, "
@@ -426,7 +426,7 @@ msgstr ""
 "büyük ölçekli veri kümesinde önceden eğitilmiştir. Model, 128K jetona kadar "
 "destekler ve çok dilli desteğe sahiptir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:32
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:33
 #, kde-format
 msgid ""
 "Google Gemma 2 is a high-performing and efficient model available in three "
@@ -435,7 +435,7 @@ msgstr ""
 "Google Gemma 2; 2, 9 ve 27 milyarlık olmak üzere üç boyutta sunulan yüksek "
 "başarımlı ve verimli bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:34
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:35
 #, kde-format
 msgid ""
 "LLaVA is a novel end-to-end trained large multimodal model that combines a "
@@ -446,7 +446,7 @@ msgstr ""
 "Vicuna’yı birleştiren yeni bir uçtan uca eğitilmiş büyük çok kipli modeldir. "
 "1.6 sürümüne güncellendi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:36
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:37
 #, kde-format
 msgid ""
 "A large language model that can use text prompts to generate and discuss "
@@ -455,7 +455,7 @@ msgstr ""
 "Kod üretmek ve tartışmak için metin istemlerini kullanabilen büyük bir dil "
 "modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:38
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
 #, kde-format
 msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
@@ -464,7 +464,7 @@ msgstr ""
 "Kod üretimi, kod akıl yürütmesi ve kod düzeltmede önemli iyileştirmeler "
 "içeren, kodlamaya özel Qwen modellerinin en son serisi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
 msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
@@ -473,7 +473,7 @@ msgstr ""
 "Mistral AI ve NVIDIA işbirliğiyle geliştirilen, 128 k bağlam uzunluğuna "
 "sahip son teknoloji 12 milyarlık model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
 msgid ""
 "The TinyLlama project is an open endeavor to train a compact 1.1B Llama "
@@ -482,12 +482,12 @@ msgstr ""
 "TinyLlama projesi, 3 trilyon jeton üzerinde kompakt bir 1,1 milyarlık Lama "
 "modeli eğitmek için açık bir çabadır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:42
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
 msgstr "mixedbread.ai’dan son teknoloji büyük gömülü model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:43
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
 msgid ""
 "StarCoder2 is the next generation of transparently trained open code LLMs "
@@ -496,7 +496,7 @@ msgstr ""
 "StarCoder2; 3, 7 ve 15 milyar parametreli olmak üzere üç boyutta sunulan, "
 "saydam bir şekilde eğitilmiş, açık kodlu LLM’lerin yeni neslidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:45
 #, kde-format
 msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
@@ -505,7 +505,7 @@ msgstr ""
 "Mistral AI tarafından 8 × 7 ve 8 × 22 milyar parametre boyutlarında açık "
 "ağırlıklara sahip bir Uzmanlar Karışımı (MoE) modeli kümesi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:47
 #, kde-format
 msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
@@ -515,7 +515,7 @@ msgstr ""
 "sansürsüz, 8 × 7 ve 8 × 22 milyar ince ayarlı modeller. Eric Hartford "
 "tarafından yaratıldı."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:49
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:50
 #, kde-format
 msgid ""
 "CodeGemma is a collection of powerful, lightweight models that can perform a "
@@ -527,7 +527,7 @@ msgstr ""
 "matematiksel akıl yürütme ve yönerge takibi gibi çeşitli kodlama görevlerini "
 "gerçekleştirebilen güçlü ve hafif modellerden oluşan bir koleksiyondur."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:52
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:53
 #, kde-format
 msgid ""
 "An open-source Mixture-of-Experts code language model that achieves "
@@ -627,7 +627,7 @@ msgstr ""
 "Llama 3 Instruct’tan uyarlanan ve birçok kıyaslamada daha iyi puanlar alan "
 "bir LLaVA modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:69
 #, kde-format
 msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
@@ -636,7 +636,7 @@ msgstr ""
 "Zephyr, Mistral ve Mixtral modellerinin yardımcı asistanlar olarak hareket "
 "edecek şekilde eğitilmiş, ince ayarlı sürümlerinden oluşan bir seridir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
 #, kde-format
 msgid ""
 "A lightweight AI model with 3.8 billion parameters with performance "
@@ -645,12 +645,12 @@ msgstr ""
 "Benzer ve daha büyük boyutlu modellere göre başarımı geride bırakan, 3,8 "
 "milyar parametreli hafif bir yapay zekâ modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
 msgstr "Çok büyük tümce düzeyindeki veri kümelerine modelleri gömme."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
 #, kde-format
 msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
@@ -659,7 +659,7 @@ msgstr ""
 "Codestral, Mistral AI’ın kod oluşturma görevleri için tasarlanmış ilk kod "
 "modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
 #, kde-format
 msgid ""
 "StarCoder is a code generation model trained on 80+ programming languages."
@@ -667,7 +667,7 @@ msgstr ""
 "StarCoder, 80’den fazla programlama dili üzerinde eğitilmiş bir kod üretme "
 "modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
 #, kde-format
 msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
@@ -676,12 +676,12 @@ msgstr ""
 "2 ile 16 bin arasında içerik boyutlarına sahip Llama ve Llama 2 tabanlı "
 "genel kullanım sohbet modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
 #, kde-format
 msgid "A family of open foundation models by IBM for Code Intelligence"
 msgstr "IBM’in Code Intelligence için açık temelli model ailesi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
 #, kde-format
 msgid ""
 "Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
@@ -690,7 +690,7 @@ msgstr ""
 "Mistral OpenOrca, OpenOrca veri kümesini kullanarak Mistral 7B modelinin "
 "üzerine ince ayar yapılmış 7 milyar parametreli bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:77
 #, kde-format
 msgid ""
 "A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
@@ -699,7 +699,7 @@ msgstr ""
 "Yeni, yüksek kaliteli bir veri kümesi üzerinde eğitilen, 135, 360 ve 1,7 "
 "milyar parametreli küçük modellerden oluşan bir aile."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
 #, kde-format
 msgid ""
 "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
@@ -708,14 +708,14 @@ msgstr ""
 "Wizard Vicuna Uncensored, Eric Hartford’ın Llama 2 Uncensored temelli; 7, 13 "
 "ve 30 milyar parametreli bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
 #, kde-format
 msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
 msgstr ""
 "Çince diyalog yeteneğini geliştirmek için Llama 2 tabanlı model ince "
 "ayarlandı."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
 #, kde-format
 msgid ""
 "BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
@@ -724,7 +724,7 @@ msgstr ""
 "BGE-M3; çok işlevlilik, dillilik ve granülaritelik açısından çok "
 "yönlülüğüyle öne çıkan BAAI’nin yeni bir modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:85
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
 #, kde-format
 msgid ""
 "A versatile model for AI software development scenarios, including code "
@@ -733,7 +733,7 @@ msgstr ""
 "Kod tamamlamayı da içeren yapay zekâ yazılım geliştirme senaryoları için çok "
 "yönlü bir model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
 #, kde-format
 msgid ""
 "A family of open-source models trained on a wide variety of data, surpassing "
@@ -742,7 +742,7 @@ msgstr ""
 "Çeşitli ölçütlerde ChatGPT’yi geride bırakan, çok çeşitli veriler üzerinde "
 "eğitilmiş bir açık kaynaklı model ailesi. 3.5-0106 sürümüne güncellendi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:85
 #, kde-format
 msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
@@ -751,7 +751,7 @@ msgstr ""
 "Cohere tarafından piyasaya sürülen Aya 23, 23 dili destekleyen, son "
 "teknoloji ürünü, çok dilli modellerden oluşan yeni bir ailedir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:86
 #, kde-format
 msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
@@ -760,7 +760,7 @@ msgstr ""
 "CodeQwen 1.5, büyük miktarda kod verisi üzerinde önceden eğitilmiş büyük bir "
 "dil modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:90
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
 #, kde-format
 msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
@@ -769,7 +769,7 @@ msgstr ""
 "Nous Research’ün bilimsel tartışma ve kodlama görevlerinde üstünlük sağlayan "
 "güçlü model ailesi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
 #, kde-format
 msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
@@ -779,12 +779,12 @@ msgstr ""
 "sağlamak için özel olarak tasarlanmış, güçlü, ölçeklenebilir ve büyük bir "
 "dil modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
 msgid "State-of-the-art code generation model"
 msgstr "Son teknoloji kod üretme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:91
 #, kde-format
 msgid ""
 "Stable Code 3B is a coding model with instruct and code completion variants "
@@ -793,7 +793,7 @@ msgstr ""
 "Stable Code 3B, Code Llama 7B gibi 2,5 kat daha büyük modellerle aynı "
 "düzeyde yönerge ve kod tamamlama varyantlarına sahip bir kodlama modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:97
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:92
 #, kde-format
 msgid ""
 "An experimental 1.1B parameter model trained on the new Dolphin 2.8 dataset "
@@ -802,7 +802,7 @@ msgstr ""
 "Eric Hartford tarafından yeni Dolphin 2.8 veri kümesi üzerinde eğitilen ve "
 "TinyLlama temelli deneysel bir 1,1 milyar parametreli model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:93
 #, kde-format
 msgid ""
 "OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
@@ -811,7 +811,7 @@ msgstr ""
 "OpenHermes 2.5, Teknium tarafından Mistral üzerinde tamamen açık veri "
 "kümeleriyle ince ayar yapılan bir 7 milyarlık modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
 msgid ""
 "Mistral Large 2 is Mistral's new flagship model that is significantly more "
@@ -822,7 +822,7 @@ msgstr ""
 "desteklemesiyle kod üretimi, matematik ve akıl yürütme konusunda önemli "
 "ölçüde daha yetenekli olan Mistral’in yeni amiral gemisi modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:103
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
 #, kde-format
 msgid ""
 "Qwen2 Math is a series of specialized math language models built upon the "
@@ -833,7 +833,7 @@ msgstr ""
 "hatta kapalı kaynaklı modellerin (örneğin GPT4o) matematiksel yeteneklerini "
 "önemli ölçüde geride bırakan bir dizi uzmanlaşmış matematik dili modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:105
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
 #, kde-format
 msgid ""
 "A strong multi-lingual general language model with competitive performance "
@@ -842,7 +842,7 @@ msgstr ""
 "Llama 3 ile rekabet edebilecek başarıma sahip, güçlü çok dilli genel dil "
 "modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:107
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:102
 #, kde-format
 msgid ""
 "Stable LM 2 is a state-of-the-art 1.6B and 12B parameter language model "
@@ -853,7 +853,7 @@ msgstr ""
 "Portekizce ve Hollandaca dillerindeki çok dilli veriler üzerinde eğitilmiş, "
 "son teknoloji ürünü 1,6 ve 12 milyar parametreli bir dil modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:104
 #, kde-format
 msgid ""
 "BakLLaVA is a multimodal model consisting of the Mistral 7B base model "
@@ -862,7 +862,7 @@ msgstr ""
 "BakLLaVA, Mistral 7B temel modelinin LLaVA mimarisiyle zenginleştirilmesiyle "
 "oluşan çok kipli bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:106
 #, kde-format
 msgid ""
 "A high-performing model trained with a new technique called Reflection-"
@@ -873,12 +873,12 @@ msgstr ""
 "bulmayı öğreten Reflection-Tuning adı verilen yeni bir teknikle eğitilmiş "
 "yüksek başarımlı bir model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:113
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:108
 #, kde-format
 msgid "An advanced language model crafted with 2 trillion bilingual tokens."
 msgstr "2 trilyon çift dilli jeton ile hazırlanmış gelişmiş bir dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:109
 #, kde-format
 msgid ""
 "This model extends LLama-3 8B's context length from 8k to over 1m tokens."
@@ -886,12 +886,12 @@ msgstr ""
 "Bu model, LLama-3 8B’nin bağlam uzunluğunu 8 binden 1 milyar jetona "
 "çıkarıyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:110
 #, kde-format
 msgid "Model focused on math and logic problems"
 msgstr "Matematik ve mantık problemlerine odaklanan model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
 #, kde-format
 msgid ""
 "moondream2 is a small vision language model designed to run efficiently on "
@@ -900,7 +900,7 @@ msgstr ""
 "moondream2, uç aygıtlarda verimli bir şekilde çalışmak üzere tasarlanmış "
 "küçük bir görsel dil modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:112
 #, kde-format
 msgid ""
 "A fine-tuned model based on Mistral with good coverage of domain and "
@@ -909,7 +909,7 @@ msgstr ""
 "Alan ve dil açısından iyi bir kapsama sahip, Mistral tabanlı ince ayarlı bir "
 "model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:119
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
 #, kde-format
 msgid ""
 "A model from NVIDIA based on Llama 3 that excels at conversational question "
@@ -918,7 +918,7 @@ msgstr ""
 "NVIDIA’nın Llama 3 tabanlı, konuşma tarzında soru–yanıt (QA) ve geri çağırma "
 "destekli üretim (RAG) konusunda üstünlük sağlayan bir modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:120
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:115
 #, kde-format
 msgid ""
 "Conversational model based on Llama 2 that performs competitively on various "
@@ -927,7 +927,7 @@ msgstr ""
 "Çeşitli ölçütlerde rekabetçi başarım gösteren, Llama 2 tabanlı konuşma "
 "modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:116
 #, kde-format
 msgid ""
 "SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
@@ -936,23 +936,23 @@ msgstr ""
 "SQLCoder, SQL üretimi görevleri için StarCoder üzerinde ince ayar yapılmış "
 "bir kod tamamlama modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
 #, kde-format
 msgid "General use models based on Llama and Llama 2 from Nous Research."
 msgstr ""
 "Nous Research’ün Llama’sı ve Llama 2’si temelli genel kullanım modelleri."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:123
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:118
 #, kde-format
 msgid "Code generation model based on Code Llama."
 msgstr "Code Llama tabanlı kod üretim modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:119
 #, kde-format
 msgid "An extension of Llama 2 that supports a context of up to 128k tokens."
 msgstr "Llama 2’nin 128 bin jetona kadar bağlamı destekleyen bir uzantısı."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:120
 #, kde-format
 msgid ""
 "A 7B and 15B uncensored variant of the Dolphin model family that excels at "
@@ -961,17 +961,17 @@ msgstr ""
 "StarCoder2 tabanlı, kodlamada üstünlük sağlayan Dolphin model ailesinin 7 ve "
 "15 milyarlık, sansürsüz bir çeşidi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
 #, kde-format
 msgid "General use model based on Llama 2."
 msgstr "Llama 2 tabanlı genel kullanım modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:127
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
 #, kde-format
 msgid "A strong, economical, and efficient Mixture-of-Experts language model."
 msgstr "Güçlü, ekonomik ve etkili bir Uzmanlar Karışımı dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:129
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:124
 #, kde-format
 msgid ""
 "Starling is a large language model trained by reinforcement learning from AI "
@@ -981,7 +981,7 @@ msgstr ""
 "zekâ geri bildirimlerinden gelen takviyeli öğrenme ile eğitilen büyük bir "
 "dil modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:130
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:125
 #, kde-format
 msgid ""
 "A companion assistant trained in philosophy, psychology, and personal "
@@ -990,7 +990,7 @@ msgstr ""
 "Felsefe, psikoloji ve kişisel ilişkiler konusunda eğitimli bir refakatçi "
 "yardımcı. Mistral tabanlıdır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:131
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:126
 #, kde-format
 msgid ""
 "Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous "
@@ -999,7 +999,7 @@ msgstr ""
 "Hermes 3, Nous Research’ün Hermes LLM serisinin amiral gemisi serisinin son "
 "sürümüdür."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:128
 #, kde-format
 msgid ""
 "Yi-Coder is a series of open-source code language models that delivers state-"
@@ -1008,7 +1008,7 @@ msgstr ""
 "Yi-Coder, 10 milyardan az parametreyle en son teknoloji kodlama başarımını "
 "sunan, bir dizi açık kaynaklı kod dili modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:136
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:131
 #, kde-format
 msgid ""
 "A large language model built by the Technology Innovation Institute (TII) "
@@ -1017,7 +1017,7 @@ msgstr ""
 "Özetleme, metin üretimi ve sohbet robotlarında kullanılmak üzere Teknoloji "
 "İnovasyon Enstitüsü (TII) tarafından oluşturulmuş büyük bir dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:132
 #, kde-format
 msgid ""
 "InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
@@ -1026,7 +1026,7 @@ msgstr ""
 "InternLM2.5, olağanüstü akıl yürütme yeteneğine sahip, pratik senaryolara "
 "yönelik tasarlanmış bir 7 milyar parametreli modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:138
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
 #, kde-format
 msgid ""
 "A compact, yet powerful 10.7B large language model designed for single-turn "
@@ -1035,7 +1035,7 @@ msgstr ""
 "Tek turlu konuşmalar için tasarlanmış, kompakt ama güçlü 10,7 milyarlık "
 "büyük dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:134
 #, kde-format
 msgid ""
 "Athene-V2 is a 72B parameter model which excels at code completion, "
@@ -1044,12 +1044,12 @@ msgstr ""
 "Athene-V2, kod tamamlama, matematik ve günlük çıkarma görevlerinde üstünlük "
 "sağlayan 72 milyar parametreli bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:135
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
 msgstr "Phi 3 Mini’den ince ayar yapılmış yeni bir küçük LLaVA modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
 #, kde-format
 msgid ""
 "Orca 2 is built by Microsoft research, and are a fine-tuned version of "
@@ -1060,7 +1060,7 @@ msgstr ""
 "modellerinin ince ayarlı bir sürümüdür. Model, özellikle akıl yürütmede "
 "mükemmelleşmek üzere tasarlanmıştır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:144
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
 #, kde-format
 msgid ""
 "A series of multimodal LLMs (MLLMs) designed for vision-language "
@@ -1068,7 +1068,7 @@ msgid ""
 msgstr ""
 "Görsel dil anlayışına yönelik tasarlanmış bir dizi çok kipli LLM (MLLM)."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:145
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
 msgid ""
 "Llama 2 based model fine tuned on an Orca-style dataset. Originally called "
@@ -1077,7 +1077,7 @@ msgstr ""
 "Orca tarzı bir veri kümesinde ince ayar yapılmış Llama 2 tabanlı model. "
 "Başlangıçta Free Willy olarak adlandırıldı."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:146
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:141
 #, kde-format
 msgid ""
 "Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
@@ -1086,7 +1086,7 @@ msgstr ""
 "Mistral Small 3, 70 milyarın altındaki “küçük” Büyük Dil Modelleri "
 "kategorisinde yeni bir ölçüt belirliyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:147
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:142
 #, kde-format
 msgid ""
 "2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language "
@@ -1095,7 +1095,7 @@ msgstr ""
 "Microsoft Research’ün Phi dil modeline dayanan, Eric Hartford’un 2,7 "
 "milyarlık sansürsüz Dolphin modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:148
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:143
 #, kde-format
 msgid ""
 "SmolLM2 is a family of compact language models available in three size: "
@@ -1104,12 +1104,12 @@ msgstr ""
 "SmolLM2; 135 milyon, 360 milyon ve 1,7 milyar parametreli olmak üzere üç "
 "boyutta var olan kompakt dil modelleri ailesidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:144
 #, kde-format
 msgid "Uncensored version of Wizard LM model"
 msgstr "Wizard LM modelinin sansürsüz sürümü."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:145
 #, kde-format
 msgid ""
 "A commercial-friendly small language model by NVIDIA optimized for roleplay, "
@@ -1118,13 +1118,13 @@ msgstr ""
 "NVIDIA tarafından rol yapma, RAG QA ve işlev çağırma için eniyilenmiş, "
 "ticari kullanıma uygun küçük bir dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:146
 #, kde-format
 msgid "An extension of Mistral to support context windows of 64K or 128K."
 msgstr ""
 "64 veya 128 bin bağlam penceresini desteklemek için Mistral’in bir uzantısı."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:148
 #, kde-format
 msgid ""
 "An expansion of Llama 2 that specializes in integrating both general "
@@ -1134,7 +1134,7 @@ msgstr ""
 "Llama 2’nin, özellikle programlama ve matematikte genel dil anlayışını ve "
 "alana özel bilgiyi birleştirmeye odaklanan bir uzantısıdır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:150
 #, kde-format
 msgid ""
 "Fine-tuned Llama 2 model to answer medical questions based on an open source "
@@ -1143,7 +1143,7 @@ msgstr ""
 "Açık kaynaklı tıbbi veri kümesine dayalı tıbbi soruları yanıtlamak için ince "
 "ayarlı Llama 2 modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:156
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
 #, kde-format
 msgid ""
 "Open-source medical large language model adapted from Llama 2 to the medical "
@@ -1151,7 +1151,7 @@ msgid ""
 msgstr ""
 "Llama 2’den tıbbi alana uyarlanmış açık kaynaklı tıbbi büyük dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:153
 #, kde-format
 msgid ""
 "A series of models from Groq that represent a significant advancement in "
@@ -1160,7 +1160,7 @@ msgstr ""
 "Groq’un, araç kullanımı/işlev çağırma için açık kaynaklı yapay zekâ "
 "yeteneklerinde önemli bir ilerlemeyi temsil eden bir dizi modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:155
 #, kde-format
 msgid ""
 "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by "
@@ -1170,7 +1170,7 @@ msgstr ""
 "kullanıcı sorgularına verilen yanıtların yararlılığını artırmak için "
 "özelleştirilmiş büyük bir dil modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:157
 #, kde-format
 msgid ""
 "Nexus Raven is a 13B instruction tuned model for function calling tasks."
@@ -1178,23 +1178,23 @@ msgstr ""
 "Nexus Raven, işlev çağırma görevleri için 13 milyar yönerge ayarlı bir "
 "modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:163
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:158
 #, kde-format
 msgid "The Nous Hermes 2 model from Nous Research, now trained over Mixtral."
 msgstr ""
 "Nous Research’ün Nous Hermes 2 modeli, artık Mixtral üzerinden eğitiliyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:164
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:159
 #, kde-format
 msgid "Great code generation model based on Llama2."
 msgstr "Llama2 tabanlı harika bir kod üretme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:160
 #, kde-format
 msgid "Uncensored Llama2 based model with support for a 16K context window."
 msgstr "16 bin bağlam penceresini destekleyen sansürsüz Llama2 tabanlı model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:162
 #, kde-format
 msgid ""
 "The IBM Granite 2B and 8B models are designed to support tool-based use "
@@ -1205,7 +1205,7 @@ msgstr ""
 "desteklemek ve kod üretimi, çeviri ve hata düzeltmeyi kolaylaştıran "
 "artırılmış üretim (RAG) desteği sağlamak üzere tasarlanmıştır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
 msgid ""
 "Magicoder is a family of 7B parameter models trained on 75K synthetic "
@@ -1216,7 +1216,7 @@ msgstr ""
 "bir yaklaşım olan OSS-Instruct kullanılarak 75 bin sentetik yönerge verisi "
 "üzerinde eğitilen 7 milyar parametreli modellerden oluşan bir ailedir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:167
 #, kde-format
 msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
@@ -1225,7 +1225,7 @@ msgstr ""
 "Üst düzey donanım gerektirmeden doğru ve hızlı yanıt veren çıktılara olanak "
 "tanıyan hafif bir sohbet modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:168
 #, kde-format
 msgid ""
 "A high-performing code instruct model created by merging two existing code "
@@ -1234,7 +1234,7 @@ msgstr ""
 "Var olan iki kod modelinin birleştirilmesiyle oluşturulan yüksek başarımlı "
 "bir kod yönerge modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:169
 #, kde-format
 msgid ""
 "Falcon2 is an 11B parameters causal decoder-only model built by TII and "
@@ -1243,7 +1243,7 @@ msgstr ""
 "Falcon2, TII tarafından geliştirilen ve 5 trilyon jeton ile eğitilen 11 "
 "milyar parametreli nedensel kod çözücüye dayalı bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:170
 #, kde-format
 msgid ""
 "Wizard Vicuna is a 13B parameter model based on Llama 2 trained by "
@@ -1252,7 +1252,7 @@ msgstr ""
 "Wizard Vicuna, MelodysDreamj tarafından eğitilen, Llama 2 tabanlı 13 milyar "
 "parametreli bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:171
 #, kde-format
 msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
@@ -1261,7 +1261,7 @@ msgstr ""
 "MistralLite, uzun bağlamları işleme konusunda gelişmiş yeteneklere sahip, "
 "Mistral temelli, ince ayarlı bir modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
 #, kde-format
 msgid ""
 "MathΣtral: a 7B model designed for math reasoning and scientific discovery "
@@ -1270,14 +1270,14 @@ msgstr ""
 "MathΣtral: Mistral AI tarafından matematiksel akıl yürütme ve bilimsel "
 "keşifler için tasarlanmış bir 7 milyarlık modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
 msgid "7B parameter text-to-SQL model made by MotherDuck and Numbers Station."
 msgstr ""
 "MotherDuck ve Numbers Station tarafından yapılmış 7 milyar parametreli, "
 "metinden SQL’e dönüştürme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:174
 #, kde-format
 msgid ""
 "MegaDolphin-2.2-120b is a transformation of Dolphin-2.2-70b created by "
@@ -1286,7 +1286,7 @@ msgstr ""
 "MegaDolphin-2.2-120b, Dolphin-2.2-70b modelinin kendisiyle iç içe "
 "geçirilmesiyle oluşturulan bir dönüşümdür."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:181
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:175
 #, kde-format
 msgid ""
 "Solar Pro Preview: an advanced large language model (LLM) with 22 billion "
@@ -1295,7 +1295,7 @@ msgstr ""
 "Solar Pro Preview: Tek bir GPU’ya sığacak şekilde tasarlanmış 22 milyar "
 "parametreli gelişmiş bir büyük dil modeli (LLM)."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:176
 #, kde-format
 msgid ""
 "A series of models that convert HTML content to Markdown content, which is "
@@ -1304,7 +1304,7 @@ msgstr ""
 "İçerik dönüştürme görevleri için yararlı olan, HTML içeriğini Markdown "
 "içeriğine dönüştüren bir dizi model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:177
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
@@ -1312,14 +1312,14 @@ msgstr ""
 "Yüksek kaliteli verilerle ince ayarlanmış, en iyi başarımı gösteren Uzmanlar "
 "Karışımı modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
 msgstr ""
 "Yüksek kaliteli verilerle ince ayarlanmış ve Zephyr tabanlı 7 milyarlık "
 "sohbet modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
 #, kde-format
 msgid ""
 "Merge of the Open Orca OpenChat model and the Garage-bAInd Platypus 2 model. "
@@ -1328,7 +1328,7 @@ msgstr ""
 "Open Orca OpenChat modeli ve Garage-bAInd Platypus 2 modelinin "
 "birleştirilmesi. Sohbet ve kod üretimi için tasarlanmıştır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:180
 #, kde-format
 msgid ""
 "A language model created by combining two fine-tuned Llama 2 70B models into "
@@ -1337,7 +1337,7 @@ msgstr ""
 "İki adet ince ayarlı Llama 2 70B modelinin bir araya getirilmesiyle "
 "oluşturulmuş bir dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
 #, kde-format
 msgid ""
 "The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
@@ -1346,7 +1346,7 @@ msgstr ""
 "IBM Granite 1B ve 3B modelleri, IBM’in düşük gecikmeli kullanım için "
 "tasarlanmış ilk Uzmanlar Karışımı (MoE) Granite modelleridir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:190
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
 msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
@@ -1355,7 +1355,7 @@ msgstr ""
 "Phi-3 temelli, bilgi çıkarımı için özel, yüksek kaliteli sentetik veri "
 "kümesi üzerinde ince ayar yapılmış 3,8 milyarlık modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
 msgid ""
 "Cohere For AI's language models trained to perform well across 23 different "
@@ -1364,14 +1364,14 @@ msgstr ""
 "Cohere For AI’ın dil modelleri, 23 farklı dilde iyi başarım gösterecek "
 "şekilde eğitildi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:192
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:185
 #, kde-format
 msgid "DBRX is an open, general-purpose LLM created by Databricks."
 msgstr ""
 "DBRX, Databricks tarafından oluşturulan açık ve genel amaçlı bir LLM "
 "programıdır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:194
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:186
 #, kde-format
 msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
@@ -1380,12 +1380,12 @@ msgstr ""
 "Alibaba Uluslararası Dijital Ticaret Grubu’nun (AIDC-AI) gerçek dünya "
 "çözümleri için açık bir büyük akıl yürütme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
 msgstr "BAAI’den metinleri vektörlere eşleyen gömme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:188
 #, kde-format
 msgid ""
 "An open weights function calling model based on Llama 3, competitive with "
@@ -1394,7 +1394,7 @@ msgstr ""
 "GPT-4o’nun işlev çağırma yetenekleriyle rekabet edebilecek, Llama 3 tabanlı "
 "açık ağırlıklı işlev çağırma modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:198
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:189
 #, kde-format
 msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
@@ -1403,7 +1403,7 @@ msgstr ""
 "Hem sohbet hem de yönerge kullanım durumlarında kullanılmak üzere "
 "tasarlanmış sağlam bir konuşma modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:200
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:191
 #, kde-format
 msgid ""
 "An upgraded version of DeekSeek-V2 that integrates the general and coding "
@@ -1412,7 +1412,7 @@ msgstr ""
 "Hem DeepSeek-V2-Chat’in hem de DeepSeek-Coder-V2-Instruct’un genel ve "
 "kodlama yeteneklerini birleştiren DeekSeek-V2’nin yükseltilmiş sürümü."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:202
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:193
 #, kde-format
 msgid ""
 "ShieldGemma is set of instruction tuned models for evaluating the safety of "
@@ -1423,14 +1423,14 @@ msgstr ""
 "tanımlanmış güvenlik politikalarına göre güvenliğini değerlendirmek için bir "
 "dizi yönerge ayarlı modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
 #, kde-format
 msgid "A state-of-the-art fact-checking model developed by Bespoke Labs."
 msgstr ""
 "Bespoke Labs tarafından geliştirilen son teknoloji bir hakikat denetim "
 "modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:205
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:196
 #, kde-format
 msgid ""
 "Llama Guard 3 is a series of models fine-tuned for content safety "
@@ -1439,7 +1439,7 @@ msgstr ""
 "Llama Guard 3, LLM girdilerinin ve yanıtlarının içerik güvenliği "
 "sınıflandırması için ince ayar yapılmış bir dizi modeldir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
 #, kde-format
 msgid ""
 "Sentence-transformers model that can be used for tasks like clustering or "
@@ -1448,7 +1448,7 @@ msgstr ""
 "Kümeleme veya anlamsal arama gibi görevler için kullanılabilen tümce "
 "dönüştürücüleri modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:199
 #, kde-format
 msgid ""
 "OpenCoder is an open and reproducible code LLM family which includes 1.5B "
@@ -1457,7 +1457,7 @@ msgstr ""
 "OpenCoder, İngilizce ve Çince sohbet desteği sağlayan 1,5 ve 8 milyarlık "
 "modellerini içeren açık ve yeniden üretilebilir kod LLM ailesidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:201
 #, kde-format
 msgid ""
 "Tülu 3 is a leading instruction following model family, offering fully open-"
@@ -1467,7 +1467,7 @@ msgstr ""
 "veriler, kodlar ve tarifler sunan, önde gelen bir yönerge izleme modeli "
 "ailesidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:203
 #, kde-format
 msgid ""
 "Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
@@ -1477,7 +1477,7 @@ msgstr ""
 "başarımından veya ölçeklenebilirliğinden ödün vermeden çok dilli destek "
 "ekler."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:213
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
 #, kde-format
 msgid ""
 "The IBM Granite Guardian 3.0 2B and 8B models are designed to detect risks "
@@ -1486,7 +1486,7 @@ msgstr ""
 "IBM Granite Guardian 3.0 2B ve 8B modelleri, uyarılarda ve/veya yanıtlarda "
 "riskleri tespit etmek için tasarlanmıştır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
 #, kde-format
 msgid ""
 "EXAONE 3.5 is a collection of instruction-tuned bilingual (English and "
@@ -1497,7 +1497,7 @@ msgstr ""
 "milyardan 32 milyara kadar parametre eriminde, yönerge ayarlı iki dilli "
 "(İngilizce ve Korece) üretken modellerden oluşan bir koleksiyondur."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:208
 #, kde-format
 msgid ""
 "Sailor2 are multilingual language models made for South-East Asia. Available "
@@ -1506,7 +1506,7 @@ msgstr ""
 "Sailor2, Güneydoğu Asya için yapılmış çok dilli dil modelleridir. 1, 8 ve 20 "
 "milyar parametre boyutlarında kullanılabilir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
 #, kde-format
 msgid ""
 "A family of efficient AI models under 10B parameters performant in science, "
@@ -1516,7 +1516,7 @@ msgstr ""
 "performans gösteren, 10 milyar parametre altında verimli yapay zekâ "
 "modelleri ailesi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:221
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:212
 #, kde-format
 msgid ""
 "The IBM Granite 2B and 8B models are text-only dense LLMs trained on over 12 "
@@ -1527,7 +1527,7 @@ msgstr ""
 "eğitilen, yalnızca metin içeren yoğun LLM’lerdir ve IBM’in ilk sınamalarında "
 "başarım ve hız açısından seleflerine göre önemli iyileştirmeler göstermiştir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:224
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
 #, kde-format
 msgid ""
 "The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
@@ -1536,7 +1536,7 @@ msgstr ""
 "IBM Granite 1B ve 3B modelleri, düşük gecikmeli kullanım için tasarlanmış "
 "IBM’in uzun bağlamlı Uzmanlar Karışımı (MoE) Granite modelleridir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:226
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:217
 #, kde-format
 msgid ""
 "The IBM Granite Embedding 30M and 278M models models are text-only dense "
@@ -1547,14 +1547,14 @@ msgstr ""
 "kodlayıcılı gömme modelleridir; 30M yalnızca İngilizce olarak vardır ve 278M "
 "ise çok dilli kullanım durumlarına hizmet eder."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:228
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
 #, kde-format
 msgid "Phi-4 is a 14B parameter, state-of-the-art open model from Microsoft."
 msgstr ""
 "Phi-4, Microsoft’un 14 milyar parametreli, son teknoloji ürünü açık "
 "modelidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:220
 #, kde-format
 msgid ""
 "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
@@ -1562,7 +1562,7 @@ msgstr ""
 "Qwen 2.5 3B Instruct modelinden ince ayar yapılmış yeni bir küçük akıl "
 "yürütme modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:231
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:222
 #, kde-format
 msgid ""
 "Dolphin 3.0 Llama 3.1 8B 🐬 is the next generation of the Dolphin series of "
@@ -1575,7 +1575,7 @@ msgstr ""
 "olacak şekilde tasarlanmış, Dolphin serisi yönerge ayarlı modellerin yeni "
 "neslidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:225
 #, kde-format
 msgid ""
 "DeepSeek's first-generation of reasoning models with comparable performance "
@@ -1586,7 +1586,7 @@ msgstr ""
 "akıl yürütme modelleri, Llama’ya ve Qwen’e dayalı DeepSeek-R1’den damıtılan "
 "altı yoğun model de dahil."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:227
 #, kde-format
 msgid ""
 "A strong Mixture-of-Experts (MoE) language model with 671B total parameters "
@@ -1595,7 +1595,7 @@ msgstr ""
 "Her jeton için 37 milyar etkinleştirilmiş toplam 671 milyar parametreye "
 "sahip güçlü bir Uzmanlar Karışımı (MoE) dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:238
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:229
 #, kde-format
 msgid ""
 "OLMo 2 is a new family of 7B and 13B models trained on up to 5T tokens. "
@@ -1608,7 +1608,7 @@ msgstr ""
 "düzeyde veya daha iyidir ve İngilizce akademik kıyaslamalarında Llama 3.1 "
 "gibi açık ağırlıklı modellerle rekabet edebilir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:241
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:232
 #, kde-format
 msgid ""
 "The smallest model in Cohere's R series delivers top-tier speed, efficiency, "
@@ -1619,7 +1619,7 @@ msgstr ""
 "üzerinde güçlü yapay zekâ uygulamaları yapmak için üst düzey hız, verimlilik "
 "ve kalite sunuyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:243
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
 #, kde-format
 msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
@@ -1628,7 +1628,7 @@ msgstr ""
 "DeepSeek-R1’in damıtılmasıyla elde edilen bir veri kümesi kullanılarak "
 "oluşturulmuş tamamen açık kaynaklı bir akıl yürütme modelleri ailesi."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
 #, kde-format
 msgid ""
 "A fine-tuned version of Deepseek-R1-Distilled-Qwen-1.5B that surpasses the "
@@ -1639,7 +1639,7 @@ msgstr ""
 "milyar parametresiyle başarımını aşan Deepseek-R1-Distilled-Qwen-1.5B’nin "
 "ince ayarlanmış bir sürümü."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:248
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:239
 #, kde-format
 msgid ""
 "A version of the DeepSeek-R1 model that has been post trained to provide "
@@ -1648,12 +1648,12 @@ msgstr ""
 "Perplexity tarafından tarafsız, doğru ve gerçekçi bilgi sağlamak üzere "
 "sonradan eğitilmiş DeepSeek-R1 modelinin bir sürümü."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:240
 #, kde-format
 msgid "The current, most capable model that runs on a single GPU."
 msgstr "Tek GPU üzerinde çalışan, şu anda en yetenekli model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:242
 #, kde-format
 msgid ""
 "Phi-4-mini brings significant enhancements in multilingual support, "
@@ -1664,7 +1664,7 @@ msgstr ""
 "geliştirmeler getiriyor ve artık uzun zamandır beklenen işlev çağırma "
 "özelliği de nihayet destekleniyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:254
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
 msgid ""
 "A compact and efficient vision-language model, specifically designed for "
@@ -1676,7 +1676,7 @@ msgstr ""
 "fazlasından kendiliğinden içerik çıkarmayı sağlayan kompakt ve etkili bir "
 "görsel dil modeli."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:247
 #, kde-format
 msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
@@ -1685,7 +1685,7 @@ msgstr ""
 "Granite-3.2, IBM Granite’in düşünme yetenekleri için ince ayarlanmış, uzun "
 "bağlamlı yapay zekâ modelleri ailesidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
 msgid ""
 "A new state-of-the-art version of the lightweight Command R7B model that "
@@ -1696,7 +1696,7 @@ msgstr ""
 "yetenekleriyle öne çıkan hafif Command R7B modelinin yeni, son teknoloji "
 "sürümü."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
 msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
@@ -1705,7 +1705,7 @@ msgstr ""
 "Hızlı, güvenli ve yüksek kaliteli yapay zekâ gerektiren zorlu işletmeler "
 "için eniyilenmiş, 111 milyar parametreli model."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:253
 #, kde-format
 msgid ""
 "EXAONE Deep exhibits superior capabilities in various reasoning tasks "
@@ -1717,7 +1717,7 @@ msgstr ""
 "kıyaslamaları da dahil olmak üzere çeşitli akıl yürütme görevlerinde üstün "
 "yetenekler sergiliyor."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
 msgid ""
 "Building upon Mistral Small 3, Mistral Small 3.1 (2503) adds state-of-the-"
@@ -1728,7 +1728,7 @@ msgstr ""
 "ödün vermeden en son teknoloji görsel anlayışı ekler ve 128 bağlama kadar "
 "uzun bağlam yeteneklerini geliştirir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:268
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:259
 #, kde-format
 msgid ""
 "Cogito v1 Preview is a family of hybrid reasoning models by Deep Cogito that "
@@ -1740,7 +1740,7 @@ msgstr ""
 "içerilmek üzere, çoğu standart kıyaslamada daha iyi başarım gösteren bir "
 "hibrit akıl yürütme modelleri ailesidir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:261
 #, kde-format
 msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
@@ -1749,7 +1749,7 @@ msgstr ""
 "DeepCoder, O3-mini düzeyinde tamamen açık kaynaklı 14 milyarlık kodlayıcı "
 "modelidir, ayrıca 1,5 milyarlık bir sürümü de bulunur."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:263
 #, kde-format
 msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
@@ -1758,12 +1758,12 @@ msgstr ""
 "Qwen 3, Qwen serisindeki büyük dil modellerinin son nesli olup yoğun ve "
 "Uzmanlar Karışımı (MoE) modellerden oluşan kapsamlı bir paket sunmaktadır."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:265
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
 msgstr "Meta’nın en son çok kipli model koleksiyonu."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:267
 #, kde-format
 msgid ""
 "IBM Granite 2B and 8B models are 128K context length language models that "
@@ -1774,7 +1774,7 @@ msgstr ""
 "yetenekleri için ince ayar yapılmış 128 bin bağlam uzunluğundaki dil "
 "modelleridir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
 msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
@@ -1784,7 +1784,7 @@ msgstr ""
 "daha büyük modellerle rekabet edebilen 14 milyar parametreli açık ağırlıklı "
 "akıl yürütme modelleridir."
 
-#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:282
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
 msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
@@ -1798,46 +1798,47 @@ msgstr ""
 msgid "Ollama"
 msgstr "Ollama"
 
-#: plugins/ollama/ollamacomboboxwidget.cpp:28
+#: plugins/ollama/ollamacomboboxwidget.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Modeli yeniden yükle"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:32
+#: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama’yı Yapılandır"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:53
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Kurulu Modeller"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modeller Oluştur"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:46
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
 #, kde-format
 msgid "Server Url:"
 msgstr "Sunucu URL’si:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:50
+#: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:53
+#: plugins/ollama/ollamaconfigurewidget.cpp:55
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
 #, kde-format
 msgid "Temperature:"
 msgstr "Sıcaklık:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1847,12 +1848,12 @@ msgstr ""
 "Modelin sıcaklığı. Sıcaklığı artırmak modelin daha yaratıcı bir biçimde "
 "yanıtlar vermesini sağlar."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:61
 #, kde-format
 msgid "Seed:"
 msgstr "Tohum:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:61
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1864,7 +1865,7 @@ msgstr ""
 "sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
 "(Öntanımlı: 0)."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:68
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgid "No system prompt"
 msgstr "Sistem istemi yok"
@@ -1880,7 +1881,7 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Örnek Ekle…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:17
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -1898,65 +1899,65 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "İleti gir…"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:17
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:19
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
 
-#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:17
+#: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
 msgstr "Örnek Ekle"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:26
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Ad:"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:30
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
 msgstr "Bir örnek türü seç:"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:25
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Örnekleri Yapılandır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:59
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Öntanımlı Olarak İmle"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:72
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Bu örneği kaldırmak istiyor musunuz (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:43
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:27
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -1964,83 +1965,88 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Ara…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:50
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
 msgstr "Örnek ekle…"
 
-#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
+#: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure AI text plugins"
 msgstr "Yapay Zekâ Metin Eklentilerini Yapılandır"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:41
+#: widgets/menu/textautogeneratemenulistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Add…"
 msgstr "Ekle…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:44
+#: widgets/menu/textautogeneratemenulistview.cpp:45
 #, kde-format
 msgid "Ask to AI"
 msgstr "Yapay Zekâya Sor"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:114
+#: widgets/menu/textautogeneratemenulistview.cpp:51
+#: widgets/view/textautogeneratehistorylistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Değişiklik Yap…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/menu/textautogeneratemenulistview.cpp:58
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
 msgstr "Kaldır…"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:60
+#: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgid "Do you want to remove it?"
 msgstr "Kaldırmak istiyor musunuz?"
 
-#: widgets/menu/textautogeneratemenulistview.cpp:61
+#: widgets/menu/textautogeneratemenulistview.cpp:62
 #, kde-format
 msgctxt "@title"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:32
+#: widgets/menu/textautogeneratemenuwidget.cpp:34
 #, kde-format
 msgid "Ask AI…"
 msgstr "Yapay Zekâya Sor…"
 
-#: widgets/menu/textautogeneratemenuwidget.cpp:61
+#: widgets/menu/textautogeneratemenuwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:34
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:42
 #, kde-format
 msgid "Api Key:"
 msgstr "API anahtarı:"
 
-#: widgets/quickask/textautogeneratequickaskdialog.cpp:28
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
+#, kde-format
+msgid "Max Tokens:"
+msgstr ""
+
+#: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Tez Sor"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:26
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: widgets/textautogeneratedialog.cpp:35
+#: widgets/textautogeneratedialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
@@ -2064,95 +2070,95 @@ msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Sık kullanılanlara ekle"
 
-#: widgets/textautogeneratesearchdialog.cpp:26
+#: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Ara"
 
-#: widgets/textautogeneratewidget.cpp:93
+#: widgets/textautogeneratewidget.cpp:95
 #, kde-format
 msgid "No plugin found."
 msgstr "Bulunan eklenti yok."
 
-#: widgets/view/textautogeneratebaselistview.cpp:40
+#: widgets/view/textautogeneratebaselistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Seçimi Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:40
+#: widgets/view/textautogeneratebaselistview.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: widgets/view/textautogeneratebaselistview.cpp:48
+#: widgets/view/textautogeneratebaselistview.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:103
+#: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Yeni Sohbet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:127
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Sık Kullanılanlardan Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:127
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Sık Kullanılan Yap"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arşivle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Tartışmayı Kaldır"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:369
+#: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit..."
 msgstr "Düzenle…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:373
+#: widgets/view/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopyala"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:381
+#: widgets/view/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Yenile"
 
-#: widgets/view/textautogeneratesearchlistview.cpp:48
+#: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."

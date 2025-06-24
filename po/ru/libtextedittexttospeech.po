@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2023-11-13 09:07+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -18,26 +18,26 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: texttospeechactions.cpp:28
+#: texttospeechactions.cpp:30
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@action"
 msgid "Stop"
 msgstr "Остановить"
 
-#: texttospeechactions.cpp:31
+#: texttospeechactions.cpp:33
 #, fuzzy, kde-format
 #| msgid "Stop"
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Остановить"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Pause"
 msgstr "Приостановить"
 
-#: texttospeechactions.cpp:72
+#: texttospeechactions.cpp:73
 #, kde-format
 msgid "Play"
 msgstr "Воспроизвести"
@@ -88,33 +88,33 @@ msgstr "Язык:"
 msgid "Voice:"
 msgstr "Голос:"
 
-#: texttospeechwidget.cpp:54
+#: texttospeechwidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Закрыть"
 
-#: texttospeechwidget.cpp:59
+#: texttospeechwidget.cpp:61
 #, fuzzy, kde-format
 #| msgid "Volume:"
 msgctxt "@label:textbox"
 msgid "Volume:"
 msgstr "Громкость:"
 
-#: texttospeechwidget.cpp:81
+#: texttospeechwidget.cpp:83
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Настроить..."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, kde-format
 msgid "Engine has a problem."
 msgstr "Ошибка движка."
 
-#: texttospeechwidget.cpp:133
+#: texttospeechwidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Text To Speech"
 msgctxt "@title:window"

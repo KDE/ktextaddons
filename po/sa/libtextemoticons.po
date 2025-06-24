@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-19 00:40+0000\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -62,36 +62,36 @@ msgstr "प्रादेशिक"
 msgid "Flags"
 msgstr "ध्वजाः"
 
-#: widgets/emoticoncategorybuttons.cpp:84
+#: widgets/emoticoncategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "इतिहास"
 
-#: widgets/emoticoncategorybuttons.cpp:88
+#: widgets/emoticoncategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "आचारः"
 
-#: widgets/emoticonlistview.cpp:116
+#: widgets/emoticonlistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "स्पष्ट हाले"
 
-#: widgets/emoticontexteditaction.cpp:54
+#: widgets/emoticontexteditaction.cpp:56
 #, kde-format
 msgid "Add Smiley"
 msgstr "स्माइली इति योजयतु"
 
-#: widgets/emoticontexteditselector.cpp:92
+#: widgets/emoticontexteditselector.cpp:94
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "इमोटिकॉन् अन्वेषणं कुर्वन्तु..."
 
-#: widgets/emoticontonecombobox.cpp:15
+#: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
 msgstr ""
