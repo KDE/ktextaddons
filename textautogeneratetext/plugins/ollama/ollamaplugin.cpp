@@ -25,8 +25,8 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             Q_EMIT errorOccurred(modelinfo.errorOccured);
             mModels.clear();
         } else {
-            setReady(true);
             mModels = modelinfo.models;
+            setReady(true);
         }
     });
     mManager->loadModels();
