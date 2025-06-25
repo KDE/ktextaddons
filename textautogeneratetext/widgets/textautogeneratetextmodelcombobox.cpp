@@ -13,14 +13,16 @@ TextAutoGenerateTextModelComboBox::TextAutoGenerateTextModelComboBox(QWidget *pa
 
 TextAutoGenerateTextModelComboBox::~TextAutoGenerateTextModelComboBox() = default;
 
-void TextAutoGenerateTextModelComboBox::setModelList(const QStringList &lst)
+void TextAutoGenerateTextModelComboBox::setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
 {
-    addItems(lst);
+    for (const auto &item : lst) {
+        addItem(item.modelName, item.identifier);
+    }
 }
 
 QString TextAutoGenerateTextModelComboBox::currentModel() const
 {
-    return currentText();
+    return currentData().toString();
 }
 
 #include "moc_textautogeneratetextmodelcombobox.cpp"

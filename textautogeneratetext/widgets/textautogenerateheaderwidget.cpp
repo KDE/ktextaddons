@@ -78,7 +78,7 @@ void TextAutoGenerateHeaderWidget::updateEngineName(const QString &engineName)
     mEngineName->setText(engineName);
 }
 
-void TextAutoGenerateHeaderWidget::setModelList(const QStringList &lst)
+void TextAutoGenerateHeaderWidget::setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
 {
     mModelComboBox->setModelList(lst);
 }

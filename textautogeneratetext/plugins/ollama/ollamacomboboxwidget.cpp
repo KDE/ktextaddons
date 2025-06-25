@@ -34,16 +34,18 @@ OllamaComboBoxWidget::OllamaComboBoxWidget(QWidget *parent)
 
 OllamaComboBoxWidget::~OllamaComboBoxWidget() = default;
 
-void OllamaComboBoxWidget::setModels(const QStringList &lst)
+void OllamaComboBoxWidget::setModels(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
 {
     mModelComboBox->clear();
-    mModelComboBox->addItems(lst);
+    for (const auto &i : lst) {
+        mModelComboBox->addItem(i.modelName, i.identifier);
+    }
     mModelComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 }
 
 void OllamaComboBoxWidget::setCurrentModel(const QString &str)
 {
-    const int index = mModelComboBox->findText(str);
+    const int index = mModelComboBox->findData(str);
     if (index >= 0) {
         mModelComboBox->setCurrentIndex(index);
     }
@@ -51,7 +53,7 @@ void OllamaComboBoxWidget::setCurrentModel(const QString &str)
 
 QString OllamaComboBoxWidget::currentModel() const
 {
-    return mModelComboBox->currentText();
+    return mModelComboBox->currentData().toString();
 }
 
 #include "moc_ollamacomboboxwidget.cpp"

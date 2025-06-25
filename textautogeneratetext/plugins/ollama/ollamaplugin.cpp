@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
+#include "ollamareply.h"
 #include "ollamasettings.h"
 #include <KLocalizedString>
 
@@ -62,7 +63,7 @@ void OllamaPlugin::save(KConfigGroup &config)
     config.writeEntry(u"CurrentModel"_s, mOllamaSettings->currentModel());
 }
 
-QStringList OllamaPlugin::models() const
+QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> OllamaPlugin::models() const
 {
     return mModels;
 }

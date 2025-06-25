@@ -33,7 +33,7 @@ public:
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
 
-    [[nodiscard]] QStringList models() const override;
+    [[nodiscard]] QList<ModelInfoNameAndIdentifier> models() const override;
 
     [[nodiscard]] QString displayName() const override;
     void setDisplayName(const QString &newName) override;
@@ -47,7 +47,7 @@ protected:
 
 private:
     void slotApiKeyRead(QKeychain::Job *baseJob);
-    QStringList mModels;
+    QList<ModelInfoNameAndIdentifier> mModels;
     GenericNetworkSettings *const mSettings;
     GenericNetworkManager *const mGenericManager;
 };

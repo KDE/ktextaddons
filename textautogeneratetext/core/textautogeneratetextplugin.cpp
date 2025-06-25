@@ -144,4 +144,16 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlug
     return d;
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &t)
+{
+    d.space() << "modelName:" << t.modelName;
+    d.space() << "identifier:" << t.identifier;
+    return d;
+}
+
+bool TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier::isValid() const
+{
+    return !modelName.isEmpty() && !identifier.isEmpty();
+}
+
 #include "moc_textautogeneratetextplugin.cpp"

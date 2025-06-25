@@ -7,6 +7,7 @@
 #include "textautogeneratetext_export.h"
 #include <QDebug>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextRequest;
@@ -16,7 +17,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManagerBase : public QObject
     Q_OBJECT
 public:
     struct TEXTAUTOGENERATETEXT_EXPORT ModelsInfo {
-        QStringList models;
+        QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models;
         QString errorOccured;
         bool hasError = false;
         bool isReady = false;

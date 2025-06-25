@@ -47,8 +47,10 @@ void GenericNetworkManager::loadModels()
         ModelsInfo info;
         // qDebug() << " json " << json;
         for (const auto &parsedInfo : infos.infos()) {
-            const QString name = parsedInfo.modelName();
-            info.models.push_back(name);
+            TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
+            i.modelName = parsedInfo.modelName();
+            i.identifier = parsedInfo.identifier();
+            info.models.push_back(std::move(i));
         }
         info.isReady = !info.models.isEmpty();
         info.hasError = false;

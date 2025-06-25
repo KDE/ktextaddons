@@ -175,9 +175,11 @@ void OllamaManager::loadModels()
         for (const QJsonValue &model : models) {
             OllamaModelInstalledInfo installed;
             installed.parseInfo(model.toObject());
+            TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
+            i.modelName = installed.generateModelName();
+            i.identifier = installed.name();
+            info.models.push_back(std::move(i));
             mInstalledInfos.append(std::move(installed));
-            const QString name = model["name"_L1].toString();
-            info.models.push_back(name);
         }
         info.isReady = !info.models.isEmpty();
         info.hasError = false;

@@ -25,6 +25,12 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
+    struct TEXTAUTOGENERATETEXT_EXPORT ModelInfoNameAndIdentifier {
+        QString modelName;
+        QString identifier;
+        [[nodiscard]] bool isValid() const;
+    };
+
     struct TEXTAUTOGENERATETEXT_EXPORT SendToAssistantInfo {
         QString message;
         QByteArray messageUuid;
@@ -61,7 +67,7 @@ public:
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
 
-    [[nodiscard]] virtual QStringList models() const = 0;
+    [[nodiscard]] virtual QList<ModelInfoNameAndIdentifier> models() const = 0;
 
     [[nodiscard]] virtual QString displayName() const = 0;
     virtual void setDisplayName(const QString &newName) = 0;
@@ -84,4 +90,6 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &t);

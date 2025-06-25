@@ -8,8 +8,6 @@
 
 #include "core/textautogeneratetextplugin.h"
 
-#include "ollamareply.h"
-
 #include <QMultiHash>
 #include <QPair>
 class OllamaManager;
@@ -34,7 +32,7 @@ public:
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
 
-    [[nodiscard]] QStringList models() const override;
+    [[nodiscard]] QList<ModelInfoNameAndIdentifier> models() const override;
 
     [[nodiscard]] QString displayName() const override;
     void setDisplayName(const QString &newName) override;
@@ -46,7 +44,7 @@ protected:
     void askToAssistant(const QString &msg) override;
 
 private:
-    QStringList mModels;
+    QList<ModelInfoNameAndIdentifier> mModels;
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mManager;
 };

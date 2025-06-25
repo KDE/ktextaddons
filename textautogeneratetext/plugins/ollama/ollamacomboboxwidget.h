@@ -5,8 +5,8 @@
 */
 
 #pragma once
-
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 class QComboBox;
 class OllamaComboBoxWidget : public QWidget
 {
@@ -15,7 +15,7 @@ public:
     explicit OllamaComboBoxWidget(QWidget *parent = nullptr);
     ~OllamaComboBoxWidget() override;
 
-    void setModels(const QStringList &lst);
+    void setModels(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     void setCurrentModel(const QString &str);
     [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:

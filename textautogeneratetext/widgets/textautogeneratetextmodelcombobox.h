@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QComboBox>
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextModelComboBox : public QComboBox
@@ -14,7 +15,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextModelComboBox : public QCo
 public:
     explicit TextAutoGenerateTextModelComboBox(QWidget *parent = nullptr);
     ~TextAutoGenerateTextModelComboBox() override;
-    void setModelList(const QStringList &lst);
+    void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
 };
 }

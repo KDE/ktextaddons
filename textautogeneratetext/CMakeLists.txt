@@ -272,12 +272,11 @@ generate_export_header(KF6TextAutoGenerateText BASE_NAME textautogeneratetext)
 
 target_link_libraries(
     KF6TextAutoGenerateText
-    PUBLIC Qt::Gui Qt::Widgets Qt::Network
+    PUBLIC Qt::Gui Qt::Widgets Qt::Network KF6::ConfigGui
     PRIVATE
         Qt::Sql
         KF6::I18n
         KF6::WidgetsAddons
-        KF6::ConfigGui
         KF6::TextWidgets
         KF6::CoreAddons
         KF6::ColorScheme

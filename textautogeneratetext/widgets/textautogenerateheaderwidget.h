@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 class QLabel;
 class QToolButton;
 namespace TextAutoGenerateText
@@ -21,7 +22,7 @@ public:
     ~TextAutoGenerateHeaderWidget() override;
     void updateEngineName(const QString &engineName);
 
-    void setModelList(const QStringList &lst);
+    void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
     void configChanged();

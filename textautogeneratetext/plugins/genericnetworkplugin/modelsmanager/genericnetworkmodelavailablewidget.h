@@ -14,6 +14,7 @@ class TextAutoGenerateModelSearchLineEdit;
 class GenericNetworkManager;
 class GenericNetworkAvailableInfosModel;
 class GenericNetworkModelAvailableInfosSortProxyModel;
+class GenericNetworkModelAvailableInfoWidget;
 class TEXTAUTOGENERATEGENERICNETWORK_TESTS_EXPORT GenericNetworkModelAvailableWidget : public QWidget
 {
     Q_OBJECT
@@ -26,5 +27,6 @@ private:
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
     GenericNetworkAvailableInfosModel *const mAvailableInfosModel;
     GenericNetworkModelAvailableInfosSortProxyModel *const mProxyModel;
+    GenericNetworkModelAvailableInfoWidget *const mAvailableInfoWidget;
     GenericNetworkManager *const mManager;
 };
