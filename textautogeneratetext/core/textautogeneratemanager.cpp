@@ -35,6 +35,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
                     }
                 }
             });
+    connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
@@ -347,5 +348,6 @@ void TextAutoGenerateManager::loadEngine()
             &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone,
             this,
             &TextAutoGenerateManager::pluginsInitializedDone);
+    Q_EMIT loadEngineDone();
 }
 #include "moc_textautogeneratemanager.cpp"

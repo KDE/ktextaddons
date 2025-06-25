@@ -63,11 +63,6 @@ void OllamaPlugin::save(KConfigGroup &config)
     config.writeEntry(u"CurrentModel"_s, mOllamaSettings->currentModel());
 }
 
-QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> OllamaPlugin::models() const
-{
-    return mModels;
-}
-
 QString OllamaPlugin::translatedPluginName() const
 {
     return i18n("Ollama");

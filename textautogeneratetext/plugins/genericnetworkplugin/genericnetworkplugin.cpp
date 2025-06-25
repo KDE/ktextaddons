@@ -58,11 +58,6 @@ void GenericNetworkPlugin::save(KConfigGroup &config)
     config.writeEntry(u"Temperature"_s, mSettings->temperature());
 }
 
-QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> GenericNetworkPlugin::models() const
-{
-    return mModels;
-}
-
 void GenericNetworkPlugin::clear()
 {
 }

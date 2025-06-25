@@ -47,7 +47,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
     connect(model(), &QAbstractItemModel::modelReset, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::rowsMoved, this, &QTreeView::expandAll);
     connect(model(), &QAbstractItemModel::layoutChanged, this, &QTreeView::expandAll);
-    connect(this, &TextAutoGenerateHistoryListView::clicked, this, &TextAutoGenerateHistoryListView::slotClicked);
+    // connect(this, &TextAutoGenerateHistoryListView::clicked, this, &TextAutoGenerateHistoryListView::slotClicked);
     connect(selectionModel(), &QItemSelectionModel::currentChanged, this, &TextAutoGenerateHistoryListView::slotClicked);
 
     expandAll();

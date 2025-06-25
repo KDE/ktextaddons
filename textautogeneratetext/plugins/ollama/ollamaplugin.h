@@ -32,8 +32,6 @@ public:
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
 
-    [[nodiscard]] QList<ModelInfoNameAndIdentifier> models() const override;
-
     [[nodiscard]] QString displayName() const override;
     void setDisplayName(const QString &newName) override;
     [[nodiscard]] QString currentModel() const override;
@@ -44,7 +42,6 @@ protected:
     void askToAssistant(const QString &msg) override;
 
 private:
-    QList<ModelInfoNameAndIdentifier> mModels;
     OllamaSettings *const mOllamaSettings;
     OllamaManager *const mManager;
 };

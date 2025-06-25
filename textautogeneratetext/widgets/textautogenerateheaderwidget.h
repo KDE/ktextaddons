@@ -20,7 +20,6 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHeaderWidget : public QW
 public:
     explicit TextAutoGenerateHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateHeaderWidget() override;
-    void updateEngineName(const QString &engineName);
 
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
@@ -32,6 +31,7 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateEngineName(const QString &engineName);
     QLabel *const mEngineName;
     QToolButton *const mNewChat;
     QToolButton *const mFavorite;

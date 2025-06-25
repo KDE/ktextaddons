@@ -48,6 +48,11 @@ void TextAutoGenerateTextPlugin::save(KConfigGroup &config)
     // reimpl
 }
 
+QList<TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> TextAutoGenerateTextPlugin::models() const
+{
+    return mModels;
+}
+
 void TextAutoGenerateTextPlugin::setHasError(bool error)
 {
     d->hasError = error;

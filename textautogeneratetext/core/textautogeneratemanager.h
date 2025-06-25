@@ -84,6 +84,8 @@ Q_SIGNALS:
     void showMessageId(const QByteArray &msgId);
     void chatInProgressChanged(bool inProgress);
     void needToAddInstances();
+    void configChanged();
+    void loadEngineDone();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();

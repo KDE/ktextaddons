@@ -67,10 +67,10 @@ public:
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
 
-    [[nodiscard]] virtual QList<ModelInfoNameAndIdentifier> models() const = 0;
-
     [[nodiscard]] virtual QString displayName() const = 0;
     virtual void setDisplayName(const QString &newName) = 0;
+
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models() const;
 
 Q_SIGNALS:
     void errorOccurred(const QString &message);
@@ -83,6 +83,7 @@ Q_SIGNALS:
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
+    QList<ModelInfoNameAndIdentifier> mModels;
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);

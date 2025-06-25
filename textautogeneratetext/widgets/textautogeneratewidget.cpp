@@ -101,6 +101,9 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateWidget::needToAddInstances);
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
+            mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
+        });
     }
     readConfig();
 }
@@ -152,7 +155,6 @@ void TextAutoGenerateWidget::loadEngine()
 {
     if (mManager) {
         mManager->loadEngine();
-        mHeaderWidget->updateEngineName(mManager->generateEngineDisplayName());
         mManager->loadHistory();
     }
 }
@@ -206,8 +208,6 @@ void TextAutoGenerateWidget::slotInitializeDone()
         slotEditingFinished(str, {});
     }
     mAskMessageList.clear();
-    qDebug() << " mManager->textAutoGeneratePlugin() " << mManager->textAutoGeneratePlugin();
-    qDebug() << " mManager->textAutoGeneratePlugin()->models() " << mManager->textAutoGeneratePlugin()->models();
     mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
 }
 
