@@ -246,8 +246,8 @@ bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
     auto matchesModelName = [&](const OllamaModelInstalledInfo &info) {
         return info.model() == modelName;
     };
-    auto it = std::find_if(mInstalledInfos.begin(), mInstalledInfos.end(), matchesModelName);
-    if (it == mInstalledInfos.end()) {
+    auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName);
+    if (it == mInstalledInfos.constEnd()) {
         return false;
     }
     return true;
