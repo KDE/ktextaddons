@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-05-29 19:06+0300\n"
+"PO-Revision-Date: 2025-05-31 09:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -191,13 +191,12 @@ msgstr "Järkeily"
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:93
 #, kde-format
 msgid "Languages Supported"
-msgstr ""
+msgstr "Tuetut kielet"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Models"
-msgstr "Malli:"
+msgstr "Mallit"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailablesearchwidget.cpp:37
 #, kde-format
@@ -211,17 +210,15 @@ msgid "Categories"
 msgstr "Luokat"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:17
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Model"
-msgstr "Virkistä malli"
+msgstr "Lataa malli"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamewidget.cpp:21
 #, kde-format
 msgid "Please enter model name as \"name:tag\""
-msgstr ""
+msgstr "Anna mallin nimi muodossa ”nimi:luokitus”"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:20
 #, kde-format
@@ -231,12 +228,12 @@ msgstr "Peru"
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:24
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Perhe:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:33
 #, kde-format
 msgid "Parameter Size:"
-msgstr ""
+msgstr "Parametrikoko:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:42
 #, kde-format
@@ -246,25 +243,23 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:51
 #, kde-format
 msgid "Modified At:"
-msgstr ""
+msgstr "Muutettu:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:111
 #, kde-format
 msgid "Features Supported"
-msgstr ""
+msgstr "Tuetut ominaisuudet"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:102
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
-msgstr ""
+msgstr "Haluatko poistaa tämän mallin (%1)?"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Model"
-msgstr "Virkistä malli"
+msgstr "Poista malli"
 
 #: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
 #, kde-format
@@ -1373,6 +1368,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
+"IBM Graniten Granite-3.2 on pitkäkontekstisten tekoälymallien perhe, joka "
+"ajattelukyvyt on hienosäädetty."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:258
 #, kde-format
@@ -1381,6 +1378,8 @@ msgid ""
 "excels in advanced Arabic language capabilities for enterprises in the "
 "Middle East and Northern Africa."
 msgstr ""
+"Uusi ajantasainen versio Lähi-idän ja Pohjois-Afrikan yrityksille kevyestä "
+"Command R7B -mallista, joka loistaa arabian kielen taidoissaan"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:260
 #, kde-format
@@ -1388,6 +1387,8 @@ msgid ""
 "111 billion parameter model optimized for demanding enterprises that require "
 "fast, secure, and high-quality AI"
 msgstr ""
+"111 miljardin parametrin malli, joka on optimoitu vaativille yrityksille, "
+"jotka tarvitsevat nopeaa, turvallista ja korkealaatuista tekoälyä"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:262
 #, kde-format
@@ -1419,6 +1420,8 @@ msgid ""
 "DeepCoder is a fully open-Source 14B coder model at O3-mini level, with a "
 "1.5B version also available."
 msgstr ""
+"DeepCoder on täysin avoimen lähdekoodin 03-mini-tason 14 mrd koodausmalli, "
+"josta on saatavilla myös 1,5 mrd versio."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1426,11 +1429,13 @@ msgid ""
 "Qwen3 is the latest generation of large language models in Qwen series, "
 "offering a comprehensive suite of dense and mixture-of-experts (MoE) models."
 msgstr ""
+"Qwen3 on Qwen-sarjan suurten kielimallien uusin sukupolvi, joka tarjoaa "
+"laajan valikoima tiheitä ja MoE-malleja (mixture-of-experts)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Meta's latest collection of multimodal models."
-msgstr ""
+msgstr "Metan viimeisin multimodaalimallien kokoelma."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1510,12 +1515,10 @@ msgid "OpenAI"
 msgstr "OpenAI"
 
 #: plugins/openai/openaiconfiguredialog.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Mistral IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Openai IA"
-msgstr "Mistral-tekoälyn asetukset"
+msgstr "Openai IA:n asetukset"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
