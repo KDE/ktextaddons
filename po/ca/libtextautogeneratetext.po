@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
-"PO-Revision-Date: 2025-06-21 10:34+0200\n"
+"POT-Creation-Date: 2025-06-25 00:41+0000\n"
+"PO-Revision-Date: 2025-06-24 11:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -304,22 +304,16 @@ msgstr "Model pare:"
 msgid "Features Supported"
 msgstr "Característiques admeses"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Voleu eliminar aquest model (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
 msgstr "Elimina el model"
-
-#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Search Model…"
-msgstr "Cerca un model…"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:17
 #, kde-format
@@ -369,6 +363,7 @@ msgstr ""
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
 msgstr "El model de 7B llançat per Mistral AI, actualitzat a la versió 0.3."
 
+# NdT: token -> segments textual (https://www.termcat.cat/ca/cercaterm/fitxa/NDg3ODkyNQ%3D%3D)
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:24
 #, kde-format
 msgid ""
@@ -1812,7 +1807,7 @@ msgstr ""
 "El Phi 4 mini reasoning és un model obert lleuger que equilibra l'eficiència "
 "amb la capacitat de raonament avançada."
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:71
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:72
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1888,6 +1883,12 @@ msgstr ""
 #, kde-format
 msgid "No system prompt"
 msgstr "Sense indicació del sistema"
+
+#: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search Model…"
+msgstr "Cerca un model…"
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
@@ -2051,7 +2052,7 @@ msgstr "Clau de l'API:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
 #, kde-format
 msgid "Max Tokens:"
-msgstr ""
+msgstr "Màxim de segments textuals:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
@@ -2181,31 +2182,3 @@ msgstr "Actualitza"
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "L'URL de la instància Ollama"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "La indicació del sistema del LLM"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "El model que es fa servir per a generar les respostes"
-
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "La temperatura del model. L'augment de la temperatura farà que la "
-#~ "resposta del model sigui més creativa."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Estableix el nombre aleatori de llavors a usar per a la generació. "
-#~ "Establir això a un nombre específic farà que el model generi el mateix "
-#~ "text per a la mateixa indicació. (Predeterminat: 0)"
-
-#~ msgid "Engine:"
-#~ msgstr "Motor:"

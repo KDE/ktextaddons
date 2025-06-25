@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
-"PO-Revision-Date: 2025-06-21 08:03+0300\n"
+"POT-Creation-Date: 2025-06-25 00:41+0000\n"
+"PO-Revision-Date: 2025-06-24 09:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -302,22 +302,16 @@ msgstr "Üst model:"
 msgid "Features Supported"
 msgstr "Desteklenen Özellikler"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Bu modeli kaldırmak istiyor musunuz (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
 msgstr "Modeli Kaldır"
-
-#: plugins/ollama/modelsmanager/ollamamodelsearchlineedit.cpp:14
-#, kde-format
-msgctxt "@info:placeholder"
-msgid "Search Model…"
-msgstr "Model ara…"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:17
 #, kde-format
@@ -1793,7 +1787,7 @@ msgstr ""
 "Phi 4 Mini Reasoning, verimliliği gelişmiş akıl yürütme yeteneğiyle "
 "dengeleyen hafif ve açık bir modeldir."
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:71
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:72
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1869,6 +1863,12 @@ msgstr ""
 #, kde-format
 msgid "No system prompt"
 msgstr "Sistem istemi yok"
+
+#: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search Model…"
+msgstr "Model ara…"
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
@@ -2032,7 +2032,7 @@ msgstr "API anahtarı:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
 #, kde-format
 msgid "Max Tokens:"
-msgstr ""
+msgstr "En çok jeton sayısı:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
