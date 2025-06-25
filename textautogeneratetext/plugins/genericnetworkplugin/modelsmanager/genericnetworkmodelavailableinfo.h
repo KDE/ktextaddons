@@ -23,7 +23,7 @@ public:
     [[nodiscard]] QString modelName() const;
     void setModelName(const QString &newName);
 
-    bool toolsSupported() const;
+    [[nodiscard]] bool toolsSupported() const;
     void setToolsSupported(bool newToolsSupported);
 
 private:
