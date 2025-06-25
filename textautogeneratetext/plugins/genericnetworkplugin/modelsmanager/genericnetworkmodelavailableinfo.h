@@ -29,10 +29,14 @@ public:
     [[nodiscard]] QString modelSize() const;
     void setModelSize(const QString &newModelSize);
 
+    [[nodiscard]] QString identifier() const;
+    void setIdentifier(const QString &newIdentifier);
+
 private:
     QString mDescription;
     QString mModelName;
     QString mModelSize;
+    QString mIdentifier;
     bool mToolsSupported = false;
     // TODO add tags
 };

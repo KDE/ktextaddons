@@ -15,6 +15,7 @@ void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
     mDescription = obj["description"_L1].toString();
     mModelName = obj["name"_L1].toString();
     mModelSize = obj["model_size"_L1].toString();
+    mIdentifier = obj["id"_L1].toString();
     // TODO
 }
 
@@ -31,7 +32,7 @@ void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescript
 bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
 {
     return mDescription == other.description() && mModelName == other.modelName() && mToolsSupported == other.toolsSupported()
-        && mModelSize == other.modelSize();
+        && mModelSize == other.modelSize() && mIdentifier == other.identifier();
 }
 
 QString GenericNetworkModelAvailableInfo::modelName() const
@@ -64,10 +65,22 @@ void GenericNetworkModelAvailableInfo::setModelSize(const QString &newModelSize)
     mModelSize = newModelSize;
 }
 
+QString GenericNetworkModelAvailableInfo::identifier() const
+{
+    return mIdentifier;
+}
+
+void GenericNetworkModelAvailableInfo::setIdentifier(const QString &newIdentifier)
+{
+    mIdentifier = newIdentifier;
+}
+
 QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
 {
     d.space() << "name:" << t.modelName();
     d.space() << "description:" << t.description();
     d.space() << "toolsSupported:" << t.toolsSupported();
+    d.space() << "modelSize:" << t.modelSize();
+    d.space() << "identifier:" << t.identifier();
     return d;
 }
