@@ -20,3 +20,5 @@ void GenericNetworkModelAvailableInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.modelName().isEmpty());
     QVERIFY(!info.toolsSupported());
 }
+
+#include "moc_genericnetworkmodelavailableinfotest.cpp"

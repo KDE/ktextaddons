@@ -11,3 +11,5 @@ GenericNetworkModelAvailableInfosSortProxyModel::GenericNetworkModelAvailableInf
 }
 
 GenericNetworkModelAvailableInfosSortProxyModel::~GenericNetworkModelAvailableInfosSortProxyModel() = default;
+
+#include "moc_genericnetworkmodelavailableinfossortproxymodel.cpp"
