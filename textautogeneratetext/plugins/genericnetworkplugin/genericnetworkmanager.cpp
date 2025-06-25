@@ -7,6 +7,7 @@
 #include "core/textautogenerateengineaccessmanager.h"
 #include "genericnetworkserverinfo.h"
 #include "genericnetworksettings.h"
+#include "modelsmanager/genericnetworkmodelavailableinfos.h"
 #include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -39,15 +40,14 @@ void GenericNetworkManager::loadModels()
             return;
         }
 
-        ModelsInfo info;
+        GenericNetworkModelAvailableInfos infos;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        const auto models = json["models"_L1].toArray();
-        qDebug() << " json " << json;
-        for (const QJsonValue &model : models) {
-            // OllamaModelInstalledInfo installed;
-            // installed.parseInfo(model.toObject());
-            // mInstalledInfos.append(std::move(installed));
-            const QString name = model["name"_L1].toString();
+        const auto models = json["data"_L1].toArray();
+        infos.parseModelsInfo(models);
+        ModelsInfo info;
+        // qDebug() << " json " << json;
+        for (const auto &parsedInfo : infos.infos()) {
+            const QString name = parsedInfo.modelName();
             info.models.push_back(name);
         }
         info.isReady = !info.models.isEmpty();
