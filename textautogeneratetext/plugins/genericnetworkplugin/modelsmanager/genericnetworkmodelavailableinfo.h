@@ -26,9 +26,13 @@ public:
     [[nodiscard]] bool toolsSupported() const;
     void setToolsSupported(bool newToolsSupported);
 
+    [[nodiscard]] QString modelSize() const;
+    void setModelSize(const QString &newModelSize);
+
 private:
     QString mDescription;
     QString mModelName;
+    QString mModelSize;
     bool mToolsSupported = false;
     // TODO add tags
 };
