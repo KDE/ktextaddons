@@ -31,31 +31,31 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
     if (index.row() < 0 || index.row() >= mMessages.count()) {
         return {};
     }
-    const auto &message = mMessages[index.row()];
+    const auto &messageElement = mMessages[index.row()];
     switch (role) {
     case Qt::DisplayRole:
     case MessageRole:
-        return message.htmlGenerated();
+        return messageElement.htmlGenerated();
     case OriginalMessageRole:
-        return message.content();
+        return messageElement.content();
     case DateTimeStrRole:
-        return message.dateTimeStr();
+        return messageElement.dateTimeStr();
     case DateTimeRole:
-        return message.dateTime();
+        return messageElement.dateTime();
     case SenderRole:
-        return QVariant::fromValue(message.sender());
+        return QVariant::fromValue(messageElement.sender());
     case FinishedRole:
-        return !message.inProgress();
+        return !messageElement.inProgress();
     case UuidRole:
-        return message.uuid();
+        return messageElement.uuid();
     case MouseHoverRole:
-        return message.mouseHover();
+        return messageElement.mouseHover();
     case EditingRole:
-        return message.editingMode();
+        return messageElement.editingMode();
     case WaitingAnswerRole:
-        return waitingAnswer(message);
+        return waitingAnswer(messageElement);
     case ModelInfoRole:
-        return generateModelInfo(message);
+        return generateModelInfo(messageElement);
     }
     return {};
 }

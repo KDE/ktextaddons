@@ -46,7 +46,6 @@ QTextCursor TextAutoGenerateListViewTextSelection::selectionForIndex(const QMode
 
     const OrderedPositions ordered = orderedPositions();
     int fromCharPos = ordered.fromCharPos;
-    int toCharPos = ordered.toCharPos;
     // qDebug() << "BEFORE toCharPos" << toCharPos << " fromCharPos " << fromCharPos;
     QTextCursor cursor(doc);
 
@@ -58,9 +57,10 @@ QTextCursor TextAutoGenerateListViewTextSelection::selectionForIndex(const QMode
         cursor.setPosition(0);
     else
         return {};
-    if (row == ordered.toRow)
+    if (row == ordered.toRow) {
+        const int toCharPos = ordered.toCharPos;
         cursor.setPosition(qMax(toCharPos, 0), QTextCursor::KeepAnchor);
-    else if (row < ordered.toRow)
+    } else if (row < ordered.toRow)
         cursor.movePosition(QTextCursor::End, QTextCursor::KeepAnchor);
     else
         return {};

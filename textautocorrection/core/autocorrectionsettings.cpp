@@ -303,7 +303,7 @@ void AutoCorrectionSettings::setTwoUpperLetterExceptions(const QSet<QString> &ex
     d->mTwoUpperLetterExceptions = exceptions;
 }
 
-QSet<QString> AutoCorrectionSettings::upperCaseExceptions() const
+const QSet<QString> &AutoCorrectionSettings::upperCaseExceptions() const
 {
     return d->mUpperCaseExceptions;
 }
@@ -451,67 +451,6 @@ void AutoCorrectionSettings::loadGlobalFileName(const QString &fname)
             d->mMinFindStringLength = import.minFindStringLenght();
         }
     }
-}
-
-void AutoCorrectionSettings::migrateKMailXmlFile()
-{
-#if 0
-    // TODO
-    QString kdelang = u"en_US"_s;
-    const QStringList lst = QLocale::system().uiLanguages();
-    if (!lst.isEmpty()) {
-        kdelang = lst.at(0);
-        if (kdelang == u'C') {
-            kdelang = u"en_US"_s;
-        }
-    }
-    static QRegularExpression reg(u"@.*"_s);
-    kdelang.remove(reg);
-
-    QString localFileName;
-    static QRegularExpression regpath(QRegularExpression(u"_.*"_s));
-    // Look at local file:
-    if (!forceGlobal) {
-        if (!mAutoCorrectLang.isEmpty()) {
-            localFileName =
-                QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/custom-"_L1 + mAutoCorrectLang + ".xml"_L1);
-        } else {
-            if (!kdelang.isEmpty()) {
-                localFileName =
-                    QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/custom-"_L1 + kdelang + ".xml"_L1);
-            }
-            if (localFileName.isEmpty() && kdelang.contains(u'_')) {
-                kdelang.remove(regpath);
-                localFileName =
-                    QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/custom-"_L1 + kdelang + ".xml"_L1);
-            }
-        }
-    }
-    QString fname;
-    // Load Global directly
-    if (!mAutoCorrectLang.isEmpty()) {
-        if (mAutoCorrectLang == "en_US"_L1) {
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"autocorrect/autocorrect.xml"_s);
-        } else {
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/"_L1 + mAutoCorrectLang + ".xml"_L1);
-        }
-    } else {
-        if (fname.isEmpty() && !kdelang.isEmpty()) {
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/"_L1 + kdelang + ".xml"_L1);
-        }
-        if (fname.isEmpty() && kdelang.contains(u'_')) {
-            kdelang.remove(regpath);
-            fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "autocorrect/"_L1 + kdelang + ".xml"_L1);
-        }
-    }
-    if (fname.isEmpty()) {
-        fname = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"autocorrect/autocorrect.xml"_s);
-    }
-
-    if (mAutoCorrectLang.isEmpty()) {
-        mAutoCorrectLang = kdelang;
-    }
-#endif
 }
 
 void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)

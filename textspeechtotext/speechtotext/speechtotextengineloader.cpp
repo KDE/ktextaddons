@@ -71,7 +71,7 @@ void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
         d->loadedPlugins.remove(pluginIID);
         return;
     }
-    SpeechToTextClient *client = qobject_cast<SpeechToTextClient *>(plugin.instance());
+    SpeechToTextClient *const client = qobject_cast<SpeechToTextClient *>(plugin.instance());
     if (!client) {
         qCWarning(TEXTSPEECHTOTEXT_LOG) << "Invalid plugin loaded" << pluginPath;
         plugin.unload(); // don't leave it in memory

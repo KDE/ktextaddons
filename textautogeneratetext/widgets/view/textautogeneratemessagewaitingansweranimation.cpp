@@ -145,8 +145,8 @@ QSequentialAnimationGroup *TextAutoGenerateMessageWaitingAnswerAnimation::create
     groupDown->addAnimation(opacityAnimationDown);
 
     auto sequential = new QSequentialAnimationGroup(this);
-    const auto value = duration * (index + 1) / 2;
-    sequential->addPause(value);
+    const auto pauseValue = duration * (index + 1) / 2;
+    sequential->addPause(pauseValue);
     sequential->addAnimation(groupUp);
     sequential->addAnimation(groupDown);
     sequential->setLoopCount(-1);

@@ -90,21 +90,22 @@ void GrammarResultUtil::replaceWord(const TextGrammarCheck::GrammarAction &act, 
                 qCDebug(TEXTGRAMMARCHECK_LOG) << " Position  " << i;
                 QTextCharFormat currentCharFormat = cur.charFormat();
                 if (currentCharFormat.hasProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo)) {
-                    auto act = cur.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<TextGrammarCheck::GrammarAction>();
-                    qCDebug(TEXTGRAMMARCHECK_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << act;
-                    act.setStart(act.start() + diff);
-                    qCDebug(TEXTGRAMMARCHECK_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << act.start();
-                    currentCharFormat.setProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo, QVariant::fromValue(act));
+                    auto grammarAct = cur.charFormat().property(GrammarResultUtil::TextInfo::ReplaceFormatInfo).value<TextGrammarCheck::GrammarAction>();
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << grammarAct;
+                    grammarAct.setStart(grammarAct.start() + diff);
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo " << grammarAct.start();
+                    currentCharFormat.setProperty(GrammarResultUtil::TextInfo::ReplaceFormatInfo, QVariant::fromValue(grammarAct));
 
                     const int newPosition = i - 1;
                     qCDebug(TEXTGRAMMARCHECK_LOG) << " newPosition " << newPosition;
                     qCDebug(TEXTGRAMMARCHECK_LOG) << "BEFORE Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition " << newPosition;
                     cur.setPosition(newPosition);
-                    cur.setPosition(newPosition + act.length(), QTextCursor::KeepAnchor);
-                    qCDebug(TEXTGRAMMARCHECK_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition " << newPosition + act.length();
+                    cur.setPosition(newPosition + grammarAct.length(), QTextCursor::KeepAnchor);
+                    qCDebug(TEXTGRAMMARCHECK_LOG) << "AFTER Update GrammarResultUtil::TextInfo::ReplaceFormatInfo newPosition "
+                                                  << newPosition + grammarAct.length();
                     cur.setCharFormat(currentCharFormat);
 
-                    i += act.length();
+                    i += grammarAct.length();
                 }
             }
         }

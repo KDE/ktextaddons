@@ -64,7 +64,7 @@ public:
 
     void setUpperCaseExceptions(const QSet<QString> &exceptions);
     void setTwoUpperLetterExceptions(const QSet<QString> &exceptions);
-    [[nodiscard]] QSet<QString> upperCaseExceptions() const;
+    [[nodiscard]] const QSet<QString> &upperCaseExceptions() const;
     [[nodiscard]] QSet<QString> twoUpperLetterExceptions() const;
 
     void setLanguage(const QString &lang, bool forceGlobal = false);
@@ -100,7 +100,6 @@ public:
     void setCustomSystemPath(const QString &path);
 
 private:
-    TEXTAUTOCORRECTIONCORE_NO_EXPORT void migrateKMailXmlFile();
     TEXTAUTOCORRECTIONCORE_NO_EXPORT void readAutoCorrectionFile(bool forceGlobal = false);
     [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT QString containsAutoCorrectionFile(const QString &fileName);
 

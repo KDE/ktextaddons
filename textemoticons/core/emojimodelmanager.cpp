@@ -16,7 +16,7 @@ using namespace TextEmoticonsCore;
 class EmojiModelManager::EmojiModelManagerPrivate
 {
 public:
-    EmojiModelManagerPrivate(QObject *parent)
+    explicit EmojiModelManagerPrivate(QObject *parent)
         : emojiModel(new TextEmoticonsCore::EmojiModel(parent))
     {
         emojiModel->setUnicodeEmoticonList(TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmojiList());

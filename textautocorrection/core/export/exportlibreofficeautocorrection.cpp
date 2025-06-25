@@ -37,25 +37,17 @@ bool ExportLibreOfficeAutocorrection::exportData(const QString &language, const 
         qCWarning(TEXTAUTOCORRECTION_LOG) << "Impossible to open " << fileName;
         return false;
     }
-    if (!exportDocumentList()) {
-        return false;
-    }
-    if (!exportSentenceExceptList()) {
-        return false;
-    }
-    if (!exportWordExceptList()) {
-        return false;
-    }
-    if (!exportManifest()) {
-        return false;
-    }
+    exportDocumentList();
+    exportSentenceExceptList();
+    exportWordExceptList();
+    exportManifest();
     mZip->close();
     delete mZip;
     mZip = nullptr;
     return true;
 }
 
-bool ExportLibreOfficeAutocorrection::exportDocumentList()
+void ExportLibreOfficeAutocorrection::exportDocumentList()
 {
     QTemporaryFile temporaryShareFile;
     temporaryShareFile.open();
@@ -79,10 +71,9 @@ bool ExportLibreOfficeAutocorrection::exportDocumentList()
     streamWriter.writeEndDocument();
     temporaryShareFile.close();
     mZip->addLocalFile(temporaryShareFile.fileName(), u"DocumentList.xml"_s);
-    return true;
 }
 
-bool ExportLibreOfficeAutocorrection::exportSentenceExceptList()
+void ExportLibreOfficeAutocorrection::exportSentenceExceptList()
 {
     QTemporaryFile temporaryShareFile;
     temporaryShareFile.open();
@@ -108,10 +99,9 @@ bool ExportLibreOfficeAutocorrection::exportSentenceExceptList()
     temporaryShareFile.close();
 
     mZip->addLocalFile(temporaryShareFile.fileName(), u"SentenceExceptList.xml"_s);
-    return true;
 }
 
-bool ExportLibreOfficeAutocorrection::exportWordExceptList()
+void ExportLibreOfficeAutocorrection::exportWordExceptList()
 {
     QTemporaryFile temporaryShareFile;
     temporaryShareFile.open();
@@ -137,10 +127,9 @@ bool ExportLibreOfficeAutocorrection::exportWordExceptList()
     temporaryShareFile.close();
 
     mZip->addLocalFile(temporaryShareFile.fileName(), u"WordExceptList.xml"_s);
-    return true;
 }
 
-bool ExportLibreOfficeAutocorrection::exportManifest()
+void ExportLibreOfficeAutocorrection::exportManifest()
 {
     QTemporaryFile temporaryShareFile;
     temporaryShareFile.open();
@@ -181,5 +170,4 @@ bool ExportLibreOfficeAutocorrection::exportManifest()
     mZip->writeFile(u"mimetype"_s, "");
     mZip->setCompression(KZip::DeflateCompression);
     mZip->addLocalFile(temporaryShareFile.fileName(), u"META-INF/manifest.xml"_s);
-    return true;
 }

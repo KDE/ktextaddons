@@ -38,7 +38,7 @@ void TextToSpeech::reloadSettings()
     const QString engineName = settings.engineName;
     if (d->mDefaultEngine != engineName) {
         if (d->mTextToSpeech) {
-            if (d->mTextToSpeech && (d->mTextToSpeech->engine() != engineName)) {
+            if (d->mTextToSpeech->engine() != engineName) {
                 disconnect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
                 delete d->mTextToSpeech;
                 d->mTextToSpeech = nullptr;

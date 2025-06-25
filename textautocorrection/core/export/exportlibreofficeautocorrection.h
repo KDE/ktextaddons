@@ -20,10 +20,10 @@ public:
     [[nodiscard]] bool exportData(const QString &language, const QString &fileName, QString &errorMessage, const QString &writablePath) override;
 
 private:
-    [[nodiscard]] bool exportDocumentList();
-    [[nodiscard]] bool exportSentenceExceptList();
-    [[nodiscard]] bool exportWordExceptList();
-    [[nodiscard]] bool exportManifest();
+    void exportDocumentList();
+    void exportSentenceExceptList();
+    void exportWordExceptList();
+    void exportManifest();
     KZip *mZip = nullptr;
 };
 }

@@ -49,23 +49,23 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
     if (index.row() < 0 || index.row() >= mChats.count()) {
         return {};
     }
-    const auto &chat = mChats[index.row()];
+    const auto &chatElement = mChats[index.row()];
     switch (role) {
     case Qt::DisplayRole:
     case Title:
-        return title(chat);
+        return title(chatElement);
     case Identifier:
-        return chat.identifier();
+        return chatElement.identifier();
     case Favorite:
-        return chat.favorite();
+        return chatElement.favorite();
     case Archived:
-        return chat.archived();
+        return chatElement.archived();
     case InProgress:
-        return chat.inProgress();
+        return chatElement.inProgress();
     case Section:
-        return QVariant::fromValue(chat.section());
+        return QVariant::fromValue(chatElement.section());
     case DateTime:
-        return dateTime(chat);
+        return dateTime(chatElement);
     }
     return {};
 }
@@ -88,25 +88,25 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
         return false;
     }
     const int id = idx.row();
-    TextAutoGenerateChat &chat = mChats[id];
+    TextAutoGenerateChat &chatElement = mChats[id];
     switch (role) {
     case ChatRoles::Title: {
-        chat.setTitle(value.toString());
+        chatElement.setTitle(value.toString());
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Title});
         return true;
     }
     case ChatRoles::Archived: {
-        chat.setArchived(value.toBool());
+        chatElement.setArchived(value.toBool());
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Archived});
         return true;
     }
     case ChatRoles::Favorite: {
-        chat.setFavorite(value.toBool());
+        chatElement.setFavorite(value.toBool());
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::Favorite});
         return true;
     }
     case ChatRoles::InProgress: {
-        chat.setInProgress(value.toBool());
+        chatElement.setInProgress(value.toBool());
         Q_EMIT dataChanged(idx, idx, {TextAutoGenerateChatsModel::ChatRoles::InProgress});
         return true;
     }

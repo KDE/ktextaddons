@@ -65,9 +65,9 @@ void OllamaModelAvailableInfo::parseInfo(const QString &name, const QJsonObject 
         }
     }
     QStringList lst;
-    const auto languages = obj["languages"_L1].toArray().toVariantList();
-    lst.reserve(languages.count());
-    for (const auto &l : languages) {
+    const auto languageLst = obj["languages"_L1].toArray().toVariantList();
+    lst.reserve(languageLst.count());
+    for (const auto &l : languageLst) {
         lst.append(l.toString());
     }
     mLanguages = lst;

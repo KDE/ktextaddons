@@ -63,18 +63,18 @@ QList<OllamaModelCategoriesModel::CategoryInfo> OllamaModelCategoriesModel::cate
 
 QList<OllamaModelAvailableInfo::Category> OllamaModelCategoriesModel::categoriesSelected() const
 {
-    QList<OllamaModelAvailableInfo::Category> categories;
+    QList<OllamaModelAvailableInfo::Category> categoriesList;
     const int rowCountNb = rowCount();
     // First one is not a message type
     for (int i = 0; i < rowCountNb; i++) {
         QStandardItem *itemModel = item(i);
         if (itemModel) {
             if (itemModel->isCheckable() && itemModel->checkState() == Qt::Checked) {
-                categories.append(itemModel->data(Identifier).value<OllamaModelAvailableInfo::Category>());
+                categoriesList.append(itemModel->data(Identifier).value<OllamaModelAvailableInfo::Category>());
             }
         }
     }
-    return categories;
+    return categoriesList;
 }
 
 #include "moc_ollamamodelcategoriesmodel.cpp"
