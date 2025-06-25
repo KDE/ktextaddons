@@ -46,6 +46,8 @@ target_sources(
         modelsmanager/genericnetworkmodelavailablewidget.cpp
         modelsmanager/genericnetworkmodelavailableinfossortproxymodel.h
         modelsmanager/genericnetworkmodelavailableinfossortproxymodel.cpp
+        modelsmanager/genericnetworkmodelavailableinfowidget.h
+        modelsmanager/genericnetworkmodelavailableinfowidget.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
