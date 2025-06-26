@@ -5,6 +5,7 @@
 */
 #include "genericnetworkmanager.h"
 #include "core/textautogenerateengineaccessmanager.h"
+#include "core/textautogeneratetextrequest.h"
 #include "genericnetworkserverinfo.h"
 #include "genericnetworksettings.h"
 #include "modelsmanager/genericnetworkmodelavailableinfos.h"
@@ -17,10 +18,14 @@ using namespace Qt::Literals::StringLiterals;
 GenericNetworkManager::GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mGenericNetworkSettings(settings)
+    , mServerInfo(new GenericNetworkServerInfo)
 {
 }
 
-GenericNetworkManager::~GenericNetworkManager() = default;
+GenericNetworkManager::~GenericNetworkManager()
+{
+    delete mServerInfo;
+}
 
 void GenericNetworkManager::loadModels()
 {
@@ -66,8 +71,30 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletio
 
 TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-    // TODO
-    return {};
+#if 0
+    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + OllamaUtils::chatPath())};
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    QJsonObject data;
+    data["model"_L1] = mGenericNetworkSettings->currentModel();
+    data["messages"_L1] = request.messages();
+    data["temperature"_L1] = mGenericNetworkSettings->temperature();
+    /*
+    if (!OllamaSettings::systemPrompt().isEmpty()) {
+        data["system"_L1] = OllamaSettings::systemPrompt();
+    }
+    */
+    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
+    auto reply = new OllamaReply{
+        TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
+        OllamaReply::RequestTypes::StreamingChat,
+        this};
+    connect(reply, &OllamaReply::finished, this, [this, reply] {
+        Q_EMIT finished(reply->readResponse());
+    });
+    return reply;
+#else
+    return nullptr;
+#endif
 }
 
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const
@@ -82,38 +109,37 @@ void GenericNetworkManager::setPluginNetworkType(PluginNetworkType newPluginNetw
 
 QString GenericNetworkManager::translatedName() const
 {
-    const GenericNetworkServerInfo info;
-    return info.translatedName(mPluginNetworkType);
+    return mServerInfo->translatedName(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::webSite() const
 {
-    const GenericNetworkServerInfo info;
-    return info.webSite(mPluginNetworkType);
+    return mServerInfo->webSite(mPluginNetworkType);
+}
+
+QString GenericNetworkManager::chatPath() const
+{
+    return mServerInfo->chatPath(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::apiUrl() const
 {
-    const GenericNetworkServerInfo info;
-    return info.apiUrl(mPluginNetworkType);
+    return mServerInfo->apiUrl(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::description() const
 {
-    const GenericNetworkServerInfo info;
-    return info.description(mPluginNetworkType);
+    return mServerInfo->description(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::pluginName() const
 {
-    const GenericNetworkServerInfo info;
-    return info.pluginName(mPluginNetworkType);
+    return mServerInfo->pluginName(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::translatedPluginName() const
 {
-    const GenericNetworkServerInfo info;
-    return info.translatedName(mPluginNetworkType);
+    return mServerInfo->translatedName(mPluginNetworkType);
 }
 
 GenericNetworkSettings *GenericNetworkManager::genericNetworkSettings() const

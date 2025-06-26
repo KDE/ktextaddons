@@ -32,6 +32,12 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     return {};
 }
 
+QString GenericNetworkServerInfo::chatPath(GenericNetworkManager::PluginNetworkType type) const
+{
+    // TODO
+    return {};
+}
+
 QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkType type) const
 {
     switch (type) {
@@ -132,4 +138,9 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
         listInfo.append(std::move(info));
     }
     return listInfo;
+}
+
+GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type) const
+{
+    return {};
 }

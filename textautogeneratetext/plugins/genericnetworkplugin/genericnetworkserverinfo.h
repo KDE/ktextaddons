@@ -12,12 +12,15 @@
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 {
 public:
-    enum class Limitation : uint8_t {
+    enum Limitation : uint8_t {
         None = 0,
-        TextOnly,
-        NoSeed,
-        NoSystemMessage,
+        TextOnly = 1,
+        NoSeed = 2,
+        NoSystemMessage = 4,
     };
+    Q_FLAGS(Limitation Limitations)
+    Q_DECLARE_FLAGS(Limitations, Limitation)
+
     GenericNetworkServerInfo();
     ~GenericNetworkServerInfo();
     [[nodiscard]] QString translatedName(GenericNetworkManager::PluginNetworkType type) const;
@@ -29,4 +32,7 @@ public:
     [[nodiscard]] QString pluginName(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers(const QString &pluginName) const;
     [[nodiscard]] GenericNetworkManager::PluginNetworkType pluginNetworkTypeFromString(const QString &str) const;
+
+    [[nodiscard]] Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] QString chatPath(GenericNetworkManager::PluginNetworkType type) const;
 };
