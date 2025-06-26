@@ -10,6 +10,16 @@ GenericNetworkAvailableInfosManager::GenericNetworkAvailableInfosManager(QObject
 {
 }
 
+QList<GenericNetworkModelAvailableInfo> GenericNetworkAvailableInfosManager::modelInfos() const
+{
+    return mModelInfos;
+}
+
+void GenericNetworkAvailableInfosManager::setModelInfos(const QList<GenericNetworkModelAvailableInfo> &newModelInfos)
+{
+    mModelInfos = newModelInfos;
+}
+
 GenericNetworkAvailableInfosManager::~GenericNetworkAvailableInfosManager() = default;
 
 #include "moc_genericnetworkavailableinfosmanager.cpp"
