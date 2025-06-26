@@ -65,6 +65,10 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
             updateEngineName(mManager->generateEngineDisplayName());
         });
+        connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::currentIndexChanged, this, [this](int index) {
+            Q_UNUSED(index);
+            mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
+        });
     }
 }
 
