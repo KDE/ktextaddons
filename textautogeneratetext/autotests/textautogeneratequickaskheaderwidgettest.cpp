@@ -4,16 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskheaderwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
 #include <qtestmouse.h>
 QTEST_MAIN(TextAutoGenerateQuickAskHeaderWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateQuickAskHeaderWidgetTest::TextAutoGenerateQuickAskHeaderWidgetTest(QObject *parent)
     : QObject{parent}
 {
@@ -26,6 +27,10 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+
+    auto mModelInstanceLabel = w.findChild<QLabel *>(u"mModelInstanceLabel"_s);
+    QVERIFY(mModelInstanceLabel);
+    QVERIFY(mModelInstanceLabel->text().isEmpty());
 
     auto configureButton = w.findChild<QToolButton *>(u"configureButton"_s);
     QVERIFY(configureButton);
