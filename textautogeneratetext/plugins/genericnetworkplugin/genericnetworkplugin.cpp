@@ -164,6 +164,7 @@ QString GenericNetworkPlugin::currentModel() const
 void GenericNetworkPlugin::setCurrentModel(const QString &m)
 {
     mSettings->setCurrentModel(m);
+    Q_EMIT configChanged();
 }
 
 #include "moc_genericnetworkplugin.cpp"
