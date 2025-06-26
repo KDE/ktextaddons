@@ -19,3 +19,5 @@ void GenericNetworkModelAvailableInfoWidgetTest::shouldHaveDefaultValues()
     GenericNetworkModelAvailableInfoWidget w;
     // TODO
 }
+
+#include "moc_genericnetworkmodelavailableinfowidgettest.cpp"
