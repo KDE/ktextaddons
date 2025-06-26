@@ -55,15 +55,15 @@ public:
     const_iterator find(const Key &key)
     {
         // using non-const iterators here since we will re-insert when we find
-        const auto begin = mEntries.begin();
-        const auto end = std::next(mEntries.begin(), size());
-        auto it = std::find(begin, end, key);
-        if (it == begin || it == end) { // not found or already the last recently used one
+        const auto beginIt = mEntries.begin();
+        const auto endIt = std::next(mEntries.begin(), size());
+        auto it = std::find(beginIt, endIt, key);
+        if (it == beginIt || it == endIt) { // not found or already the last recently used one
             return it;
         }
 
         // rotate to mark entry as last recently used one
-        std::rotate(begin, it, it + 1);
+        std::rotate(beginIt, it, it + 1);
         return mEntries.cbegin();
     }
 
