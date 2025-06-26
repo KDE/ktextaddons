@@ -6,7 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
-
+class QLabel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -17,10 +17,13 @@ public:
     explicit TextAutoGenerateQuickAskHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskHeaderWidget() override;
 
+    void updateModelName(const QString &str);
+
 Q_SIGNALS:
     void configureRequested();
 
 private:
+    QLabel *const mModelInstanceLabel;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }
