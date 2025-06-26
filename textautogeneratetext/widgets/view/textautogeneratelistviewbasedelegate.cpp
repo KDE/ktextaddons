@@ -61,11 +61,17 @@ std::unique_ptr<QTextDocument> TextAutoGenerateListViewBaseDelegate::createTextD
 
 bool TextAutoGenerateListViewBaseDelegate::mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
+    Q_UNUSED(event)
+    Q_UNUSED(option)
+    Q_UNUSED(index)
     return false;
 }
 
 bool TextAutoGenerateListViewBaseDelegate::maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index)
 {
+    Q_UNUSED(event)
+    Q_UNUSED(option)
+    Q_UNUSED(index)
     return false;
 }
 
