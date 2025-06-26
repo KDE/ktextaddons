@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:41+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2025-05-29 09:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -110,7 +110,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "النماذج المتاحة"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:37
 #: plugins/ollama/ollamamanager.cpp:166
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -1522,7 +1522,7 @@ msgid ""
 "with advanced reasoning ability."
 msgstr ""
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:72
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:68
 #, kde-format
 msgid "Ollama"
 msgstr "أولاما"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:41+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -103,7 +103,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Tillgängliga modeller"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:36
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:37
 #: plugins/ollama/ollamamanager.cpp:166
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -1791,7 +1791,7 @@ msgstr ""
 "Phi 4 mini reasoning är en lättviktig och öppen modell som balanserar "
 "effektivitet med avancerad resonemangsförmåga."
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:72
+#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:68
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
