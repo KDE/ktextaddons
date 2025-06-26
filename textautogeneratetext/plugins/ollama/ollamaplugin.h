@@ -16,7 +16,9 @@ class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 {
     Q_OBJECT
 public:
-    explicit OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
+    explicit OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                          TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
+                          QObject *parent = nullptr);
     ~OllamaPlugin() override;
 
     void clear() override;

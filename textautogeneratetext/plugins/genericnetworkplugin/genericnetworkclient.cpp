@@ -29,10 +29,11 @@ QString GenericNetworkClient::translatedName() const
     return i18n("Generic");
 }
 
-TextAutoGenerateText::TextAutoGenerateTextPlugin *GenericNetworkClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
-                                                                                                     const QString &serverIdentifier)
+TextAutoGenerateText::TextAutoGenerateTextPlugin *
+GenericNetworkClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                   TextAutoGenerateText::TextAutoGenerateTextInstance *instance)
 {
-    auto plugin = new GenericNetworkPlugin(serverIdentifier, manager, this);
+    auto plugin = new GenericNetworkPlugin(instance, manager, this);
     return plugin;
 }
 

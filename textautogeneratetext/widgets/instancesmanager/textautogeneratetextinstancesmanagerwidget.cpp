@@ -66,7 +66,7 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             if (!client) {
                 qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
             } else {
-                auto plugin = client->createTextAutoGeneratePlugin(mManager, server.identifier);
+                auto plugin = client->createTextAutoGeneratePlugin(mManager, instance);
                 plugin->setDisplayName(d.instanceName());
                 instance->setPlugin(plugin);
                 mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);

@@ -67,7 +67,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Impossible to create client " << inst->pluginName();
             delete inst;
         } else {
-            auto plugin = client->createTextAutoGeneratePlugin(mManager, inst->pluginIdentifier());
+            auto plugin = client->createTextAutoGeneratePlugin(mManager, inst);
             plugin->load(configGroup);
             connect(plugin, &TextAutoGenerateTextPlugin::configChanged, this, &TextAutoGenerateTextInstancesManager::saveInstances);
             inst->setPlugin(plugin);

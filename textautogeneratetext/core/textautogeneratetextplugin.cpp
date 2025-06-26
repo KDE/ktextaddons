@@ -8,6 +8,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
+#include "core/textautogeneratetextinstance.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 
@@ -19,18 +20,22 @@ using namespace TextAutoGenerateText;
 class TextAutoGenerateText::TextAutoGenerateTextPluginPrivate
 {
 public:
-    explicit TextAutoGenerateTextPluginPrivate(TextAutoGenerateManager *manager_)
+    explicit TextAutoGenerateTextPluginPrivate(TextAutoGenerateManager *manager_, TextAutoGenerateText::TextAutoGenerateTextInstance *instance_)
         : manager(manager_)
+        , instance(instance_)
     {
     }
     bool hasError = false;
     bool isReady = false;
     TextAutoGenerateManager *const manager;
+    TextAutoGenerateText::TextAutoGenerateTextInstance *const instance;
 };
 
-TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(TextAutoGenerateManager *manager, QObject *parent)
+TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(TextAutoGenerateManager *manager,
+                                                       TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
+                                                       QObject *parent)
     : QObject{parent}
-    , d(new TextAutoGenerateText::TextAutoGenerateTextPluginPrivate(manager))
+    , d(new TextAutoGenerateText::TextAutoGenerateTextPluginPrivate(manager, instance))
 {
 }
 
@@ -115,7 +120,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         msgLlm.setEngineName(engineName());
         msgLlm.setModelName(currentModel());
-        // TODO msgLlm.setInstanceName(currentModel());
+        msgLlm.setInstanceName(d->instance->displayName());
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);

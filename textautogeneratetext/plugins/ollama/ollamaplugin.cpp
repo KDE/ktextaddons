@@ -14,8 +14,10 @@
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
-OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
+OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                           TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
+                           QObject *parent)
+    : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
     , mOllamaSettings(new OllamaSettings)
     , mManager(new OllamaManager(mOllamaSettings, this))
 {

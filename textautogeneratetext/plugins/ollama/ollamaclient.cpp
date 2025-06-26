@@ -5,10 +5,7 @@
 */
 
 #include "ollamaclient.h"
-#include "ollamaconfiguredialog.h"
-#include "ollamamanager.h"
 #include "ollamaplugin.h"
-#include "ollamasettings.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -31,10 +28,9 @@ QString OllamaClient::translatedName() const
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
-                                                                                             const QString &serverIdentifier)
+                                                                                             TextAutoGenerateText::TextAutoGenerateTextInstance *instance)
 {
-    Q_UNUSED(serverIdentifier)
-    return new OllamaPlugin(manager, this);
+    return new OllamaPlugin(manager, instance, this);
 }
 
 TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engineType() const

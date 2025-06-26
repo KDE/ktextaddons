@@ -17,6 +17,7 @@ class TextAutoGenerateMessage;
 class TextAutoGenerateTextPluginPrivate;
 class TextAutoGenerateManager;
 class TextAutoGenerateReply;
+class TextAutoGenerateTextInstance;
 /**
  * @brief The TextAutoGenerateTextPlugin class
  * @author Laurent Montel <montel@kde.org>
@@ -37,7 +38,9 @@ public:
         QByteArray chatId;
         QJsonArray messagesArray;
     };
-    explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
+    explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                        TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
+                                        QObject *parent = nullptr);
     ~TextAutoGenerateTextPlugin() override;
 
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;

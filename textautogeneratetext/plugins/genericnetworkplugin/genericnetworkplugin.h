@@ -17,7 +17,9 @@ class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPl
 {
     Q_OBJECT
 public:
-    explicit GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
+    explicit GenericNetworkPlugin(TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
+                                  TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                  QObject *parent = nullptr);
     ~GenericNetworkPlugin() override;
 
     void clear() override;

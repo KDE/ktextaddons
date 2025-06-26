@@ -12,6 +12,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateManager;
+class TextAutoGenerateTextInstance;
 /**
  * @brief The TextAutoGenerateTextClient class
  * @author Laurent Montel <montel@kde.org>
@@ -48,7 +49,7 @@ public:
     [[nodiscard]] virtual QString translatedName() const = 0;
 
     virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
-                                                                     const QString &serverIdentifier) = 0;
+                                                                     TextAutoGenerateText::TextAutoGenerateTextInstance *instance) = 0;
 
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
 

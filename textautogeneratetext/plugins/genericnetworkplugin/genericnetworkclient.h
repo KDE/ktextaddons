@@ -18,8 +18,8 @@ public:
 
     [[nodiscard]] QString name() const override;
     [[nodiscard]] QString translatedName() const override;
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
-                                                                                                 const QString &serverIdentifier) override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin *
+    createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager, TextAutoGenerateText::TextAutoGenerateTextInstance *instance) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const override;
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const override;
 };

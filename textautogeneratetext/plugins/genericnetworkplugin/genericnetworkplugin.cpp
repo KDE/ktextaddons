@@ -6,6 +6,7 @@
 
 #include "genericnetworkplugin.h"
 #include "core/textautogeneratereply.h"
+#include "core/textautogeneratetextinstance.h"
 #include "core/textautogeneratetextrequest.h"
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkmanager.h"
@@ -14,13 +15,15 @@
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
-GenericNetworkPlugin::GenericNetworkPlugin(const QString &serverIdentifier, TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent)
-    : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, parent}
+GenericNetworkPlugin::GenericNetworkPlugin(TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
+                                           TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                           QObject *parent)
+    : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
     , mSettings(new GenericNetworkSettings)
     , mGenericManager(new GenericNetworkManager(mSettings, this))
 {
     const GenericNetworkServerInfo info;
-    mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(serverIdentifier));
+    mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(instance->pluginIdentifier()));
     connect(mGenericManager,
             &GenericNetworkManager::modelsLoadDone,
             this,
