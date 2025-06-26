@@ -181,4 +181,9 @@ QString OllamaPlugin::currentModel() const
     return mOllamaSettings->currentModel();
 }
 
+void OllamaPlugin::setCurrentModel(const QString &m)
+{
+    mOllamaSettings->setCurrentModel(m);
+}
+
 #include "moc_ollamaplugin.cpp"

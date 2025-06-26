@@ -35,6 +35,7 @@ public:
     [[nodiscard]] QString displayName() const override;
     void setDisplayName(const QString &newName) override;
     [[nodiscard]] QString currentModel() const override;
+    void setCurrentModel(const QString &) override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;

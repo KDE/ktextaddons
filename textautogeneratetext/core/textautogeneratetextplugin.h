@@ -60,6 +60,7 @@ public:
     [[nodiscard]] virtual QString engineName() const = 0;
 
     [[nodiscard]] virtual QString currentModel() const = 0;
+    virtual void setCurrentModel(const QString &) = 0;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager *manager() const;
     virtual void askToAssistant(const QString &msg) = 0;
