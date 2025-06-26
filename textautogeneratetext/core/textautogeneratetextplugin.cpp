@@ -103,14 +103,15 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
         msg.setContent(str);
-        msg.setDateTime(QDateTime::currentSecsSinceEpoch());
+        const auto dt = QDateTime::currentSecsSinceEpoch();
+        msg.setDateTime(dt);
         msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
 
         // LLM Message
         TextAutoGenerateMessage msgLlm;
         msgLlm.setInProgress(true);
         msgLlm.setSender(TextAutoGenerateMessage::Sender::Assistant);
-        msgLlm.setDateTime(QDateTime::currentSecsSinceEpoch());
+        msgLlm.setDateTime(dt);
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
         msgLlm.setEngineName(engineName());
         msgLlm.setModelName(currentModel());

@@ -157,6 +157,9 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
         const QByteArray answerUuid = it->answerUuid();
 
         (*it).setContent(str);
+        // Update date time
+        const auto dt = QDateTime::currentSecsSinceEpoch();
+        (*it).setDateTime(dt);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
@@ -171,6 +174,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
             const int i = std::distance(mMessages.begin(), answerIt);
             (*answerIt).setInProgress(true);
             (*answerIt).setContent({});
+            (*answerIt).setDateTime(dt);
             emitChanged(i, {MessageRole | FinishedRole});
         }
         return answerUuid;
