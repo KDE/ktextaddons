@@ -75,11 +75,23 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 
     if (mManager) {
         mManager->setSaveInDatabase(false);
+        connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
+            slotAskMessageRequester(str);
+        });
     }
     loadEngine();
 }
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;
+
+void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const QString &str)
+{
+    if (!mPluginWasInitialized) {
+        mAskMessageList.append(str);
+    } else {
+        slotEditingFinished(str, {});
+    }
+}
 
 void TextAutoGenerateQuickAskWidget::slotCancelRequest(const QByteArray &uuid)
 {
