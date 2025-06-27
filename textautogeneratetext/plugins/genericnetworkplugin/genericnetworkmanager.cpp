@@ -119,7 +119,7 @@ QString GenericNetworkManager::webSite() const
 
 QString GenericNetworkManager::chatPath() const
 {
-    return mServerInfo->chatPath(mPluginNetworkType);
+    return mServerInfo->chatCompletionPath(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::apiUrl() const

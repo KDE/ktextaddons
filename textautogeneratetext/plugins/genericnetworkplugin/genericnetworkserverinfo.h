@@ -34,5 +34,5 @@ public:
     [[nodiscard]] GenericNetworkManager::PluginNetworkType pluginNetworkTypeFromString(const QString &str) const;
 
     [[nodiscard]] Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] QString chatPath(GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type) const;
 };
