@@ -35,6 +35,7 @@ public:
     [[nodiscard]] int maxTokens() const;
 
     void setWebSiteUrl(const QString &url);
+    void setDescription(const QString &description);
 
 private:
     KPasswordLineEdit *const mApiKey;
@@ -42,5 +43,6 @@ private:
     QSpinBox *const mMaxToken;
     QDoubleSpinBox *const mTemperature;
     QLabel *const mWebSite;
+    QLabel *const mDescription;
 };
 }

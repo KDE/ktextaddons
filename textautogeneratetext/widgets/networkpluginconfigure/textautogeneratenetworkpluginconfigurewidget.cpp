@@ -24,6 +24,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     , mMaxToken(new QSpinBox(this))
     , mTemperature(new QDoubleSpinBox(this))
     , mWebSite(new QLabel(this))
+    , mDescription(new QLabel(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -51,6 +52,11 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mWebSite->setObjectName(u"mWebSite"_s);
     mWebSite->setTextFormat(Qt::RichText);
     mainLayout->addWidget(mWebSite);
+
+    mDescription->setObjectName(u"mDescription"_s);
+    mDescription->setTextFormat(Qt::PlainText);
+    mDescription->setWordWrap(true);
+    mainLayout->addWidget(mDescription);
 }
 
 TextAutoGenerateNetworkPluginConfigureWidget::~TextAutoGenerateNetworkPluginConfigureWidget() = default;
@@ -93,6 +99,15 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setMaxTokens(int tokens)
 int TextAutoGenerateNetworkPluginConfigureWidget::maxTokens() const
 {
     return mMaxToken->value();
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidget::setDescription(const QString &description)
+{
+    if (description.isEmpty()) {
+        mDescription->hide();
+    } else {
+        mDescription->setText(description);
+    }
 }
 
 void TextAutoGenerateNetworkPluginConfigureWidget::setWebSiteUrl(const QString &url)

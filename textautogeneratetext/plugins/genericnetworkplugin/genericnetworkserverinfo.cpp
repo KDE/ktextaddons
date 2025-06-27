@@ -95,7 +95,7 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     case GenericNetworkManager::PluginNetworkType::OpenAI:
         return {};
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
-        return {};
+        return i18n("Kluster AI cloud inference API");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }

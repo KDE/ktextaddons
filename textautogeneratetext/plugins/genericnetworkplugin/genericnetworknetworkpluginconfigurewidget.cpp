@@ -14,6 +14,7 @@ GenericNetworkNetworkPluginConfigureWidget::GenericNetworkNetworkPluginConfigure
     loadSettings();
     mManager->loadModels();
     setWebSiteUrl(mManager->webSite());
+    setDescription(mManager->description());
 }
 
 GenericNetworkNetworkPluginConfigureWidget::~GenericNetworkNetworkPluginConfigureWidget() = default;
