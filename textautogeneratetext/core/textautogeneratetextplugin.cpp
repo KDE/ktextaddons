@@ -41,6 +41,11 @@ TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin(TextAutoGenerateManager *
 
 TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
+QByteArray TextAutoGenerateTextPlugin::instanceUuid() const
+{
+    return d->instance->instanceUuid();
+}
+
 void TextAutoGenerateTextPlugin::load(const KConfigGroup &config)
 {
     Q_UNUSED(config);

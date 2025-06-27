@@ -76,6 +76,7 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models() const;
 
+    [[nodiscard]] QByteArray instanceUuid() const;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
