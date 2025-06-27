@@ -77,9 +77,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
             mMessageWidget->animatedShow();
         } else {
             mModelComboBoxWidget->setModels(modelinfo.models);
-            loadSettings();
         }
     });
+    loadSettings();
     connect(mManager, &OllamaManager::refreshInstalledModels, this, &OllamaConfigureWidget::fillModels);
     fillModels();
 }
