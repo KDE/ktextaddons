@@ -465,7 +465,7 @@ void AutoCorrectionWidget::removeAutocorrectEntry()
         return;
     }
     for (QTreeWidgetItem *item : listItems) {
-        QTreeWidgetItem *below = d->ui->treeWidget->itemBelow(item);
+        const QTreeWidgetItem *below = d->ui->treeWidget->itemBelow(item);
 
         QString findStr;
         if (below) {

@@ -57,7 +57,7 @@ QLocale TextToSpeechConfigInterface::locale() const
 
 void TextToSpeechConfigInterface::setEngine(const QString &engineName)
 {
-    if (!mTextToSpeech || (mTextToSpeech && (mTextToSpeech->engine() != engineName))) {
+    if (!mTextToSpeech || (mTextToSpeech->engine() != engineName)) {
         delete mTextToSpeech;
         mTextToSpeech = new QTextToSpeech(engineName, this);
     }

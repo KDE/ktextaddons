@@ -171,11 +171,11 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
         };
         const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
         if (answerIt != mMessages.end()) {
-            const int i = std::distance(mMessages.begin(), answerIt);
+            const int idx = std::distance(mMessages.begin(), answerIt);
             (*answerIt).setInProgress(true);
             (*answerIt).setContent({});
             (*answerIt).setDateTime(dt);
-            emitChanged(i, {MessageRole | FinishedRole});
+            emitChanged(idx, {MessageRole | FinishedRole});
         }
         return answerUuid;
     }
@@ -259,9 +259,9 @@ void TextAutoGenerateMessagesModel::removeDiscussion(const QByteArray &uuid)
         };
         const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
         if (answerIt != mMessages.end()) {
-            const int i = std::distance(mMessages.begin(), answerIt);
-            beginRemoveRows(QModelIndex(), i, i);
-            mMessages.removeAt(i);
+            const int idx = std::distance(mMessages.begin(), answerIt);
+            beginRemoveRows(QModelIndex(), idx, idx);
+            mMessages.removeAt(idx);
             endRemoveRows();
         }
     }

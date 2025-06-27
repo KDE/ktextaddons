@@ -245,7 +245,7 @@ void TextAutoGenerateManager::checkCurrentChat()
 
 void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteArray &messageId)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
+    const auto messagesModel = messagesModelFromChatId(chatId);
     if (!messagesModel) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find channel" << chatId;
         return;

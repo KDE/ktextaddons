@@ -45,15 +45,15 @@ QTextCursor TextAutoGenerateListViewTextSelection::selectionForIndex(const QMode
     Q_ASSERT(index.model() == mEndIndex.model());
 
     const OrderedPositions ordered = orderedPositions();
-    int fromCharPos = ordered.fromCharPos;
     // qDebug() << "BEFORE toCharPos" << toCharPos << " fromCharPos " << fromCharPos;
     QTextCursor cursor(doc);
 
     // qDebug() << "AFTER toCharPos" << toCharPos << " fromCharPos " << fromCharPos;
     const int row = index.row();
-    if (row == ordered.fromRow)
+    if (row == ordered.fromRow) {
+        const int fromCharPos = ordered.fromCharPos;
         cursor.setPosition(qMax(fromCharPos, 0));
-    else if (row > ordered.fromRow)
+    } else if (row > ordered.fromRow)
         cursor.setPosition(0);
     else
         return {};

@@ -207,7 +207,7 @@ void TextAutoGenerateListView::addSelectedMessageBackgroundAnimation(const QMode
 
 void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
 {
-    QAbstractItemModel *oldModel = model();
+    const QAbstractItemModel *oldModel = model();
     if (oldModel) {
         disconnect(oldModel, nullptr, this, nullptr);
     }

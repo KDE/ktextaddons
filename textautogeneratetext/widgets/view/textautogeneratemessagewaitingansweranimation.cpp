@@ -24,13 +24,11 @@ TextAutoGenerateMessageWaitingAnswerAnimation::TextAutoGenerateMessageWaitingAns
         if (messagesModel) {
             connect(messagesModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
                 if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                    if (roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
-                        const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
-                        if (!inProgress) {
-                            if (mModelIndex == topLeft) {
-                                stopAndDelete();
-                                Q_EMIT waitingAnswerDone(topLeft);
-                            }
+                    const bool inProgress = !topLeft.data(TextAutoGenerateMessagesModel::FinishedRole).toBool();
+                    if (!inProgress) {
+                        if (mModelIndex == topLeft) {
+                            stopAndDelete();
+                            Q_EMIT waitingAnswerDone(topLeft);
                         }
                     }
                 }

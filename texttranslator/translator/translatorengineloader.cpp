@@ -70,7 +70,7 @@ void TranslatorEngineLoader::loadPlugin(const QString &pluginPath)
         d->loadedPlugins.remove(pluginIID);
         return;
     }
-    TranslatorEngineClient *client = qobject_cast<TranslatorEngineClient *>(plugin.instance());
+    TranslatorEngineClient *const client = qobject_cast<TranslatorEngineClient *>(plugin.instance());
     if (!client) {
         qCWarning(TEXTTRANSLATOR_LOG) << "Invalid plugin loaded" << pluginPath;
         plugin.unload(); // don't leave it in memory

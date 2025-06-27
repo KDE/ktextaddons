@@ -26,7 +26,7 @@ using namespace TextEmoticonsWidgets;
 class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
 {
 public:
-    EmoticonTextEditSelectorPrivate(EmoticonTextEditSelector *q)
+    explicit EmoticonTextEditSelectorPrivate(EmoticonTextEditSelector *q)
         : searchUnicodeLineEdit(new QLineEdit(q))
         , categoryButtons(new EmoticonCategoryButtons(q))
         , emoticonListView(new EmoticonListView(q))

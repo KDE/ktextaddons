@@ -12,7 +12,7 @@ using namespace TextEmoticonsCore;
 class EmojiSortFilterProxyModel::EmojiProxyModelPrivate
 {
 public:
-    EmojiProxyModelPrivate(EmojiSortFilterProxyModel *qq)
+    explicit EmojiProxyModelPrivate(EmojiSortFilterProxyModel *qq)
         : q(qq)
     {
     }
