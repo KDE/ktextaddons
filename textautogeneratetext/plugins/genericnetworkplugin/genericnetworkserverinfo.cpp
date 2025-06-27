@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkserverinfo.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autogeneratetext_genericnetwork_debug.h"
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 GenericNetworkServerInfo::GenericNetworkServerInfo() = default;
 
 GenericNetworkServerInfo::~GenericNetworkServerInfo() = default;
@@ -73,7 +73,7 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return {};
     case GenericNetworkManager::PluginNetworkType::MistralAI:
-        return u"https://chat.mistral.ai/"_s;
+        return u"https://api.mistral.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenAI:
         return u"https://api.openai.com/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
