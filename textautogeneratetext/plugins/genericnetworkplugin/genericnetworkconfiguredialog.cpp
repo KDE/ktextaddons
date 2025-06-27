@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "genericnetworkavailablemodelwidget.h"
 #include "genericnetworkmanager.h"
@@ -20,6 +19,7 @@ namespace
 {
 const char myGenericNetworkConfigureDialogGroupName[] = "GenericNetworkConfigureDialog";
 }
+using namespace Qt::Literals::StringLiterals;
 GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManager *manager, QWidget *parent)
     : KPageDialog(parent)
     , mConfigureWidget(new GenericNetworkNetworkPluginConfigureWidget(manager, this))

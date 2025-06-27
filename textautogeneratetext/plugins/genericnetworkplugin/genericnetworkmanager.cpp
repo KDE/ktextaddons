@@ -4,8 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "genericnetworkmanager.h"
+#include "autogeneratetext_genericnetwork_debug.h"
 #include "core/textautogenerateengineaccessmanager.h"
 #include "core/textautogeneratetextrequest.h"
+#include "genericnetworkreply.h"
 #include "genericnetworkserverinfo.h"
 #include "genericnetworksettings.h"
 #include "modelsmanager/genericnetworkmodelavailableinfos.h"
@@ -34,6 +36,10 @@ void GenericNetworkManager::loadModels()
     }
     QNetworkRequest req{QUrl::fromUserInput(apiUrl() + u"models"_s)};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    if (mApiKey.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Api key is missing";
+    }
+    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
@@ -71,9 +77,13 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletio
 
 TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
-#if 0
-    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + OllamaUtils::chatPath())};
+    if (mApiKey.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Api key is missing";
+        return nullptr;
+    }
+    QNetworkRequest req{QUrl::fromUserInput(apiUrl() + chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     QJsonObject data;
     data["model"_L1] = mGenericNetworkSettings->currentModel();
     data["messages"_L1] = request.messages();
@@ -83,18 +93,15 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
     */
-    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
-    auto reply = new OllamaReply{
+    qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " JSon: " << data;
+    auto reply = new GenericNetworkReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
-        OllamaReply::RequestTypes::StreamingChat,
+        GenericNetworkReply::RequestTypes::StreamingChat,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
+    connect(reply, &GenericNetworkReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
     });
     return reply;
-#else
-    return nullptr;
-#endif
 }
 
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const

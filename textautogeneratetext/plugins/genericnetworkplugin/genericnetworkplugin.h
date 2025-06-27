@@ -47,7 +47,6 @@ protected:
     void cancelRequest(const QByteArray &uuid) override;
 
 private:
-    void slotApiKeyRead(QKeychain::Job *baseJob);
     GenericNetworkSettings *const mSettings;
     GenericNetworkManager *const mGenericManager;
 };
