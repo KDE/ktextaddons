@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 
 add_library(textautogenerategenericnetwork)
-#kconfig_add_kcfg_files(textautogenerategenericnetwork GENERATE_MOC genericnetworksettings.kcfgc)
 
 ecm_qt_declare_logging_category(textautogenerategenericnetwork
     HEADER autogeneratetext_genericnetwork_debug.h
@@ -85,10 +84,10 @@ install(
 add_library(autogeneratetext_genericnetwork MODULE)
 
 ecm_qt_declare_logging_category(autogeneratetext_genericnetwork
-    HEADER autogeneratetext_genericnetwork_debug.h
-    IDENTIFIER AUTOGENERATETEXT_GENERICNETWORK_LOG
+    HEADER autogeneratetext_genericnetwork_plugin_debug.h
+    IDENTIFIER AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG
     CATEGORY_NAME org.kde.kf.autogeneratetext.genericnetwork
-    DESCRIPTION "autogenerate text genericnetwork"
+    DESCRIPTION "autogenerate text genericnetwork plugin"
     EXPORT KTEXTADDONS
 )
 target_sources(
