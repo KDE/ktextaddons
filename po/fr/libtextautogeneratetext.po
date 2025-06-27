@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:41+0000\n"
-"PO-Revision-Date: 2025-06-22 10:39+0200\n"
+"POT-Creation-Date: 2025-06-27 00:41+0000\n"
+"PO-Revision-Date: 2025-06-25 08:43+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -100,7 +100,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modèles disponibles"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:37
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:42
 #: plugins/ollama/ollamamanager.cpp:166
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -119,7 +119,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -1642,7 +1642,7 @@ msgstr ""
 "Phi 4 mini est un modèle ouvert léger faisant un compromis entre "
 "l'efficacité avec une capacité avancée de raisonnement."
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:68
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:70
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1784,7 +1784,7 @@ msgstr "Configurer les instances"
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "Marquer comme paramètre par défaut"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
 #, kde-format
@@ -1884,7 +1884,7 @@ msgstr "Clé API :"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
 #, kde-format
 msgid "Max Tokens:"
-msgstr ""
+msgstr "Nombre maximal de jetons :"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
@@ -1892,7 +1892,7 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Demande rapide"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:28
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:41+0000\n"
+"POT-Creation-Date: 2025-06-27 00:41+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -109,7 +109,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "可用模型"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:37
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:42
 #: plugins/ollama/ollamamanager.cpp:166
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -1466,7 +1466,7 @@ msgid ""
 "with advanced reasoning ability."
 msgstr ""
 
-#: plugins/ollama/ollamaclient.cpp:30 plugins/ollama/ollamaplugin.cpp:68
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:70
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1726,7 +1726,7 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "快速詢問"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:28
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
