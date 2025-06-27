@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratenetworkpluginconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KAuthorized>
 #include <KLineEditEventHandler>
@@ -13,8 +12,10 @@ using namespace Qt::Literals::StringLiterals;
 #include <KPasswordLineEdit>
 #include <QDoubleSpinBox>
 #include <QFormLayout>
+#include <QLabel>
 #include <QSpinBox>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfigureWidget(QWidget *parent)
     : QWidget{parent}
@@ -22,6 +23,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     , mInstanceName(new QLineEdit(this))
     , mMaxToken(new QSpinBox(this))
     , mTemperature(new QDoubleSpinBox(this))
+    , mWebSite(new QLabel(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -45,6 +47,10 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
 
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     KLineEditEventHandler::catchReturnKey(mInstanceName);
+    mWebSite->setOpenExternalLinks(true);
+    mWebSite->setObjectName(u"mWebSite"_s);
+    mWebSite->setTextFormat(Qt::RichText);
+    mainLayout->addWidget(mWebSite);
 }
 
 TextAutoGenerateNetworkPluginConfigureWidget::~TextAutoGenerateNetworkPluginConfigureWidget() = default;
@@ -87,6 +93,15 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setMaxTokens(int tokens)
 int TextAutoGenerateNetworkPluginConfigureWidget::maxTokens() const
 {
     return mMaxToken->value();
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidget::setWebSiteUrl(const QString &url)
+{
+    if (url.isEmpty()) {
+        mWebSite->setText({});
+    } else {
+        mWebSite->setText(u"<a href=\"%1\">%1</a>"_s.arg(url));
+    }
 }
 
 #include "moc_textautogeneratenetworkpluginconfigurewidget.cpp"

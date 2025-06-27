@@ -12,6 +12,7 @@ class KPasswordLineEdit;
 class QLineEdit;
 class QSpinBox;
 class QDoubleSpinBox;
+class QLabel;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNetworkPluginConfigureWidget : public QWidget
@@ -33,10 +34,13 @@ public:
     void setMaxTokens(int tokens);
     [[nodiscard]] int maxTokens() const;
 
+    void setWebSiteUrl(const QString &url);
+
 private:
     KPasswordLineEdit *const mApiKey;
     QLineEdit *const mInstanceName;
     QSpinBox *const mMaxToken;
     QDoubleSpinBox *const mTemperature;
+    QLabel *const mWebSite;
 };
 }
