@@ -34,7 +34,19 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
 
 QString GenericNetworkServerInfo::chatPath(GenericNetworkManager::PluginNetworkType type) const
 {
-    // TODO
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return {};
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+        return {};
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+        return {};
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+        return u"v1/chat/completions"_s;
+    case GenericNetworkManager::PluginNetworkType::LastElement:
+        return {};
+    }
     return {};
 }
 
