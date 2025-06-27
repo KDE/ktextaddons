@@ -37,6 +37,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mMessageWidget->setObjectName(u"mMessageWidget"_s);
     mainLayout->addWidget(mMessageWidget);
     mMessageWidget->setVisible(false);
+    mMessageWidget->setCloseButtonVisible(false);
     mMessageWidget->setMessageType(KMessageWidget::MessageType::Error);
 
     mName->setObjectName(u"mName"_s);
