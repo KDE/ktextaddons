@@ -107,11 +107,6 @@ void GenericNetworkManager::setPluginNetworkType(PluginNetworkType newPluginNetw
     mPluginNetworkType = newPluginNetworkType;
 }
 
-QString GenericNetworkManager::translatedName() const
-{
-    return mServerInfo->translatedName(mPluginNetworkType);
-}
-
 QString GenericNetworkManager::webSite() const
 {
     return mServerInfo->webSite(mPluginNetworkType);
