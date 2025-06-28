@@ -28,6 +28,6 @@ public:
 private:
     QString mDisplayName;
     QString mCurrentModel;
-    int mMaxTokens = 0;
-    double mTemperature = 0.0;
+    int mMaxTokens = 2048;
+    double mTemperature = 0.8;
 };

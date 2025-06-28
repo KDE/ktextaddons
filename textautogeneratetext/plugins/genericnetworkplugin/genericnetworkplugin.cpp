@@ -50,7 +50,7 @@ void GenericNetworkPlugin::load(const KConfigGroup &config)
 {
     mSettings->setDisplayName(config.readEntry(u"Name"_s));
     mSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
-    mSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.0));
+    mSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
     mSettings->setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
     auto readJob = new QKeychain::ReadPasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
     connect(readJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
@@ -68,7 +68,6 @@ void GenericNetworkPlugin::load(const KConfigGroup &config)
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
 {
-    qDebug() << " CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     config.writeEntry(u"Name"_s, mSettings->displayName());
     config.writeEntry(u"CurrentModel"_s, mSettings->currentModel());
     config.writeEntry(u"MaxToken"_s, mSettings->maxTokens());
