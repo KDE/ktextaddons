@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-23 07:56+0300\n"
+"PO-Revision-Date: 2025-06-27 12:46+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -356,7 +356,7 @@ msgstr ""
 msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
 "parameters."
-msgstr ""
+msgstr "Llama 2 הם אוסף של מודלי שפה יסודיים שנעים מ־7B ועד 70B משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:30
 #, kde-format
@@ -365,6 +365,9 @@ msgid ""
 "encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
 "and has multilingual support."
 msgstr ""
+"המודלים של Qwen2.5 אומנו מראש על סדרת הנתונים הגדולה והעדכנית ביותר של "
+"Alibaba, שמכילה עד 18 מיליארד אסימונים. המודל תומך בעד 128K אסימונים ובריבוי "
+"שפות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:32
 #, kde-format
@@ -570,7 +573,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "StarCoder is a code generation model trained on 80+ programming languages."
-msgstr ""
+msgstr "StarCoder הוא מודל לכתיבת קוד שאומן על יותר מ־80 שפות תכנות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
 #, kde-format
@@ -844,13 +847,15 @@ msgid ""
 "Starling is a large language model trained by reinforcement learning from AI "
 "feedback focused on improving chatbot helpfulness."
 msgstr ""
+"Starling הוא מודל שפה גדול שאומן על ידי למידה בזכות חיזוק ממשוב בינה "
+"מלאכותית שמתמקד בשיפור יעילות בוטים של שיחות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:130
 #, kde-format
 msgid ""
 "A companion assistant trained in philosophy, psychology, and personal "
 "relationships. Based on Mistral."
-msgstr ""
+msgstr "מסייע שאומן על פילוסופיה, פסיכולוגיה ויחסים אישיים. מבוסס על Mistral."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:131
 #, kde-format
@@ -858,6 +863,8 @@ msgid ""
 "Hermes 3 is the latest version of the flagship Hermes series of LLMs by Nous "
 "Research"
 msgstr ""
+"Hermes 3 היא הגרסה האחרונה של סדרת Hermes שהיא ספינת הדגל של המש״גים מבית "
+"Nous Research"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
 #, kde-format
@@ -865,6 +872,8 @@ msgid ""
 "Yi-Coder is a series of open-source code language models that delivers state-"
 "of-the-art coding performance with fewer than 10 billion parameters."
 msgstr ""
+"Yi-Coder היא סדרה של מודלי שפה בקוד פתוח לכתיבת קוד שמספקת ביצועי תכנות ברמה "
+"גבוהה מאוד עם פחות מ־10 מיליארד משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:136
 #, kde-format
@@ -937,6 +946,8 @@ msgid ""
 "Mistral Small 3 sets a new benchmark in the “small” Large Language Models "
 "category below 70B."
 msgstr ""
+"Mistral Small 3 מגדירה מדדי ביצועים חדשים בקטגוריית מודלי השפה הגדולים "
+"ה„קטנים” מתחת ל־70B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:147
 #, kde-format
@@ -951,6 +962,8 @@ msgid ""
 "SmolLM2 is a family of compact language models available in three size: "
 "135M, 360M, and 1.7B parameters."
 msgstr ""
+"SmolLM2 היא משפחה של מודלי שפה חסכוניים שזמינה בשלושה גדלים: 135M,‏ 360M ו־"
+"1.7B משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:149
 #, kde-format
@@ -987,6 +1000,8 @@ msgid ""
 "Fine-tuned Llama 2 model to answer medical questions based on an open source "
 "medical dataset."
 msgstr ""
+"מודל Llama 2 שכוון בקפידה לענות על שאלות רפואיות לפי סדרות נתונים רפואיות "
+"בקוד פתוח."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:156
 #, kde-format
