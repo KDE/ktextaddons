@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:41+0000\n"
+"POT-Creation-Date: 2025-06-28 00:40+0000\n"
 "PO-Revision-Date: 2025-06-22 08:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -104,7 +104,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Dostępne modele"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:42
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:166
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -124,6 +124,11 @@ msgstr "OpenAI"
 #, kde-format
 msgid "Kluster AI"
 msgstr "Kluster AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
+#, kde-format
+msgid "Kluster AI cloud inference API"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -214,8 +219,8 @@ msgid "Base:"
 msgstr "Podstawa:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:44
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
 #, kde-format
 msgid "Name:"
 msgstr "Nazwa:"
@@ -226,7 +231,7 @@ msgid "Tag:"
 msgstr "Znacznik:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:69
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgid "Prompt:"
 msgstr "Zapytanie:"
@@ -1526,23 +1531,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Utwórz modele"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:49
 #, kde-format
 msgid "Server Url:"
 msgstr "Adres URL serwera:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:53
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:55
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1550,12 +1555,12 @@ msgid ""
 "answer more creatively."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:61
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Seed:"
 msgstr "Ziarno:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:63
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1564,7 +1569,7 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:71
 #, kde-format
 msgid "No system prompt"
 msgstr "Brak systemowego wiersza poleceń"
@@ -1729,12 +1734,12 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Ustawienia…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:42
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:45
 #, kde-format
 msgid "Api Key:"
 msgstr "Klucz API:"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:46
 #, kde-format
 msgid "Max Tokens:"
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:41+0000\n"
+"POT-Creation-Date: 2025-06-28 00:40+0000\n"
 "PO-Revision-Date: 2025-06-05 21:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -112,7 +112,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Eredu erabilgarriak"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:42
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
 #: plugins/ollama/ollamamanager.cpp:166
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -131,6 +131,11 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
+#, kde-format
+msgid "Kluster AI cloud inference API"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
@@ -222,8 +227,8 @@ msgid "Base:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:44
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:41
+#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
 #, kde-format
 msgid "Name:"
 msgstr "Izena:"
@@ -234,7 +239,7 @@ msgid "Tag:"
 msgstr "Etiketa:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:69
+#: plugins/ollama/ollamaconfigurewidget.cpp:70
 #, kde-format
 msgid "Prompt:"
 msgstr "Gonbita:"
@@ -1504,23 +1509,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Ereduak sortzea"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:49
 #, kde-format
 msgid "Server Url:"
 msgstr "Zerbitzariaren URLa:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:53
 #, kde-format
 msgid "Model:"
 msgstr "Eredua:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:55
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Temperature:"
 msgstr "Tenperatura:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:58
+#: plugins/ollama/ollamaconfigurewidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1530,12 +1535,12 @@ msgstr ""
 "Ereduaren tenperatura. Tenperaturak gora egiten badu, ereduaren erantzunak "
 "modu sortzaileagoan erantzungo du."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:61
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgid "Seed:"
 msgstr "Hazia:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:63
+#: plugins/ollama/ollamaconfigurewidget.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1547,7 +1552,7 @@ msgstr ""
 "zenbaki zehatz batean ezarriz gero, galdera berdinerako ereduak erantzun "
 "bera sortzea eragingo du. (Lehenetsia: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:71
 #, kde-format
 msgid "No system prompt"
 msgstr "Sistemaren gonbitik ez"
@@ -1722,12 +1727,12 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Konfiguratu..."
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:42
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:45
 #, kde-format
 msgid "Api Key:"
 msgstr "APIaren gakoa:"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:43
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:46
 #, kde-format
 msgid "Max Tokens:"
 msgstr ""
