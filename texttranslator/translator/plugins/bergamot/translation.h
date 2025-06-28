@@ -26,7 +26,7 @@ class LIBBERGAMOT_EXPORT Translation
 {
 public:
     Translation();
-    Translation(slimt::Response &&response);
+    explicit Translation(slimt::Response &&response);
 
     /**
      * Bool operator to check whether this is an initialised translation or just
