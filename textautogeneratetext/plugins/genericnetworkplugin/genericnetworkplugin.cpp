@@ -6,6 +6,7 @@
 
 #include "genericnetworkplugin.h"
 #include "autogeneratetext_genericnetwork_plugin_debug.h"
+#include "core/textautogeneratemanager.h"
 #include "core/textautogeneratereply.h"
 #include "core/textautogeneratetextinstance.h"
 #include "core/textautogeneratetextrequest.h"
@@ -109,27 +110,27 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
     }
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
-#if 0 // TODO
-    mConnections.insert(
-        reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
-                                                       manager()->replaceContent(chatId, messageUuid, reply->readResponse());
-                                                   })));
-    mConnections.insert(
-        reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::finished, this, [reply, messageUuid, chatId, this] {
-                                                       manager()->changeInProgress(chatId, messageUuid, false);
-                                                       qCDebug(AUTOGENERATETEXT_OLLAMA_PLUGIN_LOG) << " progress finished";
-                                                       mConnections.remove(reply);
-                                                       reply->deleteLater();
+    mConnections.insert(reply,
+                        QPair<QByteArray, QMetaObject::Connection>(
+                            messageUuid,
+                            connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+                                manager()->replaceContent(chatId, messageUuid, reply->readResponse());
+                            })));
+    mConnections.insert(reply,
+                        QPair<QByteArray, QMetaObject::Connection>(
+                            messageUuid,
+                            connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, messageUuid, chatId, this] {
+                                manager()->changeInProgress(chatId, messageUuid, false);
+                                qCDebug(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << " progress finished";
+                                mConnections.remove(reply);
+                                reply->deleteLater();
 #if 0
                                 // TODO add context + info
                             message.context = message.llmReply->context();
                             message.info = message.llmReply->info();
 #endif
-                                                       // Q_EMIT finished(message); // TODO add message as argument ???
-                                                   })));
-#endif
+                                // Q_EMIT finished(message); // TODO add message as argument ???
+                            })));
 }
 
 void GenericNetworkPlugin::askToAssistant(const QString &msg)
