@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-28 00:40+0000\n"
-"PO-Revision-Date: 2025-06-24 11:34+0300\n"
+"PO-Revision-Date: 2025-06-28 13:08+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -128,7 +128,7 @@ msgstr "ШІ Kluster"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr ""
+msgstr "Похідний інтерфейс хмарного ШІ Kluster"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
