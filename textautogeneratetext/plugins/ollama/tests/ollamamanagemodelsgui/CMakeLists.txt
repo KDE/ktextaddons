@@ -3,4 +3,8 @@
 
 add_executable(ollamamanagemodelsgui_gui ollamamanagemodels_gui.cpp)
 
-target_link_libraries(ollamamanagemodelsgui_gui textautogenerateollama KF6::CoreAddons)
+target_link_libraries(
+    ollamamanagemodelsgui_gui
+    textautogenerateollama
+    KF6::CoreAddons
+)
