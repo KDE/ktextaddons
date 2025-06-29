@@ -265,6 +265,9 @@ TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::answerInfo()
 QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
 {
     QJsonObject obj;
+    if (mContent.isEmpty()) {
+        return obj;
+    }
     QString role;
     switch (mSender) {
     case Sender::Unknown:
