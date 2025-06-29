@@ -88,6 +88,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["model"_L1] = mGenericNetworkSettings->currentModel();
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
+    data["stream"_L1] = true;
     /*
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
