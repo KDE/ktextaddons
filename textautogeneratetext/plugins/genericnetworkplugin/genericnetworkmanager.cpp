@@ -83,6 +83,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     }
     QNetworkRequest req{QUrl::fromUserInput(apiUrl() + chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    req.setRawHeader("Accept", "application/json"_ba);
     req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     QJsonObject data;
     data["model"_L1] = mGenericNetworkSettings->currentModel();

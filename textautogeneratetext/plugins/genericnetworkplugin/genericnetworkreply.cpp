@@ -5,7 +5,9 @@
 */
 #include "genericnetworkreply.h"
 #include "autogeneratetext_genericnetwork_debug.h"
+#include <QJsonArray>
 #include <QNetworkReply>
+#include <qjsonobject.h>
 
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)
@@ -15,8 +17,10 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
         qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Ollama HTTP error:" << e;
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
-        const QByteArray data = mReply->read(received - mReceivedSize);
+        QByteArray data = mReply->read(received - mReceivedSize);
+        data.replace("data: ", "");
         mIncompleteTokens += data;
+        // qDebug() << " data " << mIncompleteTokens;
         mReceivedSize = received;
 
         switch (mRequestType) {
@@ -37,11 +41,15 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
             if (completeTokens.size() <= 1) {
                 return;
             }
+            // qDebug() << " completeTokens " << completeTokens;
             mIncompleteTokens = completeTokens.last();
             completeTokens.removeLast();
 
             mTokens.reserve(completeTokens.count());
             for (const auto &tok : std::as_const(completeTokens)) {
+                if (tok.isEmpty()) {
+                    continue;
+                }
                 mTokens.append(QJsonDocument::fromJson(tok));
             }
             break;
@@ -77,18 +85,22 @@ QString GenericNetworkReply::readResponse() const
     case RequestTypes::Unknown:
         break;
     case RequestTypes::StreamingChat:
+        // qDebug() << " mTokens " << mTokens;
         for (const auto &tok : mTokens) {
-            ret += tok["message"_L1]["content"_L1].toString();
+            const QJsonArray a = tok["choices"_L1].toArray();
+            ret += a.at(0).toObject()["delta"_L1]["content"_L1].toString();
         }
         break;
     case RequestTypes::Show:
         // TODO
         break;
     case RequestTypes::StreamingGenerate:
+        qDebug() << " mTokens333333333333 " << mTokens;
         for (const auto &tok : mTokens) {
             ret += tok["response"_L1].toString();
         }
     }
+    qDebug() << "ret " << ret;
     return ret;
 }
 
