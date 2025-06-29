@@ -322,7 +322,10 @@ QJsonArray TextAutoGenerateMessagesModel::convertToOllamaChat() const
 {
     QJsonArray array;
     for (const auto &msg : mMessages) {
-        array.append(msg.convertToOllamaChatJson());
+        const auto obj = msg.convertToOllamaChatJson();
+        if (!obj.isEmpty()) {
+            array.append(obj);
+        }
     }
     return array;
 }
