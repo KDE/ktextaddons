@@ -10,7 +10,11 @@ target_link_libraries(
 )
 
 #####
-add_executable(texttospeechgui texttospeechgui.cpp texttospeechgui.h)
+add_executable(
+    texttospeechgui
+    texttospeechgui.cpp
+    texttospeechgui.h
+)
 target_link_libraries(
     texttospeechgui
     KF6::TextEditTextToSpeech

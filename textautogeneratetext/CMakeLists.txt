@@ -1,9 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextautogeneratetext\")
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoGenerateText"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoGenerateText")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h"
@@ -27,7 +25,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/
     COMPONENT Devel
 )
@@ -266,13 +265,22 @@ endif()
 add_subdirectory(plugins)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextAutoGenerateText PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextAutoGenerateText
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextAutoGenerateText BASE_NAME textautogeneratetext)
 
 target_link_libraries(
     KF6TextAutoGenerateText
-    PUBLIC Qt::Gui Qt::Widgets Qt::Network KF6::ConfigGui
+    PUBLIC
+        Qt::Gui
+        Qt::Widgets
+        Qt::Network
+        KF6::ConfigGui
     PRIVATE
         Qt::Sql
         KF6::I18n
@@ -290,9 +298,12 @@ target_include_directories(
 set_target_properties(
     KF6TextAutoGenerateText
     PROPERTIES
-        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-        SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
-        EXPORT_NAME TextAutoGenerateText
+        VERSION
+            ${TEXTAUTOGENERATETEXT_VERSION}
+        SOVERSION
+            ${TEXTAUTOGENERATETEXT_SOVERSION}
+        EXPORT_NAME
+            TextAutoGenerateText
 )
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEADERS
@@ -377,14 +388,11 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsi
     RELATIVE widgets/instancesmanager
 )
 
-install(
-    TARGETS KF6TextAutoGenerateText
-    EXPORT KF6TextAutoGenerateTextTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextAutoGenerateText EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/
     COMPONENT Devel
 )
@@ -398,8 +406,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
 
@@ -413,8 +420,7 @@ install(
         ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
 
@@ -448,9 +454,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoGenerateTextQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAutoGenerateTextQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

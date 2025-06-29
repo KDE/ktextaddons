@@ -10,15 +10,10 @@ if(TARGET KF6::KIOWidgets)
     set(HAVE_KTEXTADDONS_KIO_SUPPORT TRUE)
 endif()
 
-configure_file(
-    config-textcustomeditor.h.in
-    ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h
-)
+configure_file(config-textcustomeditor.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textcustomeditor.h)
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextCustomEditor"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextCustomEditor")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTCUSTOMEDITOR
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h"
@@ -97,7 +92,12 @@ ecm_qt_declare_logging_category(KF6TextCustomEditor HEADER textcustomeditor_debu
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextCustomEditor PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextCustomEditor
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextCustomEditor BASE_NAME TextCustomEditor)
 
@@ -110,16 +110,15 @@ target_include_directories(
 set_target_properties(
     KF6TextCustomEditor
     PROPERTIES
-        VERSION ${TEXTCUSTOMEDITOR_VERSION}
-        SOVERSION ${TEXTCUSTOMEDITOR_SOVERSION}
-        EXPORT_NAME TextCustomEditor
+        VERSION
+            ${TEXTCUSTOMEDITOR_VERSION}
+        SOVERSION
+            ${TEXTCUSTOMEDITOR_SOVERSION}
+        EXPORT_NAME
+            TextCustomEditor
 )
 
-install(
-    TARGETS KF6TextCustomEditor
-    EXPORT KF6TextCustomEditorTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextCustomEditor EXPORT KF6TextCustomEditorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextCustomEditor_CamelCasetextrichtexteditor_HEADERS
     HEADER_NAMES
@@ -207,7 +206,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor
     COMPONENT Devel
 )
@@ -244,9 +244,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextCustomEditorQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextCustomEditorQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

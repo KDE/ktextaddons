@@ -1,9 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextspeechtotext\")
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextSpeechToText"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextSpeechToText")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTSPEECHTOTEXT
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h"
@@ -27,7 +25,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/
     COMPONENT Devel
 )
@@ -73,13 +72,21 @@ target_sources(
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextSpeechToText PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextSpeechToText
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextSpeechToText BASE_NAME textspeechtotext)
 
 target_link_libraries(
     KF6TextSpeechToText
-    PUBLIC Qt::Gui Qt::Widgets Qt::Network
+    PUBLIC
+        Qt::Gui
+        Qt::Widgets
+        Qt::Network
     PRIVATE
         Qt::MultimediaWidgets
         KF6::I18n
@@ -97,16 +104,15 @@ target_include_directories(
 set_target_properties(
     KF6TextSpeechToText
     PROPERTIES
-        VERSION ${TEXTSPEECHTOTEXT_VERSION}
-        SOVERSION ${TEXTSPEECHTOTEXT_SOVERSION}
-        EXPORT_NAME TextSpeechToText
+        VERSION
+            ${TEXTSPEECHTOTEXT_VERSION}
+        SOVERSION
+            ${TEXTSPEECHTOTEXT_SOVERSION}
+        EXPORT_NAME
+            TextSpeechToText
 )
 
-install(
-    TARGETS KF6TextSpeechToText
-    EXPORT KF6TextSpeechToTextTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextSpeechToText EXPORT KF6TextSpeechToTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextSpeechToText_Camelcasespeechtotext_HEADERS
     HEADER_NAMES
@@ -130,7 +136,8 @@ ecm_generate_headers(TextSpeechToTextWidget_Camelcasespeechtotext_HEADERS
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/
     COMPONENT Devel
 )
@@ -182,9 +189,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextSpeechToTextQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextSpeechToTextQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

@@ -38,10 +38,7 @@ target_link_libraries(
         KF6::WidgetsAddons
 )
 
-install(
-    TARGETS translator_lingva
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/
-)
+install(TARGETS translator_lingva DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

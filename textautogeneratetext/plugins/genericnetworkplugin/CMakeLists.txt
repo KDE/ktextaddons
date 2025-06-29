@@ -54,30 +54,40 @@ target_sources(
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
         textautogenerategenericnetwork
-        PROPERTIES UNITY_BUILD ON
+        PROPERTIES
+            UNITY_BUILD
+                ON
     )
 endif()
-generate_export_header(
-    textautogenerategenericnetwork
-    BASE_NAME textautogenerategenericnetwork
-)
+generate_export_header(textautogenerategenericnetwork BASE_NAME textautogenerategenericnetwork)
 
 target_link_libraries(
     textautogenerategenericnetwork
-    PUBLIC KF6::TextAutoGenerateText
-    PRIVATE KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons
+    PUBLIC
+        KF6::TextAutoGenerateText
+    PRIVATE
+        KF6::I18n
+        KF6::ConfigGui
+        KF6::CoreAddons
+        KF6::WidgetsAddons
 )
 set_target_properties(
     textautogenerategenericnetwork
     PROPERTIES
-        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-        SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
-        EXPORT_NAME TextAutoGenerateText
+        VERSION
+            ${TEXTAUTOGENERATETEXT_VERSION}
+        SOVERSION
+            ${TEXTAUTOGENERATETEXT_SOVERSION}
+        EXPORT_NAME
+            TextAutoGenerateText
 )
 
 install(
-    TARGETS textautogenerategenericnetwork ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    LIBRARY NAMELINK_SKIP
+    TARGETS
+        textautogenerategenericnetwork
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    LIBRARY
+        NAMELINK_SKIP
 )
 
 ######
@@ -110,10 +120,7 @@ target_link_libraries(
         textautogenerategenericnetwork
         qt6keychain
 )
-install(
-    TARGETS autogeneratetext_genericnetwork
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/
-)
+install(TARGETS autogeneratetext_genericnetwork DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

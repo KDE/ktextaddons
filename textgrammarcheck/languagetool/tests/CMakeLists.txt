@@ -4,7 +4,10 @@
 add_executable(languagetool_gui)
 target_sources(
     languagetool_gui
-    PRIVATE main.cpp languagetoolwidget.cpp languagetoolwidget.h
+    PRIVATE
+        main.cpp
+        languagetoolwidget.cpp
+        languagetoolwidget.h
 )
 target_link_libraries(
     languagetool_gui

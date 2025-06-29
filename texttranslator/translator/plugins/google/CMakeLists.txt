@@ -20,12 +20,14 @@ target_sources(
         googleengineplugin.cpp
 )
 
-target_link_libraries(translator_google PRIVATE KF6::TextTranslator KF6::I18n)
-
-install(
-    TARGETS translator_google
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/
+target_link_libraries(
+    translator_google
+    PRIVATE
+        KF6::TextTranslator
+        KF6::I18n
 )
+
+install(TARGETS translator_google DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

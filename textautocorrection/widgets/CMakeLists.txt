@@ -1,9 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoCorrectionWidgets"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAutoCorrectionWidgets")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOCORRECTIONWIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_version.h"
@@ -61,18 +59,22 @@ target_sources(
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
         KF6TextAutoCorrectionWidgets
-        PROPERTIES UNITY_BUILD ON
+        PROPERTIES
+            UNITY_BUILD
+                ON
     )
 endif()
-generate_export_header(
-    KF6TextAutoCorrectionWidgets
-    BASE_NAME textautocorrectionwidgets
-)
+generate_export_header(KF6TextAutoCorrectionWidgets BASE_NAME textautocorrectionwidgets)
 
 target_link_libraries(
     KF6TextAutoCorrectionWidgets
-    PUBLIC KF6::TextAutoCorrectionCore Qt::Widgets
-    PRIVATE KF6::I18n KF6::TextAddonsWidgets KF6::WidgetsAddons
+    PUBLIC
+        KF6::TextAutoCorrectionCore
+        Qt::Widgets
+    PRIVATE
+        KF6::I18n
+        KF6::TextAddonsWidgets
+        KF6::WidgetsAddons
 )
 
 target_include_directories(
@@ -84,13 +86,17 @@ target_include_directories(
 set_target_properties(
     KF6TextAutoCorrectionWidgets
     PROPERTIES
-        VERSION ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
-        SOVERSION ${TEXTAUTOCORRECTIONWIDGETS_SOVERSION}
-        EXPORT_NAME TextAutoCorrectionWidgets
+        VERSION
+            ${TEXTAUTOCORRECTIONWIDGETS_VERSION}
+        SOVERSION
+            ${TEXTAUTOCORRECTIONWIDGETS_SOVERSION}
+        EXPORT_NAME
+            TextAutoCorrectionWidgets
 )
 
 install(
-    TARGETS KF6TextAutoCorrectionWidgets
+    TARGETS
+        KF6TextAutoCorrectionWidgets
     EXPORT KF6TextAutoCorrectionWidgetsTargets
     ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
@@ -110,9 +116,9 @@ ecm_generate_headers(TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS
 )
 
 install(
-    FILES ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/TextAutoCorrectionWidgets
+    FILES
+        ${TextAutoCorrection_Camelcaseautocorrectionwidgets_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/TextAutoCorrectionWidgets
     COMPONENT Devel
 )
 
@@ -120,8 +126,7 @@ install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_export.h
         ${TextAutoCorrection_autocorrectionwidgets_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/textautocorrectionwidgets
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/textautocorrectionwidgets
     COMPONENT Devel
 )
 
@@ -167,7 +172,8 @@ configure_package_config_file(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautocorrectionwidgets_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoCorrectionWidgets/
     COMPONENT Devel
 )

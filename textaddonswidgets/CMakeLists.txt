@@ -3,9 +3,7 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextaddonswidgets\")
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAddonsWidgets"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextAddonsWidgets")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTADDONSWIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_version.h"
@@ -26,7 +24,10 @@ target_sources(
 )
 target_link_libraries(
     KF6TextAddonsWidgets
-    PRIVATE Qt::Widgets KF6::WidgetsAddons KF6::ConfigGui
+    PRIVATE
+        Qt::Widgets
+        KF6::WidgetsAddons
+        KF6::ConfigGui
 )
 
 ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
@@ -37,7 +38,12 @@ ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER TextAddonsWidgets_de
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextAddonsWidgets PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextAddonsWidgets
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextAddonsWidgets BASE_NAME TextAddonsWidgets)
 
@@ -52,16 +58,15 @@ target_link_libraries(KF6TextAddonsWidgets PRIVATE KF6::I18n)
 set_target_properties(
     KF6TextAddonsWidgets
     PROPERTIES
-        VERSION ${TEXTADDONSWIDGETS_VERSION}
-        SOVERSION ${TEXTADDONSWIDGETS_SOVERSION}
-        EXPORT_NAME TextAddonsWidgets
+        VERSION
+            ${TEXTADDONSWIDGETS_VERSION}
+        SOVERSION
+            ${TEXTADDONSWIDGETS_SOVERSION}
+        EXPORT_NAME
+            TextAddonsWidgets
 )
 
-install(
-    TARGETS KF6TextAddonsWidgets
-    EXPORT KF6TextAddonsWidgetsTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextAddonsWidgets EXPORT KF6TextAddonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
@@ -83,8 +88,7 @@ install(
     FILES
         ${TextAddonsWidgets_CamelCase_HEADERS}
         ${TextAddonsWidgets_lineedit_CamelCase_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
 
@@ -104,7 +108,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets
     COMPONENT Devel
 )
@@ -139,9 +144,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAddonsWidgetsQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextAddonsWidgetsQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

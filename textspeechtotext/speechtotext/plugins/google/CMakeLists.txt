@@ -22,10 +22,9 @@ target_sources(
 
 target_link_libraries(
     speechtotext_google
-    PRIVATE KF6::TextSpeechToText KF6::I18n
+    PRIVATE
+        KF6::TextSpeechToText
+        KF6::I18n
 )
 
-install(
-    TARGETS speechtotext_google
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/
-)
+install(TARGETS speechtotext_google DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/speechtotext/)

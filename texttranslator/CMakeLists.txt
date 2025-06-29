@@ -25,7 +25,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/
     COMPONENT Devel
 )
@@ -84,14 +85,26 @@ endif()
 add_subdirectory(translator/plugins)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextTranslator PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextTranslator
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextTranslator BASE_NAME texttranslator)
 
 target_link_libraries(
     KF6TextTranslator
-    PUBLIC Qt::Gui Qt::Widgets Qt::Network
-    PRIVATE KF6::I18n KF6::WidgetsAddons KF6::ConfigGui KF6::TextAddonsWidgets
+    PUBLIC
+        Qt::Gui
+        Qt::Widgets
+        Qt::Network
+    PRIVATE
+        KF6::I18n
+        KF6::WidgetsAddons
+        KF6::ConfigGui
+        KF6::TextAddonsWidgets
 )
 
 target_include_directories(
@@ -103,16 +116,15 @@ target_include_directories(
 set_target_properties(
     KF6TextTranslator
     PROPERTIES
-        VERSION ${TEXTTRANSLATE_VERSION}
-        SOVERSION ${TEXTTRANSLATE_SOVERSION}
-        EXPORT_NAME TextTranslator
+        VERSION
+            ${TEXTTRANSLATE_VERSION}
+        SOVERSION
+            ${TEXTTRANSLATE_SOVERSION}
+        EXPORT_NAME
+            TextTranslator
 )
 
-install(
-    TARGETS KF6TextTranslator
-    EXPORT KF6TextTranslatorTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextTranslator EXPORT KF6TextTranslatorTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextTranslator_Camelcasetranslatorwidgets_HEADERS
     HEADER_NAMES
@@ -146,7 +158,8 @@ ecm_generate_headers(TextTranslator_Camelcasetranslatormisc_HEADERS
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/
     COMPONENT Devel
 )
@@ -204,9 +217,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextTranslatorQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextTranslatorQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

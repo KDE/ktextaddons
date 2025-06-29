@@ -39,10 +39,7 @@ target_link_libraries(
         KF6::WidgetsAddons
 )
 target_link_libraries(translator_libretranslate PRIVATE qt6keychain)
-install(
-    TARGETS translator_libretranslate
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/
-)
+install(TARGETS translator_libretranslate DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

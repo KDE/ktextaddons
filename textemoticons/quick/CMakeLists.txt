@@ -7,7 +7,9 @@ target_sources(ktextaddonsquickplugin PRIVATE types.h)
 
 target_link_libraries(
     ktextaddonsquickplugin
-    PRIVATE Qt::Qml KF6::TextEmoticonsCore
+    PRIVATE
+        Qt::Qml
+        KF6::TextEmoticonsCore
 )
 
 ecm_finalize_qml_module(ktextaddonsquickplugin)

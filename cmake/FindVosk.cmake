@@ -17,7 +17,15 @@ if(CMAKE_CROSSCOMPILING)
     set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
 endif()
 
-find_library(VOSK_LIBRARY NAMES vosk libvosk PATHS ${VOSK_DIR} NO_DEFAULT_PATH)
+find_library(
+    VOSK_LIBRARY
+    NAMES
+        vosk
+        libvosk
+    PATHS
+        ${VOSK_DIR}
+    NO_DEFAULT_PATH
+)
 
 if(VOSK_LIBRARY STREQUAL "VOSK_LIBRARY-NOTFOUND")
     set(Vosk_FOUND OFF)

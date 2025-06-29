@@ -37,10 +37,7 @@ target_link_libraries(
 )
 target_link_libraries(translator_deepl PRIVATE qt6keychain)
 
-install(
-    TARGETS translator_deepl
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/
-)
+install(TARGETS translator_deepl DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()

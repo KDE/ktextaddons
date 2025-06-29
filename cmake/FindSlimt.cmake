@@ -31,13 +31,18 @@ else()
     )
 endif()
 
-mark_as_advanced(slimt_INCLUDE_DIRS slimt_LIBRARIES)
+mark_as_advanced(
+    slimt_INCLUDE_DIRS
+    slimt_LIBRARIES
+)
 if(slimt_FOUND)
     add_library(slimt::Lib UNKNOWN IMPORTED)
     set_target_properties(
         slimt::Lib
         PROPERTIES
-            INTERFACE_INCLUDE_DIRECTORIES ${slimt_INCLUDE_DIRS}
-            IMPORTED_LOCATION ${slimt_LIBRARIES}
+            INTERFACE_INCLUDE_DIRECTORIES
+                ${slimt_INCLUDE_DIRS}
+            IMPORTED_LOCATION
+                ${slimt_LIBRARIES}
     )
 endif()

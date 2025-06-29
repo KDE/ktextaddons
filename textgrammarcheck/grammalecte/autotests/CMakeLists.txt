@@ -6,11 +6,20 @@ add_definitions(-DGRAMMALECTE_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 macro(add_grammalecte_unittest _source)
     set(_test ${_source})
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test} ${_name}.h)
+    add_executable(
+        ${_name}
+        ${_test}
+        ${_name}.h
+    )
     add_test(NAME ${_name} COMMAND ${_name})
 
     ecm_mark_as_test(kmail_grammalecte-${_name})
-    target_link_libraries(${_name} Qt::Test KF6::I18n KF6::TextGrammarCheck)
+    target_link_libraries(
+        ${_name}
+        Qt::Test
+        KF6::I18n
+        KF6::TextGrammarCheck
+    )
 endmacro()
 
 add_grammalecte_unittest(grammalecteparsertest.cpp)

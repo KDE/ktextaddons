@@ -3,9 +3,7 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libtextedittexttospeech\")
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEditTextToSpeech"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEditTextToSpeech")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h"
@@ -63,7 +61,12 @@ ecm_qt_declare_logging_category(KF6TextEditTextToSpeech HEADER textedittexttospe
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextEditTextToSpeech PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextEditTextToSpeech
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextEditTextToSpeech BASE_NAME textedittexttospeech)
 
@@ -78,16 +81,15 @@ target_link_libraries(KF6TextEditTextToSpeech PRIVATE KF6::I18n)
 set_target_properties(
     KF6TextEditTextToSpeech
     PROPERTIES
-        VERSION ${TEXTEDITTEXTTOSPEECH_VERSION}
-        SOVERSION ${TEXTEDITTEXTTOSPEECH_SOVERSION}
-        EXPORT_NAME TextEditTextToSpeech
+        VERSION
+            ${TEXTEDITTEXTTOSPEECH_VERSION}
+        SOVERSION
+            ${TEXTEDITTEXTTOSPEECH_SOVERSION}
+        EXPORT_NAME
+            TextEditTextToSpeech
 )
 
-install(
-    TARGETS KF6TextEditTextToSpeech
-    EXPORT KF6TextEditTextToSpeechTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextEditTextToSpeech EXPORT KF6TextEditTextToSpeechTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
@@ -111,14 +113,13 @@ install(
     FILES
         ${TextEdit_texttospeechs_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_export.h
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/textedittexttospeech
     COMPONENT Devel
 )
 install(
-    FILES ${TextEdit_CamelCasetexttospeechs_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
+    FILES
+        ${TextEdit_CamelCasetexttospeechs_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech/TextEditTextToSpeech/
     COMPONENT Devel
 )
 if(BUILD_QCH)
@@ -128,13 +129,12 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEditTextToSpeechQchTargets.cmake\")")
 endif()
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textedittexttospeech_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech
     COMPONENT Devel
 )

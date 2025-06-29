@@ -98,26 +98,42 @@ target_sources(
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(textautogenerateollama PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        textautogenerateollama
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(textautogenerateollama BASE_NAME textautogenerateollama)
 
 target_link_libraries(
     textautogenerateollama
-    PUBLIC KF6::TextAutoGenerateText
-    PRIVATE KF6::I18n KF6::ConfigGui KF6::CoreAddons KF6::WidgetsAddons
+    PUBLIC
+        KF6::TextAutoGenerateText
+    PRIVATE
+        KF6::I18n
+        KF6::ConfigGui
+        KF6::CoreAddons
+        KF6::WidgetsAddons
 )
 set_target_properties(
     textautogenerateollama
     PROPERTIES
-        VERSION ${TEXTAUTOGENERATETEXT_VERSION}
-        SOVERSION ${TEXTAUTOGENERATETEXT_SOVERSION}
-        EXPORT_NAME TextAutoGenerateText
+        VERSION
+            ${TEXTAUTOGENERATETEXT_VERSION}
+        SOVERSION
+            ${TEXTAUTOGENERATETEXT_SOVERSION}
+        EXPORT_NAME
+            TextAutoGenerateText
 )
 
 install(
-    TARGETS textautogenerateollama ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    LIBRARY NAMELINK_SKIP
+    TARGETS
+        textautogenerateollama
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    LIBRARY
+        NAMELINK_SKIP
 )
 
 #####
@@ -134,7 +150,11 @@ ecm_qt_declare_logging_category(autogeneratetext_ollama
 
 target_sources(
     autogeneratetext_ollama
-    PRIVATE ollamaclient.h ollamaclient.cpp ollamaplugin.h ollamaplugin.cpp
+    PRIVATE
+        ollamaclient.h
+        ollamaclient.cpp
+        ollamaplugin.h
+        ollamaplugin.cpp
 )
 
 target_link_libraries(
@@ -146,10 +166,7 @@ target_link_libraries(
         KF6::I18n
         KF6::WidgetsAddons
 )
-install(
-    TARGETS autogeneratetext_ollama
-    DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/
-)
+install(TARGETS autogeneratetext_ollama DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/textautogeneratetext/)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)

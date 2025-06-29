@@ -13,12 +13,18 @@ find_package(ECM ${KF_MIN_VERSION} NO_MODULE)
 set_package_properties(
     ECM
     PROPERTIES
-        TYPE REQUIRED
-        DESCRIPTION "Extra CMake Modules."
-        URL "https://invent.kde.org/frameworks/extra-cmake-modules"
+        TYPE
+            REQUIRED
+        DESCRIPTION
+            "Extra CMake Modules."
+        URL
+            "https://invent.kde.org/frameworks/extra-cmake-modules"
 )
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/
+    ${ECM_MODULE_PATH}
+)
 
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
@@ -85,7 +91,12 @@ find_package(
     Qt6
     ${QT_REQUIRED_VERSION}
     CONFIG
-    REQUIRED Widgets Core Network Xml Sql
+    REQUIRED
+        Widgets
+        Core
+        Network
+        Xml
+        Sql
 )
 
 find_package(
@@ -103,7 +114,11 @@ find_package(
         TextWidgets
 )
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
-add_feature_info(KIO_SUPPORT ${BUILD_KIO_SUPPORT} "Build with KIO support")
+add_feature_info(
+    KIO_SUPPORT
+    ${BUILD_KIO_SUPPORT}
+    "Build with KIO support"
+)
 
 if(${BUILD_KIO_SUPPORT})
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
@@ -120,9 +135,12 @@ find_package(Qt6Keychain ${QT6KEYCHAIN_LIB_VERSION} CONFIG)
 set_package_properties(
     Qt6Keychain
     PROPERTIES
-        DESCRIPTION "Provides support for secure credentials storage"
-        URL "https://github.com/frankosterfeld/qtkeychain"
-        TYPE REQUIRED
+        DESCRIPTION
+            "Provides support for secure credentials storage"
+        URL
+            "https://github.com/frankosterfeld/qtkeychain"
+        TYPE
+            REQUIRED
 )
 
 if(BUILD_TESTING)
@@ -130,11 +148,7 @@ if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
 
-option(
-    USE_UNITY_CMAKE_SUPPORT
-    "Use UNITY cmake support (speedup compile time)"
-    OFF
-)
+option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if(USE_UNITY_CMAKE_SUPPORT)
@@ -155,22 +169,14 @@ add_feature_info(
     "Vosk speak to text plugin (local text to speak) (Experimental)"
 )
 
-option(
-    BUILD_QCH
-    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-    OFF
-)
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(
     QCH
     ${BUILD_QCH}
     "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
 )
 
-option(
-    DISABLE_AUTOTEST_BROKEN_CI
-    "Disable autotest broken on CI (work locally)"
-    OFF
-)
+option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)" OFF)
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(
@@ -183,8 +189,10 @@ if(BERGAMOT_TRANSLATOR_PLUGIN)
     set_package_properties(
         slimt
         PROPERTIES
-            DESCRIPTION "Add local translation based on Bergamot"
-            TYPE OPTIONAL
+            DESCRIPTION
+                "Add local translation based on Bergamot"
+            TYPE
+                OPTIONAL
     )
 endif()
 
@@ -201,7 +209,11 @@ add_subdirectory(textautogeneratetext)
 find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(
     Qt6TextToSpeech
-    PROPERTIES DESCRIPTION "Add support for text to speech" TYPE OPTIONAL
+    PROPERTIES
+        DESCRIPTION
+            "Add support for text to speech"
+        TYPE
+            OPTIONAL
 )
 if(TARGET Qt6::TextToSpeech)
     add_subdirectory(textedittexttospeech)

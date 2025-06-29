@@ -1,7 +1,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 add_executable(translator_gui translator_gui.cpp)
-target_link_libraries(translator_gui KF6::TextTranslator KF6::I18n)
+target_link_libraries(
+    translator_gui
+    KF6::TextTranslator
+    KF6::I18n
+)
 
 ######
 add_executable(
@@ -16,10 +20,7 @@ target_link_libraries(
 )
 
 #####
-add_executable(
-    translatorconfigurelistswidget_gui
-    translatorconfigurelistswidget_gui.cpp
-)
+add_executable(translatorconfigurelistswidget_gui translatorconfigurelistswidget_gui.cpp)
 target_link_libraries(
     translatorconfigurelistswidget_gui
     KF6::TextTranslator

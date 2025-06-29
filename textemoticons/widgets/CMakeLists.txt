@@ -1,9 +1,7 @@
 # SPDX-FileCopyrightText: 2023-2025 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR
-    "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEmoticonsWidgets"
-)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6TextEmoticonsWidgets")
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSWIDGETS
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/textemoticonswidgets_version.h"
@@ -38,8 +36,11 @@ target_sources(
 
 target_link_libraries(
     KF6TextEmoticonsWidgets
-    PUBLIC KF6::WidgetsAddons KF6::TextEmoticonsCore
-    PRIVATE Qt::Widgets
+    PUBLIC
+        KF6::WidgetsAddons
+        KF6::TextEmoticonsCore
+    PRIVATE
+        Qt::Widgets
 )
 
 ecm_qt_declare_logging_category(KF6TextEmoticonsWidgets HEADER textemoticonswidgets_debug.h
@@ -50,7 +51,12 @@ ecm_qt_declare_logging_category(KF6TextEmoticonsWidgets HEADER textemoticonswidg
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextEmoticonsWidgets PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextEmoticonsWidgets
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextEmoticonsWidgets BASE_NAME TextEmoticonsWidgets)
 
@@ -65,16 +71,15 @@ target_link_libraries(KF6TextEmoticonsWidgets PRIVATE KF6::I18n)
 set_target_properties(
     KF6TextEmoticonsWidgets
     PROPERTIES
-        VERSION ${TEXTEMOTICONSWIDGETS_VERSION}
-        SOVERSION ${TEXTEMOTICONSWIDGETS_SOVERSION}
-        EXPORT_NAME TextEmoticonsWidgets
+        VERSION
+            ${TEXTEMOTICONSWIDGETS_VERSION}
+        SOVERSION
+            ${TEXTEMOTICONSWIDGETS_SOVERSION}
+        EXPORT_NAME
+            TextEmoticonsWidgets
 )
 
-install(
-    TARGETS KF6TextEmoticonsWidgets
-    EXPORT KF6TextEmoticonsWidgetsTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextEmoticonsWidgets EXPORT KF6TextEmoticonsWidgetsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
@@ -93,14 +98,13 @@ install(
     FILES
         ${TextEmoticonsWidgets_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textemoticonswidgets_export.h
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets/textemoticonswidgets
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets/textemoticonswidgets
     COMPONENT Devel
 )
 install(
-    FILES ${TextEmoticonsWidgets_CamelCase_HEADERS}
-    DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets/TextEmoticonsWidgets/
+    FILES
+        ${TextEmoticonsWidgets_CamelCase_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets/TextEmoticonsWidgets/
     COMPONENT Devel
 )
 
@@ -120,7 +124,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textemoticonswidgets_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textemoticonswidgets_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets
     COMPONENT Devel
 )
@@ -155,9 +160,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEmoticonsWidgetsQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextEmoticonsWidgetsQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

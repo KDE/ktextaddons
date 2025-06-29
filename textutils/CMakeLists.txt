@@ -14,7 +14,12 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTUTILS
 add_library(KF6TextUtils)
 add_library(KF6::TextUtils ALIAS KF6TextUtils)
 
-target_sources(KF6TextUtils PRIVATE converttext.cpp converttext.h)
+target_sources(
+    KF6TextUtils
+    PRIVATE
+        converttext.cpp
+        converttext.h
+)
 
 target_link_libraries(KF6TextUtils PRIVATE Qt::Core)
 
@@ -26,30 +31,31 @@ ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF6TextUtils PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KF6TextUtils
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KF6TextUtils BASE_NAME TextUtils)
 
-target_include_directories(
-    KF6TextUtils
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils;>"
-)
+target_include_directories(KF6TextUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils;>")
 
 target_link_libraries(KF6TextUtils PUBLIC Qt::Gui)
 
 set_target_properties(
     KF6TextUtils
     PROPERTIES
-        VERSION ${TEXTUTILS_VERSION}
-        SOVERSION ${TEXTUTILS_SOVERSION}
-        EXPORT_NAME TextUtils
+        VERSION
+            ${TEXTUTILS_VERSION}
+        SOVERSION
+            ${TEXTUTILS_SOVERSION}
+        EXPORT_NAME
+            TextUtils
 )
 
-install(
-    TARGETS KF6TextUtils
-    EXPORT KF6TextUtilsTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KF6TextUtils EXPORT KF6TextUtilsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(TextUtils_CamelCase_HEADERS
     HEADER_NAMES
@@ -59,12 +65,15 @@ ecm_generate_headers(TextUtils_CamelCase_HEADERS
 )
 
 install(
-    FILES ${TextUtils_HEADERS} ${CMAKE_CURRENT_BINARY_DIR}/textutils_export.h
+    FILES
+        ${TextUtils_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/textutils_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/textutils
     COMPONENT Devel
 )
 install(
-    FILES ${TextUtils_CamelCase_HEADERS}
+    FILES
+        ${TextUtils_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )
@@ -75,9 +84,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextUtilsQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6TextUtilsQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
@@ -102,7 +109,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/textutils_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textutils_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils
     COMPONENT Devel
 )
