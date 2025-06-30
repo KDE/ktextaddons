@@ -69,12 +69,6 @@ void GenericNetworkManager::loadModels()
     });
 }
 
-TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
-{
-    // TODO
-    return {};
-}
-
 TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
 {
     if (mApiKey.isEmpty()) {

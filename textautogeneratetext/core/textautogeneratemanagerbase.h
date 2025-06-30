@@ -27,7 +27,7 @@ public:
 
     virtual void loadModels() = 0;
 
-    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *getChatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request) = 0;
 Q_SIGNALS:
     void modelsLoadDone(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &models);

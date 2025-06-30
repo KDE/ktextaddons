@@ -11,6 +11,12 @@ TextAutoGenerateManagerBase::TextAutoGenerateManagerBase(QObject *parent)
 {
 }
 
+TextAutoGenerateReply *TextAutoGenerateManagerBase::getCompletion(const TextAutoGenerateTextRequest &request)
+{
+    Q_UNUSED(request)
+    return {};
+}
+
 TextAutoGenerateManagerBase::~TextAutoGenerateManagerBase() = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateManagerBase::ModelsInfo &t)
