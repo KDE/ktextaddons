@@ -74,12 +74,27 @@ void TextAutoGenerateBaseListView::resizeEvent(QResizeEvent *ev)
     mDelegate->clearSizeHintCache();
 }
 
+QString TextAutoGenerateBaseListView::selectedText(const QModelIndex &index) const
+{
+    QString message = mDelegate->selectedText();
+    if (message.isEmpty()) {
+        if (!index.isValid()) {
+            return {};
+        }
+        message = originalMessage(index);
+    }
+    return message;
+}
+
 void TextAutoGenerateBaseListView::slotCopyMessage(const QModelIndex &index)
 {
-    const QString currentValue = index.data().toString();
+    const QString messageText = selectedText(index);
+    if (messageText.isEmpty()) {
+        return;
+    }
     QClipboard *clip = QApplication::clipboard();
-    clip->setText(currentValue, QClipboard::Clipboard);
-    clip->setText(currentValue, QClipboard::Selection);
+    clip->setText(messageText, QClipboard::Clipboard);
+    clip->setText(messageText, QClipboard::Selection);
 }
 
 QStyleOptionViewItem TextAutoGenerateBaseListView::listViewOptions() const

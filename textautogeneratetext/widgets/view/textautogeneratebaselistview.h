@@ -25,6 +25,8 @@ protected:
     void mouseDoubleClickEvent(QMouseEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
+    [[nodiscard]] virtual QString originalMessage(const QModelIndex &index) const = 0;
+    [[nodiscard]] QString selectedText(const QModelIndex &index) const;
     virtual void handleMouseEvent(QMouseEvent *event);
 
     void resizeEvent(QResizeEvent *ev) override;

@@ -27,6 +27,7 @@ public:
 
 protected:
     void leaveEvent(QEvent *event) override;
+    [[nodiscard]] QString originalMessage(const QModelIndex &index) const override;
 
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);

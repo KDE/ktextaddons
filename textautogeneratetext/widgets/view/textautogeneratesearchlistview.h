@@ -24,6 +24,8 @@ protected:
     void paintEvent(QPaintEvent *event) override;
     [[nodiscard]] bool event(QEvent *ev) override;
 
+    [[nodiscard]] QString originalMessage(const QModelIndex &index) const override;
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotGoToMessage(const QString &link);
     TEXTAUTOGENERATETEXT_NO_EXPORT void generalPaletteChanged();

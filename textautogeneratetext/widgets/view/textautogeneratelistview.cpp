@@ -112,6 +112,11 @@ void TextAutoGenerateListView::leaveEvent(QEvent *event)
     QListView::leaveEvent(event);
 }
 
+QString TextAutoGenerateListView::originalMessage(const QModelIndex &index) const
+{
+    return index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
+}
+
 void TextAutoGenerateListView::handleKeyPressEvent(QKeyEvent *ev)
 {
     const int key = ev->key();

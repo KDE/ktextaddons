@@ -81,4 +81,9 @@ bool TextAutoGenerateSearchListView::event(QEvent *ev)
     return TextAutoGenerateBaseListView::event(ev);
 }
 
+QString TextAutoGenerateSearchListView::originalMessage(const QModelIndex &index) const
+{
+    return index.data(TextAutoGenerateSearchMessagesModel::PreviewText).toString();
+}
+
 #include "moc_textautogeneratesearchlistview.cpp"
