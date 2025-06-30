@@ -21,8 +21,6 @@ public:
                           QObject *parent = nullptr);
     ~OllamaPlugin() override;
 
-    void clear() override;
-
     void setPrompt(const QString &text) override;
 
     [[nodiscard]] QString engineName() const override;
@@ -41,7 +39,6 @@ public:
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
-    void cancelRequest(const QByteArray &uuid) override;
     void askToAssistant(const QString &msg) override;
 
 private:

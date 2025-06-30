@@ -172,4 +172,27 @@ bool TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier::isValid() const
     return !modelName.isEmpty() && !identifier.isEmpty();
 }
 
+void TextAutoGenerateTextPlugin::clear()
+{
+    for (const auto &connection : std::as_const(mConnections)) {
+        disconnect(connection.second);
+    }
+    mConnections.clear();
+    // TODO clear all thread
+}
+
+void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
+{
+    if (uuid.isEmpty()) {
+        clear();
+    } else {
+        for (const auto &connection : std::as_const(mConnections)) {
+            if (connection.first == uuid) {
+                disconnect(connection.second);
+                // mConnections.take(connection.);
+            }
+        }
+    }
+}
+
 #include "moc_textautogeneratetextplugin.cpp"

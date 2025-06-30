@@ -78,15 +78,6 @@ void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
     }
 }
 
-void OllamaPlugin::clear()
-{
-    for (const auto &connection : std::as_const(mConnections)) {
-        disconnect(connection.second);
-    }
-    mConnections.clear();
-    // TODO clear all thread
-}
-
 void OllamaPlugin::setPrompt(const QString &text)
 {
     // TODO
@@ -95,20 +86,6 @@ void OllamaPlugin::setPrompt(const QString &text)
 QString OllamaPlugin::engineName() const
 {
     return "ollama"_L1;
-}
-
-void OllamaPlugin::cancelRequest(const QByteArray &uuid)
-{
-    if (uuid.isEmpty()) {
-        clear();
-    } else {
-        for (const auto &connection : std::as_const(mConnections)) {
-            if (connection.first == uuid) {
-                disconnect(connection.second);
-                // mConnections.take(connection.);
-            }
-        }
-    }
 }
 
 void OllamaPlugin::askToAssistant(const QString &msg)

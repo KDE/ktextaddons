@@ -22,8 +22,6 @@ public:
                                   QObject *parent = nullptr);
     ~GenericNetworkPlugin() override;
 
-    void clear() override;
-
     void setPrompt(const QString &text) override;
 
     [[nodiscard]] QString engineName() const override;

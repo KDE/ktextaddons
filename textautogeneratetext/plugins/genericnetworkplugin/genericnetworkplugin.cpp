@@ -92,15 +92,6 @@ void GenericNetworkPlugin::save(KConfigGroup &config)
     writeJob->start();
 }
 
-void GenericNetworkPlugin::clear()
-{
-    for (const auto &connection : std::as_const(mConnections)) {
-        disconnect(connection.second);
-    }
-    mConnections.clear();
-    // TODO clear all thread
-}
-
 void GenericNetworkPlugin::setPrompt(const QString &text)
 {
     // TODO

@@ -45,7 +45,7 @@ public:
 
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
-    virtual void clear() = 0;
+    virtual void clear();
     [[nodiscard]] virtual QString translatedPluginName() const = 0;
 
     virtual void setPrompt(const QString &text) = 0;
@@ -56,7 +56,7 @@ public:
     void setReady(bool newReady);
 
     void sendMessage(const QByteArray &chatId, const QString &str);
-    virtual void cancelRequest(const QByteArray &uuid) = 0;
+    virtual void cancelRequest(const QByteArray &uuid);
 
     void editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str);
 
