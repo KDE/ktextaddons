@@ -41,4 +41,4 @@ private:
     // TODO add tags
 };
 Q_DECLARE_TYPEINFO(GenericNetworkModelAvailableInfo, Q_RELOCATABLE_TYPE);
-QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t);
+TEXTAUTOGENERATEGENERICNETWORK_EXPORT QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t);
