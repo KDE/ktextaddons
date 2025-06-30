@@ -29,6 +29,11 @@ TextAutoGenerateListViewBaseDelegate::TextAutoGenerateListViewBaseDelegate(QList
 
 TextAutoGenerateListViewBaseDelegate::~TextAutoGenerateListViewBaseDelegate() = default;
 
+void TextAutoGenerateListViewBaseDelegate::clearSelection()
+{
+    mTextSelection->clear();
+}
+
 void TextAutoGenerateListViewBaseDelegate::clearCache()
 {
     clearSizeHintCache();

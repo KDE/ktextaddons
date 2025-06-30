@@ -34,6 +34,8 @@ public:
 
     void selectAll(const QStyleOptionViewItem &option, const QModelIndex &index);
 
+    void clearSelection();
+
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
 

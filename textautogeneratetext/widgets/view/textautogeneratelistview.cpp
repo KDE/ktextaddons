@@ -210,6 +210,7 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
     const QAbstractItemModel *oldModel = model();
     if (oldModel) {
         disconnect(oldModel, nullptr, this, nullptr);
+        mDelegate->clearSelection();
     }
     QListView::setModel(newModel);
     if (newModel) {
