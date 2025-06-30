@@ -46,7 +46,11 @@ protected:
     void askToAssistant(const QString &msg) override;
     void cancelRequest(const QByteArray &uuid) override;
 
+Q_SIGNALS:
+    void loadApiKeyDone();
+
 private:
+    void loadApiKey();
     GenericNetworkSettings *const mSettings;
     GenericNetworkManager *const mGenericManager;
 };

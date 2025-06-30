@@ -39,7 +39,9 @@ GenericNetworkPlugin::GenericNetworkPlugin(TextAutoGenerateText::TextAutoGenerat
                     setReady(true);
                 }
             });
-    mGenericManager->loadModels();
+    connect(this, &GenericNetworkPlugin::loadApiKeyDone, this, [this]() {
+        mGenericManager->loadModels();
+    });
 }
 
 GenericNetworkPlugin::~GenericNetworkPlugin()
@@ -47,12 +49,8 @@ GenericNetworkPlugin::~GenericNetworkPlugin()
     delete mSettings;
 }
 
-void GenericNetworkPlugin::load(const KConfigGroup &config)
+void GenericNetworkPlugin::loadApiKey()
 {
-    mSettings->setDisplayName(config.readEntry(u"Name"_s));
-    mSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
-    mSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
-    mSettings->setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
     auto readJob = new QKeychain::ReadPasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
     connect(readJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
         auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
@@ -61,10 +59,20 @@ void GenericNetworkPlugin::load(const KConfigGroup &config)
             qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << "We have an error during reading password " << job->errorString();
         } else {
             mGenericManager->setApiKey(job->textData());
+            Q_EMIT loadApiKeyDone();
         }
     });
     readJob->setKey(QString::fromLatin1(instanceUuid()));
     readJob->start();
+}
+
+void GenericNetworkPlugin::load(const KConfigGroup &config)
+{
+    mSettings->setDisplayName(config.readEntry(u"Name"_s));
+    mSettings->setCurrentModel(config.readEntry(u"CurrentModel"_s));
+    mSettings->setTemperature(config.readEntry(u"Temperature"_s, 0.8));
+    mSettings->setMaxTokens(config.readEntry(u"MaxToken"_s, 2048));
+    loadApiKey();
 }
 
 void GenericNetworkPlugin::save(KConfigGroup &config)
