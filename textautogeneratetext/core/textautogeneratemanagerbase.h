@@ -40,4 +40,4 @@ protected:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo, Q_RELOCATABLE_TYPE);
-QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &t);
