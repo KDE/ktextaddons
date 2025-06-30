@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-28 00:40+0000\n"
-"PO-Revision-Date: 2025-06-20 14:15+0200\n"
+"PO-Revision-Date: 2025-06-28 20:48+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -122,12 +122,12 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "IA"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr ""
+msgstr "API di inferenza cloud Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -1976,15 +1976,12 @@ msgid "Remove Instance"
 msgstr "Rimuovi istanza"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Vuoi rimuovere questa istanza?"
+msgstr "Vuoi rimuovere questa istanza (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Instance"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
 msgstr "Rimuovi istanza"
@@ -2064,7 +2061,7 @@ msgstr "Chiave API:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:46
 #, kde-format
 msgid "Max Tokens:"
-msgstr ""
+msgstr "Numero massimo di token:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
