@@ -59,17 +59,6 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
             break;
         }
         case RequestTypes::StreamingGenerate:
-            auto completeTokens = mIncompleteTokens.split('\n');
-            if (completeTokens.size() <= 1) {
-                return;
-            }
-            mIncompleteTokens = completeTokens.last();
-            completeTokens.removeLast();
-
-            mTokens.reserve(completeTokens.count());
-            for (const auto &tok : std::as_const(completeTokens)) {
-                mTokens.append(QJsonDocument::fromJson(tok));
-            }
             break;
         }
 
@@ -91,19 +80,18 @@ QString GenericNetworkReply::readResponse() const
     case RequestTypes::StreamingChat:
         // qDebug() << " mTokens " << mTokens;
         for (const auto &tok : mTokens) {
-            const QJsonArray a = tok["choices"_L1].toArray();
-            ret += a.at(0).toObject()["delta"_L1]["content"_L1].toString();
+            const QJsonArray choicesArray = tok["choices"_L1].toArray();
+            if (!choicesArray.isEmpty()) {
+                ret += choicesArray.at(0).toObject()["delta"_L1]["content"_L1].toString();
+            }
         }
         break;
     case RequestTypes::Show:
         // TODO
         break;
     case RequestTypes::StreamingGenerate:
-        for (const auto &tok : mTokens) {
-            ret += tok["response"_L1].toString();
-        }
+        break;
     }
-    qDebug() << "ret " << ret;
     return ret;
 }
 
