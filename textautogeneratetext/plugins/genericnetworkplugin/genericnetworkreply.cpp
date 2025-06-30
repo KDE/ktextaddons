@@ -14,7 +14,11 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
     : TextAutoGenerateText::TextAutoGenerateReply{netReply, requestType, parent}
 {
     connect(mReply, &QNetworkReply::errorOccurred, mReply, [](QNetworkReply::NetworkError e) {
-        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Ollama HTTP error:" << e;
+        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply HTTP error:" << e;
+    });
+    connect(mReply, &QNetworkReply::finished, mReply, [this] {
+        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "GenericNetworkReply response finished";
+        Q_EMIT finished();
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
         QByteArray data = mReply->read(received - mReceivedSize);
@@ -95,7 +99,6 @@ QString GenericNetworkReply::readResponse() const
         // TODO
         break;
     case RequestTypes::StreamingGenerate:
-        qDebug() << " mTokens333333333333 " << mTokens;
         for (const auto &tok : mTokens) {
             ret += tok["response"_L1].toString();
         }
