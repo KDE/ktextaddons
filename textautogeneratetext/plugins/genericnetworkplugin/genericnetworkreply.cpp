@@ -24,7 +24,7 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
         QByteArray data = mReply->read(received - mReceivedSize);
         data.replace("data: ", "");
         mIncompleteTokens += data;
-        // qDebug() << " data " << mIncompleteTokens;
+        qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " data " << mIncompleteTokens;
         mReceivedSize = received;
 
         switch (mRequestType) {
@@ -76,6 +76,8 @@ QString GenericNetworkReply::readResponse() const
     case RequestTypes::DeleteModel:
     case RequestTypes::CreateModel:
     case RequestTypes::Unknown:
+    case RequestTypes::Show:
+    case RequestTypes::StreamingGenerate:
         break;
     case RequestTypes::StreamingChat:
         // qDebug() << " mTokens " << mTokens;
@@ -85,11 +87,6 @@ QString GenericNetworkReply::readResponse() const
                 ret += choicesArray.at(0).toObject()["delta"_L1]["content"_L1].toString();
             }
         }
-        break;
-    case RequestTypes::Show:
-        // TODO
-        break;
-    case RequestTypes::StreamingGenerate:
         break;
     }
     return ret;
