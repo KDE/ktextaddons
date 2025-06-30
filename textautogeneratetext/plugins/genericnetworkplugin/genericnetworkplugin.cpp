@@ -94,6 +94,11 @@ void GenericNetworkPlugin::save(KConfigGroup &config)
 
 void GenericNetworkPlugin::clear()
 {
+    for (const auto &connection : std::as_const(mConnections)) {
+        disconnect(connection.second);
+    }
+    mConnections.clear();
+    // TODO clear all thread
 }
 
 void GenericNetworkPlugin::setPrompt(const QString &text)
@@ -148,7 +153,16 @@ void GenericNetworkPlugin::askToAssistant(const QString &msg)
 
 void GenericNetworkPlugin::cancelRequest(const QByteArray &uuid)
 {
-    // TODO
+    if (uuid.isEmpty()) {
+        clear();
+    } else {
+        for (const auto &connection : std::as_const(mConnections)) {
+            if (connection.first == uuid) {
+                disconnect(connection.second);
+                // mConnections.take(connection.);
+            }
+        }
+    }
 }
 
 QString GenericNetworkPlugin::name() const
