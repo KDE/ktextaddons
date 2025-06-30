@@ -41,7 +41,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::MistralAI:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
-        return u"/chat/completions"_s;
+        return u"chat/completions"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
