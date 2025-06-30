@@ -33,6 +33,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextInstanceModel *textAutoGenerateTextInstanceModel() const;
 
+    [[nodiscard]] bool isCurrentInstance(const QByteArray &instanceUuid) const;
+
     [[nodiscard]] QByteArray currentInstance() const;
     void setCurrentinstance(const QByteArray &newCurrentinstance);
 

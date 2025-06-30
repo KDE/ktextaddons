@@ -109,6 +109,11 @@ TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAut
     return mTextAutoGenerateTextInstanceModel;
 }
 
+bool TextAutoGenerateTextInstancesManager::isCurrentInstance(const QByteArray &instanceUuid) const
+{
+    return currentInstance() == instanceUuid;
+}
+
 QList<TextAutoGenerateTextInstance *> TextAutoGenerateTextInstancesManager::instances() const
 {
     return mTextAutoGenerateTextInstanceModel->textInstances();

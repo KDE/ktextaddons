@@ -7,6 +7,7 @@
 #include "ollamaplugin.h"
 #include "autogeneratetext_ollama_plugin_debug.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextinstancesmanager.h"
 #include "ollamaconfiguredialog.h"
 #include "ollamamanager.h"
 #include "ollamareply.h"
@@ -31,7 +32,9 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             setReady(true);
         }
     });
-    mManager->loadModels();
+    if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
+        mManager->loadModels();
+    }
 }
 
 OllamaPlugin::~OllamaPlugin()

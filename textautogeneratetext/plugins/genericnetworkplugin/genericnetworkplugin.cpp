@@ -9,6 +9,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratereply.h"
 #include "core/textautogeneratetextinstance.h"
+#include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextrequest.h"
 #include "genericnetworkconfiguredialog.h"
 #include "genericnetworkmanager.h"
@@ -40,7 +41,9 @@ GenericNetworkPlugin::GenericNetworkPlugin(TextAutoGenerateText::TextAutoGenerat
                 }
             });
     connect(this, &GenericNetworkPlugin::loadApiKeyDone, this, [this]() {
-        mGenericManager->loadModels();
+        if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
+            mGenericManager->loadModels();
+        }
     });
 }
 

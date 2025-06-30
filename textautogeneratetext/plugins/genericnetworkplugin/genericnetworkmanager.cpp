@@ -59,8 +59,12 @@ void GenericNetworkManager::loadModels()
         // qDebug() << " json " << json;
         for (const auto &parsedInfo : infos.infos()) {
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
-            i.modelName = parsedInfo.modelName();
             i.identifier = parsedInfo.identifier();
+            if (parsedInfo.modelName().isEmpty()) {
+                i.modelName = i.identifier;
+            } else {
+                i.modelName = parsedInfo.modelName();
+            }
             info.models.push_back(std::move(i));
         }
         info.isReady = !info.models.isEmpty();
@@ -89,7 +93,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
         data["system"_L1] = OllamaSettings::systemPrompt();
     }
     */
-    qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " JSon: " << data;
+    qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " JSon: " << data << " req " << req.url();
     auto reply = new GenericNetworkReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         GenericNetworkReply::RequestTypes::StreamingChat,
