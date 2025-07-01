@@ -88,6 +88,10 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
+    if (mGenericNetworkSettings->maxTokens() > 0) {
+        data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
+    }
+    // TODO add seed
     /*
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
