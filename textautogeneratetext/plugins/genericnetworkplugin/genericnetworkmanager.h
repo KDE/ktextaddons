@@ -20,6 +20,7 @@ public:
         MistralAI,
         OpenAI,
         KlusterAI,
+        GroqAI,
         LastElement,
     };
 

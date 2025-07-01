@@ -26,6 +26,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("OpenAI");
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return i18n("Kluster AI");
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+        return i18n("Groq Cloud");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -41,6 +43,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::MistralAI:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
         return u"chat/completions"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
@@ -60,6 +63,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://openai.com/"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return u"https://www.kluster.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+        return u"https://groq.com/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -78,6 +83,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.openai.com/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return u"https://api.kluster.ai/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+        return u"https://api.groq.com/openai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -91,8 +98,9 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return {};
     case GenericNetworkManager::PluginNetworkType::MistralAI:
-        return {};
+        return i18n("Mistral AI large language models");
     case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
         return {};
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return i18n("Kluster AI cloud inference API");
@@ -114,6 +122,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"openai"_s;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return u"klusterai"_s;
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+        return u"groqai"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -128,6 +138,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::OpenAI;
     } else if (str == QLatin1StringView("klusterai")) {
         return GenericNetworkManager::PluginNetworkType::KlusterAI;
+    } else if (str == QLatin1StringView("groqai")) {
+        return GenericNetworkManager::PluginNetworkType::GroqAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
