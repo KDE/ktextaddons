@@ -52,4 +52,13 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::GroqAI), u"groqai"_s);
 }
 
+void GenericNetworkServerInfoTest::shouldDefineLimitations()
+{
+    GenericNetworkServerInfo info;
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::MistralAI), GenericNetworkServerInfo::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::OpenAI), GenericNetworkServerInfo::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::KlusterAI), GenericNetworkServerInfo::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GroqAI), GenericNetworkServerInfo::Limitation::TextOnly);
+}
+
 #include "moc_genericnetworkserverinfotest.cpp"

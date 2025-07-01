@@ -164,5 +164,22 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
 
 GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type) const
 {
-    return {};
+    GenericNetworkServerInfo::Limitations limits;
+    limits |= GenericNetworkServerInfo::Limitation::None;
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return limits;
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+        return limits;
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+        return limits;
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+        limits |= GenericNetworkServerInfo::Limitation::TextOnly;
+        return limits;
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::LastElement:
+        return limits;
+    }
+    return limits;
 }

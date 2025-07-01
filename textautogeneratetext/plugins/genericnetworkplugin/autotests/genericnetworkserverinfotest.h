@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldCheckApiUrl();
     void shouldChatCompletionPath();
     void shouldDefinePluginName();
+    void shouldDefineLimitations();
 };
