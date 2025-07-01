@@ -22,7 +22,7 @@ void OllamaModelInstalledInfo::parseInfo(const QJsonObject &obj)
     mParameterSize = detailsObj["parameter_size"_L1].toString();
     mParentModel = detailsObj["parent_model"_L1].toString();
 
-    mGeneratedModelName = convertModelNameToDisplay(model());
+    mGeneratedModelName = u"%1 (%2)"_s.arg(convertModelNameToDisplay(model()), mName);
 }
 
 QString OllamaModelInstalledInfo::convertModelNameToDisplay(const QString &modelName)
