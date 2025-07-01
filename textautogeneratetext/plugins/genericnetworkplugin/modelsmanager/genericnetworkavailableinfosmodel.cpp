@@ -29,6 +29,8 @@ QVariant GenericNetworkAvailableInfosModel::data(const QModelIndex &index, int r
     switch (role) {
     case Description:
         return modelInfo.description();
+    case Identifier:
+        return modelInfo.identifier();
     case ModelName:
     case Qt::DisplayRole:
         return modelInfo.modelName();

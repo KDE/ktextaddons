@@ -55,6 +55,8 @@ void GenericNetworkManager::loadModels()
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["data"_L1].toArray();
         infos.parseModelsInfo(models);
+        mInfos = infos.infos();
+        qDebug() << " mInfos***************** " << mInfos;
         ModelsInfo info;
         // qDebug() << " json " << json;
         for (const auto &parsedInfo : infos.infos()) {

@@ -242,7 +242,7 @@ bool GenericNetworkModelAvailableInfosDelegate::handleMouseEvent(QMouseEvent *mo
 
 QSize GenericNetworkModelAvailableInfosDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const QByteArray modelName = index.data(GenericNetworkAvailableInfosModel::ModelName).toByteArray();
+    const QByteArray modelName = index.data(GenericNetworkAvailableInfosModel::Identifier).toByteArray();
     auto it = mSizeHintCache.find(modelName);
     if (it != mSizeHintCache.end()) {
         const QSize result = it->value;
@@ -264,9 +264,9 @@ QSize GenericNetworkModelAvailableInfosDelegate::sizeHint(const QStyleOptionView
 QTextDocument *GenericNetworkModelAvailableInfosDelegate::documentForIndex(const QModelIndex &index, int width) const
 {
     Q_ASSERT(index.isValid());
-    const QByteArray modelName = index.data(GenericNetworkAvailableInfosModel::ModelName).toByteArray();
-    Q_ASSERT(!modelName.isEmpty());
-    auto it = mDocumentCache.find(modelName);
+    const QByteArray identifier = index.data(GenericNetworkAvailableInfosModel::Identifier).toByteArray();
+    Q_ASSERT(!identifier.isEmpty());
+    auto it = mDocumentCache.find(identifier);
     if (it != mDocumentCache.end()) {
         auto ret = it->value.get();
         if (width != -1 && !qFuzzyCompare(ret->textWidth(), width)) {
@@ -274,13 +274,14 @@ QTextDocument *GenericNetworkModelAvailableInfosDelegate::documentForIndex(const
         }
         return ret;
     }
-    const QString text = index.data(GenericNetworkAvailableInfosModel::Description).toString();
-    if (text.isEmpty()) {
-        return nullptr;
-    }
-    auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(modelName)) + text, width);
+    const QString description = index.data(GenericNetworkAvailableInfosModel::Description).toString();
+    // if (description.isEmpty()) {
+    //     return nullptr;
+    // }
+
+    auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(identifier)) + description, width);
     auto ret = doc.get();
-    mDocumentCache.insert(modelName, std::move(doc));
+    mDocumentCache.insert(identifier, std::move(doc));
     return ret;
 }
 
