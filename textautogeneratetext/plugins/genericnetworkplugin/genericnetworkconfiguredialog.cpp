@@ -25,14 +25,12 @@ GenericNetworkConfigureDialog::GenericNetworkConfigureDialog(GenericNetworkManag
     , mConfigureWidget(new GenericNetworkNetworkPluginConfigureWidget(manager, this))
     , mAvailableModelWidget(new GenericNetworkAvailableModelWidget(manager, this))
 {
-    // TODO update title
-    setWindowTitle(i18nc("@title:window", "Configure"));
+    setWindowTitle(i18nc("@title:window", "Configure %1", manager->translatedPluginName()));
     setFaceType(KPageDialog::List);
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");
     auto configureGeneralWidgetPage = new KPageWidgetItem(mConfigureWidget, generalPageName);
     mConfigureWidget->setObjectName(u"mConfigureWidget"_s);
-    // configureGeneralWidgetPage->setIcon(QIcon::fromTheme(u"ruqola"_s));
     addPage(configureGeneralWidgetPage);
 
     const QString modelAvailablePageName = i18nc("@title Preferences page name", "Available Models");
