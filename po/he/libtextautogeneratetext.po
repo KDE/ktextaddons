@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:40+0000\n"
-"PO-Revision-Date: 2025-06-27 12:46+0300\n"
+"POT-Creation-Date: 2025-07-01 00:40+0000\n"
+"PO-Revision-Date: 2025-06-30 10:28+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:76
 #, kde-format
@@ -128,7 +128,7 @@ msgstr "Kluster AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr ""
+msgstr "API להסקת מסקנות בענן Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -449,6 +449,8 @@ msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
 "improvements in code generation, code reasoning, and code fixing."
 msgstr ""
+"הסדרה העדכנית ביותר של מודלים מסוג Qwen ייעודית לקוד, עם שיפורים משמעותיים "
+"ביצירת קוד, נימוק קוד ותיקון קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -504,6 +506,9 @@ msgid ""
 "generation, natural language understanding, mathematical reasoning, and "
 "instruction following."
 msgstr ""
+"CodeGemma הוא אוסף של מודלים עוצמתיים וקלילים שיכולים לבצע מגוון משימות "
+"תכנות כגון השלמת קוד מהאמצע, יצירת קוד, הבנת שפה טבעית, נימוק מתמטי ומעקב "
+"אחר הנחיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:53
 #, kde-format
@@ -567,11 +572,13 @@ msgid ""
 "Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on "
 "Llama 3 that has a variety of instruction, conversational, and coding skills."
 msgstr ""
+"Dolphin 2.9 הוא מודל חדש בגדלים 8B ו־70B מאת אריק הארטפורד שמבוסס עלLlama 3 "
+"ויש לו מגוון מיומנויות לעיבוד הנחיות, שיח ופיתוח תוכנה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:65
 #, kde-format
 msgid "Yi 1.5 is a high-performing, bilingual language model."
-msgstr ""
+msgstr "Yi 1.5 הוא מודל דו־לשוני עם ביצועים טובים מאוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:66
 #, kde-format
@@ -579,6 +586,7 @@ msgid ""
 "Command R is a Large Language Model optimized for conversational interaction "
 "and long context tasks."
 msgstr ""
+"Command R הוא מודל שפה גדול ממוטב לאינטראקציית שיח ומשימות עם הקשר ארוך."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:67
 #, kde-format
@@ -586,6 +594,7 @@ msgid ""
 "A general-purpose model ranging from 3 billion parameters to 70 billion, "
 "suitable for entry-level hardware."
 msgstr ""
+"מודל למטרות כלליות שנע בין 3 ל־70 מיליארד משתנים, מתאים לחומרה צנועה יחסית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:68
 #, kde-format
@@ -600,6 +609,8 @@ msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
 "that are trained to act as helpful assistants."
 msgstr ""
+"Zephyr היא סדרה של גרסאות מכווננות בקפידה של המודלים Mistral ו־Mixtral "
+"שאומנו כדי לתפקד כעוזרים מיומנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
 #, kde-format
@@ -607,6 +618,8 @@ msgid ""
 "A lightweight AI model with 3.8 billion parameters with performance "
 "overtaking similarly and larger sized models."
 msgstr ""
+"מודל בינה מלאכותית קליל עם 3.8 מיליארד משתנים עם ביצועים שעוקפים מודלים "
+"בגודל דומה ואף גדולים ממנו."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
@@ -619,6 +632,8 @@ msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
 "tasks."
 msgstr ""
+"Codestral הוא מודל הקוד הראשון אי־פעם מבית Mistral AI שתוכנן למשימות כתיבת "
+"קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
 #, kde-format
@@ -632,6 +647,7 @@ msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
 "sizes."
 msgstr ""
+"מודל שיחה לשימוש כללי שמבוסס על Llama ועל Llama 2 עם גודלי תוכן מ־2K ועד 16K."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
 #, kde-format
@@ -653,6 +669,8 @@ msgid ""
 "A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
 "new high-quality dataset."
 msgstr ""
+"משפחה של מודלים קטנים בגדלים של 135M,‏ 360M ו־1.7B משתנים, אומן על סדרות "
+"נתונים חדשות באיכות גבוהה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
 #, kde-format
@@ -672,6 +690,8 @@ msgid ""
 "BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
 "Functionality, Multi-Linguality, and Multi-Granularity."
 msgstr ""
+"BGE-M3 הוא מודל חדש מבית BAAI שנודע בזכות הגמישות בריבוייכולות, ריבוי שפות "
+"וריבוי דרגות דיוק."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
 #, kde-format
@@ -720,6 +740,8 @@ msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
 "excel at real-world enterprise use cases."
 msgstr ""
+"Command R+‎ הוא מודל שפה גדול עוצמתי ומסתגל שנבנה במיוחד כדי להצטיין באופן "
+"שימוש שמתאים לארגונים גדולים בעולם האמיתי."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
@@ -758,6 +780,8 @@ msgid ""
 "capable in code generation, mathematics, and reasoning with 128k context "
 "window and support for dozens of languages."
 msgstr ""
+"Mistral Large 2 הוא מודל הדגל החדש של Mistral עם יכולות טובות בהרבה ביצירת "
+"קוד, מתמטיקה ונימוק עם חלון הקשר בגודל 128k ותמיכה בעשרות שפות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
 #, kde-format
@@ -766,13 +790,16 @@ msgid ""
 "Qwen2 LLMs, which significantly outperforms the mathematical capabilities of "
 "open-source models and even closed-source models (e.g., GPT4o)."
 msgstr ""
+"Qwen2 Math היא סדרה של מודלים שהותאמו במיוחד לשפה מתמטית ונבנתה על המש״גים "
+"של Qwen2, ומתעלה באופן משמעותי ביכולות המתמטיות על מודלים בקוד פתוח וסגור "
+"(למשל: GPT-4o)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:100
 #, kde-format
 msgid ""
 "A strong multi-lingual general language model with competitive performance "
 "to Llama 3."
-msgstr ""
+msgstr "מודל שפה כללי רב־לשוני חזק שמתחרה בביצועים שלו מול Llama 3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:102
 #, kde-format
@@ -1640,7 +1667,7 @@ msgstr ""
 "Phi 4 מזערי עם נימוק הוא מודל קליל ופתוח שמאזן בין יעילות ליכולות נימוק "
 "מתקדמות."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:70
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:73
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"

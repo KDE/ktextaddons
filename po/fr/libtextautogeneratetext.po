@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:40+0000\n"
+"POT-Creation-Date: 2025-07-01 00:40+0000\n"
 "PO-Revision-Date: 2025-06-25 08:43+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1647,7 +1647,7 @@ msgstr ""
 "Phi 4 mini est un modèle ouvert léger faisant un compromis entre "
 "l'efficacité avec une capacité avancée de raisonnement."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:70
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:73
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"

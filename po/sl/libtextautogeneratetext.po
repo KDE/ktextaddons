@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:40+0000\n"
+"POT-Creation-Date: 2025-07-01 00:40+0000\n"
 "PO-Revision-Date: 2025-06-28 08:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1793,7 +1793,7 @@ msgstr ""
 "Mini sklepanje Phi 4 je lahek odprt model, ki uravnoteži učinkovitost z "
 "naprednimi sposobnostmi sklepanja."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:70
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:73
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"

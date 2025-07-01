@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:40+0000\n"
+"POT-Creation-Date: 2025-07-01 00:40+0000\n"
 "PO-Revision-Date: 2025-06-28 12:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1814,7 +1814,7 @@ msgstr ""
 "Phi 4 mini reasoning es un modelo ligero abierto que compensa la eficiencia "
 "con la capacidad de razonamiento avanzada."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:70
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:73
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
