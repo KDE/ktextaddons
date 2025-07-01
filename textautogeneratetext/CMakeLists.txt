@@ -149,6 +149,8 @@ target_sources(
         core/textautogeneratetextinstance.cpp
         core/textautogeneratetextinstancesmanager.h
         core/textautogeneratetextinstancesmanager.cpp
+        core/jobs/textautogenerateexportchatasjsonjob.cpp
+        core/jobs/textautogenerateexportchatasjsonjob.h
 )
 
 target_sources(
@@ -341,6 +343,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
     RELATIVE core/models
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateExportChatAsJsonJob
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/jobs
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_HEADERS
     HEADER_NAMES
     TextAutoGenerateWidget
@@ -406,6 +416,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -420,6 +431,7 @@ install(
         ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
