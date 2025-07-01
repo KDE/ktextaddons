@@ -25,9 +25,13 @@ public:
     [[nodiscard]] double temperature() const;
     void setTemperature(double newTemperature);
 
+    [[nodiscard]] int seed() const;
+    void setSeed(int newSeed);
+
 private:
     QString mDisplayName;
     QString mCurrentModel;
     int mMaxTokens = 2048;
+    int mSeed = 0;
     double mTemperature = 0.8;
 };

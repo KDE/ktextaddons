@@ -44,6 +44,16 @@ void GenericNetworkSettings::setTemperature(double newTemperature)
     mTemperature = newTemperature;
 }
 
+int GenericNetworkSettings::seed() const
+{
+    return mSeed;
+}
+
+void GenericNetworkSettings::setSeed(int newSeed)
+{
+    mSeed = newSeed;
+}
+
 void GenericNetworkSettings::setCurrentModel(const QString &newCurrentModel)
 {
     mCurrentModel = newCurrentModel;

@@ -91,7 +91,9 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     if (mGenericNetworkSettings->maxTokens() > 0) {
         data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
     }
-    // TODO add seed
+    if (mGenericNetworkSettings->seed() > 0) {
+        data["seed"_L1] = mGenericNetworkSettings->seed();
+    }
     /*
     if (!OllamaSettings::systemPrompt().isEmpty()) {
         data["system"_L1] = OllamaSettings::systemPrompt();
