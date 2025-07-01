@@ -126,29 +126,6 @@ GenericNetworkModelAvailableInfosDelegate::ModelInfoLayout GenericNetworkModelAv
                             maxWidth - 2 * GenericNetworkModelInfosDelegateUtils::textMargin(),
                             textSize.height() + 2 * GenericNetworkModelInfosDelegateUtils::textMargin());
 
-    /*
-    const QStringList categoriesName = index.data(GenericNetworkAvailableInfosModel::CategoriesName).toStringList();
-    const QFontMetricsF emojiFontMetrics(option.font);
-    int offsetX = 0;
-    int offsetY = layout.textRect.bottom() - 10;
-    int categoryWith = 0;
-    layout.categoryRect = QRect(layout.textRect.x() + offsetX, offsetY, layout.textRect.width(), 20);
-    for (const QString &cat : categoriesName) {
-        CategoryLayout catLayout;
-        catLayout.categoryString = cat;
-        const qreal categoryWidthText = emojiFontMetrics.horizontalAdvance(catLayout.categoryString);
-        catLayout.categoryRect = QRectF(layout.textRect.x() + offsetX,
-                                        offsetY,
-                                        categoryWidthText + GenericNetworkModelInfosDelegateUtils::categoryMarginText() * 2,
-                                        20); // TODO
-        offsetX += catLayout.categoryRect.width() + GenericNetworkModelInfosDelegateUtils::categoryOffset();
-        layout.categoriesLayout.append(catLayout);
-        categoryWith += categoryWidthText + GenericNetworkModelInfosDelegateUtils::categoryMarginText() * 2 +
-    GenericNetworkModelInfosDelegateUtils::categoryOffset() * 3; if (categoryWith >= layout.textRect.width()) { offsetX = 0; offsetY += 30; categoryWith = 0;
-            layout.categoryRect.setBottom(layout.categoryRect.bottom() + 40); // TODO fix me hardcoded values
-        }
-    }
-    */
     return layout;
 }
 
