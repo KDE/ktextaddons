@@ -47,7 +47,9 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(GenericNe
     mProxyModel->setSourceModel(mAvailableInfosModel);
     mAvailableListView->setModel(mProxyModel);
     if (mManager) {
-        mAvailableInfosModel->setModelInfos(mManager->infos());
+        connect(mManager, &GenericNetworkManager::modelsLoadDone, this, [this]() {
+            mAvailableInfosModel->setModelInfos(mManager->infos());
+        });
     }
 
     splitter->addWidget(widget);
