@@ -12,6 +12,12 @@
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkModelAvailableInfo
 {
 public:
+    enum Capability {
+        None = 0,
+        Vision = 1,
+        // TODO more
+    };
+
     GenericNetworkModelAvailableInfo();
     ~GenericNetworkModelAvailableInfo();
     void parseInfo(const QJsonObject &obj);
