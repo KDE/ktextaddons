@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:40+0000\n"
+"POT-Creation-Date: 2025-07-02 07:04+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -80,20 +80,22 @@ msgstr "网络"
 msgid "Generic"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
-#, kde-format
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Configure…"
 msgctxt "@title:window"
-msgid "Configure"
-msgstr ""
+msgid "Configure %1"
+msgstr "配置…"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:43
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -121,9 +123,29 @@ msgstr "OpenAI"
 msgid "Kluster AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
+#, kde-format
+msgid "Groq Cloud"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
+#, kde-format
+msgid "Cerebras AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#, kde-format
+msgid "Mistral AI large language models"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
 #, kde-format
 msgid "Kluster AI cloud inference API"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#, kde-format
+msgid "Cerebras AI cloud inference API"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28

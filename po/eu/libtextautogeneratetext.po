@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:40+0000\n"
+"POT-Creation-Date: 2025-07-02 07:04+0000\n"
 "PO-Revision-Date: 2025-06-05 21:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -90,22 +90,22 @@ msgstr "Sarea"
 msgid "Generic"
 msgstr "Orokorra"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure IA"
 msgctxt "@title:window"
-msgid "Configure"
+msgid "Configure %1"
 msgstr "Konfiguratu AA"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:43
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Orokorra"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -133,9 +133,29 @@ msgstr "OpenAI"
 msgid "Kluster AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
+#, kde-format
+msgid "Groq Cloud"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
+#, kde-format
+msgid "Cerebras AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#, kde-format
+msgid "Mistral AI large language models"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
 #, kde-format
 msgid "Kluster AI cloud inference API"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#, kde-format
+msgid "Cerebras AI cloud inference API"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28

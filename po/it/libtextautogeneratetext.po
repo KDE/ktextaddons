@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:40+0000\n"
+"POT-Creation-Date: 2025-07-02 07:04+0000\n"
 "PO-Revision-Date: 2025-06-28 20:48+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -83,20 +83,22 @@ msgstr "Rete"
 msgid "Generic"
 msgstr "Generico"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:29
-#, kde-format
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure"
 msgctxt "@title:window"
-msgid "Configure"
+msgid "Configure %1"
 msgstr "Configura"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:32
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:43
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Generale"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:38
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
@@ -124,9 +126,30 @@ msgstr "OpenAI"
 msgid "Kluster AI"
 msgstr "IA"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:98
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
+#, kde-format
+msgid "Groq Cloud"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
+#, kde-format
+msgid "Cerebras AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#, kde-format
+msgid "Mistral AI large language models"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
 #, kde-format
 msgid "Kluster AI cloud inference API"
+msgstr "API di inferenza cloud Kluster AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#, fuzzy, kde-format
+#| msgid "Kluster AI cloud inference API"
+msgid "Cerebras AI cloud inference API"
 msgstr "API di inferenza cloud Kluster AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
