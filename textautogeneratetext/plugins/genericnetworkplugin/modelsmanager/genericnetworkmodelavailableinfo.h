@@ -32,11 +32,15 @@ public:
     [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &newIdentifier);
 
+    [[nodiscard]] QString ownedBy() const;
+    void setOwnedBy(const QString &newOwnedBy);
+
 private:
     QString mDescription;
     QString mModelName;
     QString mModelSize;
     QString mIdentifier;
+    QString mOwnedBy;
     bool mToolsSupported = false;
     // TODO add tags
 };

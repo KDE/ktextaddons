@@ -11,11 +11,13 @@ GenericNetworkModelAvailableInfo::~GenericNetworkModelAvailableInfo() = default;
 
 void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
 {
+    qDebug() << " obj " << obj;
     mToolsSupported = obj["tools_supported"_L1].toBool();
     mDescription = obj["description"_L1].toString();
     mModelName = obj["name"_L1].toString();
     mModelSize = obj["model_size"_L1].toString();
     mIdentifier = obj["id"_L1].toString();
+    mOwnedBy = obj["owned_by"_L1].toString();
     // TODO
 }
 
@@ -32,7 +34,7 @@ void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescript
 bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
 {
     return mDescription == other.description() && mModelName == other.modelName() && mToolsSupported == other.toolsSupported()
-        && mModelSize == other.modelSize() && mIdentifier == other.identifier();
+        && mModelSize == other.modelSize() && mIdentifier == other.identifier() && mOwnedBy == other.ownedBy();
 }
 
 QString GenericNetworkModelAvailableInfo::modelName() const
@@ -75,6 +77,16 @@ void GenericNetworkModelAvailableInfo::setIdentifier(const QString &newIdentifie
     mIdentifier = newIdentifier;
 }
 
+QString GenericNetworkModelAvailableInfo::ownedBy() const
+{
+    return mOwnedBy;
+}
+
+void GenericNetworkModelAvailableInfo::setOwnedBy(const QString &newOwnedBy)
+{
+    mOwnedBy = newOwnedBy;
+}
+
 QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
 {
     d.space() << "name:" << t.modelName();
@@ -82,5 +94,6 @@ QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
     d.space() << "toolsSupported:" << t.toolsSupported();
     d.space() << "modelSize:" << t.modelSize();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "ownedBy:" << t.ownedBy();
     return d;
 }
