@@ -195,4 +195,16 @@ void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
     }
 }
 
+QString TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType type)
+{
+    switch (type) {
+    case TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Local:
+        return i18n("Local");
+    case TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network:
+        return i18n("Network");
+    }
+    Q_UNREACHABLE();
+    return {};
+}
+
 #include "moc_textautogeneratetextplugin.cpp"

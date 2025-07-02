@@ -37,11 +37,6 @@ GenericNetworkClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAut
     return plugin;
 }
 
-TextAutoGenerateText::TextAutoGenerateTextClient::EngineType GenericNetworkClient::engineType() const
-{
-    return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network;
-}
-
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkClient::supportedServers() const
 {
     const GenericNetworkServerInfo info;

@@ -26,6 +26,10 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
+    enum class EngineType : uint8_t {
+        Local,
+        Network,
+    };
     struct TEXTAUTOGENERATETEXT_EXPORT ModelInfoNameAndIdentifier {
         QString modelName;
         QString identifier;
@@ -77,6 +81,11 @@ public:
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models() const;
 
     [[nodiscard]] QByteArray instanceUuid() const;
+
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType engineType() const = 0;
+
+    [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType type);
+
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);

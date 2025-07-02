@@ -21,11 +21,6 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
 {
     Q_OBJECT
 public:
-    enum class EngineType : uint8_t {
-        Local,
-        Network,
-    };
-
     // Add more status
     enum class Status : uint8_t {
         Unknown,
@@ -50,10 +45,6 @@ public:
 
     virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                                                      TextAutoGenerateText::TextAutoGenerateTextInstance *instance) = 0;
-
-    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextClient::EngineType engineType() const = 0;
-
-    [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type);
 
     [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 

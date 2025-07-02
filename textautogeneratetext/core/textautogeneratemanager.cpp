@@ -168,7 +168,12 @@ void TextAutoGenerateManager::loadHistory()
 
 QString TextAutoGenerateManager::generateEngineDisplayName() const
 {
-    return textAutoGeneratePlugin() ? textAutoGeneratePlugin()->translatedPluginName() : QString();
+    QString displayName;
+    auto plugin = textAutoGeneratePlugin();
+    if (plugin) {
+        displayName = QStringLiteral("%1 (%2)").arg(plugin->translatedPluginName(), TextAutoGenerateTextPlugin::convertEngineType(plugin->engineType()));
+    }
+    return displayName;
 }
 
 TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() const

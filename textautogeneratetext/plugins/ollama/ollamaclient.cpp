@@ -33,11 +33,6 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin *OllamaClient::createTextAutoGe
     return new OllamaPlugin(manager, instance, this);
 }
 
-TextAutoGenerateText::TextAutoGenerateTextClient::EngineType OllamaClient::engineType() const
-{
-    return TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local;
-}
-
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> OllamaClient::supportedServers() const
 {
     const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{

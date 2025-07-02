@@ -270,6 +270,11 @@ QString OllamaModelUtils::description(const QString &modelName)
          i18n("Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight reasoning models that rival much larger models on complex reasoning "
               "tasks.")},
         {u"phi4-mini-reasoning"_s, i18n("Phi 4 mini reasoning is a lightweight open model that balances efficiency with advanced reasoning ability.")},
+        {u"gemma3n"_s, i18n("Gemma 3n models are designed for efficient execution on everyday devices such as laptops, tablets or phones.")},
+        {u"magistral"_s, i18n("Magistral is a small, efficient reasoning model with 24B parameters.")},
+        {u"mistral-small3.2"_s, i18n("An update to Mistral Small that improves on function calling, instruction following, and less repetition errors.")},
+        {u"qwen2.5vl"_s, i18n("Flagship vision-language model of Qwen and also a significant leap from the previous Qwen2-VL.")},
+        {u"devstral"_s, i18n("Devstral: the best open source model for coding agents.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {

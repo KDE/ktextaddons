@@ -201,4 +201,9 @@ void GenericNetworkPlugin::setCurrentModel(const QString &m)
     Q_EMIT configChanged();
 }
 
+TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType GenericNetworkPlugin::engineType() const
+{
+    return TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network;
+}
+
 #include "moc_genericnetworkplugin.cpp"

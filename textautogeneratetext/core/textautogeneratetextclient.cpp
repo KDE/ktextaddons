@@ -14,18 +14,6 @@ TextAutoGenerateTextClient::TextAutoGenerateTextClient(QObject *parent)
 
 TextAutoGenerateTextClient::~TextAutoGenerateTextClient() = default;
 
-QString TextAutoGenerateTextClient::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextClient::EngineType type)
-{
-    switch (type) {
-    case TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Local:
-        return i18n("Local");
-    case TextAutoGenerateText::TextAutoGenerateTextClient::EngineType::Network:
-        return i18n("Network");
-    }
-    Q_UNREACHABLE();
-    return {};
-}
-
 bool TextAutoGenerateTextClient::SupportedServer::isValid() const
 {
     return !localizedName.isEmpty() && !identifier.isEmpty() && !pluginName.isEmpty();

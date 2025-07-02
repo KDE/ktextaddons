@@ -68,6 +68,11 @@ void OllamaPlugin::save(KConfigGroup &config)
     config.writeEntry(u"CurrentModel"_s, mOllamaSettings->currentModel());
 }
 
+TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType OllamaPlugin::engineType() const
+{
+    return TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Local;
+}
+
 QString OllamaPlugin::translatedPluginName() const
 {
     return i18n("Ollama");

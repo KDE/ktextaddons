@@ -39,6 +39,8 @@ public:
     [[nodiscard]] QString currentModel() const override;
     void setCurrentModel(const QString &) override;
 
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType engineType() const override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
