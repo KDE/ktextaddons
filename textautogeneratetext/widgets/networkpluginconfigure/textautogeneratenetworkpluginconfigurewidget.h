@@ -34,6 +34,9 @@ public:
     void setMaxTokens(int tokens);
     [[nodiscard]] int maxTokens() const;
 
+    void setSeed(int tokens);
+    [[nodiscard]] int seed() const;
+
     void setWebSiteUrl(const QString &url);
     void setDescription(const QString &description);
 
@@ -42,6 +45,7 @@ private:
     QLineEdit *const mInstanceName;
     QSpinBox *const mMaxToken;
     QDoubleSpinBox *const mTemperature;
+    QSpinBox *const mSeed;
     QLabel *const mWebSite;
     QLabel *const mDescription;
 };

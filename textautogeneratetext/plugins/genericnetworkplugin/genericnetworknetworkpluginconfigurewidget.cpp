@@ -24,6 +24,7 @@ void GenericNetworkNetworkPluginConfigureWidget::loadSettings()
     setInstanceName(mManager->genericNetworkSettings()->displayName());
     setMaxTokens(mManager->genericNetworkSettings()->maxTokens());
     setTemperature(mManager->genericNetworkSettings()->temperature());
+    setSeed(mManager->genericNetworkSettings()->seed());
     setApiKey(mManager->apiKey());
 }
 
@@ -32,6 +33,7 @@ void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
     mManager->genericNetworkSettings()->setDisplayName(instanceName());
     mManager->genericNetworkSettings()->setTemperature(temperature());
     mManager->genericNetworkSettings()->setMaxTokens(maxTokens());
+    mManager->genericNetworkSettings()->setSeed(seed());
     mManager->setApiKey(apiKey());
 }
 

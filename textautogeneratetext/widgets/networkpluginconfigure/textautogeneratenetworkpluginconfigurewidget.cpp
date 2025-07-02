@@ -23,12 +23,14 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     , mInstanceName(new QLineEdit(this))
     , mMaxToken(new QSpinBox(this))
     , mTemperature(new QDoubleSpinBox(this))
+    , mSeed(new QSpinBox(this))
     , mWebSite(new QLabel(this))
     , mDescription(new QLabel(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
+
     mApiKey->setObjectName(u"mApiKey"_s);
     mInstanceName->setObjectName(u"mInstanceName"_s);
     mInstanceName->setClearButtonEnabled(true);
@@ -37,14 +39,16 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mTemperature->setObjectName(u"mTemperature"_s);
     mTemperature->setMaximum(10.0);
     mTemperature->setSingleStep(0.1);
+    mSeed->setMaximum(9999);
+    mSeed->setObjectName(u"mSeed"_s);
 
-    mApiKey->setObjectName(u"mPasswordLineEdit"_s);
     mApiKey->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew : KPassword::RevealMode::Never);
 
     mainLayout->addRow(i18n("Name:"), mInstanceName);
     mainLayout->addRow(i18n("Api Key:"), mApiKey);
     mainLayout->addRow(i18n("Max Tokens:"), mMaxToken);
     mainLayout->addRow(i18n("Temperature:"), mTemperature);
+    mainLayout->addRow(i18n("Seed:"), mSeed);
 
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     KLineEditEventHandler::catchReturnKey(mInstanceName);
@@ -100,6 +104,16 @@ void TextAutoGenerateNetworkPluginConfigureWidget::setMaxTokens(int tokens)
 int TextAutoGenerateNetworkPluginConfigureWidget::maxTokens() const
 {
     return mMaxToken->value();
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidget::setSeed(int s)
+{
+    mSeed->setValue(s);
+}
+
+int TextAutoGenerateNetworkPluginConfigureWidget::seed() const
+{
+    return mSeed->value();
 }
 
 void TextAutoGenerateNetworkPluginConfigureWidget::setDescription(const QString &description)
