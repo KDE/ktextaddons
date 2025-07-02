@@ -21,6 +21,7 @@ public:
         OpenAI,
         KlusterAI,
         GroqAI,
+        CerebrasAI,
         LastElement,
     };
 
