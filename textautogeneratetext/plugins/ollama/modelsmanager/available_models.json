@@ -3,8 +3,12 @@
         "url": "https://ollama.com/library/llama3.3",
         "tags": [
             [
+                "latest",
+                "43 GB"
+            ],
+            [
                 "70b",
-                "43\u202fGB"
+                "43 GB"
             ]
         ],
         "author": "Meta",
@@ -28,15 +32,18 @@
         "url": "https://ollama.com/library/qwq",
         "tags": [
             [
+                "latest",
+                "20 GB"
+            ],
+            [
                 "32b",
-                "20\u202fGB"
+                "20 GB"
             ]
         ],
         "author": "Qwen Team",
         "categories": [
             "tools",
-            "huge",
-            "reasoning"
+            "huge"
         ],
         "languages": [
             "en"
@@ -46,19 +53,24 @@
         "url": "https://ollama.com/library/llama3.2-vision",
         "tags": [
             [
+                "latest",
+                "7.8 GB"
+            ],
+            [
                 "11b",
-                "7.9\u202fGB"
+                "7.8 GB"
             ],
             [
                 "90b",
-                "55\u202fGB"
+                "55 GB"
             ]
         ],
         "author": "Meta",
         "categories": [
+            "vision",
             "medium",
-            "huge",
-            "vision"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -68,12 +80,16 @@
         "url": "https://ollama.com/library/llama3.2",
         "tags": [
             [
+                "latest",
+                "2.0 GB"
+            ],
+            [
                 "1b",
-                "1.3\u202fGB"
+                "1.3 GB"
             ],
             [
                 "3b",
-                "2.0\u202fGB"
+                "2.0 GB"
             ]
         ],
         "author": "Meta",
@@ -81,6 +97,7 @@
             "tools",
             "small",
             "medium",
+            "big",
             "multilingual"
         ],
         "languages": [
@@ -98,22 +115,27 @@
         "url": "https://ollama.com/library/llama3.1",
         "tags": [
             [
+                "latest",
+                "4.9 GB"
+            ],
+            [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
             ],
             [
                 "70b",
-                "43\u202fGB"
+                "43 GB"
             ],
             [
                 "405b",
-                "243\u202fGB"
+                "243 GB"
             ]
         ],
         "author": "Meta",
         "categories": [
             "tools",
             "small",
+            "medium",
             "huge",
             "math",
             "multilingual",
@@ -127,17 +149,22 @@
         "url": "https://ollama.com/library/llama3",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Meta",
         "categories": [
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -148,14 +175,19 @@
         "url": "https://ollama.com/library/mistral",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Mistral AI",
         "categories": [
             "tools",
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -166,12 +198,17 @@
         "tags": [
             [
                 "latest",
-                "274\u202fMB"
+                "274 MB"
+            ],
+            [
+                "v1.5",
+                "274 MB"
             ]
         ],
         "author": "Nomic AI",
         "categories": [
             "small",
+            "medium",
             "embedding",
             "code"
         ],
@@ -183,18 +220,23 @@
         "url": "https://ollama.com/library/gemma",
         "tags": [
             [
+                "latest",
+                "5.0 GB"
+            ],
+            [
                 "2b",
-                "1.7\u202fGB"
+                "1.7 GB"
             ],
             [
                 "7b",
-                "5.0\u202fGB"
+                "5.0 GB"
             ]
         ],
         "author": "Google DeepMind",
         "categories": [
-            "small",
             "medium",
+            "small",
+            "big",
             "code",
             "math"
         ],
@@ -206,36 +248,40 @@
         "url": "https://ollama.com/library/qwen",
         "tags": [
             [
+                "latest",
+                "2.3 GB"
+            ],
+            [
                 "0.5b",
-                "395\u202fMB"
+                "395 MB"
             ],
             [
                 "1.8b",
-                "1.1\u202fGB"
+                "1.1 GB"
             ],
             [
                 "4b",
-                "2.3\u202fGB"
+                "2.3 GB"
             ],
             [
                 "7b",
-                "4.5\u202fGB"
+                "4.5 GB"
             ],
             [
                 "14b",
-                "8.2\u202fGB"
+                "8.2 GB"
             ],
             [
                 "32b",
-                "18\u202fGB"
+                "18 GB"
             ],
             [
                 "72b",
-                "41\u202fGB"
+                "41 GB"
             ],
             [
                 "110b",
-                "63\u202fGB"
+                "63 GB"
             ]
         ],
         "author": "Alibaba",
@@ -257,20 +303,24 @@
         "url": "https://ollama.com/library/qwen2",
         "tags": [
             [
+                "latest",
+                "4.4 GB"
+            ],
+            [
                 "0.5b",
-                "352\u202fMB"
+                "352 MB"
             ],
             [
                 "1.5b",
-                "935\u202fMB"
+                "935 MB"
             ],
             [
                 "7b",
-                "4.4\u202fGB"
+                "4.4 GB"
             ],
             [
                 "72b",
-                "41\u202fGB"
+                "41 GB"
             ]
         ],
         "author": "Alibaba",
@@ -316,18 +366,23 @@
         "url": "https://ollama.com/library/phi3",
         "tags": [
             [
+                "latest",
+                "2.2 GB"
+            ],
+            [
                 "3.8b",
-                "2.2\u202fGB"
+                "2.2 GB"
             ],
             [
                 "14b",
-                "7.9\u202fGB"
+                "7.9 GB"
             ]
         ],
         "author": "Microsoft",
         "categories": [
             "small",
             "medium",
+            "big",
             "code",
             "math"
         ],
@@ -339,22 +394,27 @@
         "url": "https://ollama.com/library/llama2",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "Meta",
         "categories": [
             "small",
             "medium",
+            "big",
             "huge"
         ],
         "languages": [
@@ -365,32 +425,36 @@
         "url": "https://ollama.com/library/qwen2.5",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "0.5b",
-                "398\u202fMB"
+                "398 MB"
             ],
             [
                 "1.5b",
-                "986\u202fMB"
+                "986 MB"
             ],
             [
                 "3b",
-                "1.9\u202fGB"
+                "1.9 GB"
             ],
             [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "14b",
-                "9.0\u202fGB"
+                "9.0 GB"
             ],
             [
                 "32b",
-                "20\u202fGB"
+                "20 GB"
             ],
             [
                 "72b",
-                "47\u202fGB"
+                "47 GB"
             ]
         ],
         "author": "Alibaba",
@@ -422,23 +486,28 @@
         "url": "https://ollama.com/library/gemma2",
         "tags": [
             [
+                "latest",
+                "5.4 GB"
+            ],
+            [
                 "2b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ],
             [
                 "9b",
-                "5.4\u202fGB"
+                "5.4 GB"
             ],
             [
                 "27b",
-                "16\u202fGB"
+                "16 GB"
             ]
         ],
         "author": "Google DeepMind",
         "categories": [
-            "small",
             "medium",
-            "big"
+            "small",
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -448,24 +517,29 @@
         "url": "https://ollama.com/library/llava",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "13b",
-                "8.0\u202fGB"
+                "8.0 GB"
             ],
             [
                 "34b",
-                "20\u202fGB"
+                "20 GB"
             ]
         ],
         "author": "Haotian Liu",
         "categories": [
+            "vision",
             "small",
             "medium",
+            "big",
             "huge",
-            "vision",
             "code"
         ],
         "languages": [
@@ -476,20 +550,24 @@
         "url": "https://ollama.com/library/codellama",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "34b",
-                "19\u202fGB"
+                "19 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "Meta",
@@ -508,28 +586,32 @@
         "url": "https://ollama.com/library/qwen2.5-coder",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "0.5b",
-                "531\u202fMB"
+                "398 MB"
             ],
             [
                 "1.5b",
-                "986\u202fMB"
+                "986 MB"
             ],
             [
                 "3b",
-                "1.9\u202fGB"
+                "1.9 GB"
             ],
             [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "14b",
-                "9.0\u202fGB"
+                "9.0 GB"
             ],
             [
                 "32b",
-                "20\u202fGB"
+                "20 GB"
             ]
         ],
         "author": "Alibaba",
@@ -549,14 +631,19 @@
         "url": "https://ollama.com/library/mistral-nemo",
         "tags": [
             [
+                "latest",
+                "7.1 GB"
+            ],
+            [
                 "12b",
-                "7.1\u202fGB"
+                "7.1 GB"
             ]
         ],
         "author": "Mistral AI",
         "categories": [
             "tools",
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -567,13 +654,18 @@
         "url": "https://ollama.com/library/tinyllama",
         "tags": [
             [
+                "latest",
+                "638 MB"
+            ],
+            [
                 "1.1b",
-                "638\u202fMB"
+                "638 MB"
             ]
         ],
         "author": "TinyLlama Team",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -583,13 +675,18 @@
         "url": "https://ollama.com/library/mxbai-embed-large",
         "tags": [
             [
+                "latest",
+                "670 MB"
+            ],
+            [
                 "335m",
-                "670\u202fMB"
+                "670 MB"
             ]
         ],
         "author": "Mixedbread.ai",
         "categories": [
             "small",
+            "medium",
             "embedding"
         ],
         "languages": [
@@ -600,16 +697,20 @@
         "url": "https://ollama.com/library/starcoder2",
         "tags": [
             [
+                "latest",
+                "1.7 GB"
+            ],
+            [
                 "3b",
-                "1.7\u202fGB"
+                "1.7 GB"
             ],
             [
                 "7b",
-                "4.0\u202fGB"
+                "4.0 GB"
             ],
             [
                 "15b",
-                "9.1\u202fGB"
+                "9.1 GB"
             ]
         ],
         "author": "BigCode",
@@ -617,6 +718,7 @@
             "small",
             "medium",
             "big",
+            "huge",
             "code"
         ],
         "languages": [
@@ -627,12 +729,16 @@
         "url": "https://ollama.com/library/mixtral",
         "tags": [
             [
+                "latest",
+                "26 GB"
+            ],
+            [
                 "8x7b",
-                "26\u202fGB"
+                "26 GB"
             ],
             [
                 "8x22b",
-                "80\u202fGB"
+                "80 GB"
             ]
         ],
         "author": "Mistral AI",
@@ -648,12 +754,16 @@
         "url": "https://ollama.com/library/dolphin-mixtral",
         "tags": [
             [
+                "latest",
+                "26 GB"
+            ],
+            [
                 "8x7b",
-                "26\u202fGB"
+                "26 GB"
             ],
             [
                 "8x22b",
-                "80\u202fGB"
+                "80 GB"
             ]
         ],
         "author": "Eric Hartford",
@@ -669,18 +779,23 @@
         "url": "https://ollama.com/library/codegemma",
         "tags": [
             [
+                "latest",
+                "5.0 GB"
+            ],
+            [
                 "2b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ],
             [
                 "7b",
-                "5.0\u202fGB"
+                "5.0 GB"
             ]
         ],
         "author": "Google DeepMind",
         "categories": [
-            "small",
             "medium",
+            "small",
+            "big",
             "code",
             "math"
         ],
@@ -692,17 +807,22 @@
         "url": "https://ollama.com/library/deepseek-coder-v2",
         "tags": [
             [
+                "latest",
+                "8.9 GB"
+            ],
+            [
                 "16b",
-                "8.9\u202fGB"
+                "8.9 GB"
             ],
             [
                 "236b",
-                "133\u202fGB"
+                "133 GB"
             ]
         ],
         "author": "DeepSeek Team",
         "categories": [
             "medium",
+            "big",
             "huge",
             "code"
         ],
@@ -714,13 +834,18 @@
         "url": "https://ollama.com/library/phi",
         "tags": [
             [
+                "latest",
+                "1.6 GB"
+            ],
+            [
                 "2.7b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ]
         ],
         "author": "Microsoft",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -730,17 +855,22 @@
         "url": "https://ollama.com/library/llama2-uncensored",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "George Sung, Jarrad Hope",
         "categories": [
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -751,16 +881,20 @@
         "url": "https://ollama.com/library/deepseek-coder",
         "tags": [
             [
+                "latest",
+                "776 MB"
+            ],
+            [
                 "1.3b",
-                "776\u202fMB"
+                "776 MB"
             ],
             [
                 "6.7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "33b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "DeepSeek Team",
@@ -768,6 +902,7 @@
             "small",
             "medium",
             "big",
+            "huge",
             "code",
             "multilingual"
         ],
@@ -780,24 +915,28 @@
         "url": "https://ollama.com/library/snowflake-arctic-embed",
         "tags": [
             [
+                "latest",
+                "669 MB"
+            ],
+            [
                 "22m",
-                "46\u202fMB"
+                "46 MB"
             ],
             [
                 "33m",
-                "67\u202fMB"
+                "67 MB"
             ],
             [
                 "110m",
-                "219\u202fMB"
+                "219 MB"
             ],
             [
                 "137m",
-                "274\u202fMB"
+                "274 MB"
             ],
             [
                 "335m",
-                "669\u202fMB"
+                "669 MB"
             ]
         ],
         "author": "Snowflake",
@@ -816,17 +955,22 @@
         "url": "https://ollama.com/library/wizardlm2",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ],
             [
                 "8x22b",
-                "80\u202fGB"
+                "80 GB"
             ]
         ],
         "author": "Microsoft",
         "categories": [
             "small",
+            "medium",
             "huge",
             "multilingual"
         ],
@@ -838,13 +982,18 @@
         "url": "https://ollama.com/library/dolphin-mistral",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Eric Hartford",
         "categories": [
             "small",
+            "medium",
             "code"
         ],
         "languages": [
@@ -855,17 +1004,22 @@
         "url": "https://ollama.com/library/dolphin-llama3",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Eric Hartford",
         "categories": [
             "small",
+            "medium",
             "huge",
             "code"
         ],
@@ -877,16 +1031,20 @@
         "url": "https://ollama.com/library/yi",
         "tags": [
             [
+                "latest",
+                "3.5 GB"
+            ],
+            [
                 "6b",
-                "3.5\u202fGB"
+                "3.5 GB"
             ],
             [
                 "9b",
-                "5.0\u202fGB"
+                "5.0 GB"
             ],
             [
                 "34b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "01.AI",
@@ -894,6 +1052,7 @@
             "small",
             "medium",
             "big",
+            "huge",
             "multilingual"
         ],
         "languages": [
@@ -905,14 +1064,19 @@
         "url": "https://ollama.com/library/command-r",
         "tags": [
             [
+                "latest",
+                "19 GB"
+            ],
+            [
                 "35b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "Cohere",
         "categories": [
             "tools",
-            "big"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -922,20 +1086,24 @@
         "url": "https://ollama.com/library/orca-mini",
         "tags": [
             [
+                "latest",
+                "2.0 GB"
+            ],
+            [
                 "3b",
-                "2.0\u202fGB"
+                "2.0 GB"
             ],
             [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "Orca Mini Team",
@@ -954,14 +1122,19 @@
         "url": "https://ollama.com/library/llava-llama3",
         "tags": [
             [
+                "latest",
+                "5.5 GB"
+            ],
+            [
                 "8b",
-                "5.5\u202fGB"
+                "5.5 GB"
             ]
         ],
         "author": "Xtuner",
         "categories": [
+            "vision",
             "medium",
-            "vision"
+            "big"
         ],
         "languages": [
             "en"
@@ -971,17 +1144,22 @@
         "url": "https://ollama.com/library/zephyr",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ],
             [
                 "141b",
-                "80\u202fGB"
+                "80 GB"
             ]
         ],
         "author": "Hugging Face H4",
         "categories": [
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -992,13 +1170,18 @@
         "url": "https://ollama.com/library/phi3.5",
         "tags": [
             [
+                "latest",
+                "2.2 GB"
+            ],
+            [
                 "3.8b",
-                "2.2\u202fGB"
+                "2.2 GB"
             ]
         ],
         "author": "Microsoft",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -1008,18 +1191,23 @@
         "url": "https://ollama.com/library/all-minilm",
         "tags": [
             [
+                "latest",
+                "46 MB"
+            ],
+            [
                 "22m",
-                "46\u202fMB"
+                "46 MB"
             ],
             [
                 "33m",
-                "67\u202fMB"
+                "67 MB"
             ]
         ],
         "author": "Sentence Transformers",
         "categories": [
             "small",
             "medium",
+            "big",
             "embedding"
         ],
         "languages": [
@@ -1030,13 +1218,18 @@
         "url": "https://ollama.com/library/codestral",
         "tags": [
             [
+                "latest",
+                "13 GB"
+            ],
+            [
                 "22b",
-                "13\u202fGB"
+                "13 GB"
             ]
         ],
         "author": "Mistral AI",
         "categories": [
             "big",
+            "huge",
             "code"
         ],
         "languages": [
@@ -1047,20 +1240,24 @@
         "url": "https://ollama.com/library/starcoder",
         "tags": [
             [
+                "latest",
+                "1.8 GB"
+            ],
+            [
                 "1b",
-                "726\u202fMB"
+                "726 MB"
             ],
             [
                 "3b",
-                "1.8\u202fGB"
+                "1.8 GB"
             ],
             [
                 "7b",
-                "4.3\u202fGB"
+                "4.3 GB"
             ],
             [
                 "15b",
-                "9.0\u202fGB"
+                "9.0 GB"
             ]
         ],
         "author": "BigCode",
@@ -1079,23 +1276,28 @@
         "url": "https://ollama.com/library/vicuna",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "33b",
-                "18\u202fGB"
+                "18 GB"
             ]
         ],
         "author": "lmsys.org",
         "categories": [
             "small",
             "medium",
-            "big"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -1105,20 +1307,24 @@
         "url": "https://ollama.com/library/granite-code",
         "tags": [
             [
+                "latest",
+                "2.0 GB"
+            ],
+            [
                 "3b",
-                "2.0\u202fGB"
+                "2.0 GB"
             ],
             [
                 "8b",
-                "4.6\u202fGB"
+                "4.6 GB"
             ],
             [
                 "20b",
-                "12\u202fGB"
+                "12 GB"
             ],
             [
                 "34b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "IBM for Code Intelligence",
@@ -1137,13 +1343,18 @@
         "url": "https://ollama.com/library/mistral-openorca",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Open Orca",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -1153,23 +1364,28 @@
         "url": "https://ollama.com/library/smollm",
         "tags": [
             [
+                "latest",
+                "991 MB"
+            ],
+            [
                 "135m",
-                "92\u202fMB"
+                "92 MB"
             ],
             [
                 "360m",
-                "229\u202fMB"
+                "229 MB"
             ],
             [
                 "1.7b",
-                "991\u202fMB"
+                "991 MB"
             ]
         ],
         "author": "Hugging Face TB",
         "categories": [
             "small",
             "medium",
-            "big"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -1179,23 +1395,28 @@
         "url": "https://ollama.com/library/wizard-vicuna-uncensored",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "30b",
-                "18\u202fGB"
+                "18 GB"
             ]
         ],
         "author": "Eric Hartford",
         "categories": [
             "small",
             "medium",
-            "big"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -1205,18 +1426,23 @@
         "url": "https://ollama.com/library/llama2-chinese",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Meta",
         "categories": [
             "small",
             "medium",
+            "big",
             "multilingual"
         ],
         "languages": [
@@ -1228,13 +1454,18 @@
         "url": "https://ollama.com/library/bge-m3",
         "tags": [
             [
+                "latest",
+                "1.2 GB"
+            ],
+            [
                 "567m",
-                "1.2\u202fGB"
+                "1.2 GB"
             ]
         ],
         "author": "BGE-m3 Team",
         "categories": [
             "small",
+            "medium",
             "embedding"
         ],
         "languages": [
@@ -1245,13 +1476,18 @@
         "url": "https://ollama.com/library/codegeex4",
         "tags": [
             [
+                "latest",
+                "5.5 GB"
+            ],
+            [
                 "9b",
-                "5.5\u202fGB"
+                "5.5 GB"
             ]
         ],
         "author": "THUDM",
         "categories": [
             "medium",
+            "big",
             "code",
             "multilingual"
         ],
@@ -1264,13 +1500,18 @@
         "url": "https://ollama.com/library/openchat",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "OpenChat Team",
         "categories": [
             "small",
+            "medium",
             "code"
         ],
         "languages": [
@@ -1281,17 +1522,22 @@
         "url": "https://ollama.com/library/aya",
         "tags": [
             [
+                "latest",
+                "4.8 GB"
+            ],
+            [
                 "8b",
-                "4.8\u202fGB"
+                "4.8 GB"
             ],
             [
                 "35b",
-                "20\u202fGB"
+                "20 GB"
             ]
         ],
         "author": "Cohere",
         "categories": [
             "small",
+            "medium",
             "huge",
             "multilingual"
         ],
@@ -1303,13 +1549,18 @@
         "url": "https://ollama.com/library/codeqwen",
         "tags": [
             [
+                "latest",
+                "4.2 GB"
+            ],
+            [
                 "7b",
-                "4.2\u202fGB"
+                "4.2 GB"
             ]
         ],
         "author": "Alibaba",
         "categories": [
             "small",
+            "medium",
             "code"
         ],
         "languages": [
@@ -1320,18 +1571,23 @@
         "url": "https://ollama.com/library/nous-hermes2",
         "tags": [
             [
+                "latest",
+                "6.1 GB"
+            ],
+            [
                 "10.7b",
-                "6.1\u202fGB"
+                "6.1 GB"
             ],
             [
                 "34b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "Nous Research",
         "categories": [
             "medium",
             "big",
+            "huge",
             "code"
         ],
         "languages": [
@@ -1342,8 +1598,12 @@
         "url": "https://ollama.com/library/command-r-plus",
         "tags": [
             [
+                "latest",
+                "59 GB"
+            ],
+            [
                 "104b",
-                "59\u202fGB"
+                "59 GB"
             ]
         ],
         "author": "Cohere",
@@ -1359,12 +1619,17 @@
         "url": "https://ollama.com/library/wizardcoder",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "33b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "WizardLM Team",
         "categories": [
+            "small",
             "big",
             "code"
         ],
@@ -1376,13 +1641,18 @@
         "url": "https://ollama.com/library/stable-code",
         "tags": [
             [
+                "latest",
+                "1.6 GB"
+            ],
+            [
                 "3b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ]
         ],
         "author": "Stability AI",
         "categories": [
             "small",
+            "medium",
             "code",
             "math"
         ],
@@ -1394,13 +1664,18 @@
         "url": "https://ollama.com/library/tinydolphin",
         "tags": [
             [
+                "latest",
+                "637 MB"
+            ],
+            [
                 "1.1b",
-                "637\u202fMB"
+                "637 MB"
             ]
         ],
         "author": "Eric Hartford",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -1411,12 +1686,22 @@
         "tags": [
             [
                 "latest",
-                "4.1\u202fGB"
+                "4.1 GB"
+            ],
+            [
+                "v2",
+                "4.1 GB"
+            ],
+            [
+                "v2.5",
+                "4.1 GB"
             ]
         ],
         "author": "Teknium",
         "categories": [
-            "small"
+            "small",
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -1426,8 +1711,12 @@
         "url": "https://ollama.com/library/mistral-large",
         "tags": [
             [
+                "latest",
+                "73 GB"
+            ],
+            [
                 "123b",
-                "73\u202fGB"
+                "73 GB"
             ]
         ],
         "author": "Mistral AI",
@@ -1445,22 +1734,27 @@
         "url": "https://ollama.com/library/qwen2-math",
         "tags": [
             [
+                "latest",
+                "4.4 GB"
+            ],
+            [
                 "1.5b",
-                "935\u202fMB"
+                "935 MB"
             ],
             [
                 "7b",
-                "4.4\u202fGB"
+                "4.4 GB"
             ],
             [
                 "72b",
-                "41\u202fGB"
+                "41 GB"
             ]
         ],
         "author": "Alibaba",
         "categories": [
             "small",
             "medium",
+            "big",
             "huge",
             "math"
         ],
@@ -1472,13 +1766,18 @@
         "url": "https://ollama.com/library/glm4",
         "tags": [
             [
+                "latest",
+                "5.5 GB"
+            ],
+            [
                 "9b",
-                "5.5\u202fGB"
+                "5.5 GB"
             ]
         ],
         "author": "THUDM",
         "categories": [
             "medium",
+            "big",
             "code",
             "math"
         ],
@@ -1490,18 +1789,23 @@
         "url": "https://ollama.com/library/stablelm2",
         "tags": [
             [
+                "latest",
+                "983 MB"
+            ],
+            [
                 "1.6b",
-                "983\u202fMB"
+                "983 MB"
             ],
             [
                 "12b",
-                "7.0\u202fGB"
+                "7.0 GB"
             ]
         ],
         "author": "Stability AI",
         "categories": [
             "small",
             "medium",
+            "big",
             "multilingual"
         ],
         "languages": [
@@ -1518,14 +1822,19 @@
         "url": "https://ollama.com/library/bakllava",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ]
         ],
         "author": "Skunkworks AI",
         "categories": [
+            "vision",
             "small",
-            "vision"
+            "medium"
         ],
         "languages": [
             "en"
@@ -1535,8 +1844,12 @@
         "url": "https://ollama.com/library/reflection",
         "tags": [
             [
+                "latest",
+                "40 GB"
+            ],
+            [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Matt Shumer",
@@ -1551,17 +1864,22 @@
         "url": "https://ollama.com/library/deepseek-llm",
         "tags": [
             [
+                "latest",
+                "4.0 GB"
+            ],
+            [
                 "7b",
-                "4.0\u202fGB"
+                "4.0 GB"
             ],
             [
                 "67b",
-                "38\u202fGB"
+                "38 GB"
             ]
         ],
         "author": "DeepSeek Team",
         "categories": [
             "small",
+            "medium",
             "huge",
             "multilingual",
             "code",
@@ -1576,16 +1894,16 @@
         "url": "https://ollama.com/library/llama3-gradient",
         "tags": [
             [
-                "1048k",
-                "4.7\u202fGB"
+                "latest",
+                "4.7 GB"
             ],
             [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Gradient AI",
@@ -1602,22 +1920,27 @@
         "url": "https://ollama.com/library/wizard-math",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "WizardLM Team",
         "categories": [
             "small",
             "medium",
+            "big",
             "huge",
             "math"
         ],
@@ -1629,14 +1952,19 @@
         "url": "https://ollama.com/library/moondream",
         "tags": [
             [
+                "latest",
+                "1.7 GB"
+            ],
+            [
                 "1.8b",
-                "1.7\u202fGB"
+                "1.7 GB"
             ]
         ],
         "author": "Vikhyatk",
         "categories": [
+            "vision",
             "small",
-            "vision"
+            "medium"
         ],
         "languages": [
             "en"
@@ -1646,13 +1974,18 @@
         "url": "https://ollama.com/library/neural-chat",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Intel",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -1662,17 +1995,22 @@
         "url": "https://ollama.com/library/llama3-chatqa",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Nvidia",
         "categories": [
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -1683,18 +2021,23 @@
         "url": "https://ollama.com/library/xwinlm",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Xwin LM",
         "categories": [
             "small",
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -1704,18 +2047,23 @@
         "url": "https://ollama.com/library/sqlcoder",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ],
             [
                 "15b",
-                "9.0\u202fGB"
+                "9.0 GB"
             ]
         ],
         "author": "Defog.ai",
         "categories": [
             "small",
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -1726,18 +2074,23 @@
         "url": "https://ollama.com/library/nous-hermes",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Nous Research",
         "categories": [
             "small",
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -1747,13 +2100,18 @@
         "url": "https://ollama.com/library/phind-codellama",
         "tags": [
             [
+                "latest",
+                "19 GB"
+            ],
+            [
                 "34b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "Phind",
         "categories": [
             "big",
+            "huge",
             "code"
         ],
         "languages": [
@@ -1764,18 +2122,23 @@
         "url": "https://ollama.com/library/yarn-llama2",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Nous Research",
         "categories": [
             "small",
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -1785,18 +2148,23 @@
         "url": "https://ollama.com/library/dolphincoder",
         "tags": [
             [
+                "latest",
+                "4.2 GB"
+            ],
+            [
                 "7b",
-                "4.2\u202fGB"
+                "4.2 GB"
             ],
             [
                 "15b",
-                "9.1\u202fGB"
+                "9.1 GB"
             ]
         ],
         "author": "Cognitive Computations",
         "categories": [
             "small",
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -1807,13 +2175,23 @@
         "url": "https://ollama.com/library/wizardlm",
         "tags": [
             [
-                "13b-fp16",
-                "26\u202fGB"
+                "7b-q2_K",
+                "2.8 GB"
+            ],
+            [
+                "7b-q3_K_S",
+                "2.9 GB"
+            ],
+            [
+                "7b-q3_K_M",
+                "3.3 GB"
             ]
         ],
         "author": "WizardLM Team",
         "categories": [
-            "huge"
+            "small",
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -1823,17 +2201,22 @@
         "url": "https://ollama.com/library/deepseek-v2",
         "tags": [
             [
+                "latest",
+                "8.9 GB"
+            ],
+            [
                 "16b",
-                "8.9\u202fGB"
+                "8.9 GB"
             ],
             [
                 "236b",
-                "133\u202fGB"
+                "133 GB"
             ]
         ],
         "author": "DeepSeek Team",
         "categories": [
             "medium",
+            "big",
             "huge",
             "multilingual"
         ],
@@ -1846,13 +2229,18 @@
         "url": "https://ollama.com/library/starling-lm",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Berkeley Nest",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -1862,13 +2250,18 @@
         "url": "https://ollama.com/library/samantha-mistral",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Eric Hartford",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -1878,20 +2271,24 @@
         "url": "https://ollama.com/library/hermes3",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "3b",
-                "2.0\u202fGB"
+                "2.0 GB"
             ],
             [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ],
             [
                 "405b",
-                "229\u202fGB"
+                "229 GB"
             ]
         ],
         "author": "Nous Research ",
@@ -1899,6 +2296,7 @@
             "tools",
             "small",
             "medium",
+            "big",
             "huge",
             "code"
         ],
@@ -1910,18 +2308,23 @@
         "url": "https://ollama.com/library/yi-coder",
         "tags": [
             [
+                "latest",
+                "5.0 GB"
+            ],
+            [
                 "1.5b",
-                "866\u202fMB"
+                "866 MB"
             ],
             [
                 "9b",
-                "5.0\u202fGB"
+                "5.0 GB"
             ]
         ],
         "author": "01.AI",
         "categories": [
-            "small",
             "medium",
+            "small",
+            "big",
             "code"
         ],
         "languages": [
@@ -1932,21 +2335,26 @@
         "url": "https://ollama.com/library/falcon",
         "tags": [
             [
+                "latest",
+                "4.2 GB"
+            ],
+            [
                 "7b",
-                "4.2\u202fGB"
+                "4.2 GB"
             ],
             [
                 "40b",
-                "24\u202fGB"
+                "24 GB"
             ],
             [
                 "180b",
-                "101\u202fGB"
+                "101 GB"
             ]
         ],
         "author": "Technology Innovation Institute",
         "categories": [
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -1957,20 +2365,24 @@
         "url": "https://ollama.com/library/internlm2",
         "tags": [
             [
+                "latest",
+                "4.5 GB"
+            ],
+            [
                 "1m",
-                "4.5\u202fGB"
+                "4.5 GB"
             ],
             [
                 "1.8b",
-                "1.1\u202fGB"
+                "1.1 GB"
             ],
             [
                 "7b",
-                "4.5\u202fGB"
+                "4.5 GB"
             ],
             [
                 "20b",
-                "11\u202fGB"
+                "11 GB"
             ]
         ],
         "author": "Intern LM",
@@ -1989,13 +2401,18 @@
         "url": "https://ollama.com/library/solar",
         "tags": [
             [
+                "latest",
+                "6.1 GB"
+            ],
+            [
                 "10.7b",
-                "6.1\u202fGB"
+                "6.1 GB"
             ]
         ],
         "author": "Upstage",
         "categories": [
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -2005,8 +2422,12 @@
         "url": "https://ollama.com/library/athene-v2",
         "tags": [
             [
+                "latest",
+                "47 GB"
+            ],
+            [
                 "72b",
-                "47\u202fGB"
+                "47 GB"
             ]
         ],
         "author": "Nexusflow",
@@ -2024,14 +2445,19 @@
         "url": "https://ollama.com/library/llava-phi3",
         "tags": [
             [
+                "latest",
+                "2.9 GB"
+            ],
+            [
                 "3.8b",
-                "2.9\u202fGB"
+                "2.9 GB"
             ]
         ],
         "author": "Xtuner",
         "categories": [
+            "vision",
             "small",
-            "vision"
+            "medium"
         ],
         "languages": [
             "en"
@@ -2041,18 +2467,23 @@
         "url": "https://ollama.com/library/orca2",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Microsoft Research",
         "categories": [
             "small",
             "medium",
+            "big",
             "math"
         ],
         "languages": [
@@ -2063,14 +2494,19 @@
         "url": "https://ollama.com/library/minicpm-v",
         "tags": [
             [
+                "latest",
+                "5.5 GB"
+            ],
+            [
                 "8b",
-                "5.5\u202fGB"
+                "5.5 GB"
             ]
         ],
         "author": "OpenBMB",
         "categories": [
-            "medium",
             "vision",
+            "medium",
+            "big",
             "math",
             "multilingual",
             "code"
@@ -2088,22 +2524,27 @@
         "url": "https://ollama.com/library/stable-beluga",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "Stability AI",
         "categories": [
             "small",
             "medium",
+            "big",
             "huge"
         ],
         "languages": [
@@ -2114,12 +2555,16 @@
         "url": "https://ollama.com/library/mistral-small",
         "tags": [
             [
+                "latest",
+                "14 GB"
+            ],
+            [
                 "22b",
-                "13\u202fGB"
+                "13 GB"
             ],
             [
                 "24b",
-                "14\u202fGB"
+                "14 GB"
             ]
         ],
         "author": "Mistral AI",
@@ -2138,13 +2583,18 @@
         "url": "https://ollama.com/library/dolphin-phi",
         "tags": [
             [
+                "latest",
+                "1.6 GB"
+            ],
+            [
                 "2.7b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ]
         ],
         "author": "Eric Hartford",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2154,16 +2604,20 @@
         "url": "https://ollama.com/library/smollm2",
         "tags": [
             [
+                "latest",
+                "1.8 GB"
+            ],
+            [
                 "135m",
-                "271\u202fMB"
+                "271 MB"
             ],
             [
                 "360m",
-                "726\u202fMB"
+                "726 MB"
             ],
             [
                 "1.7b",
-                "1.8\u202fGB"
+                "1.8 GB"
             ]
         ],
         "author": "Hugging Face TB",
@@ -2171,7 +2625,8 @@
             "tools",
             "small",
             "medium",
-            "big"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -2181,13 +2636,18 @@
         "url": "https://ollama.com/library/wizardlm-uncensored",
         "tags": [
             [
+                "latest",
+                "7.4 GB"
+            ],
+            [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "TheBloke AI",
         "categories": [
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -2197,14 +2657,19 @@
         "url": "https://ollama.com/library/nemotron-mini",
         "tags": [
             [
+                "latest",
+                "2.7 GB"
+            ],
+            [
                 "4b",
-                "2.7\u202fGB"
+                "2.7 GB"
             ]
         ],
         "author": "Nvidia",
         "categories": [
             "tools",
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2214,13 +2679,18 @@
         "url": "https://ollama.com/library/yarn-mistral",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Nous Research",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2231,12 +2701,22 @@
         "tags": [
             [
                 "latest",
-                "4.7\u202fGB"
+                "4.7 GB"
+            ],
+            [
+                "instruct",
+                "4.7 GB"
+            ],
+            [
+                "text",
+                "4.7 GB"
             ]
         ],
         "author": "Tencent",
         "categories": [
             "small",
+            "medium",
+            "big",
             "math"
         ],
         "languages": [
@@ -2247,13 +2727,18 @@
         "url": "https://ollama.com/library/medllama2",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ]
         ],
         "author": "Siraj Raval",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2263,17 +2748,22 @@
         "url": "https://ollama.com/library/meditron",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ],
             [
                 "70b",
-                "39\u202fGB"
+                "39 GB"
             ]
         ],
         "author": "EPFL LLM Team",
         "categories": [
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -2284,18 +2774,23 @@
         "url": "https://ollama.com/library/llama3-groq-tool-use",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Groq",
         "categories": [
             "tools",
             "small",
+            "medium",
             "huge"
         ],
         "languages": [
@@ -2306,8 +2801,12 @@
         "url": "https://ollama.com/library/nemotron",
         "tags": [
             [
+                "latest",
+                "43 GB"
+            ],
+            [
                 "70b",
-                "43\u202fGB"
+                "43 GB"
             ]
         ],
         "author": "Nvidia",
@@ -2323,13 +2822,18 @@
         "url": "https://ollama.com/library/nexusraven",
         "tags": [
             [
+                "latest",
+                "7.4 GB"
+            ],
+            [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "NexusFlow AI",
         "categories": [
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -2339,8 +2843,12 @@
         "url": "https://ollama.com/library/nous-hermes2-mixtral",
         "tags": [
             [
+                "latest",
+                "26 GB"
+            ],
+            [
                 "8x7b",
-                "26\u202fGB"
+                "26 GB"
             ]
         ],
         "author": "Nous Research",
@@ -2355,13 +2863,18 @@
         "url": "https://ollama.com/library/codeup",
         "tags": [
             [
+                "latest",
+                "7.4 GB"
+            ],
+            [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "DeepSE",
         "categories": [
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -2372,13 +2885,18 @@
         "url": "https://ollama.com/library/everythinglm",
         "tags": [
             [
+                "latest",
+                "7.4 GB"
+            ],
+            [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Totally Not An LLM",
         "categories": [
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -2388,12 +2906,16 @@
         "url": "https://ollama.com/library/granite3-dense",
         "tags": [
             [
+                "latest",
+                "1.6 GB"
+            ],
+            [
                 "2b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ],
             [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
             ]
         ],
         "author": "IBM Research",
@@ -2401,6 +2923,7 @@
             "tools",
             "small",
             "medium",
+            "big",
             "code",
             "multilingual"
         ],
@@ -2423,13 +2946,18 @@
         "url": "https://ollama.com/library/magicoder",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ]
         ],
         "author": "iSE",
         "categories": [
             "small",
+            "medium",
             "code"
         ],
         "languages": [
@@ -2440,13 +2968,18 @@
         "url": "https://ollama.com/library/stablelm-zephyr",
         "tags": [
             [
+                "latest",
+                "1.6 GB"
+            ],
+            [
                 "3b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ]
         ],
         "author": "Stability AI",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2456,13 +2989,18 @@
         "url": "https://ollama.com/library/codebooga",
         "tags": [
             [
+                "latest",
+                "19 GB"
+            ],
+            [
                 "34b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "Oobabooga",
         "categories": [
             "big",
+            "huge",
             "code"
         ],
         "languages": [
@@ -2473,13 +3011,18 @@
         "url": "https://ollama.com/library/falcon2",
         "tags": [
             [
+                "latest",
+                "6.4 GB"
+            ],
+            [
                 "11b",
-                "6.4\u202fGB"
+                "6.4 GB"
             ]
         ],
         "author": "Technology Innovation Institute",
         "categories": [
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -2490,13 +3033,18 @@
         "url": "https://ollama.com/library/wizard-vicuna",
         "tags": [
             [
+                "latest",
+                "7.4 GB"
+            ],
+            [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "MelodysDreamj",
         "categories": [
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -2506,13 +3054,18 @@
         "url": "https://ollama.com/library/mistrallite",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Amazon Web Services",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2522,13 +3075,18 @@
         "url": "https://ollama.com/library/mathstral",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Mistral AI",
         "categories": [
             "small",
+            "medium",
             "math"
         ],
         "languages": [
@@ -2539,13 +3097,18 @@
         "url": "https://ollama.com/library/duckdb-nsql",
         "tags": [
             [
+                "latest",
+                "3.8 GB"
+            ],
+            [
                 "7b",
-                "3.8\u202fGB"
+                "3.8 GB"
             ]
         ],
         "author": "MotherDuck, Numbers Station",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2555,8 +3118,12 @@
         "url": "https://ollama.com/library/megadolphin",
         "tags": [
             [
+                "latest",
+                "68 GB"
+            ],
+            [
                 "120b",
-                "68\u202fGB"
+                "68 GB"
             ]
         ],
         "author": "Cognitive Computations",
@@ -2571,13 +3138,18 @@
         "url": "https://ollama.com/library/solar-pro",
         "tags": [
             [
+                "latest",
+                "13 GB"
+            ],
+            [
                 "22b",
-                "13\u202fGB"
+                "13 GB"
             ]
         ],
         "author": "Upstage",
         "categories": [
-            "big"
+            "big",
+            "huge"
         ],
         "languages": [
             "en"
@@ -2587,18 +3159,23 @@
         "url": "https://ollama.com/library/reader-lm",
         "tags": [
             [
+                "latest",
+                "935 MB"
+            ],
+            [
                 "0.5b",
-                "352\u202fMB"
+                "352 MB"
             ],
             [
                 "1.5b",
-                "935\u202fMB"
+                "935 MB"
             ]
         ],
         "author": "JinaAI",
         "categories": [
             "small",
-            "medium"
+            "medium",
+            "big"
         ],
         "languages": [
             "en"
@@ -2608,8 +3185,12 @@
         "url": "https://ollama.com/library/notux",
         "tags": [
             [
+                "latest",
+                "26 GB"
+            ],
+            [
                 "8x7b",
-                "26\u202fGB"
+                "26 GB"
             ]
         ],
         "author": "Argilla",
@@ -2624,13 +3205,18 @@
         "url": "https://ollama.com/library/notus",
         "tags": [
             [
+                "latest",
+                "4.1 GB"
+            ],
+            [
                 "7b",
-                "4.1\u202fGB"
+                "4.1 GB"
             ]
         ],
         "author": "Argilla",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2640,13 +3226,18 @@
         "url": "https://ollama.com/library/open-orca-platypus2",
         "tags": [
             [
+                "latest",
+                "7.4 GB"
+            ],
+            [
                 "13b",
-                "7.4\u202fGB"
+                "7.4 GB"
             ]
         ],
         "author": "Open Orca",
         "categories": [
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -2658,7 +3249,7 @@
         "tags": [
             [
                 "latest",
-                "66\u202fGB"
+                "66 GB"
             ]
         ],
         "author": "Alpindale",
@@ -2673,12 +3264,16 @@
         "url": "https://ollama.com/library/granite3-moe",
         "tags": [
             [
+                "latest",
+                "822 MB"
+            ],
+            [
                 "1b",
-                "822\u202fMB"
+                "822 MB"
             ],
             [
                 "3b",
-                "2.1\u202fGB"
+                "2.1 GB"
             ]
         ],
         "author": "IBM Research",
@@ -2686,6 +3281,7 @@
             "tools",
             "small",
             "medium",
+            "big",
             "multilingual",
             "code"
         ],
@@ -2708,13 +3304,18 @@
         "url": "https://ollama.com/library/nuextract",
         "tags": [
             [
+                "latest",
+                "2.2 GB"
+            ],
+            [
                 "3.8b",
-                "2.2\u202fGB"
+                "2.2 GB"
             ]
         ],
         "author": "Numind",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2724,18 +3325,23 @@
         "url": "https://ollama.com/library/aya-expanse",
         "tags": [
             [
+                "latest",
+                "5.1 GB"
+            ],
+            [
                 "8b",
-                "5.1\u202fGB"
+                "5.1 GB"
             ],
             [
                 "32b",
-                "20\u202fGB"
+                "20 GB"
             ]
         ],
         "author": "Cohere For AI",
         "categories": [
             "tools",
             "medium",
+            "big",
             "huge",
             "multilingual"
         ],
@@ -2769,8 +3375,12 @@
         "url": "https://ollama.com/library/dbrx",
         "tags": [
             [
+                "latest",
+                "74 GB"
+            ],
+            [
                 "132b",
-                "74\u202fGB"
+                "74 GB"
             ]
         ],
         "author": "Databricks",
@@ -2786,13 +3396,18 @@
         "url": "https://ollama.com/library/marco-o1",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ]
         ],
         "author": "AIDC-AI",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2802,13 +3417,18 @@
         "url": "https://ollama.com/library/bge-large",
         "tags": [
             [
+                "latest",
+                "671 MB"
+            ],
+            [
                 "335m",
-                "671\u202fMB"
+                "671 MB"
             ]
         ],
         "author": "BGE Large Team",
         "categories": [
             "small",
+            "medium",
             "embedding"
         ],
         "languages": [
@@ -2819,8 +3439,12 @@
         "url": "https://ollama.com/library/firefunction-v2",
         "tags": [
             [
+                "latest",
+                "40 GB"
+            ],
+            [
                 "70b",
-                "40\u202fGB"
+                "40 GB"
             ]
         ],
         "author": "Fireworks AI",
@@ -2836,8 +3460,12 @@
         "url": "https://ollama.com/library/alfred",
         "tags": [
             [
+                "latest",
+                "24 GB"
+            ],
+            [
                 "40b",
-                "24\u202fGB"
+                "24 GB"
             ]
         ],
         "author": "LightOn AI",
@@ -2852,8 +3480,12 @@
         "url": "https://ollama.com/library/deepseek-v2.5",
         "tags": [
             [
+                "latest",
+                "133 GB"
+            ],
+            [
                 "236b",
-                "133\u202fGB"
+                "133 GB"
             ]
         ],
         "author": "DeepSeek Team",
@@ -2869,23 +3501,28 @@
         "url": "https://ollama.com/library/shieldgemma",
         "tags": [
             [
+                "latest",
+                "5.8 GB"
+            ],
+            [
                 "2b",
-                "1.7\u202fGB"
+                "1.7 GB"
             ],
             [
                 "9b",
-                "5.8\u202fGB"
+                "5.8 GB"
             ],
             [
                 "27b",
-                "17\u202fGB"
+                "17 GB"
             ]
         ],
         "author": "Google DeepMind",
         "categories": [
-            "small",
             "medium",
+            "small",
             "big",
+            "huge",
             "code"
         ],
         "languages": [
@@ -2896,13 +3533,18 @@
         "url": "https://ollama.com/library/bespoke-minicheck",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ]
         ],
         "author": "Bespoke Labs",
         "categories": [
-            "small"
+            "small",
+            "medium"
         ],
         "languages": [
             "en"
@@ -2912,18 +3554,23 @@
         "url": "https://ollama.com/library/llama-guard3",
         "tags": [
             [
+                "latest",
+                "4.9 GB"
+            ],
+            [
                 "1b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ],
             [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
             ]
         ],
         "author": "Meta",
         "categories": [
             "small",
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -2934,13 +3581,19 @@
         "url": "https://ollama.com/library/paraphrase-multilingual",
         "tags": [
             [
+                "latest",
+                "563 MB"
+            ],
+            [
                 "278m",
-                "563\u202fMB"
+                "563 MB"
             ]
         ],
         "author": "Paraphrase Team",
         "categories": [
             "small",
+            "medium",
+            "multilingual",
             "embedding"
         ],
         "languages": [
@@ -2951,18 +3604,23 @@
         "url": "https://ollama.com/library/opencoder",
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "1.5b",
-                "1.4\u202fGB"
+                "1.4 GB"
             ],
             [
                 "8b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ]
         ],
         "author": "Infly AI",
         "categories": [
             "small",
             "medium",
+            "big",
             "code",
             "multilingual"
         ],
@@ -2975,17 +3633,22 @@
         "url": "https://ollama.com/library/tulu3",
         "tags": [
             [
+                "latest",
+                "4.9 GB"
+            ],
+            [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
             ],
             [
                 "70b",
-                "43\u202fGB"
+                "43 GB"
             ]
         ],
         "author": "The Allen Institute for AI",
         "categories": [
             "small",
+            "medium",
             "huge",
             "code",
             "math"
@@ -2998,13 +3661,18 @@
         "url": "https://ollama.com/library/snowflake-arctic-embed2",
         "tags": [
             [
+                "latest",
+                "1.2 GB"
+            ],
+            [
                 "568m",
-                "1.2\u202fGB"
+                "1.2 GB"
             ]
         ],
         "author": "Snowflake Team",
         "categories": [
             "small",
+            "medium",
             "embedding",
             "multilingual"
         ],
@@ -3020,18 +3688,23 @@
         "url": "https://ollama.com/library/granite3-guardian",
         "tags": [
             [
+                "latest",
+                "2.7 GB"
+            ],
+            [
                 "2b",
-                "2.7\u202fGB"
+                "2.7 GB"
             ],
             [
                 "8b",
-                "5.8\u202fGB"
+                "5.8 GB"
             ]
         ],
         "author": "IBM Research",
         "categories": [
             "small",
             "medium",
+            "big",
             "code"
         ],
         "languages": [
@@ -3042,16 +3715,20 @@
         "url": "https://ollama.com/library/exaone3.5",
         "tags": [
             [
+                "latest",
+                "4.8 GB"
+            ],
+            [
                 "2.4b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ],
             [
                 "7.8b",
-                "4.8\u202fGB"
+                "4.8 GB"
             ],
             [
                 "32b",
-                "19\u202fGB"
+                "19 GB"
             ]
         ],
         "author": "LG AI Research",
@@ -3059,6 +3736,7 @@
             "small",
             "medium",
             "big",
+            "huge",
             "multilingual"
         ],
         "languages": [
@@ -3070,23 +3748,28 @@
         "url": "https://ollama.com/library/sailor2",
         "tags": [
             [
+                "latest",
+                "5.2 GB"
+            ],
+            [
                 "1b",
-                "1.1\u202fGB"
+                "1.1 GB"
             ],
             [
                 "8b",
-                "5.2\u202fGB"
+                "5.2 GB"
             ],
             [
                 "20b",
-                "12\u202fGB"
+                "12 GB"
             ]
         ],
         "author": "Sailor2 Community",
         "categories": [
-            "small",
             "medium",
+            "small",
             "big",
+            "huge",
             "multilingual",
             "code"
         ],
@@ -3111,20 +3794,24 @@
     "falcon3": {
         "tags": [
             [
+                "latest",
+                "4.6 GB"
+            ],
+            [
                 "1b",
-                "1.8\u202fGB"
+                "1.8 GB"
             ],
             [
                 "3b",
-                "2.0\u202fGB"
+                "2.0 GB"
             ],
             [
                 "7b",
-                "4.6\u202fGB"
+                "4.6 GB"
             ],
             [
                 "10b",
-                "6.3\u202fGB"
+                "6.3 GB"
             ]
         ],
         "url": "https://ollama.com/library/falcon3",
@@ -3144,19 +3831,24 @@
     "granite3.1-dense": {
         "tags": [
             [
+                "latest",
+                "5.0 GB"
+            ],
+            [
                 "2b",
-                "1.6\u202fGB"
+                "1.6 GB"
             ],
             [
                 "8b",
-                "5.0\u202fGB"
+                "5.0 GB"
             ]
         ],
         "url": "https://ollama.com/library/granite3.1-dense",
         "categories": [
             "tools",
-            "small",
             "medium",
+            "small",
+            "big",
             "code",
             "multilingual"
         ],
@@ -3179,12 +3871,16 @@
     "granite3.1-moe": {
         "tags": [
             [
+                "latest",
+                "2.0 GB"
+            ],
+            [
                 "1b",
-                "1.4\u202fGB"
+                "1.4 GB"
             ],
             [
                 "3b",
-                "2.0\u202fGB"
+                "2.0 GB"
             ]
         ],
         "url": "https://ollama.com/library/granite3.1-moe",
@@ -3192,6 +3888,7 @@
             "tools",
             "small",
             "medium",
+            "big",
             "multilingual",
             "code"
         ],
@@ -3214,20 +3911,25 @@
     "granite-embedding": {
         "tags": [
             [
+                "latest",
+                "63 MB"
+            ],
+            [
                 "30m",
-                "63\u202fMB"
+                "63 MB"
             ],
             [
                 "278m",
-                "563\u202fMB"
+                "563 MB"
             ]
         ],
         "url": "https://ollama.com/library/granite-embedding",
         "categories": [
             "small",
             "medium",
-            "code",
+            "big",
             "embedding",
+            "code",
             "multilingual"
         ],
         "author": "IBM Research",
@@ -3249,13 +3951,18 @@
     "phi4": {
         "tags": [
             [
+                "latest",
+                "9.1 GB"
+            ],
+            [
                 "14b",
-                "9.1\u202fGB"
+                "9.1 GB"
             ]
         ],
         "url": "https://ollama.com/library/phi4",
         "categories": [
-            "medium"
+            "medium",
+            "big"
         ],
         "author": "Microsoft",
         "languages": [
@@ -3265,14 +3972,18 @@
     "smallthinker": {
         "tags": [
             [
+                "latest",
+                "3.6 GB"
+            ],
+            [
                 "3b",
-                "3.6\u202fGB"
+                "3.6 GB"
             ]
         ],
         "url": "https://ollama.com/library/smallthinker",
         "categories": [
             "small",
-            "reasoning"
+            "medium"
         ],
         "author": "Power Infer",
         "languages": [
@@ -3282,13 +3993,18 @@
     "dolphin3": {
         "tags": [
             [
+                "latest",
+                "4.9 GB"
+            ],
+            [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
             ]
         ],
         "url": "https://ollama.com/library/dolphin3",
         "categories": [
             "small",
+            "medium",
             "code",
             "math"
         ],
@@ -3300,43 +4016,46 @@
     "deepseek-r1": {
         "tags": [
             [
+                "latest",
+                "5.2 GB"
+            ],
+            [
                 "1.5b",
-                "1.1\u202fGB"
+                "1.1 GB"
             ],
             [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "8b",
-                "4.9\u202fGB"
+                "5.2 GB"
             ],
             [
                 "14b",
-                "9.0\u202fGB"
+                "9.0 GB"
             ],
             [
                 "32b",
-                "20\u202fGB"
+                "20 GB"
             ],
             [
                 "70b",
-                "43\u202fGB"
+                "43 GB"
             ],
             [
                 "671b",
-                "404\u202fGB"
+                "404 GB"
             ]
         ],
         "url": "https://ollama.com/library/deepseek-r1",
         "categories": [
-            "small",
+            "tools",
             "medium",
+            "small",
             "big",
             "huge",
-            "code",
-            "math",
-            "reasoning"
+            "math"
         ],
         "author": "DeepSeek Team",
         "languages": [
@@ -3346,8 +4065,12 @@
     "deepseek-v3": {
         "tags": [
             [
+                "latest",
+                "404 GB"
+            ],
+            [
                 "671b",
-                "404\u202fGB"
+                "404 GB"
             ]
         ],
         "url": "https://ollama.com/library/deepseek-v3",
@@ -3362,18 +4085,23 @@
     "olmo2": {
         "tags": [
             [
+                "latest",
+                "4.5 GB"
+            ],
+            [
                 "7b",
-                "4.5\u202fGB"
+                "4.5 GB"
             ],
             [
                 "13b",
-                "8.4\u202fGB"
+                "8.4 GB"
             ]
         ],
         "url": "https://ollama.com/library/olmo2",
         "categories": [
             "small",
-            "medium"
+            "medium",
+            "big"
         ],
         "author": "Ai2",
         "languages": [
@@ -3383,14 +4111,19 @@
     "command-r7b": {
         "tags": [
             [
+                "latest",
+                "5.1 GB"
+            ],
+            [
                 "7b",
-                "5.1\u202fGB"
+                "5.1 GB"
             ]
         ],
         "url": "https://ollama.com/library/command-r7b",
         "categories": [
             "tools",
             "medium",
+            "big",
             "code",
             "multilingual",
             "embedding"
@@ -3425,19 +4158,23 @@
     "openthinker": {
         "tags": [
             [
+                "latest",
+                "4.7 GB"
+            ],
+            [
                 "7b",
-                "4.7\u202fGB"
+                "4.7 GB"
             ],
             [
                 "32b",
-                "20\u202fGB"
+                "20 GB"
             ]
         ],
         "url": "https://ollama.com/library/openthinker",
         "categories": [
             "small",
-            "huge",
-            "reasoning"
+            "medium",
+            "huge"
         ],
         "author": "Open Thoughts Team",
         "languages": [
@@ -3447,15 +4184,19 @@
     "deepscaler": {
         "tags": [
             [
+                "latest",
+                "3.6 GB"
+            ],
+            [
                 "1.5b",
-                "3.6\u202fGB"
+                "3.6 GB"
             ]
         ],
         "url": "https://ollama.com/library/deepscaler",
         "categories": [
             "small",
-            "math",
-            "reasoning"
+            "medium",
+            "math"
         ],
         "author": "Agentica Project",
         "languages": [
@@ -3465,20 +4206,23 @@
     "r1-1776": {
         "tags": [
             [
+                "latest",
+                "43 GB"
+            ],
+            [
                 "70b",
-                "43\u202fGB"
+                "43 GB"
             ],
             [
                 "671b",
-                "404\u202fGB"
+                "404 GB"
             ]
         ],
         "url": "https://ollama.com/library/r1-1776",
         "categories": [
             "huge",
             "multilingual",
-            "math",
-            "reasoning"
+            "math"
         ],
         "author": "Perplexity AI",
         "languages": [
@@ -3490,29 +4234,33 @@
     "gemma3": {
         "tags": [
             [
+                "latest",
+                "3.3 GB"
+            ],
+            [
                 "1b",
-                "815\u202fMB"
+                "815 MB"
             ],
             [
                 "4b",
-                "3.3\u202fGB"
+                "3.3 GB"
             ],
             [
                 "12b",
-                "8.1\u202fGB"
+                "8.1 GB"
             ],
             [
                 "27b",
-                "17\u202fGB"
+                "17 GB"
             ]
         ],
         "url": "https://ollama.com/library/gemma3",
         "categories": [
+            "vision",
             "small",
             "medium",
             "big",
-            "huge",
-            "vision"
+            "huge"
         ],
         "author": "Google DeepMind",
         "languages": [
@@ -3522,14 +4270,19 @@
     "phi4-mini": {
         "tags": [
             [
+                "latest",
+                "2.5 GB"
+            ],
+            [
                 "3.8b",
-                "2.5\u202fGB"
+                "2.5 GB"
             ]
         ],
         "url": "https://ollama.com/library/phi4-mini",
         "categories": [
             "tools",
             "small",
+            "medium",
             "math",
             "multilingual"
         ],
@@ -3563,15 +4316,20 @@
     "granite3.2-vision": {
         "tags": [
             [
+                "latest",
+                "2.4 GB"
+            ],
+            [
                 "2b",
-                "2.4\u202fGB"
+                "2.4 GB"
             ]
         ],
         "url": "https://ollama.com/library/granite3.2-vision",
         "categories": [
+            "vision",
             "tools",
             "small",
-            "vision"
+            "medium"
         ],
         "author": "IBM for Code Intelligence",
         "languages": [
@@ -3581,12 +4339,16 @@
     "granite3.2": {
         "tags": [
             [
+                "latest",
+                "4.9 GB"
+            ],
+            [
                 "2b",
-                "1.5\u202fGB"
+                "1.5 GB"
             ],
             [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
             ]
         ],
         "url": "https://ollama.com/library/granite3.2",
@@ -3594,6 +4356,7 @@
             "tools",
             "small",
             "medium",
+            "big",
             "multilingual"
         ],
         "author": "IBM for Code Intelligence",
@@ -3615,14 +4378,19 @@
     "command-r7b-arabic": {
         "tags": [
             [
+                "latest",
+                "5.1 GB"
+            ],
+            [
                 "7b",
-                "5.1\u202fGB"
+                "5.1 GB"
             ]
         ],
         "url": "https://ollama.com/library/command-r7b-arabic",
         "categories": [
             "tools",
-            "medium"
+            "medium",
+            "big"
         ],
         "author": "Cohere",
         "languages": [
@@ -3633,8 +4401,12 @@
     "command-a": {
         "tags": [
             [
+                "latest",
+                "67 GB"
+            ],
+            [
                 "111b",
-                "67\u202fGB"
+                "67 GB"
             ]
         ],
         "url": "https://ollama.com/library/command-a",
@@ -3671,196 +4443,215 @@
             "fa"
         ]
     },
-    "exaone-deep": {
+    "qwen3": {
         "tags": [
             [
-                "2.4b",
-                "1.6\u202fGB"
+                "latest",
+                "5.2 GB"
             ],
             [
-                "7.8b",
-                "4.8\u202fGB"
+                "0.6b",
+                "523 MB"
+            ],
+            [
+                "1.7b",
+                "1.4 GB"
+            ],
+            [
+                "4b",
+                "2.6 GB"
+            ],
+            [
+                "8b",
+                "5.2 GB"
+            ],
+            [
+                "14b",
+                "9.3 GB"
+            ],
+            [
+                "30b",
+                "19 GB"
             ],
             [
                 "32b",
-                "19\u202fGB"
+                "20 GB"
+            ],
+            [
+                "235b",
+                "142 GB"
             ]
         ],
-        "url": "https://ollama.com/library/exaone-deep",
+        "url": "https://ollama.com/library/qwen3",
         "categories": [
-            "small",
+            "tools",
             "medium",
+            "small",
             "big",
+            "huge",
             "code",
             "math",
-            "reasoning"
+            "multilingual"
         ],
-        "author": "LG AI Research",
+        "author": "Alibaba",
         "languages": [
-            "en"
+            "en",
+            "fr",
+            "pt",
+            "de",
+            "ro",
+            "sv",
+            "da",
+            "bg",
+            "ru",
+            "cs",
+            "el",
+            "uk",
+            "es",
+            "nl",
+            "sk",
+            "hr",
+            "pl",
+            "lt",
+            "nb",
+            "nn",
+            "fa",
+            "sl",
+            "gu",
+            "lv",
+            "it",
+            "oc",
+            "ne",
+            "mr",
+            "be",
+            "sr",
+            "lb",
+            "vec",
+            "as",
+            "cy",
+            "szl",
+            "ast",
+            "hne",
+            "awa",
+            "mai",
+            "bho",
+            "sd",
+            "ga",
+            "fo",
+            "hi",
+            "pa",
+            "bn",
+            "or",
+            "tg",
+            "yi",
+            "lmo",
+            "lij",
+            "sc",
+            "fur",
+            "scn",
+            "gl",
+            "ca",
+            "is",
+            "sq",
+            "li",
+            "prs",
+            "af",
+            "mk",
+            "si",
+            "ur",
+            "mag",
+            "bs",
+            "hy",
+            "zh-hans",
+            "zh-hant",
+            "yue",
+            "my",
+            "ar",
+            "ar-naj",
+            "ar-lev",
+            "ar-eg",
+            "ar-ma",
+            "ar-iq",
+            "ar-ye",
+            "ar-tn",
+            "he",
+            "mt",
+            "id",
+            "ms",
+            "tl",
+            "ceb",
+            "jv",
+            "su",
+            "min",
+            "ban",
+            "bjn",
+            "pag",
+            "ilo",
+            "war",
+            "ta",
+            "te",
+            "kn",
+            "ml",
+            "tr",
+            "az",
+            "uz",
+            "kk",
+            "ba",
+            "tt",
+            "th",
+            "lo",
+            "fi",
+            "et",
+            "hu",
+            "vi",
+            "km",
+            "ja",
+            "ko",
+            "ka",
+            "eu",
+            "ht",
+            "pap",
+            "kea",
+            "tpi",
+            "sw"
         ]
     },
-    "mistral-small3.1": {
+    "devstral": {
         "tags": [
             [
+                "latest",
+                "14 GB"
+            ],
+            [
                 "24b",
-                "15\u202fGB"
+                "14 GB"
             ]
         ],
-        "url": "https://ollama.com/library/mistral-small3.1",
+        "url": "https://ollama.com/library/devstral",
         "categories": [
-            "vision",
             "tools",
-            "big"
+            "big",
+            "huge",
+            "code"
         ],
         "author": "Mistral AI",
         "languages": [
             "en"
         ]
     },
-    "cogito": {
-        "tags": [
-            [
-                "3b",
-                "2.2\u202fGB"
-            ],
-            [
-                "8b",
-                "4.9\u202fGB"
-            ],
-            [
-                "14b",
-                "9.0\u202fGB"
-            ],
-            [
-                "32b",
-                "20\u202fGB"
-            ],
-            [
-                "70b",
-                "43\u202fGB"
-            ]
-        ],
-        "url": "https://ollama.com/library/cogito",
-        "categories": [
-            "tools",
-            "small",
-            "medium",
-            "big",
-            "huge"
-        ],
-        "author": "DeepCogito",
-        "languages": [
-            "en"
-        ]
-    },
-    "deepcoder": {
-        "tags": [
-            [
-                "1.5b",
-                "1.1\u202fGB"
-            ],
-            [
-                "14b",
-                "9.0\u202fGB"
-            ]
-        ],
-        "url": "https://ollama.com/library/deepcoder",
-        "categories": [
-            "small",
-            "medium",
-            "code",
-            "reasoning"
-        ],
-        "author": "DeepCoder Team",
-        "languages": [
-            "en"
-        ]
-    },
-    "qwen3": {
-        "tags": [
-            [
-                "0.6b",
-                "523\u202fMB"
-            ],
-            [
-                "1.7b",
-                "1.4\u202fGB"
-            ],
-            [
-                "4b",
-                "2.6\u202fGB"
-            ],
-            [
-                "8b",
-                "5.2\u202fGB"
-            ],
-            [
-                "14b",
-                "9.3\u202fGB"
-            ],
-            [
-                "30b",
-                "19\u202fGB"
-            ],
-            [
-                "32b",
-                "20\u202fGB"
-            ],
-            [
-                "235b",
-                "142\u202fGB"
-            ]
-        ],
-        "url": "https://ollama.com/library/qwen3",
-        "categories": [
-            "tools",
-            "small",
-            "medium",
-            "big",
-            "huge",
-            "code",
-            "math",
-            "multilingual",
-            "reasoning"
-        ],
-        "author": "Alibaba",
-        "languages": [
-            "en",
-            "es",
-            "de",
-            "fr",
-            "pt",
-            "it",
-            "nl",
-            "ru",
-            "cs",
-            "pl",
-            "ar",
-            "fa",
-            "he",
-            "tr",
-            "ja",
-            "ko",
-            "vi",
-            "th",
-            "id",
-            "ms",
-            "lo",
-            "my",
-            "ceb",
-            "km",
-            "tl",
-            "hi",
-            "bn",
-            "ur"
-        ]
-    },
     "llama4": {
         "tags": [
             [
                 "latest",
-                "67\u202fGB"
+                "67 GB"
+            ],
+            [
+                "16x17b",
+                "67 GB"
+            ],
+            [
+                "128x17b",
+                "245 GB"
             ]
         ],
         "url": "https://ollama.com/library/llama4",
@@ -3878,24 +4669,155 @@
             "fr",
             "de",
             "hi",
+            "id",
             "it",
             "pt",
             "es",
-            "id",
             "tl",
             "th",
             "vi"
         ]
     },
-    "granite3.3": {
+    "qwen2.5vl": {
         "tags": [
             [
-                "2b",
-                "1.5\u202fGB"
+                "latest",
+                "6.0 GB"
+            ],
+            [
+                "3b",
+                "3.2 GB"
+            ],
+            [
+                "7b",
+                "6.0 GB"
+            ],
+            [
+                "32b",
+                "21 GB"
+            ],
+            [
+                "72b",
+                "49 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/qwen2.5vl",
+        "categories": [
+            "vision",
+            "medium",
+            "small",
+            "big",
+            "huge",
+            "math"
+        ],
+        "author": "Alibaba",
+        "languages": [
+            "en"
+        ]
+    },
+    "deepcoder": {
+        "tags": [
+            [
+                "latest",
+                "9.0 GB"
+            ],
+            [
+                "1.5b",
+                "1.1 GB"
+            ],
+            [
+                "14b",
+                "9.0 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/deepcoder",
+        "categories": [
+            "medium",
+            "small",
+            "big",
+            "code"
+        ],
+        "author": "Agentica and Together AI",
+        "languages": [
+            "en"
+        ]
+    },
+    "mistral-small3.1": {
+        "tags": [
+            [
+                "latest",
+                "15 GB"
+            ],
+            [
+                "24b",
+                "15 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/mistral-small3.1",
+        "categories": [
+            "vision",
+            "tools",
+            "big",
+            "huge"
+        ],
+        "author": "Mistral AI",
+        "languages": [
+            "en"
+        ]
+    },
+    "cogito": {
+        "tags": [
+            [
+                "latest",
+                "4.9 GB"
+            ],
+            [
+                "3b",
+                "2.2 GB"
             ],
             [
                 "8b",
-                "4.9\u202fGB"
+                "4.9 GB"
+            ],
+            [
+                "14b",
+                "9.0 GB"
+            ],
+            [
+                "32b",
+                "20 GB"
+            ],
+            [
+                "70b",
+                "43 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/cogito",
+        "categories": [
+            "tools",
+            "small",
+            "medium",
+            "big",
+            "huge"
+        ],
+        "author": "Deep Cogito",
+        "languages": [
+            "en"
+        ]
+    },
+    "granite3.3": {
+        "tags": [
+            [
+                "latest",
+                "4.9 GB"
+            ],
+            [
+                "2b",
+                "1.5 GB"
+            ],
+            [
+                "8b",
+                "4.9 GB"
             ]
         ],
         "url": "https://ollama.com/library/granite3.3",
@@ -3903,11 +4825,12 @@
             "tools",
             "small",
             "medium",
+            "big",
             "code",
             "math",
             "multilingual"
         ],
-        "author": "IBM for Code Intelligence",
+        "author": "IBM Research",
         "languages": [
             "en",
             "de",
@@ -3926,18 +4849,55 @@
     "phi4-reasoning": {
         "tags": [
             [
+                "latest",
+                "11 GB"
+            ],
+            [
                 "14b",
-                "11\u202fGB"
+                "11 GB"
             ]
         ],
         "url": "https://ollama.com/library/phi4-reasoning",
         "categories": [
             "big",
+            "huge",
             "math",
-            "code",
-            "reasoning"
+            "code"
         ],
         "author": "Microsoft",
+        "languages": [
+            "en"
+        ]
+    },
+    "exaone-deep": {
+        "tags": [
+            [
+                "latest",
+                "4.8 GB"
+            ],
+            [
+                "2.4b",
+                "1.6 GB"
+            ],
+            [
+                "7.8b",
+                "4.8 GB"
+            ],
+            [
+                "32b",
+                "19 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/exaone-deep",
+        "categories": [
+            "small",
+            "medium",
+            "big",
+            "huge",
+            "code",
+            "math"
+        ],
+        "author": "LG AI Research",
         "languages": [
             "en"
         ]
@@ -3945,17 +4905,116 @@
     "phi4-mini-reasoning": {
         "tags": [
             [
+                "latest",
+                "3.2 GB"
+            ],
+            [
                 "3.8b",
-                "3.2\u202fGB"
+                "3.2 GB"
             ]
         ],
         "url": "https://ollama.com/library/phi4-mini-reasoning",
         "categories": [
             "small",
-            "math",
-            "reasoning"
+            "medium",
+            "math"
         ],
         "author": "Microsoft",
+        "languages": [
+            "en"
+        ]
+    },
+    "gemma3n": {
+        "tags": [
+            [
+                "latest",
+                "7.5 GB"
+            ],
+            [
+                "e2b",
+                "5.6 GB"
+            ],
+            [
+                "e4b",
+                "7.5 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/gemma3n",
+        "categories": [
+            "medium",
+            "big",
+            "huge"
+        ],
+        "author": "Google DeepMind",
+        "languages": [
+            "en"
+        ]
+    },
+    "magistral": {
+        "tags": [
+            [
+                "latest",
+                "14 GB"
+            ],
+            [
+                "24b",
+                "14 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/magistral",
+        "categories": [
+            "tools",
+            "big",
+            "huge",
+            "multilingual",
+            "code"
+        ],
+        "author": "Mistral AI",
+        "languages": [
+            "en",
+            "ar",
+            "zh",
+            "cs",
+            "da",
+            "nl",
+            "fi",
+            "fr",
+            "de",
+            "he",
+            "hu",
+            "it",
+            "ja",
+            "ko",
+            "no",
+            "pl",
+            "pt",
+            "ru",
+            "es",
+            "sv",
+            "th",
+            "tr",
+            "uk"
+        ]
+    },
+    "mistral-small3.2": {
+        "tags": [
+            [
+                "latest",
+                "15 GB"
+            ],
+            [
+                "24b",
+                "15 GB"
+            ]
+        ],
+        "url": "https://ollama.com/library/mistral-small3.2",
+        "categories": [
+            "vision",
+            "tools",
+            "big",
+            "huge"
+        ],
+        "author": "Mistral AI",
         "languages": [
             "en"
         ]
