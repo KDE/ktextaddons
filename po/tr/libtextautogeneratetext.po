@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:04+0000\n"
-"PO-Revision-Date: 2025-06-29 08:58+0300\n"
+"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"PO-Revision-Date: 2025-07-02 17:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -68,12 +68,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "İletiye git"
 
-#: core/textautogeneratetextclient.cpp:21
+#: core/textautogeneratetextplugin.cpp:202
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: core/textautogeneratetextclient.cpp:23
+#: core/textautogeneratetextplugin.cpp:204
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
@@ -84,12 +84,10 @@ msgid "Generic"
 msgstr "Genel"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Yapılandır"
+msgstr "Yapılandır: %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:43
@@ -129,17 +127,17 @@ msgstr "Kluster AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Groq Cloud"
-msgstr ""
+msgstr "Groq Cloud"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
 msgid "Cerebras AI"
-msgstr ""
+msgstr "Cerebras AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr ""
+msgstr "Mistral AI büyük dil modelleri"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
 #, kde-format
@@ -147,10 +145,9 @@ msgid "Kluster AI cloud inference API"
 msgstr "Kluster yapay zekâ bulut öngörü API’si"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "Kluster yapay zekâ bulut öngörü API’si"
+msgstr "Cerebras yapay zekâ bulut öngörü API’si"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -242,7 +239,7 @@ msgstr "Temel:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:45
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:44
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
@@ -1815,7 +1812,38 @@ msgstr ""
 "Phi 4 Mini Reasoning, verimliliği gelişmiş akıl yürütme yeteneğiyle "
 "dengeleyen hafif ve açık bir modeldir."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:73
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:273
+#, kde-format
+msgid ""
+"Gemma 3n models are designed for efficient execution on everyday devices "
+"such as laptops, tablets or phones."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
+#, kde-format
+msgid "Magistral is a small, efficient reasoning model with 24B parameters."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:275
+#, kde-format
+msgid ""
+"An update to Mistral Small that improves on function calling, instruction "
+"following, and less repetition errors."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
+#, kde-format
+msgid ""
+"Flagship vision-language model of Qwen and also a significant leap from the "
+"previous Qwen2-VL."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
+#, kde-format
+msgid "Devstral: the best open source model for coding agents."
+msgstr ""
+
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1855,7 +1883,7 @@ msgid "Model:"
 msgstr "Model:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:56
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Sıcaklık:"
@@ -1871,6 +1899,7 @@ msgstr ""
 "yanıtlar vermesini sağlar."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Tohum:"
@@ -2017,14 +2046,14 @@ msgid "Ask to AI"
 msgstr "Yapay Zekâya Sor"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:116
+#: widgets/view/textautogeneratehistorylistview.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Değişiklik Yap…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:152
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2052,12 +2081,12 @@ msgctxt "@action"
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:45
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
 msgstr "API anahtarı:"
 
-#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:46
+#: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
 msgstr "En çok jeton sayısı:"
@@ -2068,7 +2097,7 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "Tez Sor"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:33
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:37
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
@@ -2127,42 +2156,42 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:105
+#: widgets/view/textautogeneratehistorylistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Yeni Sohbet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Sık Kullanılanlardan Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Sık Kullanılan Yap"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arşivle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:157
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
