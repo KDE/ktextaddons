@@ -35,6 +35,8 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureInstances();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateQuickAskViewWidget *const mTextAutoGenerateQuickAskViewWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;

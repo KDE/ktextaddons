@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskwidget.h"
+#include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratemessagesmodel.h"
@@ -51,6 +52,11 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     connect(mTextAutoGenerateNotWorkingWidget, &TextAutoGenerateNotWorkingWidget::ollamaStarted, this, [this]() {
         mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
     });
+    connect(mTextAutoGenerateNotWorkingWidget,
+            &TextAutoGenerateNotWorkingWidget::configureInstances,
+            this,
+            &TextAutoGenerateQuickAskWidget::slotConfigureInstances);
+
     connect(mTextAutoGenerateQuickAskViewWidget,
             &TextAutoGenerateQuickAskViewWidget::editingFinished,
             this,
@@ -62,11 +68,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             &TextAutoGenerateQuickAskWidget::slotCancelRequest);
 
     connect(mTextAutoGenerateQuickAskViewWidget, &TextAutoGenerateQuickAskViewWidget::configureChanged, this, [this]() {
-        if (mManager->textAutoGenerateTextInstancesManager()->isEmpty()) {
-            mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
-        } else {
-            mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
-        }
+        updateCurrentPage();
     });
     connect(mTextAutoGenerateQuickAskViewWidget,
             &TextAutoGenerateQuickAskViewWidget::refreshAnswerRequested,
@@ -90,6 +92,23 @@ void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const QString &str)
         mAskMessageList.append(str);
     } else {
         slotEditingFinished(str, {});
+    }
+}
+
+void TextAutoGenerateQuickAskWidget::updateCurrentPage()
+{
+    if (mManager->textAutoGenerateTextInstancesManager()->isEmpty()) {
+        mStackedWidget->setCurrentWidget(mTextAutoGenerateNotInstanceFoundWidget);
+    } else {
+        mStackedWidget->setCurrentWidget(mTextAutoGenerateQuickAskViewWidget);
+    }
+}
+
+void TextAutoGenerateQuickAskWidget::slotConfigureInstances()
+{
+    TextAutoGenerateTextInstancesManagerDialog dlg(mManager, this);
+    if (dlg.exec()) {
+        updateCurrentPage();
     }
 }
 

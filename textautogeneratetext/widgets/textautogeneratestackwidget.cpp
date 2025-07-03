@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratestackwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "common/textautogeneratenotworkingwidget.h"
 #include "core/textautogeneratemanager.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateStackWidget::TextAutoGenerateStackWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))
