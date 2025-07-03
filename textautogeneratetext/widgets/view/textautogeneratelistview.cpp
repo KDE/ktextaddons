@@ -14,7 +14,6 @@
 #include <KMessageBox>
 #include <QApplication>
 #include <QClipboard>
-#include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
 
