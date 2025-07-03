@@ -28,9 +28,8 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     mainLayout->addWidget(mModelInstanceLabel);
 
     mModelComboBox->setObjectName(u"mModelComboBox"_s);
-    mainLayout->addWidget(mModelComboBox);
+    mainLayout->addWidget(mModelComboBox, 1);
 
-    mainLayout->addStretch(1);
     auto configureButton = new QToolButton(this);
     configureButton->setAutoRaise(true);
     configureButton->setObjectName(u"configureButton"_s);
@@ -47,6 +46,9 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
         updateEngineModelName(mManager->generateEngineDisplayName());
     });
+    connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::activated, this, [this]() {
+        mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
+    });
 }
 
 TextAutoGenerateQuickAskHeaderWidget::~TextAutoGenerateQuickAskHeaderWidget() = default;
@@ -54,6 +56,16 @@ TextAutoGenerateQuickAskHeaderWidget::~TextAutoGenerateQuickAskHeaderWidget() = 
 void TextAutoGenerateQuickAskHeaderWidget::updateEngineModelName(const QString &str)
 {
     mModelInstanceLabel->setText(str);
+}
+
+void TextAutoGenerateQuickAskHeaderWidget::setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
+{
+    mModelComboBox->setModelList(lst);
+}
+
+QString TextAutoGenerateQuickAskHeaderWidget::currentModel() const
+{
+    return mModelComboBox->currentModel();
 }
 
 #include "moc_textautogeneratequickaskheaderwidget.cpp"

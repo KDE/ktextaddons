@@ -45,6 +45,10 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
             &TextAutoGenerateResultWidget::refreshAnswerRequested,
             this,
             &TextAutoGenerateQuickAskViewWidget::refreshAnswerRequested);
+
+    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
+        mTextAutoGenerateQuickAskHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
+    });
 }
 
 TextAutoGenerateQuickAskViewWidget::~TextAutoGenerateQuickAskViewWidget() = default;

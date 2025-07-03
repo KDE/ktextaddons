@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 class QLabel;
 namespace TextAutoGenerateText
 {
@@ -20,6 +21,8 @@ public:
 
     void updateEngineModelName(const QString &str);
 
+    void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
+    [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
     void configureRequested();
 
