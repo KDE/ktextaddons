@@ -113,4 +113,13 @@ QSize TextAutoGenerateListViewBaseDelegate::textSizeHint(QTextDocument *doc, qre
     return size;
 }
 
+QString TextAutoGenerateListViewBaseDelegate::urlAt(const QModelIndex &index, QPoint pos) const
+{
+    auto document = documentForIndex(index, -1);
+    if (!document) {
+        return {};
+    }
+    return document->documentLayout()->anchorAt(pos);
+}
+
 #include "moc_textautogeneratelistviewbasedelegate.cpp"

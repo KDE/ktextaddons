@@ -9,7 +9,7 @@
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
 #include <KTextToHTML>
-
+using namespace Qt::StringLiterals;
 // TODO add syntax higthlighting
 QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
 {

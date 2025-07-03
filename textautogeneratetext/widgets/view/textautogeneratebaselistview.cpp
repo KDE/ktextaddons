@@ -46,6 +46,24 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
         });
         menu.addAction(copyAction);
         menu.addSeparator();
+
+        auto copyUrlAction = [&]() -> QAction * {
+            const QString url = mDelegate->urlAt(index, viewport()->mapFromGlobal(event->globalPos()));
+            qDebug() << " url " << url;
+            if (url.isEmpty())
+                return nullptr;
+            auto action = new QAction(QIcon::fromTheme(u"edit-copy"_s), i18nc("@action", "Copy URL"), &menu);
+            connect(action, &QAction::triggered, this, [url]() {
+                QGuiApplication::clipboard()->setText(url);
+            });
+            return action;
+        }();
+
+        if (copyUrlAction) {
+            menu.addAction(copyUrlAction);
+            menu.addSeparator();
+        }
+
         auto selectAllAction = new QAction(QIcon::fromTheme(u"edit-select-all"_s), i18nc("@action", "Select All"), &menu);
         connect(selectAllAction, &QAction::triggered, this, [this, index]() {
             slotSelectAll(index);

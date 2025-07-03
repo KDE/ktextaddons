@@ -31,6 +31,7 @@ public:
     [[nodiscard]] bool hasSelection() const;
     [[nodiscard]] virtual bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
     [[nodiscard]] virtual bool maybeStartDrag(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] QString urlAt(const QModelIndex &index, QPoint pos) const;
 
     void selectAll(const QStyleOptionViewItem &option, const QModelIndex &index);
 
