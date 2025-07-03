@@ -7,6 +7,7 @@
 #include <QLabel>
 
 #include "core/textautogeneratemanager.h"
+#include "widgets/textautogeneratetextmodelcombobox.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QToolButton>
@@ -16,6 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mModelInstanceLabel(new QLabel(this))
+    , mModelComboBox(new TextAutoGenerateText::TextAutoGenerateTextModelComboBox(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
@@ -24,6 +26,9 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
 
     mModelInstanceLabel->setObjectName(u"mModelInstanceLabel"_s);
     mainLayout->addWidget(mModelInstanceLabel);
+
+    mModelComboBox->setObjectName(u"mModelComboBox"_s);
+    mainLayout->addWidget(mModelComboBox);
 
     mainLayout->addStretch(1);
     auto configureButton = new QToolButton(this);

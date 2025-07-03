@@ -6,6 +6,7 @@
 #include "textautogeneratequickaskheaderwidgettest.h"
 
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
+#include "widgets/textautogeneratetextmodelcombobox.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSignalSpy>
@@ -36,6 +37,9 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(configureButton);
     QVERIFY(!configureButton->toolTip().isEmpty());
     QVERIFY(configureButton->autoRaise());
+
+    auto mModelComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateTextModelComboBox *>(u"mModelComboBox"_s);
+    QVERIFY(mModelComboBox);
 }
 
 void TextAutoGenerateQuickAskHeaderWidgetTest::shouldEmitConfigureRequested()

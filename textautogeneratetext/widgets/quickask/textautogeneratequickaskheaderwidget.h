@@ -10,6 +10,7 @@ class QLabel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+class TextAutoGenerateTextModelComboBox;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateQuickAskHeaderWidget : public QWidget
 {
     Q_OBJECT
@@ -24,6 +25,7 @@ Q_SIGNALS:
 
 private:
     QLabel *const mModelInstanceLabel;
+    TextAutoGenerateTextModelComboBox *const mModelComboBox;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
 };
 }

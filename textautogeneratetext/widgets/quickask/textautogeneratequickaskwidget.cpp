@@ -5,7 +5,6 @@
 */
 #include "textautogeneratequickaskwidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStackedWidget>
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mStackedWidget(new QStackedWidget(this))
