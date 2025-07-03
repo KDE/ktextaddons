@@ -18,6 +18,334 @@ QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(co
 }
 
 #if 0
+QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMessageTextSettings &settings, QByteArray &needUpdateMessageId, int &recusiveIndex)
+{
+    if (!settings.emojiManager) {
+        qCWarning(RUQOLA_TEXTTOHTML_LOG) << "Emojimanager is null";
+    }
+
+    QString quotedMessage;
+
+    QString str = settings.str;
+    // TODO we need to look at room name too as we can have it when we use "direct reply"
+    if (str.contains("[ ](http"_L1)
+        && (settings.maximumRecursiveQuotedText == -1 || (settings.maximumRecursiveQuotedText > recusiveIndex))) { // ## is there a better way?
+        const int startPos = str.indexOf(u'(');
+        const int endPos = str.indexOf(u')');
+        const QString url = str.mid(startPos + 1, endPos - startPos - 1);
+        // URL example https://HOSTNAME/channel/all?msg=3BR34NSG5x7ZfBa22
+        const QByteArray messageId = url.mid(url.indexOf("msg="_L1) + 4).toLatin1();
+        // qCDebug(RUQOLA_TEXTTOHTML_LOG) << "Extracted messageId" << messageId;
+        auto it = std::find_if(settings.allMessages.cbegin(), settings.allMessages.cend(), [messageId](const Message &msg) {
+            return msg.messageId() == messageId;
+        });
+        if (it != settings.allMessages.cend()) {
+            const TextConverter::ConvertMessageTextSettings newSetting(u'@' + (*it).username() + u": "_s + (*it).text(),
+                                                                       settings.userName,
+                                                                       settings.allMessages,
+                                                                       settings.highlightWords,
+                                                                       settings.emojiManager,
+                                                                       settings.messageCache,
+                                                                       (*it).mentions(),
+                                                                       (*it).channels(),
+                                                                       settings.searchedText,
+                                                                       settings.maximumRecursiveQuotedText);
+            recusiveIndex++;
+            const QString text = TextConverter::convertMessageText(newSetting, needUpdateMessageId, recusiveIndex);
+            Utils::QuotedRichTextInfo info;
+            info.url = url;
+            info.richText = text;
+            info.displayTime = (*it).dateTime();
+
+            str = str.left(startPos - 3) + str.mid(endPos + 1);
+            const TextConverter::ConvertMessageTextSettings newsettings{
+                str,
+                settings.userName,
+                settings.allMessages,
+                settings.highlightWords,
+                settings.emojiManager,
+                settings.messageCache,
+                settings.mentions,
+                settings.channels,
+                settings.searchedText,
+                settings.maximumRecursiveQuotedText,
+            };
+            str = convertMessageText(newsettings, QString());
+
+            quotedMessage = Utils::formatQuotedRichText(std::move(info)) + str;
+            str.clear();
+        } else {
+            if (settings.messageCache) {
+                // TODO allow to reload index when we loaded message
+                Message *msg = settings.messageCache->messageForId(messageId);
+                if (msg) {
+                    const TextConverter::ConvertMessageTextSettings newSetting(msg->text(),
+                                                                               settings.userName,
+                                                                               settings.allMessages,
+                                                                               settings.highlightWords,
+                                                                               settings.emojiManager,
+                                                                               settings.messageCache,
+                                                                               msg->mentions(),
+                                                                               msg->channels(),
+                                                                               settings.searchedText,
+                                                                               settings.maximumRecursiveQuotedText);
+                    recusiveIndex++;
+                    const QString text = TextConverter::convertMessageText(newSetting, needUpdateMessageId, recusiveIndex);
+                    Utils::QuotedRichTextInfo info;
+                    info.url = url;
+                    info.richText = text;
+                    info.displayTime = msg->dateTime();
+                    const TextConverter::ConvertMessageTextSettings newsettings{
+                        str,
+                        settings.userName,
+                        settings.allMessages,
+                        settings.highlightWords,
+                        settings.emojiManager,
+                        settings.messageCache,
+                        settings.mentions,
+                        settings.channels,
+                        settings.searchedText,
+                        settings.maximumRecursiveQuotedText,
+                    };
+                    str = convertMessageText(newsettings, QString());
+
+                    quotedMessage = Utils::formatQuotedRichText(std::move(info)) + str;
+                    str.clear();
+                } else {
+                    qCDebug(RUQOLA_TEXTTOHTML_LOG) << "Quoted message" << messageId << "not found"; // could be a very old one
+                    needUpdateMessageId = messageId;
+                }
+            }
+        }
+    }
+
+    // Need to escaped text (avoid to interpret html code)
+    const TextConverter::ConvertMessageTextSettings newsettings{
+        str,
+        settings.userName,
+        settings.allMessages,
+        settings.highlightWords,
+        settings.emojiManager,
+        settings.messageCache,
+        settings.mentions,
+        settings.channels,
+        settings.searchedText,
+        settings.maximumRecursiveQuotedText,
+    };
+    // qDebug() << "settings.str  " << settings.str;
+    const QString result = convertMessageText(newsettings, quotedMessage);
+    // qDebug() << " RESULT ************ " << result;
+    return "<qt>"_L1 + result + "</qt>"_L1;
+}
+
+
+namespace
+{
+QString markdownToRichTextCMark(const QString &markDown)
+{
+    if (markDown.isEmpty()) {
+        return {};
+    }
+
+    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "BEFORE markdownToRichText " << markDown;
+    QString str = markDown;
+
+    const RuqolaKTextToHTML::Options convertFlags = RuqolaKTextToHTML::HighlightText | RuqolaKTextToHTML::ConvertPhoneNumbers;
+    str = RuqolaKTextToHTML::convertToHtml(str, convertFlags);
+    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " AFTER convertToHtml " << str;
+    // substitute "[example.com](<a href="...">...</a>)" style urls
+    str = Utils::convertTextWithUrl(str);
+    // Substiture "- [ ] foo" and "- [x] foo" to checkmark
+    str = Utils::convertTextWithCheckMark(str);
+    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " AFTER convertTextWithUrl " << str;
+
+    return str;
+}
+
+QString generateRichTextCMark(const QString &str,
+                              const QString &username,
+                              const QStringList &highlightWords,
+                              const QMap<QString, QByteArray> &mentions,
+                              const Channels *const channels,
+                              const QString &searchedText)
+{
+    QString newStr = markdownToRichTextCMark(str);
+    static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
+    struct HrefPos {
+        int start = 0;
+        int end = 0;
+    };
+    QList<HrefPos> lstPos;
+    {
+        QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
+        while (userIteratorHref.hasNext()) {
+            const QRegularExpressionMatch match = userIteratorHref.next();
+            HrefPos pos;
+            pos.start = match.capturedStart(1);
+            pos.end = match.capturedEnd(1);
+            lstPos.append(std::move(pos));
+        }
+
+        static const QRegularExpression regularExpressionRoom(u"(^|\\s+)#([\\w._-]+)"_s, QRegularExpression::UseUnicodePropertiesOption);
+        QRegularExpressionMatchIterator roomIterator = regularExpressionRoom.globalMatch(newStr);
+        while (roomIterator.hasNext()) {
+            const QRegularExpressionMatch match = roomIterator.next();
+            const QStringView word = match.capturedView(2);
+            bool inAnUrl = false;
+            const int matchCapturedStart = match.capturedStart(2);
+            for (const HrefPos &hrefPos : lstPos) {
+                if ((matchCapturedStart > hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
+                    inAnUrl = true;
+                    break;
+                }
+            }
+            if (inAnUrl) {
+                continue;
+            }
+
+            QString wordName = word.toString();
+            QByteArray roomIdentifier;
+            if (channels) {
+                auto it = std::find_if(channels->channels().cbegin(), channels->channels().cend(), [wordName](const auto &channel) {
+                    return channel.name == wordName;
+                });
+                if (it == channels->channels().cend()) {
+                    roomIdentifier = wordName.toLatin1();
+                } else {
+                    roomIdentifier = (*it).identifier;
+                    if (!(*it).fname.isEmpty()) {
+                        wordName = (*it).fname;
+                    }
+                }
+            } else {
+                roomIdentifier = wordName.toLatin1();
+            }
+            newStr.replace(u'#' + word.toString(), u"<a href=\'ruqola:/room/%2\'>#%1</a>"_s.arg(wordName, QString::fromLatin1(roomIdentifier)));
+        }
+    }
+
+    if (!highlightWords.isEmpty()) {
+        const auto userHighlightForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::PositiveText).color().name();
+        const auto userHighlightBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::PositiveBackground).color().name();
+        lstPos.clear();
+        QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
+        while (userIteratorHref.hasNext()) {
+            const QRegularExpressionMatch match = userIteratorHref.next();
+            HrefPos pos;
+            pos.start = match.capturedStart(1);
+            pos.end = match.capturedEnd(1);
+            lstPos.append(std::move(pos));
+        }
+
+        for (const QString &word : highlightWords) {
+            const QRegularExpression exp(u"(\\b%1\\b)"_s.arg(word), QRegularExpression::CaseInsensitiveOption);
+            QRegularExpressionMatchIterator userIterator = exp.globalMatch(newStr);
+            int offset = 0;
+            while (userIterator.hasNext()) {
+                const QRegularExpressionMatch match = userIterator.next();
+                const QString word = match.captured(1);
+                bool inAnUrl = false;
+                const int matchCapturedStart = match.capturedStart(1);
+                for (const HrefPos &hrefPos : lstPos) {
+                    if ((matchCapturedStart > hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
+                        inAnUrl = true;
+                        break;
+                    }
+                }
+                if (inAnUrl) {
+                    continue;
+                }
+                const QString replaceStr =
+                    u"<a style=\"color:%2;background-color:%3;\">%1</a>"_s.arg(word, userHighlightForegroundColor, userHighlightBackgroundColor);
+                newStr.replace(matchCapturedStart + offset, word.length(), replaceStr);
+                // We added a new string => increase offset
+                offset += replaceStr.length() - word.length();
+            }
+        }
+    }
+
+    if (!searchedText.isEmpty()) {
+        const auto userHighlightForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
+        const auto userHighlightBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
+        lstPos.clear();
+        QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
+        while (userIteratorHref.hasNext()) {
+            const QRegularExpressionMatch match = userIteratorHref.next();
+            HrefPos pos;
+            pos.start = match.capturedStart(1);
+            pos.end = match.capturedEnd(1);
+            lstPos.append(std::move(pos));
+        }
+
+        const QRegularExpression exp(u"(%1)"_s.arg(searchedText), QRegularExpression::CaseInsensitiveOption);
+        QRegularExpressionMatchIterator userIterator = exp.globalMatch(newStr);
+        int offset = 0;
+        while (userIterator.hasNext()) {
+            const QRegularExpressionMatch match = userIterator.next();
+            const QString word = match.captured(1);
+            bool inAnUrl = false;
+            const int matchCapturedStart = match.capturedStart(1);
+            for (const HrefPos &hrefPos : lstPos) {
+                if ((matchCapturedStart > hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
+                    inAnUrl = true;
+                    break;
+                }
+            }
+            if (inAnUrl) {
+                continue;
+            }
+            const QString replaceStr =
+                u"<a style=\"color:%2;background-color:%3;\">%1</a>"_s.arg(word, userHighlightForegroundColor, userHighlightBackgroundColor);
+            newStr.replace(matchCapturedStart + offset, word.length(), replaceStr);
+            // We added a new string => increase offset
+            offset += replaceStr.length() - word.length();
+        }
+    }
+    static const QRegularExpression regularExpressionUser(u"(^|\\s+)@([\\w._-]+)"_s, QRegularExpression::UseUnicodePropertiesOption);
+    QRegularExpressionMatchIterator userIterator = regularExpressionUser.globalMatch(newStr);
+
+    const auto userMentionForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NegativeText).color().name();
+    const auto userMentionBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NegativeBackground).color().name();
+    const auto hereAllMentionBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
+    const auto hereAllMentionForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
+    while (userIterator.hasNext()) {
+        const QRegularExpressionMatch match = userIterator.next();
+        const QStringView word = match.capturedView(2);
+        // Highlight only if it's yours
+
+        const QByteArray userIdentifier = mentions.value(word.toString());
+        QString wordFromUserIdentifier = QString::fromLatin1(userIdentifier);
+        if (userIdentifier.isEmpty()) {
+            wordFromUserIdentifier = word.toString();
+        }
+        const int capturedStart = match.capturedStart(2) - 1;
+        const int replaceWordLength = word.toString().length() + 1;
+        if (word == username) {
+            newStr.replace(capturedStart,
+                           replaceWordLength,
+                           u"<a href=\'ruqola:/user/%4\' style=\"color:%2;background-color:%3;font-weight:bold\">@%1</a>"_s.arg(word.toString(),
+                                                                                                                                userMentionForegroundColor,
+                                                                                                                                userMentionBackgroundColor,
+                                                                                                                                wordFromUserIdentifier));
+
+        } else {
+            if (!Utils::validUser(wordFromUserIdentifier)) { // here ? all ?
+                newStr.replace(capturedStart,
+                               replaceWordLength,
+                               u"<a style=\"color:%2;background-color:%3;font-weight:bold\">%1</a>"_s.arg(word.toString(),
+                                                                                                          hereAllMentionForegroundColor,
+                                                                                                          hereAllMentionBackgroundColor));
+            } else {
+                newStr.replace(capturedStart, replaceWordLength, u"<a href=\'ruqola:/user/%2\'>@%1</a>"_s.arg(word, wordFromUserIdentifier));
+            }
+        }
+        userIterator = regularExpressionUser.globalMatch(newStr);
+    }
+
+    return newStr;
+}
+
+
 template<typename InRegionCallback, typename OutsideRegionCallback>
 void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, InRegionCallback &&inRegion, OutsideRegionCallback &&outsideRegion)
 {
@@ -44,6 +372,8 @@ void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, In
     }
     outsideRegion(str.mid(startFrom));
 }
+}
+
 static QString addHighlighter(const QString &str, const TextConverter::ConvertMessageTextSettings &settings)
 {
     QString richText;
