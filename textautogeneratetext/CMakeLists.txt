@@ -290,6 +290,7 @@ target_link_libraries(
         KF6::TextWidgets
         KF6::CoreAddons
         KF6::ColorScheme
+        KF6::SyntaxHighlighting
 )
 target_include_directories(
     KF6TextAutoGenerateText
