@@ -15,6 +15,7 @@ TextAutoGenerateTextModelComboBox::~TextAutoGenerateTextModelComboBox() = defaul
 
 void TextAutoGenerateTextModelComboBox::setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
 {
+    clear();
     for (const auto &item : lst) {
         addItem(item.modelName, item.identifier);
     }
