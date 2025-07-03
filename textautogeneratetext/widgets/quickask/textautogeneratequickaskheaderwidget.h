@@ -17,7 +17,7 @@ public:
     explicit TextAutoGenerateQuickAskHeaderWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskHeaderWidget() override;
 
-    void updateModelName(const QString &str);
+    void updateEngineModelName(const QString &str);
 
 Q_SIGNALS:
     void configureRequested();

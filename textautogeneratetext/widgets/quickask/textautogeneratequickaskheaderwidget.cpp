@@ -40,13 +40,13 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
 
     connect(configureButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::configureRequested);
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
-        updateModelName(mManager->generateEngineDisplayName());
+        updateEngineModelName(mManager->generateEngineDisplayName());
     });
 }
 
 TextAutoGenerateQuickAskHeaderWidget::~TextAutoGenerateQuickAskHeaderWidget() = default;
 
-void TextAutoGenerateQuickAskHeaderWidget::updateModelName(const QString &str)
+void TextAutoGenerateQuickAskHeaderWidget::updateEngineModelName(const QString &str)
 {
     mModelInstanceLabel->setText(str);
 }
