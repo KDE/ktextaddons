@@ -30,6 +30,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Groq Cloud");
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return i18n("Cerebras AI");
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+        return i18n("Venice");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -46,6 +48,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return u"chat/completions"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
@@ -70,6 +73,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://groq.com/"_s;
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return u"https://www.cerebras.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+        return u"https://www.venice.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -92,6 +97,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.groq.com/openai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return u"https://api.cerebras.ai/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+        return u"https://api.venice.ai/api/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -108,6 +115,7 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Mistral AI large language models");
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
         return {};
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return i18n("Kluster AI cloud inference API");
@@ -135,6 +143,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"groqai"_s;
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return u"cerebrasai"_s;
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+        return u"veniceai"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -153,6 +163,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::GroqAI;
     } else if (str == QLatin1StringView("cerebrasai")) {
         return GenericNetworkManager::PluginNetworkType::CerebrasAI;
+    } else if (str == QLatin1StringView("veniceai")) {
+        return GenericNetworkManager::PluginNetworkType::VeniceAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -189,6 +201,9 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
         return limits;
     case GenericNetworkManager::PluginNetworkType::GroqAI:
         limits |= GenericNetworkServerInfo::Limitation::TextOnly;
+        return limits;
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+        limits |= GenericNetworkServerInfo::Limitation::NoSystemMessage;
         return limits;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:

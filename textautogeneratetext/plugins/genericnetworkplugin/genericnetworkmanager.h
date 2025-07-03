@@ -22,6 +22,7 @@ public:
         KlusterAI,
         GroqAI,
         CerebrasAI,
+        VeniceAI,
         LastElement,
     };
 
