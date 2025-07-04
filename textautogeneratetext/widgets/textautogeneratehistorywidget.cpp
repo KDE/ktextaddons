@@ -20,6 +20,7 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
 
     mSearchLineEdit->setObjectName("mSearchLineEdit"_L1);
     mSearchLineEdit->setClearButtonEnabled(true);

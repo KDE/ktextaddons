@@ -40,6 +40,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
+    mainLayout->setSpacing(0);
     mHeaderWidget->setObjectName(u"mHeaderWidget"_s);
     mainLayout->addWidget(mHeaderWidget);
 
