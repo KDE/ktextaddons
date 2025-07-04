@@ -20,27 +20,16 @@ using namespace Qt::StringLiterals;
 using namespace TextAutoGenerateText;
 QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
 {
-    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
-    return KTextToHTML::convertToHtml(str, convertFlags);
-}
-
 #if 0
-QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMessageTextSettings &settings)
-{
-    QString quotedMessage;
-    QString str = settings.str;
-    // Need to escaped text (avoid to interpret html code)
-    const TextConverter::ConvertMessageTextSettings newsettings{
-        str,
-        settings.searchedText,
-    };
-    // qDebug() << "settings.str  " << settings.str;
-    const QString result = convertMessageText(newsettings, quotedMessage);
+    const QString result = convertMessageText(str, searchedText);
     // qDebug() << " RESULT ************ " << result;
     return "<qt>"_L1 + result + "</qt>"_L1;
+#else
+    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
+    return KTextToHTML::convertToHtml(str, convertFlags);
+#endif
 }
 
-#endif
 namespace
 {
 
@@ -176,7 +165,7 @@ QString markdownToRichTextCMark(const QString &markDown)
 
     return str;
 }
-#if 1
+
 QString generateRichTextCMark(const QString &str, const QString &searchedText)
 {
     QString newStr = markdownToRichTextCMark(str);
@@ -229,7 +218,6 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText)
 
     return newStr;
 }
-#endif
 
 int findNewLineOrEndLine(const QString &str, const QString &regionMarker, int startFrom)
 {
