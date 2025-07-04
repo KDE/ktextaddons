@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2025-07-02 11:46+0200\n"
+"POT-Creation-Date: 2025-07-04 00:41+0000\n"
+"PO-Revision-Date: 2025-07-03 18:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -136,17 +136,22 @@ msgstr "Groq Cloud"
 msgid "Cerebras AI"
 msgstr "Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#, kde-format
+msgid "Venice"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Models de llenguatge extensos de Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API d'inferència del núvol de Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API d'inferència del núvol de Cerebras AI"
@@ -1838,11 +1843,14 @@ msgid ""
 "Gemma 3n models are designed for efficient execution on everyday devices "
 "such as laptops, tablets or phones."
 msgstr ""
+"Els models Gemma 3n estan dissenyats per a una execució eficient en "
+"dispositius quotidians com ara portàtils, tauletes o telèfons."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Magistral is a small, efficient reasoning model with 24B parameters."
 msgstr ""
+"Magistral és un model de raonament eficient i petit amb 24B paràmetres."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:275
 #, kde-format
@@ -1850,6 +1858,8 @@ msgid ""
 "An update to Mistral Small that improves on function calling, instruction "
 "following, and less repetition errors."
 msgstr ""
+"Una actualització de Mistral Small que millora la crida a funcions, el "
+"seguiment d'instruccions i menys errors de repetició."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1857,11 +1867,14 @@ msgid ""
 "Flagship vision-language model of Qwen and also a significant leap from the "
 "previous Qwen2-VL."
 msgstr ""
+"Model de llenguatge de visió insígnia de Qwen i també un salt significatiu "
+"des del Qwen2-VL anterior."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
 msgstr ""
+"Devstral: el model de codi fonts obert millor per a agents de codificació."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -2170,7 +2183,15 @@ msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:49
+#: widgets/view/textautogeneratebaselistview.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
+msgctxt "@action"
+msgid "Copy URL"
+msgstr "Copia"
+
+#: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

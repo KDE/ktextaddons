@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-04 00:41+0000\n"
 "PO-Revision-Date: 2025-07-03 08:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -135,17 +135,22 @@ msgstr "Хмара Groq"
 msgid "Cerebras AI"
 msgstr "ШІ Cerebras"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#, kde-format
+msgid "Venice"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Великі мовні моделі ШІ Mistral"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного ШІ Kluster"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Похідний інтерфейс хмарного ШІ Celebras"
@@ -2159,7 +2164,15 @@ msgctxt "@action"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratebaselistview.cpp:49
+#: widgets/view/textautogeneratebaselistview.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
+msgctxt "@action"
+msgid "Copy URL"
+msgstr "Копіювати"
+
+#: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

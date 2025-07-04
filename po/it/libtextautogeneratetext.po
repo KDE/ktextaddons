@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2025-06-28 20:48+0200\n"
+"POT-Creation-Date: 2025-07-04 00:41+0000\n"
+"PO-Revision-Date: 2025-07-02 13:06+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -84,12 +84,10 @@ msgid "Generic"
 msgstr "Generico"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Configura"
+msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:43
@@ -129,28 +127,32 @@ msgstr "IA"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Groq Cloud"
-msgstr ""
+msgstr "Groq Cloud"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
 msgid "Cerebras AI"
+msgstr "Cerebras AI"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#, kde-format
+msgid "Venice"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr ""
+msgstr "Modelli linguistici di grandi dimensioni di Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API di inferenza cloud Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
+#, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "API di inferenza cloud Kluster AI"
+msgstr "API di inferenza cloud di Cerebras AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -2177,7 +2179,15 @@ msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:49
+#: widgets/view/textautogeneratebaselistview.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
+msgctxt "@action"
+msgid "Copy URL"
+msgstr "Copia"
+
+#: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

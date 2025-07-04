@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-04 00:41+0000\n"
 "PO-Revision-Date: 2025-07-02 14:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -135,17 +135,22 @@ msgstr "Groq Cloud"
 msgid "Cerebras AI"
 msgstr "Cerebras AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#, kde-format
+msgid "Venice"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "מודלי שפה גדולים מבית Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API להסקת מסקנות בענן Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "‏Cerebras AI ‏- API להסקת מסקנות בענן"
@@ -2025,7 +2030,15 @@ msgctxt "@action"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratebaselistview.cpp:49
+#: widgets/view/textautogeneratebaselistview.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
+msgctxt "@action"
+msgid "Copy URL"
+msgstr "העתקה"
+
+#: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

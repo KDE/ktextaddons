@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:41+0000\n"
-"PO-Revision-Date: 2025-03-27 22:03+0900\n"
+"PO-Revision-Date: 2025-07-03 23:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -140,7 +140,7 @@ msgstr "保加利亞語"
 #: translator/misc/translatorutil.cpp:105
 #, kde-format
 msgid "Catalan"
-msgstr "加泰羅尼亞語"
+msgstr "加泰隆尼亞語"
 
 #: translator/misc/translatorutil.cpp:108
 #, kde-format

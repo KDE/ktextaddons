@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-04 00:41+0000\n"
 "PO-Revision-Date: 2025-05-31 09:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -140,17 +140,22 @@ msgstr ""
 msgid "Cerebras AI"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:108
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#, kde-format
+msgid "Venice"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:113
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr ""
@@ -1887,7 +1892,15 @@ msgctxt "@action"
 msgid "Copy"
 msgstr "Kopioi"
 
-#: widgets/view/textautogeneratebaselistview.cpp:49
+#: widgets/view/textautogeneratebaselistview.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
+msgctxt "@action"
+msgid "Copy URL"
+msgstr "Kopioi"
+
+#: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
