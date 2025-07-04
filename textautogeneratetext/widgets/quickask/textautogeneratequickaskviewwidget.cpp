@@ -23,7 +23,7 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
-    // mainLayout->setSpacing(0);
+    mainLayout->setSpacing(0);
 
     mTextAutoGenerateQuickAskHeaderWidget->setObjectName(u"mTextAutoGenerateQuickAskHeaderWidget"_s);
     mainLayout->addWidget(mTextAutoGenerateQuickAskHeaderWidget);
