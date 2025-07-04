@@ -18,17 +18,6 @@
 #include <QRegularExpression>
 using namespace Qt::StringLiterals;
 using namespace TextAutoGenerateText;
-QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
-{
-#if 0
-    const QString result = convertMessageText(str, searchedText);
-    // qDebug() << " RESULT ************ " << result;
-    return "<qt>"_L1 + result + "</qt>"_L1;
-#else
-    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
-    return KTextToHTML::convertToHtml(str, convertFlags);
-#endif
-}
 
 namespace
 {
@@ -480,4 +469,16 @@ static QString convertMessageText(const QString &str, const QString &searchText)
     allocator->free(html);
 
     return result;
+}
+
+QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str, const QString &searchedText)
+{
+#if 1
+    const QString result = convertMessageText(str, searchedText);
+    // qDebug() << " RESULT ************ " << result;
+    return "<qt>"_L1 + result + "</qt>"_L1;
+#else
+    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
+    return KTextToHTML::convertToHtml(str, convertFlags);
+#endif
 }
