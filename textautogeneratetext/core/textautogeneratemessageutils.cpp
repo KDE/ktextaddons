@@ -18,7 +18,7 @@ QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(co
 }
 
 #if 0
-QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMessageTextSettings &settings, QByteArray &needUpdateMessageId, int &recusiveIndex)
+QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMessageTextSettings &settings)
 {
     QString quotedMessage;
     QString str = settings.str;
