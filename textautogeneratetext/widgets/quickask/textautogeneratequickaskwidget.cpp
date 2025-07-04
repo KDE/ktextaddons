@@ -67,6 +67,11 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
             this,
             &TextAutoGenerateQuickAskWidget::slotCancelRequest);
 
+    connect(mTextAutoGenerateQuickAskViewWidget,
+            &TextAutoGenerateQuickAskViewWidget::editMessageRequested,
+            this,
+            &TextAutoGenerateQuickAskWidget::slotEditMessage);
+
     connect(mTextAutoGenerateQuickAskViewWidget, &TextAutoGenerateQuickAskViewWidget::configureChanged, this, [this]() {
         updateCurrentPage();
     });
@@ -85,6 +90,13 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 }
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget() = default;
+
+void TextAutoGenerateQuickAskWidget::slotEditMessage(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
+    mTextAutoGenerateQuickAskViewWidget->editMessage(uuid, messageStr);
+}
 
 void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const QString &str)
 {

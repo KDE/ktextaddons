@@ -40,7 +40,10 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
             &TextAutoGenerateQuickAskViewWidget::slotConfigureInstances);
 
     connect(mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::cancelRequested, this, &TextAutoGenerateQuickAskViewWidget::cancelRequested);
-
+    connect(mTextAutoGenerateResultWidget,
+            &TextAutoGenerateResultWidget::editMessageRequested,
+            this,
+            &TextAutoGenerateQuickAskViewWidget::editMessageRequested);
     connect(mTextAutoGenerateResultWidget,
             &TextAutoGenerateResultWidget::refreshAnswerRequested,
             this,
@@ -59,6 +62,12 @@ void TextAutoGenerateQuickAskViewWidget::slotConfigureInstances()
     if (dlg.exec()) {
         Q_EMIT configureChanged();
     }
+}
+
+void TextAutoGenerateQuickAskViewWidget::editMessage(const QByteArray &uuid, const QString &messageStr)
+{
+    mTextAutoGenerateTextLineWidget->setText(messageStr);
+    mTextAutoGenerateTextLineWidget->setUuid(uuid);
 }
 
 #include "moc_textautogeneratequickaskviewwidget.cpp"
