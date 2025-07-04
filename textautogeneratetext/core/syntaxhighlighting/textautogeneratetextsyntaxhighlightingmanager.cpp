@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratetextsyntaxhighlightingmanager.h"
-
 #include "textautogeneratetextcore_cmark_debug.h"
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;

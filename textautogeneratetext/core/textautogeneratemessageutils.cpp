@@ -5,13 +5,15 @@
 */
 
 #include "textautogeneratemessageutils.h"
+#include "syntaxhighlighting/textautogeneratetexthighlighter.h"
 #include "syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h"
 #include "textautogeneratetextcore_cmark_debug.h"
+#include <KColorScheme>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
 #include <KTextToHTML>
-#include <qregularexpression.h>
+#include <QRegularExpression>
 using namespace Qt::StringLiterals;
 using namespace TextAutoGenerateText;
 QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
@@ -406,7 +408,7 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
 
     QString highlighted;
     QTextStream stream(&highlighted);
-    TextHighlighter highlighter(&stream);
+    TextAutoGenerateTextHighlighter highlighter(&stream);
     const auto useHighlighter = TextAutoGenerateTextSyntaxHighlightingManager::self()->syntaxHighlightingInitialized();
 
     if (useHighlighter) {
