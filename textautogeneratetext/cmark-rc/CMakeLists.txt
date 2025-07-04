@@ -108,12 +108,17 @@ add_custom_target(cmark_static DEPENDS cmark-rc)
 # target_link_libraries(cmark_exe PRIVATE
 #   cmark-rc)
 
-# install(TARGETS cmark_exe cmark-rc
-#   EXPORT cmark-rc-targets
-#   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-#   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-#   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-#   )
+install(
+    TARGETS
+        cmark-rc
+    EXPORT textautogenerate-cmark-rc-copy-targets
+    RUNTIME
+        DESTINATION ${CMAKE_INSTALL_BINDIR}
+    LIBRARY
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
 
 # install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libcmark-rc.pc
 #   DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
@@ -140,12 +145,12 @@ add_custom_target(cmark_static DEPENDS cmark-rc)
 #         "${CMAKE_CURRENT_BINARY_DIR}/generated/cmark-rc-config-version.cmake"
 #   DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/cmark-rc"
 # )
-# # install targets file
-# install(
-#   EXPORT "cmark-rc-targets"
-#   NAMESPACE "cmark-rc::"
-#   DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/cmark-rc"
-# )
+# install targets file
+install(
+    EXPORT "textautogenerate-cmark-rc-copy-targets"
+    NAMESPACE "cmark-rc::"
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/textautogenerate-cmark-rc-copy"
+)
 set_target_properties(
     cmark-rc
     PROPERTIES

@@ -300,6 +300,7 @@ target_link_libraries(
         KF6::CoreAddons
         KF6::ColorScheme
         KF6::SyntaxHighlighting
+        cmark-rc
 )
 target_include_directories(
     KF6TextAutoGenerateText
