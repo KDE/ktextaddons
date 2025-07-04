@@ -5,9 +5,11 @@
 */
 
 #include "textautogeneratemessageutils.h"
+#include "cmark-rc.h"
 #include "syntaxhighlighting/textautogeneratetexthighlighter.h"
 #include "syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h"
 #include "textautogeneratetextcore_cmark_debug.h"
+#include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include <KColorScheme>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
@@ -174,9 +176,8 @@ QString markdownToRichTextCMark(const QString &markDown)
 
     return str;
 }
-#if 0
-QString generateRichTextCMark(const QString &str,
-                              const QString &searchedText)
+#if 1
+QString generateRichTextCMark(const QString &str, const QString &searchedText)
 {
     QString newStr = markdownToRichTextCMark(str);
     static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
@@ -185,58 +186,12 @@ QString generateRichTextCMark(const QString &str,
         int end = 0;
     };
     QList<HrefPos> lstPos;
-    {
-        QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
-        while (userIteratorHref.hasNext()) {
-            const QRegularExpressionMatch match = userIteratorHref.next();
-            HrefPos pos;
-            pos.start = match.capturedStart(1);
-            pos.end = match.capturedEnd(1);
-            lstPos.append(std::move(pos));
-        }
-
-        static const QRegularExpression regularExpressionRoom(u"(^|\\s+)#([\\w._-]+)"_s, QRegularExpression::UseUnicodePropertiesOption);
-        QRegularExpressionMatchIterator roomIterator = regularExpressionRoom.globalMatch(newStr);
-        while (roomIterator.hasNext()) {
-            const QRegularExpressionMatch match = roomIterator.next();
-            const QStringView word = match.capturedView(2);
-            bool inAnUrl = false;
-            const int matchCapturedStart = match.capturedStart(2);
-            for (const HrefPos &hrefPos : lstPos) {
-                if ((matchCapturedStart > hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
-                    inAnUrl = true;
-                    break;
-                }
-            }
-            if (inAnUrl) {
-                continue;
-            }
-
-            QString wordName = word.toString();
-            QByteArray roomIdentifier;
-            if (channels) {
-                auto it = std::find_if(channels->channels().cbegin(), channels->channels().cend(), [wordName](const auto &channel) {
-                    return channel.name == wordName;
-                });
-                if (it == channels->channels().cend()) {
-                    roomIdentifier = wordName.toLatin1();
-                } else {
-                    roomIdentifier = (*it).identifier;
-                    if (!(*it).fname.isEmpty()) {
-                        wordName = (*it).fname;
-                    }
-                }
-            } else {
-                roomIdentifier = wordName.toLatin1();
-            }
-            newStr.replace(u'#' + word.toString(), u"<a href=\'ruqola:/room/%2\'>#%1</a>"_s.arg(wordName, QString::fromLatin1(roomIdentifier)));
-        }
-    }
-
 
     if (!searchedText.isEmpty()) {
-        const auto userHighlightForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
-        const auto userHighlightBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
+        const auto userHighlightForegroundColor =
+            TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
+        const auto userHighlightBackgroundColor =
+            TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
         lstPos.clear();
         QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
         while (userIteratorHref.hasNext()) {
@@ -270,46 +225,6 @@ QString generateRichTextCMark(const QString &str,
             // We added a new string => increase offset
             offset += replaceStr.length() - word.length();
         }
-    }
-    static const QRegularExpression regularExpressionUser(u"(^|\\s+)@([\\w._-]+)"_s, QRegularExpression::UseUnicodePropertiesOption);
-    QRegularExpressionMatchIterator userIterator = regularExpressionUser.globalMatch(newStr);
-
-    const auto userMentionForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NegativeText).color().name();
-    const auto userMentionBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NegativeBackground).color().name();
-    const auto hereAllMentionBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
-    const auto hereAllMentionForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
-    while (userIterator.hasNext()) {
-        const QRegularExpressionMatch match = userIterator.next();
-        const QStringView word = match.capturedView(2);
-        // Highlight only if it's yours
-
-        const QByteArray userIdentifier = mentions.value(word.toString());
-        QString wordFromUserIdentifier = QString::fromLatin1(userIdentifier);
-        if (userIdentifier.isEmpty()) {
-            wordFromUserIdentifier = word.toString();
-        }
-        const int capturedStart = match.capturedStart(2) - 1;
-        const int replaceWordLength = word.toString().length() + 1;
-        if (word == username) {
-            newStr.replace(capturedStart,
-                           replaceWordLength,
-                           u"<a href=\'ruqola:/user/%4\' style=\"color:%2;background-color:%3;font-weight:bold\">@%1</a>"_s.arg(word.toString(),
-                                                                                                                                userMentionForegroundColor,
-                                                                                                                                userMentionBackgroundColor,
-                                                                                                                                wordFromUserIdentifier));
-
-        } else {
-            if (!Utils::validUser(wordFromUserIdentifier)) { // here ? all ?
-                newStr.replace(capturedStart,
-                               replaceWordLength,
-                               u"<a style=\"color:%2;background-color:%3;font-weight:bold\">%1</a>"_s.arg(word.toString(),
-                                                                                                          hereAllMentionForegroundColor,
-                                                                                                          hereAllMentionBackgroundColor));
-            } else {
-                newStr.replace(capturedStart, replaceWordLength, u"<a href=\'ruqola:/user/%2\'>@%1</a>"_s.arg(word, wordFromUserIdentifier));
-            }
-        }
-        userIterator = regularExpressionUser.globalMatch(newStr);
     }
 
     return newStr;
@@ -398,13 +313,13 @@ void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, In
     outsideRegion(str.mid(startFrom));
 }
 }
-#if 0
-static QString addHighlighter(const QString &str, const TextConverter::ConvertMessageTextSettings &settings)
+
+static QString addHighlighter(const QString &str, const QString &searchText)
 {
     QString richText;
     QTextStream richTextStream(&richText);
-    const QColor codeBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color();
-    const auto codeBorderColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::InactiveText).color().name();
+    const QColor codeBackgroundColor = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color();
+    const auto codeBorderColor = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::InactiveText).color().name();
 
     QString highlighted;
     QTextStream stream(&highlighted);
@@ -456,11 +371,11 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
     };
 
     auto addTextChunk = [&](const QString &chunk) {
-        auto htmlChunk = generateRichTextCMark(chunk, settings.searchedText);
+        auto htmlChunk = generateRichTextCMark(chunk, searchText);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
-        auto htmlChunk = generateRichTextCMark(chunk, settings.searchedText);
+        auto htmlChunk = generateRichTextCMark(chunk, searchText);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
@@ -484,7 +399,6 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
     qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " richText generated: " << richText;
     return richText;
 }
-#endif
 // #define DEBUG_CMARK_RC
 
 static void convertHtmlChar(QString &str)
@@ -494,19 +408,13 @@ static void convertHtmlChar(QString &str)
     str.replace(u"&quot;"_s, u"\""_s);
     str.replace(u"&amp;"_s, u"&"_s);
 }
-#if 0
-static QString convertMessageText(const TextConverter::ConvertMessageTextSettings &newSettings, const QString &quotedMessage)
+
+static QString convertMessageText(const QString &str, const QString &searchText)
 {
-    // Need to escaped text (avoid to interpret html code)
-    const TextConverter::ConvertMessageTextSettings settings{
-        quotedMessage + newSettings.str.toHtmlEscaped(),
-        newSettings.searchedText,
-    };
-    const QByteArray ba = settings.str.toUtf8();
+    const QByteArray ba = str.toHtmlEscaped().toUtf8();
     cmark_node *doc = cmark_parse_document(ba.constData(), ba.length(), CMARK_OPT_DEFAULT);
     cmark_iter *iter = cmark_iter_new(doc);
 #ifdef DEBUG_CMARK_RC
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " quotedMessage + newSettings.str.toHtmlEscaped() " << quotedMessage + newSettings.str.toHtmlEscaped();
     char *beforehtml = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
     qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " beforehtml " << beforehtml;
     delete beforehtml;
@@ -525,7 +433,7 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
                 convertHtmlChar(str);
                 const QString stringHtml = u"```"_s + str + u"```"_s;
                 // qDebug() << " stringHtml " << stringHtml;
-                const QString highligherStr = addHighlighter(stringHtml, settings);
+                const QString highligherStr = addHighlighter(stringHtml, searchText);
                 cmark_node *p = cmark_node_new(CMARK_NODE_PARAGRAPH);
 
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
@@ -543,7 +451,7 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
 
             const QString str = QString::fromUtf8(literal);
             if (!str.isEmpty()) {
-                const QString convertedString = addHighlighter(str, settings);
+                const QString convertedString = addHighlighter(str, searchText);
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
@@ -559,7 +467,7 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
             if (!str.isEmpty()) {
                 convertHtmlChar(str);
                 const QString stringHtml = u"`"_s + str + u"`"_s;
-                const QString convertedString = addHighlighter(stringHtml, settings);
+                const QString convertedString = addHighlighter(stringHtml, searchText);
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
@@ -585,5 +493,3 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
 
     return result;
 }
-
-#endif
