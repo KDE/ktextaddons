@@ -422,7 +422,7 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
 
     iterateOverRegionsCmark(str, u"```"_s, addCodeChunk, addNonCodeChunk);
 
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " richText generated: " << richText;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " richText generated: " << richText;
     return richText;
 }
 #endif
@@ -447,17 +447,17 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
     cmark_node *doc = cmark_parse_document(ba.constData(), ba.length(), CMARK_OPT_DEFAULT);
     cmark_iter *iter = cmark_iter_new(doc);
 #ifdef DEBUG_CMARK_RC
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " quotedMessage + newSettings.str.toHtmlEscaped() " << quotedMessage + newSettings.str.toHtmlEscaped();
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " quotedMessage + newSettings.str.toHtmlEscaped() " << quotedMessage + newSettings.str.toHtmlEscaped();
     char *beforehtml = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " beforehtml " << beforehtml;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " beforehtml " << beforehtml;
     delete beforehtml;
 #endif
 
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " ba " << ba;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " ba " << ba;
 
     while (cmark_iter_next(iter) != CMARK_EVENT_DONE) {
         cmark_node *node = cmark_iter_get_node(iter);
-        qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "type element " << cmark_node_get_type_string(node);
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "type element " << cmark_node_get_type_string(node);
         switch (cmark_node_get_type(node)) {
         case CMARK_NODE_CODE_BLOCK: {
             const char *literal = cmark_node_get_literal(node);
@@ -480,12 +480,12 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
         case CMARK_NODE_TEXT: {
             const char *literal = cmark_node_get_literal(node);
             // qDebug() << " literal" << literal;
-            qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
 
             const QString str = QString::fromUtf8(literal);
             if (!str.isEmpty()) {
                 const QString convertedString = addHighlighter(str, settings);
-                qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
+                qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
 
@@ -495,13 +495,13 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
         }
         case CMARK_NODE_CODE: {
             const char *literal = cmark_node_get_literal(node);
-            qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
             QString str = QString::fromUtf8(literal);
             if (!str.isEmpty()) {
                 convertHtmlChar(str);
                 const QString stringHtml = u"`"_s + str + u"`"_s;
                 const QString convertedString = addHighlighter(stringHtml, settings);
-                qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
+                qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
 
@@ -515,7 +515,7 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
     }
 
     char *html = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " generated html: " << html;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " generated html: " << html;
 
     cmark_iter_free(iter);
     cmark_node_free(doc);

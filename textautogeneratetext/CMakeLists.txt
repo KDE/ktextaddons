@@ -160,6 +160,8 @@ target_sources(
         core/textautogeneratetextinstancesmanager.cpp
         core/jobs/textautogenerateexportchatasjsonjob.cpp
         core/jobs/textautogenerateexportchatasjsonjob.h
+        core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h
+        core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.cpp
 )
 
 target_sources(
