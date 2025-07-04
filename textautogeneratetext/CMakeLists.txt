@@ -162,6 +162,8 @@ target_sources(
         core/jobs/textautogenerateexportchatasjsonjob.h
         core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h
         core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.cpp
+        core/syntaxhighlighting/textautogeneratetexthighlighter.h
+        core/syntaxhighlighting/textautogeneratetexthighlighter.cpp
 )
 
 target_sources(
