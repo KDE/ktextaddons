@@ -150,7 +150,7 @@ set_target_properties(
     cmark-rc
     PROPERTIES
         OUTPUT_NAME
-            cmark-rc-copy
+            textautogenerate-cmark-rc-copy
         VERSION
             "0.31.0"
         SOVERSION

@@ -31,6 +31,8 @@ install(
     COMPONENT Devel
 )
 
+add_subdirectory(cmark-rc)
+
 add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
