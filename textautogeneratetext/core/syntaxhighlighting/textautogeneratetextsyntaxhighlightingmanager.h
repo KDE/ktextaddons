@@ -8,7 +8,8 @@
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
-
+namespace TextAutoGenerateText
+{
 class TextAutoGenerateTextSyntaxHighlightingManager
 {
 public:
@@ -31,3 +32,4 @@ private:
     QList<QString> mDefinitions;
     bool mSyntaxHighlightingInitialized = false;
 };
+}

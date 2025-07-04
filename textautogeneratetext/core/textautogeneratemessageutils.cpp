@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratemessageutils.h"
+#include "syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h"
 #include "textautogeneratetextcore_cmark_debug.h"
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
@@ -12,6 +13,7 @@
 #include <KTextToHTML>
 #include <qregularexpression.h>
 using namespace Qt::StringLiterals;
+using namespace TextAutoGenerateText;
 QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
 {
     const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
@@ -312,6 +314,61 @@ QString generateRichTextCMark(const QString &str,
 }
 #endif
 
+int findNewLineOrEndLine(const QString &str, const QString &regionMarker, int startFrom)
+{
+    const int index = str.indexOf(regionMarker, startFrom);
+    if (index == -1) {
+        return str.length() - 1;
+    } else {
+        return index;
+    }
+    Q_UNREACHABLE();
+}
+template<typename InRegionCallback, typename OutsideRegionCallback, typename NewLineCallBack>
+void iterateOverEndLineRegions(const QString &str,
+                               const QString &regionMarker,
+                               InRegionCallback &&inRegion,
+                               OutsideRegionCallback &&outsideRegion,
+                               NewLineCallBack &&newLine)
+{
+    // We have quote text if text start with > or we have "\n>"
+    if (str.startsWith(regionMarker) || str.contains(u"\n"_s + regionMarker)) {
+        int startFrom = 0;
+        const auto markerSize = regionMarker.size();
+        bool hasCode = false;
+        while (true) {
+            const int startIndex = findNonEscaped(str, regionMarker, startFrom);
+            if (startIndex == -1) {
+                break;
+            }
+
+            const int endIndex = findNewLineOrEndLine(str, u"\n"_s, startIndex + markerSize);
+            if (endIndex == -1) {
+                break;
+            }
+            QStringView codeBlock = QStringView(str).mid(startIndex + markerSize, endIndex - startIndex).trimmed();
+            if (codeBlock.endsWith(regionMarker)) {
+                codeBlock.chop(regionMarker.size());
+            }
+            if (hasCode) {
+                newLine();
+            }
+            const QStringView midCode = QStringView(str).mid(startFrom, startIndex - startFrom);
+            outsideRegion(midCode.toString());
+            startFrom = endIndex + markerSize;
+
+            inRegion(codeBlock.toString());
+            if (!codeBlock.isEmpty()) {
+                hasCode = true;
+            }
+        }
+        const QString afterstr = str.mid(startFrom);
+        outsideRegion(afterstr);
+    } else {
+        outsideRegion(str);
+    }
+}
+
 template<typename InRegionCallback, typename OutsideRegionCallback>
 void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, InRegionCallback &&inRegion, OutsideRegionCallback &&outsideRegion)
 {
@@ -350,10 +407,10 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
     QString highlighted;
     QTextStream stream(&highlighted);
     TextHighlighter highlighter(&stream);
-    const auto useHighlighter = SyntaxHighlightingManager::self()->syntaxHighlightingInitialized();
+    const auto useHighlighter = TextAutoGenerateTextSyntaxHighlightingManager::self()->syntaxHighlightingInitialized();
 
     if (useHighlighter) {
-        auto &repo = SyntaxHighlightingManager::self()->repo();
+        auto &repo = TextAutoGenerateTextSyntaxHighlightingManager::self()->repo();
         const auto theme = (codeBackgroundColor.lightness() < 128) ? repo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                    : repo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme);
         // qDebug() << " theme .n am" << theme.name();
@@ -379,11 +436,11 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
             return chunk.left(newline);
         }();
 
-        auto definition = SyntaxHighlightingManager::self()->def(language);
+        auto definition = TextAutoGenerateTextSyntaxHighlightingManager::self()->def(language);
         if (definition.isValid()) {
             chunk.remove(0, language.size() + 1);
         } else {
-            definition = SyntaxHighlightingManager::self()->defaultDef();
+            definition = TextAutoGenerateTextSyntaxHighlightingManager::self()->defaultDef();
         }
 
         highlighter.setDefinition(std::move(definition));
