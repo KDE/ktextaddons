@@ -10,6 +10,7 @@
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
 #include <KTextToHTML>
+#include <qregularexpression.h>
 using namespace Qt::StringLiterals;
 QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
 {
@@ -33,7 +34,7 @@ QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMes
     return "<qt>"_L1 + result + "</qt>"_L1;
 }
 
-
+#endif
 namespace
 {
 
@@ -64,6 +65,88 @@ int findNonEscaped(const QString &str, const QString &regionMarker, int startFro
     Q_UNREACHABLE();
 }
 
+QString convertTextWithUrl(const QString &str)
+{
+    static const QRegularExpression regularExpressionAHref(u"<a href=\"(.*)\">(.*)</a>"_s);
+    static const QRegularExpression regularExpressionCustomAHref(u"<a href=\"(.*)\\|(.*)\">(.*)</a>"_s);
+    QString newStr;
+    bool isRef = false;
+    bool isUrl = false;
+#if 0
+    bool isHasNewRef = false;
+#endif
+    QString url;
+    QString references;
+    for (int i = 0; i < str.length(); ++i) {
+        const QChar ref = str.at(i);
+        if (ref == u'[') {
+            if (isRef) {
+                isRef = false;
+                newStr += u'[' + references + u'[';
+                references.clear();
+            } else {
+                isRef = true;
+            }
+#if 0
+        } else if (isUrl && ref == u']' && isHasNewRef) {
+            isUrl = false;
+            isRef = false;
+            newStr += u"<a href=\'%1'>%2</a>"_s.arg(url, references);
+            references.clear();
+            url.clear();
+#endif
+        } else if (isRef && ref == u']') {
+            isRef = false;
+            if ((i == str.length() - 1) || (str.at(i + 1) != u'(')) {
+                if (references.startsWith(u'<')) {
+                    newStr += references.replace(regularExpressionCustomAHref, u"<a href=\"\\2\">\\1</a>"_s);
+                } else {
+                    newStr += u'[' + references + u']';
+                }
+                references.clear();
+            }
+        } else if (ref == u'(' && !references.isEmpty()) {
+            isUrl = true;
+        } else if (isUrl && ref == u')' && !references.isEmpty()) {
+            isUrl = false;
+            // detect whether the string already contains HTML <a/> tags
+            if (url.startsWith(u'<')) {
+                newStr += url.replace(regularExpressionAHref, u"<a href=\"\\1\">%1</a>"_s.arg(references));
+            } else {
+                newStr += u"<a href=\'%1'>%2</a>"_s.arg(url, references);
+            }
+            references.clear();
+            url.clear();
+#if 0
+        } else if (ref == u'|' && !references.isEmpty()) {
+            isUrl = true;
+            isRef = false;
+            isHasNewRef = true;
+#endif
+        } else {
+            if (isRef) {
+                references += ref;
+            } else if (isUrl) {
+                url += ref;
+            } else {
+                newStr += ref;
+            }
+        }
+    }
+    if (isRef) {
+        newStr += u'[' + references;
+    } else if (isUrl) {
+        newStr += u'[' + references + "]("_L1 + url;
+#if 0
+    } else if (isHasNewRef) {
+        if (!url.isEmpty() && !references.isEmpty()) {
+            newStr += u"<a href=\'%1'>%2</a>"_s.arg(url, references);
+        }
+#endif
+    }
+    return newStr;
+}
+
 QString markdownToRichTextCMark(const QString &markDown)
 {
     if (markDown.isEmpty()) {
@@ -77,7 +160,7 @@ QString markdownToRichTextCMark(const QString &markDown)
     str = KTextToHTML::convertToHtml(str, convertFlags);
     qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " AFTER convertToHtml " << str;
     // substitute "[example.com](<a href="...">...</a>)" style urls
-    str = Utils::convertTextWithUrl(str);
+    str = convertTextWithUrl(str);
     // We don't have emoji support
 #if 0
     // Substiture "- [ ] foo" and "- [x] foo" to checkmark
@@ -87,7 +170,7 @@ QString markdownToRichTextCMark(const QString &markDown)
 
     return str;
 }
-
+#if 0
 QString generateRichTextCMark(const QString &str,
                               const QString &searchedText)
 {
@@ -227,7 +310,7 @@ QString generateRichTextCMark(const QString &str,
 
     return newStr;
 }
-
+#endif
 
 template<typename InRegionCallback, typename OutsideRegionCallback>
 void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, InRegionCallback &&inRegion, OutsideRegionCallback &&outsideRegion)
@@ -256,7 +339,7 @@ void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, In
     outsideRegion(str.mid(startFrom));
 }
 }
-
+#if 0
 static QString addHighlighter(const QString &str, const TextConverter::ConvertMessageTextSettings &settings)
 {
     QString richText;
@@ -342,7 +425,7 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
     qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " richText generated: " << richText;
     return richText;
 }
-
+#endif
 // #define DEBUG_CMARK_RC
 
 static void convertHtmlChar(QString &str)
@@ -352,8 +435,7 @@ static void convertHtmlChar(QString &str)
     str.replace(u"&quot;"_s, u"\""_s);
     str.replace(u"&amp;"_s, u"&"_s);
 }
-
-
+#if 0
 static QString convertMessageText(const TextConverter::ConvertMessageTextSettings &newSettings, const QString &quotedMessage)
 {
     // Need to escaped text (avoid to interpret html code)
