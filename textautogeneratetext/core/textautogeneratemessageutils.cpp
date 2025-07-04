@@ -5,12 +5,12 @@
 */
 
 #include "textautogeneratemessageutils.h"
+#include "textautogeneratetextcore_cmark_debug.h"
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
 #include <KTextToHTML>
 using namespace Qt::StringLiterals;
-// TODO add syntax higthlighting
 QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str)
 {
     const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
@@ -20,24 +20,12 @@ QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(co
 #if 0
 QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMessageTextSettings &settings, QByteArray &needUpdateMessageId, int &recusiveIndex)
 {
-    if (!settings.emojiManager) {
-        qCWarning(RUQOLA_TEXTTOHTML_LOG) << "Emojimanager is null";
-    }
-
     QString quotedMessage;
     QString str = settings.str;
     // Need to escaped text (avoid to interpret html code)
     const TextConverter::ConvertMessageTextSettings newsettings{
         str,
-        settings.userName,
-        settings.allMessages,
-        settings.highlightWords,
-        settings.emojiManager,
-        settings.messageCache,
-        settings.mentions,
-        settings.channels,
         settings.searchedText,
-        settings.maximumRecursiveQuotedText,
     };
     // qDebug() << "settings.str  " << settings.str;
     const QString result = convertMessageText(newsettings, quotedMessage);
@@ -48,32 +36,59 @@ QString TextAutoGenerateText::convertMessageText(const TextConverter::ConvertMes
 
 namespace
 {
+
+/// check if the @p str contains an uneven number of backslashes before @p pos
+bool isEscaped(const QString &str, int pos)
+{
+    int backslashes = 0;
+    while (pos > 0 && str[pos - 1] == u'\\') {
+        ++backslashes;
+        --pos;
+    }
+    // even number of escapes means the
+    return backslashes % 2 == 1;
+}
+
+int findNonEscaped(const QString &str, const QString &regionMarker, int startFrom)
+{
+    while (true) {
+        const int index = str.indexOf(regionMarker, startFrom);
+        if (index == -1) {
+            return -1;
+        } else if (isEscaped(str, index)) {
+            startFrom = index + regionMarker.size();
+            continue;
+        }
+        return index;
+    }
+    Q_UNREACHABLE();
+}
+
 QString markdownToRichTextCMark(const QString &markDown)
 {
     if (markDown.isEmpty()) {
         return {};
     }
 
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << "BEFORE markdownToRichText " << markDown;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "BEFORE markdownToRichText " << markDown;
     QString str = markDown;
 
-    const RuqolaKTextToHTML::Options convertFlags = RuqolaKTextToHTML::HighlightText | RuqolaKTextToHTML::ConvertPhoneNumbers;
-    str = RuqolaKTextToHTML::convertToHtml(str, convertFlags);
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " AFTER convertToHtml " << str;
+    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
+    str = KTextToHTML::convertToHtml(str, convertFlags);
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " AFTER convertToHtml " << str;
     // substitute "[example.com](<a href="...">...</a>)" style urls
     str = Utils::convertTextWithUrl(str);
+    // We don't have emoji support
+#if 0
     // Substiture "- [ ] foo" and "- [x] foo" to checkmark
     str = Utils::convertTextWithCheckMark(str);
-    qCDebug(RUQOLA_TEXTTOHTML_CMARK_LOG) << " AFTER convertTextWithUrl " << str;
+#endif
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " AFTER convertTextWithUrl " << str;
 
     return str;
 }
 
 QString generateRichTextCMark(const QString &str,
-                              const QString &username,
-                              const QStringList &highlightWords,
-                              const QMap<QString, QByteArray> &mentions,
-                              const Channels *const channels,
                               const QString &searchedText)
 {
     QString newStr = markdownToRichTextCMark(str);
@@ -131,45 +146,6 @@ QString generateRichTextCMark(const QString &str,
         }
     }
 
-    if (!highlightWords.isEmpty()) {
-        const auto userHighlightForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::PositiveText).color().name();
-        const auto userHighlightBackgroundColor = ColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::PositiveBackground).color().name();
-        lstPos.clear();
-        QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
-        while (userIteratorHref.hasNext()) {
-            const QRegularExpressionMatch match = userIteratorHref.next();
-            HrefPos pos;
-            pos.start = match.capturedStart(1);
-            pos.end = match.capturedEnd(1);
-            lstPos.append(std::move(pos));
-        }
-
-        for (const QString &word : highlightWords) {
-            const QRegularExpression exp(u"(\\b%1\\b)"_s.arg(word), QRegularExpression::CaseInsensitiveOption);
-            QRegularExpressionMatchIterator userIterator = exp.globalMatch(newStr);
-            int offset = 0;
-            while (userIterator.hasNext()) {
-                const QRegularExpressionMatch match = userIterator.next();
-                const QString word = match.captured(1);
-                bool inAnUrl = false;
-                const int matchCapturedStart = match.capturedStart(1);
-                for (const HrefPos &hrefPos : lstPos) {
-                    if ((matchCapturedStart > hrefPos.start) && (matchCapturedStart < hrefPos.end)) {
-                        inAnUrl = true;
-                        break;
-                    }
-                }
-                if (inAnUrl) {
-                    continue;
-                }
-                const QString replaceStr =
-                    u"<a style=\"color:%2;background-color:%3;\">%1</a>"_s.arg(word, userHighlightForegroundColor, userHighlightBackgroundColor);
-                newStr.replace(matchCapturedStart + offset, word.length(), replaceStr);
-                // We added a new string => increase offset
-                offset += replaceStr.length() - word.length();
-            }
-        }
-    }
 
     if (!searchedText.isEmpty()) {
         const auto userHighlightForegroundColor = ColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
@@ -338,17 +314,11 @@ static QString addHighlighter(const QString &str, const TextConverter::ConvertMe
     };
 
     auto addTextChunk = [&](const QString &chunk) {
-        auto htmlChunk = generateRichTextCMark(chunk, settings.userName, settings.highlightWords, settings.mentions, settings.channels, settings.searchedText);
-        if (settings.emojiManager) {
-            settings.emojiManager->replaceEmojis(&htmlChunk);
-        }
+        auto htmlChunk = generateRichTextCMark(chunk, settings.searchedText);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
-        auto htmlChunk = generateRichTextCMark(chunk, settings.userName, settings.highlightWords, settings.mentions, settings.channels, settings.searchedText);
-        if (settings.emojiManager) {
-            settings.emojiManager->replaceEmojis(&htmlChunk);
-        }
+        auto htmlChunk = generateRichTextCMark(chunk, settings.searchedText);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
@@ -389,15 +359,7 @@ static QString convertMessageText(const TextConverter::ConvertMessageTextSetting
     // Need to escaped text (avoid to interpret html code)
     const TextConverter::ConvertMessageTextSettings settings{
         quotedMessage + newSettings.str.toHtmlEscaped(),
-        newSettings.userName,
-        newSettings.allMessages,
-        newSettings.highlightWords,
-        newSettings.emojiManager,
-        newSettings.messageCache,
-        newSettings.mentions,
-        newSettings.channels,
         newSettings.searchedText,
-        newSettings.maximumRecursiveQuotedText,
     };
     const QByteArray ba = settings.str.toUtf8();
     cmark_node *doc = cmark_parse_document(ba.constData(), ba.length(), CMARK_OPT_DEFAULT);

@@ -50,8 +50,15 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
 
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_memory_debug.h
     IDENTIFIER TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG
-    CATEGORY_NAME org.kde.kf.textautogeneratetext
+    CATEGORY_NAME org.kde.kf.textautogeneratetext.memory
     DESCRIPTION "KF6 (TextAutoGenerateText core memory)"
+    EXPORT KTEXTADDONS
+)
+
+ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_cmark_debug.h
+    IDENTIFIER TEXTAUTOGENERATETEXT_CORE_CMARK_LOG
+    CATEGORY_NAME org.kde.kf.textautogeneratetext.core.cmark
+    DESCRIPTION "KF6 (TextAutoGenerateText core cmark)"
     EXPORT KTEXTADDONS
 )
 
