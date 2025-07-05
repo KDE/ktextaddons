@@ -291,7 +291,7 @@ void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, In
 }
 }
 
-static QString addHighlighter(const QString &str, const QString &searchText)
+static QString addHighlighter(const QString &str, const QString &language, const QString &searchText)
 {
     QString richText;
     QTextStream richTextStream(&richText);
@@ -408,9 +408,14 @@ static QString convertMessageText(const QString &str, const QString &searchText)
             QString str = QString::fromUtf8(literal);
             if (!str.isEmpty()) {
                 convertHtmlChar(str);
+                QString language;
+                const auto l = cmark_node_get_fence_info(node);
+                if (l) {
+                    language = QString::fromUtf8(l);
+                }
+                qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " language " << language;
                 const QString stringHtml = u"```"_s + str + u"```"_s;
-                // qDebug() << " stringHtml " << stringHtml;
-                const QString highligherStr = addHighlighter(stringHtml, searchText);
+                const QString highligherStr = addHighlighter(stringHtml, language, searchText);
                 cmark_node *p = cmark_node_new(CMARK_NODE_PARAGRAPH);
 
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
@@ -428,7 +433,7 @@ static QString convertMessageText(const QString &str, const QString &searchText)
 
             const QString str = QString::fromUtf8(literal);
             if (!str.isEmpty()) {
-                const QString convertedString = addHighlighter(str, searchText);
+                const QString convertedString = addHighlighter(str, {}, searchText);
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
@@ -444,7 +449,7 @@ static QString convertMessageText(const QString &str, const QString &searchText)
             if (!str.isEmpty()) {
                 convertHtmlChar(str);
                 const QString stringHtml = u"`"_s + str + u"`"_s;
-                const QString convertedString = addHighlighter(stringHtml, searchText);
+                const QString convertedString = addHighlighter(stringHtml, {}, searchText);
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
