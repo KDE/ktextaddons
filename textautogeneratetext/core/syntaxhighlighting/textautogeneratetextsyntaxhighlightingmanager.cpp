@@ -47,6 +47,9 @@ KSyntaxHighlighting::Repository &TextAutoGenerateTextSyntaxHighlightingManager::
 
 KSyntaxHighlighting::Definition TextAutoGenerateTextSyntaxHighlightingManager::def(const QString &name) const
 {
+    if (name.isEmpty()) {
+        return {};
+    }
     auto it = std::lower_bound(mDefinitions.begin(), mDefinitions.end(), name, sortCaseInsensitively);
     if (it != mDefinitions.end() && name.compare(*it, Qt::CaseInsensitive) == 0) {
         return mRepo.definitionForName(*it);
