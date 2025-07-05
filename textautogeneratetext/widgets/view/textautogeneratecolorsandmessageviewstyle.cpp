@@ -6,7 +6,7 @@
 
 #include "textautogeneratecolorsandmessageviewstyle.h"
 
-#include <QApplication>
+#include <QGuiApplication>
 using namespace TextAutoGenerateText;
 TextAutoGenerateColorsAndMessageViewStyle::TextAutoGenerateColorsAndMessageViewStyle()
 {
