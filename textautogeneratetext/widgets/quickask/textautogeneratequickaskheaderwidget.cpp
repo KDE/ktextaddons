@@ -6,6 +6,7 @@
 #include "textautogeneratequickaskheaderwidget.h"
 #include <QLabel>
 
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "widgets/textautogeneratetextmodelcombobox.h"
 #include <KLocalizedString>
@@ -37,10 +38,23 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     configureButton->setToolTip(i18nc("@info:tooltip", "Configure…"));
     mainLayout->addWidget(configureButton);
 
+    auto clearButton = new QToolButton(this);
+    clearButton->setAutoRaise(true);
+    clearButton->setObjectName(u"clearButton"_s);
+    clearButton->setIcon(QIcon::fromTheme(u"edit-clear-all"_s));
+    clearButton->setToolTip(i18nc("@info:tooltip", "Clear"));
+    mainLayout->addWidget(clearButton);
+
     QFont f = mModelInstanceLabel->font();
     f.setBold(true);
     f.setItalic(true);
     mModelInstanceLabel->setFont(f);
+
+    connect(clearButton, &QToolButton::clicked, this, [this]() {
+        if (auto messageModel = mManager->messagesModelFromChatId(mManager->currentChatId()); messageModel) {
+            messageModel->resetConversation();
+        }
+    });
 
     connect(configureButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::configureRequested);
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {

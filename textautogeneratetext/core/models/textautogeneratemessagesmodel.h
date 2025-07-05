@@ -63,6 +63,7 @@ public:
     void setChatId(const QByteArray &newChatId);
 
     [[nodiscard]] QJsonArray convertToOllamaChat() const;
+
 Q_SIGNALS:
     void conversationCleared();
 
