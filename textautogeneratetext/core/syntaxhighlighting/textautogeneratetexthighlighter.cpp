@@ -40,7 +40,8 @@ void TextAutoGenerateTextHighlighter::highlight(const QString &str)
 
 void TextAutoGenerateTextHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)
 {
-    if (!format.isDefaultTextStyle(theme())) {
+    const bool isDefaultTextStyle = format.isDefaultTextStyle(theme());
+    if (!isDefaultTextStyle) {
         *mStream << u"<span style=\""_s;
         if (format.hasTextColor(theme())) {
             *mStream << u"color:"_s << format.textColor(theme()).name() << u";"_s;
@@ -67,7 +68,7 @@ void TextAutoGenerateTextHighlighter::applyFormat(int offset, int length, const 
     str = str.replace(u' ', "&nbsp;"_L1);
     *mStream << str;
 
-    if (!format.isDefaultTextStyle(theme())) {
+    if (!isDefaultTextStyle) {
         *mStream << u"</span>"_s;
     }
 }
