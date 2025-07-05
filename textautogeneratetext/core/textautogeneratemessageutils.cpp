@@ -322,21 +322,11 @@ static QString addHighlighter(const QString &str, const QString &language, const
     };
 
     auto addCodeChunk = [&](QString chunk) {
-        const auto language = [&]() {
-            const auto newline = chunk.indexOf(u'\n');
-            if (newline == -1) {
-                return QString();
-            }
-            return chunk.left(newline);
-        }();
-
         auto definition = TextAutoGenerateTextSyntaxHighlightingManager::self()->def(language);
-        if (definition.isValid()) {
-            chunk.remove(0, language.size() + 1);
-        } else {
+        if (!definition.isValid()) {
             definition = TextAutoGenerateTextSyntaxHighlightingManager::self()->defaultDef();
         }
-
+        qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " definition.name() " << definition.name();
         highlighter.setDefinition(std::move(definition));
         // Qt's support for borders is limited to tables, so we have to jump through some hoops...
         richTextStream << "<table><tr><td style='background-color:"_L1 << codeBackgroundColor.name() << "; padding: 5px; border: 1px solid "_L1
@@ -367,7 +357,6 @@ static QString addHighlighter(const QString &str, const QString &language, const
         if (chunk.isEmpty()) {
             return;
         }
-
         iterateOverRegionsCmark(chunk, u"`"_s, addInlineCodeChunk, addInlineQuoteChunk);
     };
 
