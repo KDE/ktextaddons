@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:41+0000\n"
-"PO-Revision-Date: 2025-07-03 14:44+0200\n"
+"POT-Creation-Date: 2025-07-05 00:41+0000\n"
+"PO-Revision-Date: 2025-07-04 04:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -138,7 +138,7 @@ msgstr "Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Venice"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
@@ -2034,7 +2034,7 @@ msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2152,7 +2152,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
@@ -2170,12 +2170,10 @@ msgid "Copy"
 msgstr "კოპირება"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "კოპირება"
+msgstr "URL-ის კოპირება"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format

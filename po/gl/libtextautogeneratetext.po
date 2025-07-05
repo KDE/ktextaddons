@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:41+0000\n"
+"POT-Creation-Date: 2025-07-05 00:41+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1696,7 +1696,7 @@ msgid "Remove Instance"
 msgstr "Configurar a IA"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -1818,7 +1818,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr ""

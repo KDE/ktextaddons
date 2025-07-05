@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:41+0000\n"
-"PO-Revision-Date: 2025-07-03 10:09+0200\n"
+"POT-Creation-Date: 2025-07-05 00:41+0000\n"
+"PO-Revision-Date: 2025-07-04 06:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -138,7 +138,7 @@ msgstr "Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Venice"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
@@ -2027,7 +2027,7 @@ msgid "Remove Instance"
 msgstr "Odstrani pojavek"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2145,7 +2145,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Išči"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
@@ -2163,12 +2163,10 @@ msgid "Copy"
 msgstr "Kopiraj"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Kopiraj"
+msgstr "Kopiraj URL"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format

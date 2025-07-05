@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:41+0000\n"
-"PO-Revision-Date: 2025-07-02 14:23+0300\n"
+"POT-Creation-Date: 2025-07-05 00:41+0000\n"
+"PO-Revision-Date: 2025-07-04 16:19+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -138,7 +138,7 @@ msgstr "Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Venice"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
@@ -214,7 +214,7 @@ msgstr "הטמעה"
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
 #, kde-format
 msgid "Reasoning"
-msgstr "נימוק"
+msgstr "הנמקה"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
@@ -356,7 +356,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:18
 #, kde-format
 msgid "QwQ is the reasoning model of the Qwen series."
-msgstr "QwQ הוא מודל הנימוק של סדרת Qwen."
+msgstr "QwQ הוא מודל ההנמקה של סדרת Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
@@ -364,7 +364,7 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
-"Llama 3.2 Vision הוא אוסף של מודלים יוצרים עם נימוק לתמונות מוכווני הנחיות "
+"Llama 3.2 Vision הוא אוסף של מודלים יוצרים עם הנמקה לתמונות מוכווני הנחיות "
 "בגדלים 11B ו־90B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
@@ -426,6 +426,8 @@ msgid ""
 "Phi-3 is a family of lightweight 3B (Mini) and 14B (Medium) state-of-the-art "
 "open models by Microsoft."
 msgstr ""
+"‏Phi-3 היא משפחה של מודלים פתוחים קלילים בגודלי 3B (Mini) ו־14B (Medium) "
+"מהשורה הראשונה מבית מיקרוסופט."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:29
 #, kde-format
@@ -460,6 +462,8 @@ msgid ""
 "vision encoder and Vicuna for general-purpose visual and language "
 "understanding. Updated to version 1.6."
 msgstr ""
+"LLaVA הוא מודל אצילי רב ערוצי תקשורת גדול מקצה לקצה שמשלב מצפין חוזי ו־"
+"Vicuna להבנה כללית של חזות ושפה. מעודכן לגרסה 1.6."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:37
 #, kde-format
@@ -475,7 +479,7 @@ msgid ""
 "improvements in code generation, code reasoning, and code fixing."
 msgstr ""
 "הסדרה העדכנית ביותר של מודלים מסוג Qwen ייעודית לקוד, עם שיפורים משמעותיים "
-"ביצירת קוד, נימוק קוד ותיקון קוד."
+"ביצירת קוד, הנמקת קוד ותיקון קוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -532,7 +536,7 @@ msgid ""
 "instruction following."
 msgstr ""
 "CodeGemma הוא אוסף של מודלים עוצמתיים וקלילים שיכולים לבצע מגוון משימות "
-"תכנות כגון השלמת קוד מהאמצע, יצירת קוד, הבנת שפה טבעית, נימוק מתמטי ומעקב "
+"תכנות כגון השלמת קוד מהאמצע, יצירת קוד, הבנת שפה טבעית, הנמקה מתמטית ומעקב "
 "אחר הנחיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:53
@@ -550,7 +554,7 @@ msgid ""
 "Phi-2: a 2.7B language model by Microsoft Research that demonstrates "
 "outstanding reasoning and language understanding capabilities."
 msgstr ""
-"Phi-2: מודל שפה בגודל 2.7B מבית Microsoft Research שמדגים יכולות נימוק והבנת "
+"Phi-2: מודל שפה בגודל 2.7B מבית Microsoft Research שמדגים יכולות הנמקה והבנת "
 "שפה בצורה מעולה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
@@ -580,7 +584,7 @@ msgid ""
 "performance on complex chat, multilingual, reasoning and agent use cases."
 msgstr ""
 "מודל שפה מהשורה הראשונה מבית Microsoft AI עם ביצועים משופרים לשיחה מורכבת, "
-"רב־לשוניות, נימוק ומקרי בוחן של סוכנים."
+"רב־לשוניות, הנמקה ומקרי בוחן של סוכנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:61
 #, kde-format
@@ -627,7 +631,7 @@ msgid ""
 "A LLaVA model fine-tuned from Llama 3 Instruct with better scores in several "
 "benchmarks."
 msgstr ""
-"מודל LLaVA שכוון בקפידה מתוך Llama 3 Instruct (הנחיות) עם תוצאות טובות יותר "
+"מודל LLaVA שהותאם מחדש מתוך Llama 3 Instruct (הנחיות) עם תוצאות טובות יותר "
 "במגוון מדדים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:69
@@ -636,8 +640,8 @@ msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
 "that are trained to act as helpful assistants."
 msgstr ""
-"Zephyr היא סדרה של גרסאות מכווננות בקפידה של המודלים Mistral ו־Mixtral "
-"שאומנו כדי לתפקד כעוזרים מיומנים."
+"Zephyr היא סדרה של גרסאות שהותאמו מחדש של המודלים Mistral ו־Mixtral שאומנו "
+"כדי לתפקד כעוזרים מיומנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
 #, kde-format
@@ -651,7 +655,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
-msgstr ""
+msgstr "מודלי שיכון על סדרות נתונים ברמת משפטים ארוכים מאוד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
 #, kde-format
@@ -687,8 +691,8 @@ msgid ""
 "Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
 "Mistral 7B model using the OpenOrca dataset."
 msgstr ""
-"Mistral OpenOrca הוא מודל עם 7 מיליארד פרמטרים, שכוון על גבי מודל Mistral 7B "
-"עם סדרת הנתונים OpenOrca."
+"Mistral OpenOrca הוא מודל עם 7 מיליארד פרמטרים, שהותאם מחדש על גבי מודל "
+"Mistral 7B עם סדרת הנתונים OpenOrca."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:77
 #, kde-format
@@ -705,11 +709,13 @@ msgid ""
 "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
 "Llama 2 uncensored by Eric Hartford."
 msgstr ""
+"Wizard Vicuna לא מצונזר הוא מודל בגדלים 7B, 13B ו־30B משתנים שמבוסס על Llama "
+"2 הלא מצונזר מאת אריק הארטפורד.."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
 #, kde-format
 msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
-msgstr "מודל מבוסס Llama 2 שכוון לשיפור יכולות שיח בסינית."
+msgstr "מודל מבוסס Llama 2 שהותאם מחדש לשיפור יכולות שיח בסינית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
 #, kde-format
@@ -797,8 +803,8 @@ msgid ""
 "OpenHermes 2.5 is a 7B model fine-tuned by Teknium on Mistral with fully "
 "open datasets."
 msgstr ""
-"OpenHermes 2.5 הוא מודל בגודל 7B שכוון על ידי Teknium על גבי Mistral עם "
-"סדרות נתונים פתוחות לגמרי."
+"OpenHermes 2.5 הוא מודל בגודל 7B שהותאם מחדש על ידי Teknium על גבי Mistral "
+"עם סדרות נתונים פתוחות לגמרי."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:95
 #, kde-format
@@ -808,7 +814,7 @@ msgid ""
 "window and support for dozens of languages."
 msgstr ""
 "Mistral Large 2 הוא מודל הדגל החדש של Mistral עם יכולות טובות בהרבה ביצירת "
-"קוד, מתמטיקה ונימוק עם חלון הקשר בגודל 128k ותמיכה בעשרות שפות."
+"קוד, מתמטיקה והנמקה עם חלון הקשר בגודל 128k ותמיכה בעשרות שפות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:98
 #, kde-format
@@ -856,7 +862,7 @@ msgid ""
 "course."
 msgstr ""
 "מודל עם ביצועים מעולים שאומן עם טכניקה חדשה שנקראת כוונון שיקוף (Reflection-"
-"tuning) שמלמדת LLM/מש״ג לזהות טעויות בנימוק ולתקן את המסלול."
+"tuning) שמלמדת LLM/מש״ג לזהות טעויות בהנמקה ולתקן את המסלול."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:108
 #, kde-format
@@ -887,7 +893,7 @@ msgstr "moondream2 הוא מודל שפה חזותית קטן שתוכנן לר�
 msgid ""
 "A fine-tuned model based on Mistral with good coverage of domain and "
 "language."
-msgstr ""
+msgstr "מודל שהותאם מחדש על בסיס Mistral עם כיסוי טוב של תחום מסוים ושפה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:114
 #, kde-format
@@ -911,8 +917,8 @@ msgid ""
 "SQLCoder is a code completion model fined-tuned on StarCoder for SQL "
 "generation tasks"
 msgstr ""
-"SQLCoder הוא מודל להשלמת קוד תוכנה שכוון לפי StarCoder למשימות יצירת שאילתות "
-"SQL"
+"SQLCoder הוא מודל להשלמת קוד תוכנה שהותאם מחדש לפי StarCoder למשימות יצירת "
+"שאילתות SQL"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:117
 #, kde-format
@@ -935,6 +941,8 @@ msgid ""
 "A 7B and 15B uncensored variant of the Dolphin model family that excels at "
 "coding, based on StarCoder2."
 msgstr ""
+"הגוון לא מוצנזר בגדלים 7B ו־15B של משפחת המודלים Dolphin שמצטיינת בכתיבת "
+"קוד, מבוססת על StarCoder2."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
 #, kde-format
@@ -995,7 +1003,7 @@ msgid ""
 "InternLM2.5 is a 7B parameter model tailored for practical scenarios with "
 "outstanding reasoning capability."
 msgstr ""
-"InternLM2.5 הוא מודל בגודל 7B משתנים שתפור לתרחישים מעשיים עם יכולות נימוק "
+"InternLM2.5 הוא מודל בגודל 7B משתנים שתפור לתרחישים מעשיים עם יכולות הנמקה "
 "יוצאות מן הכלל."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:133
@@ -1019,7 +1027,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:135
 #, kde-format
 msgid "A new small LLaVA model fine-tuned from Phi 3 Mini."
-msgstr "מודל קטן וחדש מסוג LLaVA שכוונן מתוך Phi 3 Mini."
+msgstr "מודל קטן וחדש מסוג LLaVA שהותאם מחדש מתוך Phi 3 Mini."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:137
 #, kde-format
@@ -1028,8 +1036,8 @@ msgid ""
 "Meta's Llama 2 models. The model is designed to excel particularly in "
 "reasoning."
 msgstr ""
-"Orca 2 נבנו על ידי אגף המחקר של מיקרוסופט, והם גרסאות מכווננות של המודלים "
-"Llama 2 מבית Meta. המודל תוכנן להצטיין במיוחד בנימוק."
+"Orca 2 נבנו על ידי אגף המחקר של מיקרוסופט, והם גרסאות שהותאמו מחדש של "
+"המודלים Llama 2 מבית Meta. המודל תוכנן להצטיין במיוחד בהנמקה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:139
 #, kde-format
@@ -1037,6 +1045,7 @@ msgid ""
 "A series of multimodal LLMs (MLLMs) designed for vision-language "
 "understanding."
 msgstr ""
+"סדרה של מש״גים/LLMים מרובי ערוצי תקשורת (MLLMs) שתוכננה להבנת שפה חזותית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:140
 #, kde-format
@@ -1044,6 +1053,8 @@ msgid ""
 "Llama 2 based model fine tuned on an Orca-style dataset. Originally called "
 "Free Willy."
 msgstr ""
+"מודל מבוסס Llama 2 שהותאם מחדש לסדרת נתונים בסגנון Orca, נקרא במקור Free "
+"Willy (לשחרר את וילי)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:141
 #, kde-format
@@ -1060,6 +1071,8 @@ msgid ""
 "2.7B uncensored Dolphin model by Eric Hartford, based on the Phi language "
 "model by Microsoft Research."
 msgstr ""
+"מודל Dolphin לא מצונזר בגודל 2.7B מאת אריק הארטפורד, מבוסס על מודל השפה Phi "
+"מבית Microsoft Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:143
 #, kde-format
@@ -1105,7 +1118,7 @@ msgid ""
 "Fine-tuned Llama 2 model to answer medical questions based on an open source "
 "medical dataset."
 msgstr ""
-"מודל Llama 2 שכוון בקפידה לענות על שאלות רפואיות לפי סדרות נתונים רפואיות "
+"מודל Llama 2 שהותאם מחדש לענות על שאלות רפואיות לפי סדרות נתונים רפואיות "
 "בקוד פתוח."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:151
@@ -1212,7 +1225,7 @@ msgid ""
 "MistralLite is a fine-tuned model based on Mistral with enhanced "
 "capabilities of processing long contexts."
 msgstr ""
-"MistralLite הוא מודל שכוון בקפידה על בסיס Mistral עם יכולות מורחבות של עיבוד "
+"MistralLite הוא מודל שהותאם מחדש על בסיס Mistral עם יכולות מורחבות של עיבוד "
 "הקשרים ארוכים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:172
@@ -1221,7 +1234,8 @@ msgid ""
 "MathΣtral: a 7B model designed for math reasoning and scientific discovery "
 "by Mistral AI."
 msgstr ""
-"MathΣtral: מודל בגודל 7B שתוכנן לנימוק מתמטי וגילויים מדעיים מבית Mistral AI."
+"MathΣtral: מודל בגודל 7B שתוכנן להנמקה מתמטית וגילויים מדעיים מבית Mistral "
+"AI."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:173
 #, kde-format
@@ -1260,12 +1274,13 @@ msgstr ""
 #, kde-format
 msgid ""
 "A top-performing mixture of experts model, fine-tuned with high-quality data."
-msgstr "מודל ערבוב מומחים עם ביצועים מיטביים, עבר דיוק עם נתונים באיכות גבוהה."
+msgstr ""
+"מודל ערבוב מומחים עם ביצועים מיטביים, הותאם מחדש עם נתונים באיכות גבוהה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:178
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
-msgstr "מודל שיחה בגודל 7B עם נתונים באיכות גבוהה על בסיס Zephyr."
+msgstr "מודל שיחה בגודל 7B שהותאם מחדש עם נתונים באיכות גבוהה על בסיס Zephyr."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:179
 #, kde-format
@@ -1282,7 +1297,8 @@ msgid ""
 "A language model created by combining two fine-tuned Llama 2 70B models into "
 "one."
 msgstr ""
-"מודל שפה שנוצר על ידי שילוב בין שני מודלים מסוג Llama 2 בגודל 70B לאחד."
+"מודל שפה שנוצר על ידי שילוב בין שני מודלים שהותאמו מחדש מסוג Llama 2 בגודל "
+"70B לאחד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:182
 #, kde-format
@@ -1290,6 +1306,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are the first mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
+"המודלים IBM Granite 1B ו־3B הם המודלים הראשונים מסוג ערבוב תחומי מומחיות "
+"(MoE) ממשפחת Granite מבית IBM שתוכננו לשימוש מהיר."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:183
 #, kde-format
@@ -1297,8 +1315,8 @@ msgid ""
 "A 3.8B model fine-tuned on a private high-quality synthetic dataset for "
 "information extraction, based on Phi-3."
 msgstr ""
-"מודל בגודל 3.8B שכוון לפי ערכת נתונים מלאכותית באיכות גבוהה לחילוץ נתונים, "
-"מבוסס על Phi-3."
+"מודל בגודל 3.8B שהותאם מחדש לפי ערכת נתונים מלאכותית באיכות גבוהה לחילוץ "
+"נתונים, מבוסס על Phi-3."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:184
 #, kde-format
@@ -1318,7 +1336,7 @@ msgid ""
 "An open large reasoning model for real-world solutions by the Alibaba "
 "International Digital Commerce Group (AIDC-AI)."
 msgstr ""
-"מודל נימוק גדול ופתוח לפתרונות מהעולם האמיתי מבית Alibaba International "
+"מודל הנמקה גדול ופתוח לפתרונות מהעולם האמיתי מבית Alibaba International "
 "Digital Commerce Group (AIDC-AI)."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
@@ -1372,8 +1390,8 @@ msgid ""
 "Llama Guard 3 is a series of models fine-tuned for content safety "
 "classification of LLM inputs and responses."
 msgstr ""
-"Llama Guard 3 היא סדרה של מודלים שכווננו לסיווג בטוח של תוכן של קלטי ותגובות "
-"LLM/מש״ג."
+"Llama Guard 3 היא סדרה של מודלים שהותאמו מחדש לסיווג בטוח של תוכן של קלטי "
+"ותגובות LLM/מש״ג."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:197
 #, kde-format
@@ -1407,6 +1425,8 @@ msgid ""
 "Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
 "support without sacrificing English performance or scalability."
 msgstr ""
+"מודל הטמעות החזית של Snowflake.‏ Arctic Embed 2.0 מוסיף תמיכה רב־לשונית מבלי "
+"להקריב את הביצועים או הגמישות באנגלית."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
 #, kde-format
@@ -1477,7 +1497,7 @@ msgstr "Phi-4 הוא מודל 14B משתנים פתוח מהשורה הראשו�
 #, kde-format
 msgid ""
 "A new small reasoning model fine-tuned from the Qwen 2.5 3B Instruct model."
-msgstr "מודל נימוק קטן וחדש שכוון בהתאם למודל ההנחיות Qwen 2.5 בגודל 3B."
+msgstr "מודל הנמקה קטן וחדש שהותאם מחדש בהתאם למודל ההנחיות Qwen 2.5 בגודל 3B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:222
 #, kde-format
@@ -1495,7 +1515,7 @@ msgid ""
 "to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on "
 "Llama and Qwen."
 msgstr ""
-"הדור הראשון של מודלי נימוק מבית DeepSeek עם ביצועים שווי ערך ל־OpenAI-o1, "
+"הדור הראשון של מודלי הנמקה מבית DeepSeek עם ביצועים שווי ערך ל־OpenAI-o1, "
 "כולל שישה מודלים דחוסים שנגזרו מ־DeepSeek-R1 שמבוסס על Llama ועל Qwen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:227
@@ -1536,7 +1556,7 @@ msgid ""
 "A fully open-source family of reasoning models built using a dataset derived "
 "by distilling DeepSeek-R1."
 msgstr ""
-"משפחה שלמה בקוד פתוח של מודלים לנימוק שנבנו על סדרת נתונים שנגזרה על ידי "
+"משפחה שלמה בקוד פתוח של מודלים להנמקה שנבנו על סדרת נתונים שנגזרה על ידי "
 "זיקוק של DeppSeek-R1."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:236
@@ -1546,7 +1566,7 @@ msgid ""
 "performance of OpenAI’s o1-preview with just 1.5B parameters on popular math "
 "evaluations."
 msgstr ""
-"גרסה מכווננת של Deepseek-R1-Distilled-Qwen-1.5B שעוקפת את הביצועים של o1-"
+"גרסה מותאמת מחדש של Deepseek-R1-Distilled-Qwen-1.5B שעוקפת את הביצועים של o1-"
 "preview מבית OpenAI עם 1.5B משתנים על שערוכים מתמטיים נפוצים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:239
@@ -1570,7 +1590,7 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
-"Phi-4-mini מציג שיפורים משמעותיים בתמיכה רב־לשונית, נימוק ומתמטיקה, ומעתה "
+"Phi-4-mini מציג שיפורים משמעותיים בתמיכה רב־לשונית, הנמקה ומתמטיקה, ומעתה "
 "יכולת הקריאה לפונקציות, שכה ציפו לה, סוף סוף נתמכת."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
@@ -1589,8 +1609,8 @@ msgid ""
 "Granite-3.2 is a family of long-context AI models from IBM Granite fine-"
 "tuned for thinking capabilities."
 msgstr ""
-"Granite-3.2 היא משפחה של מודלים של בינה מלאכותית מבית IBM Granite שכוון "
-"ליכולות חשיבתיות."
+"Granite-3.2 היא משפחה של מודלים של בינה מלאכותית מבית IBM Granite שהותאמו "
+"מחדש ליכולות חשיבתיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:249
 #, kde-format
@@ -1618,7 +1638,7 @@ msgid ""
 "including math and coding benchmarks, ranging from 2.4B to 32B parameters "
 "developed and released by LG AI Research."
 msgstr ""
-"EXAONE Deep מדגים יכולות נעלות במגוון משימות נימוק לרבות מתמטיקה ומדידת "
+"EXAONE Deep מדגים יכולות נעלות במגוון משימות הנמקה לרבות מתמטיקה ומדידת "
 "ביצועי פיתוח, נא בין 2.4B ו־32B משתנים, פותח ויצא לאור על ידי LG AI Research."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
@@ -1639,7 +1659,7 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
-"Cogito v1 Preview היא משפחה של מודלי נימוק משולבים מבית Deep Cogito שמתעלים "
+"Cogito v1 Preview היא משפחה של מודלי הנמקה משולבים מבית Deep Cogito שמתעלים "
 "על הביצועים של המודלים הפתוחים הטובים ביותר באותו הגודל, כולל המתחרים מבית "
 "LLaMA,‏ DeepSeek ו־Qwen על פני רוב מדידות הביצועים הרגילות."
 
@@ -1674,7 +1694,7 @@ msgid ""
 "capabilities."
 msgstr ""
 "מודלים בגודל 2B ו־8B של IBM Granite הם מודלים של שפה עם אורך הקשר של 128K "
-"שכווננו לנימוק ויכולות מעקב אחר הוראות משופרים."
+"שהותאמו מחדש להנמקה וליכולות מעקב אחר הוראות משופרים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
@@ -1682,8 +1702,8 @@ msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
 "reasoning models that rival much larger models on complex reasoning tasks."
 msgstr ""
-"Phi 4 עם נימוק ונימוק פלוס הם מודלים במשקל פתוח לנימוק עם 14 מיליארד משתנים "
-"שמתחרים במודלים גדולים ומורכבים על משימות נימוק מורכבות."
+"Phi 4 עם הנמקה והנמקה פלוס הם מודלים במשקל פתוח להנמקה עם 14 מיליארד משתנים "
+"שמתחרים במודלים גדולים ומורכבים על משימות הנמקה מורכבות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1691,7 +1711,7 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
-"Phi 4 מזערי עם נימוק הוא מודל קליל ופתוח שמאזן בין יעילות ליכולות נימוק "
+"Phi 4 מזערי עם הנמקה הוא מודל קליל ופתוח שמאזן בין יעילות ליכולות הנמקה "
 "מתקדמות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:273
@@ -1700,11 +1720,13 @@ msgid ""
 "Gemma 3n models are designed for efficient execution on everyday devices "
 "such as laptops, tablets or phones."
 msgstr ""
+"המודלים של Gemma 3n תוכננו לפעול בצורה יעילה על מכשירים יומיומיים כגון "
+"מחשבים ניידים, מחשבי לוח וטלפונים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Magistral is a small, efficient reasoning model with 24B parameters."
-msgstr ""
+msgstr "‏Magistral הוא מודל הנמקה קטן ויעיל עם 24B משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:275
 #, kde-format
@@ -1712,18 +1734,20 @@ msgid ""
 "An update to Mistral Small that improves on function calling, instruction "
 "following, and less repetition errors."
 msgstr ""
+"עדכון ל־Mistral Small (המודל הקטן) שמשפר קריאה לפונקציות, מעקב אחר הנחיות "
+"ופחות שגיאות חזרתיות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
 msgid ""
 "Flagship vision-language model of Qwen and also a significant leap from the "
 "previous Qwen2-VL."
-msgstr ""
+msgstr "מודל דגל לשפה חזותית של Qwen וגם קפיצה משמעותית ביחס ל־Qwen2-VL הקודם."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr ""
+msgstr "‏Devstral: מודל הקוד הפתוח הטוב ביותר לסוכני פיתוח תוכנה."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -1895,7 +1919,7 @@ msgid "Remove Instance"
 msgstr "להסיר את המופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2013,7 +2037,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "חיפוש"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."
@@ -2031,12 +2055,10 @@ msgid "Copy"
 msgstr "העתקה"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "העתקה"
+msgstr "העתקת הכתובת"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format

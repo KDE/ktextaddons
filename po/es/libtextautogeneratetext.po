@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:41+0000\n"
-"PO-Revision-Date: 2025-07-03 12:23+0100\n"
+"POT-Creation-Date: 2025-07-05 00:41+0000\n"
+"PO-Revision-Date: 2025-07-05 01:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -139,7 +139,7 @@ msgstr "Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Venice"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
@@ -2051,7 +2051,7 @@ msgid "Remove Instance"
 msgstr "Eliminar instancia"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:27
+#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2169,7 +2169,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratewidget.cpp:95
+#: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
@@ -2187,12 +2187,10 @@ msgid "Copy"
 msgstr "Copiar"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Copiar"
+msgstr "Copiar URL"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
