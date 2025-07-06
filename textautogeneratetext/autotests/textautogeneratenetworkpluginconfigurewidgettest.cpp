@@ -43,3 +43,5 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     auto mDescription = w.findChild<QLabel *>(u"mDescription"_s);
     QVERIFY(mDescription);
 }
+
+#include "moc_textautogeneratenetworkpluginconfigurewidgettest.cpp"
