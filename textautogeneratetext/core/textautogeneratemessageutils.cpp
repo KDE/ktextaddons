@@ -457,7 +457,7 @@ static QString convertMessageText(const QString &str, const QString &searchText)
 
     cmark_iter_free(iter);
     cmark_node_free(doc);
-    QString result = QString::fromUtf8(html);
+    const QString result = QString::fromUtf8(html);
 
     cmark_mem *allocator = cmark_get_default_mem_allocator();
     allocator->free(html);
