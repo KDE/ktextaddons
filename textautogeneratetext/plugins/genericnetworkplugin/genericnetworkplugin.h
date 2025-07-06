@@ -7,10 +7,6 @@
 #pragma once
 
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
-namespace QKeychain
-{
-class Job;
-}
 class GenericNetworkSettings;
 class GenericNetworkManager;
 class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
