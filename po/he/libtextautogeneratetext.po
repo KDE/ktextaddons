@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-07-04 16:25+0300\n"
+"PO-Revision-Date: 2025-07-06 12:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -443,6 +443,8 @@ msgid ""
 "A set of Mixture of Experts (MoE) model with open weights by Mistral AI in "
 "8x7b and 8x22b parameter sizes."
 msgstr ""
+"מודל סדרה של ערבוב מומחים (MoE) עם משקלים פתוחים מבית Mistral AI בגודלי "
+"משתנים ‎8×7b ו־‎8×22b."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:46
 #, kde-format
@@ -450,6 +452,8 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
+"מודלים לא מצונזרים בגודלי ‎8×7b ו־‎8×22b שהותאמו מחדש על בסיס המודלים של "
+"Mistral לערבוב מומחים שמצטיין במשימות פיתוח קוד. נוצר על ידי אריק הארטפורד."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:49
 #, kde-format
