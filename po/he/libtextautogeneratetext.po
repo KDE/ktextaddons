@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-07-06 12:24+0300\n"
+"PO-Revision-Date: 2025-07-07 12:22+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1407,6 +1407,8 @@ msgid ""
 "The IBM Granite 1B and 3B models are long-context mixture of experts (MoE) "
 "Granite models from IBM designed for low latency usage."
 msgstr ""
+"המודלים IBM Granite 1B ו־3B הם בעלי הקשר ארוך מסוג ערבוב תחומי מומחיות (MoE) "
+"ממשפחת Granite מבית IBM שתוכננו לשימוש מהיר."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:226
 #, kde-format
@@ -1415,6 +1417,8 @@ msgid ""
 "biencoder embedding models, with 30M available in English only and 278M "
 "serving multilingual use cases."
 msgstr ""
+"המודלים IBM Granite Embedding 30M ו־278M הם מודלים להטמעות בעזרת שני "
+"מקודדים, כאשר 30M זמינים באנגלית בלבד ו־278M מתאימים למגוון שפות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:228
 #, kde-format
@@ -1435,6 +1439,9 @@ msgid ""
 "model, enabling coding, math, agentic, function calling, and general use "
 "cases."
 msgstr ""
+"Dolphin 3.0 Llama 3.1 8B 🐬 הוא הדור הבא בסדרת Dolphin של מודלים שהותאמו מחדש "
+"להנחיות ותוכננו להיות המודל המקומי המוצלח ביותר שמסוגל לתכנת, לחשב, להפעיל "
+"סוכנים, לקרוא לפונקציות ולמקרי שימוש כלליים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:234
 #, kde-format
