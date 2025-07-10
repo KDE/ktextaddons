@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-06 00:41+0000\n"
-"PO-Revision-Date: 2025-07-07 12:22+0300\n"
+"PO-Revision-Date: 2025-07-08 11:40+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1178,6 +1178,8 @@ msgid ""
 "cases and support for retrieval augmented generation (RAG), streamlining "
 "code generation, translation and bug fixing."
 msgstr ""
+"המודלים IBM Granite 2B ו־8B תוכננו לתמוך באופני שימוש מבוססי כלים ולתמיכה "
+"ביצירה מבוססת אחזור (RAG), שילוב מתואם ליצירת קוד, תרגום ותיקון תקלות."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:165
 #, kde-format
@@ -1476,6 +1478,9 @@ msgid ""
 "trillion tokens of data, demonstrated significant improvements over their "
 "predecessors in performance and speed in IBM’s initial testing."
 msgstr ""
+"המודלים IBM Granite 2B ו־8B הם מש״גים/LLMs דחוסים לטקסט בלבד שאומנו על למעלה "
+"מ־12 מיליארד אסימוני נתונים, הציגו שיפורים משמעותיים על פני קודמיהם בביצועים "
+"ובמהירות בבדיקות הראשוניות של IBM."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:215
 #, kde-format
