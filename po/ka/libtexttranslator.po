@@ -21,7 +21,7 @@ msgstr ""
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
 msgid "Detect language"
-msgstr "ნაგულისხმები ენა"
+msgstr "ნაგულისხმევი ენა"
 
 #: translator/misc/translatorutil.cpp:36
 #, kde-format
