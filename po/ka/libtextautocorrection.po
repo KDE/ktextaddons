@@ -373,7 +373,7 @@ msgstr "&ორმაგი ბრჭყალების ტიპოგრა
 #: widgets/ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr "ნაგულისხმებად"
+msgstr "ნაგულისხმევად"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)
@@ -403,7 +403,7 @@ msgstr "გამხსნელი ბრჭყალი:"
 #: widgets/ui/autocorrectionwidget.ui:669
 #, kde-format
 msgid "Default"
-msgstr "ნაგულისხმები"
+msgstr "ნაგულისხმევი"
 
 #. i18n: ectx: property (text), widget (QCheckBox, typographicSingleQuotes)
 #: widgets/ui/autocorrectionwidget.ui:572
