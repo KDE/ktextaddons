@@ -87,6 +87,8 @@ if(BUILD_QUICK)
     include(ECMQmlModule)
 endif()
 
+option(OPTION_ADD_AUTOGENERATETEXT "Add support for autogenerate text plugin" ON)
+
 find_package(
     Qt6
     ${QT_REQUIRED_VERSION}
@@ -204,7 +206,9 @@ add_subdirectory(textemoticons)
 add_subdirectory(textutils)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
 add_subdirectory(textspeechtotext)
-add_subdirectory(textautogeneratetext)
+if(OPTION_ADD_AUTOGENERATETEXT)
+    add_subdirectory(textautogeneratetext)
+endif()
 
 find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(
