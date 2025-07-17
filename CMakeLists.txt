@@ -61,6 +61,7 @@ if (BUILD_QUICK)
 endif ()
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Core Network Xml Sql)
+option(OPTION_ADD_AUTOGENERATETEXT "Add support for autogenerate text plugin" ON)
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     I18n
@@ -134,7 +135,9 @@ add_subdirectory(textemoticons)
 add_subdirectory(textutils)
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
 add_subdirectory(textspeechtotext)
-add_subdirectory(textautogeneratetext)
+if(OPTION_ADD_AUTOGENERATETEXT)
+    add_subdirectory(textautogeneratetext)
+endif()
 
 find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(Qt6TextToSpeech PROPERTIES DESCRIPTION
