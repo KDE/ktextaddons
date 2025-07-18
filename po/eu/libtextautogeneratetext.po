@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-07 02:32+0000\n"
-"PO-Revision-Date: 2025-06-05 21:43+0200\n"
+"PO-Revision-Date: 2025-07-17 15:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/textautogeneratechatsmodel.cpp:74
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "Sarea"
 #: plugins/mistral/mistralclient.cpp:30
 #, kde-format
 msgid "Mistral AI"
-msgstr "Mistral AA"
+msgstr "Mistral AI"
 
 #: plugins/mistral/mistralconfiguredialog.cpp:25
 #, kde-format
@@ -224,9 +224,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:20
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Utzi"
 
@@ -292,11 +290,13 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
+"Llama 3.2 vision, argibideetara doitutako irudi arrazoiketa eredu generatibo "
+"bilduma bat da, 11B eta 90B neurrikoa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:19
 #, kde-format
 msgid "Meta's Llama 3.2 goes small with 1B and 3B models."
-msgstr ""
+msgstr "Meta-ren Llama 3.2 txikira doa 1B eta 3B ereduekin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -304,16 +304,20 @@ msgid ""
 "Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B and "
 "405B parameter sizes."
 msgstr ""
+"Llama 3.1 Meta-ren azken belaunaldiko eredu berri bat da, 3B, 70B eta 405B "
+"parametroko neurritan erabilgarri."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:21
 #, kde-format
 msgid "Meta Llama 3: The most capable openly available LLM to date"
 msgstr ""
+"Meta Llama 3: Orain arte irekian eskuragarri dagoen gaitasun handiena duen "
+"LLM"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:22
 #, kde-format
 msgid "The 7B model released by Mistral AI, updated to version 0.3."
-msgstr ""
+msgstr "Mistral AIk argitaratutako 7Bko eredua, 0.3 bertsiora eguneratua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:23
 #, kde-format
