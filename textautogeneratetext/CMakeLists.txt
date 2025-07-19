@@ -275,6 +275,7 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
     add_subdirectory(widgets/menu/autotests)
+    add_subdirectory(widgets/autotests)
 endif()
 
 add_subdirectory(plugins)
