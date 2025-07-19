@@ -73,6 +73,8 @@ public:
 
     [[nodiscard]] QString title(const QByteArray &chatId) const;
 
+    [[nodiscard]] bool isEmpty() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;

@@ -28,13 +28,16 @@ Q_SIGNALS:
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotClicked(const QModelIndex &idx);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotShowArchived();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void generalPaletteChanged();
     TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
     TextAutoGenerateHistoryListHeadingsProxyModel *const mHistoryListHeadingsProxyModel;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    QColor mTextColor;
 };
 }

@@ -300,6 +300,11 @@ QString TextAutoGenerateChatsModel::title(const QByteArray &chatId) const
     return {};
 }
 
+bool TextAutoGenerateChatsModel::isEmpty() const
+{
+    return false;
+}
+
 bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {

@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratehistorylistview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratehistorylistheadingsproxymodel.h"
@@ -16,7 +15,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
+#include <qpainter.h>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QTreeView(parent)
@@ -174,4 +175,34 @@ void TextAutoGenerateHistoryListView::slotSearchTextChanged(const QString &str)
 {
     mHistoryProxyModel->setFilterFixedString(str);
 }
+
+void TextAutoGenerateHistoryListView::paintEvent(QPaintEvent *event)
+{
+    if (mHistoryProxyModel->rowCount() == 0 && mHistoryProxyModel->showArchived()) {
+        const QString label = i18n("No Archive Found.");
+
+        QPainter p(viewport());
+
+        QFont font = p.font();
+        font.setItalic(true);
+        p.setFont(font);
+
+        if (!mTextColor.isValid()) {
+            generalPaletteChanged();
+        }
+        p.setPen(mTextColor);
+        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, label);
+    } else {
+        QTreeView::paintEvent(event);
+    }
+}
+
+void TextAutoGenerateHistoryListView::generalPaletteChanged()
+{
+    const QPalette palette = viewport()->palette();
+    QColor color = palette.text().color();
+    color.setAlpha(128);
+    mTextColor = color;
+}
+
 #include "moc_textautogeneratehistorylistview.cpp"
