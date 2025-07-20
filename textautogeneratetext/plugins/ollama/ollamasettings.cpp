@@ -15,10 +15,10 @@ OllamaSettings::OllamaSettings()
 {
     KUser user;
     mSystemPrompt = i18n(
-                        "You are an AI assistant. You are speaking to a person named %1. "
-                        "Be helpful, professional, and courteous. Do not give inaccurate "
-                        "information.")
-                        .arg(user.property(KUser::UserProperty::FullName).toString());
+        "You are an AI assistant. You are speaking to a person named %1. "
+        "Be helpful, professional, and courteous. Do not give inaccurate "
+        "information.",
+        user.property(KUser::UserProperty::FullName).toString());
 }
 
 OllamaSettings::~OllamaSettings() = default;
