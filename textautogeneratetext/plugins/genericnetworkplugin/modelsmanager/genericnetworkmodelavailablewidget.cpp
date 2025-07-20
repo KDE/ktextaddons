@@ -46,6 +46,7 @@ GenericNetworkModelAvailableWidget::GenericNetworkModelAvailableWidget(GenericNe
 
     mProxyModel->setSourceModel(mAvailableInfosModel);
     mAvailableListView->setModel(mProxyModel);
+    mProxyModel->sort(0);
     if (mManager) {
         connect(mManager, &GenericNetworkManager::modelsLoadDone, this, [this]() {
             mAvailableInfosModel->setModelInfos(mManager->infos());
