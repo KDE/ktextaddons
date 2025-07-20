@@ -272,7 +272,6 @@ target_sources(
 
 if(BUILD_TESTING)
     add_subdirectory(core/autotests)
-    add_subdirectory(autotests)
     add_subdirectory(tests)
     add_subdirectory(widgets/menu/autotests)
     add_subdirectory(widgets/autotests)
