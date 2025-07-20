@@ -17,7 +17,7 @@ TextAutoGenerateNotWorkingMessageWidget::TextAutoGenerateNotWorkingMessageWidget
     setPosition(KMessageWidget::Header);
 
     auto startOllamaAction = new QAction(i18nc("@action", "Start Ollama"), this);
-    startOllamaAction->setObjectName(u"decodeEncryptionKeyAction"_s);
+    startOllamaAction->setObjectName(u"startOllamaAction"_s);
     connect(startOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::startOllama);
     addAction(startOllamaAction);
 }
