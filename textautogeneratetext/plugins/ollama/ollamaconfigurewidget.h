@@ -13,6 +13,10 @@ class KMessageWidget;
 class OllamaManager;
 class QDoubleSpinBox;
 class QSpinBox;
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateNotWorkingMessageWidget;
+}
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -25,11 +29,12 @@ public:
 
 private:
     void fillModels();
+    void slotStartOllama();
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
     QPlainTextEdit *const mPrompt;
     OllamaComboBoxWidget *const mModelComboBoxWidget;
-    KMessageWidget *const mMessageWidget;
+    TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     QDoubleSpinBox *const mTemperature;
     QSpinBox *const mSeed;
     OllamaManager *const mManager;

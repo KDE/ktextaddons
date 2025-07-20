@@ -5,7 +5,9 @@
 */
 
 #include "ollamaconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
+#include "autogeneratetext_ollama_debug.h"
+#include "core/textautogeneratetextutils.h"
+#include "widgets/common/textautogeneratenotworkingmessagewidget.h"
 
 #include "ollamacomboboxwidget.h"
 #include "ollamamanager.h"
@@ -13,19 +15,20 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <KMessageWidget>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <QProcess>
 #include <QSpinBox>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
     , mServerUrl(new QLineEdit(this))
     , mPrompt(new QPlainTextEdit(this))
     , mModelComboBoxWidget(new OllamaComboBoxWidget(this))
-    , mMessageWidget(new KMessageWidget(this))
+    , mMessageWidget(new TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget(this))
     , mTemperature(new QDoubleSpinBox(this))
     , mSeed(new QSpinBox(this))
     , mManager(manager)
@@ -83,9 +86,23 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     loadSettings();
     connect(mManager, &OllamaManager::refreshInstalledModels, this, &OllamaConfigureWidget::fillModels);
     fillModels();
+    connect(mMessageWidget, &TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget::startOllama, this, &OllamaConfigureWidget::slotStartOllama);
 }
 
 OllamaConfigureWidget::~OllamaConfigureWidget() = default;
+
+void OllamaConfigureWidget::slotStartOllama()
+{
+    const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
+    if (ollamaPath.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama doesn't exist";
+        return;
+    }
+    const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
+    if (!status) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to start ollama";
+    }
+}
 
 void OllamaConfigureWidget::loadSettings()
 {
