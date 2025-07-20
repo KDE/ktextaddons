@@ -101,6 +101,9 @@ void OllamaConfigureWidget::slotStartOllama()
     const bool status = QProcess::startDetached(ollamaPath, {u"start"_s});
     if (!status) {
         qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to start ollama";
+    } else {
+        mMessageWidget->animatedHide();
+        // TODO activate it but we need to know that server is up. fillModels();
     }
 }
 
