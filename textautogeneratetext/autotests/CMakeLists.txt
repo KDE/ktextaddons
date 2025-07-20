@@ -5,7 +5,7 @@ macro(add_textautogenerate_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-"
-        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText KF6::TextWidgets KF6::WidgetsAddons Qt::Sql KF6::ConfigCore
+        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText KF6::TextWidgets KF6::WidgetsAddons KF6::ConfigCore
     )
 endmacro()
 add_textautogenerate_unittest(textautogeneratetextlineeditwidgettest.cpp)
@@ -19,10 +19,6 @@ add_textautogenerate_unittest(textautogeneratenotworkingwidgettest.cpp)
 add_textautogenerate_unittest(textautogenerateheaderwidgettest.cpp)
 add_textautogenerate_unittest(textautogenerateselectedmessagebackgroundanimationtest.cpp)
 add_textautogenerate_unittest(textautogeneratehistorylistviewtest.cpp)
-add_textautogenerate_unittest(textautogeneratelocaldatabaseutilstest.cpp)
-add_textautogenerate_unittest(textautogeneratelocaldatabaseabstracttest.cpp)
-add_textautogenerate_unittest(textautogeneratelocalchatsdatabasetest.cpp)
-add_textautogenerate_unittest(textautogeneratelocalmessagesdatabasetest.cpp)
 add_textautogenerate_unittest(textautogeneratesearchwidgettest.cpp)
 add_textautogenerate_unittest(textautogeneratesearchdialogtest.cpp)
 add_textautogenerate_unittest(textautogeneratesearchlistviewtest.cpp)
