@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:41+0000\n"
+"POT-Creation-Date: 2025-07-20 00:41+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1737,14 +1737,14 @@ msgid "Ask to AI"
 msgstr "向 AI 詢問"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "變更…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -1861,46 +1861,52 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "全部選取"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:104
+#: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "新聊天"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "從收藏中移除"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "設為收藏"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "回復"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "封存"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "您確定要移除這個討論嗎？"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除討論"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:182
+#, fuzzy, kde-format
+#| msgid "No Messages Found."
+msgid "No Archive Found."
+msgstr "找不到訊息"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:41+0000\n"
+"POT-Creation-Date: 2025-07-20 00:41+0000\n"
 "PO-Revision-Date: 2025-07-04 16:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2059,14 +2059,14 @@ msgid "Ask to AI"
 msgstr "Yapay Zekâya Sor"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Değişiklik Yap…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2181,46 +2181,52 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:104
+#: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Yeni Sohbet"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Sık Kullanılanlardan Kaldır"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Sık Kullanılan Yap"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Arşivle"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Bu tartışmayı kaldırmak istiyor musunuz?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Tartışmayı Kaldır"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:182
+#, fuzzy, kde-format
+#| msgid "No Messages Found."
+msgid "No Archive Found."
+msgstr "Bulunan ileti yok."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format

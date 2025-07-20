@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:41+0000\n"
+"POT-Creation-Date: 2025-07-20 00:41+0000\n"
 "PO-Revision-Date: 2025-06-29 20:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2053,14 +2053,14 @@ msgid "Ask to AI"
 msgstr "Запитване на изкуствения интелект"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:115
+#: widgets/view/textautogeneratehistorylistview.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Промяна…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:152
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2177,46 +2177,52 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "Избиране на всичко"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:104
+#: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Нов чат"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Премахване от любими"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:128
+#: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Задаване като любим"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:141
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Архив"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Искате ли да премахнете тази дискусия?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Премахване на дискусията"
+
+#: widgets/view/textautogeneratehistorylistview.cpp:182
+#, fuzzy, kde-format
+#| msgid "No Messages Found."
+msgid "No Archive Found."
+msgstr "Няма намерени съобщения."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format
