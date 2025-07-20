@@ -66,7 +66,10 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
         });
     }
     auto proxyModel = new QSortFilterProxyModel(this);
+    proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    proxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
     proxyModel->setSourceModel(model);
+    proxyModel->sort(0);
     connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [proxyModel](const QString &str) {
         proxyModel->setFilterFixedString(str);
     });

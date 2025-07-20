@@ -11,6 +11,7 @@ OllamaModelAvailableInfosSortProxyModel::OllamaModelAvailableInfosSortProxyModel
     : QSortFilterProxyModel{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
+    setSortCaseSensitivity(Qt::CaseInsensitive);
 }
 
 OllamaModelAvailableInfosSortProxyModel::~OllamaModelAvailableInfosSortProxyModel() = default;
