@@ -181,6 +181,7 @@ void OllamaManager::loadModels()
             info.models.push_back(std::move(i));
             mInstalledInfos.append(std::move(installed));
         }
+        // TODO sort list of models
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
         Q_EMIT modelsLoadDone(std::move(info));
