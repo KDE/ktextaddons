@@ -12,6 +12,7 @@ GenericNetworkModelAvailableInfosSortProxyModel::GenericNetworkModelAvailableInf
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterRole(GenericNetworkAvailableInfosModel::Identifier);
+    setSortRole(GenericNetworkAvailableInfosModel::Identifier);
 }
 
 GenericNetworkModelAvailableInfosSortProxyModel::~GenericNetworkModelAvailableInfosSortProxyModel() = default;
