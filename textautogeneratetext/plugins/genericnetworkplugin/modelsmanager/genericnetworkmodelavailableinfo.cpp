@@ -18,7 +18,6 @@ void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
     mModelSize = obj["model_size"_L1].toString();
     mIdentifier = obj["id"_L1].toString();
     mOwnedBy = obj["owned_by"_L1].toString();
-    // TODO
 }
 
 QString GenericNetworkModelAvailableInfo::description() const
