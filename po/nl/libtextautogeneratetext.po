@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 00:41+0000\n"
-"PO-Revision-Date: 2025-07-04 11:03+0200\n"
+"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"PO-Revision-Date: 2025-07-20 14:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:76
 #, kde-format
@@ -243,7 +243,7 @@ msgid "Base:"
 msgstr "Basis:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -255,7 +255,7 @@ msgid "Tag:"
 msgstr "Tag:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt:"
@@ -332,12 +332,12 @@ msgstr "Oudermodel:"
 msgid "Features Supported"
 msgstr "Ondersteunde mogelijkheden"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Wilt u dit model (%1) verwijderen?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:106
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1886,23 +1886,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Modellen aanmaken"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:49
+#: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
 msgid "Server Url:"
 msgstr "URL van server:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:53
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:59
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatuur:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1912,13 +1912,13 @@ msgstr ""
 "De temperatuur van het model. De temperatuur verhogen maakt dat het model "
 "creatiever zal antwoorden."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Startgetal:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1930,10 +1930,17 @@ msgstr ""
 "instellen op een specifiek getal zal het model dezelfde tekst laten "
 "genereren voor dezelfde prompt. (Standaard: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
 msgid "No system prompt"
 msgstr "Geen systeem-prompt"
+
+#: plugins/ollama/ollamasettings.cpp:18
+#, kde-format
+msgid ""
+"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
+"professional, and courteous. Do not give inaccurate information."
+msgstr ""
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2224,10 +2231,9 @@ msgid "Remove Discussion"
 msgstr "Discussie verwijderen"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
-#, fuzzy, kde-format
-#| msgid "No Messages Found."
+#, kde-format
 msgid "No Archive Found."
-msgstr "Geen berichten gevonden."
+msgstr "Geen archief gevonden."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-20 00:41+0000\n"
-"PO-Revision-Date: 2025-07-04 06:15+0200\n"
+"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"PO-Revision-Date: 2025-07-20 08:53+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -244,7 +244,7 @@ msgid "Base:"
 msgstr "Osnova:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:45
+#: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -256,7 +256,7 @@ msgid "Tag:"
 msgstr "Značka:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:70
+#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "Poziv:"
@@ -333,12 +333,12 @@ msgstr "Nadrejeni model:"
 msgid "Features Supported"
 msgstr "Podprte zmožnosti"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:105
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Ali želite odstraniti ta model (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:106
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1884,23 +1884,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Ustvari modele"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:49
+#: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
 msgid "Server Url:"
 msgstr "Url strežnika:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:53
+#: plugins/ollama/ollamaconfigurewidget.cpp:56
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:59
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1910,13 +1910,13 @@ msgstr ""
 "Temperatura modela. Pri zvišanju temperature bo model odgovarjal bolj "
 "ustvarjalno."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Brst:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:64
+#: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1928,10 +1928,17 @@ msgstr ""
 "nastavite na določeno število, bo model ustvaril isto besedilo za isti "
 "poziv. (Privzeto: 0)"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:71
+#: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
 msgid "No system prompt"
 msgstr "Ni sistemskega poziva"
+
+#: plugins/ollama/ollamasettings.cpp:18
+#, kde-format
+msgid ""
+"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
+"professional, and courteous. Do not give inaccurate information."
+msgstr ""
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2222,10 +2229,9 @@ msgid "Remove Discussion"
 msgstr "Odstrani razpravo"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
-#, fuzzy, kde-format
-#| msgid "No Messages Found."
+#, kde-format
 msgid "No Archive Found."
-msgstr "Ni najdenih sporočil."
+msgstr "Ni najdenega arhiva."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format
