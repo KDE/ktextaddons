@@ -41,7 +41,7 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     auto mWebSite = w.findChild<QLabel *>(u"mWebSite"_s);
     QVERIFY(mWebSite->openExternalLinks());
     QCOMPARE(mWebSite->textFormat(), Qt::RichText);
-    QCOMPARE(mWebSite->textInteractionFlags(), Qt::TextSelectableByMouse);
+    QCOMPARE(mWebSite->textInteractionFlags(), Qt::TextBrowserInteraction);
     QVERIFY(mWebSite);
     auto mDescription = w.findChild<QLabel *>(u"mDescription"_s);
     QVERIFY(mDescription);

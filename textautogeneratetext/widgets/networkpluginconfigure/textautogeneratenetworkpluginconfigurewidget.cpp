@@ -53,7 +53,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     KLineEditEventHandler::catchReturnKey(mInstanceName);
     mWebSite->setObjectName(u"mWebSite"_s);
-    mWebSite->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    mWebSite->setTextInteractionFlags(Qt::TextBrowserInteraction);
     mWebSite->setTextFormat(Qt::RichText);
     mWebSite->setOpenExternalLinks(true);
     mainLayout->addWidget(mWebSite);
