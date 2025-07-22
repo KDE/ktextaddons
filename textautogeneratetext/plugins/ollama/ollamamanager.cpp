@@ -181,7 +181,19 @@ void OllamaManager::loadModels()
             info.models.push_back(std::move(i));
             mInstalledInfos.append(std::move(installed));
         }
-        // TODO sort list of models
+
+        // sort list of models
+        std::sort(mInstalledInfos.begin(), mInstalledInfos.end(), [](const OllamaModelInstalledInfo &left, const OllamaModelInstalledInfo &right) {
+            return left.generateModelName() < right.generateModelName();
+        });
+
+        std::sort(info.models.begin(),
+                  info.models.end(),
+                  [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
+                     const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
+                      return left.modelName < right.modelName;
+                  });
+
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
         Q_EMIT modelsLoadDone(std::move(info));
