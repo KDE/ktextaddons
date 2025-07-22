@@ -45,5 +45,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotUpdateView();
     TEXTAUTOGENERATETEXT_NO_EXPORT void goToMessageId(const QByteArray &uuid);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveRequested(const QModelIndex &index);
 };
 }

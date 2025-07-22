@@ -41,6 +41,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(delegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
     connect(delegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
+    connect(delegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveRequested);
 }
 
 TextAutoGenerateListView::~TextAutoGenerateListView() = default;
@@ -64,6 +65,15 @@ void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
         if (mManager->cancelRequest(mManager->currentChatId(), index)) {
             Q_EMIT cancelRequested(uuid);
         }
+    }
+}
+
+void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
+{
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    if (!uuid.isEmpty()) {
+        // TODO
+        qWarning() << "TextAutoGenerateListView::slotRemoveRequested ";
     }
 }
 

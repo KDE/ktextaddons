@@ -42,6 +42,7 @@ Q_SIGNALS:
     void copyMessage(const QModelIndex &index);
     void cancelRequested(const QModelIndex &index);
     void refreshRequested(const QModelIndex &index);
+    void removeMessage(const QModelIndex &index);
     void updateView();
 
 private:
@@ -59,7 +60,7 @@ private:
         // Edited icon
         QRect editedIconRect;
 
-        // Favorite icon
+        // Copy icon
         QRect copyIconRect;
 
         // Cancel icon
@@ -76,6 +77,9 @@ private:
 
         // In progress Area
         QRect inProgressRect;
+
+        // Remove icon
+        QRect removeIconRect;
     };
 
     [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
@@ -92,6 +96,7 @@ private:
     const QIcon mCancelIcon;
     const QIcon mRefreshIcon;
     const QIcon mInformationIcon;
+    const QIcon mRemoveIcon;
 
     QColor mEditingColorMode;
 
