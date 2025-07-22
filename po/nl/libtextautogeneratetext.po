@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-21 00:41+0000\n"
-"PO-Revision-Date: 2025-07-20 14:36+0200\n"
+"PO-Revision-Date: 2025-07-21 09:29+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1941,6 +1941,8 @@ msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
+"U bent een AI-assistent. U spreekt tot een persoon genaamd %1. Wees "
+"behulpzaam, professioneel en beleefd. Geef geen onjuiste informatie."
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format

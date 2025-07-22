@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-21 00:41+0000\n"
-"PO-Revision-Date: 2025-07-20 16:12+0300\n"
+"PO-Revision-Date: 2025-07-21 08:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1947,6 +1947,9 @@ msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
+"Ви є штучним інтелектом — помічником. Ви спілкуєтеся з особою з іменем %1. "
+"Будьте корисним, професійним і люб'язним. Не надавайте неперевірених "
+"відомостей."
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format

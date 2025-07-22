@@ -1887,10 +1887,9 @@ msgid "Remove Discussion"
 msgstr "移除讨论"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No Archive Found."
-msgstr "没有找到插件。"
+msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:371
 #, kde-format
