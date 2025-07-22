@@ -127,6 +127,7 @@ void TextAutoGenerateWidget::keyPressedInLineEdit(QKeyEvent *ev)
         if (const QByteArray uuid = mTextAutoGenerateTextLineEditWidget->uuid(); !uuid.isEmpty()) {
             Q_EMIT stopEditingMode(uuid);
             mTextAutoGenerateTextLineEditWidget->setUuid({});
+            mTextAutoGenerateTextLineEditWidget->setText({});
         }
     } else {
         mTextAutoGenerateResultWidget->handleKeyPressEvent(ev);
