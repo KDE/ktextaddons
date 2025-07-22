@@ -4,10 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocaldatabaseabstracttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/localdatabase/textautogeneratelocaldatabaseabstract.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalDatabaseAbstractTest)
 
 class TestLocalDatabaseBase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract

@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocalchatsdatabasetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/localdatabase/textautogeneratelocalchatsdatabase.h"
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalChatsDatabaseTest)
 TextAutoGenerateLocalChatsDatabaseTest::TextAutoGenerateLocalChatsDatabaseTest(QObject *parent)
     : QObject{parent}

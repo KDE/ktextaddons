@@ -5,10 +5,10 @@
 */
 
 #include "textautogeneratelocaldatabaseutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/localdatabase/textautogeneratelocaldatabaseutils.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalDatabaseUtilsTest)
 
 TextAutoGenerateLocalDatabaseUtilsTest::TextAutoGenerateLocalDatabaseUtilsTest(QObject *parent)

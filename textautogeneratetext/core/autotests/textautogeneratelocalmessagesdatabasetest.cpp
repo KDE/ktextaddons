@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocalmessagesdatabasetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/localdatabase/textautogeneratelocalmessagesdatabase.h"
 #include "core/textautogeneratemessage.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalMessagesDatabaseTest)
 
+using namespace Qt::Literals::StringLiterals;
 static QByteArray chatId()
 {
     return QByteArrayLiteral("myChatId");
