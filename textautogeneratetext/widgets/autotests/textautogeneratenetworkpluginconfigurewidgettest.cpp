@@ -39,6 +39,9 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     auto mSeed = w.findChild<QSpinBox *>(u"mSeed"_s);
     QVERIFY(mSeed);
     auto mWebSite = w.findChild<QLabel *>(u"mWebSite"_s);
+    QVERIFY(mWebSite->openExternalLinks());
+    QCOMPARE(mWebSite->textFormat(), Qt::RichText);
+    QCOMPARE(mWebSite->textInteractionFlags(), Qt::TextSelectableByMouse);
     QVERIFY(mWebSite);
     auto mDescription = w.findChild<QLabel *>(u"mDescription"_s);
     QVERIFY(mDescription);
