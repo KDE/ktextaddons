@@ -72,8 +72,8 @@ void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
-        // TODO
-        qWarning() << "TextAutoGenerateListView::slotRemoveRequested ";
+        const QByteArray chatId = mManager->currentChatId();
+        mManager->removeMessage(chatId, uuid);
     }
 }
 

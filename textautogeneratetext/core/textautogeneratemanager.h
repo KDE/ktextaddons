@@ -74,6 +74,7 @@ public:
 
     [[nodiscard]] TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
 
+    void removeMessage(const QByteArray &chatId, const QByteArray &uuid);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

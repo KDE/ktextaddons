@@ -181,6 +181,19 @@ TextAutoGenerateTextPlugin *TextAutoGenerateManager::textAutoGeneratePlugin() co
     return mTextAutoGenerateTextInstancesManager->textAutoGeneratePlugin();
 }
 
+void TextAutoGenerateManager::removeMessage(const QByteArray &chatId, const QByteArray &uuid)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (messagesModel) {
+        const QList<QByteArray> lst = messagesModel->removeDiscussion(uuid);
+        if (mSaveInDatabase) {
+            for (const auto &b : lst) {
+                mDatabaseManager->deleteMessage(chatId, QString::fromLatin1(b));
+            }
+        }
+    }
+}
+
 bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QModelIndex &index)
 {
     auto messagesModel = messagesModelFromChatId(chatId);

@@ -238,33 +238,26 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid, const
     }
 }
 
-void TextAutoGenerateMessagesModel::removeDiscussion(const QByteArray &uuid)
+QList<QByteArray> TextAutoGenerateMessagesModel::removeDiscussion(const QByteArray &uuid)
 {
     if (uuid.isEmpty()) {
-        return;
+        return {};
     }
     auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
         return msg.uuid() == uuid;
     };
     const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    QList<QByteArray> lst;
     if (it != mMessages.end()) {
-        const int i = std::distance(mMessages.begin(), it);
-        const QByteArray answerUuid = it->answerUuid();
-        beginRemoveRows(QModelIndex(), i, i);
-        mMessages.removeAt(i);
-        endRemoveRows();
-
-        auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
-            return msg.uuid() == answerUuid;
-        };
-        const auto answerIt = std::find_if(mMessages.begin(), mMessages.end(), matchesAnswerUuid);
-        if (answerIt != mMessages.end()) {
-            const int idx = std::distance(mMessages.begin(), answerIt);
-            beginRemoveRows(QModelIndex(), idx, idx);
-            mMessages.removeAt(idx);
-            endRemoveRows();
+        int i = std::distance(mMessages.begin(), it);
+        beginRemoveRows(QModelIndex(), i, mMessages.count() - 1);
+        for (int j = mMessages.count() - 1; j >= i; --j) {
+            auto m = mMessages.takeAt(j);
+            lst.append(m.uuid());
         }
+        endRemoveRows();
     }
+    return lst;
 }
 
 bool TextAutoGenerateMessagesModel::cancelRequest(const QModelIndex &index)
