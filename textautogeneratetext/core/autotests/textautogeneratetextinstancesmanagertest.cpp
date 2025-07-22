@@ -6,7 +6,7 @@
 #include "textautogeneratetextinstancesmanagertest.h"
 #include "core/textautogeneratetextinstancesmanager.h"
 #include <QTest>
-QTEST_MAIN(TextAutoGenerateTextInstancesManagerTest)
+QTEST_GUILESS_MAIN(TextAutoGenerateTextInstancesManagerTest)
 
 TextAutoGenerateTextInstancesManagerTest::TextAutoGenerateTextInstancesManagerTest(QObject *parent)
     : QObject{parent}
