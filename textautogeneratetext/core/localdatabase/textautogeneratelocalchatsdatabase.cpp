@@ -137,7 +137,7 @@ void TextAutoGenerateLocalChatsDatabase::deleteChat(const QByteArray &chatId)
         return;
     }
     QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteChat(), db);
-    query.addBindValue(chatId);
+    query.addBindValue(QString::fromLatin1(chatId));
     if (!query.exec()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in CHATS table" << db.databaseName() << query.lastError();
     }

@@ -84,6 +84,6 @@ void TextAutoGenerateLocalChatsDatabaseTest::shouldDeleteChats() // this test de
     // THEN
     auto tableModel = logger.createChatsModel();
     QVERIFY(tableModel);
-    // FIXME QCOMPARE(tableModel->rowCount(), 1);
+    QCOMPARE(tableModel->rowCount(), 1);
 }
 #include "moc_textautogeneratelocalchatsdatabasetest.cpp"
