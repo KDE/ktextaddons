@@ -31,6 +31,34 @@ TextAutoGenerateLocalChatsDatabase::TextAutoGenerateLocalChatsDatabase()
 
 TextAutoGenerateLocalChatsDatabase::~TextAutoGenerateLocalChatsDatabase() = default;
 
+std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatsDatabase::createMessageModel() const
+{
+    const QString dbName = generateDbName({});
+    QSqlDatabase db = QSqlDatabase::database(dbName);
+    if (!db.isValid()) {
+        // Open the DB if it exists (don't create a new one)
+        const QString fileName = dbFileName({});
+        // qDebug() << " fileName " << fileName;
+        if (!QFileInfo::exists(fileName)) {
+            return {};
+        }
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
+        db.setDatabaseName(fileName);
+        if (!db.open()) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't open" << fileName;
+            return {};
+        }
+    }
+
+    Q_ASSERT(db.isValid());
+    Q_ASSERT(db.isOpen());
+    auto model = std::make_unique<QSqlTableModel>(nullptr, db);
+    model->setTable(u"CHATS"_s);
+    // model->setSort(int(MessagesFields::TimeStamp), Qt::AscendingOrder);
+    model->select();
+    return model;
+}
+
 QString TextAutoGenerateLocalChatsDatabase::schemaDataBase() const
 {
     return QString::fromLatin1(s_schemaChatsDataBase);

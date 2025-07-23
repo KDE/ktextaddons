@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratelocaldatabaseabstract.h"
 #include "textautogeneratetext_private_export.h"
+#include <QSqlTableModel>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 
 namespace TextAutoGenerateText
@@ -20,6 +21,7 @@ public:
     void insertOrUpdateChat(const TextAutoGenerateChat &chat);
 
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;
+    [[nodiscard]] std::unique_ptr<QSqlTableModel> createMessageModel() const;
 
 protected:
     [[nodiscard]] QString schemaDataBase() const override;
