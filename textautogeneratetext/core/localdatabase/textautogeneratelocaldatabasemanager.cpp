@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelocaldatabasemanager.h"
+#include "textautogeneratetextcore_database_debug.h"
 
 #include "textautogeneratelocalchatsdatabase.h"
 #include "textautogeneratelocalmessagesdatabase.h"
@@ -48,6 +49,7 @@ void TextAutoGenerateLocalDatabaseManager::insertOrReplaceMessage(const QByteArr
 
 void TextAutoGenerateLocalDatabaseManager::deleteChat(const QByteArray &chatId)
 {
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Delete Chat" << chatId;
     mChatsDatabase->deleteChat(chatId);
     mMessagesDatabase->deleteDatabase(chatId);
 }

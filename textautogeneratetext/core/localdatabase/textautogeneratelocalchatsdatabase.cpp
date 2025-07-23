@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratelocalchatsdatabase.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSqlError>
 #include <QSqlQuery>
 
+using namespace Qt::Literals::StringLiterals;
 static const char s_schemaChatsDataBase[] = "CREATE TABLE CHATS (chatId TEXT PRIMARY KEY NOT NULL, json TEXT)";
 enum class ChatsFields {
     ChatId,
@@ -102,8 +102,10 @@ QString TextAutoGenerateLocalChatsDatabase::generateQueryStr()
 
 void TextAutoGenerateLocalChatsDatabase::deleteChat(const QByteArray &chatId)
 {
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "deleteChat" << chatId;
     QSqlDatabase db;
     if (!checkDataBase(QString(), db)) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Problem when check checkDataBase" << chatId;
         return;
     }
     QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteChat(), db);

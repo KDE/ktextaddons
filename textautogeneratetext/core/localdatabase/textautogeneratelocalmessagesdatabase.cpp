@@ -34,6 +34,8 @@ TextAutoGenerateLocalMessagesDatabase::~TextAutoGenerateLocalMessagesDatabase() 
 
 void TextAutoGenerateLocalMessagesDatabase::deleteDatabase(const QByteArray &chatIdentifier)
 {
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "deleteDatabase" << chatIdentifier;
+
     const QString chatId = QString::fromLatin1(chatIdentifier);
     QSqlDatabase db;
     if (!checkDataBase(chatId, db)) {
