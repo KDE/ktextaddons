@@ -27,6 +27,9 @@ public:
     void loadSettings();
     void saveSettings();
 
+Q_SIGNALS:
+    void ollamaProcessOk(bool status);
+
 private:
     void fillModels();
     void slotStartOllama();

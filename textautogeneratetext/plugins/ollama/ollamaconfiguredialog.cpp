@@ -34,6 +34,12 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     setWindowTitle(i18nc("@title:window", "Configure Ollama"));
     setFaceType(KPageDialog::List);
 
+    connect(mOllamaConfigureWidget, &OllamaConfigureWidget::ollamaProcessOk, this, [this](bool status) {
+        mOllamaModelCreateWidget->setEnabled(status);
+        mOllamaModelWidget->setEnabled(status);
+        mOllamaModelInstalledWidget->setEnabled(status);
+    });
+
     OllamaModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {
         mOllamaModelWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
