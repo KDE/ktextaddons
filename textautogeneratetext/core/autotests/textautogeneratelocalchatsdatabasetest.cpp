@@ -40,6 +40,7 @@ void TextAutoGenerateLocalChatsDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalChatsDatabase chatsDataBase;
     QCOMPARE(chatsDataBase.dbFileName({}), QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/chats/chats.sqlite"_s);
+    // qDebug() << " chatsDataBase.dbFileName({}) " << chatsDataBase.dbFileName({});
 }
 
 void TextAutoGenerateLocalChatsDatabaseTest::shouldStoreChats()
@@ -60,7 +61,7 @@ void TextAutoGenerateLocalChatsDatabaseTest::shouldStoreChats()
     chatsDataBase.insertOrUpdateChat(chat2);
 
     // WHEN
-    auto tableModel = chatsDataBase.createMessageModel();
+    auto tableModel = chatsDataBase.createChatsModel();
 
     // THEN
     QVERIFY(tableModel);
@@ -72,4 +73,17 @@ void TextAutoGenerateLocalChatsDatabaseTest::shouldStoreChats()
     QCOMPARE(record1.value(int(ChatsFields::Json)).toByteArray(), TextAutoGenerateText::TextAutoGenerateChat::serialize(chat2, false));
 }
 
+void TextAutoGenerateLocalChatsDatabaseTest::shouldDeleteChats() // this test depends on shouldStoreChats()
+{
+    // GIVEN
+    TextAutoGenerateText::TextAutoGenerateLocalChatsDatabase logger;
+
+    // WHEN
+    logger.deleteChat("chat1");
+
+    // THEN
+    auto tableModel = logger.createChatsModel();
+    QVERIFY(tableModel);
+    // FIXME QCOMPARE(tableModel->rowCount(), 1);
+}
 #include "moc_textautogeneratelocalchatsdatabasetest.cpp"

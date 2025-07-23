@@ -31,7 +31,7 @@ TextAutoGenerateLocalChatsDatabase::TextAutoGenerateLocalChatsDatabase()
 
 TextAutoGenerateLocalChatsDatabase::~TextAutoGenerateLocalChatsDatabase() = default;
 
-std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatsDatabase::createMessageModel() const
+std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalChatsDatabase::createChatsModel() const
 {
     const QString dbName = generateDbName({});
     QSqlDatabase db = QSqlDatabase::database(dbName);
@@ -138,6 +138,7 @@ void TextAutoGenerateLocalChatsDatabase::deleteChat(const QByteArray &chatId)
     }
     QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteChat(), db);
     query.addBindValue(chatId);
+    qDebug() << " query " << query.boundValues();
     if (!query.exec()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in ROOMS table" << db.databaseName() << query.lastError();
     }

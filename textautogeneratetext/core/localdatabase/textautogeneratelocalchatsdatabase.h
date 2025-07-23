@@ -21,7 +21,7 @@ public:
     void insertOrUpdateChat(const TextAutoGenerateChat &chat);
 
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;
-    [[nodiscard]] std::unique_ptr<QSqlTableModel> createMessageModel() const;
+    [[nodiscard]] std::unique_ptr<QSqlTableModel> createChatsModel() const;
 
 protected:
     [[nodiscard]] QString schemaDataBase() const override;

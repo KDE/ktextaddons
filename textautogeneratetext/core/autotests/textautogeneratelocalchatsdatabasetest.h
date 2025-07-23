@@ -19,4 +19,5 @@ private Q_SLOTS:
     void shouldDefaultValues();
     void shouldVerifyDbFileName();
     void shouldStoreChats();
+    void shouldDeleteChats();
 };
