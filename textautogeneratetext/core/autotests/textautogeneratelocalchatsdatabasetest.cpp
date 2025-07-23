@@ -53,14 +53,23 @@ void TextAutoGenerateLocalChatsDatabaseTest::shouldStoreChats()
     chat1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(23, 30, 50)).toMSecsSinceEpoch());
     chatsDataBase.insertOrUpdateChat(chat1);
 
+    TextAutoGenerateText::TextAutoGenerateChat chat2;
+    chat2.setIdentifier("chat2");
+    chat2.setTitle(u"title-chat2"_s);
+    chat2.setDateTime(QDateTime(QDate(2023, 6, 7), QTime(23, 30, 50)).toMSecsSinceEpoch());
+    chatsDataBase.insertOrUpdateChat(chat2);
+
     // WHEN
     auto tableModel = chatsDataBase.createMessageModel();
 
     // THEN
     QVERIFY(tableModel);
-    QCOMPARE(tableModel->rowCount(), 1);
+    QCOMPARE(tableModel->rowCount(), 2);
     const QSqlRecord record0 = tableModel->record(0);
     QCOMPARE(record0.value(int(ChatsFields::Json)).toByteArray(), TextAutoGenerateText::TextAutoGenerateChat::serialize(chat1, false));
+
+    const QSqlRecord record1 = tableModel->record(1);
+    QCOMPARE(record1.value(int(ChatsFields::Json)).toByteArray(), TextAutoGenerateText::TextAutoGenerateChat::serialize(chat2, false));
 }
 
 #include "moc_textautogeneratelocalchatsdatabasetest.cpp"
