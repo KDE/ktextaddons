@@ -138,8 +138,7 @@ void TextAutoGenerateLocalChatsDatabase::deleteChat(const QByteArray &chatId)
     }
     QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteChat(), db);
     query.addBindValue(chatId);
-    qDebug() << " query " << query.boundValues();
     if (!query.exec()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in ROOMS table" << db.databaseName() << query.lastError();
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Couldn't insert-or-replace in CHATS table" << db.databaseName() << query.lastError();
     }
 }
