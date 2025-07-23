@@ -109,6 +109,11 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
 void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str)
 {
     if (ready()) {
+        auto messageModel = d->manager->messagesModelFromChatId(chatId);
+        if (!messageModel) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Model Message not found" << chatId;
+            return;
+        }
         // User Message
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
@@ -135,7 +140,6 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
-        auto messageModel = d->manager->messagesModelFromChatId(chatId);
         info.messagesArray = messageModel->convertToOllamaChat();
 
         d->manager->addMessage(chatId, std::move(msgLlm));
