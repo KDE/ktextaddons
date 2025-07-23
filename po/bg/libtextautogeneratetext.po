@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"POT-Creation-Date: 2025-07-23 00:41+0000\n"
 "PO-Revision-Date: 2025-06-29 20:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -299,7 +299,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Моля, въведете името на модела като \"име:етикет\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:390
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2231,19 +2231,29 @@ msgstr "Премахване на дискусията"
 msgid "No Archive Found."
 msgstr "Няма намерени съобщения."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:371
-#, kde-format
+#: widgets/view/textautogeneratelistviewdelegate.cpp:378
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit…"
 msgctxt "@info:tooltip"
-msgid "Edit..."
-msgstr "Редактиране..."
+msgid "Edit…"
+msgstr "Редактиране…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Премахване"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:386
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копиране"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:394
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
@@ -2253,3 +2263,7 @@ msgstr "Обновяване"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Редактиране..."

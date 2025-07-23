@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"POT-Creation-Date: 2025-07-23 00:41+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -308,7 +308,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:390
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1922,13 +1922,21 @@ msgstr ""
 msgid "No Archive Found."
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:371
+#: widgets/view/textautogeneratelistviewdelegate.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Edit..."
+msgid "Edit…"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove…"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "삭제…"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:386
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -1936,7 +1944,7 @@ msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:394
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

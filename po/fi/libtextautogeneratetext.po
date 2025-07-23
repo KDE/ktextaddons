@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"POT-Creation-Date: 2025-07-23 00:41+0000\n"
 "PO-Revision-Date: 2025-07-10 22:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -298,7 +298,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Anna mallin nimi muodossa ”nimi:luokitus”"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:390
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1948,19 +1948,29 @@ msgstr "Poista keskustelu"
 msgid "No Archive Found."
 msgstr "Viestejä ei löytynyt."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:371
-#, kde-format
+#: widgets/view/textautogeneratelistviewdelegate.cpp:378
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit…"
 msgctxt "@info:tooltip"
-msgid "Edit..."
+msgid "Edit…"
 msgstr "Muokkaa…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Poista"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:386
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopioi"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:394
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
@@ -1970,6 +1980,10 @@ msgstr "Virkistä"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Viestejä ei löytynyt."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Muokkaa…"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama-ilmentymän verkko-osoite"

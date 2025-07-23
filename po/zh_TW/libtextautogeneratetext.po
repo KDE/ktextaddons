@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"POT-Creation-Date: 2025-07-23 00:41+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -302,7 +302,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "請以 \"名稱:標籤\" 方式輸入模型名稱"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:390
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1915,19 +1915,27 @@ msgstr "移除討論"
 msgid "No Archive Found."
 msgstr "找不到訊息"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:371
+#: widgets/view/textautogeneratelistviewdelegate.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Edit..."
-msgstr "編輯..."
+msgid "Edit…"
+msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "移除"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:386
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:394
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
@@ -1937,6 +1945,10 @@ msgstr "重新整理"
 #, kde-format
 msgid "No Messages Found."
 msgstr "找不到訊息"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "編輯..."
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama 實體的網址"

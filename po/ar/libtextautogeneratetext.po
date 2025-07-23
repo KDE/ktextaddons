@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:41+0000\n"
+"POT-Creation-Date: 2025-07-23 00:41+0000\n"
 "PO-Revision-Date: 2025-06-28 17:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -309,7 +309,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "الرجاء إدخال اسم النموذج كـ \"name:tag\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:390
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1970,19 +1970,27 @@ msgstr "أزل المناقة"
 msgid "No Archive Found."
 msgstr "لم يعثر على ملحق."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:371
+#: widgets/view/textautogeneratelistviewdelegate.cpp:378
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Edit..."
-msgstr "حرّر..."
+msgid "Edit…"
+msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "أزل"
+
+#: widgets/view/textautogeneratelistviewdelegate.cpp:386
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:394
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
@@ -1992,6 +2000,10 @@ msgstr "حدّث"
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "حرّر..."
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "عنوان نسخة أولاما"
