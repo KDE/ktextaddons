@@ -201,6 +201,8 @@ QString TextAutoGenerateMessage::senderToString() const
         return u"llm"_s;
     case Sender::System:
         return u"system"_s;
+    case Sender::Tool:
+        return u"tool"_s;
     }
     Q_UNREACHABLE();
 }
@@ -280,6 +282,9 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
         break;
     case Sender::System:
         role = u"system"_s;
+        break;
+    case Sender::Tool:
+        role = u"tool"_s;
         break;
     }
     if (role.isEmpty()) {

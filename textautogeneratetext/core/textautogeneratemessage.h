@@ -26,7 +26,7 @@ public:
         User,
         Assistant,
         System,
-        // TODO Tool,
+        Tool,
     };
     Q_ENUM(Sender)
 
