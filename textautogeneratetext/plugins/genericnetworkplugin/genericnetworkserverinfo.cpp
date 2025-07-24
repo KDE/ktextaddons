@@ -32,6 +32,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Cerebras AI");
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
         return i18n("Venice");
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+        return i18n("Venice");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -49,6 +51,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::GroqAI:
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return u"chat/completions"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
@@ -75,6 +78,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.cerebras.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
         return u"https://www.venice.ai/"_s;
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+        return u"https://www.llama.com/products/llama-api/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -99,6 +104,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.cerebras.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
         return u"https://api.venice.ai/api/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+        return u"https://api.llama.com/compat/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -121,6 +128,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Kluster AI cloud inference API");
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
         return i18n("Cerebras AI cloud inference API");
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+        return i18n("Meta AI Llama API");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -145,6 +154,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"cerebrasai"_s;
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
         return u"veniceai"_s;
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+        return u"llamaapi"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -165,6 +176,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::CerebrasAI;
     } else if (str == QLatin1StringView("veniceai")) {
         return GenericNetworkManager::PluginNetworkType::VeniceAI;
+    } else if (str == QLatin1StringView("llamaapi")) {
+        return GenericNetworkManager::PluginNetworkType::LlamaApi;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -199,6 +212,7 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
         return limits;
     case GenericNetworkManager::PluginNetworkType::MistralAI:
         return limits;
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
         return limits;
     case GenericNetworkManager::PluginNetworkType::GroqAI:

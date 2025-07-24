@@ -23,6 +23,7 @@ public:
         GroqAI,
         CerebrasAI,
         VeniceAI,
+        LlamaApi,
         LastElement,
     };
 
