@@ -86,7 +86,7 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextContext context() const;
     void setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext);
 
-    static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
+    [[nodiscard]] static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateMessage deserialize(const QJsonObject &o);
 
     [[nodiscard]] QString senderToString() const;
