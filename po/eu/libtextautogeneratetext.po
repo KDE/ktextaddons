@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:41+0000\n"
-"PO-Revision-Date: 2025-07-17 15:33+0200\n"
+"POT-Creation-Date: 2025-07-24 02:39+0000\n"
+"PO-Revision-Date: 2025-07-17 15:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -56,51 +56,57 @@ msgid "Unknown"
 msgstr "Ezezaguna"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2"
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "Motorra: %1\n"
-"Eredua: %2\n"
-"Instantziaren izena: %3"
+"Eredua: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
 msgstr "Joan mezura"
 
-#: core/textautogeneratetextplugin.cpp:202
+#: core/textautogeneratetextplugin.cpp:206
 #, kde-format
 msgid "Local"
 msgstr "Lokala"
 
-#: core/textautogeneratetextplugin.cpp:204
+#: core/textautogeneratetextplugin.cpp:208
 #, kde-format
 msgid "Network"
 msgstr "Sarea"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
 msgid "Generic"
-msgstr "Generikoa"
+msgstr "Orokorra"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Konfiguratu %1"
+msgstr "Konfiguratu AA"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:43
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Orokorra"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -125,37 +131,37 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
-msgstr "Kluster AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Groq Cloud"
-msgstr "Groq Cloud"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
 msgid "Cerebras AI"
-msgstr "Cerebras AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr "Venice"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr "Mistral AI lengoaia eredu handiak"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr "Kluster AI hodei inferentzia API"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
 #, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "Cerebras AI hodei inferentzia API"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -243,19 +249,19 @@ msgstr "Kategoriak"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
-msgstr "Oinarria:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr "Izena:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr "Etiketa:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
@@ -267,25 +273,29 @@ msgstr "Gonbita:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "Sortu"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr "Zamatu GGUF fitxategia…"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Hautatu GGUF fitxategia"
+msgstr "Hautatu dena"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Sortu eredua"
+msgstr "Kendu eredua"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
@@ -326,9 +336,10 @@ msgid "Modified At:"
 msgstr "v"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Model:"
 msgid "Parent Model:"
-msgstr "Guraso-eredua:"
+msgstr "Eredua:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
@@ -1530,7 +1541,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr "Devstral: kodea sortzeko agenteetarako sorburu irekiko eredu onena."
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -1549,17 +1560,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Konfiguratu Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Instalatutako ereduak"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
-#, kde-format
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Ereduak sortzea"
+msgstr "Kendu eredua"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
@@ -1575,7 +1588,7 @@ msgstr "Eredua:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr "Tenperatura:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
@@ -1584,14 +1597,12 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
-"Ereduaren tenperatura. Tenperaturak gora egiten badu, ereduaren erantzunak "
-"modu sortzaileagoan erantzungo du."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr "Hazia:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
@@ -1601,9 +1612,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-"Sorkuntzarako erabili beharreko hausazko zenbakien hazia ezartzen du. Hau "
-"zenbaki zehatz batean ezarriz gero, galdera berdinerako ereduak erantzun "
-"bera sortzea eragingo du. (Lehenetsia: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
@@ -1626,22 +1634,24 @@ msgstr "Bilatu eredua..."
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr "Ez da instantziarik aurkitu. Mesedez, bat gehitu."
+msgstr ""
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr "Gehitu instantzia…"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Abiarazi Ollama"
+msgstr "Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Konfiguratu..."
@@ -1661,54 +1671,61 @@ msgstr "Bidali"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
-msgstr "Gehitu instantzia"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Izena:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr "Hautatu instantzia mota bat:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Konfiguratu instantziak"
+msgstr "Konfiguratu AA"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr "Markatu lehenetsi gisa"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Editatu…"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove as Favorite"
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Kendu instantzia"
+msgstr "Kendu gogokoetatik"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Instantzia hau kendu nahi duzu (%1)?"
+msgstr "Eredu hau kendu nahi duzu (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove as Favorite"
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Kendu instantzia"
+msgstr "Kendu gogokoetatik"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:28
@@ -1722,7 +1739,7 @@ msgstr "Bilatu..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Gehitu instantzia..."
+msgstr ""
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -1785,13 +1802,13 @@ msgstr "APIaren gakoa:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "Token gehienez:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr "Galdera azkarra"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
 #, kde-format
@@ -1803,7 +1820,7 @@ msgstr "Konfiguratu..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
-msgstr "Garbitu"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:37
 #, kde-format
@@ -1853,10 +1870,12 @@ msgid "Copy"
 msgstr "Kopiatu"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Kopiatu URL"
+msgstr "Kopiatu"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
@@ -1907,17 +1926,15 @@ msgstr "Kendu elkarrizketa"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
 #, fuzzy, kde-format
-#| msgid "No Messages Found."
+#| msgid "No plugin found."
 msgid "No Archive Found."
-msgstr "Ez da mezurik aurkitu."
+msgstr "Ez da pluginik aurkitu."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr "Editatu…"
+msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
 #, fuzzy, kde-format
@@ -1942,11 +1959,11 @@ msgstr "Berritu"
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "Ez da mezurik aurkitu."
+msgstr ""
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Editatu..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Konfiguratu Mistral AA"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama instantziarako URLa"
@@ -1957,24 +1974,16 @@ msgstr "Ez da mezurik aurkitu."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Erantzunak sortzeko eredua"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "Ereduaren tenperatura. Tenperaturak gora egiten badu, ereduaren "
-#~ "erantzunak modu sortzaileagoan erantzungo du."
-
-#~ msgid "Engine:"
-#~ msgstr "Motorra:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Konfiguratu Mistral AA"
+#~ msgid "Cancel"
+#~ msgstr "Utzi"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Konfiguratu Openai AA"
 
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Utzi"
+#~ msgid "Engine:"
+#~ msgstr "Motorra:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Editatu..."

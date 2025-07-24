@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:41+0000\n"
-"PO-Revision-Date: 2025-06-10 12:34+0900\n"
+"POT-Creation-Date: 2025-07-24 02:39+0000\n"
+"PO-Revision-Date: 2025-06-10 12:33+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -70,12 +70,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "跳到訊息"
 
-#: core/textautogeneratetextplugin.cpp:202
+#: core/textautogeneratetextplugin.cpp:206
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: core/textautogeneratetextplugin.cpp:204
+#: core/textautogeneratetextplugin.cpp:208
 #, kde-format
 msgid "Network"
 msgstr "網路"
@@ -96,14 +96,14 @@ msgid "Configure %1"
 msgstr "設定 IA"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:43
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "一般"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -246,19 +246,19 @@ msgstr "分類"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
-msgstr "基礎："
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr "名稱："
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr "標籤："
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
@@ -270,25 +270,29 @@ msgstr "Prompt："
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "建立"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr "載入 GGUF 檔案…"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "選取 GGUF 檔案"
+msgstr "全部選取"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "建立模型"
+msgstr "移除模型"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
@@ -329,9 +333,10 @@ msgid "Modified At:"
 msgstr "修改時間："
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Model:"
 msgid "Parent Model:"
-msgstr "上層模型："
+msgstr "模型："
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
@@ -1544,17 +1549,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "設定 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "已安裝的模型"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
-#, kde-format
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "建立模型"
+msgstr "移除模型"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
@@ -1570,7 +1577,7 @@ msgstr "模型："
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr "溫度："
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
@@ -1578,13 +1585,13 @@ msgctxt "@info:tooltip"
 msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
-msgstr "模型的「溫度」。提高溫度會讓模型回答更有創意。"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr "種子："
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
@@ -1594,8 +1601,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-"設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固定"
-"的文字。（預設：0）"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
@@ -1658,11 +1663,10 @@ msgid "Add Instance"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "名稱："
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
@@ -1700,9 +1704,9 @@ msgstr "從收藏中移除"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
 #, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this instance (%1)?"
-msgstr "您確定要移除這個討論嗎？"
+msgstr "您確定要移除這個模型（%1）嗎？"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
 #, fuzzy, kde-format
@@ -1793,7 +1797,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr "快速詢問"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
 #, kde-format
@@ -1911,9 +1915,9 @@ msgstr "移除討論"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
 #, fuzzy, kde-format
-#| msgid "No Messages Found."
+#| msgid "No plugin found."
 msgid "No Archive Found."
-msgstr "找不到訊息"
+msgstr "找不到外掛程式。"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
 #, kde-format
@@ -1944,11 +1948,11 @@ msgstr "重新整理"
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "找不到訊息"
+msgstr ""
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "編輯..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "設定 Mistral IA"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama 實體的網址"
@@ -1959,33 +1963,19 @@ msgstr "找不到訊息"
 #~ msgid "The model used to generate responses"
 #~ msgstr "用來生成回應的模型"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr "模型的「溫度」。提高溫度會讓模型回答更有創意。"
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固"
-#~ "定的文字。（預設：0）"
-
-#~ msgid "Engine:"
-#~ msgstr "引擎："
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "設定 Mistral IA"
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Cancel"
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "設定 OpenAI IA"
 
-#, fuzzy
-#~| msgctxt "@info:tooltip"
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "取消"
+#~ msgid "Engine:"
+#~ msgstr "引擎："
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "編輯..."

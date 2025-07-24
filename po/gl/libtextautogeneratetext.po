@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:41+0000\n"
+"POT-Creation-Date: 2025-07-24 02:39+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -65,12 +65,12 @@ msgstr ""
 msgid "Go to message"
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:202
+#: core/textautogeneratetextplugin.cpp:206
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:204
+#: core/textautogeneratetextplugin.cpp:208
 #, kde-format
 msgid "Network"
 msgstr "Rede"
@@ -89,14 +89,14 @@ msgid "Configure %1"
 msgstr "Configurar a IA"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:43
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -1539,13 +1539,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurar a IA"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -1695,12 +1695,10 @@ msgid "Do you want to remove this instance (%1)?"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:28
@@ -1935,9 +1933,6 @@ msgstr ""
 msgid "No Messages Found."
 msgstr ""
 
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
 #~ msgctxt "@title:window"
 #~ msgid "Configure Mistral IA"
 #~ msgstr "Configurar Mistral AI"
@@ -1948,3 +1943,6 @@ msgstr ""
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Configurar a IA"
+
+#~ msgid "Engine:"
+#~ msgstr "Motor:"

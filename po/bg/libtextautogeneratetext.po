@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:41+0000\n"
-"PO-Revision-Date: 2025-06-29 20:38+0200\n"
+"POT-Creation-Date: 2025-07-24 02:39+0000\n"
+"PO-Revision-Date: 2025-06-10 11:39+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:76
 #, kde-format
@@ -53,53 +53,57 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2"
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "Енджин: %1\n"
-"Модел: %2\n"
-"Име на екземпляр: %3"
+"Модел: %2"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
 msgid "Go to message"
 msgstr "Отиване до съобщението"
 
-#: core/textautogeneratetextplugin.cpp:202
+#: core/textautogeneratetextplugin.cpp:206
 #, kde-format
 msgid "Local"
 msgstr "Локално"
 
-#: core/textautogeneratetextplugin.cpp:204
+#: core/textautogeneratetextplugin.cpp:208
 #, kde-format
 msgid "Network"
 msgstr "Мрежа"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
 msgid "Generic"
 msgstr "Общи"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
-#| msgid "Configure"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Настройване"
+msgstr "Конфигуриране на ИА"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:43
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Общи"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -124,7 +128,7 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
-msgstr "Kluster AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
@@ -149,13 +153,12 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr "API клауд интерфейс на Kluster AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "API клауд интерфейс на Kluster AI"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -243,19 +246,19 @@ msgstr "Категории"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
-msgstr "База:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr "Име:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr "Етикет:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
@@ -267,25 +270,29 @@ msgstr "Запитване:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "Създаване"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr "Зареждане на файл GGUF…"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Избиране на файл GGUF"
+msgstr "Избиране на всичко"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Създаване на модел"
+msgstr "Премахване на модел"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
@@ -326,9 +333,10 @@ msgid "Modified At:"
 msgstr "Променено в:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Model:"
 msgid "Parent Model:"
-msgstr "Родителски модел:"
+msgstr "Модел:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
@@ -1867,17 +1875,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Конфигуриране на Олама"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Инсталирани модели"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
-#, kde-format
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Създаване на модели"
+msgstr "Премахване на модел"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
@@ -1893,7 +1903,7 @@ msgstr "Модел:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr "Температура:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
@@ -1902,14 +1912,12 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
-"Температурата на модела. Повишаването на температурата ще направи модела да "
-"реагира по-креативно."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr "Сийд:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
@@ -1919,9 +1927,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-"Задава началната стойност на случайното число, което да се използва за "
-"генериране. Задаването на конкретно число ще накара модела да генерира един "
-"и същ текст за едно и също запитване. (По подразбиране: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
@@ -1944,22 +1949,24 @@ msgstr "Търсене на модел…"
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr "Не е намерен екземпляр. Моля, добавете такъв."
+msgstr ""
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr "Добавяне на екземпляр…"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Стартиране на Ollama"
+msgstr "Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Конфигуриране…"
@@ -1979,54 +1986,61 @@ msgstr "Изпращане"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
-msgstr "Добавяне на екземпляр"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Име:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr "Избиране на вид на екземпляра:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Конфигуриране на екземплярите"
+msgstr "Конфигуриране на ИА"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr "Маркиране като „По подразбиране“"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Редактиране…"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove as Favorite"
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Премахване на екземпляр"
+msgstr "Премахване от любими"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Искате ли да премахнете този екземпляр (%1)?"
+msgstr "Искате ли да премахнете този модел (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove as Favorite"
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Премахване на екземпляр"
+msgstr "Премахване от любими"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:28
@@ -2040,7 +2054,7 @@ msgstr "Търсене…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Добавяне на екземпляр…"
+msgstr ""
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -2103,13 +2117,13 @@ msgstr "Api ключ:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "Макс токени:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr "Бърз въпрос"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
 #, kde-format
@@ -2227,17 +2241,15 @@ msgstr "Премахване на дискусията"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
 #, fuzzy, kde-format
-#| msgid "No Messages Found."
+#| msgid "No plugin found."
 msgid "No Archive Found."
-msgstr "Няма намерени съобщения."
+msgstr "Не е намерен плъгин."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr "Редактиране…"
+msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
 #, fuzzy, kde-format
@@ -2262,7 +2274,30 @@ msgstr "Обновяване"
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "Няма намерени съобщения."
+msgstr ""
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Конфигуриране на Mistral IA"
+
+#~ msgid "The URL to the Ollama instance"
+#~ msgstr "URL адресът към екземпляра на Ollama"
+
+#~ msgid "The system prompt for the LLM"
+#~ msgstr "Системният подканващ бутон за LLM"
+
+#~ msgid "The model used to generate responses"
+#~ msgstr "Моделът, използван за генериране на отговори"
+
+#~ msgid "Cancel"
+#~ msgstr "Отказ"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "Конфигуриране на Openai IA"
+
+#~ msgid "Engine:"
+#~ msgstr "Основна програма:"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."
