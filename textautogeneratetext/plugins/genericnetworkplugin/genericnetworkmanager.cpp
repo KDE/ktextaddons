@@ -68,6 +68,13 @@ void GenericNetworkManager::loadModels()
             }
             info.models.push_back(std::move(i));
         }
+        std::sort(info.models.begin(),
+                  info.models.end(),
+                  [](const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &left,
+                     const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &right) {
+                      return left.modelName.toLower() < right.modelName.toLower();
+                  });
+
         info.isReady = !info.models.isEmpty();
         info.hasError = false;
         Q_EMIT modelsLoadDone(std::move(info));
