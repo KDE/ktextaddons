@@ -22,6 +22,7 @@ public:
     void save();
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddInstance();
     TextAutoGenerateTextInstancesManagerListView *const mInstancesManagerListView;
     QLineEdit *const mSearchLineEdit;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
