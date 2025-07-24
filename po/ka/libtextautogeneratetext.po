@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-23 00:41+0000\n"
-"PO-Revision-Date: 2025-07-21 03:48+0200\n"
+"POT-Creation-Date: 2025-07-24 00:41+0000\n"
+"PO-Revision-Date: 2025-07-23 03:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -69,12 +69,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "შეტყობინებაზე გადასვლა"
 
-#: core/textautogeneratetextplugin.cpp:202
+#: core/textautogeneratetextplugin.cpp:206
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: core/textautogeneratetextplugin.cpp:204
+#: core/textautogeneratetextplugin.cpp:208
 #, kde-format
 msgid "Network"
 msgstr "ქსელური"
@@ -91,14 +91,14 @@ msgid "Configure %1"
 msgstr "%1-ის მორგება"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:43
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "ზოგადი"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -1879,13 +1879,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:61
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "დაყენებული მოდელები"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
+#: plugins/ollama/ollamaconfiguredialog.cpp:67
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -2243,17 +2243,13 @@ msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "წაშლა"
