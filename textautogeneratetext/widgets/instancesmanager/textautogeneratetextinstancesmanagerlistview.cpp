@@ -54,8 +54,13 @@ void TextAutoGenerateTextInstancesManagerListView::slotEditInstance(const QModel
 void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
+    auto addInstanceAction = new QAction(i18nc("@action", "Add instance…"), &menu);
+    menu.addAction(addInstanceAction);
+    connect(addInstanceAction, &QAction::triggered, this, &TextAutoGenerateTextInstancesManagerListView::addInstance);
+
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
+        menu.addSeparator();
         const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
         if (!isDefault) {
             auto markAsDefault = new QAction(i18nc("@action", "Mark As Default"), &menu);
@@ -96,9 +101,7 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
         });
         menu.addAction(removeAction);
     }
-    if (!menu.actions().isEmpty()) {
-        menu.exec(event->globalPos());
-    }
+    menu.exec(event->globalPos());
 }
 
 #include "moc_textautogeneratetextinstancesmanagerlistview.cpp"

@@ -23,6 +23,7 @@ Q_SIGNALS:
     void removeInstance(const QByteArray &uuid);
     void editInstance(const QByteArray &uuid);
     void markAsDefaultChanged(const QByteArray &uuid);
+    void addInstance();
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;

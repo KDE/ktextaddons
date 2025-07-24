@@ -178,7 +178,9 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
          i < static_cast<int>(GenericNetworkManager::PluginNetworkType::LastElement);
          ++i) {
         const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
-            .localizedName = translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
+            .localizedName = QStringLiteral("%1 (%2)").arg(
+                translatedName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
+                TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network)),
             .identifier = pluginName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
             .pluginName = name,
         };

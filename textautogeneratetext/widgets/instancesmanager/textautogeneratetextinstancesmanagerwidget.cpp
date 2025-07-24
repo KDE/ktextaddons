@@ -52,28 +52,12 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     addInstanceButton->setToolTip(i18nc("@info:tooltip", "Add Instance…"));
     addInstanceButton->setAutoRaise(true);
     hboxLayout->addWidget(addInstanceButton);
-    connect(addInstanceButton, &QToolButton::clicked, this, [this, manager]() {
-        TextAutoGenerateAddInstanceDialog d(manager, this);
-        if (d.exec()) {
-            const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
-            // qDebug() << " selectedInstanceType:" << server;
-            auto instance = new TextAutoGenerateTextInstance;
-            instance->setPluginName(server.pluginName);
-            instance->setPluginIdentifier(server.identifier);
-            instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
-            instance->setEnabled(true);
-            auto client = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(server.pluginName);
-            if (!client) {
-                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
-            } else {
-                auto plugin = client->createTextAutoGeneratePlugin(mManager, instance);
-                plugin->setDisplayName(d.instanceName());
-                instance->setPlugin(plugin);
-                mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
-            }
-        }
-    });
+    connect(addInstanceButton, &QToolButton::clicked, this, &TextAutoGenerateTextInstancesManagerWidget::slotAddInstance);
 
+    connect(mInstancesManagerListView,
+            &TextAutoGenerateTextInstancesManagerListView::addInstance,
+            this,
+            &TextAutoGenerateTextInstancesManagerWidget::slotAddInstance);
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QByteArray &uuid) {
         mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->removeInstance(uuid);
     });
@@ -96,4 +80,26 @@ void TextAutoGenerateTextInstancesManagerWidget::save()
     mManager->textAutoGenerateTextInstancesManager()->saveInstances();
 }
 
+void TextAutoGenerateTextInstancesManagerWidget::slotAddInstance()
+{
+    TextAutoGenerateAddInstanceDialog d(mManager, this);
+    if (d.exec()) {
+        const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
+        // qDebug() << " selectedInstanceType:" << server;
+        auto instance = new TextAutoGenerateTextInstance;
+        instance->setPluginName(server.pluginName);
+        instance->setPluginIdentifier(server.identifier);
+        instance->setInstanceUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+        instance->setEnabled(true);
+        auto client = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateEngineLoader()->searchTextAutoGenerateTextClient(server.pluginName);
+        if (!client) {
+            qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to create client " << server.pluginName;
+        } else {
+            auto plugin = client->createTextAutoGeneratePlugin(mManager, instance);
+            plugin->setDisplayName(d.instanceName());
+            instance->setPlugin(plugin);
+            mManager->textAutoGenerateTextInstancesManager()->addInstance(instance);
+        }
+    }
+}
 #include "moc_textautogeneratetextinstancesmanagerwidget.cpp"
