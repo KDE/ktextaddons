@@ -129,8 +129,13 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() c
         return nullptr;
     }
     if (mCurrentinstance.isEmpty()) {
-        // Fall back to first instance
-        return mTextInstances.constFirst()->plugin();
+        // Fall back to first enable instance
+        for (const auto &inst : mTextInstances) {
+            if (inst->enabled()) {
+                return inst->plugin();
+            }
+        }
+        return nullptr;
     }
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == mCurrentinstance;
