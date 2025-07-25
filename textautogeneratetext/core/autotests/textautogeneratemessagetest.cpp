@@ -7,6 +7,7 @@
 #include "textautogeneratemessagetest.h"
 #include "core/textautogeneratemessage.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateMessageTest)
 TextAutoGenerateMessageTest::TextAutoGenerateMessageTest(QObject *parent)
     : QObject{parent}
@@ -31,6 +32,14 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
 
     // 10/05/2025 => size 224
     QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 184);
+}
+
+void TextAutoGenerateMessageTest::shouldCheckFromString()
+{
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"user"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"llm"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"system"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::System);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"tool"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::Tool);
 }
 
 #include "moc_textautogeneratemessagetest.cpp"
