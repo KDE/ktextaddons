@@ -184,8 +184,9 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(cons
 
 Qt::ItemFlags TextAutoGenerateTextInstanceModel::flags(const QModelIndex &index) const
 {
-    if (!index.isValid())
+    if (!index.isValid()) {
         return Qt::NoItemFlags;
+    }
 
     return Qt::ItemIsUserCheckable | QAbstractListModel::flags(index);
 }
