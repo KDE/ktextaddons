@@ -215,6 +215,8 @@ TextAutoGenerateMessage::Sender TextAutoGenerateMessage::senderFromString(const 
         return TextAutoGenerateMessage::Sender::Assistant;
     } else if (str == "system"_L1) {
         return TextAutoGenerateMessage::Sender::System;
+    } else if (str == "tool"_L1) {
+        return TextAutoGenerateMessage::Sender::Tool;
     } else {
         return TextAutoGenerateMessage::Sender::Unknown;
     }
