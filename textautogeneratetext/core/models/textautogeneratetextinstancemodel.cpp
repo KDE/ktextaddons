@@ -108,6 +108,15 @@ QByteArray TextAutoGenerateTextInstanceModel::currentInstance() const
 void TextAutoGenerateTextInstanceModel::setCurrentInstance(const QByteArray &newCurrentinstance)
 {
     if (mCurrentinstance != newCurrentinstance) {
+        auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
+            return instance->instanceUuid() == newCurrentinstance;
+        };
+        const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
+        if (answerIt == mTextInstances.constEnd()) {
+            // If we don't find it. => clear it.
+            mCurrentinstance.clear();
+            return;
+        }
         beginResetModel();
         mCurrentinstance = newCurrentinstance;
         endResetModel();
@@ -120,8 +129,13 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() c
         return nullptr;
     }
     if (mCurrentinstance.isEmpty()) {
-        // Fall back to first instance
-        return mTextInstances.constFirst()->plugin();
+        // Fall back to first enable instance
+        for (const auto &inst : mTextInstances) {
+            if (inst->enabled()) {
+                return inst->plugin();
+            }
+        }
+        return nullptr;
     }
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
         return instance->instanceUuid() == mCurrentinstance;
@@ -170,8 +184,9 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::editInstance(cons
 
 Qt::ItemFlags TextAutoGenerateTextInstanceModel::flags(const QModelIndex &index) const
 {
-    if (!index.isValid())
+    if (!index.isValid()) {
         return Qt::NoItemFlags;
+    }
 
     return Qt::ItemIsUserCheckable | QAbstractListModel::flags(index);
 }
