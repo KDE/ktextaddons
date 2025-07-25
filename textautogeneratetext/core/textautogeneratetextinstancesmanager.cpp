@@ -53,7 +53,6 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
     }
 
     KConfigGroup configGeneralGroup(config, u"General"_s);
-    setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 
     QList<TextAutoGenerateTextInstance *> lstInstances;
     const auto instanceList = groupList(config);
@@ -76,6 +75,8 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
     }
     // qDebug() << " lstInstances " << lstInstances;
     setInstances(lstInstances);
+    // Set current Instance after loading all instances. Otherwise we can'"t have default instance
+    setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 }
 
 QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) const
