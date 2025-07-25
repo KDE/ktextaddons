@@ -33,7 +33,7 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
         return i18n("Venice");
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
-        return i18n("Venice");
+        return i18n("Llama Api");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
