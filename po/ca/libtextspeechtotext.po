@@ -168,7 +168,3 @@ msgstr "Entrada:"
 #, kde-format
 msgid "Default"
 msgstr "Predeterminat"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Translator"
-#~ msgstr "Configuració del traductor"

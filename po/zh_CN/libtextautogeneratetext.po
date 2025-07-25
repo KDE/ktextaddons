@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 02:39+0000\n"
+"POT-Creation-Date: 2025-07-25 02:38+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -54,17 +54,12 @@ msgid "Unknown"
 msgstr "未知"
 
 #: core/models/textautogeneratemessagesmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2"
+#, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
-"引擎：%1\n"
-"模型：%2"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -87,12 +82,10 @@ msgid "Generic"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "配置 IA"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
@@ -278,20 +271,16 @@ msgid "Load GGUF File…"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "全部选中"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "重新加载模型"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
@@ -332,10 +321,9 @@ msgid "Modified At:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Parent Model:"
-msgstr "模型："
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
@@ -1555,12 +1543,10 @@ msgid "Installed Models"
 msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "重新加载模型"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
@@ -1631,18 +1617,16 @@ msgid "Add instance…"
 msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "配置…"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -1674,46 +1658,45 @@ msgid "Select a Type of Instance:"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "配置 IA"
+msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#, kde-format
+msgctxt "@action"
+msgid "Add instance…"
+msgstr ""
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove as Favorite"
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
+#, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "取消设为常用"
+msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this discussion?"
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "您想要移除此讨论吗？"
+msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove as Favorite"
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "取消设为常用"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:28
@@ -1858,12 +1841,10 @@ msgid "Copy"
 msgstr "复制"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "复制"
+msgstr ""
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
@@ -1913,10 +1894,9 @@ msgid "Remove Discussion"
 msgstr "移除讨论"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No Archive Found."
-msgstr "没有找到插件。"
+msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
 #, kde-format
@@ -1925,12 +1905,10 @@ msgid "Edit…"
 msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
-msgstr "移除"
+msgstr ""
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:386
 #, kde-format
@@ -1948,30 +1926,3 @@ msgstr "刷新"
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "配置 Mistral IA"
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "Ollama 实例的 URL"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "该大语言模型的系统提示词"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "用于生成回复的模型"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "配置 OpenAI IA"
-
-#~ msgid "Engine:"
-#~ msgstr "引擎："
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "编辑..."
