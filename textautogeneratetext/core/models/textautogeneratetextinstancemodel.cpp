@@ -108,6 +108,15 @@ QByteArray TextAutoGenerateTextInstanceModel::currentInstance() const
 void TextAutoGenerateTextInstanceModel::setCurrentInstance(const QByteArray &newCurrentinstance)
 {
     if (mCurrentinstance != newCurrentinstance) {
+        auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
+            return instance->instanceUuid() == newCurrentinstance;
+        };
+        const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
+        if (answerIt == mTextInstances.constEnd()) {
+            // If we don't find it. => clear it.
+            mCurrentinstance.clear();
+            return;
+        }
         beginResetModel();
         mCurrentinstance = newCurrentinstance;
         endResetModel();
