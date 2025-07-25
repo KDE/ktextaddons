@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 00:41+0000\n"
-"PO-Revision-Date: 2025-07-22 21:29+0300\n"
+"POT-Creation-Date: 2025-07-25 00:41+0000\n"
+"PO-Revision-Date: 2025-07-24 20:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -135,24 +135,30 @@ msgid "Cerebras AI"
 msgstr "Cerebras AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Venice"
 msgstr "Venice"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:130
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras yapay zekâ bulut öngörü API’si"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
+#, kde-format
+msgid "Meta AI Llama API"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -2007,30 +2013,38 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Örnekleri Yapılandır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add instance…"
+msgctxt "@action"
+msgid "Add instance…"
+msgstr "Örnek Ekle…"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Öntanımlı Olarak İmle"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Örneği Kaldır"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Bu örneği kaldırmak istiyor musunuz (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2237,17 +2251,13 @@ msgid "No Archive Found."
 msgstr "Bulunan arşiv yok."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Düzenle…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Kaldır"

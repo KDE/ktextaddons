@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 00:41+0000\n"
-"PO-Revision-Date: 2025-07-08 11:40+0300\n"
+"POT-Creation-Date: 2025-07-25 00:41+0000\n"
+"PO-Revision-Date: 2025-07-24 09:51+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:76
 #, kde-format
@@ -136,24 +136,30 @@ msgid "Cerebras AI"
 msgstr "Cerebras AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Venice"
 msgstr "Venice"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "מודלי שפה גדולים מבית Mistral AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API להסקת מסקנות בענן Kluster AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:130
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "‏Cerebras AI ‏- API להסקת מסקנות בענן"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
+#, kde-format
+msgid "Meta AI Llama API"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -1847,6 +1853,8 @@ msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
+"אתה מסייע בינה מלאכותית. אתה מדבר עם בן או בת אדם בשם %1. נא להיות מועיל, "
+"מקצועי ואדיב. לא לספק מידע לא מדויק."
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1912,30 +1920,38 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "הגדרת מופעים"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add instance…"
+msgctxt "@action"
+msgid "Add instance…"
+msgstr "הוספת מופע…"
+
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "סימון כברירת מחדל"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:74
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "עריכה…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "הסרת מופע"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:88
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "להסיר את המופע הזה (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:89
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2137,23 +2153,18 @@ msgid "Remove Discussion"
 msgstr "הסרת שיחה"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
-#, fuzzy, kde-format
-#| msgid "No Messages Found."
+#, kde-format
 msgid "No Archive Found."
-msgstr "לא נמצאו הודעות."
+msgstr "לא נמצא ארכיון."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "עריכה…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "הסרה"
