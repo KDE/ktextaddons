@@ -62,7 +62,8 @@ void TextAutoGenerateTextInstancesManagerListView::contextMenuEvent(QContextMenu
     if (index.isValid()) {
         menu.addSeparator();
         const bool isDefault = index.data(TextAutoGenerateTextInstanceModel::IsDefault).toBool();
-        if (!isDefault) {
+        const bool isEnabled = index.data(TextAutoGenerateTextInstanceModel::Enabled).toBool();
+        if (!isDefault && isEnabled) {
             auto markAsDefault = new QAction(i18nc("@action", "Mark As Default"), &menu);
             menu.addAction(markAsDefault);
             menu.addSeparator();
