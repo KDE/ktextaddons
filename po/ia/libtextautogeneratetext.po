@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 02:38+0000\n"
+"POT-Creation-Date: 2025-07-26 02:35+0000\n"
 "PO-Revision-Date: 2025-05-28 18:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1689,19 +1689,19 @@ msgctxt "@action"
 msgid "Add instance…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove as Favorite"
@@ -1709,13 +1709,13 @@ msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Remove como favorito"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, fuzzy, kde-format
 #| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Tu vole remover iste modello (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove as Favorite"

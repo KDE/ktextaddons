@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 02:38+0000\n"
+"POT-Creation-Date: 2025-07-26 02:35+0000\n"
 "PO-Revision-Date: 2025-07-24 18:14+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2018,30 +2018,30 @@ msgctxt "@action"
 msgid "Add instance…"
 msgstr "Lägg till instans…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Markera som förval"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Redigera…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Ta bort instans"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Vill du ta bort instansen (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
