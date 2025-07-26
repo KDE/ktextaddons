@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 00:41+0000\n"
-"PO-Revision-Date: 2025-07-23 12:26+0200\n"
+"POT-Creation-Date: 2025-07-26 00:41+0000\n"
+"PO-Revision-Date: 2025-07-25 11:09+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -135,10 +135,14 @@ msgid "Cerebras AI"
 msgstr "Cerebras AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Venice"
 msgstr "Venetië"
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
+#, kde-format
+msgid "Llama Api"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
 #, kde-format
@@ -158,7 +162,7 @@ msgstr "Cerebras-AI-cloud inference API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
 #, kde-format
 msgid "Meta AI Llama API"
-msgstr ""
+msgstr "API van Meta-AI-Llama"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -2015,37 +2019,35 @@ msgid "Configure Instances"
 msgstr "Exemplaren configureren"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Exemplaar toevoegen…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Als standaard markeren"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Bewerken…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Exemplaar verwijderen"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Wilt u dit exemplaar (%1) verwijderen?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"

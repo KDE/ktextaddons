@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-25 00:41+0000\n"
+"POT-Creation-Date: 2025-07-26 00:41+0000\n"
 "PO-Revision-Date: 2025-07-10 22:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -137,9 +137,13 @@ msgid "Cerebras AI"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Venice"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
+#, kde-format
+msgid "Llama Api"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
@@ -1730,30 +1734,30 @@ msgctxt "@action"
 msgid "Add instance…"
 msgstr "Lisää ilmentymä…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Merkitse oletukseksi"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Muokkaa…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Poista ilmentymä"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Haluatko poistaa tämän ilmentymän (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
