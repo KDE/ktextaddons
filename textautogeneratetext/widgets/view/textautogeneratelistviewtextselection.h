@@ -32,7 +32,6 @@ public:
     void clear();
     void setTextSelectionStart(const QModelIndex &index, int charPos);
     void setTextSelectionEnd(const QModelIndex &index, int charPos);
-    void setAttachmentTextAutoGenerateListViewTextSelectionEnd(const QModelIndex &index, int charPos);
     void selectWordUnderCursor(const QModelIndex &index, int charPos);
     void selectMessage(const QModelIndex &index);
 
