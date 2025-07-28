@@ -39,10 +39,10 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
             TextAutoGenerateText::TextAutoGenerateAskJob *job = new TextAutoGenerateText::TextAutoGenerateAskJob(this);
             job->setText(text);
             job->setManager(manager);
-            connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextDone, this, [this]() {
+            connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextDone, this, []() {
                 qDebug() << " generate text done ::::::::::";
             });
-            connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextInProgress, this, [this, plainTextEdit](const QString &str) {
+            connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextInProgress, this, [plainTextEdit](const QString &str) {
                 plainTextEdit->setPlainText(str);
             });
             job->start();
