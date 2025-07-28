@@ -43,7 +43,7 @@ void OllamaManager::deleteModel(const QString &modelName)
                                      QJsonDocument(data).toJson(QJsonDocument::Compact)),
                                  OllamaReply::RequestTypes::DeleteModel,
                                  this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
+    connect(reply, &OllamaReply::finished, this, [this] {
         // TODO verify it.
         // if (reply->error() == QNetworkReply::NoError) {
         Q_EMIT refreshInstalledModels();
@@ -123,7 +123,7 @@ void OllamaManager::getVersion()
     QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaUtils::versionPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
-    mCheckConnect = connect(rep, &QNetworkReply::finished, this, [this, rep] {
+    mCheckConnect = connect(rep, &QNetworkReply::finished, this, [rep] {
         if (rep->error() != QNetworkReply::NoError) {
             /*
             ModelsInfo info;

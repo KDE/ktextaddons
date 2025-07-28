@@ -52,6 +52,8 @@ QVariant AutoCorrectionLanguageModel::data(const QModelIndex &index, int role) c
         return statusInfo.localeTranslated;
     case Locale:
         return statusInfo.localeCode;
+    default:
+        break;
     }
     return {};
 }

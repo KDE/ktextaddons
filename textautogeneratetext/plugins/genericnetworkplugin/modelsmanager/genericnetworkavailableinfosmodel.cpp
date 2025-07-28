@@ -34,6 +34,8 @@ QVariant GenericNetworkAvailableInfosModel::data(const QModelIndex &index, int r
     case ModelName:
     case Qt::DisplayRole:
         return modelInfo.modelName();
+    default:
+        break;
     }
     return {};
 }

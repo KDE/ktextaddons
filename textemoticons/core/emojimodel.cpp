@@ -49,6 +49,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
             return false;
         case DiversityChildren:
             return unicodeEmoti.diversityChildren();
+        default:
+            break;
         }
     } else {
         const auto &customEmoji = mCustomEmojiList.at(index.row() - mEmoticonList.count());
@@ -100,6 +102,8 @@ QVariant EmojiModel::data(const QModelIndex &index, int role) const
         }
         case DiversityChildren:
             return false;
+        default:
+            break;
         }
     }
     return {};

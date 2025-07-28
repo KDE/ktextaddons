@@ -40,6 +40,8 @@ bool TextAutoGenerateTextInstanceModel::setData(const QModelIndex &idx, const QV
         instance->setEnabled(value.toBool());
         Q_EMIT dataChanged(idx, idx, {InstanceRoles::Enabled});
         return true;
+    default:
+        break;
     }
     return QAbstractListModel::setData(idx, value, role);
 }
@@ -70,6 +72,8 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance);
     case InstanceRoles::TranslatedPluginName:
         return instance->plugin()->translatedPluginName();
+    default:
+        break;
     }
     return {};
 }
