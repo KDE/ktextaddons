@@ -59,7 +59,9 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
             this,
             &TextAutoGenerateTextInstancesManagerWidget::slotAddInstance);
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::removeInstance, this, [this](const QByteArray &uuid) {
-        mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->removeInstance(uuid);
+        if (auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->removeInstance(uuid); plugin) {
+            plugin->remove();
+        }
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid);
