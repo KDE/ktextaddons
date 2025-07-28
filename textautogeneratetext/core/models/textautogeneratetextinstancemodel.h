@@ -39,7 +39,7 @@ public:
     [[nodiscard]] QList<TextAutoGenerateTextInstance *> textInstances() const;
     void setTextInstances(const QList<TextAutoGenerateTextInstance *> &newTextInstances);
 
-    void addTextInstances(TextAutoGenerateTextInstance *instance);
+    void addInstance(TextAutoGenerateTextInstance *instance);
 
     void removeInstance(const QByteArray &uuid);
 

@@ -74,6 +74,7 @@ public:
 
     virtual void load(const KConfigGroup &config);
     virtual void save(KConfigGroup &config);
+    virtual void remove();
 
     [[nodiscard]] virtual QString displayName() const = 0;
     virtual void setDisplayName(const QString &newName) = 0;

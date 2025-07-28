@@ -151,7 +151,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() c
     return mTextInstances.constFirst()->plugin();
 }
 
-void TextAutoGenerateTextInstanceModel::addTextInstances(TextAutoGenerateTextInstance *instance)
+void TextAutoGenerateTextInstanceModel::addInstance(TextAutoGenerateTextInstance *instance)
 {
     beginInsertRows(QModelIndex(), mTextInstances.count(), mTextInstances.count());
     mTextInstances.append(instance);

@@ -37,6 +37,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType engineType() const override;
 
+    void remove() override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;
@@ -46,6 +48,7 @@ Q_SIGNALS:
     void loadApiKeyDone();
 
 private:
+    void removeApiKey();
     void loadApiKey();
     GenericNetworkSettings *const mSettings;
     GenericNetworkManager *const mGenericManager;
