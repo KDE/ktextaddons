@@ -9,7 +9,10 @@
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
-TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance() = default;
+TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
+{
+    delete mPlugin;
+}
 
 QString TextAutoGenerateTextInstance::displayName() const
 {
