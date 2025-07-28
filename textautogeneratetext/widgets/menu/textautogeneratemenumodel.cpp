@@ -36,6 +36,8 @@ QVariant TextAutoGenerateMenuModel::data(const QModelIndex &index, int role) con
     case Qt::CheckStateRole:
     case EnabledRole:
         return textInfo.enabled() ? Qt::Checked : Qt::Unchecked;
+    default:
+        break;
     }
     return {};
 }
@@ -60,6 +62,8 @@ bool TextAutoGenerateMenuModel::setData(const QModelIndex &idx, const QVariant &
         info.setEnabled(value.toBool());
         Q_EMIT dataChanged(idx, idx, {AiTextRoles::EnabledRole});
         return true;
+    default:
+        break;
     }
     return QAbstractListModel::setData(idx, value, role);
 }

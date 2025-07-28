@@ -56,6 +56,8 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
         return waitingAnswer(messageElement);
     case ModelInfoRole:
         return generateModelInfo(messageElement);
+    default:
+        break;
     }
     return {};
 }
@@ -294,6 +296,8 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
     case MessageRoles::ModelInfoRole:
     case MessageRoles::OriginalMessageRole:
         return false;
+    default:
+        break;
     }
     return QAbstractListModel::setData(idx, value, role);
 }

@@ -50,6 +50,8 @@ QVariant TextAutoGenerateSearchMessagesModel::data(const QModelIndex &index, int
         return message.messageId();
     case MessageSearchRoles::DateTime:
         return message.dateTime();
+    default:
+        break;
     }
     return {};
 }

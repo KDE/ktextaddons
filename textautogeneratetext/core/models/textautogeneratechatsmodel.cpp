@@ -66,6 +66,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return QVariant::fromValue(chatElement.section());
     case DateTime:
         return dateTime(chatElement);
+    default:
+        break;
     }
     return {};
 }
@@ -113,6 +115,8 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Identifier:
     case ChatRoles::Section:
     case ChatRoles::DateTime:
+        break;
+    default:
         break;
     }
     return QAbstractListModel::setData(idx, value, role);
