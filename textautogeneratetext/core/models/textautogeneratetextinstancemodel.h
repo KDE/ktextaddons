@@ -41,7 +41,7 @@ public:
 
     void addInstance(TextAutoGenerateTextInstance *instance);
 
-    void removeInstance(const QByteArray &uuid);
+    [[nodiscard]] TextAutoGenerateTextPlugin *removeInstance(const QByteArray &uuid);
 
     [[nodiscard]] TextAutoGenerateTextPlugin *editInstance(const QByteArray &uuid);
 

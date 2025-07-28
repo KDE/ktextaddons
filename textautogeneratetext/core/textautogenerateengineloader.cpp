@@ -91,6 +91,10 @@ QList<TextAutoGenerateTextClient::SupportedServer> TextAutoGenerateEngineLoader:
         i.next();
         lst += i.value()->supportedServers();
     }
+    std::sort(lst.begin(), lst.end(), [](const TextAutoGenerateTextClient::SupportedServer &r, const TextAutoGenerateTextClient::SupportedServer &l) {
+        return r.localizedName < l.localizedName;
+    });
+
     return lst;
 }
 
