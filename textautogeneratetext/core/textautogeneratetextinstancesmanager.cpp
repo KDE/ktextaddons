@@ -132,7 +132,7 @@ void TextAutoGenerateTextInstancesManager::deleteInstance(const QByteArray &uuid
 
 void TextAutoGenerateTextInstancesManager::addInstance(TextAutoGenerateTextInstance *instance)
 {
-    mTextAutoGenerateTextInstanceModel->addTextInstances(instance);
+    mTextAutoGenerateTextInstanceModel->addInstance(instance);
 }
 
 QByteArray TextAutoGenerateTextInstancesManager::currentInstance() const
