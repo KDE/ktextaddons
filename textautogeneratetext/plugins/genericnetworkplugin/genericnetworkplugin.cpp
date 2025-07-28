@@ -52,6 +52,28 @@ GenericNetworkPlugin::~GenericNetworkPlugin()
     delete mSettings;
 }
 
+void GenericNetworkPlugin::remove()
+{
+    removeApiKey();
+}
+
+void GenericNetworkPlugin::removeApiKey()
+{
+    auto deleteJob = new QKeychain::DeletePasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));
+    deleteJob->setKey(QString::fromLatin1(instanceUuid()));
+    connect(deleteJob, &QKeychain::Job::finished, this, [this](QKeychain::Job *baseJob) {
+        auto job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+        Q_ASSERT(job);
+        if (job->error()) {
+            qCWarning(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << "We have an error during deleting password " << job->errorString();
+        } else {
+            mGenericManager->setApiKey(job->textData());
+            Q_EMIT loadApiKeyDone();
+        }
+    });
+    deleteJob->start();
+}
+
 void GenericNetworkPlugin::loadApiKey()
 {
     auto readJob = new QKeychain::ReadPasswordJob(QStringLiteral("GenericPluginAutoGenerateText"));

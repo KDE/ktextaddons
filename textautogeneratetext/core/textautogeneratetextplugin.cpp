@@ -58,6 +58,11 @@ void TextAutoGenerateTextPlugin::save(KConfigGroup &config)
     // reimpl
 }
 
+void TextAutoGenerateTextPlugin::remove()
+{
+    // reimpl
+}
+
 QList<TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> TextAutoGenerateTextPlugin::models() const
 {
     return mModels;
