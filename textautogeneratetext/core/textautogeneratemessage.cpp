@@ -65,7 +65,7 @@ qint64 TextAutoGenerateMessage::dateTime() const
 void TextAutoGenerateMessage::setDateTime(qint64 newDateTime)
 {
     mDateTime = newDateTime;
-    QLocale locale;
+    const QLocale locale;
     mDateTimeStr = locale.toString(QDateTime::fromSecsSinceEpoch(mDateTime));
 }
 
