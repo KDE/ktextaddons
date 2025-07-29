@@ -24,7 +24,7 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
 {
     QJsonObject obj;
     QJsonArray messages;
-    for (const auto &message : mInfo.listMessages) {
+    for (const auto &message : std::as_const(mInfo.listMessages)) {
         const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(message, false);
         const QJsonDocument d = QJsonDocument::fromJson(ba);
         messages.append(d.object());
