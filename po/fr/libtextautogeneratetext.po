@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-29 00:40+0000\n"
 "PO-Revision-Date: 2025-07-14 14:07+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -14,42 +14,42 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.07.80\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:76
+#: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
 msgid "New Chat..."
 msgstr "Nouvelle discussion..."
 
-#: core/models/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Favorite"
 msgstr "Préféré"
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Today"
 msgstr "Aujourd’hui"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "7 days previous"
 msgstr "7 jours précédents"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "30 days previous"
 msgstr "30 jours précédents"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Later"
 msgstr "Plus tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:162
 #, kde-format
 msgid "Unknown"
 msgstr "Inconnu "
 
-#: core/models/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:70
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -65,12 +65,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "Aller au message"
 
-#: core/textautogeneratetextplugin.cpp:206
+#: core/textautogeneratetextplugin.cpp:211
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:208
+#: core/textautogeneratetextplugin.cpp:213
 #, kde-format
 msgid "Network"
 msgstr "Réseau"

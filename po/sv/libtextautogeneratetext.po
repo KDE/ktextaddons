@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:41+0000\n"
-"PO-Revision-Date: 2025-07-03 16:05+0200\n"
+"POT-Creation-Date: 2025-07-29 00:40+0000\n"
+"PO-Revision-Date: 2025-07-28 22:40+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,44 +15,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:76
+#: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
 msgid "New Chat..."
 msgstr "Ny chatt..."
 
-#: core/models/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Favorite"
 msgstr "Favorit"
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Today"
 msgstr "Idag"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "7 days previous"
 msgstr "Föregående 7 dagar"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "30 days previous"
 msgstr "Föregående 30 dagar"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Later"
 msgstr "Senare"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:162
 #, kde-format
 msgid "Unknown"
 msgstr "Okänd"
 
-#: core/models/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:70
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -68,12 +68,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "Gå till meddelande"
 
-#: core/textautogeneratetextplugin.cpp:206
+#: core/textautogeneratetextplugin.cpp:211
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
 
-#: core/textautogeneratetextplugin.cpp:208
+#: core/textautogeneratetextplugin.cpp:213
 #, kde-format
 msgid "Network"
 msgstr "Nätverk"
@@ -137,12 +137,12 @@ msgstr "Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Venice"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Llama Api"
-msgstr ""
+msgstr "Llama programmeringsgränssnitt"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
 #, kde-format
@@ -162,7 +162,7 @@ msgstr "Cerebras AI programmeringsgränssnitt för molninferens"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
 #, kde-format
 msgid "Meta AI Llama API"
-msgstr ""
+msgstr "Meta AI Llama programmeringsgränssnitt"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -1954,6 +1954,8 @@ msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
+"Du är en AI-följeslagare. Du talar med en person vid namn %1. Var hjälpsam, "
+"professionell och artig. Ge inte felaktig information."
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2020,9 +2022,7 @@ msgid "Configure Instances"
 msgstr "Anpassa instanser"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Lägg till instans…"
@@ -2199,12 +2199,10 @@ msgid "Copy"
 msgstr "Kopiera"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Kopiera"
+msgstr "Kopiera webbadress"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
@@ -2254,23 +2252,18 @@ msgid "Remove Discussion"
 msgstr "Ta bort diskussion"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:182
-#, fuzzy, kde-format
-#| msgid "No Messages Found."
+#, kde-format
 msgid "No Archive Found."
-msgstr "Inga meddelanden hittades."
+msgstr "Inget arkiv hittades."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Redigera…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Ta bort"

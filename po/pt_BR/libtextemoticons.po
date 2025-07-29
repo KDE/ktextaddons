@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:41+0000\n"
-"PO-Revision-Date: 2023-07-05 17:58-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-07-28 11:49-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -75,8 +76,7 @@ msgid "Custom"
 msgstr "Personalizado"
 
 #: widgets/emoticonlistview.cpp:118
-#, fuzzy, kde-format
-#| msgid "Clear Recents"
+#, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Limpar recentes"
@@ -87,8 +87,7 @@ msgid "Add Smiley"
 msgstr "Adicionar smiley"
 
 #: widgets/emoticontexteditselector.cpp:94
-#, fuzzy, kde-format
-#| msgid "Search Emoticon..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Pesquisar emoticon..."
@@ -96,4 +95,4 @@ msgstr "Pesquisar emoticon..."
 #: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
-msgstr ""
+msgstr "Selecionar tom"

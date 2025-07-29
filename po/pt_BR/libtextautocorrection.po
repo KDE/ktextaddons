@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:41+0000\n"
-"PO-Revision-Date: 2023-07-05 18:01-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-07-28 11:58-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/import/importlibreofficeautocorrection.cpp:54
 #, kde-format
@@ -25,23 +26,21 @@ msgstr "O pacote não pode ser aberto no modo de leitura."
 #: widgets/autocorrectionwidget.cpp:136
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr ""
+msgstr "Selecione um caminho gravável personalizado"
 
 #: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "Select Custom System Path"
-msgstr ""
+msgstr "Selecione o caminho do sistema personalizado"
 
 #: widgets/autocorrectionwidget.cpp:151
-#, fuzzy, kde-format
-#| msgid "LibreOffice Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "LibreOffice Autocorrection"
 msgstr "Autocorreção do LibreOffice"
 
 #: widgets/autocorrectionwidget.cpp:155
-#, fuzzy, kde-format
-#| msgid "KMail/Calligra Autocorrection"
+#, kde-format
 msgctxt "@action"
 msgid "KMail/Calligra Autocorrection"
 msgstr "Autocorreção do KMail/Calligra"
@@ -49,14 +48,13 @@ msgstr "Autocorreção do KMail/Calligra"
 #: widgets/autocorrectionwidget.cpp:433
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr ""
+msgstr "A string \"Substituir\" é a mesma que a string \"Localizar\"."
 
 #: widgets/autocorrectionwidget.cpp:433
-#, fuzzy, kde-format
-#| msgid "Ad&vanced Autocorrection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Autocorrection Entry"
-msgstr "Autocorreção a&vançada"
+msgstr "Adicionar entrada de autocorreção"
 
 #: widgets/autocorrectionwidget.cpp:512
 #, kde-format
@@ -92,8 +90,7 @@ msgid "KMail Autocorrection File (*.xml)"
 msgstr "Arquivo de autocorreção do KMail (*.xml)"
 
 #: widgets/autocorrectionwidget.cpp:660
-#, fuzzy, kde-format
-#| msgid "Import Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importar arquivo de autocorreção"
@@ -102,10 +99,10 @@ msgstr "Importar arquivo de autocorreção"
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
+"O idioma foi alterado. Você deseja salvar a configuração do idioma anterior?"
 
 #: widgets/autocorrectionwidget.cpp:685
-#, fuzzy, kde-format
-#| msgid "Save config"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Salvar configuração"
@@ -116,8 +113,7 @@ msgid "Please save changes before exporting settings."
 msgstr "Salve as alterações antes de exportar as configurações."
 
 #: widgets/autocorrectionwidget.cpp:720 widgets/autocorrectionwidget.cpp:723
-#, fuzzy, kde-format
-#| msgid "Export Autocorrection File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"
 msgstr "Exportar arquivo de autocorreção"
@@ -132,19 +128,17 @@ msgstr "Habilitar autocorreção"
 #: widgets/ui/autocorrectionwidget.ui:30
 #, kde-format
 msgid "Replacement and exception for language:"
-msgstr ""
+msgstr "Substituição e exceção para idioma:"
 
 #. i18n: ectx: property (text), widget (QPushButton, exportAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:44
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export…"
 msgstr "Exportar..."
 
 #. i18n: ectx: property (text), widget (QPushButton, importAutoCorrection)
 #: widgets/ui/autocorrectionwidget.ui:51
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "Importar..."
 
@@ -175,10 +169,9 @@ msgstr "&Localizar"
 
 #. i18n: ectx: property (text), widget (QLabel, replaceLabel)
 #: widgets/ui/autocorrectionwidget.ui:149
-#, fuzzy, kde-format
-#| msgid "Replace"
+#, kde-format
 msgid "&Replace"
-msgstr "Substituir"
+msgstr "Substitui&r"
 
 #. i18n: ectx: property (text), widget (TextAutoCorrectionWidgets::AutoCorrectionTreeWidget, treeWidget)
 #: widgets/ui/autocorrectionwidget.ui:187
@@ -296,8 +289,7 @@ msgstr "A maioria das notações de fração serão convertidas quando disponív
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoReplaceNumber)
 #: widgets/ui/autocorrectionwidget.ui:388
-#, fuzzy, kde-format
-#| msgid "Re&place 1/2... with ½..."
+#, kde-format
 msgid "Re&place 1/2… with ½..."
 msgstr "Substituir 1/2... &por ½..."
 
@@ -339,24 +331,28 @@ msgstr ""
 #, kde-format
 msgid "Automatically do &bold, strikeout and underline formatting (HTML mode)"
 msgstr ""
+"Executar automaticamente a formatação de &negrito, tachado e sublinhado "
+"(modo HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoSuperScript)
 #: widgets/ui/autocorrectionwidget.ui:422
 #, kde-format
 msgid "Replace 1st… with 1^st... (HTML mode)"
-msgstr ""
+msgstr "Substituir 1o… com 1^o... (modo HTML)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, addNonBreakingSpaceInFrench)
 #: widgets/ui/autocorrectionwidget.ui:429
 #, kde-format
 msgid "Add non breaking space before specific punctuation marks in French text"
 msgstr ""
+"Adicionar espaço não divisível antes de sinais de pontuação específicos em "
+"texto em francês"
 
 #. i18n: ectx: property (text), widget (QCheckBox, replaceDoubleQuotesByFrenchQuotes)
 #: widgets/ui/autocorrectionwidget.ui:436
 #, kde-format
 msgid "Replace double quotes by french quotes"
-msgstr ""
+msgstr "Substituir aspas duplas por aspas francesas"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: widgets/ui/autocorrectionwidget.ui:457
@@ -388,13 +384,13 @@ msgstr "Por padrão"
 #: widgets/ui/autocorrectionwidget.ui:500
 #, kde-format
 msgid "\""
-msgstr ""
+msgstr "\""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: widgets/ui/autocorrectionwidget.ui:507
 #, kde-format
 msgid "Ending Quote:"
-msgstr ""
+msgstr "Fim de citação:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -402,7 +398,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:634
 #, kde-format
 msgid "Opening Quote:"
-msgstr ""
+msgstr "Abertura de citação:"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleDefault)
 #. i18n: ectx: property (text), widget (QPushButton, singleDefault)
@@ -424,13 +420,13 @@ msgstr "Substituir a&spas simples por aspas tipográficas"
 #: widgets/ui/autocorrectionwidget.ui:627
 #, kde-format
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: widgets/ui/autocorrectionwidget.ui:648
 #, kde-format
 msgid "Ending Quotes:"
-msgstr ""
+msgstr "Fim de citação:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: widgets/ui/autocorrectionwidget.ui:707
@@ -456,13 +452,13 @@ msgstr "Etiqueta de texto"
 #: widgets/ui/autocorrectionwidget.ui:743
 #, kde-format
 msgid "Writable Path:"
-msgstr ""
+msgstr "Caminho gravável:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: widgets/ui/autocorrectionwidget.ui:773
 #, kde-format
 msgid "Custom System Path:"
-msgstr ""
+msgstr "Caminho do sistema personalizado:"
 
 #. i18n: ectx: property (text), widget (QToolButton, customSystemPathToolButton)
 #. i18n: ectx: property (text), widget (QToolButton, customWritablePathToolButton)
@@ -470,13 +466,13 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794
 #, kde-format
 msgid "Custom Writable Path:"
-msgstr ""
+msgstr "Caminho gravável personalizado:"
 
 #~ msgid "Re&place"
 #~ msgstr "Su&bstituir"

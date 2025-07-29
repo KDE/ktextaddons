@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-29 00:40+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -17,42 +17,42 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.07.70\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:76
+#: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
 msgid "New Chat..."
 msgstr "新聊天…"
 
-#: core/models/textautogeneratechatsmodel.cpp:148
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Favorite"
 msgstr "收藏"
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "Today"
 msgstr "今天"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "7 days previous"
 msgstr "前 7 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "30 days previous"
 msgstr "前 30 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Later"
 msgstr "更晚"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:162
 #, kde-format
 msgid "Unknown"
 msgstr "未知"
 
-#: core/models/textautogeneratemessagesmodel.cpp:68
+#: core/models/textautogeneratemessagesmodel.cpp:70
 #, fuzzy, kde-format
 #| msgid ""
 #| "Engine: %1\n"
@@ -70,12 +70,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "跳到訊息"
 
-#: core/textautogeneratetextplugin.cpp:206
+#: core/textautogeneratetextplugin.cpp:211
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: core/textautogeneratetextplugin.cpp:208
+#: core/textautogeneratetextplugin.cpp:213
 #, kde-format
 msgid "Network"
 msgstr "網路"
