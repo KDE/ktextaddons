@@ -468,7 +468,7 @@ void AutoCorrectionSettings::readAutoCorrectionFile(bool forceGlobal)
             kdelang = u"en-US"_s;
         }
     }
-    static QRegularExpression reg(u"@.*"_s);
+    static const QRegularExpression reg(u"@.*"_s);
     kdelang.remove(reg);
 
     QString localFileName;

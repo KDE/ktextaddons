@@ -489,7 +489,7 @@ void AutoCorrectionWidget::removeAutocorrectEntry()
 
 void AutoCorrectionWidget::updateAddRemoveButton()
 {
-    QList<QTreeWidgetItem *> listItems = d->ui->treeWidget->selectedItems();
+    const QList<QTreeWidgetItem *> listItems = d->ui->treeWidget->selectedItems();
     d->ui->removeButton->setEnabled(!listItems.isEmpty());
 }
 

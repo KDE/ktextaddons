@@ -111,7 +111,7 @@ bool ImportLibreOfficeAutocorrection::importFile(Type type, const KArchiveDirect
         }
         QDomDocument doc;
         if (loadDomElement(doc, &file)) {
-            QDomElement list = doc.documentElement();
+            const QDomElement list = doc.documentElement();
             if (list.isNull()) {
                 qCDebug(TEXTAUTOCORRECTION_LOG) << "No list defined in " << type;
             } else {

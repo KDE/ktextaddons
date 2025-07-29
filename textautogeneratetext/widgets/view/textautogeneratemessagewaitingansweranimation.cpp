@@ -86,7 +86,7 @@ TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity TextAutoGenerateM
 
 QSequentialAnimationGroup *TextAutoGenerateMessageWaitingAnswerAnimation::createAnimation(int index, int duration)
 {
-    ScaleAndOpacity s;
+    const ScaleAndOpacity s;
     mScaleOpacities.append(s);
     auto scaleAnimationUp = new QPropertyAnimation(this);
 

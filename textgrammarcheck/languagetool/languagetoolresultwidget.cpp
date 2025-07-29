@@ -51,7 +51,7 @@ void LanguageToolResultWidget::checkGrammar()
 
 void LanguageToolResultWidget::slotCheckGrammarFinished(const QString &result)
 {
-    LanguageToolParser parser;
+    const LanguageToolParser parser;
     const QJsonDocument doc = QJsonDocument::fromJson(result.toUtf8());
     const QJsonObject fields = doc.object();
     applyGrammarResult(parser.parseResult(fields));

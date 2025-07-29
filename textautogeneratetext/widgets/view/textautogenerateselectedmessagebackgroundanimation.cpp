@@ -33,8 +33,9 @@ void TextAutoGenerateSelectedMessageBackgroundAnimation::setModelIndex(const QPe
 
 void TextAutoGenerateSelectedMessageBackgroundAnimation::setBackgroundColor(const QColor &newBackgroundColor)
 {
-    if (m_backgroundColor == newBackgroundColor)
+    if (m_backgroundColor == newBackgroundColor) {
         return;
+    }
     m_backgroundColor = newBackgroundColor;
     Q_EMIT backgroundColorChanged();
 }
