@@ -8,7 +8,6 @@
 #include "textautogenerateollama_export.h"
 #include <QJsonDocument>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
-#include <TextAutoGenerateText/TextAutoGenerateTextContext>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
 class QNetworkReply;
