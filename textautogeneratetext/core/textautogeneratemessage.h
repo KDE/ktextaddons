@@ -97,6 +97,8 @@ public:
 
     [[nodiscard]] QJsonObject convertToOllamaChatJson() const;
 
+    [[nodiscard]] const TextAutoGenerateAnswerInfo *messageInfo() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(const MessageStates &newMessageStates);

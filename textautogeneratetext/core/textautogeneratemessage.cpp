@@ -28,9 +28,10 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage 
     d.space() << "answerUuid:" << t.answerUuid();
     d.space() << "mouseHover:" << t.mouseHover();
     d.space() << "editingMode:" << t.editingMode();
-    d.space() << "engineName:" << t.engineName();
-    d.space() << "modelName:" << t.modelName();
     d.space() << "context:" << t.context();
+    if (t.messageInfo()) {
+        d.space() << "message Info:" << *t.messageInfo();
+    }
     return d;
 }
 
@@ -86,9 +87,23 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
-    return other.uuid() == mUuid && other.inProgress() == inProgress() && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == editingMode() && other.modelName() == modelName()
-        && other.engineName() == engineName() && other.context() == mContext;
+    bool result = other.uuid() == mUuid && other.inProgress() == inProgress() && other.sender() == mSender && other.dateTime() == mDateTime
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == editingMode() && other.context() == mContext;
+    if (!result) {
+        return false;
+    }
+    if (messageInfo() && other.messageInfo()) {
+        if (*messageInfo() == (*other.messageInfo())) {
+            result = true;
+        } else {
+            return false;
+        }
+    } else if (!messageInfo() && !other.messageInfo()) {
+        result = true;
+    } else {
+        return false;
+    }
+    return result;
 }
 
 QByteArray TextAutoGenerateMessage::uuid() const
@@ -147,6 +162,14 @@ QString TextAutoGenerateMessage::modelName() const
         return mMessageInfo->modelName();
     }
     return {};
+}
+
+const TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::messageInfo() const
+{
+    if (mMessageInfo) {
+        return mMessageInfo.data();
+    }
+    return nullptr;
 }
 
 void TextAutoGenerateMessage::setInstanceName(const QString &instanceName)
