@@ -48,3 +48,16 @@ void TextAutoGenerateAnswerInfo::setInstanceName(const QString &newInstanceName)
 {
     mInstanceName = newInstanceName;
 }
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAnswerInfo &t)
+{
+    d.space() << "mInstanceName:" << t.instanceName();
+    d.space() << "mModelName:" << t.modelName();
+    d.space() << "mEngineName:" << t.engineName();
+    return d;
+}
+
+bool TextAutoGenerateAnswerInfo::operator==(const TextAutoGenerateAnswerInfo &other) const
+{
+    return mInstanceName == other.mInstanceName && mModelName == other.mModelName && mEngineName == other.mEngineName;
+}

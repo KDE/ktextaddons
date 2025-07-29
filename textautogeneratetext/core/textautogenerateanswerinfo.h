@@ -6,8 +6,8 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QDebug>
 #include <QSharedData>
-
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedData
@@ -25,10 +25,12 @@ public:
     [[nodiscard]] QString instanceName() const;
     void setInstanceName(const QString &newInstanceName);
 
+    [[nodiscard]] bool operator==(const TextAutoGenerateAnswerInfo &other) const;
+
 private:
     QString mModelName;
     QString mEngineName;
     QString mInstanceName;
 };
-
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAnswerInfo &t);
