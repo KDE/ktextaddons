@@ -251,7 +251,7 @@ QList<QByteArray> TextAutoGenerateMessagesModel::removeDiscussion(const QByteArr
     const auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
     QList<QByteArray> lst;
     if (it != mMessages.end()) {
-        int i = std::distance(mMessages.begin(), it);
+        const int i = std::distance(mMessages.begin(), it);
         beginRemoveRows(QModelIndex(), i, mMessages.count() - 1);
         for (int j = mMessages.count() - 1; j >= i; --j) {
             auto m = mMessages.takeAt(j);
