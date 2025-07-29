@@ -817,7 +817,7 @@ void AutoCorrection::replaceTypographicQuotes()
         if (c == QLatin1Char('"') || c == QLatin1Char('\'')) {
             const bool doubleQuotes = (c == QLatin1Char('"'));
             if (i > 2) {
-                QChar::Category c1 = d->mWord.at(i - 1).category();
+                const QChar::Category c1 = d->mWord.at(i - 1).category();
 
                 // case 1 and 2
                 if (c1 == QChar::Separator_Space || c1 == QChar::Separator_Line || c1 == QChar::Separator_Paragraph || c1 == QChar::Punctuation_Open

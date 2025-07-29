@@ -13,7 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 OllamaSettings::OllamaSettings()
     : mServerUrl(QUrl(u"http://127.0.0.1:11434"_s))
 {
-    KUser user;
+    const KUser user;
     mSystemPrompt = i18n(
         "You are an AI assistant. You are speaking to a person named %1. "
         "Be helpful, professional, and courteous. Do not give inaccurate "

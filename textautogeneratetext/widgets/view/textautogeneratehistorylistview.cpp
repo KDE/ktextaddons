@@ -99,7 +99,7 @@ void TextAutoGenerateHistoryListView::slotClicked(const QModelIndex &idx)
 
 void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
 {
-    bool isArchived = mManager ? mManager->showArchived() : false;
+    const bool isArchived = mManager ? mManager->showArchived() : false;
     QMenu menu(this);
     if (!isArchived) {
         auto newChatHistory = new QAction(QIcon::fromTheme(u"document-new"_s), i18nc("@action", "New Chat"), &menu);

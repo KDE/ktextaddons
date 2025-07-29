@@ -116,8 +116,6 @@ bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant 
     case ChatRoles::Section:
     case ChatRoles::DateTime:
         break;
-    default:
-        break;
     }
     return QAbstractListModel::setData(idx, value, role);
 }
