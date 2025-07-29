@@ -110,6 +110,8 @@ target_sources(
         core/textautogeneratemessage.cpp
         core/textautogenerateanswerinfo.h
         core/textautogenerateanswerinfo.cpp
+        core/textautogenerateimage.h
+        core/textautogenerateimage.cpp
         core/textautogeneratetextcontext.h
         core/textautogeneratetextcontext.cpp
         core/textautogeneratemessageutils.h
@@ -332,6 +334,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateManager
     TextAutoGenerateMessage
     TextAutoGenerateAnswerInfo
+    TextAutoGenerateImage
     TextAutoGenerateChat
     TextAutoGenerateTextReplyInfo
     TextAutoGenerateSearchMessage
