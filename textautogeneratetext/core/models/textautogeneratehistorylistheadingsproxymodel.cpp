@@ -246,8 +246,9 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
         const auto oldSectionId = int(ourOldIndex.internalId());
         const auto newSectionId = int(sourceIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChatsModel::SectionHistory>());
 
-        if (oldSectionId == newSectionId)
+        if (oldSectionId == newSectionId) {
             continue;
+        }
 
         auto &oldSection = mSections.at(oldSectionId);
         auto &newSection = mSections.at(newSectionId);
