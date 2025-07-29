@@ -12,7 +12,6 @@
 #include <QDebug>
 
 #include <QJsonDocument>
-#include <TextAutoGenerateText/TextAutoGenerateTextContext>
 #include <TextAutoGenerateText/TextAutoGenerateTextReplyInfo>
 
 class QNetworkReply;
@@ -53,17 +52,6 @@ public:
     };
     explicit TextAutoGenerateReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     ~TextAutoGenerateReply() override;
-
-    /**
-     * @brief Get the context token for this response.
-     *
-     * Messages sent by most LLMs have a context identifier that allows you to chain messages into a conversation. To create
-     * such a conversation, you need to take this context object and set it on the next KLLMRequest in the conversation.
-     * KLLMInterface::getCompletion() will use that context object to continue the message thread.
-     *
-     * @return A context object that refers to this response.
-     */
-    const TextAutoGenerateText::TextAutoGenerateTextContext &context() const;
 
     /**
      * @brief Get extra information about the reply.
@@ -115,8 +103,6 @@ protected:
     QList<QJsonDocument> mTokens;
 
     const RequestTypes mRequestType = RequestTypes::Unknown;
-    // TODO context remove it
-    TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
 
     qint64 mReceivedSize = 0;

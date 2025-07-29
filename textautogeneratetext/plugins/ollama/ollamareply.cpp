@@ -20,7 +20,6 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
         // that the request failed and we have no tokens to parse.
         if ((mRequestType == RequestTypes::StreamingGenerate || mRequestType == RequestTypes::StreamingChat) && !mTokens.empty()) {
             const auto finalResponse = mTokens.constLast();
-            mContext.setContextData(finalResponse["context"_L1].toArray());
             mInfo.totalDuration = std::chrono::nanoseconds{finalResponse["total_duration"_L1].toVariant().toULongLong()};
             mInfo.loadDuration = std::chrono::nanoseconds{finalResponse["load_duration"_L1].toVariant().toULongLong()};
             mInfo.promptEvalTokenCount = finalResponse["prompt_eval_count"_L1].toVariant().toULongLong();

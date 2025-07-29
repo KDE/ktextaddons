@@ -208,10 +208,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
     // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
     data["prompt"_L1] = request.message();
     data["model"_L1] = mOllamaSettings->currentModel();
-    const auto context = request.context().toJson();
-    if (!context.isNull()) {
-        data["context"_L1] = context;
-    }
     if (!mOllamaSettings->systemPrompt().isEmpty()) {
         data["system"_L1] = mOllamaSettings->systemPrompt();
     }

@@ -9,7 +9,6 @@
 #include "textautogeneratetext_export.h"
 #include <QDebug>
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
-#include <TextAutoGenerateText/TextAutoGenerateTextContext>
 
 namespace TextAutoGenerateText
 {
@@ -83,9 +82,6 @@ public:
     [[nodiscard]] QString instanceName() const;
     void setInstanceName(const QString &newEngineName);
 
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextContext context() const;
-    void setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext);
-
     [[nodiscard]] static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateMessage deserialize(const QJsonObject &o);
 
@@ -111,7 +107,6 @@ private:
     QString mHtmlGenerated;
     QString mDateTimeStr;
     TextAutoGenerateMessage::Sender mSender = TextAutoGenerateMessage::Sender::Unknown;
-    TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     // TextAutoGenerateMessage::KLLMReplyInfo info;
 
     MessageStates mMessageStates = MessageStates(MessageState::None);

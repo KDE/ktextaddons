@@ -22,19 +22,9 @@ void TextAutoGenerateTextRequest::setMessage(const QString &newMessage)
     mMessage = newMessage;
 }
 
-TextAutoGenerateText::TextAutoGenerateTextContext TextAutoGenerateTextRequest::context() const
-{
-    return mContext;
-}
-
-void TextAutoGenerateTextRequest::setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext)
-{
-    mContext = newContext;
-}
-
 bool TextAutoGenerateTextRequest::operator==(const TextAutoGenerateTextRequest &other) const
 {
-    return other.context() == mContext && other.message() == mMessage && other.model() == mModel && mMessages == other.messages();
+    return other.message() == mMessage && other.model() == mModel && mMessages == other.messages();
 }
 
 QString TextAutoGenerateTextRequest::model() const
@@ -60,7 +50,6 @@ void TextAutoGenerateTextRequest::setMessages(const QJsonArray &newMessages)
 QDebug operator<<(QDebug d, const TextAutoGenerateTextRequest &t)
 {
     d.space() << "message:" << t.message();
-    d.space() << "context:" << t.context();
     d.space() << "model:" << t.model();
     d.space() << "messages:" << t.messages();
     return d;

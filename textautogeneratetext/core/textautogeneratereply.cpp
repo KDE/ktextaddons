@@ -24,11 +24,6 @@ const TextAutoGenerateReply::RequestTypes &TextAutoGenerateReply::requestType() 
     return mRequestType;
 }
 
-const TextAutoGenerateText::TextAutoGenerateTextContext &TextAutoGenerateReply::context() const
-{
-    return mContext;
-}
-
 const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &TextAutoGenerateReply::info() const
 {
     return mInfo;

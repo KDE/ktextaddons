@@ -8,7 +8,6 @@
 #include "textautogeneratetext_export.h"
 #include <QDebug>
 #include <QJsonArray>
-#include <TextAutoGenerateText/TextAutoGenerateTextContext>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextRequest
@@ -21,9 +20,6 @@ public:
     [[nodiscard]] QString message() const;
     void setMessage(const QString &newMessage);
 
-    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextContext context() const;
-    void setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext);
-
     [[nodiscard]] bool operator==(const TextAutoGenerateTextRequest &other) const;
 
     [[nodiscard]] QString model() const;
@@ -35,7 +31,6 @@ public:
 private:
     QJsonArray mMessages;
     QString mMessage;
-    TextAutoGenerateText::TextAutoGenerateTextContext mContext;
     QString mModel;
 };
 }

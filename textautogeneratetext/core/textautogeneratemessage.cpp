@@ -28,7 +28,6 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage 
     d.space() << "answerUuid:" << t.answerUuid();
     d.space() << "mouseHover:" << t.mouseHover();
     d.space() << "editingMode:" << t.editingMode();
-    d.space() << "context:" << t.context();
     if (t.messageInfo()) {
         d.space() << "message Info:" << *t.messageInfo();
     }
@@ -88,7 +87,7 @@ void TextAutoGenerateMessage::setInProgress(bool newInProgress)
 bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) const
 {
     bool result = other.uuid() == mUuid && other.inProgress() == inProgress() && other.sender() == mSender && other.dateTime() == mDateTime
-        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == editingMode() && other.context() == mContext;
+        && other.content() == mContent && other.answerUuid() == mAnswerUuid && other.editingMode() == editingMode();
     if (!result) {
         return false;
     }
@@ -201,16 +200,6 @@ QString TextAutoGenerateMessage::engineName() const
 void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
 {
     answerInfo()->setEngineName(newEngineName);
-}
-
-TextAutoGenerateTextContext TextAutoGenerateMessage::context() const
-{
-    return mContext;
-}
-
-void TextAutoGenerateMessage::setContext(const TextAutoGenerateText::TextAutoGenerateTextContext &newContext)
-{
-    mContext = newContext;
 }
 
 QString TextAutoGenerateMessage::senderToString() const
