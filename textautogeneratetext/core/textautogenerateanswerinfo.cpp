@@ -6,6 +6,7 @@
 
 #include "textautogenerateanswerinfo.h"
 #include "textautogeneratetextcore_memory_debug.h"
+#include <QJsonObject>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -78,12 +79,16 @@ bool TextAutoGenerateAnswerInfo::operator==(const TextAutoGenerateAnswerInfo &ot
 
 void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o)
 {
-    // TODO
+    o["modelName"_L1] = translation.modelName();
+    o["engineName"_L1] = translation.engineName();
+    o["instanceName"_L1] = translation.instanceName();
 }
 
 TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonObject &o)
 {
     TextAutoGenerateAnswerInfo *messageInfo = new TextAutoGenerateAnswerInfo;
-    // TODO
+    messageInfo->setModelName(o["modelName"_L1].toString());
+    messageInfo->setEngineName(o["engineName"_L1].toString());
+    messageInfo->setInstanceName(o["instanceName"_L1].toString());
     return messageInfo;
 }
