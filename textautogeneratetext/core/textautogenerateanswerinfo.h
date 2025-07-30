@@ -15,6 +15,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedDat
 public:
     TextAutoGenerateAnswerInfo();
     ~TextAutoGenerateAnswerInfo();
+    explicit TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other);
 
     [[nodiscard]] QString modelName() const;
     void setModelName(const QString &newModelName);

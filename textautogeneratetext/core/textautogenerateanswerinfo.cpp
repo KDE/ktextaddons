@@ -19,6 +19,15 @@ TextAutoGenerateAnswerInfo::~TextAutoGenerateAnswerInfo()
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAnswerInfo deleted " << this;
 }
 
+TextAutoGenerateAnswerInfo::TextAutoGenerateAnswerInfo(const TextAutoGenerateAnswerInfo &other)
+    : QSharedData(other)
+{
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAnswerInfo created " << this;
+    mModelName = other.mModelName;
+    mEngineName = other.mEngineName;
+    mInstanceName = other.mInstanceName;
+}
+
 bool TextAutoGenerateAnswerInfo::isValid() const
 {
     return !mModelName.isEmpty();
