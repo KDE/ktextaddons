@@ -162,7 +162,7 @@ void TextAutoGenerateManager::loadHistory()
     if (chats.isEmpty()) {
         createNewChat();
     } else {
-        mTextAutoGenerateChatsModel->setChats(std::move(chats));
+        mTextAutoGenerateChatsModel->setChats(chats);
     }
 }
 
