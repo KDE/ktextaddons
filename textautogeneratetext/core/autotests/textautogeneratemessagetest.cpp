@@ -6,6 +6,9 @@
 
 #include "textautogeneratemessagetest.h"
 #include "core/textautogeneratemessage.h"
+#include "textautogenerate_autotest_helper.h"
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TextAutoGenerateMessageTest)
@@ -41,5 +44,42 @@ void TextAutoGenerateMessageTest::shouldCheckFromString()
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"system"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::System);
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"tool"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::Tool);
 }
+#if 0
+void TextAutoGenerateMessageTest::shouldParseMessage_data()
+{
+    QTest::addColumn<QString>("name");
+    QTest::addColumn<TextAutoGenerateText::TextAutoGenerateMessage>("expectedMessage");
+
+    TextAutoGenerateText::TextAutoGenerateMessage firstMessageRef;
+    firstMessageRef.setAnswerUuid("b84a362695c34e5491b54e414192fb70");
+    firstMessageRef.setDateTime(1753338999);
+    firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
+    firstMessageRef.setContent(u"test1"_s);
+    firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+
+    QTest::addRow("test1user") << u"test1user"_s << firstMessageRef;
+}
+
+
+void TextAutoGenerateMessageTest::shouldParseMessage()
+{
+    QFETCH(QString, name);
+    QFETCH(TextAutoGenerateText::TextAutoGenerateMessage, expectedMessage);
+    const QString originalJsonFile = QLatin1StringView(TEXTAUTOGENERATE_DATA_DIR) + "/json/"_L1 + name + ".json"_L1;
+    QFile f(originalJsonFile);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    const QByteArray content = f.readAll();
+    f.close();
+
+    const QJsonObject obj = AutoTestHelper::loadJsonObject(originalJsonFile);
+    const TextAutoGenerateText::TextAutoGenerateMessage originalMessage = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(obj);
+    const bool messageIsEqual = (originalMessage == expectedMessage);
+    if (!messageIsEqual) {
+        qDebug() << "originalMessage " << originalMessage;
+        qDebug() << "ExpectedMessage " << expectedMessage;
+    }
+    QVERIFY(messageIsEqual);
+}
+#endif
 
 #include "moc_textautogeneratemessagetest.cpp"
