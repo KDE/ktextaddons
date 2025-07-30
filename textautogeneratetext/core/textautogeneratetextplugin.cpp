@@ -133,21 +133,23 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         msgLlm.setSender(TextAutoGenerateMessage::Sender::Assistant);
         msgLlm.setDateTime(dt);
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
-        msgLlm.setEngineName(engineName());
-        msgLlm.setModelName(currentModel());
-        msgLlm.setInstanceName(d->instance->displayName());
+        TextAutoGenerateAnswerInfo anwserInfo;
+        anwserInfo.setEngineName(engineName());
+        anwserInfo.setModelName(currentModel());
+        anwserInfo.setInstanceName(d->instance->displayName());
+        msgLlm.setMessageInfo(anwserInfo);
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        d->manager->addMessage(chatId, std::move(msg));
+        d->manager->addMessage(chatId, msg);
         SendToAssistantInfo info;
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
         info.messagesArray = messageModel->convertToOllamaChat();
 
-        d->manager->addMessage(chatId, std::move(msgLlm));
+        d->manager->addMessage(chatId, msgLlm);
         // qDebug() << " info " << info;
         initializeProgress(info);
     } else {

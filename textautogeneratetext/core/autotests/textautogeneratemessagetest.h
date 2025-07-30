@@ -17,8 +17,7 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldCheckFromString();
-#if 0
     void shouldParseMessage();
     void shouldParseMessage_data();
-#endif
+    void shouldSerializeMessage();
 };

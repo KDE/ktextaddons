@@ -75,13 +75,8 @@ public:
     void setEditingMode(bool newEditingMode);
 
     [[nodiscard]] QString modelName() const;
-    void setModelName(const QString &newModelName);
-
     [[nodiscard]] QString engineName() const;
-    void setEngineName(const QString &newEngineName);
-
     [[nodiscard]] QString instanceName() const;
-    void setInstanceName(const QString &newEngineName);
 
     [[nodiscard]] static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateMessage deserialize(const QJsonObject &o);
@@ -94,8 +89,9 @@ public:
 
     [[nodiscard]] const TextAutoGenerateAnswerInfo *messageInfo() const;
 
+    void setMessageInfo(const TextAutoGenerateAnswerInfo &messageInfo);
+
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateAnswerInfo *generateMessageInfo();
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(const MessageStates &newMessageStates);
     TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);

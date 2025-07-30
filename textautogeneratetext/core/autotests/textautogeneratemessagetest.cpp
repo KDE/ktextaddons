@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratemessagetest.h"
+#include "core/textautogenerateanswerinfo.h"
 #include "core/textautogeneratemessage.h"
 #include "textautogenerate_autotest_helper.h"
 #include <QJsonDocument>
@@ -44,22 +45,37 @@ void TextAutoGenerateMessageTest::shouldCheckFromString()
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"system"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::System);
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateMessage::senderFromString(u"tool"_s), TextAutoGenerateText::TextAutoGenerateMessage::Sender::Tool);
 }
-#if 0
+
 void TextAutoGenerateMessageTest::shouldParseMessage_data()
 {
     QTest::addColumn<QString>("name");
     QTest::addColumn<TextAutoGenerateText::TextAutoGenerateMessage>("expectedMessage");
+    {
+        TextAutoGenerateText::TextAutoGenerateMessage firstMessageRef;
+        firstMessageRef.setAnswerUuid("b84a362695c34e5491b54e414192fb70");
+        firstMessageRef.setDateTime(1753338999);
+        firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
+        firstMessageRef.setContent(u"test1"_s);
+        firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
 
-    TextAutoGenerateText::TextAutoGenerateMessage firstMessageRef;
-    firstMessageRef.setAnswerUuid("b84a362695c34e5491b54e414192fb70");
-    firstMessageRef.setDateTime(1753338999);
-    firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
-    firstMessageRef.setContent(u"test1"_s);
-    firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+        QTest::addRow("test1user") << u"test1user"_s << firstMessageRef;
+    }
+    {
+        TextAutoGenerateText::TextAutoGenerateMessage firstMessageLlmRef;
+        firstMessageLlmRef.setAnswerUuid("foo");
+        firstMessageLlmRef.setDateTime(1753338990);
+        firstMessageLlmRef.setUuid("136ccbbe9e1e4d6a90c6b9917daf9a29");
+        firstMessageLlmRef.setContent(u"test llm"_s);
+        firstMessageLlmRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+        TextAutoGenerateText::TextAutoGenerateAnswerInfo info;
+        info.setEngineName(u"openai"_s);
+        info.setInstanceName(u"test openai"_s);
+        info.setModelName(u"gpt-3.5-turbo-16k"_s);
+        firstMessageLlmRef.setMessageInfo(info);
 
-    QTest::addRow("test1user") << u"test1user"_s << firstMessageRef;
+        QTest::addRow("test1llm") << u"test1llm"_s << firstMessageLlmRef;
+    }
 }
-
 
 void TextAutoGenerateMessageTest::shouldParseMessage()
 {
@@ -80,6 +96,39 @@ void TextAutoGenerateMessageTest::shouldParseMessage()
     }
     QVERIFY(messageIsEqual);
 }
-#endif
+
+void TextAutoGenerateMessageTest::shouldSerializeMessage()
+{
+    {
+        TextAutoGenerateText::TextAutoGenerateMessage firstMessageRef;
+        firstMessageRef.setAnswerUuid("b84a362695c34e5491b54e414192fb70");
+        firstMessageRef.setDateTime(1753338999);
+        firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
+        firstMessageRef.setContent(u"test1"_s);
+        firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+
+        const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(firstMessageRef);
+        const TextAutoGenerateText::TextAutoGenerateMessage output =
+            TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
+        QCOMPARE(firstMessageRef, output);
+    }
+    {
+        TextAutoGenerateText::TextAutoGenerateMessage firstMessageLlmRef;
+        firstMessageLlmRef.setAnswerUuid("foo");
+        firstMessageLlmRef.setDateTime(1753338990);
+        firstMessageLlmRef.setUuid("136ccbbe9e1e4d6a90c6b9917daf9a29");
+        firstMessageLlmRef.setContent(u"test llm"_s);
+        firstMessageLlmRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+        TextAutoGenerateText::TextAutoGenerateAnswerInfo info;
+        info.setEngineName(u"openai"_s);
+        info.setInstanceName(u"test openai"_s);
+        info.setModelName(u"gpt-3.5-turbo-16k"_s);
+        firstMessageLlmRef.setMessageInfo(info);
+        const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(firstMessageLlmRef);
+        const TextAutoGenerateText::TextAutoGenerateMessage output =
+            TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
+        QCOMPARE(firstMessageLlmRef, output);
+    }
+}
 
 #include "moc_textautogeneratemessagetest.cpp"

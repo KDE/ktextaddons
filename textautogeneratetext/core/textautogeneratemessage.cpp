@@ -171,22 +171,12 @@ const TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::messageInfo() const
     return nullptr;
 }
 
-void TextAutoGenerateMessage::setInstanceName(const QString &instanceName)
-{
-    generateMessageInfo()->setInstanceName(instanceName);
-}
-
 QString TextAutoGenerateMessage::instanceName() const
 {
     if (mMessageInfo) {
         return mMessageInfo->instanceName();
     }
     return {};
-}
-
-void TextAutoGenerateMessage::setModelName(const QString &newModelName)
-{
-    generateMessageInfo()->setModelName(newModelName);
 }
 
 QString TextAutoGenerateMessage::engineName() const
@@ -197,9 +187,13 @@ QString TextAutoGenerateMessage::engineName() const
     return {};
 }
 
-void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
+void TextAutoGenerateMessage::setMessageInfo(const TextAutoGenerateAnswerInfo &messageInfo)
 {
-    generateMessageInfo()->setEngineName(newEngineName);
+    if (!mMessageInfo) {
+        mMessageInfo = new TextAutoGenerateAnswerInfo(messageInfo);
+    } else {
+        mMessageInfo.reset(new TextAutoGenerateAnswerInfo(messageInfo));
+    }
 }
 
 QString TextAutoGenerateMessage::senderToString() const
@@ -242,9 +236,9 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     o["answerIdentifier"_L1] = QString::fromLatin1(msg.mAnswerUuid);
     o["text"_L1] = msg.mContent;
     if (msg.sender() != Sender::User) {
-        o["modelName"_L1] = msg.modelName();
-        o["engineName"_L1] = msg.engineName();
-        o["instanceName"_L1] = msg.instanceName();
+        if (auto info = msg.messageInfo(); info) {
+            TextAutoGenerateAnswerInfo::serialize(*info, o);
+        }
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
@@ -262,20 +256,16 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setUuid(o["identifier"_L1].toString().toLatin1());
     msg.setAnswerUuid(o["answerIdentifier"_L1].toString().toLatin1());
     msg.setContent(o["text"_L1].toString());
-    msg.setModelName(o["modelName"_L1].toString());
-    msg.setEngineName(o["engineName"_L1].toString());
-    msg.setInstanceName(o["instanceName"_L1].toString());
+
+    TextAutoGenerateAnswerInfo *messageInfo = TextAutoGenerateAnswerInfo::deserialize(o);
+    if (messageInfo->isValid()) {
+        msg.setMessageInfo(*messageInfo);
+    }
+    delete messageInfo;
+
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));
     return msg;
-}
-
-TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::generateMessageInfo()
-{
-    if (!mMessageInfo) {
-        mMessageInfo = new TextAutoGenerateAnswerInfo;
-    }
-    return mMessageInfo;
 }
 
 QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
