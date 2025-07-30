@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+add_definitions(-DTEXTAUTOGENERATE_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+add_definitions(-DTEXTAUTOGENERATE_BINARY_DATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data")
 
 macro(add_textautogenerate_core_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
