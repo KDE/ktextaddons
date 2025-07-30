@@ -20,11 +20,15 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateImage : public QSharedData
 public:
     TextAutoGenerateImage();
     ~TextAutoGenerateImage();
+    explicit TextAutoGenerateImage(const TextAutoGenerateImage &other);
 
     [[nodiscard]] QByteArray image() const;
     void setImage(const QByteArray &newImage);
+
+    [[nodiscard]] bool operator==(const TextAutoGenerateImage &other) const;
 
 private:
     QByteArray mImage;
 };
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateImage &t);
