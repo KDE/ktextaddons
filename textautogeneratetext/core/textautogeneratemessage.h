@@ -89,13 +89,12 @@ public:
 
     [[nodiscard]] static TextAutoGenerateMessage::Sender senderFromString(const QString &str);
 
-    [[nodiscard]] TextAutoGenerateAnswerInfo *answerInfo();
-
     [[nodiscard]] QJsonObject convertToOllamaChatJson() const;
 
     [[nodiscard]] const TextAutoGenerateAnswerInfo *messageInfo() const;
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateAnswerInfo *generateMessageInfo();
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(const MessageStates &newMessageStates);
     TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);

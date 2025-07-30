@@ -173,7 +173,7 @@ const TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::messageInfo() const
 
 void TextAutoGenerateMessage::setInstanceName(const QString &instanceName)
 {
-    answerInfo()->setInstanceName(instanceName);
+    generateMessageInfo()->setInstanceName(instanceName);
 }
 
 QString TextAutoGenerateMessage::instanceName() const
@@ -186,7 +186,7 @@ QString TextAutoGenerateMessage::instanceName() const
 
 void TextAutoGenerateMessage::setModelName(const QString &newModelName)
 {
-    answerInfo()->setModelName(newModelName);
+    generateMessageInfo()->setModelName(newModelName);
 }
 
 QString TextAutoGenerateMessage::engineName() const
@@ -199,7 +199,7 @@ QString TextAutoGenerateMessage::engineName() const
 
 void TextAutoGenerateMessage::setEngineName(const QString &newEngineName)
 {
-    answerInfo()->setEngineName(newEngineName);
+    generateMessageInfo()->setEngineName(newEngineName);
 }
 
 QString TextAutoGenerateMessage::senderToString() const
@@ -270,7 +270,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     return msg;
 }
 
-TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::answerInfo()
+TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::generateMessageInfo()
 {
     if (!mMessageInfo) {
         mMessageInfo = new TextAutoGenerateAnswerInfo;
