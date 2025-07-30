@@ -75,3 +75,15 @@ bool TextAutoGenerateAnswerInfo::operator==(const TextAutoGenerateAnswerInfo &ot
 {
     return mInstanceName == other.mInstanceName && mModelName == other.mModelName && mEngineName == other.mEngineName;
 }
+
+void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o)
+{
+    // TODO
+}
+
+TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonObject &o)
+{
+    TextAutoGenerateAnswerInfo *messageInfo = new TextAutoGenerateAnswerInfo;
+    // TODO
+    return messageInfo;
+}

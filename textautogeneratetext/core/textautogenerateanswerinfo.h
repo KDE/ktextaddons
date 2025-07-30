@@ -30,6 +30,9 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    static void serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o);
+    static TextAutoGenerateAnswerInfo *deserialize(const QJsonObject &o);
+
 private:
     QString mModelName;
     QString mEngineName;
