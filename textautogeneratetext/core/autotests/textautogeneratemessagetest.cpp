@@ -31,7 +31,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(msg.instanceName().isEmpty());
 
     // 10/05/2025 => size 224
-    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 144);
+    QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 152);
 }
 
 void TextAutoGenerateMessageTest::shouldCheckFromString()
