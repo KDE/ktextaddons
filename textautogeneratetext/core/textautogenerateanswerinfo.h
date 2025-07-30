@@ -27,6 +27,8 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateAnswerInfo &other) const;
 
+    [[nodiscard]] bool isValid() const;
+
 private:
     QString mModelName;
     QString mEngineName;
