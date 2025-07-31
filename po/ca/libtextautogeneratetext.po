@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:36+0000\n"
+"POT-Creation-Date: 2025-07-31 02:33+0000\n"
 "PO-Revision-Date: 2025-07-26 23:43+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -25,32 +25,32 @@ msgstr ""
 msgid "New Chat..."
 msgstr "Xat nou..."
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Today"
 msgstr "Avui"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies anteriors"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Later"
 msgstr "Més tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:162
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Unknown"
 msgstr "Desconegut"

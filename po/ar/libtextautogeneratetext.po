@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:36+0000\n"
+"POT-Creation-Date: 2025-07-31 02:33+0000\n"
 "PO-Revision-Date: 2025-06-28 17:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid "New Chat..."
 msgstr "دردشة جديدة…"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Favorite"
 msgstr "المفضّلة"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Today"
 msgstr "اليوم"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "7 days previous"
 msgstr "7 أيام السابقة"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "30 days previous"
 msgstr "30 يوم سابق"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Later"
 msgstr "لاحقا"
 
-#: core/models/textautogeneratechatsmodel.cpp:162
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Unknown"
 msgstr "مجهول"

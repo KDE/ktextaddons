@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:36+0000\n"
-"PO-Revision-Date: 2025-05-28 18:39+0200\n"
+"POT-Creation-Date: 2025-07-31 02:33+0000\n"
+"PO-Revision-Date: 2025-07-30 18:31+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid "New Chat..."
 msgstr "Nove Conversation de gruppo (Chat)..."
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Favorite"
 msgstr "Favorito"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Today"
 msgstr "Hodie"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dies precedente"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dies precednte"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Later"
 msgstr "Plus tarde"
 
-#: core/models/textautogeneratechatsmodel.cpp:162
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Unknown"
 msgstr "Incognite"
@@ -82,11 +82,9 @@ msgid "Network"
 msgstr "Rete"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Generic"
-msgstr "General"
+msgstr "Generic"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
 #, fuzzy, kde-format
@@ -94,7 +92,7 @@ msgstr "General"
 #| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Configura IA"
+msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
@@ -245,21 +243,21 @@ msgid "Categories"
 msgstr "Categorias"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
 msgid "Base:"
-msgstr ""
+msgstr "Base"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "Nomine:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "Etiquetta:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
@@ -268,10 +266,10 @@ msgid "Prompt:"
 msgstr "Symbolo de demanda:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
@@ -316,7 +314,7 @@ msgstr "Cancella"
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:26
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "Familia:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:35
 #, kde-format
@@ -1578,7 +1576,7 @@ msgstr "Modello:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "Temperatura:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
@@ -1644,7 +1642,7 @@ msgstr "Ollama"
 #| msgid "Configure…"
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configura..."
+msgstr "Configura"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:16
 #, kde-format
@@ -1667,7 +1665,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Nomine:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
@@ -1676,12 +1674,10 @@ msgid "Select a Type of Instance:"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Configura IA"
+msgstr "Configura "
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
 #, kde-format
@@ -1696,10 +1692,10 @@ msgid "Mark As Default"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Modifica"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
 #, fuzzy, kde-format
@@ -1866,12 +1862,10 @@ msgid "Copy"
 msgstr "Copia"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Copia"
+msgstr "Copia URL"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
@@ -1927,10 +1921,10 @@ msgid "No Archive Found."
 msgstr "Necun plugin trovate."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr ""
+msgstr "Modifica"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
 #, fuzzy, kde-format
@@ -1953,9 +1947,9 @@ msgid "Refresh"
 msgstr "Refresca"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
-#, kde-format
+#, fuzzy, kde-format
 msgid "No Messages Found."
-msgstr ""
+msgstr "Necun messages trovate"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Mistral IA"

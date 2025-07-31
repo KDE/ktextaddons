@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:36+0000\n"
+"POT-Creation-Date: 2025-07-31 02:33+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid "New Chat..."
 msgstr "新聊天..."
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Favorite"
 msgstr "常用"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Today"
 msgstr "今天"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "7 days previous"
 msgstr "过去 7 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "30 days previous"
 msgstr "过去 30 天"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Later"
 msgstr "之后"
 
-#: core/models/textautogeneratechatsmodel.cpp:162
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Unknown"
 msgstr "未知"

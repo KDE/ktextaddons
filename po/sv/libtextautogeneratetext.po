@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 02:36+0000\n"
+"POT-Creation-Date: 2025-07-31 02:33+0000\n"
 "PO-Revision-Date: 2025-07-28 16:17+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -22,32 +22,32 @@ msgstr ""
 msgid "New Chat..."
 msgstr "Ny chatt..."
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
 msgid "Favorite"
 msgstr "Favorit"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:152
 #, kde-format
 msgid "Today"
 msgstr "Idag"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:154
 #, kde-format
 msgid "7 days previous"
 msgstr "Föregående 7 dagar"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:156
 #, kde-format
 msgid "30 days previous"
 msgstr "Föregående 30 dagar"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:158
 #, kde-format
 msgid "Later"
 msgstr "Senare"
 
-#: core/models/textautogeneratechatsmodel.cpp:162
+#: core/models/textautogeneratechatsmodel.cpp:160
 #, kde-format
 msgid "Unknown"
 msgstr "Okänd"
