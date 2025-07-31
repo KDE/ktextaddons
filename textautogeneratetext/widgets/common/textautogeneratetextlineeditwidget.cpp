@@ -32,6 +32,10 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mAttachFile->setAutoRaise(true);
     mAttachFile->setEnabled(false);
 
+    connect(mAttachFile, &QToolButton::clicked, this, [this]() {
+        // TODO open dialogbox
+    });
+
     mTextAutoGenerateTextLineEdit->setObjectName(u"mTextAutoGenerateTextLineEdit"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineEdit, 0, Qt::AlignTop);
     mTextAutoGenerateTextLineEdit->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::TopEdge}));
