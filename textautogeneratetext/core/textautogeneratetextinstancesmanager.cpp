@@ -20,8 +20,8 @@ TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextA
     , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mManager(manager)
+    , mConfig(new KConfig(configFileName()))
 {
-    mConfig = new KConfig(configFileName());
 }
 
 TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager()
