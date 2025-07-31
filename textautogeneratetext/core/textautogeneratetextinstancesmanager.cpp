@@ -21,9 +21,13 @@ TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextA
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mManager(manager)
 {
+    mConfig = new KConfig(configFileName());
 }
 
-TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager() = default;
+TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager()
+{
+    delete mConfig;
+}
 
 QString TextAutoGenerateTextInstancesManager::configFileName() const
 {
@@ -46,18 +50,17 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstancesManager::textAutoGenera
 void TextAutoGenerateTextInstancesManager::loadInstances()
 {
     mTextAutoGenerateEngineLoader->loadPlugins();
-    auto config = new KConfig(configFileName());
-    const QStringList instances = groupList(config);
+    const QStringList instances = groupList(mConfig);
     if (instances.isEmpty()) {
         return; // nothing to be done...
     }
 
-    KConfigGroup configGeneralGroup(config, u"General"_s);
+    const KConfigGroup configGeneralGroup(mConfig, u"General"_s);
 
     QList<TextAutoGenerateTextInstance *> lstInstances;
-    const auto instanceList = groupList(config);
+    const auto instanceList = groupList(mConfig);
     for (const auto &group : instanceList) {
-        KConfigGroup configGroup(config, group);
+        const KConfigGroup configGroup(mConfig, group);
         auto inst = new TextAutoGenerateTextInstance;
         inst->load(configGroup);
 
@@ -87,22 +90,20 @@ QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) con
 
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
-    auto config = new KConfig(configFileName());
-
-    KConfigGroup configGeneralGroup(config, u"General"_s);
+    KConfigGroup configGeneralGroup(mConfig, u"General"_s);
     configGeneralGroup.writeEntry("currentInstance", currentInstance());
 
-    const auto instanceList = groupList(config);
+    const auto instanceList = groupList(mConfig);
     for (const auto &group : instanceList) {
-        config->deleteGroup(group);
+        mConfig->deleteGroup(group);
     }
 
     const QList<TextAutoGenerateTextInstance *> instanceLst = instances();
     for (int i = 0; i < instanceLst.count(); ++i) {
-        KConfigGroup group = config->group(u"Instance #%1"_s.arg(i));
+        KConfigGroup group = mConfig->group(u"Instance #%1"_s.arg(i));
         instanceLst.at(i)->save(group);
     }
-    config->sync();
+    mConfig->sync();
 }
 
 TextAutoGenerateTextInstanceModel *TextAutoGenerateTextInstancesManager::textAutoGenerateTextInstanceModel() const
