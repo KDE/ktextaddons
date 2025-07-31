@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-30 00:41+0000\n"
+"POT-Creation-Date: 2025-07-31 00:41+0000\n"
 "PO-Revision-Date: 2025-07-22 14:49+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -68,12 +68,12 @@ msgstr ""
 msgid "Go to message"
 msgstr "Vai al messaggio"
 
-#: core/textautogeneratetextplugin.cpp:211
+#: core/textautogeneratetextplugin.cpp:213
 #, kde-format
 msgid "Local"
 msgstr "Locale"
 
-#: core/textautogeneratetextplugin.cpp:213
+#: core/textautogeneratetextplugin.cpp:215
 #, kde-format
 msgid "Network"
 msgstr "Rete"
