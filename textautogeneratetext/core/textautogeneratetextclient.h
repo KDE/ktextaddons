@@ -43,8 +43,8 @@ public:
 
     [[nodiscard]] virtual QString translatedName() const = 0;
 
-    virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
-                                                                     TextAutoGenerateText::TextAutoGenerateTextInstance *instance) = 0;
+    [[nodiscard]] virtual TextAutoGenerateTextPlugin *createTextAutoGeneratePlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
+                                                                                   TextAutoGenerateText::TextAutoGenerateTextInstance *instance) = 0;
 
     [[nodiscard]] virtual QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> supportedServers() const = 0;
 
