@@ -4,30 +4,35 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextlineeditwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
-#include <QPushButton>
+#include <QToolButton>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
-    , mSendMessage(new QPushButton(QIcon::fromTheme(u"document-send"_s), i18n("Send"), this))
+    , mSendMessage(new QToolButton(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
+    mainLayout->setSpacing(0);
 
     mTextAutoGenerateTextLineEdit->setObjectName(u"mTextAutoGenerateTextLineEdit"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineEdit, 0, Qt::AlignTop);
+    mTextAutoGenerateTextLineEdit->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::TopEdge}));
 
     mSendMessage->setObjectName(u"mSendMessage"_s);
     mainLayout->addWidget(mSendMessage, 0, Qt::AlignTop);
+    mSendMessage->setToolTip(i18nc("@info:tooltip", "Send"));
+    mSendMessage->setIcon(QIcon::fromTheme(u"document-send"_s));
+    mSendMessage->setAutoRaise(true);
 
     connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::sendMessage, this, [this](const QString &msg) {
         const QString str = msg.trimmed();
@@ -43,7 +48,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         mSendMessage->setEnabled(!mTextAutoGenerateTextLineEdit->document()->isEmpty());
     });
 
-    connect(mSendMessage, &QPushButton::clicked, this, [this]() {
+    connect(mSendMessage, &QToolButton::clicked, this, [this]() {
         Q_EMIT editingFinished(mTextAutoGenerateTextLineEdit->text(), mUuid);
         clearLineEdit();
     });

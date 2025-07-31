@@ -5,14 +5,14 @@
 */
 
 #include "textautogeneratetextlineeditwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/common/textautogeneratetextlineedit.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 
 #include <QHBoxLayout>
-#include <QPushButton>
 #include <QTest>
+#include <QToolButton>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(TextAutoGenerateTextLineEditWidgetTest)
 TextAutoGenerateTextLineEditWidgetTest::TextAutoGenerateTextLineEditWidgetTest(QObject *parent)
     : QObject{parent}
@@ -26,14 +26,16 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
+    QCOMPARE(mainLayout->spacing(), 0);
 
     auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(u"mTextAutoGenerateTextLineEdit"_s);
     QVERIFY(mTextAutoGenerateTextLineEdit);
 
-    auto mSendMessage = w.findChild<QPushButton *>(u"mSendMessage"_s);
+    auto mSendMessage = w.findChild<QToolButton *>(u"mSendMessage"_s);
     QVERIFY(mSendMessage);
-    QVERIFY(!mSendMessage->text().isEmpty());
+    QVERIFY(mSendMessage->text().isEmpty());
     QVERIFY(!mSendMessage->isEnabled());
+    QVERIFY(!mSendMessage->toolTip().isEmpty());
 }
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()
@@ -42,7 +44,7 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()
     auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(u"mTextAutoGenerateTextLineEdit"_s);
     QVERIFY(mTextAutoGenerateTextLineEdit);
 
-    auto mSendMessage = w.findChild<QPushButton *>(u"mSendMessage"_s);
+    auto mSendMessage = w.findChild<QToolButton *>(u"mSendMessage"_s);
     QVERIFY(mSendMessage);
     QVERIFY(!mSendMessage->isEnabled());
 
