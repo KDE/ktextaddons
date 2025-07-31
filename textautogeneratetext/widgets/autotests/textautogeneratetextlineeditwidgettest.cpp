@@ -36,6 +36,12 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSendMessage->text().isEmpty());
     QVERIFY(!mSendMessage->isEnabled());
     QVERIFY(!mSendMessage->toolTip().isEmpty());
+
+    auto mAttachFile = w.findChild<QToolButton *>(u"mAttachFile"_s);
+    QVERIFY(mAttachFile);
+    QVERIFY(mAttachFile->text().isEmpty());
+    QVERIFY(!mAttachFile->isEnabled());
+    QVERIFY(!mAttachFile->toolTip().isEmpty());
 }
 
 void TextAutoGenerateTextLineEditWidgetTest::shouldEnableButton()

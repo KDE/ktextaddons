@@ -42,6 +42,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateEnableState();
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     QToolButton *const mSendMessage;
+    QToolButton *const mAttachFile;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QByteArray mUuid;
 };

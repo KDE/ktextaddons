@@ -17,12 +17,20 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
     , mSendMessage(new QToolButton(this))
+    , mAttachFile(new QToolButton(this))
     , mManager(manager)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
     mainLayout->setSpacing(0);
+
+    mAttachFile->setObjectName(u"mAttachFile"_s);
+    mAttachFile->setToolTip(i18nc("@info:tooltip", "Attach File"));
+    mainLayout->addWidget(mAttachFile, 0, Qt::AlignTop);
+    mAttachFile->setIcon(QIcon::fromTheme(u"mail-attachment-symbolic"_s));
+    mAttachFile->setAutoRaise(true);
+    mAttachFile->setEnabled(false);
 
     mTextAutoGenerateTextLineEdit->setObjectName(u"mTextAutoGenerateTextLineEdit"_s);
     mainLayout->addWidget(mTextAutoGenerateTextLineEdit, 0, Qt::AlignTop);
