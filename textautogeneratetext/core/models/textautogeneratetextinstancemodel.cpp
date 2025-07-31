@@ -69,7 +69,7 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
     case InstanceRoles::Enabled:
         return instance->enabled();
     case InstanceRoles::IsDefault:
-        return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance);
+        return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance) && instance->enabled();
     case InstanceRoles::TranslatedPluginName:
         return instance->plugin()->translatedPluginName();
     default:
