@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelavailableinfowidget.h"
+#include "autogeneratetext_ollama_debug.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
@@ -48,6 +49,10 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     const QStringList languages = index.data(OllamaModelAvailableInfosModel::Languages).toStringList();
     for (const auto &l : languages) {
         const QLocale locale(l);
+        if (locale.language() == QLocale::Language::C) {
+            qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << l;
+            continue;
+        }
         languagesGroupBoxLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
     }
     infoLayout->addWidget(languagesGroupBox);
