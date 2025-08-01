@@ -87,6 +87,7 @@ void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGen
 {
     beginResetModel();
     qDeleteAll(mTextInstances);
+    mTextInstances.clear();
     mTextInstances = newTextInstances;
     endResetModel();
 }
