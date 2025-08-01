@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-31 02:33+0000\n"
-"PO-Revision-Date: 2025-07-10 22:37+0300\n"
+"PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -53,17 +53,15 @@ msgid "Unknown"
 msgstr "Tuntematon"
 
 #: core/models/textautogeneratemessagesmodel.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "Engine: %1\n"
-#| "Model: %2"
+#, kde-format
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "Moottori: %1\n"
-"Malli: %2"
+"Malli: %2\n"
+"Ilmentymän nimi: %3"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -81,19 +79,15 @@ msgid "Network"
 msgstr "Verkko"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Generic"
 msgstr "Perusasetukset"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Tekoälyn asetukset"
+msgstr "%1 – asetukset"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:49
@@ -128,37 +122,37 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
-msgstr ""
+msgstr "Kluster AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Groq Cloud"
-msgstr ""
+msgstr "Groq Cloud"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
 msgid "Cerebras AI"
-msgstr ""
+msgstr "Cerebras AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "Venice"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr ""
+msgstr "Mistral AI:n suuret kielimallit"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr ""
+msgstr "Kluster AI:n pilvipäättely-API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:123
 #, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr ""
+msgstr "Cerebras AI:n pilvipäättely-API"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -246,19 +240,19 @@ msgstr "Luokat"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
-msgstr ""
+msgstr "Pohja:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:48
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "Nimi:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "Luokitus:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
@@ -270,29 +264,25 @@ msgstr "Kehote:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Luo"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr ""
+msgstr "Lataa GGUF-tiedosto…"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Valitse kaikki"
+msgstr "Valitse GGUF-tiedosto"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Poista malli"
+msgstr "Luo malli"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
@@ -333,10 +323,9 @@ msgid "Modified At:"
 msgstr "Muutettu:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Parent Model:"
-msgstr "Malli:"
+msgstr "Emomalli:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
 #, kde-format
@@ -572,7 +561,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:55
 #, kde-format
 msgid "Uncensored Llama 2 model by George Sung and Jarrad Hope."
-msgstr ""
+msgstr "George Sungin ja Jarrad Hopen sensuroimaton Llama 2 -malli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:56
 #, kde-format
@@ -580,6 +569,8 @@ msgid ""
 "DeepSeek Coder is a capable coding model trained on two trillion code and "
 "natural language tokens."
 msgstr ""
+"DeepSeek Coder on 2 biljoonalla koodi- ja luonnollisen kielen merkillä "
+"harjoitettu kyvykäs koodausmalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:57
 #, kde-format
@@ -593,6 +584,9 @@ msgid ""
 "State of the art large language model from Microsoft AI with improved "
 "performance on complex chat, multilingual, reasoning and agent use cases."
 msgstr ""
+"Microsoft AI:n ajantasainen suuri kielimalli, jossa on parannettu "
+"monimutkaisen keskustelun suorituskyky monikielisiin, päättely- ja "
+"agenttikäyttötapauksiin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:61
 #, kde-format
@@ -600,6 +594,8 @@ msgid ""
 "The uncensored Dolphin model based on Mistral that excels at coding tasks. "
 "Updated to version 2.8."
 msgstr ""
+"Mistraliin pohjautuva sensuroimaton Dolphin-malli, joka loistaa "
+"koodaustehtävissä. Päivitetty versioon 2.8."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:63
 #, kde-format
@@ -607,11 +603,14 @@ msgid ""
 "Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on "
 "Llama 3 that has a variety of instruction, conversational, and coding skills."
 msgstr ""
+"Dolphin 2.9 on Eric Hanfordin uusi 8 ja 70 mrd kokoluokan malli, joka "
+"perustuu Llama 3:een ja jolla on valikoima ohjeistus-, keskustelu- ja "
+"koodauskykyjä."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:65
 #, kde-format
 msgid "Yi 1.5 is a high-performing, bilingual language model."
-msgstr ""
+msgstr "Yi 1.5 on suurtehoinen kaksikielinen kielimalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:66
 #, kde-format
@@ -619,6 +618,8 @@ msgid ""
 "Command R is a Large Language Model optimized for conversational interaction "
 "and long context tasks."
 msgstr ""
+"Command R on keskusteluvuorovaikutukseen ja pitkän kontekstin tehtäviin "
+"optimoitu suuri kielimalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:67
 #, kde-format
@@ -626,6 +627,8 @@ msgid ""
 "A general-purpose model ranging from 3 billion parameters to 70 billion, "
 "suitable for entry-level hardware."
 msgstr ""
+"3:sta 70:een miljardiin parametriin ulottuva yleiskäyttöinen malli, joka "
+"sopii aloitustason laitteistoon."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:68
 #, kde-format
@@ -633,6 +636,8 @@ msgid ""
 "A LLaVA model fine-tuned from Llama 3 Instruct with better scores in several "
 "benchmarks."
 msgstr ""
+"Llama 3 Instructista hienosäädetty LLaVA-malli, joka suoriutuu paremmin "
+"monilla mittareilla."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:69
 #, kde-format
@@ -640,6 +645,8 @@ msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
 "that are trained to act as helpful assistants."
 msgstr ""
+"Zephyr on sarja hienosäädettyjä versioita Mistral- ja Mixtral-malleista, "
+"jotka on harjoitettu toimimaan avustajina."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
 #, kde-format
@@ -647,11 +654,13 @@ msgid ""
 "A lightweight AI model with 3.8 billion parameters with performance "
 "overtaking similarly and larger sized models."
 msgstr ""
+"Kevyt 3,8 miljardin parametrin tekoälymalli, jonka suorituskyky vertautuu "
+"suurempikokoisiin malleihin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
-msgstr ""
+msgstr "Upotusmalleja hyvin suuriin lausetason tietojoukkoihin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
 #, kde-format
@@ -659,12 +668,14 @@ msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
 "tasks."
 msgstr ""
+"Codestral on Mistral AI:n laatuaan ensimmäinen koodinluontitehtäviin "
+"suunniteltu koodimalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
 #, kde-format
 msgid ""
 "StarCoder is a code generation model trained on 80+ programming languages."
-msgstr ""
+msgstr "StarCoder on 80+ ohjelmointikielellä harjoitettu koodinluontimalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
 #, kde-format
@@ -752,6 +763,8 @@ msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
 "excel at real-world enterprise use cases."
 msgstr ""
+"Command R+ on tehokas, skaalautuva suuri kielimalli, joka on täsmärakennettu "
+"loistamaan tosielämän yrityskäyttötapauksissa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
@@ -1500,6 +1513,9 @@ msgid ""
 "outperform the best available open models of the same size, including "
 "counterparts from LLaMA, DeepSeek, and Qwen across most standard benchmarks."
 msgstr ""
+"Cogito v1 Preview on Deep Cogiton hybridipäättelymalliperhe, joka useimmilla "
+"mittareilla päihittää parhaat samankokoiset avoimet mallit kuten LLaMAn, "
+"DeepSeekin ja Owenin vastineet."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:261
 #, kde-format
@@ -1531,6 +1547,8 @@ msgid ""
 "have been fine-tuned for improved reasoning and instruction-following "
 "capabilities."
 msgstr ""
+"IBM Granite 2 ja 8 mrd mallit ovat 128 K kontekstipituuden kielimalleja, "
+"jotka on hienosäädetty parempaa päättely- ja ohjeidennoudatuskykyyn."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:270
 #, kde-format
@@ -1538,6 +1556,9 @@ msgid ""
 "Phi 4 reasoning and reasoning plus are 14-billion parameter open-weight "
 "reasoning models that rival much larger models on complex reasoning tasks."
 msgstr ""
+"Phi 4 reasoning ja reasoning plus ovat 14 miljardin parametrin avoimen "
+"painon päättelymalleja, jotka kilpailevat mutkikkaissa päättelytehtävissä "
+"paljon suurempien mallien kanssa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:272
 #, kde-format
@@ -1545,6 +1566,8 @@ msgid ""
 "Phi 4 mini reasoning is a lightweight open model that balances efficiency "
 "with advanced reasoning ability."
 msgstr ""
+"Phi 4 mini reasoning on kevyt avoin malli, joka tasapainottaa tehokkuuden ja "
+"edistyneen päättelykyvyn."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:273
 #, kde-format
@@ -1552,11 +1575,13 @@ msgid ""
 "Gemma 3n models are designed for efficient execution on everyday devices "
 "such as laptops, tablets or phones."
 msgstr ""
+"Gemma 3n -mallit on suunniteltu suoriutumaan tehokkaasti arkilaitteissa "
+"kuten kannettavissa, tableteissa ja puhelimissa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Magistral is a small, efficient reasoning model with 24B parameters."
-msgstr ""
+msgstr "Magistral on pieni, tehokas 24 mrd parametrin päättelymalli."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:275
 #, kde-format
@@ -1564,6 +1589,8 @@ msgid ""
 "An update to Mistral Small that improves on function calling, instruction "
 "following, and less repetition errors."
 msgstr ""
+"Mistral Smallin päivitys, joka parantaa funktiokutsua, ohjeiden seuraamista "
+"ja vähentää toistovirheitä."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1571,11 +1598,13 @@ msgid ""
 "Flagship vision-language model of Qwen and also a significant leap from the "
 "previous Qwen2-VL."
 msgstr ""
+"Qwenin kielimallien lippulaiva ja myös merkittävä harppaus edellisestä Qwen2-"
+"VL:stä."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr ""
+msgstr "Devstral: paras avoimen lähdekoodin malli koodausagenteille."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -1601,12 +1630,10 @@ msgid "Installed Models"
 msgstr "Asennetut mallit"
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Poista malli"
+msgstr "Luo malleja"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:52
 #, kde-format
@@ -1622,7 +1649,7 @@ msgstr "Malli:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "Lämpötila:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:62
 #, kde-format
@@ -1631,12 +1658,13 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
+"Mallin lämpötila. Lämpötilan nostaminen saa mallin vastaamaan luovemmin."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:65
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr ""
+msgstr "Siemen:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:67
 #, kde-format
@@ -1646,6 +1674,9 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
+"Asettaa generointiin käytettävän satunnaislukusiemenen. Malli generoi saman "
+"tekstin samaan kehotteeseen, jos tämä on asetettu tietyksi luvuksi. (Oletus: "
+"0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
@@ -1668,24 +1699,22 @@ msgstr "Etsi mallia…"
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr ""
+msgstr "Ilmentymää ei löytynyt. Lisää sellainen."
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr ""
+msgstr "Lisää ilmentymä…"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr "Käynnistä Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Asetukset…"
@@ -1705,27 +1734,25 @@ msgstr "Lähetä"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
-msgstr ""
+msgstr "Lisää ilmentymä"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "Nimi:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr ""
+msgstr "Valitse ilmentymän tyyppi:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Tekoälyn asetukset"
+msgstr "Ilmentymien asetukset"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
 #, kde-format
@@ -1737,35 +1764,30 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr ""
+msgstr "Merkitse oletukseksi"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr ""
+msgstr "Muokkaa…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove as Favorite"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Poista suosikeista"
+msgstr "Poista ilmentymä"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Haluatko poistaa tämän mallin (%1)?"
+msgstr "Haluatko poistaa tämän ilmentymän (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove as Favorite"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Poista suosikeista"
+msgstr "Poista ilmentymä"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratehistorywidget.cpp:28
@@ -1779,7 +1801,7 @@ msgstr "Etsi…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr ""
+msgstr "Lisää ilmentymä…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -1842,13 +1864,13 @@ msgstr "API-avain:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr ""
+msgstr "Merkkejä enintään:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Pikakysy"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
 #, kde-format
@@ -1860,7 +1882,7 @@ msgstr "Asetukset…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
-msgstr ""
+msgstr "Tyhjennä"
 
 #: widgets/textautogeneratedialog.cpp:37
 #, kde-format
@@ -1910,12 +1932,10 @@ msgid "Copy"
 msgstr "Kopioi"
 
 #: widgets/view/textautogeneratebaselistview.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "Kopioi"
+msgstr "Kopioi verkko-osoite"
 
 #: widgets/view/textautogeneratebaselistview.cpp:67
 #, kde-format
@@ -1999,7 +2019,7 @@ msgstr "Virkistä"
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr ""
+msgstr "Viestejä ei löytynyt."
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Mistral IA"
