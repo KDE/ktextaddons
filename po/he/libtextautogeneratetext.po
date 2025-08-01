@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:41+0000\n"
+"POT-Creation-Date: 2025-08-01 00:42+0000\n"
 "PO-Revision-Date: 2025-07-26 09:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1895,8 +1895,16 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "נא לכתוב הודעה"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:19
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Attach File"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "שליחה"
 

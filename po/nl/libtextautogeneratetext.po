@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 00:41+0000\n"
+"POT-Creation-Date: 2025-08-01 00:42+0000\n"
 "PO-Revision-Date: 2025-07-26 10:16+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1989,8 +1989,16 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Voer een bericht in"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:19
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Attach File"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Verzenden"
 
