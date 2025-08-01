@@ -108,7 +108,7 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
 {
     // Start progress
     d->manager->changeInProgress(info.chatId, info.messageUuid, true);
-    sendToAssistant(std::move(info));
+    sendToAssistant(info);
 }
 
 void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str)

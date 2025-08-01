@@ -11,7 +11,8 @@ TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
 {
-    delete mPlugin;
+    // mPlugin->deleteLater();
+    // mPlugin = nullptr;
 }
 
 QString TextAutoGenerateTextInstance::displayName() const
