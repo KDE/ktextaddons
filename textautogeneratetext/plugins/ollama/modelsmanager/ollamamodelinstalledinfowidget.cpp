@@ -4,14 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfowidget.h"
-using namespace Qt::Literals::StringLiterals;
-
+#include "autogeneratetext_ollama_debug.h"
 #include "ollamamodelflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     : QWidget{parent}
     , mFamilyNameLabel(new QLabel(this))
@@ -106,6 +106,10 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
         auto vboxLanguagesLayout = new OllamaModelFlowLayout(languagesGroupBox);
         for (const auto &lang : (*it).languages()) {
             const QLocale locale(lang);
+            if (locale.language() == QLocale::Language::C) {
+                qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << lang;
+                continue;
+            }
             vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
         }
 
