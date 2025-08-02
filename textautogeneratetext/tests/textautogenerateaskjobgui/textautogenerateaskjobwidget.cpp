@@ -23,8 +23,11 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
 
     auto lineEdit = new QLineEdit(this);
     hbox->addWidget(lineEdit);
-    auto button = new QPushButton(u"Ask"_s, this);
-    hbox->addWidget(button);
+    auto askButton = new QPushButton(u"Ask"_s, this);
+    hbox->addWidget(askButton);
+
+    auto configureButton = new QPushButton(u"Configure..."_s, this);
+    hbox->addWidget(configureButton);
 
     mainLayout->addLayout(hbox);
 
@@ -33,9 +36,9 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
 
     mainLayout->addWidget(plainTextEdit);
 
-    connect(button, &QPushButton::clicked, this, [this, lineEdit, plainTextEdit]() {
+    TextAutoGenerateText::TextAutoGenerateManager *manager = new TextAutoGenerateText::TextAutoGenerateManager(this);
+    connect(askButton, &QPushButton::clicked, this, [this, lineEdit, plainTextEdit, manager]() {
         if (const QString text = lineEdit->text(); !text.isEmpty()) {
-            TextAutoGenerateText::TextAutoGenerateManager *manager = new TextAutoGenerateText::TextAutoGenerateManager(this);
             TextAutoGenerateText::TextAutoGenerateAskJob *job = new TextAutoGenerateText::TextAutoGenerateAskJob(this);
             job->setText(text);
             job->setManager(manager);
@@ -47,6 +50,10 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
             });
             job->start();
         }
+    });
+
+    connect(configureButton, &QPushButton::clicked, this, [this, manager]() {
+        // TODO
     });
 }
 
