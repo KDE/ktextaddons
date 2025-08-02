@@ -113,9 +113,17 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
         GenericNetworkReply::RequestTypes::StreamingChat,
         this};
     connect(reply, &GenericNetworkReply::finished, this, [this, reply] {
-        Q_EMIT finished(reply->readResponse());
+        const auto response = reply->readResponse();
+        qDebug() << "response  " << response;
+        Q_EMIT finished(response);
     });
     return reply;
+}
+
+TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
+{
+    // TODO
+    return getChatCompletion(request);
 }
 
 GenericNetworkManager::PluginNetworkType GenericNetworkManager::pluginNetworkType() const

@@ -166,7 +166,29 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
 
 void GenericNetworkPlugin::askToAssistant(const QString &msg)
 {
-    // TODO
+    TextAutoGenerateText::TextAutoGenerateTextRequest req;
+    req.setMessage(msg);
+    req.setModel(currentModel());
+    auto reply = mGenericManager->getCompletion(req);
+    const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
+    mConnections.insert(
+        reply,
+        QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, this]() {
+                                                       Q_EMIT askToAssistantAnswer(reply->readResponse());
+                                                   })));
+    mConnections.insert(
+        reply,
+        QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, this] {
+                                                       Q_EMIT askToAssistantDone();
+                                                       mConnections.remove(reply);
+                                                       reply->deleteLater();
+#if 0
+                                // TODO add context + info
+                            message.context = message.llmReply->context();
+                            message.info = message.llmReply->info();
+#endif
+                                                       // Q_EMIT finished(message); // TODO add message as argument ???
+                                                   })));
 }
 
 void GenericNetworkPlugin::cancelRequest(const QByteArray &uuid)
