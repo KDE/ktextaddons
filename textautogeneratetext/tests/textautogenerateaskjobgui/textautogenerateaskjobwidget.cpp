@@ -13,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <TextAutoGenerateText/TextAutoGenerateAskJob>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
+#include <TextAutoGenerateText/TextAutoGenerateTextInstancesManagerDialog>
 
 TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
     : QWidget{parent}
@@ -53,7 +54,8 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
     });
 
     connect(configureButton, &QPushButton::clicked, this, [this, manager]() {
-        // TODO
+        TextAutoGenerateText::TextAutoGenerateTextInstancesManagerDialog dlg(manager, this);
+        dlg.exec();
     });
 }
 
