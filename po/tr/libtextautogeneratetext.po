@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:42+0000\n"
-"PO-Revision-Date: 2025-07-26 09:35+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"POT-Creation-Date: 2025-08-02 00:42+0000\n"
+"PO-Revision-Date: 2025-08-01 12:48+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
@@ -225,13 +225,13 @@ msgstr "Gömülü"
 msgid "Reasoning"
 msgstr "Akıl Yürütme"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "Desteklenen Diller"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
 #, kde-format
 msgid "Models"
 msgstr "Modeller"
@@ -337,7 +337,7 @@ msgstr "Değiştirilme:"
 msgid "Parent Model:"
 msgstr "Üst model:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
 #, kde-format
 msgid "Features Supported"
 msgstr "Desteklenen Özellikler"
@@ -1992,11 +1992,10 @@ msgstr "İleti gir…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr ""
+msgstr "Dosya İliştir"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Gönder"

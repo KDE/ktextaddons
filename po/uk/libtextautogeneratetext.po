@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:42+0000\n"
-"PO-Revision-Date: 2025-07-26 09:55+0300\n"
+"POT-Creation-Date: 2025-08-02 00:42+0000\n"
+"PO-Revision-Date: 2025-08-01 09:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -226,13 +226,13 @@ msgstr "Вкладення"
 msgid "Reasoning"
 msgstr "Аналіз"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "Підтримувані мови"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
 #, kde-format
 msgid "Models"
 msgstr "Моделі"
@@ -338,7 +338,7 @@ msgstr "Дата зміни:"
 msgid "Parent Model:"
 msgstr "Батьківська модель:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
 #, kde-format
 msgid "Features Supported"
 msgstr "Підтримувані можливості"
@@ -2000,11 +2000,10 @@ msgstr "Введіть повідомлення"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr ""
+msgstr "Долучити файл"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Надіслати"

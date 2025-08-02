@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:42+0000\n"
-"PO-Revision-Date: 2025-07-28 22:40+0200\n"
+"POT-Creation-Date: 2025-08-02 00:42+0000\n"
+"PO-Revision-Date: 2025-08-01 09:28+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
@@ -225,13 +225,13 @@ msgstr "Inbäddad"
 msgid "Reasoning"
 msgstr "Resonemang"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "Språk som stöds"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
 #, kde-format
 msgid "Models"
 msgstr "Modeller"
@@ -337,7 +337,7 @@ msgstr "Ändrad:"
 msgid "Parent Model:"
 msgstr "Överliggande modell:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
 #, kde-format
 msgid "Features Supported"
 msgstr "Funktioner som stöds"
@@ -1996,11 +1996,10 @@ msgstr "Skriv in ett meddelande"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr ""
+msgstr "Bifoga fil"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Skicka"
