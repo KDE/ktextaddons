@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 02:33+0000\n"
+"POT-Creation-Date: 2025-08-02 02:34+0000\n"
 "PO-Revision-Date: 2025-07-29 07:04+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -216,13 +216,13 @@ msgstr "ჩაშენება"
 msgid "Reasoning"
 msgstr "მსჯელობა"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "მხარდაჭერილი ენები"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
 #, kde-format
 msgid "Models"
 msgstr "მოდელები"
@@ -328,7 +328,7 @@ msgstr "ცვლილების დრო:"
 msgid "Parent Model:"
 msgstr "მშობელი მოდელი:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
 #, kde-format
 msgid "Features Supported"
 msgstr "მხარდაჭერილი ფუნქციები"

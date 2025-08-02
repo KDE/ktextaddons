@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-31 02:33+0000\n"
+"POT-Creation-Date: 2025-08-02 02:34+0000\n"
 "PO-Revision-Date: 2025-06-29 09:46+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -218,13 +218,13 @@ msgstr "Intégration"
 msgid "Reasoning"
 msgstr "Raisonnement"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:46
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
 #, kde-format
 msgid "Languages Supported"
 msgstr "Langues prises en charge"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:56
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
 #, kde-format
 msgid "Models"
 msgstr "Modèles"
@@ -335,7 +335,7 @@ msgstr "Modifié à :"
 msgid "Parent Model:"
 msgstr "Modèle :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:122
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
 #, kde-format
 msgid "Features Supported"
 msgstr "Fonctionnalités prises en charge"
