@@ -52,6 +52,10 @@ void TextAutoGenerateAskJob::slotInitializeDone()
             &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToAssistantDone,
             this,
             &TextAutoGenerateAskJob::slotAskToLlmDone);
+    connect(mManager->textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToAssistantAnswer,
+            this,
+            &TextAutoGenerateAskJob::generateTextInProgress);
     mManager->askToAssistant(mText);
 }
 
