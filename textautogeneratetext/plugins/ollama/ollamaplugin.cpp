@@ -165,6 +165,9 @@ void OllamaPlugin::setDisplayName(const QString &newName)
 
 QString OllamaPlugin::currentModel() const
 {
+    if (mOllamaSettings->currentModel().isEmpty()) {
+        return fallBackModel();
+    }
     return mOllamaSettings->currentModel();
 }
 
