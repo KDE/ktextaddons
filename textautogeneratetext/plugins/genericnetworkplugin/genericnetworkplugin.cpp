@@ -132,7 +132,6 @@ QString GenericNetworkPlugin::engineName() const
 void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     TextAutoGenerateText::TextAutoGenerateTextRequest req;
-    req.setMessage(info.message);
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
     auto reply = mGenericManager->getChatCompletion(req);
@@ -167,7 +166,13 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
 void GenericNetworkPlugin::askToAssistant(const QString &msg)
 {
     TextAutoGenerateText::TextAutoGenerateTextRequest req;
-    req.setMessage(msg);
+    QJsonArray array;
+    QJsonObject obj;
+    obj["role"_L1] = u"user"_s;
+    obj["content"_L1] = msg;
+    array.append(obj);
+
+    req.setMessages(array);
     req.setModel(currentModel());
     auto reply = mGenericManager->getCompletion(req);
     const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);

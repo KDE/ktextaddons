@@ -126,7 +126,6 @@ void OllamaPlugin::askToAssistant(const QString &msg)
 void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
     TextAutoGenerateText::TextAutoGenerateTextRequest req;
-    req.setMessage(info.message);
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
     auto reply = mManager->getChatCompletion(req);
