@@ -218,4 +218,14 @@ QString TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::Text
     return {};
 }
 
+QString TextAutoGenerateTextPlugin::fallBackModel() const
+{
+    // Fallback to first model
+    if (!mModels.isEmpty()) {
+        return mModels.constFirst().identifier;
+    }
+    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Current model is empty. It will failed to work.";
+    return {};
+}
+
 #include "moc_textautogeneratetextplugin.cpp"

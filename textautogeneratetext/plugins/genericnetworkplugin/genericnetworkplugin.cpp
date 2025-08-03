@@ -236,6 +236,9 @@ void GenericNetworkPlugin::setDisplayName(const QString &newName)
 
 QString GenericNetworkPlugin::currentModel() const
 {
+    if (mSettings->currentModel().isEmpty()) {
+        return fallBackModel();
+    }
     return mSettings->currentModel();
 }
 

@@ -97,6 +97,7 @@ Q_SIGNALS:
 
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
+    [[nodiscard]] QString fallBackModel() const;
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     QList<ModelInfoNameAndIdentifier> mModels;
 
