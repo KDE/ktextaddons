@@ -96,7 +96,7 @@ add_library(autogeneratetext_genericnetwork MODULE)
 ecm_qt_declare_logging_category(autogeneratetext_genericnetwork
     HEADER autogeneratetext_genericnetwork_plugin_debug.h
     IDENTIFIER AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG
-    CATEGORY_NAME org.kde.kf.autogeneratetext.genericnetwork
+    CATEGORY_NAME org.kde.kf.autogeneratetext.genericnetwork.plugin
     DESCRIPTION "autogenerate text genericnetwork plugin"
     EXPORT KTEXTADDONS
 )
