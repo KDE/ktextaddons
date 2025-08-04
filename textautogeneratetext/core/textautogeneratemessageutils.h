@@ -6,12 +6,12 @@
 
 #pragma once
 
+#include "textautogeneratetext_export.h"
 #include <QString>
-
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateMessageUtils
 {
-[[nodiscard]] QString convertTextToHtml(const QString &str, const QString &searchedText = QString());
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString convertTextToHtml(const QString &str, const QString &searchedText = QString());
 }
 };
