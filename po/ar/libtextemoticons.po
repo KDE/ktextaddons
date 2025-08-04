@@ -79,7 +79,7 @@ msgstr "مخصصة"
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
-msgstr "امسح الحديثة"
+msgstr "امحُ الحديثة"
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
