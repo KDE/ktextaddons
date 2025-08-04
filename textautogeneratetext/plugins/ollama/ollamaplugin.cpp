@@ -32,9 +32,11 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             setReady(true);
         }
     });
-    if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
-        mManager->loadModels();
-    }
+    connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
+        if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
+            mManager->loadModels();
+        }
+    });
 }
 
 OllamaPlugin::~OllamaPlugin()
