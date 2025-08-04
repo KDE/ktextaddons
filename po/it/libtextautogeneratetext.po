@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-02 00:42+0000\n"
-"PO-Revision-Date: 2025-07-22 14:49+0200\n"
+"PO-Revision-Date: 2025-08-01 15:43+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -142,7 +142,7 @@ msgstr "Venice"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Llama Api"
-msgstr ""
+msgstr "Llama Api"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
 #, kde-format
@@ -162,7 +162,7 @@ msgstr "API di inferenza cloud di Cerebras AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
 #, kde-format
 msgid "Meta AI Llama API"
-msgstr ""
+msgstr "Meta AI Llama API"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -2017,11 +2017,10 @@ msgstr "Digita un messaggio"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr ""
+msgstr "Allega file"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Invia"
@@ -2051,9 +2050,7 @@ msgid "Configure Instances"
 msgstr "Configura istanze"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Aggiungi istanza…"
@@ -2288,17 +2285,13 @@ msgid "No Archive Found."
 msgstr "Nessun archivio trovato."
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:378
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Modifica…"
 
 #: widgets/view/textautogeneratelistviewdelegate.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Rimuovi"
