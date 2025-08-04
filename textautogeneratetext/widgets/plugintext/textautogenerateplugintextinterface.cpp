@@ -12,3 +12,5 @@ TextAutoGeneratePluginTextInterface::TextAutoGeneratePluginTextInterface(QObject
 }
 
 TextAutoGeneratePluginTextInterface::~TextAutoGeneratePluginTextInterface() = default;
+
+#include "moc_textautogenerateplugintextinterface.cpp"

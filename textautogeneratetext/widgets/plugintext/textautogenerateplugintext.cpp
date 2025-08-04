@@ -12,3 +12,5 @@ TextAutoGeneratePluginText::TextAutoGeneratePluginText(QObject *parent)
 }
 
 TextAutoGeneratePluginText::~TextAutoGeneratePluginText() = default;
+
+#include "moc_textautogenerateplugintext.cpp"
