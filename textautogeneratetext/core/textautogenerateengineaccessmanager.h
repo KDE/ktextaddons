@@ -23,7 +23,7 @@ public:
 
     static TextAutoGenerateEngineAccessManager *self();
 
-    QNetworkAccessManager *networkManager() const;
+    [[nodiscard]] QNetworkAccessManager *networkManager() const;
 
 private:
     QNetworkAccessManager *const mNetworkAccessManager;
