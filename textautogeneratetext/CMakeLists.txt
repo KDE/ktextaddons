@@ -268,6 +268,10 @@ target_sources(
         widgets/instancesmanager/textautogeneratetextinstancesmanagerlistviewdelegate.cpp
         widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h
         widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp
+        widgets/plugintext/textautogenerateplugintext.h
+        widgets/plugintext/textautogenerateplugintext.cpp
+        widgets/plugintext/textautogenerateplugintextinterface.h
+        widgets/plugintext/textautogenerateplugintextinterface.cpp
 )
 
 if(BUILD_TESTING)
@@ -414,6 +418,15 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsi
     RELATIVE widgets/instancesmanager
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS
+    HEADER_NAMES
+    TextAutoGeneratePluginText
+    TextAutoGeneratePluginTextInterface
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextplugintext_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/plugintext
+)
+
 install(TARGETS KF6TextAutoGenerateText EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
@@ -433,6 +446,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsinstancesmanager_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -448,6 +462,7 @@ install(
         ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextplugintext_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
@@ -462,6 +477,13 @@ if(BUILD_QCH)
         SOURCES # using only public headers, to cover only public API
         ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetextplugintext_HEADERS}
         LINK_QCHS
             Qt6Core_QCH
             Qt6Gui_QCH
