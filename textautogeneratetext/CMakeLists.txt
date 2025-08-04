@@ -272,6 +272,10 @@ target_sources(
         widgets/plugintext/textautogenerateplugintext.cpp
         widgets/plugintext/textautogenerateplugintextinterface.h
         widgets/plugintext/textautogenerateplugintextinterface.cpp
+        widgets/plugintext/textautogenerateplugintextmanager.cpp
+        widgets/plugintext/textautogenerateplugintextmanager.h
+        widgets/plugintext/textautogenerateplugintextutils.h
+        widgets/plugintext/textautogenerateplugintextutils.cpp
 )
 
 if(BUILD_TESTING)

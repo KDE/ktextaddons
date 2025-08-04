@@ -13,4 +13,24 @@ TextAutoGeneratePluginText::TextAutoGeneratePluginText(QObject *parent)
 
 TextAutoGeneratePluginText::~TextAutoGeneratePluginText() = default;
 
+bool TextAutoGeneratePluginText::enabled() const
+{
+    return mEnabled;
+}
+
+void TextAutoGeneratePluginText::setEnabled(bool newEnabled)
+{
+    mEnabled = newEnabled;
+}
+
+bool TextAutoGeneratePluginText::hasConfigureDialog() const
+{
+    return false;
+}
+
+void TextAutoGeneratePluginText::showConfigureDialog(QWidget *parent) const
+{
+    Q_UNUSED(parent);
+}
+
 #include "moc_textautogenerateplugintext.cpp"

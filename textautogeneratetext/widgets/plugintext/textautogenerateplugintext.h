@@ -21,8 +21,18 @@ public:
     virtual TextAutoGeneratePluginTextInterface *createInterface(QObject *parent) = 0;
 
     [[nodiscard]] virtual int order() const = 0;
+
+    [[nodiscard]] bool enabled() const;
+    void setEnabled(bool newEnabled);
+
+    [[nodiscard]] virtual bool hasConfigureDialog() const;
+    virtual void showConfigureDialog(QWidget *parent = nullptr) const;
+
 Q_SIGNALS:
     void errorMessage(const QString &message);
     void successMessage(const QString &message);
+
+protected:
+    bool mEnabled = true;
 };
 }
