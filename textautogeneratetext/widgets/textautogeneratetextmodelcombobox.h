@@ -17,5 +17,6 @@ public:
     ~TextAutoGenerateTextModelComboBox() override;
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
+    void setCurrentModel(const QString &identifier);
 };
 }
