@@ -75,6 +75,8 @@ void TextAutoGenerateQuickAskHeaderWidget::updateEngineModelName(const QString &
 void TextAutoGenerateQuickAskHeaderWidget::setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst)
 {
     mModelComboBox->setModelList(lst);
+    // Initialize current Model
+    mModelComboBox->setCurrentModel(mManager->textAutoGeneratePlugin()->currentModel());
 }
 
 QString TextAutoGenerateQuickAskHeaderWidget::currentModel() const
