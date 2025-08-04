@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratesearchwidget.h"
-#include "core/textautogeneratesearchjob.h"
+#include "core/jobs/textautogeneratesearchjob.h"
 #include "textautogeneratesearchlineedit.h"
 #include "widgets/view/textautogeneratesearchlistview.h"
 #include <KLineEditEventHandler>

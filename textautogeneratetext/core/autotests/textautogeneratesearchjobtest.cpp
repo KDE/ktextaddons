@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratesearchjobtest.h"
-#include "core/textautogeneratesearchjob.h"
+#include "core/jobs/textautogeneratesearchjob.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateSearchJobTest)
 

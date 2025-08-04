@@ -5,7 +5,7 @@
 */
 
 #include "textautogeneratesearchjob.h"
-#include "textautogeneratemanager.h"
+#include "core/textautogeneratemanager.h"
 #include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;

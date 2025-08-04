@@ -116,8 +116,6 @@ target_sources(
         core/textautogeneratemessageutils.cpp
         core/textautogeneratechat.h
         core/textautogeneratechat.cpp
-        core/textautogenerateexportchatbasejob.cpp
-        core/textautogenerateexportchatbasejob.h
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -142,10 +140,6 @@ target_sources(
         core/localdatabase/textautogeneratelocalmessagesdatabase.h
         core/localdatabase/textautogeneratelocaldatabasemanager.h
         core/localdatabase/textautogeneratelocaldatabasemanager.cpp
-        core/textautogeneratesearchjob.h
-        core/textautogeneratesearchjob.cpp
-        core/textautogenerateaskjob.h
-        core/textautogenerateaskjob.cpp
         core/textautogeneratesearchmessageutils.h
         core/textautogeneratesearchmessageutils.cpp
         core/textautogeneratereply.h
@@ -158,8 +152,14 @@ target_sources(
         core/textautogeneratetextinstance.cpp
         core/textautogeneratetextinstancesmanager.h
         core/textautogeneratetextinstancesmanager.cpp
+        core/jobs/textautogenerateexportchatbasejob.cpp
+        core/jobs/textautogenerateexportchatbasejob.h
         core/jobs/textautogenerateexportchatasjsonjob.cpp
         core/jobs/textautogenerateexportchatasjsonjob.h
+        core/jobs/textautogeneratesearchjob.h
+        core/jobs/textautogeneratesearchjob.cpp
+        core/jobs/textautogenerateaskjob.h
+        core/jobs/textautogenerateaskjob.cpp
         core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h
         core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.cpp
         core/syntaxhighlighting/textautogeneratetexthighlighter.h
@@ -335,13 +335,11 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateChat
     TextAutoGenerateTextReplyInfo
     TextAutoGenerateSearchMessage
-    TextAutoGenerateAskJob
     TextAutoGenerateReply
     TextAutoGenerateTextRequest
     TextAutoGenerateManagerBase
     TextAutoGenerateTextInstance
     TextAutoGenerateTextInstancesManager
-    TextAutoGenerateExportChatBaseJob
     TextAutoGenerateMessageUtils
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
@@ -362,6 +360,8 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremode
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS
     HEADER_NAMES
     TextAutoGenerateExportChatAsJsonJob
+    TextAutoGenerateAskJob
+    TextAutoGenerateExportChatBaseJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/jobs

@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateaskjobtest.h"
-#include "core/textautogenerateaskjob.h"
+#include "core/jobs/textautogenerateaskjob.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateAskJobTest)
 
