@@ -26,4 +26,12 @@ QString TextAutoGenerateTextModelComboBox::currentModel() const
     return currentData().toString();
 }
 
+void TextAutoGenerateTextModelComboBox::setCurrentModel(const QString &identifier)
+{
+    const int index = findData(identifier);
+    if (index != -1) {
+        setCurrentIndex(index);
+    }
+}
+
 #include "moc_textautogeneratetextmodelcombobox.cpp"
