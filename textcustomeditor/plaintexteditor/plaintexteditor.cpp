@@ -370,7 +370,7 @@ void PlainTextEditor::setReadOnly(bool readOnly)
     } else {
         if (d->customPalette && testAttribute(Qt::WA_SetPalette)) {
             QPalette p = palette();
-            QColor color = p.color(QPalette::Normal, QPalette::Base);
+            const QColor color = p.color(QPalette::Normal, QPalette::Base);
             p.setColor(QPalette::Base, color);
             p.setColor(QPalette::Window, color);
             setPalette(p);
@@ -725,10 +725,10 @@ void PlainTextEditor::moveLineUpDown(bool moveUp)
         }
     }
 
-    int start = move.position();
+    const int start = move.position();
     move.clearSelection();
     move.insertText(text);
-    int end = move.position();
+    const int end = move.position();
 
     if (hasSelection) {
         move.setPosition(end);
