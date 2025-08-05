@@ -9,7 +9,6 @@
 class QLineEdit;
 class OllamaComboBoxWidget;
 class QPlainTextEdit;
-class KMessageWidget;
 class OllamaManager;
 class QDoubleSpinBox;
 class QSpinBox;

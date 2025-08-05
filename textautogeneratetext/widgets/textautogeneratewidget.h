@@ -12,7 +12,6 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateResultWidget;
 class TextAutoGenerateTextLineEditWidget;
-class TextAutoGenerateMessage;
 class TextAutoGenerateManager;
 class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
