@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-24 02:39+0000\n"
-"PO-Revision-Date: 2025-01-08 18:33+0400\n"
+"PO-Revision-Date: 2025-08-04 18:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -121,7 +121,7 @@ msgstr "تصدير ملفّ التّصحيح الآليّ"
 #: widgets/ui/autocorrectionwidget.ui:21
 #, kde-format
 msgid "Enable autocorrection"
-msgstr "فعّل التّصحيح الآليّ"
+msgstr "مكّن التّصحيح الآليّ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: widgets/ui/autocorrectionwidget.ui:30
@@ -145,7 +145,7 @@ msgstr "استورد…"
 #: widgets/ui/autocorrectionwidget.ui:77
 #, kde-format
 msgid "Ad&vanced Autocorrection"
-msgstr "تصحيح تلقائي متق&دم"
+msgstr "تصحيح آليّ متق&دم"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeButton)
 #. i18n: ectx: property (text), widget (QPushButton, remove2)
@@ -218,7 +218,7 @@ msgstr "أضف"
 #: widgets/ui/autocorrectionwidget.ui:344
 #, kde-format
 msgid "Si&mple Autocorrection"
-msgstr "تصحيح تلقائي &بسيط"
+msgstr "تصحيح آليّ &بسيط"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, upperCase)
 #: widgets/ui/autocorrectionwidget.ui:350
@@ -367,7 +367,7 @@ msgstr "استبدل علامات الاقتباس المز&دوجة بعلام�
 #: widgets/ui/autocorrectionwidget.ui:655
 #, kde-format
 msgid "By Default"
-msgstr "افتراضياً"
+msgstr "مبدئياً"
 
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote1)
 #. i18n: ectx: property (text), widget (QPushButton, doubleQuote2)

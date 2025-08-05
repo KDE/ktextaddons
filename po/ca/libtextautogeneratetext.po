@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 02:34+0000\n"
+"POT-Creation-Date: 2025-08-05 03:03+0000\n"
 "PO-Revision-Date: 2025-07-26 23:43+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1876,7 +1876,7 @@ msgid "Devstral: the best open source model for coding agents."
 msgstr ""
 "Devstral: el model de codi font obert millor per a agents de codificació."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
