@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 00:42+0000\n"
+"POT-Creation-Date: 2025-08-05 00:41+0000\n"
 "PO-Revision-Date: 2025-08-01 12:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -100,7 +100,7 @@ msgid "General"
 msgstr "General"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:54
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -1885,7 +1885,7 @@ msgid "Devstral: the best open source model for coding agents."
 msgstr ""
 "Devstral: el model de codi font obert millor per a agents de codificació."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1902,13 +1902,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Models instal·lats"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"

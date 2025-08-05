@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-02 00:42+0000\n"
+"POT-Creation-Date: 2025-08-05 00:41+0000\n"
 "PO-Revision-Date: 2025-08-02 19:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -98,7 +98,7 @@ msgid "General"
 msgstr "כללי"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/ollama/ollamaconfiguredialog.cpp:54
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -1775,7 +1775,7 @@ msgstr "מודל דגל לשפה חזותית של Qwen וגם קפיצה משמ
 msgid "Devstral: the best open source model for coding agents."
 msgstr "‏Devstral: מודל הקוד הפתוח הטוב ביותר לסוכני פיתוח תוכנה."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1792,13 +1792,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "הגדרת Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:61
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "מודלים מותקנים"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:67
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
