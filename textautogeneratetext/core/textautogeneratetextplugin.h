@@ -104,7 +104,7 @@ protected:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);
-    TEXTAUTOGENERATETEXT_NO_EXPORT [[nodiscard]] QJsonObject createPromptMessage() const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QJsonObject createPromptMessage() const;
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }
