@@ -315,16 +315,16 @@ QModelIndex TextAutoGenerateMessagesModel::indexForUuid(const QByteArray &uuid) 
     return idx;
 }
 
-QJsonArray TextAutoGenerateMessagesModel::convertToOllamaChat() const
+QList<QJsonObject> TextAutoGenerateMessagesModel::convertToOllamaChat() const
 {
-    QJsonArray array;
+    QList<QJsonObject> lst;
     for (const auto &msg : mMessages) {
         const auto obj = msg.convertToOllamaChatJson();
         if (!obj.isEmpty()) {
-            array.append(obj);
+            lst.append(obj);
         }
     }
-    return array;
+    return lst;
 }
 
 #include "moc_textautogeneratemessagesmodel.cpp"

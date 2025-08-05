@@ -84,6 +84,21 @@ void TextAutoGenerateTextPlugin::setReady(bool newReady)
     Q_EMIT initializedDone();
 }
 
+QJsonArray TextAutoGenerateTextPlugin::createListMessages(const QList<QJsonObject> &objs) const
+{
+    QList<QJsonObject> lstObj;
+    auto obj = createPromptMessage();
+    if (!obj.isEmpty()) {
+        lstObj.append(obj);
+    }
+    lstObj += objs;
+    QJsonArray array;
+    for (const auto &o : std::as_const(lstObj)) {
+        array.append(o);
+    }
+    return array;
+}
+
 void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str)
 {
     if (ready()) {
@@ -95,7 +110,7 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QBy
             info.message = str;
             info.messageUuid = llmUuid;
             info.chatId = chatId;
-            info.messagesArray = messageModel->convertToOllamaChat();
+            info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
 
             initializeProgress(info);
         } else {
@@ -148,11 +163,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
 
-        auto obj = createPromptMessage();
-        if (!obj.isEmpty()) {
-            info.messagesArray.append(obj);
-        }
-        info.messagesArray.append(messageModel->convertToOllamaChat());
+        info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
         qDebug() << "info.messagesArray  " << info.messagesArray;
 
         d->manager->addMessage(chatId, msgLlm);
