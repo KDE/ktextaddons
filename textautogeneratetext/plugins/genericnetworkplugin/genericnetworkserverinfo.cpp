@@ -209,7 +209,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
             .identifier = pluginName(static_cast<GenericNetworkManager::PluginNetworkType>(i)),
             .pluginName = name,
         };
-        listInfo.append(std::move(info));
+        listInfo.append(info);
     }
     return listInfo;
 }
