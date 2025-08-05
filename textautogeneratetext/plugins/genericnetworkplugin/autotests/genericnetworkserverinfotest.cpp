@@ -26,6 +26,7 @@ void GenericNetworkServerInfoTest::shouldConvertPluginNetworkTypeFromString()
     QCOMPARE(info.pluginNetworkTypeFromString(u"cerebrasai"_s), GenericNetworkManager::PluginNetworkType::CerebrasAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"veniceai"_s), GenericNetworkManager::PluginNetworkType::VeniceAI);
     QCOMPARE(info.pluginNetworkTypeFromString(u"llamaapi"_s), GenericNetworkManager::PluginNetworkType::LlamaApi);
+    QCOMPARE(info.pluginNetworkTypeFromString(u"anthropic"_s), GenericNetworkManager::PluginNetworkType::Anthropic);
 }
 
 void GenericNetworkServerInfoTest::shouldCheckApiUrl()
@@ -38,6 +39,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::CerebrasAI), u"https://api.cerebras.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::VeniceAI), u"https://api.venice.ai/api/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::LlamaApi), u"https://api.llama.com/compat/v1/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::Anthropic), u"https://api.anthropic.com/v1/"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldChatCompletionPath()
@@ -50,6 +52,7 @@ void GenericNetworkServerInfoTest::shouldChatCompletionPath()
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::CerebrasAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::VeniceAI), u"chat/completions"_s);
     QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::LlamaApi), u"chat/completions"_s);
+    QCOMPARE(info.chatCompletionPath(GenericNetworkManager::PluginNetworkType::Anthropic), u"chat/completions"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefinePluginName()
@@ -62,6 +65,7 @@ void GenericNetworkServerInfoTest::shouldDefinePluginName()
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::CerebrasAI), u"cerebrasai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::VeniceAI), u"veniceai"_s);
     QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::LlamaApi), u"llamaapi"_s);
+    QCOMPARE(info.pluginName(GenericNetworkManager::PluginNetworkType::Anthropic), u"anthropic"_s);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineLimitations()
@@ -73,6 +77,7 @@ void GenericNetworkServerInfoTest::shouldDefineLimitations()
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::GroqAI), GenericNetworkServerInfo::Limitation::TextOnly);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::CerebrasAI), GenericNetworkServerInfo::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::LlamaApi), GenericNetworkServerInfo::Limitation::None);
+    QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::Anthropic), GenericNetworkServerInfo::Limitation::None);
     QCOMPARE(info.limitations(GenericNetworkManager::PluginNetworkType::VeniceAI), GenericNetworkServerInfo::Limitation::NoSystemMessage);
 }
 

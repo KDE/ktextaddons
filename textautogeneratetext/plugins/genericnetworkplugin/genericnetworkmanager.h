@@ -24,6 +24,7 @@ public:
         CerebrasAI,
         VeniceAI,
         LlamaApi,
+        Anthropic,
         LastElement,
     };
 
