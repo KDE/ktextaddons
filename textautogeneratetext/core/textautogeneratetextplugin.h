@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QDebug>
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QObject>
 #include <kconfiggroup.h>
 #include <memory>
@@ -103,6 +104,7 @@ protected:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);
+    TEXTAUTOGENERATETEXT_NO_EXPORT [[nodiscard]] QJsonObject createPromptMessage() const;
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }

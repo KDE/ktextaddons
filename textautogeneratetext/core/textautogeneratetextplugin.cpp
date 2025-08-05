@@ -16,7 +16,7 @@
 #include <QUuid>
 
 using namespace TextAutoGenerateText;
-
+using namespace Qt::Literals::StringLiterals;
 class TextAutoGenerateText::TextAutoGenerateTextPluginPrivate
 {
 public:
@@ -147,7 +147,13 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
-        info.messagesArray = messageModel->convertToOllamaChat();
+
+        auto obj = createPromptMessage();
+        if (!obj.isEmpty()) {
+            info.messagesArray.append(obj);
+        }
+        info.messagesArray.append(messageModel->convertToOllamaChat());
+        qDebug() << "info.messagesArray  " << info.messagesArray;
 
         d->manager->addMessage(chatId, msgLlm);
         // qDebug() << " info " << info;
@@ -155,6 +161,17 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Plugin is not valid:";
     }
+}
+
+QJsonObject TextAutoGenerateTextPlugin::createPromptMessage() const
+{
+    if (!d->manager->systemPrompt().isEmpty()) {
+        QJsonObject obj;
+        obj["role"_L1] = u"system"_s;
+        obj["content"_L1] = d->manager->systemPrompt();
+        return obj;
+    }
+    return QJsonObject();
 }
 
 TextAutoGenerateManager *TextAutoGenerateTextPlugin::manager() const
