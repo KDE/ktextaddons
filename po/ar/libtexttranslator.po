@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-21 03:22+0000\n"
-"PO-Revision-Date: 2024-05-25 17:08+0400\n"
+"PO-Revision-Date: 2025-08-04 14:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -672,7 +672,7 @@ msgstr "اعكس"
 #: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgid "Clear"
-msgstr "امسح"
+msgstr "امحُ"
 
 #: translator/widgets/translatorwidget.cpp:252
 #: translator/widgets/translatorwidget.cpp:255
