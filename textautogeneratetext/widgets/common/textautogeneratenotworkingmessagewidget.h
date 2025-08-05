@@ -14,7 +14,12 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateNotWorkingMessageWidget : publ
 public:
     explicit TextAutoGenerateNotWorkingMessageWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateNotWorkingMessageWidget() override;
+
+    void setMessageInfo(const QString &errorMessage);
 Q_SIGNALS:
     void startOllama();
+
+private:
+    void slotDownloadOllama();
 };
 }

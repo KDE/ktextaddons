@@ -77,7 +77,7 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
         if (modelinfo.hasError) {
-            mMessageWidget->setText(modelinfo.errorOccured);
+            mMessageWidget->setMessageInfo(modelinfo.errorOccured);
             mMessageWidget->animatedShow();
             Q_EMIT ollamaProcessOk(false);
         } else {
@@ -106,7 +106,6 @@ void OllamaConfigureWidget::slotStartOllama()
     } else {
         mMessageWidget->animatedHide();
         Q_EMIT ollamaProcessOk(true);
-        // TODO activate it but we need to know that server is up. fillModels();
     }
 }
 

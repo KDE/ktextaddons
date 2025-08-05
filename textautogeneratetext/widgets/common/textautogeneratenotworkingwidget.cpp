@@ -40,7 +40,7 @@ TextAutoGenerateNotWorkingWidget::~TextAutoGenerateNotWorkingWidget() = default;
 
 void TextAutoGenerateNotWorkingWidget::setMessageError(const QString &str)
 {
-    mMessageWidget->setText(str);
+    mMessageWidget->setMessageInfo(str);
     mMessageWidget->animatedShow();
 }
 
