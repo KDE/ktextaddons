@@ -8,8 +8,8 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QCoreApplication>
 #include <QStandardPaths>
-
-QString TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(const QString &exec)
+using namespace TextAutoGenerateText;
+QString TextAutoGenerateTextUtils::findExecutable(const QString &exec)
 {
 #ifdef Q_OS_WIN
     const QString executableName = exec + u".exe"_s;
