@@ -7,6 +7,7 @@
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
+#include "core/textautogeneratesettings.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
 #include "textautogeneratetextclient.h"
@@ -21,6 +22,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
     , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
+    , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 {
     connect(mTextAutoGenerateChatsModel,
             &QAbstractItemModel::dataChanged,
@@ -44,6 +46,7 @@ TextAutoGenerateManager::~TextAutoGenerateManager()
         textAutoGeneratePlugin()->cancelRequest({});
         textAutoGeneratePlugin()->deleteLater();
     }
+    delete mTextAutoGenerateSettings;
 }
 
 void TextAutoGenerateManager::askToAssistant(const QString &msg)
@@ -192,6 +195,16 @@ void TextAutoGenerateManager::removeMessage(const QByteArray &chatId, const QByt
             }
         }
     }
+}
+
+QString TextAutoGenerateManager::systemPrompt() const
+{
+    return mTextAutoGenerateSettings->systemPrompt();
+}
+
+void TextAutoGenerateManager::setSystemPrompt(const QString &newSystemPrompt)
+{
+    mTextAutoGenerateSettings->setSystemPrompt(newSystemPrompt);
 }
 
 bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QModelIndex &index)

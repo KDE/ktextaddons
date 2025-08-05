@@ -17,6 +17,7 @@ class TextAutoGenerateChatsModel;
 class TextAutoGenerateEngineLoader;
 class TextAutoGenerateTextPlugin;
 class TextAutoGenerateChatSettings;
+class TextAutoGenerateSettings;
 class TextAutoGenerateTextInstancesManager;
 
 /**
@@ -75,6 +76,10 @@ public:
     [[nodiscard]] TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
 
     void removeMessage(const QByteArray &chatId, const QByteArray &uuid);
+
+    [[nodiscard]] QString systemPrompt() const;
+    void setSystemPrompt(const QString &newSystemPrompt);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -95,6 +100,7 @@ private:
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> mDatabaseManager;
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
+    TextAutoGenerateSettings *const mTextAutoGenerateSettings;
     QByteArray mCurrentChatId;
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
