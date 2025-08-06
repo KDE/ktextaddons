@@ -8,6 +8,7 @@
 #include <QWidget>
 
 #include "textautogeneratetext_export.h"
+class QPlainTextEdit;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePromptWidget : public QWidget
@@ -16,6 +17,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePromptWidget : pu
 public:
     explicit TextAutoGenerateTextConfigurePromptWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextConfigurePromptWidget() override;
+
+private:
+    QPlainTextEdit *const mSystemPrompt;
 };
 
 }
