@@ -88,7 +88,6 @@ QString TextAutoGenerateAskJob::text() const
 void TextAutoGenerateAskJob::setText(const QString &newText)
 {
     mText = newText;
-    qDebug() << " TextAutoGenerateAskJob::setText " << mText;
 }
 
 #include "moc_textautogenerateaskjob.cpp"
