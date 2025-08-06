@@ -22,10 +22,10 @@ public:
 
     [[nodiscard]] QString systemPrompt() const;
     void setSystemPrompt(const QString &newSystemPrompt);
+    void load();
 
 private:
     void save();
-    void load();
     QString mSystemPrompt;
 };
 

@@ -38,6 +38,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
                 }
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
+    mTextAutoGenerateSettings->load();
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
