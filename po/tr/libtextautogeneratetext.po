@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 00:41+0000\n"
+"POT-Creation-Date: 2025-08-06 00:42+0000\n"
 "PO-Revision-Date: 2025-08-01 12:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -68,12 +68,21 @@ msgstr ""
 msgid "Go to message"
 msgstr "İletiye git"
 
-#: core/textautogeneratetextplugin.cpp:213
+#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#, kde-format
+msgid ""
+"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
+"professional, and courteous. Do not give inaccurate information."
+msgstr ""
+"Sen bir yapay zekâ asistanısın. %1 adlı bir kişiyle konuşuyorsun. Nâzik, "
+"profesyonel ve yardımcı ol. Doğru olmayan bilgiler verme."
+
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: core/textautogeneratetextplugin.cpp:215
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr "Ağ"
@@ -144,22 +153,27 @@ msgstr "Venice"
 msgid "Llama Api"
 msgstr "Llama API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
+#, kde-format
+msgid "Anthropic"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI büyük dil modelleri"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:130
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras yapay zekâ bulut öngörü API’si"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API’si"
@@ -1944,15 +1958,6 @@ msgstr ""
 msgid "No system prompt"
 msgstr "Sistem istemi yok"
 
-#: plugins/ollama/ollamasettings.cpp:18
-#, kde-format
-msgid ""
-"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
-"professional, and courteous. Do not give inaccurate information."
-msgstr ""
-"Sen bir yapay zekâ asistanısın. %1 adlı bir kişiyle konuşuyorsun. Nâzik, "
-"profesyonel ve yardımcı ol. Doğru olmayan bilgiler verme."
-
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
@@ -1970,7 +1975,26 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "Örnek Ekle…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:39
+#, kde-format
+msgid ""
+"Ollama not found on system. Ask to your administrator system to install it."
+msgstr ""
+
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
+#, kde-format
+msgid "Ollama not found on system. Please install it."
+msgstr ""
+
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgctxt "@action"
+msgid "Download Ollama"
+msgstr "Model İndir"
+
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"

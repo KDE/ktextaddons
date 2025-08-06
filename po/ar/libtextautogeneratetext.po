@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-05 00:41+0000\n"
-"PO-Revision-Date: 2025-08-04 14:42+0400\n"
+"POT-Creation-Date: 2025-08-06 00:42+0000\n"
+"PO-Revision-Date: 2025-08-05 19:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -71,12 +71,19 @@ msgstr ""
 msgid "Go to message"
 msgstr "انتقل إلى الرسالة"
 
-#: core/textautogeneratetextplugin.cpp:213
+#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#, kde-format
+msgid ""
+"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
+"professional, and courteous. Do not give inaccurate information."
+msgstr ""
+
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr "محليّ"
 
-#: core/textautogeneratetextplugin.cpp:215
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr "شبكة"
@@ -151,22 +158,27 @@ msgstr ""
 msgid "Llama Api"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:122
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
+#, kde-format
+msgid "Anthropic"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:130
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:132
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr ""
@@ -387,8 +399,8 @@ msgid ""
 "Llama 3.2 Vision is a collection of instruction-tuned image reasoning "
 "generative models in 11B and 90B sizes."
 msgstr ""
-"Llama 3.2 Vision عبارة عن مجموعة من النماذج التوليدية للتفكير في الصور التي "
-"تم نطقها بالتعليم بأحجام 11B و 90B."
+"Llama 3.2 Vision عبارة عن مجموعة من النماذج التوليدية للتفكير في الصور "
+"بالتعليم المولد بأحجام 11 B و 90B."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:20
 #, kde-format
@@ -425,8 +437,8 @@ msgid ""
 "Gemma is a family of lightweight, state-of-the-art open models built by "
 "Google DeepMind. Updated to version 1.1"
 msgstr ""
-"Gemma هي عائلة من النماذج المفتوحة خفيفة الوزن والمتطورة التي بناها Google "
-"DeepMind. تم التحديث إلى الإصدار 1.1"
+"Gemma هي عائلة من النماذج المفتوحة خفيفة الزن والمتطورة بنتها Google "
+"DeepMind. محدثة إلى الإصدار 1.1"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:26
 #, kde-format
@@ -487,8 +499,7 @@ msgid ""
 "understanding. Updated to version 1.6."
 msgstr ""
 "LLaVA هو نموذج جديد مدمج متعدد الوسائط مدرب من طرف إلى طرف يجمع بين برنامج "
-"ترميز الرؤية والفينيكا لفهم بصري ولغوي للأغراض العامة. تم التحديث إلى "
-"الإصدار 1.6."
+"ترميز الرؤية والفينيكا لفهم بصري ولغوي للأغراض العامة. محدثة إلى الإصدار 1.6."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:37
 #, kde-format
@@ -514,8 +525,7 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
-"نموذج 12B حديث بطول سياق 128k ، تم بناؤه بواسطة Mistral AI بالتعاون مع "
-"NVIDIA."
+"نموذج 12B حديث بطول سياق 128k ، مبنية بواسطة Mistral AI بالتعاون مع NVIDIA."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
@@ -600,8 +610,8 @@ msgid ""
 "DeepSeek Coder is a capable coding model trained on two trillion code and "
 "natural language tokens."
 msgstr ""
-"DeepSeek Coder هو نموذج ترميز قادر على الترميز تم تدريبه على تريليوني رمز "
-"برمجي ولغة طبيعية."
+"DeepSeek Coder هو نموذج ترميز قادر على الترميز مدربة على تريليوني رمز برمجي "
+"ولغة طبيعية."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:57
 #, kde-format
@@ -1668,13 +1678,6 @@ msgstr ""
 msgid "No system prompt"
 msgstr "لا يوجد موجّه للنظام"
 
-#: plugins/ollama/ollamasettings.cpp:18
-#, kde-format
-msgid ""
-"You are an AI assistant. You are speaking to a person named %1. Be helpful, "
-"professional, and courteous. Do not give inaccurate information."
-msgstr ""
-
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
@@ -1692,7 +1695,26 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr ""
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:19
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:39
+#, kde-format
+msgid ""
+"Ollama not found on system. Ask to your administrator system to install it."
+msgstr ""
+
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
+#, kde-format
+msgid "Ollama not found on system. Please install it."
+msgstr ""
+
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgctxt "@action"
+msgid "Download Ollama"
+msgstr "نزل النموذج"
+
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgctxt "@action"
