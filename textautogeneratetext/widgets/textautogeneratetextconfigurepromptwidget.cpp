@@ -11,3 +11,5 @@ TextAutoGenerateTextConfigurePromptWidget::TextAutoGenerateTextConfigurePromptWi
 }
 
 TextAutoGenerateTextConfigurePromptWidget::~TextAutoGenerateTextConfigurePromptWidget() = default;
+
+#include "moc_textautogeneratetextconfigurepromptwidget.cpp"
