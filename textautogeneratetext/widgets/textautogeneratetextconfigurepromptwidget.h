@@ -18,6 +18,9 @@ public:
     explicit TextAutoGenerateTextConfigurePromptWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextConfigurePromptWidget() override;
 
+    void setSystemPrompt(const QString &str);
+    [[nodiscard]] QString systemPrompt() const;
+
 private:
     QPlainTextEdit *const mSystemPrompt;
 };

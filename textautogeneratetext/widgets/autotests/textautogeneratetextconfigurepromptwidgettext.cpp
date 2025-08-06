@@ -30,6 +30,8 @@ void TextAutoGenerateTextConfigurePromptWidgetText::shouldHaveDefaultValues()
 
     auto mSystemPrompt = w.findChild<QPlainTextEdit *>(u"mSystemPrompt"_s);
     QVERIFY(mSystemPrompt);
+
+    QVERIFY(w.systemPrompt().isEmpty());
 }
 
 #include "moc_textautogeneratetextconfigurepromptwidgettext.cpp"

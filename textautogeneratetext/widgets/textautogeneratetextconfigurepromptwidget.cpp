@@ -30,4 +30,14 @@ TextAutoGenerateTextConfigurePromptWidget::TextAutoGenerateTextConfigurePromptWi
 
 TextAutoGenerateTextConfigurePromptWidget::~TextAutoGenerateTextConfigurePromptWidget() = default;
 
+void TextAutoGenerateTextConfigurePromptWidget::setSystemPrompt(const QString &str)
+{
+    mSystemPrompt->setPlainText(str);
+}
+
+QString TextAutoGenerateTextConfigurePromptWidget::systemPrompt() const
+{
+    return mSystemPrompt->toPlainText();
+}
+
 #include "moc_textautogeneratetextconfigurepromptwidget.cpp"
