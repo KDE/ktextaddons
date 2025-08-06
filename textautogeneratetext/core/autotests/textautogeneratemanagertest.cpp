@@ -16,7 +16,7 @@ TextAutoGenerateManagerTest::TextAutoGenerateManagerTest(QObject *parent)
 
 void TextAutoGenerateManagerTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateManager w;
+    const TextAutoGenerateText::TextAutoGenerateManager w;
     QVERIFY(w.currentChatId().isEmpty());
     QVERIFY(w.textAutoGenerateChatsModel());
     QVERIFY(!w.showArchived());
@@ -24,7 +24,7 @@ void TextAutoGenerateManagerTest::shouldHaveDefaultValues()
 
 void TextAutoGenerateManagerTest::shouldIsFavorite()
 {
-    TextAutoGenerateText::TextAutoGenerateManager w;
+    const TextAutoGenerateText::TextAutoGenerateManager w;
     QVERIFY(!w.chatIsFavorite({}));
 }
 #include "moc_textautogeneratemanagertest.cpp"

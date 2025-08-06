@@ -16,7 +16,7 @@ TextAutoGenerateSearchMessageTest::TextAutoGenerateSearchMessageTest(QObject *pa
 
 void TextAutoGenerateSearchMessageTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateSearchMessage w;
+    const TextAutoGenerateText::TextAutoGenerateSearchMessage w;
     QVERIFY(w.messageId().isEmpty());
     QVERIFY(w.chatId().isEmpty());
     QVERIFY(w.previewText().isEmpty());

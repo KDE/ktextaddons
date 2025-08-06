@@ -20,7 +20,7 @@ TextAutoGenerateMessageTest::TextAutoGenerateMessageTest(QObject *parent)
 
 void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateMessage msg;
+    const TextAutoGenerateText::TextAutoGenerateMessage msg;
     QVERIFY(msg.content().isEmpty());
     QCOMPARE(msg.sender(), TextAutoGenerateText::TextAutoGenerateMessage::Sender::Unknown);
     QCOMPARE(msg.dateTime(), -1);

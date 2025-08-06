@@ -15,7 +15,7 @@ TextAutoGenerateTextInstanceTest::TextAutoGenerateTextInstanceTest(QObject *pare
 
 void TextAutoGenerateTextInstanceTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextInstance w;
+    const TextAutoGenerateText::TextAutoGenerateTextInstance w;
     QVERIFY(w.pluginName().isEmpty());
     QVERIFY(w.instanceUuid().isEmpty());
     QVERIFY(w.pluginIdentifier().isEmpty());

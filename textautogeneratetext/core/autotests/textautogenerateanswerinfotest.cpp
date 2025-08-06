@@ -15,7 +15,7 @@ TextAutoGenerateAnswerInfoTest::TextAutoGenerateAnswerInfoTest(QObject *parent)
 
 void TextAutoGenerateAnswerInfoTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateAnswerInfo info;
+    const TextAutoGenerateText::TextAutoGenerateAnswerInfo info;
     QVERIFY(info.engineName().isEmpty());
     QVERIFY(info.instanceName().isEmpty());
     QVERIFY(info.modelName().isEmpty());

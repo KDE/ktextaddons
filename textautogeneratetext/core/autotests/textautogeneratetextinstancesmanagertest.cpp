@@ -15,7 +15,7 @@ TextAutoGenerateTextInstancesManagerTest::TextAutoGenerateTextInstancesManagerTe
 
 void TextAutoGenerateTextInstancesManagerTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(nullptr);
     QVERIFY(w.instances().isEmpty());
     QVERIFY(w.currentInstance().isEmpty());
     QVERIFY(w.isEmpty());

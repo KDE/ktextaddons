@@ -15,7 +15,7 @@ TextAutoGenerateTextPluginTest::TextAutoGenerateTextPluginTest(QObject *parent)
 
 void TextAutoGenerateTextPluginTest::shouldSendToLLMInfoDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo info;
+    const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo info;
     QVERIFY(info.chatId.isEmpty());
     QVERIFY(info.message.isEmpty());
     QVERIFY(info.messageUuid.isEmpty());

@@ -20,7 +20,7 @@ TextAutoGenerateAddInstanceDialogTest::TextAutoGenerateAddInstanceDialogTest(QOb
 
 void TextAutoGenerateAddInstanceDialogTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateAddInstanceDialog d(nullptr);
+    const TextAutoGenerateText::TextAutoGenerateAddInstanceDialog d(nullptr);
     QVERIFY(!d.windowTitle().isEmpty());
     auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);

@@ -14,7 +14,7 @@ TextAutoGenerateChatSettingsTest::TextAutoGenerateChatSettingsTest(QObject *pare
 
 void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info;
+    const TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info;
     QVERIFY(info.text.isEmpty());
     QCOMPARE(info.scrollbarPosition, -1);
     QVERIFY(!info.isValid());
