@@ -432,6 +432,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextpluginte
     HEADER_NAMES
     TextAutoGeneratePluginText
     TextAutoGeneratePluginTextInterface
+    TextAutoGeneratePluginTextManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextplugintext_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/plugintext

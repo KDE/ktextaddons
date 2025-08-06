@@ -28,7 +28,7 @@ public:
     bool isEnabled = true;
 };
 
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePluginTextManager : public QObject
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePluginTextManager final : public QObject
 {
     Q_OBJECT
 public:
