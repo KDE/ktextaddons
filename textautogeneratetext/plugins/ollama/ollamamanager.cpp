@@ -208,6 +208,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
     // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
     data["prompt"_L1] = request.message();
     data["model"_L1] = mOllamaSettings->currentModel();
+    // TODO add prompt here too
 #if 0
     if (!mOllamaSettings->systemPrompt().isEmpty()) {
         data["system"_L1] = mOllamaSettings->systemPrompt();
@@ -235,11 +236,6 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }
-    /*
-    if (!OllamaSettings::systemPrompt().isEmpty()) {
-        data["system"_L1] = OllamaSettings::systemPrompt();
-    }
-    */
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
