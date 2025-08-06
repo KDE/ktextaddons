@@ -13,6 +13,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
+#include <TextAutoGenerateText/TextAutoGeneratePluginText>
+#include <TextAutoGenerateText/TextAutoGeneratePluginTextInterface>
+#include <TextAutoGenerateText/TextAutoGeneratePluginTextManager>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -29,9 +32,28 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
     // Connect to rangeChanged rather than rowsInserted/rowsRemoved/modelReset.
     // This way it also catches the case of an item changing height (e.g. after async image loading)
     connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateBaseListView::maybeScrollToBottom);
+    QList<TextAutoGeneratePluginText *> plugins = TextAutoGeneratePluginTextManager::self()->pluginsList();
+    if (plugins.count() > 1) {
+        std::sort(plugins.begin(), plugins.end(), [](TextAutoGeneratePluginText *left, TextAutoGeneratePluginText *right) {
+            return left->order() < right->order();
+        });
+    }
+    for (TextAutoGeneratePluginText *plugin : plugins) {
+        if (plugin->enabled()) {
+            /*
+            connect(plugin, &TextAutoGeneratePluginText::errorMessage, this, &MessageListViewBase::errorMessage);
+            connect(plugin, &TextAutoGeneratePluginText::successMessage, this, &MessageListViewBase::successMessage);
+*/
+            auto interface = plugin->createInterface(this);
+            mPluginTextInterface.append(interface);
+        }
+    }
 }
 
-TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView() = default;
+TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView()
+{
+    qDeleteAll(mPluginTextInterface);
+}
 
 void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
 {
@@ -70,6 +92,14 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
         });
         selectAllAction->setShortcut(QKeySequence::SelectAll);
         menu.addAction(selectAllAction);
+
+        if (mDelegate->hasSelection()) {
+            menu.addSeparator();
+            for (TextAutoGeneratePluginTextInterface *interface : std::as_const(mPluginTextInterface)) {
+                interface->setSelectedText(mDelegate->selectedText());
+                interface->addAction(&menu);
+            }
+        }
     }
     if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());

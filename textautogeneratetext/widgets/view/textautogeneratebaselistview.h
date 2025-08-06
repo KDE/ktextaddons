@@ -10,6 +10,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
 class TextAutoGenerateListViewBaseDelegate;
+class TextAutoGeneratePluginTextInterface;
 class TextAutoGenerateBaseListView : public QListView
 {
     Q_OBJECT
@@ -45,5 +46,6 @@ protected:
 
 private:
     bool mAtBottom = true;
+    QList<TextAutoGeneratePluginTextInterface *> mPluginTextInterface;
 };
 }

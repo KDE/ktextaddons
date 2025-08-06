@@ -16,8 +16,6 @@
 #include <QClipboard>
 #include <QMouseEvent>
 #include <QScrollBar>
-#include <TextAutoGenerateText/TextAutoGeneratePluginText>
-#include <TextAutoGenerateText/TextAutoGeneratePluginTextManager>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -36,23 +34,6 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
             delegate->setInProgress(inProgress);
         });
     }
-
-    QList<TextAutoGeneratePluginText *> plugins = TextAutoGeneratePluginTextManager::self()->pluginsList();
-    if (plugins.count() > 1) {
-        std::sort(plugins.begin(), plugins.end(), [](TextAutoGeneratePluginText *left, TextAutoGeneratePluginText *right) {
-            return left->order() < right->order();
-        });
-    }
-    /*
-    for (TextAutoGeneratePluginText *plugin : plugins) {
-        if (plugin->enabled()) {
-            connect(plugin, &TextAutoGeneratePluginText::errorMessage, this, &MessageListViewBase::errorMessage);
-            connect(plugin, &TextAutoGeneratePluginText::successMessage, this, &MessageListViewBase::successMessage);
-            auto interface = plugin->createInterface(this);
-            mPluginTextInterface.append(interface);
-        }
-    }
-*/
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);
 
