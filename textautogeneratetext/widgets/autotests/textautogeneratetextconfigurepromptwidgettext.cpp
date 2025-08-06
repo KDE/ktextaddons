@@ -19,7 +19,7 @@ TextAutoGenerateTextConfigurePromptWidgetText::TextAutoGenerateTextConfigureProm
 
 void TextAutoGenerateTextConfigurePromptWidgetText::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextConfigurePromptWidget w;
+    const TextAutoGenerateText::TextAutoGenerateTextConfigurePromptWidget w;
     auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
