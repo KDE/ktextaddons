@@ -8,17 +8,10 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
-#include <KUser>
 
 OllamaSettings::OllamaSettings()
     : mServerUrl(QUrl(u"http://127.0.0.1:11434"_s))
 {
-    const KUser user;
-    mSystemPrompt = i18n(
-        "You are an AI assistant. You are speaking to a person named %1. "
-        "Be helpful, professional, and courteous. Do not give inaccurate "
-        "information.",
-        user.property(KUser::UserProperty::FullName).toString());
 }
 
 OllamaSettings::~OllamaSettings() = default;
@@ -61,16 +54,6 @@ QUrl OllamaSettings::serverUrl() const
 void OllamaSettings::setServerUrl(const QUrl &newServerUrl)
 {
     mServerUrl = newServerUrl;
-}
-
-QString OllamaSettings::systemPrompt() const
-{
-    return mSystemPrompt;
-}
-
-void OllamaSettings::setSystemPrompt(const QString &newSystemPrompt)
-{
-    mSystemPrompt = newSystemPrompt;
 }
 
 QString OllamaSettings::displayName() const

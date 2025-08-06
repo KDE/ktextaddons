@@ -8,7 +8,6 @@
 #include <QWidget>
 class QLineEdit;
 class OllamaComboBoxWidget;
-class QPlainTextEdit;
 class OllamaManager;
 class QDoubleSpinBox;
 class QSpinBox;
@@ -34,7 +33,6 @@ private:
     void slotStartOllama();
     QLineEdit *const mName;
     QLineEdit *const mServerUrl;
-    QPlainTextEdit *const mPrompt;
     OllamaComboBoxWidget *const mModelComboBoxWidget;
     TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget *const mMessageWidget;
     QDoubleSpinBox *const mTemperature;

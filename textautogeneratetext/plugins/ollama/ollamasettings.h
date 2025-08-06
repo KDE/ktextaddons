@@ -27,16 +27,12 @@ public:
     [[nodiscard]] QUrl serverUrl() const;
     void setServerUrl(const QUrl &newServerUrl);
 
-    [[nodiscard]] QString systemPrompt() const;
-    void setSystemPrompt(const QString &newSystemPrompt);
-
     [[nodiscard]] QString displayName() const;
     void setDisplayName(const QString &newName);
 
 private:
     QString mDisplayName;
     QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
-    QString mSystemPrompt;
     QString mCurrentModel;
     int mSeed = 0;
     double mTemperature = 0.8;

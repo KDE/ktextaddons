@@ -17,7 +17,6 @@
 #include <KLocalizedString>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 #include <QProcess>
 #include <QSpinBox>
 
@@ -26,7 +25,6 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     : QWidget{parent}
     , mName(new QLineEdit(this))
     , mServerUrl(new QLineEdit(this))
-    , mPrompt(new QPlainTextEdit(this))
     , mModelComboBoxWidget(new OllamaComboBoxWidget(this))
     , mMessageWidget(new TextAutoGenerateText::TextAutoGenerateNotWorkingMessageWidget(this))
     , mTemperature(new QDoubleSpinBox(this))
@@ -69,10 +67,6 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
     mSeed->setRange(0, 10);
     mSeed->setSingleStep(1);
 
-    mPrompt->setObjectName(u"mPrompt"_s);
-    mainLayout->addRow(i18n("Prompt:"), mPrompt);
-    mPrompt->setPlaceholderText(i18n("No system prompt"));
-
     connect(mModelComboBoxWidget, &OllamaComboBoxWidget::reloadModel, this, &OllamaConfigureWidget::fillModels);
     connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         // qDebug() << " OllamaConfigureWidget::fillModels() " << modelinfo;
@@ -113,7 +107,6 @@ void OllamaConfigureWidget::loadSettings()
 {
     mName->setText(mManager->ollamaSettings()->displayName());
     mServerUrl->setText(mManager->ollamaSettings()->serverUrl().toString());
-    mPrompt->setPlainText(mManager->ollamaSettings()->systemPrompt());
     mModelComboBoxWidget->setCurrentModel(mManager->ollamaSettings()->currentModel());
     mTemperature->setValue(mManager->ollamaSettings()->temperature());
     mSeed->setValue(mManager->ollamaSettings()->seed());
@@ -122,7 +115,6 @@ void OllamaConfigureWidget::loadSettings()
 void OllamaConfigureWidget::saveSettings()
 {
     mManager->ollamaSettings()->setDisplayName(mName->text());
-    mManager->ollamaSettings()->setSystemPrompt(mPrompt->toPlainText());
     mManager->ollamaSettings()->setServerUrl(QUrl(mServerUrl->text()));
     mManager->ollamaSettings()->setCurrentModel(mModelComboBoxWidget->currentModel());
     mManager->ollamaSettings()->setTemperature(mTemperature->value());
