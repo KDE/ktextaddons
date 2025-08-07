@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:41+0000\n"
+"POT-Creation-Date: 2025-08-07 18:28+0000\n"
 "PO-Revision-Date: 2025-08-02 09:30-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2035,6 +2035,35 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Enviar"
 
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
+#, kde-format
+msgid "Text Plugins"
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr "Configurar..."
+
+#: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "Prompt:"
+
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -2218,12 +2247,6 @@ msgstr "Favoritos"
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Pesquisar"
-
-#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Prompt:"
-msgid "Prompt"
-msgstr "Prompt:"
 
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format

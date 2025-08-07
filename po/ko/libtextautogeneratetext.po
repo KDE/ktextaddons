@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:41+0000\n"
+"POT-Creation-Date: 2025-08-07 18:28+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1696,6 +1696,35 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "보내기"
 
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
+#, kde-format
+msgid "Text Plugins"
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr "설정…"
+
+#: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "프롬프트:"
+
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
@@ -1886,12 +1915,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Search"
 msgstr ""
-
-#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Prompt:"
-msgid "Prompt"
-msgstr "프롬프트:"
 
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format

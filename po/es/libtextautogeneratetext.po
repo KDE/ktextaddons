@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:41+0000\n"
-"PO-Revision-Date: 2025-08-07 00:42+0100\n"
+"POT-Creation-Date: 2025-08-07 18:28+0000\n"
+"PO-Revision-Date: 2025-08-07 12:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -283,7 +283,7 @@ msgstr "Etiqueta:"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #, kde-format
 msgid "Prompt:"
-msgstr "Prompt:"
+msgstr "Indicaciones:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
 #, kde-format
@@ -1972,8 +1972,8 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 "Define el número de semilla aleatorio que debe usar la generación. Si se usa "
-"un número específico, el modelo generará el mismo texto para la misma "
-"pregunta (el valor predeterminado es 0)."
+"un número específico, el modelo generará el mismo texto para las mismas "
+"indicaciones (el valor predeterminado es 0)."
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2040,6 +2040,34 @@ msgstr "Adjuntar archivo"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Enviar"
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
+#, kde-format
+msgid "Text Plugins"
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr "Configurar…"
+
+#: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
+#, kde-format
+msgid "Prompt"
+msgstr "Indicaciones"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2225,12 +2253,6 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Prompt:"
-msgid "Prompt"
-msgstr "Prompt:"
-
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
@@ -2334,6 +2356,3 @@ msgstr "Actualizar"
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
-
-#~ msgid "No system prompt"
-#~ msgstr "Sin prompt del sistema"
