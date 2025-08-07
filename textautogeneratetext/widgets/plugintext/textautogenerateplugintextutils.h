@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
+#include "textautogeneratetext_export.h"
 #include <KPluginMetaData>
 #include <QString>
 
@@ -11,7 +12,7 @@ namespace TextAutoGenerateText
 {
 namespace TextAutoGeneratePluginTextUtils
 {
-struct PluginUtilData {
+struct TEXTAUTOGENERATETEXT_EXPORT PluginUtilData {
     QString mIdentifier;
     QString mName;
     QString mDescription;
