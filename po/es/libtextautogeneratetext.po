@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 03:03+0000\n"
-"PO-Revision-Date: 2025-07-26 12:39+0100\n"
+"PO-Revision-Date: 2025-08-07 12:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -260,7 +260,7 @@ msgstr "Etiqueta:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
-msgstr "Prompt:"
+msgstr "Indicaciones:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
 #, kde-format
@@ -1949,8 +1949,8 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 "Define el número de semilla aleatorio que debe usar la generación. Si se usa "
-"un número específico, el modelo generará el mismo texto para la misma "
-"pregunta (el valor predeterminado es 0)."
+"un número específico, el modelo generará el mismo texto para las mismas "
+"indicaciones (el valor predeterminado es 0)."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
