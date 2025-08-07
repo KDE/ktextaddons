@@ -190,6 +190,8 @@ target_sources(
         widgets/common/textautogeneratetextmodelcombobox.cpp
         widgets/configure/textautogeneratetextconfigurepromptwidget.h
         widgets/configure/textautogeneratetextconfigurepromptwidget.cpp
+        widgets/configure/textautogeneratetextconfigurepluginswidget.h
+        widgets/configure/textautogeneratetextconfigurepluginswidget.cpp
         widgets/common/textautogeneratetextmodelcombobox.h
         widgets/common/textautogeneratetextmodelcombobox.cpp
         widgets/common/textautogeneratetextlineeditwidget.h
@@ -393,6 +395,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgets_
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS
     HEADER_NAMES
+    TextAutoGenerateTextConfigurePluginsWidget
     TextAutoGenerateTextConfigurePromptWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS
     PREFIX TextAutoGenerateText
