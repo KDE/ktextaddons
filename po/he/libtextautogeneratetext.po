@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:42+0000\n"
-"PO-Revision-Date: 2025-08-02 19:27+0300\n"
+"POT-Creation-Date: 2025-08-07 00:41+0000\n"
+"PO-Revision-Date: 2025-08-06 08:19+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Go to message"
 msgstr "מעבר להודעה"
 
-#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#: core/textautogeneratesettings.cpp:44
 #, kde-format
 msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
@@ -157,7 +157,7 @@ msgstr "ה־API של Llama"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr ""
+msgstr "Anthropic"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
@@ -268,7 +268,7 @@ msgid "Base:"
 msgstr "בסיס:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -280,7 +280,6 @@ msgid "Tag:"
 msgstr "תגית:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "בקשה:"
@@ -1789,7 +1788,7 @@ msgstr "מודל דגל לשפה חזותית של Qwen וגם קפיצה משמ
 msgid "Devstral: the best open source model for coding agents."
 msgstr "‏Devstral: מודל הקוד הפתוח הטוב ביותר לסוכני פיתוח תוכנה."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1818,23 +1817,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "יצירת מודלים"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Server Url:"
 msgstr "כתובת שרת:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Model:"
 msgstr "מודל:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "טמפרטורה:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1843,13 +1842,13 @@ msgid ""
 msgstr ""
 "הטמפרטורה של המודל. הגברת הטמפרטורה יגרום למודל לענות בצורה יותר יצירתית."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "גרעין:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1859,11 +1858,6 @@ msgid ""
 msgstr ""
 "הגדרת גרעין המספר האקראי שישמש ליצירה. הגדרת הערך הזה למספר מסוים יגרום "
 "למודל לייצר את אותו הטקסט לאותו הפרומפט. (ברירת מחדל: 0)"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:74
-#, kde-format
-msgid "No system prompt"
-msgstr "אין הנחיית מערכת"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1886,20 +1880,18 @@ msgstr "הוספת מופע…"
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
-msgstr ""
+msgstr "Ollama לא נמצאה במערכת. נא לבקש מהנהלת המערכת שלך להתקין אותה."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr ""
+msgstr "Ollama לא נמצאה במערכת. נא להתקין אותה."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "הורדת מודל"
+msgstr "הורדת Ollama"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
 #, kde-format
@@ -2115,30 +2107,36 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "חיפוש"
 
+#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "בקשה:"
+
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "העתקת הבחירה"
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratebaselistview.cpp:55
+#: widgets/view/textautogeneratebaselistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "העתקת הכתובת"
 
-#: widgets/view/textautogeneratebaselistview.cpp:67
+#: widgets/view/textautogeneratebaselistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2218,6 +2216,9 @@ msgstr "ריענון"
 #, kde-format
 msgid "No Messages Found."
 msgstr "לא נמצאו הודעות."
+
+#~ msgid "No system prompt"
+#~ msgstr "אין הנחיית מערכת"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:42+0000\n"
-"PO-Revision-Date: 2025-08-01 06:34+0200\n"
+"POT-Creation-Date: 2025-08-07 00:41+0000\n"
+"PO-Revision-Date: 2025-08-06 05:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Go to message"
 msgstr "შეტყობინებაზე გადასვლა"
 
-#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#: core/textautogeneratesettings.cpp:44
 #, kde-format
 msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
@@ -157,7 +157,7 @@ msgstr "Llama Api"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr ""
+msgstr "Anthropic"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
@@ -268,7 +268,7 @@ msgid "Base:"
 msgstr "ბაზა:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -280,7 +280,6 @@ msgid "Tag:"
 msgstr "ჭდე:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "მოთხოვნის ზოლი:"
@@ -1886,7 +1885,7 @@ msgstr ""
 msgid "Devstral: the best open source model for coding agents."
 msgstr "Devstral: საუკეთესო ღია კოდის მქონე მოდელი კოდის აგენტებისთვის."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1915,23 +1914,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "მოდელების შექმნა"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Server Url:"
 msgstr "სერვერის URL:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Model:"
 msgstr "მოდელი:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "ტემპერატურა:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1941,13 +1940,13 @@ msgstr ""
 "მოდელის ტემპერატურა. ტემპერატურის გაზრდა მოდელს აიძულებს, უფრო მეტი "
 "შემოქმედებით გიპასუხოთ."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "საწყ. მნიშვნელობა:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1958,11 +1957,6 @@ msgstr ""
 "აყენებს შემთხვევით რიცხვების თესლს გენერაციისთვის. ამის სპეციფიკურ რიცხვზე "
 "დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე მოთხოვნისთვის. "
 "(ნაგულისხმევი: 0)"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:74
-#, kde-format
-msgid "No system prompt"
-msgstr "სისტემური კითხვის გარეშე"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1986,19 +1980,18 @@ msgstr "გაშვებული ასლის დამატება…"
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
+"სისტემაში Ollama აღმოჩენილი არაა. სთხოვეთ თქვენ ადმინისტრატორს, დააყენოს ის."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr ""
+msgstr "სისტემაში Ollama აღმოჩენილი არაა. დააყენეთ ის."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "მოდელის გადმოწერა"
+msgstr "Ollama-ის გადმოწერა"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
 #, kde-format
@@ -2214,30 +2207,36 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
+#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "მოთხოვნის ზოლი:"
+
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "მონიშნულის კოპირება"
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratebaselistview.cpp:55
+#: widgets/view/textautogeneratebaselistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "URL-ის კოპირება"
 
-#: widgets/view/textautogeneratebaselistview.cpp:67
+#: widgets/view/textautogeneratebaselistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2317,6 +2316,9 @@ msgstr "განახლება"
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgid "No system prompt"
+#~ msgstr "სისტემური კითხვის გარეშე"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."

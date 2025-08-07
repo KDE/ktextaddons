@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:42+0000\n"
+"POT-Creation-Date: 2025-08-07 00:41+0000\n"
 "PO-Revision-Date: 2025-05-28 18:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Go to message"
 msgstr "Vade a message"
 
-#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#: core/textautogeneratesettings.cpp:44
 #, kde-format
 msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
@@ -272,7 +272,7 @@ msgid "Base:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -284,7 +284,6 @@ msgid "Tag:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "Symbolo de demanda:"
@@ -1557,7 +1556,7 @@ msgstr ""
 msgid "Devstral: the best open source model for coding agents."
 msgstr ""
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1588,23 +1587,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Remove Modello"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Server Url:"
 msgstr "URL de servitor:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Model:"
 msgstr "Modello:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1612,13 +1611,13 @@ msgid ""
 "answer more creatively."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1626,11 +1625,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:74
-#, kde-format
-msgid "No system prompt"
-msgstr "Necun prompt de systema"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1892,24 +1886,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Cerca"
 
+#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "Symbolo de demanda:"
+
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "Necun plugin trovate."
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia selection"
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:55
+#: widgets/view/textautogeneratebaselistview.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -1917,7 +1917,7 @@ msgctxt "@action"
 msgid "Copy URL"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:67
+#: widgets/view/textautogeneratebaselistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2000,6 +2000,9 @@ msgstr "Refresca"
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
+
+#~ msgid "No system prompt"
+#~ msgstr "Necun prompt de systema"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:42+0000\n"
+"POT-Creation-Date: 2025-08-07 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Go to message"
 msgstr "跳转到消息"
 
-#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#: core/textautogeneratesettings.cpp:44
 #, kde-format
 msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
@@ -262,7 +262,7 @@ msgid "Base:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -274,7 +274,6 @@ msgid "Tag:"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "提示词："
@@ -1540,7 +1539,7 @@ msgstr ""
 msgid "Devstral: the best open source model for coding agents."
 msgstr ""
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1569,23 +1568,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Server Url:"
 msgstr "服务器 URL："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Model:"
 msgstr "模型："
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1593,13 +1592,13 @@ msgid ""
 "answer more creatively."
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr ""
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1607,11 +1606,6 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:74
-#, kde-format
-msgid "No system prompt"
-msgstr "没有系统提示词"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1861,30 +1855,36 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "搜索"
 
+#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "提示词："
+
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "没有找到插件。"
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "复制选中内容"
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "复制"
 
-#: widgets/view/textautogeneratebaselistview.cpp:55
+#: widgets/view/textautogeneratebaselistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:67
+#: widgets/view/textautogeneratebaselistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -1964,3 +1964,6 @@ msgstr "刷新"
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
+
+#~ msgid "No system prompt"
+#~ msgstr "没有系统提示词"

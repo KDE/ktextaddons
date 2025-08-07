@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:42+0000\n"
-"PO-Revision-Date: 2025-08-01 08:21+0200\n"
+"POT-Creation-Date: 2025-08-07 00:41+0000\n"
+"PO-Revision-Date: 2025-08-06 07:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Go to message"
 msgstr "Pojdi na sporočilo"
 
-#: core/textautogeneratesettings.cpp:16 plugins/ollama/ollamasettings.cpp:18
+#: core/textautogeneratesettings.cpp:44
 #, kde-format
 msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
@@ -157,7 +157,7 @@ msgstr "Llama Api"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr ""
+msgstr "Anthropic"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
@@ -268,7 +268,7 @@ msgid "Base:"
 msgstr "Osnova:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
-#: plugins/ollama/ollamaconfigurewidget.cpp:48
+#: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
@@ -280,7 +280,6 @@ msgid "Tag:"
 msgstr "Značka:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
-#: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
 msgstr "Poziv:"
@@ -1879,7 +1878,7 @@ msgstr ""
 msgid "Devstral: the best open source model for coding agents."
 msgstr "Devstral: najboljši odprtokodni model za kodne agente."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:80
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"
@@ -1908,23 +1907,23 @@ msgctxt "@title Preferences page name"
 msgid "Create Models"
 msgstr "Ustvari modele"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:52
+#: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
 msgid "Server Url:"
 msgstr "Url strežnika:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:56
+#: plugins/ollama/ollamaconfigurewidget.cpp:54
 #, kde-format
 msgid "Model:"
 msgstr "Model:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:59
+#: plugins/ollama/ollamaconfigurewidget.cpp:57
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:62
+#: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1934,13 +1933,13 @@ msgstr ""
 "Temperatura modela. Pri zvišanju temperature bo model odgovarjal bolj "
 "ustvarjalno."
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:65
+#: plugins/ollama/ollamaconfigurewidget.cpp:63
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
 msgstr "Brst:"
 
-#: plugins/ollama/ollamaconfigurewidget.cpp:67
+#: plugins/ollama/ollamaconfigurewidget.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1951,11 +1950,6 @@ msgstr ""
 "Nastavi brst slučajnih števil, ki se uporabijo za generiranje. Če ga "
 "nastavite na določeno število, bo model ustvaril isto besedilo za isti "
 "poziv. (Privzeto: 0)"
-
-#: plugins/ollama/ollamaconfigurewidget.cpp:74
-#, kde-format
-msgid "No system prompt"
-msgstr "Ni sistemskega poziva"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1979,19 +1973,19 @@ msgstr "Dodaj pojavek…"
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
+"Ollame ni mogoče najti v sistemu. Za namestitev se obrnite na skrbnika "
+"sistema."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr ""
+msgstr "Ollame ni mogoče najti v sistemu. Namestite jo."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Prenesi model sem"
+msgstr "Prenesi Ollama"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
 #, kde-format
@@ -2207,30 +2201,36 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Išči"
 
+#: widgets/textautogeneratetextconfigurepromptwidget.cpp:24
+#, fuzzy, kde-format
+#| msgid "Prompt:"
+msgid "Prompt"
+msgstr "Poziv:"
+
 #: widgets/textautogeneratewidget.cpp:96
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Kopiraj izbiro"
 
-#: widgets/view/textautogeneratebaselistview.cpp:42
+#: widgets/view/textautogeneratebaselistview.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: widgets/view/textautogeneratebaselistview.cpp:55
+#: widgets/view/textautogeneratebaselistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Kopiraj URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:67
+#: widgets/view/textautogeneratebaselistview.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2310,6 +2310,9 @@ msgstr "Osveži"
 #, kde-format
 msgid "No Messages Found."
 msgstr "Ni najdenih sporočil."
+
+#~ msgid "No system prompt"
+#~ msgstr "Ni sistemskega poziva"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."
