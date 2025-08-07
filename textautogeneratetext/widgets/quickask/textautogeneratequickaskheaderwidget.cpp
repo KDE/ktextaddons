@@ -51,8 +51,10 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     mModelInstanceLabel->setFont(f);
 
     connect(clearButton, &QToolButton::clicked, this, [this]() {
-        if (auto messageModel = mManager->messagesModelFromChatId(mManager->currentChatId()); messageModel) {
-            messageModel->resetConversation();
+        if (!mManager->currentChatId().isEmpty()) {
+            if (auto messageModel = mManager->messagesModelFromChatId(mManager->currentChatId()); messageModel) {
+                messageModel->resetConversation();
+            }
         }
     });
 
