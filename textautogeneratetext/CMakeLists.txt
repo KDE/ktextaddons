@@ -192,6 +192,8 @@ target_sources(
         widgets/configure/textautogeneratetextconfigurepromptwidget.cpp
         widgets/configure/textautogeneratetextconfigurepluginswidget.h
         widgets/configure/textautogeneratetextconfigurepluginswidget.cpp
+        widgets/configure/textautogeneratetextconfigurepluginstreewidgetdelegate.cpp
+        widgets/configure/textautogeneratetextconfigurepluginstreewidgetdelegate.h
         widgets/common/textautogeneratetextmodelcombobox.h
         widgets/common/textautogeneratetextmodelcombobox.cpp
         widgets/common/textautogeneratetextlineeditwidget.h
@@ -311,14 +313,15 @@ target_link_libraries(
         Qt::Widgets
         Qt::Network
         KF6::ConfigGui
+        KF6::CoreAddons
     PRIVATE
         Qt::Sql
         KF6::I18n
         KF6::WidgetsAddons
         KF6::TextWidgets
-        KF6::CoreAddons
         KF6::ColorScheme
         KF6::SyntaxHighlighting
+        KF6::ItemViews
         cmark-rc
 )
 
@@ -444,6 +447,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextpluginte
     TextAutoGeneratePluginText
     TextAutoGeneratePluginTextInterface
     TextAutoGeneratePluginTextManager
+    TextAutoGeneratePluginTextUtils
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextplugintext_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/plugintext

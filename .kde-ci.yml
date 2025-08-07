@@ -18,6 +18,7 @@ Dependencies:
       'frameworks/syntax-highlighting': '@latest-kf6'
       'frameworks/breeze-icons': '@latest-kf6'
       'frameworks/ktextwidgets': '@latest-kf6'
+      'frameworks/kitemviews': '@latest-kf6'
 
 Options:
   cmake-options: "-DDISABLE_AUTOTEST_BROKEN_CI=TRUE"
