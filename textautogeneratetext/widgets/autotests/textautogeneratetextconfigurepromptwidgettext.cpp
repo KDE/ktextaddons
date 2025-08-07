@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextconfigurepromptwidgettext.h"
-#include "widgets/textautogeneratetextconfigurepromptwidget.h"
+#include "widgets/configure/textautogeneratetextconfigurepromptwidget.h"
 #include <QLabel>
 #include <QPlainTextEdit>
 #include <QTest>
