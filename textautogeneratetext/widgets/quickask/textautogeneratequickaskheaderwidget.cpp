@@ -8,7 +8,7 @@
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
-#include "widgets/textautogeneratetextmodelcombobox.h"
+#include "widgets/common/textautogeneratetextmodelcombobox.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QToolButton>

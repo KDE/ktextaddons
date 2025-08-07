@@ -5,8 +5,8 @@
 */
 #include "textautogeneratequickaskheaderwidgettest.h"
 
+#include "widgets/common/textautogeneratetextmodelcombobox.h"
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
-#include "widgets/textautogeneratetextmodelcombobox.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSignalSpy>

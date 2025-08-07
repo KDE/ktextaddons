@@ -6,7 +6,7 @@
 
 #include "textautogenerateheaderwidget.h"
 #include "core/textautogeneratemanager.h"
-#include "widgets/textautogeneratetextmodelcombobox.h"
+#include "widgets/common/textautogeneratetextmodelcombobox.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLabel>
