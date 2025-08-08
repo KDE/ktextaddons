@@ -48,6 +48,7 @@ public:
     void setCapabilities(const Capabilities &newCapabilities);
 
 private:
+    TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void parseCapabilities(const QJsonObject &obj);
     Capabilities mCapabilities = Capability::None;
     QString mDescription;
     QString mModelName;
