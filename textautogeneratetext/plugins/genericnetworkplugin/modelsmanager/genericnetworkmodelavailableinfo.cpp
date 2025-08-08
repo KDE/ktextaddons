@@ -25,7 +25,17 @@ void GenericNetworkModelAvailableInfo::parseInfo(const QJsonObject &obj)
 
 void GenericNetworkModelAvailableInfo::parseCapabilities(const QJsonObject &obj)
 {
-    // TODO
+    if (obj["audio"_L1].toBool(false)) {
+        mCapabilities |= Capability::Audio;
+    }
+    if (obj["ocr"_L1].toBool(false)) {
+        mCapabilities |= Capability::Ocr;
+    }
+    if (obj["vision"_L1].toBool(false)) {
+        mCapabilities |= Capability::Vision;
+    }
+    // TODO add more
+    // {"audio":false,"classification":false,"completion_chat":false,"completion_fim":false,"fine_tuning":false,"function_calling":false,"moderation":false,"ocr":false,"vision":false}
 }
 
 QString GenericNetworkModelAvailableInfo::description() const
