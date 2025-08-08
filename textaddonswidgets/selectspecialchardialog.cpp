@@ -18,7 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 namespace
 {
-static const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";
+const char mySelectSpecialCharDialogConfigGroupName[] = "SelectSpecialCharDialog";
 }
 
 namespace TextAddonsWidgets
