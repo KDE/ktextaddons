@@ -15,8 +15,11 @@ public:
     enum Capability {
         None = 0,
         Vision = 1,
-        // TODO more
+        Audio = 4,
+        Ocr = 8,
     };
+    Q_FLAGS(Capability Capabilities)
+    Q_DECLARE_FLAGS(Capabilities, Capability)
 
     GenericNetworkModelAvailableInfo();
     ~GenericNetworkModelAvailableInfo();
@@ -41,7 +44,11 @@ public:
     [[nodiscard]] QString ownedBy() const;
     void setOwnedBy(const QString &newOwnedBy);
 
+    [[nodiscard]] Capabilities capabilities() const;
+    void setCapabilities(const Capabilities &newCapabilities);
+
 private:
+    Capabilities mCapabilities = Capability::None;
     QString mDescription;
     QString mModelName;
     QString mModelSize;

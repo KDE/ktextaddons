@@ -33,7 +33,7 @@ void GenericNetworkModelAvailableInfo::setDescription(const QString &newDescript
 bool GenericNetworkModelAvailableInfo::operator==(const GenericNetworkModelAvailableInfo &other) const
 {
     return mDescription == other.description() && mModelName == other.modelName() && mToolsSupported == other.toolsSupported()
-        && mModelSize == other.modelSize() && mIdentifier == other.identifier() && mOwnedBy == other.ownedBy();
+        && mModelSize == other.modelSize() && mIdentifier == other.identifier() && mOwnedBy == other.ownedBy() && mCapabilities == other.mCapabilities;
 }
 
 QString GenericNetworkModelAvailableInfo::modelName() const
@@ -84,6 +84,16 @@ QString GenericNetworkModelAvailableInfo::ownedBy() const
 void GenericNetworkModelAvailableInfo::setOwnedBy(const QString &newOwnedBy)
 {
     mOwnedBy = newOwnedBy;
+}
+
+GenericNetworkModelAvailableInfo::Capabilities GenericNetworkModelAvailableInfo::capabilities() const
+{
+    return mCapabilities;
+}
+
+void GenericNetworkModelAvailableInfo::setCapabilities(const Capabilities &newCapabilities)
+{
+    mCapabilities = newCapabilities;
 }
 
 QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)

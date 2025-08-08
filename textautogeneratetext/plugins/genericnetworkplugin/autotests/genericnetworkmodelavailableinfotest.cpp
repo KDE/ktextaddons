@@ -22,6 +22,7 @@ void GenericNetworkModelAvailableInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.modelSize().isEmpty());
     QVERIFY(info.identifier().isEmpty());
     QVERIFY(info.ownedBy().isEmpty());
+    QCOMPARE(info.capabilities(), {GenericNetworkModelAvailableInfo::Capability::None});
 }
 
 #include "moc_genericnetworkmodelavailableinfotest.cpp"
