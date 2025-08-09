@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 18:28+0000\n"
-"PO-Revision-Date: 2025-08-07 04:38+0200\n"
+"PO-Revision-Date: 2025-08-08 07:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2026,25 +2026,23 @@ msgstr "გაგზავნა"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "ცვლილებების გადასატარებლად გადატვირთვა აუცილებელია."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
 #, kde-format
 msgid "Text Plugins"
-msgstr ""
+msgstr "ტექსტის დამატებები"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "მორგება…"
+msgstr "მორგება"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format

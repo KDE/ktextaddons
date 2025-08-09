@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 18:28+0000\n"
-"PO-Revision-Date: 2025-08-07 12:33+0100\n"
+"PO-Revision-Date: 2025-08-08 00:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2044,25 +2044,23 @@ msgstr "Enviar"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "Es necesario reiniciar para aplicar los cambios."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
 #, kde-format
 msgid "Text Plugins"
-msgstr ""
+msgstr "Complementos de texto"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Configurar…"
+msgstr "Configurar"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
