@@ -22,6 +22,7 @@ TextAutoGenerateAttachment::TextAutoGenerateAttachment(const TextAutoGenerateAtt
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAnswerInfo created " << this;
     mImage = other.mImage;
+    mAttachmentType = other.mAttachmentType;
 }
 
 QByteArray TextAutoGenerateAttachment::image() const
