@@ -36,7 +36,11 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateAttachment &other) const;
 
+    [[nodiscard]] AttachmentType attachmentType() const;
+    void setAttachmentType(const AttachmentType &newAttachmentType);
+
 private:
+    AttachmentType mAttachmentType = AttachmentType::Unknown;
     QByteArray mImage;
 };
 }

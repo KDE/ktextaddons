@@ -37,10 +37,21 @@ void TextAutoGenerateAttachment::setImage(const QByteArray &newImage)
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t)
 {
     d.space() << "mImage:" << t.image();
+    d.space() << "mAttachmentType:" << t.attachmentType();
     return d;
 }
 
 bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
 {
     return mImage == other.mImage;
+}
+
+TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmentType() const
+{
+    return mAttachmentType;
+}
+
+void TextAutoGenerateAttachment::setAttachmentType(const AttachmentType &newAttachmentType)
+{
+    mAttachmentType = newAttachmentType;
 }
