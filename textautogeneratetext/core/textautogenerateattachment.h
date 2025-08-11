@@ -15,20 +15,20 @@ namespace TextAutoGenerateText
  * @brief The TextAutoGenerateMessage class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateImage : public QSharedData
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment : public QSharedData
 {
 public:
-    TextAutoGenerateImage();
-    ~TextAutoGenerateImage();
-    explicit TextAutoGenerateImage(const TextAutoGenerateImage &other);
+    TextAutoGenerateAttachment();
+    ~TextAutoGenerateAttachment();
+    explicit TextAutoGenerateAttachment(const TextAutoGenerateAttachment &other);
 
     [[nodiscard]] QByteArray image() const;
     void setImage(const QByteArray &newImage);
 
-    [[nodiscard]] bool operator==(const TextAutoGenerateImage &other) const;
+    [[nodiscard]] bool operator==(const TextAutoGenerateAttachment &other) const;
 
 private:
     QByteArray mImage;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateImage &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t);

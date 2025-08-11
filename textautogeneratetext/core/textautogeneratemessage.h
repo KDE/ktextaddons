@@ -9,7 +9,7 @@
 #include "textautogeneratetext_export.h"
 #include <QDebug>
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
-#include <TextAutoGenerateText/TextAutoGenerateImage>
+#include <TextAutoGenerateText/TextAutoGenerateAttachment>
 
 namespace TextAutoGenerateText
 {
@@ -97,7 +97,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);
     TEXTAUTOGENERATETEXT_NO_EXPORT bool messageStateValue(MessageState type) const;
     QSharedDataPointer<TextAutoGenerateAnswerInfo> mMessageInfo;
-    QSharedDataPointer<TextAutoGenerateImage> mMessageImage;
+    QSharedDataPointer<TextAutoGenerateAttachment> mMessageAttachment;
     QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;
