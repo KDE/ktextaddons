@@ -6,11 +6,11 @@
 
 #pragma once
 #include "textautogeneratetext_private_export.h"
-#include <QStyledItemDelegate>
+#include <QItemDelegate>
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListViewDelegate : public QStyledItemDelegate
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListViewDelegate : public QItemDelegate
 {
     Q_OBJECT
 public:
@@ -26,5 +26,13 @@ public:
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
 
     void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+
+private:
+    struct Layout {
+        QString title;
+        bool isHeader = false;
+    };
+    [[nodiscard]] TextAutoGenerateHistoryListViewDelegate::Layout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
 };
 }
