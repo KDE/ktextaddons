@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 18:28+0000\n"
-"PO-Revision-Date: 2025-08-07 09:31+0300\n"
+"PO-Revision-Date: 2025-08-10 09:33+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1926,25 +1926,23 @@ msgstr "שליחה"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "יש להפעיל מחדש כדי להחיל את השינויים."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
 #, kde-format
 msgid "Text Plugins"
-msgstr ""
+msgstr "תוספי טקסט"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "הגדרה…"
+msgstr "הגדרה"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
