@@ -81,7 +81,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     hboxLayout->addWidget(mRemoveModelButton);
     mRemoveModelButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     connect(mRemoveModelButton, &QToolButton::clicked, this, &OllamaModelInstalledWidget::slotRemoveModel);
-    connect(mOllamaModelInstalledListView, &OllamaModelInstalledListView::clicked, this, &OllamaModelInstalledWidget::slotClicked);
+    connect(mOllamaModelInstalledListView, &OllamaModelInstalledListView::pressed, this, &OllamaModelInstalledWidget::slotClicked);
     connect(mOllamaModelInstalledListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this, scrollArea]() {
         const bool isEnabled = mOllamaModelInstalledListView->currentIndex().isValid();
         mRemoveModelButton->setEnabled(isEnabled);
