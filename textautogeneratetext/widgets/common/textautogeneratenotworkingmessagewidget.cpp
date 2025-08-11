@@ -33,6 +33,10 @@ void TextAutoGenerateNotWorkingMessageWidget::slotDownloadOllama()
 
 void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(const QString &errorMessage)
 {
+    if (mCurrentAction) {
+        removeAction(mCurrentAction);
+        mCurrentAction = nullptr;
+    }
     const QString ollamaPath = TextAutoGenerateText::TextAutoGenerateTextUtils::findExecutable(u"ollama"_s);
     if (ollamaPath.isEmpty()) {
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
@@ -43,6 +47,7 @@ void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(const QString &erro
         downloadOllamaAction->setObjectName(u"downloadOllamaAction"_s);
         connect(downloadOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::slotDownloadOllama);
         addAction(downloadOllamaAction);
+        mCurrentAction = downloadOllamaAction;
 #endif
     } else {
         setText(errorMessage);
@@ -50,6 +55,7 @@ void TextAutoGenerateNotWorkingMessageWidget::setMessageInfo(const QString &erro
         startOllamaAction->setObjectName(u"startOllamaAction"_s);
         connect(startOllamaAction, &QAction::triggered, this, &TextAutoGenerateNotWorkingMessageWidget::startOllama);
         addAction(startOllamaAction);
+        mCurrentAction = startOllamaAction;
     }
 }
 

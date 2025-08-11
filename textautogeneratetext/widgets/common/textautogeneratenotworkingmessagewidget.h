@@ -20,6 +20,7 @@ Q_SIGNALS:
     void startOllama();
 
 private:
-    void slotDownloadOllama();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotDownloadOllama();
+    QAction *mCurrentAction = nullptr;
 };
 }
