@@ -56,3 +56,5 @@ void TextAutoGenerateAttachment::setAttachmentType(const AttachmentType &newAtta
 {
     mAttachmentType = newAttachmentType;
 }
+
+#include "moc_textautogenerateattachment.cpp"
