@@ -127,7 +127,6 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             const bool isFavorite = index.data(TextAutoGenerateChatsModel::Favorite).toBool();
             auto changeFavoriteHistory =
                 new QAction(QIcon::fromTheme(u"favorite"_s), isFavorite ? i18nc("@action", "Remove as Favorite") : i18nc("@action", "Set as Favorite"), &menu);
-            const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
             connect(changeFavoriteHistory, &QAction::triggered, this, [index, isFavorite, this]() {
                 const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
                 if (!uuid.isEmpty()) {

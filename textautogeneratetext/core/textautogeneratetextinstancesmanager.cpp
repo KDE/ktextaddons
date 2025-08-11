@@ -50,8 +50,8 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstancesManager::textAutoGenera
 void TextAutoGenerateTextInstancesManager::loadInstances()
 {
     mTextAutoGenerateEngineLoader->loadPlugins();
-    const QStringList instances = groupList(mConfig);
-    if (instances.isEmpty()) {
+    const QStringList instancesList = groupList(mConfig);
+    if (instancesList.isEmpty()) {
         return; // nothing to be done...
     }
 
