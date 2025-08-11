@@ -7,6 +7,7 @@
 #pragma once
 
 #include "textautogeneratetext_export.h"
+#include <QObject>
 #include <QSharedData>
 
 namespace TextAutoGenerateText
@@ -17,7 +18,15 @@ namespace TextAutoGenerateText
  */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment : public QSharedData
 {
+    Q_GADGET
 public:
+    enum class AttachmentType : uint8_t {
+        Unknown,
+        File,
+        Image,
+    };
+    Q_ENUM(AttachmentType)
+
     TextAutoGenerateAttachment();
     ~TextAutoGenerateAttachment();
     explicit TextAutoGenerateAttachment(const TextAutoGenerateAttachment &other);
