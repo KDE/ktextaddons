@@ -12,7 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 namespace
 {
-static const char myConfigGroupName[] = "Grammalecte";
+const char myConfigGroupName[] = "Grammalecte";
 }
 using namespace TextGrammarCheck;
 GrammalecteManager::GrammalecteManager(QObject *parent)

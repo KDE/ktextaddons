@@ -39,7 +39,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 namespace
 {
-static const char myTranslatorWidgetConfigGroupName[] = "TranslatorWidget";
+const char myTranslatorWidgetConfigGroupName[] = "TranslatorWidget";
 }
 class Q_DECL_HIDDEN TranslatorWidget::TranslatorWidgetPrivate
 {

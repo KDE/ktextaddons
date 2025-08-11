@@ -14,7 +14,7 @@
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-static const char myLanguageToolManagerGroupName[] = "LanguageTool";
+const char myLanguageToolManagerGroupName[] = "LanguageTool";
 }
 using namespace TextGrammarCheck;
 LanguageToolManager::LanguageToolManager(QObject *parent)

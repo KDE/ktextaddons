@@ -18,7 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 namespace
 {
-static const char myConfigGroupName[] = "LanguageToolConfigDialog";
+const char myConfigGroupName[] = "LanguageToolConfigDialog";
 }
 using namespace TextGrammarCheck;
 LanguageToolConfigDialog::LanguageToolConfigDialog(QWidget *parent)

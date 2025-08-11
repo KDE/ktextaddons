@@ -17,7 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 namespace
 {
-static const char myConfigGrammalecteConfigDialog[] = "GrammalecteConfigDialog";
+const char myConfigGrammalecteConfigDialog[] = "GrammalecteConfigDialog";
 }
 using namespace TextGrammarCheck;
 GrammalecteConfigDialog::GrammalecteConfigDialog(QWidget *parent, bool disableMessageBox)

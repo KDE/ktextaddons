@@ -17,7 +17,7 @@
 #include <QWindow>
 namespace
 {
-static const char myTextToSpeechConfigDialogConfigGroupName[] = "TextToSpeechConfigDialog";
+const char myTextToSpeechConfigDialogConfigGroupName[] = "TextToSpeechConfigDialog";
 }
 using namespace TextEditTextToSpeech;
 
