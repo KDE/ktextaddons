@@ -275,6 +275,8 @@ QString OllamaModelUtils::description(const QString &modelName)
         {u"mistral-small3.2"_s, i18n("An update to Mistral Small that improves on function calling, instruction following, and less repetition errors.")},
         {u"qwen2.5vl"_s, i18n("Flagship vision-language model of Qwen and also a significant leap from the previous Qwen2-VL.")},
         {u"devstral"_s, i18n("Devstral: the best open source model for coding agents.")},
+        {u"gpt-oss"_s, i18n("OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases.")},
+        {u"qwen3-coder"_s, i18n("Alibaba's performant long context models for agentic and coding tasks.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
