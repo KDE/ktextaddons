@@ -163,9 +163,9 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText)
         int start = 0;
         int end = 0;
     };
-    QList<HrefPos> lstPos;
 
     if (!searchedText.isEmpty()) {
+        QList<HrefPos> lstPos;
         const auto userHighlightForegroundColor =
             TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
         const auto userHighlightBackgroundColor =
@@ -420,9 +420,9 @@ static QString convertMessageText(const QString &str, const QString &searchText)
             // qDebug() << " literal" << literal;
             qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
 
-            const QString str = QString::fromUtf8(literal);
-            if (!str.isEmpty()) {
-                const QString convertedString = addHighlighter(str, {}, searchText);
+            const QString strLiteral = QString::fromUtf8(literal);
+            if (!strLiteral.isEmpty()) {
+                const QString convertedString = addHighlighter(strLiteral, {}, searchText);
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
@@ -434,10 +434,10 @@ static QString convertMessageText(const QString &str, const QString &searchText)
         case CMARK_NODE_CODE: {
             const char *literal = cmark_node_get_literal(node);
             qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
-            QString str = QString::fromUtf8(literal);
-            if (!str.isEmpty()) {
-                convertHtmlChar(str);
-                const QString stringHtml = u"`"_s + str + u"`"_s;
+            QString strLiteral = QString::fromUtf8(literal);
+            if (!strLiteral.isEmpty()) {
+                convertHtmlChar(strLiteral);
+                const QString stringHtml = u"`"_s + strLiteral + u"`"_s;
                 const QString convertedString = addHighlighter(stringHtml, {}, searchText);
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);

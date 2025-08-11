@@ -257,11 +257,11 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setAnswerUuid(o["answerIdentifier"_L1].toString().toLatin1());
     msg.setContent(o["text"_L1].toString());
 
-    TextAutoGenerateAnswerInfo *messageInfo = TextAutoGenerateAnswerInfo::deserialize(o);
-    if (messageInfo->isValid()) {
-        msg.setMessageInfo(*messageInfo);
+    TextAutoGenerateAnswerInfo *messageInfoDeserialized = TextAutoGenerateAnswerInfo::deserialize(o);
+    if (messageInfoDeserialized->isValid()) {
+        msg.setMessageInfo(*messageInfoDeserialized);
     }
-    delete messageInfo;
+    delete messageInfoDeserialized;
 
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));
