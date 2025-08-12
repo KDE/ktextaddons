@@ -222,6 +222,8 @@ target_sources(
         widgets/view/textautogenerateselectedmessagebackgroundanimation.cpp
         widgets/view/textautogeneratemessagewaitingansweranimation.h
         widgets/view/textautogeneratemessagewaitingansweranimation.cpp
+        widgets/view/textautogeneratemessagewaitingansweranimationbase.cpp
+        widgets/view/textautogeneratemessagewaitingansweranimationbase.h
         widgets/view/textautogeneratecolorsandmessageviewstyle.h
         widgets/view/textautogeneratecolorsandmessageviewstyle.cpp
         widgets/view/textautogeneratebaselistview.h
