@@ -43,19 +43,19 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
                 &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged,
                 this,
                 &TextAutoGenerateHistoryListView::slotCurrentChatIdChanged);
-    }
 
-    connect(mManager->textAutoGenerateChatsModel(),
-            &QAbstractItemModel::dataChanged,
-            this,
-            [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-                if (roles.contains(TextAutoGenerateChatsModel::InProgress)) {
-                    const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool();
-                    if (inProgress) {
-                        addWaitingAnswerAnimation(topLeft);
+        connect(mManager->textAutoGenerateChatsModel(),
+                &QAbstractItemModel::dataChanged,
+                this,
+                [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
+                    if (roles.contains(TextAutoGenerateChatsModel::InProgress)) {
+                        const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool();
+                        if (inProgress) {
+                            addWaitingAnswerAnimation(topLeft);
+                        }
                     }
-                }
-            });
+                });
+    }
 
     mHistoryProxyModel->setSourceModel(mHistoryListHeadingsProxyModel);
     setModel(mHistoryProxyModel);
