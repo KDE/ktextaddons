@@ -19,7 +19,6 @@ TextAutoGenerateChatWaitingAnswerAnimation::TextAutoGenerateChatWaitingAnswerAni
             connect(chatsModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
                 if (roles.contains(TextAutoGenerateChatsModel::InProgress)) {
                     const bool inProgress = topLeft.data(TextAutoGenerateChatsModel::InProgress).toBool();
-                    qDebug() << " inProgress " << inProgress;
                     if (!inProgress) {
                         if (mModelIndex == topLeft) {
                             stopAndDelete();

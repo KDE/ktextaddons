@@ -55,6 +55,7 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
 
     drawDisplay(painter, opt, displayRect, layout.title); // this takes care of eliding if the text is too long
     painter->restore();
+    drawInProgressIndicator(painter, index, option, layout);
 }
 
 void TextAutoGenerateHistoryListViewDelegate::drawInProgressIndicator(QPainter *painter,
@@ -71,6 +72,7 @@ void TextAutoGenerateHistoryListViewDelegate::drawInProgressIndicator(QPainter *
     if (it == mIndexScaleAndOpacitiesList.cend()) {
         return;
     }
+    qDebug() << " CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCcc";
     const auto scaleAndOpacities = (*it).scaleAndOpacities;
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing);
