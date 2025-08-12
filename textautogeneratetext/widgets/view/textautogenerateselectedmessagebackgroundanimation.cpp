@@ -9,6 +9,7 @@
 #include <QPropertyAnimation>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+
 TextAutoGenerateSelectedMessageBackgroundAnimation::TextAutoGenerateSelectedMessageBackgroundAnimation(QObject *parent)
     : QObject{parent}
 {

@@ -76,15 +76,12 @@ void TextAutoGenerateHistoryListViewDelegate::drawInProgressIndicator(QPainter *
         const TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity value = scaleAndOpacities.value(i);
         painter->setOpacity(value.opacity);
         painter->save();
-#if 1
         painter->translate(layout.inProgressRect.x() + spacing + i * (dotSize + spacing), layout.inProgressRect.top() + layout.inProgressRect.height() / 2);
         painter->rotate(45);
         painter->scale(value.scale, value.scale);
         painter->setBrush(Qt::black);
         painter->drawEllipse(-dotSize / 2, -dotSize / 2, dotSize, dotSize);
-#else
-        painter->fillRect(layout.inProgressRect, Qt::red);
-#endif
+        // painter->fillRect(layout.inProgressRect, Qt::red);
         painter->restore();
     }
     painter->restore();
