@@ -225,14 +225,14 @@ void TextAutoGenerateHistoryListView::addWaitingAnswerAnimation(const QModelInde
     animation->setModelIndex(index);
     const QMetaObject::Connection valueChangeConnection =
         connect(animation, &TextAutoGenerateChatWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
-            qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation start";
+            qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateChatWaitingAnswerAnimation valueChanged";
             mDelegate->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
             update(animation->modelIndex());
         });
     connect(animation, &TextAutoGenerateChatWaitingAnswerAnimation::waitingAnswerDone, this, [this, index, valueChangeConnection]() {
         mDelegate->removeNeedUpdateWaitingAnswerAnimation(index);
         disconnect(valueChangeConnection);
-        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation end";
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateChatWaitingAnswerAnimation end";
         update(index);
     });
     animation->start();

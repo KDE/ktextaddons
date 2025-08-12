@@ -189,7 +189,7 @@ void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &inde
     animation->setModelIndex(index);
     const QMetaObject::Connection valueChangeConnection =
         connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
-            qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation start";
+            qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation value changed";
             static_cast<TextAutoGenerateListViewDelegate *>(mDelegate)->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
             update(animation->modelIndex());
         });
