@@ -13,6 +13,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateManager;
 class TextAutoGenerateHistoryListHeadingsProxyModel;
 class TextAutoGenerateHistorySortFilterProxyModel;
+class TextAutoGenerateHistoryListViewDelegate;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListView : public QTreeView
 {
     Q_OBJECT
@@ -31,6 +32,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void addWaitingAnswerAnimation(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotClicked(const QModelIndex &idx);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotShowArchived();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();
@@ -38,6 +40,7 @@ private:
     TextAutoGenerateHistorySortFilterProxyModel *const mHistoryProxyModel;
     TextAutoGenerateHistoryListHeadingsProxyModel *const mHistoryListHeadingsProxyModel;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    TextAutoGenerateHistoryListViewDelegate *const mDelegate;
     QColor mTextColor;
 };
 }

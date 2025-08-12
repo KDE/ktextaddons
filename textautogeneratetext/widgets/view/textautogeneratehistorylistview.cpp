@@ -11,6 +11,7 @@
 #include "core/models/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogeneratehistorylistviewdelegate.h"
+#include "textautogeneratetextwidget_animation_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QContextMenuEvent>
@@ -24,6 +25,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
     , mHistoryProxyModel(new TextAutoGenerateHistorySortFilterProxyModel(this))
     , mHistoryListHeadingsProxyModel(new TextAutoGenerateHistoryListHeadingsProxyModel(this))
     , mManager(manager)
+    , mDelegate(new TextAutoGenerateHistoryListViewDelegate(this))
 {
     setHeaderHidden(true);
     setDragEnabled(false);
@@ -31,7 +33,7 @@ TextAutoGenerateHistoryListView::TextAutoGenerateHistoryListView(TextAutoGenerat
     setRootIsDecorated(false);
     setItemsExpandable(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setItemDelegate(new TextAutoGenerateHistoryListViewDelegate(this));
+    setItemDelegate(mDelegate);
 
     if (mManager) {
         mHistoryListHeadingsProxyModel->setSourceModel(mManager->textAutoGenerateChatsModel());
@@ -202,6 +204,25 @@ void TextAutoGenerateHistoryListView::generalPaletteChanged()
     QColor color = palette.text().color();
     color.setAlpha(128);
     mTextColor = color;
+}
+
+void TextAutoGenerateHistoryListView::addWaitingAnswerAnimation(const QModelIndex &index)
+{
+    auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(mManager->currentChatId(), mManager, this);
+    animation->setModelIndex(index);
+    const QMetaObject::Connection valueChangeConnection =
+        connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::valueChanged, this, [this, animation]() {
+            qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation start";
+            mDelegate->needUpdateWaitingAnswerAnimation(animation->modelIndex(), animation->scaleOpacities());
+            update(animation->modelIndex());
+        });
+    connect(animation, &TextAutoGenerateMessageWaitingAnswerAnimation::waitingAnswerDone, this, [this, index, valueChangeConnection]() {
+        mDelegate->removeNeedUpdateWaitingAnswerAnimation(index);
+        disconnect(valueChangeConnection);
+        qCDebug(TEXTAUTOGENERATETEXT_WIDGET_ANIMATION_LOG) << "TextAutoGenerateMessageWaitingAnswerAnimation end";
+        update(index);
+    });
+    animation->start();
 }
 
 #include "moc_textautogeneratehistorylistview.cpp"
