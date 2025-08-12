@@ -35,6 +35,7 @@ public:
 
 private:
     struct Layout {
+        QRect inProgressRect;
         QString title;
         bool isHeader = false;
     };
