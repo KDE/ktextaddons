@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 18:28+0000\n"
+"POT-Creation-Date: 2025-08-12 00:41+0000\n"
 "PO-Revision-Date: 2025-08-05 19:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -330,7 +330,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "الرجاء إدخال اسم النموذج كـ \"name:tag\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:390
+#: widgets/view/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1602,6 +1602,18 @@ msgstr ""
 msgid "Devstral: the best open source model for coding agents."
 msgstr ""
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:278
+#, kde-format
+msgid ""
+"OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
+"and versatile developer use cases."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
+#, kde-format
+msgid "Alibaba's performant long context models for agentic and coding tasks."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
@@ -1689,18 +1701,18 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr ""
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:39
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr ""
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Model"
@@ -1708,7 +1720,7 @@ msgctxt "@action"
 msgid "Download Ollama"
 msgstr "نزل النموذج"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "Ollama"
 msgctxt "@action"
@@ -1875,7 +1887,7 @@ msgid "Modify…"
 msgstr "عدّل…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:152
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2010,42 +2022,42 @@ msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "فضّله"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "استعد"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "أرشف"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "أتريد إزالة هذه المناقشة؟"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:157
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "أزل المناقة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:182
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, fuzzy, kde-format
 #| msgid "No plugin found."
 msgid "No Archive Found."
 msgstr "لم يعثر على ملحق."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:378
+#: widgets/view/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#: widgets/view/textautogeneratelistviewdelegate.cpp:379
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove"
@@ -2053,13 +2065,13 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "أزل"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:386
+#: widgets/view/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:394
+#: widgets/view/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

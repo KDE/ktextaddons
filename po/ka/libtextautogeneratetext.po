@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 18:28+0000\n"
+"POT-Creation-Date: 2025-08-12 00:41+0000\n"
 "PO-Revision-Date: 2025-08-08 07:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -320,7 +320,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "შეიყვანეთ მოდელის სახელი ფორმით \"სახელი:ჭდე\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:390
+#: widgets/view/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1885,6 +1885,18 @@ msgstr ""
 msgid "Devstral: the best open source model for coding agents."
 msgstr "Devstral: საუკეთესო ღია კოდის მქონე მოდელი კოდის აგენტებისთვის."
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:278
+#, kde-format
+msgid ""
+"OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
+"and versatile developer use cases."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
+#, kde-format
+msgid "Alibaba's performant long context models for agentic and coding tasks."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
 msgid "Ollama"
@@ -1975,25 +1987,25 @@ msgctxt "@action:button"
 msgid "Add instance…"
 msgstr "გაშვებული ასლის დამატება…"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:39
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
 "სისტემაში Ollama აღმოჩენილი არაა. სთხოვეთ თქვენ ადმინისტრატორს, დააყენოს ის."
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:41
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr "სისტემაში Ollama აღმოჩენილი არაა. დააყენეთ ის."
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:42
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr "Ollama-ის გადმოწერა"
 
-#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:49
+#: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -2147,7 +2159,7 @@ msgid "Modify…"
 msgstr "შეცვლა…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:152
+#: widgets/view/textautogeneratehistorylistview.cpp:151
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2280,53 +2292,53 @@ msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "რჩეულად მონიშვნა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:141
+#: widgets/view/textautogeneratehistorylistview.cpp:140
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "დაარქივება"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "წაშლით ამ კამათს?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:157
+#: widgets/view/textautogeneratehistorylistview.cpp:156
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:182
+#: widgets/view/textautogeneratehistorylistview.cpp:181
 #, kde-format
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:378
+#: widgets/view/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:382
+#: widgets/view/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "წაშლა"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:386
+#: widgets/view/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:394
+#: widgets/view/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
