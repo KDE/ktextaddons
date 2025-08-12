@@ -42,10 +42,6 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
     // Set the painter font
     painter->setFont(option.font);
 
-    // Calculate the text rectangles
-    QFontMetrics fontMetrics(option.font);
-
-    // Draw the two lines
     painter->setPen(option.palette.text().color());
 
 #if 0
@@ -57,7 +53,6 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
     const QRect displayRect = option.rect;
 #endif
 
-    // TODO
     drawDisplay(painter, opt, displayRect, layout.title); // this takes care of eliding if the text is too long
     painter->restore();
 }
@@ -65,6 +60,7 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
 TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewDelegate::doLayout(const QStyleOptionViewItem &option,
                                                                                                   const QModelIndex &index) const
 {
+    Q_UNUSED(option);
     TextAutoGenerateHistoryListViewDelegate::Layout layout;
     layout.isHeader = !index.parent().isValid();
     layout.title = index.data(TextAutoGenerateChatsModel::Title).toString();

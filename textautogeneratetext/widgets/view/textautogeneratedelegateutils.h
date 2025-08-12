@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogeneratetext_export.h"
 #include <QAbstractTextDocumentLayout>
 #include <QString>
@@ -32,5 +33,10 @@ TEXTAUTOGENERATETEXT_EXPORT void setClipboardSelection(TextAutoGenerateListViewT
 [[nodiscard]] int leftUserIndent();
 [[nodiscard]] int iconSpacing();
 [[nodiscard]] QSize progressIndicatorSize();
+
+struct IndexScaleAndOpacities {
+    QPersistentModelIndex index;
+    QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> scaleAndOpacities;
+};
 }
 }
