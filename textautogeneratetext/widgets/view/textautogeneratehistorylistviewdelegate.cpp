@@ -23,17 +23,16 @@ TextAutoGenerateHistoryListViewDelegate::~TextAutoGenerateHistoryListViewDelegat
 
 void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    const TextAutoGenerateHistoryListViewDelegate::Layout layout = doLayout(option, index);
     if (!index.isValid()) {
         return;
     }
 
-    if (!index.parent().isValid()) {
+    const TextAutoGenerateHistoryListViewDelegate::Layout layout = doLayout(option, index);
+    if (layout.isHeader) {
         QItemDelegate::paint(painter, option, index);
         return;
     }
-    const QString title = index.data(TextAutoGenerateChatsModel::Title).toString();
-#if 1
+
     QStyleOptionViewItem opt(option);
     opt.showDecorationSelected = true;
     QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &opt, painter);
@@ -45,11 +44,9 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
 
     // Calculate the text rectangles
     QFontMetrics fontMetrics(option.font);
-    const QRect rect = option.rect;
 
     // Draw the two lines
     painter->setPen(option.palette.text().color());
-    const QRect lineText(rect.left() + 5, rect.top(), rect.width(), fontMetrics.height());
 
 #if 0
     const QRect displayRect(0,
@@ -61,12 +58,8 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
 #endif
 
     // TODO
-    drawDisplay(painter, opt, displayRect, title); // this takes care of eliding if the text is too long
-    // painter->drawText(lineText, Qt::AlignLeft | Qt::AlignVCenter, title);
+    drawDisplay(painter, opt, displayRect, layout.title); // this takes care of eliding if the text is too long
     painter->restore();
-#else
-    QStyledItemDelegate::paint(painter, option, index);
-#endif
 }
 
 TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewDelegate::doLayout(const QStyleOptionViewItem &option,
@@ -74,8 +67,7 @@ TextAutoGenerateHistoryListViewDelegate::Layout TextAutoGenerateHistoryListViewD
 {
     TextAutoGenerateHistoryListViewDelegate::Layout layout;
     layout.isHeader = !index.parent().isValid();
-
-    // TODO
+    layout.title = index.data(TextAutoGenerateChatsModel::Title).toString();
     return layout;
 }
 
