@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 00:41+0000\n"
+"POT-Creation-Date: 2025-08-13 00:41+0000\n"
 "PO-Revision-Date: 2025-08-05 19:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -330,7 +330,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "الرجاء إدخال اسم النموذج كـ \"name:tag\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1880,14 +1880,14 @@ msgid "Ask to AI"
 msgstr "اسأل الذكاء الاصطناعي"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:116
+#: widgets/view/textautogeneratehistorylistview.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "عدّل…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2004,60 +2004,60 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "حدّد الكلّ"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:105
+#: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "دردشة جديدة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "أزِل من المفضّلة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "فضّله"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "استعد"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "أرشف"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "أتريد إزالة هذه المناقشة؟"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "أزل المناقة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:196
 #, fuzzy, kde-format
 #| msgid "No plugin found."
 msgid "No Archive Found."
 msgstr "لم يعثر على ملحق."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove"
@@ -2065,13 +2065,13 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "أزل"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/textautogeneratelistviewdelegate.cpp:393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

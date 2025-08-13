@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 00:41+0000\n"
-"PO-Revision-Date: 2025-08-08 21:48+0300\n"
+"POT-Creation-Date: 2025-08-13 00:41+0000\n"
+"PO-Revision-Date: 2025-08-12 09:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -321,7 +321,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1893,11 +1893,16 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
+"Моделі OpenAI з відкритою вагою розроблено для побудови розмірковувань, "
+"завдань агента та різнобічних випадків використання у розробці програмного "
+"коду."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
+"Швидкісні моделі з довгим контекстом від Alibaba для агентів та завдань з "
+"програмування."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
@@ -2155,14 +2160,14 @@ msgid "Ask to AI"
 msgstr "Запитати у ШІ"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:116
+#: widgets/view/textautogeneratehistorylistview.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "Змінити…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2277,71 +2282,71 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "Позначити все"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:105
+#: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "Нове спілкування"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "Вилучити з улюблених"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "Зробити улюбленим"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Відновити"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "Архівувати"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Хочете вилучити це обговорення?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Вилучення обговорення"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:196
 #, kde-format
 msgid "No Archive Found."
 msgstr "Архів не знайдено"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Вилучити"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/textautogeneratelistviewdelegate.cpp:393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

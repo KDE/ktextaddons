@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-12 00:41+0000\n"
-"PO-Revision-Date: 2025-08-08 07:37+0200\n"
+"POT-Creation-Date: 2025-08-13 00:41+0000\n"
+"PO-Revision-Date: 2025-08-12 05:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -320,7 +320,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "შეიყვანეთ მოდელის სახელი ფორმით \"სახელი:ჭდე\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1891,11 +1891,15 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
+"OpenAI-ის ღია წონის მოდელები, რომლებიც შექმნილია მძლავრი მსჯელობისთვის, "
+"აგენტური ამოცანებისთვის და მრავალმხრივი პროგრამისტების მიერ გამოყენებისთვის."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
+"Alibaba-ის გრძელი კონტექსტის მქონე მოდელები აგენტური და კოდის წერის "
+"ამოცანებისთვის."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
@@ -2152,14 +2156,14 @@ msgid "Ask to AI"
 msgstr "ხი-სთვის კითხვა"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
-#: widgets/view/textautogeneratehistorylistview.cpp:116
+#: widgets/view/textautogeneratehistorylistview.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "შეცვლა…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:58
-#: widgets/view/textautogeneratehistorylistview.cpp:151
+#: widgets/view/textautogeneratehistorylistview.cpp:166
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -2274,71 +2278,71 @@ msgctxt "@action"
 msgid "Select All"
 msgstr "ყველას მონიშვნა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:105
+#: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
 msgstr "ახალი ჩატი"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "რჩეულებიდან წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:129
+#: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "რჩეულად მონიშვნა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:140
+#: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "დაარქივება"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:155
+#: widgets/view/textautogeneratehistorylistview.cpp:170
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "წაშლით ამ კამათს?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:156
+#: widgets/view/textautogeneratehistorylistview.cpp:171
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:181
+#: widgets/view/textautogeneratehistorylistview.cpp:196
 #, kde-format
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/textautogeneratelistviewdelegate.cpp:377
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "წაშლა"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/textautogeneratelistviewdelegate.cpp:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/textautogeneratelistviewdelegate.cpp:393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
