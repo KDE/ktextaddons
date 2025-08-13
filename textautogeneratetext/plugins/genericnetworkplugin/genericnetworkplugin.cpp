@@ -119,11 +119,6 @@ void GenericNetworkPlugin::save(KConfigGroup &config)
     writeJob->start();
 }
 
-void GenericNetworkPlugin::setPrompt(const QString &text)
-{
-    // TODO
-}
-
 QString GenericNetworkPlugin::engineName() const
 {
     return name();

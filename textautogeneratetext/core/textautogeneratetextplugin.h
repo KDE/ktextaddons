@@ -53,8 +53,6 @@ public:
     virtual void clear();
     [[nodiscard]] virtual QString translatedPluginName() const = 0;
 
-    virtual void setPrompt(const QString &text) = 0;
-
     void setHasError(bool error);
 
     [[nodiscard]] bool ready() const;

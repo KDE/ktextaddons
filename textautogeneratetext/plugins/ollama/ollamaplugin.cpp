@@ -84,11 +84,6 @@ void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
     }
 }
 
-void OllamaPlugin::setPrompt(const QString &text)
-{
-    // TODO
-}
-
 QString OllamaPlugin::engineName() const
 {
     return "ollama"_L1;

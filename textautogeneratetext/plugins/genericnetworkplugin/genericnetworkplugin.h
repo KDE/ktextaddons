@@ -18,8 +18,6 @@ public:
                                   QObject *parent = nullptr);
     ~GenericNetworkPlugin() override;
 
-    void setPrompt(const QString &text) override;
-
     [[nodiscard]] QString engineName() const override;
     [[nodiscard]] QString name() const;
     [[nodiscard]] QString translatedPluginName() const override;

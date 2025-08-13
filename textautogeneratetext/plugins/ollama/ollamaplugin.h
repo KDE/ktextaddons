@@ -21,8 +21,6 @@ public:
                           QObject *parent = nullptr);
     ~OllamaPlugin() override;
 
-    void setPrompt(const QString &text) override;
-
     [[nodiscard]] QString engineName() const override;
 
     [[nodiscard]] QString translatedPluginName() const override;
