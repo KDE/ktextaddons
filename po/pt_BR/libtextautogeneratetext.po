@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:41+0000\n"
-"PO-Revision-Date: 2025-08-02 09:30-0300\n"
+"PO-Revision-Date: 2025-08-13 14:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -156,7 +156,7 @@ msgstr "API do Llama"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr ""
+msgstr "Antrópico"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
@@ -1902,11 +1902,15 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
+"Os modelos de peso aberto da OpenAI foram projetados para raciocínio "
+"poderoso, tarefas de agente e casos de uso versáteis para desenvolvedores."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
+"Modelos de contexto longo de alto desempenho do Alibaba para tarefas de "
+"codificação e agentes."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
@@ -2003,19 +2007,19 @@ msgstr "Adicionar instância..."
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
+"Ollama não encontrado no sistema. Peça ao administrador do sistema para "
+"instalá-lo."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr ""
+msgstr "Ollama não encontrado no sistema. Por favor, instale-o."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Baixar modelo"
+msgstr "Baixar o Ollama"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, kde-format
@@ -2050,31 +2054,28 @@ msgstr "Enviar"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "É necessário reiniciar para aplicar as alterações."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
 #, kde-format
 msgid "Text Plugins"
-msgstr ""
+msgstr "Plugins de texto"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Configurar..."
+msgstr "Configurar"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Prompt:"
+#, kde-format
 msgid "Prompt"
-msgstr "Prompt:"
+msgstr "Prompt"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
