@@ -33,6 +33,8 @@ public:
                                           const QList<TextAutoGenerateMessageWaitingAnswerAnimation::ScaleAndOpacity> &scaleAndOpacities);
     void removeNeedUpdateWaitingAnswerAnimation(const QPersistentModelIndex &index);
 
+    [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+
 private:
     struct Layout {
         QRect textRect;

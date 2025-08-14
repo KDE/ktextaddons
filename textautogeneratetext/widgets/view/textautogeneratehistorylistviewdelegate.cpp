@@ -51,6 +51,12 @@ void TextAutoGenerateHistoryListViewDelegate::paint(QPainter *painter, const QSt
     drawInProgressIndicator(painter, index, option, layout);
 }
 
+QSize TextAutoGenerateHistoryListViewDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    const QSize defaultSize = QItemDelegate::sizeHint(option, index);
+    return defaultSize + QSize(0, 10);
+}
+
 void TextAutoGenerateHistoryListViewDelegate::drawInProgressIndicator(QPainter *painter,
                                                                       const QModelIndex &index,
                                                                       const QStyleOptionViewItem &option,
