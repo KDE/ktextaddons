@@ -455,7 +455,7 @@ msgid ""
 "encompassing up to 18 trillion tokens. The model supports up to 128K tokens "
 "and has multilingual support."
 msgstr ""
-"جُهزت نماذج Qwen2.5 على أحدث مجموعة بيانات على نطاق واسع من Alibaba ، والتي "
+"جُهزت نماذج Qwen2.5 على أحدث مجموعة بيانات على نطاق واسع من Alibaba، والتي "
 "تشمل ما يصل إلى 18 تريليون رمز. يدعم النموذج ما يصل إلى 128k رمز ويدعم تعدد "
 "اللغات."
 
@@ -492,8 +492,8 @@ msgid ""
 "The latest series of Code-Specific Qwen models, with significant "
 "improvements in code generation, code reasoning, and code fixing."
 msgstr ""
-"أحدث سلسلة من نماذج Qwen الخاصة بالرمز ، مع تحسينات كبيرة في توليد الكود ، "
-"وتفكير التعليمات البرمجية ، وإصلاح التعليمات البرمجية."
+"أحدث سلسلة من نماذج Qwen الخاصة بالرمز، مع تحسينات كبيرة في توليد الكود، "
+"وتفكير التعليمات البرمجية، وإصلاح التعليمات البرمجية."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:40
 #, kde-format
@@ -501,7 +501,7 @@ msgid ""
 "A state-of-the-art 12B model with 128k context length, built by Mistral AI "
 "in collaboration with NVIDIA."
 msgstr ""
-"نموذج 12B حديث بطول سياق 128k ، مبنية بواسطة Mistral AI بالتعاون مع NVIDIA."
+"نموذج 12B حديث بطول سياق 128k، مبنية بواسطة Mistral AI بالتعاون مع NVIDIA."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:41
 #, kde-format
@@ -541,7 +541,7 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
-"نماذج غير خاضعة للرقابة ، 8 × 7b و 8 × 22b تعتمد على مزيج من نماذج الخبراء "
+"نماذج غير خاضعة للرقابة، 8 × 7b و 8 × 22b تعتمد على مزيج من نماذج الخبراء "
 "التي تتفوق في مهام الترميز. عمل إريك هارتفورد."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:50
@@ -553,8 +553,8 @@ msgid ""
 "instruction following."
 msgstr ""
 "CodeGemma عبارة عن مجموعة من النماذج القوية والخفيفة الوزن التي يمكنها أداء "
-"مجموعة متنوعة من مهام الترميز مثل إكمال ملء الشفرة المتوسطة ، وتوليد "
-"التعليمات البرمجية ، وفهم اللغة الطبيعية ، والتفكير الرياضي ، والتعليمات "
+"مجموعة متنوعة من مهام الترميز مثل إكمال ملء الشفرة المتوسطة، وتوليد "
+"التعليمات البرمجية، وفهم اللغة الطبيعية، والتفكير الرياضي، والتعليمات "
 "التالية."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:53
@@ -593,7 +593,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "A suite of text embedding models by Snowflake, optimized for performance."
-msgstr "مجموعة من نماذج تضمين النص بواسطة Snowflake ، محسنة للأداء."
+msgstr "مجموعة من نماذج تضمين النص بواسطة Snowflake، محسنة للأداء."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:59
 #, kde-format
@@ -601,8 +601,8 @@ msgid ""
 "State of the art large language model from Microsoft AI with improved "
 "performance on complex chat, multilingual, reasoning and agent use cases."
 msgstr ""
-"نموذج لغة اللغة الكبيرة من Microsoft AI مع تحسين الأداء على الدردشة "
-"المعقدة ، والتعدد اللغات ، والتفكير واستخدام الوكلاء."
+"نموذج لغة اللغة الكبيرة من Microsoft AI مع تحسين الأداء على الدردشة المعقدة، "
+"والتعدد اللغات، والتفكير واستخدام الوكلاء."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:61
 #, kde-format
