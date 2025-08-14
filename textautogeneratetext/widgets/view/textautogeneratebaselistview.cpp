@@ -13,15 +13,21 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 #include <QMouseEvent>
 #include <QScrollBar>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGeneratePluginText>
 #include <TextAutoGenerateText/TextAutoGeneratePluginTextInterface>
 #include <TextAutoGenerateText/TextAutoGeneratePluginTextManager>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QListView(parent)
     , mManager(manager)
 {
+    if (mManager) {
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::fontSizeChanged, this, &TextAutoGenerateBaseListView::slotFontChanged);
+    }
+
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setWordWrap(true); // so that the delegate sizeHint is called again when the width changes
@@ -100,10 +106,13 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
                 interface->addAction(&menu);
             }
         }
-    }
-    if (!menu.actions().isEmpty()) {
         menu.exec(event->globalPos());
     }
+}
+
+void TextAutoGenerateBaseListView::slotFontChanged()
+{
+    mDelegate->clearCache();
 }
 
 void TextAutoGenerateBaseListView::slotSelectAll(const QModelIndex &index)

@@ -42,9 +42,10 @@ protected:
     TextAutoGenerateListViewBaseDelegate *mDelegate = nullptr;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QPoint mPressedPosition;
-    QPersistentModelIndex mCurrentIndex = {};
+    QPersistentModelIndex mCurrentIndex;
 
 private:
+    void slotFontChanged();
     bool mAtBottom = true;
     QList<TextAutoGeneratePluginTextInterface *> mPluginTextInterface;
 };

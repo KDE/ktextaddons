@@ -92,6 +92,7 @@ Q_SIGNALS:
     void needToAddInstances();
     void configChanged();
     void loadEngineDone();
+    void fontSizeChanged();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
