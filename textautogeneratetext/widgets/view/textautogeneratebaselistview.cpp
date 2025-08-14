@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratebaselistview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/view/textautogeneratelistviewbasedelegate.h"
 #include <KLocalizedString>
@@ -63,9 +62,9 @@ TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView()
 
 void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
 {
-    QMenu menu(this);
     const QModelIndex index = indexAt(event->pos());
     if (index.isValid()) {
+        QMenu menu(this);
         auto copyAction =
             new QAction(QIcon::fromTheme(u"edit-copy"_s), mDelegate->hasSelection() ? i18nc("@action", "Copy Selection") : i18nc("@action", "Copy"), &menu);
         copyAction->setShortcut(QKeySequence::Copy);
@@ -78,8 +77,9 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
         auto copyUrlAction = [&]() -> QAction * {
             const QString url = mDelegate->urlAt(index, viewport()->mapFromGlobal(event->globalPos()));
             qDebug() << " url " << url;
-            if (url.isEmpty())
+            if (url.isEmpty()) {
                 return nullptr;
+            }
             auto action = new QAction(QIcon::fromTheme(u"edit-copy"_s), i18nc("@action", "Copy URL"), &menu);
             connect(action, &QAction::triggered, this, [url]() {
                 QGuiApplication::clipboard()->setText(url);
