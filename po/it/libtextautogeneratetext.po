@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:41+0000\n"
-"PO-Revision-Date: 2025-08-01 15:43+0200\n"
+"POT-Creation-Date: 2025-08-15 00:43+0000\n"
+"PO-Revision-Date: 2025-08-14 21:30+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -156,7 +156,7 @@ msgstr "Llama Api"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr ""
+msgstr "Anthropic"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
 #, kde-format
@@ -1910,11 +1910,15 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
+"I modelli open-weight di OpenAI sono progettati per ragionamenti potenti, "
+"attività agentiche e casi d'uso versatili per sviluppatori."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
+"Modelli performanti di Alibaba per contesti lunghi per attività di codifica "
+"e agenti."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
 #, kde-format
@@ -2011,19 +2015,19 @@ msgstr "Aggiungi istanza…"
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
+"Ollama non trovato nel sistema. Chiedi all'amministratore di sistema di "
+"installarlo."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr ""
+msgstr "Ollama non trovato nel sistema. Installalo."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Scarica modello"
+msgstr "Scarica Ollama"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, kde-format
@@ -2058,31 +2062,28 @@ msgstr "Invia"
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "Per applicare le modifiche è necessario il riavvio."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
 #, kde-format
 msgid "Text Plugins"
-msgstr ""
+msgstr "Estensioni testo"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Configura…"
+msgstr "Configura"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Prompt:"
+#, kde-format
 msgid "Prompt"
-msgstr "Prompt:"
+msgstr "Prompt"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2273,25 +2274,25 @@ msgstr "Cerca"
 msgid "No plugin found."
 msgstr "Nessuna estensione trovata."
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia la selezione"
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:77
+#: widgets/view/textautogeneratebaselistview.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Copia URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:89
+#: widgets/view/textautogeneratebaselistview.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

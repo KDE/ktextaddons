@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:41+0000\n"
+"POT-Creation-Date: 2025-08-15 00:43+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1998,25 +1998,25 @@ msgstr "Etsi"
 msgid "No plugin found."
 msgstr "Liitännäistä ei löytynyt."
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Kopioi valinta"
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopioi"
 
-#: widgets/view/textautogeneratebaselistview.cpp:77
+#: widgets/view/textautogeneratebaselistview.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Kopioi verkko-osoite"
 
-#: widgets/view/textautogeneratebaselistview.cpp:89
+#: widgets/view/textautogeneratebaselistview.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

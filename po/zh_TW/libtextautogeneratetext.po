@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:41+0000\n"
+"POT-Creation-Date: 2025-08-15 00:43+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1925,19 +1925,19 @@ msgstr "搜尋"
 msgid "No plugin found."
 msgstr "找不到外掛程式。"
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "複製選取範圍"
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratebaselistview.cpp:77
+#: widgets/view/textautogeneratebaselistview.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -1945,7 +1945,7 @@ msgctxt "@action"
 msgid "Copy URL"
 msgstr "複製"
 
-#: widgets/view/textautogeneratebaselistview.cpp:89
+#: widgets/view/textautogeneratebaselistview.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

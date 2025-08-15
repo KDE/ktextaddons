@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:41+0000\n"
+"POT-Creation-Date: 2025-08-15 00:43+0000\n"
 "PO-Revision-Date: 2025-08-05 19:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1978,19 +1978,19 @@ msgstr "ابحث"
 msgid "No plugin found."
 msgstr "لم يعثر على ملحق."
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "انسخ التحديد"
 
-#: widgets/view/textautogeneratebaselistview.cpp:64
+#: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratebaselistview.cpp:77
+#: widgets/view/textautogeneratebaselistview.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -1998,7 +1998,7 @@ msgctxt "@action"
 msgid "Copy URL"
 msgstr "انسخ"
 
-#: widgets/view/textautogeneratebaselistview.cpp:89
+#: widgets/view/textautogeneratebaselistview.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
