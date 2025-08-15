@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 03:03+0000\n"
-"PO-Revision-Date: 2025-08-07 09:10+0200\n"
+"PO-Revision-Date: 2025-08-12 09:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -261,7 +261,7 @@ msgstr "Etiqueta:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
-msgstr "Indicador:"
+msgstr "Petició:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
 #, kde-format
@@ -481,7 +481,7 @@ msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
 msgstr ""
-"Un model de llenguatge extens que pot utilitzar indicadors de text per a "
+"Un model de llenguatge extens que pot utilitzar peticions de text per a "
 "generar i debatre codi."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
@@ -1464,7 +1464,7 @@ msgid ""
 "policies."
 msgstr ""
 "ShieldGemma és un conjunt de models afinats d'instruccions per a avaluar la "
-"seguretat dels indicadors d'entrada i de les respostes de text de sortida "
+"seguretat de les peticions d'entrada i de les respostes de text de sortida "
 "contra un conjunt de polítiques de seguretat definides."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
@@ -1528,7 +1528,7 @@ msgid ""
 "in prompts and/or responses."
 msgstr ""
 "Els models IBM Granite Guardian 3.0 2B i 8B estan dissenyats per a detectar "
-"riscos en indicadors i/o respostes."
+"riscos en peticions i/o respostes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
 #, kde-format
@@ -1946,8 +1946,8 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 "Estableix el nombre aleatori de llavors a usar per a la generació. Establir "
-"això a un nombre específic farà que el model generi el mateix text per al "
-"mateix indicador. (Predeterminat: 0)"
+"això a un nombre específic farà que el model generi el mateix text per a la "
+"mateixa petició. (Predeterminat: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format

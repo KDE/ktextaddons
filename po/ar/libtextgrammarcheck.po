@@ -118,7 +118,7 @@ msgid ""
 "a>. Download it and extract it."
 msgstr ""
 "يمكن العثور على Grammalecte <a href=\"https://grammalecte.net/#download"
-"\">هنا</a>. قم بتنزيله واستخرجه."
+"\">هنا</a>. نزّله واستخرجه."
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
