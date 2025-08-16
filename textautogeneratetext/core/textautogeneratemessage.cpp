@@ -31,6 +31,10 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage 
     if (t.messageInfo()) {
         d.space() << "message Info:" << *t.messageInfo();
     }
+    if (t.messageAttachment()) {
+        d.space() << "Message Attachment:" << *t.messageAttachment();
+    }
+
     return d;
 }
 
@@ -102,6 +106,18 @@ bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) c
     } else {
         return false;
     }
+    if (messageAttachment() && other.messageAttachment()) {
+        if (*messageAttachment() == (*other.messageAttachment())) {
+            result = true;
+        } else {
+            return false;
+        }
+    } else if (!messageAttachment() && !other.messageAttachment()) {
+        result = true;
+    } else {
+        return false;
+    }
+
     return result;
 }
 
@@ -302,6 +318,23 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
 bool TextAutoGenerateMessage::messageStateValue(MessageState type) const
 {
     return mMessageStates & type;
+}
+
+const TextAutoGenerateAttachment *TextAutoGenerateMessage::messageAttachment() const
+{
+    if (mMessageAttachment) {
+        return mMessageAttachment.data();
+    }
+    return nullptr;
+}
+
+void TextAutoGenerateMessage::setMessageAttachment(const TextAutoGenerateAttachment &newMessageAttachment)
+{
+    if (!mMessageAttachment) {
+        mMessageAttachment = new TextAutoGenerateAttachment(newMessageAttachment);
+    } else {
+        mMessageAttachment.reset(new TextAutoGenerateAttachment(newMessageAttachment));
+    }
 }
 
 TextAutoGenerateMessage::MessageStates TextAutoGenerateMessage::messageStates() const
