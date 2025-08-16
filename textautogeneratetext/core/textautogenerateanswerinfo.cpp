@@ -77,11 +77,11 @@ bool TextAutoGenerateAnswerInfo::operator==(const TextAutoGenerateAnswerInfo &ot
     return mInstanceName == other.mInstanceName && mModelName == other.mModelName && mEngineName == other.mEngineName;
 }
 
-void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o)
+void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &answerInfo, QJsonObject &o)
 {
-    o["modelName"_L1] = translation.modelName();
-    o["engineName"_L1] = translation.engineName();
-    o["instanceName"_L1] = translation.instanceName();
+    o["modelName"_L1] = answerInfo.modelName();
+    o["engineName"_L1] = answerInfo.engineName();
+    o["instanceName"_L1] = answerInfo.instanceName();
 }
 
 TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonObject &o)

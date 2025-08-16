@@ -47,6 +47,12 @@ bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &ot
     return mImage == other.mImage;
 }
 
+bool TextAutoGenerateAttachment::isValid() const
+{
+    // TODO
+    return false;
+}
+
 TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmentType() const
 {
     return mAttachmentType;
@@ -55,6 +61,17 @@ TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmen
 void TextAutoGenerateAttachment::setAttachmentType(const AttachmentType &newAttachmentType)
 {
     mAttachmentType = newAttachmentType;
+}
+
+void TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o)
+{
+    // TODO
+}
+
+TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonObject &o)
+{
+    // TODO
+    return nullptr;
 }
 
 #include "moc_textautogenerateattachment.cpp"

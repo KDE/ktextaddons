@@ -256,6 +256,9 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
             TextAutoGenerateAnswerInfo::serialize(*info, o);
         }
     }
+    if (auto att = msg.messageAttachment(); att) {
+        TextAutoGenerateAttachment::serialize(*att, o);
+    }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
     if (toBinary) {
@@ -278,6 +281,12 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
         msg.setMessageInfo(*messageInfoDeserialized);
     }
     delete messageInfoDeserialized;
+
+    TextAutoGenerateAttachment *attDeserialized = TextAutoGenerateAttachment::deserialize(o);
+    if (attDeserialized->isValid()) {
+        msg.setMessageAttachment(*attDeserialized);
+    }
+    delete attDeserialized;
 
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));

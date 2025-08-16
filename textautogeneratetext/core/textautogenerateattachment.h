@@ -36,8 +36,13 @@ public:
 
     [[nodiscard]] bool operator==(const TextAutoGenerateAttachment &other) const;
 
+    [[nodiscard]] bool isValid() const;
+
     [[nodiscard]] AttachmentType attachmentType() const;
     void setAttachmentType(const AttachmentType &newAttachmentType);
+
+    static void serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o);
+    static TextAutoGenerateAttachment *deserialize(const QJsonObject &o);
 
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
