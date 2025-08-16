@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-15 00:43+0000\n"
-"PO-Revision-Date: 2025-08-11 14:53+0200\n"
+"PO-Revision-Date: 2025-08-15 14:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -564,7 +564,7 @@ msgid ""
 "Uncensored, 8x7b and 8x22b fine-tuned models based on the Mixtral mixture of "
 "experts models that excels at coding tasks. Created by Eric Hartford."
 msgstr ""
-"Zentsuratu gabeko, findutako 8x7b eta 8x22b ereduak, kodetze-lanetan "
+"Zentsuratu gabeko, doitutako 8x7b eta 8x22b ereduak, kodetze-lanetan "
 "bikainak diren Mixtral eredu adituen nahasketan oinarritua. Eric Hartford-ek "
 "sortua."
 
@@ -674,158 +674,159 @@ msgstr ""
 "eredu bat, oinarrizko mailako hardwarerako egokia."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "A LLaVA model fine-tuned from Llama 3 Instruct with better scores in several "
 "benchmarks."
 msgstr ""
-"Llama 3 Instruct-etik fintze bidez egokitutako LLaVA eredua, ikusmen eta "
-"hizkuntza ulermen hobetua lortzeko."
+"Llama 3 Instruct-etik doitutako LLaVA eredu bat, hainbat erreferentzia-"
+"probatan puntuazio hobeak dituena."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Zephyr is a series of fine-tuned versions of the Mistral and Mixtral models "
 "that are trained to act as helpful assistants."
 msgstr ""
-"Zephyr Mistral 7B ereduaren fintze-bertsioen seriea da, elkarrizketa eta "
-"jarraibideen jarraipenerako optimizatua."
+"Zephyr, doitutako Mistral eta Mixtral ereduen bertsio sail bat da, "
+"laguntzaile lagungarri gisa jarduteko trebatuak."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "A lightweight AI model with 3.8 billion parameters with performance "
 "overtaking similarly and larger sized models."
 msgstr ""
-"3,8 mila milioi parametro dituen AI eredu arina, inferentzia azkar eta "
-"eraginkorrerako."
+"3,8 mila milioi parametro dituen AA eredu arin bat, neurri antzeko eta "
+"handiagoko ereduen errendimendua gainditzen dituena."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Embedding models on very large sentence level datasets."
 msgstr ""
-"Esaldi-mailako datu multzo oso handietan oinarritutako txertatze-ereduak, "
-"antzekotasun semantikorako eta bilaketa-atzazetarako."
+"Esaldi-mailako datu-multzo oso handietan oinarritutako txertatzeko ereduak."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Codestral is Mistral AI’s first-ever code model designed for code generation "
 "tasks."
 msgstr ""
-"Codestral Mistral AI-ren lehen kode-eredua da, kode-sorkuntza, osaketa eta "
-"ulermenerako diseinatua."
+"Codestral Mistral AI-ren lehen kode-eredua da, kode-sorkuntza atazetarako "
+"diseinatua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:73
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "StarCoder is a code generation model trained on 80+ programming languages."
 msgstr ""
-"StarCoder GitHub-eko lizentzia malguko kodean trebatu den kode-sorkuntza "
-"eredua da."
+"StarCoder programatzeko 80+ lengoaiatan trebatutako kodea sortzeko eredu bat "
+"da."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
 "sizes."
 msgstr ""
-"Llama eta Llama 2-n oinarritutako elkarrizketa-eredu orokorra, elkarrizketa-"
-"AI aplikazioetarako optimizatua."
+"Llama eta Llama 2-n oinarritutako erabilera orokorreko berriketa eredu bat, "
+"2K eta 16K bitarteko testuinguru-tamainakoa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "A family of open foundation models by IBM for Code Intelligence"
-msgstr ""
-"IBM-ren oinarrizko eredu ireki familia, enpresa-mailako AI irtenbideetarako."
+msgstr "Kode-adimenerako IBM-ren oinarri irekiko ereduen familia bat"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Mistral OpenOrca is a 7 billion parameter model, fine-tuned on top of the "
 "Mistral 7B model using the OpenOrca dataset."
 msgstr ""
-"Mistral OpenOrca 7 mila milioi parametroko eredua da, OpenOrca datu multzoan "
-"fintze bidez egokitua, jarraibideen jarraipena hobetzeko."
+"Mistral OpenOrca 7 mila milioi parametroko eredu bat da, Mistral 7B "
+"ereduaren gainean, OpenOrca datu-multzoa erabiliz doitua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "A family of small models with 135M, 360M, and 1.7B parameters, trained on a "
 "new high-quality dataset."
 msgstr ""
-"Baliabide mugatuko inguruneetarako 135M, 360M eta 1,4B parametro dituzten "
-"eredu txikien familia."
+"135M, 360M, eta 1,7B parametroko eredu txikien familia bat, kalitate handiko "
+"datu-multzo berri batean trebatuta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Wizard Vicuna Uncensored is a 7B, 13B, and 30B parameter model based on "
 "Llama 2 uncensored by Eric Hartford."
 msgstr ""
-"Wizard Vicuna Uncensored 7B, 13B eta 30B tamainetako eredua da, edukien "
-"murrizketarik gabe elkarrizketa-AIrako fintze bidez egokitua."
+"Wizard Vicuna Uncensored 7B, 13B eta 30B parametroko eredu bat da, Eric "
+"Hartford-ek sortutako zentsurarik gabeko Llama 2 ereduaren gainean "
+"oinarritua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "Llama 2 based model fine tuned to improve Chinese dialogue ability."
 msgstr ""
-"Txinera gaitasunak hobetzeko fintze bidez egokitutako Llama 2 oinarritutako "
+"Txineraz mintzatzeko gaitasuna hobetzeko doitutako Llama 2-n oinarritutako "
 "eredua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-"
 "Functionality, Multi-Linguality, and Multi-Granularity."
 msgstr ""
-"BGE-M3 BAAI-k sortutako eredu berria da, hizkuntza-anitzeko txertatze "
-"gaitasunengatik nabarmentzen dena."
+"BGE-M3 BAAI-ren eredu berri bat da, funtzio-aniztasunean, hizkuntza-"
+"aniztasunean eta xehetasun-maila aniztasunean duen moldakortasunagatik "
+"nabarmentzen dena."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "A versatile model for AI software development scenarios, including code "
 "completion."
 msgstr ""
-"Ingurune anitzetan AI softwarearen garapenerako eta ezarpenerako eredu "
-"moldakorra."
+"AA software garapen-eszenatokietarako, eredu moldakor bat, kodea osatzea "
+"barne."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "A family of open-source models trained on a wide variety of data, surpassing "
 "ChatGPT on various benchmarks. Updated to version 3.5-0106."
 msgstr ""
-"Hizkuntza-anitzeko datu multzo askotarikoetan trebatu den iturburu irekiko "
-"eredu familia."
+"Datu mota askorekin trebatu eta hainbat erreferentzia-probatan ChatGPT "
+"gainditzen duen sorburu irekiko ereduen familia bat. 3.5-0106 bertsiora "
+"eguneratua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Aya 23, released by Cohere, is a new family of state-of-the-art, "
 "multilingual models that support 23 languages."
 msgstr ""
-"Aya 23, Cohere-k argitaratua, hizkuntza arteko atazetarako diseinatutako "
-"eredu anitz-hizkuntzako familia berria da."
+"Cohere-k kaleratutako Aya 23, puntako teknologiako eredu eleaniztun familia "
+"berri bat da, 23 hizkuntza onartzen dituena."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:86
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "CodeQwen1.5 is a large language model pretrained on a large amount of code "
 "data."
 msgstr ""
-"CodeQwen1.5 kode eta testu datu anitzetan aurre-entrenatutako hizkuntza-"
-"eredu handia da, programazio eta hizkuntza naturalaren ulermenerako."
+"CodeQwen1.5 kode datu kopuru handian aurre-entrenatutako hizkuntza-eredu "
+"handia bat da."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The powerful family of models by Nous Research that excels at scientific "
 "discussion and coding tasks."
 msgstr ""
-"Nous Research-ek sortutako eredu boteretsuen familia, hainbat tamainatan "
-"eskuragarri, AI aplikazio ezberdinetarako."
+"Nous Research-eren ereduen familia ahaltsua, eztabaida zientifikoetan eta "
+"kodetze-zereginetan bikaina dena."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:88
 #, kde-format
@@ -837,7 +838,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
 msgid "State-of-the-art code generation model"
-msgstr ""
+msgstr "Puntako teknologiako kodea sortzeko eredua"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:91
 #, kde-format
@@ -920,7 +921,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:110
 #, kde-format
 msgid "Model focused on math and logic problems"
-msgstr ""
+msgstr "Arreta matematika eta logika problemetan ipintzen duen eredua"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:111
 #, kde-format
@@ -965,7 +966,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:118
 #, kde-format
 msgid "Code generation model based on Code Llama."
-msgstr ""
+msgstr "Kodea sortzeko eredua, Llama-n oinarritua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:119
 #, kde-format
@@ -982,7 +983,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:121
 #, kde-format
 msgid "General use model based on Llama 2."
-msgstr ""
+msgstr "Erabilera orokorreko eredua, Llama 2(a)n oinarritua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:122
 #, kde-format
