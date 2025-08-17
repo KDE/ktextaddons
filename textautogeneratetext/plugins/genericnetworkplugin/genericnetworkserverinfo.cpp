@@ -36,6 +36,8 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Llama Api");
     case GenericNetworkManager::PluginNetworkType::Anthropic:
         return i18n("Anthropic");
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+        return i18n("'Kimi (Moonshot AI)");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -56,6 +58,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"chat/completions"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
@@ -85,6 +88,8 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.llama.com/products/llama-api/"_s;
     case GenericNetworkManager::PluginNetworkType::Anthropic:
         return u"https://www.anthropic.com/"_s;
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+        return u"https://www.moonshot.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -113,6 +118,8 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.llama.com/compat/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::Anthropic:
         return u"https://api.anthropic.com/v1/"_s;
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+        return u"https://api.moonshot.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -138,6 +145,8 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Cerebras AI cloud inference API");
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
         return i18n("Meta AI Llama API");
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+        return i18n("Kimi large language models by Moonshot AI");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -166,6 +175,8 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"llamaapi"_s;
     case GenericNetworkManager::PluginNetworkType::Anthropic:
         return u"anthropic"_s;
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+        return u"kimiai"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
@@ -190,6 +201,8 @@ GenericNetworkManager::PluginNetworkType GenericNetworkServerInfo::pluginNetwork
         return GenericNetworkManager::PluginNetworkType::LlamaApi;
     } else if (str == QLatin1StringView("anthropic")) {
         return GenericNetworkManager::PluginNetworkType::Anthropic;
+    } else if (str == QLatin1StringView("kimiai")) {
+        return GenericNetworkManager::PluginNetworkType::KimiAI;
     } else {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug" << str;
         return GenericNetworkManager::PluginNetworkType::Unknown;
@@ -231,6 +244,9 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
         limits |= GenericNetworkServerInfo::Limitation::TextOnly;
         return limits;
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
+        limits |= GenericNetworkServerInfo::Limitation::NoSystemMessage;
+        return limits;
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
         limits |= GenericNetworkServerInfo::Limitation::NoSystemMessage;
         return limits;
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
