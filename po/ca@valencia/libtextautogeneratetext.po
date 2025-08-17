@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 03:03+0000\n"
-"PO-Revision-Date: 2025-08-07 09:10+0200\n"
+"PO-Revision-Date: 2025-08-15 09:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -261,7 +261,7 @@ msgstr "Etiqueta:"
 #: plugins/ollama/ollamaconfigurewidget.cpp:73
 #, kde-format
 msgid "Prompt:"
-msgstr "Indicació:"
+msgstr "Petició:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
 #, kde-format
@@ -279,7 +279,7 @@ msgstr "Carrega un fitxer GGUF…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Seleccioneu un fitxer GGUF"
+msgstr "Trieu un fitxer GGUF"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
 #, kde-format
@@ -481,7 +481,7 @@ msgid ""
 "A large language model that can use text prompts to generate and discuss "
 "code."
 msgstr ""
-"Un model de llenguatge extens que pot utilitzar indicadors de text per a "
+"Un model de llenguatge extens que pot utilitzar peticions de text per a "
 "generar i debatre codi."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:39
@@ -1462,7 +1462,7 @@ msgid ""
 "policies."
 msgstr ""
 "ShieldGemma és un conjunt de models afinats d'instruccions per a avaluar la "
-"seguretat dels indicadors d'entrada i de les respostes de text d'eixida "
+"seguretat de les peticions d'entrada i de les respostes de text d'eixida "
 "contra un conjunt de polítiques de seguretat definides."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:195
@@ -1525,7 +1525,7 @@ msgid ""
 "in prompts and/or responses."
 msgstr ""
 "Els models IBM Granite Guardian 3.0 amb 2 B i 8 B estan dissenyats per a "
-"detectar riscos en indicadors i/o respostes."
+"detectar riscos en peticions i/o respostes."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:206
 #, kde-format
@@ -1945,12 +1945,12 @@ msgid ""
 msgstr ""
 "Establix el nombre aleatori de llavors que s'utilitzarà per a la generació. "
 "Establir açò a un nombre específic farà que el model genere el mateix text "
-"per al mateix indicador. (Predeterminat: 0)"
+"per a la mateixa petició. (Predeterminat: 0)"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:74
 #, kde-format
 msgid "No system prompt"
-msgstr "Sense indicatiu del sistema"
+msgstr "Sense petició del sistema"
 
 #: plugins/ollama/ollamasettings.cpp:18
 #, kde-format
@@ -2017,7 +2017,7 @@ msgstr "Nom:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr "Seleccioneu el tipus d'instància:"
+msgstr "Trieu el tipus d'instància:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
 #, kde-format
@@ -2212,7 +2212,7 @@ msgstr "Copia l'URL"
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "Selecciona-ho tot"
+msgstr "Tria-ho tot"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
