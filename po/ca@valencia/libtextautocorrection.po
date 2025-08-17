@@ -27,12 +27,12 @@ msgstr "No s'ha pogut obrir l'arxiu en mode de lectura."
 #: widgets/autocorrectionwidget.cpp:136
 #, kde-format
 msgid "Select Custom Writable Path"
-msgstr "Seleccioneu el camí personalitzat que s'hi pot escriure"
+msgstr "Trieu el camí personalitzat que s'hi pot escriure"
 
 #: widgets/autocorrectionwidget.cpp:141
 #, kde-format
 msgid "Select Custom System Path"
-msgstr "Seleccioneu el camí personalitzat del sistema"
+msgstr "Trieu el camí personalitzat del sistema"
 
 #: widgets/autocorrectionwidget.cpp:151
 #, kde-format

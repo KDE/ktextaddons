@@ -303,7 +303,7 @@ msgstr "Carrega un fitxer GGUF…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "Seleccioneu un fitxer GGUF"
+msgstr "Trieu un fitxer GGUF"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
 #, kde-format
@@ -2096,7 +2096,7 @@ msgstr "Nom:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr "Seleccioneu el tipus d'instància:"
+msgstr "Trieu el tipus d'instància:"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
 #, kde-format
@@ -2291,7 +2291,7 @@ msgstr "Copia l'URL"
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "Selecciona-ho tot"
+msgstr "Tria-ho tot"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:120
 #, kde-format

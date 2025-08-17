@@ -96,4 +96,4 @@ msgstr "Busca una emoticona…"
 #: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
-msgstr "Selecciona el to"
+msgstr "Tria el to"
