@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -153,24 +153,34 @@ msgstr ""
 msgid "Anthropic"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
 #, kde-format
-msgid "Mistral AI large language models"
+msgid "'Kimi (Moonshot AI)"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
+msgid "Mistral AI large language models"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:143
+#, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:145
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:147
 #, kde-format
 msgid "Meta AI Llama API"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
+#, kde-format
+msgid "Kimi large language models by Moonshot AI"
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28

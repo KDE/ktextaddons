@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-15 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:40+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -156,25 +156,36 @@ msgstr ""
 msgid "Anthropic"
 msgstr ""
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:129
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
+#, kde-format
+msgid "'Kimi (Moonshot AI)"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI:n suuret kielimallit"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:143
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AI:n pilvipäättely-API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:145
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AI:n pilvipäättely-API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:147
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
+#, fuzzy, kde-format
+#| msgid "Mistral AI large language models"
+msgid "Kimi large language models by Moonshot AI"
+msgstr "Mistral AI:n suuret kielimallit"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
