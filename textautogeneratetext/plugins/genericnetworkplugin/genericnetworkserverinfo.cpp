@@ -37,7 +37,7 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     case GenericNetworkManager::PluginNetworkType::Anthropic:
         return i18n("Anthropic");
     case GenericNetworkManager::PluginNetworkType::KimiAI:
-        return i18n("'Kimi (Moonshot AI)");
+        return i18n("Kimi (Moonshot AI)");
     case GenericNetworkManager::PluginNetworkType::LastElement:
         return {};
     }
