@@ -364,6 +364,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextInstance
     TextAutoGenerateTextInstancesManager
     TextAutoGenerateMessageUtils
+    TextAutoGenerateTextUtils
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
