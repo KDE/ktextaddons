@@ -4,34 +4,30 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextinstancesmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratetextinstancemodel.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextcore_debug.h"
+#include "textautogeneratetextutils.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextAutoGenerateManager *manager, QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
     , mTextAutoGenerateEngineLoader(new TextAutoGenerateEngineLoader(this))
     , mManager(manager)
-    , mConfig(new KConfig(configFileName()))
+    , mConfig(new KConfig(TextAutoGenerateTextUtils::instanceConfigFileName()))
 {
 }
 
 TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager()
 {
     delete mConfig;
-}
-
-QString TextAutoGenerateTextInstancesManager::configFileName() const
-{
-    return u"autogeneratetextinstances"_s;
 }
 
 bool TextAutoGenerateTextInstancesManager::isEmpty() const
@@ -55,11 +51,8 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
         return; // nothing to be done...
     }
 
-    const KConfigGroup configGeneralGroup(mConfig, u"General"_s);
-
     QList<TextAutoGenerateTextInstance *> lstInstances;
-    const auto instanceList = groupList(mConfig);
-    for (const auto &group : instanceList) {
+    for (const auto &group : instancesList) {
         const KConfigGroup configGroup(mConfig, group);
         auto inst = new TextAutoGenerateTextInstance;
         inst->load(configGroup);
@@ -79,6 +72,7 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
     // qDebug() << " lstInstances " << lstInstances;
     setInstances(lstInstances);
     // Set current Instance after loading all instances. Otherwise we can'"t have default instance
+    const KConfigGroup configGeneralGroup(mConfig, u"General"_s);
     setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 }
 

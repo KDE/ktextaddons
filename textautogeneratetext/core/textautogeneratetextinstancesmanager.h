@@ -40,7 +40,6 @@ public:
 
     [[nodiscard]] TextAutoGenerateEngineLoader *textAutoGenerateEngineLoader() const;
 
-    [[nodiscard]] QString configFileName() const;
     [[nodiscard]] bool isEmpty() const;
 
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;

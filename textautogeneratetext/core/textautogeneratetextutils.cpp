@@ -4,11 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QCoreApplication>
 #include <QStandardPaths>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 QString TextAutoGenerateTextUtils::findExecutable(const QString &exec)
 {
 #ifdef Q_OS_WIN
@@ -21,4 +21,9 @@ QString TextAutoGenerateTextUtils::findExecutable(const QString &exec)
     const QString path = QStandardPaths::findExecutable(exec);
 #endif
     return path;
+}
+
+QString TextAutoGenerateTextUtils::instanceConfigFileName()
+{
+    return u"autogeneratetextinstances"_s;
 }

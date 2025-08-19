@@ -11,5 +11,6 @@ namespace TextAutoGenerateText
 namespace TextAutoGenerateTextUtils
 {
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString findExecutable(const QString &exec);
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString instanceConfigFileName();
 };
 }
