@@ -46,13 +46,13 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 
 bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
 {
-    return mImage == other.mImage;
+    return (mImage == other.mImage) && !mImage.isEmpty();
 }
 
 bool TextAutoGenerateAttachment::isValid() const
 {
     // TODO
-    return false;
+    return mAttachmentType != AttachmentType::Unknown;
 }
 
 TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmentType() const
