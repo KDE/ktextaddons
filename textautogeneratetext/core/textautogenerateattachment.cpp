@@ -23,6 +23,7 @@ TextAutoGenerateAttachment::TextAutoGenerateAttachment(const TextAutoGenerateAtt
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAnswerInfo created " << this;
     mImage = other.mImage;
     mAttachmentType = other.mAttachmentType;
+    mMimeType = other.mMimeType;
 }
 
 QByteArray TextAutoGenerateAttachment::image() const
@@ -39,6 +40,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 {
     d.space() << "mImage:" << t.image();
     d.space() << "mAttachmentType:" << t.attachmentType();
+    d.space() << "mMimeType:" << t.mimeType();
     return d;
 }
 
@@ -72,6 +74,16 @@ TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonO
 {
     // TODO
     return nullptr;
+}
+
+QByteArray TextAutoGenerateAttachment::mimeType() const
+{
+    return mMimeType;
+}
+
+void TextAutoGenerateAttachment::setMimeType(const QByteArray &newMimeType)
+{
+    mMimeType = newMimeType;
 }
 
 #include "moc_textautogenerateattachment.cpp"

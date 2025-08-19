@@ -17,6 +17,7 @@ void TextAutoGenerateAttachmentTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateAttachment att;
     QVERIFY(att.image().isEmpty());
+    QVERIFY(att.mimeType().isEmpty());
     QCOMPARE(att.attachmentType(), TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown);
 }
 

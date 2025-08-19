@@ -44,9 +44,13 @@ public:
     static void serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o);
     static TextAutoGenerateAttachment *deserialize(const QJsonObject &o);
 
+    [[nodiscard]] QByteArray mimeType() const;
+    void setMimeType(const QByteArray &newMimeType);
+
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
     QByteArray mImage;
+    QByteArray mMimeType;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t);
