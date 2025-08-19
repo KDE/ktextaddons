@@ -53,7 +53,7 @@ public:
     void setCurrentChatId(const QByteArray &newCurrentChatId);
 
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId) const;
-    void createNewChat();
+    void createNewChat(const QString &title = {});
     void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
     void removeDiscussion(const QByteArray &chatId);

@@ -62,13 +62,14 @@ void TextAutoGenerateManager::ask(const QString &msg)
     Q_EMIT askMessageRequested(msg);
 }
 
-void TextAutoGenerateManager::createNewChat()
+void TextAutoGenerateManager::createNewChat(const QString &title)
 {
     // Switch back to not archived list
     setShowArchived(false);
     TextAutoGenerateChat chat;
     const QByteArray chatId = QUuid::createUuid().toByteArray(QUuid::Id128);
     chat.setIdentifier(chatId);
+    chat.setTitle(title);
     // we don't need to initialize it. (new chat => no data)
     chat.setInitialized(true);
     mTextAutoGenerateChatsModel->addChat(chat);
