@@ -118,6 +118,8 @@ target_sources(
         core/textautogeneratechat.cpp
         core/textautogeneratesettings.h
         core/textautogeneratesettings.cpp
+        core/textautogenerateattachmentutils.h
+        core/textautogenerateattachmentutils.cpp
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
