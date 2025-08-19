@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-18 00:40+0000\n"
-"PO-Revision-Date: 2025-08-12 09:16+0200\n"
+"POT-Creation-Date: 2025-08-19 00:40+0000\n"
+"PO-Revision-Date: 2025-08-18 07:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -160,9 +160,10 @@ msgid "Anthropic"
 msgstr "Anthropic"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
-#, kde-format
-msgid "'Kimi (Moonshot AI)"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "'Kimi (Moonshot AI)"
+msgid "Kimi (Moonshot AI)"
+msgstr "'Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
@@ -185,10 +186,9 @@ msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Veliki jezikovni modeli Mistral AI"
+msgstr "Kimi veliki jezikovni modeli Moonshot AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-18 00:40+0000\n"
-"PO-Revision-Date: 2025-08-12 20:10+0100\n"
+"POT-Creation-Date: 2025-08-19 00:40+0000\n"
+"PO-Revision-Date: 2025-08-19 00:09+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -161,9 +161,10 @@ msgid "Anthropic"
 msgstr "Anthropic"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
-#, kde-format
-msgid "'Kimi (Moonshot AI)"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "'Kimi (Moonshot AI)"
+msgid "Kimi (Moonshot AI)"
+msgstr "'Kimi (Moonshot AI)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
@@ -186,10 +187,9 @@ msgid "Meta AI Llama API"
 msgstr "API Llama de Meta AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Modelos de lenguaje extensos de Mistral AI"
+msgstr "Modelos de lenguaje extensos Kimi de Moonshot AI"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
