@@ -6,6 +6,8 @@
 
 #include "textautogenerateattachment.h"
 #include "textautogeneratetextcore_memory_debug.h"
+#include <QJsonObject>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateAttachment::TextAutoGenerateAttachment()
 {
@@ -46,13 +48,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 
 bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
 {
-    return (mImage == other.mImage) && !mImage.isEmpty();
+    return (mImage == other.mImage) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType);
 }
 
 bool TextAutoGenerateAttachment::isValid() const
 {
-    // TODO
-    return mAttachmentType != AttachmentType::Unknown;
+    return (mAttachmentType != AttachmentType::Unknown) && !mImage.isEmpty();
 }
 
 TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmentType() const
@@ -60,20 +61,25 @@ TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmen
     return mAttachmentType;
 }
 
-void TextAutoGenerateAttachment::setAttachmentType(const AttachmentType &newAttachmentType)
+void TextAutoGenerateAttachment::setAttachmentType(AttachmentType newAttachmentType)
 {
     mAttachmentType = newAttachmentType;
 }
 
 void TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o)
 {
-    // TODO
+    o["type"_L1] = static_cast<int>(attachment.attachmentType());
+    o["mimetype"_L1] = QString::fromLatin1(attachment.mimeType());
+    o["image"_L1] = QString::fromLatin1(attachment.image());
 }
 
 TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonObject &o)
 {
-    // TODO
-    return nullptr;
+    TextAutoGenerateAttachment *att = new TextAutoGenerateAttachment;
+    att->setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(0)));
+    att->setMimeType(o["mimetype"_L1].toString().toLatin1());
+    att->setImage(o["image"_L1].toString().toLatin1());
+    return att;
 }
 
 QByteArray TextAutoGenerateAttachment::mimeType() const

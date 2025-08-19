@@ -21,7 +21,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment : public QSharedDat
     Q_GADGET
 public:
     enum class AttachmentType : uint8_t {
-        Unknown,
+        Unknown = 0,
         File,
         Image,
     };
@@ -39,7 +39,7 @@ public:
     [[nodiscard]] bool isValid() const;
 
     [[nodiscard]] AttachmentType attachmentType() const;
-    void setAttachmentType(const AttachmentType &newAttachmentType);
+    void setAttachmentType(AttachmentType newAttachmentType);
 
     static void serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o);
     static TextAutoGenerateAttachment *deserialize(const QJsonObject &o);
