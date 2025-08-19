@@ -45,7 +45,6 @@ public:
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList groupList(KConfig *config) const;
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;

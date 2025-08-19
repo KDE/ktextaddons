@@ -5,7 +5,9 @@
 */
 #include "textautogeneratetextutils.h"
 
+#include <KConfig>
 #include <QCoreApplication>
+#include <QRegularExpression>
 #include <QStandardPaths>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -26,4 +28,10 @@ QString TextAutoGenerateTextUtils::findExecutable(const QString &exec)
 QString TextAutoGenerateTextUtils::instanceConfigFileName()
 {
     return u"autogeneratetextinstances"_s;
+}
+
+QStringList TextAutoGenerateTextUtils::instancesList(KConfig *config)
+{
+    static const QRegularExpression regExpr(u"^Instance #\\d+$"_s);
+    return config->groupList().filter(regExpr);
 }

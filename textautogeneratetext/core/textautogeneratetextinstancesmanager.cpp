@@ -46,7 +46,7 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstancesManager::textAutoGenera
 void TextAutoGenerateTextInstancesManager::loadInstances()
 {
     mTextAutoGenerateEngineLoader->loadPlugins();
-    const QStringList instancesList = groupList(mConfig);
+    const QStringList instancesList = TextAutoGenerateTextUtils::instancesList(mConfig);
     if (instancesList.isEmpty()) {
         return; // nothing to be done...
     }
@@ -76,18 +76,12 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
     setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
 }
 
-QStringList TextAutoGenerateTextInstancesManager::groupList(KConfig *config) const
-{
-    static const QRegularExpression regExpr(u"^Instance #\\d+$"_s);
-    return config->groupList().filter(regExpr);
-}
-
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
     KConfigGroup configGeneralGroup(mConfig, u"General"_s);
     configGeneralGroup.writeEntry("currentInstance", currentInstance());
 
-    const auto instanceList = groupList(mConfig);
+    const auto instanceList = TextAutoGenerateTextUtils::instancesList(mConfig);
     for (const auto &group : instanceList) {
         mConfig->deleteGroup(group);
     }

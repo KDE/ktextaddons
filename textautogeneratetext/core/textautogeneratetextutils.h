@@ -6,11 +6,13 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QString>
+class KConfig;
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateTextUtils
 {
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString findExecutable(const QString &exec);
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString instanceConfigFileName();
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QStringList instancesList(KConfig *config);
 };
 }
