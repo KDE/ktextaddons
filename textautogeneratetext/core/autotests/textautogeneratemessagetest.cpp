@@ -82,10 +82,6 @@ void TextAutoGenerateMessageTest::shouldParseMessage()
     QFETCH(QString, name);
     QFETCH(TextAutoGenerateText::TextAutoGenerateMessage, expectedMessage);
     const QString originalJsonFile = QLatin1StringView(TEXTAUTOGENERATE_DATA_DIR) + "/json/"_L1 + name + ".json"_L1;
-    QFile f(originalJsonFile);
-    QVERIFY(f.open(QIODevice::ReadOnly));
-    const QByteArray content = f.readAll();
-    f.close();
 
     const QJsonObject obj = AutoTestHelper::loadJsonObject(originalJsonFile);
     const TextAutoGenerateText::TextAutoGenerateMessage originalMessage = TextAutoGenerateText::TextAutoGenerateMessage::deserialize(obj);
@@ -130,5 +126,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
         QCOMPARE(firstMessageLlmRef, output);
     }
 }
+
+// TODO add image support
 
 #include "moc_textautogeneratemessagetest.cpp"
