@@ -99,10 +99,10 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             mManager->changeFavoriteHistory(mManager->currentChatId(), checked);
         });
 
-        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateWidget::slotInitializeDone);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateWidget::slotAutogenerateFailed);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::needToAddInstances, this, &TextAutoGenerateWidget::needToAddInstances);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
+            slotInitializeDone();
             mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
         });
     }
@@ -205,7 +205,6 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 
 void TextAutoGenerateWidget::slotInitializeDone()
 {
-    mPluginWasInitialized = true;
     for (const auto &str : std::as_const(mAskMessageList)) {
         slotEditingFinished(str, {});
     }
@@ -215,7 +214,7 @@ void TextAutoGenerateWidget::slotInitializeDone()
 
 void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
 {
-    if (!mPluginWasInitialized) {
+    if (!mManager->pluginWasInitialized()) {
         mAskMessageList.append(str);
     } else {
         slotEditingFinished(str, {});

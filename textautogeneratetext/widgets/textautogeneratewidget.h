@@ -59,7 +59,6 @@ private:
     TextAutoGenerateHistoryWidget *const mHistoryWidget;
     TextAutoGenerateHeaderWidget *const mHeaderWidget;
     QStringList mAskMessageList;
-    bool mPluginWasInitialized = false;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QPointer<TextAutoGenerateSearchDialog> mSearchDialog;
 };

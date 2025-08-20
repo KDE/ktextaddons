@@ -76,7 +76,11 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
     if (mSaveInDatabase) {
         mDatabaseManager->insertOrUpdateChat(chat);
     }
-    setCurrentChatId(chatId);
+    if (!mPluginWasInitialized) {
+        mSwitchToChatId = chatId;
+    } else {
+        setCurrentChatId(chatId);
+    }
 }
 
 void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content)
@@ -104,6 +108,16 @@ void TextAutoGenerateManager::changeChatInPogressStatus(const QByteArray &chatId
     if (chatId == currentChatId()) {
         Q_EMIT chatInProgressChanged(inProgress);
     }
+}
+
+bool TextAutoGenerateManager::pluginWasInitialized() const
+{
+    return mPluginWasInitialized;
+}
+
+void TextAutoGenerateManager::setPluginWasInitialized(bool newPluginWasInitialized)
+{
+    mPluginWasInitialized = newPluginWasInitialized;
 }
 
 TextAutoGenerateChatSettings *TextAutoGenerateManager::textAutoGenerateChatSettings() const
@@ -377,10 +391,14 @@ void TextAutoGenerateManager::loadEngine()
     }
 
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
-    connect(textAutoGeneratePlugin(),
-            &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone,
-            this,
-            &TextAutoGenerateManager::pluginsInitializedDone);
+    connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, [this]() {
+        setPluginWasInitialized(true);
+        Q_EMIT pluginsInitializedDone();
+        if (!mSwitchToChatId.isEmpty()) {
+            setCurrentChatId(mSwitchToChatId);
+            mSwitchToChatId.clear();
+        }
+    });
     Q_EMIT loadEngineDone();
 }
 #include "moc_textautogeneratemanager.cpp"

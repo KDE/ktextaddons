@@ -80,6 +80,9 @@ public:
     [[nodiscard]] QString systemPrompt() const;
     void setSystemPrompt(const QString &newSystemPrompt);
 
+    [[nodiscard]] bool pluginWasInitialized() const;
+    void setPluginWasInitialized(bool newPluginWasInitialized);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -103,7 +106,9 @@ private:
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     TextAutoGenerateSettings *const mTextAutoGenerateSettings;
     QByteArray mCurrentChatId;
+    QByteArray mSwitchToChatId;
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
+    bool mPluginWasInitialized = false;
 };
 }
