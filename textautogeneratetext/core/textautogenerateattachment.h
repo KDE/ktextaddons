@@ -24,6 +24,7 @@ public:
         Unknown = 0,
         File,
         Image,
+        Audio,
     };
     Q_ENUM(AttachmentType)
 
@@ -31,8 +32,8 @@ public:
     ~TextAutoGenerateAttachment();
     explicit TextAutoGenerateAttachment(const TextAutoGenerateAttachment &other);
 
-    [[nodiscard]] QByteArray image() const;
-    void setImage(const QByteArray &newImage);
+    [[nodiscard]] QByteArray base64() const;
+    void setBase64(const QByteArray &b);
 
     [[nodiscard]] bool operator==(const TextAutoGenerateAttachment &other) const;
 
@@ -49,7 +50,7 @@ public:
 
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
-    QByteArray mImage;
+    QByteArray mBase64;
     QByteArray mMimeType;
 };
 }

@@ -23,24 +23,24 @@ TextAutoGenerateAttachment::TextAutoGenerateAttachment(const TextAutoGenerateAtt
     : QSharedData(other)
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAnswerInfo created " << this;
-    mImage = other.mImage;
+    mBase64 = other.mBase64;
     mAttachmentType = other.mAttachmentType;
     mMimeType = other.mMimeType;
 }
 
-QByteArray TextAutoGenerateAttachment::image() const
+QByteArray TextAutoGenerateAttachment::base64() const
 {
-    return mImage;
+    return mBase64;
 }
 
-void TextAutoGenerateAttachment::setImage(const QByteArray &newImage)
+void TextAutoGenerateAttachment::setBase64(const QByteArray &b)
 {
-    mImage = newImage;
+    mBase64 = b;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t)
 {
-    d.space() << "mImage:" << t.image();
+    d.space() << "mBase64:" << t.base64();
     d.space() << "mAttachmentType:" << t.attachmentType();
     d.space() << "mMimeType:" << t.mimeType();
     return d;
@@ -48,12 +48,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 
 bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
 {
-    return (mImage == other.mImage) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType);
+    return (mBase64 == other.mBase64) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType);
 }
 
 bool TextAutoGenerateAttachment::isValid() const
 {
-    return (mAttachmentType != AttachmentType::Unknown) && !mImage.isEmpty();
+    return (mAttachmentType != AttachmentType::Unknown) && !mBase64.isEmpty();
 }
 
 TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmentType() const
@@ -70,7 +70,7 @@ void TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachment &att
 {
     o["type"_L1] = static_cast<int>(attachment.attachmentType());
     o["mimetype"_L1] = QString::fromLatin1(attachment.mimeType());
-    o["image"_L1] = QString::fromLatin1(attachment.image());
+    o["base64"_L1] = QString::fromLatin1(attachment.base64());
 }
 
 TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonObject &o)
@@ -78,7 +78,7 @@ TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonO
     TextAutoGenerateAttachment *att = new TextAutoGenerateAttachment;
     att->setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(0)));
     att->setMimeType(o["mimetype"_L1].toString().toLatin1());
-    att->setImage(o["image"_L1].toString().toLatin1());
+    att->setBase64(o["base64"_L1].toString().toLatin1());
     return att;
 }
 
