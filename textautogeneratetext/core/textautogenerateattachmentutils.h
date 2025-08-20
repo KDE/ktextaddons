@@ -4,12 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include <QByteArray>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateAttachmentUtils
+namespace TextAutoGenerateAttachmentUtils
 {
-public:
-    TextAutoGenerateAttachmentUtils();
+[[nodiscard]] QByteArray generateBase64(const QString &fileName);
 };
 }
