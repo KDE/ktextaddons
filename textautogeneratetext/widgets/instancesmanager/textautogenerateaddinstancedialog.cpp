@@ -48,4 +48,9 @@ QString TextAutoGenerateAddInstanceDialog::instanceName() const
     return mTextAutoGenerateAddInstanceWidget->instanceName();
 }
 
+void TextAutoGenerateAddInstanceDialog::setInstanceDisplayNames(const QStringList &lst)
+{
+    mTextAutoGenerateAddInstanceWidget->setInstanceDisplayNames(lst);
+}
+
 #include "moc_textautogenerateaddinstancedialog.cpp"

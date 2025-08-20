@@ -52,6 +52,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextPlugin *currentPlugin() const;
 
+    [[nodiscard]] QStringList instanceDisplayNames() const;
+
 private:
     QList<TextAutoGenerateTextInstance *> mTextInstances;
     QByteArray mCurrentinstance;

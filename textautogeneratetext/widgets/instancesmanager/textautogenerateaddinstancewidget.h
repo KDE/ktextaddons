@@ -23,10 +23,12 @@ public:
 
     [[nodiscard]] QString instanceName() const;
 
+    void setInstanceDisplayNames(const QStringList &lst);
 Q_SIGNALS:
     void buttonOkEnabled(bool status);
 
 private:
+    QStringList mInstanceDisplyNames;
     TextAutoGenerateTextInstanceComboBox *const mInstanceComboBox;
     QLineEdit *const mNameLineEdit;
 };

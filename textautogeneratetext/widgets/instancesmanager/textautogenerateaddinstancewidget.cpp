@@ -31,7 +31,7 @@ TextAutoGenerateAddInstanceWidget::TextAutoGenerateAddInstanceWidget(TextAutoGen
     mInstanceComboBox->setObjectName(u"mInstanceComboBox"_s);
     mainLayout->addRow(i18nc("@label:textbox", "Select a Type of Instance:"), mInstanceComboBox);
     connect(mNameLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
-        Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty());
+        Q_EMIT buttonOkEnabled(!str.trimmed().isEmpty() && !mInstanceDisplyNames.contains(str));
     });
 }
 
@@ -45,6 +45,11 @@ TextAutoGenerateTextClient::SupportedServer TextAutoGenerateAddInstanceWidget::s
 QString TextAutoGenerateAddInstanceWidget::instanceName() const
 {
     return mNameLineEdit->text();
+}
+
+void TextAutoGenerateAddInstanceWidget::setInstanceDisplayNames(const QStringList &lst)
+{
+    mInstanceDisplyNames = lst;
 }
 
 #include "moc_textautogenerateaddinstancewidget.cpp"

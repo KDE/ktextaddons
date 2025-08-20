@@ -20,6 +20,7 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextClient::SupportedServer selectedInstanceType() const;
     [[nodiscard]] QString instanceName() const;
+    void setInstanceDisplayNames(const QStringList &lst);
 
 private:
     TextAutoGenerateAddInstanceWidget *const mTextAutoGenerateAddInstanceWidget;

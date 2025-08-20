@@ -84,8 +84,8 @@ void TextAutoGenerateTextInstancesManagerWidget::save()
 
 void TextAutoGenerateTextInstancesManagerWidget::slotAddInstance()
 {
-    // TODO make sure that we don't create 2 instances with same name
     TextAutoGenerateAddInstanceDialog d(mManager, this);
+    d.setInstanceDisplayNames(mManager->textAutoGenerateTextInstancesManager()->instanceDisplayNames());
     if (d.exec()) {
         const TextAutoGenerateTextClient::SupportedServer server = d.selectedInstanceType();
         // qDebug() << " selectedInstanceType:" << server;

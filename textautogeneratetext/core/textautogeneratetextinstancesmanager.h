@@ -44,6 +44,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextPlugin *textAutoGeneratePlugin() const;
 
+    [[nodiscard]] QStringList instanceDisplayNames() const;
+
 private:
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;

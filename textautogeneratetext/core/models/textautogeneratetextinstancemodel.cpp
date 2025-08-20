@@ -78,6 +78,16 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
     return {};
 }
 
+QStringList TextAutoGenerateTextInstanceModel::instanceDisplayNames() const
+{
+    QStringList lstDisplayNames;
+    lstDisplayNames.reserve(mTextInstances.size());
+    for (const auto &inst : mTextInstances) {
+        lstDisplayNames.append(inst->displayName());
+    }
+    return lstDisplayNames;
+}
+
 QList<TextAutoGenerateTextInstance *> TextAutoGenerateTextInstanceModel::textInstances() const
 {
     return mTextInstances;
