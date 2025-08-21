@@ -120,6 +120,15 @@ void TextAutoGenerateManager::setPluginWasInitialized(bool newPluginWasInitializ
     mPluginWasInitialized = newPluginWasInitialized;
 }
 
+void TextAutoGenerateManager::switchToChat(const QString &chatName)
+{
+    if (!mPluginWasInitialized) {
+        mSwitchToChatName = chatName;
+    } else {
+        setCurrentChatId(textAutoGenerateChatsModel()->chatIdFromChatName(chatName));
+    }
+}
+
 TextAutoGenerateChatSettings *TextAutoGenerateManager::textAutoGenerateChatSettings() const
 {
     return mTextAutoGenerateChatSettings.get();
@@ -397,6 +406,10 @@ void TextAutoGenerateManager::loadEngine()
         if (!mSwitchToChatId.isEmpty()) {
             setCurrentChatId(mSwitchToChatId);
             mSwitchToChatId.clear();
+        }
+        if (!mSwitchToChatName.isEmpty()) {
+            switchToChat(mSwitchToChatName);
+            mSwitchToChatName.clear();
         }
     });
     Q_EMIT loadEngineDone();

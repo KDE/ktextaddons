@@ -307,6 +307,18 @@ bool TextAutoGenerateChatsModel::isEmpty() const
     return false;
 }
 
+QByteArray TextAutoGenerateChatsModel::chatIdFromChatName(const QString &chatName) const
+{
+    auto chatUuid = [&](const TextAutoGenerateChat &chat) {
+        return chat.title() == chatName;
+    };
+    auto it = std::find_if(mChats.begin(), mChats.end(), chatUuid);
+    if (it != mChats.end()) {
+        return (*it).identifier();
+    }
+    return {};
+}
+
 bool TextAutoGenerateChatsModel::chatInProgress(const QByteArray &chatId) const
 {
     auto chatUuid = [&](const TextAutoGenerateChat &chat) {

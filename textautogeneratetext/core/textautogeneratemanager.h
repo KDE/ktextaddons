@@ -83,6 +83,8 @@ public:
     [[nodiscard]] bool pluginWasInitialized() const;
     void setPluginWasInitialized(bool newPluginWasInitialized);
 
+    void switchToChat(const QString &chatName);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -107,6 +109,7 @@ private:
     TextAutoGenerateSettings *const mTextAutoGenerateSettings;
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
+    QString mSwitchToChatName;
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
