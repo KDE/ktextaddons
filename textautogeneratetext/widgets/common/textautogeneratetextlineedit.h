@@ -24,11 +24,18 @@ public:
 
     [[nodiscard]] QSize sizeHint() const override;
     [[nodiscard]] QSize minimumSizeHint() const override;
+
 Q_SIGNALS:
     void sendMessage(const QString &);
     void keyPressed(QKeyEvent *ev);
 
 protected:
     void keyPressEvent(QKeyEvent *e) override;
+
+private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void loadSpellCheckingSettings();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void switchAutoCorrectionLanguage(const QString &lang);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotLanguageChanged(const QString &lang);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSpellCheckingEnableChanged(bool b);
 };
 }

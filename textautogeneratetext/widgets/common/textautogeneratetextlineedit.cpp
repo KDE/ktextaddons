@@ -5,10 +5,13 @@
 */
 
 #include "textautogeneratetextlineedit.h"
+#include <KConfigGroup>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QAbstractTextDocumentLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextLineEdit::TextAutoGenerateTextLineEdit(QWidget *parent)
     : KTextEdit(parent)
@@ -19,9 +22,53 @@ TextAutoGenerateTextLineEdit::TextAutoGenerateTextLineEdit(QWidget *parent)
     setAcceptRichText(false);
     enableFindReplace(false); // not needed here, let's instead make sure the Ctrl+F shortcut will search through channel history
     connect(document()->documentLayout(), &QAbstractTextDocumentLayout::documentSizeChanged, this, &QWidget::updateGeometry);
+    loadSpellCheckingSettings();
+    connect(this, &TextAutoGenerateTextLineEdit::languageChanged, this, &TextAutoGenerateTextLineEdit::slotLanguageChanged);
+    connect(this, &TextAutoGenerateTextLineEdit::checkSpellingChanged, this, &TextAutoGenerateTextLineEdit::slotSpellCheckingEnableChanged);
 }
 
 TextAutoGenerateTextLineEdit::~TextAutoGenerateTextLineEdit() = default;
+
+void TextAutoGenerateTextLineEdit::loadSpellCheckingSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    if (config->hasGroup("Spelling"_L1)) {
+        KConfigGroup group(config, u"Spelling"_s);
+        setCheckSpellingEnabled(group.readEntry("checkerEnabledByDefault", false));
+        const QString language = group.readEntry("Language", QString());
+        setSpellCheckingLanguage(language);
+        switchAutoCorrectionLanguage(language);
+    }
+}
+
+void TextAutoGenerateTextLineEdit::slotSpellCheckingEnableChanged(bool b)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, u"Spelling"_s);
+    group.writeEntry("checkerEnabledByDefault", b);
+}
+
+void TextAutoGenerateTextLineEdit::slotLanguageChanged(const QString &lang)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group(config, u"Spelling"_s);
+    group.writeEntry("Language", lang);
+    switchAutoCorrectionLanguage(lang);
+}
+
+void TextAutoGenerateTextLineEdit::switchAutoCorrectionLanguage(const QString &lang)
+{
+#if 0
+#if HAVE_TEXT_AUTOCORRECTION_WIDGETS
+    if (!lang.isEmpty()) {
+        auto settings = Ruqola::self()->autoCorrection()->autoCorrectionSettings();
+        settings->setLanguage(lang);
+        Ruqola::self()->autoCorrection()->setAutoCorrectionSettings(settings);
+    }
+    qDebug() << " MessageTextEdit::switchAutoCorrectionLanguage " << lang;
+#endif
+#endif
+}
 
 QString TextAutoGenerateTextLineEdit::text() const
 {
