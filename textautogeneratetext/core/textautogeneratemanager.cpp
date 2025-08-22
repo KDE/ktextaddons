@@ -294,14 +294,14 @@ QByteArray TextAutoGenerateManager::currentChatId() const
 
 void TextAutoGenerateManager::checkCurrentChat()
 {
-    if (mCurrentChatId.isEmpty()) {
+    if (mCurrentChatId.isEmpty() && mSwitchToChatId.isEmpty() && mSwitchToChatName.isEmpty()) {
         createNewChat();
     }
 }
 
 void TextAutoGenerateManager::goToMessage(const QByteArray &chatId, const QByteArray &messageId)
 {
-    auto messagesModel = messagesModelFromChatId(chatId);
+    const auto messagesModel = messagesModelFromChatId(chatId);
     if (!messagesModel) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find channel" << chatId;
         return;
@@ -402,7 +402,6 @@ void TextAutoGenerateManager::loadEngine()
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, [this]() {
         setPluginWasInitialized(true);
-        Q_EMIT pluginsInitializedDone();
         if (!mSwitchToChatId.isEmpty()) {
             setCurrentChatId(mSwitchToChatId);
             mSwitchToChatId.clear();
@@ -411,6 +410,7 @@ void TextAutoGenerateManager::loadEngine()
             switchToChat(mSwitchToChatName);
             mSwitchToChatName.clear();
         }
+        Q_EMIT pluginsInitializedDone();
     });
     Q_EMIT loadEngineDone();
 }
