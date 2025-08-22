@@ -63,7 +63,7 @@ public:
 
     [[nodiscard]] bool operator==(const OllamaModelAvailableInfo &other) const;
 
-    static QString convertCategoryToI18n(OllamaModelAvailableInfo::Category cat);
+    [[nodiscard]] static QString convertCategoryToI18n(OllamaModelAvailableInfo::Category cat);
 
     [[nodiscard]] QStringList categoriesName() const;
     void setCategoriesName(const QStringList &newCategoriesName);
