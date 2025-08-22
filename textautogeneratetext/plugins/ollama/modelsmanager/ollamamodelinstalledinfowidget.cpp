@@ -99,8 +99,8 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
         return availableInfo.name() == installedName;
     };
-    auto it = std::find_if(infoAvailableInfos.begin(), infoAvailableInfos.end(), matchesModelName);
-    if (it != infoAvailableInfos.end()) {
+    auto it = std::find_if(infoAvailableInfos.constBegin(), infoAvailableInfos.constEnd(), matchesModelName);
+    if (it != infoAvailableInfos.constEnd()) {
         auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
         infoLayout->addWidget(languagesGroupBox);
         auto vboxLanguagesLayout = new OllamaModelFlowLayout(languagesGroupBox);
