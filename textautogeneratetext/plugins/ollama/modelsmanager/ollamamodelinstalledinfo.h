@@ -39,7 +39,7 @@ public:
 
     [[nodiscard]] QString generateModelName() const;
 
-    static QString convertModelNameToDisplay(const QString &modelName);
+    [[nodiscard]] static QString convertModelNameToDisplay(const QString &modelName);
 
     [[nodiscard]] QString parentModel() const;
     void setParentModel(const QString &newParentModel);
