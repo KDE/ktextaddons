@@ -55,7 +55,7 @@ OllamaModelAvailableInfo OllamaModelAvailableInfosManager::modelInfo(const QStri
         return info.name() == modelName;
     };
     auto it = std::find_if(mModelInfos.begin(), mModelInfos.end(), matchesModelName);
-    if (it == mModelInfos.end()) {
+    if (it != mModelInfos.end()) {
         return *it;
     }
     return {};
