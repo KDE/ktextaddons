@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-22 00:41+0000\n"
-"PO-Revision-Date: 2025-08-13 14:40-0300\n"
+"PO-Revision-Date: 2025-08-22 12:26-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
@@ -161,7 +161,7 @@ msgstr "Antrópico"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
 #, kde-format
 msgid "Kimi (Moonshot AI)"
-msgstr ""
+msgstr "Kimi (IA da Moonshot)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
@@ -184,10 +184,9 @@ msgid "Meta AI Llama API"
 msgstr "API do Llama para a IA do Meta"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Modelos de linguagem grandes da IA Mistral"
+msgstr "Modelos de linguagem grandes da Kimi pela IA Moonshot"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
