@@ -28,6 +28,23 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManager : public QObject
 {
     Q_OBJECT
 public:
+    enum class Category : uint16_t {
+        Unknown = 0,
+        Tools = 1,
+        Small = 2,
+        Medium = 4,
+        Big = 8,
+        Huge = 16,
+        Multilingual = 32,
+        Code = 64,
+        Math = 128,
+        Vision = 256,
+        Embedding = 512,
+        Reasoning = 1024,
+    };
+    Q_FLAGS(Category Categories)
+    Q_DECLARE_FLAGS(Categories, Category)
+
     explicit TextAutoGenerateManager(QObject *parent = nullptr);
     ~TextAutoGenerateManager() override;
 
