@@ -86,6 +86,7 @@ public:
 
     [[nodiscard]] static QString convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType type);
 
+    [[nodiscard]] bool hasVisionSupport() const;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
