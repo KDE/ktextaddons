@@ -7,6 +7,7 @@
 #include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;
@@ -22,7 +23,7 @@ public:
 
 Q_SIGNALS:
     void searchText(const QString &str);
-    void categoriesChanged(const QList<OllamaModelAvailableInfo::Category> &categories);
+    void categoriesChanged(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &categories);
     void addModel();
 
 private:

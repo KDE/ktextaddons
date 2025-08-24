@@ -9,13 +9,14 @@
 #include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QStandardItemModel>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelCategoriesModel : public QStandardItemModel
 {
     Q_OBJECT
 public:
     struct CategoryInfo {
-        OllamaModelAvailableInfo::Category identifier;
+        TextAutoGenerateText::TextAutoGenerateManager::Category identifier;
         QString name;
     };
 
@@ -30,10 +31,10 @@ public:
 
     [[nodiscard]] QList<CategoryInfo> categories() const;
 
-    [[nodiscard]] QList<OllamaModelAvailableInfo::Category> categoriesSelected() const;
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categoriesSelected() const;
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, OllamaModelAvailableInfo::Category identifier);
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void createItem(const QString &displayStr, TextAutoGenerateText::TextAutoGenerateManager::Category identifier);
     TEXTAUTOGENERATEOLLAMA_NO_EXPORT void fillCategories();
     QList<CategoryInfo> mCategories;
 };

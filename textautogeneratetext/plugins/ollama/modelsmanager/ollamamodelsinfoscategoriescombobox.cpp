@@ -17,7 +17,7 @@ OllamaModelsInfosCategoriesComboBox::OllamaModelsInfosCategoriesComboBox(QWidget
 
 OllamaModelsInfosCategoriesComboBox::~OllamaModelsInfosCategoriesComboBox() = default;
 
-QList<OllamaModelAvailableInfo::Category> OllamaModelsInfosCategoriesComboBox::categories() const
+QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaModelsInfosCategoriesComboBox::categories() const
 {
     return mModel->categoriesSelected();
 }

@@ -17,25 +17,25 @@ OllamaModelCategoriesModel::~OllamaModelCategoriesModel() = default;
 
 void OllamaModelCategoriesModel::fillCategories()
 {
-    const QList<OllamaModelAvailableInfo::Category> cat{
-        OllamaModelAvailableInfo::Category::Tools,
-        OllamaModelAvailableInfo::Category::Small,
-        OllamaModelAvailableInfo::Category::Medium,
-        OllamaModelAvailableInfo::Category::Big,
-        OllamaModelAvailableInfo::Category::Huge,
-        OllamaModelAvailableInfo::Category::Multilingual,
-        OllamaModelAvailableInfo::Category::Code,
-        OllamaModelAvailableInfo::Category::Math,
-        OllamaModelAvailableInfo::Category::Vision,
-        OllamaModelAvailableInfo::Category::Embedding,
-        OllamaModelAvailableInfo::Category::Reasoning,
+    const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> cat{
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Tools,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Small,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Medium,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Big,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Huge,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Multilingual,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Code,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Math,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Vision,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding,
+        TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning,
     };
     mCategories.reserve(cat.count());
 
     for (const auto c : cat) {
         mCategories.append(CategoryInfo{
             .identifier = c,
-            .name = OllamaModelAvailableInfo::convertCategoryToI18n(c),
+            .name = TextAutoGenerateText::TextAutoGenerateManager::convertCategoryToI18n(c),
         });
     }
     auto item = new QStandardItem(i18n("Categories"));
@@ -46,7 +46,7 @@ void OllamaModelCategoriesModel::fillCategories()
     }
 }
 
-void OllamaModelCategoriesModel::createItem(const QString &displayStr, OllamaModelAvailableInfo::Category identifier)
+void OllamaModelCategoriesModel::createItem(const QString &displayStr, TextAutoGenerateText::TextAutoGenerateManager::Category identifier)
 {
     auto item = new QStandardItem(displayStr);
     item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
@@ -61,16 +61,16 @@ QList<OllamaModelCategoriesModel::CategoryInfo> OllamaModelCategoriesModel::cate
     return mCategories;
 }
 
-QList<OllamaModelAvailableInfo::Category> OllamaModelCategoriesModel::categoriesSelected() const
+QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaModelCategoriesModel::categoriesSelected() const
 {
-    QList<OllamaModelAvailableInfo::Category> categoriesList;
+    QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categoriesList;
     const int rowCountNb = rowCount();
     // First one is not a message type
     for (int i = 0; i < rowCountNb; i++) {
         QStandardItem *itemModel = item(i);
         if (itemModel) {
             if (itemModel->isCheckable() && itemModel->checkState() == Qt::Checked) {
-                categoriesList.append(itemModel->data(Identifier).value<OllamaModelAvailableInfo::Category>());
+                categoriesList.append(itemModel->data(Identifier).value<TextAutoGenerateText::TextAutoGenerateManager::Category>());
             }
         }
     }

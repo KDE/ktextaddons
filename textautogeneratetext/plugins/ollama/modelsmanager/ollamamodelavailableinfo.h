@@ -7,27 +7,11 @@
 #include "textautogenerateollama_private_export.h"
 #include <QDebug>
 #include <QString>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfo
 {
     Q_GADGET
 public:
-    enum class Category : uint16_t {
-        Unknown = 0,
-        Tools = 1,
-        Small = 2,
-        Medium = 4,
-        Big = 8,
-        Huge = 16,
-        Multilingual = 32,
-        Code = 64,
-        Math = 128,
-        Vision = 256,
-        Embedding = 512,
-        Reasoning = 1024,
-    };
-    Q_FLAGS(Category Categories)
-    Q_DECLARE_FLAGS(Categories, Category)
-
     struct ModelTag {
         QString tag;
         QString size;
@@ -56,27 +40,24 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
-    [[nodiscard]] Categories categories() const;
-    void setCategories(const Categories &newCategories);
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
+    void setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories);
 
     [[nodiscard]] QString description() const;
 
     [[nodiscard]] bool operator==(const OllamaModelAvailableInfo &other) const;
 
-    [[nodiscard]] static QString convertCategoryToI18n(OllamaModelAvailableInfo::Category cat);
-
     [[nodiscard]] QStringList categoriesName() const;
     void setCategoriesName(const QStringList &newCategoriesName);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT Category convertStringToCategory(const QString &str) const;
     QString mName;
     QString mUrl;
     QString mAuthor;
     QString mDescription;
     QStringList mLanguages;
     QList<ModelTag> mTags;
-    Categories mCategories = Category::Unknown;
+    TextAutoGenerateText::TextAutoGenerateManager::Categories mCategories = TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown;
     QStringList mCategoriesName;
 };
 

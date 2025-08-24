@@ -16,12 +16,12 @@ OllamaModelAvailableInfosSortProxyModel::OllamaModelAvailableInfosSortProxyModel
 
 OllamaModelAvailableInfosSortProxyModel::~OllamaModelAvailableInfosSortProxyModel() = default;
 
-QList<OllamaModelAvailableInfo::Category> OllamaModelAvailableInfosSortProxyModel::categories() const
+QList<TextAutoGenerateText::TextAutoGenerateManager::Category> OllamaModelAvailableInfosSortProxyModel::categories() const
 {
     return mCategories;
 }
 
-void OllamaModelAvailableInfosSortProxyModel::setCategories(const QList<OllamaModelAvailableInfo::Category> &newCategories)
+void OllamaModelAvailableInfosSortProxyModel::setCategories(const QList<TextAutoGenerateText::TextAutoGenerateManager::Category> &newCategories)
 {
     if (mCategories != newCategories) {
         mCategories = newCategories;
@@ -33,9 +33,9 @@ bool OllamaModelAvailableInfosSortProxyModel::filterAcceptsRow(int source_row, c
 {
     const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
     if (!mCategories.isEmpty()) {
-        const OllamaModelAvailableInfo::Categories categories =
-            modelIndex.data(OllamaModelAvailableInfosModel::Categories).value<OllamaModelAvailableInfo::Categories>();
-        if (categories == OllamaModelAvailableInfo::Category::Unknown) {
+        const TextAutoGenerateText::TextAutoGenerateManager::Categories categories =
+            modelIndex.data(OllamaModelAvailableInfosModel::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
+        if (categories == TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown) {
             return true;
         }
         for (const auto c : std::as_const(mCategories)) {

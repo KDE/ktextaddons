@@ -114,14 +114,14 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
         }
 
         QStringList categoriesName;
-        const OllamaModelAvailableInfo::Categories categories = (*it).categories();
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Tools, categories);
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Multilingual, categories);
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Code, categories);
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Math, categories);
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Vision, categories);
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Embedding, categories);
-        appendCategories(categoriesName, OllamaModelAvailableInfo::Category::Reasoning, categories);
+        const TextAutoGenerateText::TextAutoGenerateManager::Categories categories = (*it).categories();
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools, categories);
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Multilingual, categories);
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Code, categories);
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Math, categories);
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision, categories);
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding, categories);
+        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning, categories);
         if (!categoriesName.isEmpty()) {
             auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
             infoLayout->addWidget(featuresGroupBox);
@@ -135,10 +135,12 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     infoLayout->addStretch(1);
 }
 
-void OllamaModelInstalledInfoWidget::appendCategories(QStringList &lst, OllamaModelAvailableInfo::Category cat, OllamaModelAvailableInfo::Categories categories)
+void OllamaModelInstalledInfoWidget::appendCategories(QStringList &lst,
+                                                      TextAutoGenerateText::TextAutoGenerateManager::Category cat,
+                                                      TextAutoGenerateText::TextAutoGenerateManager::Categories categories)
 {
     if (categories & cat) {
-        lst.append(OllamaModelAvailableInfo::convertCategoryToI18n(cat));
+        lst.append(TextAutoGenerateText::TextAutoGenerateManager::convertCategoryToI18n(cat));
     }
 }
 

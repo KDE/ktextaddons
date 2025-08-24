@@ -25,12 +25,12 @@ bool OllamaModelAvailableInfo::operator==(const OllamaModelAvailableInfo &other)
         && mCategories == other.categories();
 }
 
-OllamaModelAvailableInfo::Categories OllamaModelAvailableInfo::categories() const
+TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaModelAvailableInfo::categories() const
 {
     return mCategories;
 }
 
-void OllamaModelAvailableInfo::setCategories(const Categories &newCategories)
+void OllamaModelAvailableInfo::setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories)
 {
     mCategories = newCategories;
 }
@@ -47,9 +47,9 @@ void OllamaModelAvailableInfo::parseInfo(const QString &name, const QJsonObject 
     mUrl = obj["url"_L1].toString();
     const QVariantList varLst = obj["categories"_L1].toArray().toVariantList();
     for (const auto &v : varLst) {
-        const OllamaModelAvailableInfo::Category c = convertStringToCategory(v.toString());
+        const TextAutoGenerateText::TextAutoGenerateManager::Category c = TextAutoGenerateText::TextAutoGenerateManager::convertStringToCategory(v.toString());
         mCategories |= c;
-        mCategoriesName.append(convertCategoryToI18n(c));
+        mCategoriesName.append(TextAutoGenerateText::TextAutoGenerateManager::convertCategoryToI18n(c));
     }
     const QJsonArray tagsArrayList = obj["tags"_L1].toArray();
     for (int i = 0; i < tagsArrayList.count(); ++i) {
@@ -74,38 +74,6 @@ void OllamaModelAvailableInfo::parseInfo(const QString &name, const QJsonObject 
     mDescription = OllamaModelUtils::description(mName);
 }
 
-QString OllamaModelAvailableInfo::convertCategoryToI18n(OllamaModelAvailableInfo::Category cat)
-{
-    switch (cat) {
-    case Category::Unknown:
-        return {};
-    case Category::Tools:
-        return i18n("Tools");
-    case Category::Small:
-        return i18n("Small");
-    case Category::Medium:
-        return i18n("Medium");
-    case Category::Big:
-        return i18n("Big");
-    case Category::Huge:
-        return i18n("Huge");
-    case Category::Multilingual:
-        return i18n("Multilingual");
-    case Category::Code:
-        return i18n("Code");
-    case Category::Math:
-        return i18n("Math");
-    case Category::Vision:
-        return i18n("Vision");
-    case Category::Embedding:
-        return i18n("Embedding");
-    case Category::Reasoning:
-        return i18n("Reasoning");
-    }
-    qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Missing translating Category " << static_cast<int>(cat);
-    return {};
-}
-
 QStringList OllamaModelAvailableInfo::categoriesName() const
 {
     return mCategoriesName;
@@ -114,35 +82,6 @@ QStringList OllamaModelAvailableInfo::categoriesName() const
 void OllamaModelAvailableInfo::setCategoriesName(const QStringList &newCategoriesName)
 {
     mCategoriesName = newCategoriesName;
-}
-
-OllamaModelAvailableInfo::Category OllamaModelAvailableInfo::convertStringToCategory(const QString &str) const
-{
-    if (str == "tools"_L1) {
-        return Category::Tools;
-    } else if (str == "small"_L1) {
-        return Category::Small;
-    } else if (str == "medium"_L1) {
-        return Category::Medium;
-    } else if (str == "big"_L1) {
-        return Category::Big;
-    } else if (str == "huge"_L1) {
-        return Category::Huge;
-    } else if (str == "multilingual"_L1) {
-        return Category::Multilingual;
-    } else if (str == "code"_L1) {
-        return Category::Code;
-    } else if (str == "math"_L1) {
-        return Category::Math;
-    } else if (str == "vision"_L1) {
-        return Category::Vision;
-    } else if (str == "embedding"_L1) {
-        return Category::Embedding;
-    } else if (str == "reasoning"_L1) {
-        return Category::Reasoning;
-    }
-    qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << "Impossible to convert " << str;
-    return Category::Unknown;
 }
 
 QString OllamaModelAvailableInfo::name() const

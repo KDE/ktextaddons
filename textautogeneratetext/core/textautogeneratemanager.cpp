@@ -16,7 +16,7 @@
 #include "textautogeneratetextplugin.h"
 
 #include <KLocalizedString>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
@@ -50,6 +50,35 @@ TextAutoGenerateManager::~TextAutoGenerateManager()
         textAutoGeneratePlugin()->deleteLater();
     }
     delete mTextAutoGenerateSettings;
+}
+
+TextAutoGenerateManager::Category TextAutoGenerateManager::convertStringToCategory(const QString &str)
+{
+    if (str == "tools"_L1) {
+        return Category::Tools;
+    } else if (str == "small"_L1) {
+        return Category::Small;
+    } else if (str == "medium"_L1) {
+        return Category::Medium;
+    } else if (str == "big"_L1) {
+        return Category::Big;
+    } else if (str == "huge"_L1) {
+        return Category::Huge;
+    } else if (str == "multilingual"_L1) {
+        return Category::Multilingual;
+    } else if (str == "code"_L1) {
+        return Category::Code;
+    } else if (str == "math"_L1) {
+        return Category::Math;
+    } else if (str == "vision"_L1) {
+        return Category::Vision;
+    } else if (str == "embedding"_L1) {
+        return Category::Embedding;
+    } else if (str == "reasoning"_L1) {
+        return Category::Reasoning;
+    }
+    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to convert " << str;
+    return Category::Unknown;
 }
 
 QString TextAutoGenerateManager::convertCategoryToI18n(TextAutoGenerateManager::Category cat)

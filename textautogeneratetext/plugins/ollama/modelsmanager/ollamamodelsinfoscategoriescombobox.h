@@ -7,6 +7,7 @@
 #include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QComboBox>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 class OllamaModelCategoriesModel;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelsInfosCategoriesComboBox : public QComboBox
 {
@@ -15,7 +16,7 @@ public:
     explicit OllamaModelsInfosCategoriesComboBox(QWidget *parent = nullptr);
     ~OllamaModelsInfosCategoriesComboBox() override;
 
-    [[nodiscard]] QList<OllamaModelAvailableInfo::Category> categories() const;
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateManager::Category> categories() const;
 Q_SIGNALS:
     void categoriesChanged();
 
