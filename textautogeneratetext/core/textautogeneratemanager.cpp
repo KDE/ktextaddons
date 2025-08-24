@@ -15,6 +15,8 @@
 #include "textautogeneratetextinstancesmanager.h"
 #include "textautogeneratetextplugin.h"
 
+#include <KLocalizedString>
+
 using namespace TextAutoGenerateText;
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
@@ -48,6 +50,38 @@ TextAutoGenerateManager::~TextAutoGenerateManager()
         textAutoGeneratePlugin()->deleteLater();
     }
     delete mTextAutoGenerateSettings;
+}
+
+QString TextAutoGenerateManager::convertCategoryToI18n(TextAutoGenerateManager::Category cat)
+{
+    switch (cat) {
+    case Category::Unknown:
+        return {};
+    case Category::Tools:
+        return i18n("Tools");
+    case Category::Small:
+        return i18n("Small");
+    case Category::Medium:
+        return i18n("Medium");
+    case Category::Big:
+        return i18n("Big");
+    case Category::Huge:
+        return i18n("Huge");
+    case Category::Multilingual:
+        return i18n("Multilingual");
+    case Category::Code:
+        return i18n("Code");
+    case Category::Math:
+        return i18n("Math");
+    case Category::Vision:
+        return i18n("Vision");
+    case Category::Embedding:
+        return i18n("Embedding");
+    case Category::Reasoning:
+        return i18n("Reasoning");
+    }
+    qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Missing translating Category " << static_cast<int>(cat);
+    return {};
 }
 
 void TextAutoGenerateManager::askToAssistant(const QString &msg)

@@ -102,6 +102,7 @@ public:
 
     void switchToChat(const QString &chatName);
 
+    [[nodiscard]] static QString convertCategoryToI18n(TextAutoGenerateManager::Category cat);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
