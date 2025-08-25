@@ -104,6 +104,9 @@ public:
 
     [[nodiscard]] static QString convertCategoryToI18n(TextAutoGenerateManager::Category cat);
     [[nodiscard]] static TextAutoGenerateManager::Category convertStringToCategory(const QString &str);
+
+    void resetCurrentChatId();
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

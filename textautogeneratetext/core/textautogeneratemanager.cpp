@@ -387,6 +387,11 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateManager::searchTextInDataba
     return mDatabaseManager->searchTextInDatabase(mTextAutoGenerateChatsModel->chatsId(), searchText);
 }
 
+void TextAutoGenerateManager::resetCurrentChatId()
+{
+    mCurrentChatId.clear();
+}
+
 void TextAutoGenerateManager::setCurrentChatId(const QByteArray &newCurrentChatId)
 {
     if (mCurrentChatId != newCurrentChatId) {
