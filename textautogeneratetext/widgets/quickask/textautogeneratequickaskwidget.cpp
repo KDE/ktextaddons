@@ -166,13 +166,14 @@ void TextAutoGenerateQuickAskWidget::slotInitializeDone()
     mAskMessageList.clear();
 }
 
-void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
+void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &messageUuid)
 {
     mManager->checkCurrentChat();
-    if (uuid.isEmpty()) {
+    qDebug() << " mManager->currentChatId() " << mManager->currentChatId();
+    if (messageUuid.isEmpty()) {
         mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
     } else {
-        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str);
+        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), messageUuid, str);
     }
     // mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
