@@ -81,3 +81,5 @@ bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
     }
     return QFrame::eventFilter(watched, event);
 }
+
+#include "moc_richtextquicktextformat.cpp"
