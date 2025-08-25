@@ -53,17 +53,19 @@ QTextCursor TextAutoGenerateListViewTextSelection::selectionForIndex(const QMode
     if (row == ordered.fromRow) {
         const int fromCharPos = ordered.fromCharPos;
         cursor.setPosition(qMax(fromCharPos, 0));
-    } else if (row > ordered.fromRow)
+    } else if (row > ordered.fromRow) {
         cursor.setPosition(0);
-    else
+    } else {
         return {};
+    }
     if (row == ordered.toRow) {
         const int toCharPos = ordered.toCharPos;
         cursor.setPosition(qMax(toCharPos, 0), QTextCursor::KeepAnchor);
-    } else if (row < ordered.toRow)
+    } else if (row < ordered.toRow) {
         cursor.movePosition(QTextCursor::End, QTextCursor::KeepAnchor);
-    else
+    } else {
         return {};
+    }
     return cursor;
 }
 
@@ -108,8 +110,9 @@ bool TextAutoGenerateListViewTextSelection::contains(const QModelIndex &index, i
     const int row = index.row();
     const OrderedPositions ordered = orderedPositions();
     if (row == ordered.fromRow) {
-        if (row == ordered.toRow) // single line selection
+        if (row == ordered.toRow) { // single line selection
             return ordered.fromCharPos <= charPos && charPos <= ordered.toCharPos;
+        }
         return ordered.fromCharPos <= charPos;
     } else if (row == ordered.toRow) {
         return charPos <= ordered.toCharPos;
