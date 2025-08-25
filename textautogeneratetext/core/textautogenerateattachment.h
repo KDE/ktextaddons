@@ -25,6 +25,7 @@ public:
         File,
         Image,
         Audio,
+        Video,
     };
     Q_ENUM(AttachmentType)
 
