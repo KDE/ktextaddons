@@ -169,7 +169,6 @@ void TextAutoGenerateQuickAskWidget::slotInitializeDone()
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &messageUuid)
 {
     mManager->checkCurrentChat();
-    qDebug() << " mManager->currentChatId() " << mManager->currentChatId();
     if (messageUuid.isEmpty()) {
         mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
     } else {
