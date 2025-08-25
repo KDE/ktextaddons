@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 00:41+0000\n"
+"POT-Creation-Date: 2025-08-25 00:41+0000\n"
 "PO-Revision-Date: 2025-08-19 16:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -62,6 +62,61 @@ msgstr ""
 "İşletke: %1\n"
 "Model: %2\n"
 "Örnek adı: %3"
+
+#: core/textautogeneratemanager.cpp:90
+#, kde-format
+msgid "Tools"
+msgstr "Araçlar"
+
+#: core/textautogeneratemanager.cpp:92
+#, kde-format
+msgid "Small"
+msgstr "Küçük"
+
+#: core/textautogeneratemanager.cpp:94
+#, kde-format
+msgid "Medium"
+msgstr "Orta"
+
+#: core/textautogeneratemanager.cpp:96
+#, kde-format
+msgid "Big"
+msgstr "Büyük"
+
+#: core/textautogeneratemanager.cpp:98
+#, kde-format
+msgid "Huge"
+msgstr "Devasa"
+
+#: core/textautogeneratemanager.cpp:100
+#, kde-format
+msgid "Multilingual"
+msgstr "Çok Dilli"
+
+#: core/textautogeneratemanager.cpp:102
+#, kde-format
+msgid "Code"
+msgstr "Kod"
+
+#: core/textautogeneratemanager.cpp:104
+#, kde-format
+msgid "Math"
+msgstr "Matematik"
+
+#: core/textautogeneratemanager.cpp:106
+#, kde-format
+msgid "Vision"
+msgstr "Görsel"
+
+#: core/textautogeneratemanager.cpp:108
+#, kde-format
+msgid "Embedding"
+msgstr "Gömülü"
+
+#: core/textautogeneratemanager.cpp:110
+#, kde-format
+msgid "Reasoning"
+msgstr "Akıl Yürütme"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -193,61 +248,6 @@ msgstr "Kimi, Moonshot AI tarafından geliştirilmiş bir büyük dil modelidir.
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama Modellerini Yönet"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
-#, kde-format
-msgid "Tools"
-msgstr "Araçlar"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
-#, kde-format
-msgid "Small"
-msgstr "Küçük"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
-#, kde-format
-msgid "Medium"
-msgstr "Orta"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
-#, kde-format
-msgid "Big"
-msgstr "Büyük"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
-#, kde-format
-msgid "Huge"
-msgstr "Devasa"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
-#, kde-format
-msgid "Multilingual"
-msgstr "Çok Dilli"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
-#, kde-format
-msgid "Code"
-msgstr "Kod"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
-#, kde-format
-msgid "Math"
-msgstr "Matematik"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
-#, kde-format
-msgid "Vision"
-msgstr "Görsel"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
-#, kde-format
-msgid "Embedding"
-msgstr "Gömülü"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
-#, kde-format
-msgid "Reasoning"
-msgstr "Akıl Yürütme"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104

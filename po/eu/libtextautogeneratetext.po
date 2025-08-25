@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 00:41+0000\n"
+"POT-Creation-Date: 2025-08-25 00:41+0000\n"
 "PO-Revision-Date: 2025-08-22 11:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -65,6 +65,61 @@ msgstr ""
 "Motorra: %1\n"
 "Eredua: %2\n"
 "Instantziaren izena: %3"
+
+#: core/textautogeneratemanager.cpp:90
+#, kde-format
+msgid "Tools"
+msgstr "Tresnak"
+
+#: core/textautogeneratemanager.cpp:92
+#, kde-format
+msgid "Small"
+msgstr "Txikia"
+
+#: core/textautogeneratemanager.cpp:94
+#, kde-format
+msgid "Medium"
+msgstr "Ertaina"
+
+#: core/textautogeneratemanager.cpp:96
+#, kde-format
+msgid "Big"
+msgstr "Handia"
+
+#: core/textautogeneratemanager.cpp:98
+#, kde-format
+msgid "Huge"
+msgstr "Itzela"
+
+#: core/textautogeneratemanager.cpp:100
+#, kde-format
+msgid "Multilingual"
+msgstr "Eleaniztuna"
+
+#: core/textautogeneratemanager.cpp:102
+#, kde-format
+msgid "Code"
+msgstr "Kodea"
+
+#: core/textautogeneratemanager.cpp:104
+#, kde-format
+msgid "Math"
+msgstr "Matematika"
+
+#: core/textautogeneratemanager.cpp:106
+#, kde-format
+msgid "Vision"
+msgstr "Ikusmena"
+
+#: core/textautogeneratemanager.cpp:108
+#, kde-format
+msgid "Embedding"
+msgstr "Txertatzea"
+
+#: core/textautogeneratemanager.cpp:110
+#, kde-format
+msgid "Reasoning"
+msgstr "Arrazoiketa"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -198,61 +253,6 @@ msgstr "Mistral AI lengoaia eredu handiak"
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama ereduak kudeatu"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
-#, kde-format
-msgid "Tools"
-msgstr "Tresnak"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
-#, kde-format
-msgid "Small"
-msgstr "Txikia"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
-#, kde-format
-msgid "Medium"
-msgstr "Ertaina"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
-#, kde-format
-msgid "Big"
-msgstr "Handia"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
-#, kde-format
-msgid "Huge"
-msgstr "Itzela"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
-#, kde-format
-msgid "Multilingual"
-msgstr "Eleaniztuna"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
-#, kde-format
-msgid "Code"
-msgstr "Kodea"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
-#, kde-format
-msgid "Math"
-msgstr "Matematika"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
-#, kde-format
-msgid "Vision"
-msgstr "Ikusmena"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
-#, kde-format
-msgid "Embedding"
-msgstr "Txertatzea"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
-#, kde-format
-msgid "Reasoning"
-msgstr "Arrazoiketa"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104

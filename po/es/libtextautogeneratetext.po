@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 00:41+0000\n"
+"POT-Creation-Date: 2025-08-25 00:41+0000\n"
 "PO-Revision-Date: 2025-08-19 12:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -64,6 +64,61 @@ msgstr ""
 "Motor: %1\n"
 "Modelo: %2\n"
 "Nombre de la instancia: %3"
+
+#: core/textautogeneratemanager.cpp:90
+#, kde-format
+msgid "Tools"
+msgstr "Herramientas"
+
+#: core/textautogeneratemanager.cpp:92
+#, kde-format
+msgid "Small"
+msgstr "Pequeño"
+
+#: core/textautogeneratemanager.cpp:94
+#, kde-format
+msgid "Medium"
+msgstr "Medio"
+
+#: core/textautogeneratemanager.cpp:96
+#, kde-format
+msgid "Big"
+msgstr "Grande"
+
+#: core/textautogeneratemanager.cpp:98
+#, kde-format
+msgid "Huge"
+msgstr "Enorme"
+
+#: core/textautogeneratemanager.cpp:100
+#, kde-format
+msgid "Multilingual"
+msgstr "Multilingüe"
+
+#: core/textautogeneratemanager.cpp:102
+#, kde-format
+msgid "Code"
+msgstr "Código"
+
+#: core/textautogeneratemanager.cpp:104
+#, kde-format
+msgid "Math"
+msgstr "Matemáticas"
+
+#: core/textautogeneratemanager.cpp:106
+#, kde-format
+msgid "Vision"
+msgstr "Visión"
+
+#: core/textautogeneratemanager.cpp:108
+#, kde-format
+msgid "Embedding"
+msgstr "Para integrar"
+
+#: core/textautogeneratemanager.cpp:110
+#, kde-format
+msgid "Reasoning"
+msgstr "Razonamiento"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -195,61 +250,6 @@ msgstr "Modelos de lenguaje extensos Kimi de Moonshot AI"
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Gestión de modelos de Ollama"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
-#, kde-format
-msgid "Tools"
-msgstr "Herramientas"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
-#, kde-format
-msgid "Small"
-msgstr "Pequeño"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
-#, kde-format
-msgid "Medium"
-msgstr "Medio"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
-#, kde-format
-msgid "Big"
-msgstr "Grande"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
-#, kde-format
-msgid "Huge"
-msgstr "Enorme"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
-#, kde-format
-msgid "Multilingual"
-msgstr "Multilingüe"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
-#, kde-format
-msgid "Code"
-msgstr "Código"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
-#, kde-format
-msgid "Math"
-msgstr "Matemáticas"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
-#, kde-format
-msgid "Vision"
-msgstr "Visión"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
-#, kde-format
-msgid "Embedding"
-msgstr "Para integrar"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
-#, kde-format
-msgid "Reasoning"
-msgstr "Razonamiento"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104

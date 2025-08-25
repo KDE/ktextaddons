@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-22 00:41+0000\n"
+"POT-Creation-Date: 2025-08-25 00:41+0000\n"
 "PO-Revision-Date: 2025-08-19 16:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -62,6 +62,61 @@ msgstr ""
 "Gränssnitt: %1\n"
 "Modell: %2\n"
 "Instansnamn: %3"
+
+#: core/textautogeneratemanager.cpp:90
+#, kde-format
+msgid "Tools"
+msgstr "Verktyg"
+
+#: core/textautogeneratemanager.cpp:92
+#, kde-format
+msgid "Small"
+msgstr "Liten"
+
+#: core/textautogeneratemanager.cpp:94
+#, kde-format
+msgid "Medium"
+msgstr "Medium"
+
+#: core/textautogeneratemanager.cpp:96
+#, kde-format
+msgid "Big"
+msgstr "Stor"
+
+#: core/textautogeneratemanager.cpp:98
+#, kde-format
+msgid "Huge"
+msgstr "Enorm"
+
+#: core/textautogeneratemanager.cpp:100
+#, kde-format
+msgid "Multilingual"
+msgstr "Flerspråkig"
+
+#: core/textautogeneratemanager.cpp:102
+#, kde-format
+msgid "Code"
+msgstr "Kod"
+
+#: core/textautogeneratemanager.cpp:104
+#, kde-format
+msgid "Math"
+msgstr "Matematik"
+
+#: core/textautogeneratemanager.cpp:106
+#, kde-format
+msgid "Vision"
+msgstr "Vision"
+
+#: core/textautogeneratemanager.cpp:108
+#, kde-format
+msgid "Embedding"
+msgstr "Inbäddad"
+
+#: core/textautogeneratemanager.cpp:110
+#, kde-format
+msgid "Reasoning"
+msgstr "Resonemang"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -193,61 +248,6 @@ msgstr "Kimi stor språkmodell av Moonshot AI"
 msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Hantera Ollama-modeller"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:83
-#, kde-format
-msgid "Tools"
-msgstr "Verktyg"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:85
-#, kde-format
-msgid "Small"
-msgstr "Liten"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:87
-#, kde-format
-msgid "Medium"
-msgstr "Medium"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:89
-#, kde-format
-msgid "Big"
-msgstr "Stor"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:91
-#, kde-format
-msgid "Huge"
-msgstr "Enorm"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:93
-#, kde-format
-msgid "Multilingual"
-msgstr "Flerspråkig"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:95
-#, kde-format
-msgid "Code"
-msgstr "Kod"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:97
-#, kde-format
-msgid "Math"
-msgstr "Matematik"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:99
-#, kde-format
-msgid "Vision"
-msgstr "Vision"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:101
-#, kde-format
-msgid "Embedding"
-msgstr "Inbäddad"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfo.cpp:103
-#, kde-format
-msgid "Reasoning"
-msgstr "Resonemang"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
