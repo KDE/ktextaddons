@@ -39,6 +39,7 @@ target_sources(
         richtexteditor/richtexteditor.cpp
         richtexteditor/richtexteditfindbar.cpp
         richtexteditor/richtexteditorwidget.cpp
+        richtexteditor/richtextquicktextformat.cpp
         plaintexteditor/plaintexteditfindbar.h
         plaintexteditor/plaintexteditor.h
         plaintexteditor/plaintexteditorwidget.h
@@ -51,6 +52,7 @@ target_sources(
         richtexteditor/richtexteditor.h
         richtexteditor/richtexteditfindbar.h
         richtexteditor/richtexteditorwidget.h
+        richtexteditor/richtextquicktextformat.h
         richtextbrowser/richtextbrowser.cpp
         richtextbrowser/richtextbrowser.h
         richtextbrowser/richtextbrowserwidget.cpp
