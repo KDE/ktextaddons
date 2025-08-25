@@ -36,7 +36,7 @@ void TextAutoGenerateMenuTextManager::load()
     const QStringList keyGroups = keyRecorderList(config);
 
     for (const QString &groupName : keyGroups) {
-        KConfigGroup group = config->group(groupName);
+        const KConfigGroup group = config->group(groupName);
         TextAutoGenerateMenuTextInfo info;
         info.setRequestText(group.readEntry(u"RequestedText"_s));
         info.setEnabled(group.readEntry(u"Enabled"_s, true));
