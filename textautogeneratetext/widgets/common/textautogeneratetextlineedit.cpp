@@ -33,7 +33,7 @@ void TextAutoGenerateTextLineEdit::loadSpellCheckingSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     if (config->hasGroup("Spelling"_L1)) {
-        KConfigGroup group(config, u"Spelling"_s);
+        const KConfigGroup group(config, u"Spelling"_s);
         setCheckSpellingEnabled(group.readEntry("checkerEnabledByDefault", false));
         const QString language = group.readEntry("Language", QString());
         setSpellCheckingLanguage(language);
