@@ -5,8 +5,10 @@
 */
 #pragma once
 #include "lrucache.h"
+#include "textautogenerateattachmentdelegatehelperimage.h"
 #include "textautogeneratetext_export.h"
 #include <QItemDelegate>
+#include <QScopedPointer>
 #include <QTextDocument>
 #include <memory>
 class QListView;
@@ -52,5 +54,6 @@ protected:
     mutable LRUCache<QByteArray, std::unique_ptr<QTextDocument>> mDocumentCache;
     QAbstractItemView *const mListView;
     TextAutoGenerateListViewTextSelection *const mTextSelection;
+    QScopedPointer<TextAutoGenerateAttachmentDelegateHelperImage> mHelperImage;
 };
 }
