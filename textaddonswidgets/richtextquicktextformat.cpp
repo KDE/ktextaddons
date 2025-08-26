@@ -147,6 +147,13 @@ bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
                 }
                 mUpdatePositionTimer->start();
             }
+        } else if (event->type() == QEvent::WindowDeactivate) {
+            if (isVisible()) {
+                if (mUpdatePositionTimer->isActive()) {
+                    mUpdatePositionTimer->stop();
+                }
+                hide();
+            }
         }
     }
     return QFrame::eventFilter(watched, event);
