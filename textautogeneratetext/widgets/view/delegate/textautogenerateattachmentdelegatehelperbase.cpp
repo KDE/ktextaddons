@@ -12,3 +12,5 @@ TextAutoGenerateAttachmentDelegateHelperBase::TextAutoGenerateAttachmentDelegate
 }
 
 TextAutoGenerateAttachmentDelegateHelperBase::~TextAutoGenerateAttachmentDelegateHelperBase() = default;
+
+#include "moc_textautogenerateattachmentdelegatehelperbase.cpp"
