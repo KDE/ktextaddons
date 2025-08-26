@@ -21,6 +21,8 @@ target_sources(
         selectspecialchardialog.cpp
         slidecontainer.cpp
         slidecontainer.h
+        richtextquicktextformat.cpp
+        richtextquicktextformat.h
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -72,6 +74,7 @@ ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     SelectSpecialCharDialog
     SlideContainer
+    RichTextQuickTextFormat
     REQUIRED_HEADERS TextAddonsWidgets_HEADERS
     PREFIX TextAddonsWidgets
 )
@@ -79,7 +82,6 @@ ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
 install(
     FILES
         ${TextAddonsWidgets_HEADERS}
-        ${TextAddonsWidgets_lineedit_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -87,7 +89,6 @@ install(
 install(
     FILES
         ${TextAddonsWidgets_CamelCase_HEADERS}
-        ${TextAddonsWidgets_lineedit_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )

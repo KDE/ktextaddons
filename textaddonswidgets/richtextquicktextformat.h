@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "textcustomeditor_export.h"
+#include "textaddonswidgets_export.h"
 #include <QFrame>
 class QTimer;
 class QTextEdit;
-namespace TextCustomEditor
+namespace TextAddonsWidgets
 {
-class TEXTCUSTOMEDITOR_EXPORT RichTextQuickTextFormat : public QFrame
+class TEXTADDONSWIDGETS_EXPORT RichTextQuickTextFormat : public QFrame
 {
     Q_OBJECT
 public:
@@ -30,13 +30,13 @@ public:
     ~RichTextQuickTextFormat() override;
 
 Q_SIGNALS:
-    void quickTextFormatRequested(TextCustomEditor::RichTextQuickTextFormat::QuickTextFormatType type);
+    void quickTextFormatRequested(TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type);
 
 protected:
     [[nodiscard]] bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    TEXTCUSTOMEDITOR_NO_EXPORT void updatePosition();
+    TEXTADDONSWIDGETS_NO_EXPORT void updatePosition();
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;
 };
