@@ -34,6 +34,7 @@ RichTextQuickTextFormat::RichTextQuickTextFormat(QTextEdit *editor, QWidget *par
         connect(mUpdatePositionTimer, &QTimer::timeout, this, &RichTextQuickTextFormat::updatePosition);
         mEditor->viewport()->installEventFilter(this);
     }
+    initializeTextFormat();
 }
 
 RichTextQuickTextFormat::~RichTextQuickTextFormat() = default;
