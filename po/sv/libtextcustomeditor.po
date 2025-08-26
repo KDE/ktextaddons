@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-08-26 00:41+0000\n"
 "PO-Revision-Date: 2024-07-12 20:55+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -87,6 +87,12 @@ msgstr "Skicka"
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Hoppa över"
+
+#: richtexteditor/richtextquicktextformat.cpp:42
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Bold"
+msgstr ""
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
