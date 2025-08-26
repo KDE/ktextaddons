@@ -9,3 +9,4 @@ macro(add_textaddonswidgets_unittest _source)
 endmacro()
 
 add_textaddonswidgets_unittest(slidecontainertest.cpp)
+add_textaddonswidgets_unittest(richtextquicktextformattest.cpp)
