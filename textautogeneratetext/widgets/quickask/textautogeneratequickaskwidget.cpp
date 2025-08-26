@@ -91,7 +91,9 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 
 TextAutoGenerateQuickAskWidget::~TextAutoGenerateQuickAskWidget()
 {
-    mManager->resetCurrentChatId();
+    if (mManager) {
+        mManager->resetCurrentChatId();
+    }
 }
 
 void TextAutoGenerateQuickAskWidget::slotEditMessage(const QModelIndex &index)
