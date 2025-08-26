@@ -242,6 +242,10 @@ target_sources(
         widgets/view/textautogeneratehistorylistviewdelegate.cpp
         widgets/view/textautogeneratelistviewtextselection.h
         widgets/view/textautogeneratelistviewtextselection.cpp
+        widgets/view/textautogenerateattachmentdelegatehelperimage.h
+        widgets/view/textautogenerateattachmentdelegatehelperimage.cpp
+        widgets/view/textautogenerateattachmentdelegatehelperbase.h
+        widgets/view/textautogenerateattachmentdelegatehelperbase.cpp
         widgets/view/lrucache.h
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
@@ -330,7 +334,6 @@ target_link_libraries(
         KF6::ItemViews
         cmark-rc
 )
-
 target_include_directories(
     KF6TextAutoGenerateText
     INTERFACE
