@@ -26,8 +26,9 @@ target_sources(
 )
 target_link_libraries(
     KF6TextAddonsWidgets
-    PRIVATE
+    PUBLIC
         Qt::Widgets
+    PRIVATE
         KF6::WidgetsAddons
         KF6::ConfigGui
 )

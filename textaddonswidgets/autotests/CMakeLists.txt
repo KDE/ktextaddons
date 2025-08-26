@@ -1,8 +1,11 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: BSD-3-Clause
-include(ECMAddTests)
 
-ecm_add_test(slidecontainertest.cpp slidecontainertest.h
-    TEST_NAME slidecontainertest
-    LINK_LIBRARIES Qt::Test Qt::Gui KF6TextAddonsWidgets Qt::Widgets
-)
+macro(add_textaddonswidgets_unittest _source)
+    get_filename_component(_name ${_source} NAME_WE)
+    ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
+	    LINK_LIBRARIES Qt::Test Qt::Gui KF6TextAddonsWidgets
+    )
+endmacro()
+
+add_textaddonswidgets_unittest(slidecontainertest.cpp)
