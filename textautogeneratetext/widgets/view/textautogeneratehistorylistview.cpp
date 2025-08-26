@@ -10,8 +10,8 @@
 #include "core/models/textautogeneratehistorylistheadingsproxymodel.h"
 #include "core/models/textautogeneratehistorysortfilterproxymodel.h"
 #include "core/textautogeneratemanager.h"
+#include "delegate/textautogeneratehistorylistviewdelegate.h"
 #include "textautogeneratechatwaitingansweranimation.h"
-#include "textautogeneratehistorylistviewdelegate.h"
 #include "textautogeneratetextwidget_animation_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>

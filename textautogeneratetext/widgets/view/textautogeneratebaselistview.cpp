@@ -5,7 +5,7 @@
 */
 #include "textautogeneratebaselistview.h"
 
-#include "widgets/view/textautogeneratelistviewbasedelegate.h"
+#include "delegate/textautogeneratelistviewbasedelegate.h"
 #include <KLocalizedString>
 #include <QApplication>
 #include <QClipboard>

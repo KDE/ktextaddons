@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "widgets/view/textautogeneratelistviewbasedelegate.h"
+#include "widgets/view/delegate/textautogeneratelistviewbasedelegate.h"
 #include <QObject>
 
 class OllamaModelInstalledInfosDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate

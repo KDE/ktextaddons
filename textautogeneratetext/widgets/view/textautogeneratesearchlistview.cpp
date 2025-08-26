@@ -10,7 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "core/models/textautogeneratesearchmessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratesearchmessageutils.h"
-#include "textautogeneratesearchlistviewdelegate.h"
+#include "delegate/textautogeneratesearchlistviewdelegate.h"
 #include <KLocalizedString>
 #include <QEvent>
 #include <QPainter>

@@ -6,7 +6,7 @@
 #include "textautogeneratelistview.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
-#include "textautogeneratelistviewdelegate.h"
+#include "delegate/textautogeneratelistviewdelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
 #include "textautogeneratetextwidget_animation_debug.h"

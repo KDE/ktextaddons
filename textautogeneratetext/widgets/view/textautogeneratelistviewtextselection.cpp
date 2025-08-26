@@ -7,7 +7,7 @@
 #include "textautogeneratelistviewtextselection.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include "textautogeneratelistviewdelegate.h"
+#include "delegate/textautogeneratelistviewdelegate.h"
 
 #include <QTextCursor>
 #include <QTextDocument>
