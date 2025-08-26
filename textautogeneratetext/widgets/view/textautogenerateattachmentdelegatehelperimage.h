@@ -17,5 +17,8 @@ class TextAutoGenerateAttachmentDelegateHelperImage : public TextAutoGenerateAtt
 public:
     explicit TextAutoGenerateAttachmentDelegateHelperImage(QObject *parent = nullptr);
     ~TextAutoGenerateAttachmentDelegateHelperImage() override;
+
+    void draw(QPainter *painter, QRect attachmentsRect, const QModelIndex &index, const QStyleOptionViewItem &option) const override;
+    [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const override;
 };
 }

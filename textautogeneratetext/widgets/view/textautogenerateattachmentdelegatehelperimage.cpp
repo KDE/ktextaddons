@@ -14,4 +14,20 @@ TextAutoGenerateAttachmentDelegateHelperImage::TextAutoGenerateAttachmentDelegat
 
 TextAutoGenerateAttachmentDelegateHelperImage::~TextAutoGenerateAttachmentDelegateHelperImage() = default;
 
+void TextAutoGenerateText::TextAutoGenerateAttachmentDelegateHelperImage::draw(QPainter *painter,
+                                                                               QRect attachmentsRect,
+                                                                               const QModelIndex &index,
+                                                                               const QStyleOptionViewItem &option) const
+{
+    // TODO
+}
+
+QSize TextAutoGenerateText::TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(const QModelIndex &index,
+                                                                                    int maxWidth,
+                                                                                    const QStyleOptionViewItem &option) const
+{
+    // TODO
+    return {};
+}
+
 #include "moc_textautogenerateattachmentdelegatehelperimage.cpp"
