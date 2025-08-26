@@ -27,6 +27,19 @@ RichTextQuickTextFormat::RichTextQuickTextFormat(QTextEdit *editor, QWidget *par
 {
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint | Qt::WindowDoesNotAcceptFocus);
 
+    if (mEditor) {
+        connect(mEditor, &QTextEdit::selectionChanged, this, &RichTextQuickTextFormat::updatePosition);
+        mUpdatePositionTimer->setInterval(20ms);
+        mUpdatePositionTimer->setSingleShot(true);
+        connect(mUpdatePositionTimer, &QTimer::timeout, this, &RichTextQuickTextFormat::updatePosition);
+        mEditor->viewport()->installEventFilter(this);
+    }
+}
+
+RichTextQuickTextFormat::~RichTextQuickTextFormat() = default;
+
+void RichTextQuickTextFormat::initializeTextFormat()
+{
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
@@ -109,17 +122,7 @@ RichTextQuickTextFormat::RichTextQuickTextFormat(QTextEdit *editor, QWidget *par
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::InsertLink);
     });
     mainLayout->addWidget(insertLinkButton);
-
-    if (mEditor) {
-        connect(mEditor, &QTextEdit::selectionChanged, this, &RichTextQuickTextFormat::updatePosition);
-        mUpdatePositionTimer->setInterval(20ms);
-        mUpdatePositionTimer->setSingleShot(true);
-        connect(mUpdatePositionTimer, &QTimer::timeout, this, &RichTextQuickTextFormat::updatePosition);
-        mEditor->viewport()->installEventFilter(this);
-    }
 }
-
-RichTextQuickTextFormat::~RichTextQuickTextFormat() = default;
 
 void RichTextQuickTextFormat::updatePosition()
 {

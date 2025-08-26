@@ -37,6 +37,7 @@ protected:
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void updatePosition();
+    TEXTADDONSWIDGETS_NO_EXPORT void initializeTextFormat();
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;
 };
