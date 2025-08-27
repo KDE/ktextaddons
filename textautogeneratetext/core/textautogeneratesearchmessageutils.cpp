@@ -5,11 +5,11 @@
 */
 
 #include "textautogeneratesearchmessageutils.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 using namespace TextAutoGenerateText;
 
+using namespace Qt::Literals::StringLiterals;
 QString TextAutoGenerateSearchMessageUtils::generatePreview(const QString &str)
 {
     if (str.length() > 120) {
