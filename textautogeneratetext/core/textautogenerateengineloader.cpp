@@ -29,6 +29,10 @@ TextAutoGenerateEngineLoader::~TextAutoGenerateEngineLoader() = default;
 
 void TextAutoGenerateEngineLoader::loadPlugins()
 {
+    // Already loaded
+    if (!d->loadedPlugins.isEmpty()) {
+        return;
+    }
     const QStringList libPaths = QCoreApplication::libraryPaths();
     const QString pathSuffix(u"/kf6/textautogeneratetext/"_s);
     for (const QString &libPath : libPaths) {

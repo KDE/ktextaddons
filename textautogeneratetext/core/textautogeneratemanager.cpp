@@ -260,7 +260,7 @@ void TextAutoGenerateManager::loadHistory()
 QString TextAutoGenerateManager::generateEngineDisplayName() const
 {
     QString displayName;
-    const auto plugin = textAutoGeneratePlugin();
+    const auto *plugin = textAutoGeneratePlugin();
     if (plugin) {
         displayName = QStringLiteral("%1 (%2)").arg(plugin->translatedPluginName(), TextAutoGenerateTextPlugin::convertEngineType(plugin->engineType()));
     }
@@ -458,7 +458,7 @@ void TextAutoGenerateManager::loadEngine()
 {
     if (textAutoGeneratePlugin()) {
         disconnect(textAutoGeneratePlugin());
-        delete textAutoGeneratePlugin();
+        // delete textAutoGeneratePlugin();
     }
     mTextAutoGenerateTextInstancesManager->loadInstances();
     if (mTextAutoGenerateTextInstancesManager->isEmpty()) {
