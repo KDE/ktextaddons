@@ -15,4 +15,6 @@ public:
     ~TextAutoGenerateTextInstancesManagerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldAddInstances();
+    void shouldRemoveInstances();
 };

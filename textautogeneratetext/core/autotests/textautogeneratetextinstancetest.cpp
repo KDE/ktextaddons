@@ -5,12 +5,14 @@
 */
 #include "textautogeneratetextinstancetest.h"
 #include "core/textautogeneratetextinstance.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateTextInstanceTest)
-
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextInstanceTest::TextAutoGenerateTextInstanceTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TextAutoGenerateTextInstanceTest::shouldHaveDefaultValues()
@@ -22,6 +24,19 @@ void TextAutoGenerateTextInstanceTest::shouldHaveDefaultValues()
     QVERIFY(w.currentModel().isEmpty());
     QVERIFY(!w.isValid());
     QVERIFY(w.enabled());
+}
+
+void TextAutoGenerateTextInstanceTest::shouldInstanceWillBeValid()
+{
+    TextAutoGenerateText::TextAutoGenerateTextInstance w;
+    w.setPluginIdentifier(u"ide"_s);
+    QVERIFY(!w.isValid());
+
+    w.setInstanceUuid("inst_uuid"_ba);
+    QVERIFY(!w.isValid());
+
+    w.setPluginName(u"plugin_n"_s);
+    QVERIFY(w.isValid());
 }
 
 #include "moc_textautogeneratetextinstancetest.cpp"
