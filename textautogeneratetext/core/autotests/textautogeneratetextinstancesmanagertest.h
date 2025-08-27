@@ -17,4 +17,6 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldAddInstances();
     void shouldRemoveInstances();
+    void shouldReturnInstanceDisplayNames();
+    void shouldReturnIsEmpty();
 };

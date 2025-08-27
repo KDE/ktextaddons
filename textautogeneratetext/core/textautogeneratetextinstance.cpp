@@ -11,13 +11,18 @@ TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
 {
+    // if (mPlugin) {
     // mPlugin->deleteLater();
     // mPlugin = nullptr;
+    // }
 }
 
 QString TextAutoGenerateTextInstance::displayName() const
 {
-    return mPlugin->displayName();
+    if (mPlugin) {
+        return mPlugin->displayName();
+    }
+    return {};
 }
 
 QString TextAutoGenerateTextInstance::pluginName() const
