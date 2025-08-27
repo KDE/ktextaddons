@@ -231,7 +231,7 @@ void AutoCorrection::superscriptAppendix()
                 bool found = true;
                 // don't apply superscript to 1th, 2th and 3th
                 const int numberLength(number.length());
-                if (numberLength == 1 && (*constIter == QLatin1Char('1') || *constIter == QLatin1Char('2') || *constIter == QLatin1Char('3'))) {
+                if (numberLength == 1 && (*constIter == u'1' || *constIter == u'2' || *constIter == u'3')) {
                     found = false;
                 }
                 if (found) {
@@ -271,8 +271,7 @@ void AutoCorrection::addNonBreakingSpace()
         const QString text = block.text();
         const QChar lastChar = text.at(d->mCursor.position() - 1 - block.position());
 
-        if (lastChar == QLatin1Char(':') || lastChar == QLatin1Char(';') || lastChar == QLatin1Char('!') || lastChar == QLatin1Char('?')
-            || lastChar == QLatin1Char('%')) {
+        if (lastChar == u':' || lastChar == u';' || lastChar == u'!' || lastChar == u'?' || lastChar == u'%') {
             const int pos = d->mCursor.position() - 2 - block.position();
             if (pos >= 0) {
                 const QChar previousChar = text.at(pos);
@@ -290,7 +289,7 @@ void AutoCorrection::addNonBreakingSpace()
             if (pos >= 0) {
                 const QChar previousChar = text.at(pos);
 
-                if (lastChar == QLatin1Char('C') && previousChar == QChar(0x000B0)) {
+                if (lastChar == u'C' && previousChar == QChar(0x000B0)) {
                     const int posCursor = d->mCursor.position() - 3 - block.position();
                     if (posCursor >= 0) {
                         const QChar previousCharFromDegrees = text.at(posCursor);
@@ -322,9 +321,9 @@ bool AutoCorrection::autoBoldUnderline()
 
     const QChar trimmedFirstChar(trimmed.at(0));
     const QChar trimmedLastChar(trimmed.at(trimmedLength - 1));
-    const bool underline = (trimmedFirstChar == QLatin1Char('_') && trimmedLastChar == QLatin1Char('_'));
-    const bool bold = (trimmedFirstChar == QLatin1Char('*') && trimmedLastChar == QLatin1Char('*'));
-    const bool strikeOut = (trimmedFirstChar == QLatin1Char('-') && trimmedLastChar == QLatin1Char('-'));
+    const bool underline = (trimmedFirstChar == u'_') && (trimmedLastChar == u'_');
+    const bool bold = (trimmedFirstChar == u'*') && (trimmedLastChar == u'*');
+    const bool strikeOut = (trimmedFirstChar == u'-') && (trimmedLastChar == u'-');
     if (underline || bold || strikeOut) {
         const int startPos = d->mCursor.selectionStart();
         const QString replacement = trimmed.mid(1, trimmedLength - 2);
@@ -458,26 +457,26 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
 
     if (linkType == UNCLASSIFIED) {
         pos = word.indexOf("www."_L1, 0, Qt::CaseInsensitive);
-        if (pos != -1 && word.indexOf(QLatin1Char('.'), pos + 4) != -1) {
+        if (pos != -1 && word.indexOf(u'.', pos + 4) != -1) {
             linkType = WWW;
             contentPos = pos + 4;
         }
     }
     if (linkType == UNCLASSIFIED) {
         pos = word.indexOf("ftp."_L1, 0, Qt::CaseInsensitive);
-        if (pos != -1 && word.indexOf(QLatin1Char('.'), pos + 4) != -1) {
+        if (pos != -1 && word.indexOf(u'.', pos + 4) != -1) {
             linkType = FTP;
             contentPos = pos + 4;
         }
     }
     if (linkType == UNCLASSIFIED) {
-        const int separatorPos = word.lastIndexOf(QLatin1Char('@'));
+        const int separatorPos = word.lastIndexOf(u'@');
         if (separatorPos != -1) {
             pos = separatorPos - 1;
             QChar c;
             while (pos >= 0) {
                 c = word.at(pos);
-                if ((c.isPunct() && c != QLatin1Char('.') && c != QLatin1Char('_')) || (c == QLatin1Char('@'))) {
+                if ((c.isPunct() && c != u'.' && c != u'_') || (c == u'@')) {
                     pos = -2;
                     break;
                 } else {
@@ -496,7 +495,7 @@ QString AutoCorrection::autoDetectURL(const QString &_word) const
         // A URL inside e.g. quotes (like "http://www.calligra.org" with the quotes)
         // shouldn't include the quote in the URL.
         int lastPos = word.length() - 1;
-        while (!word.at(lastPos).isLetter() && !word.at(lastPos).isDigit() && word.at(lastPos) != QLatin1Char('/')) {
+        while (!word.at(lastPos).isLetter() && !word.at(lastPos).isDigit() && word.at(lastPos) != u'/') {
             --lastPos;
         }
         // sanity check: was there no real content behind the key string?
@@ -559,7 +558,7 @@ bool AutoCorrection::singleSpaces() const
         // then when the prev char is also a space, don't insert one.
         const QTextBlock block = d->mCursor.block();
         const QString text = block.text();
-        if (text.at(d->mCursor.position() - 1 - block.position()) == QLatin1Char(' ')) {
+        if (text.at(d->mCursor.position() - 1 - block.position()) == u' ') {
             return false;
         }
     }
@@ -621,7 +620,7 @@ void AutoCorrection::uppercaseFirstCharOfSentence()
                 --position;
             }
 
-            if (constIter != text.constBegin() && (*constIter == QLatin1Char('.') || *constIter == QLatin1Char('!') || *constIter == QLatin1Char('?'))) {
+            if (constIter != text.constBegin() && (*constIter == u'.' || *constIter == u'!' || *constIter == u'?')) {
                 constIter--;
                 while (constIter != text.constBegin() && !(constIter->isLetter())) {
                     --position;
@@ -793,8 +792,8 @@ void AutoCorrection::replaceTypographicQuotes()
     /* this method is ported from lib/kotext/KoAutoFormat.cpp KoAutoFormat::doTypographicQuotes
      * from Calligra 1.x branch */
 
-    if (!(d->mAutoCorrectionSettings->isReplaceDoubleQuotes() && d->mWord.contains(QLatin1Char('"')))
-        && !(d->mAutoCorrectionSettings->isReplaceSingleQuotes() && d->mWord.contains(QLatin1Char('\'')))) {
+    if (!(d->mAutoCorrectionSettings->isReplaceDoubleQuotes() && d->mWord.contains(u'"'))
+        && !(d->mAutoCorrectionSettings->isReplaceSingleQuotes() && d->mWord.contains(u'\''))) {
         return;
     }
 
@@ -814,8 +813,8 @@ void AutoCorrection::replaceTypographicQuotes()
     bool ending = true;
     for (int i = d->mWord.length(); i > 1; --i) {
         const QChar c = d->mWord.at(i - 1);
-        if (c == QLatin1Char('"') || c == QLatin1Char('\'')) {
-            const bool doubleQuotes = (c == QLatin1Char('"'));
+        if ((c == u'"') || (c == u'\'')) {
+            const bool doubleQuotes = (c == u'"');
             if (i > 2) {
                 const QChar::Category c1 = d->mWord.at(i - 1).category();
 
@@ -894,7 +893,7 @@ void AutoCorrection::replaceTypographicQuotes()
     }
 
     // first character
-    if (d->mWord.at(0) == QLatin1Char('"') && d->mAutoCorrectionSettings->isReplaceDoubleQuotes()) {
+    if (d->mWord.at(0) == u'"' && d->mAutoCorrectionSettings->isReplaceDoubleQuotes()) {
         const QChar beginQuote = d->mAutoCorrectionSettings->isReplaceDoubleQuotesByFrenchQuotes()
             ? d->mAutoCorrectionSettings->doubleFrenchQuotes().begin
             : d->mAutoCorrectionSettings->typographicDoubleQuotes().begin;
@@ -902,7 +901,7 @@ void AutoCorrection::replaceTypographicQuotes()
         if (addNonBreakingSpace) {
             d->mWord.insert(1, d->mAutoCorrectionSettings->nonBreakingSpace());
         }
-    } else if (d->mWord.at(0) == QLatin1Char('\'') && d->mAutoCorrectionSettings->isReplaceSingleQuotes()) {
+    } else if (d->mWord.at(0) == u'\'' && d->mAutoCorrectionSettings->isReplaceSingleQuotes()) {
         d->mWord[0] = d->mAutoCorrectionSettings->typographicSingleQuotes().begin;
         if (addNonBreakingSpace) {
             d->mWord.insert(1, d->mAutoCorrectionSettings->nonBreakingSpace());

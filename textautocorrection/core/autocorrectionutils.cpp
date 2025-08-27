@@ -5,6 +5,8 @@
 */
 
 #include "autocorrectionutils.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
@@ -85,15 +87,13 @@ QString AutoCorrectionUtils::libreOfficeLocalPath()
 QString AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath()
 {
 #ifdef Q_OS_WIN
-    const QString writeablePath =
-        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation).remove(QCoreApplication::applicationName() + QLatin1Char('/'))
+    const QString writeablePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation).remove(QCoreApplication::applicationName() + u'/')
         + AutoCorrectionUtils::libreOfficeLocalPath();
     return writeablePath;
 #else
 #ifdef Q_OS_MACOS
     // $HOME/Library/Application Support/OpenOffice/4/user/autocorr
-    const QString writeablePath =
-        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation).remove(QCoreApplication::applicationName() + QLatin1Char('/'))
+    const QString writeablePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation).remove(QCoreApplication::applicationName() + u'/')
         + AutoCorrectionUtils::libreOfficeLocalPath();
     return writeablePath;
 #else
@@ -137,7 +137,7 @@ QStringList AutoCorrectionUtils::autoCorrectLibreOfficeLanguageToString(const QS
                 break;
             } else {
                 QString b = lang;
-                b.replace(QLatin1Char('-'), QLatin1Char('_'));
+                b.replace(u'-', u'_');
                 if (languageCode == b) {
                     const QString nativeName = locale.nativeLanguageName();
                     // For some languages the native name might be empty.
@@ -185,7 +185,7 @@ QString AutoCorrectionUtils::containsAutoCorrectionFile(const QString &lang, con
     libreOfficeAutocorrectPaths += AutoCorrectionUtils::libreOfficeAutoCorrectionPath();
     if (!libreOfficeAutocorrectPaths.isEmpty()) {
         QString fixLangExtension = lang;
-        fixLangExtension.replace(QLatin1Char('_'), QLatin1Char('-'));
+        fixLangExtension.replace(u'_', u'-');
         for (const auto &path : std::as_const(libreOfficeAutocorrectPaths)) {
             const QString filename = path + AutoCorrectionUtils::libreofficeFile(fixLangExtension);
             // qDebug() << " filename " << filename;
