@@ -23,4 +23,5 @@ private Q_SLOTS:
     void shouldReturnCurrentPluginCurrentInstanceAllDisabled();
     void shouldReturnCurrentPluginCurrentInstance();
     void shouldReturnCurrentPluginWithInvalidCurrentInstance();
+    void shouldReturnCurrentPluginWithInvalidCurrentInstanceNoEnableInstance();
 };

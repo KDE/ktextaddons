@@ -335,4 +335,32 @@ void TextAutoGenerateTextInstancesManagerTest::shouldReturnCurrentPluginWithInva
     QCOMPARE(w.textAutoGeneratePlugin(), pluginFoo);
 }
 
+void TextAutoGenerateTextInstancesManagerTest::shouldReturnCurrentPluginWithInvalidCurrentInstanceNoEnableInstance()
+{
+    TextAutoGenerateText::TextAutoGenerateManager autoGenerateManager;
+    TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(&autoGenerateManager, nullptr);
+    QVERIFY(w.isEmpty());
+    auto instanceFoo = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+    instanceFoo->setInstanceUuid("foo1"_ba);
+    instanceFoo->setPluginName(u"custom"_s);
+    auto pluginFoo = new CustomPlugin(&autoGenerateManager, instanceFoo);
+    pluginFoo->setDisplayName(u"display1"_s);
+    instanceFoo->setPlugin(pluginFoo);
+    instanceFoo->setEnabled(false);
+    w.addInstance(instanceFoo);
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo2"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display2"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(false);
+        w.addInstance(instance);
+    }
+    // Invalid current Instance
+    w.setCurrentinstance("foo555"_ba);
+    QVERIFY(!w.textAutoGeneratePlugin());
+}
+
 #include "moc_textautogeneratetextinstancesmanagertest.cpp"
