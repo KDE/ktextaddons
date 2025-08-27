@@ -75,6 +75,9 @@ void TextAutoGenerateTextInstancesManagerTest::shouldRemoveInstances()
         w.addInstance(instance);
     }
     QCOMPARE(w.instances().count(), 2);
+    // Not existing
+    w.deleteInstance("foo7"_ba);
+    QCOMPARE(w.instances().count(), 2);
 }
 
 #include "moc_textautogeneratetextinstancesmanagertest.cpp"
