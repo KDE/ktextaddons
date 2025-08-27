@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-25 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2025-08-19 17:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -331,7 +331,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:389
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2268,6 +2268,30 @@ msgstr "Пошук"
 msgid "No plugin found."
 msgstr "Не знайдено додатка."
 
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:377
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit…"
+msgstr "Змінити…"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Вилучити"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy"
+msgstr "Копіювати"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Оновити"
+
 #: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
@@ -2337,30 +2361,6 @@ msgstr "Вилучення обговорення"
 #, kde-format
 msgid "No Archive Found."
 msgstr "Архів не знайдено"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Edit…"
-msgstr "Змінити…"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:381
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "Вилучити"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:385
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Copy"
-msgstr "Копіювати"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:393
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Оновити"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

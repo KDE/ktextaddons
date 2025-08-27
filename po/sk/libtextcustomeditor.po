@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextcustomeditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2023-12-08 20:11+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -88,12 +88,6 @@ msgstr "Poslať"
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Preskočiť"
-
-#: richtexteditor/richtextquicktextformat.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Bold"
-msgstr ""
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, fuzzy, kde-format

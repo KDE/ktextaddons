@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-25 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -328,7 +328,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Anna mallin nimi muodossa ”nimi:luokitus”"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:389
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2009,6 +2009,34 @@ msgstr "Etsi"
 msgid "No plugin found."
 msgstr "Liitännäistä ei löytynyt."
 
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:377
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit…"
+msgctxt "@info:tooltip"
+msgid "Edit…"
+msgstr "Muokkaa…"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove"
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Poista"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy"
+msgstr "Kopioi"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Virkistä"
+
 #: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
@@ -2079,34 +2107,6 @@ msgstr "Poista keskustelu"
 #| msgid "No Messages Found."
 msgid "No Archive Found."
 msgstr "Viestejä ei löytynyt."
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
-msgctxt "@info:tooltip"
-msgid "Edit…"
-msgstr "Muokkaa…"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "Poista"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:385
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Copy"
-msgstr "Kopioi"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:393
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Virkistä"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

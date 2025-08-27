@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-25 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2025-08-19 12:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -331,7 +331,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Introduzca el nombre del modelo como «nombre:etiqueta»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:389
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2282,6 +2282,30 @@ msgstr "Buscar"
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
 
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:377
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit…"
+msgstr "Editar…"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Eliminar"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy"
+msgstr "Copiar"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Actualizar"
+
 #: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
@@ -2351,30 +2375,6 @@ msgstr "Eliminar discusión"
 #, kde-format
 msgid "No Archive Found."
 msgstr "No se ha encontrado ningún archivo."
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Edit…"
-msgstr "Editar…"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:381
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "Eliminar"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:385
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Copy"
-msgstr "Copiar"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:393
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Actualizar"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

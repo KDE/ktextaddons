@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2024-03-27 22:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -16,6 +16,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.1\n"
+
+#: richtextquicktextformat.cpp:55
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Bold"
+msgstr ""
+
+#: richtextquicktextformat.cpp:67
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Italic"
+msgstr ""
+
+#: richtextquicktextformat.cpp:79
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Strike Through"
+msgstr ""
+
+#: richtextquicktextformat.cpp:92
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Code Block"
+msgstr ""
+
+#: richtextquicktextformat.cpp:105
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Quote Text"
+msgstr ""
+
+#: richtextquicktextformat.cpp:120
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Insert Link"
+msgstr ""
 
 #: selectspecialchardialog.cpp:34
 #, kde-format

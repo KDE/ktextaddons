@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2024-07-11 09:57+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -16,6 +16,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
+
+#: richtextquicktextformat.cpp:55
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Bold"
+msgstr ""
+
+#: richtextquicktextformat.cpp:67
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Italic"
+msgstr ""
+
+#: richtextquicktextformat.cpp:79
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Strike Through"
+msgstr ""
+
+#: richtextquicktextformat.cpp:92
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Code Block"
+msgstr ""
+
+#: richtextquicktextformat.cpp:105
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Quote Text"
+msgstr ""
+
+#: richtextquicktextformat.cpp:120
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Insert"
+msgctxt "@info:tooltip"
+msgid "Insert Link"
+msgstr "Invoegen"
 
 #: selectspecialchardialog.cpp:34
 #, kde-format

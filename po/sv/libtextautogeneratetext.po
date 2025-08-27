@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-25 00:41+0000\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
 "PO-Revision-Date: 2025-08-19 16:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Ange modellnamn som \"namn:etikett\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/textautogeneratelistviewdelegate.cpp:389
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2263,6 +2263,30 @@ msgstr "Sök"
 msgid "No plugin found."
 msgstr "Inga insticksprogram hittades."
 
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:377
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit…"
+msgstr "Redigera…"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Ta bort"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy"
+msgstr "Kopiera"
+
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Uppdatera"
+
 #: widgets/view/textautogeneratebaselistview.cpp:69
 #, kde-format
 msgctxt "@action"
@@ -2332,30 +2356,6 @@ msgstr "Ta bort diskussion"
 #, kde-format
 msgid "No Archive Found."
 msgstr "Inget arkiv hittades."
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:377
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Edit…"
-msgstr "Redigera…"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:381
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "Ta bort"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:385
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Copy"
-msgstr "Kopiera"
-
-#: widgets/view/textautogeneratelistviewdelegate.cpp:393
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Uppdatera"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

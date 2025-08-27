@@ -1,15 +1,15 @@
 # Spanish translations for libtextcustomeditor.po package.
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) 2023-2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-#
 # Automatically generated, 2023.
-# SPDX-FileCopyrightText: 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libtextcustomeditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-26 00:41+0000\n"
-"PO-Revision-Date: 2024-07-11 15:22+0200\n"
+"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"PO-Revision-Date: 2025-08-27 00:17+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: plaintexteditor/plaintexteditfindbar.cpp:120
 #: richtexteditor/richtexteditfindbar.cpp:120
@@ -31,7 +31,7 @@ msgstr[1] "%1 sustituciones realizadas"
 #: richtexteditor/richtexteditor.cpp:237
 #, kde-format
 msgid "Check Spelling…"
-msgstr "Comprobar ortografía..."
+msgstr "Comprobar ortografía…"
 
 #: plaintexteditor/plaintexteditor.cpp:175
 #: richtexteditor/richtexteditor.cpp:242
@@ -89,12 +89,6 @@ msgstr "Enviar"
 msgctxt "@action:button"
 msgid "Skip"
 msgstr "Omitir"
-
-#: richtexteditor/richtextquicktextformat.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Bold"
-msgstr ""
 
 #: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
 #, kde-format
@@ -211,3 +205,7 @@ msgstr "Ir a la línea:"
 #, kde-format
 msgid "Go"
 msgstr "Ir"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Bold"
+#~ msgstr "Negrita"
