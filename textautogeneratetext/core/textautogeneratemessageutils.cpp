@@ -353,7 +353,7 @@ static QString addHighlighter(const QString &str, const QString &language, const
     auto addInlineQuoteChunk = [&](const QString &chunk) {
         iterateOverEndLineRegions(chunk, u">"_s, addInlineQuoteCodeChunk, addTextChunk, addInlineQuoteCodeNewLineChunk);
     };
-    auto addNonCodeChunk = [&](QString chunk) {
+    auto addNonCodeChunk = [&](const QString &chunk) {
         if (chunk.isEmpty()) {
             return;
         }
