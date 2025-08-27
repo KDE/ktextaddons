@@ -19,4 +19,8 @@ private Q_SLOTS:
     void shouldRemoveInstances();
     void shouldReturnInstanceDisplayNames();
     void shouldReturnIsEmpty();
+    void shouldReturnCurrentPluginNotCurrentInstance();
+    void shouldReturnCurrentPluginCurrentInstanceAllDisabled();
+    void shouldReturnCurrentPluginCurrentInstance();
+    void shouldReturnCurrentPluginWithInvalidCurrentInstance();
 };

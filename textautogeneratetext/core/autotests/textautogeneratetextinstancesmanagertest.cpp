@@ -208,5 +208,131 @@ void TextAutoGenerateTextInstancesManagerTest::shouldReturnIsEmpty()
         w.addInstance(instance);
     }
     QVERIFY(w.isEmpty());
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo3"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display3"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(true);
+        w.addInstance(instance);
+    }
+    QVERIFY(!w.isEmpty());
 }
+
+void TextAutoGenerateTextInstancesManagerTest::shouldReturnCurrentPluginNotCurrentInstance()
+{
+    TextAutoGenerateText::TextAutoGenerateManager autoGenerateManager;
+    TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(&autoGenerateManager, nullptr);
+    QVERIFY(w.isEmpty());
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo1"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display1"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(false);
+        w.addInstance(instance);
+    }
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo2"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display2"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(false);
+        w.addInstance(instance);
+    }
+    // No active instance and not currentInstance
+    QVERIFY(!w.textAutoGeneratePlugin());
+}
+
+void TextAutoGenerateTextInstancesManagerTest::shouldReturnCurrentPluginCurrentInstanceAllDisabled()
+{
+    TextAutoGenerateText::TextAutoGenerateManager autoGenerateManager;
+    TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(&autoGenerateManager, nullptr);
+    QVERIFY(w.isEmpty());
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo1"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display1"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(false);
+        w.addInstance(instance);
+    }
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo2"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display2"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(false);
+        w.addInstance(instance);
+    }
+    w.setCurrentinstance("foo1"_ba);
+    // No active instance and currentInstance
+    QVERIFY(!w.textAutoGeneratePlugin());
+}
+
+void TextAutoGenerateTextInstancesManagerTest::shouldReturnCurrentPluginCurrentInstance()
+{
+    TextAutoGenerateText::TextAutoGenerateManager autoGenerateManager;
+    TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(&autoGenerateManager, nullptr);
+    QVERIFY(w.isEmpty());
+    auto instanceFoo = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+    instanceFoo->setInstanceUuid("foo1"_ba);
+    instanceFoo->setPluginName(u"custom"_s);
+    auto pluginFoo = new CustomPlugin(&autoGenerateManager, instanceFoo);
+    pluginFoo->setDisplayName(u"display1"_s);
+    instanceFoo->setPlugin(pluginFoo);
+    instanceFoo->setEnabled(true);
+    w.addInstance(instanceFoo);
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo2"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display2"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(true);
+        w.addInstance(instance);
+    }
+    w.setCurrentinstance("foo1"_ba);
+    QCOMPARE(w.textAutoGeneratePlugin(), pluginFoo);
+}
+
+void TextAutoGenerateTextInstancesManagerTest::shouldReturnCurrentPluginWithInvalidCurrentInstance()
+{
+    TextAutoGenerateText::TextAutoGenerateManager autoGenerateManager;
+    TextAutoGenerateText::TextAutoGenerateTextInstancesManager w(&autoGenerateManager, nullptr);
+    QVERIFY(w.isEmpty());
+    auto instanceFoo = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+    instanceFoo->setInstanceUuid("foo1"_ba);
+    instanceFoo->setPluginName(u"custom"_s);
+    auto pluginFoo = new CustomPlugin(&autoGenerateManager, instanceFoo);
+    pluginFoo->setDisplayName(u"display1"_s);
+    instanceFoo->setPlugin(pluginFoo);
+    instanceFoo->setEnabled(true);
+    w.addInstance(instanceFoo);
+    {
+        auto instance = new TextAutoGenerateText::TextAutoGenerateTextInstance();
+        instance->setInstanceUuid("foo2"_ba);
+        instance->setPluginName(u"custom"_s);
+        auto plugin = new CustomPlugin(&autoGenerateManager, instance);
+        plugin->setDisplayName(u"display2"_s);
+        instance->setPlugin(plugin);
+        instance->setEnabled(true);
+        w.addInstance(instance);
+    }
+    // Invalid current Instance
+    w.setCurrentinstance("foo555"_ba);
+    QCOMPARE(w.textAutoGeneratePlugin(), pluginFoo);
+}
+
 #include "moc_textautogeneratetextinstancesmanagertest.cpp"

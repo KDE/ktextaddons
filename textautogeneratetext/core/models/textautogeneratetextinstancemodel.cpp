@@ -153,13 +153,19 @@ TextAutoGenerateTextPlugin *TextAutoGenerateTextInstanceModel::currentPlugin() c
         return nullptr;
     }
     auto matchesUuid = [&](TextAutoGenerateTextInstance *instance) {
-        return instance->instanceUuid() == mCurrentinstance;
+        return (instance->instanceUuid() == mCurrentinstance) && instance->enabled();
     };
     const auto answerIt = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), matchesUuid);
     if (answerIt != mTextInstances.constEnd()) {
         return (*answerIt)->plugin();
     }
-    return mTextInstances.constFirst()->plugin();
+    // Fall back to first enable instance
+    for (const auto &inst : mTextInstances) {
+        if (inst->enabled()) {
+            return inst->plugin();
+        }
+    }
+    return nullptr;
 }
 
 void TextAutoGenerateTextInstanceModel::addInstance(TextAutoGenerateTextInstance *instance)
