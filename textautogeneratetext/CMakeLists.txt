@@ -246,6 +246,8 @@ target_sources(
         widgets/view/delegate/textautogenerateattachmentdelegatehelperimage.cpp
         widgets/view/delegate/textautogenerateattachmentdelegatehelperbase.h
         widgets/view/delegate/textautogenerateattachmentdelegatehelperbase.cpp
+        widgets/view/delegate/textautogenerateattachmentdelegatehelperfile.cpp
+        widgets/view/delegate/textautogenerateattachmentdelegatehelperfile.h
         widgets/view/lrucache.h
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
