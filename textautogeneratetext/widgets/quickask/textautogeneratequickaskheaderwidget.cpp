@@ -49,7 +49,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     saveQuickAskButton->setAutoRaise(true);
     saveQuickAskButton->setObjectName(u"saveQuickAskButton"_s);
     saveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
-    saveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Quick Ask in Database"));
+    saveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Discussion in Database"));
     mainLayout->addWidget(saveQuickAskButton);
 
     QFont f = mModelInstanceLabel->font();
