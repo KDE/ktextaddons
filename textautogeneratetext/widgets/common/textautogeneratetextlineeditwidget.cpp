@@ -32,7 +32,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mAttachFile->setAutoRaise(true);
     mAttachFile->setEnabled(false);
 
-    connect(mAttachFile, &QToolButton::clicked, this, [this]() {
+    connect(mAttachFile, &QToolButton::clicked, this, []() {
         // TODO open dialogbox
     });
 
