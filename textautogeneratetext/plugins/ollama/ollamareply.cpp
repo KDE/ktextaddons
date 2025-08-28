@@ -94,7 +94,11 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
     });
 }
 
-OllamaReply::~OllamaReply() = default;
+OllamaReply::~OllamaReply()
+{
+    disconnect(mReply);
+    mReply->deleteLater();
+}
 
 QString OllamaReply::readResponse() const
 {
