@@ -489,7 +489,22 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Chat is already saved in database: chatId: " << chatId;
         return;
     }
-    // TODO
+    if (mCurrentChatId.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Current Chat Id is empty it's a bug";
+        return;
+    }
+    auto chat = mTextAutoGenerateChatsModel->chat(mCurrentChatId);
+    // Insert chat in database
+    mDatabaseManager->insertOrUpdateChat(chat);
+
+    auto model = mTextAutoGenerateChatsModel->messagesModel(mCurrentChatId);
+    if (model) {
+        const auto msgs = model->messages();
+        // Save each message in database
+        for (const auto &m : msgs) {
+            mDatabaseManager->insertOrReplaceMessage(mCurrentChatId, m);
+        }
+    }
 }
 
 #include "moc_textautogeneratemanager.cpp"
