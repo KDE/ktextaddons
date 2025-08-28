@@ -72,6 +72,9 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::activated, this, [this]() {
         mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
     });
+    connect(saveQuickAskButton, &QToolButton::clicked, this, [this]() {
+        mManager->saveCurrentChatInDataBase(mManager->currentChatId());
+    });
 }
 
 TextAutoGenerateQuickAskHeaderWidget::~TextAutoGenerateQuickAskHeaderWidget() = default;
