@@ -48,12 +48,10 @@ msgid "Quote Text"
 msgstr ""
 
 #: richtextquicktextformat.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Insert"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr "插入"
+msgstr ""
 
 #: selectspecialchardialog.cpp:34
 #, kde-format

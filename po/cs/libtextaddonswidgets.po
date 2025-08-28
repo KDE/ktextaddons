@@ -21,13 +21,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Tučné"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: richtextquicktextformat.cpp:79
 #, kde-format
@@ -48,12 +48,10 @@ msgid "Quote Text"
 msgstr ""
 
 #: richtextquicktextformat.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Insert"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr "Vložit"
+msgstr ""
 
 #: selectspecialchardialog.cpp:34
 #, kde-format
