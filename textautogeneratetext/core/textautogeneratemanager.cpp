@@ -482,4 +482,14 @@ void TextAutoGenerateManager::loadEngine()
     });
     Q_EMIT loadEngineDone();
 }
+
+void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId)
+{
+    if (mSaveInDatabase) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Chat is already saved in database: chatId: " << chatId;
+        return;
+    }
+    // TODO
+}
+
 #include "moc_textautogeneratemanager.cpp"
