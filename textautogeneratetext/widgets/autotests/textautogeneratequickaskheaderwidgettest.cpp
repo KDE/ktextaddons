@@ -43,6 +43,11 @@ void TextAutoGenerateQuickAskHeaderWidgetTest::shouldHaveDefaultValues()
     QVERIFY(!clearButton->toolTip().isEmpty());
     QVERIFY(clearButton->autoRaise());
 
+    auto saveQuickAskButton = w.findChild<QToolButton *>(u"saveQuickAskButton"_s);
+    QVERIFY(saveQuickAskButton);
+    QVERIFY(!saveQuickAskButton->toolTip().isEmpty());
+    QVERIFY(saveQuickAskButton->autoRaise());
+
     auto mModelComboBox = w.findChild<TextAutoGenerateText::TextAutoGenerateTextModelComboBox *>(u"mModelComboBox"_s);
     QVERIFY(mModelComboBox);
 }

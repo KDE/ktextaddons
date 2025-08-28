@@ -45,6 +45,13 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     clearButton->setToolTip(i18nc("@info:tooltip", "Clear"));
     mainLayout->addWidget(clearButton);
 
+    auto saveQuickAskButton = new QToolButton(this);
+    saveQuickAskButton->setAutoRaise(true);
+    saveQuickAskButton->setObjectName(u"saveQuickAskButton"_s);
+    saveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
+    saveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Quick Ask in Database"));
+    mainLayout->addWidget(saveQuickAskButton);
+
     QFont f = mModelInstanceLabel->font();
     f.setBold(true);
     f.setItalic(true);
