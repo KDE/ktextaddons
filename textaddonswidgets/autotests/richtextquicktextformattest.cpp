@@ -22,10 +22,10 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
     const TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
     QCOMPARE(t.focusPolicy(), Qt::NoFocus);
 
-    auto mainLayout = t.findChild<QHBoxLayout *>(u"mainLayout"_s);
-    QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->contentsMargins(), QMargins{});
-    QCOMPARE(mainLayout->spacing(), 0);
+    auto mMainLayout = t.findChild<QHBoxLayout *>(u"mMainLayout"_s);
+    QVERIFY(mMainLayout);
+    QCOMPARE(mMainLayout->contentsMargins(), QMargins{});
+    QCOMPARE(mMainLayout->spacing(), 0);
 
     auto boldButton = t.findChild<QToolButton *>(u"boldButton"_s);
     QCOMPARE(boldButton->iconSize(), QSize(12, 12));

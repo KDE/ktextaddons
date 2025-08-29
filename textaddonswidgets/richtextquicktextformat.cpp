@@ -24,7 +24,11 @@ RichTextQuickTextFormat::RichTextQuickTextFormat(QTextEdit *editor, QWidget *par
     : QFrame(parent)
     , mEditor(editor)
     , mUpdatePositionTimer(new QTimer(this))
+    , mMainLayout(new QHBoxLayout(this))
 {
+    mMainLayout->setObjectName(u"mMainLayout"_s);
+    mMainLayout->setContentsMargins({});
+    mMainLayout->setSpacing(0);
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint | Qt::WindowDoesNotAcceptFocus);
 
     if (mEditor) {
@@ -41,11 +45,6 @@ RichTextQuickTextFormat::~RichTextQuickTextFormat() = default;
 
 void RichTextQuickTextFormat::initializeTextFormat()
 {
-    auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(u"mainLayout"_s);
-    mainLayout->setContentsMargins({});
-    mainLayout->setSpacing(0);
-
     auto boldButton = new QToolButton(this);
     boldButton->setFocusPolicy(Qt::NoFocus);
     boldButton->setObjectName(u"boldButton"_s);
@@ -53,10 +52,10 @@ void RichTextQuickTextFormat::initializeTextFormat()
     boldButton->setIcon(QIcon::fromTheme(u"format-text-bold"_s));
     boldButton->setAutoRaise(true);
     boldButton->setToolTip(i18nc("@info:tooltip", "Bold"));
-    mainLayout->addWidget(boldButton);
     connect(boldButton, &QToolButton::clicked, this, [this]() {
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::Bold);
     });
+    mMainLayout->addWidget(boldButton);
 
     auto italicButton = new QToolButton(this);
     italicButton->setObjectName(u"italicButton"_s);
@@ -68,7 +67,7 @@ void RichTextQuickTextFormat::initializeTextFormat()
     connect(italicButton, &QToolButton::clicked, this, [this]() {
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::Italic);
     });
-    mainLayout->addWidget(italicButton);
+    mMainLayout->addWidget(italicButton);
 
     auto strikeThroughButton = new QToolButton(this);
     strikeThroughButton->setObjectName(u"strikeThroughButton"_s);
@@ -80,9 +79,9 @@ void RichTextQuickTextFormat::initializeTextFormat()
     connect(strikeThroughButton, &QToolButton::clicked, this, [this]() {
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough);
     });
-    mainLayout->addWidget(strikeThroughButton);
+    mMainLayout->addWidget(strikeThroughButton);
 
-    mainLayout->addWidget(new KSeparator(Qt::Vertical, this));
+    mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
 
     auto codeBlockButton = new QToolButton(this);
     codeBlockButton->setObjectName(u"codeBlockButton"_s);
@@ -95,7 +94,7 @@ void RichTextQuickTextFormat::initializeTextFormat()
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::CodeBlock);
     });
 
-    mainLayout->addWidget(codeBlockButton);
+    mMainLayout->addWidget(codeBlockButton);
 
     auto blockQuoteButton = new QToolButton(this);
     blockQuoteButton->setObjectName(u"blockQuoteButton"_s);
@@ -108,9 +107,9 @@ void RichTextQuickTextFormat::initializeTextFormat()
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::BlockQuote);
     });
 
-    mainLayout->addWidget(blockQuoteButton);
+    mMainLayout->addWidget(blockQuoteButton);
 
-    mainLayout->addWidget(new KSeparator(Qt::Vertical, this));
+    mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
 
     auto insertLinkButton = new QToolButton(this);
     insertLinkButton->setObjectName(u"insertLinkButton"_s);
@@ -122,7 +121,7 @@ void RichTextQuickTextFormat::initializeTextFormat()
     connect(insertLinkButton, &QToolButton::clicked, this, [this]() {
         Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::InsertLink);
     });
-    mainLayout->addWidget(insertLinkButton);
+    mMainLayout->addWidget(insertLinkButton);
 }
 
 void RichTextQuickTextFormat::updatePosition()

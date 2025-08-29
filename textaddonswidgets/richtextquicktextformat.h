@@ -9,6 +9,7 @@
 #include "textaddonswidgets_export.h"
 #include <QFrame>
 class QTimer;
+class QHBoxLayout;
 class QTextEdit;
 namespace TextAddonsWidgets
 {
@@ -43,5 +44,6 @@ private:
     TEXTADDONSWIDGETS_NO_EXPORT void initializeTextFormat();
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;
+    QHBoxLayout *const mMainLayout;
 };
 }
