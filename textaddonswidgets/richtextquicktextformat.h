@@ -17,14 +17,17 @@ class TEXTADDONSWIDGETS_EXPORT RichTextQuickTextFormat : public QFrame
     Q_OBJECT
 public:
     enum class QuickTextFormatType : uint8_t {
-        Bold,
-        Italic,
-        StrikeThrough,
-        CodeBlock,
-        BlockQuote,
-        InsertLink,
+        Unknown = 0,
+        Bold = 1,
+        Italic = 2,
+        StrikeThrough = 4,
+        CodeBlock = 8,
+        BlockQuote = 16,
+        InsertLink = 32,
     };
     Q_ENUM(QuickTextFormatType);
+    Q_FLAGS(QuickTextFormatType QuickTextFormatTypes)
+    Q_DECLARE_FLAGS(QuickTextFormatTypes, QuickTextFormatType)
 
     explicit RichTextQuickTextFormat(QTextEdit *editor, QWidget *parent = nullptr);
     ~RichTextQuickTextFormat() override;

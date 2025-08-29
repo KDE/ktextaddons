@@ -47,6 +47,8 @@ RichTextQuickTextFormatGui::RichTextQuickTextFormatGui(QWidget *parent)
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink:
                     // TODO
                     break;
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown:
+                    break;
                 }
             });
     mainLayout->addWidget(textEdit);
