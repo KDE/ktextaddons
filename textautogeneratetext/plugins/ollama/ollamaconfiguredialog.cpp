@@ -16,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
 
@@ -68,6 +69,10 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &OllamaConfigureDialog::slotAccepted);
     readConfig();
+    auto okButton = button(QDialogButtonBox::StandardButton::Ok);
+    connect(mOllamaConfigureWidget, &OllamaConfigureWidget::enableOkButton, this, [okButton](bool state) {
+        okButton->setEnabled(state);
+    });
 }
 
 OllamaConfigureDialog::~OllamaConfigureDialog()

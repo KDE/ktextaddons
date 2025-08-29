@@ -27,6 +27,7 @@ public:
 
 Q_SIGNALS:
     void ollamaProcessOk(bool status);
+    void enableOkButton(bool status);
 
 private:
     void fillModels();

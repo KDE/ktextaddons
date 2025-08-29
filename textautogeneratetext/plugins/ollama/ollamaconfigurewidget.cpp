@@ -79,6 +79,9 @@ OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, QWidget *pa
             Q_EMIT ollamaProcessOk(true);
         }
     });
+    connect(mName, &QLineEdit::textChanged, this, [this](const QString &str) {
+        Q_EMIT enableOkButton(!str.trimmed().isEmpty());
+    });
     loadSettings();
     connect(mManager, &OllamaManager::refreshInstalledModels, this, &OllamaConfigureWidget::fillModels);
     fillModels();
