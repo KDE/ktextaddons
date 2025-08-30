@@ -48,6 +48,7 @@ void TextAutoGenerateAskJob::slotAutogenerateFailed(const QString &msg)
 
 void TextAutoGenerateAskJob::slotInitializeDone()
 {
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateAskJob::slotInitializeDone";
     connect(mManager->textAutoGeneratePlugin(),
             &TextAutoGenerateText::TextAutoGenerateTextPlugin::askToAssistantDone,
             this,

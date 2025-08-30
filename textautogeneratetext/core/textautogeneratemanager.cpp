@@ -117,6 +117,8 @@ void TextAutoGenerateManager::askToAssistant(const QString &msg)
 {
     if (textAutoGeneratePlugin()) {
         textAutoGeneratePlugin()->askToAssistant(msg);
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to initialize plugin";
     }
 }
 
