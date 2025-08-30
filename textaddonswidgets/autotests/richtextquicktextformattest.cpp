@@ -19,8 +19,20 @@ RichTextQuickTextFormatTest::RichTextQuickTextFormatTest(QObject *parent)
 
 void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
 {
-    const TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
+    TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
     QCOMPARE(t.focusPolicy(), Qt::NoFocus);
+
+    QCOMPARE(t.formatTypes(),
+             TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes{TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown});
+
+    TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes formatTypes = TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::CodeBlock;
+    t.setFormatTypes(formatTypes);
 
     auto mMainLayout = t.findChild<QHBoxLayout *>(u"mMainLayout"_s);
     QVERIFY(mMainLayout);
@@ -56,14 +68,20 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
     QVERIFY(insertLinkButton->autoRaise());
     QVERIFY(!insertLinkButton->toolTip().isEmpty());
     QCOMPARE(insertLinkButton->focusPolicy(), Qt::NoFocus);
-
-    QCOMPARE(t.formatTypes(),
-             TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes{TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown});
 }
 
 void RichTextQuickTextFormatTest::shouldReactSignalCall()
 {
-    const TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
+    // Initialize all buttons
+    TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
+    TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes formatTypes = TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::CodeBlock;
+    t.setFormatTypes(formatTypes);
     {
         auto boldButton = t.findChild<QToolButton *>(u"boldButton"_s);
         QSignalSpy spyBoldButton(&t, &TextAddonsWidgets::RichTextQuickTextFormat::quickTextFormatRequested);
