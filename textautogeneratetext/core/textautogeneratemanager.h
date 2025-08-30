@@ -121,6 +121,7 @@ Q_SIGNALS:
     void configChanged();
     void loadEngineDone();
     void fontSizeChanged();
+    void downloadModelFinished(const QString &modelName);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();

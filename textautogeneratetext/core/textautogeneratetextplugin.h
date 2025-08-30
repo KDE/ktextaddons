@@ -94,6 +94,7 @@ Q_SIGNALS:
     void askToAssistantAnswer(const QString &message);
     void askToAssistantDone();
     void configChanged();
+    void downloadModelFinished(const QString &modelName);
 
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;

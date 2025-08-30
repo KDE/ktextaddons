@@ -32,6 +32,8 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             setReady(true);
         }
     });
+    connect(mManager, &OllamaManager::downloadDone, this, &OllamaPlugin::downloadModelFinished);
+
     connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
         if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
             mManager->loadModels();

@@ -469,6 +469,10 @@ void TextAutoGenerateManager::loadEngine()
         return;
     }
 
+    connect(textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::downloadModelFinished,
+            this,
+            &TextAutoGenerateManager::downloadModelFinished);
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::errorOccurred, this, &TextAutoGenerateManager::errorOccured);
     connect(textAutoGeneratePlugin(), &TextAutoGenerateText::TextAutoGenerateTextPlugin::initializedDone, this, [this]() {
         setPluginWasInitialized(true);
