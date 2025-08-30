@@ -33,6 +33,9 @@ public:
     explicit RichTextQuickTextFormat(QTextEdit *editor, QWidget *parent = nullptr);
     ~RichTextQuickTextFormat() override;
 
+    [[nodiscard]] QuickTextFormatTypes formatTypes() const;
+    void setFormatTypes(const QuickTextFormatTypes &newFormatTypes);
+
 Q_SIGNALS:
     void quickTextFormatRequested(TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type);
 
@@ -42,6 +45,7 @@ protected:
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void updatePosition();
     TEXTADDONSWIDGETS_NO_EXPORT void initializeTextFormat();
+    QuickTextFormatTypes mFormatTypes = QuickTextFormatType::Unknown;
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;
     QHBoxLayout *const mMainLayout;

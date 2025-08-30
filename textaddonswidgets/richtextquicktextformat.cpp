@@ -124,6 +124,16 @@ void RichTextQuickTextFormat::initializeTextFormat()
     mMainLayout->addWidget(insertLinkButton);
 }
 
+RichTextQuickTextFormat::QuickTextFormatTypes RichTextQuickTextFormat::formatTypes() const
+{
+    return mFormatTypes;
+}
+
+void RichTextQuickTextFormat::setFormatTypes(const QuickTextFormatTypes &newFormatTypes)
+{
+    mFormatTypes = newFormatTypes;
+}
+
 void RichTextQuickTextFormat::updatePosition()
 {
     if (mEditor->textCursor().hasSelection()) {

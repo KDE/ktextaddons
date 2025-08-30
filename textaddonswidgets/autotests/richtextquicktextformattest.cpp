@@ -56,6 +56,9 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
     QVERIFY(insertLinkButton->autoRaise());
     QVERIFY(!insertLinkButton->toolTip().isEmpty());
     QCOMPARE(insertLinkButton->focusPolicy(), Qt::NoFocus);
+
+    QCOMPARE(t.formatTypes(),
+             TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes{TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown});
 }
 
 void RichTextQuickTextFormatTest::shouldReactSignalCall()
