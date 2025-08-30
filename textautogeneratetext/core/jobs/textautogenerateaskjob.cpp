@@ -37,13 +37,14 @@ void TextAutoGenerateAskJob::start()
     }
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, &TextAutoGenerateAskJob::slotInitializeDone);
     connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::errorOccured, this, &TextAutoGenerateAskJob::slotAutogenerateFailed);
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "loadEngine";
     mManager->loadEngine();
 }
 
 void TextAutoGenerateAskJob::slotAutogenerateFailed(const QString &msg)
 {
-    Q_EMIT errorOccured(msg);
     deleteLater();
+    Q_EMIT errorOccured(msg);
 }
 
 void TextAutoGenerateAskJob::slotInitializeDone()
