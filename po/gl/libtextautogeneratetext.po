@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:41+0000\n"
+"POT-Creation-Date: 2025-08-30 00:41+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -151,14 +151,14 @@ msgid "Configure %1"
 msgstr "Configurar a IA"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -1574,7 +1574,7 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:35
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Configure IA"
@@ -1582,13 +1582,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurar a IA"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:60
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:65
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"

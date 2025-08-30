@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"POT-Creation-Date: 2025-08-30 00:41+0000\n"
 "PO-Revision-Date: 2025-08-27 06:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: richtextquicktextformat.cpp:55
+#: richtextquicktextformat.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr "სქელი"
 
-#: richtextquicktextformat.cpp:67
+#: richtextquicktextformat.cpp:66
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr "კურსივი"
 
-#: richtextquicktextformat.cpp:79
+#: richtextquicktextformat.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
 msgstr "ხაზის გადასმა"
 
-#: richtextquicktextformat.cpp:92
+#: richtextquicktextformat.cpp:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
 msgstr "კოდის ბლოკი"
 
-#: richtextquicktextformat.cpp:105
+#: richtextquicktextformat.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
 msgstr "ტექსტის ციტირება"
 
-#: richtextquicktextformat.cpp:120
+#: richtextquicktextformat.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"

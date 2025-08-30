@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"POT-Creation-Date: 2025-08-30 00:41+0000\n"
 "PO-Revision-Date: 2023-11-10 15:18+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -18,37 +18,37 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: richtextquicktextformat.cpp:55
+#: richtextquicktextformat.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr ""
 
-#: richtextquicktextformat.cpp:67
+#: richtextquicktextformat.cpp:66
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr ""
 
-#: richtextquicktextformat.cpp:79
+#: richtextquicktextformat.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
 msgstr ""
 
-#: richtextquicktextformat.cpp:92
+#: richtextquicktextformat.cpp:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
 msgstr ""
 
-#: richtextquicktextformat.cpp:105
+#: richtextquicktextformat.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
 msgstr ""
 
-#: richtextquicktextformat.cpp:120
+#: richtextquicktextformat.cpp:119
 #, fuzzy, kde-format
 #| msgid "Insert"
 msgctxt "@info:tooltip"

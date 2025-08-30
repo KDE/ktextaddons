@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"POT-Creation-Date: 2025-08-30 00:41+0000\n"
 "PO-Revision-Date: 2025-08-27 09:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,37 +18,37 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.08.0\n"
 
-#: richtextquicktextformat.cpp:55
+#: richtextquicktextformat.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr "מודגש"
 
-#: richtextquicktextformat.cpp:67
+#: richtextquicktextformat.cpp:66
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr "נטוי"
 
-#: richtextquicktextformat.cpp:79
+#: richtextquicktextformat.cpp:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
 msgstr "קו חוצה"
 
-#: richtextquicktextformat.cpp:92
+#: richtextquicktextformat.cpp:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
 msgstr "מקטע קוד"
 
-#: richtextquicktextformat.cpp:105
+#: richtextquicktextformat.cpp:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
 msgstr "טקסט ציטוט"
 
-#: richtextquicktextformat.cpp:120
+#: richtextquicktextformat.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"

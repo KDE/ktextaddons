@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-29 00:41+0000\n"
+"POT-Creation-Date: 2025-08-30 00:41+0000\n"
 "PO-Revision-Date: 2025-08-19 16:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -154,14 +154,14 @@ msgid "Configure %1"
 msgstr "Yapılandır: %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:50
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Genel"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:55
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
@@ -1916,19 +1916,19 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Modeli yeniden yükle"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:34
+#: plugins/ollama/ollamaconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama’yı Yapılandır"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:60
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Kurulu Modeller"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:65
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
