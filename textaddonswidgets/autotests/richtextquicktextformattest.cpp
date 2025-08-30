@@ -32,6 +32,7 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::CodeBlock;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine;
     t.setFormatTypes(formatTypes);
 
     auto mMainLayout = t.findChild<QHBoxLayout *>(u"mMainLayout"_s);
@@ -73,6 +74,13 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
     QVERIFY(insertLinkButton->autoRaise());
     QVERIFY(!insertLinkButton->toolTip().isEmpty());
     QCOMPARE(insertLinkButton->focusPolicy(), Qt::NoFocus);
+
+    auto underlineButton = t.findChild<QToolButton *>(u"underlineButton"_s);
+    QVERIFY(underlineButton);
+    QCOMPARE(underlineButton->iconSize(), QSize(12, 12));
+    QVERIFY(underlineButton->autoRaise());
+    QVERIFY(!underlineButton->toolTip().isEmpty());
+    QCOMPARE(underlineButton->focusPolicy(), Qt::NoFocus);
 }
 
 void RichTextQuickTextFormatTest::shouldReactSignalCall()
@@ -86,6 +94,7 @@ void RichTextQuickTextFormatTest::shouldReactSignalCall()
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::CodeBlock;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine;
     t.setFormatTypes(formatTypes);
     {
         auto boldButton = t.findChild<QToolButton *>(u"boldButton"_s);
@@ -127,6 +136,14 @@ void RichTextQuickTextFormatTest::shouldReactSignalCall()
         QCOMPARE(spyButton.at(0).at(0).value<TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType>(),
                  TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink);
     }
+    {
+        auto underlineButton = t.findChild<QToolButton *>(u"underlineButton"_s);
+        QSignalSpy spyButton(&t, &TextAddonsWidgets::RichTextQuickTextFormat::quickTextFormatRequested);
+        QTest::mouseClick(underlineButton, Qt::LeftButton);
+        QCOMPARE(spyButton.count(), 1);
+        QCOMPARE(spyButton.at(0).at(0).value<TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType>(),
+                 TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine);
+    }
 }
 
 void RichTextQuickTextFormatTest::shouldSelectionSpecificFormatType()
@@ -151,6 +168,9 @@ void RichTextQuickTextFormatTest::shouldSelectionSpecificFormatType()
 
     auto insertLinkButton = t.findChild<QToolButton *>(u"insertLinkButton"_s);
     QVERIFY(!insertLinkButton);
+
+    auto underlineButton = t.findChild<QToolButton *>(u"underlineButton"_s);
+    QVERIFY(!underlineButton);
 }
 
 #include "moc_richtextquicktextformattest.cpp"

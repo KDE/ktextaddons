@@ -99,6 +99,20 @@ void RichTextQuickTextFormat::updateActions()
         mMainLayout->addWidget(strikeThroughButton);
     }
 
+    if (mFormatTypes & QuickTextFormatType::UnderLine) {
+        auto underlineButton = new QToolButton(this);
+        underlineButton->setObjectName(u"underlineButton"_s);
+        underlineButton->setFocusPolicy(Qt::NoFocus);
+        underlineButton->setIconSize(QSize(12, 12));
+        underlineButton->setIcon(QIcon::fromTheme(u"format-text-underline"_s));
+        underlineButton->setAutoRaise(true);
+        underlineButton->setToolTip(i18nc("@info:tooltip", "Underline"));
+        connect(underlineButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::UnderLine);
+        });
+        mMainLayout->addWidget(underlineButton);
+    }
+
     mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
 
     if (mFormatTypes & QuickTextFormatType::CodeBlock) {

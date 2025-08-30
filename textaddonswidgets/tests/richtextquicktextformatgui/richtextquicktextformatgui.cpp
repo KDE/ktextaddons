@@ -23,6 +23,7 @@ RichTextQuickTextFormatGui::RichTextQuickTextFormatGui(QWidget *parent)
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine;
     quickTextFormatMessage->setFormatTypes(formatTypes);
     connect(quickTextFormatMessage,
             &TextAddonsWidgets::RichTextQuickTextFormat::quickTextFormatRequested,
@@ -51,6 +52,9 @@ RichTextQuickTextFormatGui::RichTextQuickTextFormatGui(QWidget *parent)
                     // TODO
                     break;
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink:
+                    // TODO
+                    break;
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine:
                     // TODO
                     break;
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown:

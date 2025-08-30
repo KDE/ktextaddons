@@ -25,6 +25,7 @@ public:
         CodeBlock = 8,
         BlockQuote = 16,
         InsertLink = 32,
+        UnderLine = 64,
     };
     Q_ENUM(QuickTextFormatType);
     Q_FLAGS(QuickTextFormatType QuickTextFormatTypes)
