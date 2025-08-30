@@ -40,30 +40,35 @@ void RichTextQuickTextFormatTest::shouldHaveDefaultValues()
     QCOMPARE(mMainLayout->spacing(), 0);
 
     auto boldButton = t.findChild<QToolButton *>(u"boldButton"_s);
+    QVERIFY(boldButton);
     QCOMPARE(boldButton->iconSize(), QSize(12, 12));
     QVERIFY(boldButton->autoRaise());
     QVERIFY(!boldButton->toolTip().isEmpty());
     QCOMPARE(boldButton->focusPolicy(), Qt::NoFocus);
 
     auto italicButton = t.findChild<QToolButton *>(u"italicButton"_s);
+    QVERIFY(italicButton);
     QCOMPARE(italicButton->iconSize(), QSize(12, 12));
     QVERIFY(italicButton->autoRaise());
     QVERIFY(!italicButton->toolTip().isEmpty());
     QCOMPARE(italicButton->focusPolicy(), Qt::NoFocus);
 
     auto strikeThroughButton = t.findChild<QToolButton *>(u"strikeThroughButton"_s);
+    QVERIFY(strikeThroughButton);
     QCOMPARE(strikeThroughButton->iconSize(), QSize(12, 12));
     QVERIFY(strikeThroughButton->autoRaise());
     QVERIFY(!strikeThroughButton->toolTip().isEmpty());
     QCOMPARE(strikeThroughButton->focusPolicy(), Qt::NoFocus);
 
     auto blockQuoteButton = t.findChild<QToolButton *>(u"blockQuoteButton"_s);
+    QVERIFY(blockQuoteButton);
     QCOMPARE(blockQuoteButton->iconSize(), QSize(12, 12));
     QVERIFY(blockQuoteButton->autoRaise());
     QVERIFY(!blockQuoteButton->toolTip().isEmpty());
     QCOMPARE(blockQuoteButton->focusPolicy(), Qt::NoFocus);
 
     auto insertLinkButton = t.findChild<QToolButton *>(u"insertLinkButton"_s);
+    QVERIFY(insertLinkButton);
     QCOMPARE(insertLinkButton->iconSize(), QSize(12, 12));
     QVERIFY(insertLinkButton->autoRaise());
     QVERIFY(!insertLinkButton->toolTip().isEmpty());
@@ -122,6 +127,30 @@ void RichTextQuickTextFormatTest::shouldReactSignalCall()
         QCOMPARE(spyButton.at(0).at(0).value<TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType>(),
                  TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink);
     }
+}
+
+void RichTextQuickTextFormatTest::shouldSelectionSpecificFormatType()
+{
+    TextAddonsWidgets::RichTextQuickTextFormat t(nullptr);
+    TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes formatTypes = TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic;
+    t.setFormatTypes(formatTypes);
+
+    auto boldButton = t.findChild<QToolButton *>(u"boldButton"_s);
+    QVERIFY(boldButton);
+
+    auto italicButton = t.findChild<QToolButton *>(u"italicButton"_s);
+    QVERIFY(italicButton);
+
+    auto strikeThroughButton = t.findChild<QToolButton *>(u"strikeThroughButton"_s);
+    QVERIFY(!strikeThroughButton);
+
+    auto blockQuoteButton = t.findChild<QToolButton *>(u"blockQuoteButton"_s);
+    QVERIFY(!blockQuoteButton);
+
+    auto insertLinkButton = t.findChild<QToolButton *>(u"insertLinkButton"_s);
+    QVERIFY(!insertLinkButton);
 }
 
 #include "moc_richtextquicktextformattest.cpp"
