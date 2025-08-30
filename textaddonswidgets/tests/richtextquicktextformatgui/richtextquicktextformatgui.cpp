@@ -18,6 +18,12 @@ RichTextQuickTextFormatGui::RichTextQuickTextFormatGui(QWidget *parent)
     mainLayout->setContentsMargins({});
     auto textEdit = new QTextEdit(this);
     auto quickTextFormatMessage = new TextAddonsWidgets::RichTextQuickTextFormat(textEdit, this);
+    TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes formatTypes = TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
+    quickTextFormatMessage->setFormatTypes(formatTypes);
     connect(quickTextFormatMessage,
             &TextAddonsWidgets::RichTextQuickTextFormat::quickTextFormatRequested,
             this,

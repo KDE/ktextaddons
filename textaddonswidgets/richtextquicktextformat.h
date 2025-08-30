@@ -45,6 +45,7 @@ protected:
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void updatePosition();
     TEXTADDONSWIDGETS_NO_EXPORT void initializeTextFormat();
+    TEXTADDONSWIDGETS_NO_EXPORT void updateActions();
     QuickTextFormatTypes mFormatTypes = QuickTextFormatType::Unknown;
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;

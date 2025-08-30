@@ -38,91 +38,9 @@ RichTextQuickTextFormat::RichTextQuickTextFormat(QTextEdit *editor, QWidget *par
         connect(mUpdatePositionTimer, &QTimer::timeout, this, &RichTextQuickTextFormat::updatePosition);
         mEditor->viewport()->installEventFilter(this);
     }
-    initializeTextFormat();
 }
 
 RichTextQuickTextFormat::~RichTextQuickTextFormat() = default;
-
-void RichTextQuickTextFormat::initializeTextFormat()
-{
-    auto boldButton = new QToolButton(this);
-    boldButton->setFocusPolicy(Qt::NoFocus);
-    boldButton->setObjectName(u"boldButton"_s);
-    boldButton->setIconSize(QSize(12, 12));
-    boldButton->setIcon(QIcon::fromTheme(u"format-text-bold"_s));
-    boldButton->setAutoRaise(true);
-    boldButton->setToolTip(i18nc("@info:tooltip", "Bold"));
-    connect(boldButton, &QToolButton::clicked, this, [this]() {
-        Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::Bold);
-    });
-    mMainLayout->addWidget(boldButton);
-
-    auto italicButton = new QToolButton(this);
-    italicButton->setObjectName(u"italicButton"_s);
-    italicButton->setFocusPolicy(Qt::NoFocus);
-    italicButton->setIconSize(QSize(12, 12));
-    italicButton->setIcon(QIcon::fromTheme(u"format-text-italic"_s));
-    italicButton->setAutoRaise(true);
-    italicButton->setToolTip(i18nc("@info:tooltip", "Italic"));
-    connect(italicButton, &QToolButton::clicked, this, [this]() {
-        Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::Italic);
-    });
-    mMainLayout->addWidget(italicButton);
-
-    auto strikeThroughButton = new QToolButton(this);
-    strikeThroughButton->setObjectName(u"strikeThroughButton"_s);
-    strikeThroughButton->setFocusPolicy(Qt::NoFocus);
-    strikeThroughButton->setIconSize(QSize(12, 12));
-    strikeThroughButton->setIcon(QIcon::fromTheme(u"format-text-strikethrough"_s));
-    strikeThroughButton->setAutoRaise(true);
-    strikeThroughButton->setToolTip(i18nc("@info:tooltip", "Strike Through"));
-    connect(strikeThroughButton, &QToolButton::clicked, this, [this]() {
-        Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough);
-    });
-    mMainLayout->addWidget(strikeThroughButton);
-
-    mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
-
-    auto codeBlockButton = new QToolButton(this);
-    codeBlockButton->setObjectName(u"codeBlockButton"_s);
-    codeBlockButton->setFocusPolicy(Qt::NoFocus);
-    codeBlockButton->setIconSize(QSize(12, 12));
-    codeBlockButton->setIcon(QIcon::fromTheme(u"format-text-code"_s));
-    codeBlockButton->setToolTip(i18nc("@info:tooltip", "Code Block"));
-    codeBlockButton->setAutoRaise(true);
-    connect(codeBlockButton, &QToolButton::clicked, this, [this]() {
-        Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::CodeBlock);
-    });
-
-    mMainLayout->addWidget(codeBlockButton);
-
-    auto blockQuoteButton = new QToolButton(this);
-    blockQuoteButton->setObjectName(u"blockQuoteButton"_s);
-    blockQuoteButton->setFocusPolicy(Qt::NoFocus);
-    blockQuoteButton->setIconSize(QSize(12, 12));
-    blockQuoteButton->setIcon(QIcon::fromTheme(u"format-text-blockquote"_s));
-    blockQuoteButton->setToolTip(i18nc("@info:tooltip", "Quote Text"));
-    blockQuoteButton->setAutoRaise(true);
-    connect(blockQuoteButton, &QToolButton::clicked, this, [this]() {
-        Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::BlockQuote);
-    });
-
-    mMainLayout->addWidget(blockQuoteButton);
-
-    mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
-
-    auto insertLinkButton = new QToolButton(this);
-    insertLinkButton->setObjectName(u"insertLinkButton"_s);
-    insertLinkButton->setFocusPolicy(Qt::NoFocus);
-    insertLinkButton->setIconSize(QSize(12, 12));
-    insertLinkButton->setIcon(QIcon::fromTheme(u"link"_s));
-    insertLinkButton->setToolTip(i18nc("@info:tooltip", "Insert Link"));
-    insertLinkButton->setAutoRaise(true);
-    connect(insertLinkButton, &QToolButton::clicked, this, [this]() {
-        Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::InsertLink);
-    });
-    mMainLayout->addWidget(insertLinkButton);
-}
 
 RichTextQuickTextFormat::QuickTextFormatTypes RichTextQuickTextFormat::formatTypes() const
 {
@@ -131,7 +49,103 @@ RichTextQuickTextFormat::QuickTextFormatTypes RichTextQuickTextFormat::formatTyp
 
 void RichTextQuickTextFormat::setFormatTypes(const QuickTextFormatTypes &newFormatTypes)
 {
-    mFormatTypes = newFormatTypes;
+    if (mFormatTypes != newFormatTypes) {
+        mFormatTypes = newFormatTypes;
+        updateActions();
+    }
+}
+
+void RichTextQuickTextFormat::updateActions()
+{
+    if (mFormatTypes & QuickTextFormatType::Bold) {
+        auto boldButton = new QToolButton(this);
+        boldButton->setFocusPolicy(Qt::NoFocus);
+        boldButton->setObjectName(u"boldButton"_s);
+        boldButton->setIconSize(QSize(12, 12));
+        boldButton->setIcon(QIcon::fromTheme(u"format-text-bold"_s));
+        boldButton->setAutoRaise(true);
+        boldButton->setToolTip(i18nc("@info:tooltip", "Bold"));
+        connect(boldButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::Bold);
+        });
+        mMainLayout->addWidget(boldButton);
+    }
+
+    if (mFormatTypes & QuickTextFormatType::Italic) {
+        auto italicButton = new QToolButton(this);
+        italicButton->setObjectName(u"italicButton"_s);
+        italicButton->setFocusPolicy(Qt::NoFocus);
+        italicButton->setIconSize(QSize(12, 12));
+        italicButton->setIcon(QIcon::fromTheme(u"format-text-italic"_s));
+        italicButton->setAutoRaise(true);
+        italicButton->setToolTip(i18nc("@info:tooltip", "Italic"));
+        connect(italicButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::Italic);
+        });
+        mMainLayout->addWidget(italicButton);
+    }
+
+    if (mFormatTypes & QuickTextFormatType::StrikeThrough) {
+        auto strikeThroughButton = new QToolButton(this);
+        strikeThroughButton->setObjectName(u"strikeThroughButton"_s);
+        strikeThroughButton->setFocusPolicy(Qt::NoFocus);
+        strikeThroughButton->setIconSize(QSize(12, 12));
+        strikeThroughButton->setIcon(QIcon::fromTheme(u"format-text-strikethrough"_s));
+        strikeThroughButton->setAutoRaise(true);
+        strikeThroughButton->setToolTip(i18nc("@info:tooltip", "Strike Through"));
+        connect(strikeThroughButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough);
+        });
+        mMainLayout->addWidget(strikeThroughButton);
+    }
+
+    mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
+
+    if (mFormatTypes & QuickTextFormatType::CodeBlock) {
+        auto codeBlockButton = new QToolButton(this);
+        codeBlockButton->setObjectName(u"codeBlockButton"_s);
+        codeBlockButton->setFocusPolicy(Qt::NoFocus);
+        codeBlockButton->setIconSize(QSize(12, 12));
+        codeBlockButton->setIcon(QIcon::fromTheme(u"format-text-code"_s));
+        codeBlockButton->setToolTip(i18nc("@info:tooltip", "Code Block"));
+        codeBlockButton->setAutoRaise(true);
+        connect(codeBlockButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::CodeBlock);
+        });
+
+        mMainLayout->addWidget(codeBlockButton);
+    }
+
+    if (mFormatTypes & QuickTextFormatType::BlockQuote) {
+        auto blockQuoteButton = new QToolButton(this);
+        blockQuoteButton->setObjectName(u"blockQuoteButton"_s);
+        blockQuoteButton->setFocusPolicy(Qt::NoFocus);
+        blockQuoteButton->setIconSize(QSize(12, 12));
+        blockQuoteButton->setIcon(QIcon::fromTheme(u"format-text-blockquote"_s));
+        blockQuoteButton->setToolTip(i18nc("@info:tooltip", "Quote Text"));
+        blockQuoteButton->setAutoRaise(true);
+        connect(blockQuoteButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::BlockQuote);
+        });
+
+        mMainLayout->addWidget(blockQuoteButton);
+    }
+
+    mMainLayout->addWidget(new KSeparator(Qt::Vertical, this));
+
+    if (mFormatTypes & QuickTextFormatType::InsertLink) {
+        auto insertLinkButton = new QToolButton(this);
+        insertLinkButton->setObjectName(u"insertLinkButton"_s);
+        insertLinkButton->setFocusPolicy(Qt::NoFocus);
+        insertLinkButton->setIconSize(QSize(12, 12));
+        insertLinkButton->setIcon(QIcon::fromTheme(u"link"_s));
+        insertLinkButton->setToolTip(i18nc("@info:tooltip", "Insert Link"));
+        insertLinkButton->setAutoRaise(true);
+        connect(insertLinkButton, &QToolButton::clicked, this, [this]() {
+            Q_EMIT quickTextFormatRequested(RichTextQuickTextFormat::QuickTextFormatType::InsertLink);
+        });
+        mMainLayout->addWidget(insertLinkButton);
+    }
 }
 
 void RichTextQuickTextFormat::updatePosition()
