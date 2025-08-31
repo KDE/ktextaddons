@@ -137,7 +137,7 @@ msgstr "S'ha produït un error de Grammalecte"
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
 #, kde-format
 msgid "Select Path"
-msgstr "Seleccioneu el camí"
+msgstr "Trieu el camí"
 
 #: languagetool/languagetoolcombobox.cpp:31
 #, kde-format
