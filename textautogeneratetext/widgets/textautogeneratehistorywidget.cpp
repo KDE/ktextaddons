@@ -22,10 +22,13 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     mainLayout->setContentsMargins({});
     mainLayout->setSpacing(0);
 
+    const auto shortcut = QKeySequence(Qt::CTRL | Qt::Key_K);
+
     mSearchLineEdit->setObjectName("mSearchLineEdit"_L1);
     mSearchLineEdit->setClearButtonEnabled(true);
     mSearchLineEdit->addAction(QIcon::fromTheme(u"view-filter"_s), QLineEdit::LeadingPosition);
-    mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search…"));
+    mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search… (%1)", shortcut.toString(QKeySequence::NativeText)));
+
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mainLayout->addWidget(mSearchLineEdit);
 
@@ -34,6 +37,13 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
 
     connect(mSearchLineEdit, &QLineEdit::textChanged, mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::slotSearchTextChanged);
     connect(mTextAutoGenerateHistoryListView, &TextAutoGenerateHistoryListView::switchToChat, this, &TextAutoGenerateHistoryWidget::switchToChat);
+
+    auto searchRoomAction = new QAction(i18nc("@action", "Search Channels"), this);
+    searchRoomAction->setShortcut(shortcut);
+    connect(searchRoomAction, &QAction::triggered, this, [this]() {
+        mSearchLineEdit->setFocus();
+    });
+    addAction(searchRoomAction); // TODO: Add to MainWindow's action collection instead?
 }
 
 TextAutoGenerateHistoryWidget::~TextAutoGenerateHistoryWidget() = default;
