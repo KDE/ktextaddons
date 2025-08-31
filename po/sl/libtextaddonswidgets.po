@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-30 00:41+0000\n"
+"POT-Creation-Date: 2025-08-31 00:41+0000\n"
 "PO-Revision-Date: 2025-08-27 07:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,37 +18,43 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: richtextquicktextformat.cpp:54
+#: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr "Krepko"
 
-#: richtextquicktextformat.cpp:66
+#: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr "Ležeče"
 
-#: richtextquicktextformat.cpp:78
+#: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
 msgstr "Prečrtano"
 
-#: richtextquicktextformat.cpp:91
+#: richtextquicktextformat.cpp:109
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Underline"
+msgstr ""
+
+#: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
 msgstr "Blok kode"
 
-#: richtextquicktextformat.cpp:104
+#: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
 msgstr "Citirano besedilo"
 
-#: richtextquicktextformat.cpp:119
+#: richtextquicktextformat.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"

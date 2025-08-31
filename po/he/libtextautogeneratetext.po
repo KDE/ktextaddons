@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-30 00:41+0000\n"
+"POT-Creation-Date: 2025-08-31 00:41+0000\n"
 "PO-Revision-Date: 2025-08-29 08:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1814,7 +1814,7 @@ msgstr ""
 "המודלים של Alibaba עם הביצועים המשופרים והקשרים ארועים למשימות שמפעילות "
 "סוכנים או פיתוח קוד."
 
-#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:76
+#: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
 msgstr "Ollama"

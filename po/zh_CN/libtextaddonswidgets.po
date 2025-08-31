@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-30 00:41+0000\n"
+"POT-Creation-Date: 2025-08-31 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,37 +17,43 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextaddonswidgets.pot\n"
 "X-Crowdin-File-ID: 49514\n"
 
-#: richtextquicktextformat.cpp:54
+#: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
 msgstr "加粗"
 
-#: richtextquicktextformat.cpp:66
+#: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
 msgstr "斜体"
 
-#: richtextquicktextformat.cpp:78
+#: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
 msgstr "删除线"
 
-#: richtextquicktextformat.cpp:91
+#: richtextquicktextformat.cpp:109
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Underline"
+msgstr ""
+
+#: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
 msgstr "代码块"
 
-#: richtextquicktextformat.cpp:104
+#: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
 msgstr "引用文本"
 
-#: richtextquicktextformat.cpp:119
+#: richtextquicktextformat.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
