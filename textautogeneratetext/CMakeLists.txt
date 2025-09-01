@@ -31,6 +31,12 @@ install(
     COMPONENT Devel
 )
 
+if(TARGET Qt6::DBus)
+    set(HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT TRUE)
+endif()
+
+configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
+
 add_subdirectory(cmark-rc)
 
 add_library(KF6TextAutoGenerateText)
