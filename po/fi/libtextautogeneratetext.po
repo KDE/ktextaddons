@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-31 00:41+0000\n"
+"POT-Creation-Date: 2025-09-01 00:41+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1880,7 +1880,6 @@ msgid "Remove Instance"
 msgstr "Poista ilmentymä"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2003,6 +2002,20 @@ msgstr "Uusi keskustelu"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "Suosikki"
+
+#: widgets/textautogeneratehistorywidget.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search… (%1)"
+msgstr "Etsi…"
+
+#: widgets/textautogeneratehistorywidget.cpp:41
+#, kde-format
+msgctxt "@action"
+msgid "Search Channels"
+msgstr ""
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-31 00:41+0000\n"
-"PO-Revision-Date: 2025-08-27 14:17+0300\n"
+"PO-Revision-Date: 2025-08-31 19:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -40,7 +40,7 @@ msgstr "Перекреслений"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "Підкреслений"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format

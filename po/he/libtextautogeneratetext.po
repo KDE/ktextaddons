@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-31 00:41+0000\n"
+"POT-Creation-Date: 2025-09-01 00:41+0000\n"
 "PO-Revision-Date: 2025-08-29 08:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2035,7 +2035,6 @@ msgid "Remove Instance"
 msgstr "להסיר את המופע"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2158,6 +2157,20 @@ msgstr "שיחה חדש"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "הוספה למועדפים"
+
+#: widgets/textautogeneratehistorywidget.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search… (%1)"
+msgstr "חיפוש…"
+
+#: widgets/textautogeneratehistorywidget.cpp:41
+#, kde-format
+msgctxt "@action"
+msgid "Search Channels"
+msgstr ""
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format

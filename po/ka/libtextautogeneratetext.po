@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-31 00:41+0000\n"
+"POT-Creation-Date: 2025-09-01 00:41+0000\n"
 "PO-Revision-Date: 2025-08-29 05:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2135,7 +2135,6 @@ msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
-#: widgets/textautogeneratehistorywidget.cpp:28
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -2258,6 +2257,20 @@ msgstr "ახალი ჩატი"
 msgctxt "@info:tooltip"
 msgid "Favorite"
 msgstr "რჩეული"
+
+#: widgets/textautogeneratehistorywidget.cpp:30
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search… (%1)"
+msgstr "ძებნა…"
+
+#: widgets/textautogeneratehistorywidget.cpp:41
+#, kde-format
+msgctxt "@action"
+msgid "Search Channels"
+msgstr ""
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
