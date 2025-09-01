@@ -21,9 +21,11 @@ ExportLibreOfficeAutocorrection::~ExportLibreOfficeAutocorrection()
     delete mZip;
 }
 
-bool ExportLibreOfficeAutocorrection::exportData(const QString &language, const QString &fileName, QString &errorMessage, const QString &writablePath)
+bool ExportLibreOfficeAutocorrection::exportData(const QString &language,
+                                                 const QString &fileName,
+                                                 [[maybe_unused]] QString &errorMessage,
+                                                 const QString &writablePath)
 {
-    Q_UNUSED(errorMessage);
     const QString libreOfficeWritableLocalAutoCorrectionPath =
         writablePath.isEmpty() ? AutoCorrectionUtils::libreOfficeWritableLocalAutoCorrectionPath() : writablePath;
     QDir().mkpath(libreOfficeWritableLocalAutoCorrectionPath);

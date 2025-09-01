@@ -97,7 +97,10 @@ bool OllamaModelInstalledInfosDelegate::mouseEvent(QEvent *event, const QStyleOp
     return false;
 }
 
-bool OllamaModelInstalledInfosDelegate::helpEvent(QHelpEvent *helpEvent, QAbstractItemView *view, const QStyleOptionViewItem &option, const QModelIndex &index)
+bool OllamaModelInstalledInfosDelegate::helpEvent(QHelpEvent *helpEvent,
+                                                  [[maybe_unused]] QAbstractItemView *view,
+                                                  [[maybe_unused]] const QStyleOptionViewItem &option,
+                                                  const QModelIndex &index)
 {
     if (!index.isValid()) {
         return false;
@@ -125,10 +128,9 @@ OllamaModelInstalledInfosDelegate::ModelInfoLayout OllamaModelInstalledInfosDele
 
 bool OllamaModelInstalledInfosDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                                                          QRect messageRect,
-                                                         const QStyleOptionViewItem &option,
+                                                         [[maybe_unused]] const QStyleOptionViewItem &option,
                                                          const QModelIndex &index)
 {
-    Q_UNUSED(option)
     if (!messageRect.contains(mouseEvent->pos())) {
         return false;
     }

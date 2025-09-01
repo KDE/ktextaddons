@@ -60,9 +60,8 @@ TextAutoGenerateTextConfigurePluginsWidget::TextAutoGenerateTextConfigurePlugins
 
 TextAutoGenerateTextConfigurePluginsWidget::~TextAutoGenerateTextConfigurePluginsWidget() = default;
 
-void TextAutoGenerateTextConfigurePluginsWidget::slotItemChanged(QTreeWidgetItem *item, int column)
+void TextAutoGenerateTextConfigurePluginsWidget::slotItemChanged([[maybe_unused]] QTreeWidgetItem *item, int column)
 {
-    Q_UNUSED(item)
     if (mInitializeDone) {
         if (column == 0) {
             mMessageWidget->animatedShow();

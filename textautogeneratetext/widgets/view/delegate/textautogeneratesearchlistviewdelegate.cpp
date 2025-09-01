@@ -170,10 +170,9 @@ bool TextAutoGenerateSearchListViewDelegate::mouseEvent(QEvent *event, const QSt
 
 bool TextAutoGenerateSearchListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                                                               QRect messageRect,
-                                                              const QStyleOptionViewItem &option,
+                                                              [[maybe_unused]] const QStyleOptionViewItem &option,
                                                               const QModelIndex &index)
 {
-    Q_UNUSED(option)
     if (!messageRect.contains(mouseEvent->pos())) {
         return false;
     }

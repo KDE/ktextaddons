@@ -14,9 +14,8 @@ TextAutoGenerateColorsAndMessageViewStyle::TextAutoGenerateColorsAndMessageViewS
     qGuiApp->installEventFilter(this);
 }
 
-bool TextAutoGenerateColorsAndMessageViewStyle::eventFilter(QObject *obj, QEvent *event)
+bool TextAutoGenerateColorsAndMessageViewStyle::eventFilter([[maybe_unused]] QObject *obj, QEvent *event)
 {
-    Q_UNUSED(obj);
     if (event->type() == QEvent::ApplicationPaletteChange) {
         regenerateColorScheme();
     }

@@ -15,10 +15,10 @@ TextAutoGenerateMenuListViewDelegate::TextAutoGenerateMenuListViewDelegate(QObje
 
 TextAutoGenerateMenuListViewDelegate::~TextAutoGenerateMenuListViewDelegate() = default;
 
-QWidget *TextAutoGenerateMenuListViewDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+QWidget *TextAutoGenerateMenuListViewDelegate::createEditor(QWidget *parent,
+                                                            [[maybe_unused]] const QStyleOptionViewItem &option,
+                                                            [[maybe_unused]] const QModelIndex &index) const
 {
-    Q_UNUSED(option);
-    Q_UNUSED(index);
     QLineEdit *editor = new QLineEdit(parent);
     return editor;
 }
@@ -42,9 +42,10 @@ void TextAutoGenerateMenuListViewDelegate::setModelData(QWidget *editor, QAbstra
     }
 }
 
-void TextAutoGenerateMenuListViewDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
+void TextAutoGenerateMenuListViewDelegate::updateEditorGeometry(QWidget *editor,
+                                                                const QStyleOptionViewItem &option,
+                                                                [[maybe_unused]] const QModelIndex &index) const
 {
-    Q_UNUSED(index);
     editor->setGeometry(option.rect);
 }
 

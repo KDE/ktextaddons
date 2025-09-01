@@ -11,9 +11,8 @@ TextAutoGenerateManagerBase::TextAutoGenerateManagerBase(QObject *parent)
 {
 }
 
-TextAutoGenerateReply *TextAutoGenerateManagerBase::getCompletion(const TextAutoGenerateTextRequest &request)
+TextAutoGenerateReply *TextAutoGenerateManagerBase::getCompletion([[maybe_unused]] const TextAutoGenerateTextRequest &request)
 {
-    Q_UNUSED(request)
     return {};
 }
 

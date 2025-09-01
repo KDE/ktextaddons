@@ -27,16 +27,14 @@ bool TranslatorEngineClient::hasConfigurationDialog() const
     return false;
 }
 
-bool TranslatorEngineClient::showConfigureDialog(QWidget *parentWidget)
+bool TranslatorEngineClient::showConfigureDialog([[maybe_unused]] QWidget *parentWidget)
 {
-    Q_UNUSED(parentWidget);
     // Nothing by default
     return false;
 }
 
-void TranslatorEngineClient::generateToListFromCurrentToLanguage(const QString &languageCode)
+void TranslatorEngineClient::generateToListFromCurrentToLanguage([[maybe_unused]] const QString &languageCode)
 {
-    Q_UNUSED(languageCode);
     // Nothing by default
 }
 

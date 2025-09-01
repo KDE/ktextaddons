@@ -28,9 +28,8 @@ bool TextAutoGeneratePluginText::hasConfigureDialog() const
     return false;
 }
 
-void TextAutoGeneratePluginText::showConfigureDialog(QWidget *parent) const
+void TextAutoGeneratePluginText::showConfigureDialog([[maybe_unused]] QWidget *parent) const
 {
-    Q_UNUSED(parent);
 }
 
 #include "moc_textautogenerateplugintext.cpp"

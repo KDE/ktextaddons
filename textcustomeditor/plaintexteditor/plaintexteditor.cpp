@@ -251,10 +251,8 @@ bool PlainTextEditor::emojiSupport() const
     return d->supportFeatures & Emoji;
 }
 
-void PlainTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
+void PlainTextEditor::addExtraMenuEntry([[maybe_unused]] QMenu *menu, [[maybe_unused]] QPoint pos)
 {
-    Q_UNUSED(menu)
-    Q_UNUSED(pos)
 }
 
 void PlainTextEditor::slotSpeakText()
@@ -321,7 +319,7 @@ void PlainTextEditor::setSpellCheckingSupport(bool check)
     }
 }
 
-void PlainTextEditor::setWebShortcutSupport(bool b)
+void PlainTextEditor::setWebShortcutSupport([[maybe_unused]] bool b)
 {
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
     if (b) {
@@ -329,8 +327,6 @@ void PlainTextEditor::setWebShortcutSupport(bool b)
     } else {
         d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
-#else
-    Q_UNUSED(b);
 #endif
 }
 

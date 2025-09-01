@@ -35,9 +35,8 @@ private:
     QString mDisplayName;
 };
 
-void CustomPlugin::showConfigureDialog(QWidget *parentWidget)
+void CustomPlugin::showConfigureDialog([[maybe_unused]] QWidget *parentWidget)
 {
-    Q_UNUSED(parentWidget);
 }
 
 QString CustomPlugin::translatedPluginName() const
@@ -60,9 +59,8 @@ void CustomPlugin::setCurrentModel(const QString &modelName)
     mCurrentModel = modelName;
 }
 
-void CustomPlugin::askToAssistant(const QString &msg)
+void CustomPlugin::askToAssistant([[maybe_unused]] const QString &msg)
 {
-    Q_UNUSED(msg);
 }
 
 QString CustomPlugin::displayName() const
@@ -80,9 +78,8 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType CustomPlugin::engin
     return TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Local;
 }
 
-void CustomPlugin::sendToAssistant(const SendToAssistantInfo &info)
+void CustomPlugin::sendToAssistant([[maybe_unused]] const SendToAssistantInfo &info)
 {
-    Q_UNUSED(info);
 }
 
 TextAutoGenerateTextInstancesManagerTest::TextAutoGenerateTextInstancesManagerTest(QObject *parent)

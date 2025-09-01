@@ -523,9 +523,8 @@ void AutoCorrectionWidget::enableAddRemoveButton()
     d->ui->removeButton->setEnabled(enable);
 }
 
-void AutoCorrectionWidget::setFindReplaceText(QTreeWidgetItem *item, int column)
+void AutoCorrectionWidget::setFindReplaceText(QTreeWidgetItem *item, [[maybe_unused]] int column)
 {
-    Q_UNUSED(column)
     d->ui->find->setText(item->text(0));
     d->ui->replace->setText(item->text(1));
 }

@@ -46,15 +46,13 @@ QByteArray TextAutoGenerateTextPlugin::instanceUuid() const
     return d->instance->instanceUuid();
 }
 
-void TextAutoGenerateTextPlugin::load(const KConfigGroup &config)
+void TextAutoGenerateTextPlugin::load([[maybe_unused]] const KConfigGroup &config)
 {
-    Q_UNUSED(config);
     // reimpl
 }
 
-void TextAutoGenerateTextPlugin::save(KConfigGroup &config)
+void TextAutoGenerateTextPlugin::save([[maybe_unused]] KConfigGroup &config)
 {
-    Q_UNUSED(config);
     // reimpl
 }
 

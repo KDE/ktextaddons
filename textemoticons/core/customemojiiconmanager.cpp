@@ -14,15 +14,13 @@ CustomEmojiIconManager::CustomEmojiIconManager(QObject *parent)
 
 CustomEmojiIconManager::~CustomEmojiIconManager() = default;
 
-QIcon CustomEmojiIconManager::generateIcon(const QString &customIdentifier)
+QIcon CustomEmojiIconManager::generateIcon([[maybe_unused]] const QString &customIdentifier)
 {
-    Q_UNUSED(customIdentifier)
     return {};
 }
 
-QString CustomEmojiIconManager::fileName(const QString &customIdentifier)
+QString CustomEmojiIconManager::fileName([[maybe_unused]] const QString &customIdentifier)
 {
-    Q_UNUSED(customIdentifier)
     return {};
 }
 

@@ -135,10 +135,8 @@ void PlainTextSyntaxSpellCheckingHighlighter::highlightBlock(const QString &text
     }
 }
 
-void PlainTextSyntaxSpellCheckingHighlighter::unsetMisspelled(int start, int count)
+void PlainTextSyntaxSpellCheckingHighlighter::unsetMisspelled([[maybe_unused]] int start, [[maybe_unused]] int count)
 {
-    Q_UNUSED(start)
-    Q_UNUSED(count)
 }
 
 void PlainTextSyntaxSpellCheckingHighlighter::setMisspelled(int start, int count)

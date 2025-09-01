@@ -319,7 +319,7 @@ void RichTextEditor::slotSpeakText()
     Q_EMIT say(text);
 }
 
-void RichTextEditor::setWebShortcutSupport(bool b)
+void RichTextEditor::setWebShortcutSupport([[maybe_unused]] bool b)
 {
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
     if (b) {
@@ -327,8 +327,6 @@ void RichTextEditor::setWebShortcutSupport(bool b)
     } else {
         d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
-#else
-    Q_UNUSED(b);
 #endif
 }
 
@@ -361,9 +359,8 @@ void RichTextEditor::addIgnoreWords(const QStringList &lst)
     addIgnoreWordsToHighLighter();
 }
 
-void RichTextEditor::forceAutoCorrection(bool selectedText)
+void RichTextEditor::forceAutoCorrection([[maybe_unused]] bool selectedText)
 {
-    Q_UNUSED(selectedText)
     // Nothing here
 }
 
@@ -438,10 +435,8 @@ void RichTextEditor::slotAllowTab()
     setTabChangesFocus(!tabChangesFocus());
 }
 
-void RichTextEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
+void RichTextEditor::addExtraMenuEntry([[maybe_unused]] QMenu *menu, [[maybe_unused]] QPoint pos)
 {
-    Q_UNUSED(menu)
-    Q_UNUSED(pos)
 }
 
 void RichTextEditor::slotUndoableClear()

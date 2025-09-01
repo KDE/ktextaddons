@@ -50,11 +50,9 @@ void GenericNetworkModelAvailableInfosDelegate::paint(QPainter *painter, const Q
 
 void GenericNetworkModelAvailableInfosDelegate::drawCatergories(QPainter *painter,
                                                                 const GenericNetworkModelAvailableInfosDelegate::ModelInfoLayout &layout,
-                                                                const QModelIndex &index,
-                                                                const QStyleOptionViewItem &option) const
+                                                                [[maybe_unused]] const QModelIndex &index,
+                                                                [[maybe_unused]] const QStyleOptionViewItem &option) const
 {
-    Q_UNUSED(index);
-    Q_UNUSED(option);
     for (const auto &cat : layout.categoriesLayout) {
         painter->drawRoundedRect(cat.categoryRect,
                                  GenericNetworkModelInfosDelegateUtils::rectRoundValue(),
@@ -131,10 +129,9 @@ GenericNetworkModelAvailableInfosDelegate::ModelInfoLayout GenericNetworkModelAv
 
 bool GenericNetworkModelAvailableInfosDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                                                                  QRect messageRect,
-                                                                 const QStyleOptionViewItem &option,
+                                                                 [[maybe_unused]] const QStyleOptionViewItem &option,
                                                                  const QModelIndex &index)
 {
-    Q_UNUSED(option)
     if (!messageRect.contains(mouseEvent->pos())) {
         return false;
     }

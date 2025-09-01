@@ -200,7 +200,7 @@ void RichTextBrowser::slotSpeakText()
     Q_EMIT say(text);
 }
 
-void RichTextBrowser::setWebShortcutSupport(bool b)
+void RichTextBrowser::setWebShortcutSupport([[maybe_unused]] bool b)
 {
 #if HAVE_KTEXTADDONS_KIO_SUPPORT
     if (b) {
@@ -208,8 +208,6 @@ void RichTextBrowser::setWebShortcutSupport(bool b)
     } else {
         d->supportFeatures = (d->supportFeatures & ~AllowWebShortcut);
     }
-#else
-    Q_UNUSED(b);
 #endif
 }
 
@@ -250,10 +248,8 @@ bool RichTextBrowser::textToSpeechSupport() const
     return d->supportFeatures & TextToSpeech;
 }
 
-void RichTextBrowser::addExtraMenuEntry(QMenu *menu, QPoint pos)
+void RichTextBrowser::addExtraMenuEntry([[maybe_unused]] QMenu *menu, [[maybe_unused]] QPoint pos)
 {
-    Q_UNUSED(menu)
-    Q_UNUSED(pos)
 }
 
 void RichTextBrowser::slotUndoableClear()

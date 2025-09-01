@@ -22,9 +22,8 @@ DotsWidget::DotsWidget(QWidget *parent)
 
 DotsWidget::~DotsWidget() = default;
 
-void DotsWidget::paintEvent(QPaintEvent *event)
+void DotsWidget::paintEvent([[maybe_unused]] QPaintEvent *event)
 {
-    Q_UNUSED(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
