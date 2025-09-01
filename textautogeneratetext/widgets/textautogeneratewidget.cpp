@@ -61,8 +61,6 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     mainLayout->addWidget(mTextAutoGenerateTextLineEditWidget);
     connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::editingFinished, this, &TextAutoGenerateWidget::slotEditingFinished);
 
-    connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::configChanged, this, &TextAutoGenerateWidget::slotConfigureChanged);
-
     connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::searchText, this, &TextAutoGenerateWidget::slotSearchText);
     if (mManager) {
         connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewChat, this, [this]() {
@@ -159,11 +157,6 @@ void TextAutoGenerateWidget::loadEngine()
         mManager->loadEngine();
         mManager->loadHistory();
     }
-}
-
-void TextAutoGenerateWidget::slotConfigureChanged()
-{
-    loadEngine();
 }
 
 void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)

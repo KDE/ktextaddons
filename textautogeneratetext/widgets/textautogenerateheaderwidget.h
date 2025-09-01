@@ -24,7 +24,6 @@ public:
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
-    void configChanged();
     void addNewChat();
     void changeFavoriteRequested(bool f);
     void searchText();
