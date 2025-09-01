@@ -2212,7 +2212,7 @@ msgstr "Copia l'URL"
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "Tria-ho tot"
+msgstr "Selecciona-ho tot"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:105
 #, kde-format
