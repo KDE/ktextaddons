@@ -140,7 +140,7 @@ void TextAutoGenerateWidget::writeConfig()
 
 void TextAutoGenerateWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), u"TextAutoGenerateWidget"_s);
+    const KConfigGroup group(KSharedConfig::openStateConfig(), u"TextAutoGenerateWidget"_s);
     const QList<int> size = {100, 400};
 
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
