@@ -85,9 +85,14 @@ ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratet
     EXPORT KTEXTADDONS
 )
 
+if(NOT WIN32 AND NOT APPLE)
+    qt_add_dbus_adaptor(textautogeneratetext_dbs_adaptor_SRCS core/org.kde.textautogeneratetext.TextAutoGenerateManager.xml core/textautogeneratemanager.h TextAutoGenerateText::TextAutoGenerateManager)
+endif()
+
 target_sources(
     KF6TextAutoGenerateText
     PRIVATE
+        ${textautogeneratetext_dbs_adaptor_SRCS}
         core/textautogeneratetextutils.h
         core/textautogeneratetextutils.cpp
         core/textautogenerateengineloader.cpp
@@ -336,6 +341,11 @@ target_link_libraries(
         KF6::ItemViews
         cmark-rc
 )
+
+if(NOT WIN32 AND NOT APPLE)
+    target_link_libraries(KF6TextAutoGenerateText PRIVATE Qt::DBus)
+endif()
+
 target_include_directories(
     KF6TextAutoGenerateText
     INTERFACE

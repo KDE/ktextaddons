@@ -102,6 +102,10 @@ find_package(
         Sql
 )
 
+if(NOT WIN32 AND NOT APPLE)
+    find_package(Qt6DBus ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+endif()
+
 find_package(
     KF6
     ${KF_MIN_VERSION}

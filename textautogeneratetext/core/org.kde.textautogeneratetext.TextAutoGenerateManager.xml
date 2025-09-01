@@ -1,0 +1,15 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<!--
+    SPDX-FileCopyrightText: none
+    SPDX-License-Identifier: LGPL-2.0-or-later
+-->
+<node>
+  <interface name="org.kde.textautogeneratetext.TextAutoGenerateManager">
+    <signal name="modelListChanged">
+      <arg name="id" type="s" direction="out"/>
+    </signal>
+    <signal name="chatListChanged">
+      <arg name="id" type="s" direction="out"/>
+    </signal>
+  </interface>
+</node>
