@@ -125,6 +125,9 @@ Q_SIGNALS:
     void chatListChanged(const QString &id);
     void modelListChanged(const QString &id);
 
+private Q_SLOTS:
+    void slotChatListChanged(const QString &id);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);

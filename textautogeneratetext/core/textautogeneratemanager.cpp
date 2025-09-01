@@ -26,6 +26,15 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 {
+#if 0
+    QDBusConnection dbus = QDBusConnection::sessionBus();
+    const QString dbusPath = newDBusObjectName();
+    setProperty("uniqueDBusPath", dbusPath);
+    const QString dbusInterface = u"org.kde.textautogeneratetext.TextAutoGenerateManager"_s;
+    dbus.registerObject(dbusPath, this);
+    dbus.connect(QString(), QString(), dbusInterface, u"chatListChanged"_s, this, SLOT(slotChatListChanged(QString)));
+#endif
+
     connect(mTextAutoGenerateChatsModel,
             &QAbstractItemModel::dataChanged,
             this,
@@ -511,6 +520,13 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
             mDatabaseManager->insertOrReplaceMessage(chatId, m);
         }
     }
+    // TODO fix identifier !
+    Q_EMIT chatListChanged({});
+}
+
+void TextAutoGenerateManager::slotChatListChanged(const QString &id)
+{
+    // TODO
 }
 
 #include "moc_textautogeneratemanager.cpp"
