@@ -17,12 +17,26 @@
 #include "textautogeneratetextplugin.h"
 
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
+#include "textautogeneratemanageradaptor.h"
 #include <QDBusConnection>
 #endif
 
 #include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+
+#if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
+static QString newDBusObjectName()
+{
+    static int s_count = 0;
+    QString name(u"/TEXTAUTOGENERATEMANGER_TextAutoGenerateManager"_s);
+    if (s_count++) {
+        name += u'_';
+        name += QString::number(s_count);
+    }
+    return name;
+}
+#endif
 TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
@@ -32,8 +46,11 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 {
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
+
+    new TextAutoGenerateManagerAdaptor(this);
+
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    const QString dbusPath; // TODO = newDBusObjectName();
+    const QString dbusPath = newDBusObjectName();
     setProperty("uniqueDBusPath", dbusPath);
     const QString dbusInterface = u"org.kde.textautogeneratetext.TextAutoGenerateManager"_s;
     dbus.registerObject(dbusPath, this);
@@ -525,13 +542,21 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
             mDatabaseManager->insertOrReplaceMessage(chatId, m);
         }
     }
-    // TODO fix identifier !
-    Q_EMIT chatListChanged({});
+#if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
+    const QString ourIdentifier = u"%1/%2"_s.arg(QDBusConnection::sessionBus().baseService(), property("uniqueDBusPath").toString());
+    Q_EMIT chatListChanged(ourIdentifier);
+#endif
 }
 
-void TextAutoGenerateManager::slotChatListChanged(const QString &id)
+void TextAutoGenerateManager::slotChatListChanged([[maybe_unused]] const QString &id)
 {
-    // TODO
+#if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateManager::slotChatListChanged :" << id;
+    const QString ourIdentifier = u"%1/%2"_s.arg(QDBusConnection::sessionBus().baseService(), property("uniqueDBusPath").toString());
+    if (id != ourIdentifier) {
+        loadHistory();
+    }
+#endif
 }
 
 #include "moc_textautogeneratemanager.cpp"
