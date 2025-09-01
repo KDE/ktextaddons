@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemanager.h"
+#include "config-textautogeneratetext.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
@@ -14,6 +15,10 @@
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetextinstancesmanager.h"
 #include "textautogeneratetextplugin.h"
+
+#if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
+#include <QDBusConnection>
+#endif
 
 #include <KLocalizedString>
 using namespace Qt::Literals::StringLiterals;
@@ -26,9 +31,9 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 {
-#if 0
+#if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    const QString dbusPath = newDBusObjectName();
+    const QString dbusPath; // TODO = newDBusObjectName();
     setProperty("uniqueDBusPath", dbusPath);
     const QString dbusInterface = u"org.kde.textautogeneratetext.TextAutoGenerateManager"_s;
     dbus.registerObject(dbusPath, this);
