@@ -122,6 +122,7 @@ Q_SIGNALS:
     void loadEngineDone();
     void fontSizeChanged();
     void downloadModelFinished(const QString &modelName);
+    void answerGeneratedDone(const QString &question);
     void chatListChanged(const QString &id);
     void modelListChanged(const QString &id);
 

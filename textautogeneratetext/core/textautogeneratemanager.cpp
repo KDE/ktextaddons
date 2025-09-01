@@ -251,6 +251,9 @@ void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const Q
     if (messagesModel) {
         messagesModel->changeInProgress(uuid, inProgress);
         changeChatInPogressStatus(chatId, inProgress);
+        if (!inProgress) {
+            // TODO Q_EMIT answerGeneratedDone();
+        }
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
     }
