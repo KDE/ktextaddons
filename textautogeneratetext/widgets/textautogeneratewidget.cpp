@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratewidget.h"
+#include "core/textautogeneratechatsettings.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratemessagesmodel.h"
@@ -87,8 +88,20 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     connect(this, &TextAutoGenerateWidget::stopEditingMode, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editingFinished);
     if (mManager) {
         connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, [this](const QByteArray &chatId) {
+            const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingSave{
+                .text = mTextAutoGenerateTextLineEditWidget->text(),
+                .scrollbarPosition = mTextAutoGenerateResultWidget->scrollbarPosition(),
+            };
+            mManager->textAutoGenerateChatSettings()->add(mManager->currentChatId(), chatSettingSave);
             mManager->setCurrentChatId(chatId);
-            // TODO store info
+            const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingRestore = mManager->textAutoGenerateChatSettings()->value(chatId);
+            if (chatSettingRestore.isValid()) {
+                mTextAutoGenerateTextLineEditWidget->setText(chatSettingRestore.text);
+                mTextAutoGenerateResultWidget->setScrollbarPosition(chatSettingRestore.scrollbarPosition);
+            } else {
+                mTextAutoGenerateTextLineEditWidget->setText({});
+                mTextAutoGenerateResultWidget->scrollToBottom();
+            }
         });
         connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {
             Q_EMIT noPluginsFound(i18n("No plugin found."));

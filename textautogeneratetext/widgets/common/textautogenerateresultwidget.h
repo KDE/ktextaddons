@@ -25,6 +25,10 @@ public:
     void handleKeyPressEvent(QKeyEvent *ev);
     void editingFinished(const QByteArray &uuid);
 
+    [[nodiscard]] int scrollbarPosition() const;
+    void setScrollbarPosition(int position);
+    void scrollToBottom();
+
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);
     void cancelRequested(const QByteArray &uuid);

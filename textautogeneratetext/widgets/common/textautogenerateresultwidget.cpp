@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateresultwidget.h"
+#include <qscrollbar.h>
 using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/view/textautogeneratelistview.h"
@@ -37,6 +38,21 @@ void TextAutoGenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
 void TextAutoGenerateResultWidget::editingFinished(const QByteArray &uuid)
 {
     mTextAutoGenerateListView->editingFinished(uuid);
+}
+
+int TextAutoGenerateResultWidget::scrollbarPosition() const
+{
+    return mTextAutoGenerateListView->verticalScrollBar()->value();
+}
+
+void TextAutoGenerateResultWidget::setScrollbarPosition(int position)
+{
+    mTextAutoGenerateListView->verticalScrollBar()->setValue(position);
+}
+
+void TextAutoGenerateResultWidget::scrollToBottom()
+{
+    mTextAutoGenerateListView->verticalScrollBar()->setValue(mTextAutoGenerateListView->verticalScrollBar()->maximum());
 }
 
 #include "moc_textautogenerateresultwidget.cpp"
