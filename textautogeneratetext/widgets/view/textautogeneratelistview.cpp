@@ -82,9 +82,9 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     if (!uuid.isEmpty()) {
         const QByteArray chatId = mManager->currentChatId();
-        const QModelIndex index = mManager->refreshAnswer(chatId, uuid);
-        if (index.isValid()) {
-            Q_EMIT refreshAnswerRequested(chatId, index);
+        const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid);
+        if (indexAnswer.isValid()) {
+            Q_EMIT refreshAnswerRequested(chatId, indexAnswer);
         }
     }
 }
