@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2025-07-28 11:58-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -69,50 +69,50 @@ msgstr "&Modificar"
 msgid "&Add"
 msgstr "&Adicionar"
 
-#: widgets/autocorrectionwidget.cpp:623
+#: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "Importar autocorreção do LibreOffice"
 
-#: widgets/autocorrectionwidget.cpp:624
+#: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "Arquivo de autocorreção do LibreOffice (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:627
+#: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "Importar autocorreção do KMail"
 
-#: widgets/autocorrectionwidget.cpp:628
+#: widgets/autocorrectionwidget.cpp:627
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "Arquivo de autocorreção do KMail (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:660
+#: widgets/autocorrectionwidget.cpp:659
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Importar arquivo de autocorreção"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "O idioma foi alterado. Você deseja salvar a configuração do idioma anterior?"
 
-#: widgets/autocorrectionwidget.cpp:685
+#: widgets/autocorrectionwidget.cpp:684
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Salvar configuração"
 
-#: widgets/autocorrectionwidget.cpp:720
+#: widgets/autocorrectionwidget.cpp:719
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Salve as alterações antes de exportar as configurações."
 
-#: widgets/autocorrectionwidget.cpp:720 widgets/autocorrectionwidget.cpp:723
+#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

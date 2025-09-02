@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2024-11-10 20:12+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -50,14 +50,14 @@ msgstr "Език за проверка на правописа"
 msgid "Speak Text"
 msgstr "Изговаряне на текст"
 
-#: plaintexteditor/plaintexteditor.cpp:388
-#: richtexteditor/richtexteditor.cpp:499
+#: plaintexteditor/plaintexteditor.cpp:384
+#: richtexteditor/richtexteditor.cpp:494
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Няма нищо за проверка."
 
-#: plaintexteditor/plaintexteditor.cpp:393
-#: richtexteditor/richtexteditor.cpp:517
+#: plaintexteditor/plaintexteditor.cpp:389
+#: richtexteditor/richtexteditor.cpp:512
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Не е намерен бекенд за проверка на правописа."
@@ -67,7 +67,7 @@ msgstr "Не е намерен бекенд за проверка на прав�
 msgid "Allow Tabulations"
 msgstr "Разрешаване на табулациите"
 
-#: richtexteditor/richtexteditor.cpp:509
+#: richtexteditor/richtexteditor.cpp:504
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,13 +76,13 @@ msgstr ""
 "Не е намерен бекенд за проверка на правописа.Искате ли да изпратите "
 "имейлакакто е непроверен?"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:506
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Изпращане"
 
-#: richtexteditor/richtexteditor.cpp:533
+#: richtexteditor/richtexteditor.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -99,7 +99,7 @@ msgstr "Затваряне"
 msgid "Close"
 msgstr "Затваряне"
 
-#: widgets/texteditfindbarbase.cpp:142
+#: widgets/texteditfindbarbase.cpp:141
 #, kde-format
 msgid ""
 "End of message reached.\n"

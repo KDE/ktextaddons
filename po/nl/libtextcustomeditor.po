@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2025-08-26 19:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -50,14 +50,14 @@ msgstr "Taal van spellingcontrole"
 msgid "Speak Text"
 msgstr "Tekst uitspreken"
 
-#: plaintexteditor/plaintexteditor.cpp:388
-#: richtexteditor/richtexteditor.cpp:499
+#: plaintexteditor/plaintexteditor.cpp:384
+#: richtexteditor/richtexteditor.cpp:494
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Niets om de spelling van te controleren."
 
-#: plaintexteditor/plaintexteditor.cpp:393
-#: richtexteditor/richtexteditor.cpp:517
+#: plaintexteditor/plaintexteditor.cpp:389
+#: richtexteditor/richtexteditor.cpp:512
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Geen backend voor spellingcontrole beschikbaar."
@@ -67,7 +67,7 @@ msgstr "Geen backend voor spellingcontrole beschikbaar."
 msgid "Allow Tabulations"
 msgstr "Tabs toestaan"
 
-#: richtexteditor/richtexteditor.cpp:509
+#: richtexteditor/richtexteditor.cpp:504
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,13 +76,13 @@ msgstr ""
 "Geen backend voor spellingcontrole beschikbaar. Wilt u het e-mailbericht "
 "toch verzenden?"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:506
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Verzenden"
 
-#: richtexteditor/richtexteditor.cpp:533
+#: richtexteditor/richtexteditor.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -99,7 +99,7 @@ msgstr "Sluiten"
 msgid "Close"
 msgstr "Sluiten"
 
-#: widgets/texteditfindbarbase.cpp:142
+#: widgets/texteditfindbarbase.cpp:141
 #, kde-format
 msgid ""
 "End of message reached.\n"

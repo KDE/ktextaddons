@@ -1,0 +1,167 @@
+# Lithuanian translations for ktextaddons package.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the ktextaddons package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktextaddons\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"PO-Revision-Date: 2025-06-24 00:41+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
+#, kde-format
+msgid "Google"
+msgstr ""
+
+#: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
+#, kde-format
+msgid "Impossible to store language info."
+msgstr ""
+
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
+#, kde-format
+msgid ""
+"Error: Engine systems have detected suspicious traffic from your computer "
+"network. Please try your request again later."
+msgstr ""
+
+#: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
+#, kde-format
+msgid "Impossible to access to url: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
+#, kde-format
+msgid "Cannot open file for downloading."
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
+#, kde-format
+msgid "CheckSum is not correct."
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
+#, kde-format
+msgid "Error during writing on disk: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginedialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Vosk Plugin Settings"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search…"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:85
+#, kde-format
+msgid "Download"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:106
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Update List"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:111
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Update list of languages from network"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#, kde-format
+msgid "Error: %1"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:187
+#: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:28
+#, kde-format
+msgid "Vosk"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
+#, kde-format
+msgid "Impossible to extract language"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:41
+#, kde-format
+msgid "Language"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:43
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:86
+#, kde-format
+msgid "Installed"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:45
+#, kde-format
+msgid "Installed Version"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:47
+#, kde-format
+msgid "Available Version"
+msgstr ""
+
+#: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:49
+#, kde-format
+msgid "Size"
+msgstr ""
+
+#: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:26
+#, kde-format
+msgid "Whisper"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextcomboboxwidget.cpp:30
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Engine:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Speech To Text"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextmenu.cpp:19
+#, kde-format
+msgid "Speech to Text…"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:33
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Input:"
+msgstr ""
+
+#: speechtotext/widgets/speechtotextselectdevicewidget.cpp:73
+#, kde-format
+msgid "Default"
+msgstr ""

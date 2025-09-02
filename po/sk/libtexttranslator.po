@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2023-12-08 20:12+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -593,13 +593,13 @@ msgstr "Chyba: Nie je možné nájsť Yandex SID vo webovej verzii."
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Chyba: Nie je možné získať Yandex SID z webovej verzie."
 
-#: translator/translatorengineclient.cpp:65
+#: translator/translatorengineclient.cpp:63
 #, fuzzy, kde-format
 #| msgid "Locale"
 msgid "Local"
 msgstr "Lokalizácia"
 
-#: translator/translatorengineclient.cpp:67
+#: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Network"
 msgstr "Sieť"

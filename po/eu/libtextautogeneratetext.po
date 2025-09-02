@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2025-08-22 11:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -66,57 +66,57 @@ msgstr ""
 "Eredua: %2\n"
 "Instantziaren izena: %3"
 
-#: core/textautogeneratemanager.cpp:90
+#: core/textautogeneratemanager.cpp:121
 #, kde-format
 msgid "Tools"
 msgstr "Tresnak"
 
-#: core/textautogeneratemanager.cpp:92
+#: core/textautogeneratemanager.cpp:123
 #, kde-format
 msgid "Small"
 msgstr "Txikia"
 
-#: core/textautogeneratemanager.cpp:94
+#: core/textautogeneratemanager.cpp:125
 #, kde-format
 msgid "Medium"
 msgstr "Ertaina"
 
-#: core/textautogeneratemanager.cpp:96
+#: core/textautogeneratemanager.cpp:127
 #, kde-format
 msgid "Big"
 msgstr "Handia"
 
-#: core/textautogeneratemanager.cpp:98
+#: core/textautogeneratemanager.cpp:129
 #, kde-format
 msgid "Huge"
 msgstr "Itzela"
 
-#: core/textautogeneratemanager.cpp:100
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Multilingual"
 msgstr "Eleaniztuna"
 
-#: core/textautogeneratemanager.cpp:102
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Code"
 msgstr "Kodea"
 
-#: core/textautogeneratemanager.cpp:104
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Math"
 msgstr "Matematika"
 
-#: core/textautogeneratemanager.cpp:106
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Vision"
 msgstr "Ikusmena"
 
-#: core/textautogeneratemanager.cpp:108
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Embedding"
 msgstr "Txertatzea"
 
-#: core/textautogeneratemanager.cpp:110
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Reasoning"
 msgstr "Arrazoiketa"
@@ -136,12 +136,12 @@ msgstr ""
 "Mesedez, izan zaitez lagungarria, profesionala, eta adeitsua. Ez eman "
 "zehatza ez den informaziorik."
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:239
 #, kde-format
 msgid "Local"
 msgstr "Lokala"
 
-#: core/textautogeneratetextplugin.cpp:243
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Network"
 msgstr "Sarea"
@@ -334,7 +334,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1816,17 +1816,17 @@ msgstr "Bidali"
 msgid "Restart is necessary for applying the changes."
 msgstr "Aldaketak ezartzeko berrabiatu beharra dago."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:94
 #, kde-format
 msgid "Text Plugins"
 msgstr "Testu pluginak"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -2040,30 +2040,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Bilatu"
 
-#: widgets/textautogeneratewidget.cpp:96
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr "Ez da pluginik aurkitu."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:377
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Kendu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiatu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

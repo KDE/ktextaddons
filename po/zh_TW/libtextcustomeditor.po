@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-27 00:42+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2024-07-14 17:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -49,14 +49,14 @@ msgstr "拼字檢查語言"
 msgid "Speak Text"
 msgstr "唸出文字"
 
-#: plaintexteditor/plaintexteditor.cpp:388
-#: richtexteditor/richtexteditor.cpp:499
+#: plaintexteditor/plaintexteditor.cpp:384
+#: richtexteditor/richtexteditor.cpp:494
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "沒有要做拼字檢查的東西。"
 
-#: plaintexteditor/plaintexteditor.cpp:393
-#: richtexteditor/richtexteditor.cpp:517
+#: plaintexteditor/plaintexteditor.cpp:389
+#: richtexteditor/richtexteditor.cpp:512
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "沒有拼字檢查可用的後端。"
@@ -66,20 +66,20 @@ msgstr "沒有拼字檢查可用的後端。"
 msgid "Allow Tabulations"
 msgstr "接受 tab 字元"
 
-#: richtexteditor/richtexteditor.cpp:509
+#: richtexteditor/richtexteditor.cpp:504
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "沒有拼字檢查可用的後端。您是否仍然要送出信件？"
 
-#: richtexteditor/richtexteditor.cpp:511
+#: richtexteditor/richtexteditor.cpp:506
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "傳送"
 
-#: richtexteditor/richtexteditor.cpp:533
+#: richtexteditor/richtexteditor.cpp:528
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -96,7 +96,7 @@ msgstr "關閉"
 msgid "Close"
 msgstr "關閉"
 
-#: widgets/texteditfindbarbase.cpp:142
+#: widgets/texteditfindbarbase.cpp:141
 #, kde-format
 msgid ""
 "End of message reached.\n"

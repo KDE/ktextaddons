@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-01 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -60,57 +60,57 @@ msgid ""
 "Instance Name: %3"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:90
+#: core/textautogeneratemanager.cpp:121
 #, kde-format
 msgid "Tools"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:92
+#: core/textautogeneratemanager.cpp:123
 #, kde-format
 msgid "Small"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:94
+#: core/textautogeneratemanager.cpp:125
 #, kde-format
 msgid "Medium"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:96
+#: core/textautogeneratemanager.cpp:127
 #, kde-format
 msgid "Big"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:98
+#: core/textautogeneratemanager.cpp:129
 #, kde-format
 msgid "Huge"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:100
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Multilingual"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:102
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Code"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:104
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Math"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:106
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Vision"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:108
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Embedding"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:110
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Reasoning"
 msgstr ""
@@ -129,12 +129,12 @@ msgid ""
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:239
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: core/textautogeneratetextplugin.cpp:243
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Network"
 msgstr "네트워크"
@@ -339,7 +339,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1723,17 +1723,17 @@ msgstr "보내기"
 msgid "Restart is necessary for applying the changes."
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:95
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:94
 #, kde-format
 msgid "Text Plugins"
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:158
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:160
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:159
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Configure…"
@@ -1955,18 +1955,18 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:96
+#: widgets/textautogeneratewidget.cpp:94
 #, kde-format
 msgid "No plugin found."
 msgstr ""
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:377
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove…"
@@ -1974,7 +1974,7 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "삭제…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -1982,7 +1982,7 @@ msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

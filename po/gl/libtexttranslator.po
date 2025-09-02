@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2025-02-24 07:18+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -588,12 +588,12 @@ msgstr "Erro: non se pode atopar o SID de Yandex na versión web."
 msgid "Error: Unable to extract Yandex SID from web version."
 msgstr "Erro: non se pode extraer o SID de Yandex da versión web."
 
-#: translator/translatorengineclient.cpp:65
+#: translator/translatorengineclient.cpp:63
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: translator/translatorengineclient.cpp:67
+#: translator/translatorengineclient.cpp:65
 #, kde-format
 msgid "Network"
 msgstr "Rede"

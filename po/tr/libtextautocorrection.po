@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2025-01-10 16:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -68,51 +68,51 @@ msgstr "&Değiştir"
 msgid "&Add"
 msgstr "&Ekle"
 
-#: widgets/autocorrectionwidget.cpp:623
+#: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice Kendiliğinden Düzeltmesi İçe Aktar"
 
-#: widgets/autocorrectionwidget.cpp:624
+#: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice Kendiliğinden Düzeltme Dosyası (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:627
+#: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr "K Posta Kendiliğinden Düzeltmesi İçe Aktar"
 
-#: widgets/autocorrectionwidget.cpp:628
+#: widgets/autocorrectionwidget.cpp:627
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr "K Posta Kendiliğinden Düzeltme Dosyası (*.xml)"
 
-#: widgets/autocorrectionwidget.cpp:660
+#: widgets/autocorrectionwidget.cpp:659
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "Kendiliğinden Düzeltme Dosyası İçe Aktar"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr ""
 "Dil değiştirildi; önceki dil için olan yapılandırmayı kaydetmek istiyor "
 "musunuz?"
 
-#: widgets/autocorrectionwidget.cpp:685
+#: widgets/autocorrectionwidget.cpp:684
 #, kde-format
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "Yapılandırmayı Kaydet"
 
-#: widgets/autocorrectionwidget.cpp:720
+#: widgets/autocorrectionwidget.cpp:719
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "Ayarları dışa aktarmadan önce lütfen değişiklikleri kaydedin."
 
-#: widgets/autocorrectionwidget.cpp:720 widgets/autocorrectionwidget.cpp:723
+#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Autocorrection File"

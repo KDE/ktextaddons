@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-02 00:42+0000\n"
 "PO-Revision-Date: 2024-08-18 17:55+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -69,51 +69,51 @@ msgstr "&திருத்து"
 msgid "&Add"
 msgstr "&சேர்"
 
-#: widgets/autocorrectionwidget.cpp:623
+#: widgets/autocorrectionwidget.cpp:622
 #, kde-format
 msgid "Import LibreOffice Autocorrection"
 msgstr "LibreOffice-இன் தானியக்க திருத்தத்தை இறக்குமதி செய்"
 
-#: widgets/autocorrectionwidget.cpp:624
+#: widgets/autocorrectionwidget.cpp:623
 #, kde-format
 msgid "LibreOffice Autocorrection File (*.dat)"
 msgstr "LibreOffice-இன் தானியக்கத்திருத்த கோப்பு (*.dat)"
 
-#: widgets/autocorrectionwidget.cpp:627
+#: widgets/autocorrectionwidget.cpp:626
 #, kde-format
 msgid "Import KMail Autocorrection"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:628
+#: widgets/autocorrectionwidget.cpp:627
 #, kde-format
 msgid "KMail Autocorrection File (*.xml)"
 msgstr ""
 
-#: widgets/autocorrectionwidget.cpp:660
+#: widgets/autocorrectionwidget.cpp:659
 #, fuzzy, kde-format
 #| msgid "Export Autocorrection File"
 msgctxt "@title:window"
 msgid "Import Autocorrection File"
 msgstr "தான்திருத்த கோப்பை ஏற்றுமதி செய்"
 
-#: widgets/autocorrectionwidget.cpp:684
+#: widgets/autocorrectionwidget.cpp:683
 #, kde-format
 msgid "Language was changed, do you want to save config for previous language?"
 msgstr "மொழி மாற்றப்பட்டுள்ளது. முந்தைய மொழிக்கான அமைப்புகளை சேமிக்க வேண்டுமா?"
 
-#: widgets/autocorrectionwidget.cpp:685
+#: widgets/autocorrectionwidget.cpp:684
 #, fuzzy, kde-format
 #| msgid "Save config"
 msgctxt "@title:window"
 msgid "Save config"
 msgstr "அமைப்புகளை சேமி"
 
-#: widgets/autocorrectionwidget.cpp:720
+#: widgets/autocorrectionwidget.cpp:719
 #, kde-format
 msgid "Please save changes before exporting settings."
 msgstr "அமைப்புகளை ஏற்றுமதி செய்யுமுன் அவற்றை சேமியுங்கள்."
 
-#: widgets/autocorrectionwidget.cpp:720 widgets/autocorrectionwidget.cpp:723
+#: widgets/autocorrectionwidget.cpp:719 widgets/autocorrectionwidget.cpp:722
 #, fuzzy, kde-format
 #| msgid "Export Autocorrection File"
 msgctxt "@title:window"

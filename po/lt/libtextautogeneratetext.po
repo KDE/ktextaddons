@@ -1,21 +1,22 @@
+# Lithuanian translations for ktextaddons package.
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
+# Automatically generated, 2025.
 #
-# SPDX-FileCopyrightText: 2025 Adrián Chaves (Gallaecio)
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-02 00:42+0000\n"
-"PO-Revision-Date: 2025-03-19 13:21+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
-"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
-"Language: gl\n"
+"PO-Revision-Date: 2025-09-01 00:41+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
@@ -130,12 +131,12 @@ msgstr ""
 #: core/textautogeneratetextplugin.cpp:239
 #, kde-format
 msgid "Local"
-msgstr "Local"
+msgstr ""
 
 #: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Network"
-msgstr "Rede"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -143,12 +144,10 @@ msgid "Generic"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
 #: plugins/ollama/ollamaconfiguredialog.cpp:50
@@ -173,7 +172,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:24
 #, kde-format
 msgid "Mistral AI"
-msgstr "Mistral AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
@@ -1566,7 +1565,7 @@ msgstr ""
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
-msgstr "Ollama"
+msgstr ""
 
 #: plugins/ollama/ollamacomboboxwidget.cpp:30
 #, kde-format
@@ -1575,12 +1574,10 @@ msgid "Reload Model"
 msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: plugins/ollama/ollamaconfiguredialog.cpp:60
 #, kde-format
@@ -1668,19 +1665,16 @@ msgid "Download Ollama"
 msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Ollama"
+#, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -1695,11 +1689,10 @@ msgid "Attach File"
 msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
-msgstr "Enviar"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
 #, kde-format
@@ -1717,12 +1710,10 @@ msgid "..."
 msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -1748,12 +1739,10 @@ msgid "Select a Type of Instance:"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
 #, kde-format
@@ -1785,12 +1774,10 @@ msgid "Do you want to remove this instance (%1)?"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratesearchwidget.cpp:30
@@ -1853,12 +1840,10 @@ msgid "Ask AI…"
 msgstr ""
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
@@ -1877,12 +1862,10 @@ msgid "Quick Ask"
 msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configurar a IA"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:45
 #, kde-format
@@ -1900,7 +1883,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
-msgstr "Conversa"
+msgstr ""
 
 #: widgets/textautogenerateheaderwidget.cpp:39
 #, kde-format
@@ -2041,17 +2024,3 @@ msgstr ""
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
-
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Configurar Mistral AI"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Configure IA"
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Configurar a IA"

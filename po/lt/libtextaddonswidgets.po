@@ -1,33 +1,34 @@
-# Copyright (C) YEAR This file is copyright:
+# Lithuanian translations for ktextaddons package.
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# Vit Pelcak <vit@pelcak.org>, 2023.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-31 00:41+0000\n"
-"PO-Revision-Date: 2023-06-05 11:18+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
-"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
-"Language: cs\n"
+"PO-Revision-Date: 2025-08-31 00:41+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr "Tučné"
+msgstr ""
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr "Kurzíva"
+msgstr ""
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
@@ -39,7 +40,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr "Podtržené"
+msgstr ""
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
@@ -63,16 +64,16 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Special Characters"
-msgstr "Vyberte zvláštní znaky"
+msgstr ""
 
 #: selectspecialchardialog.cpp:42
 #, kde-format
 msgctxt "@action:button"
 msgid "Insert"
-msgstr "Vložit"
+msgstr ""
 
 #: selectspecialchardialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Select"
-msgstr "Vybrat"
+msgstr ""
