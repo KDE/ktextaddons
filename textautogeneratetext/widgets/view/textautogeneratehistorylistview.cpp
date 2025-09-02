@@ -190,9 +190,60 @@ void TextAutoGenerateHistoryListView::slotSearchTextChanged(const QString &str)
     mHistoryProxyModel->setFilterFixedString(str);
 }
 
+TextAutoGenerateHistorySortFilterProxyModel *TextAutoGenerateHistoryListView::filterModel() const
+{
+    return mHistoryProxyModel;
+}
+
 void TextAutoGenerateHistoryListView::selectNextChat(Direction direction)
 {
-    // TODO
+    Q_ASSERT(filterModel());
+
+    const auto nSections = filterModel()->rowCount();
+    if (nSections == 0) {
+        // FIXME : switch to empty room widget ?
+        return;
+    }
+
+    const QModelIndex initialIndex = selectionModel()->currentIndex();
+    QModelIndex currentIndex = initialIndex;
+
+    // nextIndex(invalid) → top or bottom
+    // nextIndex(other) → above or below, invalid on overflow
+    const auto nextIndex = [this, direction](const QModelIndex &index) {
+        if (!index.isValid()) {
+            switch (direction) {
+            case Direction::Up: {
+                QModelIndex lastIndex = filterModel()->index(filterModel()->rowCount() - 1, 0);
+                while (filterModel()->rowCount(lastIndex) > 0) {
+                    lastIndex = filterModel()->index(filterModel()->rowCount(lastIndex) - 1, 0, lastIndex);
+                }
+                return lastIndex;
+            }
+            case Direction::Down:
+                return filterModel()->index(0, 0, {});
+            }
+            Q_UNREACHABLE();
+        }
+
+        switch (direction) {
+        case Direction::Up: {
+            return indexAbove(index);
+        }
+        case Direction::Down: {
+            return indexBelow(index);
+        }
+        }
+        Q_UNREACHABLE();
+    };
+
+    do {
+        currentIndex = nextIndex(currentIndex);
+    } while (currentIndex != initialIndex);
+
+    if (currentIndex.isValid()) {
+        selectionModel()->setCurrentIndex(currentIndex, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
+    }
 }
 
 void TextAutoGenerateHistoryListView::paintEvent(QPaintEvent *event)

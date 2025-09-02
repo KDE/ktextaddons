@@ -29,6 +29,7 @@ public:
 
     void selectNextChat(Direction direction = Direction::Down);
 
+    [[nodiscard]] TextAutoGenerateHistorySortFilterProxyModel *filterModel() const;
 Q_SIGNALS:
     void switchToChat(const QByteArray &uuid);
 
