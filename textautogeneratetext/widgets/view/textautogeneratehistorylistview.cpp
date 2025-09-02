@@ -190,6 +190,11 @@ void TextAutoGenerateHistoryListView::slotSearchTextChanged(const QString &str)
     mHistoryProxyModel->setFilterFixedString(str);
 }
 
+void TextAutoGenerateHistoryListView::selectNextChat(Direction direction)
+{
+    // TODO
+}
+
 void TextAutoGenerateHistoryListView::paintEvent(QPaintEvent *event)
 {
     if (mHistoryProxyModel->rowCount() == 0 && mHistoryProxyModel->showArchived()) {

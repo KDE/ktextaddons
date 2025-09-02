@@ -18,10 +18,16 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListView : public
 {
     Q_OBJECT
 public:
+    enum class Direction : uint8_t {
+        Up,
+        Down,
+    };
     explicit TextAutoGenerateHistoryListView(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateHistoryListView() override;
 
     void slotSearchTextChanged(const QString &str);
+
+    void selectNextChat(Direction direction = Direction::Down);
 
 Q_SIGNALS:
     void switchToChat(const QByteArray &uuid);

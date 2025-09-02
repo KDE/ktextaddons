@@ -43,7 +43,23 @@ TextAutoGenerateHistoryWidget::TextAutoGenerateHistoryWidget(TextAutoGenerateTex
     connect(searchRoomAction, &QAction::triggered, this, [this]() {
         mSearchLineEdit->setFocus();
     });
-    addAction(searchRoomAction); // TODO: Add to MainWindow's action collection instead?
+    addAction(searchRoomAction);
+
+    auto previousRoomAction = new QAction(i18nc("@action", "Previous Chat"), this);
+    previousRoomAction->setShortcut(Qt::CTRL | Qt::Key_Up);
+    connect(previousRoomAction, &QAction::triggered, this, [this]() {
+        mTextAutoGenerateHistoryListView->selectNextChat(TextAutoGenerateHistoryListView::Direction::Up);
+        mSearchLineEdit->clear();
+    });
+    addAction(previousRoomAction);
+
+    auto nextRoomAction = new QAction(i18nc("@action", "Next Chat"), this);
+    nextRoomAction->setShortcut(Qt::CTRL | Qt::Key_Down);
+    connect(nextRoomAction, &QAction::triggered, this, [this]() {
+        mTextAutoGenerateHistoryListView->selectNextChat(TextAutoGenerateHistoryListView::Direction::Down);
+        mSearchLineEdit->clear();
+    });
+    addAction(nextRoomAction);
 }
 
 TextAutoGenerateHistoryWidget::~TextAutoGenerateHistoryWidget() = default;
