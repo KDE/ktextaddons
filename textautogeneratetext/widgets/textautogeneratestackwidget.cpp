@@ -89,11 +89,15 @@ void TextAutoGenerateStackWidget::slotNeedToAddInstances()
 void TextAutoGenerateStackWidget::setBrokenEngine(bool state, const QString &errorMessage)
 {
     if (state) {
-        mTextAutoGenerateNotWorkingWidget->setMessageError(errorMessage);
-        mStackedWidget->setCurrentWidget(mTextAutoGenerateNotWorkingWidget);
+        if (mStackedWidget->currentWidget() != mTextAutoGenerateNotWorkingWidget) {
+            mTextAutoGenerateNotWorkingWidget->setMessageError(errorMessage);
+            mStackedWidget->setCurrentWidget(mTextAutoGenerateNotWorkingWidget);
+        }
     } else {
-        mTextAutoGenerateNotWorkingWidget->clearMessage();
-        mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
+        if (mStackedWidget->currentWidget() != mTextAutoGenerateWidget) {
+            mTextAutoGenerateNotWorkingWidget->clearMessage();
+            mStackedWidget->setCurrentWidget(mTextAutoGenerateWidget);
+        }
     }
 }
 
