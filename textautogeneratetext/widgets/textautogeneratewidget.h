@@ -37,6 +37,7 @@ Q_SIGNALS:
     void pluginBroken(const QString &msg);
     void stopEditingMode(const QByteArray &uuid);
     void needToAddInstances();
+    void pluginInitialized();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();

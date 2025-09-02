@@ -102,6 +102,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::pluginsInitializedDone, this, [this]() {
             slotInitializeDone();
             mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
+            Q_EMIT pluginInitialized();
         });
     }
     readConfig();
