@@ -22,6 +22,19 @@ void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
 
     const TextAutoGenerateText::TextAutoGenerateChatSettings settings;
     QVERIFY(settings.isEmpty());
+    {
+        TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo infoIsValid;
+        QVERIFY(!infoIsValid.isValid());
+        infoIsValid.text = u"bla"_s;
+        QVERIFY(infoIsValid.isValid());
+        infoIsValid.text.clear();
+        QVERIFY(!infoIsValid.isValid());
+        infoIsValid.scrollbarPosition = 5;
+        QVERIFY(infoIsValid.isValid());
+
+        infoIsValid.scrollbarPosition = -1;
+        QVERIFY(!infoIsValid.isValid());
+    }
 }
 
 void TextAutoGenerateChatSettingsTest::shouldAddInfos()
