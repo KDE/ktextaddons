@@ -29,6 +29,7 @@ public:
     void setScrollbarPosition(int position);
     void scrollToBottom();
 
+    [[nodiscard]] int scrollbarPositionMaximum() const;
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);
     void cancelRequested(const QByteArray &uuid);

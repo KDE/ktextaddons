@@ -45,6 +45,11 @@ int TextAutoGenerateResultWidget::scrollbarPosition() const
     return mTextAutoGenerateListView->verticalScrollBar()->value();
 }
 
+int TextAutoGenerateResultWidget::scrollbarPositionMaximum() const
+{
+    return mTextAutoGenerateListView->verticalScrollBar()->maximum();
+}
+
 void TextAutoGenerateResultWidget::setScrollbarPosition(int position)
 {
     mTextAutoGenerateListView->verticalScrollBar()->setValue(position);

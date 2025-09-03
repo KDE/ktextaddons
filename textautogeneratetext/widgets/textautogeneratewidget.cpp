@@ -88,11 +88,17 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     connect(this, &TextAutoGenerateWidget::stopEditingMode, mTextAutoGenerateResultWidget, &TextAutoGenerateResultWidget::editingFinished);
     if (mManager) {
         connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, [this](const QByteArray &chatId) {
-            const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingSave{
-                .text = mTextAutoGenerateTextLineEditWidget->text(),
-                .scrollbarPosition = mTextAutoGenerateResultWidget->scrollbarPosition(),
-            };
-            mManager->textAutoGenerateChatSettings()->add(mManager->currentChatId(), chatSettingSave);
+            const QString text = mTextAutoGenerateTextLineEditWidget->text();
+            const int position = mTextAutoGenerateResultWidget->scrollbarPosition();
+            if (text.isEmpty() && (position == mTextAutoGenerateResultWidget->scrollbarPositionMaximum())) {
+                mManager->textAutoGenerateChatSettings()->remove(mManager->currentChatId());
+            } else {
+                const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingSave{
+                    .text = mTextAutoGenerateTextLineEditWidget->text(),
+                    .scrollbarPosition = mTextAutoGenerateResultWidget->scrollbarPosition(),
+                };
+                mManager->textAutoGenerateChatSettings()->add(mManager->currentChatId(), chatSettingSave);
+            }
             mManager->setCurrentChatId(chatId);
             const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingRestore = mManager->textAutoGenerateChatSettings()->value(chatId);
             if (chatSettingRestore.isValid()) {
