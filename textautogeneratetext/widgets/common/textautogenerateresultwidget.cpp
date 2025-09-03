@@ -5,7 +5,7 @@
 */
 
 #include "textautogenerateresultwidget.h"
-#include <qscrollbar.h>
+#include <QScrollBar>
 using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/view/textautogeneratelistview.h"
