@@ -43,6 +43,16 @@ void TextAutoGenerateChatSettingsTest::shouldAddInfos()
         settings.add("foo2"_ba, info);
     }
     QCOMPARE(settings.count(), 2);
+    settings.remove("foo2"_ba);
+    QVERIFY(!settings.isEmpty());
+
+    // Unknown
+    settings.remove("foo5"_ba);
+    QVERIFY(!settings.isEmpty());
+    QCOMPARE(settings.count(), 1);
+
+    settings.remove("foo1"_ba);
+    QVERIFY(settings.isEmpty());
 }
 
 #include "moc_textautogeneratechatsettingstest.cpp"
