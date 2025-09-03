@@ -162,8 +162,21 @@ void RichTextQuickTextFormat::updateActions()
     }
 }
 
+bool RichTextQuickTextFormat::enabled() const
+{
+    return mEnabled;
+}
+
+void RichTextQuickTextFormat::setEnabled(bool newEnabled)
+{
+    mEnabled = newEnabled;
+}
+
 void RichTextQuickTextFormat::updatePosition()
 {
+    if (!mEnabled) {
+        return;
+    }
     if (mEditor->textCursor().hasSelection()) {
         const QRect cursorRect = mEditor->cursorRect();
         const QPoint globalPos = mEditor->viewport()->mapToGlobal(cursorRect.topLeft());
@@ -176,20 +189,22 @@ void RichTextQuickTextFormat::updatePosition()
 
 bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
 {
-    if (watched == mEditor->viewport()) {
-        if (event->type() == QEvent::Move || event->type() == QEvent::Resize) {
-            if (isVisible()) {
-                if (mUpdatePositionTimer->isActive()) {
-                    mUpdatePositionTimer->stop();
+    if (mEnabled) {
+        if (watched == mEditor->viewport()) {
+            if (event->type() == QEvent::Move || event->type() == QEvent::Resize) {
+                if (isVisible()) {
+                    if (mUpdatePositionTimer->isActive()) {
+                        mUpdatePositionTimer->stop();
+                    }
+                    mUpdatePositionTimer->start();
                 }
-                mUpdatePositionTimer->start();
-            }
-        } else if (event->type() == QEvent::WindowDeactivate) {
-            if (isVisible()) {
-                if (mUpdatePositionTimer->isActive()) {
-                    mUpdatePositionTimer->stop();
+            } else if (event->type() == QEvent::WindowDeactivate) {
+                if (isVisible()) {
+                    if (mUpdatePositionTimer->isActive()) {
+                        mUpdatePositionTimer->stop();
+                    }
+                    hide();
                 }
-                hide();
             }
         }
     }

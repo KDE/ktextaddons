@@ -37,6 +37,9 @@ public:
     [[nodiscard]] QuickTextFormatTypes formatTypes() const;
     void setFormatTypes(const QuickTextFormatTypes &newFormatTypes);
 
+    [[nodiscard]] bool enabled() const;
+    void setEnabled(bool newEnabled);
+
 Q_SIGNALS:
     void quickTextFormatRequested(TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type);
 
@@ -51,5 +54,6 @@ private:
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;
     QHBoxLayout *const mMainLayout;
+    bool mEnabled = true;
 };
 }
