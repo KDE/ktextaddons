@@ -64,6 +64,14 @@ void TextAutoGeneratePluginTextUtils::savePluginSettings(const QString &groupNam
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup grp = config->group(groupName);
-    grp.writeEntry(u"%1Enabled"_s.arg(prefixSettingKey), enabledPluginsList);
-    grp.writeEntry(u"%1Disabled"_s.arg(prefixSettingKey), disabledPluginsList);
+    if (enabledPluginsList.isEmpty()) {
+        grp.deleteEntry(u"%1Enabled"_s.arg(prefixSettingKey));
+    } else {
+        grp.writeEntry(u"%1Enabled"_s.arg(prefixSettingKey), enabledPluginsList);
+    }
+    if (disabledPluginsList.isEmpty()) {
+        grp.deleteEntry(u"%1Disabled"_s.arg(prefixSettingKey));
+    } else {
+        grp.writeEntry(u"%1Disabled"_s.arg(prefixSettingKey), disabledPluginsList);
+    }
 }
