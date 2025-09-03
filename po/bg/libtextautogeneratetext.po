@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-03 00:42+0000\n"
 "PO-Revision-Date: 2025-07-28 17:40+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2266,13 +2266,27 @@ msgctxt "@action"
 msgid "Search Channels"
 msgstr ""
 
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Previous Chat"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@action"
+msgid "Next Chat"
+msgstr "Нов чат"
+
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Търсене"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:107
 #, kde-format
 msgid "No plugin found."
 msgstr "Не е намерен плъгин."
@@ -2366,7 +2380,7 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Премахване на дискусията"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:196
+#: widgets/view/textautogeneratehistorylistview.cpp:252
 #, kde-format
 msgid "No Archive Found."
 msgstr "Не е намерен архив."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-03 00:42+0000\n"
 "PO-Revision-Date: 2025-09-01 10:01+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2263,13 +2263,27 @@ msgctxt "@action"
 msgid "Search Channels"
 msgstr "Išči kanale"
 
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Previous Chat"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@action"
+msgid "Next Chat"
+msgstr "Novi klepet"
+
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Išči"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:107
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
@@ -2363,7 +2377,7 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Odstrani razpravo"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:196
+#: widgets/view/textautogeneratehistorylistview.cpp:252
 #, kde-format
 msgid "No Archive Found."
 msgstr "Ni najdenega arhiva."

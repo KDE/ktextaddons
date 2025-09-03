@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-03 00:42+0000\n"
 "PO-Revision-Date: 2025-09-01 04:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2288,13 +2288,27 @@ msgctxt "@action"
 msgid "Search Channels"
 msgstr "Buscar canales"
 
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Previous Chat"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@action"
+msgid "Next Chat"
+msgstr "Nueva charla"
+
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:107
 #, kde-format
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
@@ -2388,7 +2402,7 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Eliminar discusión"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:196
+#: widgets/view/textautogeneratehistorylistview.cpp:252
 #, kde-format
 msgid "No Archive Found."
 msgstr "No se ha encontrado ningún archivo."

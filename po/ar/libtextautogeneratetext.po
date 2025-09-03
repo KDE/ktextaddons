@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-03 00:42+0000\n"
 "PO-Revision-Date: 2025-09-01 19:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2192,13 +2192,27 @@ msgctxt "@action"
 msgid "Search Channels"
 msgstr "ابحث القنوات"
 
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Previous Chat"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@action"
+msgid "Next Chat"
+msgstr "دردشة جديدة"
+
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "ابحث"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:107
 #, kde-format
 msgid "No plugin found."
 msgstr "لم يعثر على ملحق."
@@ -2292,7 +2306,7 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "أزل المناقة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:196
+#: widgets/view/textautogeneratehistorylistview.cpp:252
 #, kde-format
 msgid "No Archive Found."
 msgstr "لم يعثر على أرشيف."

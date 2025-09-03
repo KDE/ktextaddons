@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-03 00:42+0000\n"
 "PO-Revision-Date: 2025-06-22 08:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1966,13 +1966,27 @@ msgctxt "@action"
 msgid "Search Channels"
 msgstr ""
 
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Previous Chat"
+msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@action"
+msgid "Next Chat"
+msgstr "Nowa rozmowa"
+
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Search"
 msgstr "Poszukaj"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:107
 #, kde-format
 msgid "No plugin found."
 msgstr "Nie znaleziono żadnej wtyczki."
@@ -2072,7 +2086,7 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "Usuń rozmowę"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:196
+#: widgets/view/textautogeneratehistorylistview.cpp:252
 #, fuzzy, kde-format
 #| msgid "No Messages Found."
 msgid "No Archive Found."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
-"PO-Revision-Date: 2025-08-29 05:47+0200\n"
+"POT-Creation-Date: 2025-09-03 00:42+0000\n"
+"PO-Revision-Date: 2025-09-02 04:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2259,18 +2259,30 @@ msgid "Favorite"
 msgstr "რჩეული"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "ძებნა…"
+msgstr "ძებნა… (%1)"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Search Channels"
+msgstr "არხების ძებნა"
+
+#: widgets/textautogeneratehistorywidget.cpp:48
+#, kde-format
+msgctxt "@action"
+msgid "Previous Chat"
 msgstr ""
+
+#: widgets/textautogeneratehistorywidget.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@action"
+msgid "Next Chat"
+msgstr "ახალი ჩატი"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2278,7 +2290,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:94
+#: widgets/textautogeneratewidget.cpp:107
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
@@ -2372,7 +2384,7 @@ msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "კამათის წაშლა"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:196
+#: widgets/view/textautogeneratehistorylistview.cpp:252
 #, kde-format
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
