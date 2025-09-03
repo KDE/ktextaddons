@@ -28,6 +28,7 @@ public:
     [[nodiscard]] PendingTypedInfo value(const QByteArray &chatId);
 
     [[nodiscard]] bool isEmpty() const;
+    [[nodiscard]] int count() const;
 
 private:
     QMap<QByteArray /*ChatId*/, PendingTypedInfo> mPendingTypedTexts;

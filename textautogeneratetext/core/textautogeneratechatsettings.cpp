@@ -31,6 +31,11 @@ bool TextAutoGenerateChatSettings::isEmpty() const
     return mPendingTypedTexts.isEmpty();
 }
 
+int TextAutoGenerateChatSettings::count() const
+{
+    return mPendingTypedTexts.count();
+}
+
 bool TextAutoGenerateChatSettings::PendingTypedInfo::isValid() const
 {
     return !text.isEmpty() && (scrollbarPosition != -1);
