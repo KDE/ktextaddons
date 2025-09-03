@@ -172,6 +172,11 @@ void TextAutoGenerateManager::createNewChat(const QString &title)
     if (mSaveInDatabase) {
         mDatabaseManager->insertOrUpdateChat(chat);
     }
+    switchToChatId(chatId);
+}
+
+void TextAutoGenerateManager::switchToChatId(const QByteArray &chatId)
+{
     if (!mPluginWasInitialized) {
         mSwitchToChatId = chatId;
     } else {

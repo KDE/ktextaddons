@@ -108,6 +108,7 @@ public:
     void resetCurrentChatId();
 
     void saveCurrentChatInDataBase(const QByteArray &chatId);
+    void switchToChatId(const QByteArray &chatId);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
