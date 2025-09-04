@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 03:03+0000\n"
-"PO-Revision-Date: 2025-08-07 12:33+0100\n"
+"PO-Revision-Date: 2025-09-03 22:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
 msgid "New Chat..."
-msgstr "Nueva charla…"
+msgstr "Nueva conversación…"
 
 #: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
@@ -2176,7 +2176,7 @@ msgstr "Buscar…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "Nueva charla"
+msgstr "Nueva conversación"
 
 #: widgets/textautogenerateheaderwidget.cpp:53
 #, kde-format
@@ -2223,7 +2223,7 @@ msgstr "Seleccionar todo"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "Nueva charla"
+msgstr "Nueva conversación"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:129
 #, kde-format
