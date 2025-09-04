@@ -156,7 +156,7 @@ void TextAutoGenerateWidget::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), u"TextAutoGenerateWidget"_s);
     group.writeEntry("mainSplitter", mSplitter->sizes());
-    if (!mManager->currentChatId().isEmpty()) {
+    if (mManager && !mManager->currentChatId().isEmpty()) {
         group.writeEntry("currentChatId", mManager->currentChatId());
     }
 }
@@ -167,7 +167,9 @@ void TextAutoGenerateWidget::readConfig()
     const QList<int> size = {100, 400};
 
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
-    mManager->switchToChatId(group.readEntry("currentChatId", QByteArray()));
+    if (mManager) {
+        mManager->switchToChatId(group.readEntry("currentChatId", QByteArray()));
+    }
 }
 
 QString TextAutoGenerateWidget::textLineEdit() const
