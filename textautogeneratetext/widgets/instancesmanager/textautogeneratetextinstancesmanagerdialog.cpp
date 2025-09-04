@@ -14,7 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <qwindow.h>
+#include <QWindow>
 namespace
 {
 const char myTextAutoGenerateTextInstancesManagerDialogGroupName[] = "TextAutoGenerateTextInstancesManagerDialog";

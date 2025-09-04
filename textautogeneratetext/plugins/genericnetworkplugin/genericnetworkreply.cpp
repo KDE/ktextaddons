@@ -6,8 +6,8 @@
 #include "genericnetworkreply.h"
 #include "autogeneratetext_genericnetwork_debug.h"
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QNetworkReply>
-#include <qjsonobject.h>
 
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent)

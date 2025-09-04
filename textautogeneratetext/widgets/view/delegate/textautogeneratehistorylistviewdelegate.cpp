@@ -7,11 +7,11 @@
 #include "textautogeneratehistorylistviewdelegate.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include <QAbstractItemView>
+#include <QApplication>
 #include <QHelpEvent>
 #include <QLineEdit>
+#include <QPainter>
 #include <QToolTip>
-#include <qapplication.h>
-#include <qpainter.h>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateHistoryListViewDelegate::TextAutoGenerateHistoryListViewDelegate(QObject *parent)

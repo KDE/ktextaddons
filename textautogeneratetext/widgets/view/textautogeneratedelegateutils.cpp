@@ -8,11 +8,11 @@
 
 #include "textautogeneratelistviewtextselection.h"
 
+#include <QAbstractTextDocumentLayout>
 #include <QClipboard>
 #include <QTextDocument>
 #include <QTextFormat>
 #include <QTextStream>
-#include <qabstracttextdocumentlayout.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

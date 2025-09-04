@@ -25,8 +25,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSplitterCollapserButton>
 #include <QKeyEvent>
 #include <QSplitter>
+#include <QTimer>
 #include <QVBoxLayout>
-#include <qtimer.h>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)

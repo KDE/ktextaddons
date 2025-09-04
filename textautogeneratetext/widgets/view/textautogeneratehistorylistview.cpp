@@ -17,7 +17,7 @@
 #include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
-#include <qpainter.h>
+#include <QPainter>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
