@@ -43,5 +43,5 @@ protected:
 
 private:
     OllamaSettings *const mOllamaSettings;
-    OllamaManager *const mManager;
+    OllamaManager *const mOllamaManager;
 };

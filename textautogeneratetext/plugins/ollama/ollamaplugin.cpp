@@ -20,9 +20,9 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
                            QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
     , mOllamaSettings(new OllamaSettings)
-    , mManager(new OllamaManager(mOllamaSettings, this))
+    , mOllamaManager(new OllamaManager(mOllamaSettings, this))
 {
-    connect(mManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
+    connect(mOllamaManager, &OllamaManager::modelsLoadDone, this, [this](const OllamaManager::ModelsInfo &modelinfo) {
         if (modelinfo.hasError) {
             setReady(false);
             Q_EMIT errorOccurred(modelinfo.errorOccured);
@@ -32,11 +32,11 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             setReady(true);
         }
     });
-    connect(mManager, &OllamaManager::downloadDone, this, &OllamaPlugin::downloadModelFinished);
+    connect(mOllamaManager, &OllamaManager::downloadDone, this, &OllamaPlugin::downloadModelFinished);
 
     connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
         if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
-            mManager->loadModels();
+            mOllamaManager->loadModels();
         }
     });
 }
@@ -80,7 +80,7 @@ QString OllamaPlugin::translatedPluginName() const
 
 void OllamaPlugin::showConfigureDialog(QWidget *parentWidget)
 {
-    OllamaConfigureDialog d(mManager, parentWidget);
+    OllamaConfigureDialog d(mOllamaManager, parentWidget);
     if (d.exec()) {
         Q_EMIT configChanged();
     }
@@ -96,7 +96,7 @@ void OllamaPlugin::askToAssistant(const QString &msg)
     TextAutoGenerateText::TextAutoGenerateTextRequest req;
     req.setMessage(msg);
     req.setModel(currentModel());
-    auto reply = mManager->getCompletion(req);
+    auto reply = mOllamaManager->getCompletion(req);
     const QByteArray uuid = QUuid::createUuid().toByteArray(QUuid::Id128);
     mConnections.insert(
         reply,
@@ -123,7 +123,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     TextAutoGenerateText::TextAutoGenerateTextRequest req;
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
-    auto reply = mManager->getChatCompletion(req);
+    auto reply = mOllamaManager->getChatCompletion(req);
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;
     mConnections.insert(
