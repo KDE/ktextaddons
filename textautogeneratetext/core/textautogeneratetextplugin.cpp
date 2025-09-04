@@ -43,6 +43,7 @@ TextAutoGenerateTextPlugin::~TextAutoGenerateTextPlugin() = default;
 
 QByteArray TextAutoGenerateTextPlugin::instanceUuid() const
 {
+    qDebug() << " d->instance " << d->instance;
     return d->instance->instanceUuid();
 }
 

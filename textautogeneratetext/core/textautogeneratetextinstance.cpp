@@ -11,6 +11,7 @@ TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;
 
 TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()
 {
+    qDebug() << " TextAutoGenerateTextInstance::~TextAutoGenerateTextInstance()" << this;
     // if (mPlugin) {
     // mPlugin->deleteLater();
     // mPlugin = nullptr;
