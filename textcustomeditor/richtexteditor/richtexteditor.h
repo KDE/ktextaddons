@@ -43,6 +43,7 @@ public:
         AllowTab = 8,
         AllowWebShortcut = 16,
         Emoji = 32,
+        QuickTextFormat = 64,
     };
     Q_DECLARE_FLAGS(SupportFeatures, SupportFeature)
 
@@ -92,6 +93,8 @@ public:
     void setEmojiSupport(bool b);
     [[nodiscard]] bool emojiSupport() const;
 
+    [[nodiscard]] bool quickTextFormat() const;
+    void setQuickTextFormat(bool b);
 public Q_SLOTS:
     void slotDisplayMessageIndicator(const QString &message);
     void slotSpeakText();

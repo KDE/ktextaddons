@@ -26,6 +26,7 @@ void RichTextEditorTest::shouldHaveDefaultValue()
     QCOMPARE(editor.allowTabSupport(), true);
     QCOMPARE(editor.webShortcutSupport(), true);
     QCOMPARE(editor.emojiSupport(), false);
+    QCOMPARE(editor.quickTextFormat(), false);
 }
 
 void RichTextEditorTest::shouldChangeSpellCheckValue()
@@ -60,6 +61,9 @@ void RichTextEditorTest::shouldChangeSpellCheckValue()
 
     editor.setWebShortcutSupport(true);
     QCOMPARE(editor.webShortcutSupport(), true);
+
+    editor.setQuickTextFormat(true);
+    QCOMPARE(editor.quickTextFormat(), true);
 }
 
 QTEST_MAIN(RichTextEditorTest)

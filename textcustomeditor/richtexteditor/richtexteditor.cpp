@@ -378,6 +378,20 @@ bool RichTextEditor::searchSupport() const
     return d->supportFeatures & Search;
 }
 
+bool RichTextEditor::quickTextFormat() const
+{
+    return d->supportFeatures & QuickTextFormat;
+}
+
+void RichTextEditor::setQuickTextFormat(bool b)
+{
+    if (b) {
+        d->supportFeatures |= QuickTextFormat;
+    } else {
+        d->supportFeatures = (d->supportFeatures & ~QuickTextFormat);
+    }
+}
+
 void RichTextEditor::setAllowTabSupport(bool b)
 {
     if (b) {
