@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-01 08:01+0300\n"
+"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"PO-Revision-Date: 2025-09-03 11:11+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -330,7 +330,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "נא למלא שם של מודל בתור „name:tag” (שם:תגית)"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2174,15 +2174,13 @@ msgstr "חיפוש ערוצים"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "השיחה הקודמת"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "שיחה חדש"
+msgstr "השיחה הבאה"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2190,30 +2188,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "חיפוש"
 
-#: widgets/textautogeneratewidget.cpp:107
+#: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "עריכה…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "הסרה"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

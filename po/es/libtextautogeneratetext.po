@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-01 04:06+0100\n"
+"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"PO-Revision-Date: 2025-09-03 22:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
 msgid "New Chat..."
-msgstr "Nueva charla…"
+msgstr "Nueva conversación…"
 
 #: core/models/textautogeneratechatsmodel.cpp:150
 #, kde-format
@@ -331,7 +331,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Introduzca el nombre del modelo como «nombre:etiqueta»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2268,7 +2268,7 @@ msgstr "Buscar…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "Nueva charla"
+msgstr "Nueva conversación"
 
 #: widgets/textautogenerateheaderwidget.cpp:53
 #, kde-format
@@ -2292,15 +2292,13 @@ msgstr "Buscar canales"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "Conversación anterior"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "Nueva charla"
+msgstr "Conversación siguiente"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2308,30 +2306,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Buscar"
 
-#: widgets/textautogeneratewidget.cpp:107
+#: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Editar…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Eliminar"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Copiar"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
@@ -2365,7 +2363,7 @@ msgstr "Seleccionar todo"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "Nueva charla"
+msgstr "Nueva conversación"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format

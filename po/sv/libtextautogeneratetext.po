@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:42+0000\n"
+"POT-Creation-Date: 2025-09-04 00:41+0000\n"
 "PO-Revision-Date: 2025-09-01 19:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Ange modellnamn som \"namn:etikett\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2289,30 +2289,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Sök"
 
-#: widgets/textautogeneratewidget.cpp:107
+#: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
 msgstr "Inga insticksprogram hittades."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Redigera…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Ta bort"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiera"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

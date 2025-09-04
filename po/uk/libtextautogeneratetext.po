@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-01 08:35+0300\n"
+"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"PO-Revision-Date: 2025-09-03 18:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -331,7 +331,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2278,15 +2278,13 @@ msgstr "Пошук каналів"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "Попереднє спілкування"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "Нове спілкування"
+msgstr "Наступне спілкування"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2294,30 +2292,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Пошук"
 
-#: widgets/textautogeneratewidget.cpp:107
+#: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
 msgstr "Не знайдено додатка."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Вилучити"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

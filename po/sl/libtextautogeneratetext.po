@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-01 10:01+0200\n"
+"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"PO-Revision-Date: 2025-09-03 07:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -330,7 +330,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Vnesite ime modela kot \"ime:značka\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2267,12 +2267,10 @@ msgstr "Išči kanale"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "Prejšnji klepet"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
 msgstr "Novi klepet"
@@ -2283,30 +2281,30 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Išči"
 
-#: widgets/textautogeneratewidget.cpp:107
+#: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Odstrani"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

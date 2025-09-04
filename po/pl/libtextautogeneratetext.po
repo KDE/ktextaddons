@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:42+0000\n"
+"POT-Creation-Date: 2025-09-04 00:41+0000\n"
 "PO-Revision-Date: 2025-06-22 08:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -330,7 +330,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Wpisz nazwę modelu jako \"nazwa:znacznik\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:388
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1986,12 +1986,12 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Poszukaj"
 
-#: widgets/textautogeneratewidget.cpp:107
+#: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
 msgstr "Nie znaleziono żadnej wtyczki."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:376
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Edit…"
@@ -1999,7 +1999,7 @@ msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Edytuj…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:380
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove"
@@ -2007,13 +2007,13 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Usuń"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:384
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:392
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

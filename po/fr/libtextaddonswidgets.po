@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-31 00:41+0000\n"
-"PO-Revision-Date: 2024-07-14 10:33+0200\n"
+"PO-Revision-Date: 2025-09-02 14:39+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,51 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Italique"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
-msgstr ""
+msgstr "Barré"
 
 #: richtextquicktextformat.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "Souligné"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
-msgstr ""
+msgstr "Bloc de code"
 
 #: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
-msgstr ""
+msgstr "Texte de citation"
 
 #: richtextquicktextformat.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Insert"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr "Insérer"
+msgstr "Insérer un lien"
 
 #: selectspecialchardialog.cpp:34
 #, kde-format
