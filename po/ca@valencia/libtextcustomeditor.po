@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-05 00:41+0000\n"
 "PO-Revision-Date: 2025-08-26 09:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -53,13 +53,13 @@ msgid "Speak Text"
 msgstr "Llig el text"
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:494
+#: richtexteditor/richtexteditor.cpp:508
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "No hi ha res que s'haja de verificar ortogràficament."
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:512
+#: richtexteditor/richtexteditor.cpp:526
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
@@ -69,7 +69,7 @@ msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
 msgid "Allow Tabulations"
 msgstr "Permet les tabulacions"
 
-#: richtexteditor/richtexteditor.cpp:504
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -78,13 +78,13 @@ msgstr ""
 "No hi ha disponible cap dorsal per a la verificació ortogràfica. Voleu "
 "enviar el correu igualment?"
 
-#: richtexteditor/richtexteditor.cpp:506
+#: richtexteditor/richtexteditor.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Envia"
 
-#: richtexteditor/richtexteditor.cpp:528
+#: richtexteditor/richtexteditor.cpp:542
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

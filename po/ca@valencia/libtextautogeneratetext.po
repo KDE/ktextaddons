@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 00:41+0000\n"
-"PO-Revision-Date: 2025-09-01 11:02+0200\n"
+"POT-Creation-Date: 2025-09-05 00:41+0000\n"
+"PO-Revision-Date: 2025-09-03 10:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -135,12 +135,12 @@ msgstr ""
 "Eres un assistent d'IA. Estàs parlant amb una persona anomenada %1. Sigues "
 "útil, professional i cortès. No dones informació inexacta."
 
-#: core/textautogeneratetextplugin.cpp:239
+#: core/textautogeneratetextplugin.cpp:240
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:242
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
@@ -2289,12 +2289,10 @@ msgstr "Busca canals"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "Xat anterior"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
 msgstr "Xat nou"

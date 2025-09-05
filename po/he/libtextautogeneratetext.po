@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"POT-Creation-Date: 2025-09-05 00:41+0000\n"
 "PO-Revision-Date: 2025-09-03 11:11+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -133,12 +133,12 @@ msgstr ""
 "אתה מסייע בינה מלאכותית. אתה מדבר עם בן או בת אדם בשם %1. נא להיות מועיל, "
 "מקצועי ואדיב. לא לספק מידע לא מדויק."
 
-#: core/textautogeneratetextplugin.cpp:239
+#: core/textautogeneratetextplugin.cpp:240
 #, kde-format
 msgid "Local"
 msgstr "מקומי"
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:242
 #, kde-format
 msgid "Network"
 msgstr "רשת"

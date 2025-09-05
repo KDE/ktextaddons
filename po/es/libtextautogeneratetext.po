@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"POT-Creation-Date: 2025-09-05 00:41+0000\n"
 "PO-Revision-Date: 2025-09-03 22:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -134,12 +134,12 @@ msgstr ""
 "Eres un asistente de IA. Estás hablando con una persona llamada %1. Sé de "
 "utilidad, profesional y cortés. No proporciones información inexacta."
 
-#: core/textautogeneratetextplugin.cpp:239
+#: core/textautogeneratetextplugin.cpp:240
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:242
 #, kde-format
 msgid "Network"
 msgstr "Red"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-04 00:41+0000\n"
+"POT-Creation-Date: 2025-09-05 00:41+0000\n"
 "PO-Revision-Date: 2025-08-22 11:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -136,12 +136,12 @@ msgstr ""
 "Mesedez, izan zaitez lagungarria, profesionala, eta adeitsua. Ez eman "
 "zehatza ez den informaziorik."
 
-#: core/textautogeneratetextplugin.cpp:239
+#: core/textautogeneratetextplugin.cpp:240
 #, kde-format
 msgid "Local"
 msgstr "Lokala"
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:242
 #, kde-format
 msgid "Network"
 msgstr "Sarea"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-09-05 00:41+0000\n"
 "PO-Revision-Date: 2024-10-16 20:54+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -51,13 +51,13 @@ msgid "Speak Text"
 msgstr "Puhu teksti"
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:494
+#: richtexteditor/richtexteditor.cpp:508
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ei mitään tarkistettavaa."
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:512
+#: richtexteditor/richtexteditor.cpp:526
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Oikolukutaustajärjestelmää ei ole käytettävissä."
@@ -67,7 +67,7 @@ msgstr "Oikolukutaustajärjestelmää ei ole käytettävissä."
 msgid "Allow Tabulations"
 msgstr "Salli sarkaimet"
 
-#: richtexteditor/richtexteditor.cpp:504
+#: richtexteditor/richtexteditor.cpp:518
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,13 +76,13 @@ msgstr ""
 "Oikolukutaustajärjestelmää ei ole käytettävissä. Haluatko silti lähettää "
 "sähköpostin?"
 
-#: richtexteditor/richtexteditor.cpp:506
+#: richtexteditor/richtexteditor.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Lähetä"
 
-#: richtexteditor/richtexteditor.cpp:528
+#: richtexteditor/richtexteditor.cpp:542
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
