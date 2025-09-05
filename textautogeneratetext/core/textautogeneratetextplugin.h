@@ -6,11 +6,11 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <KConfigGroup>
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QObject>
-#include <kconfiggroup.h>
 #include <memory>
 namespace TextAutoGenerateText
 {
