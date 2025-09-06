@@ -23,7 +23,7 @@ OllamaModelDownloadWidgetTest::OllamaModelDownloadWidgetTest(QObject *parent)
 void OllamaModelDownloadWidgetTest::shouldHaveDefaultValues()
 {
     OllamaModelDownloadWidget w(QString{}, QString{}, false);
-    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
+    // auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     // QVERIFY(mainLayout);
     //  QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
