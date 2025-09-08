@@ -85,6 +85,8 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         painter->restore();
         draw(painter, layout, index, option);
     }
+    // TODO use helper
+
     drawDateAndIcons(painter, index, option, layout);
     drawInProgressIndicator(painter, index, option, layout);
     /*
