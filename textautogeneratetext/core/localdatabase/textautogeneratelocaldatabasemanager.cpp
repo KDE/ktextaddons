@@ -28,6 +28,16 @@ QList<TextAutoGenerateChat> TextAutoGenerateLocalDatabaseManager::loadChats() co
     return mChatsDatabase->loadChats();
 }
 
+QStringList TextAutoGenerateLocalDatabaseManager::chatsList() const
+{
+    QStringList lst;
+    const QList<TextAutoGenerateChat> chats = loadChats();
+    for (const auto &chat : chats) {
+        lst.append(chat.title());
+    }
+    return lst;
+}
+
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalDatabaseManager::searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText)
 {
     QList<TextAutoGenerateSearchMessage> lst;

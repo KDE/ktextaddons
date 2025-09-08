@@ -30,6 +30,8 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;
 
+    [[nodiscard]] QStringList chatsList() const;
+
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText);
 
 private:

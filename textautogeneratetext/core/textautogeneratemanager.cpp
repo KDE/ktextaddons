@@ -46,7 +46,6 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 {
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
-
     new TextAutoGenerateManagerAdaptor(this);
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -182,6 +181,11 @@ void TextAutoGenerateManager::switchToChatId(const QByteArray &chatId)
     } else {
         setCurrentChatId(chatId);
     }
+}
+
+QStringList TextAutoGenerateManager::chatsList() const
+{
+    return mDatabaseManager->chatsList();
 }
 
 void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content)
