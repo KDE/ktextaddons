@@ -90,7 +90,7 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
     // TODO use helper
     if (auto att = message->messageAttachment(); att) {
         const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(att);
-        // TODO
+        helper->draw(painter, {}, index, option);
     }
 
     drawDateAndIcons(painter, index, option, layout);
