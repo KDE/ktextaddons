@@ -87,7 +87,7 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         painter->restore();
         draw(painter, layout, index, option);
     }
-    // TODO use helper
+
     if (auto att = message->messageAttachment(); att) {
         const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(att);
         helper->draw(painter, {}, index, option);
