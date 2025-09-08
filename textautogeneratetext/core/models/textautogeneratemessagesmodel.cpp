@@ -33,8 +33,10 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
     }
     const auto &messageElement = mMessages[index.row()];
     switch (role) {
+    case MessagePointer:
+        return QVariant::fromValue(&messageElement);
     case Qt::DisplayRole:
-    case MessageRole:
+    case MessageHtmlGeneratedRole:
         return messageElement.htmlGenerated();
     case OriginalMessageRole:
         return messageElement.content();
