@@ -236,7 +236,7 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
         connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &TextAutoGenerateListView::maybeScrollToBottom);
 
         connect(newModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &topLeft, const QModelIndex &, const QList<int> &roles) {
-            if (roles.contains(TextAutoGenerateMessagesModel::MessageRole) || roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
+            if (roles.contains(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole) || roles.contains(TextAutoGenerateMessagesModel::FinishedRole)) {
                 const QByteArray uuid = topLeft.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
                 if (!uuid.isEmpty()) {
                     mDelegate->removeMessageCache(uuid);

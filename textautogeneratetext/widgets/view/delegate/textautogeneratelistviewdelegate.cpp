@@ -416,7 +416,7 @@ QTextDocument *TextAutoGenerateListViewDelegate::documentForIndex(const QModelIn
         return ret;
     }
 
-    const QString text = index.data(TextAutoGenerateMessagesModel::MessageRole).toString();
+    const QString text = index.data(TextAutoGenerateMessagesModel::MessageHtmlGeneratedRole).toString();
     if (text.isEmpty()) {
         return nullptr;
     }

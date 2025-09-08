@@ -166,7 +166,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };
-        emitChanged(i, {MessageRole});
+        emitChanged(i, {MessageHtmlGeneratedRole});
 
         auto matchesAnswerUuid = [&](const TextAutoGenerateMessage &msg) {
             return msg.uuid() == answerUuid;
@@ -177,7 +177,7 @@ QByteArray TextAutoGenerateMessagesModel::editMessage(const QByteArray &uuid, co
             (*answerIt).setInProgress(true);
             (*answerIt).setContent({});
             (*answerIt).setDateTime(dt);
-            emitChanged(idx, {MessageRole | FinishedRole});
+            emitChanged(idx, {MessageHtmlGeneratedRole | FinishedRole});
         }
         return answerUuid;
     }
@@ -200,7 +200,7 @@ void TextAutoGenerateMessagesModel::changeInProgress(const QByteArray &uuid, boo
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };
-        emitChanged(i, {MessageRole | FinishedRole});
+        emitChanged(i, {MessageHtmlGeneratedRole | FinishedRole});
     }
 }
 
@@ -236,7 +236,7 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid, const
             const QModelIndex index = createIndex(rowNumber, 0);
             Q_EMIT dataChanged(index, index, roles);
         };
-        emitChanged(i, {MessageRole});
+        emitChanged(i, {MessageHtmlGeneratedRole});
     }
 }
 
@@ -288,7 +288,7 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
         msg.setInProgress(value.toBool());
         Q_EMIT dataChanged(idx, idx, {MessageRoles::FinishedRole});
         return true;
-    case MessageRoles::MessageRole:
+    case MessageRoles::MessageHtmlGeneratedRole:
     case MessageRoles::SenderRole:
     case MessageRoles::DateTimeRole:
     case MessageRoles::UuidRole:

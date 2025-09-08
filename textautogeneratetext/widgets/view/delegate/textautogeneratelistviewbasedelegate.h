@@ -15,6 +15,7 @@
 class QListView;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateAttachmentDelegateHelperBase;
 class TextAutoGenerateListViewTextSelection;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewBaseDelegate : public QItemDelegate
 {
@@ -39,6 +40,9 @@ public:
     void selectAll(const QStyleOptionViewItem &option, const QModelIndex &index);
 
     void clearSelection();
+
+    /// @note Ownership is not transferred
+    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper() const;
 
 Q_SIGNALS:
     void updateView(const QModelIndex &index);

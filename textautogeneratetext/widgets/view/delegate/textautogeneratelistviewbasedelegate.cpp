@@ -30,6 +30,28 @@ void TextAutoGenerateListViewBaseDelegate::clearSelection()
     mTextSelection->clear();
 }
 
+TextAutoGenerateAttachmentDelegateHelperBase *TextAutoGenerateListViewBaseDelegate::attachmentsHelper() const
+{
+    /*
+    switch (msgAttach.attachmentType()) {
+    case MessageAttachment::AttachmentType::Image:
+        return mHelperAttachmentImage.data();
+    case MessageAttachment::AttachmentType::File:
+        return mHelperAttachmentFile.data();
+    case MessageAttachment::AttachmentType::Video:
+        return mHelperAttachmentVideo.data();
+    case MessageAttachment::AttachmentType::Audio:
+        return mHelperAttachmentSound.data();
+    case MessageAttachment::AttachmentType::NormalText:
+        return mHelperAttachmentText.data();
+    case MessageAttachment::AttachmentType::Unknown:
+        qCWarning(RUQOLAWIDGETS_LOG) << "It's an unknown attachment ! It's a bug for sure";
+        break;
+    }
+    */
+    return nullptr;
+}
+
 void TextAutoGenerateListViewBaseDelegate::clearCache()
 {
     clearSizeHintCache();

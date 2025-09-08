@@ -20,7 +20,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessagesModel : public QAbstra
     Q_OBJECT
 public:
     enum MessageRoles : uint16_t {
-        MessageRole = Qt::UserRole + 1,
+        MessageHtmlGeneratedRole = Qt::UserRole + 1,
         SenderRole,
         FinishedRole,
         DateTimeRole,
@@ -31,6 +31,7 @@ public:
         WaitingAnswerRole,
         ModelInfoRole,
         OriginalMessageRole,
+        MessagePointer,
     };
 
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);
