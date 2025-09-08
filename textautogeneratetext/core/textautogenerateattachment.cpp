@@ -76,7 +76,7 @@ void TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachment &att
 TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonObject &o)
 {
     TextAutoGenerateAttachment *att = new TextAutoGenerateAttachment;
-    att->setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(0)));
+    att->setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(static_cast<int>(AttachmentType::Unknown))));
     att->setMimeType(o["mimetype"_L1].toString().toLatin1());
     att->setBase64(o["base64"_L1].toString().toLatin1());
     return att;
