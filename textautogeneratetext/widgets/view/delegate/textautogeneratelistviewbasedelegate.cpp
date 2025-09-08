@@ -16,6 +16,8 @@ TextAutoGenerateListViewBaseDelegate::TextAutoGenerateListViewBaseDelegate(QList
     : QItemDelegate{view}
     , mListView(view)
     , mTextSelection(new TextAutoGenerateListViewTextSelection(this, this))
+    , mHelperImage(new TextAutoGenerateAttachmentDelegateHelperImage(this))
+    , mHelperFile(new TextAutoGenerateAttachmentDelegateHelperFile(this))
 {
     connect(mTextSelection, &TextAutoGenerateListViewTextSelection::repaintNeeded, this, &TextAutoGenerateListViewBaseDelegate::updateView);
     mSizeHintCache.setMaxEntries(32);
