@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "textautogenerateattachmentdelegatehelperfile.h"
 #include "textautogenerateattachmentdelegatehelperimage.h"
 #include "textautogeneratetext_export.h"
 #include "widgets/view/lrucache.h"
@@ -55,5 +56,6 @@ protected:
     QAbstractItemView *const mListView;
     TextAutoGenerateListViewTextSelection *const mTextSelection;
     QScopedPointer<TextAutoGenerateAttachmentDelegateHelperImage> mHelperImage;
+    QScopedPointer<TextAutoGenerateAttachmentDelegateHelperFile> mHelperFile;
 };
 }
