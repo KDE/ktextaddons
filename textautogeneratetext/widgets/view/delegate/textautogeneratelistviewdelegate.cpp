@@ -53,10 +53,12 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
     drawBackground(painter, option, index);
     painter->restore();
 
+    const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
+
     const MessageLayout layout = doLayout(option, index);
     if (layout.textRect.isValid()) {
         painter->save();
-        const TextAutoGenerateMessage::Sender sender = index.data(TextAutoGenerateMessagesModel::SenderRole).value<TextAutoGenerateMessage::Sender>();
+        const TextAutoGenerateMessage::Sender sender = message->sender();
         const bool isUser = (sender == TextAutoGenerateMessage::Sender::User);
         painter->setPen(QPen(Qt::NoPen));
 
@@ -86,6 +88,10 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
         draw(painter, layout, index, option);
     }
     // TODO use helper
+    if (auto att = message->messageAttachment(); att) {
+        const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(att);
+        // TODO
+    }
 
     drawDateAndIcons(painter, index, option, layout);
     drawInProgressIndicator(painter, index, option, layout);

@@ -11,6 +11,7 @@
 #include <QItemDelegate>
 #include <QScopedPointer>
 #include <QTextDocument>
+#include <TextAutoGenerateText/TextAutoGenerateAttachment>
 #include <memory>
 class QListView;
 namespace TextAutoGenerateText
@@ -42,7 +43,7 @@ public:
     void clearSelection();
 
     /// @note Ownership is not transferred
-    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper() const;
+    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateText::TextAutoGenerateAttachment *att) const;
 
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
