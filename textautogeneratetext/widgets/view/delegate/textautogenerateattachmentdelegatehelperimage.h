@@ -11,6 +11,7 @@
 class QPainter;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateAttachment;
 class TextAutoGenerateAttachmentDelegateHelperImage : public TextAutoGenerateAttachmentDelegateHelperBase
 {
     Q_OBJECT
@@ -19,6 +20,14 @@ public:
     ~TextAutoGenerateAttachmentDelegateHelperImage() override;
 
     void draw(QPainter *painter, QRect attachmentsRect, const QModelIndex &index, const QStyleOptionViewItem &option) const override;
-    [[nodiscard]] QSize sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const override;
+    [[nodiscard]] QSize
+    sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att, const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const override;
+
+private:
+    // TODO implement it
+    struct ImageLayout {
+        QPixmap pixmap;
+        QSize imageSize;
+    };
 };
 }

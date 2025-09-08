@@ -22,7 +22,10 @@ void TextAutoGenerateAttachmentDelegateHelperImage::draw(QPainter *painter,
     // TODO
 }
 
-QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const
+QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att,
+                                                              const QModelIndex &index,
+                                                              int maxWidth,
+                                                              const QStyleOptionViewItem &option) const
 {
     // TODO
     return {};
