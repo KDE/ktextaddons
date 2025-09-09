@@ -27,6 +27,7 @@ QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(TextAutoGenerateTex
                                                              int maxWidth,
                                                              const QStyleOptionViewItem &option) const
 {
+    Q_ASSERT(att);
     // TODO
     return {};
 }
