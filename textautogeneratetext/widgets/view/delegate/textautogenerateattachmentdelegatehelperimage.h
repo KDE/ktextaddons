@@ -28,6 +28,7 @@ private:
     struct ImageLayout {
         QPixmap pixmap;
         QSize imageSize;
+        QString name;
     };
 };
 }

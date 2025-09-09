@@ -18,6 +18,7 @@ void TextAutoGenerateAttachmentTest::shouldHaveDefaultValues()
     const TextAutoGenerateText::TextAutoGenerateAttachment att;
     QVERIFY(att.base64().isEmpty());
     QVERIFY(att.mimeType().isEmpty());
+    QVERIFY(att.name().isEmpty());
     QCOMPARE(att.attachmentType(), TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown);
     QVERIFY(!att.isValid());
 }

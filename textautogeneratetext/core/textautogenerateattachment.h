@@ -49,10 +49,14 @@ public:
     [[nodiscard]] QByteArray mimeType() const;
     void setMimeType(const QByteArray &newMimeType);
 
+    [[nodiscard]] QString name() const;
+    void setName(const QString &newName);
+
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
     QByteArray mBase64;
     QByteArray mMimeType;
+    QString mName;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t);
