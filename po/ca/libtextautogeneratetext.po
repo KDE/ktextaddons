@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:41+0000\n"
+"POT-Creation-Date: 2025-09-09 00:49+0000\n"
 "PO-Revision-Date: 2025-09-03 10:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -55,7 +55,7 @@ msgstr "Més tard"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: core/models/textautogeneratemessagesmodel.cpp:70
+#: core/models/textautogeneratemessagesmodel.cpp:72
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -66,57 +66,57 @@ msgstr ""
 "Model: %2\n"
 "Nom d'instància: %3"
 
-#: core/textautogeneratemanager.cpp:121
+#: core/textautogeneratemanager.cpp:120
 #, kde-format
 msgid "Tools"
 msgstr "Eines"
 
-#: core/textautogeneratemanager.cpp:123
+#: core/textautogeneratemanager.cpp:122
 #, kde-format
 msgid "Small"
 msgstr "Petit"
 
-#: core/textautogeneratemanager.cpp:125
+#: core/textautogeneratemanager.cpp:124
 #, kde-format
 msgid "Medium"
 msgstr "Mitjà"
 
-#: core/textautogeneratemanager.cpp:127
+#: core/textautogeneratemanager.cpp:126
 #, kde-format
 msgid "Big"
 msgstr "Gran"
 
-#: core/textautogeneratemanager.cpp:129
+#: core/textautogeneratemanager.cpp:128
 #, kde-format
 msgid "Huge"
 msgstr "Enorme"
 
-#: core/textautogeneratemanager.cpp:131
+#: core/textautogeneratemanager.cpp:130
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingüe"
 
-#: core/textautogeneratemanager.cpp:133
+#: core/textautogeneratemanager.cpp:132
 #, kde-format
 msgid "Code"
 msgstr "Codi"
 
-#: core/textautogeneratemanager.cpp:135
+#: core/textautogeneratemanager.cpp:134
 #, kde-format
 msgid "Math"
 msgstr "Matemàtica"
 
-#: core/textautogeneratemanager.cpp:137
+#: core/textautogeneratemanager.cpp:136
 #, kde-format
 msgid "Vision"
 msgstr "Visió"
 
-#: core/textautogeneratemanager.cpp:139
+#: core/textautogeneratemanager.cpp:138
 #, kde-format
 msgid "Embedding"
 msgstr "Incrustacions"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Reasoning"
 msgstr "Raonament"
@@ -333,7 +333,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Introduïu el nom del model com a «nom:etiqueta»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:395
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -2310,25 +2310,25 @@ msgstr "Cerca"
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Edita…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Elimina"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:399
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

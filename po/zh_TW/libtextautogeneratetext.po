@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:41+0000\n"
+"POT-Creation-Date: 2025-09-09 00:49+0000\n"
 "PO-Revision-Date: 2025-06-10 12:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -52,7 +52,7 @@ msgstr "更晚"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/models/textautogeneratemessagesmodel.cpp:70
+#: core/models/textautogeneratemessagesmodel.cpp:72
 #, fuzzy, kde-format
 #| msgid ""
 #| "Engine: %1\n"
@@ -65,57 +65,57 @@ msgstr ""
 "引擎：%1\n"
 "模型：%2"
 
-#: core/textautogeneratemanager.cpp:121
+#: core/textautogeneratemanager.cpp:120
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:123
+#: core/textautogeneratemanager.cpp:122
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:125
+#: core/textautogeneratemanager.cpp:124
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:127
+#: core/textautogeneratemanager.cpp:126
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:129
+#: core/textautogeneratemanager.cpp:128
 #, kde-format
 msgid "Huge"
 msgstr "巨大"
 
-#: core/textautogeneratemanager.cpp:131
+#: core/textautogeneratemanager.cpp:130
 #, kde-format
 msgid "Multilingual"
 msgstr "多語言"
 
-#: core/textautogeneratemanager.cpp:133
+#: core/textautogeneratemanager.cpp:132
 #, kde-format
 msgid "Code"
 msgstr "程式碼"
 
-#: core/textautogeneratemanager.cpp:135
+#: core/textautogeneratemanager.cpp:134
 #, kde-format
 msgid "Math"
 msgstr "數學"
 
-#: core/textautogeneratemanager.cpp:137
+#: core/textautogeneratemanager.cpp:136
 #, kde-format
 msgid "Vision"
 msgstr "視覺"
 
-#: core/textautogeneratemanager.cpp:139
+#: core/textautogeneratemanager.cpp:138
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
@@ -333,7 +333,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "請以 \"名稱:標籤\" 方式輸入模型名稱"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:395
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1968,13 +1968,13 @@ msgstr "搜尋"
 msgid "No plugin found."
 msgstr "找不到外掛程式。"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:375
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:379
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove"
@@ -1982,13 +1982,13 @@ msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "移除"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:399
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
