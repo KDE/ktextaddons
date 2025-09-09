@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogenerateplugintextutils.h"
+#include "core/textautogenerateplugintextutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <KPluginMetaData>
 #include <QList>

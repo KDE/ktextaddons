@@ -131,6 +131,8 @@ target_sources(
         core/textautogeneratesettings.cpp
         core/textautogenerateattachmentutils.h
         core/textautogenerateattachmentutils.cpp
+        core/textautogenerateplugintextutils.h
+        core/textautogenerateplugintextutils.cpp
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -179,6 +181,10 @@ target_sources(
         core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.cpp
         core/syntaxhighlighting/textautogeneratetexthighlighter.h
         core/syntaxhighlighting/textautogeneratetexthighlighter.cpp
+        core/tools/textautogeneratetexttoolplugin.h
+        core/tools/textautogeneratetexttoolplugin.cpp
+        core/tools/textautogeneratetexttoolpluginmanager.cpp
+        core/tools/textautogeneratetexttoolpluginmanager.h
 )
 
 target_sources(
@@ -306,8 +312,6 @@ target_sources(
         widgets/plugintext/textautogenerateplugintextinterface.cpp
         widgets/plugintext/textautogenerateplugintextmanager.cpp
         widgets/plugintext/textautogenerateplugintextmanager.h
-        widgets/plugintext/textautogenerateplugintextutils.h
-        widgets/plugintext/textautogenerateplugintextutils.cpp
 )
 
 if(BUILD_TESTING)
@@ -388,9 +392,18 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextInstancesManager
     TextAutoGenerateMessageUtils
     TextAutoGenerateTextUtils
+    TextAutoGeneratePluginTextUtils
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core
+)
+
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateTextToolPlugin
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/tools
 )
 
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS
@@ -475,7 +488,6 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextpluginte
     TextAutoGeneratePluginText
     TextAutoGeneratePluginTextInterface
     TextAutoGeneratePluginTextManager
-    TextAutoGeneratePluginTextUtils
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextplugintext_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/plugintext
@@ -502,6 +514,7 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextcorejobs_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
 )
@@ -519,6 +532,7 @@ install(
         ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextplugintext_HEADERS}
         ${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
+        ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
