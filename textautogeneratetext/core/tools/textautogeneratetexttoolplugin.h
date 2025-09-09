@@ -18,6 +18,7 @@ public:
     ~TextAutoGenerateTextToolPlugin() override;
 
     [[nodiscard]] virtual QString executeTool() = 0;
+    [[nodiscard]] virtual QString displayName() = 0;
     [[nodiscard]] virtual QString descriptions() const = 0;
     [[nodiscard]] virtual QJsonObject metadata() const = 0;
 
@@ -26,6 +27,9 @@ public:
 
     [[nodiscard]] QString toolName() const;
     void setToolName(const QString &newToolName);
+
+Q_SIGNALS:
+    void finished(const QString &result);
 
 protected:
     QString mToolName;

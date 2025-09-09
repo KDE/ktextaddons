@@ -30,17 +30,17 @@ TextAutoGenerateTextToolPluginManager *TextAutoGenerateTextToolPluginManager::se
 
 QString TextAutoGenerateTextToolPluginManager::configGroupName() const
 {
-    return u"autogeneratetext-textplugins"_s;
+    return u"autogeneratetext-toolplugins"_s;
 }
 
 QString TextAutoGenerateTextToolPluginManager::configPrefixSettingKey() const
 {
-    return u"textpluginsPlugin"_s;
+    return u"toolplugins"_s;
 }
 
 void TextAutoGenerateTextToolPluginManager::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/textplugins"_s);
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/toolplugins"_s);
     const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginUtils::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
@@ -79,7 +79,7 @@ void TextAutoGenerateTextToolPluginManager::loadPlugin(TextAutoGenerateTextToolP
             KPluginFactory::instantiatePlugin<TextAutoGenerateTextToolPlugin>(item->data, this, QVariantList() << item->metaDataFileNameBaseName).plugin) {
         item->plugin = plugin;
         item->plugin->setEnabled(item->isEnabled);
-        // TODO item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        item->pluginData.mHasConfigureDialog = true;
         mPluginDataList.append(item->pluginData);
     }
 }
