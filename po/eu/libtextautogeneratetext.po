@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-05 03:03+0000\n"
-"PO-Revision-Date: 2025-08-22 11:23+0200\n"
+"PO-Revision-Date: 2025-09-06 07:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -145,7 +145,7 @@ msgstr "Venice"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:115
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr "Mistral AI lengoaia eredu handiak"
+msgstr "Mistral AI hizkuntza eredu handiak"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:121
 #, kde-format
@@ -810,6 +810,8 @@ msgid ""
 "Command R+ is a powerful, scalable large language model purpose-built to "
 "excel at real-world enterprise use cases."
 msgstr ""
+"Command R+ hizkuntza eredu handi ahaltsu eta eskalagarri bat da, enpresen "
+"erabilera-kasu errealetarako bikain aritzeko bereziki eraikia."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:89
 #, kde-format
@@ -1521,6 +1523,9 @@ msgid ""
 "excels in advanced Arabic language capabilities for enterprises in the "
 "Middle East and Northern Africa."
 msgstr ""
+"Command R7B eredu arinaren puntako teknologiako bertsio berria, Ekialde "
+"Hurbileko eta Ipar Afrikako enpresetarako, arabierazko gaitasun "
+"aurreratuetan bikain aritzeko doitua."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:251
 #, kde-format
