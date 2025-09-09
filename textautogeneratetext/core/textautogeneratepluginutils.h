@@ -10,7 +10,7 @@
 
 namespace TextAutoGenerateText
 {
-namespace TextAutoGeneratePluginTextUtils
+namespace TextAutoGeneratePluginUtils
 {
 struct TEXTAUTOGENERATETEXT_EXPORT PluginUtilData {
     QString mIdentifier;
@@ -20,7 +20,7 @@ struct TEXTAUTOGENERATETEXT_EXPORT PluginUtilData {
     bool mHasConfigureDialog = false;
 };
 
-[[nodiscard]] TextAutoGeneratePluginTextUtils::PluginUtilData createPluginMetaData(const KPluginMetaData &metaData);
+[[nodiscard]] TextAutoGeneratePluginUtils::PluginUtilData createPluginMetaData(const KPluginMetaData &metaData);
 [[nodiscard]] bool
 isPluginActivated(const QStringList &enabledPluginsList, const QStringList &disabledPluginsList, bool isEnabledByDefault, const QString &pluginId);
 [[nodiscard]] QPair<QStringList, QStringList> loadPluginSetting(const QString &groupName, const QString &prefixSettingKey);

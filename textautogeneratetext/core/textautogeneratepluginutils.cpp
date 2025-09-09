@@ -3,16 +3,16 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#include "textautogenerateplugintextutils.h"
+#include "textautogeneratepluginutils.h"
 #include "textautogeneratetextwidget_debug.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
-TextAutoGeneratePluginTextUtils::PluginUtilData TextAutoGeneratePluginTextUtils::createPluginMetaData(const KPluginMetaData &metaData)
+TextAutoGeneratePluginUtils::PluginUtilData TextAutoGeneratePluginUtils::createPluginMetaData(const KPluginMetaData &metaData)
 {
-    const TextAutoGeneratePluginTextUtils::PluginUtilData pluginData{
+    const TextAutoGeneratePluginUtils::PluginUtilData pluginData{
         .mIdentifier = metaData.pluginId(),
         .mName = metaData.name(),
         .mDescription = metaData.description(),
@@ -24,10 +24,10 @@ TextAutoGeneratePluginTextUtils::PluginUtilData TextAutoGeneratePluginTextUtils:
     return pluginData;
 }
 
-bool TextAutoGeneratePluginTextUtils::isPluginActivated(const QStringList &enabledPluginsList,
-                                                        const QStringList &disabledPluginsList,
-                                                        bool isEnabledByDefault,
-                                                        const QString &pluginId)
+bool TextAutoGeneratePluginUtils::isPluginActivated(const QStringList &enabledPluginsList,
+                                                    const QStringList &disabledPluginsList,
+                                                    bool isEnabledByDefault,
+                                                    const QString &pluginId)
 {
     if (pluginId.isEmpty()) {
         return false;
@@ -40,7 +40,7 @@ bool TextAutoGeneratePluginTextUtils::isPluginActivated(const QStringList &enabl
     return false;
 }
 
-QPair<QStringList, QStringList> TextAutoGeneratePluginTextUtils::loadPluginSetting(const QString &groupName, const QString &prefixSettingKey)
+QPair<QStringList, QStringList> TextAutoGeneratePluginUtils::loadPluginSetting(const QString &groupName, const QString &prefixSettingKey)
 {
     QPair<QStringList, QStringList> pair;
     KSharedConfigPtr config = KSharedConfig::openConfig();
@@ -57,10 +57,10 @@ QPair<QStringList, QStringList> TextAutoGeneratePluginTextUtils::loadPluginSetti
     return pair;
 }
 
-void TextAutoGeneratePluginTextUtils::savePluginSettings(const QString &groupName,
-                                                         const QString &prefixSettingKey,
-                                                         const QStringList &enabledPluginsList,
-                                                         const QStringList &disabledPluginsList)
+void TextAutoGeneratePluginUtils::savePluginSettings(const QString &groupName,
+                                                     const QString &prefixSettingKey,
+                                                     const QStringList &enabledPluginsList,
+                                                     const QStringList &disabledPluginsList)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup grp = config->group(groupName);

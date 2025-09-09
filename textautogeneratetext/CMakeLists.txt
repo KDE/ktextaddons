@@ -131,8 +131,8 @@ target_sources(
         core/textautogeneratesettings.cpp
         core/textautogenerateattachmentutils.h
         core/textautogenerateattachmentutils.cpp
-        core/textautogenerateplugintextutils.h
-        core/textautogenerateplugintextutils.cpp
+        core/textautogeneratepluginutils.h
+        core/textautogeneratepluginutils.cpp
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -392,7 +392,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextInstancesManager
     TextAutoGenerateMessageUtils
     TextAutoGenerateTextUtils
-    TextAutoGeneratePluginTextUtils
+    TextAutoGeneratePluginUtils
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core

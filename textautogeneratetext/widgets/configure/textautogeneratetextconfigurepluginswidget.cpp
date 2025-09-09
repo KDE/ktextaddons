@@ -118,10 +118,10 @@ void TextAutoGenerateTextConfigurePluginsWidget::savePlugins(const QString &grou
             disabledPlugins << item->mIdentifier;
         }
     }
-    TextAutoGeneratePluginTextUtils::savePluginSettings(groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
+    TextAutoGeneratePluginUtils::savePluginSettings(groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
 }
 
-void TextAutoGenerateTextConfigurePluginsWidget::fillTopItems(const QList<TextAutoGeneratePluginTextUtils::PluginUtilData> &lst,
+void TextAutoGenerateTextConfigurePluginsWidget::fillTopItems(const QList<TextAutoGeneratePluginUtils::PluginUtilData> &lst,
                                                               const QString &topLevelItemName,
                                                               const QString &groupName,
                                                               const QString &prefixKey,
@@ -133,8 +133,8 @@ void TextAutoGenerateTextConfigurePluginsWidget::fillTopItems(const QList<TextAu
     if (!lst.isEmpty()) {
         auto topLevel = new QTreeWidgetItem(mTreePluginWidget, {topLevelItemName});
         topLevel->setFlags(topLevel->flags() & ~Qt::ItemIsSelectable);
-        const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginTextUtils::loadPluginSetting(groupName, prefixKey);
-        for (const TextAutoGeneratePluginTextUtils::PluginUtilData &data : lst) {
+        const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginUtils::loadPluginSetting(groupName, prefixKey);
+        for (const TextAutoGeneratePluginUtils::PluginUtilData &data : lst) {
             auto subItem = new PluginItem(topLevel);
             subItem->setData(0, TextAutoGenerateTextConfigurePluginsWidget::PluginItemData::Description, data.mDescription);
             subItem->setText(0, data.mName);
@@ -142,8 +142,7 @@ void TextAutoGenerateTextConfigurePluginsWidget::fillTopItems(const QList<TextAu
             subItem->mEnableByDefault = data.mEnableByDefault;
             subItem->mHasConfigureSupport = data.mHasConfigureDialog;
             if (checkable) {
-                const bool isPluginActivated =
-                    TextAutoGeneratePluginTextUtils::isPluginActivated(pair.first, pair.second, data.mEnableByDefault, data.mIdentifier);
+                const bool isPluginActivated = TextAutoGeneratePluginUtils::isPluginActivated(pair.first, pair.second, data.mEnableByDefault, data.mIdentifier);
                 subItem->mEnableFromUserSettings = isPluginActivated;
                 subItem->setCheckState(0, isPluginActivated ? Qt::Checked : Qt::Unchecked);
             }

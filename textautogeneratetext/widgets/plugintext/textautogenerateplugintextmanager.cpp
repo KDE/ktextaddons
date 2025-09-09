@@ -41,7 +41,7 @@ QString TextAutoGeneratePluginTextManager::configPrefixSettingKey() const
 void TextAutoGeneratePluginTextManager::initializePluginList()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/textplugins"_s);
-    const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginTextUtils::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginUtils::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -51,10 +51,10 @@ void TextAutoGeneratePluginTextManager::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = TextAutoGeneratePluginTextUtils::createPluginMetaData(data);
+        info.pluginData = TextAutoGeneratePluginUtils::createPluginMetaData(data);
         // 2) look at if plugin is activated
         const bool isPluginActivated =
-            TextAutoGeneratePluginTextUtils::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+            TextAutoGeneratePluginUtils::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -84,7 +84,7 @@ void TextAutoGeneratePluginTextManager::loadPlugin(TextAutoGeneratePluginTextMan
     }
 }
 
-QList<TextAutoGeneratePluginTextUtils::PluginUtilData> TextAutoGeneratePluginTextManager::pluginDataList() const
+QList<TextAutoGeneratePluginUtils::PluginUtilData> TextAutoGeneratePluginTextManager::pluginDataList() const
 {
     return mPluginDataList;
 }

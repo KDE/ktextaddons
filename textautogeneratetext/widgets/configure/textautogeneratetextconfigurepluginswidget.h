@@ -8,7 +8,7 @@
 #include <QList>
 #include <QTreeWidgetItem>
 #include <QWidget>
-#include <TextAutoGenerateText/TextAutoGeneratePluginTextUtils>
+#include <TextAutoGenerateText/TextAutoGeneratePluginUtils>
 class KTreeWidgetSearchLineWidget;
 class QTreeWidget;
 class KMessageWidget;
@@ -55,7 +55,7 @@ private:
     QTreeWidget *const mTreePluginWidget;
     KMessageWidget *const mMessageWidget;
     bool mInitializeDone = false;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void fillTopItems(const QList<TextAutoGeneratePluginTextUtils::PluginUtilData> &lst,
+    TEXTAUTOGENERATETEXT_NO_EXPORT void fillTopItems(const QList<TextAutoGeneratePluginUtils::PluginUtilData> &lst,
                                                      const QString &topLevelItemName,
                                                      const QString &groupName,
                                                      const QString &prefixKey,
