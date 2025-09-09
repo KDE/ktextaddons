@@ -9,6 +9,7 @@
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratesettings.h"
+#include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
 #include "textautogeneratetextclient.h"
@@ -45,6 +46,8 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 {
+    // Load TextAutoGenerateTextToolPluginManager
+    (void)TextAutoGenerateTextToolPluginManager::self();
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
     new TextAutoGenerateManagerAdaptor(this);
 

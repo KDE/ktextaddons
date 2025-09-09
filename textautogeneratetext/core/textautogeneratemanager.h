@@ -19,7 +19,6 @@ class TextAutoGenerateTextPlugin;
 class TextAutoGenerateChatSettings;
 class TextAutoGenerateSettings;
 class TextAutoGenerateTextInstancesManager;
-
 /**
  * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
