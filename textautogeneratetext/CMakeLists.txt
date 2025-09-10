@@ -322,6 +322,7 @@ if(BUILD_TESTING)
 endif()
 
 add_subdirectory(plugins)
+add_subdirectory(tools)
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
