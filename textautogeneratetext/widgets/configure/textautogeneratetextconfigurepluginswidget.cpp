@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetextconfigurepluginswidget.h"
+#include "core/tools/textautogeneratetexttoolplugin.h"
+#include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextconfigurepluginstreewidgetdelegate.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/plugintext/textautogenerateplugintextmanager.h"
@@ -82,9 +84,14 @@ void TextAutoGenerateTextConfigurePluginsWidget::load()
     initializeDone();
 }
 
-QString textPluginGroupName()
+[[nodiscard]] static QString textPluginGroupName()
 {
     return u"pluginTextPluginGroupName"_s;
+}
+
+[[nodiscard]] static QString toolPluginGroupName()
+{
+    return u"pluginToolPluginGroupName"_s;
 }
 
 void TextAutoGenerateTextConfigurePluginsWidget::initialize()
@@ -96,6 +103,14 @@ void TextAutoGenerateTextConfigurePluginsWidget::initialize()
                  TextAutoGeneratePluginTextManager::self()->configPrefixSettingKey(),
                  mPluginTextItems,
                  textPluginGroupName());
+
+    fillTopItems(TextAutoGenerateTextToolPluginManager::self()->pluginDataList(),
+                 i18n("Tools Plugins"),
+                 TextAutoGenerateTextToolPluginManager::self()->configGroupName(),
+                 TextAutoGenerateTextToolPluginManager::self()->configPrefixSettingKey(),
+                 mPluginTextItems,
+                 toolPluginGroupName());
+
     mTreePluginWidget->expandAll();
 }
 
@@ -181,6 +196,14 @@ void TextAutoGenerateTextConfigurePluginsWidget::slotConfigureClicked(QAction *a
                     } else {
                         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find text plugin " << identifier;
                     }
+                } else if (groupName == toolPluginGroupName()) {
+                    const auto p = TextAutoGenerateTextToolPluginManager::self()->pluginFromIdentifier(identifier);
+                    if (p) {
+                        // TODO p->showConfigureDialog(this);
+                    } else {
+                        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find text plugin " << identifier;
+                    }
+
                 } else {
                     qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "plugin group name not supported " << groupName;
                 }
