@@ -1,0 +1,8 @@
+{
+    "KPlugin": {
+        "Description": "This tool plugin is an example.",
+        "EnabledByDefault": true,
+        "Name": "Tool Example Plugin",
+        "Version": "1.0"
+    }
+}
