@@ -28,6 +28,7 @@ public:
     [[nodiscard]] QString toolName() const;
     void setToolName(const QString &newToolName);
 
+    virtual void showConfigureDialog(QWidget *parent = nullptr) const;
 Q_SIGNALS:
     void finished(const QString &result);
 

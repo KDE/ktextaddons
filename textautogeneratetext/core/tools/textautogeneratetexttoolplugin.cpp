@@ -34,4 +34,8 @@ void TextAutoGenerateTextToolPlugin::setToolName(const QString &newToolName)
     mToolName = newToolName;
 }
 
+void TextAutoGenerateTextToolPlugin::showConfigureDialog([[maybe_unused]] QWidget *parent) const
+{
+}
+
 #include "moc_textautogeneratetexttoolplugin.cpp"
