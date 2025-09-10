@@ -27,6 +27,9 @@ public:
     void setDisplayName(const QString &newName) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType engineType() const override;
 
+    [[nodiscard]] bool hasVisionSupport() const override;
+    [[nodiscard]] bool hasToolsSupport() const override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
 
@@ -76,6 +79,16 @@ void CustomPlugin::setDisplayName(const QString &newName)
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType CustomPlugin::engineType() const
 {
     return TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Local;
+}
+
+bool CustomPlugin::hasVisionSupport() const
+{
+    return false;
+}
+
+bool CustomPlugin::hasToolsSupport() const
+{
+    return false;
 }
 
 void CustomPlugin::sendToAssistant([[maybe_unused]] const SendToAssistantInfo &info)

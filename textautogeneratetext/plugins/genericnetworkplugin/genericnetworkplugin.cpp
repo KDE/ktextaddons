@@ -253,4 +253,16 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType GenericNetworkPlugi
     return TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network;
 }
 
+bool GenericNetworkPlugin::hasVisionSupport() const
+{
+    // TODO
+    return false;
+}
+
+bool GenericNetworkPlugin::hasToolsSupport() const
+{
+    // TODO
+    return false;
+}
+
 #include "moc_genericnetworkplugin.cpp"

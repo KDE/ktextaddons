@@ -37,6 +37,9 @@ public:
 
     void remove() override;
 
+    [[nodiscard]] bool hasVisionSupport() const override;
+    [[nodiscard]] bool hasToolsSupport() const override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
     void askToAssistant(const QString &msg) override;

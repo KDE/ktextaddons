@@ -251,6 +251,12 @@ bool TextAutoGenerateTextPlugin::hasVisionSupport() const
     return false;
 }
 
+bool TextAutoGenerateTextPlugin::hasToolsSupport() const
+{
+    // TODO
+    return false;
+}
+
 QString TextAutoGenerateTextPlugin::fallBackModel() const
 {
     // Fallback to first model
