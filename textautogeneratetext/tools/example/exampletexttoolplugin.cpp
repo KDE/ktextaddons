@@ -6,9 +6,10 @@
 
 #include "exampletexttoolplugin.h"
 #include <KPluginFactory>
-using namespace Qt::Literals::StringLiterals;
+#include <QJsonObject>
 K_PLUGIN_CLASS_WITH_JSON(ExampleTextToolPlugin, "textautogeneratetext_exampleplugin.json")
 
+using namespace Qt::Literals::StringLiterals;
 ExampleTextToolPlugin::ExampleTextToolPlugin(QObject *parent, const QVariantList &)
     : TextAutoGenerateTextToolPlugin{parent}
 {
@@ -21,19 +22,41 @@ QString ExampleTextToolPlugin::executeTool()
     return {};
 }
 
-QString ExampleTextToolPlugin::displayName()
+QString ExampleTextToolPlugin::displayName() const
 {
-    return {};
+    // Don't translate it
+    return u"Example tool"_s;
 }
 
 QString ExampleTextToolPlugin::descriptions() const
 {
-    return {};
+    // Don't translate it
+    return u"Tool used for testing"_s;
 }
 
-QJsonObject ExampleTextToolPlugin::metadata() const
+QByteArray ExampleTextToolPlugin::metadata() const
 {
-    return {};
+    const QByteArray ba = R"({
+                               "name": "example_tool",
+                               "description": "Get the current weather for a location",
+                               "parameters": {
+                                 "type": "object",
+                                 "properties": {
+                                   "location": {
+                                     "type": "string",
+                                     "description": "The location to get the weather for, e.g. San Francisco, CA"
+                                   },
+                                   "format": {
+                                     "type": "string",
+                                     "description": "The format to return the weather in, e.g. 'celsius' or 'fahrenheit'",
+                                     "enum": ["celsius", "fahrenheit"]
+                                   }
+                                 },
+                                 "required": ["location", "format"]
+                               }
+                                                                   }
+                )"_ba;
+    return ba;
 }
 
 #include "exampletexttoolplugin.moc"

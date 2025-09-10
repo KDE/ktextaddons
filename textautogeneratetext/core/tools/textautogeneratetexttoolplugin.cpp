@@ -24,14 +24,14 @@ void TextAutoGenerateTextToolPlugin::setEnabled(bool newEnabled)
     mEnabled = newEnabled;
 }
 
-QString TextAutoGenerateTextToolPlugin::toolName() const
+QByteArray TextAutoGenerateTextToolPlugin::toolNameId() const
 {
-    return mToolName;
+    return mToolNameId;
 }
 
-void TextAutoGenerateTextToolPlugin::setToolName(const QString &newToolName)
+void TextAutoGenerateTextToolPlugin::setToolNameId(const QByteArray &newToolName)
 {
-    mToolName = newToolName;
+    mToolNameId = newToolName;
 }
 
 void TextAutoGenerateTextToolPlugin::showConfigureDialog([[maybe_unused]] QWidget *parent) const

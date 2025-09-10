@@ -16,7 +16,7 @@ public:
     ~ExampleTextToolPlugin() override;
 
     [[nodiscard]] QString executeTool() override;
-    [[nodiscard]] QString displayName() override;
+    [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString descriptions() const override;
-    [[nodiscard]] QJsonObject metadata() const override;
+    [[nodiscard]] QByteArray metadata() const override;
 };

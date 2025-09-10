@@ -6,7 +6,6 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QJsonObject>
 #include <QObject>
 namespace TextAutoGenerateText
 {
@@ -18,22 +17,22 @@ public:
     ~TextAutoGenerateTextToolPlugin() override;
 
     [[nodiscard]] virtual QString executeTool() = 0;
-    [[nodiscard]] virtual QString displayName() = 0;
+    [[nodiscard]] virtual QString displayName() const = 0;
     [[nodiscard]] virtual QString descriptions() const = 0;
-    [[nodiscard]] virtual QJsonObject metadata() const = 0;
+    [[nodiscard]] virtual QByteArray metadata() const = 0;
 
     [[nodiscard]] bool enabled() const;
     void setEnabled(bool newEnabled);
 
-    [[nodiscard]] QString toolName() const;
-    void setToolName(const QString &newToolName);
+    [[nodiscard]] QByteArray toolNameId() const;
+    void setToolNameId(const QByteArray &newToolName);
 
     virtual void showConfigureDialog(QWidget *parent = nullptr) const;
 Q_SIGNALS:
     void finished(const QString &result);
 
 protected:
-    QString mToolName;
+    QByteArray mToolNameId;
     bool mEnabled = true;
 };
 }
