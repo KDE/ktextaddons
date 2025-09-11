@@ -14,3 +14,5 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
 }
 
 TextAutoGenerateToolPluginConfigureWidget::~TextAutoGenerateToolPluginConfigureWidget() = default;
+
+#include "moc_textautogeneratetoolpluginconfigurewidget.cpp"
