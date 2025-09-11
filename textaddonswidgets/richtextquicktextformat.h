@@ -13,6 +13,10 @@ class QHBoxLayout;
 class QTextEdit;
 namespace TextAddonsWidgets
 {
+/**
+ * @brief The RichTextQuickTextFormat class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEXTADDONSWIDGETS_EXPORT RichTextQuickTextFormat : public QFrame
 {
     Q_OBJECT
