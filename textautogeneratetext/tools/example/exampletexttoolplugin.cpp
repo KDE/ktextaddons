@@ -13,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 ExampleTextToolPlugin::ExampleTextToolPlugin(QObject *parent, const QVariantList &)
     : TextAutoGenerateTextToolPlugin{parent}
 {
+    mToolNameId = "example_tool"_ba;
 }
 
 ExampleTextToolPlugin::~ExampleTextToolPlugin() = default;
@@ -36,8 +37,7 @@ QString ExampleTextToolPlugin::descriptions() const
 
 QByteArray ExampleTextToolPlugin::metadata() const
 {
-    const QByteArray ba = R"({
-                               "name": "example_tool",
+    const QByteArray ba = R"({"name": ")" + mToolNameId + R"(",
                                "description": "Get the current weather for a location",
                                "parameters": {
                                  "type": "object",
@@ -54,8 +54,7 @@ QByteArray ExampleTextToolPlugin::metadata() const
                                  },
                                  "required": ["location", "format"]
                                }
-                                                                   }
-                )"_ba;
+                            })"_ba;
     return ba;
 }
 
