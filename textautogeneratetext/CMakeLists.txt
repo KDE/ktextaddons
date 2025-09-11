@@ -314,6 +314,8 @@ target_sources(
         widgets/plugintext/textautogenerateplugintextmanager.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp
+        widgets/toolswidget/textautogeneratetoolswidget.h
+        widgets/toolswidget/textautogeneratetoolswidget.cpp
 )
 
 if(BUILD_TESTING)
