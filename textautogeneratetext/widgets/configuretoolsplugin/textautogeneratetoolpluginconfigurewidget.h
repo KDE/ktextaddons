@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
+class QLabel;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : public QWidget
@@ -15,6 +16,9 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : pu
 public:
     explicit TextAutoGenerateToolPluginConfigureWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateToolPluginConfigureWidget() override;
+
+private:
+    QLabel *const mDescriptionLabel;
 };
 
 }

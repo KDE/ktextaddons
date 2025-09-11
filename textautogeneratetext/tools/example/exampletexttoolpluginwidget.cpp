@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "exampletexttoolpluginwidget.h"
-
+#include <QVBoxLayout>
 ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(QWidget *parent)
     : QWidget{parent}
 {
