@@ -10,12 +10,15 @@
 class QLabel;
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextToolPlugin;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateToolPluginConfigureWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateToolPluginConfigureWidget() override;
+
+    void initialize(TextAutoGenerateTextToolPlugin *plugin);
 
 private:
     QLabel *const mDescriptionLabel;

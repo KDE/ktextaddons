@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWidget(QWidget *parent)
@@ -26,5 +27,12 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
 }
 
 TextAutoGenerateToolPluginConfigureWidget::~TextAutoGenerateToolPluginConfigureWidget() = default;
+
+void TextAutoGenerateToolPluginConfigureWidget::initialize(TextAutoGenerateTextToolPlugin *plugin)
+{
+    if (plugin) {
+        mDescriptionLabel->setText(plugin->descriptions());
+    }
+}
 
 #include "moc_textautogeneratetoolpluginconfigurewidget.cpp"
