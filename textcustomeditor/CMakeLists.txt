@@ -168,13 +168,17 @@ ecm_generate_headers(TextCustomEditor_CamelCasetexteditor_core_HEADERS
     RELATIVE core
 )
 
+set(TEXTCUSTOM_EDITOR_FILES
+    ${TextCustomEditor_texteditor_core_HEADERS}
+    ${TextCustomEditor_richtexteditor_HEADERS}
+    ${TextCustomEditor_texteditor_widgets_HEADERS}
+    ${TextCustomEditor_plaintexteditor_HEADERS}
+    ${TextCustomEditor_richtextbrowser_HEADERS}
+)
+
 install(
     FILES
-        ${TextCustomEditor_texteditor_core_HEADERS}
-        ${TextCustomEditor_richtexteditor_HEADERS}
-        ${TextCustomEditor_texteditor_widgets_HEADERS}
-        ${TextCustomEditor_plaintexteditor_HEADERS}
-        ${TextCustomEditor_richtextbrowser_HEADERS}
+        ${TEXTCUSTOM_EDITOR_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/textcustomeditor_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextCustomEditor/textcustomeditor
     COMPONENT Devel
@@ -220,11 +224,7 @@ if(BUILD_QCH)
         VERSION ${TEXTCUSTOMEDITOR_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextCustomEditor_richtexteditor_HEADERS}
-        ${TextCustomEditor_texteditor_widgets_HEADERS}
-        ${TextCustomEditor_plaintexteditor_HEADERS}
-        ${TextCustomEditor_texteditor_core_HEADERS}
-        ${TextCustomEditor_richtextbrowser_HEADERS}
+        ${TEXTCUSTOM_EDITOR_FILES}
         LINK_QCHS
         Qt6Core_QCH
         INCLUDE_DIRS
