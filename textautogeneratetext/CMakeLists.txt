@@ -312,6 +312,8 @@ target_sources(
         widgets/plugintext/textautogenerateplugintextinterface.cpp
         widgets/plugintext/textautogenerateplugintextmanager.cpp
         widgets/plugintext/textautogenerateplugintextmanager.h
+        widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.h
+        widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -494,6 +496,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextpluginte
     RELATIVE widgets/plugintext
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateToolPluginConfigureWidget
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextconfiguretoolsplugin_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE widgets/configuretoolsplugin
+)
+
 install(TARGETS KF6TextAutoGenerateText EXPORT KF6TextAutoGenerateTextTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
@@ -516,24 +526,30 @@ install(
         ${TextAutoGenerateText_Camelcasestextautogeneratetextplugintext_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetextconfigurewidgets_HEADERS}
         ${TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS}
+        ${TextAutoGenerateText_Camelcasestextautogeneratetextconfiguretoolsplugin_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/TextAutoGenerateText
     COMPONENT Devel
+)
+
+set(TextAutoGenerateTextIncludeFiles
+    ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextplugintext_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextconfiguretoolsplugin_HEADERS}
 )
 
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
-        ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextplugintext_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS}
+        ${TextAutoGenerateTextIncludeFiles}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
 )
@@ -546,16 +562,7 @@ if(BUILD_QCH)
         VERSION ${TEXTAUTOGENERATETEXT_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${TextAutoGenerateText_textautogeneratetextcore_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgets_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgetsmenu_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextnetworkpluginconfigure_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextcoremodels_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextwidgetsinstancesmanager_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextcorejobs_HEADERS}
-        ${TextAutoGenerateText_textautogeneratetextplugintext_HEADERS}
-	${TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS}
+        ${TextAutoGenerateTextIncludeFiles}
         LINK_QCHS
             Qt6Core_QCH
             Qt6Gui_QCH
