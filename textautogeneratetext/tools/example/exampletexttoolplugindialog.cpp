@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "exampletexttoolplugindialog.h"
+#include "core/tools/textautogeneratetexttoolplugin.h"
 #include "exampletexttoolpluginwidget.h"
 #include <qboxlayout.h>
 #include <qdialogbuttonbox.h>
@@ -13,7 +14,7 @@ ExampleTextToolPluginDialog::ExampleTextToolPluginDialog(TextAutoGenerateText::T
     , mExampleTextToolPluginWidget(new ExampleTextToolPluginWidget(plugin, this))
 {
     // don't translate here.
-    setWindowTitle(u"Example Text Tool"_s);
+    setWindowTitle(plugin ? plugin->displayName() : u"Example Text Tool"_s);
 
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);

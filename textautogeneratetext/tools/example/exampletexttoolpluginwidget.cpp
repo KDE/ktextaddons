@@ -9,7 +9,7 @@
 using namespace Qt::Literals::StringLiterals;
 ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(TextAutoGenerateText::TextAutoGenerateTextToolPlugin *plugin, QWidget *parent)
     : QWidget{parent}
-    , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateToolPluginConfigureWidget(this))
+    , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateToolPluginConfigureWidget(plugin, this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -17,7 +17,7 @@ ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(TextAutoGenerateText::T
 
     mConfigureWidget->setObjectName(u"mConfigureWidget"_s);
     mainLayout->addWidget(mConfigureWidget);
-    mConfigureWidget->initialize(plugin);
+    mainLayout->addStretch(1);
 }
 
 ExampleTextToolPluginWidget::~ExampleTextToolPluginWidget() = default;

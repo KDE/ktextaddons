@@ -11,7 +11,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWidget(QWidget *parent)
+TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWidget(TextAutoGenerateTextToolPlugin *plugin, QWidget *parent)
     : QWidget{parent}
     , mDescriptionLabel(new QLabel(this))
 {
@@ -20,19 +20,18 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mainLayout->setContentsMargins({});
 
     auto label = new QLabel(i18nc("@label:textbox", "Description:"), this);
+    QFont f = label->font();
+    f.setBold(true);
+    label->setFont(f);
     mainLayout->addWidget(label);
 
     mDescriptionLabel->setObjectName("mDescriptionLabel"_L1);
     mainLayout->addWidget(mDescriptionLabel);
-}
-
-TextAutoGenerateToolPluginConfigureWidget::~TextAutoGenerateToolPluginConfigureWidget() = default;
-
-void TextAutoGenerateToolPluginConfigureWidget::initialize(TextAutoGenerateTextToolPlugin *plugin)
-{
     if (plugin) {
         mDescriptionLabel->setText(plugin->descriptions());
     }
 }
+
+TextAutoGenerateToolPluginConfigureWidget::~TextAutoGenerateToolPluginConfigureWidget() = default;
 
 #include "moc_textautogeneratetoolpluginconfigurewidget.cpp"

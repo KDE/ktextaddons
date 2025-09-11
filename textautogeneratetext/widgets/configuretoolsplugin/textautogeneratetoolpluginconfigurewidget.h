@@ -15,10 +15,8 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateToolPluginConfigureWidget : pu
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateToolPluginConfigureWidget(QWidget *parent = nullptr);
+    explicit TextAutoGenerateToolPluginConfigureWidget(TextAutoGenerateTextToolPlugin *plugin, QWidget *parent = nullptr);
     ~TextAutoGenerateToolPluginConfigureWidget() override;
-
-    void initialize(TextAutoGenerateTextToolPlugin *plugin);
 
 private:
     QLabel *const mDescriptionLabel;
