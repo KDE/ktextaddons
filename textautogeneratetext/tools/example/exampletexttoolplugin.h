@@ -19,4 +19,6 @@ public:
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString descriptions() const override;
     [[nodiscard]] QByteArray metadata() const override;
+
+    void showConfigureDialog(QWidget *parent) const override;
 };

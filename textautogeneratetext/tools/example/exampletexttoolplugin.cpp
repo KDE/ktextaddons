@@ -58,5 +58,10 @@ QByteArray ExampleTextToolPlugin::metadata() const
     return ba;
 }
 
+void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent) const
+{
+    // TODO
+}
+
 #include "exampletexttoolplugin.moc"
 #include "moc_exampletexttoolplugin.cpp"
