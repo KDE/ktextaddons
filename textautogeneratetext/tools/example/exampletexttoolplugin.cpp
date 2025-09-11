@@ -60,9 +60,9 @@ QByteArray ExampleTextToolPlugin::metadata() const
     return ba;
 }
 
-void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent) const
+void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
 {
-    QPointer<ExampleTextToolPluginDialog> dlg = new ExampleTextToolPluginDialog(parent);
+    QPointer<ExampleTextToolPluginDialog> dlg = new ExampleTextToolPluginDialog(this, parent);
     if (dlg->exec()) {
         // TODO
     }

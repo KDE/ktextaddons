@@ -34,7 +34,7 @@ void TextAutoGenerateTextToolPlugin::setToolNameId(const QByteArray &newToolName
     mToolNameId = newToolName;
 }
 
-void TextAutoGenerateTextToolPlugin::showConfigureDialog([[maybe_unused]] QWidget *parent) const
+void TextAutoGenerateTextToolPlugin::showConfigureDialog([[maybe_unused]] QWidget *parent)
 {
 }
 

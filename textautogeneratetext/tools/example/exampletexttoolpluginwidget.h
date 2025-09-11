@@ -8,12 +8,13 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateToolPluginConfigureWidget;
+class TextAutoGenerateTextToolPlugin;
 }
 class ExampleTextToolPluginWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ExampleTextToolPluginWidget(QWidget *parent = nullptr);
+    explicit ExampleTextToolPluginWidget(TextAutoGenerateText::TextAutoGenerateTextToolPlugin *plugin, QWidget *parent = nullptr);
     ~ExampleTextToolPluginWidget() override;
 
 private:

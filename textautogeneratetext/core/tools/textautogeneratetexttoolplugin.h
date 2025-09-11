@@ -27,7 +27,7 @@ public:
     [[nodiscard]] QByteArray toolNameId() const;
     void setToolNameId(const QByteArray &newToolName);
 
-    virtual void showConfigureDialog(QWidget *parent = nullptr) const;
+    virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     [[nodiscard]] bool isValid() const;
 

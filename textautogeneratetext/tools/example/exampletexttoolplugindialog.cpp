@@ -8,9 +8,9 @@
 #include <qboxlayout.h>
 #include <qdialogbuttonbox.h>
 using namespace Qt::Literals::StringLiterals;
-ExampleTextToolPluginDialog::ExampleTextToolPluginDialog(QWidget *parent)
+ExampleTextToolPluginDialog::ExampleTextToolPluginDialog(TextAutoGenerateText::TextAutoGenerateTextToolPlugin *plugin, QWidget *parent)
     : QDialog(parent)
-    , mExampleTextToolPluginWidget(new ExampleTextToolPluginWidget(this))
+    , mExampleTextToolPluginWidget(new ExampleTextToolPluginWidget(plugin, this))
 {
     // don't translate here.
     setWindowTitle(u"Example Text Tool"_s);

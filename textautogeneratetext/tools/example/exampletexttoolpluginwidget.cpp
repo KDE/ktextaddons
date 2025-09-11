@@ -7,7 +7,7 @@
 #include <QVBoxLayout>
 #include <TextAutoGenerateText/TextAutoGenerateToolPluginConfigureWidget>
 using namespace Qt::Literals::StringLiterals;
-ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(QWidget *parent)
+ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(TextAutoGenerateText::TextAutoGenerateTextToolPlugin *plugin, QWidget *parent)
     : QWidget{parent}
     , mConfigureWidget(new TextAutoGenerateText::TextAutoGenerateToolPluginConfigureWidget(this))
 {
@@ -17,6 +17,7 @@ ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(QWidget *parent)
 
     mConfigureWidget->setObjectName(u"mConfigureWidget"_s);
     mainLayout->addWidget(mConfigureWidget);
+    mConfigureWidget->initialize(plugin);
 }
 
 ExampleTextToolPluginWidget::~ExampleTextToolPluginWidget() = default;
