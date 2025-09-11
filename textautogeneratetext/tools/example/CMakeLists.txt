@@ -8,5 +8,9 @@ target_sources(
     PRIVATE
         exampletexttoolplugin.h
         exampletexttoolplugin.cpp
+        exampletexttoolplugindialog.h
+        exampletexttoolplugindialog.cpp
+        exampletexttoolpluginwidget.h
+        exampletexttoolpluginwidget.cpp
 )
 target_link_libraries(textautogeneratetext_exampletoolplugin KF6::TextAutoGenerateText)
