@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 00:49+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-09-03 11:11+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -64,57 +64,57 @@ msgstr ""
 "מודל: %2\n"
 "שם מופע: %3"
 
-#: core/textautogeneratemanager.cpp:120
+#: core/textautogeneratemanager.cpp:123
 #, kde-format
 msgid "Tools"
 msgstr "כלים"
 
-#: core/textautogeneratemanager.cpp:122
+#: core/textautogeneratemanager.cpp:125
 #, kde-format
 msgid "Small"
 msgstr "קטן"
 
-#: core/textautogeneratemanager.cpp:124
+#: core/textautogeneratemanager.cpp:127
 #, kde-format
 msgid "Medium"
 msgstr "בינוני"
 
-#: core/textautogeneratemanager.cpp:126
+#: core/textautogeneratemanager.cpp:129
 #, kde-format
 msgid "Big"
 msgstr "גדול"
 
-#: core/textautogeneratemanager.cpp:128
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Huge"
 msgstr "ענק"
 
-#: core/textautogeneratemanager.cpp:130
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Multilingual"
 msgstr "רב־לשוני"
 
-#: core/textautogeneratemanager.cpp:132
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Code"
 msgstr "קוד"
 
-#: core/textautogeneratemanager.cpp:134
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Math"
 msgstr "מתמטיקה"
 
-#: core/textautogeneratemanager.cpp:136
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Vision"
 msgstr "ראייה"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Embedding"
 msgstr "הטמעה"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Reasoning"
 msgstr "הנמקה"
@@ -1949,22 +1949,28 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "שליחה"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "יש להפעיל מחדש כדי להחיל את השינויים."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:94
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:101
 #, kde-format
 msgid "Text Plugins"
 msgstr "תוספי טקסט"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:157
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Tools Plugins"
+msgstr "תוספי טקסט"
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:159
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:173
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

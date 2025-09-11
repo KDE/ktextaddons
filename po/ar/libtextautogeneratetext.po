@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 00:49+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-09-01 19:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -64,57 +64,57 @@ msgstr ""
 "النموذج: %2\n"
 "اسم النسخة: %3"
 
-#: core/textautogeneratemanager.cpp:120
+#: core/textautogeneratemanager.cpp:123
 #, kde-format
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/textautogeneratemanager.cpp:122
+#: core/textautogeneratemanager.cpp:125
 #, kde-format
 msgid "Small"
 msgstr "صغير"
 
-#: core/textautogeneratemanager.cpp:124
+#: core/textautogeneratemanager.cpp:127
 #, kde-format
 msgid "Medium"
 msgstr "متوسط"
 
-#: core/textautogeneratemanager.cpp:126
+#: core/textautogeneratemanager.cpp:129
 #, kde-format
 msgid "Big"
 msgstr "كبير"
 
-#: core/textautogeneratemanager.cpp:128
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Huge"
 msgstr "ضخمة"
 
-#: core/textautogeneratemanager.cpp:130
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Multilingual"
 msgstr "متعدد اللغات"
 
-#: core/textautogeneratemanager.cpp:132
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Code"
 msgstr "شفرة"
 
-#: core/textautogeneratemanager.cpp:134
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Math"
 msgstr "رياضيات"
 
-#: core/textautogeneratemanager.cpp:136
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Vision"
 msgstr "رؤية"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Embedding"
 msgstr "تضمين"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Reasoning"
 msgstr "تفكير"
@@ -1971,22 +1971,28 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "أرسل"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "إعادة التّشغيل مطلوبة لتطبيق التّغييرات."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:94
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:101
 #, kde-format
 msgid "Text Plugins"
 msgstr "ملحقات النصوص"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:157
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Tools Plugins"
+msgstr "ملحقات النصوص"
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:159
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:173
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

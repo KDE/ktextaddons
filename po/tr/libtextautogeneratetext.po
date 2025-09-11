@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 00:49+0000\n"
+"POT-Creation-Date: 2025-09-11 00:41+0000\n"
 "PO-Revision-Date: 2025-09-03 08:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -63,57 +63,57 @@ msgstr ""
 "Model: %2\n"
 "Örnek adı: %3"
 
-#: core/textautogeneratemanager.cpp:120
+#: core/textautogeneratemanager.cpp:123
 #, kde-format
 msgid "Tools"
 msgstr "Araçlar"
 
-#: core/textautogeneratemanager.cpp:122
+#: core/textautogeneratemanager.cpp:125
 #, kde-format
 msgid "Small"
 msgstr "Küçük"
 
-#: core/textautogeneratemanager.cpp:124
+#: core/textautogeneratemanager.cpp:127
 #, kde-format
 msgid "Medium"
 msgstr "Orta"
 
-#: core/textautogeneratemanager.cpp:126
+#: core/textautogeneratemanager.cpp:129
 #, kde-format
 msgid "Big"
 msgstr "Büyük"
 
-#: core/textautogeneratemanager.cpp:128
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Huge"
 msgstr "Devasa"
 
-#: core/textautogeneratemanager.cpp:130
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Multilingual"
 msgstr "Çok Dilli"
 
-#: core/textautogeneratemanager.cpp:132
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Code"
 msgstr "Kod"
 
-#: core/textautogeneratemanager.cpp:134
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Math"
 msgstr "Matematik"
 
-#: core/textautogeneratemanager.cpp:136
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Vision"
 msgstr "Görsel"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Embedding"
 msgstr "Gömülü"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Reasoning"
 msgstr "Akıl Yürütme"
@@ -2043,22 +2043,28 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Gönder"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:26
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
 msgstr "Değişikliklerin uygulanması için yeniden başlatma gereklidir."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:94
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:101
 #, kde-format
 msgid "Text Plugins"
 msgstr "Metin Eklentileri"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:157
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Text Plugins"
+msgid "Tools Plugins"
+msgstr "Metin Eklentileri"
+
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:159
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:173
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
