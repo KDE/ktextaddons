@@ -5,8 +5,10 @@
 */
 
 #include "exampletexttoolplugin.h"
+#include "exampletexttoolplugindialog.h"
 #include <KPluginFactory>
 #include <QJsonObject>
+#include <QPointer>
 K_PLUGIN_CLASS_WITH_JSON(ExampleTextToolPlugin, "textautogeneratetext_exampleplugin.json")
 
 using namespace Qt::Literals::StringLiterals;
@@ -60,7 +62,11 @@ QByteArray ExampleTextToolPlugin::metadata() const
 
 void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent) const
 {
-    // TODO
+    QPointer<ExampleTextToolPluginDialog> dlg = new ExampleTextToolPluginDialog(parent);
+    if (dlg->exec()) {
+        // TODO
+    }
+    delete dlg;
 }
 
 #include "exampletexttoolplugin.moc"
