@@ -11,3 +11,5 @@ ExampleTextToolPluginWidget::ExampleTextToolPluginWidget(QWidget *parent)
 }
 
 ExampleTextToolPluginWidget::~ExampleTextToolPluginWidget() = default;
+
+#include "moc_exampletexttoolpluginwidget.cpp"

@@ -5,11 +5,14 @@
 */
 #pragma once
 #include <QDialog>
-
+class ExampleTextToolPluginWidget;
 class ExampleTextToolPluginDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit ExampleTextToolPluginDialog(QWidget *parent = nullptr);
     ~ExampleTextToolPluginDialog() override;
+
+private:
+    ExampleTextToolPluginWidget *const mExampleTextToolPluginWidget;
 };
