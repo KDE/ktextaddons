@@ -38,4 +38,9 @@ void TextAutoGenerateTextToolPlugin::showConfigureDialog([[maybe_unused]] QWidge
 {
 }
 
+bool TextAutoGenerateTextToolPlugin::isValid() const
+{
+    return !mToolNameId.isEmpty();
+}
+
 #include "moc_textautogeneratetexttoolplugin.cpp"

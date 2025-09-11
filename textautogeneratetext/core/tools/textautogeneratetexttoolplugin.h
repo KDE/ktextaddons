@@ -28,6 +28,9 @@ public:
     void setToolNameId(const QByteArray &newToolName);
 
     virtual void showConfigureDialog(QWidget *parent = nullptr) const;
+
+    [[nodiscard]] bool isValid() const;
+
 Q_SIGNALS:
     void finished(const QString &result);
 
