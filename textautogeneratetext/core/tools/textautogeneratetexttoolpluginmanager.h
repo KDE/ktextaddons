@@ -32,6 +32,10 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextToolPluginManager fi
 {
     Q_OBJECT
 public:
+    struct PluginToolInfo {
+        QString displayName;
+        QByteArray identifier;
+    };
     ~TextAutoGenerateTextToolPluginManager() override;
     static TextAutoGenerateTextToolPluginManager *self();
 
@@ -44,6 +48,8 @@ public:
 
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromIdentifier(const QString &identifier) const;
 
+    [[nodiscard]] QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> activePluginTools() const;
+
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
@@ -52,3 +58,4 @@ private:
     QList<TextAutoGeneratePluginUtils::PluginUtilData> mPluginDataList;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::PluginToolInfo, Q_RELOCATABLE_TYPE);

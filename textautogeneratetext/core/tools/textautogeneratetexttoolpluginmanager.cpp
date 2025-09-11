@@ -67,7 +67,7 @@ void TextAutoGenerateTextToolPluginManager::initializePluginList()
         mPluginList.push_back(info);
         unique.insert(info.metaDataFileNameBaseName);
     }
-    QList<TextAutoGenerateTextToolPluginManagerInfo>::iterator end(mPluginList.end());
+    const QList<TextAutoGenerateTextToolPluginManagerInfo>::iterator end(mPluginList.end());
     for (QList<TextAutoGenerateTextToolPluginManagerInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
@@ -82,6 +82,19 @@ void TextAutoGenerateTextToolPluginManager::loadPlugin(TextAutoGenerateTextToolP
         item->pluginData.mHasConfigureDialog = true;
         mPluginDataList.append(item->pluginData);
     }
+}
+
+QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> TextAutoGenerateTextToolPluginManager::activePluginTools() const
+{
+    QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> list;
+    const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if (auto plugin = (*it).plugin) {
+            const TextAutoGenerateTextToolPluginManager::PluginToolInfo info{.displayName = plugin->displayName(), .identifier = plugin->toolNameId()};
+            list.append(info);
+        }
+    }
+    return list;
 }
 
 QList<TextAutoGeneratePluginUtils::PluginUtilData> TextAutoGenerateTextToolPluginManager::pluginDataList() const
@@ -104,7 +117,7 @@ QList<TextAutoGenerateTextToolPlugin *> TextAutoGenerateTextToolPluginManager::p
 {
     QList<TextAutoGenerateTextToolPlugin *> lst;
     lst.reserve(mPluginList.count());
-    QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
+    const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
     for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
