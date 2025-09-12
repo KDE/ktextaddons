@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:41+0000\n"
+"POT-Creation-Date: 2025-09-12 00:42+0000\n"
 "PO-Revision-Date: 2025-09-03 16:31+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2100,6 +2100,12 @@ msgstr "Configura"
 #, kde-format
 msgid "Prompt"
 msgstr "Prompt"
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:22
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format

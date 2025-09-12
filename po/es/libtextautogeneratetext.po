@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 22:07+0100\n"
+"POT-Creation-Date: 2025-09-12 00:42+0000\n"
+"PO-Revision-Date: 2025-09-11 12:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2078,10 +2078,9 @@ msgid "Text Plugins"
 msgstr "Complementos de texto"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "Complementos de texto"
+msgstr "Complementos de herramientas"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
@@ -2098,6 +2097,12 @@ msgstr "Configurar"
 #, kde-format
 msgid "Prompt"
 msgstr "Indicaciones"
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:22
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format

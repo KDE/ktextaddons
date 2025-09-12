@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the ktextaddons package.
 #
 # SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 07:29-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"POT-Creation-Date: 2025-09-12 00:42+0000\n"
+"PO-Revision-Date: 2025-09-11 00:52-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -2072,10 +2073,9 @@ msgid "Text Plugins"
 msgstr "Plugins de texto"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "Plugins de texto"
+msgstr "Plugins de Ferramentas"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
@@ -2092,6 +2092,12 @@ msgstr "Configurar"
 #, kde-format
 msgid "Prompt"
 msgstr "Prompt"
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:22
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format

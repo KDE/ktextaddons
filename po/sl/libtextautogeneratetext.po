@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 07:24+0200\n"
+"POT-Creation-Date: 2025-09-12 00:42+0000\n"
+"PO-Revision-Date: 2025-09-11 07:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2053,10 +2053,9 @@ msgid "Text Plugins"
 msgstr "Besedilni vtičniki"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "Besedilni vtičniki"
+msgstr "Vtičniki orodij"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
@@ -2073,6 +2072,12 @@ msgstr "Konfiguriraj"
 #, kde-format
 msgid "Prompt"
 msgstr "Poziv"
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:22
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format

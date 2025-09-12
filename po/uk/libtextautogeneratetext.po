@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 18:10+0300\n"
+"POT-Creation-Date: 2025-09-12 00:42+0000\n"
+"PO-Revision-Date: 2025-09-11 09:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2064,10 +2064,9 @@ msgid "Text Plugins"
 msgstr "Додатки для роботи з текстом"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "Додатки для роботи з текстом"
+msgstr "Додатки інструментів"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
@@ -2084,6 +2083,12 @@ msgstr "Налаштувати"
 #, kde-format
 msgid "Prompt"
 msgstr "Запит"
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:22
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
