@@ -19,6 +19,7 @@ public:
     ~TextAutoGenerateToolPluginConfigureWidget() override;
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QLabel *createLabel(const QString &label);
     QLabel *const mDescriptionLabel;
     QLabel *const mArgumentsLabel;
 };

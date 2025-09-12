@@ -21,20 +21,12 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
 
-    auto label = new QLabel(i18nc("@label:textbox", "Description:"), this);
-    QFont f = label->font();
-    f.setBold(true);
-    label->setFont(f);
-    mainLayout->addWidget(label);
+    mainLayout->addWidget(createLabel(i18nc("@label:textbox", "Description:")));
 
     mDescriptionLabel->setObjectName("mDescriptionLabel"_L1);
     mainLayout->addWidget(mDescriptionLabel);
 
-    label = new QLabel(i18nc("@label:textbox", "Arguments:"), this);
-    f = label->font();
-    f.setBold(true);
-    label->setFont(f);
-    mainLayout->addWidget(label);
+    mainLayout->addWidget(createLabel(i18nc("@label:textbox", "Arguments:")));
 
     mArgumentsLabel->setObjectName("mArgumentsLabel"_L1);
     mainLayout->addWidget(mArgumentsLabel);
@@ -46,5 +38,14 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
 }
 
 TextAutoGenerateToolPluginConfigureWidget::~TextAutoGenerateToolPluginConfigureWidget() = default;
+
+QLabel *TextAutoGenerateToolPluginConfigureWidget::createLabel(const QString &str)
+{
+    auto label = new QLabel(str, this);
+    QFont f = label->font();
+    f.setBold(true);
+    label->setFont(f);
+    return label;
+}
 
 #include "moc_textautogeneratetoolpluginconfigurewidget.cpp"
