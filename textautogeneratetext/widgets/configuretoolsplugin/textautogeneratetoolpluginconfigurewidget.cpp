@@ -7,6 +7,7 @@
 #include "textautogeneratetoolpluginconfigurewidget.h"
 #include <KLocalizedString>
 #include <QLabel>
+#include <QToolButton>
 #include <QVBoxLayout>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 using namespace Qt::Literals::StringLiterals;
@@ -14,6 +15,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWidget(TextAutoGenerateTextToolPlugin *plugin, QWidget *parent)
     : QWidget{parent}
     , mDescriptionLabel(new QLabel(this))
+    , mArgumentsLabel(new QLabel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -27,6 +29,17 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
 
     mDescriptionLabel->setObjectName("mDescriptionLabel"_L1);
     mainLayout->addWidget(mDescriptionLabel);
+
+    label = new QLabel(i18nc("@label:textbox", "Arguments:"), this);
+    f = label->font();
+    f.setBold(true);
+    label->setFont(f);
+    mainLayout->addWidget(label);
+
+    mArgumentsLabel->setObjectName("mArgumentsLabel"_L1);
+    mainLayout->addWidget(mArgumentsLabel);
+
+    // TODO add info about metadata
     if (plugin) {
         mDescriptionLabel->setText(plugin->descriptions());
     }

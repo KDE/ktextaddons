@@ -20,6 +20,7 @@ public:
 
 private:
     QLabel *const mDescriptionLabel;
+    QLabel *const mArgumentsLabel;
 };
 
 }
