@@ -87,8 +87,6 @@ target_sources(
         modelsmanager/ollamamodeldownloadfromnamewidget.cpp
         modelsmanager/ollamamodelinstalledinfowidget.h
         modelsmanager/ollamamodelinstalledinfowidget.cpp
-        modelsmanager/ollamamodelflowlayout.h
-        modelsmanager/ollamamodelflowlayout.cpp
         modelsmanager/ollamamodelcreatewidget.h
         modelsmanager/ollamamodelcreatewidget.cpp
         modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp

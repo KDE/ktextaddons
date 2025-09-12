@@ -4,17 +4,18 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "textautogenerateollama_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QLayout>
 #include <QList>
-
-class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelFlowLayout : public QLayout
+namespace TextAutoGenerateText
+{
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateFlowLayout : public QLayout
 {
     Q_OBJECT
 
 public:
-    explicit OllamaModelFlowLayout(QWidget *parent = nullptr);
-    ~OllamaModelFlowLayout() override;
+    explicit TextAutoGenerateFlowLayout(QWidget *parent = nullptr);
+    ~TextAutoGenerateFlowLayout() override;
 
     [[nodiscard]] int horizontalSpacing() const;
     void setHorizontalSpacing(int horizontalSpacing);
@@ -39,9 +40,10 @@ public:
     void clearAndDeleteWidgets();
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT void clear();
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT int doFlow(QRect rect, bool effective) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void clear();
+    TEXTAUTOGENERATETEXT_NO_EXPORT int doFlow(QRect rect, bool effective) const;
     QList<QLayoutItem *> mItems;
     int mHorizontalSpacing = -1;
     int mVerticalSpacing = -1;
 };
+}

@@ -4,11 +4,11 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "ollamamodelflowlayout.h"
+#include "textautogenerateflowlayout.h"
 
 #include <QStyle>
 #include <QWidget>
-
+using namespace TextAutoGenerateText;
 static int smartSpacing(QObject *parent, QStyle::PixelMetric pm)
 {
     if (!parent) {
@@ -21,17 +21,17 @@ static int smartSpacing(QObject *parent, QStyle::PixelMetric pm)
     }
 }
 
-OllamaModelFlowLayout::OllamaModelFlowLayout(QWidget *parent)
+TextAutoGenerateFlowLayout::TextAutoGenerateFlowLayout(QWidget *parent)
     : QLayout(parent)
 {
 }
 
-OllamaModelFlowLayout::~OllamaModelFlowLayout()
+TextAutoGenerateFlowLayout::~TextAutoGenerateFlowLayout()
 {
     clear();
 }
 
-int OllamaModelFlowLayout::horizontalSpacing() const
+int TextAutoGenerateFlowLayout::horizontalSpacing() const
 {
     if (mHorizontalSpacing >= 0) {
         return mHorizontalSpacing;
@@ -40,7 +40,7 @@ int OllamaModelFlowLayout::horizontalSpacing() const
     }
 }
 
-void OllamaModelFlowLayout::setHorizontalSpacing(int horizontalSpacing)
+void TextAutoGenerateFlowLayout::setHorizontalSpacing(int horizontalSpacing)
 {
     if (mHorizontalSpacing != horizontalSpacing) {
         mHorizontalSpacing = horizontalSpacing;
@@ -48,7 +48,7 @@ void OllamaModelFlowLayout::setHorizontalSpacing(int horizontalSpacing)
     }
 }
 
-int OllamaModelFlowLayout::verticalSpacing() const
+int TextAutoGenerateFlowLayout::verticalSpacing() const
 {
     if (mVerticalSpacing >= 0) {
         return mVerticalSpacing;
@@ -57,7 +57,7 @@ int OllamaModelFlowLayout::verticalSpacing() const
     }
 }
 
-void OllamaModelFlowLayout::setVerticalSpacing(int verticalSpacing)
+void TextAutoGenerateFlowLayout::setVerticalSpacing(int verticalSpacing)
 {
     if (mVerticalSpacing != verticalSpacing) {
         mVerticalSpacing = verticalSpacing;
@@ -65,12 +65,12 @@ void OllamaModelFlowLayout::setVerticalSpacing(int verticalSpacing)
     }
 }
 
-QSize OllamaModelFlowLayout::sizeHint() const
+QSize TextAutoGenerateFlowLayout::sizeHint() const
 {
     return minimumSize();
 }
 
-QSize OllamaModelFlowLayout::minimumSize() const
+QSize TextAutoGenerateFlowLayout::minimumSize() const
 {
     const QMargins margins = contentsMargins();
     QSize size;
@@ -83,14 +83,14 @@ QSize OllamaModelFlowLayout::minimumSize() const
     return size;
 }
 
-void OllamaModelFlowLayout::addItem(QLayoutItem *item)
+void TextAutoGenerateFlowLayout::addItem(QLayoutItem *item)
 {
     Q_ASSERT(!mItems.contains(item));
     mItems.append(item);
     invalidate();
 }
 
-QLayoutItem *OllamaModelFlowLayout::itemAt(int index) const
+QLayoutItem *TextAutoGenerateFlowLayout::itemAt(int index) const
 {
     if (index >= 0 && index < mItems.count()) {
         return mItems[index];
@@ -99,7 +99,7 @@ QLayoutItem *OllamaModelFlowLayout::itemAt(int index) const
     return nullptr;
 }
 
-QLayoutItem *OllamaModelFlowLayout::takeAt(int index)
+QLayoutItem *TextAutoGenerateFlowLayout::takeAt(int index)
 {
     if (index >= 0 && index < mItems.count()) {
         auto *it = mItems.takeAt(index);
@@ -110,40 +110,40 @@ QLayoutItem *OllamaModelFlowLayout::takeAt(int index)
     return nullptr;
 }
 
-int OllamaModelFlowLayout::count() const
+int TextAutoGenerateFlowLayout::count() const
 {
     return mItems.count();
 }
 
-Qt::Orientations OllamaModelFlowLayout::expandingDirections() const
+Qt::Orientations TextAutoGenerateFlowLayout::expandingDirections() const
 {
     return {};
 }
 
-bool OllamaModelFlowLayout::hasHeightForWidth() const
+bool TextAutoGenerateFlowLayout::hasHeightForWidth() const
 {
     return true;
 }
 
-int OllamaModelFlowLayout::heightForWidth(int width) const
+int TextAutoGenerateFlowLayout::heightForWidth(int width) const
 {
     return doFlow(QRect(0, 0, width, 0), false);
 }
 
-void OllamaModelFlowLayout::setGeometry(const QRect &rect)
+void TextAutoGenerateFlowLayout::setGeometry(const QRect &rect)
 {
     QLayout::setGeometry(rect);
     doFlow(rect, true);
 }
 
-void OllamaModelFlowLayout::clear()
+void TextAutoGenerateFlowLayout::clear()
 {
     while (QLayoutItem *item = takeAt(0)) {
         delete item;
     }
 }
 
-void OllamaModelFlowLayout::clearAndDeleteWidgets()
+void TextAutoGenerateFlowLayout::clearAndDeleteWidgets()
 {
     while (QLayoutItem *item = takeAt(0)) {
         item->widget()->deleteLater();
@@ -151,7 +151,7 @@ void OllamaModelFlowLayout::clearAndDeleteWidgets()
     }
 }
 
-int OllamaModelFlowLayout::doFlow(QRect rect, bool effective) const
+int TextAutoGenerateFlowLayout::doFlow(QRect rect, bool effective) const
 {
     const QMargins margins = contentsMargins();
     const QRect effectiveRect = rect.adjusted(margins.left(), margins.top(), -margins.right(), -margins.bottom());
@@ -197,4 +197,4 @@ int OllamaModelFlowLayout::doFlow(QRect rect, bool effective) const
     return y + highest - rect.y() + margins.bottom();
 }
 
-#include "moc_ollamamodelflowlayout.cpp"
+#include "moc_textautogenerateflowlayout.cpp"
