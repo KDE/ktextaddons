@@ -41,7 +41,7 @@ repos:
    rev: v2.4.1
    hooks:
     - id: codespell
-      exclude: (textautogeneratetext/cmark-rc|textautogeneratetext/plugins/ollama/modelsmanager/available_models.json|textemoticons/core/data/emoji.json|textgrammarcheck/grammalecte/autotests/data/result1.json|texttranslator/translator/plugins/bergamot/autotests/data/modellanguages/models.json|textgrammarcheck/languagetool/autotests/data/test2.json|textautocorrection/core/autotests/data/custom-fr-ref.xml|textgrammarcheck/common/autotests/grammarresultutiltest.cpp|textautocorrection/core/autotests/data/custom-fr.xml)
+      exclude: (textautogeneratetext/cmark-rc|textautogeneratetext/plugins/ollama/modelsmanager/available_models.json|textemoticons/core/data/emoji.json|textgrammarcheck/grammalecte/autotests/data/result1.json|texttranslator/translator/plugins/bergamot/autotests/data/modellanguages/models.json|textgrammarcheck/languagetool/autotests/data/test2.json|textautocorrection/core/autotests/data/custom-fr-ref.xml|textgrammarcheck/common/autotests/grammarresultutiltest.cpp|textautocorrection/core/autotests/data/custom-fr.xml|textautogeneratetext/tools/example/textautogeneratetext_exampleplugin.json)
  - repo: https://github.com/BlankSpruce/gersemi
    rev: 0.22.1
    hooks:
