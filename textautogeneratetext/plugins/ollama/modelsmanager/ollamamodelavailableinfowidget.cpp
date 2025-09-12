@@ -10,7 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "ollamamanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodeldownloadwidget.h"
-#include "ollamamodelflowlayout.h"
+#include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
@@ -45,7 +45,7 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     auto infoLayout = new QVBoxLayout(mInfoWidget);
 
     auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
-    auto languagesGroupBoxLayout = new OllamaModelFlowLayout(languagesGroupBox);
+    auto languagesGroupBoxLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
     const QStringList languages = index.data(OllamaModelAvailableInfosModel::Languages).toStringList();
     for (const auto &l : languages) {
         const QLocale locale(l);

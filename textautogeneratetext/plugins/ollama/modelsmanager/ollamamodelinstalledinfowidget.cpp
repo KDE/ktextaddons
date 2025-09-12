@@ -5,7 +5,7 @@
 */
 #include "ollamamodelinstalledinfowidget.h"
 #include "autogeneratetext_ollama_debug.h"
-#include "ollamamodelflowlayout.h"
+#include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
 #include <QLabel>
@@ -103,7 +103,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
     if (it != infoAvailableInfos.constEnd()) {
         auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
         infoLayout->addWidget(languagesGroupBox);
-        auto vboxLanguagesLayout = new OllamaModelFlowLayout(languagesGroupBox);
+        auto vboxLanguagesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
         for (const auto &lang : (*it).languages()) {
             const QLocale locale(lang);
             if (locale.language() == QLocale::Language::C) {
@@ -125,7 +125,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
         if (!categoriesName.isEmpty()) {
             auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
             infoLayout->addWidget(featuresGroupBox);
-            auto vboxfeaturesLayout = new OllamaModelFlowLayout(featuresGroupBox);
+            auto vboxfeaturesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(featuresGroupBox);
             for (const QString &name : categoriesName) {
                 vboxfeaturesLayout->addWidget(new QLabel(name, mInfoWidget));
             }
