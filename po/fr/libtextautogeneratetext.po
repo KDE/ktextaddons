@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-12 00:42+0000\n"
-"PO-Revision-Date: 2025-09-02 14:39+0200\n"
+"POT-Creation-Date: 2025-09-13 00:48+0000\n"
+"PO-Revision-Date: 2025-09-04 11:40+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2112,10 +2112,16 @@ msgstr "Configurer"
 msgid "Prompt"
 msgstr "Invite de commandes"
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:22
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:24
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
+msgstr ""
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:29
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Arguments:"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
@@ -2317,15 +2323,13 @@ msgstr "Rechercher des canaux"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "Salon précédent"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "Nouvelle discussion"
+msgstr "Salon suivant"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
