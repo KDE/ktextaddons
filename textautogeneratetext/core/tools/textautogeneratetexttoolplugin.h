@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPlugin : public QObject
@@ -35,6 +36,7 @@ Q_SIGNALS:
     void finished(const QString &result);
 
 protected:
+    QList<TextAutoGenerateTextToolPluginProperty> mProperties;
     QByteArray mToolNameId;
     bool mEnabled = true;
 };

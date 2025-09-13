@@ -352,9 +352,9 @@ target_link_libraries(
         Qt::Network
         KF6::ConfigGui
         KF6::CoreAddons
+        KF6::I18n
     PRIVATE
         Qt::Sql
-        KF6::I18n
         KF6::WidgetsAddons
         KF6::TextWidgets
         KF6::ColorScheme
@@ -412,6 +412,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscore_HEADERS
     HEADER_NAMES
     TextAutoGenerateTextToolPlugin
+    TextAutoGenerateTextToolPluginProperty
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools

@@ -15,17 +15,13 @@ public:
     TextAutoGenerateTextToolPluginProperty();
     ~TextAutoGenerateTextToolPluginProperty();
 
-#if 0
-    "location": {
-      "type": "string",
-      "description": "The location to get the weather for, e.g. San Francisco, CA"
-    },
-#endif
     [[nodiscard]] KLazyLocalizedString description() const;
     void setDescription(const KLazyLocalizedString &newDescription);
 
     [[nodiscard]] KLazyLocalizedString name() const;
     void setName(const KLazyLocalizedString &newName);
+
+    [[nodiscard]] QByteArray generateProperty() const;
 
 private:
     KLazyLocalizedString mDescription;
