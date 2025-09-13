@@ -64,19 +64,19 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
 
     QJsonObject parameters;
     parameters["type"_L1] = u"object"_s;
-    QJsonObject properties;
+    QJsonObject propertiesObj;
     QJsonArray required;
     QStringList lst;
     for (const TextAutoGenerateTextToolPluginProperty &property : std::as_const(mProperties)) {
         QJsonObject prop;
         prop["type"_L1] = u"string"_s;
         prop["description"_L1] = QString::fromLatin1(property.description().untranslatedText());
-        properties[QString::fromLatin1(property.name().untranslatedText())] = prop;
+        propertiesObj[QString::fromLatin1(property.name().untranslatedText())] = prop;
         lst.append(QString::fromLatin1(property.name().untranslatedText()));
     }
     required = QJsonArray::fromStringList(lst);
     parameters["required"_L1] = required;
-    parameters["properties"_L1] = properties;
+    parameters["properties"_L1] = propertiesObj;
     obj["parameters"_L1] = parameters;
     return obj;
 }
