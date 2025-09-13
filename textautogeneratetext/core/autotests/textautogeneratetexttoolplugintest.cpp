@@ -6,8 +6,43 @@
 #include "textautogeneratetexttoolplugintest.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
 #include <QTest>
-QTEST_GUILESS_MAIN(TextAutoGenerateTextToolPluginTest)
 
+class CustomTextToolPlugin : public TextAutoGenerateText::TextAutoGenerateTextToolPlugin
+{
+public:
+    explicit CustomTextToolPlugin(QObject *parent = nullptr)
+        : TextAutoGenerateText::TextAutoGenerateTextToolPlugin(parent)
+    {
+    }
+    ~CustomTextToolPlugin() override = default;
+
+    [[nodiscard]] QString executeTool() override;
+    [[nodiscard]] QString displayName() const override;
+    [[nodiscard]] QString description() const override;
+    [[nodiscard]] QByteArray metadata() const override;
+};
+
+QString CustomTextToolPlugin::executeTool()
+{
+    return {};
+}
+
+QString CustomTextToolPlugin::displayName() const
+{
+    return {};
+}
+
+QString CustomTextToolPlugin::description() const
+{
+    return {};
+}
+
+QByteArray CustomTextToolPlugin::metadata() const
+{
+    return {};
+}
+
+QTEST_GUILESS_MAIN(TextAutoGenerateTextToolPluginTest)
 TextAutoGenerateTextToolPluginTest::TextAutoGenerateTextToolPluginTest(QObject *parent)
     : QObject{parent}
 {
@@ -15,6 +50,7 @@ TextAutoGenerateTextToolPluginTest::TextAutoGenerateTextToolPluginTest(QObject *
 
 void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
 {
+    CustomTextToolPlugin w;
     // TODO
 }
 
