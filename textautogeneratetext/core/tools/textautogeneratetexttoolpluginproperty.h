@@ -6,7 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QString>
+#include <KLazyLocalizedString>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginProperty
@@ -21,14 +21,14 @@ public:
       "description": "The location to get the weather for, e.g. San Francisco, CA"
     },
 #endif
-    [[nodiscard]] QString description() const;
-    void setDescription(const QString &newDescription);
+    [[nodiscard]] KLazyLocalizedString description() const;
+    void setDescription(const KLazyLocalizedString &newDescription);
 
-    [[nodiscard]] QString name() const;
-    void setName(const QString &newName);
+    [[nodiscard]] KLazyLocalizedString name() const;
+    void setName(const KLazyLocalizedString &newName);
 
 private:
-    QString mDescription;
-    QString mName;
+    KLazyLocalizedString mDescription;
+    KLazyLocalizedString mName;
 };
 }

@@ -10,22 +10,22 @@ TextAutoGenerateTextToolPluginProperty::TextAutoGenerateTextToolPluginProperty()
 
 TextAutoGenerateTextToolPluginProperty::~TextAutoGenerateTextToolPluginProperty() = default;
 
-QString TextAutoGenerateTextToolPluginProperty::description() const
+KLazyLocalizedString TextAutoGenerateTextToolPluginProperty::description() const
 {
     return mDescription;
 }
 
-void TextAutoGenerateTextToolPluginProperty::setDescription(const QString &newDescription)
+void TextAutoGenerateTextToolPluginProperty::setDescription(const KLazyLocalizedString &newDescription)
 {
     mDescription = newDescription;
 }
 
-QString TextAutoGenerateTextToolPluginProperty::name() const
+KLazyLocalizedString TextAutoGenerateTextToolPluginProperty::name() const
 {
     return mName;
 }
 
-void TextAutoGenerateTextToolPluginProperty::setName(const QString &newName)
+void TextAutoGenerateTextToolPluginProperty::setName(const KLazyLocalizedString &newName)
 {
     mName = newName;
 }
