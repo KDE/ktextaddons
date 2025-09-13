@@ -6,13 +6,12 @@
 #pragma once
 #include <QObject>
 
-class TextAutoGenerateTextToolPluginPropertyTest : public QObject
+class TextAutoGenerateTextToolPluginTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextToolPluginPropertyTest(QObject *parent = nullptr);
-    ~TextAutoGenerateTextToolPluginPropertyTest() override = default;
-
+    explicit TextAutoGenerateTextToolPluginTest(QObject *parent = nullptr);
+    ~TextAutoGenerateTextToolPluginTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };
