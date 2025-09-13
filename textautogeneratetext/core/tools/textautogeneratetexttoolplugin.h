@@ -32,6 +32,9 @@ public:
 
     [[nodiscard]] bool isValid() const;
 
+    [[nodiscard]] QList<TextAutoGenerateTextToolPluginProperty> properties() const;
+    void setProperties(const QList<TextAutoGenerateTextToolPluginProperty> &newProperties);
+
 Q_SIGNALS:
     void finished(const QString &result);
 

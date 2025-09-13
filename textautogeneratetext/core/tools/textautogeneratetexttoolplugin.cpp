@@ -43,4 +43,14 @@ bool TextAutoGenerateTextToolPlugin::isValid() const
     return !mToolNameId.isEmpty();
 }
 
+QList<TextAutoGenerateTextToolPluginProperty> TextAutoGenerateTextToolPlugin::properties() const
+{
+    return mProperties;
+}
+
+void TextAutoGenerateTextToolPlugin::setProperties(const QList<TextAutoGenerateTextToolPluginProperty> &newProperties)
+{
+    mProperties = newProperties;
+}
+
 #include "moc_textautogeneratetexttoolplugin.cpp"
