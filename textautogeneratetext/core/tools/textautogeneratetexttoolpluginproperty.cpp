@@ -30,15 +30,3 @@ void TextAutoGenerateTextToolPluginProperty::setName(const KLazyLocalizedString 
 {
     mName = newName;
 }
-
-QByteArray TextAutoGenerateTextToolPluginProperty::generateProperty() const
-{
-#if 0
-    "location": {
-      "type": "string",
-      "description": "The location to get the weather for, e.g. San Francisco, CA"
-    },
-#endif
-    return QByteArray(mName.untranslatedText()) + ":{"_ba + "type: \"string\","_ba + "description: \""_ba + QByteArray(mDescription.untranslatedText())
-        + "\"}"_ba;
-}

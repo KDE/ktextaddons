@@ -15,5 +15,6 @@ TextAutoGenerateTextToolPluginPropertyTest::TextAutoGenerateTextToolPluginProper
 void TextAutoGenerateTextToolPluginPropertyTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty w;
-    // TODO
+    QVERIFY(w.description().isEmpty());
+    QVERIFY(w.name().isEmpty());
 }

@@ -21,8 +21,6 @@ public:
     [[nodiscard]] KLazyLocalizedString name() const;
     void setName(const KLazyLocalizedString &newName);
 
-    [[nodiscard]] QByteArray generateProperty() const;
-
 private:
     KLazyLocalizedString mDescription;
     KLazyLocalizedString mName;
