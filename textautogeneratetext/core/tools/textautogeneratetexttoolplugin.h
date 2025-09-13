@@ -19,7 +19,7 @@ public:
 
     [[nodiscard]] virtual QString executeTool() = 0;
     [[nodiscard]] virtual QString displayName() const = 0;
-    [[nodiscard]] virtual QString descriptions() const = 0;
+    [[nodiscard]] virtual QString description() const = 0;
     [[nodiscard]] virtual QByteArray metadata() const = 0;
 
     [[nodiscard]] bool enabled() const;

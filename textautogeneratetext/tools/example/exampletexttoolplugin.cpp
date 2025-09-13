@@ -31,7 +31,7 @@ QString ExampleTextToolPlugin::displayName() const
     return u"Example tool"_s;
 }
 
-QString ExampleTextToolPlugin::descriptions() const
+QString ExampleTextToolPlugin::description() const
 {
     // Don't translate it
     return u"Tool used for testing"_s;

@@ -60,7 +60,7 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
 {
     QJsonObject obj;
     obj["name"_L1] = QString::fromLatin1(mToolNameId);
-    // obj["description"_L1] = QString::fromLatin1(mToolNameId);
+    obj["description"_L1] = description();
 
     QJsonObject parameters;
     parameters["type"_L1] = u"object"_s;

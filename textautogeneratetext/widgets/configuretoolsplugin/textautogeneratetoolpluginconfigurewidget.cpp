@@ -33,7 +33,7 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
 
     // TODO add info about metadata
     if (plugin) {
-        mDescriptionLabel->setText(plugin->descriptions());
+        mDescriptionLabel->setText(plugin->description());
     }
 }
 
