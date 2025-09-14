@@ -7,6 +7,7 @@
 
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class QToolButton;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolsWidget : public QWidget
@@ -15,5 +16,10 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolsWidget : public QWi
 public:
     explicit TextAutoGenerateToolsWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateToolsWidget() override;
+
+    [[nodiscard]] QList<QByteArray> generateListOfActiveTools() const;
+
+private:
+    QList<QToolButton *> mListButton;
 };
 }

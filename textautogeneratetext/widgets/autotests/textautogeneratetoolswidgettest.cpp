@@ -16,6 +16,7 @@ TextAutoGenerateToolsWidgetTest::TextAutoGenerateToolsWidgetTest(QObject *parent
 void TextAutoGenerateToolsWidgetTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateToolsWidget w;
+    QVERIFY(w.generateListOfActiveTools().isEmpty());
     // TODO
 }
 
