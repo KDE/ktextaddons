@@ -37,29 +37,6 @@ QString ExampleTextToolPlugin::description() const
     return u"Tool used for testing"_s;
 }
 
-QByteArray ExampleTextToolPlugin::metadata() const
-{
-    const QByteArray ba = R"({"name": ")" + mToolNameId + R"(",
-                               "description": "Get the current weather for a location",
-                               "parameters": {
-                                 "type": "object",
-                                 "properties": {
-                                   "location": {
-                                     "type": "string",
-                                     "description": "The location to get the weather for, e.g. San Francisco, CA"
-                                   },
-                                   "format": {
-                                     "type": "string",
-                                     "description": "The format to return the weather in, e.g. 'celsius' or 'fahrenheit'",
-                                     "enum": ["celsius", "fahrenheit"]
-                                   }
-                                 },
-                                 "required": ["location", "format"]
-                               }
-                            })"_ba;
-    return ba;
-}
-
 void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
 {
     QPointer<ExampleTextToolPluginDialog> dlg = new ExampleTextToolPluginDialog(this, parent);

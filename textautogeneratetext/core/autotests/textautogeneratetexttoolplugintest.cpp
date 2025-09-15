@@ -19,7 +19,6 @@ public:
     [[nodiscard]] QString executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
-    [[nodiscard]] QByteArray metadata() const override;
 };
 
 QString CustomTextToolPlugin::executeTool()
@@ -33,11 +32,6 @@ QString CustomTextToolPlugin::displayName() const
 }
 
 QString CustomTextToolPlugin::description() const
-{
-    return {};
-}
-
-QByteArray CustomTextToolPlugin::metadata() const
 {
     return {};
 }

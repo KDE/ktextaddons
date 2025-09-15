@@ -17,6 +17,14 @@ TextAutoGenerateTextToolPlugin::TextAutoGenerateTextToolPlugin(QObject *parent)
 
 TextAutoGenerateTextToolPlugin::~TextAutoGenerateTextToolPlugin() = default;
 
+QJsonObject TextAutoGenerateTextToolPlugin::metadata()
+{
+    if (mMetaData.empty()) {
+        mMetaData = generateMetadata();
+    }
+    return mMetaData;
+}
+
 bool TextAutoGenerateTextToolPlugin::enabled() const
 {
     return mEnabled;
