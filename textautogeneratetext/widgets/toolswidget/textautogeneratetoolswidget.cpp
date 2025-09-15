@@ -6,6 +6,8 @@
 #include "textautogeneratetoolswidget.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "widgets/common/textautogenerateflowlayout.h"
+#include <KLocalizedString>
+#include <QLabel>
 #include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;
@@ -16,6 +18,10 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     auto mainLayout = new TextAutoGenerateFlowLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
+
+    auto label = new QLabel(i18n("Tools:"), this);
+    mainLayout->setAlignment(label, Qt::AlignBottom);
+    mainLayout->addWidget(label);
 
     const QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> lst = TextAutoGenerateTextToolPluginManager::self()->activePluginTools();
     for (const auto &info : lst) {

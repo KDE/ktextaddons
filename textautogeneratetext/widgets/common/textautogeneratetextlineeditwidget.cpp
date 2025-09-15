@@ -29,6 +29,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
 
     mTextAutoGenerateToolsWidget->setObjectName(u"mTextAutoGenerateToolsWidget"_s);
     topLayout->addWidget(mTextAutoGenerateToolsWidget);
+    mTextAutoGenerateToolsWidget->setVisible(false); // TODO make it visible or not
 
     auto mainLayout = new QHBoxLayout;
     mainLayout->setObjectName(u"mainLayout"_s);
