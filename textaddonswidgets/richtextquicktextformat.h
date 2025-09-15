@@ -31,7 +31,7 @@ public:
         InsertLink = 32,
         UnderLine = 64,
     };
-    Q_ENUM(QuickTextFormatType);
+    Q_ENUM(QuickTextFormatType)
     Q_FLAGS(QuickTextFormatType QuickTextFormatTypes)
     Q_DECLARE_FLAGS(QuickTextFormatTypes, QuickTextFormatType)
 
