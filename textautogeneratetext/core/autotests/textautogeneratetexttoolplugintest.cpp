@@ -51,7 +51,13 @@ TextAutoGenerateTextToolPluginTest::TextAutoGenerateTextToolPluginTest(QObject *
 void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
 {
     CustomTextToolPlugin w;
-    // TODO
+    QVERIFY(w.description().isEmpty());
+    QVERIFY(w.metadata().isEmpty());
+    QVERIFY(w.displayName().isEmpty());
+    QVERIFY(w.executeTool().isEmpty());
+    QVERIFY(w.toolNameId().isEmpty());
+    QVERIFY(w.enabled());
+    QVERIFY(!w.isValid());
 }
 
 #include "moc_textautogeneratetexttoolplugintest.cpp"
