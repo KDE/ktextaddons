@@ -43,14 +43,14 @@ void TextAutoGenerateTextLineEdit::loadSpellCheckingSettings()
 
 void TextAutoGenerateTextLineEdit::slotSpellCheckingEnableChanged(bool b)
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, u"Spelling"_s);
     group.writeEntry("checkerEnabledByDefault", b);
 }
 
 void TextAutoGenerateTextLineEdit::slotLanguageChanged(const QString &lang)
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group(config, u"Spelling"_s);
     group.writeEntry("Language", lang);
     switchAutoCorrectionLanguage(lang);
