@@ -46,7 +46,7 @@ void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
 {
     CustomTextToolPlugin w;
     QVERIFY(w.description().isEmpty());
-    QVERIFY(w.metadata().isEmpty());
+    QVERIFY(!w.metadata().isEmpty());
     QVERIFY(w.displayName().isEmpty());
     QVERIFY(w.executeTool().isEmpty());
     QVERIFY(w.toolNameId().isEmpty());
