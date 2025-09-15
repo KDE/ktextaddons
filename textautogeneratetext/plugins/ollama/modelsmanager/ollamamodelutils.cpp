@@ -277,6 +277,8 @@ QString OllamaModelUtils::description(const QString &modelName)
         {u"devstral"_s, i18n("Devstral: the best open source model for coding agents.")},
         {u"gpt-oss"_s, i18n("OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases.")},
         {u"qwen3-coder"_s, i18n("Alibaba's performant long context models for agentic and coding tasks.")},
+        {u"deepseek-v3.1"_s, i18n("DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-thinking mode.")},
+        {u"embeddinggemma"_s, i18n("EmbeddingGemma is a 300M parameter embedding model from Google.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
