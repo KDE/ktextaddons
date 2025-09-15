@@ -6,7 +6,7 @@
 #include "textautogeneratetexttoolplugintest.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
 #include <QTest>
-
+using namespace Qt::Literals::StringLiterals;
 class CustomTextToolPlugin : public TextAutoGenerateText::TextAutoGenerateTextToolPlugin
 {
 public:
@@ -34,6 +34,35 @@ QString CustomTextToolPlugin::displayName() const
 QString CustomTextToolPlugin::description() const
 {
     return {};
+}
+
+class CustomTextToolPlugin2 : public TextAutoGenerateText::TextAutoGenerateTextToolPlugin
+{
+public:
+    explicit CustomTextToolPlugin2(QObject *parent = nullptr)
+        : TextAutoGenerateText::TextAutoGenerateTextToolPlugin(parent)
+    {
+    }
+    ~CustomTextToolPlugin2() override = default;
+
+    [[nodiscard]] QString executeTool() override;
+    [[nodiscard]] QString displayName() const override;
+    [[nodiscard]] QString description() const override;
+};
+
+QString CustomTextToolPlugin2::executeTool()
+{
+    return {};
+}
+
+QString CustomTextToolPlugin2::displayName() const
+{
+    return u"description custom2"_s;
+}
+
+QString CustomTextToolPlugin2::description() const
+{
+    return u"foo bla"_s;
 }
 
 QTEST_GUILESS_MAIN(TextAutoGenerateTextToolPluginTest)
