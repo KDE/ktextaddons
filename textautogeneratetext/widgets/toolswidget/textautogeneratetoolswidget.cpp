@@ -23,6 +23,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
         b->setText(info.displayName);
         b->setAutoRaise(true);
         b->setProperty("identifier", info.identifier);
+        b->setCheckable(true);
         mainLayout->addWidget(b);
         mListButton.append(b);
     }
