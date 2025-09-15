@@ -20,10 +20,18 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     , mAttachFile(new QToolButton(this))
     , mManager(manager)
 {
-    auto mainLayout = new QHBoxLayout(this);
+    auto topLayout = new QVBoxLayout(this);
+    topLayout->setObjectName(u"topLayout"_s);
+    topLayout->setContentsMargins(QMargins{});
+    topLayout->setSpacing(0);
+
+    // TODO add tools widget support
+
+    auto mainLayout = new QHBoxLayout;
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
     mainLayout->setSpacing(0);
+    topLayout->addLayout(mainLayout);
 
     mAttachFile->setObjectName(u"mAttachFile"_s);
     mAttachFile->setToolTip(i18nc("@info:tooltip", "Attach File"));
