@@ -69,7 +69,11 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     if (m.engineName().isEmpty() && m.modelName().isEmpty()) {
         return {};
     }
-    return i18n("Engine: %1\nModel: %2\nInstance Name: %3", m.engineName(), m.modelName(), m.instanceName());
+    QString toolTip = i18n("Engine: %1\nModel: %2\nInstance Name: %3", m.engineName(), m.modelName(), m.instanceName());
+    if (m.messageInfo() && !m.messageInfo()->tools().isEmpty()) {
+        toolTip += i18n("Tools: %1", QString::fromLatin1(m.messageInfo()->tools().join(','))); // TODO use name not identifier
+    }
+    return toolTip;
 }
 
 QByteArray TextAutoGenerateMessagesModel::chatId() const
