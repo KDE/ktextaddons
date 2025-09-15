@@ -19,6 +19,8 @@ public:
 
     [[nodiscard]] QList<QByteArray> generateListOfActiveTools() const;
 
+    void setActivatedTools(const QList<QByteArray> &lst);
+
 private:
     QList<QToolButton *> mListButton;
 };
