@@ -58,10 +58,10 @@ public:
     [[nodiscard]] bool ready() const;
     void setReady(bool newReady);
 
-    void sendMessage(const QByteArray &chatId, const QString &str);
+    void sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools);
     virtual void cancelRequest(const QByteArray &uuid);
 
-    void editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str);
+    void editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str, const QList<QByteArray> &lstTools);
 
     [[nodiscard]] virtual QString engineName() const = 0;
 

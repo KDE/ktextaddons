@@ -35,7 +35,7 @@ public:
     void setChatId(const QByteArray &newChatId);
 
 Q_SIGNALS:
-    void editingFinished(const QString &str, const QByteArray &uuid);
+    void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools);
     void keyPressed(QKeyEvent *ev);
 
 private:

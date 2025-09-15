@@ -68,7 +68,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             mManager->createNewChat();
         });
         connect(mManager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
-            slotEditingFinished(str, {});
+            slotEditingFinished(str, {}, {}); // TODO use tools list ?
         });
 
         connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
@@ -185,13 +185,14 @@ void TextAutoGenerateWidget::loadEngine()
     }
 }
 
-void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid)
+void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools)
 {
+    // TODO use lstTools
     mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
-        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
+        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str, lstTools);
     } else {
-        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str);
+        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str, lstTools);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
@@ -219,13 +220,13 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr);
+    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, {}); // TODO add TOOLS
 }
 
 void TextAutoGenerateWidget::slotInitializeDone()
 {
     for (const auto &str : std::as_const(mAskMessageList)) {
-        slotEditingFinished(str, {});
+        slotEditingFinished(str, {}, {}); // TODO use TOOLS ?
     }
     mAskMessageList.clear();
     mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
@@ -236,7 +237,7 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
     if (!mManager->pluginWasInitialized()) {
         mAskMessageList.append(str);
     } else {
-        slotEditingFinished(str, {});
+        slotEditingFinished(str, {}, {}); // TODO use TOOLS ?
     }
 }
 

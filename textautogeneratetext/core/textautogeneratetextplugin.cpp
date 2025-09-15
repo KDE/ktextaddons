@@ -98,7 +98,7 @@ QJsonArray TextAutoGenerateTextPlugin::createListMessages(const QList<QJsonObjec
     return array;
 }
 
-void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str)
+void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str, const QList<QByteArray> &lstTools)
 {
     if (ready()) {
         auto messageModel = d->manager->messagesModelFromChatId(chatId);
@@ -125,7 +125,7 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
     sendToAssistant(info);
 }
 
-void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str)
+void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools)
 {
     if (ready()) {
         auto messageModel = d->manager->messagesModelFromChatId(chatId);

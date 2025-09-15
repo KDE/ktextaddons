@@ -138,7 +138,7 @@ void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId,
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr);
+    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, {}); // TODO
 }
 
 void TextAutoGenerateQuickAskWidget::loadEngine()
@@ -175,9 +175,9 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, con
 {
     mManager->checkCurrentChat();
     if (messageUuid.isEmpty()) {
-        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str);
+        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str, {}); // TODO
     } else {
-        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), messageUuid, str);
+        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), messageUuid, str, {}); // TODO
     }
     // mTextAutoGenerateResultWidget->editingFinished(uuid);
 }

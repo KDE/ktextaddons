@@ -63,7 +63,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         const QString str = msg.trimmed();
         mSendMessage->setEnabled(!str.isEmpty());
         if (!str.isEmpty()) {
-            Q_EMIT editingFinished(str, mUuid);
+            Q_EMIT editingFinished(str, mUuid, mTextAutoGenerateToolsWidget->generateListOfActiveTools());
             clearLineEdit();
         }
     });
@@ -74,7 +74,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     });
 
     connect(mSendMessage, &QToolButton::clicked, this, [this]() {
-        Q_EMIT editingFinished(mTextAutoGenerateTextLineEdit->text(), mUuid);
+        Q_EMIT editingFinished(mTextAutoGenerateTextLineEdit->text(), mUuid, mTextAutoGenerateToolsWidget->generateListOfActiveTools());
         clearLineEdit();
     });
     connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::keyPressed, this, &TextAutoGenerateTextLineEditWidget::keyPressed);
