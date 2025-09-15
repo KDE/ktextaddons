@@ -147,11 +147,12 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         msgLlm.setSender(TextAutoGenerateMessage::Sender::Assistant);
         msgLlm.setDateTime(dt);
         msgLlm.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
-        TextAutoGenerateAnswerInfo anwserInfo;
-        anwserInfo.setEngineName(engineName());
-        anwserInfo.setModelName(currentModel());
-        anwserInfo.setInstanceName(d->instance->displayName());
-        msgLlm.setMessageInfo(anwserInfo);
+        TextAutoGenerateAnswerInfo answerInfo;
+        answerInfo.setEngineName(engineName());
+        answerInfo.setModelName(currentModel());
+        answerInfo.setInstanceName(d->instance->displayName());
+        answerInfo.setTools(lstTools);
+        msgLlm.setMessageInfo(answerInfo);
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);

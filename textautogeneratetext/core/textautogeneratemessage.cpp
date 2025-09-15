@@ -321,6 +321,7 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson() const
     }
     obj["role"_L1] = role;
     obj["content"_L1] = mContent;
+    // TODO add tools !
     return obj;
 }
 
