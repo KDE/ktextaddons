@@ -7,6 +7,7 @@
 
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
+#include "widgets/toolswidget/textautogeneratetoolswidget.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QToolButton>
@@ -16,6 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
+    , mTextAutoGenerateToolsWidget(new TextAutoGenerateToolsWidget(this))
     , mSendMessage(new QToolButton(this))
     , mAttachFile(new QToolButton(this))
     , mManager(manager)
@@ -25,7 +27,8 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     topLayout->setContentsMargins(QMargins{});
     topLayout->setSpacing(0);
 
-    // TODO add tools widget support
+    mTextAutoGenerateToolsWidget->setObjectName(u"mTextAutoGenerateToolsWidget"_s);
+    topLayout->addWidget(mTextAutoGenerateToolsWidget);
 
     auto mainLayout = new QHBoxLayout;
     mainLayout->setObjectName(u"mainLayout"_s);

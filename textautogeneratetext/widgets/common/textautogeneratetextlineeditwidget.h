@@ -12,6 +12,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextLineEdit;
 class TextAutoGenerateManager;
+class TextAutoGenerateToolsWidget;
 /**
  * @brief The TextAutoGenerateTextLineEditWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -41,6 +42,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearLineEdit();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateEnableState();
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
+    TextAutoGenerateToolsWidget *const mTextAutoGenerateToolsWidget;
     QToolButton *const mSendMessage;
     QToolButton *const mAttachFile;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
