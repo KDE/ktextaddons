@@ -19,6 +19,7 @@ void TextAutoGenerateAnswerInfoTest::shouldHaveDefaultValues()
     QVERIFY(info.engineName().isEmpty());
     QVERIFY(info.instanceName().isEmpty());
     QVERIFY(info.modelName().isEmpty());
+    QVERIFY(info.tools().isEmpty());
     QVERIFY(!info.isValid());
 }
 

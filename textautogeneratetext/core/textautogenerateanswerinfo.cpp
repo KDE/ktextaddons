@@ -7,6 +7,7 @@
 #include "textautogenerateanswerinfo.h"
 #include "textautogeneratetextcore_memory_debug.h"
 #include <QJsonObject>
+#include <qjsonarray.h>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -27,6 +28,7 @@ TextAutoGenerateAnswerInfo::TextAutoGenerateAnswerInfo(const TextAutoGenerateAns
     mModelName = other.mModelName;
     mEngineName = other.mEngineName;
     mInstanceName = other.mInstanceName;
+    mTools = other.mTools;
 }
 
 bool TextAutoGenerateAnswerInfo::isValid() const
@@ -69,12 +71,13 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAnswerIn
     d.space() << "mInstanceName:" << t.instanceName();
     d.space() << "mModelName:" << t.modelName();
     d.space() << "mEngineName:" << t.engineName();
+    d.space() << "mTools:" << t.tools();
     return d;
 }
 
 bool TextAutoGenerateAnswerInfo::operator==(const TextAutoGenerateAnswerInfo &other) const
 {
-    return mInstanceName == other.mInstanceName && mModelName == other.mModelName && mEngineName == other.mEngineName;
+    return mInstanceName == other.mInstanceName && mModelName == other.mModelName && mEngineName == other.mEngineName && mTools == other.mTools;
 }
 
 void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &answerInfo, QJsonObject &o)
@@ -82,6 +85,13 @@ void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &ans
     o["modelName"_L1] = answerInfo.modelName();
     o["engineName"_L1] = answerInfo.engineName();
     o["instanceName"_L1] = answerInfo.instanceName();
+    if (answerInfo.tools().isEmpty()) {
+        QJsonArray toolsArray;
+        for (const QByteArray &b : answerInfo.tools()) {
+            toolsArray.append(QString::fromLatin1(b));
+        }
+        o["tools"_L1] = toolsArray;
+    }
 }
 
 TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonObject &o)
@@ -90,5 +100,23 @@ TextAutoGenerateAnswerInfo *TextAutoGenerateAnswerInfo::deserialize(const QJsonO
     messageInfo->setModelName(o["modelName"_L1].toString());
     messageInfo->setEngineName(o["engineName"_L1].toString());
     messageInfo->setInstanceName(o["instanceName"_L1].toString());
+    if (o.contains("tools"_L1)) {
+        const QJsonArray toolsArray = o["tools"_L1].toArray();
+        QList<QByteArray> lst;
+        for (int i = 0; i < toolsArray.count(); i++) {
+            lst.append(toolsArray[i].toString().toLatin1());
+        }
+        messageInfo->setTools(lst);
+    }
     return messageInfo;
+}
+
+QList<QByteArray> TextAutoGenerateAnswerInfo::tools() const
+{
+    return mTools;
+}
+
+void TextAutoGenerateAnswerInfo::setTools(const QList<QByteArray> &newTools)
+{
+    mTools = newTools;
 }

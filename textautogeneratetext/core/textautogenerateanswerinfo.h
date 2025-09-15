@@ -33,7 +33,11 @@ public:
     static void serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o);
     static TextAutoGenerateAnswerInfo *deserialize(const QJsonObject &o);
 
+    [[nodiscard]] QList<QByteArray> tools() const;
+    void setTools(const QList<QByteArray> &newTools);
+
 private:
+    QList<QByteArray> mTools;
     QString mModelName;
     QString mEngineName;
     QString mInstanceName;
