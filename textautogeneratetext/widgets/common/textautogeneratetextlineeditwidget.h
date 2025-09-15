@@ -45,6 +45,7 @@ private:
     TextAutoGenerateToolsWidget *const mTextAutoGenerateToolsWidget;
     QToolButton *const mSendMessage;
     QToolButton *const mAttachFile;
+    QToolButton *const mConfigureTools;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QByteArray mUuid;
 };

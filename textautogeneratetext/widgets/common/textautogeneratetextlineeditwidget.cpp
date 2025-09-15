@@ -20,6 +20,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     , mTextAutoGenerateToolsWidget(new TextAutoGenerateToolsWidget(this))
     , mSendMessage(new QToolButton(this))
     , mAttachFile(new QToolButton(this))
+    , mConfigureTools(new QToolButton(this))
     , mManager(manager)
 {
     auto topLayout = new QVBoxLayout(this);
@@ -29,7 +30,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
 
     mTextAutoGenerateToolsWidget->setObjectName(u"mTextAutoGenerateToolsWidget"_s);
     topLayout->addWidget(mTextAutoGenerateToolsWidget);
-    mTextAutoGenerateToolsWidget->setVisible(false); // TODO make it visible or not
+    mTextAutoGenerateToolsWidget->setVisible(false);
 
     auto mainLayout = new QHBoxLayout;
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -82,6 +83,16 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
     }
+
+    mConfigureTools->setObjectName(u"mConfigureTools"_s);
+    mConfigureTools->setToolTip(i18nc("@info:tooltip", "Allow to select tools"));
+    mainLayout->addWidget(mConfigureTools, 0, Qt::AlignTop);
+    mConfigureTools->setIcon(QIcon::fromTheme(u"settings-configure"_s));
+    mConfigureTools->setAutoRaise(true);
+    mConfigureTools->setCheckable(true);
+    connect(mConfigureTools, &QToolButton::clicked, this, [this]() {
+        mTextAutoGenerateToolsWidget->setVisible(mConfigureTools->isChecked());
+    });
 }
 
 TextAutoGenerateTextLineEditWidget::~TextAutoGenerateTextLineEditWidget() = default;
