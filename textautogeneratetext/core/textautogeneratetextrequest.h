@@ -28,11 +28,14 @@ public:
     [[nodiscard]] QJsonArray messages() const;
     void setMessages(const QJsonArray &newMessages);
 
+    [[nodiscard]] QList<QByteArray> tools() const;
+    void setTools(const QList<QByteArray> &newTools);
+
 private:
+    QList<QByteArray> mTools;
     QJsonArray mMessages;
     QString mMessage;
     QString mModel;
-    // TODO add list of tools
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRequest &t);

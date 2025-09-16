@@ -24,7 +24,7 @@ void TextAutoGenerateTextRequest::setMessage(const QString &newMessage)
 
 bool TextAutoGenerateTextRequest::operator==(const TextAutoGenerateTextRequest &other) const
 {
-    return other.message() == mMessage && other.model() == mModel && mMessages == other.messages();
+    return other.message() == mMessage && other.model() == mModel && mMessages == other.messages() && mTools == other.tools();
 }
 
 QString TextAutoGenerateTextRequest::model() const
@@ -47,11 +47,22 @@ void TextAutoGenerateTextRequest::setMessages(const QJsonArray &newMessages)
     mMessages = newMessages;
 }
 
+QList<QByteArray> TextAutoGenerateTextRequest::tools() const
+{
+    return mTools;
+}
+
+void TextAutoGenerateTextRequest::setTools(const QList<QByteArray> &newTools)
+{
+    mTools = newTools;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextRequest &t)
 {
     d.space() << "message:" << t.message();
     d.space() << "model:" << t.model();
     d.space() << "messages:" << t.messages();
+    d.space() << "tools:" << t.tools();
     return d;
 }
 

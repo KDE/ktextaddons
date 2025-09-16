@@ -66,9 +66,12 @@ void TextAutoGenerateTextToolPlugin::setProperties(const QList<TextAutoGenerateT
 
 QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
 {
-    QJsonObject obj;
-    obj["name"_L1] = QString::fromLatin1(mToolNameId);
-    obj["description"_L1] = description();
+    QJsonObject toolObj;
+    toolObj["type"_L1] = u"function"_s;
+
+    QJsonObject functionObj;
+    functionObj["name"_L1] = QString::fromLatin1(mToolNameId);
+    functionObj["description"_L1] = description();
 
     QJsonObject parameters;
     parameters["type"_L1] = u"object"_s;
@@ -85,8 +88,11 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
     required = QJsonArray::fromStringList(lst);
     parameters["required"_L1] = required;
     parameters["properties"_L1] = propertiesObj;
-    obj["parameters"_L1] = parameters;
-    return obj;
+    functionObj["parameters"_L1] = parameters;
+
+    toolObj["function"_L1] = functionObj;
+
+    return toolObj;
 }
 
 #include "moc_textautogeneratetexttoolplugin.cpp"

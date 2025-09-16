@@ -92,10 +92,11 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     req.setRawHeader("Accept", "application/json"_ba);
     req.setRawHeader("Authorization", "Bearer " + mApiKey.toLatin1());
     QJsonObject data;
-    data["model"_L1] = mGenericNetworkSettings->currentModel();
+    data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
+    // TODO add tools
     if (mGenericNetworkSettings->maxTokens() > 0) {
         data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
     }

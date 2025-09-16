@@ -128,4 +128,19 @@ QList<TextAutoGenerateTextToolPlugin *> TextAutoGenerateTextToolPluginManager::p
     return lst;
 }
 
+QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList<QByteArray> &tools) const
+{
+    QJsonArray toolsArray;
+    for (const QByteArray &t : tools) {
+        const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
+        for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+            if (it->plugin->toolNameId() == t) {
+                toolsArray.append(it->plugin->metadata());
+                break;
+            }
+        }
+    }
+    return toolsArray;
+}
+
 #include "moc_textautogeneratetexttoolpluginmanager.cpp"

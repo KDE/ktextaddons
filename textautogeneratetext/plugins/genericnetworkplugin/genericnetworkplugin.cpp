@@ -126,9 +126,7 @@ QString GenericNetworkPlugin::engineName() const
 
 void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
-    TextAutoGenerateText::TextAutoGenerateTextRequest req;
-    req.setModel(currentModel());
-    req.setMessages(info.messagesArray);
+    const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);
     auto reply = mGenericManager->getChatCompletion(req);
     if (!reply) {
         return;

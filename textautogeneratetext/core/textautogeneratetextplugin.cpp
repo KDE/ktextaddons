@@ -8,6 +8,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratemessage.h"
+#include "core/textautogeneratereply.h"
 #include "core/textautogeneratetextinstance.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
@@ -126,6 +127,15 @@ void TextAutoGenerateTextPlugin::initializeProgress(const SendToAssistantInfo &i
     sendToAssistant(info);
 }
 
+TextAutoGenerateText::TextAutoGenerateTextRequest TextAutoGenerateTextPlugin::convertSendToAssistantInfoToTextRequest(const SendToAssistantInfo &info) const
+{
+    TextAutoGenerateText::TextAutoGenerateTextRequest req;
+    req.setModel(currentModel());
+    req.setMessages(info.messagesArray);
+    req.setTools(info.tools);
+    return req;
+}
+
 void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools)
 {
     if (ready()) {
@@ -215,7 +225,10 @@ bool TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier::isValid() const
 
 void TextAutoGenerateTextPlugin::clear()
 {
-    for (const auto &connection : std::as_const(mConnections)) {
+    for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
+        auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
+        const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
+        reply->cancel();
         disconnect(connection.second);
     }
     mConnections.clear();
@@ -227,10 +240,13 @@ void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
     if (uuid.isEmpty()) {
         clear();
     } else {
-        for (const auto &connection : std::as_const(mConnections)) {
+        for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
+            auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
+            const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
             if (connection.first == uuid) {
+                reply->cancel();
                 disconnect(connection.second);
-                // mConnections.take(connection.);
+                break;
             }
         }
     }

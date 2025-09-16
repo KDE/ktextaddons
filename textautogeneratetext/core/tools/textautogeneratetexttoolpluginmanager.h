@@ -9,6 +9,7 @@
 #include "core/textautogeneratepluginutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <KPluginMetaData>
+#include <QJsonArray>
 #include <QList>
 #include <QObject>
 
@@ -28,7 +29,7 @@ public:
     bool isEnabled = true;
 };
 
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextToolPluginManager final : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginManager final : public QObject
 {
     Q_OBJECT
 public:
@@ -50,6 +51,8 @@ public:
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromIdentifier(const QString &identifier) const;
 
     [[nodiscard]] QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> activePluginTools() const;
+
+    [[nodiscard]] QJsonArray generateToolsArray(const QList<QByteArray> &tools) const;
 
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);

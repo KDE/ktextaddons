@@ -120,9 +120,7 @@ void OllamaPlugin::askToAssistant(const QString &msg)
 
 void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
-    TextAutoGenerateText::TextAutoGenerateTextRequest req;
-    req.setModel(currentModel());
-    req.setMessages(info.messagesArray);
+    const TextAutoGenerateText::TextAutoGenerateTextRequest req = convertSendToAssistantInfoToTextRequest(info);
     auto reply = mOllamaManager->getChatCompletion(req);
     const QByteArray messageUuid = info.messageUuid;
     const QByteArray chatId = info.chatId;

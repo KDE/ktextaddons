@@ -11,6 +11,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 #include <memory>
 namespace TextAutoGenerateText
 {
@@ -101,6 +102,7 @@ Q_SIGNALS:
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;
     [[nodiscard]] QString fallBackModel() const;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextRequest convertSendToAssistantInfoToTextRequest(const SendToAssistantInfo &info) const;
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
     QList<ModelInfoNameAndIdentifier> mModels;
 

@@ -12,6 +12,7 @@
 #include "ollamareply.h"
 #include "ollamasettings.h"
 #include "ollamautils.h"
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 
 #include <KLocalizedString>
 
@@ -207,7 +208,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
     QJsonObject data;
     // data["model"_L1] = request.model().isEmpty() ? m_models.constFirst() : request.model();
     data["prompt"_L1] = request.message();
-    data["model"_L1] = mOllamaSettings->currentModel();
+    data["model"_L1] = request.model();
     // TODO add prompt here too
 #if 0
     if (!mOllamaSettings->systemPrompt().isEmpty()) {
@@ -230,12 +231,17 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     QNetworkRequest req{QUrl::fromUserInput(mOllamaSettings->serverUrl().toString() + OllamaUtils::chatPath())};
     req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
     QJsonObject data;
-    data["model"_L1] = mOllamaSettings->currentModel();
+    data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mOllamaSettings->temperature();
+    qDebug() << " 111111111111111111111111111111111111111111111111111111";
+    if (!request.tools().isEmpty()) {
+        data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
+    }
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }
+    qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDD " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
