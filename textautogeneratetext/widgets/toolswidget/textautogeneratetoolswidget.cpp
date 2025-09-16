@@ -27,6 +27,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     const QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> lst = TextAutoGenerateTextToolPluginManager::self()->activePluginTools();
     for (const auto &info : lst) {
         auto b = new QToolButton(this);
+        b->setToolTip(info.description);
         b->setText(info.displayName);
         b->setAutoRaise(true);
         b->setProperty("identifier", info.identifier);

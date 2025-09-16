@@ -34,6 +34,7 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextToolPluginManager fi
 public:
     struct PluginToolInfo {
         QString displayName;
+        QString description;
         QByteArray identifier;
     };
     ~TextAutoGenerateTextToolPluginManager() override;
