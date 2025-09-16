@@ -24,7 +24,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    auto label = new QLabel(i18n("Tools:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Tools:"), this);
     label->setObjectName(u"label"_s);
     QFont f = label->font();
     f.setBold(true);
