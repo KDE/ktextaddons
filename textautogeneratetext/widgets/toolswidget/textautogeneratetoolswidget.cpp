@@ -57,7 +57,7 @@ QList<QByteArray> TextAutoGenerateToolsWidget::generateListOfActiveTools() const
 void TextAutoGenerateToolsWidget::setActivatedTools(const QList<QByteArray> &lst)
 {
     for (const auto &b : lst) {
-        auto it = std::find_if(mListButton.begin(), mListButton.end(), [b](QToolButton *button) {
+        const auto it = std::find_if(mListButton.constBegin(), mListButton.constEnd(), [b](QToolButton *button) {
             return button->property("identifier").toByteArray() == b;
         });
         if (it != mListButton.cend()) {
