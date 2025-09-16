@@ -16,6 +16,7 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     : QWidget{parent}
     , mDescriptionLabel(new QLabel(this))
     , mArgumentsLabel(new QLabel(this))
+    , mInfoToolButton(new QToolButton(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainLayout"_L1);
@@ -31,6 +32,11 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mArgumentsLabel->setObjectName("mArgumentsLabel"_L1);
     mArgumentsLabel->setTextFormat(Qt::RichText);
     mainLayout->addWidget(mArgumentsLabel);
+
+    mainLayout->addWidget(mInfoToolButton);
+    connect(mInfoToolButton, &QToolButton::clicked, this, [this]() {
+
+    });
 
     // TODO add info about metadata
     if (plugin) {

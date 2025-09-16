@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 class QLabel;
+class QToolButton;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPlugin;
@@ -23,6 +24,7 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QLabel *createLabel(const QString &label);
     QLabel *const mDescriptionLabel;
     QLabel *const mArgumentsLabel;
+    QToolButton *const mInfoToolButton;
 };
 
 }

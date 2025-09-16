@@ -39,11 +39,7 @@ configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/conf
 
 add_subdirectory(cmark-rc)
 
-add_library(
-    KF6TextAutoGenerateText
-    core/tools/textautogeneratetexttoolpluginproperty.h
-    core/tools/textautogeneratetexttoolpluginproperty.cpp
-)
+add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
 ecm_qt_declare_logging_category(KF6TextAutoGenerateText HEADER textautogeneratetextcore_database_debug.h
@@ -189,6 +185,8 @@ target_sources(
         core/tools/textautogeneratetexttoolplugin.cpp
         core/tools/textautogeneratetexttoolpluginmanager.cpp
         core/tools/textautogeneratetexttoolpluginmanager.h
+        core/tools/textautogeneratetexttoolpluginproperty.h
+        core/tools/textautogeneratetexttoolpluginproperty.cpp
 )
 
 target_sources(
@@ -320,6 +318,8 @@ target_sources(
         widgets/plugintext/textautogenerateplugintextmanager.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp
+        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.h
+        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp
         widgets/toolswidget/textautogeneratetoolswidget.h
         widgets/toolswidget/textautogeneratetoolswidget.cpp
 )
