@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-13 00:48+0000\n"
+"POT-Creation-Date: 2025-09-16 00:40+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -59,6 +59,11 @@ msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
+msgstr ""
+
+#: core/models/textautogeneratemessagesmodel.cpp:74
+#, kde-format
+msgid "Tools: %1"
 msgstr ""
 
 #: core/textautogeneratemanager.cpp:123
@@ -128,12 +133,12 @@ msgid ""
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:240
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:242
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr ""
@@ -1562,6 +1567,18 @@ msgstr ""
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
+#, kde-format
+msgid ""
+"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
+"thinking mode."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
+#, kde-format
+msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
@@ -1682,16 +1699,22 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Allow to select tools"
 msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
@@ -1953,6 +1976,11 @@ msgstr ""
 #: widgets/textautogeneratewidget.cpp:113
 #, kde-format
 msgid "No plugin found."
+msgstr ""
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#, kde-format
+msgid "Tools:"
 msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383

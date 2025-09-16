@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-13 00:48+0000\n"
+"POT-Creation-Date: 2025-09-16 00:40+0000\n"
 "PO-Revision-Date: 2025-09-13 06:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -63,6 +63,12 @@ msgstr ""
 "Stroj: %1\n"
 "Model: %2\n"
 "Ime pojavka: %3"
+
+#: core/models/textautogeneratemessagesmodel.cpp:74
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools: %1"
+msgstr "Orodja"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -133,12 +139,12 @@ msgstr ""
 "Ste asistent umetne inteligence. Pogovarjate se z osebo po imenu %1. Bodite "
 "ustrežljivi, profesionalni in vljudni. Ne dajajte netočnih informacij."
 
-#: core/textautogeneratetextplugin.cpp:240
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: core/textautogeneratetextplugin.cpp:242
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr "Omrežje"
@@ -1903,6 +1909,18 @@ msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
 "Alibabini zmogljivi modeli dolgega konteksta za naloge agentov in kodiranja."
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
+#, kde-format
+msgid ""
+"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
+"thinking mode."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
+#, kde-format
+msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
@@ -2030,17 +2048,23 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Vnesite sporočilo"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Priloži datoteko"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Pošlji"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Allow to select tools"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2302,6 +2326,12 @@ msgstr "Išči"
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools:"
+msgstr "Orodja"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format

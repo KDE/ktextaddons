@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-13 00:48+0000\n"
+"POT-Creation-Date: 2025-09-16 00:40+0000\n"
 "PO-Revision-Date: 2025-09-14 09:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -62,6 +62,12 @@ msgstr ""
 "Gränssnitt: %1\n"
 "Modell: %2\n"
 "Instansnamn: %3"
+
+#: core/models/textautogeneratemessagesmodel.cpp:74
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools: %1"
+msgstr "Verktyg"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -132,12 +138,12 @@ msgstr ""
 "Du är en AI-följeslagare. Du talar med en person vid namn %1. Var hjälpsam, "
 "professionell och artig. Ge inte felaktig information."
 
-#: core/textautogeneratetextplugin.cpp:240
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
 
-#: core/textautogeneratetextplugin.cpp:242
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr "Nätverk"
@@ -1909,6 +1915,18 @@ msgstr ""
 "Prestandadrivna modeller med långt sammanhang från Alibaba för agent- och "
 "kodningsuppgifter."
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
+#, kde-format
+msgid ""
+"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
+"thinking mode."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
+#, kde-format
+msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
@@ -2036,17 +2054,23 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Skriv in ett meddelande"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Bifoga fil"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Skicka"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Allow to select tools"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2308,6 +2332,12 @@ msgstr "Sök"
 #, kde-format
 msgid "No plugin found."
 msgstr "Inga insticksprogram hittades."
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools:"
+msgstr "Verktyg"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format

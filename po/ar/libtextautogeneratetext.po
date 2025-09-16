@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-13 00:48+0000\n"
-"PO-Revision-Date: 2025-09-01 19:40+0400\n"
+"POT-Creation-Date: 2025-09-16 00:40+0000\n"
+"PO-Revision-Date: 2025-09-15 12:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -63,6 +63,12 @@ msgstr ""
 "المحرّك: %1\n"
 "النموذج: %2\n"
 "اسم النسخة: %3"
+
+#: core/models/textautogeneratemessagesmodel.cpp:74
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools: %1"
+msgstr "أدوات"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -133,12 +139,12 @@ msgstr ""
 "أنت مساعد ذكاء اصطناعي. أنت تتحدث إلى شخص اسمه %1. كن مفيدًا، ومحترفًا، "
 "ومهذبًا. لا تُعطِ معلومات غير دقيقة."
 
-#: core/textautogeneratetextplugin.cpp:240
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr "محليّ"
 
-#: core/textautogeneratetextplugin.cpp:242
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr "شبكة"
@@ -1835,6 +1841,18 @@ msgstr ""
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr "نماذج السياق الطويل عالية الأداء من Alibaba للمهام الوكيلة والتشفير."
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
+#, kde-format
+msgid ""
+"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
+"thinking mode."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
+#, kde-format
+msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
@@ -1959,17 +1977,23 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "أدخل رسالة"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "أرفق ملفًّا"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "أرسل"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Allow to select tools"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -1982,10 +2006,9 @@ msgid "Text Plugins"
 msgstr "ملحقات النصوص"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "ملحقات النصوص"
+msgstr "ملحقات الأدوات"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
@@ -2007,13 +2030,13 @@ msgstr "الموجه"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr ""
+msgstr "الوصف:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:29
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
-msgstr ""
+msgstr "المعاملات:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2214,15 +2237,13 @@ msgstr "ابحث القنوات"
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr ""
+msgstr "الدردشة السابقة"
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "New Chat"
+#, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "دردشة جديدة"
+msgstr "الدردشة التالية"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2234,6 +2255,12 @@ msgstr "ابحث"
 #, kde-format
 msgid "No plugin found."
 msgstr "لم يعثر على ملحق."
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools:"
+msgstr "أدوات"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format

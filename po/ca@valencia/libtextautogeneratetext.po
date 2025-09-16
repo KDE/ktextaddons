@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-13 00:48+0000\n"
+"POT-Creation-Date: 2025-09-16 00:40+0000\n"
 "PO-Revision-Date: 2025-09-13 09:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -65,6 +65,12 @@ msgstr ""
 "Motor: %1\n"
 "Model: %2\n"
 "Nom d'instància: %3"
+
+#: core/models/textautogeneratemessagesmodel.cpp:74
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools: %1"
+msgstr "Eines"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -135,12 +141,12 @@ msgstr ""
 "Eres un assistent d'IA. Estàs parlant amb una persona anomenada %1. Sigues "
 "útil, professional i cortès. No dones informació inexacta."
 
-#: core/textautogeneratetextplugin.cpp:240
+#: core/textautogeneratetextplugin.cpp:241
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:242
+#: core/textautogeneratetextplugin.cpp:243
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
@@ -1925,6 +1931,18 @@ msgstr ""
 "Models grans de context amb bon rendiment d'Alibaba per a tasques d'agents i "
 "codificació."
 
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
+#, kde-format
+msgid ""
+"DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
+"thinking mode."
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
+#, kde-format
+msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+msgstr ""
+
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
 msgid "Ollama"
@@ -2052,17 +2070,23 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Introduïu un missatge"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:29
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Adjunta un fitxer"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Envia"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Allow to select tools"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2324,6 +2348,12 @@ msgstr "Busca"
 #, kde-format
 msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
+
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgid "Tools:"
+msgstr "Eines"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
