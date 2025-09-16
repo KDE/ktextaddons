@@ -320,6 +320,8 @@ target_sources(
         widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp
         widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.h
         widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp
+        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.h
+        widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.cpp
         widgets/toolswidget/textautogeneratetoolswidget.h
         widgets/toolswidget/textautogeneratetoolswidget.cpp
 )

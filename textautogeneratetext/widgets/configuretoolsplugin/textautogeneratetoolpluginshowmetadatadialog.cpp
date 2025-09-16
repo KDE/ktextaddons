@@ -13,3 +13,5 @@ TextAutoGenerateToolPluginShowMetaDataDialog::TextAutoGenerateToolPluginShowMeta
 }
 
 TextAutoGenerateToolPluginShowMetaDataDialog::~TextAutoGenerateToolPluginShowMetaDataDialog() = default;
+
+#include "moc_textautogeneratetoolpluginshowmetadatadialog.cpp"
