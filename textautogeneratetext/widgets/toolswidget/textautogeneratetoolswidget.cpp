@@ -60,15 +60,20 @@ QList<QByteArray> TextAutoGenerateToolsWidget::generateListOfActiveTools() const
 
 void TextAutoGenerateToolsWidget::setActivatedTools(const QList<QByteArray> &lst)
 {
+    bool foundTools = false;
     for (const auto &b : lst) {
         const auto it = std::find_if(mListButton.constBegin(), mListButton.constEnd(), [b](QToolButton *button) {
             return button->property(button_property).toByteArray() == b;
         });
         if (it != mListButton.cend()) {
             (*it)->setChecked(true);
+            foundTools = true;
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find button: " << b;
         }
+    }
+    if (foundTools) {
+        setVisible(true);
     }
 }
 
