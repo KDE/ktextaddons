@@ -21,6 +21,10 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     mainLayout->setContentsMargins({});
 
     auto label = new QLabel(i18n("Tools:"), this);
+    label->setObjectName(u"label"_s);
+    QFont f = label->font();
+    f.setBold(true);
+    label->setFont(f);
     mainLayout->setAlignment(label, Qt::AlignBottom);
     mainLayout->addWidget(label);
 
