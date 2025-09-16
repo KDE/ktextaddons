@@ -32,6 +32,7 @@ private:
     QJsonArray mMessages;
     QString mMessage;
     QString mModel;
+    // TODO add list of tools
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRequest &t);

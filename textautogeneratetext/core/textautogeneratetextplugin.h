@@ -42,6 +42,7 @@ public:
         QByteArray messageUuid;
         QByteArray chatId;
         QJsonArray messagesArray;
+        QList<QByteArray> tools;
     };
     explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                         TextAutoGenerateText::TextAutoGenerateTextInstance *instance,

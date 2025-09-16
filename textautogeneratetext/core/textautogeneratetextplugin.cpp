@@ -110,6 +110,7 @@ void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QBy
             info.messageUuid = llmUuid;
             info.chatId = chatId;
             info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
+            info.tools = lstTools;
 
             initializeProgress(info);
         } else {
@@ -162,6 +163,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         info.message = str;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
+        info.tools = lstTools;
 
         info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
         qDebug() << "info.messagesArray  " << info.messagesArray;
