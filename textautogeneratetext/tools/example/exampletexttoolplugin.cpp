@@ -16,6 +16,12 @@ ExampleTextToolPlugin::ExampleTextToolPlugin(QObject *parent, const QVariantList
     : TextAutoGenerateTextToolPlugin{parent}
 {
     mToolNameId = "example_tool"_ba;
+    {
+        TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty prop;
+        prop.setDescription(kli18n("The name of the city"));
+        prop.setName(kli18n("city"));
+        mProperties.append(prop);
+    }
 }
 
 ExampleTextToolPlugin::~ExampleTextToolPlugin() = default;
@@ -34,7 +40,7 @@ QString ExampleTextToolPlugin::displayName() const
 QString ExampleTextToolPlugin::description() const
 {
     // Don't translate it
-    return u"Tool used for testing"_s;
+    return u"Get the current weather for a city"_s;
 }
 
 void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)

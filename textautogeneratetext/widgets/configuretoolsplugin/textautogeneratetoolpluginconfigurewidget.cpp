@@ -29,11 +29,13 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mainLayout->addWidget(createLabel(i18nc("@label:textbox", "Arguments:")));
 
     mArgumentsLabel->setObjectName("mArgumentsLabel"_L1);
+    mArgumentsLabel->setTextFormat(Qt::RichText);
     mainLayout->addWidget(mArgumentsLabel);
 
     // TODO add info about metadata
     if (plugin) {
         mDescriptionLabel->setText(plugin->description());
+        generateArguments(plugin);
     }
 }
 
@@ -46,6 +48,18 @@ QLabel *TextAutoGenerateToolPluginConfigureWidget::createLabel(const QString &st
     f.setBold(true);
     label->setFont(f);
     return label;
+}
+
+void TextAutoGenerateToolPluginConfigureWidget::generateArguments(TextAutoGenerateTextToolPlugin *plugin)
+{
+    QString propertiesText;
+    for (const auto &prop : plugin->properties()) {
+        if (!propertiesText.isEmpty()) {
+            propertiesText += u"<br/>"_s;
+        }
+        propertiesText += u"<b>%1:</b> %2"_s.arg(prop.name().toString(), prop.description().toString());
+    }
+    mArgumentsLabel->setText(propertiesText);
 }
 
 #include "moc_textautogeneratetoolpluginconfigurewidget.cpp"
