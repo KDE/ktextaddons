@@ -21,12 +21,12 @@ void TextAutoGenerateTextToolPluginProperty::setDescription(const KLazyLocalized
     mDescription = newDescription;
 }
 
-KLazyLocalizedString TextAutoGenerateTextToolPluginProperty::name() const
+QString TextAutoGenerateTextToolPluginProperty::name() const
 {
     return mName;
 }
 
-void TextAutoGenerateTextToolPluginProperty::setName(const KLazyLocalizedString &newName)
+void TextAutoGenerateTextToolPluginProperty::setName(const QString &newName)
 {
     mName = newName;
 }

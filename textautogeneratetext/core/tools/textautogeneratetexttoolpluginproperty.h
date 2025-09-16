@@ -18,11 +18,11 @@ public:
     [[nodiscard]] KLazyLocalizedString description() const;
     void setDescription(const KLazyLocalizedString &newDescription);
 
-    [[nodiscard]] KLazyLocalizedString name() const;
-    void setName(const KLazyLocalizedString &newName);
+    [[nodiscard]] QString name() const;
+    void setName(const QString &newName);
 
 private:
     KLazyLocalizedString mDescription;
-    KLazyLocalizedString mName;
+    QString mName;
 };
 }

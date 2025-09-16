@@ -79,8 +79,8 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
         QJsonObject prop;
         prop["type"_L1] = u"string"_s;
         prop["description"_L1] = QString::fromLatin1(property.description().untranslatedText());
-        propertiesObj[QString::fromLatin1(property.name().untranslatedText())] = prop;
-        lst.append(QString::fromLatin1(property.name().untranslatedText()));
+        propertiesObj[property.name()] = prop;
+        lst.append(property.name());
     }
     required = QJsonArray::fromStringList(lst);
     parameters["required"_L1] = required;
