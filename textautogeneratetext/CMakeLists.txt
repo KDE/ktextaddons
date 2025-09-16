@@ -415,6 +415,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     HEADER_NAMES
     TextAutoGenerateTextToolPlugin
     TextAutoGenerateTextToolPluginProperty
+    TextAutoGenerateTextToolPluginManager
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools
