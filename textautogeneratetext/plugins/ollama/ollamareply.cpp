@@ -96,6 +96,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
 OllamaReply::~OllamaReply()
 {
     disconnect(mReply);
+    mReply->abort();
     mReply->deleteLater();
 }
 
