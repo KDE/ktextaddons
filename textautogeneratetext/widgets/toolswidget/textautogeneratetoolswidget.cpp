@@ -13,6 +13,10 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+namespace
+{
+constexpr const char *button_property("identifier");
+}
 TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     : QWidget{parent}
 {
@@ -34,7 +38,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
         b->setToolTip(info.description);
         b->setText(info.displayName);
         b->setAutoRaise(true);
-        b->setProperty("identifier", info.identifier);
+        b->setProperty(button_property, info.identifier);
         b->setCheckable(true);
         mainLayout->addWidget(b);
         mListButton.append(b);
@@ -48,7 +52,7 @@ QList<QByteArray> TextAutoGenerateToolsWidget::generateListOfActiveTools() const
     QList<QByteArray> activeTools;
     for (const auto b : std::as_const(mListButton)) {
         if (b->isChecked()) {
-            activeTools.append(b->property("identifier").toByteArray());
+            activeTools.append(b->property(button_property).toByteArray());
         }
     }
     return activeTools;
@@ -58,7 +62,7 @@ void TextAutoGenerateToolsWidget::setActivatedTools(const QList<QByteArray> &lst
 {
     for (const auto &b : lst) {
         const auto it = std::find_if(mListButton.constBegin(), mListButton.constEnd(), [b](QToolButton *button) {
-            return button->property("identifier").toByteArray() == b;
+            return button->property(button_property).toByteArray() == b;
         });
         if (it != mListButton.cend()) {
             (*it)->setChecked(true);
