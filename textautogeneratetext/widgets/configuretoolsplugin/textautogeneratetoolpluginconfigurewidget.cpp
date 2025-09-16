@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetoolpluginconfigurewidget.h"
+#include "textautogeneratetoolpluginshowmetadatadialog.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QToolButton>
@@ -34,11 +35,18 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mainLayout->addWidget(mArgumentsLabel);
 
     mainLayout->addWidget(mInfoToolButton);
-    connect(mInfoToolButton, &QToolButton::clicked, this, [this]() {
-
+    mInfoToolButton->setObjectName("mInfoToolButton"_L1);
+    mInfoToolButton->setIcon(QIcon::fromTheme(u"info"_s));
+    mInfoToolButton->setFocusPolicy(Qt::NoFocus);
+    mInfoToolButton->setToolTip(i18nc("@info:tooltip", "Show metadata info"));
+    connect(mInfoToolButton, &QToolButton::clicked, this, [this, plugin]() {
+        TextAutoGenerateToolPluginShowMetaDataDialog d(this);
+        if (plugin) {
+            d.setMetaData(plugin->metadata());
+        }
+        d.exec();
     });
 
-    // TODO add info about metadata
     if (plugin) {
         mDescriptionLabel->setText(plugin->description());
         generateArguments(plugin);
@@ -63,7 +71,7 @@ void TextAutoGenerateToolPluginConfigureWidget::generateArguments(TextAutoGenera
         if (!propertiesText.isEmpty()) {
             propertiesText += u"<br/>"_s;
         }
-        propertiesText += u"<b>%1:</b> %2"_s.arg(prop.name().toString(), prop.description().toString());
+        propertiesText += u"<b>%1:</b> %2"_s.arg(prop.name(), prop.description().toString());
     }
     mArgumentsLabel->setText(propertiesText);
 }

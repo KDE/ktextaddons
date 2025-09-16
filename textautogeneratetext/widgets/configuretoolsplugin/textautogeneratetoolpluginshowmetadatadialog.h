@@ -5,14 +5,21 @@
 */
 
 #pragma once
+#include "textautogeneratetext_private_export.h"
 #include <QDialog>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateToolPluginShowMetaDataDialog : public QDialog
+class TextAutoGenerateToolPluginShowMetaDataWidget;
+class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolPluginShowMetaDataDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateToolPluginShowMetaDataDialog(QWidget *parent = nullptr);
     ~TextAutoGenerateToolPluginShowMetaDataDialog() override;
+
+    void setMetaData(const QJsonObject &obj);
+
+private:
+    TextAutoGenerateToolPluginShowMetaDataWidget *const mTextAutoGenerateToolPluginShowMetaDataWidget;
 };
 }

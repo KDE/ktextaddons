@@ -19,7 +19,7 @@ ExampleTextToolPlugin::ExampleTextToolPlugin(QObject *parent, const QVariantList
     {
         TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty prop;
         prop.setDescription(kli18n("The name of the city"));
-        prop.setName(kli18n("city"));
+        prop.setName(u"city"_s);
         mProperties.append(prop);
     }
 }
