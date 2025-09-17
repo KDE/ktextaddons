@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:40+0000\n"
+"POT-Creation-Date: 2025-09-17 00:42+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -66,7 +66,9 @@ msgstr ""
 #: core/models/textautogeneratemessagesmodel.cpp:74
 #, fuzzy, kde-format
 #| msgid "Tools"
-msgid "Tools: %1"
+msgid ""
+"\n"
+"Tools: %1"
 msgstr "Työkalut"
 
 #: core/textautogeneratemanager.cpp:123
@@ -136,12 +138,12 @@ msgid ""
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:259
 #, kde-format
 msgid "Local"
 msgstr "Paikallinen"
 
-#: core/textautogeneratetextplugin.cpp:243
+#: core/textautogeneratetextplugin.cpp:261
 #, kde-format
 msgid "Network"
 msgstr "Verkko"
@@ -172,7 +174,7 @@ msgid "Available Models"
 msgstr "Saatavilla olevat mallit"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:166
+#: plugins/ollama/ollamamanager.cpp:167
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Yhteydenotto liitäntään osoitteessa %1 epäonnistui: %2"
@@ -1740,6 +1742,10 @@ msgstr ""
 "tekstin samaan kehotteeseen, jos tämä on asetettu tietyksi luvuksi. (Oletus: "
 "0)"
 
+#: tools/example/exampletexttoolplugin.cpp:21
+msgid "The name of the city"
+msgstr ""
+
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
@@ -1847,16 +1853,27 @@ msgstr "Asetukset…"
 msgid "Prompt"
 msgstr "Kehote:"
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:24
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
 msgstr ""
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:29
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
+msgstr ""
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show metadata info"
+msgstr ""
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
+#, kde-format
+msgid "Metadata Info"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
@@ -2083,9 +2100,10 @@ msgstr "Etsi"
 msgid "No plugin found."
 msgstr "Liitännäistä ei löytynyt."
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, fuzzy, kde-format
 #| msgid "Tools"
+msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Työkalut"
 

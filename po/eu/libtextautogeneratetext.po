@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:40+0000\n"
+"POT-Creation-Date: 2025-09-17 00:42+0000\n"
 "PO-Revision-Date: 2025-09-06 07:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -69,7 +69,9 @@ msgstr ""
 #: core/models/textautogeneratemessagesmodel.cpp:74
 #, fuzzy, kde-format
 #| msgid "Tools"
-msgid "Tools: %1"
+msgid ""
+"\n"
+"Tools: %1"
 msgstr "Tresnak"
 
 #: core/textautogeneratemanager.cpp:123
@@ -142,12 +144,12 @@ msgstr ""
 "Mesedez, izan zaitez lagungarria, profesionala, eta adeitsua. Ez eman "
 "zehatza ez den informaziorik."
 
-#: core/textautogeneratetextplugin.cpp:241
+#: core/textautogeneratetextplugin.cpp:259
 #, kde-format
 msgid "Local"
 msgstr "Lokala"
 
-#: core/textautogeneratetextplugin.cpp:243
+#: core/textautogeneratetextplugin.cpp:261
 #, kde-format
 msgid "Network"
 msgstr "Sarea"
@@ -178,7 +180,7 @@ msgid "Available Models"
 msgstr "Eredu erabilgarriak"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:166
+#: plugins/ollama/ollamamanager.cpp:167
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1(e)ko interfazera konektatzea huts egiten du: %2"
@@ -1767,6 +1769,10 @@ msgstr ""
 "zenbaki zehatz batean ezarriz gero, galdera berdinerako ereduak erantzun "
 "bera sortzea eragingo du. (Lehenetsia: 0)"
 
+#: tools/example/exampletexttoolplugin.cpp:21
+msgid "The name of the city"
+msgstr ""
+
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
 msgctxt "@info:placeholder"
@@ -1871,16 +1877,27 @@ msgstr "Konfiguratu"
 msgid "Prompt"
 msgstr "Gonbita"
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:24
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
 msgstr ""
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:29
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
+msgstr ""
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show metadata info"
+msgstr ""
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
+#, kde-format
+msgid "Metadata Info"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
@@ -2101,9 +2118,10 @@ msgstr "Bilatu"
 msgid "No plugin found."
 msgstr "Ez da pluginik aurkitu."
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:23
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, fuzzy, kde-format
 #| msgid "Tools"
+msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Tresnak"
 
