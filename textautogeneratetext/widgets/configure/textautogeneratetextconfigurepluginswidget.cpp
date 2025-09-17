@@ -43,10 +43,11 @@ TextAutoGenerateTextConfigurePluginsWidget::TextAutoGenerateTextConfigurePlugins
     mTreePluginWidget->sortItems(0, Qt::AscendingOrder);
     mTreePluginWidget->setHeaderHidden(true);
     mTreePluginWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+    mTreePluginWidget->setColumnCount(2);
+
     mTreePluginWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     mTreePluginWidget->header()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     mTreePluginWidget->header()->setStretchLastSection(false);
-    mTreePluginWidget->setColumnCount(2);
 
     mSearchLineEdit = new KTreeWidgetSearchLineWidget(this, mTreePluginWidget);
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
