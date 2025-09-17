@@ -221,7 +221,9 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, {}); // TODO add TOOLS
+    const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
+    qDebug() << " tools " << tools;
+    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, tools);
 }
 
 void TextAutoGenerateWidget::slotInitializeDone()
