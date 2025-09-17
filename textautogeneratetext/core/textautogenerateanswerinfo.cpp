@@ -85,9 +85,9 @@ void TextAutoGenerateAnswerInfo::serialize(const TextAutoGenerateAnswerInfo &ans
     o["modelName"_L1] = answerInfo.modelName();
     o["engineName"_L1] = answerInfo.engineName();
     o["instanceName"_L1] = answerInfo.instanceName();
-    if (answerInfo.tools().isEmpty()) {
+    if (const auto tools = answerInfo.tools(); !tools.isEmpty()) {
         QJsonArray toolsArray;
-        for (const QByteArray &b : answerInfo.tools()) {
+        for (const QByteArray &b : tools) {
             toolsArray.append(QString::fromLatin1(b));
         }
         o["tools"_L1] = toolsArray;
