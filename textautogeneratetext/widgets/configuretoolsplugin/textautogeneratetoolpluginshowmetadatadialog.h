@@ -20,6 +20,8 @@ public:
     void setMetaData(const QJsonObject &obj);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TextAutoGenerateToolPluginShowMetaDataWidget *const mTextAutoGenerateToolPluginShowMetaDataWidget;
 };
 }
