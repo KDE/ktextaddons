@@ -58,6 +58,8 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
         return waitingAnswer(messageElement);
     case ModelInfoRole:
         return generateModelInfo(messageElement);
+    case ToolsRole:
+        return QVariant::fromValue(messageElement.tools());
     default:
         break;
     }

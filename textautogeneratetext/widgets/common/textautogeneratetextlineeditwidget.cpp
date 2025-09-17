@@ -128,4 +128,9 @@ void TextAutoGenerateTextLineEditWidget::setUuid(const QByteArray &newUuid)
     mUuid = newUuid;
 }
 
+void TextAutoGenerateTextLineEditWidget::setActivatedTools(const QList<QByteArray> &lst)
+{
+    mTextAutoGenerateToolsWidget->setActivatedTools(lst);
+}
+
 #include "moc_textautogeneratetextlineeditwidget.cpp"

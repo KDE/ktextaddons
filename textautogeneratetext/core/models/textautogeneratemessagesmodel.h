@@ -32,6 +32,7 @@ public:
         ModelInfoRole,
         OriginalMessageRole,
         MessagePointer,
+        ToolsRole,
     };
 
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);

@@ -187,6 +187,14 @@ const TextAutoGenerateAnswerInfo *TextAutoGenerateMessage::messageInfo() const
     return nullptr;
 }
 
+QList<QByteArray> TextAutoGenerateMessage::tools() const
+{
+    if (mMessageInfo) {
+        return mMessageInfo->tools();
+    }
+    return {};
+}
+
 QString TextAutoGenerateMessage::instanceName() const
 {
     if (mMessageInfo) {

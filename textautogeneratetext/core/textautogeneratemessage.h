@@ -77,6 +77,7 @@ public:
     [[nodiscard]] QString modelName() const;
     [[nodiscard]] QString engineName() const;
     [[nodiscard]] QString instanceName() const;
+    [[nodiscard]] QList<QByteArray> tools() const;
 
     [[nodiscard]] static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
     [[nodiscard]] static TextAutoGenerateMessage deserialize(const QJsonObject &o);

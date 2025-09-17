@@ -33,6 +33,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(msg.engineName().isEmpty());
     QVERIFY(msg.modelName().isEmpty());
     QVERIFY(msg.instanceName().isEmpty());
+    QVERIFY(msg.tools().isEmpty());
 
     // 10/05/2025 => size 224
     QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateMessage), 152);
