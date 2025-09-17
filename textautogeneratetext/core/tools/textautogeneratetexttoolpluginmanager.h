@@ -54,6 +54,8 @@ public:
 
     [[nodiscard]] QJsonArray generateToolsArray(const QList<QByteArray> &tools) const;
 
+    [[nodiscard]] QString convertIdentifierToDisplay(const QList<QByteArray> &tools) const;
+
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();

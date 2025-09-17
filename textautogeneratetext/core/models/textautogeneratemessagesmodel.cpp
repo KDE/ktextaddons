@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QDateTime>
 #include <QJsonObject>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
@@ -73,7 +74,8 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     }
     QString toolTip = i18n("Engine: %1\nModel: %2\nInstance Name: %3", m.engineName(), m.modelName(), m.instanceName());
     if (m.messageInfo() && !m.messageInfo()->tools().isEmpty()) {
-        toolTip += i18n("\nTools: %1", QString::fromLatin1(m.messageInfo()->tools().join(','))); // TODO use name not identifier
+        const QString displayList = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->convertIdentifierToDisplay(m.messageInfo()->tools());
+        toolTip += i18n("\nTools: %1", displayList);
     }
     return toolTip;
 }

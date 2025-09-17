@@ -143,4 +143,19 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
     return toolsArray;
 }
 
+QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const QList<QByteArray> &tools) const
+{
+    QStringList toolDisplayList;
+    for (const QByteArray &t : tools) {
+        const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
+        for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+            if (it->plugin->toolNameId() == t) {
+                toolDisplayList.append(it->plugin->displayName());
+                break;
+            }
+        }
+    }
+    return toolDisplayList.join(u", "_s);
+}
+
 #include "moc_textautogeneratetexttoolpluginmanager.cpp"
