@@ -16,6 +16,7 @@
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 using namespace Qt::Literals::StringLiterals;
 GenericNetworkManager::GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
@@ -96,7 +97,9 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
-    // TODO add tools
+    if (!request.tools().isEmpty()) {
+        data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
+    }
     if (mGenericNetworkSettings->maxTokens() > 0) {
         data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
     }
