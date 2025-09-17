@@ -187,7 +187,6 @@ void TextAutoGenerateWidget::loadEngine()
 
 void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools)
 {
-    // TODO use lstTools
     mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
         mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str, lstTools);
