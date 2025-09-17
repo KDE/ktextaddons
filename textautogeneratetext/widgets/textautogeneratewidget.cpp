@@ -217,12 +217,10 @@ void TextAutoGenerateWidget::slotCancelRequest(const QByteArray &uuid)
     mManager->textAutoGeneratePlugin()->cancelRequest(uuid);
 }
 
-void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index)
+void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools)
 {
-    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
-    const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
-    qDebug() << " tools " << tools;
+    const QByteArray uuid = indexAnswer.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    const QString messageStr = indexAnswer.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
     mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, tools);
 }
 

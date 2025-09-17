@@ -80,11 +80,13 @@ void TextAutoGenerateListView::slotRemoveRequested(const QModelIndex &index)
 void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+
     if (!uuid.isEmpty()) {
+        const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
         const QByteArray chatId = mManager->currentChatId();
         const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid);
         if (indexAnswer.isValid()) {
-            Q_EMIT refreshAnswerRequested(chatId, indexAnswer);
+            Q_EMIT refreshAnswerRequested(chatId, indexAnswer, tools);
         }
     }
 }

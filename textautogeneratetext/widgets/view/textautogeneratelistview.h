@@ -32,7 +32,7 @@ protected:
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index);
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer);
+    void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void handleMouseEvent(QMouseEvent *event) override;
