@@ -31,7 +31,7 @@ public:
     [[nodiscard]] bool isValid() const;
 
     static void serialize(const TextAutoGenerateAnswerInfo &translation, QJsonObject &o);
-    static TextAutoGenerateAnswerInfo *deserialize(const QJsonObject &o);
+    [[nodiscard]] static TextAutoGenerateAnswerInfo *deserialize(const QJsonObject &o);
 
     [[nodiscard]] QList<QByteArray> tools() const;
     void setTools(const QList<QByteArray> &newTools);
