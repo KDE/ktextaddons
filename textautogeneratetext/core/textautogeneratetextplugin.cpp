@@ -232,7 +232,6 @@ void TextAutoGenerateTextPlugin::clear()
         disconnect(connection.second);
     }
     mConnections.clear();
-    // TODO clear all thread
 }
 
 void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
