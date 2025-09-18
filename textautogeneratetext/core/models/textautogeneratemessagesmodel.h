@@ -33,6 +33,7 @@ public:
         OriginalMessageRole,
         MessagePointer,
         ToolsRole,
+        AnswerUuidRole,
     };
 
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);

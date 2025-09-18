@@ -61,6 +61,8 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
         return generateModelInfo(messageElement);
     case ToolsRole:
         return QVariant::fromValue(messageElement.tools());
+    case AnswerUuidRole:
+        return messageElement.answerUuid();
     default:
         break;
     }
