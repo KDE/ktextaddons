@@ -202,11 +202,10 @@ void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
     Q_EMIT pluginBroken(errorMessage);
 }
 
-void TextAutoGenerateWidget::slotEditMessage(const QModelIndex &index)
+void TextAutoGenerateWidget::slotEditMessage(const QModelIndex &index, const QList<QByteArray> &tools)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    const QList<QByteArray> tools = index.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
     mTextAutoGenerateTextLineEditWidget->setUuid(uuid);
     mTextAutoGenerateTextLineEditWidget->setText(messageStr);
     mTextAutoGenerateTextLineEditWidget->setActivatedTools(tools);

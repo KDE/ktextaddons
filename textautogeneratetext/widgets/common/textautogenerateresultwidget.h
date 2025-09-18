@@ -31,7 +31,7 @@ public:
 
     [[nodiscard]] int scrollbarPositionMaximum() const;
 Q_SIGNALS:
-    void editMessageRequested(const QModelIndex &index);
+    void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);
     void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
     void switchToChat(const QByteArray &uuid);

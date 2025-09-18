@@ -41,7 +41,7 @@ public:
 
     [[nodiscard]] int rowCount(const QModelIndex & = {}) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
-    [[nodiscard]] bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
 
     [[nodiscard]] QList<TextAutoGenerateMessage> messages() const;
     void setMessages(const QList<TextAutoGenerateMessage> &newMessages);

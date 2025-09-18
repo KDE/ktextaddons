@@ -26,7 +26,7 @@ Q_SIGNALS:
     void configureChanged();
     void cancelRequested(const QByteArray &uuid);
     void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
-    void editMessageRequested(const QModelIndex &index);
+    void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
 
 private:
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineWidget;

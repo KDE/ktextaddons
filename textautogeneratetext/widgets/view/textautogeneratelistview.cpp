@@ -53,9 +53,13 @@ void TextAutoGenerateListView::slotUpdateView()
 
 void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {
-    auto model = const_cast<QAbstractItemModel *>(index.model());
+    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
     model->setData(index, true, TextAutoGenerateMessagesModel::EditingRole);
-    Q_EMIT editMessageRequested(index);
+
+    const QByteArray anwserUuid = index.data(TextAutoGenerateMessagesModel::AnswerUuidRole).toByteArray();
+    const QModelIndex anwseridx = model->indexForUuid(anwserUuid);
+    const QList<QByteArray> tools = anwseridx.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
+    Q_EMIT editMessageRequested(index, tools);
 }
 
 void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)

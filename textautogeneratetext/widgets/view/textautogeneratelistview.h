@@ -30,7 +30,7 @@ protected:
     [[nodiscard]] QString originalMessage(const QModelIndex &index) const override;
 
 Q_SIGNALS:
-    void editMessageRequested(const QModelIndex &index);
+    void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);
     void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
 
