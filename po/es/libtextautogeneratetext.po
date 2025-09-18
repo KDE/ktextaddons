@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-13 11:15+0100\n"
+"PO-Revision-Date: 2025-09-17 21:02+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -66,12 +66,13 @@ msgstr ""
 "Nombre de la instancia: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Herramientas"
+msgstr ""
+"\n"
+"Herramientas: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -1942,11 +1943,15 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
+"DeepSeek-V3.1 es un modelo híbrido que admite tanto el modo de pensamiento "
+"como el modo de no pensamiento."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
 msgstr ""
+"EmbeddingGemma es un modelo para integrar de Google de 300 millones de "
+"parámetros."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -2023,7 +2028,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "Nombre de la ciudad"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2095,7 +2100,7 @@ msgstr "Enviar"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr ""
+msgstr "Permitir la selección de herramientas"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2144,12 +2149,12 @@ msgstr "Argumentos:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Mostrar información de metadatos"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Información de metadatos"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2370,11 +2375,10 @@ msgid "No plugin found."
 msgstr "No se ha encontrado ningún complemento."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Herramientas"
+msgstr "Herramientas:"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format

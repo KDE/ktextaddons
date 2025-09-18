@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-16 19:05+0400\n"
+"PO-Revision-Date: 2025-09-17 19:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -65,12 +65,13 @@ msgstr ""
 "اسم النسخة: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools: %1"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "أدوات: %1"
+msgstr ""
+"\n"
+"أدوات: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -1929,7 +1930,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "اسم المدينة"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2048,12 +2049,12 @@ msgstr "المعاملات:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "أظهر البيانات الوصفية"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "البيانات الوصفية"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2274,8 +2275,7 @@ msgid "No plugin found."
 msgstr "لم يعثر على ملحق."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "أدوات:"

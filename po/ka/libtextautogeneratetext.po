@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-16 03:57+0200\n"
+"PO-Revision-Date: 2025-09-17 06:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -65,12 +65,13 @@ msgstr ""
 "გაშვებული ასლის სახელი: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools: %1"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "ხელსაწყოები: %1"
+msgstr ""
+"\n"
+"ხელსაწყოები: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -2008,7 +2009,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "ქალაქის სახელი"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2128,12 +2129,12 @@ msgstr "არგუმენტები:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "მეტამონაცემების ინფორმაციის ჩვენება"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "მეტამონაცემების ინფორმაცია"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2354,8 +2355,7 @@ msgid "No plugin found."
 msgstr "დამატებების გარეშე."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "ხელსაწყოები:"

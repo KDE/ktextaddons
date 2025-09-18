@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-14 09:06+0200\n"
+"PO-Revision-Date: 2025-09-17 21:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -64,12 +64,13 @@ msgstr ""
 "Instansnamn: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Verktyg"
+msgstr ""
+"\n"
+"Verktyg: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -1923,11 +1924,14 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
+"DeepSeek-V3.1 är en hybridmodell som stöder både tänkande och icke-tänkande "
+"lägen."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
 msgstr ""
+"EmbeddingGemma är en 300 miljoners parameter inbäddningsmodell från Google."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -2004,7 +2008,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "Stadens namn"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2076,7 +2080,7 @@ msgstr "Skicka"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr ""
+msgstr "Tillåt val av verktyg"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2125,12 +2129,12 @@ msgstr "Argument:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Visa metadatainformation"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Metadatainformation"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2351,11 +2355,10 @@ msgid "No plugin found."
 msgstr "Inga insticksprogram hittades."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Verktyg"
+msgstr "Verktyg:"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format

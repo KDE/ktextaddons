@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-03 11:11+0300\n"
+"PO-Revision-Date: 2025-09-17 08:02+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -65,12 +65,13 @@ msgstr ""
 "שם מופע: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "כלים"
+msgstr ""
+"\n"
+"כלים: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -1827,12 +1828,12 @@ msgstr ""
 msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
-msgstr ""
+msgstr "DeepSeek-V3.1 הוא מודל משולב שתומך במצבי חשיבה ואי־חשיבה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr ""
+msgstr "EmbeddingGemma הוא מודל הטמעה בגודל 300M משתנים מבית Google."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -1907,7 +1908,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "שם העיר"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -1977,7 +1978,7 @@ msgstr "שליחה"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr ""
+msgstr "לאפשר לבחור כלים"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -1990,10 +1991,9 @@ msgid "Text Plugins"
 msgstr "תוספי טקסט"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "תוספי טקסט"
+msgstr "תוספי כלים"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
 #, kde-format
@@ -2015,24 +2015,24 @@ msgstr "בקשה"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr ""
+msgstr "תיאור:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
-msgstr ""
+msgstr "ארגומנטים:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "הצגת פרטי נתוני־על"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "פרטי נתוני־על"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2253,11 +2253,10 @@ msgid "No plugin found."
 msgstr "לא נמצא תוסף."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "כלים"
+msgstr "כלים:"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format

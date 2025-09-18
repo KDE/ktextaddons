@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-16 10:30+0300\n"
+"PO-Revision-Date: 2025-09-17 15:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -65,12 +65,13 @@ msgstr ""
 "Назва екземпляра: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools: %1"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Інструменти: %1"
+msgstr ""
+"\n"
+"Інструменти: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -2013,7 +2014,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "Назва міста"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2134,12 +2135,12 @@ msgstr "Аргументи:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Показати відомості щодо метаданих"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Відомості щодо метаданих"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2360,8 +2361,7 @@ msgid "No plugin found."
 msgstr "Не знайдено додатка."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Інструменти:"

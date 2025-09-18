@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-16 10:52+0200\n"
+"PO-Revision-Date: 2025-09-17 10:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -67,12 +67,13 @@ msgstr ""
 "Nom d'instància: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools: %1"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Eines: %1"
+msgstr ""
+"\n"
+"Eines: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -2024,7 +2025,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "El nom de la ciutat"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2145,12 +2146,12 @@ msgstr "Arguments:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Mostra la informació de les metadades"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Informació de les metadades"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2371,8 +2372,7 @@ msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Eines:"

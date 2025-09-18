@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:42+0000\n"
-"PO-Revision-Date: 2025-09-16 15:36+0200\n"
+"PO-Revision-Date: 2025-09-17 11:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -64,12 +64,13 @@ msgstr ""
 "Naam exemplaar: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:74
-#, fuzzy, kde-format
-#| msgid "Tools: %1"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Hulpmiddelen: %1"
+msgstr ""
+"\n"
+"Hulpmiddelen: %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -2003,7 +2004,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "De naam van de stad"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2124,12 +2125,12 @@ msgstr "Argumenten:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Metagegevens-informatie tonen"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Metagegevens-informatievenster"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2350,8 +2351,7 @@ msgid "No plugin found."
 msgstr "Geen plug-in gevonden."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Hulpmiddelen:"
