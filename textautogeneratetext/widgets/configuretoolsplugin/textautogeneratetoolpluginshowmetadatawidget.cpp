@@ -4,6 +4,10 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetoolpluginshowmetadatawidget.h"
+#include "textautogeneratetextwidget_debug.h"
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <KSyntaxHighlighting/Theme>
 #include <QJsonDocument>
 #include <QTextEdit>
 #include <QVBoxLayout>
@@ -20,6 +24,16 @@ TextAutoGenerateToolPluginShowMetaDataWidget::TextAutoGenerateToolPluginShowMeta
     mTextEdit->setObjectName(u"mTextEdit"_s);
     mainLayout->addWidget(mTextEdit);
     mTextEdit->setReadOnly(true);
+
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(u"Json"_s);
+    if (!def.isValid()) {
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Invalid definition name";
+    }
+
+    auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->document());
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                                                                     : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setDefinition(def);
 }
 
 TextAutoGenerateToolPluginShowMetaDataWidget::~TextAutoGenerateToolPluginShowMetaDataWidget() = default;

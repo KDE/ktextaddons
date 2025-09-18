@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_private_export.h"
+#include <KSyntaxHighlighting/Repository>
 #include <QJsonObject>
 #include <QWidget>
 class QTextEdit;
@@ -20,6 +21,7 @@ public:
     void setMetaData(const QJsonObject &obj);
 
 private:
+    KSyntaxHighlighting::Repository mRepo;
     QTextEdit *const mTextEdit;
 };
 }
