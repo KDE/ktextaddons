@@ -226,7 +226,7 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 void TextAutoGenerateWidget::slotInitializeDone()
 {
     for (const auto &str : std::as_const(mAskMessageList)) {
-        slotEditingFinished(str, {}, {}); // TODO use TOOLS ?
+        slotEditingFinished(str, {}, {});
     }
     mAskMessageList.clear();
     mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
@@ -237,7 +237,7 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
     if (!mManager->pluginWasInitialized()) {
         mAskMessageList.append(str);
     } else {
-        slotEditingFinished(str, {}, {}); // TODO use TOOLS ?
+        slotEditingFinished(str, {}, {});
     }
 }
 

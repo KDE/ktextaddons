@@ -185,7 +185,6 @@ void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
     auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
     setModel(model);
-    // TODO get info
     static_cast<TextAutoGenerateListViewDelegate *>(mDelegate)->setInProgress(mManager->chatInProgress(mManager->currentChatId()));
 }
 

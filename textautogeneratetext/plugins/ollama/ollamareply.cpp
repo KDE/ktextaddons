@@ -72,6 +72,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             for (const auto &tok : std::as_const(completeTokens)) {
                 mTokens.append(QJsonDocument::fromJson(tok));
             }
+            // qDebug() << " mTokens " << mTokens;
             break;
         }
         case RequestTypes::StreamingGenerate:
@@ -111,6 +112,9 @@ QString OllamaReply::readResponse() const
         break;
     case RequestTypes::StreamingChat:
         for (const auto &tok : mTokens) {
+            if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
+                qDebug() << " ssssssssssssssssssssss " << tok["message"_L1]["tool_calls"_L1];
+            }
             ret += tok["message"_L1]["content"_L1].toString();
         }
         break;

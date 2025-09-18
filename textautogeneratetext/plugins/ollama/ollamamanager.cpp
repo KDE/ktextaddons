@@ -234,14 +234,13 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mOllamaSettings->temperature();
-    qDebug() << " 111111111111111111111111111111111111111111111111111111";
     if (!request.tools().isEmpty()) {
         data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
     }
     if (mOllamaSettings->seed() != 0) {
         data["seed"_L1] = mOllamaSettings->seed();
     }
-    qDebug() << " DDDDDDDDDDDDDDDDDDDDDDDD " << data;
+    qDebug() << " OllamaManager::getChatCompletion json: " << data;
     qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
