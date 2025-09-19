@@ -10,6 +10,7 @@
 #include "textautogeneratelocalmessagesdatabase.h"
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateLocalDatabaseManager::TextAutoGenerateLocalDatabaseManager()
     : mMessagesDatabase(std::make_unique<TextAutoGenerateLocalMessagesDatabase>())
     , mChatsDatabase(std::make_unique<TextAutoGenerateLocalChatsDatabase>())
@@ -33,7 +34,7 @@ QStringList TextAutoGenerateLocalDatabaseManager::chatsList() const
     QStringList lst;
     const QList<TextAutoGenerateChat> chats = loadChats();
     for (const auto &chat : chats) {
-        lst.append(chat.title());
+        lst.append(u"%1 (%2)"_s.arg(chat.title(), QString::fromLatin1(chat.identifier())));
     }
     return lst;
 }
