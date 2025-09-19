@@ -34,6 +34,7 @@ TextAutoGenerateToolPluginConfigureWidget::TextAutoGenerateToolPluginConfigureWi
     mArgumentsLabel->setTextFormat(Qt::RichText);
     mainLayout->addWidget(mArgumentsLabel);
 
+    mainLayout->addWidget(createLabel(i18nc("@label:textbox", "Information:")));
     mainLayout->addWidget(mInfoToolButton);
     mInfoToolButton->setObjectName("mInfoToolButton"_L1);
     mInfoToolButton->setIcon(QIcon::fromTheme(u"info"_s));
