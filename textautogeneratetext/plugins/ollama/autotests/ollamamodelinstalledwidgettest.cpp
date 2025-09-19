@@ -32,6 +32,7 @@ void OllamaModelInstalledWidgetTest::shouldHaveDefaultValues()
 
     auto mRemoveModelButton = w.findChild<QToolButton *>(u"mRemoveModelButton"_s);
     QVERIFY(mRemoveModelButton);
+    QVERIFY(!mRemoveModelButton->toolTip().isEmpty());
 
     auto mOllamaModelInstalledListView = w.findChild<OllamaModelInstalledListView *>(u"mOllamaModelInstalledListView"_s);
     QVERIFY(mOllamaModelInstalledListView);

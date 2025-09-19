@@ -77,6 +77,7 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
 
     mRemoveModelButton->setObjectName(u"mRemoveModelButton"_s);
     mRemoveModelButton->setEnabled(false);
+    mRemoveModelButton->setToolTip(i18nc("@info:tooltip", "Remove Selected Model"));
     scrollArea->hide();
     hboxLayout->addWidget(mRemoveModelButton);
     mRemoveModelButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
