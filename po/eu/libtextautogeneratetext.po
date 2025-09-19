@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-17 00:42+0000\n"
+"POT-Creation-Date: 2025-09-19 00:41+0000\n"
 "PO-Revision-Date: 2025-09-06 07:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -55,7 +55,7 @@ msgstr "Beranduago"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: core/models/textautogeneratemessagesmodel.cpp:72
+#: core/models/textautogeneratemessagesmodel.cpp:77
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -66,7 +66,7 @@ msgstr ""
 "Eredua: %2\n"
 "Instantziaren izena: %3"
 
-#: core/models/textautogeneratemessagesmodel.cpp:74
+#: core/models/textautogeneratemessagesmodel.cpp:80
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgid ""
@@ -144,12 +144,12 @@ msgstr ""
 "Mesedez, izan zaitez lagungarria, profesionala, eta adeitsua. Ez eman "
 "zehatza ez den informaziorik."
 
-#: core/textautogeneratetextplugin.cpp:259
+#: core/textautogeneratetextplugin.cpp:258
 #, kde-format
 msgid "Local"
 msgstr "Lokala"
 
-#: core/textautogeneratetextplugin.cpp:261
+#: core/textautogeneratetextplugin.cpp:260
 #, kde-format
 msgid "Network"
 msgstr "Sarea"
@@ -179,7 +179,7 @@ msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Eredu erabilgarriak"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
 #: plugins/ollama/ollamamanager.cpp:167
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -1850,23 +1850,23 @@ msgstr ""
 msgid "Restart is necessary for applying the changes."
 msgstr "Aldaketak ezartzeko berrabiatu beharra dago."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:101
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:102
 #, kde-format
 msgid "Text Plugins"
 msgstr "Testu pluginak"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:108
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Text Plugins"
 msgid "Tools Plugins"
 msgstr "Testu pluginak"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:171
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:172
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:173
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:174
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -1895,7 +1895,7 @@ msgctxt "@info:tooltip"
 msgid "Show metadata info"
 msgstr ""
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:18
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
 msgstr ""
