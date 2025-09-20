@@ -243,7 +243,6 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return limits;
     case GenericNetworkManager::PluginNetworkType::MistralAI:
-        return limits;
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
         return limits;
