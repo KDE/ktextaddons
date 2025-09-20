@@ -39,6 +39,7 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return i18n("Kimi (Moonshot AI)");
     case GenericNetworkManager::PluginNetworkType::LastElement:
+        Q_ASSERT(false);
         return {};
     }
     return {};
@@ -61,6 +62,7 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"chat/completions"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
+        Q_ASSERT(false);
         return {};
     }
     return {};
@@ -91,6 +93,7 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"https://www.moonshot.ai/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
+        Q_ASSERT(false);
         return {};
     }
     return {};
@@ -121,6 +124,7 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"https://api.moonshot.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
+        Q_ASSERT(false);
         return {};
     }
     return {};
@@ -135,10 +139,11 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     case GenericNetworkManager::PluginNetworkType::MistralAI:
         return i18n("Mistral AI large language models");
     case GenericNetworkManager::PluginNetworkType::OpenAI:
-    case GenericNetworkManager::PluginNetworkType::GroqAI:
     case GenericNetworkManager::PluginNetworkType::VeniceAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
         return {};
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+        return i18n("Groq AI");
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
         return i18n("Kluster AI cloud inference API");
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
@@ -148,6 +153,7 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return i18n("Kimi large language models by Moonshot AI");
     case GenericNetworkManager::PluginNetworkType::LastElement:
+        Q_ASSERT(false);
         return {};
     }
     return {};
@@ -178,6 +184,7 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"kimiai"_s;
     case GenericNetworkManager::PluginNetworkType::LastElement:
+        Q_ASSERT(false);
         return {};
     }
     return {};
