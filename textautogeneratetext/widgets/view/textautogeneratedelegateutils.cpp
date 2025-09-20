@@ -8,7 +8,6 @@
 
 #include "textautogeneratelistviewtextselection.h"
 
-#include <QAbstractTextDocumentLayout>
 #include <QClipboard>
 #include <QTextDocument>
 #include <QTextFormat>
