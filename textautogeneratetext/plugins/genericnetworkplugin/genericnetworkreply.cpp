@@ -86,6 +86,9 @@ QString GenericNetworkReply::readResponse() const
             if (!choicesArray.isEmpty()) {
                 ret += choicesArray.at(0).toObject()["delta"_L1]["content"_L1].toString();
             }
+            if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
+                qDebug() << " tool_calls: " << tok["message"_L1]["tool_calls"_L1];
+            }
         }
         break;
     }
