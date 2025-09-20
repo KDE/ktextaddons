@@ -12,7 +12,6 @@
 class QSequentialAnimationGroup;
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMessageWaitingAnswerAnimationBase : public QObject
 {
     Q_OBJECT
