@@ -17,7 +17,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KColorScheme>
 #include <QAction>
-#include <QApplication>
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QPainter>

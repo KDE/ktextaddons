@@ -16,7 +16,6 @@
 #include <QListView>
 #include <QMimeData>
 #include <QPainter>
-#include <QTextFrame>
 #include <QToolTip>
 
 using namespace Qt::Literals::StringLiterals;

@@ -9,7 +9,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeechutil.h"
 
-#include <KConfig>
 #include <QLocale>
 #include <QTextToSpeech>
 #include <QVector>
