@@ -7,7 +7,6 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
-#include <QJsonArray>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 namespace TextAutoGenerateText
 {

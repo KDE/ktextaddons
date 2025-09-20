@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelsavalableinfos.h"
-#include <QJsonArray>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaModelsAvalableInfos::OllamaModelsAvalableInfos() = default;

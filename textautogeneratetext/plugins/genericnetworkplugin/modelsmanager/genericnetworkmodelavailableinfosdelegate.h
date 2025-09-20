@@ -7,7 +7,6 @@
 #pragma once
 
 #include "widgets/view/delegate/textautogeneratelistviewbasedelegate.h"
-#include <QObject>
 
 class GenericNetworkModelAvailableInfosDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
 {

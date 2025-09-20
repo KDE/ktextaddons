@@ -11,9 +11,6 @@
 #include "textautogenerateselectedmessagebackgroundanimation.h"
 #include "textautogeneratetextwidget_animation_debug.h"
 #include <KLocalizedString>
-#include <KMessageBox>
-#include <QApplication>
-#include <QClipboard>
 #include <QMouseEvent>
 #include <QScrollBar>
 

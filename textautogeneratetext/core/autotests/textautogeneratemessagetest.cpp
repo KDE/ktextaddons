@@ -8,7 +8,6 @@
 #include "core/textautogenerateanswerinfo.h"
 #include "core/textautogeneratemessage.h"
 #include "textautogenerate_autotest_helper.h"
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;

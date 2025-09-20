@@ -6,7 +6,6 @@
 #pragma once
 #include "textautogeneratebaselistview.h"
 #include "textautogeneratetext_private_export.h"
-#include <QListView>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;

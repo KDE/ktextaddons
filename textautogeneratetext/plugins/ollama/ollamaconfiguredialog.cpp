@@ -17,7 +17,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <QVBoxLayout>
 #include <QWindow>
 
 namespace

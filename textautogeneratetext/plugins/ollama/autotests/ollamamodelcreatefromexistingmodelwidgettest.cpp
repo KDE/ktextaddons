@@ -9,7 +9,6 @@ using namespace Qt::Literals::StringLiterals;
 #include "modelsmanager/ollamamodelcreatecombobox.h"
 #include "modelsmanager/ollamamodelcreatefromexistingmodelwidget.h"
 #include <QDialogButtonBox>
-#include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QPushButton>

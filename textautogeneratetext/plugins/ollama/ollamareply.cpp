@@ -6,7 +6,6 @@
 
 #include "ollamareply.h"
 #include "autogeneratetext_ollama_debug.h"
-#include <QJsonArray>
 #include <QJsonObject>
 #include <QNetworkReply>
 

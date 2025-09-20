@@ -7,7 +7,6 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDebug>
-#include <QPointer>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 namespace TextAutoGenerateText
 {

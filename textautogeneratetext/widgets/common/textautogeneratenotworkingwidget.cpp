@@ -9,7 +9,6 @@
 #include "textautogeneratenotworkingmessagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
-#include <KMessageWidget>
 #include <QProcess>
 #include <QPushButton>
 #include <QVBoxLayout>

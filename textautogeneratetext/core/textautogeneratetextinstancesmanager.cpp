@@ -12,7 +12,6 @@
 #include "textautogeneratetextutils.h"
 #include <KConfig>
 #include <KConfigGroup>
-#include <QRegularExpression>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

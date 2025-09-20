@@ -12,7 +12,6 @@
 #include "genericnetworksettings.h"
 #include "modelsmanager/genericnetworkmodelavailableinfos.h"
 #include <KLocalizedString>
-#include <QJsonArray>
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QNetworkRequest>

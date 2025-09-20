@@ -15,7 +15,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMessageBox>
 #include <QContextMenuEvent>
 #include <QMenu>
-#include <QSortFilterProxyModel>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManagerListView(TextAutoGenerateText::TextAutoGenerateManager *manager,

@@ -17,7 +17,6 @@
 #include <QMimeData>
 #include <QPainter>
 #include <QTextFrame>
-#include <QTextFrameFormat>
 #include <QToolTip>
 
 using namespace Qt::Literals::StringLiterals;

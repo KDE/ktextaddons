@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratereply.h"
-#include <QJsonArray>
 #include <QNetworkReply>
 
 using namespace Qt::StringLiterals;

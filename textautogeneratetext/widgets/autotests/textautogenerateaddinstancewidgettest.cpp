@@ -9,7 +9,6 @@ using namespace Qt::Literals::StringLiterals;
 #include "widgets/instancesmanager/textautogenerateaddinstancewidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancecombobox.h"
 #include <QFormLayout>
-#include <QLabel>
 #include <QLineEdit>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateAddInstanceWidgetTest)

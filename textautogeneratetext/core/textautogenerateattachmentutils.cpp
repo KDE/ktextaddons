@@ -5,7 +5,6 @@
 */
 #include "textautogenerateattachmentutils.h"
 #include "textautogeneratetextcore_debug.h"
-#include <QFile>
 #include <QString>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

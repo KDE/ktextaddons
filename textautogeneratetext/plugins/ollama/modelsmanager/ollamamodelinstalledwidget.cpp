@@ -13,7 +13,6 @@
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <QLineEdit>
 #include <QScrollArea>
 #include <QSortFilterProxyModel>
 #include <QSplitter>

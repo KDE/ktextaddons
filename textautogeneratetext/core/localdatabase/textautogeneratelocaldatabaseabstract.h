@@ -6,7 +6,6 @@
 
 #pragma once
 #include "textautogeneratetext_private_export.h"
-#include <QSortFilterProxyModel>
 #include <QSqlDatabase>
 #include <QString>
 namespace TextAutoGenerateText

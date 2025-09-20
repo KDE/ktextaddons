@@ -16,8 +16,6 @@
 
 #include <KLocalizedString>
 
-#include <QBuffer>
-#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>

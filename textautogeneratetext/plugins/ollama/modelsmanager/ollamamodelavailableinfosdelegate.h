@@ -7,7 +7,6 @@
 #pragma once
 
 #include "widgets/view/delegate/textautogeneratelistviewbasedelegate.h"
-#include <QObject>
 
 class OllamaModelAvailableInfosDelegate : public TextAutoGenerateText::TextAutoGenerateListViewBaseDelegate
 {

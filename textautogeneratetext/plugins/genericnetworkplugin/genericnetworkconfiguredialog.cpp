@@ -13,7 +13,6 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <QDialogButtonBox>
-#include <QVBoxLayout>
 #include <QWindow>
 namespace
 {

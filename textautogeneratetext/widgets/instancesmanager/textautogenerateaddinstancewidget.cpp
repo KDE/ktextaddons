@@ -10,7 +10,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
-#include <QLabel>
 #include <QLineEdit>
 
 using namespace TextAutoGenerateText;

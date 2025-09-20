@@ -8,8 +8,6 @@
 
 #include "core/textautogeneratetextplugin.h"
 
-#include <QMultiHash>
-#include <QPair>
 class OllamaManager;
 class OllamaSettings;
 class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
