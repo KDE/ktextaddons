@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 00:41+0000\n"
+"POT-Creation-Date: 2025-09-20 00:41+0000\n"
 "PO-Revision-Date: 2025-09-17 19:19+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -375,12 +375,20 @@ msgstr "النموذج الأب:"
 msgid "Features Supported"
 msgstr "المميزات المتاحة"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:80
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@info:tooltip"
+msgid "Remove Selected Model"
+msgstr "أزل النموذج"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "أتريد إزالة هذه النموذج (%1)؟"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -2045,7 +2053,13 @@ msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "المعاملات:"
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:41
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:37
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Information:"
+msgstr ""
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"

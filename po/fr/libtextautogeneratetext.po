@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-19 00:41+0000\n"
-"PO-Revision-Date: 2025-09-04 11:40+0200\n"
+"POT-Creation-Date: 2025-09-20 00:41+0000\n"
+"PO-Revision-Date: 2025-09-18 09:11+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:78
 #, kde-format
@@ -61,12 +61,13 @@ msgstr ""
 "Nom de l'instance : %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:80
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Outils"
+msgstr ""
+"\n"
+"Outils : %1"
 
 #: core/textautogeneratemanager.cpp:123
 #, kde-format
@@ -370,12 +371,20 @@ msgstr "Modèle parent :"
 msgid "Features Supported"
 msgstr "Fonctionnalités prises en charge"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:80
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
+msgctxt "@info:tooltip"
+msgid "Remove Selected Model"
+msgstr "Supprimer un modèle"
+
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Voulez-vous vraiment supprimer ce modèle (%1) ?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1955,11 +1964,13 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
+"DeepSeek-V3.1 est un modèle hybride prenant en charge à la fois le mode de "
+"raisonnement  et son contraire."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr ""
+msgstr "EmbeddingGemma est un modèle intégré de 300M paramètres de Google."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -2036,7 +2047,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "Le nom de la ville"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2108,7 +2119,7 @@ msgstr "Envoyer"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr ""
+msgstr "Autoriser la sélection d'outils"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2121,10 +2132,9 @@ msgid "Text Plugins"
 msgstr "Modules externes de texte"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:109
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Tools Plugins"
-msgstr "Modules externes de texte"
+msgstr "Modules externes d'outils"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:172
 #, kde-format
@@ -2146,24 +2156,30 @@ msgstr "Invite de commandes"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr ""
+msgstr "Description :"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
+msgstr "Arguments :"
+
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:37
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Information:"
 msgstr ""
 
-#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:41
+#: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Afficher les informations de métadonnées"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Informations de métadonnées"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2384,11 +2400,10 @@ msgid "No plugin found."
 msgstr "Aucun module externe n'a été trouvé."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Outils"
+msgstr "Outils :"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
 #, kde-format
