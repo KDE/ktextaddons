@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-03 11:06+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -19,27 +19,27 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: common/grammarresulttextedit.cpp:38
+#: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
 msgstr "N'importe quel texte à vérifier."
 
-#: common/grammarresulttextedit.cpp:90
+#: common/grammarresulttextedit.cpp:89
 #, kde-format
 msgid "Replacement"
 msgstr "Remplacement"
 
-#: common/grammarresulttextedit.cpp:99
+#: common/grammarresulttextedit.cpp:98
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Informations de grammaire en ligne"
 
-#: common/grammarresulttextedit.cpp:112
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Check Again"
 msgstr "Vérifier de nouveau"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:114
 #, kde-format
 msgid "Configure…"
 msgstr "Configurer..."

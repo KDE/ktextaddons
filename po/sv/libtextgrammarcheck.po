@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-02 08:01+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: common/grammarresulttextedit.cpp:38
+#: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
 msgstr "Någon text att kontrollera."
 
-#: common/grammarresulttextedit.cpp:90
+#: common/grammarresulttextedit.cpp:89
 #, kde-format
 msgid "Replacement"
 msgstr "Ersättning"
 
-#: common/grammarresulttextedit.cpp:99
+#: common/grammarresulttextedit.cpp:98
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Grammatikinformation på nätet"
 
-#: common/grammarresulttextedit.cpp:112
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Check Again"
 msgstr "Kontrollera igen"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:114
 #, kde-format
 msgid "Configure…"
 msgstr "Anpassa…"

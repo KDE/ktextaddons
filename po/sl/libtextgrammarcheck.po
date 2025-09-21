@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
 "PO-Revision-Date: 2024-08-02 05:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.4.4\n"
 
-#: common/grammarresulttextedit.cpp:38
+#: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
 msgstr "Kakršnokoli besedilo za preverjanje."
 
-#: common/grammarresulttextedit.cpp:90
+#: common/grammarresulttextedit.cpp:89
 #, kde-format
 msgid "Replacement"
 msgstr "Zamenjava"
 
-#: common/grammarresulttextedit.cpp:99
+#: common/grammarresulttextedit.cpp:98
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Informacije o spletni slovnici"
 
-#: common/grammarresulttextedit.cpp:112
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Check Again"
 msgstr "Ponovno preveri"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:114
 #, kde-format
 msgid "Configure…"
 msgstr "Konfiguiriraj…"

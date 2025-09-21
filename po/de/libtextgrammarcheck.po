@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextgrammarcheck\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
 "PO-Revision-Date: 2023-03-12 16:25+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.07.70\n"
 
-#: common/grammarresulttextedit.cpp:38
+#: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
 msgstr "Beliebiger Text zur Überprüfung."
 
-#: common/grammarresulttextedit.cpp:90
+#: common/grammarresulttextedit.cpp:89
 #, kde-format
 msgid "Replacement"
 msgstr "Ersetzen mit"
 
-#: common/grammarresulttextedit.cpp:99
+#: common/grammarresulttextedit.cpp:98
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "Online-Informationen über Grammatik"
 
-#: common/grammarresulttextedit.cpp:112
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Check Again"
 msgstr "Erneut prüfen"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:114
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgid "Configure…"

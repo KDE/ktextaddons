@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
 "PO-Revision-Date: 2025-01-24 09:26+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,27 +18,27 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.12.0\n"
 
-#: common/grammarresulttextedit.cpp:38
+#: common/grammarresulttextedit.cpp:37
 #, kde-format
 msgid "Any text to check."
 msgstr "טקסט כלשהו לבדיקה."
 
-#: common/grammarresulttextedit.cpp:90
+#: common/grammarresulttextedit.cpp:89
 #, kde-format
 msgid "Replacement"
 msgstr "החלפה"
 
-#: common/grammarresulttextedit.cpp:99
+#: common/grammarresulttextedit.cpp:98
 #, kde-format
 msgid "Online Grammar Information"
 msgstr "פרטי דקדוק מקוונים"
 
-#: common/grammarresulttextedit.cpp:112
+#: common/grammarresulttextedit.cpp:111
 #, kde-format
 msgid "Check Again"
 msgstr "בדיקה חוזרת"
 
-#: common/grammarresulttextedit.cpp:115
+#: common/grammarresulttextedit.cpp:114
 #, kde-format
 msgid "Configure…"
 msgstr "הגדרה…"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:41+0000\n"
-"PO-Revision-Date: 2025-09-17 21:51+0200\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
+"PO-Revision-Date: 2025-09-20 10:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -156,28 +156,28 @@ msgstr "Nätverk"
 msgid "Generic"
 msgstr "Generella"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "Anpassa %1"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Allmänt"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:54
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Tillgängliga modeller"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/ollama/ollamamanager.cpp:167
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/ollama/ollamamanager.cpp:165
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Misslyckades ansluta till gränssnitt på %1: %2"
@@ -227,27 +227,32 @@ msgstr "Anthropic"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI stora språkmodeller"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:143
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
+#, kde-format
+msgid "Groq AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AI programmeringsgränssnitt för molninferens"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:145
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AI programmeringsgränssnitt för molninferens"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:147
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama programmeringsgränssnitt"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi stor språkmodell av Moonshot AI"
@@ -338,7 +343,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Ange modellnamn som \"namn:etikett\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:395
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -374,20 +379,18 @@ msgstr "Överliggande modell:"
 msgid "Features Supported"
 msgstr "Funktioner som stöds"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "Ta bort modell"
+msgstr "Ta bort vald modell"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Vill du ta bort modellen (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:110
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1952,19 +1955,19 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "Uppdatera modell"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Anpassa Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:60
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Installerade modeller"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:65
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -2014,7 +2017,7 @@ msgstr ""
 "till ett specifikt tal genererar modellen samma text för samma fråga. "
 "(Standardvärde: 0)"
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr "Stadens namn"
 
@@ -2060,7 +2063,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Starta Ollama"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:32
+#: widgets/common/textautogeneratenotworkingwidget.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
@@ -2137,7 +2140,7 @@ msgstr "Argument:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr ""
+msgstr "Information:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
@@ -2156,13 +2159,13 @@ msgctxt "@title:window"
 msgid "Add Instance"
 msgstr "Lägg till instans"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Namn:"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
@@ -2174,36 +2177,36 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Anpassa instanser"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:56
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Lägg till instans…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:67
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Markera som förval"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Redigera…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Ta bort instans"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Vill du ta bort instansen (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2363,7 +2366,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Sök"
 
-#: widgets/textautogeneratewidget.cpp:113
+#: widgets/textautogeneratewidget.cpp:112
 #, kde-format
 msgid "No plugin found."
 msgstr "Inga insticksprogram hittades."
@@ -2374,25 +2377,25 @@ msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Verktyg:"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Redigera…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Ta bort"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiera"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:399
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:397
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"

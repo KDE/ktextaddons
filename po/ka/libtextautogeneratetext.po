@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:41+0000\n"
-"PO-Revision-Date: 2025-09-17 06:41+0200\n"
+"POT-Creation-Date: 2025-09-21 00:41+0000\n"
+"PO-Revision-Date: 2025-09-20 06:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -157,28 +157,28 @@ msgstr "ქსელური"
 msgid "Generic"
 msgstr "ზოგადი"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:28
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
 msgstr "%1-ის მორგება"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:31
-#: plugins/ollama/ollamaconfiguredialog.cpp:50
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
+#: plugins/ollama/ollamaconfiguredialog.cpp:49
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "ზოგადი"
 
-#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:36
-#: plugins/ollama/ollamaconfiguredialog.cpp:55
+#: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:54
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "ხელმისაწვდომი მოდელები"
 
-#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:49
-#: plugins/ollama/ollamamanager.cpp:167
+#: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
+#: plugins/ollama/ollamamanager.cpp:165
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "ვერ მივუერთდი ინტერფეისს მისამართზე %1: %2"
@@ -228,27 +228,32 @@ msgstr "Anthropic"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI-ის დიდი ენის მოდელები"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:143
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
+#, kde-format
+msgid "Groq AI"
+msgstr ""
+
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AI cloud inference API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:145
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AI-ის ღრუბლოვანი API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:147
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama API"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:149
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi დიდი ენის მოდელები Moonshot AI-ის მიერ"
@@ -339,7 +344,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "შეიყვანეთ მოდელის სახელი ფორმით \"სახელი:ჭდე\""
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:395
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -375,20 +380,18 @@ msgstr "მშობელი მოდელი:"
 msgid "Features Supported"
 msgstr "მხარდაჭერილი ფუნქციები"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "მოდელის წაშლა"
+msgstr "მონიშნული მოდელის წაშლა"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "მართლა გნებავთ, წაშალოთ ეს მოდელი (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:110
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1953,19 +1956,19 @@ msgctxt "@info:tooltip"
 msgid "Reload Model"
 msgstr "მოდელის თავიდან ჩატვირთვა"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:35
+#: plugins/ollama/ollamaconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama-ის მორგება"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:60
+#: plugins/ollama/ollamaconfiguredialog.cpp:59
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "დაყენებული მოდელები"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:65
+#: plugins/ollama/ollamaconfiguredialog.cpp:64
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -2015,7 +2018,7 @@ msgstr ""
 "დაყენება აიძულებს მოდელს, დააგენერიროს იგივე ტექსტი იგივე მოთხოვნისთვის. "
 "(ნაგულისხმევი: 0)"
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr "ქალაქის სახელი"
 
@@ -2060,7 +2063,7 @@ msgctxt "@action"
 msgid "Start Ollama"
 msgstr "Ollama-ის გაშვება"
 
-#: widgets/common/textautogeneratenotworkingwidget.cpp:32
+#: widgets/common/textautogeneratenotworkingwidget.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
@@ -2137,7 +2140,7 @@ msgstr "არგუმენტები:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr ""
+msgstr "ინფორმაცია:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
@@ -2156,13 +2159,13 @@ msgctxt "@title:window"
 msgid "Add Instance"
 msgstr "გაშვებული ასლის დამატება"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:28
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "სახელი:"
 
-#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:32
+#: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
@@ -2174,36 +2177,36 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "გაშვებული ასლების მორგება"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:57
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:56
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "გაშვებული ასლის დამატება…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:67
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "ნაგულისხმევად მონიშვნა"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:80
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:95
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2363,7 +2366,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:113
+#: widgets/textautogeneratewidget.cpp:112
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
@@ -2374,25 +2377,25 @@ msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "ხელსაწყოები:"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:383
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:387
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "წაშლა"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:391
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:389
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:399
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:397
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
