@@ -35,6 +35,13 @@ void TextAutoGenerateReply::cancel()
     }
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments &t)
+{
+    d.space() << "keyTool:" << t.keyTool;
+    d.space() << "value:" << t.value;
+    return d;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t)
 {
     d.space() << "total:" << t.total;

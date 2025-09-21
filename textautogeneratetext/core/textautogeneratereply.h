@@ -30,6 +30,11 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateReply : public QObject
     Q_OBJECT
 
 public:
+    struct ToolCallArguments {
+        QString keyTool;
+        QString value;
+    };
+
     struct DownloadModelInfo {
         quint64 total = 0;
         quint64 completed = 0;
@@ -108,5 +113,7 @@ protected:
     qint64 mReceivedSize = 0;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments &t);
