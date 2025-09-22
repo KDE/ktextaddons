@@ -80,6 +80,9 @@ public:
     void cancel();
 
     [[nodiscard]] virtual QString readResponse() const = 0;
+    [[nodiscard]] const QList<ToolCallArguments> &toolCallArguments() const;
+    void setToolCallArguments(const QList<ToolCallArguments> &newToolCallArguments);
+
 Q_SIGNALS:
     /**
      * @brief Emits when new content has been added to the response.
@@ -106,6 +109,7 @@ protected:
     QByteArray mIncompleteTokens;
 
     QList<QJsonDocument> mTokens;
+    QList<ToolCallArguments> mToolCallArguments;
 
     const RequestTypes mRequestType = RequestTypes::Unknown;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
