@@ -5,21 +5,13 @@
 */
 #pragma once
 #include <QObject>
-#include <TextAutoGenerateText/TextAutoGenerateReply>
-class ExampleTextToolPluginJob : public QObject
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginJob>
+class ExampleTextToolPluginJob : public TextAutoGenerateText::TextAutoGenerateTextToolPluginJob
 {
     Q_OBJECT
 public:
     explicit ExampleTextToolPluginJob(QObject *parent = nullptr);
     ~ExampleTextToolPluginJob() override;
 
-    const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolArguments() const;
-    void setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments);
-
-    [[nodiscard]] bool canStart() const;
-
-    void start();
-
-private:
-    QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
+    void start() override;
 };

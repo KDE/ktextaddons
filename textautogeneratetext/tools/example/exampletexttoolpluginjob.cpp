@@ -8,26 +8,11 @@
 #include <QDebug>
 
 ExampleTextToolPluginJob::ExampleTextToolPluginJob(QObject *parent)
-    : QObject{parent}
+    : TextAutoGenerateText::TextAutoGenerateTextToolPluginJob{parent}
 {
 }
 
 ExampleTextToolPluginJob::~ExampleTextToolPluginJob() = default;
-
-const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &ExampleTextToolPluginJob::toolArguments() const
-{
-    return mToolArguments;
-}
-
-void ExampleTextToolPluginJob::setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments)
-{
-    mToolArguments = newToolArguments;
-}
-
-bool ExampleTextToolPluginJob::canStart() const
-{
-    return !mToolArguments.isEmpty();
-}
 
 void ExampleTextToolPluginJob::start()
 {
