@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-13 00:54+0000\n"
-"PO-Revision-Date: 2024-02-27 06:14+0900\n"
+"PO-Revision-Date: 2025-09-22 06:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: common/grammarresulttextedit.cpp:39
 #, kde-format
 msgid "Any text to check."
-msgstr ""
+msgstr "要檢查的文字。"
 
 #: common/grammarresulttextedit.cpp:93
 #, kde-format
 msgid "Replacement"
-msgstr ""
+msgstr "替換"
 
 #: common/grammarresulttextedit.cpp:102
 #, kde-format
@@ -45,7 +45,7 @@ msgstr "設定..."
 #: common/grammarresultutil.cpp:49
 #, kde-format
 msgid "See on: %1"
-msgstr ""
+msgstr "請參考：%1"
 
 #: common/grammarresultwidget.cpp:32
 #, kde-format
@@ -73,62 +73,62 @@ msgstr "文法設定"
 msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
-msgstr ""
+msgstr "無法取得選項。請確認您已安裝 grammalected。"
 
 #: grammalecte/grammalecteconfigwidget.cpp:62
 #, kde-format
 msgid "Error during Extracting Options"
-msgstr ""
+msgstr "取出選項時發生錯誤"
 
 #: grammalecte/grammalecteconfigwidget.cpp:111
 #, kde-format
 msgid "Press Button for Reloading Settings"
-msgstr ""
+msgstr "按下重新載入設定按鈕"
 
 #: grammalecte/grammalecteconfigwidget.cpp:118
 #, kde-format
 msgid "Reload Settings"
-msgstr ""
+msgstr "重新載入設定"
 
 #: grammalecte/grammalecteconfigwidget.cpp:135
 #, kde-format
 msgid "Python Path:"
-msgstr ""
+msgstr "Python 路徑："
 
 #: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Add full 'grammalecte-cli.py' path"
-msgstr ""
+msgstr "新增完整 'grammalecte-cli.py' 路徑"
 
 #: grammalecte/grammalecteconfigwidget.cpp:140
 #, kde-format
 msgid "Grammalecte Path:"
-msgstr ""
+msgstr "Grammalecte 路徑："
 
 #: grammalecte/grammalecteresultwidget.cpp:54
 #, kde-format
 msgid "Python path is missing."
-msgstr ""
+msgstr "缺乏 Python 路徑。"
 
 #: grammalecte/grammalecteresultwidget.cpp:58
 #, kde-format
 msgid "Grammalecte path not found."
-msgstr ""
+msgstr "找不到 Grammalecte 路徑。"
 
 #: grammalecte/grammalecteresultwidget.cpp:65
 #, kde-format
 msgid "Grammalecte program file not found."
-msgstr ""
+msgstr "找不到 Grammalecte 程式檔案。"
 
 #: grammalecte/grammalecteresultwidget.cpp:69
 #, kde-format
 msgid "Grammalecte cli file not found."
-msgstr ""
+msgstr "找不到 Grammalecte CLI 檔案。"
 
 #: grammalecte/grammalecteresultwidget.cpp:73
 #, kde-format
 msgid "Grammalecte error"
-msgstr ""
+msgstr "Grammalecte 錯誤"
 
 #: grammalecte/grammalecteurlrequesterwidget.cpp:32
 #, kde-format
@@ -178,12 +178,12 @@ msgstr "荷蘭語"
 #: languagetool/languagetoolcombobox.cpp:39
 #, kde-format
 msgid "English (Australian)"
-msgstr ""
+msgstr "英語（澳洲）"
 
 #: languagetool/languagetoolcombobox.cpp:40
 #, kde-format
 msgid "English (Canadian)"
-msgstr ""
+msgstr "英語（加拿大）"
 
 #: languagetool/languagetoolcombobox.cpp:41
 #, kde-format
@@ -228,7 +228,7 @@ msgstr "高棉語"
 #: languagetool/languagetoolcombobox.cpp:49
 #, kde-format
 msgid "Persian"
-msgstr ""
+msgstr "波斯語"
 
 #: languagetool/languagetoolcombobox.cpp:50
 #, kde-format
@@ -314,12 +314,12 @@ msgstr "重新整理"
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "An error was reported: %1"
-msgstr ""
+msgstr "有錯誤回報：%1"
 
 #: languagetool/languagetoolresultwidget.cpp:60
 #, kde-format
 msgid "Failed to check grammar."
-msgstr ""
+msgstr "檢查文法失敗。"
 
 #: languagetool/languagetoolresultwidget.cpp:76
 #, kde-format
@@ -332,6 +332,8 @@ msgid ""
 "An error occurred attempting to load the list of available languages:\n"
 "%1"
 msgstr ""
+"嘗試載入可用語言列表時發生錯誤：\n"
+"%1"
 
 #: languagetool/languagetoolupdatecombobox.cpp:75
 #, kde-format
