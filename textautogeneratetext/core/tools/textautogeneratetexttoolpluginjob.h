@@ -20,10 +20,14 @@ public:
     virtual void start();
     [[nodiscard]] bool canStart() const;
 
-    QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> toolArguments() const;
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> toolArguments() const;
     void setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments);
+
+    [[nodiscard]] QStringList requiredArguments() const;
+    void setRequiredArguments(const QStringList &newRequiredArguments);
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
+    QStringList mRequiredArguments;
 };
 }

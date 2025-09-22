@@ -15,6 +15,8 @@ TextAutoGenerateTextToolPluginJobTest::TextAutoGenerateTextToolPluginJobTest(QOb
 void TextAutoGenerateTextToolPluginJobTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateTextToolPluginJob w;
+    QVERIFY(w.toolArguments().isEmpty());
+    QVERIFY(w.requiredArguments().isEmpty());
     // TODO
 }
 

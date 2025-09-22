@@ -33,4 +33,14 @@ void TextAutoGenerateTextToolPluginJob::setToolArguments(const QList<TextAutoGen
     mToolArguments = newToolArguments;
 }
 
+QStringList TextAutoGenerateTextToolPluginJob::requiredArguments() const
+{
+    return mRequiredArguments;
+}
+
+void TextAutoGenerateTextToolPluginJob::setRequiredArguments(const QStringList &newRequiredArguments)
+{
+    mRequiredArguments = newRequiredArguments;
+}
+
 #include "moc_textautogeneratetexttoolpluginjob.cpp"
