@@ -33,7 +33,7 @@ QString ExampleTextToolPlugin::executeTool()
 QString ExampleTextToolPlugin::displayName() const
 {
     // Don't translate it
-    return u"Example tool"_s;
+    return u"Ask Weather Report"_s;
 }
 
 QString ExampleTextToolPlugin::description() const
