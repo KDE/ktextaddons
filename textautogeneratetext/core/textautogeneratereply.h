@@ -104,6 +104,8 @@ Q_SIGNALS:
 
     void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
+    void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments> &toolsArguments, const QString &toolName);
+
 protected:
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;
