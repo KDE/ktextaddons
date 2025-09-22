@@ -12,5 +12,7 @@ target_sources(
         exampletexttoolplugindialog.cpp
         exampletexttoolpluginwidget.h
         exampletexttoolpluginwidget.cpp
+        exampletexttoolpluginjob.h
+        exampletexttoolpluginjob.cpp
 )
 target_link_libraries(textautogeneratetext_exampletoolplugin KF6::TextAutoGenerateText)
