@@ -187,6 +187,8 @@ target_sources(
         core/tools/textautogeneratetexttoolpluginmanager.h
         core/tools/textautogeneratetexttoolpluginproperty.h
         core/tools/textautogeneratetexttoolpluginproperty.cpp
+        core/tools/textautogeneratetexttoolpluginjob.h
+        core/tools/textautogeneratetexttoolpluginjob.cpp
 )
 
 target_sources(
@@ -416,6 +418,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     TextAutoGenerateTextToolPlugin
     TextAutoGenerateTextToolPluginProperty
     TextAutoGenerateTextToolPluginManager
+    TextAutoGenerateTextToolPluginJob
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetexttoolscore_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE core/tools
