@@ -6,6 +6,7 @@
 
 #include "ollamareply.h"
 #include "autogeneratetext_ollama_debug.h"
+#include <QJsonArray>
 #include <QJsonObject>
 #include <QNetworkReply>
 
@@ -113,7 +114,8 @@ QString OllamaReply::readResponse() const
     case RequestTypes::StreamingChat:
         for (const auto &tok : mTokens) {
             if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
-                qDebug() << " tool_calls: " << tok["message"_L1]["tool_calls"_L1];
+                const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
+                qDebug() << " tool_calls: " << array;
             }
             ret += tok["message"_L1]["content"_L1].toString();
         }
