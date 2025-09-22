@@ -6,6 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QByteArray>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
@@ -26,8 +27,15 @@ public:
     [[nodiscard]] QStringList requiredArguments() const;
     void setRequiredArguments(const QStringList &newRequiredArguments);
 
+    [[nodiscard]] QByteArray messageUuid() const;
+    void setMessageUuid(const QByteArray &newMessageUuid);
+
+Q_SIGNALS:
+    void finished(const QString &str, const QByteArray &messageUuid);
+
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
     QStringList mRequiredArguments;
+    QByteArray mMessageUuid;
 };
 }

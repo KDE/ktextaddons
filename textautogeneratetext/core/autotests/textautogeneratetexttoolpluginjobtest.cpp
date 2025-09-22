@@ -14,10 +14,11 @@ TextAutoGenerateTextToolPluginJobTest::TextAutoGenerateTextToolPluginJobTest(QOb
 
 void TextAutoGenerateTextToolPluginJobTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextToolPluginJob w;
+    const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob w;
     QVERIFY(w.toolArguments().isEmpty());
     QVERIFY(w.requiredArguments().isEmpty());
-    // TODO
+    QVERIFY(!w.canStart());
+    QVERIFY(w.messageUuid().isEmpty());
 }
 
 #include "moc_textautogeneratetexttoolpluginjobtest.cpp"
