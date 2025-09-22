@@ -244,7 +244,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaReply::RequestTypes::StreamingChat,
         this};
-    connect(reply, &OllamaReply::finished, this, [this, reply] {
+    connect(reply, &OllamaReply::finished, this, [this, reply]() {
         Q_EMIT finished(reply->readResponse());
     });
     return reply;
