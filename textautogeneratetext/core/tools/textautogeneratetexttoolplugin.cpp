@@ -5,8 +5,8 @@
 */
 
 #include "textautogeneratetexttoolplugin.h"
-#include <qjsonarray.h>
-#include <qjsonobject.h>
+#include <QJsonArray>
+#include <QJsonObject>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;

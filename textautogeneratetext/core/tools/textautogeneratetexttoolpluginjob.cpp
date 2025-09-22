@@ -15,13 +15,22 @@ TextAutoGenerateTextToolPluginJob::~TextAutoGenerateTextToolPluginJob() = defaul
 
 void TextAutoGenerateTextToolPluginJob::start()
 {
-    // TODO
+    Q_ASSERT(false);
 }
 
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
-    // TODO
-    return false;
+    return mToolArguments.isEmpty();
+}
+
+QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const
+{
+    return mToolArguments;
+}
+
+void TextAutoGenerateTextToolPluginJob::setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments)
+{
+    mToolArguments = newToolArguments;
 }
 
 #include "moc_textautogeneratetexttoolpluginjob.cpp"

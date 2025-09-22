@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginJob : public QObject
@@ -16,7 +17,13 @@ public:
     explicit TextAutoGenerateTextToolPluginJob(QObject *parent = nullptr);
     ~TextAutoGenerateTextToolPluginJob() override;
 
-    void start();
+    virtual void start();
     [[nodiscard]] bool canStart() const;
+
+    QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> toolArguments() const;
+    void setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments);
+
+protected:
+    QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
 };
 }
