@@ -30,7 +30,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateReply : public QObject
     Q_OBJECT
 
 public:
-    struct ToolCallArguments {
+    struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgument {
         QString keyTool;
         QString value;
     };
@@ -80,8 +80,8 @@ public:
     void cancel();
 
     [[nodiscard]] virtual QString readResponse() const = 0;
-    [[nodiscard]] const QList<ToolCallArguments> &toolCallArguments() const;
-    void setToolCallArguments(const QList<ToolCallArguments> &newToolCallArguments);
+    [[nodiscard]] const QList<ToolCallArgument> &toolCallArguments() const;
+    void setToolCallArguments(const QList<ToolCallArgument> &newToolCallArguments);
 
 Q_SIGNALS:
     /**
@@ -104,14 +104,14 @@ Q_SIGNALS:
 
     void downloadInProgress(const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
-    void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments> &toolsArguments, const QString &toolName);
+    void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 
 protected:
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;
 
     QList<QJsonDocument> mTokens;
-    QList<ToolCallArguments> mToolCallArguments;
+    QList<ToolCallArgument> mToolCallArguments;
 
     const RequestTypes mRequestType = RequestTypes::Unknown;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;
@@ -119,7 +119,7 @@ protected:
     qint64 mReceivedSize = 0;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArguments &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument &t);
