@@ -5,6 +5,7 @@
         "Description[ca@valencia]": "Este connector d'eina és un exemple.",
         "Description[ca]": "Aquest connector d'eina és un exemple.",
         "Description[es]": "Este complemento de herramienta es un ejemplo.",
+        "Description[eu]": "Tresnaren plugin hau adibide bat da.",
         "Description[fr]": "Ceci est un exemple de module externe.",
         "Description[he]": "תוסף הכלי הזה משמש להדגמה.",
         "Description[ka]": "ეს ხელსაწყოს დამატება მაგალითია.",
@@ -14,12 +15,14 @@
         "Description[sv]": "Det här verktygsinsticksprogrammet är ett exempel",
         "Description[tr]": "Bu araç eklentisi bir örnektir.",
         "Description[uk]": "Цей додаток інструменту є прикладом.",
+        "Description[zh_TW]": "這個工具外掛程式是一個範例。",
         "EnabledByDefault": true,
         "Name": "Tool Example Plugin",
         "Name[ar]": "ملحقة مثال أداة",
         "Name[ca@valencia]": "Connector d'exemple d'eina",
         "Name[ca]": "Connector d'exemple d'eina",
         "Name[es]": "Complemento de ejemplo de herramienta",
+        "Name[eu]": "Tresnaren pluginaren adibidea",
         "Name[fr]": "Module externe d'exemple d'outil",
         "Name[he]": "תוסף של כלי לדוגמה",
         "Name[ka]": "ხელსაწყოს მაგალითის დამატება",
@@ -29,6 +32,7 @@
         "Name[sv]": "Exempelverktygsinsticksprogram",
         "Name[tr]": "Araç Örneği Eklentisi",
         "Name[uk]": "Додаток прикладу інструменту",
+        "Name[zh_TW]": "工具範例外掛",
         "Version": "1.0"
     }
 }
