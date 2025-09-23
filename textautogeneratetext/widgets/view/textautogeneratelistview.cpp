@@ -50,13 +50,29 @@ void TextAutoGenerateListView::slotUpdateView()
 
 void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)
 {
+    clearEditingMode();
     auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
     model->setData(index, true, TextAutoGenerateMessagesModel::EditingRole);
 
     const QByteArray anwserUuid = index.data(TextAutoGenerateMessagesModel::AnswerUuidRole).toByteArray();
+    mMessageIdBeingEdited = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QModelIndex anwseridx = model->indexForUuid(anwserUuid);
     const QList<QByteArray> tools = anwseridx.data(TextAutoGenerateMessagesModel::ToolsRole).value<QList<QByteArray>>();
     Q_EMIT editMessageRequested(index, tools);
+}
+
+void TextAutoGenerateListView::clearEditingMode()
+{
+    if (mMessageIdBeingEdited.isEmpty()) {
+        return;
+    }
+    // Remove old mark as editing
+    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+
+    const QModelIndex index = model->indexForUuid(mMessageIdBeingEdited);
+    if (index.isValid()) {
+        model->setData(index, false, TextAutoGenerateMessagesModel::EditingRole);
+    }
 }
 
 void TextAutoGenerateListView::slotCancelRequested(const QModelIndex &index)
@@ -174,6 +190,7 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
         if (idx.isValid()) {
             auto lastModel = const_cast<QAbstractItemModel *>(idx.model());
             lastModel->setData(idx, false, TextAutoGenerateMessagesModel::EditingRole);
+            mMessageIdBeingEdited.clear();
         }
     }
 }
@@ -224,6 +241,7 @@ void TextAutoGenerateListView::addSelectedMessageBackgroundAnimation(const QMode
 void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
 {
     const QAbstractItemModel *oldModel = model();
+    mMessageIdBeingEdited.clear();
     if (oldModel) {
         disconnect(oldModel, nullptr, this, nullptr);
         mDelegate->clearSelection();
