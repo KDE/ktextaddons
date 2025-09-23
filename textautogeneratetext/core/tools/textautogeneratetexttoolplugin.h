@@ -18,7 +18,7 @@ public:
     explicit TextAutoGenerateTextToolPlugin(QObject *parent = nullptr);
     ~TextAutoGenerateTextToolPlugin() override;
 
-    [[nodiscard]] virtual QString executeTool() = 0;
+    virtual void executeTool() = 0;
     [[nodiscard]] virtual QString displayName() const = 0;
     [[nodiscard]] virtual QString description() const = 0;
 

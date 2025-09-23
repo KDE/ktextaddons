@@ -25,9 +25,9 @@ ExampleTextToolPlugin::ExampleTextToolPlugin(QObject *parent, const QVariantList
 
 ExampleTextToolPlugin::~ExampleTextToolPlugin() = default;
 
-QString ExampleTextToolPlugin::executeTool()
+void ExampleTextToolPlugin::executeTool()
 {
-    return {};
+    // TODO
 }
 
 QString ExampleTextToolPlugin::displayName() const

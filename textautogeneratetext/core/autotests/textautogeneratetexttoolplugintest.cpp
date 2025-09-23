@@ -16,14 +16,13 @@ public:
     }
     ~CustomTextToolPlugin() override = default;
 
-    [[nodiscard]] QString executeTool() override;
+    void executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 };
 
-QString CustomTextToolPlugin::executeTool()
+void CustomTextToolPlugin::executeTool()
 {
-    return {};
 }
 
 QString CustomTextToolPlugin::displayName() const
@@ -45,14 +44,13 @@ public:
     }
     ~CustomTextToolPlugin2() override = default;
 
-    [[nodiscard]] QString executeTool() override;
+    void executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 };
 
-QString CustomTextToolPlugin2::executeTool()
+void CustomTextToolPlugin2::executeTool()
 {
-    return {};
 }
 
 QString CustomTextToolPlugin2::displayName() const
@@ -77,7 +75,6 @@ void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
     QVERIFY(w.description().isEmpty());
     QVERIFY(!w.metadata().isEmpty());
     QVERIFY(w.displayName().isEmpty());
-    QVERIFY(w.executeTool().isEmpty());
     QVERIFY(w.toolNameId().isEmpty());
     QVERIFY(w.enabled());
     QVERIFY(!w.isValid());

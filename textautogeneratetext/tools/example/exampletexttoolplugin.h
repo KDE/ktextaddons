@@ -15,7 +15,7 @@ public:
     explicit ExampleTextToolPlugin(QObject *parent = nullptr, const QVariantList & = {});
     ~ExampleTextToolPlugin() override;
 
-    [[nodiscard]] QString executeTool() override;
+    void executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 
