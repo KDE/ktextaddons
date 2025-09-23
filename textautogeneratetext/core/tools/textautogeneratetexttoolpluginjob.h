@@ -30,12 +30,16 @@ public:
     [[nodiscard]] QByteArray messageUuid() const;
     void setMessageUuid(const QByteArray &newMessageUuid);
 
+    [[nodiscard]] QByteArray toolIdentifier() const;
+    void setToolIdentifier(const QByteArray &newToolIdentifier);
+
 Q_SIGNALS:
-    void finished(const QString &str, const QByteArray &messageUuid);
+    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
     QStringList mRequiredArguments;
     QByteArray mMessageUuid;
+    QByteArray mToolIdentifier;
 };
 }

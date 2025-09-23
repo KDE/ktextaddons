@@ -20,7 +20,7 @@ void TextAutoGenerateTextToolPluginJob::start()
 
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
-    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty();
+    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty();
 }
 
 QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const
@@ -51,6 +51,16 @@ QByteArray TextAutoGenerateTextToolPluginJob::messageUuid() const
 void TextAutoGenerateTextToolPluginJob::setMessageUuid(const QByteArray &newMessageUuid)
 {
     mMessageUuid = newMessageUuid;
+}
+
+QByteArray TextAutoGenerateTextToolPluginJob::toolIdentifier() const
+{
+    return mToolIdentifier;
+}
+
+void TextAutoGenerateTextToolPluginJob::setToolIdentifier(const QByteArray &newToolIdentifier)
+{
+    mToolIdentifier = newToolIdentifier;
 }
 
 #include "moc_textautogeneratetexttoolpluginjob.cpp"

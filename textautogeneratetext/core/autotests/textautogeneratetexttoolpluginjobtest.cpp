@@ -19,6 +19,7 @@ void TextAutoGenerateTextToolPluginJobTest::shouldHaveDefaultValues()
     QVERIFY(w.requiredArguments().isEmpty());
     QVERIFY(!w.canStart());
     QVERIFY(w.messageUuid().isEmpty());
+    QVERIFY(w.toolIdentifier().isEmpty());
 }
 
 #include "moc_textautogeneratetexttoolpluginjobtest.cpp"
