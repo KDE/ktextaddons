@@ -6,6 +6,7 @@
 
 #include "exampletexttoolplugin.h"
 #include "exampletexttoolplugindialog.h"
+#include "exampletexttoolpluginjob.h"
 #include <KPluginFactory>
 #include <QPointer>
 K_PLUGIN_CLASS_WITH_JSON(ExampleTextToolPlugin, "textautogeneratetext_exampleplugin.json")

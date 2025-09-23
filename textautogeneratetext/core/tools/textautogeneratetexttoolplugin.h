@@ -38,7 +38,7 @@ public:
     void setProperties(const QList<TextAutoGenerateTextToolPluginProperty> &newProperties);
 
 Q_SIGNALS:
-    void finished(const QString &result);
+    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);
 
 protected:
     [[nodiscard]] QJsonObject generateMetadata() const;
