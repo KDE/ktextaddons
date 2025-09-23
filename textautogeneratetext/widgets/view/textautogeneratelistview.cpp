@@ -240,8 +240,8 @@ void TextAutoGenerateListView::addSelectedMessageBackgroundAnimation(const QMode
 
 void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
 {
+    clearEditingMode();
     const QAbstractItemModel *oldModel = model();
-    mMessageIdBeingEdited.clear();
     if (oldModel) {
         disconnect(oldModel, nullptr, this, nullptr);
         mDelegate->clearSelection();
