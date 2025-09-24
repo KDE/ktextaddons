@@ -9,6 +9,7 @@
 #include <QAbstractListModel>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateChatSettings;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatsModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -21,6 +22,7 @@ public:
         Section,
         InProgress,
         DateTime,
+        HasPendingMessageTyped,
     };
 
     enum class SectionHistory : uint8_t {
@@ -77,9 +79,13 @@ public:
 
     [[nodiscard]] QByteArray chatIdFromChatName(const QString &chatName) const;
 
+    TextAutoGenerateChatSettings *textAutoGenerateChatSettings() const;
+    void setTextAutoGenerateChatSettings(TextAutoGenerateChatSettings *newTextAutoGenerateChatSettings);
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
+    TextAutoGenerateChatSettings *mTextAutoGenerateChatSettings = nullptr;
 };
 }

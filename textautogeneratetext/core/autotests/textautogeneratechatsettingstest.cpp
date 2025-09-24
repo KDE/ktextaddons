@@ -19,6 +19,7 @@ void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
     QVERIFY(info.text.isEmpty());
     QCOMPARE(info.scrollbarPosition, -1);
     QVERIFY(!info.isValid());
+    QVERIFY(!info.hasPendingMessageTyped());
 
     const TextAutoGenerateText::TextAutoGenerateChatSettings settings;
     QVERIFY(settings.isEmpty());

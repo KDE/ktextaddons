@@ -4,12 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechatsmodel.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratemessagesmodel.h"
+#include "core/textautogeneratechatsettings.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateChatsModel::TextAutoGenerateChatsModel(QObject *parent)
     : QAbstractListModel{parent}
 {
@@ -66,6 +67,8 @@ QVariant TextAutoGenerateChatsModel::data(const QModelIndex &index, int role) co
         return QVariant::fromValue(chatElement.section());
     case DateTime:
         return dateTime(chatElement);
+    case HasPendingMessageTyped:
+        return mTextAutoGenerateChatSettings ? mTextAutoGenerateChatSettings->hasPendingMessageTyped(chatElement.identifier()) : false;
     default:
         break;
     }
@@ -81,6 +84,16 @@ QString TextAutoGenerateChatsModel::title(const TextAutoGenerateChat &chat) cons
 qint64 TextAutoGenerateChatsModel::dateTime(const TextAutoGenerateChat &chat) const
 {
     return chat.dateTime();
+}
+
+TextAutoGenerateChatSettings *TextAutoGenerateChatsModel::textAutoGenerateChatSettings() const
+{
+    return mTextAutoGenerateChatSettings;
+}
+
+void TextAutoGenerateChatsModel::setTextAutoGenerateChatSettings(TextAutoGenerateChatSettings *newTextAutoGenerateChatSettings)
+{
+    mTextAutoGenerateChatSettings = newTextAutoGenerateChatSettings;
 }
 
 bool TextAutoGenerateChatsModel::setData(const QModelIndex &idx, const QVariant &value, int role)

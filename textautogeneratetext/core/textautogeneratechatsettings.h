@@ -17,6 +17,7 @@ public:
         QString text;
         int scrollbarPosition = -1;
         [[nodiscard]] bool isValid() const;
+        [[nodiscard]] bool hasPendingMessageTyped() const;
     };
     TextAutoGenerateChatSettings();
     ~TextAutoGenerateChatSettings();
@@ -26,6 +27,8 @@ public:
     void add(const QByteArray &chatId, const PendingTypedInfo &info);
 
     [[nodiscard]] PendingTypedInfo value(const QByteArray &chatId);
+
+    [[nodiscard]] bool hasPendingMessageTyped(const QByteArray &chatId) const;
 
     [[nodiscard]] bool isEmpty() const;
     [[nodiscard]] int count() const;

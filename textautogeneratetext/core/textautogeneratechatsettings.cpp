@@ -21,9 +21,14 @@ void TextAutoGenerateChatSettings::add(const QByteArray &chatId, const PendingTy
     mPendingTypedTexts[chatId] = info;
 }
 
+bool TextAutoGenerateChatSettings::hasPendingMessageTyped(const QByteArray &chatId) const
+{
+    return mPendingTypedTexts.value(chatId).hasPendingMessageTyped();
+}
+
 TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::value(const QByteArray &chatId)
 {
-    return mPendingTypedTexts.value(chatId);
+    return mPendingTypedTexts.take(chatId);
 }
 
 bool TextAutoGenerateChatSettings::isEmpty() const
@@ -39,6 +44,11 @@ int TextAutoGenerateChatSettings::count() const
 bool TextAutoGenerateChatSettings::PendingTypedInfo::isValid() const
 {
     return !text.isEmpty() || (scrollbarPosition != -1);
+}
+
+bool TextAutoGenerateChatSettings::PendingTypedInfo::hasPendingMessageTyped() const
+{
+    return !text.isEmpty();
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateChatSettings::PendingTypedInfo &t)
