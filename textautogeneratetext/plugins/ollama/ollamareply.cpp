@@ -102,6 +102,17 @@ OllamaReply::~OllamaReply()
     mReply->deleteLater();
 }
 
+void OllamaReply::parseToolCalls(const QJsonArray &array)
+{
+    for (int i = 0; i < array.count(); ++i) {
+        const QJsonObject obj = array[i].toObject();
+        // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
+        const QJsonObject functionObj = obj["arguments"_L1].toObject();
+        const QString toolName = obj["name"_L1].toString();
+        // TODO
+    }
+}
+
 QString OllamaReply::readResponse() const
 {
     QString ret;
