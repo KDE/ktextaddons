@@ -27,6 +27,7 @@ TextEditFindBarBase::TextEditFindBarBase(QWidget *parent)
     , mReplaceWidget(new TextReplaceWidget(this))
 {
     auto topLayout = new QVBoxLayout(this);
+    topLayout->setContentsMargins({});
     auto lay = new QHBoxLayout;
     topLayout->addLayout(lay);
 
