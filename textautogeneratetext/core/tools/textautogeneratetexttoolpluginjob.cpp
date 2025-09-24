@@ -18,9 +18,32 @@ void TextAutoGenerateTextToolPluginJob::start()
     Q_ASSERT(false);
 }
 
+bool TextAutoGenerateTextToolPluginJob::verifyRequiredArguments() const
+{
+    if (mToolArguments.isEmpty() || mRequiredArguments.isEmpty()) {
+        return false;
+    }
+    if (mRequiredArguments.count() > mToolArguments.count()) {
+        return false;
+    }
+    for (const auto &arg : mRequiredArguments) {
+        bool found = false;
+        for (const auto &tools : mToolArguments) {
+            if (tools.keyTool == arg) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
-    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty();
+    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() && !mRequiredArguments.isEmpty();
 }
 
 QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const

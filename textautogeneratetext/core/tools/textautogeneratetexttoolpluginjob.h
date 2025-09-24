@@ -33,6 +33,8 @@ public:
     [[nodiscard]] QByteArray toolIdentifier() const;
     void setToolIdentifier(const QByteArray &newToolIdentifier);
 
+    [[nodiscard]] bool verifyRequiredArguments() const;
+
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);
 
