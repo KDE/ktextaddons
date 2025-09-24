@@ -8,12 +8,14 @@
 #include "core/models/textautogeneratechatsmodel.h"
 #include <QAbstractItemView>
 #include <QApplication>
+#include <QDateTime>
 #include <QHelpEvent>
 #include <QLineEdit>
 #include <QPainter>
 #include <QToolTip>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateHistoryListViewDelegate::TextAutoGenerateHistoryListViewDelegate(QObject *parent)
     : QItemDelegate{parent}
 {
@@ -115,8 +117,10 @@ bool TextAutoGenerateHistoryListViewDelegate::helpEvent(QHelpEvent *helpEvent,
         return false;
     }
     if (helpEvent->type() == QEvent::ToolTip) {
-        const QString subject = index.data(TextAutoGenerateChatsModel::Title).toString();
-        QToolTip::showText(helpEvent->globalPos(), subject, view);
+        const QLocale locale;
+        const QString toolTip = u"%1 (%2)"_s.arg(index.data(TextAutoGenerateChatsModel::Title).toString(),
+                                                 locale.toString(QDateTime::fromSecsSinceEpoch(index.data(TextAutoGenerateChatsModel::DateTime).toInt())));
+        QToolTip::showText(helpEvent->globalPos(), toolTip, view);
         return true;
     }
     return false;
