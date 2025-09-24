@@ -107,9 +107,13 @@ void OllamaReply::parseToolCalls(const QJsonArray &array)
     for (int i = 0; i < array.count(); ++i) {
         const QJsonObject obj = array[i].toObject();
         // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
-        const QJsonObject functionObj = obj["arguments"_L1].toObject();
         const QString toolName = obj["name"_L1].toString();
-        // TODO
+        const QJsonObject functionObj = obj["arguments"_L1].toObject();
+        const QStringList functionKeys = functionObj.keys();
+        for (const QString &k : functionKeys) {
+            const ToolCallArgument arg{.keyTool = k, .value = functionObj[k].toString()};
+            mToolCallArguments.append(arg);
+        }
     }
 }
 
@@ -127,6 +131,7 @@ QString OllamaReply::readResponse() const
             if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
                 qDebug() << " tool_calls: " << array;
+                // parseToolCalls(array);
                 // TODO Q_EMIT callTools();
             }
             ret += tok["message"_L1]["content"_L1].toString();
