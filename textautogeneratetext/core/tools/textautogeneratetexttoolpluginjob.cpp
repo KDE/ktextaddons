@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratetexttoolpluginjob.h"
+#include "textautogeneratetextcore_debug.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextToolPluginJob::TextAutoGenerateTextToolPluginJob(QObject *parent)
@@ -43,6 +44,10 @@ bool TextAutoGenerateTextToolPluginJob::verifyRequiredArguments() const
 
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
+    if (!verifyRequiredArguments()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "missing required arguments";
+        return false;
+    }
     return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() && !mRequiredArguments.isEmpty();
 }
 
