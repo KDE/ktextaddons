@@ -185,8 +185,9 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const Q
         const auto &section = mSections.at(sectionId);
 
         const auto it = std::lower_bound(section.cbegin(), section.cend(), sourceIndex);
-        if (it != section.cend() && *it == sourceIndex)
+        if (it != section.cend() && *it == sourceIndex) {
             return createIndex(int(it - section.cbegin()), 0, sectionId);
+        }
     }
 
     return {};
@@ -237,8 +238,9 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onDataChanged(const QModelIn
 
     if (!roles.empty()
         && (!roles.contains(TextAutoGenerateChatsModel::Section) && !roles.contains(TextAutoGenerateChatsModel::Favorite)
-            && !roles.contains(TextAutoGenerateChatsModel::DateTime)))
+            && !roles.contains(TextAutoGenerateChatsModel::DateTime))) {
         return;
+    }
     for (auto row = topLeft.row(), last = bottomRight.row(); row <= last; ++row) {
         const auto sourceIndex = topLeft.siblingAtRow(row);
         const auto ourOldIndex = mapFromSource(sourceIndex);
