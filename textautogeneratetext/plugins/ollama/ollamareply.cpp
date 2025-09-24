@@ -117,7 +117,7 @@ void OllamaReply::parseToolCalls(const QJsonArray &array)
     }
 }
 
-QString OllamaReply::readResponse() const
+QString OllamaReply::readResponse()
 {
     QString ret;
     switch (mRequestType) {
@@ -131,7 +131,7 @@ QString OllamaReply::readResponse() const
             if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
                 qDebug() << " tool_calls: " << array;
-                // parseToolCalls(array);
+                parseToolCalls(array);
                 // TODO Q_EMIT callTools();
             }
             ret += tok["message"_L1]["content"_L1].toString();

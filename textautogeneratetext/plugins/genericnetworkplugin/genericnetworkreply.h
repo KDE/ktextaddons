@@ -13,5 +13,5 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkReply : public TextAut
 public:
     explicit GenericNetworkReply(QNetworkReply *netReply, RequestTypes requestType, QObject *parent = nullptr);
     ~GenericNetworkReply() override;
-    [[nodiscard]] QString readResponse() const override;
+    [[nodiscard]] QString readResponse() override;
 };

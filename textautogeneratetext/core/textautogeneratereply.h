@@ -79,7 +79,7 @@ public:
 
     void cancel();
 
-    [[nodiscard]] virtual QString readResponse() const = 0;
+    [[nodiscard]] virtual QString readResponse() = 0;
     [[nodiscard]] const QList<ToolCallArgument> &toolCallArguments() const;
     void setToolCallArguments(const QList<ToolCallArgument> &newToolCallArguments);
 

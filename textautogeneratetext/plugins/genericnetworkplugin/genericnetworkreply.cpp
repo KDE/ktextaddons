@@ -68,7 +68,7 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
 
 GenericNetworkReply::~GenericNetworkReply() = default;
 
-QString GenericNetworkReply::readResponse() const
+QString GenericNetworkReply::readResponse()
 {
     QString ret;
     switch (mRequestType) {
