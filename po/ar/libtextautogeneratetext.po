@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:41+0000\n"
+"POT-Creation-Date: 2025-09-24 00:42+0000\n"
 "PO-Revision-Date: 2025-09-22 20:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1939,7 +1939,7 @@ msgstr ""
 "يُحدد بذرة الأرقام العشوائية المستخدمة في التوليد. يؤدي تعيين هذا إلى رقم "
 "محدد إلى جعل النموذج يُولّد النص نفسه لنفس المطالبة. (الافتراضي: 0)"
 
-#: tools/example/exampletexttoolplugin.cpp:20
+#: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
 msgstr "اسم المدينة"
 

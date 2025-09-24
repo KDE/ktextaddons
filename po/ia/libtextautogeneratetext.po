@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:41+0000\n"
+"POT-Creation-Date: 2025-09-24 00:42+0000\n"
 "PO-Revision-Date: 2025-09-02 17:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1666,7 +1666,7 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 
-#: tools/example/exampletexttoolplugin.cpp:20
+#: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:41+0000\n"
+"POT-Creation-Date: 2025-09-24 00:42+0000\n"
 "PO-Revision-Date: 2025-09-21 11:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1781,7 +1781,7 @@ msgstr ""
 "zenbaki zehatz batean ezarriz gero, galdera berdinerako ereduak erantzun "
 "bera sortzea eragingo du. (Lehenetsia: 0)"
 
-#: tools/example/exampletexttoolplugin.cpp:20
+#: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
 msgstr "Hiriaren izena"
 
