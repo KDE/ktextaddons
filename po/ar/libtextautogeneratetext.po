@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:42+0000\n"
+"POT-Creation-Date: 2025-09-25 00:41+0000\n"
 "PO-Revision-Date: 2025-09-22 20:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,37 +18,37 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:78
+#: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
 msgid "New Chat..."
 msgstr "دردشة جديدة…"
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:163
 #, kde-format
 msgid "Favorite"
 msgstr "المفضّلة"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:165
 #, kde-format
 msgid "Today"
 msgstr "اليوم"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:167
 #, kde-format
 msgid "7 days previous"
 msgstr "7 أيام السابقة"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:169
 #, kde-format
 msgid "30 days previous"
 msgstr "30 يوم سابق"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Later"
 msgstr "لاحقا"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Unknown"
 msgstr "مجهول"
@@ -73,57 +73,57 @@ msgstr ""
 "\n"
 "أدوات: %1"
 
-#: core/textautogeneratemanager.cpp:123
+#: core/textautogeneratemanager.cpp:124
 #, kde-format
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/textautogeneratemanager.cpp:125
+#: core/textautogeneratemanager.cpp:126
 #, kde-format
 msgid "Small"
 msgstr "صغير"
 
-#: core/textautogeneratemanager.cpp:127
+#: core/textautogeneratemanager.cpp:128
 #, kde-format
 msgid "Medium"
 msgstr "متوسط"
 
-#: core/textautogeneratemanager.cpp:129
+#: core/textautogeneratemanager.cpp:130
 #, kde-format
 msgid "Big"
 msgstr "كبير"
 
-#: core/textautogeneratemanager.cpp:131
+#: core/textautogeneratemanager.cpp:132
 #, kde-format
 msgid "Huge"
 msgstr "ضخمة"
 
-#: core/textautogeneratemanager.cpp:133
+#: core/textautogeneratemanager.cpp:134
 #, kde-format
 msgid "Multilingual"
 msgstr "متعدد اللغات"
 
-#: core/textautogeneratemanager.cpp:135
+#: core/textautogeneratemanager.cpp:136
 #, kde-format
 msgid "Code"
 msgstr "شفرة"
 
-#: core/textautogeneratemanager.cpp:137
+#: core/textautogeneratemanager.cpp:138
 #, kde-format
 msgid "Math"
 msgstr "رياضيات"
 
-#: core/textautogeneratemanager.cpp:139
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Vision"
 msgstr "رؤية"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Embedding"
 msgstr "تضمين"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Reasoning"
 msgstr "تفكير"

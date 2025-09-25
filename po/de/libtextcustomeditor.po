@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextcustomeditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:41+0000\n"
+"POT-Creation-Date: 2025-09-25 00:41+0000\n"
 "PO-Revision-Date: 2023-09-24 12:36+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -87,18 +87,18 @@ msgctxt "@action:button"
 msgid "Skip"
 msgstr ""
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
+#: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr ""
 
-#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
+#: widgets/texteditfindbarbase.cpp:40 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr ""
 
-#: widgets/texteditfindbarbase.cpp:141
+#: widgets/texteditfindbarbase.cpp:142
 #, kde-format
 msgid ""
 "End of message reached.\n"

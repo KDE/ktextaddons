@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-05 00:41+0000\n"
+"POT-Creation-Date: 2025-09-25 00:41+0000\n"
 "PO-Revision-Date: 2025-08-26 20:20+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -88,18 +88,18 @@ msgctxt "@action:button"
 msgid "Skip"
 msgstr "Hoppa över"
 
-#: widgets/texteditfindbarbase.cpp:36 widgets/textgotolinewidget.cpp:40
+#: widgets/texteditfindbarbase.cpp:37 widgets/textgotolinewidget.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Stäng"
 
-#: widgets/texteditfindbarbase.cpp:39 widgets/textgotolinewidget.cpp:43
+#: widgets/texteditfindbarbase.cpp:40 widgets/textgotolinewidget.cpp:43
 #, kde-format
 msgid "Close"
 msgstr "Stäng"
 
-#: widgets/texteditfindbarbase.cpp:141
+#: widgets/texteditfindbarbase.cpp:142
 #, kde-format
 msgid ""
 "End of message reached.\n"

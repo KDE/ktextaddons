@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:42+0000\n"
-"PO-Revision-Date: 2025-09-18 09:11+0200\n"
+"POT-Creation-Date: 2025-09-25 00:41+0000\n"
+"PO-Revision-Date: 2025-09-22 13:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -14,37 +14,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:78
+#: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
 msgid "New Chat..."
 msgstr "Nouvelle discussion..."
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:163
 #, kde-format
 msgid "Favorite"
 msgstr "Préféré"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:165
 #, kde-format
 msgid "Today"
 msgstr "Aujourd’hui"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:167
 #, kde-format
 msgid "7 days previous"
 msgstr "7 jours précédents"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:169
 #, kde-format
 msgid "30 days previous"
 msgstr "30 jours précédents"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Later"
 msgstr "Plus tard"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Unknown"
 msgstr "Inconnu "
@@ -69,57 +69,57 @@ msgstr ""
 "\n"
 "Outils : %1"
 
-#: core/textautogeneratemanager.cpp:123
+#: core/textautogeneratemanager.cpp:124
 #, kde-format
 msgid "Tools"
 msgstr "Outils"
 
-#: core/textautogeneratemanager.cpp:125
+#: core/textautogeneratemanager.cpp:126
 #, kde-format
 msgid "Small"
 msgstr "Petit"
 
-#: core/textautogeneratemanager.cpp:127
+#: core/textautogeneratemanager.cpp:128
 #, kde-format
 msgid "Medium"
 msgstr "Moyen"
 
-#: core/textautogeneratemanager.cpp:129
+#: core/textautogeneratemanager.cpp:130
 #, kde-format
 msgid "Big"
 msgstr "Grand"
 
-#: core/textautogeneratemanager.cpp:131
+#: core/textautogeneratemanager.cpp:132
 #, kde-format
 msgid "Huge"
 msgstr "Énorme"
 
-#: core/textautogeneratemanager.cpp:133
+#: core/textautogeneratemanager.cpp:134
 #, kde-format
 msgid "Multilingual"
 msgstr "Multilingue"
 
-#: core/textautogeneratemanager.cpp:135
+#: core/textautogeneratemanager.cpp:136
 #, kde-format
 msgid "Code"
 msgstr "Code"
 
-#: core/textautogeneratemanager.cpp:137
+#: core/textautogeneratemanager.cpp:138
 #, kde-format
 msgid "Math"
 msgstr "Mathématiques"
 
-#: core/textautogeneratemanager.cpp:139
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Vision"
 msgstr "Vision"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Embedding"
 msgstr "Intégration"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Reasoning"
 msgstr "Raisonnement"
@@ -232,7 +232,7 @@ msgstr "Grands modèles linguistiques pour Mistral IA"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Groq AI"
-msgstr ""
+msgstr "Groq AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
@@ -377,12 +377,10 @@ msgid "Features Supported"
 msgstr "Fonctionnalités prises en charge"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "Supprimer un modèle"
+msgstr "Supprimer le modèle sélectionné"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
 #, kde-format
@@ -2173,7 +2171,7 @@ msgstr "Arguments :"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr ""
+msgstr "Informations :"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format

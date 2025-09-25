@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:42+0000\n"
+"POT-Creation-Date: 2025-09-25 00:41+0000\n"
 "PO-Revision-Date: 2025-09-21 15:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: core/models/textautogeneratechatsmodel.cpp:78
+#: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
 msgid "New Chat..."
 msgstr "Nieuwe chat..."
 
-#: core/models/textautogeneratechatsmodel.cpp:150
+#: core/models/textautogeneratechatsmodel.cpp:163
 #, kde-format
 msgid "Favorite"
 msgstr "Favoriet"
 
-#: core/models/textautogeneratechatsmodel.cpp:152
+#: core/models/textautogeneratechatsmodel.cpp:165
 #, kde-format
 msgid "Today"
 msgstr "Vandaag"
 
-#: core/models/textautogeneratechatsmodel.cpp:154
+#: core/models/textautogeneratechatsmodel.cpp:167
 #, kde-format
 msgid "7 days previous"
 msgstr "7 dagen eerder"
 
-#: core/models/textautogeneratechatsmodel.cpp:156
+#: core/models/textautogeneratechatsmodel.cpp:169
 #, kde-format
 msgid "30 days previous"
 msgstr "30 dagen eerder"
 
-#: core/models/textautogeneratechatsmodel.cpp:158
+#: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Later"
 msgstr "Later"
 
-#: core/models/textautogeneratechatsmodel.cpp:160
+#: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Unknown"
 msgstr "Onbekend"
@@ -72,57 +72,57 @@ msgstr ""
 "\n"
 "Hulpmiddelen: %1"
 
-#: core/textautogeneratemanager.cpp:123
+#: core/textautogeneratemanager.cpp:124
 #, kde-format
 msgid "Tools"
 msgstr "Hulpmiddelen"
 
-#: core/textautogeneratemanager.cpp:125
+#: core/textautogeneratemanager.cpp:126
 #, kde-format
 msgid "Small"
 msgstr "Klein"
 
-#: core/textautogeneratemanager.cpp:127
+#: core/textautogeneratemanager.cpp:128
 #, kde-format
 msgid "Medium"
 msgstr "Middel"
 
-#: core/textautogeneratemanager.cpp:129
+#: core/textautogeneratemanager.cpp:130
 #, kde-format
 msgid "Big"
 msgstr "Groot"
 
-#: core/textautogeneratemanager.cpp:131
+#: core/textautogeneratemanager.cpp:132
 #, kde-format
 msgid "Huge"
 msgstr "Enorm"
 
-#: core/textautogeneratemanager.cpp:133
+#: core/textautogeneratemanager.cpp:134
 #, kde-format
 msgid "Multilingual"
 msgstr "Meerdere talen"
 
-#: core/textautogeneratemanager.cpp:135
+#: core/textautogeneratemanager.cpp:136
 #, kde-format
 msgid "Code"
 msgstr "Code"
 
-#: core/textautogeneratemanager.cpp:137
+#: core/textautogeneratemanager.cpp:138
 #, kde-format
 msgid "Math"
 msgstr "Wiskunde"
 
-#: core/textautogeneratemanager.cpp:139
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Vision"
 msgstr "Visie"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Embedding"
 msgstr "Inbedden"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Reasoning"
 msgstr "Redenering"
