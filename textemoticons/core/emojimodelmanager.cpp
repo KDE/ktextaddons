@@ -96,7 +96,7 @@ void EmojiModelManager::setRecentIdentifier(const QStringList &newRecentIdentifi
 
 void EmojiModelManager::addIdentifier(const QString &identifier)
 {
-    if (int i = d->recentIdentifier.indexOf(identifier)) {
+    if (const int i = d->recentIdentifier.indexOf(identifier)) {
         // Remove it for adding in top of list
         if (i != -1) {
             d->recentIdentifier.removeAt(i);
