@@ -74,7 +74,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     : QWidget(parent)
     , d(new EmoticonTextEditSelectorPrivate(this))
 {
-    const int defaultFontSize{22};
+    constexpr int defaultFontSize{22};
     QFont f;
     f.setPointSize(defaultFontSize);
     f.setFamily(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
