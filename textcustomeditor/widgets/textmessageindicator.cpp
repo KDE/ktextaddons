@@ -5,7 +5,6 @@
 */
 
 #include "textmessageindicator.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QAbstractScrollArea>
 #include <QApplication>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStyle>
 #include <QTimer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextCustomEditor;
 TextMessageIndicator::TextMessageIndicator(QWidget *parent)
     : QWidget(parent)
