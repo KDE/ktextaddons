@@ -40,6 +40,11 @@ public:
         QString toolName;
     };
 
+    struct TEXTAUTOGENERATETEXT_EXPORT Response {
+        QList<ToolCallArgumentInfo> info;
+        QString response;
+    };
+
     struct DownloadModelInfo {
         quint64 total = 0;
         quint64 completed = 0;
