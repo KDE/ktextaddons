@@ -35,6 +35,11 @@ public:
         QString value;
     };
 
+    struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgumentInfo {
+        ToolCallArgument toolCallArgument;
+        QString toolName;
+    };
+
     struct DownloadModelInfo {
         quint64 total = 0;
         quint64 completed = 0;
@@ -123,5 +128,7 @@ protected:
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &t);

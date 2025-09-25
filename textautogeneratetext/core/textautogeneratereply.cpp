@@ -76,4 +76,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::D
     d.space() << "status:" << t.status;
     return d;
 }
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &t)
+{
+    d.space() << "tool name:" << t.toolName;
+    d.space() << "toolCallArgument:" << t.toolCallArgument;
+    return d;
+}
+
 #include "moc_textautogeneratereply.cpp"
