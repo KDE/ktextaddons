@@ -34,7 +34,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &msg);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskToLlmDone();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskToLlmAnswer(const QString &msg);
     QString mText;
     TextAutoGenerateManager *mManager = nullptr;
 };

@@ -61,11 +61,6 @@ void TextAutoGenerateAskJob::slotInitializeDone()
     mManager->askToAssistant(mText);
 }
 
-void TextAutoGenerateAskJob::slotAskToLlmAnswer(const QString &msg)
-{
-    Q_EMIT generateTextInProgress(msg);
-}
-
 void TextAutoGenerateAskJob::slotAskToLlmDone()
 {
     Q_EMIT generateTextDone();
