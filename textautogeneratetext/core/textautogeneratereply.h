@@ -107,6 +107,8 @@ Q_SIGNALS:
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 
 protected:
+    void parseToolCalls(const QJsonArray &array);
+
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;
 
