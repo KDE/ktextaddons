@@ -47,9 +47,12 @@ TextAutoGenerateAskJobWidget::TextAutoGenerateAskJobWidget(QWidget *parent)
             connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextDone, this, []() {
                 qDebug() << " generate text done ::::::::::";
             });
-            connect(job, &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextInProgress, this, [plainTextEdit](const QString &str) {
-                plainTextEdit->setPlainText(str);
-            });
+            connect(job,
+                    &TextAutoGenerateText::TextAutoGenerateAskJob::generateTextInProgress,
+                    this,
+                    [plainTextEdit](const TextAutoGenerateText::TextAutoGenerateReply::Response &response) {
+                        plainTextEdit->setPlainText(response.response);
+                    });
             job->start();
         }
     });

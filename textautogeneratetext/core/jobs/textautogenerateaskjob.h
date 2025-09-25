@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -26,7 +27,7 @@ public:
     void setText(const QString &newText);
 
 Q_SIGNALS:
-    void generateTextInProgress(const QString &str);
+    void generateTextInProgress(const TextAutoGenerateText::TextAutoGenerateReply::Response &response);
     void generateTextDone();
     void errorOccured(const QString &str);
 

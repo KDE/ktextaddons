@@ -89,7 +89,7 @@ public:
 
     void cancel();
 
-    [[nodiscard]] virtual QString readResponse() = 0;
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const = 0;
     [[nodiscard]] const QList<ToolCallArgument> &toolCallArguments() const;
     void setToolCallArguments(const QList<ToolCallArgument> &newToolCallArguments);
 
@@ -134,6 +134,8 @@ protected:
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateReply::Response, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &t);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument &t);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::Response &t);

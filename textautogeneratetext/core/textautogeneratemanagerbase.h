@@ -32,7 +32,7 @@ public:
 Q_SIGNALS:
     void modelsLoadDone(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &models);
     void refreshInstalledModels();
-    void finished(const QString &replyText);
+    void finished(const TextAutoGenerateText::TextAutoGenerateReply::Response &replyText);
     void downloadDone(const QString &modelName);
 
 protected:

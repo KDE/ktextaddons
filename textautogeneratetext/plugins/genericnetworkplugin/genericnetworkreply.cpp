@@ -68,9 +68,9 @@ GenericNetworkReply::GenericNetworkReply(QNetworkReply *netReply, RequestTypes r
 
 GenericNetworkReply::~GenericNetworkReply() = default;
 
-QString GenericNetworkReply::readResponse()
+TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readResponse() const
 {
-    QString ret;
+    TextAutoGenerateText::TextAutoGenerateReply::Response ret;
     switch (mRequestType) {
     case RequestTypes::DownloadModel:
     case RequestTypes::DeleteModel:
@@ -84,7 +84,7 @@ QString GenericNetworkReply::readResponse()
         for (const auto &tok : mTokens) {
             const QJsonArray choicesArray = tok["choices"_L1].toArray();
             if (!choicesArray.isEmpty()) {
-                ret += choicesArray.at(0).toObject()["delta"_L1]["content"_L1].toString();
+                ret.response += choicesArray.at(0).toObject()["delta"_L1]["content"_L1].toString();
             }
             if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
                 qDebug() << " tool_calls: " << tok["message"_L1]["tool_calls"_L1];

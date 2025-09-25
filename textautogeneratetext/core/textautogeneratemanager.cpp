@@ -192,11 +192,13 @@ QStringList TextAutoGenerateManager::chatsList() const
     return mDatabaseManager->chatsList();
 }
 
-void TextAutoGenerateManager::replaceContent(const QByteArray &chatId, const QByteArray &uuid, const QString &content)
+void TextAutoGenerateManager::replaceContent(const QByteArray &chatId,
+                                             const QByteArray &uuid,
+                                             const TextAutoGenerateText::TextAutoGenerateReply::Response &content)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
-        messagesModel->replaceContent(uuid, content);
+        messagesModel->replaceContent(uuid, content.response); // TODO use tools
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
     }

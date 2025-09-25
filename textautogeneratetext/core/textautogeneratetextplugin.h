@@ -11,6 +11,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 #include <memory>
 namespace TextAutoGenerateText
@@ -18,7 +19,6 @@ namespace TextAutoGenerateText
 class TextAutoGenerateMessage;
 class TextAutoGenerateTextPluginPrivate;
 class TextAutoGenerateManager;
-class TextAutoGenerateReply;
 class TextAutoGenerateTextInstance;
 /**
  * @brief The TextAutoGenerateTextPlugin class
@@ -94,7 +94,7 @@ Q_SIGNALS:
     void errorOccurred(const QString &message);
     void finished(const TextAutoGenerateMessage &msg);
     void initializedDone();
-    void askToAssistantAnswer(const QString &message);
+    void askToAssistantAnswer(const TextAutoGenerateText::TextAutoGenerateReply::Response &message);
     void askToAssistantDone();
     void configChanged();
     void downloadModelFinished(const QString &modelName);

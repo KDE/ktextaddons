@@ -36,7 +36,7 @@ public:
      *
      * @return The content that has been returned so far.
      */
-    [[nodiscard]] QString readResponse() override;
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const override;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo

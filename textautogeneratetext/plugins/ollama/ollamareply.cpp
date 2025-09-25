@@ -102,9 +102,9 @@ OllamaReply::~OllamaReply()
     mReply->deleteLater();
 }
 
-QString OllamaReply::readResponse()
+TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse() const
 {
-    QString ret;
+    TextAutoGenerateText::TextAutoGenerateReply::Response ret;
     switch (mRequestType) {
     case RequestTypes::DownloadModel:
     case RequestTypes::DeleteModel:
@@ -117,16 +117,17 @@ QString OllamaReply::readResponse()
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
                 qDebug() << " tool_calls: " << array;
                 const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCalls(array);
-                // TODO Q_EMIT callTools();
+                qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
+                ret.info.append(infos);
             }
-            ret += tok["message"_L1]["content"_L1].toString();
+            ret.response += tok["message"_L1]["content"_L1].toString();
         }
         break;
     case RequestTypes::Show:
         break;
     case RequestTypes::StreamingGenerate:
         for (const auto &tok : mTokens) {
-            ret += tok["response"_L1].toString();
+            ret.response += tok["response"_L1].toString();
         }
     }
     return ret;
