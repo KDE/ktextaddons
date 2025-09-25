@@ -20,19 +20,24 @@ TextAutoGenerateReply::TextAutoGenerateReply(QNetworkReply *netReply, RequestTyp
 
 TextAutoGenerateReply::~TextAutoGenerateReply() = default;
 
-void TextAutoGenerateReply::parseToolCalls(const QJsonArray &array)
+QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCalls(const QJsonArray &array) const
 {
+    QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos;
     for (int i = 0; i < array.count(); ++i) {
         const QJsonObject obj = array[i].toObject();
         // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
         const QString toolName = obj["name"_L1].toString();
         const QJsonObject functionObj = obj["arguments"_L1].toObject();
         const QStringList functionKeys = functionObj.keys();
+        TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
+        toolInfo.toolName = toolName;
         for (const QString &k : functionKeys) {
             const ToolCallArgument arg{.keyTool = k, .value = functionObj[k].toString()};
-            mToolCallArguments.append(arg);
+            toolInfo.toolCallArgument.append(arg);
         }
+        infos.append(toolInfo);
     }
+    return infos;
 }
 
 const TextAutoGenerateReply::RequestTypes &TextAutoGenerateReply::requestType() const

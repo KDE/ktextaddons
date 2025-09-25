@@ -36,7 +36,7 @@ public:
     };
 
     struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgumentInfo {
-        ToolCallArgument toolCallArgument;
+        QList<ToolCallArgument> toolCallArgument;
         QString toolName;
     };
 
@@ -112,7 +112,7 @@ Q_SIGNALS:
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 
 protected:
-    void parseToolCalls(const QJsonArray &array);
+    [[nodiscard]] QList<ToolCallArgumentInfo> parseToolCalls(const QJsonArray &array) const;
 
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;
