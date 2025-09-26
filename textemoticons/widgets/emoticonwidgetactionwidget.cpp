@@ -11,7 +11,7 @@
 
 using namespace TextEmoticonsWidgets;
 using namespace Qt::Literals::StringLiterals;
-EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidgetAction::EmojiInfo> &emojis, QWidget *parent)
+EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidgetAction::EmoticonInfo> &emoticons, QWidget *parent)
     : QWidget(parent)
     , mMainLayout(new QHBoxLayout(this))
 {
@@ -21,21 +21,33 @@ EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidge
     QFont f;
     f.setPointSize(defaultFontSize);
     setFont(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
-    addDefaultEmojis(emojis);
+    addDefaultEmoticons(emoticons.isEmpty() ? defaultEmoticons() : emoticons);
 }
 
 EmoticonWidgetActionWidget::~EmoticonWidgetActionWidget() = default;
 
-void EmoticonWidgetActionWidget::addDefaultEmojis(const QList<EmoticonWidgetAction::EmojiInfo> &emojis)
+QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::defaultEmoticons() const
 {
-    for (const auto &emoji : emojis) {
+    const QList<EmoticonWidgetAction::EmoticonInfo> emoticons = {
+        {.emojiStr = u"👍"_s, .emojiIdentifier = u":thumbsup:"_s},
+        {.emojiStr = u"👎"_s, .emojiIdentifier = u":thumbsdown:"_s},
+        {.emojiStr = u"😄"_s, .emojiIdentifier = u":smiley:"_s},
+        {.emojiStr = u"🎉"_s, .emojiIdentifier = u":tada:"_s},
+        {.emojiStr = u"👀"_s, .emojiIdentifier = u":eyes:"_s},
+    };
+    return emoticons;
+}
+
+void EmoticonWidgetActionWidget::addDefaultEmoticons(const QList<EmoticonWidgetAction::EmoticonInfo> &emoticons)
+{
+    for (const auto &emoticon : emoticons) {
         auto toolButton = new QToolButton(this);
         toolButton->setAutoRaise(true);
-        toolButton->setText(emoji.emojiStr);
+        toolButton->setText(emoticon.emojiStr);
         mMainLayout->addWidget(toolButton);
-        connect(toolButton, &QToolButton::clicked, this, [this, emoji]() {
-            Q_EMIT insertEmoji(emoji.emojiStr);
-            Q_EMIT insertEmojiIdentifier(emoji.emojiIdentifier);
+        connect(toolButton, &QToolButton::clicked, this, [this, emoticon]() {
+            Q_EMIT insertEmoji(emoticon.emojiStr);
+            Q_EMIT insertEmojiIdentifier(emoticon.emojiIdentifier);
         });
     }
     auto selectMoreEmojiButton = new QToolButton(this);

@@ -20,12 +20,12 @@ class TEXTEMOTICONSWIDGETS_EXPORT EmoticonWidgetAction : public QWidgetAction
 {
     Q_OBJECT
 public:
-    struct TEXTEMOTICONSWIDGETS_EXPORT EmojiInfo {
+    struct TEXTEMOTICONSWIDGETS_EXPORT EmoticonInfo {
         QString emojiStr;
         QString emojiIdentifier;
     };
 
-    explicit EmoticonWidgetAction(const QList<EmoticonWidgetAction::EmojiInfo> &emojis, QObject *parent = nullptr);
+    explicit EmoticonWidgetAction(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis, QObject *parent = nullptr);
     ~EmoticonWidgetAction() override;
 
 Q_SIGNALS:
@@ -38,4 +38,4 @@ private:
 };
 }
 
-Q_DECLARE_TYPEINFO(TextEmoticonsWidgets::EmoticonWidgetAction::EmojiInfo, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextEmoticonsWidgets::EmoticonWidgetAction::EmoticonInfo, Q_RELOCATABLE_TYPE);
