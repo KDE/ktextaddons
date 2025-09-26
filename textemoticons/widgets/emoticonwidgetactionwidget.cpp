@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "emoticonwidgetactionwidget.h"
+#include "emoticonunicodeutils.h"
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QToolButton>
@@ -16,16 +17,10 @@ EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidge
 {
     mMainLayout->setObjectName(u"mainLayout"_s);
     mMainLayout->setContentsMargins({});
-    // TODO replace by ktextaddons/emoji font
     constexpr int defaultFontSize{14};
     QFont f;
     f.setPointSize(defaultFontSize);
-#ifdef Q_OS_WIN
-    f.setFamily(u"Segoe UI Emoji"_s);
-#else
-    f.setFamily(u"NotoColorEmoji"_s);
-#endif
-    setFont(f);
+    setFont(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
     addDefaultEmojis(emojis);
 }
 
