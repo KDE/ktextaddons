@@ -47,3 +47,5 @@ void EmoticonWidgetActionWidget::addDefaultEmojis(const QList<EmoticonWidgetActi
 
     mMainLayout->addStretch(1);
 }
+
+#include "moc_emoticonwidgetactionwidget.cpp"
