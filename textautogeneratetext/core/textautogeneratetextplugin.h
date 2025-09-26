@@ -98,6 +98,7 @@ Q_SIGNALS:
     void askToAssistantDone();
     void configChanged();
     void downloadModelFinished(const QString &modelName);
+    void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info);
 
 protected:
     virtual void sendToAssistant(const SendToAssistantInfo &info) = 0;

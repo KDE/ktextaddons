@@ -39,6 +39,11 @@ OllamaPlugin::OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manage
             mOllamaManager->loadModels();
         }
     });
+    connect(mOllamaManager, &OllamaManager::finished, this, [this](const TextAutoGenerateText::TextAutoGenerateReply::Response &replyResponse) {
+        if (replyResponse.hasToolCallArguments()) {
+            Q_EMIT callTools(replyResponse.info);
+        }
+    });
 }
 
 OllamaPlugin::~OllamaPlugin()
