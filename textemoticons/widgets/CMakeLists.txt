@@ -9,11 +9,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEMOTICONSWIDGETS
     SOVERSION 1
 )
 
-add_library(
-    KF6TextEmoticonsWidgets
-    emoticontonecombobox.h
-    emoticontonecombobox.cpp
-)
+add_library(KF6TextEmoticonsWidgets)
 add_library(KF6::TextEmoticonsWidgets ALIAS KF6TextEmoticonsWidgets)
 
 target_sources(
@@ -32,6 +28,12 @@ target_sources(
         emoticoncategorybutton.cpp
         emoticonitemdelegate.cpp
         emoticonitemdelegate.h
+        emoticontonecombobox.h
+        emoticontonecombobox.cpp
+        emoticonwidgetaction.h
+        emoticonwidgetaction.cpp
+        emoticonwidgetactionwidget.h
+        emoticonwidgetactionwidget.cpp
 )
 
 target_link_libraries(
@@ -90,6 +92,8 @@ ecm_generate_headers(TextEmoticonsWidgets_CamelCase_HEADERS
     HEADER_NAMES
     EmoticonTextEditSelector
     EmoticonTextEditAction
+    EmoticonWidgetActionWidget
+    EmoticonWidgetAction
     REQUIRED_HEADERS TextEmoticonsWidgets_HEADERS
     PREFIX TextEmoticonsWidgets
 )
