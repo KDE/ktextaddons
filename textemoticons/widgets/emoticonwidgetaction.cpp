@@ -12,6 +12,7 @@ EmoticonWidgetAction::EmoticonWidgetAction(const QList<EmoticonWidgetAction::Emo
     : QWidgetAction{parent}
     , mEmoticonWidgetActionWidget(new EmoticonWidgetActionWidget(emojis))
 {
+    mEmoticonWidgetActionWidget->setObjectName(u"mEmoticonWidgetActionWidget"_s);
     setDefaultWidget(mEmoticonWidgetActionWidget);
     connect(mEmoticonWidgetActionWidget, &EmoticonWidgetActionWidget::insertEmoji, this, &EmoticonWidgetAction::insertEmoji);
     connect(mEmoticonWidgetActionWidget, &EmoticonWidgetActionWidget::insertEmojiIdentifier, this, &EmoticonWidgetAction::insertEmojiIdentifier);
