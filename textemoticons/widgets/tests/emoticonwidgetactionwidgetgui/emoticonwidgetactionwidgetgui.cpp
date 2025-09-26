@@ -45,8 +45,12 @@ void EmoticonWidgetTextEdit::contextMenuEvent(QContextMenuEvent *event)
     connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::insertEmoji, this, [this](const QString &str) {
         insertPlainText(str);
     });
-    connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::insertEmojiIdentifier, this, [this](const QString &identifier) {
+    connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::insertEmojiIdentifier, this, [](const QString &identifier) {
         TextEmoticonsCore::EmojiModelManager::self()->addIdentifier(identifier);
+    });
+
+    connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::selectEmoji, this, [this]() {
+        // TODO
     });
     menu->addSeparator();
     menu->addAction(emoticonAction);
