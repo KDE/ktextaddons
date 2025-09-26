@@ -92,7 +92,6 @@ public:
     [[nodiscard]] virtual bool hasToolsSupport() const = 0;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
-    void finished(const TextAutoGenerateMessage &msg);
     void initializedDone();
     void askToAssistantAnswer(const TextAutoGenerateText::TextAutoGenerateReply::Response &message);
     void askToAssistantDone();
