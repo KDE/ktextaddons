@@ -3,3 +3,4 @@
 
 add_subdirectory(emoticontexteditselectorgui)
 add_subdirectory(emoticontexteditselectorcustomemojigui)
+add_subdirectory(emoticonwidgetactionwidgetgui)
