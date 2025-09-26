@@ -262,6 +262,7 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
 
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
+    qDebug() << " chatId : " << chatId << " uuid : " << uuid << " info: " << info;
     // TODO
 }
 

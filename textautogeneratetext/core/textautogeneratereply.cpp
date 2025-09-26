@@ -22,12 +22,14 @@ TextAutoGenerateReply::~TextAutoGenerateReply() = default;
 
 QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCalls(const QJsonArray &array) const
 {
+    qDebug() << " array " << array;
     QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos;
     for (int i = 0; i < array.count(); ++i) {
         const QJsonObject obj = array[i].toObject();
+        qDebug() << " obj " << obj;
         // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
         const QString toolName = obj["name"_L1].toString();
-        const QJsonObject functionObj = obj["arguments"_L1].toObject();
+        const QJsonObject functionObj = obj["function"_L1].toObject();
         const QStringList functionKeys = functionObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
@@ -36,6 +38,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);
+        qDebug() << " infos " << infos;
     }
     return infos;
 }
