@@ -5,10 +5,10 @@
 */
 
 #include "unicodeemoticon.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emoticonunicodeutils.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsCore;
 UnicodeEmoticon::UnicodeEmoticon() = default;
 
