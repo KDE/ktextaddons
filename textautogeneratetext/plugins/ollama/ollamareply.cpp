@@ -73,7 +73,7 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
                 mTokens.append(QJsonDocument::fromJson(tok));
             }
             // TODO parse "tool_calls"
-            qDebug() << " mTokens " << mTokens;
+            // qDebug() << " mTokens " << mTokens;
             break;
         }
         case RequestTypes::StreamingGenerate:
@@ -115,9 +115,9 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
         for (const auto &tok : mTokens) {
             if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
-                qDebug() << " tool_calls: " << array;
+                // qDebug() << " tool_calls: " << array;
                 const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCalls(array);
-                qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
+                // qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
                 ret.info.append(infos);
             }
             ret.response += tok["message"_L1]["content"_L1].toString();
