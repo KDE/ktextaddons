@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QToolButton>
+#include <TextEmoticonsCore/UnicodeEmoticonManager>
 
 using namespace TextEmoticonsWidgets;
 using namespace Qt::Literals::StringLiterals;
@@ -28,8 +29,9 @@ EmoticonWidgetActionWidget::~EmoticonWidgetActionWidget() = default;
 
 QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::defaultEmoticons() const
 {
+    TextEmoticonsCore::UnicodeEmoticon unicode = TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmoticonForEmoji(u":thumbsup:"_s);
     const QList<EmoticonWidgetAction::EmoticonInfo> emoticons = {
-        {.emojiStr = u"👍"_s, .emojiIdentifier = u":thumbsup:"_s},
+        {.emojiStr = unicode.unicode(), .emojiIdentifier = u":thumbsup:"_s},
         {.emojiStr = u"👎"_s, .emojiIdentifier = u":thumbsdown:"_s},
         {.emojiStr = u"😄"_s, .emojiIdentifier = u":smiley:"_s},
         {.emojiStr = u"🎉"_s, .emojiIdentifier = u":tada:"_s},
