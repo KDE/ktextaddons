@@ -58,7 +58,7 @@ QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecent
             u":tada:"_s,
             u":eyes:"_s,
         };
-        for (int i = emoticons.count() - 1; i < 5; ++i) {
+        for (int i = emoticons.count(); i < 5; ++i) {
             emoticons.append(generateEmoticonInfo(defaultEmoticonList.at(i)));
         }
     }
