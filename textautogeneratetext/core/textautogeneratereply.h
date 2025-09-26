@@ -90,8 +90,6 @@ public:
     void cancel();
 
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply::Response readResponse() const = 0;
-    [[nodiscard]] const QList<ToolCallArgument> &toolCallArguments() const;
-    void setToolCallArguments(const QList<ToolCallArgument> &newToolCallArguments);
 
 Q_SIGNALS:
     /**
@@ -123,7 +121,6 @@ protected:
     QByteArray mIncompleteTokens;
 
     QList<QJsonDocument> mTokens;
-    QList<ToolCallArgument> mToolCallArguments;
 
     const RequestTypes mRequestType = RequestTypes::Unknown;
     TextAutoGenerateText::TextAutoGenerateTextReplyInfo mInfo;

@@ -57,16 +57,6 @@ void TextAutoGenerateReply::cancel()
     }
 }
 
-const QList<TextAutoGenerateReply::ToolCallArgument> &TextAutoGenerateReply::toolCallArguments() const
-{
-    return mToolCallArguments;
-}
-
-void TextAutoGenerateReply::setToolCallArguments(const QList<ToolCallArgument> &newToolCallArguments)
-{
-    mToolCallArguments = newToolCallArguments;
-}
-
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument &t)
 {
     d.space() << "keyTool:" << t.keyTool;
