@@ -5,8 +5,19 @@
 */
 #pragma once
 
+#include <QTextEdit>
 #include <QWidget>
-class QTextEdit;
+class EmoticonWidgetTextEdit : public QTextEdit
+{
+    Q_OBJECT
+public:
+    explicit EmoticonWidgetTextEdit(QWidget *parent = nullptr);
+    ~EmoticonWidgetTextEdit() override;
+
+protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
+};
+
 class EmoticonWidgetActionWidgetGui : public QWidget
 {
     Q_OBJECT
@@ -15,5 +26,5 @@ public:
     ~EmoticonWidgetActionWidgetGui() override;
 
 private:
-    QTextEdit *const mTextEdit;
+    EmoticonWidgetTextEdit *const mTextEdit;
 };
