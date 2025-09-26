@@ -260,6 +260,11 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
     mSaveInDatabase = newSaveInDatabase;
 }
 
+void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+{
+    // TODO
+}
+
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
 {
     auto messagesModel = messagesModelFromChatId(chatId);

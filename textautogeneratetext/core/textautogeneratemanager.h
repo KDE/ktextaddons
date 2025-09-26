@@ -110,6 +110,7 @@ public:
     void saveCurrentChatInDataBase(const QByteArray &chatId);
     void switchToChatId(const QByteArray &chatId);
     [[nodiscard]] QStringList chatsList() const;
+    void callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
