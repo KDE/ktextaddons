@@ -40,7 +40,7 @@ EmoticonWidgetTextEdit::~EmoticonWidgetTextEdit() = default;
 void EmoticonWidgetTextEdit::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu *menu = createStandardContextMenu();
-    auto emoticonAction = new TextEmoticonsWidgets::EmoticonWidgetAction({}, this);
+    auto emoticonAction = new TextEmoticonsWidgets::EmoticonWidgetAction(this);
     connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::insertEmoji, this, [this](const QString &str) {
         insertPlainText(str);
     });

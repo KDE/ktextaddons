@@ -8,9 +8,9 @@
 
 using namespace TextEmoticonsWidgets;
 using namespace Qt::Literals::StringLiterals;
-EmoticonWidgetAction::EmoticonWidgetAction(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis, QObject *parent)
+EmoticonWidgetAction::EmoticonWidgetAction(QObject *parent)
     : QWidgetAction{parent}
-    , mEmoticonWidgetActionWidget(new EmoticonWidgetActionWidget(emojis))
+    , mEmoticonWidgetActionWidget(new EmoticonWidgetActionWidget())
 {
     mEmoticonWidgetActionWidget->setObjectName(u"mEmoticonWidgetActionWidget"_s);
     setDefaultWidget(mEmoticonWidgetActionWidget);

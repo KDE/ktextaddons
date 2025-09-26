@@ -20,7 +20,7 @@ class TEXTEMOTICONSWIDGETS_EXPORT EmoticonWidgetActionWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EmoticonWidgetActionWidget(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis, QWidget *parent = nullptr);
+    explicit EmoticonWidgetActionWidget(QWidget *parent = nullptr);
     ~EmoticonWidgetActionWidget() override;
 
 Q_SIGNALS:
@@ -30,7 +30,6 @@ Q_SIGNALS:
 
 private:
     [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT QList<EmoticonWidgetAction::EmoticonInfo> loadRecentsEmoticons() const;
-    [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT QList<EmoticonWidgetAction::EmoticonInfo> defaultEmoticons() const;
     [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT EmoticonWidgetAction::EmoticonInfo generateEmoticonInfo(const QString &identifier) const;
     TEXTEMOTICONSWIDGETS_NO_EXPORT void addDefaultEmoticons(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis);
     QHBoxLayout *const mMainLayout;

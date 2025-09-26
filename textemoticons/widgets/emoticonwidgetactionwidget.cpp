@@ -13,7 +13,7 @@
 
 using namespace TextEmoticonsWidgets;
 using namespace Qt::Literals::StringLiterals;
-EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidgetAction::EmoticonInfo> &emoticons, QWidget *parent)
+EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(QWidget *parent)
     : QWidget(parent)
     , mMainLayout(new QHBoxLayout(this))
 {
@@ -23,7 +23,7 @@ EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidge
     QFont f;
     f.setPointSize(defaultFontSize);
     setFont(TextEmoticonsCore::EmoticonUnicodeUtils::emojiFontName());
-    addDefaultEmoticons(emoticons.isEmpty() ? defaultEmoticons() : emoticons);
+    addDefaultEmoticons(loadRecentsEmoticons());
 }
 
 EmoticonWidgetActionWidget::~EmoticonWidgetActionWidget() = default;
@@ -33,18 +33,6 @@ EmoticonWidgetAction::EmoticonInfo EmoticonWidgetActionWidget::generateEmoticonI
     const TextEmoticonsCore::UnicodeEmoticon unicode = TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmoticonForEmoji(identifier);
     const EmoticonWidgetAction::EmoticonInfo info = {.emojiStr = unicode.unicode(), .emojiIdentifier = unicode.identifier()};
     return info;
-}
-
-QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::defaultEmoticons() const
-{
-    const QList<EmoticonWidgetAction::EmoticonInfo> emoticons = {
-        generateEmoticonInfo(u":thumbsup:"_s),
-        generateEmoticonInfo(u":thumbsdown:"_s),
-        generateEmoticonInfo(u":smiley:"_s),
-        generateEmoticonInfo(u":tada:"_s),
-        generateEmoticonInfo(u":eyes:"_s),
-    };
-    return emoticons;
 }
 
 QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecentsEmoticons() const
@@ -63,7 +51,7 @@ QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecent
     }
     // Make sure that we load 5 emoticons
     if (emoticons.count() < 5) {
-        const QStringList defaultEmoticons{
+        const QStringList defaultEmoticonList{
             u":thumbsup:"_s,
             u":thumbsdown:"_s,
             u":smiley:"_s,
@@ -71,7 +59,7 @@ QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecent
             u":eyes:"_s,
         };
         for (int i = emoticons.count() - 1; i < 5; ++i) {
-            emoticons.append(generateEmoticonInfo(defaultEmoticons.at(i)));
+            emoticons.append(generateEmoticonInfo(defaultEmoticonList.at(i)));
         }
     }
     return emoticons;

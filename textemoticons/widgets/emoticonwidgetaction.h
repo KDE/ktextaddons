@@ -26,7 +26,7 @@ public:
         [[nodiscard]] bool isValid() const;
     };
 
-    explicit EmoticonWidgetAction(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis, QObject *parent = nullptr);
+    explicit EmoticonWidgetAction(QObject *parent = nullptr);
     ~EmoticonWidgetAction() override;
 
 Q_SIGNALS:
