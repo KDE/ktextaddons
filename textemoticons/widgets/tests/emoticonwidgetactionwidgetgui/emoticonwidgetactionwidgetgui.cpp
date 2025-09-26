@@ -5,11 +5,18 @@
 */
 
 #include "emoticonwidgetactionwidgetgui.h"
-#include <qapplication.h>
-
+#include <QApplication>
+#include <QTextEdit>
+#include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 EmoticonWidgetActionWidgetGui::EmoticonWidgetActionWidgetGui(QWidget *parent)
     : QWidget{parent}
+    , mTextEdit(new QTextEdit(this))
 {
+    auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(u"mainLayout"_s);
+
+    mainLayout->addWidget(mTextEdit);
 }
 
 EmoticonWidgetActionWidgetGui::~EmoticonWidgetActionWidgetGui() = default;
