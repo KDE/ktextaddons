@@ -11,6 +11,7 @@
 #include <QStandardPaths>
 #include <QTextEdit>
 #include <QVBoxLayout>
+#include <TextEmoticonsCore/EmojiModelManager>
 #include <TextEmoticonsWidgets/EmoticonWidgetAction>
 
 using namespace Qt::Literals::StringLiterals;
@@ -43,6 +44,9 @@ void EmoticonWidgetTextEdit::contextMenuEvent(QContextMenuEvent *event)
     auto emoticonAction = new TextEmoticonsWidgets::EmoticonWidgetAction(this);
     connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::insertEmoji, this, [this](const QString &str) {
         insertPlainText(str);
+    });
+    connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::insertEmojiIdentifier, this, [this](const QString &identifier) {
+        TextEmoticonsCore::EmojiModelManager::self()->addIdentifier(identifier);
     });
     menu->addSeparator();
     menu->addAction(emoticonAction);

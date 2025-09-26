@@ -49,6 +49,7 @@ QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecent
             break;
         }
     }
+    // qDebug() << "emoticons***** " << emoticons.count();
     // Make sure that we load 5 emoticons
     if (emoticons.count() < 5) {
         const QStringList defaultEmoticonList{
