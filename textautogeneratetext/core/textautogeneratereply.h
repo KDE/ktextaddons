@@ -43,6 +43,7 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT Response {
         QList<ToolCallArgumentInfo> info;
         QString response;
+        [[nodiscard]] bool hasToolCallArguments() const;
     };
 
     struct DownloadModelInfo {

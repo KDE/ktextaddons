@@ -86,4 +86,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::R
     return d;
 }
 
+bool TextAutoGenerateReply::Response::hasToolCallArguments() const
+{
+    return !info.isEmpty();
+}
+
 #include "moc_textautogeneratereply.cpp"
