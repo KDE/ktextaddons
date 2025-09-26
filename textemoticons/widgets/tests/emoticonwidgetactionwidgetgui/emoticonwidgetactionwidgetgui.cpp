@@ -6,6 +6,7 @@
 
 #include "emoticonwidgetactionwidgetgui.h"
 #include "emoticontexteditselector.h"
+#include "unicodeemoticon.h"
 #include <QApplication>
 #include <QContextMenuEvent>
 #include <QMenu>
@@ -13,6 +14,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include <TextEmoticonsCore/EmojiModelManager>
+#include <TextEmoticonsCore/UnicodeEmoticonManager>
 #include <TextEmoticonsWidgets/EmoticonWidgetAction>
 
 using namespace Qt::Literals::StringLiterals;
@@ -58,7 +60,9 @@ void EmoticonWidgetTextEdit::contextMenuEvent(QContextMenuEvent *event)
         mEmoticonMenuWidget->setAttribute(Qt::WA_DeleteOnClose);
         mEmoticonMenuWidget->show();
         connect(mEmoticonMenuWidget, &TextEmoticonsWidgets::EmoticonTextEditSelector::insertEmojiIdentifier, this, [this](const QString &id) {
-            // TODO
+            const TextEmoticonsCore::UnicodeEmoticon unicode = TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmoticonForEmoji(id);
+            insertPlainText(unicode.unicode());
+            TextEmoticonsCore::EmojiModelManager::self()->addIdentifier(id);
         });
     });
     menu->addSeparator();
