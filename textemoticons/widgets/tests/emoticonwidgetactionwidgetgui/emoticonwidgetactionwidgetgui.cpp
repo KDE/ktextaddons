@@ -5,6 +5,7 @@
 */
 
 #include "emoticonwidgetactionwidgetgui.h"
+#include "emoticontexteditselector.h"
 #include <QApplication>
 #include <QContextMenuEvent>
 #include <QMenu>
@@ -50,7 +51,15 @@ void EmoticonWidgetTextEdit::contextMenuEvent(QContextMenuEvent *event)
     });
 
     connect(emoticonAction, &TextEmoticonsWidgets::EmoticonWidgetAction::selectEmoji, this, [this]() {
-        // TODO
+        auto mEmoticonMenuWidget = new TextEmoticonsWidgets::EmoticonTextEditSelector(this);
+        mEmoticonMenuWidget->setWindowFlag(Qt::Popup);
+        mEmoticonMenuWidget->forceLineEditFocus();
+        mEmoticonMenuWidget->loadEmoticons();
+        mEmoticonMenuWidget->setAttribute(Qt::WA_DeleteOnClose);
+        mEmoticonMenuWidget->show();
+        connect(mEmoticonMenuWidget, &TextEmoticonsWidgets::EmoticonTextEditSelector::insertEmojiIdentifier, this, [this](const QString &id) {
+            // TODO
+        });
     });
     menu->addSeparator();
     menu->addAction(emoticonAction);
