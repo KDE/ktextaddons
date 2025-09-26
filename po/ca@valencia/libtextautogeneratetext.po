@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-25 00:41+0000\n"
-"PO-Revision-Date: 2025-09-13 09:41+0200\n"
+"PO-Revision-Date: 2025-09-21 10:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -67,12 +67,13 @@ msgstr ""
 "Nom d'instància: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:80
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgid ""
 "\n"
 "Tools: %1"
-msgstr "Eines"
+msgstr ""
+"\n"
+"Eines: %1"
 
 #: core/textautogeneratemanager.cpp:124
 #, kde-format
@@ -237,7 +238,7 @@ msgstr "Models de llenguatge extensos d'IA Mistral"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Groq AI"
-msgstr ""
+msgstr "Groq AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
@@ -383,12 +384,10 @@ msgid "Features Supported"
 msgstr "Característiques admeses"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "Elimina el model"
+msgstr "Elimina el model seleccionat"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
 #, kde-format
@@ -1952,11 +1951,14 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
+"DeepSeek-V3.1 és un model híbrid que admet tant el mode de pensament com el "
+"mode de no pensament."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
 msgstr ""
+"EmbeddingGemma és un model d'incrustació de 300 M paràmetres de Google."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:78
 #, kde-format
@@ -2033,7 +2035,7 @@ msgstr ""
 
 #: tools/example/exampletexttoolplugin.cpp:21
 msgid "The name of the city"
-msgstr ""
+msgstr "El nom de la ciutat"
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2105,7 +2107,7 @@ msgstr "Envia"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr ""
+msgstr "Permet seleccionar eines"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
@@ -2154,18 +2156,18 @@ msgstr "Arguments:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr ""
+msgstr "Informació:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr ""
+msgstr "Mostra la informació de les metadades"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
-msgstr ""
+msgstr "Informació de les metadades"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2386,11 +2388,10 @@ msgid "No plugin found."
 msgstr "No s'ha trobat cap connector."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Eines"
+msgstr "Eines:"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
