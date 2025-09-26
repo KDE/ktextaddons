@@ -24,4 +24,9 @@ EmoticonWidgetAction::~EmoticonWidgetAction()
     delete mEmoticonWidgetActionWidget;
 }
 
+bool EmoticonWidgetAction::EmoticonInfo::isValid() const
+{
+    return !emojiIdentifier.isEmpty() && !emojiStr.isEmpty();
+}
+
 #include "moc_emoticonwidgetaction.cpp"

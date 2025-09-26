@@ -23,6 +23,7 @@ public:
     struct TEXTEMOTICONSWIDGETS_EXPORT EmoticonInfo {
         QString emojiStr;
         QString emojiIdentifier;
+        [[nodiscard]] bool isValid() const;
     };
 
     explicit EmoticonWidgetAction(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis, QObject *parent = nullptr);

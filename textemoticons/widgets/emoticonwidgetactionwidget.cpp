@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QToolButton>
+#include <TextEmoticonsCore/EmojiModelManager>
 #include <TextEmoticonsCore/UnicodeEmoticonManager>
 
 using namespace TextEmoticonsWidgets;
@@ -27,16 +28,52 @@ EmoticonWidgetActionWidget::EmoticonWidgetActionWidget(const QList<EmoticonWidge
 
 EmoticonWidgetActionWidget::~EmoticonWidgetActionWidget() = default;
 
+EmoticonWidgetAction::EmoticonInfo EmoticonWidgetActionWidget::generateEmoticonInfo(const QString &identifier) const
+{
+    const TextEmoticonsCore::UnicodeEmoticon unicode = TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmoticonForEmoji(identifier);
+    const EmoticonWidgetAction::EmoticonInfo info = {.emojiStr = unicode.unicode(), .emojiIdentifier = unicode.identifier()};
+    return info;
+}
+
 QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::defaultEmoticons() const
 {
-    TextEmoticonsCore::UnicodeEmoticon unicode = TextEmoticonsCore::UnicodeEmoticonManager::self()->unicodeEmoticonForEmoji(u":thumbsup:"_s);
     const QList<EmoticonWidgetAction::EmoticonInfo> emoticons = {
-        {.emojiStr = unicode.unicode(), .emojiIdentifier = u":thumbsup:"_s},
-        {.emojiStr = u"👎"_s, .emojiIdentifier = u":thumbsdown:"_s},
-        {.emojiStr = u"😄"_s, .emojiIdentifier = u":smiley:"_s},
-        {.emojiStr = u"🎉"_s, .emojiIdentifier = u":tada:"_s},
-        {.emojiStr = u"👀"_s, .emojiIdentifier = u":eyes:"_s},
+        generateEmoticonInfo(u":thumbsup:"_s),
+        generateEmoticonInfo(u":thumbsdown:"_s),
+        generateEmoticonInfo(u":smiley:"_s),
+        generateEmoticonInfo(u":tada:"_s),
+        generateEmoticonInfo(u":eyes:"_s),
     };
+    return emoticons;
+}
+
+QList<EmoticonWidgetAction::EmoticonInfo> EmoticonWidgetActionWidget::loadRecentsEmoticons() const
+{
+    QList<EmoticonWidgetAction::EmoticonInfo> emoticons;
+    const QStringList lst = TextEmoticonsCore::EmojiModelManager::self()->recentIdentifier();
+    for (const QString &id : lst) {
+        const EmoticonWidgetAction::EmoticonInfo info = generateEmoticonInfo(id);
+        if (info.isValid()) {
+            emoticons.append(info);
+        }
+        // Don't load all emoji history. Use the 5 first elements
+        if (emoticons.count() == 5) {
+            break;
+        }
+    }
+    // Make sure that we load 5 emoticons
+    if (emoticons.count() < 5) {
+        const QStringList defaultEmoticons{
+            u":thumbsup:"_s,
+            u":thumbsdown:"_s,
+            u":smiley:"_s,
+            u":tada:"_s,
+            u":eyes:"_s,
+        };
+        for (int i = emoticons.count() - 1; i < 5; ++i) {
+            emoticons.append(generateEmoticonInfo(defaultEmoticons.at(i)));
+        }
+    }
     return emoticons;
 }
 

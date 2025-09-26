@@ -29,7 +29,9 @@ Q_SIGNALS:
     void selectEmoji();
 
 private:
-    TEXTEMOTICONSWIDGETS_NO_EXPORT [[nodiscard]] QList<EmoticonWidgetAction::EmoticonInfo> defaultEmoticons() const;
+    [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT QList<EmoticonWidgetAction::EmoticonInfo> loadRecentsEmoticons() const;
+    [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT QList<EmoticonWidgetAction::EmoticonInfo> defaultEmoticons() const;
+    [[nodiscard]] TEXTEMOTICONSWIDGETS_NO_EXPORT EmoticonWidgetAction::EmoticonInfo generateEmoticonInfo(const QString &identifier) const;
     TEXTEMOTICONSWIDGETS_NO_EXPORT void addDefaultEmoticons(const QList<EmoticonWidgetAction::EmoticonInfo> &emojis);
     QHBoxLayout *const mMainLayout;
 };
