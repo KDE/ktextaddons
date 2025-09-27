@@ -14,4 +14,6 @@ public:
     ~TextAutoGenerateReplyTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldParseToolCalls();
+    void shouldParseToolCalls_data();
 };

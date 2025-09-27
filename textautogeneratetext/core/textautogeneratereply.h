@@ -33,11 +33,13 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgument {
         QString keyTool;
         QString value;
+        [[nodiscard]] bool operator==(const ToolCallArgument &other) const;
     };
 
     struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgumentInfo {
         QList<ToolCallArgument> toolCallArgument;
         QString toolName;
+        [[nodiscard]] bool operator==(const ToolCallArgumentInfo &other) const;
     };
 
     struct TEXTAUTOGENERATETEXT_EXPORT Response {
