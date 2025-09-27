@@ -45,9 +45,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls()
     QFETCH(QByteArray, toolCallsArray);
     QFETCH(QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo>, result);
 
-    qDebug() << " toolCallsArray " << toolCallsArray;
     const QJsonDocument doc = QJsonDocument::fromJson(toolCallsArray);
-    qDebug() << " doc " << doc;
     const QJsonArray array = doc.array();
 
     const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
