@@ -29,8 +29,10 @@ TextAutoGenerateReplyTest::TextAutoGenerateReplyTest(QObject *parent)
 
 void TextAutoGenerateReplyTest::shouldHaveDefaultValues()
 {
-    CustomTextAutoGenerateReply w(nullptr, {});
-    // TODO
+    const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
+    QCOMPARE(w.requestType(), TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
 }
 
 #include "textautogeneratereplytest.moc"
+
+#include "moc_textautogeneratereplytest.cpp"
