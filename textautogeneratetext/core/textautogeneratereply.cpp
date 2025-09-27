@@ -28,13 +28,17 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         const QJsonObject obj = array[i].toObject();
         qDebug() << " obj " << obj;
         // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
-        const QString toolName = obj["name"_L1].toString();
         const QJsonObject functionObj = obj["function"_L1].toObject();
-        const QStringList functionKeys = functionObj.keys();
+        const QString toolName = functionObj["name"_L1].toString();
+        const QJsonObject argumentObj = functionObj["arguments"_L1].toObject();
+        const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
         for (const QString &k : functionKeys) {
-            const ToolCallArgument arg{.keyTool = k, .value = functionObj[k].toString()};
+            if (k == u"arguments"_s) {
+                continue;
+            }
+            const ToolCallArgument arg{.keyTool = k, .value = argumentObj[k].toString()};
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);

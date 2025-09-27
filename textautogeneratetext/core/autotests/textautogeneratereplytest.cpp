@@ -45,7 +45,9 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls()
     QFETCH(QByteArray, toolCallsArray);
     QFETCH(QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo>, result);
 
+    qDebug() << " toolCallsArray " << toolCallsArray;
     const QJsonDocument doc = QJsonDocument::fromJson(toolCallsArray);
+    qDebug() << " doc " << doc;
     const QJsonArray array = doc.array();
 
     const CustomTextAutoGenerateReply w(nullptr, TextAutoGenerateText::TextAutoGenerateReply::RequestTypes::Show);
@@ -57,7 +59,19 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
     QTest::addColumn<QByteArray>("toolCallsArray");
     QTest::addColumn<QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo>>("result");
     QTest::addRow("empty") << QByteArray() << QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo>();
-    // TODO
+
+    {
+        const QByteArray ba(R"([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])"_ba);
+        QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> infos;
+        TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo i;
+        i.toolName = u"example_tool"_s;
+        i.toolCallArgument = {{
+            .keyTool = u"city"_s,
+            .value = u"Grenoble"_s,
+        }};
+        infos.append(i);
+        QTest::addRow("return-1") << ba << infos;
+    }
 }
 
 #include "textautogeneratereplytest.moc"
