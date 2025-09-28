@@ -394,16 +394,16 @@ static QString convertMessageText(const QString &str, const QString &searchText)
         switch (cmark_node_get_type(node)) {
         case CMARK_NODE_CODE_BLOCK: {
             const char *literal = cmark_node_get_literal(node);
-            QString str = QString::fromUtf8(literal);
-            if (!str.isEmpty()) {
-                convertHtmlChar(str);
+            QString literalStr = QString::fromUtf8(literal);
+            if (!literalStr.isEmpty()) {
+                convertHtmlChar(literalStr);
                 QString language;
                 const auto l = cmark_node_get_fence_info(node);
                 if (l) {
                     language = QString::fromUtf8(l);
                 }
                 qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " language " << language;
-                const QString stringHtml = u"```"_s + str + u"```"_s;
+                const QString stringHtml = u"```"_s + literalStr + u"```"_s;
                 const QString highligherStr = addHighlighter(stringHtml, language, searchText);
                 cmark_node *p = cmark_node_new(CMARK_NODE_PARAGRAPH);
 

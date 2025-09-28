@@ -226,7 +226,7 @@ void AutoCorrection::superscriptAppendix()
         } else if (i.key() == "othernb"_L1) {
             const int pos = trimmed.indexOf(i.value());
             if (pos > 0) {
-                QString number = trimmed.left(pos);
+                const QString number = trimmed.left(pos);
                 QString::ConstIterator constIter = number.constBegin();
                 bool found = true;
                 // don't apply superscript to 1th, 2th and 3th
