@@ -56,14 +56,16 @@ void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
                                       const QByteArray &uuid,
                                       const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
-    // TODO
-    ExampleTextToolPluginJob *job = new ExampleTextToolPluginJob(this);
-    // job->setToolArguments(info.toolCallArgument[0]);
-    job->setChatId(chatId);
-    job->setMessageUuid(uuid);
-    connect(job, &ExampleTextToolPluginJob::finished, this, [this]() {
-        // TODO
-    });
+    for (const auto &i : info) {
+        ExampleTextToolPluginJob *job = new ExampleTextToolPluginJob(this);
+        job->setToolArguments(i.toolCallArgument);
+        job->setChatId(chatId);
+        job->setMessageUuid(uuid);
+        connect(job, &ExampleTextToolPluginJob::finished, this, [this]() {
+            qDebug() << " ExampleTextToolPluginJob::finished";
+            // TODO
+        });
+    }
 }
 
 #include "exampletexttoolplugin.moc"
