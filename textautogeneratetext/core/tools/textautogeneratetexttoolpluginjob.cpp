@@ -54,11 +54,13 @@ void TextAutoGenerateTextToolPluginJob::setChatId(const QByteArray &newChatId)
 
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
+#if 0 // TODO get required arguments
     if (!verifyRequiredArguments()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "missing required arguments";
         return false;
     }
-    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() && !mRequiredArguments.isEmpty() && !mChatId.isEmpty();
+#endif
+    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() /*&& !mRequiredArguments.isEmpty()*/ && !mChatId.isEmpty();
 }
 
 QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const
