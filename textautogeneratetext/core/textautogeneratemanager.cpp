@@ -9,6 +9,7 @@
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratesettings.h"
+#include "core/tools/textautogeneratetexttoolplugin.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
@@ -263,10 +264,11 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
-    // TODO
     for (const auto &i : info) {
-        // TextAutoGenerateTextToolPluginManager::self()->
-        // i.toolName
+        auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromIdentifier(i.toolName);
+        if (plugin) {
+            // TODO plugin->callTools(chatId, uuid, i.toolCallArgument);
+        }
     }
 }
 
