@@ -57,6 +57,13 @@ void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
                                       const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     // TODO
+    ExampleTextToolPluginJob *job = new ExampleTextToolPluginJob(this);
+    // job->setToolArguments(info.toolCallArgument[0]);
+    job->setChatId(chatId);
+    job->setMessageUuid(uuid);
+    connect(job, &ExampleTextToolPluginJob::finished, this, [this]() {
+        // TODO
+    });
 }
 
 #include "exampletexttoolplugin.moc"
