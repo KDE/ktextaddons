@@ -49,6 +49,7 @@ public:
     [[nodiscard]] QList<TextAutoGeneratePluginUtils::PluginUtilData> pluginDataList() const;
 
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromIdentifier(const QString &identifier) const;
+    [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromToolNameId(const QString &identifier) const;
 
     [[nodiscard]] QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> activePluginTools() const;
 
