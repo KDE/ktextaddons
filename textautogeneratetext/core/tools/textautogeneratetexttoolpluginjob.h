@@ -39,7 +39,7 @@ public:
     void setChatId(const QByteArray &newChatId);
 
 Q_SIGNALS:
-    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);
+    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
