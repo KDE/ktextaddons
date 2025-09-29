@@ -47,9 +47,16 @@ void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
 {
     QPointer<ExampleTextToolPluginDialog> dlg = new ExampleTextToolPluginDialog(this, parent);
     if (dlg->exec()) {
-        // TODO
+        // Nothing => just display info
     }
     delete dlg;
+}
+
+void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
+                                      const QByteArray &uuid,
+                                      const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+{
+    // TODO
 }
 
 #include "exampletexttoolplugin.moc"

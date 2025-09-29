@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 namespace TextAutoGenerateText
 {
@@ -36,6 +37,9 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateTextToolPluginProperty> properties() const;
     void setProperties(const QList<TextAutoGenerateTextToolPluginProperty> &newProperties);
+
+    virtual void
+    callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) = 0;
 
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);

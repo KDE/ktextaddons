@@ -47,7 +47,17 @@ public:
     void executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
+
+    void
+    callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) override;
 };
+
+void CustomTextToolPlugin2::callTools([[maybe_unused]] const QByteArray &chatId,
+                                      [[maybe_unused]] const QByteArray &uuid,
+                                      [[maybe_unused]] const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
+{
+    // Nothing
+}
 
 void CustomTextToolPlugin2::executeTool()
 {
@@ -71,7 +81,7 @@ TextAutoGenerateTextToolPluginTest::TextAutoGenerateTextToolPluginTest(QObject *
 
 void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
 {
-    CustomTextToolPlugin w;
+    CustomTextToolPlugin2 w;
     QVERIFY(w.description().isEmpty());
     QVERIFY(!w.metadata().isEmpty());
     QVERIFY(w.displayName().isEmpty());
