@@ -264,6 +264,10 @@ void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArr
 {
     qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
     // TODO
+    for (const auto &i : info) {
+        // TextAutoGenerateTextToolPluginManager::self()->
+        // i.toolName
+    }
 }
 
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
