@@ -267,7 +267,7 @@ void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArr
     for (const auto &i : info) {
         auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromIdentifier(i.toolName);
         if (plugin) {
-            // TODO plugin->callTools(chatId, uuid, i.toolCallArgument);
+            plugin->callTools(chatId, uuid, info);
         }
     }
 }

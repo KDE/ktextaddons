@@ -22,6 +22,7 @@ void ExampleTextToolPluginJob::start()
         return;
     }
     // TODO
+    qDebug() << " void ExampleTextToolPluginJob::start() ";
 }
 
 #include "moc_exampletexttoolpluginjob.cpp"

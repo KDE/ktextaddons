@@ -65,6 +65,7 @@ void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
             qDebug() << " ExampleTextToolPluginJob::finished";
             // TODO
         });
+        job->start();
     }
 }
 
