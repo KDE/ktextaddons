@@ -5,6 +5,7 @@
 */
 #include "emoticonwidgetactionwidget.h"
 #include "emoticonunicodeutils.h"
+#include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QToolButton>
@@ -81,6 +82,7 @@ void EmoticonWidgetActionWidget::addDefaultEmoticons(const QList<EmoticonWidgetA
     auto selectMoreEmojiButton = new QToolButton(this);
     selectMoreEmojiButton->setObjectName(u"selectMoreEmojiButton"_s);
     selectMoreEmojiButton->setIcon(QIcon::fromTheme(u"overflow-menu"_s));
+    selectMoreEmojiButton->setToolTip(i18nc("@info:tooltip", "Select Other Emoji"));
     selectMoreEmojiButton->setAutoRaise(true);
     mMainLayout->addWidget(selectMoreEmojiButton);
     connect(selectMoreEmojiButton, &QToolButton::clicked, this, &EmoticonWidgetActionWidget::selectEmoji);
