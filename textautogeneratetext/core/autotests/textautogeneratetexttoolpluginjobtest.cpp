@@ -22,6 +22,7 @@ void TextAutoGenerateTextToolPluginJobTest::shouldHaveDefaultValues()
     QVERIFY(w.messageUuid().isEmpty());
     QVERIFY(w.toolIdentifier().isEmpty());
     QVERIFY(!w.verifyRequiredArguments());
+    QVERIFY(w.chatId().isEmpty());
 }
 
 void TextAutoGenerateTextToolPluginJobTest::shouldVerifyRequiredArguments_data()

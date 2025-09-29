@@ -42,13 +42,23 @@ bool TextAutoGenerateTextToolPluginJob::verifyRequiredArguments() const
     return true;
 }
 
+QByteArray TextAutoGenerateTextToolPluginJob::chatId() const
+{
+    return mChatId;
+}
+
+void TextAutoGenerateTextToolPluginJob::setChatId(const QByteArray &newChatId)
+{
+    mChatId = newChatId;
+}
+
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
     if (!verifyRequiredArguments()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "missing required arguments";
         return false;
     }
-    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() && !mRequiredArguments.isEmpty();
+    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() && !mRequiredArguments.isEmpty() && !mChatId.isEmpty();
 }
 
 QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const

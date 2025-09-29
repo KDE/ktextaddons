@@ -35,6 +35,9 @@ public:
 
     [[nodiscard]] bool verifyRequiredArguments() const;
 
+    [[nodiscard]] QByteArray chatId() const;
+    void setChatId(const QByteArray &newChatId);
+
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);
 
@@ -42,6 +45,7 @@ protected:
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
     QStringList mRequiredArguments;
     QByteArray mMessageUuid;
+    QByteArray mChatId;
     QByteArray mToolIdentifier;
 };
 }
