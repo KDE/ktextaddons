@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QByteArray>
+#include <QDebug>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
@@ -49,3 +50,4 @@ protected:
     QByteArray mToolIdentifier;
 };
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob &t);

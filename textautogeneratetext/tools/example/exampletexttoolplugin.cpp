@@ -61,10 +61,14 @@ void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
         job->setToolArguments(i.toolCallArgument);
         job->setChatId(chatId);
         job->setMessageUuid(uuid);
-        connect(job, &ExampleTextToolPluginJob::finished, this, [this]() {
-            qDebug() << " ExampleTextToolPluginJob::finished";
-            // TODO
-        });
+        job->setToolIdentifier(i.toolName);
+        connect(job,
+                &ExampleTextToolPluginJob::finished,
+                this,
+                [this](const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier) {
+                    Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
+                    qDebug() << " ExampleTextToolPluginJob::finished: " << str;
+                });
         job->start();
     }
 }

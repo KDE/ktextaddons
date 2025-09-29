@@ -50,6 +50,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     // Load TextAutoGenerateTextToolPluginManager
     (void)TextAutoGenerateTextToolPluginManager::self();
+
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
     new TextAutoGenerateManagerAdaptor(this);
 
@@ -76,6 +77,10 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
     mTextAutoGenerateSettings->load();
+    const QList<TextAutoGenerateTextToolPlugin *> lstPlugins = TextAutoGenerateTextToolPluginManager::self()->pluginsList();
+    for (const auto p : lstPlugins) {
+        connect(p, &TextAutoGenerateTextToolPlugin::finished, this, &TextAutoGenerateManager::slotPluginFinished);
+    }
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
@@ -587,6 +592,15 @@ void TextAutoGenerateManager::slotChatListChanged([[maybe_unused]] const QString
         loadHistory();
     }
 #endif
+}
+
+void TextAutoGenerateManager::slotPluginFinished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier)
+{
+    TextAutoGenerateText::TextAutoGenerateReply::Response content;
+    content.response = str;
+    // content.info =
+    replaceContent(chatId, messageUuid, content);
+    changeInProgress(chatId, messageUuid, false);
 }
 
 #include "moc_textautogeneratemanager.cpp"

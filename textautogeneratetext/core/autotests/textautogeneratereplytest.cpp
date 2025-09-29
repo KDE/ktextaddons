@@ -62,7 +62,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
         const QByteArray ba(R"([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])"_ba);
         QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> infos;
         TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo i;
-        i.toolName = u"example_tool"_s;
+        i.toolName = "example_tool"_ba;
         i.toolCallArgument = {{
             .keyTool = u"city"_s,
             .value = u"Grenoble"_s,
@@ -72,6 +72,5 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
     }
 }
 
-#include "textautogeneratereplytest.moc"
-
 #include "moc_textautogeneratereplytest.cpp"
+#include "textautogeneratereplytest.moc"

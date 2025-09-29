@@ -42,7 +42,7 @@ public:
     callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) = 0;
 
 Q_SIGNALS:
-    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &toolIdentifier);
+    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
 
 protected:
     [[nodiscard]] QJsonObject generateMetadata() const;

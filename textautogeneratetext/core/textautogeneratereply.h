@@ -38,7 +38,7 @@ public:
 
     struct TEXTAUTOGENERATETEXT_EXPORT ToolCallArgumentInfo {
         QList<ToolCallArgument> toolCallArgument;
-        QString toolName;
+        QByteArray toolName;
         [[nodiscard]] bool operator==(const ToolCallArgumentInfo &other) const;
     };
 

@@ -60,7 +60,7 @@ bool TextAutoGenerateTextToolPluginJob::canStart() const
         return false;
     }
 #endif
-    return mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() /*&& !mRequiredArguments.isEmpty()*/ && !mChatId.isEmpty();
+    return !mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() /*&& !mRequiredArguments.isEmpty()*/ && !mChatId.isEmpty();
 }
 
 QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const
@@ -101,6 +101,16 @@ QByteArray TextAutoGenerateTextToolPluginJob::toolIdentifier() const
 void TextAutoGenerateTextToolPluginJob::setToolIdentifier(const QByteArray &newToolIdentifier)
 {
     mToolIdentifier = newToolIdentifier;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob &t)
+{
+    d.space() << "toolArguments" << t.toolArguments();
+    d.space() << "messageUuid" << t.messageUuid();
+    d.space() << "chatId" << t.chatId();
+    d.space() << "toolIdentifier" << t.toolIdentifier();
+    d.space() << "requiredArguments" << t.requiredArguments();
+    return d;
 }
 
 #include "moc_textautogeneratetexttoolpluginjob.cpp"

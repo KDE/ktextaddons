@@ -104,10 +104,10 @@ QList<TextAutoGeneratePluginUtils::PluginUtilData> TextAutoGenerateTextToolPlugi
     return mPluginDataList;
 }
 
-TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFromToolNameId(const QString &identifier) const
+TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFromToolNameId(const QByteArray &identifier) const
 {
     const auto it = std::find_if(mPluginList.constBegin(), mPluginList.constEnd(), [identifier](const TextAutoGenerateTextToolPluginManagerInfo &info) {
-        return info.plugin->toolNameId() == identifier.toLatin1();
+        return info.plugin->toolNameId() == identifier;
     });
     if (it != mPluginList.end()) {
         return (*it).plugin;
