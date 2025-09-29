@@ -6,7 +6,7 @@
 
 #include "exampletexttoolpluginjob.h"
 #include <QDebug>
-
+using namespace Qt::Literals::StringLiterals;
 ExampleTextToolPluginJob::ExampleTextToolPluginJob(QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextToolPluginJob{parent}
 {
@@ -16,12 +16,15 @@ ExampleTextToolPluginJob::~ExampleTextToolPluginJob() = default;
 
 void ExampleTextToolPluginJob::start()
 {
+    qDebug() << " void ExampleTextToolPluginJob::start()";
     if (!canStart()) {
         qWarning() << " Impossible to start ExampleTextToolPluginJob";
         deleteLater();
         return;
     }
-    // TODO
+    // TODO Need to implement job
+    Q_EMIT finished(u"Temperature is 35°"_s, mMessageUuid, mChatId, mToolIdentifier);
+    deleteLater();
     qDebug() << " void ExampleTextToolPluginJob::start() ";
 }
 
