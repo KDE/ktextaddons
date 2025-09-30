@@ -12,6 +12,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextToolPluginJob;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPlugin : public QObject
 {
     Q_OBJECT
@@ -44,6 +45,11 @@ Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
 
 protected:
+    void initializeJob(TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *job,
+                       const QByteArray &chatId,
+                       const QByteArray &uuid,
+                       const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
+
     [[nodiscard]] QJsonObject generateMetadata() const;
     QList<TextAutoGenerateTextToolPluginProperty> mProperties;
     QByteArray mToolNameId;
