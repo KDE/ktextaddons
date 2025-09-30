@@ -30,3 +30,13 @@ void TextAutoGenerateTextToolPluginProperty::setName(const QString &newName)
 {
     mName = newName;
 }
+
+QStringList TextAutoGenerateTextToolPluginProperty::typeElements() const
+{
+    return mTypeElements;
+}
+
+void TextAutoGenerateTextToolPluginProperty::setTypeElements(const QStringList &newEnumElements)
+{
+    mTypeElements = newEnumElements;
+}

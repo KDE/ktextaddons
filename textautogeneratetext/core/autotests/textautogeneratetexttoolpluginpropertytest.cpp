@@ -17,6 +17,7 @@ void TextAutoGenerateTextToolPluginPropertyTest::shouldHaveDefaultValues()
     TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty w;
     QVERIFY(w.description().isEmpty());
     QVERIFY(w.name().isEmpty());
+    QVERIFY(w.typeElements().isEmpty());
 }
 
 #include "moc_textautogeneratetexttoolpluginpropertytest.cpp"

@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KLazyLocalizedString>
+#include <QStringList>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginProperty
@@ -21,7 +22,11 @@ public:
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
 
+    [[nodiscard]] QStringList typeElements() const;
+    void setTypeElements(const QStringList &newEnumElements);
+
 private:
+    QStringList mTypeElements;
     KLazyLocalizedString mDescription;
     QString mName;
 };

@@ -14,4 +14,6 @@ public:
     ~TextAutoGenerateTextToolPluginTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldGenerateMetadata();
+    void shouldGenerateMetadata_data();
 };
