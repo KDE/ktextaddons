@@ -26,8 +26,8 @@ target_sources(
         emoticontexteditaction.cpp
         emojicategorybutton.h
         emojicategorybutton.cpp
-        emoticonitemdelegate.cpp
-        emoticonitemdelegate.h
+        emojiitemdelegate.cpp
+        emojiitemdelegate.h
         emoticontonecombobox.h
         emoticontonecombobox.cpp
         emoticonwidgetaction.h

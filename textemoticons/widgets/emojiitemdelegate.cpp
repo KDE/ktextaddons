@@ -4,20 +4,20 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticonitemdelegate.h"
+#include "emojiitemdelegate.h"
 #include <QAbstractItemView>
 #include <QMovie>
 #include <QPainter>
 #include <TextEmoticonsCore/EmojiModel>
 using namespace TextEmoticonsWidgets;
-EmoticonItemDelegate::EmoticonItemDelegate(QObject *parent)
+EmojiItemDelegate::EmojiItemDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
 }
 
-EmoticonItemDelegate::~EmoticonItemDelegate() = default;
+EmojiItemDelegate::~EmojiItemDelegate() = default;
 
-void EmoticonItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+void EmojiItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const bool imageAnimated = index.data(TextEmoticonsCore::EmojiModel::Animated).toBool();
     if (imageAnimated) {
@@ -55,7 +55,7 @@ void EmoticonItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     }
 }
 
-std::vector<TextEmoticonsCore::RunningAnimatedImage>::iterator EmoticonItemDelegate::findRunningAnimatedImage(const QModelIndex &index) const
+std::vector<TextEmoticonsCore::RunningAnimatedImage>::iterator EmojiItemDelegate::findRunningAnimatedImage(const QModelIndex &index) const
 {
     auto matchesIndex = [&](const TextEmoticonsCore::RunningAnimatedImage &rai) {
         return rai.index == index;
@@ -63,7 +63,7 @@ std::vector<TextEmoticonsCore::RunningAnimatedImage>::iterator EmoticonItemDeleg
     return std::find_if(mRunningAnimatedImages.begin(), mRunningAnimatedImages.end(), matchesIndex);
 }
 
-void EmoticonItemDelegate::removeRunningAnimatedImage(const QModelIndex &index) const
+void EmojiItemDelegate::removeRunningAnimatedImage(const QModelIndex &index) const
 {
     auto it = findRunningAnimatedImage(index);
     if (it != mRunningAnimatedImages.end()) {
@@ -71,4 +71,4 @@ void EmoticonItemDelegate::removeRunningAnimatedImage(const QModelIndex &index) 
     }
 }
 
-#include "moc_emoticonitemdelegate.cpp"
+#include "moc_emojiitemdelegate.cpp"

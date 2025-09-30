@@ -11,12 +11,12 @@
 #include <vector>
 namespace TextEmoticonsWidgets
 {
-class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonItemDelegate : public QStyledItemDelegate
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmojiItemDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit EmoticonItemDelegate(QObject *parent = nullptr);
-    ~EmoticonItemDelegate() override;
+    explicit EmojiItemDelegate(QObject *parent = nullptr);
+    ~EmojiItemDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 

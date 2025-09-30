@@ -5,7 +5,6 @@
 */
 
 #include "emoticoncategorybuttons.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "emojicategorybutton.h"
 #include "emoticonunicodeutils.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextEmoticonsCore/EmoticonCategory>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsWidgets;
 EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
     : QWidget{parent}

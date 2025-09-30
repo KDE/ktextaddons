@@ -7,8 +7,8 @@
 #include "emojilistview.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "emojiitemdelegate.h"
 #include "emojimodel.h"
-#include "emoticonitemdelegate.h"
 
 #include <TextEmoticonsCore/EmojiModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>
@@ -28,7 +28,7 @@ EmojiListView::EmojiListView(QWidget *parent)
     setMouseTracking(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setContextMenuPolicy(Qt::DefaultContextMenu);
-    auto emoticonDelegate = new EmoticonItemDelegate(this);
+    auto emoticonDelegate = new EmojiItemDelegate(this);
     emoticonDelegate->setObjectName(u"emoticonDelegate"_s);
     setItemDelegate(emoticonDelegate);
     connect(this, &QListView::clicked, this, &EmojiListView::selectEmoji);
