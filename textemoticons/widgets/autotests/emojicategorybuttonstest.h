@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class EmoticonCategoryButtonsTest : public QObject
+class EmojiCategoryButtonsTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit EmoticonCategoryButtonsTest(QObject *parent = nullptr);
-    ~EmoticonCategoryButtonsTest() override = default;
+    explicit EmojiCategoryButtonsTest(QObject *parent = nullptr);
+    ~EmojiCategoryButtonsTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

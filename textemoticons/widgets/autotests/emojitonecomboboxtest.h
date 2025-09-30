@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class EmoticonToneComboBoxTest : public QObject
+class EmojiToneComboBoxTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit EmoticonToneComboBoxTest(QObject *parent = nullptr);
-    ~EmoticonToneComboBoxTest() override = default;
+    explicit EmojiToneComboBoxTest(QObject *parent = nullptr);
+    ~EmojiToneComboBoxTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

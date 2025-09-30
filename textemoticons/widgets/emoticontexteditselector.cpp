@@ -8,9 +8,9 @@
 #include "emoticontexteditselector.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "emojicategorybuttons.h"
 #include "emojilistview.h"
-#include "emoticoncategorybuttons.h"
-#include "emoticontonecombobox.h"
+#include "emojitonecombobox.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -28,9 +28,9 @@ class EmoticonTextEditSelector::EmoticonTextEditSelectorPrivate
 public:
     explicit EmoticonTextEditSelectorPrivate(EmoticonTextEditSelector *q)
         : searchUnicodeLineEdit(new QLineEdit(q))
-        , categoryButtons(new EmoticonCategoryButtons(q))
+        , categoryButtons(new EmojiCategoryButtons(q))
         , emoticonListView(new EmojiListView(q))
-        , emoticonToneComboBox(new EmoticonToneComboBox(q))
+        , emoticonToneComboBox(new EmojiToneComboBox(q))
         , emojiSortFilterProxyModel(new TextEmoticonsCore::EmojiSortFilterProxyModel(q))
         , qq(q)
     {
@@ -62,9 +62,9 @@ public:
     }
 
     QLineEdit *const searchUnicodeLineEdit;
-    EmoticonCategoryButtons *const categoryButtons;
+    EmojiCategoryButtons *const categoryButtons;
     EmojiListView *const emoticonListView;
-    EmoticonToneComboBox *const emoticonToneComboBox;
+    EmojiToneComboBox *const emoticonToneComboBox;
     TextEmoticonsCore::EmojiSortFilterProxyModel *const emojiSortFilterProxyModel;
     bool customEmojiSupport = false;
     EmoticonTextEditSelector *const qq;
@@ -108,7 +108,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
     connect(d->emoticonListView, &EmojiListView::emojiItemSelected, this, [this](const QString &str, const QString &identifier) {
         d->slotItemSelected(str, identifier);
     });
-    connect(d->categoryButtons, &EmoticonCategoryButtons::categorySelected, this, [this](const QString &category) {
+    connect(d->categoryButtons, &EmojiCategoryButtons::categorySelected, this, [this](const QString &category) {
         d->slotCategorySelected(category);
     });
     connect(d->searchUnicodeLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
@@ -122,7 +122,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
         TextEmoticonsCore::EmojiModelManager::self()->setRecentIdentifier(QStringList());
     });
 
-    connect(d->emoticonToneComboBox, &TextEmoticonsWidgets::EmoticonToneComboBox::currentIndexChanged, this, [this]() {
+    connect(d->emoticonToneComboBox, &TextEmoticonsWidgets::EmojiToneComboBox::currentIndexChanged, this, [this]() {
         TextEmoticonsCore::EmojiModelManager::self()->setEmojiTone(d->emoticonToneComboBox->currentEmojiTone());
     });
 

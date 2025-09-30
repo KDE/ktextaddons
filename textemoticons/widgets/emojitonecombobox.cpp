@@ -4,14 +4,14 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticontonecombobox.h"
+#include "emojitonecombobox.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 
 using namespace TextEmoticonsWidgets;
-EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
+EmojiToneComboBox::EmojiToneComboBox(QWidget *parent)
     : QComboBox(parent)
 {
     setToolTip(i18n("Select Tone"));
@@ -32,16 +32,16 @@ EmoticonToneComboBox::EmoticonToneComboBox(QWidget *parent)
             QVariant::fromValue(TextEmoticonsCore::EmojiModelManager::EmojiTone::Dark));
 }
 
-EmoticonToneComboBox::~EmoticonToneComboBox() = default;
+EmojiToneComboBox::~EmojiToneComboBox() = default;
 
-TextEmoticonsCore::EmojiModelManager::EmojiTone EmoticonToneComboBox::currentEmojiTone() const
+TextEmoticonsCore::EmojiModelManager::EmojiTone EmojiToneComboBox::currentEmojiTone() const
 {
     return currentData().value<TextEmoticonsCore::EmojiModelManager::EmojiTone>();
 }
 
-void EmoticonToneComboBox::setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone tone)
+void EmojiToneComboBox::setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone tone)
 {
     setCurrentIndex(findData(QVariant::fromValue(tone)));
 }
 
-#include "moc_emoticontonecombobox.cpp"
+#include "moc_emojitonecombobox.cpp"

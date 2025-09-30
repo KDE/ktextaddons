@@ -4,7 +4,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticoncategorybuttons.h"
+#include "emojicategorybuttons.h"
 
 #include "emojicategorybutton.h"
 #include "emoticonunicodeutils.h"
@@ -18,7 +18,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsWidgets;
-EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
+EmojiCategoryButtons::EmojiCategoryButtons(QWidget *parent)
     : QWidget{parent}
     , mMainLayout(new QHBoxLayout(this))
     , mButtonGroup(new QButtonGroup(this))
@@ -28,9 +28,9 @@ EmoticonCategoryButtons::EmoticonCategoryButtons(QWidget *parent)
     mButtonGroup->setObjectName(u"mButtonGroup"_s);
 }
 
-EmoticonCategoryButtons::~EmoticonCategoryButtons() = default;
+EmojiCategoryButtons::~EmojiCategoryButtons() = default;
 
-void EmoticonCategoryButtons::wheelEvent(QWheelEvent *event)
+void EmojiCategoryButtons::wheelEvent(QWheelEvent *event)
 {
     auto button = mButtonGroup->checkedButton();
     if (button) {
@@ -60,7 +60,7 @@ void EmoticonCategoryButtons::wheelEvent(QWheelEvent *event)
     QWidget::wheelEvent(event);
 }
 
-void EmoticonCategoryButtons::addButton(const QString &name, const QString &category, const QString &toolTip)
+void EmojiCategoryButtons::addButton(const QString &name, const QString &category, const QString &toolTip)
 {
     auto button = new EmojiCategoryButton(this);
     button->setText(name);
@@ -74,12 +74,12 @@ void EmoticonCategoryButtons::addButton(const QString &name, const QString &cate
     });
 }
 
-bool EmoticonCategoryButtons::wasLoaded() const
+bool EmojiCategoryButtons::wasLoaded() const
 {
     return mWasLoaded;
 }
 
-void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories, bool hasCustomSupport)
+void EmojiCategoryButtons::setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories, bool hasCustomSupport)
 {
     addButton(TextEmoticonsCore::EmoticonUnicodeUtils::recentName(),
               TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier(),
@@ -99,4 +99,4 @@ void EmoticonCategoryButtons::setCategories(const QList<TextEmoticonsCore::Emoti
     mWasLoaded = true;
 }
 
-#include "moc_emoticoncategorybuttons.cpp"
+#include "moc_emojicategorybuttons.cpp"

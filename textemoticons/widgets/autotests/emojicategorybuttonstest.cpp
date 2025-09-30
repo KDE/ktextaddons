@@ -3,22 +3,22 @@
 
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#include "emoticoncategorybuttonstest.h"
+#include "emojicategorybuttonstest.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include "emoticoncategorybuttons.h"
+#include "emojicategorybuttons.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QTest>
-QTEST_MAIN(EmoticonCategoryButtonsTest)
-EmoticonCategoryButtonsTest::EmoticonCategoryButtonsTest(QObject *parent)
+QTEST_MAIN(EmojiCategoryButtonsTest)
+EmojiCategoryButtonsTest::EmojiCategoryButtonsTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void EmoticonCategoryButtonsTest::shouldHaveDefaultValues()
+void EmojiCategoryButtonsTest::shouldHaveDefaultValues()
 {
-    TextEmoticonsWidgets::EmoticonCategoryButtons w;
+    TextEmoticonsWidgets::EmojiCategoryButtons w;
 
     auto mMainLayout = w.findChild<QHBoxLayout *>(u"mMainLayout"_s);
     QVERIFY(mMainLayout);
@@ -29,4 +29,4 @@ void EmoticonCategoryButtonsTest::shouldHaveDefaultValues()
     QVERIFY(mButtonGroup->buttons().isEmpty());
 }
 
-#include "moc_emoticoncategorybuttonstest.cpp"
+#include "moc_emojicategorybuttonstest.cpp"

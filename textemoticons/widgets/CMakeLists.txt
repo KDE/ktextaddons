@@ -17,8 +17,8 @@ target_sources(
     PRIVATE
         emoticontexteditselector.cpp
         emoticontexteditselector.h
-        emoticoncategorybuttons.cpp
-        emoticoncategorybuttons.h
+        emojicategorybuttons.cpp
+        emojicategorybuttons.h
         emojilistview.cpp
         emojilistview.h
         textemoticonswidgets_private_export.h
@@ -28,8 +28,8 @@ target_sources(
         emojicategorybutton.cpp
         emojiitemdelegate.cpp
         emojiitemdelegate.h
-        emoticontonecombobox.h
-        emoticontonecombobox.cpp
+        emojitonecombobox.h
+        emojitonecombobox.cpp
         emoticonwidgetaction.h
         emoticonwidgetaction.cpp
         emoticonwidgetactionwidget.h

@@ -7,10 +7,10 @@
 #include "emoticontexteditselectortest.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "emojicategorybuttons.h"
 #include "emojilistview.h"
-#include "emoticoncategorybuttons.h"
+#include "emojitonecombobox.h"
 #include "emoticontexteditselector.h"
-#include "emoticontonecombobox.h"
 #include <QLineEdit>
 #include <QStandardPaths>
 #include <QTest>
@@ -30,7 +30,7 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mCategoryButtons = w.findChild<TextEmoticonsWidgets::EmoticonCategoryButtons *>(u"mCategoryButtons"_s);
+    auto mCategoryButtons = w.findChild<TextEmoticonsWidgets::EmojiCategoryButtons *>(u"mCategoryButtons"_s);
     QVERIFY(mCategoryButtons);
 
     auto mEmoticonListView = w.findChild<TextEmoticonsWidgets::EmojiListView *>(u"mEmoticonListView"_s);
@@ -42,7 +42,7 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     QVERIFY(mSearchUnicodeLineEdit->text().isEmpty());
     QVERIFY(!mSearchUnicodeLineEdit->placeholderText().isEmpty());
 
-    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmoticonToneComboBox *>(u"emoticonToneComboBox"_s);
+    auto emoticonTonComboBox = w.findChild<TextEmoticonsWidgets::EmojiToneComboBox *>(u"emoticonToneComboBox"_s);
     QVERIFY(emoticonTonComboBox);
 
     QVERIFY(!w.customEmojiSupport());

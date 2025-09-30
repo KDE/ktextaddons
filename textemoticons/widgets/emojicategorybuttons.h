@@ -16,12 +16,12 @@ class EmoticonCategory;
 }
 namespace TextEmoticonsWidgets
 {
-class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonCategoryButtons : public QWidget
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmojiCategoryButtons : public QWidget
 {
     Q_OBJECT
 public:
-    explicit EmoticonCategoryButtons(QWidget *parent = nullptr);
-    ~EmoticonCategoryButtons() override;
+    explicit EmojiCategoryButtons(QWidget *parent = nullptr);
+    ~EmojiCategoryButtons() override;
 
     void setCategories(const QList<TextEmoticonsCore::EmoticonCategory> &categories, bool hasCustomSupport);
 

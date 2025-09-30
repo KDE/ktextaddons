@@ -5,17 +5,17 @@
 */
 
 #pragma once
-#include "textemoticonswidgets_export.h"
+#include "textemoticonswidgets_private_export.h"
 #include <QComboBox>
 #include <TextEmoticonsCore/EmojiModelManager>
 namespace TextEmoticonsWidgets
 {
-class TEXTEMOTICONSWIDGETS_EXPORT EmoticonToneComboBox : public QComboBox
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmojiToneComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit EmoticonToneComboBox(QWidget *parent = nullptr);
-    ~EmoticonToneComboBox() override;
+    explicit EmojiToneComboBox(QWidget *parent = nullptr);
+    ~EmojiToneComboBox() override;
     [[nodiscard]] TextEmoticonsCore::EmojiModelManager::EmojiTone currentEmojiTone() const;
     void setCurrentEmojiTone(TextEmoticonsCore::EmojiModelManager::EmojiTone tone);
 };
