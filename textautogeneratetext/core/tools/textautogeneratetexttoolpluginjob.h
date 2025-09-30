@@ -10,6 +10,7 @@
 #include <QDebug>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginJob : public QObject
@@ -26,7 +27,6 @@ public:
     void setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments);
 
     [[nodiscard]] QStringList requiredArguments() const;
-    void setRequiredArguments(const QStringList &newRequiredArguments);
 
     [[nodiscard]] QByteArray messageUuid() const;
     void setMessageUuid(const QByteArray &newMessageUuid);
@@ -39,12 +39,15 @@ public:
     [[nodiscard]] QByteArray chatId() const;
     void setChatId(const QByteArray &newChatId);
 
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> properties() const;
+    void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &newProperties);
+
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
 
 protected:
+    QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> mProperties;
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
-    QStringList mRequiredArguments;
     QByteArray mMessageUuid;
     QByteArray mChatId;
     QByteArray mToolIdentifier;

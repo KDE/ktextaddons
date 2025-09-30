@@ -19,15 +19,25 @@ void TextAutoGenerateTextToolPluginJob::start()
     Q_ASSERT(false);
 }
 
+QStringList TextAutoGenerateTextToolPluginJob::requiredArguments() const
+{
+    QStringList lst;
+    for (const auto &p : mProperties) {
+        lst.append(p.name());
+    }
+    return lst;
+}
+
 bool TextAutoGenerateTextToolPluginJob::verifyRequiredArguments() const
 {
-    if (mToolArguments.isEmpty() || mRequiredArguments.isEmpty()) {
+    const QStringList requiredArgs = requiredArguments();
+    if (mToolArguments.isEmpty() || requiredArgs.isEmpty()) {
         return false;
     }
-    if (mRequiredArguments.count() > mToolArguments.count()) {
+    if (requiredArgs.count() > mToolArguments.count()) {
         return false;
     }
-    for (const auto &arg : mRequiredArguments) {
+    for (const auto &arg : requiredArgs) {
         bool found = false;
         for (const auto &tools : mToolArguments) {
             if (tools.keyTool == arg) {
@@ -52,15 +62,23 @@ void TextAutoGenerateTextToolPluginJob::setChatId(const QByteArray &newChatId)
     mChatId = newChatId;
 }
 
+void TextAutoGenerateTextToolPluginJob::setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &newProperties)
+{
+    mProperties = newProperties;
+}
+
+QList<TextAutoGenerateTextToolPluginProperty> TextAutoGenerateTextToolPluginJob::properties() const
+{
+    return mProperties;
+}
+
 bool TextAutoGenerateTextToolPluginJob::canStart() const
 {
-#if 0 // TODO get required arguments
     if (!verifyRequiredArguments()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "missing required arguments";
         return false;
     }
-#endif
-    return !mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() /*&& !mRequiredArguments.isEmpty()*/ && !mChatId.isEmpty();
+    return !mToolArguments.isEmpty() && !mMessageUuid.isEmpty() && !mToolIdentifier.isEmpty() && !mChatId.isEmpty();
 }
 
 QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob::toolArguments() const
@@ -71,16 +89,6 @@ QList<TextAutoGenerateReply::ToolCallArgument> TextAutoGenerateTextToolPluginJob
 void TextAutoGenerateTextToolPluginJob::setToolArguments(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &newToolArguments)
 {
     mToolArguments = newToolArguments;
-}
-
-QStringList TextAutoGenerateTextToolPluginJob::requiredArguments() const
-{
-    return mRequiredArguments;
-}
-
-void TextAutoGenerateTextToolPluginJob::setRequiredArguments(const QStringList &newRequiredArguments)
-{
-    mRequiredArguments = newRequiredArguments;
 }
 
 QByteArray TextAutoGenerateTextToolPluginJob::messageUuid() const
@@ -109,7 +117,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextTool
     d.space() << "messageUuid" << t.messageUuid();
     d.space() << "chatId" << t.chatId();
     d.space() << "toolIdentifier" << t.toolIdentifier();
-    d.space() << "requiredArguments" << t.requiredArguments();
+    d.space() << "properties" << t.properties();
     return d;
 }
 
