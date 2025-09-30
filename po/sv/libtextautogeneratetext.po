@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-27 00:41+0000\n"
+"POT-Creation-Date: 2025-09-30 00:42+0000\n"
 "PO-Revision-Date: 2025-09-21 13:46+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -72,57 +72,57 @@ msgstr ""
 "\n"
 "Verktyg: %1"
 
-#: core/textautogeneratemanager.cpp:124
+#: core/textautogeneratemanager.cpp:130
 #, kde-format
 msgid "Tools"
 msgstr "Verktyg"
 
-#: core/textautogeneratemanager.cpp:126
+#: core/textautogeneratemanager.cpp:132
 #, kde-format
 msgid "Small"
 msgstr "Liten"
 
-#: core/textautogeneratemanager.cpp:128
+#: core/textautogeneratemanager.cpp:134
 #, kde-format
 msgid "Medium"
 msgstr "Medium"
 
-#: core/textautogeneratemanager.cpp:130
+#: core/textautogeneratemanager.cpp:136
 #, kde-format
 msgid "Big"
 msgstr "Stor"
 
-#: core/textautogeneratemanager.cpp:132
+#: core/textautogeneratemanager.cpp:138
 #, kde-format
 msgid "Huge"
 msgstr "Enorm"
 
-#: core/textautogeneratemanager.cpp:134
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Multilingual"
 msgstr "Flerspråkig"
 
-#: core/textautogeneratemanager.cpp:136
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Code"
 msgstr "Kod"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Math"
 msgstr "Matematik"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Vision"
 msgstr "Vision"
 
-#: core/textautogeneratemanager.cpp:142
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Embedding"
 msgstr "Inbäddad"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Reasoning"
 msgstr "Resonemang"

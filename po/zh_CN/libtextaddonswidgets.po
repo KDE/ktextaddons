@@ -39,7 +39,7 @@ msgstr "删除线"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "下划线"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format

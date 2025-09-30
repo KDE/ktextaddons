@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-30 00:42+0000\n"
 "PO-Revision-Date: 2025-02-19 09:19+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -97,3 +97,9 @@ msgstr "Cerca una emoticona…"
 #, kde-format
 msgid "Select Tone"
 msgstr "Selecciona el to"
+
+#: widgets/emoticonwidgetactionwidget.cpp:85
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select Other Emoji"
+msgstr ""

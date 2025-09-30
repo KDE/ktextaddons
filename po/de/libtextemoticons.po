@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-09-30 00:42+0000\n"
 "PO-Revision-Date: 2023-04-15 01:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -98,4 +98,10 @@ msgstr "Emoticon suchen ..."
 #: widgets/emoticontonecombobox.cpp:17
 #, kde-format
 msgid "Select Tone"
+msgstr ""
+
+#: widgets/emoticonwidgetactionwidget.cpp:85
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select Other Emoji"
 msgstr ""
