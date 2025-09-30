@@ -40,11 +40,8 @@ QString ExampleTextToolPlugin::description() const
 
 void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
 {
-    QPointer<ExampleTextToolPluginDialog> dlg = new ExampleTextToolPluginDialog(this, parent);
-    if (dlg->exec()) {
-        // Nothing => just display info
-    }
-    delete dlg;
+    auto dlg = ExampleTextToolPluginDialog(this, parent);
+    dlg.exec();
 }
 
 void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
