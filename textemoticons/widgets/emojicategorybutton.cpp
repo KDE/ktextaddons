@@ -4,15 +4,15 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticoncategorybutton.h"
+#include "emojicategorybutton.h"
 using namespace TextEmoticonsWidgets;
-EmoticonCategoryButton::EmoticonCategoryButton(QWidget *parent)
+EmojiCategoryButton::EmojiCategoryButton(QWidget *parent)
     : QToolButton(parent)
 {
     setCheckable(true);
     setAutoRaise(true);
 }
 
-EmoticonCategoryButton::~EmoticonCategoryButton() = default;
+EmojiCategoryButton::~EmojiCategoryButton() = default;
 
-#include "moc_emoticoncategorybutton.cpp"
+#include "moc_emojicategorybutton.cpp"

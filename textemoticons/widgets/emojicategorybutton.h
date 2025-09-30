@@ -8,11 +8,11 @@
 #include <QToolButton>
 namespace TextEmoticonsWidgets
 {
-class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonCategoryButton : public QToolButton
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmojiCategoryButton : public QToolButton
 {
     Q_OBJECT
 public:
-    explicit EmoticonCategoryButton(QWidget *parent = nullptr);
-    ~EmoticonCategoryButton() override;
+    explicit EmojiCategoryButton(QWidget *parent = nullptr);
+    ~EmojiCategoryButton() override;
 };
 }

@@ -7,7 +7,7 @@
 #include "emoticoncategorybuttons.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include "emoticoncategorybutton.h"
+#include "emojicategorybutton.h"
 #include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 #include <QButtonGroup>
@@ -62,7 +62,7 @@ void EmoticonCategoryButtons::wheelEvent(QWheelEvent *event)
 
 void EmoticonCategoryButtons::addButton(const QString &name, const QString &category, const QString &toolTip)
 {
-    auto button = new EmoticonCategoryButton(this);
+    auto button = new EmojiCategoryButton(this);
     button->setText(name);
     button->setToolTip(toolTip);
     mMainLayout->addWidget(button);

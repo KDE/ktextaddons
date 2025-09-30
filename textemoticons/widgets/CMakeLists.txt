@@ -24,8 +24,8 @@ target_sources(
         textemoticonswidgets_private_export.h
         emoticontexteditaction.h
         emoticontexteditaction.cpp
-        emoticoncategorybutton.h
-        emoticoncategorybutton.cpp
+        emojicategorybutton.h
+        emojicategorybutton.cpp
         emoticonitemdelegate.cpp
         emoticonitemdelegate.h
         emoticontonecombobox.h
