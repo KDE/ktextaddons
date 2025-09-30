@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <KLazyLocalizedString>
+#include <QDebug>
 #include <QStringList>
 namespace TextAutoGenerateText
 {
@@ -31,3 +32,4 @@ private:
     QString mName;
 };
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty &t);

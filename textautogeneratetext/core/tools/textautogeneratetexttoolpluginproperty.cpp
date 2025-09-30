@@ -40,3 +40,11 @@ void TextAutoGenerateTextToolPluginProperty::setTypeElements(const QStringList &
 {
     mTypeElements = newEnumElements;
 }
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty &t)
+{
+    d.space() << "typeElements:" << t.typeElements();
+    d.space() << "description:" << t.description().untranslatedText();
+    d.space() << "name:" << t.name();
+    return d;
+}
