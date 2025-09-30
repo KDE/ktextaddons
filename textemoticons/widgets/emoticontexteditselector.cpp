@@ -8,8 +8,8 @@
 #include "emoticontexteditselector.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "emojilistview.h"
 #include "emoticoncategorybuttons.h"
-#include "emoticonlistview.h"
 #include "emoticontonecombobox.h"
 
 #include <KLocalizedString>
@@ -29,7 +29,7 @@ public:
     explicit EmoticonTextEditSelectorPrivate(EmoticonTextEditSelector *q)
         : searchUnicodeLineEdit(new QLineEdit(q))
         , categoryButtons(new EmoticonCategoryButtons(q))
-        , emoticonListView(new EmoticonListView(q))
+        , emoticonListView(new EmojiListView(q))
         , emoticonToneComboBox(new EmoticonToneComboBox(q))
         , emojiSortFilterProxyModel(new TextEmoticonsCore::EmojiSortFilterProxyModel(q))
         , qq(q)
@@ -63,7 +63,7 @@ public:
 
     QLineEdit *const searchUnicodeLineEdit;
     EmoticonCategoryButtons *const categoryButtons;
-    EmoticonListView *const emoticonListView;
+    EmojiListView *const emoticonListView;
     EmoticonToneComboBox *const emoticonToneComboBox;
     TextEmoticonsCore::EmojiSortFilterProxyModel *const emojiSortFilterProxyModel;
     bool customEmojiSupport = false;
@@ -104,8 +104,8 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
 
     d->emojiSortFilterProxyModel->setObjectName(u"mEmoticonProxyModel"_s);
     d->emoticonListView->setModel(d->emojiSortFilterProxyModel);
-    connect(d->emoticonListView, &EmoticonListView::fontSizeChanged, d->emoticonListView, &EmoticonListView::setFontSize);
-    connect(d->emoticonListView, &EmoticonListView::emojiItemSelected, this, [this](const QString &str, const QString &identifier) {
+    connect(d->emoticonListView, &EmojiListView::fontSizeChanged, d->emoticonListView, &EmojiListView::setFontSize);
+    connect(d->emoticonListView, &EmojiListView::emojiItemSelected, this, [this](const QString &str, const QString &identifier) {
         d->slotItemSelected(str, identifier);
     });
     connect(d->categoryButtons, &EmoticonCategoryButtons::categorySelected, this, [this](const QString &category) {
@@ -118,7 +118,7 @@ EmoticonTextEditSelector::EmoticonTextEditSelector(QWidget *parent)
         d->slotUsedIdentifierChanged(lst);
     });
 
-    connect(d->emoticonListView, &EmoticonListView::clearHistory, this, []() {
+    connect(d->emoticonListView, &EmojiListView::clearHistory, this, []() {
         TextEmoticonsCore::EmojiModelManager::self()->setRecentIdentifier(QStringList());
     });
 

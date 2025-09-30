@@ -9,12 +9,12 @@
 #include <QListView>
 namespace TextEmoticonsWidgets
 {
-class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmoticonListView : public QListView
+class TEXTEMOTICONSWIDGETS_TESTS_EXPORT EmojiListView : public QListView
 {
     Q_OBJECT
 public:
-    explicit EmoticonListView(QWidget *parent = nullptr);
-    ~EmoticonListView() override;
+    explicit EmojiListView(QWidget *parent = nullptr);
+    ~EmojiListView() override;
 
     void setFontSize(int newFontSize);
 

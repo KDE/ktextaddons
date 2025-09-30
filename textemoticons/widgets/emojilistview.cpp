@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticonlistview.h"
+#include "emojilistview.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include "emojimodel.h"
@@ -19,7 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 
 using namespace TextEmoticonsWidgets;
-EmoticonListView::EmoticonListView(QWidget *parent)
+EmojiListView::EmojiListView(QWidget *parent)
     : QListView(parent)
 {
     // setUniformItemSizes(true);
@@ -31,19 +31,19 @@ EmoticonListView::EmoticonListView(QWidget *parent)
     auto emoticonDelegate = new EmoticonItemDelegate(this);
     emoticonDelegate->setObjectName(u"emoticonDelegate"_s);
     setItemDelegate(emoticonDelegate);
-    connect(this, &QListView::clicked, this, &EmoticonListView::selectEmoji);
+    connect(this, &QListView::clicked, this, &EmojiListView::selectEmoji);
 }
 
-EmoticonListView::~EmoticonListView() = default;
+EmojiListView::~EmojiListView() = default;
 
-void EmoticonListView::selectEmoji(const QModelIndex &index)
+void EmojiListView::selectEmoji(const QModelIndex &index)
 {
     const QString emojiIdentifier = index.data(TextEmoticonsCore::EmojiModel::Identifier).toString();
     const QString emojiStr = index.data().toString();
     Q_EMIT emojiItemSelected(emojiStr, emojiIdentifier);
 }
 
-void EmoticonListView::keyPressEvent(QKeyEvent *event)
+void EmojiListView::keyPressEvent(QKeyEvent *event)
 {
     const bool isControlClicked = event->modifiers() & Qt::ControlModifier;
     int fontSize = mFontSize;
@@ -64,7 +64,7 @@ void EmoticonListView::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void EmoticonListView::wheelEvent(QWheelEvent *e)
+void EmojiListView::wheelEvent(QWheelEvent *e)
 {
     int fontSize = mFontSize;
     if (e->modifiers() == Qt::ControlModifier) {
@@ -79,7 +79,7 @@ void EmoticonListView::wheelEvent(QWheelEvent *e)
     }
 }
 
-void EmoticonListView::setFontSize(int newFontSize)
+void EmojiListView::setFontSize(int newFontSize)
 {
     if (newFontSize < 10 || newFontSize > 30) {
         return;
@@ -90,7 +90,7 @@ void EmoticonListView::setFontSize(int newFontSize)
     }
 }
 
-void EmoticonListView::applyFontSize()
+void EmojiListView::applyFontSize()
 {
     QFont f = font();
     f.setPointSize(mFontSize);
@@ -100,27 +100,27 @@ void EmoticonListView::applyFontSize()
     setFont(f);
 }
 
-bool EmoticonListView::isRecentView() const
+bool EmojiListView::isRecentView() const
 {
     return mIsRecentView;
 }
 
-void EmoticonListView::setIsRecentView(bool newIsRecentView)
+void EmojiListView::setIsRecentView(bool newIsRecentView)
 {
     mIsRecentView = newIsRecentView;
 }
 
-void EmoticonListView::contextMenuEvent(QContextMenuEvent *event)
+void EmojiListView::contextMenuEvent(QContextMenuEvent *event)
 {
     if (mIsRecentView) {
         if (model()->rowCount() > 0) {
             QMenu menu(this);
             auto clearRecent = new QAction(i18nc("@action", "Clear Recents"), &menu);
-            connect(clearRecent, &QAction::triggered, this, &EmoticonListView::clearHistory);
+            connect(clearRecent, &QAction::triggered, this, &EmojiListView::clearHistory);
             menu.addAction(clearRecent);
             menu.exec(event->globalPos());
         }
     }
 }
 
-#include "moc_emoticonlistview.cpp"
+#include "moc_emojilistview.cpp"

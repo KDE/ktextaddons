@@ -4,20 +4,20 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "emoticonlistviewtest.h"
+#include "emojilistviewtest.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include "emoticonlistview.h"
+#include "emojilistview.h"
 #include <QTest>
-QTEST_MAIN(EmoticonListViewTest)
-EmoticonListViewTest::EmoticonListViewTest(QObject *parent)
+QTEST_MAIN(EmojiListViewTest)
+EmojiListViewTest::EmojiListViewTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-void EmoticonListViewTest::shouldHaveDefaultValues()
+void EmojiListViewTest::shouldHaveDefaultValues()
 {
-    TextEmoticonsWidgets::EmoticonListView w;
+    TextEmoticonsWidgets::EmojiListView w;
     QCOMPARE(w.viewMode(), QListView::IconMode);
     QCOMPARE(w.horizontalScrollBarPolicy(), Qt::ScrollBarAlwaysOff);
     // QVERIFY(w.uniformItemSizes());
@@ -27,4 +27,4 @@ void EmoticonListViewTest::shouldHaveDefaultValues()
     QCOMPARE(w.itemDelegate()->objectName(), u"emoticonDelegate"_s);
 }
 
-#include "moc_emoticonlistviewtest.cpp"
+#include "moc_emojilistviewtest.cpp"

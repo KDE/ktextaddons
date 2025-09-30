@@ -7,8 +7,8 @@
 #include "emoticontexteditselectortest.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "emojilistview.h"
 #include "emoticoncategorybuttons.h"
-#include "emoticonlistview.h"
 #include "emoticontexteditselector.h"
 #include "emoticontonecombobox.h"
 #include <QLineEdit>
@@ -33,7 +33,7 @@ void EmoticonTextEditSelectorTest::shouldHaveDefaultValues()
     auto mCategoryButtons = w.findChild<TextEmoticonsWidgets::EmoticonCategoryButtons *>(u"mCategoryButtons"_s);
     QVERIFY(mCategoryButtons);
 
-    auto mEmoticonListView = w.findChild<TextEmoticonsWidgets::EmoticonListView *>(u"mEmoticonListView"_s);
+    auto mEmoticonListView = w.findChild<TextEmoticonsWidgets::EmojiListView *>(u"mEmoticonListView"_s);
     QVERIFY(mEmoticonListView);
 
     auto mSearchUnicodeLineEdit = w.findChild<QLineEdit *>(u"mSearchUnicodeLineEdit"_s);

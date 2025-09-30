@@ -8,7 +8,7 @@ macro(add_textemoticonwidgets_unittest _source)
 endmacro()
 
 add_textemoticonwidgets_unittest(emoticontexteditselectortest.cpp)
-add_textemoticonwidgets_unittest(emoticonlistviewtest.cpp)
+add_textemoticonwidgets_unittest(emojilistviewtest.cpp)
 add_textemoticonwidgets_unittest(emoticoncategorybuttonstest.cpp)
 add_textemoticonwidgets_unittest(emoticoncategorybuttontest.cpp)
 add_textemoticonwidgets_unittest(emoticontonecomboboxtest.cpp)

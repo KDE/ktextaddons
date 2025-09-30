@@ -19,8 +19,8 @@ target_sources(
         emoticontexteditselector.h
         emoticoncategorybuttons.cpp
         emoticoncategorybuttons.h
-        emoticonlistview.cpp
-        emoticonlistview.h
+        emojilistview.cpp
+        emojilistview.h
         textemoticonswidgets_private_export.h
         emoticontexteditaction.h
         emoticontexteditaction.cpp
