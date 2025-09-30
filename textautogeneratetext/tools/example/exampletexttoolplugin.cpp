@@ -26,11 +26,6 @@ ExampleTextToolPlugin::ExampleTextToolPlugin(QObject *parent, const QVariantList
 
 ExampleTextToolPlugin::~ExampleTextToolPlugin() = default;
 
-void ExampleTextToolPlugin::executeTool()
-{
-    // TODO
-}
-
 QString ExampleTextToolPlugin::displayName() const
 {
     // Don't translate it

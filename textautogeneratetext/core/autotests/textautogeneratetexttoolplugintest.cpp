@@ -16,7 +16,6 @@ public:
     }
     ~CustomTextToolPlugin() override = default;
 
-    void executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 
@@ -27,10 +26,6 @@ public:
 void CustomTextToolPlugin::callTools([[maybe_unused]] const QByteArray &chatId,
                                      [[maybe_unused]] const QByteArray &uuid,
                                      [[maybe_unused]] const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
-{
-}
-
-void CustomTextToolPlugin::executeTool()
 {
 }
 
@@ -53,7 +48,6 @@ public:
     }
     ~CustomTextToolPlugin2() override = default;
 
-    void executeTool() override;
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 
@@ -66,10 +60,6 @@ void CustomTextToolPlugin2::callTools([[maybe_unused]] const QByteArray &chatId,
                                       [[maybe_unused]] const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
     // Nothing
-}
-
-void CustomTextToolPlugin2::executeTool()
-{
 }
 
 QString CustomTextToolPlugin2::displayName() const
