@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextemoticons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
 "PO-Revision-Date: 2023-04-15 01:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -64,24 +64,29 @@ msgstr "Regionales"
 msgid "Flags"
 msgstr "Flaggen"
 
-#: widgets/emoticoncategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Verlauf"
 
-#: widgets/emoticoncategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: widgets/emoticonlistview.cpp:118
+#: widgets/emojilistview.cpp:118
 #, fuzzy, kde-format
 #| msgid "Clear Recents"
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "„Kürzliche“ leeren"
+
+#: widgets/emojitonecombobox.cpp:17
+#, kde-format
+msgid "Select Tone"
+msgstr ""
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
@@ -94,11 +99,6 @@ msgstr "Smiley hinzufügen"
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Emoticon suchen ..."
-
-#: widgets/emoticontonecombobox.cpp:17
-#, kde-format
-msgid "Select Tone"
-msgstr ""
 
 #: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
-"PO-Revision-Date: 2025-02-19 18:01+0100\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
+"PO-Revision-Date: 2025-10-01 00:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -62,23 +62,28 @@ msgstr "Regionaal"
 msgid "Flags"
 msgstr "Vlaggen"
 
-#: widgets/emoticoncategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Geschiedenis"
 
-#: widgets/emoticoncategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Aangepast"
 
-#: widgets/emoticonlistview.cpp:118
+#: widgets/emojilistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Recent wissen"
+
+#: widgets/emojitonecombobox.cpp:17
+#, kde-format
+msgid "Select Tone"
+msgstr "Toon selecteren"
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
@@ -91,13 +96,8 @@ msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Emoticon zoeken…"
 
-#: widgets/emoticontonecombobox.cpp:17
-#, kde-format
-msgid "Select Tone"
-msgstr "Toon selecteren"
-
 #: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "Andere emoji selecteren"

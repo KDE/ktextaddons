@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
-"PO-Revision-Date: 2025-02-19 05:37+0100\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
+"PO-Revision-Date: 2025-09-30 08:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -63,23 +63,28 @@ msgstr "რეგიონალური"
 msgid "Flags"
 msgstr "ალმები"
 
-#: widgets/emoticoncategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "ისტორია"
 
-#: widgets/emoticoncategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "ხელით მითითება"
 
-#: widgets/emoticonlistview.cpp:118
+#: widgets/emojilistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "უახლესების გასუფთავება"
+
+#: widgets/emojitonecombobox.cpp:17
+#, kde-format
+msgid "Select Tone"
+msgstr "ტონის არჩევა"
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
@@ -92,13 +97,8 @@ msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "ემოციის მოძებნა…"
 
-#: widgets/emoticontonecombobox.cpp:17
-#, kde-format
-msgid "Select Tone"
-msgstr "ტონის არჩევა"
-
 #: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "აირჩიეთ სხვა ემოჯი"

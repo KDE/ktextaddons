@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
-"PO-Revision-Date: 2025-02-19 07:28+0100\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
+"PO-Revision-Date: 2025-09-30 07:23+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -63,23 +63,28 @@ msgstr "Regionalno"
 msgid "Flags"
 msgstr "Zastave"
 
-#: widgets/emoticoncategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Zgodovina"
 
-#: widgets/emoticoncategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Po meri"
 
-#: widgets/emoticonlistview.cpp:118
+#: widgets/emojilistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Počisti nedavne"
+
+#: widgets/emojitonecombobox.cpp:17
+#, kde-format
+msgid "Select Tone"
+msgstr "Izberi ton"
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
@@ -92,13 +97,8 @@ msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Poišči čustvenčka…"
 
-#: widgets/emoticontonecombobox.cpp:17
-#, kde-format
-msgid "Select Tone"
-msgstr "Izberi ton"
-
 #: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "Izberi drugega čustvenčka"

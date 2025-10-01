@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
 "PO-Revision-Date: 2025-02-20 09:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -63,23 +63,28 @@ msgstr "منطقة"
 msgid "Flags"
 msgstr "أعلام"
 
-#: widgets/emoticoncategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "مستخدمة"
 
-#: widgets/emoticoncategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "مخصصة"
 
-#: widgets/emoticonlistview.cpp:118
+#: widgets/emojilistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "امحُ الحديثة"
+
+#: widgets/emojitonecombobox.cpp:17
+#, kde-format
+msgid "Select Tone"
+msgstr "اختر درجة اللون"
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
@@ -91,11 +96,6 @@ msgstr "أضف وجهًا تعبيريًّا"
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "بحث في الصور التعبيرية..."
-
-#: widgets/emoticontonecombobox.cpp:17
-#, kde-format
-msgid "Select Tone"
-msgstr "اختر درجة اللون"
 
 #: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format

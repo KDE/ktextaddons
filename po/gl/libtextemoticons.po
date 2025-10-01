@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
+"POT-Creation-Date: 2025-10-01 00:44+0000\n"
 "PO-Revision-Date: 2025-02-21 07:32+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -63,23 +63,28 @@ msgid "Flags"
 msgstr "Bandeiras"
 
 # skip-rule: trasno-history
-#: widgets/emoticoncategorybuttons.cpp:86
+#: widgets/emojicategorybuttons.cpp:86
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Historia"
 
-#: widgets/emoticoncategorybuttons.cpp:90
+#: widgets/emojicategorybuttons.cpp:90
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Costumes"
 
-#: widgets/emoticonlistview.cpp:118
+#: widgets/emojilistview.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Clear Recents"
 msgstr "Borrar a lista de recentes"
+
+#: widgets/emojitonecombobox.cpp:17
+#, kde-format
+msgid "Select Tone"
+msgstr "Seleccionar o ton"
 
 #: widgets/emoticontexteditaction.cpp:56
 #, kde-format
@@ -91,11 +96,6 @@ msgstr "Engadir unha emoticona"
 msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Buscar unha emoticona…"
-
-#: widgets/emoticontonecombobox.cpp:17
-#, kde-format
-msgid "Select Tone"
-msgstr "Seleccionar o ton"
 
 #: widgets/emoticonwidgetactionwidget.cpp:85
 #, kde-format
