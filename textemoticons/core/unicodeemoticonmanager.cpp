@@ -71,12 +71,24 @@ UnicodeEmoticonManager::UnicodeEmoticonManager(QObject *parent)
     d->loadUnicodeEmoji();
 }
 
+UnicodeEmoticonManager::UnicodeEmoticonManager(const QString &filename, QObject *parent)
+    : QObject(parent)
+    , d(new TextEmoticonsCore::UnicodeEmoticonManagerPrivate)
+{
+    d->loadUnicodeEmoji(filename);
+}
+
 UnicodeEmoticonManager::~UnicodeEmoticonManager() = default;
 
 UnicodeEmoticonManager *UnicodeEmoticonManager::self()
 {
     static UnicodeEmoticonManager s_self;
     return &s_self;
+}
+
+void UnicodeEmoticonManager::loadUnicodeEmoji(const QString &filename)
+{
+    d->loadUnicodeEmoji(filename);
 }
 
 QList<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
