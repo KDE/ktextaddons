@@ -18,15 +18,15 @@ using namespace TextEmoticonsCore;
 class TextEmoticonsCore::UnicodeEmoticonManagerPrivate
 {
 public:
-    void loadUnicodeEmoji();
+    void loadUnicodeEmoji(const QString &filename = {});
     [[nodiscard]] QString i18nUnicodeCategory(const QString &name) const;
     QList<UnicodeEmoticon> unicodeEmojiList;
 };
 
-void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji()
+void UnicodeEmoticonManagerPrivate::loadUnicodeEmoji(const QString &filename)
 {
     const UnicodeEmoticonParser unicodeParser;
-    QFile file(u":/emoji.json"_s);
+    QFile file(filename.isEmpty() ? u":/emoji.json"_s : filename);
     if (!file.open(QFile::ReadOnly)) {
         qCWarning(TEXTEMOTICONSCORE_LOG) << "Impossible to open file: " << file.errorString();
         return;
