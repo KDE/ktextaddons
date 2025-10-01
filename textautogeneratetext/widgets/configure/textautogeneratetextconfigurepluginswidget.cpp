@@ -77,6 +77,10 @@ void TextAutoGenerateTextConfigurePluginsWidget::save()
     savePlugins(TextAutoGeneratePluginTextManager::self()->configGroupName(),
                 TextAutoGeneratePluginTextManager::self()->configPrefixSettingKey(),
                 mPluginTextItems);
+
+    savePlugins(TextAutoGenerateTextToolPluginManager::self()->configGroupName(),
+                TextAutoGenerateTextToolPluginManager::self()->configPrefixSettingKey(),
+                mPluginToolsItems);
 }
 
 void TextAutoGenerateTextConfigurePluginsWidget::load()
@@ -109,7 +113,7 @@ void TextAutoGenerateTextConfigurePluginsWidget::initialize()
                  i18n("Tools Plugins"),
                  TextAutoGenerateTextToolPluginManager::self()->configGroupName(),
                  TextAutoGenerateTextToolPluginManager::self()->configPrefixSettingKey(),
-                 mPluginTextItems,
+                 mPluginToolsItems,
                  toolPluginGroupName());
 
     mTreePluginWidget->expandAll();

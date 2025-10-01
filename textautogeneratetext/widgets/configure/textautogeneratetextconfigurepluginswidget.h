@@ -63,5 +63,6 @@ private:
                                                      const QString &configureGroupName,
                                                      bool checkable = true);
     QList<PluginItem *> mPluginTextItems;
+    QList<PluginItem *> mPluginToolsItems;
 };
 }
