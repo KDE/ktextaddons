@@ -64,18 +64,18 @@ QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) 
     return {};
 }
 
-UnicodeEmoticonManager::UnicodeEmoticonManager(QObject *parent)
+UnicodeEmoticonManager::UnicodeEmoticonManager(const QString &filename, QObject *parent)
     : QObject(parent)
     , d(new TextEmoticonsCore::UnicodeEmoticonManagerPrivate)
 {
-    d->loadUnicodeEmoji();
+    d->loadUnicodeEmoji(filename);
 }
 
 UnicodeEmoticonManager::~UnicodeEmoticonManager() = default;
 
-UnicodeEmoticonManager *UnicodeEmoticonManager::self()
+UnicodeEmoticonManager *UnicodeEmoticonManager::self(const QString &filename)
 {
-    static UnicodeEmoticonManager s_self;
+    static UnicodeEmoticonManager s_self(filename);
     return &s_self;
 }
 

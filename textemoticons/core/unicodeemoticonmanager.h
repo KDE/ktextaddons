@@ -27,7 +27,7 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
     Q_PROPERTY(QList<EmoticonCategory> categories READ categories CONSTANT)
 
 public:
-    static UnicodeEmoticonManager *self();
+    static UnicodeEmoticonManager *self(const QString &filename = {});
 
     [[nodiscard]] QList<UnicodeEmoticon> unicodeEmojiList() const;
 
@@ -39,7 +39,7 @@ public:
     void loadUnicodeEmoji(const QString &filename);
 
 protected:
-    explicit UnicodeEmoticonManager(QObject *parent = nullptr);
+    explicit UnicodeEmoticonManager(const QString &filename = {}, QObject *parent = nullptr);
     ~UnicodeEmoticonManager() override;
 
     friend UnicodeEmoticonManagerTest;
