@@ -127,13 +127,14 @@ void TextAutoGenerateTextConfigurePluginsWidget::savePlugins(const QString &grou
     }
     QStringList enabledPlugins;
     QStringList disabledPlugins;
-    for (PluginItem *item : listItems) {
+    for (const PluginItem *item : listItems) {
         if (item->checkState(0) == Qt::Checked) {
             enabledPlugins << item->mIdentifier;
         } else {
             disabledPlugins << item->mIdentifier;
         }
     }
+
     TextAutoGeneratePluginUtils::savePluginSettings(groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
 }
 
