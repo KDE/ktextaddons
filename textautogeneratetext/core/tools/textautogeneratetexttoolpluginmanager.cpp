@@ -6,6 +6,7 @@
 
 #include "textautogeneratetexttoolpluginmanager.h"
 
+#include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetexttoolplugin.h"
 
 #include <KPluginFactory>
@@ -143,12 +144,17 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
 {
     QJsonArray toolsArray;
     for (const QByteArray &t : tools) {
+        bool toolFound = false;
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
             if (it->plugin->toolNameId() == t) {
                 toolsArray.append(it->plugin->metadata());
+                toolFound = true;
                 break;
             }
+        }
+        if (!toolFound) {
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Tool not found" << t;
         }
     }
     return toolsArray;
