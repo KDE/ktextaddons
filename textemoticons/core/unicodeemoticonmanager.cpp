@@ -65,15 +65,10 @@ QString UnicodeEmoticonManagerPrivate::i18nUnicodeCategory(const QString &name) 
 }
 
 UnicodeEmoticonManager::UnicodeEmoticonManager(QObject *parent)
-    : UnicodeEmoticonManager::UnicodeEmoticonManager({}, parent)
-{
-}
-
-UnicodeEmoticonManager::UnicodeEmoticonManager(const QString &filename, QObject *parent)
     : QObject(parent)
     , d(new TextEmoticonsCore::UnicodeEmoticonManagerPrivate)
 {
-    d->loadUnicodeEmoji(filename);
+    d->loadUnicodeEmoji();
 }
 
 UnicodeEmoticonManager::~UnicodeEmoticonManager() = default;
