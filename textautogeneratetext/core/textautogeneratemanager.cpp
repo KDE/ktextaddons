@@ -80,6 +80,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     const QList<TextAutoGenerateTextToolPlugin *> lstPlugins = TextAutoGenerateTextToolPluginManager::self()->pluginsList();
     for (const auto p : lstPlugins) {
         connect(p, &TextAutoGenerateTextToolPlugin::finished, this, &TextAutoGenerateManager::slotPluginFinished);
+        connect(p, &TextAutoGenerateTextToolPlugin::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
     }
 }
 

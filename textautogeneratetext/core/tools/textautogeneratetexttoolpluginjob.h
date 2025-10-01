@@ -44,6 +44,7 @@ public:
 
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
+    void toolInProgress(const QString &info);
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> mProperties;
