@@ -278,6 +278,7 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
         }
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         if (!emptyDocument) {
+            popup->addSeparator();
             QAction *speakAction = popup->addAction(i18n("Speak Text"));
             speakAction->setIcon(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s));
             connect(speakAction, &QAction::triggered, this, &RichTextEditor::slotSpeakText);
