@@ -178,6 +178,7 @@ void OllamaManager::loadModels()
             i.modelName = installed.generateModelName();
             i.identifier = installed.name();
             info.models.push_back(std::move(i));
+            // TODO store capacities + langs
             mInstalledInfos.append(std::move(installed));
         }
 
