@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QJsonObject>
 #include <QString>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledInfo
 {
@@ -44,6 +45,9 @@ public:
     [[nodiscard]] QString parentModel() const;
     void setParentModel(const QString &newParentModel);
 
+    [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
+    void setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories);
+
 private:
     QString mName;
     QString mModel;
@@ -53,6 +57,7 @@ private:
     QString mModifyAt;
     QString mGeneratedModelName;
     QString mParentModel;
+    TextAutoGenerateText::TextAutoGenerateManager::Categories mCategories = TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown;
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);
 QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t);

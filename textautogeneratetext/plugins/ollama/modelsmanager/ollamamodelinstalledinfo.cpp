@@ -51,6 +51,16 @@ void OllamaModelInstalledInfo::setParentModel(const QString &newParentModel)
     mParentModel = newParentModel;
 }
 
+TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaModelInstalledInfo::categories() const
+{
+    return mCategories;
+}
+
+void OllamaModelInstalledInfo::setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories)
+{
+    mCategories = newCategories;
+}
+
 QString OllamaModelInstalledInfo::parameterSize() const
 {
     return mParameterSize;

@@ -42,6 +42,8 @@ QVariant OllamaModelInstalledInfosModel::data(const QModelIndex &index, int role
     case Name:
     case Qt::DisplayRole:
         return modelInfo.name();
+    case Categories:
+        return QVariant::fromValue(modelInfo.categories());
     default:
         break;
     }

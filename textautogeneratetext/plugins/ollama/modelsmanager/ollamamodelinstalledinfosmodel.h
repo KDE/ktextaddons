@@ -23,6 +23,7 @@ public:
         QuantizationLevel,
         ParameterSize,
         DescriptionInfo,
+        Categories,
     };
     Q_ENUM(ModelInfoRoles)
 

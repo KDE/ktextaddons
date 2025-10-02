@@ -32,10 +32,9 @@ void OllamaModelInstalledInfosSortProxyModel::setCategories(const QList<TextAuto
 bool OllamaModelInstalledInfosSortProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex modelIndex = sourceModel()->index(source_row, 0, source_parent);
-#if 0
     if (!mCategories.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateManager::Categories categories =
-            modelIndex.data(OllamaModelAvailableInfosModel::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
+            modelIndex.data(OllamaModelInstalledInfosModel::Categories).value<TextAutoGenerateText::TextAutoGenerateManager::Categories>();
         if (categories == TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown) {
             return true;
         }
@@ -45,7 +44,6 @@ bool OllamaModelInstalledInfosSortProxyModel::filterAcceptsRow(int source_row, c
             }
         }
     }
-#endif
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
