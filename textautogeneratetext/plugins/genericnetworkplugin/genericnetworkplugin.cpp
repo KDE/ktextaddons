@@ -143,7 +143,13 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
                         QPair<QByteArray, QMetaObject::Connection>(
                             messageUuid,
                             connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, messageUuid, chatId, this] {
-                                manager()->changeInProgress(chatId, messageUuid, false);
+                                const auto response = reply->readResponse();
+                                if (response.hasToolCallArguments()) {
+                                    manager()->callTools(chatId, messageUuid, response.info);
+                                } else {
+                                    manager()->changeInProgress(chatId, messageUuid, false);
+                                }
+
                                 qCDebug(AUTOGENERATETEXT_GENERICNETWORK_PLUGIN_LOG) << " progress finished";
                                 mConnections.remove(reply);
                                 reply->deleteLater();
