@@ -177,6 +177,7 @@ void OllamaManager::loadModels()
             TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier i;
             i.modelName = installed.generateModelName();
             i.identifier = installed.name();
+            // TODO installed.setCategories()
             info.models.push_back(std::move(i));
             // TODO store capacities + langs
             mInstalledInfos.append(std::move(installed));
