@@ -213,7 +213,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getCompletion(const 
         data["system"_L1] = mOllamaSettings->systemPrompt();
     }
 #endif
-    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon " << data;
+    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaReply::RequestTypes::StreamingGenerate,
@@ -239,7 +239,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
         data["seed"_L1] = mOllamaSettings->seed();
     }
     qDebug() << " OllamaManager::getChatCompletion json: " << data;
-    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " JSon: " << data;
+    qCDebug(AUTOGENERATETEXT_OLLAMA_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         OllamaReply::RequestTypes::StreamingChat,

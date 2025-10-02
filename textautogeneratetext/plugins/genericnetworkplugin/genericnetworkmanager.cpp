@@ -105,7 +105,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     if (mGenericNetworkSettings->seed() > 0) {
         data["seed"_L1] = mGenericNetworkSettings->seed();
     }
-    qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " JSon: " << data << " req " << req.url();
+    qCDebug(AUTOGENERATETEXT_GENERICNETWORK_LOG) << " Json: " << data << " req " << req.url();
     auto reply = new GenericNetworkReply{
         TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->post(req, QJsonDocument(data).toJson(QJsonDocument::Compact)),
         GenericNetworkReply::RequestTypes::StreamingChat,
