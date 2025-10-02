@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-30 00:42+0000\n"
+"POT-Creation-Date: 2025-10-02 00:41+0000\n"
 "PO-Revision-Date: 2025-09-22 05:54+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -72,57 +72,57 @@ msgstr ""
 "\n"
 "工具：%1"
 
-#: core/textautogeneratemanager.cpp:130
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:132
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:134
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:136
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Huge"
 msgstr "巨大"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Multilingual"
 msgstr "多語言"
 
-#: core/textautogeneratemanager.cpp:142
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Code"
 msgstr "程式碼"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:145
 #, kde-format
 msgid "Math"
 msgstr "數學"
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:147
 #, kde-format
 msgid "Vision"
 msgstr "視覺"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:151
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
@@ -1921,22 +1921,22 @@ msgstr "允許選取工具"
 msgid "Restart is necessary for applying the changes."
 msgstr "需要重新啟動變更才會生效。"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:102
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
 #, kde-format
 msgid "Text Plugins"
 msgstr "文字外掛程式"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:109
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
 #, kde-format
 msgid "Tools Plugins"
 msgstr "工具外掛程式"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:172
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:177
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:174
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"

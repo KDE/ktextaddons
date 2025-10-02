@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:41+0000\n"
+"POT-Creation-Date: 2025-10-02 00:41+0000\n"
 "PO-Revision-Date: 2025-08-26 11:19+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -48,19 +48,19 @@ msgstr "שפת בדיקת האיות"
 
 #: plaintexteditor/plaintexteditor.cpp:209
 #: richtextbrowser/richtextbrowser.cpp:173
-#: richtexteditor/richtexteditor.cpp:281
+#: richtexteditor/richtexteditor.cpp:282
 #, kde-format
 msgid "Speak Text"
 msgstr "הקראת טקסט"
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:508
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "אין תוכן לבדיקת איות."
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:526
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "אין מנגנון זמין לבדיקת איות."
@@ -70,20 +70,20 @@ msgstr "אין מנגנון זמין לבדיקת איות."
 msgid "Allow Tabulations"
 msgstr "לאפשר טאבים"
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr "אין מנגנון זמין לבדיקת איות. לשלוח את ההודעה בכל זאת?"
 
-#: richtexteditor/richtexteditor.cpp:520
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "שליחה"
 
-#: richtexteditor/richtexteditor.cpp:542
+#: richtexteditor/richtexteditor.cpp:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

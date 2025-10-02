@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:41+0000\n"
+"POT-Creation-Date: 2025-10-02 00:41+0000\n"
 "PO-Revision-Date: 2024-07-13 02:23+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -45,19 +45,19 @@ msgstr "Lingua del controllo ortografico"
 
 #: plaintexteditor/plaintexteditor.cpp:209
 #: richtextbrowser/richtextbrowser.cpp:173
-#: richtexteditor/richtexteditor.cpp:281
+#: richtexteditor/richtexteditor.cpp:282
 #, kde-format
 msgid "Speak Text"
 msgstr "Pronuncia il testo"
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:508
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Niente di cui fare il controllo ortografico."
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:526
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Nessun motore trovato per il controllo ortografico."
@@ -67,7 +67,7 @@ msgstr "Nessun motore trovato per il controllo ortografico."
 msgid "Allow Tabulations"
 msgstr "Permetti tabulazioni"
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -76,13 +76,13 @@ msgstr ""
 "Nessun motore disponibile per il controllo ortografico. Vuoi inviare "
 "comunque il messaggio di posta?"
 
-#: richtexteditor/richtexteditor.cpp:520
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Invia"
 
-#: richtexteditor/richtexteditor.cpp:542
+#: richtexteditor/richtexteditor.cpp:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

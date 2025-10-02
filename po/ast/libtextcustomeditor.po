@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:41+0000\n"
+"POT-Creation-Date: 2025-10-02 00:41+0000\n"
 "PO-Revision-Date: 2024-03-27 22:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -45,19 +45,19 @@ msgstr ""
 
 #: plaintexteditor/plaintexteditor.cpp:209
 #: richtextbrowser/richtextbrowser.cpp:173
-#: richtexteditor/richtexteditor.cpp:281
+#: richtexteditor/richtexteditor.cpp:282
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:508
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr ""
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:526
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr ""
@@ -67,20 +67,20 @@ msgstr ""
 msgid "Allow Tabulations"
 msgstr ""
 
-#: richtexteditor/richtexteditor.cpp:518
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
 "anyways?"
 msgstr ""
 
-#: richtexteditor/richtexteditor.cpp:520
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr ""
 
-#: richtexteditor/richtexteditor.cpp:542
+#: richtexteditor/richtexteditor.cpp:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
