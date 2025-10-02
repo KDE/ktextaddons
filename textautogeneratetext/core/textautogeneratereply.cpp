@@ -52,11 +52,16 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
     for (int i = 0; i < array.count(); ++i) {
         const QJsonObject obj = array[i].toObject();
         // qDebug() << " obj " << obj;
-        // QJsonArray([{"function":{"arguments":{"city":"Grenoble"},"name":"example_tool"}}])
+        // {\"id\":\"QNfTI1iiJ\",\"function\":{\"name\":\"current_date_time_tool\",\"arguments\":\"{\\\"currentdatetime\\\" :\\\"time\\\"}\"},\"index\":0}]}
         const QJsonObject functionObj = obj["function"_L1].toObject();
         qDebug() << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
-        const QJsonObject argumentObj = functionObj["arguments"_L1].toObject();
+
+        const QString arguments = functionObj["arguments"_L1].toString();
+        // qDebug() << " arguments: " << arguments;
+        const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1());
+
+        const QJsonObject argumentObj = doc.object();
         const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
@@ -65,7 +70,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);
-        qDebug() << " infos " << infos;
+        // qDebug() << " infos " << infos;
     }
     return infos;
 }
