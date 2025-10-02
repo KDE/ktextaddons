@@ -118,7 +118,8 @@ Q_SIGNALS:
     void callTools(const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> &toolsArguments, const QString &toolName);
 
 protected:
-    [[nodiscard]] QList<ToolCallArgumentInfo> parseToolCalls(const QJsonArray &array) const;
+    [[nodiscard]] QList<ToolCallArgumentInfo> parseToolCallsOllama(const QJsonArray &array) const;
+    [[nodiscard]] QList<TextAutoGenerateReply::ToolCallArgumentInfo> parseToolCallsOpenAI(const QJsonArray &array) const;
 
     QNetworkReply *const mReply;
     QByteArray mIncompleteTokens;

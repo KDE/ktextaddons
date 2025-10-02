@@ -84,10 +84,16 @@ TextAutoGenerateText::TextAutoGenerateReply::Response GenericNetworkReply::readR
         for (const auto &tok : mTokens) {
             const QJsonArray choicesArray = tok["choices"_L1].toArray();
             if (!choicesArray.isEmpty()) {
-                ret.response += choicesArray.at(0).toObject()["delta"_L1]["content"_L1].toString();
-            }
-            if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
-                qDebug() << " tool_calls: " << tok["message"_L1]["tool_calls"_L1];
+                const QJsonObject deltaObject = choicesArray.at(0).toObject()["delta"_L1].toObject();
+                if (deltaObject.contains(u"content"_s)) {
+                    ret.response += deltaObject["content"_L1].toString();
+                }
+                if (deltaObject.contains(u"tool_calls"_s)) {
+                    const QJsonArray toolCallResponse = deltaObject["tool_calls"_L1].toArray();
+                    qDebug() << " tool_calls: " << toolCallResponse;
+                    const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOpenAI(toolCallResponse);
+                    ret.info.append(infos);
+                }
             }
         }
         // "{\"id\":\"b72cdf33d58440838134fc042e98521b\",\"object\":\"chat.completion.chunk\",\"created\":1759381277,\"model\":\"magistral-small-2509\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"id\":\"QNfTI1iiJ\",\"function\":{\"name\":\"current_date_time_tool\",\"arguments\":\"{\\\"currentdatetime\\\":
