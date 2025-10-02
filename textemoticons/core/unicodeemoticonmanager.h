@@ -36,8 +36,6 @@ public:
     [[nodiscard]] UnicodeEmoticon unicodeEmoticonForEmoji(const QString &emojiIdentifier) const;
     [[nodiscard]] int count() const;
 
-    void loadUnicodeEmoji(const QString &filename);
-
 protected:
     explicit UnicodeEmoticonManager(const QString &filename = {}, QObject *parent = nullptr);
     ~UnicodeEmoticonManager() override;

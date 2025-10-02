@@ -79,11 +79,6 @@ UnicodeEmoticonManager *UnicodeEmoticonManager::self(const QString &filename)
     return &s_self;
 }
 
-void UnicodeEmoticonManager::loadUnicodeEmoji(const QString &filename)
-{
-    d->loadUnicodeEmoji(filename);
-}
-
 QList<UnicodeEmoticon> UnicodeEmoticonManager::unicodeEmojiList() const
 {
     return d->unicodeEmojiList;
