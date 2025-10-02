@@ -93,6 +93,8 @@ target_sources(
         modelsmanager/ollamamodelcreatefromexistingmodelwidget.h
         modelsmanager/ollamamodelcreatecombobox.h
         modelsmanager/ollamamodelcreatecombobox.cpp
+        modelsmanager/ollamamodelinstalledinfossortproxymodel.h
+        modelsmanager/ollamamodelinstalledinfossortproxymodel.cpp
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
