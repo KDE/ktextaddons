@@ -7,8 +7,10 @@
 
 #include "ollamamanager.h"
 #include "ollamamodelinstalledinfosmodel.h"
+#include "ollamamodelinstalledinfossortproxymodel.h"
 #include "ollamamodelinstalledinfowidget.h"
 #include "ollamamodelinstalledlistview.h"
+#include "ollamamodelsinfoscategoriescombobox.h"
 
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <KLocalizedString>
@@ -23,9 +25,11 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
     : QWidget{parent}
     , mOllamaModelInstalledListView(new OllamaModelInstalledListView(this))
     , mSearchLineEdit(new TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit(this))
+    , mCategoriesComboBox(new OllamaModelsInfosCategoriesComboBox(this))
     , mRemoveModelButton(new QToolButton(this))
     , mOllamaModelInstalledInfoWidget(new OllamaModelInstalledInfoWidget(this))
     , mManager(manager)
+    , mProxyModel(new OllamaModelInstalledInfosSortProxyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainlayout"_s);
@@ -40,6 +44,12 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
 
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     hboxLayout->addWidget(mSearchLineEdit);
+
+    mCategoriesComboBox->setObjectName(u"mCategoriesComboBox"_s);
+    hboxLayout->addWidget(mCategoriesComboBox);
+    connect(mCategoriesComboBox, &OllamaModelsInfosCategoriesComboBox::categoriesChanged, this, [this]() {
+        mProxyModel->setCategories(mCategoriesComboBox->categories());
+    });
 
     auto splitter = new QSplitter(this);
     splitter->setObjectName(u"splitter"_s);
@@ -64,15 +74,12 @@ OllamaModelInstalledWidget::OllamaModelInstalledWidget(OllamaManager *manager, Q
             model->setModelInstalledInfos(mManager->installedInfos());
         });
     }
-    auto proxyModel = new QSortFilterProxyModel(this);
-    proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
-    proxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
-    proxyModel->setSourceModel(model);
-    proxyModel->sort(0);
-    connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [proxyModel](const QString &str) {
-        proxyModel->setFilterFixedString(str);
+    mProxyModel->setSourceModel(model);
+    mProxyModel->sort(0);
+    connect(mSearchLineEdit, &TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit::textChanged, this, [this](const QString &str) {
+        mProxyModel->setFilterFixedString(str);
     });
-    mOllamaModelInstalledListView->setModel(proxyModel);
+    mOllamaModelInstalledListView->setModel(mProxyModel);
 
     mRemoveModelButton->setObjectName(u"mRemoveModelButton"_s);
     mRemoveModelButton->setEnabled(false);

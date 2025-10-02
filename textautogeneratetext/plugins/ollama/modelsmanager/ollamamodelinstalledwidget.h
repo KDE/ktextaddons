@@ -11,6 +11,8 @@ class OllamaModelInstalledListView;
 class OllamaModelInstalledInfoWidget;
 class OllamaManager;
 class QToolButton;
+class OllamaModelsInfosCategoriesComboBox;
+class OllamaModelInstalledInfosSortProxyModel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;
@@ -30,7 +32,9 @@ private:
     QList<OllamaModelAvailableInfo> mModelAvailableInfos;
     OllamaModelInstalledListView *const mOllamaModelInstalledListView;
     TextAutoGenerateText::TextAutoGenerateModelSearchLineEdit *const mSearchLineEdit;
+    OllamaModelsInfosCategoriesComboBox *const mCategoriesComboBox;
     QToolButton *const mRemoveModelButton;
     OllamaModelInstalledInfoWidget *const mOllamaModelInstalledInfoWidget;
     OllamaManager *const mManager;
+    OllamaModelInstalledInfosSortProxyModel *const mProxyModel;
 };
