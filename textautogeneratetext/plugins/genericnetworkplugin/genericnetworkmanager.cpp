@@ -98,6 +98,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["stream"_L1] = true;
     if (!request.tools().isEmpty()) {
         data["tools"_L1] = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->generateToolsArray(request.tools());
+        // data["tool_choice"_L1] = u"none"_s;
     }
     if (mGenericNetworkSettings->maxTokens() > 0) {
         data["max_tokens"_L1] = mGenericNetworkSettings->maxTokens();
