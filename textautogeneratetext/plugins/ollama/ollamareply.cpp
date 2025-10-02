@@ -116,7 +116,7 @@ TextAutoGenerateText::TextAutoGenerateReply::Response OllamaReply::readResponse(
             if (tok["message"_L1].toObject().contains("tool_calls"_L1)) {
                 const QJsonArray array = tok["message"_L1]["tool_calls"_L1].toArray();
                 // qDebug() << " tool_calls: " << array;
-                const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCalls(array);
+                const QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos = parseToolCallsOllama(array);
                 // qDebug() << " QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos " << infos;
                 ret.info.append(infos);
             }

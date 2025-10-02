@@ -20,7 +20,7 @@ TextAutoGenerateReply::TextAutoGenerateReply(QNetworkReply *netReply, RequestTyp
 
 TextAutoGenerateReply::~TextAutoGenerateReply() = default;
 
-QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCalls(const QJsonArray &array) const
+QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCallsOllama(const QJsonArray &array) const
 {
     // qDebug() << " array " << array;
     QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos;

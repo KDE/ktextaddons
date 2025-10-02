@@ -20,7 +20,7 @@ public:
 
     [[nodiscard]] QList<ToolCallArgumentInfo> testParseToolCalls(const QJsonArray &array) const
     {
-        return parseToolCalls(array);
+        return parseToolCallsOllama(array);
     }
 };
 
