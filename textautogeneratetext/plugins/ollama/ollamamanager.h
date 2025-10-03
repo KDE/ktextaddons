@@ -56,7 +56,7 @@ Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
 private:
-    TEXTAUTOGENERATEOLLAMA_NO_EXPORT [[nodiscard]] bool hasCategorySupport(const QString &modelName,
+    [[nodiscard]] TEXTAUTOGENERATEOLLAMA_NO_EXPORT bool hasCategorySupport(const QString &modelName,
                                                                            TextAutoGenerateText::TextAutoGenerateManager::Category cat) const;
     QList<OllamaModelInstalledInfo> mInstalledInfos;
     QList<OllamaModelAvailableInfo> mAvailableInfos;
