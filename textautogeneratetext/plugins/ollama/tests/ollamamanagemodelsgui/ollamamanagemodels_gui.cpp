@@ -19,8 +19,8 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.process(app);
-
-    auto manager = new OllamaManager(new OllamaSettings);
+    OllamaSettings settings;
+    auto manager = new OllamaManager(&settings);
     auto w = new OllamaModelAvailableWidget(manager);
     w->setAvailableInfos(manager->availableInfos());
     w->resize(600, 400);
