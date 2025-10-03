@@ -5,29 +5,46 @@
 */
 #include "ollamamodelavailableinfowidget.h"
 #include "autogeneratetext_ollama_debug.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ollamamanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodeldownloadwidget.h"
 #include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
+#include <QDesktopServices>
 #include <QGroupBox>
 #include <QLabel>
+#include <QToolButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
     , mMainLayout(new QVBoxLayout(this))
     , mModelName(new QLabel(this))
     , mOllamaManager(manager)
+    , mNetworkUrlButton(new QToolButton(this))
 {
     mMainLayout->setObjectName(u"mainlayout"_s);
     mMainLayout->setContentsMargins({});
-    mMainLayout->addWidget(mModelName, 0, Qt::AlignHCenter);
     QFont f = mModelName->font();
     f.setBold(true);
     mModelName->setFont(f);
+    auto hbox = new QHBoxLayout;
+    mMainLayout->addLayout(hbox);
+    hbox->setContentsMargins({});
+    hbox->addWidget(mModelName, 0, Qt::AlignHCenter);
+
+    mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
+    mNetworkUrlButton->setIcon(QIcon::fromTheme(u"applications-network-symbolic"_s));
+    mNetworkUrlButton->setToolTip(i18nc("@info:tooltip", "Open Model Information Url"));
+    mNetworkUrlButton->setAutoRaise(true);
+    connect(mNetworkUrlButton, &QToolButton::clicked, this, [this]() {
+        if (!mModelUrl.isEmpty()) {
+            QDesktopServices::openUrl(QUrl(mModelUrl));
+        }
+    });
+    hbox->addWidget(mNetworkUrlButton);
 }
 
 OllamaModelAvailableInfoWidget::~OllamaModelAvailableInfoWidget() = default;
@@ -40,6 +57,9 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
     }
     const QString modelName = index.data(OllamaModelAvailableInfosModel::ModelName).toString();
     mModelName->setText(modelName);
+
+    const QString url = index.data(OllamaModelAvailableInfosModel::Url).toString();
+    mModelUrl = url;
 
     mInfoWidget = new QWidget(this);
     auto infoLayout = new QVBoxLayout(mInfoWidget);
@@ -56,7 +76,6 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
         languagesGroupBoxLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
     }
     infoLayout->addWidget(languagesGroupBox);
-    // TODO show categories
 
     auto downloadModelGroupBox = new QGroupBox(i18n("Models"), mInfoWidget);
 
