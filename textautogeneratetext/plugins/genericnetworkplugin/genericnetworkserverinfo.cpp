@@ -263,3 +263,15 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
     }
     return limits;
 }
+
+bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel) const
+{
+    // TODO
+    return false;
+}
+
+bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel) const
+{
+    // TODO
+    return false;
+}

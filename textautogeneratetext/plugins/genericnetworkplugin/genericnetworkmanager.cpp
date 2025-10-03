@@ -192,14 +192,12 @@ void GenericNetworkManager::setApiKey(const QString &newApiKey)
 
 bool GenericNetworkManager::hasVisionSupport(const QString &currentModel) const
 {
-    // TODO
-    return false;
+    return mServerInfo->hasToolsSupport(currentModel);
 }
 
-bool GenericNetworkManager::hasToolsSupport(const QString &currentMode) const
+bool GenericNetworkManager::hasToolsSupport(const QString &currentModel) const
 {
-    // TODO
-    return false;
+    return mServerInfo->hasToolsSupport(currentModel);
 }
 
 #include "moc_genericnetworkmanager.cpp"
