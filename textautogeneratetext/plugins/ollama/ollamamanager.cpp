@@ -309,4 +309,29 @@ bool OllamaManager::CreateModelInfo::isValid() const
     return !modelName.isEmpty();
 }
 
+bool OllamaManager::hasVisionSupport(const QString &modelName) const
+{
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision);
+}
+
+bool OllamaManager::hasToolsSupport(const QString &modelName) const
+{
+    return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools);
+}
+
+bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
+{
+    if (modelName.isEmpty()) {
+        return false;
+    }
+    auto matchesModelName = [&](const OllamaModelInstalledInfo &info) {
+        return info.model() == modelName;
+    };
+    auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName);
+    if (it == mInstalledInfos.constEnd()) {
+        return false;
+    }
+    return it->categories() & cat;
+}
+
 #include "moc_ollamamanager.cpp"

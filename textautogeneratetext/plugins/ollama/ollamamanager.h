@@ -50,10 +50,14 @@ public:
     [[nodiscard]] QList<OllamaModelAvailableInfo> availableInfos() const;
     void setAvailableInfos(const QList<OllamaModelAvailableInfo> &newAvailableInfos);
 
+    [[nodiscard]] bool hasVisionSupport(const QString &modelName) const;
+    [[nodiscard]] bool hasToolsSupport(const QString &modelName) const;
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
 private:
+    TEXTAUTOGENERATEOLLAMA_NO_EXPORT [[nodiscard]] bool hasCategorySupport(const QString &modelName,
+                                                                           TextAutoGenerateText::TextAutoGenerateManager::Category cat) const;
     QList<OllamaModelInstalledInfo> mInstalledInfos;
     QList<OllamaModelAvailableInfo> mAvailableInfos;
     OllamaSettings *const mOllamaSettings;
