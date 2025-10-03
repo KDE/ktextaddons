@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:41+0000\n"
+"POT-Creation-Date: 2025-10-03 00:42+0000\n"
 "PO-Revision-Date: 2025-09-22 20:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -380,18 +380,18 @@ msgstr "النموذج الأب:"
 msgid "Features Supported"
 msgstr "المميزات المتاحة"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "أزل النموذج المحدد"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "أتريد إزالة هذه النموذج (%1)؟"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"

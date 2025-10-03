@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:41+0000\n"
+"POT-Creation-Date: 2025-10-03 00:42+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -377,7 +377,7 @@ msgstr "Emomalli:"
 msgid "Features Supported"
 msgstr "Tuetut ominaisuudet"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"
@@ -385,12 +385,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Poista malli"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Haluatko poistaa tämän mallin (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"

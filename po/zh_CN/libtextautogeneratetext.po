@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:41+0000\n"
+"POT-Creation-Date: 2025-10-03 00:42+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -380,18 +380,18 @@ msgstr "父模型："
 msgid "Features Supported"
 msgstr "支持的功能"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:79
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "移除选中的模型"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:108
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "您想要移除此模型 (%1) 吗？"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:109
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
