@@ -263,18 +263,6 @@ QString TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::Text
     return {};
 }
 
-bool TextAutoGenerateTextPlugin::hasVisionSupport() const
-{
-    // TODO
-    return false;
-}
-
-bool TextAutoGenerateTextPlugin::hasToolsSupport() const
-{
-    // TODO
-    return false;
-}
-
 QString TextAutoGenerateTextPlugin::fallBackModel() const
 {
     // Fallback to first model
