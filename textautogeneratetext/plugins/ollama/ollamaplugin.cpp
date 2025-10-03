@@ -177,6 +177,7 @@ void OllamaPlugin::setCurrentModel(const QString &m)
 {
     mOllamaSettings->setCurrentModel(m);
     Q_EMIT configChanged();
+    Q_EMIT currentModelChanged();
 }
 
 bool OllamaPlugin::hasVisionSupport() const

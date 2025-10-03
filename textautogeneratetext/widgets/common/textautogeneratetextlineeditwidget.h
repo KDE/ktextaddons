@@ -43,6 +43,7 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearLineEdit();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateEnableState();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentModelChanged();
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     TextAutoGenerateToolsWidget *const mTextAutoGenerateToolsWidget;
     QToolButton *const mSendMessage;

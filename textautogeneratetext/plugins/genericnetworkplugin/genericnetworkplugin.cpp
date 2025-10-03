@@ -250,6 +250,7 @@ void GenericNetworkPlugin::setCurrentModel(const QString &m)
 {
     mSettings->setCurrentModel(m);
     Q_EMIT configChanged();
+    Q_EMIT currentModelChanged();
 }
 
 TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType GenericNetworkPlugin::engineType() const

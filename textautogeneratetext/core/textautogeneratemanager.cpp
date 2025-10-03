@@ -537,6 +537,11 @@ void TextAutoGenerateManager::loadEngine()
     }
 
     connect(textAutoGeneratePlugin(),
+            &TextAutoGenerateText::TextAutoGenerateTextPlugin::currentModelChanged,
+            this,
+            &TextAutoGenerateManager::currentModelChanged);
+
+    connect(textAutoGeneratePlugin(),
             &TextAutoGenerateText::TextAutoGenerateTextPlugin::downloadModelFinished,
             this,
             &TextAutoGenerateManager::downloadModelFinished);

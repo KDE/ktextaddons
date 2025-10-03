@@ -67,6 +67,8 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
         });
         connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::activated, this, [this]() {
             mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
+            // qDebug() << " mManager->textAutoGeneratePlugin()->hasToolsSupport() " << mManager->textAutoGeneratePlugin()->hasToolsSupport();
+            // qDebug() << " mManager->textAutoGeneratePlugin()->hasVisionSupport() " << mManager->textAutoGeneratePlugin()->hasVisionSupport();
         });
     }
 }

@@ -6,6 +6,7 @@
 #include "textautogeneratetextlineeditwidget.h"
 
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextplugin.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
 #include "widgets/toolswidget/textautogeneratetoolswidget.h"
 #include <KLocalizedString>
@@ -82,6 +83,10 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::showArchiveChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateTextLineEditWidget::updateEnableState);
+        connect(mManager,
+                &TextAutoGenerateText::TextAutoGenerateManager::currentModelChanged,
+                this,
+                &TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged);
     }
 
     mConfigureTools->setObjectName(u"mConfigureTools"_s);
@@ -131,6 +136,16 @@ void TextAutoGenerateTextLineEditWidget::setUuid(const QByteArray &newUuid)
 void TextAutoGenerateTextLineEditWidget::setActivatedTools(const QList<QByteArray> &lst)
 {
     mTextAutoGenerateToolsWidget->setActivatedTools(lst);
+}
+
+void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()
+{
+    const bool hasToolsSupport = mManager->textAutoGeneratePlugin()->hasToolsSupport();
+    mConfigureTools->setEnabled(hasToolsSupport);
+    if (!hasToolsSupport) {
+        mConfigureTools->setChecked(false);
+        mTextAutoGenerateToolsWidget->setHidden(true);
+    }
 }
 
 #include "moc_textautogeneratetextlineeditwidget.cpp"
