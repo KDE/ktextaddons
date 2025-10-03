@@ -260,14 +260,12 @@ TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType GenericNetworkPlugi
 
 bool GenericNetworkPlugin::hasVisionSupport() const
 {
-    // TODO
-    return false;
+    return mGenericManager->hasVisionSupport(currentModel());
 }
 
 bool GenericNetworkPlugin::hasToolsSupport() const
 {
-    // TODO
-    return false;
+    return mGenericManager->hasToolsSupport(currentModel());
 }
 
 #include "moc_genericnetworkplugin.cpp"

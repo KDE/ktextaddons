@@ -56,6 +56,9 @@ public:
     [[nodiscard]] QList<GenericNetworkModelAvailableInfo> infos() const;
     void setInfos(const QList<GenericNetworkModelAvailableInfo> &newInfos);
 
+    [[nodiscard]] bool hasVisionSupport(const QString &currentModel) const;
+    [[nodiscard]] bool hasToolsSupport(const QString &currentMode) const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
