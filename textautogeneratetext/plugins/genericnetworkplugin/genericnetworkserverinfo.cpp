@@ -291,7 +291,13 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::Unknown:
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return false;
-    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::MistralAI: {
+        // https://docs.mistral.ai/capabilities/function_calling/#tools
+        qDebug() << " currentModel " << currentModel;
+        if (currentModel == "Mistral Large"_L1) {
+            return true;
+        }
+    }
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::GroqAI:
