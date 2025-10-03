@@ -137,7 +137,7 @@ QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
 bool OllamaModelInstalledInfo::operator==(const OllamaModelInstalledInfo &other) const
 {
     return mName == other.name() && mModel == other.model() && mQuantizationLevel == other.quantizationLevel() && mFamily == other.family()
-        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt() && mParentModel == other.parentModel();
+        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt() && mParentModel == other.parentModel() && mCategories == other.mCategories;
 }
 
 QString OllamaModelInstalledInfo::modifyAtInLocal() const
