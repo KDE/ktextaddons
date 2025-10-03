@@ -35,6 +35,6 @@ public:
 
     [[nodiscard]] Limitations limitations(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type) const;
-    [[nodiscard]] bool hasVisionSupport(const QString &currentModel) const;
-    [[nodiscard]] bool hasToolsSupport(const QString &currentMode) const;
+    [[nodiscard]] bool hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
 };

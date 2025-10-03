@@ -264,14 +264,44 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
     return limits;
 }
 
-bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel) const
+bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const
 {
-    // TODO
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return false;
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::LastElement:
+        return false;
+    }
     return false;
 }
 
-bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel) const
+bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const
 {
-    // TODO
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return false;
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::LastElement:
+        return false;
+    }
     return false;
 }
