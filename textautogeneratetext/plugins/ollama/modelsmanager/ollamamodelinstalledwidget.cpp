@@ -16,7 +16,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QScrollArea>
-#include <QSortFilterProxyModel>
 #include <QSplitter>
 #include <QToolButton>
 #include <QVBoxLayout>
