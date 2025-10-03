@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "modelsmanager/ollamamodelavailableinfo.h"
 #include "modelsmanager/ollamamodelinstalledinfo.h"
 #include "textautogenerateollama_export.h"
 #include <QDebug>
@@ -46,11 +47,15 @@ public:
 
     [[nodiscard]] OllamaSettings *ollamaSettings() const;
 
+    [[nodiscard]] QList<OllamaModelAvailableInfo> availableInfos() const;
+    void setAvailableInfos(const QList<OllamaModelAvailableInfo> &newAvailableInfos);
+
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
 private:
     QList<OllamaModelInstalledInfo> mInstalledInfos;
+    QList<OllamaModelAvailableInfo> mAvailableInfos;
     OllamaSettings *const mOllamaSettings;
 };
 Q_DECLARE_TYPEINFO(OllamaManager::CreateModelInfo, Q_RELOCATABLE_TYPE);

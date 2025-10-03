@@ -27,6 +27,10 @@ OllamaManager::OllamaManager(OllamaSettings *settings, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mOllamaSettings(settings)
 {
+    OllamaModelAvailableInfosManager managerModelInfosManager;
+    if (managerModelInfosManager.loadAvailableModels()) {
+        mAvailableInfos = managerModelInfosManager.modelInfos();
+    }
 }
 
 OllamaManager::~OllamaManager() = default;
@@ -168,11 +172,6 @@ void OllamaManager::loadModels()
             Q_EMIT modelsLoadDone(std::move(info));
             return;
         }
-        QList<OllamaModelAvailableInfo> infoAvailableInfos;
-        OllamaModelAvailableInfosManager managerModelInfosManager;
-        if (managerModelInfosManager.loadAvailableModels()) {
-            infoAvailableInfos = managerModelInfosManager.modelInfos();
-        }
         ModelsInfo info;
         const auto json = QJsonDocument::fromJson(rep->readAll());
         const auto models = json["models"_L1].toArray();
@@ -189,8 +188,8 @@ void OllamaManager::loadModels()
             auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
                 return availableInfo.name() == installedName;
             };
-            auto it = std::find_if(infoAvailableInfos.constBegin(), infoAvailableInfos.constEnd(), matchesModelName);
-            if (it != infoAvailableInfos.constEnd()) {
+            auto it = std::find_if(mAvailableInfos.constBegin(), mAvailableInfos.constEnd(), matchesModelName);
+            if (it != mAvailableInfos.constEnd()) {
                 installed.setCategories((*it).categories());
                 installed.setLanguages((*it).languages());
             }
@@ -285,6 +284,16 @@ bool OllamaManager::isAlreadyInstalled(const QString &modelName) const
 OllamaSettings *OllamaManager::ollamaSettings() const
 {
     return mOllamaSettings;
+}
+
+QList<OllamaModelAvailableInfo> OllamaManager::availableInfos() const
+{
+    return mAvailableInfos;
+}
+
+void OllamaManager::setAvailableInfos(const QList<OllamaModelAvailableInfo> &newAvailableInfos)
+{
+    mAvailableInfos = newAvailableInfos;
 }
 
 QDebug operator<<(QDebug d, const OllamaManager::CreateModelInfo &t)

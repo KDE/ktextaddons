@@ -4,9 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamaconfiguredialog.h"
-using namespace Qt::Literals::StringLiterals;
+#include "ollamamanager.h"
 
-#include "modelsmanager/ollamamodelavailableinfosmanager.h"
 #include "modelsmanager/ollamamodelavailablewidget.h"
 #include "modelsmanager/ollamamodelcreatewidget.h"
 #include "modelsmanager/ollamamodelinstalledwidget.h"
@@ -24,6 +23,7 @@ namespace
 const char myOllamaConfigureDialogGroupName[] = "OllamaConfigureDialog";
 }
 
+using namespace Qt::Literals::StringLiterals;
 OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *parent)
     : KPageDialog(parent)
     , mOllamaConfigureWidget(new OllamaConfigureWidget(manager, this))
@@ -40,9 +40,8 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
         mOllamaModelInstalledWidget->setEnabled(status);
     });
 
-    OllamaModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        mOllamaModelWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
+    if (manager) {
+        mOllamaModelWidget->setAvailableInfos(manager->availableInfos());
     }
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");

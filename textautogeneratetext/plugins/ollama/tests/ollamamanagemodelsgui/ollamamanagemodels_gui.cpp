@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "modelsmanager/ollamamodelavailableinfosmanager.h"
 #include "modelsmanager/ollamamodelavailablewidget.h"
 #include "ollamamanager.h"
 #include "ollamasettings.h"
@@ -23,10 +22,7 @@ int main(int argc, char **argv)
 
     auto manager = new OllamaManager(new OllamaSettings);
     auto w = new OllamaModelAvailableWidget(manager);
-    OllamaModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        w->setAvailableInfos(managerModelInfosManager.modelInfos());
-    }
+    w->setAvailableInfos(manager->availableInfos());
     w->resize(600, 400);
     w->show();
     app.exec();

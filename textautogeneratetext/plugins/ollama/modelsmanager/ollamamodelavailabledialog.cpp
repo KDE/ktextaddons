@@ -30,11 +30,9 @@ OllamaModelAvailableDialog::OllamaModelAvailableDialog(OllamaManager *manager, Q
     mainLayout->setObjectName(u"mainlayout"_s);
     mOllamaModelWidget->setObjectName(u"mOllamaModelWidget"_s);
 
-    OllamaModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        mOllamaModelWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
+    if (manager) {
+        mOllamaModelWidget->setAvailableInfos(manager->availableInfos());
     }
-
     auto box = new QDialogButtonBox(QDialogButtonBox::Close, this);
     box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
