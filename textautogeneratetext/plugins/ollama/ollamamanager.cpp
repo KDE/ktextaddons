@@ -322,6 +322,7 @@ bool OllamaManager::hasToolsSupport(const QString &modelName) const
 bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerateText::TextAutoGenerateManager::Category cat) const
 {
     if (modelName.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " modelName is empty. it's a bug";
         return false;
     }
     auto matchesModelName = [&](const OllamaModelInstalledInfo &info) {
@@ -329,6 +330,7 @@ bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerat
     };
     auto it = std::find_if(mInstalledInfos.constBegin(), mInstalledInfos.constEnd(), matchesModelName);
     if (it == mInstalledInfos.constEnd()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " modelName is not installed " << modelName;
         return false;
     }
     return it->categories() & cat;
