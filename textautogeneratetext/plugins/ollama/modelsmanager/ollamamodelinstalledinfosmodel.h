@@ -24,6 +24,7 @@ public:
         ParameterSize,
         DescriptionInfo,
         Categories,
+        Languages,
     };
     Q_ENUM(ModelInfoRoles)
 

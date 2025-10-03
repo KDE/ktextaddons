@@ -44,6 +44,8 @@ QVariant OllamaModelInstalledInfosModel::data(const QModelIndex &index, int role
         return modelInfo.name();
     case Categories:
         return QVariant::fromValue(modelInfo.categories());
+    case Languages:
+        return modelInfo.languages();
     default:
         break;
     }

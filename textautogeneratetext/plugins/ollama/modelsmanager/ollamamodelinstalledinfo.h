@@ -48,6 +48,9 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
     void setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories);
 
+    QStringList languages() const;
+    void setLanguages(const QStringList &newLanguages);
+
 private:
     QString mName;
     QString mModel;
@@ -57,6 +60,7 @@ private:
     QString mModifyAt;
     QString mGeneratedModelName;
     QString mParentModel;
+    QStringList mLanguages;
     TextAutoGenerateText::TextAutoGenerateManager::Categories mCategories = TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown;
 };
 Q_DECLARE_TYPEINFO(OllamaModelInstalledInfo, Q_RELOCATABLE_TYPE);

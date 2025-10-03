@@ -61,6 +61,16 @@ void OllamaModelInstalledInfo::setCategories(const TextAutoGenerateText::TextAut
     mCategories = newCategories;
 }
 
+QStringList OllamaModelInstalledInfo::languages() const
+{
+    return mLanguages;
+}
+
+void OllamaModelInstalledInfo::setLanguages(const QStringList &newLanguages)
+{
+    mLanguages = newLanguages;
+}
+
 QString OllamaModelInstalledInfo::parameterSize() const
 {
     return mParameterSize;
@@ -131,13 +141,15 @@ QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
     d.space() << "family:" << t.family();
     d.space() << "generateModelName:" << t.generateModelName();
     d.space() << "categories:" << t.categories();
+    d.space() << "languages:" << t.languages();
     return d;
 }
 
 bool OllamaModelInstalledInfo::operator==(const OllamaModelInstalledInfo &other) const
 {
     return mName == other.name() && mModel == other.model() && mQuantizationLevel == other.quantizationLevel() && mFamily == other.family()
-        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt() && mParentModel == other.parentModel() && mCategories == other.mCategories;
+        && mParameterSize == other.parameterSize() && mModifyAt == other.modifyAt() && mParentModel == other.parentModel() && mCategories == other.mCategories
+        && mLanguages == other.mLanguages;
 }
 
 QString OllamaModelInstalledInfo::modifyAtInLocal() const
