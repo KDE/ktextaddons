@@ -43,7 +43,6 @@ OllamaConfigureDialog::OllamaConfigureDialog(OllamaManager *manager, QWidget *pa
     OllamaModelAvailableInfosManager managerModelInfosManager;
     if (managerModelInfosManager.loadAvailableModels()) {
         mOllamaModelWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
-        mOllamaModelInstalledWidget->setAvailableInfos(managerModelInfosManager.modelInfos());
     }
 
     const QString generalPageName = i18nc("@title Preferences page name", "General");

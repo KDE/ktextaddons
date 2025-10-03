@@ -102,7 +102,7 @@ void OllamaModelInstalledWidget::slotClicked(const QModelIndex &index)
 {
     if (index.isValid()) {
         const OllamaModelInstalledInfo info = index.data(OllamaModelInstalledInfosModel::DescriptionInfo).value<OllamaModelInstalledInfo>();
-        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info, mModelAvailableInfos);
+        mOllamaModelInstalledInfoWidget->setOllamaModelInstalledInfo(info);
     }
 }
 
@@ -126,8 +126,4 @@ void OllamaModelInstalledWidget::slotRemoveModel()
     }
 }
 
-void OllamaModelInstalledWidget::setAvailableInfos(const QList<OllamaModelAvailableInfo> &infos)
-{
-    mModelAvailableInfos = infos;
-}
 #include "moc_ollamamodelinstalledwidget.cpp"

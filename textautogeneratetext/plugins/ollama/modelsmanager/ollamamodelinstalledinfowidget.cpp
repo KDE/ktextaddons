@@ -68,8 +68,7 @@ void OllamaModelInstalledInfoWidget::changeFont(QLabel *label)
     label->setFont(f);
 }
 
-void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info,
-                                                                 const QList<OllamaModelAvailableInfo> &infoAvailableInfos)
+void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info)
 {
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
@@ -93,42 +92,32 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
         infoLayout->addWidget(parentModelLabel);
     }
 
-    QString installedName = info.model();
-    const int position = installedName.indexOf(u':');
-    installedName = installedName.first(position);
-    auto matchesModelName = [&](const OllamaModelAvailableInfo &availableInfo) {
-        return availableInfo.name() == installedName;
-    };
-    auto it = std::find_if(infoAvailableInfos.constBegin(), infoAvailableInfos.constEnd(), matchesModelName);
-    if (it != infoAvailableInfos.constEnd()) {
-        auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
-        infoLayout->addWidget(languagesGroupBox);
-        auto vboxLanguagesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
-        for (const auto &lang : (*it).languages()) {
-            const QLocale locale(lang);
-            if (locale.language() == QLocale::Language::C) {
-                qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << lang;
-                continue;
-            }
-            vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
+    auto languagesGroupBox = new QGroupBox(i18n("Languages Supported"), mInfoWidget);
+    infoLayout->addWidget(languagesGroupBox);
+    auto vboxLanguagesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(languagesGroupBox);
+    for (const auto &lang : info.languages()) {
+        const QLocale locale(lang);
+        if (locale.language() == QLocale::Language::C) {
+            qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << lang;
+            continue;
         }
-
-        QStringList categoriesName;
-        const TextAutoGenerateText::TextAutoGenerateManager::Categories categories = (*it).categories();
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools, categories);
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Multilingual, categories);
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Code, categories);
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Math, categories);
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision, categories);
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding, categories);
-        appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning, categories);
-        if (!categoriesName.isEmpty()) {
-            auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
-            infoLayout->addWidget(featuresGroupBox);
-            auto vboxfeaturesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(featuresGroupBox);
-            for (const QString &name : categoriesName) {
-                vboxfeaturesLayout->addWidget(new QLabel(name, mInfoWidget));
-            }
+        vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
+    }
+    QStringList categoriesName;
+    const TextAutoGenerateText::TextAutoGenerateManager::Categories categories = info.categories();
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Tools, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Multilingual, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Code, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Math, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Vision, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding, categories);
+    appendCategories(categoriesName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning, categories);
+    if (!categoriesName.isEmpty()) {
+        auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
+        infoLayout->addWidget(featuresGroupBox);
+        auto vboxfeaturesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(featuresGroupBox);
+        for (const QString &name : categoriesName) {
+            vboxfeaturesLayout->addWidget(new QLabel(name, mInfoWidget));
         }
     }
 
