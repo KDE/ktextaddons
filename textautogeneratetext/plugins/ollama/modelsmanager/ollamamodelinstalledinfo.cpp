@@ -130,6 +130,7 @@ QDebug operator<<(QDebug d, const OllamaModelInstalledInfo &t)
     d.space() << "parameterSize:" << t.parameterSize();
     d.space() << "family:" << t.family();
     d.space() << "generateModelName:" << t.generateModelName();
+    d.space() << "categories:" << t.categories();
     return d;
 }
 
