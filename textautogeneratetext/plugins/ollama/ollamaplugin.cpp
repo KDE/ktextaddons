@@ -181,13 +181,13 @@ void OllamaPlugin::setCurrentModel(const QString &m)
 
 bool OllamaPlugin::hasVisionSupport() const
 {
-    // TODO test with installed model
+    // TODO test currentModel with installed model
     return false;
 }
 
 bool OllamaPlugin::hasToolsSupport() const
 {
-    // TODO test with installed model
+    // TODO test currentModel with installed model
     return false;
 }
 
