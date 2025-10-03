@@ -16,7 +16,6 @@
 #include <memory>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateMessage;
 class TextAutoGenerateTextPluginPrivate;
 class TextAutoGenerateManager;
 class TextAutoGenerateTextInstance;
