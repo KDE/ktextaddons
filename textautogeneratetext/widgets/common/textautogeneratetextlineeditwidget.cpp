@@ -45,7 +45,6 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mAttachFile->setIcon(QIcon::fromTheme(u"mail-attachment-symbolic"_s));
     mAttachFile->setAutoRaise(true);
     mAttachFile->setEnabled(false);
-    mAttachFile->setVisible(false);
 
     connect(mAttachFile, &QToolButton::clicked, this, []() {
         // TODO open dialogbox
