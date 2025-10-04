@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
+"POT-Creation-Date: 2025-10-04 00:41+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -160,21 +160,21 @@ msgid "Configure %1"
 msgstr "%1 – asetukset"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Perusasetukset"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Saatavilla olevat mallit"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Yhteydenotto liitäntään osoitteessa %1 epäonnistui: %2"
@@ -261,13 +261,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Hallinnoi Ollama-malleja"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr "Tuetut kielet"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, kde-format
 msgid "Models"
 msgstr "Mallit"
@@ -367,17 +373,17 @@ msgstr "Kvantisointitaso:"
 msgid "Modified At:"
 msgstr "Muutettu:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
 #, kde-format
 msgid "Parent Model:"
 msgstr "Emomalli:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr "Tuetut ominaisuudet"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"
@@ -385,12 +391,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Poista malli"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Haluatko poistaa tämän mallin (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1700,13 +1706,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollaman asetukset"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Asennetut mallit"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -1755,7 +1761,7 @@ msgstr ""
 "tekstin samaan kehotteeseen, jos tämä on asetettu tietyksi luvuksi. (Oletus: "
 "0)"
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr ""
 
@@ -1813,20 +1819,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Kirjoita viesti"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:59
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Lähetä"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

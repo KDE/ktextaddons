@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
+"POT-Creation-Date: 2025-10-04 00:41+0000\n"
 "PO-Revision-Date: 2025-09-22 05:54+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -166,21 +166,21 @@ msgid "Configure %1"
 msgstr "設定 %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "一般"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "無法連線到在 %1 的介面：%2"
@@ -266,13 +266,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "管理 Ollama 模型"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr "支援語言"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, kde-format
 msgid "Models"
 msgstr "模型"
@@ -372,28 +378,28 @@ msgstr "量化等級："
 msgid "Modified At:"
 msgstr "修改時間："
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
 #, kde-format
 msgid "Parent Model:"
 msgstr "上層模型："
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr "支援功能"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "移除選取的模型"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "您確定要移除這個模型（%1）嗎？"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1789,13 +1795,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "設定 Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "已安裝的模型"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -1842,7 +1848,7 @@ msgstr ""
 "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固定"
 "的文字。（預設：0）"
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr "城市名稱"
 
@@ -1898,19 +1904,19 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "輸入訊息"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "附加檔案"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "傳送"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
