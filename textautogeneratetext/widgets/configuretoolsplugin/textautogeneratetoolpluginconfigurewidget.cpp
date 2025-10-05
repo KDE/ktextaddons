@@ -70,6 +70,14 @@ void TextAutoGenerateToolPluginConfigureWidget::generateArguments(TextAutoGenera
     QString propertiesText = u"<ul>"_s;
     for (const auto &prop : plugin->properties()) {
         propertiesText += u"<li>%1: %2</li>"_s.arg(prop.name(), prop.description().toString());
+        const QStringList typeElements = prop.typeElements();
+        if (!typeElements.isEmpty()) {
+            propertiesText += u"<ul>"_s;
+            for (const QString &e : typeElements) {
+                propertiesText += u"<li>%1</li>"_s.arg(e);
+            }
+            propertiesText += u"</ul>"_s;
+        }
     }
     propertiesText += u"</ul>"_s;
     mArgumentsLabel->setText(propertiesText);
