@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
 "PO-Revision-Date: 2025-06-22 08:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -157,27 +157,27 @@ msgstr "Ogólne"
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
-#| msgid "Configure"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Ustawienia"
+msgstr "Ustawienia IA"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Ogólne"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Dostępne modele"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Nie udało się połączyć z interfejsem %1: %2"
@@ -263,13 +263,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Zarządzaj modelami Ollama"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr "Obsługiwane języki"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, kde-format
 msgid "Models"
 msgstr "Modele"
@@ -369,17 +375,17 @@ msgstr "Poziom kwantyzacji:"
 msgid "Modified At:"
 msgstr "Zmieniony dnia:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
 #, kde-format
 msgid "Parent Model:"
 msgstr "Model nadrzędny:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr "Obsługiwany funkcje"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"
@@ -387,12 +393,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Usuń model"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Czy usunąć ten model (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1653,13 +1659,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ustawienia Ollamy"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Wgrane modele"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -1704,7 +1710,7 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr ""
 
@@ -1762,20 +1768,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Wpisz wiadomość"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:60
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Wyślij"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:94
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -1869,12 +1875,10 @@ msgid "Configure Instances"
 msgstr "Ustawienia wystąpień"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add instance…"
-msgstr "Dodaj wystąpienie…"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
@@ -2076,12 +2080,10 @@ msgid "Tools:"
 msgstr "Narzędzia"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr "Edytuj…"
+msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
 #, fuzzy, kde-format
@@ -2172,9 +2174,9 @@ msgstr "Usuń rozmowę"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:252
 #, fuzzy, kde-format
-#| msgid "No Messages Found."
+#| msgid "No plugin found."
 msgid "No Archive Found."
-msgstr "Nie znaleziono żadnej wiadomości."
+msgstr "Nie znaleziono żadnej wtyczki."
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
@@ -2184,17 +2186,29 @@ msgstr "Nie znaleziono żadnej wiadomości."
 #~ msgid "No system prompt"
 #~ msgstr "Brak systemowego wiersza poleceń"
 
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Ustawienia Mistral IA"
+
+#~ msgid "The URL to the Ollama instance"
+#~ msgstr "Adres URL do wystąpienie Ollama"
+
+#~ msgid "The system prompt for the LLM"
+#~ msgstr "Systemowy wiersz zapytań dla LLM"
+
+#~ msgid "The model used to generate responses"
+#~ msgstr "Model używany do dawania odpowiedzi"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuluj"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Openai IA"
+#~ msgstr "Ustawienia OpenAI IA"
+
+#~ msgid "Engine:"
+#~ msgstr "Silnik:"
+
 #~ msgctxt "@info:tooltip"
 #~ msgid "Edit..."
 #~ msgstr "Edytuj…"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Ustawienia Mistral AI"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Configure Mistral IA"
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Ustawienia Mistral AI"

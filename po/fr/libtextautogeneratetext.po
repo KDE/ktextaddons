@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-22 13:36+0200\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
+"PO-Revision-Date: 2025-08-17 20:57+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -61,13 +61,12 @@ msgstr ""
 "Nom de l'instance : %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools"
 msgid ""
 "\n"
 "Tools: %1"
-msgstr ""
-"\n"
-"Outils : %1"
+msgstr "Outils"
 
 #: core/textautogeneratemanager.cpp:131
 #, kde-format
@@ -160,21 +159,21 @@ msgid "Configure %1"
 msgstr "Configurer %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Général"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modèles disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Impossible de se connecter à l'interface de %1 : %2"
@@ -212,17 +211,17 @@ msgstr "Venise"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Llama Api"
-msgstr "API pour Llama"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr "Anthropic"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
 #, kde-format
 msgid "Kimi (Moonshot AI)"
-msgstr "Kimi (Moonshot AI)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
@@ -232,7 +231,7 @@ msgstr "Grands modèles linguistiques pour Mistral IA"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Groq AI"
-msgstr "Groq AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
@@ -247,12 +246,13 @@ msgstr "API d'inférence cloud pour Kluster AI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
 #, kde-format
 msgid "Meta AI Llama API"
-msgstr "API Llama pour AI Meta"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mistral AI large language models"
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Grands modèles linguistiques Kimi par Moonshot AI"
+msgstr "Grands modèles linguistiques pour Mistral IA"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -260,13 +260,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Gérer les modèles de Ollama"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr "Langues prises en charge"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, kde-format
 msgid "Models"
 msgstr "Modèles"
@@ -366,28 +372,30 @@ msgstr "Niveau de quantification :"
 msgid "Modified At:"
 msgstr "Modifié à :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
 #, kde-format
 msgid "Parent Model:"
 msgstr "Modèle parent :"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr "Fonctionnalités prises en charge"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
-#, kde-format
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "Supprimer le modèle sélectionné"
+msgstr "Supprimer un modèle"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Voulez-vous vraiment supprimer ce modèle (%1) ?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1950,16 +1958,11 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
-"Les modèles de OpenAI à poids ouvert sont conçus pour un raisonnement "
-"puissant, des tâches agentiques et des cas d'utilisation polyvalents pour "
-"des équipes de développement."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
-"Les modèles de contexte long et performants d'Alibaba pour les tâches "
-"agentiques et de codage."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
 #, kde-format
@@ -1967,13 +1970,11 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
-"DeepSeek-V3.1 est un modèle hybride prenant en charge à la fois le mode de "
-"raisonnement  et son contraire."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr "EmbeddingGemma est un modèle intégré de 300M paramètres de Google."
+msgstr ""
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -1992,13 +1993,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configurer Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Modèles installés"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -2048,9 +2049,9 @@ msgstr ""
 "génération. Si vous définissez celui-ci avec un nombre spécifique, le modèle "
 "générera le même texte pour la même invite. (Par défaut : 0)"
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
-msgstr "Le nom de la ville"
+msgstr ""
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2074,19 +2075,19 @@ msgstr "Ajouter une instance..."
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
-"Impossible de trouver Ollama sur le système. Veuillez demander à votre "
-"administrateur système de l'installer."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr "Impossible de trouver Ollama sur le système. Veuillez l'installer."
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Télécharger Ollama"
+msgstr "Télécharger un modèle"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
 #, kde-format
@@ -2106,83 +2107,87 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Saisissez un message"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr "Joindre un fichier"
+msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
-#, kde-format
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Envoyer"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:94
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr "Autoriser la sélection d'outils"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "Le redémarrage est nécessaire pour l'application des modifications."
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
 #, kde-format
 msgid "Text Plugins"
-msgstr "Modules externes de texte"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
 #, kde-format
 msgid "Tools Plugins"
-msgstr "Modules externes d'outils"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:177
 #, kde-format
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:179
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Configurer"
+msgstr "Configurer..."
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Prompt:"
 msgid "Prompt"
-msgstr "Invite de commandes"
+msgstr "Invite de commandes :"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr "Description :"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
-msgstr "Arguments :"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr "Informations :"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr "Afficher les informations de métadonnées"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
-msgstr "Informations de métadonnées"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2341,7 +2346,7 @@ msgstr "Effacer"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
-msgstr "Enregistrer la discussion dans la base de données"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:37
 #, kde-format
@@ -2368,28 +2373,32 @@ msgid "Favorite"
 msgstr "Préféré"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Rechercher... (%1)"
+msgstr "Rechercher..."
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Search Channels"
-msgstr "Rechercher des canaux"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr "Salon précédent"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "Salon suivant"
+msgstr "Nouvelle discussion"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2403,10 +2412,11 @@ msgid "No plugin found."
 msgstr "Aucun module externe n'a été trouvé."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools"
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Outils :"
+msgstr "Outils"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
@@ -2510,9 +2520,9 @@ msgstr "Aucun message trouvé."
 #~ msgid "No system prompt"
 #~ msgstr "Aucune invite système"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Modifier..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Configurer Mistral IA"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "L'URL vers l'instance Ollama"
@@ -2523,22 +2533,19 @@ msgstr "Aucun message trouvé."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Le modèle utilisé pour générer des réponses"
 
-#~ msgid "Engine:"
-#~ msgstr "Moteur :"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Configurer Mistral IA"
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Configurer l'IA de OpenAI"
 
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
+#~ msgid "Engine:"
+#~ msgstr "Moteur :"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Modifier..."
 
 #, fuzzy
 #~| msgid "Favorite"

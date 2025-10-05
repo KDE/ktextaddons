@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-02 17:33+0200\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
+"PO-Revision-Date: 2025-09-02 12:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -161,21 +161,21 @@ msgid "Configure %1"
 msgstr "Configura %1"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "General"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Modellos disponibile"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Falleva a connecter a interfacie a %1: %2"
@@ -261,13 +261,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, kde-format
 msgid "Models"
 msgstr "Modellos "
@@ -367,17 +373,17 @@ msgstr ""
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
 #, kde-format
 msgid "Parent Model:"
 msgstr "Modello Genitor:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Remove Model"
@@ -385,12 +391,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "Remove Modello"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Tu vole remover iste modello (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -1615,13 +1621,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Configura Ollama"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Modellos installate"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Create Models"
@@ -1666,7 +1672,7 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr ""
 
@@ -1713,11 +1719,10 @@ msgid "Start Ollama"
 msgstr "Starta Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configura"
+msgstr "Configura…"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -1725,20 +1730,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Inserta un message"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr "Attacha File"
+msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:60
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Invia"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:94
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -1747,7 +1752,7 @@ msgstr ""
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "Reinitiar si necessari per applicar le modificationes."
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
 #, kde-format
@@ -1770,13 +1775,13 @@ msgstr ""
 #| msgid "Configure…"
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Configura"
+msgstr "Configura..."
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, fuzzy, kde-format
 #| msgid "Prompt:"
 msgid "Prompt"
-msgstr "Prompt (Demanda)"
+msgstr "Symbolo de demanda:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
@@ -1826,9 +1831,7 @@ msgid "Select a Type of Instance:"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Configura "
@@ -1846,10 +1849,10 @@ msgid "Mark As Default"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Modifica"
+msgstr "Modifica…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
 #, kde-format
@@ -1998,13 +2001,13 @@ msgstr "Favorito"
 #| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Cerca"
+msgstr "Cerca..."
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Search Channels"
-msgstr "Cerca canales"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
@@ -2039,15 +2042,13 @@ msgid "Tools:"
 msgstr "Instrumentos"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr "Edita ..."
+msgstr "Modifica…"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:385
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
 msgstr "Remove"
@@ -2142,9 +2143,9 @@ msgstr "Necun messages trovate."
 #~ msgid "No system prompt"
 #~ msgstr "Necun prompt de systema"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Edita ..."
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Configura Mistral AI"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Le URLal instantia de Ollama"
@@ -2155,22 +2156,19 @@ msgstr "Necun messages trovate."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Le modello usate per generar responsas"
 
-#~ msgid "Engine:"
-#~ msgstr "Motor:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Configura Mistral AI"
+#~ msgid "Cancel"
+#~ msgstr "Cancella"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "Configura "
 
-#, fuzzy
-#~| msgid "Cancel"
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancella"
+#~ msgid "Engine:"
+#~ msgstr "Motor:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Edita ..."
 
 #~ msgctxt "@action"
 #~ msgid "New Chat…"

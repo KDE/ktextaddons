@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-02 00:42+0000\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
 "PO-Revision-Date: 2024-08-02 12:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -475,19 +475,3 @@ msgstr "…"
 #, kde-format
 msgid "Custom Writable Path:"
 msgstr "Camí personalitzat que s'hi pot escriure:"
-
-#~ msgid "Re&place"
-#~ msgstr "&Substitueix"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Special Characters"
-#~ msgstr "Selecció de caràcters especials"
-
-#~ msgid "Insert"
-#~ msgstr "Insereix"
-
-#~ msgid "Select"
-#~ msgstr "Selecciona"

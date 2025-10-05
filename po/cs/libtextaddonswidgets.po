@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-31 00:41+0000\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
 "PO-Revision-Date: 2023-06-05 11:18+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -21,13 +21,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr "Tučné"
+msgstr ""
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr "Kurzíva"
+msgstr ""
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
@@ -39,7 +39,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr "Podtržené"
+msgstr ""
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
@@ -54,10 +54,12 @@ msgid "Quote Text"
 msgstr ""
 
 #: richtextquicktextformat.cpp:156
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Insert"
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr ""
+msgstr "Vložit"
 
 #: selectspecialchardialog.cpp:34
 #, kde-format

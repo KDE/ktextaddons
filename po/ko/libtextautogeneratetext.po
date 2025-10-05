@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -160,21 +160,21 @@ msgid "Configure %1"
 msgstr "IA 설정"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1의 인터페이스에 연결할 수 없음: %2"
@@ -260,13 +260,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, fuzzy, kde-format
 #| msgid "Model:"
 msgid "Models"
@@ -308,12 +314,10 @@ msgid "Prompt:"
 msgstr "프롬프트:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Reload Model"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "모델 새로 고침"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
@@ -377,18 +381,18 @@ msgstr ""
 msgid "Modified At:"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
 #, fuzzy, kde-format
 #| msgid "Model:"
 msgid "Parent Model:"
 msgstr "모델:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reload Model"
@@ -396,12 +400,12 @@ msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
 msgstr "모델 새로 고침"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr ""
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reload Model"
@@ -1628,13 +1632,13 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama 설정"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr ""
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reload Model"
@@ -1681,7 +1685,7 @@ msgid ""
 "prompt. (Default: 0)"
 msgstr ""
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
 msgstr ""
 
@@ -1741,20 +1745,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "메시지 입력"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:60
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "보내기"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:94
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -1879,12 +1883,10 @@ msgid "Do you want to remove this instance (%1)?"
 msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "IA 설정"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratesearchwidget.cpp:30
@@ -2162,6 +2164,10 @@ msgstr ""
 #~ msgid "No system prompt"
 #~ msgstr "시스템 프롬프트 없음"
 
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Mistral IA 설정"
+
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama 인스턴스의 URL"
 
@@ -2171,16 +2177,12 @@ msgstr ""
 #~ msgid "The model used to generate responses"
 #~ msgstr "응답을 생성하기 위해 사용할 모델"
 
-#~ msgid "Engine:"
-#~ msgstr "엔진:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Mistral IA 설정"
-
 #, fuzzy
 #~| msgctxt "@title:window"
 #~| msgid "Configure IA"
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "IA 설정"
+
+#~ msgid "Engine:"
+#~ msgstr "엔진:"

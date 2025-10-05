@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:42+0000\n"
-"PO-Revision-Date: 2025-09-21 19:07+0300\n"
+"POT-Creation-Date: 2025-10-05 02:27+0000\n"
+"PO-Revision-Date: 2025-07-24 20:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -53,24 +53,25 @@ msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #: core/models/textautogeneratemessagesmodel.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Engine: %1\n"
+#| "Model: %2"
 msgid ""
 "Engine: %1\n"
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
 "İşletke: %1\n"
-"Model: %2\n"
-"Örnek adı: %3"
+"Model: %2"
 
 #: core/models/textautogeneratemessagesmodel.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools"
 msgid ""
 "\n"
 "Tools: %1"
-msgstr ""
-"\n"
-"Araçlar: %1"
+msgstr "Araçlar"
 
 #: core/textautogeneratemanager.cpp:131
 #, kde-format
@@ -138,8 +139,6 @@ msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
-"Sen bir yapay zekâ asistanısın. %1 adlı bir kişiyle konuşuyorsun. Nâzik, "
-"profesyonel ve yardımcı ol. Doğru olmayan bilgiler verme."
 
 #: core/textautogeneratetextplugin.cpp:258
 #, kde-format
@@ -152,32 +151,36 @@ msgid "Network"
 msgstr "Ağ"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title Preferences page name"
+#| msgid "General"
 msgid "Generic"
 msgstr "Genel"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "Yapılandır: %1"
+msgstr "Yapay Zekâyı Yapılandır"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
-#: plugins/ollama/ollamaconfiguredialog.cpp:49
+#: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
 msgstr "Genel"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
-#: plugins/ollama/ollamaconfiguredialog.cpp:54
+#: plugins/ollama/ollamaconfiguredialog.cpp:52
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Available Models"
 msgstr "Kullanılabilir Modeller"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollama/ollamamanager.cpp:170
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "%1 konumunda arayüze bağlanılamadı: %2"
@@ -195,67 +198,67 @@ msgstr "OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
 msgid "Kluster AI"
-msgstr "Kluster AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:30
 #, kde-format
 msgid "Groq Cloud"
-msgstr "Groq Cloud"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:32
 #, kde-format
 msgid "Cerebras AI"
-msgstr "Cerebras AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr "Venice"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
 msgid "Llama Api"
-msgstr "Llama API’si"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:38
 #, kde-format
 msgid "Anthropic"
-msgstr "Anthropic"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:40
 #, kde-format
 msgid "Kimi (Moonshot AI)"
-msgstr "Kimi (Moonshot AI)"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Mistral AI large language models"
-msgstr "Mistral AI büyük dil modelleri"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
 #, kde-format
 msgid "Groq AI"
-msgstr "Groq AI"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
 #, kde-format
 msgid "Kluster AI cloud inference API"
-msgstr "Kluster yapay zekâ bulut öngörü API’si"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
 #, kde-format
 msgid "Cerebras AI cloud inference API"
-msgstr "Cerebras yapay zekâ bulut öngörü API’si"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
 #, kde-format
 msgid "Meta AI Llama API"
-msgstr "Meta AI Llama API’si"
+msgstr ""
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
-msgstr "Kimi, Moonshot AI tarafından geliştirilmiş bir büyük dil modelidir."
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:28
 #, kde-format
@@ -263,13 +266,19 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama Modellerini Yönet"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:47
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:104
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr ""
+
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
 #, kde-format
 msgid "Languages Supported"
 msgstr "Desteklenen Diller"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:61
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
 #, kde-format
 msgid "Models"
 msgstr "Modeller"
@@ -288,19 +297,19 @@ msgstr "Kategoriler"
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
-msgstr "Temel:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr "Ad:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr "Künye:"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #, kde-format
@@ -311,25 +320,29 @@ msgstr "İstem:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "Oluştur"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr "GGUF Dosyası Yükle…"
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
 msgctxt "@title:window"
 msgid "Select GGUF File"
-msgstr "GGUF Dosyası Seç"
+msgstr "Tümünü Seç"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@action:button"
 msgid "Create Model"
-msgstr "Model Oluştur"
+msgstr "Modeli Kaldır"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadfromnamedialog.cpp:19
 #, kde-format
@@ -369,28 +382,31 @@ msgstr "Nicemleme düzeyi:"
 msgid "Modified At:"
 msgstr "Değiştirilme:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:88
-#, kde-format
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
+#, fuzzy, kde-format
+#| msgid "Model:"
 msgid "Parent Model:"
-msgstr "Üst model:"
+msgstr "Model:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:126
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
 #, kde-format
 msgid "Features Supported"
 msgstr "Desteklenen Özellikler"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:86
-#, kde-format
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@info:tooltip"
 msgid "Remove Selected Model"
-msgstr "Seçili Modeli Kaldır"
+msgstr "Modeli Kaldır"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:114
 #, kde-format
 msgid "Do you want to remove this model (%1)?"
 msgstr "Bu modeli kaldırmak istiyor musunuz (%1)?"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledwidget.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Remove Model"
@@ -489,7 +505,7 @@ msgid ""
 "Llama 2 is a collection of foundation language models ranging from 7B to 70B "
 "parameters."
 msgstr ""
-"Llama 2, 7B’den 70B’ye kadar parametreye sahip temel dil modelleri "
+"Llama 2, 7B’den 70B’ye kadar parametrelere sahip temel dil modelleri "
 "koleksiyonudur."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:31
@@ -1876,15 +1892,11 @@ msgid ""
 "Gemma 3n models are designed for efficient execution on everyday devices "
 "such as laptops, tablets or phones."
 msgstr ""
-"Genma 3n modelleri; dizüstleri, tabletler veya telefonlar gibi günlük "
-"kullanım aygıtları üzerinde efektif yürütme için tasarlanmıştır."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:274
 #, kde-format
 msgid "Magistral is a small, efficient reasoning model with 24B parameters."
 msgstr ""
-"Magistral; 24 milyar parametreli, küçük ve kaynakları verimli kullanan bir "
-"akıl yürütme modelidir."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:275
 #, kde-format
@@ -1892,8 +1904,6 @@ msgid ""
 "An update to Mistral Small that improves on function calling, instruction "
 "following, and less repetition errors."
 msgstr ""
-"Mistral Small üzerine işlev çağırmayı, yönerge takibini ve yineleme "
-"hatalarını azaltan bir güncelleme."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:276
 #, kde-format
@@ -1901,13 +1911,11 @@ msgid ""
 "Flagship vision-language model of Qwen and also a significant leap from the "
 "previous Qwen2-VL."
 msgstr ""
-"Qwen’in amiral gemisi öngörü dil modeli ve bir önceki Qwen2-VL üzerine kayda "
-"değer bir güncelleme."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:277
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr "Devstral: Kodlama aracıları için en iyi açık kaynaklı model."
+msgstr ""
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:278
 #, kde-format
@@ -1915,15 +1923,11 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
-"OpenAI’ın güçlü akıl yürütme, aracılı görevler ve isteğe göre uyarlanabilir "
-"geliştirici kullanım senaryoları için tasarlanmış açık ağırlıklı modelleri."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
-"Alibaba’nın aracılı görevler ve kodlama görevleri için tasarlanmış uzun "
-"bağlamlı modelleri."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
 #, kde-format
@@ -1931,15 +1935,11 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
-"DeepSeek-V3.1, hem düşünebilen hem de düşünmeden yanıt veren kipleri "
-"destekleyen hibrit bir modeldir."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
 msgstr ""
-"EmbeddingGemma, Google tarafından yapılmış, 300 milyon parametreyi içeren "
-"gömülü bir modeldir."
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
@@ -1958,17 +1958,19 @@ msgctxt "@title:window"
 msgid "Configure Ollama"
 msgstr "Ollama’yı Yapılandır"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:59
+#: plugins/ollama/ollamaconfiguredialog.cpp:57
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed Models"
 msgstr "Kurulu Modeller"
 
-#: plugins/ollama/ollamaconfiguredialog.cpp:64
-#, kde-format
+#: plugins/ollama/ollamaconfiguredialog.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Model"
 msgctxt "@title Preferences page name"
 msgid "Create Models"
-msgstr "Modeller Oluştur"
+msgstr "Modeli Kaldır"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:50
 #, kde-format
@@ -1984,7 +1986,7 @@ msgstr "Model:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr "Sıcaklık:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
@@ -1993,14 +1995,12 @@ msgid ""
 "The temperature of the model. Increasing the temperature will make the model "
 "answer more creatively."
 msgstr ""
-"Modelin sıcaklığı. Sıcaklığı artırmak modelin daha yaratıcı bir biçimde "
-"yanıtlar vermesini sağlar."
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:63
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:51
 #, kde-format
 msgid "Seed:"
-msgstr "Tohum:"
+msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:65
 #, kde-format
@@ -2010,13 +2010,10 @@ msgid ""
 "specific number will make the model generate the same text for the same "
 "prompt. (Default: 0)"
 msgstr ""
-"Üretme için kullanılacak rastgele tohum numarasını ayarlar. Bunu belirli bir "
-"sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
-"(Öntanımlı: 0)."
 
-#: tools/example/exampletexttoolplugin.cpp:21
+#: tools/example/exampletexttoolplugin.cpp:20
 msgid "The name of the city"
-msgstr "Şehrin adı"
+msgstr ""
 
 #: widgets/common/textautogeneratemodelsearchlineedit.cpp:14
 #, kde-format
@@ -2027,40 +2024,43 @@ msgstr "Model ara…"
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
 msgid "No instance found. Please add one."
-msgstr "Bulunan örnek yok. Lütfen bir tane ekleyin."
+msgstr ""
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr "Örnek Ekle…"
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
-"Ollama sistemde bulunamadı. Sistem yöneticinize onu kurmasını söyleyin."
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:45
 #, kde-format
 msgid "Ollama not found on system. Please install it."
-msgstr "Ollama sistemde bulunamadı. Lütfen onu kurun."
+msgstr ""
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
 msgctxt "@action"
 msgid "Download Ollama"
-msgstr "Ollama’yı İndir"
+msgstr "Model İndir"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ollama"
 msgctxt "@action"
 msgid "Start Ollama"
-msgstr "Ollama’yı Başlat"
+msgstr "Ollama"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure…"
 msgctxt "@action:button"
 msgid "Configure…"
 msgstr "Yapılandır…"
@@ -2071,142 +2071,153 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "İleti gir…"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:42
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr "Dosya İliştir"
+msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:58
-#, kde-format
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Send"
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Gönder"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:88
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:94
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
-msgstr "Araçları seçmeye olanak tanı"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr "Değişikliklerin uygulanması için yeniden başlatma gereklidir."
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
 #, kde-format
 msgid "Text Plugins"
-msgstr "Metin Eklentileri"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
 #, kde-format
 msgid "Tools Plugins"
-msgstr "Araç Eklentileri"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:177
 #, kde-format
 msgid "..."
-msgstr "…"
+msgstr ""
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:179
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure…"
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr "Yapılandır"
+msgstr "Yapılandır…"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Prompt:"
 msgid "Prompt"
-msgstr "İstem"
+msgstr "İstem:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr "Açıklama:"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
-msgstr "Argümanlar:"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr "Bilgi:"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show metadata info"
-msgstr "Üst veri bilgisini göster"
+msgstr ""
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
-msgstr "Üst veri bilgisi"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Instance"
-msgstr "Örnek Ekle"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr "Ad:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Select a Type of Instance:"
-msgstr "Bir örnek türü seç:"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure IA"
 msgctxt "@title:window"
 msgid "Configure Instances"
-msgstr "Örnekleri Yapılandır"
+msgstr "Yapay Zekâyı Yapılandır"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:56
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
-msgstr "Örnek Ekle…"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
-msgstr "Öntanımlı Olarak İmle"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
-msgstr "Düzenle…"
+msgstr ""
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove as Favorite"
 msgctxt "@action"
 msgid "Remove Instance"
-msgstr "Örneği Kaldır"
+msgstr "Sık Kullanılanlardan Kaldır"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this instance (%1)?"
-msgstr "Bu örneği kaldırmak istiyor musunuz (%1)?"
+msgstr "Bu modeli kaldırmak istiyor musunuz (%1)?"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove as Favorite"
 msgctxt "@title"
 msgid "Remove Instance"
-msgstr "Örneği Kaldır"
+msgstr "Sık Kullanılanlardan Kaldır"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:45
 #: widgets/textautogeneratesearchwidget.cpp:30
@@ -2219,7 +2230,7 @@ msgstr "Ara…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Örnek ekle…"
+msgstr ""
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -2282,13 +2293,13 @@ msgstr "API anahtarı:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
 msgid "Max Tokens:"
-msgstr "En çok jeton sayısı:"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr "Tez Sor"
+msgstr ""
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
 #, kde-format
@@ -2306,7 +2317,7 @@ msgstr "Temizle"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
-msgstr "Tartışmayı Veritabanına Kaydet"
+msgstr ""
 
 #: widgets/textautogeneratedialog.cpp:37
 #, kde-format
@@ -2333,28 +2344,32 @@ msgid "Favorite"
 msgstr "Sık kullanılanlara ekle"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr "Ara… (%1)"
+msgstr "Ara…"
 
 #: widgets/textautogeneratehistorywidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Search Channels"
-msgstr "Kanallar Ara"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:48
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr "Önceki Sohbet"
+msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "Sonraki Sohbet"
+msgstr "Yeni Sohbet"
 
 #: widgets/textautogeneratesearchdialog.cpp:28
 #, kde-format
@@ -2368,10 +2383,11 @@ msgid "No plugin found."
 msgstr "Bulunan eklenti yok."
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tools"
 msgctxt "@label:textbox"
 msgid "Tools:"
-msgstr "Araçlar:"
+msgstr "Araçlar"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:381
 #, kde-format
@@ -2410,10 +2426,12 @@ msgid "Copy"
 msgstr "Kopyala"
 
 #: widgets/view/textautogeneratebaselistview.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Copy"
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "URL’yi Kopyala"
+msgstr "Kopyala"
 
 #: widgets/view/textautogeneratebaselistview.cpp:95
 #, kde-format
@@ -2463,21 +2481,22 @@ msgid "Remove Discussion"
 msgstr "Tartışmayı Kaldır"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No plugin found."
 msgid "No Archive Found."
-msgstr "Bulunan arşiv yok."
+msgstr "Bulunan eklenti yok."
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "Bulunan ileti yok."
+msgstr ""
 
 #~ msgid "No system prompt"
 #~ msgstr "Sistem istemi yok"
 
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Düzenle…"
+#~ msgctxt "@title:window"
+#~ msgid "Configure Mistral IA"
+#~ msgstr "Mistral AI’ı Yapılandır"
 
 #~ msgid "The URL to the Ollama instance"
 #~ msgstr "Ollama örneği URL’si"
@@ -2488,36 +2507,19 @@ msgstr "Bulunan ileti yok."
 #~ msgid "The model used to generate responses"
 #~ msgstr "Yanıtlar üretmek için kullanılan model"
 
-#~ msgid ""
-#~ "The temperature of the model. Increasing the temperature will make the "
-#~ "model answer more creatively."
-#~ msgstr ""
-#~ "Modelin sıcaklığı. Sıcaklığı artırmak modelin daha yaratıcı bir biçimde "
-#~ "yanıtlar vermesini sağlar."
-
-#~ msgid ""
-#~ "Sets the random number seed to use for generation. Setting this to a "
-#~ "specific number will make the model generate the same text for the same "
-#~ "prompt. (Default: 0)"
-#~ msgstr ""
-#~ "Üretme için kullanılacak rastgele tohum numarasını ayarlar. Bunu belirli "
-#~ "bir sayıya ayarlamak modelin aynı istem için aynı metni üretmesini sağlar "
-#~ "(Öntanımlı: 0)."
-
-#~ msgid "Engine:"
-#~ msgstr "İşletke:"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Mistral AI’ı Yapılandır"
+#~ msgid "Cancel"
+#~ msgstr "İptal"
 
 #~ msgctxt "@title:window"
 #~ msgid "Configure Openai IA"
 #~ msgstr "OpenAI Zekâsını Yapılandır"
 
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "İptal"
+#~ msgid "Engine:"
+#~ msgstr "İşletke:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Edit..."
+#~ msgstr "Düzenle…"
 
 #, fuzzy
 #~| msgid "Favorite"
