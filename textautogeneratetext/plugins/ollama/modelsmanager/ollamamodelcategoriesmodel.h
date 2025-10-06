@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QStandardItemModel>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
