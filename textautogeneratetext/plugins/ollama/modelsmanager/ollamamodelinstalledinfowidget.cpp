@@ -101,7 +101,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
             qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << lang;
             continue;
         }
-        vboxLanguagesLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
+        vboxLanguagesLayout->addWidget(new QLabel(locale.nativeLanguageName(), mInfoWidget));
     }
     QStringList categoriesName;
     const TextAutoGenerateText::TextAutoGenerateManager::Categories categories = info.categories();

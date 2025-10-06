@@ -73,7 +73,7 @@ void OllamaModelAvailableInfoWidget::generateWidget(const QModelIndex &index)
             qCWarning(AUTOGENERATETEXT_OLLAMA_LOG) << " impossible to convert to language " << l;
             continue;
         }
-        languagesGroupBoxLayout->addWidget(new QLabel(QLocale::languageToString(locale.language()), mInfoWidget));
+        languagesGroupBoxLayout->addWidget(new QLabel(locale.nativeLanguageName(), mInfoWidget));
     }
     infoLayout->addWidget(languagesGroupBox);
 
