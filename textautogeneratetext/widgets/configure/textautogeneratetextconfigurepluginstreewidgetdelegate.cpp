@@ -69,7 +69,7 @@ void TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::paint(QPainter *pai
     painter->setFont(option.font);
 
     // Calculate the text rectangles
-    QFontMetrics fontMetrics(option.font);
+    const QFontMetrics fontMetrics(option.font);
     const QRect rect = option.rect;
 
     const QSize checkboxSize = QApplication::style()->sizeFromContents(QStyle::CT_CheckBox, nullptr, QSize(), nullptr);
@@ -91,7 +91,7 @@ void TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::paint(QPainter *pai
 
 QSize TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QFontMetrics fontMetrics(option.font);
+    const QFontMetrics fontMetrics(option.font);
     const int height = fontMetrics.height() * 2; // Height for two lines
 
     const QString description = index.data(TextAutoGenerateText::TextAutoGenerateTextConfigurePluginsWidget::PluginItemData::Description).toString();
