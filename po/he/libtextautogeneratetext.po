@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-05 02:27+0000\n"
-"PO-Revision-Date: 2025-09-17 08:02+0300\n"
+"PO-Revision-Date: 2025-10-05 12:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -666,7 +666,7 @@ msgid ""
 "Dolphin 2.9 is a new model with 8B and 70B sizes by Eric Hartford based on "
 "Llama 3 that has a variety of instruction, conversational, and coding skills."
 msgstr ""
-"Dolphin 2.9 הוא מודל חדש בגדלים 8B ו־70B מאת אריק הארטפורד שמבוסס עלLlama 3 "
+"Dolphin 2.9 הוא מודל חדש בגדלים 8B ו־70B מאת אריק הארטפורד שמבוסס על Llama 3 "
 "ויש לו מגוון מיומנויות לעיבוד הנחיות, שיח ופיתוח תוכנה."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:65
@@ -1520,7 +1520,7 @@ msgid ""
 "Sailor2 are multilingual language models made for South-East Asia. Available "
 "in 1B, 8B, and 20B parameter sizes."
 msgstr ""
-"Sailor2 הם מודלים רב־לשוניים שנועדו לדרום־מזרח אסיה. זמינים בגדלים של1B,‏ 8B "
+"Sailor2 הם מודלים רב־לשוניים שנועדו לדרום־מזרח אסיה. זמינים בגדלים של 1B,‏ 8B "
 "ו־20B משתנים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:210
