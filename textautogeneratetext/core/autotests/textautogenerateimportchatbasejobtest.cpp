@@ -16,3 +16,5 @@ void TextAutoGenerateImportChatBaseJobTest::shouldHaveDefaultValues()
 {
     // TODO
 }
+
+#include "moc_textautogenerateimportchatbasejobtest.cpp"

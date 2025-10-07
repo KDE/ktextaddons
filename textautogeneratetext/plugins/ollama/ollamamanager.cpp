@@ -192,6 +192,7 @@ void OllamaManager::loadModels()
             if (it != mAvailableInfos.constEnd()) {
                 installed.setCategories((*it).categories());
                 installed.setLanguages((*it).languages());
+                installed.setModelUrl((*it).url());
             }
             info.models.push_back(std::move(i));
             mInstalledInfos.append(std::move(installed));

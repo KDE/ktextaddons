@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "ollamamodelavailableinfo.h"
 #include "textautogenerateollama_private_export.h"
 #include <QComboBox>
 #include <TextAutoGenerateText/TextAutoGenerateManager>

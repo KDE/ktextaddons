@@ -48,8 +48,11 @@ public:
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
     void setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories);
 
-    QStringList languages() const;
+    [[nodiscard]] QStringList languages() const;
     void setLanguages(const QStringList &newLanguages);
+
+    [[nodiscard]] QString modelUrl() const;
+    void setModelUrl(const QString &newModelUrl);
 
 private:
     QString mName;
@@ -60,6 +63,7 @@ private:
     QString mModifyAt;
     QString mGeneratedModelName;
     QString mParentModel;
+    QString mModelUrl;
     QStringList mLanguages;
     TextAutoGenerateText::TextAutoGenerateManager::Categories mCategories = TextAutoGenerateText::TextAutoGenerateManager::Category::Unknown;
 };

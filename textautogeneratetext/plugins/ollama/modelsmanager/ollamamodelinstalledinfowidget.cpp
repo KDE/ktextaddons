@@ -5,6 +5,7 @@
 */
 #include "ollamamodelinstalledinfowidget.h"
 #include "autogeneratetext_ollama_debug.h"
+#include "ollamanetworkurlbutton.h"
 #include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QGroupBox>
@@ -19,9 +20,12 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     , mQuantizationLevelLabel(new QLabel(this))
     , mModifiedAtLabel(new QLabel(this))
     , mMainLayout(new QVBoxLayout(this))
+    , mNetworkUrlButton(new OllamaNetworkUrlButton(this))
 {
     mMainLayout->setObjectName(u"mainLayout"_s);
 
+    mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
+    mMainLayout->addWidget(mNetworkUrlButton, 0, Qt::AlignTop);
     {
         auto label = new QLabel(i18n("Family:"), this);
         mMainLayout->addWidget(label, 0, Qt::AlignTop);
@@ -70,6 +74,7 @@ void OllamaModelInstalledInfoWidget::changeFont(QLabel *label)
 
 void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info)
 {
+    mNetworkUrlButton->setModelUrl(info.modelUrl());
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
     mQuantizationLevelLabel->setText(info.quantizationLevel());
