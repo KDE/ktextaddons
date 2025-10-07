@@ -8,7 +8,7 @@
 #include <QWidget>
 class QVBoxLayout;
 class QLabel;
-class QToolButton;
+class OllamaNetworkUrlButton;
 class OllamaManager;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelAvailableInfoWidget : public QWidget
 {
@@ -27,5 +27,5 @@ private:
     QLabel *const mModelName;
     QWidget *mInfoWidget = nullptr;
     OllamaManager *const mOllamaManager;
-    QToolButton *const mNetworkUrlButton;
+    OllamaNetworkUrlButton *const mNetworkUrlButton;
 };

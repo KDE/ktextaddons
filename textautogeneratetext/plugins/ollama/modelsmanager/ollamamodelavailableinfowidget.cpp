@@ -9,12 +9,12 @@
 #include "ollamamanager.h"
 #include "ollamamodelavailableinfosmodel.h"
 #include "ollamamodeldownloadwidget.h"
+#include "ollamanetworkurlbutton.h"
 #include "widgets/common/textautogenerateflowlayout.h"
 #include <KLocalizedString>
 #include <QDesktopServices>
 #include <QGroupBox>
 #include <QLabel>
-#include <QToolButton>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
@@ -23,7 +23,7 @@ OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *ma
     , mMainLayout(new QVBoxLayout(this))
     , mModelName(new QLabel(this))
     , mOllamaManager(manager)
-    , mNetworkUrlButton(new QToolButton(this))
+    , mNetworkUrlButton(new OllamaNetworkUrlButton(this))
 {
     mMainLayout->setObjectName(u"mainlayout"_s);
     mMainLayout->setContentsMargins({});
@@ -36,14 +36,6 @@ OllamaModelAvailableInfoWidget::OllamaModelAvailableInfoWidget(OllamaManager *ma
     hbox->addWidget(mModelName, 0, Qt::AlignHCenter);
 
     mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
-    mNetworkUrlButton->setIcon(QIcon::fromTheme(u"applications-network-symbolic"_s));
-    mNetworkUrlButton->setToolTip(i18nc("@info:tooltip", "Open Model Information Url"));
-    mNetworkUrlButton->setAutoRaise(true);
-    connect(mNetworkUrlButton, &QToolButton::clicked, this, [this]() {
-        if (!mModelUrl.isEmpty()) {
-            QDesktopServices::openUrl(QUrl(mModelUrl));
-        }
-    });
     hbox->addWidget(mNetworkUrlButton);
 }
 
