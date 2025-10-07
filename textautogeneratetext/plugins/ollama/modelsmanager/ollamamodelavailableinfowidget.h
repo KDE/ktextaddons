@@ -22,7 +22,6 @@ Q_SIGNALS:
     void downloadModel(const QString &url);
 
 private:
-    QString mModelUrl;
     QVBoxLayout *const mMainLayout;
     QLabel *const mModelName;
     QWidget *mInfoWidget = nullptr;
