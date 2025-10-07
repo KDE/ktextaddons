@@ -571,22 +571,29 @@ void TextAutoGenerateManager::saveCurrentChatInDataBase(const QByteArray &chatId
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Current Chat Id is empty it's a bug";
         return;
     }
-    auto chat = mTextAutoGenerateChatsModel->chat(chatId);
-    // Insert chat in database
-    mDatabaseManager->insertOrUpdateChat(chat);
 
     auto model = mTextAutoGenerateChatsModel->messagesModel(chatId);
     if (model) {
         const auto msgs = model->messages();
+        if (msgs.isEmpty()) {
+            return;
+        }
+
+        auto chat = mTextAutoGenerateChatsModel->chat(chatId);
+        // Insert chat in database
+        mDatabaseManager->insertOrUpdateChat(chat);
         // Save each message in database
         for (const auto &m : msgs) {
             mDatabaseManager->insertOrReplaceMessage(chatId, m);
         }
-    }
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
-    const QString ourIdentifier = u"%1/%2"_s.arg(QDBusConnection::sessionBus().baseService(), property("uniqueDBusPath").toString());
-    Q_EMIT chatListChanged(ourIdentifier);
+        const QString ourIdentifier = u"%1/%2"_s.arg(QDBusConnection::sessionBus().baseService(), property("uniqueDBusPath").toString());
+        Q_EMIT chatListChanged(ourIdentifier);
 #endif
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "No message model found for: " << chatId;
+        return;
+    }
 }
 
 void TextAutoGenerateManager::slotChatListChanged([[maybe_unused]] const QString &id)
