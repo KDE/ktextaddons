@@ -74,7 +74,7 @@ void OllamaModelInstalledInfoWidget::changeFont(QLabel *label)
 
 void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaModelInstalledInfo &info)
 {
-    // TODO mNetworkUrlButton->setModelUrl(info.url());
+    mNetworkUrlButton->setModelUrl(info.modelUrl());
     mFamilyNameLabel->setText(info.family());
     mParameterSizeLabel->setText(info.parameterSize());
     mQuantizationLevelLabel->setText(info.quantizationLevel());
