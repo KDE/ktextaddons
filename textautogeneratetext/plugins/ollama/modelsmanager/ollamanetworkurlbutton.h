@@ -5,9 +5,10 @@
 */
 
 #pragma once
+#include "textautogenerateollama_private_export.h"
 #include <QToolButton>
 
-class OllamaNetworkUrlButton : public QToolButton
+class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaNetworkUrlButton : public QToolButton
 {
     Q_OBJECT
 public:
