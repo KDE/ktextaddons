@@ -57,24 +57,26 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     f.setItalic(true);
     mModelInstanceLabel->setFont(f);
 
-    connect(clearButton, &QToolButton::clicked, this, [this]() {
-        if (!mManager->currentChatId().isEmpty()) {
-            if (auto messageModel = mManager->messagesModelFromChatId(mManager->currentChatId()); messageModel) {
-                messageModel->resetConversation();
-            }
-        }
-    });
-
     connect(configureButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::configureRequested);
-    connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
-        updateEngineModelName(mManager->generateEngineDisplayName());
-    });
-    connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::activated, this, [this]() {
-        mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
-    });
-    connect(saveQuickAskButton, &QToolButton::clicked, this, [this]() {
-        mManager->saveCurrentChatInDataBase(mManager->currentChatId());
-    });
+    if (mManager) {
+        connect(clearButton, &QToolButton::clicked, this, [this]() {
+            if (!mManager->currentChatId().isEmpty()) {
+                if (auto messageModel = mManager->messagesModelFromChatId(mManager->currentChatId()); messageModel) {
+                    messageModel->resetConversation();
+                }
+            }
+        });
+
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::loadEngineDone, this, [this]() {
+            updateEngineModelName(mManager->generateEngineDisplayName());
+        });
+        connect(mModelComboBox, &TextAutoGenerateTextModelComboBox::activated, this, [this]() {
+            mManager->textAutoGeneratePlugin()->setCurrentModel(mModelComboBox->currentModel());
+        });
+        connect(saveQuickAskButton, &QToolButton::clicked, this, [this]() {
+            mManager->saveCurrentChatInDataBase(mManager->currentChatId());
+        });
+    }
 }
 
 TextAutoGenerateQuickAskHeaderWidget::~TextAutoGenerateQuickAskHeaderWidget() = default;
