@@ -297,6 +297,7 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
         if (currentModel == "Mistral Large"_L1) {
             return true;
         }
+        return false;
     }
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
