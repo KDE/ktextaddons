@@ -1,8 +1,22 @@
 {
     "KPlugin": {
         "Description": "This tool plugin is an example.",
+        "Description[ar]": "هذه الملحقة مثال.",
+        "Description[ca@valencia]": "Este connector d'eina és un exemple.",
+        "Description[ca]": "Aquest connector d'eina és un exemple.",
+        "Description[es]": "Este complemento de herramienta es un ejemplo.",
+        "Description[nl]": "Deze hulpmiddelplug-in is een voorbeeld.",
+        "Description[pt_BR]": "Este plugin de ferramenta é um exemplo.",
+        "Description[sv]": "Det här verktygsinsticksprogrammet är ett exempel.",
         "EnabledByDefault": true,
         "Name": "Tool Example Plugin",
+        "Name[ar]": "ملحقة مثال أداة",
+        "Name[ca@valencia]": "Connector d'exemple d'eina",
+        "Name[ca]": "Connector d'exemple d'eina",
+        "Name[es]": "Complemento de ejemplo de herramienta",
+        "Name[nl]": "Hulpmiddel voor voorbeeldplug",
+        "Name[pt_BR]": "Plugin de ferramenta de exemplo",
+        "Name[sv]": "Exempelverktygsinsticksprogram",
         "Version": "1.0"
     }
 }
