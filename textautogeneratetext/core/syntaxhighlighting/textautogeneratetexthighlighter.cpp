@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetexthighlighter.h"
+#include "core/textautogenerateblockcodemanager.h"
 #include "textautogeneratetexticonnamecache.h"
 
 #include <KSyntaxHighlighting/Format>
@@ -33,6 +34,8 @@ void TextAutoGenerateTextHighlighter::highlight(const QString &str, const QByteA
     const QString copyIconPath = TextAutoGenerateTextIconNameCache::self()->iconPath(u"edit-copy"_s, KIconLoader::Small);
 
     const QString identifier = QString(QString::fromLatin1(uuid) + u'-' + QString::number(blockCodeIndex++));
+
+    TextAutoGenerateBlockCodeManager::self()->insert(identifier, str);
 
     *mStream << u"<p align=\"right\"><a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s.arg(identifier,
                                                                                                                  QString::number(iconSize),

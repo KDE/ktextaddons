@@ -193,6 +193,8 @@ target_sources(
         core/tools/textautogeneratetexttoolpluginproperty.cpp
         core/tools/textautogeneratetexttoolpluginjob.h
         core/tools/textautogeneratetexttoolpluginjob.cpp
+        core/textautogenerateblockcodemanager.h
+        core/textautogenerateblockcodemanager.cpp
 )
 
 target_sources(

@@ -7,6 +7,7 @@
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/syntaxhighlighting/textautogeneratetexthighlighter.h"
+#include "core/textautogenerateblockcodemanager.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include "widgets/view/textautogeneratelistviewtextselection.h"
@@ -525,6 +526,8 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                         QString identifier = link;
                         identifier.remove(TextAutoGenerateTextHighlighter::copyHref());
                         qDebug() << "identifier**************************** " << identifier;
+
+                        qDebug() << " block code : " << TextAutoGenerateBlockCodeManager::self()->blockCode(identifier);
                     } else {
                         QDesktopServices::openUrl(QUrl(link));
                     }
