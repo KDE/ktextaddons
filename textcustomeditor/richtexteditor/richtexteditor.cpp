@@ -292,11 +292,13 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
             d->webshortcutMenuManager->addWebShortcutsToMenu(popup);
         }
 #endif
-        if (emojiSupport()) {
+        if (emojiSupport() && !isReadOnly()) {
             popup->addSeparator();
             auto action = new TextEmoticonsWidgets::EmoticonTextEditAction(this);
             popup->addAction(action);
             connect(action, &TextEmoticonsWidgets::EmoticonTextEditAction::insertEmoticon, this, &RichTextEditor::slotInsertEmoticon);
+
+            // TODO add emojiwidgetaction
         }
         addExtraMenuEntry(popup, pos);
         return popup;
