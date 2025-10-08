@@ -183,6 +183,8 @@ target_sources(
         core/syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.cpp
         core/syntaxhighlighting/textautogeneratetexthighlighter.h
         core/syntaxhighlighting/textautogeneratetexthighlighter.cpp
+        core/syntaxhighlighting/textautogeneratetexticonnamecache.h
+        core/syntaxhighlighting/textautogeneratetexticonnamecache.cpp
         core/tools/textautogeneratetexttoolplugin.h
         core/tools/textautogeneratetexttoolplugin.cpp
         core/tools/textautogeneratetexttoolpluginmanager.cpp
@@ -366,6 +368,7 @@ target_link_libraries(
         KF6::ColorScheme
         KF6::SyntaxHighlighting
         KF6::ItemViews
+        KF6::IconThemes
         cmark-rc
 )
 

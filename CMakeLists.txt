@@ -118,6 +118,7 @@ find_package(
         WidgetsAddons
         TextWidgets
         ItemViews
+        IconThemes
 )
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
 add_feature_info(
