@@ -6,8 +6,6 @@
 
 #include "textautogeneratemessageutils.h"
 #include "cmark-rc.h"
-#include "syntaxhighlighting/textautogeneratetexthighlighter.h"
-#include "syntaxhighlighting/textautogeneratetextsyntaxhighlightingmanager.h"
 #include "textautogeneratetextcore_cmark_debug.h"
 #include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include <KColorScheme>
@@ -16,6 +14,8 @@
 #include <KSyntaxHighlighting/Theme>
 #include <KTextToHTML>
 #include <QRegularExpression>
+#include <TextUtils/TextUtilsSyntaxHighlighter>
+#include <TextUtils/TextUtilsSyntaxHighlightingManager>
 using namespace Qt::StringLiterals;
 using namespace TextAutoGenerateText;
 
@@ -300,11 +300,11 @@ static QString addHighlighter(const QString &str, const QString &language, const
 
     QString highlighted;
     QTextStream stream(&highlighted);
-    TextAutoGenerateTextHighlighter highlighter(&stream);
-    const auto useHighlighter = TextAutoGenerateTextSyntaxHighlightingManager::self()->syntaxHighlightingInitialized();
+    TextUtils::TextUtilsSyntaxHighlighter highlighter(&stream);
+    const auto useHighlighter = TextUtils::TextUtilsSyntaxHighlightingManager::self()->syntaxHighlightingInitialized();
 
     if (useHighlighter) {
-        auto &repo = TextAutoGenerateTextSyntaxHighlightingManager::self()->repo();
+        auto &repo = TextUtils::TextUtilsSyntaxHighlightingManager::self()->repo();
         const auto theme = (codeBackgroundColor.lightness() < 128) ? repo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                    : repo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme);
         // qDebug() << " theme .n am" << theme.name();
@@ -322,9 +322,9 @@ static QString addHighlighter(const QString &str, const QString &language, const
     };
 
     auto addCodeChunk = [&](const QString &chunk) {
-        auto definition = TextAutoGenerateTextSyntaxHighlightingManager::self()->def(language);
+        auto definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->def(language);
         if (!definition.isValid()) {
-            definition = TextAutoGenerateTextSyntaxHighlightingManager::self()->defaultDef();
+            definition = TextUtils::TextUtilsSyntaxHighlightingManager::self()->defaultDef();
         }
         qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " definition.name() " << definition.name();
         highlighter.setDefinition(definition);

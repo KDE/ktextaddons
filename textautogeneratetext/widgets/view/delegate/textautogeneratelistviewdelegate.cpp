@@ -6,8 +6,6 @@
 #include "textautogeneratelistviewdelegate.h"
 
 #include "core/models/textautogeneratemessagesmodel.h"
-#include "core/syntaxhighlighting/textautogeneratetexthighlighter.h"
-#include "core/textautogenerateblockcodemanager.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include "widgets/view/textautogeneratelistviewtextselection.h"
@@ -20,6 +18,8 @@
 #include <QMimeData>
 #include <QPainter>
 #include <QToolTip>
+#include <TextUtils/TextUtilsBlockCodeManager>
+#include <TextUtils/TextUtilsSyntaxHighlighter>
 #include <kmessagebox.h>
 
 using namespace Qt::Literals::StringLiterals;
@@ -524,16 +524,15 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
                 const QString link = doc->documentLayout()->anchorAt(pos);
                 if (!link.isEmpty()) {
-                    if (link.startsWith(TextAutoGenerateTextHighlighter::copyHref())) {
+                    if (link.startsWith(TextUtils::TextUtilsSyntaxHighlighter::copyHref())) {
                         QString identifier = link;
-                        identifier.remove(TextAutoGenerateTextHighlighter::copyHref());
-                        qDebug() << "identifier**************************** " << identifier;
-
-                        const QString blockCodeStr = TextAutoGenerateBlockCodeManager::self()->blockCode(identifier);
+                        identifier.remove(TextUtils::TextUtilsSyntaxHighlighter::copyHref());
+                        // qDebug() << "identifier**************************** " << identifier;
+                        const QString blockCodeStr = TextUtils::TextUtilsBlockCodeManager::self()->blockCode(identifier);
                         QClipboard *clipboard = QGuiApplication::clipboard();
                         clipboard->setText(blockCodeStr, QClipboard::Clipboard);
                         clipboard->setText(blockCodeStr, QClipboard::Selection);
-                        KMessageBox::information(mListView, i18n("Block Code copied"), i18nc("@title", "Copy Block Code"));
+                        KMessageBox::information(mListView, i18n("Block Code copied."), i18nc("@title", "Copy Block Code"));
                     } else {
                         QDesktopServices::openUrl(QUrl(link));
                     }

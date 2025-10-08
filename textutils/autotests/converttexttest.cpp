@@ -5,12 +5,12 @@
 */
 
 #include "converttexttest.h"
-using namespace Qt::Literals::StringLiterals;
 
-#include "converttext.h"
+#include "converttext/converttext.h"
 #include <QTest>
 #include <QTextDocument>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(ConvertTextTest)
 ConvertTextTest::ConvertTextTest(QObject *parent)
     : QObject{parent}

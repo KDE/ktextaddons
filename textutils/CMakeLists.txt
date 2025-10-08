@@ -17,17 +17,38 @@ add_library(KF6::TextUtils ALIAS KF6TextUtils)
 target_sources(
     KF6TextUtils
     PRIVATE
-        converttext.cpp
-        converttext.h
+        converttext/converttext.cpp
+        converttext/converttext.h
+        syntaxhighlighting/textutilsiconnamecache.cpp
+        syntaxhighlighting/textutilsiconnamecache.h
+        syntaxhighlighting/textutilssyntaxhighlighter.cpp
+        syntaxhighlighting/textutilssyntaxhighlighter.h
+        syntaxhighlighting/textutilssyntaxhighlightingmanager.cpp
+        syntaxhighlighting/textutilssyntaxhighlightingmanager.h
+        syntaxhighlighting/textutilsblockcodemanager.h
+        syntaxhighlighting/textutilsblockcodemanager.cpp
 )
 
-target_link_libraries(KF6TextUtils PRIVATE Qt::Core)
+target_link_libraries(
+    KF6TextUtils
+    PRIVATE
+        Qt::Core
+        KF6::SyntaxHighlighting
+        KF6::IconThemes
+        KF6::I18n
+)
 
 ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
     IDENTIFIER TEXTUTILS_LOG
     CATEGORY_NAME org.kde.kf.textutils
     OLD_CATEGORY_NAMES org.kde.kf6.textutils
     DESCRIPTION "KF6 (textutils)" EXPORT KTEXTADDONS
+)
+
+ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_syntaxhighlighting_debug.h
+    IDENTIFIER TEXTUTILS_SYNTAXHIGHLIGHTING_LOG
+    CATEGORY_NAME org.kde.kf.textutils.syntaxhighlighting
+    DESCRIPTION "KF6 (textutils syntaxhighlighting )" EXPORT KTEXTADDONS
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -62,11 +83,23 @@ ecm_generate_headers(TextUtils_CamelCase_HEADERS
     ConvertText
     REQUIRED_HEADERS TextUtils_HEADERS
     PREFIX TextUtils
+    RELATIVE converttext
+)
+
+ecm_generate_headers(TextUtils_Syntaxhighlighting_CamelCase_HEADERS
+    HEADER_NAMES
+    TextUtilsSyntaxHighlighter
+    TextUtilsSyntaxHighlightingManager
+    TextUtilsBlockCodeManager
+    REQUIRED_HEADERS TextUtils_Syntaxhighlighting_HEADERS
+    PREFIX TextUtils
+    RELATIVE syntaxhighlighting
 )
 
 install(
     FILES
         ${TextUtils_HEADERS}
+        ${TextUtils_Syntaxhighlighting_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textutils_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/textutils
     COMPONENT Devel
@@ -74,6 +107,7 @@ install(
 install(
     FILES
         ${TextUtils_CamelCase_HEADERS}
+        ${TextUtils_Syntaxhighlighting_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )
