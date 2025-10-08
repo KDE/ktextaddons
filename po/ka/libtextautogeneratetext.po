@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:41+0000\n"
+"POT-Creation-Date: 2025-10-08 00:42+0000\n"
 "PO-Revision-Date: 2025-10-04 05:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -264,19 +264,13 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "Ollama-ის მოდელების მართვა"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "მოდელის ინფორმაციის URL-ის გახსნა"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:59
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Languages Supported"
 msgstr "მხარდაჭერილი ენები"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:72
 #, kde-format
 msgid "Models"
 msgstr "მოდელები"
@@ -356,32 +350,32 @@ msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
 msgid "Family:"
 msgstr "ოჯახი:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:39
 #, kde-format
 msgid "Parameter Size:"
 msgstr "პარამეტრის ზომა:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:48
 #, kde-format
 msgid "Quantization Level:"
 msgstr "კვანტიზაციის დონე:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:53
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:57
 #, kde-format
 msgid "Modified At:"
 msgstr "ცვლილების დრო:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:92
 #, kde-format
 msgid "Parent Model:"
 msgstr "მშობელი მოდელი:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:121
 #, kde-format
 msgid "Features Supported"
 msgstr "მხარდაჭერილი ფუნქციები"
@@ -1950,6 +1944,12 @@ msgstr ""
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
 msgstr "EmbeddingGemma 300M პარამეტრიანი ჩაშენებადი მოდელია Google-სგან."
+
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr "მოდელის ინფორმაციის URL-ის გახსნა"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
