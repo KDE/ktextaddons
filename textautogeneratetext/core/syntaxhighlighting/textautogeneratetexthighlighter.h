@@ -16,7 +16,7 @@ public:
     explicit TextAutoGenerateTextHighlighter(QTextStream *stream);
     ~TextAutoGenerateTextHighlighter() override = default;
 
-    void highlight(const QString &str);
+    void highlight(const QString &str, const QByteArray &uuid, int &blockCodeIndex);
 
     [[nodiscard]] static QString copyHref();
 

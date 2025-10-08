@@ -21,7 +21,7 @@ TextAutoGenerateTextHighlighter::TextAutoGenerateTextHighlighter(QTextStream *st
 {
 }
 
-void TextAutoGenerateTextHighlighter::highlight(const QString &str)
+void TextAutoGenerateTextHighlighter::highlight(const QString &str, const QByteArray &uuid, int &blockCodeIndex)
 {
     *mStream << u"<code>"_s;
     KSyntaxHighlighting::State state;
@@ -32,7 +32,9 @@ void TextAutoGenerateTextHighlighter::highlight(const QString &str)
     const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
     const QString copyIconPath = TextAutoGenerateTextIconNameCache::self()->iconPath(u"edit-copy"_s, KIconLoader::Small);
 
-    *mStream << u"<p align=\"right\"><a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s.arg(str,
+    const QString identifier = QString(QString::fromLatin1(uuid) + u'-' + QString::number(blockCodeIndex++));
+
+    *mStream << u"<p align=\"right\"><a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s.arg(identifier,
                                                                                                                  QString::number(iconSize),
                                                                                                                  copyIconPath,
                                                                                                                  copyHref());
