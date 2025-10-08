@@ -43,12 +43,14 @@ QString TextAutoGenerateMessage::content() const
     return mContent;
 }
 
+void TextAutoGenerateMessage::generateHtml()
+{
+    mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid);
+}
+
 void TextAutoGenerateMessage::setContent(const QString &newContent)
 {
-    if (mContent != newContent) {
-        mContent = newContent;
-        mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent);
-    }
+    mContent = newContent;
 }
 
 TextAutoGenerateMessage::Sender TextAutoGenerateMessage::sender() const
@@ -283,6 +285,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     msg.setUuid(o["identifier"_L1].toString().toLatin1());
     msg.setAnswerUuid(o["answerIdentifier"_L1].toString().toLatin1());
     msg.setContent(o["text"_L1].toString());
+    msg.generateHtml();
 
     TextAutoGenerateAnswerInfo *messageInfoDeserialized = TextAutoGenerateAnswerInfo::deserialize(o);
     if (messageInfoDeserialized->isValid()) {

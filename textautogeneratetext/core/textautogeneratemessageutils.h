@@ -12,6 +12,6 @@ namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateMessageUtils
 {
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString convertTextToHtml(const QString &str, const QString &searchedText = QString());
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString convertTextToHtml(const QString &str, const QByteArray &uuid, const QString &searchedText = QString());
 }
 };

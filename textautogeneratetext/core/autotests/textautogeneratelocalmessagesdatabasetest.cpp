@@ -68,21 +68,25 @@ void TextAutoGenerateLocalMessagesDatabaseTest::shouldStoreMessages()
     message1.setContent(QString::fromUtf8("Message text: €1"));
     message1.setUuid("uu1");
     message1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(23, 30, 50)).toMSecsSinceEpoch());
+    message1.generateHtml();
     logger.insertOrReplaceMessage(chatId(), message1);
 
     message1.setContent(QString::fromUtf8("Message text: €2"));
     message1.setDateTime(QDateTime(QDate(2022, 6, 7), QTime(23, 30, 55)).toMSecsSinceEpoch());
+    message1.generateHtml();
     logger.insertOrReplaceMessage(chatId(), message1); // update an existing message 5s later
 
     TextAutoGenerateText::TextAutoGenerateMessage message2;
     message2.setContent(QString::fromUtf8("Message text: ßĐ"));
     message2.setUuid("uu2");
     message2.setDateTime(QDateTime(QDate(2023, 6, 7), QTime(23, 30, 55)).toMSecsSinceEpoch());
+    message2.generateHtml();
     logger.insertOrReplaceMessage(chatId(), message2);
 
     TextAutoGenerateText::TextAutoGenerateMessage messageOtherRoom;
     messageOtherRoom.setContent(QString::fromUtf8("Message other chat it"));
     messageOtherRoom.setUuid("uu4");
+    messageOtherRoom.generateHtml();
 
     logger.insertOrReplaceMessage(otherChatId(), messageOtherRoom);
 

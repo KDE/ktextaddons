@@ -57,6 +57,7 @@ void TextAutoGenerateMessageTest::shouldParseMessage_data()
         firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
         firstMessageRef.setContent(u"test1"_s);
         firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+        firstMessageRef.generateHtml();
 
         QTest::addRow("test1user") << u"test1user"_s << firstMessageRef;
     }
@@ -67,6 +68,7 @@ void TextAutoGenerateMessageTest::shouldParseMessage_data()
         firstMessageLlmRef.setUuid("136ccbbe9e1e4d6a90c6b9917daf9a29");
         firstMessageLlmRef.setContent(u"test llm"_s);
         firstMessageLlmRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+        firstMessageLlmRef.generateHtml();
         TextAutoGenerateText::TextAutoGenerateAnswerInfo info;
         info.setEngineName(u"openai"_s);
         info.setInstanceName(u"test openai"_s);
@@ -102,6 +104,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
         firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
         firstMessageRef.setContent(u"test1"_s);
         firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+        firstMessageRef.generateHtml();
 
         const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(firstMessageRef);
         const TextAutoGenerateText::TextAutoGenerateMessage output =
@@ -115,6 +118,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
         firstMessageLlmRef.setUuid("136ccbbe9e1e4d6a90c6b9917daf9a29");
         firstMessageLlmRef.setContent(u"test llm"_s);
         firstMessageLlmRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+        firstMessageLlmRef.generateHtml();
         TextAutoGenerateText::TextAutoGenerateAnswerInfo info;
         info.setEngineName(u"openai"_s);
         info.setInstanceName(u"test openai"_s);

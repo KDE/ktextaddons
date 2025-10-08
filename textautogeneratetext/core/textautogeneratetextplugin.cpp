@@ -151,6 +151,7 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         const auto dt = QDateTime::currentSecsSinceEpoch();
         msg.setDateTime(dt);
         msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
+        msg.generateHtml();
 
         // LLM Message
         TextAutoGenerateMessage msgLlm;

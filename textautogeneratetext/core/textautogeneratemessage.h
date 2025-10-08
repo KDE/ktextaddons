@@ -95,6 +95,8 @@ public:
     [[nodiscard]] const TextAutoGenerateAttachment *messageAttachment() const;
     void setMessageAttachment(const TextAutoGenerateAttachment &newMessageAttachment);
 
+    void generateHtml();
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(const MessageStates &newMessageStates);
