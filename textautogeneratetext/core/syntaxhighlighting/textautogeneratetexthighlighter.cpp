@@ -5,11 +5,14 @@
 */
 
 #include "textautogeneratetexthighlighter.h"
+#include "textautogeneratetexticonnamecache.h"
 
 #include <KSyntaxHighlighting/Format>
 #include <KSyntaxHighlighting/State>
 #include <KSyntaxHighlighting/Theme>
 
+#include <KIconLoader>
+#include <KLocalizedString>
 #include <QTextStream>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -26,6 +29,12 @@ void TextAutoGenerateTextHighlighter::highlight(const QString &str)
     int lineStart = 0;
     int lineEnd = str.indexOf(u'\n');
 
+    const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
+    const QString copyIconPath = TextAutoGenerateTextIconNameCache::self()->iconPath(u"edit-copy"_s, KIconLoader::Small);
+
+    *mStream << u"<p align=\"right\"><a href=\"copy:/%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s.arg(i18n("copy"),
+                                                                                                                     QString::number(iconSize),
+                                                                                                                     copyIconPath);
     for (; lineEnd != -1; lineStart = lineEnd + 1, lineEnd = str.indexOf(u'\n', lineStart)) {
         mCurrentLine = str.mid(lineStart, lineEnd - lineStart);
         state = highlightLine(mCurrentLine, state);
