@@ -465,7 +465,7 @@ static QString convertMessageText(const QString &str, const QString &searchText)
     return result;
 }
 
-QString TextAutoGenerateText::TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str, const QString &searchedText)
+QString TextAutoGenerateMessageUtils::convertTextToHtml(const QString &str, const QString &searchedText)
 {
     const QString result = convertMessageText(str, searchedText);
     // qDebug() << " RESULT ************ " << result;
