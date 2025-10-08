@@ -6,6 +6,7 @@
 #include "textautogeneratelistviewdelegate.h"
 
 #include "core/models/textautogeneratemessagesmodel.h"
+#include "core/syntaxhighlighting/textautogeneratetexthighlighter.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include "widgets/view/textautogeneratelistviewtextselection.h"
@@ -520,7 +521,13 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             if (const auto *doc = documentForIndex(index, messageRect.width())) {
                 const QString link = doc->documentLayout()->anchorAt(pos);
                 if (!link.isEmpty()) {
-                    QDesktopServices::openUrl(QUrl(link));
+                    if (link.startsWith(TextAutoGenerateTextHighlighter::copyHref())) {
+                        QString identifier = link;
+                        identifier.remove(TextAutoGenerateTextHighlighter::copyHref());
+                        qDebug() << "identifier**************************** " << identifier;
+                    } else {
+                        QDesktopServices::openUrl(QUrl(link));
+                    }
                     return true;
                 }
             }
