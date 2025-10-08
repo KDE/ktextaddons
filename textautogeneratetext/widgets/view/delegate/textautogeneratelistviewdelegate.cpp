@@ -13,12 +13,14 @@
 #include "widgets/view/textautogeneratelistviewtextselection.h"
 #include <KLocalizedString>
 #include <QAbstractTextDocumentLayout>
+#include <QClipboard>
 #include <QDesktopServices>
 #include <QDrag>
 #include <QListView>
 #include <QMimeData>
 #include <QPainter>
 #include <QToolTip>
+#include <kmessagebox.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -527,7 +529,11 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                         identifier.remove(TextAutoGenerateTextHighlighter::copyHref());
                         qDebug() << "identifier**************************** " << identifier;
 
-                        qDebug() << " block code : " << TextAutoGenerateBlockCodeManager::self()->blockCode(identifier);
+                        const QString blockCodeStr = TextAutoGenerateBlockCodeManager::self()->blockCode(identifier);
+                        QClipboard *clipboard = QGuiApplication::clipboard();
+                        clipboard->setText(blockCodeStr, QClipboard::Clipboard);
+                        clipboard->setText(blockCodeStr, QClipboard::Selection);
+                        KMessageBox::information(mListView, i18n("Block Code copied"), i18nc("@title", "Copy Block Code"));
                     } else {
                         QDesktopServices::openUrl(QUrl(link));
                     }
