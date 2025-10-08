@@ -32,9 +32,10 @@ void TextAutoGenerateTextHighlighter::highlight(const QString &str)
     const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
     const QString copyIconPath = TextAutoGenerateTextIconNameCache::self()->iconPath(u"edit-copy"_s, KIconLoader::Small);
 
-    *mStream << u"<p align=\"right\"><a href=\"copy:/%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s.arg(i18n("copy"),
-                                                                                                                     QString::number(iconSize),
-                                                                                                                     copyIconPath);
+    *mStream << u"<p align=\"right\"><a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s.arg(str,
+                                                                                                                 QString::number(iconSize),
+                                                                                                                 copyIconPath,
+                                                                                                                 copyHref());
     for (; lineEnd != -1; lineStart = lineEnd + 1, lineEnd = str.indexOf(u'\n', lineStart)) {
         mCurrentLine = str.mid(lineStart, lineEnd - lineStart);
         state = highlightLine(mCurrentLine, state);
@@ -45,6 +46,11 @@ void TextAutoGenerateTextHighlighter::highlight(const QString &str)
         state = highlightLine(mCurrentLine, state);
     }
     *mStream << "</code>"_L1;
+}
+
+QString TextAutoGenerateTextHighlighter::copyHref()
+{
+    return u"copy:/"_s;
 }
 
 void TextAutoGenerateTextHighlighter::applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format)

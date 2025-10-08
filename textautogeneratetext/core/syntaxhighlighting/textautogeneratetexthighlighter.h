@@ -18,6 +18,8 @@ public:
 
     void highlight(const QString &str);
 
+    [[nodiscard]] static QString copyHref();
+
 protected:
     void applyFormat(int offset, int length, const KSyntaxHighlighting::Format &format) override;
 
