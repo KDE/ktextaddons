@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-05 02:27+0000\n"
+"POT-Creation-Date: 2025-10-08 02:37+0000\n"
 "PO-Revision-Date: 2025-10-05 10:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -264,19 +264,13 @@ msgctxt "@title:window"
 msgid "Manage Ollama Models"
 msgstr "إدارة نماذج Ollama"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:40
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Open Model Information Url"
-msgstr "افتح عنوان URL الخاص بمعلومات النموذج"
-
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:67
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:95
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:59
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:100
 #, kde-format
 msgid "Languages Supported"
 msgstr "اللغات المدعومة"
 
-#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:80
+#: plugins/ollama/modelsmanager/ollamamodelavailableinfowidget.cpp:72
 #, kde-format
 msgid "Models"
 msgstr "النّماذج"
@@ -356,32 +350,32 @@ msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:26
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
 msgid "Family:"
 msgstr "العائلة:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:35
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:39
 #, kde-format
 msgid "Parameter Size:"
 msgstr "حجم المعلمة:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:44
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:48
 #, kde-format
 msgid "Quantization Level:"
 msgstr "مستوى القياس:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:53
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:57
 #, kde-format
 msgid "Modified At:"
 msgstr "عُدّل في:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:87
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:92
 #, kde-format
 msgid "Parent Model:"
 msgstr "النموذج الأب:"
 
-#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:116
+#: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:121
 #, kde-format
 msgid "Features Supported"
 msgstr "المميزات المتاحة"
@@ -1872,6 +1866,12 @@ msgstr "DeepSeek-V3.1 هو نموذج هجين يدعم كلاً من وضع ا�
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
 msgstr "EmbeddingGemma هو نموذج تضمين معلمات 300M من غوغل."
+
+#: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open Model Information Url"
+msgstr "افتح عنوان URL الخاص بمعلومات النموذج"
 
 #: plugins/ollama/ollamaclient.cpp:27 plugins/ollama/ollamaplugin.cpp:83
 #, kde-format
