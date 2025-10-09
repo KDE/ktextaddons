@@ -463,7 +463,7 @@ bool TextAutoGenerateListViewDelegate::maybeStartDrag(QMouseEvent *mouseEvent, Q
 }
 bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
                                                         QRect messageRect,
-                                                        [[maybe_unused]] const QStyleOptionViewItem &option,
+                                                        const QStyleOptionViewItem &option,
                                                         const QModelIndex &index)
 {
     if (!messageRect.contains(mouseEvent->pos())) {
