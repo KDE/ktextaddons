@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:41+0000\n"
+"POT-Creation-Date: 2025-10-09 00:42+0000\n"
 "PO-Revision-Date: 2024-07-11 17:47+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -54,13 +54,13 @@ msgid "Speak Text"
 msgstr "Esan testua"
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:509
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Ez dago ortografia egiaztatzeko ezer."
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:527
+#: richtexteditor/richtexteditor.cpp:529
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Ez dago ortografia-egiaztatzeko bizkarraldekorik."
@@ -70,7 +70,7 @@ msgstr "Ez dago ortografia-egiaztatzeko bizkarraldekorik."
 msgid "Allow Tabulations"
 msgstr "Baimendu tabulazioak"
 
-#: richtexteditor/richtexteditor.cpp:519
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -79,13 +79,13 @@ msgstr ""
 "Ez dago ortografia-egiaztatzeko bizkarraldekorik. Hala ere, e-posta bidali "
 "nahi duzu?"
 
-#: richtexteditor/richtexteditor.cpp:521
+#: richtexteditor/richtexteditor.cpp:523
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Bidali"
 
-#: richtexteditor/richtexteditor.cpp:543
+#: richtexteditor/richtexteditor.cpp:545
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

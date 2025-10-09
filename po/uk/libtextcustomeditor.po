@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-02 00:41+0000\n"
+"POT-Creation-Date: 2025-10-09 00:42+0000\n"
 "PO-Revision-Date: 2025-08-26 09:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -54,13 +54,13 @@ msgid "Speak Text"
 msgstr "Декламувати текст"
 
 #: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:509
+#: richtexteditor/richtexteditor.cpp:511
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Немає матеріалів для перевірки правопису."
 
 #: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:527
+#: richtexteditor/richtexteditor.cpp:529
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Не знайдено базового модуля для перевірки правопису."
@@ -70,7 +70,7 @@ msgstr "Не знайдено базового модуля для переві�
 msgid "Allow Tabulations"
 msgstr "Дозволити табуляцію"
 
-#: richtexteditor/richtexteditor.cpp:519
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -79,13 +79,13 @@ msgstr ""
 "Не знайдено базового модуля для перевірки правопису. Хочете надіслати "
 "повідомлення попри це?"
 
-#: richtexteditor/richtexteditor.cpp:521
+#: richtexteditor/richtexteditor.cpp:523
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Надіслати"
 
-#: richtexteditor/richtexteditor.cpp:543
+#: richtexteditor/richtexteditor.cpp:545
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
