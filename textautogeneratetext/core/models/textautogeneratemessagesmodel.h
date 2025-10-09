@@ -75,6 +75,7 @@ Q_SIGNALS:
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateAllGeneratedMessages();
     QList<TextAutoGenerateMessage> mMessages;
     QString mSearchText;
     QByteArray mChatId;

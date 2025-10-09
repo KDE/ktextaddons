@@ -89,7 +89,19 @@ QString TextAutoGenerateMessagesModel::searchText() const
 
 void TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
 {
-    mSearchText = newSearchText;
+    if (mSearchText != newSearchText) {
+        mSearchText = newSearchText;
+        updateAllGeneratedMessages();
+    }
+}
+
+void TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
+{
+    beginResetModel();
+    for (auto &m : mMessages) {
+        m.generateHtml(mSearchText);
+    }
+    endResetModel();
 }
 
 QByteArray TextAutoGenerateMessagesModel::chatId() const
