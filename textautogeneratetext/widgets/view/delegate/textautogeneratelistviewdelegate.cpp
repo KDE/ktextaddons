@@ -571,7 +571,7 @@ void TextAutoGenerateListViewDelegate::needUpdateIndexBackground(const QPersiste
 {
     removeNeedUpdateIndexBackground(index);
     const IndexBackgroundColor back{.index = index, .color = color};
-    mIndexBackgroundColorList.append(std::move(back));
+    mIndexBackgroundColorList.append(back);
 }
 
 void TextAutoGenerateListViewDelegate::removeNeedUpdateIndexBackground(const QPersistentModelIndex &index)
