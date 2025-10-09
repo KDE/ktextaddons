@@ -82,6 +82,16 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     return toolTip;
 }
 
+QString TextAutoGenerateMessagesModel::searchText() const
+{
+    return mSearchText;
+}
+
+void TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
+{
+    mSearchText = newSearchText;
+}
+
 QByteArray TextAutoGenerateMessagesModel::chatId() const
 {
     return mChatId;

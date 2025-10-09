@@ -66,6 +66,9 @@ public:
 
     [[nodiscard]] QList<QJsonObject> convertToOllamaChat() const;
 
+    [[nodiscard]] QString searchText() const;
+    void setSearchText(const QString &newSearchText);
+
 Q_SIGNALS:
     void conversationCleared();
 
@@ -73,6 +76,7 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
     QList<TextAutoGenerateMessage> mMessages;
+    QString mSearchText;
     QByteArray mChatId;
 };
 }
