@@ -53,6 +53,9 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
             mPluginTextInterface.append(interface);
         }
     }
+    connect(verticalScrollBar(), &QScrollBar::valueChanged, this, [this](int value) {
+        mAtBottom = value == verticalScrollBar()->maximum();
+    });
 }
 
 TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView()
