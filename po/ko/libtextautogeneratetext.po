@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 00:42+0000\n"
+"POT-Creation-Date: 2025-10-09 09:53+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2100,19 +2100,19 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "선택 영역 복사"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratebaselistview.cpp:83
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -2120,7 +2120,7 @@ msgctxt "@action"
 msgid "Copy URL"
 msgstr "복사"
 
-#: widgets/view/textautogeneratebaselistview.cpp:95
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

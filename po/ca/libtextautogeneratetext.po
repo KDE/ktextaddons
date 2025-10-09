@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 00:42+0000\n"
-"PO-Revision-Date: 2025-10-04 11:38+0200\n"
+"POT-Creation-Date: 2025-10-09 09:53+0000\n"
+"PO-Revision-Date: 2025-10-09 10:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2428,33 +2428,33 @@ msgstr "Actualitza"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "S'ha copia el bloc de codi."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Copia de bloc de codi"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia la selecció"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:83
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Copia l'URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:95
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
