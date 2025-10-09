@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 02:37+0000\n"
+"POT-Creation-Date: 2025-10-09 11:37+0000\n"
 "PO-Revision-Date: 2025-10-05 12:41+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2314,25 +2314,25 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "ריענון"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "העתקת הבחירה"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "העתקה"
 
-#: widgets/view/textautogeneratebaselistview.cpp:83
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "העתקת הכתובת"
 
-#: widgets/view/textautogeneratebaselistview.cpp:95
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Select All"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-08 02:37+0000\n"
+"POT-Creation-Date: 2025-10-09 11:37+0000\n"
 "PO-Revision-Date: 2025-06-22 08:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2105,19 +2105,19 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Odśwież"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Skopiuj zaznaczenie"
 
-#: widgets/view/textautogeneratebaselistview.cpp:69
+#: widgets/view/textautogeneratebaselistview.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Skopiuj"
 
-#: widgets/view/textautogeneratebaselistview.cpp:83
+#: widgets/view/textautogeneratebaselistview.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy"
@@ -2125,7 +2125,7 @@ msgctxt "@action"
 msgid "Copy URL"
 msgstr "Skopiuj"
 
-#: widgets/view/textautogeneratebaselistview.cpp:95
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
