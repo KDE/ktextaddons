@@ -23,6 +23,7 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
     : QListView(parent)
     , mManager(manager)
 {
+    setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::BottomEdge}));
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::fontSizeChanged, this, &TextAutoGenerateBaseListView::slotFontChanged);
     }
