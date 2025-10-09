@@ -8,6 +8,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
+class QToolButton;
 namespace TextAutoGenerateText
 {
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateQuickSearchBar : public QWidget
@@ -22,5 +23,7 @@ Q_SIGNALS:
 
 private:
     QLineEdit *const mSearchLineEdit;
+    QToolButton *const mNextButton;
+    QToolButton *const mPreviousButton;
 };
 }

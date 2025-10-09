@@ -14,6 +14,8 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
     : QWidget{parent}
     , mSearchLineEdit(new QLineEdit(this))
+    , mNextButton(new QToolButton(this))
+    , mPreviousButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -24,8 +26,26 @@ TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
     const auto shortcut = QKeySequence(Qt::CTRL | Qt::Key_K);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search… (%1)", shortcut.toString(QKeySequence::NativeText)));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
+    mSearchLineEdit->setClearButtonEnabled(true);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateQuickSearchBar::searchTextRequested);
+
+    mNextButton->setObjectName(u"mNextButton"_s);
+    mNextButton->setAutoRaise(true);
+    mNextButton->setIcon(QIcon::fromTheme(u"go-down-search"_s));
+    mNextButton->setToolTip(i18nc("Find and go to the next search match", "Next"));
+    mainLayout->addWidget(mNextButton);
+
+    mPreviousButton->setObjectName(u"mPreviousButton"_s);
+    mPreviousButton->setAutoRaise(true);
+    mPreviousButton->setIcon(QIcon::fromTheme(u"go-up-search"_s));
+    mPreviousButton->setToolTip(i18nc("Find and go to the previous search match", "Previous"));
+    mainLayout->addWidget(mPreviousButton);
 }
 
 TextAutoGenerateQuickSearchBar::~TextAutoGenerateQuickSearchBar() = default;
+
+void TextAutoGenerateQuickSearchBar::updateButtons(bool next, bool previous)
+{
+}
 
 #include "moc_textautogeneratequicksearchbar.cpp"
