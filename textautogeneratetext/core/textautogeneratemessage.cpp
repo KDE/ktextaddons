@@ -45,7 +45,7 @@ QString TextAutoGenerateMessage::content() const
 
 void TextAutoGenerateMessage::generateHtml()
 {
-    mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid);
+    mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid, {} /*add search string*/);
 }
 
 void TextAutoGenerateMessage::setContent(const QString &newContent)
