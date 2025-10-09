@@ -8,6 +8,7 @@
         "Description[nl]": "Deze hulpmiddelplug-in is een voorbeeld.",
         "Description[pt_BR]": "Este plugin de ferramenta é um exemplo.",
         "Description[sv]": "Det här verktygsinsticksprogrammet är ett exempel.",
+        "Description[uk]": "Цей додаток інструменту є прикладом.",
         "EnabledByDefault": true,
         "Name": "Tool Example Plugin",
         "Name[ar]": "ملحقة مثال أداة",
@@ -17,6 +18,7 @@
         "Name[nl]": "Hulpmiddel voor voorbeeldplug",
         "Name[pt_BR]": "Plugin de ferramenta de exemplo",
         "Name[sv]": "Exempelverktygsinsticksprogram",
+        "Name[uk]": "Додаток прикладу інструменту",
         "Version": "1.0"
     }
 }
