@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-05 02:27+0000\n"
-"PO-Revision-Date: 2025-02-19 05:37+0100\n"
+"PO-Revision-Date: 2025-10-09 00:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -101,4 +101,4 @@ msgstr "ემოციის მოძებნა…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "სხვა ემოჯის არჩევა"
