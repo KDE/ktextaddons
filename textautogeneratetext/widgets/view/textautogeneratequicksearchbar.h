@@ -18,6 +18,8 @@ public:
     explicit TextAutoGenerateQuickSearchBar(QWidget *parent = nullptr);
     ~TextAutoGenerateQuickSearchBar() override;
 
+    void updateButtons(bool next, bool previous);
+
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
 
