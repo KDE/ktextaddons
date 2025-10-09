@@ -64,6 +64,11 @@ TextAutoGenerateBaseListView::~TextAutoGenerateBaseListView()
     qDeleteAll(mPluginTextInterface);
 }
 
+void TextAutoGenerateBaseListView::clearDocumentCache()
+{
+    mDelegate->clearDocumentCache();
+}
+
 void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
 {
     const QModelIndex index = indexAt(event->pos());

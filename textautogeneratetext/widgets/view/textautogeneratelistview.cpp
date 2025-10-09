@@ -197,9 +197,17 @@ void TextAutoGenerateListView::editingFinished(const QByteArray &uuid)
 
 void TextAutoGenerateListView::slotCurrentChatIdChanged()
 {
-    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
-    setModel(model);
+    mCurrentModel = mManager->messagesModelFromChatId(mManager->currentChatId());
+    setModel(mCurrentModel);
     static_cast<TextAutoGenerateListViewDelegate *>(mDelegate)->setInProgress(mManager->chatInProgress(mManager->currentChatId()));
+}
+
+void TextAutoGenerateListView::setSearchText(const QString &str)
+{
+    if (mCurrentModel) {
+        mCurrentModel->setSearchText(str);
+        clearDocumentCache();
+    }
 }
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)

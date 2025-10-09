@@ -49,10 +49,15 @@ TextAutoGenerateListViewBaseDelegate::attachmentsHelper(const TextAutoGenerateTe
     return nullptr;
 }
 
+void TextAutoGenerateListViewBaseDelegate::clearDocumentCache()
+{
+    mDocumentCache.clear();
+}
+
 void TextAutoGenerateListViewBaseDelegate::clearCache()
 {
     clearSizeHintCache();
-    mDocumentCache.clear();
+    clearDocumentCache();
 }
 
 void TextAutoGenerateListViewBaseDelegate::clearSizeHintCache()
@@ -69,7 +74,6 @@ void TextAutoGenerateListViewBaseDelegate::removeMessageCache(const QByteArray &
 std::unique_ptr<QTextDocument> TextAutoGenerateListViewBaseDelegate::createTextDocument(const QString &text, int width) const
 {
     std::unique_ptr<QTextDocument> doc(new QTextDocument);
-    // doc->setMarkdown(text);
     doc->setHtml(text);
     doc->setTextWidth(width);
     QTextFrame *frame = doc->frameAt(0);

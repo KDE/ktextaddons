@@ -45,6 +45,7 @@ public:
     /// @note Ownership is not transferred
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateText::TextAutoGenerateAttachment *att) const;
 
+    void clearDocumentCache();
 Q_SIGNALS:
     void updateView(const QModelIndex &index);
 

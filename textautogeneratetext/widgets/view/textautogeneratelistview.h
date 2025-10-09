@@ -6,9 +6,11 @@
 #pragma once
 #include "textautogeneratebaselistview.h"
 #include "textautogeneratetext_private_export.h"
+#include <QPointer>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+class TextAutoGenerateMessagesModel;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateListView : public TextAutoGenerateBaseListView
 {
     Q_OBJECT
@@ -23,6 +25,8 @@ public:
     void editingFinished(const QByteArray &uuid);
 
     void setModel(QAbstractItemModel *newModel) override;
+
+    void setSearchText(const QString &str);
 
 protected:
     void leaveEvent(QEvent *event) override;
@@ -47,5 +51,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearEditingMode();
     QByteArray mMessageIdBeingEdited;
+    QPointer<TextAutoGenerateMessagesModel> mCurrentModel;
 };
 }

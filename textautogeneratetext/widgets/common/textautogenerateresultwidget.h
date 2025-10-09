@@ -7,9 +7,16 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
+
+namespace TextAddonsWidgets
+{
+class SlideContainer;
+}
+
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+class TextAutoGenerateQuickSearchBar;
 class TextAutoGenerateListView;
 /**
  * @brief The TextAutoGenerateResultWidget class
@@ -38,6 +45,8 @@ Q_SIGNALS:
 
 private:
     TextAutoGenerateListView *const mTextAutoGenerateListView;
+    TextAddonsWidgets::SlideContainer *const mSliderContainer;
+    TextAutoGenerateQuickSearchBar *const mQuickSearchBar;
 };
 
 }

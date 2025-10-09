@@ -6,26 +6,44 @@
 
 #include "textautogenerateresultwidget.h"
 #include <QScrollBar>
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/view/textautogeneratelistview.h"
+#include "widgets/view/textautogeneratequicksearchbar.h"
+
+#include <TextAddonsWidgets/SlideContainer>
 
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateListView(new TextAutoGenerateListView(manager, this))
+    , mSliderContainer(new TextAddonsWidgets::SlideContainer(this))
+    , mQuickSearchBar(new TextAutoGenerateQuickSearchBar(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
+
+    mSliderContainer->setObjectName(u"mSliderContainer"_s);
+    mainLayout->addWidget(mSliderContainer);
+
+    mQuickSearchBar->setObjectName(u"mQuickSearchBar"_s);
+    mainLayout->addWidget(mQuickSearchBar);
+
+    mSliderContainer->setContent(mQuickSearchBar);
 
     mTextAutoGenerateListView->setObjectName(u"mTextAutoGenerateListView"_s);
     mainLayout->addWidget(mTextAutoGenerateListView);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::editMessageRequested, this, &TextAutoGenerateResultWidget::editMessageRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::cancelRequested, this, &TextAutoGenerateResultWidget::cancelRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::refreshAnswerRequested, this, &TextAutoGenerateResultWidget::refreshAnswerRequested);
+
+    connect(mQuickSearchBar, &TextAutoGenerateQuickSearchBar::searchTextRequested, mTextAutoGenerateListView, &TextAutoGenerateListView::setSearchText);
+
+    // REMOVE IT only for test
+    mSliderContainer->slideIn();
 }
 
 TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;

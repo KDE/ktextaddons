@@ -368,6 +368,7 @@ target_link_libraries(
         KF6::ItemViews
         KF6::IconThemes
         KF6::TextUtils
+        KF6::TextAddonsWidgets
         cmark-rc
 )
 

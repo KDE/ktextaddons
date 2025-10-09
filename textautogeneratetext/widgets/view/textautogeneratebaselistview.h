@@ -19,6 +19,7 @@ public:
     ~TextAutoGenerateBaseListView() override;
 
     void slotSelectAll(const QModelIndex &index);
+    void clearDocumentCache();
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
