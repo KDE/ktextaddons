@@ -187,7 +187,7 @@ option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)"
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(
-    QT 6.10.0
+    QT 6.11.0
     KF 6.19.0
 )
 
