@@ -6,8 +6,8 @@
 
 #pragma once
 #include "textaddonswidgets_export.h"
-#include "whatsnewinfo.h"
 #include <KLazyLocalizedString>
+#include <TextAddonsWidgets/WhatsNewInfo>
 namespace TextAddonsWidgets
 {
 class TEXTADDONSWIDGETS_EXPORT WhatsNewTranslationsBase
