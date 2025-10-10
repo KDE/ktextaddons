@@ -180,16 +180,6 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText)
     return newStr;
 }
 
-int findNewLineOrEndLine(const QString &str, const QString &regionMarker, int startFrom)
-{
-    const int index = str.indexOf(regionMarker, startFrom);
-    if (index == -1) {
-        return str.length() - 1;
-    } else {
-        return index;
-    }
-    Q_UNREACHABLE();
-}
 template<typename InRegionCallback, typename OutsideRegionCallback, typename NewLineCallBack>
 void iterateOverEndLineRegions(const QString &str,
                                const QString &regionMarker,
@@ -208,7 +198,7 @@ void iterateOverEndLineRegions(const QString &str,
                 break;
             }
 
-            const int endIndex = findNewLineOrEndLine(str, u"\n"_s, startIndex + markerSize);
+            const int endIndex = TextUtils::TextUtilsBlockCMarkSupport::findNewLineOrEndLine(str, u"\n"_s, startIndex + markerSize);
             if (endIndex == -1) {
                 break;
             }

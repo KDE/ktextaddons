@@ -41,6 +41,17 @@ int TextUtilsBlockCMarkSupport::findNonEscaped(const QString &str, const QString
     Q_UNREACHABLE();
 }
 
+int TextUtilsBlockCMarkSupport::findNewLineOrEndLine(const QString &str, const QString &regionMarker, int startFrom)
+{
+    const int index = str.indexOf(regionMarker, startFrom);
+    if (index == -1) {
+        return str.length() - 1;
+    } else {
+        return index;
+    }
+    Q_UNREACHABLE();
+}
+
 static void convertHtmlChar(QString &str)
 {
     str.replace(u"&gt;"_s, u">"_s);
