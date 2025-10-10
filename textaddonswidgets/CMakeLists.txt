@@ -154,7 +154,7 @@ install(
         ${TextAddonsWidgets_HEADERS}
         ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
         ${TextAddonsWidgets_verifynewversion_HEADERS}
-        ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
+        ${TextAddonsWidgets_whatsnew_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
