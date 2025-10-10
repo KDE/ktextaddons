@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-10 09:52+0000\n"
 "PO-Revision-Date: 2025-04-22 01:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2007,13 +2007,13 @@ msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr ""
 
-#: widgets/textautogenerateheaderwidget.cpp:46
+#: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr ""
 
-#: widgets/textautogenerateheaderwidget.cpp:53
+#: widgets/textautogenerateheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -2050,7 +2050,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:112
+#: widgets/textautogeneratewidget.cpp:116
 #, kde-format
 msgid "No plugin found."
 msgstr ""
@@ -2173,13 +2173,13 @@ msgstr ""
 msgid "No Archive Found."
 msgstr ""
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:35
+#: widgets/view/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr ""
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:41
+#: widgets/view/textautogeneratequicksearchbar.cpp:48
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"

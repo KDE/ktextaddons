@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 00:40+0000\n"
-"PO-Revision-Date: 2025-10-09 07:13+0200\n"
+"POT-Creation-Date: 2025-10-10 09:52+0000\n"
+"PO-Revision-Date: 2025-10-10 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2323,13 +2323,13 @@ msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Išči…"
 
-#: widgets/textautogenerateheaderwidget.cpp:46
+#: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "Novi klepet"
 
-#: widgets/textautogenerateheaderwidget.cpp:53
+#: widgets/textautogenerateheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -2366,7 +2366,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Išči"
 
-#: widgets/textautogeneratewidget.cpp:112
+#: widgets/textautogeneratewidget.cpp:116
 #, kde-format
 msgid "No plugin found."
 msgstr "Ni najdenega vtičnika."
@@ -2483,21 +2483,17 @@ msgstr "Odstrani razpravo"
 msgid "No Archive Found."
 msgstr "Ni najdenega arhiva."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Next Chat"
+#: widgets/view/textautogeneratequicksearchbar.cpp:40
+#, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Novi klepet"
+msgstr "Naslednji"
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Previous Chat"
+#: widgets/view/textautogeneratequicksearchbar.cpp:48
+#, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Prejšnji klepet"
+msgstr "Prejšnji"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

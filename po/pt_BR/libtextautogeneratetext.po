@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-10 09:52+0000\n"
 "PO-Revision-Date: 2025-10-09 07:55-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2345,13 +2345,13 @@ msgctxt "@info:tooltip"
 msgid "Search…"
 msgstr "Pesquisar…"
 
-#: widgets/textautogenerateheaderwidget.cpp:46
+#: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
 msgstr "Novo bate-papo"
 
-#: widgets/textautogenerateheaderwidget.cpp:53
+#: widgets/textautogenerateheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Favorite"
@@ -2388,7 +2388,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "Pesquisar"
 
-#: widgets/textautogeneratewidget.cpp:112
+#: widgets/textautogeneratewidget.cpp:116
 #, kde-format
 msgid "No plugin found."
 msgstr "Nenhum plugin encontrado."
@@ -2505,7 +2505,7 @@ msgstr "Remover discussão"
 msgid "No Archive Found."
 msgstr "Nenhum arquivo encontrado."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:35
+#: widgets/view/textautogeneratequicksearchbar.cpp:40
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Next Chat"
@@ -2513,7 +2513,7 @@ msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Próximo bate-papo"
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:41
+#: widgets/view/textautogeneratequicksearchbar.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Previous Chat"
