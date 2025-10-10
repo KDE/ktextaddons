@@ -22,6 +22,9 @@ public:
     explicit TextAutoGenerateQuickSearchBarWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateQuickSearchBarWidget() override;
 
+Q_SIGNALS:
+    void searchTextRequested(const QString &txt);
+
 private:
     TextAddonsWidgets::SlideContainer *const mSliderContainer;
     TextAutoGenerateQuickSearchBar *const mQuickSearchBar;

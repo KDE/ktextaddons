@@ -26,6 +26,8 @@ TextAutoGenerateQuickSearchBarWidget::TextAutoGenerateQuickSearchBarWidget(QWidg
     mainLayout->addWidget(mQuickSearchBar);
 
     mSliderContainer->setContent(mQuickSearchBar);
+
+    connect(mQuickSearchBar, &TextAutoGenerateQuickSearchBar::searchTextRequested, this, &TextAutoGenerateQuickSearchBarWidget::searchTextRequested);
 }
 
 TextAutoGenerateQuickSearchBarWidget::~TextAutoGenerateQuickSearchBarWidget() = default;

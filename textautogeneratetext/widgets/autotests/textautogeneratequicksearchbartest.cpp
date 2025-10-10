@@ -7,6 +7,7 @@
 #include "widgets/view/textautogeneratequicksearchbar.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
 QTEST_MAIN(TextAutoGenerateQuickSearchBarTest)
@@ -39,6 +40,26 @@ void TextAutoGenerateQuickSearchBarTest::shouldHaveDefaultValues()
     QVERIFY(mPreviousButton);
     QVERIFY(mPreviousButton->autoRaise());
     QVERIFY(!mPreviousButton->toolTip().isEmpty());
+}
+
+void TextAutoGenerateQuickSearchBarTest::shouldEmitSearchTextRequested()
+{
+    TextAutoGenerateText::TextAutoGenerateQuickSearchBar w;
+    auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);
+
+    QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateQuickSearchBar::searchTextRequested);
+
+    mSearchLineEdit->setText(u"foo"_s);
+    QCOMPARE(spy.count(), 1);
+
+    mSearchLineEdit->clear();
+    QCOMPARE(spy.count(), 2);
+
+    mSearchLineEdit->setText(u"bla"_s);
+    QCOMPARE(spy.count(), 3);
+
+    mSearchLineEdit->setText(u"bla"_s);
+    QCOMPARE(spy.count(), 3);
 }
 
 #include "moc_textautogeneratequicksearchbartest.cpp"
