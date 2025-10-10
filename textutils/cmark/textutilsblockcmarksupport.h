@@ -15,6 +15,9 @@ public:
     virtual ~TextUtilsBlockCMarkSupport();
     [[nodiscard]] QString convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText);
 
+    [[nodiscard]] static int findNonEscaped(const QString &str, const QString &regionMarker, int startFrom);
+    [[nodiscard]] static bool isEscaped(const QString &str, int pos);
+
 protected:
     [[nodiscard]] virtual QString
     addHighlighter(const QString &str, const QString &language, const QString &searchText, const QByteArray &uuid, int &blockCodeIndex) = 0;

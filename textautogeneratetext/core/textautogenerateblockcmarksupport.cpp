@@ -21,33 +21,6 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 namespace
 {
 
-/// check if the @p str contains an uneven number of backslashes before @p pos
-bool isEscaped(const QString &str, int pos)
-{
-    int backslashes = 0;
-    while (pos > 0 && str[pos - 1] == u'\\') {
-        ++backslashes;
-        --pos;
-    }
-    // even number of escapes means the
-    return backslashes % 2 == 1;
-}
-
-int findNonEscaped(const QString &str, const QString &regionMarker, int startFrom)
-{
-    while (true) {
-        const int index = str.indexOf(regionMarker, startFrom);
-        if (index == -1) {
-            return -1;
-        } else if (isEscaped(str, index)) {
-            startFrom = index + regionMarker.size();
-            continue;
-        }
-        return index;
-    }
-    Q_UNREACHABLE();
-}
-
 QString convertTextWithUrl(const QString &str)
 {
     static const QRegularExpression regularExpressionAHref(u"<a href=\"(.*)\">(.*)</a>"_s);
@@ -230,7 +203,7 @@ void iterateOverEndLineRegions(const QString &str,
         const auto markerSize = regionMarker.size();
         bool hasCode = false;
         while (true) {
-            const int startIndex = findNonEscaped(str, regionMarker, startFrom);
+            const int startIndex = TextUtils::TextUtilsBlockCMarkSupport::findNonEscaped(str, regionMarker, startFrom);
             if (startIndex == -1) {
                 break;
             }
@@ -268,12 +241,12 @@ void iterateOverRegionsCmark(const QString &str, const QString &regionMarker, In
     int startFrom = 0;
     const auto markerSize = regionMarker.size();
     while (true) {
-        const int startIndex = findNonEscaped(str, regionMarker, startFrom);
+        const int startIndex = TextUtils::TextUtilsBlockCMarkSupport::findNonEscaped(str, regionMarker, startFrom);
         if (startIndex == -1) {
             break;
         }
 
-        const int endIndex = findNonEscaped(str, regionMarker, startIndex + markerSize);
+        const int endIndex = TextUtils::TextUtilsBlockCMarkSupport::findNonEscaped(str, regionMarker, startIndex + markerSize);
         if (endIndex == -1) {
             break;
         }

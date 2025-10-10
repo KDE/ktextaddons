@@ -14,6 +14,33 @@ TextUtilsBlockCMarkSupport::TextUtilsBlockCMarkSupport() = default;
 
 TextUtilsBlockCMarkSupport::~TextUtilsBlockCMarkSupport() = default;
 
+/// check if the @p str contains an uneven number of backslashes before @p pos
+bool TextUtilsBlockCMarkSupport::isEscaped(const QString &str, int pos)
+{
+    int backslashes = 0;
+    while (pos > 0 && str[pos - 1] == u'\\') {
+        ++backslashes;
+        --pos;
+    }
+    // even number of escapes means the
+    return backslashes % 2 == 1;
+}
+
+int TextUtilsBlockCMarkSupport::findNonEscaped(const QString &str, const QString &regionMarker, int startFrom)
+{
+    while (true) {
+        const int index = str.indexOf(regionMarker, startFrom);
+        if (index == -1) {
+            return -1;
+        } else if (isEscaped(str, index)) {
+            startFrom = index + regionMarker.size();
+            continue;
+        }
+        return index;
+    }
+    Q_UNREACHABLE();
+}
+
 static void convertHtmlChar(QString &str)
 {
     str.replace(u"&gt;"_s, u">"_s);
