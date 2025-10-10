@@ -14,4 +14,7 @@ class TextAutoGenerateQuickSearchBarWidgetTest : public QObject
 public:
     explicit TextAutoGenerateQuickSearchBarWidgetTest(QObject *parent = nullptr);
     ~TextAutoGenerateQuickSearchBarWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };

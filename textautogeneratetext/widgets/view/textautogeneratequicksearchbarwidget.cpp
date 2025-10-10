@@ -29,3 +29,5 @@ TextAutoGenerateQuickSearchBarWidget::TextAutoGenerateQuickSearchBarWidget(QWidg
 }
 
 TextAutoGenerateQuickSearchBarWidget::~TextAutoGenerateQuickSearchBarWidget() = default;
+
+#include "moc_textautogeneratequicksearchbarwidget.cpp"
