@@ -1,0 +1,113 @@
+/*
+   SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "textutilsblockcmarksupport.h"
+#include "cmark-rc.h"
+#include "textutils_cmark_debug.h"
+// #define DEBUG_CMARK_RC 1
+using namespace TextUtils;
+using namespace Qt::StringLiterals;
+TextUtilsBlockCMarkSupport::TextUtilsBlockCMarkSupport() = default;
+
+TextUtilsBlockCMarkSupport::~TextUtilsBlockCMarkSupport() = default;
+
+static void convertHtmlChar(QString &str)
+{
+    str.replace(u"&gt;"_s, u">"_s);
+    str.replace(u"&lt;"_s, u"<"_s);
+    str.replace(u"&quot;"_s, u"\""_s);
+    str.replace(u"&amp;"_s, u"&"_s);
+}
+
+QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText)
+{
+    int blockCodeIndex = 1;
+    const QByteArray ba = str.toHtmlEscaped().toUtf8();
+    cmark_node *doc = cmark_parse_document(ba.constData(), ba.length(), CMARK_OPT_DEFAULT);
+    cmark_iter *iter = cmark_iter_new(doc);
+#ifdef DEBUG_CMARK_RC
+    char *beforehtml = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
+    qCDebug(TEXTUTILS_CMARK_LOG) << " beforehtml " << beforehtml;
+    delete beforehtml;
+#endif
+
+    qCDebug(TEXTUTILS_CMARK_LOG) << " ba " << ba;
+
+    while (cmark_iter_next(iter) != CMARK_EVENT_DONE) {
+        cmark_node *node = cmark_iter_get_node(iter);
+        qCDebug(TEXTUTILS_CMARK_LOG) << "type element " << cmark_node_get_type_string(node);
+        switch (cmark_node_get_type(node)) {
+        case CMARK_NODE_CODE_BLOCK: {
+            const char *literal = cmark_node_get_literal(node);
+            QString literalStr = QString::fromUtf8(literal);
+            if (!literalStr.isEmpty()) {
+                convertHtmlChar(literalStr);
+                QString language;
+                const auto l = cmark_node_get_fence_info(node);
+                if (l) {
+                    language = QString::fromUtf8(l);
+                }
+                qCDebug(TEXTUTILS_CMARK_LOG) << " language " << language;
+                const QString stringHtml = u"```"_s + literalStr + u"```"_s;
+                const QString highligherStr = addHighlighter(stringHtml, language, searchText, uuid, blockCodeIndex);
+                cmark_node *p = cmark_node_new(CMARK_NODE_PARAGRAPH);
+
+                cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
+                cmark_node_set_literal(htmlInline, highligherStr.toUtf8().constData());
+                cmark_node_append_child(p, htmlInline);
+
+                cmark_node_replace(node, p);
+            }
+            break;
+        }
+        case CMARK_NODE_TEXT: {
+            const char *literal = cmark_node_get_literal(node);
+            // qDebug() << " literal" << literal;
+            qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
+
+            const QString strLiteral = QString::fromUtf8(literal);
+            if (!strLiteral.isEmpty()) {
+                const QString convertedString = addHighlighter(strLiteral, {}, searchText, uuid, blockCodeIndex);
+                qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
+                cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
+                cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
+
+                cmark_node_replace(node, htmlInline);
+            }
+            break;
+        }
+        case CMARK_NODE_CODE: {
+            const char *literal = cmark_node_get_literal(node);
+            qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
+            QString strLiteral = QString::fromUtf8(literal);
+            if (!strLiteral.isEmpty()) {
+                convertHtmlChar(strLiteral);
+                const QString stringHtml = u"`"_s + strLiteral + u"`"_s;
+                const QString convertedString = addHighlighter(stringHtml, {}, searchText, uuid, blockCodeIndex);
+                qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
+                cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
+                cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
+
+                cmark_node_replace(node, htmlInline);
+            }
+            break;
+        }
+        default:
+            break;
+        }
+    }
+
+    char *html = cmark_render_html(doc, CMARK_OPT_DEFAULT | CMARK_OPT_UNSAFE | CMARK_OPT_HARDBREAKS);
+    qCDebug(TEXTUTILS_CMARK_LOG) << " generated html: " << html;
+
+    cmark_iter_free(iter);
+    cmark_node_free(doc);
+    const QString result = QString::fromUtf8(html);
+
+    cmark_mem *allocator = cmark_get_default_mem_allocator();
+    allocator->free(html);
+    return result;
+}
