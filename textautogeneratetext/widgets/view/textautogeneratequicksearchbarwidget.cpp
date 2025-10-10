@@ -40,6 +40,7 @@ void TextAutoGenerateQuickSearchBarWidget::slideIn()
 
 void TextAutoGenerateQuickSearchBarWidget::slideOut()
 {
+    mQuickSearchBar->setTearchText({});
     mSliderContainer->slideOut();
 }
 
