@@ -27,7 +27,12 @@ TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search… (%1)", shortcut.toString(QKeySequence::NativeText)));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mSearchLineEdit->setClearButtonEnabled(true);
-    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateQuickSearchBar::searchTextRequested);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, [this](const QString &str) {
+        const bool searchTextIsEmpty = str.isEmpty();
+        mNextButton->setEnabled(!searchTextIsEmpty);
+        mPreviousButton->setEnabled(!searchTextIsEmpty);
+        Q_EMIT searchTextRequested(str);
+    });
 
     mNextButton->setObjectName(u"mNextButton"_s);
     mNextButton->setAutoRaise(true);
