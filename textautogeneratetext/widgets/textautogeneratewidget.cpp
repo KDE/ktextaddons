@@ -62,6 +62,10 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
     connect(mTextAutoGenerateTextLineEditWidget, &TextAutoGenerateTextLineEditWidget::editingFinished, this, &TextAutoGenerateWidget::slotEditingFinished);
 
     connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::searchText, this, &TextAutoGenerateWidget::slotQuickSearchText);
+    connect(mTextAutoGenerateResultWidget,
+            &TextAutoGenerateResultWidget::closeSearchBarRequested,
+            mHeaderWidget,
+            &TextAutoGenerateHeaderWidget::slotCloseQuickSearchRequested);
     if (mManager) {
         connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewChat, this, [this]() {
             mManager->createNewChat();

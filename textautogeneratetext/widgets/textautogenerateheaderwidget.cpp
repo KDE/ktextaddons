@@ -99,4 +99,9 @@ QString TextAutoGenerateHeaderWidget::currentModel() const
     return mModelComboBox->currentModel();
 }
 
+void TextAutoGenerateHeaderWidget::slotCloseQuickSearchRequested()
+{
+    mSearch->setChecked(false);
+}
+
 #include "moc_textautogenerateheaderwidget.cpp"

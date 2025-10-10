@@ -23,6 +23,7 @@ public:
 
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
+    void slotCloseQuickSearchRequested();
 Q_SIGNALS:
     void addNewChat();
     void changeFavoriteRequested(bool f);
