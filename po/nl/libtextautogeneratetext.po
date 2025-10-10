@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 09:53+0000\n"
-"PO-Revision-Date: 2025-10-04 13:23+0200\n"
+"POT-Creation-Date: 2025-10-10 00:40+0000\n"
+"PO-Revision-Date: 2025-10-09 21:48+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2339,6 +2339,7 @@ msgid "Favorite"
 msgstr "Favoriet"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2407,33 +2408,33 @@ msgstr "Vernieuwen"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "Blokcode gekopieerd."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Blokcode kopiëren"
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Selectie kopiëren"
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "URL kopiëren"
 
-#: widgets/view/textautogeneratebaselistview.cpp:99
+#: widgets/view/textautogeneratebaselistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2484,6 +2485,22 @@ msgstr "Discussie verwijderen"
 #, kde-format
 msgid "No Archive Found."
 msgstr "Geen archief gevonden."
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:35
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Next Chat"
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Volgende chat"
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Previous Chat"
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Vorige chat"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

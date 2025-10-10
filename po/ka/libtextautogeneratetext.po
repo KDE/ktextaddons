@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 09:53+0000\n"
+"POT-Creation-Date: 2025-10-10 00:40+0000\n"
 "PO-Revision-Date: 2025-10-04 05:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2343,6 +2343,7 @@ msgid "Favorite"
 msgstr "რჩეული"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2419,25 +2420,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "მონიშნულის კოპირება"
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "URL-ის კოპირება"
 
-#: widgets/view/textautogeneratebaselistview.cpp:99
+#: widgets/view/textautogeneratebaselistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2488,6 +2489,22 @@ msgstr "კამათის წაშლა"
 #, kde-format
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:35
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Next Chat"
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "შემდეგი ჩატი"
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Previous Chat"
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "წინა ჩატი"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

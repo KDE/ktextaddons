@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 09:53+0000\n"
+"POT-Creation-Date: 2025-10-10 00:40+0000\n"
 "PO-Revision-Date: 2025-10-04 11:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2359,6 +2359,7 @@ msgid "Favorite"
 msgstr "Preferit"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2435,25 +2436,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia la selecció"
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Copia l'URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:99
+#: widgets/view/textautogeneratebaselistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2504,6 +2505,22 @@ msgstr "Elimina el debat"
 #, kde-format
 msgid "No Archive Found."
 msgstr "No s'ha trobat cap arxiu."
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:35
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Next Chat"
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "Xat nou"
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:41
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Previous Chat"
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "Xat anterior"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

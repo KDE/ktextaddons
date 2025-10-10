@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 09:53+0000\n"
+"POT-Creation-Date: 2025-10-10 00:40+0000\n"
 "PO-Revision-Date: 2025-09-01 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1984,6 +1984,7 @@ msgid "Favorite"
 msgstr ""
 
 #: widgets/textautogeneratehistorywidget.cpp:30
+#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2060,25 +2061,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:73
+#: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:87
+#: widgets/view/textautogeneratebaselistview.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:99
+#: widgets/view/textautogeneratebaselistview.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2128,6 +2129,18 @@ msgstr ""
 #: widgets/view/textautogeneratehistorylistview.cpp:252
 #, kde-format
 msgid "No Archive Found."
+msgstr ""
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:35
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr ""
+
+#: widgets/view/textautogeneratequicksearchbar.cpp:41
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
 msgstr ""
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
