@@ -26,7 +26,7 @@ public:
 Q_SIGNALS:
     void addNewChat();
     void changeFavoriteRequested(bool f);
-    void searchText();
+    void searchText(bool checked);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();

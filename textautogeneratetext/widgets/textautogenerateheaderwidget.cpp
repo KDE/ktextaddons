@@ -38,6 +38,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mSearch->setObjectName("mSearch"_L1);
     mSearch->setToolTip(i18nc("@info:tooltip", "Search…"));
     mSearch->setAutoRaise(true);
+    mSearch->setCheckable(true);
     mSearch->setIcon(QIcon::fromTheme(u"search"_s));
     mainLayout->addWidget(mSearch);
     connect(mSearch, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::searchText);

@@ -47,6 +47,8 @@ void TextAutoGenerateHeaderWidgetTest::shouldHaveDefaultValues()
     auto mSearch = w.findChild<QToolButton *>(u"mSearch"_s);
     QVERIFY(mSearch);
     QVERIFY(mSearch->autoRaise());
+    QVERIFY(mSearch->isCheckable());
+    QVERIFY(!mSearch->isChecked());
     QVERIFY(!mSearch->toolTip().isEmpty());
 }
 
