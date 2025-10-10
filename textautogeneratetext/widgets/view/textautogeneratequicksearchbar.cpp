@@ -48,4 +48,14 @@ void TextAutoGenerateQuickSearchBar::updateButtons(bool next, bool previous)
 {
 }
 
+QString TextAutoGenerateQuickSearchBar::searchText() const
+{
+    return mSearchLineEdit->text();
+}
+
+void TextAutoGenerateQuickSearchBar::setTearchText(const QString &str)
+{
+    mSearchLineEdit->setText(str);
+}
+
 #include "moc_textautogeneratequicksearchbar.cpp"

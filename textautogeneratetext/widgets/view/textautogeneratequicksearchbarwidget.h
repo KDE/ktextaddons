@@ -28,7 +28,11 @@ public:
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
 
+protected:
+    [[nodiscard]] bool event(QEvent *e) override;
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void closeBar();
     TextAddonsWidgets::SlideContainer *const mSliderContainer;
     TextAutoGenerateQuickSearchBar *const mQuickSearchBar;
 };

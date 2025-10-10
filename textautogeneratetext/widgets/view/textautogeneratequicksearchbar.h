@@ -19,6 +19,8 @@ public:
     ~TextAutoGenerateQuickSearchBar() override;
 
     void updateButtons(bool next, bool previous);
+    [[nodiscard]] QString searchText() const;
+    void setTearchText(const QString &str);
 
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
