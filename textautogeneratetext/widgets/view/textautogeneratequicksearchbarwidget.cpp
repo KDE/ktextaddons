@@ -49,6 +49,7 @@ void TextAutoGenerateQuickSearchBarWidget::closeBar()
     // Make sure that all old searches are cleared
     mQuickSearchBar->setTearchText({});
     slideOut();
+    Q_EMIT closeSearchBarRequested();
 }
 
 bool TextAutoGenerateQuickSearchBarWidget::event(QEvent *e)

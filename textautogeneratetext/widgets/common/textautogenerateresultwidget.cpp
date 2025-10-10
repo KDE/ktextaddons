@@ -37,8 +37,10 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
             mTextAutoGenerateListView,
             &TextAutoGenerateListView::setSearchText);
 
-    // REMOVE IT only for test
-    mQuickSearchBarWidget->slideIn();
+    connect(mQuickSearchBarWidget,
+            &TextAutoGenerateQuickSearchBarWidget::closeSearchBarRequested,
+            this,
+            &TextAutoGenerateResultWidget::closeSearchBarRequested);
 }
 
 TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;

@@ -39,6 +39,7 @@ Q_SIGNALS:
     void cancelRequested(const QByteArray &uuid);
     void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
     void switchToChat(const QByteArray &uuid);
+    void closeSearchBarRequested();
 
 private:
     TextAutoGenerateListView *const mTextAutoGenerateListView;

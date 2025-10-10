@@ -27,6 +27,7 @@ public:
 
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
+    void closeSearchBarRequested();
 
 protected:
     [[nodiscard]] bool event(QEvent *e) override;
