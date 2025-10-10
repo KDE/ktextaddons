@@ -15,11 +15,7 @@
 #include <TextUtils/TextUtilsSyntaxHighlightingManager>
 using namespace TextAutoGenerateText;
 using namespace Qt::StringLiterals;
-TextAutoGenerateBlockCMarkSupport::TextAutoGenerateBlockCMarkSupport()
-    : TextUtils::TextUtilsBlockCMarkSupport()
-{
-}
-
+TextAutoGenerateBlockCMarkSupport::TextAutoGenerateBlockCMarkSupport() = default;
 TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = default;
 
 namespace
