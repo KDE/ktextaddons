@@ -131,6 +131,12 @@ if(${BUILD_KIO_SUPPORT})
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 endif()
 
+option(
+    ENABLE_WARN_OUTDATED
+    "Warn users if using an old version; if you long term supported distribution, you might want to set this to off"
+    ON
+)
+
 option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON)
 add_feature_info(
     DESIGNERPLUGIN

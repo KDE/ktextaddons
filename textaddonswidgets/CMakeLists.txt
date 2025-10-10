@@ -14,6 +14,12 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTADDONSWIDGETS
 add_library(KF6TextAddonsWidgets)
 add_library(KF6::TextAddonsWidgets ALIAS KF6TextAddonsWidgets)
 
+if(ENABLE_WARN_OUTDATED)
+    target_compile_definitions(KF6TextAddonsWidgets PRIVATE ENABLE_WARN_OUTDATED=1)
+else()
+    target_compile_definitions(KF6TextAddonsWidgets PRIVATE ENABLE_WARN_OUTDATED=0)
+endif()
+
 target_sources(
     KF6TextAddonsWidgets
     PRIVATE
@@ -23,17 +29,48 @@ target_sources(
         slidecontainer.h
         richtextquicktextformat.cpp
         richtextquicktextformat.h
+        needupdateversion/needupdateversionwidget.h
+        needupdateversion/needupdateversionwidget.cpp
+        needupdateversion/needupdateversionutils.h
+        needupdateversion/needupdateversionutils.cpp
+        needupdateversion/needupdatecheckexistingnewversionjob.cpp
+        needupdateversion/needupdatecheckexistingnewversionjob.h
+        needupdateversion/needupdateparsehtmljob.cpp
+        needupdateversion/needupdateparsehtmljob.h
+        needupdateversion/needupdateparsehtmlutil.cpp
+        needupdateversion/needupdateparsehtmlutil.h
+        whatsnew/whatsnewdialog.h
+        whatsnew/whatsnewdialog.cpp
+        whatsnew/whatsnewwidget.h
+        whatsnew/whatsnewwidget.cpp
+        whatsnew/whatsnewmessagewidget.h
+        whatsnew/whatsnewmessagewidget.cpp
+        whatsnew/whatsnewcomboboxwidget.h
+        whatsnew/whatsnewcomboboxwidget.cpp
+        whatsnew/whatsnewtranslationsbase.h
+        whatsnew/whatsnewtranslationsbase.cpp
+        whatsnew/whatsnewinfo.h
+        whatsnew/whatsnewinfo.cpp
+        verifynewversion/verifynewversionutils.cpp
+        verifynewversion/verifynewversionutils.h
+        verifynewversion/verifynewversionwidget.cpp
+        verifynewversion/verifynewversionwidget.h
+        verifynewversion/checknewversiondialog.cpp
+        verifynewversion/checknewversiondialog.h
+        verifynewversion/checknewversionwidget.cpp
+        verifynewversion/checknewversionwidget.h
 )
 target_link_libraries(
     KF6TextAddonsWidgets
     PUBLIC
         Qt::Widgets
-    PRIVATE
         KF6::WidgetsAddons
+    PRIVATE
         KF6::ConfigGui
+        KF6::KIOCore
 )
 
-ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER TextAddonsWidgets_debug.h
+ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER textaddonswidgets_debug.h
     IDENTIFIER TEXTADDONSWIDGETS_LOG
     CATEGORY_NAME org.kde.kf.textaddonswidgets
     OLD_CATEGORY_NAMES org.kde.kf6.textaddonswidgets
@@ -80,9 +117,44 @@ ecm_generate_headers(TextAddonsWidgets_CamelCase_HEADERS
     PREFIX TextAddonsWidgets
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS
+    HEADER_NAMES
+    NeedUpdateVersionUtils
+    NeedUpdateVersionWidget
+    NeedUpdateParseHtmlJob
+    NeedUpdateCheckExistingNewVersionJob
+    NeedUpdateParseHtmlUtil
+    REQUIRED_HEADERS TextAddonsWidgets_needupdateversionwidgets_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE needupdateversion
+)
+
+ecm_generate_headers(TextAddonsWidgets_Camelverifynewversion_HEADERS
+    HEADER_NAMES
+    VerifyNewVersionWidget
+    REQUIRED_HEADERS TextAddonsWidgets_verifynewversion_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE verifynewversion
+)
+
+ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
+    HEADER_NAMES
+    WhatsNewComboBoxWidget
+    WhatsNewDialog
+    WhatsNewInfo
+    WhatsNewTranslationsBase
+    WhatsNewMessageWidget
+    REQUIRED_HEADERS TextAddonsWidgets_whatsnew_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE whatsnew
+)
+
 install(
     FILES
         ${TextAddonsWidgets_HEADERS}
+        ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
+        ${TextAddonsWidgets_verifynewversion_HEADERS}
+        ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -90,6 +162,9 @@ install(
 install(
     FILES
         ${TextAddonsWidgets_CamelCase_HEADERS}
+        ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
+        ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
+        ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
@@ -158,4 +233,7 @@ configure_package_config_file(
 if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(tests)
+    add_subdirectory(needupdateversion/tests)
+    add_subdirectory(needupdateversion/autotests)
+    add_subdirectory(whatsnew/autotests)
 endif()
