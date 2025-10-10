@@ -8,9 +8,7 @@
 #include <QScrollBar>
 
 #include "widgets/view/textautogeneratelistview.h"
-#include "widgets/view/textautogeneratequicksearchbar.h"
-
-#include <TextAddonsWidgets/SlideContainer>
+#include "widgets/view/textautogeneratequicksearchbarwidget.h"
 
 #include <QVBoxLayout>
 
@@ -19,20 +17,14 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateListView(new TextAutoGenerateListView(manager, this))
-    , mSliderContainer(new TextAddonsWidgets::SlideContainer(this))
-    , mQuickSearchBar(new TextAutoGenerateQuickSearchBar(this))
+    , mQuickSearchBarWidget(new TextAutoGenerateQuickSearchBarWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins(QMargins{});
 
-    mSliderContainer->setObjectName(u"mSliderContainer"_s);
-    mainLayout->addWidget(mSliderContainer);
-
-    mQuickSearchBar->setObjectName(u"mQuickSearchBar"_s);
-    mainLayout->addWidget(mQuickSearchBar);
-
-    mSliderContainer->setContent(mQuickSearchBar);
+    mQuickSearchBarWidget->setObjectName(u"mQuickSearchBarWidget"_s);
+    mainLayout->addWidget(mQuickSearchBarWidget);
 
     mTextAutoGenerateListView->setObjectName(u"mTextAutoGenerateListView"_s);
     mainLayout->addWidget(mTextAutoGenerateListView);
@@ -40,10 +32,13 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::cancelRequested, this, &TextAutoGenerateResultWidget::cancelRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::refreshAnswerRequested, this, &TextAutoGenerateResultWidget::refreshAnswerRequested);
 
-    connect(mQuickSearchBar, &TextAutoGenerateQuickSearchBar::searchTextRequested, mTextAutoGenerateListView, &TextAutoGenerateListView::setSearchText);
+    connect(mQuickSearchBarWidget,
+            &TextAutoGenerateQuickSearchBarWidget::searchTextRequested,
+            mTextAutoGenerateListView,
+            &TextAutoGenerateListView::setSearchText);
 
     // REMOVE IT only for test
-    mSliderContainer->slideIn();
+    mQuickSearchBarWidget->slideIn();
 }
 
 TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;

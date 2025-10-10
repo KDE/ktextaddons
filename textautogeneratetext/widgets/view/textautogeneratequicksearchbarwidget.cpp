@@ -32,4 +32,14 @@ TextAutoGenerateQuickSearchBarWidget::TextAutoGenerateQuickSearchBarWidget(QWidg
 
 TextAutoGenerateQuickSearchBarWidget::~TextAutoGenerateQuickSearchBarWidget() = default;
 
+void TextAutoGenerateQuickSearchBarWidget::slideIn()
+{
+    mSliderContainer->slideIn();
+}
+
+void TextAutoGenerateQuickSearchBarWidget::slideOut()
+{
+    mSliderContainer->slideOut();
+}
+
 #include "moc_textautogeneratequicksearchbarwidget.cpp"

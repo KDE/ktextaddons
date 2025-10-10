@@ -22,6 +22,9 @@ public:
     explicit TextAutoGenerateQuickSearchBarWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateQuickSearchBarWidget() override;
 
+    void slideIn();
+    void slideOut();
+
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
 
