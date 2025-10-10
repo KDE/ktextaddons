@@ -35,11 +35,13 @@ void TextAutoGenerateQuickSearchBarTest::shouldHaveDefaultValues()
     QVERIFY(mNextButton);
     QVERIFY(mNextButton->autoRaise());
     QVERIFY(!mNextButton->toolTip().isEmpty());
+    QVERIFY(!mNextButton->isEnabled());
 
     auto mPreviousButton = w.findChild<QToolButton *>(u"mPreviousButton"_s);
     QVERIFY(mPreviousButton);
     QVERIFY(mPreviousButton->autoRaise());
     QVERIFY(!mPreviousButton->toolTip().isEmpty());
+    QVERIFY(!mPreviousButton->isEnabled());
 }
 
 void TextAutoGenerateQuickSearchBarTest::shouldEmitSearchTextRequested()

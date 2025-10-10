@@ -38,10 +38,12 @@ TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
     mNextButton->setAutoRaise(true);
     mNextButton->setIcon(QIcon::fromTheme(u"go-down-search"_s));
     mNextButton->setToolTip(i18nc("Find and go to the next search match", "Next"));
+    mNextButton->setEnabled(false);
     mainLayout->addWidget(mNextButton);
 
     mPreviousButton->setObjectName(u"mPreviousButton"_s);
     mPreviousButton->setAutoRaise(true);
+    mPreviousButton->setEnabled(false);
     mPreviousButton->setIcon(QIcon::fromTheme(u"go-up-search"_s));
     mPreviousButton->setToolTip(i18nc("Find and go to the previous search match", "Previous"));
     mainLayout->addWidget(mPreviousButton);
