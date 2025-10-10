@@ -51,6 +51,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index, const QList<QByteArray> &tools);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool lineEditWidgetEnabledState() const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotQuickSearchText(bool enabled);
 
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateTextLineEditWidget *const mTextAutoGenerateTextLineEditWidget;
