@@ -37,8 +37,6 @@ endif()
 
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
-add_subdirectory(cmark-rc)
-
 add_library(KF6TextAutoGenerateText)
 
 add_library(KF6::TextAutoGenerateText ALIAS KF6TextAutoGenerateText)
@@ -133,6 +131,8 @@ target_sources(
         core/textautogenerateattachmentutils.cpp
         core/textautogeneratepluginutils.h
         core/textautogeneratepluginutils.cpp
+        core/textautogenerateblockcmarksupport.h
+        core/textautogenerateblockcmarksupport.cpp
         core/models/textautogeneratemessagesmodel.h
         core/models/textautogeneratemessagesmodel.cpp
         core/models/textautogeneratesearchmessagesmodel.h
@@ -371,7 +371,6 @@ target_link_libraries(
         KF6::IconThemes
         KF6::TextUtils
         KF6::TextAddonsWidgets
-        cmark-rc
 )
 
 if(NOT WIN32 AND NOT APPLE)
