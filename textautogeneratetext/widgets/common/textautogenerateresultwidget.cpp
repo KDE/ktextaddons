@@ -63,6 +63,15 @@ int TextAutoGenerateResultWidget::scrollbarPositionMaximum() const
     return mTextAutoGenerateListView->verticalScrollBar()->maximum();
 }
 
+void TextAutoGenerateResultWidget::quickSearchText(bool enabled)
+{
+    if (enabled) {
+        mQuickSearchBarWidget->slideIn();
+    } else {
+        mQuickSearchBarWidget->slideOut();
+    }
+}
+
 void TextAutoGenerateResultWidget::setScrollbarPosition(int position)
 {
     mTextAutoGenerateListView->verticalScrollBar()->setValue(position);

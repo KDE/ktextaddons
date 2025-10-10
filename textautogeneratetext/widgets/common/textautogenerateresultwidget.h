@@ -32,6 +32,8 @@ public:
     void scrollToBottom();
 
     [[nodiscard]] int scrollbarPositionMaximum() const;
+
+    void quickSearchText(bool enabled);
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);

@@ -6,7 +6,6 @@
 
 #include "textautogeneratewidget.h"
 #include "core/textautogeneratechatsettings.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
@@ -28,6 +27,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 using namespace TextAutoGenerateText;
+using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateResultWidget(new TextAutoGenerateResultWidget(manager, this))
@@ -242,7 +242,7 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
 
 void TextAutoGenerateWidget::slotQuickSearchText(bool enabled)
 {
-    // TODO
+    mTextAutoGenerateResultWidget->quickSearchText(enabled);
 }
 
 void TextAutoGenerateWidget::slotSearchText()
