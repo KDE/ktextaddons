@@ -22,6 +22,9 @@ public:
     [[nodiscard]] QString searchText() const;
     void setTearchText(const QString &str);
 
+    void findNext();
+    void findPrev();
+
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
 

@@ -75,13 +75,12 @@ bool TextAutoGenerateQuickSearchBarWidget::event(QEvent *e)
             if (mQuickSearchBar->searchText().isEmpty()) {
                 return true;
             }
-#if 0
+
             if (kev->modifiers() & Qt::ShiftModifier) {
-                findPrev();
+                mQuickSearchBar->findPrev();
             } else if (kev->modifiers() == Qt::NoModifier) {
-                findNext();
+                mQuickSearchBar->findNext();
             }
-#endif
             return true;
         }
     }

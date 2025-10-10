@@ -58,4 +58,12 @@ void TextAutoGenerateQuickSearchBar::setTearchText(const QString &str)
     mSearchLineEdit->setText(str);
 }
 
+void TextAutoGenerateQuickSearchBar::findNext()
+{
+}
+
+void TextAutoGenerateQuickSearchBar::findPrev()
+{
+}
+
 #include "moc_textautogeneratequicksearchbar.cpp"
