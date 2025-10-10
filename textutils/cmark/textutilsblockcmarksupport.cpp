@@ -7,6 +7,7 @@
 #include "textutilsblockcmarksupport.h"
 #include "cmark-rc.h"
 #include "textutils_cmark_debug.h"
+#include <QRegularExpression>
 // #define DEBUG_CMARK_RC 1
 using namespace TextUtils;
 using namespace Qt::StringLiterals;
@@ -50,6 +51,88 @@ int TextUtilsBlockCMarkSupport::findNewLineOrEndLine(const QString &str, const Q
         return index;
     }
     Q_UNREACHABLE();
+}
+
+QString TextUtilsBlockCMarkSupport::convertTextWithUrl(const QString &str)
+{
+    static const QRegularExpression regularExpressionAHref(u"<a href=\"(.*)\">(.*)</a>"_s);
+    static const QRegularExpression regularExpressionCustomAHref(u"<a href=\"(.*)\\|(.*)\">(.*)</a>"_s);
+    QString newStr;
+    bool isRef = false;
+    bool isUrl = false;
+#if 0
+    bool isHasNewRef = false;
+#endif
+    QString url;
+    QString references;
+    for (int i = 0; i < str.length(); ++i) {
+        const QChar ref = str.at(i);
+        if (ref == u'[') {
+            if (isRef) {
+                isRef = false;
+                newStr += u'[' + references + u'[';
+                references.clear();
+            } else {
+                isRef = true;
+            }
+#if 0
+        } else if (isUrl && ref == u']' && isHasNewRef) {
+            isUrl = false;
+            isRef = false;
+            newStr += u"<a href=\'%1'>%2</a>"_s.arg(url, references);
+            references.clear();
+            url.clear();
+#endif
+        } else if (isRef && ref == u']') {
+            isRef = false;
+            if ((i == str.length() - 1) || (str.at(i + 1) != u'(')) {
+                if (references.startsWith(u'<')) {
+                    newStr += references.replace(regularExpressionCustomAHref, u"<a href=\"\\2\">\\1</a>"_s);
+                } else {
+                    newStr += u'[' + references + u']';
+                }
+                references.clear();
+            }
+        } else if (ref == u'(' && !references.isEmpty()) {
+            isUrl = true;
+        } else if (isUrl && ref == u')' && !references.isEmpty()) {
+            isUrl = false;
+            // detect whether the string already contains HTML <a/> tags
+            if (url.startsWith(u'<')) {
+                newStr += url.replace(regularExpressionAHref, u"<a href=\"\\1\">%1</a>"_s.arg(references));
+            } else {
+                newStr += u"<a href=\'%1'>%2</a>"_s.arg(url, references);
+            }
+            references.clear();
+            url.clear();
+#if 0
+        } else if (ref == u'|' && !references.isEmpty()) {
+            isUrl = true;
+            isRef = false;
+            isHasNewRef = true;
+#endif
+        } else {
+            if (isRef) {
+                references += ref;
+            } else if (isUrl) {
+                url += ref;
+            } else {
+                newStr += ref;
+            }
+        }
+    }
+    if (isRef) {
+        newStr += u'[' + references;
+    } else if (isUrl) {
+        newStr += u'[' + references + "]("_L1 + url;
+#if 0
+    } else if (isHasNewRef) {
+        if (!url.isEmpty() && !references.isEmpty()) {
+            newStr += u"<a href=\'%1'>%2</a>"_s.arg(url, references);
+        }
+#endif
+    }
+    return newStr;
 }
 
 static void convertHtmlChar(QString &str)

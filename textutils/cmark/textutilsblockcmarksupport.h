@@ -20,6 +20,8 @@ public:
 
     [[nodiscard]] static int findNewLineOrEndLine(const QString &str, const QString &regionMarker, int startFrom);
 
+    [[nodiscard]] static QString convertTextWithUrl(const QString &str);
+
 protected:
     [[nodiscard]] virtual QString
     addHighlighter(const QString &str, const QString &language, const QString &searchText, const QByteArray &uuid, int &blockCodeIndex) = 0;
