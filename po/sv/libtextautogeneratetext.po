@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-10 09:52+0000\n"
-"PO-Revision-Date: 2025-10-05 08:48+0200\n"
+"PO-Revision-Date: 2025-10-10 21:34+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2412,13 +2412,13 @@ msgstr "Uppdatera"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "Kodblock kopierat."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Kopiera kodblock"
 
 #: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
@@ -2491,20 +2491,16 @@ msgid "No Archive Found."
 msgstr "Inget arkiv hittades."
 
 #: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Next Chat"
+#, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Nästa chatt"
+msgstr "Nästa"
 
 #: widgets/view/textautogeneratequicksearchbar.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Previous Chat"
+#, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Föregående chatt"
+msgstr "Föregående"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
