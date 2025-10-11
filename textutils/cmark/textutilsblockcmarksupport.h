@@ -22,6 +22,8 @@ public:
 
     [[nodiscard]] static QString convertTextWithUrl(const QString &str);
 
+    [[nodiscard]] static QString markdownToRichTextCMark(const QString &markDown);
+
 protected:
     [[nodiscard]] virtual QString
     addHighlighter(const QString &str, const QString &language, const QString &searchText, const QByteArray &uuid, int &blockCodeIndex) = 0;

@@ -41,6 +41,7 @@ target_link_libraries(
         KF6::IconThemes
         KF6::I18n
         cmark-rc
+        KF6::CoreAddons
 )
 
 ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h

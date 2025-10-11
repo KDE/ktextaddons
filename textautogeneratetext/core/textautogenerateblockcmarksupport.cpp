@@ -21,33 +21,9 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 namespace
 {
 
-QString markdownToRichTextCMark(const QString &markDown)
-{
-    if (markDown.isEmpty()) {
-        return {};
-    }
-
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << "BEFORE markdownToRichText " << markDown;
-    QString str = markDown;
-
-    const KTextToHTML::Options convertFlags = KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
-    str = KTextToHTML::convertToHtml(str, convertFlags);
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " AFTER convertToHtml " << str;
-    // substitute "[example.com](<a href="...">...</a>)" style urls
-    str = TextUtils::TextUtilsBlockCMarkSupport::convertTextWithUrl(str);
-    // We don't have emoji support
-#if 0
-    // Substiture "- [ ] foo" and "- [x] foo" to checkmark
-    str = Utils::convertTextWithCheckMark(str);
-#endif
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " AFTER convertTextWithUrl " << str;
-
-    return str;
-}
-
 QString generateRichTextCMark(const QString &str, const QString &searchedText)
 {
-    QString newStr = markdownToRichTextCMark(str);
+    QString newStr = TextUtils::TextUtilsBlockCMarkSupport::markdownToRichTextCMark(str);
     static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
     struct HrefPos {
         int start = 0;
