@@ -28,6 +28,8 @@ public:
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
     void closeSearchBarRequested();
+    void findNext();
+    void findPrev();
 
 protected:
     [[nodiscard]] bool event(QEvent *e) override;
