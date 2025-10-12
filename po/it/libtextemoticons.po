@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-05 02:27+0000\n"
-"PO-Revision-Date: 2025-02-21 09:18+0100\n"
+"PO-Revision-Date: 2025-10-01 08:44+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/unicodeemoticonmanager.cpp:44
 #, kde-format
@@ -100,4 +100,4 @@ msgstr "Cerca le faccine…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "Seleziona altra emoji"
