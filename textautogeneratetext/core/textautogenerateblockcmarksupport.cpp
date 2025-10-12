@@ -198,11 +198,11 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     };
 
     auto addTextChunk = [&](const QString &chunk) {
-        auto htmlChunk = generateRichTextCMark(chunk, searchText);
+        const auto htmlChunk = generateRichTextCMark(chunk, searchText);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
-        auto htmlChunk = generateRichTextCMark(chunk, searchText);
+        const auto htmlChunk = generateRichTextCMark(chunk, searchText);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
