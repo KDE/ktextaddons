@@ -225,4 +225,3 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     qCDebug(TEXTAUTOGENERATETEXT_CORE_CMARK_LOG) << " richText generated: " << richText;
     return richText;
 }
-// #define DEBUG_CMARK_RC
