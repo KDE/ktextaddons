@@ -55,6 +55,8 @@ TextAutoGenerateQuickSearchBar::~TextAutoGenerateQuickSearchBar() = default;
 
 void TextAutoGenerateQuickSearchBar::updateButtons(bool next, bool previous)
 {
+    mNextButton->setEnabled(next);
+    mPreviousButton->setEnabled(previous);
 }
 
 QString TextAutoGenerateQuickSearchBar::searchText() const
