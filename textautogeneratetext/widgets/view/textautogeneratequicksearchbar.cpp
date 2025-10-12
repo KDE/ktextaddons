@@ -39,6 +39,7 @@ TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
     mNextButton->setIcon(QIcon::fromTheme(u"go-down-search"_s));
     mNextButton->setToolTip(i18nc("Find and go to the next search match", "Next"));
     mNextButton->setEnabled(false);
+    connect(mNextButton, &QToolButton::clicked, this, &TextAutoGenerateQuickSearchBar::slotFindNext);
     mainLayout->addWidget(mNextButton);
 
     mPreviousButton->setObjectName(u"mPreviousButton"_s);
@@ -46,6 +47,7 @@ TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
     mPreviousButton->setEnabled(false);
     mPreviousButton->setIcon(QIcon::fromTheme(u"go-up-search"_s));
     mPreviousButton->setToolTip(i18nc("Find and go to the previous search match", "Previous"));
+    connect(mPreviousButton, &QToolButton::clicked, this, &TextAutoGenerateQuickSearchBar::slotFindPrev);
     mainLayout->addWidget(mPreviousButton);
 }
 
@@ -65,12 +67,14 @@ void TextAutoGenerateQuickSearchBar::setTearchText(const QString &str)
     mSearchLineEdit->setText(str);
 }
 
-void TextAutoGenerateQuickSearchBar::findNext()
+void TextAutoGenerateQuickSearchBar::slotFindNext()
 {
+    Q_EMIT findNext();
 }
 
-void TextAutoGenerateQuickSearchBar::findPrev()
+void TextAutoGenerateQuickSearchBar::slotFindPrev()
 {
+    Q_EMIT findPrev();
 }
 
 #include "moc_textautogeneratequicksearchbar.cpp"

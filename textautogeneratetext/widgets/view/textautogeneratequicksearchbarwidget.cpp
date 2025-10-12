@@ -78,9 +78,9 @@ bool TextAutoGenerateQuickSearchBarWidget::event(QEvent *e)
                 return true;
             }
             if (kev->modifiers() & Qt::ShiftModifier) {
-                mQuickSearchBar->findPrev();
+                mQuickSearchBar->slotFindPrev();
             } else if (kev->modifiers() == Qt::NoModifier) {
-                mQuickSearchBar->findNext();
+                mQuickSearchBar->slotFindNext();
             }
             return true;
         }

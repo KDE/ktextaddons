@@ -22,11 +22,13 @@ public:
     [[nodiscard]] QString searchText() const;
     void setTearchText(const QString &str);
 
-    void findNext();
-    void findPrev();
+    void slotFindNext();
+    void slotFindPrev();
 
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);
+    void findNext();
+    void findPrev();
 
 private:
     QLineEdit *const mSearchLineEdit;
