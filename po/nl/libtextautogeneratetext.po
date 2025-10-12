@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-10 09:52+0000\n"
-"PO-Revision-Date: 2025-10-09 21:48+0200\n"
+"PO-Revision-Date: 2025-10-11 18:09+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2487,20 +2487,16 @@ msgid "No Archive Found."
 msgstr "Geen archief gevonden."
 
 #: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Next Chat"
+#, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr "Volgende chat"
+msgstr "Volgende"
 
 #: widgets/view/textautogeneratequicksearchbar.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Previous Chat"
+#, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr "Vorige chat"
+msgstr "Vorige"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format

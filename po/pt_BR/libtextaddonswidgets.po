@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-11 09:05+0000\n"
-"PO-Revision-Date: 2025-08-31 07:36-0300\n"
+"PO-Revision-Date: 2025-10-11 07:44-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,24 +16,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "Desativar verificação de versão"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
-msgstr ""
+msgstr "Sua versão tem mais de 6 meses, recomendamos que você atualize."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
+"Sua versão tem mais de 1 ano, recomendamos fortemente que você atualize."
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -99,66 +100,67 @@ msgstr "Selecionar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr ""
+msgstr "Verificar nova versão"
 
 #: verifynewversion/checknewversionwidget.cpp:51
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
+"Uma nova versão encontrada. Clique <a href=\"%1\">aqui</a> para baixá-la."
 
 #: verifynewversion/checknewversionwidget.cpp:58
 #, kde-format
 msgid "No new version found."
-msgstr ""
+msgstr "Nenhum nova versão encontrada."
 
 #: verifynewversion/verifynewversionwidget.cpp:33
 #, kde-format
 msgid "Check New Version"
-msgstr ""
+msgstr "Verificar nova versão"
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "Versão:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr ""
+msgstr "O que há de novo em %1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(Mostrar novidades)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr ""
+msgstr "O que há de novo em %2. %1"
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr ""
+msgstr "Todas as versões"
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "Versão %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "Mudanças importantes desde a última versão:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr ""
+msgstr "Algumas novas funcionalidades desta versão incluem:"
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr ""
+msgstr "Algumas correções de erro:"

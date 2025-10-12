@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-11 09:05+0000\n"
-"PO-Revision-Date: 2025-08-31 06:24+0200\n"
+"PO-Revision-Date: 2025-10-11 12:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -22,18 +22,18 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "ვერსიის შემოწმების გათიშვა"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
-msgstr ""
+msgstr "თქვენი ვერსია 6 თვეზე ძველია. გირჩევთ, განახლდეთ."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
-msgstr ""
+msgstr "თქვენი ვერსია 1 წელზე ძველია. დაჟინებით გირჩევთ, ასწიოთ ვერსია."
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -99,66 +99,67 @@ msgstr "არჩევა"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr ""
+msgstr "ახალი ვერსიის შემოწმება"
 
 #: verifynewversion/checknewversionwidget.cpp:51
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
+"აღმოჩენილია ახალი ვერსია. მის გადმოსაწერად დააწკაპუნეთ <a href=\"%1\">აქ</a>."
 
 #: verifynewversion/checknewversionwidget.cpp:58
 #, kde-format
 msgid "No new version found."
-msgstr ""
+msgstr "ახალი ვერსია აღმოჩენილი არაა."
 
 #: verifynewversion/verifynewversionwidget.cpp:33
 #, kde-format
 msgid "Check New Version"
-msgstr ""
+msgstr "ახალი ვერსიის შემოწმება"
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "ვერსია:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr ""
+msgstr "რა არის ახალი %1-ში"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(სიახლეების ჩვენება)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr ""
+msgstr "რა არის ახალი %2-ში. %1"
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr ""
+msgstr "ყველა ვერსია"
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "ვერსია %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "მნიშვნელოვანი ცვლილებები ბოლო ვერსიის შემდეგ:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr ""
+msgstr "ამ რელიზის ზოგიერთი ახალი ფუნქცია:"
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr ""
+msgstr "გამოსწორდა ზოგიერთი შეცდომა:"
