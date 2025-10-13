@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 09:52+0000\n"
+"POT-Creation-Date: 2025-10-13 00:41+0000\n"
 "PO-Revision-Date: 2025-07-21 18:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2252,7 +2252,7 @@ msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Uusi keskustelu"
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:48
+#: widgets/view/textautogeneratequicksearchbar.cpp:49
 #, fuzzy, kde-format
 #| msgid "7 days previous"
 msgctxt "Find and go to the previous search match"

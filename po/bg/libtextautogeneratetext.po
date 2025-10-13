@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 09:52+0000\n"
+"POT-Creation-Date: 2025-10-13 00:41+0000\n"
 "PO-Revision-Date: 2025-10-05 15:26+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2492,7 +2492,7 @@ msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Следващ чат"
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:48
+#: widgets/view/textautogeneratequicksearchbar.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Previous Chat"

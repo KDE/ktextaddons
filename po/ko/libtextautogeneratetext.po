@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-10 09:52+0000\n"
-"PO-Revision-Date: 2025-04-22 01:26+0200\n"
+"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -20,37 +20,37 @@ msgstr ""
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
 msgid "New Chat..."
-msgstr ""
+msgstr "새 대화..."
 
 #: core/models/textautogeneratechatsmodel.cpp:163
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "책갈피"
 
 #: core/models/textautogeneratechatsmodel.cpp:165
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "오늘"
 
 #: core/models/textautogeneratechatsmodel.cpp:167
 #, kde-format
 msgid "7 days previous"
-msgstr ""
+msgstr "7일 전"
 
 #: core/models/textautogeneratechatsmodel.cpp:169
 #, kde-format
 msgid "30 days previous"
-msgstr ""
+msgstr "30일 전"
 
 #: core/models/textautogeneratechatsmodel.cpp:171
 #, kde-format
 msgid "Later"
-msgstr ""
+msgstr "나중에"
 
 #: core/models/textautogeneratechatsmodel.cpp:173
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 #: core/models/textautogeneratemessagesmodel.cpp:77
 #, kde-format
@@ -59,6 +59,9 @@ msgid ""
 "Model: %2\n"
 "Instance Name: %3"
 msgstr ""
+"엔진: %1\n"
+"모델: %2\n"
+"인스턴스 이름: %3"
 
 #: core/models/textautogeneratemessagesmodel.cpp:80
 #, kde-format
@@ -66,51 +69,53 @@ msgid ""
 "\n"
 "Tools: %1"
 msgstr ""
+"\n"
+"도구: %1"
 
 #: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Tools"
-msgstr ""
+msgstr "도구"
 
 #: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Small"
-msgstr ""
+msgstr "작게"
 
 #: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Medium"
-msgstr ""
+msgstr "중간"
 
 #: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Big"
-msgstr ""
+msgstr "크게"
 
 #: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Huge"
-msgstr ""
+msgstr "매우 크게"
 
 #: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Multilingual"
-msgstr ""
+msgstr "다언어"
 
 #: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Code"
-msgstr ""
+msgstr "코드"
 
 #: core/textautogeneratemanager.cpp:145
 #, kde-format
 msgid "Math"
-msgstr ""
+msgstr "수학"
 
 #: core/textautogeneratemanager.cpp:147
 #, kde-format
 msgid "Vision"
-msgstr ""
+msgstr "비전"
 
 #: core/textautogeneratemanager.cpp:149
 #, kde-format
@@ -123,11 +128,9 @@ msgid "Reasoning"
 msgstr ""
 
 #: core/textautogeneratesearchmessageutils.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Enter a message"
+#, kde-format
 msgid "Go to message"
-msgstr "메시지 입력"
+msgstr "메시지로 이동"
 
 #: core/textautogeneratesettings.cpp:44
 #, kde-format
@@ -149,22 +152,20 @@ msgstr "네트워크"
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
 msgid "Generic"
-msgstr ""
+msgstr "일반"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure IA"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure %1"
-msgstr "IA 설정"
+msgstr "%1 설정"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:30
 #: plugins/ollama/ollamaconfiguredialog.cpp:47
 #, kde-format
 msgctxt "@title Preferences page name"
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: plugins/genericnetworkplugin/genericnetworkconfiguredialog.cpp:35
 #: plugins/ollama/ollamaconfiguredialog.cpp:52
@@ -207,7 +208,7 @@ msgstr ""
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:34
 #, kde-format
 msgid "Venice"
-msgstr ""
+msgstr "베네치아"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:36
 #, kde-format
@@ -283,24 +284,24 @@ msgstr "모델 새로 고침"
 #: plugins/ollama/modelsmanager/ollamamodelcategoriesmodel.cpp:41
 #, kde-format
 msgid "Categories"
-msgstr ""
+msgstr "분류"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:31
 #, kde-format
 msgid "Base:"
-msgstr ""
+msgstr "기반:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:34
 #: plugins/ollama/ollamaconfigurewidget.cpp:46
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:47
 #, kde-format
 msgid "Name:"
-msgstr ""
+msgstr "이름:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:37
 #, kde-format
 msgid "Tag:"
-msgstr ""
+msgstr "태그:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:40
 #, kde-format
@@ -355,12 +356,12 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
 msgid "Family:"
-msgstr ""
+msgstr "종류:"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:39
 #, kde-format
@@ -1662,7 +1663,7 @@ msgstr "모델:"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
 #, kde-format
 msgid "Temperature:"
-msgstr ""
+msgstr "온도:"
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:60
 #, kde-format
@@ -1751,7 +1752,7 @@ msgstr "메시지 입력"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
-msgstr ""
+msgstr "파일 첨부"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:59
 #, fuzzy, kde-format
@@ -1769,7 +1770,7 @@ msgstr ""
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "변경 사항을 적용하려면 다시 시작해야 합니다."
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
 #, kde-format
@@ -1779,7 +1780,7 @@ msgstr ""
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
 #, kde-format
 msgid "Tools Plugins"
-msgstr ""
+msgstr "도구 플러그인"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:177
 #, kde-format
@@ -1804,7 +1805,7 @@ msgstr "프롬프트:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Description:"
-msgstr ""
+msgstr "설명:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:31
 #, kde-format
@@ -1816,7 +1817,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Information:"
-msgstr ""
+msgstr "정보:"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:42
 #, kde-format
@@ -1839,7 +1840,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
-msgstr ""
+msgstr "이름:"
 
 #: widgets/instancesmanager/textautogenerateaddinstancewidget.cpp:31
 #, kde-format
@@ -1920,7 +1921,7 @@ msgstr ""
 #: widgets/menu/textautogeneratemenulistview.cpp:45
 #, kde-format
 msgid "Ask to AI"
-msgstr ""
+msgstr "AI에게 묻기"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:51
 #: widgets/view/textautogeneratehistorylistview.cpp:131
@@ -1939,7 +1940,7 @@ msgstr "삭제…"
 #: widgets/menu/textautogeneratemenulistview.cpp:61
 #, kde-format
 msgid "Do you want to remove it?"
-msgstr ""
+msgstr "삭제하시겠습니까?"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:62
 #, fuzzy, kde-format
@@ -1952,7 +1953,7 @@ msgstr "삭제…"
 #: widgets/menu/textautogeneratemenuwidget.cpp:34
 #, kde-format
 msgid "Ask AI…"
-msgstr ""
+msgstr "AI에게 묻기…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:63
 #, fuzzy, kde-format
@@ -1964,7 +1965,7 @@ msgstr "설정…"
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
 msgid "Api Key:"
-msgstr ""
+msgstr "API 키:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:49
 #, kde-format
@@ -1975,7 +1976,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Quick Ask"
-msgstr ""
+msgstr "빠르게 묻기"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
 #, kde-format
@@ -2011,7 +2012,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr ""
+msgstr "새 대화"
 
 #: widgets/textautogenerateheaderwidget.cpp:54
 #, kde-format
@@ -2077,9 +2078,7 @@ msgstr "삭제…"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:393
 #: widgets/view/textautogeneratedelegateutils.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "복사"
@@ -2088,7 +2087,7 @@ msgstr "복사"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "새로 고침"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
@@ -2114,12 +2113,10 @@ msgid "Copy"
 msgstr "복사"
 
 #: widgets/view/textautogeneratebaselistview.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy"
+#, kde-format
 msgctxt "@action"
 msgid "Copy URL"
-msgstr "복사"
+msgstr "URL 복사"
 
 #: widgets/view/textautogeneratebaselistview.cpp:104
 #, kde-format
@@ -2131,7 +2128,7 @@ msgstr "모두 선택"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr ""
+msgstr "새 대화"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:144
 #, kde-format
@@ -2149,7 +2146,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "복원"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:155
 #, kde-format
@@ -2179,7 +2176,7 @@ msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr ""
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:48
+#: widgets/view/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
