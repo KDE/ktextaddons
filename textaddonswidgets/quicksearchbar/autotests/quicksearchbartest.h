@@ -6,12 +6,12 @@
 #pragma once
 #include <QObject>
 
-class TextAutoGenerateQuickSearchBarTest : public QObject
+class QuickSearchBarTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateQuickSearchBarTest(QObject *parent = nullptr);
-    ~TextAutoGenerateQuickSearchBarTest() override = default;
+    explicit QuickSearchBarTest(QObject *parent = nullptr);
+    ~QuickSearchBarTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

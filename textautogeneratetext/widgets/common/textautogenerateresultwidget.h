@@ -8,6 +8,11 @@
 #include "textautogeneratetext_export.h"
 #include <QWidget>
 
+namespace TextAddonsWidgets
+{
+class QuickSearchBarWidget;
+}
+
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -43,7 +48,7 @@ Q_SIGNALS:
 
 private:
     TextAutoGenerateListView *const mTextAutoGenerateListView;
-    TextAutoGenerateQuickSearchBarWidget *const mQuickSearchBarWidget;
+    TextAddonsWidgets::QuickSearchBarWidget *const mQuickSearchBarWidget;
 };
 
 }

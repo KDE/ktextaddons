@@ -8,12 +8,12 @@
 
 #include <QObject>
 
-class TextAutoGenerateQuickSearchBarWidgetTest : public QObject
+class QuickSearchBarWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateQuickSearchBarWidgetTest(QObject *parent = nullptr);
-    ~TextAutoGenerateQuickSearchBarWidgetTest() override = default;
+    explicit QuickSearchBarWidgetTest(QObject *parent = nullptr);
+    ~QuickSearchBarWidgetTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();

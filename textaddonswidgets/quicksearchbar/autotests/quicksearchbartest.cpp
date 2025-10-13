@@ -3,23 +3,23 @@
 
   SPDX-License-Identifier: GPL-2.0-or-later
 */
-#include "textautogeneratequicksearchbartest.h"
-#include "widgets/view/textautogeneratequicksearchbar.h"
+#include "quicksearchbartest.h"
+#include "quicksearchbar/quicksearchbar.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
-QTEST_MAIN(TextAutoGenerateQuickSearchBarTest)
+QTEST_MAIN(QuickSearchBarTest)
 using namespace Qt::Literals::StringLiterals;
-TextAutoGenerateQuickSearchBarTest::TextAutoGenerateQuickSearchBarTest(QObject *parent)
+QuickSearchBarTest::QuickSearchBarTest(QObject *parent)
     : QObject{parent}
 {
 }
 
-void TextAutoGenerateQuickSearchBarTest::shouldHaveDefaultValues()
+void QuickSearchBarTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateQuickSearchBar w;
+    TextAddonsWidgets::QuickSearchBar w;
 
     auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
@@ -44,12 +44,12 @@ void TextAutoGenerateQuickSearchBarTest::shouldHaveDefaultValues()
     QVERIFY(!mPreviousButton->isEnabled());
 }
 
-void TextAutoGenerateQuickSearchBarTest::shouldEmitSearchTextRequested()
+void QuickSearchBarTest::shouldEmitSearchTextRequested()
 {
-    TextAutoGenerateText::TextAutoGenerateQuickSearchBar w;
+    TextAddonsWidgets::QuickSearchBar w;
     auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);
 
-    QSignalSpy spy(&w, &TextAutoGenerateText::TextAutoGenerateQuickSearchBar::searchTextRequested);
+    QSignalSpy spy(&w, &TextAddonsWidgets::QuickSearchBar::searchTextRequested);
 
     mSearchLineEdit->setText(u"foo"_s);
     QCOMPARE(spy.count(), 1);
@@ -64,4 +64,4 @@ void TextAutoGenerateQuickSearchBarTest::shouldEmitSearchTextRequested()
     QCOMPARE(spy.count(), 3);
 }
 
-#include "moc_textautogeneratequicksearchbartest.cpp"
+#include "moc_quicksearchbartest.cpp"

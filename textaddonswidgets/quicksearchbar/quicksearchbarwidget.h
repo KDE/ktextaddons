@@ -5,22 +5,19 @@
 */
 
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textaddonswidgets_export.h"
 #include <QWidget>
+
 namespace TextAddonsWidgets
 {
 class SlideContainer;
-}
-
-namespace TextAutoGenerateText
-{
-class TextAutoGenerateQuickSearchBar;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateQuickSearchBarWidget : public QWidget
+class QuickSearchBar;
+class TEXTADDONSWIDGETS_EXPORT QuickSearchBarWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateQuickSearchBarWidget(QWidget *parent = nullptr);
-    ~TextAutoGenerateQuickSearchBarWidget() override;
+    explicit QuickSearchBarWidget(QWidget *parent = nullptr);
+    ~QuickSearchBarWidget() override;
 
     void slideIn();
     void slideOut();
@@ -35,8 +32,8 @@ protected:
     [[nodiscard]] bool event(QEvent *e) override;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void closeBar();
+    TEXTADDONSWIDGETS_NO_EXPORT void closeBar();
     TextAddonsWidgets::SlideContainer *const mSliderContainer;
-    TextAutoGenerateQuickSearchBar *const mQuickSearchBar;
+    QuickSearchBar *const mQuickSearchBar;
 };
 }

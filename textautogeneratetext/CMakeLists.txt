@@ -272,10 +272,6 @@ target_sources(
         widgets/view/delegate/textautogenerateattachmentdelegatehelperfile.cpp
         widgets/view/delegate/textautogenerateattachmentdelegatehelperfile.h
         widgets/view/lrucache.h
-        widgets/view/textautogeneratequicksearchbar.h
-        widgets/view/textautogeneratequicksearchbar.cpp
-        widgets/view/textautogeneratequicksearchbarwidget.h
-        widgets/view/textautogeneratequicksearchbarwidget.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.cpp
         widgets/menu/textautogeneratemenuconfiguredialog.h
         widgets/menu/textautogeneratemenuconfigurewidget.cpp

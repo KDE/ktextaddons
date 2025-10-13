@@ -4,17 +4,17 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "textautogeneratequicksearchbarwidget.h"
-#include "textautogeneratequicksearchbar.h"
+#include "quicksearchbarwidget.h"
+#include "quicksearchbar.h"
 #include <QKeyEvent>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/SlideContainer>
 using namespace Qt::Literals::StringLiterals;
-using namespace TextAutoGenerateText;
-TextAutoGenerateQuickSearchBarWidget::TextAutoGenerateQuickSearchBarWidget(QWidget *parent)
+using namespace TextAddonsWidgets;
+QuickSearchBarWidget::QuickSearchBarWidget(QWidget *parent)
     : QWidget{parent}
     , mSliderContainer(new TextAddonsWidgets::SlideContainer(this))
-    , mQuickSearchBar(new TextAutoGenerateQuickSearchBar(this))
+    , mQuickSearchBar(new QuickSearchBar(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -28,25 +28,25 @@ TextAutoGenerateQuickSearchBarWidget::TextAutoGenerateQuickSearchBarWidget(QWidg
 
     mSliderContainer->setContent(mQuickSearchBar);
 
-    connect(mQuickSearchBar, &TextAutoGenerateQuickSearchBar::searchTextRequested, this, &TextAutoGenerateQuickSearchBarWidget::searchTextRequested);
-    connect(mQuickSearchBar, &TextAutoGenerateQuickSearchBar::findNext, this, &TextAutoGenerateQuickSearchBarWidget::findNext);
-    connect(mQuickSearchBar, &TextAutoGenerateQuickSearchBar::findPrev, this, &TextAutoGenerateQuickSearchBarWidget::findPrev);
+    connect(mQuickSearchBar, &QuickSearchBar::searchTextRequested, this, &QuickSearchBarWidget::searchTextRequested);
+    connect(mQuickSearchBar, &QuickSearchBar::findNext, this, &QuickSearchBarWidget::findNext);
+    connect(mQuickSearchBar, &QuickSearchBar::findPrev, this, &QuickSearchBarWidget::findPrev);
 }
 
-TextAutoGenerateQuickSearchBarWidget::~TextAutoGenerateQuickSearchBarWidget() = default;
+QuickSearchBarWidget::~QuickSearchBarWidget() = default;
 
-void TextAutoGenerateQuickSearchBarWidget::slideIn()
+void QuickSearchBarWidget::slideIn()
 {
     mSliderContainer->slideIn();
 }
 
-void TextAutoGenerateQuickSearchBarWidget::slideOut()
+void QuickSearchBarWidget::slideOut()
 {
     mQuickSearchBar->setTearchText({});
     mSliderContainer->slideOut();
 }
 
-void TextAutoGenerateQuickSearchBarWidget::closeBar()
+void QuickSearchBarWidget::closeBar()
 {
     // Make sure that all old searches are cleared
     mQuickSearchBar->setTearchText({});
@@ -54,7 +54,7 @@ void TextAutoGenerateQuickSearchBarWidget::closeBar()
     Q_EMIT closeSearchBarRequested();
 }
 
-bool TextAutoGenerateQuickSearchBarWidget::event(QEvent *e)
+bool QuickSearchBarWidget::event(QEvent *e)
 {
     // Close the bar when pressing Escape.
     // Not using a QShortcut for this because it could conflict with
@@ -90,4 +90,4 @@ bool TextAutoGenerateQuickSearchBarWidget::event(QEvent *e)
     return QWidget::event(e);
 }
 
-#include "moc_textautogeneratequicksearchbarwidget.cpp"
+#include "moc_quicksearchbarwidget.cpp"

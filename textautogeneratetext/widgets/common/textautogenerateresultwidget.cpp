@@ -8,7 +8,7 @@
 #include <QScrollBar>
 
 #include "widgets/view/textautogeneratelistview.h"
-#include "widgets/view/textautogeneratequicksearchbarwidget.h"
+#include <TextAddonsWidgets/QuickSearchBarWidget>
 
 #include <QVBoxLayout>
 
@@ -17,7 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mTextAutoGenerateListView(new TextAutoGenerateListView(manager, this))
-    , mQuickSearchBarWidget(new TextAutoGenerateQuickSearchBarWidget(this))
+    , mQuickSearchBarWidget(new TextAddonsWidgets::QuickSearchBarWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -33,12 +33,12 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::refreshAnswerRequested, this, &TextAutoGenerateResultWidget::refreshAnswerRequested);
 
     connect(mQuickSearchBarWidget,
-            &TextAutoGenerateQuickSearchBarWidget::searchTextRequested,
+            &TextAddonsWidgets::QuickSearchBarWidget::searchTextRequested,
             mTextAutoGenerateListView,
             &TextAutoGenerateListView::setSearchText);
 
     connect(mQuickSearchBarWidget,
-            &TextAutoGenerateQuickSearchBarWidget::closeSearchBarRequested,
+            &TextAddonsWidgets::QuickSearchBarWidget::closeSearchBarRequested,
             this,
             &TextAutoGenerateResultWidget::closeSearchBarRequested);
 }

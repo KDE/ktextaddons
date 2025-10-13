@@ -59,6 +59,10 @@ target_sources(
         verifynewversion/checknewversiondialog.h
         verifynewversion/checknewversionwidget.cpp
         verifynewversion/checknewversionwidget.h
+        quicksearchbar/quicksearchbarwidget.h
+        quicksearchbar/quicksearchbarwidget.cpp
+        quicksearchbar/quicksearchbar.h
+        quicksearchbar/quicksearchbar.cpp
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -137,6 +141,15 @@ ecm_generate_headers(TextAddonsWidgets_Camelverifynewversion_HEADERS
     RELATIVE verifynewversion
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelquicksearchbar_HEADERS
+    HEADER_NAMES
+    QuickSearchBar
+    QuickSearchBarWidget
+    REQUIRED_HEADERS TextAddonsWidgets_quicksearchbar_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE quicksearchbar
+)
+
 ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
     HEADER_NAMES
     WhatsNewComboBoxWidget
@@ -155,6 +168,7 @@ install(
         ${TextAddonsWidgets_needupdateversionwidgets_HEADERS}
         ${TextAddonsWidgets_verifynewversion_HEADERS}
         ${TextAddonsWidgets_whatsnew_HEADERS}
+        ${TextAddonsWidgets_quicksearchbar_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -165,6 +179,7 @@ install(
         ${TextAddonsWidgets_Camelcaseneedupdateversionwidgets_HEADERS}
         ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
         ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
+        ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
@@ -236,4 +251,5 @@ if(BUILD_TESTING)
     add_subdirectory(needupdateversion/tests)
     add_subdirectory(needupdateversion/autotests)
     add_subdirectory(whatsnew/autotests)
+    add_subdirectory(quicksearchbar/autotests)
 endif()
