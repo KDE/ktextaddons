@@ -23,7 +23,7 @@ TextAutoGenerateQuickSearchBar::TextAutoGenerateQuickSearchBar(QWidget *parent)
 
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     mainLayout->addWidget(mSearchLineEdit);
-    const auto shortcut = QKeySequence(Qt::CTRL | Qt::Key_K);
+    const auto shortcut = QKeySequence(Qt::CTRL | Qt::Key_Slash);
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search… (%1)", shortcut.toString(QKeySequence::NativeText)));
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     mSearchLineEdit->setClearButtonEnabled(true);
