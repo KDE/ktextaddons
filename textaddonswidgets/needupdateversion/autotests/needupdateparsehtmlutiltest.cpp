@@ -20,7 +20,7 @@ void NeedUpdateParseHtmlUtilTest::shouldExtraDate()
     QFETCH(QString, name);
     QFETCH(QString, dateStr);
 
-    const QString originalJsonFile = QLatin1StringView(PIMCOMMON_DATA_NEEDUPDATEDIR) + QStringLiteral("/") + name + QStringLiteral(".html");
+    const QString originalJsonFile = QLatin1StringView(TEXTADDONSWIDGET_DATA_NEEDUPDATEDIR) + QStringLiteral("/") + name + QStringLiteral(".html");
 
     QFile f(originalJsonFile);
     [&]() {
