@@ -73,6 +73,7 @@ void EmoticonWidgetActionWidget::addDefaultEmoticons(const QList<EmoticonWidgetA
         auto toolButton = new QToolButton(this);
         toolButton->setAutoRaise(true);
         toolButton->setText(emoticon.emojiStr);
+        toolButton->setToolTip(emoticon.emojiIdentifier);
         mMainLayout->addWidget(toolButton);
         connect(toolButton, &QToolButton::clicked, this, [this, emoticon]() {
             Q_EMIT insertEmoji(emoticon.emojiStr);
