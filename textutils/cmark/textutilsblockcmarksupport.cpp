@@ -166,7 +166,7 @@ static void convertHtmlChar(QString &str)
 QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText)
 {
     int blockCodeIndex = 1;
-    const QByteArray ba = str.toHtmlEscaped().toUtf8();
+    const QByteArray ba = str.toUtf8();
     cmark_node *doc = cmark_parse_document(ba.constData(), ba.length(), CMARK_OPT_DEFAULT);
     cmark_iter *iter = cmark_iter_new(doc);
 #ifdef DEBUG_CMARK_RC
