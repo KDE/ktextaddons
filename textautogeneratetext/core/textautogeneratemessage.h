@@ -113,6 +113,7 @@ private:
     // TextAutoGenerateMessage::KLLMReplyInfo info;
 
     MessageStates mMessageStates = MessageStates(MessageState::None);
+    int mNumberOfTextSearched = -1;
     qint64 mDateTime = -1;
 };
 }
