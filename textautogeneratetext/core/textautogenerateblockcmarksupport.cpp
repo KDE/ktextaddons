@@ -36,7 +36,6 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
             TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
         const auto userHighlightBackgroundColor =
             TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
-        lstPos.clear();
         QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
         while (userIteratorHref.hasNext()) {
             const QRegularExpressionMatch match = userIteratorHref.next();
