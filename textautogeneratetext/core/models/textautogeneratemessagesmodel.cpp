@@ -364,4 +364,40 @@ QList<QJsonObject> TextAutoGenerateMessagesModel::convertToOllamaChat() const
     return lst;
 }
 
+TextAutoGenerateMessage TextAutoGenerateMessagesModel::findLastMessageBefore(const QByteArray &messageId,
+                                                                             const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const
+{
+    auto it = findMessage(messageId); // if it == end, we'll start from there
+    auto rit = QList<TextAutoGenerateMessage>::const_reverse_iterator(it); // this points to *it-1 already
+    rit = std::find_if(rit, mMessages.rend(), predicate);
+    return rit == mMessages.rend() ? TextAutoGenerateMessage() : *rit;
+}
+
+TextAutoGenerateMessage TextAutoGenerateMessagesModel::findNextMessageAfter(const QByteArray &messageId,
+                                                                            const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const
+{
+    auto it = findMessage(messageId);
+    if (it == mMessages.end()) {
+        return TextAutoGenerateMessage(); // no wrap around, otherwise Alt+Key_Up would edit the oldest msg right away
+    } else {
+        ++it;
+    }
+    it = std::find_if(it, mMessages.end(), predicate);
+    return it == mMessages.end() ? TextAutoGenerateMessage() : *it;
+}
+
+QList<TextAutoGenerateMessage>::iterator TextAutoGenerateMessagesModel::findMessage(const QByteArray &messageId)
+{
+    return std::find_if(mMessages.begin(), mMessages.end(), [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == messageId;
+    });
+}
+
+QList<TextAutoGenerateMessage>::const_iterator TextAutoGenerateMessagesModel::findMessage(const QByteArray &messageId) const
+{
+    return std::find_if(mMessages.cbegin(), mMessages.cend(), [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == messageId;
+    });
+}
+
 #include "moc_textautogeneratemessagesmodel.cpp"

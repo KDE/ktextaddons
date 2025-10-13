@@ -69,10 +69,17 @@ public:
     [[nodiscard]] QString searchText() const;
     void setSearchText(const QString &newSearchText);
 
+    [[nodiscard]] TextAutoGenerateMessage findLastMessageBefore(const QByteArray &messageId,
+                                                                const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
+    [[nodiscard]] TextAutoGenerateMessage findNextMessageAfter(const QByteArray &messageId,
+                                                               const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
 Q_SIGNALS:
     void conversationCleared();
 
 private:
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::iterator findMessage(const QByteArray &messageId);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessage(const QByteArray &messageId) const;
+
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateAllGeneratedMessages();
