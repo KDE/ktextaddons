@@ -21,7 +21,7 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 namespace
 {
 
-QString generateRichTextCMark(const QString &str, const QString &searchedText)
+QString generateRichTextCMark(const QString &str, const QString &searchedText, int &numberOfTextSearched)
 {
     QString newStr = TextUtils::TextUtilsBlockCMarkSupport::markdownToRichTextCMark(str);
     static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
@@ -66,6 +66,7 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText)
             const QString replaceStr =
                 u"<a style=\"color:%2;background-color:%3;\">%1</a>"_s.arg(word, userHighlightForegroundColor, userHighlightBackgroundColor);
             newStr.replace(matchCapturedStart + offset, word.length(), replaceStr);
+            numberOfTextSearched++;
             // We added a new string => increase offset
             offset += replaceStr.length() - word.length();
         }
@@ -151,7 +152,8 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
                                                           const QString &language,
                                                           const QString &searchText,
                                                           const QByteArray &uuid,
-                                                          int &blockCodeIndex)
+                                                          int &blockCodeIndex,
+                                                          int &numberOfTextSearched)
 {
     QString richText;
     QTextStream richTextStream(&richText);
@@ -198,11 +200,11 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     };
 
     auto addTextChunk = [&](const QString &chunk) {
-        const auto htmlChunk = generateRichTextCMark(chunk, searchText);
+        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
-        const auto htmlChunk = generateRichTextCMark(chunk, searchText);
+        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 
