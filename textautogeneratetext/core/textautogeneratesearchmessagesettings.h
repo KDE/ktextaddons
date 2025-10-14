@@ -5,13 +5,13 @@
 */
 
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QByteArray>
 #include <QObject>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchMessageSettings : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessageSettings : public QObject
 {
     Q_OBJECT
 public:
@@ -32,7 +32,7 @@ public:
 
     void clear();
 Q_SIGNALS:
-    void refreshMessage(const QByteArray &identifier, int index);
+    void refreshMessage(const QByteArray &identifier, const QByteArray &previousIdentifier, int index);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool canSearchMessage() const;

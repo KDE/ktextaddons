@@ -65,23 +65,27 @@ void TextAutoGenerateSearchMessageSettings::next()
         mCurrentSearchIndex = 0;
     } else {
         mCurrentSearchIndex++;
-        if (mCurrentSearchIndex >= mNumberOfSearchReference) {
-            auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
-                return msg.numberOfTextSearched() > 0;
-            };
+    }
+    qDebug() << " mCurrentSearchIndex " << mCurrentSearchIndex << " mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() "
+             << mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched();
+    if ((mCurrentSearchIndex >= mNumberOfSearchReference)
+        || (mCurrentSearchIndex >= mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched())) {
+        auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
+            return msg.numberOfTextSearched() > 0;
+        };
 
-            mCurrentSearchIndex = 0;
-            auto msg = mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString);
-            if (msg.isValid()) {
-                mCurrentMessageIdentifier = msg.uuid();
-            } else {
-                // Invalidate it.
-                clear();
-                return;
-            }
+        mCurrentSearchIndex = 0;
+        auto msg = mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString);
+        if (msg.isValid()) {
+            mCurrentMessageIdentifier = msg.uuid();
+        } else {
+            // Invalidate it.
+            clear();
+            return;
         }
     }
-    Q_EMIT refreshMessage(mCurrentMessageIdentifier, mCurrentSearchIndex);
+    // TODO
+    Q_EMIT refreshMessage(mCurrentMessageIdentifier, {}, mCurrentSearchIndex);
 }
 
 void TextAutoGenerateSearchMessageSettings::previous()
@@ -115,7 +119,8 @@ void TextAutoGenerateSearchMessageSettings::previous()
             }
         }
     }
-    Q_EMIT refreshMessage(mCurrentMessageIdentifier, mCurrentSearchIndex);
+    // TODO previous identifier
+    Q_EMIT refreshMessage(mCurrentMessageIdentifier, {}, mCurrentSearchIndex);
 }
 
 QByteArray TextAutoGenerateSearchMessageSettings::currentMessageIdentifier() const
