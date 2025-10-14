@@ -5,7 +5,9 @@
 */
 
 #include "textautogeneratesearchmessagesettingstest.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratesearchmessagesettings.h"
+#include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateSearchMessageSettingsTest)
 using namespace Qt::Literals::StringLiterals;
@@ -41,6 +43,14 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldClear()
     QCOMPARE(w.currentSearchIndex(), -1);
     QCOMPARE(w.numberOfSearchReference(), -1);
     QVERIFY(w.currentMessageIdentifier().isEmpty());
+}
+
+void TextAutoGenerateSearchMessageSettingsTest::shouldTestNextSearchStringIndex()
+{
+    TextAutoGenerateText::TextAutoGenerateMessagesModel model;
+    // TODO fill model
+    TextAutoGenerateText::TextAutoGenerateSearchMessageSettings w(&model);
+    // TODO
 }
 
 #include "moc_textautogeneratesearchmessagesettingstest.cpp"
