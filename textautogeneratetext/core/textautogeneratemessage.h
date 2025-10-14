@@ -95,7 +95,7 @@ public:
     [[nodiscard]] const TextAutoGenerateAttachment *messageAttachment() const;
     void setMessageAttachment(const TextAutoGenerateAttachment &newMessageAttachment);
 
-    void generateHtml(const QString &searchText = {});
+    void generateHtml(const QString &searchText = {}, int hightLightStringIndex = -1);
 
     [[nodiscard]] int numberOfTextSearched() const;
 

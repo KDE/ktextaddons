@@ -36,6 +36,10 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
             TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
         const auto userHighlightBackgroundColor =
             TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
+
+        const auto userHighlightStringIndexBackgroundColor =
+            TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::PositiveBackground).color().name();
+
         QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
         while (userIteratorHref.hasNext()) {
             const QRegularExpressionMatch match = userIteratorHref.next();
@@ -62,8 +66,10 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
             if (inAnUrl) {
                 continue;
             }
-            const QString replaceStr =
-                u"<a style=\"color:%2;background-color:%3;\">%1</a>"_s.arg(word, userHighlightForegroundColor, userHighlightBackgroundColor);
+            const QString replaceStr = u"<a style=\"color:%2;background-color:%3;\">%1</a>"_s.arg(
+                word,
+                userHighlightForegroundColor,
+                (numberOfTextSearched == hightLightStringIndex) ? userHighlightStringIndexBackgroundColor : userHighlightBackgroundColor);
             newStr.replace(matchCapturedStart + offset, word.length(), replaceStr);
             numberOfTextSearched++;
             // We added a new string => increase offset
