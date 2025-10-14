@@ -97,6 +97,8 @@ public:
 
     void generateHtml(const QString &searchText = {});
 
+    [[nodiscard]] int numberOfTextSearched() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(const MessageStates &newMessageStates);

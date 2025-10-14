@@ -342,6 +342,11 @@ bool TextAutoGenerateMessage::messageStateValue(MessageState type) const
     return mMessageStates & type;
 }
 
+int TextAutoGenerateMessage::numberOfTextSearched() const
+{
+    return mNumberOfTextSearched;
+}
+
 const TextAutoGenerateAttachment *TextAutoGenerateMessage::messageAttachment() const
 {
     if (mMessageAttachment) {
