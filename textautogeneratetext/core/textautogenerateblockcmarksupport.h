@@ -19,7 +19,8 @@ protected:
                                          const QString &searchText,
                                          const QByteArray &uuid,
                                          int &blockCodeIndex,
-                                         int &numberOfTextSearched) override;
+                                         int &numberOfTextSearched,
+                                         int hightLightStringIndex) override;
 };
 
 }

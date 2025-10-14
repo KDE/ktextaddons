@@ -21,7 +21,7 @@ TextAutoGenerateBlockCMarkSupport::~TextAutoGenerateBlockCMarkSupport() = defaul
 namespace
 {
 
-QString generateRichTextCMark(const QString &str, const QString &searchedText, int &numberOfTextSearched)
+QString generateRichTextCMark(const QString &str, const QString &searchedText, int &numberOfTextSearched, int hightLightStringIndex)
 {
     QString newStr = TextUtils::TextUtilsBlockCMarkSupport::markdownToRichTextCMark(str);
     static const QRegularExpression regularExpressionAHref(u"(<a href=\'.*\'>|<a href=\".*\">)"_s);
@@ -152,7 +152,8 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
                                                           const QString &searchText,
                                                           const QByteArray &uuid,
                                                           int &blockCodeIndex,
-                                                          int &numberOfTextSearched)
+                                                          int &numberOfTextSearched,
+                                                          int hightLightStringIndex)
 {
     QString richText;
     QTextStream richTextStream(&richText);
@@ -199,11 +200,11 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     };
 
     auto addTextChunk = [&](const QString &chunk) {
-        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched);
+        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched, hightLightStringIndex);
         richTextStream << htmlChunk;
     };
     auto addInlineQuoteCodeChunk = [&](const QString &chunk) {
-        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched);
+        const auto htmlChunk = generateRichTextCMark(chunk, searchText, numberOfTextSearched, hightLightStringIndex);
         richTextStream << "<code style='background-color:"_L1 << codeBackgroundColor.name() << "'>"_L1 << htmlChunk << "</code>"_L1;
     };
 

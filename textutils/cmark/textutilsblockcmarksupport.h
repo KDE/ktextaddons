@@ -13,7 +13,8 @@ class TEXTUTILS_EXPORT TextUtilsBlockCMarkSupport
 public:
     TextUtilsBlockCMarkSupport();
     virtual ~TextUtilsBlockCMarkSupport();
-    [[nodiscard]] QString convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText, int &numberOfTextSearched);
+    [[nodiscard]] QString
+    convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText, int &numberOfTextSearched, int hightLightStringIndex);
 
     [[nodiscard]] static int findNonEscaped(const QString &str, const QString &regionMarker, int startFrom);
     [[nodiscard]] static bool isEscaped(const QString &str, int pos);
@@ -30,6 +31,7 @@ protected:
                                                  const QString &searchText,
                                                  const QByteArray &uuid,
                                                  int &blockCodeIndex,
-                                                 int &numberOfTextSearched) = 0;
+                                                 int &numberOfTextSearched,
+                                                 int hightLightStringIndex) = 0;
 };
 }

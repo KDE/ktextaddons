@@ -163,7 +163,11 @@ static void convertHtmlChar(QString &str)
     str.replace(u"&amp;"_s, u"&"_s);
 }
 
-QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str, const QByteArray &uuid, const QString &searchText, int &numberOfTextSearched)
+QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
+                                                       const QByteArray &uuid,
+                                                       const QString &searchText,
+                                                       int &numberOfTextSearched,
+                                                       int hightLightStringIndex)
 {
     int blockCodeIndex = 1;
     const QByteArray ba = str.toUtf8();
@@ -193,7 +197,8 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str, const
                 }
                 qCDebug(TEXTUTILS_CMARK_LOG) << " language " << language;
                 const QString stringHtml = u"```"_s + literalStr + u"```"_s;
-                const QString highligherStr = addHighlighter(stringHtml, language, searchText, uuid, blockCodeIndex, numberOfTextSearched);
+                const QString highligherStr =
+                    addHighlighter(stringHtml, language, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
                 cmark_node *p = cmark_node_new(CMARK_NODE_PARAGRAPH);
 
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
@@ -211,7 +216,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str, const
 
             const QString strLiteral = QString::fromUtf8(literal);
             if (!strLiteral.isEmpty()) {
-                const QString convertedString = addHighlighter(strLiteral, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched);
+                const QString convertedString = addHighlighter(strLiteral, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
                 qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
@@ -227,7 +232,7 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str, const
             if (!strLiteral.isEmpty()) {
                 convertHtmlChar(strLiteral);
                 const QString stringHtml = u"`"_s + strLiteral + u"`"_s;
-                const QString convertedString = addHighlighter(stringHtml, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched);
+                const QString convertedString = addHighlighter(stringHtml, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
                 qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  convert text " << convertedString;
                 cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
                 cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());

@@ -46,7 +46,8 @@ QString TextAutoGenerateMessage::content() const
 void TextAutoGenerateMessage::generateHtml(const QString &searchText)
 {
     int numberOfTextSearched = 0;
-    mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid, searchText, numberOfTextSearched);
+    int hightLightStringIndex = 0; // TODO implement it
+    mHtmlGenerated = TextAutoGenerateMessageUtils::convertTextToHtml(mContent, mUuid, searchText, numberOfTextSearched, hightLightStringIndex);
     mNumberOfTextSearched = numberOfTextSearched;
 }
 
