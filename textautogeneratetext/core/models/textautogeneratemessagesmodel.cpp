@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratemessagesmodel.h"
+#include "core/textautogeneratesearchmessagesettings.h"
 #include "textautogeneratetextcore_debug.h"
 #include <KLocalizedString>
 #include <QDateTime>
@@ -14,6 +15,7 @@
 using namespace TextAutoGenerateText;
 TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
     : QAbstractListModel{parent}
+    , mSearchMessageSettings(new TextAutoGenerateSearchMessageSettings(this, this))
 {
 }
 
@@ -93,6 +95,7 @@ int TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
     if (mSearchText != newSearchText) {
         mSearchText = newSearchText;
         numberOfSearchStringFound = updateAllGeneratedMessages();
+        mSearchMessageSettings->setNumberOfSearchReference(numberOfSearchStringFound);
     }
     return numberOfSearchStringFound;
 }
@@ -100,6 +103,23 @@ int TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
 bool TextAutoGenerateMessagesModel::isEmpty() const
 {
     return mMessages.isEmpty();
+}
+
+void TextAutoGenerateMessagesModel::regenerateHtmlMessage(const QByteArray &identifier, int index)
+{
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == identifier;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        (*it).generateHtml(searchText(), index);
+        const int i = std::distance(mMessages.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {MessageHtmlGeneratedRole});
+    }
 }
 
 int TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
@@ -112,6 +132,11 @@ int TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
     }
     endResetModel();
     return numberOfSearchStringFound;
+}
+
+TextAutoGenerateSearchMessageSettings *TextAutoGenerateMessagesModel::searchMessageSettings() const
+{
+    return mSearchMessageSettings;
 }
 
 QByteArray TextAutoGenerateMessagesModel::chatId() const

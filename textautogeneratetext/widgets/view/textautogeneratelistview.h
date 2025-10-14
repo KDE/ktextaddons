@@ -28,6 +28,9 @@ public:
 
     void setSearchText(const QString &str);
 
+    void slotFindNext();
+    void slotFindPrev();
+
 protected:
     void leaveEvent(QEvent *event) override;
     [[nodiscard]] QString originalMessage(const QModelIndex &index) const override;
@@ -50,6 +53,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void goToMessageId(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearEditingMode();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshMessage(const QByteArray &currentIdentifier, const QByteArray &previousIdentifier, int index);
     QByteArray mMessageIdBeingEdited;
     QPointer<TextAutoGenerateMessagesModel> mCurrentModel;
 };

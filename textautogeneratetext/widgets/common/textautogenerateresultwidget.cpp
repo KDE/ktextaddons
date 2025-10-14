@@ -41,9 +41,25 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
             &TextAddonsWidgets::QuickSearchBarWidget::closeSearchBarRequested,
             this,
             &TextAutoGenerateResultWidget::closeSearchBarRequested);
+
+    connect(mQuickSearchBarWidget, &TextAddonsWidgets::QuickSearchBarWidget::findPrev, this, &TextAutoGenerateResultWidget::slotFindPrev);
+
+    connect(mQuickSearchBarWidget, &TextAddonsWidgets::QuickSearchBarWidget::findNext, this, &TextAutoGenerateResultWidget::slotFindNext);
 }
 
 TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;
+
+void TextAutoGenerateResultWidget::slotFindPrev()
+{
+    mTextAutoGenerateListView->slotFindPrev();
+    qDebug() << " void TextAutoGenerateResultWidget::slotFindPrev()";
+}
+
+void TextAutoGenerateResultWidget::slotFindNext()
+{
+    mTextAutoGenerateListView->slotFindNext();
+    qDebug() << " void TextAutoGenerateResultWidget::slotFindNext()";
+}
 
 void TextAutoGenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)
 {

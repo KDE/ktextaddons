@@ -6,6 +6,7 @@
 #include "textautogeneratelistview.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratesearchmessagesettings.h"
 #include "delegate/textautogeneratelistviewdelegate.h"
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
@@ -211,6 +212,22 @@ void TextAutoGenerateListView::setSearchText(const QString &str)
     }
 }
 
+void TextAutoGenerateListView::slotFindNext()
+{
+    if (mManager) {
+        mCurrentModel->searchMessageSettings()->next();
+    }
+    // TODO
+}
+
+void TextAutoGenerateListView::slotFindPrev()
+{
+    if (mManager) {
+        mCurrentModel->searchMessageSettings()->previous();
+    }
+    // TODO
+}
+
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
 {
     auto animation = new TextAutoGenerateMessageWaitingAnswerAnimation(mManager->currentChatId(), mManager, this);
@@ -253,10 +270,13 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
     const QAbstractItemModel *oldModel = model();
     if (oldModel) {
         disconnect(oldModel, nullptr, this, nullptr);
+        disconnect(mCurrentModel->searchMessageSettings(), nullptr, this, nullptr);
+
         mDelegate->clearSelection();
     }
     QListView::setModel(newModel);
     if (newModel) {
+        connect(newModel, &QAbstractItemModel::rowsAboutToBeInserted, this, &TextAutoGenerateListView::checkIfAtBottom);
         connect(newModel, &QAbstractItemModel::rowsAboutToBeInserted, this, &TextAutoGenerateListView::checkIfAtBottom);
         connect(newModel, &QAbstractItemModel::rowsAboutToBeRemoved, this, &TextAutoGenerateListView::checkIfAtBottom);
         connect(newModel, &QAbstractItemModel::modelAboutToBeReset, this, &TextAutoGenerateListView::checkIfAtBottom);
@@ -278,9 +298,22 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
                 }
             }
         });
-
+        connect(mCurrentModel->searchMessageSettings(),
+                &TextAutoGenerateSearchMessageSettings::refreshMessage,
+                this,
+                &TextAutoGenerateListView::slotRefreshMessage);
         scrollToBottom();
     }
+}
+
+void TextAutoGenerateListView::slotRefreshMessage(const QByteArray &currentIdentifier, const QByteArray &previousIdentifier, int index)
+{
+    qDebug() << "TextAutoGenerateListView::slotRefreshMessage " << currentIdentifier << "index  " << index;
+    if (previousIdentifier != currentIdentifier) {
+        mCurrentModel->regenerateHtmlMessage(previousIdentifier, -1); // Clear
+    }
+    mCurrentModel->regenerateHtmlMessage(currentIdentifier, index);
+    // TODO scroll to model index
 }
 
 #include "moc_textautogeneratelistview.cpp"

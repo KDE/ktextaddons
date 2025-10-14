@@ -47,6 +47,8 @@ Q_SIGNALS:
     void closeSearchBarRequested();
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotFindNext();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotFindPrev();
     TextAutoGenerateListView *const mTextAutoGenerateListView;
     TextAddonsWidgets::QuickSearchBarWidget *const mQuickSearchBarWidget;
 };

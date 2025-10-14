@@ -5,11 +5,13 @@
 */
 
 #pragma once
+
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateSearchMessageSettings;
 /**
  * @brief The TextAutoGenerateChatModel class
  * @author Laurent Montel <montel@kde.org>
@@ -75,6 +77,9 @@ public:
                                                                 const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
     [[nodiscard]] TextAutoGenerateMessage findNextMessageAfter(const QByteArray &messageId,
                                                                const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
+    [[nodiscard]] TextAutoGenerateSearchMessageSettings *searchMessageSettings() const;
+
+    void regenerateHtmlMessage(const QByteArray &identifier, int index);
 Q_SIGNALS:
     void conversationCleared();
 
@@ -88,5 +93,6 @@ private:
     QList<TextAutoGenerateMessage> mMessages;
     QString mSearchText;
     QByteArray mChatId;
+    TextAutoGenerateSearchMessageSettings *const mSearchMessageSettings;
 };
 }
