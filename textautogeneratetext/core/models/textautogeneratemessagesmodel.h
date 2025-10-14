@@ -69,6 +69,8 @@ public:
     [[nodiscard]] QString searchText() const;
     [[nodiscard]] int setSearchText(const QString &newSearchText);
 
+    [[nodiscard]] bool isEmpty() const;
+
     [[nodiscard]] TextAutoGenerateMessage findLastMessageBefore(const QByteArray &messageId,
                                                                 const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
     [[nodiscard]] TextAutoGenerateMessage findNextMessageAfter(const QByteArray &messageId,

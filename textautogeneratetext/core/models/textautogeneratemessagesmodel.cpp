@@ -97,6 +97,11 @@ int TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
     return numberOfSearchStringFound;
 }
 
+bool TextAutoGenerateMessagesModel::isEmpty() const
+{
+    return mMessages.isEmpty();
+}
+
 int TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
 {
     int numberOfSearchStringFound = 0;
