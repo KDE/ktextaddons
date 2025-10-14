@@ -31,6 +31,8 @@ target_sources(
         syntaxhighlighting/textutilsblockcodemanager.cpp
         cmark/textutilsblockcmarksupport.h
         cmark/textutilsblockcmarksupport.cpp
+        colors/textutilscolorsandmessageviewstyle.h
+        colors/textutilscolorsandmessageviewstyle.cpp
 )
 
 target_link_libraries(
@@ -42,6 +44,7 @@ target_link_libraries(
         KF6::I18n
         cmark-rc
         KF6::CoreAddons
+        KF6::ColorScheme
 )
 
 ecm_qt_declare_logging_category(KF6TextUtils HEADER textutils_debug.h
@@ -98,6 +101,14 @@ ecm_generate_headers(TextUtils_CamelCase_HEADERS
     RELATIVE converttext
 )
 
+ecm_generate_headers(TextUtils_Colors_CamelCase_HEADERS
+    HEADER_NAMES
+    TextUtilsColorsAndMessageViewStyle
+    REQUIRED_HEADERS TextUtils_Colors_HEADERS
+    PREFIX TextUtils
+    RELATIVE colors
+)
+
 ecm_generate_headers(TextUtils_Syntaxhighlighting_CamelCase_HEADERS
     HEADER_NAMES
     TextUtilsSyntaxHighlighter
@@ -121,6 +132,7 @@ install(
         ${TextUtils_HEADERS}
         ${TextUtils_Syntaxhighlighting_HEADERS}
         ${TextUtils_CMark_HEADERS}
+        ${TextUtils_Colors_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textutils_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/textutils
     COMPONENT Devel
@@ -130,6 +142,7 @@ install(
         ${TextUtils_CamelCase_HEADERS}
         ${TextUtils_Syntaxhighlighting_CamelCase_HEADERS}
         ${TextUtils_CMark_CamelCase_HEADERS}
+        ${TextUtils_Colors_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )

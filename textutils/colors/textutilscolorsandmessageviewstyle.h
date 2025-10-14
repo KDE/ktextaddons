@@ -5,18 +5,18 @@
 */
 
 #pragma once
-
+#include "textutils_export.h"
 #include <KColorScheme>
 #include <QObject>
 
-namespace TextAutoGenerateText
+namespace TextUtils
 {
-class TextAutoGenerateColorsAndMessageViewStyle : public QObject
+class TEXTUTILS_EXPORT TextUtilsColorsAndMessageViewStyle : public QObject
 {
     Q_OBJECT
 public:
-    static TextAutoGenerateColorsAndMessageViewStyle &self();
-    TextAutoGenerateColorsAndMessageViewStyle();
+    static TextUtilsColorsAndMessageViewStyle &self();
+    TextUtilsColorsAndMessageViewStyle();
 
     [[nodiscard]] KColorScheme schemeView() const;
 

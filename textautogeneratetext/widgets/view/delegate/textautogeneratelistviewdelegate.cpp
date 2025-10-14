@@ -7,7 +7,6 @@
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "textautogeneratetextwidget_debug.h"
-#include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include "widgets/view/textautogeneratelistviewtextselection.h"
 #include <KLocalizedString>
 #include <QAbstractTextDocumentLayout>
@@ -19,6 +18,7 @@
 #include <QPainter>
 #include <QToolTip>
 #include <TextUtils/TextUtilsBlockCodeManager>
+#include <TextUtils/TextUtilsColorsAndMessageViewStyle>
 #include <TextUtils/TextUtilsSyntaxHighlighter>
 #include <kmessagebox.h>
 
@@ -33,8 +33,8 @@ TextAutoGenerateListViewDelegate::TextAutoGenerateListViewDelegate(QListView *vi
     , mInformationIcon(QIcon::fromTheme(u"info"_s))
     , mRemoveIcon(QIcon::fromTheme(u"edit-delete"_s))
 {
-    connect(&TextAutoGenerateColorsAndMessageViewStyle::self(),
-            &TextAutoGenerateColorsAndMessageViewStyle::needToUpdateColors,
+    connect(&TextUtils::TextUtilsColorsAndMessageViewStyle::self(),
+            &TextUtils::TextUtilsColorsAndMessageViewStyle::needToUpdateColors,
             this,
             &TextAutoGenerateListViewDelegate::slotUpdateColors);
     slotUpdateColors();
@@ -44,7 +44,7 @@ TextAutoGenerateListViewDelegate::~TextAutoGenerateListViewDelegate() = default;
 
 void TextAutoGenerateListViewDelegate::slotUpdateColors()
 {
-    const KColorScheme scheme = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView();
+    const KColorScheme scheme = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView();
     mEditingColorMode = scheme.foreground(KColorScheme::NegativeText).color();
     Q_EMIT updateView();
 }

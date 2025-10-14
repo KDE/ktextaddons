@@ -5,8 +5,8 @@
 */
 
 #include "textautogenerateselectedmessagebackgroundanimation.h"
-#include "textautogeneratecolorsandmessageviewstyle.h"
 #include <QPropertyAnimation>
+#include <TextUtils/TextUtilsColorsAndMessageViewStyle>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 
@@ -45,7 +45,7 @@ void TextAutoGenerateSelectedMessageBackgroundAnimation::start()
 {
     auto animation = new QPropertyAnimation(this, "backgroundColor"_ba, this);
     animation->setDuration(2000);
-    const auto color = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color();
+    const auto color = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color();
     animation->setStartValue(color);
     animation->setEndValue(QColor(Qt::transparent));
     animation->setEasingCurve(QEasingCurve::InOutQuad);

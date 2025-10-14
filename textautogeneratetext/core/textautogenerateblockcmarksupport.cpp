@@ -6,12 +6,12 @@
 #include "textautogenerateblockcmarksupport.h"
 #include "syntaxhighlighting/textutilssyntaxhighlighter.h"
 #include "textautogeneratetextcore_cmark_debug.h"
-#include "widgets/view/textautogeneratecolorsandmessageviewstyle.h"
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
 #include <KTextToHTML>
 #include <QRegularExpression>
+#include <TextUtils/TextUtilsColorsAndMessageViewStyle>
 #include <TextUtils/TextUtilsSyntaxHighlightingManager>
 using namespace TextAutoGenerateText;
 using namespace Qt::StringLiterals;
@@ -33,9 +33,9 @@ QString generateRichTextCMark(const QString &str, const QString &searchedText, i
     if (!searchedText.isEmpty()) {
         QList<HrefPos> lstPos;
         const auto userHighlightForegroundColor =
-            TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
+            TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::NeutralText).color().name();
         const auto userHighlightBackgroundColor =
-            TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
+            TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::NeutralBackground).color().name();
         QRegularExpressionMatchIterator userIteratorHref = regularExpressionAHref.globalMatch(newStr);
         while (userIteratorHref.hasNext()) {
             const QRegularExpressionMatch match = userIteratorHref.next();
@@ -157,8 +157,8 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
 {
     QString richText;
     QTextStream richTextStream(&richText);
-    const QColor codeBackgroundColor = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color();
-    const auto codeBorderColor = TextAutoGenerateColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::InactiveText).color().name();
+    const QColor codeBackgroundColor = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().background(KColorScheme::AlternateBackground).color();
+    const auto codeBorderColor = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView().foreground(KColorScheme::InactiveText).color().name();
 
     QString highlighted;
     QTextStream stream(&highlighted);
