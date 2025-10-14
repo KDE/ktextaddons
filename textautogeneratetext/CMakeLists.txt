@@ -187,8 +187,8 @@ target_sources(
         core/tools/textautogeneratetexttoolpluginproperty.cpp
         core/tools/textautogeneratetexttoolpluginjob.h
         core/tools/textautogeneratetexttoolpluginjob.cpp
-        core/textautogenerateblockcodemanager.h
-        core/textautogenerateblockcodemanager.cpp
+        core/textautogeneratesearchmessagesettings.h
+        core/textautogeneratesearchmessagesettings.cpp
 )
 
 target_sources(
