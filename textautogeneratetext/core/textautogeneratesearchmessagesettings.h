@@ -36,6 +36,7 @@ Q_SIGNALS:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool canSearchMessage() const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void lastMessageUuid();
     TextAutoGenerateMessagesModel *const mMessageModel;
     QByteArray mCurrentMessageIdentifier;
     int mCurrentSearchIndex = -1;

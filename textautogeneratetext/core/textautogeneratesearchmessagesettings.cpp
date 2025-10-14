@@ -40,21 +40,45 @@ bool TextAutoGenerateSearchMessageSettings::canSearchMessage() const
     return true;
 }
 
+void TextAutoGenerateSearchMessageSettings::lastMessageUuid()
+{
+    auto msg = mMessageModel->messages().constLast();
+    if (msg.isValid()) {
+        mCurrentMessageIdentifier = msg.uuid();
+    } else {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid message. It's a bug";
+    }
+}
+
 void TextAutoGenerateSearchMessageSettings::next()
 {
     if (!canSearchMessage()) {
         return;
     }
     if (mCurrentMessageIdentifier.isEmpty()) {
-        // TODO
+        lastMessageUuid();
+        if (mCurrentMessageIdentifier.isEmpty()) {
+            return;
+        }
     }
     if (mCurrentSearchIndex == -1) {
         mCurrentSearchIndex = 0;
     } else {
         mCurrentSearchIndex++;
         if (mCurrentSearchIndex >= mNumberOfSearchReference) {
-            // TODO update     mCurrentMessageIdentifier
+            auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
+                return msg.numberOfTextSearched() > 0;
+            };
+
             mCurrentSearchIndex = 0;
+            auto msg = mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString);
+            if (msg.isValid()) {
+                mCurrentMessageIdentifier = msg.uuid();
+            } else {
+                // Invalidate it.
+                clear();
+                return;
+            }
         }
     }
     Q_EMIT refreshMessage(mCurrentMessageIdentifier, mCurrentSearchIndex);
@@ -66,15 +90,29 @@ void TextAutoGenerateSearchMessageSettings::previous()
         return;
     }
     if (mCurrentMessageIdentifier.isEmpty()) {
-        // TODO
+        lastMessageUuid();
+        if (mCurrentMessageIdentifier.isEmpty()) {
+            return;
+        }
     }
     if (mCurrentSearchIndex == -1) {
         mCurrentSearchIndex = 0;
     } else {
         mCurrentSearchIndex--;
         if (mCurrentSearchIndex < 0) {
-            // TODO update     mCurrentMessageIdentifier
-            // mCurrentSearchIndex = last index.
+            auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
+                return msg.numberOfTextSearched() > 0;
+            };
+
+            auto msg = mMessageModel->findLastMessageBefore(mCurrentMessageIdentifier, hasSearchedString);
+            if (msg.isValid()) {
+                mCurrentMessageIdentifier = msg.uuid();
+                mCurrentSearchIndex = msg.numberOfTextSearched() - 1;
+            } else {
+                // Invalidate it.
+                clear();
+                return;
+            }
         }
     }
     Q_EMIT refreshMessage(mCurrentMessageIdentifier, mCurrentSearchIndex);
