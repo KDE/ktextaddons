@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 09:05+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-08-31 20:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -33,6 +33,27 @@ msgstr ""
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
+msgstr ""
+
+#: quicksearchbar/quicksearchbar.cpp:27
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search… (%1)"
+msgstr ""
+
+#: quicksearchbar/quicksearchbar.cpp:40
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr ""
+
+#: quicksearchbar/quicksearchbar.cpp:49
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
 msgstr ""
 
 #: richtextquicktextformat.cpp:67

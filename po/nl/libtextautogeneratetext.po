@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-10-11 18:09+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2339,7 +2339,6 @@ msgid "Favorite"
 msgstr "Favoriet"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2486,22 +2485,18 @@ msgstr "Discussie verwijderen"
 msgid "No Archive Found."
 msgstr "Geen archief gevonden."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "Volgende"
-
-#: widgets/view/textautogeneratequicksearchbar.cpp:49
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "Vorige"
-
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Geen berichten gevonden."
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Volgende"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Vorige"
 
 #~ msgid "No system prompt"
 #~ msgstr "Geen systeem-prompt"

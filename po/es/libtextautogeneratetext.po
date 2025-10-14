@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-10-10 20:42+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2363,7 +2363,6 @@ msgid "Favorite"
 msgstr "Favorita"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2510,19 +2509,15 @@ msgstr "Eliminar discusión"
 msgid "No Archive Found."
 msgstr "No se ha encontrado ningún archivo."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "Siguiente"
-
-#: widgets/view/textautogeneratequicksearchbar.cpp:49
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "Anterior"
-
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Siguiente"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Anterior"

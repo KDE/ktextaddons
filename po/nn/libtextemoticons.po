@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-01 00:44+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2023-07-31 21:16+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -98,7 +98,7 @@ msgctxt "@info:placeholder"
 msgid "Search Emoticon…"
 msgstr "Søk etter emotikon …"
 
-#: widgets/emoticonwidgetactionwidget.cpp:85
+#: widgets/emoticonwidgetactionwidget.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"

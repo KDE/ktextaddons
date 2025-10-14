@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2218,7 +2218,6 @@ msgid "Favorite"
 msgstr "常用"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2365,23 +2364,21 @@ msgstr "移除讨论"
 msgid "No Archive Found."
 msgstr "没有找到归档。"
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Next Chat"
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "下一个聊天"
-
-#: widgets/view/textautogeneratequicksearchbar.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Previous Chat"
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "上一个聊天"
-
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Next Chat"
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "下一个聊天"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Previous Chat"
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "上一个聊天"

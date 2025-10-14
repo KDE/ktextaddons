@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-10-10 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2343,7 +2343,6 @@ msgid "Favorite"
 msgstr "რჩეული"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2490,22 +2489,18 @@ msgstr "კამათის წაშლა"
 msgid "No Archive Found."
 msgstr "არქივი ვერ მოიძებნა."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "შემდეგი"
-
-#: widgets/view/textautogeneratequicksearchbar.cpp:49
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "წინა"
-
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "შეტყობინებები აღმოჩენილი არაა."
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "შემდეგი"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "წინა"
 
 #~ msgid "No system prompt"
 #~ msgstr "სისტემური კითხვის გარეშე"

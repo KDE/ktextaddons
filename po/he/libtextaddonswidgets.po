@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-11 09:05+0000\n"
-"PO-Revision-Date: 2025-08-31 07:41+0300\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
+"PO-Revision-Date: 2025-10-12 09:37+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,23 +16,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "השבתת בדיקת גרסאות"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
 msgid "Your version is older than 6 months, we encourage you to upgrade."
-msgstr ""
+msgstr "הגרסה שלך בת יותר מחצי שנה, מומלץ בחום לשדרג."
 
 #: needupdateversion/needupdateversionwidget.cpp:40
 #, kde-format
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
+msgstr "הגרסה שלך בת יותר משנה, מומלץ בחום לשדרג."
+
+#: quicksearchbar/quicksearchbar.cpp:27
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:27
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search… (%1)"
+msgstr ""
+
+#: quicksearchbar/quicksearchbar.cpp:40
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:40
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr ""
+
+#: quicksearchbar/quicksearchbar.cpp:49
+#: quicksearchbar/textautogeneratequicksearchbar.cpp:49
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
 msgstr ""
 
 #: richtextquicktextformat.cpp:67
@@ -99,66 +120,66 @@ msgstr "בחירה"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check New Version"
-msgstr ""
+msgstr "בדיקה לאיתור גרסה חדשה"
 
 #: verifynewversion/checknewversionwidget.cpp:51
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
-msgstr ""
+msgstr "נמצאה גרסה חדשה. לחיצה <a href=\"%1\">כאן</a> תוריד אותה."
 
 #: verifynewversion/checknewversionwidget.cpp:58
 #, kde-format
 msgid "No new version found."
-msgstr ""
+msgstr "לא נמצאו גרסאות חדשות."
 
 #: verifynewversion/verifynewversionwidget.cpp:33
 #, kde-format
 msgid "Check New Version"
-msgstr ""
+msgstr "בדיקה לאיתור גרסה חדשה"
 
 #: whatsnew/whatsnewcomboboxwidget.cpp:27
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "גרסה:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "What's new in %1"
-msgstr ""
+msgstr "מה חדש ב־%1"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(הצגת חדשות)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "What's new in %2. %1"
-msgstr ""
+msgstr "מה חדש ב־%2. %1"
 
 #: whatsnew/whatsnewwidget.cpp:44
 #, kde-format
 msgid "All Versions"
-msgstr ""
+msgstr "כל הגרסאות"
 
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "גרסה %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "שינויים חשובים מאז הגרסה האחרונה:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
 msgid "Some of the new features in this release include:"
-msgstr ""
+msgstr "חלק מהיכולות החדשות שהגרסה הזאת כוללת:"
 
 #: whatsnew/whatsnewwidget.cpp:95
 #, kde-format
 msgid "Some bug fixing:"
-msgstr ""
+msgstr "תיקוני תקלות:"

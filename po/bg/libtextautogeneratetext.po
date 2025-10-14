@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-10-05 15:26+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2337,7 +2337,6 @@ msgid "Favorite"
 msgstr "Прибавяне в Любими"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2484,26 +2483,24 @@ msgstr "Премахване на дискусията"
 msgid "No Archive Found."
 msgstr "Не е намерен архив."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Next Chat"
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "Следващ чат"
-
-#: widgets/view/textautogeneratequicksearchbar.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Previous Chat"
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "Предишен чат"
-
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Next Chat"
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Следващ чат"
+
+#, fuzzy
+#~| msgctxt "@action"
+#~| msgid "Previous Chat"
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Предишен чат"
 
 #~ msgid "No system prompt"
 #~ msgstr "Няма системна подкана"

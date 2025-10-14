@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-13 00:41+0000\n"
+"POT-Creation-Date: 2025-10-14 00:41+0000\n"
 "PO-Revision-Date: 2025-10-10 23:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2339,7 +2339,6 @@ msgid "Favorite"
 msgstr "Sık kullanılanlara ekle"
 
 #: widgets/textautogeneratehistorywidget.cpp:30
-#: widgets/view/textautogeneratequicksearchbar.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
@@ -2486,22 +2485,18 @@ msgstr "Tartışmayı Kaldır"
 msgid "No Archive Found."
 msgstr "Bulunan arşiv yok."
 
-#: widgets/view/textautogeneratequicksearchbar.cpp:40
-#, kde-format
-msgctxt "Find and go to the next search match"
-msgid "Next"
-msgstr "Sonraki"
-
-#: widgets/view/textautogeneratequicksearchbar.cpp:49
-#, kde-format
-msgctxt "Find and go to the previous search match"
-msgid "Previous"
-msgstr "Önceki"
-
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
 msgstr "Bulunan ileti yok."
+
+#~ msgctxt "Find and go to the next search match"
+#~ msgid "Next"
+#~ msgstr "Sonraki"
+
+#~ msgctxt "Find and go to the previous search match"
+#~ msgid "Previous"
+#~ msgstr "Önceki"
 
 #~ msgid "No system prompt"
 #~ msgstr "Sistem istemi yok"
