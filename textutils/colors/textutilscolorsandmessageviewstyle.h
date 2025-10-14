@@ -24,6 +24,8 @@ public:
 
 Q_SIGNALS:
     void needToUpdateColors();
+    void needUpdateMessageStyle();
+    void needUpdateFontSize();
 
 protected:
     [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
