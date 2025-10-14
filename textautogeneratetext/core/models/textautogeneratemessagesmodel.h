@@ -67,7 +67,7 @@ public:
     [[nodiscard]] QList<QJsonObject> convertToOllamaChat() const;
 
     [[nodiscard]] QString searchText() const;
-    void setSearchText(const QString &newSearchText);
+    [[nodiscard]] int setSearchText(const QString &newSearchText);
 
     [[nodiscard]] TextAutoGenerateMessage findLastMessageBefore(const QByteArray &messageId,
                                                                 const std::function<bool(const TextAutoGenerateMessage &)> &predicate) const;
@@ -82,7 +82,7 @@ private:
 
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void updateAllGeneratedMessages();
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int updateAllGeneratedMessages();
     QList<TextAutoGenerateMessage> mMessages;
     QString mSearchText;
     QByteArray mChatId;

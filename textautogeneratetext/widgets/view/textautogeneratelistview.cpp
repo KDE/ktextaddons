@@ -205,8 +205,9 @@ void TextAutoGenerateListView::slotCurrentChatIdChanged()
 void TextAutoGenerateListView::setSearchText(const QString &str)
 {
     if (mCurrentModel) {
-        mCurrentModel->setSearchText(str);
+        const int numberOfSearchStringFound = mCurrentModel->setSearchText(str);
         clearDocumentCache();
+        Q_EMIT mManager->numberOfSearchStringChanged(numberOfSearchStringFound);
     }
 }
 

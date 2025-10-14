@@ -87,21 +87,26 @@ QString TextAutoGenerateMessagesModel::searchText() const
     return mSearchText;
 }
 
-void TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
+int TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
 {
+    int numberOfSearchStringFound = 0;
     if (mSearchText != newSearchText) {
         mSearchText = newSearchText;
-        updateAllGeneratedMessages();
+        numberOfSearchStringFound = updateAllGeneratedMessages();
     }
+    return numberOfSearchStringFound;
 }
 
-void TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
+int TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
 {
+    int numberOfSearchStringFound = 0;
     beginResetModel();
     for (auto &m : mMessages) {
         m.generateHtml(mSearchText);
+        numberOfSearchStringFound += m.numberOfTextSearched();
     }
     endResetModel();
+    return numberOfSearchStringFound;
 }
 
 QByteArray TextAutoGenerateMessagesModel::chatId() const

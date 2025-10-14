@@ -129,6 +129,7 @@ Q_SIGNALS:
     void chatListChanged(const QString &id);
     void modelListChanged(const QString &id);
     void toolInProgress(const QString &info);
+    void numberOfSearchStringChanged(int number);
     void currentModelChanged();
 
 private Q_SLOTS:
