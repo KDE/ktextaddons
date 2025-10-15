@@ -58,6 +58,7 @@ void TextAutoGenerateSearchMessageSettings::next()
             return;
         }
     }
+    const int storeCurrentSearchIndex = mCurrentSearchIndex;
     if (mCurrentSearchIndex == -1) {
         mCurrentSearchIndex = 0;
     } else {
@@ -65,8 +66,7 @@ void TextAutoGenerateSearchMessageSettings::next()
     }
     // qDebug() << " mCurrentSearchIndex " << mCurrentSearchIndex << " mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() "
     //          << mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched();
-    if ((mCurrentSearchIndex >= mNumberOfSearchReference)
-        || (mCurrentSearchIndex >= mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched())) {
+    if (mCurrentSearchIndex >= mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched()) {
         auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
             return msg.numberOfTextSearched() > 0;
         };
@@ -76,7 +76,7 @@ void TextAutoGenerateSearchMessageSettings::next()
         if (msg.isValid()) {
             mCurrentMessageIdentifier = msg.uuid();
         } else {
-            mCurrentSearchIndex = 0;
+            mCurrentSearchIndex = storeCurrentSearchIndex;
             // Invalidate it.
             // clear();
             return;
