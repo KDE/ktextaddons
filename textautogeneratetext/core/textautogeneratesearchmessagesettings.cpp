@@ -55,6 +55,7 @@ void TextAutoGenerateSearchMessageSettings::next()
     if (!canSearchMessage()) {
         return;
     }
+    const QByteArray previousMessageIdentifier = mCurrentMessageIdentifier;
     if (mCurrentMessageIdentifier.isEmpty()) {
         lastMessageUuid();
         if (mCurrentMessageIdentifier.isEmpty()) {
@@ -84,8 +85,7 @@ void TextAutoGenerateSearchMessageSettings::next()
             return;
         }
     }
-    // TODO
-    Q_EMIT refreshMessage(mCurrentMessageIdentifier, {}, mCurrentSearchIndex);
+    Q_EMIT refreshMessage(mCurrentMessageIdentifier, previousMessageIdentifier, mCurrentSearchIndex);
 }
 
 void TextAutoGenerateSearchMessageSettings::previous()
@@ -93,6 +93,7 @@ void TextAutoGenerateSearchMessageSettings::previous()
     if (!canSearchMessage()) {
         return;
     }
+    const QByteArray previousMessageIdentifier = mCurrentMessageIdentifier;
     if (mCurrentMessageIdentifier.isEmpty()) {
         lastMessageUuid();
         if (mCurrentMessageIdentifier.isEmpty()) {
@@ -119,8 +120,7 @@ void TextAutoGenerateSearchMessageSettings::previous()
             }
         }
     }
-    // TODO previous identifier
-    Q_EMIT refreshMessage(mCurrentMessageIdentifier, {}, mCurrentSearchIndex);
+    Q_EMIT refreshMessage(mCurrentMessageIdentifier, previousMessageIdentifier, mCurrentSearchIndex);
 }
 
 QByteArray TextAutoGenerateSearchMessageSettings::currentMessageIdentifier() const
