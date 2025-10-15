@@ -81,7 +81,7 @@ void TextAutoGenerateSearchMessageSettings::next()
             mCurrentMessageIdentifier = msg.uuid();
         } else {
             // Invalidate it.
-            clear();
+            // clear();
             return;
         }
     }
@@ -115,7 +115,7 @@ void TextAutoGenerateSearchMessageSettings::previous()
                 mCurrentSearchIndex = msg.numberOfTextSearched() - 1;
             } else {
                 // Invalidate it.
-                clear();
+                // clear();
                 return;
             }
         }
