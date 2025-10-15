@@ -24,6 +24,7 @@ public:
 
     void slotFindNext();
     void slotFindPrev();
+    void forceFocus();
 
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);

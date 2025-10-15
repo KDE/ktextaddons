@@ -38,6 +38,7 @@ QuickSearchBarWidget::~QuickSearchBarWidget() = default;
 void QuickSearchBarWidget::slideIn()
 {
     mSliderContainer->slideIn();
+    mQuickSearchBar->forceFocus();
 }
 
 void QuickSearchBarWidget::slideOut()

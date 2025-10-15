@@ -79,4 +79,9 @@ void QuickSearchBar::slotFindPrev()
     Q_EMIT findPrev();
 }
 
+void QuickSearchBar::forceFocus()
+{
+    mSearchLineEdit->setFocus();
+}
+
 #include "moc_quicksearchbar.cpp"
