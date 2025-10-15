@@ -114,6 +114,8 @@ void TextAutoGenerateSearchMessageSettings::previous()
                 mCurrentMessageIdentifier = msg.uuid();
                 mCurrentSearchIndex = msg.numberOfTextSearched() - 1;
             } else {
+                // Keep in 0 index
+                mCurrentSearchIndex = 0;
                 // Invalidate it.
                 // clear();
                 return;

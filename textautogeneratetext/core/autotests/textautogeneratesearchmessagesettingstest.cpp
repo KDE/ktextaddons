@@ -131,23 +131,42 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
     QCOMPARE(nbSearchString, 3);
     messageSettings.previous();
     QCOMPARE(spy.count(), 1);
+    QCOMPARE(spy.at(0).at(0), "foo3"_ba);
+    QCOMPARE(spy.at(0).at(1), ""_ba);
+    QCOMPARE(spy.at(0).at(2), 0);
 
     // Last one
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo3"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
 
     messageSettings.previous();
+
+    QCOMPARE(spy.count(), 2);
+    QCOMPARE(spy.at(1).at(0), "foo1"_ba);
+    QCOMPARE(spy.at(1).at(1), "foo3"_ba);
+    QCOMPARE(spy.at(1).at(2), 1);
+
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo1"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 1);
 
     messageSettings.previous();
+
+    QCOMPARE(spy.count(), 3);
+    QCOMPARE(spy.at(2).at(0), "foo1"_ba);
+    QCOMPARE(spy.at(2).at(1), "foo1"_ba);
+    QCOMPARE(spy.at(2).at(2), 0);
+
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo1"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
 
     // no other search element
     messageSettings.previous();
+
+    // No new signal
+    QCOMPARE(spy.count(), 3);
+
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo1"_ba);
-    QCOMPARE(messageSettings.currentSearchIndex(), -1);
+    QCOMPARE(messageSettings.currentSearchIndex(), 0);
 }
 
 #include "moc_textautogeneratesearchmessagesettingstest.cpp"
