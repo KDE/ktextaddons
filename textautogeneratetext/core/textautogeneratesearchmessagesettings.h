@@ -27,9 +27,6 @@ public:
     [[nodiscard]] int currentSearchIndex() const;
     void setCurrentSearchIndex(int newCurrentSearchIndex);
 
-    [[nodiscard]] int numberOfSearchReference() const;
-    void setNumberOfSearchReference(int newNumberOfSearchReference);
-
     void clear();
 Q_SIGNALS:
     void refreshMessage(const QByteArray &identifier, const QByteArray &previousIdentifier, int index);
@@ -40,6 +37,5 @@ private:
     TextAutoGenerateMessagesModel *const mMessageModel;
     QByteArray mCurrentMessageIdentifier;
     int mCurrentSearchIndex = -1;
-    int mNumberOfSearchReference = -1;
 };
 }

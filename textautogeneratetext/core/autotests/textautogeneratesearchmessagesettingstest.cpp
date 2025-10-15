@@ -20,7 +20,6 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldHaveDefaultValues()
 {
     TextAutoGenerateText::TextAutoGenerateSearchMessageSettings w(nullptr);
     QCOMPARE(w.currentSearchIndex(), -1);
-    QCOMPARE(w.numberOfSearchReference(), -1);
     QVERIFY(w.currentMessageIdentifier().isEmpty());
 }
 
@@ -31,17 +30,12 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldClear()
     w.setCurrentMessageIdentifier(ba);
     QCOMPARE(w.currentMessageIdentifier(), ba);
 
-    const int nbSearch = 15;
-    w.setNumberOfSearchReference(nbSearch);
-    QCOMPARE(w.numberOfSearchReference(), nbSearch);
-
     const int currentSearchIndex = 45;
     w.setCurrentSearchIndex(currentSearchIndex);
     QCOMPARE(w.currentSearchIndex(), currentSearchIndex);
 
     w.clear();
     QCOMPARE(w.currentSearchIndex(), -1);
-    QCOMPARE(w.numberOfSearchReference(), -1);
     QVERIFY(w.currentMessageIdentifier().isEmpty());
 }
 
@@ -76,7 +70,6 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestNextSearchStringIndex(
     model.setMessages(messages);
     const int nbSearchString = model.setSearchText(u"kde"_s);
     TextAutoGenerateText::TextAutoGenerateSearchMessageSettings messageSettings(&model);
-    messageSettings.setNumberOfSearchReference(nbSearchString);
 
     QCOMPARE(nbSearchString, 3);
     QSignalSpy spy(&messageSettings, &TextAutoGenerateText::TextAutoGenerateSearchMessageSettings::refreshMessage);
@@ -124,7 +117,6 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
     model.setMessages(messages);
     const int nbSearchString = model.setSearchText(u"kde"_s);
     TextAutoGenerateText::TextAutoGenerateSearchMessageSettings messageSettings(&model);
-    messageSettings.setNumberOfSearchReference(nbSearchString);
 
     QSignalSpy spy(&messageSettings, &TextAutoGenerateText::TextAutoGenerateSearchMessageSettings::refreshMessage);
 

@@ -20,7 +20,6 @@ void TextAutoGenerateSearchMessageSettings::clear()
 {
     mCurrentMessageIdentifier.clear();
     mCurrentSearchIndex = -1;
-    mNumberOfSearchReference = -1;
 }
 
 bool TextAutoGenerateSearchMessageSettings::canSearchMessage() const
@@ -33,9 +32,6 @@ bool TextAutoGenerateSearchMessageSettings::canSearchMessage() const
         if (mMessageModel->isEmpty()) {
             return false;
         }
-    }
-    if (mNumberOfSearchReference == -1) {
-        return false;
     }
     return true;
 }
@@ -144,16 +140,6 @@ int TextAutoGenerateSearchMessageSettings::currentSearchIndex() const
 void TextAutoGenerateSearchMessageSettings::setCurrentSearchIndex(int newCurrentSearchIndex)
 {
     mCurrentSearchIndex = newCurrentSearchIndex;
-}
-
-int TextAutoGenerateSearchMessageSettings::numberOfSearchReference() const
-{
-    return mNumberOfSearchReference;
-}
-
-void TextAutoGenerateSearchMessageSettings::setNumberOfSearchReference(int newNumberOfSearchReference)
-{
-    mNumberOfSearchReference = newNumberOfSearchReference;
 }
 
 #include "moc_textautogeneratesearchmessagesettings.cpp"

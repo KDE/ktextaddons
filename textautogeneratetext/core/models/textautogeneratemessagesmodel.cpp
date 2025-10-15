@@ -95,7 +95,6 @@ int TextAutoGenerateMessagesModel::setSearchText(const QString &newSearchText)
     if (mSearchText != newSearchText) {
         mSearchText = newSearchText;
         numberOfSearchStringFound = updateAllGeneratedMessages();
-        mSearchMessageSettings->setNumberOfSearchReference(numberOfSearchStringFound);
     }
     return numberOfSearchStringFound;
 }
