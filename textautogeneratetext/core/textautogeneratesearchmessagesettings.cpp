@@ -67,8 +67,8 @@ void TextAutoGenerateSearchMessageSettings::next()
     } else {
         mCurrentSearchIndex++;
     }
-    qDebug() << " mCurrentSearchIndex " << mCurrentSearchIndex << " mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() "
-             << mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched();
+    // qDebug() << " mCurrentSearchIndex " << mCurrentSearchIndex << " mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() "
+    //          << mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched();
     if ((mCurrentSearchIndex >= mNumberOfSearchReference)
         || (mCurrentSearchIndex >= mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched())) {
         auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
