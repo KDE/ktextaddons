@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:41+0000\n"
+"POT-Creation-Date: 2025-10-15 00:41+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: core/models/textautogeneratemessagesmodel.cpp:77
+#: core/models/textautogeneratemessagesmodel.cpp:79
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -60,7 +60,7 @@ msgid ""
 "Instance Name: %3"
 msgstr ""
 
-#: core/models/textautogeneratemessagesmodel.cpp:80
+#: core/models/textautogeneratemessagesmodel.cpp:82
 #, kde-format
 msgid ""
 "\n"

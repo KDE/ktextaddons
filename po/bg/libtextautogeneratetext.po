@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:41+0000\n"
-"PO-Revision-Date: 2025-10-05 15:26+0200\n"
+"POT-Creation-Date: 2025-10-15 00:41+0000\n"
+"PO-Revision-Date: 2025-10-14 22:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -52,7 +52,7 @@ msgstr "По-късно"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/models/textautogeneratemessagesmodel.cpp:77
+#: core/models/textautogeneratemessagesmodel.cpp:79
 #, kde-format
 msgid ""
 "Engine: %1\n"
@@ -63,7 +63,7 @@ msgstr ""
 "Модел: %2\n"
 "Име на екземпляр: %3"
 
-#: core/models/textautogeneratemessagesmodel.cpp:80
+#: core/models/textautogeneratemessagesmodel.cpp:82
 #, kde-format
 msgid ""
 "\n"
@@ -2405,13 +2405,13 @@ msgstr "Обновяване"
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgid "Block Code copied."
-msgstr ""
+msgstr "Блок кодът е копиран."
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:535
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
-msgstr ""
+msgstr "Копиране на блок кода"
 
 #: widgets/view/textautogeneratebaselistview.cpp:78
 #, kde-format
