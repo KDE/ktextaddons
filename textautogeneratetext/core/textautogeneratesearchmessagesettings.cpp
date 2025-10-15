@@ -80,6 +80,7 @@ void TextAutoGenerateSearchMessageSettings::next()
         if (msg.isValid()) {
             mCurrentMessageIdentifier = msg.uuid();
         } else {
+            mCurrentSearchIndex = 0;
             // Invalidate it.
             // clear();
             return;
