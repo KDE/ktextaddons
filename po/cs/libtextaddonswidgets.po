@@ -21,13 +21,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Tučné"
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
@@ -39,7 +39,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "Podtržené"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
