@@ -39,6 +39,7 @@ Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);
     void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
+    void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void handleMouseEvent(QMouseEvent *event) override;

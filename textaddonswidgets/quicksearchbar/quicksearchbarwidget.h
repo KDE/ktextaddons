@@ -21,6 +21,7 @@ public:
 
     void slideIn();
     void slideOut();
+    void updateButtons(bool next, bool previous);
 
 Q_SIGNALS:
     void searchTextRequested(const QString &txt);

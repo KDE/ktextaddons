@@ -31,6 +31,10 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::editMessageRequested, this, &TextAutoGenerateResultWidget::editMessageRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::cancelRequested, this, &TextAutoGenerateResultWidget::cancelRequested);
     connect(mTextAutoGenerateListView, &TextAutoGenerateListView::refreshAnswerRequested, this, &TextAutoGenerateResultWidget::refreshAnswerRequested);
+    connect(mTextAutoGenerateListView,
+            &TextAutoGenerateListView::updateNextPreviousButtons,
+            mQuickSearchBarWidget,
+            &TextAddonsWidgets::QuickSearchBarWidget::updateButtons);
 
     connect(mQuickSearchBarWidget,
             &TextAddonsWidgets::QuickSearchBarWidget::searchTextRequested,

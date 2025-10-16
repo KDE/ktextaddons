@@ -47,6 +47,11 @@ void QuickSearchBarWidget::slideOut()
     mSliderContainer->slideOut();
 }
 
+void QuickSearchBarWidget::updateButtons(bool next, bool previous)
+{
+    mQuickSearchBar->updateButtons(next, previous);
+}
+
 void QuickSearchBarWidget::closeBar()
 {
     // Make sure that all old searches are cleared
