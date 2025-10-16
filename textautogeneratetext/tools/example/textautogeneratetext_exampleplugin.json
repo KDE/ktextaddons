@@ -2,6 +2,7 @@
     "KPlugin": {
         "Description": "This tool plugin is an example.",
         "Description[ar]": "هذه الملحقة مثال.",
+        "Description[bg]": "Тази приставка за инструменти е примерна.",
         "Description[ca@valencia]": "Este connector d'eina és un exemple.",
         "Description[ca]": "Aquest connector d'eina és un exemple.",
         "Description[es]": "Este complemento de herramienta es un ejemplo.",
@@ -16,6 +17,7 @@
         "EnabledByDefault": true,
         "Name": "Tool Example Plugin",
         "Name[ar]": "ملحقة مثال أداة",
+        "Name[bg]": "Примерна приставка за инструменти",
         "Name[ca@valencia]": "Connector d'exemple d'eina",
         "Name[ca]": "Connector d'exemple d'eina",
         "Name[es]": "Complemento de ejemplo de herramienta",
