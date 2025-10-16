@@ -52,13 +52,11 @@ TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;
 void TextAutoGenerateResultWidget::slotFindPrev()
 {
     mTextAutoGenerateListView->slotFindPrev();
-    qDebug() << " void TextAutoGenerateResultWidget::slotFindPrev()";
 }
 
 void TextAutoGenerateResultWidget::slotFindNext()
 {
     mTextAutoGenerateListView->slotFindNext();
-    qDebug() << " void TextAutoGenerateResultWidget::slotFindNext()";
 }
 
 void TextAutoGenerateResultWidget::handleKeyPressEvent(QKeyEvent *ev)

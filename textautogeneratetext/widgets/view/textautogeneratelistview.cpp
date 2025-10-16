@@ -302,13 +302,18 @@ void TextAutoGenerateListView::setModel(QAbstractItemModel *newModel)
                 &TextAutoGenerateSearchMessageSettings::refreshMessage,
                 this,
                 &TextAutoGenerateListView::slotRefreshMessage);
+
+        connect(mCurrentModel->searchMessageSettings(),
+                &TextAutoGenerateSearchMessageSettings::updateNextPreviousButtons,
+                this,
+                &TextAutoGenerateListView::updateNextPreviousButtons);
         scrollToBottom();
     }
 }
 
 void TextAutoGenerateListView::slotRefreshMessage(const QByteArray &currentIdentifier, const QByteArray &previousIdentifier, int index)
 {
-    qDebug() << "TextAutoGenerateListView::slotRefreshMessage " << currentIdentifier << "index  " << index;
+    // qDebug() << "TextAutoGenerateListView::slotRefreshMessage " << currentIdentifier << "index  " << index;
     if (previousIdentifier != currentIdentifier) {
         mCurrentModel->regenerateHtmlMessage(previousIdentifier, -1); // Clear
     }
