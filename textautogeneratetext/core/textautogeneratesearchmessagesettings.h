@@ -28,8 +28,10 @@ public:
     void setCurrentSearchIndex(int newCurrentSearchIndex);
 
     void clear();
+
 Q_SIGNALS:
     void refreshMessage(const QByteArray &identifier, const QByteArray &previousIdentifier, int index);
+    void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool canSearchMessage() const;

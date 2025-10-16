@@ -55,6 +55,7 @@ void TextAutoGenerateSearchMessageSettings::next()
     if (mCurrentMessageIdentifier.isEmpty()) {
         lastMessageUuid();
         if (mCurrentMessageIdentifier.isEmpty()) {
+            Q_EMIT updateNextPreviousButtons(false, false);
             return;
         }
     }
@@ -77,10 +78,14 @@ void TextAutoGenerateSearchMessageSettings::next()
             mCurrentMessageIdentifier = msg.uuid();
         } else {
             mCurrentSearchIndex = storeCurrentSearchIndex;
+            Q_EMIT updateNextPreviousButtons(false, true /*TODO ????*/);
             // Invalidate it.
             // clear();
             return;
         }
+        Q_EMIT updateNextPreviousButtons((msg.numberOfTextSearched() > 0), true);
+    } else {
+        Q_EMIT updateNextPreviousButtons((mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() > 0), true);
     }
     Q_EMIT refreshMessage(mCurrentMessageIdentifier, previousMessageIdentifier, mCurrentSearchIndex);
 }
@@ -94,6 +99,7 @@ void TextAutoGenerateSearchMessageSettings::previous()
     if (mCurrentMessageIdentifier.isEmpty()) {
         lastMessageUuid();
         if (mCurrentMessageIdentifier.isEmpty()) {
+            Q_EMIT updateNextPreviousButtons(false, false);
             return;
         }
     }
@@ -115,8 +121,12 @@ void TextAutoGenerateSearchMessageSettings::previous()
                 mCurrentSearchIndex = 0;
                 // Invalidate it.
                 // clear();
+                Q_EMIT updateNextPreviousButtons(true, false); // TODO verify it
                 return;
             }
+            Q_EMIT updateNextPreviousButtons((msg.numberOfTextSearched() > 0), true);
+        } else {
+            Q_EMIT updateNextPreviousButtons(true, true);
         }
     }
     Q_EMIT refreshMessage(mCurrentMessageIdentifier, previousMessageIdentifier, mCurrentSearchIndex);
