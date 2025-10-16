@@ -21,7 +21,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Disable version check"
-msgstr ""
+msgstr "Vypnout kontrolu verze"
 
 #: needupdateversion/needupdateversionwidget.cpp:35
 #, kde-format
@@ -46,14 +46,14 @@ msgstr ""
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "Následující"
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "Předchozí"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
@@ -140,7 +140,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Version:"
-msgstr ""
+msgstr "Verze:"
 
 #: whatsnew/whatsnewdialog.cpp:26
 #, kde-format
@@ -151,7 +151,7 @@ msgstr ""
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
 msgid "(Show News)"
-msgstr ""
+msgstr "(Zobrazit novinky)"
 
 #: whatsnew/whatsnewmessagewidget.cpp:22
 #, kde-format
@@ -166,12 +166,12 @@ msgstr ""
 #: whatsnew/whatsnewwidget.cpp:47
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "Verze %1"
 
 #: whatsnew/whatsnewwidget.cpp:85
 #, kde-format
 msgid "Important changes since last version:"
-msgstr ""
+msgstr "Důležité změny od poslední verze:"
 
 #: whatsnew/whatsnewwidget.cpp:90
 #, kde-format
