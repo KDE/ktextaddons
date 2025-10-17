@@ -38,6 +38,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     searchButton->setCheckable(true);
     searchButton->setIcon(QIcon::fromTheme(u"search"_s));
     mainLayout->addWidget(searchButton);
+    connect(searchButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::searchText);
 
     auto configureButton = new QToolButton(this);
     configureButton->setAutoRaise(true);

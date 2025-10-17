@@ -25,6 +25,7 @@ public:
     [[nodiscard]] QString currentModel() const;
 Q_SIGNALS:
     void configureRequested();
+    void searchText(bool checked);
 
 private:
     QLabel *const mModelInstanceLabel;
