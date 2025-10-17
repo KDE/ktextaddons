@@ -80,6 +80,8 @@ public:
     [[nodiscard]] TextAutoGenerateSearchMessageSettings *searchMessageSettings() const;
 
     void regenerateHtmlMessage(const QByteArray &identifier, int index);
+
+    [[nodiscard]] QByteArray lastMessageUuid() const;
 Q_SIGNALS:
     void conversationCleared();
 

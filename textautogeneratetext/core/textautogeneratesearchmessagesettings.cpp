@@ -43,11 +43,11 @@ bool TextAutoGenerateSearchMessageSettings::canSearchMessage() const
 
 void TextAutoGenerateSearchMessageSettings::lastMessageUuid()
 {
-    auto msg = mMessageModel->messages().constLast();
-    if (msg.isValid()) {
-        mCurrentMessageIdentifier = msg.uuid();
-    } else {
+    const QByteArray msgUuid = mMessageModel->lastMessageUuid();
+    if (msgUuid.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid message. It's a bug";
+    } else {
+        mCurrentMessageIdentifier = msgUuid;
     }
 }
 
