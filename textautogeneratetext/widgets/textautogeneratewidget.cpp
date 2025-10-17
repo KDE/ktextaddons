@@ -80,6 +80,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
 
         connect(mManager, &TextAutoGenerateManager::currentChatIdChanged, this, [this]() {
             mTextAutoGenerateTextLineEditWidget->setEnabled(lineEditWidgetEnabledState());
+            mHeaderWidget->slotCloseQuickSearchRequested();
         });
         mTextAutoGenerateTextLineEditWidget->setEnabled(lineEditWidgetEnabledState());
     }

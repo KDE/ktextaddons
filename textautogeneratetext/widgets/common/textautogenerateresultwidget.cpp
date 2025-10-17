@@ -7,6 +7,7 @@
 #include "textautogenerateresultwidget.h"
 #include <QScrollBar>
 
+#include "core/textautogeneratemanager.h"
 #include "widgets/view/textautogeneratelistview.h"
 #include <TextAddonsWidgets/QuickSearchBarWidget>
 
@@ -49,6 +50,13 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
     connect(mQuickSearchBarWidget, &TextAddonsWidgets::QuickSearchBarWidget::findPrev, this, &TextAutoGenerateResultWidget::slotFindPrev);
 
     connect(mQuickSearchBarWidget, &TextAddonsWidgets::QuickSearchBarWidget::findNext, this, &TextAutoGenerateResultWidget::slotFindNext);
+
+    if (manager) {
+        connect(manager,
+                &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged,
+                mQuickSearchBarWidget,
+                &TextAddonsWidgets::QuickSearchBarWidget::slideOut);
+    }
 }
 
 TextAutoGenerateResultWidget::~TextAutoGenerateResultWidget() = default;
