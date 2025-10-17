@@ -214,18 +214,16 @@ void TextAutoGenerateListView::setSearchText(const QString &str)
 
 void TextAutoGenerateListView::slotFindNext()
 {
-    if (mManager) {
+    if (mManager && mCurrentModel) {
         mCurrentModel->searchMessageSettings()->next();
     }
-    // TODO
 }
 
 void TextAutoGenerateListView::slotFindPrev()
 {
-    if (mManager) {
+    if (mManager && mCurrentModel) {
         mCurrentModel->searchMessageSettings()->previous();
     }
-    // TODO
 }
 
 void TextAutoGenerateListView::addWaitingAnswerAnimation(const QModelIndex &index)
