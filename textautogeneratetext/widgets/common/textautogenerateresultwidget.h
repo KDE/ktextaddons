@@ -16,7 +16,6 @@ class QuickSearchBarWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
-class TextAutoGenerateQuickSearchBarWidget;
 class TextAutoGenerateListView;
 /**
  * @brief The TextAutoGenerateResultWidget class
