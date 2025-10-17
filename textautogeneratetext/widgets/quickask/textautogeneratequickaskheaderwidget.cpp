@@ -31,6 +31,14 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     mModelComboBox->setObjectName(u"mModelComboBox"_s);
     mainLayout->addWidget(mModelComboBox, 1);
 
+    auto searchButton = new QToolButton(this);
+    searchButton->setObjectName("searchButton"_L1);
+    searchButton->setToolTip(i18nc("@info:tooltip", "Search…"));
+    searchButton->setAutoRaise(true);
+    searchButton->setCheckable(true);
+    searchButton->setIcon(QIcon::fromTheme(u"search"_s));
+    mainLayout->addWidget(searchButton);
+
     auto configureButton = new QToolButton(this);
     configureButton->setAutoRaise(true);
     configureButton->setObjectName(u"configureButton"_s);
