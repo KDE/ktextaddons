@@ -82,25 +82,27 @@ void TextAutoGenerateSearchMessageSettings::next()
     }
     // qDebug() << " mCurrentSearchIndex " << mCurrentSearchIndex << " mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() "
     //          << mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched();
+    const auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
+        return msg.numberOfTextSearched() > 0;
+    };
     if (mCurrentSearchIndex >= mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched()) {
-        auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
-            return msg.numberOfTextSearched() > 0;
-        };
-
         mCurrentSearchIndex = 0;
         auto msg = mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString);
         if (msg.isValid()) {
             mCurrentMessageIdentifier = msg.uuid();
         } else {
             mCurrentSearchIndex = storeCurrentSearchIndex;
-            Q_EMIT updateNextPreviousButtons(false, true /*TODO ????*/);
+            Q_EMIT updateNextPreviousButtons(false, true);
             // Invalidate it.
             // clear();
             return;
         }
         Q_EMIT updateNextPreviousButtons((msg.numberOfTextSearched() > 0), true);
     } else {
-        Q_EMIT updateNextPreviousButtons((mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() > 0), true);
+        Q_EMIT updateNextPreviousButtons(((mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() > 0)
+                                          && (mCurrentSearchIndex < mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() - 1))
+                                             || mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString).isValid(),
+                                         true);
     }
     Q_EMIT refreshMessage(mCurrentMessageIdentifier, previousMessageIdentifier, mCurrentSearchIndex);
 }
@@ -123,7 +125,7 @@ void TextAutoGenerateSearchMessageSettings::previous()
     } else {
         mCurrentSearchIndex--;
         if (mCurrentSearchIndex < 0) {
-            auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
+            const auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
                 return msg.numberOfTextSearched() > 0;
             };
 
@@ -136,12 +138,14 @@ void TextAutoGenerateSearchMessageSettings::previous()
                 mCurrentSearchIndex = 0;
                 // Invalidate it.
                 // clear();
-                Q_EMIT updateNextPreviousButtons(true, false); // TODO verify it
+                Q_EMIT updateNextPreviousButtons(true, false);
                 return;
             }
-            Q_EMIT updateNextPreviousButtons((msg.numberOfTextSearched() > 0), true);
+            Q_EMIT updateNextPreviousButtons((msg.numberOfTextSearched() > 0),
+                                             (mCurrentSearchIndex > 0)
+                                                 || mMessageModel->findLastMessageBefore(mCurrentMessageIdentifier, hasSearchedString).isValid());
         } else {
-            Q_EMIT updateNextPreviousButtons(true, true);
+            Q_EMIT updateNextPreviousButtons((mFoundSearchCount > 1), true);
         }
     }
     Q_EMIT refreshMessage(mCurrentMessageIdentifier, previousMessageIdentifier, mCurrentSearchIndex);

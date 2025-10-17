@@ -73,7 +73,10 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestNextSearchStringIndex(
     TextAutoGenerateText::TextAutoGenerateSearchMessageSettings messageSettings(&model);
 
     QCOMPARE(nbSearchString, 3);
+    messageSettings.setFoundSearchCount(nbSearchString);
     QSignalSpy spy(&messageSettings, &TextAutoGenerateText::TextAutoGenerateSearchMessageSettings::refreshMessage);
+
+    QSignalSpy spyUpdateButtons(&messageSettings, &TextAutoGenerateText::TextAutoGenerateSearchMessageSettings::updateNextPreviousButtons);
 
     messageSettings.next();
     QCOMPARE(spy.count(), 1);
@@ -81,10 +84,18 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestNextSearchStringIndex(
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo3"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
 
+    QCOMPARE(spyUpdateButtons.count(), 1);
+    QCOMPARE(spyUpdateButtons.at(0).at(0), false);
+    QCOMPARE(spyUpdateButtons.at(0).at(1), true);
+
     messageSettings.next();
     // No other message
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo3"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
+
+    QCOMPARE(spyUpdateButtons.count(), 2);
+    QCOMPARE(spyUpdateButtons.at(1).at(0), false);
+    QCOMPARE(spyUpdateButtons.at(1).at(1), true);
 
     messageSettings.next();
     // No other message
@@ -128,8 +139,9 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
     model.setMessages(messages);
     const int nbSearchString = model.setSearchText(u"kde"_s);
     TextAutoGenerateText::TextAutoGenerateSearchMessageSettings messageSettings(&model);
-
+    messageSettings.setFoundSearchCount(nbSearchString);
     QSignalSpy spy(&messageSettings, &TextAutoGenerateText::TextAutoGenerateSearchMessageSettings::refreshMessage);
+    QSignalSpy spyUpdateButtons(&messageSettings, &TextAutoGenerateText::TextAutoGenerateSearchMessageSettings::updateNextPreviousButtons);
 
     QCOMPARE(nbSearchString, 3);
     messageSettings.previous();
@@ -138,6 +150,7 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
     QCOMPARE(spy.at(0).at(1), ""_ba);
     QCOMPARE(spy.at(0).at(2), 0);
 
+    QCOMPARE(spyUpdateButtons.count(), 0);
     // Last one
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo3"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
@@ -148,6 +161,10 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
     QCOMPARE(spy.at(1).at(0), "foo1"_ba);
     QCOMPARE(spy.at(1).at(1), "foo3"_ba);
     QCOMPARE(spy.at(1).at(2), 1);
+
+    QCOMPARE(spyUpdateButtons.count(), 1);
+    QCOMPARE(spyUpdateButtons.at(0).at(0), true);
+    QCOMPARE(spyUpdateButtons.at(0).at(1), true);
 
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo1"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 1);
@@ -162,6 +179,10 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo1"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
 
+    QCOMPARE(spyUpdateButtons.count(), 2);
+    QCOMPARE(spyUpdateButtons.at(1).at(0), true);
+    QCOMPARE(spyUpdateButtons.at(1).at(1), true);
+
     // no other search element
     messageSettings.previous();
 
@@ -170,6 +191,10 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldTestPreviousSearchStringIn
 
     QCOMPARE(messageSettings.currentMessageIdentifier(), "foo1"_ba);
     QCOMPARE(messageSettings.currentSearchIndex(), 0);
+
+    QCOMPARE(spyUpdateButtons.count(), 3);
+    QCOMPARE(spyUpdateButtons.at(2).at(0), true);
+    QCOMPARE(spyUpdateButtons.at(2).at(1), false);
 
     messageSettings.previous();
     // No new signal
