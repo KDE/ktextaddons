@@ -130,6 +130,7 @@ int TextAutoGenerateMessagesModel::updateAllGeneratedMessages()
         numberOfSearchStringFound += m.numberOfTextSearched();
     }
     endResetModel();
+    mSearchMessageSettings->setFoundSearchCount(numberOfSearchStringFound);
     return numberOfSearchStringFound;
 }
 

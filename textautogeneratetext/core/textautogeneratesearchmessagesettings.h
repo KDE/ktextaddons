@@ -29,6 +29,9 @@ public:
 
     void clear();
 
+    [[nodiscard]] int foundSearchCount() const;
+    void setFoundSearchCount(int newFoundSearchCount);
+
 Q_SIGNALS:
     void refreshMessage(const QByteArray &identifier, const QByteArray &previousIdentifier, int index);
     void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
@@ -39,5 +42,6 @@ private:
     TextAutoGenerateMessagesModel *const mMessageModel;
     QByteArray mCurrentMessageIdentifier;
     int mCurrentSearchIndex = -1;
+    int mFoundSearchCount = -1;
 };
 }

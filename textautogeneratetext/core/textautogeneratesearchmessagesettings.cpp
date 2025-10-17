@@ -20,12 +20,17 @@ void TextAutoGenerateSearchMessageSettings::clear()
 {
     mCurrentMessageIdentifier.clear();
     mCurrentSearchIndex = -1;
+    mFoundSearchCount = -1;
 }
 
 bool TextAutoGenerateSearchMessageSettings::canSearchMessage() const
 {
     if (!mMessageModel) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Model is not defined. It's a bug";
+        return false;
+    }
+    if (mFoundSearchCount == -1) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "mFoundSearchCount == -1 it's a bug";
         return false;
     }
     if (mCurrentMessageIdentifier.isEmpty()) {
@@ -44,6 +49,16 @@ void TextAutoGenerateSearchMessageSettings::lastMessageUuid()
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid message. It's a bug";
     }
+}
+
+int TextAutoGenerateSearchMessageSettings::foundSearchCount() const
+{
+    return mFoundSearchCount;
+}
+
+void TextAutoGenerateSearchMessageSettings::setFoundSearchCount(int newFoundSearchCount)
+{
+    mFoundSearchCount = newFoundSearchCount;
 }
 
 void TextAutoGenerateSearchMessageSettings::next()

@@ -21,6 +21,7 @@ void TextAutoGenerateSearchMessageSettingsTest::shouldHaveDefaultValues()
     TextAutoGenerateText::TextAutoGenerateSearchMessageSettings w(nullptr);
     QCOMPARE(w.currentSearchIndex(), -1);
     QVERIFY(w.currentMessageIdentifier().isEmpty());
+    QCOMPARE(w.foundSearchCount(), -1);
 }
 
 void TextAutoGenerateSearchMessageSettingsTest::shouldClear()
