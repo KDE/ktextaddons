@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 class QLabel;
+class QToolButton;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -23,6 +24,7 @@ public:
 
     void setModelList(const QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> &lst);
     [[nodiscard]] QString currentModel() const;
+    void slotCloseQuickSearchRequested();
 Q_SIGNALS:
     void configureRequested();
     void searchText(bool checked);
@@ -31,5 +33,6 @@ private:
     QLabel *const mModelInstanceLabel;
     TextAutoGenerateTextModelComboBox *const mModelComboBox;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    QToolButton *const mSearchButton;
 };
 }

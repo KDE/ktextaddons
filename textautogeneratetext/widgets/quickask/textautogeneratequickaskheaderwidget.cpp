@@ -20,6 +20,7 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     , mModelInstanceLabel(new QLabel(this))
     , mModelComboBox(new TextAutoGenerateText::TextAutoGenerateTextModelComboBox(this))
     , mManager(manager)
+    , mSearchButton(new QToolButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -31,14 +32,13 @@ TextAutoGenerateQuickAskHeaderWidget::TextAutoGenerateQuickAskHeaderWidget(TextA
     mModelComboBox->setObjectName(u"mModelComboBox"_s);
     mainLayout->addWidget(mModelComboBox, 1);
 
-    auto searchButton = new QToolButton(this);
-    searchButton->setObjectName("searchButton"_L1);
-    searchButton->setToolTip(i18nc("@info:tooltip", "Search…"));
-    searchButton->setAutoRaise(true);
-    searchButton->setCheckable(true);
-    searchButton->setIcon(QIcon::fromTheme(u"search"_s));
-    mainLayout->addWidget(searchButton);
-    connect(searchButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::searchText);
+    mSearchButton->setObjectName("searchButton"_L1);
+    mSearchButton->setToolTip(i18nc("@info:tooltip", "Search…"));
+    mSearchButton->setAutoRaise(true);
+    mSearchButton->setCheckable(true);
+    mSearchButton->setIcon(QIcon::fromTheme(u"search"_s));
+    mainLayout->addWidget(mSearchButton);
+    connect(mSearchButton, &QToolButton::clicked, this, &TextAutoGenerateQuickAskHeaderWidget::searchText);
 
     auto configureButton = new QToolButton(this);
     configureButton->setAutoRaise(true);
@@ -105,6 +105,11 @@ void TextAutoGenerateQuickAskHeaderWidget::setModelList(const QList<TextAutoGene
 QString TextAutoGenerateQuickAskHeaderWidget::currentModel() const
 {
     return mModelComboBox->currentModel();
+}
+
+void TextAutoGenerateQuickAskHeaderWidget::slotCloseQuickSearchRequested()
+{
+    mSearchButton->setChecked(false);
 }
 
 #include "moc_textautogeneratequickaskheaderwidget.cpp"

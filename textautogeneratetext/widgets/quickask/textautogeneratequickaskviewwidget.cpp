@@ -56,6 +56,11 @@ TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoG
             &TextAutoGenerateQuickAskHeaderWidget::searchText,
             mTextAutoGenerateResultWidget,
             &TextAutoGenerateResultWidget::quickSearchText);
+
+    connect(mTextAutoGenerateResultWidget,
+            &TextAutoGenerateResultWidget::closeSearchBarRequested,
+            mTextAutoGenerateQuickAskHeaderWidget,
+            &TextAutoGenerateQuickAskHeaderWidget::slotCloseQuickSearchRequested);
 }
 
 TextAutoGenerateQuickAskViewWidget::~TextAutoGenerateQuickAskViewWidget() = default;
