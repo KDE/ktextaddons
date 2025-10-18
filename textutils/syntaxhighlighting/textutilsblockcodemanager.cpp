@@ -17,9 +17,15 @@ void TextUtilsBlockCodeManager::insert(const QString &identifier, const QString 
 {
     // qDebug() << " identifier" << identifier << " blockCode " << blockCode;
     mCacheBlockCode.insert(identifier, blockCode);
+    // qDebug() << " mCacheBlockCode " << mCacheBlockCode.size();
 }
 
 QString TextUtilsBlockCodeManager::blockCode(const QString &identifier) const
 {
     return mCacheBlockCode.value(identifier);
+}
+
+void TextUtilsBlockCodeManager::clear()
+{
+    mCacheBlockCode.clear();
 }

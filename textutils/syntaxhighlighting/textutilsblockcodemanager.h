@@ -16,6 +16,8 @@ public:
     void insert(const QString &identifier, const QString &blockCode);
     [[nodiscard]] QString blockCode(const QString &identifier) const;
 
+    void clear();
+
 private:
     QMap<QString, QString> mCacheBlockCode;
 };
