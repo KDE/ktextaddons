@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 00:41+0000\n"
+"POT-Creation-Date: 2025-10-18 00:41+0000\n"
 "PO-Revision-Date: 2025-09-22 05:54+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2123,19 +2123,26 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "快速詢問"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
+#: widgets/textautogenerateheaderwidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Search…"
+msgstr "搜尋…"
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "設定…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:45
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "清除"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:52
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -2146,12 +2153,6 @@ msgstr "將討論儲存到資料庫"
 msgctxt "@title:window"
 msgid "Conversation"
 msgstr "對話"
-
-#: widgets/textautogenerateheaderwidget.cpp:39
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Search…"
-msgstr "搜尋…"
 
 #: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
@@ -2195,7 +2196,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "搜尋"
 
-#: widgets/textautogeneratewidget.cpp:116
+#: widgets/textautogeneratewidget.cpp:117
 #, kde-format
 msgid "No plugin found."
 msgstr "找不到外掛程式。"

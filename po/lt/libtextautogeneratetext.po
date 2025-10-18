@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 00:41+0000\n"
+"POT-Creation-Date: 2025-10-18 00:41+0000\n"
 "PO-Revision-Date: 2025-09-01 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1941,19 +1941,26 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr ""
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
+#: widgets/textautogenerateheaderwidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Search…"
+msgstr ""
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr ""
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:45
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr ""
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:52
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -1963,12 +1970,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Conversation"
-msgstr ""
-
-#: widgets/textautogenerateheaderwidget.cpp:39
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Search…"
 msgstr ""
 
 #: widgets/textautogenerateheaderwidget.cpp:47
@@ -2013,7 +2014,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr ""
 
-#: widgets/textautogeneratewidget.cpp:116
+#: widgets/textautogeneratewidget.cpp:117
 #, kde-format
 msgid "No plugin found."
 msgstr ""

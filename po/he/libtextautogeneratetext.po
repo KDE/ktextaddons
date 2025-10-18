@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 00:41+0000\n"
+"POT-Creation-Date: 2025-10-18 00:41+0000\n"
 "PO-Revision-Date: 2025-10-10 10:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2198,19 +2198,26 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "שאלה מהירה"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
+#: widgets/textautogenerateheaderwidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Search…"
+msgstr "חיפוש…"
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:45
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "פינוי"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:52
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -2221,12 +2228,6 @@ msgstr "שמירת הדיון במסד הנתונים"
 msgctxt "@title:window"
 msgid "Conversation"
 msgstr "דיון"
-
-#: widgets/textautogenerateheaderwidget.cpp:39
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Search…"
-msgstr "חיפוש…"
 
 #: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
@@ -2270,7 +2271,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "חיפוש"
 
-#: widgets/textautogeneratewidget.cpp:116
+#: widgets/textautogeneratewidget.cpp:117
 #, kde-format
 msgid "No plugin found."
 msgstr "לא נמצא תוסף."

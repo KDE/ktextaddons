@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-15 00:41+0000\n"
+"POT-Creation-Date: 2025-10-18 00:41+0000\n"
 "PO-Revision-Date: 2025-10-10 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2300,19 +2300,26 @@ msgctxt "@title:window"
 msgid "Quick Ask"
 msgstr "სწრაფი კითხვა"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:38
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:36
+#: widgets/textautogenerateheaderwidget.cpp:39
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Search…"
+msgstr "ძებნა…"
+
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:45
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear"
 msgstr "გასუფთავება"
 
-#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:52
+#: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save Discussion in Database"
@@ -2323,12 +2330,6 @@ msgstr "დისკუსიის შენახვა მონაცემ�
 msgctxt "@title:window"
 msgid "Conversation"
 msgstr "საუბარი"
-
-#: widgets/textautogenerateheaderwidget.cpp:39
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Search…"
-msgstr "ძებნა…"
 
 #: widgets/textautogenerateheaderwidget.cpp:47
 #, kde-format
@@ -2372,7 +2373,7 @@ msgctxt "@title:window"
 msgid "Search"
 msgstr "ძებნა"
 
-#: widgets/textautogeneratewidget.cpp:116
+#: widgets/textautogeneratewidget.cpp:117
 #, kde-format
 msgid "No plugin found."
 msgstr "დამატებების გარეშე."
