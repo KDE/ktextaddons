@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-05 02:27+0000\n"
-"PO-Revision-Date: 2024-10-16 20:52+0300\n"
+"PO-Revision-Date: 2025-10-17 19:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,51 +15,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "Lihavointi"
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "Kursiivi"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
-msgstr ""
+msgstr "Yliviivaus"
 
 #: richtextquicktextformat.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "Alleviivaus"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
-msgstr ""
+msgstr "Koodilohko"
 
 #: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
-msgstr ""
+msgstr "Lainaa teksti"
 
 #: richtextquicktextformat.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Insert"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr "Lisää"
+msgstr "Lisää linkki"
 
 #: selectspecialchardialog.cpp:34
 #, kde-format
