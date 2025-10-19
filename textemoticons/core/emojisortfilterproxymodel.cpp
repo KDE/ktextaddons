@@ -125,8 +125,15 @@ EmojiModelManager::EmojiTone EmojiSortFilterProxyModel::emojiTone() const
 void EmojiSortFilterProxyModel::setEmojiTone(EmojiModelManager::EmojiTone tone)
 {
     if (d->tone != tone) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         d->tone = tone;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
         Q_EMIT emojiToneChanged();
     }
 }
@@ -139,8 +146,15 @@ QString EmojiSortFilterProxyModel::searchIdentifier() const
 void EmojiSortFilterProxyModel::setSearchIdentifier(const QString &newSearchIdentifier)
 {
     if (d->searchIdentifier != newSearchIdentifier) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         d->searchIdentifier = newSearchIdentifier;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
     }
 }
 
@@ -168,11 +182,19 @@ QString EmojiSortFilterProxyModel::category() const
 void EmojiSortFilterProxyModel::setCategory(const QString &newCategorie)
 {
     if (d->category != newCategorie) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 10, 0)
         d->category = newCategorie;
+#endif
         if (!d->searchIdentifier.isEmpty()) {
             d->clearSearch();
         } else {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+            beginFilterChange();
+            d->category = newCategorie;
+            endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
             invalidateFilter();
+#endif
         }
         if ((TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->category)
             || (TextEmoticonsCore::EmoticonUnicodeUtils::customIdentifier() == d->category)) {

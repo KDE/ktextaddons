@@ -36,8 +36,15 @@ QString TextAutoGenerateTextInstanceSortFilterProxyModel::searchText() const
 void TextAutoGenerateTextInstanceSortFilterProxyModel::setSearchText(const QString &newSearchText)
 {
     if (mSearchText != newSearchText) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         mSearchText = newSearchText;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
     }
 }
 

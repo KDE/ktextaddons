@@ -61,8 +61,15 @@ bool TextAutoGenerateHistorySortFilterProxyModel::showArchived() const
 void TextAutoGenerateHistorySortFilterProxyModel::setShowArchived(bool newShowArchived)
 {
     if (mShowArchived != newShowArchived) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         mShowArchived = newShowArchived;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
     }
 }
 
