@@ -43,6 +43,7 @@ Q_SIGNALS:
     void cancelRequested(const QModelIndex &index);
     void refreshRequested(const QModelIndex &index);
     void removeMessage(const QModelIndex &index);
+    void textToSpeechRequested(const QModelIndex &index);
     void updateView();
 
 private:
@@ -80,6 +81,9 @@ private:
 
         // Remove icon
         QRect removeIconRect;
+
+        // TextToSpeech Icon
+        QRect textToSpeechIconRect;
     };
 
     [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
@@ -97,6 +101,7 @@ private:
     const QIcon mRefreshIcon;
     const QIcon mInformationIcon;
     const QIcon mRemoveIcon;
+    const QIcon mTextToSpeechIcon;
 
     QColor mEditingColorMode;
 

@@ -32,6 +32,7 @@ TextAutoGenerateListViewDelegate::TextAutoGenerateListViewDelegate(QListView *vi
     , mRefreshIcon(QIcon::fromTheme(u"view-refresh"_s))
     , mInformationIcon(QIcon::fromTheme(u"info"_s))
     , mRemoveIcon(QIcon::fromTheme(u"edit-delete"_s))
+    , mTextToSpeechIcon(QIcon::fromTheme(u"player-volume"_s))
 {
     connect(&TextUtils::TextUtilsColorsAndMessageViewStyle::self(),
             &TextUtils::TextUtilsColorsAndMessageViewStyle::needToUpdateColors,
@@ -216,6 +217,9 @@ void TextAutoGenerateListViewDelegate::drawDateAndIcons(QPainter *painter,
         if (layout.removeIconRect.isValid()) {
             mRemoveIcon.paint(painter, layout.removeIconRect);
         }
+        if (layout.textToSpeechIconRect.isValid()) {
+            mTextToSpeechIcon.paint(painter, layout.removeIconRect);
+        }
         if (layout.cancelIconRect.isValid()) {
             mCancelIcon.paint(painter, layout.cancelIconRect);
         }
@@ -389,6 +393,10 @@ bool TextAutoGenerateListViewDelegate::helpEvent(QHelpEvent *helpEvent, QAbstrac
             QToolTip::showText(helpEvent->globalPos(), i18nc("@info:tooltip", "Remove"), view);
             return true;
         }
+        if (layout.textToSpeechIconRect.contains(helpEventPos)) {
+            QToolTip::showText(helpEvent->globalPos(), i18nc("@info:tooltip", "Speak"), view);
+            return true;
+        }
         if (layout.copyIconRect.contains(helpEventPos)) {
             QToolTip::showText(helpEvent->globalPos(), i18nc("@info:tooltip", "Copy"), view);
             return true;
@@ -557,6 +565,9 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             return true;
         } else if (layout.refreshIconRect.contains(mouseEvent->pos())) {
             Q_EMIT refreshRequested(index);
+            return true;
+        } else if (layout.textToSpeechIconRect.contains(mouseEvent->pos())) {
+            Q_EMIT textToSpeechRequested(index);
             return true;
         }
         // don't return true here, we need to send mouse release events to other helpers (ex: click on image)
