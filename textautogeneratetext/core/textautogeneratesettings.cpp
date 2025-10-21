@@ -39,13 +39,17 @@ void TextAutoGenerateSettings::save()
 
 void TextAutoGenerateSettings::load()
 {
+    const KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), u"General"_s);
+    mSystemPrompt = myGroupUi.readEntry("systemPrompt", defaultPrompt());
+}
+
+QString TextAutoGenerateSettings::defaultPrompt()
+{
     const KUser user;
     const QString prompt = i18n(
         "You are an AI assistant. You are speaking to a person named %1. "
         "Be helpful, professional, and courteous. Do not give inaccurate "
         "information.",
         user.property(KUser::UserProperty::FullName).toString());
-
-    const KConfigGroup myGroupUi(KSharedConfig::openStateConfig(), u"General"_s);
-    mSystemPrompt = myGroupUi.readEntry("systemPrompt", prompt);
+    return prompt;
 }

@@ -24,6 +24,8 @@ public:
     void setSystemPrompt(const QString &newSystemPrompt);
     void load();
 
+    [[nodiscard]] static QString defaultPrompt();
+
 private:
     void save();
     QString mSystemPrompt;
