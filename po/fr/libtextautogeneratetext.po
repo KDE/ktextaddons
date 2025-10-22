@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:41+0000\n"
+"POT-Creation-Date: 2025-10-22 00:42+0000\n"
 "PO-Revision-Date: 2025-09-22 13:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -129,7 +129,7 @@ msgstr "Raisonnement"
 msgid "Go to message"
 msgstr "Aller au message"
 
-#: core/textautogeneratesettings.cpp:44
+#: core/textautogeneratesettings.cpp:50
 #, kde-format
 msgid ""
 "You are an AI assistant. You are speaking to a person named %1. Be helpful, "
