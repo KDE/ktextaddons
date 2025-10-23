@@ -35,8 +35,15 @@ QString TranslatorProxyModel::searchString() const
 void TranslatorProxyModel::setSearchString(const QString &newSearchString)
 {
     if (mSearchString != newSearchString) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         mSearchString = newSearchString;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
     }
 }
 
