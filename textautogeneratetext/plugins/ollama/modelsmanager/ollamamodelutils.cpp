@@ -279,6 +279,11 @@ QString OllamaModelUtils::description(const QString &modelName)
         {u"qwen3-coder"_s, i18n("Alibaba's performant long context models for agentic and coding tasks.")},
         {u"deepseek-v3.1"_s, i18n("DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-thinking mode.")},
         {u"embeddinggemma"_s, i18n("EmbeddingGemma is a 300M parameter embedding model from Google.")},
+        {u"qwen3-embedding"_s,
+         i18n("EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding provides a comprehensive range of text embeddings models in "
+              "various sizes.")},
+        {u"granite4"_s,
+         i18n("Granite 4 features improved instruction following (IF) and tool-calling capabilities, making them more effective in enterprise applications.")},
     };
     const QString translatedString = listTranslation.value(modelName);
     if (translatedString.isEmpty()) {
