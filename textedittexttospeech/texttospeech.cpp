@@ -59,7 +59,7 @@ void TextToSpeech::reloadSettings()
     const double volumeDouble = volumeValue / 100.0;
     d->mTextToSpeech->setVolume(volumeDouble);
     d->mTextToSpeech->setLocale(QLocale(settings.localeName));
-    // It doesn't have api for it d->mTextToSpeech->setVoice(grp.readEntry("voice"));
+    d->mTextToSpeech->setVoice(settings.voice);
 }
 
 TextToSpeech *TextToSpeech::self()
