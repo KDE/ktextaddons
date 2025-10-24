@@ -40,6 +40,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(delegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveRequested);
+    connect(delegate, &TextAutoGenerateListViewDelegate::textToSpeechRequested, this, &TextAutoGenerateListView::slotTextToSpeechRequested);
 }
 
 TextAutoGenerateListView::~TextAutoGenerateListView() = default;

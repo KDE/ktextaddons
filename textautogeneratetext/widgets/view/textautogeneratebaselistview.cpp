@@ -163,6 +163,15 @@ void TextAutoGenerateBaseListView::slotCopyMessage(const QModelIndex &index)
     clip->setText(messageText, QClipboard::Selection);
 }
 
+void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &index)
+{
+    const QString messageText = selectedText(index);
+    if (messageText.isEmpty()) {
+        return;
+    }
+    // TODO text to speech
+}
+
 QStyleOptionViewItem TextAutoGenerateBaseListView::listViewOptions() const
 {
     QStyleOptionViewItem option;
