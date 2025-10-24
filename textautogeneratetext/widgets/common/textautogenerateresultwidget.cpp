@@ -56,6 +56,11 @@ TextAutoGenerateResultWidget::TextAutoGenerateResultWidget(TextAutoGenerateText:
                 &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged,
                 mQuickSearchBarWidget,
                 &TextAddonsWidgets::QuickSearchBarWidget::slideOut);
+        connect(manager, &TextAutoGenerateText::TextAutoGenerateManager::numberOfSearchStringChanged, this, [this](int numberOfSearch) {
+            if (numberOfSearch == 0) {
+                mQuickSearchBarWidget->updateButtons(false, false);
+            }
+        });
     }
 }
 
