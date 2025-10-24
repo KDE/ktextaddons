@@ -35,6 +35,10 @@ if(NOT WIN32 AND NOT APPLE)
     set(HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT TRUE)
 endif()
 
+if(TARGET Qt6::TextToSpeech)
+    set(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT TRUE)
+endif()
+
 configure_file(config-textautogeneratetext.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h)
 
 add_library(KF6TextAutoGenerateText)
@@ -370,6 +374,10 @@ target_link_libraries(
         KF6::TextUtils
         KF6::TextAddonsWidgets
 )
+
+if(TARGET Qt6::TextToSpeech)
+    target_link_libraries(KF6TextAutoGenerateText PRIVATE KF6::TextEditTextToSpeech)
+endif()
 
 if(NOT WIN32 AND NOT APPLE)
     target_link_libraries(KF6TextAutoGenerateText PRIVATE Qt::DBus)

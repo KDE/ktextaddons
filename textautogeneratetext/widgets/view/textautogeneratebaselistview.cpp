@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogeneratebaselistview.h"
-
+#include "config-textautogeneratetext.h"
 #include "delegate/textautogeneratelistviewbasedelegate.h"
 #include <KLocalizedString>
 #include <QApplication>
@@ -16,6 +16,9 @@
 #include <TextAutoGenerateText/TextAutoGeneratePluginText>
 #include <TextAutoGenerateText/TextAutoGeneratePluginTextInterface>
 #include <TextAutoGenerateText/TextAutoGeneratePluginTextManager>
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeech>
+#endif
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -165,10 +168,12 @@ void TextAutoGenerateBaseListView::slotCopyMessage(const QModelIndex &index)
 
 void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &index)
 {
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     const QString messageText = selectedText(index);
     if (messageText.isEmpty()) {
         return;
     }
+#endif
     // TODO text to speech
 }
 

@@ -209,16 +209,6 @@ if(BERGAMOT_TRANSLATOR_PLUGIN)
     )
 endif()
 
-add_subdirectory(textaddonswidgets)
-add_subdirectory(textautocorrection)
-add_subdirectory(textgrammarcheck)
-add_subdirectory(texttranslator)
-add_subdirectory(textemoticons)
-add_subdirectory(textutils)
-find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
-add_subdirectory(textspeechtotext)
-add_subdirectory(textautogeneratetext)
-
 find_package(Qt6TextToSpeech ${QT_REQUIRED_VERSION} CONFIG)
 set_package_properties(
     Qt6TextToSpeech
@@ -231,6 +221,16 @@ set_package_properties(
 if(TARGET Qt6::TextToSpeech)
     add_subdirectory(textedittexttospeech)
 endif()
+
+add_subdirectory(textaddonswidgets)
+add_subdirectory(textautocorrection)
+add_subdirectory(textgrammarcheck)
+add_subdirectory(texttranslator)
+add_subdirectory(textemoticons)
+add_subdirectory(textutils)
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED MultimediaWidgets)
+add_subdirectory(textspeechtotext)
+add_subdirectory(textautogeneratetext)
 
 add_subdirectory(textcustomeditor)
 ecm_qt_install_logging_categories(
