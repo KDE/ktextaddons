@@ -111,6 +111,10 @@ public:
     void switchToChatId(const QByteArray &chatId);
     [[nodiscard]] QStringList chatsList() const;
     void callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info);
+
+    [[nodiscard]] bool enableTextToSpeech() const;
+    void setEnableTextToSpeech(bool newEnableTextToSpeech);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -131,6 +135,7 @@ Q_SIGNALS:
     void toolInProgress(const QString &info);
     void numberOfSearchStringChanged(int number);
     void currentModelChanged();
+    void textToSpeechChanged();
 
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);
@@ -151,5 +156,6 @@ private:
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
+    bool mEnableTextToSpeech = false;
 };
 }

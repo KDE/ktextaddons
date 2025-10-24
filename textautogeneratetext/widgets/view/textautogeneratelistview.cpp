@@ -31,6 +31,9 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::chatInProgressChanged, this, [delegate](bool inProgress) {
             delegate->setInProgress(inProgress);
         });
+        connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::textToSpeechChanged, this, [this, delegate]() {
+            delegate->setEnableTextToSpeech(mManager->enableTextToSpeech());
+        });
     }
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);

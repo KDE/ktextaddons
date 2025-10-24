@@ -616,4 +616,17 @@ void TextAutoGenerateManager::slotPluginFinished(const QString &str, const QByte
     changeInProgress(chatId, messageUuid, false);
 }
 
+bool TextAutoGenerateManager::enableTextToSpeech() const
+{
+    return mEnableTextToSpeech;
+}
+
+void TextAutoGenerateManager::setEnableTextToSpeech(bool newEnableTextToSpeech)
+{
+    if (mEnableTextToSpeech != newEnableTextToSpeech) {
+        mEnableTextToSpeech = newEnableTextToSpeech;
+        Q_EMIT textToSpeechChanged();
+    }
+}
+
 #include "moc_textautogeneratemanager.cpp"
