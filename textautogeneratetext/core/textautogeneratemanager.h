@@ -135,7 +135,6 @@ Q_SIGNALS:
     void toolInProgress(const QString &info);
     void numberOfSearchStringChanged(int number);
     void currentModelChanged();
-    void textToSpeechChanged();
 
 private Q_SLOTS:
     void slotChatListChanged(const QString &id);
@@ -156,6 +155,5 @@ private:
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
-    bool mEnableTextToSpeech = false;
 };
 }
