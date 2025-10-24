@@ -5,7 +5,7 @@
 */
 
 #include "texttospeech.h"
-using namespace Qt::Literals::StringLiterals;
+#include "textedittexttospeech_debug.h"
 
 #include "texttospeechutil.h"
 
@@ -13,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextToSpeech>
 #include <QVector>
 
+using namespace Qt::Literals::StringLiterals;
 class TextEditTextToSpeech::TextToSpeechPrivate
 {
 public:
@@ -33,7 +34,7 @@ TextToSpeech::~TextToSpeech() = default;
 void TextToSpeech::reloadSettings()
 {
     const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings settings = TextEditTextToSpeech::TextToSpeechUtil::loadSettings();
-
+    qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << settings;
     const QString engineName = settings.engineName;
     if (d->mDefaultEngine != engineName) {
         if (d->mTextToSpeech) {
