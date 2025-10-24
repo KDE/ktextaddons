@@ -93,6 +93,10 @@ if(NOT WIN32 AND NOT APPLE)
     qt_add_dbus_adaptor(textautogeneratetext_dbs_adaptor_SRCS core/org.kde.textautogeneratetext.TextAutoGenerateManager.xml core/textautogeneratemanager.h TextAutoGenerateText::TextAutoGenerateManager)
 endif()
 
+kconfig_add_kcfg_files(KF6TextAutoGenerateText
+    core/settings/textautogeneratetextglobalconfig.kcfgc
+)
+
 target_sources(
     KF6TextAutoGenerateText
     PRIVATE
@@ -567,6 +571,7 @@ set(TextAutoGenerateTextIncludeFiles
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextglobalconfig.h
         ${TextAutoGenerateTextIncludeFiles}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel

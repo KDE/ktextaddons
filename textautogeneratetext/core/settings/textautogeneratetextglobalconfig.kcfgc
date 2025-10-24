@@ -1,0 +1,10 @@
+#SPDX-License-Identifier: GPL-2.0-or-later
+#SPDX-FileCopyrightText: Laurent Montel <montel@kde.org>
+File=textautogeneratetextglobalconfig.kcfg
+ClassName=TextAutogenerateTextGlobalConfig
+NameSpace=TextAutoGenerateText
+Mutators=true
+Singleton=true
+ItemAccessors=true
+Visibility=TEXTAUTOGENERATETEXT_EXPORT
+IncludeFiles=\"textautogeneratetext_export.h\"
