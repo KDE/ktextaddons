@@ -173,8 +173,8 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     if (messageText.isEmpty()) {
         return;
     }
+    TextEditTextToSpeech::TextToSpeech::self()->say(messageText);
 #endif
-    // TODO text to speech
 }
 
 QStyleOptionViewItem TextAutoGenerateBaseListView::listViewOptions() const
