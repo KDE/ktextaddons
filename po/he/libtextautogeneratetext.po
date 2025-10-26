@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-25 00:41+0000\n"
-"PO-Revision-Date: 2025-10-21 14:40+0300\n"
+"PO-Revision-Date: 2025-10-24 09:13+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1852,6 +1852,8 @@ msgid ""
 "EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
 "provides a comprehensive range of text embeddings models in various sizes."
 msgstr ""
+"נבנה על מודלי היסוד של סדרת Qwen3,‏ Qwen3 Embedding (הטמעה) מספק טווח נרחב של "
+"מודלים להטמעות טקסט במגוון גדלים."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:286
 #, kde-format
@@ -1859,6 +1861,8 @@ msgid ""
 "Granite 4 features improved instruction following (IF) and tool-calling "
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
+"Granite 4 מציג מעקב משופר אחרי הנחיות (IF) ויכולות קריאה לכלים, מה שהופך "
+"אותם ליעילים יותר ליישומים תאגידיים."
 
 #: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
 #, kde-format
