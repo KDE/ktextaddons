@@ -19,7 +19,7 @@
 #include <TextAutoGenerateText/TextAutoGeneratePluginText>
 #include <TextAutoGenerateText/TextAutoGeneratePluginTextInterface>
 #include <TextAutoGenerateText/TextAutoGeneratePluginTextManager>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeech>
 #endif
 
@@ -178,7 +178,7 @@ void TextAutoGenerateBaseListView::slotStopTextToSpeechRequested([[maybe_unused]
 
 void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &index)
 {
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     const QString messageText = selectedText(index);
     if (messageText.isEmpty()) {
         return;
