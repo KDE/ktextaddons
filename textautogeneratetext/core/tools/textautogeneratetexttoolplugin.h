@@ -38,9 +38,6 @@ public:
     [[nodiscard]] QList<TextAutoGenerateTextToolPluginProperty> properties() const;
     void setProperties(const QList<TextAutoGenerateTextToolPluginProperty> &newProperties);
 
-    virtual void
-    callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) = 0;
-
     virtual TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() = 0;
 
 Q_SIGNALS:
@@ -48,11 +45,6 @@ Q_SIGNALS:
     void toolInProgress(const QString &str);
 
 protected:
-    void initializeJob(TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *job,
-                       const QByteArray &chatId,
-                       const QByteArray &uuid,
-                       const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
-
     [[nodiscard]] QJsonObject generateMetadata() const;
     QList<TextAutoGenerateTextToolPluginProperty> mProperties;
     QByteArray mToolNameId;

@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratetexttoolplugin.h"
-#include "textautogeneratetexttoolpluginjob.h"
 #include <QJsonArray>
 
 using namespace TextAutoGenerateText;
@@ -99,27 +98,4 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
     return toolObj;
 }
 
-void TextAutoGenerateTextToolPlugin::initializeJob(TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *job,
-                                                   const QByteArray &chatId,
-                                                   const QByteArray &uuid,
-                                                   const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info)
-{
-    job->setToolArguments(info.toolCallArgument);
-    job->setChatId(chatId);
-    job->setMessageUuid(uuid);
-    job->setToolIdentifier(info.toolName);
-    job->setProperties(mProperties);
-    connect(job,
-            &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::finished,
-            this,
-            [this](const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier) {
-                Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
-                Q_EMIT toolInProgress({});
-                qDebug() << " TextAutoGenerateTextToolPlugin::finished: " << str;
-            });
-    connect(job,
-            &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::toolInProgress,
-            this,
-            &TextAutoGenerateText::TextAutoGenerateTextToolPlugin::toolInProgress);
-}
 #include "moc_textautogeneratetexttoolplugin.cpp"

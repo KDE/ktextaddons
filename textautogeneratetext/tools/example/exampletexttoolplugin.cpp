@@ -43,21 +43,9 @@ void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
     dlg.exec();
 }
 
-void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
-                                      const QByteArray &uuid,
-                                      const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
-{
-    for (const auto &i : info) {
-        ExampleTextToolPluginJob *job = new ExampleTextToolPluginJob(this);
-        initializeJob(job, chatId, uuid, i);
-        job->start();
-    }
-}
-
 TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *ExampleTextToolPlugin::callTool()
 {
-    ExampleTextToolPluginJob *job = new ExampleTextToolPluginJob(this);
-    return job;
+    return new ExampleTextToolPluginJob(this);
 }
 
 #include "exampletexttoolplugin.moc"

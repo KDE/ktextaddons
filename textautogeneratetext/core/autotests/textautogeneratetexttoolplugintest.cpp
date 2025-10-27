@@ -19,20 +19,12 @@ public:
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 
-    void
-    callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) override;
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() override;
 };
 
 TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *CustomTextToolPlugin::callTool()
 {
     return nullptr;
-}
-
-void CustomTextToolPlugin::callTools([[maybe_unused]] const QByteArray &chatId,
-                                     [[maybe_unused]] const QByteArray &uuid,
-                                     [[maybe_unused]] const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
-{
 }
 
 QString CustomTextToolPlugin::displayName() const
@@ -57,9 +49,6 @@ public:
     [[nodiscard]] QString displayName() const override;
     [[nodiscard]] QString description() const override;
 
-    void
-    callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) override;
-
     [[nodiscard]] QJsonObject testGenerateMetadata() const;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() override;
@@ -68,13 +57,6 @@ public:
 TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *CustomTextToolPlugin2::callTool()
 {
     return nullptr;
-}
-
-void CustomTextToolPlugin2::callTools([[maybe_unused]] const QByteArray &chatId,
-                                      [[maybe_unused]] const QByteArray &uuid,
-                                      [[maybe_unused]] const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info)
-{
-    // Nothing
 }
 
 QJsonObject CustomTextToolPlugin2::testGenerateMetadata() const
