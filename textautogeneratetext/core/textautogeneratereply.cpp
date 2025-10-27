@@ -32,6 +32,10 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         qDebug() << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
         const QJsonObject argumentObj = functionObj["arguments"_L1].toObject();
+        if (functionObj.contains("index"_L1)) {
+            qDebug() << " INDEX : " << functionObj.value("index"_L1).toInt();
+        }
+
         const QStringList functionKeys = argumentObj.keys();
         TextAutoGenerateReply::ToolCallArgumentInfo toolInfo;
         toolInfo.toolName = toolName;
@@ -40,8 +44,8 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);
-        qDebug() << " infos " << infos;
     }
+    qDebug() << "TextAutoGenerateReply::parseToolCallsOllam infos " << infos;
     return infos;
 }
 
@@ -57,6 +61,9 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         qDebug() << " functionObj " << functionObj;
         const QByteArray toolName = functionObj["name"_L1].toString().toLatin1();
 
+        if (functionObj.contains("index"_L1)) {
+            qDebug() << " INDEX : " << functionObj.value("index"_L1).toInt();
+        }
         const QString arguments = functionObj["arguments"_L1].toString();
         // qDebug() << " arguments: " << arguments;
         const QJsonDocument doc = QJsonDocument::fromJson(arguments.toLatin1());
@@ -71,7 +78,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         }
         infos.append(toolInfo);
     }
-    qDebug() << " infos " << infos;
+    qDebug() << "TextAutoGenerateReply::parseToolCallsOpenA infos " << infos;
     return infos;
 }
 
@@ -111,6 +118,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateReply::T
 {
     d.space() << "tool name:" << t.toolName;
     d.space() << "toolCallArgument:" << t.toolCallArgument;
+    d.space() << "index:" << t.index;
     return d;
 }
 
@@ -128,7 +136,7 @@ bool TextAutoGenerateReply::Response::hasToolCallArguments() const
 
 bool TextAutoGenerateReply::ToolCallArgumentInfo::operator==(const ToolCallArgumentInfo &other) const
 {
-    return other.toolCallArgument == toolCallArgument && other.toolName == toolName;
+    return other.toolCallArgument == toolCallArgument && other.toolName == toolName && other.index == index;
 }
 
 bool TextAutoGenerateReply::ToolCallArgument::operator==(const ToolCallArgument &other) const
