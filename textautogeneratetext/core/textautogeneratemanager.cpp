@@ -78,13 +78,6 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
     mTextAutoGenerateSettings->load();
-    /*
-    const QList<TextAutoGenerateTextToolPlugin *> lstPlugins = TextAutoGenerateTextToolPluginManager::self()->pluginsList();
-    for (const auto p : lstPlugins) {
-        connect(p, &TextAutoGenerateTextToolPlugin::finished, this, &TextAutoGenerateManager::slotPluginFinished);
-        connect(p, &TextAutoGenerateTextToolPlugin::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
-    }
-    */
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
@@ -277,7 +270,7 @@ void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArr
     connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
     job->start();
 
-    qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
+    // qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
 }
 
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
