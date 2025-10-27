@@ -47,7 +47,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
 
 QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseToolCallsOpenAI(const QJsonArray &array) const
 {
-    // qDebug() << " array " << array;
+    qDebug() << " TextAutoGenerateReply::parseToolCallsOpenAI: " << array;
     QList<TextAutoGenerateReply::ToolCallArgumentInfo> infos;
     for (int i = 0; i < array.count(); ++i) {
         const QJsonObject obj = array[i].toObject();
@@ -70,8 +70,8 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
             toolInfo.toolCallArgument.append(arg);
         }
         infos.append(toolInfo);
-        // qDebug() << " infos " << infos;
     }
+    qDebug() << " infos " << infos;
     return infos;
 }
 
