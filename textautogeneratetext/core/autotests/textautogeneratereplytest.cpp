@@ -63,6 +63,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
         QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> infos;
         TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo i;
         i.toolName = "example_tool"_ba;
+        i.index = -1;
         i.toolCallArgument = {{
             .keyTool = u"city"_s,
             .value = u"Grenoble"_s,
@@ -70,6 +71,7 @@ void TextAutoGenerateReplyTest::shouldParseToolCalls_data()
         infos.append(i);
         QTest::addRow("return-1") << ba << infos;
     }
+    // TODO add index
 }
 
 #include "moc_textautogeneratereplytest.cpp"

@@ -54,5 +54,11 @@ void ExampleTextToolPlugin::callTools(const QByteArray &chatId,
     }
 }
 
+TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *ExampleTextToolPlugin::callTool()
+{
+    ExampleTextToolPluginJob *job = new ExampleTextToolPluginJob(this);
+    return job;
+}
+
 #include "exampletexttoolplugin.moc"
 #include "moc_exampletexttoolplugin.cpp"
