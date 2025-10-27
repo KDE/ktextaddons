@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-25 02:39+0000\n"
-"PO-Revision-Date: 2025-10-05 08:22+0200\n"
+"PO-Revision-Date: 2025-10-26 20:44+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -1949,6 +1949,8 @@ msgid ""
 "EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
 "provides a comprehensive range of text embeddings models in various sizes."
 msgstr ""
+"Bygger vidare på grundmodellerna i Qwen3-serien. Qwen3 Embedding erbjuder "
+"ett omfattande utbud av textinbäddningsmodeller i olika storlekar."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:286
 #, kde-format
@@ -1956,6 +1958,8 @@ msgid ""
 "Granite 4 features improved instruction following (IF) and tool-calling "
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
+"Granite 4 har förbättrade funktioner för instruktionsföljning (IF) och "
+"verktygsanrop, vilket gör dem mer effektiva i företagsapplikationer."
 
 #: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
 #, kde-format
