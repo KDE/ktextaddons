@@ -9,6 +9,7 @@
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratesettings.h"
+#include "core/textautogeneratetoolcalljob.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratechatsettings.h"
@@ -77,11 +78,13 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
     mTextAutoGenerateSettings->load();
+    /*
     const QList<TextAutoGenerateTextToolPlugin *> lstPlugins = TextAutoGenerateTextToolPluginManager::self()->pluginsList();
     for (const auto p : lstPlugins) {
         connect(p, &TextAutoGenerateTextToolPlugin::finished, this, &TextAutoGenerateManager::slotPluginFinished);
         connect(p, &TextAutoGenerateTextToolPlugin::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
     }
+    */
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
@@ -269,13 +272,12 @@ void TextAutoGenerateManager::setSaveInDatabase(bool newSaveInDatabase)
 
 void TextAutoGenerateManager::callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateReply::ToolCallArgumentInfo> &info)
 {
+    auto job = new TextAutoGenerateToolCallJob(chatId, uuid, info, this);
+    connect(job, &TextAutoGenerateToolCallJob::finished, this, &TextAutoGenerateManager::slotPluginFinished);
+    connect(job, &TextAutoGenerateToolCallJob::toolInProgress, this, &TextAutoGenerateManager::toolInProgress);
+    job->start();
+
     qDebug() << "TextAutoGenerateManager::callTools chatId : " << chatId << " uuid : " << uuid << " info: " << info;
-    for (const auto &i : info) {
-        auto plugin = TextAutoGenerateTextToolPluginManager::self()->pluginFromToolNameId(i.toolName);
-        if (plugin) {
-            plugin->callTools(chatId, uuid, info);
-        }
-    }
 }
 
 void TextAutoGenerateManager::changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress)
