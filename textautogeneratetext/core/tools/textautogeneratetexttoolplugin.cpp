@@ -115,7 +115,7 @@ void TextAutoGenerateTextToolPlugin::initializeJob(TextAutoGenerateText::TextAut
             [this](const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier) {
                 Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
                 Q_EMIT toolInProgress({});
-                // qDebug() << " CurrentDateTimeToolPluginJob::finished: " << str;
+                qDebug() << " TextAutoGenerateTextToolPlugin::finished: " << str;
             });
     connect(job,
             &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::toolInProgress,
