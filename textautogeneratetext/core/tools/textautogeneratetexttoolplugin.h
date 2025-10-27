@@ -41,6 +41,8 @@ public:
     virtual void
     callTools(const QByteArray &chatId, const QByteArray &uuid, const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &info) = 0;
 
+    virtual TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() = 0;
+
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
     void toolInProgress(const QString &str);
