@@ -35,6 +35,7 @@ target_link_libraries(
     KF6::CoreAddons
     Qt::Widgets
     KF6::I18n
+    Qt::TextToSpeech
 )
 
 #####
