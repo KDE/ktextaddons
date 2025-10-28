@@ -36,6 +36,7 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     , mTestButton(new QPushButton(QIcon::fromTheme(u"player-volume"_s), i18n("Test"), this))
 {
     auto layout = new QFormLayout(this);
+    layout->setContentsMargins({});
     mVolume->setObjectName(u"volume"_s);
     mVolume->setRange(0, 100);
     connect(mVolume, &TextToSpeechSliderWidget::valueChanged, this, &TextToSpeechConfigWidget::valueChanged);
