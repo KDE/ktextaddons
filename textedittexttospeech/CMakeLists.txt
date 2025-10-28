@@ -45,8 +45,9 @@ target_sources(
 
 target_link_libraries(
     KF6TextEditTextToSpeech
-    PRIVATE
+    PUBLIC
         Qt::TextToSpeech
+    PRIVATE
         KF6::ConfigCore
         KF6::ConfigGui
         KF6::WidgetsAddons
