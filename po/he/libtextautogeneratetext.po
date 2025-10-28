@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-25 00:41+0000\n"
+"POT-Creation-Date: 2025-10-28 00:41+0000\n"
 "PO-Revision-Date: 2025-10-24 09:13+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -73,57 +73,57 @@ msgstr ""
 "\n"
 "כלים: %1"
 
-#: core/textautogeneratemanager.cpp:131
+#: core/textautogeneratemanager.cpp:127
 #, kde-format
 msgid "Tools"
 msgstr "כלים"
 
-#: core/textautogeneratemanager.cpp:133
+#: core/textautogeneratemanager.cpp:129
 #, kde-format
 msgid "Small"
 msgstr "קטן"
 
-#: core/textautogeneratemanager.cpp:135
+#: core/textautogeneratemanager.cpp:131
 #, kde-format
 msgid "Medium"
 msgstr "בינוני"
 
-#: core/textautogeneratemanager.cpp:137
+#: core/textautogeneratemanager.cpp:133
 #, kde-format
 msgid "Big"
 msgstr "גדול"
 
-#: core/textautogeneratemanager.cpp:139
+#: core/textautogeneratemanager.cpp:135
 #, kde-format
 msgid "Huge"
 msgstr "ענק"
 
-#: core/textautogeneratemanager.cpp:141
+#: core/textautogeneratemanager.cpp:137
 #, kde-format
 msgid "Multilingual"
 msgstr "רב־לשוני"
 
-#: core/textautogeneratemanager.cpp:143
+#: core/textautogeneratemanager.cpp:139
 #, kde-format
 msgid "Code"
 msgstr "קוד"
 
-#: core/textautogeneratemanager.cpp:145
+#: core/textautogeneratemanager.cpp:141
 #, kde-format
 msgid "Math"
 msgstr "מתמטיקה"
 
-#: core/textautogeneratemanager.cpp:147
+#: core/textautogeneratemanager.cpp:143
 #, kde-format
 msgid "Vision"
 msgstr "ראייה"
 
-#: core/textautogeneratemanager.cpp:149
+#: core/textautogeneratemanager.cpp:145
 #, kde-format
 msgid "Embedding"
 msgstr "הטמעה"
 
-#: core/textautogeneratemanager.cpp:151
+#: core/textautogeneratemanager.cpp:147
 #, kde-format
 msgid "Reasoning"
 msgstr "הנמקה"
