@@ -39,8 +39,9 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
         TextUtilsBlockCodeManager::self()->insert(identifier, str);
 
         // Add copy url
-        *mStream << u"<p style=\"text-align: right; vertical-align: bottom;\"><a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></p>"_s
-                        .arg(identifier, QString::number(iconSize), copyIconPath, copyHref());
+        *mStream
+            << u"<div style=\"text-align: right; vertical-align: bottom; display: inline-block;\"><a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></div>"_s
+                   .arg(identifier, QString::number(iconSize), copyIconPath, copyHref());
     }
     for (; lineEnd != -1; lineStart = lineEnd + 1, lineEnd = str.indexOf(u'\n', lineStart)) {
         mCurrentLine = str.mid(lineStart, lineEnd - lineStart);
