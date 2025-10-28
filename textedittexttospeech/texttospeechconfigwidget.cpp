@@ -65,12 +65,20 @@ TextToSpeechConfigWidget::TextToSpeechConfigWidget(QWidget *parent)
     connect(mVoice, &QComboBox::currentIndexChanged, this, &TextToSpeechConfigWidget::valueChanged);
 
     mTestButton->setObjectName(u"mTestButton"_s);
+    mTestButton->setCheckable(true);
+    mTestButton->setChecked(false);
     layout->addWidget(mTestButton);
     connect(mTestButton, &QPushButton::clicked, this, &TextToSpeechConfigWidget::slotTestTextToSpeech);
     QTimer::singleShot(0, this, &TextToSpeechConfigWidget::slotUpdateSettings);
+    connect(mTextToSpeechConfigInterface, &TextToSpeechConfigInterface::stateChanged, this, &TextToSpeechConfigWidget::slotTextChanged);
 }
 
 TextToSpeechConfigWidget::~TextToSpeechConfigWidget() = default;
+
+void TextToSpeechConfigWidget::slotTextChanged(QTextToSpeech::State state)
+{
+    mTestButton->setChecked(state == QTextToSpeech::Speaking);
+}
 
 void TextToSpeechConfigWidget::initializeSettings()
 {
@@ -161,16 +169,20 @@ void TextToSpeechConfigWidget::restoreDefaults()
     // TODO load default value
 }
 
-void TextToSpeechConfigWidget::slotTestTextToSpeech()
+void TextToSpeechConfigWidget::slotTestTextToSpeech(bool checked)
 {
-    TextToSpeechConfigInterface::EngineSettings settings;
-    settings.rate = mRate->value();
-    settings.pitch = mPitch->value();
-    settings.volume = mVolume->value();
-    settings.localeName = mLanguage->currentData().toLocale().name();
-    settings.voice = mVoice->currentVoice();
-    qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << " settings " << settings;
-    mTextToSpeechConfigInterface->testEngine(settings);
+    if (checked) {
+        TextToSpeechConfigInterface::EngineSettings settings;
+        settings.rate = mRate->value();
+        settings.pitch = mPitch->value();
+        settings.volume = mVolume->value();
+        settings.localeName = mLanguage->currentData().toLocale().name();
+        settings.voice = mVoice->currentVoice();
+        qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << " settings " << settings;
+        mTextToSpeechConfigInterface->testEngine(settings);
+    } else {
+        mTextToSpeechConfigInterface->stop();
+    }
 }
 
 void TextToSpeechConfigWidget::updateAvailableEngine()

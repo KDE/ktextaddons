@@ -60,6 +60,7 @@ void TextToSpeechConfigInterface::setEngine(const QString &engineName)
     if (!mTextToSpeech || (mTextToSpeech->engine() != engineName)) {
         delete mTextToSpeech;
         mTextToSpeech = new QTextToSpeech(engineName, this);
+        connect(mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeechConfigInterface::stateChanged);
     }
 }
 
@@ -83,6 +84,13 @@ void TextToSpeechConfigInterface::testEngine(const EngineSettings &engineSetting
 
     // TODO change text ?
     mTextToSpeech->say(i18n("Morning, this is the test for testing settings."));
+}
+
+void TextToSpeechConfigInterface::stop()
+{
+    if (mTextToSpeech->state() == QTextToSpeech::Speaking) {
+        mTextToSpeech->stop();
+    }
 }
 
 QDebug operator<<(QDebug d, const TextEditTextToSpeech::TextToSpeechConfigInterface::EngineSettings &t)

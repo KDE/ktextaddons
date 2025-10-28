@@ -7,9 +7,9 @@
 #pragma once
 #include "textedittexttospeech_export.h"
 #include <QObject>
+#include <QTextToSpeech>
 #include <QVoice>
 
-class QTextToSpeech;
 namespace TextEditTextToSpeech
 {
 /**
@@ -37,6 +37,12 @@ public:
     [[nodiscard]] QVector<QVoice> availableVoices() const;
     void setEngine(const QString &engineName);
     void testEngine(const EngineSettings &engineSettings);
+    void stop();
+
+Q_SIGNALS:
+    void stateChanged(QTextToSpeech::State state);
+
+private:
     QTextToSpeech *mTextToSpeech = nullptr;
 };
 }

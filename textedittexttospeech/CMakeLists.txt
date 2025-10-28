@@ -45,12 +45,13 @@ target_sources(
 
 target_link_libraries(
     KF6TextEditTextToSpeech
+    PUBLIC
+        Qt::TextToSpeech
     PRIVATE
         KF6::ConfigCore
         KF6::ConfigGui
         KF6::WidgetsAddons
         KF6::I18n
-        Qt::TextToSpeech
 )
 
 ecm_qt_declare_logging_category(KF6TextEditTextToSpeech HEADER textedittexttospeech_debug.h
