@@ -138,7 +138,7 @@ void TextToSpeechConfigWidget::writeConfig()
     settings.engineName = mAvailableEngine->currentData().toString();
     settings.voice = mVoice->currentVoice();
     // qDebug() << " save settings " << settings;
-    TextEditTextToSpeech::TextToSpeechUtil::writeConfig(std::move(settings));
+    TextEditTextToSpeech::TextToSpeechUtil::writeConfig(settings);
 }
 
 void TextToSpeechConfigWidget::slotLocalesAndVoices()
