@@ -34,6 +34,7 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginManager final : 
     Q_OBJECT
 public:
     struct PluginToolInfo {
+        QString iconName;
         QString displayName;
         QString description;
         QByteArray identifier;

@@ -40,6 +40,8 @@ public:
 
     virtual TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() = 0;
 
+    [[nodiscard]] virtual QString iconName() const;
+
 Q_SIGNALS:
     void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
     void toolInProgress(const QString &str);

@@ -39,6 +39,9 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
         b->setText(info.displayName);
         b->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         b->setAutoRaise(true);
+        if (!info.iconName.isEmpty()) {
+            b->setIcon(QIcon::fromTheme(info.iconName));
+        }
         b->setProperty(button_property, info.identifier);
         b->setCheckable(true);
         mainLayout->addWidget(b);

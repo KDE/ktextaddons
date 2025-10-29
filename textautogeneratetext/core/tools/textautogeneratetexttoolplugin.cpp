@@ -98,4 +98,9 @@ QJsonObject TextAutoGenerateTextToolPlugin::generateMetadata() const
     return toolObj;
 }
 
+QString TextAutoGenerateTextToolPlugin::iconName() const
+{
+    return {};
+}
+
 #include "moc_textautogeneratetexttoolplugin.cpp"

@@ -92,9 +92,12 @@ QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> TextAutoGenerateTex
     for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             if (plugin->enabled()) {
-                const TextAutoGenerateTextToolPluginManager::PluginToolInfo info{.displayName = plugin->displayName(),
-                                                                                 .description = plugin->description(),
-                                                                                 .identifier = plugin->toolNameId()};
+                const TextAutoGenerateTextToolPluginManager::PluginToolInfo info{
+                    .iconName = plugin->iconName(),
+                    .displayName = plugin->displayName(),
+                    .description = plugin->description(),
+                    .identifier = plugin->toolNameId(),
+                };
                 list.append(info);
             }
         }

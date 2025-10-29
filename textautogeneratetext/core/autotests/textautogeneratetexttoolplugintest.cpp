@@ -87,6 +87,7 @@ void TextAutoGenerateTextToolPluginTest::shouldHaveDefaultValues()
     QVERIFY(!w.metadata().isEmpty());
     QVERIFY(w.displayName().isEmpty());
     QVERIFY(w.toolNameId().isEmpty());
+    QVERIFY(w.iconName().isEmpty());
     QVERIFY(w.enabled());
     QVERIFY(!w.isValid());
 }
