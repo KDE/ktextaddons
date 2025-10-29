@@ -40,6 +40,7 @@ public:
 
     void showWidget();
 
+    [[nodiscard]] qsizetype enqueue(const QString &text);
 public Q_SLOTS:
     void say(const QString &text);
 

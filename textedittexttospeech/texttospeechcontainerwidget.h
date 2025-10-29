@@ -23,6 +23,8 @@ public:
 
     void say(const QString &text);
 
+    [[nodiscard]] qsizetype enqueue(const QString &text);
+
 private:
     std::unique_ptr<TextToSpeechContainerWidgetPrivate> const d;
 };

@@ -29,6 +29,8 @@ public:
     void setVolume(double value);
     void reloadSettings();
 
+    [[nodiscard]] qsizetype enqueue(const QString &text);
+
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
     std::unique_ptr<TextToSpeechInterfacePrivate> const d;

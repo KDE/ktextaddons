@@ -5,10 +5,9 @@
 */
 
 #include "texttospeechcontainerwidget.h"
-using namespace Qt::Literals::StringLiterals;
-
 #include "texttospeechwidget.h"
 #include <QHBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 
 class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechContainerWidgetPrivate
@@ -42,6 +41,16 @@ void TextToSpeechContainerWidget::say(const QString &text)
         d->mainLayout->addWidget(d->textToSpeechWidget);
     }
     d->textToSpeechWidget->say(text);
+}
+
+qsizetype TextToSpeechContainerWidget::enqueue(const QString &text)
+{
+    if (!d->textToSpeechWidget) {
+        d->textToSpeechWidget = new TextToSpeechWidget(this);
+        connect(d->textToSpeechWidget, &TextToSpeechWidget::changeVisibility, this, &TextToSpeechContainerWidget::setVisible);
+        d->mainLayout->addWidget(d->textToSpeechWidget);
+    }
+    return d->textToSpeechWidget->enqueue(text);
 }
 
 #include "moc_texttospeechcontainerwidget.cpp"

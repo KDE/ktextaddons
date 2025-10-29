@@ -46,6 +46,13 @@ void TextToSpeechInterface::say(const QString &text)
     TextEditTextToSpeech::TextToSpeech::self()->say(text);
 }
 
+qsizetype TextToSpeechInterface::enqueue(const QString &text)
+{
+    d->mTextToSpeechWidget->setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
+    d->mTextToSpeechWidget->showWidget();
+    return TextEditTextToSpeech::TextToSpeech::self()->enqueue(text);
+}
+
 double TextToSpeechInterface::volume() const
 {
     return TextEditTextToSpeech::TextToSpeech::self()->volume();

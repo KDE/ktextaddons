@@ -137,6 +137,19 @@ void TextToSpeechWidget::say(const QString &text)
     }
 }
 
+qsizetype TextToSpeechWidget::enqueue(const QString &text)
+{
+    qsizetype index = -1;
+    if (!text.isEmpty()) {
+        if (d->mTextToSpeechInterface->isReady()) {
+            index = d->mTextToSpeechInterface->enqueue(text);
+        } else {
+            KMessageBox::error(this, i18n("Engine has a problem."), i18nc("@title:window", "Text To Speech"));
+        }
+    }
+    return index;
+}
+
 TextToSpeechWidget::State TextToSpeechWidget::state() const
 {
     return d->mTextToSpeechActions->state();
