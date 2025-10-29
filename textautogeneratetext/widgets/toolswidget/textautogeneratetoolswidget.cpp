@@ -31,6 +31,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     label->setFont(f);
     mainLayout->setAlignment(label, Qt::AlignBottom);
     mainLayout->addWidget(label);
+    mainLayout->setHorizontalSpacing(0);
 
     const QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> lst = TextAutoGenerateTextToolPluginManager::self()->activePluginTools();
     for (const auto &info : lst) {
