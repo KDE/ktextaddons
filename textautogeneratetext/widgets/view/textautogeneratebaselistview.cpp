@@ -173,7 +173,7 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     if (messageText.isEmpty()) {
         return;
     }
-    TextEditTextToSpeech::TextToSpeech::self()->say(messageText);
+    TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText);
 #endif
 }
 
