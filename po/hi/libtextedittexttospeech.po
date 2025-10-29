@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-10-29 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -45,7 +45,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "टेक्स्ट-टू-स्पीच कॉन्फ़िगर करें"
 
-#: texttospeechconfiginterface.cpp:85
+#: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "सुबह, यह सेटिंग्स परीक्षण के लिए परीक्षण है।"
@@ -55,32 +55,32 @@ msgstr "सुबह, यह सेटिंग्स परीक्षण क�
 msgid "Test"
 msgstr "परीक्षा"
 
-#: texttospeechconfigwidget.cpp:43
+#: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Volume:"
 msgstr "आयतन:"
 
-#: texttospeechconfigwidget.cpp:47
+#: texttospeechconfigwidget.cpp:48
 #, kde-format
 msgid "Rate:"
 msgstr "दर:"
 
-#: texttospeechconfigwidget.cpp:53
+#: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Pitch:"
 msgstr "आवाज़ का उतार-चढ़ाव:"
 
-#: texttospeechconfigwidget.cpp:56
+#: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Engine:"
 msgstr "इंजन:"
 
-#: texttospeechconfigwidget.cpp:60
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Language:"
 msgstr "भाषा:"
 
-#: texttospeechconfigwidget.cpp:64
+#: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "आवाज़:"

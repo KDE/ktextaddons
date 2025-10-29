@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-10-29 00:42+0000\n"
 "PO-Revision-Date: 2024-07-11 14:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -45,7 +45,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Konuşmayı Yapılandır"
 
-#: texttospeechconfiginterface.cpp:85
+#: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "Günaydın; bu sınama ayarlarının bir sınamasıdır."
@@ -55,32 +55,32 @@ msgstr "Günaydın; bu sınama ayarlarının bir sınamasıdır."
 msgid "Test"
 msgstr "Sına"
 
-#: texttospeechconfigwidget.cpp:43
+#: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Volume:"
 msgstr "Ses düzeyi:"
 
-#: texttospeechconfigwidget.cpp:47
+#: texttospeechconfigwidget.cpp:48
 #, kde-format
 msgid "Rate:"
 msgstr "Hız:"
 
-#: texttospeechconfigwidget.cpp:53
+#: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Pitch:"
 msgstr "Atım:"
 
-#: texttospeechconfigwidget.cpp:56
+#: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Engine:"
 msgstr "İşletke:"
 
-#: texttospeechconfigwidget.cpp:60
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Language:"
 msgstr "Dil:"
 
-#: texttospeechconfigwidget.cpp:64
+#: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "Ses:"

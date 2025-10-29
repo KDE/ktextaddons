@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-10-29 00:42+0000\n"
 "PO-Revision-Date: 2024-07-11 12:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -46,7 +46,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Налаштовування синтезу мовлення"
 
-#: texttospeechconfiginterface.cpp:85
+#: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "Вітаємо, це перевірка тестових параметрів."
@@ -56,32 +56,32 @@ msgstr "Вітаємо, це перевірка тестових парамет�
 msgid "Test"
 msgstr "Тест"
 
-#: texttospeechconfigwidget.cpp:43
+#: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Volume:"
 msgstr "Гучність:"
 
-#: texttospeechconfigwidget.cpp:47
+#: texttospeechconfigwidget.cpp:48
 #, kde-format
 msgid "Rate:"
 msgstr "Частота:"
 
-#: texttospeechconfigwidget.cpp:53
+#: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Pitch:"
 msgstr "Тон:"
 
-#: texttospeechconfigwidget.cpp:56
+#: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Engine:"
 msgstr "Рушій:"
 
-#: texttospeechconfigwidget.cpp:60
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Language:"
 msgstr "Мова:"
 
-#: texttospeechconfigwidget.cpp:64
+#: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "Голос:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-10-29 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -45,7 +45,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "配置文字转语音"
 
-#: texttospeechconfiginterface.cpp:85
+#: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "早上好，这是用于测试设置效果的测试语音。"
@@ -55,32 +55,32 @@ msgstr "早上好，这是用于测试设置效果的测试语音。"
 msgid "Test"
 msgstr "测试"
 
-#: texttospeechconfigwidget.cpp:43
+#: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Volume:"
 msgstr "音量："
 
-#: texttospeechconfigwidget.cpp:47
+#: texttospeechconfigwidget.cpp:48
 #, kde-format
 msgid "Rate:"
 msgstr "语速："
 
-#: texttospeechconfigwidget.cpp:53
+#: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Pitch:"
 msgstr "声调："
 
-#: texttospeechconfigwidget.cpp:56
+#: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Engine:"
 msgstr "引擎："
 
-#: texttospeechconfigwidget.cpp:60
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Language:"
 msgstr "语言："
 
-#: texttospeechconfigwidget.cpp:64
+#: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "声音："

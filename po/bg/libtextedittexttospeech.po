@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:41+0000\n"
+"POT-Creation-Date: 2025-10-29 00:42+0000\n"
 "PO-Revision-Date: 2024-07-14 22:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -45,7 +45,7 @@ msgctxt "@title:window"
 msgid "Configure Text-To-Speech"
 msgstr "Конфигуриране на Преобразуване на текст в реч"
 
-#: texttospeechconfiginterface.cpp:85
+#: texttospeechconfiginterface.cpp:86
 #, kde-format
 msgid "Morning, this is the test for testing settings."
 msgstr "Добро утро, това е тестът за тестване на настройките."
@@ -55,32 +55,32 @@ msgstr "Добро утро, това е тестът за тестване на
 msgid "Test"
 msgstr "Тестване"
 
-#: texttospeechconfigwidget.cpp:43
+#: texttospeechconfigwidget.cpp:44
 #, kde-format
 msgid "Volume:"
 msgstr "Сила на звука:"
 
-#: texttospeechconfigwidget.cpp:47
+#: texttospeechconfigwidget.cpp:48
 #, kde-format
 msgid "Rate:"
 msgstr "Скорост:"
 
-#: texttospeechconfigwidget.cpp:53
+#: texttospeechconfigwidget.cpp:54
 #, kde-format
 msgid "Pitch:"
 msgstr "Височина на тона:"
 
-#: texttospeechconfigwidget.cpp:56
+#: texttospeechconfigwidget.cpp:57
 #, kde-format
 msgid "Engine:"
 msgstr "Основна програма:"
 
-#: texttospeechconfigwidget.cpp:60
+#: texttospeechconfigwidget.cpp:61
 #, kde-format
 msgid "Language:"
 msgstr "Език:"
 
-#: texttospeechconfigwidget.cpp:64
+#: texttospeechconfigwidget.cpp:65
 #, kde-format
 msgid "Voice:"
 msgstr "Глас:"

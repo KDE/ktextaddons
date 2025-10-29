@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-14 00:41+0000\n"
-"PO-Revision-Date: 2025-10-14 22:34+0200\n"
+"PO-Revision-Date: 2025-10-24 23:39+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -127,7 +127,7 @@ msgstr "Проверка за нова версия"
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
-"Намерена е нова версия. Кликнете <a href=\"%1\">тук</a>, за да я изтеглите."
+"Намерена е нова версия. Кликнете <a href=„%1“>тук</a>, за да я изтеглите."
 
 #: verifynewversion/checknewversionwidget.cpp:58
 #, kde-format
