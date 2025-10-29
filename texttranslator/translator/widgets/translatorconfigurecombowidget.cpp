@@ -52,11 +52,8 @@ void TranslatorConfigureComboWidget::slotConfigureEngine()
 
 void TranslatorConfigureComboWidget::fillEngine()
 {
-    const QMap<QString, QString> map = TextTranslator::TranslatorEngineLoader::self()->translatorEngineInfos();
-    QMapIterator<QString, QString> iMap(map);
-    while (iMap.hasNext()) {
-        iMap.next();
-        mEngineComboBox->addItem(iMap.value(), iMap.key());
+    for (const auto &[key, value] : TextTranslator::TranslatorEngineLoader::self()->translatorEngineInfos().asKeyValueRange()) {
+        mEngineComboBox->addItem(value, key);
     }
 }
 

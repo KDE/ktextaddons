@@ -33,12 +33,9 @@ TranslatorConfigureLanguageListWidget_gui::TranslatorConfigureLanguageListWidget
     connect(buttonBox, &QDialogButtonBox::accepted, this, &TranslatorConfigureLanguageListWidget_gui::accept);
     const QMap<TextTranslator::TranslatorUtil::Language, QString> languages; // = TextTranslator::TranslatorUtil::translatedLanguages();
 
-    QMapIterator<TextTranslator::TranslatorUtil::Language, QString> i(languages);
-    TextTranslator::TranslatorUtil translatorUtil;
-    while (i.hasNext()) {
-        i.next();
-        const QString languageCode = TextTranslator::TranslatorUtil::languageCode(i.key());
-        w->addItem(i.value(), languageCode);
+    for (const auto &[key, value] : languages.asKeyValueRange()) {
+        const QString languageCode = TextTranslator::TranslatorUtil::languageCode(key);
+        w->addItem(value, languageCode);
     }
 }
 

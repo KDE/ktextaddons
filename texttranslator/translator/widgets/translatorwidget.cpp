@@ -78,13 +78,10 @@ void TranslatorWidget::TranslatorWidgetPrivate::fillToCombobox(const QString &la
     toCombobox->clear();
 
     TranslatorUtil translatorUtil;
-    const QMapIterator<TranslatorUtil::Language, QString> listToLanguage = translatorClient->supportedToLanguages();
-    QMapIterator<TranslatorUtil::Language, QString> i(listToLanguage);
-    while (i.hasNext()) {
-        i.next();
-        const QString languageCode = TranslatorUtil::languageCode(i.key());
-        if ((i.key() != TranslatorUtil::automatic) && languageCode != lang) {
-            translatorUtil.addItemToFromComboBox(toCombobox, languageCode, i.value());
+    for (const auto &[key, value] : translatorClient->supportedToLanguages().asKeyValueRange()) {
+        const QString languageCode = TranslatorUtil::languageCode(key);
+        if ((key != TranslatorUtil::automatic) && languageCode != lang) {
+            translatorUtil.addItemToFromComboBox(toCombobox, languageCode, value);
         }
     }
 }
@@ -96,14 +93,11 @@ void TranslatorWidget::TranslatorWidgetPrivate::initLanguage()
     }
     toCombobox->clear();
     fromCombobox->clear();
-    const QMapIterator<TranslatorUtil::Language, QString> listFromLanguage = translatorClient->supportedFromLanguages();
 
-    QMapIterator<TranslatorUtil::Language, QString> i(listFromLanguage);
     TranslatorUtil translatorUtil;
-    while (i.hasNext()) {
-        i.next();
-        const QString languageCode = TranslatorUtil::languageCode(i.key());
-        translatorUtil.addItemToFromComboBox(fromCombobox, languageCode, i.value());
+    for (const auto &[key, value] : translatorClient->supportedFromLanguages().asKeyValueRange()) {
+        const QString languageCode = TranslatorUtil::languageCode(key);
+        translatorUtil.addItemToFromComboBox(fromCombobox, languageCode, value);
     }
 }
 

@@ -254,13 +254,11 @@ QMenu *RichTextEditor::mousePopupMenu(QPoint pos)
                         defaultSpellcheckingLanguage = d->speller->defaultLanguage();
                     }
 
-                    QMapIterator<QString, QString> i(d->speller->availableDictionaries());
-                    while (i.hasNext()) {
-                        i.next();
-                        QAction *languageAction = languagesMenu->addAction(i.key());
+                    for (const auto &[key, value] : d->speller->availableDictionaries().asKeyValueRange()) {
+                        QAction *languageAction = languagesMenu->addAction(key);
                         languageAction->setCheckable(true);
-                        languageAction->setChecked(defaultSpellcheckingLanguage == i.value());
-                        languageAction->setData(i.value());
+                        languageAction->setChecked(defaultSpellcheckingLanguage == value);
+                        languageAction->setData(value);
                         languageAction->setActionGroup(languagesGroup);
                         connect(languageAction, &QAction::triggered, this, &RichTextEditor::slotLanguageSelected);
                     }

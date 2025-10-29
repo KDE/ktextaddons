@@ -48,11 +48,8 @@ SpeechToTextComboBoxWidget::~SpeechToTextComboBoxWidget() = default;
 
 void SpeechToTextComboBoxWidget::fillEngine()
 {
-    const QMap<QString, QString> map = TextSpeechToText::SpeechToTextEngineLoader::self()->speechToTextEngineInfos();
-    QMapIterator<QString, QString> iMap(map);
-    while (iMap.hasNext()) {
-        iMap.next();
-        mEngine->addItem(iMap.value(), iMap.key());
+    for (const auto &[key, value] : TextSpeechToText::SpeechToTextEngineLoader::self()->speechToTextEngineInfos().asKeyValueRange()) {
+        mEngine->addItem(value, key);
     }
 }
 

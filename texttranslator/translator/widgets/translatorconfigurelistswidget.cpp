@@ -102,32 +102,26 @@ void TranslatorConfigureListsWidget::loadLanguagesList()
 void TranslatorConfigureListsWidget::fillFromToLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listFromLanguage,
                                                          const QMap<TextTranslator::TranslatorUtil::Language, QString> &listToLanguage)
 {
-    QMapIterator<TranslatorUtil::Language, QString> i(listFromLanguage);
     TranslatorUtil translatorUtil;
-    while (i.hasNext()) {
-        i.next();
-        const QString languageCode = TranslatorUtil::languageCode(i.key());
-        d->mFromLanguageWidget->addItem(i.value(), languageCode);
+    for (const auto &[key, value] : listFromLanguage.asKeyValueRange()) {
+        const QString languageCode = TranslatorUtil::languageCode(key);
+        d->mFromLanguageWidget->addItem(value, languageCode);
     }
 
-    QMapIterator<TranslatorUtil::Language, QString> toLangIt(listToLanguage);
-    while (toLangIt.hasNext()) {
-        toLangIt.next();
-        const QString languageCode = TranslatorUtil::languageCode(toLangIt.key());
-        d->mToLanguageWidget->addItem(toLangIt.value(), languageCode);
+    for (const auto &[key, value] : listToLanguage.asKeyValueRange()) {
+        const QString languageCode = TranslatorUtil::languageCode(key);
+        d->mToLanguageWidget->addItem(value, languageCode);
     }
 }
 
 void TranslatorConfigureListsWidget::fillLanguages(const QMap<TextTranslator::TranslatorUtil::Language, QString> &listLanguage)
 {
-    QMapIterator<TranslatorUtil::Language, QString> i(listLanguage);
     TranslatorUtil translatorUtil;
-    while (i.hasNext()) {
-        i.next();
-        const QString languageCode = TranslatorUtil::languageCode(i.key());
-        d->mFromLanguageWidget->addItem(i.value(), languageCode);
-        if ((i.key() != TranslatorUtil::automatic)) {
-            d->mToLanguageWidget->addItem(i.value(), languageCode);
+    for (const auto &[key, value] : listLanguage.asKeyValueRange()) {
+        const QString languageCode = TranslatorUtil::languageCode(key);
+        d->mFromLanguageWidget->addItem(value, languageCode);
+        if ((key != TranslatorUtil::automatic)) {
+            d->mToLanguageWidget->addItem(value, languageCode);
         }
     }
 }
