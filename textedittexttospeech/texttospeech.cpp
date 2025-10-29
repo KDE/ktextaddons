@@ -40,6 +40,7 @@ void TextToSpeech::reloadSettings()
         if (d->mTextToSpeech) {
             if (d->mTextToSpeech->engine() != engineName) {
                 disconnect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+                disconnect(d->mTextToSpeech, &QTextToSpeech::aboutToSynthesize, this, &TextToSpeech::aboutToSynthesize);
                 delete d->mTextToSpeech;
                 d->mTextToSpeech = nullptr;
             }
@@ -48,6 +49,7 @@ void TextToSpeech::reloadSettings()
     if (!d->mTextToSpeech) {
         d->mTextToSpeech = new QTextToSpeech(engineName, this);
         connect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
+        connect(d->mTextToSpeech, &QTextToSpeech::aboutToSynthesize, this, &TextToSpeech::aboutToSynthesize);
     }
     d->mDefaultEngine = engineName;
     const int rate = settings.rate;
@@ -100,6 +102,11 @@ bool TextToSpeech::isReady() const
 void TextToSpeech::say(const QString &text)
 {
     d->mTextToSpeech->say(text);
+}
+
+qsizetype TextToSpeech::enqueue(const QString &text)
+{
+    return d->mTextToSpeech->enqueue(text);
 }
 
 void TextToSpeech::stop()

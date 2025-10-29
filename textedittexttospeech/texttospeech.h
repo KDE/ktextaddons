@@ -43,6 +43,8 @@ public:
     [[nodiscard]] QLocale locale() const;
 
     void reloadSettings();
+    [[nodiscard]] qsizetype enqueue(const QString &text);
+
 public Q_SLOTS:
     void say(const QString &text);
     void stop();
@@ -56,6 +58,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void stateChanged(TextToSpeech::State);
+    void aboutToSynthesize(qsizetype id);
 
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotStateChanged();
