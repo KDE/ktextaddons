@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratelistview.h"
+#include "config-textautogeneratetext.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratesearchmessagesettings.h"
@@ -40,7 +41,9 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(delegate, &TextAutoGenerateListViewDelegate::cancelRequested, this, &TextAutoGenerateListView::slotCancelRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::refreshRequested, this, &TextAutoGenerateListView::slotRefreshRequested);
     connect(delegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveRequested);
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(delegate, &TextAutoGenerateListViewDelegate::textToSpeechRequested, this, &TextAutoGenerateListView::slotTextToSpeechRequested);
+#endif
 }
 
 TextAutoGenerateListView::~TextAutoGenerateListView() = default;
