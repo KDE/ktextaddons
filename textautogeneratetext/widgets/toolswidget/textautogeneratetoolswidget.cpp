@@ -37,6 +37,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
         auto b = new QToolButton(this);
         b->setToolTip(info.description);
         b->setText(info.displayName);
+        b->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         b->setAutoRaise(true);
         b->setProperty(button_property, info.identifier);
         b->setCheckable(true);
