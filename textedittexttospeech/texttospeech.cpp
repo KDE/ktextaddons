@@ -100,6 +100,11 @@ void TextToSpeech::slotStateChanged()
         break;
     }
     Q_EMIT stateChanged(state);
+    if (state == TextToSpeech::Ready) {
+        Q_EMIT aboutToSynthesize(d->mCurrentTextToSpeechId, -1);
+        // Reinitialize
+        d->mCurrentTextToSpeechId = -1;
+    }
 }
 
 bool TextToSpeech::isReady() const
