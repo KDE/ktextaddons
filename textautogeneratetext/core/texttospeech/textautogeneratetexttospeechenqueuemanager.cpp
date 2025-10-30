@@ -18,7 +18,13 @@ void TextAutoGenerateTextToSpeechEnqueueManager::clear()
     mEnqueueList.clear();
 }
 
-TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::textToSpeechInfo(qsizetype index)
+TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::value(qsizetype index)
+{
+    const TextAutoGenerateTextToSpeechEnqueueInfo info = mEnqueueList.value(index);
+    return info;
+}
+
+TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::take(qsizetype index)
 {
     const TextAutoGenerateTextToSpeechEnqueueInfo info = mEnqueueList.take(index);
     return info;

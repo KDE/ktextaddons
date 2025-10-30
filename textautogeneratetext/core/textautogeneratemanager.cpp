@@ -631,23 +631,28 @@ void TextAutoGenerateManager::slotPluginFinished(const QString &str, const QByte
     changeInProgress(chatId, messageUuid, false);
 }
 
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 TextAutoGenerateTextToSpeechEnqueueManager *TextAutoGenerateManager::textAutoGenerateTextToSpeechEnqueueManager() const
 {
     return mTextAutoGenerateTextToSpeechEnqueueManager;
 }
+#endif
 
 void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId)
 {
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     if (previousId != -1) {
-        // Disable info
+        const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->take(previousId);
+        if (info.isValid()) {
+            // Disable info
+        }
     }
     if (currentId != -1) {
-        // Show info
-    } else {
-        // Disable info
+        const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(currentId);
+        if (info.isValid()) {
+            // Show info
+        }
     }
-    // TODO
 #endif
 }
 
