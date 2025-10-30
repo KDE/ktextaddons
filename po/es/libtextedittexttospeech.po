@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextedittexttospeech\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 00:42+0000\n"
+"POT-Creation-Date: 2025-10-30 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 15:23+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -105,12 +105,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configurar..."
 
-#: texttospeechwidget.cpp:135
+#: texttospeechwidget.cpp:135 texttospeechwidget.cpp:147
 #, kde-format
 msgid "Engine has a problem."
 msgstr "El motor tiene un problema."
 
-#: texttospeechwidget.cpp:135
+#: texttospeechwidget.cpp:135 texttospeechwidget.cpp:147
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 00:42+0000\n"
+"POT-Creation-Date: 2025-10-30 00:41+0000\n"
 "PO-Revision-Date: 2025-08-26 09:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -45,31 +45,31 @@ msgstr "Verifica automàticament l'ortogràfica"
 msgid "Spell Checking Language"
 msgstr "Idioma de la verificació ortogràfica"
 
-#: plaintexteditor/plaintexteditor.cpp:209
+#: plaintexteditor/plaintexteditor.cpp:207
 #: richtextbrowser/richtextbrowser.cpp:173
-#: richtexteditor/richtexteditor.cpp:282
+#: richtexteditor/richtexteditor.cpp:280
 #, kde-format
 msgid "Speak Text"
 msgstr "Pronuncia el text"
 
-#: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:511
+#: plaintexteditor/plaintexteditor.cpp:382
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "No hi ha res a verificar ortogràficament."
 
-#: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:529
+#: plaintexteditor/plaintexteditor.cpp:387
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "No hi ha disponible cap dorsal per a la verificació ortogràfica."
 
-#: richtexteditor/richtexteditor.cpp:274
+#: richtexteditor/richtexteditor.cpp:272
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Permet tabulacions"
 
-#: richtexteditor/richtexteditor.cpp:521
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -78,13 +78,13 @@ msgstr ""
 "No hi ha disponible cap dorsal per a la verificació ortogràfica. Voleu "
 "enviar el correu igualment?"
 
-#: richtexteditor/richtexteditor.cpp:523
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Envia"
 
-#: richtexteditor/richtexteditor.cpp:545
+#: richtexteditor/richtexteditor.cpp:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

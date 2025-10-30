@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-29 00:42+0000\n"
+"POT-Creation-Date: 2025-10-30 00:41+0000\n"
 "PO-Revision-Date: 2023-01-18 13:34+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -108,12 +108,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configurar..."
 
-#: texttospeechwidget.cpp:135
+#: texttospeechwidget.cpp:135 texttospeechwidget.cpp:147
 #, kde-format
 msgid "Engine has a problem."
 msgstr "O motor está com problemas."
 
-#: texttospeechwidget.cpp:135
+#: texttospeechwidget.cpp:135 texttospeechwidget.cpp:147
 #, fuzzy, kde-format
 #| msgid "Text To Speech"
 msgctxt "@title:window"

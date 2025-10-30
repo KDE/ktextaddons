@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-09 00:42+0000\n"
+"POT-Creation-Date: 2025-10-30 00:41+0000\n"
 "PO-Revision-Date: 2024-07-14 10:35+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -40,31 +40,31 @@ msgstr "Vérification automatique de l'orthographe"
 msgid "Spell Checking Language"
 msgstr "Langue pour la vérification de l'orthographe"
 
-#: plaintexteditor/plaintexteditor.cpp:209
+#: plaintexteditor/plaintexteditor.cpp:207
 #: richtextbrowser/richtextbrowser.cpp:173
-#: richtexteditor/richtexteditor.cpp:282
+#: richtexteditor/richtexteditor.cpp:280
 #, kde-format
 msgid "Speak Text"
 msgstr "Énoncer un texte"
 
-#: plaintexteditor/plaintexteditor.cpp:384
-#: richtexteditor/richtexteditor.cpp:511
+#: plaintexteditor/plaintexteditor.cpp:382
+#: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "Aucune vérification orthographique à effectuer."
 
-#: plaintexteditor/plaintexteditor.cpp:389
-#: richtexteditor/richtexteditor.cpp:529
+#: plaintexteditor/plaintexteditor.cpp:387
+#: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."
 msgstr "Impossible de trouver un moteur de vérification orthographique."
 
-#: richtexteditor/richtexteditor.cpp:274
+#: richtexteditor/richtexteditor.cpp:272
 #, kde-format
 msgid "Allow Tabulations"
 msgstr "Autoriser les tabulations"
 
-#: richtexteditor/richtexteditor.cpp:521
+#: richtexteditor/richtexteditor.cpp:519
 #, kde-format
 msgid ""
 "No backend available for spell checking. Do you want to send the email "
@@ -73,13 +73,13 @@ msgstr ""
 "Impossible de trouver un moteur de vérification orthographique. Voulez-vous "
 "quand même envoyer le courriel ?"
 
-#: richtexteditor/richtexteditor.cpp:523
+#: richtexteditor/richtexteditor.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Send"
 msgstr "Envoyer"
 
-#: richtexteditor/richtexteditor.cpp:545
+#: richtexteditor/richtexteditor.cpp:543
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
