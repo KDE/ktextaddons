@@ -35,6 +35,7 @@ public:
         MessagePointer,
         ToolsRole,
         AnswerUuidRole,
+        TextToSpeechInProgressRole,
     };
 
     explicit TextAutoGenerateMessagesModel(QObject *parent = nullptr);

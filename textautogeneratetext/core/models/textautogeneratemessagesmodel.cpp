@@ -65,6 +65,8 @@ QVariant TextAutoGenerateMessagesModel::data(const QModelIndex &index, int role)
         return QVariant::fromValue(messageElement.tools());
     case AnswerUuidRole:
         return messageElement.answerUuid();
+    case TextToSpeechInProgressRole:
+        return messageElement.textToSpeechInProgress();
     default:
         break;
     }
@@ -368,6 +370,10 @@ bool TextAutoGenerateMessagesModel::setData(const QModelIndex &idx, const QVaria
     case MessageRoles::FinishedRole:
         msg.setInProgress(value.toBool());
         Q_EMIT dataChanged(idx, idx, {MessageRoles::FinishedRole});
+        return true;
+    case MessageRoles::TextToSpeechInProgressRole:
+        msg.setInProgress(value.toBool());
+        Q_EMIT dataChanged(idx, idx, {MessageRoles::TextToSpeechInProgressRole});
         return true;
     case MessageRoles::MessageHtmlGeneratedRole:
     case MessageRoles::SenderRole:
