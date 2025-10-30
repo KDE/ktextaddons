@@ -58,6 +58,7 @@ public:
 
     [[nodiscard]] QList<QByteArray> removeDiscussion(const QByteArray &uuid);
 
+    void changeTextToSpeechInProgress(const QByteArray &uuid, bool inProgress);
     void replaceContent(const QByteArray &uuid, const QString &content);
     void changeInProgress(const QByteArray &uuid, bool inProgress);
     [[nodiscard]] QByteArray editMessage(const QByteArray &uuid, const QString &str);

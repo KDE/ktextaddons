@@ -345,6 +345,26 @@ QList<QByteArray> TextAutoGenerateMessagesModel::removeDiscussion(const QByteArr
     return lst;
 }
 
+void TextAutoGenerateMessagesModel::changeTextToSpeechInProgress(const QByteArray &uuid, bool inProgress)
+{
+    if (uuid.isEmpty()) {
+        return;
+    }
+    auto matchesUuid = [&](const TextAutoGenerateMessage &msg) {
+        return msg.uuid() == uuid;
+    };
+    auto it = std::find_if(mMessages.begin(), mMessages.end(), matchesUuid);
+    if (it != mMessages.end()) {
+        (*it).setTextToSpeechInProgress(inProgress);
+        const int i = std::distance(mMessages.begin(), it);
+        auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
+            const QModelIndex index = createIndex(rowNumber, 0);
+            Q_EMIT dataChanged(index, index, roles);
+        };
+        emitChanged(i, {TextToSpeechInProgressRole});
+    }
+}
+
 bool TextAutoGenerateMessagesModel::cancelRequest(const QModelIndex &index)
 {
     return setData(index, false, TextAutoGenerateMessagesModel::FinishedRole);
