@@ -207,6 +207,8 @@ if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
         PRIVATE
             core/texttospeech/textautogeneratetexttospeechenqueueinfo.h
             core/texttospeech/textautogeneratetexttospeechenqueueinfo.cpp
+            core/texttospeech/textautogeneratetexttospeechenqueuemanager.h
+            core/texttospeech/textautogeneratetexttospeechenqueuemanager.cpp
     )
 endif()
 
@@ -591,6 +593,7 @@ install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetext_export.h
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextglobalconfig.h
+        ${CMAKE_CURRENT_BINARY_DIR}/config-textautogeneratetext.h
         ${TextAutoGenerateTextIncludeFiles}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateText/textautogeneratetext
     COMPONENT Devel
