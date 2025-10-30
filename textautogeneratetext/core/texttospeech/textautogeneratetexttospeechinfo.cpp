@@ -43,3 +43,8 @@ bool TextAutoGenerateTextToSpeechInfo::operator==(const TextAutoGenerateTextToSp
 {
     return mChatId == other.chatId() && mMessageId == other.messageId();
 }
+
+bool TextAutoGenerateTextToSpeechInfo::isValid() const
+{
+    return !mChatId.isEmpty() && !mMessageId.isEmpty();
+}
