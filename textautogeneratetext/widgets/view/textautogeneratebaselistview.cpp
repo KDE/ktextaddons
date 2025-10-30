@@ -5,6 +5,9 @@
 */
 #include "textautogeneratebaselistview.h"
 #include "config-textautogeneratetext.h"
+#include "core/models/textautogeneratemessagesmodel.h"
+#include "core/texttospeech/textautogeneratetexttospeechenqueueinfo.h"
+#include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
 #include "delegate/textautogeneratelistviewbasedelegate.h"
 #include <KLocalizedString>
 #include <QApplication>
@@ -173,8 +176,15 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     if (messageText.isEmpty()) {
         return;
     }
-    const qsizetype textToSpeechIndex = TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText);
-    qDebug() << " textToSpeechIndex" << textToSpeechIndex;
+    const QByteArray chatId = mManager->currentChatId();
+    const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
+    TextAutoGenerateTextToSpeechEnqueueInfo info;
+    info.setChatId(chatId);
+    info.setMessageId(uuid);
+    if (!mManager->textAutoGenerateTextToSpeechEnqueueManager()->contains(info)) {
+        const qsizetype textToSpeechIndex = TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText);
+        mManager->textAutoGenerateTextToSpeechEnqueueManager()->insert(textToSpeechIndex, info);
+    }
 #endif
 }
 
