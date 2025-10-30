@@ -49,6 +49,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void stateChanged(TextEditTextToSpeech::TextToSpeechWidget::State state);
     void changeVisibility(bool state);
+    void aboutToSynthesize(qsizetype id);
 
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotVolumeChanged(int value);

@@ -30,6 +30,11 @@ TextToSpeechInterface::TextToSpeechInterface(TextToSpeechWidget *textToSpeechWid
             &TextEditTextToSpeech::TextToSpeech::stateChanged,
             d->mTextToSpeechWidget,
             &TextEditTextToSpeech::TextToSpeechWidget::slotStateChanged);
+
+    connect(TextEditTextToSpeech::TextToSpeech::self(),
+            &TextEditTextToSpeech::TextToSpeech::aboutToSynthesize,
+            d->mTextToSpeechWidget,
+            &TextEditTextToSpeech::TextToSpeechWidget::aboutToSynthesize);
 }
 
 TextToSpeechInterface::~TextToSpeechInterface() = default;
