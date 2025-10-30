@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "config-textautogeneratetext.h"
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
@@ -20,6 +21,7 @@ class TextAutoGenerateTextPlugin;
 class TextAutoGenerateChatSettings;
 class TextAutoGenerateSettings;
 class TextAutoGenerateTextInstancesManager;
+class TextAutoGenerateTextToSpeechEnqueueManager;
 /**
  * @brief The TextAutoGenerateManager class
  * @author Laurent Montel <montel@kde.org>
@@ -115,6 +117,10 @@ public:
     [[nodiscard]] bool enableTextToSpeech() const;
     void setEnableTextToSpeech(bool newEnableTextToSpeech);
 
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueManager *textAutoGenerateTextToSpeechEnqueueManager() const;
+#endif
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -149,6 +155,9 @@ private:
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
     TextAutoGenerateTextInstancesManager *const mTextAutoGenerateTextInstancesManager;
     TextAutoGenerateSettings *const mTextAutoGenerateSettings;
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextAutoGenerateTextToSpeechEnqueueManager *const mTextAutoGenerateTextToSpeechEnqueueManager;
+#endif
     QByteArray mCurrentChatId;
     QByteArray mSwitchToChatId;
     QString mSwitchToChatName;

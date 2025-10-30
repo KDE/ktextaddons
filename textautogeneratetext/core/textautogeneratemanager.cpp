@@ -4,13 +4,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratemanager.h"
-#include "config-textautogeneratetext.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratesettings.h"
 #include "core/textautogeneratetoolcalljob.h"
-#include "core/tools/textautogeneratetexttoolplugin.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratechatsettings.h"
 #include "textautogenerateengineloader.h"
@@ -22,6 +20,9 @@
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
 #include "textautogeneratemanageradaptor.h"
 #include <QDBusConnection>
+#endif
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
 #endif
 
 #include <KLocalizedString>
@@ -47,6 +48,9 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    , mTextAutoGenerateTextToSpeechEnqueueManager(new TextAutoGenerateTextToSpeechEnqueueManager(this))
+#endif
 {
     mTextAutoGenerateChatsModel->setTextAutoGenerateChatSettings(mTextAutoGenerateChatSettings.get());
     // Load TextAutoGenerateTextToolPluginManager
@@ -609,6 +613,11 @@ void TextAutoGenerateManager::slotPluginFinished(const QString &str, const QByte
     // content.info =
     replaceContent(chatId, messageUuid, content);
     changeInProgress(chatId, messageUuid, false);
+}
+
+TextAutoGenerateTextToSpeechEnqueueManager *TextAutoGenerateManager::textAutoGenerateTextToSpeechEnqueueManager() const
+{
+    return mTextAutoGenerateTextToSpeechEnqueueManager;
 }
 
 #include "moc_textautogeneratemanager.cpp"
