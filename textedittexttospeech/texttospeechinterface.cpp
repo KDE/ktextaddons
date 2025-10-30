@@ -41,15 +41,19 @@ bool TextToSpeechInterface::isReady() const
 
 void TextToSpeechInterface::say(const QString &text)
 {
+    intializePlay();
+    TextEditTextToSpeech::TextToSpeech::self()->say(text);
+}
+
+void TextToSpeechInterface::intializePlay()
+{
     d->mTextToSpeechWidget->setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
     d->mTextToSpeechWidget->showWidget();
-    TextEditTextToSpeech::TextToSpeech::self()->say(text);
 }
 
 qsizetype TextToSpeechInterface::enqueue(const QString &text)
 {
-    d->mTextToSpeechWidget->setState(TextEditTextToSpeech::TextToSpeechWidget::Play);
-    d->mTextToSpeechWidget->showWidget();
+    intializePlay();
     return TextEditTextToSpeech::TextToSpeech::self()->enqueue(text);
 }
 

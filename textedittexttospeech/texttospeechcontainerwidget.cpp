@@ -35,21 +35,22 @@ TextToSpeechContainerWidget::~TextToSpeechContainerWidget() = default;
 
 void TextToSpeechContainerWidget::say(const QString &text)
 {
-    if (!d->textToSpeechWidget) {
-        d->textToSpeechWidget = new TextToSpeechWidget(this);
-        connect(d->textToSpeechWidget, &TextToSpeechWidget::changeVisibility, this, &TextToSpeechContainerWidget::setVisible);
-        d->mainLayout->addWidget(d->textToSpeechWidget);
-    }
+    initialize();
     d->textToSpeechWidget->say(text);
 }
 
-qsizetype TextToSpeechContainerWidget::enqueue(const QString &text)
+void TextToSpeechContainerWidget::initialize()
 {
     if (!d->textToSpeechWidget) {
         d->textToSpeechWidget = new TextToSpeechWidget(this);
         connect(d->textToSpeechWidget, &TextToSpeechWidget::changeVisibility, this, &TextToSpeechContainerWidget::setVisible);
         d->mainLayout->addWidget(d->textToSpeechWidget);
     }
+}
+
+qsizetype TextToSpeechContainerWidget::enqueue(const QString &text)
+{
+    initialize();
     return d->textToSpeechWidget->enqueue(text);
 }
 

@@ -26,6 +26,7 @@ public:
     [[nodiscard]] qsizetype enqueue(const QString &text);
 
 private:
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void initialize();
     std::unique_ptr<TextToSpeechContainerWidgetPrivate> const d;
 };
 }
