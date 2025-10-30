@@ -201,6 +201,15 @@ target_sources(
         core/textautogeneratesearchmessagesettings.cpp
 )
 
+if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
+    target_sources(
+        KF6TextAutoGenerateText
+        PRIVATE
+            core/texttospeech/textautogeneratetexttospeechinfo.h
+            core/texttospeech/textautogeneratetexttospeechinfo.cpp
+    )
+endif()
+
 target_sources(
     KF6TextAutoGenerateText
     PRIVATE
