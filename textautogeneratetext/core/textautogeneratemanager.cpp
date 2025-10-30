@@ -638,7 +638,17 @@ TextAutoGenerateTextToSpeechEnqueueManager *TextAutoGenerateManager::textAutoGen
 
 void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId)
 {
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    if (previousId != -1) {
+        // Disable info
+    }
+    if (currentId != -1) {
+        // Show info
+    } else {
+        // Disable info
+    }
     // TODO
+#endif
 }
 
 #include "moc_textautogeneratemanager.cpp"
