@@ -35,6 +35,7 @@ public:
         HoverHighlight = 1,
         Edited = 2,
         InProgress = 4,
+        TextToSpeechInProgress = 8,
     };
     Q_FLAGS(MessageState MessageStates)
     Q_DECLARE_FLAGS(MessageStates, MessageState)
@@ -98,6 +99,9 @@ public:
     void generateHtml(const QString &searchText = {}, int hightLightStringIndex = -1);
 
     [[nodiscard]] int numberOfTextSearched() const;
+
+    [[nodiscard]] bool textToSpeechInProgress() const;
+    void setTextToSpeechInProgress(bool newTextToSpeechInProgress);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;

@@ -175,6 +175,16 @@ void TextAutoGenerateMessage::setEditingMode(bool newEditingMode)
     assignMessageStateValue(MessageState::Edited, newEditingMode);
 }
 
+bool TextAutoGenerateMessage::textToSpeechInProgress() const
+{
+    return messageStateValue(MessageState::TextToSpeechInProgress);
+}
+
+void TextAutoGenerateMessage::setTextToSpeechInProgress(bool newTextToSpeechInProgress)
+{
+    assignMessageStateValue(MessageState::TextToSpeechInProgress, newTextToSpeechInProgress);
+}
+
 QString TextAutoGenerateMessage::modelName() const
 {
     if (mMessageInfo) {

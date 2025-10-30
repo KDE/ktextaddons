@@ -27,6 +27,7 @@ void TextAutoGenerateMessageTest::shouldHaveDefaultValues()
     QVERIFY(!msg.inProgress());
     QVERIFY(!msg.editingMode());
     QVERIFY(!msg.mouseHover());
+    QVERIFY(!msg.textToSpeechInProgress());
     QVERIFY(msg.uuid().isEmpty());
     QVERIFY(msg.answerUuid().isEmpty());
     QVERIFY(msg.engineName().isEmpty());
