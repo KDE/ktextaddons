@@ -205,8 +205,8 @@ if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
     target_sources(
         KF6TextAutoGenerateText
         PRIVATE
-            core/texttospeech/textautogeneratetexttospeechinfo.h
-            core/texttospeech/textautogeneratetexttospeechinfo.cpp
+            core/texttospeech/textautogeneratetexttospeechenqueueinfo.h
+            core/texttospeech/textautogeneratetexttospeechenqueueinfo.cpp
     )
 endif()
 

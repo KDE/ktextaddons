@@ -10,11 +10,11 @@
 #include <QByteArray>
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechInfo
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToSpeechEnqueueInfo
 {
 public:
-    TextAutoGenerateTextToSpeechInfo();
-    ~TextAutoGenerateTextToSpeechInfo();
+    TextAutoGenerateTextToSpeechEnqueueInfo();
+    ~TextAutoGenerateTextToSpeechEnqueueInfo();
 
     [[nodiscard]] QByteArray chatId() const;
     void setChatId(const QByteArray &newChatId);
@@ -22,7 +22,7 @@ public:
     [[nodiscard]] QByteArray messageId() const;
     void setMessageId(const QByteArray &newMessageId);
 
-    [[nodiscard]] bool operator==(const TextAutoGenerateTextToSpeechInfo &other) const;
+    [[nodiscard]] bool operator==(const TextAutoGenerateTextToSpeechEnqueueInfo &other) const;
     [[nodiscard]] bool isValid() const;
 
 private:
@@ -30,5 +30,5 @@ private:
     QByteArray mMessageId;
 };
 }
-Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextToSpeechInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToSpeechInfo &t);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextToSpeechEnqueueInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToSpeechEnqueueInfo &t);

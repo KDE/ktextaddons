@@ -6,12 +6,12 @@
 #pragma once
 #include <QObject>
 
-class TextAutoGenerateTextToSpeechInfoTest : public QObject
+class TextAutoGenerateTextToSpeechInfoEnqueueTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextToSpeechInfoTest(QObject *parent = nullptr);
-    ~TextAutoGenerateTextToSpeechInfoTest() override = default;
+    explicit TextAutoGenerateTextToSpeechInfoEnqueueTest(QObject *parent = nullptr);
+    ~TextAutoGenerateTextToSpeechInfoEnqueueTest() override = default;
 
 private Q_SLOTS:
     void shouldHaveDefaultValues();
