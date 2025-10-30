@@ -146,6 +146,7 @@ private Q_SLOTS:
     void slotChatListChanged(const QString &id);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId);
     TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
     TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
     TEXTAUTOGENERATETEXT_NO_EXPORT void

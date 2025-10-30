@@ -58,11 +58,12 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void stateChanged(TextToSpeech::State);
-    void aboutToSynthesize(qsizetype id);
+    void aboutToSynthesize(qsizetype previousId, qsizetype currentId);
 
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotStateChanged();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT explicit TextToSpeech(QObject *parent = nullptr);
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotAboutToSynthesize(qsizetype id);
 
     std::unique_ptr<TextToSpeechPrivate> const d;
 };

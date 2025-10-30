@@ -19,6 +19,7 @@ class TextEditTextToSpeech::TextToSpeechPrivate
 public:
     QString mDefaultEngine;
     QTextToSpeech *mTextToSpeech = nullptr;
+    qsizetype mCurrentTextToSpeechId = -1;
 };
 
 using namespace TextEditTextToSpeech;
@@ -40,7 +41,7 @@ void TextToSpeech::reloadSettings()
         if (d->mTextToSpeech) {
             if (d->mTextToSpeech->engine() != engineName) {
                 disconnect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
-                disconnect(d->mTextToSpeech, &QTextToSpeech::aboutToSynthesize, this, &TextToSpeech::aboutToSynthesize);
+                disconnect(d->mTextToSpeech, &QTextToSpeech::aboutToSynthesize, this, &TextToSpeech::slotAboutToSynthesize);
                 delete d->mTextToSpeech;
                 d->mTextToSpeech = nullptr;
             }
@@ -49,7 +50,7 @@ void TextToSpeech::reloadSettings()
     if (!d->mTextToSpeech) {
         d->mTextToSpeech = new QTextToSpeech(engineName, this);
         connect(d->mTextToSpeech, &QTextToSpeech::stateChanged, this, &TextToSpeech::slotStateChanged);
-        connect(d->mTextToSpeech, &QTextToSpeech::aboutToSynthesize, this, &TextToSpeech::aboutToSynthesize);
+        connect(d->mTextToSpeech, &QTextToSpeech::aboutToSynthesize, this, &TextToSpeech::slotAboutToSynthesize);
     }
     d->mDefaultEngine = engineName;
     const int rate = settings.rate;
@@ -69,6 +70,13 @@ TextToSpeech *TextToSpeech::self()
 {
     static TextToSpeech s_self;
     return &s_self;
+}
+
+void TextToSpeech::slotAboutToSynthesize(qsizetype id)
+{
+    Q_EMIT aboutToSynthesize(d->mCurrentTextToSpeechId, id);
+    // Update it
+    d->mCurrentTextToSpeechId = id;
 }
 
 void TextToSpeech::slotStateChanged()

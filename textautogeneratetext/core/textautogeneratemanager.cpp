@@ -23,6 +23,7 @@
 #endif
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
+#include <TextEditTextToSpeech/TextToSpeech>
 #endif
 
 #include <KLocalizedString>
@@ -82,6 +83,21 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             });
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
     mTextAutoGenerateSettings->load();
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    connect(TextEditTextToSpeech::TextToSpeech::self(),
+            &TextEditTextToSpeech::TextToSpeech::aboutToSynthesize,
+            this,
+            &TextAutoGenerateManager::slotAboutToSynthesizeChanged);
+    connect(TextEditTextToSpeech::TextToSpeech::self(),
+            &TextEditTextToSpeech::TextToSpeech::stateChanged,
+            this,
+            [](TextEditTextToSpeech::TextToSpeech::State state) {
+                if (state != TextEditTextToSpeech::TextToSpeech::Speaking) {
+                    // Clear list ?
+                }
+                // TODO
+            });
+#endif
 }
 
 TextAutoGenerateManager::~TextAutoGenerateManager()
@@ -618,6 +634,11 @@ void TextAutoGenerateManager::slotPluginFinished(const QString &str, const QByte
 TextAutoGenerateTextToSpeechEnqueueManager *TextAutoGenerateManager::textAutoGenerateTextToSpeechEnqueueManager() const
 {
     return mTextAutoGenerateTextToSpeechEnqueueManager;
+}
+
+void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId)
+{
+    // TODO
 }
 
 #include "moc_textautogeneratemanager.cpp"
