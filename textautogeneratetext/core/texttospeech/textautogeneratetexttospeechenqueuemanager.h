@@ -19,15 +19,15 @@ public:
 
     void clear();
 
-    [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueInfo take(qsizetype index);
-    [[nodiscard]] bool contains(qsizetype index) const;
-    void insert(qsizetype index, const TextAutoGenerateTextToSpeechEnqueueInfo &info);
+    void insert(const TextAutoGenerateTextToSpeechEnqueueInfo &info);
 
     [[nodiscard]] bool contains(const TextAutoGenerateTextToSpeechEnqueueInfo &info) const;
 
     [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueInfo value(qsizetype index);
 
+    [[nodiscard]] QList<TextAutoGenerateTextToSpeechEnqueueInfo> enqueueList() const;
+
 private:
-    QMap<qsizetype, TextAutoGenerateTextToSpeechEnqueueInfo> mEnqueueList;
+    QList<TextAutoGenerateTextToSpeechEnqueueInfo> mEnqueueList;
 };
 }

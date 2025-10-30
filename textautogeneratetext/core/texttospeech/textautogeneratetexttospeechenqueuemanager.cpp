@@ -20,37 +20,26 @@ void TextAutoGenerateTextToSpeechEnqueueManager::clear()
 
 TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::value(qsizetype index)
 {
-    const TextAutoGenerateTextToSpeechEnqueueInfo info = mEnqueueList.value(index);
-    return info;
+    return mEnqueueList.value(index);
 }
 
-TextAutoGenerateTextToSpeechEnqueueInfo TextAutoGenerateTextToSpeechEnqueueManager::take(qsizetype index)
+QList<TextAutoGenerateTextToSpeechEnqueueInfo> TextAutoGenerateTextToSpeechEnqueueManager::enqueueList() const
 {
-    const TextAutoGenerateTextToSpeechEnqueueInfo info = mEnqueueList.take(index);
-    return info;
-}
-
-bool TextAutoGenerateTextToSpeechEnqueueManager::contains(qsizetype index) const
-{
-    return mEnqueueList.contains(index);
+    return mEnqueueList;
 }
 
 bool TextAutoGenerateTextToSpeechEnqueueManager::contains(const TextAutoGenerateTextToSpeechEnqueueInfo &info) const
 {
-    for (const auto &[key, value] : mEnqueueList.asKeyValueRange()) {
-        if (value == info) {
-            return true;
-        }
+    // we can have several invalid element. Necessary if we don't have info.
+    if (!info.isValid()) {
+        return false;
     }
-    return false;
+    return mEnqueueList.contains(info);
 }
 
-void TextAutoGenerateTextToSpeechEnqueueManager::insert(qsizetype index, const TextAutoGenerateTextToSpeechEnqueueInfo &info)
+void TextAutoGenerateTextToSpeechEnqueueManager::insert(const TextAutoGenerateTextToSpeechEnqueueInfo &info)
 {
-    if (!info.isValid()) {
-        return;
-    }
-    mEnqueueList.insert(index, info);
+    mEnqueueList.append(info);
 }
 
 #include "moc_textautogeneratetexttospeechenqueuemanager.cpp"
