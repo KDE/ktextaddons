@@ -38,3 +38,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToSp
     d.space() << "messageId:" << t.messageId();
     return d;
 }
+
+bool TextAutoGenerateTextToSpeechInfo::operator==(const TextAutoGenerateTextToSpeechInfo &other) const
+{
+    return mChatId == other.chatId() && mMessageId == other.messageId();
+}

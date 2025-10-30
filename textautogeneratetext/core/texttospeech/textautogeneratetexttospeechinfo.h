@@ -22,6 +22,8 @@ public:
     [[nodiscard]] QByteArray messageId() const;
     void setMessageId(const QByteArray &newMessageId);
 
+    [[nodiscard]] bool operator==(const TextAutoGenerateTextToSpeechInfo &other) const;
+
 private:
     QByteArray mChatId;
     QByteArray mMessageId;
