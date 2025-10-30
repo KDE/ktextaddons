@@ -72,11 +72,10 @@ TextToSpeech *TextToSpeech::self()
     return &s_self;
 }
 
-void TextToSpeech::slotAboutToSynthesize(qsizetype id)
+void TextToSpeech::slotAboutToSynthesize([[maybe_unused]] qsizetype id)
 {
-    Q_EMIT aboutToSynthesize(d->mCurrentTextToSpeechId, id);
-    // Update it
-    d->mCurrentTextToSpeechId = id;
+    const auto currentSpeechId = d->mCurrentTextToSpeechId;
+    Q_EMIT aboutToSynthesize(currentSpeechId, ++d->mCurrentTextToSpeechId);
 }
 
 void TextToSpeech::slotStateChanged()
@@ -101,6 +100,8 @@ void TextToSpeech::slotStateChanged()
     }
     Q_EMIT stateChanged(state);
     if (state == TextToSpeech::Ready) {
+        // Workaround for bug in qtextspeech
+        d->mTextToSpeech->stop();
         Q_EMIT aboutToSynthesize(d->mCurrentTextToSpeechId, -1);
         // Reinitialize
         d->mCurrentTextToSpeechId = -1;

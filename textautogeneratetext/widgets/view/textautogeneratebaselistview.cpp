@@ -182,8 +182,10 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     info.setChatId(chatId);
     info.setMessageId(uuid);
     if (!mManager->textAutoGenerateTextToSpeechEnqueueManager()->contains(info)) {
-        const qsizetype textToSpeechIndex = TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText);
-        mManager->textAutoGenerateTextToSpeechEnqueueManager()->insert(textToSpeechIndex, info);
+        mManager->textAutoGenerateTextToSpeechEnqueueManager()->insert(info);
+        if (TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText) != -1) {
+            mManager->textAutoGenerateTextToSpeechEnqueueManager()->clear();
+        }
     }
 #endif
 }

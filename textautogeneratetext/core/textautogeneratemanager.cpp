@@ -88,15 +88,6 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
             &TextEditTextToSpeech::TextToSpeech::aboutToSynthesize,
             this,
             &TextAutoGenerateManager::slotAboutToSynthesizeChanged);
-    connect(TextEditTextToSpeech::TextToSpeech::self(),
-            &TextEditTextToSpeech::TextToSpeech::stateChanged,
-            this,
-            [](TextEditTextToSpeech::TextToSpeech::State state) {
-                if (state != TextEditTextToSpeech::TextToSpeech::Speaking) {
-                    // Clear list ?
-                }
-                // TODO
-            });
 #endif
 }
 
@@ -640,18 +631,34 @@ TextAutoGenerateTextToSpeechEnqueueManager *TextAutoGenerateManager::textAutoGen
 
 void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId)
 {
+    // qDebug() << " previousId " << previousId << " currentId " << currentId;
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     if (previousId != -1) {
-        const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->take(previousId);
+        const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(previousId);
         if (info.isValid()) {
-            // Disable info
+            auto messagesModel = messagesModelFromChatId(info.chatId());
+            if (messagesModel) {
+                messagesModel->changeTextToSpeechInProgress(info.messageId(), false);
+            } else {
+                qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << info.chatId();
+            }
         }
+        // qDebug() << " enqueue list " << mTextAutoGenerateTextToSpeechEnqueueManager->enqueueList() << "previousId " << previousId;
     }
     if (currentId != -1) {
         const TextAutoGenerateTextToSpeechEnqueueInfo info = mTextAutoGenerateTextToSpeechEnqueueManager->value(currentId);
         if (info.isValid()) {
-            // Show info
+            auto messagesModel = messagesModelFromChatId(info.chatId());
+            if (messagesModel) {
+                messagesModel->changeTextToSpeechInProgress(info.messageId(), true);
+            } else {
+                qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << info.chatId();
+            }
+            // qDebug() << " enqueue list " << mTextAutoGenerateTextToSpeechEnqueueManager->enqueueList() << "currentId " << currentId;
         }
+    } else {
+        mTextAutoGenerateTextToSpeechEnqueueManager->clear();
+        // qDebug() << mTextAutoGenerateTextToSpeechEnqueueManager->enqueueList();
     }
 #endif
 }
