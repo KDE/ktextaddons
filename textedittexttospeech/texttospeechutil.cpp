@@ -5,12 +5,12 @@
 */
 
 #include "texttospeechutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfig>
 #include <KConfigGroup>
 #include <QIODevice>
 
+using namespace Qt::Literals::StringLiterals;
 QString TextEditTextToSpeech::TextToSpeechUtil::textToSpeechConfigFileName()
 {
     return u"texttospeechrc"_s;
