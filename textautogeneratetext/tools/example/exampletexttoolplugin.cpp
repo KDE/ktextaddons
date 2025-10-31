@@ -48,5 +48,10 @@ TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *ExampleTextToolPlugin::
     return new ExampleTextToolPluginJob(this);
 }
 
+int ExampleTextToolPlugin::order() const
+{
+    return 30;
+}
+
 #include "exampletexttoolplugin.moc"
 #include "moc_exampletexttoolplugin.cpp"

@@ -22,6 +22,7 @@ public:
 
     [[nodiscard]] virtual QString displayName() const = 0;
     [[nodiscard]] virtual QString description() const = 0;
+    [[nodiscard]] virtual int order() const = 0;
 
     [[nodiscard]] QJsonObject metadata();
 

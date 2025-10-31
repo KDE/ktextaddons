@@ -20,7 +20,14 @@ public:
     [[nodiscard]] QString description() const override;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() override;
+
+    [[nodiscard]] int order() const override;
 };
+
+int CustomTextToolPlugin::order() const
+{
+    return 20;
+}
 
 TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *CustomTextToolPlugin::callTool()
 {
@@ -52,7 +59,13 @@ public:
     [[nodiscard]] QJsonObject testGenerateMetadata() const;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() override;
+    [[nodiscard]] int order() const override;
 };
+
+int CustomTextToolPlugin2::order() const
+{
+    return 25;
+}
 
 TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *CustomTextToolPlugin2::callTool()
 {
