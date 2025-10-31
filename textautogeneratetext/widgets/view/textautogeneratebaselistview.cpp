@@ -190,7 +190,7 @@ void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &
     info.setMessageId(uuid);
     if (!mManager->textAutoGenerateTextToSpeechEnqueueManager()->contains(info)) {
         mManager->textAutoGenerateTextToSpeechEnqueueManager()->insert(info);
-        if (TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText) != -1) {
+        if (TextEditTextToSpeech::TextToSpeech::self()->enqueue(messageText) == -1) {
             mManager->textAutoGenerateTextToSpeechEnqueueManager()->clear();
         }
     }
