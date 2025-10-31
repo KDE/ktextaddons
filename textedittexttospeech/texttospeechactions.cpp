@@ -5,12 +5,12 @@
 */
 
 #include "texttospeechactions.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QAction>
 
 using namespace TextEditTextToSpeech;
+using namespace Qt::Literals::StringLiterals;
 
 class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechActionsPrivate
 {
