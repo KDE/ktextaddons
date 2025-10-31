@@ -42,8 +42,6 @@ public:
     ~TextAutoGenerateTextToolPluginManager() override;
     static TextAutoGenerateTextToolPluginManager *self();
 
-    [[nodiscard]] QList<TextAutoGenerateTextToolPlugin *> pluginsList() const;
-
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
 

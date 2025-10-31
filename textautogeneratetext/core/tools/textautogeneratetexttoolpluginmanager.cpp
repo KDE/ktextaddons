@@ -140,20 +140,6 @@ TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFro
     return nullptr;
 }
 
-QList<TextAutoGenerateTextToolPlugin *> TextAutoGenerateTextToolPluginManager::pluginsList() const
-{
-    QList<TextAutoGenerateTextToolPlugin *> lst;
-
-    lst.reserve(mPluginList.count());
-    const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
-        if (auto plugin = (*it).plugin) {
-            lst << plugin;
-        }
-    }
-    return lst;
-}
-
 QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList<QByteArray> &tools) const
 {
     QJsonArray toolsArray;
