@@ -5,13 +5,13 @@
 */
 
 #include "texttospeechsliderwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QFontMetrics>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSlider>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 TextToSpeechSliderWidget::TextToSpeechSliderWidget(const QString &labelInfo, QWidget *parent)
     : QWidget{parent}

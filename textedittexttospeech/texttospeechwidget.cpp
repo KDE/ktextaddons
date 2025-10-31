@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "texttospeechactions.h"
 #include "texttospeechconfigdialog.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace std::chrono_literals;
 #include <chrono>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextEditTextToSpeech;
 
 class Q_DECL_HIDDEN TextEditTextToSpeech::TextToSpeechWidgetPrivate
