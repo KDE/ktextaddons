@@ -77,12 +77,10 @@ void TextToSpeechActionsPrivate::updateButtonState()
 
 void TextToSpeechActions::slotPlayPause()
 {
-    if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Pause) {
+    if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Pause || d->mState == TextEditTextToSpeech::TextToSpeechWidget::Stop) {
         d->mState = TextEditTextToSpeech::TextToSpeechWidget::Play;
     } else if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Play) {
         d->mState = TextEditTextToSpeech::TextToSpeechWidget::Pause;
-    } else if (d->mState == TextEditTextToSpeech::TextToSpeechWidget::Stop) {
-        d->mState = TextEditTextToSpeech::TextToSpeechWidget::Play;
     } else {
         return;
     }
