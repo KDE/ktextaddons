@@ -171,7 +171,7 @@ void TextAutoGenerateBaseListView::slotCopyMessage(const QModelIndex &index)
 
 void TextAutoGenerateBaseListView::slotStopTextToSpeechRequested([[maybe_unused]] const QModelIndex &index)
 {
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeech::self()->stop();
 #endif
 }
