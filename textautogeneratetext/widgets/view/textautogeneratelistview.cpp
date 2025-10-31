@@ -43,6 +43,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     connect(delegate, &TextAutoGenerateListViewDelegate::removeMessage, this, &TextAutoGenerateListView::slotRemoveRequested);
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(delegate, &TextAutoGenerateListViewDelegate::textToSpeechRequested, this, &TextAutoGenerateListView::slotTextToSpeechRequested);
+    connect(delegate, &TextAutoGenerateListViewDelegate::stopTextToSpeechRequested, this, &TextAutoGenerateListView::slotStopTextToSpeechRequested);
 #endif
 }
 

@@ -44,6 +44,7 @@ Q_SIGNALS:
     void refreshRequested(const QModelIndex &index);
     void removeMessage(const QModelIndex &index);
     void textToSpeechRequested(const QModelIndex &index);
+    void stopTextToSpeechRequested(const QModelIndex &index);
     void updateView();
 
 private:

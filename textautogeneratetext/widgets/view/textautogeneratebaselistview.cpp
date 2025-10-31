@@ -169,6 +169,13 @@ void TextAutoGenerateBaseListView::slotCopyMessage(const QModelIndex &index)
     clip->setText(messageText, QClipboard::Selection);
 }
 
+void TextAutoGenerateBaseListView::slotStopTextToSpeechRequested([[maybe_unused]] const QModelIndex &index)
+{
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextEditTextToSpeech::TextToSpeech::self()->stop();
+#endif
+}
+
 void TextAutoGenerateBaseListView::slotTextToSpeechRequested(const QModelIndex &index)
 {
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT

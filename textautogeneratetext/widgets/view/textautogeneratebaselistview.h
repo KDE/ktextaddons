@@ -34,6 +34,7 @@ protected:
     void resizeEvent(QResizeEvent *ev) override;
     void slotCopyMessage(const QModelIndex &index);
     void slotTextToSpeechRequested(const QModelIndex &index);
+    void slotStopTextToSpeechRequested(const QModelIndex &index);
     [[nodiscard]] QStyleOptionViewItem listViewOptions() const;
     void checkIfAtBottom();
     void maybeScrollToBottom();

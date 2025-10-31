@@ -415,7 +415,8 @@ bool TextAutoGenerateListViewDelegate::helpEvent(QHelpEvent *helpEvent, QAbstrac
             return true;
         }
         if (layout.textToSpeechIconRect.contains(helpEventPos)) {
-            QToolTip::showText(helpEvent->globalPos(), i18nc("@info:tooltip", "Speak"), view);
+            const bool textToSpeechInProgress = index.data(TextAutoGenerateMessagesModel::TextToSpeechInProgressRole).toBool();
+            QToolTip::showText(helpEvent->globalPos(), textToSpeechInProgress ? i18nc("@info:tooltip", "Stop") : i18nc("@info:tooltip", "Speak"), view);
             return true;
         }
         if (layout.copyIconRect.contains(helpEventPos)) {
@@ -588,7 +589,12 @@ bool TextAutoGenerateListViewDelegate::handleMouseEvent(QMouseEvent *mouseEvent,
             Q_EMIT refreshRequested(index);
             return true;
         } else if (layout.textToSpeechIconRect.contains(mouseEvent->pos())) {
-            Q_EMIT textToSpeechRequested(index);
+            const bool textToSpeechInProgress = index.data(TextAutoGenerateMessagesModel::TextToSpeechInProgressRole).toBool();
+            if (textToSpeechInProgress) {
+                Q_EMIT stopTextToSpeechRequested(index);
+            } else {
+                Q_EMIT textToSpeechRequested(index);
+            }
             return true;
         }
         // don't return true here, we need to send mouse release events to other helpers (ex: click on image)
