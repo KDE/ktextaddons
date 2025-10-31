@@ -88,8 +88,16 @@ void TextAutoGenerateTextToolPluginManager::loadPlugin(TextAutoGenerateTextToolP
 QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> TextAutoGenerateTextToolPluginManager::activePluginTools() const
 {
     QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> list;
-    const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+
+    QList<TextAutoGenerateTextToolPluginManagerInfo> activePluginsList = mPluginList;
+    std::sort(activePluginsList.begin(),
+              activePluginsList.end(),
+              [](const TextAutoGenerateTextToolPluginManagerInfo &left, const TextAutoGenerateTextToolPluginManagerInfo &right) {
+                  return left.plugin->order() < right.plugin->order();
+              });
+
+    const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(activePluginsList.constEnd());
+    for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = activePluginsList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             if (plugin->enabled()) {
                 const TextAutoGenerateTextToolPluginManager::PluginToolInfo info{
@@ -135,6 +143,7 @@ TextAutoGenerateTextToolPlugin *TextAutoGenerateTextToolPluginManager::pluginFro
 QList<TextAutoGenerateTextToolPlugin *> TextAutoGenerateTextToolPluginManager::pluginsList() const
 {
     QList<TextAutoGenerateTextToolPlugin *> lst;
+
     lst.reserve(mPluginList.count());
     const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
     for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
