@@ -6,7 +6,9 @@ Various text handling addons:
 - Text to Speak widgets
 - Text translator widgets (Several backend)
 - Text Emoticon support
-- LLM support widgets/backend (ollama)
+- Text Utils lib
+- Text Widgets Addons (what's new info, verify new version etc.)
+- LLM support widgets/backend (ollama/other service)
 
 ## Dependencies
 
