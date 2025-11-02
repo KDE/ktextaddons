@@ -23,7 +23,7 @@ public:
 
     void say(const QString &text);
 
-    [[nodiscard]] qsizetype enqueue(const QString &text);
+    qsizetype enqueue(const QString &text);
 
 private:
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void initialize();

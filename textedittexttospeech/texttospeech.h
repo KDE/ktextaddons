@@ -43,7 +43,7 @@ public:
     [[nodiscard]] QLocale locale() const;
 
     void reloadSettings();
-    [[nodiscard]] qsizetype enqueue(const QString &text);
+    qsizetype enqueue(const QString &text);
 
 public Q_SLOTS:
     void say(const QString &text);
