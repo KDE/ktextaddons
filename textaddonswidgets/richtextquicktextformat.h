@@ -54,6 +54,7 @@ private:
     TEXTADDONSWIDGETS_NO_EXPORT void updatePosition();
     TEXTADDONSWIDGETS_NO_EXPORT void initializeTextFormat();
     TEXTADDONSWIDGETS_NO_EXPORT void updateActions();
+    TEXTADDONSWIDGETS_NO_EXPORT void slotSelectionChanged();
     QuickTextFormatTypes mFormatTypes = QuickTextFormatType::Unknown;
     QTextEdit *const mEditor;
     QTimer *const mUpdatePositionTimer;

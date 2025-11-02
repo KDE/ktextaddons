@@ -32,7 +32,7 @@ RichTextQuickTextFormat::RichTextQuickTextFormat(QTextEdit *editor, QWidget *par
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint | Qt::WindowDoesNotAcceptFocus);
 
     if (mEditor) {
-        connect(mEditor, &QTextEdit::selectionChanged, this, &RichTextQuickTextFormat::updatePosition);
+        connect(mEditor, &QTextEdit::selectionChanged, this, &RichTextQuickTextFormat::slotSelectionChanged);
         mUpdatePositionTimer->setInterval(20ms);
         mUpdatePositionTimer->setSingleShot(true);
         connect(mUpdatePositionTimer, &QTimer::timeout, this, &RichTextQuickTextFormat::updatePosition);
@@ -187,6 +187,16 @@ void RichTextQuickTextFormat::updatePosition()
     }
 }
 
+void RichTextQuickTextFormat::slotSelectionChanged()
+{
+    if (!mEnabled) {
+        return;
+    }
+    if (!mEditor->textCursor().hasSelection()) {
+        hide();
+    }
+}
+
 bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
 {
     if (mEnabled) {
@@ -204,6 +214,19 @@ bool RichTextQuickTextFormat::eventFilter(QObject *watched, QEvent *event)
                         mUpdatePositionTimer->stop();
                     }
                     hide();
+                }
+            } else if (event->type() == QEvent::MouseButtonRelease) {
+                if (!isVisible()) {
+                    if (mEditor->textCursor().hasSelection()) {
+                        updatePosition();
+                    }
+                } else {
+                    if (!mEditor->textCursor().hasSelection()) {
+                        if (mUpdatePositionTimer->isActive()) {
+                            mUpdatePositionTimer->stop();
+                        }
+                        hide();
+                    }
                 }
             }
         }
