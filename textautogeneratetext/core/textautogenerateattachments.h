@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <QDebug>
 #include <QList>
 #include <QSharedData>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
@@ -33,3 +34,5 @@ private:
     QList<TextAutoGenerateAttachment> mMessageAttachments;
 };
 }
+
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachments &t);

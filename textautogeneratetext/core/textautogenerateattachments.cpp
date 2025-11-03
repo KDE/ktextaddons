@@ -53,12 +53,36 @@ bool TextAutoGenerateAttachments::operator==(const TextAutoGenerateAttachments &
 
 QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachments &attachments)
 {
-    // TODO
-    return {};
+    QJsonArray array;
+    for (const auto &att : attachments.messageAttachments()) {
+        // TODO array.append(TextAutoGenerateAttachment::serialize(attachmentInfo));
+    }
+    return array;
 }
 
-TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJsonArray &o, const QByteArray &messageId)
+TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJsonArray &attachmentsArray, const QByteArray &messageId)
 {
-    // TODO
-    return {};
+    QList<TextAutoGenerateAttachment> attachmentList;
+    for (int i = 0; i < attachmentsArray.count(); ++i) {
+        // TODO
+        /*
+        const QJsonObject attachment = attachmentsArray.at(i).toObject();
+        TextAutoGenerateAttachment att = TextAutoGenerateAttachment::deserialize(attachment);
+        // att.setAttachmentId(MessageUtils::generateUniqueId(messageId, i));
+        if (att.isValid()) {
+            attachmentInfo.append(std::move(att));
+        }
+        */
+    }
+    auto final = new TextAutoGenerateAttachments;
+    final->setMessageAttachments(attachmentList);
+    return final;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateAttachments &t)
+{
+    for (int i = 0; i < t.messageAttachments().count(); i++) {
+        d.space() << t.messageAttachments().at(i) << "\n";
+    }
+    return d;
 }
