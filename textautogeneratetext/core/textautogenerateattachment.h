@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
  * @brief The TextAutoGenerateMessage class
  * @author Laurent Montel <montel@kde.org>
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment : public QSharedData
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment
 {
     Q_GADGET
 public:
@@ -31,7 +31,6 @@ public:
 
     TextAutoGenerateAttachment();
     ~TextAutoGenerateAttachment();
-    explicit TextAutoGenerateAttachment(const TextAutoGenerateAttachment &other);
 
     [[nodiscard]] QByteArray base64() const;
     void setBase64(const QByteArray &b);
@@ -43,8 +42,8 @@ public:
     [[nodiscard]] AttachmentType attachmentType() const;
     void setAttachmentType(AttachmentType newAttachmentType);
 
-    static void serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o);
-    static TextAutoGenerateAttachment *deserialize(const QJsonObject &o);
+    [[nodiscard]] static QJsonObject serialize(const TextAutoGenerateAttachment &attachment);
+    [[nodiscard]] static TextAutoGenerateAttachment deserialize(const QJsonObject &o);
 
     [[nodiscard]] QByteArray mimeType() const;
     void setMimeType(const QByteArray &newMimeType);

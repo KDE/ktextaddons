@@ -23,8 +23,6 @@ public:
     [[nodiscard]] QList<TextAutoGenerateAttachment> messageAttachments() const;
     void setMessageAttachments(const QList<TextAutoGenerateAttachment> &newMessageAttachments);
 
-    void parseMessageAttachments(const QJsonArray &attachments, const QByteArray &messageId);
-
     [[nodiscard]] bool operator==(const TextAutoGenerateAttachments &other) const;
 
     [[nodiscard]] static QJsonArray serialize(const TextAutoGenerateAttachments &attachments);

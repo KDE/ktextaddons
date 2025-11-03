@@ -279,11 +279,11 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
         }
     }
     // TODO
-    /*
     if (auto att = msg.messageAttachments(); att) {
-        TextAutoGenerateAttachments::serialize(*att, o);
-    }
+        /*
+        o["attachments"_L1] = TextAutoGenerateAttachments::serialize(*att);
     */
+    }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
     if (toBinary) {
@@ -310,7 +310,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
 
     // TODO
     /*
-    TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o, {});
+    TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o);
     if (attDeserialized->isEmpty()) {
         msg.setMessageAttachments(*attDeserialized);
     }

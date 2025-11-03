@@ -19,16 +19,6 @@ TextAutoGenerateAttachment::~TextAutoGenerateAttachment()
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAttachment deleted " << this;
 }
 
-TextAutoGenerateAttachment::TextAutoGenerateAttachment(const TextAutoGenerateAttachment &other)
-    : QSharedData(other)
-{
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAttachment created " << this;
-    mBase64 = other.mBase64;
-    mAttachmentType = other.mAttachmentType;
-    mMimeType = other.mMimeType;
-    mName = other.mName;
-}
-
 QByteArray TextAutoGenerateAttachment::base64() const
 {
     return mBase64;
@@ -68,21 +58,23 @@ void TextAutoGenerateAttachment::setAttachmentType(AttachmentType newAttachmentT
     mAttachmentType = newAttachmentType;
 }
 
-void TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachment &attachment, QJsonObject &o)
+QJsonObject TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachment &attachment)
 {
+    QJsonObject o;
     o["type"_L1] = static_cast<int>(attachment.attachmentType());
     o["mimetype"_L1] = QString::fromLatin1(attachment.mimeType());
     o["base64"_L1] = QString::fromLatin1(attachment.base64());
     o["name"_L1] = attachment.name();
+    return o;
 }
 
-TextAutoGenerateAttachment *TextAutoGenerateAttachment::deserialize(const QJsonObject &o)
+TextAutoGenerateAttachment TextAutoGenerateAttachment::deserialize(const QJsonObject &o)
 {
-    TextAutoGenerateAttachment *att = new TextAutoGenerateAttachment;
-    att->setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(static_cast<int>(AttachmentType::Unknown))));
-    att->setMimeType(o["mimetype"_L1].toString().toLatin1());
-    att->setBase64(o["base64"_L1].toString().toLatin1());
-    att->setName(o["name"_L1].toString());
+    TextAutoGenerateAttachment att;
+    att.setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(static_cast<int>(AttachmentType::Unknown))));
+    att.setMimeType(o["mimetype"_L1].toString().toLatin1());
+    att.setBase64(o["base64"_L1].toString().toLatin1());
+    att.setName(o["name"_L1].toString());
     return att;
 }
 

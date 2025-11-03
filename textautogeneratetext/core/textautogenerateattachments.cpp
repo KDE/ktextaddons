@@ -41,11 +41,6 @@ void TextAutoGenerateAttachments::setMessageAttachments(const QList<TextAutoGene
     mMessageAttachments = newMessageAttachments;
 }
 
-void TextAutoGenerateAttachments::parseMessageAttachments(const QJsonArray &attachments, const QByteArray &messageId)
-{
-    // TODO
-}
-
 bool TextAutoGenerateAttachments::operator==(const TextAutoGenerateAttachments &other) const
 {
     return mMessageAttachments == other.messageAttachments();
@@ -55,7 +50,7 @@ QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachme
 {
     QJsonArray array;
     for (const auto &att : attachments.messageAttachments()) {
-        // TODO array.append(TextAutoGenerateAttachment::serialize(attachmentInfo));
+        array.append(TextAutoGenerateAttachment::serialize(att));
     }
     return array;
 }
@@ -64,15 +59,13 @@ TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJso
 {
     QList<TextAutoGenerateAttachment> attachmentList;
     for (int i = 0; i < attachmentsArray.count(); ++i) {
-        // TODO
-        /*
         const QJsonObject attachment = attachmentsArray.at(i).toObject();
-        TextAutoGenerateAttachment att = TextAutoGenerateAttachment::deserialize(attachment);
+        const TextAutoGenerateAttachment att = TextAutoGenerateAttachment::deserialize(attachment);
+        // TODO
         // att.setAttachmentId(MessageUtils::generateUniqueId(messageId, i));
         if (att.isValid()) {
-            attachmentInfo.append(std::move(att));
+            attachmentList.append(att);
         }
-        */
     }
     auto final = new TextAutoGenerateAttachments;
     final->setMessageAttachments(attachmentList);
