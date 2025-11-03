@@ -22,7 +22,7 @@ TextAutoGenerateAttachment::~TextAutoGenerateAttachment()
 TextAutoGenerateAttachment::TextAutoGenerateAttachment(const TextAutoGenerateAttachment &other)
     : QSharedData(other)
 {
-    qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAnswerInfo created " << this;
+    qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAttachment created " << this;
     mBase64 = other.mBase64;
     mAttachmentType = other.mAttachmentType;
     mMimeType = other.mMimeType;

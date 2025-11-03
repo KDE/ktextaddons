@@ -38,3 +38,4 @@ add_textautogenerate_core_unittest(textautogeneratesearchmessagesettingstest.cpp
 if(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
     add_textautogenerate_core_unittest(textautogeneratetexttospeechinfoenqueuetest.cpp)
 endif()
+add_textautogenerate_core_unittest(textautogenerateattachmentstest.cpp)
