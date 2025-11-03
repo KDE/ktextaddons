@@ -311,7 +311,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
 
     // TODO fix argument
     TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o["attachments"_L1].toArray(), {});
-    if (attDeserialized->isEmpty()) {
+    if (!attDeserialized->isEmpty()) {
         msg.setMessageAttachments(*attDeserialized);
     }
     delete attDeserialized;
