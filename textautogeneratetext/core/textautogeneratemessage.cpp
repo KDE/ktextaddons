@@ -280,7 +280,10 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
         }
     }
     if (auto att = msg.messageAttachments(); att) {
-        o["attachments"_L1] = TextAutoGenerateAttachments::serialize(*att);
+        const QJsonArray array = TextAutoGenerateAttachments::serialize(*att);
+        if (!array.isEmpty()) {
+            o["attachments"_L1] = array;
+        }
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
