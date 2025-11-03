@@ -31,8 +31,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage 
     if (t.messageInfo()) {
         d.space() << "message Info:" << *t.messageInfo();
     }
-    if (t.messageAttachment()) {
-        d.space() << "Message Attachment:" << *t.messageAttachment();
+    if (t.messageAttachments()) {
+        d.space() << "Message Attachments:" << *t.messageAttachments();
     }
 
     return d;
@@ -110,13 +110,13 @@ bool TextAutoGenerateMessage::operator==(const TextAutoGenerateMessage &other) c
     } else {
         return false;
     }
-    if (messageAttachment() && other.messageAttachment()) {
-        if (*messageAttachment() == (*other.messageAttachment())) {
+    if (messageAttachments() && other.messageAttachments()) {
+        if (*messageAttachments() == (*other.messageAttachments())) {
             result = true;
         } else {
             return false;
         }
-    } else if (!messageAttachment() && !other.messageAttachment()) {
+    } else if (!messageAttachments() && !other.messageAttachments()) {
         result = true;
     } else {
         return false;
@@ -278,9 +278,12 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
             TextAutoGenerateAnswerInfo::serialize(*info, o);
         }
     }
-    if (auto att = msg.messageAttachment(); att) {
-        TextAutoGenerateAttachment::serialize(*att, o);
+    // TODO
+    /*
+    if (auto att = msg.messageAttachments(); att) {
+        TextAutoGenerateAttachments::serialize(*att, o);
     }
+    */
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
     if (toBinary) {
@@ -305,12 +308,14 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     }
     delete messageInfoDeserialized;
 
-    TextAutoGenerateAttachment *attDeserialized = TextAutoGenerateAttachment::deserialize(o);
-    if (attDeserialized->isValid()) {
-        msg.setMessageAttachment(*attDeserialized);
+    // TODO
+    /*
+    TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o, {});
+    if (attDeserialized->isEmpty()) {
+        msg.setMessageAttachments(*attDeserialized);
     }
     delete attDeserialized;
-
+*/
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));
     return msg;
@@ -357,7 +362,7 @@ int TextAutoGenerateMessage::numberOfTextSearched() const
     return mNumberOfTextSearched;
 }
 
-const TextAutoGenerateAttachment *TextAutoGenerateMessage::messageAttachment() const
+const TextAutoGenerateAttachments *TextAutoGenerateMessage::messageAttachments() const
 {
     if (mMessageAttachments) {
         return mMessageAttachments.data();
@@ -365,12 +370,12 @@ const TextAutoGenerateAttachment *TextAutoGenerateMessage::messageAttachment() c
     return nullptr;
 }
 
-void TextAutoGenerateMessage::setMessageAttachment(const TextAutoGenerateAttachment &newMessageAttachment)
+void TextAutoGenerateMessage::setMessageAttachments(const TextAutoGenerateAttachments &newMessageAttachment)
 {
     if (!mMessageAttachments) {
-        mMessageAttachments = new TextAutoGenerateAttachment(newMessageAttachment);
+        mMessageAttachments = new TextAutoGenerateAttachments(newMessageAttachment);
     } else {
-        mMessageAttachments.reset(new TextAutoGenerateAttachment(newMessageAttachment));
+        mMessageAttachments.reset(new TextAutoGenerateAttachments(newMessageAttachment));
     }
 }
 
