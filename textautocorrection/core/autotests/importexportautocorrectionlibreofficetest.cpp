@@ -42,7 +42,7 @@ void ImportExportAutocorrectionLibreOfficeTest::shouldImportExport()
         QString message;
 
         QTemporaryFile temporaryShareFile;
-        temporaryShareFile.open();
+        QVERIFY(temporaryShareFile.open());
 
         if (!correct.exportData(QString(), temporaryShareFile.fileName(), message, QString())) {
             QVERIFY(false);

@@ -25,7 +25,11 @@ void GrammalecteResultJob::start()
         mProcess = new QProcess(this);
 
         auto file = new QTemporaryFile(this);
-        file->open();
+        if (!file->open()) {
+            qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to create temporary file";
+            deleteLater();
+            return;
+        }
         file->setPermissions(QFile::ReadUser);
         file->write(mText.toUtf8());
         file->close();
