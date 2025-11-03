@@ -6,8 +6,10 @@
 
 #include "textautogenerateattachments.h"
 #include "textautogeneratetextcore_memory_debug.h"
-using namespace TextAutoGenerateText;
+#include <QJsonArray>
+#include <QJsonObject>
 
+using namespace TextAutoGenerateText;
 TextAutoGenerateAttachments::TextAutoGenerateAttachments()
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAttachments created " << this;
@@ -27,4 +29,36 @@ TextAutoGenerateAttachments::TextAutoGenerateAttachments(const TextAutoGenerateA
 bool TextAutoGenerateAttachments::isEmpty() const
 {
     return mMessageAttachments.isEmpty();
+}
+
+QList<TextAutoGenerateAttachment> TextAutoGenerateAttachments::messageAttachments() const
+{
+    return mMessageAttachments;
+}
+
+void TextAutoGenerateAttachments::setMessageAttachments(const QList<TextAutoGenerateAttachment> &newMessageAttachments)
+{
+    mMessageAttachments = newMessageAttachments;
+}
+
+void TextAutoGenerateAttachments::parseMessageAttachments(const QJsonArray &attachments, const QByteArray &messageId)
+{
+    // TODO
+}
+
+bool TextAutoGenerateAttachments::operator==(const TextAutoGenerateAttachments &other) const
+{
+    return mMessageAttachments == other.messageAttachments();
+}
+
+QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachments &attachments)
+{
+    // TODO
+    return {};
+}
+
+TextAutoGenerateAttachments *TextAutoGenerateAttachments::deserialize(const QJsonArray &o, const QByteArray &messageId)
+{
+    // TODO
+    return {};
 }

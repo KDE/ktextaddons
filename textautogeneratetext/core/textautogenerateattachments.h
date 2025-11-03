@@ -19,6 +19,16 @@ public:
 
     [[nodiscard]] bool isEmpty() const;
 
+    [[nodiscard]] QList<TextAutoGenerateAttachment> messageAttachments() const;
+    void setMessageAttachments(const QList<TextAutoGenerateAttachment> &newMessageAttachments);
+
+    void parseMessageAttachments(const QJsonArray &attachments, const QByteArray &messageId);
+
+    [[nodiscard]] bool operator==(const TextAutoGenerateAttachments &other) const;
+
+    [[nodiscard]] static QJsonArray serialize(const TextAutoGenerateAttachments &attachments);
+    [[nodiscard]] static TextAutoGenerateAttachments *deserialize(const QJsonArray &o, const QByteArray &messageId);
+
 private:
     QList<TextAutoGenerateAttachment> mMessageAttachments;
 };
