@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-25 02:39+0000\n"
-"PO-Revision-Date: 2025-10-09 00:08+0200\n"
+"PO-Revision-Date: 2025-11-02 00:46+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -1951,6 +1951,8 @@ msgid ""
 "EmBuilding upon the foundational models of the Qwen3 series, Qwen3 Embedding "
 "provides a comprehensive range of text embeddings models in various sizes."
 msgstr ""
+"EmBuilding-ი Qwen3-ის ფუნდამენტურ მოდელებზე. Qwen3 Embedding მოგაწვდით "
+"ტექსტის ჩაშენების მოდელების ყოვლისმომცველ შუალედს სხვადასხვა ზომებში."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:286
 #, kde-format
@@ -1958,6 +1960,9 @@ msgid ""
 "Granite 4 features improved instruction following (IF) and tool-calling "
 "capabilities, making them more effective in enterprise applications."
 msgstr ""
+"Granite 4-ს აქვს გაუმჯობესებული ინსტრუქციის მიყოლის (IF) და პროგრამის "
+"გამოძახების შესაძლებლობები, რაც მათ უფრო ეფექტურს ხდის წარმოებაში "
+"გამოსაყენებლად."
 
 #: plugins/ollama/modelsmanager/ollamanetworkurlbutton.cpp:17
 #, kde-format
