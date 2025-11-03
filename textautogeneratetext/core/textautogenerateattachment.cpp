@@ -26,6 +26,7 @@ TextAutoGenerateAttachment::TextAutoGenerateAttachment(const TextAutoGenerateAtt
     mBase64 = other.mBase64;
     mAttachmentType = other.mAttachmentType;
     mMimeType = other.mMimeType;
+    mName = other.mName;
 }
 
 QByteArray TextAutoGenerateAttachment::base64() const
