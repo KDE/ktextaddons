@@ -24,6 +24,7 @@ TextAutoGenerateAttachments::TextAutoGenerateAttachments(const TextAutoGenerateA
     : QSharedData(other)
 {
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAttachments created " << this;
+    mMessageAttachments = other.mMessageAttachments;
 }
 
 bool TextAutoGenerateAttachments::isEmpty() const
