@@ -9,6 +9,7 @@
 #include "textautogeneratemessageutils.h"
 
 #include <QDateTime>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;
@@ -278,11 +279,8 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
             TextAutoGenerateAnswerInfo::serialize(*info, o);
         }
     }
-    // TODO
     if (auto att = msg.messageAttachments(); att) {
-        /*
         o["attachments"_L1] = TextAutoGenerateAttachments::serialize(*att);
-    */
     }
     o["sender"_L1] = msg.senderToString();
     o["dateTime"_L1] = msg.mDateTime;
@@ -308,14 +306,12 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
     }
     delete messageInfoDeserialized;
 
-    // TODO
-    /*
-    TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o);
+    // TODO fix argument
+    TextAutoGenerateAttachments *attDeserialized = TextAutoGenerateAttachments::deserialize(o["attachments"_L1].toArray(), {});
     if (attDeserialized->isEmpty()) {
         msg.setMessageAttachments(*attDeserialized);
     }
     delete attDeserialized;
-*/
     msg.setDateTime(o["dateTime"_L1].toInteger());
     msg.setSender(senderFromString(o["sender"_L1].toString()));
     return msg;
