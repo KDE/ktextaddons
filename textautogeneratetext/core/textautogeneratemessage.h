@@ -109,7 +109,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);
     TEXTAUTOGENERATETEXT_NO_EXPORT bool messageStateValue(MessageState type) const;
     QSharedDataPointer<TextAutoGenerateAnswerInfo> mMessageInfo;
-    QSharedDataPointer<TextAutoGenerateAttachment> mMessageAttachment;
+    QSharedDataPointer<TextAutoGenerateAttachment> mMessageAttachments;
     QByteArray mAnswerUuid;
     QByteArray mUuid;
     QString mContent;

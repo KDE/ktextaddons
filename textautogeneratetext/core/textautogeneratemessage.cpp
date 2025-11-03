@@ -359,18 +359,18 @@ int TextAutoGenerateMessage::numberOfTextSearched() const
 
 const TextAutoGenerateAttachment *TextAutoGenerateMessage::messageAttachment() const
 {
-    if (mMessageAttachment) {
-        return mMessageAttachment.data();
+    if (mMessageAttachments) {
+        return mMessageAttachments.data();
     }
     return nullptr;
 }
 
 void TextAutoGenerateMessage::setMessageAttachment(const TextAutoGenerateAttachment &newMessageAttachment)
 {
-    if (!mMessageAttachment) {
-        mMessageAttachment = new TextAutoGenerateAttachment(newMessageAttachment);
+    if (!mMessageAttachments) {
+        mMessageAttachments = new TextAutoGenerateAttachment(newMessageAttachment);
     } else {
-        mMessageAttachment.reset(new TextAutoGenerateAttachment(newMessageAttachment));
+        mMessageAttachments.reset(new TextAutoGenerateAttachment(newMessageAttachment));
     }
 }
 
