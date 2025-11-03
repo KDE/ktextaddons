@@ -5,6 +5,7 @@
 */
 #include "textautogenerateattachmentutils.h"
 #include "textautogeneratetextcore_debug.h"
+#include <QFile>
 #include <QString>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -15,7 +16,15 @@ QByteArray TextAutoGenerateAttachmentUtils::generateBase64(const QString &fileNa
         return {};
     }
 
-    // TODO return u"data:image/%1;base64,%2"_s.arg(u"PNG"_s, QString::fromLatin1(ba.toBase64()));
+    QFile f(fileName);
+    if (!f.open(QIODevice::WriteOnly)) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to open file:" << fileName;
+        return {};
+    }
+    const QByteArray ba = f.readAll();
 
-    return {};
+    // return u"data:image/%1;base64,%2"_s.arg(u"PNG"_s, QString::fromLatin1(ba.toBase64()));
+
+    // TODO add info
+    return ba;
 }
