@@ -131,6 +131,42 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
             TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
         QCOMPARE(firstMessageLlmRef, output);
     }
+
+    {
+        TextAutoGenerateText::TextAutoGenerateMessage firstMessageRef;
+        firstMessageRef.setAnswerUuid("b84a362695c34e5491b54e414192fb70");
+        firstMessageRef.setDateTime(1753338999);
+        firstMessageRef.setUuid("79aa1eac872647a2ac12cb56ddd00e1f");
+        firstMessageRef.setContent(u"test1"_s);
+        firstMessageRef.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::User);
+        firstMessageRef.generateHtml();
+
+        TextAutoGenerateText::TextAutoGenerateAttachments t;
+        QList<TextAutoGenerateText::TextAutoGenerateAttachment> list;
+        {
+            TextAutoGenerateText::TextAutoGenerateAttachment att;
+            att.setBase64("sdfsdf"_ba);
+            att.setMimeType("mp4");
+            att.setName(u"foo"_s);
+            att.setAttachmentType(TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio);
+            list.append(att);
+        }
+        {
+            TextAutoGenerateText::TextAutoGenerateAttachment att;
+            att.setBase64("foo11"_ba);
+            att.setMimeType("doc");
+            att.setName(u"foo2"_s);
+            att.setAttachmentType(TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File);
+            list.append(att);
+        }
+        t.setMessageAttachments(list);
+        firstMessageRef.setMessageAttachments(t);
+
+        const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(firstMessageRef);
+        const TextAutoGenerateText::TextAutoGenerateMessage output =
+            TextAutoGenerateText::TextAutoGenerateMessage::deserialize(QCborValue::fromCbor(ba).toMap().toJsonObject());
+        QCOMPARE(firstMessageRef, output);
+    }
 }
 
 // TODO add image support
