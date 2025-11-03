@@ -22,3 +22,5 @@ void TextAutoGenerateAttachmentsTest::shouldHaveDefaultValues()
     // 11/03/2025 => size 32
     QCOMPARE(sizeof(TextAutoGenerateText::TextAutoGenerateAttachments), 32);
 }
+
+#include "moc_textautogenerateattachmentstest.cpp"
