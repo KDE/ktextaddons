@@ -10,6 +10,7 @@
 #include "widgets/common/textautogeneratetextlineedit.h"
 #include "widgets/toolswidget/textautogeneratetoolswidget.h"
 #include <KLocalizedString>
+#include <QFileDialog>
 #include <QHBoxLayout>
 #include <QToolButton>
 
@@ -44,7 +45,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mainLayout->addWidget(mAttachFile, 0, Qt::AlignTop);
     mAttachFile->setIcon(QIcon::fromTheme(u"mail-attachment-symbolic"_s));
     mAttachFile->setAutoRaise(true);
-    mAttachFile->setEnabled(false);
+    // mAttachFile->setEnabled(false);
 
     connect(mAttachFile, &QToolButton::clicked, this, []() {
         // TODO open dialogbox
