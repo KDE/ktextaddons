@@ -42,7 +42,7 @@ msgstr "Correction automatique pour KMail / Calligra "
 #: widgets/autocorrectionwidget.cpp:447
 #, kde-format
 msgid "\"Replace\" string is the same as \"Find\" string."
-msgstr "La chaîne de remplacement est la même que celle qui est recherchée."
+msgstr "La chaine de remplacement est la même que celle qui est recherchée."
 
 #: widgets/autocorrectionwidget.cpp:447
 #, kde-format
