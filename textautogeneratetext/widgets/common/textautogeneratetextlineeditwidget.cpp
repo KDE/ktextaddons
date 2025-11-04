@@ -47,8 +47,11 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mAttachFile->setAutoRaise(true);
     // mAttachFile->setEnabled(false);
 
-    connect(mAttachFile, &QToolButton::clicked, this, []() {
-        // TODO open dialogbox
+    connect(mAttachFile, &QToolButton::clicked, this, [this]() {
+        const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"));
+        if (!fileName.isEmpty()) {
+            // TODO
+        }
     });
 
     mTextAutoGenerateTextLineEdit->setObjectName(u"mTextAutoGenerateTextLineEdit"_s);
