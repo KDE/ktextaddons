@@ -10,5 +10,6 @@ namespace TextAutoGenerateText
 namespace TextAutoGenerateAttachmentUtils
 {
 [[nodiscard]] QByteArray generateBase64(const QString &fileName);
+[[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
 };
 }

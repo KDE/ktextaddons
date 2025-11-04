@@ -28,3 +28,8 @@ QByteArray TextAutoGenerateAttachmentUtils::generateBase64(const QString &fileNa
     // TODO add info
     return ba;
 }
+
+QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &messageId, int index)
+{
+    return messageId + QByteArray("_") + QByteArray::number(index);
+}
