@@ -12,6 +12,7 @@
 #include <KLocalizedString>
 #include <QFileDialog>
 #include <QHBoxLayout>
+#include <QMimeDatabase>
 #include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;
@@ -50,6 +51,10 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     connect(mAttachFile, &QToolButton::clicked, this, [this]() {
         const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"));
         if (!fileName.isEmpty()) {
+            const QMimeDatabase db;
+            const QMimeType mimeType = db.mimeTypeForFile(fileName);
+            const QString mimeTypeName = mimeType.name();
+
             // TODO
         }
     });
