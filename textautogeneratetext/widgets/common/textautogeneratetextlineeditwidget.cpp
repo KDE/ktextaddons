@@ -103,6 +103,11 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
 
 TextAutoGenerateTextLineEditWidget::~TextAutoGenerateTextLineEditWidget() = default;
 
+void TextAutoGenerateTextLineEditWidget::updateAttachmentButton(bool state)
+{
+    mAttachFile->setEnabled(state);
+}
+
 void TextAutoGenerateTextLineEditWidget::updateEnableState()
 {
     setEnabled(!mManager->showArchived() && !mManager->chatInProgress(mManager->currentChatId()));

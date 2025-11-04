@@ -44,6 +44,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearLineEdit();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateEnableState();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentModelChanged();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateAttachmentButton(bool state);
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     TextAutoGenerateToolsWidget *const mTextAutoGenerateToolsWidget;
     QToolButton *const mSendMessage;
