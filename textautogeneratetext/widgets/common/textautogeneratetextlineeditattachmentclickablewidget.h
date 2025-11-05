@@ -33,6 +33,7 @@ public:
     ~TextAutoGenerateTextLineEditAttachmentClickableWidget() override;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemove();
     QString mFileName;
     TextAutoGenerateTextLineEditAttachmentClickableLabel *const mClickableLabel;
     QLabel *const mFileNameLabel;

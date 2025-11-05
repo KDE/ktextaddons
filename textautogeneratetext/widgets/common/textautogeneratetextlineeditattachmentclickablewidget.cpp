@@ -26,10 +26,18 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
 
     mClickableLabel->setObjectName(u"mClickableLabel"_s);
     mainLayout->addWidget(mClickableLabel);
-    // TODO connect(mClickableLabel, &TextAutoGenerateTextLineEditAttachmentClickableLabel::clicked, this, &ClickableWidget::slotRemove);
+    connect(mClickableLabel,
+            &TextAutoGenerateTextLineEditAttachmentClickableLabel::clicked,
+            this,
+            &TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove);
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::~TextAutoGenerateTextLineEditAttachmentClickableWidget() = default;
+
+void TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove()
+{
+    // TODO
+}
 
 TextAutoGenerateTextLineEditAttachmentClickableLabel::TextAutoGenerateTextLineEditAttachmentClickableLabel(QWidget *parent)
     : QLabel(parent)
