@@ -42,5 +42,6 @@ private:
     const QString mFileName;
     TextAutoGenerateTextLineEditAttachmentClickableLabel *const mClickableLabel;
     QLabel *const mFileNameLabel;
+    QLabel *const mMimetypeLabel;
 };
 }

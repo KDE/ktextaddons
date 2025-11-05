@@ -5,8 +5,12 @@
 */
 
 #include "textautogeneratetextlineeditattachmentclickablewidget.h"
+
+#include <KIconLoader>
 #include <KLocalizedString>
+#include <QFileInfo>
 #include <QHBoxLayout>
+#include <QMimeDatabase>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -15,16 +19,27 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
     , mFileName(fileName)
     , mClickableLabel(new TextAutoGenerateTextLineEditAttachmentClickableLabel(this))
     , mFileNameLabel(new QLabel(this))
+    , mMimetypeLabel(new QLabel(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    mMimetypeLabel->setObjectName(u"mMimetypeLabel"_s);
+    mainLayout->addWidget(mMimetypeLabel);
+
     mFileNameLabel->setObjectName(u"mFileNameLabel"_s);
     mainLayout->addWidget(mFileNameLabel);
-    // TODO use only filename not path.
-    mFileNameLabel->setText(fileName);
-    // TODO show MimeType ?
+
+    const QFileInfo info(fileName);
+    mFileNameLabel->setText(info.fileName());
+
+    const QMimeDatabase db;
+    const QMimeType mimeType = db.mimeTypeForFile(info);
+    const QString mimeTypeIconName = mimeType.iconName();
+
+    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
+    mMimetypeLabel->setPixmap(QPixmap(mimeTypeIconPath));
 
     mClickableLabel->setObjectName(u"mClickableLabel"_s);
     mainLayout->addWidget(mClickableLabel);
@@ -50,7 +65,7 @@ TextAutoGenerateTextLineEditAttachmentClickableLabel::TextAutoGenerateTextLineEd
     : QLabel(parent)
 {
     setToolTip(i18nc("@info:tooltip", "Remove"));
-    setPixmap(QIcon::fromTheme(u"delete"_s).pixmap(18, 18));
+    setPixmap(QIcon::fromTheme(u"delete"_s).pixmap(24, 24));
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableLabel::~TextAutoGenerateTextLineEditAttachmentClickableLabel() = default;
