@@ -32,12 +32,14 @@ public:
     explicit TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &fileName, QWidget *parent = nullptr);
     ~TextAutoGenerateTextLineEditAttachmentClickableWidget() override;
 
+    [[nodiscard]] QString fileName() const;
+
 Q_SIGNALS:
-    void remove();
+    void remove(const QString &fileName);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemove();
-    QString mFileName;
+    const QString mFileName;
     TextAutoGenerateTextLineEditAttachmentClickableLabel *const mClickableLabel;
     QLabel *const mFileNameLabel;
 };

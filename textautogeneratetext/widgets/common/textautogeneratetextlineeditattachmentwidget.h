@@ -8,6 +8,7 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateTextLineEditAttachmentClickableWidget;
 class TextAutoGenerateFlowLayout;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditAttachmentWidget : public QWidget
 {
@@ -17,8 +18,11 @@ public:
     ~TextAutoGenerateTextLineEditAttachmentWidget() override;
 
     void addAttachement(const QString &fileName);
+    [[nodiscard]] QStringList attachmentFileNames() const;
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveAttachment(const QString &fileName);
+    QMap<QString, TextAutoGenerateTextLineEditAttachmentClickableWidget *> mMap;
     TextAutoGenerateFlowLayout *const mMainLayout;
 };
 }

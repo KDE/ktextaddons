@@ -15,21 +15,44 @@ TextAutoGenerateTextLineEditAttachmentWidget::TextAutoGenerateTextLineEditAttach
 {
     mMainLayout->setObjectName(u"mainLayout"_s);
     mMainLayout->setContentsMargins({});
-    // TODO
 }
 
 TextAutoGenerateTextLineEditAttachmentWidget::~TextAutoGenerateTextLineEditAttachmentWidget() = default;
 
 void TextAutoGenerateTextLineEditAttachmentWidget::addAttachement(const QString &fileName)
 {
-#if 0
-    const QString &roomName = info.roomName;
-    if (mMap.contains(roomName)) {
+    if (mMap.contains(fileName)) {
         return;
     }
-#endif
-    auto clickableWidget = new TextAutoGenerateTextLineEditAttachmentClickableLabel(this);
+    auto clickableWidget = new TextAutoGenerateTextLineEditAttachmentClickableWidget(fileName, this);
+    connect(clickableWidget,
+            &TextAutoGenerateTextLineEditAttachmentClickableWidget::remove,
+            this,
+            &TextAutoGenerateTextLineEditAttachmentWidget::slotRemoveAttachment);
     mMainLayout->addWidget(clickableWidget);
+    mMap.insert(fileName, clickableWidget);
+}
+
+void TextAutoGenerateTextLineEditAttachmentWidget::slotRemoveAttachment(const QString &fileName)
+{
+    TextAutoGenerateTextLineEditAttachmentClickableWidget *userWidget = mMap.value(fileName);
+    if (userWidget) {
+        const int index = mMainLayout->indexOf(userWidget);
+        if (index != -1) {
+            userWidget->deleteLater();
+            delete mMainLayout->takeAt(index);
+            mMap.remove(fileName);
+        }
+    }
+}
+
+QStringList TextAutoGenerateTextLineEditAttachmentWidget::attachmentFileNames() const
+{
+    QStringList fileNames;
+    for (const auto &[key, value] : mMap.asKeyValueRange()) {
+        fileNames << value->fileName();
+    }
+    return fileNames;
 }
 
 #include "moc_textautogeneratetextlineeditattachmentwidget.cpp"

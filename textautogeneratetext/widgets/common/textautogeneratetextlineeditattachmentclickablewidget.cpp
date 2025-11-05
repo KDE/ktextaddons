@@ -22,6 +22,8 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
 
     mFileNameLabel->setObjectName(u"mFileNameLabel"_s);
     mainLayout->addWidget(mFileNameLabel);
+    // TODO use only filename not path.
+    mFileNameLabel->setText(fileName);
     // TODO show MimeType ?
 
     mClickableLabel->setObjectName(u"mClickableLabel"_s);
@@ -36,8 +38,12 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::~TextAutoGenerateTextLine
 
 void TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove()
 {
-    // TODO
-    Q_EMIT remove();
+    Q_EMIT remove(mFileName);
+}
+
+QString TextAutoGenerateTextLineEditAttachmentClickableWidget::fileName() const
+{
+    return mFileName;
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableLabel::TextAutoGenerateTextLineEditAttachmentClickableLabel(QWidget *parent)
