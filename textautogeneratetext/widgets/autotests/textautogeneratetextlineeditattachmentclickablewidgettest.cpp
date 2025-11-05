@@ -16,7 +16,7 @@ TextAutoGenerateTextLineEditAttachmentClickableWidgetTest::TextAutoGenerateTextL
 
 void TextAutoGenerateTextLineEditAttachmentClickableWidgetTest::shouldHaveDefaultValues()
 {
-    TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentClickableWidget w;
+    TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentClickableWidget w({});
     // TODO
 }
 

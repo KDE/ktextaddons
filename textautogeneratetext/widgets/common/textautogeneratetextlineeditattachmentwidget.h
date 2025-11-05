@@ -8,11 +8,17 @@
 #include <QWidget>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateFlowLayout;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditAttachmentWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit TextAutoGenerateTextLineEditAttachmentWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextLineEditAttachmentWidget() override;
+
+    void addAttachement(const QString &fileName);
+
+private:
+    TextAutoGenerateFlowLayout *const mMainLayout;
 };
 }
