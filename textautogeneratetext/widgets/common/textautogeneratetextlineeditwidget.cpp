@@ -8,6 +8,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextplugin.h"
 #include "widgets/common/textautogeneratetextlineedit.h"
+#include "widgets/common/textautogeneratetextlineeditattachmentwidget.h"
 #include "widgets/toolswidget/textautogeneratetoolswidget.h"
 #include <KLocalizedString>
 #include <QFileDialog>
@@ -21,6 +22,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     : QWidget{parent}
     , mTextAutoGenerateTextLineEdit(new TextAutoGenerateTextLineEdit(this))
     , mTextAutoGenerateToolsWidget(new TextAutoGenerateToolsWidget(this))
+    , mTextLineEditAttachmentWidget(new TextAutoGenerateTextLineEditAttachmentWidget(this))
     , mSendMessage(new QToolButton(this))
     , mAttachFile(new QToolButton(this))
     , mConfigureTools(new QToolButton(this))
@@ -34,6 +36,9 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mTextAutoGenerateToolsWidget->setObjectName(u"mTextAutoGenerateToolsWidget"_s);
     topLayout->addWidget(mTextAutoGenerateToolsWidget);
     mTextAutoGenerateToolsWidget->setVisible(false);
+
+    mTextLineEditAttachmentWidget->setObjectName(u"mTextLineEditAttachmentWidget"_s);
+    topLayout->addWidget(mTextLineEditAttachmentWidget);
 
     auto mainLayout = new QHBoxLayout;
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -51,10 +56,12 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     connect(mAttachFile, &QToolButton::clicked, this, [this]() {
         const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"));
         if (!fileName.isEmpty()) {
+            /*
             const QMimeDatabase db;
             const QMimeType mimeType = db.mimeTypeForFile(fileName);
             const QString mimeTypeName = mimeType.name();
-
+            */
+            mTextLineEditAttachmentWidget->addAttachement(fileName);
             // TODO
         }
     });

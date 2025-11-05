@@ -7,7 +7,9 @@
 #include "textautogeneratetextlineeditwidgettest.h"
 
 #include "widgets/common/textautogeneratetextlineedit.h"
+#include "widgets/common/textautogeneratetextlineeditattachmentwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
+#include "widgets/toolswidget/textautogeneratetoolswidget.h"
 
 #include <QHBoxLayout>
 #include <QTest>
@@ -30,6 +32,12 @@ void TextAutoGenerateTextLineEditWidgetTest::shouldHaveDefaultValues()
 
     auto mTextAutoGenerateTextLineEdit = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEdit *>(u"mTextAutoGenerateTextLineEdit"_s);
     QVERIFY(mTextAutoGenerateTextLineEdit);
+
+    auto mTextAutoGenerateToolsWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateToolsWidget *>(u"mTextAutoGenerateToolsWidget"_s);
+    QVERIFY(mTextAutoGenerateToolsWidget);
+
+    auto mTextLineEditAttachmentWidget = w.findChild<TextAutoGenerateText::TextAutoGenerateTextLineEditAttachmentWidget *>(u"mTextLineEditAttachmentWidget"_s);
+    QVERIFY(mTextLineEditAttachmentWidget);
 
     auto mSendMessage = w.findChild<QToolButton *>(u"mSendMessage"_s);
     QVERIFY(mSendMessage);

@@ -13,6 +13,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextLineEdit;
 class TextAutoGenerateManager;
 class TextAutoGenerateToolsWidget;
+class TextAutoGenerateTextLineEditAttachmentWidget;
 /**
  * @brief The TextAutoGenerateTextLineEditWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -47,6 +48,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateAttachmentButton(bool state);
     TextAutoGenerateTextLineEdit *const mTextAutoGenerateTextLineEdit;
     TextAutoGenerateToolsWidget *const mTextAutoGenerateToolsWidget;
+    TextAutoGenerateTextLineEditAttachmentWidget *const mTextLineEditAttachmentWidget;
     QToolButton *const mSendMessage;
     QToolButton *const mAttachFile;
     QToolButton *const mConfigureTools;
