@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:41+0000\n"
+"POT-Creation-Date: 2025-11-05 00:42+0000\n"
 "PO-Revision-Date: 2025-11-01 15:56+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1997,19 +1997,27 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "נא לכתוב הודעה"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "צירוף קובץ"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:59
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select GGUF File"
+msgctxt "@title:window"
+msgid "Select File"
+msgstr "בחירת קובץ GGUF"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "שליחה"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:93
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:102
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

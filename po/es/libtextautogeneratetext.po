@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:41+0000\n"
+"POT-Creation-Date: 2025-11-05 00:42+0000\n"
 "PO-Revision-Date: 2025-11-01 20:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2121,19 +2121,27 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Introduzca un mensaje"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:43
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Adjuntar archivo"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:59
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select GGUF File"
+msgctxt "@title:window"
+msgid "Select File"
+msgstr "Seleccionar archivo GGUF"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Enviar"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:93
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:102
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
