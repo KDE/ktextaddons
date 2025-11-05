@@ -37,6 +37,7 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::~TextAutoGenerateTextLine
 void TextAutoGenerateTextLineEditAttachmentClickableWidget::slotRemove()
 {
     // TODO
+    Q_EMIT remove();
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableLabel::TextAutoGenerateTextLineEditAttachmentClickableLabel(QWidget *parent)

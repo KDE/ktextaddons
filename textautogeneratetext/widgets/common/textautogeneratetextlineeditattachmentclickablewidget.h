@@ -32,6 +32,9 @@ public:
     explicit TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &fileName, QWidget *parent = nullptr);
     ~TextAutoGenerateTextLineEditAttachmentClickableWidget() override;
 
+Q_SIGNALS:
+    void remove();
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemove();
     QString mFileName;
