@@ -6,8 +6,9 @@
 #include "textautogeneratetextlineeditattachmentclickablewidgettest.h"
 #include "widgets/common/textautogeneratetextlineeditattachmentclickablewidget.h"
 #include <QTest>
-QTEST_MAIN(TextAutoGenerateTextLineEditAttachmentClickableWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 
+QTEST_MAIN(TextAutoGenerateTextLineEditAttachmentClickableWidgetTest)
 TextAutoGenerateTextLineEditAttachmentClickableWidgetTest::TextAutoGenerateTextLineEditAttachmentClickableWidgetTest(QObject *parent)
     : QObject{parent}
 {
