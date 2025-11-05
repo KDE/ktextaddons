@@ -13,4 +13,7 @@ class TextAutoGenerateTextLineEditAttachmentWidgetTest : public QObject
 public:
     explicit TextAutoGenerateTextLineEditAttachmentWidgetTest(QObject *parent = nullptr);
     ~TextAutoGenerateTextLineEditAttachmentWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };

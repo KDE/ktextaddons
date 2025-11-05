@@ -13,4 +13,7 @@ class TextAutoGenerateTextLineEditAttachmentClickableWidgetTest : public QObject
 public:
     explicit TextAutoGenerateTextLineEditAttachmentClickableWidgetTest(QObject *parent = nullptr);
     ~TextAutoGenerateTextLineEditAttachmentClickableWidgetTest() override = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
