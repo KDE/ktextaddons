@@ -18,3 +18,5 @@ TextAutoGenerateTextLineEditAttachmentWidget::TextAutoGenerateTextLineEditAttach
 }
 
 TextAutoGenerateTextLineEditAttachmentWidget::~TextAutoGenerateTextLineEditAttachmentWidget() = default;
+
+#include "moc_textautogeneratetextlineeditattachmentwidget.cpp"
