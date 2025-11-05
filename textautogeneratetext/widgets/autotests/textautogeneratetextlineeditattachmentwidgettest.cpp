@@ -11,3 +11,5 @@ TextAutoGenerateTextLineEditAttachmentWidgetTest::TextAutoGenerateTextLineEditAt
     : QObject{parent}
 {
 }
+
+#include "moc_textautogeneratetextlineeditattachmentwidgettest.cpp"

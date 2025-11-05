@@ -13,3 +13,5 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::~TextAutoGenerateTextLineEditAttachmentClickableWidget() = default;
+
+#include "moc_textautogeneratetextlineeditattachmentclickablewidget.cpp"
