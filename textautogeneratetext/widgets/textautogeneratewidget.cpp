@@ -193,9 +193,17 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByte
 {
     mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
-        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str, lstTools);
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
+                                                                                     .messageUuid = {},
+                                                                                     .chatId = mManager->currentChatId(),
+                                                                                     .tools = lstTools};
+        mManager->textAutoGeneratePlugin()->sendMessage(info);
     } else {
-        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), uuid, str, lstTools);
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
+                                                                                     .messageUuid = uuid,
+                                                                                     .chatId = mManager->currentChatId(),
+                                                                                     .tools = lstTools};
+        mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
 }
@@ -224,7 +232,9 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 {
     const QByteArray uuid = indexAnswer.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = indexAnswer.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, tools);
+    const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr, .messageUuid = uuid, .chatId = chatId, .tools = tools};
+
+    mManager->textAutoGeneratePlugin()->editMessage(info);
 }
 
 void TextAutoGenerateWidget::slotInitializeDone()

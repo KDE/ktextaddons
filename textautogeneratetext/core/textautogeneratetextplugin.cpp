@@ -99,23 +99,23 @@ QJsonArray TextAutoGenerateTextPlugin::createListMessages(const QList<QJsonObjec
     return array;
 }
 
-void TextAutoGenerateTextPlugin::editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str, const QList<QByteArray> &lstTools)
+void TextAutoGenerateTextPlugin::editMessage(const EditSendInfo &editSendInfo)
 {
     if (ready()) {
-        auto messageModel = d->manager->messagesModelFromChatId(chatId);
+        auto messageModel = d->manager->messagesModelFromChatId(editSendInfo.chatId);
         if (messageModel) {
-            const QByteArray llmUuid = messageModel->editMessage(uuid, str);
+            const QByteArray llmUuid = messageModel->editMessage(editSendInfo.messageUuid, editSendInfo.message);
 
             SendToAssistantInfo info;
-            info.message = str;
+            info.message = editSendInfo.message;
             info.messageUuid = llmUuid;
-            info.chatId = chatId;
+            info.chatId = editSendInfo.chatId;
             info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
-            info.tools = lstTools;
+            info.tools = editSendInfo.tools;
 
             initializeProgress(info);
         } else {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << chatId;
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for chatId:" << editSendInfo.chatId;
         }
     }
 }
@@ -136,18 +136,18 @@ TextAutoGenerateText::TextAutoGenerateTextRequest TextAutoGenerateTextPlugin::co
     return req;
 }
 
-void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools)
+void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &info)
 {
     if (ready()) {
-        auto messageModel = d->manager->messagesModelFromChatId(chatId);
+        auto messageModel = d->manager->messagesModelFromChatId(info.chatId);
         if (!messageModel) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Model Message not found" << chatId;
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Model Message not found" << info.chatId;
             return;
         }
         // User Message
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
-        msg.setContent(str);
+        msg.setContent(info.message);
         const auto dt = QDateTime::currentSecsSinceEpoch();
         msg.setDateTime(dt);
         msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
@@ -163,23 +163,23 @@ void TextAutoGenerateTextPlugin::sendMessage(const QByteArray &chatId, const QSt
         answerInfo.setEngineName(engineName());
         answerInfo.setModelName(currentModel());
         answerInfo.setInstanceName(d->instance->displayName());
-        answerInfo.setTools(lstTools);
+        answerInfo.setTools(info.tools);
         msgLlm.setMessageInfo(answerInfo);
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        d->manager->addMessage(chatId, msg);
+        d->manager->addMessage(info.chatId, msg);
         SendToAssistantInfo info;
-        info.message = str;
+        info.message = info.message;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
-        info.tools = lstTools;
+        info.tools = info.tools;
 
         info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
         qDebug() << "info.messagesArray  " << info.messagesArray;
 
-        d->manager->addMessage(chatId, msgLlm);
+        d->manager->addMessage(info.chatId, msgLlm);
         // qDebug() << " info " << info;
         initializeProgress(info);
     } else {

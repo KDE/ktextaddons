@@ -138,7 +138,8 @@ void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId,
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    mManager->textAutoGeneratePlugin()->editMessage(chatId, uuid, messageStr, {}); // TODO
+    const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr, .messageUuid = uuid, .chatId = chatId, .tools = {}};
+    mManager->textAutoGeneratePlugin()->editMessage(info); // TODO
 }
 
 void TextAutoGenerateQuickAskWidget::loadEngine()
@@ -174,10 +175,19 @@ void TextAutoGenerateQuickAskWidget::slotInitializeDone()
 void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &messageUuid)
 {
     mManager->checkCurrentChat();
+
     if (messageUuid.isEmpty()) {
-        mManager->textAutoGeneratePlugin()->sendMessage(mManager->currentChatId(), str, {}); // TODO
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
+                                                                                     .messageUuid = {},
+                                                                                     .chatId = mManager->currentChatId(),
+                                                                                     .tools = {}};
+        mManager->textAutoGeneratePlugin()->sendMessage(info);
     } else {
-        mManager->textAutoGeneratePlugin()->editMessage(mManager->currentChatId(), messageUuid, str, {}); // TODO
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
+                                                                                     .messageUuid = messageUuid,
+                                                                                     .chatId = mManager->currentChatId(),
+                                                                                     .tools = {}};
+        mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     // mTextAutoGenerateResultWidget->editingFinished(uuid);
 }

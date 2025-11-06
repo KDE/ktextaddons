@@ -221,7 +221,7 @@ void TextAutoGenerateManager::replaceContent(const QByteArray &chatId,
 bool TextAutoGenerateManager::chatInProgress(const QByteArray &chatId) const
 {
     if (chatId.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " chatid is empty it's a bug!!!!";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateManager::chatInProgress chatid is empty it's a bug!!!!";
         return false;
     }
     return textAutoGenerateChatsModel()->chatInProgress(chatId);
@@ -523,7 +523,7 @@ void TextAutoGenerateManager::checkInitializedMessagesModel()
 TextAutoGenerateMessagesModel *TextAutoGenerateManager::messagesModelFromChatId(const QByteArray &chatId) const
 {
     if (chatId.isEmpty()) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " chatid is empty it's a bug!!!!";
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "TextAutoGenerateManager::messagesModelFromChatId chatid is empty it's a bug!!!!";
         return nullptr;
     }
     return textAutoGenerateChatsModel()->messagesModel(chatId);

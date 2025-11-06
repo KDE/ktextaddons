@@ -68,8 +68,8 @@ public:
     void setReady(bool newReady);
 
     virtual void cancelRequest(const QByteArray &uuid);
-    void sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools);
-    void editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str, const QList<QByteArray> &lstTools);
+    void sendMessage(const EditSendInfo &info);
+    void editMessage(const EditSendInfo &info);
 
     [[nodiscard]] virtual QString engineName() const = 0;
 
