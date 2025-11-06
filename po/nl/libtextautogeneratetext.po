@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:42+0000\n"
-"PO-Revision-Date: 2025-11-01 17:03+0100\n"
+"PO-Revision-Date: 2025-11-05 11:23+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2104,12 +2104,10 @@ msgid "Attach File"
 msgstr "Bestand bijvoegen"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select GGUF File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "GGUF-bestand selecteren"
+msgstr "Bestand selecteren"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
