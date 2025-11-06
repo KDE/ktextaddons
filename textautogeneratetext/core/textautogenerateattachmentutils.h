@@ -5,11 +5,13 @@
 */
 #pragma once
 #include <QByteArray>
+#include <TextAutoGenerateText/TextAutoGenerateAttachment>
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateAttachmentUtils
 {
 [[nodiscard]] QByteArray generateBase64(const QString &fileName);
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
+[[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
 };
 }

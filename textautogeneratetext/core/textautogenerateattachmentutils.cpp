@@ -33,3 +33,8 @@ QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &m
 {
     return messageId + QByteArray("_") + QByteArray::number(index);
 }
+
+TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachmentUtils::generateAttachmentType(const QByteArray &mimetype)
+{
+    return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
+}
