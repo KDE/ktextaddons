@@ -14,9 +14,33 @@
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
+
+TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &name,
+                                                                                                             const QByteArray &mimetype,
+                                                                                                             QWidget *parent)
+    : TextAutoGenerateTextLineEditAttachmentClickableWidget(parent)
+{
+    // TODO
+}
+
 TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &fileName, QWidget *parent)
+    : TextAutoGenerateTextLineEditAttachmentClickableWidget(parent)
+{
+    mFileName = fileName;
+    const QFileInfo info(fileName);
+    mFileNameLabel->setText(info.fileName());
+    mFileNameLabel->setToolTip(mFileName);
+
+    const QMimeDatabase db;
+    const QMimeType mimeType = db.mimeTypeForFile(info);
+    const QString mimeTypeIconName = mimeType.iconName();
+
+    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
+    mMimetypeLabel->setPixmap(QPixmap(mimeTypeIconPath));
+}
+
+TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(QWidget *parent)
     : QWidget{parent}
-    , mFileName(fileName)
     , mClickableLabel(new TextAutoGenerateTextLineEditAttachmentClickableLabel(this))
     , mFileNameLabel(new QLabel(this))
     , mMimetypeLabel(new QLabel(this))
@@ -30,17 +54,6 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
 
     mFileNameLabel->setObjectName(u"mFileNameLabel"_s);
     mainLayout->addWidget(mFileNameLabel);
-
-    const QFileInfo info(fileName);
-    mFileNameLabel->setText(info.fileName());
-    mFileNameLabel->setToolTip(mFileName);
-
-    const QMimeDatabase db;
-    const QMimeType mimeType = db.mimeTypeForFile(info);
-    const QString mimeTypeIconName = mimeType.iconName();
-
-    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
-    mMimetypeLabel->setPixmap(QPixmap(mimeTypeIconPath));
 
     mClickableLabel->setObjectName(u"mClickableLabel"_s);
     mainLayout->addWidget(mClickableLabel);
