@@ -136,18 +136,18 @@ TextAutoGenerateText::TextAutoGenerateTextRequest TextAutoGenerateTextPlugin::co
     return req;
 }
 
-void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &info)
+void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
 {
     if (ready()) {
-        auto messageModel = d->manager->messagesModelFromChatId(info.chatId);
+        auto messageModel = d->manager->messagesModelFromChatId(editSendInfo.chatId);
         if (!messageModel) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Model Message not found" << info.chatId;
+            qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << " Model Message not found" << editSendInfo.chatId;
             return;
         }
         // User Message
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
-        msg.setContent(info.message);
+        msg.setContent(editSendInfo.message);
         const auto dt = QDateTime::currentSecsSinceEpoch();
         msg.setDateTime(dt);
         msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));
@@ -163,18 +163,18 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &info)
         answerInfo.setEngineName(engineName());
         answerInfo.setModelName(currentModel());
         answerInfo.setInstanceName(d->instance->displayName());
-        answerInfo.setTools(info.tools);
+        answerInfo.setTools(editSendInfo.tools);
         msgLlm.setMessageInfo(answerInfo);
 
         const QByteArray llmUuid = msgLlm.uuid();
         msg.setAnswerUuid(llmUuid);
 
-        d->manager->addMessage(info.chatId, msg);
+        d->manager->addMessage(editSendInfo.chatId, msg);
         SendToAssistantInfo info;
-        info.message = info.message;
+        info.message = editSendInfo.message;
         info.messageUuid = llmUuid;
         info.chatId = d->manager->currentChatId();
-        info.tools = info.tools;
+        info.tools = editSendInfo.tools;
 
         info.messagesArray = createListMessages(messageModel->convertToOllamaChat());
         qDebug() << "info.messagesArray  " << info.messagesArray;
@@ -226,6 +226,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlug
     d.space() << "messageUuid:" << t.messageUuid;
     d.space() << "chatId:" << t.chatId;
     d.space() << "tools:" << t.tools;
+    d.space() << "attachmentList:" << t.attachmentList;
     return d;
 }
 
