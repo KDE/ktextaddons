@@ -51,18 +51,11 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mainLayout->addWidget(mAttachFile, 0, Qt::AlignTop);
     mAttachFile->setIcon(QIcon::fromTheme(u"mail-attachment-symbolic"_s));
     mAttachFile->setAutoRaise(true);
-    // mAttachFile->setEnabled(false);
 
     connect(mAttachFile, &QToolButton::clicked, this, [this]() {
         const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"));
         if (!fileName.isEmpty()) {
-            /*
-            const QMimeDatabase db;
-            const QMimeType mimeType = db.mimeTypeForFile(fileName);
-            const QString mimeTypeName = mimeType.name();
-            */
             mTextLineEditAttachmentWidget->addAttachement(fileName);
-            // TODO
         }
     });
 
