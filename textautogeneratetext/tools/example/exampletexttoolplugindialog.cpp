@@ -6,8 +6,8 @@
 #include "exampletexttoolplugindialog.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
 #include "exampletexttoolpluginwidget.h"
-#include <qboxlayout.h>
-#include <qdialogbuttonbox.h>
+#include <QBoxLayout>
+#include <QDialogButtonBox>
 using namespace Qt::Literals::StringLiterals;
 ExampleTextToolPluginDialog::ExampleTextToolPluginDialog(TextAutoGenerateText::TextAutoGenerateTextToolPlugin *plugin, QWidget *parent)
     : QDialog(parent)

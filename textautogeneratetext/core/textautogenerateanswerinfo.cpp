@@ -6,8 +6,8 @@
 
 #include "textautogenerateanswerinfo.h"
 #include "textautogeneratetextcore_memory_debug.h"
+#include <QJsonArray>
 #include <QJsonObject>
-#include <qjsonarray.h>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
