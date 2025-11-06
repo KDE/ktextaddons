@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 00:42+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-02-28 13:01+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1734,13 +1734,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
@@ -2047,12 +2054,6 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
-msgstr ""
-
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
 msgstr ""
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 00:42+0000\n"
-"PO-Revision-Date: 2025-11-05 18:17+0400\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"PO-Revision-Date: 2025-11-06 09:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2019,19 +2019,24 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "أدخل رسالة"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "أزل"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "أرفق ملفًّا"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select GGUF File"
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
+#, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "حدّد ملف GGUF"
+msgstr "اختر ملفًّا"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2335,12 +2340,6 @@ msgstr "أدوات:"
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "حرّر…"
-
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "أزل"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
 #, kde-format

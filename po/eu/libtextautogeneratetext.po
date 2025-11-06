@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 00:42+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-09-21 11:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1859,13 +1859,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Sartu mezu bat"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Kendu"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Erantsi fitxategia"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select GGUF File"
@@ -2175,12 +2182,6 @@ msgstr "Tresnak:"
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Editatu…"
-
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "Kendu"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
 #, kde-format

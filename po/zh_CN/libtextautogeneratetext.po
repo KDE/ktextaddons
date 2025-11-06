@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 00:42+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1970,13 +1970,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "输入信息"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "移除"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "附加文件"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select GGUF File"
@@ -2286,12 +2293,6 @@ msgstr "工具："
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "编辑…"
-
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "移除"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
 #, kde-format

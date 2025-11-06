@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 00:42+0000\n"
+"POT-Creation-Date: 2025-11-06 08:04+0000\n"
 "PO-Revision-Date: 2025-11-05 11:23+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2097,13 +2097,20 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Voer een bericht in"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:45
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Bestand bijvoegen"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:52
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
@@ -2411,12 +2418,6 @@ msgstr "Hulpmiddelen:"
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Bewerken…"
-
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Remove"
-msgstr "Verwijderen"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
 #, kde-format
