@@ -33,6 +33,7 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
 
     const QFileInfo info(fileName);
     mFileNameLabel->setText(info.fileName());
+    mFileNameLabel->setToolTip(mFileName);
 
     const QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForFile(info);
