@@ -209,6 +209,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlug
     d.space() << "messageUuid:" << t.messageUuid;
     d.space() << "chatId:" << t.chatId;
     d.space() << "messagesArray:" << t.messagesArray;
+    d.space() << "tools:" << t.tools;
     return d;
 }
 
@@ -216,6 +217,15 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlug
 {
     d.space() << "modelName:" << t.modelName;
     d.space() << "identifier:" << t.identifier;
+    return d;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo &t)
+{
+    d.space() << "message:" << t.message;
+    d.space() << "messageUuid:" << t.messageUuid;
+    d.space() << "chatId:" << t.chatId;
+    d.space() << "tools:" << t.tools;
     return d;
 }
 

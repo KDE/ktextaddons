@@ -44,6 +44,14 @@ public:
         QJsonArray messagesArray;
         QList<QByteArray> tools;
     };
+
+    struct TEXTAUTOGENERATETEXT_EXPORT EditSendInfo {
+        QString message;
+        QByteArray messageUuid;
+        QByteArray chatId;
+        QList<QByteArray> tools;
+    };
+
     explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                         TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                         QObject *parent = nullptr);
@@ -59,9 +67,8 @@ public:
     [[nodiscard]] bool ready() const;
     void setReady(bool newReady);
 
-    void sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools);
     virtual void cancelRequest(const QByteArray &uuid);
-
+    void sendMessage(const QByteArray &chatId, const QString &str, const QList<QByteArray> &lstTools);
     void editMessage(const QByteArray &chatId, const QByteArray &uuid, const QString &str, const QList<QByteArray> &lstTools);
 
     [[nodiscard]] virtual QString engineName() const = 0;
@@ -115,5 +122,7 @@ private:
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier, Q_RELOCATABLE_TYPE);
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo, Q_RELOCATABLE_TYPE);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo &t);
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &t);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo &t);
