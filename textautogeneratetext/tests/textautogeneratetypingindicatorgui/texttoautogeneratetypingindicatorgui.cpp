@@ -5,7 +5,7 @@
 */
 
 #include "texttoautogeneratetypingindicatorgui.h"
-#include <widgets/view/textautogeneratemessagewaitingansweranimation.h>
+#include "widgets/view/textautogeneratemessagewaitingansweranimation.h"
 
 #include <QPainter>
 
