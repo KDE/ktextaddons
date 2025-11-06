@@ -38,7 +38,7 @@ public:
     void setActivatedTools(const QList<QByteArray> &lst);
 
 Q_SIGNALS:
-    void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools);
+    void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools, const QStringList &attachmentList);
     void keyPressed(QKeyEvent *ev);
 
 private:

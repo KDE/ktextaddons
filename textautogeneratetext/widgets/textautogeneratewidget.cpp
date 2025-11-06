@@ -71,7 +71,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             mManager->createNewChat();
         });
         connect(mManager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
-            slotEditingFinished(str, {}, {}); // TODO use tools list ?
+            slotEditingFinished(str, {}, {}, {}); // TODO use tools list ?
         });
 
         connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
@@ -189,20 +189,25 @@ void TextAutoGenerateWidget::loadEngine()
     }
 }
 
-void TextAutoGenerateWidget::slotEditingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools)
+void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
+                                                 const QByteArray &uuid,
+                                                 const QList<QByteArray> &lstTools,
+                                                 const QStringList &attachmentList)
 {
     mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = {},
                                                                                      .chatId = mManager->currentChatId(),
-                                                                                     .tools = lstTools};
+                                                                                     .tools = lstTools,
+                                                                                     .attachmentList = attachmentList};
         mManager->textAutoGeneratePlugin()->sendMessage(info);
     } else {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = uuid,
                                                                                      .chatId = mManager->currentChatId(),
-                                                                                     .tools = lstTools};
+                                                                                     .tools = lstTools,
+                                                                                     .attachmentList = attachmentList};
         mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
@@ -240,7 +245,7 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 void TextAutoGenerateWidget::slotInitializeDone()
 {
     for (const auto &str : std::as_const(mAskMessageList)) {
-        slotEditingFinished(str, {}, {});
+        slotEditingFinished(str, {}, {}, {});
     }
     mAskMessageList.clear();
     mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
@@ -251,7 +256,7 @@ void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
     if (!mManager->pluginWasInitialized()) {
         mAskMessageList.append(str);
     } else {
-        slotEditingFinished(str, {}, {});
+        slotEditingFinished(str, {}, {}, {});
     }
 }
 

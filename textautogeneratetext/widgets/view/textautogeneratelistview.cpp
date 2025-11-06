@@ -109,7 +109,7 @@ void TextAutoGenerateListView::slotRefreshRequested(const QModelIndex &index)
         const QByteArray chatId = mManager->currentChatId();
         const QModelIndex indexAnswer = mManager->refreshAnswer(chatId, uuid);
         if (indexAnswer.isValid()) {
-            Q_EMIT refreshAnswerRequested(chatId, indexAnswer, tools);
+            Q_EMIT refreshAnswerRequested(chatId, indexAnswer, tools, {}); // TODO use attachmentList !
         }
     }
 }

@@ -25,7 +25,7 @@ Q_SIGNALS:
     void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools);
     void configureChanged();
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
+    void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools, const QStringList &attachmentList);
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
 
 private:

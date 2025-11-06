@@ -29,7 +29,9 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditAttachmentCl
 {
     Q_OBJECT
 public:
+    explicit TextAutoGenerateTextLineEditAttachmentClickableWidget(QWidget *parent = nullptr);
     explicit TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &fileName, QWidget *parent = nullptr);
+    explicit TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &name, const QByteArray &mimetype, QWidget *parent);
     ~TextAutoGenerateTextLineEditAttachmentClickableWidget() override;
 
     [[nodiscard]] QString fileName() const;
@@ -39,7 +41,7 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemove();
-    const QString mFileName;
+    QString mFileName;
     TextAutoGenerateTextLineEditAttachmentClickableLabel *const mClickableLabel;
     QLabel *const mFileNameLabel;
     QLabel *const mMimetypeLabel;

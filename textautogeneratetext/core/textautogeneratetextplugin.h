@@ -50,6 +50,7 @@ public:
         QByteArray messageUuid;
         QByteArray chatId;
         QList<QByteArray> tools;
+        QStringList attachmentList;
     };
 
     explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,

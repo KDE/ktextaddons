@@ -38,7 +38,7 @@ protected:
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools);
+    void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools, const QStringList &attachmentList);
     void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
 
 private:
