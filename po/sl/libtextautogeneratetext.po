@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-06 15:20+0000\n"
 "PO-Revision-Date: 2025-11-05 06:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -142,12 +142,12 @@ msgstr ""
 "Ste asistent umetne inteligence. Pogovarjate se z osebo po imenu %1. Bodite "
 "ustrežljivi, profesionalni in vljudni. Ne dajajte netočnih informacij."
 
-#: core/textautogeneratetextplugin.cpp:259
+#: core/textautogeneratetextplugin.cpp:269
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: core/textautogeneratetextplugin.cpp:261
+#: core/textautogeneratetextplugin.cpp:271
 #, kde-format
 msgid "Network"
 msgstr "Omrežje"

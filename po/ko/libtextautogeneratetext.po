@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 08:04+0000\n"
+"POT-Creation-Date: 2025-11-06 15:20+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -139,12 +139,12 @@ msgid ""
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:259
+#: core/textautogeneratetextplugin.cpp:269
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: core/textautogeneratetextplugin.cpp:261
+#: core/textautogeneratetextplugin.cpp:271
 #, kde-format
 msgid "Network"
 msgstr "네트워크"
