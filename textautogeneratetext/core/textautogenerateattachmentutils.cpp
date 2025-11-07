@@ -36,5 +36,5 @@ QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &m
 
 TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachmentUtils::generateAttachmentType(const QByteArray &mimetype)
 {
-    return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
+    return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
 }

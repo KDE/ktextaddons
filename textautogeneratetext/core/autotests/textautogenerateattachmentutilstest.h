@@ -13,4 +13,7 @@ class TextAutoGenerateAttachmentUtilsTest : public QObject
 public:
     explicit TextAutoGenerateAttachmentUtilsTest(QObject *parent = nullptr);
     ~TextAutoGenerateAttachmentUtilsTest() override = default;
+private Q_SLOTS:
+    void shouldGenerateAttachmentType();
+    void shouldGenerateAttachmentType_data();
 };

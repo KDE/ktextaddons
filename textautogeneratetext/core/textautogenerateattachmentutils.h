@@ -12,6 +12,6 @@ namespace TextAutoGenerateAttachmentUtils
 {
 [[nodiscard]] QByteArray generateBase64(const QString &fileName);
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
-[[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
 };
 }
