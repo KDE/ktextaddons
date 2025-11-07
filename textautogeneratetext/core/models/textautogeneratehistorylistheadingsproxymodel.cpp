@@ -196,16 +196,16 @@ QModelIndex TextAutoGenerateHistoryListHeadingsProxyModel::mapFromSource(const Q
 void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelIndex &parent, int first, int last)
 {
     for (auto row = first; row <= last; ++row) {
-        const QPersistentModelIndex index = sourceModel()->index(row, 0, parent);
-        const auto newSectionId = int(index.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChatsModel::SectionHistory>());
+        const QPersistentModelIndex persistentIndex = sourceModel()->index(row, 0, parent);
+        const auto newSectionId = int(persistentIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChatsModel::SectionHistory>());
         auto &newSection = mSections.at(newSectionId);
 
-        const auto newLocation = std::lower_bound(newSection.cbegin(), newSection.cend(), index);
+        const auto newLocation = std::lower_bound(newSection.cbegin(), newSection.cend(), persistentIndex);
         const auto newLocationRow = int(newLocation - newSection.cbegin());
 
         beginInsertRows(createIndex(newSectionId, 0, sectionCount), newLocationRow, newLocationRow);
 
-        newSection.insert(newLocation, index);
+        newSection.insert(newLocation, persistentIndex);
 
         endInsertRows();
     }
@@ -214,9 +214,9 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsInserted(const QModelI
 void TextAutoGenerateHistoryListHeadingsProxyModel::onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last)
 {
     for (auto row = first; row <= last; ++row) {
-        const auto index = sourceModel()->index(row, 0, parent);
+        const auto newIndex = sourceModel()->index(row, 0, parent);
 
-        const auto ourOldIndex = mapFromSource(index);
+        const auto ourOldIndex = mapFromSource(newIndex);
         const auto oldSectionId = ourOldIndex.internalId();
         auto &oldSection = mSections.at(oldSectionId);
 
@@ -275,11 +275,11 @@ void TextAutoGenerateHistoryListHeadingsProxyModel::rebuildSections()
     }
 
     for (auto row = 0, until = sourceModel()->rowCount(); row < until; ++row) {
-        const QPersistentModelIndex index = sourceModel()->index(row, 0);
-        const auto newSectionId = uint(index.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChatsModel::SectionHistory>());
+        const QPersistentModelIndex newIndex = sourceModel()->index(row, 0);
+        const auto newSectionId = uint(newIndex.data(TextAutoGenerateChatsModel::Section).value<TextAutoGenerateChatsModel::SectionHistory>());
         auto &newSection = mSections.at(newSectionId);
 
-        newSection.push_back(index);
+        newSection.push_back(newIndex);
     }
 
     for (auto &section : mSections) {
