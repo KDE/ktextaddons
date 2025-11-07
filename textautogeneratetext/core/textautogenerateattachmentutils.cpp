@@ -36,8 +36,15 @@ QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &m
 
 TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachmentUtils::generateAttachmentType(const QByteArray &mimetype)
 {
-    if (mimetype.startsWith("image/"_ba)) {
+    if (mimetype.isEmpty()) {
+        return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
+    } else if (mimetype.startsWith("image/"_ba)) {
         return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
+    } else if (mimetype.startsWith("video/"_ba)) {
+        return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Video;
+    } else if (mimetype.startsWith("audio/"_ba)) {
+        return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio;
+    } else {
+        return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File;
     }
-    return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
 }
