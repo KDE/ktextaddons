@@ -20,6 +20,8 @@ public:
     void addAttachement(const QString &fileName);
     [[nodiscard]] QStringList attachmentFileNames() const;
 
+    void clear();
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveAttachment(const QString &fileName);
     QMap<QString, TextAutoGenerateTextLineEditAttachmentClickableWidget *> mMap;

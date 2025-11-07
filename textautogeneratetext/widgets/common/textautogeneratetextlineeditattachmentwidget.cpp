@@ -55,4 +55,10 @@ QStringList TextAutoGenerateTextLineEditAttachmentWidget::attachmentFileNames() 
     return fileNames;
 }
 
+void TextAutoGenerateTextLineEditAttachmentWidget::clear()
+{
+    mMainLayout->clearAndDeleteWidgets();
+    mMap.clear();
+}
+
 #include "moc_textautogeneratetextlineeditattachmentwidget.cpp"

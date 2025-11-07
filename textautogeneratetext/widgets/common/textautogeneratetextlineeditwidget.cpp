@@ -128,6 +128,7 @@ void TextAutoGenerateTextLineEditWidget::clearLineEdit()
 {
     mTextAutoGenerateTextLineEdit->clear();
     mUuid.clear();
+    mTextLineEditAttachmentWidget->clear();
 }
 
 QString TextAutoGenerateTextLineEditWidget::text() const
