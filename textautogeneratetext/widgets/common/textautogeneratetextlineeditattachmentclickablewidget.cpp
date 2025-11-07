@@ -20,7 +20,13 @@ TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineE
                                                                                                              QWidget *parent)
     : TextAutoGenerateTextLineEditAttachmentClickableWidget(parent)
 {
-    // TODO
+    mFileNameLabel->setText(name);
+    const QMimeDatabase db;
+    const QMimeType mimeType = db.mimeTypeForName(QString::fromLatin1(mimetype));
+    const QString mimeTypeIconName = mimeType.iconName();
+
+    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
+    mMimetypeLabel->setPixmap(QPixmap(mimeTypeIconPath));
 }
 
 TextAutoGenerateTextLineEditAttachmentClickableWidget::TextAutoGenerateTextLineEditAttachmentClickableWidget(const QString &fileName, QWidget *parent)
