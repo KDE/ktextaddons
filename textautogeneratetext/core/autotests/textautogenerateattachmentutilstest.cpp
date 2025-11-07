@@ -26,3 +26,5 @@ void TextAutoGenerateAttachmentUtilsTest::shouldGenerateAttachmentType_data()
     QTest::addColumn<TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType>("attachmentType");
     QTest::newRow("noerror") << QByteArray() << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
 }
+
+#include "moc_textautogenerateattachmentutilstest.cpp"
