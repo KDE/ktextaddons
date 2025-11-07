@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 15:20+0000\n"
+"POT-Creation-Date: 2025-11-07 00:42+0000\n"
 "PO-Revision-Date: 2025-10-24 21:19+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -141,12 +141,12 @@ msgstr ""
 "Вие сте асистент с изкуствен интелект. Говорите с човек на име %1. Бъдете "
 "полезен, професионален и учтив. Не давайте неточна информация."
 
-#: core/textautogeneratetextplugin.cpp:269
+#: core/textautogeneratetextplugin.cpp:270
 #, kde-format
 msgid "Local"
 msgstr "Локално"
 
-#: core/textautogeneratetextplugin.cpp:271
+#: core/textautogeneratetextplugin.cpp:272
 #, kde-format
 msgid "Network"
 msgstr "Мрежа"
@@ -2094,7 +2094,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Въведете съобщение"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2121,7 +2121,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Изпращане"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:102
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

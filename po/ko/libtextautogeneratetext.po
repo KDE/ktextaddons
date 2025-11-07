@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 15:20+0000\n"
+"POT-Creation-Date: 2025-11-07 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -139,12 +139,12 @@ msgid ""
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:269
+#: core/textautogeneratetextplugin.cpp:270
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: core/textautogeneratetextplugin.cpp:271
+#: core/textautogeneratetextplugin.cpp:272
 #, kde-format
 msgid "Network"
 msgstr "네트워크"
@@ -1762,7 +1762,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "메시지 입력"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
 #, fuzzy, kde-format
 #| msgctxt "@action"
@@ -1792,7 +1792,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "보내기"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:102
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

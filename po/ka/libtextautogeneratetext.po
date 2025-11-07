@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 15:20+0000\n"
+"POT-Creation-Date: 2025-11-07 00:42+0000\n"
 "PO-Revision-Date: 2025-11-05 05:04+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -142,12 +142,12 @@ msgstr ""
 "ბრძანდებით ხი დამხმარე. ელაპარაკებით პიროვნებას სახელით %1. იყავით "
 "სასარგებლო, პროფესიონალი და თავაზიანი. ნუ მიაწვდით არაზუსტ ინფორმაციას."
 
-#: core/textautogeneratetextplugin.cpp:269
+#: core/textautogeneratetextplugin.cpp:270
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: core/textautogeneratetextplugin.cpp:271
+#: core/textautogeneratetextplugin.cpp:272
 #, kde-format
 msgid "Network"
 msgstr "ქსელური"
@@ -2100,7 +2100,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "შეიყვანეთ შეტყობინება"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2125,7 +2125,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:102
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

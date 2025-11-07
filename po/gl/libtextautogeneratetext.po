@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-06 15:20+0000\n"
+"POT-Creation-Date: 2025-11-07 00:42+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -134,12 +134,12 @@ msgid ""
 "professional, and courteous. Do not give inaccurate information."
 msgstr ""
 
-#: core/textautogeneratetextplugin.cpp:269
+#: core/textautogeneratetextplugin.cpp:270
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:271
+#: core/textautogeneratetextplugin.cpp:272
 #, kde-format
 msgid "Network"
 msgstr "Rede"
@@ -1742,7 +1742,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr ""
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
 #, kde-format
 msgctxt "@info:tooltip"
@@ -1768,7 +1768,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Enviar"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:102
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
