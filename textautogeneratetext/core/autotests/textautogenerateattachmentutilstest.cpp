@@ -24,7 +24,8 @@ void TextAutoGenerateAttachmentUtilsTest::shouldGenerateAttachmentType_data()
 {
     QTest::addColumn<QByteArray>("mimetype");
     QTest::addColumn<TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType>("attachmentType");
-    QTest::newRow("noerror") << QByteArray() << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
+    QTest::newRow("unknown") << QByteArray() << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
+    QTest::newRow("image1") << QByteArray("image/png") << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
 }
 
 #include "moc_textautogenerateattachmentutilstest.cpp"
