@@ -37,6 +37,7 @@ QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &m
 TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachmentUtils::generateAttachmentType(const QByteArray &mimetype)
 {
     if (mimetype.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "mimetype is empty. It's a bug";
         return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
     } else if (mimetype.startsWith("image/"_ba)) {
         return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image;
