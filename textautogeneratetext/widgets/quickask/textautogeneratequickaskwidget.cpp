@@ -138,7 +138,11 @@ void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId,
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr, .messageUuid = uuid, .chatId = chatId, .tools = {}};
+    const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr,
+                                                                                 .messageUuid = uuid,
+                                                                                 .chatId = chatId,
+                                                                                 .tools = {},
+                                                                                 .attachmentList = {}};
     mManager->textAutoGeneratePlugin()->editMessage(info); // TODO
 }
 
@@ -180,13 +184,15 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, con
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = {},
                                                                                      .chatId = mManager->currentChatId(),
-                                                                                     .tools = {}};
+                                                                                     .tools = {},
+                                                                                     .attachmentList = {}};
         mManager->textAutoGeneratePlugin()->sendMessage(info);
     } else {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = messageUuid,
                                                                                      .chatId = mManager->currentChatId(),
-                                                                                     .tools = {}};
+                                                                                     .tools = {},
+                                                                                     .attachmentList = {}};
         mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     // mTextAutoGenerateResultWidget->editingFinished(uuid);

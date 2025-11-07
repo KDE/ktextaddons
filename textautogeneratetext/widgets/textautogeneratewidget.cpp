@@ -237,7 +237,11 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 {
     const QByteArray uuid = indexAnswer.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = indexAnswer.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
-    const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr, .messageUuid = uuid, .chatId = chatId, .tools = tools};
+    const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr,
+                                                                                 .messageUuid = uuid,
+                                                                                 .chatId = chatId,
+                                                                                 .tools = tools,
+                                                                                 .attachmentList = {}};
 
     mManager->textAutoGeneratePlugin()->editMessage(info);
 }
