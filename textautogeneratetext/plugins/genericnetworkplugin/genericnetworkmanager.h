@@ -26,7 +26,7 @@ public:
         LlamaApi,
         Anthropic,
         KimiAI,
-        LastElement,
+        LastElement = KimiAI,
     };
 
     explicit GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent = nullptr);

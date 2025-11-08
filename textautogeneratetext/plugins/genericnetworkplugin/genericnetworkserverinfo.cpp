@@ -38,9 +38,6 @@ QString GenericNetworkServerInfo::translatedName(GenericNetworkManager::PluginNe
         return i18n("Anthropic");
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return i18n("Kimi (Moonshot AI)");
-    case GenericNetworkManager::PluginNetworkType::LastElement:
-        Q_ASSERT(false);
-        return {};
     }
     return {};
 }
@@ -61,9 +58,6 @@ QString GenericNetworkServerInfo::chatCompletionPath(GenericNetworkManager::Plug
     case GenericNetworkManager::PluginNetworkType::Anthropic:
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"chat/completions"_s;
-    case GenericNetworkManager::PluginNetworkType::LastElement:
-        Q_ASSERT(false);
-        return {};
     }
     return {};
 }
@@ -92,9 +86,6 @@ QString GenericNetworkServerInfo::webSite(GenericNetworkManager::PluginNetworkTy
         return u"https://www.anthropic.com/"_s;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"https://www.moonshot.ai/"_s;
-    case GenericNetworkManager::PluginNetworkType::LastElement:
-        Q_ASSERT(false);
-        return {};
     }
     return {};
 }
@@ -123,9 +114,6 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
         return u"https://api.anthropic.com/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"https://api.moonshot.ai/v1/"_s;
-    case GenericNetworkManager::PluginNetworkType::LastElement:
-        Q_ASSERT(false);
-        return {};
     }
     return {};
 }
@@ -152,9 +140,6 @@ QString GenericNetworkServerInfo::description(GenericNetworkManager::PluginNetwo
         return i18n("Meta AI Llama API");
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return i18n("Kimi large language models by Moonshot AI");
-    case GenericNetworkManager::PluginNetworkType::LastElement:
-        Q_ASSERT(false);
-        return {};
     }
     return {};
 }
@@ -183,9 +168,6 @@ QString GenericNetworkServerInfo::pluginName(GenericNetworkManager::PluginNetwor
         return u"anthropic"_s;
     case GenericNetworkManager::PluginNetworkType::KimiAI:
         return u"kimiai"_s;
-    case GenericNetworkManager::PluginNetworkType::LastElement:
-        Q_ASSERT(false);
-        return {};
     }
     return {};
 }
@@ -220,7 +202,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
 {
     QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> listInfo;
     for (int i = static_cast<int>(GenericNetworkManager::PluginNetworkType::Unknown) + 1;
-         i < static_cast<int>(GenericNetworkManager::PluginNetworkType::LastElement);
+         i <= static_cast<int>(GenericNetworkManager::PluginNetworkType::LastElement);
          ++i) {
         const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer info{
             .localizedName = QStringLiteral("%1 (%2)").arg(
@@ -258,7 +240,6 @@ GenericNetworkServerInfo::Limitations GenericNetworkServerInfo::limitations(Gene
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::LastElement:
         return limits;
     }
     return limits;
@@ -284,7 +265,6 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::LastElement:
         return false;
     }
     return false;
@@ -312,7 +292,6 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::CerebrasAI:
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::LastElement:
         return false;
     }
     return false;
