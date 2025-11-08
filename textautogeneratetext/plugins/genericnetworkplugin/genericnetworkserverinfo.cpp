@@ -272,6 +272,8 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
 
 bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const
 {
+    qDebug() << " bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const"
+             << currentModel << " type " << static_cast<int>(type);
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
@@ -282,6 +284,23 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
         if (currentModel == "Mistral Large"_L1) {
             return true;
         }
+#if 0
+        Mistral Large
+        Mistral Medium
+        Magistral Medium
+        Mistral Small
+        Magistral Small
+        Devstral Small
+        Devstral Medium
+        Voxtral Small
+        Voxtral Mini
+        Codestral
+        Ministral 8B
+        Ministral 3B
+        Pixtral 12B
+        Pixtral Large
+        Mistral Nemo
+#endif
         return false;
     }
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
