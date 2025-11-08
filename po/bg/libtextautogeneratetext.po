@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-07 00:42+0000\n"
-"PO-Revision-Date: 2025-10-24 21:19+0200\n"
+"POT-Creation-Date: 2025-11-08 00:40+0000\n"
+"PO-Revision-Date: 2025-11-07 22:51+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2094,7 +2094,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Въведете съобщение"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2108,12 +2108,10 @@ msgid "Attach File"
 msgstr "Прикачване на файл"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select GGUF File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select File"
-msgstr "Избиране на файл GGUF"
+msgstr "Избиране на файл"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2422,7 +2420,7 @@ msgstr "Редактиране…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
-msgstr ""
+msgstr "Спиране"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
 #, kde-format
