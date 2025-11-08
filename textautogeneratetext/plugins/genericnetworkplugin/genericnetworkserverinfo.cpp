@@ -281,26 +281,13 @@ bool GenericNetworkServerInfo::hasToolsSupport(const QString &currentModel, Gene
     case GenericNetworkManager::PluginNetworkType::MistralAI: {
         // https://docs.mistral.ai/capabilities/function_calling/#tools
         qDebug() << " currentModel " << currentModel;
-        if (currentModel == "Mistral Large"_L1) {
+        if (currentModel.startsWith("mistral-large"_L1) || currentModel.startsWith("mistral-medium"_L1) || currentModel.startsWith("mistral-small"_L1)
+            || currentModel.startsWith("magistral-small"_L1) || currentModel.startsWith("magistral-medium"_L1) || currentModel.startsWith("devstral-small"_L1)
+            || currentModel.startsWith("devstral-medium"_L1) || currentModel.startsWith("voxtral-small"_L1) || currentModel.startsWith("voxtral-mini"_L1)
+            || currentModel.startsWith("ministral-8b"_L1) || currentModel.startsWith("ministral-3b"_L1) || currentModel.startsWith("pixtral-12b"_L1)
+            || currentModel.startsWith("pixtral-large"_L1) || currentModel.startsWith("mistral-nemo"_L1) || currentModel.startsWith("codestral"_L1)) {
             return true;
         }
-#if 0
-        Mistral Large
-        Mistral Medium
-        Magistral Medium
-        Mistral Small
-        Magistral Small
-        Devstral Small
-        Devstral Medium
-        Voxtral Small
-        Voxtral Mini
-        Codestral
-        Ministral 8B
-        Ministral 3B
-        Pixtral 12B
-        Pixtral Large
-        Mistral Nemo
-#endif
         return false;
     }
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
