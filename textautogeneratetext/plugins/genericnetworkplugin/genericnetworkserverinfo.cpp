@@ -271,6 +271,11 @@ bool GenericNetworkServerInfo::hasVisionSupport(const QString &currentModel, Gen
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
         return false;
     case GenericNetworkManager::PluginNetworkType::MistralAI:
+        if (currentModel == "pixtral-12b-latest"_L1 || currentModel == "pixtral-large-latest"_L1 || currentModel == "mistral-medium-2508"_L1
+            || currentModel == "mistral-small-2506"_L1) {
+            return true;
+        }
+        return false;
     case GenericNetworkManager::PluginNetworkType::LlamaApi:
     case GenericNetworkManager::PluginNetworkType::OpenAI:
     case GenericNetworkManager::PluginNetworkType::GroqAI:
