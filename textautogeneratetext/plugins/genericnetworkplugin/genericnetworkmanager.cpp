@@ -200,4 +200,14 @@ bool GenericNetworkManager::hasToolsSupport(const QString &currentModel) const
     return mServerInfo->hasToolsSupport(currentModel, mPluginNetworkType);
 }
 
+bool GenericNetworkManager::hasOcrSupport(const QString &currentModel) const
+{
+    return mServerInfo->hasOcrSupport(currentModel, mPluginNetworkType);
+}
+
+bool GenericNetworkManager::hasAudioSupport(const QString &currentModel) const
+{
+    return mServerInfo->hasAudioSupport(currentModel, mPluginNetworkType);
+}
+
 #include "moc_genericnetworkmanager.cpp"

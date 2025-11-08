@@ -190,4 +190,14 @@ bool OllamaPlugin::hasToolsSupport() const
     return mOllamaManager->hasToolsSupport(currentModel());
 }
 
+bool OllamaPlugin::hasOcrSupport() const
+{
+    return mOllamaManager->hasOcrSupport(currentModel());
+}
+
+bool OllamaPlugin::hasAudioSupport() const
+{
+    return mOllamaManager->hasAudioSupport(currentModel());
+}
+
 #include "moc_ollamaplugin.cpp"

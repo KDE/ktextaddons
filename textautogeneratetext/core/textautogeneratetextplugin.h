@@ -97,6 +97,8 @@ public:
 
     [[nodiscard]] virtual bool hasVisionSupport() const = 0;
     [[nodiscard]] virtual bool hasToolsSupport() const = 0;
+    [[nodiscard]] virtual bool hasOcrSupport() const = 0;
+    [[nodiscard]] virtual bool hasAudioSupport() const = 0;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void initializedDone();

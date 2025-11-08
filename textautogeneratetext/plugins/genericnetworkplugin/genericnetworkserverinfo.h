@@ -37,4 +37,6 @@ public:
     [[nodiscard]] QString chatCompletionPath(GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasVisionSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
     [[nodiscard]] bool hasToolsSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] bool hasOcrSupport(const QString &currentModel, GenericNetworkManager::PluginNetworkType type) const;
+    [[nodiscard]] bool hasAudioSupport(const QString &currentMode, GenericNetworkManager::PluginNetworkType type) const;
 };

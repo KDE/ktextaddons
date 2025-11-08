@@ -268,4 +268,14 @@ bool GenericNetworkPlugin::hasToolsSupport() const
     return mGenericManager->hasToolsSupport(currentModel());
 }
 
+bool GenericNetworkPlugin::hasOcrSupport() const
+{
+    return mGenericManager->hasOcrSupport(currentModel());
+}
+
+bool GenericNetworkPlugin::hasAudioSupport() const
+{
+    return mGenericManager->hasAudioSupport(currentModel());
+}
+
 #include "moc_genericnetworkplugin.cpp"

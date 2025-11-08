@@ -29,6 +29,8 @@ public:
 
     [[nodiscard]] bool hasVisionSupport() const override;
     [[nodiscard]] bool hasToolsSupport() const override;
+    [[nodiscard]] bool hasOcrSupport() const override;
+    [[nodiscard]] bool hasAudioSupport() const override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
@@ -87,6 +89,15 @@ bool CustomPlugin::hasVisionSupport() const
 }
 
 bool CustomPlugin::hasToolsSupport() const
+{
+    return false;
+}
+
+bool CustomPlugin::hasOcrSupport() const
+{
+    return false;
+}
+bool CustomPlugin::hasAudioSupport() const
 {
     return false;
 }

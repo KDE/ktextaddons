@@ -52,6 +52,10 @@ public:
 
     [[nodiscard]] bool hasVisionSupport(const QString &modelName) const;
     [[nodiscard]] bool hasToolsSupport(const QString &modelName) const;
+
+    [[nodiscard]] bool hasOcrSupport(const QString &modelName) const;
+    [[nodiscard]] bool hasAudioSupport(const QString &modelName) const;
+
 Q_SIGNALS:
     void downloadInProgress(const QString &modelName, const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info);
 
