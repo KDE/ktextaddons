@@ -34,6 +34,9 @@ void GenericNetworkModelAvailableInfo::parseCapabilities(const QJsonObject &obj)
     if (obj["vision"_L1].toBool(false)) {
         mCapabilities |= Capability::Vision;
     }
+    if (obj["function_calling"_L1].toBool(false)) {
+        mCapabilities |= Capability::Tools;
+    }
     // TODO add more
     // {"audio":false,"classification":false,"completion_chat":false,"completion_fim":false,"fine_tuning":false,"function_calling":false,"moderation":false,"ocr":false,"vision":false}
 }

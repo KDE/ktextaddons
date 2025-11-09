@@ -17,6 +17,7 @@ public:
         Vision = 1,
         Audio = 4,
         Ocr = 8,
+        Tools = 16,
     };
     Q_FLAGS(Capability Capabilities)
     Q_DECLARE_FLAGS(Capabilities, Capability)
