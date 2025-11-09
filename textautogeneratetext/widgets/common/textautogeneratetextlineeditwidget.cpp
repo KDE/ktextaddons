@@ -33,12 +33,12 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     topLayout->setContentsMargins(QMargins{});
     topLayout->setSpacing(0);
 
+    mTextLineEditAttachmentWidget->setObjectName(u"mTextLineEditAttachmentWidget"_s);
+    topLayout->addWidget(mTextLineEditAttachmentWidget);
+
     mTextAutoGenerateToolsWidget->setObjectName(u"mTextAutoGenerateToolsWidget"_s);
     topLayout->addWidget(mTextAutoGenerateToolsWidget);
     mTextAutoGenerateToolsWidget->setVisible(false);
-
-    mTextLineEditAttachmentWidget->setObjectName(u"mTextLineEditAttachmentWidget"_s);
-    topLayout->addWidget(mTextLineEditAttachmentWidget);
 
     auto mainLayout = new QHBoxLayout;
     mainLayout->setObjectName(u"mainLayout"_s);
