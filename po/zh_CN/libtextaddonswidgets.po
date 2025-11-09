@@ -21,45 +21,43 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bold"
-msgstr ""
+msgstr "加粗"
 
 #: richtextquicktextformat.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Italic"
-msgstr ""
+msgstr "斜体"
 
 #: richtextquicktextformat.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Strike Through"
-msgstr ""
+msgstr "删除线"
 
 #: richtextquicktextformat.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr ""
+msgstr "下划线"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Code Block"
-msgstr ""
+msgstr "代码块"
 
 #: richtextquicktextformat.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Quote Text"
-msgstr ""
+msgstr "引用文本"
 
 #: richtextquicktextformat.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Insert"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Link"
-msgstr "插入"
+msgstr "插入链接"
 
 #: selectspecialchardialog.cpp:34
 #, kde-format

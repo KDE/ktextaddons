@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the ktextaddons package.
 #
 # SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-25 02:39+0000\n"
-"PO-Revision-Date: 2025-10-25 06:22-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2025-11-08 21:16-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -317,7 +318,7 @@ msgstr "Criar"
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr "Carregar arquivo GGUF..."
+msgstr "Carregar arquivo GGUF…"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
 #, kde-format
@@ -2063,7 +2064,7 @@ msgstr "O nome da cidade"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "Pesquisar modelo..."
+msgstr "Pesquisar modelo…"
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
@@ -2074,7 +2075,7 @@ msgstr "Nenhuma instância encontrada. Adicione uma."
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr "Adicionar instância..."
+msgstr "Adicionar instância…"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
 #, kde-format
@@ -2105,7 +2106,7 @@ msgstr "Iniciar Ollama"
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2219,7 +2220,7 @@ msgstr "Configurar instâncias"
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
-msgstr "Adicionar instância..."
+msgstr "Adicionar instância…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
@@ -2261,7 +2262,7 @@ msgstr "Pesquisar…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Adicionar instância..."
+msgstr "Adicionar instância…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -2308,13 +2309,13 @@ msgstr "Remover"
 #: widgets/menu/textautogeneratemenuwidget.cpp:34
 #, kde-format
 msgid "Ask AI…"
-msgstr "Pergunte à IA..."
+msgstr "Pergunte à IA…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
@@ -2336,7 +2337,7 @@ msgstr "Pergunta rápida"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:45
 #, kde-format
