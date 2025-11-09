@@ -100,4 +100,4 @@ msgstr "搜索表情符号…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Other Emoji"
-msgstr ""
+msgstr "选择其他表情符号"

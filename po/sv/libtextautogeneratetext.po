@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:40+0000\n"
+"POT-Creation-Date: 2025-11-09 00:41+0000\n"
 "PO-Revision-Date: 2025-10-26 20:53+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -227,32 +227,32 @@ msgstr "Anthropic"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (Moonshot AI)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Mistral AI stora språkmodeller"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "Kluster AI programmeringsgränssnitt för molninferens"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "Cerebras AI programmeringsgränssnitt för molninferens"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "Meta AI Llama programmeringsgränssnitt"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Kimi stor språkmodell av Moonshot AI"

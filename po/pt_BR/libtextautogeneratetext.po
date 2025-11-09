@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:40+0000\n"
-"PO-Revision-Date: 2025-11-05 07:40-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"POT-Creation-Date: 2025-11-09 00:41+0000\n"
+"PO-Revision-Date: 2025-11-08 21:10-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -229,32 +229,32 @@ msgstr "Antrópico"
 msgid "Kimi (Moonshot AI)"
 msgstr "Kimi (IA da Moonshot)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "Modelos de linguagem grandes da IA Mistral"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
 #, kde-format
 msgid "Groq AI"
 msgstr "IA do Groq"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "API de inferência da nuvem da IA Kluster"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "API de inferência da nuvem da IA Cerebras"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "API do Llama para a IA do Meta"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "Modelos de linguagem grandes da Kimi pela IA Moonshot"
@@ -319,7 +319,7 @@ msgstr "Criar"
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
-msgstr "Carregar arquivo GGUF..."
+msgstr "Carregar arquivo GGUF…"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
 #, kde-format
@@ -2065,7 +2065,7 @@ msgstr "O nome da cidade"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search Model…"
-msgstr "Pesquisar modelo..."
+msgstr "Pesquisar modelo…"
 
 #: widgets/common/textautogeneratenotinstancefoundwidget.cpp:21
 #, kde-format
@@ -2076,7 +2076,7 @@ msgstr "Nenhuma instância encontrada. Adicione uma."
 #, kde-format
 msgctxt "@action:button"
 msgid "Add instance…"
-msgstr "Adicionar instância..."
+msgstr "Adicionar instância…"
 
 #: widgets/common/textautogeneratenotworkingmessagewidget.cpp:43
 #, kde-format
@@ -2107,7 +2107,7 @@ msgstr "Iniciar Ollama"
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: widgets/common/textautogeneratetextlineedit.cpp:19
 #, kde-format
@@ -2234,7 +2234,7 @@ msgstr "Configurar instâncias"
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
-msgstr "Adicionar instância..."
+msgstr "Adicionar instância…"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
@@ -2276,7 +2276,7 @@ msgstr "Pesquisar…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
-msgstr "Adicionar instância..."
+msgstr "Adicionar instância…"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:26
 #, kde-format
@@ -2323,13 +2323,13 @@ msgstr "Remover"
 #: widgets/menu/textautogeneratemenuwidget.cpp:34
 #, kde-format
 msgid "Ask AI…"
-msgstr "Pergunte à IA..."
+msgstr "Pergunte à IA…"
 
 #: widgets/menu/textautogeneratemenuwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:48
 #, kde-format
@@ -2358,7 +2358,7 @@ msgstr "Pesquisar…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:54
 #, kde-format

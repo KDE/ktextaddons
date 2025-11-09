@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:40+0000\n"
+"POT-Creation-Date: 2025-11-09 00:41+0000\n"
 "PO-Revision-Date: 2025-11-06 09:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -228,32 +228,32 @@ msgstr "أنثروبيك"
 msgid "Kimi (Moonshot AI)"
 msgstr "كيمي (موشوت للذكاء الاصطناعي)"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:128
 #, kde-format
 msgid "Mistral AI large language models"
 msgstr "نماذج ميسطرال للذكاء الاصطناعي للغة الضخمة"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:146
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:134
 #, kde-format
 msgid "Groq AI"
 msgstr "Groq AI"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:148
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:136
 #, kde-format
 msgid "Kluster AI cloud inference API"
 msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لكلوستر للذكاء الاصطناعي"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:150
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:138
 #, kde-format
 msgid "Cerebras AI cloud inference API"
 msgstr "واجهة برمجة تطبيقات الاستدلال السحابي لسيريباس للذكاء الاصطناعي"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:152
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:140
 #, kde-format
 msgid "Meta AI Llama API"
 msgstr "لاما API من ميتا للذكاء الاصطناعي"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:154
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:142
 #, kde-format
 msgid "Kimi large language models by Moonshot AI"
 msgstr "نماذج كيمي للغة الضخمة من موشوت للذكاء الاصطناعي"
