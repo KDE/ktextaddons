@@ -522,6 +522,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsm
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextwidgetsquickask_HEADERS
     HEADER_NAMES
     TextAutoGenerateQuickAskDialog
+    TextAutoGenerateQuickAskWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextwidgetsquickask_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE widgets/quickask
