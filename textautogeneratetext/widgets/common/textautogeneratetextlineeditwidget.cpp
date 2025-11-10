@@ -53,7 +53,18 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     mAttachFile->setAutoRaise(true);
 
     connect(mAttachFile, &QToolButton::clicked, this, [this]() {
-        const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"));
+        const bool hasVisionSupport = mManager->textAutoGeneratePlugin()->hasVisionSupport();
+        const bool hasOcrSupport = mManager->textAutoGeneratePlugin()->hasOcrSupport();
+        const bool hasAudioSupport = mManager->textAutoGeneratePlugin()->hasAudioSupport();
+        QStringList filterFiles;
+        if (hasVisionSupport || hasOcrSupport) {
+            filterFiles << i18n("Images (*.png *.xpm *.jpg *.gif)"); // TODO add more
+        }
+        if (hasAudioSupport) {
+            filterFiles << i18n("Audio (*.mp4 *.avi)"); // TODO add more
+        }
+        filterFiles << i18n("Text (*.txt *.md)"); // TODO add more
+        const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select File"), {}, filterFiles.join(u";;"_s));
         if (!fileName.isEmpty()) {
             mTextLineEditAttachmentWidget->addAttachement(fileName);
         }
