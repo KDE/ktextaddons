@@ -441,6 +441,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextUtils
     TextAutoGeneratePluginUtils
     TextAutoGenerateSettings
+    TextAutoGenerateAttachmentUtils
     TextAutoGenerateSearchMessageSettings
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcore_HEADERS
     PREFIX TextAutoGenerateText
