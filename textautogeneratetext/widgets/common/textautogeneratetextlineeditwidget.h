@@ -5,6 +5,7 @@
 */
 #pragma once
 
+#include "core/textautogenerateattachmentutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QToolButton;
@@ -39,6 +40,10 @@ public:
 
 Q_SIGNALS:
     void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools, const QStringList &attachmentList);
+    void editingFinishedNew(const QString &str,
+                            const QByteArray &uuid,
+                            const QList<QByteArray> &lstTools,
+                            const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList); // Rename it
     void keyPressed(QKeyEvent *ev);
 
 private:

@@ -10,6 +10,11 @@ namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateAttachmentUtils
 {
+struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
+    QByteArray mimeType;
+    QByteArray content;
+};
+
 [[nodiscard]] QByteArray generateBase64(const QString &fileName);
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
