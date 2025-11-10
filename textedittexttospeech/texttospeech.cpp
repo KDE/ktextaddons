@@ -80,7 +80,7 @@ void TextToSpeech::slotAboutToSynthesize([[maybe_unused]] qsizetype id)
 
 void TextToSpeech::slotStateChanged()
 {
-    TextToSpeech::State state;
+    TextToSpeech::State state = TextToSpeech::State::Unknown;
     switch (d->mTextToSpeech->state()) {
     case QTextToSpeech::Ready:
         state = TextToSpeech::Ready;

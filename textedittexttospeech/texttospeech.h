@@ -33,6 +33,7 @@ public:
         Paused,
         BackendError,
         Synthesizing,
+        Unknown,
     };
 
     [[nodiscard]] double volume() const;
