@@ -19,7 +19,6 @@ public:
     ~TextAutoGenerateTextLineEditAttachmentWidget() override;
 
     void addAttachement(const QString &fileName);
-    [[nodiscard]] QStringList attachmentFileNames() const;
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentElementInfoList() const;
     void clear();

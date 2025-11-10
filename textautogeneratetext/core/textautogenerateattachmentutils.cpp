@@ -56,3 +56,10 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
     d.space() << "content:" << t.content;
     return d;
 }
+
+TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFile(const QString &fileName)
+{
+    TextAutoGenerateAttachmentUtils::AttachmentElementInfo info;
+    // TODO
+    return info;
+}

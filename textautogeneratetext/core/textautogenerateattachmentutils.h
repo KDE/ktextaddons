@@ -19,6 +19,8 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
 [[nodiscard]] QByteArray generateBase64(const QString &fileName);
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
+
+[[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo createAttachmentElementInfoFromFile(const QString &fileName);
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &t);

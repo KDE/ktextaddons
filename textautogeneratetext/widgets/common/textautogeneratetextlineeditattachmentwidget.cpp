@@ -50,17 +50,12 @@ void TextAutoGenerateTextLineEditAttachmentWidget::slotRemoveAttachment(const QS
 QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo>
 TextAutoGenerateTextLineEditAttachmentWidget::attachmentElementInfoList() const
 {
-    // TODO
-    return {};
-}
-
-QStringList TextAutoGenerateTextLineEditAttachmentWidget::attachmentFileNames() const
-{
-    QStringList fileNames;
+    QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> lst;
+    lst.reserve(mMap.count());
     for (const auto &[key, value] : mMap.asKeyValueRange()) {
-        fileNames << value->fileName();
+        lst.append(TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFile(value->fileName()));
     }
-    return fileNames;
+    return lst;
 }
 
 void TextAutoGenerateTextLineEditAttachmentWidget::clear()
