@@ -19,6 +19,7 @@
         "Description[sv]": "Det här verktygsinsticksprogrammet är ett exempel.",
         "Description[tr]": "Bu araç eklentisi bir örnektir.",
         "Description[uk]": "Цей додаток інструменту є прикладом.",
+        "Description[zh_CN]": "这是一个用于示例的工具插件。",
         "EnabledByDefault": true,
         "Name": "Tool Example Plugin",
         "Name[ar]": "ملحقة مثال أداة",
@@ -39,6 +40,7 @@
         "Name[sv]": "Exempelverktygsinsticksprogram",
         "Name[tr]": "Araç Örneği Eklentisi",
         "Name[uk]": "Додаток прикладу інструменту",
+        "Name[zh_CN]": "工具示例插件",
         "Version": "1.0"
     }
 }
