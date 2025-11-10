@@ -6,6 +6,8 @@
 #include "textautogenerateattachmentutils.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QFile>
+#include <QFileInfo>
+#include <QMimeDatabase>
 #include <QString>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -60,6 +62,14 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFile(const QString &fileName)
 {
     TextAutoGenerateAttachmentUtils::AttachmentElementInfo info;
-    // TODO
+    if (fileName.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Filename is empty. It's a bug";
+        return info;
+    }
+    QFileInfo fileInfo(fileName);
+    const QMimeDatabase db;
+    const QMimeType mimeType = db.mimeTypeForFile(fileInfo);
+    info.mimeType = mimeType.name().toLatin1();
+    info.content = generateBase64(fileName);
     return info;
 }
