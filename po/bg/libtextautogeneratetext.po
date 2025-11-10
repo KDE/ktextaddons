@@ -2526,24 +2526,3 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Next Chat"
-#~ msgctxt "Find and go to the next search match"
-#~ msgid "Next"
-#~ msgstr "Следващ чат"
-
-#, fuzzy
-#~| msgctxt "@action"
-#~| msgid "Previous Chat"
-#~ msgctxt "Find and go to the previous search match"
-#~ msgid "Previous"
-#~ msgstr "Предишен чат"
-
-#~ msgid "No system prompt"
-#~ msgstr "Няма системна подкана"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Редактиране..."
