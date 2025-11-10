@@ -39,7 +39,7 @@ public:
     [[nodiscard]] QList<TextAutoGenerateTextToolPluginProperty> properties() const;
     void setProperties(const QList<TextAutoGenerateTextToolPluginProperty> &newProperties);
 
-    virtual TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() = 0;
+    [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolPluginJob *callTool() = 0;
 
     [[nodiscard]] virtual QString iconName() const;
 
