@@ -84,7 +84,10 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         const QString str = msg.trimmed();
         mSendMessage->setEnabled(!str.isEmpty());
         if (!str.isEmpty()) {
-            Q_EMIT editingFinished(str, mUuid, mTextAutoGenerateToolsWidget->generateListOfActiveTools(), mTextLineEditAttachmentWidget->attachmentFileNames());
+            Q_EMIT editingFinished(str,
+                                   mUuid,
+                                   mTextAutoGenerateToolsWidget->generateListOfActiveTools(),
+                                   mTextLineEditAttachmentWidget->attachmentElementInfoList());
             clearLineEdit();
         }
     });
@@ -98,7 +101,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         Q_EMIT editingFinished(mTextAutoGenerateTextLineEdit->text(),
                                mUuid,
                                mTextAutoGenerateToolsWidget->generateListOfActiveTools(),
-                               mTextLineEditAttachmentWidget->attachmentFileNames());
+                               mTextLineEditAttachmentWidget->attachmentElementInfoList());
         clearLineEdit();
     });
     connect(mTextAutoGenerateTextLineEdit, &TextAutoGenerateTextLineEdit::keyPressed, this, &TextAutoGenerateTextLineEditWidget::keyPressed);

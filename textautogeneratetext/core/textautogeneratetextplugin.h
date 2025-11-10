@@ -11,6 +11,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextRequest>
 #include <memory>
@@ -50,7 +51,7 @@ public:
         QByteArray messageUuid;
         QByteArray chatId;
         QList<QByteArray> tools;
-        QStringList attachmentList;
+        QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentInfoList;
     };
 
     explicit TextAutoGenerateTextPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,

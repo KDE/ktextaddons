@@ -7,6 +7,7 @@
 #include "textautogeneratetext_export.h"
 #include <QPointer>
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 class QSplitter;
 namespace TextAutoGenerateText
 {
@@ -42,7 +43,10 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     TEXTAUTOGENERATETEXT_NO_EXPORT void
-    slotEditingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools, const QStringList &attachmentList);
+    slotEditingFinished(const QString &str,
+                        const QByteArray &uuid,
+                        const QList<QByteArray> &lstTools,
+                        const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &errorMessage);
     TEXTAUTOGENERATETEXT_NO_EXPORT void writeConfig();
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();

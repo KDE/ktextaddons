@@ -5,6 +5,7 @@
 */
 #pragma once
 #include <QByteArray>
+#include <QDebug>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
 namespace TextAutoGenerateText
 {
@@ -20,3 +21,4 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
 };
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &t);

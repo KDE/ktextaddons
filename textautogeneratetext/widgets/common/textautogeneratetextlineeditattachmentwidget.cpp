@@ -5,6 +5,7 @@
 */
 
 #include "textautogeneratetextlineeditattachmentwidget.h"
+
 #include "textautogeneratetextlineeditattachmentclickablewidget.h"
 #include "widgets/common/textautogenerateflowlayout.h"
 using namespace TextAutoGenerateText;
@@ -44,6 +45,13 @@ void TextAutoGenerateTextLineEditAttachmentWidget::slotRemoveAttachment(const QS
             mMap.remove(fileName);
         }
     }
+}
+
+QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo>
+TextAutoGenerateTextLineEditAttachmentWidget::attachmentElementInfoList() const
+{
+    // TODO
+    return {};
 }
 
 QStringList TextAutoGenerateTextLineEditAttachmentWidget::attachmentFileNames() const

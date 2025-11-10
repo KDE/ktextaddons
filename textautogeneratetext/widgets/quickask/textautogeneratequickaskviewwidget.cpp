@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratequickaskviewwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogenerateresultwidget.h"
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}

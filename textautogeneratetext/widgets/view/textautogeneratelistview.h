@@ -7,6 +7,7 @@
 #include "textautogeneratebaselistview.h"
 #include "textautogeneratetext_private_export.h"
 #include <QPointer>
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -38,7 +39,10 @@ protected:
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools, const QStringList &attachmentList);
+    void refreshAnswerRequested(const QByteArray &chatId,
+                                const QModelIndex &indexAnswer,
+                                const QList<QByteArray> &tools,
+                                const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoLis);
     void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
 
 private:

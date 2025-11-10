@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 
 namespace TextAddonsWidgets
 {
@@ -41,7 +42,10 @@ public:
 Q_SIGNALS:
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools, const QStringList &attachmentList);
+    void refreshAnswerRequested(const QByteArray &charId,
+                                const QModelIndex &indexAnswer,
+                                const QList<QByteArray> &tools,
+                                const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList);
     void switchToChat(const QByteArray &uuid);
     void closeSearchBarRequested();
 

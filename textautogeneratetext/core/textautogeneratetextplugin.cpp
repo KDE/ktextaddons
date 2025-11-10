@@ -226,7 +226,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlug
     d.space() << "messageUuid:" << t.messageUuid;
     d.space() << "chatId:" << t.chatId;
     d.space() << "tools:" << t.tools;
-    d.space() << "attachmentList:" << t.attachmentList;
+    d.space() << "attachmentList:" << t.attachmentInfoList;
     return d;
 }
 

@@ -39,11 +39,10 @@ public:
     void setActivatedTools(const QList<QByteArray> &lst);
 
 Q_SIGNALS:
-    void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools, const QStringList &attachmentList);
-    void editingFinishedNew(const QString &str,
-                            const QByteArray &uuid,
-                            const QList<QByteArray> &lstTools,
-                            const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList); // Rename it
+    void editingFinished(const QString &str,
+                         const QByteArray &uuid,
+                         const QList<QByteArray> &lstTools,
+                         const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList);
     void keyPressed(QKeyEvent *ev);
 
 private:

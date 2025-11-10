@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "core/textautogenerateattachmentutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 namespace TextAutoGenerateText
@@ -22,10 +23,16 @@ public:
     void editMessage(const QByteArray &uuid, const QString &messageStr);
 
 Q_SIGNALS:
-    void editingFinished(const QString &str, const QByteArray &uuid, const QList<QByteArray> &lstTools);
+    void editingFinished(const QString &str,
+                         const QByteArray &uuid,
+                         const QList<QByteArray> &lstTools,
+                         const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoLis);
     void configureChanged();
     void cancelRequested(const QByteArray &uuid);
-    void refreshAnswerRequested(const QByteArray &charId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools, const QStringList &attachmentList);
+    void refreshAnswerRequested(const QByteArray &charId,
+                                const QModelIndex &indexAnswer,
+                                const QList<QByteArray> &tools,
+                                const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList);
     void editMessageRequested(const QModelIndex &index, const QList<QByteArray> &tools);
 
 private:

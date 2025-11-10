@@ -49,3 +49,10 @@ TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType TextAutoGenerat
         return TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File;
     }
 }
+
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &t)
+{
+    d.space() << "mimeType:" << t.mimeType;
+    d.space() << "content:" << t.content;
+    return d;
+}

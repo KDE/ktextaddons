@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "core/textautogenerateattachmentutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 namespace TextAutoGenerateText
@@ -20,6 +21,7 @@ public:
     void addAttachement(const QString &fileName);
     [[nodiscard]] QStringList attachmentFileNames() const;
 
+    [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentElementInfoList() const;
     void clear();
 
 private:

@@ -142,7 +142,7 @@ void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId,
                                                                                  .messageUuid = uuid,
                                                                                  .chatId = chatId,
                                                                                  .tools = {},
-                                                                                 .attachmentList = {}};
+                                                                                 .attachmentInfoList = {}};
     mManager->textAutoGeneratePlugin()->editMessage(info); // TODO
 }
 
@@ -185,14 +185,14 @@ void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, con
                                                                                      .messageUuid = {},
                                                                                      .chatId = mManager->currentChatId(),
                                                                                      .tools = {},
-                                                                                     .attachmentList = {}};
+                                                                                     .attachmentInfoList = {}};
         mManager->textAutoGeneratePlugin()->sendMessage(info);
     } else {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = messageUuid,
                                                                                      .chatId = mManager->currentChatId(),
                                                                                      .tools = {},
-                                                                                     .attachmentList = {}};
+                                                                                     .attachmentInfoList = {}};
         mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     // mTextAutoGenerateResultWidget->editingFinished(uuid);

@@ -192,7 +192,7 @@ void TextAutoGenerateWidget::loadEngine()
 void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
                                                  const QByteArray &uuid,
                                                  const QList<QByteArray> &lstTools,
-                                                 const QStringList &attachmentList)
+                                                 const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList)
 {
     mManager->checkCurrentChat();
     if (uuid.isEmpty()) {
@@ -200,14 +200,14 @@ void TextAutoGenerateWidget::slotEditingFinished(const QString &str,
                                                                                      .messageUuid = {},
                                                                                      .chatId = mManager->currentChatId(),
                                                                                      .tools = lstTools,
-                                                                                     .attachmentList = attachmentList};
+                                                                                     .attachmentInfoList = attachmentInfoList};
         mManager->textAutoGeneratePlugin()->sendMessage(info);
     } else {
         const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
                                                                                      .messageUuid = uuid,
                                                                                      .chatId = mManager->currentChatId(),
                                                                                      .tools = lstTools,
-                                                                                     .attachmentList = attachmentList};
+                                                                                     .attachmentInfoList = attachmentInfoList};
         mManager->textAutoGeneratePlugin()->editMessage(info);
     }
     mTextAutoGenerateResultWidget->editingFinished(uuid);
@@ -241,7 +241,7 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
                                                                                  .messageUuid = uuid,
                                                                                  .chatId = chatId,
                                                                                  .tools = tools,
-                                                                                 .attachmentList = {}};
+                                                                                 .attachmentInfoList = {}};
 
     mManager->textAutoGeneratePlugin()->editMessage(info);
 }
