@@ -99,7 +99,6 @@ public:
     [[nodiscard]] virtual bool hasToolsSupport() const = 0;
     [[nodiscard]] virtual bool hasOcrSupport() const = 0;
     [[nodiscard]] virtual bool hasAudioSupport() const = 0;
-    [[nodiscard]] bool hasAttachmentSupport() const;
 Q_SIGNALS:
     void errorOccurred(const QString &message);
     void initializedDone();
