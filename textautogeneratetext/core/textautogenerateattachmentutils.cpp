@@ -66,7 +66,7 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Filename is empty. It's a bug";
         return info;
     }
-    QFileInfo fileInfo(fileName);
+    const QFileInfo fileInfo(fileName);
     const QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForFile(fileInfo);
     info.mimeType = mimeType.name().toLatin1();
