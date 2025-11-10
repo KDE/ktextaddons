@@ -275,6 +275,14 @@ QString TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::Text
     return {};
 }
 
+bool TextAutoGenerateTextPlugin::hasAttachmentSupport() const
+{
+    qDebug() << " hasAudioSupport() " << hasAudioSupport();
+    qDebug() << " hasOcrSupport() " << hasOcrSupport();
+    qDebug() << " hasVisionSupport() " << hasVisionSupport();
+    return hasAudioSupport() || hasOcrSupport() || hasVisionSupport();
+}
+
 QString TextAutoGenerateTextPlugin::fallBackModel() const
 {
     // Fallback to first model
