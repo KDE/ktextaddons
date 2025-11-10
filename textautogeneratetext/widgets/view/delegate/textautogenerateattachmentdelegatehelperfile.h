@@ -27,6 +27,7 @@ private:
     // TODO implement it
     struct FileLayout {
         QString mimetype;
+        QString name;
     };
 };
 }

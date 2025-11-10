@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogenerateattachmentdelegatehelperfile.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -19,6 +20,7 @@ void TextAutoGenerateAttachmentDelegateHelperFile::draw(QPainter *painter,
                                                         const QModelIndex &index,
                                                         const QStyleOptionViewItem &option) const
 {
+    const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
     // TODO
 }
 

@@ -24,7 +24,6 @@ public:
     sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att, const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const override;
 
 private:
-    // TODO implement it
     struct ImageLayout {
         QPixmap pixmap;
         QSize imageSize;
