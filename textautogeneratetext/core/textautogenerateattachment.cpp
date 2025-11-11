@@ -19,19 +19,19 @@ TextAutoGenerateAttachment::~TextAutoGenerateAttachment()
     qCDebug(TEXTAUTOGENERATETEXT_CORE_MEMORY_LOG) << " TextAutoGenerateAttachment deleted " << this;
 }
 
-QByteArray TextAutoGenerateAttachment::base64() const
+QByteArray TextAutoGenerateAttachment::content() const
 {
-    return mBase64;
+    return mContent;
 }
 
-void TextAutoGenerateAttachment::setBase64(const QByteArray &b)
+void TextAutoGenerateAttachment::setContent(const QByteArray &b)
 {
-    mBase64 = b;
+    mContent = b;
 }
 
 QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t)
 {
-    d.space() << "mBase64:" << t.base64();
+    d.space() << "mContent:" << t.content();
     d.space() << "mAttachmentType:" << t.attachmentType();
     d.space() << "mMimeType:" << t.mimeType();
     d.space() << "mName:" << t.name();
@@ -40,12 +40,12 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 
 bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
 {
-    return (mBase64 == other.mBase64) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType) && (mName == other.mName);
+    return (mContent == other.mContent) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType) && (mName == other.mName);
 }
 
 bool TextAutoGenerateAttachment::isValid() const
 {
-    return (mAttachmentType != AttachmentType::Unknown) && !mBase64.isEmpty();
+    return (mAttachmentType != AttachmentType::Unknown) && !mContent.isEmpty();
 }
 
 TextAutoGenerateAttachment::AttachmentType TextAutoGenerateAttachment::attachmentType() const
@@ -63,7 +63,7 @@ QJsonObject TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachme
     QJsonObject o;
     o["type"_L1] = static_cast<int>(attachment.attachmentType());
     o["mimetype"_L1] = QString::fromLatin1(attachment.mimeType());
-    o["base64"_L1] = QString::fromLatin1(attachment.base64());
+    o["content"_L1] = QString::fromLatin1(attachment.content());
     o["name"_L1] = attachment.name();
     return o;
 }
@@ -73,7 +73,7 @@ TextAutoGenerateAttachment TextAutoGenerateAttachment::deserialize(const QJsonOb
     TextAutoGenerateAttachment att;
     att.setAttachmentType(static_cast<TextAutoGenerateAttachment::AttachmentType>(o["type"_L1].toInt(static_cast<int>(AttachmentType::Unknown))));
     att.setMimeType(o["mimetype"_L1].toString().toLatin1());
-    att.setBase64(o["base64"_L1].toString().toLatin1());
+    att.setContent(o["content"_L1].toString().toLatin1());
     att.setName(o["name"_L1].toString());
     return att;
 }

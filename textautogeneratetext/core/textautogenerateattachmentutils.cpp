@@ -93,7 +93,7 @@ TextAutoGenerateAttachment TextAutoGenerateAttachmentUtils::generateAttachmentFr
     att.setAttachmentType(info.attachmentType);
     att.setMimeType(info.mimeType);
     // TODO att.setName(info.name);
-    att.setBase64(info.content);
+    att.setContent(info.content);
     // TODO fix image ? not base64
     return att;
 }

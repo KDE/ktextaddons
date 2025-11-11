@@ -32,8 +32,8 @@ public:
     TextAutoGenerateAttachment();
     ~TextAutoGenerateAttachment();
 
-    [[nodiscard]] QByteArray base64() const;
-    void setBase64(const QByteArray &b);
+    [[nodiscard]] QByteArray content() const;
+    void setContent(const QByteArray &b);
 
     [[nodiscard]] bool operator==(const TextAutoGenerateAttachment &other) const;
 
@@ -53,7 +53,7 @@ public:
 
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
-    QByteArray mBase64;
+    QByteArray mContent;
     QByteArray mMimeType;
     QString mName;
 };

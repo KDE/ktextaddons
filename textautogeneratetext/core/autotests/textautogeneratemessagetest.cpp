@@ -145,7 +145,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
         QList<TextAutoGenerateText::TextAutoGenerateAttachment> list;
         {
             TextAutoGenerateText::TextAutoGenerateAttachment att;
-            att.setBase64("sdfsdf"_ba);
+            att.setContent("sdfsdf"_ba);
             att.setMimeType("mp4");
             att.setName(u"foo"_s);
             att.setAttachmentType(TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio);
@@ -153,7 +153,7 @@ void TextAutoGenerateMessageTest::shouldSerializeMessage()
         }
         {
             TextAutoGenerateText::TextAutoGenerateAttachment att;
-            att.setBase64("foo11"_ba);
+            att.setContent("foo11"_ba);
             att.setMimeType("doc");
             att.setName(u"foo2"_s);
             att.setAttachmentType(TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File);
