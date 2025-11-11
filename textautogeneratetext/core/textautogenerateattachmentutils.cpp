@@ -20,7 +20,7 @@ QByteArray TextAutoGenerateAttachmentUtils::generateBase64(const QString &fileNa
     }
 
     QFile f(fileName);
-    if (!f.open(QIODevice::WriteOnly)) {
+    if (!f.open(QIODevice::ReadOnly)) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to open file:" << fileName;
         return {};
     }
