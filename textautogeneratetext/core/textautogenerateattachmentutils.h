@@ -14,6 +14,8 @@ namespace TextAutoGenerateAttachmentUtils
 struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
     QByteArray mimeType;
     QByteArray content;
+    TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType attachmentType = TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
+    [[nodiscard]] bool isValid() const;
 };
 
 [[nodiscard]] QByteArray generateBase64(const QString &fileName);

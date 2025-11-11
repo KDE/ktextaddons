@@ -56,6 +56,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
 {
     d.space() << "mimeType:" << t.mimeType;
     d.space() << "content:" << t.content;
+    d.space() << "attachmentType:" << t.attachmentType;
     return d;
 }
 
@@ -71,5 +72,11 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
     const QMimeType mimeType = db.mimeTypeForFile(fileInfo);
     info.mimeType = mimeType.name().toLatin1();
     info.content = generateBase64(fileName);
+    info.attachmentType = generateAttachmentType(info.mimeType);
     return info;
+}
+
+bool TextAutoGenerateAttachmentUtils::AttachmentElementInfo::isValid() const
+{
+    return attachmentType != TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
 }
