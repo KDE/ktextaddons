@@ -28,8 +28,7 @@ QByteArray TextAutoGenerateAttachmentUtils::generateBase64(const QString &fileNa
 
     // return u"data:image/%1;base64,%2"_s.arg(u"PNG"_s, QString::fromLatin1(ba.toBase64()));
 
-    // TODO add info
-    return ba;
+    return ba.toBase64();
 }
 
 QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &messageId, int index)
