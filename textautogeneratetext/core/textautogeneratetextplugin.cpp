@@ -148,6 +148,8 @@ void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)
         TextAutoGenerateMessage msg;
         msg.setSender(TextAutoGenerateMessage::Sender::User);
         msg.setContent(editSendInfo.message);
+        // TODO add attachment list
+        // msg.setMessageAttachments();
         const auto dt = QDateTime::currentSecsSinceEpoch();
         msg.setDateTime(dt);
         msg.setUuid(QUuid::createUuid().toByteArray(QUuid::Id128));

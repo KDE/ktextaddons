@@ -80,3 +80,30 @@ bool TextAutoGenerateAttachmentUtils::AttachmentElementInfo::isValid() const
 {
     return attachmentType != TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
 }
+
+TextAutoGenerateAttachment TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfo(const AttachmentElementInfo &info)
+{
+    TextAutoGenerateAttachment att;
+    if (!info.isValid()) {
+        return att;
+    }
+    att.setAttachmentType(info.attachmentType);
+    att.setMimeType(info.mimeType);
+    // TODO att.setName(info.name);
+    att.setBase64(info.content);
+    // TODO fix image ? not base64
+    return att;
+}
+
+TextAutoGenerateAttachments TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(const QList<AttachmentElementInfo> &info)
+{
+    TextAutoGenerateAttachments attacments;
+    QList<TextAutoGenerateAttachment> lstAttachment;
+    for (const auto &attachmentInfo : info) {
+        const TextAutoGenerateAttachment att = generateAttachmentFromAttachmentElementInfo(attachmentInfo);
+        lstAttachment.append(att);
+    }
+    attacments.setMessageAttachments(lstAttachment);
+    // TODO
+    return {};
+}
