@@ -19,7 +19,7 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
     [[nodiscard]] bool isValid() const;
 };
 
-[[nodiscard]] QByteArray generateBase64(const QString &fileName);
+[[nodiscard]] QByteArray extractContentFromFile(const QString &fileName);
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
 

@@ -12,7 +12,7 @@
 #include <QString>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-QByteArray TextAutoGenerateAttachmentUtils::generateBase64(const QString &fileName)
+QByteArray TextAutoGenerateAttachmentUtils::extractContentFromFile(const QString &fileName)
 {
     if (fileName.isEmpty()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "FileName is empty. It's a bug";
@@ -26,9 +26,7 @@ QByteArray TextAutoGenerateAttachmentUtils::generateBase64(const QString &fileNa
     }
     const QByteArray ba = f.readAll();
 
-    // return u"data:image/%1;base64,%2"_s.arg(u"PNG"_s, QString::fromLatin1(ba.toBase64()));
-
-    return ba.toBase64();
+    return ba;
 }
 
 QByteArray TextAutoGenerateAttachmentUtils::generateUniqueId(const QByteArray &messageId, int index)
@@ -71,8 +69,13 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
     const QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForFile(fileInfo);
     info.mimeType = mimeType.name().toLatin1();
-    info.content = generateBase64(fileName);
     info.attachmentType = generateAttachmentType(info.mimeType);
+    const QByteArray ba = extractContentFromFile(fileName);
+    if (info.attachmentType == TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image) {
+        info.content = ba;
+    } else {
+        info.content = "data:image/%1;base64,"_ba + ba.toBase64();
+    }
     return info;
 }
 
