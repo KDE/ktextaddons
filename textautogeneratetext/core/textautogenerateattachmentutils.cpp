@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogenerateattachmentutils.h"
+#include "core/textautogenerateattachments.h"
 #include "textautogeneratetextcore_debug.h"
 #include <QFile>
 #include <QFileInfo>
@@ -103,4 +104,11 @@ QList<TextAutoGenerateAttachment> TextAutoGenerateAttachmentUtils::generateAttac
         lstAttachment.append(att);
     }
     return lstAttachment;
+}
+
+TextAutoGenerateAttachments *TextAutoGenerateAttachmentUtils::createTextAutoGenerateAttachments(const QList<TextAutoGenerateAttachment> &atts)
+{
+    TextAutoGenerateAttachments *t = new TextAutoGenerateAttachments();
+    t->setMessageAttachments(atts);
+    return t;
 }
