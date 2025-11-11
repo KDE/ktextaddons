@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-09 00:41+0000\n"
+"POT-Creation-Date: 2025-11-11 00:41+0000\n"
 "PO-Revision-Date: 2025-10-17 20:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1846,7 +1846,22 @@ msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Liitä tiedosto"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:61
+#, kde-format
+msgid "Images (*.png *.xpm *.jpg *.gif)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:64
+#, kde-format
+msgid "Audio (*.mp4 *.avi)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:66
+#, kde-format
+msgid "Text (*.txt *.md)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select GGUF File"
@@ -1854,13 +1869,13 @@ msgctxt "@title:window"
 msgid "Select File"
 msgstr "Valitse GGUF-tiedosto"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Lähetä"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

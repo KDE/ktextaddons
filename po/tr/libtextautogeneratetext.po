@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-09 00:41+0000\n"
+"POT-Creation-Date: 2025-11-11 00:41+0000\n"
 "PO-Revision-Date: 2025-11-05 19:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2108,19 +2108,34 @@ msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "Dosya İliştir"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:61
+#, kde-format
+msgid "Images (*.png *.xpm *.jpg *.gif)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:64
+#, kde-format
+msgid "Audio (*.mp4 *.avi)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:66
+#, kde-format
+msgid "Text (*.txt *.md)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
 msgstr "Dosya Seç"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Gönder"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"

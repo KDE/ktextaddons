@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-09 00:41+0000\n"
+"POT-Creation-Date: 2025-11-11 00:41+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1986,19 +1986,34 @@ msgctxt "@info:tooltip"
 msgid "Attach File"
 msgstr "附加文件"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:56
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:61
+#, kde-format
+msgid "Images (*.png *.xpm *.jpg *.gif)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:64
+#, kde-format
+msgid "Audio (*.mp4 *.avi)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:66
+#, kde-format
+msgid "Text (*.txt *.md)"
+msgstr ""
+
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Select File"
 msgstr "选择文件"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:68
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "发送"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:105
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:119
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
