@@ -30,4 +30,13 @@ void TextAutoGenerateAttachmentUtilsTest::shouldGenerateAttachmentType_data()
     QTest::newRow("video1") << QByteArray("video/png") << TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Video;
 }
 
+void TextAutoGenerateAttachmentUtilsTest::shouldHaveAttachmentElementInfoDefaultValues()
+{
+    TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo w;
+    QVERIFY(!w.isValid());
+    QCOMPARE(w.attachmentType, TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown);
+    QVERIFY(w.mimeType.isEmpty());
+    QVERIFY(w.content.isEmpty());
+}
+
 #include "moc_textautogenerateattachmentutilstest.cpp"
