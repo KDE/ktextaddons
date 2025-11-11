@@ -95,15 +95,12 @@ TextAutoGenerateAttachment TextAutoGenerateAttachmentUtils::generateAttachmentFr
     return att;
 }
 
-TextAutoGenerateAttachments TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(const QList<AttachmentElementInfo> &info)
+QList<TextAutoGenerateAttachment> TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(const QList<AttachmentElementInfo> &info)
 {
-    TextAutoGenerateAttachments attacments;
     QList<TextAutoGenerateAttachment> lstAttachment;
     for (const auto &attachmentInfo : info) {
         const TextAutoGenerateAttachment att = generateAttachmentFromAttachmentElementInfo(attachmentInfo);
         lstAttachment.append(att);
     }
-    attacments.setMessageAttachments(lstAttachment);
-    // TODO
-    return {};
+    return lstAttachment;
 }

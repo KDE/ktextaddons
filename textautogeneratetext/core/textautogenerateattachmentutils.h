@@ -7,7 +7,6 @@
 #include <QByteArray>
 #include <QDebug>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
-#include <TextAutoGenerateText/TextAutoGenerateAttachments>
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateAttachmentUtils
@@ -28,7 +27,7 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
 [[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachment
 generateAttachmentFromAttachmentElementInfo(const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &info);
 
-[[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachments
+[[nodiscard]] QList<TextAutoGenerateAttachment>
 generateAttachmentFromAttachmentElementInfos(const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &info);
 };
 }
