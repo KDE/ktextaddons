@@ -85,6 +85,9 @@ private:
 
         // TextToSpeech Icon
         QRect textToSpeechIconRect;
+
+        // Attachment Rect
+        QList<QRect> attachmentsRectList;
     };
 
     [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
