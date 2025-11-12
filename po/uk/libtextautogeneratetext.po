@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-11 00:41+0000\n"
-"PO-Revision-Date: 2025-11-06 15:58+0200\n"
+"POT-Creation-Date: 2025-11-12 00:42+0000\n"
+"PO-Revision-Date: 2025-11-11 21:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -143,12 +143,12 @@ msgstr ""
 "Будьте корисним, професійним і люб'язним. Не надавайте неперевірених "
 "відомостей."
 
-#: core/textautogeneratetextplugin.cpp:270
+#: core/textautogeneratetextplugin.cpp:276
 #, kde-format
 msgid "Local"
 msgstr "Локальний"
 
-#: core/textautogeneratetextplugin.cpp:272
+#: core/textautogeneratetextplugin.cpp:278
 #, kde-format
 msgid "Network"
 msgstr "Мережевий"
@@ -2122,17 +2122,17 @@ msgstr "Долучити файл"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr ""
+msgstr "зображення (*.png *.xpm *.jpg *.gif)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr ""
+msgstr "звукові дані (*.mp4 *.avi)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr ""
+msgstr "текстові дані (*.txt *.md)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format

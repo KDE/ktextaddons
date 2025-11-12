@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-11 00:41+0000\n"
+"POT-Creation-Date: 2025-11-12 00:42+0000\n"
 "PO-Revision-Date: 2025-11-05 09:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -144,12 +144,12 @@ msgstr ""
 "Eres un assistent d'IA. Estàs parlant amb una persona anomenada %1. Sigues "
 "útil, professional i cortès. No dones informació inexacta."
 
-#: core/textautogeneratetextplugin.cpp:270
+#: core/textautogeneratetextplugin.cpp:276
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:272
+#: core/textautogeneratetextplugin.cpp:278
 #, kde-format
 msgid "Network"
 msgstr "Xarxa"
