@@ -63,6 +63,8 @@ target_sources(
         quicksearchbar/quicksearchbarwidget.cpp
         quicksearchbar/quicksearchbar.h
         quicksearchbar/quicksearchbar.cpp
+        plugins/pluginutil.cpp
+        plugins/pluginutil.h
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -162,6 +164,14 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
     RELATIVE whatsnew
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
+    HEADER_NAMES
+    PluginUtil
+    REQUIRED_HEADERS TextAddonsWidgets_plugins_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE plugins
+)
+
 install(
     FILES
         ${TextAddonsWidgets_HEADERS}
@@ -169,6 +179,7 @@ install(
         ${TextAddonsWidgets_verifynewversion_HEADERS}
         ${TextAddonsWidgets_whatsnew_HEADERS}
         ${TextAddonsWidgets_quicksearchbar_HEADERS}
+        ${TextAddonsWidgets_plugins_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -180,6 +191,7 @@ install(
         ${TextAddonsWidgets_Camelverifynewversion_HEADERS}
         ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
         ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
+        ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
