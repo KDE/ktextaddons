@@ -32,16 +32,16 @@ void TextAutoGenerateListViewBaseDelegate::clearSelection()
 }
 
 TextAutoGenerateAttachmentDelegateHelperBase *
-TextAutoGenerateListViewBaseDelegate::attachmentsHelper(const TextAutoGenerateText::TextAutoGenerateAttachment *att) const
+TextAutoGenerateListViewBaseDelegate::attachmentsHelper(const TextAutoGenerateText::TextAutoGenerateAttachment &att) const
 {
-    switch (att->attachmentType()) {
+    switch (att.attachmentType()) {
     case TextAutoGenerateAttachment::AttachmentType::File:
         return mHelperFile.get();
     case TextAutoGenerateAttachment::AttachmentType::Image:
         return mHelperImage.get();
     case TextAutoGenerateAttachment::AttachmentType::Audio:
     case TextAutoGenerateAttachment::AttachmentType::Video:
-        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "not implemented type " << att->attachmentType() << " yet.";
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "not implemented type " << att.attachmentType() << " yet.";
         break;
     case TextAutoGenerateAttachment::AttachmentType::Unknown:
         break;

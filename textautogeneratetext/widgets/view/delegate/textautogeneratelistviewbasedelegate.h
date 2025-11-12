@@ -43,7 +43,7 @@ public:
     void clearSelection();
 
     /// @note Ownership is not transferred
-    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateText::TextAutoGenerateAttachment *att) const;
+    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateAttachment &att) const;
 
     void clearDocumentCache();
 Q_SIGNALS:
