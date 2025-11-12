@@ -100,11 +100,10 @@ void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOpti
     }
 
     if (auto att = message->messageAttachments(); att) {
-        // TODO
-        /*
-        const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(att);
-        helper->draw(painter, {}, index, option);
-        */
+        for (const auto &attachment : att->messageAttachments()) {
+            const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(&attachment);
+            helper->draw(attachment, painter, {}, index, option);
+        }
     }
 
     drawDateAndIcons(painter, index, option, layout);
