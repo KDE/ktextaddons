@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include "core/textautogeneratepluginutils.h"
 #include "textautogeneratetext_private_export.h"
 #include <KPluginMetaData>
 #include <QList>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 
 namespace TextAutoGenerateText
 {
@@ -23,7 +23,7 @@ public:
     KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    TextAutoGeneratePluginUtils::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     TextAutoGeneratePluginText *plugin = nullptr;
     bool isEnabled = true;
 };
@@ -40,7 +40,7 @@ public:
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
 
-    [[nodiscard]] QList<TextAutoGeneratePluginUtils::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
 
     [[nodiscard]] TextAutoGeneratePluginText *pluginFromIdentifier(const QString &identifier) const;
 
@@ -49,6 +49,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGeneratePluginTextManagerInfo *item);
     QList<TextAutoGeneratePluginTextManagerInfo> mPluginList;
-    QList<TextAutoGeneratePluginUtils::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
 };
 }

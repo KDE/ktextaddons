@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "core/textautogeneratepluginutils.h"
 #include "textautogeneratetext_export.h"
 #include <KPluginMetaData>
 #include <QJsonArray>
 #include <QList>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 
 namespace TextAutoGenerateText
 {
@@ -24,7 +24,7 @@ public:
     KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    TextAutoGeneratePluginUtils::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     TextAutoGenerateTextToolPlugin *plugin = nullptr;
     bool isEnabled = true;
 };
@@ -45,7 +45,7 @@ public:
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
 
-    [[nodiscard]] QList<TextAutoGeneratePluginUtils::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
 
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromIdentifier(const QString &identifier) const;
     [[nodiscard]] TextAutoGenerateTextToolPlugin *pluginFromToolNameId(const QByteArray &identifier) const;
@@ -61,7 +61,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item);
     QList<TextAutoGenerateTextToolPluginManagerInfo> mPluginList;
-    QList<TextAutoGeneratePluginUtils::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::PluginToolInfo, Q_RELOCATABLE_TYPE);

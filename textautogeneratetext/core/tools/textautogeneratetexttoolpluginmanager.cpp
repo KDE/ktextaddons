@@ -42,7 +42,8 @@ QString TextAutoGenerateTextToolPluginManager::configPrefixSettingKey() const
 void TextAutoGenerateTextToolPluginManager::initializePluginList()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/toolplugins"_s);
-    const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginUtils::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair =
+        TextAddonsWidgets::PluginUtil::loadPluginSetting({}, configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -52,10 +53,12 @@ void TextAutoGenerateTextToolPluginManager::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = TextAutoGeneratePluginUtils::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated =
-            TextAutoGeneratePluginUtils::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -113,7 +116,7 @@ QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> TextAutoGenerateTex
     return list;
 }
 
-QList<TextAutoGeneratePluginUtils::PluginUtilData> TextAutoGenerateTextToolPluginManager::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> TextAutoGenerateTextToolPluginManager::pluginDataList() const
 {
     return mPluginDataList;
 }

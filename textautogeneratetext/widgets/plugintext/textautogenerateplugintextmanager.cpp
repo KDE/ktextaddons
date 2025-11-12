@@ -41,7 +41,8 @@ QString TextAutoGeneratePluginTextManager::configPrefixSettingKey() const
 void TextAutoGeneratePluginTextManager::initializePluginList()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/textplugins"_s);
-    const QPair<QStringList, QStringList> pair = TextAutoGeneratePluginUtils::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair =
+        TextAddonsWidgets::PluginUtil::loadPluginSetting({}, configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -51,10 +52,12 @@ void TextAutoGeneratePluginTextManager::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = TextAutoGeneratePluginUtils::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated =
-            TextAutoGeneratePluginUtils::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -84,7 +87,7 @@ void TextAutoGeneratePluginTextManager::loadPlugin(TextAutoGeneratePluginTextMan
     }
 }
 
-QList<TextAutoGeneratePluginUtils::PluginUtilData> TextAutoGeneratePluginTextManager::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> TextAutoGeneratePluginTextManager::pluginDataList() const
 {
     return mPluginDataList;
 }

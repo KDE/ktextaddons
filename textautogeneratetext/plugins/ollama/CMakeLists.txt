@@ -118,6 +118,7 @@ target_link_libraries(
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::WidgetsAddons
+        KF6::TextAddonsWidgets
 )
 set_target_properties(
     textautogenerateollama

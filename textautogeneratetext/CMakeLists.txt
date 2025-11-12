@@ -141,8 +141,6 @@ target_sources(
         core/textautogeneratesettings.cpp
         core/textautogenerateattachmentutils.h
         core/textautogenerateattachmentutils.cpp
-        core/textautogeneratepluginutils.h
-        core/textautogeneratepluginutils.cpp
         core/textautogenerateblockcmarksupport.h
         core/textautogenerateblockcmarksupport.cpp
         core/models/textautogeneratemessagesmodel.h
@@ -439,7 +437,6 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcore_HEA
     TextAutoGenerateTextInstancesManager
     TextAutoGenerateMessageUtils
     TextAutoGenerateTextUtils
-    TextAutoGeneratePluginUtils
     TextAutoGenerateSettings
     TextAutoGenerateAttachmentUtils
     TextAutoGenerateSearchMessageSettings
