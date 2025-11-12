@@ -17,4 +17,5 @@ private Q_SLOTS:
     void shouldGenerateAttachmentType();
     void shouldGenerateAttachmentType_data();
     void shouldHaveAttachmentElementInfoDefaultValues();
+    void shouldGenerateAttachmentFromAttachmentElementInfo();
 };

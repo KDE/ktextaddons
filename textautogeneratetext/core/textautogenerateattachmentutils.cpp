@@ -55,6 +55,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
     d.space() << "mimeType:" << t.mimeType;
     d.space() << "content:" << t.content;
     d.space() << "attachmentType:" << t.attachmentType;
+    d.space() << "name:" << t.name;
     return d;
 }
 
@@ -70,11 +71,13 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
     const QMimeType mimeType = db.mimeTypeForFile(fileInfo);
     info.mimeType = mimeType.name().toLatin1();
     info.attachmentType = generateAttachmentType(info.mimeType);
+    info.name = fileInfo.fileName();
     const QByteArray ba = extractContentFromFile(fileName);
     if (info.attachmentType == TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Image) {
-        info.content = ba;
+        // Convert to png ?
+        info.content = "data:"_ba + info.mimeType + ";base64,"_ba + ba.toBase64();
     } else {
-        info.content = "data:image/%1;base64,"_ba + ba.toBase64();
+        info.content = ba;
     }
     return info;
 }
@@ -92,9 +95,8 @@ TextAutoGenerateAttachment TextAutoGenerateAttachmentUtils::generateAttachmentFr
     }
     att.setAttachmentType(info.attachmentType);
     att.setMimeType(info.mimeType);
-    // TODO att.setName(info.name);
+    att.setName(info.name);
     att.setContent(info.content);
-    // TODO fix image ? not base64
     return att;
 }
 

@@ -15,6 +15,7 @@ namespace TextAutoGenerateAttachmentUtils
 struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
     QByteArray mimeType;
     QByteArray content;
+    QString name;
     TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType attachmentType = TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
     [[nodiscard]] bool isValid() const;
 };
@@ -23,9 +24,10 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
 
-[[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo createAttachmentElementInfoFromFile(const QString &fileName);
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo
+createAttachmentElementInfoFromFile(const QString &fileName);
 
-[[nodiscard]] TextAutoGenerateText::TextAutoGenerateAttachment
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment
 generateAttachmentFromAttachmentElementInfo(const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &info);
 
 [[nodiscard]] QList<TextAutoGenerateAttachment>

@@ -39,4 +39,48 @@ void TextAutoGenerateAttachmentUtilsTest::shouldHaveAttachmentElementInfoDefault
     QVERIFY(w.content.isEmpty());
 }
 
+void TextAutoGenerateAttachmentUtilsTest::shouldGenerateAttachmentFromAttachmentElementInfo()
+{
+    {
+        // Empty
+        const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo info;
+        const TextAutoGenerateText::TextAutoGenerateAttachment att =
+            TextAutoGenerateText::TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfo(info);
+        QVERIFY(!info.isValid());
+        QVERIFY(att.mimeType().isEmpty());
+        QVERIFY(att.name().isEmpty());
+        QVERIFY(att.content().isEmpty());
+        QCOMPARE(att.attachmentType(), TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown);
+    }
+    {
+        // Invalid
+        TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo info;
+        info.content = "foo"_ba;
+        info.mimeType = "bla/bla"_ba;
+        info.name = u"kde"_s;
+        const TextAutoGenerateText::TextAutoGenerateAttachment att =
+            TextAutoGenerateText::TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfo(info);
+        QVERIFY(!info.isValid());
+        QVERIFY(att.mimeType().isEmpty());
+        QVERIFY(att.name().isEmpty());
+        QVERIFY(att.content().isEmpty());
+        QCOMPARE(att.attachmentType(), TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown);
+    }
+    {
+        // Valid
+        TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo info;
+        info.content = "foo"_ba;
+        info.mimeType = "bla/bla"_ba;
+        info.name = u"kde"_s;
+        info.attachmentType = TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio;
+        const TextAutoGenerateText::TextAutoGenerateAttachment att =
+            TextAutoGenerateText::TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfo(info);
+        QVERIFY(info.isValid());
+        QCOMPARE(att.mimeType(), info.mimeType);
+        QCOMPARE(att.name(), info.name);
+        QCOMPARE(att.content(), info.content);
+        QCOMPARE(att.attachmentType(), TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Audio);
+    }
+}
+
 #include "moc_textautogenerateattachmentutilstest.cpp"
