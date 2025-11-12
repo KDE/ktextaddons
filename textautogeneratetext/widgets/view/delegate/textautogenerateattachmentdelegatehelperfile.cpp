@@ -36,7 +36,7 @@ QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(const TextAutoGener
 {
     const FileLayout layout = doLayout(msgAttach, option, maxWidth);
     // TODO
-    return {};
+    return QSize(50, 50);
 }
 
 TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
