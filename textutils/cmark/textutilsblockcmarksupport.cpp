@@ -181,11 +181,14 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
 
     qCDebug(TEXTUTILS_CMARK_LOG) << " ba " << ba;
 
+    bool isALink = false;
+
     while (cmark_iter_next(iter) != CMARK_EVENT_DONE) {
         cmark_node *node = cmark_iter_get_node(iter);
         qCDebug(TEXTUTILS_CMARK_LOG) << "type element " << cmark_node_get_type_string(node);
         switch (cmark_node_get_type(node)) {
         case CMARK_NODE_CODE_BLOCK: {
+            isALink = false;
             const char *literal = cmark_node_get_literal(node);
             QString literalStr = QString::fromUtf8(literal);
             if (!literalStr.isEmpty()) {
@@ -210,22 +213,28 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
             break;
         }
         case CMARK_NODE_TEXT: {
-            const char *literal = cmark_node_get_literal(node);
-            // qDebug() << " literal" << literal;
-            qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
+            if (isALink) {
+                isALink = false;
+            } else {
+                const char *literal = cmark_node_get_literal(node);
+                // qDebug() << " literal" << literal;
+                qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: QString::fromUtf8(literal) " << QString::fromUtf8(literal);
 
-            const QString strLiteral = QString::fromUtf8(literal);
-            if (!strLiteral.isEmpty()) {
-                const QString convertedString = addHighlighter(strLiteral, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
-                qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
-                cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
-                cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
+                const QString strLiteral = QString::fromUtf8(literal);
+                if (!strLiteral.isEmpty()) {
+                    const QString convertedString =
+                        addHighlighter(strLiteral, {}, searchText, uuid, blockCodeIndex, numberOfTextSearched, hightLightStringIndex);
+                    qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_TEXT: convert text " << convertedString;
+                    cmark_node *htmlInline = cmark_node_new(CMARK_NODE_HTML_INLINE);
+                    cmark_node_set_literal(htmlInline, convertedString.toUtf8().constData());
 
-                cmark_node_replace(node, htmlInline);
+                    cmark_node_replace(node, htmlInline);
+                }
             }
             break;
         }
         case CMARK_NODE_CODE: {
+            isALink = false;
             const char *literal = cmark_node_get_literal(node);
             qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_CODE:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
             QString strLiteral = QString::fromUtf8(literal);
@@ -241,7 +250,14 @@ QString TextUtilsBlockCMarkSupport::convertMessageText(const QString &str,
             }
             break;
         }
+        case CMARK_NODE_LINK: {
+            // const char *literal = cmark_node_get_url(node);
+            // qCDebug(TEXTUTILS_CMARK_LOG) << "CMARK_NODE_LINK:  QString::fromUtf8(literal) code" << QString::fromUtf8(literal);
+            isALink = true;
+            break;
+        }
         default:
+            isALink = false;
             break;
         }
     }
