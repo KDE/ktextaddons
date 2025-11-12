@@ -32,7 +32,7 @@ public:
 private:
     // TODO implement it
     struct FileLayout {
-        QString mimetype;
+        QByteArray mimetype;
         QString name;
     };
 
