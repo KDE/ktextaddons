@@ -24,8 +24,10 @@ public:
               QRect attachmentsRect,
               const QModelIndex &index,
               const QStyleOptionViewItem &option) const override;
-    [[nodiscard]] QSize
-    sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att, const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const override;
+    [[nodiscard]] QSize sizeHint(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                 const QModelIndex &index,
+                                 int maxWidth,
+                                 const QStyleOptionViewItem &option) const override;
 
 private:
     struct ImageLayout {

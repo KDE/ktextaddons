@@ -21,19 +21,29 @@ void TextAutoGenerateAttachmentDelegateHelperFile::draw(const TextAutoGenerateTe
                                                         const QModelIndex &index,
                                                         const QStyleOptionViewItem &option) const
 {
-    const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
+    const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
+
     qDebug() << " extAutoGenerateAttachmentDelegateHelperFile::draw";
     // TODO
 }
 
-QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att,
+QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                              const QModelIndex &index,
                                                              int maxWidth,
                                                              const QStyleOptionViewItem &option) const
 {
-    Q_ASSERT(att);
     // TODO
     return {};
+}
+
+TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
+TextAutoGenerateAttachmentDelegateHelperFile::doLayout(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                                       const QStyleOptionViewItem &option,
+                                                       int attachmentsWidth) const
+{
+    FileLayout layout;
+    // TODO
+    return layout;
 }
 
 #include "moc_textautogenerateattachmentdelegatehelperfile.cpp"

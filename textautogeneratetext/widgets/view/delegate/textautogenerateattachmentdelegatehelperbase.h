@@ -22,7 +22,9 @@ public:
                       QRect attachmentsRect,
                       const QModelIndex &index,
                       const QStyleOptionViewItem &option) const = 0;
-    [[nodiscard]] virtual QSize
-    sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att, const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const = 0;
+    [[nodiscard]] virtual QSize sizeHint(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                         const QModelIndex &index,
+                                         int maxWidth,
+                                         const QStyleOptionViewItem &option) const = 0;
 };
 }

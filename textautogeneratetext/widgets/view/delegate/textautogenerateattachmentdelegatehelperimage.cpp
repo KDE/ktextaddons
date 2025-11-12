@@ -27,12 +27,11 @@ void TextAutoGenerateAttachmentDelegateHelperImage::draw(const TextAutoGenerateT
     qDebug() << " TextAutoGenerateAttachmentDelegateHelperImage::draw";
 }
 
-QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att,
+QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                               const QModelIndex &index,
                                                               int maxWidth,
                                                               const QStyleOptionViewItem &option) const
 {
-    Q_ASSERT(att);
     // TODO
     return {};
 }
