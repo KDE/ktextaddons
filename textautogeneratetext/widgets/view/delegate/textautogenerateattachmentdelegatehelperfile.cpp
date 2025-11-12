@@ -15,6 +15,7 @@ TextAutoGenerateAttachmentDelegateHelperFile::TextAutoGenerateAttachmentDelegate
 
 TextAutoGenerateAttachmentDelegateHelperFile::~TextAutoGenerateAttachmentDelegateHelperFile() = default;
 
+// Icon + text
 void TextAutoGenerateAttachmentDelegateHelperFile::draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                         QPainter *painter,
                                                         QRect attachmentsRect,
@@ -22,6 +23,7 @@ void TextAutoGenerateAttachmentDelegateHelperFile::draw(const TextAutoGenerateTe
                                                         const QStyleOptionViewItem &option) const
 {
     const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
+    // TODO add msgAttach.mimeType()
 
     qDebug() << " extAutoGenerateAttachmentDelegateHelperFile::draw";
     // TODO
