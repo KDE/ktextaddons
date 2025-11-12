@@ -32,6 +32,7 @@ QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(const TextAutoGene
                                                               int maxWidth,
                                                               const QStyleOptionViewItem &option) const
 {
+    const ImageLayout layout = layoutImage(msgAttach, option, maxWidth, 0); // TODO ?
     // TODO
     return {};
 }

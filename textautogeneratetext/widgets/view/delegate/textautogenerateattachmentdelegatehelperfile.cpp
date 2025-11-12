@@ -32,6 +32,7 @@ QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(const TextAutoGener
                                                              int maxWidth,
                                                              const QStyleOptionViewItem &option) const
 {
+    const FileLayout layout = doLayout(msgAttach, option, maxWidth);
     // TODO
     return {};
 }
