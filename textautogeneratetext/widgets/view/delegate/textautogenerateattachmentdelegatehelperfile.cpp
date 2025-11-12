@@ -15,12 +15,14 @@ TextAutoGenerateAttachmentDelegateHelperFile::TextAutoGenerateAttachmentDelegate
 
 TextAutoGenerateAttachmentDelegateHelperFile::~TextAutoGenerateAttachmentDelegateHelperFile() = default;
 
-void TextAutoGenerateAttachmentDelegateHelperFile::draw(QPainter *painter,
+void TextAutoGenerateAttachmentDelegateHelperFile::draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                                        QPainter *painter,
                                                         QRect attachmentsRect,
                                                         const QModelIndex &index,
                                                         const QStyleOptionViewItem &option) const
 {
     const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
+    qDebug() << " extAutoGenerateAttachmentDelegateHelperFile::draw";
     // TODO
 }
 

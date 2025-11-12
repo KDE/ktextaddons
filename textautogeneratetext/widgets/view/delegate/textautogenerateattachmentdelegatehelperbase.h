@@ -17,7 +17,11 @@ public:
     explicit TextAutoGenerateAttachmentDelegateHelperBase(QObject *parent = nullptr);
     ~TextAutoGenerateAttachmentDelegateHelperBase() override;
 
-    virtual void draw(QPainter *painter, QRect attachmentsRect, const QModelIndex &index, const QStyleOptionViewItem &option) const = 0;
+    virtual void draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                      QPainter *painter,
+                      QRect attachmentsRect,
+                      const QModelIndex &index,
+                      const QStyleOptionViewItem &option) const = 0;
     [[nodiscard]] virtual QSize
     sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att, const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const = 0;
 };

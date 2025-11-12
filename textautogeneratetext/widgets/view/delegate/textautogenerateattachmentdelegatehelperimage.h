@@ -19,7 +19,11 @@ public:
     explicit TextAutoGenerateAttachmentDelegateHelperImage(QObject *parent = nullptr);
     ~TextAutoGenerateAttachmentDelegateHelperImage() override;
 
-    void draw(QPainter *painter, QRect attachmentsRect, const QModelIndex &index, const QStyleOptionViewItem &option) const override;
+    void draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+              QPainter *painter,
+              QRect attachmentsRect,
+              const QModelIndex &index,
+              const QStyleOptionViewItem &option) const override;
     [[nodiscard]] QSize
     sizeHint(TextAutoGenerateText::TextAutoGenerateAttachment *att, const QModelIndex &index, int maxWidth, const QStyleOptionViewItem &option) const override;
 
@@ -29,5 +33,9 @@ private:
         QSize imageSize;
         QString name;
     };
+    [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperImage::ImageLayout layoutImage(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                                                                         const QStyleOptionViewItem &option,
+                                                                                         int attachmentsWidth,
+                                                                                         int attachmentsHeight) const;
 };
 }
