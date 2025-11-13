@@ -52,9 +52,6 @@ public:
 
     [[nodiscard]] virtual QString iconName() const;
 
-Q_SIGNALS:
-    void toolInProgress(const QString &str);
-
 protected:
     [[nodiscard]] QJsonObject generateMetadata() const;
     QList<TextAutoGenerateTextToolPluginProperty> mProperties;
