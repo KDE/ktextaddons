@@ -4,11 +4,11 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "textautogenerateattachmentdelegatehelperfile.h"
-#include "core/models/textautogeneratemessagesmodel.h"
 #include <KIconLoader>
 #include <QMimeDatabase>
 #include <QPainter>
 #include <QPixmap>
+#include <TextAutoGenerateText/TextAutoGenerateAttachment>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -23,25 +23,25 @@ TextAutoGenerateAttachmentDelegateHelperFile::~TextAutoGenerateAttachmentDelegat
 void TextAutoGenerateAttachmentDelegateHelperFile::draw(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                         QPainter *painter,
                                                         QRect attachmentsRect,
-                                                        const QModelIndex &index,
+                                                        [[maybe_unused]] const QModelIndex &index,
                                                         const QStyleOptionViewItem &option) const
 {
     const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
 
-    painter->drawPixmap(attachmentsRect.bottomRight(), layout.pixmap);
+    painter->drawPixmap(attachmentsRect.bottomLeft(), layout.pixmap);
 
     qDebug() << " TextAutoGenerateAttachmentDelegateHelperFile::draw";
-    // TODO
 }
 
 QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
-                                                             const QModelIndex &index,
+                                                             [[maybe_unused]] const QModelIndex &index,
                                                              int maxWidth,
                                                              const QStyleOptionViewItem &option) const
 {
     const FileLayout layout = doLayout(msgAttach, option, maxWidth);
-    // TODO
-    return layout.pixmap.size();
+
+    return {layout.nameSize.width() + layout.pixmap.width(), // should be qMax of all sizes, but doesn't really matter
+            layout.pixmap.height()};
 }
 
 TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
@@ -64,6 +64,8 @@ TextAutoGenerateAttachmentDelegateHelperFile::doLayout(const TextAutoGenerateTex
     qDebug() << " mimeTypeIconPath " << mimeTypeIconPath;
     const QPixmap scaledPixmap = pix.scaled(25, 25, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     layout.pixmap = scaledPixmap;
+
+    layout.nameSize = option.fontMetrics.size(Qt::TextSingleLine, layout.name);
     // TODO
     return layout;
 }

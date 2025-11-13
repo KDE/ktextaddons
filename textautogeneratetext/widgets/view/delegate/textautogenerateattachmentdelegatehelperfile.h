@@ -30,11 +30,11 @@ public:
                                  const QStyleOptionViewItem &option) const override;
 
 private:
-    // TODO implement it
     struct FileLayout {
         QByteArray mimetype;
         QString name;
         QPixmap pixmap;
+        QSize nameSize;
     };
 
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
