@@ -70,6 +70,7 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                         .messageUuid = newInfo.messageUuid,
                         .chatId = newInfo.chatId,
                         .toolIdentifier = newInfo.toolIdentifier,
+                        .attachementInfoList = {},
                     };
                     Q_EMIT finished(newInfo);
                     Q_EMIT toolInProgress({});

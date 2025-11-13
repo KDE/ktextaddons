@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QJsonObject>
 #include <QObject>
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 namespace TextAutoGenerateText
@@ -22,6 +23,7 @@ public:
         QByteArray messageUuid;
         QByteArray chatId;
         QByteArray toolIdentifier;
+        QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachementInfoList;
     };
 
     explicit TextAutoGenerateTextToolPlugin(QObject *parent = nullptr);

@@ -109,6 +109,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextTool
     d.space() << "messageUuid" << t.messageUuid;
     d.space() << "chatId" << t.chatId;
     d.space() << "toolIdentifier" << t.toolIdentifier;
+    d.space() << "attachementInfoList" << t.attachementInfoList;
     return d;
 }
 
