@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-14 00:41+0000\n"
-"PO-Revision-Date: 2025-10-17 19:44+0300\n"
+"PO-Revision-Date: 2025-10-22 10:04+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -39,21 +39,21 @@ msgstr "Versiosi on yli vuoden vanha: suosittelemme vakavasti päivittämään."
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search… (%1)"
-msgstr ""
+msgstr "Etsi… (%1)"
 
 #: quicksearchbar/quicksearchbar.cpp:40
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:40
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "Seuraava"
 
 #: quicksearchbar/quicksearchbar.cpp:49
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:49
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "Edellinen"
 
 #: richtextquicktextformat.cpp:67
 #, kde-format

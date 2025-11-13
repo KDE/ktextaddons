@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-12 00:42+0000\n"
-"PO-Revision-Date: 2025-10-17 20:12+0300\n"
+"POT-Creation-Date: 2025-11-13 00:41+0000\n"
+"PO-Revision-Date: 2025-10-22 10:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -343,7 +343,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Anna mallin nimi muodossa ”nimi:luokitus”"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:47
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:430
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:458
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -1506,6 +1506,9 @@ msgid ""
 "reasoning, and mathematics, and now, the long-awaited function calling "
 "feature is finally supported."
 msgstr ""
+"Phi-4-mini tuo merkittäviä parannuksia monikielitukeen, päättelyyn ja "
+"matematiikkaan, ja nyt se tukee myös pitkään odotettua "
+"funktiokutsuominaisuutta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:245
 #, kde-format
@@ -1514,6 +1517,9 @@ msgid ""
 "visual document understanding, enabling automated content extraction from "
 "tables, charts, infographics, plots, diagrams, and more."
 msgstr ""
+"Tiivis ja tehokas kielivisiomalli, joka on nimenomaisesti suunniteltu "
+"visuaaliseen asiakirjaymmärrykseen ja mahdollistaa automatisoidun sisällön "
+"irrottamisen taulukoista, kaavioista, kuvioista yms."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:247
 #, kde-format
@@ -1550,6 +1556,9 @@ msgid ""
 "including math and coding benchmarks, ranging from 2.4B to 32B parameters "
 "developed and released by LG AI Research."
 msgstr ""
+"EXAONE Deep osoittaa ylivoimaisia kykyjen eri päättelytehtävissä kuten "
+"matematiikka- ja koodausvertailuissa; sen on kehittänyt ja julkaissut LG AI "
+"Research ja sen parametreihin määrä vaihtelee 2,4:stä 32 miljardiin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:256
 #, kde-format
@@ -1558,6 +1567,9 @@ msgid ""
 "art vision understanding and enhances long context capabilities up to 128k "
 "tokens without compromising text performance."
 msgstr ""
+"Mistral Small 3:lle rakentuva Mistral Small 3.1 (2503) lisää ajantasaisen "
+"ymmärryksen ja parantaa pitkän kontekstin kykyjä aina 128 t merkkeihin asti "
+"tinkimättä tekstisuorituskyvystä."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:259
 #, kde-format
@@ -1665,11 +1677,15 @@ msgid ""
 "OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, "
 "and versatile developer use cases."
 msgstr ""
+"OpenAI:n avoimen painon mallit on suunniteltu tehokkaaseen päättelyyn, "
+"agenttitehtäviin ja moninaiseen kehityskäyttöön."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:279
 #, kde-format
 msgid "Alibaba's performant long context models for agentic and coding tasks."
 msgstr ""
+"Alibaban suorituskykyiset pitkän kontekstin mallit agentti- ja "
+"koodaustehtäviin."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:280
 #, kde-format
@@ -1677,11 +1693,13 @@ msgid ""
 "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-"
 "thinking mode."
 msgstr ""
+"DeepSeek-V3.1 on hybridimalli, joka tukee niin ajattelevaa kuin ei-"
+"ajattelevaa tilaa."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr ""
+msgstr "EmbeddingGemma on 300 M parametrin upotusmalli Googlelta."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:283
 #, kde-format
@@ -1834,7 +1852,7 @@ msgid "Enter a message"
 msgstr "Kirjoita viesti"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:87
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:417
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:445
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -1896,12 +1914,12 @@ msgstr "Tekstiliitännäiset"
 msgid "Tools Plugins"
 msgstr "Työkaluliitännäiset"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:177
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:178
 #, kde-format
 msgid "..."
 msgstr "…"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:179
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -2166,43 +2184,43 @@ msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Työkalut:"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:413
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:441
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Muokkaa…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:450
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr ""
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:422
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:450
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr ""
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:426
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:454
 #: widgets/view/textautogeneratedelegateutils.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopioi"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:434
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:462
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Virkistä"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:568
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:596
 #, kde-format
 msgid "Block Code copied."
 msgstr "Koodilohko kopioitu."
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:568
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:596
 #, kde-format
 msgctxt "@title"
 msgid "Copy Block Code"
