@@ -27,21 +27,8 @@ void TextAutoGenerateAttachmentDelegateHelperFile::draw(const TextAutoGenerateTe
                                                         const QStyleOptionViewItem &option) const
 {
     const FileLayout layout = doLayout(msgAttach, option, attachmentsRect.width());
-    // TODO add msgAttach.mimeType()
 
-    // TODO cache it.
-    const QMimeDatabase db;
-    const QMimeType mimeType = db.mimeTypeForName(QString::fromLatin1(layout.mimetype));
-    const QString mimeTypeIconName = mimeType.iconName();
-    qDebug() << " mimeTypeIconName " << mimeTypeIconName;
-    qDebug() << " layout.name " << layout.name;
-    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
-    const QPixmap pix(mimeTypeIconPath);
-
-    qDebug() << " mimeTypeIconPath " << mimeTypeIconPath;
-    const QPixmap scaledPixmap = pix.scaled(25, 25, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-
-    painter->drawPixmap(attachmentsRect.bottomRight(), scaledPixmap);
+    painter->drawPixmap(attachmentsRect.bottomRight(), layout.pixmap);
 
     qDebug() << " TextAutoGenerateAttachmentDelegateHelperFile::draw";
     // TODO
@@ -54,7 +41,7 @@ QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(const TextAutoGener
 {
     const FileLayout layout = doLayout(msgAttach, option, maxWidth);
     // TODO
-    return QSize(50, 50);
+    return layout.pixmap.size();
 }
 
 TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
@@ -65,7 +52,18 @@ TextAutoGenerateAttachmentDelegateHelperFile::doLayout(const TextAutoGenerateTex
     FileLayout layout;
     layout.mimetype = msgAttach.mimeType();
     layout.name = msgAttach.name();
+    // TODO cache it.
+    const QMimeDatabase db;
+    const QMimeType mimeType = db.mimeTypeForName(QString::fromLatin1(layout.mimetype));
+    const QString mimeTypeIconName = mimeType.iconName();
+    qDebug() << " mimeTypeIconName " << mimeTypeIconName;
+    qDebug() << " layout.name " << layout.name;
+    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
+    const QPixmap pix(mimeTypeIconPath);
 
+    qDebug() << " mimeTypeIconPath " << mimeTypeIconPath;
+    const QPixmap scaledPixmap = pix.scaled(25, 25, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    layout.pixmap = scaledPixmap;
     // TODO
     return layout;
 }

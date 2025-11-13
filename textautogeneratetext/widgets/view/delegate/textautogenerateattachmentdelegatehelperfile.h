@@ -34,6 +34,7 @@ private:
     struct FileLayout {
         QByteArray mimetype;
         QString name;
+        QPixmap pixmap;
     };
 
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
