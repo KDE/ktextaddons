@@ -34,6 +34,6 @@ generateAttachmentFromAttachmentElementInfo(const TextAutoGenerateText::TextAuto
 generateAttachmentFromAttachmentElementInfos(const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &info);
 
 [[nodiscard]] TextAutoGenerateAttachments *createTextAutoGenerateAttachments(const QList<TextAutoGenerateAttachment> &atts);
-};
+}
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &t);
