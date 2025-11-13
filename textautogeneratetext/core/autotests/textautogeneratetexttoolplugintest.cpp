@@ -177,4 +177,13 @@ void TextAutoGenerateTextToolPluginTest::shouldGenerateMetadata_data()
     }
 }
 
+void TextAutoGenerateTextToolPluginTest::shouldTextToolPluginInfoDefaultValues()
+{
+    const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo info;
+    QVERIFY(info.chatId.isEmpty());
+    QVERIFY(info.content.isEmpty());
+    QVERIFY(info.messageUuid.isEmpty());
+    QVERIFY(info.toolIdentifier.isEmpty());
+}
+
 #include "moc_textautogeneratetexttoolplugintest.cpp"

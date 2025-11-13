@@ -16,4 +16,5 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldGenerateMetadata();
     void shouldGenerateMetadata_data();
+    void shouldTextToolPluginInfoDefaultValues();
 };
