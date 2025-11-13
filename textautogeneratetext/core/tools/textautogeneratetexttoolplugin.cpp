@@ -103,4 +103,13 @@ QString TextAutoGenerateTextToolPlugin::iconName() const
     return {};
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &t)
+{
+    d.space() << "content" << t.content;
+    d.space() << "messageUuid" << t.messageUuid;
+    d.space() << "chatId" << t.chatId;
+    d.space() << "toolIdentifier" << t.toolIdentifier;
+    return d;
+}
+
 #include "moc_textautogeneratetexttoolplugin.cpp"

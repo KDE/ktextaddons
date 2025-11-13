@@ -17,6 +17,13 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPlugin : public QObjec
 {
     Q_OBJECT
 public:
+    struct TEXTAUTOGENERATETEXT_EXPORT TextToolPluginInfo {
+        QString content;
+        QByteArray messageUuid;
+        QByteArray chatId;
+        QByteArray toolIdentifier;
+    };
+
     explicit TextAutoGenerateTextToolPlugin(QObject *parent = nullptr);
     ~TextAutoGenerateTextToolPlugin() override;
 
@@ -44,7 +51,7 @@ public:
     [[nodiscard]] virtual QString iconName() const;
 
 Q_SIGNALS:
-    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
+    void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     void toolInProgress(const QString &str);
 
 protected:
@@ -55,3 +62,4 @@ protected:
     bool mEnabled = true;
 };
 }
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &t);
