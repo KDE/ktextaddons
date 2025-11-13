@@ -328,7 +328,7 @@ TextAutoGenerateListViewDelegate::MessageLayout TextAutoGenerateListViewDelegate
     if (message->messageAttachments() && !message->messageAttachments()->isEmpty()) {
         const auto attachments = message->messageAttachments()->messageAttachments();
         QSize attachmentsSize;
-        int topAttachment = 0;
+        int topAttachment = layout.textRect.y();
         for (const TextAutoGenerateAttachment &msgAttach : attachments) {
             const TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(msgAttach);
             if (attachmentsSize.isEmpty()) {
