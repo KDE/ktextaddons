@@ -10,6 +10,7 @@
 #include <QDebug>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginProperty>
 namespace TextAutoGenerateText
 {
@@ -43,7 +44,7 @@ public:
     void setProperties(const QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> &newProperties);
 
 Q_SIGNALS:
-    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
+    void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     void toolInProgress(const QString &info);
 
 protected:

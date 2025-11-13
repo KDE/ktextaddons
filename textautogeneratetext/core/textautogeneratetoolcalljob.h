@@ -8,6 +8,7 @@
 #include "textautogeneratetext_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
+#include <TextAutoGenerateText/TextAutoGenerateTextToolPlugin>
 
 namespace TextAutoGenerateText
 {
@@ -27,7 +28,7 @@ public:
 
 Q_SIGNALS:
     void toolInProgress(const QString &str);
-    void finished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier);
+    void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void

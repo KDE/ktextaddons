@@ -23,7 +23,13 @@ void ExampleTextToolPluginJob::start()
         return;
     }
     // TODO Need to implement job
-    Q_EMIT finished(u"Temperature is 35°"_s, mMessageUuid, mChatId, mToolIdentifier);
+    const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo info{
+        .content = u"Temperature is 35°"_s,
+        .messageUuid = mMessageUuid,
+        .chatId = mChatId,
+        .toolIdentifier = mToolIdentifier,
+    };
+    Q_EMIT finished(info);
     deleteLater();
 }
 

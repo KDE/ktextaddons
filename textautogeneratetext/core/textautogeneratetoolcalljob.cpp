@@ -58,14 +58,20 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
     connect(job,
             &TextAutoGenerateText::TextAutoGenerateTextToolPluginJob::finished,
             this,
-            [this, job](const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier) {
-                mResult.append(str);
+            [this, job](const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info) {
+                mResult.append(info.content);
                 // Q_EMIT finished(str, messageUuid, chatId, toolIdentifier);
                 Q_EMIT toolInProgress({});
-                qDebug() << " TextAutoGenerateTextToolPlugin::finished: " << str;
+                qDebug() << " TextAutoGenerateTextToolPlugin::finished: " << info.content;
                 mListJob.removeAll(job);
                 if (mListJob.isEmpty()) {
-                    Q_EMIT finished(mResult.join(u'\n'), messageUuid, chatId, toolIdentifier);
+                    const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo newInfo{
+                        .content = mResult.join(u'\n'),
+                        .messageUuid = newInfo.messageUuid,
+                        .chatId = newInfo.chatId,
+                        .toolIdentifier = newInfo.toolIdentifier,
+                    };
+                    Q_EMIT finished(newInfo);
                     Q_EMIT toolInProgress({});
                     deleteLater();
                 }

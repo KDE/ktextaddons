@@ -613,13 +613,13 @@ void TextAutoGenerateManager::slotChatListChanged([[maybe_unused]] const QString
 #endif
 }
 
-void TextAutoGenerateManager::slotPluginFinished(const QString &str, const QByteArray &messageUuid, const QByteArray &chatId, const QByteArray &toolIdentifier)
+void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info)
 {
     TextAutoGenerateText::TextAutoGenerateReply::Response content;
-    content.response = str;
+    content.response = info.content;
     // content.info =
-    replaceContent(chatId, messageUuid, content);
-    changeInProgress(chatId, messageUuid, false);
+    replaceContent(info.chatId, info.messageUuid, content);
+    changeInProgress(info.chatId, info.messageUuid, false);
 }
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
