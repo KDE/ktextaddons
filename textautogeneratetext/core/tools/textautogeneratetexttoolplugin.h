@@ -51,7 +51,6 @@ public:
     [[nodiscard]] virtual QString iconName() const;
 
 Q_SIGNALS:
-    void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     void toolInProgress(const QString &str);
 
 protected:
