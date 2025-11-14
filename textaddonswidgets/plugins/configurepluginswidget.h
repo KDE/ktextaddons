@@ -29,13 +29,13 @@ public:
     virtual void defaults();
     virtual void doLoadFromGlobalSettings();
     virtual void doResetToDefaultsOther();
+    virtual void initialize();
 
 Q_SIGNALS:
     void changed();
     void configureClicked(const QString &configureGroupName, const QString &identifier);
 
 protected:
-    virtual void initialize();
     QTreeWidget *const mTreePluginWidget;
     void initializeDone();
 
@@ -61,11 +61,11 @@ protected:
                       bool checkable = true);
     void resetToUserSettings(const QList<PluginItem *> &items);
     void changeState(const QList<PluginItem *> &items);
+    void savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems);
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotItemChanged(QTreeWidgetItem *item, int column);
 
-    TEXTADDONSWIDGETS_NO_EXPORT void savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems);
     TEXTADDONSWIDGETS_NO_EXPORT void slotConfigureButtonClicked(QAction *act);
 
     KTreeWidgetSearchLineWidget *mSearchLineEdit = nullptr;
