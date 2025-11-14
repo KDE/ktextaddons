@@ -77,6 +77,18 @@ void ConfigurePluginsWidget::load()
     initializeDone();
 }
 
+void ConfigurePluginsWidget::defaults()
+{
+}
+
+void ConfigurePluginsWidget::doLoadFromGlobalSettings()
+{
+}
+
+void ConfigurePluginsWidget::doResetToDefaultsOther()
+{
+}
+
 void ConfigurePluginsWidget::initialize()
 {
 }
@@ -157,6 +169,20 @@ void ConfigurePluginsWidget::slotConfigureButtonClicked(QAction *act)
         if (lst.count() == 2) {
             Q_EMIT configureClicked(lst.at(0), lst.at(1));
         }
+    }
+}
+
+void ConfigurePluginsWidget::changeState(const QList<PluginItem *> &items)
+{
+    for (PluginItem *item : items) {
+        item->setCheckState(0, item->mEnableByDefault ? Qt::Checked : Qt::Unchecked);
+    }
+}
+
+void ConfigurePluginsWidget::resetToUserSettings(const QList<PluginItem *> &items)
+{
+    for (PluginItem *item : items) {
+        item->setCheckState(0, item->mEnableFromUserSettings ? Qt::Checked : Qt::Unchecked);
     }
 }
 

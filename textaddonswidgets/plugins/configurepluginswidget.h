@@ -26,6 +26,9 @@ public:
 
     virtual void save();
     virtual void load();
+    virtual void defaults();
+    virtual void doLoadFromGlobalSettings();
+    virtual void doResetToDefaultsOther();
 
 Q_SIGNALS:
     void changed();
@@ -56,6 +59,8 @@ protected:
                       QList<PluginItem *> &itemsList,
                       const QString &configureGroupName,
                       bool checkable = true);
+    void resetToUserSettings(const QList<PluginItem *> &items);
+    void changeState(const QList<PluginItem *> &items);
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotItemChanged(QTreeWidgetItem *item, int column);
