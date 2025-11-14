@@ -67,10 +67,10 @@ void TextAutoGenerateToolCallJob::initializeJob(const QByteArray &chatId,
                 if (mListJob.isEmpty()) {
                     const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo newInfo{
                         .content = mResult.join(u'\n'),
-                        .messageUuid = newInfo.messageUuid,
-                        .chatId = newInfo.chatId,
-                        .toolIdentifier = newInfo.toolIdentifier,
-                        .attachementInfoList = {},
+                        .messageUuid = info.messageUuid,
+                        .chatId = info.chatId,
+                        .toolIdentifier = info.toolIdentifier,
+                        .attachementInfoList = info.attachementInfoList,
                     };
                     Q_EMIT finished(newInfo);
                     Q_EMIT toolInProgress({});
