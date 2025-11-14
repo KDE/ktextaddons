@@ -1989,17 +1989,17 @@ msgstr "附加文件"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr ""
+msgstr "图像 (*.png *.xpm *.jpg *.gif)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr ""
+msgstr "音频 (*.mp4 *.avi)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr ""
+msgstr "文本 (*.txt *.md)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format

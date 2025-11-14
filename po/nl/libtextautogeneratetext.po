@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-13 00:41+0000\n"
-"PO-Revision-Date: 2025-11-05 11:23+0100\n"
+"PO-Revision-Date: 2025-11-13 17:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -2113,17 +2113,17 @@ msgstr "Bestand bijvoegen"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr ""
+msgstr "Afbeeldingen (*.png *.xpm *.jpg *.gif)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr ""
+msgstr "Audio (*.mp4 *.avi)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr ""
+msgstr "Tekst (*.txt *.md)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
