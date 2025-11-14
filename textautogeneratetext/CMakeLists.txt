@@ -347,6 +347,12 @@ target_sources(
         widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatawidget.cpp
         widgets/toolswidget/textautogeneratetoolswidget.h
         widgets/toolswidget/textautogeneratetoolswidget.cpp
+        widgets/debug/textautogenerateshowdebugdialog.cpp
+        widgets/debug/textautogenerateshowdebugdialog.h
+        widgets/debug/textautogenerateshowdebugwidget.h
+        widgets/debug/textautogenerateshowdebugwidget.cpp
+        widgets/debug/textautogeneratejsonplaintexteditwidget.h
+        widgets/debug/textautogeneratejsonplaintexteditwidget.cpp
 )
 
 if(BUILD_TESTING)
@@ -388,6 +394,7 @@ target_link_libraries(
         KF6::IconThemes
         KF6::TextUtils
         KF6::TextAddonsWidgets
+        KF6::TextCustomEditor
 )
 
 if(TARGET Qt6::TextToSpeech)
