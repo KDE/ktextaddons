@@ -5,14 +5,14 @@
 */
 #pragma once
 #include <QStyledItemDelegate>
-namespace TextAutoGenerateText
+namespace TextAddonsWidgets
 {
-class TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate : public QStyledItemDelegate
+class ConfigurePluginsTreeWidgetDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate(QObject *parent = nullptr);
-    ~TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate() override;
+    explicit ConfigurePluginsTreeWidgetDelegate(QObject *parent = nullptr);
+    ~ConfigurePluginsTreeWidgetDelegate() override;
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };

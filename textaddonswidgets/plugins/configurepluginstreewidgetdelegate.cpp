@@ -4,19 +4,19 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "textautogeneratetextconfigurepluginstreewidgetdelegate.h"
-#include "textautogeneratetextconfigurepluginswidget.h"
+#include "configurepluginstreewidgetdelegate.h"
+#include "configurepluginswidget.h"
 #include <QApplication>
 #include <QPainter>
-using namespace TextAutoGenerateText;
-TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate(QObject *parent)
+using namespace TextAddonsWidgets;
+ConfigurePluginsTreeWidgetDelegate::ConfigurePluginsTreeWidgetDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
 {
 }
 
-TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::~TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate() = default;
+ConfigurePluginsTreeWidgetDelegate::~ConfigurePluginsTreeWidgetDelegate() = default;
 
-void TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+void ConfigurePluginsTreeWidgetDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (!index.isValid()) {
         return;
@@ -28,7 +28,7 @@ void TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::paint(QPainter *pai
         return;
     }
 
-    const QString description = index.data(TextAutoGenerateText::TextAutoGenerateTextConfigurePluginsWidget::PluginItemData::Description).toString();
+    const QString description = index.data(TextAddonsWidgets::ConfigurePluginsWidget::PluginItemData::Description).toString();
     if (description.isEmpty()) {
         QStyledItemDelegate::paint(painter, option, index);
         return;
@@ -89,12 +89,12 @@ void TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::paint(QPainter *pai
     painter->restore();
 }
 
-QSize TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
+QSize ConfigurePluginsTreeWidgetDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     const QFontMetrics fontMetrics(option.font);
     const int height = fontMetrics.height() * 2; // Height for two lines
 
-    const QString description = index.data(TextAutoGenerateText::TextAutoGenerateTextConfigurePluginsWidget::PluginItemData::Description).toString();
+    const QString description = index.data(TextAddonsWidgets::ConfigurePluginsWidget::PluginItemData::Description).toString();
     int widthDescription = 0;
     if (!description.isEmpty()) {
         QFont f = option.font;
@@ -107,4 +107,4 @@ QSize TextAutoGenerateTextConfigurePluginsTreeWidgetDelegate::sizeHint(const QSt
     return QSize(width, height);
 }
 
-#include "moc_textautogeneratetextconfigurepluginstreewidgetdelegate.cpp"
+#include "moc_configurepluginstreewidgetdelegate.cpp"

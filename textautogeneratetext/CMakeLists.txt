@@ -236,8 +236,6 @@ target_sources(
         widgets/configure/textautogeneratetextconfigurepromptwidget.cpp
         widgets/configure/textautogeneratetextconfigurepluginswidget.h
         widgets/configure/textautogeneratetextconfigurepluginswidget.cpp
-        widgets/configure/textautogeneratetextconfigurepluginstreewidgetdelegate.cpp
-        widgets/configure/textautogeneratetextconfigurepluginstreewidgetdelegate.h
         widgets/common/textautogeneratetextmodelcombobox.h
         widgets/common/textautogeneratetextmodelcombobox.cpp
         widgets/common/textautogeneratetextlineeditwidget.h

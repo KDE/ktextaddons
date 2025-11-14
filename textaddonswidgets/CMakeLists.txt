@@ -65,6 +65,10 @@ target_sources(
         quicksearchbar/quicksearchbar.cpp
         plugins/pluginutil.cpp
         plugins/pluginutil.h
+        plugins/configurepluginstreewidgetdelegate.cpp
+        plugins/configurepluginstreewidgetdelegate.h
+        plugins/configurepluginswidget.cpp
+        plugins/configurepluginswidget.h
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -74,6 +78,7 @@ target_link_libraries(
     PRIVATE
         KF6::ConfigGui
         KF6::KIOCore
+        KF6::ItemViews
 )
 
 ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER textaddonswidgets_debug.h
@@ -167,6 +172,7 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnew_HEADERS
 ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
     HEADER_NAMES
     PluginUtil
+    ConfigurePluginsWidget
     REQUIRED_HEADERS TextAddonsWidgets_plugins_HEADERS
     PREFIX TextAddonsWidgets
     RELATIVE plugins

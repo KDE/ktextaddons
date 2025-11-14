@@ -5,16 +5,14 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QList>
-#include <QTreeWidgetItem>
-#include <QWidget>
+#include <TextAddonsWidgets/ConfigurePluginsWidget>
 #include <TextAddonsWidgets/PluginUtil>
 class KTreeWidgetSearchLineWidget;
 class QTreeWidget;
 class KMessageWidget;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePluginsWidget : public QWidget
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePluginsWidget : public TextAddonsWidgets::ConfigurePluginsWidget
 {
     Q_OBJECT
 public:
@@ -24,44 +22,13 @@ public:
     explicit TextAutoGenerateTextConfigurePluginsWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextConfigurePluginsWidget() override;
 
-    void save();
-    void load();
-
-Q_SIGNALS:
-    void changed();
+    void save() override;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void initialize();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void initializeDone();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotItemChanged(QTreeWidgetItem *item, int column);
+    void initialize() override;
 
-    class PluginItem : public QTreeWidgetItem
-    {
-    public:
-        explicit PluginItem(QTreeWidgetItem *parent)
-            : QTreeWidgetItem(parent)
-        {
-        }
-
-        QString mIdentifier;
-        bool mEnableByDefault = false;
-        bool mHasConfigureSupport = false;
-        bool mEnableFromUserSettings = false;
-    };
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureClicked(const QString &groupName, const QString &identifier);
     TEXTAUTOGENERATETEXT_NO_EXPORT void savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureClicked(QAction *act);
-
-    KTreeWidgetSearchLineWidget *mSearchLineEdit = nullptr;
-    QTreeWidget *const mTreePluginWidget;
-    KMessageWidget *const mMessageWidget;
-    bool mInitializeDone = false;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void fillTopItems(const QList<TextAddonsWidgets::PluginUtilData> &lst,
-                                                     const QString &topLevelItemName,
-                                                     const QString &groupName,
-                                                     const QString &prefixKey,
-                                                     QList<PluginItem *> &itemsList,
-                                                     const QString &configureGroupName,
-                                                     bool checkable = true);
     QList<PluginItem *> mPluginTextItems;
     QList<PluginItem *> mPluginToolsItems;
 };
