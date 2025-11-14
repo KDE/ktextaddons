@@ -22,7 +22,7 @@ OllamaModelInstalledInfoWidget::OllamaModelInstalledInfoWidget(QWidget *parent)
     , mMainLayout(new QVBoxLayout(this))
     , mNetworkUrlButton(new OllamaNetworkUrlButton(this))
 {
-    mMainLayout->setObjectName(u"mainLayout"_s);
+    mMainLayout->setObjectName(u"mMainLayout"_s);
 
     mNetworkUrlButton->setObjectName(u"mNetworkUrlButton");
     mMainLayout->addWidget(mNetworkUrlButton, 0, Qt::AlignTop);
