@@ -78,7 +78,7 @@ QList<TextAutoGenerateReply::ToolCallArgumentInfo> TextAutoGenerateReply::parseT
         }
         infos.append(toolInfo);
     }
-    qDebug() << "TextAutoGenerateReply::parseToolCallsOpenA infos " << infos;
+    qDebug() << "TextAutoGenerateReply::parseToolCallsOpenAI infos: " << infos;
     return infos;
 }
 
