@@ -26,7 +26,7 @@ void ExampleTextToolPluginJob::start()
     QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentInfo;
     {
         const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo attInfo{
-            .mimeType = "text-plain"_ba,
+            .mimeType = "text/plain"_ba,
             .content = "foo bla kde"_ba,
             .name = u"test-file1"_s,
             .attachmentType = TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::File,
