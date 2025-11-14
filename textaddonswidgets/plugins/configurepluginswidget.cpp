@@ -99,10 +99,10 @@ void ConfigurePluginsWidget::initializeDone()
     mInitializeDone = true;
 }
 
-void ConfigurePluginsWidget::savePlugins(const QString &configName,
-                                         const QString &groupName,
+void ConfigurePluginsWidget::savePlugins(const QString &groupName,
                                          const QString &prefixSettingKey,
-                                         const QList<PluginItem *> &listItems)
+                                         const QList<PluginItem *> &listItems,
+                                         const QString &configName)
 {
     if (listItems.isEmpty()) {
         return;
@@ -117,7 +117,7 @@ void ConfigurePluginsWidget::savePlugins(const QString &configName,
         }
     }
 
-    TextAddonsWidgets::PluginUtil::savePluginSettings(configName, groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
+    TextAddonsWidgets::PluginUtil::savePluginSettings(groupName, prefixSettingKey, enabledPlugins, disabledPlugins, configName);
 }
 
 void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginUtilData> &lst,
@@ -126,13 +126,14 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
                                           const QString &prefixKey,
                                           QList<PluginItem *> &itemsList,
                                           const QString &configureGroupName,
-                                          bool checkable)
+                                          bool checkable,
+                                          const QString &fileName)
 {
     itemsList.clear();
     if (!lst.isEmpty()) {
         auto topLevel = new QTreeWidgetItem(mTreePluginWidget, {topLevelItemName});
         topLevel->setFlags(topLevel->flags() & ~Qt::ItemIsSelectable);
-        const TextAddonsWidgets::PluginUtil::PluginsStateList pair = TextAddonsWidgets::PluginUtil::loadPluginSetting({}, groupName, prefixKey);
+        const TextAddonsWidgets::PluginUtil::PluginsStateList pair = TextAddonsWidgets::PluginUtil::loadPluginSetting(fileName, groupName, prefixKey);
         for (const TextAddonsWidgets::PluginUtilData &data : lst) {
             auto subItem = new PluginItem(topLevel);
             subItem->setData(0, ConfigurePluginsWidget::PluginItemData::Description, data.mDescription);

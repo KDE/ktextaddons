@@ -42,13 +42,14 @@ TextAddonsWidgets::PluginUtil::loadPluginSetting(const QString &configFileName, 
     return pair;
 }
 
-void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &configFileName,
-                                                       const QString &groupName,
+void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,
                                                        const QString &prefixSettingKey,
                                                        const QStringList &enabledPluginsList,
-                                                       const QStringList &disabledPluginsList)
+                                                       const QStringList &disabledPluginsList,
+                                                       const QString &configFileName)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(configFileName);
+    // qDebug() << " void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,  " << configFileName;
     KConfigGroup grp = config->group(groupName);
     if (enabledPluginsList.isEmpty()) {
         grp.deleteEntry(QStringLiteral("%1Enabled").arg(prefixSettingKey));

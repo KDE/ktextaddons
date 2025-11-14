@@ -44,11 +44,11 @@ isPluginActivated(const QStringList &enabledPluginsList, const QStringList &disa
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT PluginsStateList loadPluginSetting(const QString &configFileName,
                                                                           const QString &groupName,
                                                                           const QString &prefixSettingKey);
-TEXTADDONSWIDGETS_EXPORT void savePluginSettings(const QString &configFileName,
-                                                 const QString &groupName,
+TEXTADDONSWIDGETS_EXPORT void savePluginSettings(const QString &groupName,
                                                  const QString &prefixSettingKey,
                                                  const QStringList &enabledPluginsList,
-                                                 const QStringList &disabledPluginsList);
+                                                 const QStringList &disabledPluginsList,
+                                                 const QString &configFileName = {});
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT TextAddonsWidgets::PluginUtilData createPluginMetaData(const KPluginMetaData &metaData);
 }
 }
