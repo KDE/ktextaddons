@@ -48,6 +48,7 @@ protected:
     QPersistentModelIndex mCurrentIndex;
 
 private:
+    void slotDebugMessage(const QModelIndex &index);
     void slotFontChanged();
     bool mAtBottom = true;
     QList<TextAutoGeneratePluginTextInterface *> mPluginTextInterface;

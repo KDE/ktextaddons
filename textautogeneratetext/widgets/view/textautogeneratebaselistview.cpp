@@ -9,6 +9,7 @@
 #include "core/texttospeech/textautogeneratetexttospeechenqueueinfo.h"
 #include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
 #include "delegate/textautogeneratelistviewbasedelegate.h"
+#include "widgets/debug/textautogenerateshowdebugdialog.h"
 #include <KLocalizedString>
 #include <QApplication>
 #include <QClipboard>
@@ -121,8 +122,27 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
                 interface->addAction(&menu);
             }
         }
+        if (mManager && mManager->debug()) {
+            menu.addSeparator();
+            auto debugMessageAction = new QAction(u"Dump Message"_s, &menu); // Don't translate it.
+            connect(debugMessageAction, &QAction::triggered, this, [this, index]() {
+                slotDebugMessage(index);
+            });
+            menu.addAction(debugMessageAction);
+        }
+
         menu.exec(event->globalPos());
     }
+}
+
+void TextAutoGenerateBaseListView::slotDebugMessage(const QModelIndex &index)
+{
+    // Show debug output.
+    const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
+    // qDebug() << " message " << *message << " MessageConvertedText " << index.data(MessagesModel::MessageConvertedText).toString();
+    TextAutoGenerateShowDebugDialog d(this);
+    d.setPlainText(QString::fromUtf8(TextAutoGenerateMessage::serialize(*message, false)));
+    d.exec();
 }
 
 void TextAutoGenerateBaseListView::slotFontChanged()
