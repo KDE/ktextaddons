@@ -70,24 +70,6 @@ void TextAutoGenerateTextConfigurePluginsWidget::initialize()
     mTreePluginWidget->expandAll();
 }
 
-void TextAutoGenerateTextConfigurePluginsWidget::savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems)
-{
-    if (listItems.isEmpty()) {
-        return;
-    }
-    QStringList enabledPlugins;
-    QStringList disabledPlugins;
-    for (const PluginItem *item : listItems) {
-        if (item->checkState(0) == Qt::Checked) {
-            enabledPlugins << item->mIdentifier;
-        } else {
-            disabledPlugins << item->mIdentifier;
-        }
-    }
-
-    TextAddonsWidgets::PluginUtil::savePluginSettings({}, groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
-}
-
 void TextAutoGenerateTextConfigurePluginsWidget::slotConfigureClicked(const QString &groupName, const QString &identifier)
 {
     if (!groupName.isEmpty() && !identifier.isEmpty()) {

@@ -16,9 +16,6 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextConfigurePluginsWidget : p
 {
     Q_OBJECT
 public:
-    enum PluginItemData {
-        Description = Qt::UserRole + 1,
-    };
     explicit TextAutoGenerateTextConfigurePluginsWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextConfigurePluginsWidget() override;
 
@@ -28,7 +25,6 @@ private:
     void initialize() override;
 
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureClicked(const QString &groupName, const QString &identifier);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems);
     QList<PluginItem *> mPluginTextItems;
     QList<PluginItem *> mPluginToolsItems;
 };
