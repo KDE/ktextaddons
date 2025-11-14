@@ -63,11 +63,12 @@ void ConfigurePluginsWidget::slotItemChanged([[maybe_unused]] QTreeWidgetItem *i
     if (mInitializeDone) {
         if (column == 0) {
             mMessageWidget->animatedShow();
+            Q_EMIT changed();
         }
     }
 }
 
-void ConfigurePluginsWidget::save([[maybe_unused]] const QString &fileName)
+void ConfigurePluginsWidget::save()
 {
 }
 
