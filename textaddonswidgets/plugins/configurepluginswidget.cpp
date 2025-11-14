@@ -67,7 +67,7 @@ void ConfigurePluginsWidget::slotItemChanged([[maybe_unused]] QTreeWidgetItem *i
     }
 }
 
-void ConfigurePluginsWidget::save()
+void ConfigurePluginsWidget::save([[maybe_unused]] const QString &fileName)
 {
 }
 
@@ -98,7 +98,10 @@ void ConfigurePluginsWidget::initializeDone()
     mInitializeDone = true;
 }
 
-void ConfigurePluginsWidget::savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems)
+void ConfigurePluginsWidget::savePlugins(const QString &configName,
+                                         const QString &groupName,
+                                         const QString &prefixSettingKey,
+                                         const QList<PluginItem *> &listItems)
 {
     if (listItems.isEmpty()) {
         return;
@@ -113,7 +116,7 @@ void ConfigurePluginsWidget::savePlugins(const QString &groupName, const QString
         }
     }
 
-    TextAddonsWidgets::PluginUtil::savePluginSettings({}, groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
+    TextAddonsWidgets::PluginUtil::savePluginSettings(configName, groupName, prefixSettingKey, enabledPlugins, disabledPlugins);
 }
 
 void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginUtilData> &lst,

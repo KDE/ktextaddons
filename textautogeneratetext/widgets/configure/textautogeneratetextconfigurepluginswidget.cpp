@@ -29,13 +29,15 @@ TextAutoGenerateTextConfigurePluginsWidget::TextAutoGenerateTextConfigurePlugins
 
 TextAutoGenerateTextConfigurePluginsWidget::~TextAutoGenerateTextConfigurePluginsWidget() = default;
 
-void TextAutoGenerateTextConfigurePluginsWidget::save()
+void TextAutoGenerateTextConfigurePluginsWidget::save(const QString &fileName)
 {
-    savePlugins(TextAutoGeneratePluginTextManager::self()->configGroupName(),
+    savePlugins(fileName,
+                TextAutoGeneratePluginTextManager::self()->configGroupName(),
                 TextAutoGeneratePluginTextManager::self()->configPrefixSettingKey(),
                 mPluginTextItems);
 
-    savePlugins(TextAutoGenerateTextToolPluginManager::self()->configGroupName(),
+    savePlugins(fileName,
+                TextAutoGenerateTextToolPluginManager::self()->configGroupName(),
                 TextAutoGenerateTextToolPluginManager::self()->configPrefixSettingKey(),
                 mPluginToolsItems);
 }

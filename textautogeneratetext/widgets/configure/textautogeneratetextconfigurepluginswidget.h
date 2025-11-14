@@ -19,7 +19,7 @@ public:
     explicit TextAutoGenerateTextConfigurePluginsWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextConfigurePluginsWidget() override;
 
-    void save() override;
+    void save(const QString &fileName = {}) override;
 
 private:
     void initialize() override;

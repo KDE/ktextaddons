@@ -24,7 +24,7 @@ public:
     explicit ConfigurePluginsWidget(QWidget *parent = nullptr);
     ~ConfigurePluginsWidget() override;
 
-    virtual void save();
+    virtual void save(const QString &fileName = {});
     virtual void load();
     virtual void defaults();
     virtual void doLoadFromGlobalSettings();
@@ -61,7 +61,7 @@ protected:
                       bool checkable = true);
     void resetToUserSettings(const QList<PluginItem *> &items);
     void changeState(const QList<PluginItem *> &items);
-    void savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems);
+    void savePlugins(const QString &configName, const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems);
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotItemChanged(QTreeWidgetItem *item, int column);
