@@ -132,7 +132,7 @@ void OllamaPlugin::sendToAssistant(const SendToAssistantInfo &info)
     mConnections.insert(
         reply,
         QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
-                                                       manager()->replaceContent(chatId, messageUuid, reply->readResponse());
+                                                       manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
                                                    })));
     mConnections.insert(
         reply,

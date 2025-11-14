@@ -208,11 +208,12 @@ QStringList TextAutoGenerateManager::chatsList() const
 
 void TextAutoGenerateManager::replaceContent(const QByteArray &chatId,
                                              const QByteArray &uuid,
-                                             const TextAutoGenerateText::TextAutoGenerateReply::Response &content)
+                                             const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
+                                             const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList)
 {
     auto messagesModel = messagesModelFromChatId(chatId);
     if (messagesModel) {
-        messagesModel->replaceContent(uuid, content.response); // TODO use tools
+        messagesModel->replaceContent(uuid, content.response, attachementInfoList); // TODO use tools
     } else {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find model for " << chatId;
     }
@@ -618,7 +619,7 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     TextAutoGenerateText::TextAutoGenerateReply::Response content;
     content.response = info.content;
     // content.info =
-    replaceContent(info.chatId, info.messageUuid, content);
+    replaceContent(info.chatId, info.messageUuid, content, info.attachementInfoList);
     changeInProgress(info.chatId, info.messageUuid, false);
 }
 

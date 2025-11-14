@@ -74,7 +74,10 @@ public:
 
     [[nodiscard]] TextAutoGenerateMessagesModel *messagesModelFromChatId(const QByteArray &chatId) const;
     void createNewChat(const QString &title = {});
-    void replaceContent(const QByteArray &chatId, const QByteArray &uuid, const TextAutoGenerateText::TextAutoGenerateReply::Response &content);
+    void replaceContent(const QByteArray &chatId,
+                        const QByteArray &uuid,
+                        const TextAutoGenerateText::TextAutoGenerateReply::Response &content,
+                        const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList);
     void changeInProgress(const QByteArray &chatId, const QByteArray &uuid, bool inProgress);
     void removeDiscussion(const QByteArray &chatId);
     [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);

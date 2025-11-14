@@ -8,6 +8,7 @@
 
 #include "textautogeneratetext_export.h"
 #include <QAbstractListModel>
+#include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 namespace TextAutoGenerateText
 {
@@ -59,7 +60,8 @@ public:
     [[nodiscard]] QList<QByteArray> removeDiscussion(const QByteArray &uuid);
 
     void changeTextToSpeechInProgress(const QByteArray &uuid, bool inProgress);
-    void replaceContent(const QByteArray &uuid, const QString &content);
+    void
+    replaceContent(const QByteArray &uuid, const QString &content, const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList);
     void changeInProgress(const QByteArray &uuid, bool inProgress);
     [[nodiscard]] QByteArray editMessage(const QByteArray &uuid, const QString &str);
     [[nodiscard]] QModelIndex indexForUuid(const QByteArray &uuid) const;

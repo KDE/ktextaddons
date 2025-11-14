@@ -137,7 +137,7 @@ void GenericNetworkPlugin::sendToAssistant(const SendToAssistantInfo &info)
                         QPair<QByteArray, QMetaObject::Connection>(
                             messageUuid,
                             connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
-                                manager()->replaceContent(chatId, messageUuid, reply->readResponse());
+                                manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
                             })));
     mConnections.insert(reply,
                         QPair<QByteArray, QMetaObject::Connection>(

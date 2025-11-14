@@ -302,7 +302,9 @@ bool TextAutoGenerateMessagesModel::waitingAnswer(const TextAutoGenerateMessage 
     return false;
 }
 
-void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid, const QString &content)
+void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid,
+                                                   const QString &content,
+                                                   const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachementInfoList)
 {
     if (uuid.isEmpty()) {
         return;
@@ -314,6 +316,9 @@ void TextAutoGenerateMessagesModel::replaceContent(const QByteArray &uuid, const
     if (it != mMessages.end()) {
         (*it).setContent(content);
         (*it).generateHtml();
+        TextAutoGenerateAttachments attachments;
+        attachments.setMessageAttachments(TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(attachementInfoList));
+        (*it).setMessageAttachments(attachments);
         const int i = std::distance(mMessages.begin(), it);
         auto emitChanged = [this](int rowNumber, const QList<int> &roles = QList<int>()) {
             const QModelIndex index = createIndex(rowNumber, 0);
