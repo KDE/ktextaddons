@@ -20,11 +20,19 @@ void TextAutoGenerateManagerTest::shouldHaveDefaultValues()
     QVERIFY(w.currentChatId().isEmpty());
     QVERIFY(w.textAutoGenerateChatsModel());
     QVERIFY(!w.showArchived());
+    QVERIFY(!w.debug());
 }
 
 void TextAutoGenerateManagerTest::shouldIsFavorite()
 {
     const TextAutoGenerateText::TextAutoGenerateManager w;
     QVERIFY(!w.chatIsFavorite({}));
+}
+
+void TextAutoGenerateManagerTest::shouldSetDebug()
+{
+    qputenv("TEXTAUTOGENERATE_DEBUGGING", "1");
+    const TextAutoGenerateText::TextAutoGenerateManager w;
+    QVERIFY(w.debug());
 }
 #include "moc_textautogeneratemanagertest.cpp"

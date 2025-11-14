@@ -125,6 +125,9 @@ public:
     [[nodiscard]] TextAutoGenerateTextToSpeechEnqueueManager *textAutoGenerateTextToSpeechEnqueueManager() const;
 #endif
 
+    [[nodiscard]] bool debug() const;
+    void setDebug(bool newDebug);
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);
@@ -168,5 +171,6 @@ private:
     bool mShowArchived = false;
     bool mSaveInDatabase = true;
     bool mPluginWasInitialized = false;
+    bool mDebug = false;
 };
 }

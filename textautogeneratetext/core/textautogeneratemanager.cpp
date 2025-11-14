@@ -57,6 +57,8 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     // Load TextAutoGenerateTextToolPluginManager
     (void)TextAutoGenerateTextToolPluginManager::self();
 
+    mDebug = !qEnvironmentVariableIsEmpty("TEXTAUTOGENERATE_DEBUGGING");
+
 #if HAVE_KTEXTADDONS_TEXTAUTOGENERATE_DBUS_SUPPORT
     new TextAutoGenerateManagerAdaptor(this);
 
@@ -621,6 +623,16 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     // content.info =
     replaceContent(info.chatId, info.messageUuid, content, info.attachementInfoList);
     changeInProgress(info.chatId, info.messageUuid, false);
+}
+
+void TextAutoGenerateManager::setDebug(bool newDebug)
+{
+    mDebug = newDebug;
+}
+
+bool TextAutoGenerateManager::debug() const
+{
+    return mDebug;
 }
 
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
