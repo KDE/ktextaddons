@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-13 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-10-12 12:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -72,57 +72,57 @@ msgstr ""
 "\n"
 "도구: %1"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Tools"
 msgstr "도구"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Small"
 msgstr "작게"
 
-#: core/textautogeneratemanager.cpp:142
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Medium"
 msgstr "중간"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Big"
 msgstr "크게"
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Huge"
 msgstr "매우 크게"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Multilingual"
 msgstr "다언어"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Code"
 msgstr "코드"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Math"
 msgstr "수학"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Vision"
 msgstr "비전"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Embedding"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Reasoning"
 msgstr ""
@@ -1813,33 +1813,15 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
-#, kde-format
-msgid "Restart is necessary for applying the changes."
-msgstr "변경 사항을 적용하려면 다시 시작해야 합니다."
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
 msgid "Tools Plugins"
 msgstr "도구 플러그인"
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:178
-#, kde-format
-msgid "..."
-msgstr ""
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
-msgctxt "@info:tooltip"
-msgid "Configure"
-msgstr "설정…"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, fuzzy, kde-format
@@ -1874,6 +1856,12 @@ msgstr ""
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
+msgstr ""
+
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
@@ -2150,25 +2138,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "선택 영역 복사"
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "복사"
 
-#: widgets/view/textautogeneratebaselistview.cpp:98
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "URL 복사"
 
-#: widgets/view/textautogeneratebaselistview.cpp:110
+#: widgets/view/textautogeneratebaselistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2224,6 +2212,16 @@ msgstr ""
 #, kde-format
 msgid "No Messages Found."
 msgstr ""
+
+#~ msgid "Restart is necessary for applying the changes."
+#~ msgstr "변경 사항을 적용하려면 다시 시작해야 합니다."
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Configure…"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure"
+#~ msgstr "설정…"
 
 #~ msgid "No system prompt"
 #~ msgstr "시스템 프롬프트 없음"

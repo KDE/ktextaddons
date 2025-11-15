@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-10-12 12:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -34,6 +34,22 @@ msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr ""
 "현재 사용 중인 버전이 1년 이상 지났습니다. 업그레이드를 강력히 권장합니다."
+
+#: plugins/configurepluginswidget.cpp:23
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:157
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:159
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27

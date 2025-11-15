@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-13 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -73,57 +73,57 @@ msgstr ""
 "\n"
 "工具：%1"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:142
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Huge"
 msgstr "超大"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Multilingual"
 msgstr "多语言"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Code"
 msgstr "代码"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Math"
 msgstr "数学"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Vision"
 msgstr "视觉"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
@@ -2019,31 +2019,15 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "允许选择工具"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
-#, kde-format
-msgid "Restart is necessary for applying the changes."
-msgstr "要应用更改必须重启启动。"
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
 msgstr "文本插件"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
 msgid "Tools Plugins"
 msgstr "工具插件"
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:178
-#, kde-format
-msgid "..."
-msgstr "..."
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:180
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Configure"
-msgstr "配置"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -2078,6 +2062,12 @@ msgstr "显示元数据信息"
 #, kde-format
 msgid "Metadata Info"
 msgstr "元数据信息"
+
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2346,25 +2336,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr "复制代码块"
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "复制选中内容"
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "复制"
 
-#: widgets/view/textautogeneratebaselistview.cpp:98
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "复制 URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:110
+#: widgets/view/textautogeneratebaselistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2420,3 +2410,13 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
+
+#~ msgid "Restart is necessary for applying the changes."
+#~ msgstr "要应用更改必须重启启动。"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure"
+#~ msgstr "配置"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-13 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-09-02 17:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -72,57 +72,57 @@ msgid ""
 "Tools: %1"
 msgstr "Instrumentos"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Tools"
 msgstr "Instrumentos"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Small"
 msgstr "Parve"
 
-#: core/textautogeneratemanager.cpp:142
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Medium"
 msgstr "Medie"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Big"
 msgstr "Grande"
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Huge"
 msgstr "Ponderose (Huge)"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Multilingual"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Code"
 msgstr "Codice"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Math"
 msgstr "Mathematica"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Vision"
 msgstr ""
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Embedding"
 msgstr "Incorporante"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Reasoning"
 msgstr ""
@@ -1796,33 +1796,15 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
-#, kde-format
-msgid "Restart is necessary for applying the changes."
-msgstr "Reinitiar si necessari per applicar le modificationes."
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
 msgstr ""
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
 msgid "Tools Plugins"
 msgstr ""
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:178
-#, kde-format
-msgid "..."
-msgstr ""
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure…"
-msgctxt "@info:tooltip"
-msgid "Configure"
-msgstr "Configura"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, fuzzy, kde-format
@@ -1857,6 +1839,12 @@ msgstr ""
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginshowmetadatadialog.cpp:26
 #, kde-format
 msgid "Metadata Info"
+msgstr ""
+
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
 msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
@@ -2133,25 +2121,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "Copia selection"
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "Copia"
 
-#: widgets/view/textautogeneratebaselistview.cpp:98
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "Copia URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:110
+#: widgets/view/textautogeneratebaselistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2207,6 +2195,16 @@ msgstr "Necun Archivo trovate."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Necun messages trovate."
+
+#~ msgid "Restart is necessary for applying the changes."
+#~ msgstr "Reinitiar si necessari per applicar le modificationes."
+
+#, fuzzy
+#~| msgctxt "@info:tooltip"
+#~| msgid "Configure…"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure"
+#~ msgstr "Configura"
 
 #, fuzzy
 #~| msgctxt "@action"

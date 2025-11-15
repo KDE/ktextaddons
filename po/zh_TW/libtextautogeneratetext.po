@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-13 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-09-22 05:54+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -72,57 +72,57 @@ msgstr ""
 "\n"
 "工具：%1"
 
-#: core/textautogeneratemanager.cpp:138
+#: core/textautogeneratemanager.cpp:140
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:140
+#: core/textautogeneratemanager.cpp:142
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:142
+#: core/textautogeneratemanager.cpp:144
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:144
+#: core/textautogeneratemanager.cpp:146
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:146
+#: core/textautogeneratemanager.cpp:148
 #, kde-format
 msgid "Huge"
 msgstr "巨大"
 
-#: core/textautogeneratemanager.cpp:148
+#: core/textautogeneratemanager.cpp:150
 #, kde-format
 msgid "Multilingual"
 msgstr "多語言"
 
-#: core/textautogeneratemanager.cpp:150
+#: core/textautogeneratemanager.cpp:152
 #, kde-format
 msgid "Code"
 msgstr "程式碼"
 
-#: core/textautogeneratemanager.cpp:152
+#: core/textautogeneratemanager.cpp:154
 #, kde-format
 msgid "Math"
 msgstr "數學"
 
-#: core/textautogeneratemanager.cpp:154
+#: core/textautogeneratemanager.cpp:156
 #, kde-format
 msgid "Vision"
 msgstr "視覺"
 
-#: core/textautogeneratemanager.cpp:156
+#: core/textautogeneratemanager.cpp:158
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:158
+#: core/textautogeneratemanager.cpp:160
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
@@ -1966,31 +1966,15 @@ msgctxt "@info:tooltip"
 msgid "Allow to select tools"
 msgstr "允許選取工具"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:28
-#, kde-format
-msgid "Restart is necessary for applying the changes."
-msgstr "需要重新啟動變更才會生效。"
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:106
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:57
 #, kde-format
 msgid "Text Plugins"
 msgstr "文字外掛程式"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:113
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:64
 #, kde-format
 msgid "Tools Plugins"
 msgstr "工具外掛程式"
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:178
-#, kde-format
-msgid "..."
-msgstr "..."
-
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:180
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Configure"
-msgstr "設定"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -2025,6 +2009,12 @@ msgstr "顯示中繼資料資訊"
 #, kde-format
 msgid "Metadata Info"
 msgstr "中繼資料資訊"
+
+#: widgets/debug/textautogenerateshowdebugdialog.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2293,25 +2283,25 @@ msgctxt "@title"
 msgid "Copy Block Code"
 msgstr ""
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy Selection"
 msgstr "複製選取範圍"
 
-#: widgets/view/textautogeneratebaselistview.cpp:84
+#: widgets/view/textautogeneratebaselistview.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "Copy"
 msgstr "複製"
 
-#: widgets/view/textautogeneratebaselistview.cpp:98
+#: widgets/view/textautogeneratebaselistview.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Copy URL"
 msgstr "複製 URL"
 
-#: widgets/view/textautogeneratebaselistview.cpp:110
+#: widgets/view/textautogeneratebaselistview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
@@ -2367,6 +2357,16 @@ msgstr "找不到封存檔。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "找不到訊息"
+
+#~ msgid "Restart is necessary for applying the changes."
+#~ msgstr "需要重新啟動變更才會生效。"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure"
+#~ msgstr "設定"
 
 #, fuzzy
 #~| msgctxt "@action"

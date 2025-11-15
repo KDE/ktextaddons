@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33,6 +33,22 @@ msgstr "您的软件版本已超过 6 个月未更新，我们建议您进行升
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr "您的软件版本已超过 1 年未更新，我们建议您进行升级。"
+
+#: plugins/configurepluginswidget.cpp:23
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:157
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:159
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27

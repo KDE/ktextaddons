@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-10-14 06:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -34,6 +34,22 @@ msgstr "თქვენი ვერსია 6 თვეზე ძველი�
 msgid ""
 "Your version is older than 1 year, we strongly encourage you to upgrade."
 msgstr "თქვენი ვერსია 1 წელზე ძველია. დაჟინებით გირჩევთ, ასწიოთ ვერსია."
+
+#: plugins/configurepluginswidget.cpp:23
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:157
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:159
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27

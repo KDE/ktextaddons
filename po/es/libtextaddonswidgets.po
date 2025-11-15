@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:41+0000\n"
+"POT-Creation-Date: 2025-11-15 00:40+0000\n"
 "PO-Revision-Date: 2025-10-15 17:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -39,6 +39,22 @@ msgid ""
 msgstr ""
 "Su versión tiene más de 1 año de antigüedad. Le recomendamos encarecidamente "
 "que la actualice."
+
+#: plugins/configurepluginswidget.cpp:23
+#, kde-format
+msgid "Restart is necessary for applying the changes."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:157
+#, kde-format
+msgid "..."
+msgstr ""
+
+#: plugins/configurepluginswidget.cpp:159
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure"
+msgstr ""
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27
