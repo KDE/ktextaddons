@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-15 00:40+0000\n"
-"PO-Revision-Date: 2025-10-14 07:33+0300\n"
+"PO-Revision-Date: 2025-11-15 10:16+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
@@ -38,18 +38,18 @@ msgstr "הגרסה שלך בת יותר משנה, מומלץ בחום לשדרג
 #: plugins/configurepluginswidget.cpp:23
 #, kde-format
 msgid "Restart is necessary for applying the changes."
-msgstr ""
+msgstr "יש להפעיל מחדש כדי להחיל את השינויים."
 
 #: plugins/configurepluginswidget.cpp:157
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #: plugins/configurepluginswidget.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
-msgstr ""
+msgstr "הגדרה"
 
 #: quicksearchbar/quicksearchbar.cpp:27
 #: quicksearchbar/textautogeneratequicksearchbar.cpp:27

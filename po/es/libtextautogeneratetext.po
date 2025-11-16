@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-15 00:40+0000\n"
-"PO-Revision-Date: 2025-11-12 01:58+0100\n"
+"PO-Revision-Date: 2025-11-15 12:18+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2215,7 +2215,7 @@ msgstr "Información de metadatos"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "Depuración"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2558,13 +2558,3 @@ msgstr "No se ha encontrado ningún archivo."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No se han encontrado mensajes."
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "Es necesario reiniciar para aplicar los cambios."
-
-#~ msgid "..."
-#~ msgstr "…"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Configurar"

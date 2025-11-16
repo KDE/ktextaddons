@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-15 00:40+0000\n"
-"PO-Revision-Date: 2025-11-05 09:36+0100\n"
+"PO-Revision-Date: 2025-11-15 13:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2133,17 +2133,17 @@ msgstr "Adjunta un fitxer"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:61
 #, kde-format
 msgid "Images (*.png *.xpm *.jpg *.gif)"
-msgstr ""
+msgstr "Imatges (*.png *.xpm *.jpg *.gif)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Audio (*.mp4 *.avi)"
-msgstr ""
+msgstr "Àudio (*.mp4 *.avi)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:66
 #, kde-format
 msgid "Text (*.txt *.md)"
-msgstr ""
+msgstr "Text (*.txt *.md)"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
@@ -2211,7 +2211,7 @@ msgstr "Informació de les metadades"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "Depuració"
 
 #: widgets/instancesmanager/textautogenerateaddinstancedialog.cpp:19
 #, kde-format
@@ -2554,13 +2554,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "Cal reiniciar per a aplicar els canvis."
-
-#~ msgid "..."
-#~ msgstr "…"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Configuració"
