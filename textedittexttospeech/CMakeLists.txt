@@ -45,6 +45,13 @@ target_sources(
         texttospeechvoicecombobox.cpp
 )
 
+target_sources(
+    KF6TextEditTextToSpeech
+    PRIVATE
+        kokoro/texttospeechkokoro.h
+        kokoro/texttospeechkokoro.cpp
+)
+
 target_link_libraries(
     KF6TextEditTextToSpeech
     PUBLIC
@@ -80,6 +87,7 @@ target_include_directories(
 )
 
 target_link_libraries(KF6TextEditTextToSpeech PRIVATE KF6::I18n)
+target_link_libraries(KF6TextEditTextToSpeech PRIVATE Qt6::Core)
 
 set_target_properties(
     KF6TextEditTextToSpeech
