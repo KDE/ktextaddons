@@ -272,7 +272,9 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     QJsonDocument d;
     QJsonObject o;
     o["identifier"_L1] = QString::fromLatin1(msg.mUuid);
-    o["answerIdentifier"_L1] = QString::fromLatin1(msg.mAnswerUuid);
+    if (!msg.mAnswerUuid.isEmpty()) {
+        o["answerIdentifier"_L1] = QString::fromLatin1(msg.mAnswerUuid);
+    }
     o["text"_L1] = msg.mContent;
     if (msg.sender() != Sender::User) {
         if (auto info = msg.messageInfo(); info) {
