@@ -2410,13 +2410,3 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
-
-#~ msgid "Restart is necessary for applying the changes."
-#~ msgstr "要应用更改必须重启启动。"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "配置"
