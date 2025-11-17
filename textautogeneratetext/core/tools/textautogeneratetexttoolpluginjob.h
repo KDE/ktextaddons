@@ -46,6 +46,7 @@ public:
 Q_SIGNALS:
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     void toolInProgress(const QString &info);
+    void error(const QString &errorStr);
 
 protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> mProperties;
