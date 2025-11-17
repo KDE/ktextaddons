@@ -28,13 +28,13 @@ ExampleTextToolPlugin::~ExampleTextToolPlugin() = default;
 QString ExampleTextToolPlugin::displayName() const
 {
     // Don't translate it
-    return u"Ask Weather Report"_s;
+    return u"Example get Weather Report"_s;
 }
 
 QString ExampleTextToolPlugin::description() const
 {
     // Don't translate it
-    return u"Use this tools, only on meteo. Get the current weather for a city"_s;
+    return u"Use this tools, only on meteo. Get the current weather for a city (not implemented just example)"_s;
 }
 
 void ExampleTextToolPlugin::showConfigureDialog(QWidget *parent)
