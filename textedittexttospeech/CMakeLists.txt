@@ -11,6 +11,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTEDITTEXTTOSPEECH
     SOVERSION 1
 )
 
+add_subdirectory(kokoro)
+
 add_library(KF6TextEditTextToSpeech)
 add_library(KF6::TextEditTextToSpeech ALIAS KF6TextEditTextToSpeech)
 
