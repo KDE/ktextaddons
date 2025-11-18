@@ -20,6 +20,7 @@ public:
     QString mDefaultEngine;
     QTextToSpeech *mTextToSpeech = nullptr;
     qsizetype mCurrentTextToSpeechId = -1;
+    bool initialized = false;
 };
 
 using namespace TextEditTextToSpeech;
@@ -27,13 +28,13 @@ TextToSpeech::TextToSpeech(QObject *parent)
     : QObject(parent)
     , d(new TextEditTextToSpeech::TextToSpeechPrivate)
 {
-    reloadSettings();
 }
 
 TextToSpeech::~TextToSpeech() = default;
 
 void TextToSpeech::reloadSettings()
 {
+    d->initialized = true;
     const TextEditTextToSpeech::TextToSpeechUtil::TextToSpeechSettings settings = TextEditTextToSpeech::TextToSpeechUtil::loadSettings();
     qCDebug(TEXTEDITTEXTTOSPEECH_LOG) << settings;
     const QString engineName = settings.engineName;
@@ -70,6 +71,13 @@ TextToSpeech *TextToSpeech::self()
 {
     static TextToSpeech s_self;
     return &s_self;
+}
+
+void TextToSpeech::initialize()
+{
+    if (!d->initialized) {
+        reloadSettings();
+    }
 }
 
 void TextToSpeech::slotAboutToSynthesize([[maybe_unused]] qsizetype id)
@@ -115,58 +123,66 @@ bool TextToSpeech::isReady() const
 
 void TextToSpeech::say(const QString &text)
 {
+    initialize();
     d->mTextToSpeech->say(text);
 }
 
 qsizetype TextToSpeech::enqueue(const QString &text)
 {
+    initialize();
     return d->mTextToSpeech->enqueue(text);
 }
 
 void TextToSpeech::stop()
 {
+    initialize();
     d->mTextToSpeech->stop();
 }
 
 void TextToSpeech::pause()
 {
+    initialize();
     d->mTextToSpeech->pause();
 }
 
 void TextToSpeech::resume()
 {
+    initialize();
     d->mTextToSpeech->resume();
 }
 
 void TextToSpeech::setRate(double rate)
 {
+    initialize();
     d->mTextToSpeech->setRate(rate);
 }
 
 void TextToSpeech::setPitch(double pitch)
 {
+    initialize();
     d->mTextToSpeech->setPitch(pitch);
 }
 
 void TextToSpeech::setVolume(double volume)
 {
+    initialize();
     d->mTextToSpeech->setVolume(volume);
 }
 
 double TextToSpeech::volume() const
 {
-    return d->mTextToSpeech->volume();
+    return d->mTextToSpeech ? d->mTextToSpeech->volume() : -1.0;
 }
 
 QVector<QLocale> TextToSpeech::availableLocales() const
 {
-    return d->mTextToSpeech->availableLocales();
+    return d->mTextToSpeech ? d->mTextToSpeech->availableLocales() : QVector<QLocale>();
 }
 
 QStringList TextToSpeech::availableVoices() const
 {
     QStringList lst;
-    const QVector<QVoice> voices = d->mTextToSpeech->availableVoices();
+    const QVector<QVoice> voices = d->mTextToSpeech ? d->mTextToSpeech->availableVoices() : QVector<QVoice>();
     lst.reserve(voices.count());
     for (const QVoice &voice : voices) {
         lst << voice.name();
@@ -179,14 +195,15 @@ QStringList TextToSpeech::availableEngines() const
     return QTextToSpeech::availableEngines();
 }
 
-void TextToSpeech::setLocale(const QLocale &locale) const
+void TextToSpeech::setLocale(const QLocale &locale)
 {
+    initialize();
     d->mTextToSpeech->setLocale(locale);
 }
 
 QLocale TextToSpeech::locale() const
 {
-    return d->mTextToSpeech->locale();
+    return d->mTextToSpeech ? d->mTextToSpeech->locale() : QLocale();
 }
 
 #include "moc_texttospeech.cpp"

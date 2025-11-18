@@ -55,13 +55,14 @@ public Q_SLOTS:
     void setRate(double rate);
     void setPitch(double pitch);
     void setVolume(double volume);
-    void setLocale(const QLocale &locale) const;
+    void setLocale(const QLocale &locale);
 
 Q_SIGNALS:
     void stateChanged(TextToSpeech::State);
     void aboutToSynthesize(qsizetype previousId, qsizetype currentId);
 
 private:
+    TEXTEDITTEXTTOSPEECH_NO_EXPORT void initialize();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotStateChanged();
     TEXTEDITTEXTTOSPEECH_NO_EXPORT explicit TextToSpeech(QObject *parent = nullptr);
     TEXTEDITTEXTTOSPEECH_NO_EXPORT void slotAboutToSynthesize(qsizetype id);

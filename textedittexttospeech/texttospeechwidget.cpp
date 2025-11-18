@@ -86,6 +86,7 @@ TextToSpeechWidget::TextToSpeechWidget(QWidget *parent)
     hbox->addWidget(d->mConfigureButton);
 
     d->mTextToSpeechInterface = new TextToSpeechInterface(this, this);
+    d->mTextToSpeechInterface->reloadSettings();
     applyVolume();
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
     hideWidget();
