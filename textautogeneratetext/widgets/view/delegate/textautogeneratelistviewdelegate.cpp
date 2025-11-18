@@ -354,7 +354,7 @@ TextAutoGenerateListViewDelegate::MessageLayout TextAutoGenerateListViewDelegate
                                 qMax(layout.dateSize.height(), iconSize)); // the whole row
 
     int positionIcon = layout.decoRect.right() - iconSize;
-    const int lineY = (layout.dateAreaRect.top() + layout.dateAreaRect.bottom() - iconSize) / 2;
+    const int lineY = layout.dateAreaRect.center().y() - (iconSize / 2);
     const bool waitingAnswer = index.data(TextAutoGenerateMessagesModel::WaitingAnswerRole).toBool();
     if (isUser && !waitingAnswer && !mShowArchive && !mInProgress) {
         layout.removeIconRect = QRect(positionIcon, lineY, iconSize, iconSize);
