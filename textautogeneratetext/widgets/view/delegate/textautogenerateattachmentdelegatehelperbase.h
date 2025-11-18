@@ -26,5 +26,11 @@ public:
                                          const QModelIndex &index,
                                          int maxWidth,
                                          const QStyleOptionViewItem &option) const = 0;
+
+protected:
+    [[nodiscard]] virtual QPoint adaptMousePosition(const QPoint &pos,
+                                                    const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                                    QRect attachmentsRect,
+                                                    const QStyleOptionViewItem &option) = 0;
 };
 }

@@ -37,6 +37,15 @@ QSize TextAutoGenerateAttachmentDelegateHelperImage::sizeHint(const TextAutoGene
     return {};
 }
 
+QPoint TextAutoGenerateAttachmentDelegateHelperImage::adaptMousePosition(const QPoint &pos,
+                                                                         const TextAutoGenerateAttachment &msgAttach,
+                                                                         QRect attachmentsRect,
+                                                                         const QStyleOptionViewItem &option)
+{
+    // TODO
+    return pos;
+}
+
 TextAutoGenerateAttachmentDelegateHelperImage::ImageLayout
 TextAutoGenerateAttachmentDelegateHelperImage::layoutImage(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                            const QStyleOptionViewItem &option,

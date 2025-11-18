@@ -29,6 +29,12 @@ public:
                                  int maxWidth,
                                  const QStyleOptionViewItem &option) const override;
 
+protected:
+    [[nodiscard]] QPoint adaptMousePosition(const QPoint &pos,
+                                            const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                            QRect attachmentsRect,
+                                            const QStyleOptionViewItem &option) override;
+
 private:
     struct ImageLayout {
         QPixmap pixmap;
