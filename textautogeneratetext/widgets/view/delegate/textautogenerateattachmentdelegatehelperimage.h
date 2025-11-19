@@ -40,6 +40,7 @@ private:
         QPixmap pixmap;
         QSize imageSize;
         QString name;
+        QByteArray mimetype;
     };
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperImage::ImageLayout layoutImage(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                                                          const QStyleOptionViewItem &option,
