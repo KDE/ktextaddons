@@ -51,11 +51,15 @@ public:
     [[nodiscard]] QString name() const;
     void setName(const QString &newName);
 
+    [[nodiscard]] bool showAttachment() const;
+    void setShowAttachment(bool newShowAttachment);
+
 private:
     AttachmentType mAttachmentType = AttachmentType::Unknown;
     QByteArray mContent;
     QByteArray mMimeType;
     QString mName;
+    bool mShowAttachment = true;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t);

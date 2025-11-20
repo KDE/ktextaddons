@@ -35,12 +35,14 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachme
     d.space() << "mAttachmentType:" << t.attachmentType();
     d.space() << "mMimeType:" << t.mimeType();
     d.space() << "mName:" << t.name();
+    d.space() << "mShowAttachment:" << t.showAttachment();
     return d;
 }
 
 bool TextAutoGenerateAttachment::operator==(const TextAutoGenerateAttachment &other) const
 {
-    return (mContent == other.mContent) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType) && (mName == other.mName);
+    return (mContent == other.mContent) && (mAttachmentType == other.mAttachmentType) && (mMimeType == other.mMimeType) && (mName == other.mName)
+        && (mShowAttachment == other.mShowAttachment);
 }
 
 bool TextAutoGenerateAttachment::isValid() const
@@ -65,6 +67,7 @@ QJsonObject TextAutoGenerateAttachment::serialize(const TextAutoGenerateAttachme
     o["mimetype"_L1] = QString::fromLatin1(attachment.mimeType());
     o["content"_L1] = QString::fromLatin1(attachment.content());
     o["name"_L1] = attachment.name();
+    o["showAttachment"_L1] = attachment.showAttachment();
     return o;
 }
 
@@ -75,6 +78,7 @@ TextAutoGenerateAttachment TextAutoGenerateAttachment::deserialize(const QJsonOb
     att.setMimeType(o["mimetype"_L1].toString().toLatin1());
     att.setContent(o["content"_L1].toString().toLatin1());
     att.setName(o["name"_L1].toString());
+    att.setShowAttachment(o["showAttachment"_L1].toBool(true));
     return att;
 }
 
@@ -96,6 +100,16 @@ QString TextAutoGenerateAttachment::name() const
 void TextAutoGenerateAttachment::setName(const QString &newName)
 {
     mName = newName;
+}
+
+bool TextAutoGenerateAttachment::showAttachment() const
+{
+    return mShowAttachment;
+}
+
+void TextAutoGenerateAttachment::setShowAttachment(bool newShowAttachment)
+{
+    mShowAttachment = newShowAttachment;
 }
 
 #include "moc_textautogenerateattachment.cpp"

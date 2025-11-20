@@ -21,6 +21,7 @@ void TextAutoGenerateAttachmentTest::shouldHaveDefaultValues()
     QVERIFY(att.name().isEmpty());
     QCOMPARE(att.attachmentType(), TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown);
     QVERIFY(!att.isValid());
+    QVERIFY(att.showAttachment());
 }
 
 #include "moc_textautogenerateattachmenttest.cpp"
