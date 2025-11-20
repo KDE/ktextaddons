@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2025-10-25 08:48+0200\n"
+"PO-Revision-Date: 2025-11-19 11:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,8 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
+# NdT: Terminologia d'IA del Termcat: 
+# https://www.termcat.cat/ca/diccionaris-en-linia/347/
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
 msgid "New Chat..."
@@ -123,7 +125,7 @@ msgstr "Visió"
 #: core/textautogeneratemanager.cpp:149
 #, kde-format
 msgid "Embedding"
-msgstr "Incrustacions"
+msgstr "Immersió"
 
 #: core/textautogeneratemanager.cpp:151
 #, kde-format
@@ -452,8 +454,8 @@ msgstr "El model amb 7 B llançat per IA Mistral, actualitzat a la versió 0.3."
 msgid ""
 "A high-performing open embedding model with a large token context window."
 msgstr ""
-"Un model d'incrustacions obert d'alt rendiment amb una finestra de context "
-"gran de segments textuals."
+"Un model d'immersió obert d'alt rendiment amb una finestra de context gran "
+"de segments textuals."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:25
 #, kde-format
@@ -568,7 +570,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:42
 #, kde-format
 msgid "State-of-the-art large embedding model from mixedbread.ai"
-msgstr "Model d'incrustacions extens d'última generació de mixedbread.ai"
+msgstr "Model d'immersió extens d'última generació de mixedbread.ai"
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:44
 #, kde-format
@@ -648,8 +650,8 @@ msgstr ""
 msgid ""
 "A suite of text embedding models by Snowflake, optimized for performance."
 msgstr ""
-"Un conjunt de models d'incrustacions de text de Snowflake, optimitzats per "
-"al rendiment."
+"Un conjunt de models d'immersió de text de Snowflake, optimitzats per al "
+"rendiment."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:59
 #, kde-format
@@ -734,8 +736,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:71
 #, kde-format
 msgid "Embedding models on very large sentence level datasets."
-msgstr ""
-"Models d'incrustacions en conjunts de dades de nivell de frases molt grans."
+msgstr "Models d'immersió en conjunts de dades de nivell de frases molt grans."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:72
 #, kde-format
@@ -1478,7 +1479,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:187
 #, kde-format
 msgid "Embedding model from BAAI mapping texts to vectors."
-msgstr "Model d'incrustacions de BAAI de mapatge de textos a vectors."
+msgstr "Model d'immersió de BAAI de mapatge de textos a vectors."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:188
 #, kde-format
@@ -1568,7 +1569,7 @@ msgid ""
 "Snowflake's frontier embedding model. Arctic Embed 2.0 adds multilingual "
 "support without sacrificing English performance or scalability."
 msgstr ""
-"Model d'incrustacions frontereres de Snowflake. Arctic Embed 2.0 afig suport "
+"Model d'immersió fronterer de Snowflake. Arctic Embed 2.0 afig suport "
 "multilingüe sense sacrificar el rendiment o l'escalabilitat de l'anglés."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:204
@@ -1638,9 +1639,9 @@ msgid ""
 "biencoder embedding models, with 30M available in English only and 278M "
 "serving multilingual use cases."
 msgstr ""
-"Els models IBM Granite Embedding amb 30 M i 278 M són models d'incrustacions "
-"de bicodificadors densos només de text, amb 30 M disponibles només en anglés "
-"i 278 M servint casos d'ús multilingüe."
+"Els models IBM Granite Embedding amb 30 M i 278 M són models d'immersió de "
+"bicodificadors densos només de text, amb 30 M disponibles només en anglés i "
+"278 M servint casos d'ús multilingüe."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:219
 #, kde-format
@@ -1955,8 +1956,7 @@ msgstr ""
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:281
 #, kde-format
 msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
-msgstr ""
-"EmbeddingGemma és un model d'incrustació de 300 M paràmetres de Google."
+msgstr "EmbeddingGemma és un model d'immersió de 300 M paràmetres de Google."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:283
 #, kde-format
@@ -1965,8 +1965,8 @@ msgid ""
 "provides a comprehensive range of text embeddings models in various sizes."
 msgstr ""
 "EmBuilding sobre els models fundacionals de les series Qwen3, Qwen3 "
-"Embedding proporciona un interval complet de models d'incrustacions de text "
-"amb mides diverses."
+"Embedding proporciona un interval complet de models d'immersió de text amb "
+"mides diverses."
 
 #: plugins/ollama/modelsmanager/ollamamodelutils.cpp:286
 #, kde-format
