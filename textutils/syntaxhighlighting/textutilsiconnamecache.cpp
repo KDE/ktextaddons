@@ -23,6 +23,11 @@ bool TextUtilsIconNameCache::Entry::operator<(const Entry &other) const
     }
 }
 
+void TextUtilsIconNameCache::clearCache()
+{
+    mCachedEntries.clear();
+}
+
 QString TextUtilsIconNameCache::iconPath(const QString &name, int size) const
 {
     Entry entry;

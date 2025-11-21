@@ -16,6 +16,7 @@ class TEXTUTILS_EXPORT TextUtilsIconNameCache
 public:
     static TextUtilsIconNameCache *self();
     [[nodiscard]] QString iconPath(const QString &name, int size) const;
+    void clearCache();
 
 private:
     class Entry
