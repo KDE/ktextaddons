@@ -10,6 +10,7 @@
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/view/textautogeneratelistviewtextselection.h"
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <QAbstractTextDocumentLayout>
 #include <QClipboard>
@@ -49,7 +50,9 @@ void TextAutoGenerateListViewDelegate::slotUpdateColors()
 {
     const KColorScheme scheme = TextUtils::TextUtilsColorsAndMessageViewStyle::self().schemeView();
     mEditingColorMode = scheme.foreground(KColorScheme::NegativeText).color();
-    Q_EMIT updateView();
+    // KIconLoader::global()->setCustomPalette(mListView->palette());
+    // KIconLoader::global()->resetPalette();
+    Q_EMIT updateColors();
 }
 
 void TextAutoGenerateListViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const

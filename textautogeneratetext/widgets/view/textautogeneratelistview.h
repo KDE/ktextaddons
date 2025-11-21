@@ -59,6 +59,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void clearEditingMode();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshMessage(const QByteArray &currentIdentifier, const QByteArray &previousIdentifier, int index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotUpdateColors();
     QByteArray mMessageIdBeingEdited;
     QPointer<TextAutoGenerateMessagesModel> mCurrentModel;
 };

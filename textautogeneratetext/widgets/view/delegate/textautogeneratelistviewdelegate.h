@@ -46,6 +46,7 @@ Q_SIGNALS:
     void textToSpeechRequested(const QModelIndex &index);
     void stopTextToSpeechRequested(const QModelIndex &index);
     void updateView();
+    void updateColors();
 
 private:
     struct MessageLayout {

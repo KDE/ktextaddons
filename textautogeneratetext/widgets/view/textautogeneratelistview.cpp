@@ -35,6 +35,7 @@ TextAutoGenerateListView::TextAutoGenerateListView(TextAutoGenerateText::TextAut
     }
 
     connect(delegate, &TextAutoGenerateListViewDelegate::updateView, this, &TextAutoGenerateListView::slotUpdateView);
+    connect(delegate, &TextAutoGenerateListViewDelegate::updateColors, this, &TextAutoGenerateListView::slotUpdateColors);
 
     connect(delegate, &TextAutoGenerateListViewDelegate::editMessage, this, &TextAutoGenerateListView::slotEditMessage);
     connect(delegate, &TextAutoGenerateListViewDelegate::copyMessage, this, &TextAutoGenerateListView::slotCopyMessage);
@@ -52,6 +53,15 @@ TextAutoGenerateListView::~TextAutoGenerateListView() = default;
 void TextAutoGenerateListView::slotUpdateView()
 {
     viewport()->update();
+}
+
+void TextAutoGenerateListView::slotUpdateColors()
+{
+    auto model = mManager->messagesModelFromChatId(mManager->currentChatId());
+    if (model) {
+        model->refreshMessageColors();
+        clearDocumentCache();
+    }
 }
 
 void TextAutoGenerateListView::slotEditMessage(const QModelIndex &index)

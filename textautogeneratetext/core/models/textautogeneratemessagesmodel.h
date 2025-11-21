@@ -86,6 +86,9 @@ public:
     void regenerateHtmlMessage(const QByteArray &identifier, int index);
 
     [[nodiscard]] QByteArray lastMessageUuid() const;
+
+    void refreshMessageColors();
+
 Q_SIGNALS:
     void conversationCleared();
 

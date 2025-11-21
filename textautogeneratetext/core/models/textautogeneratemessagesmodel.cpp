@@ -160,6 +160,11 @@ QByteArray TextAutoGenerateMessagesModel::lastMessageUuid() const
     return {};
 }
 
+void TextAutoGenerateMessagesModel::refreshMessageColors()
+{
+    (void)updateAllGeneratedMessages();
+}
+
 QList<TextAutoGenerateMessage> TextAutoGenerateMessagesModel::messages() const
 {
     return mMessages;
