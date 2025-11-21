@@ -114,6 +114,7 @@ ecm_generate_headers(TextUtils_Syntaxhighlighting_CamelCase_HEADERS
     TextUtilsSyntaxHighlighter
     TextUtilsSyntaxHighlightingManager
     TextUtilsBlockCodeManager
+    TextUtilsIconNameCache
     REQUIRED_HEADERS TextUtils_Syntaxhighlighting_HEADERS
     PREFIX TextUtils
     RELATIVE syntaxhighlighting
