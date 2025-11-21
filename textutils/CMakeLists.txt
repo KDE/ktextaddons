@@ -29,6 +29,8 @@ target_sources(
         syntaxhighlighting/textutilssyntaxhighlightingmanager.h
         syntaxhighlighting/textutilsblockcodemanager.h
         syntaxhighlighting/textutilsblockcodemanager.cpp
+        syntaxhighlighting/textutilscopyblockiconcache.h
+        syntaxhighlighting/textutilscopyblockiconcache.cpp
         cmark/textutilsblockcmarksupport.h
         cmark/textutilsblockcmarksupport.cpp
         colors/textutilscolorsandmessageviewstyle.h
@@ -115,6 +117,7 @@ ecm_generate_headers(TextUtils_Syntaxhighlighting_CamelCase_HEADERS
     TextUtilsSyntaxHighlightingManager
     TextUtilsBlockCodeManager
     TextUtilsIconNameCache
+    TextUtilsCopyBlockIconCache
     REQUIRED_HEADERS TextUtils_Syntaxhighlighting_HEADERS
     PREFIX TextUtils
     RELATIVE syntaxhighlighting

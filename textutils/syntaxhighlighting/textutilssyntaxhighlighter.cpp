@@ -6,22 +6,24 @@
 
 #include "textutilssyntaxhighlighter.h"
 #include "textutilsblockcodemanager.h"
-#include "textutilsiconnamecache.h"
+#include "textutilscopyblockiconcache.h"
 
 #include <KSyntaxHighlighting/Format>
 #include <KSyntaxHighlighting/State>
 #include <KSyntaxHighlighting/Theme>
 
 #include <KIconLoader>
+#include <KIconTheme>
 #include <KLocalizedString>
+#include <QDebug>
 #include <QTextStream>
 using namespace TextUtils;
 using namespace Qt::Literals::StringLiterals;
+
 TextUtilsSyntaxHighlighter::TextUtilsSyntaxHighlighter(QTextStream *stream)
     : mStream(stream)
 {
 }
-
 void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray &uuid, int &blockCodeIndex)
 {
     *mStream << u"<code>"_s;
@@ -46,9 +48,6 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
 
     if (addIcon) {
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
-        // TODO fix use custom palette => get palette here
-        const QString copyIconPath = TextUtilsIconNameCache::self()->iconPath(u"edit-copy"_s, KIconLoader::Small);
-
         const QString identifier = QString(QString::fromLatin1(uuid) + u'-' + QString::number(blockCodeIndex++));
 
         TextUtilsBlockCodeManager::self()->insert(identifier, str);
@@ -58,7 +57,7 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
         // Add copy url
         *mStream << u"<a href=\"%4%1\"><img height=\"%2\" width=\"%2\" src=\"%3\"></a></div>"_s.arg(identifier,
                                                                                                     QString::number(iconSize),
-                                                                                                    copyIconPath,
+                                                                                                    TextUtilsCopyBlockIconCache::self()->copyBlockUrl(),
                                                                                                     copyHref());
         *mStream << u"</td></tr></table>"_s;
     }
