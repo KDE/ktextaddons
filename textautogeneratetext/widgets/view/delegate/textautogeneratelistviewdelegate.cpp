@@ -12,6 +12,7 @@
 #include "widgets/view/textautogeneratelistviewtextselection.h"
 #include <KIconLoader>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QAbstractTextDocumentLayout>
 #include <QClipboard>
 #include <QDesktopServices>
@@ -23,7 +24,6 @@
 #include <TextUtils/TextUtilsBlockCodeManager>
 #include <TextUtils/TextUtilsColorsAndMessageViewStyle>
 #include <TextUtils/TextUtilsSyntaxHighlighter>
-#include <kmessagebox.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
