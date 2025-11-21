@@ -46,6 +46,7 @@ void TextUtilsSyntaxHighlighter::highlight(const QString &str, const QByteArray 
 
     if (addIcon) {
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Small);
+        // TODO fix use custom palette => get palette here
         const QString copyIconPath = TextUtilsIconNameCache::self()->iconPath(u"edit-copy"_s, KIconLoader::Small);
 
         const QString identifier = QString(QString::fromLatin1(uuid) + u'-' + QString::number(blockCodeIndex++));
