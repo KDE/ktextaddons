@@ -2494,33 +2494,3 @@ msgstr "Не е намерен архив."
 #, kde-format
 msgid "No Messages Found."
 msgstr "Няма намерени съобщения."
-
-#~ msgid "No system prompt"
-#~ msgstr "Няма системна подкана"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Mistral IA"
-#~ msgstr "Конфигуриране на Mistral IA"
-
-#~ msgid "The URL to the Ollama instance"
-#~ msgstr "URL адресът към екземпляра на Ollama"
-
-#~ msgid "The system prompt for the LLM"
-#~ msgstr "Системният подканващ бутон за LLM"
-
-#~ msgid "The model used to generate responses"
-#~ msgstr "Моделът, използван за генериране на отговори"
-
-#~ msgid "Cancel"
-#~ msgstr "Отказ"
-
-#~ msgctxt "@title:window"
-#~ msgid "Configure Openai IA"
-#~ msgstr "Конфигуриране на Openai IA"
-
-#~ msgid "Engine:"
-#~ msgstr "Основна програма:"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Edit..."
-#~ msgstr "Редактиране..."
