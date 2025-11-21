@@ -6,8 +6,8 @@
 #pragma once
 #include "textutils_export.h"
 #include <QString>
+#include <QTemporaryFile>
 #include <memory>
-class QTemporaryFile;
 
 namespace TextUtils
 {
