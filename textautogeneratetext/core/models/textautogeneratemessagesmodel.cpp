@@ -11,6 +11,7 @@
 #include <QDateTime>
 #include <QJsonObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
+#include <TextUtils/TextUtilsCopyBlockIconCache>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
@@ -162,6 +163,7 @@ QByteArray TextAutoGenerateMessagesModel::lastMessageUuid() const
 
 void TextAutoGenerateMessagesModel::refreshMessageColors()
 {
+    TextUtils::TextUtilsCopyBlockIconCache::self()->clear();
     (void)updateAllGeneratedMessages();
 }
 
