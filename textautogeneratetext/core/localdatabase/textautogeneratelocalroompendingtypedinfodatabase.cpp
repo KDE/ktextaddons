@@ -21,7 +21,8 @@ enum class RoomPendingTypedFields {
 }; // in the same order as the table
 using namespace TextAutoGenerateText;
 TextAutoGenerateLocalRoomPendingTypedInfoDatabase::TextAutoGenerateLocalRoomPendingTypedInfoDatabase()
-    : LocalDatabaseBase(TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath(), LocalDatabaseBase::DatabaseType::PendingTypedInfo)
+    : TextAutoGenerateLocalDatabaseAbstract(TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath(),
+                                            TextAutoGenerateLocalChatsDatabase::DatabaseType::PendingTypedInfo)
 {
 }
 
@@ -34,7 +35,7 @@ QString TextAutoGenerateLocalRoomPendingTypedInfoDatabase::schemaDataBase() cons
 
 std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalRoomPendingTypedInfoDatabase::createRoomsModel(const QString &accountName) const
 {
-    const QString dbName = databaseName(accountName);
+    const QString dbName = generateDbName({});
     QSqlDatabase db = QSqlDatabase::database(dbName);
     if (!db.isValid()) {
         // Open the DB if it exists (don't create a new one)
