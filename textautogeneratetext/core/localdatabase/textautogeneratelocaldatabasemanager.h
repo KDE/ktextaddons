@@ -14,6 +14,7 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateLocalChatsDatabase;
 class TextAutoGenerateLocalMessagesDatabase;
+class TextAutoGenerateLocalRoomPendingTypedInfoDatabase;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateLocalDatabaseManager final
 {
 public:
@@ -37,5 +38,6 @@ public:
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;
     std::unique_ptr<TextAutoGenerateLocalChatsDatabase> mChatsDatabase;
+    std::unique_ptr<TextAutoGenerateLocalRoomPendingTypedInfoDatabase> mRoomPendingTypedInfoDatabase;
 };
 }

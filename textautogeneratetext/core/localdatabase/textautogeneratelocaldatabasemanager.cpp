@@ -8,12 +8,14 @@
 
 #include "textautogeneratelocalchatsdatabase.h"
 #include "textautogeneratelocalmessagesdatabase.h"
+#include "textautogeneratelocalroompendingtypedinfodatabase.h"
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateLocalDatabaseManager::TextAutoGenerateLocalDatabaseManager()
     : mMessagesDatabase(std::make_unique<TextAutoGenerateLocalMessagesDatabase>())
     , mChatsDatabase(std::make_unique<TextAutoGenerateLocalChatsDatabase>())
+    , mRoomPendingTypedInfoDatabase(std::make_unique<TextAutoGenerateLocalRoomPendingTypedInfoDatabase>())
 {
 }
 
