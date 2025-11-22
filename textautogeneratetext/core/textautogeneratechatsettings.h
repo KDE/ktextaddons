@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <QDebug>
+#include <QJsonObject>
 #include <QMap>
 #include <QString>
 namespace TextAutoGenerateText
@@ -18,6 +19,9 @@ public:
         int scrollbarPosition = -1;
         [[nodiscard]] bool isValid() const;
         [[nodiscard]] bool hasPendingMessageTyped() const;
+        [[nodiscard]] static QJsonObject serialize(const PendingTypedInfo &url);
+        [[nodiscard]] static PendingTypedInfo deserialize(const QJsonObject &o);
+        [[nodiscard]] bool operator==(const PendingTypedInfo &other) const;
     };
     TextAutoGenerateChatSettings();
     ~TextAutoGenerateChatSettings();

@@ -57,3 +57,28 @@ QDebug operator<<(QDebug d, const TextAutoGenerateChatSettings::PendingTypedInfo
     d.space() << "scrollbarPosition" << t.scrollbarPosition;
     return d;
 }
+
+bool TextAutoGenerateChatSettings::PendingTypedInfo::operator==(const TextAutoGenerateChatSettings::PendingTypedInfo &other) const
+{
+    return text == other.text && scrollbarPosition == other.scrollbarPosition;
+}
+
+QJsonObject TextAutoGenerateChatSettings::PendingTypedInfo::serialize(const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo)
+{
+    QJsonObject obj;
+    if (!pendingTypedInfo.text.isEmpty()) {
+        obj["text"_L1] = pendingTypedInfo.text;
+    }
+    if (pendingTypedInfo.scrollbarPosition != -1) {
+        obj["scrollbarPosition"_L1] = pendingTypedInfo.scrollbarPosition;
+    }
+    return obj;
+}
+
+TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::PendingTypedInfo::deserialize(const QJsonObject &o)
+{
+    TextAutoGenerateChatSettings::PendingTypedInfo pendingTypedInfo;
+    pendingTypedInfo.text = o.value("text"_L1).toString();
+    pendingTypedInfo.scrollbarPosition = o.value("scrollbarPosition"_L1).toInt(-1);
+    return pendingTypedInfo;
+}
