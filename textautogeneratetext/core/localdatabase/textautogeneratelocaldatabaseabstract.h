@@ -17,6 +17,7 @@ public:
         Unknown = 0,
         Chats,
         Messages,
+        PendingTypedInfo,
     };
 
     explicit TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type);
