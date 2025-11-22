@@ -67,7 +67,7 @@ QPoint TextAutoGenerateAttachmentDelegateHelperFile::adaptMousePosition(const QP
 TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
 TextAutoGenerateAttachmentDelegateHelperFile::doLayout(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                        const QStyleOptionViewItem &option,
-                                                       int attachmentsWidth) const
+                                                       [[maybe_unused]] int attachmentsWidth) const
 {
     FileLayout layout;
     layout.mimetype = msgAttach.mimeType();
