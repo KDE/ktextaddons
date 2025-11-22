@@ -34,9 +34,17 @@ QString TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDa
         return u"messages/"_s;
     case TextAutoGenerateLocalDatabaseUtils::DatabasePath::Chats:
         return u"chats/"_s;
+    case TextAutoGenerateLocalDatabaseUtils::DatabasePath::RoomPendingTypedInfo:
+        return u"roompendingtypedinfo/"_s;
     }
     Q_UNREACHABLE();
     return {};
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath()
+{
+    return TextAutoGenerateLocalDatabaseUtils::localDatabasePath()
+        + TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateLocalDatabaseUtils::DatabasePath::RoomPendingTypedInfo);
 }
 
 QString TextAutoGenerateLocalDatabaseUtils::insertReplaceChat()
@@ -57,4 +65,14 @@ QString TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage()
 QString TextAutoGenerateLocalDatabaseUtils::deleteMessage()
 {
     return u"DELETE FROM MESSAGES WHERE messageId = ?"_s;
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::insertReplaceRoomPendingTypedInfo()
+{
+    return u"INSERT OR REPLACE INTO ROOMPENDINGTYPED VALUES (?, ?)"_s;
+}
+
+QString TextAutoGenerateLocalDatabaseUtils::deleteRoomPendingTypedInfo()
+{
+    return u"DELETE FROM ROOMPENDINGTYPED WHERE roomId = ?"_s;
 }

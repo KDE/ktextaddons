@@ -24,6 +24,9 @@ void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckPath()
     QCOMPARE(
         TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::databasePath(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::DatabasePath::Chats),
         u"chats/"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::databasePath(
+                 TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::DatabasePath::RoomPendingTypedInfo),
+             u"roompendingtypedinfo/"_s);
 }
 
 void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckDataBase()
@@ -32,6 +35,9 @@ void TextAutoGenerateLocalDatabaseUtilsTest::shouldCheckDataBase()
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceMessage(), u"INSERT OR REPLACE INTO MESSAGES VALUES (?, ?, ?)"_s);
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteChat(), u"DELETE FROM CHATS WHERE chatId = ?"_s);
     QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceChat(), u"INSERT OR REPLACE INTO CHATS VALUES (?, ?)"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::insertReplaceRoomPendingTypedInfo(),
+             u"INSERT OR REPLACE INTO ROOMPENDINGTYPED VALUES (?, ?)"_s);
+    QCOMPARE(TextAutoGenerateText::TextAutoGenerateLocalDatabaseUtils::deleteRoomPendingTypedInfo(), u"DELETE FROM ROOMPENDINGTYPED WHERE roomId = ?"_s);
 }
 
 #include "moc_textautogeneratelocaldatabaseutilstest.cpp"
