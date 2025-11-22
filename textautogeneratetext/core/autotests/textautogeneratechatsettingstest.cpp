@@ -69,4 +69,26 @@ void TextAutoGenerateChatSettingsTest::shouldAddInfos()
     QVERIFY(settings.isEmpty());
 }
 
+void TextAutoGenerateChatSettingsTest::shouldSerializeDeserialize()
+{
+    {
+        TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info;
+        info.scrollbarPosition = 3;
+        info.text = u"bla"_s;
+
+        QCOMPARE(TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo::deserialize(
+                     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo::serialize(info)),
+                 info);
+    }
+
+    {
+        TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info;
+        info.scrollbarPosition = 3;
+
+        QCOMPARE(TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo::deserialize(
+                     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo::serialize(info)),
+                 info);
+    }
+}
+
 #include "moc_textautogeneratechatsettingstest.cpp"
