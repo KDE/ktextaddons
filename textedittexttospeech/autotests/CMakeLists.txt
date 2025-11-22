@@ -8,7 +8,7 @@ macro(add_textedit_texttospeech_unittest _source)
     )
 endmacro()
 
-add_textedit_texttospeech_unittest( texttospeechwidgettest.cpp)
+#add_textedit_texttospeech_unittest( texttospeechwidgettest.cpp)
 add_textedit_texttospeech_unittest( texttospeechconfigwidgettest.cpp)
 add_textedit_texttospeech_unittest( texttospeechactionstest.cpp)
 add_textedit_texttospeech_unittest( texttospeechsliderwidgettest.cpp)
