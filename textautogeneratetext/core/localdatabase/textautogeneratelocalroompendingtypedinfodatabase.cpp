@@ -22,7 +22,7 @@ enum class RoomPendingTypedFields {
 using namespace TextAutoGenerateText;
 TextAutoGenerateLocalRoomPendingTypedInfoDatabase::TextAutoGenerateLocalRoomPendingTypedInfoDatabase()
     : TextAutoGenerateLocalDatabaseAbstract(TextAutoGenerateLocalDatabaseUtils::localRoomPendingTypedInfoDatabasePath(),
-                                            TextAutoGenerateLocalChatsDatabase::DatabaseType::PendingTypedInfo)
+                                            TextAutoGenerateLocalDatabaseAbstract::DatabaseType::PendingTypedInfo)
 {
 }
 
