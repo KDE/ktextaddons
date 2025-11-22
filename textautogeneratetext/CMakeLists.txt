@@ -167,6 +167,8 @@ target_sources(
         core/localdatabase/textautogeneratelocalmessagesdatabase.h
         core/localdatabase/textautogeneratelocaldatabasemanager.h
         core/localdatabase/textautogeneratelocaldatabasemanager.cpp
+        core/localdatabase/textautogeneratelocalroompendingtypedinfodatabase.cpp
+        core/localdatabase/textautogeneratelocalroompendingtypedinfodatabase.h
         core/textautogeneratesearchmessageutils.h
         core/textautogeneratesearchmessageutils.cpp
         core/textautogeneratereply.h
