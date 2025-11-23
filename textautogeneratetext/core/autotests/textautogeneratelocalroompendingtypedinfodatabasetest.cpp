@@ -12,16 +12,6 @@
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest)
 using namespace Qt::Literals::StringLiterals;
-static QString accountName()
-{
-    return u"myAccount"_s;
-}
-
-static QString otherAccountName()
-{
-    return u"myOtherAccount"_s;
-}
-
 enum class RoomPendingTypedFields {
     RoomId,
     Json,
@@ -38,8 +28,7 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::initTestCase()
 
     // Clean up after previous runs
     TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
-    QFile::remove(roomPendingTypedInfoDataBase.dbFileName(accountName()));
-    QFile::remove(roomPendingTypedInfoDataBase.dbFileName(otherAccountName()));
+    QFile::remove(roomPendingTypedInfoDataBase.dbFileName({}));
 }
 
 void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDefaultValues()
@@ -51,8 +40,8 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDefaultValues(
 void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldVerifyDbFileName()
 {
     TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase roomPendingTypedInfoDataBase;
-    QCOMPARE(roomPendingTypedInfoDataBase.dbFileName(accountName()),
-             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/roompendingtypedinfo/myAccount.sqlite"_s);
+    QCOMPARE(roomPendingTypedInfoDataBase.dbFileName({}),
+             QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation) + u"/ai-database/roompendingtypedinfo/pendingtypedinfo.sqlite"_s);
 }
 
 void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldStoreRoomPendingTypedInfo()
@@ -63,24 +52,24 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldStoreRoomPendi
     QByteArray roomId = "foo1"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info1;
     info1.text = u"foo"_s;
-    logger.updateRoomPendingTypedInfo(otherAccountName(), roomId, info1);
+    logger.updateRoomPendingTypedInfo(roomId, info1);
 
     // Update PendingTypedInfo
     info1.scrollbarPosition = 5;
-    logger.updateRoomPendingTypedInfo(otherAccountName(), roomId, info1);
+    logger.updateRoomPendingTypedInfo(roomId, info1);
 
     QByteArray roomId2 = "foo2"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info2;
     info2.scrollbarPosition = 5;
-    logger.updateRoomPendingTypedInfo(otherAccountName(), roomId2, info2);
+    logger.updateRoomPendingTypedInfo(roomId2, info2);
 
     QByteArray roomId3 = "foo3"_ba;
     TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info3;
     info3.scrollbarPosition = 5;
-    logger.updateRoomPendingTypedInfo(otherAccountName(), roomId3, info2);
+    logger.updateRoomPendingTypedInfo(roomId3, info2);
 
     // WHEN
-    auto tableModel = logger.createRoomsModel(otherAccountName());
+    auto tableModel = logger.createRoomsModel();
 
     // THEN
     QVERIFY(tableModel);
@@ -103,10 +92,10 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     const QByteArray roomId = "foo2"_ba;
 
     // WHEN
-    logger.deleteRoomPendingTypedInfo(otherAccountName(), roomId);
+    logger.deleteRoomPendingTypedInfo(roomId);
 
     // THEN
-    auto tableModel = logger.createRoomsModel(otherAccountName());
+    auto tableModel = logger.createRoomsModel();
     QVERIFY(tableModel);
     QCOMPARE(tableModel->rowCount(), 2);
 }
@@ -119,10 +108,10 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldDeleteRoomPend
     const QByteArray roomId = "foo2"_ba;
 
     // WHEN
-    logger.deleteRoomPendingTypedInfo(otherAccountName(), roomId);
+    logger.deleteRoomPendingTypedInfo(roomId);
 
     // THEN
-    auto tableModel = logger.createRoomsModel(otherAccountName());
+    auto tableModel = logger.createRoomsModel();
     QVERIFY(tableModel);
     QCOMPARE(tableModel->rowCount(), 2);
 }
@@ -131,11 +120,7 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabaseTest::shouldExtractJsonFro
 {
     {
         TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase logger;
-        QCOMPARE(logger.loadRoomPendingTypedInfo(otherAccountName()).count(), 2);
-    }
-    {
-        TextAutoGenerateText::TextAutoGenerateLocalRoomPendingTypedInfoDatabase logger;
-        QCOMPARE(logger.loadRoomPendingTypedInfo(accountName()).count(), 0);
+        QCOMPARE(logger.loadRoomPendingTypedInfo().count(), 2);
     }
 }
 

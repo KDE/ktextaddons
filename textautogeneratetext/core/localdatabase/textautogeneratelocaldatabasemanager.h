@@ -36,11 +36,9 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText);
 
-    void updateRoomPendingTypedInfo(const QString &accountName,
-                                    const QByteArray &chatIdentifier,
-                                    const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
-    void deleteRoomPendingTypedInfo(const QString &accountName, const QByteArray &chatIdentifier);
-    [[nodiscard]] QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> loadRoomPendingTypedInfo(const QString &accountName) const;
+    void updateRoomPendingTypedInfo(const QByteArray &chatIdentifier, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
+    void deleteRoomPendingTypedInfo(const QByteArray &chatIdentifier);
+    [[nodiscard]] QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> loadRoomPendingTypedInfo() const;
 
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;

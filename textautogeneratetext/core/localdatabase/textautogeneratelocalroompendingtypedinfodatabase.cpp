@@ -33,13 +33,13 @@ QString TextAutoGenerateLocalRoomPendingTypedInfoDatabase::schemaDataBase() cons
     return QString::fromLatin1(s_schemaRoomPendingTypedDataBase);
 }
 
-std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalRoomPendingTypedInfoDatabase::createRoomsModel(const QString &accountName) const
+std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalRoomPendingTypedInfoDatabase::createRoomsModel() const
 {
     const QString dbName = generateDbName({});
     QSqlDatabase db = QSqlDatabase::database(dbName);
     if (!db.isValid()) {
         // Open the DB if it exists (don't create a new one)
-        const QString fileName = dbFileName(accountName);
+        const QString fileName = dbFileName({});
         qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " fileName " << fileName;
         if (!QFileInfo::exists(fileName)) {
             return {};
@@ -61,12 +61,11 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalRoomPendingTypedInfoDatabas
     return model;
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::updateRoomPendingTypedInfo(const QString &accountName,
-                                                                                   const QByteArray &roomId,
+void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::updateRoomPendingTypedInfo(const QByteArray &roomId,
                                                                                    const TextAutoGenerateChatSettings::PendingTypedInfo &room)
 {
     QSqlDatabase db;
-    if (initializeDataBase(accountName, db)) {
+    if (initializeDataBase({}, db)) {
         QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::insertReplaceRoomPendingTypedInfo(), db);
         query.addBindValue(QString::fromLatin1(roomId));
         query.addBindValue(QJsonDocument(TextAutoGenerateChatSettings::PendingTypedInfo::serialize(room)).toJson(QJsonDocument::Compact));
@@ -77,10 +76,10 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::updateRoomPendingTypedIn
     }
 }
 
-void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::deleteRoomPendingTypedInfo(const QString &accountName, const QByteArray &roomId)
+void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::deleteRoomPendingTypedInfo(const QByteArray &roomId)
 {
     QSqlDatabase db;
-    if (!checkDataBase(accountName, db)) {
+    if (!checkDataBase({}, db)) {
         return;
     }
     QSqlQuery query(TextAutoGenerateLocalDatabaseUtils::deleteRoomPendingTypedInfo(), db);
@@ -90,13 +89,12 @@ void TextAutoGenerateLocalRoomPendingTypedInfoDatabase::deleteRoomPendingTypedIn
     }
 }
 
-QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo>
-TextAutoGenerateLocalRoomPendingTypedInfoDatabase::loadRoomPendingTypedInfo(const QString &accountName)
+QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalRoomPendingTypedInfoDatabase::loadRoomPendingTypedInfo()
 {
     QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> info;
     QSqlDatabase db;
-    if (!initializeDataBase(accountName, db)) {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Could not initialize database from " << accountName << " filename : " << dbFileName(accountName);
+    if (!initializeDataBase({}, db)) {
+        qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << " filename : " << dbFileName({});
         return info;
     }
     // qDebug() << " const QString fileName = dbFileName(accountName);" << dbFileName(accountName);

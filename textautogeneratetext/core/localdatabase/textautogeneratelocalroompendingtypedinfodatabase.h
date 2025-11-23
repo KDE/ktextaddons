@@ -18,13 +18,12 @@ public:
     TextAutoGenerateLocalRoomPendingTypedInfoDatabase();
     ~TextAutoGenerateLocalRoomPendingTypedInfoDatabase() override;
 
-    [[nodiscard]] std::unique_ptr<QSqlTableModel> createRoomsModel(const QString &accountName) const;
+    [[nodiscard]] std::unique_ptr<QSqlTableModel> createRoomsModel() const;
 
-    void
-    updateRoomPendingTypedInfo(const QString &accountName, const QByteArray &roomId, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
-    void deleteRoomPendingTypedInfo(const QString &accountName, const QByteArray &roomId);
+    void updateRoomPendingTypedInfo(const QByteArray &roomId, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
+    void deleteRoomPendingTypedInfo(const QByteArray &roomId);
 
-    [[nodiscard]] QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> loadRoomPendingTypedInfo(const QString &accountName);
+    [[nodiscard]] QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> loadRoomPendingTypedInfo();
 
 protected:
     [[nodiscard]] QString schemaDataBase() const override;

@@ -72,20 +72,18 @@ void TextAutoGenerateLocalDatabaseManager::insertOrUpdateChat(const TextAutoGene
     mChatsDatabase->insertOrUpdateChat(chat);
 }
 
-void TextAutoGenerateLocalDatabaseManager::updateRoomPendingTypedInfo(const QString &accountName,
-                                                                      const QByteArray &chatIdentifier,
+void TextAutoGenerateLocalDatabaseManager::updateRoomPendingTypedInfo(const QByteArray &chatIdentifier,
                                                                       const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo)
 {
-    mRoomPendingTypedInfoDatabase->updateRoomPendingTypedInfo(accountName, chatIdentifier, pendingTypedInfo);
+    mRoomPendingTypedInfoDatabase->updateRoomPendingTypedInfo(chatIdentifier, pendingTypedInfo);
 }
 
-void TextAutoGenerateLocalDatabaseManager::deleteRoomPendingTypedInfo(const QString &accountName, const QByteArray &chatIdentifier)
+void TextAutoGenerateLocalDatabaseManager::deleteRoomPendingTypedInfo(const QByteArray &chatIdentifier)
 {
-    mRoomPendingTypedInfoDatabase->deleteRoomPendingTypedInfo(accountName, chatIdentifier);
+    mRoomPendingTypedInfoDatabase->deleteRoomPendingTypedInfo(chatIdentifier);
 }
 
-QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo>
-TextAutoGenerateLocalDatabaseManager::loadRoomPendingTypedInfo(const QString &accountName) const
+QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> TextAutoGenerateLocalDatabaseManager::loadRoomPendingTypedInfo() const
 {
-    return mRoomPendingTypedInfoDatabase->loadRoomPendingTypedInfo(accountName);
+    return mRoomPendingTypedInfoDatabase->loadRoomPendingTypedInfo();
 }
