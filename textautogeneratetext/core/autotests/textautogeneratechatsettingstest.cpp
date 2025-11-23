@@ -21,7 +21,7 @@ void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
     QVERIFY(!info.isValid());
     QVERIFY(!info.hasPendingMessageTyped());
 
-    const TextAutoGenerateText::TextAutoGenerateChatSettings settings;
+    const TextAutoGenerateText::TextAutoGenerateChatSettings settings(nullptr);
     QVERIFY(settings.isEmpty());
     {
         TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo infoIsValid;
@@ -40,7 +40,7 @@ void TextAutoGenerateChatSettingsTest::shouldHaveDefaultValues()
 
 void TextAutoGenerateChatSettingsTest::shouldAddInfos()
 {
-    TextAutoGenerateText::TextAutoGenerateChatSettings settings;
+    TextAutoGenerateText::TextAutoGenerateChatSettings settings(nullptr);
     {
         const TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo info{.text = u"blo"_s, .scrollbarPosition = 2};
         settings.add("foo1"_ba, info);

@@ -4,21 +4,33 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "textautogeneratechatsettings.h"
+#include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
+#include "core/textautogeneratemanager.h"
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGenerateChatSettings::TextAutoGenerateChatSettings() = default;
+TextAutoGenerateChatSettings::TextAutoGenerateChatSettings(TextAutoGenerateManager *manager)
+    : mManager(manager)
+{
+}
 
 TextAutoGenerateChatSettings::~TextAutoGenerateChatSettings() = default;
 
 void TextAutoGenerateChatSettings::remove(const QByteArray &chatId)
 {
-    mPendingTypedTexts.remove(chatId);
+    if (mPendingTypedTexts.remove(chatId) > 0) {
+        if (mManager) {
+            mManager->databaseManager()->deleteRoomPendingTypedInfo(chatId);
+        }
+    }
 }
 
 void TextAutoGenerateChatSettings::add(const QByteArray &chatId, const PendingTypedInfo &info)
 {
     mPendingTypedTexts[chatId] = info;
+    if (mManager) {
+        mManager->databaseManager()->updateRoomPendingTypedInfo(chatId, info);
+    }
 }
 
 bool TextAutoGenerateChatSettings::hasPendingMessageTyped(const QByteArray &chatId) const
@@ -28,7 +40,13 @@ bool TextAutoGenerateChatSettings::hasPendingMessageTyped(const QByteArray &chat
 
 TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::value(const QByteArray &chatId)
 {
-    return mPendingTypedTexts.take(chatId);
+    const auto pending = mPendingTypedTexts.take(chatId);
+    if (pending.isValid()) {
+        if (mManager) {
+            mManager->databaseManager()->deleteRoomPendingTypedInfo(chatId);
+        }
+    }
+    return pending;
 }
 
 bool TextAutoGenerateChatSettings::isEmpty() const

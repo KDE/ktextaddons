@@ -46,7 +46,7 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateChatsModel(new TextAutoGenerateChatsModel(this))
     , mDatabaseManager(new TextAutoGenerateLocalDatabaseManager)
-    , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings)
+    , mTextAutoGenerateChatSettings(new TextAutoGenerateChatSettings(this))
     , mTextAutoGenerateTextInstancesManager(new TextAutoGenerateTextInstancesManager(this, this))
     , mTextAutoGenerateSettings(new TextAutoGenerateSettings())
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT

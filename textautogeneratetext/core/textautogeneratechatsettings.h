@@ -11,6 +11,7 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
+class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatSettings
 {
 public:
@@ -23,7 +24,7 @@ public:
         [[nodiscard]] static PendingTypedInfo deserialize(const QJsonObject &o);
         [[nodiscard]] bool operator==(const PendingTypedInfo &other) const;
     };
-    TextAutoGenerateChatSettings();
+    explicit TextAutoGenerateChatSettings(TextAutoGenerateManager *manager);
     ~TextAutoGenerateChatSettings();
 
     void remove(const QByteArray &chatId);
@@ -39,6 +40,7 @@ public:
 
 private:
     QMap<QByteArray /*ChatId*/, PendingTypedInfo> mPendingTypedTexts;
+    TextAutoGenerateManager *const mManager;
 };
 }
 TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo &t);
