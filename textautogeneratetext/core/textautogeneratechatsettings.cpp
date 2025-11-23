@@ -100,3 +100,13 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::Pen
     pendingTypedInfo.scrollbarPosition = o.value("scrollbarPosition"_L1).toInt(-1);
     return pendingTypedInfo;
 }
+
+void TextAutoGenerateChatSettings::loadRoomPendingTypedInfo()
+{
+    setPendingTypedTexts(mManager->databaseManager()->loadRoomPendingTypedInfo());
+}
+
+void TextAutoGenerateChatSettings::setPendingTypedTexts(const QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> &newPendingTypedTexts)
+{
+    mPendingTypedTexts = newPendingTypedTexts;
+}

@@ -38,7 +38,10 @@ public:
     [[nodiscard]] bool isEmpty() const;
     [[nodiscard]] int count() const;
 
+    void loadRoomPendingTypedInfo();
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void setPendingTypedTexts(const QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> &newPendingTypedTexts);
     QMap<QByteArray /*ChatId*/, PendingTypedInfo> mPendingTypedTexts;
     TextAutoGenerateManager *const mManager;
 };
