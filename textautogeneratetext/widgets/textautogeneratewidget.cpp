@@ -100,6 +100,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
                 const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingSave{
                     .text = mTextAutoGenerateTextLineEditWidget->text(),
                     .scrollbarPosition = mTextAutoGenerateResultWidget->scrollbarPosition(),
+                    .tools = mTextAutoGenerateTextLineEditWidget->activatedTools(),
                 };
                 mManager->textAutoGenerateChatSettings()->add(mManager->currentChatId(), chatSettingSave);
             }

@@ -6,6 +6,7 @@
 #include "textautogeneratechatsettings.h"
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/textautogeneratemanager.h"
+#include <QJsonArray>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
@@ -61,7 +62,7 @@ int TextAutoGenerateChatSettings::count() const
 
 bool TextAutoGenerateChatSettings::PendingTypedInfo::isValid() const
 {
-    return !text.isEmpty() || (scrollbarPosition != -1);
+    return !text.isEmpty() || (scrollbarPosition != -1) || !tools.isEmpty();
 }
 
 bool TextAutoGenerateChatSettings::PendingTypedInfo::hasPendingMessageTyped() const
@@ -73,12 +74,13 @@ QDebug operator<<(QDebug d, const TextAutoGenerateChatSettings::PendingTypedInfo
 {
     d.space() << "text" << t.text;
     d.space() << "scrollbarPosition" << t.scrollbarPosition;
+    d.space() << "tools" << t.tools;
     return d;
 }
 
 bool TextAutoGenerateChatSettings::PendingTypedInfo::operator==(const TextAutoGenerateChatSettings::PendingTypedInfo &other) const
 {
-    return text == other.text && scrollbarPosition == other.scrollbarPosition;
+    return text == other.text && scrollbarPosition == other.scrollbarPosition && tools == other.tools;
 }
 
 QJsonObject TextAutoGenerateChatSettings::PendingTypedInfo::serialize(const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo)
@@ -90,6 +92,13 @@ QJsonObject TextAutoGenerateChatSettings::PendingTypedInfo::serialize(const Text
     if (pendingTypedInfo.scrollbarPosition != -1) {
         obj["scrollbarPosition"_L1] = pendingTypedInfo.scrollbarPosition;
     }
+    if (!pendingTypedInfo.tools.isEmpty()) {
+        QJsonArray toolsArray;
+        for (const QByteArray &ba : std::as_const(pendingTypedInfo.tools)) {
+            toolsArray.append(QString::fromLatin1(ba));
+        }
+        obj["tools"_L1] = toolsArray;
+    }
     return obj;
 }
 
@@ -98,6 +107,12 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::Pen
     TextAutoGenerateChatSettings::PendingTypedInfo pendingTypedInfo;
     pendingTypedInfo.text = o.value("text"_L1).toString();
     pendingTypedInfo.scrollbarPosition = o.value("scrollbarPosition"_L1).toInt(-1);
+    const QJsonArray toolsArray = o.value("tools"_L1).toArray();
+    QList<QByteArray> tools;
+    for (const auto &val : toolsArray) {
+        tools.append(val.toString().toLatin1());
+    }
+    pendingTypedInfo.tools = tools;
     return pendingTypedInfo;
 }
 

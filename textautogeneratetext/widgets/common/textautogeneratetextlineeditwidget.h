@@ -37,6 +37,7 @@ public:
     void setChatId(const QByteArray &newChatId);
 
     void setActivatedTools(const QList<QByteArray> &lst);
+    [[nodiscard]] QList<QByteArray> activatedTools() const;
 
 Q_SIGNALS:
     void editingFinished(const QString &str,

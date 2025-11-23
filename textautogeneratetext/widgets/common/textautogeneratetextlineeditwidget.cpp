@@ -170,6 +170,11 @@ void TextAutoGenerateTextLineEditWidget::setActivatedTools(const QList<QByteArra
     mTextAutoGenerateToolsWidget->setActivatedTools(lst);
 }
 
+QList<QByteArray> TextAutoGenerateTextLineEditWidget::activatedTools() const
+{
+    return mTextAutoGenerateToolsWidget->generateListOfActiveTools();
+}
+
 void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()
 {
     const bool hasVisionSupport = true; // mManager->textAutoGeneratePlugin()->hasVisionSupport();

@@ -18,6 +18,7 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT PendingTypedInfo {
         QString text;
         int scrollbarPosition = -1;
+        QList<QByteArray> tools;
         [[nodiscard]] bool isValid() const;
         [[nodiscard]] bool hasPendingMessageTyped() const;
         [[nodiscard]] static QJsonObject serialize(const PendingTypedInfo &url);
