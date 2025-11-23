@@ -128,6 +128,8 @@ public:
     [[nodiscard]] bool debug() const;
     void setDebug(bool newDebug);
 
+    TextAutoGenerateLocalDatabaseManager *databaseManager() const;
+
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
     void askMessageRequested(const QString &str);

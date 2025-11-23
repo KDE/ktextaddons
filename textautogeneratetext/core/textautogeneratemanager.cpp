@@ -625,6 +625,11 @@ void TextAutoGenerateManager::slotPluginFinished(const TextAutoGenerateText::Tex
     changeInProgress(info.chatId, info.messageUuid, false);
 }
 
+TextAutoGenerateLocalDatabaseManager *TextAutoGenerateManager::databaseManager() const
+{
+    return mDatabaseManager.get();
+}
+
 void TextAutoGenerateManager::setDebug(bool newDebug)
 {
     mDebug = newDebug;
