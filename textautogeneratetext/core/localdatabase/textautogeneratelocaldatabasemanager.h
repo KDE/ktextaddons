@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "core/textautogeneratechatsettings.h"
 #include "textautogeneratetext_private_export.h"
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
@@ -34,6 +35,12 @@ public:
     [[nodiscard]] QStringList chatsList() const;
 
     [[nodiscard]] QList<TextAutoGenerateSearchMessage> searchTextInDatabase(const QList<QByteArray> &listIds, const QString &searchText);
+
+    void updateRoomPendingTypedInfo(const QString &accountName,
+                                    const QByteArray &chatIdentifier,
+                                    const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
+    void deleteRoomPendingTypedInfo(const QString &accountName, const QByteArray &chatIdentifier);
+    [[nodiscard]] QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> loadRoomPendingTypedInfo(const QString &accountName) const;
 
 private:
     std::unique_ptr<TextAutoGenerateLocalMessagesDatabase> mMessagesDatabase;
