@@ -94,13 +94,14 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mHistoryWidget, &TextAutoGenerateHistoryWidget::switchToChat, this, [this](const QByteArray &chatId) {
             const QString text = mTextAutoGenerateTextLineEditWidget->text();
             const int position = mTextAutoGenerateResultWidget->scrollbarPosition();
-            if (text.isEmpty() && (position == mTextAutoGenerateResultWidget->scrollbarPositionMaximum())) {
+            const QList<QByteArray> activatedTools = mTextAutoGenerateTextLineEditWidget->activatedTools();
+            if (text.isEmpty() && (position == mTextAutoGenerateResultWidget->scrollbarPositionMaximum()) && activatedTools.isEmpty()) {
                 mManager->textAutoGenerateChatSettings()->remove(mManager->currentChatId());
             } else {
                 const TextAutoGenerateChatSettings::PendingTypedInfo chatSettingSave{
-                    .text = mTextAutoGenerateTextLineEditWidget->text(),
-                    .scrollbarPosition = mTextAutoGenerateResultWidget->scrollbarPosition(),
-                    .tools = mTextAutoGenerateTextLineEditWidget->activatedTools(),
+                    .text = text,
+                    .scrollbarPosition = position,
+                    .tools = activatedTools,
                 };
                 mManager->textAutoGenerateChatSettings()->add(mManager->currentChatId(), chatSettingSave);
             }
@@ -109,9 +110,11 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             if (chatSettingRestore.isValid()) {
                 mTextAutoGenerateTextLineEditWidget->setText(chatSettingRestore.text);
                 mTextAutoGenerateResultWidget->setScrollbarPosition(chatSettingRestore.scrollbarPosition);
+                mTextAutoGenerateTextLineEditWidget->setActivatedTools(chatSettingRestore.tools);
             } else {
                 mTextAutoGenerateTextLineEditWidget->setText({});
                 mTextAutoGenerateResultWidget->scrollToBottom();
+                mTextAutoGenerateTextLineEditWidget->setActivatedTools({});
             }
         });
         connect(mManager->textAutoGenerateEngineLoader(), &TextAutoGenerateText::TextAutoGenerateEngineLoader::noPluginsFound, this, [this]() {

@@ -63,8 +63,16 @@ QList<QByteArray> TextAutoGenerateToolsWidget::generateListOfActiveTools() const
     return activeTools;
 }
 
+void TextAutoGenerateToolsWidget::disableTools()
+{
+    for (const auto &b : std::as_const(mListButton)) {
+        b->setChecked(false);
+    }
+}
+
 void TextAutoGenerateToolsWidget::setActivatedTools(const QList<QByteArray> &lst)
 {
+    disableTools();
     bool foundTools = false;
     for (const auto &b : lst) {
         const auto it = std::find_if(mListButton.constBegin(), mListButton.constEnd(), [b](QToolButton *button) {

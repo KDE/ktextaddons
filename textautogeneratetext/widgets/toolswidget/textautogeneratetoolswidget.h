@@ -22,6 +22,7 @@ public:
     void setActivatedTools(const QList<QByteArray> &lst);
 
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void disableTools();
     QList<QToolButton *> mListButton;
 };
 }
