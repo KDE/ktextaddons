@@ -129,6 +129,12 @@ void TextAutoGenerateBaseListView::contextMenuEvent(QContextMenuEvent *event)
                 slotDebugMessage(index);
             });
             menu.addAction(debugMessageAction);
+            menu.addSeparator();
+            auto debugGeneratedTextMessageAction = new QAction(u"Show Generated Text Message"_s, &menu); // Don't translate it.
+            connect(debugGeneratedTextMessageAction, &QAction::triggered, this, [this, index]() {
+                slotDebugGeneratedTextMessage(index);
+            });
+            menu.addAction(debugGeneratedTextMessageAction);
         }
 
         menu.exec(event->globalPos());
@@ -139,9 +145,17 @@ void TextAutoGenerateBaseListView::slotDebugMessage(const QModelIndex &index)
 {
     // Show debug output.
     const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
-    // qDebug() << " message " << *message << " MessageConvertedText " << index.data(MessagesModel::MessageConvertedText).toString();
     TextAutoGenerateShowDebugDialog d(this);
     d.setPlainText(QString::fromUtf8(TextAutoGenerateMessage::serialize(*message, false)));
+    d.exec();
+}
+
+void TextAutoGenerateBaseListView::slotDebugGeneratedTextMessage(const QModelIndex &index)
+{
+    // Show debug output.
+    const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
+    TextAutoGenerateShowDebugDialog d(this);
+    d.setPlainText(message->htmlGenerated());
     d.exec();
 }
 
