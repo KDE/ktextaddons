@@ -142,7 +142,7 @@ void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId,
                                                                                  .chatId = chatId,
                                                                                  .tools = {},
                                                                                  .attachmentInfoList = {}};
-    mManager->textAutoGeneratePlugin()->editMessage(info); // TODO
+    mManager->textAutoGeneratePlugin()->editMessage(info);
 }
 
 void TextAutoGenerateQuickAskWidget::loadEngine()
