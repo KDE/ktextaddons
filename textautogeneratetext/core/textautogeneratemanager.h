@@ -48,6 +48,12 @@ public:
     Q_FLAGS(Category Categories)
     Q_DECLARE_FLAGS(Categories, Category)
 
+    struct TEXTAUTOGENERATETEXT_EXPORT AskMessageInfo {
+        QString message;
+        QStringList attachments;
+        QList<QByteArray> tools;
+    };
+
     explicit TextAutoGenerateManager(QObject *parent = nullptr);
     ~TextAutoGenerateManager() override;
 
@@ -176,3 +182,5 @@ private:
     bool mDebug = false;
 };
 }
+Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &t);

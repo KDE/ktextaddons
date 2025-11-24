@@ -682,4 +682,12 @@ void TextAutoGenerateManager::slotAboutToSynthesizeChanged(qsizetype previousId,
 #endif
 }
 
+QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &t)
+{
+    d.space() << "message:" << t.message;
+    d.space() << "attachments:" << t.attachments;
+    d.space() << "tools:" << t.tools;
+    return d;
+}
+
 #include "moc_textautogeneratemanager.cpp"
