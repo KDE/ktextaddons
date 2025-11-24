@@ -13,30 +13,24 @@
             "name": "dev-clang",
             "displayName": "dev-clang",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
-                "BUILD_WITH_QT6": "ON"
+                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "environment": {
                 "CXX": "clang++",
                 "CCACHE_DISABLE": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
             "name": "dev-mold",
             "displayName": "Build as debug + using mold linker",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "BUILD_WITH_QT6": "ON",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
@@ -45,7 +39,6 @@
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "BUILD_WITH_QT6": "ON",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
@@ -58,7 +51,6 @@
             "binaryDir": "${sourceDir}/build-bergamot",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "BUILD_WITH_QT6": "ON",
                 "BERGAMOT_TRANSLATOR_PLUGIN": "ON",
                 "BLA_PREFER_PKGCONFIG": "ON",
                 "BLA_PKGCONFIG_BLAS": "openblas",
@@ -75,8 +67,7 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "ECM_ENABLE_SANITIZERS": "'address;undefined'",
-                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
-                "BUILD_WITH_QT6": "ON"
+                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "inherits": [
                 "base"
@@ -86,13 +77,10 @@
             "name": "unity",
             "displayName": "Build with CMake unity support.",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "USE_UNITY_CMAKE_SUPPORT": "ON",
-                "BUILD_WITH_QT6": "ON",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+                "USE_UNITY_CMAKE_SUPPORT": "ON"
             },
             "inherits": [
-                "base"
+                "dev"
             ]
         },
         {
@@ -100,7 +88,6 @@
             "displayName": "Build as release mode.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "BUILD_WITH_QT6": "ON",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "inherits": [
