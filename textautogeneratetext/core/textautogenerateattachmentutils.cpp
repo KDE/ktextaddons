@@ -82,6 +82,19 @@ TextAutoGenerateAttachmentUtils::AttachmentElementInfo TextAutoGenerateAttachmen
     return info;
 }
 
+QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo>
+TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(const QStringList &files)
+{
+    QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> infos;
+    for (const auto &file : files) {
+        const auto info = createAttachmentElementInfoFromFile(file);
+        if (info.isValid()) {
+            infos.append(info);
+        }
+    }
+    return infos;
+}
+
 bool TextAutoGenerateAttachmentUtils::AttachmentElementInfo::isValid() const
 {
     return attachmentType != TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;

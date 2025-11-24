@@ -27,6 +27,9 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo
 createAttachmentElementInfoFromFile(const QString &fileName);
 
+[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo>
+createAttachmentElementInfoFromFileList(const QStringList &files);
+
 [[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment
 generateAttachmentFromAttachmentElementInfo(const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &info);
 
