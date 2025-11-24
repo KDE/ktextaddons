@@ -5,12 +5,12 @@
 */
 #include "textautogeneratequickaskviewwidget.h"
 
-#include "core/textautogeneratemanager.h"
 #include "widgets/common/textautogenerateresultwidget.h"
 #include "widgets/common/textautogeneratetextlineeditwidget.h"
 #include "widgets/instancesmanager/textautogeneratetextinstancesmanagerdialog.h"
 #include "widgets/quickask/textautogeneratequickaskheaderwidget.h"
 #include <QVBoxLayout>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateQuickAskViewWidget::TextAutoGenerateQuickAskViewWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)

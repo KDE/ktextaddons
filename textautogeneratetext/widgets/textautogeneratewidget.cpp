@@ -9,7 +9,6 @@
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
-#include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "widgets/common/textautogenerateresultwidget.h"
@@ -74,9 +73,12 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
             slotEditingFinished(str, {}, {}, {}); // TODO use tools list ?
         });
 
-        connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
-            slotAskMessageRequester(str);
-        });
+        connect(mManager,
+                &TextAutoGenerateManager::askMessageRequested,
+                this,
+                [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
+                    slotAskMessageRequester(info);
+                });
 
         connect(mManager, &TextAutoGenerateManager::currentChatIdChanged, this, [this]() {
             mTextAutoGenerateTextLineEditWidget->setEnabled(lineEditWidgetEnabledState());
@@ -252,19 +254,19 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
 
 void TextAutoGenerateWidget::slotInitializeDone()
 {
-    for (const auto &str : std::as_const(mAskMessageList)) {
-        slotEditingFinished(str, {}, {}, {});
+    for (const auto &info : std::as_const(mAskMessageList)) {
+        slotEditingFinished(info.message, {}, info.tools, TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments));
     }
     mAskMessageList.clear();
     mHeaderWidget->setModelList(mManager->textAutoGeneratePlugin()->models());
 }
 
-void TextAutoGenerateWidget::slotAskMessageRequester(const QString &str)
+void TextAutoGenerateWidget::slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
     if (!mManager->pluginWasInitialized()) {
-        mAskMessageList.append(str);
+        mAskMessageList.append(info);
     } else {
-        slotEditingFinished(str, {}, {}, {});
+        slotEditingFinished(info.message, {}, info.tools, TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments));
     }
 }
 

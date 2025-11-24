@@ -7,9 +7,9 @@
 
 #include "textautogeneratetext_export.h"
 #include <QDialog>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace TextAutoGenerateText
 {
-class TextAutoGenerateManager;
 class TextAutoGenerateQuickAskWidget;
 /**
  * @brief The TextAutoGenerateQuickAskDialog class
@@ -22,7 +22,7 @@ public:
     explicit TextAutoGenerateQuickAskDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateQuickAskDialog() override;
 
-    void ask(const QString &str);
+    void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void readConfig();

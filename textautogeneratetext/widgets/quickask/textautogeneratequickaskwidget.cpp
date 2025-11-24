@@ -59,7 +59,7 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
     connect(mTextAutoGenerateQuickAskViewWidget,
             &TextAutoGenerateQuickAskViewWidget::editingFinished,
             this,
-            &TextAutoGenerateQuickAskWidget::slotEditingFinished);
+            &TextAutoGenerateQuickAskWidget::slotEditingFinished2);
 
     connect(mTextAutoGenerateQuickAskViewWidget,
             &TextAutoGenerateQuickAskViewWidget::cancelRequested,
@@ -81,9 +81,12 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
 
     if (mManager) {
         mManager->setSaveInDatabase(false);
-        connect(mManager, &TextAutoGenerateManager::askMessageRequested, this, [this](const QString &str) {
-            slotAskMessageRequester(str);
-        });
+        connect(mManager,
+                &TextAutoGenerateManager::askMessageRequested,
+                this,
+                [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
+                    slotAskMessageRequester(info);
+                });
     }
     loadEngine();
 }
@@ -102,12 +105,12 @@ void TextAutoGenerateQuickAskWidget::slotEditMessage(const QModelIndex &index)
     mTextAutoGenerateQuickAskViewWidget->editMessage(uuid, messageStr);
 }
 
-void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const QString &str)
+void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
     if (!mPluginWasInitialized) {
-        mAskMessageList.append(str);
+        mAskMessageList.append(info);
     } else {
-        slotEditingFinished(str, {});
+        slotEditingFinished(info, {});
     }
 }
 
@@ -169,30 +172,58 @@ void TextAutoGenerateQuickAskWidget::slotAutogenerateFailed(const QString &str)
 void TextAutoGenerateQuickAskWidget::slotInitializeDone()
 {
     mPluginWasInitialized = true;
-    for (const auto &str : std::as_const(mAskMessageList)) {
-        slotEditingFinished(str, {});
+    for (const auto &info : std::as_const(mAskMessageList)) {
+        slotEditingFinished(info, {});
     }
     mAskMessageList.clear();
 }
 
-void TextAutoGenerateQuickAskWidget::slotEditingFinished(const QString &str, const QByteArray &messageUuid)
+void TextAutoGenerateQuickAskWidget::slotEditingFinished2(
+    const QString &str,
+    const QByteArray &messageUuid,
+    const QList<QByteArray> &lstTools,
+    const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList)
 {
     mManager->checkCurrentChat();
 
     if (messageUuid.isEmpty()) {
-        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
-                                                                                     .messageUuid = {},
-                                                                                     .chatId = mManager->currentChatId(),
-                                                                                     .tools = {},
-                                                                                     .attachmentInfoList = {}};
-        mManager->textAutoGeneratePlugin()->sendMessage(info);
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {.message = str,
+                                                                                         .messageUuid = {},
+                                                                                         .chatId = mManager->currentChatId(),
+                                                                                         .tools = lstTools,
+                                                                                         .attachmentInfoList = attachmentInfoList};
+        mManager->textAutoGeneratePlugin()->sendMessage(sendInfo);
     } else {
-        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = str,
-                                                                                     .messageUuid = messageUuid,
-                                                                                     .chatId = mManager->currentChatId(),
-                                                                                     .tools = {},
-                                                                                     .attachmentInfoList = {}};
-        mManager->textAutoGeneratePlugin()->editMessage(info);
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {.message = str,
+                                                                                         .messageUuid = messageUuid,
+                                                                                         .chatId = mManager->currentChatId(),
+                                                                                         .tools = lstTools,
+                                                                                         .attachmentInfoList = attachmentInfoList};
+        mManager->textAutoGeneratePlugin()->editMessage(sendInfo);
+    }
+}
+
+void TextAutoGenerateQuickAskWidget::slotEditingFinished(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info,
+                                                         const QByteArray &messageUuid)
+{
+    mManager->checkCurrentChat();
+
+    if (messageUuid.isEmpty()) {
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {
+            .message = info.message,
+            .messageUuid = {},
+            .chatId = mManager->currentChatId(),
+            .tools = info.tools,
+            .attachmentInfoList = TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments)};
+        mManager->textAutoGeneratePlugin()->sendMessage(sendInfo);
+    } else {
+        const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo sendInfo = {
+            .message = info.message,
+            .messageUuid = messageUuid,
+            .chatId = mManager->currentChatId(),
+            .tools = info.tools,
+            .attachmentInfoList = TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(info.attachments)};
+        mManager->textAutoGeneratePlugin()->editMessage(sendInfo);
     }
     // mTextAutoGenerateResultWidget->editingFinished(uuid);
 }

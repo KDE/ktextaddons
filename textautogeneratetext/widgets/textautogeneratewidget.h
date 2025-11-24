@@ -8,12 +8,12 @@
 #include <QPointer>
 #include <QWidget>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 class QSplitter;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateResultWidget;
 class TextAutoGenerateTextLineEditWidget;
-class TextAutoGenerateManager;
 class TextAutoGenerateHistoryWidget;
 class TextAutoGenerateHeaderWidget;
 class TextAutoGenerateSearchDialog;
@@ -53,7 +53,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void keyPressedInLineEdit(QKeyEvent *ev);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index, const QList<QByteArray> &tools);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index, const QList<QByteArray> &tools);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool lineEditWidgetEnabledState() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotQuickSearchText(bool enabled);
@@ -64,7 +64,7 @@ private:
     QSplitter *const mSplitter;
     TextAutoGenerateHistoryWidget *const mHistoryWidget;
     TextAutoGenerateHeaderWidget *const mHeaderWidget;
-    QStringList mAskMessageList;
+    QList<TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo> mAskMessageList;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QPointer<TextAutoGenerateSearchDialog> mSearchDialog;
 };

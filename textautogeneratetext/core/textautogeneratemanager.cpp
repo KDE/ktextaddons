@@ -173,14 +173,9 @@ void TextAutoGenerateManager::askToAssistant(const QString &msg)
     }
 }
 
-void TextAutoGenerateManager::ask(const QString &msg)
-{
-    Q_EMIT askMessageRequested(msg);
-}
-
 void TextAutoGenerateManager::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
-    // TODO
+    Q_EMIT askMessageRequested(info);
 }
 
 void TextAutoGenerateManager::createNewChat(const QString &title)

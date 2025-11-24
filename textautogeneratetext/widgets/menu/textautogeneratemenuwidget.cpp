@@ -55,7 +55,10 @@ void TextAutoGenerateMenuWidget::initializeMenu()
                 auto dlg = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(mManager, mParentWidget);
                 dlg->setAttribute(Qt::WA_DeleteOnClose);
                 dlg->show();
-                dlg->ask(u"%1 %2"_s.arg(requestText, mSelectedText));
+                TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo info;
+                info.message = u"%1 %2"_s.arg(requestText, mSelectedText);
+
+                dlg->ask(info);
             });
             mTextMenu->addAction(action);
         }

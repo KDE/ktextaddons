@@ -6,7 +6,6 @@
 #include "textautogeneratequickaskdialog.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include "core/textautogeneratemanager.h"
 #include "textautogeneratequickaskwidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -47,9 +46,9 @@ TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog()
     writeConfig();
 }
 
-void TextAutoGenerateQuickAskDialog::ask(const QString &str)
+void TextAutoGenerateQuickAskDialog::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
-    mManager->ask(str);
+    mManager->ask(info);
 }
 
 void TextAutoGenerateQuickAskDialog::readConfig()

@@ -8,11 +8,11 @@
 #include "textautogeneratetext_export.h"
 #include <QModelIndex>
 #include <QWidget>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 class QStackedWidget;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateQuickAskViewWidget;
-class TextAutoGenerateManager;
 class TextAutoGenerateNotWorkingWidget;
 class TextAutoGenerateNotInstanceFoundWidget;
 /**
@@ -28,22 +28,28 @@ public:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadEngine();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const QString &str, const QByteArray &messageUuid);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info,
+                                                            const QByteArray &messageUuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &str);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotNeedToAddInstances();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureInstances();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void
+    slotEditingFinished2(const QString &str,
+                         const QByteArray &messageUuid,
+                         const QList<QByteArray> &lstTools,
+                         const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachmentInfoList);
     QStackedWidget *const mStackedWidget;
     TextAutoGenerateQuickAskViewWidget *const mTextAutoGenerateQuickAskViewWidget;
     TextAutoGenerateNotWorkingWidget *const mTextAutoGenerateNotWorkingWidget;
     TextAutoGenerateNotInstanceFoundWidget *const mTextAutoGenerateNotInstanceFoundWidget;
     TextAutoGenerateManager *const mManager;
-    QStringList mAskMessageList;
+    QList<TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo> mAskMessageList;
     bool mPluginWasInitialized = false;
 };
 }

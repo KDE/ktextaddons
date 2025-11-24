@@ -57,7 +57,6 @@ public:
     explicit TextAutoGenerateManager(QObject *parent = nullptr);
     ~TextAutoGenerateManager() override;
 
-    void ask(const QString &msg);
     void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
     void loadHistory();
@@ -139,7 +138,7 @@ public:
 
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
-    void askMessageRequested(const QString &str);
+    void askMessageRequested(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     void pluginsInitializedDone();
     void errorOccured(const QString &msg);
     void currentChatIdChanged();
