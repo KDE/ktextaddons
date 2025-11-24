@@ -128,7 +128,7 @@ public:
     [[nodiscard]] bool debug() const;
     void setDebug(bool newDebug);
 
-    TextAutoGenerateLocalDatabaseManager *databaseManager() const;
+    [[nodiscard]] TextAutoGenerateLocalDatabaseManager *databaseManager() const;
 
 Q_SIGNALS:
     void sendMessageRequested(const QString &str);
