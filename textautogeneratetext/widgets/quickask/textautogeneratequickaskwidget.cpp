@@ -12,7 +12,6 @@
 #include "core/textautogeneratetextinstancesmanager.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratequickaskviewwidget.h"
-#include "textautogeneratetextwidget_debug.h"
 #include "widgets/common/textautogeneratenotinstancefoundwidget.h"
 #include "widgets/common/textautogeneratenotworkingwidget.h"
 #include <QStackedWidget>
