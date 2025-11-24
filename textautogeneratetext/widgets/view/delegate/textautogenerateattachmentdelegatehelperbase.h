@@ -32,5 +32,11 @@ protected:
                                                     const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                     QRect attachmentsRect,
                                                     const QStyleOptionViewItem &option) = 0;
+
+    virtual bool handleMouseEvent(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                  QMouseEvent *mouseEvent,
+                                  QRect attachmentsRect,
+                                  const QStyleOptionViewItem &option,
+                                  const QModelIndex &index);
 };
 }

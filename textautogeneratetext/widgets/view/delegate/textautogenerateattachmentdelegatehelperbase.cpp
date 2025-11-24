@@ -13,4 +13,13 @@ TextAutoGenerateAttachmentDelegateHelperBase::TextAutoGenerateAttachmentDelegate
 
 TextAutoGenerateAttachmentDelegateHelperBase::~TextAutoGenerateAttachmentDelegateHelperBase() = default;
 
+bool TextAutoGenerateAttachmentDelegateHelperBase::handleMouseEvent(const TextAutoGenerateAttachment &msgAttach,
+                                                                    QMouseEvent *mouseEvent,
+                                                                    QRect attachmentsRect,
+                                                                    const QStyleOptionViewItem &option,
+                                                                    const QModelIndex &index)
+{
+    return false;
+}
+
 #include "moc_textautogenerateattachmentdelegatehelperbase.cpp"
