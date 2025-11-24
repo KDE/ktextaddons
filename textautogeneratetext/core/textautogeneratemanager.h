@@ -52,6 +52,7 @@ public:
         QString message;
         QStringList attachments;
         QList<QByteArray> tools;
+        [[nodiscard]] bool isValid() const;
     };
 
     explicit TextAutoGenerateManager(QObject *parent = nullptr);

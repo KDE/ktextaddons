@@ -690,4 +690,9 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManager:
     return d;
 }
 
+bool TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo::isValid() const
+{
+    return !message.isEmpty() || !attachments.isEmpty() || !tools.isEmpty();
+}
+
 #include "moc_textautogeneratemanager.cpp"
