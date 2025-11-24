@@ -58,6 +58,7 @@ public:
     ~TextAutoGenerateManager() override;
 
     void ask(const QString &msg);
+    void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
     void loadHistory();
 

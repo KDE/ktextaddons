@@ -178,6 +178,11 @@ void TextAutoGenerateManager::ask(const QString &msg)
     Q_EMIT askMessageRequested(msg);
 }
 
+void TextAutoGenerateManager::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
+{
+    // TODO
+}
+
 void TextAutoGenerateManager::createNewChat(const QString &title)
 {
     // Switch back to not archived list
