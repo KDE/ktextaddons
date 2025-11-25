@@ -11,6 +11,7 @@
 
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkModelAvailableInfo
 {
+    Q_GADGET
 public:
     enum Capability {
         None = 0,
@@ -19,8 +20,8 @@ public:
         Ocr = 8,
         Tools = 16,
     };
-    Q_FLAGS(Capability Capabilities)
     Q_DECLARE_FLAGS(Capabilities, Capability)
+    Q_FLAG(Capabilities)
 
     GenericNetworkModelAvailableInfo();
     ~GenericNetworkModelAvailableInfo();

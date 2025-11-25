@@ -32,8 +32,8 @@ public:
         UnderLine = 64,
     };
     Q_ENUM(QuickTextFormatType)
-    Q_FLAGS(QuickTextFormatType QuickTextFormatTypes)
     Q_DECLARE_FLAGS(QuickTextFormatTypes, QuickTextFormatType)
+    Q_FLAG(QuickTextFormatTypes)
 
     explicit RichTextQuickTextFormat(QTextEdit *editor, QWidget *parent = nullptr);
     ~RichTextQuickTextFormat() override;

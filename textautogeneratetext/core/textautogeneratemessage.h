@@ -37,8 +37,8 @@ public:
         InProgress = 4,
         TextToSpeechInProgress = 8,
     };
-    Q_FLAGS(MessageState MessageStates)
     Q_DECLARE_FLAGS(MessageStates, MessageState)
+    Q_FLAG(MessageStates)
 
     TextAutoGenerateMessage();
     ~TextAutoGenerateMessage();

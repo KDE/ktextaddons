@@ -342,3 +342,5 @@ bool GenericNetworkServerInfo::hasAudioSupport(const QString &currentMode, Gener
     }
     return false;
 }
+
+#include "moc_genericnetworkserverinfo.cpp"

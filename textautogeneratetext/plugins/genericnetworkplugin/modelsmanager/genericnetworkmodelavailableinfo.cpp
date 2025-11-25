@@ -127,3 +127,5 @@ QDebug operator<<(QDebug d, const GenericNetworkModelAvailableInfo &t)
     d.space() << "ownedBy:" << t.ownedBy();
     return d;
 }
+
+#include "moc_genericnetworkmodelavailableinfo.cpp"

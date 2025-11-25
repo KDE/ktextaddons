@@ -11,6 +11,7 @@
 
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 {
+    Q_GADGET
 public:
     enum Limitation : uint8_t {
         None = 0,
@@ -18,8 +19,8 @@ public:
         NoSeed = 2,
         NoSystemMessage = 4,
     };
-    Q_FLAGS(Limitation Limitations)
     Q_DECLARE_FLAGS(Limitations, Limitation)
+    Q_FLAG(Limitations)
 
     GenericNetworkServerInfo();
     ~GenericNetworkServerInfo();

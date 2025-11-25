@@ -45,8 +45,8 @@ public:
         Embedding = 512,
         Reasoning = 1024,
     };
-    Q_FLAGS(Category Categories)
     Q_DECLARE_FLAGS(Categories, Category)
+    Q_FLAG(Categories)
 
     struct TEXTAUTOGENERATETEXT_EXPORT AskMessageInfo {
         QString message;
