@@ -5,8 +5,7 @@
 */
 
 #pragma once
-
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <KPluginMetaData>
 #include <QList>
 #include <QObject>
@@ -28,7 +27,7 @@ public:
     bool isEnabled = true;
 };
 
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePluginTextManager final : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePluginTextManager final : public QObject
 {
     Q_OBJECT
 public:
