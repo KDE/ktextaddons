@@ -107,7 +107,7 @@ QList<TextAutoGeneratePluginText *> TextAutoGeneratePluginTextManager::pluginsLi
 {
     QList<TextAutoGeneratePluginText *> lst;
     lst.reserve(mPluginList.count());
-    QList<TextAutoGeneratePluginTextManagerInfo>::ConstIterator end(mPluginList.constEnd());
+    const QList<TextAutoGeneratePluginTextManagerInfo>::ConstIterator end(mPluginList.constEnd());
     for (QList<TextAutoGeneratePluginTextManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
