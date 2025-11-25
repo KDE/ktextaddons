@@ -124,7 +124,8 @@ QString TextAutoGeneratePluginTextManager::generatePluginsInformation() const
         result += u'\n';
         result += tab + p.mName + u'\n';
         result += tab + p.mDescription + u'\n';
-        result += tab + i18n("Activate: ", p.mEnableByDefault ? i18n("On") : i18n("Off")) + u'\n';
+        result += tab + i18n("Tool identifier: %1", p.mIdentifier) + u'\n';
+        result += tab + i18n("Activate: %1", p.mEnableByDefault ? i18n("On") : i18n("Off")) + u'\n';
     }
     return result;
 }
