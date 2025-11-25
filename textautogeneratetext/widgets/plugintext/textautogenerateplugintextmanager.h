@@ -43,6 +43,8 @@ public:
 
     [[nodiscard]] TextAutoGeneratePluginText *pluginFromIdentifier(const QString &identifier) const;
 
+    [[nodiscard]] QString generatePluginsInformation() const;
+
 private:
     explicit TextAutoGeneratePluginTextManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();

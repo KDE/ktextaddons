@@ -7,7 +7,7 @@
 #include "textautogenerateplugintextmanager.h"
 
 #include "textautogenerateplugintext.h"
-
+#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <QFileInfo>
@@ -114,6 +114,19 @@ QList<TextAutoGeneratePluginText *> TextAutoGeneratePluginTextManager::pluginsLi
         }
     }
     return lst;
+}
+
+QString TextAutoGeneratePluginTextManager::generatePluginsInformation() const
+{
+    QString result = i18n("Plugins Tool:");
+    const QString tab = u"   "_s;
+    for (const auto &p : mPluginDataList) {
+        result += u'\n';
+        result += tab + p.mName + u'\n';
+        result += tab + p.mDescription + u'\n';
+        result += tab + i18n("Activate: ", p.mEnableByDefault ? i18n("On") : i18n("Off")) + u'\n';
+    }
+    return result;
 }
 
 #include "moc_textautogenerateplugintextmanager.cpp"

@@ -56,6 +56,8 @@ public:
 
     [[nodiscard]] QString convertIdentifierToDisplay(const QList<QByteArray> &tools) const;
 
+    [[nodiscard]] QString generatePluginsInformation() const;
+
 private:
     explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();

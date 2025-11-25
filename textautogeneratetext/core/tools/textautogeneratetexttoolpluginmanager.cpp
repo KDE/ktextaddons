@@ -9,6 +9,7 @@
 #include "textautogeneratetextcore_debug.h"
 #include "textautogeneratetexttoolplugin.h"
 
+#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <QFileInfo>
@@ -176,6 +177,19 @@ QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const 
         }
     }
     return toolDisplayList.join(u", "_s);
+}
+
+QString TextAutoGenerateTextToolPluginManager::generatePluginsInformation() const
+{
+    QString result = i18n("Plugins Text:");
+    const QString tab = u"   "_s;
+    for (const auto &p : mPluginDataList) {
+        result += u'\n';
+        result += tab + p.mName + u'\n';
+        result += tab + p.mDescription + u'\n';
+        result += tab + i18n("Activate: ", p.mEnableByDefault ? i18n("On") : i18n("Off")) + u'\n';
+    }
+    return result;
 }
 
 #include "moc_textautogeneratetexttoolpluginmanager.cpp"
