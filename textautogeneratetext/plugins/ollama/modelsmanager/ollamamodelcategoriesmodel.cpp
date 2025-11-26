@@ -41,7 +41,7 @@ void OllamaModelCategoriesModel::fillCategories()
     auto item = new QStandardItem(i18n("Categories"));
     item->setSelectable(false);
     appendRow(item);
-    for (const CategoryInfo &info : mCategories) {
+    for (const CategoryInfo &info : std::as_const(mCategories)) {
         createItem(info.name, info.identifier);
     }
 }

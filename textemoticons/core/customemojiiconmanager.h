@@ -16,7 +16,7 @@ namespace TextEmoticonsCore
  */
 class TEXTEMOTICONSCORE_EXPORT CustomEmojiIconManager : public QObject
 {
-    Q_GADGET
+    Q_OBJECT
 public:
     explicit CustomEmojiIconManager(QObject *parent = nullptr);
     ~CustomEmojiIconManager() override;

@@ -46,7 +46,7 @@ public:
 
 Q_SIGNALS:
     void finished(const QString &result);
-    void error(GrammalecteResultJob::ErrorType type);
+    void error(TextGrammarCheck::GrammalecteResultJob::ErrorType type);
 
 private:
     TEXTGRAMMARCHECK_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);

@@ -51,7 +51,7 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
             return left->order() < right->order();
         });
     }
-    for (TextAutoGeneratePluginText *plugin : plugins) {
+    for (TextAutoGeneratePluginText *plugin : std::as_const(plugins)) {
         if (plugin->enabled()) {
             /*
             connect(plugin, &TextAutoGeneratePluginText::errorMessage, this, &MessageListViewBase::errorMessage);

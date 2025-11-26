@@ -36,7 +36,7 @@ public:
 
 Q_SIGNALS:
     void error();
-    void finished(const QVector<GrammalecteGenerateConfigOptionJob::Option> &result);
+    void finished(const QVector<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
 
 private:
     Q_DISABLE_COPY(GrammalecteGenerateConfigOptionJob)

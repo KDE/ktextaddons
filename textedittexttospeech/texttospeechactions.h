@@ -31,7 +31,7 @@ public:
     [[nodiscard]] TextToSpeechWidget::State state() const;
 
 public Q_SLOTS:
-    void setState(TextToSpeechWidget::State);
+    void setState(TextEditTextToSpeech::TextToSpeechWidget::State);
     void slotStop();
 
 Q_SIGNALS:

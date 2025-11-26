@@ -28,6 +28,7 @@ void RichTextEditFindBarTest::shouldHaveDefaultValues()
 
 class RichTextEditFindBarExample : public TextCustomEditor::RichTextEditFindBar
 {
+    Q_OBJECT
 public:
     explicit RichTextEditFindBarExample(QTextEdit *view, QWidget *parent = nullptr)
         : RichTextEditFindBar(view, parent)
@@ -154,3 +155,4 @@ void RichTextEditFindBarTest::shouldReplaceAllText()
 }
 
 #include "moc_richtexteditfindbartest.cpp"
+#include "richtexteditfindbartest.moc"

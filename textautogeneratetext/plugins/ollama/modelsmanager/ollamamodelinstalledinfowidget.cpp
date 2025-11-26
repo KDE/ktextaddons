@@ -121,7 +121,7 @@ void OllamaModelInstalledInfoWidget::setOllamaModelInstalledInfo(const OllamaMod
         auto featuresGroupBox = new QGroupBox(i18n("Features Supported"), mInfoWidget);
         infoLayout->addWidget(featuresGroupBox);
         auto vboxfeaturesLayout = new TextAutoGenerateText::TextAutoGenerateFlowLayout(featuresGroupBox);
-        for (const QString &name : categoriesName) {
+        for (const QString &name : std::as_const(categoriesName)) {
             vboxfeaturesLayout->addWidget(new QLabel(name, mInfoWidget));
         }
     }

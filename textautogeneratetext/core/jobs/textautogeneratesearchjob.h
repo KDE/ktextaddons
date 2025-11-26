@@ -28,7 +28,7 @@ public:
     void setSearchText(const QString &newSearchText);
 
 Q_SIGNALS:
-    void searchDone(const QList<TextAutoGenerateSearchMessage> &msgs);
+    void searchDone(const QList<TextAutoGenerateText::TextAutoGenerateSearchMessage> &msgs);
 
 private:
     QString mSearchText;

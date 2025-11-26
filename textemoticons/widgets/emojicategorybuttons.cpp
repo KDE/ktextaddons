@@ -52,7 +52,7 @@ void EmojiCategoryButtons::wheelEvent(QWheelEvent *event)
             }
             if (nextButton) {
                 nextButton->setChecked(true);
-                nextButton->clicked(true);
+                Q_EMIT nextButton->clicked(true);
             }
         }
     }

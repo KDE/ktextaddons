@@ -386,7 +386,7 @@ TextAutoGenerateMessage::MessageStates TextAutoGenerateMessage::messageStates() 
     return mMessageStates;
 }
 
-void TextAutoGenerateMessage::setMessageStates(const MessageStates &newMessageStates)
+void TextAutoGenerateMessage::setMessageStates(MessageStates newMessageStates)
 {
     mMessageStates = newMessageStates;
 }

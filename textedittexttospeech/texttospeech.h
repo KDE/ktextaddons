@@ -58,7 +58,7 @@ public Q_SLOTS:
     void setLocale(const QLocale &locale);
 
 Q_SIGNALS:
-    void stateChanged(TextToSpeech::State);
+    void stateChanged(TextEditTextToSpeech::TextToSpeech::State);
     void aboutToSynthesize(qsizetype previousId, qsizetype currentId);
 
 private:

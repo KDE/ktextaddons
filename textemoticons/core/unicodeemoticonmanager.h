@@ -24,7 +24,7 @@ class TEXTEMOTICONSCORE_EXPORT UnicodeEmoticonManager : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QList<EmoticonCategory> categories READ categories CONSTANT)
+    Q_PROPERTY(QList<TextEmoticonsCore::EmoticonCategory> categories READ categories CONSTANT)
 
 public:
     static UnicodeEmoticonManager *self(const QString &filename = {});

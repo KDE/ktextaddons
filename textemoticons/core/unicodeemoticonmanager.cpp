@@ -126,7 +126,7 @@ QList<UnicodeEmoticon> UnicodeEmoticonManager::emojisForCategory(const QString &
 
 UnicodeEmoticon UnicodeEmoticonManager::unicodeEmoticonForEmoji(const QString &emojiIdentifier) const
 {
-    for (const UnicodeEmoticon &emo : d->unicodeEmojiList) {
+    for (const UnicodeEmoticon &emo : std::as_const(d->unicodeEmojiList)) {
         if (emo.hasEmoji(emojiIdentifier)) {
             return emo;
         }
