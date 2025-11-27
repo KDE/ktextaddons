@@ -28,7 +28,11 @@ OllamaReply::OllamaReply(QNetworkReply *netReply, RequestTypes requestType, QObj
             mInfo.duration = std::chrono::nanoseconds{finalResponse["eval_duration"_L1].toVariant().toULongLong()};
         }
         qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama response finished";
-        Q_EMIT finished();
+        if (mReply->error() == QNetworkReply::NoError) {
+            Q_EMIT finished();
+        } else {
+            Q_EMIT canceled();
+        }
     });
     connect(mReply, &QNetworkReply::errorOccurred, mReply, [](QNetworkReply::NetworkError e) {
         qCDebug(AUTOGENERATETEXT_OLLAMA_LOG) << "Ollama HTTP error:" << e;

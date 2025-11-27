@@ -60,6 +60,12 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
                 mDownloadReply.remove(modelName);
             }
         });
+        connect(mManager, &OllamaManager::canceled, this, [this](const QString &modelName) {
+            if (modelName == mModelName) {
+                mCancelDownloadButton->hide();
+                mDownloadReply.remove(modelName);
+            }
+        });
     }
     mainLayout->addStretch(1);
 }

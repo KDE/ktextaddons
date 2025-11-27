@@ -34,6 +34,7 @@ Q_SIGNALS:
     void refreshInstalledModels();
     void finished(const TextAutoGenerateText::TextAutoGenerateReply::Response &replyText);
     void downloadDone(const QString &modelName);
+    void canceled(const QString &modelName);
 
 protected:
     QMetaObject::Connection mCheckConnect;
