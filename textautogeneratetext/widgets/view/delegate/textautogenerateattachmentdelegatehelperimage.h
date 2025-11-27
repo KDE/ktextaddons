@@ -41,6 +41,7 @@ private:
         QSize imageSize;
         QString name;
         QByteArray mimetype;
+        bool showImage = false;
     };
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperImage::ImageLayout layoutImage(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
                                                                                          const QStyleOptionViewItem &option,
