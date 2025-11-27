@@ -4,12 +4,14 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodeldownloadwidget.h"
-using namespace Qt::Literals::StringLiterals;
+
+#include <KLocalizedString>
 
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
 
+using namespace Qt::Literals::StringLiterals;
 OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, const QString &modelSize, bool alreadyInstalled, QWidget *parent)
     : QWidget{parent}
 {
@@ -40,6 +42,9 @@ OllamaModelDownloadWidget::OllamaModelDownloadWidget(const QString &tagName, con
     toolButton->setIcon(alreadyInstalled ? QIcon::fromTheme(u"dialog-ok"_s) : QIcon::fromTheme(u"download"_s));
     toolButton->setAutoRaise(true);
     toolButton->setObjectName(u"toolButton"_s);
+    if (!alreadyInstalled) {
+        toolButton->setToolTip(i18nc("@info:tooltip", "Download"));
+    }
     mainLayout->addWidget(toolButton, 0, Qt::AlignTop);
     if (!alreadyInstalled) {
         connect(toolButton, &QToolButton::clicked, this, [this, tagName]() {
