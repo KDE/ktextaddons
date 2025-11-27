@@ -45,13 +45,6 @@ target_sources(
         texttospeechvoicecombobox.cpp
 )
 
-target_sources(
-    KF6TextEditTextToSpeech
-    PRIVATE
-        kokoro/texttospeechkokoro.h
-        kokoro/texttospeechkokoro.cpp
-)
-
 target_link_libraries(
     KF6TextEditTextToSpeech
     PUBLIC

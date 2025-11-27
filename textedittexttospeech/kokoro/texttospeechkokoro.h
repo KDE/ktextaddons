@@ -5,11 +5,10 @@
 */
 
 #pragma once
-#include "textedittexttospeech_export.h"
 #include <QObject>
 namespace TextEditTextToSpeech
 {
-class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechKokoro : public QObject
+class TextToSpeechKokoro : public QObject
 {
     Q_OBJECT
 public:
