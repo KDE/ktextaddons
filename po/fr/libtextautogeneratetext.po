@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-26 00:42+0000\n"
+"POT-Creation-Date: 2025-11-28 00:41+0000\n"
 "PO-Revision-Date: 2025-11-16 14:00+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -203,7 +203,7 @@ msgid "Available Models"
 msgstr "Modèles disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:48
-#: plugins/ollama/ollamamanager.cpp:170
+#: plugins/ollama/ollamamanager.cpp:174
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Impossible de se connecter à l'interface de %1 : %2"
@@ -374,6 +374,14 @@ msgstr "Veuillez saisir le nom du modèle comme « nom : libellé »"
 msgctxt "@info:tooltip"
 msgid "Cancel"
 msgstr "Annuler"
+
+#: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Download Model"
+msgctxt "@info:tooltip"
+msgid "Download"
+msgstr "Télécharger un modèle"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
