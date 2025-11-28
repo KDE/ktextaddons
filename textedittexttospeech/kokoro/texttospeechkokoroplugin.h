@@ -12,7 +12,7 @@ namespace TextEditTextToSpeech
 class TextToSpeechKokoroPlugin : public QObject, public QTextToSpeechPlugin
 {
     Q_INTERFACES(QTextToSpeechPlugin)
-    Q_PLUGIN_METADATA(IID "org.qt-project.qt.speech.tts.plugin/6.0" FILE "kikiro_plugin.json")
+    Q_PLUGIN_METADATA(IID "org.qt-project.qt.speech.tts.plugin/6.0" FILE "kokoro_plugin.json")
 public:
     QTextToSpeechEngine *createTextToSpeechEngine(const QVariantMap &parameters, QObject *parent, QString *errorString) const override;
 };
