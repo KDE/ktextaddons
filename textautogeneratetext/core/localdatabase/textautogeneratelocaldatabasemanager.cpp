@@ -35,6 +35,7 @@ QStringList TextAutoGenerateLocalDatabaseManager::chatsList() const
 {
     QStringList lst;
     const QList<TextAutoGenerateChat> chats = loadChats();
+    lst.reserve(chats.count());
     for (const auto &chat : chats) {
         lst.append(u"%1 (%2)"_s.arg(chat.title(), QString::fromLatin1(chat.identifier())));
     }

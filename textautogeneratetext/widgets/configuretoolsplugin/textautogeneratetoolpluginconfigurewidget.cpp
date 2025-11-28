@@ -68,7 +68,8 @@ QLabel *TextAutoGenerateToolPluginConfigureWidget::createLabel(const QString &st
 void TextAutoGenerateToolPluginConfigureWidget::generateArguments(TextAutoGenerateTextToolPlugin *plugin)
 {
     QString propertiesText = u"<ul>"_s;
-    for (const auto &prop : plugin->properties()) {
+    const auto properties = plugin->properties();
+    for (const auto &prop : properties) {
         propertiesText += u"<li>%1: %2</li>"_s.arg(prop.name(), prop.description().toString());
         const QStringList typeElements = prop.typeElements();
         if (!typeElements.isEmpty()) {

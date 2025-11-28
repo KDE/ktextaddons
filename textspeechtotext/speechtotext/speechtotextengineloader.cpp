@@ -44,7 +44,8 @@ void SpeechToTextEngineLoader::loadPlugins()
         if (!dir.exists()) {
             continue;
         }
-        for (const QString &fileName : dir.entryList(QDir::Files)) {
+        const auto files = dir.entryList(QDir::Files);
+        for (const QString &fileName : files) {
             loadPlugin(dir.absoluteFilePath(fileName));
         }
     }
@@ -57,7 +58,7 @@ void SpeechToTextEngineLoader::loadPlugins()
 void SpeechToTextEngineLoader::loadPlugin(const QString &pluginPath)
 {
     QPluginLoader plugin(pluginPath);
-    const QString pluginIID = plugin.metaData()["IID"_L1].toString();
+    const QString pluginIID = plugin.metaData().value("IID"_L1).toString();
     if (!pluginIID.isEmpty()) {
         if (d->loadedPlugins.contains(pluginIID)) {
             qCDebug(TEXTSPEECHTOTEXT_LOG) << "Skipping already loaded" << pluginPath;

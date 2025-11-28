@@ -47,7 +47,7 @@ RichTextQuickTextFormat::QuickTextFormatTypes RichTextQuickTextFormat::formatTyp
     return mFormatTypes;
 }
 
-void RichTextQuickTextFormat::setFormatTypes(const QuickTextFormatTypes &newFormatTypes)
+void RichTextQuickTextFormat::setFormatTypes(QuickTextFormatTypes newFormatTypes)
 {
     if (mFormatTypes != newFormatTypes) {
         mFormatTypes = newFormatTypes;

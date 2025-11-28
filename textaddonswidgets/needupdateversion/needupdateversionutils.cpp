@@ -73,5 +73,5 @@ bool TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()
 
 QDate TextAddonsWidgets::NeedUpdateVersionUtils::compileDate()
 {
-    return QDate::fromString(QString::fromLatin1(__DATE__), QStringLiteral("MMM dd yyyy"));
+    return QDate::fromString(QStringLiteral(__DATE__), QStringLiteral("MMM dd yyyy"));
 }

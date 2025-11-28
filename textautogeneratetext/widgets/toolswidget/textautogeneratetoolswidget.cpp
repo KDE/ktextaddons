@@ -34,6 +34,7 @@ TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(QWidget *parent)
     mainLayout->setHorizontalSpacing(0);
 
     const QList<TextAutoGenerateTextToolPluginManager::PluginToolInfo> lst = TextAutoGenerateTextToolPluginManager::self()->activePluginTools();
+    mListButton.reserve(lst.count());
     for (const auto &info : lst) {
         auto b = new QToolButton(this);
         b->setToolTip(info.description);

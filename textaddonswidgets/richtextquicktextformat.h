@@ -39,7 +39,7 @@ public:
     ~RichTextQuickTextFormat() override;
 
     [[nodiscard]] QuickTextFormatTypes formatTypes() const;
-    void setFormatTypes(const QuickTextFormatTypes &newFormatTypes);
+    void setFormatTypes(QuickTextFormatTypes newFormatTypes);
 
     [[nodiscard]] bool enabled() const;
     void setEnabled(bool newEnabled);

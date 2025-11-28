@@ -46,7 +46,7 @@ public:
     void setParentModel(const QString &newParentModel);
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
-    void setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories);
+    void setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories);
 
     [[nodiscard]] QStringList languages() const;
     void setLanguages(const QStringList &newLanguages);

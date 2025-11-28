@@ -47,7 +47,7 @@ public:
     void setOwnedBy(const QString &newOwnedBy);
 
     [[nodiscard]] Capabilities capabilities() const;
-    void setCapabilities(const Capabilities &newCapabilities);
+    void setCapabilities(Capabilities newCapabilities);
 
 private:
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void parseCapabilities(const QJsonObject &obj);

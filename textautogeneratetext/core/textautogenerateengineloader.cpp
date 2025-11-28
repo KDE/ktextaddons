@@ -40,7 +40,8 @@ void TextAutoGenerateEngineLoader::loadPlugins()
         if (!dir.exists()) {
             continue;
         }
-        for (const QString &fileName : dir.entryList(QDir::Files)) {
+        const auto files = dir.entryList(QDir::Files);
+        for (const QString &fileName : files) {
             loadPlugin(dir.absoluteFilePath(fileName));
         }
     }

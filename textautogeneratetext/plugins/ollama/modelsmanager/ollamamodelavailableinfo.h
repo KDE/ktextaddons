@@ -41,7 +41,7 @@ public:
     [[nodiscard]] bool isValid() const;
 
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateManager::Categories categories() const;
-    void setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories);
+    void setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories);
 
     [[nodiscard]] QString description() const;
 

@@ -30,7 +30,7 @@ TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaModelAvailableIn
     return mCategories;
 }
 
-void OllamaModelAvailableInfo::setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories)
+void OllamaModelAvailableInfo::setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories)
 {
     mCategories = newCategories;
 }

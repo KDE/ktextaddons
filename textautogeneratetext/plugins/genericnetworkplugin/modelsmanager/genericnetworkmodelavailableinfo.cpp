@@ -112,7 +112,7 @@ GenericNetworkModelAvailableInfo::Capabilities GenericNetworkModelAvailableInfo:
     return mCapabilities;
 }
 
-void GenericNetworkModelAvailableInfo::setCapabilities(const Capabilities &newCapabilities)
+void GenericNetworkModelAvailableInfo::setCapabilities(Capabilities newCapabilities)
 {
     mCapabilities = newCapabilities;
 }

@@ -56,7 +56,7 @@ TextAutoGenerateText::TextAutoGenerateManager::Categories OllamaModelInstalledIn
     return mCategories;
 }
 
-void OllamaModelInstalledInfo::setCategories(const TextAutoGenerateText::TextAutoGenerateManager::Categories &newCategories)
+void OllamaModelInstalledInfo::setCategories(TextAutoGenerateText::TextAutoGenerateManager::Categories newCategories)
 {
     mCategories = newCategories;
 }

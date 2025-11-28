@@ -50,7 +50,8 @@ bool TextAutoGenerateAttachments::operator==(const TextAutoGenerateAttachments &
 QJsonArray TextAutoGenerateAttachments::serialize(const TextAutoGenerateAttachments &attachments)
 {
     QJsonArray array;
-    for (const auto &att : attachments.messageAttachments()) {
+    const auto atts = attachments.messageAttachments();
+    for (const auto &att : atts) {
         array.append(TextAutoGenerateAttachment::serialize(att));
     }
     return array;

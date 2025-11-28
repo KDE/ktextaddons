@@ -86,6 +86,7 @@ QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementIn
 TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFileList(const QStringList &files)
 {
     QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> infos;
+    infos.reserve(files.count());
     for (const auto &file : files) {
         const auto info = createAttachmentElementInfoFromFile(file);
         if (info.isValid()) {
@@ -116,6 +117,7 @@ TextAutoGenerateAttachment TextAutoGenerateAttachmentUtils::generateAttachmentFr
 QList<TextAutoGenerateAttachment> TextAutoGenerateAttachmentUtils::generateAttachmentFromAttachmentElementInfos(const QList<AttachmentElementInfo> &info)
 {
     QList<TextAutoGenerateAttachment> lstAttachment;
+    lstAttachment.reserve(info.count());
     for (const auto &attachmentInfo : info) {
         const TextAutoGenerateAttachment att = generateAttachmentFromAttachmentElementInfo(attachmentInfo);
         lstAttachment.append(att);
