@@ -69,6 +69,8 @@ target_sources(
         plugins/configurepluginstreewidgetdelegate.h
         plugins/configurepluginswidget.cpp
         plugins/configurepluginswidget.h
+        misc/openfilejob.h
+        misc/openfilejob.cpp
 )
 target_link_libraries(
     KF6TextAddonsWidgets
