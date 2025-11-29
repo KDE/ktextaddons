@@ -180,6 +180,14 @@ ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
     RELATIVE plugins
 )
 
+ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
+    HEADER_NAMES
+    OpenFileJob
+    REQUIRED_HEADERS TextAddonsWidgets_misc_HEADERS
+    PREFIX TextAddonsWidgets
+    RELATIVE misc
+)
+
 install(
     FILES
         ${TextAddonsWidgets_HEADERS}
@@ -188,6 +196,7 @@ install(
         ${TextAddonsWidgets_whatsnew_HEADERS}
         ${TextAddonsWidgets_quicksearchbar_HEADERS}
         ${TextAddonsWidgets_plugins_HEADERS}
+        ${TextAddonsWidgets_misc_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/textaddonswidgets_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/textaddonswidgets
     COMPONENT Devel
@@ -200,6 +209,7 @@ install(
         ${TextAddonsWidgets_Camelcasewhatsnew_HEADERS}
         ${TextAddonsWidgets_Camelquicksearchbar_HEADERS}
         ${TextAddonsWidgets_Camelcaseplugins_HEADERS}
+        ${TextAddonsWidgets_Camelcasemisc_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets/TextAddonsWidgets/
     COMPONENT Devel
 )
