@@ -81,6 +81,7 @@ target_link_libraries(
         KF6::ConfigGui
         KF6::KIOCore
         KF6::ItemViews
+        KF6::Service
 )
 
 ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER textaddonswidgets_debug.h

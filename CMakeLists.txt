@@ -114,6 +114,7 @@ find_package(
         Archive
         CoreAddons
         Sonnet
+        Service
         SyntaxHighlighting
         WidgetsAddons
         TextWidgets

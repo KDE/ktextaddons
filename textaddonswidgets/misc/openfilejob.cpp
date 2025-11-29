@@ -4,6 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "openfilejob.h"
+#include <KLocalizedString>
+#include <KService>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QTemporaryDir>
+#include <QUrl>
+#include <memory>
 
 using namespace TextAddonsWidgets;
 OpenFileJob::OpenFileJob(QObject *parent)
@@ -13,7 +20,6 @@ OpenFileJob::OpenFileJob(QObject *parent)
 
 OpenFileJob::~OpenFileJob() = default;
 
-#if 0
 enum class UserChoice : uint8_t {
     Save,
     Open,
@@ -42,6 +48,7 @@ static UserChoice askUser(const QUrl &url, const KService::Ptr &offer, QWidget *
     msgBox.exec();
     return msgBox.clickedButton()->property(prop).value<UserChoice>();
 }
+#if 0
 
 static void runApplication(const KService::Ptr &offer, const QString &link, QWidget *widget, RocketChatAccount *account)
 {
