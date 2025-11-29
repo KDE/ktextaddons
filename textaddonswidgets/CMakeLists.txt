@@ -71,6 +71,8 @@ target_sources(
         plugins/configurepluginswidget.h
         misc/openfilejob.h
         misc/openfilejob.cpp
+        misc/savefileutils.h
+        misc/savefileutils.cpp
 )
 target_link_libraries(
     KF6TextAddonsWidgets
@@ -82,6 +84,7 @@ target_link_libraries(
         KF6::KIOCore
         KF6::ItemViews
         KF6::Service
+        KF6::KIOFileWidgets
 )
 
 ecm_qt_declare_logging_category(KF6TextAddonsWidgets HEADER textaddonswidgets_debug.h
@@ -184,6 +187,7 @@ ecm_generate_headers(TextAddonsWidgets_Camelcaseplugins_HEADERS
 ecm_generate_headers(TextAddonsWidgets_Camelcasemisc_HEADERS
     HEADER_NAMES
     OpenFileJob
+    SaveFileUtils
     REQUIRED_HEADERS TextAddonsWidgets_misc_HEADERS
     PREFIX TextAddonsWidgets
     RELATIVE misc
