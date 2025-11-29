@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-28 00:41+0000\n"
-"PO-Revision-Date: 2025-11-16 14:00+0100\n"
+"PO-Revision-Date: 2025-11-27 09:34+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.11.80\n"
 
 #: core/models/textautogeneratechatsmodel.cpp:81
 #, kde-format
@@ -151,31 +151,31 @@ msgstr "Réseau"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:184
 #, kde-format
 msgid "Plugins Text:"
-msgstr ""
+msgstr "Texte des modules externes :"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:190
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
 #, kde-format
 msgid "Tool identifier: %1"
-msgstr ""
+msgstr "Identifiant de l'outil : %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "On"
-msgstr ""
+msgstr "Activé"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "Désactivé"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:191
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:128
 #, kde-format
 msgid "Activate: %1"
-msgstr ""
+msgstr "Activer : %1"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:29
 #, kde-format
@@ -2403,7 +2403,7 @@ msgstr "Nombre maximal de jetons :"
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:121
 #, kde-format
 msgid "Plugins Tool:"
-msgstr ""
+msgstr "Outil de modules externes :"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:29
 #, kde-format

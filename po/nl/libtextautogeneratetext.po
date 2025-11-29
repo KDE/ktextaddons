@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-28 00:41+0000\n"
-"PO-Revision-Date: 2025-11-26 14:59+0100\n"
+"PO-Revision-Date: 2025-11-28 12:32+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -379,12 +379,10 @@ msgid "Cancel"
 msgstr "Annuleren"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadwidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Download"
-msgstr "Model downloaden"
+msgstr "Downloaden"
 
 #: plugins/ollama/modelsmanager/ollamamodelinstalledinfowidget.cpp:30
 #, kde-format
