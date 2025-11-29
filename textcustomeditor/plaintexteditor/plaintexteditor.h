@@ -24,7 +24,7 @@ namespace TextCustomEditor
 class TEXTCUSTOMEDITOR_EXPORT PlainTextEditor : public QPlainTextEdit
 {
     Q_OBJECT
-    Q_PROPERTY(bool searchSupport READ searchSupport WRITE setSearchSupport)
+    Q_PROPERTY(bool searchSupport READ searchSupport WRITE setSearchSupport NOTIFY searchSupportChanged)
     Q_PROPERTY(bool spellCheckingSupport READ spellCheckingSupport WRITE setSpellCheckingSupport)
     Q_PROPERTY(bool textToSpeechSupport READ textToSpeechSupport WRITE setTextToSpeechSupport)
     Q_PROPERTY(bool webShortcutSupport READ webShortcutSupport WRITE setWebShortcutSupport)
@@ -102,6 +102,7 @@ Q_SIGNALS:
     void languageChanged(const QString &);
     void spellCheckStatus(const QString &);
     void say(const QString &text);
+    void searchSupportChanged();
 
 private:
     TEXTCUSTOMEDITOR_NO_EXPORT void slotUndoableClear();

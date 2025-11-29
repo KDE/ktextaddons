@@ -282,6 +282,7 @@ void PlainTextEditor::setSearchSupport(bool b)
     } else {
         d->supportFeatures = (d->supportFeatures & ~Search);
     }
+    Q_EMIT searchSupportChanged();
 }
 
 bool PlainTextEditor::searchSupport() const
