@@ -13,3 +13,5 @@ TextToSpeechKokoro::TextToSpeechKokoro(QObject *parent)
 }
 
 TextToSpeechKokoro::~TextToSpeechKokoro() = default;
+
+#include "moc_texttospeechkokoro.cpp"

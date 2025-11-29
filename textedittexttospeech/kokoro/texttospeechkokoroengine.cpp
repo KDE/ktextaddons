@@ -109,3 +109,5 @@ QString TextToSpeechKokoroEngine::errorString() const
 {
     return {};
 }
+
+#include "moc_texttospeechkokoroengine.cpp"

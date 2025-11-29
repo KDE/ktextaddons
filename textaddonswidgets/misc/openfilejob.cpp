@@ -119,3 +119,5 @@ void MessageAttachmentDelegateHelperFile::handleDownloadClicked(const QString &l
     }
 }
 #endif
+
+#include "moc_openfilejob.cpp"
