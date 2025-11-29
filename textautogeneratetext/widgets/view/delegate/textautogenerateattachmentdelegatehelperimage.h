@@ -40,6 +40,7 @@ private:
         QPixmap pixmap;
         QSize imageSize;
         QString name;
+        QSize nameSize;
         QByteArray mimetype;
         bool showImage = false;
     };
