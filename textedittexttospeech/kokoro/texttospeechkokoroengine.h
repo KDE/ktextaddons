@@ -16,28 +16,26 @@ public:
     TextToSpeechKokoroEngine(const QVariantMap &parameters, QObject *parent);
     ~TextToSpeechKokoroEngine() override;
 
-    // QTextToSpeechEngine interface
-public:
-    QList<QLocale> availableLocales() const override;
-    QList<QVoice> availableVoices() const override;
+    [[nodiscard]] QList<QLocale> availableLocales() const override;
+    [[nodiscard]] QList<QVoice> availableVoices() const override;
     void say(const QString &text) override;
     void synthesize(const QString &text) override;
     void stop(QTextToSpeech::BoundaryHint boundaryHint) override;
     void pause(QTextToSpeech::BoundaryHint boundaryHint) override;
     void resume() override;
-    double rate() const override;
-    bool setRate(double rate) override;
-    double pitch() const override;
-    bool setPitch(double pitch) override;
-    QLocale locale() const override;
-    bool setLocale(const QLocale &locale) override;
-    double volume() const override;
-    bool setVolume(double volume) override;
-    QVoice voice() const override;
-    bool setVoice(const QVoice &voice) override;
-    QTextToSpeech::State state() const override;
-    QTextToSpeech::ErrorReason errorReason() const override;
-    QString errorString() const override;
+    [[nodiscard]] double rate() const override;
+    [[nodiscard]] bool setRate(double rate) override;
+    [[nodiscard]] double pitch() const override;
+    [[nodiscard]] bool setPitch(double pitch) override;
+    [[nodiscard]] QLocale locale() const override;
+    [[nodiscard]] bool setLocale(const QLocale &locale) override;
+    [[nodiscard]] double volume() const override;
+    [[nodiscard]] bool setVolume(double volume) override;
+    [[nodiscard]] QVoice voice() const override;
+    [[nodiscard]] bool setVoice(const QVoice &voice) override;
+    [[nodiscard]] QTextToSpeech::State state() const override;
+    [[nodiscard]] QTextToSpeech::ErrorReason errorReason() const override;
+    [[nodiscard]] QString errorString() const override;
 };
 
 }
