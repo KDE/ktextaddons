@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-11-30 00:41+0000\n"
 "PO-Revision-Date: 2025-08-26 06:22+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -51,13 +51,13 @@ msgstr "მართლწერის შესამოწმებელი �
 msgid "Speak Text"
 msgstr "ტექსტის წაკითხვა"
 
-#: plaintexteditor/plaintexteditor.cpp:382
+#: plaintexteditor/plaintexteditor.cpp:383
 #: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "შესამოწმებელი არაფერია."
 
-#: plaintexteditor/plaintexteditor.cpp:387
+#: plaintexteditor/plaintexteditor.cpp:388
 #: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."

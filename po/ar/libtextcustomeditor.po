@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-11-30 00:41+0000\n"
 "PO-Revision-Date: 2025-01-08 18:32+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -55,13 +55,13 @@ msgstr "لغة تدقيق الإملاء"
 msgid "Speak Text"
 msgstr "انطق النّصّ"
 
-#: plaintexteditor/plaintexteditor.cpp:382
+#: plaintexteditor/plaintexteditor.cpp:383
 #: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "لا يوجد شيء للتدقيق الإملائي"
 
-#: plaintexteditor/plaintexteditor.cpp:387
+#: plaintexteditor/plaintexteditor.cpp:388
 #: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."

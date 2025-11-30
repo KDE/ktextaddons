@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-11-30 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -49,13 +49,13 @@ msgstr "맞춤법 검사 언어"
 msgid "Speak Text"
 msgstr "텍스트 말하기"
 
-#: plaintexteditor/plaintexteditor.cpp:382
+#: plaintexteditor/plaintexteditor.cpp:383
 #: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "맞춤법 검사할 것이 없습니다."
 
-#: plaintexteditor/plaintexteditor.cpp:387
+#: plaintexteditor/plaintexteditor.cpp:388
 #: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."

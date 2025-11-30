@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-11-30 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -50,13 +50,13 @@ msgstr "वर्तनी जाँच भाषा"
 msgid "Speak Text"
 msgstr "पाठ बोलें"
 
-#: plaintexteditor/plaintexteditor.cpp:382
+#: plaintexteditor/plaintexteditor.cpp:383
 #: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr "वर्तनी जाँचने के लिए कुछ भी नहीं है।"
 
-#: plaintexteditor/plaintexteditor.cpp:387
+#: plaintexteditor/plaintexteditor.cpp:388
 #: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."

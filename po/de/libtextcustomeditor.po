@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextcustomeditor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-11-30 00:41+0000\n"
 "PO-Revision-Date: 2023-09-24 12:36+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -49,13 +49,13 @@ msgstr ""
 msgid "Speak Text"
 msgstr ""
 
-#: plaintexteditor/plaintexteditor.cpp:382
+#: plaintexteditor/plaintexteditor.cpp:383
 #: richtexteditor/richtexteditor.cpp:509
 #, kde-format
 msgid "Nothing to spell check."
 msgstr ""
 
-#: plaintexteditor/plaintexteditor.cpp:387
+#: plaintexteditor/plaintexteditor.cpp:388
 #: richtexteditor/richtexteditor.cpp:527
 #, kde-format
 msgid "No backend available for spell checking."

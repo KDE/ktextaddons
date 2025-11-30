@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-11-30 00:41+0000\n"
 "PO-Revision-Date: 2025-08-31 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,6 +17,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+
+#: misc/openfilejob.cpp:33
+#, kde-format
+msgctxt "@title:window"
+msgid "Open Attachment?"
+msgstr ""
+
+#: misc/openfilejob.cpp:34
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Open attachment <filename>%1</filename>?<nl/>"
+msgstr ""
+
+#: misc/openfilejob.cpp:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Open"
+msgstr ""
+
+#: misc/openfilejob.cpp:41
+#, kde-format
+msgctxt "@action:button"
+msgid "&Open With '%1'"
+msgstr ""
+
+#: misc/openfilejob.cpp:44
+#, kde-format
+msgctxt "@action:button"
+msgid "Open &With…"
+msgstr ""
+
+#: misc/openfilejob.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Save &As…"
+msgstr ""
+
+#: misc/openfilejob.cpp:91
+#, kde-format
+msgid "Impossible to open %1"
+msgstr ""
+
+#: misc/openfilejob.cpp:91
+#, kde-format
+msgctxt "@title:window"
+msgid "Error Opening File"
+msgstr ""
+
+#: misc/openfilejob.cpp:107
+#, kde-format
+msgctxt "@title:window"
+msgid "Save File"
+msgstr ""
+
+#: misc/savefileutils.cpp:65
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving file"
+msgstr ""
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
