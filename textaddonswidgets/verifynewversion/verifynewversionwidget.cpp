@@ -43,7 +43,7 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
     const QString stableBranch = stableBranchVersion;
     QString osName;
 
-    TextAddonsWidgets::VerifyNewVersionWidget::OsVersion osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersionUnknown;
+    TextAddonsWidgets::VerifyNewVersionWidget::OsVersion osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::Unknown;
 
 #if defined(Q_OS_WIN)
     osName = u"windows"_s;
