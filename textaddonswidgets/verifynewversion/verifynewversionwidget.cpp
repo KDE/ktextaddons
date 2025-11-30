@@ -63,10 +63,11 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
 
 #endif
 
+    QString generatedUrl;
     if (stable) {
-        const QString generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
+        generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
     } else {
-        const QString generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
+        generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
     }
     addOsUrlInfo(osVersion, generatedUrl);
 #endif
