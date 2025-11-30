@@ -59,11 +59,11 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
 #endif
 
 #if KAICHAT_STABLE_VERSION
-    const QString url = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
+    const QString generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
 #else
-    const QString url = defaultUrlPath + u"/master/%1/"_s.arg(osName);
+    const QString generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
 #endif
-    addOsUrlInfo(osVersion, url);
+    addOsUrlInfo(osVersion, generatedUrl);
 #endif
 }
 
