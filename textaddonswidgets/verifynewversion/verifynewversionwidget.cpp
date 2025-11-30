@@ -75,11 +75,11 @@ void VerifyNewVersionWidget::addOsUrlInfo(OsVersion os, const QString &url)
 void VerifyNewVersionWidget::slotVerifyNewVersion()
 {
     QUrl url;
-#if defined(Q_OS_WIN)
+#ifdef Q_OS_WIN
     url = QUrl(mUrls.value(VerifyNewVersionWidget::OsVersion::Windows));
 #endif
 
-#if defined(Q_OS_MACOS)
+#ifdef Q_OS_MACOS
 #ifdef Q_PROCESSOR_ARM_64
     url = QUrl(mUrls.value(VerifyNewVersionWidget::OsVersion::MacOsArm64));
 #else
