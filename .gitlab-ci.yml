@@ -11,3 +11,4 @@ include:
       - /gitlab-templates/pre-commit.yml
       - /gitlab-templates/alpine-qt6.yml
       - /gitlab-templates/linux-qt6-next.yml
+      - /gitlab-templates/craft-macos-x86-64-qt6.yml
