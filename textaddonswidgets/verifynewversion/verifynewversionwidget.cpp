@@ -36,9 +36,12 @@ QAction *VerifyNewVersionWidget::verifyNewVersionAction()
     return mVerifyNewVersionAction;
 }
 
-void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &stableBranchVersion, [[maybe_unused]] const QString &url)
+void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &stableBranchVersion,
+                                             [[maybe_unused]] const QString &url,
+                                             [[maybe_unused]] bool stable)
 {
 #if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
+
     const QString defaultUrlPath = url;
     const QString stableBranch = stableBranchVersion;
     QString osName;
@@ -48,7 +51,8 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
 #if defined(Q_OS_WIN)
     osName = u"windows"_s;
     osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::Windows;
-#else if defined(Q_OS_MACOS)
+#elif defined(Q_OS_MACOS)
+
 #ifdef Q_PROCESSOR_ARM_64
     osName = u"macos-arm64"_s;
     osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::MacOsArm64;
@@ -56,13 +60,14 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
     osName = u"macos-x86_64"_s;
     osVersion = TextAddonsWidgets::VerifyNewVersionWidget::OsVersion::MacOs;
 #endif
+
 #endif
 
-#if KAICHAT_STABLE_VERSION
-    const QString generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
-#else
-    const QString generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
-#endif
+    if (stable) {
+        const QString generatedUrl = defaultUrlPath + u"/%1/%2/"_s.arg(stableBranch, osName);
+    } else {
+        const QString generatedUrl = defaultUrlPath + u"/master/%1/"_s.arg(osName);
+    }
     addOsUrlInfo(osVersion, generatedUrl);
 #endif
 }
