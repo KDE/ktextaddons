@@ -90,6 +90,8 @@ void VerifyNewVersionWidget::slotVerifyNewVersion()
         CheckNewVersionDialog dlg(nullptr);
         dlg.checkNewVersion();
         dlg.exec();
+    } else {
+        qCWarning(TEXTADDONSWIDGETS_LOG) << " url is empty. It seems to be a bug";
     }
 }
 
