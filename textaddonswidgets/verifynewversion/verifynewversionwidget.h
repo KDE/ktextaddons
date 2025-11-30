@@ -29,6 +29,8 @@ public:
 
     [[nodiscard]] QAction *verifyNewVersionAction();
 
+    void generateUrlInfo(const QString &stableBranchVersion, const QString &url);
+
     void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
 
 private:
