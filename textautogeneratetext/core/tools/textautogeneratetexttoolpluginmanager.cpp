@@ -166,17 +166,17 @@ QJsonArray TextAutoGenerateTextToolPluginManager::generateToolsArray(const QList
 
 QString TextAutoGenerateTextToolPluginManager::convertIdentifierToDisplay(const QList<QByteArray> &tools) const
 {
-    QStringList toolDisplayList;
+    QString toolDisplayList;
     for (const QByteArray &t : tools) {
         const QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator end(mPluginList.constEnd());
         for (QList<TextAutoGenerateTextToolPluginManagerInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
             if (it->plugin->toolNameId() == t) {
-                toolDisplayList.append(it->plugin->displayName());
+                toolDisplayList.append(u"<li>"_s + it->plugin->displayName() + u"</li>"_s);
                 break;
             }
         }
     }
-    return toolDisplayList.join(u", "_s);
+    return toolDisplayList;
 }
 
 QString TextAutoGenerateTextToolPluginManager::generatePluginsInformation() const

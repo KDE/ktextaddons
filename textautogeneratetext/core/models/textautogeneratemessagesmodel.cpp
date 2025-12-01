@@ -13,6 +13,7 @@
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 #include <TextUtils/TextUtilsCopyBlockIconCache>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateMessagesModel::TextAutoGenerateMessagesModel(QObject *parent)
     : QAbstractListModel{parent}
@@ -79,12 +80,13 @@ QString TextAutoGenerateMessagesModel::generateModelInfo(const TextAutoGenerateM
     if (m.engineName().isEmpty() && m.modelName().isEmpty()) {
         return {};
     }
-    QString toolTip = i18n("Engine: %1\nModel: %2\nInstance Name: %3", m.engineName(), m.modelName(), m.instanceName());
+    QString toolTip = u"<qt>"_s + i18n("<b>Engine:</b> %1<br><b>Model:</b> %2<br><b>Instance Name:</b> %3", m.engineName(), m.modelName(), m.instanceName());
     if (m.messageInfo() && !m.messageInfo()->tools().isEmpty()) {
-        const QString displayList = TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->convertIdentifierToDisplay(m.messageInfo()->tools());
-        toolTip += i18n("\nTools: %1", displayList);
+        const QString displayList =
+            u"<ul>"_s + TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::self()->convertIdentifierToDisplay(m.messageInfo()->tools()) + u"</ul>"_s;
+        toolTip += i18n("<br><b>Tools:</b> %1", displayList);
     }
-    return toolTip;
+    return toolTip + u"</qt>"_s;
 }
 
 QString TextAutoGenerateMessagesModel::searchText() const
