@@ -13,11 +13,11 @@ TextAutoGenerateAttachmentDelegateHelperBase::TextAutoGenerateAttachmentDelegate
 
 TextAutoGenerateAttachmentDelegateHelperBase::~TextAutoGenerateAttachmentDelegateHelperBase() = default;
 
-bool TextAutoGenerateAttachmentDelegateHelperBase::handleMouseEvent(const TextAutoGenerateAttachment &msgAttach,
-                                                                    QMouseEvent *mouseEvent,
-                                                                    QRect attachmentsRect,
-                                                                    const QStyleOptionViewItem &option,
-                                                                    const QModelIndex &index)
+bool TextAutoGenerateAttachmentDelegateHelperBase::handleMouseEvent([[maybe_unused]] const TextAutoGenerateAttachment &msgAttach,
+                                                                    [[maybe_unused]] QMouseEvent *mouseEvent,
+                                                                    [[maybe_unused]] QRect attachmentsRect,
+                                                                    [[maybe_unused]] const QStyleOptionViewItem &option,
+                                                                    [[maybe_unused]] const QModelIndex &index)
 {
     return false;
 }

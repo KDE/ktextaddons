@@ -29,6 +29,12 @@ public:
                                  int maxWidth,
                                  const QStyleOptionViewItem &option) const override;
 
+    [[nodiscard]] bool handleMouseEvent(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,
+                                        QMouseEvent *mouseEvent,
+                                        QRect attachmentsRect,
+                                        const QStyleOptionViewItem &option,
+                                        const QModelIndex &index) override;
+
 protected:
     [[nodiscard]] QPoint adaptMousePosition(const QPoint &pos,
                                             const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach,

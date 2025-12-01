@@ -55,6 +55,16 @@ QSize TextAutoGenerateAttachmentDelegateHelperFile::sizeHint(const TextAutoGener
             layout.pixmap.height()};
 }
 
+bool TextAutoGenerateAttachmentDelegateHelperFile::handleMouseEvent(const TextAutoGenerateAttachment &msgAttach,
+                                                                    QMouseEvent *mouseEvent,
+                                                                    QRect attachmentsRect,
+                                                                    const QStyleOptionViewItem &option,
+                                                                    const QModelIndex &index)
+{
+    // TODO
+    return false;
+}
+
 QPoint TextAutoGenerateAttachmentDelegateHelperFile::adaptMousePosition(const QPoint &pos,
                                                                         const TextAutoGenerateAttachment &msgAttach,
                                                                         QRect attachmentsRect,

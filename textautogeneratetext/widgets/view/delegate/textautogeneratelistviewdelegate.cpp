@@ -415,6 +415,18 @@ bool TextAutoGenerateListViewDelegate::mouseEvent(QEvent *event, const QStyleOpt
         if (handleMouseEvent(mev, layout.decoRect, option, index)) {
             return true;
         }
+        const TextAutoGenerateMessage *message = index.data(TextAutoGenerateMessagesModel::MessagePointer).value<TextAutoGenerateMessage *>();
+        if (message->messageAttachments()) {
+            const auto attachments = message->messageAttachments()->messageAttachments();
+            int i = 0;
+            for (const TextAutoGenerateAttachment &att : attachments) {
+                TextAutoGenerateAttachmentDelegateHelperBase *helper = attachmentsHelper(att);
+                if (helper && helper->handleMouseEvent(att, mev, layout.attachmentsRectList.at(i), option, index)) {
+                    return true;
+                }
+                ++i;
+            }
+        }
     } else if (eventType == QEvent::MouseButtonPress || eventType == QEvent::MouseMove || eventType == QEvent::MouseButtonDblClick) {
         auto mev = static_cast<QMouseEvent *>(event);
         if (mev->buttons() & Qt::LeftButton) {
