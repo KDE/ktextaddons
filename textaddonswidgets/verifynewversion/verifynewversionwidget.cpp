@@ -29,8 +29,7 @@ bool VerifyNewVersionWidget::canVerifyNewVersion() const
 QAction *VerifyNewVersionWidget::verifyNewVersionAction()
 {
     if (!mVerifyNewVersionAction) {
-        // TODO add icon
-        mVerifyNewVersionAction = new QAction(i18n("Check New Version"), this);
+        mVerifyNewVersionAction = new QAction(QIcon::fromTheme(u"view-refresh"_s), i18n("Check New Version"), this);
         connect(mVerifyNewVersionAction, &QAction::triggered, this, &VerifyNewVersionWidget::slotVerifyNewVersion);
     }
     return mVerifyNewVersionAction;
