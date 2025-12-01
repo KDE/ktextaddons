@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-30 00:41+0000\n"
-"PO-Revision-Date: 2025-11-15 08:30+0100\n"
+"PO-Revision-Date: 2025-11-30 03:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -22,60 +22,60 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "გავხსნა მიმაგრებული ფაილი?"
 
 #: misc/openfilejob.cpp:34
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "გავხსნა მიმარებული ფაილი <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "გახსნა"
 
 #: misc/openfilejob.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "'%1'-ით &გახსნა"
 
 #: misc/openfilejob.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "&გამხსნელი პროგრამა…"
 
 #: misc/openfilejob.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "შენახვა &როგორც…"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "%1-ის გახსნა შეუძლებელია"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "ფაილის გახსნის შეცდომა"
 
 #: misc/openfilejob.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "ფაილის შენახვა"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "ფაილის შენახვის შეცდომა"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format

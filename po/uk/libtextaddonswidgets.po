@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-30 00:41+0000\n"
-"PO-Revision-Date: 2025-11-15 18:10+0200\n"
+"PO-Revision-Date: 2025-11-30 18:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -22,60 +22,60 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "Відкрити долучення?"
 
 #: misc/openfilejob.cpp:34
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "Відкрити долучення <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 #: misc/openfilejob.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "В&ідкрити за допомогою %1"
 
 #: misc/openfilejob.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "В&ідкрити за допомогою…"
 
 #: misc/openfilejob.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "Зберегти &як…"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Не вдалося відкрити %1"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Помилка під час відкриття файла"
 
 #: misc/openfilejob.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Збереження файла"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "Помилка під час збереження файла"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format

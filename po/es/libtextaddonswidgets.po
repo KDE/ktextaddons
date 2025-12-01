@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-30 00:41+0000\n"
-"PO-Revision-Date: 2025-11-15 12:17+0100\n"
+"PO-Revision-Date: 2025-11-30 11:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23,60 +23,60 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "¿Abrir adjunto?"
 
 #: misc/openfilejob.cpp:34
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "¿Abrir adjunto <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: misc/openfilejob.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "&Abrir con «%1»"
 
 #: misc/openfilejob.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "Abrir &con…"
 
 #: misc/openfilejob.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "Gu&ardar como…"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "No se ha podido abrir %1"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Error abriendo archivo"
 
 #: misc/openfilejob.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Guardar archivo"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "Error guardando archivo"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format

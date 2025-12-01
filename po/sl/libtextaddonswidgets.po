@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-30 00:41+0000\n"
-"PO-Revision-Date: 2025-11-15 07:52+0100\n"
+"PO-Revision-Date: 2025-11-30 07:50+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -22,60 +22,60 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "Naj odprem prilogo?"
 
 #: misc/openfilejob.cpp:34
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
-msgstr ""
+msgstr "Naj odprem prilogo <filename>%1</filename>?<nl/>"
 
 #: misc/openfilejob.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
-msgstr ""
+msgstr "Odpri"
 
 #: misc/openfilejob.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
-msgstr ""
+msgstr "&Odpri z '%1'"
 
 #: misc/openfilejob.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
-msgstr ""
+msgstr "Odpri z…"
 
 #: misc/openfilejob.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
-msgstr ""
+msgstr "Shrani kot…"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgid "Impossible to open %1"
-msgstr ""
+msgstr "Ni mogoče odpreti %1"
 
 #: misc/openfilejob.cpp:91
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Opening File"
-msgstr ""
+msgstr "Napaka pri odpiranju datoteke"
 
 #: misc/openfilejob.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr ""
+msgstr "Shrani datoteko"
 
 #: misc/savefileutils.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
-msgstr ""
+msgstr "Napaka pri shranjevanju datoteke"
 
 #: needupdateversion/needupdateversionwidget.cpp:19
 #, kde-format
