@@ -30,7 +30,7 @@ public:
     virtual void runApplication(const KService::Ptr &offer) = 0;
     virtual void openUrl() = 0;
 
-private:
+protected:
     QWidget *mParentWidget = nullptr;
     QString mLink;
 };
