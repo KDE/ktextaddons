@@ -14,5 +14,19 @@ class TEXTADDONSWIDGETS_EXPORT OpenFileJob : public QObject
 public:
     explicit OpenFileJob(QObject *parent = nullptr);
     ~OpenFileJob() override;
+
+    [[nodiscard]] QWidget *parentWidget() const;
+    void setParentWidget(QWidget *newParentWidget);
+
+    [[nodiscard]] QString link() const;
+    void setLink(const QString &newLink);
+
+    [[nodiscard]] bool canStart() const;
+
+    void start();
+
+private:
+    QWidget *mParentWidget = nullptr;
+    QString mLink;
 };
 }

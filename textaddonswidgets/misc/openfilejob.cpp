@@ -4,9 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "openfilejob.h"
+#include "savefileutils.h"
+#include "textaddonswidgets_debug.h"
+#include <KApplicationTrader>
 #include <KLocalizedString>
 #include <KService>
 #include <QMessageBox>
+#include <QMimeDatabase>
 #include <QPushButton>
 #include <QTemporaryDir>
 #include <QUrl>
@@ -19,6 +23,31 @@ OpenFileJob::OpenFileJob(QObject *parent)
 }
 
 OpenFileJob::~OpenFileJob() = default;
+
+QWidget *OpenFileJob::parentWidget() const
+{
+    return mParentWidget;
+}
+
+void OpenFileJob::setParentWidget(QWidget *newParentWidget)
+{
+    mParentWidget = newParentWidget;
+}
+
+QString OpenFileJob::link() const
+{
+    return mLink;
+}
+
+void OpenFileJob::setLink(const QString &newLink)
+{
+    mLink = newLink;
+}
+
+bool OpenFileJob::canStart() const
+{
+    return !mLink.isEmpty();
+}
 
 enum class UserChoice : uint8_t {
     Save,
@@ -48,6 +77,46 @@ static UserChoice askUser(const QUrl &url, const KService::Ptr &offer, QWidget *
     msgBox.exec();
     return msgBox.clickedButton()->property(prop).value<UserChoice>();
 }
+
+void OpenFileJob::start()
+{
+    if (!canStart()) {
+        qCWarning(TEXTADDONSWIDGETS_LOG) << "Link is empty";
+        deleteLater();
+        return;
+    }
+    const QUrl url(mLink);
+    const QMimeDatabase db;
+    const QMimeType mimeType = db.mimeTypeForUrl(url);
+    const bool valid = mimeType.isValid() && !mimeType.isDefault();
+    const KService::Ptr offer = valid ? KApplicationTrader::preferredService(mimeType.name()) : KService::Ptr{};
+    const UserChoice choice = askUser(url, offer, mParentWidget);
+#if 0
+    switch (choice) {
+    case UserChoice::Save: {
+        const QString file = SaveFileUtils::querySaveFileName(mParentWidget, i18nc("@title:window", "Save File"), url);
+        if (!file.isEmpty()) {
+            const QUrl fileUrl = QUrl::fromLocalFile(file);
+            mRocketChatAccount->downloadFile(link, fileUrl);
+        }
+        break;
+    }
+    case UserChoice::Open:
+#if defined(Q_OS_MACOS) || defined(Q_OS_WIN)
+        openUrl(link, widget, mRocketChatAccount);
+#else
+        runApplication(offer, link, widget, mRocketChatAccount);
+#endif
+        break;
+    case UserChoice::OpenWith:
+        runApplication({}, link, widget, mRocketChatAccount);
+        break;
+    case UserChoice::Cancel:
+        break;
+    }
+#endif
+}
+
 #if 0
 
 static void runApplication(const KService::Ptr &offer, const QString &link, QWidget *widget, RocketChatAccount *account)
