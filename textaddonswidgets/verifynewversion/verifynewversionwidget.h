@@ -31,8 +31,9 @@ public:
 
     void generateUrlInfo(const QString &stableBranchVersion, const QString &url, bool stable);
 
+    void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
+
 private:
-    TEXTADDONSWIDGETS_NO_EXPORT void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
     TEXTADDONSWIDGETS_NO_EXPORT void slotVerifyNewVersion();
     QMap<VerifyNewVersionWidget::OsVersion, QString> mUrls;
     QAction *mVerifyNewVersionAction = nullptr;
