@@ -79,11 +79,11 @@ target_link_libraries(
     PUBLIC
         Qt::Widgets
         KF6::WidgetsAddons
+        KF6::Service
     PRIVATE
         KF6::ConfigGui
         KF6::KIOCore
         KF6::ItemViews
-        KF6::Service
         KF6::KIOFileWidgets
 )
 
