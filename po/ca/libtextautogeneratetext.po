@@ -2516,6 +2516,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgid "No system prompt"
-#~ msgstr "Sense petició del sistema"
