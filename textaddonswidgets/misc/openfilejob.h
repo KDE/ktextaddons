@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textaddonswidgets_export.h"
+#include <KService>
 #include <QObject>
 namespace TextAddonsWidgets
 {
@@ -24,6 +25,10 @@ public:
     [[nodiscard]] bool canStart() const;
 
     void start();
+
+    virtual void downloadFile(const QUrl &fileUrl) = 0;
+    virtual void runApplication(const KService::Ptr &offer) = 0;
+    virtual void openUrl() = 0;
 
 private:
     QWidget *mParentWidget = nullptr;
