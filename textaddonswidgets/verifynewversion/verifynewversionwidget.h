@@ -31,7 +31,7 @@ public:
 
     void generateUrlInfo(const QString &stableBranchVersion, const QString &url, bool stable);
 
-    void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
+    [[deprecated("use generateUrlInfo")]] void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
 
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotVerifyNewVersion();
